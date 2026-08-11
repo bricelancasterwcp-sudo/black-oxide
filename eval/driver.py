@@ -641,6 +641,13 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--shots", default="0,3")
     parser.add_argument("--seeds", default="1-5")
     parser.add_argument("--results-root", default=str(harness.RESULTS_ROOT))
+    # Default None so every published campaign command keeps resolving to
+    # eval/tasks.jsonl via harness.TASKS_PATH. The training corpus
+    # (eval/train/tasks.jsonl) is opted into explicitly, never inherited:
+    # generating against the held-out eval corpus by accident is what this
+    # flag's absence used to guarantee.
+    parser.add_argument("--tasks", default=None,
+                        help="task corpus path (default: eval/tasks.jsonl)")
     parser.add_argument("--preflight-only", action="store_true")
     parser.add_argument("--run-prefix", default="6a")
     parser.add_argument("--backend", choices=["ollama", "llamacpp"],
@@ -649,6 +656,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--host", default=LLAMACPP_DEFAULT_HOST)
     parser.add_argument("--expect-model-path", default=None)
     args = parser.parse_args(argv)
+    tasks_path = Path(args.tasks) if args.tasks else None
 
     slugs = [s for s in args.models.split(",") if s]
     unknown = unknown_slugs(slugs)
@@ -706,7 +714,7 @@ def main(argv: list[str] | None = None) -> int:
             continue
         clients[slug] = arm_clients
         preflight[slug] = info
-    problems.extend(preflight_environment(shot_counts))
+    problems.extend(preflight_environment(shot_counts, tasks_path))
     if problems:
         # dict.fromkeys dedupes while preserving order: a CLI-level
         # misconfiguration (e.g. --constrained without --backend llamacpp)
@@ -725,6 +733,7 @@ def main(argv: list[str] | None = None) -> int:
         seeds=parse_seeds(args.seeds),
         results_root=Path(args.results_root),
         health_check=wait_for_health,
+        tasks_path=tasks_path,
         preflight=preflight,
         prefix=args.run_prefix,
         backend=args.backend,

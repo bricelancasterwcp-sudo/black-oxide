@@ -3004,3 +3004,73 @@ def test_live_constrained_generation_emits_no_syntax_diagnostics(tmp_path):
     )
     assert complete > 0, "every generation hit the token cap; result is vacuous"
     assert syntax == [], syntax
+
+
+def test_main_threads_the_tasks_flag_to_preflight_and_the_grid(tmp_path, monkeypatch):
+    """--tasks must reach BOTH preflight and run_grid.
+
+    Without it an amplification run would silently generate against
+    eval/tasks.jsonl -- the held-out eval corpus -- contaminating the
+    training set with the very tasks the fine-tune is scored on, and
+    producing a large, meaningless gain.
+    """
+    corpus = tmp_path / "train.jsonl"
+    corpus.write_text(
+        '{"id": "n001", "title": "T", "difficulty": "intro", '
+        '"prompt": "P", "expected_stdout": "1\\n"}\n',
+        encoding="utf-8",
+    )
+    seen: dict[str, object] = {}
+
+    stub_clients = {arm: _StaleServerStub("/blobs/sha256-abc") for arm in harness.ARMS}
+    monkeypatch.setattr(
+        driver, "make_arm_clients",
+        lambda backend, slug, *, constrained, host: stub_clients,
+    )
+    monkeypatch.setattr(
+        driver, "preflight_environment",
+        lambda shot_counts, tasks_path=None: seen.__setitem__("preflight", tasks_path) or [],
+    )
+    monkeypatch.setattr(
+        driver, "run_grid",
+        lambda *a, **kw: (seen.__setitem__("grid", kw.get("tasks_path")),
+                          {"aborted": False})[1],
+    )
+
+    code = driver.main([
+        "--models", "qwen7b", "--shots", "0", "--seeds", "1",
+        "--tasks", str(corpus),
+    ])
+
+    assert code == 0
+    assert seen["preflight"] == corpus
+    assert seen["grid"] == corpus
+
+
+def test_main_defaults_tasks_path_to_none_when_the_flag_is_absent(monkeypatch):
+    """The default must stay None so every already-published campaign
+    command keeps resolving to eval/tasks.jsonl via harness.TASKS_PATH.
+
+    A default of anything else would silently repoint g0c/g1c/v03c
+    reproduction commands at a different corpus.
+    """
+    seen: dict[str, object] = {}
+    stub_clients = {arm: _StaleServerStub("/blobs/sha256-abc") for arm in harness.ARMS}
+    monkeypatch.setattr(
+        driver, "make_arm_clients",
+        lambda backend, slug, *, constrained, host: stub_clients,
+    )
+    monkeypatch.setattr(
+        driver, "preflight_environment",
+        lambda shot_counts, tasks_path=None: seen.__setitem__("preflight", tasks_path) or [],
+    )
+    monkeypatch.setattr(
+        driver, "run_grid",
+        lambda *a, **kw: (seen.__setitem__("grid", kw.get("tasks_path")),
+                          {"aborted": False})[1],
+    )
+
+    driver.main(["--models", "qwen7b", "--shots", "0", "--seeds", "1"])
+
+    assert seen["preflight"] is None
+    assert seen["grid"] is None

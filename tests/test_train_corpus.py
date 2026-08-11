@@ -109,3 +109,56 @@ def test_committed_training_corpus_is_clean():
     if not tc.TRAIN_TASKS_PATH.exists():
         pytest.skip("training corpus not authored yet")
     assert tc.contamination_report(tc.load_train_tasks(), tc.load_train_programs()) == ()
+
+
+# ----------------------------------------------------------- Stage A gate
+
+_OX_PRINTS_3 = "fn main() {\n    print(3)\n}\n"
+_RS_PRINTS_3 = 'fn main() {\n    println!("3");\n}\n'
+
+
+def _pair(tmp_path, oxide_src: str, rust_src: str):
+    ox = tmp_path / "oxide.ox"
+    rs = tmp_path / "rust.rs"
+    ox.write_text(oxide_src, encoding="utf-8")
+    rs.write_text(rust_src, encoding="utf-8")
+    return ox, rs
+
+
+def test_validate_pair_accepts_agreeing_references(tmp_path):
+    ox, rs = _pair(tmp_path, _OX_PRINTS_3, _RS_PRINTS_3)
+    result = tc.validate_pair({"id": "n001", "expected_stdout": "3\n"}, ox, rs)
+    assert result["ok"] is True
+    assert result["reasons"] == ()
+
+
+def test_validate_pair_rejects_rust_containing_the_oxide_prefix(tmp_path):
+    """Transpiler output as Rust training data makes the control a
+    strawman, so the Black Oxide advantage it would produce is an
+    artifact. This Rust program is otherwise correct -- it compiles and
+    prints the expected output -- so the prefix is the ONLY reason it is
+    rejected, which is what the single-reason assertion pins.
+    """
+    rust = 'fn __oxide_helper() {}\nfn main() {\n    println!("3");\n}\n'
+    ox, rs = _pair(tmp_path, _OX_PRINTS_3, rust)
+    result = tc.validate_pair({"id": "n001", "expected_stdout": "3\n"}, ox, rs)
+    assert result["ok"] is False
+    assert len(result["reasons"]) == 1
+    assert "__oxide_" in result["reasons"][0]
+
+
+def test_validate_pair_rejects_arms_that_disagree(tmp_path):
+    """Both arms must match expected_stdout, which also proves they agree
+    with each other -- a task whose two references implement different
+    things would otherwise enter the corpus as a matched pair."""
+    ox, rs = _pair(tmp_path, _OX_PRINTS_3, 'fn main() {\n    println!("4");\n}\n')
+    result = tc.validate_pair({"id": "n001", "expected_stdout": "3\n"}, ox, rs)
+    assert result["ok"] is False
+    assert any("rust" in r for r in result["reasons"])
+
+
+def test_validate_pair_rejects_an_oxide_reference_that_does_not_compile(tmp_path):
+    ox, rs = _pair(tmp_path, "fn main() {\n    print(nope)\n}\n", _RS_PRINTS_3)
+    result = tc.validate_pair({"id": "n001", "expected_stdout": "3\n"}, ox, rs)
+    assert result["ok"] is False
+    assert any("oxide" in r for r in result["reasons"])

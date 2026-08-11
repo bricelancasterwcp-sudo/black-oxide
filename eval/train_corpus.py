@@ -131,3 +131,57 @@ def load_train_programs() -> dict[str, str]:
                 encoding="utf-8"
             )
     return programs
+
+
+# --------------------------------------------------------- Stage A gate
+
+# SPEC section 22 reserves this prefix for generated Rust. Its presence in
+# a hand-authored Rust reference means the file is transpiler output.
+OXIDE_PREFIX = "__oxide_"
+
+
+def _failure_reason(arm: str, verdict: dict, expected: str) -> str:
+    if not verdict["compiled"]:
+        diagnostics = verdict["diagnostics"]
+        head = diagnostics[0] if diagnostics else {}
+        code = head.get("code", "?")
+        message = head.get("message", "no diagnostics recorded")
+        return f"{arm} reference did not compile: {code} {message}"
+    return (
+        f"{arm} reference compiled but printed {verdict['stdout']!r}, "
+        f"expected {expected!r}"
+    )
+
+
+def validate_pair(task: dict, oxide_path: Path, rust_path: Path) -> dict:
+    """Gate one Stage A reference pair.
+
+    Both arms must compile, run, and match the task's expected_stdout --
+    which also proves the two references agree with each other, so a task
+    whose arms implement different things cannot enter the corpus as a
+    matched pair.
+
+    The Rust reference must not contain the reserved codegen prefix. A
+    Rust arm trained on transpiler output is a handicapped control, and
+    any Black Oxide advantage measured against it would be an artifact of
+    that handicap rather than a property of the language.
+
+    Returns ``{"ok": bool, "reasons": tuple[str, ...]}``. A failing pair is
+    discarded, never repaired: a task massaged into passing is a task the
+    language could not express, kept anyway.
+    """
+    reasons: list[str] = []
+
+    if OXIDE_PREFIX in rust_path.read_text(encoding="utf-8"):
+        reasons.append(
+            f"rust reference contains the reserved {OXIDE_PREFIX!r} prefix "
+            f"(SPEC section 22) -- transpiler output is not idiomatic Rust"
+        )
+
+    expected = task["expected_stdout"]
+    for arm, path in (("oxide", oxide_path), ("rust", rust_path)):
+        verdict = harness.run_file(arm, path, expected)
+        if not verdict["passed"]:
+            reasons.append(_failure_reason(arm, verdict, expected))
+
+    return {"ok": not reasons, "reasons": tuple(reasons)}

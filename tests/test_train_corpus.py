@@ -162,3 +162,32 @@ def test_validate_pair_rejects_an_oxide_reference_that_does_not_compile(tmp_path
     result = tc.validate_pair({"id": "n001", "expected_stdout": "3\n"}, ox, rs)
     assert result["ok"] is False
     assert any("oxide" in r for r in result["reasons"])
+
+
+# ------------------------------------------------- run-length derivation
+
+def test_sessions_per_run_derives_from_an_explicit_corpus():
+    """A 40-task training corpus is 120 sessions, not the eval corpus's 60.
+
+    Hardcoding 60 would make is_complete judge every amplification run
+    complete after 60 of its 120 cells, silently truncating the run and
+    reporting it as finished.
+    """
+    from eval import driver
+
+    assert driver.sessions_per_run(None) == driver.SESSIONS_PER_RUN
+    if not tc.TRAIN_TASKS_PATH.exists():
+        pytest.skip("training corpus not authored yet")
+    n_tasks = len(tc.load_train_tasks())
+    assert driver.sessions_per_run(tc.TRAIN_TASKS_PATH) == n_tasks * 3
+    assert driver.sessions_per_run(tc.TRAIN_TASKS_PATH) != driver.SESSIONS_PER_RUN
+
+
+def test_is_complete_honours_the_expected_count(tmp_path):
+    from eval import driver
+
+    run_dir = tmp_path / "run"
+    run_dir.mkdir()
+    (run_dir / "cells.jsonl").write_text("{}\n" * 60, encoding="utf-8")
+    assert driver.is_complete(run_dir, 60) is True
+    assert driver.is_complete(run_dir, 120) is False

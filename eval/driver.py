@@ -308,13 +308,27 @@ def make_arm_clients(
     return clients
 
 
-def is_complete(run_dir: Path) -> bool:
-    """A run is complete only with all 60 cell records on disk."""
+def sessions_per_run(tasks_path: Path | None = None) -> int:
+    """Cell records one complete run of ``tasks_path`` should leave on disk.
+
+    SESSIONS_PER_RUN pins this for the eval corpus (20 tasks x 3 arms).
+    An explicitly supplied corpus -- the training corpus is the reason
+    this exists -- is a different size, and hardcoding 60 would make
+    is_complete judge every one of its runs incomplete, so each resumed
+    run would silently redo work already on disk.
+    """
+    if tasks_path is None:
+        return SESSIONS_PER_RUN
+    return len(harness.load_tasks(tasks_path)) * len(harness.ARMS)
+
+
+def is_complete(run_dir: Path, expected: int = SESSIONS_PER_RUN) -> bool:
+    """A run is complete only with all ``expected`` cell records on disk."""
     cells = Path(run_dir) / "cells.jsonl"
     if not cells.exists():
         return False
     with open(cells, encoding="utf-8") as handle:
-        return sum(1 for line in handle if line.strip()) >= SESSIONS_PER_RUN
+        return sum(1 for line in handle if line.strip()) >= expected
 
 
 def reset_run(run_dir: Path) -> None:
@@ -357,13 +371,14 @@ def run_grid(
     completed: list[str] = []
     aborted: list[str] = []
     consecutive = 0
+    expected = sessions_per_run(tasks_path)
     for slug in slugs:
         clients = make_clients(slug)
         for shots in shot_counts:
             for seed in seeds:
                 run_id = build_run_id(slug, shots, seed, prefix=prefix)
                 run_dir = Path(results_root) / run_id
-                if is_complete(run_dir):
+                if is_complete(run_dir, expected):
                     continue
                 reset_run(run_dir)
                 exc = _run_grid_cell(
@@ -594,12 +609,25 @@ def _corpus_problems(tasks_path: Path | None = None) -> list[str]:
         return [f"task corpus does not load: {exc}"]
     if not tasks:
         return ["task corpus is empty"]
-    sessions = len(tasks) * len(harness.ARMS)
+    # The pinned-size check guards the EVAL corpus, and it guards it
+    # whatever corpus this particular run uses. Every published campaign
+    # ran 20 tasks x 3 arms = SESSIONS_PER_RUN records per cells.jsonl,
+    # and SESSIONS_PER_RUN is the documented length those runs are read
+    # against; a silent resize of eval/tasks.jsonl would strand them.
+    #
+    # It is deliberately NOT a check on `tasks`: an explicitly supplied
+    # corpus (the training corpus is why that exists) is a different size
+    # on purpose, and sessions_per_run derives the expected count for it.
+    try:
+        eval_tasks = harness.load_tasks()
+    except Exception as exc:
+        return [f"eval task corpus does not load: {exc}"]
+    sessions = len(eval_tasks) * len(harness.ARMS)
     if sessions != SESSIONS_PER_RUN:
         return [
-            f"corpus is {len(tasks)} tasks x {len(harness.ARMS)} arms = "
-            f"{sessions} sessions, but SESSIONS_PER_RUN is "
-            f"{SESSIONS_PER_RUN}; is_complete would mis-judge every run"
+            f"eval corpus is {len(eval_tasks)} tasks x {len(harness.ARMS)} "
+            f"arms = {sessions} sessions, but SESSIONS_PER_RUN is "
+            f"{SESSIONS_PER_RUN}; published campaigns are read against it"
         ]
     return []
 

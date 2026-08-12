@@ -1,0 +1,12 @@
+enum Shape { Square(Int), Circle(Int) }
+
+fn area(s: Shape) -> Int {
+    match s {
+        Square(side) => side * side,
+        Circle(r) => 3 * r * r,
+    }
+}
+
+fn main() {
+    print(area(Square(4)))
+}

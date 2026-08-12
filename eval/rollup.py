@@ -19,6 +19,7 @@ from eval.driver import (
     MODELS,
     build_run_id,
     is_complete,
+    sessions_per_run,
     parse_seeds,
     unknown_slugs,
 )
@@ -336,15 +337,25 @@ def aggregate(
     seeds: list[int],
     partial: bool = False,
     prefix: str = "6a",
+    tasks_path: Path | None = None,
 ) -> dict:
-    """Roll the grid up into points, one per (model, shots)."""
+    """Roll the grid up into points, one per (model, shots).
+
+    ``tasks_path`` sets how many cells a complete run has. It defaults to
+    the eval corpus's pinned length, so every published campaign rolls up
+    exactly as before; a root generated from a differently sized corpus
+    would otherwise read as complete at the wrong cell count.
+    """
     root = Path(results_root)
+    expected = sessions_per_run(tasks_path)
     missing = [
         build_run_id(slug, shots, seed, prefix=prefix)
         for slug in slugs
         for shots in shot_counts
         for seed in seeds
-        if not is_complete(root / build_run_id(slug, shots, seed, prefix=prefix))
+        if not is_complete(
+            root / build_run_id(slug, shots, seed, prefix=prefix), expected
+        )
     ]
     if missing and not partial:
         raise RuntimeError(

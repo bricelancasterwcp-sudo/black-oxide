@@ -9,6 +9,8 @@ see the boundary pair at the bottom, which pins NGRAM_WORDS from both
 sides.
 """
 
+import json
+
 import pytest
 
 from eval import train_corpus as tc
@@ -191,3 +193,126 @@ def test_is_complete_honours_the_expected_count(tmp_path):
     (run_dir / "cells.jsonl").write_text("{}\n" * 60, encoding="utf-8")
     assert driver.is_complete(run_dir, 60) is True
     assert driver.is_complete(run_dir, 120) is False
+
+
+# ------------------------------------------------ amplification collector
+
+def _write_triples(root, run, records):
+    d = root / run
+    d.mkdir(parents=True, exist_ok=True)
+    (d / "triples.jsonl").write_text(
+        "".join(json.dumps(r) + "\n" for r in records), encoding="utf-8")
+
+
+def test_collect_verified_keeps_only_passing_programs(tmp_path):
+    _write_triples(tmp_path, "r1", [
+        {"task": "n001", "arm": "oxide", "attempt": 1, "passed": True,
+         "code": "fn main() {\n    print(1)\n}\n"},
+        {"task": "n001", "arm": "oxide", "attempt": 2, "passed": False,
+         "code": "fn main() {\n    print(2)\n}\n"},
+    ])
+    got = tc.collect_verified(tmp_path)
+    assert set(got) == {("n001", "oxide")}
+    assert got[("n001", "oxide")] == {"fn main() {\n    print(1)\n}"}
+
+
+def test_collect_verified_deduplicates_on_normalised_source(tmp_path):
+    """Two passing programs differing only in trailing whitespace are one
+    program; counting them twice would inflate the yield endpoint."""
+    _write_triples(tmp_path, "r1", [
+        {"task": "n001", "arm": "oxide", "attempt": 1, "passed": True,
+         "code": "fn main() {\n    print(1)\n}\n"},
+        {"task": "n001", "arm": "oxide", "attempt": 1, "passed": True,
+         "code": "fn main() {\n    print(1)   \n}\n\n"},
+    ])
+    assert len(tc.collect_verified(tmp_path)[("n001", "oxide")]) == 1
+
+
+def test_collect_verified_separates_arms_and_tasks(tmp_path):
+    _write_triples(tmp_path, "r1", [
+        {"task": "n001", "arm": "oxide", "attempt": 1, "passed": True, "code": "a"},
+        {"task": "n001", "arm": "rust", "attempt": 1, "passed": True, "code": "a"},
+        {"task": "n002", "arm": "oxide", "attempt": 1, "passed": True, "code": "a"},
+    ])
+    got = tc.collect_verified(tmp_path)
+    assert set(got) == {("n001", "oxide"), ("n001", "rust"), ("n002", "oxide")}
+
+
+def test_collect_verified_excludes_the_explicit_arm_by_default(tmp_path):
+    """explicit is the eval's control dialect, not a training target."""
+    _write_triples(tmp_path, "r1", [
+        {"task": "n001", "arm": "explicit", "attempt": 1, "passed": True, "code": "a"},
+        {"task": "n001", "arm": "oxide", "attempt": 1, "passed": True, "code": "b"},
+    ])
+    assert set(tc.collect_verified(tmp_path)) == {("n001", "oxide")}
+
+
+def test_collect_verified_spans_run_directories(tmp_path):
+    """One seed is one run dir; the corpus is the union across all of them."""
+    _write_triples(tmp_path, "r1", [
+        {"task": "n001", "arm": "oxide", "attempt": 1, "passed": True, "code": "a"}])
+    _write_triples(tmp_path, "r2", [
+        {"task": "n001", "arm": "oxide", "attempt": 1, "passed": True, "code": "b"}])
+    assert len(tc.collect_verified(tmp_path)[("n001", "oxide")]) == 2
+
+
+def test_collect_verified_on_a_missing_root_is_empty(tmp_path):
+    assert tc.collect_verified(tmp_path / "nope") == {}
+
+
+# ------------------------------ analysis-path run-length (g0_report/rollup)
+
+def _cells(run_dir, n):
+    """n cell records shaped like a real one, cycling the three arms."""
+    run_dir.mkdir(parents=True, exist_ok=True)
+    arms = ("oxide", "explicit", "rust")
+    rows = [
+        {"arm": arms[i % 3], "task": f"t{i // 3 + 1:02d}", "attempts": 1,
+         "attempts_to_pass": 1, "context_exhausted": False,
+         "contract_compliant": [True], "final_passed": True,
+         "first_compiled": True, "first_passed": True, "ms": 10,
+         "tokens_in": 1, "tokens_out": 1, "truncated": [False]}
+        for i in range(n)
+    ]
+    (run_dir / "cells.jsonl").write_text(
+        "".join(json.dumps(r) + "\n" for r in rows), encoding="utf-8")
+
+
+def test_missing_runs_uses_the_corpus_run_length(tmp_path):
+    """A 40-task run is 120 cells. Judged against the eval corpus's pinned
+    60, a half-finished amplification run reads as complete and g0_report
+    would report a partial measurement as a finished one -- the exact
+    failure missing_runs exists to prevent.
+    """
+    from eval import g0_report
+    from eval.driver import build_run_id
+
+    run_id = build_run_id("qwen7b", 0, 1, prefix="ampq")
+    _cells(tmp_path / run_id, 60)
+
+    # Against the eval corpus's length this run is complete...
+    assert g0_report.missing_runs(tmp_path, ["qwen7b"], [1], "ampq") == []
+    # ...but against the 40-task corpus it is only half done.
+    assert g0_report.missing_runs(
+        tmp_path, ["qwen7b"], [1], "ampq", tasks_path=tc.TRAIN_TASKS_PATH
+    ) == [run_id]
+
+    _cells(tmp_path / run_id, 120)
+    assert g0_report.missing_runs(
+        tmp_path, ["qwen7b"], [1], "ampq", tasks_path=tc.TRAIN_TASKS_PATH
+    ) == []
+
+
+def test_rollup_aggregate_uses_the_corpus_run_length(tmp_path):
+    """Same latent bug as missing_runs, in the other analysis entry point."""
+    from eval import rollup
+    from eval.driver import build_run_id
+
+    run_id = build_run_id("qwen7b", 0, 1, prefix="ampq")
+    _cells(tmp_path / run_id, 60)
+    common = dict(slugs=["qwen7b"], shot_counts=[0], seeds=[1],
+                  partial=True, prefix="ampq")
+    assert rollup.aggregate(tmp_path, **common)["missing"] == []
+    assert rollup.aggregate(
+        tmp_path, tasks_path=tc.TRAIN_TASKS_PATH, **common
+    )["missing"] == [run_id]

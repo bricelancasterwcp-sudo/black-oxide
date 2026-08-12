@@ -10,6 +10,7 @@ Design: docs/superpowers/specs/2026-08-11-finetune-data-factory-design.md
 
 from __future__ import annotations
 
+import json
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -185,3 +186,40 @@ def validate_pair(task: dict, oxide_path: Path, rust_path: Path) -> dict:
             reasons.append(_failure_reason(arm, verdict, expected))
 
     return {"ok": not reasons, "reasons": tuple(reasons)}
+
+
+# ------------------------------------------------ amplification collector
+
+TRAINING_ARMS = ("oxide", "rust")
+
+
+def collect_verified(
+    results_root: Path,
+    arms: tuple[str, ...] = TRAINING_ARMS,
+) -> dict[tuple[str, str], set[str]]:
+    """Deduplicated passing programs per (task, arm) from an amplification run.
+
+    Deduplication is on normalised source. Within a single campaign roughly
+    84% of passing programs are already distinct, so this removes about a
+    sixth rather than the two-thirds a cross-campaign figure would suggest --
+    but it is not optional: counting cosmetic restatements separately would
+    inflate the per-task yield the pilot is scored on.
+
+    The explicit dialect is excluded by default. It is the eval's control
+    arm, not a training target, and it rides along in every run only
+    because ARMS is fixed.
+    """
+    found: dict[tuple[str, str], set[str]] = {}
+    root = Path(results_root)
+    if not root.exists():
+        return found
+    for path in sorted(root.rglob("triples.jsonl")):
+        for line in path.read_text(encoding="utf-8").splitlines():
+            if not line.strip():
+                continue
+            rec = json.loads(line)
+            if rec.get("passed") and rec.get("arm") in arms:
+                found.setdefault((rec["task"], rec["arm"]), set()).add(
+                    normalize_source(rec["code"])
+                )
+    return found

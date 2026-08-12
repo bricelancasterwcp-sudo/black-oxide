@@ -9,6 +9,7 @@ from pathlib import Path
 
 import pytest
 
+from eval import demand
 from eval.demand import builtin_self_definitions, scan_oxide_arm, unresolved_calls
 
 G0 = Path("eval/results/g0-generation-baseline/constrained")
@@ -95,3 +96,39 @@ def test_reproduces_the_g0_to_str_baseline():
     assert got["programs"] == 600
     assert got["self_definitions"]["to_str"] == 15
     assert got["self_definition_programs"]["to_str"] == 6
+
+# ------------------------------------------------- v0.4 deferred ledger
+
+def test_ledger_demand_finds_if_let():
+    got = demand.ledger_demand("fn main() {\n    if let Some(x) = get(v, 0) {\n        print(x)\n    }\n}")
+    assert got["if_let"] == 1
+
+
+def test_ledger_demand_finds_numeric_receiver_range():
+    """`2.to(n)` -- the range sugar that wore a conversion's name in g3."""
+    got = demand.ledger_demand("for i in 2.to(n) { print(i) }")
+    assert got["numeric_range_method"] == 1
+
+
+def test_ledger_demand_finds_index_assignment_and_unwrap_or():
+    src = "fn main() {\n    v.set(0, 9)\n    let x = unwrap_or(get(v, 1), 0)\n}"
+    got = demand.ledger_demand(src)
+    assert got["set"] == 1
+    assert got["unwrap_or"] == 1
+
+
+def test_ledger_demand_ignores_legal_field_access_and_builtin_receivers():
+    """v.len() and p.x are ordinary Black Oxide, not ledger demand.
+
+    Without this the numeric-receiver pattern would match every builtin
+    method call in the corpus and report the whole language as demand.
+    """
+    got = demand.ledger_demand("fn main() {\n    print(v.len())\n    print(p.x)\n    print(v.clone())\n}")
+    assert sum(got.values()) == 0
+
+
+def test_ledger_demand_does_not_count_a_self_defined_name():
+    """A program that defines its own unwrap_or is dossier-4 demand
+    (builtin reimplementation), not a missing-name demand."""
+    src = "fn unwrap_or(o: Option<Int>, d: Int) -> Int { d }\nfn main() { print(unwrap_or(None, 1)) }"
+    assert demand.ledger_demand(src)["unwrap_or"] == 0

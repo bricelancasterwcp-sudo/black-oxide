@@ -1,0 +1,82 @@
+fn main() {
+    let x = parse_int(read())?
+    print(x + 1)
+}
+
+fn read() -> Str {
+    let mut input = String.new()
+    std_input().read_line().unwrap_or_else(handle_read_error)
+    input.to_str()
+}
+
+fn handle_read_error() -> String {
+    print_str("bad")
+    std_exit(1)
+}
+
+fn std_input() -> StdInput {
+    std_io_stdio_stdin()
+}
+
+fn std_io_stdio_stdin() -> StdInput {
+    std_io_stdio_stdin_raw().ok_or_else(handle_read_error)
+}
+
+fn std_io_stdio_stdin_raw() -> Result<StdInput, Error> {
+    std_io_stdio_stdin_raw_no_panic().map_err(err_to_result)
+}
+
+fn std_io_stdio_stdin_raw_no_panic() -> Result<StdInput, Error> {
+    std_io_stdio_stdin_raw_no_panic_or_exit()
+}
+
+fn std_io_stdio_stdin_raw_no_panic_or_exit() -> Result<StdInput, Error> {
+    std_io_stdio_stdin_raw_no_panic().map_err(err_to_result_or_exit)
+}
+
+fn std_io_stdio_stdin_raw_no_panic() -> Result<StdInput, Error> {
+    unsafe_std_io_stdio_stdin_raw_no_panic()
+}
+
+fn unsafe_std_io_stdio_stdin_raw_no_panic() -> Result<StdInput, Error> {
+    unsafe_std_io_stdio_stdin_raw_no_panic_or_exit()
+}
+
+fn unsafe_std_io_stdio_stdin_raw_no_panic_or_exit() -> Result<StdInput, Error> {
+    unsafe_std_io_stdio_stdin_raw_no_panic_or_exit_impl()
+}
+
+fn unsafe_std_io_stdio_stdin_raw_no_panic_or_exit_impl() -> Result<StdInput, Error> {
+    unsafe_std_io_stdio_stdin_raw_no_panic_or_exit_impl_impl()
+}
+
+fn unsafe_std_io_stdio_stdin_raw_no_panic_or_exit_impl_impl() -> Result<StdInput, Error> {
+    unsafe_std_io_stdio_stdin_raw_no_panic_or_exit_impl_impl_impl()
+}
+
+fn unsafe_std_io_stdio_stdin_raw_no_panic_or_exit_impl_impl_impl() -> Result<StdInput, Error> {
+    unsafe_std_io_stdio_stdin_raw_no_panic_or_exit_impl_impl_impl_impl()
+}
+
+fn unsafe_std_io_stdio_stdin_raw_no_panic_or_exit_impl_impl_impl_impl() -> Result<StdInput, Error> {
+    unsafe_std_io_stdio_stdin_raw_no_panic_or_exit_impl_impl_impl_impl_impl()
+}
+
+fn unsafe_std_io_stdio_stdin_raw_no_panic_or_exit_impl_impl_impl_impl_impl() -> Result<StdInput, Error> {
+    unsafe_std_io_stdio_stdin_raw_no_panic_or_exit_impl_impl_impl_impl_impl_impl_impl()
+}
+
+fn unsafe_std_io_stdio_stdin_raw_no_panic_or_exit_impl_impl_impl_impl_impl_impl() -> Result<StdInput, Error> {
+    unsafe_std_io_stdio_stdin_raw_no_panic_or_exit_impl_impl_impl_impl_impl_impl_impl_impl_impl()
+}
+
+fn unsafe_std_io_stdio_stdin_raw_no_panic_or_exit_impl_impl_impl_impl_impl_impl_impl_impl_impl() -> Result<StdInput, Error> {
+    unsafe_std_io_stdio_stdin_raw_no_panic_or_exit_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl()
+}
+
+fn unsafe_std_io_stdio_stdin_raw_no_panic_or_exit_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl() -> Result<StdInput, Error> {
+    unsafe_std_io_stdio_stdin_raw_no_panic_or_exit_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl()
+}
+
+fn unsafe_std_io_stdio_stdin_raw_no_panic_or_exit_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl() -> Result<StdInput, Error> {
+    unsafe_std_io_stdio_stdin_raw_no_panic_or_exit_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_impl_

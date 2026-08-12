@@ -1,0 +1,9 @@
+fn area(width: Int, height: Int) -> Int {
+    width * height
+}
+
+fn main() {
+    let mut r = (2 + 3) * 2
+    r = 5 * r
+    print(area(r, 3))
+}

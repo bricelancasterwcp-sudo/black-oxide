@@ -1,0 +1,7 @@
+struct Reading { label: Str, values: Vec<Int> }
+
+fn main() {
+    let mut r = Reading { label: "sensor", values: vec() }
+    r.values.push(7)
+    print(r.values.pop().unwrap())
+}

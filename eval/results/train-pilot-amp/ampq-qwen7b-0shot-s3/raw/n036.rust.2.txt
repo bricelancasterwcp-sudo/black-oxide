@@ -1,0 +1,6 @@
+fn main() {
+    let items1 = 4 * 3;
+    let items2 = 5 * 2;
+    let total_value = items1 + items2;
+    println!("Total value held: {}", total_value);
+}

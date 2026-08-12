@@ -1,0 +1,15 @@
+fn count_a(input: &Str) -> Int {
+    let mut count = 0
+    for c in chars(input) {
+        if c == &str_len {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn main() {
+    let word = "banana"
+    print(count_a(&word))
+    drop word
+}

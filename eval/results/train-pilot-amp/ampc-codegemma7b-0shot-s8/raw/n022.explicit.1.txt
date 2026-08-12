@@ -1,0 +1,54 @@
+fn main() {
+    let oxide_black = oxide("black")
+    print(oxide_black)
+}
+
+fn oxide(s: &Str) -> Str {
+    let mut oxide = String.new()
+    oxide.push_str("oxide")
+    oxide.push_str(s)
+    oxide
+}
+
+fn print(s: Str) {
+    let _ = s
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    let mut vec = v
+    vec.push(x)
+    vec
+}
+
+fn str(s: &Vec<Str>) -> Str {
+    let mut str = String.new()
+    for x in s {
+        str.push_str(x)
+    }
+    str
+}
+
+fn new() -> Vec<Str> {
+    let mut vec = Vec.new()
+    vec
+}
+
+fn length(s: &Vec<Str>) -> Int {
+    let mut length = 0
+    for _ in s {
+        length = length + 1
+    }
+    length
+}
+
+fn get(v: &Vec<Str>, i: Int) -> Option<Str> {
+    if i >= length(v) {
+        None
+    } else {
+        Some(v.get(i).unwrap())
+    }
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut vec = Vec.new()
+    for i in a + 1 - 1.to_int() - 1.to_int() + 1.to_int() + 1.to_int() + 1.to_int() - 1.to_int() + 1.to_int() + 1.to_int() + 1.to_int() - 1.to_int() + 1.to_int() + 1.to_int() + 1.to_int() - 1.to_int() + 1.to_int() + 1.to_int() + 1.to_int() - 1.to_int() + 1.to_int() + 1.to_int() + 1.to_int() - 1.to_int() + 1.to_int() + 1.to_int() + 1.to_int() - 1.to_int() + 1.to_int() + 1.to_int() + 1.to_int() - 1.to_int() + 1.to_int() + 1.to_int() + 1.to_int() - 1.to_int() + 1.to_int() + 1.to_int() + 1.to_int() - 1.to_int() + 1.to_int() + 1.to_int() + 1.to_int() - 1.to_int() + 1.to_int() + 1.to_int() + 1.to_int() - 1.to_int() + 1.to_int() + 1.to_int() + 1.to_int() - 1.to_int() + 1.to_int() + 1.to_int() + 1.to_int() - 1.to_int() + 1.to_int() + 1.to_int() + 1.to_int() - 1.to_int() + 1.to_int() + 1.to_int() + 1.to_int() - 1.to_int() + 1.to_int() + 1.to_int() + 1.to_int() - 1.to_int() + 1.to_int() + 1.to_int() + 1.to_int() - 1.to_int() + 1.to_int() + 1.to_int() + 1.to_int() - 1.to_int() + 1.to_int() + 1.to_int() + 1.to_int() - 1.to_int() + 1.to_int() + 1.to_int() + 1.to_int() - 1.to_int() + 1.to_int() + 1.to_int() + 1.to_int() - 1.to_int() + 1.to_int() + 1.to_int() + 1.to_int() - 1.to_int() + 1.to_int() + 1.to_int() + 1.to_int() - 1.to_int() + 1.to_int() + 1.to_int() + 1.to_int() - 1.to_int() + 1.to_int() + 1.to_int() + 1.to_int() - 1.to_int() + 1.to_int() + 1.to_int() + 1.to_int() - 1.to_int() + 1.to_int() + 1.to_int() + 1.to_int() - 1.to_int() + 1.to_int() + 1.to_int() + 1.to_int() - 1.to_int() + 1.to_int() + 1.to_int() + 1.to_int() - 1.to_int() + 1.to_int() + 1.to_int() + 1.to_int() - 1.to_int() + 1.to_int() + 1.to_int() + 1.to_int() - 1.to_int() + 1.to_int() + 1.to_int() + 1.to_int() - 1.to_int() + 1.to_int() + 1.to_int() + 1.to_int() - 1.to_int() + 1.to_int() + 1.to_int() + 1.to_int() - 1.to_int() + 1.to_int() + 1.to_int() + 1.to_int() - 1.to_int() + 1.to_int() + 1.to_int() + 1.to_int() - 1.to_int() + 1.to_int() + 1.to_int() + 1.to_int() - 1.to_int() + 1.to_int() + 1.to_int() + 1.to_int() - 1.to_int() + 1.to_int() + 1.to_int() + 1.to_int() - 1.to_int() + 1.to_int() + 1.to_int() + 1.to_int() - 1.to_int() + 1.to_int() + 1.to_int() + 1.to_int() - 1.to_int() + 1.to_int() + 1.to_int() + 1.to_int() - 1.to_int() + 1.to_int() + 1.to_int() + 1.to_int() - 1.to_int() + 1.to_int() + 1.to_int() + 1.to_int() - 1.to_int() + 1.to_int() + 1.to_int() + 1.to_int() - 1.to_int() + 1.to_int() + 1.to_int() + 1.to_int() - 1.to_int() + 1.to_int() + 1.to_int() + 1.to_int() - 1.to_int() + 1.to_int() + 1.to_int() + 1.to_int() - 1.to_int() + 1.to_int() + 1.to_int() + 1.to_int() - 1.to_int() + 1.to_int() + 1.to_int() + 1.to_int() - 1.to_int() + 1.to_int() + 1.to_int() + 1.to_int() - 1.to_int() + 1.to_int() + 1.to_int() + 1.to_int() - 1.to_int() + 1.to_int() + 1.to_int() + 1.

@@ -1,0 +1,263 @@
+fn count_vowels(word: &Str) -> Int {
+    let vowels = "aeiouAEIOU".to_string().chars().collect()
+    let mut count = 0
+    for c in word.chars() {
+        if vowels.contains(&c) {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn main() {
+    let words = vec("hello", "world", "rust")
+    let mut total_vowels = 0
+    for word in &words {
+        total_vowels = total_vowels + count_vowels(word)
+    }
+    print(total_vowels)
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut result = v
+    result.push(x)
+    result
+}
+
+fn print(x: Int) {
+    let s = int_to_str(x)
+    print_str(&s)
+}
+
+fn print_str(s: &Str) {
+    for c in s.chars() {
+        print_char(c)
+    }
+}
+
+fn print_char(c: Char) {
+    let mut buf = Vec { buf: vec_u8(32) }
+    push(buf.buf, c)
+    push(buf.buf, 0)
+    write(&buf)
+}
+
+fn write(buf: &Vec<U8>) {
+    unsafe
+    print_string_raw(buf.as_ptr())
+}
+
+fn print_string_raw(ptr: UnsafePointer<U8>) {
+    let mut pos = 0
+    while ptr.offset(pos) != 0 {
+        print_char(unsafe && ptr.offset(pos))
+        pos = pos + 1
+    }
+}
+
+fn int_to_str(mut: Int) -> Str {
+    let mut result = String { s: vec_u8(32) }
+    let mut digits = "0123456789"
+    let mut current = mut % 10
+    mut = mut / 10
+    while mut > 0 {
+        result.push(digits.chars().nth(current).unwrap())
+        mut = mut / 10
+        current = mut % 10
+    }
+    result.push(digits.chars().nth(current).unwrap())
+    let mut start = 0
+    let mut end = result.len() - 1
+    while start < end {
+        let tmp = result.chars().nth(start).unwrap()
+        result.chars_mut().nth(start).unwrap() == result.chars().nth(end).unwrap()
+        result.chars_mut().nth(end).unwrap() == tmp
+        start = start + 1
+        end = end - 1
+    }
+    result.to_string()
+}
+
+fn to_string(mut: Int) -> Str {
+    let mut result = String { s: vec_u8(32) }
+    let mut digits = "0123456789"
+    let mut current = mut % 10
+    mut = mut / 10
+    while mut > 0 {
+        result.push(digits.chars().nth(current).unwrap())
+        mut = mut / 10
+        current = mut % 10
+    }
+    result.push(digits.chars().nth(current).unwrap())
+    let mut start = 0
+    let mut end = result.len() - 1
+    while start < end {
+        let tmp = result.chars().nth(start).unwrap()
+        result.chars_mut().nth(start).unwrap() == result.chars().nth(end).unwrap()
+        result.chars_mut().nth(end).unwrap() == tmp
+        start = start + 1
+        end = end - 1
+    }
+    result.to_string()
+}
+
+fn clone(x: &Int) -> Int {
+    let mut result = 0
+    result = x
+    result
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    if i >= v.len() {
+        None
+    } else {
+        Some(v.get(i).unwrap())
+    }
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec_int(b - a)
+    let mut i = a
+    while i < b {
+        result.push(i)
+        i = i + 1
+    }
+    result
+}
+
+fn vec_u8(size: Int) -> Vec<U8> {
+    let mut result = vec_int(size)
+    for i in 0.0.to_int() {
+        result.push(0)
+    }
+    result
+}
+
+fn vec_int(size: Int) -> Vec<Int> {
+    let mut result = vec_u8(size)
+    for i in 0.0.to_int() {
+        result.push(i)
+    }
+    result
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut result = vec_str(s.len())
+    let mut i = 0
+    for c in s.chars() {
+        result.push(to_string(i))
+        i = i + 1
+    }
+    result
+}
+
+fn vec_str(size: Int) -> Vec<Str> {
+    let mut result = vec_int(size)
+    for i in 0.0.to_int() {
+        result.push(to_string(i))
+    }
+    result
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    let mut result = a.to_string() + b.to_string()
+    result
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    let mut result = 0
+    let mut multiplier = 1
+    let mut found_digit = false
+    for c in s.chars().rev() {
+        if c >= "0".chars().nth(0).unwrap() && c <= "9".chars().nth(0).unwrap() {
+            result = result + multiplier * (c - "0".chars().nth(0).unwrap())
+            multiplier = multiplier * 10
+            found_digit = true
+        } else if c == "-" {
+            if found_digit {
+                return None
+            } else {
+                multiplier = -1
+            }
+        } else {
+            if found_digit {
+                return None
+            } else {
+                continue
+            }
+        }
+    }
+    Some(result)
+}
+
+fn main() {
+    let words = vec("hello", "world", "rust")
+    let mut total_vowels = 0
+    for word in &words {
+        total_vowels = total_vowels + count_vowels(word)
+    }
+    print(total_vowels)
+}
+
+fn drop_vec(v: &Vec<Int>) {
+    for i in 0.0.to_int() {
+        drop v
+    }
+}
+
+fn drop_str(s: &Str) {
+    for i in 0.0.to_int() {
+        drop s
+    }
+}
+
+fn drop_char(c: &Char) {
+    for i in 0.0.to_int() {
+        drop c
+    }
+}
+
+fn drop_int(i: &Int) {
+    for i in 0.0.to_int() {
+        drop i
+    }
+}
+
+fn drop_option(o: &Option<Int>) {
+    for i in 0.0.to_int() {
+        drop o
+    }
+}
+
+fn drop_result(r: &Result<Int, Int>) {
+    for i in 0.0.to_int() {
+        drop r
+    }
+}
+
+fn drop_vec_u8(v: &Vec<U8>) {
+    for i in 0.0.to_int() {
+        drop v
+    }
+}
+
+fn drop_vec_str(v: &Vec<Str>) {
+    for i in 0.0.to_int() {
+        drop v
+    }
+}
+
+fn drop_string(s: &String) {
+    for i in 0.0.to_int() {
+        drop s
+    }
+}
+
+fn drop_unsafe_pointer(p: &UnsafePointer<U8>) {
+    for i in 0.0.to_int() {
+        drop p
+    }
+}
+
+fn drop_tuple(t: &Tuple) {
+    for i in 0

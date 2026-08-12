@@ -1,0 +1,11 @@
+fn main() {
+    let mut n = 100
+    let mut max_power = 1
+    while n >= 2 {
+        if n % 2 == 0 {
+            max_power = n
+        }
+        n = n / 2
+    }
+    print(max_power)
+}

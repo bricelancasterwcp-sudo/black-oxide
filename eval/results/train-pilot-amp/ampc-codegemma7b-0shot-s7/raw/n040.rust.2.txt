@@ -1,0 +1,6 @@
+fn main() {
+    let a = 4;
+    let pi = std::f64::consts::PI;
+    let area = a * a;
+    println!("Area of square: {}", area);
+}

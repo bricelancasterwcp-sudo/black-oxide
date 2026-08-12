@@ -1,0 +1,10 @@
+fn main() {
+    let set = [5, 3, 9, 1, 7];
+    let mut min = set[0];
+    for &x in &set[1..] {
+        if x < min {
+            min = x;
+        }
+    }
+    println!("{}", min);
+}

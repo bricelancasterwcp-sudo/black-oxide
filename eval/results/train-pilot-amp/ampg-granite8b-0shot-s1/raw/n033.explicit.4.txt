@@ -1,0 +1,41 @@
+fn go(s: String) -> String {
+    "green"
+}
+
+fn wait(s: &String) -> String {
+    "yellow"
+}
+
+fn stop(s: String) -> String {
+    "red"
+}
+
+fn main() {
+    let light = "green"
+    print(go(light))
+    let light = wait(&light)
+    print(light)
+    let light = stop(light)
+    print(light)
+}
+
+fn go(s: String) -> String {
+    "green"
+}
+
+fn wait(s: &String) -> String {
+    "yellow"
+}
+
+fn stop(s: String) -> String {
+    "red"
+}
+
+fn main() {
+    let light = "green"
+    print(go(light))
+    let light = wait(&light)
+    print(light)
+    let light = stop(light)
+    print(light)
+}

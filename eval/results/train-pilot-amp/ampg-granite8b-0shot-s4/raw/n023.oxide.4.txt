@@ -1,0 +1,9 @@
+struct Phrase { s: Str }
+
+fn len(p: Phrase) -> Int {
+    str_len(p.s)
+}
+
+fn main() {
+    print(len(Phrase { s: "hello world" }))
+}

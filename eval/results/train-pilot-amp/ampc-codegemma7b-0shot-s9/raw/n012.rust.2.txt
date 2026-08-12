@@ -1,0 +1,9 @@
+fn main() {
+    let mut numbers = Vec::new();
+
+    for i in 0..15 {
+        numbers.push(i);
+    }
+
+    println!("The list holds {} items.", numbers.len());
+}

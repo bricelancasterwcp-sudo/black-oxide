@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let sum: i32 = (1..=10)
+        .filter(|&x| x % 3 == 0)
+        .sum();
+    println!("{}", sum);
+}
+```

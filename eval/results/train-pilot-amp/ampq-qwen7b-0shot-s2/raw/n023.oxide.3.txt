@@ -1,0 +1,10 @@
+struct StringWrapper { s: Str }
+
+fn str_len(s: Str) -> Int {
+    s.len()
+}
+
+fn main() {
+    let phrase = StringWrapper { s: "hello world" }
+    print(str_len(phrase.s))
+}

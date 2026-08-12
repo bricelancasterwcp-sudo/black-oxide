@@ -1,0 +1,11 @@
+fn get_second(xs: Vec<Int>) -> Option<Int> {
+    let mut iter = xs.iter()
+    iter.next() // consume first
+    iter.next() // return second
+}
+
+fn main() {
+    print(get_second(vec(7, 8, 9)))
+    print(get_second(vec(7, 8)))
+    print(get_second(vec()))
+}

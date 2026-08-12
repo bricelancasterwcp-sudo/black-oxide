@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let mut list = [1, 2];
+
+    match list.get(5) {
+        None => println!("none"),
+        Some(x) => println!("{}", x),
+    }
+}
+```

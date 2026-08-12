@@ -1,0 +1,11 @@
+struct String {
+    data: Vec<Char>,
+}
+
+fn len(s: String) -> Int {
+    len(s.data)
+}
+
+fn main() {
+    print(len(String { data: vec_append(vec_append(vec_append(vec(), from_char("h")), from_char("e")), vec_append(vec_append(from_char("l"), from_char("l")), from_char("o"))) }))
+}

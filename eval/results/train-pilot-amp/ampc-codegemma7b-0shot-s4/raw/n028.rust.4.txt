@@ -1,0 +1,17 @@
+use std::io::{stdin, ErrorKind};
+
+fn main() {
+    let mut s = String::new();
+    stdin().read_line(&mut s).expect("Failed to read line");
+
+    let num: u32 = s.trim().parse().unwrap_or_else(|_| {
+        if let Some(e) = s.trim().parse::<u32>().err() {
+            if e == ParseIntError::InvalidInput {
+                panic!("abc does not hold a number");
+            }
+        }
+        panic!("Failed to parse number");
+    });
+
+    println!("Number: {}", num);
+}

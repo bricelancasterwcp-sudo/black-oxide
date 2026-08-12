@@ -1,0 +1,13 @@
+fn get_value(v: &Vec<Int>, i: Int) -> Option<Int> {
+    get(&v, i)
+}
+
+fn main() {
+    let nums = push(push(push(push(vec(), 10), 20), 30), 40)
+    let value = get_value(&nums, 2)
+    match value {
+        Some(val) => print(val),
+        None => print_str("missing"),
+    }
+    drop nums
+}

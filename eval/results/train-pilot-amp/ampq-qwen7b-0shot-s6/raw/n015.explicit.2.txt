@@ -1,0 +1,15 @@
+fn count_larger_than(v: &Vec<Int>, threshold: Int) -> Int {
+    let count = 0
+    for x in &v {
+        if x > threshold {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn main() {
+    let nums = push(push(vec(), 5), 3)
+    let result = count_larger_than(&nums, 4)
+    print(result)
+}

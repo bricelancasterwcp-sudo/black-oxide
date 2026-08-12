@@ -1,0 +1,9 @@
+fn print_char(c: Char) {
+    print(str_slice(c))
+}
+
+fn main() {
+    print_char("c" + 1)
+    print_char("a" + 2)
+    print_char("t" + 3)
+}

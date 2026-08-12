@@ -1,0 +1,22 @@
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    let len = len(&v)
+    if i < 0 || i >= len {
+        return None
+    }
+    return Some(get_raw(&v, i))
+}
+
+fn get_raw(v: &Vec<Int>, i: Int) -> Int {
+    let x = &v
+    drop v
+    let x = &x
+    drop x
+    return &x
+}
+
+fn main() {
+    let v = vec()
+    let v = push(push(v, 1), 2)
+    let v = push(v, 3)
+    drop v
+}

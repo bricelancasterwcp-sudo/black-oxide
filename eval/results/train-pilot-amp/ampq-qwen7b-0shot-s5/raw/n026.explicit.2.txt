@@ -1,0 +1,25 @@
+fn to_str(n: Int) -> Str {
+    if n < 10 {
+        match n {
+            X => "0",
+            Y => "1",
+            Z => "2",
+            AX => "3",
+            BX => "4",
+            CX => "5",
+            DX => "6",
+            EX => "7",
+            FX => "8",
+            GX => "9",
+        }
+    } else {
+        concat(to_str(n / 10), to_str(n % 10))
+    }
+}
+
+fn main() {
+    let num_text = to_str(2026)
+    print_str(num_text)
+    let len = str_len(num_text)
+    print(len)
+}

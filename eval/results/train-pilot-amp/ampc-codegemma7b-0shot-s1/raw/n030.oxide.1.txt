@@ -1,0 +1,14 @@
+fn count_vowels(seq: Str) -> Int {
+    let mut count = 0
+    for c in seq.chars() {
+        if "aeiouAEIOU".contains(c) {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn main() {
+    let word_sequence = "The quick brown fox jumps over the lazy dog".to_str()
+    print(count_vowels(word_sequence))
+}

@@ -1,0 +1,398 @@
+fn main() {
+    let mut multiples = vec()
+    for i in range(1, 7) {
+        multiples = push(multiples, i * 4)
+    }
+    let total = fold(multiples, 0, add)
+    print(total)
+}
+
+fn fold(vec: Vec<Int>, init: Int, f: Fn<Int, Int, Int>) -> Int {
+    let mut acc = init
+    for x in vec {
+        acc = f(acc, x, 0)
+    }
+    acc
+}
+
+fn add(a: Int, b: Int, _: Int) -> Int {
+    a + b
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in a.range(b) {
+        result = push(result, i)
+    }
+    result
+}
+
+fn push(vec: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut new_vec = vec
+    new_vec.push(x)
+    new_vec
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in a.range(b) {
+        result = push(result, i)
+    }
+    result
+}
+
+fn push(vec: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut new_vec = vec
+    new_vec.push(x)
+    new_vec
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in a.range(b) {
+        result = push(result, i)
+    }
+    result
+}
+
+fn push(vec: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut new_vec = vec
+    new_vec.push(x)
+    new_vec
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in a.range(b) {
+        result = push(result, i)
+    }
+    result
+}
+
+fn push(vec: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut new_vec = vec
+    new_vec.push(x)
+    new_vec
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in a.range(b) {
+        result = push(result, i)
+    }
+    result
+}
+
+fn push(vec: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut new_vec = vec
+    new_vec.push(x)
+    new_vec
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in a.range(b) {
+        result = push(result, i)
+    }
+    result
+}
+
+fn push(vec: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut new_vec = vec
+    new_vec.push(x)
+    new_vec
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in a.range(b) {
+        result = push(result, i)
+    }
+    result
+}
+
+fn push(vec: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut new_vec = vec
+    new_vec.push(x)
+    new_vec
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in a.range(b) {
+        result = push(result, i)
+    }
+    result
+}
+
+fn push(vec: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut new_vec = vec
+    new_vec.push(x)
+    new_vec
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in a.range(b) {
+        result = push(result, i)
+    }
+    result
+}
+
+fn push(vec: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut new_vec = vec
+    new_vec.push(x)
+    new_vec
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in a.range(b) {
+        result = push(result, i)
+    }
+    result
+}
+
+fn push(vec: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut new_vec = vec
+    new_vec.push(x)
+    new_vec
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in a.range(b) {
+        result = push(result, i)
+    }
+    result
+}
+
+fn push(vec: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut new_vec = vec
+    new_vec.push(x)
+    new_vec
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in a.range(b) {
+        result = push(result, i)
+    }
+    result
+}
+
+fn push(vec: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut new_vec = vec
+    new_vec.push(x)
+    new_vec
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in a.range(b) {
+        result = push(result, i)
+    }
+    result
+}
+
+fn push(vec: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut new_vec = vec
+    new_vec.push(x)
+    new_vec
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in a.range(b) {
+        result = push(result, i)
+    }
+    result
+}
+
+fn push(vec: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut new_vec = vec
+    new_vec.push(x)
+    new_vec
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in a.range(b) {
+        result = push(result, i)
+    }
+    result
+}
+
+fn push(vec: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut new_vec = vec
+    new_vec.push(x)
+    new_vec
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in a.range(b) {
+        result = push(result, i)
+    }
+    result
+}
+
+fn push(vec: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut new_vec = vec
+    new_vec.push(x)
+    new_vec
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in a.range(b) {
+        result = push(result, i)
+    }
+    result
+}
+
+fn push(vec: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut new_vec = vec
+    new_vec.push(x)
+    new_vec
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in a

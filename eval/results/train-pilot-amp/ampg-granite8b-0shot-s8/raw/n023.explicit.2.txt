@@ -1,0 +1,8 @@
+fn main() {
+    let phrase = "hello world"
+    let mut len = 0
+    for c in phrase {
+        len = len + 1
+    }
+    print(len)
+}

@@ -1,0 +1,4 @@
+fn main() {
+    let blackoxide = oxide("black") + oxide("oxide")
+    print(blackoxide)
+}

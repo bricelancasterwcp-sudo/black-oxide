@@ -1,0 +1,7 @@
+fn main() {
+    let word = "cat"
+    for c in &charsword {
+        print_str(&c)
+    }
+    drop word
+}

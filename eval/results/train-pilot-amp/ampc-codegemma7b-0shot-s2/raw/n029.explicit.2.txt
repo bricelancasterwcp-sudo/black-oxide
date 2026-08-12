@@ -1,0 +1,8 @@
+fn main() {
+    print(1)
+    drop umber
+    print(2)
+    drop umber
+    print(3)
+    drop umber
+}

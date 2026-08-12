@@ -1,0 +1,6 @@
+const S: [i32; 5] = [1, 2, 3, 4, 5];
+
+fn main() {
+    let count = S.iter().filter(|&n| n > &4).count();
+    println!("{}", count);
+}

@@ -1,0 +1,180 @@
+struct Str { data: Vec<Str> }
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut result = a.data.clone() + b.data.clone() + vec(vec(Str { data: vec(vec(Str { data: vec(vec(Str { data: vec() })) })) }))
+    Str(result)
+}
+
+fn main() {
+    let black = Str { data: vec(vec(Str { data: vec(vec(Str { data: vec() })) })) }
+    let oxide = Str { data: vec(vec(Str { data: vec(vec(Str { data: vec() })) })) }
+    let result = concat(black, oxide)
+    let result_str = concat(Str { data: vec(vec(Str { data: vec(vec(Str { data: vec("black") })) })) }, Str { data: vec(vec(Str { data: vec(vec(Str { data: vec("oxide") })) })) })
+    print_str(result_str.data.iter().map(oxide_str_to_string).collect())
+}
+
+fn oxide_str_to_string(s: Str) -> String {
+    s.data.iter().map(oxide_str_to_string).collect()
+}
+
+fn print_str(s: Str) {
+    println(oxide_str_to_string(s))
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut result = a.data.clone() + b.data.clone() + vec(vec(Str { data: vec(vec(Str { data: vec(vec(Str { data: vec() })) })) }))
+    Str(result)
+}
+
+fn main() {
+    let black = Str { data: vec(vec(Str { data: vec(vec(Str { data: vec() })) })) }
+    let oxide = Str { data: vec(vec(Str { data: vec(vec(Str { data: vec() })) })) }
+    let result = concat(black, oxide)
+    let result_str = concat(Str { data: vec(vec(Str { data: vec(vec(Str { data: vec("black") })) })) }, Str { data: vec(vec(Str { data: vec(vec(Str { data: vec("oxide") })) })) })
+    print_str(result_str.data.iter().map(oxide_str_to_string).collect())
+}
+
+fn oxide_str_to_string(s: Str) -> String {
+    s.data.iter().map(oxide_str_to_string).collect()
+}
+
+fn print_str(s: Str) {
+    println(oxide_str_to_string(s))
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut result = a.data.clone() + b.data.clone() + vec(vec(Str { data: vec(vec(Str { data: vec(vec(Str { data: vec() })) })) }))
+    Str(result)
+}
+
+fn main() {
+    let black = Str { data: vec(vec(Str { data: vec(vec(Str { data: vec() })) })) }
+    let oxide = Str { data: vec(vec(Str { data: vec(vec(Str { data: vec() })) })) }
+    let result = concat(black, oxide)
+    let result_str = concat(Str { data: vec(vec(Str { data: vec(vec(Str { data: vec("black") })) })) }, Str { data: vec(vec(Str { data: vec(vec(Str { data: vec("oxide") })) })) })
+    print_str(result_str.data.iter().map(oxide_str_to_string).collect())
+}
+
+fn oxide_str_to_string(s: Str) -> String {
+    s.data.iter().map(oxide_str_to_string).collect()
+}
+
+fn print_str(s: Str) {
+    println(oxide_str_to_string(s))
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut result = a.data.clone() + b.data.clone() + vec(vec(Str { data: vec(vec(Str { data: vec(vec(Str { data: vec() })) })) }))
+    Str(result)
+}
+
+fn main() {
+    let black = Str { data: vec(vec(Str { data: vec(vec(Str { data: vec() })) })) }
+    let oxide = Str { data: vec(vec(Str { data: vec(vec(Str { data: vec() })) })) }
+    let result = concat(black, oxide)
+    let result_str = concat(Str { data: vec(vec(Str { data: vec(vec(Str { data: vec("black") })) })) }, Str { data: vec(vec(Str { data: vec(vec(Str { data: vec("oxide") })) })) })
+    print_str(result_str.data.iter().map(oxide_str_to_string).collect())
+}
+
+fn oxide_str_to_string(s: Str) -> String {
+    s.data.iter().map(oxide_str_to_string).collect()
+}
+
+fn print_str(s: Str) {
+    println(oxide_str_to_string(s))
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut result = a.data.clone() + b.data.clone() + vec(vec(Str { data: vec(vec(Str { data: vec(vec(Str { data: vec() })) })) }))
+    Str(result)
+}
+
+fn main() {
+    let black = Str { data: vec(vec(Str { data: vec(vec(Str { data: vec() })) })) }
+    let oxide = Str { data: vec(vec(Str { data: vec(vec(Str { data: vec() })) })) }
+    let result = concat(black, oxide)
+    let result_str = concat(Str { data: vec(vec(Str { data: vec(vec(Str { data: vec("black") })) })) }, Str { data: vec(vec(Str { data: vec(vec(Str { data: vec("oxide") })) })) })
+    print_str(result_str.data.iter().map(oxide_str_to_string).collect())
+}
+
+fn oxide_str_to_string(s: Str) -> String {
+    s.data.iter().map(oxide_str_to_string).collect()
+}
+
+fn print_str(s: Str) {
+    println(oxide_str_to_string(s))
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut result = a.data.clone() + b.data.clone() + vec(vec(Str { data: vec(vec(Str { data: vec(vec(Str { data: vec() })) })) }))
+    Str(result)
+}
+
+fn main() {
+    let black = Str { data: vec(vec(Str { data: vec(vec(Str { data: vec() })) })) }
+    let oxide = Str { data: vec(vec(Str { data: vec(vec(Str { data: vec() })) })) }
+    let result = concat(black, oxide)
+    let result_str = concat(Str { data: vec(vec(Str { data: vec(vec(Str { data: vec("black") })) })) }, Str { data: vec(vec(Str { data: vec(vec(Str { data: vec("oxide") })) })) })
+    print_str(result_str.data.iter().map(oxide_str_to_string).collect())
+}
+
+fn oxide_str_to_string(s: Str) -> String {
+    s.data.iter().map(oxide_str_to_string).collect()
+}
+
+fn print_str(s: Str) {
+    println(oxide_str_to_string(s))
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut result = a.data.clone() + b.data.clone() + vec(vec(Str { data: vec(vec(Str { data: vec(vec(Str { data: vec() })) })) }))
+    Str(result)
+}
+
+fn main() {
+    let black = Str { data: vec(vec(Str { data: vec(vec(Str { data: vec() })) })) }
+    let oxide = Str { data: vec(vec(Str { data: vec(vec(Str { data: vec() })) })) }
+    let result = concat(black, oxide)
+    let result_str = concat(Str { data: vec(vec(Str { data: vec(vec(Str { data: vec("black") })) })) }, Str { data: vec(vec(Str { data: vec(vec(Str { data: vec("oxide") })) })) })
+    print_str(result_str.data.iter().map(oxide_str_to_string).collect())
+}
+
+fn oxide_str_to_string(s: Str) -> String {
+    s.data.iter().map(oxide_str_to_string).collect()
+}
+
+fn print_str(s: Str) {
+    println(oxide_str_to_string(s))
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut result = a.data.clone() + b.data.clone() + vec(vec(Str { data: vec(vec(Str { data: vec(vec(Str { data: vec() })) })) }))
+    Str(result)
+}
+
+fn main() {
+    let black = Str { data: vec(vec(Str { data: vec(vec(Str { data: vec() })) })) }
+    let oxide = Str { data: vec(vec(Str { data: vec(vec(Str { data: vec() })) })) }
+    let result = concat(black, oxide)
+    let result_str = concat(Str { data: vec(vec(Str { data: vec(vec(Str { data: vec("black") })) })) }, Str { data: vec(vec(Str { data: vec(vec(Str { data: vec("oxide") })) })) })
+    print_str(result_str.data.iter().map(oxide_str_to_string).collect())
+}
+
+fn oxide_str_to_string(s: Str) -> String {
+    s.data.iter().map(oxide_str_to_string).collect()
+}
+
+fn print_str(s: Str) {
+    println(oxide_str_to_string(s))
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut result = a.data.clone() + b.data.clone() + vec(vec(Str { data: vec(vec(Str { data: vec(vec(Str { data: vec() })) })) }))
+    Str(result)
+}
+
+fn main() {
+    let black = Str { data: vec(vec(Str { data: vec(vec(Str { data: vec() })) })) }
+    let oxide = Str { data: vec(vec(Str { data: vec(vec(Str { data: vec() })) })) }
+    let result = concat(black, oxide)
+    let result_str = concat(Str

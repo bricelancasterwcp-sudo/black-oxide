@@ -1,0 +1,13 @@
+struct List { head: Int, tail: Option<Box<List>> }
+
+fn length(xs: Box<List>) -> Int {
+    match xs {
+        List(head, tail) => 1 + length(tail?),
+        _ => 0,
+    }
+}
+
+fn main() {
+    let xs = Box(List(1, Box(List(2, Box(List(3, None))))), ys == Box(List(4, Box(List(5, None))))).length()
+    print(length(xs) + length(ys))
+}

@@ -1,0 +1,303 @@
+fn main() {
+    let list = push(push(vec(), 1), 2)
+    match get(&list, 5) {
+        Some(_) => print_str("Some(1) or Some(2)"),
+        None => print_str("None"),
+    }
+    drop list
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    if i < 0 || i >= len(v) {
+        return None
+    }
+    Some(at(&v, i))
+}
+
+fn at(v: &Vec<Int>, i: Int) -> Int {
+    if i < 0 || i >= len(v) {
+        panic("Index out of bounds")
+    }
+    clone(&v)
+    let x = get(&v, i)
+    match x {
+        Some(x) => x,
+        None => 0,
+    }
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let x = clone(&x)
+    let len = len(&v)
+    let v = push(v, x)
+    set(&v, len, x)
+    v
+}
+
+fn set(v: &Vec<Int>, i: Int, x: Int) -> Vec<Int> {
+    let x = clone(&x)
+    if i < 0 || i >= len(v) {
+        panic("Index out of bounds")
+    }
+    drop v
+    push(v, x)
+}
+
+fn panic(s: &Str) -> Option<Int> {
+    print_str(" panic: ")
+    print_str(s)
+    print_str("\n")
+    None
+}
+
+fn print_str(s: &Str) {
+    drop s
+    None
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    drop v
+    clone(&v)
+}
+
+fn vec() -> Vec<Int> {
+    drop ivec
+    clone(&ivec)
+}
+
+fn main() {
+    let ivec = vec(1, 2, 3)
+    let x = sum_big(&ivec, 3)
+    print(x)
+    drop ivec
+    print(x)
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let mut total = 0
+    for x in &v {
+        if x > limit {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn main() {
+    let vec = push(push(vec(), 5), 40)
+    let bigger = extend(clone(&vec), 70)
+    print(sum_big(&vec, 10))
+    drop vec
+    print(sum_big(&bigger, 10))
+    drop bigger
+}
+
+fn extend(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let mut total = 0
+    for x in &v {
+        if x > limit {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn main() {
+    let vec = push(push(vec(), 5), 40)
+    let bigger = extend(clone(&vec), 70)
+    print(sum_big(&vec, 10))
+    drop vec
+    print(sum_big(&bigger, 10))
+    drop bigger
+}
+
+fn extend(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let mut total = 0
+    for x in &v {
+        if x > limit {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn main() {
+    let vec = push(push(vec(), 5), 40)
+    let bigger = extend(clone(&vec), 70)
+    print(sum_big(&vec, 10))
+    drop vec
+    print(sum_big(&bigger, 10))
+    drop bigger
+}
+
+fn extend(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let mut total = 0
+    for x in &v {
+        if x > limit {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn main() {
+    let vec = push(push(vec(), 5), 40)
+    let bigger = extend(clone(&vec), 70)
+    print(sum_big(&vec, 10))
+    drop vec
+    print(sum_big(&bigger, 10))
+    drop bigger
+}
+
+fn extend(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let mut total = 0
+    for x in &v {
+        if x > limit {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn main() {
+    let vec = push(push(vec(), 5), 40)
+    let bigger = extend(clone(&vec), 70)
+    print(sum_big(&vec, 10))
+    drop vec
+    print(sum_big(&bigger, 10))
+    drop bigger
+}
+
+fn extend(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let mut total = 0
+    for x in &v {
+        if x > limit {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn main() {
+    let vec = push(push(vec(), 5), 40)
+    let bigger = extend(clone(&vec), 70)
+    print(sum_big(&vec, 10))
+    drop vec
+    print(sum_big(&bigger, 10))
+    drop bigger
+}
+
+fn extend(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let mut total = 0
+    for x in &v {
+        if x > limit {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn main() {
+    let vec = push(push(vec(), 5), 40)
+    let bigger = extend(clone(&vec), 70)
+    print(sum_big(&vec, 10))
+    drop vec
+    print(sum_big(&bigger, 10))
+    drop bigger
+}
+
+fn extend(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let mut total = 0
+    for x in &v {
+        if x > limit {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn main() {
+    let vec = push(push(vec(), 5), 40)
+    let bigger = extend(clone(&vec), 70)
+    print(sum_big(&vec, 10))
+    drop vec
+    print(sum_big(&bigger, 10))
+    drop bigger
+}
+
+fn extend(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let mut total = 0
+    for x in &v {
+        if x > limit {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn main() {
+    let vec = push(push(vec(), 5), 40)
+    let bigger = extend(clone(&vec), 70)
+    print(sum_big(&vec, 10))
+    drop vec
+    print(sum_big(&bigger, 10))
+    drop bigger
+}
+
+fn extend(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let mut total = 0
+    for x in &v {
+        if x > limit {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn main() {
+    let vec = push(push(vec(), 5), 40)
+    let bigger = extend(clone(&vec), 70)
+    print(sum_big(&vec, 10))
+    drop vec
+    print(sum_big(&bigger, 10))
+    drop bigger
+}
+
+fn extend(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v

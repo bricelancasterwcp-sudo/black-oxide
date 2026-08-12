@@ -1,0 +1,22 @@
+fn main() {
+    resourceCulture = 11
+    resourceCulture = 3 * culture
+    resourceCultureList = range(1, culture)
+    resourceCount = 0
+    for resource in resourceCultureList {
+        ifeq(resource % 3, 0)
+        getResource(resource)
+        resourceCount = resourceCount + 1
+        endfor
+        total = 0
+        for value in resourceValues {
+            total = total + value
+            endfor
+        }
+        print(total)
+        endfor
+        endfor
+        endfor
+        endfor
+    }
+}

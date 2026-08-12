@@ -1,0 +1,110 @@
+fn main() {
+    let start = Point { x: 1, y: 5 }
+    let end = Point { x: start.x + 10, y: start.y }
+    print(end.x + end.y)
+}
+
+struct Point { x: Int, y: Int }
+
+fn add(a: Point, b: Point) -> Point {
+    Point(a.x + b.x, a.y + b.y)
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    if i < 0 || i >= v.len() {
+        None
+    } else {
+        Some(v.get(i).unwrap())
+    }
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    print(push(vec(), s))
+}
+
+fn push(mut_vec: Vec<Str>, item: Str) -> Vec<Str> {
+    mut_vec.push(item)
+    mut_vec
+}
+
+fn int_to_str(n: Int) -> Str {
+    n.to_string()
+}
+
+fn len(v: Vec<Int>) -> Int {
+    v.len()
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn clone(x: Int) -> Int {
+    x
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    s.chars().map(char_to_str).collect()
+}
+
+fn char_to_str(c: Char) -> Str {
+    c.to_string()
+}
+
+fn to_float(n: Int) -> Float {
+    n.to_f64()
+}
+
+fn trunc(x: Float) -> Int {
+    x.trunc()
+}
+
+enum Option {
+    Some(Int),
+    None,
+}
+
+enum Result {
+    Ok(Int),
+    Err(Str),
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option {
+    if i < 0 || i >= v.len() {
+        None
+    } else {
+        Some(v.get(i).unwrap())
+    }
+}
+
+fn match_int(e: Option) -> Int {
+    match e {
+        Option(x) => x,
+        None => -1,
+    }
+}
+
+fn if_int(cond: Int, true_branch: Int, false_branch: Int) -> Int {
+    if cond != 0 {
+        true_branch
+    } else {
+        false_branch
+    }
+}
+
+fn while_int(cond: Int, body: Int) -> Int {
+    let mut accumulator = 0
+    while cond != 0 {
+        accumulator = body
+        cond = cond - 1
+    }
+    accumulator
+}
+
+fn for_int(start: Int, end: Int, body: Int) -> Int {
+    let mut accumulator = 0
+    for i in start.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc() + 1.trunc() - 1.trunc()

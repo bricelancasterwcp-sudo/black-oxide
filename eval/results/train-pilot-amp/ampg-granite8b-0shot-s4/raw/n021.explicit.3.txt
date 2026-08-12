@@ -1,0 +1,9 @@
+fn main() {
+    let word = "programming"
+    let word_chars = chars(&word)
+    let mut length = 0
+    for char in &word_chars {
+        length = length + char.len()
+    }
+    print(length)
+}

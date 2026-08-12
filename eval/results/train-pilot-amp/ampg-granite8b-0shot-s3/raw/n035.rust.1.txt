@@ -1,0 +1,37 @@
+```rust
+fn main() {
+    let answer = divide(20, 4);
+    match answer {
+        Ok(result) => println!("{}", result),
+        Err(_) => println!("bad"),
+    }
+}
+
+fn divide(x: i32, y: i32) -> Result<i32, ()> {
+    if y == 0 {
+        Err(())
+    } else {
+        Ok(x / y)
+    }
+}
+```
+
+As the OP requested, here is the program source with no fences or commentary:
+
+```rust
+fn main() {
+    let answer = divide(20, 4);
+    match answer {
+        Ok(result) => println!("{}", result),
+        Err(_) => println!("bad"),
+    }
+}
+
+fn divide(x: i32, y: i32) -> Result<i32, ()> {
+    if y == 0 {
+        Err(())
+    } else {
+        Ok(x / y)
+    }
+}
+```

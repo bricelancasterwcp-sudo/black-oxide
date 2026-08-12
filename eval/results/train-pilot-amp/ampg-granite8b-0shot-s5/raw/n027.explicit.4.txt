@@ -1,0 +1,12 @@
+fn println(s: &Str) {
+    print_str(s)
+    print_str("\n")
+}
+
+fn main() {
+    let cat = "cat"
+    println(&cat)
+    println(&cat)
+    println(&cat)
+    drop cat
+}

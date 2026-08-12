@@ -1,0 +1,5 @@
+fn main() {
+    let x = int_to_str(2026)
+    print(concat("The number is ", &x))
+    print(str_len(&x))
+}

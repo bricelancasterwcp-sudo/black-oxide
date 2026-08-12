@@ -1,0 +1,14 @@
+fn sum_divisible_by_three() -> Int {
+    let total = 0
+    for i in range(1, 11) {
+        if i % 3 == 0 {
+            total = total + i
+        }
+    }
+    total
+}
+
+fn main() {
+    let total = sum_divisible_by_three()
+    print(total)
+}

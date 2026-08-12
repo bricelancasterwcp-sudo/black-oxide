@@ -1,0 +1,27 @@
+fn main() {
+    struct Square {
+        side: f64,
+    }
+
+    struct Circle {
+        radius: f64,
+    }
+
+    impl Square {
+        fn area(&self) -> f64 {
+            self.side * self.side
+        }
+    }
+
+    impl Circle {
+        fn area(&self) -> f64 {
+            3.0 * self.radius * self.radius
+        }
+    }
+
+    let square = Square { side: 4.0 };
+    let circle = Circle { radius: 3.0 };
+
+    println!("Square area: {}", square.area());
+    println!("Circle area: {}", circle.area());
+}

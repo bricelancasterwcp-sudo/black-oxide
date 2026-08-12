@@ -1,0 +1,7 @@
+fn main() {
+    let s = "cat".to_string()
+    for c in s.chars() {
+        print(c)
+        print_str("\n")
+    }
+}

@@ -1,0 +1,22 @@
+struct List { item: Int, next: Option<Box<List>> }
+
+fn get(list: Option<Box<List>>, index: Int) -> Option<Int> {
+    match list {
+        Some(mutboxed) => {
+            if index == 0 {
+                Some(mutboxed.item)
+            } else {
+                get(mutboxed.next, index - 1)
+            }
+        },
+        None => None,
+    }
+}
+
+fn main() {
+    let list = Some(Box { item: 1, next: Some(Box { item: 2, next: None }) })
+    match get(list, 5) {
+        Some(n) => print(n),
+        None => print_str("none"),
+    }
+}

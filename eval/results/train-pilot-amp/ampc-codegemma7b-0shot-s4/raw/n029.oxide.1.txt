@@ -1,0 +1,4 @@
+fn main() {
+    let x = str_cat(str_cat(int_to_str(1), " "), int_to_str(2))
+    print(str_cat(x, " ", int_to_str(3)))
+}

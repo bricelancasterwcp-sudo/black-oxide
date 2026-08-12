@@ -1,0 +1,21 @@
+fn read_i32(s: Str) -> Option<Int> {
+    match parse_int(s) {
+        Some(n) => Some(n),
+        None => None,
+    }
+}
+
+fn read_i32_plus_one(s: Str) -> Option<Int> {
+    match read_i32(s) {
+        Some(n) => Some(n + 1),
+        None => None,
+    }
+}
+
+fn main() {
+    let input = "417"
+    match read_i32_plus_one(input) {
+        Some(n) => print(n),
+        None => print_str("bad"),
+    }
+}

@@ -1,0 +1,18 @@
+struct TrafficLight { current: Str }
+
+fn next(light: TrafficLight) -> TrafficLight {
+    match light.current {
+        Str => TrafficLight { current: "yellow" },
+        Str => TrafficLight { current: "red" },
+        _ => TrafficLight { current: "green" },
+    }
+}
+
+fn main() {
+    let light = TrafficLight { current: "green" }
+    print("go for green")
+    let light = next(light)
+    print("wait for yellow")
+    let light = next(light)
+    print("stop for red")
+}

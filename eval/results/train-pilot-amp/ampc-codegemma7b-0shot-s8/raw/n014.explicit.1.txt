@@ -1,0 +1,12 @@
+fn min(a: Int, b: Int) -> Int {
+    if a < b {
+        a
+    } else {
+        b
+    }
+}
+
+fn main() {
+    let readings = vec(5, 3, 9, 1, 7)
+    print(min(min(min(min(readings, readings + 1), readings + 2), readings + 3), readings + 4))
+}

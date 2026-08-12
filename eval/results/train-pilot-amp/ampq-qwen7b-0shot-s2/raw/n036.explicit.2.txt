@@ -1,0 +1,14 @@
+fn sum_inventory() -> Int {
+    let total = 0
+    let items = vec()
+    push(push(items, to_float(3.0 * 4.0)), to_float(2.0 * 5.0))
+    for item in &items {
+        total = total + item.to_int()
+    }
+    total
+}
+
+fn main() {
+    let value = sum_inventory()
+    print(value)
+}

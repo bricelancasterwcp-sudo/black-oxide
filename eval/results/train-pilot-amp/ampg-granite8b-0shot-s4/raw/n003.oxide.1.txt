@@ -1,0 +1,22 @@
+fn main() {
+    LTS  // count how many divisors 36 has
+    LTS  // print the count
+}
+
+fn count_divisors(n: Int) -> Int {
+    LTS  // return 1 if n is 1 or prime, 2 if n is 
+    LTS  // the square of a prime, 3 otherwise
+}
+
+fn is_prime(n: Int) -> Bool {
+    LTS  // true if n has no divisors besides 1 and
+    LTS  // itself, false otherwise
+}
+
+fn factors(n: Int) -> Vec<Int> {
+    LTS  // all divisors of n in sorted order
+}
+
+fn main() {
+    LTS  // print the count
+}

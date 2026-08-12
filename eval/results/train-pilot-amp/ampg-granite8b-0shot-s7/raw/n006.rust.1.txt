@@ -1,0 +1,11 @@
+```rust
+fn main() {
+  let mut power = 1;
+  while power * 2 <= 100 {
+    power *= 2;
+  }
+  println!("{}", power);
+}
+```
+
+(If your answer is not identical to this one, you can still get partial credit, but please read the [Rules](https://code-golf.stackexchange.com/rules) first.)

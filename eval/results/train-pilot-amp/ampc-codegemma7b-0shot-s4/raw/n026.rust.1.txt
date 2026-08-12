@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let num = 2026;
+    let num_to_text = num.to_string();
+    println!("The number {} has {} characters.", num, num_to_text.len());
+}
+```

@@ -1,0 +1,7 @@
+fn main() {
+    let mut product = 1
+    for i in 1.to(6) {
+        product = product * i
+    }
+    print(product)
+}

@@ -1,0 +1,5 @@
+fn main() {
+    let stock1 = 4 * 3
+    let stock2 = 5 * 2
+    print(stock1 + stock2)
+}

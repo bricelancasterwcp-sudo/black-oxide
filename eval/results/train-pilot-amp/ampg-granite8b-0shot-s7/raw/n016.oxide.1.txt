@@ -1,0 +1,287 @@
+struct IntList { head: Int, tail: Vec<Int> }
+
+fn sum_div_three(v: Vec<Int>) -> Int {
+    let mut sum = 0
+    for x in v {
+        if x % 3 == 0 {
+            sum = sum + x
+        }
+    }
+    sum
+}
+
+fn main() {
+    let numbers = vec(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+    let div_three = filter(numbers, is_divisible_by_three)
+    let sum = sum_div_three(div_three)
+    print(sum)
+}
+
+fn filter(v: Vec<Int>, p: Int) -> Vec<Int> {
+    let mut result = vec()
+    for x in v {
+        if p(x) {
+            result = push(result, x)
+        }
+    }
+    result
+}
+
+fn is_divisible_by_three(n: Int) -> Bool {
+    n % 3 == 0
+}
+
+fn print(n: Int) {
+    println(str_from_int(n))
+}
+
+fn println(s: Str) {
+    print_str(s + "\n")
+}
+
+fn print_str(s: Str) {
+    let mut p = 0
+    let len = str_len(s)
+    while p < len {
+        print_char(get(s, p))
+        p = p + 1
+    }
+}
+
+fn print_char(c: Str) {
+    let out = get(os_args(), 1)
+    os_write(out, c.as_bytes())
+}
+
+fn os_args() -> Vec<Str> {
+    let args = os_argv()
+    let len = len(args)
+    let mut result = vec()
+    let mut i = 1
+    while i < len {
+        result = push(result, get(args, i))
+        i = i + 1
+    }
+    result
+}
+
+fn os_argv() -> Vec<Str> {
+    unsafe_from_raw_ptr(extern_argv())
+}
+
+fn extern_argv() -> Ptr<Ptr<Char>> {
+    extern_get_argv()
+}
+
+fn extern_get_argv() -> Ptr<Ptr<Char>> {
+    let argv = get_global("process").as_ptr().get_field("argv")
+    argv.as_ptr().as_ptr()
+}
+
+fn get_global(name: Str) -> Value {
+    let mut result = os_global()
+    let fields = chars(name)
+    for field in fields {
+        let obj = result.as_ptr()
+        result = obj.get_field(field)
+    }
+    result
+}
+
+fn os_global() -> Value {
+    unsafe_from_raw_ptr(extern_global())
+}
+
+fn extern_global() -> Ptr<Char> {
+    extern_get_global()
+}
+
+fn extern_get_global() -> Ptr<Char> {
+    get_global("global").as_ptr()
+}
+
+fn os_write(fd: Int, buf: Ptr<Char>) -> Int {
+    extern_os_write(fd, buf)
+}
+
+fn extern_os_write(fd: Int, buf: Ptr<Char>) -> Int {
+    let os_write = get_global("os").as_ptr().get_field("write")
+    let buf = buf.as_ptr().as_ptr()
+    os_write.call(vec(fd.as_int(), buf))
+}
+
+fn str_from_int(n: Int) -> Str {
+    itostr(n).as_ptr()
+}
+
+fn itostr(n: Int) -> Str {
+    let mut buf = vec()
+    while n > 0 {
+        let digit = n % 10
+        buf = push(buf, "0123456789".get(digit))
+        n = n / 10
+    }
+    buf = reverse(buf)
+    concat(buf, "")
+}
+
+fn reverse(v: Vec<Int>) -> Vec<Int> {
+    let mut result = vec()
+    for x in v {
+        result = push(result, x)
+    }
+    result
+}
+
+fn main() {
+    let numbers = vec(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+    let div_three = filter(numbers, is_divisible_by_three)
+    let sum = sum_div_three(div_three)
+    print(sum)
+}
+
+fn filter(v: Vec<Int>, p: Int) -> Vec<Int> {
+    let mut result = vec()
+    for x in v {
+        if p(x) {
+            result = push(result, x)
+        }
+    }
+    result
+}
+
+fn is_divisible_by_three(n: Int) -> Bool {
+    n % 3 == 0
+}
+
+fn print(n: Int) {
+    println(str_from_int(n))
+}
+
+fn println(s: Str) {
+    print_str(s + "\n")
+}
+
+fn print_str(s: Str) {
+    let mut p = 0
+    let len = str_len(s)
+    while p < len {
+        print_char(get(s, p))
+        p = p + 1
+    }
+}
+
+fn print_char(c: Str) {
+    let out = get(os_args(), 1)
+    os_write(out, c.as_bytes())
+}
+
+fn os_args() -> Vec<Str> {
+    let args = os_argv()
+    let len = len(args)
+    let mut result = vec()
+    let mut i = 1
+    while i < len {
+        result = push(result, get(args, i))
+        i = i + 1
+    }
+    result
+}
+
+fn os_argv() -> Vec<Str> {
+    unsafe_from_raw_ptr(extern_argv())
+}
+
+fn extern_argv() -> Ptr<Ptr<Char>> {
+    extern_get_argv()
+}
+
+fn extern_get_argv() -> Ptr<Ptr<Char>> {
+    let argv = get_global("process").as_ptr().get_field("argv")
+    argv.as_ptr().as_ptr()
+}
+
+fn get_global(name: Str) -> Value {
+    let mut result = os_global()
+    let fields = chars(name)
+    for field in fields {
+        let obj = result.as_ptr()
+        result = obj.get_field(field)
+    }
+    result
+}
+
+fn os_global() -> Value {
+    unsafe_from_raw_ptr(extern_global())
+}
+
+fn extern_global() -> Ptr<Char> {
+    extern_get_global()
+}
+
+fn extern_get_global() -> Ptr<Char> {
+    get_global("global").as_ptr()
+}
+
+fn os_write(fd: Int, buf: Ptr<Char>) -> Int {
+    extern_os_write(fd, buf)
+}
+
+fn extern_os_write(fd: Int, buf: Ptr<Char>) -> Int {
+    let os_write = get_global("os").as_ptr().get_field("write")
+    let buf = buf.as_ptr().as_ptr()
+    os_write.call(vec(fd.as_int(), buf))
+}
+
+fn str_from_int(n: Int) -> Str {
+    itostr(n).as_ptr()
+}
+
+fn itostr(n: Int) -> Str {
+    let mut buf = vec()
+    while n > 0 {
+        let digit = n % 10
+        buf = push(buf, "0123456789".get(digit))
+        n = n / 10
+    }
+    buf = reverse(buf)
+    concat(buf, "")
+}
+
+fn reverse(v: Vec<Int>) -> Vec<Int> {
+    let mut result = vec()
+    for x in v {
+        result = push(result, x)
+    }
+    result
+}
+
+fn filter(v: Vec<Int>, p: Int) -> Vec<Int> {
+    let mut result = vec()
+    for x in v {
+        if p(x) {
+            result = push(result, x)
+        }
+    }
+    result
+}
+
+fn is_divisible_by_three(n: Int) -> Bool {
+    n % 3 == 0
+}
+
+fn print(n: Int) {
+    println(str_from_int(n))
+}
+
+fn println(s: Str) {
+    print_str(s + "\n")
+}
+
+fn print_str(s: Str) {
+    let mut p = 0
+    let len = str_len(s)
+    while p < len {
+        print_char(get(s, p))
+        p = p + 1
+    }

@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let i = 2026;
+    let text = i.to_string();
+    let count = text.chars().count();
+    println!("{}", count);
+}
+```

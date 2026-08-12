@@ -1,0 +1,16 @@
+fn f(a: &Int, b: &Int) -> Int {
+    a + b
+}
+
+fn main() {
+    let x = 1
+    let y = 1
+    let z = f(&x, &y)
+    for _ in 0.range(8) {
+        (x.clone()) == f(&y, &z)
+        (y.clone()) == f(&z, &x)
+        (z.clone()) == f(&y, &x)
+    }
+    print(z)
+    drop z
+}

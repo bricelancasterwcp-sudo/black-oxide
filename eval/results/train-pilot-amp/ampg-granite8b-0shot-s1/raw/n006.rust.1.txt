@@ -1,0 +1,11 @@
+fn main() {
+    println!("{}", next_power_of_two(100));
+}
+
+fn next_power_of_two(n: u32) -> u32 {
+    let mut x = 1;
+    while x < n {
+        x *= 2;
+    }
+    x
+}

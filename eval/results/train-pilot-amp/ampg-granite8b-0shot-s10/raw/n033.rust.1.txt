@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let mut light = std::io::stdout();
+    light.write(b"go for green\n").unwrap();
+    std::thread::sleep(std::time::Duration::from_secs(1));
+    light.write(b"stop for red\n").unwrap();
+}
+```

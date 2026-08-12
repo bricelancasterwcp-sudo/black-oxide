@@ -1,0 +1,14 @@
+fn set_reading(device: &Device) -> Int {
+    7
+}
+
+fn print_reading(device: &Device) {
+    let reading = set_reading(&device)
+    print(reading)
+}
+
+fn main() {
+    let device = Device { sensor: Sensor { reading: 0 } }
+    print_reading(&device)
+    drop device
+}

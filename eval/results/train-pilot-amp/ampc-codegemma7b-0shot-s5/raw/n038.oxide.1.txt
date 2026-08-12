@@ -1,0 +1,296 @@
+fn main() {
+    let mut device = Device { sensor: Sensor { reading: 0 } }
+    device.sensor.reading = 7
+    print(device.sensor.reading)
+}
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    for c in chars(s) {
+        print_char(c)
+    }
+}
+
+fn print_char(c: Str) {
+    put_char(c.chars().next().unwrap())
+}
+
+fn int_to_str(n: Int) -> Str {
+    if n < 0 {
+        return concat(Str("-"), int_to_str(-n))
+    }
+    if n < 10 {
+        return Str(char(n + 48))
+    }
+    return concat(int_to_str(n / 10), Str(char(n % 10 + 48)))
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = vec()
+    for i in 0.to_int().until(str_len(s)) {
+        result.push(get(s, i).unwrap())
+    }
+    result
+}
+
+fn put_char(c: Char) {
+    print_str(Str(c))
+}
+
+fn get(v: Str, i: Int) -> Option<Str> {
+    if i >= 0 && i < str_len(v) {
+        return Some(Str(v.chars().nth(i).unwrap()))
+    }
+    None
+}
+
+fn str_len(s: Str) -> Int {
+    let mut count = 0
+    for _ in s.chars() {
+        count = count.wrapping_add(1)
+    }
+    count
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut result = vec()
+    for c in chars(a) {
+        result.push(c)
+    }
+    for c in chars(b) {
+        result.push(c)
+    }
+    Str(result)
+}
+
+fn until(self: Int, b: Int) -> Int {
+    if self < b {
+        return self
+    }
+    b - 1
+}
+
+fn wrapping_add(self: Int, b: Int) -> Int {
+    let sum = self + b
+    if sum < self {
+        return sum + 1
+    }
+    sum
+}
+
+fn unwrap(self: Option<T>) -> T {
+    match self {
+        Some(x) => x,
+        None => panic("called `unwrap()` on a `None` value"),
+    }
+}
+
+fn next(self: Option<T>) -> Option<T> {
+    match self {
+        Some(x) => Some(x),
+        None => None,
+    }
+}
+
+struct Vec { data: Vec<T>, len: Int }
+
+fn vec() -> Vec<T> {
+    Vec(vec(), 0)
+}
+
+fn push(mutvec: Vec<T>, x: T) -> Vec<T> {
+    mutvec.data.push(x)
+    mutvec.len = mutvec.len.wrapping_add(1)
+    mutvec
+}
+
+fn len(v: Vec<T>) -> Int {
+    v.len
+}
+
+fn get(v: Vec<T>, i: Int) -> Option<T> {
+    if i >= 0 && i < v.len {
+        return Some(v.data.get(i).unwrap().clone())
+    }
+    None
+}
+
+struct Str { data: Vec<Char> }
+
+fn str(chars: Vec<Char>) -> Str {
+    Str(chars)
+}
+
+fn chars(s: Str) -> Vec<Char> {
+    s.data.clone()
+}
+
+fn str_len(s: Str) -> Int {
+    s.data.len()
+}
+
+fn get(v: Str, i: Int) -> Option<Str> {
+    if i >= 0 && i < v.len {
+        return Some(str(vec(v.data.get(i).unwrap())))
+    }
+    None
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    str(push(a.chars(), b.chars()))
+}
+
+struct Char { code: Int }
+
+fn char(c: Int) -> Char {
+    Char(c)
+}
+
+fn chars(c: Char) -> Vec<Char> {
+    vec(c)
+}
+
+fn put_char(c: Char) {
+    print(c.code)
+}
+
+fn panic(msg: Str) {
+    print_str("PANIC! ")
+    print_str(msg)
+    print_str("\n")
+    exit(1)
+}
+
+fn exit(code: Int) {
+    loop()
+}
+
+fn clone(v: T) -> T {
+    v
+}
+
+fn main() {
+    let mut device = Device { sensor: Sensor { reading: 0 } }
+    device.sensor.reading = 7
+    print(device.sensor.reading)
+}
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    for c in chars(s) {
+        print_char(c)
+    }
+}
+
+fn print_char(c: Str) {
+    put_char(c.chars().next().unwrap())
+}
+
+fn int_to_str(n: Int) -> Str {
+    if n < 0 {
+        return concat(Str("-"), int_to_str(-n))
+    }
+    if n < 10 {
+        return Str(char(n + 48))
+    }
+    return concat(int_to_str(n / 10), Str(char(n % 10 + 48)))
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = vec()
+    for i in 0.to_int().until(str_len(s)) {
+        result.push(get(s, i).unwrap())
+    }
+    result
+}
+
+fn put_char(c: Char) {
+    print_str(Str(c))
+}
+
+fn get(v: Str, i: Int) -> Option<Str> {
+    if i >= 0 && i < str_len(v) {
+        return Some(Str(v.chars().nth(i).unwrap()))
+    }
+    None
+}
+
+fn str_len(s: Str) -> Int {
+    let mut count = 0
+    for _ in s.chars() {
+        count = count.wrapping_add(1)
+    }
+    count
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut result = vec()
+    for c in chars(a) {
+        result.push(c)
+    }
+    for c in chars(b) {
+        result.push(c)
+    }
+    Str(result)
+}
+
+fn until(self: Int, b: Int) -> Int {
+    if self < b {
+        return self
+    }
+    b - 1
+}
+
+fn wrapping_add(self: Int, b: Int) -> Int {
+    let sum = self + b
+    if sum < self {
+        return sum + 1
+    }
+    sum
+}
+
+fn unwrap(self: Option<T>) -> T {
+    match self {
+        Some(x) => x,
+        None => panic("called `unwrap()` on a `None` value"),
+    }
+}
+
+fn next(self: Option<T>) -> Option<T> {
+    match self {
+        Some(x) => Some(x),
+        None => None,
+    }
+}
+
+struct Vec { data: Vec<T>, len: Int }
+
+fn vec() -> Vec<T> {
+    Vec(vec(), 0)
+}
+
+fn push(mutvec: Vec<T>, x: T) -> Vec<T> {
+    mutvec.data.push(x)
+    mutvec.len = mutvec.len.wrapping_add(1)
+    mutvec
+}
+
+fn len(v: Vec<T>) -> Int {
+    v.len
+}
+
+fn get(v: Vec<T>, i

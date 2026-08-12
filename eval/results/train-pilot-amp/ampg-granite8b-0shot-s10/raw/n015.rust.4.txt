@@ -1,0 +1,10 @@
+fn main() {
+    let a = [1, 2, 3, 4, 5];
+    let mut larger_than_four = 0;
+    for &num in a.iter() {
+        if num > 4 {
+            larger_than_four += 1;
+        }
+    }
+    println!("There are {} numbers larger than four.", larger_than_four);
+}

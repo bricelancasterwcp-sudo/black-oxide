@@ -1,0 +1,7 @@
+fn black_oxide() {
+    println("oxideblack")
+}
+
+fn main() {
+    black_oxide()
+}

@@ -1,0 +1,319 @@
+fn main() {
+    let nums = range(0, 15)
+    print(len(&nums))
+    drop nums
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    let mut i = a
+    while i < b {
+        push(result, i)
+        i = i + 1
+    }
+    result
+}
+
+fn push(mutv: Vec<Int>, x: Int) -> Vec<Int> {
+    let len = len(v)
+    v = append(v, x)
+    v
+}
+
+fn append(mutv: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+    v
+}
+
+fn len(v: Vec<Int>) -> Int {
+    let mut i = 0
+    for _ in &v {
+        i = i + 1
+    }
+    i
+}
+
+fn print(x: Int) {
+    let s = int_to_str(x)
+    for c in chars(s) {
+        print_str(c)
+    }
+}
+
+fn print_str(s: Str) {
+    for c in chars(s) {
+        print_char(c)
+    }
+}
+
+fn print_char(c: Str) {
+    if c == "0" {
+        push(push(vec(), "0"), "0")
+    } else if c == "1" {
+        push(push(vec(), "1"), "1")
+    } else if c == "2" {
+        push(push(vec(), "2"), "2")
+    } else {
+        print_str("invalid")
+    }
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut digits = vec()
+    let mut x = n
+    while x > 0 {
+        digits = push(digits, trunc(x % 10))
+        x = trunc(x / 10)
+    }
+    if len(digits) == 0 {
+        digits = push(digits, 0)
+    }
+    let mut result = vec()
+    for d in &digits {
+        result = append(result, d)
+    }
+    result
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = vec()
+    for c in &s {
+        result = append(result, c)
+    }
+    result
+}
+
+fn append(mutv: Vec<Str>, x: Str) -> Vec<Str> {
+    v.push(x)
+    v
+}
+
+fn drop_(v: Vec<Int>) {
+    let len = len(v)
+    for i in 0 < len {
+        drop_(&v)
+    }
+}
+
+fn drop_(v: Vec<Str>) {
+    let len = len(v)
+    for i in 0 < len {
+        drop_(&v)
+    }
+}
+
+fn drop_(x: Int) {
+    let s = int_to_str(x)
+    for c in chars(s) {
+        drop_(c)
+    }
+    drop_(s)
+}
+
+fn drop_(s: Str) {
+    for c in chars(s) {
+        drop_(c)
+    }
+    drop_()
+}
+
+fn drop_(c: Str) {
+    drop_()
+}
+
+fn drop_() {
+    return
+}
+
+fn main() {
+    let nums = range(0, 15)
+    print(len(&nums))
+    drop nums
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    let mut i = a
+    while i < b {
+        push(result, i)
+        i = i + 1
+    }
+    result
+}
+
+fn push(mutv: Vec<Int>, x: Int) -> Vec<Int> {
+    let len = len(v)
+    v = append(v, x)
+    v
+}
+
+fn append(mutv: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+    v
+}
+
+fn len(v: Vec<Int>) -> Int {
+    let mut i = 0
+    for _ in &v {
+        i = i + 1
+    }
+    i
+}
+
+fn print(x: Int) {
+    let s = int_to_str(x)
+    for c in chars(s) {
+        print_str(c)
+    }
+}
+
+fn print_str(s: Str) {
+    for c in chars(s) {
+        print_char(c)
+    }
+}
+
+fn print_char(c: Str) {
+    if c == "0" {
+        push(push(vec(), "0"), "0")
+    } else if c == "1" {
+        push(push(vec(), "1"), "1")
+    } else if c == "2" {
+        push(push(vec(), "2"), "2")
+    } else {
+        print_str("invalid")
+    }
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut digits = vec()
+    let mut x = n
+    while x > 0 {
+        digits = push(digits, trunc(x % 10))
+        x = trunc(x / 10)
+    }
+    if len(digits) == 0 {
+        digits = push(digits, 0)
+    }
+    let mut result = vec()
+    for d in &digits {
+        result = append(result, d)
+    }
+    result
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = vec()
+    for c in &s {
+        result = append(result, c)
+    }
+    result
+}
+
+fn append(mutv: Vec<Str>, x: Str) -> Vec<Str> {
+    v.push(x)
+    v
+}
+
+fn drop_(v: Vec<Int>) {
+    let len = len(v)
+    for i in 0 < len {
+        drop_(&v)
+    }
+}
+
+fn drop_(v: Vec<Str>) {
+    let len = len(v)
+    for i in 0 < len {
+        drop_(&v)
+    }
+}
+
+fn drop_(x: Int) {
+    let s = int_to_str(x)
+    for c in chars(s) {
+        drop_(c)
+    }
+    drop_(s)
+}
+
+fn drop_(s: Str) {
+    for c in chars(s) {
+        drop_(c)
+    }
+    drop_()
+}
+
+fn drop_(c: Str) {
+    drop_()
+}
+
+fn drop_() {
+    return
+}
+
+fn main() {
+    let nums = range(0, 15)
+    print(len(&nums))
+    drop nums
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    let mut i = a
+    while i < b {
+        push(result, i)
+        i = i + 1
+    }
+    result
+}
+
+fn push(mutv: Vec<Int>, x: Int) -> Vec<Int> {
+    let len = len(v)
+    v = append(v, x)
+    v
+}
+
+fn append(mutv: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+    v
+}
+
+fn len(v: Vec<Int>) -> Int {
+    let mut i = 0
+    for _ in &v {
+        i = i + 1
+    }
+    i
+}
+
+fn print(x: Int) {
+    let s = int_to_str(x)
+    for c in chars(s) {
+        print_str(c)
+    }
+}
+
+fn print_str(s: Str) {
+    for c in chars(s) {
+        print_char(c)
+    }
+}
+
+fn print_char(c: Str) {
+    if c == "0" {
+        push(push(vec(), "0"), "0")
+    } else if c == "1" {
+        push(push(vec(), "1"), "1")
+    } else if c == "2" {
+        push(push(vec(), "2"), "2")
+    } else {
+        print_str("invalid")
+    }
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut digits = vec()
+    let mut x = n
+    while x > 0 {
+        digits

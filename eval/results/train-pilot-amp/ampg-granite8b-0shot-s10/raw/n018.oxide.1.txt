@@ -1,0 +1,15 @@
+struct List {
+    hd: Int,
+    tl: List,
+}
+
+fn print_list(lst: List) {
+    if lst.hd > 0 {
+        print_list(lst.tl)
+        print(lst.hd)
+    }
+}
+
+fn main() {
+    print_list(List { hd: 4, tl: List { hd: 3, tl: List { hd: 2, tl: List { hd: 1, tl: vec() } } } })
+}

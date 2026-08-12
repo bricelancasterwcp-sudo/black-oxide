@@ -1,0 +1,450 @@
+fn main() {
+    let s = "banana"
+    let count = count_a(s)
+    print(count)
+}
+
+fn count_a(s: Str) -> Int {
+    let count = 0
+    for c in chars(s) {
+        if c == "a" {
+            let count2 = count + 1
+            return count2
+        }
+    }
+    count
+}
+
+fn count_a(s: Str) -> Int {
+    let count = 0
+    for c in chars(s) {
+        if c == "a" {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn count_a(s: Str) -> Int {
+    let count = 0
+    for c in chars(s) {
+        if c == "a" {
+            count = count + 1
+            continue
+        }
+    }
+    count
+}
+
+fn count_a(s: Str) -> Int {
+    let count = 0
+    for c in chars(s) {
+        if c == "a" {
+            count = count + 1
+        } else {
+            continue
+        }
+    }
+    count
+}
+
+fn count_a(s: Str) -> Int {
+    let count = 0
+    for c in chars(s) {
+        if c == "a" {
+            count = count + 1
+        } else {
+            break
+        }
+    }
+    count
+}
+
+fn count_a(s: Str) -> Int {
+    let count = 0
+    for c in chars(s) {
+        if c != "a" {
+            continue
+        }
+        count = count + 1
+    }
+    count
+}
+
+fn count_a(s: Str) -> Int {
+    let count = 0
+    for c in chars(s) {
+        if c != "a" {
+            break
+        }
+        count = count + 1
+    }
+    count
+}
+
+fn count_a(s: Str) -> Int {
+    let count = 0
+    for c in chars(s) {
+        if c == "a" {
+            continue
+        } else {
+            break
+        }
+    }
+    count
+}
+
+fn count_a(s: Str) -> Int {
+    let count = 0
+    for c in chars(s) {
+        if c != "a" {
+            continue
+        } else {
+            break
+        }
+    }
+    count
+}
+
+fn count_a(s: Str) -> Int {
+    let count = 0
+    for c in chars(s) {
+        if c == "a" {
+            continue
+        }
+        break
+    }
+    count
+}
+
+fn count_a(s: Str) -> Int {
+    let count = 0
+    for c in chars(s) {
+        if c == "a" {
+            continue
+        }
+        break
+    }
+    count
+}
+
+fn count_a(s: Str) -> Int {
+    let count = 0
+    for c in chars(s) {
+        if c == "a" {
+            continue
+        }
+        break
+    }
+    count
+}
+
+fn count_a(s: Str) -> Int {
+    let count = 0
+    for c in chars(s) {
+        if c != "a" {
+            continue
+        }
+        break
+    }
+    count
+}
+
+fn count_a(s: Str) -> Int {
+    let count = 0
+    for c in chars(s) {
+        if c != "a" {
+            continue
+        }
+        break
+    }
+    count
+}
+
+fn count_a(s: Str) -> Int {
+    let count = 0
+    for c in chars(s) {
+        if c == "a" {
+            continue
+        }
+        break
+    }
+    count
+}
+
+fn count_a(s: Str) -> Int {
+    let count = 0
+    for c in chars(s) {
+        if c == "a" {
+            continue
+        }
+        break
+    }
+    count
+}
+
+fn count_a(s: Str) -> Int {
+    let count = 0
+    for c in chars(s) {
+        if c == "a" {
+            continue
+        }
+        break
+    }
+    count
+}
+
+fn count_a(s: Str) -> Int {
+    let count = 0
+    for c in chars(s) {
+        if c == "a" {
+            continue
+        }
+        break
+    }
+    count
+}
+
+fn count_a(s: Str) -> Int {
+    let count = 0
+    for c in chars(s) {
+        if c == "a" {
+            continue
+        }
+        break
+    }
+    count
+}
+
+fn count_a(s: Str) -> Int {
+    let count = 0
+    for c in chars(s) {
+        if c == "a" {
+            continue
+        }
+        break
+    }
+    count
+}
+
+fn count_a(s: Str) -> Int {
+    let count = 0
+    for c in chars(s) {
+        if c == "a" {
+            continue
+        }
+        break
+    }
+    count
+}
+
+fn count_a(s: Str) -> Int {
+    let count = 0
+    for c in chars(s) {
+        if c == "a" {
+            continue
+        }
+        break
+    }
+    count
+}
+
+fn count_a(s: Str) -> Int {
+    let count = 0
+    for c in chars(s) {
+        if c == "a" {
+            continue
+        }
+        break
+    }
+    count
+}
+
+fn count_a(s: Str) -> Int {
+    let count = 0
+    for c in chars(s) {
+        if c == "a" {
+            continue
+        }
+        break
+    }
+    count
+}
+
+fn count_a(s: Str) -> Int {
+    let count = 0
+    for c in chars(s) {
+        if c == "a" {
+            continue
+        }
+        break
+    }
+    count
+}
+
+fn count_a(s: Str) -> Int {
+    let count = 0
+    for c in chars(s) {
+        if c == "a" {
+            continue
+        }
+        break
+    }
+    count
+}
+
+fn count_a(s: Str) -> Int {
+    let count = 0
+    for c in chars(s) {
+        if c == "a" {
+            continue
+        }
+        break
+    }
+    count
+}
+
+fn count_a(s: Str) -> Int {
+    let count = 0
+    for c in chars(s) {
+        if c == "a" {
+            continue
+        }
+        break
+    }
+    count
+}
+
+fn count_a(s: Str) -> Int {
+    let count = 0
+    for c in chars(s) {
+        if c == "a" {
+            continue
+        }
+        break
+    }
+    count
+}
+
+fn count_a(s: Str) -> Int {
+    let count = 0
+    for c in chars(s) {
+        if c == "a" {
+            continue
+        }
+        break
+    }
+    count
+}
+
+fn count_a(s: Str) -> Int {
+    let count = 0
+    for c in chars(s) {
+        if c == "a" {
+            continue
+        }
+        break
+    }
+    count
+}
+
+fn count_a(s: Str) -> Int {
+    let count = 0
+    for c in chars(s) {
+        if c == "a" {
+            continue
+        }
+        break
+    }
+    count
+}
+
+fn count_a(s: Str) -> Int {
+    let count = 0
+    for c in chars(s) {
+        if c == "a" {
+            continue
+        }
+        break
+    }
+    count
+}
+
+fn count_a(s: Str) -> Int {
+    let count = 0
+    for c in chars(s) {
+        if c == "a" {
+            continue
+        }
+        break
+    }
+    count
+}
+
+fn count_a(s: Str) -> Int {
+    let count = 0
+    for c in chars(s) {
+        if c == "a" {
+            continue
+        }
+        break
+    }
+    count
+}
+
+fn count_a(s: Str) -> Int {
+    let count = 0
+    for c in chars(s) {
+        if c == "a" {
+            continue
+        }
+        break
+    }
+    count
+}
+
+fn count_a(s: Str) -> Int {
+    let count = 0
+    for c in chars(s) {
+        if c == "a" {
+            continue
+        }
+        break
+    }
+    count
+}
+
+fn count_a(s: Str) -> Int {
+    let count = 0
+    for c in chars(s) {
+        if c == "a" {
+            continue
+        }
+        break
+    }
+    count
+}
+
+fn count_a(s: Str) -> Int {
+    let count = 0
+    for c in chars(s) {
+        if c == "a" {
+            continue
+        }
+        break
+    }
+    count
+}
+
+fn count_a(s: Str) -> Int {
+    let count = 0
+    for c in chars(s) {
+        if c == "a" {
+            continue
+        }
+        break
+    }
+    count
+}
+
+fn count_a(

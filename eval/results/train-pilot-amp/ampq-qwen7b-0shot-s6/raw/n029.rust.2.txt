@@ -1,0 +1,4 @@
+fn main() {
+    let text = format!("one{}\ntwo{}\nthree", "\n", "\n");
+    println!("{}", text.trim());
+}

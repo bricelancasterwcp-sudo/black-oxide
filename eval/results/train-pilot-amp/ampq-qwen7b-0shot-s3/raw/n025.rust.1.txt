@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let text = "417";
+    match text.parse::<u32>() {
+        Ok(num) => println!("{}", num + 1),
+        Err(_) => println!("bad"),
+    }
+}
+```

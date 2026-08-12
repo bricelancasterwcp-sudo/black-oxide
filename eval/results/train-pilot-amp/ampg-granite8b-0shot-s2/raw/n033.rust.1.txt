@@ -1,0 +1,11 @@
+```rust
+const STD_TIME: std::time::Duration = std::time::Duration::from_millis(1000);
+
+fn main() {
+    println!("Go for green");
+    std::thread::sleep(STD_TIME * 2);
+    println!("Wait for yellow");
+    std::thread::sleep(STD_TIME * 2);
+    println!("Stop for red");
+}
+```

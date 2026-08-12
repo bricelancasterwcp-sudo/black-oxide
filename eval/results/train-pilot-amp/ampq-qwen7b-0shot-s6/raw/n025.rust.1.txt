@@ -1,0 +1,7 @@
+fn main() {
+    let text = "417";
+    match text.parse::<u32>() {
+        Ok(number) => println!("{}", number + 1),
+        Err(_) => println!("bad"),
+    }
+}

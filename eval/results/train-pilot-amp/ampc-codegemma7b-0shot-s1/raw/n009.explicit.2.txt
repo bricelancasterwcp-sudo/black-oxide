@@ -1,0 +1,14 @@
+fn main() {
+    let num = 1234
+    let mut digits = vec()
+    let mut n = num
+    while n > 0 {
+        digits = push(digits, n % 10)
+        n = trunc(n / 10)
+    }
+    for x in &digits {
+        print(x)
+    }
+    drop digits
+    print(digits)
+}

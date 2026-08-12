@@ -1,0 +1,10 @@
+fn main() {
+    let list = vec(1, 2)
+    let entry = get(&list, 5)
+    if entry.is_some() {
+        print(entry.unwrap())
+    } else {
+        print_str("none")
+    }
+    drop list
+}

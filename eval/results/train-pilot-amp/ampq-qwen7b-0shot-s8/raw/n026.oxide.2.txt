@@ -1,0 +1,33 @@
+struct Reading { label: Str, values: Vec<Int> }
+
+fn first_big(v: Vec<Int>) -> Int {
+    let found = -1
+    for x in v {
+        if x > 10 {
+            found = x
+            break
+        }
+    }
+    found
+}
+
+fn second(v: Vec<Int>) -> Option<Int> {
+    let x = get(v, 1)?
+    Some(x + 1)
+}
+
+fn int_to_str(n: Int) -> Str {
+    match n {
+        _ => "0123456789".chars().skip(n).next().unwrap().to_string(),
+    }
+}
+
+fn main() {
+    let number = 2026
+    let number_str = int_to_str(number)
+    let length = str_len(number_str)
+    print(number_str)
+    print_str(" has ")
+    print(length)
+    print_str(" characters")
+}

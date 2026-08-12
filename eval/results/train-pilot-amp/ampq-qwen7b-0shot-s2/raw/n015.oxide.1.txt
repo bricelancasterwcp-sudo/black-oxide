@@ -1,0 +1,16 @@
+struct Readings { readings: Vec<Int> }
+
+fn count_larger_than_four(readings: Vec<Int>) -> Int {
+    let mut count = 0
+    for reading in readings {
+        if reading > 4 {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn main() {
+    let readings = Readings { readings: push(push(push(vec(), 1), 4), 5) }
+    print(count_larger_than_four(readings.readings))
+}

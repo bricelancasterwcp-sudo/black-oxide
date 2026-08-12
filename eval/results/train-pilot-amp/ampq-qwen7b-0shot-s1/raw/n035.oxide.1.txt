@@ -1,0 +1,17 @@
+struct DivResult {
+    result: Option<Float>,
+    error: Option<Str>,
+}
+
+fn divide(a: Float, b: Float) -> DivResult {
+    if b == 0.0 {
+        DivResult(result(None), Some("bad".to_str()))
+    } else {
+        DivResult(Some(a / b), None)
+    }
+}
+
+fn main() {
+    let result = divide(20.0, 4.0).result.unwrap_or_else || "bad".to_str() || "bad".to_str()
+    print(result)
+}

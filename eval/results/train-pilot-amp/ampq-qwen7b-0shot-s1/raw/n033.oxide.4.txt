@@ -1,0 +1,5 @@
+fn main() {
+    println("go for green\n")
+    println("wait for yellow\n")
+    println("stop for red\n")
+}

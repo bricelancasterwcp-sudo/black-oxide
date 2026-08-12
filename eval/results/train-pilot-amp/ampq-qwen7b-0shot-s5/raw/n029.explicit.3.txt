@@ -1,0 +1,382 @@
+fn main() {
+    let num1 = 1
+    let num2 = 2
+    let num3 = 3
+    let text = format_str("One{}", num1).concat(format_str("Two{}", num2)).concat(format_str("Three{}", num3))
+    print_str(&text)
+    drop num1
+    drop num2
+    drop num3
+    drop text
+}
+
+fn format_str(s: &Str, n: Int) -> Str {
+    concat(s, int_to_str(n))
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut result = a
+    let chars = chars(b)
+    for ch in chars {
+        result = push(result, ch)
+    }
+    result
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut chars = vec()
+    let mut num = n
+    if num == 0 {
+        push(chars, push(vec(), 48))
+    } else {
+        while num != 0 {
+            let digit = num % 10
+            num = trunc(num / 10)
+            push(chars, push(vec(), 48 + digit))
+        }
+    }
+    let mut result = vec()
+    let chars = chars.chars()
+    for ch in chars {
+        push(result, ch)
+    }
+    concat("".to_string(), chars)
+}
+
+fn print_str(s: &Str) {
+    for ch in chars(s) {
+        print(&ch)
+    }
+}
+
+fn print(ch: &Char) {
+    let mut chars = vec()
+    push(chars, ch)
+    let mut result = ""
+    for ch in chars {
+        result = push(result, ch)
+    }
+    println(result)
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut result = vec()
+    for ch in s.chars() {
+        push(result, push(vec(), ch))
+    }
+    result
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    concat(v, push(vec(), x))
+}
+
+fn concat(a: Vec<Str>, b: Vec<Str>) -> Vec<Str> {
+    let mut result = a
+    let chars = chars(b)
+    for ch in chars {
+        push(result, ch)
+    }
+    result
+}
+
+fn println(s: &Str) {
+    for ch in chars(s) {
+        print(&ch)
+    }
+    print("\n")
+}
+
+fn str_len(s: &Str) -> Int {
+    chars(s).len()
+}
+
+fn clone(x: &Str) -> Str {
+    let mut result = vec()
+    let chars = chars(x)
+    for ch in chars {
+        push(result, ch)
+    }
+    result
+}
+
+fn trunc(x: Float) -> Int {
+    x.trunc() - x.fract()
+}
+
+fn int_to_float(n: Int) -> Float {
+    n.to_float()
+}
+
+fn to_float(n: Float) -> Float {
+    n
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in a + 1 {
+        if i < b {
+            push(result, i)
+        }
+    }
+    result
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    concat(v, push(vec(), x))
+}
+
+fn concat(a: Vec<Int>, b: Int) -> Vec<Int> {
+    let mut result = a
+    push(result, b)
+    result
+}
+
+fn print_int(n: Int) {
+    let mut chars = vec()
+    let mut num = n
+    if num == 0 {
+        push(chars, push(vec(), 48))
+    } else {
+        while num != 0 {
+            let digit = num % 10
+            num = trunc(num / 10)
+            push(chars, push(vec(), 48 + digit))
+        }
+    }
+    let mut result = ""
+    for ch in chars {
+        result = push(result, ch)
+    }
+    println(result)
+}
+
+fn print(n: Int) {
+    print_int(n)
+}
+
+fn drop_vec(v: Vec<Str>) {
+    for _ in 0 + v.len() {
+        drop_vec(v)
+    }
+}
+
+fn drop_str(s: Str) {
+    for _ in 0 + str_len(&s) {
+        drop_str(s)
+    }
+}
+
+fn drop_int(n: Int) {
+    drop_int(n)
+}
+
+fn drop_char(c: Char) {
+    drop_char(c)
+}
+
+fn drop_bool(b: Bool) {
+    drop_bool(b)
+}
+
+fn drop_unit() {
+    drop_unit()
+}
+
+fn drop_option_none() {
+    drop_option_none()
+}
+
+fn drop_option_some(x: Option<Str>) {
+    drop_option_none()
+}
+
+fn drop_result_ok(x: Result<Str, Str>) {
+    drop_result_none()
+}
+
+fn drop_result_err(e: Result<Str, Str>) {
+    drop_result_none()
+}
+
+fn drop_result_none() {
+    drop_result_none()
+}
+
+fn drop_none() {
+    drop_none()
+}
+
+fn drop_some(x: Option<Str>) {
+    drop_none()
+}
+
+fn drop_char_vec(v: Vec<Char>) {
+    for _ in 0 + v.len() {
+        drop_char_vec(v)
+    }
+}
+
+fn drop_int_vec(v: Vec<Int>) {
+    for _ in 0 + v.len() {
+        drop_int_vec(v)
+    }
+}
+
+fn drop_str_vec(v: Vec<Str>) {
+    for _ in 0 + v.len() {
+        drop_str_vec(v)
+    }
+}
+
+fn drop_bool_vec(v: Vec<Bool>) {
+    for _ in 0 + v.len() {
+        drop_bool_vec(v)
+    }
+}
+
+fn drop_unit_vec(v: Vec<Unit>) {
+    for _ in 0 + v.len() {
+        drop_unit_vec(v)
+    }
+}
+
+fn drop_option_none_vec(v: Vec<Option<Str>>) {
+    for _ in 0 + v.len() {
+        drop_option_none_vec(v)
+    }
+}
+
+fn drop_option_some_vec(v: Vec<Option<Str>>) {
+    for _ in 0 + v.len() {
+        drop_option_none_vec(v)
+    }
+}
+
+fn drop_result_ok_vec(v: Vec<Result<Str, Str>>) {
+    for _ in 0 + v.len() {
+        drop_result_none_vec(v)
+    }
+}
+
+fn drop_result_err_vec(v: Vec<Result<Str, Str>>) {
+    for _ in 0 + v.len() {
+        drop_result_none_vec(v)
+    }
+}
+
+fn drop_result_none_vec(v: Vec<Result<Str, Str>>) {
+    for _ in 0 + v.len() {
+        drop_result_none_vec(v)
+    }
+}
+
+fn drop_none_vec(v: Vec<None>) {
+    for _ in 0 + v.len() {
+        drop_none_vec(v)
+    }
+}
+
+fn drop_some_vec(v: Vec<Option<Str>>) {
+    for _ in 0 + v.len() {
+        drop_none_vec(v)
+    }
+}
+
+fn drop_char_vec_vec(v: Vec<Vec<Char>>) {
+    for _ in 0 + v.len() {
+        drop_char_vec_vec(v)
+    }
+}
+
+fn drop_int_vec_vec(v: Vec<Vec<Int>>) {
+    for _ in 0 + v.len() {
+        drop_int_vec_vec(v)
+    }
+}
+
+fn drop_str_vec_vec(v: Vec<Vec<Str>>) {
+    for _ in 0 + v.len() {
+        drop_str_vec_vec(v)
+    }
+}
+
+fn drop_bool_vec_vec(v: Vec<Vec<Bool>>) {
+    for _ in 0 + v.len() {
+        drop_bool_vec_vec(v)
+    }
+}
+
+fn drop_unit_vec_vec(v: Vec<Vec<Unit>>) {
+    for _ in 0 + v.len() {
+        drop_unit_vec_vec(v)
+    }
+}
+
+fn drop_option_none_vec_vec(v: Vec<Vec<Option>>) {
+    for _ in 0 + v.len() {
+        drop_option_none_vec_vec(v)
+    }
+}
+
+fn drop_option_some_vec_vec(v: Vec<Vec<Option>>) {
+    for _ in 0 + v.len() {
+        drop_option_none_vec_vec(v)
+    }
+}
+
+fn drop_result_ok_vec_vec(v: Vec<Vec<Result>>) {
+    for _ in 0 + v.len() {
+        drop_result_none_vec_vec(v)
+    }
+}
+
+fn drop_result_err_vec_vec(v: Vec<Vec<Result>>) {
+    for _ in 0 + v.len() {
+        drop_result_none_vec_vec(v)
+    }
+}
+
+fn drop_result_none_vec_vec(v: Vec<Vec<Result>>) {
+    for _ in 0 + v.len() {
+        drop_result_none_vec_vec(v)
+    }
+}
+
+fn drop_none_vec_vec(v: Vec<Vec<None>>) {
+    for _ in 0 + v.len() {
+        drop_none_vec_vec(v)
+    }
+}
+
+fn drop_some_vec_vec(v: Vec<Vec<Option>>) {
+    for _ in 0 + v.len() {
+        drop_none_vec_vec(v)
+    }
+}
+
+fn drop_char_vec_vec_vec(v: Vec<Vec<Vec>>) {
+    for _ in 0 + v.len() {
+        drop_char_vec_vec_vec(v)
+    }
+}
+
+fn drop_int_vec_vec_vec(v: Vec<Vec<Vec>>) {
+    for _ in 0 + v.len() {
+        drop_int_vec_vec_vec(v)
+    }
+}
+
+fn drop_str_vec_vec_vec(v: Vec<Vec<Vec>>) {
+    for _ in 0 + v.len() {
+        drop_str_vec_vec_vec(v)
+    }
+}
+
+fn drop_bool_vec_vec_vec(v: Vec<Vec<Vec>>) {
+    for _ in 0 + v.len() {
+        drop_bool_vec_vec_vec(v)
+    }
+}
+
+fn drop

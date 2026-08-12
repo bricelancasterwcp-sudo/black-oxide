@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let list = (1..11).filter(|&x| x % 3 == 0).collect::<Vec<i32>>();
+    let total: i32 = list.iter().sum();
+    println!("The total of numbers divisible by 3 from 1 to 10 is: {}", total);
+}
+```

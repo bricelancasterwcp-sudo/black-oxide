@@ -1,0 +1,5 @@
+fn main() {
+    let s = str_len(int_to_str(2026))
+    print(s)
+    drop s
+}

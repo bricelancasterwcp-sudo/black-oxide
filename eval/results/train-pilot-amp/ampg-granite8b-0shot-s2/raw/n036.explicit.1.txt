@@ -1,0 +1,9 @@
+fn stock() -> Int {
+    let four_three = 4 * 3
+    let five_two = 5 * 2
+    four_three + five_two
+}
+
+fn main() {
+    print(stock())
+}

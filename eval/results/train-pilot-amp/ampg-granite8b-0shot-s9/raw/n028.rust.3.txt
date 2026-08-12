@@ -1,0 +1,11 @@
+fn main() {
+    let result: Result<u32, &str> = "abc".parse();
+    match result {
+        Ok(n) => {
+            println!("The number is: {}", n);
+        }
+        Err(e) => {
+            println!("bad: {}", e);
+        }
+    }
+}

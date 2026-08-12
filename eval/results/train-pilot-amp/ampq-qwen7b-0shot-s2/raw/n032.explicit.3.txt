@@ -1,0 +1,7 @@
+fn main() {
+    structPoint(x, y) == structPoint(1, 5)
+    let point2 = structPoint(x, 10)
+    print(point2.x + point2.y)
+    drop point1
+    drop point2
+}

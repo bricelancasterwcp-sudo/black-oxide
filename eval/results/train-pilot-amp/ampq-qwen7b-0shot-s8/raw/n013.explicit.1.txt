@@ -1,0 +1,16 @@
+fn max(a: Int, b: Int) -> Int {
+    if a > b {
+        a
+    } else {
+        b
+    }
+}
+
+fn main() {
+    let readings = vec(5, 3, 9, 1, 7)
+    let mut max_val = readings.pop().unwrap()
+    for x in readings {
+        max_val = max(max_val, x)
+    }
+    print(max_val)
+}

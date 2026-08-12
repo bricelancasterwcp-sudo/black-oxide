@@ -1,0 +1,13 @@
+fn second<T>(list: &[T]) -> Option<&T> {
+    list.get(1)
+}
+
+fn main() {
+    let list7 = [7];
+    let list8 = [8, 9];
+    let list9 = [9, 8, 7];
+
+    println!("{:?}", second(&list7));  // None
+    println!("{:?}", second(&list8));  // Some(&9)
+    println!("{:?}", second(&list9));  // Some(&8)
+}

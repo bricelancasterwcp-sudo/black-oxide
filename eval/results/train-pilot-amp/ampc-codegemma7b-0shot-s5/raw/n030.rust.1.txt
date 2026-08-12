@@ -1,0 +1,16 @@
+```rust
+use std::io;
+
+fn main() {
+    let mut vowels = 0;
+    let stdin = io::stdin();
+    for line in stdin.lines() {
+        for c in line.unwrap().chars() {
+            if matches!(c, 'a' | 'e' | 'i' | 'o' | 'u') {
+                vowels += 1;
+            }
+        }
+    }
+    println!("Vowels: {}", vowels);
+}
+```

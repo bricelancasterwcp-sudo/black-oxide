@@ -1,0 +1,5 @@
+fn main() {
+    let word = "programming";
+    let count = word.chars().count();
+    println!("The word '{}' has {} characters.", word, count);
+}

@@ -1,0 +1,6 @@
+fn main() {
+    match std::str::FromStr::from_str::<i32>("417") {
+        Ok(num) => println!("{}", num + 1),
+        Err(_) => println!("bad"),
+    }
+}

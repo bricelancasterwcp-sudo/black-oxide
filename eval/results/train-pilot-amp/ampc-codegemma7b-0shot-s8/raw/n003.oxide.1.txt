@@ -1,0 +1,13 @@
+fn count_dividers(n: Int) -> Int {
+    let mut count = 0
+    for x in range(1, n + 1) {
+        if n % x == 0 {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn main() {
+    print(count_dividers(36))
+}

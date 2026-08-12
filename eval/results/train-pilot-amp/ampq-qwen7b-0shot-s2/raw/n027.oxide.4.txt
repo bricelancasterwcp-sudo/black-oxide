@@ -1,0 +1,9 @@
+struct Letter { ch: Str }
+
+fn main() {
+    let word = "cat"
+    for ch in chars(word) {
+        let l = Letter { ch: ch.clone() }
+        print_str(l.ch + "\n")
+    }
+}

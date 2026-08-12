@@ -1,0 +1,16 @@
+struct Reading { label: Str, values: Vec<Int> }
+
+fn max(v: Vec<Int>) -> Int {
+    let mut max_val = -1
+    for x in v {
+        if x > max_val {
+            max_val = x
+        }
+    }
+    max_val
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(push(push(vec(), 5), 3), 9), 1), pushvec: 7 } // Fixed the struct initialization
+    print(max(r.values))            // field access copies: r stays usable
+}

@@ -1,0 +1,159 @@
+fn main() {
+    print(read_num("abc"))
+}
+
+fn read_num(s: Str) -> Option<Int> {
+    let chars = chars(s)
+    let mut result = 0
+    let mut power = 1
+    for i in len(chars) - 1.down_to(0) {
+        let digit = get(chars, i)? - 48
+        let value = digit * power
+        result = result + value
+        power = power * 10
+    }
+    Some(result)
+}
+
+fn print(s: Str) {
+    print_str(s)
+    print_str("\n")
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = vec()
+    for c in s {
+        result = push(result, c)
+    }
+    result
+}
+
+fn get(v: Vec<T>, i: Int) -> Option<T> {
+    if i < 0 || i >= len(v) {
+        return None
+    }
+    Some(clone(v.i))
+}
+
+fn len(v: Vec<T>) -> Int {
+    v.len()
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    let mut v = v
+    v = functional_update(v, len(v), x)
+    v
+}
+
+fn functional_update(v: Vec<T>, index: Int, x: T) -> Vec<T> {
+    let mut v = clone(v)
+    v.index = x
+    v
+}
+
+fn clone(x: T) -> T {
+    x
+}
+
+fn print_str(s: Str) {
+    s.print()
+}
+
+fn down_to(x: Int, y: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in x.down_to(y) {
+        result = push(result, i)
+    }
+    result
+}
+
+fn read_str(prompt: Str) -> Str {
+    prompt.print()
+    ""
+}
+
+fn print(x: Str) {
+    print_str(x)
+}
+
+fn main() {
+    print(read_str("abc"))
+}
+
+fn read_str(prompt: Str) -> Str {
+    prompt.print()
+    ""
+}
+
+fn print(x: Str) {
+    print_str(x)
+}
+
+fn print_str(s: Str) {
+    s.print()
+}
+
+fn clone(x: T) -> T {
+    x
+}
+
+fn down_to(x: Int, y: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in x.down_to(y) {
+        result = push(result, i)
+    }
+    result
+}
+
+fn get(v: Vec<T>, i: Int) -> Option<T> {
+    if i < 0 || i >= len(v) {
+        return None
+    }
+    Some(clone(v.i))
+}
+
+fn len(v: Vec<T>) -> Int {
+    v.len()
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    let mut v = v
+    v = functional_update(v, len(v), x)
+    v
+}
+
+fn functional_update(v: Vec<T>, index: Int, x: T) -> Vec<T> {
+    let mut v = clone(v)
+    v.index = x
+    v
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = vec()
+    for c in s {
+        result = push(result, c)
+    }
+    result
+}
+
+fn read_num(s: Str) -> Option<Int> {
+    let chars = chars(s)
+    let mut result = 0
+    let mut power = 1
+    for i in len(chars) - 1.down_to(0) {
+        let digit = get(chars, i)? - 48
+        let value = digit * power
+        result = result + value
+        power = power * 10
+    }
+    Some(result)
+}
+
+fn print(s: Str) {
+    print_str(s)
+    print_str("\n")
+}
+
+fn main() {
+    print(read_num("abc"))
+}

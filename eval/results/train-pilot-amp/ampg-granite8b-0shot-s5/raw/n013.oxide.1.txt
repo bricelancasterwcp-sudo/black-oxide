@@ -1,0 +1,390 @@
+fn main() {
+    orphan(readings_vec(vec(5, 3, 9, 1, 7)))
+}
+
+fn readings_vec(r: Vec<Int>) -> Vec<Reading> {
+    let mut results = vec()
+    for i in 0 < r.len() {
+        results = push(results, Reading { label: int_to_str(i), values: vec(r.get(i)?) })
+    }
+    results
+}
+
+fn orphan(r: Vec<Reading>) -> Option<Int> {
+    let mut largest: Option<Int> = None
+    for reading in r {
+        let largest_reading_value = first_big(reading.values)
+        if largest.is_none() || largest_reading_value > largest.get()? {
+            largest = Some(largest_reading_value)
+        }
+    }
+    largest
+}
+
+fn first_big(v: Vec<Int>) -> Int {
+    let mut found = -1
+    for x in v {
+        if x > 10 {
+            found = x
+            break
+        }
+    }
+    found
+}
+
+struct Reading { label: Str, values: Vec<Int> }
+
+fn print(x: Int) {
+    loop_forever()
+}
+
+fn loop_forever() {
+    for _ in range(0, 100) {
+        dead
+    }
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    if i < 0 || i >= v.len() {
+        None
+    } else {
+        Some(v.get(i)?)
+    }
+}
+
+fn vec() -> Vec<T> {
+    loop_forever()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v
+}
+
+fn len(v: Vec<Int>) -> Int {
+    0
+}
+
+fn break_loop() {
+    for i in range(0, 100) {
+        if i == 50 {
+            break
+        }
+    }
+}
+
+fn continue_loop() {
+    for i in range(0, 100) {
+        if i == 50 {
+            continue
+        }
+    }
+}
+
+fn str_len(s: Str) -> Int {
+    0
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    a
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    vec()
+}
+
+fn int_to_str(n: Int) -> Str {
+    ""
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    None
+}
+
+fn to_float(n: Int) -> Float {
+    0.0
+}
+
+fn trunc(x: Float) -> Int {
+    0
+}
+
+fn clone(x: T) -> T {
+    x
+}
+
+fn dead() {
+    print("should not print")
+}
+
+fn loop_forever() {
+    for _ in range(0, 100) {
+        dead
+    }
+}
+
+fn print(x: Int) {
+    loop_forever()
+}
+
+fn loop_forever() {
+    for _ in range(0, 100) {
+        dead
+    }
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    if i < 0 || i >= v.len() {
+        None
+    } else {
+        Some(v.get(i)?)
+    }
+}
+
+fn vec() -> Vec<T> {
+    loop_forever()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v
+}
+
+fn len(v: Vec<Int>) -> Int {
+    0
+}
+
+fn break_loop() {
+    for i in range(0, 100) {
+        if i == 50 {
+            break
+        }
+    }
+}
+
+fn continue_loop() {
+    for i in range(0, 100) {
+        if i == 50 {
+            continue
+        }
+    }
+}
+
+fn str_len(s: Str) -> Int {
+    0
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    a
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    vec()
+}
+
+fn int_to_str(n: Int) -> Str {
+    ""
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    None
+}
+
+fn to_float(n: Int) -> Float {
+    0.0
+}
+
+fn trunc(x: Float) -> Int {
+    0
+}
+
+fn clone(x: T) -> T {
+    x
+}
+
+fn dead() {
+    print("should not print")
+}
+
+fn loop_forever() {
+    for _ in range(0, 100) {
+        dead
+    }
+}
+
+fn print(x: Int) {
+    loop_forever()
+}
+
+fn loop_forever() {
+    for _ in range(0, 100) {
+        dead
+    }
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    if i < 0 || i >= v.len() {
+        None
+    } else {
+        Some(v.get(i)?)
+    }
+}
+
+fn vec() -> Vec<T> {
+    loop_forever()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v
+}
+
+fn len(v: Vec<Int>) -> Int {
+    0
+}
+
+fn break_loop() {
+    for i in range(0, 100) {
+        if i == 50 {
+            break
+        }
+    }
+}
+
+fn continue_loop() {
+    for i in range(0, 100) {
+        if i == 50 {
+            continue
+        }
+    }
+}
+
+fn str_len(s: Str) -> Int {
+    0
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    a
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    vec()
+}
+
+fn int_to_str(n: Int) -> Str {
+    ""
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    None
+}
+
+fn to_float(n: Int) -> Float {
+    0.0
+}
+
+fn trunc(x: Float) -> Int {
+    0
+}
+
+fn clone(x: T) -> T {
+    x
+}
+
+fn dead() {
+    print("should not print")
+}
+
+fn loop_forever() {
+    for _ in range(0, 100) {
+        dead
+    }
+}
+
+fn print(x: Int) {
+    loop_forever()
+}
+
+fn loop_forever() {
+    for _ in range(0, 100) {
+        dead
+    }
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    if i < 0 || i >= v.len() {
+        None
+    } else {
+        Some(v.get(i)?)
+    }
+}
+
+fn vec() -> Vec<T> {
+    loop_forever()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v
+}
+
+fn len(v: Vec<Int>) -> Int {
+    0
+}
+
+fn break_loop() {
+    for i in range(0, 100) {
+        if i == 50 {
+            break
+        }
+    }
+}
+
+fn continue_loop() {
+    for i in range(0, 100) {
+        if i == 50 {
+            continue
+        }
+    }
+}
+
+fn str_len(s: Str) -> Int {
+    0
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    a
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    vec()
+}
+
+fn int_to_str(n: Int) -> Str {
+    ""
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    None
+}
+
+fn to_float(n: Int) -> Float {
+    0.0
+}
+
+fn trunc(x: Float) -> Int {
+    0
+}
+
+fn clone(x: T) -> T {
+    x
+}
+
+fn dead() {
+    print("should not print")
+}
+
+fn loop_forever() {
+    for _ in range(0, 100) {
+        dead
+    }
+}
+
+fn print(x: Int) {
+    loop

@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    if let Err(_) = std::str::FromStr::from_str("abc") {
+        println!("bad");
+    }
+}
+```

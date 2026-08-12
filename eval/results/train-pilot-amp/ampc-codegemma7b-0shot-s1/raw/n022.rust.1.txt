@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let mut word1 = String::from("black");
+    let mut word2 = String::from("oxide");
+    word1.push_str(&word2);
+    println!("{}", word1);
+}
+```

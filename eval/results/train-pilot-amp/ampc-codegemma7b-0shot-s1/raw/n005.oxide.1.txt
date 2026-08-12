@@ -1,0 +1,13 @@
+fn total_evens() -> Int {
+    let mut acc = 0
+    for n in range(1, 21) {
+        if n % 2 == 0 {
+            acc = acc + n
+        }
+    }
+    acc
+}
+
+fn main() {
+    print(total_evens())
+}

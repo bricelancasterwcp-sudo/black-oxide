@@ -1,0 +1,13 @@
+fn divide(x: Int, y: Int) -> Str {
+    if y == 0 {
+        "bad"
+    } else {
+        int_to_str(x / y)
+    }
+}
+
+fn main() {
+    let result = divide(20, 4)
+    print_str(result)
+    drop result
+}

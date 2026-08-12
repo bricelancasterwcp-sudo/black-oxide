@@ -1,0 +1,7 @@
+use std::cmp::max;
+
+fn main() {
+    let readings = [5, 3, 9, 1, 7];
+    let largest = readings.iter().fold(readings[0], max);
+    println!("{}", largest);
+}

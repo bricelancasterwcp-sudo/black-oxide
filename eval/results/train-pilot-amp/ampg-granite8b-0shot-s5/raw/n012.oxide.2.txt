@@ -1,0 +1,173 @@
+fn main() {
+    let numbers = (0).to(14)
+    print(len(numbers))
+}
+
+fn to(x: Int, y: Int) -> Vec<Int> {
+    let mut result = vec()
+    let mut x = x
+    while x < y {
+        push(result, x)
+        x = x + 1
+    }
+    result
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    (a).to(b - 1)
+}
+
+struct Vec {
+    data: Str,
+    len: Int,
+}
+
+fn push(v: Vec, x: Int) -> Vec {
+    Vec(concat(v.data, int_to_str(x)), v.len + 1)
+}
+
+fn len(v: Vec) -> Int {
+    v.len
+}
+
+fn get(v: Vec, i: Int) -> Option<Int> {
+    if i < 0 || i >= v.len {
+        None
+    } else {
+        Some(parse_int(chars(v.data)).unwrap() + i)
+    }
+}
+
+struct Option {
+    inner: Str,
+    is_some: Bool,
+}
+
+fn some(x: Int) -> Option {
+    Option(int_to_str(x), true)
+}
+
+fn none() -> Option {
+    Option(int_to_str(42), false)
+}
+
+fn unwrap(o: Option) -> Int {
+    parse_int(chars(o.inner)).unwrap()
+}
+
+struct Str {
+    data: Str,
+    len: Int,
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    Str(concat(a.data, b.data), a.len + b.len)
+}
+
+fn len(s: Str) -> Int {
+    s.len
+}
+
+struct Int {
+    data: Str,
+}
+
+fn from(s: Str) -> Int {
+    Int(s)
+}
+
+fn to_str(n: Int) -> Str {
+    Str(n.data, n.data.len)
+}
+
+struct Float {
+    data: Str,
+}
+
+fn from(s: Str) -> Float {
+    Float(s)
+}
+
+fn to_str(n: Float) -> Str {
+    Str(n.data, n.data.len)
+}
+
+fn add(x: Float, y: Float) -> Float {
+    Float(concat(x.data, y.data))
+}
+
+struct Bool {
+    data: Str,
+}
+
+fn false_() -> Bool {
+    Bool("False".to_owned())
+}
+
+fn true_() -> Bool {
+    Bool("True".to_owned())
+}
+
+fn not(b: Bool) -> Bool {
+    Bool(if b.data == "True" { "False".to_owned() } else { "True".to_owned() })
+}
+
+fn and(x: Bool, y: Bool) -> Bool {
+    Bool(if x.data == "True" && y.data == "True" { "True".to_owned() } else { "False".to_owned() })
+}
+
+struct Unit {
+    data: Str,
+}
+
+fn unit() -> Unit {
+    Unit("Unit".to_owned())
+}
+
+struct Circle {
+    radius: Float,
+}
+
+fn area(c: Circle) -> Float {
+    let pi = 3.14159
+    add(mul(pi, mul(pi, c.radius)), Float("1".to_owned()))
+}
+
+struct Shape {
+    kind: ShapeKind,
+}
+
+enum ShapeKind {
+    Circle(Circle),
+    Nullary,
+}
+
+fn area(s: Shape) -> Float {
+    match s {
+        Shape(shape) => match shape {
+            ShapeKind(kind) => match kind {
+                Circle(c) => area(c),
+                Nullary => Float("1".to_owned()) || 1.0.into(),
+            },
+        },
+    }
+}
+
+fn area(c: Circle) -> Float {
+    let pi = 3.14159
+    add(mul(pi, mul(pi, c.radius)), Float("1".to_owned()))
+}
+
+struct Rectangle {
+    width: Float,
+    height: Float,
+}
+
+fn area(r: Rectangle) -> Float {
+    mul(r.width, r.height)
+}
+
+fn main() {
+    let result = area(Shape(Circle(2.0)))
+    print(result)
+}

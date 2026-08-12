@@ -1,0 +1,305 @@
+fn main() {
+    let mut v = range(5, 10)
+    v = push(v, 3)
+    print(last(v))
+}
+
+fn last(mutvas: Vec<Int>) -> Int {
+    let mut last = -1
+    while len(vas) > 0 {
+        last = pop(vas)
+    }
+    last
+}
+
+fn pop(mutvas: Vec<Int>) -> Int {
+    let last = get(mutvas, len(mutvas) - 1)?
+    let mutvas2 = vec()
+    for i in range(0, len(mutvas) - 1) {
+        mutvas2 = push(mutvas2, get(mutvas, i)?)
+    }
+    mutvas = mutvas2
+    last
+}
+
+fn range(from: Int, to: Int) -> Vec<Int> {
+    let mut res = vec()
+    for i in from.to_float() + 0.5 {
+        if i < to.to_float() + 0.5 {
+            res = push(res, i.trunc())
+        }
+    }
+    res
+}
+
+fn get(vas: Vec<Int>, i: Int) -> Option<Int> {
+    if i >= 0 && i < len(vas) {
+        Some(get_at(vas, i))
+    } else {
+        None
+    }
+}
+
+fn get_at(vas: Vec<Int>, i: Int) -> Int {
+    get(vas, i)?
+}
+
+fn len(vas: Vec<Int>) -> Int {
+    trunc(last(vas))
+}
+
+fn push(vas: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut vas2 = vas
+    vas2 = push(vas2, x)
+    vas2
+}
+
+fn print(x: Int) {
+    print_str("I printed ")
+    print_int(x)
+    print_str("\n")
+}
+
+fn print_str(s: Str) {
+    native_print_str(s)
+}
+
+fn print_int(n: Int) {
+    print_str(int_to_str(n))
+}
+
+fn native_print_str(s: Str) {
+    _ = s
+}
+
+fn int_to_str(n: Int) -> Str {
+    _ = n
+    "?"
+}
+
+fn truncate(s: Str) -> Str {
+    _ = s
+    "?"
+}
+
+fn truncate_int(n: Int) -> Int {
+    _ = n
+    42
+}
+
+fn main() {
+    let v = push(push(vec(), 3), 42)
+    let last = last(v)
+    print_str("The last element was ")
+    print_int(last)
+    print_str("\n")
+}
+
+fn last(mutvas: Vec<Int>) -> Int {
+    let mut last = -1
+    while len(mutvas) > 0 {
+        last = pop(mutvas)
+    }
+    last
+}
+
+fn pop(mutvas: Vec<Int>) -> Int {
+    let last = get(mutvas, len(mutvas) - 1)?
+    let mutvas2 = vec()
+    for i in range(0, len(mutvas) - 1) {
+        mutvas2 = push(mutvas2, get(mutvas, i)?)
+    }
+    mutvas = mutvas2
+    last
+}
+
+fn range(from: Int, to: Int) -> Vec<Int> {
+    let mut res = vec()
+    for i in from.to_float() + 0.5 {
+        if i < to.to_float() + 0.5 {
+            res = push(res, i.trunc())
+        }
+    }
+    res
+}
+
+fn get(vas: Vec<Int>, i: Int) -> Option<Int> {
+    if i >= 0 && i < len(vas) {
+        Some(get_at(vas, i))
+    } else {
+        None
+    }
+}
+
+fn get_at(vas: Vec<Int>, i: Int) -> Int {
+    get(vas, i)?
+}
+
+fn len(vas: Vec<Int>) -> Int {
+    trunc(last(vas))
+}
+
+fn push(vas: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut vas2 = vas
+    vas2 = push(vas2, x)
+    vas2
+}
+
+fn print(x: Int) {
+    print_str("I printed ")
+    print_int(x)
+    print_str("\n")
+}
+
+fn print_str(s: Str) {
+    native_print_str(s)
+}
+
+fn print_int(n: Int) {
+    print_str(int_to_str(n))
+}
+
+fn native_print_str(s: Str) {
+    _ = s
+}
+
+fn int_to_str(n: Int) -> Str {
+    _ = n
+    "?"
+}
+
+fn truncate(s: Str) -> Str {
+    _ = s
+    "?"
+}
+
+fn truncate_int(n: Int) -> Int {
+    _ = n
+    42
+}
+
+fn main() {
+    let v = push(push(vec(), 3), 42)
+    let last = last(v)
+    print_str("The last element was ")
+    print_int(last)
+    print_str("\n")
+}
+
+fn last(mutvas: Vec<Int>) -> Int {
+    let mut last = -1
+    while len(mutvas) > 0 {
+        last = pop(mutvas)
+    }
+    last
+}
+
+fn pop(mutvas: Vec<Int>) -> Int {
+    let last = get(mutvas, len(mutvas) - 1)?
+    let mutvas2 = vec()
+    for i in range(0, len(mutvas) - 1) {
+        mutvas2 = push(mutvas2, get(mutvas, i)?)
+    }
+    mutvas = mutvas2
+    last
+}
+
+fn range(from: Int, to: Int) -> Vec<Int> {
+    let mut res = vec()
+    for i in from.to_float() + 0.5 {
+        if i < to.to_float() + 0.5 {
+            res = push(res, i.trunc())
+        }
+    }
+    res
+}
+
+fn get(vas: Vec<Int>, i: Int) -> Option<Int> {
+    if i >= 0 && i < len(vas) {
+        Some(get_at(vas, i))
+    } else {
+        None
+    }
+}
+
+fn get_at(vas: Vec<Int>, i: Int) -> Int {
+    get(vas, i)?
+}
+
+fn len(vas: Vec<Int>) -> Int {
+    trunc(last(vas))
+}
+
+fn push(vas: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut vas2 = vas
+    vas2 = push(vas2, x)
+    vas2
+}
+
+fn print(x: Int) {
+    print_str("I printed ")
+    print_int(x)
+    print_str("\n")
+}
+
+fn print_str(s: Str) {
+    native_print_str(s)
+}
+
+fn print_int(n: Int) {
+    print_str(int_to_str(n))
+}
+
+fn native_print_str(s: Str) {
+    _ = s
+}
+
+fn int_to_str(n: Int) -> Str {
+    _ = n
+    "?"
+}
+
+fn truncate(s: Str) -> Str {
+    _ = s
+    "?"
+}
+
+fn truncate_int(n: Int) -> Int {
+    _ = n
+    42
+}
+
+fn main() {
+    let v = push(push(vec(), 3), 42)
+    let last = last(v)
+    print_str("The last element was ")
+    print_int(last)
+    print_str("\n")
+}
+
+fn last(mutvas: Vec<Int>) -> Int {
+    let mut last = -1
+    while len(mutvas) > 0 {
+        last = pop(mutvas)
+    }
+    last
+}
+
+fn pop(mutvas: Vec<Int>) -> Int {
+    let last = get(mutvas, len(mutvas) - 1)?
+    let mutvas2 = vec()
+    for i in range(0, len(mutvas) - 1) {
+        mutvas2 = push(mutvas2, get(mutvas, i)?)
+    }
+    mutvas = mutvas2
+    last
+}
+
+fn range(from: Int, to: Int) -> Vec<Int> {
+    let mut res = vec()
+    for i in from.to_float() + 0.5 {
+        if i < to.to_float() + 0.5 {
+            res = push(res, i.trunc())
+        }
+    }
+   

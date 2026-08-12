@@ -1,0 +1,5 @@
+fn main() {
+    let black = "black"
+    let oxide = "oxide"
+    print_str(oxide + black)
+}

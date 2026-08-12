@@ -1,0 +1,19 @@
+struct Reading { label: Str, values: Vec<Int> }
+
+fn smallest(v: Vec<Int>) -> Option<Int> {
+    let mut min = v.get(0)?.clone()
+    for x in v {
+        if x < min {
+            min = x
+        }
+    }
+    Some(min)
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(push(push(vec(), 5), 3), 9), 1) }
+    match smallest(r.values) {
+        Some(n) => print(n),
+        None => print_str("too short"),
+    }
+}

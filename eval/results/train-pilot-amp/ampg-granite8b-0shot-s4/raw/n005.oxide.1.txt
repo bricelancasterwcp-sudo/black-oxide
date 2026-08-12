@@ -1,0 +1,15 @@
+struct Range { start: Int, end: Int }
+
+fn total_of_evens(range: Range) -> Int {
+    let total = 0
+    for i in range.start.to(range.end) {
+        if i % 2 == 0 {
+            total = total + i
+        }
+    }
+    total
+}
+
+fn main() {
+    print(total_of_evens(Range { start: 1, end: 20 }))
+}

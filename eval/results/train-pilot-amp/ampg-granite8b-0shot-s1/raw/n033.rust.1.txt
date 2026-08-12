@@ -1,0 +1,14 @@
+#![allow(unused_must_use)]
+
+fn main() {
+    loop {
+        eprintln!("go for green");
+        std::thread::sleep(std::time::Duration::from_secs(1));
+
+        eprintln!("wait for yellow");
+        std::thread::sleep(std::time::Duration::from_secs(3));
+
+        eprintln!("stop for red");
+        std::thread::sleep(std::time::Duration::from_secs(1));
+    }
+}

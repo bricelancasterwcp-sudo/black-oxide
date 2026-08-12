@@ -1,0 +1,4 @@
+fn main() {
+    let list = (0..15).collect::<Vec<i32>>();
+    println!("Length of list: {}", list.len());
+}

@@ -1,0 +1,4 @@
+fn main() {
+    let joined = "blackoxide".to_string()
+    print(joined)
+}

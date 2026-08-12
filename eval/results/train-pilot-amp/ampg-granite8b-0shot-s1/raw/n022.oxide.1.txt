@@ -1,0 +1,8 @@
+fn blackoxide() {
+    let oxide = "oxide".to_string().clone() + "black"
+    print(oxide)
+}
+
+fn main() {
+    blackoxide()
+}

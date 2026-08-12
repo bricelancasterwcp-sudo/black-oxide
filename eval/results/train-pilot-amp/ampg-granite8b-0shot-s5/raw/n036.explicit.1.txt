@@ -1,0 +1,26 @@
+fn stocked() -> Int {
+    let four_a = 4
+    let four_b = 4
+    let five_a = 5
+    let five_b = 5
+    let stock_a = push(push(vec(), five_a), four_a)
+    let stock_b = push(push(vec(), five_b), four_b)
+    sum_big(&stock_a, 0) + sum_big(&stock_b, 0)
+}
+
+fn sum_big(v: &Vec<Int>, total: Int) -> Int {
+    if len(&v) == 0 {
+        total
+    } else {
+        let x = get(&v, 0)
+        if x == None {
+            total
+        } else {
+            sum_big(&v, total + x.unwrap())
+        }
+    }
+}
+
+fn main() {
+    print(stocked())
+}

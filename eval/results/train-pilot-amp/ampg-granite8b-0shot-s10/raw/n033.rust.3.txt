@@ -1,0 +1,9 @@
+fn main() {
+    use std::io::Write;
+    let mut light = std::io::stdout();
+    light.write_all(b"go for green\n").unwrap();
+    std::thread::sleep(std::time::Duration::from_secs(1));
+    light.write_all(b"wait for yellow\n").unwrap();
+    std::thread::sleep(std::time::Duration::from_secs(1));
+    light.write_all(b"stop for red\n").unwrap();
+}

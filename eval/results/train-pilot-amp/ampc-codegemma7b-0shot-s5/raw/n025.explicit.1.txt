@@ -1,0 +1,19 @@
+fn read_int() -> Option<Int> {
+    let line = str_len(input())
+    if line == 0 {
+        return None
+    }
+    let mut chars = chars(line)
+    let mut result = 0
+    for c in chars {
+        result = result * 10 + int_to_str(int_to_str(c).to_float().trunc())
+    }
+    Some(result)
+}
+
+fn main() {
+    match read_int() {
+        Some(x) => print(x + 1),
+        None => print("bad") - -prints - ifno - number - inthetext - -bad - -endprint,
+    }
+}

@@ -1,0 +1,5 @@
+fn main() {
+    let nums = range(0, 15)
+    print(len(nums))
+    drop nums
+}

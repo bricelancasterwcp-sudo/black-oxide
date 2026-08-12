@@ -1,0 +1,3 @@
+fn main() {
+    println(len(concat(to_str(15), " programming")))
+}

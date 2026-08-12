@@ -1,0 +1,17 @@
+```rust
+const fn list_get(list: &[u8], index: usize) -> Option<&u8> {
+    if index < list.len() {
+        return Some(&list[index]);
+    }
+    None
+}
+
+fn main() {
+    let list = &[1, 2];
+    let index = 5;
+    match list_get(list, index) {
+        Some(val) => println!("{}", val),
+        None => println!("None"),
+    }
+}
+```

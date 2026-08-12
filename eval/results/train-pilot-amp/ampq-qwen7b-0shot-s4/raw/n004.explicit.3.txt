@@ -1,0 +1,20 @@
+fn fib(n: Int) -> Int {
+    if n <= 1 {
+        n
+    } else {
+        let a = 1
+        let b = 1
+        for _ in 2.10 {
+            let temp = a + b
+            drop a
+            a = b
+            b = temp
+        }
+        a
+    }
+}
+
+fn main() {
+    print(fib(9))
+    drop main
+}

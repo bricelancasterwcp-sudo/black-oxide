@@ -1,0 +1,10 @@
+struct Oxide {
+    black: String,
+}
+
+fn main() {
+    let black = Oxide { black: "black".to_string() }
+    let mut black = black.black
+    black.push_str("oxide")
+    print(black)
+}

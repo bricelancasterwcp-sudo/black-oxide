@@ -1,0 +1,10 @@
+struct Entry { value: Int }
+
+fn main() {
+    let list = vec(Entry { value: 10 }, Entry { value: 20 }, Entry { value: 30 }, Entry { value: 40 })
+    let entry = get(list, 2)?
+    match entry {
+        Some(e) => print(e.value),
+        None => print_str("missing"),
+    }
+}

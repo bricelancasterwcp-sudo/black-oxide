@@ -1,0 +1,14 @@
+fn min_in_set(v: Vec<Int>) -> Int {
+    let mut min = v.pop().unwrap()
+    for x in v {
+        if x < min {
+            min = x
+        }
+    }
+    min
+}
+
+fn main() {
+    let readings = vec(5, 3, 9, 1, 7)
+    print(min_in_set(readings.clone()))
+}

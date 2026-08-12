@@ -1,0 +1,16 @@
+use std::collections::LinkedList;
+
+fn main() {
+    let mut multiples: LinkedList<i32> = LinkedList::new();
+
+    for i in 1..=6 {
+        multiples.push_back(i * 4);
+    }
+
+    let mut sum = 0;
+    for multiple in multiples {
+        sum += multiple;
+    }
+
+    println!("Sum of multiples: {}", sum);
+}

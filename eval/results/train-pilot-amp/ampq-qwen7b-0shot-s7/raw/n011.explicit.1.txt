@@ -1,0 +1,13 @@
+fn main() {
+    let mut list = vec()
+    let mut total = 0
+    let mut i = 1
+    while i <= 6 {
+        let num = i * 4
+        push(list, num)
+        total = total + num
+        i = i + 1
+    }
+    print(total)
+    drop list
+}

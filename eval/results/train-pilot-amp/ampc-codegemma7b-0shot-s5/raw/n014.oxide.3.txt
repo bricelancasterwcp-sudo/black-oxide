@@ -1,0 +1,227 @@
+fn main() {
+    let v = vec(5, 3, 9, 1, 7)
+    print(first_small(v))
+}
+
+fn first_small(mutv: Vec<Int>) -> Int {
+    let mut least = v.first().unwrap()
+    for x in v {
+        if x < least {
+            least = x
+        }
+    }
+    least
+}
+
+fn vec(x: Int, y: Int, z: Int, a: Int, b: Int) -> Vec<Int> {
+    let mut result = Vec { len: 5 }
+    result.push(x)
+    result.push(y)
+    result.push(z)
+    result.push(a)
+    result.push(b)
+    result
+}
+
+fn print(x: Int) {
+    let s = int_to_str(x)
+    for c in chars(s) {
+        print_str(c)
+    }
+    print_str("\n")
+}
+
+fn print_str(s: Str) {
+    for c in chars(s) {
+        putchar(c)
+    }
+}
+
+fn putchar(c: Str) {
+    let mut buffer = Vec { len: 1 }
+    buffer.push(c)
+    print_char(buffer)
+}
+
+fn print_char(v: Vec<Str>) {
+    for c in v {
+        write_char(c)
+    }
+}
+
+fn write_char(c: Str) {
+    let mut position = 0
+    write_mem(position, c)
+    position = position + 1
+}
+
+fn write_mem(position: Int, c: Str) {
+    let mut buffer = Vec { len: 1 }
+    buffer.push(c)
+    write_mem_bytes(position, buffer)
+}
+
+fn write_mem_bytes(position: Int, v: Vec<Str>) {
+    for c in v {
+        write_mem_byte(position, c)
+    }
+}
+
+fn write_mem_byte(position: Int, c: Str) {
+    let mut buffer = Vec { len: 1 }
+    buffer.push(c)
+    write_mem_byte_bytes(position, buffer)
+}
+
+fn write_mem_byte_bytes(position: Int, v: Vec<Str>) {
+    for c in v {
+        write_mem_byte_byte(position, c)
+    }
+}
+
+fn write_mem_byte_byte(position: Int, c: Str) {
+    let mut buffer = Vec { len: 1 }
+    buffer.push(c)
+    write_mem_byte_byte_bytes(position, buffer)
+}
+
+fn write_mem_byte_byte_bytes(position: Int, v: Vec<Str>) {
+    for c in v {
+        write_mem_byte_byte_byte(position, c)
+    }
+}
+
+fn write_mem_byte_byte_byte(position: Int, c: Str) {
+    let mut buffer = Vec { len: 1 }
+    buffer.push(c)
+    write_mem_byte_byte_byte_bytes(position, buffer)
+}
+
+fn write_mem_byte_byte_byte_bytes(position: Int, v: Vec<Str>) {
+    for c in v {
+        write_mem_byte_byte_byte_byte(position, c)
+    }
+}
+
+fn write_mem_byte_byte_byte_byte(position: Int, c: Str) {
+    let mut buffer = Vec { len: 1 }
+    buffer.push(c)
+    write_mem_byte_byte_byte_byte_bytes(position, buffer)
+}
+
+fn write_mem_byte_byte_byte_byte_bytes(position: Int, v: Vec<Str>) {
+    for c in v {
+        write_mem_byte_byte_byte_byte_byte(position, c)
+    }
+}
+
+fn write_mem_byte_byte_byte_byte_byte(position: Int, c: Str) {
+    let mut buffer = Vec { len: 1 }
+    buffer.push(c)
+    write_mem_byte_byte_byte_byte_byte_bytes(position, buffer)
+}
+
+fn write_mem_byte_byte_byte_byte_byte_bytes(position: Int, v: Vec<Str>) {
+    for c in v {
+        write_mem_byte_byte_byte_byte_byte_byte(position, c)
+    }
+}
+
+fn write_mem_byte_byte_byte_byte_byte_byte(position: Int, c: Str) {
+    let mut buffer = Vec { len: 1 }
+    buffer.push(c)
+    write_mem_byte_byte_byte_byte_byte_byte_bytes(position, buffer)
+}
+
+fn write_mem_byte_byte_byte_byte_byte_byte_bytes(position: Int, v: Vec<Str>) {
+    for c in v {
+        write_mem_byte_byte_byte_byte_byte_byte_byte(position, c)
+    }
+}
+
+fn write_mem_byte_byte_byte_byte_byte_byte_byte_byte_byte(position: Int, c: Str) {
+    let mut buffer = Vec { len: 1 }
+    buffer.push(c)
+    write_mem_byte_byte_byte_byte_byte_byte_byte_byte_byte_bytes(position, buffer)
+}
+
+fn write_mem_byte_byte_byte_byte_byte_byte_byte_byte_byte_bytes(position: Int, v: Vec<Str>) {
+    for c in v {
+        write_mem_byte_byte_byte_byte_byte_byte_byte_byte_byte_byte(position, c)
+    }
+}
+
+fn write_mem_byte_byte_byte_byte_byte_byte_byte_byte_byte_byte_byte(position: Int, c: Str) {
+    let mut buffer = Vec { len: 1 }
+    buffer.push(c)
+    write_mem_byte_byte_byte_byte_byte_byte_byte_byte_byte_byte_byte_bytes(position, buffer)
+}
+
+fn write_mem_byte_byte_byte_byte_byte_byte_byte_byte_byte_byte_byte_bytes(position: Int, v: Vec<Str>) {
+    for c in v {
+        write_mem_byte_byte_byte_byte_byte_byte_byte_byte_byte_byte_byte_byte_byte(position, c)
+    }
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut result = Vec { len: 0 }
+    let mut x = n
+    while x > 0 {
+        let rem = x % 10
+        let digit = int_to_char(rem)
+        result.push(digit)
+        x = x / 10
+    }
+    if result.len() == 0 {
+        result.push(int_to_char(0))
+    }
+    result.reverse()
+    str_from_chars(result)
+}
+
+fn int_to_char(n: Int) -> Str {
+    if n < 10 {
+        return int_to_str(n)
+    } else {
+        return char_from_int(n + 48)
+    }
+}
+
+fn char_from_int(n: Int) -> Str {
+    let mut buffer = Vec { len: 1 }
+    buffer.push(char(n))
+    str_from_chars(buffer)
+}
+
+fn str_from_chars(v: Vec<Str>) -> Str {
+    let mut result = Str { len: v.len() }
+    let mut i = 0
+    for c in v {
+        result.chars.push(c.chars.get(0).unwrap())
+    }
+    result
+}
+
+fn str_len(s: Str) -> Int {
+    s.chars.len()
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = Vec { len: s.chars.len() }
+    for c in s.chars {
+        result.push(Str { len: 1, chars: vec(c) })
+    }
+    result
+}
+
+fn print_mem(position: Int) {
+    print_char(read_mem(position))
+}
+
+fn read_mem(position: Int) -> Str {
+    let mut buffer = Vec { len: 1 }
+    read_mem_bytes(position, buffer)
+    buffer.get(0).unwrap()
+}
+
+fn read_mem_bytes(position: Int, v: Vec<Str

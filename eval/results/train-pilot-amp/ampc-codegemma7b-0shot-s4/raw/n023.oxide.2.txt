@@ -1,0 +1,14 @@
+fn main() {
+    let s = "hello world"
+    print(str_len(concat(s, " ")))
+}
+
+fn main() {
+    let s = "hello world"
+    print(str_len(concat(s, " ")))
+}
+
+fn main() {
+    let s = "hello world"
+    print(str_len(concat(clone(s), " ")))
+}

@@ -1,0 +1,16 @@
+fn count_vowels(words: Vec<Str>) -> Int {
+    let mut count = 0
+    for word in words {
+        for c in word.chars() {
+            if c == "a" || c == "e" || c == "i" || c == "o" || c == "u" {
+                count = count + 1
+            }
+        }
+    }
+    count
+}
+
+fn main() {
+    let words = vec("hello", "world", "rustaceans")
+    print(count_vowels(words))
+}

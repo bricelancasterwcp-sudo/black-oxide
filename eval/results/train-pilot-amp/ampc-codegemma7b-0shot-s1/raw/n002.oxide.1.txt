@@ -1,0 +1,12 @@
+fn multiply(nums: Vec<Int>) -> Int {
+    let mut product = 1
+    for num in nums {
+        product = product * num
+    }
+    product
+}
+
+fn main() {
+    let numbers = range(1, 7)
+    print(multiply(numbers))
+}

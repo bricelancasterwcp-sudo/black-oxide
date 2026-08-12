@@ -1,0 +1,20 @@
+fn sum_first_four(v: &Vec<Int>) -> Int {
+    let total = 0
+    let mut count = 0
+    for x in &v {
+        if x % 4 == 0 {
+            total = total + x
+            count = count + 1
+        }
+        if count == 6 {
+            return total
+        }
+    }
+    total
+}
+
+fn main() {
+    let nums = vec(4, 8, 12, 16, 20, 24, 28, 32, 36, 40)
+    print(sum_first_four(&nums))
+    drop nums
+}

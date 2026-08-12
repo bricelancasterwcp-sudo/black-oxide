@@ -1,0 +1,22 @@
+struct Factor {
+    factor: Int,
+    dividend: Int,
+}
+
+fn is_prime(n: Int) -> Bool {
+    let mut result = true
+    let mut f = Factor { factor: 2, dividend: n }
+    while f.factor * f.factor <= f.dividend {
+        if f.factor % f.dividend == 0 {
+            result = false
+            break
+        } else {
+            f = Factor { factor: f.factor + 1, dividend: f.dividend }
+        }
+    }
+    result
+}
+
+fn main() {
+    print(is_prime(91))
+}

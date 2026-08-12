@@ -1,0 +1,12 @@
+```rust
+use std::str::FromStr;
+fn main() {
+    let number = std::env::args()
+        .nth(1)
+        .and_then(|s| s.parse().ok());
+    match number {
+        Some(n) => println!("{}", n + 1),
+        None => println!("bad"),
+    }
+}
+```

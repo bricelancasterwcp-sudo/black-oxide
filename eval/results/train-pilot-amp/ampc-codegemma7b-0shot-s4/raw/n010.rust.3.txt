@@ -1,0 +1,19 @@
+use std::io;
+
+fn main() {
+    let mut number = 91;
+    let mut is_prime = true;
+
+    for divisor in 2..=(number / 2) {
+        if number % divisor == 0 {
+            is_prime = false;
+            break;
+        }
+    }
+
+    if is_prime {
+        println!("Yes");
+    } else {
+        println!("No");
+    }
+}

@@ -1,0 +1,13 @@
+use std::collections::VecDeque;
+
+fn main() {
+    let mut multiples_of_four: VecDeque<u32> = VecDeque::new();
+
+    for i in 1..=6 {
+        multiples_of_four.push_back(i * 4);
+    }
+
+    let total: u32 = multiples_of_four.iter().sum();
+
+    println!("Total: {}", total);
+}

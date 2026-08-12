@@ -1,0 +1,116 @@
+fn main() {
+    let num = parse_int(get(read_str(), 0))
+    if num.is_none() {
+        print("bad")
+    } else {
+        let num = int_to_str(num.unwrap() + 1)
+        print(num)
+    }
+}
+
+fn read_str() -> Str {
+    let mut s = String.new()
+    std.io.stdin().read_line(&mut)
+    if s.is_empty() {
+        return None
+    } else {
+        return Some(s)
+    }
+}
+
+fn read_int() -> Option<Int> {
+    let s = read_str()
+    if s.is_none() {
+        return None
+    } else {
+        return Some(parse_int(s).unwrap())
+    }
+}
+
+fn parse_int(s: Str) -> Int {
+    let mut n = 0
+    for c in s.chars() {
+        if c.is_digit(10) {
+            n = n * 10 + c.to_digit(10).unwrap()
+        } else {
+            return None
+        }
+    }
+    return Some(n)
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut s = String.new()
+    let mut nn = n
+    while nn > 0 {
+        let digit = nn % 10
+        s.insert(0, char(digit + 48))
+        nn = nn / 10
+    }
+    return s
+}
+
+fn len(v: &Vec<T>) -> Int {
+    let mut n = 0
+    for _ in v {
+        n = n + 1
+    }
+    return n
+}
+
+fn get(v: &Vec<T>, i: Int) -> Option<T> {
+    if i >= len(v) {
+        return None
+    } else {
+        return Some(v.get(i).unwrap())
+    }
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    let mut nv = v
+    nv.push(x)
+    return nv
+}
+
+fn print(s: Str) {
+    print(&s)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn clone(x: &T) -> T {
+    let mut y = x.clone()
+    return y
+}
+
+fn str_len(s: &Str) -> Int {
+    return len(chars(s))
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut v = vec()
+    for c in s.chars() {
+        v.push(Str(c))
+    }
+    return v
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut v = vec()
+    for i in a + 1 < b {
+        v.push(i)
+    }
+    return v
+}
+
+fn main() {
+    let num = read_int()
+    if num.is_none() {
+        print("bad")
+    } else {
+        let num = int_to_str(num.unwrap() + 1)
+        print(num)
+    }
+}

@@ -1,0 +1,16 @@
+struct Reading { label: Str, values: Vec<Int> }
+
+fn min_value(v: Vec<Int>) -> Int {
+    let mut min = v.get(0)?.clone()
+    for x in v {
+        if x < min {
+            min = x
+        }
+    }
+    min
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(push(push(vec(), 5), 3), 9), 1), pushvec: 7 } // corrected vector
+    print(min_value(r.values))            // field access copies: r stays usable
+}

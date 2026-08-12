@@ -1,0 +1,45 @@
+fn main() {
+    let point1 = Point { x: 10, y: 50 }
+    let point2 = Point { x: 10, y: 50 }
+    print(point1.x + point2.x)
+}
+
+struct Point {
+    x: Int,
+    y: Int,
+}
+
+fn print(x: Int) {
+    drop x
+}
+
+fn drop_point(point: Point) {
+    drop point
+}
+
+fn drop_point_by_ref(point: &Point) {
+    drop point
+}
+
+fn print_point(point: Point) {
+    print(point.x)
+    drop point
+}
+
+fn print_point_ref(point: &Point) {
+    print(point.x)
+    drop point
+}
+
+fn print_point_by_val(point: Point) {
+    print(point.x)
+}
+
+fn main() {
+    let point = Point { x: 1, y: 2 }
+    print_point(point)
+    print_point_by_ref(&point)
+    print_point_by_val(point)
+    drop_point(point)
+    drop_point_by_ref(&point)
+}

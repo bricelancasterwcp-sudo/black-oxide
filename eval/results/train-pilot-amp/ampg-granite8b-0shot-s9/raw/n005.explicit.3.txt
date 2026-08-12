@@ -1,0 +1,9 @@
+fn main() {
+    let mut total = 0
+    for x in 1.int_to_str() {
+        if x > 0 && x % 2 == 0 {
+            total = total + x
+        }
+    }
+    print(total)
+}

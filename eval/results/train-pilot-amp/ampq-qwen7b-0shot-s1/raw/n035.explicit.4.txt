@@ -1,0 +1,325 @@
+fn main() {
+    let twenty = 20
+    let four = 4
+    let result = if four == 0 { "bad" } else { divide(twenty, four) }
+    print(result)
+}
+
+fn divide(a: Int, b: Int) -> Str {
+    if b == 0 {
+        return "bad"
+    }
+    let result = a / b
+    concat(int_to_str(result), " / ")
+}
+
+fn main() {
+    let twenty = 20
+    let four = 4
+    let result = if four == 0 { "bad" } else { divide(twenty, four) }
+    print(result)
+}
+
+fn divide(a: Int, b: Int) -> Str {
+    if b == 0 {
+        return "bad"
+    }
+    let result = a / b
+    concat(int_to_str(result), " / ")
+}
+
+fn main() {
+    let twenty = 20
+    let four = 4
+    let result = if four == 0 { "bad" } else { divide(twenty, four) }
+    print(result)
+}
+
+fn divide(a: Int, b: Int) -> Str {
+    if b == 0 {
+        return "bad"
+    }
+    let result = a / b
+    concat(int_to_str(result), " / ")
+}
+
+fn main() {
+    let twenty = 20
+    let four = 4
+    let result = if four == 0 { "bad" } else { divide(twenty, four) }
+    print(result)
+}
+
+fn divide(a: Int, b: Int) -> Str {
+    if b == 0 {
+        return "bad"
+    }
+    let result = a / b
+    concat(int_to_str(result), " / ")
+}
+
+fn main() {
+    let twenty = 20
+    let four = 4
+    let result = if four == 0 { "bad" } else { divide(twenty, four) }
+    print(result)
+}
+
+fn divide(a: Int, b: Int) -> Str {
+    if b == 0 {
+        return "bad"
+    }
+    let result = a / b
+    concat(int_to_str(result), " / ")
+}
+
+fn main() {
+    let twenty = 20
+    let four = 4
+    let result = if four == 0 { "bad" } else { divide(twenty, four) }
+    print(result)
+}
+
+fn divide(a: Int, b: Int) -> Str {
+    if b == 0 {
+        return "bad"
+    }
+    let result = a / b
+    concat(int_to_str(result), " / ")
+}
+
+fn main() {
+    let twenty = 20
+    let four = 4
+    let result = if four == 0 { "bad" } else { divide(twenty, four) }
+    print(result)
+}
+
+fn divide(a: Int, b: Int) -> Str {
+    if b == 0 {
+        return "bad"
+    }
+    let result = a / b
+    concat(int_to_str(result), " / ")
+}
+
+fn main() {
+    let twenty = 20
+    let four = 4
+    let result = if four == 0 { "bad" } else { divide(twenty, four) }
+    print(result)
+}
+
+fn divide(a: Int, b: Int) -> Str {
+    if b == 0 {
+        return "bad"
+    }
+    let result = a / b
+    concat(int_to_str(result), " / ")
+}
+
+fn main() {
+    let twenty = 20
+    let four = 4
+    let result = if four == 0 { "bad" } else { divide(twenty, four) }
+    print(result)
+}
+
+fn divide(a: Int, b: Int) -> Str {
+    if b == 0 {
+        return "bad"
+    }
+    let result = a / b
+    concat(int_to_str(result), " / ")
+}
+
+fn main() {
+    let twenty = 20
+    let four = 4
+    let result = if four == 0 { "bad" } else { divide(twenty, four) }
+    print(result)
+}
+
+fn divide(a: Int, b: Int) -> Str {
+    if b == 0 {
+        return "bad"
+    }
+    let result = a / b
+    concat(int_to_str(result), " / ")
+}
+
+fn main() {
+    let twenty = 20
+    let four = 4
+    let result = if four == 0 { "bad" } else { divide(twenty, four) }
+    print(result)
+}
+
+fn divide(a: Int, b: Int) -> Str {
+    if b == 0 {
+        return "bad"
+    }
+    let result = a / b
+    concat(int_to_str(result), " / ")
+}
+
+fn main() {
+    let twenty = 20
+    let four = 4
+    let result = if four == 0 { "bad" } else { divide(twenty, four) }
+    print(result)
+}
+
+fn divide(a: Int, b: Int) -> Str {
+    if b == 0 {
+        return "bad"
+    }
+    let result = a / b
+    concat(int_to_str(result), " / ")
+}
+
+fn main() {
+    let twenty = 20
+    let four = 4
+    let result = if four == 0 { "bad" } else { divide(twenty, four) }
+    print(result)
+}
+
+fn divide(a: Int, b: Int) -> Str {
+    if b == 0 {
+        return "bad"
+    }
+    let result = a / b
+    concat(int_to_str(result), " / ")
+}
+
+fn main() {
+    let twenty = 20
+    let four = 4
+    let result = if four == 0 { "bad" } else { divide(twenty, four) }
+    print(result)
+}
+
+fn divide(a: Int, b: Int) -> Str {
+    if b == 0 {
+        return "bad"
+    }
+    let result = a / b
+    concat(int_to_str(result), " / ")
+}
+
+fn main() {
+    let twenty = 20
+    let four = 4
+    let result = if four == 0 { "bad" } else { divide(twenty, four) }
+    print(result)
+}
+
+fn divide(a: Int, b: Int) -> Str {
+    if b == 0 {
+        return "bad"
+    }
+    let result = a / b
+    concat(int_to_str(result), " / ")
+}
+
+fn main() {
+    let twenty = 20
+    let four = 4
+    let result = if four == 0 { "bad" } else { divide(twenty, four) }
+    print(result)
+}
+
+fn divide(a: Int, b: Int) -> Str {
+    if b == 0 {
+        return "bad"
+    }
+    let result = a / b
+    concat(int_to_str(result), " / ")
+}
+
+fn main() {
+    let twenty = 20
+    let four = 4
+    let result = if four == 0 { "bad" } else { divide(twenty, four) }
+    print(result)
+}
+
+fn divide(a: Int, b: Int) -> Str {
+    if b == 0 {
+        return "bad"
+    }
+    let result = a / b
+    concat(int_to_str(result), " / ")
+}
+
+fn main() {
+    let twenty = 20
+    let four = 4
+    let result = if four == 0 { "bad" } else { divide(twenty, four) }
+    print(result)
+}
+
+fn divide(a: Int, b: Int) -> Str {
+    if b == 0 {
+        return "bad"
+    }
+    let result = a / b
+    concat(int_to_str(result), " / ")
+}
+
+fn main() {
+    let twenty = 20
+    let four = 4
+    let result = if four == 0 { "bad" } else { divide(twenty, four) }
+    print(result)
+}
+
+fn divide(a: Int, b: Int) -> Str {
+    if b == 0 {
+        return "bad"
+    }
+    let result = a / b
+    concat(int_to_str(result), " / ")
+}
+
+fn main() {
+    let twenty = 20
+    let four = 4
+    let result = if four == 0 { "bad" } else { divide(twenty, four) }
+    print(result)
+}
+
+fn divide(a: Int, b: Int) -> Str {
+    if b == 0 {
+        return "bad"
+    }
+    let result = a / b
+    concat(int_to_str(result), " / ")
+}
+
+fn main() {
+    let twenty = 20
+    let four = 4
+    let result = if four == 0 { "bad" } else { divide(twenty, four) }
+    print(result)
+}
+
+fn divide(a: Int, b: Int) -> Str {
+    if b == 0 {
+        return "bad"
+    }
+    let result = a / b
+    concat(int_to_str(result), " / ")
+}
+
+fn main() {
+    let twenty = 20
+    let four = 4
+    let result = if four == 0 { "bad" } else { divide(twenty, four) }
+    print(result)
+}
+
+fn divide(a: Int, b: Int) -> Str {
+    if b == 0 {
+        return "bad

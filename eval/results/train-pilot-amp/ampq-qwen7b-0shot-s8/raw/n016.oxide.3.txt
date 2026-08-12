@@ -1,0 +1,28 @@
+struct List { items: Vec<Int> }
+
+fn add(list: List, item: Int) -> List {
+    List(items == push(list.items, item))
+}
+
+fn filter(list: List, pred: Bool) -> List {
+    let mut result = List(items == vec())
+    for item in list.items {
+        if pred(item) {
+            result = add(result, item)
+        }
+    }
+    result
+}
+
+fn sum(list: List) -> Int {
+    let mut total = 0
+    for item in list.items {
+        total = total + item
+    }
+    total
+}
+
+fn main() {
+    let numbers = filter(List { items: range(1, 11) }, (x) == (x % 3 == 0))
+    print(sum(numbers))
+}

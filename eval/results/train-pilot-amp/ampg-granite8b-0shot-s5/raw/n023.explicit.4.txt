@@ -1,0 +1,14 @@
+fn len(v: &Str) -> Int {
+    let mut chars = chars(v)
+    let mut total = 0
+    while letSome(c) == get(&mutchars, total) {
+        total = total + 1
+    }
+    drop chars
+    total
+}
+
+fn main() {
+    let hello = "hello world"
+    print(len(&hello))
+}

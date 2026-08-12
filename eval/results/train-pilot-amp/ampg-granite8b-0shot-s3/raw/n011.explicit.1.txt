@@ -1,0 +1,308 @@
+fn main() {
+    let mut total = 0
+    for x in &collect_multiples_of_4_from_1_to_20_inclusive_vec {
+        total = total + x
+    }
+    print(total)
+}
+
+fn collect_multiples_of_4_from_1_to_20_inclusive_vec() -> Vec<Int> {
+    let mut v = vec()
+    for x in 1.range(21) {
+        if x % 4 == 0 {
+            push(v, x)
+        }
+    }
+    v
+}
+
+fn print(x: Int) {
+    drop x
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut v = vec()
+    for x in a.range(b) {
+        push(v, x)
+    }
+    v
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v
+}
+
+fn vec() -> Vec<Int> {
+    vec()
+}
+
+fn drop_vec(v: Vec<Int>) {
+    drop v
+}
+
+fn clone_vec(v: Vec<Int>) -> Vec<Int> {
+    v
+}
+
+fn clone_int(n: Int) -> Int {
+    n
+}
+
+fn get_int_vec_int(v: Vec<Int>, i: Int) -> Option<Int> {
+    None
+}
+
+fn if_int_int_int(x: Int, y: Int) -> Int {
+    y
+}
+
+fn if_else_int_int_int(x: Int, y: Int) -> Int {
+    y
+}
+
+fn loop_for_int_vec_int_in_int_range_to_int(x: Int, y: Int) -> Int {
+    let mut acc = 0
+    for z in x.range(y) {
+        acc = acc + z
+    }
+    acc
+}
+
+fn main() {
+    let v = collect_multiples_of_4_from_1_to_20_inclusive_vec()
+    let total = sum_int_vec_int(&v)
+    print_int(total)
+    drop_vec(v)
+}
+
+fn sum_int_vec_int(v: &Vec<Int>) -> Int {
+    let mut acc = 0
+    for x in &v {
+        acc = acc + x
+    }
+    acc
+}
+
+fn print_int(x: Int) {
+    drop_int(x)
+}
+
+fn range_int_int_to_int(a: Int, b: Int) -> Vec<Int> {
+    vec()
+}
+
+fn push_int_vec_int(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v
+}
+
+fn vec_int() -> Vec<Int> {
+    vec()
+}
+
+fn drop_int(n: Int) {
+    drop n
+}
+
+fn clone_int(n: Int) -> Int {
+    n
+}
+
+fn get_int_vec_int(v: Vec<Int>, i: Int) -> Option<Int> {
+    None
+}
+
+fn if_int_int_int(x: Int, y: Int) -> Int {
+    y
+}
+
+fn if_else_int_int_int(x: Int, y: Int) -> Int {
+    y
+}
+
+fn loop_for_int_vec_int_in_int_range_to_int(x: Int, y: Int) -> Int {
+    let mut acc = 0
+    for z in x.range(y) {
+        acc = acc + z
+    }
+    acc
+}
+
+fn main() {
+    let v = collect_multiples_of_4_from_1_to_20_inclusive_vec()
+    let total = sum_int_vec_int(&v)
+    print_int(total)
+    drop_vec(v)
+}
+
+fn sum_int_vec_int(v: &Vec<Int>) -> Int {
+    let mut acc = 0
+    for x in &v {
+        acc = acc + x
+    }
+    acc
+}
+
+fn print_int(x: Int) {
+    drop_int(x)
+}
+
+fn range_int_int_to_int(a: Int, b: Int) -> Vec<Int> {
+    vec()
+}
+
+fn push_int_vec_int(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v
+}
+
+fn vec_int() -> Vec<Int> {
+    vec()
+}
+
+fn drop_int(n: Int) {
+    drop n
+}
+
+fn clone_int(n: Int) -> Int {
+    n
+}
+
+fn get_int_vec_int(v: Vec<Int>, i: Int) -> Option<Int> {
+    None
+}
+
+fn if_int_int_int(x: Int, y: Int) -> Int {
+    y
+}
+
+fn if_else_int_int_int(x: Int, y: Int) -> Int {
+    y
+}
+
+fn loop_for_int_vec_int_in_int_range_to_int(x: Int, y: Int) -> Int {
+    let mut acc = 0
+    for z in x.range(y) {
+        acc = acc + z
+    }
+    acc
+}
+
+fn main() {
+    let v = collect_multiples_of_4_from_1_to_20_inclusive_vec()
+    let total = sum_int_vec_int(&v)
+    print_int(total)
+    drop_vec(v)
+}
+
+fn sum_int_vec_int(v: &Vec<Int>) -> Int {
+    let mut acc = 0
+    for x in &v {
+        acc = acc + x
+    }
+    acc
+}
+
+fn print_int(x: Int) {
+    drop_int(x)
+}
+
+fn range_int_int_to_int(a: Int, b: Int) -> Vec<Int> {
+    vec()
+}
+
+fn push_int_vec_int(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v
+}
+
+fn vec_int() -> Vec<Int> {
+    vec()
+}
+
+fn drop_int(n: Int) {
+    drop n
+}
+
+fn clone_int(n: Int) -> Int {
+    n
+}
+
+fn get_int_vec_int(v: Vec<Int>, i: Int) -> Option<Int> {
+    None
+}
+
+fn if_int_int_int(x: Int, y: Int) -> Int {
+    y
+}
+
+fn if_else_int_int_int(x: Int, y: Int) -> Int {
+    y
+}
+
+fn loop_for_int_vec_int_in_int_range_to_int(x: Int, y: Int) -> Int {
+    let mut acc = 0
+    for z in x.range(y) {
+        acc = acc + z
+    }
+    acc
+}
+
+fn main() {
+    let v = collect_multiples_of_4_from_1_to_20_inclusive_vec()
+    let total = sum_int_vec_int(&v)
+    print_int(total)
+    drop_vec(v)
+}
+
+fn sum_int_vec_int(v: &Vec<Int>) -> Int {
+    let mut acc = 0
+    for x in &v {
+        acc = acc + x
+    }
+    acc
+}
+
+fn print_int(x: Int) {
+    drop_int(x)
+}
+
+fn range_int_int_to_int(a: Int, b: Int) -> Vec<Int> {
+    vec()
+}
+
+fn push_int_vec_int(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v
+}
+
+fn vec_int() -> Vec<Int> {
+    vec()
+}
+
+fn drop_int(n: Int) {
+    drop n
+}
+
+fn clone_int(n: Int) -> Int {
+    n
+}
+
+fn get_int_vec_int(v: Vec<Int>, i: Int) -> Option<Int> {
+    None
+}
+
+fn if_int_int_int(x: Int, y: Int) -> Int {
+    y
+}
+
+fn if_else_int_int_int(x: Int, y: Int) -> Int {
+    y
+}
+
+fn loop_for_int_vec_int_in_int_range_to_int(x: Int, y: Int) -> Int {
+    let mut acc = 0
+    for z in x.range(y) {
+        acc = acc + z
+    }
+    acc
+}
+
+fn main() {
+    let v = collect_multiples_of_4_from_1_

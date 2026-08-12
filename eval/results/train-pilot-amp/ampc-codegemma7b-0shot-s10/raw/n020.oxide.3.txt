@@ -1,0 +1,106 @@
+fn mean(v: Vec<Int>) -> Float {
+    let sum = v.iter().fold(0, add)
+    let count = v.len()
+    return trunc(Float(sum) / Float(count))
+}
+
+fn main() {
+    let readings = vec(4, 8, 15, 16, 23, 42)
+    print(mean(readings))
+}
+
+fn add(a: Int, b: Int) -> Int {
+    return a + b
+}
+
+struct Float { value: Int }
+
+fn trunc(x: Float) -> Int {
+    return x.value
+}
+
+fn vec(a: Int, b: Int, c: Int, d: Int, e: Int, f: Int) -> Vec<Int> {
+    return vec(a, b, c, d, e, f)
+}
+
+fn print(x: Float) {
+    print(trunc(x))
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print_str(x: Str) {
+    print(x)
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    if i >= v.len() {
+        return None
+    }
+    return Some(v.get(i))
+}
+
+fn len(v: Vec<Int>) -> Int {
+    return v.len()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    return vec(v, x)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in a.to_int() + 1.to_int() {
+        if i >= b.to_int() {
+            break
+        }
+        result = push(result, i)
+    }
+    return result
+}
+
+fn clone(x: Int) -> Int {
+    return x
+}
+
+fn str_len(s: Str) -> Int {
+    return s.len()
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    return a + b
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = vec()
+    for i in 0.to_int() {
+        if i >= s.len() {
+            break
+        }
+        result = push(result, s.chars().nth(i))
+    }
+    return result
+}
+
+fn int_to_str(n: Int) -> Str {
+    return n.to_string()
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    let result = s.parse()
+    if result.is_err() {
+        return None
+    }
+    return Some(result.unwrap())
+}
+
+fn to_float(n: Int) -> Float {
+    return Float(n)
+}
+
+fn main() {
+    let readings = vec(4, 8, 15, 16, 23, 42)
+    print(mean(readings))
+}

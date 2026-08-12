@@ -1,0 +1,383 @@
+struct Square {
+    side: Int,
+}
+
+struct Circle {
+    radius: Int,
+}
+
+enum Shape {
+    Square(Square),
+    Circle(Circle),
+}
+
+fn area(s: Shape) -> Float {
+    match s {
+        Shape(square) => area(square),
+        Shape(circle) => area(circle),
+    }
+}
+
+fn area(s: Square) -> Float {
+    return s.side * s.side
+}
+
+fn area(c: Circle) -> Float {
+    return 3.14159 * c.radius * c.radius
+}
+
+fn main() {
+    let square = Square { side: 4 }
+    let circle = Circle { radius: 5 }
+    print(area(square))
+    print(area(circle))
+}
+
+struct Square {
+    side: Int,
+}
+
+struct Circle {
+    radius: Int,
+}
+
+enum Shape {
+    Square(Square),
+    Circle(Circle),
+}
+
+fn area(s: Shape) -> Float {
+    match s {
+        Shape(square) => area(square),
+        Shape(circle) => area(circle),
+    }
+}
+
+fn area(s: Square) -> Float {
+    return s.side * s.side
+}
+
+fn area(c: Circle) -> Float {
+    return 3.14159 * c.radius * c.radius
+}
+
+fn main() {
+    let square = Square { side: 4 }
+    let circle = Circle { radius: 5 }
+    print(area(square))
+    print(area(circle))
+}
+
+struct Square {
+    side: Int,
+}
+
+struct Circle {
+    radius: Int,
+}
+
+enum Shape {
+    Square(Square),
+    Circle(Circle),
+}
+
+fn area(s: Shape) -> Float {
+    match s {
+        Shape(square) => area(square),
+        Shape(circle) => area(circle),
+    }
+}
+
+fn area(s: Square) -> Float {
+    return s.side * s.side
+}
+
+fn area(c: Circle) -> Float {
+    return 3.14159 * c.radius * c.radius
+}
+
+fn main() {
+    let square = Square { side: 4 }
+    let circle = Circle { radius: 5 }
+    print(area(square))
+    print(area(circle))
+}
+
+struct Square {
+    side: Int,
+}
+
+struct Circle {
+    radius: Int,
+}
+
+enum Shape {
+    Square(Square),
+    Circle(Circle),
+}
+
+fn area(s: Shape) -> Float {
+    match s {
+        Shape(square) => area(square),
+        Shape(circle) => area(circle),
+    }
+}
+
+fn area(s: Square) -> Float {
+    return s.side * s.side
+}
+
+fn area(c: Circle) -> Float {
+    return 3.14159 * c.radius * c.radius
+}
+
+fn main() {
+    let square = Square { side: 4 }
+    let circle = Circle { radius: 5 }
+    print(area(square))
+    print(area(circle))
+}
+
+struct Square {
+    side: Int,
+}
+
+struct Circle {
+    radius: Int,
+}
+
+enum Shape {
+    Square(Square),
+    Circle(Circle),
+}
+
+fn area(s: Shape) -> Float {
+    match s {
+        Shape(square) => area(square),
+        Shape(circle) => area(circle),
+    }
+}
+
+fn area(s: Square) -> Float {
+    return s.side * s.side
+}
+
+fn area(c: Circle) -> Float {
+    return 3.14159 * c.radius * c.radius
+}
+
+fn main() {
+    let square = Square { side: 4 }
+    let circle = Circle { radius: 5 }
+    print(area(square))
+    print(area(circle))
+}
+
+struct Square {
+    side: Int,
+}
+
+struct Circle {
+    radius: Int,
+}
+
+enum Shape {
+    Square(Square),
+    Circle(Circle),
+}
+
+fn area(s: Shape) -> Float {
+    match s {
+        Shape(square) => area(square),
+        Shape(circle) => area(circle),
+    }
+}
+
+fn area(s: Square) -> Float {
+    return s.side * s.side
+}
+
+fn area(c: Circle) -> Float {
+    return 3.14159 * c.radius * c.radius
+}
+
+fn main() {
+    let square = Square { side: 4 }
+    let circle = Circle { radius: 5 }
+    print(area(square))
+    print(area(circle))
+}
+
+struct Square {
+    side: Int,
+}
+
+struct Circle {
+    radius: Int,
+}
+
+enum Shape {
+    Square(Square),
+    Circle(Circle),
+}
+
+fn area(s: Shape) -> Float {
+    match s {
+        Shape(square) => area(square),
+        Shape(circle) => area(circle),
+    }
+}
+
+fn area(s: Square) -> Float {
+    return s.side * s.side
+}
+
+fn area(c: Circle) -> Float {
+    return 3.14159 * c.radius * c.radius
+}
+
+fn main() {
+    let square = Square { side: 4 }
+    let circle = Circle { radius: 5 }
+    print(area(square))
+    print(area(circle))
+}
+
+struct Square {
+    side: Int,
+}
+
+struct Circle {
+    radius: Int,
+}
+
+enum Shape {
+    Square(Square),
+    Circle(Circle),
+}
+
+fn area(s: Shape) -> Float {
+    match s {
+        Shape(square) => area(square),
+        Shape(circle) => area(circle),
+    }
+}
+
+fn area(s: Square) -> Float {
+    return s.side * s.side
+}
+
+fn area(c: Circle) -> Float {
+    return 3.14159 * c.radius * c.radius
+}
+
+fn main() {
+    let square = Square { side: 4 }
+    let circle = Circle { radius: 5 }
+    print(area(square))
+    print(area(circle))
+}
+
+struct Square {
+    side: Int,
+}
+
+struct Circle {
+    radius: Int,
+}
+
+enum Shape {
+    Square(Square),
+    Circle(Circle),
+}
+
+fn area(s: Shape) -> Float {
+    match s {
+        Shape(square) => area(square),
+        Shape(circle) => area(circle),
+    }
+}
+
+fn area(s: Square) -> Float {
+    return s.side * s.side
+}
+
+fn area(c: Circle) -> Float {
+    return 3.14159 * c.radius * c.radius
+}
+
+fn main() {
+    let square = Square { side: 4 }
+    let circle = Circle { radius: 5 }
+    print(area(square))
+    print(area(circle))
+}
+
+struct Square {
+    side: Int,
+}
+
+struct Circle {
+    radius: Int,
+}
+
+enum Shape {
+    Square(Square),
+    Circle(Circle),
+}
+
+fn area(s: Shape) -> Float {
+    match s {
+        Shape(square) => area(square),
+        Shape(circle) => area(circle),
+    }
+}
+
+fn area(s: Square) -> Float {
+    return s.side * s.side
+}
+
+fn area(c: Circle) -> Float {
+    return 3.14159 * c.radius * c.radius
+}
+
+fn main() {
+    let square = Square { side: 4 }
+    let circle = Circle { radius: 5 }
+    print(area(square))
+    print(area(circle))
+}
+
+struct Square {
+    side: Int,
+}
+
+struct Circle {
+    radius: Int,
+}
+
+enum Shape {
+    Square(Square),
+    Circle(Circle),
+}
+
+fn area(s: Shape) -> Float {
+    match s {
+        Shape(square) => area(square),
+        Shape(circle) => area(circle),
+    }
+}
+
+fn area(s: Square) -> Float {
+    return s.side * s.side
+}
+
+fn area(c: Circle) -> Float {
+    return 3.14159 * c.radius * c.radius
+}
+
+fn main() {
+    let square = Square { side: 4 }
+    let circle = Circle { radius: 5 }
+    print(area(square))
+    

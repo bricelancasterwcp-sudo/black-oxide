@@ -1,0 +1,25 @@
+fn main() {
+    let total = (1 + 2 + 3 + 4 + 5).map(x || x * x * x).reduce(0, (a || b || a + b))
+    print(total)
+}
+
+fn map(v: Vec<Int>, f: Int) -> Vec<Int> {
+    let mut result = vec()
+    for x in v {
+        result = push(result, f(x))
+    }
+    result
+}
+
+fn reduce(v: Vec<Int>, f: Int, initial: Int) -> Int {
+    let mut result = initial
+    for x in v {
+        result = f(result, x)
+    }
+    result
+}
+
+fn main() {
+    let total = (1 + 2 + 3 + 4 + 5).map(x || x * x * x).reduce(0, (a || b || a + b))
+    print(total)
+}

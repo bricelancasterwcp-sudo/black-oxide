@@ -1,0 +1,16 @@
+fn cat() {
+    let c = "c\n".to_string()
+    let a = "a\n".to_string()
+    let t = "t\n".to_string()
+    print_str(c)
+    print_str(a)
+    print_str(t)
+    drop c
+    drop a
+    drop t
+}
+
+fn main() {
+    cat()
+    cat()
+}

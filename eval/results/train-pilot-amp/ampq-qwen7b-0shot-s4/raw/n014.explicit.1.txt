@@ -1,0 +1,15 @@
+fn min_value(v: &Vec<Int>) -> Int {
+    let mut min = v.get(0).unwrap()
+    for x in &v {
+        if x < min {
+            min = x
+        }
+    }
+    min
+}
+
+fn main() {
+    let nums = push(push(push(push(vec(), 5), 3), 9), 1)
+    print(min_value(&nums))
+    drop nums
+}

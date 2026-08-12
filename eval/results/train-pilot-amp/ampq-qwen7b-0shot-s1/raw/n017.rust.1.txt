@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let list = [10, 20, 30, 40];
+    let position = 2;
+
+    if position < list.len() {
+        println!("{}", list[position]);
+    } else {
+        println!("missing");
+    }
+}
+```

@@ -1,0 +1,202 @@
+fn main() {
+    let mut acc = vec()
+    for x in 0.range(20) {
+        if x % 4 == 0 {
+            acc = push(acc, x)
+        }
+    }
+    let total = acc.iter().fold(0, add)
+    print(total)
+}
+
+fn add(acc: Int, x: Int) -> Int {
+    acc + x
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for x in a.trunc(b) {
+        result = push(result, x)
+    }
+    result
+}
+
+fn print(x: Int) {
+    let s = int_to_str(x)
+    print_str(s)
+}
+
+fn print_str(s: Str) {
+    for c in chars(s) {
+        print(ord(c))
+    }
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut result = v
+    result.push(x)
+    result
+}
+
+fn vec() -> Vec<T> {
+    Vec
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    if i < len(v) {
+        Some(v.get(i))
+    } else {
+        None
+    }
+}
+
+fn len(v: Vec<Int>) -> Int {
+    v.len()
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut chars = vec()
+    let mut num = n
+    while num > 0 {
+        chars = push(chars, num % 10)
+        num = num / 10
+    }
+    let mut result = str()
+    for d in chars {
+        result = concat(result, int_to_str(d))
+    }
+    result
+}
+
+fn ord(c: Str) -> Int {
+    let bytes = chars(c)
+    let mut result = 0
+    for b in bytes {
+        result = (result * 256) + b
+    }
+    result
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = vec()
+    let mut idx = 0
+    while idx < str_len(s) {
+        result = push(result, get_char(s, idx))
+        idx = idx + 1
+    }
+    result
+}
+
+fn get_char(s: Str, idx: Int) -> Str {
+    let bytes = chars(s)
+    let byte = bytes.get(idx)
+    let mut result = str()
+    result = concat(result, int_to_str(byte))
+    result
+}
+
+fn str_len(s: Str) -> Int {
+    let bytes = chars(s)
+    bytes.len()
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut result = a
+    result = result + b
+    result
+}
+
+fn push(v: Str, x: Str) -> Str {
+    let mut result = v
+    result = result + x
+    result
+}
+
+fn append(mutv: Str, x: Str) -> Str {
+    let mutv = push(mutv, x)
+    mutv
+}
+
+fn str() -> Str {
+    ""
+}
+
+fn add(acc: Int, x: Int) -> Int {
+    acc + x
+}
+
+fn truncate(f: Float) -> Int {
+    f.trunc(0)
+}
+
+fn ord(c: Str) -> Int {
+    let bytes = chars(c)
+    let mut result = 0
+    for b in bytes {
+        result = (result * 256) + b
+    }
+    result
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = vec()
+    let mut idx = 0
+    while idx < str_len(s) {
+        result = push(result, get_char(s, idx))
+        idx = idx + 1
+    }
+    result
+}
+
+fn get_char(s: Str, idx: Int) -> Str {
+    let bytes = chars(s)
+    let byte = bytes.get(idx)
+    let mut result = str()
+    result = concat(result, int_to_str(byte))
+    result
+}
+
+fn str_len(s: Str) -> Int {
+    let bytes = chars(s)
+    bytes.len()
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut result = a
+    result = result + b
+    result
+}
+
+fn push(v: Str, x: Str) -> Str {
+    let mut result = v
+    result = result + x
+    result
+}
+
+fn append(mutv: Str, x: Str) -> Str {
+    let mutv = push(mutv, x)
+    mutv
+}
+
+fn str() -> Str {
+    ""
+}
+
+fn add(acc: Int, x: Int) -> Int {
+    acc + x
+}
+
+fn truncate(f: Float) -> Int {
+    f.trunc(0)
+}
+
+fn main() {
+    let mut acc = vec()
+    for x in 0.range(20) {
+        if x % 4 == 0 {
+            acc = push(acc, x)
+        }
+    }
+    let total = acc.iter().fold(0, add)
+    print(total)
+}

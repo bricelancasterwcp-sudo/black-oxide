@@ -1,0 +1,286 @@
+fn main() {
+    let mut r = Rectangle { width: 2, height: 3 }
+    r.width = 5
+    print(r.area())
+}
+
+struct Rectangle { width: Int, height: Int }
+
+fn area(self: Rectangle) -> Int {
+    self.width * self.height
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut buf = Vec.new()
+    while n != 0 {
+        let digit = n % 10
+        push(buf, digit)
+        n = trunc(n / 10)
+    }
+    let mut result = Str.new()
+    for digit in buf {
+        push(result, digit + 48)
+    }
+    result
+}
+
+fn trunc(x: Int) -> Int {
+    if x >= 0 {
+        x
+    } else {
+        -x - 1
+    }
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut result = v
+    push_impl(result, x)
+    result
+}
+
+fn push_impl(mutvec: Vec<Int>, x: Int) {
+    let len = len(mutvec)
+    if len == cap(mutvec) {
+        let new_cap = if len == 0 { 1 } else { len * 2 }
+        let mut new_vec = Vec.with_capacity(new_cap)
+        for i in 0.upto(len) {
+            push_impl(new_vec, get(mutvec, i)?)
+        }
+        mutvec = new_vec
+    }
+    mutvec.elems = unsafe_push(mutvec.elems, x)
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    if i < 0 || i >= len(v) {
+        None
+    } else {
+        Some(v.elems.ptr.wrapping_offset(i).read())
+    }
+}
+
+fn len(v: Vec<Int>) -> Int {
+    v.elems.len()
+}
+
+struct Vec { elems: UnsafeVec<Int>, capacity: Int }
+
+struct UnsafeVec { ptr: UnsafePointer<Int>, len: Int }
+
+struct UnsafePointer { wrapping_offset: Int }
+
+fn cap(v: Vec<Int>) -> Int {
+    v.capacity
+}
+
+fn unsafe_push(elems: UnsafeVec<Int>, x: Int) -> UnsafeVec<Int> {
+    let len = elems.len
+    let mut new_elems = elems
+    new_elems.ptr.wrapping_offset(len).write(x)
+    new_elems.len = len + 1
+    new_elems
+}
+
+fn unsafe_pointer(wrapping_offset: Int) -> UnsafePointer {
+    UnsafePointer(wrapping_offset)
+}
+
+fn new() -> Str {
+    Str(unsafe_pointer(0))
+}
+
+fn push(s: Str, c: Int) -> Str {
+    let mut result = s
+    unsafe_push(result.elems, c)
+    result
+}
+
+struct Str { elems: UnsafeVec<Int> }
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = vec()
+    for i in 0.upto(len(s)) {
+        push(result, get(s, i)?)
+    }
+    result
+}
+
+fn str_len(s: Str) -> Int {
+    len(s)
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    let mut result = 0
+    let mut negative = false
+    let mut digits = chars(s)
+    if len(digits) == 0 {
+        return None
+    }
+    if get(digits, 0)? == 45 {
+        negative = true
+        digits = drop(digits, 1)
+    }
+    for digit in digits {
+        let digit = get(digit, 0)? - 48
+        if digit < 0 || digit > 9 {
+            return None
+        }
+        result = result * 10 + digit
+    }
+    if negative {
+        Some(-result)
+    } else {
+        Some(result)
+    }
+}
+
+fn drop(v: Vec<Str>, i: Int) -> Vec<Str> {
+    let mut result = v
+    for j in i.upto(len(v) - 1) {
+        result = push(result, get(v, j + 1)?)
+    }
+    result
+}
+
+fn upto(self: Int, b: Int) -> Range {
+    Range(self, b)
+}
+
+struct Range { start: Int, end: Int }
+
+fn get(v: Range, i: Int) -> Option<Int> {
+    if i < v.start || i >= v.end {
+        None
+    } else {
+        Some(i)
+    }
+}
+
+fn len(r: Range) -> Int {
+    r.end - r.start
+}
+
+fn print(x: Str) {
+    for c in chars(x) {
+        print(get(c, 0)?)
+    }
+}
+
+fn print(x: Int) {
+    if x < 0 {
+        print(45)
+        print(-x)
+    } else {
+        let mut digits = vec()
+        let mut n = x
+        while n != 0 {
+            let digit = n % 10
+            push(digits, digit)
+            n = trunc(n / 10)
+        }
+        for digit in digits {
+            print(digit + 48)
+        }
+    }
+}
+
+fn main() {
+    let mut r = Rectangle { width: 2, height: 3 }
+    r.width = 5
+    print(r.area())
+}
+
+struct Rectangle { width: Int, height: Int }
+
+fn area(self: Rectangle) -> Int {
+    self.width * self.height
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut buf = Vec.new()
+    while n != 0 {
+        let digit = n % 10
+        push(buf, digit)
+        n = trunc(n / 10)
+    }
+    let mut result = Str.new()
+    for digit in buf {
+        push(result, digit + 48)
+    }
+    result
+}
+
+fn trunc(x: Int) -> Int {
+    if x >= 0 {
+        x
+    } else {
+        -x - 1
+    }
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut result = v
+    push_impl(result, x)
+    result
+}
+
+fn push_impl(mutvec: Vec<Int>, x: Int) {
+    let len = len(mutvec)
+    if len == cap(mutvec) {
+        let new_cap = if len == 0 { 1 } else { len * 2 }
+        let mut new_vec = Vec.with_capacity(new_cap)
+        for i in 0.upto(len) {
+            push_impl(new_vec, get(mutvec, i)?)
+        }
+        mutvec = new_vec
+    }
+    mutvec.elems = unsafe_push(mutvec.elems, x)
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    if i < 0 || i >= len(v) {
+        None
+    } else {
+        Some(v.elems.ptr.wrapping_offset(i).read())
+    }
+}
+
+fn len(v: Vec<Int>) -> Int {
+    v.elems.len()
+}
+
+struct Vec { elems: UnsafeVec<Int>, capacity: Int }
+
+struct UnsafeVec { ptr: UnsafePointer<Int>, len: Int }
+
+struct UnsafePointer { wrapping_offset: Int }
+
+fn cap(v: Vec<Int>) -> Int {
+    v.capacity
+}
+
+fn unsafe_push(elems: UnsafeVec<Int>, x: Int) -> UnsafeVec<Int> {
+    let len = elems.len
+    let mut new_elems = elems
+    new_elems.ptr.wrapping_offset(len).write(x)
+    new_elems.len = len + 1
+    new_elems
+}
+
+fn unsafe_pointer(wrapping_

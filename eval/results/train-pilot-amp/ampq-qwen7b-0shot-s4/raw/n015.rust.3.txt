@@ -1,0 +1,12 @@
+fn main() {
+    let readings = [5, 3, 9, 1, 7];
+    let mut count = 0;
+
+    for &reading in readings.iter() {
+        if reading > 4 {
+            count += 1;
+        }
+    }
+
+    println!("There are {} readings larger than four.", count);
+}

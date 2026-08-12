@@ -1,0 +1,5 @@
+```rust
+fn main() {
+    println!("{}", "2026".len());
+}
+```

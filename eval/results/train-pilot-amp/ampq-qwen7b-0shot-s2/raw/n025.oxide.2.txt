@@ -1,0 +1,16 @@
+struct Number { value: Int }
+
+fn parse_number(s: Str) -> Option<Number> {
+    match parse_int(s) {
+        Some(n) => Some(Number { value: n }),
+        None => None,
+    }
+}
+
+fn main() {
+    let input = "417"
+    match parse_number(input) {
+        Some(num) => print(num.value + 1),
+        None => print_str("bad"),
+    }
+}

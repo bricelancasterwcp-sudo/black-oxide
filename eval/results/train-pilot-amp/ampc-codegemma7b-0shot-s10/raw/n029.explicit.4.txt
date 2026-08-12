@@ -1,0 +1,11 @@
+fn main() {
+    let number_one = "one".to_string()
+    let number_two = "two".to_string()
+    let number_three = "three".to_string()
+    print(number_one)
+    print(number_two)
+    print(number_three)
+    drop number_one
+    drop number_two
+    drop number_three
+}

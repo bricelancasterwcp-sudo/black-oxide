@@ -1,0 +1,13 @@
+struct Entry { value: Int }
+
+fn get_entry(entries: Vec<Entry>, index: Int) -> Option<Entry> {
+    get(entries, index)
+}
+
+fn main() {
+    let entries = push(push(vec(), Entry { value: 1 }), Entry { value: 2 })
+    match get_entry(entries, 5) {
+        Some(e) => print(e.value),
+        None => print_str("none"),
+    }
+}

@@ -1,0 +1,6 @@
+fn main() {
+    let arr = vec(5, 3, 9, 1, 7)
+    let count = arr.filter(x || x > 4).len()
+    print(count)
+    drop arr
+}

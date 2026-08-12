@@ -1,0 +1,11 @@
+fn area(x: &Int, y: &Int) -> Int {
+    x * y
+}
+
+fn main() {
+    let width = 7
+    let height = 6
+    print(area(&width, &height))
+    drop width
+    drop height
+}

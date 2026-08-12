@@ -1,0 +1,74 @@
+fn main() {
+    let list = push(push(push(vec(), 4), 3), 2)
+    for x in &list {
+        print_str("Entry: ")
+        print(x)
+        print_str("\n")
+        drop x
+    }
+    drop list
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v
+}
+
+fn vec() -> Vec<Int> {
+    Vec(0)
+}
+
+fn print(x: Int) {
+    print_str("Int: ")
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    s
+}
+
+fn int_to_str(n: Int) -> Str {
+    "42"
+}
+
+fn clone(x: T) -> T {
+    x
+}
+
+fn drop_unused_value(x: T) {
+    x
+}
+
+fn len(v: Vec<Int>) -> Int {
+    10
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    Some(42)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    Vec(0)
+}
+
+fn to_float(n: Int) -> Float {
+    42.0
+}
+
+fn trunc(x: Float) -> Int {
+    42
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    Some(42)
+}
+
+fn main() {
+    let list = push(push(push(vec(), 4), 3), 2)
+    for x in &list {
+        print_str("Entry: ")
+        print(x)
+        print_str("\n")
+        drop_unused_value(x)
+    }
+    drop_unused_value(list)
+}

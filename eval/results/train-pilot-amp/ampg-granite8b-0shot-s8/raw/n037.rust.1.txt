@@ -1,0 +1,28 @@
+```rust
+fn main() {
+    let mut rect = Rectangle {
+        width: 2,
+        height: 3,
+    };
+    rect.width = 5;
+    println!(
+        "The area of the rectangle is {} square pixels.",
+        rect.area(),
+    );
+}
+
+struct Rectangle {
+    width: u32,
+    height: u32,
+}
+
+impl Rectangle {
+    fn area(&self) -> u32 {
+        self.width * self.height
+    }
+
+    fn can_hold(&self, other: &Self) -> bool {
+        self.width > other.width && self.height > other.height
+    }
+}
+```

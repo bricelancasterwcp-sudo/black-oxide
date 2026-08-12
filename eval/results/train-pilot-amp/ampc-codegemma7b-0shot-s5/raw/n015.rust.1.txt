@@ -1,0 +1,5 @@
+fn main() {
+    let readings = [5, 3, 9, 1, 7];
+    let larger_than_four = readings.iter().filter(|&r| r > &4).count();
+    println!("{} readings are larger than 4", larger_than_four);
+}

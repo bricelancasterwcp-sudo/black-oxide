@@ -1,0 +1,4 @@
+fn main() {
+    let my_list = (0..15).collect::<Vec<i32>>();
+    println!("The list holds {} items.", my_list.len());
+}

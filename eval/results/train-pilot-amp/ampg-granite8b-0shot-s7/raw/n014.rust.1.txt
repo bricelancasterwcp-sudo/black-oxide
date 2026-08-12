@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let set = [5, 3, 9, 1, 7];
+    let mut smallest = set[0];
+
+    for reading in set.iter() {
+        if *reading < smallest {
+            smallest = *reading;
+        }
+    }
+
+    println!("{}", smallest);
+}
+```

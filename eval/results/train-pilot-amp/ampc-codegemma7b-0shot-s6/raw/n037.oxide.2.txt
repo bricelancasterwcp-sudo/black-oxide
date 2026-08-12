@@ -1,0 +1,16 @@
+struct Rectangle { width: Int, height: Int }
+
+fn change_width(mutr: Rectangle, new_width: Int) -> Rectangle {
+    mutr.width = new_width
+    mutr
+}
+
+fn area(r: Rectangle) -> Int {
+    r.width * r.height
+}
+
+fn main() {
+    let mut r = Rectangle(2, 3)
+    r = change_width(r, 5)
+    print(area(r))
+}

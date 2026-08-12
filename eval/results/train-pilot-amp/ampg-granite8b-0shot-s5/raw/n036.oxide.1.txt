@@ -1,0 +1,11 @@
+struct StockItem {
+    name: Str,
+    total_units: Int,
+    unit_price: Int,
+}
+
+fn main() {
+    let item1 = StockItem { name: "four 3-unit items", total_units: 4 * 3, unit_price: 3 }
+    let item2 = StockItem { name: "five 2-unit items", total_units: 5 * 2, unit_price: 2 }
+    print(item1.total_units + item2.total_units)
+}

@@ -1,0 +1,10 @@
+fn main() {
+    let mut total = 1
+    for x in 1.to_int() + 1 {
+        if x <= 6.to_int() {
+            total = total * x
+        }
+    }
+    print(total)
+    drop total
+}

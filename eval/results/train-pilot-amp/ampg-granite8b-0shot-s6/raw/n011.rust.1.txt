@@ -1,0 +1,10 @@
+fn main() {
+    let mut total = 0;
+
+    for i in 1..7 {
+        let multiple_of_four = i * 4;
+        total += multiple_of_four;
+    }
+
+    println!("{}", total);
+}

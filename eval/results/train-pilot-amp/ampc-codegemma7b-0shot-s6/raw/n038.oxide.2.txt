@@ -1,0 +1,135 @@
+struct Reading { label: Str, values: Vec<Int> }
+
+fn first_big(v: Vec<Int>) -> Int {
+    let found = -1
+    for x in v {
+        if x > 10 {
+            found = x
+            break
+        }
+    }
+    found
+}
+
+fn second(v: Vec<Int>) -> Option<Int> {
+    let x = get(v, 1)?.clone()
+    Some(x + 1)
+}
+
+fn main() {
+    let mut device = Device { sensor: Sensor { reading: 0 } }
+    device.sensor.reading = 7
+    print(device.sensor.reading)
+}
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+fn print(x: Int) {
+    let s = int_to_str(x)
+    print_str(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut s = Str { chars: vec() }
+    for i in (0 <= n).then_some(n) {
+        let c = char_from_digit(i % 10, 10)?
+        push(s.chars, c)
+        n = i / 10
+    }
+    if s.chars.len() == 0 {
+        push(s.chars, char_from_digit(0, 10)?)
+    }
+    s
+}
+
+fn char_from_digit(d: Int, base: Int) -> Option<Char> {
+    if (0 <= d) && (d < base) {
+        Some(Char { code: d + 48 })
+    } else {
+        None
+    }
+}
+
+struct Char { code: Int }
+
+fn print_str(s: Str) {
+    for c in s.chars {
+        print(c.code)
+    }
+    print(10)
+}
+
+struct Str { chars: Vec<Char> }
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    let mut new = v
+    new.len()
+    new.chars.push(x)
+    new
+}
+
+fn len(v: Vec<T>) -> Int {
+    v.chars.len()
+}
+
+fn get(v: Vec<T>, i: Int) -> Option<T> {
+    if (0 <= i) && (i < v.chars.len()) {
+        Some(v.chars.get(i).copied())
+    } else {
+        None
+    }
+}
+
+enum Option {
+    Some(T),
+    None,
+}
+
+enum Result {
+    Ok(T),
+    Err(E),
+}
+
+fn vec() -> Vec<T> {
+    Vec
+}
+
+fn clone(x: T) -> T {
+    x
+}
+
+fn str_len(s: Str) -> Int {
+    s.chars.len()
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut new = a
+    for c in b.chars {
+        push(new.chars, c)
+    }
+    new
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut v = vec()
+    for c in s.chars {
+        push(v, Str { chars: vec(c) })
+    }
+    v
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut v = vec()
+    for i in a.min(b) + 1.min(a + b - 1) - 1.max(a - b, 0) + 1 {
+        push(v, i)
+    }
+    v
+}
+
+fn main() {
+    let mut device = Device { sensor: Sensor { reading: 0 } }
+    device.sensor.reading = 7
+    print(device.sensor.reading)
+}

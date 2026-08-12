@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let readings: [i32; 6] = [4, 8, 15, 16, 23, 42];
+    let mean: f64 = readings.iter().sum::<i32>() as f64 / readings.len() as f64;
+    println!("{}", mean as i32);
+}
+```

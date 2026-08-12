@@ -1,0 +1,364 @@
+fn count_p(s: Str) -> Int {
+    let c = 0
+    for ch in &chars_s {
+        if ch == "p" {
+            c = c + 1
+        }
+    }
+    c
+}
+
+fn main() {
+    let s = "programming"
+    print(count_p(&s))
+    drop s
+}
+
+fn chars_s(s: Str) -> Vec<Str> {
+    let v = vec()
+    for ch in &s {
+        v = push(v, ch)
+    }
+    v
+}
+
+fn chars_s(s: Str) -> Vec<Str> {
+    let v = vec()
+    for ch in &s {
+        v = push(v, ch)
+    }
+    v
+}
+
+fn chars_s(s: Str) -> Vec<Str> {
+    let v = vec()
+    for ch in &s {
+        v = push(v, ch)
+    }
+    v
+}
+
+fn chars_s(s: Str) -> Vec<Str> {
+    let v = vec()
+    for ch in &s {
+        v = push(v, ch)
+    }
+    v
+}
+
+fn chars_s(s: Str) -> Vec<Str> {
+    let v = vec()
+    for ch in &s {
+        v = push(v, ch)
+    }
+    v
+}
+
+fn chars_s(s: Str) -> Vec<Str> {
+    let v = vec()
+    for ch in &s {
+        v = push(v, ch)
+    }
+    v
+}
+
+fn chars_s(s: Str) -> Vec<Str> {
+    let v = vec()
+    for ch in &s {
+        v = push(v, ch)
+    }
+    v
+}
+
+fn chars_s(s: Str) -> Vec<Str> {
+    let v = vec()
+    for ch in &s {
+        v = push(v, ch)
+    }
+    v
+}
+
+fn chars_s(s: Str) -> Vec<Str> {
+    let v = vec()
+    for ch in &s {
+        v = push(v, ch)
+    }
+    v
+}
+
+fn chars_s(s: Str) -> Vec<Str> {
+    let v = vec()
+    for ch in &s {
+        v = push(v, ch)
+    }
+    v
+}
+
+fn chars_s(s: Str) -> Vec<Str> {
+    let v = vec()
+    for ch in &s {
+        v = push(v, ch)
+    }
+    v
+}
+
+fn chars_s(s: Str) -> Vec<Str> {
+    let v = vec()
+    for ch in &s {
+        v = push(v, ch)
+    }
+    v
+}
+
+fn chars_s(s: Str) -> Vec<Str> {
+    let v = vec()
+    for ch in &s {
+        v = push(v, ch)
+    }
+    v
+}
+
+fn chars_s(s: Str) -> Vec<Str> {
+    let v = vec()
+    for ch in &s {
+        v = push(v, ch)
+    }
+    v
+}
+
+fn chars_s(s: Str) -> Vec<Str> {
+    let v = vec()
+    for ch in &s {
+        v = push(v, ch)
+    }
+    v
+}
+
+fn chars_s(s: Str) -> Vec<Str> {
+    let v = vec()
+    for ch in &s {
+        v = push(v, ch)
+    }
+    v
+}
+
+fn chars_s(s: Str) -> Vec<Str> {
+    let v = vec()
+    for ch in &s {
+        v = push(v, ch)
+    }
+    v
+}
+
+fn chars_s(s: Str) -> Vec<Str> {
+    let v = vec()
+    for ch in &s {
+        v = push(v, ch)
+    }
+    v
+}
+
+fn chars_s(s: Str) -> Vec<Str> {
+    let v = vec()
+    for ch in &s {
+        v = push(v, ch)
+    }
+    v
+}
+
+fn chars_s(s: Str) -> Vec<Str> {
+    let v = vec()
+    for ch in &s {
+        v = push(v, ch)
+    }
+    v
+}
+
+fn chars_s(s: Str) -> Vec<Str> {
+    let v = vec()
+    for ch in &s {
+        v = push(v, ch)
+    }
+    v
+}
+
+fn chars_s(s: Str) -> Vec<Str> {
+    let v = vec()
+    for ch in &s {
+        v = push(v, ch)
+    }
+    v
+}
+
+fn chars_s(s: Str) -> Vec<Str> {
+    let v = vec()
+    for ch in &s {
+        v = push(v, ch)
+    }
+    v
+}
+
+fn chars_s(s: Str) -> Vec<Str> {
+    let v = vec()
+    for ch in &s {
+        v = push(v, ch)
+    }
+    v
+}
+
+fn chars_s(s: Str) -> Vec<Str> {
+    let v = vec()
+    for ch in &s {
+        v = push(v, ch)
+    }
+    v
+}
+
+fn chars_s(s: Str) -> Vec<Str> {
+    let v = vec()
+    for ch in &s {
+        v = push(v, ch)
+    }
+    v
+}
+
+fn chars_s(s: Str) -> Vec<Str> {
+    let v = vec()
+    for ch in &s {
+        v = push(v, ch)
+    }
+    v
+}
+
+fn chars_s(s: Str) -> Vec<Str> {
+    let v = vec()
+    for ch in &s {
+        v = push(v, ch)
+    }
+    v
+}
+
+fn chars_s(s: Str) -> Vec<Str> {
+    let v = vec()
+    for ch in &s {
+        v = push(v, ch)
+    }
+    v
+}
+
+fn chars_s(s: Str) -> Vec<Str> {
+    let v = vec()
+    for ch in &s {
+        v = push(v, ch)
+    }
+    v
+}
+
+fn chars_s(s: Str) -> Vec<Str> {
+    let v = vec()
+    for ch in &s {
+        v = push(v, ch)
+    }
+    v
+}
+
+fn chars_s(s: Str) -> Vec<Str> {
+    let v = vec()
+    for ch in &s {
+        v = push(v, ch)
+    }
+    v
+}
+
+fn chars_s(s: Str) -> Vec<Str> {
+    let v = vec()
+    for ch in &s {
+        v = push(v, ch)
+    }
+    v
+}
+
+fn chars_s(s: Str) -> Vec<Str> {
+    let v = vec()
+    for ch in &s {
+        v = push(v, ch)
+    }
+    v
+}
+
+fn chars_s(s: Str) -> Vec<Str> {
+    let v = vec()
+    for ch in &s {
+        v = push(v, ch)
+    }
+    v
+}
+
+fn chars_s(s: Str) -> Vec<Str> {
+    let v = vec()
+    for ch in &s {
+        v = push(v, ch)
+    }
+    v
+}
+
+fn chars_s(s: Str) -> Vec<Str> {
+    let v = vec()
+    for ch in &s {
+        v = push(v, ch)
+    }
+    v
+}
+
+fn chars_s(s: Str) -> Vec<Str> {
+    let v = vec()
+    for ch in &s {
+        v = push(v, ch)
+    }
+    v
+}
+
+fn chars_s(s: Str) -> Vec<Str> {
+    let v = vec()
+    for ch in &s {
+        v = push(v, ch)
+    }
+    v
+}
+
+fn chars_s(s: Str) -> Vec<Str> {
+    let v = vec()
+    for ch in &s {
+        v = push(v, ch)
+    }
+    v
+}
+
+fn chars_s(s: Str) -> Vec<Str> {
+    let v = vec()
+    for ch in &s {
+        v = push(v, ch)
+    }
+    v
+}
+
+fn chars_s(s: Str) -> Vec<Str> {
+    let v = vec()
+    for ch in &s {
+        v = push(v, ch)
+    }
+    v
+}
+
+fn chars_s(s: Str) -> Vec<Str> {
+    let v = vec()
+    for ch in &s {
+        v = push(v, ch)
+    }
+    v
+}
+
+fn chars_s(s: Str) -> Vec<Str> {
+    let v = vec()
+    for ch in &s {
+        v = push(v,

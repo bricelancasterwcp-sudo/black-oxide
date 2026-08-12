@@ -1,0 +1,9 @@
+fn main() {
+    let mut num = String::new();
+    std::io::stdin().read_line(&mut num).unwrap();
+    if let Ok(num) = num.trim().parse::<i32>() {
+        println!("{}", num + 1);
+    } else {
+        println!("bad");
+    }
+}

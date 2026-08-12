@@ -1,0 +1,11 @@
+fn rev(n: Int) -> Str {
+    if n < 10 {
+        return int_to_str(n)
+    } else {
+        return concat(rev(trunc(n / 10)), int_to_str(trunc(n % 10)))
+    }
+}
+
+fn main() {
+    print(rev(1234))
+}

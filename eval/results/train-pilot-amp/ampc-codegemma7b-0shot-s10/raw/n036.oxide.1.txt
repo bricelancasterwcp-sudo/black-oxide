@@ -1,0 +1,4 @@
+fn main() {
+    let v1 = 4 * 3 + 5 * 2
+    print(v1)
+}

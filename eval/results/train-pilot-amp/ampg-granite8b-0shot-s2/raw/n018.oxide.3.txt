@@ -1,0 +1,6 @@
+fn main() {
+    let list = push(push(push(vec(), 1), 2), 3)
+    for i in range(len(list), 0) {
+        print(get(list, i - 1)?)
+    }
+}

@@ -1,0 +1,319 @@
+fn main() {
+    print_str(char_at("cat", 0))
+    print_str("\n")
+    print_str(char_at("cat", 1))
+    print_str("\n")
+    print_str(char_at("cat", 2))
+    print_str("\n")
+}
+
+fn char_at(s: Str, i: Int) -> Str {
+    match get(s, i) {
+        Some(c) => c,
+        None => "",
+    }
+}
+
+fn len(s: Str) -> Int {
+    let mut count = 0
+    for _ in chars(s) {
+        count = count + 1
+    }
+    count
+}
+
+fn get(s: Str, i: Int) -> Option<Str> {
+    if i < len(s) {
+        Some(str_at(s, i))
+    } else {
+        None
+    }
+}
+
+fn str_at(s: Str, i: Int) -> Str {
+    let mut result = ""
+    let mut index = 0
+    for c in chars(s) {
+        if index == i {
+            result = c
+            break
+        }
+        index = index + 1
+    }
+    result
+}
+
+fn print_str(s: Str) {
+    for c in chars(s) {
+        print(c)
+    }
+}
+
+fn print(c: Str) {
+    match c {
+        Int(n) => print_int(n),
+        Float(f) => print_float(f),
+        Bool(b) => print_bool(b),
+        Str(s) => print_str(s),
+        Unit => print_str(""),
+    }
+}
+
+fn print_int(n: Int) {
+    print_str(int_to_str(n))
+}
+
+fn print_float(f: Float) {
+    print_str(to_str(f))
+}
+
+fn print_bool(b: Bool) {
+    print_str(if b { "true" } else { "false" })
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut digits = vec()
+    let mut nn = n
+    while nn > 0 {
+        digits = push(digits, nn % 10)
+        nn = nn / 10
+    }
+    let mut result = ""
+    for d in digits {
+        result = str_cat(result, int_to_str(d))
+    }
+    result
+}
+
+fn to_str(f: Float) -> Str {
+    let s = format("%f", f)
+    Str(s)
+}
+
+fn str_cat(a: Str, b: Str) -> Str {
+    let mut result = ""
+    for c in chars(a) {
+        result = str_cat(result, c)
+    }
+    for c in chars(b) {
+        result = str_cat(result, c)
+    }
+    result
+}
+
+fn str_len(s: Str) -> Int {
+    let mut count = 0
+    for _ in chars(s) {
+        count = count + 1
+    }
+    count
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = vec()
+    let mut i = 0
+    while i < len(s) {
+        result = push(result, str_at(s, i))
+        i = i + 1
+    }
+    result
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    let mut result = v
+    result = result + x
+    result
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn to_float(n: Int) -> Float {
+    Float(n)
+}
+
+fn trunc(x: Float) -> Int {
+    let i = int_part(x)
+    if x >= 0 {
+        i
+    } else {
+        i - 1
+    }
+}
+
+fn int_part(f: Float) -> Int {
+    let s = to_str(f)
+    let i = parse_int(str_before(s, "."))
+    i
+}
+
+fn str_before(s: Str, sep: Str) -> Str {
+    let mut result = ""
+    let mut found_sep = false
+    for c in chars(s) {
+        if c == sep {
+            found_sep = true
+        } else if !found_sep {
+            result = str_cat(result, c)
+        }
+    }
+    result
+}
+
+fn parse_int(s: Str) -> Int {
+    let mut result = 0
+    let mut factor = 1
+    for c in chars(s) {
+        let digit = digit_value(c)
+        if digit != -1 {
+            result = add(result, factor * digit)
+            factor = factor * 10
+        } else if c == "-" {
+            factor = -1
+        } else {
+            return 0
+        }
+    }
+    result
+}
+
+fn digit_value(c: Str) -> Int {
+    if c >= "0" && c <= "9" {
+        c - "0"
+    } else {
+        -1
+    }
+}
+
+fn eq(a: Int, b: Int) -> Bool {
+    a == b
+}
+
+fn lt(a: Int, b: Int) -> Bool {
+    a < b
+}
+
+fn gt(a: Int, b: Int) -> Bool {
+    a > b
+}
+
+fn neq(a: Int, b: Int) -> Bool {
+    a != b
+}
+
+fn and(a: Bool, b: Bool) -> Bool {
+    a && b
+}
+
+fn or(a: Bool, b: Bool) -> Bool {
+    a || b
+}
+
+fn not(a: Bool) -> Bool {
+    !a
+}
+
+fn if_(cond: Bool, then_expr: Expr, else_expr: Expr) -> Expr {
+    if cond {
+        then_expr
+    } else {
+        else_expr
+    }
+}
+
+fn loop_(init_expr: Expr, cond_expr: Expr, body_expr: Expr) -> Expr {
+    let mut result = init_expr
+    while cond_expr {
+        result = body_expr
+    }
+    result
+}
+
+fn while_(cond_expr: Expr, body_expr: Expr) -> Expr {
+    loop_(Unit, cond_expr, body_expr)
+}
+
+fn break_() -> Expr {
+    panic("break outside loop")
+}
+
+fn continue_() -> Expr {
+    panic("continue outside loop")
+}
+
+fn match_(e: Expr, arms: Vec<MatchArm>) -> Expr {
+    for arm in arms {
+        if arm.matches(e) {
+            return arm.expr
+        }
+    }
+    panic("no matching arm")
+}
+
+struct MatchArm {
+    pattern: Pattern,
+    expr: Expr,
+}
+
+enum Pattern {
+    Variant(Str, Vec<Pattern>),
+    Nullary,
+    Wildcard,
+}
+
+fn is_nullary(p: Pattern) -> Bool {
+    match p {
+        Pattern(name, _) => false,
+        Pattern(_, _) => false,
+        Pattern => true,
+    }
+}
+
+fn matches(a: Pattern, b: Expr) -> Bool {
+    match a {
+        Pattern(name, args) => {
+            let v = get(b, name)?
+            if len(args) == 0 {
+                true
+            } else {
+                let mut matched = true
+                for i in 0 < len(args) {
+                    matched = matched && matches(args, get(v, i))
+                }
+                matched
+            }
+        },
+        Pattern(_, _) => false,
+        Pattern => true,
+    }
+}
+
+enum Expr {
+    Int(Int),
+    Float(Float),
+    Bool(Bool),
+    Str(Str),
+    Unit,
+    Vec(Vec<Expr>),
+    Func(Box<FnMut>),
+    Struct(Str, Vec<Expr>),
+    Match(Box<Expr>, Vec<MatchArm>),
+    Loop(Box<Expr>, Box<Expr>, Box<Expr>),
+    If(Box<Expr>, Box<Expr>, Box<Expr>),
+}
+
+enum FnMut {
+    Int(Int),
+    Float(Float),
+    Bool(Bool),
+    Str(Str),
+    Unit,
+    Vec(Vec<Expr>),
+    Func(Box<FnMut>),
+}
+
+fn main() {
+    print_str(char_at("cat", 0))
+    print_str("\n")
+    print_str(char

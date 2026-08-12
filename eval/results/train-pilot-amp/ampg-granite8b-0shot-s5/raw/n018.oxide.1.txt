@@ -1,0 +1,15 @@
+struct List { data: Vec<Int>, next: Option<Box<List>> }
+
+fn print_list(l: Box<List>) {
+    let mut l = l
+    while letSome(item) == l.next {
+        print(item.data)
+        l = item
+    }
+    print(l.data)
+}
+
+fn main() {
+    let l = Box { data: push(push(push(vec(), 4), 3), 2), next: Some(Box { data: vec(1), next: None }) }
+    print_list(l)
+}

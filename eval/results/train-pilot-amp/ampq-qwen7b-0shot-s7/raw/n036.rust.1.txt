@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let value_1 = 4 * 3;
+    let value_2 = 5 * 2;
+    let total_value = value_1 + value_2;
+    println!("Total value held: {}", total_value);
+}
+```

@@ -1,0 +1,6 @@
+fn main() {
+    let word = "cat"
+    for c in chars(word) {
+        print_str(c)
+    }
+}

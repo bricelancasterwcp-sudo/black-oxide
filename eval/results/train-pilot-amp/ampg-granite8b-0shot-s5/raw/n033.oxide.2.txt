@@ -1,0 +1,9 @@
+fn main() {
+    let x = true
+    let mut x = true
+    while x {
+        print_str("go for green ")
+        x = false
+    }
+    print_str("stop for red\n")
+}

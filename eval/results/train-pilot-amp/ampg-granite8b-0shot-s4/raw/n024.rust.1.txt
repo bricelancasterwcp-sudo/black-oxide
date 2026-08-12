@@ -1,0 +1,5 @@
+fn main() {
+    let word = "banana";
+    let count = word.matches('a').count();
+    println!("The letter a appears {} times in the word banana.", count);
+}

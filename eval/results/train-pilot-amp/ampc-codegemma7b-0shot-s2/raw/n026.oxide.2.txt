@@ -1,0 +1,40 @@
+fn int_to_str(n: Int) -> Str {
+    if n < 10 {
+        if n < 0 {
+            concat("-", int_to_str(-n))
+        } else {
+            Str(match n {
+                    Zero => "zero",
+                    One => "one",
+                    Two => "two",
+                    Three => "three",
+                    Four => "four",
+                    Five => "five",
+                    Six => "six",
+                    Seven => "seven",
+                    Eight => "eight",
+                    Nine => "nine",
+                })
+        }
+    } else {
+        let rec_str = int_to_str(trunc(n / 10))
+        Str(match n % 10 {
+                Zero => concat(rec_str, "zero"),
+                One => concat(rec_str, "one"),
+                Two => concat(rec_str, "two"),
+                Three => concat(rec_str, "three"),
+                Four => concat(rec_str, "four"),
+                Five => concat(rec_str, "five"),
+                Six => concat(rec_str, "six"),
+                Seven => concat(rec_str, "seven"),
+                Eight => concat(rec_str, "eight"),
+                Nine => concat(rec_str, "nine"),
+            })
+    }
+}
+
+fn main() {
+    let number = 2026
+    let text = int_to_str(number)
+    print(str_len(text))
+}

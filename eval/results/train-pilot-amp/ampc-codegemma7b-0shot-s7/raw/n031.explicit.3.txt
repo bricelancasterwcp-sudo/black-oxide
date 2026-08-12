@@ -1,0 +1,19 @@
+fn area(w: Float, h: Float) -> Float {
+    w * h
+}
+
+fn main() {
+    let a = area(7.0, 6.0)
+    print(a)
+    drop a
+}
+
+fn area(w: Float, h: Float) -> Float {
+    w * h
+}
+
+fn main() {
+    let a = area(7.0, 6.0)
+    print(a)
+    drop a
+}

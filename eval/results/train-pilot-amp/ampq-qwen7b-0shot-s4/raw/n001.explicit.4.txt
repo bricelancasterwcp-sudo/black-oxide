@@ -1,0 +1,16 @@
+fn sum_cubes(limit: Int) -> Int {
+    let total = 0
+    for x in &range1to5 {
+        total = total + x * x * x
+    }
+    total
+}
+
+fn main() {
+    let range1to5 = range(1, 6)
+    let total = sum_cubes(&range1to5)
+    print_str("Sum of cubes from 1 to 5: ")
+    print(total)
+    drop range1to5
+    drop total
+}

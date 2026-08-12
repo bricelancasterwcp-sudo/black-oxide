@@ -1,0 +1,5 @@
+fn main() {
+    let s = "hello world"
+    print_str(s)
+    drop s
+}

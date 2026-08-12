@@ -1,0 +1,14 @@
+fn first_big(v: Vec<Int>) -> Int {
+    let found = -1
+    for x in v {
+        if x > found {
+            found = x
+        }
+    }
+    found
+}
+
+fn main() {
+    let readings = vec(5, 3, 9, 1, 7)
+    print(first_big(readings))
+}

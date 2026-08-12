@@ -1,0 +1,79 @@
+fn product(nums: &Vec<Int>) -> Int {
+    let mut total = 1
+    for num in &nums {
+        total = total * num
+    }
+    total
+}
+
+fn main() {
+    let nums = vec(1, 2, 3, 4, 5, 6)
+    print(product(&nums))
+    drop nums
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    v.len()
+}
+
+fn print(x: Int) {
+    println("{}", x)
+}
+
+fn drop_nums(nums: &Vec<Int>) {
+    drop nums
+}
+
+fn clone(x: &Vec<Int>) -> Vec<Int> {
+    x.clone()
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    v.get(i)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    (a + 1).to(b).map(i32).collect()
+}
+
+fn str_len(s: &String) -> Int {
+    s.len()
+}
+
+fn concat(a: &String, b: &String) -> String {
+    a.to_owned() + b
+}
+
+fn chars(s: &String) -> Vec<String> {
+    s.chars().map(String).collect()
+}
+
+fn int_to_str(n: Int) -> String {
+    n.to_string()
+}
+
+fn parse_int(s: &String) -> Option<Int> {
+    s.parse()
+}
+
+fn to_float(n: Int) -> Float {
+    n.to_float()
+}
+
+fn trunc(x: Float) -> Int {
+    x.trunc()
+}
+
+fn print_str(s: &String) {
+    print("{}", s)
+}
+
+fn main() {
+    let nums = vec(1, 2, 3, 4, 5, 6)
+    print(product(&nums))
+    drop_nums(&nums)
+}

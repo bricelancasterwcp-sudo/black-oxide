@@ -1,0 +1,17 @@
+fn smallest(v: Vec<Int>) -> Option<Int> {
+    let mut min = v.get(0)?
+    for x in v {
+        if x < min {
+            min = x
+        }
+    }
+    Some(min)
+}
+
+fn main() {
+    let readings = push(push(push(push(vec(), 5), 3), 9), 1)
+    match smallest(readings) {
+        Some(n) => print(n),
+        None => print_str("error"),
+    }
+}

@@ -1,0 +1,5 @@
+fn main() {
+    let readings = [5, 3, 9, 1, 7];
+    let largest = readings.iter().max().unwrap_or(&0);
+    println!("The largest reading is: {}", largest);
+}

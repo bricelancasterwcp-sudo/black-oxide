@@ -1,0 +1,15 @@
+```rust
+fn get_second(list: &[i32]) -> Option<i32> {
+    if list.len() < 2 {
+        None
+    } else {
+        Some(list[1])
+    }
+}
+
+fn main() {
+    println!("{:?}", get_second(&[7, 8])); // Some(8)
+    println!("{:?}", get_second(&[9])); // None
+    println!("{:?}", get_second(&[])); // None
+}
+```

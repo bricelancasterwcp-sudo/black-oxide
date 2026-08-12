@@ -1,0 +1,128 @@
+fn main() {
+    let nums = push(push(vec(), 5), 40)
+    let bigger = extend(clone(&nums), 70)
+    print(sum_big(&nums, 10))
+    drop nums
+    print(sum_big(&bigger, 10))
+    drop bigger
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let total = 0
+    for x in &v {
+        if x > limit {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn extend(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut v = vec()
+    for i in a.to(b - 1) {
+        push(v, i)
+    }
+    v
+}
+
+fn filter(v: &Vec<Int>, pred: Int) -> Vec<Int> {
+    let mut r = vec()
+    for x in v {
+        if x > pred {
+            push(r, x)
+        }
+    }
+    r
+}
+
+fn sum(v: &Vec<Int>) -> Int {
+    let mut s = 0
+    for x in v {
+        s = s + x
+    }
+    s
+}
+
+fn sum_big_alt(v: &Vec<Int>, limit: Int) -> Int {
+    let vs = filter(&v, limit)
+    sum(&vs)
+}
+
+fn sum_big_opt(v: &Vec<Int>, limit: Int) -> Option<Int> {
+    let vs = filter(&v, limit)
+    if vs.is_empty() {
+        None
+    } else {
+        Some(sum(&vs))
+    }
+}
+
+fn sum_big_unwrap(v: &Vec<Int>, limit: Int) -> Int {
+    let vs = filter(&v, limit)
+    vs.unwrap_or(0)
+}
+
+fn sum_big_or(v: &Vec<Int>, limit: Int) -> Int {
+    let vs = filter(&v, limit)
+    vs.unwrap_or(1234)
+}
+
+fn sum_big_unwrap_or_else(v: &Vec<Int>, limit: Int) -> Int {
+    let vs = filter(&v, limit)
+    vs.unwrap_or_else(sum)
+}
+
+fn sum_big_match(v: &Vec<Int>, limit: Int) -> Int {
+    let vs = filter(&v, limit)
+    match vs {
+        Vec(x) => sum(&x),
+        _ => 0,
+    }
+}
+
+fn sum_big_result(v: &Vec<Int>, limit: Int) -> Result<Int, Vec<Int>> {
+    let vs = filter(&v, limit)
+    if vs.is_empty() {
+        Err(vs)
+    } else {
+        Ok(sum(&vs))
+    }
+}
+
+fn sum_big_try(v: &Vec<Int>, limit: Int) -> Int {
+    let vs = filter(&v, limit)
+    vs.unwrap_or_default()
+}
+
+fn sum_big_try_opt(v: &Vec<Int>, limit: Int) -> Option<Int> {
+    let vs = filter(&v, limit)
+    vs.try_into()
+}
+
+fn sum_big_try_result(v: &Vec<Int>, limit: Int) -> Result<Int, Vec<Int>> {
+    let vs = filter(&v, limit)
+    vs.try_into()
+}
+
+fn sum_big_try_result_err(v: &Vec<Int>, limit: Int) -> Result<Int, Vec<Int>> {
+    let vs = filter(&v, limit)
+    vs.try_into().unwrap_or_default()
+}
+
+fn sum_big_try_result_err_opt(v: &Vec<Int>, limit: Int) -> Option<Int> {
+    let vs = filter(&v, limit)
+    vs.try_into().unwrap_or_default()
+}
+
+fn main() {
+    let nums = push(push(vec(), 5), 40)
+    let bigger = extend(clone(&nums), 70)
+    print(sum_big(&nums, 10))
+    drop nums
+    print(sum_big(&bigger, 10))
+    drop bigger
+}

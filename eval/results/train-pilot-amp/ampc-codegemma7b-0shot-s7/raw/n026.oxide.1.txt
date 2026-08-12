@@ -1,0 +1,5 @@
+fn main() {
+    let twenty_six = "twenty-six".to_string()
+    let len = str_len(twenty_six)
+    print(len)
+}

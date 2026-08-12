@@ -1,0 +1,57 @@
+fn main() {
+    let r = Rectangle { width: 5, height: 3 }
+    r.set_width(5)
+    print(r.area())
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn set_width(r: &Rectangle, w: Int) -> Rectangle {
+    Rectangle(width == w, height == r.height)
+}
+
+fn area(r: &Rectangle) -> Int {
+    r.width * r.height
+}
+
+struct Circle {
+    radius: Float,
+}
+
+fn area(c: &Circle) -> Float {
+    std.math.pi * c.radius * c.radius
+}
+
+struct Triangle {
+    side1: Float,
+    side2: Float,
+    side3: Float,
+}
+
+fn area(t: &Triangle) -> Float {
+    let s = (t.side1 + t.side2 + t.side3) / 2
+    std.math.sqrt(s * (s - t.side1) * (s - t.side2) * (s - t.side3))
+}
+
+struct Shape {
+    name: Str,
+    area: Int,
+}
+
+fn shape_area(s: &Shape) -> Int {
+    match s {
+        Shape(name, area) => area,
+        Circle(c) => area(&c),
+        Triangle(t) => area(&t),
+        _ => 0,
+    }
+}
+
+fn main() {
+    let r = Rectangle { width: 2, height: 4 }
+    print_str("Rectangle area: ")
+    print(shape_area(&r))
+}

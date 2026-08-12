@@ -1,0 +1,300 @@
+fn main() {
+    let nums = vec(4, 8, 15, 16, 23, 42)
+    let sum = nums.iter().fold(0, add)
+    let mean = div(sum, nums.len())
+    print(mean)
+}
+
+fn add(acc: Int, item: Int) -> Int {
+    acc + item
+}
+
+fn div(a: Int, b: Int) -> Int {
+    a / b
+}
+
+fn len(v: Vec<Int>) -> Int {
+    v.iter().count()
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    let stdout = std_out()
+    write_str(stdout, s)
+}
+
+fn std_out() -> StdOut {
+    extern_ref("std.out")
+}
+
+fn write_str(out: StdOut, s: Str) {
+    let c_string = c_str(s)
+    write(out, c_string)
+}
+
+fn c_str(s: Str) -> CString {
+    let c_string = CString_new(s)
+    drop(c_string)
+    c_string
+}
+
+fn int_to_str(n: Int) -> Str {
+    let buffer = vec(n)
+    let s = str(buffer)
+    drop(buffer)
+    s
+}
+
+fn str(buf: Vec<Int>) -> Str {
+    let c_string = c_str(buf)
+    let s = Str_new(c_string)
+    drop(c_string)
+    s
+}
+
+fn c_str(buf: Vec<Int>) -> CString {
+    let mut c_string = CString_new(buf.len())
+    for i in 0.upto(buf.len()) {
+        c_string = c_str(c)
+    }
+    c_string
+}
+
+fn int_to_char(n: Int) -> Char {
+    if n < 10 {
+        Char(n + 48)
+    } else {
+        Char(n + 55)
+    }
+}
+
+fn char(c: Char) -> Int {
+    if c >= Char(48) && c <= Char(57) {
+        c - Char(48)
+    } else if c >= Char(65) && c <= Char(70) {
+        c - Char(55)
+    } else {
+        -1
+    }
+}
+
+fn write(out: StdOut, c_string: CString) {
+    out.write(c_string)
+}
+
+struct CString {
+    buf: Vec<Int>,
+}
+
+struct CString_new {
+    buf: Vec<Int>,
+}
+
+struct CString_push {
+    buf: Vec<Int>,
+    c: Char,
+}
+
+struct CString_new {
+    size: Int,
+}
+
+struct CString_push {
+    c_string: CString,
+}
+
+fn c_str(size: Int) -> CString {
+    CString_new(size)
+}
+
+fn c_str(buf: Vec<Int>) -> CString {
+    CString_push(c_string, c)
+}
+
+fn c_str(s: Str) -> CString {
+    let mut c_string = CString_new(s.len())
+    for c in s.chars() {
+        c_string = c_str(c)
+    }
+    c_string
+}
+
+fn c_str(c: Char) -> CString {
+    CString_push(c_string, c)
+}
+
+fn write(out: StdOut, c_string: CString) {
+    out.write(c_string)
+}
+
+fn drop(c_string: CString) {
+    if c_string.buf.len() == 0 {
+        return
+    }
+    write(std_out(), c_string)
+}
+
+struct StdOut {
+    write: FnMut_Void_Void,
+}
+
+fn std_out() -> StdOut {
+    let stdout = StdOut { write: write }
+    drop(stdout)
+    stdout
+}
+
+fn write(out: StdOut, c_string: CString) {
+    (out.write)(c_string)
+}
+
+fn write(out: StdOut, c_string: CString) {
+    extern_ref("std.print")(c_string)
+}
+
+fn drop(stdout: StdOut) {
+    extern_ref("std.drop")(stdout)
+}
+
+struct Str {
+    buf: CString,
+}
+
+fn str(buf: Vec<Int>) -> Str {
+    Str_new(buf)
+}
+
+fn str(s: Str) -> Str {
+    let c_string = c_str(s.buf)
+    Str_new(c_string)
+}
+
+fn str(c_string: CString) -> Str {
+    Str_new(c_string)
+}
+
+fn drop(s: Str) {
+    drop(s.buf)
+}
+
+fn str_len(s: Str) -> Int {
+    let c_string = c_str(s.buf)
+    str_len(c_string)
+}
+
+fn str_len(c_string: CString) -> Int {
+    let mut i = 0
+    for c in c_string.chars() {
+        if c == Char(0) {
+            break
+        }
+        i = i + 1
+    }
+    i
+}
+
+struct Char {
+    c: Int,
+}
+
+fn char(c: Char) -> Int {
+    c.c
+}
+
+fn drop(c: Char) {
+    if c.c >= 255 {
+        return
+    }
+    let stdout = std_out()
+    write_str(stdout, c_str(c))
+}
+
+fn drop(c_string: CString) {
+    if c_string.buf.len() == 0 {
+        return
+    }
+    write(std_out(), c_string)
+}
+
+fn drop(stdout: StdOut) {
+    extern_ref("std.drop")(stdout)
+}
+
+fn drop(s: Str) {
+    drop(s.buf)
+}
+
+fn drop(c: Char) {
+    if c.c >= 255 {
+        return
+    }
+    let stdout = std_out()
+    write_str(stdout, c_str(c))
+}
+
+fn drop(c_string: CString) {
+    if c_string.buf.len() == 0 {
+        return
+    }
+    write(std_out(), c_string)
+}
+
+fn drop(stdout: StdOut) {
+    extern_ref("std.drop")(stdout)
+}
+
+fn drop(s: Str) {
+    drop(s.buf)
+}
+
+fn drop(c: Char) {
+    if c.c >= 255 {
+        return
+    }
+    let stdout = std_out()
+    write_str(stdout, c_str(c))
+}
+
+fn drop(c_string: CString) {
+    if c_string.buf.len() == 0 {
+        return
+    }
+    write(std_out(), c_string)
+}
+
+fn drop(stdout: StdOut) {
+    extern_ref("std.drop")(stdout)
+}
+
+fn drop(s: Str) {
+    drop(s.buf)
+}
+
+fn drop(c: Char) {
+    if c.c >= 255 {
+        return
+    }
+    let stdout = std_out()
+    write_str(stdout, c_str(c))
+}
+
+fn drop(c_string: CString) {
+    if c_string.buf.len() == 0 {
+        return
+    }
+    write(std_out(), c_string)
+}
+
+fn drop(stdout: StdOut) {
+    extern_ref("std.drop")(stdout)
+}
+
+fn main() {
+    let nums = vec(4, 8, 15, 16, 23, 42)
+    let sum = nums.iter().fold(0, add)
+    let mean = div(sum, nums.len())
+    print(mean)
+}

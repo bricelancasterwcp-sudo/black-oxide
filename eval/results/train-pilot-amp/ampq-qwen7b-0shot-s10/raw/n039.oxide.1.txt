@@ -1,0 +1,21 @@
+struct List { head: Option<Box<Entry>>, tail: Option<Box<List>> }
+
+struct Entry { value: Int }
+
+fn get_entry(l: List, index: Int) -> Option<Int> {
+    let mut current = Some(l.head.as_ref().unwrap().value.clone())
+    let mut remaining = index - 1
+    while remaining > 0 && current.is_some() {
+        current = current.unwrap().tail.as_ref().map_or(None, move || current.unwrap().head.as_ref().unwrap().value.clone())
+        remaining = remaining - 1
+    }
+    current
+}
+
+fn main() {
+    let list = List { head: Some(Box { value: 1, tail: Some(Box { head: Some(Box { value: 2, tail: None }), tail: None }) }), tail: None }
+    match get_entry(list, 5) {
+        Some(n) => print(n),
+        None => print_str("none"),
+    }
+}

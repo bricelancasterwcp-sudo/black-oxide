@@ -1,0 +1,13 @@
+fn count_divisible() -> Int {
+    let mut count = 0
+    for x in 1.upto(50) {
+        if x % 3 == 0 || x % 5 == 0 {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn main() {
+    print(count_divisible())
+}

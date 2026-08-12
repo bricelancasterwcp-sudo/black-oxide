@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    for _ in 0..3 {
+        println!("go for green");
+        std::thread::sleep(std::time::Duration::from_secs(1));
+    }
+}
+```

@@ -1,0 +1,11 @@
+fn helper(list: Vec<Int>) -> Option<Int> {
+    match list {
+        Vec(_, _) => None,
+        Vec(head, second) => Some(second) <= list.len() - 1,
+    }
+}
+
+fn main() {
+    print(helper(vec(7)))
+    print(helper(vec(8, 9)))
+}

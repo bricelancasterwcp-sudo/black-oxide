@@ -1,0 +1,11 @@
+fn read_num(s: &Str) -> Option<Int> {
+    parse_int(s)
+}
+
+fn main() {
+    let input = "abc"
+    match read_num(input) {
+        Some(num) => print(num),
+        None => print("bad"),
+    }
+}

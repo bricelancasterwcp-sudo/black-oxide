@@ -1,0 +1,14 @@
+fn main() {
+    let mut stock_values = HashMap::new();
+    stock_values.insert("four", 4);
+    stock_values.insert("five", 5);
+
+    let mut total_value = 0;
+
+    for (item, value) in stock_values {
+        let quantity = item.parse::<usize>().unwrap();
+        total_value += quantity * value;
+    }
+
+    println!("Total value: {}", total_value);
+}

@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let x = "one";
+    let y = "two";
+    let z = "three";
+
+    println!("{} {} {}", x, y, z);
+}
+```

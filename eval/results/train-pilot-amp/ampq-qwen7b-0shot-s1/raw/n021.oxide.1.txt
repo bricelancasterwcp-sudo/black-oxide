@@ -1,0 +1,10 @@
+struct Word { chars: Vec<Str> }
+
+fn count_chars(word: Word) -> Int {
+    word.chars.len()
+}
+
+fn main() {
+    let word = Word { chars: vec(int_to_str(113), int_to_str(111), int_to_str(114), int_to_str(112), int_to_str(110), int_to_str(103), int_to_str(104), int_to_str(101), int_to_str(109)) }
+    print(count_chars(word))
+}

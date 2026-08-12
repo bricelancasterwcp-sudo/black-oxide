@@ -1,0 +1,11 @@
+fn print_list(list: Vec<Int>) {
+    for i in (0).range(list.len() - 1, -1, -1) {
+        print(&list - i - 1)
+    }
+    drop list
+}
+
+fn main() {
+    let nums = vec(1, 2, 3, 4)
+    print_list(clone(&nums))
+}

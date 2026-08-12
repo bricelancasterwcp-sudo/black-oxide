@@ -1,0 +1,290 @@
+struct Reading { label: Str, values: Vec<Int> }
+
+fn first_big(v: Vec<Int>) -> Int {
+    let found = -1
+    for x in v {
+        if x > 10 {
+            found = x
+            break
+        }
+    }
+    found
+}
+
+fn second(v: Vec<Int>) -> Option<Int> {
+    let x = get(v, 1)?
+    Some(x + 1)
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(vec(), 3), 42) }
+    print(first_big(r.values))            // field access copies: r stays usable
+    let r2 = Reading { label: "lab2", ..r }
+    match second(r2.values) {
+        Some(n) => print(n),
+        None => print_str("too short"),
+    }
+}
+
+fn mul(acc: Int, x: Int) -> Int {
+    acc * x
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut v = vec()
+    for i in a + 1.to_int() - 1.to_int() * (b > a) {
+        push(v, i)
+    }
+    v
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    for c in chars(s) {
+        print(c)
+    }
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    if i < len(v) {
+        Some(v.get(i))
+    } else {
+        None
+    }
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut digits = vec()
+    let mut num = n
+    while num > 0 {
+        digits.push(to_char(num % 10))
+        num = trunc(num / 10)
+    }
+    let mut s = str()
+    for d in digits {
+        s = concat(s, d)
+    }
+    s
+}
+
+fn to_char(n: Int) -> Str {
+    match n {
+        _ => "0",
+        _ => "1",
+        _ => "2",
+        _ => "3",
+        _ => "4",
+        _ => "5",
+        _ => "6",
+        _ => "7",
+        _ => "8",
+        _ => "9",
+    }
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut v = vec()
+    for i in 0.to_int() + 1.to_int() * (len(s) > 0) {
+        push(v, get(s, i).unwrap())
+    }
+    v
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    let mut v2 = v
+    v2.append(x)
+    v2
+}
+
+fn len(v: Vec<T>) -> Int {
+    let mut i = 0
+    for _ in v {
+        i = i + 1.to_int()
+    }
+    i
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut s = a
+    for c in chars(b) {
+        s = push(s, c)
+    }
+    s
+}
+
+fn trunc(x: Float) -> Int {
+    let i = to_int(x)
+    if i < x {
+        i + 1.to_int()
+    } else {
+        i
+    }
+}
+
+fn to_int(x: Float) -> Int {
+    let i = x
+    i
+}
+
+fn fold(v: Vec<T>, init: T, op: FnMutT, f: FnMutT) -> T {
+    let mut acc = init
+    for x in v {
+        acc = f(acc, x)
+    }
+    acc
+}
+
+fn map(v: Vec<T>, f: FnMutT) -> Vec<T> {
+    let mut v2 = vec()
+    for x in v {
+        push(v2, f(x))
+    }
+    v2
+}
+
+fn flat_map(v: Vec<T>, f: FnMutT) -> Vec<T> {
+    let mut v2 = vec()
+    for x in v {
+        for y in f(x) {
+            push(v2, y)
+        }
+    }
+    v2
+}
+
+fn filter(v: Vec<T>, f: FnMutT) -> Vec<T> {
+    let mut v2 = vec()
+    for x in v {
+        if f(x) {
+            push(v2, x)
+        }
+    }
+    v2
+}
+
+fn any(v: Vec<T>, f: FnMutT) -> Bool {
+    for x in v {
+        if f(x) {
+            return true
+        }
+    }
+    false
+}
+
+fn all(v: Vec<T>, f: FnMutT) -> Bool {
+    for x in v {
+        if !f(x) {
+            return false
+        }
+    }
+    true
+}
+
+fn take(v: Vec<T>, n: Int) -> Vec<T> {
+    let mut v2 = vec()
+    for i in 0.to_int() + 1.to_int() * (n > 0) {
+        if i < len(v) {
+            push(v2, v.get(i).unwrap())
+        }
+    }
+    v2
+}
+
+fn drop(v: Vec<T>, n: Int) -> Vec<T> {
+    let mut v2 = vec()
+    for i in n.to_int() + 1.to_int() * (n < len(v)) {
+        if i < len(v) {
+            push(v2, v.get(i).unwrap())
+        }
+    }
+    v2
+}
+
+fn rev(v: Vec<T>) -> Vec<T> {
+    let mut v2 = vec()
+    for i in len(v).to_int() - 1.to_int() + 1.to_int() * (len(v) > 0) {
+        push(v2, v.get(i).unwrap())
+    }
+    v2
+}
+
+fn contains(v: Vec<T>, x: T) -> Bool {
+    for y in v {
+        if y == x {
+            return true
+        }
+    }
+    false
+}
+
+fn distinct(v: Vec<T>) -> Vec<T> {
+    let mut v2 = vec()
+    for x in v {
+        if !contains(v2, x) {
+            push(v2, x)
+        }
+    }
+    v2
+}
+
+fn zip(a: Vec<T>, b: Vec<T>) -> Vec<Pair<T, T>> {
+    let mut v2 = vec()
+    for i in 0.to_int() + 1.to_int() * (len(a) < len(b)) {
+        if i < len(a) {
+            push(v2, Pair(a.get(i).unwrap(), b.get(i).unwrap()))
+        }
+    }
+    v2
+}
+
+fn unzip(v: Vec<Pair<T, T>>) -> Pair<Vec<T>, Vec<T>> {
+    let mut v1 = vec()
+    let mut v2 = vec()
+    for p in v {
+        push(v1, fst(p))
+        push(v2, snd(p))
+    }
+    Pair(v1, v2)
+}
+
+fn fst(p: Pair<T, T>) -> T {
+    p.fst
+}
+
+fn snd(p: Pair<T, T>) -> T {
+    p.snd
+}
+
+struct Pair { fst: T, snd: T }
+
+fn option(x: T) -> Option<T> {
+    Some(x)
+}
+
+fn none() -> Option<T> {
+    None
+}
+
+fn result(x: T) -> Result<T, Unit> {
+    Ok(x)
+}
+
+fn err() -> Result<T, Unit> {
+    Err(Unit)
+}
+
+struct Unit { _priv: Unit }
+
+fn panic() -> Unit {
+    panic("panic!")
+}
+
+fn unimplemented() -> Unit {
+    panic("unimplemented!")
+}
+
+fn unreachable() -> Unit {
+    panic("unre

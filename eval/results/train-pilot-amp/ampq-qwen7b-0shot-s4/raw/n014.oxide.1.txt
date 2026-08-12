@@ -1,0 +1,15 @@
+struct Reading { label: Str, values: Vec<Int> }
+
+fn min(v: Vec<Int>) -> Int {
+    let mut min = v.get(0)? + 1
+    for x in v {
+        if x < min {
+            min = x
+        }
+    }
+    min
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(push(push(vec(), 5), 3), 9), 1), pushvec: 7 } // Note: Corrected the struct field name '
+}

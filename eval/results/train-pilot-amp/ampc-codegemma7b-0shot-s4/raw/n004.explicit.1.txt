@@ -1,0 +1,13 @@
+fn seq(a: Int, b: Int, n: Int) -> Int {
+    if n == 0 {
+        return a
+    } else if n == 1 {
+        return b
+    } else {
+        return seq(a, b, n - 1) + seq(a, b, n - 2)
+    }
+}
+
+fn main() {
+    print(seq(1, 1, 10))
+}

@@ -1,0 +1,12 @@
+fn read_number() -> Str {
+    let input = read_line()
+    match parse_int(input) {
+        Some(n) => int_to_str(n),
+        None => "bad".to_string(),
+    }
+}
+
+fn main() {
+    let result = read_number()
+    print(result)
+}

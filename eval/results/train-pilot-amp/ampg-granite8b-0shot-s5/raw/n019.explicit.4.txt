@@ -1,0 +1,24 @@
+fn list_difference(list1: &Vec<Int>, list2: &Vec<Int>) -> Int {
+    let mut count = 0
+    for i in &list1 {
+        let present = false
+        for j in &list2 {
+            if i == j {
+                present = true
+            }
+        }
+        if !present {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn main() {
+    let list1 = push(push(vec(), 1), 2)
+    let list2 = push(push(vec(), 4), 5)
+    let count = list_difference(&list1, &list2)
+    drop list1
+    drop list2
+    print(count)
+}

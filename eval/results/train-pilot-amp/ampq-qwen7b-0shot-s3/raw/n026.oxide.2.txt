@@ -1,0 +1,17 @@
+struct NumberText { number: Int, text: Str }
+
+fn number_to_text(n: Int) -> NumberText {
+    match n {
+        _ => NumberText { number: n, text: int_to_str(n) },
+    }
+}
+
+fn text_length(s: Str) -> Int {
+    str_len(s)
+}
+
+fn main() {
+    let num_text = number_to_text(2026)
+    let length = text_length(num_text.text)
+    print(length)
+}

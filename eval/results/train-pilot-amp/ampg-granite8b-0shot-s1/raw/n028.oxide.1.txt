@@ -1,0 +1,318 @@
+fn main() {
+    print(read_num() * 2)
+}
+
+fn read_num() -> Int {
+    let mut buf = vec()
+    let mut c = read_byte()
+    while c != 10 {
+        buf = push(buf, c)
+        c = read_byte()
+    }
+    match parse_int(buf) {
+        Some(n) => n,
+        None => bad()?,
+    }
+}
+
+fn read_byte() -> Int {
+    let mut buf = vec()
+    loop_while_true(true, move || loop_while_true(true, move || match_byte(buf, read_byte())))
+}
+
+fn match_byte(buf: Vec<Int>, c: Int) -> Bool {
+    match c {
+        EOF => false,
+        _ => {
+            buf = push(buf, c)
+            true
+        },
+    }
+}
+
+fn bad() -> Int {
+    print_str("bad")
+    loop_forever()
+}
+
+fn loop_while_true(cond: Bool, body: Move<Bool>) -> Bool {
+    if cond {
+        let _ = body
+        loop_while_true(cond, body)
+    } else {
+        false
+    }
+}
+
+fn loop_forever() -> Bool {
+    loop_while_true(true, move || loop_forever())
+}
+
+fn print(x: Int) {
+    print_str("print ")
+    print_int(x)
+    print_str("\n")
+}
+
+fn print_int(x: Int) {
+    let mut buf = vec()
+    let mut n = x
+    while n > 0 {
+        buf = push(buf, (n % 10) + 48)
+        n = n / 10
+    }
+    for i in (0) - (1) {
+        let c = get(buf, i)?
+        write_byte(c)
+    }
+}
+
+fn print_str(s: Str) {
+    let len = str_len(s)
+    for i in (0) - (len) {
+        let c = get(s, i)?
+        write_byte(c)
+    }
+}
+
+fn write_byte(c: Int) {
+    loop_while_true(true, move || match_byte(c, write_byte(c)))
+}
+
+fn read_byte() -> Int {
+    loop_while_true(true, move || match_byte(vec(), read_byte()))
+}
+
+fn match_byte(buf: Vec<Int>, c: Int) -> Bool {
+    if c == EOF {
+        false
+    } else {
+        buf = push(buf, c)
+        true
+    }
+}
+
+fn loop_while_true(cond: Bool, body: Move<Bool>) -> Bool {
+    if cond {
+        let _ = body
+        loop_while_true(cond, body)
+    } else {
+        false
+    }
+}
+
+fn loop_forever() -> Bool {
+    loop_while_true(true, move || loop_forever())
+}
+
+fn bad() -> Int {
+    print_str("bad")
+    loop_forever()
+}
+
+fn print(x: Int) {
+    print_str("print ")
+    print_int(x)
+    print_str("\n")
+}
+
+fn print_int(x: Int) {
+    let mut buf = vec()
+    let mut n = x
+    while n > 0 {
+        buf = push(buf, (n % 10) + 48)
+        n = n / 10
+    }
+    for i in (0) - (1) {
+        let c = get(buf, i)?
+        write_byte(c)
+    }
+}
+
+fn print_str(s: Str) {
+    let len = str_len(s)
+    for i in (0) - (len) {
+        let c = get(s, i)?
+        write_byte(c)
+    }
+}
+
+fn write_byte(c: Int) {
+    loop_while_true(true, move || match_byte(c, write_byte(c)))
+}
+
+fn read_byte() -> Int {
+    loop_while_true(true, move || match_byte(vec(), read_byte()))
+}
+
+fn match_byte(buf: Vec<Int>, c: Int) -> Bool {
+    if c == EOF {
+        false
+    } else {
+        buf = push(buf, c)
+        true
+    }
+}
+
+fn loop_while_true(cond: Bool, body: Move<Bool>) -> Bool {
+    if cond {
+        let _ = body
+        loop_while_true(cond, body)
+    } else {
+        false
+    }
+}
+
+fn loop_forever() -> Bool {
+    loop_while_true(true, move || loop_forever())
+}
+
+fn bad() -> Int {
+    print_str("bad")
+    loop_forever()
+}
+
+fn print(x: Int) {
+    print_str("print ")
+    print_int(x)
+    print_str("\n")
+}
+
+fn print_int(x: Int) {
+    let mut buf = vec()
+    let mut n = x
+    while n > 0 {
+        buf = push(buf, (n % 10) + 48)
+        n = n / 10
+    }
+    for i in (0) - (1) {
+        let c = get(buf, i)?
+        write_byte(c)
+    }
+}
+
+fn print_str(s: Str) {
+    let len = str_len(s)
+    for i in (0) - (len) {
+        let c = get(s, i)?
+        write_byte(c)
+    }
+}
+
+fn write_byte(c: Int) {
+    loop_while_true(true, move || match_byte(c, write_byte(c)))
+}
+
+fn read_byte() -> Int {
+    loop_while_true(true, move || match_byte(vec(), read_byte()))
+}
+
+fn match_byte(buf: Vec<Int>, c: Int) -> Bool {
+    if c == EOF {
+        false
+    } else {
+        buf = push(buf, c)
+        true
+    }
+}
+
+fn loop_while_true(cond: Bool, body: Move<Bool>) -> Bool {
+    if cond {
+        let _ = body
+        loop_while_true(cond, body)
+    } else {
+        false
+    }
+}
+
+fn loop_forever() -> Bool {
+    loop_while_true(true, move || loop_forever())
+}
+
+fn bad() -> Int {
+    print_str("bad")
+    loop_forever()
+}
+
+fn print(x: Int) {
+    print_str("print ")
+    print_int(x)
+    print_str("\n")
+}
+
+fn print_int(x: Int) {
+    let mut buf = vec()
+    let mut n = x
+    while n > 0 {
+        buf = push(buf, (n % 10) + 48)
+        n = n / 10
+    }
+    for i in (0) - (1) {
+        let c = get(buf, i)?
+        write_byte(c)
+    }
+}
+
+fn print_str(s: Str) {
+    let len = str_len(s)
+    for i in (0) - (len) {
+        let c = get(s, i)?
+        write_byte(c)
+    }
+}
+
+fn write_byte(c: Int) {
+    loop_while_true(true, move || match_byte(c, write_byte(c)))
+}
+
+fn read_byte() -> Int {
+    loop_while_true(true, move || match_byte(vec(), read_byte()))
+}
+
+fn match_byte(buf: Vec<Int>, c: Int) -> Bool {
+    if c == EOF {
+        false
+    } else {
+        buf = push(buf, c)
+        true
+    }
+}
+
+fn loop_while_true(cond: Bool, body: Move<Bool>) -> Bool {
+    if cond {
+        let _ = body
+        loop_while_true(cond, body)
+    } else {
+        false
+    }
+}
+
+fn loop_forever() -> Bool {
+    loop_while_true(true, move || loop_forever())
+}
+
+fn bad() -> Int {
+    print_str("bad")
+    loop_forever()
+}
+
+fn print(x: Int) {
+    print_str("print ")
+    print_int(x)
+    print_str("\n")
+}
+
+fn print_int(x: Int) {
+    let mut buf = vec()
+    let mut n = x
+    while n > 0 {
+        buf = push(buf, (n % 10) + 48)
+        n = n / 10
+    }
+    for i in (0) - (1) {
+        let c = get(buf, i)?
+        write_byte(c)
+    }
+}
+
+fn print_str(s:

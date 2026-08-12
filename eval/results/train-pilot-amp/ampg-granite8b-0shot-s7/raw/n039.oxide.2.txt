@@ -1,0 +1,20 @@
+struct List {
+    head: Option<Int>,
+    tail: Option<Box<List>>,
+}
+
+fn get(l: Box<List>, pos: Int) -> Option<Int> {
+    if pos == 0 {
+        return l.head
+    } else {
+        match l.tail {
+            Some(mutRest) => return_after_move(get(mutRest, pos - 1)),
+            None => return_after_move(None),
+        }
+    }
+}
+
+fn main() {
+    let l = Box { head: Some(1), tail: Some(Box { head: Some(2), tail: None }) }
+    print(get(l, 5)?)
+}

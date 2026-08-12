@@ -1,0 +1,15 @@
+fn smallest_reading(readings: Vec<Int>) -> Int {
+    let mut min = readings.pop().unwrap()
+    for reading in &readings {
+        if reading < &min {
+            min = reading
+        }
+    }
+    min
+}
+
+fn main() {
+    let readings = vec(5, 3, 9, 1, 7)
+    print(smallest_reading(&readings))
+    drop readings
+}

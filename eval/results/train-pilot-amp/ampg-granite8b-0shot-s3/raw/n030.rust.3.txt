@@ -1,0 +1,5 @@
+fn main() {
+    let word_sequence = "aeiou";
+    let vowel_count = word_sequence.chars().filter(|&c| "aeiouAEIOU".contains(c)).count();
+    println!("{}", vowel_count);
+}

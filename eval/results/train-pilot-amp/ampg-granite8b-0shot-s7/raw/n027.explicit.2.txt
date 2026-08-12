@@ -1,0 +1,5 @@
+fn main() {
+    let cat = "cat"
+    print(cat.chars())
+    drop cat
+}

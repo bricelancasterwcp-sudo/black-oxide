@@ -1,0 +1,8 @@
+fn task(v: Vec<Int>) -> Int {
+    v.iter().filter(x).filter(y > 4).count()
+}
+
+fn main() {
+    let v = vec(5, 3, 9, 1, 7)
+    print(task(v))
+}

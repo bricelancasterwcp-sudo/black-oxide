@@ -1,0 +1,23 @@
+fn fib(n: Int) -> Int {
+    if n <= 1 {
+        n
+    } else {
+        let a = 1
+        let b = 1
+        let mut i = 2
+        while i < n {
+            let next = a + b
+            drop a
+            a = b
+            b = next
+            i = i + 1
+        }
+        drop b
+        b
+    }
+}
+
+fn main() {
+    let term = fib(10)
+    print(term)
+}

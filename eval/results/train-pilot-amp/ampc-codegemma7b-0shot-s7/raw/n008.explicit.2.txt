@@ -1,0 +1,10 @@
+fn main() {
+    let mut x = 0
+    for i in 1.to(50) {
+        if i % 3 == 0 || i % 5 == 0 {
+            x = x + 1
+        }
+    }
+    print(x)
+    drop x
+}

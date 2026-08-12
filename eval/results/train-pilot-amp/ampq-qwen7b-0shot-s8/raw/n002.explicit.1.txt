@@ -1,0 +1,13 @@
+fn factorial(n: Int) -> Int {
+    if n == 0 {
+        1
+    } else {
+        n * factorial(n - 1)
+    }
+}
+
+fn main() {
+    let product = factorial(6)
+    print(product)
+    drop product
+}

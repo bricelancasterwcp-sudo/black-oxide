@@ -1,0 +1,96 @@
+fn sum(nums: &Vec<Int>) -> Float {
+    let mut total = 0.to_float()
+    for x in nums {
+        total = total + x.to_float()
+    }
+    total / nums.len()
+}
+
+fn main() {
+    let nums = vec(4, 8, 15, 16, 23, 42)
+    print(sum(&nums))
+    drop nums
+}
+
+fn print(x: Float) {
+    println("{}", x)
+}
+
+fn vec(x: Int, y: Int, z: Int, a: Int, b: Int, c: Int) -> Vec<Int> {
+    push(push(push(push(push(vec(), x), y), z), a), b)
+}
+
+fn drop_all(x: Vec<Int>) {
+    drop x
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut v = v
+    v.push(x)
+    v
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    v.len()
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    v.get(i)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut v = vec()
+    for i in a.to_int().unwrap() + 1.to_int().unwrap() {
+        if i < b.to_int().unwrap() {
+            v.push(i.to_int().unwrap())
+        } else {
+            break
+        }
+    }
+    v
+}
+
+fn clone(x: &Int) -> Int {
+    x.clone()
+}
+
+fn str_len(s: &Str) -> Int {
+    s.len()
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    a.to_string() + b.to_string()
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut v = vec()
+    for c in s.chars() {
+        v.push(c.to_string())
+    }
+    v
+}
+
+fn int_to_str(n: Int) -> Str {
+    n.to_string()
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    match s.parse() {
+        Ok(x) => Some(x),
+        Err(_) => None,
+    }
+}
+
+fn to_float(n: Int) -> Float {
+    n.to_float()
+}
+
+fn trunc(x: Float) -> Int {
+    x.trunc()
+}
+
+fn main() {
+    let nums = vec(4, 8, 15, 16, 23, 42)
+    print(sum(&nums))
+    drop_all(nums)
+}

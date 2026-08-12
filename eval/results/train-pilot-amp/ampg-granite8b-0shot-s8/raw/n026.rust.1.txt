@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let x = 2026;
+    let text = format!("{:?}", x);
+    println!("{}", text.chars().count());
+}
+```

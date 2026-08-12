@@ -1,0 +1,6 @@
+fn main() {
+    let mut num = String::new();
+    std::io::stdin().read_line(&mut num).unwrap();
+    let num: i32 = num.trim().parse().unwrap();
+    println!("{}", num + 1);
+}

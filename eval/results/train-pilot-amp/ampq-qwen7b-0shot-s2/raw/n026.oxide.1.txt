@@ -1,0 +1,28 @@
+struct StrBuf { chars: Vec<Str> }
+
+fn int_to_str(n: Int) -> StrBuf {
+    let mut chars = Vec()
+    let mut num = n
+    if num == 0 {
+        chars.push("0".clone())
+    } else {
+        while num > 0 {
+            let digit = num % 10
+            num = num / 10
+            chars.push(to_float(digit).to_int().to_str())
+        }
+    }
+    StrBuf(chars)
+}
+
+fn str_len(s: Str) -> Int {
+    chars(s).len()
+}
+
+fn main() {
+    let str_num = int_to_str(2026)
+    let str_num_text = concat(str_num.chars, Vec())
+    print_str(str_num_text)
+    let len = str_len(str_num_text)
+    print_int(len)
+}

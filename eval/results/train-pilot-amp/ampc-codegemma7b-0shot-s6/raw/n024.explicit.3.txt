@@ -1,0 +1,15 @@
+fn count_a(s: &Str) -> Int {
+    let mut total = 0
+    for c in &chars {
+        if c == &str_len {
+            total = total + 1
+        }
+    }
+    total
+}
+
+fn main() {
+    print(count_a("banana"))
+    drop chars
+    drop str_len
+}

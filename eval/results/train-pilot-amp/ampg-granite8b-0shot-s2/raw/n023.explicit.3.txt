@@ -1,0 +1,11 @@
+fn phrase() -> Str {
+    "hello world"
+}
+
+fn length(s: &Str) -> Int {
+    len(s)
+}
+
+fn main() {
+    print(length(phrase()))
+}

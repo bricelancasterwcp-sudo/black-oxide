@@ -1,0 +1,312 @@
+fn main() {
+    let total_cubes = sum_cubes(5)
+    print(total_cubes)
+}
+
+fn sum_cubes(n: Int) -> Int {
+    let mut sum = 0
+    for i in range(1, n + 1) {
+        sum = push(sum, i * i * i)
+    }
+    sum
+}
+
+fn sum_cubes(n: Int) -> Int {
+    let mut sum = 0
+    for i in 1.upto(n) {
+        sum = push(sum, i * i * i)
+    }
+    sum
+}
+
+fn sum_cubes(n: Int) -> Int {
+    let mut sum = 0
+    for i in 1.upto(n) {
+        let cube = i * i * i
+        sum = push(sum, cube)
+    }
+    sum
+}
+
+fn sum_cubes(n: Int) -> Int {
+    let mut sum = 0
+    for i in 1.upto(n) {
+        let cube = i * i * i
+        sum = push(sum, cube)
+    }
+    sum
+}
+
+fn sum_cubes(n: Int) -> Int {
+    let mut sum = vec()
+    for i in 1.upto(n) {
+        let cube = i * i * i
+        sum = push(sum, cube)
+    }
+    sum
+}
+
+fn sum_cubes(n: Int) -> Int {
+    let mut sum = vec()
+    for i in 1.upto(n) {
+        let cube = i * i * i
+        sum = push(sum, cube)
+    }
+    sum
+}
+
+fn sum_cubes(n: Int) -> Int {
+    let mut sum = vec()
+    for i in 1.upto(n) {
+        let cube = i * i * i
+        sum = push(sum, cube)
+    }
+    sum
+}
+
+fn sum_cubes(n: Int) -> Int {
+    let mut sum = vec()
+    for i in 1.upto(n) {
+        let cube = i * i * i
+        sum = push(sum, cube)
+    }
+    sum
+}
+
+fn sum_cubes(n: Int) -> Int {
+    let mut sum = vec()
+    for i in 1.upto(n) {
+        let cube = i * i * i
+        sum = push(sum, cube)
+    }
+    sum
+}
+
+fn sum_cubes(n: Int) -> Int {
+    let mut sum = vec()
+    for i in 1.upto(n) {
+        let cube = i * i * i
+        sum = push(sum, cube)
+    }
+    sum
+}
+
+fn sum_cubes(n: Int) -> Int {
+    let mut sum = vec()
+    for i in 1.upto(n) {
+        let cube = i * i * i
+        sum = push(sum, cube)
+    }
+    sum
+}
+
+fn sum_cubes(n: Int) -> Int {
+    let mut sum = vec()
+    for i in 1.upto(n) {
+        let cube = i * i * i
+        sum = push(sum, cube)
+    }
+    sum
+}
+
+fn sum_cubes(n: Int) -> Int {
+    let mut sum = vec()
+    for i in 1.upto(n) {
+        let cube = i * i * i
+        sum = push(sum, cube)
+    }
+    sum
+}
+
+fn sum_cubes(n: Int) -> Int {
+    let mut sum = vec()
+    for i in 1.upto(n) {
+        let cube = i * i * i
+        sum = push(sum, cube)
+    }
+    sum
+}
+
+fn sum_cubes(n: Int) -> Int {
+    let mut sum = vec()
+    for i in 1.upto(n) {
+        let cube = i * i * i
+        sum = push(sum, cube)
+    }
+    sum
+}
+
+fn sum_cubes(n: Int) -> Int {
+    let mut sum = vec()
+    for i in 1.upto(n) {
+        let cube = i * i * i
+        sum = push(sum, cube)
+    }
+    sum
+}
+
+fn sum_cubes(n: Int) -> Int {
+    let mut sum = vec()
+    for i in 1.upto(n) {
+        let cube = i * i * i
+        sum = push(sum, cube)
+    }
+    sum
+}
+
+fn sum_cubes(n: Int) -> Int {
+    let mut sum = vec()
+    for i in 1.upto(n) {
+        let cube = i * i * i
+        sum = push(sum, cube)
+    }
+    sum
+}
+
+fn sum_cubes(n: Int) -> Int {
+    let mut sum = vec()
+    for i in 1.upto(n) {
+        let cube = i * i * i
+        sum = push(sum, cube)
+    }
+    sum
+}
+
+fn sum_cubes(n: Int) -> Int {
+    let mut sum = vec()
+    for i in 1.upto(n) {
+        let cube = i * i * i
+        sum = push(sum, cube)
+    }
+    sum
+}
+
+fn sum_cubes(n: Int) -> Int {
+    let mut sum = vec()
+    for i in 1.upto(n) {
+        let cube = i * i * i
+        sum = push(sum, cube)
+    }
+    sum
+}
+
+fn sum_cubes(n: Int) -> Int {
+    let mut sum = vec()
+    for i in 1.upto(n) {
+        let cube = i * i * i
+        sum = push(sum, cube)
+    }
+    sum
+}
+
+fn sum_cubes(n: Int) -> Int {
+    let mut sum = vec()
+    for i in 1.upto(n) {
+        let cube = i * i * i
+        sum = push(sum, cube)
+    }
+    sum
+}
+
+fn sum_cubes(n: Int) -> Int {
+    let mut sum = vec()
+    for i in 1.upto(n) {
+        let cube = i * i * i
+        sum = push(sum, cube)
+    }
+    sum
+}
+
+fn sum_cubes(n: Int) -> Int {
+    let mut sum = vec()
+    for i in 1.upto(n) {
+        let cube = i * i * i
+        sum = push(sum, cube)
+    }
+    sum
+}
+
+fn sum_cubes(n: Int) -> Int {
+    let mut sum = vec()
+    for i in 1.upto(n) {
+        let cube = i * i * i
+        sum = push(sum, cube)
+    }
+    sum
+}
+
+fn sum_cubes(n: Int) -> Int {
+    let mut sum = vec()
+    for i in 1.upto(n) {
+        let cube = i * i * i
+        sum = push(sum, cube)
+    }
+    sum
+}
+
+fn sum_cubes(n: Int) -> Int {
+    let mut sum = vec()
+    for i in 1.upto(n) {
+        let cube = i * i * i
+        sum = push(sum, cube)
+    }
+    sum
+}
+
+fn sum_cubes(n: Int) -> Int {
+    let mut sum = vec()
+    for i in 1.upto(n) {
+        let cube = i * i * i
+        sum = push(sum, cube)
+    }
+    sum
+}
+
+fn sum_cubes(n: Int) -> Int {
+    let mut sum = vec()
+    for i in 1.upto(n) {
+        let cube = i * i * i
+        sum = push(sum, cube)
+    }
+    sum
+}
+
+fn sum_cubes(n: Int) -> Int {
+    let mut sum = vec()
+    for i in 1.upto(n) {
+        let cube = i * i * i
+        sum = push(sum, cube)
+    }
+    sum
+}
+
+fn sum_cubes(n: Int) -> Int {
+    let mut sum = vec()
+    for i in 1.upto(n) {
+        let cube = i * i * i
+        sum = push(sum, cube)
+    }
+    sum
+}
+
+fn sum_cubes(n: Int) -> Int {
+    let mut sum = vec()
+    for i in 1.upto(n) {
+        let cube = i * i * i
+        sum = push(sum, cube)
+    }
+    sum
+}
+
+fn sum_cubes(n: Int) -> Int {
+    let mut sum = vec()
+    for i in 1.upto(n) {
+        let cube = i * i * i
+        sum = push(sum, cube)
+    }
+    sum
+}
+
+fn sum_cubes(n: Int) -> Int {
+    let mut sum = vec()
+   

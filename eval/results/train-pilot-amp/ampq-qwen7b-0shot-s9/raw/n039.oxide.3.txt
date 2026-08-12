@@ -1,0 +1,19 @@
+struct List { value: Int, next: Option<Box<List>> }
+
+fn get_at(list: Option<Box<List>>, index: Int) -> Option<Int> {
+    if index == 0 {
+        list.map_or(None, (move || list.unwrap().value))
+    } else if letSome(next) == list.map_or(None, (move || list.unwrap().next)) {
+        get_at(next, index - 1)
+    } else {
+        None
+    }
+}
+
+fn main() {
+    let list = Some(Box(new(List { value: 1, next: Some(Box(new(List { value: 2, next: None }))) })))
+    match get_at(list, 5) {
+        Some(n) => print(n),
+        None => print_str("none"),
+    }
+}

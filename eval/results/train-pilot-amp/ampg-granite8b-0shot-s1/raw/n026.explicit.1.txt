@@ -1,0 +1,11 @@
+fn two_k_two_six() -> Int {
+    2026
+}
+
+fn main() {
+    let number = two_k_two_six()
+    print(number)
+    print_str("\n")
+    let string = int_to_str(number)
+    print(str_len(&string))
+}

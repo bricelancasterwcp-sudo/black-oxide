@@ -1,0 +1,16 @@
+fn count(s: Str) -> Int {
+    let mut count = 0
+    let v = chars(&s)
+    for c in &v {
+        match c {
+            Str(x) => if x == "a" || x == "e" || x == "i" || x == "o" || x == "u" { count == count + 1 } else { count },
+            _ => count,
+        }
+    }
+    count
+}
+
+fn main() {
+    let s = "hello world"
+    print(count(s))
+}

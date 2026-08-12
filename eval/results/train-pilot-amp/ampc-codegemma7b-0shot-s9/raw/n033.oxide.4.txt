@@ -1,0 +1,10 @@
+fn main() {
+    let signal = "green".to_string()
+    if signal == "green" {
+        print_str("go for green")
+    } else if signal == "yellow" {
+        print_str("wait for yellow")
+    } else if signal == "red" {
+        print_str("stop for red")
+    }
+}

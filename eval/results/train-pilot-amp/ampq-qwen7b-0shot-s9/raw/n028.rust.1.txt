@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    if let Err(_) = "abc".parse::<i32>() {
+        println!("bad");
+    }
+}
+```

@@ -1,0 +1,7 @@
+fn main() {
+    let mut prod = 1
+    for x in 1.to_int() {
+        prod = prod.mul(x)
+    }
+    print(prod)
+}

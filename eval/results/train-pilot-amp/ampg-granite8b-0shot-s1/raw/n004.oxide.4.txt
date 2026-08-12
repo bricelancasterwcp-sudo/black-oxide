@@ -1,0 +1,9 @@
+fn fib(x: Int) -> Int {
+    let a = fib(x - 1)
+    let b = fib(x - 2)
+    a + b
+}
+
+fn main() {
+    print(fib(10))
+}

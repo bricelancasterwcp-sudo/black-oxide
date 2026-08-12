@@ -1,0 +1,7 @@
+fn main() {
+    let mut my_list = Vec::new();
+    for i in 0..=14 {
+        my_list.push(i);
+    }
+    println!("My list has {} elements", my_list.len() - 1);
+}

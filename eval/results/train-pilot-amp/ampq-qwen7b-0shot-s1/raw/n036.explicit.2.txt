@@ -1,0 +1,19 @@
+fn sum_value(item1: &Vec<Int>, item2: &Vec<Int>) -> Int {
+    let mut total = 0
+    for x in &item1 {
+        total = total + x * 3
+    }
+    for x in &item2 {
+        total = total + x * 2
+    }
+    total
+}
+
+fn main() {
+    let item1 = vec(3, 3, 3, 3)
+    let item2 = vec(2, 2, 2, 2, 2)
+    let total_value = sum_value(&item1, &item2)
+    print(total_value)
+    drop item1
+    drop item2
+}

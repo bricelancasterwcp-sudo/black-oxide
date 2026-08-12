@@ -1,0 +1,13 @@
+fn divide(x: Int, y: Int) -> Result<Int, Str> {
+    if y == 0 {
+        return Err("bad")
+    }
+    Ok(x / y)
+}
+
+fn main() {
+    match divide(20, 4) {
+        Ok(n) => print(n),
+        Err(e) => print(e),
+    }
+}

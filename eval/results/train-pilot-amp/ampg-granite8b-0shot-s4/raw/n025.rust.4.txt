@@ -1,0 +1,10 @@
+fn main() {
+    std::io::stdin()
+        .read_line(&mut String::new())
+        .expect("Failed to read from stdin");
+    if let Ok(num) = std::str::FromStr::from_str(std::io::stdin().lines().next().unwrap()) {
+        println!("{}", num + 1);
+    } else {
+        println!("bad");
+    }
+}

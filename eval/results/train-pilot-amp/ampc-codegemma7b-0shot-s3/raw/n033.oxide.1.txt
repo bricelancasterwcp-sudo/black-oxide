@@ -1,0 +1,18 @@
+fn signal(color: Str) -> Str {
+    match color {
+        Str(s) => match s {
+            Green => "go",
+            Yellow => "wait",
+            Red => "stop",
+            _ => "invalid color",
+        },
+        _ => "invalid color",
+    }
+}
+
+fn main() {
+    print(signal("Green"))
+    print(signal("Yellow"))
+    print(signal("Red"))
+    print(signal("Blue"))
+}

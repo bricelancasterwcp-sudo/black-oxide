@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let list: Vec<i32> = (0..15).collect();
+    println!("Number of elements in the list: {}", list.len());
+}
+```
+
+This program is already correctly written. It creates a vector named `list` with every whole number starting from 0 and stopping before 15, and then prints the number of elements in the list.

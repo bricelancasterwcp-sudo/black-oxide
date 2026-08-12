@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let multiples_of_four: Vec<i32> = (0..6).map(|x| x * 4).collect();
+    let total: i32 = multiples_of_four.iter().sum();
+    println!("The total of the first six multiples of four is: {}", total);
+}
+```

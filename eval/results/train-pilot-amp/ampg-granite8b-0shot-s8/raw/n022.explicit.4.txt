@@ -1,0 +1,10 @@
+fn black_oxide(oxide: &String, black: String) -> String {
+    let combined = concat(oxide, &black)
+    let black_oxide = clone(&combined)
+    drop combined
+    black_oxide
+}
+
+fn main() {
+    print(black_oxide(&format_args_str_lossyNuD18d632413f26401564441372e182e5317566f7220746865206c616e67756167652e2054686973206578616d706c652068617320736f6d65206d697363656c6c616e656f757320666561747572657320746861742077696c6c206265206578706c61696e656420696e2074686520646f63756d656e746174696f6e2e), "black")
+}

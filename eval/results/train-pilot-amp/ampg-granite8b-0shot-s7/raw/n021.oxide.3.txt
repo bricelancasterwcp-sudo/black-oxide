@@ -1,0 +1,77 @@
+struct Point { x: Int, y: Int }
+
+fn main() {
+    let p = Point { x: 0, y: 0 }
+    let x = p.x
+    let p = Point { x: x + 10, y: p.y }
+    print(p.x)
+}
+
+struct Circle { radius: Float }
+
+fn area(self: Circle) -> Float {
+    3.14 * self.radius * self.radius
+}
+
+fn print_area(self: Circle) {
+    print(area(self))
+}
+
+fn main() {
+    let c = Circle { radius: 1.5 }
+    print_area(c)
+}
+
+struct Triangle { a: Int, b: Int, c: Int }
+
+fn is_right(self: Triangle) -> Bool {
+    self.a * self.a + self.b * self.b == self.c * self.c
+}
+
+fn main() {
+    let t = Triangle { a: 3, b: 4, c: 5 }
+    if is_right(t) {
+        print_str("It's a right triangle!")
+    } else {
+        print_str("It's not a right triangle.")
+    }
+}
+
+struct Point { x: Int, y: Int }
+
+fn main() {
+    let p = Point { x: 0, y: 0 }
+    let x = p.x
+    let p = Point { x: x + 10, y: p.y }
+    print(p.x)
+}
+
+struct Circle { radius: Float }
+
+fn area(self: Circle) -> Float {
+    3.14 * self.radius * self.radius
+}
+
+fn print_area(self: Circle) {
+    print(area(self))
+}
+
+fn main() {
+    let c = Circle { radius: 1.5 }
+    print_area(c)
+}
+
+struct Triangle { a: Int, b: Int, c: Int }
+
+fn is_right(self: Triangle) -> Bool {
+    self.a * self.a + self.b * self.b == self.c * self.c
+}
+
+fn main() {
+    let t = Triangle { a: 3, b: 4, c: 5 }
+    if is_right(t) {
+        print_str("It's a right triangle!")
+    } else {
+        print_str("It's not a right triangle.")
+    }
+}

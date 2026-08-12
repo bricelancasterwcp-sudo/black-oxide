@@ -1,0 +1,9 @@
+fn oxide_black() -> Str {
+    let oxide = "oxide".to_string() + "black".to_string()
+    oxide
+}
+
+fn main() {
+    let result = oxide_black()
+    print(result)
+}

@@ -1,0 +1,15 @@
+fn larger_than_four(readings: &Vec<Int>) -> Int {
+    let mut count = 0
+    for x in &readings {
+        if x > 4 {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn main() {
+    let readings = push(push(push(push(vec(), 5), 40), 2), 9)
+    print(larger_than_four(&readings))
+    drop readings
+}

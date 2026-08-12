@@ -1,0 +1,9 @@
+fn stocked_value() -> Int {
+    let four_units_three = 3 * 4
+    let five_units_two = 2 * 5
+    four_units_three + five_units_two
+}
+
+fn main() {
+    print(stocked_value())
+}

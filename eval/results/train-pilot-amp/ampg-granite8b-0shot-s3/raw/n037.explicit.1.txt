@@ -1,0 +1,59 @@
+fn main() {
+    let rect = Rectangle { width: 2, height: 3 }
+    rect.width = 5
+    print(rect.area())
+    drop rect
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn area(r: &Rectangle) -> Int {
+    r.width * r.height
+}
+
+fn width(r: &Rectangle) -> Int {
+    r.width
+}
+
+fn height(r: &Rectangle) -> Int {
+    r.height
+}
+
+fn set_width(r: &Rectangle, w: Int) -> Rectangle {
+    Rectangle(w, r.height)
+}
+
+fn print_area(r: &Rectangle) {
+    print(area(r))
+}
+
+fn print_width(r: &Rectangle) {
+    print(width(r))
+}
+
+fn print_height(r: &Rectangle) {
+    print(height(r))
+}
+
+fn print_area_of_width_five(r: &Rectangle) {
+    let r2 = set_width(r, 5)
+    print_area(&r2)
+    drop r2
+}
+
+fn test_rectangle(r: Rectangle) {
+    print_area(&r)
+    print_width(&r)
+    print_height(&r)
+    print_area_of_width_five(&r)
+    drop r
+}
+
+fn main() {
+    let rect = Rectangle { width: 2, height: 3 }
+    test_rectangle(rect)
+    drop rect
+}

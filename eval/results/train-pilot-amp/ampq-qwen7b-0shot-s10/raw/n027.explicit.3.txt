@@ -1,0 +1,10 @@
+fn main() {
+    let s = "cat"
+    let chars = chars(s)
+    for c in &chars {
+        print_str(c)
+        drop c
+    }
+    drop chars
+    drop s
+}

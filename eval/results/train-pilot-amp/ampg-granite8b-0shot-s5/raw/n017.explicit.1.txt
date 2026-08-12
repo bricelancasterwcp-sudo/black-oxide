@@ -1,0 +1,13 @@
+fn list_element(list: &Vec<Int>, index: Int) -> Int {
+    match get(list, index) {
+        Some(val) => val,
+        None => "missing".to_string(),
+    }
+}
+
+fn main() {
+    let list = push(push(push(push(vec(), 40), 30), 20), 10)
+    let pos_two = list_element(&list, 2)
+    drop list
+    print(pos_two)
+}

@@ -1,0 +1,14 @@
+fn main() {
+    let mut x = 1
+    while x < 36 {
+        let mut y = 1
+        while y < 36 {
+            if 36 % x == 0 && 36 % y == 0 {
+                print(x)
+                print(y)
+            }
+            y = y + 1
+        }
+        x = x + 1
+    }
+}

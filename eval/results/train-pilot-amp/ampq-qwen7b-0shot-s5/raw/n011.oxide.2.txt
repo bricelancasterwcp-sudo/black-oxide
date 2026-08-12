@@ -1,0 +1,20 @@
+struct Multiples { list: Vec<Int>, total: Int }
+
+fn collect_multiples() -> Multiples {
+    let mut list = Vec()
+    let mut total = 0
+    for i in range(1, 20) {
+        let multiple = 4 * i
+        if multiple > 20 {
+            break
+        }
+        list = push(list, multiple)
+        total = total + multiple
+    }
+    Multiples(list, total)
+}
+
+fn main() {
+    let result = collect_multiples()
+    print(result.total)
+}

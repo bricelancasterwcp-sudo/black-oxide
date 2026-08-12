@@ -1,0 +1,43 @@
+fn number_to_text(n: Int) -> Str {
+    if n < 0 {
+        return "negative".to_string()
+    }
+    if n == 0 {
+        return "zero".to_string()
+    }
+    if n < 10 {
+        return format("{}", n)
+    }
+    if n < 20 {
+        return format("teen {}", n - 10)
+    }
+    if n < 30 {
+        return format("twenty {}", n - 20)
+    }
+    if n < 40 {
+        return format("thirty {}", n - 30)
+    }
+    if n < 50 {
+        return format("forty {}", n - 40)
+    }
+    if n < 60 {
+        return format("fifty {}", n - 50)
+    }
+    if n < 70 {
+        return format("sixty {}", n - 60)
+    }
+    if n < 80 {
+        return format("seventy {}", n - 70)
+    }
+    if n < 90 {
+        return format("eighty {}", n - 80)
+    }
+    return format("ninety {}", n - 90)
+}
+
+fn main() {
+    let n = 2026
+    let text = number_to_text(n)
+    print(str_len(text))
+    drop text
+}

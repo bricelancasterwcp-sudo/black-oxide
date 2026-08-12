@@ -1,0 +1,322 @@
+fn main() {
+    let x = range(0, 15).collect()
+    print(len(x))
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut v = vec()
+    for i in a.trunc() + 1.trunc() - 1.trunc() + 1.trunc() {
+        if i >= b {
+            break
+        }
+        v = push(v, i)
+    }
+    v
+}
+
+fn collect(v: Vec<Int>) -> Vec<Int> {
+    v
+}
+
+fn len(v: Vec<Int>) -> Int {
+    v.iter().fold(0, add)
+}
+
+fn add(acc: Int, x: Int) -> Int {
+    acc + 1
+}
+
+fn print(n: Int) {
+    print_str(int_to_str(n))
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    format("%d", n)
+}
+
+fn truncate(x: Float) -> Int {
+    x.trunc()
+}
+
+fn add(acc: Int, x: Int) -> Int {
+    acc + 1
+}
+
+fn println(s: Str) {
+    print_str(s)
+    print_str("\n")
+}
+
+fn format(format: Str, arg: Int) -> Str {
+    let mut result = String
+    result.push_str(format)
+    result.push_str(int_to_str(arg))
+    result.into_str()
+}
+
+fn into_str(s: String) -> Str {
+    s
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut v = v
+    v.append(x)
+    v
+}
+
+fn append(mut: Vec<Int>, x: Int) {
+    mut.push(x)
+}
+
+fn iter(v: Vec<Int>) -> VecIterator {
+    VecIterator(v)
+}
+
+struct VecIterator { vec: Vec<Int>, idx: Int }
+
+fn next(mut: VecIterator) -> Option<Int> {
+    if mut.idx >= len(mut.vec) {
+        None
+    } else {
+        let elem = get(mut.vec, mut.idx)?
+        mut.idx = mut.idx + 1
+        Some(elem)
+    }
+}
+
+fn fold(v: Vec<Int>, init: Int, f: FnMutIntIntInt) -> Int {
+    let mut acc = init
+    for x in v {
+        acc = f(acc, x)
+    }
+    acc
+}
+
+fn get(v: Vec<Int>, idx: Int) -> Option<Int> {
+    if idx >= len(v) {
+        None
+    } else {
+        Some(v.iter().nth(idx).unwrap())
+    }
+}
+
+fn len(v: Vec<Int>) -> Int {
+    v.iter().fold(0, add)
+}
+
+fn add(acc: Int, x: Int) -> Int {
+    acc + 1
+}
+
+fn nth(v: Vec<Int>, idx: Int) -> Option<Int> {
+    if idx >= len(v) {
+        None
+    } else {
+        Some(v.iter().nth(idx).unwrap())
+    }
+}
+
+fn unwrap(o: Option<Int>) -> Int {
+    o.unwrap()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut v = v
+    v.append(x)
+    v
+}
+
+fn append(mut: Vec<Int>, x: Int) {
+    mut.push(x)
+}
+
+fn vec() -> Vec<Int> {
+    Vec
+}
+
+fn is_none(o: Option<Int>) -> Bool {
+    o.is_none()
+}
+
+fn is_some(o: Option<Int>) -> Bool {
+    o.is_some()
+}
+
+fn is_none(o: Option<Int>) -> Bool {
+    o.is_none()
+}
+
+fn is_none(o: Option<Int>) -> Bool {
+    o.is_none()
+}
+
+fn is_none(o: Option<Int>) -> Bool {
+    o.is_none()
+}
+
+fn is_none(o: Option<Int>) -> Bool {
+    o.is_none()
+}
+
+fn is_none(o: Option<Int>) -> Bool {
+    o.is_none()
+}
+
+fn is_none(o: Option<Int>) -> Bool {
+    o.is_none()
+}
+
+fn is_none(o: Option<Int>) -> Bool {
+    o.is_none()
+}
+
+fn is_none(o: Option<Int>) -> Bool {
+    o.is_none()
+}
+
+fn is_none(o: Option<Int>) -> Bool {
+    o.is_none()
+}
+
+fn is_none(o: Option<Int>) -> Bool {
+    o.is_none()
+}
+
+fn is_none(o: Option<Int>) -> Bool {
+    o.is_none()
+}
+
+fn is_none(o: Option<Int>) -> Bool {
+    o.is_none()
+}
+
+fn is_none(o: Option<Int>) -> Bool {
+    o.is_none()
+}
+
+fn is_none(o: Option<Int>) -> Bool {
+    o.is_none()
+}
+
+fn is_none(o: Option<Int>) -> Bool {
+    o.is_none()
+}
+
+fn is_none(o: Option<Int>) -> Bool {
+    o.is_none()
+}
+
+fn is_none(o: Option<Int>) -> Bool {
+    o.is_none()
+}
+
+fn is_none(o: Option<Int>) -> Bool {
+    o.is_none()
+}
+
+fn is_none(o: Option<Int>) -> Bool {
+    o.is_none()
+}
+
+fn is_none(o: Option<Int>) -> Bool {
+    o.is_none()
+}
+
+fn is_none(o: Option<Int>) -> Bool {
+    o.is_none()
+}
+
+fn is_none(o: Option<Int>) -> Bool {
+    o.is_none()
+}
+
+fn is_none(o: Option<Int>) -> Bool {
+    o.is_none()
+}
+
+fn is_none(o: Option<Int>) -> Bool {
+    o.is_none()
+}
+
+fn is_none(o: Option<Int>) -> Bool {
+    o.is_none()
+}
+
+fn is_none(o: Option<Int>) -> Bool {
+    o.is_none()
+}
+
+fn is_none(o: Option<Int>) -> Bool {
+    o.is_none()
+}
+
+fn is_none(o: Option<Int>) -> Bool {
+    o.is_none()
+}
+
+fn is_none(o: Option<Int>) -> Bool {
+    o.is_none()
+}
+
+fn is_none(o: Option<Int>) -> Bool {
+    o.is_none()
+}
+
+fn is_none(o: Option<Int>) -> Bool {
+    o.is_none()
+}
+
+fn is_none(o: Option<Int>) -> Bool {
+    o.is_none()
+}
+
+fn is_none(o: Option<Int>) -> Bool {
+    o.is_none()
+}
+
+fn is_none(o: Option<Int>) -> Bool {
+    o.is_none()
+}
+
+fn is_none(o: Option<Int>) -> Bool {
+    o.is_none()
+}
+
+fn is_none(o: Option<Int>) -> Bool {
+    o.is_none()
+}
+
+fn is_none(o: Option<Int>) -> Bool {
+    o.is_none()
+}
+
+fn is_none(o: Option<Int>) -> Bool {
+    o.is_none()
+}
+
+fn is_none(o: Option<Int>) -> Bool {
+    o.is_none()
+}
+
+fn is_none(o: Option<Int>) -> Bool {
+    o.is_none()
+}
+
+fn is_none(o: Option<Int>) -> Bool {
+    o.is_none()
+}
+
+fn is_none(o: Option<Int>) -> Bool {
+    o.is_none()
+}
+
+fn is_none(o: Option<Int>) -> Bool {
+    o.is_none()
+}
+
+fn is_none(o: Option<Int>) -> Bool {
+    o.is_none()

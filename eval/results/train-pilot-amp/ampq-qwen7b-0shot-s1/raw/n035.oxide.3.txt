@@ -1,0 +1,19 @@
+struct DivResult {
+    result: Option<Float>,
+    error: Option<Str>,
+}
+
+fn divide(a: Float, b: Float) -> DivResult {
+    if b == 0.0 {
+        DivResult(None, Some("bad".to_str()))
+    } else {
+        DivResult(Some(a / b), None)
+    }
+}
+
+fn main() {
+    let DivResult { result, error } = divide(20.0, 4.0)
+    match (result.is_none() && error.is_some()) {
+        _ => if result.is_some() { print(result.unwrap()) } else { print("bad") },
+    }
+}

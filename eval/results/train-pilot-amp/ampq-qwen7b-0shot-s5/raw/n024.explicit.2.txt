@@ -1,0 +1,20 @@
+fn count_a(word: &Str) -> Int {
+    let count = 0
+    for c in chars(word) {
+        let c = &c
+        if c == "a" {
+            drop c
+            count = count + 1
+        }
+    }
+    drop count
+    count
+}
+
+fn main() {
+    let word = "banana"
+    let word = &word
+    let count = count_a(word)
+    print(count)
+    drop word
+}

@@ -1,0 +1,14 @@
+fn seq(prev: Int, next: Int) -> Int {
+    prev + next
+}
+
+fn main() {
+    let mut a: Int = 1
+    let mut b: Int = 1
+    for i in range(1, 10) {
+        let temp = a
+        a = b
+        b = seq(temp, b)
+    }
+    print(b)
+}

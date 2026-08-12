@@ -1,0 +1,344 @@
+fn main() {
+    let p = Point { x: 1, y: 5 }
+    let q = Point { x: 10, y: 5 }
+    print(p.y + q.y)
+}
+
+struct Point {
+    x: Int,
+    y: Int,
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut result = v
+    result.push(x)
+    result
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut result = Str
+    while n > 0 {
+        result = concat(char_to_str(n % 10), result)
+        n = n / 10
+    }
+    result
+}
+
+fn char_to_str(n: Int) -> Str {
+    if n < 10 {
+        return str_slice("0123456789", n)
+    }
+    let mut result = Str
+    while n > 0 {
+        result = concat(char_to_str(n % 10), result)
+        n = n / 10
+    }
+    result
+}
+
+fn str_slice(s: Str, start: Int, end: Int) -> Str {
+    let mut result = Str
+    for i in start + 1 <= end {
+        result = concat(result, str_slice(s, i, i))
+    }
+    result
+}
+
+fn str_len(s: Str) -> Int {
+    let mut result = 0
+    for _ in s {
+        result = result + 1
+    }
+    result
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut result = Str
+    for c in a {
+        result = push(result, c)
+    }
+    for c in b {
+        result = push(result, c)
+    }
+    result
+}
+
+fn print_str(s: Str) {
+    for c in s {
+        print(c)
+    }
+}
+
+fn len(v: Vec<Int>) -> Int {
+    let mut result = 0
+    for _ in v {
+        result = result + 1
+    }
+    result
+}
+
+fn clone(x: &Int) -> Int {
+    let mut result = 0
+    result = result + x
+    result
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    if i >= len(v) {
+        return None
+    }
+    return Some(clone(&v))
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = Vec
+    for i in a + 1 <= b {
+        result = push(result, i)
+    }
+    result
+}
+
+fn to_float(n: Int) -> Float {
+    return Float(n)
+}
+
+fn trunc(x: Float) -> Int {
+    let mut result = Int(0)
+    if x.value < 0 {
+        result = result - trunc(-x)
+    } else {
+        result = result + x.value
+    }
+    result
+}
+
+fn drop_all(v: Vec<Int>) {
+    for x in v {
+        drop x
+    }
+}
+
+fn drop_all(s: Str) {
+    for c in s {
+        drop c
+    }
+}
+
+fn drop_all(p: &Point) {
+    drop p
+}
+
+fn drop_all(f: Float) {
+    drop f
+}
+
+fn drop_all(i: Int) {
+    drop i
+}
+
+fn drop_all(b: Bool) {
+    drop b
+}
+
+fn drop_all(t: Unit) {
+    drop t
+}
+
+fn drop_all(o: Option<Int>) {
+    if o != None {
+        drop o
+    }
+}
+
+fn drop_all(r: Result<Int, Int>) {
+    if r != Ok(0) {
+        drop r
+    }
+}
+
+fn drop_all(v: &Vec<Int>) {
+    drop v
+}
+
+fn drop_all(s: &Str) {
+    drop s
+}
+
+fn drop_all(p: &Point) {
+    drop p
+}
+
+fn drop_all(f: &Float) {
+    drop f
+}
+
+fn drop_all(i: &Int) {
+    drop i
+}
+
+fn drop_all(b: &Bool) {
+    drop b
+}
+
+fn drop_all(t: &Unit) {
+    drop t
+}
+
+fn drop_all(o: &Option<Int>) {
+    if o != None {
+        drop o
+    }
+}
+
+fn drop_all(r: &Result<Int, Int>) {
+    if r != Ok(0) {
+        drop r
+    }
+}
+
+fn drop_all(v: &Vec<Int>, i: Int) {
+    if i >= len(v) {
+        return
+    }
+    drop v
+}
+
+fn drop_all(s: &Str, i: Int) {
+    if i >= str_len(s) {
+        return
+    }
+    drop s
+}
+
+fn drop_all(p: &Point, f: Float) {
+    if p.y != f {
+        return
+    }
+    drop p
+}
+
+fn drop_all(o: &Option<Int>, r: &Result<Int, Int>) {
+    if o != None {
+        drop o
+    }
+    if r != Ok(0) {
+        drop r
+    }
+}
+
+fn drop_all(v: Vec<Int>, i: Int) {
+    if i >= len(v) {
+        return
+    }
+    drop v
+}
+
+fn drop_all(s: Str, i: Int) {
+    if i >= str_len(s) {
+        return
+    }
+    drop s
+}
+
+fn drop_all(p: Point, f: Float) {
+    if p.y != f {
+        return
+    }
+    drop p
+}
+
+fn drop_all(o: Option<Int>, r: Result<Int, Int>) {
+    if o != None {
+        drop o
+    }
+    if r != Ok(0) {
+        drop r
+    }
+}
+
+fn drop_all(v: &Vec<Int>, i: Int) {
+    if i >= len(v) {
+        return
+    }
+    drop v
+}
+
+fn drop_all(s: &Str, i: Int) {
+    if i >= str_len(s) {
+        return
+    }
+    drop s
+}
+
+fn drop_all(p: &Point, f: Float) {
+    if p.y != f {
+        return
+    }
+    drop p
+}
+
+fn drop_all(o: &Option<Int>, r: &Result<Int, Int>) {
+    if o != None {
+        drop o
+    }
+    if r != Ok(0) {
+        drop r
+    }
+}
+
+fn drop_all(v: &Vec<Int>, i: Int) {
+    if i >= len(v) {
+        return
+    }
+    drop v
+}
+
+fn drop_all(s: &Str, i: Int) {
+    if i >= str_len(s) {
+        return
+    }
+    drop s
+}
+
+fn drop_all(p: &Point, f: Float) {
+    if p.y != f {
+        return
+    }
+    drop p
+}
+
+fn drop_all(o: &Option<Int>, r: &Result<Int, Int>) {
+    if o != None {
+        drop o
+    }
+    if r != Ok(0) {
+        drop r
+    }
+}
+
+fn drop_all(v: &Vec<Int>, i: Int) {
+    if i >= len(v) {
+        return
+    }
+    drop v
+}
+
+fn drop_all(s: &Str, i: Int) {
+    if i >= str_len(s) {
+        return
+    }
+    drop s
+}
+
+fn drop_all(p: &Point, f: Float) {
+    if p.y != f {
+        return
+    }
+    drop p
+}
+
+fn drop_all(o: &Option<Int>, r: &Result<Int, Int

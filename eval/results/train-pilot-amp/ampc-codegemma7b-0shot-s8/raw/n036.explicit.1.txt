@@ -1,0 +1,12 @@
+fn main() {
+    let four = 4
+    let two = 2
+    let three = 3
+    let five = 5
+    let units_four = 3
+    let units_five = 2
+    let total_four = four * units_four
+    let total_five = five * units_five
+    let total = total_four + total_five
+    print(total)
+}

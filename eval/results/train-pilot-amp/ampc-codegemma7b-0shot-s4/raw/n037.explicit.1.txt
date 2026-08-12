@@ -1,0 +1,340 @@
+fn main() {
+    let mut rect = (2.0 * 3.0)
+    print(area(&rect))
+    rect = (5.0 * 3.0)
+    print(area(&rect))
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(r: &Float) -> Float {
+    return r * 2.0
+}
+
+fn area(

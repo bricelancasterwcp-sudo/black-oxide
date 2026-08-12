@@ -1,0 +1,331 @@
+fn main() {
+    let mut list = vec_int(0, 15)
+    print(len(list))
+}
+
+fn vec_int(start: Int, end: Int) -> Vec<Int> {
+    let mut v = vec()
+    for i in start + 1 < end {
+        push(v, i)
+    }
+    v
+}
+
+fn len(v: Vec<Int>) -> Int {
+    let mut l = 0
+    for _ in v {
+        l = l + 1
+    }
+    l
+}
+
+fn push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    vec_push(x, mutvec)
+}
+
+fn vec_push(x: Int, mutvec: Vec<Int>) -> Vec<Int> {
+    let mut new_vec = mutvec
+    new_vec.append(x)
+    new_vec
+}
+
+fn append(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut new_vec = mutvec
+    push(new_vec, x)
+    new_vec
+}
+
+fn print(x: Int) {
+    print_int(x)
+}
+
+fn print_int(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    print_chars(chars(s))
+}
+
+fn print_chars(v: Vec<Str>) {
+    for s in v {
+        print_str(s)
+    }
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut s = str()
+    for c in num_to_chars(n) {
+        append(s, c)
+    }
+    s
+}
+
+fn num_to_chars(n: Int) -> Vec<Str> {
+    let mut v = vec()
+    if n > 9 {
+        v = num_to_chars(trunc(n / 10))
+    }
+    append(v, char_from_digit(trunc(mod(n, 10))))
+    v
+}
+
+fn mod(a: Int, b: Int) -> Int {
+    a - b * trunc(a / b)
+}
+
+fn char_from_digit(d: Int) -> Str {
+    if d >= 0 && d <= 9 {
+        str(to_char(d))
+    } else {
+        str()
+    }
+}
+
+fn to_char(n: Int) -> Int {
+    n + 48
+}
+
+fn str(c: Int) -> Str {
+    let mut v = vec()
+    append(v, c)
+    v
+}
+
+fn vec() -> Vec<Int> {
+    let mut v = vec()
+    v
+}
+
+fn vec_from_slice(v: Slice<Int>) -> Vec<Int> {
+    let mut new_vec = vec()
+    for x in v {
+        push(new_vec, x)
+    }
+    new_vec
+}
+
+fn slice(v: Vec<Int>) -> Slice<Int> {
+    v
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut v = vec()
+    for i in a + 1 < b {
+        push(v, i)
+    }
+    v
+}
+
+fn clone(x: Int) -> Int {
+    x
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    if i >= len(v) {
+        None
+    } else {
+        Some(v.get(i))
+    }
+}
+
+fn is_none(v: Option<Int>) -> Bool {
+    match v {
+        Some(_) => false,
+        None => true,
+    }
+}
+
+fn is_some(v: Option<Int>) -> Bool {
+    match v {
+        Some(_) => true,
+        None => false,
+    }
+}
+
+fn match_(e: Int) -> Int {
+    match e {
+        Int(n) => n,
+        _ => panic("failed to match"),
+    }
+}
+
+fn panic(msg: Str) -> Int {
+    print_str(msg)
+    -1
+}
+
+fn copy(x: Int) -> Int {
+    x
+}
+
+fn copy_ref(x: Int) -> Int {
+    x
+}
+
+fn borrow(x: Int) -> Int {
+    x
+}
+
+fn borrow_mut(x: Int) -> Int {
+    x
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn sub(a: Int, b: Int) -> Int {
+    a - b
+}
+
+fn mul(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn div(a: Int, b: Int) -> Int {
+    a / b
+}
+
+fn lt(a: Int, b: Int) -> Bool {
+    a < b
+}
+
+fn gt(a: Int, b: Int) -> Bool {
+    a > b
+}
+
+fn eq(a: Int, b: Int) -> Bool {
+    a == b
+}
+
+fn neq(a: Int, b: Int) -> Bool {
+    a != b
+}
+
+fn bool(b: Bool) -> Int {
+    if b {
+        1
+    } else {
+        0
+    }
+}
+
+fn not(b: Bool) -> Bool {
+    !b
+}
+
+fn and(a: Bool, b: Bool) -> Bool {
+    a && b
+}
+
+fn or(a: Bool, b: Bool) -> Bool {
+    a || b
+}
+
+fn loop_break(v: Vec<Int>) -> Int {
+    let mut accum = 0
+    for x in v {
+        accum = add(accum, x)
+        if accum > 10 {
+            break
+        }
+    }
+    accum
+}
+
+fn loop_continue(v: Vec<Int>) -> Int {
+    let mut accum = 0
+    for x in v {
+        if accum > 5 {
+            continue
+        }
+        accum = add(accum, x)
+    }
+    accum
+}
+
+fn match_expr(e: Int) -> Int {
+    match e {
+        Int(n) => if n > 10 { n } else { -1 },
+        _ => -1,
+    }
+}
+
+fn if_expr(cond: Bool, then: Int, else_: Int) -> Int {
+    if cond {
+        then
+    } else {
+        else_
+    }
+}
+
+fn while_loop(cond: Bool) -> Int {
+    let mut accum = 0
+    while cond {
+        accum = accum + 1
+    }
+    accum
+}
+
+fn for_loop(v: Vec<Int>) -> Int {
+    let mut accum = 0
+    for x in v {
+        accum = accum + x
+    }
+    accum
+}
+
+fn for_loop_range(v: Vec<Int>) -> Int {
+    let mut accum = 0
+    for i in range(0, len(v)) {
+        accum = accum + v.get(i)
+    }
+    accum
+}
+
+fn for_loop_ref(v: Vec<Int>) -> Int {
+    let mut accum = 0
+    for x in v {
+        accum = accum + x
+    }
+    accum
+}
+
+fn for_loop_mut(mutv: Vec<Int>) -> Int {
+    let mut accum = 0
+    for x in mutv {
+        accum = accum + x
+    }
+    accum
+}
+
+fn for_loop_copy(v: Vec<Int>) -> Int {
+    let mut accum = 0
+    for x in v {
+        accum = accum + x
+    }
+    accum
+}
+
+fn for_loop_copy_ref(v: Vec<Int>) -> Int {
+    let mut accum = 0
+    for x in v {
+        accum = accum + x
+    }
+    accum
+}
+
+fn for_loop_copy_mut(mutv: Vec<Int>) -> Int {
+    let mut accum = 0
+    for x in mutv {
+        accum = accum + x
+    }
+    accum
+}
+
+fn match_pattern(v: Vec<Int>) -> Int {
+    match v {
+        Vec(a, b, c) => add(a, add(b, c)),
+        _ => -1,
+    

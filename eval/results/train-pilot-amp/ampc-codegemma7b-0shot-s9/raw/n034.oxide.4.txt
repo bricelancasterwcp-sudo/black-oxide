@@ -1,0 +1,23 @@
+fn second(v: Vec<Int>) -> Option<Int> {
+    if len(v) < 2 {
+        None
+    } else {
+        let x = get(v, 1)?
+        Some(x + 1)
+    }
+}
+
+fn main() {
+    match second(vec(7)) {
+        Some(n) => print(n),
+        None => print_str("none"),
+    }
+    match second(vec(7, 8)) {
+        Some(n) => print(n),
+        None => print_str("none"),
+    }
+    match second(vec(7, 8, 9)) {
+        Some(n) => print(n),
+        None => print_str("none"),
+    }
+}

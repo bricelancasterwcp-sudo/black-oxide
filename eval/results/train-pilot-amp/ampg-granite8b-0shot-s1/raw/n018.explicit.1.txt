@@ -1,0 +1,11 @@
+fn print_vec(v: &Vec<Int>) {
+    for x in v {
+        print(x)
+    }
+}
+
+fn main() {
+    let list = vec(1, 2, 3, 4)
+    print_vec(&list)
+    drop list
+}

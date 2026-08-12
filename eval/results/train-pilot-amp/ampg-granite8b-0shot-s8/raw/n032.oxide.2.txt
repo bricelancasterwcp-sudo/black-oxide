@@ -1,0 +1,11 @@
+struct Point { x: Int, y: Int }
+
+fn make_ten(p: Point) -> Point {
+    Point(p.x + 10, p.y)
+}
+
+fn main() {
+    let p = Point(1, 5)
+    let ten = make_ten(p)
+    print(ten.x + ten.y)
+}

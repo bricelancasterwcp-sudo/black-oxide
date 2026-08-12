@@ -1,0 +1,6 @@
+fn main() {
+    let word: &str = "aeiou";
+    let word = word.chars().collect::<Vec<char>>();
+    let vowels: u8 = word.iter().filter(|c| "aeiou".contains(c)).count() as u8;
+    println!("{}", vowels);
+}

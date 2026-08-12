@@ -1,0 +1,24 @@
+fn get_second(list: Vec<Int>) -> Option<Int> {
+    match list {
+        Vec(_, y) => Some(y),
+        _ => None,
+    }
+}
+
+fn main() {
+    let one = 7
+    let two = 8
+    let three = 9
+    let nothing = get_second(vec(one))
+    let second = get_second(vec(one, two))
+    let third = get_second(vec(one, two, three))
+    drop one
+    drop two
+    drop three
+    print(nothing)
+    print(second)
+    print(third)
+    drop nothing
+    drop second
+    drop third
+}

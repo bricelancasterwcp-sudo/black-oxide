@@ -1,0 +1,8 @@
+fn sum(a: Int, b: Int, c: Int, d: Int, e: Int, f: Int) -> Int {
+    a + b + c + d + e + f
+}
+
+fn main() {
+    let result = sum(4, 8, 15, 16, 23, 42)
+    print(result / 6)
+}

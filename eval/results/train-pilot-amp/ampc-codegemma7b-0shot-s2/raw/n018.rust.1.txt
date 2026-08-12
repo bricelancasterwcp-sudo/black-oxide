@@ -1,0 +1,7 @@
+fn main() {
+    let list = vec![1, 2, 3, 4];
+
+    for entry in list.iter().rev() {
+        println!("{}", entry);
+    }
+}

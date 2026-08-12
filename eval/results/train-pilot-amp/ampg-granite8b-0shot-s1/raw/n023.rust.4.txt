@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    println!("hello world");
+}
+```
+
+Explanation:
+The program is corrected by removing the extra space at the end of the string "hello world ". The corrected program uses the `println!` macro to print the string "hello world" without the extra space. The output of the corrected program will be "hello world" without the trailing space.

@@ -1,0 +1,3 @@
+fn main() {
+    let word = str_len("cat") == 3 && chars("cat") == vec(vec_len("c"), vec_len("a"), vec_len("t")) && print_str("c") && print_str("a") && print_str("t") && drop_str("cat") && drop_str("c") && drop_str("a") && drop_str("t")
+}

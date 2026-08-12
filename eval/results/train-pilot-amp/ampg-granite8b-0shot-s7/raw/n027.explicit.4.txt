@@ -1,0 +1,7 @@
+fn main() {
+    let cat = "cat"
+    for c in &cat {
+        print(c)
+    }
+    drop cat
+}

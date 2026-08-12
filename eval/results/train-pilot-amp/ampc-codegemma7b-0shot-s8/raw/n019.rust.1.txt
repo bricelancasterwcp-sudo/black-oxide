@@ -1,0 +1,6 @@
+fn main() {
+    let list1 = vec![1, 2, 3];
+    let list2 = vec![4, 5];
+    let combined_length = list1.len() + list2.len();
+    println!("{} entries", combined_length);
+}

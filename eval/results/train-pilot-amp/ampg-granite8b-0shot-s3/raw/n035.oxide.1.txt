@@ -1,0 +1,15 @@
+struct DivideError { message: Str }
+
+fn divide(x: Int, y: Int) -> Result<Int, DivideError> {
+    if y == 0 {
+        return Err(DivideError { message: "can't divide by zero" })
+    }
+    Ok(x / y)
+}
+
+fn main() {
+    match divide(20, 4) {
+        Ok(n) => print(n),
+        Err(e) => print(e.message),
+    }
+}

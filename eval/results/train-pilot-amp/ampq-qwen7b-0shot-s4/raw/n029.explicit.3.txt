@@ -1,0 +1,9 @@
+fn main() {
+    let one = "one".to_string()
+    let two = "two".to_string()
+    let three = "three".to_string()
+    print_str(one + &two + &three)
+    drop one
+    drop two
+    drop three
+}

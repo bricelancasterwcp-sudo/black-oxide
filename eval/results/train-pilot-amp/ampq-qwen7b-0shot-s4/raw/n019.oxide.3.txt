@@ -1,0 +1,10 @@
+struct Pair { first: Vec<Int>, second: Vec<Int> }
+
+fn count_entries(pair: Pair) -> Int {
+    len(pair.first) + len(pair.second)
+}
+
+fn main() {
+    let p = Pair { first: push(push(vec(), 1), 2), second: push(push(vec(), 4), 5) }
+    print(count_entries(p))
+}

@@ -1,0 +1,16 @@
+fn first_big(v: Vec<Int>) -> Int {
+    let mut found = -1
+    for x in v {
+        if x > 4 {
+            found = x
+            break
+        }
+    }
+    found
+}
+
+fn main() {
+    let numbers = vec(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+    let five = first_big(numbers)
+    print(five)
+}

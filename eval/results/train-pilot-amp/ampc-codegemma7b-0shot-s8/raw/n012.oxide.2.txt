@@ -1,0 +1,21 @@
+fn main() {
+    let mut numbers = vec()
+    for x in 0 {
+        if x > 15 {
+            break
+        }
+        numbers = push(numbers, x)
+    }
+    print(len(numbers))
+}
+
+fn main() {
+    let mut numbers = vec()
+    for x in 0 {
+        if x > 15 {
+            break
+        }
+        numbers = push(numbers, x)
+    }
+    print(len(numbers))
+}

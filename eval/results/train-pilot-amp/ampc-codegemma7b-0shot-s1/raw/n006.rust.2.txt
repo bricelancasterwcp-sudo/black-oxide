@@ -1,0 +1,11 @@
+fn main() {
+    let mut x = 1;
+    loop {
+        if x <= 100 as f64 {
+            x *= 2.0;
+        } else {
+            println!("{}", x);
+            break;
+        }
+    }
+}

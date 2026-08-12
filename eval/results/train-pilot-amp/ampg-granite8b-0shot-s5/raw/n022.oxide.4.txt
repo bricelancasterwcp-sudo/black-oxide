@@ -1,0 +1,7 @@
+fn black_oxide() -> Str {
+    "blackoxide"
+}
+
+fn main() {
+    print(black_oxide())
+}

@@ -1,0 +1,112 @@
+fn main() {
+    let s = Shape { side: 4.0, variant: Variant(Nullary) }
+    match s {
+        Square(side) => {
+            let pi = 3.0
+            print(pi * side * side)
+        },
+        _ => {
+            print(0.0)
+        },
+    }
+}
+
+enum Variant {
+    Nullary,
+    Variant(Type),
+}
+
+enum Shape {
+    Square(Float),
+    Circle(Float),
+}
+
+fn area(s: &Shape) -> Float {
+    match s {
+        Square(side) => {
+            let pi = 3.0
+            pi * side * side
+        },
+        Circle(radius) => {
+            let pi = 3.0
+            pi * radius * radius
+        },
+    }
+}
+
+fn print(x: Float) {
+    drop x
+}
+
+fn main() {
+    let s = Square { side: 4.0 }
+    print(area(&s))
+    drop s
+}
+
+struct Square {
+    side: Float,
+    variant: Variant,
+}
+
+enum Variant {
+    Nullary,
+    Variant(Type),
+}
+
+fn area(s: &Square) -> Float {
+    let pi = 3.0
+    pi * s.side * s.side
+}
+
+fn print(x: Float) {
+    drop x
+}
+
+fn main() {
+    let s = Circle { radius: 5.0 }
+    print(area(&s))
+    drop s
+}
+
+struct Circle {
+    radius: Float,
+}
+
+fn area(s: &Circle) -> Float {
+    let pi = 3.0
+    pi * s.radius * s.radius
+}
+
+fn print(x: Float) {
+    drop x
+}
+
+fn main() {
+    let s = Circle { radius: 5.0 }
+    let a = area(&s)
+    drop s
+    print(a)
+}
+
+struct Circle {
+    radius: Float,
+}
+
+fn area(s: &Circle) -> Float {
+    let pi = 3.0
+    pi * s.radius * s.radius
+}
+
+fn print(x: Float) {
+    drop x
+}
+
+fn main() {
+    let s = Circle { radius: 5.0 }
+    let a = area(&s)
+    drop s
+    let b = area(&s)
+    drop s
+    print(a + b)
+}

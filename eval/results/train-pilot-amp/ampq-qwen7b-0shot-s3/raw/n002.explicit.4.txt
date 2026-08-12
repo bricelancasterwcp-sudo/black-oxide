@@ -1,0 +1,13 @@
+fn multiply(v: &Vec<Int>) -> Int {
+    let product = 1
+    for x in &v {
+        product = product * x
+    }
+    product
+}
+
+fn main() {
+    let nums = push(push(push(push(push(vec(), 1), 2), 3), 4), 5)
+    let product = multiply(&nums)
+    print(product)
+}

@@ -1,0 +1,7 @@
+fn main() {
+    let n1 = 4;
+    let n2 = 5;
+    let v1 = 3;
+    let v2 = 2;
+    println!("{}", (n1 * v1) + (n2 * v2));
+}

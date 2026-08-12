@@ -1,0 +1,11 @@
+fn mul(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn main() {
+    let mut x = 1
+    for y in range(2, 7) {
+        x = mul(x, y)
+    }
+    print(x)
+}

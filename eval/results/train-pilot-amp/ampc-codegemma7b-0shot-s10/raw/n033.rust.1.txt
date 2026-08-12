@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    println!("Go for green!");
+    std::thread::sleep(std::time::Duration::from_secs(5));
+    println!("Wait for yellow!");
+    std::thread::sleep(std::time::Duration::from_secs(5));
+    println!("Stop for red!");
+}
+```

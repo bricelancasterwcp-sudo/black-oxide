@@ -1,0 +1,15 @@
+fn len(s: &Str) -> Int {
+    let mut i = 0
+    while i < s.len() {
+        if s.get(i).unwrap() == &c {
+            return i
+        }
+        i = i + 1
+    }
+    -1
+}
+
+fn main() {
+    let s = "programming"
+    print(len(&s))
+}

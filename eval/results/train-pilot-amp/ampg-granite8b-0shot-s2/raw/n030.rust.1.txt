@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let word_sequence = "The quick brown fox jumps over the lazy dog";
+    let vowels = ['a', 'e', 'i', 'o', 'u'];
+    let mut count = 0;
+
+    for c in word_sequence.chars() {
+        if c.is_alphabetic() && vowels.contains(&c.to_ascii_lowercase()) {
+            count += 1;
+        }
+    }
+
+    println!("Number of vowels: {}", count);
+}
+```

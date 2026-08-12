@@ -1,0 +1,17 @@
+use std::io;
+
+fn main() {
+    let mut sensor = Sensor::new();
+    sensor.reading = 7;
+    println!("{}", sensor.reading);
+}
+
+struct Sensor {
+    reading: i32,
+}
+
+impl Sensor {
+    fn new() -> Self {
+        Self { reading: 0 }
+    }
+}

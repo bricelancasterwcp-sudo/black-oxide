@@ -1,0 +1,195 @@
+fn main() {
+    let input = 2026
+    let text = to_string(input)
+    print(str_len(text))
+}
+
+fn to_string(x: Int) -> Str {
+    let mut s = String.new()
+    loop(x, &muts)
+}
+
+fn loop(x: Int, s: &Str) -> Str {
+    if x < 10 {
+        s.push_str(int_to_str(x))
+    } else {
+        loop(x / 10, s)
+        s.push_str(int_to_str(x % 10))
+    }
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut s = String.new()
+    if n == 0 {
+        s.push_str("0")
+    } else {
+        let mut m = 1
+        while m <= n {
+            m = m * 10
+        }
+        loop(n, m, &muts)
+    }
+}
+
+fn loop(n: Int, m: Int, s: &Str) -> Str {
+    if m > n {
+        s
+    } else {
+        loop(n, m / 10, push(s, "0" + int_to_str(n / m)))
+    }
+}
+
+fn print(s: Str) {
+    let mut chars = chars(s)
+    while chars.len() > 0 {
+        let c = chars.pop()
+        print_str(&c)
+    }
+}
+
+fn print_str(s: Str) {
+    let chars = chars(s)
+    loop(chars, 0)
+}
+
+fn loop(chars: Vec<Str>, i: Int) -> Vec<Str> {
+    if i >= chars.len() {
+        chars
+    } else {
+        loop(chars, i + 1)
+    }
+}
+
+fn char_at(s: Str, i: Int) -> Str {
+    get(chars(s), i)
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = vec()
+    for i in range(0, str_len(s)) {
+        result = push(result, char_at(s, i))
+    }
+    result
+}
+
+fn str_len(s: Str) -> Int {
+    let mut n = 0
+    let mut chars = chars(s)
+    while chars.len() > 0 {
+        chars = chars.pop()
+        n = n + 1
+    }
+    n
+}
+
+fn to_float(n: Int) -> Float {
+    let mut s = String.new()
+    if n < 0 {
+        s.push_str("-")
+        n = n * -1
+    }
+    let mut m = 1
+    while m <= n {
+        m = m * 10
+    }
+    loop(n, m, &muts)
+}
+
+fn loop(n: Int, m: Int, s: &Str) -> Str {
+    if m > n {
+        s
+    } else {
+        loop(n, m / 10, push(s, int_to_str(n / m)))
+    }
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut s = String.new()
+    if n == 0 {
+        s.push_str("0")
+    } else {
+        let mut m = 1
+        while m <= n {
+            m = m * 10
+        }
+        loop(n, m, &muts)
+    }
+}
+
+fn loop(n: Int, m: Int, s: &Str) -> Str {
+    if m > n {
+        s
+    } else {
+        loop(n, m / 10, push(s, "0" + int_to_str(n / m)))
+    }
+}
+
+fn float_to_int(x: Float) -> Int {
+    trunc(x)
+}
+
+fn trunc(x: Float) -> Int {
+    let i = float_to_int(x)
+    if x < 0 {
+        i - 1
+    } else {
+        i
+    }
+}
+
+fn print(s: Str) {
+    let mut chars = chars(s)
+    while chars.len() > 0 {
+        let c = chars.pop()
+        print_str(&c)
+    }
+}
+
+fn print_str(s: Str) {
+    let chars = chars(s)
+    loop(chars, 0)
+}
+
+fn loop(chars: Vec<Str>, i: Int) -> Vec<Str> {
+    if i >= chars.len() {
+        chars
+    } else {
+        loop(chars, i + 1)
+    }
+}
+
+fn char_at(s: Str, i: Int) -> Str {
+    get(chars(s), i)
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = vec()
+    for i in range(0, str_len(s)) {
+        result = push(result, char_at(s, i))
+    }
+    result
+}
+
+fn str_len(s: Str) -> Int {
+    let mut n = 0
+    let mut chars = chars(s)
+    while chars.len() > 0 {
+        chars = chars.pop()
+        n = n + 1
+    }
+    n
+}
+
+fn clone(x: Int) -> Int {
+    x
+}
+
+fn drop_value(x: Int) {
+    let _ = x
+}
+
+fn main() {
+    let input = 2026
+    let text = to_string(input)
+    print(str_len(text))
+}

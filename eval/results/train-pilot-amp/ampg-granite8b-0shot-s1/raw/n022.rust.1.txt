@@ -1,0 +1,6 @@
+fn main() {
+    let word = "oxide".to_string();
+    let black = "black".to_string();
+    let result = word + &black;
+    println!("{}", result);
+}

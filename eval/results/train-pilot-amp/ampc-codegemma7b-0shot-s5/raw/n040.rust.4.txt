@@ -1,0 +1,6 @@
+fn main() {
+    let pi: f64 = 3.0;
+    let side: f64 = 4.0;
+    let area = pi * side * side / 4.0;
+    println!("{}", area);
+}

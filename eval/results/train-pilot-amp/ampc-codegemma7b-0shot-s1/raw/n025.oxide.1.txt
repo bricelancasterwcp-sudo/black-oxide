@@ -1,0 +1,17 @@
+fn read_int() -> Option<Int> {
+    let s = Str(get_line()?)
+    match parse_int(s) {
+        Some(n) => Some(n),
+        None => {
+            print_str("bad")
+            None
+        },
+    }
+}
+
+fn main() {
+    match read_int() {
+        Some(n) => print(n + 1),
+        None => print_str("bad"),
+    }
+}

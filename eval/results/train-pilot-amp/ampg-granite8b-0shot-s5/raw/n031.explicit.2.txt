@@ -1,0 +1,18 @@
+fn main() {
+    let rect = Rectangle { width: 7, height: 6 }
+    print(area(&rect))
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn area(r: &Rectangle) -> Int {
+    r.width * r.height
+}
+
+fn main() {
+    let rect = Rectangle { width: 7, height: 6 }
+    print(area(&rect))
+}

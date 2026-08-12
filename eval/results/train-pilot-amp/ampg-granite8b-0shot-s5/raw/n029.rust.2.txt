@@ -1,0 +1,6 @@
+fn main() {
+    let output = "one";
+    output.push_str(" two");
+    output.push_str(" three");
+    println!("{}", output);
+}

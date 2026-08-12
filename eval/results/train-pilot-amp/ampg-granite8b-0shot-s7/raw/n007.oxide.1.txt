@@ -1,0 +1,16 @@
+struct Sum { sum: Int }
+
+fn sum_digit(n: Int) -> Sum {
+    let sum = 0
+    if n == 0 {
+        Sum(sum)
+    } else {
+        let d = n % 10
+        sum_digit(n / 10) + Sum(d)
+    }
+}
+
+fn main() {
+    let n = 9875
+    print(sum_digit(n).sum)
+}

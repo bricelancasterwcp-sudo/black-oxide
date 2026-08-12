@@ -1,0 +1,15 @@
+fn cat_lines() {
+    let c = "c\n"
+    print_str(&c)
+    drop c
+    let a = "a\n"
+    print_str(&a)
+    drop a
+    let t = "t\n"
+    print_str(&t)
+    drop t
+}
+
+fn main() {
+    cat_lines()
+}

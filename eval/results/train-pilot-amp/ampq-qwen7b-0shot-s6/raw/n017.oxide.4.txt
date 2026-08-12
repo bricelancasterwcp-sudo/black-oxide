@@ -1,0 +1,13 @@
+struct List { data: Vec<Int> }
+
+fn get_entry(list: List, pos: Int) -> Str {
+    match get(list.data, pos) {
+        Some(val) => int_to_str(val),
+        None => "missing".to_str(),
+    }
+}
+
+fn main() {
+    let list = List { data: push(push(push(push(vec(), 10), 20), 30), 40) }
+    print(get_entry(list, 2))
+}

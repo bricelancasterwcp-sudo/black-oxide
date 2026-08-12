@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let s = "abc";
+    match s.parse::<i32>() {
+        Ok(i) => println!("got number: {}", i),
+        Err(_) => println!("bad"),
+    }
+}
+```

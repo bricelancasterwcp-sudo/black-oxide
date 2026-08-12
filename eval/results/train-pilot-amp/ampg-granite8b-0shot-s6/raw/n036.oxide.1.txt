@@ -1,0 +1,17 @@
+struct Stock {
+    val: Int,
+    count: Int,
+}
+
+fn total(s: Vec<Stock>) -> Int {
+    let mut acc = 0
+    for item in s {
+        acc = acc + item.val * item.count
+    }
+    acc
+}
+
+fn main() {
+    let s = vec(Stock { val: 3, count: 4 }, Stock { val: 2, count: 5 })
+    print(total(s))
+}

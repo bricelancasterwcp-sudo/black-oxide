@@ -1,0 +1,16 @@
+struct Text { content: Str }
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut result = a.clone()
+    result = concat(result, b)
+    result
+}
+
+fn main() {
+    let one = "one"
+    let two = "two"
+    let three = "three"
+    let text = concat(concat(one, ", "), concat(two, ", "))
+    let full_text = concat(text, three)
+    print_str(full_text)
+}

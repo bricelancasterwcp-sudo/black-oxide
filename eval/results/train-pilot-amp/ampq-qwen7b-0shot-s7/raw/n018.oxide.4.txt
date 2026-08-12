@@ -1,0 +1,9 @@
+struct VecInt { values: Vec<Int> }
+
+fn main() {
+    let v = VecInt { values: vec(1, 2, 3, 4) }
+    for x in iter(v.values).rev() {
+        print(x)
+        print_str("\n")
+    }
+}

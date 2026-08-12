@@ -1,0 +1,20 @@
+fn is_prime(x: Int) -> Bool {
+    if x <= 1 {
+        return false
+    }
+    for i in range(2, trunc(f64(x).sqrt()) + 1) {
+        if x % i == 0 {
+            return false
+        }
+    }
+    true
+}
+
+fn main() {
+    let x = 91
+    if is_prime(x) {
+        print_str("yes")
+    } else {
+        print_str("no")
+    }
+}

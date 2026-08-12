@@ -1,0 +1,7 @@
+fn black(oxide: &Str) -> Str {
+    "black".to_string() + &oxide
+}
+
+fn main() {
+    print(black("oxide"))
+}

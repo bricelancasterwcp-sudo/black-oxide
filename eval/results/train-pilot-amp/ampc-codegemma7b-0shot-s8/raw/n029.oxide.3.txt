@@ -1,0 +1,4 @@
+fn main() {
+    let text = push(push(push(vec(), "one"), "two"), "three")
+    print_str(concat(text.join(", "), ","))
+}

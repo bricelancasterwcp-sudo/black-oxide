@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let list = vec![10, 20, 30, 40];
+    match list.get(2) {
+        Some(&n) => println!("{}", n),
+        None => println!("missing"),
+    }
+}
+```

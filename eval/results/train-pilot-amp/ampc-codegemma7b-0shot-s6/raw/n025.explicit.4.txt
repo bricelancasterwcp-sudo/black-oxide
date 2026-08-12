@@ -1,0 +1,325 @@
+fn main() {
+    let num = parse_int(str_len("417"))
+    if num {
+        print(int_to_str(add(trunc(num), 1)))
+    } else {
+        print("bad")
+    }
+    drop num
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn main() {
+    let num = parse_int(str_len("417"))
+    if num {
+        print(int_to_str(add(trunc(num), 1)))
+    } else {
+        print("bad")
+    }
+    drop num
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn main() {
+    let num = parse_int(str_len("417"))
+    if num {
+        print(int_to_str(add(trunc(num), 1)))
+    } else {
+        print("bad")
+    }
+    drop num
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn main() {
+    let num = parse_int(str_len("417"))
+    if num {
+        print(int_to_str(add(trunc(num), 1)))
+    } else {
+        print("bad")
+    }
+    drop num
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn main() {
+    let num = parse_int(str_len("417"))
+    if num {
+        print(int_to_str(add(trunc(num), 1)))
+    } else {
+        print("bad")
+    }
+    drop num
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn main() {
+    let num = parse_int(str_len("417"))
+    if num {
+        print(int_to_str(add(trunc(num), 1)))
+    } else {
+        print("bad")
+    }
+    drop num
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn main() {
+    let num = parse_int(str_len("417"))
+    if num {
+        print(int_to_str(add(trunc(num), 1)))
+    } else {
+        print("bad")
+    }
+    drop num
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn main() {
+    let num = parse_int(str_len("417"))
+    if num {
+        print(int_to_str(add(trunc(num), 1)))
+    } else {
+        print("bad")
+    }
+    drop num
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn main() {
+    let num = parse_int(str_len("417"))
+    if num {
+        print(int_to_str(add(trunc(num), 1)))
+    } else {
+        print("bad")
+    }
+    drop num
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn main() {
+    let num = parse_int(str_len("417"))
+    if num {
+        print(int_to_str(add(trunc(num), 1)))
+    } else {
+        print("bad")
+    }
+    drop num
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn main() {
+    let num = parse_int(str_len("417"))
+    if num {
+        print(int_to_str(add(trunc(num), 1)))
+    } else {
+        print("bad")
+    }
+    drop num
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn main() {
+    let num = parse_int(str_len("417"))
+    if num {
+        print(int_to_str(add(trunc(num), 1)))
+    } else {
+        print("bad")
+    }
+    drop num
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn main() {
+    let num = parse_int(str_len("417"))
+    if num {
+        print(int_to_str(add(trunc(num), 1)))
+    } else {
+        print("bad")
+    }
+    drop num
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn main() {
+    let num = parse_int(str_len("417"))
+    if num {
+        print(int_to_str(add(trunc(num), 1)))
+    } else {
+        print("bad")
+    }
+    drop num
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn main() {
+    let num = parse_int(str_len("417"))
+    if num {
+        print(int_to_str(add(trunc(num), 1)))
+    } else {
+        print("bad")
+    }
+    drop num
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn main() {
+    let num = parse_int(str_len("417"))
+    if num {
+        print(int_to_str(add(trunc(num), 1)))
+    } else {
+        print("bad")
+    }
+    drop num
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn main() {
+    let num = parse_int(str_len("417"))
+    if num {
+        print(int_to_str(add(trunc(num), 1)))
+    } else {
+        print("bad")
+    }
+    drop num
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn main() {
+    let num = parse_int(str_len("417"))
+    if num {
+        print(int_to_str(add(trunc(num), 1)))
+    } else {
+        print("bad")
+    }
+    drop num
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn main() {
+    let num = parse_int(str_len("417"))
+    if num {
+        print(int_to_str(add(trunc(num), 1)))
+    } else {
+        print("bad")
+    }
+    drop num
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn main() {
+    let num = parse_int(str_len("417"))
+    if num {
+        print(int_to_str(add(trunc(num), 1)))
+    } else {
+        print("bad")
+    }
+    drop num
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn main() {
+    let num = parse_int(str_len("417"))
+    if num {
+        print(int_to_str(add(trunc(num), 1)))
+    } else {
+        print("bad")
+    }
+    drop num
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn main() {
+    let num = parse_int(str_len("417"))
+    if num {
+        print(int_to_str(add(trunc(num), 1)))
+    } else {
+        print("bad")
+    }
+    drop num
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn main() {
+    let num = parse_int(str_len("417"))
+    if num {
+        print(int_to_str(add(trunc(num), 1)))
+    } else {
+        print("bad")
+    }
+    drop num
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn main() {
+    let num = parse_int(str_len("417"))
+    if

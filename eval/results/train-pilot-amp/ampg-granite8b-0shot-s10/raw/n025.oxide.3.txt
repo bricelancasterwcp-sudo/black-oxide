@@ -1,0 +1,7 @@
+fn main() {
+    let text = read_line().expect("bad input: expected string, got EOF instead")
+    match parse_int(text) {
+        Some(n) => print(n + 1),
+        None => print_str("bad"),
+    }
+}

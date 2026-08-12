@@ -1,0 +1,14 @@
+use std::io::{ErrorKind, Result, Write};
+
+fn main() -> Result<()> {
+    let mut buf = String::new();
+    match std::io::stdin().read_line(&mut buf)? {
+        0 => panic!("EOF"),
+        _ => (),
+    }
+    match buf.trim().parse::<u32>() {
+        Ok(num) => println!("{}", num),
+        Err(_) => println!("bad"),
+    }
+    Ok(())
+}

@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let list = vec![10, 20, 30, 40];
+    
+    match list.get(2) {
+        Some(&value) => println!("{}", value),
+        None => println!("missing"),
+    }
+}
+```
+
+Explanation:
+The issue in the given program is that it is trying to access the element at index 1 instead of index 2. The correct index to access is 2, as the list holds the values 10, 20, 30, and 40.
+
+The corrected program source uses the get() method on the list to retrieve the element at index 2. The match statement then checks if the retrieved value is Some, indicating that the element was found, and prints its value. If the value is None, it prints "missing".

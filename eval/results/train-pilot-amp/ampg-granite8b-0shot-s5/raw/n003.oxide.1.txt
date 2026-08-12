@@ -1,0 +1,19 @@
+struct Point { x: Float, y: Float }
+
+fn dist2(p: Point) -> Float {
+    p.x * p.x + p.y * p.y
+}
+
+fn main() {
+    let mut best = Point { x: 0.0, y: 0.0 }
+    for i in range(0, 100) {
+        for j in range(0, 100) {
+            let p = Point { x: i, y: j }
+            if dist2(p) > dist2(best) {
+                best = p
+            }
+        }
+    }
+    print_str("Best: ")
+    print(best)
+}

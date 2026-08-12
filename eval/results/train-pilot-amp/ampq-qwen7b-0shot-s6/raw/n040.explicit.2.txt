@@ -1,0 +1,11 @@
+fn area_square(side: Int) -> Float {
+    side * side * 3.0
+}
+
+fn main() {
+    let square = 4
+    let area = area_square(square)
+    print_str("Area of square: ")
+    print(area)
+    drop square
+}

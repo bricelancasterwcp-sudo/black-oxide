@@ -1,0 +1,10 @@
+fn main() {
+    let word = "banana";
+    let mut count = 0;
+    for letter in word.chars() {
+        if letter == 'a' {
+            count += 1;
+        }
+    }
+    println!("The letter 'a' appears {} times in the word '{}'", count, word);
+}

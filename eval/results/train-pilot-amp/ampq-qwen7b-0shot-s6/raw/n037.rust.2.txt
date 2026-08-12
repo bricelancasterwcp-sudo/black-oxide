@@ -1,0 +1,6 @@
+fn main() {
+    let width = 2;
+    let height = 3;
+    let new_width = 5;
+    println!("The area is {}", new_width * height);
+}

@@ -1,0 +1,20 @@
+```rust
+use std::io::{stdin, StdoutLock, Write};
+
+fn main() {
+    let mut total = 0;
+    let mut count = 0;
+
+    // Read and sum the numbers
+    for line in stdin().lines() {
+        let line = line.unwrap();
+        let number: i32 = line.parse().unwrap();
+        total += number;
+        count += 1;
+    }
+
+    // Calculate and print the mean
+    let mean = total / count;
+    print!("Mean: {}", mean);
+}
+```

@@ -1,0 +1,5 @@
+fn main() {
+    let mut readings = [5, 3, 9, 1, 7];
+    readings.sort_unstable();
+    println!("{}", readings[0]);
+}

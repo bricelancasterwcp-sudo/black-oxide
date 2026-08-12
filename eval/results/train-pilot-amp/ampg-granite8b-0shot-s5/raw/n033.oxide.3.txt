@@ -1,0 +1,10 @@
+fn main() {
+    let x = true
+    let y = true
+    while x {
+        print_str("go for green ")
+        y = false
+        x = y
+    }
+    print_str("stop for red\n")
+}

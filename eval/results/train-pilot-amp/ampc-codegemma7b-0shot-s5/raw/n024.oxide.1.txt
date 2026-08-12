@@ -1,0 +1,10 @@
+fn main() {
+    let s = Str("banana")
+    let mut count = 0
+    for c in chars(s) {
+        if c == Str("a") {
+            count = count + 1
+        }
+    }
+    print(count)
+}

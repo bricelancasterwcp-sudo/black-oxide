@@ -1,0 +1,103 @@
+fn first_six_multiples_of_four() -> Vec<Int> {
+    let mut result = vec()
+    for x in 0 {
+        if x % 4 == 0 {
+            result = push(result, x)
+            if result.len() == 6 {
+                break
+            }
+        }
+    }
+    result
+}
+
+fn sum(v: Vec<Int>) -> Int {
+    let mut result = 0
+    for x in v {
+        result = result + x
+    }
+    result
+}
+
+fn main() {
+    let v = first_six_multiples_of_four()
+    print(sum(v))
+}
+
+fn first_six_multiples_of_four() -> Vec<Int> {
+    let mut result = vec()
+    for x in 0 {
+        if x % 4 == 0 {
+            result = push(result, x)
+            if result.len() == 6 {
+                break
+            }
+        }
+    }
+    result
+}
+
+fn sum(v: Vec<Int>) -> Int {
+    let mut result = 0
+    for x in v {
+        result = result + x
+    }
+    result
+}
+
+fn main() {
+    let v = first_six_multiples_of_four()
+    print(sum(v))
+}
+
+fn first_six_multiples_of_four() -> Vec<Int> {
+    let mut result = vec()
+    for x in 0 {
+        if x % 4 == 0 {
+            result = push(result, x)
+            if result.len() == 6 {
+                break
+            }
+        }
+    }
+    result
+}
+
+fn sum(v: Vec<Int>) -> Int {
+    let mut result = 0
+    for x in v {
+        result = result + x
+    }
+    result
+}
+
+fn main() {
+    let v = first_six_multiples_of_four()
+    print(sum(v))
+}
+
+fn first_six_multiples_of_four() -> Vec<Int> {
+    let mut result = vec()
+    for x in 0 {
+        if x % 4 == 0 {
+            result = push(result, x)
+            if result.len() == 6 {
+                break
+            }
+        }
+    }
+    result
+}
+
+fn sum(v: Vec<Int>) -> Int {
+    let mut result = 0
+    for x in v {
+        result = result + x
+    }
+    result
+}
+
+fn main() {
+    let v = first_six_multiples_of_four()
+    print(sum(v))
+}

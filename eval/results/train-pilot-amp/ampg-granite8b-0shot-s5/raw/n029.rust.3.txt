@@ -1,0 +1,7 @@
+fn main() {
+    let mut output = String::new();
+    output.push_str("one ");
+    output.push_str("two ");
+    output.push_str("three");
+    println!("{}", output);
+}

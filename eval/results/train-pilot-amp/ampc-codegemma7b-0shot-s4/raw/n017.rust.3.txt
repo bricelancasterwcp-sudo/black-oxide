@@ -1,0 +1,15 @@
+use std::collections::LinkedList;
+
+fn main() {
+    let mut list = LinkedList::new();
+    list.push_back(10);
+    list.push_back(20);
+    list.push_back(30);
+    list.push_back(40);
+
+    if let Some(entry) = list.get(2) {
+        println!("{}", entry);
+    } else {
+        println!("missing");
+    }
+}

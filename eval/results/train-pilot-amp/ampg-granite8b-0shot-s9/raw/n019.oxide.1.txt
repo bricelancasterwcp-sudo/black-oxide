@@ -1,0 +1,28 @@
+struct List {
+    first: Int,
+    rest: Option<Box<List>>,
+}
+
+fn length(ls: List) -> Int {
+    let n = len(ls.rest)?
+    n + 1
+}
+
+fn main() {
+    let one = List { first: 1, rest: None }
+    let two_and_three = List { first: 2, rest: Some(box(List { first: 3, rest: None })) }
+    let ls = List { first: 4, rest: Some(box(two_and_three)) }
+    print(length(ls))
+}
+
+struct Point { x: Float, y: Float }
+
+fn move_and_print(p: Point) {
+    print(p.x)
+    print(p.y)
+}
+
+fn main() {
+    let p = Point { x: 3.14, y: 2.71 }
+    move_and_print(p)
+}

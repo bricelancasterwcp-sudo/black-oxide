@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let readings = vec![5, 3, 9, 1, 7];
+    let largest = readings.into_iter().max().unwrap();
+    println!("{}", largest);
+}
+```

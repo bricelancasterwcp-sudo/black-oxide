@@ -1,0 +1,5 @@
+fn main() {
+    let list = vec(1, 2)
+    print(get(&list, 5))
+    drop list
+}

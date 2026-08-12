@@ -1,0 +1,12 @@
+fn len(s: &Str) -> Int {
+    let mut count = 0
+    for _ in chars(s) {
+        count = count + 1
+    }
+    count
+}
+
+fn main() {
+    let str_lit_str = str_lit("programming")
+    print(len(&str_lit_str))
+}

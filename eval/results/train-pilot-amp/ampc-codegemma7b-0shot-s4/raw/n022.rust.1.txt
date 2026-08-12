@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let word1 = "black";
+    let word2 = "oxide";
+    let joined = word1.to_string() + &word2.to_string();
+    println!("{}", joined);
+}
+```

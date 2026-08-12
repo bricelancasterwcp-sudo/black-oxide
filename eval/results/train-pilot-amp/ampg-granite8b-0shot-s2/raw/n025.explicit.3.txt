@@ -1,0 +1,22 @@
+fn read(text: &Str) -> Int {
+    match parse_int(text) {
+        Some(n) => n,
+        None => {
+            print_str("bad\n")
+            0
+        },
+    }
+}
+
+fn add_one(n: Int) -> Int {
+    n + 1
+}
+
+fn write(n: Int) {
+    print(n)
+}
+
+fn main() {
+    let n = add_one(read(&ampquo417))
+    write(n)
+}

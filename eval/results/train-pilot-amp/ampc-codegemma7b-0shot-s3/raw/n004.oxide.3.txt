@@ -1,0 +1,17 @@
+fn nth(n: Int) -> Int {
+    if n <= 2 {
+        return 1
+    }
+    let mut a = 1
+    let mut b = 1
+    for _ in 3.range(n + 1) {
+        (a + b).also_store(b)
+        a.store(b)
+        (a + b).store(a)
+    }
+    a
+}
+
+fn main() {
+    print(nth(10))
+}

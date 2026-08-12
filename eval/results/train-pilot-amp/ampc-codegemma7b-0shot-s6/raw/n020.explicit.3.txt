@@ -1,0 +1,325 @@
+fn mean(nums: &Vec<Int>) -> Int {
+    let total = 0
+    for num in &nums {
+        total = total + num
+    }
+    total / nums.len()
+}
+
+fn main() {
+    let nums = vec(4, 8, 15, 16, 23, 42)
+    print(mean(&nums))
+    drop nums
+}
+
+fn clone(x: &Int) -> Int {
+    let mut y = 0
+    y = y + &x
+    y
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut v = v
+    v.push(x)
+    v
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    let mut count = 0
+    for _ in &v {
+        count = count + 1
+    }
+    count
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    if i < v.len() {
+        Some(v.get(i))
+    } else {
+        None
+    }
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut v = vec()
+    for i in a + 1 < b {
+        v.push(i)
+    }
+    v
+}
+
+fn str_len(s: &Str) -> Int {
+    let mut count = 0
+    for _ in s {
+        count = count + 1
+    }
+    count
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    let mut c = String.new()
+    c.push_str(a)
+    c.push_str(b)
+    c
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut v = vec()
+    for c in s {
+        v.push(c.to_string())
+    }
+    v
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut c = String.new()
+    c.push_str(&n)
+    c
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    let mut n = 0
+    for c in s {
+        if c.is_digit(10) {
+            n = n * 10 + (c.to_digit(10).unwrap() - 48)
+        } else {
+            return None
+        }
+    }
+    Some(n)
+}
+
+fn to_float(n: Int) -> Float {
+    n
+}
+
+fn trunc(x: Int) -> Int {
+    if x < 0 {
+        x
+    } else {
+        x
+    }
+}
+
+fn print(x: Int) {
+    println("{}", x)
+}
+
+fn print_str(s: &Str) {
+    println("{}", s)
+}
+
+fn vec() -> Vec<Int> {
+    vec()
+}
+
+fn clone(x: &Int) -> Int {
+    let mut y = 0
+    y = y + &x
+    y
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut v = v
+    v.push(x)
+    v
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    let mut count = 0
+    for _ in &v {
+        count = count + 1
+    }
+    count
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    if i < v.len() {
+        Some(v.get(i))
+    } else {
+        None
+    }
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut v = vec()
+    for i in a + 1 < b {
+        v.push(i)
+    }
+    v
+}
+
+fn str_len(s: &Str) -> Int {
+    let mut count = 0
+    for _ in s {
+        count = count + 1
+    }
+    count
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    let mut c = String.new()
+    c.push_str(a)
+    c.push_str(b)
+    c
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut v = vec()
+    for c in s {
+        v.push(c.to_string())
+    }
+    v
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut c = String.new()
+    c.push_str(&n)
+    c
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    let mut n = 0
+    for c in s {
+        if c.is_digit(10) {
+            n = n * 10 + (c.to_digit(10).unwrap() - 48)
+        } else {
+            return None
+        }
+    }
+    Some(n)
+}
+
+fn to_float(n: Int) -> Float {
+    n
+}
+
+fn trunc(x: Int) -> Int {
+    if x < 0 {
+        x
+    } else {
+        x
+    }
+}
+
+fn print(x: Int) {
+    println("{}", x)
+}
+
+fn print_str(s: &Str) {
+    println("{}", s)
+}
+
+fn vec() -> Vec<Int> {
+    vec()
+}
+
+fn clone(x: &Int) -> Int {
+    let mut y = 0
+    y = y + &x
+    y
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut v = v
+    v.push(x)
+    v
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    let mut count = 0
+    for _ in &v {
+        count = count + 1
+    }
+    count
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    if i < v.len() {
+        Some(v.get(i))
+    } else {
+        None
+    }
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut v = vec()
+    for i in a + 1 < b {
+        v.push(i)
+    }
+    v
+}
+
+fn str_len(s: &Str) -> Int {
+    let mut count = 0
+    for _ in s {
+        count = count + 1
+    }
+    count
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    let mut c = String.new()
+    c.push_str(a)
+    c.push_str(b)
+    c
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut v = vec()
+    for c in s {
+        v.push(c.to_string())
+    }
+    v
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut c = String.new()
+    c.push_str(&n)
+    c
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    let mut n = 0
+    for c in s {
+        if c.is_digit(10) {
+            n = n * 10 + (c.to_digit(10).unwrap() - 48)
+        } else {
+            return None
+        }
+    }
+    Some(n)
+}
+
+fn to_float(n: Int) -> Float {
+    n
+}
+
+fn trunc(x: Int) -> Int {
+    if x < 0 {
+        x
+    } else {
+        x
+    }
+}
+
+fn print(x: Int) {
+    println("{}", x)
+}
+
+fn print_str(s: &Str) {
+    println("{}", s)
+}
+
+fn vec() -> Vec<Int> {
+    vec()
+}
+
+fn clone(x: &Int) -> Int {
+    let mut y = 0
+    y = y + &x
+    y
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let

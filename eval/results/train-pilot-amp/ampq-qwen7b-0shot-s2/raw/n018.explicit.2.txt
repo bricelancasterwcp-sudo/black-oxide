@@ -1,0 +1,12 @@
+fn print_reverse(v: Vec<Int>) {
+    let mut v = v.into_iter().rev().collect(VecInt)
+    while letSome(x) == v.pop() {
+        print(x)
+    }
+    drop v
+}
+
+fn main() {
+    let nums = vec(1, 2, 3, 4)
+    print_reverse(nums)
+}

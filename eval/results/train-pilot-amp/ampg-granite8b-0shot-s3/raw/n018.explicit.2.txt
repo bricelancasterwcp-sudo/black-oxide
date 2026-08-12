@@ -1,0 +1,12 @@
+fn list_print(list: &Vec<Int>) {
+    for item in &list {
+        print(item)
+        print("\n")
+    }
+}
+
+fn main() {
+    let list = push(push(push(vec(), 4), 3), 2)
+    list_print(&list)
+    drop list
+}

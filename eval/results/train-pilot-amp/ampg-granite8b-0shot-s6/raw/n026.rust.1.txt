@@ -1,0 +1,4 @@
+fn main() {
+    let _ = 2026;
+    println!("{}", format!("{:?}", _).chars().count())
+}

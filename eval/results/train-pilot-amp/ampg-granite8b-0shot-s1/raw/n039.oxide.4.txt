@@ -1,0 +1,38 @@
+struct List { head: Entry, tail: Vec<Entry> }
+
+enum Entry {
+    One,
+    Two,
+}
+
+fn get(list: List, i: Int) -> Option<Entry> {
+    if i >= 0 && i < list.len() {
+        return Some(get_aux(list, i)?)
+    } else {
+        return None
+    }
+}
+
+fn get_aux(list: List, i: Int) -> Option<Entry> {
+    if list.head == One {
+        if i == 0 {
+            return Some(One)
+        } else {
+            return get_aux(List { head: Two, tail: list.tail }, i - 1)
+        }
+    } else {
+        if i == 0 {
+            return Some(Two)
+        } else {
+            return get_aux(List { head: One, tail: list.tail }, i - 1)
+        }
+    }
+}
+
+fn main() {
+    let list = List { head: One, tail: push(push(vec(), One), Two) }
+    match get(list, 5) {
+        Some(n) => print(n),
+        None => print_str("no 5th entry"),
+    }
+}

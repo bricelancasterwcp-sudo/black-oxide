@@ -1,0 +1,4 @@
+fn main() {
+    let text = push(push(push(vec(), "one"), "two"), "three")
+    print(text)
+}

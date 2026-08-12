@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut sum = 0;
+    for c in "9875".chars() {
+        sum += c.to_digit(10).unwrap();
+    }
+    println!("{}", sum);
+}
+```
+
+This program uses a for loop to iterate over each character in the string "9875". For each character, it uses the to_digit method to convert it to an integer between 0 and 9, and then adds it to the sum variable. Finally, it prints the sum.

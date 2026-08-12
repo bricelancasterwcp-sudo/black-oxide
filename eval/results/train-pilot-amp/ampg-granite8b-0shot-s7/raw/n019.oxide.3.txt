@@ -1,0 +1,28 @@
+struct Stack {
+    top: Int,
+    data: Vec<Int>,
+}
+
+fn pop(s: Stack) -> Option<Int> {
+    if s.top <= 0 {
+        None
+    } else {
+        Some(get(s.data, s.top - 1)?)
+    }
+}
+
+fn push(s: Stack, x: Int) -> Stack {
+    let top = s.top + 1
+    let data = push(s.data, x)
+    Stack(top, data)
+}
+
+fn main() {
+    let s0 = Stack(0, vec())
+    let s1 = push(s0, 1)
+    let s2 = push(s1, 2)
+    let s3 = push(s2, 3)
+    let s4 = push(s3, 4)
+    let s5 = push(s4, 5)
+    print(len(s5.data) - s5.top)
+}

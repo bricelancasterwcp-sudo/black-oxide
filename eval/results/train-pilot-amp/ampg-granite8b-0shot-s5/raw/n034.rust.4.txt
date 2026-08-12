@@ -1,0 +1,17 @@
+const fn sec(xs: [isize; 3]) -> Option<isize> {
+    if xs.len() > 1 {
+        Some(xs[1])
+    } else {
+        None
+    }
+}
+
+fn main() {
+    let a = sec([7, 8, 9]);
+    let b = sec([8, 9, 10]);
+    let c = sec([9, 10, 11]);
+
+    println!("{:?}", a);
+    println!("{:?}", b);
+    println!("{:?}", c);
+}

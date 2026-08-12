@@ -1,0 +1,14 @@
+fn main() {
+  let mut a = 1;
+  let mut b = 1;
+  let mut count = 0;
+
+  while count < 9 {
+    let c = a + b;
+    a = b;
+    b = c;
+    count += 1;
+  }
+
+  println!("{}", b);
+}

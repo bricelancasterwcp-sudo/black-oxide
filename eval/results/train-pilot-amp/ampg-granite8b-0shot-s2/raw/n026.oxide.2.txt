@@ -1,0 +1,10 @@
+struct Circle { radius: Float }
+
+fn area(c: Circle) -> Float {
+    c.radius * c.radius * 3.14
+}
+
+fn main() {
+    let circle = Circle { radius: 1.5 }
+    print(area(circle))
+}

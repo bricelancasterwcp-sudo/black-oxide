@@ -1,0 +1,13 @@
+fn read_number(text: &Str) -> Option<Int> {
+    parse_int(text)
+}
+
+fn main() {
+    let text = "417"
+    let number = read_number(text)
+    if letSome(number) == number {
+        print(number + 1)
+    } else {
+        print("bad")
+    }
+}

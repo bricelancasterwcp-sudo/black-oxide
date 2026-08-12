@@ -1,0 +1,439 @@
+fn main() {
+    let rectangle = Rectangle { width: 7, height: 6 }
+    print(area(&rectangle))
+}
+
+struct Rectangle { width: Int, height: Int }
+
+fn area(rectangle: &Rectangle) -> Int {
+    rectangle.width * rectangle.height
+}
+
+fn print(x: Int) {
+    print_str("The area is ")
+    print_int(x)
+    print_str(".\n")
+}
+
+fn print_str(s: Str) {
+    todo()
+}
+
+fn print_int(n: Int) {
+    todo()
+}
+
+fn todo() {
+    loop()
+}
+
+fn clone(x: T) -> T {
+    todo()
+}
+
+fn loop() {
+    todo()
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    todo()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    todo()
+}
+
+fn get(v: Vec<T>, i: Int) -> Option<T> {
+    todo()
+}
+
+fn vec() -> Vec<T> {
+    todo()
+}
+
+fn str_len(s: Str) -> Int {
+    todo()
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    todo()
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    todo()
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    todo()
+}
+
+fn to_float(n: Int) -> Float {
+    todo()
+}
+
+fn trunc(x: Float) -> Int {
+    todo()
+}
+
+fn int_to_str(n: Int) -> Str {
+    todo()
+}
+
+fn drop_all(v: Vec<T>) {
+    todo()
+}
+
+fn drop_option(o: Option<T>) {
+    todo()
+}
+
+fn drop_result(r: Result<T, E>) {
+    todo()
+}
+
+fn drop_string(s: Str) {
+    todo()
+}
+
+fn drop_int(n: Int) {
+    todo()
+}
+
+fn drop_float(n: Float) {
+    todo()
+}
+
+fn drop_bool(b: Bool) {
+    todo()
+}
+
+fn drop_char(c: Char) {
+    todo()
+}
+
+fn drop_unit() {
+    todo()
+}
+
+fn print_string(s: Str) {
+    todo()
+}
+
+fn print_int(n: Int) {
+    todo()
+}
+
+fn print_float(x: Float) {
+    todo()
+}
+
+fn print_bool(b: Bool) {
+    todo()
+}
+
+fn print_char(c: Char) {
+    todo()
+}
+
+fn print_unit() {
+    todo()
+}
+
+fn print_newline() {
+    todo()
+}
+
+fn read_line() -> Str {
+    todo()
+}
+
+fn assert_eq_int(a: Int, b: Int) {
+    todo()
+}
+
+fn assert_eq_string(a: Str, b: Str) {
+    todo()
+}
+
+fn assert_eq_bool(a: Bool, b: Bool) {
+    todo()
+}
+
+fn assert_eq_float(a: Float, b: Float) {
+    todo()
+}
+
+fn assert(b: Bool) {
+    todo()
+}
+
+fn panic(s: Str) -> T {
+    todo()
+}
+
+fn panic_int(n: Int) -> T {
+    todo()
+}
+
+fn panic_float(f: Float) -> T {
+    todo()
+}
+
+fn panic_char(c: Char) -> T {
+    todo()
+}
+
+fn panic_bool(b: Bool) -> T {
+    todo()
+}
+
+fn panic_unit() -> T {
+    todo()
+}
+
+fn panic_string(s: Str) -> T {
+    todo()
+}
+
+fn panic_vec(v: Vec<T>) -> T {
+    todo()
+}
+
+fn panic_option(o: Option<T>) -> T {
+    todo()
+}
+
+fn panic_result(r: Result<T, E>) -> T {
+    todo()
+}
+
+fn todo() -> T {
+    todo()
+}
+
+fn panic_no_return() -> T {
+    todo()
+}
+
+fn not_implemented() -> T {
+    todo()
+}
+
+fn unreachable() -> T {
+    todo()
+}
+
+fn main() {
+    let rectangle = Rectangle { width: 7, height: 6 }
+    print(area(&rectangle))
+}
+
+struct Rectangle { width: Int, height: Int }
+
+fn area(rectangle: &Rectangle) -> Int {
+    rectangle.width * rectangle.height
+}
+
+fn print(x: Int) {
+    print_str("The area is ")
+    print_int(x)
+    print_str(".\n")
+}
+
+fn print_str(s: Str) {
+    todo()
+}
+
+fn print_int(n: Int) {
+    todo()
+}
+
+fn todo() {
+    loop()
+}
+
+fn clone(x: T) -> T {
+    todo()
+}
+
+fn loop() {
+    todo()
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    todo()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    todo()
+}
+
+fn get(v: Vec<T>, i: Int) -> Option<T> {
+    todo()
+}
+
+fn vec() -> Vec<T> {
+    todo()
+}
+
+fn str_len(s: Str) -> Int {
+    todo()
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    todo()
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    todo()
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    todo()
+}
+
+fn to_float(n: Int) -> Float {
+    todo()
+}
+
+fn trunc(x: Float) -> Int {
+    todo()
+}
+
+fn int_to_str(n: Int) -> Str {
+    todo()
+}
+
+fn drop_all(v: Vec<T>) {
+    todo()
+}
+
+fn drop_option(o: Option<T>) {
+    todo()
+}
+
+fn drop_result(r: Result<T, E>) {
+    todo()
+}
+
+fn drop_string(s: Str) {
+    todo()
+}
+
+fn drop_int(n: Int) {
+    todo()
+}
+
+fn drop_float(n: Float) {
+    todo()
+}
+
+fn drop_bool(b: Bool) {
+    todo()
+}
+
+fn drop_char(c: Char) {
+    todo()
+}
+
+fn drop_unit() {
+    todo()
+}
+
+fn print_string(s: Str) {
+    todo()
+}
+
+fn print_int(n: Int) {
+    todo()
+}
+
+fn print_float(x: Float) {
+    todo()
+}
+
+fn print_bool(b: Bool) {
+    todo()
+}
+
+fn print_char(c: Char) {
+    todo()
+}
+
+fn print_unit() {
+    todo()
+}
+
+fn print_newline() {
+    todo()
+}
+
+fn read_line() -> Str {
+    todo()
+}
+
+fn assert_eq_int(a: Int, b: Int) {
+    todo()
+}
+
+fn assert_eq_string(a: Str, b: Str) {
+    todo()
+}
+
+fn assert_eq_bool(a: Bool, b: Bool) {
+    todo()
+}
+
+fn assert_eq_float(a: Float, b: Float) {
+    todo()
+}
+
+fn assert(b: Bool) {
+    todo()
+}
+
+fn panic(s: Str) -> T {
+    todo()
+}
+
+fn panic_int(n: Int) -> T {
+    todo()
+}
+
+fn panic_float(f: Float) -> T {
+    todo()
+}
+
+fn panic_char(c: Char) -> T {
+    todo()
+}
+
+fn panic_bool(b: Bool) -> T {
+    todo()
+}
+
+fn panic_unit() -> T {
+    todo()
+}
+
+fn panic_string(s: Str) -> T {
+    todo()
+}
+
+fn panic_vec(v: Vec<T>) -> T {
+    todo()
+}
+
+fn panic_option(o: Option<T>) -> T {
+    todo()
+}
+
+fn panic_result(r: Result<T, E>) -> T {
+    todo()
+}
+
+fn todo() -> T {
+    todo()
+}
+
+fn panic_

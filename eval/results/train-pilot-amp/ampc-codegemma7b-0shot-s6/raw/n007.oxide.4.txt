@@ -1,0 +1,10 @@
+fn digits(n: Int) -> Int {
+    if n < 10 {
+        return n
+    }
+    digits(trunc(n / 10)) + trunc((n % 10).to_float()).to_int()
+}
+
+fn main() {
+    print(digits(9875))
+}

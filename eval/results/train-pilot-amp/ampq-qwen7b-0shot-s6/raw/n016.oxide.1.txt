@@ -1,0 +1,31 @@
+struct List { next: Option<Box<List>>, value: Int }
+
+fn push_back(list: Option<Box<List>>, value: Int) -> Option<Box<List>> {
+    match list {
+        None => Some(Box { next: None, value: value }),
+        Some(mut_node) => {
+            let mut node = mut_node.as_mut().unwrap().next.take().unwrap_or_else(None) == Some(push_back(None, value))
+            Some(mut_node)
+        },
+    }
+}
+
+fn print_sum(list: Option<Box<List>>) {
+    match list {
+        None => print(0),
+        Some(mut_node) => {
+            let sum = mut_node.as_mut().unwrap().value + print_sum(mut_node.as_mut().unwrap().next.take().unwrap_or_else(None))
+            print(sum)
+        },
+    }
+}
+
+fn main() {
+    let mut list = None
+    for i in range(1, 11) {
+        if i % 3 == 0 {
+            list = push_back(list, i)
+        }
+    }
+    print_sum(list)
+}

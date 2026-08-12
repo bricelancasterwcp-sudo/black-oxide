@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let text = "417";
+    let number = text.parse::<i32>().unwrap_or(0);
+    if number != 0 {
+        println!("{}", number + 1);
+    } else {
+        println!("bad");
+    }
+}
+```

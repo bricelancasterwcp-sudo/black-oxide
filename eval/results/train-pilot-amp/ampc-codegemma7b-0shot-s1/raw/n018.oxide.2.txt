@@ -1,0 +1,6 @@
+fn main() {
+    let list = vec(1, 2, 3, 4)
+    for x in range(0, len(list)) {
+        print(get(list, len(list) - x - 1)?)
+    }
+}

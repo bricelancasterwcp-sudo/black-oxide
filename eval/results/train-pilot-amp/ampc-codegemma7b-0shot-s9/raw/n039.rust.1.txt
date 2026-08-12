@@ -1,0 +1,4 @@
+fn main() {
+    let list = vec![1, 2];
+    println!("{:?}", list[5]);
+}

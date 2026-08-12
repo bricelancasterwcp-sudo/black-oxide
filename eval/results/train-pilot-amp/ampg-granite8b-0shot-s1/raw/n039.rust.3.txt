@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let list = [1, 2];
+    let index = 5;
+
+    match list.get(index) {
+        Some(item) => println!("{}", item),
+        None => println!("None"),
+    }
+}
+```
+
+This program correctly uses the `get` method to access the element at the specified index in the `list`. If the index is out of bounds, the `get` method will return `None`, and the program will print "None".

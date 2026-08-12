@@ -1,0 +1,10 @@
+struct Vec2 { a: Vec<Int>, b: Vec<Int> }
+
+fn count_entries(v: Vec2) -> Int {
+    len(v.a) + len(v.b)
+}
+
+fn main() {
+    let v = Vec2 { a: push(push(vec(), 1), 2), b: push(push(vec(), 4), 5) }
+    print(count_entries(v))
+}

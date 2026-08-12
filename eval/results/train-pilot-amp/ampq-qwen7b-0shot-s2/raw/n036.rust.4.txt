@@ -1,0 +1,10 @@
+fn main() {
+    let item1_count = 4;
+    let item1_value = 3;
+    let item2_count = 5;
+    let item2_value = 2;
+
+    let total_value = (item1_count * item1_value) + (item2_count * item2_value);
+
+    println!("Total value held: {}", total_value);
+}

@@ -1,0 +1,15 @@
+fn count_vowels(s: Str) -> Int {
+    let mut count = 0
+    for c in chars(s) {
+        if matches(c, "aeiouAEIOU") {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn main() {
+    let word_sequence = "This is a string with vowels"
+    let total_vowels = count_vowels(word_sequence)
+    print(total_vowels)
+}

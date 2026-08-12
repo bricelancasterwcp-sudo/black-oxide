@@ -1,0 +1,27 @@
+struct List {
+    head: Int,
+    tail: Option<List>,
+}
+
+fn div3(n: Int) -> Option<Int> {
+    if n % 3 == 0 {
+        Some(n)
+    } else {
+        None
+    }
+}
+
+fn sum_list(l: List) -> Int {
+    match l.tail {
+        None => l.head,
+        Some(rest) => l.head + sum_list(rest)?,
+    }
+}
+
+fn main() {
+    let l = List { head: 1, tail: Some(List { head: 3, tail: Some(List { head: 6, tail: None }) }) }
+    match sum_list(l) {
+        Some(n) => print(n),
+        None => print_str("no numbers"),
+    }
+}

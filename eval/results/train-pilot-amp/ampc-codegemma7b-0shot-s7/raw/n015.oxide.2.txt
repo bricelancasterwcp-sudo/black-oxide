@@ -1,0 +1,13 @@
+fn count(v: Vec<Int>) -> Int {
+    let mut count = 0
+    for x in v {
+        if x > 4 {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn main() {
+    print(count(vec(1, 2, 3, 5, 9)))
+}

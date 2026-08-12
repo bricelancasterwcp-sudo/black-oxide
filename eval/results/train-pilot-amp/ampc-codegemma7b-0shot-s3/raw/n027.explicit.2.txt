@@ -1,0 +1,8 @@
+fn main() {
+    let s = "cat"
+    for c in &s {
+        print(c)
+        print("\n")
+    }
+    drop s
+}

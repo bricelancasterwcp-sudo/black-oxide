@@ -1,0 +1,70 @@
+fn main() {
+    let mut x = 4
+    let mut result = vec()
+    for _ in 0 <= 6 {
+        result = push(result, x)
+        x = x + 4
+    }
+    print(sum(&result))
+    drop result
+}
+
+fn sum(v: &Vec<Int>) -> Int {
+    let mut total = 0
+    for x in &v {
+        total = total + x
+    }
+    total
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut v = v
+    v = v + vec(x)
+    v
+}
+
+fn vec(x: Int) -> Vec<Int> {
+    vec(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print_str(s: Str) {
+    print_str(s)
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    len(v)
+}
+
+fn clone(x: Int) -> Int {
+    clone(x)
+}
+
+fn to_float(x: Int) -> Float {
+    to_float(x)
+}
+
+fn trunc(x: Float) -> Int {
+    trunc(x)
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    concat(a, b)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    range(a, b)
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    get(v, i)
+}
+
+fn main() {
+    let v = vec(1) + vec(2)
+    print(sum(&v))
+    drop v
+}

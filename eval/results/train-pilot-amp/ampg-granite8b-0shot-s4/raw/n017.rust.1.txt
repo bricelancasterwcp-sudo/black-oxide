@@ -1,0 +1,7 @@
+fn main() {
+    let numbers = vec![10, 20, 30, 40];
+    match numbers.get(2) {
+        Some(&number) => println!("{}", number),
+        None => println!("missing"),
+    }
+}

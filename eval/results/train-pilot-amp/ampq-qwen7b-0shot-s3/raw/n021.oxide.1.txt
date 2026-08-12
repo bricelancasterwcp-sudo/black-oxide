@@ -1,0 +1,10 @@
+struct Word { chars: Vec<Str> }
+
+fn count_chars(word: Word) -> Int {
+    len(word.chars)
+}
+
+fn main() {
+    let word = Word { chars: chars("programming") }
+    print(count_chars(word))
+}

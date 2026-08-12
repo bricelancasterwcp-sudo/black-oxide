@@ -1,0 +1,15 @@
+fn main() {
+    printed = false
+    for c in "banana" {
+        if c == "a" {
+            println(1)
+            printed = true
+            break
+            continue
+            return
+        }
+    }
+    if !printed {
+        println(0)
+    }
+}

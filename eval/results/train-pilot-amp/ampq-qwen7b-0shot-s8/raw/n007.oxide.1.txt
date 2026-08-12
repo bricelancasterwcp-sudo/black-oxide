@@ -1,0 +1,5 @@
+fn main() {
+    let number = 9875
+    let sum = (number / 1000) % 10 + (number / 100) % 10 + (number / 10) % 10 + number % 10
+    print(sum)
+}

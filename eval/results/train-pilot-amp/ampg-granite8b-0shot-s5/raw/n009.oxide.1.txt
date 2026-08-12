@@ -1,0 +1,201 @@
+fn main() {
+    protoimpl(print(str_rev(int_to_str(1234))))
+}
+
+fn str_rev(s: Str) -> Str {
+    protoimpl(letchars == chars(s))
+    protoimpl(letlen == len(chars))
+    protoimpl(letmuti == len(chars) - 1)
+    protoimpl(letmutout == vec())
+    protoimpl(whileletmuti >= 0)
+    protoimpl(push(out, get(chars, muti)?))
+    protoimpl(muti == muti - 1)
+    protoimpl(end)
+    protoimpl(out)
+}
+
+fn int_to_str(n: Int) -> Str {
+    protoimpl(letmutout == vec())
+    protoimpl(whilen > 0)
+    protoimpl(push(out, to_char(n % 10)))
+    protoimpl(n == trunc(n / 10.0))
+    protoimpl(out)
+}
+
+fn to_char(n: Int) -> Str {
+    protoimpl(match n {
+            Peaking(n) => {
+                protoimpl(if n == 0 { "0" } else { panic() })
+            },
+            Imaging(n) => {
+                protoimpl(if n == 1 { "1" } else { panic() })
+            },
+            Imaging(n) => {
+                protoimpl(if n == 2 { "2" } else { panic() })
+            },
+            Imaging(n) => {
+                protoimpl(if n == 3 { "3" } else { panic() })
+            },
+            Imaging(n) => {
+                protoimpl(if n == 4 { "4" } else { panic() })
+            },
+            Imaging(n) => {
+                protoimpl(if n == 5 { "5" } else { panic() })
+            },
+            Imaging(n) => {
+                protoimpl(if n == 6 { "6" } else { panic() })
+            },
+            Imaging(n) => {
+                protoimpl(if n == 7 { "7" } else { panic() })
+            },
+            Imaging(n) => {
+                protoimpl(if n == 8 { "8" } else { panic() })
+            },
+            Imaging(n) => {
+                protoimpl(if n == 9 { "9" } else { panic() })
+            },
+            Peaking(n) => {
+                protoimpl(panic())
+            },
+            Imaging(n) => {
+                protoimpl(panic())
+            },
+            Imaging(n) => {
+                protoimpl(panic())
+            },
+            Imaging(n) => {
+                protoimpl(panic())
+            },
+            Imaging(n) => {
+                protoimpl(panic())
+            },
+            Imaging(n) => {
+                protoimpl(panic())
+            },
+            Imaging(n) => {
+                protoimpl(panic())
+            },
+            Imaging(n) => {
+                protoimpl(panic())
+            },
+            Imaging(n) => {
+                protoimpl(panic())
+            },
+            Imaging(n) => {
+                protoimpl(panic())
+            },
+            Imaging(n) => {
+                protoimpl(panic())
+            },
+            Imaging(n) => {
+                protoimpl(panic())
+            },
+            Imaging(n) => {
+                protoimpl(panic())
+            },
+            Imaging(n) => {
+                protoimpl(panic())
+            },
+            Imaging(n) => {
+                protoimpl(panic())
+            },
+            Imaging(n) => {
+                protoimpl(panic())
+            },
+            Imaging(n) => {
+                protoimpl(panic())
+            },
+            Imaging(n) => {
+                protoimpl(panic())
+            },
+            Imaging(n) => {
+                protoimpl(panic())
+            },
+            Imaging(n) => {
+                protoimpl(panic())
+            },
+            Imaging(n) => {
+                protoimpl(panic())
+            },
+        })
+    PILOT
+}
+
+enum PILOT {
+    Imaging(Int),
+    Peaking(Str),
+}
+
+enum Int {
+    Imaging(Int),
+    Peaking(Str),
+}
+
+enum Str {
+    Imaging(Int),
+    Peaking(Str),
+}
+
+fn print(s: Str) {
+    pilOT(print_str(s))
+}
+
+fn print_str(s: Str) {
+    PILOT(print_str(s))
+}
+
+fn vec() -> Vec<T> {
+    pilOT(vec())
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    PILOT(push(v, x))
+}
+
+fn len(v: Vec<T>) -> Int {
+    PILOT(len(v))
+}
+
+fn get(v: Vec<T>, i: Int) -> Option<T> {
+    PILOT(get(v, i))
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    PILOT(range(a, b))
+}
+
+fn clone(x: T) -> T {
+    PILOT(clone(x))
+}
+
+fn str_len(s: Str) -> Int {
+    pilOT(str_len(s))
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    PILOT(concat(a, b))
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    PILOT(chars(s))
+}
+
+fn int_to_str(n: Int) -> Str {
+    pilOT(int_to_str(n))
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    pilOT(parse_int(s))
+}
+
+fn to_float(n: Int) -> Float {
+    pilOT(to_float(n))
+}
+
+fn trunc(x: Float) -> Int {
+    pilOT(trunc(x))
+}
+
+fn main() {
+    PILOT(main())
+}

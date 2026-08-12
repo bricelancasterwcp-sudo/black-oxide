@@ -1,0 +1,4 @@
+fn main() {
+    let text = 2026.to_string();
+    println!("{} has {} characters", text, text.len());
+}

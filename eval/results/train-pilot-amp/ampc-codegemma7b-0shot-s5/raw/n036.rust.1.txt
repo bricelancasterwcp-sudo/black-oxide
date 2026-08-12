@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let four_packs = 4 * 3;
+    let five_packs = 5 * 2;
+    let total = four_packs + five_packs;
+    println!("Total value held: {}", total);
+}
+```

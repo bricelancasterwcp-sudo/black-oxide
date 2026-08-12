@@ -1,0 +1,6 @@
+fn main() {
+    let num_str = "417"
+    let num = parse_int(num_str)?
+    let result = num + 1
+    print(result)
+}

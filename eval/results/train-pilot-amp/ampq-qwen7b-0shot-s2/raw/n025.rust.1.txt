@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    match std::str::FromStr::from_str("417") {
+        Ok(num) => println!("{}", num + 1),
+        Err(_) => println!("bad"),
+    }
+}
+```

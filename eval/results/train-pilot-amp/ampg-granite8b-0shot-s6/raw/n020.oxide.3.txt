@@ -1,0 +1,54 @@
+struct Reading { label: Str, values: Vec<Int> }
+
+fn first_big(v: Vec<Int>) -> Int {
+    let found = -1
+    for x in v {
+        if x > 10 {
+            found = x
+            break
+        }
+    }
+    found
+}
+
+fn second(v: Vec<Int>) -> Option<Int> {
+    let x = get(v, 1)?
+    Some(x + 1)
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(vec(), 3), 42) }
+    print(first_big(r.values))            // field access copies: r stays usable
+    let r2 = Reading { label: "lab2", ..r }
+    match second(r2.values) {
+        Some(n) => print(n),
+        None => print_str("too short"),
+    }
+}
+
+fn mean(v: Vec<Int>) -> Float {
+    let sum = reduce(v, 0, (accu_sum_so_far_x_new_val) || accu_sum_so_far + x)
+    sum / len(v)
+}
+
+fn reduce(v: Vec<Int>, init: Int, f: Int, init: Int) -> Int {
+    let mut accu = init
+    for x in v {
+        accu = f(accu, x)
+    }
+    accu
+}
+
+fn readings() -> Vec<Int> {
+    let r1 = parse_int("4")
+    let r2 = parse_int("8")
+    let r3 = parse_int("15")
+    let r4 = parse_int("16")
+    let r5 = parse_int("23")
+    let r6 = parse_int("42")
+    concat(concat(concat(concat(concat(vec(), r1), r2), r3), r4), concat(r5, r6))
+}
+
+fn main() {
+    print(mean(readings()))
+}

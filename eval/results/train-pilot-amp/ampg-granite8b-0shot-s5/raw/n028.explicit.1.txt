@@ -1,0 +1,100 @@
+fn main() {
+    let abcs = vec("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0")
+    let text = abcs.join("")
+    let numbers: Vec<Int> = text.chars().map(parse_int).filter(is_some).map(unwrap).collect()
+    let sum = numbers.iter().fold(0, add)
+    print(sum)
+}
+
+fn is_some(x: &Option<Int>) -> Bool {
+    match x {
+        Some(_) => true,
+        _ => false,
+    }
+}
+
+fn unwrap(x: &Option<Int>) -> Int {
+    match x {
+        Some(a) => a,
+        _ => -1,
+    }
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    if s == "" {
+        return None
+    }
+    let first = char_at(s, 0)
+    if first == "-" || first == "+" {
+        let tail = substring(s, 1, len(s) - 1)
+        parse_int(&tail).map(mul(if first == "-" { -1 } else { 1 }))
+    } else if first >= "0" && first <= "9" {
+        let mut n = 0
+        for c in chars(s) {
+            let digit = ord(c) - ord("0")
+            if digit < 0 || digit > 9 {
+                return None
+            }
+            n = n * 10 + digit
+        }
+        Some(n)
+    } else {
+        None
+    }
+}
+
+fn char_at(s: &Str, n: Int) -> Str {
+    let cs = chars(s)
+    let mut i = 0
+    while i < n {
+        cs.next()
+        i = i + 1
+    }
+    cs.next().unwrap_or("")
+}
+
+fn substring(s: &Str, start: Int, end: Int) -> Str {
+    let cs = chars(s)
+    let mut i = 0
+    let mut buf = ""
+    while i < start {
+        buf = buf + cs.next().unwrap_or("")
+        i = i + 1
+    }
+    while i <= end {
+        buf = buf + cs.next().unwrap_or("")
+        i = i + 1
+    }
+    buf
+}
+
+fn mul(x: Int, y: Int) -> Int {
+    x * y
+}
+
+fn ord(c: &Str) -> Int {
+    c.as_bytes().get(0).unwrap_or(&b).to_int()
+}
+
+fn len(s: &Str) -> Int {
+    chars(s).count()
+}
+
+fn print(x: Int) {
+    print_str(str_from_int(x))
+}
+
+fn print_str(s: &Str) {
+    native_print(s)
+}
+
+fn native_print(s: &Str) {
+    print(s)
+}
+
+fn str_from_int(n: Int) -> Str {
+    let s = &format_string_int_radix_shortest_upper_ascii_hexadecimal_no_0x_padding_no_trailing_zeros_no_sign_for_zero_123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345

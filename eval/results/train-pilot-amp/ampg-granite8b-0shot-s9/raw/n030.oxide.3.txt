@@ -1,0 +1,20 @@
+struct Words { vowels: Vec<Int>, consonants: Vec<Int> }
+
+fn count_vowels(w: Str) -> Words {
+    let mut vowels = vec()
+    let mut consonants = vec()
+    for c in chars(w) {
+        match c {
+            Str(s) => match s {
+                _ => consonants == push(consonants, 1) * consonants,
+            },
+        }
+    }
+    Words(vowels, consonants)
+}
+
+fn main() {
+    let w = "oxide"
+    let Words { vowels, consonants } = count_vowels(w)
+    print(len(vowels))
+}

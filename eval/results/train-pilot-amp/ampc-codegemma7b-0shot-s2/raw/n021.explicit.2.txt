@@ -1,0 +1,11 @@
+fn count(s: &Str) -> Int {
+    let mut total = 0
+    for c in chars(s) {
+        total = total + 1
+    }
+    total
+}
+
+fn main() {
+    print(count(&str_lit_str_literal_programming))
+}

@@ -1,0 +1,5 @@
+fn main() {
+    let list1 = [1, 2, 3];
+    let list2 = [4, 5];
+    println!("{} entries in between", list1[list1.len() - 1] + list2[list2.len() - 1] - list1[0] - list2[0]);
+}

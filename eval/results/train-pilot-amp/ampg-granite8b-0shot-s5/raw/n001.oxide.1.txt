@@ -1,0 +1,20 @@
+struct Point { x: Float, y: Float }
+
+fn main() {
+    let origin = Point { x: 0.0, y: 0.0 }
+    let mut p = origin
+    for dx in range(-3, 3) {
+        for dy in range(-3, 3) {
+            let dx2 = dx * dx
+            let dy2 = dy * dy
+            let dist2 = dx2 + dy2
+            if dist2 < 10 {
+                p.x = dx
+                p.y = dy
+                print(p)
+            }
+            break
+        }
+        break
+    }
+}

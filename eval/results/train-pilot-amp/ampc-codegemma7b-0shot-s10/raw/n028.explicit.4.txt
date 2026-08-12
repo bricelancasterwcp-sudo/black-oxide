@@ -1,0 +1,8 @@
+fn main() {
+    let number = parse_int("abc")
+    if number.is_none() {
+        print("bad")
+    } else {
+        print("good")
+    }
+}

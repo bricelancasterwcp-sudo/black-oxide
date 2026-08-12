@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let list: [i32; 2] = [1, 2];
+    let entry = list.get(4);
+    match entry {
+        Some(&e) => println!("{}", e),
+        None => println!("none"),
+    }
+}
+```

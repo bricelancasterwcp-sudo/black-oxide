@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let list = (0..15).collect::<Vec<i32>>();
+    println!("Length of list: {}", list.len());
+}
+```
+
+This code snippet creates a list of whole numbers starting from 0 and stopping before 15. It uses the `collect` method to collect the numbers into a `Vec` (vector) data structure. The length of the list is then printed using `println!` macro.

@@ -1,0 +1,18 @@
+fn cube(x: Int) -> Int {
+    x * x * x
+}
+
+fn sum_cubes(v: &Vec<Int>) -> Int {
+    let total = 0
+    for x in &v {
+        total = total + cube(x)
+    }
+    total
+}
+
+fn main() {
+    let nums = vec(1, 2, 3, 4, 5)
+    let total = sum_cubes(&nums)
+    print(total)
+    drop nums
+}

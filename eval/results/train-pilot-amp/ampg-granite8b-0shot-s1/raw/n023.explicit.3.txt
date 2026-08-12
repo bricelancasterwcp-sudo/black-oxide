@@ -1,0 +1,7 @@
+fn phrase_chars(phrase: Str) -> Int {
+    len(phrase) + 1
+}
+
+fn main() {
+    print(phrase_chars("hello world"))
+}

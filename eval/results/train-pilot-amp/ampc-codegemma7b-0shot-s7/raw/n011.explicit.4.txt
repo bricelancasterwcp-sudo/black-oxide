@@ -1,0 +1,13 @@
+fn main() {
+    let mut numbers = push(push(push(push(vec(), 4), 8), 12), 16)
+    let total = get(&numbers, 0).unwrap() + get(&numbers, 1).unwrap() + get(&numbers, 2).unwrap() + get(&numbers, 3).unwrap()
+    print(total)
+    drop numbers
+}
+
+fn main() {
+    let mut numbers = push(push(push(push(vec(), 4), 8), 12), 16)
+    let total = get(&numbers, 0).unwrap() + get(&numbers, 1).unwrap() + get(&numbers, 2).unwrap() + get(&numbers, 3).unwrap()
+    print(total)
+    drop numbers
+}

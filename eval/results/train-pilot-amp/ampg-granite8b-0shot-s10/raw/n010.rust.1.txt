@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let n = 91;
+    let mut is_prime = true;
+    for i in 2..=n/2 {
+        if n % i == 0 {
+            is_prime = false;
+            break;
+        }
+    }
+    println!("{}", if is_prime { "yes" } else { "no" });
+}
+```
+
+The program first initializes the variable `n` with the value 91. Then it initializes a boolean variable `is_prime` to true. The program then uses a for loop to iterate over the numbers from 2 to `n/2`. In each iteration, it checks whether `n` is divisible by the current number `i`. If it is, then `n` is not prime and the `is_prime` variable is set to false. The loop is then terminated using the `break` keyword. Finally, the program prints the value of the `is_prime` variable, which will be "yes" if `n` is prime and "no" otherwise.

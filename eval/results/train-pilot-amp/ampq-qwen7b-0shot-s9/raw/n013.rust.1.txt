@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let readings = [5, 3, 9, 1, 7];
+    let max = readings.iter().cloned().max().unwrap();
+    println!("{}", max);
+}
+```

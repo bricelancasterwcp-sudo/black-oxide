@@ -1,0 +1,103 @@
+fn main() {
+    let mut acc = vec()
+    for i in 0.range(6) {
+        acc = push(acc, i * 4)
+    }
+    let sum = acc.iter().fold(0, add)
+    print(sum)
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    for c in chars(s) {
+        print(c)
+    }
+}
+
+fn int_to_str(n: Int) -> Str {
+    if n == 0 {
+        return "0"
+    }
+    let mut digits = vec()
+    let mut n2 = n
+    while n2 > 0 {
+        digits = push(digits, n2 % 10)
+        n2 = trunc(n2 / 10)
+    }
+    let mut result = vec()
+    for d in digits.iter().rev() {
+        result = push(result, int_to_str(d))
+    }
+    concat(result)
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = vec()
+    for i in 0.range(str_len(s)) {
+        result = push(result, get(s, i)?)
+    }
+    result
+}
+
+fn str_len(s: Str) -> Int {
+    let mut count = 0
+    for _ in chars(s) {
+        count = count + 1
+    }
+    count
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    if i >= len(v) {
+        return None
+    }
+    Some(v.clone().get(i))
+}
+
+fn len(v: Vec<Int>) -> Int {
+    let mut count = 0
+    for _ in v {
+        count = count + 1
+    }
+    count
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut result = v
+    result.push(x)
+    result
+}
+
+fn vec() -> Vec<Int> {
+    let mut result = vec()
+    result.push(0)
+    result
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in a.range(b) {
+        result = push(result, i)
+    }
+    result
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn main() {
+    let mut acc = vec()
+    for i in 0.range(6) {
+        acc = push(acc, i * 4)
+    }
+    let sum = acc.iter().fold(0, add)
+    print(sum)
+}

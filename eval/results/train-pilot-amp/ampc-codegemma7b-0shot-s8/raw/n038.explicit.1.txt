@@ -1,0 +1,417 @@
+fn main() {
+    let mut device = Device { sensor: Sensor { reading: 0 } }
+    device.sensor.reading = 7
+    print(device.sensor.reading)
+}
+
+struct Device {
+    sensor: Sensor,
+}
+
+struct Sensor {
+    reading: Int,
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn println(x: Int) {
+    print(x)
+    print("\n")
+}
+
+fn main() {
+    let mut device = Device { sensor: Sensor { reading: 0 } }
+    device.sensor.reading = 7
+    print(device.sensor.reading)
+}
+
+struct Device {
+    sensor: Sensor,
+}
+
+struct Sensor {
+    reading: Int,
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn println(x: Int) {
+    print(x)
+    print("\n")
+}
+
+fn main() {
+    let mut device = Device { sensor: Sensor { reading: 0 } }
+    device.sensor.reading = 7
+    print(device.sensor.reading)
+}
+
+struct Device {
+    sensor: Sensor,
+}
+
+struct Sensor {
+    reading: Int,
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn println(x: Int) {
+    print(x)
+    print("\n")
+}
+
+fn main() {
+    let mut device = Device { sensor: Sensor { reading: 0 } }
+    device.sensor.reading = 7
+    print(device.sensor.reading)
+}
+
+struct Device {
+    sensor: Sensor,
+}
+
+struct Sensor {
+    reading: Int,
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn println(x: Int) {
+    print(x)
+    print("\n")
+}
+
+fn main() {
+    let mut device = Device { sensor: Sensor { reading: 0 } }
+    device.sensor.reading = 7
+    print(device.sensor.reading)
+}
+
+struct Device {
+    sensor: Sensor,
+}
+
+struct Sensor {
+    reading: Int,
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn println(x: Int) {
+    print(x)
+    print("\n")
+}
+
+fn main() {
+    let mut device = Device { sensor: Sensor { reading: 0 } }
+    device.sensor.reading = 7
+    print(device.sensor.reading)
+}
+
+struct Device {
+    sensor: Sensor,
+}
+
+struct Sensor {
+    reading: Int,
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn println(x: Int) {
+    print(x)
+    print("\n")
+}
+
+fn main() {
+    let mut device = Device { sensor: Sensor { reading: 0 } }
+    device.sensor.reading = 7
+    print(device.sensor.reading)
+}
+
+struct Device {
+    sensor: Sensor,
+}
+
+struct Sensor {
+    reading: Int,
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn println(x: Int) {
+    print(x)
+    print("\n")
+}
+
+fn main() {
+    let mut device = Device { sensor: Sensor { reading: 0 } }
+    device.sensor.reading = 7
+    print(device.sensor.reading)
+}
+
+struct Device {
+    sensor: Sensor,
+}
+
+struct Sensor {
+    reading: Int,
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn println(x: Int) {
+    print(x)
+    print("\n")
+}
+
+fn main() {
+    let mut device = Device { sensor: Sensor { reading: 0 } }
+    device.sensor.reading = 7
+    print(device.sensor.reading)
+}
+
+struct Device {
+    sensor: Sensor,
+}
+
+struct Sensor {
+    reading: Int,
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn println(x: Int) {
+    print(x)
+    print("\n")
+}
+
+fn main() {
+    let mut device = Device { sensor: Sensor { reading: 0 } }
+    device.sensor.reading = 7
+    print(device.sensor.reading)
+}
+
+struct Device {
+    sensor: Sensor,
+}
+
+struct Sensor {
+    reading: Int,
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn println(x: Int) {
+    print(x)
+    print("\n")
+}
+
+fn main() {
+    let mut device = Device { sensor: Sensor { reading: 0 } }
+    device.sensor.reading = 7
+    print(device.sensor.reading)
+}
+
+struct Device {
+    sensor: Sensor,
+}
+
+struct Sensor {
+    reading: Int,
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn println(x: Int) {
+    print(x)
+    print("\n")
+}
+
+fn main() {
+    let mut device = Device { sensor: Sensor { reading: 0 } }
+    device.sensor.reading = 7
+    print(device.sensor.reading)
+}
+
+struct Device {
+    sensor: Sensor,
+}
+
+struct Sensor {
+    reading: Int,
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn println(x: Int) {
+    print(x)
+    print("\n")
+}
+
+fn main() {
+    let mut device = Device { sensor: Sensor { reading: 0 } }
+    device.sensor.reading = 7
+    print(device.sensor.reading)
+}
+
+struct Device {
+    sensor: Sensor,
+}
+
+struct Sensor {
+    reading: Int,
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn println(x: Int) {
+    print(x)
+    print("\n")
+}
+
+fn main() {
+    let mut device = Device { sensor: Sensor { reading: 0 } }
+    device.sensor.reading = 7
+    print(device.sensor.reading)
+}
+
+struct Device {
+    sensor: Sensor,
+}
+
+struct Sensor {
+    reading: Int,
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn println(x: Int) {
+    print(x)
+    print("\n")
+}
+
+fn main() {
+    let mut device = Device { sensor: Sensor { reading: 0 } }
+    device.sensor.reading = 7
+    print(device.sensor.reading)
+}
+
+struct Device {
+    sensor: Sensor,
+}
+
+struct Sensor {
+    reading: Int,
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn println(x: Int) {
+    print(x)
+    print("\n")
+}
+
+fn main() {
+    let mut device = Device { sensor: Sensor { reading: 0 } }
+    device.sensor.reading = 7
+    print(device.sensor.reading)
+}
+
+struct Device {
+    sensor: Sensor,
+}
+
+struct Sensor {
+    reading: Int,
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn println(x: Int) {
+    print(x)
+    print("\n")
+}
+
+fn main() {
+    let mut device = Device { sensor: Sensor { reading: 0 } }
+    device.sensor.reading = 7
+    print(device.sensor.reading)
+}
+
+struct Device {
+    sensor: Sensor,
+}
+
+struct Sensor {
+    reading: Int,
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn println(x: Int) {
+    print(x)
+    print("\n")
+}
+
+fn main() {
+    let mut device = Device { sensor: Sensor { reading: 0 } }
+    device.sensor.reading = 7
+    print(device.sensor.reading)
+}
+
+struct Device {
+    sensor: Sensor,
+}
+
+struct Sensor {
+    reading: Int,
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn println(x: Int) {
+    print(x)
+    print("\n")
+}
+
+fn main() {
+    let mut device = Device { sensor: Sensor { reading: 0 } }
+    device.sensor.reading = 7

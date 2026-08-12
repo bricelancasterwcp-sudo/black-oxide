@@ -1,0 +1,12 @@
+fn main() {
+    print("go for green")
+    let mut signal = "green"
+    while signal != "red" {
+        if signal == "yellow" {
+            print("wait for yellow")
+        }
+        drop signal
+        signal = "red"
+    }
+    print("stop for red")
+}

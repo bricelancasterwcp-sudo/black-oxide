@@ -1,0 +1,9 @@
+fn oxide_black() {
+    let oxide = "oxide"
+    let black = "black"
+    print(oxideconcatblack)
+}
+
+fn main() {
+    oxide_black()
+}

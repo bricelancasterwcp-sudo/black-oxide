@@ -1,0 +1,340 @@
+fn is_prime(n: Int) -> Bool {
+    if n <= 1 {
+        return false
+    }
+    for i in range(2, trunc(sqrt(n)) + 1) {
+        if n % i == 0 {
+            return false
+        }
+    }
+    true
+}
+
+fn main() {
+    print(is_prime(91))
+}
+
+fn sqrt(n: Float) -> Float {
+    let mut acc = Float(0.0)
+    let mut base = Float(1.0)
+    while base <= n {
+        acc = base
+        base = base + base
+    }
+    acc
+}
+
+fn sqrt(n: Int) -> Int {
+    let mut acc = Int(0)
+    let mut base = Int(1)
+    while base <= n {
+        acc = base
+        base = base + base
+    }
+    acc
+}
+
+fn sqrt(n: Float) -> Float {
+    let mut acc = Float(0.0)
+    let mut base = Float(1.0)
+    while base <= n {
+        acc = base
+        base = base + base
+    }
+    acc
+}
+
+fn sqrt(n: Int) -> Int {
+    let mut acc = Int(0)
+    let mut base = Int(1)
+    while base <= n {
+        acc = base
+        base = base + base
+    }
+    acc
+}
+
+fn sqrt(n: Float) -> Float {
+    let mut acc = Float(0.0)
+    let mut base = Float(1.0)
+    while base <= n {
+        acc = base
+        base = base + base
+    }
+    acc
+}
+
+fn sqrt(n: Int) -> Int {
+    let mut acc = Int(0)
+    let mut base = Int(1)
+    while base <= n {
+        acc = base
+        base = base + base
+    }
+    acc
+}
+
+fn sqrt(n: Float) -> Float {
+    let mut acc = Float(0.0)
+    let mut base = Float(1.0)
+    while base <= n {
+        acc = base
+        base = base + base
+    }
+    acc
+}
+
+fn sqrt(n: Int) -> Int {
+    let mut acc = Int(0)
+    let mut base = Int(1)
+    while base <= n {
+        acc = base
+        base = base + base
+    }
+    acc
+}
+
+fn sqrt(n: Float) -> Float {
+    let mut acc = Float(0.0)
+    let mut base = Float(1.0)
+    while base <= n {
+        acc = base
+        base = base + base
+    }
+    acc
+}
+
+fn sqrt(n: Int) -> Int {
+    let mut acc = Int(0)
+    let mut base = Int(1)
+    while base <= n {
+        acc = base
+        base = base + base
+    }
+    acc
+}
+
+fn sqrt(n: Float) -> Float {
+    let mut acc = Float(0.0)
+    let mut base = Float(1.0)
+    while base <= n {
+        acc = base
+        base = base + base
+    }
+    acc
+}
+
+fn sqrt(n: Int) -> Int {
+    let mut acc = Int(0)
+    let mut base = Int(1)
+    while base <= n {
+        acc = base
+        base = base + base
+    }
+    acc
+}
+
+fn sqrt(n: Float) -> Float {
+    let mut acc = Float(0.0)
+    let mut base = Float(1.0)
+    while base <= n {
+        acc = base
+        base = base + base
+    }
+    acc
+}
+
+fn sqrt(n: Int) -> Int {
+    let mut acc = Int(0)
+    let mut base = Int(1)
+    while base <= n {
+        acc = base
+        base = base + base
+    }
+    acc
+}
+
+fn sqrt(n: Float) -> Float {
+    let mut acc = Float(0.0)
+    let mut base = Float(1.0)
+    while base <= n {
+        acc = base
+        base = base + base
+    }
+    acc
+}
+
+fn sqrt(n: Int) -> Int {
+    let mut acc = Int(0)
+    let mut base = Int(1)
+    while base <= n {
+        acc = base
+        base = base + base
+    }
+    acc
+}
+
+fn sqrt(n: Float) -> Float {
+    let mut acc = Float(0.0)
+    let mut base = Float(1.0)
+    while base <= n {
+        acc = base
+        base = base + base
+    }
+    acc
+}
+
+fn sqrt(n: Int) -> Int {
+    let mut acc = Int(0)
+    let mut base = Int(1)
+    while base <= n {
+        acc = base
+        base = base + base
+    }
+    acc
+}
+
+fn sqrt(n: Float) -> Float {
+    let mut acc = Float(0.0)
+    let mut base = Float(1.0)
+    while base <= n {
+        acc = base
+        base = base + base
+    }
+    acc
+}
+
+fn sqrt(n: Int) -> Int {
+    let mut acc = Int(0)
+    let mut base = Int(1)
+    while base <= n {
+        acc = base
+        base = base + base
+    }
+    acc
+}
+
+fn sqrt(n: Float) -> Float {
+    let mut acc = Float(0.0)
+    let mut base = Float(1.0)
+    while base <= n {
+        acc = base
+        base = base + base
+    }
+    acc
+}
+
+fn sqrt(n: Int) -> Int {
+    let mut acc = Int(0)
+    let mut base = Int(1)
+    while base <= n {
+        acc = base
+        base = base + base
+    }
+    acc
+}
+
+fn sqrt(n: Float) -> Float {
+    let mut acc = Float(0.0)
+    let mut base = Float(1.0)
+    while base <= n {
+        acc = base
+        base = base + base
+    }
+    acc
+}
+
+fn sqrt(n: Int) -> Int {
+    let mut acc = Int(0)
+    let mut base = Int(1)
+    while base <= n {
+        acc = base
+        base = base + base
+    }
+    acc
+}
+
+fn sqrt(n: Float) -> Float {
+    let mut acc = Float(0.0)
+    let mut base = Float(1.0)
+    while base <= n {
+        acc = base
+        base = base + base
+    }
+    acc
+}
+
+fn sqrt(n: Int) -> Int {
+    let mut acc = Int(0)
+    let mut base = Int(1)
+    while base <= n {
+        acc = base
+        base = base + base
+    }
+    acc
+}
+
+fn sqrt(n: Float) -> Float {
+    let mut acc = Float(0.0)
+    let mut base = Float(1.0)
+    while base <= n {
+        acc = base
+        base = base + base
+    }
+    acc
+}
+
+fn sqrt(n: Int) -> Int {
+    let mut acc = Int(0)
+    let mut base = Int(1)
+    while base <= n {
+        acc = base
+        base = base + base
+    }
+    acc
+}
+
+fn sqrt(n: Float) -> Float {
+    let mut acc = Float(0.0)
+    let mut base = Float(1.0)
+    while base <= n {
+        acc = base
+        base = base + base
+    }
+    acc
+}
+
+fn sqrt(n: Int) -> Int {
+    let mut acc = Int(0)
+    let mut base = Int(1)
+    while base <= n {
+        acc = base
+        base = base + base
+    }
+    acc
+}
+
+fn sqrt(n: Float) -> Float {
+    let mut acc = Float(0.0)
+    let mut base = Float(1.0)
+    while base <= n {
+        acc = base
+        base = base + base
+    }
+    acc
+}
+
+fn sqrt(n: Int) -> Int {
+    let mut acc = Int(0)
+    let mut base = Int(1)
+    while base <= n {
+        acc = base
+        base = base + base
+    }
+    acc
+}
+
+fn sqrt(n: Float) -> Float {
+    let mut acc = Float(0.0)
+    let mut base = Float(1.0)
+    while

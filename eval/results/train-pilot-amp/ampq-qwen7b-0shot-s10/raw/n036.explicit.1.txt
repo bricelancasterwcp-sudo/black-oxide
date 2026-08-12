@@ -1,0 +1,9 @@
+fn total_value() -> Int {
+    let units_three = 4 * 3
+    let units_two = 5 * 2
+    units_three + units_two
+}
+
+fn main() {
+    print(total_value())
+}

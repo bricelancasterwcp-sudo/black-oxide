@@ -1,0 +1,5 @@
+struct Word { chars: Vec<Char> }
+
+fn main() {
+    print(len(Word { chars: push(push(push(vec(), 103), 111), 114) }).chars)
+}

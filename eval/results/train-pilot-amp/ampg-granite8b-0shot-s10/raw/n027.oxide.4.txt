@@ -1,0 +1,15 @@
+struct Cat {
+    meows: Int,
+    sleeps: Int,
+}
+
+fn print_cat(cat: Cat) {
+    for _ in range(0, cat.meows) {
+        print_str("meow\n")
+    }
+}
+
+fn main() {
+    let cat = Cat { meows: 2, sleeps: 3 }
+    print_cat(cat)
+}

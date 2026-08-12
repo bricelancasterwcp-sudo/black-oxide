@@ -1,0 +1,6 @@
+fn main() {
+    let four_units_worth_three = 4 * 3;
+    let five_units_worth_two = 5 * 2;
+    let total_value = four_units_worth_three + five_units_worth_two;
+    println!("Total value: {}", total_value);
+}

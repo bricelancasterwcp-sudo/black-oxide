@@ -1,0 +1,358 @@
+fn area(w: Float, h: Float) -> Float {
+    w * h
+}
+
+fn main() {
+    let w = 7.0
+    let h = 6.0
+    print(area(w, h))
+}
+
+fn area(w: Float, h: Float) -> Float {
+    w * h
+}
+
+fn main() {
+    let w = 7.0
+    let h = 6.0
+    print(area(w, h))
+}
+
+fn area(w: Float, h: Float) -> Float {
+    w * h
+}
+
+fn main() {
+    let w = 7.0
+    let h = 6.0
+    print(area(w, h))
+}
+
+fn area(w: Float, h: Float) -> Float {
+    w * h
+}
+
+fn main() {
+    let w = 7.0
+    let h = 6.0
+    print(area(w, h))
+}
+
+fn area(w: Float, h: Float) -> Float {
+    w * h
+}
+
+fn main() {
+    let w = 7.0
+    let h = 6.0
+    print(area(w, h))
+}
+
+fn area(w: Float, h: Float) -> Float {
+    w * h
+}
+
+fn main() {
+    let w = 7.0
+    let h = 6.0
+    print(area(w, h))
+}
+
+fn area(w: Float, h: Float) -> Float {
+    w * h
+}
+
+fn main() {
+    let w = 7.0
+    let h = 6.0
+    print(area(w, h))
+}
+
+fn area(w: Float, h: Float) -> Float {
+    w * h
+}
+
+fn main() {
+    let w = 7.0
+    let h = 6.0
+    print(area(w, h))
+}
+
+fn area(w: Float, h: Float) -> Float {
+    w * h
+}
+
+fn main() {
+    let w = 7.0
+    let h = 6.0
+    print(area(w, h))
+}
+
+fn area(w: Float, h: Float) -> Float {
+    w * h
+}
+
+fn main() {
+    let w = 7.0
+    let h = 6.0
+    print(area(w, h))
+}
+
+fn area(w: Float, h: Float) -> Float {
+    w * h
+}
+
+fn main() {
+    let w = 7.0
+    let h = 6.0
+    print(area(w, h))
+}
+
+fn area(w: Float, h: Float) -> Float {
+    w * h
+}
+
+fn main() {
+    let w = 7.0
+    let h = 6.0
+    print(area(w, h))
+}
+
+fn area(w: Float, h: Float) -> Float {
+    w * h
+}
+
+fn main() {
+    let w = 7.0
+    let h = 6.0
+    print(area(w, h))
+}
+
+fn area(w: Float, h: Float) -> Float {
+    w * h
+}
+
+fn main() {
+    let w = 7.0
+    let h = 6.0
+    print(area(w, h))
+}
+
+fn area(w: Float, h: Float) -> Float {
+    w * h
+}
+
+fn main() {
+    let w = 7.0
+    let h = 6.0
+    print(area(w, h))
+}
+
+fn area(w: Float, h: Float) -> Float {
+    w * h
+}
+
+fn main() {
+    let w = 7.0
+    let h = 6.0
+    print(area(w, h))
+}
+
+fn area(w: Float, h: Float) -> Float {
+    w * h
+}
+
+fn main() {
+    let w = 7.0
+    let h = 6.0
+    print(area(w, h))
+}
+
+fn area(w: Float, h: Float) -> Float {
+    w * h
+}
+
+fn main() {
+    let w = 7.0
+    let h = 6.0
+    print(area(w, h))
+}
+
+fn area(w: Float, h: Float) -> Float {
+    w * h
+}
+
+fn main() {
+    let w = 7.0
+    let h = 6.0
+    print(area(w, h))
+}
+
+fn area(w: Float, h: Float) -> Float {
+    w * h
+}
+
+fn main() {
+    let w = 7.0
+    let h = 6.0
+    print(area(w, h))
+}
+
+fn area(w: Float, h: Float) -> Float {
+    w * h
+}
+
+fn main() {
+    let w = 7.0
+    let h = 6.0
+    print(area(w, h))
+}
+
+fn area(w: Float, h: Float) -> Float {
+    w * h
+}
+
+fn main() {
+    let w = 7.0
+    let h = 6.0
+    print(area(w, h))
+}
+
+fn area(w: Float, h: Float) -> Float {
+    w * h
+}
+
+fn main() {
+    let w = 7.0
+    let h = 6.0
+    print(area(w, h))
+}
+
+fn area(w: Float, h: Float) -> Float {
+    w * h
+}
+
+fn main() {
+    let w = 7.0
+    let h = 6.0
+    print(area(w, h))
+}
+
+fn area(w: Float, h: Float) -> Float {
+    w * h
+}
+
+fn main() {
+    let w = 7.0
+    let h = 6.0
+    print(area(w, h))
+}
+
+fn area(w: Float, h: Float) -> Float {
+    w * h
+}
+
+fn main() {
+    let w = 7.0
+    let h = 6.0
+    print(area(w, h))
+}
+
+fn area(w: Float, h: Float) -> Float {
+    w * h
+}
+
+fn main() {
+    let w = 7.0
+    let h = 6.0
+    print(area(w, h))
+}
+
+fn area(w: Float, h: Float) -> Float {
+    w * h
+}
+
+fn main() {
+    let w = 7.0
+    let h = 6.0
+    print(area(w, h))
+}
+
+fn area(w: Float, h: Float) -> Float {
+    w * h
+}
+
+fn main() {
+    let w = 7.0
+    let h = 6.0
+    print(area(w, h))
+}
+
+fn area(w: Float, h: Float) -> Float {
+    w * h
+}
+
+fn main() {
+    let w = 7.0
+    let h = 6.0
+    print(area(w, h))
+}
+
+fn area(w: Float, h: Float) -> Float {
+    w * h
+}
+
+fn main() {
+    let w = 7.0
+    let h = 6.0
+    print(area(w, h))
+}
+
+fn area(w: Float, h: Float) -> Float {
+    w * h
+}
+
+fn main() {
+    let w = 7.0
+    let h = 6.0
+    print(area(w, h))
+}
+
+fn area(w: Float, h: Float) -> Float {
+    w * h
+}
+
+fn main() {
+    let w = 7.0
+    let h = 6.0
+    print(area(w, h))
+}
+
+fn area(w: Float, h: Float) -> Float {
+    w * h
+}
+
+fn main() {
+    let w = 7.0
+    let h = 6.0
+    print(area(w, h))
+}
+
+fn area(w: Float, h: Float) -> Float {
+    w * h
+}
+
+fn main() {
+    let w = 7.0
+    let h = 6.0
+    print(area(w, h))
+}
+
+fn area(w: Float, h: Float) -> Float {
+    w * h
+}
+
+fn main() {
+    let w = 7.0
+    let h = 6.0
+    print(area(w, h

@@ -1,0 +1,28 @@
+struct Main {
+    fn_main: Func<Bool, Vec<Int>>,
+}
+
+fn is_prime(n: Int) -> Bool {
+    for i in range(2, n) {
+        if n % i == 0 {
+            return False
+        }
+    }
+    True
+}
+
+fn main() -> Bool {
+    is_prime(91)
+}
+
+fn print_bool(b: Bool) {
+    if b {
+        print_str("yes")
+    } else {
+        print_str("no")
+    }
+}
+
+fn main() {
+    print_bool(main())
+}

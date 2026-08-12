@@ -1,0 +1,272 @@
+fn count(s: Str) -> Int {
+    let mut count = 0
+    for c in chars(s) {
+        if c == "a" || c == "e" || c == "i" || c == "o" || c == "u" {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn main() {
+    print(count(str_from("hello")))
+    print(count(str_from("world")))
+}
+
+fn str_from(s: String) -> Str {
+    Str(s)
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut v = vec()
+    let mut i = 0
+    while i < str_len(s) {
+        v = push(v, str_slice(s, i, i + 1))
+        i = i + 1
+    }
+    v
+}
+
+fn str_slice(s: Str, start: Int, end: Int) -> Str {
+    let mut v = vec()
+    let mut i = start
+    while i < end {
+        v = push(v, char_at(s, i))
+        i = i + 1
+    }
+    Str(v)
+}
+
+fn char_at(s: Str, index: Int) -> Str {
+    let mut v = vec()
+    v = push(v, s.chars().nth(index).unwrap())
+    Str(v)
+}
+
+fn str_len(s: Str) -> Int {
+    Int(s.chars().count())
+}
+
+fn str_from(s: String) -> Str {
+    Str(s)
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut v = vec()
+    let mut i = 0
+    while i < str_len(s) {
+        v = push(v, str_slice(s, i, i + 1))
+        i = i + 1
+    }
+    v
+}
+
+fn str_slice(s: Str, start: Int, end: Int) -> Str {
+    let mut v = vec()
+    let mut i = start
+    while i < end {
+        v = push(v, char_at(s, i))
+        i = i + 1
+    }
+    Str(v)
+}
+
+fn char_at(s: Str, index: Int) -> Str {
+    let mut v = vec()
+    v = push(v, s.chars().nth(index).unwrap())
+    Str(v)
+}
+
+fn str_len(s: Str) -> Int {
+    Int(s.chars().count())
+}
+
+fn str_from(s: String) -> Str {
+    Str(s)
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut v = vec()
+    let mut i = 0
+    while i < str_len(s) {
+        v = push(v, str_slice(s, i, i + 1))
+        i = i + 1
+    }
+    v
+}
+
+fn str_slice(s: Str, start: Int, end: Int) -> Str {
+    let mut v = vec()
+    let mut i = start
+    while i < end {
+        v = push(v, char_at(s, i))
+        i = i + 1
+    }
+    Str(v)
+}
+
+fn char_at(s: Str, index: Int) -> Str {
+    let mut v = vec()
+    v = push(v, s.chars().nth(index).unwrap())
+    Str(v)
+}
+
+fn str_len(s: Str) -> Int {
+    Int(s.chars().count())
+}
+
+fn str_from(s: String) -> Str {
+    Str(s)
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut v = vec()
+    let mut i = 0
+    while i < str_len(s) {
+        v = push(v, str_slice(s, i, i + 1))
+        i = i + 1
+    }
+    v
+}
+
+fn str_slice(s: Str, start: Int, end: Int) -> Str {
+    let mut v = vec()
+    let mut i = start
+    while i < end {
+        v = push(v, char_at(s, i))
+        i = i + 1
+    }
+    Str(v)
+}
+
+fn char_at(s: Str, index: Int) -> Str {
+    let mut v = vec()
+    v = push(v, s.chars().nth(index).unwrap())
+    Str(v)
+}
+
+fn str_len(s: Str) -> Int {
+    Int(s.chars().count())
+}
+
+fn str_from(s: String) -> Str {
+    Str(s)
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut v = vec()
+    let mut i = 0
+    while i < str_len(s) {
+        v = push(v, str_slice(s, i, i + 1))
+        i = i + 1
+    }
+    v
+}
+
+fn str_slice(s: Str, start: Int, end: Int) -> Str {
+    let mut v = vec()
+    let mut i = start
+    while i < end {
+        v = push(v, char_at(s, i))
+        i = i + 1
+    }
+    Str(v)
+}
+
+fn char_at(s: Str, index: Int) -> Str {
+    let mut v = vec()
+    v = push(v, s.chars().nth(index).unwrap())
+    Str(v)
+}
+
+fn str_len(s: Str) -> Int {
+    Int(s.chars().count())
+}
+
+fn str_from(s: String) -> Str {
+    Str(s)
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut v = vec()
+    let mut i = 0
+    while i < str_len(s) {
+        v = push(v, str_slice(s, i, i + 1))
+        i = i + 1
+    }
+    v
+}
+
+fn str_slice(s: Str, start: Int, end: Int) -> Str {
+    let mut v = vec()
+    let mut i = start
+    while i < end {
+        v = push(v, char_at(s, i))
+        i = i + 1
+    }
+    Str(v)
+}
+
+fn char_at(s: Str, index: Int) -> Str {
+    let mut v = vec()
+    v = push(v, s.chars().nth(index).unwrap())
+    Str(v)
+}
+
+fn str_len(s: Str) -> Int {
+    Int(s.chars().count())
+}
+
+fn str_from(s: String) -> Str {
+    Str(s)
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut v = vec()
+    let mut i = 0
+    while i < str_len(s) {
+        v = push(v, str_slice(s, i, i + 1))
+        i = i + 1
+    }
+    v
+}
+
+fn str_slice(s: Str, start: Int, end: Int) -> Str {
+    let mut v = vec()
+    let mut i = start
+    while i < end {
+        v = push(v, char_at(s, i))
+        i = i + 1
+    }
+    Str(v)
+}
+
+fn char_at(s: Str, index: Int) -> Str {
+    let mut v = vec()
+    v = push(v, s.chars().nth(index).unwrap())
+    Str(v)
+}
+
+fn str_len(s: Str) -> Int {
+    Int(s.chars().count())
+}
+
+fn str_from(s: String) -> Str {
+    Str(s)
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut v = vec()
+    let mut i = 0
+    while i < str_len(s) {
+        v = push(v, str_slice(s, i, i + 1))
+        i = i + 1
+    }
+    v
+}
+
+fn str_slice(s: Str, start: Int, end: Int) -> Str {
+    let mut v = vec()
+    let mut i = start
+    while i < end {
+        v = push(v, char_at(

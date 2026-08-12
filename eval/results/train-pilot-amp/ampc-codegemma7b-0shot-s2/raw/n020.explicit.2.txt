@@ -1,0 +1,15 @@
+fn sum_of_evens(nums: &Vec<Int>) -> Int {
+    let mut total = 0
+    for num in nums {
+        if num % 2 == 0 {
+            total = total + num
+        }
+    }
+    total / 6 // discarding remainder
+}
+
+fn main() {
+    let readings = vec(4, 8, 15, 16, 23, 42)
+    print(sum_of_evens(&readings))
+    drop readings
+}

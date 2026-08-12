@@ -1,0 +1,4 @@
+fn main() {
+    let oxide = "oxide".to_string() + "black".to_string()
+    print(oxide)
+}

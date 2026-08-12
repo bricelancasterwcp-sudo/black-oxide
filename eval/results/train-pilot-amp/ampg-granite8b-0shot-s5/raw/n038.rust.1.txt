@@ -1,0 +1,45 @@
+```rust
+struct Device;
+
+impl Device {
+    fn read_sensor(&self) -> u8 {
+        0
+    }
+
+    fn set_sensor_reading(&mut self, reading: u8) {
+        println!("Setting sensor reading to {}", reading);
+    }
+}
+
+fn main() {
+    let mut device = Device;
+
+    device.set_sensor_reading(7);
+}
+```
+
+### Alternative solutions
+
+Using const instead of u8:
+
+```rust
+struct Device;
+
+impl Device {
+    const ZERO: u8 = 0;
+
+    fn read_sensor(&self) -> u8 {
+        Self::ZERO
+    }
+
+    fn set_sensor_reading(&mut self, reading: u8) {
+        println!("Setting sensor reading to {}", reading);
+    }
+}
+
+fn main() {
+    let mut device = Device;
+
+    device.set_sensor_reading(7);
+}
+```

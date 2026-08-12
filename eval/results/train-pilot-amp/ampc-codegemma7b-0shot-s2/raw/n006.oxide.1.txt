@@ -1,0 +1,12 @@
+fn find_biggest_power_of_two(max: Int) -> Int {
+    let mut x = 1
+    loop
+    if x > max {
+        breakx * 2
+    }
+    x
+}
+
+fn main() {
+    print(find_biggest_power_of_two(100))
+}

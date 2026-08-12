@@ -1,0 +1,8 @@
+fn main() {
+    let mut list = Vec::new();
+    for i in 1..=6 {
+        list.push(i * 4);
+    }
+    let total: i32 = list.iter().fold(0, |acc, &x| acc + x);
+    println!("Total: {}", total);
+}

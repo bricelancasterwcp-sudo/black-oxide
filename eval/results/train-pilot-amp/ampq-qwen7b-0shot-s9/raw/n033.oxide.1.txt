@@ -1,0 +1,16 @@
+struct Signal { color: Str }
+
+fn main() {
+    let signal = Signal { color: "green" }
+    match signal.color {
+        Str(s) => match s {
+            Str(_) => match s {
+                Str(_) => print_str("go for green"),
+                Str(_) => print_str("wait for yellow"),
+                Str(_) => print_str("stop for red"),
+            },
+            _ => print_str("unknown color"),
+        },
+        _ => print_str("unknown signal"),
+    }
+}

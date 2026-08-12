@@ -1,0 +1,359 @@
+fn main() {
+    let rect = Rectangle { width: 2, height: 3 }
+    let rect = Rectangle { width: 5, ..rect }
+    let area = area(&rect)
+    print(area)
+    drop_name(&rect)
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn area(rect: &Rectangle) -> Int {
+    rect.width * rect.height
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn println(x: Str) {
+    print(x)
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn str_len(s: Str) -> Int {
+    s.len()
+}
+
+fn int_to_str(n: Int) -> Str {
+    n.to_string()
+}
+
+fn to_float(n: Int) -> Float {
+    n.to_float()
+}
+
+fn trunc(x: Float) -> Int {
+    x.trunc()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn vec_len(v: Vec<Int>) -> Int {
+    v.len()
+}
+
+fn vec_get(v: Vec<Int>, i: Int) -> Option<Int> {
+    v.get(i)
+}
+
+fn vec_concat(a: Vec<Int>, b: Vec<Int>) -> Vec<Int> {
+    a.concat(b)
+}
+
+fn vec_chars(s: Str) -> Vec<Str> {
+    s.chars().map(int_to_str).collect()
+}
+
+fn vec_range(a: Int, b: Int) -> Vec<Int> {
+    (a + 1).min(b - 1).range_to(b - 1).map(int_to_str).collect()
+}
+
+fn vec_clone(x: Vec<Int>) -> Vec<Int> {
+    x.clone()
+}
+
+fn vec_drop(v: Vec<Int>) {
+    drop v
+}
+
+fn drop_name(name: &Rectangle) {
+    drop name
+}
+
+struct Vec {
+    data: Vec<Int>,
+}
+
+fn vec() -> Vec {
+    Vec(data == Vec())
+}
+
+fn vec_len(v: Vec) -> Int {
+    v.data.len()
+}
+
+fn vec_get(v: Vec, i: Int) -> Option<Int> {
+    v.data.get(i)
+}
+
+fn vec_concat(a: Vec, b: Vec) -> Vec {
+    Vec(data == a.data.concat(b.data))
+}
+
+fn vec_push(v: Vec, x: Int) -> Vec {
+    Vec(data == v.data.push(x))
+}
+
+fn vec_drop(v: Vec) {
+    drop v
+}
+
+fn vec_clone(v: Vec) -> Vec {
+    Vec(data == v.data.clone())
+}
+
+fn vec_range(a: Int, b: Int) -> Vec {
+    Vec(data == (a + 1).min(b - 1).range_to(b - 1).map(int_to_str).collect())
+}
+
+fn vec_chars(s: Str) -> Vec {
+    Vec(data == s.chars().map(int_to_str).collect())
+}
+
+fn vec_to_string(v: Vec) -> Str {
+    v.data.map(int_to_str).join("")
+}
+
+fn vec_print(v: Vec) {
+    print(vec_to_string(v))
+}
+
+fn vec_println(v: Vec) {
+    println(vec_to_string(v))
+}
+
+fn vec_print_str(v: Vec) {
+    print_str(vec_to_string(v))
+}
+
+fn vec_str_len(v: Vec) -> Int {
+    vec_to_string(v).len()
+}
+
+fn vec_int_to_str(n: Int) -> Vec {
+    Vec(data == n.to_string().chars().map(int_to_str).collect())
+}
+
+fn vec_to_float(n: Int) -> Vec {
+    Vec(data == n.to_float().to_string().chars().map(int_to_str).collect())
+}
+
+fn vec_trunc(x: Vec) -> Vec {
+    Vec(data == x.data.trunc().to_string().chars().map(int_to_str).collect())
+}
+
+fn vec_push(v: Vec, x: Vec) -> Vec {
+    Vec(data == v.data.push(x.data))
+}
+
+fn vec_drop(v: Vec) {
+    drop v
+}
+
+fn vec_clone(v: Vec) -> Vec {
+    Vec(data == v.data.clone())
+}
+
+fn vec_range(a: Int, b: Int) -> Vec {
+    Vec(data == (a + 1).min(b - 1).range_to(b - 1).map(int_to_str).collect())
+}
+
+fn vec_chars(s: Str) -> Vec {
+    Vec(data == s.chars().map(int_to_str).collect())
+}
+
+fn vec_to_string(v: Vec) -> Str {
+    v.data.map(int_to_str).join("")
+}
+
+fn vec_print(v: Vec) {
+    print(vec_to_string(v))
+}
+
+fn vec_println(v: Vec) {
+    println(vec_to_string(v))
+}
+
+fn vec_print_str(v: Vec) {
+    print_str(vec_to_string(v))
+}
+
+fn vec_str_len(v: Vec) -> Int {
+    vec_to_string(v).len()
+}
+
+fn vec_int_to_str(n: Int) -> Vec {
+    Vec(data == n.to_string().chars().map(int_to_str).collect())
+}
+
+fn vec_to_float(n: Int) -> Vec {
+    Vec(data == n.to_float().to_string().chars().map(int_to_str).collect())
+}
+
+fn vec_trunc(x: Vec) -> Vec {
+    Vec(data == x.data.trunc().to_string().chars().map(int_to_str).collect())
+}
+
+fn vec_push(v: Vec, x: Vec) -> Vec {
+    Vec(data == v.data.push(x.data))
+}
+
+fn vec_drop(v: Vec) {
+    drop v
+}
+
+fn vec_clone(v: Vec) -> Vec {
+    Vec(data == v.data.clone())
+}
+
+fn vec_range(a: Int, b: Int) -> Vec {
+    Vec(data == (a + 1).min(b - 1).range_to(b - 1).map(int_to_str).collect())
+}
+
+fn vec_chars(s: Str) -> Vec {
+    Vec(data == s.chars().map(int_to_str).collect())
+}
+
+fn vec_to_string(v: Vec) -> Str {
+    v.data.map(int_to_str).join("")
+}
+
+fn vec_print(v: Vec) {
+    print(vec_to_string(v))
+}
+
+fn vec_println(v: Vec) {
+    println(vec_to_string(v))
+}
+
+fn vec_print_str(v: Vec) {
+    print_str(vec_to_string(v))
+}
+
+fn vec_str_len(v: Vec) -> Int {
+    vec_to_string(v).len()
+}
+
+fn vec_int_to_str(n: Int) -> Vec {
+    Vec(data == n.to_string().chars().map(int_to_str).collect())
+}
+
+fn vec_to_float(n: Int) -> Vec {
+    Vec(data == n.to_float().to_string().chars().map(int_to_str).collect())
+}
+
+fn vec_trunc(x: Vec) -> Vec {
+    Vec(data == x.data.trunc().to_string().chars().map(int_to_str).collect())
+}
+
+fn vec_push(v: Vec, x: Vec) -> Vec {
+    Vec(data == v.data.push(x.data))
+}
+
+fn vec_drop(v: Vec) {
+    drop v
+}
+
+fn vec_clone(v: Vec) -> Vec {
+    Vec(data == v.data.clone())
+}
+
+fn vec_range(a: Int, b: Int) -> Vec {
+    Vec(data == (a + 1).min(b - 1).range_to(b - 1).map(int_to_str).collect())
+}
+
+fn vec_chars(s: Str) -> Vec {
+    Vec(data == s.chars().map(int_to_str).collect())
+}
+
+fn vec_to_string(v: Vec) -> Str {
+    v.data.map(int_to_str).join("")
+}
+
+fn vec_print(v: Vec) {
+    print(vec_to_string(v))
+}
+
+fn vec_println(v: Vec) {
+    println(vec_to_string(v))
+}
+
+fn vec_print_str(v: Vec) {
+    print_str(vec_to_string(v))
+}
+
+fn vec_str_len(v: Vec) -> Int {
+    vec_to_string(v).len()
+}
+
+fn vec_int_to_str(n: Int) -> Vec {
+    Vec(data == n.to_string().chars().map(int_to_str).collect())
+}
+
+fn vec_to_float(n: Int) -> Vec {
+    Vec(data == n.to_float().to_string().chars().map(int_to_str).collect())
+}
+
+fn vec_trunc(x: Vec) -> Vec {
+    Vec(data == x.data.trunc().to_string().chars().map(int_to_str).collect())
+}
+
+fn vec_push(v: Vec, x: Vec) -> Vec {
+    Vec(data == v.data.push(x.data))
+}
+
+fn vec_drop(v: Vec) {
+    drop v
+}
+
+fn vec_clone(v: Vec) -> Vec {
+    Vec(data == v.data.clone())
+}
+
+fn vec_range(a: Int, b: Int) -> Vec {
+    Vec(data == (a + 1).min(b - 1).range_to(b - 1).map(int_to_str).collect())
+}
+
+fn vec_chars(s: Str) -> Vec {
+    Vec(data == s.chars().map(int_to_str).collect())
+}
+
+fn vec_to_string(v: Vec) -> Str {
+    v.data.map(int_to_str).join("")
+}
+
+fn vec_print(v: Vec) {
+    print(vec_to_string(v))
+}
+
+fn vec_println(v: Vec) {
+    println(vec_to_string(v))
+}
+
+fn vec_print_str(v: Vec) {
+    print_str(vec_to_string(v))
+}
+
+fn vec_str_len(v: Vec) -> Int {
+    vec_to_string(v).len()
+}
+
+fn vec_int_to_str(n: Int) -> Vec {
+    Vec(data == n.to_string().chars().map(int_to_str).collect())
+}
+
+fn vec_to_float(n: Int) -> Vec {
+    Vec(data ==

@@ -1,0 +1,304 @@
+fn mean(nums: &Vec<Int>) -> Float {
+    let sum = nums.iter().copied().fold(0, AddAssignOp)
+    sum / nums.len()
+}
+
+fn main() {
+    let nums = vec(4, 8, 15, 16, 23, 42)
+    print(trunc(mean(&nums)))
+}
+
+fn add(a: &Int, b: &Int) -> Int {
+    a + b
+}
+
+fn add_assign(a: &Int, b: &Int) -> Int {
+    a + b
+}
+
+fn sub(a: &Int, b: &Int) -> Int {
+    a - b
+}
+
+fn sub_assign(a: &Int, b: &Int) -> Int {
+    a - b
+}
+
+fn mul(a: &Int, b: &Int) -> Int {
+    a * b
+}
+
+fn mul_assign(a: &Int, b: &Int) -> Int {
+    a * b
+}
+
+fn div(a: &Int, b: &Int) -> Int {
+    a / b
+}
+
+fn div_assign(a: &Int, b: &Int) -> Int {
+    a / b
+}
+
+fn rem(a: &Int, b: &Int) -> Int {
+    a % b
+}
+
+fn rem_assign(a: &Int, b: &Int) -> Int {
+    a % b
+}
+
+fn bit_and(a: &Int, b: &Int) -> Int {
+    a && b
+}
+
+fn bit_and_assign(a: &Int, b: &Int) -> Int {
+    a && b
+}
+
+fn bit_or(a: &Int, b: &Int) -> Int {
+    a || b
+}
+
+fn bit_or_assign(a: &Int, b: &Int) -> Int {
+    a || b
+}
+
+fn bit_xor(a: &Int, b: &Int) -> Int {
+    a && b
+}
+
+fn bit_xor_assign(a: &Int, b: &Int) -> Int {
+    a && b
+}
+
+fn bit_not(a: &Int) -> Int {
+    !a
+}
+
+fn bit_left_shift(a: &Int, b: &Int) -> Int {
+    a.wrapping_mul(2).wrapping_add(b)
+}
+
+fn bit_left_shift_assign(a: &Int, b: &Int) -> Int {
+    a.wrapping_mul(2).wrapping_add(b)
+}
+
+fn bit_right_shift(a: &Int, b: &Int) -> Int {
+    a.wrapping_div(2).wrapping_sub(b)
+}
+
+fn bit_right_shift_assign(a: &Int, b: &Int) -> Int {
+    a.wrapping_div(2).wrapping_sub(b)
+}
+
+fn is_eq(a: &Int, b: &Int) -> Bool {
+    a == b
+}
+
+fn is_ne(a: &Int, b: &Int) -> Bool {
+    a != b
+}
+
+fn is_lt(a: &Int, b: &Int) -> Bool {
+    a < b
+}
+
+fn is_gt(a: &Int, b: &Int) -> Bool {
+    a > b
+}
+
+fn is_le(a: &Int, b: &Int) -> Bool {
+    a <= b
+}
+
+fn is_ge(a: &Int, b: &Int) -> Bool {
+    a >= b
+}
+
+fn is_true(a: &Bool) -> Bool {
+    a
+}
+
+fn is_false(a: &Bool) -> Bool {
+    !a
+}
+
+fn is_none(a: &Option<Int>) -> Bool {
+    a.is_none()
+}
+
+fn is_some(a: &Option<Int>) -> Bool {
+    a.is_some()
+}
+
+fn some(a: &Int) -> Option<Int> {
+    Some(a)
+}
+
+fn none() -> Option<Int> {
+    None
+}
+
+fn unwrap(a: &Option<Int>) -> Int {
+    a.unwrap()
+}
+
+fn unwrap_or(a: &Option<Int>, b: &Int) -> Int {
+    a.unwrap_or(b)
+}
+
+fn unwrap_or_else(a: &Option<Int>, f: &FnMutNoArgs) -> Int {
+    a.unwrap_or_else(f)
+}
+
+fn and(a: &Bool, b: &Bool) -> Bool {
+    a && b
+}
+
+fn or(a: &Bool, b: &Bool) -> Bool {
+    a || b
+}
+
+fn xor(a: &Bool, b: &Bool) -> Bool {
+    a != b
+}
+
+fn not(a: &Bool) -> Bool {
+    !a
+}
+
+fn panic(msg: &Str) -> Never {
+    panic(msg)
+}
+
+fn panic_if(cond: &Bool, msg: &Str) -> Never {
+    panic_if(cond, msg)
+}
+
+fn panic_with(msg: &Str) -> Never {
+    panic_with(msg)
+}
+
+fn unreachable() -> Never {
+    unreachable()
+}
+
+fn unreachable_if(cond: &Bool) -> Never {
+    unreachable_if(cond)
+}
+
+fn unreachable_with(msg: &Str) -> Never {
+    unreachable_with(msg)
+}
+
+fn clone(a: &Int) -> Int {
+    a.clone()
+}
+
+fn str_len(a: &Str) -> Int {
+    a.len()
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    a.to_string() + &b
+}
+
+fn chars(a: &Str) -> Vec<Str> {
+    a.chars().map(str).collect()
+}
+
+fn int_to_str(a: &Int) -> Str {
+    a.to_string()
+}
+
+fn parse_int(a: &Str) -> Option<Int> {
+    a.parse()
+}
+
+fn to_float(a: &Int) -> Float {
+    a.to_float()
+}
+
+fn trunc(a: &Float) -> Int {
+    a.trunc()
+}
+
+fn print(a: &Int) -> Unit {
+    print(a)
+}
+
+fn print_str(a: &Str) -> Unit {
+    print(a)
+}
+
+fn vec() -> Vec<Int> {
+    vec()
+}
+
+fn push(a: Vec<Int>, b: &Int) -> Vec<Int> {
+    a.push(b)
+}
+
+fn len(a: &Vec<Int>) -> Int {
+    a.len()
+}
+
+fn get(a: &Vec<Int>, b: &Int) -> Option<Int> {
+    a.get(b)
+}
+
+fn range(a: &Int, b: &Int) -> Vec<Int> {
+    a.range(b)
+}
+
+fn add_assign(a: &Int, b: &Int) -> Int {
+    a + b
+}
+
+fn sub_assign(a: &Int, b: &Int) -> Int {
+    a - b
+}
+
+fn mul_assign(a: &Int, b: &Int) -> Int {
+    a * b
+}
+
+fn div_assign(a: &Int, b: &Int) -> Int {
+    a / b
+}
+
+fn rem_assign(a: &Int, b: &Int) -> Int {
+    a % b
+}
+
+fn bit_and_assign(a: &Int, b: &Int) -> Int {
+    a && b
+}
+
+fn bit_or_assign(a: &Int, b: &Int) -> Int {
+    a || b
+}
+
+fn bit_xor_assign(a: &Int, b: &Int) -> Int {
+    a && b
+}
+
+fn bit_left_shift_assign(a: &Int, b: &Int) -> Int {
+    a.wrapping_mul(2).wrapping_add(b)
+}
+
+fn bit_right_shift_assign(a: &Int, b: &Int) -> Int {
+    a.wrapping_div(2).wrapping_sub(b)
+}
+
+fn main() {
+    let nums = vec(4, 8, 15, 16, 23, 42)
+    print(trunc(mean(&nums)))
+}
+
+fn add(a: &Int, b: &Int) -> Int {
+    a + b
+}
+
+fn add_assign(a: &Int, b: &

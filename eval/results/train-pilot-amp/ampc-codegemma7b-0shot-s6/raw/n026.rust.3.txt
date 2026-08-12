@@ -1,0 +1,18 @@
+use std::io::Write;
+
+fn main() {
+    let number = 2026;
+    let mut text = String::new();
+
+    if number >= 1000 {
+        text.push_str("2026");
+    } else if number >= 100 {
+        text.push_str("202");
+    } else if number >= 10 {
+        text.push_str("20");
+    } else {
+        text.push_str("2");
+    }
+
+    print!("{} has {} characters\n", number, text.len());
+}

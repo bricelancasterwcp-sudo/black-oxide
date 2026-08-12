@@ -1,0 +1,13 @@
+struct Text { content: Str }
+
+fn concat_texts(a: Text, b: Text) -> Text {
+    Text(content(concat(a.content, b.content)))
+}
+
+fn main() {
+    let one = Text(content("one"))
+    let two = Text(content("two"))
+    let three = Text(content("three"))
+    let result = concat_texts(concat_texts(one, two), three)
+    print(result.content)
+}

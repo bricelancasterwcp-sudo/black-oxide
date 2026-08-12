@@ -1,0 +1,6 @@
+fn main() {
+    print_str("go")
+    print_str("wait")
+    drop print_str
+    print_str("stop")
+}

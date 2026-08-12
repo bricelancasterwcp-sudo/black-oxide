@@ -1,0 +1,13 @@
+struct Seq { a: Int, b: Int }
+
+fn next(s: Seq) -> Seq {
+    Seq(a + s.b, s.a)
+}
+
+fn main() {
+    let mut s = Seq(1, 1)
+    for _ in range(1, 10) {
+        s = next(s)
+    }
+    print(s.a)
+}

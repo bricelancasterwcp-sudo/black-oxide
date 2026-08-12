@@ -1,0 +1,4 @@
+fn main() {
+    let text = String::from("one") + " two " + "three";
+    println!("{}", text);
+}

@@ -1,0 +1,12 @@
+fn main() {
+    let text = read_line("Input number: ")
+    let answer = match parse_int(&text) {
+        Some(n) => n + 1,
+        None => {
+            print("bad\n")
+            return
+        },
+    }
+    print_int(answer)
+    print("\n")
+}

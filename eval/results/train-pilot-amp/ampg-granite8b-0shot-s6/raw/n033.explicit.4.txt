@@ -1,0 +1,7 @@
+fn print(x: Int) {
+    println(x)
+}
+
+fn main() {
+    print(42)
+}

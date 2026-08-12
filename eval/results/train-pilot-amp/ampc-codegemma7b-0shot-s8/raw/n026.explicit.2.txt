@@ -1,0 +1,5 @@
+fn main() {
+    let num_str = int_to_str(2026)
+    print(chars(&num_str).len())
+    drop num_str
+}

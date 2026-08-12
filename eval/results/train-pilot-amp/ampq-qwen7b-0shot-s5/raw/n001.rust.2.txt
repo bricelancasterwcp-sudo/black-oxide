@@ -1,0 +1,4 @@
+fn main() {
+    let total: isize = (1..=5).map(|x: isize| x.pow(3)).sum();
+    println!("{}", total);
+}

@@ -1,0 +1,300 @@
+fn area(s: Shape) -> Float {
+    match s {
+        Shape(square) => square.side * square.side,
+        Shape(circle) => circle.pi * circle.radius * circle.radius,
+    }
+}
+
+fn main() {
+    let sq = Shape(Square { side: 4.0 })
+    let circle = Shape(Circle { pi: 3.14159, radius: 2.0 })
+    print(area(sq))
+    print(area(circle))
+}
+
+enum Shape {
+    Square(Square),
+    Circle(Circle),
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    pi: Float,
+    radius: Float,
+}
+
+struct Point { x: Int, y: Int }
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    let mut v2 = v
+    v2.push(x)
+    v2
+}
+
+fn len(v: Vec<T>) -> Int {
+    let mut i = 0
+    for _ in v {
+        i = i + 1
+    }
+    i
+}
+
+fn get(v: Vec<T>, i: Int) -> Option<T> {
+    if i >= 0 && i < len(v) {
+        Some(v(i))
+    } else {
+        None
+    }
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut v = vec()
+    for i in a + 1 < b {
+        v.push(i)
+    }
+    v
+}
+
+fn clone(x: T) -> T {
+    x
+}
+
+fn str_len(s: Str) -> Int {
+    let mut i = 0
+    for _ in s {
+        i = i + 1
+    }
+    i
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut s = a
+    for c in b {
+        s.push(c)
+    }
+    s
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut v = vec()
+    for c in s {
+        v.push(c.to_string())
+    }
+    v
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut s = String.new()
+    for d in int_to_digits(n) {
+        s.push(char_from_digit(d, 10))
+    }
+    s
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    let mut n = 0
+    for c in s {
+        let digit = digit_from_char(c, 10)?
+        n = n * 10 + digit
+    }
+    Some(n)
+}
+
+fn to_float(n: Int) -> Float {
+    n
+}
+
+fn trunc(x: Float) -> Int {
+    let i = x
+    if i < 0 {
+        i - 0.5
+    } else {
+        i + 0.5
+    }
+}
+
+fn print(x: T) {
+    println("{}", x)
+}
+
+fn print_str(s: Str) {
+    print("{}", s)
+}
+
+fn int_to_digits(mutn: Int) -> Vec<Int> {
+    let mut digits = vec()
+    while mutn != 0 {
+        digits.push(mutn % 10)
+        mutn = mutn / 10
+    }
+    digits
+}
+
+fn char_from_digit(mutn: Int, base: Int) -> Option<Char> {
+    if mutn >= 0 && mutn < base {
+        Some(char_from_u32(mutn + char_from_u32("0", 10)))
+    } else {
+        None
+    }
+}
+
+fn digit_from_char(c: Char, base: Int) -> Option<Int> {
+    if c >= char_from_u32("0", 10) && c <= char_from_u32((base - 1).to_string().chars().nth(0).unwrap(), 10) {
+        Some((c - char_from_u32("0", 10)).to_int())
+    } else {
+        None
+    }
+}
+
+fn char_from_u32(u: U32) -> Char {
+    unsafe
+    return std.mem.transmute(u)
+}
+
+fn digit_from_u32(u: U32) -> Int {
+    u.to_int()
+}
+
+fn to_u32(i: Int) -> U32 {
+    i.to_uint()
+}
+
+fn int_to_bytes(i: Int) -> Vec<U8> {
+    let mut bytes = vec()
+    for b in to_u32(i).to_be_bytes() {
+        bytes.push(b)
+    }
+    bytes
+}
+
+fn bytes_to_int(bytes: Vec<U8>) -> Int {
+    let mut n = 0
+    for b in bytes {
+        n = n * 256 + b
+    }
+    n
+}
+
+fn string_to_bytes(s: Str) -> Vec<U8> {
+    let mut bytes = vec()
+    for c in s {
+        bytes.push(c.to_u32())
+    }
+    bytes
+}
+
+fn bytes_to_string(bytes: Vec<U8>) -> Str {
+    let mut s = String.new()
+    for b in bytes {
+        s.push(char_from_u32(b))
+    }
+    s
+}
+
+fn u32_to_string(u: U32) -> Str {
+    let mut s = String.new()
+    for d in u32_to_digits(u) {
+        s.push(char_from_digit(d, 10))
+    }
+    s
+}
+
+fn u32_to_digits(mutu: U32) -> Vec<U32> {
+    let mut digits = vec()
+    while mutu != 0 {
+        digits.push(mutu % 10)
+        mutu = mutu / 10
+    }
+    digits
+}
+
+fn first_big(v: Vec<Int>) -> Int {
+    let mut found = -1
+    for x in v {
+        if x > 10 {
+            found = x
+            break
+        }
+    }
+    found
+}
+
+fn second(v: Vec<Int>) -> Option<Int> {
+    let x = get(v, 1)?
+    Some(x + 1)
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(vec(), 3), 42) }
+    print(first_big(r.values))            // field access copies: r stays usable
+    let r2 = Reading { label: "lab2", ..r }
+    match second(r2.values) {
+        Some(n) => print(n),
+        None => print_str("too short"),
+    }
+}
+
+enum Shape {
+    Square(Square),
+    Circle(Circle),
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    pi: Float,
+    radius: Float,
+}
+
+struct Point { x: Int, y: Int }
+
+struct Reading { label: Str, values: Vec<Int> }
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    let mut v2 = v
+    v2.push(x)
+    v2
+}
+
+fn len(v: Vec<T>) -> Int {
+    let mut i = 0
+    for _ in v {
+        i = i + 1
+    }
+    i
+}
+
+fn get(v: Vec<T>, i: Int) -> Option<T> {
+    if i >= 0 && i < len(v) {
+        Some(v(i))
+    } else {
+        None
+    }
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut v = vec()
+    for i in a + 1 < b {
+        v.push(i)
+    }
+    v
+}
+
+fn clone(x: T) -> T {
+    x
+}
+
+fn str_len(s: Str) -> Int {
+    let mut i = 0
+    for _ in s {
+        i = i + 1
+    }
+    i
+}
+
+fn concat(a: Str, b:

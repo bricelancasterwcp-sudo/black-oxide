@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let mut vowels = 0;
+    let word = "hello world";
+
+    for c in word.chars() {
+        match c {
+            'a' | 'e' | 'i' | 'o' | 'u' => vowels += 1,
+            _ => (),
+        }
+    }
+
+    println!("There are {} vowels in the word sequence.", vowels);
+}
+```

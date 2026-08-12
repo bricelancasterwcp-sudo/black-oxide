@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let x = std::env::args().nth(1);
+    match x {
+        Some(x) => {
+            if let Ok(x) = x.parse::<f64>() {
+                println!("{}", x * 2.0);
+            } else {
+                println!("bad");
+            }
+        }
+        None => {
+            println!("bad");
+        }
+    }
+}
+```

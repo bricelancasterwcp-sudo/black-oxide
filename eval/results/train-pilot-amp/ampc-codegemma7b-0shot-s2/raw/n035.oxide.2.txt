@@ -1,0 +1,18 @@
+fn divide(n: Int, d: Int) -> Result<Float, Str> {
+    if d == 0 {
+        Err("cannot divide by zero")
+    } else {
+        Ok(n / d)
+    }
+}
+
+fn main() {
+    match divide(20, 4) {
+        Ok(ans) => print(ans),
+        Err(msg) => print_str(msg),
+    }
+    match divide(20, 0) {
+        Ok(ans) => print(ans),
+        Err(msg) => print_str(msg),
+    }
+}

@@ -1,0 +1,4 @@
+fn main() {
+    let text = format!("one{}two{}three", "", "");
+    println!("{}", text);
+}

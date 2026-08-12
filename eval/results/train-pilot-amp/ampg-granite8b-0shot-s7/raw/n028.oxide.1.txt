@@ -1,0 +1,9 @@
+struct IntWrapper { value: Int }
+
+fn main() {
+    let n = "abc".parse_int()
+    match n {
+        None => print_str("bad"),
+        Some(n) => print(n),
+    }
+}

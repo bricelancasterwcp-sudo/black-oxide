@@ -1,0 +1,83 @@
+fn main() {
+    let mut list = push(push(push(vec(), 4), 3), 2)
+    loop_start(list)
+    if len(&list) == 0 {
+        break_loop()
+    }
+    let entry = get(&list, 0)
+    drop list
+    print_str("entry: ")
+    print(entry)
+    drop entry
+    list = consume_list(list)
+}
+
+fn loop_start(list: Vec<Int>) {
+    let mut list = list
+}
+
+fn break_loop() {
+    return
+}
+
+fn consume_list(list: Vec<Int>) -> Vec<Int> {
+    return push(vec(), 1)
+}
+
+fn print_str(s: Str) {
+    return
+}
+
+fn print(n: Int) {
+    return
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    return v
+}
+
+fn len(v: Vec<Int>) -> Int {
+    return 0
+}
+
+fn get(v: Vec<Int>, i: Int) -> Int {
+    return 0
+}
+
+fn vec() -> Vec<Int> {
+    return vec()
+}
+
+fn consume_list(list: Vec<Int>) -> Vec<Int> {
+    return vec()
+}
+
+fn loop_start(list: Vec<Int>) {
+    return
+}
+
+fn break_loop() {
+    return
+}
+
+fn print_str(s: Str) {
+    return
+}
+
+fn print(n: Int) {
+    return
+}
+
+fn main() {
+    let mut list = push(push(push(vec(), 4), 3), 2)
+    loop_start(list)
+    if len(&list) == 0 {
+        break_loop()
+    }
+    let entry = get(&list, 0)
+    drop list
+    print_str("entry: ")
+    print(entry)
+    drop entry
+    list = consume_list(list)
+}

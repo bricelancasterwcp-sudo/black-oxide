@@ -1,0 +1,16 @@
+struct Error { message: Str }
+
+fn parse_int(s: Str) -> Result<Int, Error> {
+    match parse_int(s) {
+        Some(n) => Ok(n),
+        None => Err(Error { message: "bad" }),
+    }
+}
+
+fn main() {
+    let s = "abc"
+    match parse_int(s) {
+        Ok(n) => print(n),
+        Err(e) => print_str(e.message),
+    }
+}

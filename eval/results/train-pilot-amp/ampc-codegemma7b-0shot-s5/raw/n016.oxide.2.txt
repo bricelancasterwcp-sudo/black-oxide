@@ -1,0 +1,12 @@
+fn main() {
+    let mut sum = 0
+    let mut list = vec()
+    for i in 11 {
+        if i % 3 == 0 {
+            list.push(i)
+            sum = sum + i
+        }
+    }
+    print(list)
+    print(sum)
+}

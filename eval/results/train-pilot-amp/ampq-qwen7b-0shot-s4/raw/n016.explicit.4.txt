@@ -1,0 +1,84 @@
+fn main() {
+    let nums = (1).to(10).filter(&div_by_3).collect()
+    let total = nums.iter().fold(0, &add)
+    print(total)
+    drop nums
+}
+
+fn div_by_3(x: Int) -> Bool {
+    x % 3 == 0
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn to(a: Int, b: Int) -> Vec<Int> {
+    range(a, b).map(&clone)
+}
+
+fn filter(v: &Vec<Int>, f: &Fn<Int>) -> Vec<Int> {
+    v.iter().filter_map(f).collect()
+}
+
+fn collect(v: &Vec<Int>) -> Vec<Int> {
+    v.iter().map(&clone).collect()
+}
+
+fn iter(v: &Vec<Int>) -> Vec<Int> {
+    v.iter().map(&clone).collect()
+}
+
+fn fold(init: Int, v: &Vec<Int>, f: &Fn<Int, Int>) -> Int {
+    v.iter().fold(init, f)
+}
+
+fn map(v: &Vec<Int>, f: &Fn<Int>) -> Vec<Int> {
+    v.iter().map(f).collect()
+}
+
+fn clone(x: Int) -> Int {
+    x
+}
+
+fn print(x: Int) {
+    print_str(&int_to_str)
+}
+
+fn int_to_str(n: Int) -> Str {
+    format_int(n)
+}
+
+fn format_int(n: Int) -> Str {
+    n.to_string()
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut v = Vec()
+    for i in a.to(b) {
+        v = push(v, i)
+    }
+    v
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    concat(v, vec(x))
+}
+
+fn concat(a: Vec<Int>, b: Vec<Int>) -> Vec<Int> {
+    let mut v = Vec()
+    v = concat(v, a)
+    v = concat(v, b)
+    v
+}
+
+fn to_string(s: Str) -> Str {
+    s
+}
+
+fn main() {
+    let nums = (1).to(10).filter(&div_by_3).collect()
+    let total = nums.iter().fold(0, &add)
+    print(total)
+    drop nums
+}

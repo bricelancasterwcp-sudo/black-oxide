@@ -1,0 +1,5 @@
+fn main() {
+    let phrase = "hello world";
+    let count = phrase.chars().count();
+    println!("{}", count);
+}

@@ -1,0 +1,6 @@
+fn main() {
+    let opt = vec(1, 2).get(5).unwrap_or(None).print_str()
+    if opt.is_some() {
+        print_str(opt.unwrap().to_string())
+    }
+}

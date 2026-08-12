@@ -1,0 +1,10 @@
+fn join_words() {
+    let word1 = "black"
+    let word2 = "oxide"
+    let result = concat(word1, word2)
+    print(result)
+}
+
+fn main() {
+    join_words()
+}

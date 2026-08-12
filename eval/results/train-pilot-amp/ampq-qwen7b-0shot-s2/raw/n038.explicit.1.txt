@@ -1,0 +1,13 @@
+fn set_reading(reading: &Int) -> Int {
+    7
+}
+
+fn print_reading(reading: Int) {
+    print(reading)
+}
+
+fn main() {
+    let mut reading = 0
+    reading = set_reading(&reading)
+    print_reading(reading)
+}

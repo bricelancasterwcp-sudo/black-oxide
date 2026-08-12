@@ -1,0 +1,23 @@
+fn int_to_str(n: Int) -> Str {
+    if n < 10 {
+        str_len(format("{}", n))
+    } else {
+        let mut digits: Vec<Int> = vec()
+        let mut nn = n
+        while nn > 0 {
+            digits = push(digits, nn % 10)
+            nn = nn / 10
+        }
+        let mut result: Str = str_len("")
+        for d in &digits {
+            result = concat(result, int_to_str(d))
+        }
+        result
+    }
+}
+
+fn main() {
+    let text = int_to_str(2026)
+    print(text)
+    print(str_len(text))
+}

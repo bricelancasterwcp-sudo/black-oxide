@@ -1,0 +1,18 @@
+struct IntSeq {
+    a: Int,
+    b: Int,
+}
+
+fn nth_term(s: IntSeq, n: Int) -> Int {
+    let mut cur = s
+    let mut i = 1
+    while i < n {
+        cur = IntSeq { a: cur.b, b: cur.a + cur.b }
+        i = i + 1
+    }
+    cur.a
+}
+
+fn main() {
+    print(nth_term(IntSeq { a: 1, b: 1 }, 10))
+}

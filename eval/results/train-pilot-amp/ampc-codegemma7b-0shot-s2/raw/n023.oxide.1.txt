@@ -1,0 +1,11 @@
+fn len(s: Str) -> Int {
+    let mut n = 0
+    for _ in chars(s) {
+        n = n + 1
+    }
+    n
+}
+
+fn main() {
+    print(len("hello world"))
+}

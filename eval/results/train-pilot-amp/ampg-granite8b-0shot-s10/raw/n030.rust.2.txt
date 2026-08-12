@@ -1,0 +1,9 @@
+fn main() {
+    let word_sequence = "The quick brown fox jumps over the lazy dog";
+    let vowels = "aeiouAEIOU";
+    let count: usize = word_sequence
+        .chars()
+        .filter(|&c| vowels.contains(c))
+        .count();
+    println!("Number of vowels: {}", count);
+}

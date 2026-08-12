@@ -1,0 +1,466 @@
+fn read_int() -> Option<Int> {
+    let line = str_len(input())
+    if line == 0 {
+        return None
+    }
+    let mut chars = chars(line)
+    let mut result = 0
+    for c in chars {
+        result = result * 10 + int_to_str(int_to_str(c).to_float().trunc())
+    }
+    Some(result)
+}
+
+fn main() {
+    match read_int() {
+        Some(x) => print(x + 1),
+        None => print("bad"),
+    }
+}
+
+fn input() -> Str {
+    let line = Str("417")
+    line
+}
+
+fn print(s: Int) {
+    println(s)
+}
+
+fn str_len(s: Str) -> Int {
+    Int(3)
+}
+
+fn chars(s: Int) -> Vec<Str> {
+    let chars = Vec(Str("4"), Str("1"), Str("7"))
+    chars
+}
+
+fn int_to_str(n: Int) -> Str {
+    Str("4")
+}
+
+fn to_float(n: Int) -> Float {
+    Float(4.0)
+}
+
+fn trunc(x: Float) -> Int {
+    Int(4)
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let v = vec()
+    drop v
+}
+
+fn drop_test() {
+    let

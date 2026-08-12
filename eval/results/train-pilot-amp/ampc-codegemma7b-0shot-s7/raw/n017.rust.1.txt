@@ -1,0 +1,8 @@
+fn main() {
+    let my_list = vec![10, 20, 30, 40];
+    if my_list.len() >= 2 {
+        println!("{}", my_list[1]);
+    } else {
+        println!("Missing");
+    }
+}

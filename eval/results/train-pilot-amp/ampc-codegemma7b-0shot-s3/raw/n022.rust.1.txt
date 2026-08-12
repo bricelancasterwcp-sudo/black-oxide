@@ -1,0 +1,5 @@
+fn main() {
+    let blackoxide = "blackoxide";
+    let joined = blackoxide.split_whitespace().collect::<Vec<&str>>().join("");
+    println!("{}", joined);
+}

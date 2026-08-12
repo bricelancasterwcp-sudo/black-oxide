@@ -1,0 +1,11 @@
+fn print(x: &Str) {
+    drop x
+}
+
+fn main() {
+    let list = push(push(push(push(vec(), 1), 2), 3), 4)
+    for x in &list {
+        print(x)
+    }
+    drop list
+}

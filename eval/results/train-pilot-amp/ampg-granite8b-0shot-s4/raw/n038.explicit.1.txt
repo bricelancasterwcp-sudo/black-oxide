@@ -1,0 +1,51 @@
+fn main() {
+    let sensor = Sensor { reading: 0 }
+    let mut device = Device { sensor: sensor }
+    device.set_reading(7)
+    print(device.sensor.reading)
+}
+
+struct Device {
+    sensor: Sensor,
+}
+
+struct Sensor {
+    reading: Int,
+}
+
+fn set_reading(this: &Device, x: Int) {
+    this.sensor.reading = x
+}
+
+fn get_reading(this: &Sensor) -> Int {
+    this.reading
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn println(x: Int) {
+    print_str(str_cat("(", int_to_str(x), ")"))
+}
+
+fn str_cat(s1: Str, s2: Str) -> Str {
+    concat(s1, s2)
+}
+
+fn int_to_str(n: Int) -> Str {
+    to_str(n)
+}
+
+fn to_str(n: Int) -> Str {
+    to_float(n).to_str()
+}
+
+fn main() {
+    let nums = push(push(vec(), 5), 40)
+    let bigger = extend(clone(&nums), 70)
+    print(sum_big(&nums, 10))
+    drop nums
+    print(sum_big(&bigger, 10))
+    drop bigger
+}

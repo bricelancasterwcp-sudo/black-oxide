@@ -1,0 +1,37 @@
+struct Vec {
+    data: Box<Int>,
+    len: Int,
+}
+
+struct Option {
+    value: Box<Int>,
+}
+
+fn vec() -> Vec {
+    Vec(Box(0), Box(0))
+}
+
+fn push(mutVec: Vec, value: Int) -> Vec {
+    let newLen = vec.len + 1
+    let mut newVec = Vec(Box(newLen), Box(newLen))
+    let mut i = newLen
+    while i > 1 {
+        i = i - 1
+        let tmp = get(vec.data, i - 1)?
+        put(newVec.data, i, tmp)
+    }
+    put(newVec.data, 1, value)
+    newVec
+}
+
+fn len(vec: Vec) -> Int {
+    vec.len
+}
+
+fn main() {
+    let mut v = vec()
+    v = push(v, 1)
+    v = push(v, 2)
+    v = push(v, 3)
+    print(len(v))
+}

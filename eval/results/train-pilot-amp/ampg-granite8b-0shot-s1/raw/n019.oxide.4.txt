@@ -1,0 +1,17 @@
+struct IntList { head: Int, tail: Option<Box<IntList>> }
+
+fn len(list: Box<IntList>) -> Int {
+    match list {
+        Box(x) => match x.tail {
+            None => 1,
+            Some(r) => 1 + len(r),
+        },
+    }
+}
+
+fn main() {
+    let one = Box(IntList { head: 1, tail: None })
+    let two = Box(IntList { head: 2, tail: Some(one) })
+    let three = Box(IntList { head: 3, tail: Some(two) })
+    print(len(three))
+}

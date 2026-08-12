@@ -1,0 +1,5 @@
+fn main() {
+    let num = 417
+    let ans = num + 1
+    print(ans)
+}

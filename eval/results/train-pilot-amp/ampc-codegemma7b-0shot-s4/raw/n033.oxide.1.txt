@@ -1,0 +1,287 @@
+fn main() {
+    if get_signal() == "green" {
+        print_str("go for green")
+    } else if get_signal() == "yellow" {
+        print_str("wait for yellow")
+    } else if get_signal() == "red" {
+        print_str("stop for red")
+    } else {
+        print_str("unknown signal")
+    }
+}
+
+fn get_signal() -> String {
+    let line = read_line()
+    if line.is_none() {
+        return "unknown".to_string()
+    }
+    line.unwrap()
+}
+
+fn read_line() -> Option<String> {
+    let mut buf = StringBuf { buf: String { buf: VecDeque { buf: vec() } } }
+    if read_until_eof_into_buf(buf) {
+        if let_string(buf) {
+            Some(buf.buf)
+        } else {
+            None
+        }
+    } else {
+        None
+    }
+}
+
+struct StringBuf { buf: String }
+
+fn read_until_eof_into_buf(mut: StringBuf) -> Bool {
+    while let_ok(read_line_into_buf(mut)) {
+        if let_ok(peek_line()) == None {
+            return true
+        }
+    }
+    false
+}
+
+fn read_line_into_buf(mut: StringBuf) -> Result<StringBuf, String> {
+    match read_line() {
+        Some(line) => {
+            mut.buf.buf.append(line.chars().collect())
+            Ok(mut)
+        },
+        None => Err("no line available".to_string())? > 0,
+    }
+}
+
+fn peek_line() -> Option<String> {
+    let mut buf = StringBuf { buf: String { buf: VecDeque { buf: vec() } } }
+    if read_until_eof_into_buf(buf) {
+        if let_string(buf) {
+            Some(buf.buf)
+        } else {
+            None
+        }
+    } else {
+        None
+    }
+}
+
+fn let_string(buf: StringBuf) -> Bool {
+    if buf.buf.buf.len() > 0 {
+        return true
+    }
+    false
+}
+
+fn let_ok(result: Result<StringBuf, String>) -> Result<StringBuf, String> {
+    result
+}
+
+fn let_ok(result: Result<String, String>) -> Result<String, String> {
+    result
+}
+
+fn let_ok(result: Result<Bool, String>) -> Result<Bool, String> {
+    result
+}
+
+fn let_ok(result: Result<Int, String>) -> Result<Int, String> {
+    result
+}
+
+fn let_ok(result: Result<String, String>) -> Result<String, String> {
+    result
+}
+
+fn print_str(str: String) {
+    println(str)
+}
+
+fn print(int: Int) {
+    println(int)
+}
+
+fn read_line() -> Option<String> {
+    let mut buf = StringBuf { buf: String { buf: VecDeque { buf: vec() } } }
+    if read_until_eof_into_buf(buf) {
+        if let_string(buf) {
+            Some(buf.buf)
+        } else {
+            None
+        }
+    } else {
+        None
+    }
+}
+
+struct StringBuf { buf: String }
+
+fn read_until_eof_into_buf(mut: StringBuf) -> Bool {
+    while let_ok(read_line_into_buf(mut)) {
+        if let_ok(peek_line()) == None {
+            return true
+        }
+    }
+    false
+}
+
+fn read_line_into_buf(mut: StringBuf) -> Result<StringBuf, String> {
+    match read_line() {
+        Some(line) => {
+            mut.buf.buf.append(line.chars().collect())
+            Ok(mut)
+        },
+        None => Err("no line available".to_string())? > 0,
+    }
+}
+
+fn peek_line() -> Option<String> {
+    let mut buf = StringBuf { buf: String { buf: VecDeque { buf: vec() } } }
+    if read_until_eof_into_buf(buf) {
+        if let_string(buf) {
+            Some(buf.buf)
+        } else {
+            None
+        }
+    } else {
+        None
+    }
+}
+
+fn let_string(buf: StringBuf) -> Bool {
+    if buf.buf.buf.len() > 0 {
+        return true
+    }
+    false
+}
+
+fn let_ok(result: Result<StringBuf, String>) -> Result<StringBuf, String> {
+    result
+}
+
+fn let_ok(result: Result<String, String>) -> Result<String, String> {
+    result
+}
+
+fn let_ok(result: Result<Bool, String>) -> Result<Bool, String> {
+    result
+}
+
+fn let_ok(result: Result<Int, String>) -> Result<Int, String> {
+    result
+}
+
+fn let_ok(result: Result<String, String>) -> Result<String, String> {
+    result
+}
+
+fn print_str(str: String) {
+    println(str)
+}
+
+fn print(int: Int) {
+    println(int)
+}
+
+fn read_line() -> Option<String> {
+    let mut buf = StringBuf { buf: String { buf: VecDeque { buf: vec() } } }
+    if read_until_eof_into_buf(buf) {
+        if let_string(buf) {
+            Some(buf.buf)
+        } else {
+            None
+        }
+    } else {
+        None
+    }
+}
+
+struct StringBuf { buf: String }
+
+fn read_until_eof_into_buf(mut: StringBuf) -> Bool {
+    while let_ok(read_line_into_buf(mut)) {
+        if let_ok(peek_line()) == None {
+            return true
+        }
+    }
+    false
+}
+
+fn read_line_into_buf(mut: StringBuf) -> Result<StringBuf, String> {
+    match read_line() {
+        Some(line) => {
+            mut.buf.buf.append(line.chars().collect())
+            Ok(mut)
+        },
+        None => Err("no line available".to_string())? > 0,
+    }
+}
+
+fn peek_line() -> Option<String> {
+    let mut buf = StringBuf { buf: String { buf: VecDeque { buf: vec() } } }
+    if read_until_eof_into_buf(buf) {
+        if let_string(buf) {
+            Some(buf.buf)
+        } else {
+            None
+        }
+    } else {
+        None
+    }
+}
+
+fn let_string(buf: StringBuf) -> Bool {
+    if buf.buf.buf.len() > 0 {
+        return true
+    }
+    false
+}
+
+fn let_ok(result: Result<StringBuf, String>) -> Result<StringBuf, String> {
+    result
+}
+
+fn let_ok(result: Result<String, String>) -> Result<String, String> {
+    result
+}
+
+fn let_ok(result: Result<Bool, String>) -> Result<Bool, String> {
+    result
+}
+
+fn let_ok(result: Result<Int, String>) -> Result<Int, String> {
+    result
+}
+
+fn let_ok(result: Result<String, String>) -> Result<String, String> {
+    result
+}
+
+fn print_str(str: String) {
+    println(str)
+}
+
+fn print(int: Int) {
+    println(int)
+}
+
+fn get_signal() -> String {
+    let line = read_line()
+    if line.is_none() {
+        return "unknown".to_string()
+    }
+    line.unwrap()
+}
+
+fn read_line() -> Option<String> {
+    let mut buf = StringBuf { buf: String { buf: VecDeque { buf: vec() } } }
+    if read_until_eof_into_buf(buf) {
+        if let_string(buf) {
+            Some(buf.buf)
+        } else {
+            None
+        }
+    } else {
+        None
+    }
+}
+

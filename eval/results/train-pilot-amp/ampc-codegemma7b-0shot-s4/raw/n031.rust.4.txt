@@ -1,0 +1,6 @@
+fn main() {
+    let width = 7;
+    let height = 6;
+    let area = width * height;
+    println!("The area of the rectangle is {}", area);
+}

@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let list = [1, 2];
+    let entry = list.get(5);
+    println!("{:?}", entry);
+}
+```

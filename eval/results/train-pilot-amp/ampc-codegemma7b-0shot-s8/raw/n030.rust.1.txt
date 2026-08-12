@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let word = "hello world";
+    let mut vowels = 0;
+
+    for c in word.chars() {
+        if "aeiouAEIOU".contains(c) {
+            vowels += 1;
+        }
+    }
+
+    println!("Number of vowels: {}", vowels);
+}
+```

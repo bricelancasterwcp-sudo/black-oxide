@@ -1,0 +1,5 @@
+fn main() {
+    let max = 42
+    let result = max == 42 || max == 200
+    print(result)
+}

@@ -1,0 +1,308 @@
+struct Box {
+    items: Vec<Int>,
+}
+
+fn main() {
+    let stock = push(push(vec(), 4), 5)
+    let box = Box { items: stock }
+    let value = for_each(box.items, 0, add)
+    print(value)
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn for_each(v: Vec<Int>, base: Int, f: Int, g: Int) -> Int {
+    let r = match v {
+        Vec(refCons) => {
+            let head = get(refCons, 0)?
+            let rest = get(refCons, 1)?
+            f(head, for_each(rest, base, f, g))
+        },
+        Nullary => base,
+    }
+    r
+}
+
+fn concat(a: Vec<Int>, b: Vec<Int>) -> Vec<Int> {
+    push(a, b)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    push(vec(), a)
+}
+
+fn clone(x: Int) -> Int {
+    x
+}
+
+fn print(x: Int) {
+    print_str("I'm ")
+    print_int(x)
+    print_str("\n")
+}
+
+fn print_int(x: Int) {
+    print_str("I'm ")
+    print_int(x)
+    print_str("\n")
+}
+
+fn print_str(s: Str) {
+    print_str("I'm ")
+    print_int(x)
+    print_str("\n")
+}
+
+struct Box {
+    items: Vec<Int>,
+}
+
+fn main() {
+    let stock = push(push(vec(), 4), 5)
+    let box = Box { items: stock }
+    let value = for_each(box.items, 0, add)
+    print(value)
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn for_each(v: Vec<Int>, base: Int, f: Int, g: Int) -> Int {
+    let r = match v {
+        Vec(refCons) => {
+            let head = get(refCons, 0)?
+            let rest = get(refCons, 1)?
+            f(head, for_each(rest, base, f, g))
+        },
+        Nullary => base,
+    }
+    r
+}
+
+fn concat(a: Vec<Int>, b: Vec<Int>) -> Vec<Int> {
+    push(a, b)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    push(vec(), a)
+}
+
+fn clone(x: Int) -> Int {
+    x
+}
+
+fn print(x: Int) {
+    print_str("I'm ")
+    print_int(x)
+    print_str("\n")
+}
+
+fn print_int(x: Int) {
+    print_str("I'm ")
+    print_int(x)
+    print_str("\n")
+}
+
+fn print_str(s: Str) {
+    print_str("I'm ")
+    print_int(x)
+    print_str("\n")
+}
+
+struct Box {
+    items: Vec<Int>,
+}
+
+fn main() {
+    let stock = push(push(vec(), 4), 5)
+    let box = Box { items: stock }
+    let value = for_each(box.items, 0, add)
+    print(value)
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn for_each(v: Vec<Int>, base: Int, f: Int, g: Int) -> Int {
+    let r = match v {
+        Vec(refCons) => {
+            let head = get(refCons, 0)?
+            let rest = get(refCons, 1)?
+            f(head, for_each(rest, base, f, g))
+        },
+        Nullary => base,
+    }
+    r
+}
+
+fn concat(a: Vec<Int>, b: Vec<Int>) -> Vec<Int> {
+    push(a, b)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    push(vec(), a)
+}
+
+fn clone(x: Int) -> Int {
+    x
+}
+
+fn print(x: Int) {
+    print_str("I'm ")
+    print_int(x)
+    print_str("\n")
+}
+
+fn print_int(x: Int) {
+    print_str("I'm ")
+    print_int(x)
+    print_str("\n")
+}
+
+fn print_str(s: Str) {
+    print_str("I'm ")
+    print_int(x)
+    print_str("\n")
+}
+
+struct Box {
+    items: Vec<Int>,
+}
+
+fn main() {
+    let stock = push(push(vec(), 4), 5)
+    let box = Box { items: stock }
+    let value = for_each(box.items, 0, add)
+    print(value)
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn for_each(v: Vec<Int>, base: Int, f: Int, g: Int) -> Int {
+    let r = match v {
+        Vec(refCons) => {
+            let head = get(refCons, 0)?
+            let rest = get(refCons, 1)?
+            f(head, for_each(rest, base, f, g))
+        },
+        Nullary => base,
+    }
+    r
+}
+
+fn concat(a: Vec<Int>, b: Vec<Int>) -> Vec<Int> {
+    push(a, b)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    push(vec(), a)
+}
+
+fn clone(x: Int) -> Int {
+    x
+}
+
+fn print(x: Int) {
+    print_str("I'm ")
+    print_int(x)
+    print_str("\n")
+}
+
+fn print_int(x: Int) {
+    print_str("I'm ")
+    print_int(x)
+    print_str("\n")
+}
+
+fn print_str(s: Str) {
+    print_str("I'm ")
+    print_int(x)
+    print_str("\n")
+}
+
+struct Box {
+    items: Vec<Int>,
+}
+
+fn main() {
+    let stock = push(push(vec(), 4), 5)
+    let box = Box { items: stock }
+    let value = for_each(box.items, 0, add)
+    print(value)
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn for_each(v: Vec<Int>, base: Int, f: Int, g: Int) -> Int {
+    let r = match v {
+        Vec(refCons) => {
+            let head = get(refCons, 0)?
+            let rest = get(refCons, 1)?
+            f(head, for_each(rest, base, f, g))
+        },
+        Nullary => base,
+    }
+    r
+}
+
+fn concat(a: Vec<Int>, b: Vec<Int>) -> Vec<Int> {
+    push(a, b)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    push(vec(), a)
+}
+
+fn clone(x: Int) -> Int {
+    x
+}
+
+fn print(x: Int) {
+    print_str("I'm ")
+    print_int(x)
+    print_str("\n")
+}
+
+fn print_int(x: Int) {
+    print_str("I'm ")
+    print_int(x)
+    print_str("\n")
+}
+
+fn print_str(s: Str) {
+    print_str("I'm ")
+    print_int(x)
+    print_str("\n")
+}
+
+struct Box {
+    items: Vec<Int>,
+}
+
+fn main() {
+    let stock = push(push(vec(), 4), 5)
+    let box = Box { items: stock }
+    let value = for_each(box.items, 0, add)
+    print(value)
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn for_each(v: Vec<Int>, base: Int, f: Int, g: Int) -> Int {
+    let r = match v {
+        Vec(refCons) => {
+            let head = get(refCons, 0)?
+            let rest = get(refCons, 1)?
+            f(head, for_each(rest, base, f, g))
+        },
+        Nullary => base

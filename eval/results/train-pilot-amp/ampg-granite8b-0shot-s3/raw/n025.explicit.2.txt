@@ -1,0 +1,37 @@
+fn read_int(text: &Str) -> Option<Int> {
+    let mut chars = chars(text)
+    let neg = if chars.len() > 0 && chars.get(0) == Some(&chr_sub) { 1 } else { 0 }
+    let mut res = 0
+    for c in chars {
+        if c < chr_0 || c > chr_9 {
+            return None
+        }
+        res = res * 10 + (c - chr_0)
+    }
+    if neg == 1 {
+        Some(-res)
+    } else {
+        Some(res)
+    }
+}
+
+fn add_one(x: Int) -> Int {
+    x + 1
+}
+
+fn print_int(x: Int) {
+    print(int_to_str(x))
+}
+
+fn main() {
+    let x = parse_int(read_str())
+    match x {
+        Some(n) => {
+            let n1 = add_one(n)
+            print_int(n1)
+        },
+        None => {
+            print_str("bad")
+        },
+    }
+}

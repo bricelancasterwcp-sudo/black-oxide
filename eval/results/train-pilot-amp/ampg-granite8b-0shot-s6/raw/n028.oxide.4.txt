@@ -1,0 +1,23 @@
+fn read_num() -> Option<Int> {
+    let mut buf = ""
+    loop
+    match read_line(buf) {
+        None => returnNone,
+        Some(line) => {
+            buf = line
+            match parse_int(buf) {
+                None => {
+                    print_str("The text does not hold a number. Try again.\n")
+                },
+                Some(num) => returnSome(num) + breakOut,
+            }
+        },
+    }
+}
+
+fn main() {
+    match read_num() {
+        Some(num) => print(num),
+        None => print_str("Too many lines. Try again.\n"),
+    }
+}

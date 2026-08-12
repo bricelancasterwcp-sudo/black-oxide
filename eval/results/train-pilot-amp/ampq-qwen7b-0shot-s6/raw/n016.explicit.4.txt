@@ -1,0 +1,49 @@
+fn main() {
+    let mut nums = Vec()
+    for i in range(1, 11) {
+        if i % 3 == 0 {
+            nums = push(nums, i)
+        }
+    }
+    let total = sum(&nums)
+    drop nums
+    print(total)
+}
+
+fn sum(v: &Vec<Int>) -> Int {
+    let total = 0
+    for x in v {
+        total = total + x
+    }
+    total
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = Vec()
+    for i in a.upto(b - 1) {
+        result = push(result, i)
+    }
+    result
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut result = v
+    result.push(x)
+    result
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn main() {
+    let mut nums = Vec()
+    for i in range(1, 11) {
+        if i % 3 == 0 {
+            nums = push(nums, i)
+        }
+    }
+    let total = sum(&nums)
+    drop nums
+    print(total)
+}

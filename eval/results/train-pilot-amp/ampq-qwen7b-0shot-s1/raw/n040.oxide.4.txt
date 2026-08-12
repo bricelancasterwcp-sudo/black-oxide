@@ -1,0 +1,18 @@
+struct Shape { variant: Variant }
+
+enum Variant {
+    Square(Int),
+    Circle(Int),
+}
+
+fn area(shape: Shape) -> Float {
+    match shape.variant {
+        Variant_Square(square) => 3.14 * square * square,
+        Variant_Circle(circle) => 3.14 * circle * circle,
+    }
+}
+
+fn main() {
+    let s = Shape { variant: Variant_Square(4) }
+    print(area(s))
+}

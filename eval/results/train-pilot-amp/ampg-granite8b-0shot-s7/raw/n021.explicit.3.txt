@@ -1,0 +1,73 @@
+fn main() {
+    println(len("programming"))
+}
+
+fn println(x: &Str) {
+    print(x)
+    print("\n")
+}
+
+fn len(s: &Str) -> Int {
+    let mut i = 0
+    while get(&s, i) != None {
+        i = i + 1
+    }
+    i
+}
+
+fn get(s: &Str, i: Int) -> Option<Str> {
+    if i < 0 || i >= str_len(s) {
+        None
+    } else {
+        Some(chars(s).get(i))
+    }
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let v = vec()
+    for c in s {
+        v = push(v, c)
+    }
+    v
+}
+
+fn print(s: &Str) {
+    for c in s {
+        putchar(c)
+    }
+}
+
+fn putchar(x: Char) {
+    if x < 0 {
+        print("?")
+    } else if x < 128 {
+        unsafe_wrap_char(x)
+    } else {
+        print("?")
+    }
+}
+
+fn unsafe_wrap_char(x: Int) {
+    let mut v = vec()
+    v = push(v, x)
+    v = push(v, 0)
+    unsafe_wrap_str(v)
+}
+
+fn unsafe_wrap_str(v: Vec<Int>) {
+    let v = clone(&v)
+    unsafe_unwrap_str(v)
+}
+
+fn unsafe_unwrap_str(v: Vec<Int>) {
+    let mut i = 0
+    while get(&v, i) != Some(0) {
+        putchar(get(&v, i).unwrap())
+        i = i + 1
+    }
+}
+
+fn main() {
+    let prog = "programming"
+    let prog_len = len(&prog)
+    println(&str_from_int_to_int_unsafe_unwrap_str_unsafe_wrap_char_unsafe_wrap_str_clone_push_push_vec_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_clone_

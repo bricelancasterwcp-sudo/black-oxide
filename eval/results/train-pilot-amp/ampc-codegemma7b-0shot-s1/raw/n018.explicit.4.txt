@@ -1,0 +1,7 @@
+fn main() {
+    let mut x = vec(1, 2, 3, 4)
+    print(&x)
+    drop x
+    print(&x)
+    print(&x)
+}

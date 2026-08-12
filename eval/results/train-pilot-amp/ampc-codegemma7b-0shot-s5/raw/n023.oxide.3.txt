@@ -1,0 +1,12 @@
+fn len(v: Str) -> Int {
+    let mut count = 0
+    for _ in chars(v) {
+        count = count + 1
+    }
+    count
+}
+
+fn main() {
+    let phrase = Str("hello world")
+    print(len(phrase))
+}

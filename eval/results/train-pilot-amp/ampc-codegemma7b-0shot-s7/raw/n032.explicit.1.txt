@@ -1,0 +1,316 @@
+fn main() {
+    structPoint(1, 5).print().print_int(10).print().print_int(5).print_int(15).print()
+}
+
+struct Point {
+    x: Int,
+    y: Int,
+}
+
+fn structPoint(x: Int, y: Int) -> Point {
+    Point(x, y)
+}
+
+fn structPoint(p: &Point) -> Point {
+    Point(p.x + 10, p.y)
+}
+
+fn print(x: &Point) -> Point {
+    print_int(x.x)
+    print_int(x.y)
+    print_int(x.x + x.y)
+    Point(x.x, x.y)
+}
+
+fn print_int(n: Int) -> Point {
+    print(n)
+    Point(n, 0)
+}
+
+fn print(n: Int) -> Point {
+    print(char(n + 48))
+    Point(n, 0)
+}
+
+fn print(c: Char) -> Point {
+    print(str(c))
+    Point(c, 0)
+}
+
+fn print(s: &Str) -> Point {
+    print_str(s)
+    Point(s, 0)
+}
+
+fn print_str(s: &Str) -> Point {
+    for c in s {
+        print(c)
+    }
+    Point(s, 0)
+}
+
+fn print(x: &Char) -> Point {
+    print_str(str(x))
+    Point(x, 0)
+}
+
+fn print(x: &Str) -> Point {
+    print_str(x)
+    Point(x, 0)
+}
+
+fn print(x: &Char) -> Point {
+    print_str(str(x))
+    Point(x, 0)
+}
+
+fn print_int(n: Int) -> Point {
+    print(char(n + 48))
+    Point(n, 0)
+}
+
+fn print(n: Int) -> Point {
+    print(char(n + 48))
+    Point(n, 0)
+}
+
+fn print(c: Char) -> Point {
+    print(str(c))
+    Point(c, 0)
+}
+
+fn print(s: &Str) -> Point {
+    print_str(s)
+    Point(s, 0)
+}
+
+fn print_str(s: &Str) -> Point {
+    for c in s {
+        print(c)
+    }
+    Point(s, 0)
+}
+
+fn print(x: &Char) -> Point {
+    print_str(str(x))
+    Point(x, 0)
+}
+
+fn print(x: &Str) -> Point {
+    print_str(x)
+    Point(x, 0)
+}
+
+fn print(x: &Char) -> Point {
+    print_str(str(x))
+    Point(x, 0)
+}
+
+fn print_int(n: Int) -> Point {
+    print(char(n + 48))
+    Point(n, 0)
+}
+
+fn print(n: Int) -> Point {
+    print(char(n + 48))
+    Point(n, 0)
+}
+
+fn print(c: Char) -> Point {
+    print(str(c))
+    Point(c, 0)
+}
+
+fn print(s: &Str) -> Point {
+    print_str(s)
+    Point(s, 0)
+}
+
+fn print_str(s: &Str) -> Point {
+    for c in s {
+        print(c)
+    }
+    Point(s, 0)
+}
+
+fn print(x: &Char) -> Point {
+    print_str(str(x))
+    Point(x, 0)
+}
+
+fn print(x: &Str) -> Point {
+    print_str(x)
+    Point(x, 0)
+}
+
+fn print(x: &Char) -> Point {
+    print_str(str(x))
+    Point(x, 0)
+}
+
+fn print_int(n: Int) -> Point {
+    print(char(n + 48))
+    Point(n, 0)
+}
+
+fn print(n: Int) -> Point {
+    print(char(n + 48))
+    Point(n, 0)
+}
+
+fn print(c: Char) -> Point {
+    print(str(c))
+    Point(c, 0)
+}
+
+fn print(s: &Str) -> Point {
+    print_str(s)
+    Point(s, 0)
+}
+
+fn print_str(s: &Str) -> Point {
+    for c in s {
+        print(c)
+    }
+    Point(s, 0)
+}
+
+fn print(x: &Char) -> Point {
+    print_str(str(x))
+    Point(x, 0)
+}
+
+fn print(x: &Str) -> Point {
+    print_str(x)
+    Point(x, 0)
+}
+
+fn print(x: &Char) -> Point {
+    print_str(str(x))
+    Point(x, 0)
+}
+
+fn print_int(n: Int) -> Point {
+    print(char(n + 48))
+    Point(n, 0)
+}
+
+fn print(n: Int) -> Point {
+    print(char(n + 48))
+    Point(n, 0)
+}
+
+fn print(c: Char) -> Point {
+    print(str(c))
+    Point(c, 0)
+}
+
+fn print(s: &Str) -> Point {
+    print_str(s)
+    Point(s, 0)
+}
+
+fn print_str(s: &Str) -> Point {
+    for c in s {
+        print(c)
+    }
+    Point(s, 0)
+}
+
+fn print(x: &Char) -> Point {
+    print_str(str(x))
+    Point(x, 0)
+}
+
+fn print(x: &Str) -> Point {
+    print_str(x)
+    Point(x, 0)
+}
+
+fn print(x: &Char) -> Point {
+    print_str(str(x))
+    Point(x, 0)
+}
+
+fn print_int(n: Int) -> Point {
+    print(char(n + 48))
+    Point(n, 0)
+}
+
+fn print(n: Int) -> Point {
+    print(char(n + 48))
+    Point(n, 0)
+}
+
+fn print(c: Char) -> Point {
+    print(str(c))
+    Point(c, 0)
+}
+
+fn print(s: &Str) -> Point {
+    print_str(s)
+    Point(s, 0)
+}
+
+fn print_str(s: &Str) -> Point {
+    for c in s {
+        print(c)
+    }
+    Point(s, 0)
+}
+
+fn print(x: &Char) -> Point {
+    print_str(str(x))
+    Point(x, 0)
+}
+
+fn print(x: &Str) -> Point {
+    print_str(x)
+    Point(x, 0)
+}
+
+fn print(x: &Char) -> Point {
+    print_str(str(x))
+    Point(x, 0)
+}
+
+fn print_int(n: Int) -> Point {
+    print(char(n + 48))
+    Point(n, 0)
+}
+
+fn print(n: Int) -> Point {
+    print(char(n + 48))
+    Point(n, 0)
+}
+
+fn print(c: Char) -> Point {
+    print(str(c))
+    Point(c, 0)
+}
+
+fn print(s: &Str) -> Point {
+    print_str(s)
+    Point(s, 0)
+}
+
+fn print_str(s: &Str) -> Point {
+    for c in s {
+        print(c)
+    }
+    Point(s, 0)
+}
+
+fn print(x: &Char) -> Point {
+    print_str(str(x))
+    Point(x, 0)
+}
+
+fn print(x: &Str) -> Point {
+    print_str(x)
+    Point(x, 0)
+}
+
+fn print(x: &Char) -> Point {
+    print_str(str(x))
+    Point(x

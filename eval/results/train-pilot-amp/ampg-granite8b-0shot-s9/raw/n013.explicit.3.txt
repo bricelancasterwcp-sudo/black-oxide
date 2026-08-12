@@ -1,0 +1,30 @@
+fn max(a: Int, b: Int) -> Int {
+    if a > b {
+        a
+    } else {
+        b
+    }
+}
+
+fn main() {
+    let a = 5
+    let b = 3
+    let c = 9
+    let d = 1
+    let e = 7
+    print(max(a, b))
+    print(max(a, c))
+    print(max(a, d))
+    print(max(a, e))
+    drop a
+    print(max(b, c))
+    print(max(b, d))
+    print(max(b, e))
+    drop b
+    print(max(c, d))
+    print(max(c, e))
+    drop c
+    print(max(d, e))
+    drop d
+    drop e
+}

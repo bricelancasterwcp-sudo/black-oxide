@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let stocked_items = [(3, 4), (2, 5)];
+    let total_value = stocked_items.iter().map(|(price, quantity)| price * quantity).sum();
+    println!("{}", total_value);
+}
+```

@@ -1,0 +1,14 @@
+fn min(a: Int, b: Int) -> Int {
+    if a < b {
+        a
+    } else {
+        b
+    }
+}
+
+fn main() {
+    let readings = push(push(push(push(vec(), 5), 3), 9), 1)
+    let min = readings.fold(999, min)
+    print(min)
+    drop readings
+}

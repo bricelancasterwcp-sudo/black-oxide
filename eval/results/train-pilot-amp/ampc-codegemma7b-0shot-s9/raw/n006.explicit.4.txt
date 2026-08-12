@@ -1,0 +1,15 @@
+fn biggest_power_of_two(x: Int) -> Int {
+    let mut result = 1
+    while result <= x {
+        result = result * 2
+    }
+    if result / 2 == x {
+        result / 2
+    } else {
+        result / 4
+    }
+}
+
+fn main() {
+    print(biggest_power_of_two(100))
+}

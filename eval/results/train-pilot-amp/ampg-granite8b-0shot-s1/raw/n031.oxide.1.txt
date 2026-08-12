@@ -1,0 +1,186 @@
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn main() {
+    let rect = Rectangle { width: 7, height: 6 }
+    print(area(rect))
+}
+
+fn area(rect: Rectangle) -> Int {
+    rect.width * rect.height
+}
+
+fn area_boxed(rect: Rectangle) -> Int {
+    let Rectangle { width, height } = rect
+    width * height
+}
+
+fn area_functional_update(rect: Rectangle) -> Int {
+    let rect = rect.width(7).height(6)
+    rect.width * rect.height
+}
+
+fn area_destructure_tuple(rect: Rectangle) -> Int {
+    let Rectangle { width, height } = (7.0 / 2.0) * rect
+    width * height
+}
+
+fn area_destructure_struct(rect: Rectangle) -> Int {
+    let Rectangle { width, height } = rect
+    width * height
+}
+
+fn area_destructure_match(rect: Rectangle) -> Int {
+    match rect {
+        Rectangle(width, height) => width * height,
+        _ => panic("impossible") != 0,
+    }
+}
+
+fn area_match_arm_pattern(rect: Rectangle) -> Int {
+    match rect {
+        Rectangle(width, height) => width * height,
+        Rectangle(width, _) => width,
+        _ => panic("impossible") != 0,
+    }
+}
+
+fn area_match_arm_binders(rect: Rectangle) -> Int {
+    match rect {
+        Rectangle(width, height) => width * height,
+        Rectangle(_, height) => height,
+        _ => panic("impossible") != 0,
+    }
+}
+
+fn area_match_arm_binders_functional_update(rect: Rectangle) -> Int {
+    match rect {
+        Rectangle(width, _) => width.height(6),
+        _ => panic("impossible") != 0,
+    }
+}
+
+fn area_match_arm_binders_destructure(rect: Rectangle) -> Int {
+    match rect {
+        Rectangle(width, height) => width * height,
+        Rectangle(width, _) => width,
+        _ => panic("impossible") != 0,
+    }
+}
+
+fn area_match_arm_binders_destructure_functional_update(rect: Rectangle) -> Int {
+    match rect {
+        Rectangle(width, _) => width.height(6),
+        _ => panic("impossible") != 0,
+    }
+}
+
+fn area_match_arm_binders_destructure_match(rect: Rectangle) -> Int {
+    match rect {
+        Rectangle(width, height) => width * height,
+        Rectangle(width, _) => width,
+        _ => panic("impossible") != 0,
+    }
+}
+
+fn area_match_arm_binders_destructure_match_functional_update(rect: Rectangle) -> Int {
+    match rect {
+        Rectangle(width, _) => width.height(6),
+        _ => panic("impossible") != 0,
+    }
+}
+
+fn area_match_arm_binders_destructure_match_functional_update_chained(rect: Rectangle) -> Int {
+    match rect {
+        Rectangle(width, _) => width.height(6).height(6),
+        _ => panic("impossible") != 0,
+    }
+}
+
+fn area_match_arm_binders_destructure_match_functional_update_chained_parenthesized(rect: Rectangle) -> Int {
+    match rect {
+        Rectangle(width, _) => width.height(6).height(6),
+        _ => panic("impossible") != 0,
+    }
+}
+
+fn area_match_arm_binders_destructure_match_functional_update_chained_parenthesized_reversed(rect: Rectangle) -> Int {
+    match rect {
+        Rectangle(width, _) => (width.height(6)).height(6),
+        _ => panic("impossible") != 0,
+    }
+}
+
+fn area_match_arm_binders_destructure_match_functional_update_chained_parenthesized_reversed_reversed(rect: Rectangle) -> Int {
+    match rect {
+        Rectangle(width, _) => ((width.height(6)).height(6)).height(6),
+        _ => panic("impossible") != 0,
+    }
+}
+
+fn area_match_arm_binders_destructure_match_functional_update_chained_parenthesized_reversed_reversed_reversed(rect: Rectangle) -> Int {
+    match rect {
+        Rectangle(width, _) => ((((width.height(6)).height(6)).height(6)).height(6)).height(6),
+        _ => panic("impossible") != 0,
+    }
+}
+
+fn area_match_arm_binders_destructure_match_functional_update_chained_parenthesized_reversed_reversed_reversed_reversed(rect: Rectangle) -> Int {
+    match rect {
+        Rectangle(width, _) => ((((width.height(6)).height(6)).height(6)).height(6)).height(6).height(6),
+        _ => panic("impossible") != 0,
+    }
+}
+
+fn area_match_arm_binders_destructure_match_functional_update_chained_parenthesized_reversed_reversed_reversed_reversed_reversed(rect: Rectangle) -> Int {
+    match rect {
+        Rectangle(width, _) => ((((width.height(6)).height(6)).height(6)).height(6)).height(6).height(6).height(6),
+        _ => panic("impossible") != 0,
+    }
+}
+
+fn area_match_arm_binders_destructure_match_functional_update_chained_parenthesized_reversed_reversed_reversed_reversed_reversed_reversed(rect: Rectangle) -> Int {
+    match rect {
+        Rectangle(width, _) => ((((width.height(6)).height(6)).height(6)).height(6)).height(6).height(6).height(6).height(6),
+        _ => panic("impossible") != 0,
+    }
+}
+
+fn area_match_arm_binders_destructure_match_functional_update_chained_parenthesized_reversed_reversed_reversed_reversed_reversed_reversed_reversed(rect: Rectangle) -> Int {
+    match rect {
+        Rectangle(width, _) => ((((width.height(6)).height(6)).height(6)).height(6)).height(6).height(6).height(6).height(6).height(6),
+        _ => panic("impossible") != 0,
+    }
+}
+
+fn area_match_arm_binders_destructure_match_functional_update_chained_parenthesized_reversed_reversed_reversed_reversed_reversed_reversed_reversed_reversed(rect: Rectangle) -> Int {
+    match rect {
+        Rectangle(width, _) => ((((width.height(6)).height(6)).height(6)).height(6)).height(6).height(6).height(6).height(6).height(6).height(6),
+        _ => panic("impossible") != 0,
+    }
+}
+
+fn area_match_arm_binders_destructure_match_functional_update_chained_parenthesized_reversed_reversed_reversed_reversed_reversed_reversed_reversed_reversed_reversed(rect: Rectangle) -> Int {
+    match rect {
+        Rectangle(width, _) => ((((width.height(6)).height(6)).height(6)).height(6)).height(6).height(6).height(6).height(6).height(6).height(6).height(6),
+        _ => panic("impossible") != 0,
+    }
+}
+
+fn area_match_arm_binders_destructure_match_functional_update_chained_parenthesized_reversed_reversed_reversed_reversed_reversed_reversed_reversed_reversed_reversed_reversed(rect: Rectangle) -> Int {
+    match rect {
+        Rectangle(width, _) => ((((width.height(6)).height(6)).height(6)).height(6)).height(6).height(6).height(6).height(6).height(6).height(6).height(6).height(6),
+        _ => panic("impossible") != 0,
+    }
+}
+
+fn area_match_arm_binders_destructure_match_functional_update_chained_parenthesized_reversed_reversed_reversed_reversed_reversed_reversed_reversed_reversed_reversed_reversed_reversed(rect: Rectangle) -> Int {
+    match rect {
+        Rectangle(width, _) => ((((width.height(6)).height(6)).height(6)).height(6)).height(6).height(6).height(6).height(6).height(6).height(6).height(6).height(6).height(6),
+        _ => panic("impossible") != 0,
+    }
+}
+
+fn area_match_arm_binders_

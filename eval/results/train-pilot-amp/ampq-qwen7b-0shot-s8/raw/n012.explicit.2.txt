@@ -1,0 +1,8 @@
+fn main() {
+    let mut list = vec()
+    for i in range(0, 15) {
+        push(list, i)
+    }
+    print(len(&list))
+    drop list
+}

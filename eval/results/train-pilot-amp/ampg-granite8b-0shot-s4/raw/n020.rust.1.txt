@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let mut sum = 0;
+    for i in &[4, 8, 15, 16, 23, 42] {
+        sum += i;
+    }
+    let mean = sum / 6;
+    println!("{}", mean);
+}
+```

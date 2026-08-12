@@ -1,0 +1,16 @@
+struct Word { letters: Vec<Char> }
+
+fn len(word: Word) -> Int {
+    let mut count = 0
+    for letter in word.letters {
+        if letter == Char {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn main() {
+    let word = Word { letters: push(push(push(push(vec(), Char), Char), Char), Char) }
+    print(len(word))
+}

@@ -1,0 +1,6 @@
+fn main() {
+    let nums = vec(5, 3, 9, 1, 7)
+    let max = nums.iter().max().unwrap()
+    print_str(max.to_string())
+    drop nums
+}

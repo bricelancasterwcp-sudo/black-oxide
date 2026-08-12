@@ -1,0 +1,9 @@
+struct VecInt { values: Vec<Int> }
+
+fn main() {
+    let mut v = VecInt { values: vec() }
+    for i in range(0, 15) {
+        v.values = push(v.values, i)
+    }
+    print(len(v.values))
+}

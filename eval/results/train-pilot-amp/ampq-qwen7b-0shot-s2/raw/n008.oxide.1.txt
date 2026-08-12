@@ -1,0 +1,16 @@
+struct Counter { count: Int }
+
+fn count_divisible_by_three_or_five() -> Counter {
+    let mut counter = Counter { count: 0 }
+    for i in range(1, 51) {
+        if i % 3 == 0 || i % 5 == 0 {
+            counter.count = counter.count + 1
+        }
+    }
+    counter
+}
+
+fn main() {
+    let c = count_divisible_by_three_or_five()
+    print(c.count)
+}

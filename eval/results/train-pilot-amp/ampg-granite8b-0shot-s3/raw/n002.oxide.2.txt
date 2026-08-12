@@ -1,0 +1,280 @@
+struct Product { n: Int }
+
+fn main() {
+    print(Product { n: factorial(6) }).n
+}
+
+fn factorial(n: Int) -> Int {
+    if n <= 1 {
+        1
+    } else {
+        n * factorial(n - 1)
+    }
+}
+
+fn factorial_2(mutacc: Int, n: Int) -> Int {
+    if n <= 1 {
+        acc
+    } else {
+        factorial_2(n * acc, n - 1)
+    }
+}
+
+fn factorial_3(n: Int) -> Int {
+    let mutacc = 1
+    for i in 2.to(n) {
+        acc = i * acc
+    }
+    acc
+}
+
+fn factorial_4(n: Int) -> Int {
+    range(2, n + 1).fold(1, move || acc * x)
+}
+
+fn factorial_5(n: Int) -> Int {
+    let v = range(2, n + 1).collect()
+    reduce(v, move || acc * x)
+}
+
+fn factorial_6(n: Int) -> Int {
+    reduce(range(2, n + 1).collect(), move || acc * x)
+}
+
+fn reduce(v: Vec<Int>, f: Int) -> Int {
+    let mutacc = v.get(0)?
+    for x in v.iter().rest() {
+        acc = f(acc, x)
+    }
+    acc
+}
+
+fn factorial_7(n: Int) -> Int {
+    reduce(range(2, n + 1).collect(), move || acc * x)
+}
+
+fn factorial_8(n: Int) -> Int {
+    reduce(range(2, n + 1).collect(), move || acc * x)
+}
+
+fn reduce_2(mutv: Vec<Int>, f: Int) -> Int {
+    let mutacc = v.pop().unwrap_or_else(abort)
+    while !v.is_empty() {
+        acc = f(acc, v.pop().unwrap_or_else(abort))
+    }
+    acc
+}
+
+fn abort() -> Int {
+    panic()
+}
+
+fn factorial_9(n: Int) -> Int {
+    reduce_2(range(2, n + 1).collect(), move || acc * x)
+}
+
+fn factorial_10(n: Int) -> Int {
+    reduce_2(range(2, n + 1).collect(), move || acc * x)
+}
+
+fn reduce_3(mutv: Vec<Int>, mutacc: Int) -> Int {
+    while letSome(x) == v.pop() {
+        acc = acc * x
+    }
+    acc
+}
+
+fn factorial_11(n: Int) -> Int {
+    reduce_3(range(2, n + 1).collect(), 1)
+}
+
+fn factorial_12(n: Int) -> Int {
+    reduce_3(range(2, n + 1).collect(), 1)
+}
+
+fn reduce_4(v: Vec<Int>, mutacc: Int) -> Int {
+    for x in v {
+        acc = acc * x
+    }
+    acc
+}
+
+fn factorial_13(n: Int) -> Int {
+    reduce_4(range(2, n + 1).collect(), 1)
+}
+
+fn factorial_14(n: Int) -> Int {
+    reduce_4(range(2, n + 1).collect(), 1)
+}
+
+fn reduce_5(v: Vec<Int>, mutacc: Int) -> Int {
+    for x in v {
+        acc = acc * x
+    }
+    acc
+}
+
+fn factorial_15(n: Int) -> Int {
+    reduce_5(range(2, n + 1).collect(), 1)
+}
+
+fn factorial_16(n: Int) -> Int {
+    reduce_5(range(2, n + 1).collect(), 1)
+}
+
+fn reduce_6(v: Vec<Int>, mutacc: Int) -> Int {
+    for x in v {
+        acc = acc * x
+    }
+    acc
+}
+
+fn factorial_17(n: Int) -> Int {
+    reduce_6(range(2, n + 1).collect(), 1)
+}
+
+fn reduce_7(v: Vec<Int>, mutacc: Int) -> Int {
+    for x in v {
+        acc = acc * x
+    }
+    acc
+}
+
+fn factorial_18(n: Int) -> Int {
+    reduce_7(range(2, n + 1).collect(), 1)
+}
+
+fn reduce_8(v: Vec<Int>, mutacc: Int) -> Int {
+    for x in v {
+        acc = acc * x
+    }
+    acc
+}
+
+fn factorial_19(n: Int) -> Int {
+    reduce_8(range(2, n + 1).collect(), 1)
+}
+
+fn reduce_9(v: Vec<Int>, mutacc: Int) -> Int {
+    for x in v {
+        acc = acc * x
+    }
+    acc
+}
+
+fn factorial_20(n: Int) -> Int {
+    reduce_9(range(2, n + 1).collect(), 1)
+}
+
+fn reduce_10(v: Vec<Int>, mutacc: Int) -> Int {
+    for x in v {
+        acc = acc * x
+    }
+    acc
+}
+
+fn factorial_21(n: Int) -> Int {
+    reduce_10(range(2, n + 1).collect(), 1)
+}
+
+fn factorial_22(n: Int) -> Int {
+    reduce_10(range(2, n + 1).collect(), 1)
+}
+
+fn reduce_11(v: Vec<Int>, mutacc: Int) -> Int {
+    for x in v {
+        acc = acc * x
+    }
+    acc
+}
+
+fn factorial_23(n: Int) -> Int {
+    reduce_11(range(2, n + 1).collect(), 1)
+}
+
+fn reduce_12(v: Vec<Int>, mutacc: Int) -> Int {
+    for x in v {
+        acc = acc * x
+    }
+    acc
+}
+
+fn factorial_24(n: Int) -> Int {
+    reduce_12(range(2, n + 1).collect(), 1)
+}
+
+fn reduce_13(v: Vec<Int>, mutacc: Int) -> Int {
+    for x in v {
+        acc = acc * x
+    }
+    acc
+}
+
+fn factorial_25(n: Int) -> Int {
+    reduce_13(range(2, n + 1).collect(), 1)
+}
+
+fn reduce_14(v: Vec<Int>, mutacc: Int) -> Int {
+    for x in v {
+        acc = acc * x
+    }
+    acc
+}
+
+fn factorial_26(n: Int) -> Int {
+    reduce_14(range(2, n + 1).collect(), 1)
+}
+
+fn reduce_15(v: Vec<Int>, mutacc: Int) -> Int {
+    for x in v {
+        acc = acc * x
+    }
+    acc
+}
+
+fn factorial_27(n: Int) -> Int {
+    reduce_15(range(2, n + 1).collect(), 1)
+}
+
+fn reduce_16(v: Vec<Int>, mutacc: Int) -> Int {
+    for x in v {
+        acc = acc * x
+    }
+    acc
+}
+
+fn factorial_28(n: Int) -> Int {
+    reduce_16(range(2, n + 1).collect(), 1)
+}
+
+fn reduce_17(v: Vec<Int>, mutacc: Int) -> Int {
+    for x in v {
+        acc = acc * x
+    }
+    acc
+}
+
+fn factorial_29(n: Int) -> Int {
+    reduce_17(range(2, n + 1).collect(), 1)
+}
+
+fn reduce_18(v: Vec<Int>, mutacc: Int) -> Int {
+    for x in v {
+        acc = acc * x
+    }
+    acc
+}
+
+fn factorial_30(n: Int) -> Int {
+    reduce_18(range(2, n + 1).collect(), 1)
+}
+
+fn reduce_19(v: Vec<Int>, mutacc: Int) -> Int {
+    for x in v {
+        acc = acc * x
+    }
+    acc
+}
+
+fn factorial_31(n: Int) -> Int {
+    reduce_19(range(2, n + 1

@@ -1,0 +1,8 @@
+fn main() {
+    let text = "417"
+    if letSome(num) == parse_int(text) {
+        print(num + 1)
+    } else {
+        print("bad")
+    }
+}

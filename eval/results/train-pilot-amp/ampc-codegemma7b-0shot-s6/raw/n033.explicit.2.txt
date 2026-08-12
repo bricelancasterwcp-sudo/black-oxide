@@ -1,0 +1,11 @@
+fn main() {
+    print("go\n")
+    print("for\n")
+    print("green\n")
+    print("wait\n")
+    print("for\n")
+    print("yellow\n")
+    print("stop\n")
+    print("for\n")
+    print("red\n")
+}

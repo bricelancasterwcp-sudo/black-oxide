@@ -1,0 +1,4 @@
+fn main() {
+    let v = range(0, 15)
+    print(len(v))
+}

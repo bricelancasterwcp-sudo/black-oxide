@@ -1,0 +1,11 @@
+struct Stock {
+    units: Int,
+    value_per_unit: Int,
+}
+
+fn main() {
+    let item1 = Stock { units: 4, value_per_unit: 3 }
+    let item2 = Stock { units: 5, value_per_unit: 2 }
+    let total_value = item1.units * item1.value_per_unit + item2.units * item2.value_per_unit
+    print(total_value)
+}

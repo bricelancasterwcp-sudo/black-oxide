@@ -1,0 +1,31 @@
+struct Rectangle { width: Int, height: Int }
+
+fn main() {
+    let r = Rectangle { width: 7, height: 6 }
+    print(area(r))
+}
+
+fn area(r: Rectangle) -> Int {
+    r.width * r.height
+}
+
+struct Point { x: Int, y: Int }
+
+struct Circle { center: Point, radius: Float }
+
+fn dist2(p1: Point, p2: Point) -> Float {
+    let dx = p2.x - p1.x
+    let dy = p2.y - p1.y
+    dx * dx + dy * dy
+}
+
+fn main() {
+    let center = Point { x: 2, y: 3 }
+    let c = Circle { center: center, radius: 5.0 }
+    let p = Point { x: 1, y: 4 }
+    let too_far = dist2(center, p) > c.radius * c.radius
+    match too_far {
+        True => print_str("off center"),
+        False => print_str("on center"),
+    }
+}

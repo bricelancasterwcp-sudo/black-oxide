@@ -1,0 +1,5 @@
+fn main() {
+    let list = push(push(push(vec(), 10), 20), 30)
+    let result = get(list, 2)?
+    print(result)
+}

@@ -1,0 +1,7 @@
+fn main() {
+    print!("one");
+    print!(" ");
+    print!("two");
+    print!(" ");
+    print!("three\n");
+}

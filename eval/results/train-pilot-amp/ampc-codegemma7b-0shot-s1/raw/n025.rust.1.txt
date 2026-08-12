@@ -1,0 +1,7 @@
+fn main() {
+    let num = std::io::stdin().read_line().unwrap().trim().parse::<i32>().ok();
+    match num {
+        Some(n) => println!("{}", n + 1),
+        None => println!("bad"),
+    }
+}

@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let readings = [4, 8, 15, 16, 23, 42];
+    let sum: i32 = readings.iter().sum();
+    let count = readings.len() as i32;
+    let mean = sum / count;
+    println!("{}", mean);
+}
+```

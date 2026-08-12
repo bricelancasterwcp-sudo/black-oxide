@@ -1,0 +1,10 @@
+struct Reading { label: Str, values: Vec<Int> }
+
+fn len(s: Str) -> Int {
+    str_len(s)
+}
+
+fn main() {
+    let s = "hello world"
+    print(len(s))
+}

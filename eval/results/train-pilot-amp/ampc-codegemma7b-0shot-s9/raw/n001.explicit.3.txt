@@ -1,0 +1,71 @@
+fn cube(x: Int) -> Int {
+    x * x * x
+}
+
+fn main() {
+    let total = 0
+    for x in 1.upto(6) {
+        total = total + cube(x)
+    }
+    print(total)
+    drop total
+}
+
+fn upto(n: Int) -> Vec<Int> {
+    let mut v = vec()
+    for i in 0.upto(n) {
+        v.push(i)
+    }
+    v
+}
+
+fn main() {
+    let total = 0
+    for x in upto(6) {
+        total = total + cube(x)
+    }
+    print(total)
+    drop total
+}
+
+fn upto(n: Int) -> Vec<Int> {
+    let mut v = vec()
+    for i in 0.upto(n) {
+        v.push(i)
+    }
+    v
+}
+
+fn cube(x: Int) -> Int {
+    x * x * x
+}
+
+fn main() {
+    let total = 0
+    for x in upto(6) {
+        total = total + cube(x)
+    }
+    print(total)
+    drop total
+}
+
+fn upto(n: Int) -> Vec<Int> {
+    let mut v = vec()
+    for i in 0.upto(n) {
+        v.push(i)
+    }
+    v
+}
+
+fn cube(x: Int) -> Int {
+    x * x * x
+}
+
+fn main() {
+    let total = 0
+    for x in upto(6) {
+        total = total + cube(x)
+    }
+    print(total)
+    drop total
+}

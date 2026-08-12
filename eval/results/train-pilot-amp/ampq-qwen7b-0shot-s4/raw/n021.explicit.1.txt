@@ -1,0 +1,5 @@
+fn main() {
+    let word = "programming"
+    print_str(word)
+    drop word
+}

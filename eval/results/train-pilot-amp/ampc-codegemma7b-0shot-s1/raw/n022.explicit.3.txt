@@ -1,0 +1,356 @@
+fn oxide_black() {
+    let oxide = "oxide"
+    let black = "black"
+    print(concat(oxide, black))
+}
+
+fn main() {
+    oxide_black()
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    let mut result = a.to_string()
+    result.push_str(b)
+    result
+}
+
+fn oxide_black() {
+    let oxide = "oxide"
+    let black = "black"
+    print(concat(oxide, black))
+}
+
+fn main() {
+    oxide_black()
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    let mut result = a.to_string()
+    result.push_str(b)
+    result
+}
+
+fn oxide_black() {
+    let oxide = "oxide"
+    let black = "black"
+    print(concat(oxide, black))
+}
+
+fn main() {
+    oxide_black()
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    let mut result = a.to_string()
+    result.push_str(b)
+    result
+}
+
+fn oxide_black() {
+    let oxide = "oxide"
+    let black = "black"
+    print(concat(oxide, black))
+}
+
+fn main() {
+    oxide_black()
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    let mut result = a.to_string()
+    result.push_str(b)
+    result
+}
+
+fn oxide_black() {
+    let oxide = "oxide"
+    let black = "black"
+    print(concat(oxide, black))
+}
+
+fn main() {
+    oxide_black()
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    let mut result = a.to_string()
+    result.push_str(b)
+    result
+}
+
+fn oxide_black() {
+    let oxide = "oxide"
+    let black = "black"
+    print(concat(oxide, black))
+}
+
+fn main() {
+    oxide_black()
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    let mut result = a.to_string()
+    result.push_str(b)
+    result
+}
+
+fn oxide_black() {
+    let oxide = "oxide"
+    let black = "black"
+    print(concat(oxide, black))
+}
+
+fn main() {
+    oxide_black()
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    let mut result = a.to_string()
+    result.push_str(b)
+    result
+}
+
+fn oxide_black() {
+    let oxide = "oxide"
+    let black = "black"
+    print(concat(oxide, black))
+}
+
+fn main() {
+    oxide_black()
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    let mut result = a.to_string()
+    result.push_str(b)
+    result
+}
+
+fn oxide_black() {
+    let oxide = "oxide"
+    let black = "black"
+    print(concat(oxide, black))
+}
+
+fn main() {
+    oxide_black()
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    let mut result = a.to_string()
+    result.push_str(b)
+    result
+}
+
+fn oxide_black() {
+    let oxide = "oxide"
+    let black = "black"
+    print(concat(oxide, black))
+}
+
+fn main() {
+    oxide_black()
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    let mut result = a.to_string()
+    result.push_str(b)
+    result
+}
+
+fn oxide_black() {
+    let oxide = "oxide"
+    let black = "black"
+    print(concat(oxide, black))
+}
+
+fn main() {
+    oxide_black()
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    let mut result = a.to_string()
+    result.push_str(b)
+    result
+}
+
+fn oxide_black() {
+    let oxide = "oxide"
+    let black = "black"
+    print(concat(oxide, black))
+}
+
+fn main() {
+    oxide_black()
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    let mut result = a.to_string()
+    result.push_str(b)
+    result
+}
+
+fn oxide_black() {
+    let oxide = "oxide"
+    let black = "black"
+    print(concat(oxide, black))
+}
+
+fn main() {
+    oxide_black()
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    let mut result = a.to_string()
+    result.push_str(b)
+    result
+}
+
+fn oxide_black() {
+    let oxide = "oxide"
+    let black = "black"
+    print(concat(oxide, black))
+}
+
+fn main() {
+    oxide_black()
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    let mut result = a.to_string()
+    result.push_str(b)
+    result
+}
+
+fn oxide_black() {
+    let oxide = "oxide"
+    let black = "black"
+    print(concat(oxide, black))
+}
+
+fn main() {
+    oxide_black()
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    let mut result = a.to_string()
+    result.push_str(b)
+    result
+}
+
+fn oxide_black() {
+    let oxide = "oxide"
+    let black = "black"
+    print(concat(oxide, black))
+}
+
+fn main() {
+    oxide_black()
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    let mut result = a.to_string()
+    result.push_str(b)
+    result
+}
+
+fn oxide_black() {
+    let oxide = "oxide"
+    let black = "black"
+    print(concat(oxide, black))
+}
+
+fn main() {
+    oxide_black()
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    let mut result = a.to_string()
+    result.push_str(b)
+    result
+}
+
+fn oxide_black() {
+    let oxide = "oxide"
+    let black = "black"
+    print(concat(oxide, black))
+}
+
+fn main() {
+    oxide_black()
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    let mut result = a.to_string()
+    result.push_str(b)
+    result
+}
+
+fn oxide_black() {
+    let oxide = "oxide"
+    let black = "black"
+    print(concat(oxide, black))
+}
+
+fn main() {
+    oxide_black()
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    let mut result = a.to_string()
+    result.push_str(b)
+    result
+}
+
+fn oxide_black() {
+    let oxide = "oxide"
+    let black = "black"
+    print(concat(oxide, black))
+}
+
+fn main() {
+    oxide_black()
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    let mut result = a.to_string()
+    result.push_str(b)
+    result
+}
+
+fn oxide_black() {
+    let oxide = "oxide"
+    let black = "black"
+    print(concat(oxide, black))
+}
+
+fn main() {
+    oxide_black()
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    let mut result = a.to_string()
+    result.push_str(b)
+    result
+}
+
+fn oxide_black() {
+    let oxide = "oxide"
+    let black = "black"
+    print(concat(oxide, black))
+}
+
+fn main() {
+    oxide_black()
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    let mut result = a.to_string()
+    result.push_str(b)
+    result
+}
+
+fn oxide_black() {
+    let oxide = "oxide"
+    let black = "black"
+    

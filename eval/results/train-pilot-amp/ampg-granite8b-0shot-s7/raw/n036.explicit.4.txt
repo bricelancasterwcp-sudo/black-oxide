@@ -1,0 +1,13 @@
+fn main() {
+    let four_units_of_three = 4 * 3
+    let five_units_of_two = 5 * 2
+    print_str("Total: ")
+    print(four_units_of_three + five_units_of_two)
+}
+
+fn main() {
+    let four_units_of_three = 4 * 3
+    let five_units_of_two = 5 * 2
+    print_str("Total: ")
+    print(four_units_of_three + five_units_of_two)
+}

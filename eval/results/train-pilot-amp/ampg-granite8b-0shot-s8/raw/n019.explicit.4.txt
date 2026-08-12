@@ -1,0 +1,11 @@
+fn main() {
+    let list1 = push(push(push(vec(), 1), 2), 3)
+    let list2 = push(push(vec(), 4), 5)
+    let mut intersection = vec()
+    for x in &list1 {
+        if get(&list2, x).unwrap() {
+            intersection = push(intersection, x)
+        }
+    }
+    print(len(&intersection))
+}

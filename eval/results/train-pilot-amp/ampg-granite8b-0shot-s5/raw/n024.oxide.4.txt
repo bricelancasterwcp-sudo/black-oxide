@@ -1,0 +1,504 @@
+fn main() {
+    let printed = false
+    let count = for_each("banana", "a", 0, f(count, c) == count + if_else(c == "a", 1, 0) || printed)
+    if !printed {
+        print(count)
+    }
+}
+
+fn for_each(s: Str, item: Str, init: T, body: T) -> T {
+    let i = 0
+    let acc = init
+    while i < str_len(s) {
+        let c = get(s, i)?
+        let acc = body
+        if c == item {
+            let count = acc + 1
+            return count
+        }
+        i = i + 1
+    }
+    acc
+}
+
+fn f(x: T, y: T) -> T {
+    x + y
+}
+
+fn if_else(c: Bool, t: T, e: T) -> T {
+    if c {
+        t
+    } else {
+        e
+    }
+}
+
+fn print(x: T) {
+    println(x)
+}
+
+fn println(x: T) {
+    _print_str("print: ")
+    _print(x)
+    _print_str("\n")
+}
+
+fn _print(x: T) {
+    _print_str(x.to_str())
+}
+
+fn _print_str(x: Str) {
+    _write_str(x)
+}
+
+fn _write_str(x: Str) {
+    _io_write_str(x)
+}
+
+fn _io_write_str(x: Str) {
+    _io_flush()
+}
+
+fn _io_flush() {
+    _unknown_io_op(1)
+}
+
+fn _unknown_io_op(x: Int) {
+    _exit(x)
+}
+
+fn _exit(x: Int) {
+    _unknown_runtime_op(0, x)
+}
+
+fn _unknown_runtime_op(x: Int, y: Int) {
+    _unknown_call(x, y)
+}
+
+fn _unknown_call(x: Int, y: Int) {
+    _return()
+}
+
+fn _return() {
+    return
+}
+
+fn to_str(x: T) -> Str {
+    x.to_str()
+}
+
+fn to_str_lossy(x: T) -> Str {
+    x.to_str()
+}
+
+struct Str {
+    data: Vec<Int>,
+    len: Int,
+}
+
+struct Vec {
+    data: Vec<Int>,
+    len: Int,
+}
+
+struct Int {
+    value: Int,
+}
+
+struct Bool {
+    value: Int,
+}
+
+struct Unit {
+    _private: Int,
+}
+
+struct Option {
+    value: Int,
+}
+
+struct Result {
+    value: Int,
+}
+
+struct Range {
+    value: Int,
+}
+
+struct RangeFrom {
+    value: Int,
+}
+
+struct RangeFull {
+    value: Int,
+}
+
+struct RangeTo {
+    value: Int,
+}
+
+struct RangeToFrom {
+    value: Int,
+}
+
+struct Slice {
+    value: Int,
+}
+
+struct Clone {
+    value: Int,
+}
+
+struct Copy {
+    value: Int,
+}
+
+struct PartialEq {
+    value: Int,
+}
+
+struct PartialOrd {
+    value: Int,
+}
+
+struct Eq {
+    value: Int,
+}
+
+struct Ord {
+    value: Int,
+}
+
+struct Debug {
+    value: Int,
+}
+
+struct Default {
+    value: Int,
+}
+
+struct Hash {
+    value: Int,
+}
+
+struct Display {
+    value: Int,
+}
+
+struct AsRef {
+    value: Int,
+}
+
+struct Borrow {
+    value: Int,
+}
+
+struct Deref {
+    value: Int,
+}
+
+struct DerefMut {
+    value: Int,
+}
+
+struct Add {
+    value: Int,
+}
+
+struct Sub {
+    value: Int,
+}
+
+struct Mul {
+    value: Int,
+}
+
+struct Div {
+    value: Int,
+}
+
+struct Rem {
+    value: Int,
+}
+
+struct Not {
+    value: Int,
+}
+
+struct BitAnd {
+    value: Int,
+}
+
+struct BitOr {
+    value: Int,
+}
+
+struct BitXor {
+    value: Int,
+}
+
+struct BitNot {
+    value: Int,
+}
+
+struct Shl {
+    value: Int,
+}
+
+struct Shr {
+    value: Int,
+}
+
+struct Index {
+    value: Int,
+}
+
+struct IndexMut {
+    value: Int,
+}
+
+struct Get {
+    value: Int,
+}
+
+struct GetMut {
+    value: Int,
+}
+
+struct IntoIter {
+    value: Int,
+}
+
+struct Iter {
+    value: Int,
+}
+
+struct IterMut {
+    value: Int,
+}
+
+struct FromIterator {
+    value: Int,
+}
+
+struct Extend {
+    value: Int,
+}
+
+struct AddAssign {
+    value: Int,
+}
+
+struct SubAssign {
+    value: Int,
+}
+
+struct MulAssign {
+    value: Int,
+}
+
+struct DivAssign {
+    value: Int,
+}
+
+struct RemAssign {
+    value: Int,
+}
+
+struct BitAndAssign {
+    value: Int,
+}
+
+struct BitOrAssign {
+    value: Int,
+}
+
+struct BitXorAssign {
+    value: Int,
+}
+
+struct ShlAssign {
+    value: Int,
+}
+
+struct ShrAssign {
+    value: Int,
+}
+
+struct IndexAssign {
+    value: Int,
+}
+
+fn print(x: T) {
+    println(x)
+}
+
+fn println(x: T) {
+    _print_str("print: ")
+    _print(x)
+    _print_str("\n")
+}
+
+fn _print(x: T) {
+    _print_str(x.to_str())
+}
+
+fn _print_str(x: Str) {
+    _write_str(x)
+}
+
+fn _write_str(x: Str) {
+    _io_write_str(x)
+}
+
+fn _io_write_str(x: Str) {
+    _io_flush()
+}
+
+fn _io_flush() {
+    _unknown_io_op(1)
+}
+
+fn _unknown_io_op(x: Int) {
+    _exit(x)
+}
+
+fn _exit(x: Int) {
+    _unknown_runtime_op(0, x)
+}
+
+fn _unknown_runtime_op(x: Int, y: Int) {
+    _unknown_call(x, y)
+}
+
+fn _unknown_call(x: Int, y: Int) {
+    _return()
+}
+
+fn _return() {
+    return
+}
+
+fn to_str(x: T) -> Str {
+    x.to_str()
+}
+
+fn to_str_lossy(x: T) -> Str {
+    x.to_str()
+}
+
+struct Str {
+    data: Vec<Int>,
+    len: Int,
+}
+
+struct Vec {
+    data: Vec<Int>,
+    len: Int,
+}
+
+struct Int {
+    value: Int,
+}
+
+struct Bool {
+    value: Int,
+}
+
+struct Unit {
+    _private: Int,
+}
+
+struct Option {
+    value: Int,
+}
+
+struct Result {
+    value: Int,
+}
+
+struct Range {
+    value: Int,
+}
+
+struct RangeFrom {
+    value: Int,
+}
+
+struct RangeFull {
+    value: Int,
+}
+
+struct RangeTo {
+    value: Int,
+}
+
+struct RangeToFrom {
+    value: Int,
+}
+
+struct Slice {
+    value: Int,
+}
+
+struct Clone {
+    value: Int,
+}
+
+struct Copy {
+    value: Int,
+}
+
+struct PartialEq {
+    value: Int,
+}
+
+struct PartialOrd {
+    value: Int,
+}
+
+struct Eq {
+    value: Int,
+}
+
+struct Ord {
+    value: Int,
+}
+
+struct Debug {
+    value: Int,
+}
+
+struct Default {
+    value: Int,
+}
+
+struct Hash {
+    value: Int,
+}
+
+struct Display {
+    value: Int,
+}
+
+struct AsRef {
+    value: Int,
+}
+
+struct Borrow {
+    value: Int,
+}
+
+struct Deref {
+    value: Int,
+}
+
+struct DerefMut {
+    value: Int,
+}
+
+struct Add {
+    value: Int,
+}
+
+struct Sub {

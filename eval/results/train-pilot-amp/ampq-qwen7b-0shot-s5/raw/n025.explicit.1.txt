@@ -1,0 +1,10 @@
+fn parse_and_increment(s: &Str) -> Str {
+    let num = parse_int(s)?.unwrap_or(0) + 1
+    int_to_str(num)
+}
+
+fn main() {
+    let input = "417"
+    let result = parse_and_increment(input)
+    print_str(&result)
+}

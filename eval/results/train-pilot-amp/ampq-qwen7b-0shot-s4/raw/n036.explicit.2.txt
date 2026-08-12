@@ -1,0 +1,14 @@
+fn total_value(units: Vec<Int>, values: Vec<Int>) -> Int {
+    let mut total = 0
+    for i in range(0, units.len()) {
+        total = total + units.get(i).unwrap() * values.get(i).unwrap()
+    }
+    total
+}
+
+fn main() {
+    let units = vec(4, 5)
+    let values = vec(3, 2)
+    let total = total_value(clone(&units), clone(&values))
+    print(total)
+}

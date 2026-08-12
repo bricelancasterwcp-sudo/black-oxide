@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let text = "417";
+    let number = text.parse::<i32>();
+    match number {
+        Ok(n) => println!("{}", n + 1),
+        Err(_) => println!("bad"),
+    }
+}
+```

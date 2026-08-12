@@ -1,0 +1,206 @@
+fn main() {
+    let mut list = vec()
+    for i in 0.0.to_int().to_float() + 4.0 {
+        if list.len() < 6 {
+            list = push(list, i)
+        } else {
+            break
+        }
+    }
+    let total = list.iter().fold(0.0, add)
+    print(total)
+    drop_all(&list)
+}
+
+fn add(a: Float, b: Float) -> Float {
+    a + b
+}
+
+fn print(n: Float) {
+    println(n)
+}
+
+fn push(v: Vec<Float>, x: Float) -> Vec<Float> {
+    let mut new_vec = v
+    new_vec = new_vec.push(x)
+    new_vec
+}
+
+fn vec() -> Vec<Float> {
+    let mut new_vec = Vec.new()
+    new_vec
+}
+
+fn len(v: &Vec<Float>) -> Int {
+    let len = v.len()
+    len
+}
+
+fn iter(v: &Vec<Float>) -> Vec<Float> {
+    let mut new_vec = vec()
+    for i in 0.0.to_int().to_float() + 0.0 {
+        if i < v.len().to_float() {
+            new_vec = new_vec.push(v.get(i).unwrap())
+        } else {
+            break
+        }
+    }
+    new_vec
+}
+
+fn fold(v: &Vec<Float>, init: Float, f: FnMutTwoArgs<Float, Float, Float>) -> Float {
+    let mut accumulator = init
+    for i in 0.0.to_int().to_float() + 0.0 {
+        if i < v.len().to_float() {
+            accumulator = f(accumulator, v.get(i).unwrap())
+        } else {
+            break
+        }
+    }
+    accumulator
+}
+
+fn to_float(n: Int) -> Float {
+    let float = n.to_float()
+    float
+}
+
+fn to_int(n: Float) -> Int {
+    let int = n.to_int()
+    int
+}
+
+fn unwrap(o: &Option<Float>) -> Float {
+    let float = o.unwrap()
+    float
+}
+
+fn add(a: Float, b: Float) -> Float {
+    let sum = a + b
+    sum
+}
+
+fn println(n: Float) {
+    print(n)
+    print("\n")
+}
+
+fn print(n: Float) {
+    let s = n.to_string()
+    print(s)
+}
+
+fn print(n: Int) {
+    let s = n.to_string()
+    print(s)
+}
+
+fn print(s: &String) {
+    let bytes = s.as_bytes()
+    for b in bytes {
+        print(b)
+    }
+}
+
+fn print(b: Byte) {
+    let c = b.to_char()
+    print(c)
+}
+
+fn drop_all(v: Vec<Float>) {
+    let mut new_vec = v
+    while len(&new_vec) > 0.0.to_int().to_float() {
+        drop new_vec
+        new_vec = vec()
+    }
+    drop new_vec
+}
+
+fn drop_all(v: &Vec<Float>) {
+    let mut new_vec = v.clone()
+    while len(&new_vec) > 0.0.to_int().to_float() {
+        drop new_vec
+        new_vec = vec()
+    }
+    drop new_vec
+}
+
+fn drop_all(v: &Vec<Float>, f: FnMutOneArg<Float>) {
+    let mut new_vec = v.clone()
+    while len(&new_vec) > 0.0.to_int().to_float() {
+        f(new_vec.get(0).unwrap())
+        new_vec = vec()
+    }
+    drop new_vec
+}
+
+fn drop_all(v: &Vec<Float>, f: FnMutOneArg<Float>) {
+    let mut new_vec = v.clone()
+    while len(&new_vec) > 0.0.to_int().to_float() {
+        f(new_vec.get(len(&new_vec) - 1.0).unwrap())
+        new_vec = vec()
+    }
+    drop new_vec
+}
+
+fn drop_all(v: &Vec<Float>, f: FnMutOneArg<Float>, g: FnMutOneArg<Float>) {
+    let mut new_vec = v.clone()
+    while len(&new_vec) > 0.0.to_int().to_float() {
+        f(new_vec.get(0).unwrap())
+        g(new_vec.get(len(&new_vec) - 1.0).unwrap())
+        new_vec = vec()
+    }
+    drop new_vec
+}
+
+fn drop_all(v: &Vec<Float>, f: FnMutOneArg<Float>, g: FnMutOneArg<Float>, h: FnMutOneArg<Float>) {
+    let mut new_vec = v.clone()
+    while len(&new_vec) > 0.0.to_int().to_float() {
+        f(new_vec.get(0).unwrap())
+        g(new_vec.get(len(&new_vec) - 1.0).unwrap())
+        h(new_vec.get(len(&new_vec) - 2.0).unwrap())
+        new_vec = vec()
+    }
+    drop new_vec
+}
+
+fn drop_all(v: &Vec<Float>, f: FnMutOneArg<Float>, g: FnMutOneArg<Float>, h: FnMutOneArg<Float>, i: FnMutOneArg<Float>) {
+    let mut new_vec = v.clone()
+    while len(&new_vec) > 0.0.to_int().to_float() {
+        f(new_vec.get(0).unwrap())
+        g(new_vec.get(len(&new_vec) - 1.0).unwrap())
+        h(new_vec.get(len(&new_vec) - 2.0).unwrap())
+        i(new_vec.get(len(&new_vec) - 3.0).unwrap())
+        new_vec = vec()
+    }
+    drop new_vec
+}
+
+fn drop_all(v: &Vec<Float>, f: FnMutOneArg<Float>, g: FnMutOneArg<Float>, h: FnMutOneArg<Float>, i: FnMutOneArg<Float>, j: FnMutOneArg<Float>) {
+    let mut new_vec = v.clone()
+    while len(&new_vec) > 0.0.to_int().to_float() {
+        f(new_vec.get(0).unwrap())
+        g(new_vec.get(len(&new_vec) - 1.0).unwrap())
+        h(new_vec.get(len(&new_vec) - 2.0).unwrap())
+        i(new_vec.get(len(&new_vec) - 3.0).unwrap())
+        j(new_vec.get(len(&new_vec) - 4.0).unwrap())
+        new_vec = vec()
+    }
+    drop new_vec
+}
+
+fn drop_all(v: &Vec<Float>, f: FnMutOneArg<Float>, g: FnMutOneArg<Float>, h: FnMutOneArg<Float>, i: FnMutOneArg<Float>, j: FnMutOneArg<Float>, k: FnMutOneArg<Float>) {
+    let mut new_vec = v.clone()
+    while len(&new_vec) > 0.0.to_int().to_float() {
+        f(new_vec.get(0).unwrap())
+        g(new_vec.get(len(&new_vec) - 1.0).unwrap())
+        h(new_vec.get(len(&new_vec) - 2.0).unwrap())
+        i(new_vec.get(len(&new_vec) - 3.0).unwrap())
+        j(new_vec.get(len(&new_vec) - 4.0).unwrap())
+        k(new_vec.get(len(&new_vec) - 5.0).unwrap())
+        new_vec = vec()
+    }
+    drop new_vec
+}
+
+fn drop_all(v: &Vec<Float>, f: FnMutOneArg<Float>, g: Fn

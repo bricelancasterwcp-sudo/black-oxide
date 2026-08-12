@@ -1,0 +1,16 @@
+fn print_list(list: Vec<Int>) {
+    for item in list {
+        print(item)
+        print_str("\n")
+    }
+}
+
+fn main() {
+    let mut list = vec()
+    push(list, 1)
+    push(list, 2)
+    push(list, 3)
+    push(list, 4)
+    print_list(clone(&list))
+    drop list
+}

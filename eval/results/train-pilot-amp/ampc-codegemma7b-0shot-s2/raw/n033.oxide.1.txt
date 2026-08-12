@@ -1,0 +1,15 @@
+fn signal(color: Str) -> Str {
+    match color {
+        Str(green) => return_str("go for green"),
+        Str(yellow) => return_str("wait for yellow"),
+        Str(red) => return_str("stop for red"),
+        _ => return_str("unknown"),
+    }
+}
+
+fn main() {
+    print_str(signal("green"))
+    print_str(signal("yellow"))
+    print_str(signal("red"))
+    print_str(signal("blue"))
+}

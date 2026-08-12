@@ -1,0 +1,17 @@
+fn len(s: Str) -> Int {
+    let mut i: Int = 0
+    while i < s.len() {
+        print(s.get(i))
+        i = i + 1
+    }
+    i
+}
+
+fn main() {
+    let p: Str = "programming"
+    let l: Int = len(&p)
+    print_str("There are ")
+    print(l)
+    print_str(" characters in the word programming.")
+    drop p
+}

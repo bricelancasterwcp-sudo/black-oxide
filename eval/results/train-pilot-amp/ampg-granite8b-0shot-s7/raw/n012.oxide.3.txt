@@ -1,0 +1,10 @@
+struct Nat {
+    head: Int,
+    tail: Vec<Nat>,
+}
+
+fn main() {
+    let zero = Nat { head: 0, tail: vec() }
+    let rec_list = Nat { head: 1, tail: push(vec(), Nat { head: 2, tail: push(vec(), Nat { head: 3, tail: vec() }) }) }
+    print(len(range(zero, rec_list)))
+}

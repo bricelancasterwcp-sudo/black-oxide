@@ -1,0 +1,13 @@
+fn sum_cubes(n: Int) -> Int {
+    let total = 0
+    for x in 1.int_to_str().chars() {
+        if x < 5 {
+            total = total + x.trunc() * x.trunc() * x.trunc()
+        }
+    }
+    total
+}
+
+fn main() {
+    print(sum_cubes(5))
+}

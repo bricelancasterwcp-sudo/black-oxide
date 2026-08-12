@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    match "abc".parse::<u32>() {
+        Ok(num) => println!("{}", num),
+        Err(_) => println!("bad"),
+    }
+}
+```

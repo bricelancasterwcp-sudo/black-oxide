@@ -1,0 +1,11 @@
+fn read_and_add_one(s: Str) -> Str {
+    match parse_int(s) {
+        Some(n) => int_to_str(n + 1),
+        None => "bad".to_string(),
+    }
+}
+
+fn main() {
+    let result = read_and_add_one("417".to_string())
+    print_str(result)
+}

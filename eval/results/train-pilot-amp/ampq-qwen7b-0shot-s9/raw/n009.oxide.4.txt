@@ -1,0 +1,21 @@
+struct Reading { label: Str, values: Vec<Int> }
+
+fn reverse_digits(n: Int) -> Str {
+    let mut digits = vec()
+    let mut m = n
+    while m > 0 {
+        digits = push(digits, m % 10)
+        m = m / 10
+    }
+    let mut result = Str("")
+    for d in digits {
+        result = concat(result, int_to_str(d))
+    }
+    result
+}
+
+fn main() {
+    let n = 1234
+    let reversed = reverse_digits(n)
+    print_str(reversed)
+}

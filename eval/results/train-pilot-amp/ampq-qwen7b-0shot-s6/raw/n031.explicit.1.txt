@@ -1,0 +1,7 @@
+fn area(w: Int, h: Int) -> Int {
+    w * h
+}
+
+fn main() {
+    print(area(7, 6))
+}

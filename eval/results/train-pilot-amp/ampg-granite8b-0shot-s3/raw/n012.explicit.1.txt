@@ -1,0 +1,21 @@
+fn build_list() -> Vec<Int> {
+    let mut list = vec()
+    for i in range(0, 15) {
+        list = push(list, i)
+    }
+    list
+}
+
+fn list_length(list: &Vec<Int>) -> Int {
+    let mut length = 0
+    for _ in list {
+        length = length + 1
+    }
+    length
+}
+
+fn main() {
+    let my_list = build_list()
+    print(list_length(&my_list))
+    drop my_list
+}

@@ -1,0 +1,356 @@
+fn main() {
+    let c = "c"
+    let a = "a"
+    let t = "t"
+    print(c)
+    print(a)
+    print(t)
+}
+
+fn print(s: Str) {
+    for c in s {
+        print_str(str_from_char(c))
+    }
+    print_str("\n")
+}
+
+fn str_from_char(c: Char) -> Str {
+    if c == 99 {
+        return "c"
+    } else if c == 97 {
+        return "a"
+    } else if c == 116 {
+        return "t"
+    } else {
+        panic(" unexpected char ")
+    }
+}
+
+fn panic(s: Str) -> Never {
+    print_str("runtime error: ")
+    print_str(s)
+    loop()
+}
+
+fn loop() -> Never {
+    while true {
+        continue
+    }
+}
+
+enum Never {
+    Unreachable,
+}
+
+struct Char {
+    value: Int,
+}
+
+fn char_from_int(n: Int) -> Char {
+    Char(n)
+}
+
+fn char_to_int(c: Char) -> Int {
+    c.value
+}
+
+fn main() {
+    let c = char_from_int(99)
+    let a = char_from_int(97)
+    let t = char_from_int(116)
+    print(c)
+    print(a)
+    print(t)
+}
+
+fn print(c: Char) {
+    for i in range(0, 3) {
+        print_str(str_from_char(char_from_int(char_to_int(c) + i)))
+    }
+    print_str("\n")
+}
+
+fn str_from_char(c: Char) -> Str {
+    if c.value == 99 {
+        return "c"
+    } else if c.value == 97 {
+        return "a"
+    } else if c.value == 116 {
+        return "t"
+    } else {
+        panic(" unexpected char ")
+    }
+}
+
+fn panic(s: Str) -> Never {
+    print_str("runtime error: ")
+    print_str(s)
+    loop()
+}
+
+fn loop() -> Never {
+    while true {
+        continue
+    }
+}
+
+enum Never {
+    Unreachable,
+}
+
+struct Char {
+    value: Int,
+}
+
+fn char_from_int(n: Int) -> Char {
+    Char(n)
+}
+
+fn char_to_int(c: Char) -> Int {
+    c.value
+}
+
+fn main() {
+    let c = char_from_int(99)
+    let a = char_from_int(97)
+    let t = char_from_int(116)
+    print(c)
+    print(a)
+    print(t)
+}
+
+fn print(c: Char) {
+    for i in range(0, 3) {
+        print_str(str_from_char(char_from_int(char_to_int(c) + i)))
+    }
+    print_str("\n")
+}
+
+fn str_from_char(c: Char) -> Str {
+    if c.value == 99 {
+        return "c"
+    } else if c.value == 97 {
+        return "a"
+    } else if c.value == 116 {
+        return "t"
+    } else {
+        panic(" unexpected char ")
+    }
+}
+
+fn panic(s: Str) -> Never {
+    print_str("runtime error: ")
+    print_str(s)
+    loop()
+}
+
+fn loop() -> Never {
+    while true {
+        continue
+    }
+}
+
+enum Never {
+    Unreachable,
+}
+
+struct Char {
+    value: Int,
+}
+
+fn char_from_int(n: Int) -> Char {
+    Char(n)
+}
+
+fn char_to_int(c: Char) -> Int {
+    c.value
+}
+
+fn main() {
+    let c = char_from_int(99)
+    let a = char_from_int(97)
+    let t = char_from_int(116)
+    print(c)
+    print(a)
+    print(t)
+}
+
+fn print(c: Char) {
+    for i in range(0, 3) {
+        print_str(str_from_char(char_from_int(char_to_int(c) + i)))
+    }
+    print_str("\n")
+}
+
+fn str_from_char(c: Char) -> Str {
+    if c.value == 99 {
+        return "c"
+    } else if c.value == 97 {
+        return "a"
+    } else if c.value == 116 {
+        return "t"
+    } else {
+        panic(" unexpected char ")
+    }
+}
+
+fn panic(s: Str) -> Never {
+    print_str("runtime error: ")
+    print_str(s)
+    loop()
+}
+
+fn loop() -> Never {
+    while true {
+        continue
+    }
+}
+
+enum Never {
+    Unreachable,
+}
+
+struct Char {
+    value: Int,
+}
+
+fn char_from_int(n: Int) -> Char {
+    Char(n)
+}
+
+fn char_to_int(c: Char) -> Int {
+    c.value
+}
+
+fn main() {
+    let c = char_from_int(99)
+    let a = char_from_int(97)
+    let t = char_from_int(116)
+    print(c)
+    print(a)
+    print(t)
+}
+
+fn print(c: Char) {
+    for i in range(0, 3) {
+        print_str(str_from_char(char_from_int(char_to_int(c) + i)))
+    }
+    print_str("\n")
+}
+
+fn str_from_char(c: Char) -> Str {
+    if c.value == 99 {
+        return "c"
+    } else if c.value == 97 {
+        return "a"
+    } else if c.value == 116 {
+        return "t"
+    } else {
+        panic(" unexpected char ")
+    }
+}
+
+fn panic(s: Str) -> Never {
+    print_str("runtime error: ")
+    print_str(s)
+    loop()
+}
+
+fn loop() -> Never {
+    while true {
+        continue
+    }
+}
+
+enum Never {
+    Unreachable,
+}
+
+struct Char {
+    value: Int,
+}
+
+fn char_from_int(n: Int) -> Char {
+    Char(n)
+}
+
+fn char_to_int(c: Char) -> Int {
+    c.value
+}
+
+fn main() {
+    let c = char_from_int(99)
+    let a = char_from_int(97)
+    let t = char_from_int(116)
+    print(c)
+    print(a)
+    print(t)
+}
+
+fn print(c: Char) {
+    for i in range(0, 3) {
+        print_str(str_from_char(char_from_int(char_to_int(c) + i)))
+    }
+    print_str("\n")
+}
+
+fn str_from_char(c: Char) -> Str {
+    if c.value == 99 {
+        return "c"
+    } else if c.value == 97 {
+        return "a"
+    } else if c.value == 116 {
+        return "t"
+    } else {
+        panic(" unexpected char ")
+    }
+}
+
+fn panic(s: Str) -> Never {
+    print_str("runtime error: ")
+    print_str(s)
+    loop()
+}
+
+fn loop() -> Never {
+    while true {
+        continue
+    }
+}
+
+enum Never {
+    Unreachable,
+}
+
+struct Char {
+    value: Int,
+}
+
+fn char_from_int(n: Int) -> Char {
+    Char(n)
+}
+
+fn char_to_int(c: Char) -> Int {
+    c.value
+}
+
+fn main() {
+    let c = char_from_int(99)
+    let a = char_from_int(97)
+    let t = char_from_int(116)
+    print(c)
+    print(a)
+    print(t)
+}
+
+fn print(c: Char) {
+    for i in range(0, 3) {
+        print_str(str_from_char(char_from_int(char_to_int(c) + i)))
+    }
+    print_str("\n")
+}
+
+fn str_from_char(c: Char) -> Str {
+    if c.value == 99 {
+        return "c"
+    } else if

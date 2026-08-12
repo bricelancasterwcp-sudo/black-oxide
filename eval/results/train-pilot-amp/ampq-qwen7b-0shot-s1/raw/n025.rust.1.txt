@@ -1,0 +1,10 @@
+fn main() {
+    match text_to_number("417") {
+        Some(num) => println!("{}", num + 1),
+        None => println!("bad"),
+    }
+}
+
+fn text_to_number(s: &str) -> Option<i32> {
+    s.parse().ok()
+}

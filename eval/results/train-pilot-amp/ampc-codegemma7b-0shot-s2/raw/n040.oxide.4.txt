@@ -1,0 +1,13 @@
+fn square(s: Float) -> Float {
+    s * s
+}
+
+fn circle(r: Float) -> Float {
+    let pi = 3.0
+    pi * r * r
+}
+
+fn main() {
+    print(square(4.0))
+    print(circle(2.0))
+}

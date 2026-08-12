@@ -1,0 +1,7 @@
+fn join(a: Str, b: Str) -> Str {
+    a + " " + b
+}
+
+fn main() {
+    print(join("oxide", "black"))
+}

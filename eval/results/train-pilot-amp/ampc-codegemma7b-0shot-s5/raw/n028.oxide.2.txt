@@ -1,0 +1,14 @@
+fn read_number(s: Str) -> Result<Int, Str> {
+    if letOk(n) == parse_int(s) {
+        Ok(n)
+    } else {
+        Err("bad".to_string())
+    }
+}
+
+fn main() {
+    match read_number("abc".to_string()) {
+        Ok(n) => print(n),
+        Err(_) => print_str("bad"),
+    }
+}

@@ -1,0 +1,21 @@
+fn int_to_str(n: Int) -> Str {
+    match n {
+        ToStr(n) => n,
+        _ => "0".to_string(),
+    }
+}
+
+fn str_len(s: Str) -> Int {
+    let mut count = 0
+    for _ in chars(&s) {
+        count = count + 1
+    }
+    count
+}
+
+fn main() {
+    let num = 2026
+    let str_num = int_to_str(num)
+    let len = str_len(str_num)
+    print(len)
+}

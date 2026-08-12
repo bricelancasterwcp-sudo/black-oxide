@@ -1,0 +1,19 @@
+fn read_number() -> Option<Int> {
+    let line = str_len(get(chars(parse_int("417")), 0)) > 0
+    if line {
+        Some(trunc(int_to_str(parse_int("417")) + 1))
+    } else {
+        None
+    }
+}
+
+fn main() {
+    match read_number() {
+        Some(number) => print(number),
+        None => {
+            print("bad")
+            drop_all()
+            exit(1)
+        },
+    }
+}

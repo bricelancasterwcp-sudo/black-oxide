@@ -1,0 +1,19 @@
+fn count_entries(list1: &Vec<Int>, list2: &Vec<Int>) -> Int {
+    let mut count = 0
+    for _ in &list1 {
+        count = count + 1
+    }
+    for _ in &list2 {
+        count = count + 1
+    }
+    count
+}
+
+fn main() {
+    let list1 = push(push(vec(), 1), 2)
+    let list2 = push(vec(), 3)
+    let total_entries = count_entries(&list1, &list2)
+    print(total_entries)
+    drop list1
+    drop list2
+}

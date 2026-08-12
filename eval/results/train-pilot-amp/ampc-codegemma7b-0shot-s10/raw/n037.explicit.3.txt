@@ -1,0 +1,280 @@
+fn main() {
+    let mut r = Rect { width: 2, height: 3 }
+    r.width = 5
+    print(area(&r))
+    drop r
+}
+
+struct Rect {
+    width: Int,
+    height: Int,
+}
+
+fn area(r: &Rect) -> Int {
+    r.width * r.height
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut new_v = v
+    new_v.len = v.len + 1
+    new_v.cap = v.len + 1
+    new_v.data = v.data
+    new_v.data = new_v.data + v.len
+    new_v.data = new_v.data + x
+    new_v
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    print_str(s)
+}
+
+fn vec() -> Vec<T> {
+    let mut v = Vec_Impl { len: 0, cap: 0, data: 0 }
+    v.len = 0
+    v.cap = 0
+    v.data = 0
+    v
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut s = Str_Impl { len: 0, data: 0 }
+    s.len = 0
+    s.data = 0
+    s
+}
+
+fn clone(x: &T) -> T {
+    let mut new_x = x
+    new_x
+}
+
+fn get(v: &Vec<T>, i: Int) -> Option<T> {
+    if i < v.len {
+        Some(v.data + i)
+    } else {
+        None
+    }
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut v = Vec_Impl { len: 0, cap: 0, data: 0 }
+    v.len = 0
+    v.cap = 0
+    v.data = 0
+    for i in a + 1 < b {
+        push(v, i)
+    }
+    v
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut v = Vec_Impl { len: 0, cap: 0, data: 0 }
+    v.len = 0
+    v.cap = 0
+    v.data = 0
+    for i in 0 < s.len {
+        push(v, s.data + i)
+    }
+    v
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    let mut n = 0
+    for c in chars(s) {
+        n = n * 10 + int_to_digit(c)
+    }
+    Some(n)
+}
+
+fn to_float(n: Int) -> Float {
+    n * 1.0
+}
+
+fn trunc(x: Float) -> Int {
+    if x < 0 {
+        x - 0.5
+    } else {
+        x + 0.5
+    }
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut new_v = v
+    new_v.len = v.len + 1
+    new_v.cap = v.len + 1
+    new_v.data = v.data
+    new_v.data = new_v.data + v.len
+    new_v.data = new_v.data + x
+    new_v
+}
+
+fn len(v: &Vec<T>) -> Int {
+    v.len
+}
+
+struct Vec_Impl {
+    len: Int,
+    cap: Int,
+    data: Int,
+}
+
+struct Str_Impl {
+    len: Int,
+    data: Int,
+}
+
+fn int_to_digit(c: Str) -> Int {
+    c - 48
+}
+
+fn area(r: &Rect) -> Int {
+    r.width * r.height
+}
+
+fn drop_impl(v: &Vec<T>) {
+    for i in 0 < v.len {
+        drop_impl(&v, i)
+    }
+}
+
+fn drop_impl(v: &Vec<T>, i: Int) {
+    drop_impl(&v, i)
+}
+
+fn drop_impl(v: &Vec<T>, i: Int) {
+    drop_impl(&v, i)
+}
+
+fn drop_impl(v: &Vec<T>, i: Int) {
+    drop_impl(&v, i)
+}
+
+fn drop_impl(v: &Vec<T>, i: Int) {
+    drop_impl(&v, i)
+}
+
+fn drop_impl(v: &Vec<T>, i: Int) {
+    drop_impl(&v, i)
+}
+
+fn drop_impl(v: &Vec<T>, i: Int) {
+    drop_impl(&v, i)
+}
+
+fn drop_impl(v: &Vec<T>, i: Int) {
+    drop_impl(&v, i)
+}
+
+fn drop_impl(v: &Vec<T>, i: Int) {
+    drop_impl(&v, i)
+}
+
+fn drop_impl(v: &Vec<T>, i: Int) {
+    drop_impl(&v, i)
+}
+
+fn drop_impl(v: &Vec<T>, i: Int) {
+    drop_impl(&v, i)
+}
+
+fn drop_impl(v: &Vec<T>, i: Int) {
+    drop_impl(&v, i)
+}
+
+fn drop_impl(v: &Vec<T>, i: Int) {
+    drop_impl(&v, i)
+}
+
+fn drop_impl(v: &Vec<T>, i: Int) {
+    drop_impl(&v, i)
+}
+
+fn drop_impl(v: &Vec<T>, i: Int) {
+    drop_impl(&v, i)
+}
+
+fn drop_impl(v: &Vec<T>, i: Int) {
+    drop_impl(&v, i)
+}
+
+fn drop_impl(v: &Vec<T>, i: Int) {
+    drop_impl(&v, i)
+}
+
+fn drop_impl(v: &Vec<T>, i: Int) {
+    drop_impl(&v, i)
+}
+
+fn drop_impl(v: &Vec<T>, i: Int) {
+    drop_impl(&v, i)
+}
+
+fn drop_impl(v: &Vec<T>, i: Int) {
+    drop_impl(&v, i)
+}
+
+fn drop_impl(v: &Vec<T>, i: Int) {
+    drop_impl(&v, i)
+}
+
+fn drop_impl(v: &Vec<T>, i: Int) {
+    drop_impl(&v, i)
+}
+
+fn drop_impl(v: &Vec<T>, i: Int) {
+    drop_impl(&v, i)
+}
+
+fn drop_impl(v: &Vec<T>, i: Int) {
+    drop_impl(&v, i)
+}
+
+fn drop_impl(v: &Vec<T>, i: Int) {
+    drop_impl(&v, i)
+}
+
+fn drop_impl(v: &Vec<T>, i: Int) {
+    drop_impl(&v, i)
+}
+
+fn drop_impl(v: &Vec<T>, i: Int) {
+    drop_impl(&v, i)
+}
+
+fn drop_impl(v: &Vec<T>, i: Int) {
+    drop_impl(&v, i)
+}
+
+fn drop_impl(v: &Vec<T>, i: Int) {
+    drop_impl(&v, i)
+}
+
+fn drop_impl(v: &Vec<T>, i: Int) {
+    drop_impl(&v, i)
+}
+
+fn drop_impl(v: &Vec<T>, i: Int) {
+    drop_impl(&v, i)
+}
+
+fn drop_impl(v: &Vec<T>, i: Int) {
+    drop_impl(&v, i)
+}
+
+fn drop_impl(v: &Vec<T>, i: Int) {
+    drop_impl(&v, i)
+}
+
+fn drop_impl(v: &Vec<T>, i: Int) {
+    drop_impl(&v, i)
+}
+
+fn drop_impl(v: &Vec<T>, i: Int) {
+    drop_impl(&v, i)
+}
+
+fn drop_

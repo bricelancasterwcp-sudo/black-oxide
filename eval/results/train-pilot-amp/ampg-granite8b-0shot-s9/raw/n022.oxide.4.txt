@@ -1,0 +1,30 @@
+struct WordBlackOxide {
+    word: Str,
+    black: Int,
+    oxide: Int,
+}
+
+fn black_on_oxide(wbo: WordBlackOxide) -> Str {
+    let black = wbo.black
+    let black2 = black + 1
+    let black3 = black2 + 2
+    let oxide = wbo.oxide
+    let blackoxide = black3 + oxide
+    let blackoxide2 = blackoxide + 1
+    let blackoxide3 = blackoxide2 + 2
+    let word = wbo.word
+    let word2 = word + " "
+    let word3 = word2 + "black"
+    let word4 = word3 + " "
+    let word5 = word4 + "on"
+    let word6 = word5 + " "
+    let word7 = word6 + "oxide"
+    let blackoxide4 = blackoxide3 + word7.len()
+    let result = "black oxide is " + blackoxide4.to_str()
+    result
+}
+
+fn main() {
+    let wbo = WordBlackOxide { word: "oxide", black: 1, oxide: 2 }
+    print(black_on_oxide(wbo))
+}

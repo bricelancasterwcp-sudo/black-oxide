@@ -1,0 +1,4 @@
+fn main() {
+    let list = range(0, 15)
+    print(len(list))
+}

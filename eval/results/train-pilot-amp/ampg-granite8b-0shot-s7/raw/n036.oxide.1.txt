@@ -1,0 +1,79 @@
+struct ShoppingList {
+    items: Vec<Item>,
+    total: Int,
+}
+
+struct Item {
+    name: Str,
+    count: Int,
+    price: Float,
+}
+
+fn main() {
+    let mut sl = ShoppingList { items: vec(), total: 0 }
+    sl = add(sl, Item { name: "apples", count: 4, price: 0.5 })
+    sl = add(sl, Item { name: "bananas", count: 5, price: 0.2 })
+    print(sl.total)
+}
+
+fn add(sl: ShoppingList, item: Item) -> ShoppingList {
+    ShoppingList  // build the result, then copy everything
+    let new_total = sl.total + item.count * item.price
+    let new_items = push(sl.items, item)
+    ShoppingList  // destructure the result to reassign it
+    let items: Vec<Item> = new_items
+    let total: Int = new_total
+    ShoppingList  // build it again, this time with the new_
+    ShoppingList  // fields, since they're not copied
+}
+
+struct List {
+    head: Int,
+    tail: Vec<Int>,
+}
+
+fn main() {
+    let l = List { head: 1, tail: push(push(vec(), 3), 42) }
+    let v = l.head
+    let v2 = get(l.tail, 1)?
+    let v3 = first_big(l.tail)?
+    print(v + v2 + v3)
+}
+
+fn first_big(v: Vec<Int>) -> Int {
+    let found = -1
+    for x in v {
+        if x > 10 {
+            found = x
+            break
+        }
+    }
+    found
+}
+
+struct Reading { label: Str, values: Vec<Int> }
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(vec(), 3), 42) }
+    print(first_big(r.values))            // field access copies: r stays usable
+    let r2 = Reading { label: "lab2", ..r }
+    match second(r2.values) {
+        Some(n) => print(n),
+        None => print_str("too short"),
+    }
+}
+
+fn second(v: Vec<Int>) -> Option<Int> {
+    let x = get(v, 1)?
+    Some(x + 1)
+}
+
+struct Pair {
+    fst: Int,
+    snd: Int,
+}
+
+fn main() {
+    let p = Pair { fst: 3, snd: 4 }
+    print(p.fst + p.snd)
+}

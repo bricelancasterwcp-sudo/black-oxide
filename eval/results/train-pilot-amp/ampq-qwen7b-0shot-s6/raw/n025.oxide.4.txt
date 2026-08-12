@@ -1,0 +1,7 @@
+fn main() {
+    let text = "417"
+    match parse_int(text) {
+        Some(n) => print(to_float(n) + 1.0),
+        None => print_str("bad"),
+    }
+}

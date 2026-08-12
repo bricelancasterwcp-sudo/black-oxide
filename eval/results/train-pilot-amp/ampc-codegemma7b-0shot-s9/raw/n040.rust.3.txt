@@ -1,0 +1,16 @@
+#![no_std]
+
+mod imp;
+
+use imp::fmt::write;
+
+const PI: f64 = 3.0;
+
+fn square_area(side: u32) -> f64 {
+    (side as f64).powf(2.0)
+}
+
+fn main() {
+    let area = square_area(4);
+    write!(area).unwrap();
+}

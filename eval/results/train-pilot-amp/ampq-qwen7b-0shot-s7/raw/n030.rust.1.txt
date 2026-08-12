@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let word_sequence = vec!["apple", "banana", "cherry"];
+    let vowels = "aeiouAEIOU";
+    let mut count = 0;
+
+    for word in word_sequence {
+        for c in word.chars() {
+            if vowels.contains(c) {
+                count += 1;
+            }
+        }
+    }
+
+    println!("Number of vowels: {}", count);
+}
+```

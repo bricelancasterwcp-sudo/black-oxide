@@ -1,0 +1,7 @@
+fn main() {
+    let readings = [4, 8, 15, 16, 23, 42];
+
+    let mean = readings.iter().sum::<f32>() / readings.len() as f32;
+
+    println!("{:.0}", mean);
+}

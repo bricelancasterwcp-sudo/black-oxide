@@ -1,0 +1,13 @@
+fn divisors_of(n: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in range(1, n + 1) {
+        if n % i == 0 {
+            push(result, i)
+        }
+    }
+    result
+}
+
+fn main() {
+    print(len(divisors_of(36)))
+}

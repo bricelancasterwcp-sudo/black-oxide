@@ -1,0 +1,14 @@
+fn sum_of_divisible_by_three(numbers: Vec<Int>) -> Int {
+    let mut sum = 0
+    for number in numbers {
+        if number % 3 == 0 {
+            sum = sum + number
+        }
+    }
+    sum
+}
+
+fn main() {
+    let numbers = vec(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+    print(sum_of_divisible_by_three(numbers))
+}

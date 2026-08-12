@@ -1,0 +1,18 @@
+struct StringIter { s: Str, i: Int }
+
+fn next_char(iter: StringIter) -> Option<Str> {
+    if iter.i < str_len(iter.s) {
+        let ch = get(chars(iter.s), iter.i)?
+        iter.i = iter.i + 1
+        Some(ch)
+    } else {
+        None
+    }
+}
+
+fn main() {
+    let iter = StringIter { s: "cat", i: 0 }
+    while letSome(c) == next_char(iter) {
+        print_str(c)
+    }
+}

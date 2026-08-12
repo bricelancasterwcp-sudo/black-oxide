@@ -1,0 +1,5 @@
+fn main() {
+    print!("c\n");
+    print!("a\n");
+    print!("t\n");
+}

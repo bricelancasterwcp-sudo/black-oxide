@@ -1,0 +1,7 @@
+fn square_area(s: Float) -> Float {
+    return s * s
+}
+
+fn main() {
+    print(square_area(4.0))
+}

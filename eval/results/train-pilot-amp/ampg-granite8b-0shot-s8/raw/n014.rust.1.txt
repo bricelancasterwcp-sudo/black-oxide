@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let readings = [5, 3, 9, 1, 7];
+    let mut min = readings[0];
+    for &reading in readings.iter() {
+        if reading < min {
+            min = reading;
+        }
+    }
+    println!("{}", min);
+}
+```

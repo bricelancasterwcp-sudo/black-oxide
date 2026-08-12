@@ -1,0 +1,15 @@
+```rust
+fn main() {
+  let word_sequence = "I am learning Rust";
+  let vowels = ['a', 'e', 'i', 'o', 'u'];
+  let mut count = 0;
+
+  for ch in word_sequence.chars() {
+    if vowels.contains(&ch) {
+      count += 1;
+    }
+  }
+
+  println!("Number of vowels: {}", count);
+}
+```

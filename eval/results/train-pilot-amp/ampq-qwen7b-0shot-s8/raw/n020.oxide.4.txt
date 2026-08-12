@@ -1,0 +1,14 @@
+struct Reading { label: Str, values: Vec<Int> }
+
+fn mean(v: Vec<Int>) -> Float {
+    let sum = v.iter().fold(0, to_float)
+    let count = len(v) + 0.0
+    to_float(sum) / count
+}
+
+fn main() {
+    let r = Reading { label: "readings", values: vec(4, 8, 15, 16, 23, 42) }
+    let mean_value = mean(r.values)
+    let mean_trunc = trunc(mean_value)
+    print(mean_trunc)
+}

@@ -1,0 +1,12 @@
+fn main() {
+    let mut a = 1;
+    let mut b = 1;
+    let mut term = 0;
+    while term < 10 {
+        let temp = a;
+        a = b;
+        b = temp + b;
+        term += 1;
+    }
+    println!("{}", a);
+}

@@ -1,0 +1,335 @@
+fn main() {
+    print(len(concat(int_to_str(2), int_to_str(0), int_to_str(2), int_to_str(6))))
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    a + b
+}
+
+fn int_to_str(n: Int) -> Str {
+    n.to_string()
+}
+
+fn len(s: Str) -> Int {
+    s.chars().count()
+}
+
+fn print(s: Str) {
+    print_str(s)
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn println(s: Str) {
+    console.log(s)
+}
+
+struct Int {
+    value: IntValue,
+}
+
+struct IntValue {
+    value: IntValueData,
+}
+
+enum IntValueData {
+    Small(Int),
+    Big(IntRef),
+}
+
+struct IntRef {
+    value: Int,
+}
+
+fn clone(i: Int) -> Int {
+    IntValueData(i.value.clone())
+}
+
+fn to_string(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_string_slow(i: Int) -> Str {
+    i.

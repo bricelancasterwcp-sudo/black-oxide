@@ -1,0 +1,11 @@
+fn sum_value(four_packs: Int, two_packs: Int) -> Int {
+    let four_value = four_packs * 3
+    let two_value = two_packs * 2
+    four_value + two_value
+}
+
+fn main() {
+    let four_packs = 4
+    let two_packs = 5
+    print(sum_value(four_packs, two_packs))
+}

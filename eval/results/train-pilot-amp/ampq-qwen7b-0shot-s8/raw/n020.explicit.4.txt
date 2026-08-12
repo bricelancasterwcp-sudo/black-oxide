@@ -1,0 +1,365 @@
+fn main() {
+    let nums = vec(4, 8, 15, 16, 23, 42)
+    let sum = nums.iter().fold(0, add)
+    let mean = div(sum, len(nums))
+    print(mean)
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn div(a: Int, b: Int) -> Int {
+    trunc(a / b)
+}
+
+fn len(v: Vec<Int>) -> Int {
+    v.len()
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    stdio_write(s)
+}
+
+fn stdio_write(s: Str) {
+    let _ = unsafe_ptr(s)
+}
+
+fn unsafe_ptr(s: Str) -> Int {
+    0
+}
+
+fn vec(i: Int, j: Int, k: Int, l: Int, m: Int, n: Int) -> Vec<Int> {
+    vec(i, j, k, l, m, n)
+}
+
+fn vec() -> Vec<Int> {
+    vec()
+}
+
+fn vec(i: Int, j: Int, k: Int, l: Int, m: Int, n: Int) -> Vec<Int> {
+    vec(i, j, k, l, m, n)
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn div(a: Int, b: Int) -> Int {
+    trunc(a / b)
+}
+
+fn len(v: Vec<Int>) -> Int {
+    v.len()
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    stdio_write(s)
+}
+
+fn stdio_write(s: Str) {
+    let _ = unsafe_ptr(s)
+}
+
+fn unsafe_ptr(s: Str) -> Int {
+    0
+}
+
+fn vec(i: Int, j: Int, k: Int, l: Int, m: Int, n: Int) -> Vec<Int> {
+    vec(i, j, k, l, m, n)
+}
+
+fn vec() -> Vec<Int> {
+    vec()
+}
+
+fn vec(i: Int, j: Int, k: Int, l: Int, m: Int, n: Int) -> Vec<Int> {
+    vec(i, j, k, l, m, n)
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn div(a: Int, b: Int) -> Int {
+    trunc(a / b)
+}
+
+fn len(v: Vec<Int>) -> Int {
+    v.len()
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    stdio_write(s)
+}
+
+fn stdio_write(s: Str) {
+    let _ = unsafe_ptr(s)
+}
+
+fn unsafe_ptr(s: Str) -> Int {
+    0
+}
+
+fn vec(i: Int, j: Int, k: Int, l: Int, m: Int, n: Int) -> Vec<Int> {
+    vec(i, j, k, l, m, n)
+}
+
+fn vec() -> Vec<Int> {
+    vec()
+}
+
+fn vec(i: Int, j: Int, k: Int, l: Int, m: Int, n: Int) -> Vec<Int> {
+    vec(i, j, k, l, m, n)
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn div(a: Int, b: Int) -> Int {
+    trunc(a / b)
+}
+
+fn len(v: Vec<Int>) -> Int {
+    v.len()
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    stdio_write(s)
+}
+
+fn stdio_write(s: Str) {
+    let _ = unsafe_ptr(s)
+}
+
+fn unsafe_ptr(s: Str) -> Int {
+    0
+}
+
+fn vec(i: Int, j: Int, k: Int, l: Int, m: Int, n: Int) -> Vec<Int> {
+    vec(i, j, k, l, m, n)
+}
+
+fn vec() -> Vec<Int> {
+    vec()
+}
+
+fn vec(i: Int, j: Int, k: Int, l: Int, m: Int, n: Int) -> Vec<Int> {
+    vec(i, j, k, l, m, n)
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn div(a: Int, b: Int) -> Int {
+    trunc(a / b)
+}
+
+fn len(v: Vec<Int>) -> Int {
+    v.len()
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    stdio_write(s)
+}
+
+fn stdio_write(s: Str) {
+    let _ = unsafe_ptr(s)
+}
+
+fn unsafe_ptr(s: Str) -> Int {
+    0
+}
+
+fn vec(i: Int, j: Int, k: Int, l: Int, m: Int, n: Int) -> Vec<Int> {
+    vec(i, j, k, l, m, n)
+}
+
+fn vec() -> Vec<Int> {
+    vec()
+}
+
+fn vec(i: Int, j: Int, k: Int, l: Int, m: Int, n: Int) -> Vec<Int> {
+    vec(i, j, k, l, m, n)
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn div(a: Int, b: Int) -> Int {
+    trunc(a / b)
+}
+
+fn len(v: Vec<Int>) -> Int {
+    v.len()
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    stdio_write(s)
+}
+
+fn stdio_write(s: Str) {
+    let _ = unsafe_ptr(s)
+}
+
+fn unsafe_ptr(s: Str) -> Int {
+    0
+}
+
+fn vec(i: Int, j: Int, k: Int, l: Int, m: Int, n: Int) -> Vec<Int> {
+    vec(i, j, k, l, m, n)
+}
+
+fn vec() -> Vec<Int> {
+    vec()
+}
+
+fn vec(i: Int, j: Int, k: Int, l: Int, m: Int, n: Int) -> Vec<Int> {
+    vec(i, j, k, l, m, n)
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn div(a: Int, b: Int) -> Int {
+    trunc(a / b)
+}
+
+fn len(v: Vec<Int>) -> Int {
+    v.len()
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    stdio_write(s)
+}
+
+fn stdio_write(s: Str) {
+    let _ = unsafe_ptr(s)
+}
+
+fn unsafe_ptr(s: Str) -> Int {
+    0
+}
+
+fn vec(i: Int, j: Int, k: Int, l: Int, m: Int, n: Int) -> Vec<Int> {
+    vec(i, j, k, l, m, n)
+}
+
+fn vec() -> Vec<Int> {
+    vec()
+}
+
+fn vec(i: Int, j: Int, k: Int, l: Int, m: Int, n: Int) -> Vec<Int> {
+    vec(i, j, k, l, m, n)
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn div(a: Int, b: Int) -> Int {
+    trunc(a / b)
+}
+
+fn len(v: Vec<Int>) -> Int {
+    v.len()
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    stdio_write(s)
+}
+
+fn stdio_write(s: Str) {
+    let _ = unsafe_ptr(s)
+}
+
+fn unsafe_ptr(s: Str) -> Int {
+    0
+}
+
+fn vec(i: Int, j: Int, k: Int, l: Int, m: Int, n: Int) -> Vec<Int> {
+    vec(i, j, k, l, m, n)
+}
+
+fn vec() -> Vec<Int> {
+    vec()
+}
+
+fn vec(i: Int, j: Int, k: Int, l: Int, m: Int, n: Int) -> Vec<Int> {
+    vec(i, j, k, l, m, n)
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn div(a: Int, b: Int) -> Int {
+    trunc(a / b)
+}
+
+fn len(v: Vec<Int>) -> Int {
+    v.len()
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    stdio_write(s)
+}
+
+fn stdio_write(s: Str) {
+    let _ = unsafe_ptr(s)
+}
+
+fn unsafe_ptr(s: Str) -> Int {
+    0
+}
+
+fn vec(i: Int, j: Int, k: Int, l: Int, m: Int, n: Int) -> Vec<Int> {
+    vec(i, j, k, l, m, n)
+}
+
+fn vec() -> Vec<Int> {
+    vec()
+}
+
+fn vec(i: Int, j: Int, k: Int, l: Int, m: Int, n: Int) -> Vec<Int> {
+    vec(i,

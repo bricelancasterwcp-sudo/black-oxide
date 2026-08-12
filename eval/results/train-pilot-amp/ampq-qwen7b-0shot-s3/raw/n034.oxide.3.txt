@@ -1,0 +1,12 @@
+fn second(v: Vec<Int>) -> Option<Int> {
+    get(v, 1)?
+}
+
+fn main() {
+    let v7 = vec(7)
+    let v8 = vec(8)
+    let v9 = vec(9)
+    print(second(v7))
+    print(second(v8))
+    print(second(v9))
+}

@@ -1,0 +1,4 @@
+fn main() {
+    let word = "programming";
+    println!("{} has {} characters", word, word.len());
+}

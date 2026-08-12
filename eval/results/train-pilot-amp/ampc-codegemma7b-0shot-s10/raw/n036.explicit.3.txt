@@ -1,0 +1,21 @@
+fn main() {
+    let four = 4
+    let three = 3
+    let five = 5
+    let two = 2
+    let four_count = 4
+    let five_count = 5
+    let four_value = four * three
+    let five_value = five * two
+    let total_value = four_value * four_count + five_value * five_count
+    print(total_value)
+    drop total_value
+    drop five_value
+    drop four_value
+    drop five_count
+    drop four_count
+    drop two
+    drop five
+    drop three
+    drop four
+}

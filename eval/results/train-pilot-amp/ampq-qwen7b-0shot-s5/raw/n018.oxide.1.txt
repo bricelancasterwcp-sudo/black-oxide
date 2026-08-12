@@ -1,0 +1,7 @@
+fn main() {
+    let mut list = vec(1, 2, 3, 4)
+    while list.len() > 0 {
+        let x = pop(list)
+        print(x)
+    }
+}

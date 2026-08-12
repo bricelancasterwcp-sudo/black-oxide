@@ -1,0 +1,4 @@
+fn main() {
+    let product: u64 = (1..=6).product();
+    println!("{}", product);
+}

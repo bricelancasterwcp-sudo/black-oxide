@@ -1,0 +1,18 @@
+fn count_vowels(word_sequence: &Vec<Str>) -> Int {
+    let vowels = clone(&word_sequence)
+    let mut num_vowels = 0
+    for word in &vowels {
+        for letter in &chars_str_word {
+            if letter == "a" || letter == "e" || letter == "i" || letter == "o" || letter == "u" {
+                num_vowels = num_vowels + 1
+            }
+        }
+    }
+    num_vowels
+}
+
+fn main() {
+    let sequence = clone(&vec_str_a_b_c_d_e_f_g_h_i_j_k_l_m_n_o_p_q_r_s_t_u_v_w_x_y_z)
+    print(count_vowels(&sequence))
+    drop sequence
+}

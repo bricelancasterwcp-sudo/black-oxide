@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let point = Point { x: 10, y: 5 };
+
+    println!(
+        "The sum of the coordinates of point is: {}",
+        point.x + point.y
+    );
+}
+
+struct Point {
+    x: i32,
+    y: i32
+}
+```

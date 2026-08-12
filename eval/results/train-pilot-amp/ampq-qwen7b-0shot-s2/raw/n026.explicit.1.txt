@@ -1,0 +1,17 @@
+fn number_to_string(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn string_length(s: &Str) -> Int {
+    str_len(s)
+}
+
+fn main() {
+    let num = 2026
+    let num_str = number_to_string(num)
+    let len = string_length(&num_str)
+    print_str(&num_str)
+    print(len)
+    drop num_str
+    drop num
+}

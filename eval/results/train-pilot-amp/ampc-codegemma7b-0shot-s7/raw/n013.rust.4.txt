@@ -1,0 +1,10 @@
+fn main() {
+    let mut largest = std::i32::MIN;
+    let readings = [5, 3, 9, 1, 7];
+    for reading in readings {
+        if reading > largest {
+            largest = reading;
+        }
+    }
+    println!("Largest reading: {}", largest);
+}

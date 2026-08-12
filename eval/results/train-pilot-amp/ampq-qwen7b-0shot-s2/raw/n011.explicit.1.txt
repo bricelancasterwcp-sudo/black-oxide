@@ -1,0 +1,16 @@
+fn collect_and_sum() -> Int {
+    let mut total = 0
+    let mut count = 0
+    let mut multiple = 4
+    while count < 6 {
+        total = total + multiple
+        count = count + 1
+        multiple = multiple + 4
+    }
+    total
+}
+
+fn main() {
+    let sum = collect_and_sum()
+    print(sum)
+}

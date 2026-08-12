@@ -1,0 +1,7 @@
+fn main() {
+    let printed = false
+    let count = for_each("banana", "a", 0, f(count, c) == count + if_else(c == "a", 1, 0) || printed)
+    if !printed {
+        print(count)
+    }
+}

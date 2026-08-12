@@ -1,0 +1,18 @@
+fn main() {
+    let mut a = 123456789012345678901234567890123456789012345678901234567890
+    let mut b = 2
+    let mut c = 3
+    loop
+    if c < 10 {
+        a = a + b
+        c = c + 1
+    }
+    elseif  // if a + b < 0 { // bad: you can't use a,
+    print(a) // bad: you can't use a, b, or c here
+    breakdrop // bad: you can't break or drop here
+    a = a + b
+    b = a - b
+    a = a - b
+    c = c - 1
+    drop b
+}

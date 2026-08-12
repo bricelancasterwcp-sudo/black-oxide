@@ -1,0 +1,16 @@
+struct Cats {
+    name: Str,
+    n: Int,
+}
+
+fn print_cat(cat: Cats) {
+    for ch in chars(cat.name) {
+        print(ch)
+    }
+}
+
+fn main() {
+    print_cat(Cats { name: "cat", n: 1 })
+    print_cat(Cats { name: "cat", n: 2 })
+    print_cat(Cats { name: "cat", n: 3 })
+}

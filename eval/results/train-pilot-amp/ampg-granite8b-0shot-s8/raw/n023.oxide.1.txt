@@ -1,0 +1,10 @@
+struct Point { x: Int, y: Int }
+
+fn print_len(s: Str) {
+    print(str_len(s))
+}
+
+fn main() {
+    let phrase = "hello world"
+    print_len(phrase)
+}

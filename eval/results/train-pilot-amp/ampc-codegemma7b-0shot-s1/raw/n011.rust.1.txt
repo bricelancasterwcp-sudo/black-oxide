@@ -1,0 +1,10 @@
+use std::io;
+
+fn main() {
+    let mut list = Vec::new();
+    for i in 1..=6 {
+        list.push(i * 4);
+    }
+    let sum: i32 = list.iter().sum();
+    println!("{}", sum);
+}

@@ -1,0 +1,6 @@
+fn main() {
+    let word = "cat".chars().collect_vec()
+    for c in word {
+        print_str(c)
+    }
+}

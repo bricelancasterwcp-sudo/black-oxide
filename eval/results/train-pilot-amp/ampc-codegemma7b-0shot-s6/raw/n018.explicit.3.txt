@@ -1,0 +1,7 @@
+fn main() {
+    let mut list = push(push(push(vec(), 1), 2), 3)
+    push(list, 4)
+    while !is_empty(&list) {
+        print(pop(&mut && list))
+    }
+}

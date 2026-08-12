@@ -1,0 +1,21 @@
+fn digits(x: Int) -> Vec<Int> {
+    let mut digits = vec()
+    let mut n = x
+    while n > 0 {
+        digits.push(n % 10)
+        n = n / 10
+    }
+    digits
+}
+
+fn reverse(digits: Vec<Int>) -> Int {
+    let mut reversed = 0
+    for d in &digits {
+        reversed = reversed * 10 + d
+    }
+    reversed
+}
+
+fn main() {
+    print(reverse(digits(1234)))
+}

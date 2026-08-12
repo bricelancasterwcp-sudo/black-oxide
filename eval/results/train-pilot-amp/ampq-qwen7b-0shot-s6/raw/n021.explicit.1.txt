@@ -1,0 +1,4 @@
+fn main() {
+    let word = str_len("programming")
+    print(word)
+}

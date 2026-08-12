@@ -1,0 +1,9 @@
+fn main() {
+    let num_str = read_str()
+    let num = parse_int(num_str)
+    if num {
+        print(int_to_str(num + 1))
+    } else {
+        print("bad")
+    }
+}

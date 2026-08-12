@@ -1,0 +1,6 @@
+fn main() {
+    let n = 2026
+    let s = int_to_str(n)
+    let len = str_len(s)
+    print(len)
+}

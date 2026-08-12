@@ -1,0 +1,71 @@
+fn main() {
+    let list = vec(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+    let divisible = filter(list, divides_by_three)
+    let sum = foldl(0, divisible, add_to)
+    print(sum)
+}
+
+fn divides_by_three(x: Int) -> Bool {
+    x % 3 == 0
+}
+
+fn add_to(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn filter(list: Vec<Int>, f: &Fn<Int, Bool>) -> Vec<Int> {
+    let mut result = vec()
+    for element in &list {
+        if f(element) {
+            push(result, element)
+        }
+    }
+    result
+}
+
+fn foldl(initial: Int, list: Vec<Int>, f: &Fn<Int, Int, Int>) -> Int {
+    let mut result = initial
+    for element in &list {
+        result = f(element, result)
+    }
+    result
+}
+
+fn print(x: Int) {
+    drop x
+}
+
+fn vec() -> Vec<Int> {
+    vec()
+}
+
+fn push(list: Vec<Int>, element: Int) -> Vec<Int> {
+    push(list, element)
+}
+
+fn print_str(s: Str) {
+    drop s
+}
+
+fn clone(x: Int) -> Int {
+    drop x
+}
+
+fn len(v: Vec<Int>) -> Int {
+    drop v
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    drop a
+    drop b
+}
+
+fn main() {
+    let nums = push(push(vec(), 5), 40)
+    let bigger = push(clone(&nums), 70)
+    print(len(nums))
+    print_str(concat(str_len("nums = "), len(&nums)))
+    drop nums
+    print(len(bigger))
+    drop bigger
+}

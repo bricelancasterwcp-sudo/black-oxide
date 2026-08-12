@@ -1,0 +1,8 @@
+fn main() {
+    let s = "abc"
+    if letOk(x) == parse_int(s) {
+        print(x)
+    } else {
+        print("bad")
+    }
+}

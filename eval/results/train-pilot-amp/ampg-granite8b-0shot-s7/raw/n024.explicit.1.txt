@@ -1,0 +1,15 @@
+fn count_as(s: Str, c: Char) -> Int {
+    let mut count = 0
+    for x in chars(&s) {
+        if x == c {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn main() {
+    let a_count = count_as("banana", "a")
+    print(a_count)
+    drop a_count
+}

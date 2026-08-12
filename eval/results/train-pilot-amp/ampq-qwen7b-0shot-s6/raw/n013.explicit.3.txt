@@ -1,0 +1,17 @@
+fn max(a: Int, b: Int) -> Int {
+    if a > b {
+        a
+    } else {
+        b
+    }
+}
+
+fn main() {
+    let readings = vec(5, 3, 9, 1, 7)
+    let mut max_reading = readings.pop()
+    for reading in readings {
+        max_reading = max(max_reading, reading)
+    }
+    print(max_reading)
+    drop readings
+}

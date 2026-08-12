@@ -1,0 +1,9 @@
+fn area_square(s: Int, pi: Float) -> Float {
+    pi * s * s
+}
+
+fn main() {
+    let square = 4
+    print(area_square(square, 3.0))
+    drop square
+}

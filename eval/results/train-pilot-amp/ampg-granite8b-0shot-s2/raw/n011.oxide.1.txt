@@ -1,0 +1,281 @@
+fn main() {
+    let mut v = vec()
+    for i in range(1, 7) {
+        v = push(v, i * 4)
+    }
+    let total = foldl(v, 0, add)
+    print(total)
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn foldl(v: Vec<Int>, base: Int, f: Int, b: Int) -> Int {
+    match v {
+        Vec(first, rest) => f(first, foldl(rest, base, f, b))? + base,
+        Vec(last, nullary) => f(last, base) + base,
+        _ => base,
+    }
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut v = vec()
+    for i in a - 1 + 1 {
+        v = push(v, i)
+        if i + 1 >= b {
+            break
+        }
+    }
+    v
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    match v {
+        Vec(first, rest) => Vec(first, push(rest, x))?,
+        Vec(last, nullary) => Vec(last, Vec(x, nullary))?,
+        _ => Vec(x, nullary),
+    }
+}
+
+fn vec() -> Vec<T> {
+    nullary
+}
+
+fn print(x: T) -> Unit {
+    if x == nullary {
+        print_str("nullary")
+    } else {
+        print_str("not nullary")
+    }
+}
+
+fn print_str(s: Str) -> Unit {
+    "nullary"
+}
+
+enum VecNullary {
+    Nullary,
+}
+
+enum VecVariant {
+    Variant1(T),
+    Variant2(T, T),
+}
+
+enum OptionNullary {
+    None,
+}
+
+enum OptionVariant {
+    Some(T),
+}
+
+fn get(v: Vec<T>, i: Int) -> Option<T> {
+    match v {
+        Vec(first, rest) => if i == 0 { Some(first) } else { get(rest, i - 1) },
+        Vec(last, nullary) => if i == 0 { Some(last) } else { None },
+        _ => None,
+    }
+}
+
+fn clone(x: T) -> T {
+    x
+}
+
+fn str_len(s: Str) -> Int {
+    match s {
+        Str(first, rest) => if rest == nullary { 1 } else { str_len(rest) + 1 },
+        Str(last, nullary) => 1,
+    }
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    match a {
+        Str(first, rest) => if rest == nullary { Str(first, b) } else { concat(rest, b) },
+        Str(last, nullary) => b,
+    }
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    match s {
+        Str(first, rest) => if rest == nullary { Vec(Str(first, nullary), nullary) } else { push(chars(rest), Str(first, nullary)) },
+        Str(last, nullary) => Vec(Str(last, nullary), nullary),
+    }
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    if str_len(s) == 1 {
+        Some(s.to_int())
+    } else {
+        None
+    }
+}
+
+fn to_float(n: Int) -> Float {
+    match n {
+        Int(first, rest) => if rest == nullary { Float(first, nullary) } else { to_float(rest) + 1 },
+        Int(last, nullary) => Float(last, nullary),
+    }
+}
+
+fn trunc(x: Float) -> Int {
+    match x {
+        Float(first, rest) => if rest == nullary { Int(first, nullary) } else { trunc(rest) + 1 },
+        Float(last, nullary) => Int(last, nullary),
+    }
+}
+
+enum FloatNullary {
+    Nullary,
+}
+
+enum FloatVariant {
+    Variant1(T),
+    Variant2(T, T),
+}
+
+fn main() {
+    let mut v = vec()
+    for i in range(1, 7) {
+        v = push(v, i * 4)
+    }
+    let total = foldl(v, 0, add)
+    print(total)
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn foldl(v: Vec<Int>, base: Int, f: Int, b: Int) -> Int {
+    match v {
+        Vec(first, rest) => f(first, foldl(rest, base, f, b))? + base,
+        Vec(last, nullary) => f(last, base) + base,
+        _ => base,
+    }
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut v = vec()
+    for i in a - 1 + 1 {
+        v = push(v, i)
+        if i + 1 >= b {
+            break
+        }
+    }
+    v
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    match v {
+        Vec(first, rest) => Vec(first, push(rest, x))?,
+        Vec(last, nullary) => Vec(last, Vec(x, nullary))?,
+        _ => Vec(x, nullary),
+    }
+}
+
+fn vec() -> Vec<T> {
+    nullary
+}
+
+fn print(x: T) -> Unit {
+    if x == nullary {
+        print_str("nullary")
+    } else {
+        print_str("not nullary")
+    }
+}
+
+fn print_str(s: Str) -> Unit {
+    "nullary"
+}
+
+enum VecNullary {
+    Nullary,
+}
+
+enum VecVariant {
+    Variant1(T),
+    Variant2(T, T),
+}
+
+enum OptionNullary {
+    None,
+}
+
+enum OptionVariant {
+    Some(T),
+}
+
+fn get(v: Vec<T>, i: Int) -> Option<T> {
+    match v {
+        Vec(first, rest) => if i == 0 { Some(first) } else { get(rest, i - 1) },
+        Vec(last, nullary) => if i == 0 { Some(last) } else { None },
+        _ => None,
+    }
+}
+
+fn clone(x: T) -> T {
+    x
+}
+
+fn str_len(s: Str) -> Int {
+    match s {
+        Str(first, rest) => if rest == nullary { 1 } else { str_len(rest) + 1 },
+        Str(last, nullary) => 1,
+    }
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    match a {
+        Str(first, rest) => if rest == nullary { Str(first, b) } else { concat(rest, b) },
+        Str(last, nullary) => b,
+    }
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    match s {
+        Str(first, rest) => if rest == nullary { Vec(Str(first, nullary), nullary) } else { push(chars(rest), Str(first, nullary)) },
+        Str(last, nullary) => Vec(Str(last, nullary), nullary),
+    }
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    if str_len(s) == 1 {
+        Some(s.to_int())
+    } else {
+        None
+    }
+}
+
+fn to_float(n: Int) -> Float {
+    match n {
+        Int(first, rest) => if rest == nullary { Float(first, nullary) } else { to_float(rest) + 1 },
+        Int(last, nullary) => Float(last, nullary),
+    }
+}
+
+fn trunc(x: Float) -> Int {
+    match x {
+        Float(first, rest) => if rest == nullary { Int(first, nullary) } else { trunc(rest) + 1 },
+        Float(last, nullary) => Int(last, nullary),
+    }
+}
+
+enum FloatNullary {
+    Nullary,
+}
+
+enum FloatVariant {
+    Variant1(T),
+    Variant2(T, T),
+}
+
+fn main() {
+    let mut v = vec()
+    for i in range(1, 7) {
+        v = push(v, i * 4)
+    }
+    let total = foldl(v, 0, add)
+    print(total)

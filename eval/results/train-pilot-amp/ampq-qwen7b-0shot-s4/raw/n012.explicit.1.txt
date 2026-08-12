@@ -1,0 +1,8 @@
+fn main() {
+    let mut nums = vec()
+    for i in range(0, 15) {
+        nums = push(nums, i)
+    }
+    print(len(nums))
+    drop nums
+}

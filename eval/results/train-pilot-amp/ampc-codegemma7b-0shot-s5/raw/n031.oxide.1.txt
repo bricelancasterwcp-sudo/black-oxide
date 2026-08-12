@@ -1,0 +1,8 @@
+fn area(w: Float, h: Float) -> Float {
+    w * h
+}
+
+fn main() {
+    let area_of_rectangle = area(7.0, 6.0)
+    print(area_of_rectangle)
+}

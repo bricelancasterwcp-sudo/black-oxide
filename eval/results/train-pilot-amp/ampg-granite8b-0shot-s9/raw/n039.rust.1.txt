@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let list = vec![1, 2];
+    let index = 5;
+    if index < list.len() {
+        println!("{}", list[index]);
+    } else {
+        println!("none");
+    }
+}
+```

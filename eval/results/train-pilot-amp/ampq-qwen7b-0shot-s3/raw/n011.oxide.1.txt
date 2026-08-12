@@ -1,0 +1,27 @@
+struct Multiples { list: Vec<Int> }
+
+fn collect_multiples() -> Multiples {
+    let mut multiples = Multiples { list: vec() }
+    for i in range(1, 100) {
+        if i % 4 == 0 {
+            multiples.list = push(multiples.list, i)
+        }
+        if multiples.list.len() == 6 {
+            break
+        }
+    }
+    multiples
+}
+
+fn sum_multiples(m: Multiples) -> Int {
+    let mut total = 0
+    for x in m.list {
+        total = total + x
+    }
+    total
+}
+
+fn main() {
+    let m = collect_multiples()
+    print(sum_multiples(m))
+}

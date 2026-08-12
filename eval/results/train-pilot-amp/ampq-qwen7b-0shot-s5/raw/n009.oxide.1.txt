@@ -1,0 +1,11 @@
+fn reverse_num(n: Int) -> Str {
+    let mut s = int_to_str(n)
+    let chars: Vec<Str> = chars(s)
+    let reversed: Vec<Str> = chars.rev().collect()
+    concat(reversed)
+}
+
+fn main() {
+    let num = 1234
+    print(reverse_num(num))
+}

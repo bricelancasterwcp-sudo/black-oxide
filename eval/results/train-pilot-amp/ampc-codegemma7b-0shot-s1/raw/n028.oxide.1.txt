@@ -1,0 +1,12 @@
+fn read_number(s: Str) -> Result<Int, Str> {
+    let n = parse_int(s)?
+    Ok(n)
+}
+
+fn main() {
+    let result = read_number("abc")
+    match result {
+        Ok(n) => print(n),
+        Err(s) => print_str(s),
+    }
+}

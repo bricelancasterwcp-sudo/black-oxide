@@ -1,0 +1,6 @@
+fn main() {
+    let word1 = "black";
+    let word2 = "oxide";
+    let joined_word = word1.to_owned() + word2.to_owned();
+    println!("{}", joined_word);
+}

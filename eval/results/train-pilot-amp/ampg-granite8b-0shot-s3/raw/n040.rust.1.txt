@@ -1,0 +1,9 @@
+```rust
+const PI: f64 = 3.0;
+
+fn main() {
+    let side = 4.0;
+    let area = PI * side * side;
+    println!("{}", area);
+}
+```

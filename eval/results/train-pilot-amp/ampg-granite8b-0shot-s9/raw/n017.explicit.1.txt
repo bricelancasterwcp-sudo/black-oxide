@@ -1,0 +1,9 @@
+fn main() {
+    let list = push(push(push(push(vec(), 10), 20), 30), 40)
+    let value = get(&list, 1)
+    drop list
+    match value {
+        Some(value) => print(value),
+        None => print("missing")(),
+    }
+}

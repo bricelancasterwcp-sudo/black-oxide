@@ -1,0 +1,5 @@
+fn main() {
+    println!("Go for green!");
+    // Wait for yellow signal
+    // Stop for red signal
+}

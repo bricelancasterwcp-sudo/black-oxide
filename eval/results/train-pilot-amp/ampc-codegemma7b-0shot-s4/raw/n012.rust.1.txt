@@ -1,0 +1,9 @@
+use std::collections::LinkedList;
+
+fn main() {
+    let mut list = LinkedList::new();
+    for i in 0..15 {
+        list.push_back(i);
+    }
+    println!("List length: {}", list.len());
+}

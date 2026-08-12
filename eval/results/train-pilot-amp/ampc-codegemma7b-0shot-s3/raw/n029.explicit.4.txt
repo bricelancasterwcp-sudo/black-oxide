@@ -1,0 +1,4 @@
+fn main() {
+    let x = str_len(concat(chars(str_len(concat(chars("one"), "two"))), "three"))
+    print(x)
+}

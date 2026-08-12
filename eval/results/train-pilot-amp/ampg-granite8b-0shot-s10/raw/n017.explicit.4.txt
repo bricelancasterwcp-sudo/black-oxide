@@ -1,0 +1,13 @@
+fn main() {
+    let nums = push(push(vec(), 10), 20)
+    let second = get(&nums, 1)
+    match second {
+        Some(x) => {
+            print(x)
+        },
+        None => {
+            print_str("missing")
+        },
+    }
+    drop nums
+}

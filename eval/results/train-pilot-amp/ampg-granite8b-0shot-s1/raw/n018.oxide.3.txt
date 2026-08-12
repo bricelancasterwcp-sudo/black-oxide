@@ -1,0 +1,20 @@
+struct List { head: Int, tail: Link }
+
+enum Link {
+    Nil,
+    More(Box<List>),
+}
+
+fn print_list(l: List) {
+    match l.tail {
+        LinkNil => print(l.head),
+        LinkMore(m) => {
+            print_list(List { head: l.head, tail: m })
+        },
+    }
+}
+
+fn main() {
+    let l = List { head: 1, tail: LinkMore(Box { head: 2, tail: LinkMore(Box { head: 3, tail: LinkMore(Box { head: 4, tail: LinkNil }) }) }) }
+    print_list(l)
+}

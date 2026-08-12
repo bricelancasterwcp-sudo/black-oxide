@@ -1,0 +1,16 @@
+fn mean_of_readings(readings: Vec<Int>) -> Float {
+    let sum = 0
+    let mut i = 0
+    while i < readings.len() {
+        sum = sum + readings.get(i)
+        i = i + 1
+    }
+    let mean = sum / readings.len()
+    mean
+}
+
+fn main() {
+    let readings = vec(4, 8, 15, 16, 23, 42)
+    print(mean_of_readings(&readings))
+    drop readings
+}

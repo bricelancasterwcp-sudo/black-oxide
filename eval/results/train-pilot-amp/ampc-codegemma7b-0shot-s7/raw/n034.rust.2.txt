@@ -1,0 +1,25 @@
+fn get_second(list: &[i32]) -> Option<i32> {
+    if list.len() < 2 {
+        None
+    } else {
+        Some(list[1])
+    }
+}
+
+fn main() {
+    let nums = [7, 8, 9];
+    match get_second(&nums) {
+        Some(second) => println!("Second number: {}", second),
+        None => println!("No second number"),
+    }
+    let nums = [7];
+    match get_second(&nums) {
+        Some(second) => println!("Second number: {}", second),
+        None => println!("No second number"),
+    }
+    let nums = [];
+    match get_second(&nums) {
+        Some(second) => println!("Second number: {}", second),
+        None => println!("No second number"),
+    }
+}

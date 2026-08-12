@@ -1,0 +1,39 @@
+fn main() {
+    let list = push(push(push(vec(), 10), 20), 30)
+    let result = get(list, 2)?
+    print(result)
+}
+
+fn get(v: Vec<Int>, index: Int) -> Option<Int> {
+    if index < len(v) {
+        Some(v.get(index))
+    } else {
+        None
+    }
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut new = v
+    new = new.append(x)
+    new
+}
+
+fn len(v: Vec<Int>) -> Int {
+    v.len()
+}
+
+fn append(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut new = v
+    new = new.append(x)
+    new
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn main() {
+    let list = push(push(push(vec(), 10), 20), 30)
+    let result = get(list, 2)?
+    print(result)
+}

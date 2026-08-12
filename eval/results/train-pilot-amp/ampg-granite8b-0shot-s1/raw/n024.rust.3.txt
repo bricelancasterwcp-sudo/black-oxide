@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let s = "banana";
+    let count = s.matches('a').count();
+    println!("count: {}", count);
+}
+```

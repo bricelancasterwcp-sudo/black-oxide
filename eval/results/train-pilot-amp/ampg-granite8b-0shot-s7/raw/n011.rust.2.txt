@@ -1,0 +1,4 @@
+fn main() {
+    let total: u32 = (1..=6).map(|x| 4 * x).sum();
+    println!("The total of the first six multiples of four is: {}", total);
+}

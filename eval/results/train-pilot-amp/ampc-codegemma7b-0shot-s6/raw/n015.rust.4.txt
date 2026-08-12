@@ -1,0 +1,14 @@
+use std::io;
+
+fn main() {
+    let nums = [5, 3, 9, 1, 7];
+    let mut count = 0;
+
+    for num in nums.iter() {
+        if num > &4 {
+            count += 1;
+        }
+    }
+
+    println!("{} numbers are larger than 4", count);
+}

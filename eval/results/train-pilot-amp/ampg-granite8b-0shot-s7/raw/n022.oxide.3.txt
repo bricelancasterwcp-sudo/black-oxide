@@ -1,0 +1,9 @@
+struct S { x: Int, y: Int }
+
+fn add(a: S, b: S) -> S {
+    S(a.x + b.x, a.y + b.y)
+}
+
+fn main() {
+    print(add(S(1, 2), S(3, 4)))
+}

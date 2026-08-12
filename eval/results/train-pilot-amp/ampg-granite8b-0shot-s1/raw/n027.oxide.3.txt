@@ -1,0 +1,18 @@
+struct Cat {
+    legs: Int,
+    tail: Str,
+    whiskers: Int,
+}
+
+fn print_cat(cat: Cat) {
+    print(cat.legs)
+    print(cat.tail)
+    print(cat.whiskers)
+}
+
+fn main() {
+    let cat = Cat { legs: 4, tail: "long", whiskers: 3 }
+    print_cat(cat)
+    print_cat(cat)
+    print_cat(cat)
+}

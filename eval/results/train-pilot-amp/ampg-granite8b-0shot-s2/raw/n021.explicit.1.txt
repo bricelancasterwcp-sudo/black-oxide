@@ -1,0 +1,15 @@
+fn count(s: &Str) -> Int {
+    let mut i = 0
+    while i < str_len(s) {
+        if chars(s).get(i) == "p" {
+            i = i + 1
+        } else {
+            i = i + 1
+        }
+    }
+    i
+}
+
+fn main() {
+    print(count("programming"))
+}

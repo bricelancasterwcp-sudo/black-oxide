@@ -1,0 +1,246 @@
+fn main() {
+    let n = 1234
+    print(reverse(n))
+}
+
+fn reverse(n: Int) -> Int {
+    let mut r = 0
+    let mut nn = n
+    while nn > 0 {
+        r = r * 10 + nn % 10
+        nn = nn / 10
+    }
+    r
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut v2 = v
+    v2.append(x)
+    v2
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    if i >= 0 && i < len(v) {
+        Some(v.get(i).unwrap())
+    } else {
+        None
+    }
+}
+
+fn len(v: Vec<Int>) -> Int {
+    v.len()
+}
+
+fn print(x: Int) {
+    print(int_to_str(x))
+}
+
+fn int_to_str(n: Int) -> Str {
+    n.to_string()
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    (a + 1).to_int().unwrap()
+    while a < b - 1 {
+        a = a + 1
+        result.append(a)
+    }
+    result
+}
+
+fn clone(x: Int) -> Int {
+    x
+}
+
+fn str_len(s: Str) -> Int {
+    s.len()
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    s.chars().map(char_to_str).collect()
+}
+
+fn char_to_str(c: Char) -> Str {
+    c.to_string()
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    match s.parse() {
+        Ok(n) => Some(n),
+        Err(_) => None,
+    }
+}
+
+fn to_float(n: Int) -> Float {
+    n.to_float().unwrap()
+}
+
+fn trunc(x: Float) -> Int {
+    x.trunc().to_int().unwrap()
+}
+
+fn break_expr() {
+    break_expr_impl()
+}
+
+fn break_expr_impl() {
+    loop_label_break_expr_impl()
+}
+
+fn loop_label_break_expr_impl() {
+    loop_label_break_expr_impl_impl()
+}
+
+fn loop_label_break_expr_impl_impl() {
+    loop_label_break_expr_impl_impl_impl()
+}
+
+fn continue_expr() {
+    continue_expr_impl()
+}
+
+fn continue_expr_impl() {
+    loop_label_continue_expr_impl()
+}
+
+fn loop_label_continue_expr_impl() {
+    loop_label_continue_expr_impl_impl()
+}
+
+fn loop_label_continue_expr_impl_impl() {
+    loop_label_continue_expr_impl_impl_impl()
+}
+
+fn main_expr() {
+    let_expr()
+    return_expr()
+    while_expr()
+    for_expr()
+    match_expr()
+    match_expr_arms()
+    match_expr_arms_no_patterns()
+    expr_statements()
+    expr_statements_no_terminator()
+    expr_operators()
+    expr_operators_precedence()
+    expr_operators_unary()
+    expr_operators_postfix()
+    expr_operators_special()
+    expr_operators_misc()
+    expr_operators_misc_2()
+    expr_operators_misc_3()
+    expr_operators_misc_4()
+    expr_operators_misc_5()
+    expr_operators_misc_6()
+    expr_operators_misc_7()
+    expr_operators_misc_8()
+    expr_operators_misc_9()
+    expr_operators_misc_10()
+    expr_operators_misc_11()
+    expr_operators_misc_12()
+    expr_operators_misc_13()
+    expr_operators_misc_14()
+    expr_operators_misc_15()
+    expr_operators_misc_16()
+    expr_operators_misc_17()
+    expr_operators_misc_18()
+    expr_operators_misc_19()
+    expr_operators_misc_20()
+    expr_operators_misc_21()
+    expr_operators_misc_22()
+    expr_operators_misc_23()
+    expr_operators_misc_24()
+    expr_operators_misc_25()
+    expr_operators_misc_26()
+    expr_operators_misc_27()
+    expr_operators_misc_28()
+    expr_operators_misc_29()
+    expr_operators_misc_30()
+    expr_operators_misc_31()
+    expr_operators_misc_32()
+    expr_operators_misc_33()
+    expr_operators_misc_34()
+    expr_operators_misc_35()
+    expr_operators_misc_36()
+    expr_operators_misc_37()
+    expr_operators_misc_38()
+    expr_operators_misc_39()
+    expr_operators_misc_40()
+    expr_operators_misc_41()
+    expr_operators_misc_42()
+    expr_operators_misc_43()
+    expr_operators_misc_44()
+    expr_operators_misc_45()
+    expr_operators_misc_46()
+    expr_operators_misc_47()
+    expr_operators_misc_48()
+    expr_operators_misc_49()
+    expr_operators_misc_50()
+    expr_operators_misc_51()
+    expr_operators_misc_52()
+    expr_operators_misc_53()
+    expr_operators_misc_54()
+    expr_operators_misc_55()
+    expr_operators_misc_56()
+    expr_operators_misc_57()
+    expr_operators_misc_58()
+    expr_operators_misc_59()
+    expr_operators_misc_60()
+    expr_operators_misc_61()
+    expr_operators_misc_62()
+    expr_operators_misc_63()
+    expr_operators_misc_64()
+    expr_operators_misc_65()
+    expr_operators_misc_66()
+    expr_operators_misc_67()
+    expr_operators_misc_68()
+    expr_operators_misc_69()
+    expr_operators_misc_70()
+    expr_operators_misc_71()
+    expr_operators_misc_72()
+    expr_operators_misc_73()
+    expr_operators_misc_74()
+    expr_operators_misc_75()
+    expr_operators_misc_76()
+    expr_operators_misc_77()
+    expr_operators_misc_78()
+    expr_operators_misc_79()
+    expr_operators_misc_80()
+    expr_operators_misc_81()
+    expr_operators_misc_82()
+    expr_operators_misc_83()
+    expr_operators_misc_84()
+    expr_operators_misc_85()
+    expr_operators_misc_86()
+    expr_operators_misc_87()
+    expr_operators_misc_88()
+    expr_operators_misc_89()
+    expr_operators_misc_90()
+    expr_operators_misc_91()
+    expr_operators_misc_92()
+    expr_operators_misc_93()
+    expr_operators_misc_94()
+    expr_operators_misc_95()
+    expr_operators_misc_96()
+    expr_operators_misc_97()
+    expr_operators_misc_98()
+    expr_operators_misc_99()
+    expr_operators_misc_100()
+    expr_operators_misc_101()
+    expr_operators_misc_102()
+    expr_operators_misc_103()
+    expr_operators_misc_104()
+    expr_operators_misc_105()
+}
+
+fn break_expr_impl() {
+    loop_label_break_expr_impl()
+}
+
+fn main() {
+    let n = 1234
+    print

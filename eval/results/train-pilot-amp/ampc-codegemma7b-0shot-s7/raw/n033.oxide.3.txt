@@ -1,0 +1,7 @@
+fn main() {
+    print_str("go for green\n")
+    let _ = read_line()
+    print_str("wait for yellow\n")
+    let _ = read_line()
+    print_str("stop for red\n")
+}

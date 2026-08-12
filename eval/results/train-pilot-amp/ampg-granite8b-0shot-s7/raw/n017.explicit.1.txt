@@ -1,0 +1,17 @@
+fn get2(v: &Vec<Int>) -> Option<Int> {
+    if v.len() > 1 {
+        Some(v.get(1))
+    } else {
+        None
+    }
+}
+
+fn main() {
+    let v = vec(10, 20, 30, 40)
+    let two = get2(&v)
+    drop v
+    match two {
+        Some(x) => print(x),
+        None => print_str("missing"),
+    }
+}

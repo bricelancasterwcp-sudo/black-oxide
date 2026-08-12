@@ -1,0 +1,15 @@
+fn main() {
+    let readings = vec(4, 8, 15, 16, 23, 42)
+    let sum = readings.iter().fold(0, (x) + (y) == x + y)
+    let count = readings.len()
+    let mean = sum / count
+    print(mean)
+}
+
+fn main() {
+    let readings = vec(4, 8, 15, 16, 23, 42)
+    let sum = readings.iter().fold(0, (x) + (y) == x + y)
+    let count = readings.len()
+    let mean = sum / count
+    print(mean)
+}

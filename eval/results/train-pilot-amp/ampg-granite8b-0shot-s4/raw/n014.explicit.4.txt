@@ -1,0 +1,14 @@
+fn main() {
+    let mut a = 5
+    let mut b = 3
+    let mut c = 9
+    let mut d = 1
+    let mut e = 7
+    let f = a
+    a = b
+    b = c + 1
+    c = f
+    d = e - 3
+    e = f + d
+    print(e)
+}

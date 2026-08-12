@@ -1,0 +1,10 @@
+struct Str { len: Int, ptr: Int }
+
+fn len(s: Str) -> Int {
+    s.len
+}
+
+fn main() {
+    let hello_world = Str { len: 12, ptr: 0 }
+    print(len(hello_world))
+}

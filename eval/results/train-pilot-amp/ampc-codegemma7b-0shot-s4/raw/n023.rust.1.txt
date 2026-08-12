@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let phrase = "hello world";
+    let len = phrase.len();
+    println!("Number of characters: {}", len);
+}
+```

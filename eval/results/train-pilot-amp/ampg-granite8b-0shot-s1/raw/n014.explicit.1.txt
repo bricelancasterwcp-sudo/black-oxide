@@ -1,0 +1,142 @@
+fn min(mutREADings: Vec<Int>) -> Int {
+    READ  //$ i
+    let mut smallest = readings.pop()
+    match readings.len() {
+        READ => {
+            READ // j
+            let j = readings.pop()
+            if smallest > j {
+                drop smallest
+                smallest = j
+                drop j
+                j
+                READ
+                let smallest = readings.pop()
+                drop readings
+                readings
+                drop smallest
+                smallest
+                READ
+                let readings = readings.pop()
+                drop readings
+                readings
+                READ
+                let readings = readings.pop()
+                drop readings
+                readings
+                READ
+                let readings = readings.pop()
+                drop readings
+                readings
+                READ
+                let readings = readings.pop()
+                drop readings
+                readings
+                READ
+                let readings = readings.pop()
+                drop readings
+                readings
+                READ
+                let readings = readings.pop()
+                drop readings
+                readings
+                READ
+                let readings = readings.pop()
+                drop readings
+                readings
+                READ
+                let readings = readings.pop()
+                drop readings
+                readings
+                READ
+                let readings = readings.pop()
+                drop readings
+                readings
+                READ
+                let readings = readings.pop()
+                drop readings
+                readings
+                READ
+                let readings = readings.pop()
+                drop readings
+                readings
+                READ
+                let readings = readings.pop()
+                drop readings
+                readings
+                READ
+                let readings = readings.pop()
+                drop readings
+                readings
+                READ
+                let readings = readings.pop()
+                drop readings
+                readings
+                READ
+                let readings = readings.pop()
+                drop readings
+                readings
+                READ
+                let readings = readings.pop()
+                drop readings
+                readings
+                READ
+                let readings = readings.pop()
+                drop readings
+                readings
+                READ
+                let readings = readings.pop()
+                drop readings
+                readings
+                READ
+                let readings = readings.pop()
+                drop readings
+                readings
+                READ
+                let readings = readings.pop()
+                drop readings
+                readings
+                READ
+                let readings = readings.pop()
+                drop readings
+                readings
+                READ
+                let readings = readings.pop()
+                drop readings
+                readings
+                READ
+                let readings = readings.pop()
+                drop readings
+                readings
+                READ
+                let readings = readings.pop()
+                drop readings
+                readings
+                READ
+                let readings = readings.pop()
+                drop readings
+                readings
+                READ
+                let readings = readings.pop()
+                drop readings
+                readings
+                READ
+                let readings = readings.pop()
+                drop readings
+                readings
+                READ
+                let readings = readings.pop()
+                drop readings
+                readings
+                READ
+                let readings = readings.pop()
+                drop readings
+                readings
+                READ
+                let readings = readings.pop()
+                drop readings
+                readings
+                READ
+                let readings = readings.pop()
+                drop readings
+           

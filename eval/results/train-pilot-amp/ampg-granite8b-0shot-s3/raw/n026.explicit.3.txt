@@ -1,0 +1,30 @@
+fn digits(n: Int) -> Vec<Int> {
+    let mut ds = vec()
+    for d in 0.range_inclusive(9) {
+        if n % 10 == d {
+            push(&mut && ds, d)
+        }
+    }
+    ds
+}
+
+fn text(n: Int) -> Str {
+    let ds = digits(n)
+    let mut cs = vec()
+    for d in &ds {
+        push(&mut && cs, (48 + d) % 127)
+    }
+    String.from_utf8(&cs)
+}
+
+fn length(s: Str) -> Int {
+    let mut len = 0
+    for _ in s {
+        len = len + 1
+    }
+    len
+}
+
+fn main() {
+    print(length(&text))
+}

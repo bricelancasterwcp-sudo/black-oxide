@@ -1,0 +1,6 @@
+fn main() {
+    let word = "cat";
+    for c in word.chars() {
+        println!("{}", c);
+    }
+}

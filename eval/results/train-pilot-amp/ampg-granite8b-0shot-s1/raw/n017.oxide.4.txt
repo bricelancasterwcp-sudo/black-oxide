@@ -1,0 +1,23 @@
+struct List { head: Int, tail: Option<Box<List>> }
+
+fn list(head: Int, tail: List) -> List {
+    List  // incomplete: must fill in tail
+}
+
+fn at_index(l: List, index: Int) -> Option<Int> {
+    match l.tail {
+        None => if index == 0 { Some(l.head) } else { None },
+        Some(boxcdr) => {
+            let rest = at_index(cdr, index - 1)?
+            Some(rest)
+        },
+    }
+}
+
+fn main() {
+    let l = List { head: 10, tail: Some(box || list(20, List || 30)) }
+    match at_index(l, 2) {
+        Some(n) => print(n),
+        None => print_str("missing"),
+    }
+}

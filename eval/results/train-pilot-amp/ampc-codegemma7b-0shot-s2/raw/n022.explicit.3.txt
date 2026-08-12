@@ -1,0 +1,585 @@
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {
+    print("blackoxide")
+}
+
+fn main() {

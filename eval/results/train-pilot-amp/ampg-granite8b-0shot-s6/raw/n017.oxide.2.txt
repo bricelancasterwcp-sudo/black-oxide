@@ -1,0 +1,39 @@
+struct List { head: Int, rest: Option<Box<List>> }
+
+fn get_item(list: Box<List>, pos: Int) -> Option<Int> {
+    if pos == 0 {
+        Some(list.head)
+    } else {
+        match list.rest {
+            Some(ref_list) => get_item(ref_list, pos - 1),
+            None => None,
+        }
+    }
+}
+
+fn main() {
+    let list = Box { head: 10, rest: Some(Box { head: 20, rest: Some(Box { head: 30, rest: Some(Box { head: 40, rest: None }) }) }) }
+    let pos: Int = 1
+    match get_item(list, pos) {
+        Some(item) => print(item),
+        None => print_str("missing"),
+    }
+}
+
+struct Box {
+    head: Int,
+    rest: Option<Box>,
+}
+
+fn push(head: Int, rest: Option<Box>) -> Box {
+    Box(head, rest)
+}
+
+fn main() {
+    let list = push(10, Some(push(20, Some(push(30, Some(push(40, None)))))))
+    let pos: Int = 1
+    match get_item(list, pos) {
+        Some(item) => print(item),
+        None => print_str("missing"),
+    }
+}

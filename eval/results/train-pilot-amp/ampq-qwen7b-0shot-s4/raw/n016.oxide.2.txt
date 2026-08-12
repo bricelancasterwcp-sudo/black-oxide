@@ -1,0 +1,350 @@
+struct NumberList { numbers: Vec<Int> }
+
+fn main() {
+    let mut list = NumberList { numbers: vec() }
+    for i in range(1, 11) {
+        if i % 3 == 0 {
+            list.numbers = push(list.numbers, i)
+        }
+    }
+    let total: Int = sum(list.numbers)
+    print(total)
+}
+
+fn sum(v: Vec<Int>) -> Int {
+    v.iter().fold(0, add)
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn range(start: Int, end: Int) -> Vec<Int> {
+    (start - 1).to(end).collect()
+}
+
+fn to(end: Int) -> Vec<Int> {
+    (0).to(end).collect()
+}
+
+fn collect(start: Int, end: Int) -> Vec<Int> {
+    (start).to(end).collect()
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn fold(init: Int, func: Int, v: Vec<Int>) -> Int {
+    v.iter().fold(init, func)
+}
+
+fn to(end: Int) -> Vec<Int> {
+    (0).to(end).collect()
+}
+
+fn collect(start: Int, end: Int) -> Vec<Int> {
+    (start).to(end).collect()
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn fold(init: Int, func: Int, v: Vec<Int>) -> Int {
+    v.iter().fold(init, func)
+}
+
+fn to(end: Int) -> Vec<Int> {
+    (0).to(end).collect()
+}
+
+fn collect(start: Int, end: Int) -> Vec<Int> {
+    (start).to(end).collect()
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn fold(init: Int, func: Int, v: Vec<Int>) -> Int {
+    v.iter().fold(init, func)
+}
+
+fn to(end: Int) -> Vec<Int> {
+    (0).to(end).collect()
+}
+
+fn collect(start: Int, end: Int) -> Vec<Int> {
+    (start).to(end).collect()
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn fold(init: Int, func: Int, v: Vec<Int>) -> Int {
+    v.iter().fold(init, func)
+}
+
+fn to(end: Int) -> Vec<Int> {
+    (0).to(end).collect()
+}
+
+fn collect(start: Int, end: Int) -> Vec<Int> {
+    (start).to(end).collect()
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn fold(init: Int, func: Int, v: Vec<Int>) -> Int {
+    v.iter().fold(init, func)
+}
+
+fn to(end: Int) -> Vec<Int> {
+    (0).to(end).collect()
+}
+
+fn collect(start: Int, end: Int) -> Vec<Int> {
+    (start).to(end).collect()
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn fold(init: Int, func: Int, v: Vec<Int>) -> Int {
+    v.iter().fold(init, func)
+}
+
+fn to(end: Int) -> Vec<Int> {
+    (0).to(end).collect()
+}
+
+fn collect(start: Int, end: Int) -> Vec<Int> {
+    (start).to(end).collect()
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn fold(init: Int, func: Int, v: Vec<Int>) -> Int {
+    v.iter().fold(init, func)
+}
+
+fn to(end: Int) -> Vec<Int> {
+    (0).to(end).collect()
+}
+
+fn collect(start: Int, end: Int) -> Vec<Int> {
+    (start).to(end).collect()
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn fold(init: Int, func: Int, v: Vec<Int>) -> Int {
+    v.iter().fold(init, func)
+}
+
+fn to(end: Int) -> Vec<Int> {
+    (0).to(end).collect()
+}
+
+fn collect(start: Int, end: Int) -> Vec<Int> {
+    (start).to(end).collect()
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn fold(init: Int, func: Int, v: Vec<Int>) -> Int {
+    v.iter().fold(init, func)
+}
+
+fn to(end: Int) -> Vec<Int> {
+    (0).to(end).collect()
+}
+
+fn collect(start: Int, end: Int) -> Vec<Int> {
+    (start).to(end).collect()
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn fold(init: Int, func: Int, v: Vec<Int>) -> Int {
+    v.iter().fold(init, func)
+}
+
+fn to(end: Int) -> Vec<Int> {
+    (0).to(end).collect()
+}
+
+fn collect(start: Int, end: Int) -> Vec<Int> {
+    (start).to(end).collect()
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn fold(init: Int, func: Int, v: Vec<Int>) -> Int {
+    v.iter().fold(init, func)
+}
+
+fn to(end: Int) -> Vec<Int> {
+    (0).to(end).collect()
+}
+
+fn collect(start: Int, end: Int) -> Vec<Int> {
+    (start).to(end).collect()
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn fold(init: Int, func: Int, v: Vec<Int>) -> Int {
+    v.iter().fold(init, func)
+}
+
+fn to(end: Int) -> Vec<Int> {
+    (0).to(end).collect()
+}
+
+fn collect(start: Int, end: Int) -> Vec<Int> {
+    (start).to(end).collect()
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn fold(init: Int, func: Int, v: Vec<Int>) -> Int {
+    v.iter().fold(init, func)
+}
+
+fn to(end: Int) -> Vec<Int> {
+    (0).to(end).collect()
+}
+
+fn collect(start: Int, end: Int) -> Vec<Int> {
+    (start).to(end).collect()
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn fold(init: Int, func: Int, v: Vec<Int>) -> Int {
+    v.iter().fold(init, func)
+}
+
+fn to(end: Int) -> Vec<Int> {
+    (0).to(end).collect()
+}
+
+fn collect(start: Int, end: Int) -> Vec<Int> {
+    (start).to(end).collect()
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn fold(init: Int, func: Int, v: Vec<Int>) -> Int {
+    v.iter().fold(init, func)
+}
+
+fn to(end: Int) -> Vec<Int> {
+    (0).to(end).collect()
+}
+
+fn collect(start: Int, end: Int) -> Vec<Int> {
+    (start).to(end).collect()
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn fold(init: Int, func: Int, v: Vec<Int>) -> Int {
+    v.iter().fold(init, func)
+}
+
+fn to(end: Int) -> Vec<Int> {
+    (0).to(end).collect()
+}
+
+fn collect(start: Int, end: Int) -> Vec<Int> {
+    (start).to(end).collect()
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn fold(init: Int, func: Int, v: Vec<Int>) -> Int {
+    v.iter().fold(init, func)
+}
+
+fn to(end: Int) -> Vec<Int> {
+    (0).to(end).collect()
+}
+
+fn collect(start: Int, end: Int) -> Vec<Int> {
+    (start).to(end).collect()
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn fold(init: Int, func: Int, v: Vec<Int>) -> Int {
+    v.iter().fold(init, func)
+}
+
+fn to(end: Int) -> Vec<Int> {
+    (0).to(end).collect()
+}
+
+fn collect(start: Int, end: Int) -> Vec<Int> {
+    (start).to(end).collect()
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn fold(init: Int, func: Int, v: Vec<Int>) -> Int {
+    v.iter().fold(init, func)
+}
+
+fn to(end: Int) -> Vec<Int> {
+    (0).to(end).collect()
+}
+
+fn collect(start: Int, end: Int) -> Vec<Int> {
+    (start).to(end).collect()
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn fold(init: Int, func: Int, v: Vec<Int>) -> Int {
+    v.iter().fold(init, func)
+}
+
+fn to(end: Int) -> Vec<Int> {
+    (0).to(end).collect()
+}
+
+fn collect(start: Int, end: Int) -> Vec<Int

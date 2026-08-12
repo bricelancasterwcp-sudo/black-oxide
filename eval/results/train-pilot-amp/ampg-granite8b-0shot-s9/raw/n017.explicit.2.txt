@@ -1,0 +1,59 @@
+fn main() {
+    let list = push(push(push(push(vec(), 10), 20), 30), 40)
+    let value = get(&list, 1)
+    drop list
+    match value {
+        Some(value) => print(value),
+        None => print("missing")(),
+    }
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    if i < 0 || i > len(&v) {
+        return None
+    } else {
+        return Some(v.get(i))
+    }
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let new = v.append(x)
+    drop v
+    new
+}
+
+fn vec() -> Vec<Int> {
+    let s = vec()
+    drop s
+    s
+}
+
+fn print(x: Int) {
+    let s = int_to_str(x)
+    drop s
+    s
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut s = ""
+    while n > 0 {
+        let d = n % 10
+        let c = d + 48
+        s = push(s, c)
+        n = n / 10
+    }
+    drop s
+    s
+}
+
+fn len(v: Vec<Int>) -> Int {
+    let mut n = 0
+    while n < len(&v) {
+        n = n + 1
+    }
+    drop n
+    n
+}
+
+fn append(s: Str, c: Char) -> Str {
+    let s = str_cat(s, &from_char_to_str_unsafe_const_function_name_please_no_one_uses_this_because_then_we_have_to_write_a_paper_but_i_promise_if_you_do_then_we_will_go_to_the_coffee_shop_and_talk_about_it_i_swear_like_i_am_in_a_coma_so_we_will_do_it_as_a_team_now_i_will_go_make_some_coffee_and_then_we_can_talk_about_it_okay_enjoy_your_coffee_now_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_okay_

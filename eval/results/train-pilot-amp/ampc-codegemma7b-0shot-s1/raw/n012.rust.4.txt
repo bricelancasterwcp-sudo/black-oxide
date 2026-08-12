@@ -1,0 +1,11 @@
+use std::collections::VecDeque;
+
+fn main() {
+    let mut numbers: VecDeque<i32> = VecDeque::new();
+
+    for i in 0..=14 {
+        numbers.push_back(i);
+    }
+
+    println!("List holds {} items", numbers.len());
+}

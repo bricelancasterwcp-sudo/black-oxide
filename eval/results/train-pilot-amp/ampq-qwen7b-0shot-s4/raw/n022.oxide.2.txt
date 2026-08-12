@@ -1,0 +1,11 @@
+struct StringConcat { a: Str, b: Str }
+
+fn concat_words(sc: StringConcat) -> Str {
+    concat(sc.a, sc.b)
+}
+
+fn main() {
+    let sc = StringConcat { a: "black", b: "oxide" }
+    let result = concat_words(sc)
+    print(result)
+}

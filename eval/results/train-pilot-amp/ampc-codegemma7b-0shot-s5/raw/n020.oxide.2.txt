@@ -1,0 +1,290 @@
+fn main() {
+    let nums = vec(4, 8, 15, 16, 23, 42).iter().copied()
+    let mean = nums.fold(0, add) / nums.len()
+    print(trunc(mean))
+}
+
+fn add(acc: Int, x: Int) -> Int {
+    acc + x
+}
+
+fn trunc(x: Float) -> Int {
+    if x < 0 {
+        x.floor()
+    } else {
+        x.ceil()
+    }
+}
+
+fn vec(i: Int, rest: Int, items: Vec<Int>) -> Vec<Int> {
+    if i == 0 {
+        return items
+    }
+    vec(i - 1, rest, push(items, rest))
+}
+
+fn iter(v: Vec<Int>) -> Vec<Int> {
+    v
+}
+
+fn copied(v: Vec<Int>) -> Vec<Int> {
+    v.iter().copied().collect()
+}
+
+fn len(v: Vec<Int>) -> Int {
+    v.iter().count()
+}
+
+fn fold(acc: Int, f: FnIntIntInt, v: Vec<Int>) -> Int {
+    if v.len() == 0 {
+        return acc
+    }
+    let x = get(v, 0).unwrap()
+    fold(f(acc, x), f, vec(1, v))
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    if i >= v.len() {
+        return None
+    }
+    Some(v.iter().nth(i).unwrap())
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    print(len(s))
+    print(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut s = ""
+    if n < 0 {
+        s = "-"
+        n = -n
+    }
+    if n >= 10 {
+        s = int_to_str(n / 10) + s
+        n = n % 10
+    }
+    if n >= 0 {
+        s = s + "0123456789abcdefg"
+    }
+    s
+}
+
+fn print_int(n: Int) {
+    print(int_to_str(n))
+}
+
+fn collect(iter: Vec<Int>) -> Vec<Int> {
+    iter
+}
+
+fn add(acc: Int, x: Int) -> Int {
+    acc + x
+}
+
+fn main() {
+    let nums = vec(4, 8, 15, 16, 23, 42).iter().copied()
+    let mean = nums.fold(0, add) / nums.len()
+    print(trunc(mean))
+}
+
+fn add(acc: Int, x: Int) -> Int {
+    acc + x
+}
+
+fn trunc(x: Float) -> Int {
+    if x < 0 {
+        x.floor()
+    } else {
+        x.ceil()
+    }
+}
+
+fn vec(i: Int, rest: Int, items: Vec<Int>) -> Vec<Int> {
+    if i == 0 {
+        return items
+    }
+    vec(i - 1, rest, push(items, rest))
+}
+
+fn iter(v: Vec<Int>) -> Vec<Int> {
+    v
+}
+
+fn copied(v: Vec<Int>) -> Vec<Int> {
+    v.iter().copied().collect()
+}
+
+fn len(v: Vec<Int>) -> Int {
+    v.iter().count()
+}
+
+fn fold(acc: Int, f: FnIntIntInt, v: Vec<Int>) -> Int {
+    if v.len() == 0 {
+        return acc
+    }
+    let x = get(v, 0).unwrap()
+    fold(f(acc, x), f, vec(1, v))
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    if i >= v.len() {
+        return None
+    }
+    Some(v.iter().nth(i).unwrap())
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    print(len(s))
+    print(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut s = ""
+    if n < 0 {
+        s = "-"
+        n = -n
+    }
+    if n >= 10 {
+        s = int_to_str(n / 10) + s
+        n = n % 10
+    }
+    if n >= 0 {
+        s = s + "0123456789abcdefg"
+    }
+    s
+}
+
+fn print_int(n: Int) {
+    print(int_to_str(n))
+}
+
+fn collect(iter: Vec<Int>) -> Vec<Int> {
+    iter
+}
+
+fn add(acc: Int, x: Int) -> Int {
+    acc + x
+}
+
+fn main() {
+    let nums = vec(4, 8, 15, 16, 23, 42).iter().copied()
+    let mean = nums.fold(0, add) / nums.len()
+    print(trunc(mean))
+}
+
+fn add(acc: Int, x: Int) -> Int {
+    acc + x
+}
+
+fn trunc(x: Float) -> Int {
+    if x < 0 {
+        x.floor()
+    } else {
+        x.ceil()
+    }
+}
+
+fn vec(i: Int, rest: Int, items: Vec<Int>) -> Vec<Int> {
+    if i == 0 {
+        return items
+    }
+    vec(i - 1, rest, push(items, rest))
+}
+
+fn iter(v: Vec<Int>) -> Vec<Int> {
+    v
+}
+
+fn copied(v: Vec<Int>) -> Vec<Int> {
+    v.iter().copied().collect()
+}
+
+fn len(v: Vec<Int>) -> Int {
+    v.iter().count()
+}
+
+fn fold(acc: Int, f: FnIntIntInt, v: Vec<Int>) -> Int {
+    if v.len() == 0 {
+        return acc
+    }
+    let x = get(v, 0).unwrap()
+    fold(f(acc, x), f, vec(1, v))
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    if i >= v.len() {
+        return None
+    }
+    Some(v.iter().nth(i).unwrap())
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    print(len(s))
+    print(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut s = ""
+    if n < 0 {
+        s = "-"
+        n = -n
+    }
+    if n >= 10 {
+        s = int_to_str(n / 10) + s
+        n = n % 10
+    }
+    if n >= 0 {
+        s = s + "0123456789abcdefg"
+    }
+    s
+}
+
+fn print_int(n: Int) {
+    print(int_to_str(n))
+}
+
+fn collect(iter: Vec<Int>) -> Vec<Int> {
+    iter
+}
+
+fn add(acc: Int, x: Int) -> Int {
+    acc + x
+}
+
+fn main() {
+    let nums = vec(4, 8, 15, 16, 23, 42).iter().copied()
+    let mean = nums.fold(0, add) / nums.len()
+    print(trunc(mean))
+}
+
+fn add(acc: Int, x: Int) -> Int {
+    acc + x
+}
+
+fn trunc(x: Float) -> Int {
+    if x < 0 {
+        x.floor()
+    } else {
+        x.ceil()
+    }
+}
+
+fn vec(i: Int, rest: Int, items: Vec<Int>) -> Vec<Int> {
+    if i == 0 {
+        return items
+    }
+    vec(

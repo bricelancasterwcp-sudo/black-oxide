@@ -1,0 +1,5 @@
+fn main() {
+    let v = vec(1, 2)
+    print(&get_item_or_none && v, 5)
+    drop v
+}

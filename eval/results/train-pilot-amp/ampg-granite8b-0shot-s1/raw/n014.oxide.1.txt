@@ -1,0 +1,8 @@
+fn main() {
+    let mut readings = vec(5, 3, 9, 1, 7).iter()
+    let smallest = match readings.min() {
+        Some(x) => x,
+        None => panic("no readings"),
+    }
+    print(smallest)
+}

@@ -1,0 +1,13 @@
+fn get_middle(v: &Vec<Int>, idx: Int) -> Int {
+    if idx >= v.len() {
+        print("missing")
+    } else {
+        print(&v)
+    }
+}
+
+fn main() {
+    let nums = vec(10, 20, 30, 40)
+    get_middle(&nums, 2)
+    get_middle(&nums, 4)
+}

@@ -1,0 +1,16 @@
+fn main() {
+    let n = 1234;
+    let mut digits: Vec<u32> = vec![];
+
+    // Extract digits into a vector
+    while n > 0 {
+        digits.insert(0, n % 10);
+        n /= 10;
+    }
+
+    // Print digits in reverse order
+    for digit in digits {
+        print!("{}", digit);
+    }
+    println!();
+}

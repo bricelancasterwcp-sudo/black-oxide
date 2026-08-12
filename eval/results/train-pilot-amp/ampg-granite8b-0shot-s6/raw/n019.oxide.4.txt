@@ -1,0 +1,29 @@
+struct List { first: Int, rest: Option<Box<List>> }
+
+fn length(l: List) -> Int {
+    match l.rest {
+        None => 1,
+        Some(reftail) => 1 + length(reftail),
+    }
+}
+
+fn main() {
+    let l1 = List { first: 1, rest: Some(box(List { first: 2, rest: Some(box(List { first: 3, rest: None })) })) }
+    let l2 = List { first: 4, rest: Some(box(List { first: 5, rest: None })) }
+    print(length(l1) + length(l2))
+}
+
+struct List { first: Int, rest: Option<Box<List>> }
+
+fn length(l: List) -> Int {
+    match l.rest {
+        None => 1,
+        Some(reftail) => 1 + length(reftail),
+    }
+}
+
+fn main() {
+    let l1 = List { first: 1, rest: Some(box(List { first: 2, rest: Some(box(List { first: 3, rest: None })) })) }
+    let l2 = List { first: 4, rest: Some(box(List { first: 5, rest: None })) }
+    print(length(l1) + length(l2))
+}

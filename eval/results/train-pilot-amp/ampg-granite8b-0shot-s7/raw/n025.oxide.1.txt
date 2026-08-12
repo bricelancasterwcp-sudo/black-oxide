@@ -1,0 +1,12 @@
+fn task(text: Str) -> Str {
+    match parse_int(text) {
+        Some(n) => int_to_str(n + 1),
+        None => "bad",
+    }
+}
+
+fn main() {
+    let text = read_line()
+    let answer = task(text)
+    print_str(answer)
+}

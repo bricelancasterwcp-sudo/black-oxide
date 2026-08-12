@@ -1,0 +1,13 @@
+struct Reading { label: Str, value: Str }
+
+fn parse_int(s: Str) -> Option<Int> {
+    s.parse_int()
+}
+
+fn main() {
+    let r = Reading { label: "num", value: "417" }
+    match parse_int(r.value.clone()) {
+        Some(n) => print(n + 1),
+        None => print_str("bad"),
+    }
+}

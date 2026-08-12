@@ -1,0 +1,118 @@
+fn main() {
+    let mut list = vec()
+    for i in range(1, 13) {
+        list = push(list, i)
+    }
+    let mut total = 0
+    for x in &list {
+        if x % 4 == 0 {
+            total = total + x
+        }
+    }
+    print(total)
+    drop list
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut v = vec()
+    let mut i = a
+    while i < b {
+        v = push(v, i)
+        i = i + 1
+    }
+    v
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let mut total = 0
+    for x in &v {
+        if x > limit {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn extend(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn print(x: Int) {
+    print_str("DEBUG: ")
+    print_str(int_to_str(x))
+    print_str("\n")
+}
+
+fn print_str(s: Str) {
+    todo()
+}
+
+fn vec() -> Vec<Int> {
+    todo()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    todo()
+}
+
+fn len(v: Vec<Int>) -> Int {
+    todo()
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    todo()
+}
+
+fn clone(x: Int) -> Int {
+    todo()
+}
+
+fn to_float(n: Int) -> Float {
+    todo()
+}
+
+fn trunc(x: Float) -> Int {
+    todo()
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    todo()
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    todo()
+}
+
+fn str_len(s: Str) -> Int {
+    todo()
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    todo()
+}
+
+fn int_to_str(n: Int) -> Str {
+    todo()
+}
+
+fn todo() {
+    panic("TODO")
+}
+
+fn assert_eq(a: Int, b: Int) {
+    if a != b {
+        panic("ASSERTION FAILED")
+    }
+}
+
+fn panic(msg: Str) -> None {
+    print_str(msg)
+    drop msg
+    loop
+}
+
+fn main() {
+    let list = range(1, 13)
+    assert_eq(sum_big(&list, 10), 42)
+    drop list
+}

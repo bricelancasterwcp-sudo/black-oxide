@@ -1,0 +1,25 @@
+struct Reading { label: Str, values: Vec<Int> }
+
+fn filter(v: Vec<Int>, div: Int) -> Vec<Int> {
+    let out = vec()
+    for x in v {
+        if x % div == 0 {
+            out = push(out, x)
+        }
+    }
+    out
+}
+
+fn sum(v: Vec<Int>) -> Int {
+    let acc = 0
+    for x in v {
+        acc = x + acc
+    }
+    acc
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(vec(), 3), 42) }
+    let v = filter(r.values, 3)
+    print(sum(v))
+}

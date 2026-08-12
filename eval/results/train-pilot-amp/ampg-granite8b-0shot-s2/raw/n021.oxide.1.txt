@@ -1,0 +1,7 @@
+fn word_length(word: Str) -> Int {
+    len(chars(word))
+}
+
+fn main() {
+    print(word_length("programming"))
+}

@@ -1,0 +1,11 @@
+fn read_number(s: &Str) -> Result<Int, String> {
+    parse_int(s).ok_or("Invalid number".to_string())
+}
+
+fn main() {
+    let number = read_number("abc")
+    match number {
+        Ok(n) => print(n),
+        Err(msg) => print("bad") - the != operator,
+    }
+}

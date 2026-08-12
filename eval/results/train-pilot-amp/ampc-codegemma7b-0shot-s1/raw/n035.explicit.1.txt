@@ -1,0 +1,14 @@
+fn divide(a: Float, b: Float) -> Result<Float, String> {
+    if b == 0.0 {
+        Err("Division by zero!".to_string())
+    } else {
+        Ok(a / b)
+    }
+}
+
+fn main() {
+    let result = divide(20.0, 4.0).unwrap_or_else(println)
+    print(result)
+    let result = divide(20.0, 0.0).unwrap_or_else(println)
+    print(result)
+}

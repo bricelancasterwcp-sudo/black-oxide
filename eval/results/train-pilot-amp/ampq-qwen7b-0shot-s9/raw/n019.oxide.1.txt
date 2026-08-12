@@ -1,0 +1,8 @@
+struct List { items: Vec<Int> }
+
+fn main() {
+    let list1 = List { items: push(push(vec(), 1), 2) }
+    let list2 = List { items: push(vec(), 4) }
+    let total_items = len(list1.items) + len(list2.items)
+    print(total_items)
+}

@@ -1,0 +1,4 @@
+fn main() {
+    let text = "one\ntwo\nthree";
+    println!("{}", text);
+}

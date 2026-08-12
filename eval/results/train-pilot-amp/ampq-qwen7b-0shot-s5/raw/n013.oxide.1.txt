@@ -1,0 +1,16 @@
+struct Reading { label: Str, values: Vec<Int> }
+
+fn find_largest(v: Vec<Int>) -> Int {
+    let mut largest = -1
+    for x in v {
+        if x > largest {
+            largest = x
+        }
+    }
+    largest
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: vec(5, 3, 9, 1, 7) }
+    print(find_largest(r.values))
+}

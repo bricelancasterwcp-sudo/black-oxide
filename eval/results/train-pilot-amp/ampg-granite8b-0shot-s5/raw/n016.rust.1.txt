@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut list = Vec::new();
+    for n in 1..=10 {
+        if n % 3 == 0 {
+            list.push(n);
+        }
+    }
+    println!("Total: {}", list.iter().sum::<i32>());
+}
+```
+
+Note: This solution is a complete program with the fn main and it uses the Rust programming language, edition 2021, and the std library.

@@ -1,0 +1,15 @@
+```rust
+fn divide(dividend: i32, divisor: i32) -> i32 {
+    if divisor == 0 {
+        panic!("Cannot divide by zero");
+    }
+    dividend / divisor
+}
+
+fn main() {
+    let result = divide(20, 4);
+    println!("The result is {}", result);
+    let result = divide(20, 0);
+    println!("The result is {}", result);
+}
+```

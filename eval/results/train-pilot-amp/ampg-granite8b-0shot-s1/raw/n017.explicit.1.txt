@@ -1,0 +1,17 @@
+fn list_index(list: &Vec<Int>, index: Int) -> Option<Int> {
+    if index < 0 || index >= len(list) {
+        None
+    } else {
+        Some(get(list, index).unwrap())
+    }
+}
+
+fn main() {
+    let list = push(push(push(vec(), 10), 20), 30)
+    let index = 2
+    match list_index(&list, index) {
+        Some(value) => print(value),
+        None => print("missing"),
+    }
+    drop list
+}

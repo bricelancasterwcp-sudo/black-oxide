@@ -1,0 +1,15 @@
+fn largest(v: &Vec<Int>) -> Int {
+    let mut largest = 0
+    for x in &v {
+        if x > &largest {
+            largest = x.clone()
+        }
+    }
+    largest
+}
+
+fn main() {
+    let readings = vec(5, 3, 9, 1, 7)
+    print(largest(&readings))
+    drop readings
+}

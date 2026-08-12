@@ -1,0 +1,13 @@
+fn biggest_power(x: Int) -> Int {
+    let mut n = 1
+    while n <= x {
+        n = n * 2
+    }
+    return n / 2
+}
+
+fn main() {
+    let max = biggest_power(100)
+    print(max)
+    drop max
+}

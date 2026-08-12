@@ -1,0 +1,11 @@
+fn multiply() -> Int {
+    let mut prod = 1
+    for x in range(1, 7) {
+        prod = prod * x
+    }
+    prod
+}
+
+fn main() {
+    print(multiply())
+}

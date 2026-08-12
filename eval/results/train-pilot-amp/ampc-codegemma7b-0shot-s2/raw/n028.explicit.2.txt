@@ -1,0 +1,17 @@
+fn read_num() -> Option<Int> {
+    let input = Str(input())
+    if input == "abc" {
+        None
+    } else {
+        Some(parse_int(input))
+    }
+}
+
+fn main() {
+    let num = read_num()
+    if num {
+        print(num)
+    } else {
+        print("bad")
+    }
+}

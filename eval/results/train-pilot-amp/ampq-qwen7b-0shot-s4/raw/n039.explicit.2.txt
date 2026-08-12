@@ -1,0 +1,8 @@
+fn main() {
+    let v = vec(1, 2)
+    let entry = get(&v, 5)
+    if entry.is_none() {
+        print_str("None")
+    }
+    drop v
+}

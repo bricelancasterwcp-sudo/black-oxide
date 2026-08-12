@@ -1,0 +1,5 @@
+fn main() {
+    print_str("go for green\n")
+    print_str("wait for yellow\n")
+    print_str("stop for red\n")
+}

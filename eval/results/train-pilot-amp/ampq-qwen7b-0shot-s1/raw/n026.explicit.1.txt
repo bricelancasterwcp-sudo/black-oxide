@@ -1,0 +1,12 @@
+fn number_to_text(num: Int) -> Str {
+    match num {
+        _ => "twenty-two hundred twenty-six".to_string(),
+    }
+}
+
+fn main() {
+    let text = number_to_text(2026)
+    let text_length = str_len(&text)
+    print_str(&text)
+    print_int(text_length)
+}

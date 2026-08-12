@@ -1,0 +1,7 @@
+fn main() {
+    let x1 = 1;
+    let y1 = 5;
+    let x2 = x1 + 10;
+    let y2 = y1;
+    println!("{}", x2 + y2);
+}

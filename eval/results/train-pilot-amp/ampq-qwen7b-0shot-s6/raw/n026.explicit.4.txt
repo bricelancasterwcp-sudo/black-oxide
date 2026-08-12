@@ -1,0 +1,15 @@
+fn int_to_str(n: Int) -> Str {
+    format(n)
+}
+
+fn str_len(s: Str) -> Int {
+    s.len()
+}
+
+fn main() {
+    let num = 2026
+    let text = int_to_str(num)
+    let length = str_len(text)
+    print(length)
+    drop text
+}

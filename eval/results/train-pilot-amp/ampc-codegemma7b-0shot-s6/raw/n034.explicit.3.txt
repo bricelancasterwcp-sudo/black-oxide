@@ -1,0 +1,92 @@
+fn second(v: &Vec<Int>) -> Option<Int> {
+    if v.len() < 2 {
+        None
+    } else {
+        Some(v.get(1)?)
+    }
+}
+
+fn main() {
+    print(second(&vec))
+    print(second(&vec))
+    print(second(&vec))
+}
+
+fn vec() -> Vec<Int> {
+    return Vec()
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    if i >= 0 && i < v.len() {
+        Some(v.get(i)?)
+    } else {
+        None
+    }
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    return v.len()
+}
+
+fn print(x: Option<Int>) {
+    match x {
+        Some(v) => print(v),
+        None => print("None") - 1,
+    }
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut v = v
+    v.push(x)
+    return v
+}
+
+fn print_str(s: String) {
+    print(s)
+}
+
+fn str() -> String {
+    return String()
+}
+
+fn chars(s: String) -> Vec<String> {
+    let mut v = Vec()
+    for c in s.chars() {
+        v.push(String(c))
+    }
+    return v
+}
+
+fn int_to_str(n: Int) -> String {
+    return String(n)
+}
+
+fn parse_int(s: String) -> Option<Int> {
+    return Some(String(s))
+}
+
+fn to_float(n: Int) -> Float {
+    return Float(n)
+}
+
+fn trunc(x: Float) -> Int {
+    return Int(x)
+}
+
+fn clone(x: &Int) -> Int {
+    return Int(x)
+}
+
+fn str_len(s: &String) -> Int {
+    return s.len()
+}
+
+fn concat(a: String, b: String) -> String {
+    return String(a) + String(b)
+}
+
+fn main() {
+    print(second(&vec))
+    print(second(&vec))
+    print(second(&vec))
+}

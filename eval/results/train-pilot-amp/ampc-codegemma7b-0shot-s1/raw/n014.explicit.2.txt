@@ -1,0 +1,306 @@
+fn main() {
+    let readings = vec(5, 3, 9, 1, 7)
+    let mut smallest = readings.get(0)
+    for reading in &readings {
+        if reading < smallest {
+            smallest = reading
+        }
+    }
+    print(smallest)
+    drop readings
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    if i >= 0 && i < v.len() {
+        Some(v.get(i))
+    } else {
+        None
+    }
+}
+
+fn print(x: &Int) {
+    print_str(str_len(to_str(x)))
+}
+
+fn to_str(n: &Int) -> Str {
+    let mut digits = vec()
+    let mut num = n
+    while num >= &int_to_str {
+        digits.push(int_to_str(num % 10))
+        num = num / 10
+    }
+    digits.reverse()
+    concat(&digits)
+}
+
+fn concat(a: &Vec<Str>) -> Str {
+    let mut result = str()
+    for s in a {
+        result = result + s
+    }
+    result
+}
+
+fn int_to_str(n: &Int) -> Int {
+    if n < &int_to_str {
+        0
+    } else {
+        n % 10 + 48
+    }
+}
+
+fn print_str(n: Int) {
+    for i in 0.to_int() < n {
+        print_char(i)
+    }
+}
+
+fn print_char(c: Int) {
+    if c >= 0 && c <= 255 {
+        print_char(c)
+    }
+}
+
+fn str_len(s: &Str) -> Int {
+    let mut len = 0
+    for _ in &s {
+        len = len + 1
+    }
+    len
+}
+
+fn clone(x: &Int) -> Int {
+    x
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut result = v
+    result.append(x)
+    result
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    v.len()
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in a.to_int() < b {
+        result.append(i)
+    }
+    result
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    if i >= 0 && i < v.len() {
+        Some(v.get(i))
+    } else {
+        None
+    }
+}
+
+fn clone(x: &Int) -> Int {
+    x
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut result = v
+    result.append(x)
+    result
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    v.len()
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in a.to_int() < b {
+        result.append(i)
+    }
+    result
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    if i >= 0 && i < v.len() {
+        Some(v.get(i))
+    } else {
+        None
+    }
+}
+
+fn clone(x: &Int) -> Int {
+    x
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut result = v
+    result.append(x)
+    result
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    v.len()
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in a.to_int() < b {
+        result.append(i)
+    }
+    result
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    if i >= 0 && i < v.len() {
+        Some(v.get(i))
+    } else {
+        None
+    }
+}
+
+fn clone(x: &Int) -> Int {
+    x
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut result = v
+    result.append(x)
+    result
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    v.len()
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in a.to_int() < b {
+        result.append(i)
+    }
+    result
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    if i >= 0 && i < v.len() {
+        Some(v.get(i))
+    } else {
+        None
+    }
+}
+
+fn clone(x: &Int) -> Int {
+    x
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut result = v
+    result.append(x)
+    result
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    v.len()
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in a.to_int() < b {
+        result.append(i)
+    }
+    result
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    if i >= 0 && i < v.len() {
+        Some(v.get(i))
+    } else {
+        None
+    }
+}
+
+fn clone(x: &Int) -> Int {
+    x
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut result = v
+    result.append(x)
+    result
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    v.len()
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in a.to_int() < b {
+        result.append(i)
+    }
+    result
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    if i >= 0 && i < v.len() {
+        Some(v.get(i))
+    } else {
+        None
+    }
+}
+
+fn clone(x: &Int) -> Int {
+    x
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut result = v
+    result.append(x)
+    result
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    v.len()
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in a.to_int() < b {
+        result.append(i)
+    }
+    result
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    if i >= 0 && i < v.len() {
+        Some(v.get(i))
+    } else {
+        None
+    }
+}
+
+fn clone(x: &Int) -> Int {
+    x
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut result = v
+    result.append(x)
+    result
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    v.len()
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in a.to_int() < b {
+        result.append(i)
+    }
+    result
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    if i >= 0 && i < v.len() {
+        Some(v.get(i))

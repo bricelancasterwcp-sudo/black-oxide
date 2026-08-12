@@ -1,0 +1,4 @@
+fn main() {
+    let list: Vec<Int> = vec(1, 2)
+    print(get(list, 5))
+}

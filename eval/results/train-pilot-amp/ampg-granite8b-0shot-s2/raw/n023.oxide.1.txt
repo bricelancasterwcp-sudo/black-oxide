@@ -1,0 +1,320 @@
+fn main() {
+    getStaticField(getPhrase(), 0) + 10
+}
+
+fn getPhrase() -> Str {
+    createState("hello world")
+}
+
+fn createState(s: Str) -> Str {
+    s
+}
+
+struct Str {
+    data: Vec<Int>,
+    len: Int,
+}
+
+fn getStringLen(s: Str) -> Int {
+    s.len
+}
+
+struct Int {
+    data: Int,
+}
+
+fn getIntData(n: Int) -> Int {
+    n.data
+}
+
+struct State {
+    data: Vec<Int>,
+    idx: Int,
+}
+
+fn getStateData(s: State) -> Vec<Int> {
+    s.data
+}
+
+struct Vec {
+    data: Vec<Int>,
+    len: Int,
+}
+
+fn getVecData(v: Vec) -> Vec<Int> {
+    v.data
+}
+
+fn getVecLen(v: Vec) -> Int {
+    v.len
+}
+
+struct VecData {
+    data: Vec<Int>,
+}
+
+fn getVecDataData(vd: VecData) -> Vec<Int> {
+    vd.data
+}
+
+struct VecLen {
+    len: Int,
+}
+
+fn getVecLenLen(vl: VecLen) -> Int {
+    vl.len
+}
+
+struct Option {
+    data: Int,
+}
+
+fn getOptionData(o: Option) -> Int {
+    o.data
+}
+
+struct Some {
+    data: Int,
+}
+
+struct None {
+    data: Int,
+}
+
+fn getSomeData(s: Some) -> Int {
+    s.data
+}
+
+fn getNoneData(n: None) -> Int {
+    TextField(n.data, 1)
+}
+
+struct TextField {
+    data: Int,
+    idx: Int,
+}
+
+fn getTextFieldData(tf: TextField) -> Int {
+    tf.data
+}
+
+fn getTextFieldIdx(tf: TextField) -> Int {
+    tf.idx
+}
+
+struct Text {
+    data: Vec<Int>,
+    len: Int,
+}
+
+fn getTextData(t: Text) -> Vec<Int> {
+    t.data
+}
+
+fn getTextLen(t: Text) -> Int {
+    t.len
+}
+
+struct Wrapper {
+    data: Int,
+}
+
+fn getWrapperData(w: Wrapper) -> Int {
+    w.data
+}
+
+struct Ok {
+    data: Int,
+}
+
+struct Err {
+    data: Int,
+}
+
+fn getOkData(o: Ok) -> Int {
+    TextField(o.data, 1)
+}
+
+fn getErrData(e: Err) -> Int {
+    TextField(e.data, 1)
+}
+
+struct Field1 {
+    f1: Int,
+}
+
+struct Field2 {
+    f2: Int,
+}
+
+struct Field3 {
+    f3: Int,
+}
+
+struct Field12 {
+    f1: Int,
+    f2: Int,
+}
+
+struct Field13 {
+    f1: Int,
+    f3: Int,
+}
+
+struct Field23 {
+    f2: Int,
+    f3: Int,
+}
+
+fn getField1Data(f: Field1) -> Int {
+    TextField(f.f1, 1)
+}
+
+fn getField2Data(f: Field2) -> Int {
+    TextField(f.f2, 1)
+}
+
+fn getField3Data(f: Field3) -> Int {
+    TextField(f.f3, 1)
+}
+
+fn getField12Data(f: Field12) -> Int {
+    TextField(f.f1 + f.f2, 1)
+}
+
+fn getField13Data(f: Field13) -> Int {
+    TextField(f.f1 + f.f3, 1)
+}
+
+fn getField23Data(f: Field23) -> Int {
+    TextField(f.f2 + f.f3, 1)
+}
+
+struct Unit {
+    data: Int,
+}
+
+fn getUnitData(u: Unit) -> Int {
+    TextField(u.data, 1)
+}
+
+struct Match {
+    data: Int,
+}
+
+fn getMatchData(m: Match) -> Int {
+    TextField(match m {
+            Variant1(n) => n + 1,
+            Variant2(s) => TextField(s.data, 1),
+            Variant3 => 1000,
+            Nullary => TextField(m.data, 1),
+            _ => TextField(m.data, 1),
+        }, 1)
+}
+
+struct Variant1 {
+    data: Int,
+}
+
+struct Variant2 {
+    data: Str,
+}
+
+struct Variant3 {
+    data: Int,
+}
+
+struct Nullary {
+    data: Int,
+}
+
+struct Match2 {
+    data: Int,
+}
+
+fn getMatch2Data(m: Match2) -> Int {
+    TextField(match m {
+            Variant1(n) => TextField(n.data, 1),
+            Variant2(s) => TextField(s.data, 1),
+            Variant3 => TextField(m.data, 1),
+            Nullary => TextField(m.data, 1),
+        }, 1)
+}
+
+struct If {
+    data: Int,
+}
+
+fn getIfData(i: If) -> Int {
+    TextField(if i.data > 100 { 100 } else { TextField(i.data, 1) }, 1)
+}
+
+fn state_create(data: Str) -> State {
+    State(data, 0)
+}
+
+fn state_get_char(s: State) -> Int {
+    TextField(getStateData(s), getStateIdx(s))
+}
+
+fn state_next(s: State) -> State {
+    State(getStateData(s), getStateIdx(s) + 1)
+}
+
+fn state_is_eof(s: State) -> Bool {
+    TextField(getStateData(s), getStateIdx(s)) == -1
+}
+
+fn string_create(data: Vec<Int>) -> Str {
+    Str(data, data.len)
+}
+
+fn string_get_char(s: Str) -> Int {
+    TextField(getStrData(s), 0)
+}
+
+fn string_next(s: Str) -> Str {
+    Str(getStrData(s), getStrLen(s) - 1)
+}
+
+fn string_is_eof(s: Str) -> Bool {
+    getStrLen(s) == 0
+}
+
+fn vec_create(data: Vec<Int>) -> Vec {
+    Vec(data, data.len)
+}
+
+fn vec_get_data(v: Vec) -> Vec<Int> {
+    getVecDataData(getVecData(v))
+}
+
+fn vec_get_len(v: Vec) -> Int {
+    getVecLenLen(getVecLen(v))
+}
+
+fn vec_get_data_at_index(v: Vec, index: Int) -> Int {
+    TextField(getVecDataData(getVecData(v)), index)
+}
+
+fn vec_next(v: Vec) -> Vec {
+    Vec(getVecDataData(getVecData(v)), getVecLenLen(getVecLen(v)) - 1)
+}
+
+fn vec_is_empty(v: Vec) -> Bool {
+    getVecLenLen(getVecLen(v)) == 0
+}
+
+fn option_create(data: Int) -> Option {
+    Option(data)
+}
+
+fn option_unwrap(o: Option) -> Int {
+    getOptionData(o)
+}
+
+fn some_create(data: Int) -> Some {
+    Some(data)
+}
+
+fn none_create(data:

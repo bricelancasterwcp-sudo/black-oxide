@@ -1,0 +1,6 @@
+fn main() {
+    for color in ["green", "yellow", "red"] {
+        println!("go for {}", color);
+        std::thread::sleep(std::time::Duration::from_secs(1));
+    }
+}

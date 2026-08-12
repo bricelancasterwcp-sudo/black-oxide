@@ -1,0 +1,408 @@
+fn area(s: &Square) -> Float {
+    s.side * s.side
+}
+
+fn area(c: &Circle) -> Float {
+    PI * c.radius * c.radius
+}
+
+fn main() {
+    let square = Square { side: 4 }
+    let circle = Circle { radius: 3 }
+    print(area(&square))
+    print(area(&circle))
+}
+
+struct Square {
+    side: Int,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+enum Shape {
+    Square(Square),
+    Circle(Circle),
+}
+
+fn area(s: &Shape) -> Float {
+    match s {
+        Shape(s) => area(&s),
+    }
+}
+
+fn area(s: &Square) -> Float {
+    s.side * s.side
+}
+
+fn area(c: &Circle) -> Float {
+    PI * c.radius * c.radius
+}
+
+fn main() {
+    let square = Square { side: 4 }
+    let circle = Circle { radius: 3 }
+    print(area(&square))
+    print(area(&circle))
+}
+
+struct Square {
+    side: Int,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+enum Shape {
+    Square(Square),
+    Circle(Circle),
+}
+
+fn area(s: &Square) -> Float {
+    s.side * s.side
+}
+
+fn area(c: &Circle) -> Float {
+    PI * c.radius * c.radius
+}
+
+fn main() {
+    let square = Square { side: 4 }
+    let circle = Circle { radius: 3 }
+    print(area(&square))
+    print(area(&circle))
+}
+
+struct Square {
+    side: Int,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+enum Shape {
+    Square(Square),
+    Circle(Circle),
+}
+
+fn area(s: &Shape) -> Float {
+    match s {
+        Shape(s) => area(&s),
+    }
+}
+
+fn area(s: &Square) -> Float {
+    s.side * s.side
+}
+
+fn area(c: &Circle) -> Float {
+    PI * c.radius * c.radius
+}
+
+fn main() {
+    let square = Square { side: 4 }
+    let circle = Circle { radius: 3 }
+    print(area(&square))
+    print(area(&circle))
+}
+
+struct Square {
+    side: Int,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+enum Shape {
+    Square(Square),
+    Circle(Circle),
+}
+
+fn area(s: &Shape) -> Float {
+    match s {
+        Shape(s) => area(&s),
+    }
+}
+
+fn area(s: &Square) -> Float {
+    s.side * s.side
+}
+
+fn area(c: &Circle) -> Float {
+    PI * c.radius * c.radius
+}
+
+fn main() {
+    let square = Square { side: 4 }
+    let circle = Circle { radius: 3 }
+    print(area(&square))
+    print(area(&circle))
+}
+
+struct Square {
+    side: Int,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+enum Shape {
+    Square(Square),
+    Circle(Circle),
+}
+
+fn area(s: &Shape) -> Float {
+    match s {
+        Shape(s) => area(&s),
+    }
+}
+
+fn area(s: &Square) -> Float {
+    s.side * s.side
+}
+
+fn area(c: &Circle) -> Float {
+    PI * c.radius * c.radius
+}
+
+fn main() {
+    let square = Square { side: 4 }
+    let circle = Circle { radius: 3 }
+    print(area(&square))
+    print(area(&circle))
+}
+
+struct Square {
+    side: Int,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+enum Shape {
+    Square(Square),
+    Circle(Circle),
+}
+
+fn area(s: &Shape) -> Float {
+    match s {
+        Shape(s) => area(&s),
+    }
+}
+
+fn area(s: &Square) -> Float {
+    s.side * s.side
+}
+
+fn area(c: &Circle) -> Float {
+    PI * c.radius * c.radius
+}
+
+fn main() {
+    let square = Square { side: 4 }
+    let circle = Circle { radius: 3 }
+    print(area(&square))
+    print(area(&circle))
+}
+
+struct Square {
+    side: Int,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+enum Shape {
+    Square(Square),
+    Circle(Circle),
+}
+
+fn area(s: &Shape) -> Float {
+    match s {
+        Shape(s) => area(&s),
+    }
+}
+
+fn area(s: &Square) -> Float {
+    s.side * s.side
+}
+
+fn area(c: &Circle) -> Float {
+    PI * c.radius * c.radius
+}
+
+fn main() {
+    let square = Square { side: 4 }
+    let circle = Circle { radius: 3 }
+    print(area(&square))
+    print(area(&circle))
+}
+
+struct Square {
+    side: Int,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+enum Shape {
+    Square(Square),
+    Circle(Circle),
+}
+
+fn area(s: &Shape) -> Float {
+    match s {
+        Shape(s) => area(&s),
+    }
+}
+
+fn area(s: &Square) -> Float {
+    s.side * s.side
+}
+
+fn area(c: &Circle) -> Float {
+    PI * c.radius * c.radius
+}
+
+fn main() {
+    let square = Square { side: 4 }
+    let circle = Circle { radius: 3 }
+    print(area(&square))
+    print(area(&circle))
+}
+
+struct Square {
+    side: Int,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+enum Shape {
+    Square(Square),
+    Circle(Circle),
+}
+
+fn area(s: &Shape) -> Float {
+    match s {
+        Shape(s) => area(&s),
+    }
+}
+
+fn area(s: &Square) -> Float {
+    s.side * s.side
+}
+
+fn area(c: &Circle) -> Float {
+    PI * c.radius * c.radius
+}
+
+fn main() {
+    let square = Square { side: 4 }
+    let circle = Circle { radius: 3 }
+    print(area(&square))
+    print(area(&circle))
+}
+
+struct Square {
+    side: Int,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+enum Shape {
+    Square(Square),
+    Circle(Circle),
+}
+
+fn area(s: &Shape) -> Float {
+    match s {
+        Shape(s) => area(&s),
+    }
+}
+
+fn area(s: &Square) -> Float {
+    s.side * s.side
+}
+
+fn area(c: &Circle) -> Float {
+    PI * c.radius * c.radius
+}
+
+fn main() {
+    let square = Square { side: 4 }
+    let circle = Circle { radius: 3 }
+    print(area(&square))
+    print(area(&circle))
+}
+
+struct Square {
+    side: Int,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+enum Shape {
+    Square(Square),
+    Circle(Circle),
+}
+
+fn area(s: &Shape) -> Float {
+    match s {
+        Shape(s) => area(&s),
+    }
+}
+
+fn area(s: &Square) -> Float {
+    s.side * s.side
+}
+
+fn area(c: &Circle) -> Float {
+    PI * c.radius * c.radius
+}
+
+fn main() {
+    let square = Square { side: 4 }
+    let circle = Circle { radius: 3 }
+    print(area(&square))
+    print(area(&circle))
+}
+
+struct Square {
+    side: Int,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+enum Shape {
+    Square(Square),
+    Circle(Circle),
+}
+
+fn area(s: &Shape) -> Float {
+    match s {
+        Shape(s) => area(&s),
+    }
+}
+
+fn area(s: &Square) -> Float {
+    s.side * s.side
+}
+
+fn area(c: &Circle) -> Float {
+    PI * c.

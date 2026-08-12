@@ -1,0 +1,61 @@
+fn str_len(s: &Str) -> Int {
+    let mut chars = 0
+    for _ in chars(&s) {
+        chars = chars + 1
+    }
+    chars
+}
+
+fn main() {
+    print(str_len(&str_lit_string_literal_hello_world))
+}
+
+fn str_lit_string_literal_hello_world() -> Str {
+    let hello = "hello"
+    let world = "world"
+    concat(hello, " ", world)
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut result = vec()
+    for c in s.chars() {
+        result.push(str_lit_char(c))
+    }
+    result
+}
+
+fn str_lit_char(c: Char) -> Str {
+    format(&str_lit_string_literal_char_fmt, c)
+}
+
+fn str_lit_string_literal_char_fmt() -> Str {
+    let placeholder = "?"
+    format(&str_lit_string_literal_fmt, placeholder)
+}
+
+fn str_lit_string_literal_fmt() -> Str {
+    let placeholder = "?"
+    format(&str_lit_string_literal_fmt, placeholder)
+}
+
+fn str_lit_string_literal_hello_world() -> Str {
+    let hello = "hello"
+    let world = "world"
+    concat(hello, " ", world)
+}
+
+fn str_lit_string_literal_fmt() -> Str {
+    let placeholder = "?"
+    format(&str_lit_string_literal_fmt, placeholder)
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    let mut result = String.new()
+    result.push_str(a)
+    result.push_str(b)
+    result.into_string()
+}
+
+fn main() {
+    print(str_len(&str_lit_string_literal_hello_world))
+}

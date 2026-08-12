@@ -1,0 +1,19 @@
+fn main() {
+    let mut count = 0
+    for x in 1.to_int() + 0.5 <= 36.0 {
+        if 36 % x.to_int() == 0 {
+            count = count + 1
+        }
+    }
+    print(count)
+}
+
+fn main() {
+    let mut count = 0
+    for x in 1.to_int() + 0.5 <= 36.0 {
+        if 36 % x.to_int() == 0 {
+            count = count + 1
+        }
+    }
+    print(count)
+}

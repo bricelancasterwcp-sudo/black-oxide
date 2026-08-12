@@ -1,0 +1,11 @@
+fn biggest_power_of_two() -> Int {
+    let mut n = 100
+    while n % 2 == 0 {
+        n = n / 2
+    }
+    n
+}
+
+fn main() {
+    print(biggest_power_of_two())
+}

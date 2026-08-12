@@ -1,0 +1,17 @@
+fn count_vowels(word: &Str) -> Int {
+    let count = 0
+    for char in chars(word) {
+        if char == "a" || char == "e" || char == "i" || char == "o" || char == "u" || char == "A" || char == "E" || char == "I" || char == "O" || char == "U" {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn main() {
+    let word = "hello"
+    let vowels_count = count_vowels(word)
+    print_str("Number of vowels: ")
+    print(vowels_count)
+    drop word
+}

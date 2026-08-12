@@ -1,0 +1,7 @@
+fn main() {
+    let list = push(push(push(push(vec(), 1), 2), 1), 2)
+    match get(list, 4) {
+        Some(n) => print(n),
+        None => print_str("no 5th entry"),
+    }
+}

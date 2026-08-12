@@ -1,0 +1,21 @@
+struct Reading { label: Str, values: Vec<Int> }
+
+fn int_to_str(n: Int) -> Str {
+    match n {
+        Number => "Number".to_str(),
+        _ => "Other".to_str(),
+    }
+}
+
+fn str_len(s: Str) -> Int {
+    s.chars().len()
+}
+
+fn main() {
+    let number_text = int_to_str(2026)
+    print(number_text)
+    let length = str_len(number_text)
+    print_str(" has ")
+    print(length)
+    print_str(" characters")
+}

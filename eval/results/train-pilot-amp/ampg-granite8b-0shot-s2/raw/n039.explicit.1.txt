@@ -1,0 +1,33 @@
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    if i >= len(&v) {
+        None
+    } else {
+        Some(get_helper(&v, 0, i))
+    }
+}
+
+fn get_helper(v: &Vec<Int>, start: Int, i: Int) -> Int {
+    if start == i {
+        v.get(start)
+    } else {
+        let mid = (start + i) / 2
+        if mid >= len(&v) {
+            return v.get(mid)
+        } else {
+            let l = get_helper(&v, start, mid)
+            let r = get_helper(&v, mid + 1, i)
+            l + r
+        }
+    }
+}
+
+fn main() {
+    let v = vec()
+    for i in range(0, 10) {
+        let entry = get(&v, i)
+        match entry {
+            None => print("none"),
+            Some(e) => print(e),
+        }
+    }
+}

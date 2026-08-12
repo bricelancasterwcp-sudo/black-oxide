@@ -1,0 +1,9 @@
+struct List {
+    hd: Int,
+    tl: List,
+}
+
+fn main() {
+    let l = List { hd: 1, tl: List { hd: 2, tl: vec() } }
+    print(get(l, 4).unwrap_or(0))
+}

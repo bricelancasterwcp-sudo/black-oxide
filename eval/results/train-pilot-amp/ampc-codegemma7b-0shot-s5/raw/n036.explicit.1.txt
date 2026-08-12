@@ -1,0 +1,13 @@
+fn total_stock(four_unit_price: Int, five_unit_price: Int, four_unit_stock: Int, five_unit_stock: Int) -> Int {
+    let four_total = four_unit_price * four_unit_stock
+    let five_total = five_unit_price * five_unit_stock
+    four_total + five_total
+}
+
+fn main() {
+    let four_unit_price = 3
+    let five_unit_price = 2
+    let four_unit_stock = 4
+    let five_unit_stock = 5
+    print(total_stock(four_unit_price, five_unit_price, four_unit_stock, five_unit_stock))
+}

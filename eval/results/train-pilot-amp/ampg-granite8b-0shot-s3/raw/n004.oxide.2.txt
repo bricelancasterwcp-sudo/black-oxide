@@ -1,0 +1,10 @@
+fn main() {
+    let mut a = 1
+    let mut b = 1
+    for _ in 0 < 10 {
+        let tmp = a
+        a = b
+        b = tmp + b
+    }
+    print(b)
+}

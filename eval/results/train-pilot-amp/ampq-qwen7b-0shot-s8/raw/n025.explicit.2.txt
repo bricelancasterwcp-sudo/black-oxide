@@ -1,0 +1,12 @@
+fn main() {
+    let text = "417"
+    match parse_int(text) {
+        Some(num) => {
+            let result = num + 1
+            print_int(result)
+        },
+        None => {
+            print_str("bad")
+        },
+    }
+}

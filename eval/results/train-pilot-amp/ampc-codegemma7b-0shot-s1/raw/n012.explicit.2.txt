@@ -1,0 +1,339 @@
+fn len(v: &Vec<Int>) -> Int {
+    let mut i = 0
+    for _ in &v {
+        i = i + 1
+    }
+    i
+}
+
+fn main() {
+    let mut numbers = vec()
+    for i in 0 {
+        if i < 15 {
+            numbers = push(numbers, i)
+        } else {
+            break
+        }
+    }
+    print(len(&numbers))
+    drop numbers
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut v = v
+    v.push(x)
+    v
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn vec() -> Vec<Int> {
+    vec()
+}
+
+fn clone(x: &Vec<Int>) -> Vec<Int> {
+    let mut v = vec()
+    for i in x {
+        v.push(i)
+    }
+    v
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut v = vec()
+    for i in a {
+        if i < b {
+            v.push(i)
+        } else {
+            break
+        }
+    }
+    v
+}
+
+fn int_to_str(n: Int) -> Str {
+    to_str(n)
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    to_int(s)
+}
+
+fn to_float(n: Int) -> Float {
+    n
+}
+
+fn trunc(x: Float) -> Int {
+    x
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut v = vec()
+    for c in s {
+        v.push(c)
+    }
+    v
+}
+
+fn str_len(s: &Str) -> Int {
+    let mut i = 0
+    for _ in s {
+        i = i + 1
+    }
+    i
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    a + b
+}
+
+fn drop_ref(x: &Int) {
+    drop x
+}
+
+fn drop_vec(x: &Vec<Int>) {
+    drop x
+}
+
+fn drop_str(x: &Str) {
+    drop x
+}
+
+fn drop_int(x: &Int) {
+    drop x
+}
+
+fn drop_float(x: &Float) {
+    drop x
+}
+
+fn drop_bool(x: &Bool) {
+    drop x
+}
+
+fn drop_unit(x: &Unit) {
+    drop x
+}
+
+fn drop_option(x: &Option<Int>) {
+    match x {
+        Some(v) => drop_int(v),
+        None => drop_unit(),
+    }
+}
+
+fn drop_result(x: &Result<Int, Str>) {
+    match x {
+        Ok(v) => drop_int(v),
+        Err(e) => drop_str(e),
+    }
+}
+
+fn drop_tuple(x: &Tuple<Int, Str>) {
+    drop_int(&x)
+    drop_str(&x)
+}
+
+fn drop_struct(x: &MyStruct) {
+    drop_int(&x)
+    drop_str(&x)
+}
+
+fn drop_enum(x: &MyEnum) {
+    match x {
+        MyEnumVariant1(v) => drop_int(v),
+        MyEnumVariant2(v) => drop_str(v),
+    }
+}
+
+fn drop_lifetime(x: &MyLifetime) {
+    drop x
+}
+
+fn drop_ptr(x: &MyPtr) {
+    drop x
+}
+
+fn drop_arc(x: &MyArc) {
+    drop x
+}
+
+fn drop_cell(x: &MyCell) {
+    drop x
+}
+
+fn drop_sync(x: &MySync) {
+    drop x
+}
+
+fn drop_unsync(x: &MyUnsync) {
+    drop x
+}
+
+fn drop_thread(x: &MyThread) {
+    drop x
+}
+
+fn drop_future(x: &MyFuture) {
+    drop x
+}
+
+fn drop_channel(x: &MyChannel) {
+    drop x
+}
+
+fn drop_mutex(x: &MyMutex) {
+    drop x
+}
+
+fn drop_rwlock(x: &MyRwlock) {
+    drop x
+}
+
+fn drop_atomic(x: &MyAtomic) {
+    drop x
+}
+
+fn drop_once(x: &MyOnce) {
+    drop x
+}
+
+fn drop_panic(x: &MyPanic) {
+    drop x
+}
+
+fn drop_unwind(x: &MyUnwind) {
+    drop x
+}
+
+fn drop_extern(x: &MyExtern) {
+    drop x
+}
+
+fn drop_tls(x: &MyTls) {
+    drop x
+}
+
+fn drop_tls_init(x: &MyTlsInit) {
+    drop x
+}
+
+fn drop_tls_destroy(x: &MyTlsDestroy) {
+    drop x
+}
+
+fn drop_tls_get(x: &MyTlsGet) {
+    drop x
+}
+
+fn drop_tls_set(x: &MyTlsSet) {
+    drop x
+}
+
+fn drop_tls_drop(x: &MyTlsDrop) {
+    drop x
+}
+
+fn drop_tls_panic(x: &MyTlsPanic) {
+    drop x
+}
+
+fn drop_tls_unwind(x: &MyTlsUnwind) {
+    drop x
+}
+
+fn drop_tls_extern(x: &MyTlsExtern) {
+    drop x
+}
+
+fn drop_tls_init_extern(x: &MyTlsInitExtern) {
+    drop x
+}
+
+fn drop_tls_destroy_extern(x: &MyTlsDestroyExtern) {
+    drop x
+}
+
+fn drop_tls_get_extern(x: &MyTlsGetExtern) {
+    drop x
+}
+
+fn drop_tls_set_extern(x: &MyTlsSetExtern) {
+    drop x
+}
+
+fn drop_tls_drop_extern(x: &MyTlsDropExtern) {
+    drop x
+}
+
+fn drop_tls_panic_extern(x: &MyTlsPanicExtern) {
+    drop x
+}
+
+fn drop_tls_unwind_extern(x: &MyTlsUnwindExtern) {
+    drop x
+}
+
+fn drop_tls_extern_extern(x: &MyTlsExternExtern) {
+    drop x
+}
+
+fn drop_tls_init_extern_extern(x: &MyTlsInitExternExtern) {
+    drop x
+}
+
+fn drop_tls_destroy_extern_extern(x: &MyTlsDestroyExternExtern) {
+    drop x
+}
+
+fn drop_tls_get_extern_extern(x: &MyTlsGetExternExtern) {
+    drop x
+}
+
+fn drop_tls_set_extern_extern(x: &MyTlsSetExternExtern) {
+    drop x
+}
+
+fn drop_tls_drop_extern_extern(x: &MyTlsDropExternExtern) {
+    drop x
+}
+
+fn drop_tls_panic_extern_extern(x: &MyTlsPanicExternExtern) {
+    drop x
+}
+
+fn drop_tls_unwind_extern_extern(x: &MyTlsUnwindExternExtern) {
+    drop x
+}
+
+fn drop_tls_extern_extern_extern(x: &MyTlsExternExternExtern) {
+    drop x
+}
+
+fn drop_tls_init_extern_extern_extern(x: &MyTlsInitExternExternExtern) {
+    drop x
+}
+
+fn drop_tls_destroy_extern_extern_extern(x: &MyTlsDestroyExternExternExtern) {
+    drop x
+}
+
+fn drop_tls_get_extern_extern_extern(x: &MyTlsGetExternExternExtern) {
+    drop x
+}
+
+fn drop_tls_set_extern_extern_extern(x: &MyTlsSetExternExternExtern) {
+    drop x
+}
+
+fn drop_tls_drop_extern_extern_extern(x: &MyTlsDropExternExternExtern) {
+    drop x
+}
+
+fn drop_tls_panic_extern_extern_extern(x: &MyTlsPanic

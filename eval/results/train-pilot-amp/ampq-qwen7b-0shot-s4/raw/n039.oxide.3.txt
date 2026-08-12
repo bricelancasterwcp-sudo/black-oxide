@@ -1,0 +1,24 @@
+struct List { head: Option<Box<ListEntry>> }
+
+struct ListEntry { value: Int, next: Option<Box<ListEntry>> }
+
+fn get_at(list: List, index: Int) -> Option<Int> {
+    let mut current = list.head.as_ref()
+    let mut current_index = 0
+    while letSome(next) == current {
+        if current_index == index {
+            return Some(next.value)
+        }
+        current = next.next.as_ref()
+        current_index + 1
+    }
+    None
+}
+
+fn main() {
+    let list = List { head: Some(Box(ListEntry { value: 1, next: Some(Box(ListEntry { value: 2, next: None })) })) }
+    match get_at(list, 5) {
+        Some(value) => print(value),
+        None => print_str("none"),
+    }
+}

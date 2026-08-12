@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let readings = [5, 3, 9, 1, 7];
+    let smallest = readings.iter().min().unwrap();
+    println!("Smallest reading: {}", smallest);
+}
+```

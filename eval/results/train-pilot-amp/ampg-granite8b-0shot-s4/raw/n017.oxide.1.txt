@@ -1,0 +1,24 @@
+struct List {
+    head: Int,
+    tail: Option<Box<List>>,
+}
+
+fn get_two(l: Box<List>) -> Option<Int> {
+    match l.tail {
+        Some(b) => {
+            match b.tail {
+                Some(bb) => Some(b.head),
+                None => None,
+            }
+        },
+        None => None,
+    }
+}
+
+fn main() {
+    let l = Box(List { head: 10, tail: Some(Box(List { head: 20, tail: Some(Box(List { head: 30, tail: Some(Box()) })) })) })
+    match get_two(l) {
+        Some(n) => print(n),
+        None => print_str("missing"),
+    }
+}

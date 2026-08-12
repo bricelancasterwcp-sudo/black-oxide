@@ -1,0 +1,31 @@
+struct List { head: Int, tail: Option<Box<List>> }
+
+fn get_second(list: Box<List>) -> Option<Int> {
+    match list.tail {
+        None => None,
+        Some(mutrest) => {
+            match rest.tail {
+                None => None,
+                Some(mutlast) => {
+                    match last.tail {
+                        None => None,
+                        Some(mutlastlast) => {
+                            match lastlastlast.tail {
+                                None => None,
+                                Some(x) => Some(x),
+                            }
+                        },
+                    }
+                },
+            }
+        },
+    }
+}
+
+fn main() {
+    let list = List { head: 10, tail: Some(Box { head: 20, tail: Some(Box { head: 30, tail: Some(Box { head: 40, tail: None }) }) }) }
+    match get_second(list) {
+        None => print_str("missing"),
+        Some(x) => print(x),
+    }
+}

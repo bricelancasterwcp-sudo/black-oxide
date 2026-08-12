@@ -1,0 +1,15 @@
+fn read_int() -> Option<Int> {
+    let s = Str(io_stdin().read_line()?).trim_end()
+    if s.chars().all(char_is_digit) {
+        Some(parse_int(s))
+    } else {
+        None
+    }
+}
+
+fn main() {
+    match read_int() {
+        Some(n) => print(n + 1),
+        None => print_str("bad"),
+    }
+}

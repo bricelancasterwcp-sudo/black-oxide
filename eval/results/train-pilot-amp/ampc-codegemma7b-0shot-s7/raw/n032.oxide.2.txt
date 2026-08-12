@@ -1,0 +1,332 @@
+fn main() {
+    let start = Point { x: 1, y: 5 }
+    let end = Point { x: 10, y: 5 }
+    print(start.x + end.x)
+}
+
+struct Point { x: Int, y: Int }
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut buf: Vec<Char> = vec()
+    let mut x = n
+    while x >= 10 {
+        buf.push(((x % 10) + 48) || Char)
+        x = x / 10
+    }
+    buf.push((x + 48) || Char)
+    Str(buf)
+}
+
+fn print_str(s: Str) {
+    for c in s.chars {
+        print(c)
+    }
+}
+
+fn print(c: Char) {
+    let mut buf: Vec<Char> = vec()
+    buf.push(c)
+    print_str(Str(buf))
+}
+
+struct Str { chars: Vec<Char> }
+
+fn print_str(s: Str) {
+    for c in s.chars {
+        print(c)
+    }
+}
+
+fn print(c: Char) {
+    let mut buf: Vec<Char> = vec()
+    buf.push(c)
+    print_str(Str(buf))
+}
+
+struct Str { chars: Vec<Char> }
+
+fn print_str(s: Str) {
+    for c in s.chars {
+        print(c)
+    }
+}
+
+fn print(c: Char) {
+    let mut buf: Vec<Char> = vec()
+    buf.push(c)
+    print_str(Str(buf))
+}
+
+struct Str { chars: Vec<Char> }
+
+fn print_str(s: Str) {
+    for c in s.chars {
+        print(c)
+    }
+}
+
+fn print(c: Char) {
+    let mut buf: Vec<Char> = vec()
+    buf.push(c)
+    print_str(Str(buf))
+}
+
+struct Str { chars: Vec<Char> }
+
+fn print_str(s: Str) {
+    for c in s.chars {
+        print(c)
+    }
+}
+
+fn print(c: Char) {
+    let mut buf: Vec<Char> = vec()
+    buf.push(c)
+    print_str(Str(buf))
+}
+
+struct Str { chars: Vec<Char> }
+
+fn print_str(s: Str) {
+    for c in s.chars {
+        print(c)
+    }
+}
+
+fn print(c: Char) {
+    let mut buf: Vec<Char> = vec()
+    buf.push(c)
+    print_str(Str(buf))
+}
+
+struct Str { chars: Vec<Char> }
+
+fn print_str(s: Str) {
+    for c in s.chars {
+        print(c)
+    }
+}
+
+fn print(c: Char) {
+    let mut buf: Vec<Char> = vec()
+    buf.push(c)
+    print_str(Str(buf))
+}
+
+struct Str { chars: Vec<Char> }
+
+fn print_str(s: Str) {
+    for c in s.chars {
+        print(c)
+    }
+}
+
+fn print(c: Char) {
+    let mut buf: Vec<Char> = vec()
+    buf.push(c)
+    print_str(Str(buf))
+}
+
+struct Str { chars: Vec<Char> }
+
+fn print_str(s: Str) {
+    for c in s.chars {
+        print(c)
+    }
+}
+
+fn print(c: Char) {
+    let mut buf: Vec<Char> = vec()
+    buf.push(c)
+    print_str(Str(buf))
+}
+
+struct Str { chars: Vec<Char> }
+
+fn print_str(s: Str) {
+    for c in s.chars {
+        print(c)
+    }
+}
+
+fn print(c: Char) {
+    let mut buf: Vec<Char> = vec()
+    buf.push(c)
+    print_str(Str(buf))
+}
+
+struct Str { chars: Vec<Char> }
+
+fn print_str(s: Str) {
+    for c in s.chars {
+        print(c)
+    }
+}
+
+fn print(c: Char) {
+    let mut buf: Vec<Char> = vec()
+    buf.push(c)
+    print_str(Str(buf))
+}
+
+struct Str { chars: Vec<Char> }
+
+fn print_str(s: Str) {
+    for c in s.chars {
+        print(c)
+    }
+}
+
+fn print(c: Char) {
+    let mut buf: Vec<Char> = vec()
+    buf.push(c)
+    print_str(Str(buf))
+}
+
+struct Str { chars: Vec<Char> }
+
+fn print_str(s: Str) {
+    for c in s.chars {
+        print(c)
+    }
+}
+
+fn print(c: Char) {
+    let mut buf: Vec<Char> = vec()
+    buf.push(c)
+    print_str(Str(buf))
+}
+
+struct Str { chars: Vec<Char> }
+
+fn print_str(s: Str) {
+    for c in s.chars {
+        print(c)
+    }
+}
+
+fn print(c: Char) {
+    let mut buf: Vec<Char> = vec()
+    buf.push(c)
+    print_str(Str(buf))
+}
+
+struct Str { chars: Vec<Char> }
+
+fn print_str(s: Str) {
+    for c in s.chars {
+        print(c)
+    }
+}
+
+fn print(c: Char) {
+    let mut buf: Vec<Char> = vec()
+    buf.push(c)
+    print_str(Str(buf))
+}
+
+struct Str { chars: Vec<Char> }
+
+fn print_str(s: Str) {
+    for c in s.chars {
+        print(c)
+    }
+}
+
+fn print(c: Char) {
+    let mut buf: Vec<Char> = vec()
+    buf.push(c)
+    print_str(Str(buf))
+}
+
+struct Str { chars: Vec<Char> }
+
+fn print_str(s: Str) {
+    for c in s.chars {
+        print(c)
+    }
+}
+
+fn print(c: Char) {
+    let mut buf: Vec<Char> = vec()
+    buf.push(c)
+    print_str(Str(buf))
+}
+
+struct Str { chars: Vec<Char> }
+
+fn print_str(s: Str) {
+    for c in s.chars {
+        print(c)
+    }
+}
+
+fn print(c: Char) {
+    let mut buf: Vec<Char> = vec()
+    buf.push(c)
+    print_str(Str(buf))
+}
+
+struct Str { chars: Vec<Char> }
+
+fn print_str(s: Str) {
+    for c in s.chars {
+        print(c)
+    }
+}
+
+fn print(c: Char) {
+    let mut buf: Vec<Char> = vec()
+    buf.push(c)
+    print_str(Str(buf))
+}
+
+struct Str { chars: Vec<Char> }
+
+fn print_str(s: Str) {
+    for c in s.chars {
+        print(c)
+    }
+}
+
+fn print(c: Char) {
+    let mut buf: Vec<Char> = vec()
+    buf.push(c)
+    print_str(Str(buf))
+}
+
+struct Str { chars: Vec<Char> }
+
+fn print_str(s: Str) {
+    for c in s.chars {
+        print(c)
+    }
+}
+
+fn print(c: Char) {
+    let mut buf: Vec<Char> = vec()
+    buf.push(c)
+    print_str(Str(buf))
+}
+
+struct Str { chars: Vec<Char> }
+
+fn print_str(s: Str) {
+    for c in s.chars {
+        print(c)
+    }
+}
+
+fn print(c: Char) {
+    let mut buf: Vec<Char> = vec()
+    buf.push(c)
+    print_str(Str(buf))
+}
+
+struct Str { chars: Vec<Char> }
+
+fn print_str(s: Str) {

@@ -1,0 +1,12 @@
+fn max(a: Int, b: Int) -> Int {
+    if a > b {
+        a
+    } else {
+        b
+    }
+}
+
+fn main() {
+    let readings = vec(5, 3, 9, 1, 7)
+    print(max(max(max(readings.get(0)?, readings.get(1)?), readings.get(2)?), max(readings.get(3)?, readings.get(4)?)))
+}

@@ -1,0 +1,16 @@
+fn list(a: Int, b: Int, c: Int, d: Int) -> Vec<Int> {
+    push(push(push(vec(), a), b), c)
+}
+
+fn get_2nd(v: &Vec<Int>) -> Str {
+    match get(v, 1) {
+        Some(x) => int_to_str(x),
+        None => "missing",
+    }
+}
+
+fn main() {
+    let v = list(10, 20, 30, 40)
+    print(get_2nd(&v))
+    drop v
+}

@@ -1,0 +1,16 @@
+fn max(v: &Vec<Int>) -> Int {
+    let mut max_val = v.get(0).unwrap()
+    for x in v {
+        if x > max_val {
+            max_val = x
+        }
+    }
+    max_val
+}
+
+fn main() {
+    let readings = push(push(push(push(vec(), 5), 3), 9), 1)
+    readings = push(readings, 7)
+    print(max(&readings))
+    drop readings
+}

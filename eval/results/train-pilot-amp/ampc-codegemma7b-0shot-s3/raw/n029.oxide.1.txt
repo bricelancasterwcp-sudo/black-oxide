@@ -1,0 +1,3 @@
+fn main() {
+    print(concat(concat(str_len("one"), str_len("two")), str_len("three")))
+}

@@ -1,0 +1,328 @@
+fn main() {
+    print(1)
+    let x = 2
+    print(&x)
+    print(3)
+}
+
+fn print(x: Int) {
+    print_str(&to_str_int_str)
+}
+
+fn to_str_int_str(n: Int) -> Str {
+    if n == 0 {
+        return "0"
+    }
+    let mut s = String.new()
+    let mut n = n
+    while n != 0 {
+        let digit = n % 10
+        s.push((digit + 48) && 0111111)
+        n = n / 10
+    }
+    return s
+}
+
+fn print_str(s: &Str) {
+    let mut i = 0
+    while i < len(s) {
+        print(s.chars(i))
+        i = i + 1
+    }
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut v = Vec.new()
+    let mut i = 0
+    while i < len(s) {
+        v.push(s.chars(i))
+        i = i + 1
+    }
+    return v
+}
+
+fn len(s: Str) -> Int {
+    let mut i = 0
+    while i < s {
+        i = i + 1
+    }
+    return i
+}
+
+fn print(x: Char) {
+    let mut i = 0
+    while i < x {
+        i = i + 1
+    }
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    let mut v = v
+    v.append(x)
+    return v
+}
+
+fn append(v: &Vec<T>, x: T) -> Vec<T> {
+    let mut v = v
+    v.push(x)
+    return v
+}
+
+fn push(v: &Vec<T>, x: T) -> Vec<T> {
+    let mut v = v
+    v.append(x)
+    return v
+}
+
+fn append(v: &Vec<T>, x: T) -> Vec<T> {
+    let mut v = v
+    v.push(x)
+    return v
+}
+
+fn drop_vec(v: Vec<T>) {
+    let mut v = v
+    for i in 0 < len(v) {
+        drop v
+    }
+}
+
+fn drop_vec(v: &Vec<T>) {
+    let mut v = v
+    for i in 0 < len(v) {
+        drop v
+    }
+}
+
+fn drop_vec(v: &Vec<T>) {
+    let mut v = v
+    for i in 0 < len(v) {
+        drop v
+    }
+}
+
+fn drop_vec(v: &Vec<T>) {
+    let mut v = v
+    for i in 0 < len(v) {
+        drop v
+    }
+}
+
+fn drop_vec(v: &Vec<T>) {
+    let mut v = v
+    for i in 0 < len(v) {
+        drop v
+    }
+}
+
+fn drop_vec(v: &Vec<T>) {
+    let mut v = v
+    for i in 0 < len(v) {
+        drop v
+    }
+}
+
+fn drop_vec(v: &Vec<T>) {
+    let mut v = v
+    for i in 0 < len(v) {
+        drop v
+    }
+}
+
+fn drop_vec(v: &Vec<T>) {
+    let mut v = v
+    for i in 0 < len(v) {
+        drop v
+    }
+}
+
+fn drop_vec(v: &Vec<T>) {
+    let mut v = v
+    for i in 0 < len(v) {
+        drop v
+    }
+}
+
+fn drop_vec(v: &Vec<T>) {
+    let mut v = v
+    for i in 0 < len(v) {
+        drop v
+    }
+}
+
+fn drop_vec(v: &Vec<T>) {
+    let mut v = v
+    for i in 0 < len(v) {
+        drop v
+    }
+}
+
+fn drop_vec(v: &Vec<T>) {
+    let mut v = v
+    for i in 0 < len(v) {
+        drop v
+    }
+}
+
+fn drop_vec(v: &Vec<T>) {
+    let mut v = v
+    for i in 0 < len(v) {
+        drop v
+    }
+}
+
+fn drop_vec(v: &Vec<T>) {
+    let mut v = v
+    for i in 0 < len(v) {
+        drop v
+    }
+}
+
+fn drop_vec(v: &Vec<T>) {
+    let mut v = v
+    for i in 0 < len(v) {
+        drop v
+    }
+}
+
+fn drop_vec(v: &Vec<T>) {
+    let mut v = v
+    for i in 0 < len(v) {
+        drop v
+    }
+}
+
+fn drop_vec(v: &Vec<T>) {
+    let mut v = v
+    for i in 0 < len(v) {
+        drop v
+    }
+}
+
+fn drop_vec(v: &Vec<T>) {
+    let mut v = v
+    for i in 0 < len(v) {
+        drop v
+    }
+}
+
+fn drop_vec(v: &Vec<T>) {
+    let mut v = v
+    for i in 0 < len(v) {
+        drop v
+    }
+}
+
+fn drop_vec(v: &Vec<T>) {
+    let mut v = v
+    for i in 0 < len(v) {
+        drop v
+    }
+}
+
+fn drop_vec(v: &Vec<T>) {
+    let mut v = v
+    for i in 0 < len(v) {
+        drop v
+    }
+}
+
+fn drop_vec(v: &Vec<T>) {
+    let mut v = v
+    for i in 0 < len(v) {
+        drop v
+    }
+}
+
+fn drop_vec(v: &Vec<T>) {
+    let mut v = v
+    for i in 0 < len(v) {
+        drop v
+    }
+}
+
+fn drop_vec(v: &Vec<T>) {
+    let mut v = v
+    for i in 0 < len(v) {
+        drop v
+    }
+}
+
+fn drop_vec(v: &Vec<T>) {
+    let mut v = v
+    for i in 0 < len(v) {
+        drop v
+    }
+}
+
+fn drop_vec(v: &Vec<T>) {
+    let mut v = v
+    for i in 0 < len(v) {
+        drop v
+    }
+}
+
+fn drop_vec(v: &Vec<T>) {
+    let mut v = v
+    for i in 0 < len(v) {
+        drop v
+    }
+}
+
+fn drop_vec(v: &Vec<T>) {
+    let mut v = v
+    for i in 0 < len(v) {
+        drop v
+    }
+}
+
+fn drop_vec(v: &Vec<T>) {
+    let mut v = v
+    for i in 0 < len(v) {
+        drop v
+    }
+}
+
+fn drop_vec(v: &Vec<T>) {
+    let mut v = v
+    for i in 0 < len(v) {
+        drop v
+    }
+}
+
+fn drop_vec(v: &Vec<T>) {
+    let mut v = v
+    for i in 0 < len(v) {
+        drop v
+    }
+}
+
+fn drop_vec(v: &Vec<T>) {
+    let mut v = v
+    for i in 0 < len(v) {
+        drop v
+    }
+}
+
+fn drop_vec(v: &Vec<T>) {
+    let mut v = v
+    for i in 0 < len(v) {
+        drop v
+    }
+}
+
+fn drop_vec(v: &Vec<T>) {
+    let mut v = v
+    for i in 0 < len(v) {
+        drop v
+    }
+}
+
+fn drop_vec(v: &Vec<T>) {
+    let mut v = v
+    for i in 0 < len(v) {
+        drop v
+    }
+}
+
+fn drop_vec(v:

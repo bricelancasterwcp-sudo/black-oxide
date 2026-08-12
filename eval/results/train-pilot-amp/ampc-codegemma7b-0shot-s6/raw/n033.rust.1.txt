@@ -1,0 +1,10 @@
+use std::thread::sleep;
+use std::time::Duration;
+
+fn main() {
+    print!("go for green\n");
+    sleep(Duration::from_secs(5));
+    print!("wait for yellow\n");
+    sleep(Duration::from_secs(2));
+    print!("stop for red\n");
+}

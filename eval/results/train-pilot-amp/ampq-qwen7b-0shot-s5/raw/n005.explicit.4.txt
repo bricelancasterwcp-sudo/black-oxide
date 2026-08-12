@@ -1,0 +1,395 @@
+fn main() {
+    let total = sum_evens(1, 20)
+    print(total)
+}
+
+fn sum_evens(a: Int, b: Int) -> Int {
+    let mut total = 0
+    for i in range(a, b + 1) {
+        if i % 2 == 0 {
+            total = total + i
+        }
+    }
+    total
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut vec = vec()
+    for i in a.bound(b) {
+        vec = push(vec, i)
+    }
+    vec
+}
+
+fn bound(a: Int, b: Int) -> Range {
+    Range(a, b)
+}
+
+struct Range {
+    start: Int,
+    end: Int,
+}
+
+fn main() {
+    let total = sum_evens(1, 20)
+    print(total)
+}
+
+fn sum_evens(a: Int, b: Int) -> Int {
+    let mut total = 0
+    for i in range(a, b + 1) {
+        if i % 2 == 0 {
+            total = total + i
+        }
+    }
+    total
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut vec = vec()
+    for i in a.bound(b) {
+        vec = push(vec, i)
+    }
+    vec
+}
+
+fn bound(a: Int, b: Int) -> Range {
+    Range(a, b)
+}
+
+struct Range {
+    start: Int,
+    end: Int,
+}
+
+fn main() {
+    let total = sum_evens(1, 20)
+    print(total)
+}
+
+fn sum_evens(a: Int, b: Int) -> Int {
+    let mut total = 0
+    for i in range(a, b + 1) {
+        if i % 2 == 0 {
+            total = total + i
+        }
+    }
+    total
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut vec = vec()
+    for i in a.bound(b) {
+        vec = push(vec, i)
+    }
+    vec
+}
+
+fn bound(a: Int, b: Int) -> Range {
+    Range(a, b)
+}
+
+struct Range {
+    start: Int,
+    end: Int,
+}
+
+fn main() {
+    let total = sum_evens(1, 20)
+    print(total)
+}
+
+fn sum_evens(a: Int, b: Int) -> Int {
+    let mut total = 0
+    for i in range(a, b + 1) {
+        if i % 2 == 0 {
+            total = total + i
+        }
+    }
+    total
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut vec = vec()
+    for i in a.bound(b) {
+        vec = push(vec, i)
+    }
+    vec
+}
+
+fn bound(a: Int, b: Int) -> Range {
+    Range(a, b)
+}
+
+struct Range {
+    start: Int,
+    end: Int,
+}
+
+fn main() {
+    let total = sum_evens(1, 20)
+    print(total)
+}
+
+fn sum_evens(a: Int, b: Int) -> Int {
+    let mut total = 0
+    for i in range(a, b + 1) {
+        if i % 2 == 0 {
+            total = total + i
+        }
+    }
+    total
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut vec = vec()
+    for i in a.bound(b) {
+        vec = push(vec, i)
+    }
+    vec
+}
+
+fn bound(a: Int, b: Int) -> Range {
+    Range(a, b)
+}
+
+struct Range {
+    start: Int,
+    end: Int,
+}
+
+fn main() {
+    let total = sum_evens(1, 20)
+    print(total)
+}
+
+fn sum_evens(a: Int, b: Int) -> Int {
+    let mut total = 0
+    for i in range(a, b + 1) {
+        if i % 2 == 0 {
+            total = total + i
+        }
+    }
+    total
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut vec = vec()
+    for i in a.bound(b) {
+        vec = push(vec, i)
+    }
+    vec
+}
+
+fn bound(a: Int, b: Int) -> Range {
+    Range(a, b)
+}
+
+struct Range {
+    start: Int,
+    end: Int,
+}
+
+fn main() {
+    let total = sum_evens(1, 20)
+    print(total)
+}
+
+fn sum_evens(a: Int, b: Int) -> Int {
+    let mut total = 0
+    for i in range(a, b + 1) {
+        if i % 2 == 0 {
+            total = total + i
+        }
+    }
+    total
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut vec = vec()
+    for i in a.bound(b) {
+        vec = push(vec, i)
+    }
+    vec
+}
+
+fn bound(a: Int, b: Int) -> Range {
+    Range(a, b)
+}
+
+struct Range {
+    start: Int,
+    end: Int,
+}
+
+fn main() {
+    let total = sum_evens(1, 20)
+    print(total)
+}
+
+fn sum_evens(a: Int, b: Int) -> Int {
+    let mut total = 0
+    for i in range(a, b + 1) {
+        if i % 2 == 0 {
+            total = total + i
+        }
+    }
+    total
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut vec = vec()
+    for i in a.bound(b) {
+        vec = push(vec, i)
+    }
+    vec
+}
+
+fn bound(a: Int, b: Int) -> Range {
+    Range(a, b)
+}
+
+struct Range {
+    start: Int,
+    end: Int,
+}
+
+fn main() {
+    let total = sum_evens(1, 20)
+    print(total)
+}
+
+fn sum_evens(a: Int, b: Int) -> Int {
+    let mut total = 0
+    for i in range(a, b + 1) {
+        if i % 2 == 0 {
+            total = total + i
+        }
+    }
+    total
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut vec = vec()
+    for i in a.bound(b) {
+        vec = push(vec, i)
+    }
+    vec
+}
+
+fn bound(a: Int, b: Int) -> Range {
+    Range(a, b)
+}
+
+struct Range {
+    start: Int,
+    end: Int,
+}
+
+fn main() {
+    let total = sum_evens(1, 20)
+    print(total)
+}
+
+fn sum_evens(a: Int, b: Int) -> Int {
+    let mut total = 0
+    for i in range(a, b + 1) {
+        if i % 2 == 0 {
+            total = total + i
+        }
+    }
+    total
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut vec = vec()
+    for i in a.bound(b) {
+        vec = push(vec, i)
+    }
+    vec
+}
+
+fn bound(a: Int, b: Int) -> Range {
+    Range(a, b)
+}
+
+struct Range {
+    start: Int,
+    end: Int,
+}
+
+fn main() {
+    let total = sum_evens(1, 20)
+    print(total)
+}
+
+fn sum_evens(a: Int, b: Int) -> Int {
+    let mut total = 0
+    for i in range(a, b + 1) {
+        if i % 2 == 0 {
+            total = total + i
+        }
+    }
+    total
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut vec = vec()
+    for i in a.bound(b) {
+        vec = push(vec, i)
+    }
+    vec
+}
+
+fn bound(a: Int, b: Int) -> Range {
+    Range(a, b)
+}
+
+struct Range {
+    start: Int,
+    end: Int,
+}
+
+fn main() {
+    let total = sum_evens(1, 20)
+    print(total)
+}
+
+fn sum_evens(a: Int, b: Int) -> Int {
+    let mut total = 0
+    for i in range(a, b + 1) {
+        if i % 2 == 0 {
+            total = total + i
+        }
+    }
+    total
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut vec = vec()
+    for i in a.bound(b) {
+        vec = push(vec, i)
+    }
+    vec
+}
+
+fn bound(a: Int, b: Int) -> Range {
+    Range(a, b)
+}
+
+struct Range {
+    start: Int,
+    end: Int,
+}
+
+fn main() {
+    let total = sum_evens(1, 20)
+    print(total)
+}
+
+fn sum_evens(a: Int, b: Int) -> Int {
+    let mut total = 0
+    for i in range(a, b + 1) {
+        if i % 2 == 0 {
+            total = total + i
+        }

@@ -1,0 +1,47 @@
+fn min(a: Int, b: Int) -> Int {
+    if a < b {
+        a
+    } else {
+        b
+    }
+}
+
+fn main() {
+    let readings = vec(5, 3, 9, 1, 7)
+    let mut min_reading = readings.pop().unwrap()
+    for reading in readings {
+        min_reading = min(min_reading, reading)
+    }
+    print(min_reading)
+    drop readings
+}
+
+fn main() {
+    let readings = vec(5, 3, 9, 1, 7)
+    let mut min_reading = readings.pop().unwrap()
+    for reading in readings {
+        min_reading = min(min_reading, reading)
+    }
+    print(min_reading)
+    drop readings
+}
+
+fn main() {
+    let readings = vec(5, 3, 9, 1, 7)
+    let mut min_reading = readings.pop().unwrap()
+    for reading in readings {
+        min_reading = min(min_reading, reading)
+    }
+    print(min_reading)
+    drop readings
+}
+
+fn main() {
+    let readings = vec(5, 3, 9, 1, 7)
+    let mut min_reading = readings.pop().unwrap()
+    for reading in readings {
+        min_reading = min(min_reading, reading)
+    }
+    print(min_reading)
+    drop readings
+}

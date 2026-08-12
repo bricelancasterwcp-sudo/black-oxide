@@ -1,0 +1,94 @@
+fn main() {
+    let mut device = Device { sensor: Sensor { reading: Int { value: 0 } } }
+    device.sensor.reading.value = 7
+    print(device.sensor.reading.value)
+    drop device
+}
+
+struct Device {
+    sensor: Sensor,
+}
+
+struct Sensor {
+    reading: Int,
+}
+
+struct Int {
+    value: Int,
+}
+
+fn print(x: Int) {
+    print(x.value)
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut vec = v
+    vec.push(x)
+    vec
+}
+
+fn vec() -> Vec<Int> {
+    let mut vec = Vec
+    vec.push(Int { value: 0 })
+    vec
+}
+
+fn print_str(s: Str) {
+    print_str(s.value)
+}
+
+fn str(s: Str) -> Str {
+    let mut str = s
+    str.push(Int { value: 0 })
+    str
+}
+
+fn str_len(s: Str) -> Int {
+    Int
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut vec = Vec
+    for char in s {
+        vec.push(Str { value: char })
+    }
+    vec
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut str = str()
+    str.push(Int { value: n.value })
+    str
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    let mut int = Int { value: 0 }
+    for char in s {
+        int = push(int, char)
+    }
+    Option
+}
+
+fn to_float(n: Int) -> Float {
+    Float
+}
+
+fn trunc(x: Int) -> Int {
+    Int
+}
+
+fn clone(x: Int) -> Int {
+    Int
+}
+
+fn len(v: Vec<Int>) -> Int {
+    Int
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    Option
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut vec = Vec
+    for i in a.value + 1.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.value.

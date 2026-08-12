@@ -1,0 +1,22 @@
+struct List {
+    head: Int,
+    tail: Option<Box<List>>,
+}
+
+fn list(a: Int, b: Int, c: Int, d: Int) -> List {
+    List  // first item goes last in source code; it
+    head = d   // creates a new List, then fills in the
+    tail = Some(Box { head: c, tail: Some(Box { head: b, tail: Some(Box { head: a, tail: None }) }) })
+}
+
+fn print_list(xs: List) {
+    if letSome(refnode) == xs.tail {
+        print_list(node)
+    }
+    print(xs.head)
+}
+
+fn main() {
+    let xs = list(1, 2, 3, 4)
+    print_list(xs)
+}

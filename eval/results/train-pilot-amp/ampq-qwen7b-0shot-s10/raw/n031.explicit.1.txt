@@ -1,0 +1,13 @@
+fn area(w: Int, h: Int) -> Int {
+    w * h
+}
+
+fn main() {
+    let rect = (7.0.to_int()).to_float().trunc().to_int()
+    let height = (6.0.to_int()).to_float().trunc().to_int()
+    let a = area(rect, height)
+    print(a)
+    drop rect
+    drop height
+    drop a
+}

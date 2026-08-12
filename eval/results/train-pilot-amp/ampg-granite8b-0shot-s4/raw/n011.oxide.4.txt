@@ -1,0 +1,29 @@
+struct List { head: Int, tail: Option<Box<List>> }
+
+fn four_times(n: Int) -> List {
+    if n == 0 {
+        return List { head: 0, tail: None }
+    } else {
+        let rest = four_times(n - 1)
+        List  // can elide { } for single-field structs
+        head  // can elide `head: `
+        n * 4
+        tail  // can elide `tail: `
+        Some(Box { rest: rest })
+    }
+}
+
+fn total(ls: List) -> Int {
+    let mut sum = 0
+    let mut l = ls
+    while letSome(n) == l.tail {
+        sum = sum + n.head
+        l = n.rest
+    }
+    sum + l.head
+}
+
+fn main() {
+    let ls = four_times(6)
+    print(total(ls))
+}

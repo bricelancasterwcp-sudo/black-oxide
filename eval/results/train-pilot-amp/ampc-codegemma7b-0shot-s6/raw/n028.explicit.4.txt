@@ -1,0 +1,5 @@
+fn main() {
+    let num_str = std_input().unwrap_or("bad".to_string())
+    let num = parse_int(&num_str).unwrap_or(0)
+    print(num)
+}

@@ -1,0 +1,16 @@
+fn sum(v: &Vec<Int>, p: &Vec<Int>) -> Int {
+    let total = 0
+    for i in 0.upto(v.len()) {
+        total = total + v.get(i).unwrap() * p.get(i).unwrap()
+    }
+    total
+}
+
+fn main() {
+    let s1 = vec(3, 3, 3, 3)
+    let p1 = vec(4, 4, 4, 4)
+    let s2 = vec(2, 2, 2, 2, 2)
+    let p2 = vec(5, 5, 5, 5, 5)
+    print(sum(&s1, &p1))
+    print(sum(&s2, &p2))
+}

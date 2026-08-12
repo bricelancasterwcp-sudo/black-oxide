@@ -1,0 +1,22 @@
+```rust
+fn main() {
+    let list1 = vec![1, 2, 3];
+    let list2 = vec![4, 5];
+
+    let mut count = 0;
+
+    let [a, b, c] = list1;
+
+    if list2.contains(&a) {
+        count += 1;
+    }
+    if list2.contains(&b) {
+        count += 1;
+    }
+    if list2.contains(&c) {
+        count += 1;
+    }
+
+    println!("{}", count);
+}
+```

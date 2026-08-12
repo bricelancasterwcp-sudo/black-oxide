@@ -1,0 +1,283 @@
+fn main() {
+    let mut s = Sensor { reading: 0 }
+    s.reading = 7
+    print(s.reading)
+}
+
+struct Sensor { reading: Int }
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    "0123456789abcdef"
+    let mut digits = vec()
+    let mut n2 = n
+    while n2 != 0 {
+        digits.push(to_char(n2 % 16))
+        n2 = trunc(n2 / 16)
+    }
+    let mut s = Str { len: digits.len(), data: digits }
+    reverse(s)
+    s
+}
+
+fn to_char(n: Int) -> Str {
+    if n < 10 {
+        return Str { len: 1, data: vec_char("0123456789".chars().nth(n)) }
+    }
+    Str
+    let mut digits = vec_char("abcdefghijklmnopqrstuvwxyz".chars().nth(n - 10))
+    digits.push(Str { len: 1, data: vec_char(".") })
+    let mut s = Str { len: digits.len(), data: digits }
+    reverse(s)
+    s
+}
+
+fn reverse(muts: Str) -> Str {
+    let mut d = 0
+    let mut h = muts.len - 1
+    while d < h {
+        swap(muts.data, d, h)
+        d = d + 1
+        h = h - 1
+    }
+    muts
+}
+
+fn swap(v: Vec<Str>, i: Int, j: Int) {
+    let tmp = v.get(i)
+    v.set(i, v.get(j))
+    v.set(j, tmp)
+}
+
+fn vec_char(c: Char) -> Vec<Str> {
+    let mut v = vec()
+    v.push(Str { len: 1, data: vec_char(c) })
+    v
+}
+
+fn vec_str(s: Str) -> Vec<Str> {
+    let mut v = vec()
+    for c in s.data {
+        v.push(Str { len: 1, data: vec_char(c) })
+    }
+    v
+}
+
+struct Str { len: Int, data: Vec<Str> }
+
+fn len(s: Str) -> Int {
+    s.len
+}
+
+fn print(s: Str) {
+    for c in s.data {
+        print_str(c)
+    }
+}
+
+fn print_str(s: Str) {
+    for c in s.data {
+        print_char(c)
+    }
+}
+
+fn print_char(c: Str) {
+    print(c)
+}
+
+fn get(v: Vec<Str>, i: Int) -> Option<Str> {
+    if i >= 0 && i < v.len {
+        Some(v.get(i))
+    } else {
+        None
+    }
+}
+
+fn set(v: Vec<Str>, i: Int, x: Str) -> Vec<Str> {
+    if i >= 0 && i < v.len {
+        v.set(i, x)
+    }
+    v
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    v.push(x)
+    v
+}
+
+fn vec() -> Vec<Str> {
+    Vec
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut v = vec()
+    for i in a + 1 < b {
+        v.push(i)
+    }
+    v
+}
+
+fn clone(x: Str) -> Str {
+    Str
+    let mut v = vec()
+    for c in x.data {
+        v.push(c)
+    }
+    Str
+}
+
+fn str_len(s: Str) -> Int {
+    s.len
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    Str
+    let mut v = vec()
+    for c in a.data {
+        v.push(c)
+    }
+    for c in b.data {
+        v.push(c)
+    }
+    Str
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut v = vec()
+    for c in s.data {
+        v.push(c)
+    }
+    v
+}
+
+fn int_to_str(n: Int) -> Str {
+    "0123456789abcdef"
+    let mut digits = vec()
+    let mut n2 = n
+    while n2 != 0 {
+        digits.push(to_char(n2 % 16))
+        n2 = trunc(n2 / 16)
+    }
+    let mut s = Str { len: digits.len(), data: digits }
+    reverse(s)
+    s
+}
+
+fn to_char(n: Int) -> Str {
+    if n < 10 {
+        return Str { len: 1, data: vec_char("0123456789".chars().nth(n)) }
+    }
+    Str
+    let mut digits = vec_char("abcdefghijklmnopqrstuvwxyz".chars().nth(n - 10))
+    digits.push(Str { len: 1, data: vec_char(".") })
+    let mut s = Str { len: digits.len(), data: digits }
+    reverse(s)
+    s
+}
+
+fn reverse(muts: Str) -> Str {
+    let mut d = 0
+    let mut h = muts.len - 1
+    while d < h {
+        swap(muts.data, d, h)
+        d = d + 1
+        h = h - 1
+    }
+    muts
+}
+
+fn swap(v: Vec<Str>, i: Int, j: Int) {
+    let tmp = v.get(i)
+    v.set(i, v.get(j))
+    v.set(j, tmp)
+}
+
+fn vec_char(c: Char) -> Vec<Str> {
+    let mut v = vec()
+    v.push(Str { len: 1, data: vec_char(c) })
+    v
+}
+
+fn vec_str(s: Str) -> Vec<Str> {
+    let mut v = vec()
+    for c in s.data {
+        v.push(Str { len: 1, data: vec_char(c) })
+    }
+    v
+}
+
+fn len(s: Str) -> Int {
+    s.len
+}
+
+fn print(s: Str) {
+    for c in s.data {
+        print_str(c)
+    }
+}
+
+fn print_str(s: Str) {
+    for c in s.data {
+        print_char(c)
+    }
+}
+
+fn print_char(c: Str) {
+    print(c)
+}
+
+fn get(v: Vec<Str>, i: Int) -> Option<Str> {
+    if i >= 0 && i < v.len {
+        Some(v.get(i))
+    } else {
+        None
+    }
+}
+
+fn set(v: Vec<Str>, i: Int, x: Str) -> Vec<Str> {
+    if i >= 0 && i < v.len {
+        v.set(i, x)
+    }
+    v
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    v.push(x)
+    v
+}
+
+fn vec() -> Vec<Str> {
+    Vec
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut v = vec()
+    for i in a + 1 < b {
+        v.push(i)
+    }
+    v
+}
+
+fn clone(x: Str) -> Str {
+    Str
+    let mut v = vec()
+    for c in x.data {
+        v.push(c)
+    }
+    Str
+}
+
+fn str_len(s: Str) -> Int {
+    s.len
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    Str
+    let mut

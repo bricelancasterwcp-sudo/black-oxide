@@ -1,0 +1,16 @@
+fn join(oxide: &Str, black: &Str) -> Str {
+    let result = ""
+    let length = len(&oxide) + len(&black)
+    for x in 0 < length {
+        if x < len(&oxide) {
+            result = result + get(&oxide, x)
+        } else {
+            result = result + get(&black, x - len(&oxide))
+        }
+    }
+    result
+}
+
+fn main() {
+    print(join("oxide", "black"))
+}

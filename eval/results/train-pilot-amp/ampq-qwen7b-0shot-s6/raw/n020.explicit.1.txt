@@ -1,0 +1,411 @@
+fn main() {
+    let readings = vec(4, 8, 15, 16, 23, 42)
+    let total = sum(&readings)
+    let count = readings.len()
+    let mean = total / count
+    print(mean)
+    drop readings
+}
+
+fn sum(v: &Vec<Int>) -> Int {
+    let mut total = 0
+    for x in v {
+        total = total + x
+    }
+    total
+}
+
+fn main() {
+    let readings = push(push(vec(), 4), 8)
+    let total = sum(&readings)
+    let count = readings.len()
+    let mean = total / count
+    print(mean)
+    drop readings
+}
+
+fn sum(v: &Vec<Int>) -> Int {
+    let mut total = 0
+    for x in v {
+        total = total + x
+    }
+    total
+}
+
+fn main() {
+    let readings = push(push(vec(), 15), 16)
+    let total = sum(&readings)
+    let count = readings.len()
+    let mean = total / count
+    print(mean)
+    drop readings
+}
+
+fn sum(v: &Vec<Int>) -> Int {
+    let mut total = 0
+    for x in v {
+        total = total + x
+    }
+    total
+}
+
+fn main() {
+    let readings = push(push(vec(), 23), 42)
+    let total = sum(&readings)
+    let count = readings.len()
+    let mean = total / count
+    print(mean)
+    drop readings
+}
+
+fn sum(v: &Vec<Int>) -> Int {
+    let mut total = 0
+    for x in v {
+        total = total + x
+    }
+    total
+}
+
+fn main() {
+    let readings = push(vec(), 4)
+    let total = sum(&readings)
+    let count = readings.len()
+    let mean = total / count
+    print(mean)
+    drop readings
+}
+
+fn sum(v: &Vec<Int>) -> Int {
+    let mut total = 0
+    for x in v {
+        total = total + x
+    }
+    total
+}
+
+fn main() {
+    let readings = push(vec(), 8)
+    let total = sum(&readings)
+    let count = readings.len()
+    let mean = total / count
+    print(mean)
+    drop readings
+}
+
+fn sum(v: &Vec<Int>) -> Int {
+    let mut total = 0
+    for x in v {
+        total = total + x
+    }
+    total
+}
+
+fn main() {
+    let readings = push(vec(), 15)
+    let total = sum(&readings)
+    let count = readings.len()
+    let mean = total / count
+    print(mean)
+    drop readings
+}
+
+fn sum(v: &Vec<Int>) -> Int {
+    let mut total = 0
+    for x in v {
+        total = total + x
+    }
+    total
+}
+
+fn main() {
+    let readings = push(vec(), 16)
+    let total = sum(&readings)
+    let count = readings.len()
+    let mean = total / count
+    print(mean)
+    drop readings
+}
+
+fn sum(v: &Vec<Int>) -> Int {
+    let mut total = 0
+    for x in v {
+        total = total + x
+    }
+    total
+}
+
+fn main() {
+    let readings = push(vec(), 23)
+    let total = sum(&readings)
+    let count = readings.len()
+    let mean = total / count
+    print(mean)
+    drop readings
+}
+
+fn sum(v: &Vec<Int>) -> Int {
+    let mut total = 0
+    for x in v {
+        total = total + x
+    }
+    total
+}
+
+fn main() {
+    let readings = push(vec(), 42)
+    let total = sum(&readings)
+    let count = readings.len()
+    let mean = total / count
+    print(mean)
+    drop readings
+}
+
+fn sum(v: &Vec<Int>) -> Int {
+    let mut total = 0
+    for x in v {
+        total = total + x
+    }
+    total
+}
+
+fn main() {
+    let readings = vec()
+    let total = sum(&readings)
+    let count = readings.len()
+    let mean = total / count
+    print(mean)
+    drop readings
+}
+
+fn sum(v: &Vec<Int>) -> Int {
+    let mut total = 0
+    for x in v {
+        total = total + x
+    }
+    total
+}
+
+fn main() {
+    let readings = vec()
+    let total = sum(&readings)
+    let count = readings.len()
+    let mean = total / count
+    print(mean)
+    drop readings
+}
+
+fn sum(v: &Vec<Int>) -> Int {
+    let mut total = 0
+    for x in v {
+        total = total + x
+    }
+    total
+}
+
+fn main() {
+    let readings = vec()
+    let total = sum(&readings)
+    let count = readings.len()
+    let mean = total / count
+    print(mean)
+    drop readings
+}
+
+fn sum(v: &Vec<Int>) -> Int {
+    let mut total = 0
+    for x in v {
+        total = total + x
+    }
+    total
+}
+
+fn main() {
+    let readings = vec()
+    let total = sum(&readings)
+    let count = readings.len()
+    let mean = total / count
+    print(mean)
+    drop readings
+}
+
+fn sum(v: &Vec<Int>) -> Int {
+    let mut total = 0
+    for x in v {
+        total = total + x
+    }
+    total
+}
+
+fn main() {
+    let readings = vec()
+    let total = sum(&readings)
+    let count = readings.len()
+    let mean = total / count
+    print(mean)
+    drop readings
+}
+
+fn sum(v: &Vec<Int>) -> Int {
+    let mut total = 0
+    for x in v {
+        total = total + x
+    }
+    total
+}
+
+fn main() {
+    let readings = vec()
+    let total = sum(&readings)
+    let count = readings.len()
+    let mean = total / count
+    print(mean)
+    drop readings
+}
+
+fn sum(v: &Vec<Int>) -> Int {
+    let mut total = 0
+    for x in v {
+        total = total + x
+    }
+    total
+}
+
+fn main() {
+    let readings = vec()
+    let total = sum(&readings)
+    let count = readings.len()
+    let mean = total / count
+    print(mean)
+    drop readings
+}
+
+fn sum(v: &Vec<Int>) -> Int {
+    let mut total = 0
+    for x in v {
+        total = total + x
+    }
+    total
+}
+
+fn main() {
+    let readings = vec()
+    let total = sum(&readings)
+    let count = readings.len()
+    let mean = total / count
+    print(mean)
+    drop readings
+}
+
+fn sum(v: &Vec<Int>) -> Int {
+    let mut total = 0
+    for x in v {
+        total = total + x
+    }
+    total
+}
+
+fn main() {
+    let readings = vec()
+    let total = sum(&readings)
+    let count = readings.len()
+    let mean = total / count
+    print(mean)
+    drop readings
+}
+
+fn sum(v: &Vec<Int>) -> Int {
+    let mut total = 0
+    for x in v {
+        total = total + x
+    }
+    total
+}
+
+fn main() {
+    let readings = vec()
+    let total = sum(&readings)
+    let count = readings.len()
+    let mean = total / count
+    print(mean)
+    drop readings
+}
+
+fn sum(v: &Vec<Int>) -> Int {
+    let mut total = 0
+    for x in v {
+        total = total + x
+    }
+    total
+}
+
+fn main() {
+    let readings = vec()
+    let total = sum(&readings)
+    let count = readings.len()
+    let mean = total / count
+    print(mean)
+    drop readings
+}
+
+fn sum(v: &Vec<Int>) -> Int {
+    let mut total = 0
+    for x in v {
+        total = total + x
+    }
+    total
+}
+
+fn main() {
+    let readings = vec()
+    let total = sum(&readings)
+    let count = readings.len()
+    let mean = total / count
+    print(mean)
+    drop readings
+}
+
+fn sum(v: &Vec<Int>) -> Int {
+    let mut total = 0
+    for x in v {
+        total = total + x
+    }
+    total
+}
+
+fn main() {
+    let readings = vec()
+    let total = sum(&readings)
+    let count = readings.len()
+    let mean = total / count
+    print(mean)
+    drop readings
+}
+
+fn sum(v: &Vec<Int>) -> Int {
+    let mut total = 0
+    for x in v {
+        total = total + x
+    }
+    total
+}
+
+fn main() {
+    let readings = vec()
+    let total = sum(&readings)
+    let count = readings.len()
+    let mean = total / count
+    print(mean)
+    drop readings
+}
+
+fn sum(v: &Vec<Int>) -> Int {
+    let mut total = 0
+    for x in v {
+        total = total + x
+    }
+    total
+}
+
+fn main() {
+    let readings = vec()
+    let total = sum(&readings

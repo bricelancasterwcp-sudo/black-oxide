@@ -1,0 +1,5 @@
+```rust
+fn main() {
+    println!("{}{}", "black", "oxide");
+}
+```

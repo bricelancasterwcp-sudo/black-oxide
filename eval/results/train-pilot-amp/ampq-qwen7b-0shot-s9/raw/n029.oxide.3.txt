@@ -1,0 +1,16 @@
+struct Text { content: Str }
+
+fn append(t: Text, s: Str) -> Text {
+    Text(content == concat(t.content, s))
+}
+
+fn print_text(t: Text) {
+    print_str(t.content)
+}
+
+fn main() {
+    let t = Text { content: "one" }
+    let t = append(t, " two")
+    let t = append(t, " three")
+    print_text(t)
+}

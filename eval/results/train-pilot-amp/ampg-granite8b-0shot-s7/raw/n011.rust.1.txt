@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let total: u32 = (1..7).map(|x| 4 * x).sum();
+    println!("The total of the first six multiples of four is: {}", total);
+}
+```
+
+(Note that this program was written in Rust (edition 2021), std only, no external crates)

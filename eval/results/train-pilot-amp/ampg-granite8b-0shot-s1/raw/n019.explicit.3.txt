@@ -1,0 +1,17 @@
+fn first(nums: &Vec<Int>) -> Int {
+    nums.get(0).unwrap()
+}
+
+fn second(nums: &Vec<Int>) -> Int {
+    nums.get(1).unwrap()
+}
+
+fn main() {
+    let nums = push(push(vec(), 1), 2)
+    let x = first(&nums)
+    print(x)
+    drop nums
+    let y = second(&nums)
+    print(y)
+    drop nums
+}

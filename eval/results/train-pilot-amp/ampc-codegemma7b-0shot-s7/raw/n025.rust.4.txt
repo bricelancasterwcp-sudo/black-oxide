@@ -1,0 +1,13 @@
+use std::io;
+
+fn main() {
+    let mut text = String::new();
+    io::stdin().read_line(&mut text).unwrap();
+
+    let number = text.trim().parse::<i32>();
+
+    match number {
+        Ok(n) => println!("{}", n + 1),
+        Err(_) => println!("bad")
+    }
+}

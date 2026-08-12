@@ -1,0 +1,4 @@
+fn main() {
+    let blackoxide = "black".to_owned() + "oxide";
+    println!("{}", blackoxide);
+}

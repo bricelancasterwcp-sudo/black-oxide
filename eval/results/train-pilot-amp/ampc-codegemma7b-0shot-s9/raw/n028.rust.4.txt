@@ -1,0 +1,7 @@
+fn main() {
+    let mut num = String::new();
+    match std::io::stdin().read_line(&mut num) {
+        Ok(_) => println!("Number: {}", num.trim()),
+        Err(_) => println!("Bad number"),
+    }
+}

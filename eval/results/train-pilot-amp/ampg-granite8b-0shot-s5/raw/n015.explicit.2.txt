@@ -1,0 +1,17 @@
+fn readings53917() -> Int {
+    let x = 5
+    let y = 3
+    let z = 9
+    let a = 1
+    let b = 7
+    if x > 4 && y > 4 {
+        1
+    }
+    elseif // same as if
+    z > 4 && a > 4 || b > 4
+    x + y + z + a + b
+}
+
+fn main() {
+    print(readings53917())
+}

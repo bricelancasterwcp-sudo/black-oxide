@@ -1,0 +1,119 @@
+fn main() {
+    let mut device = Device { sensor: Sensor { reading: 0 } }
+    device.sensor.reading = 7
+    print(device.sensor.reading)
+    drop_temp(&device)
+}
+
+struct Device {
+    sensor: Sensor,
+}
+
+struct Sensor {
+    reading: Int,
+}
+
+fn print(x: Int) {
+    let s = int_to_str(x)
+    print_str(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut digits = vec()
+    let mut x = n
+    while x != 0 {
+        digits = push(digits, x % 10)
+        x = trunc(x / 10)
+    }
+    let mut s = str()
+    for d in &digits {
+        s = concat(s, int_to_str(d))
+    }
+    return s
+}
+
+fn print_str(s: Str) {
+    for c in &chars {
+        print(c)
+    }
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = vec()
+    let mut i = 0
+    while i < str_len(s) {
+        result = push(result, substr(s, i, i + 1))
+        i = i + 1
+    }
+    return result
+}
+
+fn substr(s: Str, start: Int, end: Int) -> Str {
+    let mut result = str()
+    let mut i = start
+    while i < end {
+        result = concat(result, char_at(s, i))
+        i = i + 1
+    }
+    return result
+}
+
+fn char_at(s: Str, i: Int) -> Str {
+    let mut result = str()
+    result = concat(result, s)
+    return result
+}
+
+fn str_len(s: Str) -> Int {
+    let mut count = 0
+    for _ in &chars {
+        count = count + 1
+    }
+    return count
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut result = str()
+    for c in &chars {
+        result = concat(result, c)
+    }
+    for c in &chars {
+        result = concat(result, c)
+    }
+    return result
+}
+
+fn trunc(x: Int) -> Int {
+    if x >= 0 {
+        return x
+    } else {
+        return -x - 1
+    }
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut result = v
+    result = push(result, x)
+    return result
+}
+
+fn vec() -> Vec<T> {
+    return vec()
+}
+
+fn drop_temp(x: &T) {
+    drop x
+}
+
+fn clone(x: &T) -> T {
+    let mut result = x
+    result = clone(result)
+    return result
+}
+
+fn main() {
+    let mut device = Device { sensor: Sensor { reading: 0 } }
+    device.sensor.reading = 7
+    print(device.sensor.reading)
+    drop_temp(&device)
+}

@@ -1,0 +1,46 @@
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let total = 0
+    for x in &v {
+        if x > limit {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn extend(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn main() {
+    let nums = push(push(vec(), 5), 40)
+    let bigger = extend(clone(&nums), 70)
+    print(sum_big(&nums, 10))
+    drop nums
+    print(sum_big(&bigger, 10))
+    drop bigger
+}
+
+fn make_point(h: Int) -> Point {
+    Point(h, 10)
+}
+
+fn print_point(p: &Point) {
+    print_str("Point { ")
+    print(p.x)
+    print_str(", ")
+    print(p.y)
+    print_str(" }")
+}
+
+fn add_point(p1: &Point, p2: &Point) -> Point {
+    Point(p1.x + p2.x, p1.y + p2.y)
+}
+
+fn main() {
+    let p = make_point(5)
+    print_point(&p)
+    let p2 = make_point(10)
+    print_str("\n")
+    print_point(&add_point && p, &p2)
+}

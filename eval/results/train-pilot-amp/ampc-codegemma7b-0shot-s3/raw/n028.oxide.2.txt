@@ -1,0 +1,16 @@
+fn read_number() -> Option<Int> {
+    let s = read_str()?.to_string()
+    match parse_int(s) {
+        Some(n) => Some(n),
+        None => {
+            print_str("bad")
+            None
+        },
+    }
+}
+
+fn main() {
+    if letSome(n) == read_number() {
+        print(n)
+    }
+}

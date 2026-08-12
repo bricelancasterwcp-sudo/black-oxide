@@ -1,0 +1,361 @@
+fn main() {
+    let mut device = Sensor { reading: 0 }
+    device.reading = 7
+    print(device.reading)
+    drop device
+}
+
+struct Sensor {
+    reading: Int,
+}
+
+fn print(x: Int) {
+    println("{}", x)
+}
+
+fn println(format: &Str, x: Int) {
+    print(format, x)
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut new = v
+    new.push(x)
+    new
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    v.len()
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    let x = v.get(i)
+    if x.is_none() {
+        None
+    } else {
+        Some(x.unwrap())
+    }
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut v = vec()
+    for i in a + 1 < b {
+        v.push(i)
+    }
+    v
+}
+
+fn clone(x: &Int) -> Int {
+    x.clone()
+}
+
+fn str_len(s: &Str) -> Int {
+    s.len()
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    let mut c = a.to_string()
+    c.push_str(b)
+    c
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut v = vec()
+    for c in s.chars() {
+        v.push(c.to_string())
+    }
+    v
+}
+
+fn int_to_str(n: Int) -> Str {
+    n.to_string()
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    let x = s.parse()
+    if x.is_err() {
+        None
+    } else {
+        Some(x.unwrap())
+    }
+}
+
+fn to_float(n: Int) -> Float {
+    n.to_float()
+}
+
+fn trunc(x: Float) -> Int {
+    x.trunc()
+}
+
+fn drop_ref(x: &Int) {
+    drop x
+}
+
+fn drop_owned(x: Int) {
+    drop x
+}
+
+fn drop_ref_mut(x: &Int) {
+    drop x
+}
+
+fn drop_owned_mut(x: Int) {
+    drop x
+}
+
+fn drop_ref(x: &Int) {
+    drop x
+}
+
+fn drop_owned(x: Int) {
+    drop x
+}
+
+fn drop_ref_mut(x: &Int) {
+    drop x
+}
+
+fn drop_owned_mut(x: Int) {
+    drop x
+}
+
+fn drop_ref(x: &Int) {
+    drop x
+}
+
+fn drop_owned(x: Int) {
+    drop x
+}
+
+fn drop_ref_mut(x: &Int) {
+    drop x
+}
+
+fn drop_owned_mut(x: Int) {
+    drop x
+}
+
+fn main() {
+    let mut device = Sensor { reading: 0 }
+    device.reading = 7
+    print(device.reading)
+    drop device
+}
+
+struct Sensor {
+    reading: Int,
+}
+
+fn print(x: Int) {
+    println("{}", x)
+}
+
+fn println(format: &Str, x: Int) {
+    print(format, x)
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut new = v
+    new.push(x)
+    new
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    v.len()
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    let x = v.get(i)
+    if x.is_none() {
+        None
+    } else {
+        Some(x.unwrap())
+    }
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut v = vec()
+    for i in a + 1 < b {
+        v.push(i)
+    }
+    v
+}
+
+fn clone(x: &Int) -> Int {
+    x.clone()
+}
+
+fn str_len(s: &Str) -> Int {
+    s.len()
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    let mut c = a.to_string()
+    c.push_str(b)
+    c
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut v = vec()
+    for c in s.chars() {
+        v.push(c.to_string())
+    }
+    v
+}
+
+fn int_to_str(n: Int) -> Str {
+    n.to_string()
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    let x = s.parse()
+    if x.is_err() {
+        None
+    } else {
+        Some(x.unwrap())
+    }
+}
+
+fn to_float(n: Int) -> Float {
+    n.to_float()
+}
+
+fn trunc(x: Float) -> Int {
+    x.trunc()
+}
+
+fn drop_ref(x: &Int) {
+    drop x
+}
+
+fn drop_owned(x: Int) {
+    drop x
+}
+
+fn drop_ref_mut(x: &Int) {
+    drop x
+}
+
+fn drop_owned_mut(x: Int) {
+    drop x
+}
+
+fn drop_ref(x: &Int) {
+    drop x
+}
+
+fn drop_owned(x: Int) {
+    drop x
+}
+
+fn drop_ref_mut(x: &Int) {
+    drop x
+}
+
+fn drop_owned_mut(x: Int) {
+    drop x
+}
+
+fn drop_ref(x: &Int) {
+    drop x
+}
+
+fn drop_owned(x: Int) {
+    drop x
+}
+
+fn drop_ref_mut(x: &Int) {
+    drop x
+}
+
+fn drop_owned_mut(x: Int) {
+    drop x
+}
+
+fn main() {
+    let mut device = Sensor { reading: 0 }
+    device.reading = 7
+    print(device.reading)
+    drop device
+}
+
+struct Sensor {
+    reading: Int,
+}
+
+fn print(x: Int) {
+    println("{}", x)
+}
+
+fn println(format: &Str, x: Int) {
+    print(format, x)
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut new = v
+    new.push(x)
+    new
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    v.len()
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    let x = v.get(i)
+    if x.is_none() {
+        None
+    } else {
+        Some(x.unwrap())
+    }
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut v = vec()
+    for i in a + 1 < b {
+        v.push(i)
+    }
+    v
+}
+
+fn clone(x: &Int) -> Int {
+    x.clone()
+}
+
+fn str_len(s: &Str) -> Int {
+    s.len()
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    let mut c = a.to_string()
+    c.push_str(b)
+    c
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut v = vec()
+    for c in s.chars() {
+        v.push(c.to_string())
+    }
+    v
+}
+
+fn int_to_str(n: Int) -> Str {
+    n.to_string()
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    let x = s.parse()
+    if x.is_err() {
+        None
+    } else {
+        Some(x.unwrap())
+    }
+}
+
+fn to_float(n: Int) -> Float {
+    n.to_float()
+}
+
+fn trunc(x: Float) -> Int {
+    x

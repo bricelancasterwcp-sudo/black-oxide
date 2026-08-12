@@ -1,0 +1,26 @@
+fn filter_div_three(v: &Vec<Int>) -> Vec<Int> {
+    let mut result = vec()
+    for x in v {
+        if x % 3 == 0 {
+            push(result, x)
+        }
+    }
+    result
+}
+
+fn sum(v: &Vec<Int>) -> Int {
+    let mut total = 0
+    for x in v {
+        total = total + x
+    }
+    total
+}
+
+fn main() {
+    let nums = vec(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+    let div_three = filter_div_three(&nums)
+    let total = sum(&div_three)
+    print(total)
+    drop nums
+    drop div_three
+}

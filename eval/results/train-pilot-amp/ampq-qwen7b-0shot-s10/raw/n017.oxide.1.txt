@@ -1,0 +1,14 @@
+struct List { values: Vec<Int> }
+
+fn get_entry(list: List, index: Int) -> Option<Str> {
+    let v = get(list.values, index)?
+    Some(int_to_str(v))
+}
+
+fn main() {
+    let list = List { values: push(push(push(push(vec(), 10), 20), 30), 40) }
+    match get_entry(list, 2) {
+        Some(s) => print_str(s),
+        None => print_str("missing"),
+    }
+}

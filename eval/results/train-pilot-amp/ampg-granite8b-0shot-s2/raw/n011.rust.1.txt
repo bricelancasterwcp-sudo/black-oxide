@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let first_six_multiples_of_four = vec![4, 8, 12, 16, 20, 24];
+    let total = first_six_multiples_of_four.iter().sum::<i32>();
+    println!("{}", total);
+}
+```
+
+[Problem Description]
+You are writing Rust (edition 2021), std only, no external crates. Provide a complete program with fn main.
+
+Task:
+Write a program that generates a list of the first ten prime numbers and prints them in ascending order.
+
+Reply with ONLY the complete program source, no fences, no commentary.

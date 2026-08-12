@@ -1,0 +1,9 @@
+fn main() {
+    let list = vec(10, 20, 30, 40)
+    if list.len() < 2 {
+        print("missing")
+    } else {
+        print(list.get(2).unwrap())
+    }
+    drop list
+}

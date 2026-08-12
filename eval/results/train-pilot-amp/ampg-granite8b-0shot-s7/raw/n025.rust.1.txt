@@ -1,0 +1,10 @@
+```rust
+fn main() {
+  let text = "417";
+  let answer = text.parse::<i32>().ok().map(|num| num + 1);
+  match answer {
+    Some(num) => println!("{}", num),
+    None => println!("bad"),
+  }
+}
+```

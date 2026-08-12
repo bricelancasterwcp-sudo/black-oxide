@@ -1,0 +1,29 @@
+struct Result {
+    multiples: Vec<Int>,
+    total: Int,
+}
+
+fn first_six_multiples_of_four() -> Result {
+    let mut multiples = vec()
+    let mut total = 0
+    let mut i = 1
+    while multiples.len() < 6 {
+        if i % 4 == 0 {
+            multiples = push(multiples, i)
+            total = total + i
+        }
+        i = i + 1
+    }
+    Result(multiples, total)
+}
+
+fn main() {
+    let result = first_six_multiples_of_four()
+    print_str("Multiples: ")
+    for x in result.multiples {
+        print(x)
+        print_str(", ")
+    }
+    print("\nTotal: ")
+    print(result.total)
+}

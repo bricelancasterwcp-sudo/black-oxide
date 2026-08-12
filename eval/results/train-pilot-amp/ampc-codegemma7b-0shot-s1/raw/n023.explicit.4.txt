@@ -1,0 +1,13 @@
+fn str_len(s: &Str) -> Int {
+    let mut c = 0
+    for _ in chars(s) {
+        c = c + 1
+    }
+    c
+}
+
+fn main() {
+    let hello = str_len("hello world")
+    print(hello)
+    drop hello
+}

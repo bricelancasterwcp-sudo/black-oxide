@@ -1,0 +1,5 @@
+fn main() {
+    let phrase = "hello world";
+    let length = phrase.chars().count() as i32;
+    println!("Number of characters: {}", length);
+}

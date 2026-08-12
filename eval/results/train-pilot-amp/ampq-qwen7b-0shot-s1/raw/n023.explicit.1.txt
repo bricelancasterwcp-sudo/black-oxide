@@ -1,0 +1,10 @@
+fn count_chars(s: &Str) -> Int {
+    chars(s).len()
+}
+
+fn main() {
+    let phrase = "hello world"
+    let len = count_chars(phrase)
+    print(len)
+    drop phrase
+}

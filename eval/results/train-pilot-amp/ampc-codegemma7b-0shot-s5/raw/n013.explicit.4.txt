@@ -1,0 +1,59 @@
+fn main() {
+    let readings = vec(5, 3, 9, 1, 7)
+    let mut largest = readings.get(0).unwrap()
+    for x in &readings {
+        if x > &largest {
+            largest = x
+        }
+    }
+    print(largest)
+    drop largest
+}
+
+fn main() {
+    let readings = vec(5, 3, 9, 1, 7)
+    let mut largest = readings.get(0).unwrap()
+    for x in &readings {
+        if x > &largest {
+            largest = x
+        }
+    }
+    print(largest)
+    drop largest
+}
+
+fn main() {
+    let readings = vec(5, 3, 9, 1, 7)
+    let mut largest = readings.get(0).unwrap()
+    for x in &readings {
+        if x > &largest {
+            largest = x
+        }
+    }
+    print(largest)
+    drop largest
+}
+
+fn main() {
+    let readings = vec(5, 3, 9, 1, 7)
+    let mut largest = readings.get(0).unwrap()
+    for x in &readings {
+        if x > &largest {
+            largest = x
+        }
+    }
+    print(largest)
+    drop largest
+}
+
+fn main() {
+    let readings = vec(5, 3, 9, 1, 7)
+    let mut largest = readings.get(0).unwrap()
+    for x in &readings {
+        if x > &largest {
+            largest = x
+        }
+    }
+    print(largest)
+    drop largest
+}

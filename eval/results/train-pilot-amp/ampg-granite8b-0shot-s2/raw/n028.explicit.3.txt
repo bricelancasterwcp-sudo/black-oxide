@@ -1,0 +1,7 @@
+fn main() {
+    let abc = "abc"
+    match abc {
+        Str(i) => print(i),
+        _ => print("bad"),
+    }
+}

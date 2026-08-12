@@ -1,0 +1,11 @@
+fn word_length(word: &Str) -> Int {
+    let mut num_chars = 0
+    for _ in chars(word) {
+        num_chars = num_chars + 1
+    }
+    num_chars
+}
+
+fn main() {
+    print(word_length("programming"))
+}

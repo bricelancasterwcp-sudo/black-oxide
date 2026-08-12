@@ -1,0 +1,8 @@
+fn main() {
+    let one = "one"
+    let two = "two"
+    let three = "three"
+    print(one)
+    print(two)
+    print(three)
+}

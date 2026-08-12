@@ -1,0 +1,10 @@
+struct Stock { item: Str, units: Int, value_per_unit: Int }
+
+fn total_value(stocks: Vec<Stock>) -> Int {
+    stocks.iter().map(s || s.units * s.value_per_unit).sum()
+}
+
+fn main() {
+    let stocks = push(push(vec(), Stock { item: "item1", units: 4, value_per_unit: 3 }), Stock { item: "item2", units: 5, value_per_unit: 2 })
+    print(total_value(stocks))
+}

@@ -1,0 +1,13 @@
+fn main() {
+    let word_sequence = "hello world";
+    let mut vowel_count = 0;
+
+    for char in word_sequence.chars() {
+        match char {
+            'a' | 'e' | 'i' | 'o' | 'u' => vowel_count += 1,
+            _ => (),
+        }
+    }
+
+    println!("Number of vowels: {}", vowel_count);
+}

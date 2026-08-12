@@ -1,0 +1,13 @@
+fn count_a(s: Str) -> Int {
+    let mut acc = 0
+    for c in chars(s) {
+        if c == "a" {
+            acc = acc + 1
+        }
+    }
+    acc
+}
+
+fn main() {
+    print(count_a("banana"))
+}

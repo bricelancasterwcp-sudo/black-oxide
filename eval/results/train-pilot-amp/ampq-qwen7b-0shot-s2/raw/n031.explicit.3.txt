@@ -1,0 +1,4 @@
+fn main() {
+    let area = (7.0 * 6.0)
+    print(area)
+}

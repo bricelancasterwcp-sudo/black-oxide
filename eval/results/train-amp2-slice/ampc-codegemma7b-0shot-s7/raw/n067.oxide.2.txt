@@ -1,0 +1,13 @@
+fn main() {
+    let mut walk = vec(7, 4, 9, 10)
+    let mut total = 0
+    for x in walk.iter() {
+        if x % 2 != 0 {
+            print(x * 2)
+            print_str("\n")
+        } else {
+            total = total + x
+        }
+    }
+    print(total)
+}

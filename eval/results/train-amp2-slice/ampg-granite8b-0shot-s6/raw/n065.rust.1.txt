@@ -1,0 +1,7 @@
+fn main() {
+    let readings = vec![6, 11, 3, 14, 9];
+    let over_five = readings.iter().filter(|reading| reading > &5).count();
+    let highest = *readings.iter().max().unwrap();
+    println!("{} of them exceed five.", over_five);
+    println!("The highest reading of all is {}.", highest);
+}

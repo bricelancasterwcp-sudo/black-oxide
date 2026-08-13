@@ -1,0 +1,35 @@
+fn keep_ten(nums: Vec<String>) -> Vec<String> {
+    let mut result = vec_new(String)
+    for num in nums {
+        if num.len() < 10 {
+            push(result, num)
+        }
+    }
+    result
+}
+
+fn main() {
+    let mut numbers = vec_new(String)
+    push(numbers, "1")
+    push(numbers, "2")
+    push(numbers, "3")
+    push(numbers, "4")
+    push(numbers, "5")
+    push(numbers, "6")
+    push(numbers, "7")
+    push(numbers, "8")
+    push(numbers, "9")
+    push(numbers, "10")
+    push(numbers, "11")
+    push(numbers, "12")
+    push(numbers, "13")
+    push(numbers, "14")
+    push(numbers, "15")
+    push(numbers, "16")
+    let kept = keep_ten(numbers)
+    for num in &kept {
+        print(num)
+        print_str("\n")
+    }
+    print(len(&kept))
+}

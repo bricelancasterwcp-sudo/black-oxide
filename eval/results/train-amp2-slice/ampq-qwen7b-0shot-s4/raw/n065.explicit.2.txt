@@ -1,0 +1,9 @@
+fn main() {
+    let readings = vec(6, 11, 3, 14, 9)
+    let count = readings.iter().filter(x > 5).fold(0, move || acc, x || acc + 1)
+    print(count)
+    drop readings
+    let max_reading = readings.iter().fold(i32_min_value(), move || acc, x || acc.max(x))
+    print(max_reading)
+    drop max_reading
+}

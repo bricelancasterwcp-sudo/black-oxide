@@ -1,0 +1,22 @@
+use std::io;
+
+fn main() {
+    let mut x = 7;
+    let mut sum = 0;
+
+    loop {
+        if x == 11 {
+            break;
+        }
+
+        if x % 2 == 1 {
+            println!("{}", x * 2);
+        } else {
+            sum += x;
+        }
+
+        x += 1;
+    }
+
+    println!("{}", sum);
+}

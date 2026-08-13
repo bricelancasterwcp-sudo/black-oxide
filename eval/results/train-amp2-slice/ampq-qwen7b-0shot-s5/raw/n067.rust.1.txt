@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let list = vec![7, 4, 9, 10];
+    let mut even_total = 0;
+
+    for &num in &list {
+        if num % 2 == 0 {
+            even_total += num;
+        } else {
+            println!("{}", num * 2);
+        }
+    }
+
+    println!("{}", even_total);
+}
+```

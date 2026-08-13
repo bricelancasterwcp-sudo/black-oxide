@@ -1,0 +1,8 @@
+fn main() {
+    let batch = [9, 2, 12, 5, 16];
+    let kept: Vec<_> = batch.iter().filter(|&&x| x < 10).map(|&&x| x).collect();
+    for item in kept.iter() {
+        println!("{}", item);
+    }
+    println!("Kept: {}", kept.len());
+}

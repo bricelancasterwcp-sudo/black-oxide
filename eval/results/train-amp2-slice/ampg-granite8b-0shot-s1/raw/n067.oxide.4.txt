@@ -1,0 +1,12 @@
+fn main() {
+    let mut walker = vec(7, 4, 9, 10).into_iter().peekable()
+    let mut even_total = 0
+    while letSome(next) == walker.next() {
+        if next % 2 == 0 {
+            even_total = even_total + next
+        } else {
+            print(next * 2)
+        }
+    }
+    print(even_total)
+}

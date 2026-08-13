@@ -1,0 +1,18 @@
+struct List { values: Vec<Int> }
+
+fn walk_list(list: List) -> Int {
+    let mut total = 0
+    for x in list.values {
+        if x % 2 == 1 {
+            print(x * 2)
+        } else {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn main() {
+    let list = List { values: push(push(push(push(vec(), 7), 4), 9), 10) }
+    print(walk_list(list))
+}

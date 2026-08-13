@@ -1,0 +1,30 @@
+struct Reading { label: Str, values: Vec<Int> }
+
+fn first_big(v: Vec<Int>) -> Int {
+    let found = -1
+    for x in v {
+        if x > 5 {
+            found = x
+            break
+        }
+    }
+    found
+}
+
+fn second(v: Vec<Int>) -> Int {
+    let mut max = -1
+    for x in v {
+        if x > max {
+            max = x
+        }
+    }
+    max
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(push(push(vec(), 6), 11), 3), 14), pushvec: 9 }  // Correct the vec() syntax and add push()
+    let count = first_big(r.values)
+    print(count)
+    print_str("\n")
+    print(second(r.values))
+}

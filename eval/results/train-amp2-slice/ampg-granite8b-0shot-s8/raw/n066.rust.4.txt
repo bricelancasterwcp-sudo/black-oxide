@@ -1,0 +1,8 @@
+fn main() {
+    let batch = [9, 2, 12, 5, 16];
+    let under_ten: Vec<i32> = batch.iter().filter(|&&x| x < 10).collect();
+    for num in under_ten {
+        println!("{}", num);
+    }
+    println!("Kept {} entries under 10", under_ten.len());
+}

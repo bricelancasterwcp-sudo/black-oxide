@@ -1,0 +1,10 @@
+struct Batch { entries: Vec<Int> }
+
+fn main() {
+    let batch = Batch { entries: vec(9, 2, 12, 5, 16) }
+    let kept: Vec<Int> = batch.entries.filter(x || x < 10).collect()
+    for x in kept {
+        print(x)
+    }
+    print(kept.len())
+}

@@ -1,0 +1,14 @@
+use std::collections::HashSet;
+
+fn main() {
+    let mut under_ten: HashSet<u8> = HashSet::new();
+
+    let mut batch = [9, 2, 12, 5, 16];
+    batch.iter().filter(|x| **x < 10).for_each(|x| under_ten.insert(*x));
+
+    for entry in under_ten {
+        println!("{}", entry);
+    }
+
+    println!("{} entries under ten", under_ten.len());
+}

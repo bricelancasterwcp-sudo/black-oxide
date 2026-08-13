@@ -1,0 +1,11 @@
+struct Reading { label: Str, values: Vec<Int> }
+
+fn main() {
+    let r = Reading { label: "lab", values: vec(9, 2, 12, 5, 16) }
+    let kept: Vec<Int> = r.values.filter(x || x < 10).collect()
+    for x in kept {
+        print(x)
+        print_str("\n")
+    }
+    print(len(kept))
+}

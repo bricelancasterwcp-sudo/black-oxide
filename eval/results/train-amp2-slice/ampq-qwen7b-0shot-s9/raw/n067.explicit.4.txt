@@ -1,0 +1,585 @@
+fn main() {
+    let nums = vec(7, 4, 9, 10)
+    let mut total = 0
+    for x in &nums {
+        if x % 2 != 0 {
+            print_str(&int_to_str_x2)
+        } else {
+            total = total + x
+        }
+    }
+    print(&total)
+    drop nums
+}
+
+fn int_to_str_x2(n: Int) -> Str {
+    let s = int_to_str(n)
+    concat(s, s)
+}
+
+fn print_str(s: Str) {
+    let mut i = 0
+    while i < str_len(s) {
+        print(&s)
+        i = i + 1
+    }
+}
+
+fn print(s: Str) {
+    let mut i = 0
+    while i < str_len(s) {
+        print_char(&s)
+        i = i + 1
+    }
+}
+
+fn print_char(c: Str) {
+    let mut i = 0
+    while i < str_len(c) {
+        print_char(&c)
+        i = i + 1
+    }
+}
+
+fn drop_str(s: Str) {
+    drop s
+}
+
+fn drop_int(n: Int) {
+    drop n
+}
+
+fn drop_vec(v: Vec<Int>) {
+    drop v
+}
+
+fn drop_total(t: Int) {
+    drop t
+}
+
+fn drop_nums(n: Vec<Int>) {
+    drop n
+}
+
+fn drop_x(x: Int) {
+    drop x
+}
+
+fn drop_s(s: Str) {
+    drop s
+}
+
+fn drop_n(n: Int) {
+    drop n
+}
+
+fn drop_v(v: Vec<Int>) {
+    drop v
+}
+
+fn drop_t(t: Int) {
+    drop t
+}
+
+fn drop_n(n: Int) {
+    drop n
+}
+
+fn drop_v(v: Vec<Int>) {
+    drop v
+}
+
+fn drop_t(t: Int) {
+    drop t
+}
+
+fn drop_n(n: Int) {
+    drop n
+}
+
+fn drop_v(v: Vec<Int>) {
+    drop v
+}
+
+fn drop_t(t: Int) {
+    drop t
+}
+
+fn drop_n(n: Int) {
+    drop n
+}
+
+fn drop_v(v: Vec<Int>) {
+    drop v
+}
+
+fn drop_t(t: Int) {
+    drop t
+}
+
+fn drop_n(n: Int) {
+    drop n
+}
+
+fn drop_v(v: Vec<Int>) {
+    drop v
+}
+
+fn drop_t(t: Int) {
+    drop t
+}
+
+fn drop_n(n: Int) {
+    drop n
+}
+
+fn drop_v(v: Vec<Int>) {
+    drop v
+}
+
+fn drop_t(t: Int) {
+    drop t
+}
+
+fn drop_n(n: Int) {
+    drop n
+}
+
+fn drop_v(v: Vec<Int>) {
+    drop v
+}
+
+fn drop_t(t: Int) {
+    drop t
+}
+
+fn drop_n(n: Int) {
+    drop n
+}
+
+fn drop_v(v: Vec<Int>) {
+    drop v
+}
+
+fn drop_t(t: Int) {
+    drop t
+}
+
+fn drop_n(n: Int) {
+    drop n
+}
+
+fn drop_v(v: Vec<Int>) {
+    drop v
+}
+
+fn drop_t(t: Int) {
+    drop t
+}
+
+fn drop_n(n: Int) {
+    drop n
+}
+
+fn drop_v(v: Vec<Int>) {
+    drop v
+}
+
+fn drop_t(t: Int) {
+    drop t
+}
+
+fn drop_n(n: Int) {
+    drop n
+}
+
+fn drop_v(v: Vec<Int>) {
+    drop v
+}
+
+fn drop_t(t: Int) {
+    drop t
+}
+
+fn drop_n(n: Int) {
+    drop n
+}
+
+fn drop_v(v: Vec<Int>) {
+    drop v
+}
+
+fn drop_t(t: Int) {
+    drop t
+}
+
+fn drop_n(n: Int) {
+    drop n
+}
+
+fn drop_v(v: Vec<Int>) {
+    drop v
+}
+
+fn drop_t(t: Int) {
+    drop t
+}
+
+fn drop_n(n: Int) {
+    drop n
+}
+
+fn drop_v(v: Vec<Int>) {
+    drop v
+}
+
+fn drop_t(t: Int) {
+    drop t
+}
+
+fn drop_n(n: Int) {
+    drop n
+}
+
+fn drop_v(v: Vec<Int>) {
+    drop v
+}
+
+fn drop_t(t: Int) {
+    drop t
+}
+
+fn drop_n(n: Int) {
+    drop n
+}
+
+fn drop_v(v: Vec<Int>) {
+    drop v
+}
+
+fn drop_t(t: Int) {
+    drop t
+}
+
+fn drop_n(n: Int) {
+    drop n
+}
+
+fn drop_v(v: Vec<Int>) {
+    drop v
+}
+
+fn drop_t(t: Int) {
+    drop t
+}
+
+fn drop_n(n: Int) {
+    drop n
+}
+
+fn drop_v(v: Vec<Int>) {
+    drop v
+}
+
+fn drop_t(t: Int) {
+    drop t
+}
+
+fn drop_n(n: Int) {
+    drop n
+}
+
+fn drop_v(v: Vec<Int>) {
+    drop v
+}
+
+fn drop_t(t: Int) {
+    drop t
+}
+
+fn drop_n(n: Int) {
+    drop n
+}
+
+fn drop_v(v: Vec<Int>) {
+    drop v
+}
+
+fn drop_t(t: Int) {
+    drop t
+}
+
+fn drop_n(n: Int) {
+    drop n
+}
+
+fn drop_v(v: Vec<Int>) {
+    drop v
+}
+
+fn drop_t(t: Int) {
+    drop t
+}
+
+fn drop_n(n: Int) {
+    drop n
+}
+
+fn drop_v(v: Vec<Int>) {
+    drop v
+}
+
+fn drop_t(t: Int) {
+    drop t
+}
+
+fn drop_n(n: Int) {
+    drop n
+}
+
+fn drop_v(v: Vec<Int>) {
+    drop v
+}
+
+fn drop_t(t: Int) {
+    drop t
+}
+
+fn drop_n(n: Int) {
+    drop n
+}
+
+fn drop_v(v: Vec<Int>) {
+    drop v
+}
+
+fn drop_t(t: Int) {
+    drop t
+}
+
+fn drop_n(n: Int) {
+    drop n
+}
+
+fn drop_v(v: Vec<Int>) {
+    drop v
+}
+
+fn drop_t(t: Int) {
+    drop t
+}
+
+fn drop_n(n: Int) {
+    drop n
+}
+
+fn drop_v(v: Vec<Int>) {
+    drop v
+}
+
+fn drop_t(t: Int) {
+    drop t
+}
+
+fn drop_n(n: Int) {
+    drop n
+}
+
+fn drop_v(v: Vec<Int>) {
+    drop v
+}
+
+fn drop_t(t: Int) {
+    drop t
+}
+
+fn drop_n(n: Int) {
+    drop n
+}
+
+fn drop_v(v: Vec<Int>) {
+    drop v
+}
+
+fn drop_t(t: Int) {
+    drop t
+}
+
+fn drop_n(n: Int) {
+    drop n
+}
+
+fn drop_v(v: Vec<Int>) {
+    drop v
+}
+
+fn drop_t(t: Int) {
+    drop t
+}
+
+fn drop_n(n: Int) {
+    drop n
+}
+
+fn drop_v(v: Vec<Int>) {
+    drop v
+}
+
+fn drop_t(t: Int) {
+    drop t
+}
+
+fn drop_n(n: Int) {
+    drop n
+}
+
+fn drop_v(v: Vec<Int>) {
+    drop v
+}
+
+fn drop_t(t: Int) {
+    drop t
+}
+
+fn drop_n(n: Int) {
+    drop n
+}
+
+fn drop_v(v: Vec<Int>) {
+    drop v
+}
+
+fn drop_t(t: Int) {
+    drop t
+}
+
+fn drop_n(n: Int) {
+    drop n
+}
+
+fn drop_v(v: Vec<Int>) {
+    drop v
+}
+
+fn drop_t(t: Int) {
+    drop t
+}
+
+fn drop_n(n: Int) {
+    drop n
+}
+
+fn drop_v(v: Vec<Int>) {
+    drop v
+}
+
+fn drop_t(t: Int) {
+    drop t
+}
+
+fn drop_n(n: Int) {
+    drop n
+}
+
+fn drop_v(v: Vec<Int>) {
+    drop v
+}
+
+fn drop_t(t: Int) {
+    drop t
+}
+
+fn drop_n(n: Int) {
+    drop n
+}
+
+fn drop_v(v: Vec<Int>) {
+    drop v
+}
+
+fn drop_t(t: Int) {
+    drop t
+}
+
+fn drop_n(n: Int) {
+    drop n
+}
+
+fn drop_v(v: Vec<Int>) {
+    drop v
+}
+
+fn drop_t(t: Int) {
+    drop t
+}
+
+fn drop_n(n: Int) {
+    drop n
+}
+
+fn drop_v(v: Vec<Int>) {
+    drop v
+}
+
+fn drop_t(t: Int) {
+    drop t
+}
+
+fn drop_n(n: Int) {
+    drop n
+}
+
+fn drop_v(v: Vec<Int>) {
+    drop v
+}
+
+fn drop_t(t: Int) {
+    drop t
+}
+
+fn drop_n(n: Int) {
+    drop n
+}
+
+fn drop_v(v: Vec<Int>) {
+    drop v
+}
+
+fn drop_t(t: Int) {
+    drop t
+}
+
+fn drop_n(n: Int) {
+    drop n
+}
+
+fn drop_v(v: Vec<Int>) {
+    drop v
+}
+
+fn drop_t(t: Int) {
+    drop t
+}
+
+fn drop_n(n: Int) {
+    drop n
+}
+
+fn drop_v(v: Vec<Int>) {
+    drop v
+}
+
+fn drop_t(t: Int) {
+    drop t
+}
+
+fn drop_n(n: Int) {
+    drop n
+}
+
+fn drop_v(v: Vec<Int>) {
+    drop v
+}
+
+fn drop_t(t: Int) {
+    drop t

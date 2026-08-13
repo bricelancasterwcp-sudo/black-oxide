@@ -1,0 +1,25 @@
+struct List { head: Option<Int>, tail: Option<Box<List>> }
+
+fn walk_list(lst: List) -> Int {
+    let mut sum = 0
+    let mut current = Some(lst)
+    while letSome(node) == current {
+        match node.head {
+            Some(x) => {
+                if x % 2 != 0 {
+                    print(x * 2)
+                } else {
+                    sum = sum + x
+                }
+            },
+            None => break_,
+        }
+        current = node.tail
+    }
+    sum
+}
+
+fn main() {
+    let list = List { head: Some(7), tail: Some(Box(List { head: Some(4), tail: Some(Box(List { head: Some(9), tail: Some(Box(List)) })) })) }
+    print(walk_list(list))
+}

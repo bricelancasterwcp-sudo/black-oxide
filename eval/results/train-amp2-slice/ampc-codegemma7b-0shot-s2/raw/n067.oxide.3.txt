@@ -1,0 +1,16 @@
+fn walk(mutnums: Vec<Int>) -> Int {
+    let mut total = 0
+    while letSome(n) == nums.pop() {
+        if n % 2 == 1 {
+            println(n * 2)
+        } else {
+            total = total + n
+        }
+    }
+    total
+}
+
+fn main() {
+    let nums = vec(7, 4, 9, 10)
+    println(walk(nums))
+}

@@ -1,0 +1,199 @@
+fn main() {
+    let mut total = 0
+    for x in walk(7, 4, 9, 10) {
+        if x % 2 != 0 {
+            print(x * 2)
+            print_str("\n")
+        } else {
+            total = total + x
+        }
+    }
+    print(total)
+}
+
+fn walk(first: Int, second: Int, third: Int, fourth: Int) -> Vec<Int> {
+    push(push(push(vec(), first), second), third)
+    push(walk(first, second, third, fourth), fourth)
+}
+
+fn walk(first: Int, second: Int, third: Int, fourth: Int) -> Vec<Int> {
+    let mut v = push(push(push(vec(), first), second), third)
+    push(v, fourth)
+}
+
+fn walk(first: Int, second: Int, third: Int, fourth: Int) -> Vec<Int> {
+    let mut v = push(push(push(vec(), first), second), third)
+    v = push(v, fourth)
+}
+
+fn walk(first: Int, second: Int, third: Int, fourth: Int) -> Vec<Int> {
+    let mut v = push(push(push(vec(), first), second), third)
+    v = push(v, fourth)
+    v
+}
+
+fn walk(first: Int, second: Int, third: Int, fourth: Int) -> Vec<Int> {
+    let mut v = push(push(push(vec(), first), second), third)
+    v = push(v, fourth)
+    v
+}
+
+fn walk(first: Int, second: Int, third: Int, fourth: Int) -> Vec<Int> {
+    let mut v = push(push(push(vec(), first), second), third)
+    v = push(v, fourth)
+    v
+}
+
+fn walk(first: Int, second: Int, third: Int, fourth: Int) -> Vec<Int> {
+    let mut v = push(push(push(vec(), first), second), third)
+    v = push(v, fourth)
+    v
+}
+
+fn walk(first: Int, second: Int, third: Int, fourth: Int) -> Vec<Int> {
+    let mut v = push(push(push(vec(), first), second), third)
+    v = push(v, fourth)
+    v
+}
+
+fn walk(first: Int, second: Int, third: Int, fourth: Int) -> Vec<Int> {
+    let mut v = push(push(push(vec(), first), second), third)
+    v = push(v, fourth)
+    v
+}
+
+fn walk(first: Int, second: Int, third: Int, fourth: Int) -> Vec<Int> {
+    let mut v = push(push(push(vec(), first), second), third)
+    v = push(v, fourth)
+    v
+}
+
+fn walk(first: Int, second: Int, third: Int, fourth: Int) -> Vec<Int> {
+    let mut v = push(push(push(vec(), first), second), third)
+    v = push(v, fourth)
+    v
+}
+
+fn walk(first: Int, second: Int, third: Int, fourth: Int) -> Vec<Int> {
+    let mut v = push(push(push(vec(), first), second), third)
+    v = push(v, fourth)
+    v
+}
+
+fn walk(first: Int, second: Int, third: Int, fourth: Int) -> Vec<Int> {
+    let mut v = push(push(push(vec(), first), second), third)
+    v = push(v, fourth)
+    v
+}
+
+fn walk(first: Int, second: Int, third: Int, fourth: Int) -> Vec<Int> {
+    let mut v = push(push(push(vec(), first), second), third)
+    v = push(v, fourth)
+    v
+}
+
+fn walk(first: Int, second: Int, third: Int, fourth: Int) -> Vec<Int> {
+    let mut v = push(push(push(vec(), first), second), third)
+    v = push(v, fourth)
+    v
+}
+
+fn walk(first: Int, second: Int, third: Int, fourth: Int) -> Vec<Int> {
+    let mut v = push(push(push(vec(), first), second), third)
+    v = push(v, fourth)
+    v
+}
+
+fn walk(first: Int, second: Int, third: Int, fourth: Int) -> Vec<Int> {
+    let mut v = push(push(push(vec(), first), second), third)
+    v = push(v, fourth)
+    v
+}
+
+fn walk(first: Int, second: Int, third: Int, fourth: Int) -> Vec<Int> {
+    let mut v = push(push(push(vec(), first), second), third)
+    v = push(v, fourth)
+    v
+}
+
+fn walk(first: Int, second: Int, third: Int, fourth: Int) -> Vec<Int> {
+    let mut v = push(push(push(vec(), first), second), third)
+    v = push(v, fourth)
+    v
+}
+
+fn walk(first: Int, second: Int, third: Int, fourth: Int) -> Vec<Int> {
+    let mut v = push(push(push(vec(), first), second), third)
+    v = push(v, fourth)
+    v
+}
+
+fn walk(first: Int, second: Int, third: Int, fourth: Int) -> Vec<Int> {
+    let mut v = push(push(push(vec(), first), second), third)
+    v = push(v, fourth)
+    v
+}
+
+fn walk(first: Int, second: Int, third: Int, fourth: Int) -> Vec<Int> {
+    let mut v = push(push(push(vec(), first), second), third)
+    v = push(v, fourth)
+    v
+}
+
+fn walk(first: Int, second: Int, third: Int, fourth: Int) -> Vec<Int> {
+    let mut v = push(push(push(vec(), first), second), third)
+    v = push(v, fourth)
+    v
+}
+
+fn walk(first: Int, second: Int, third: Int, fourth: Int) -> Vec<Int> {
+    let mut v = push(push(push(vec(), first), second), third)
+    v = push(v, fourth)
+    v
+}
+
+fn walk(first: Int, second: Int, third: Int, fourth: Int) -> Vec<Int> {
+    let mut v = push(push(push(vec(), first), second), third)
+    v = push(v, fourth)
+    v
+}
+
+fn walk(first: Int, second: Int, third: Int, fourth: Int) -> Vec<Int> {
+    let mut v = push(push(push(vec(), first), second), third)
+    v = push(v, fourth)
+    v
+}
+
+fn walk(first: Int, second: Int, third: Int, fourth: Int) -> Vec<Int> {
+    let mut v = push(push(push(vec(), first), second), third)
+    v = push(v, fourth)
+    v
+}
+
+fn walk(first: Int, second: Int, third: Int, fourth: Int) -> Vec<Int> {
+    let mut v = push(push(push(vec(), first), second), third)
+    v = push(v, fourth)
+    v
+}
+
+fn walk(first: Int, second: Int, third: Int, fourth: Int) -> Vec<Int> {
+    let mut v = push(push(push(vec(), first), second), third)
+    v = push(v, fourth)
+    v
+}
+
+fn walk(first: Int, second: Int, third: Int, fourth: Int) -> Vec<Int> {
+    let mut v = push(push(push(vec(), first), second), third)
+    v = push(v, fourth)
+    v
+}
+
+fn walk(first: Int, second: Int, third: Int, fourth: Int) -> Vec<Int> {
+    let mut v = push(push(push(vec(), first), second), third)
+    v = push(v, fourth)
+    v
+}
+
+fn walk(first: Int, second: Int, third: Int, fourth: Int) -> Vec<Int> {
+    let mut v = push(push(push(vec(), first), second), third)
+    v

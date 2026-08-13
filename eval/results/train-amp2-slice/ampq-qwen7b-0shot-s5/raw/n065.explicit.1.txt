@@ -1,0 +1,373 @@
+fn count_exceeds_five(readings: Vec<Int>) -> Int {
+    let mut count = 0
+    let mut max_reading = 0
+    for reading in readings {
+        if reading > 5 {
+            count = count + 1
+        }
+        if reading > max_reading {
+            max_reading = reading
+        }
+    }
+    count
+}
+
+fn main() {
+    let readings = push(push(vec(), 6), push(push(push(vec(), 11), 3), push(push(push(vec(), 14), 9), vec())))
+    print(count_exceeds_five(readings))
+    drop readings
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn vec() -> Vec<Int> {
+    vec()
+}
+
+fn drop_name(name: Int) {
+    drop name
+}
+
+fn clone_name(name: Int) -> Int {
+    clone(name)
+}
+
+fn int_to_str(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn str_len(s: Str) -> Int {
+    str_len(s)
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    concat(a, b)
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    parse_int(s)
+}
+
+fn to_float(n: Int) -> Float {
+    to_float(n)
+}
+
+fn trunc(x: Float) -> Int {
+    trunc(x)
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn push_name(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn len_name(v: Vec<Int>) -> Int {
+    len(v)
+}
+
+fn get_name(v: Vec<Int>, i: Int) -> Option<Int> {
+    get(v, i)
+}
+
+fn range_name(a: Int, b: Int) -> Vec<Int> {
+    range(a, b)
+}
+
+fn chars_name(s: Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn int_to_str_name(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn parse_int_name(s: Str) -> Option<Int> {
+    parse_int(s)
+}
+
+fn to_float_name(n: Int) -> Float {
+    to_float(n)
+}
+
+fn trunc_name(x: Float) -> Int {
+    trunc(x)
+}
+
+fn print_str_name(s: Str) {
+    println(s)
+}
+
+fn push_name_name(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn len_name_name(v: Vec<Int>) -> Int {
+    len(v)
+}
+
+fn get_name_name(v: Vec<Int>, i: Int) -> Option<Int> {
+    get(v, i)
+}
+
+fn range_name_name(a: Int, b: Int) -> Vec<Int> {
+    range(a, b)
+}
+
+fn chars_name_name(s: Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn int_to_str_name_name(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn parse_int_name_name(s: Str) -> Option<Int> {
+    parse_int(s)
+}
+
+fn to_float_name_name(n: Int) -> Float {
+    to_float(n)
+}
+
+fn trunc_name_name(x: Float) -> Int {
+    trunc(x)
+}
+
+fn print_str_name_name(s: Str) {
+    println(s)
+}
+
+fn push_name_name_name(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn len_name_name_name(v: Vec<Int>) -> Int {
+    len(v)
+}
+
+fn get_name_name_name(v: Vec<Int>, i: Int) -> Option<Int> {
+    get(v, i)
+}
+
+fn range_name_name_name(a: Int, b: Int) -> Vec<Int> {
+    range(a, b)
+}
+
+fn chars_name_name_name(s: Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn int_to_str_name_name_name(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn parse_int_name_name_name(s: Str) -> Option<Int> {
+    parse_int(s)
+}
+
+fn to_float_name_name_name(n: Int) -> Float {
+    to_float(n)
+}
+
+fn trunc_name_name_name(x: Float) -> Int {
+    trunc(x)
+}
+
+fn print_str_name_name_name(s: Str) {
+    println(s)
+}
+
+fn push_name_name_name_name(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn len_name_name_name_name(v: Vec<Int>) -> Int {
+    len(v)
+}
+
+fn get_name_name_name_name(v: Vec<Int>, i: Int) -> Option<Int> {
+    get(v, i)
+}
+
+fn range_name_name_name_name(a: Int, b: Int) -> Vec<Int> {
+    range(a, b)
+}
+
+fn chars_name_name_name_name(s: Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn int_to_str_name_name_name_name(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn parse_int_name_name_name_name(s: Str) -> Option<Int> {
+    parse_int(s)
+}
+
+fn to_float_name_name_name_name(n: Int) -> Float {
+    to_float(n)
+}
+
+fn trunc_name_name_name_name(x: Float) -> Int {
+    trunc(x)
+}
+
+fn print_str_name_name_name_name(s: Str) {
+    println(s)
+}
+
+fn push_name_name_name_name_name(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn len_name_name_name_name_name(v: Vec<Int>) -> Int {
+    len(v)
+}
+
+fn get_name_name_name_name_name(v: Vec<Int>, i: Int) -> Option<Int> {
+    get(v, i)
+}
+
+fn range_name_name_name_name_name(a: Int, b: Int) -> Vec<Int> {
+    range(a, b)
+}
+
+fn chars_name_name_name_name_name(s: Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn int_to_str_name_name_name_name_name(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn parse_int_name_name_name_name_name(s: Str) -> Option<Int> {
+    parse_int(s)
+}
+
+fn to_float_name_name_name_name_name(n: Int) -> Float {
+    to_float(n)
+}
+
+fn trunc_name_name_name_name_name(x: Float) -> Int {
+    trunc(x)
+}
+
+fn print_str_name_name_name_name_name(s: Str) {
+    println(s)
+}
+
+fn push_name_name_name_name_name_name(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn len_name_name_name_name_name_name(v: Vec<Int>) -> Int {
+    len(v)
+}
+
+fn get_name_name_name_name_name_name(v: Vec<Int>, i: Int) -> Option<Int> {
+    get(v, i)
+}
+
+fn range_name_name_name_name_name_name(a: Int, b: Int) -> Vec<Int> {
+    range(a, b)
+}
+
+fn chars_name_name_name_name_name_name(s: Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn int_to_str_name_name_name_name_name_name(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn parse_int_name_name_name_name_name_name(s: Str) -> Option<Int> {
+    parse_int(s)
+}
+
+fn to_float_name_name_name_name_name_name(n: Int) -> Float {
+    to_float(n)
+}
+
+fn trunc_name_name_name_name_name_name(x: Float) -> Int {
+    trunc(x)
+}
+
+fn print_str_name_name_name_name_name_name(s: Str) {
+    println(s)
+}
+
+fn push_name_name_name_name_name_name_name(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn len_name_name_name_name_name_name_name(v: Vec<Int>) -> Int {
+    len(v)
+}
+
+fn get_name_name_name_name_name_name_name(v: Vec<Int>, i: Int) -> Option<Int> {
+    get(v, i)
+}
+
+fn range_name_name_name_name_name_name_name(a: Int, b: Int) -> Vec<Int> {
+    range(a, b)
+}
+
+fn chars_name_name_name_name_name_name_name(s: Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn int_to_str_name_name_name_name_name_name_name(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn parse_int_name_name_name_name_name_name_name(s: Str) -> Option<Int> {
+    parse_int(s)
+}
+
+fn to_float_name_name_name_name_name_name_name(n: Int) -> Float {
+    to_float(n)
+}
+
+fn trunc_name_name_name_name_name_name_name(x: Float) -> Int {
+    trunc(x)
+}
+
+fn print_str_name_name_name_name_name_name_name(s: Str) {
+    println(s)
+}
+
+fn push_name_name_name_name_name_name_name_name(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn len_name_name_name_name_name_name_name_name(v: Vec<Int>) -> Int {
+    len(v)
+}
+
+fn get_name_name_name_name_name_name_name_name(v: Vec<Int>, i: Int) -> Option<Int> {
+    get(v, i)
+}
+
+fn range_name_name_name_name_name_name_name_name(a: Int, b: Int) -> Vec<Int> {
+    range(a, b)
+}
+
+fn chars_name_name_name_name_name_name_name_name(s: Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn int_to_str_name_name_name_name_name

@@ -1,0 +1,50 @@
+fn main() {
+    let a = 6
+    let b = 11
+    let c = 3
+    let d = 14
+    let e = 9
+    let mut count = 0
+    if a > 5 {
+        count = count + 1
+    }
+    if b > 5 {
+        count = count + 1
+    }
+    if c > 5 {
+        count = count + 1
+    }
+    if d > 5 {
+        count = count + 1
+    }
+    if e > 5 {
+        count = count + 1
+    }
+    if count == 0 {
+        print("None of the values exceed 5\n")
+    }
+    if a > 5 {
+        print("The value of a is greater than 5\n")
+    }
+    if b > 5 {
+        print("The value of b is greater than 5\n")
+    }
+    if c > 5 {
+        print("The value of c is greater than 5\n")
+    }
+    if d > 5 {
+        print("The value of d is greater than 5\n")
+    }
+    if e > 5 {
+        print("The value of e is greater than 5\n")
+    }
+    if a > 5 {
+        print("The highest reading of all is: ", a)
+    } else if b > 5 {
+        print("The highest reading of all is: ", b)
+    } else if c > 5 {
+        print("The highest reading of all is: ", c)
+    } else {
+        print("The highest reading of all is: ", d)
+    }
+}

@@ -1,0 +1,32 @@
+struct List {
+    head: Int,
+    tail: Option<Box<List>>,
+}
+
+fn walk_list(ls: Box<List>) -> Box<List> {
+    let List { head, tail } = ls
+    let new_head = head * 2
+    match tail {
+        Some(mutrest) => {
+            let mutrest = walk_list(rest)
+            rest.head = rest.head + 1
+            Some(Box { rest: Some(rest) })
+        },
+        None => None,
+    }
+    Box(List { head: new_head, tail: tail })
+}
+
+fn sum_list(ls: Box<List>) -> Int {
+    let List { head, tail } = ls
+    match tail {
+        Some(rest) => head + sum_list(rest),
+        None => head,
+    }
+}
+
+fn main() {
+    let ls = Box(List { head: 7, tail: Some(Box(List { head: 4, tail: Some(Box(List { head: 9, tail: Some(Box()) })) })) })
+    let new_ls = walk_list(ls)
+    print(sum_list(new_ls))
+}

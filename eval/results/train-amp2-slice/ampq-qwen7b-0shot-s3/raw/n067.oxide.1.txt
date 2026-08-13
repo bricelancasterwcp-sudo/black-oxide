@@ -1,0 +1,12 @@
+fn main() {
+    let nums = vec(7, 4, 9, 10)
+    let mut total = 0
+    for n in nums {
+        if n % 2 == 1 {
+            print(n * 2)
+        } else {
+            total = total + n
+        }
+    }
+    print(total)
+}

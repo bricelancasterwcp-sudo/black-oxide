@@ -1,0 +1,17 @@
+fn main() {
+    let readings = [6, 11, 3, 14, 9];
+    let mut exceed_five = 0;
+    let mut highest = 0;
+
+    for reading in readings {
+        if reading > 5 {
+            exceed_five += 1;
+        }
+        if reading > highest {
+            highest = reading;
+        }
+    }
+
+    println!("Exceeding five: {}", exceed_five);
+    println!("Highest: {}", highest);
+}

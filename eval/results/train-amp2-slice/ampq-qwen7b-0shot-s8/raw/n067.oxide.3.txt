@@ -1,0 +1,20 @@
+struct List { head: Option<Int>, tail: Option<Box<List>> }
+
+fn walk_list(l: Option<Box<List>>, acc_even: Int) -> Int {
+    match l {
+        Some(node) => {
+            let acc_even = if node.head % 2 == 0 { acc_even + node.head } else { acc_even }  // Check if the number is even
+            if node.head % 2 != 0 {
+                print(node.head * 2)  // Print the odd number doubled
+            }
+            walk_list(node.tail, acc_even)  // Recursively walk the list
+        },
+        None => acc_even,
+    }
+}
+
+fn main() {
+    let l = Some(Box { head: Some(7), tail: Some(Box { head: Some(4), tail: Some(Box { head: Some(9), tail: Some(Box { head: Some(10), tail: None }) }) }) })  // Construct the list 7, 4, 9, 10
+    let total_even = walk_list(l, 0)  // Walk the list and calculate the total
+    print(total_even)  // Print the total of the even entries
+}

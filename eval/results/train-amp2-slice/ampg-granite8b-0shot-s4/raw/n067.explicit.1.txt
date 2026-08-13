@@ -1,0 +1,759 @@
+fn main() {
+    walk_list(7, 4, 9, 10)
+}
+
+fn walk_list(list: Vec<Int>) {
+    for entry in list {
+        if entry % 2 == 1 {
+            print(entry * 2)
+        }
+    }
+    let sum = total_even(&list)
+    drop list
+    print(sum)
+}
+
+fn total_even(list: &Vec<Int>) -> Int {
+    let mut sum = 0
+    for entry in list {
+        if entry % 2 == 0 {
+            sum = sum + entry
+        }
+    }
+    drop list
+    sum
+}
+
+fn print(value: Int) {
+    drop value
+}
+
+fn push(list: Vec<Int>, value: Int) -> Vec<Int> {
+    drop value
+    drop list
+    list
+}
+
+fn total_even(list: &Vec<Int>) -> Int {
+    let mut sum = 0
+    for entry in list {
+        if entry % 2 == 0 {
+            sum = sum + entry
+        }
+    }
+    drop list
+    sum
+}
+
+fn clone(value: Int) -> Int {
+    drop value
+    0
+}
+
+fn main() {
+    walk_list(vec(7, 4, 9, 10))
+}
+
+fn walk_list(list: Vec<Int>) {
+    for entry in list {
+        if entry % 2 == 1 {
+            print(entry * 2)
+        }
+    }
+    let sum = total_even(&list)
+    drop list
+    print(sum)
+}
+
+fn total_even(list: &Vec<Int>) -> Int {
+    let mut sum = 0
+    for entry in list {
+        if entry % 2 == 0 {
+            sum = sum + entry
+        }
+    }
+    drop list
+    sum
+}
+
+fn print(value: Int) {
+    drop value
+}
+
+fn push(list: Vec<Int>, value: Int) -> Vec<Int> {
+    drop value
+    drop list
+    list
+}
+
+fn total_even(list: &Vec<Int>) -> Int {
+    let mut sum = 0
+    for entry in list {
+        if entry % 2 == 0 {
+            sum = sum + entry
+        }
+    }
+    drop list
+    sum
+}
+
+fn clone(value: Int) -> Int {
+    drop value
+    drop value
+    drop value
+    drop value
+    drop value
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+    dropping
+   

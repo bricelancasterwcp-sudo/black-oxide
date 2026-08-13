@@ -1,0 +1,14 @@
+struct Walk { entries: Vec<Int> }
+
+fn main() {
+    let w = Walk { entries: vec(7, 4, 9, 10) }
+    let mut total = 0
+    for e in w.entries {
+        if e % 2 != 0 {
+            print(e * 2)
+        } else {
+            total = total + e
+        }
+    }
+    print(total)
+}

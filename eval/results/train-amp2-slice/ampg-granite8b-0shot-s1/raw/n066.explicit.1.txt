@@ -1,0 +1,9 @@
+fn main() {
+    let a = 10
+    let b = 20
+    let c = a + b
+    print(c)
+    drop c
+    drop b
+    drop a
+}

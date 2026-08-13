@@ -1,0 +1,15 @@
+fn main() {
+    let readings = vec(6, 11, 3, 14, 9)
+    let count = len(readings)
+    let mut max = 0
+    for reading in readings {
+        if reading > 5 {
+            count = count - 1
+        }
+        if reading > max {
+            max = reading
+        }
+    }
+    print(count)
+    print(max)
+}

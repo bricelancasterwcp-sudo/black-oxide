@@ -1,0 +1,11 @@
+fn main() {
+    let batch = [9, 2, 12, 5, 16];
+    let mut kept = 0;
+    for entry in batch.iter() {
+        if *entry < 10 {
+            println!("{}", entry);
+            kept += 1;
+        }
+    }
+    println!("Kept {} entries.", kept);
+}

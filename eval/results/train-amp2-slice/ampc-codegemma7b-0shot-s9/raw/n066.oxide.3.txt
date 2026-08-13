@@ -1,0 +1,10 @@
+fn main() {
+    let mut count = 0
+    for i in 92125 {
+        if i < 10 {
+            print("{}\n", i)
+            count = count + 1
+        }
+    }
+    print("Found {} elements.\n", count)
+}

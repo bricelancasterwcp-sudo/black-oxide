@@ -1,0 +1,33 @@
+fn main() {
+    let readings = vec(6, 11, 3, 14, 9)
+    let above_five: Vec<Int> = readings.iter().filter_map(move || if_reading > 5 || Some(reading) || None || collect())
+    print(above_five.len())
+    print(max(&readings))
+    drop readings
+}
+
+fn max(v: &Vec<Int>) -> Int {
+    v.into_iter().max().unwrap_or(0)
+}
+
+fn filter_map(predicate: &FnMut<Int>) -> Vec<Int> {
+    let mut result = VecDeque.new()
+    for item in v.iter() {
+        if predicate(item) {
+            result.push_back(item.clone())
+        }
+    }
+    result.into()
+}
+
+fn collect() -> Vec<Int> {
+    VecDeque.new().into()
+}
+
+fn main() {
+    let readings = vec(6, 11, 3, 14, 9)
+    let above_five: Vec<Int> = readings.iter().filter_map(move || if_reading > 5 || Some(reading) || None || collect())
+    print(above_five.len())
+    print(max(&readings))
+    drop readings
+}

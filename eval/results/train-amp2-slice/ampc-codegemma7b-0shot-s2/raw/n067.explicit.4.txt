@@ -1,0 +1,14 @@
+fn main() {
+    let mut nums = vec(7, 4, 9, 10)
+    let mut total = 0
+    let mut sum = 0
+    for x in &nums {
+        if x % 2 == 1 {
+            print(x * 2)
+        } else {
+            total = total + x
+        }
+    }
+    print(total)
+    drop nums
+}

@@ -1,0 +1,17 @@
+fn main() {
+    let mut total = 0
+    let mut walk = 7
+    loop
+    if walk == 10 {
+        break0
+    }
+    print(walk)
+    print(" ")
+    print(walk * 2)
+    print("\n")
+    if walk % 2 == 0 {
+        total = total + walk
+    }
+    walk = walk + 3
+    continue0
+}

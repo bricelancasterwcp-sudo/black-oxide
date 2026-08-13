@@ -1,0 +1,45 @@
+fn walk(v: Vec<Int>) -> Int {
+    let mut i = 0
+    let mut sum = 0
+    while i < len(v) {
+        let x = get(v, i)?
+        if x % 2 == 1 {
+            print(x * 2)
+            print("\n")
+        } else {
+            sum = sum + x
+        }
+        i = i + 1
+    }
+    sum
+}
+
+fn main() {
+    let v = push(push(vec(), 7), 4)
+    print(walk(v))
+    print("\n")
+    print(walk(push(v, 9)))
+}
+
+fn walk(v: Vec<Int>) -> Int {
+    let mut i = 0
+    let mut sum = 0
+    while i < len(v) {
+        let x = get(v, i)?
+        if x % 2 == 1 {
+            print(x * 2)
+            print("\n")
+        } else {
+            sum = sum + x
+        }
+        i = i + 1
+    }
+    sum
+}
+
+fn main() {
+    let v = push(push(vec(), 7), 4)
+    print(walk(v))
+    print("\n")
+    print(walk(push(v, 9)))
+}

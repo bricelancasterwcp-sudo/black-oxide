@@ -1,0 +1,383 @@
+fn main() {
+    let mut kept = 0
+    for n in batch(9, 2, 12, 5, 16) {
+        if n < 10 {
+            print_str(format("\n{}", n))
+            kept = kept + 1
+        }
+    }
+    print_str(format("\n{}", kept))
+}
+
+fn batch(a: Int, b: Int, c: Int, d: Int, e: Int) -> Vec<Int> {
+    vec(a, b, c, d, e)
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn format(format_str: Str, args: Int) -> Str {
+    format(format_str, args)
+}
+
+fn print(x: Any) {
+    println(x)
+}
+
+fn any(x: Any) -> Any {
+    x
+}
+
+fn int(x: Int) -> Int {
+    x
+}
+
+fn any_to_int(x: Any) -> Int {
+    x
+}
+
+struct Any {
+    _0: Int,
+}
+
+struct Int {
+    _0: Int,
+}
+
+enum Any {
+    Int(Int),
+}
+
+fn to_int(x: Any) -> Int {
+    match x {
+        Any(a) => a,
+    }
+}
+
+fn any(x: Any) -> Any {
+    x
+}
+
+fn any_to_int(x: Any) -> Int {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn int_to_any(x: Int) -> Any {
+    Any(x)
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x
+}
+
+fn any_to_any(x: Any) -> Any {
+    x

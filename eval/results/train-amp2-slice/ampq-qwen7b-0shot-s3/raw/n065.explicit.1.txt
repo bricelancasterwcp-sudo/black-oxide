@@ -1,0 +1,30 @@
+fn count_exceeding_five(readings: Vec<Int>) -> Int {
+    let mut count = 0
+    for reading in &readings {
+        if reading > 5 {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn find_highest_reading(readings: Vec<Int>) -> Int {
+    let mut highest = readings.get(0).unwrap()
+    for reading in &readings {
+        if reading > highest {
+            highest = reading
+        }
+    }
+    highest
+}
+
+fn main() {
+    let readings = vec(6, 11, 3, 14, 9)
+    let count = count_exceeding_five(&readings)
+    let highest = find_highest_reading(&readings)
+    print(count)
+    drop readings
+    print(highest)
+    drop count
+    drop highest
+}

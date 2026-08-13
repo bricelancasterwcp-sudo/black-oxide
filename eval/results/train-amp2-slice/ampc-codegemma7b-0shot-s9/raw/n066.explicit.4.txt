@@ -1,0 +1,15 @@
+fn main() {
+    let batch = vec(9, 2, 12, 5, 16)
+    let mut kept = 0
+    for x in &batch {
+        if x < &mut && 10 {
+            kept = kept + 1
+        }
+    }
+    for y in &batch {
+        if y < &mut && 10 {
+            println(y)
+        }
+    }
+    print(kept)
+}

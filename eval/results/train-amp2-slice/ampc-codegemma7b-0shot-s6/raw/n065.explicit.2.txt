@@ -1,0 +1,7 @@
+fn main() {
+    let readings = vec(6, 11, 3, 14, 9)
+    let count = readings.iter().filter(x || &x > &mut && 5).count()
+    let highest = readings.iter().fold(0, stdcmp.max)
+    print(count)
+    print(highest)
+}

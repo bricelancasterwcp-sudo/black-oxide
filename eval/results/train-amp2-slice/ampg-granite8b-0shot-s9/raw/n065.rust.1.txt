@@ -1,0 +1,20 @@
+```rust
+fn main() {
+    let readings = vec![6, 11, 3, 14, 9];
+    let mut exceed_count = 0;
+    let mut highest_reading = readings[0];
+
+    for reading in readings.iter() {
+        if *reading > 5 {
+            exceed_count += 1;
+        }
+
+        if *reading > highest_reading {
+            highest_reading = *reading;
+        }
+    }
+
+    println!("Number of readings exceeding 5: {}", exceed_count);
+    println!("Highest reading: {}", highest_reading);
+}
+```

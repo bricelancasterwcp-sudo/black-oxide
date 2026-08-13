@@ -1,0 +1,16 @@
+fn keep_ten(nums: Vec<Int>) -> Vec<Int> {
+    nums.into_iter()
+    filter || num || num < 10
+    collect()
+}
+
+fn main() {
+    let nums = vec(9, 2, 12, 5, 16, 24, 18, 6, 11, 22, 13, 4, 7, 17, 10, 14, 1, 3, 8, 21, 15, 20, 23, 19, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50)
+    let result = keep_ten(nums)
+    for num in result {
+        print(num)
+        print(" ")
+    }
+    print("\n")
+    print(result.len())
+}

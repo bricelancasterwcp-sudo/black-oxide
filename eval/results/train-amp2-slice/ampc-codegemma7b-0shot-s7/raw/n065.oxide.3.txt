@@ -1,0 +1,8 @@
+fn main() {
+    let readings = vec(6, 11, 3, 14, 9)
+    let over_five = readings.iter().filter(x || x > 5).count()
+    let highest = readings.iter().max().unwrap()
+    print(over_five)
+    print_str("\n")
+    print(highest)
+}

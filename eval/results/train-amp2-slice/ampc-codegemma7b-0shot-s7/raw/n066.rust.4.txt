@@ -1,0 +1,16 @@
+fn main() {
+    let input = [9, 2, 12, 5, 16];
+    let mut output = Vec::new();
+
+    for num in input {
+        if num < 10 {
+            output.push(num);
+        }
+    }
+
+    for num in &output {
+        println!("{}", num);
+    }
+
+    println!("{} number(s) kept", output.len());
+}

@@ -1,0 +1,354 @@
+fn main() {
+    let mut list = vec(7, 4, 9, 10)
+    let mut total = 0
+    while letVariant(x, list) {
+        if x % 2 != 0 {
+            print(2 * x)
+        } else {
+            total = total + x
+        }
+    }
+    print(total)
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    letVariant(x, list)
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    true
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    false
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    true
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    false
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    true
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    false
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    true
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    false
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    true
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    false
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    true
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    false
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    true
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    false
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    true
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    false
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    true
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    false
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    true
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    false
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    true
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    false
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    true
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    false
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    true
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    false
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    true
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    false
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    true
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    false
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    true
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    false
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    true
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    false
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    true
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    false
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    true
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    false
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    true
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    false
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    true
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    false
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    true
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    false
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    true
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    false
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    true
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    false
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    true
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    false
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    true
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    false
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    true
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    false
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    true
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    false
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    true
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    false
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    true
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    false
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    true
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    false
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    true
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    false
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    true
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    false
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    true
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    false
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    true
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    false
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    true
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    false
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    true
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    false
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    true
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    false
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    true
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    false
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    true
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    false
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    true
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    false
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    true
+}
+
+fn letVariant(x: Int, list: Vec<Int>) -> Bool {
+    false
+}
+
+fn letVariant(x: Int, list: Vec

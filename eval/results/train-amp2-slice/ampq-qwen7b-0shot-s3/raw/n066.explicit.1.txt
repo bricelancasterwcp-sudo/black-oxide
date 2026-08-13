@@ -1,0 +1,16 @@
+fn filter_and_count(numbers: Vec<Int>) -> Int {
+    let mut count = 0
+    for num in numbers {
+        if num < 10 {
+            print(num)
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn main() {
+    let numbers = push(push(vec(), 9), push(push(vec(), 2), push(push(vec(), 12), push(push(vec(), 5), 16))))
+    let kept_count = filter_and_count(numbers)
+    print(kept_count)
+}

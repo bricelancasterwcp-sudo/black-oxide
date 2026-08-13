@@ -1,0 +1,281 @@
+fn main() {
+    let mut list = vec(9, 2, 12, 5, 16)
+    let mut total = 0
+    while !list.is_empty() {
+        if list.pop().unwrap() < 10 {
+            print_str(format("{} ", list.pop().unwrap()))
+            total = total + 1
+        }
+    }
+    print_str(format("You kept {} entries", total))
+}
+
+fn format(s: Str) -> Str {
+    s
+}
+
+fn format_str(s: Str, v: Str) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Int) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Float) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Vec<Int>) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Option<Int>) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Result<Int, Str>) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Reading) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Unit) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Str) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Vec<Str>) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Result<Str, Str>) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Option<Str>) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Circle) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Square) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Triangle) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Hexagon) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Heptagon) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Octagon) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Dodecagon) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Icosahedron) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Icosahedron) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Sphere) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Cylinder) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Cone) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Prism) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Pyramid) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Parallelepiped) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Octant) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Dodecagon) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Icosahedron) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Icosahedron) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Sphere) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Cylinder) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Cone) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Prism) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Pyramid) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Parallelepiped) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Octant) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Dodecagon) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Icosahedron) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Icosahedron) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Sphere) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Cylinder) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Cone) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Prism) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Pyramid) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Parallelepiped) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Octant) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Dodecagon) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Icosahedron) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Icosahedron) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Sphere) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Cylinder) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Cone) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Prism) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Pyramid) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Parallelepiped) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Octant) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Dodecagon) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Icosahedron) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Icosahedron) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Sphere) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Cylinder) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Cone) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Prism) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Pyramid) -> Str {
+    format("{} {}", s, v)
+}
+
+fn format_str(s: Str, v: Parallelepiped)

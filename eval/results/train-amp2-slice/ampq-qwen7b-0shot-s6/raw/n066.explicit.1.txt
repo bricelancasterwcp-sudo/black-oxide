@@ -1,0 +1,623 @@
+fn main() {
+    let entries = vec(9, 2, 12, 5, 16)
+    let kept: Vec<Int> = entries.into_iter().filter_map || entry || ifentry < 10 || Some(entry) || None || collect()
+    for entry in &kept {
+        print(entry)
+        print_str("\n")
+    }
+    print_str(&format_str_intkept_len || kept.len() || "\n")
+}
+
+fn format_str_int(s: Str, n: Int) -> Str {
+    concat(s, &to_str_intn)
+}
+
+fn to_str_int(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {
+    vec()
+}
+
+fn collect() -> Vec<Int> {
+    vec()
+}
+
+fn filter_map() -> Vec<Int> {

@@ -1,0 +1,25 @@
+fn readings_above_five(readings: &Vec<Int>) -> Int {
+    let mut count = 0
+    for reading in readings {
+        if reading > &five {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn highest_reading(readings: &Vec<Int>) -> Int {
+    let mut highest = 0
+    for reading in readings {
+        if reading > &highest {
+            highest = reading.clone()
+        }
+    }
+    highest
+}
+
+fn main() {
+    let readings = vec(6, 11, 3, 14, 9)
+    print(readings_above_five(&readings))
+    print(highest_reading(&readings))
+}

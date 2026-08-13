@@ -1,0 +1,13 @@
+fn main() {
+    let batch = vec(9, 2, 12, 5, 16)
+    for num in &batch {
+        if num < 10 {
+            print(num)
+            print_str("\n")
+        }
+    }
+    print("Kept: ")
+    print(batch.len())
+    print_str("\n")
+    drop batch
+}

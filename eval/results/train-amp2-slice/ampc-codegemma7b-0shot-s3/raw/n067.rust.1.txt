@@ -1,0 +1,13 @@
+fn main() {
+    let mut total = 0;
+    let mut walk = vec![7, 4, 9, 10];
+
+    for entry in walk.iter() {
+        if *entry % 2 != 0 {
+            println!("{}", entry * 2);
+        } else {
+            total += entry;
+        }
+    }
+    println!("{}", total);
+}

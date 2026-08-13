@@ -1,0 +1,16 @@
+fn main() {
+    let readings = vec(6, 11, 3, 14, 9)
+    let mut sum = 0
+    let mut max = 0
+    for reading in &readings {
+        if reading > 5 {
+            sum = sum + reading
+        }
+        if reading > max {
+            max = reading
+        }
+    }
+    print(sum)
+    drop readings
+    print(max)
+}

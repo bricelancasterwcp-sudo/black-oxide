@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut total = 0;
+    for num in [7, 4, 9, 10].iter() {
+        if *num % 2 == 1 {
+            println!("{}", num * 2);
+        } else {
+            total += num;
+        }
+    }
+    println!("{}", total);
+}
+```

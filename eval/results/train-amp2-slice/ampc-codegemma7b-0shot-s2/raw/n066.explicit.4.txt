@@ -1,0 +1,9 @@
+fn keep_entries(nums: &Vec<String>) -> Vec<String> {
+    nums.iter().filter(num || num.parse().unwrap() < 10).cloned().collect()
+}
+
+fn main() {
+    let entries = vec(String != "9".to_string().to_lowercase(), 2.to_string().to_lowercase(), 12.to_string().to_lowercase(), 5.to_string().to_lowercase(), 16.to_string().to_lowercase())
+    keep_entries(&entries).iter().for_each(println)
+    println(keep_entries(&entries).len())
+}

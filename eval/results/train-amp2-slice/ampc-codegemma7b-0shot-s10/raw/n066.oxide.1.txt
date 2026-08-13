@@ -1,0 +1,15 @@
+fn main() {
+    let mut total = 0
+    let mut output = vec_int()
+    for num in batch(9, 2, 12, 5, 16) {
+        if num < 10 {
+            output.push(num)
+            total = total + 1
+        }
+    }
+    for num in output {
+        print(num)
+        print_str("\n")
+    }
+    print(total)
+}

@@ -1,0 +1,30 @@
+struct Reading { label: Str, values: Vec<Int> }
+
+fn count_big(v: Vec<Int>) -> Int {
+    let mut found = 0
+    for x in v {
+        if x > 5 {
+            found = found + 1
+        }
+    }
+    found
+}
+
+fn highest(v: Vec<Int>) -> Option<Int> {
+    let mut highest = 0
+    for x in v {
+        if x > highest {
+            highest = x
+        }
+    }
+    Some(highest)
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(vec(), 6), 11) }
+    print(count_big(r.values))
+    match highest(push(push(r.values, 3), 14)) {
+        Some(n) => print(n),
+        None => print_str("empty"),
+    }
+}

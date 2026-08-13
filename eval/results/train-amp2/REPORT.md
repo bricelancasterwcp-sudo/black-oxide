@@ -47,11 +47,11 @@ cell needed both amendments (rust arm + per-class) to be visible.
 Per the amended pre-registration, an out-of-band cell is **a
 re-authoring trigger for that class, not a result to report** — the
 protocol does not distinguish drifted-easy from drifted-hard, and this
-report does not relitigate that. The decision on how to respond
-(re-balance vector tasks' rust difficulty and re-run the affected
-slice, or record a ruling that accepts the corpus with this cell
-documented) is queued for the project owner. Until then, the corpus is
-NOT cleared for training-data use by its own gate.
+report does not relitigate that. **Resolved same day: the owner ruled re-balance-and-rerun.** See
+[`../train-amp2-slice/REPORT.md`](../train-amp2-slice/REPORT.md) — the
+merged band is PASS 30/30 (granite/rust/vectors 0.430 against reference
+0.425), both yield endpoints improved, and the corpus is now cleared
+for training-data use by its own gate.
 
 ## Operations record
 

@@ -1,0 +1,22 @@
+fn count_and_max(readings: &Vec<Int>) -> Vec<Int> {
+    let mut count = 0
+    let mut max = 0
+    for reading in readings {
+        if reading > 5 {
+            count = count + 1
+        }
+        if reading > max {
+            max = reading
+        }
+    }
+    vec(count, max)
+}
+
+fn main() {
+    let readings = vec(6, 11, 3, 14, 9)
+    let result = count_and_max(&readings)
+    print(result.get(0))
+    print_str("\n")
+    print(result.get(1))
+    drop result
+}

@@ -1,0 +1,45 @@
+fn readings(r: &Vec<Int>) -> Int {
+    let mut count = 0
+    let mut highest = 0
+    for x in r {
+        if x > &five {
+            count = count + 1
+        }
+        if x > &highest {
+            highest = x
+        }
+    }
+    return count
+}
+
+fn main() {
+    let readings = vec(6, 11, 3, 14, 9)
+    print(readings(&readings))
+    print(highest(&readings))
+}
+
+fn highest(r: &Vec<Int>) -> Int {
+    let mut highest = 0
+    for x in r {
+        if x > &highest {
+            highest = x
+        }
+    }
+    return highest
+}
+
+fn main() {
+    let readings = vec(6, 11, 3, 14, 9)
+    print(readings(&readings))
+    print(highest(&readings))
+}
+
+fn five(n: Int) -> Int {
+    return n + 1
+}
+
+fn main() {
+    let readings = vec(6, 11, 3, 14, 9)
+    print(readings(&readings))
+    print(highest(&readings))
+}

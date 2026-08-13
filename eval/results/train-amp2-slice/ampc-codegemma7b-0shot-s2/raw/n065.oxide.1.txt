@@ -1,0 +1,19 @@
+fn readings(v: Vec<Int>) -> Int {
+    let mut counter = 0
+    let mut max = -1
+    for x in v {
+        if x > 5 {
+            counter = counter + 1
+        }
+        if x > max {
+            max = x
+        }
+    }
+    counter
+}
+
+fn main() {
+    let readings_list = vec(6, 11, 3, 14, 9)
+    print(readings(readings_list))
+    print(readings(vec(4, 1, 18)))
+}

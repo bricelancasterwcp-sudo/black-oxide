@@ -211,10 +211,44 @@ rates, dominated by the smaller `v03c` side. A ±10pp band therefore sits
 just outside the noise it has to survive, which is what a drift detector
 wants; it is deliberately not a significance test.
 
-A family landing outside its band means the corpus drifted in difficulty
+**Amended 2026-08-12 (pilot REPORT recommendation 3, non-silently).**
+The band above was originally the whole check, and the pilot exposed two
+blind spots it could not see: codegemma's **rust** first-pass moved
+−10.5pp — larger than its oxide move — with no band watching it, and
+the vector and string classes drifted more than 20pp inside a passing
+whole-corpus number, because opposite per-class drifts average out. The
+band is therefore now **two arms × two granularities**, implemented as
+`eval/difficulty_band.py` (CLI `python -m eval.difficulty_band`) rather
+than as report-time analysis:
+
+- **Rust arm, whole-corpus, ±10pp** — same derivation as the oxide band:
+
+  | family | `v03c` rust first-pass | acceptance band |
+  |---|---|---|
+  | qwen | 56.5% | 46.5 – 66.5 |
+  | codegemma | 45.0% | 35.0 – 55.0 |
+  | granite | 42.0% | 32.0 – 52.0 |
+
+- **Per-class, both arms, ±20pp** against `v03c`'s per-class rates (the
+  `class` field on task records, added 2026-08-12, is the mapping). The
+  width is derived, not chosen: the worst-precision class is strings —
+  4 eval tasks × 10 seeds = 40 attempts on the `v03c` side against ~100
+  on a pilot side — where 2 SE of the difference is ≈ 17pp, so ±20pp
+  sits just outside the noise it must survive, the same rule as ±10pp
+  whole-corpus. Verified against the committed pilot: the ±20pp band
+  flags exactly the drifts the REPORT found by hand (qwen vectors
+  +22.0pp, qwen strings +21.5pp, codegemma strings +24.0pp, codegemma
+  rust overall −10.5pp) while passing every within-noise class
+  (codegemma vectors +12.0pp, granite strings +14.0pp) and every
+  arithmetic class (all within 3.6pp). Those facts are permanent
+  regression tests in `tests/test_difficulty_band.py`.
+
+A family landing outside any band means the corpus drifted in difficulty
 and the authoring prompt needs constraining — a re-authoring trigger,
-not a result to report. granite's band is asymmetric because its rate
-sits near the floor; that is stated rather than hidden.
+not a result to report. granite's oxide band is asymmetric because its
+rate sits near the floor; that is stated rather than hidden. A missing
+(family, arm) or missing class in the candidate raises instead of
+passing: an unmeasured band is not a passed band.
 
 ## The pilot gate
 
@@ -226,7 +260,7 @@ before any data exists:
 | frontier reference-pair yield | **≥ 90%** (36/40) both references passing the gate | the authoring prompt is producing tasks the language cannot express; constrain it |
 | amplification yield | **mean ≥ 4.0** unique verified oxide solutions per task at K = 30 (3 families × 10 seeds, 0-shot, constrained) | raise K rather than lower the program target; report the K actually needed |
 | zero-yield tasks | **≤ 30%** of tasks producing no verified oxide solution | the new tasks are harder than t01–t20 for the local models; re-author before scaling |
-| difficulty band | all three families inside the bands above | re-author; do not proceed |
+| difficulty band | all three families inside the bands above — both arms, whole-corpus AND per-class (amended 2026-08-12, rec 3; `eval/difficulty_band.py` is the instrument) | re-author; do not proceed |
 
 The yield thresholds are set below observed values on the eval corpus
 (mean 5.7, zeros 20%) so that a pass means "comparable to t01–t20",

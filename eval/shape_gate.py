@@ -113,7 +113,7 @@ class GateResult:
     verdicts: tuple[MetricVerdict, ...]
 
 
-def _verdict(metric: str, measured: float, reference: float,
+def banded_verdict(metric: str, measured: float, reference: float,
              half_width: float) -> MetricVerdict:
     lo, hi = reference - half_width, reference + half_width
     return MetricVerdict(metric=metric, measured=measured,
@@ -124,16 +124,16 @@ def _verdict(metric: str, measured: float, reference: float,
 def gate(candidate: Shape, reference: Shape,
          bands: Bands = DEFAULT_BANDS) -> GateResult:
     verdicts = [
-        _verdict("multi_line_share", candidate.multi_line_share,
+        banded_verdict("multi_line_share", candidate.multi_line_share,
                  reference.multi_line_share, bands.multi_line_share_pp),
-        _verdict("mean_output_lines", candidate.mean_output_lines,
+        banded_verdict("mean_output_lines", candidate.mean_output_lines,
                  reference.mean_output_lines, bands.mean_output_lines),
-        _verdict("prompt_chars_mean", candidate.prompt_chars_mean,
+        banded_verdict("prompt_chars_mean", candidate.prompt_chars_mean,
                  reference.prompt_chars_mean,
                  reference.prompt_chars_mean * bands.prompt_chars_rel),
     ]
     for cls in sorted(reference.class_shares):
-        verdicts.append(_verdict(
+        verdicts.append(banded_verdict(
             f"class_share:{cls}",
             candidate.class_shares.get(cls, 0.0),
             reference.class_shares[cls],

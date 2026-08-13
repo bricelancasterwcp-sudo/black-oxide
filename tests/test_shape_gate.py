@@ -28,6 +28,7 @@ from eval.shape_gate import (
 REPO = Path(__file__).resolve().parent.parent
 EVAL_TASKS = REPO / "eval" / "tasks.jsonl"
 TRAIN_TASKS = REPO / "eval" / "train" / "tasks.jsonl"
+PILOT_TASKS = REPO / "eval" / "results" / "train-pilot-amp" / "tasks-pilot.jsonl"
 
 
 def task(stdout: str, prompt: str = "p" * 100, cls: str = "vectors") -> dict:
@@ -125,11 +126,13 @@ def test_eval_corpus_passes_against_itself():
     assert gate(shape, shape, bands=DEFAULT_BANDS).passed
 
 
-def test_pilot_train_corpus_fails_the_gate():
-    # The REPORT's finding, as a permanent regression test: the 40-task
-    # pilot corpus is structurally drifted (multi-line share 5% vs 65%)
-    # and the gate must refuse it.
-    result = gate(corpus_shape(load_tasks(TRAIN_TASKS)),
+def test_pilot_corpus_fails_the_gate():
+    # The REPORT's finding, as a permanent regression test: the original
+    # 40-task pilot corpus is structurally drifted (multi-line share 5%
+    # vs 65%) and the gate must refuse it. The pilot corpus is FROZEN in
+    # its results directory as provenance — the live train corpus was
+    # re-authored past this exact failure and is tested separately below.
+    result = gate(corpus_shape(load_tasks(PILOT_TASKS)),
                   corpus_shape(load_tasks(EVAL_TASKS)),
                   bands=DEFAULT_BANDS)
     assert not result.passed
@@ -137,10 +140,20 @@ def test_pilot_train_corpus_fails_the_gate():
     assert "multi_line_share" in failing
 
 
+def test_current_train_corpus_passes_the_gate():
+    # The re-authored corpus (2026-08-12, REPORT recommendation 2) must
+    # stay inside every band. If an authoring change drifts it again,
+    # this fails BEFORE any GPU is spent — which is the gate's entire job.
+    result = gate(corpus_shape(load_tasks(TRAIN_TASKS)),
+                  corpus_shape(load_tasks(EVAL_TASKS)),
+                  bands=DEFAULT_BANDS)
+    assert result.passed, [v for v in result.verdicts if not v.passed]
+
+
 # --- CLI --------------------------------------------------------------------
 
 def test_cli_exit_codes(capsys):
     assert main([str(EVAL_TASKS), "--reference", str(EVAL_TASKS)]) == 0
-    assert main([str(TRAIN_TASKS), "--reference", str(EVAL_TASKS)]) == 1
+    assert main([str(PILOT_TASKS), "--reference", str(EVAL_TASKS)]) == 1
     out = capsys.readouterr().out
     assert "multi_line_share" in out

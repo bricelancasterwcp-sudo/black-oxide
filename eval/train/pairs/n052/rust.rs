@@ -1,0 +1,7 @@
+fn main() {
+    for (i, c) in "banana".chars().enumerate() {
+        if c == 'n' {
+            println!("{}", i);
+        }
+    }
+}

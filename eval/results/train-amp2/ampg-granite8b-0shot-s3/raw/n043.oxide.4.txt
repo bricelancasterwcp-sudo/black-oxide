@@ -1,0 +1,14 @@
+struct Queue { front: Vec<Int>, back: Vec<Int> }
+
+fn main() {
+    let q = Queue { front: vec(), back: push(push(push(push(vec(), 5), 4), 3), 2) }
+    match q.back {
+        Vec(a, b) => {
+            let q2 = Queue { front: push(q.front, b), back: a }
+            for x in q2.back {
+                print(x)
+            }
+        },
+        _ => panic("queue has no back"),
+    }
+}

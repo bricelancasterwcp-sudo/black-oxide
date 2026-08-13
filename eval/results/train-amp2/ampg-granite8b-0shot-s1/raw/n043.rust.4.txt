@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut queue: Vec<i32> = vec![1, 2, 3, 4, 5];
+    queue.swap(0, queue.len() - 1);
+    for entry in queue {
+        println!("{}", entry);
+    }
+}
+```
+
+This program correctly implements a queue and exchanges the first and last entries. It then prints the queue one entry per line. The program uses Rust's vector type to represent the queue, and the `swap` method to exchange the first and last elements of the vector. The `for` loop is used to iterate over the elements of the vector and print them one by one.

@@ -1,0 +1,11 @@
+fn main() {
+    let signal = "green"
+    print_str(signal)
+    drop signal
+    let signal = "red"
+    print_str(signal)
+    drop signal
+    let signal = "yellow"
+    print_str(signal)
+    drop signal
+}

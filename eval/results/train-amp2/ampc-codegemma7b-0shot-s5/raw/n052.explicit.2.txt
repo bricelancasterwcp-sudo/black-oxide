@@ -1,0 +1,338 @@
+fn print_n(s: &Str) {
+    for i in 0.upto(s.len()) {
+        if s.chars().nth(i) == Some(&b) {
+            print_int(i)
+            newline()
+        }
+    }
+}
+
+fn main() {
+    let banana = str("banana")
+    print_n(&banana)
+    drop banana
+}
+
+fn print_int(i: Int) {
+    if i < 10 {
+        print(char(i + 48))
+    } else {
+        print(char(i / 10 + 48))
+        print(char(i % 10 + 48))
+    }
+}
+
+fn newline() {
+    print(char(10))
+}
+
+fn str(s: &Str) -> Str {
+    clone(s)
+}
+
+fn clone(x: &T) -> T {
+    let y = x
+    drop y
+    y
+}
+
+fn char(c: Int) -> Str {
+    let y = c
+    drop y
+    y
+}
+
+fn print(s: Str) {
+    let y = s
+    drop y
+}
+
+fn upto(n: Int, m: Int) -> Vec<Int> {
+    let mut v = vec()
+    for i in 0.upto(m) {
+        if i < n {
+            continue
+        }
+        push(v, i)
+    }
+    v
+}
+
+fn len(s: &Str) -> Int {
+    let y = s
+    drop y
+    y
+}
+
+fn nth(s: &Vec<T>, i: Int) -> Option<T> {
+    if i < 0 || i >= len(s) {
+        None
+    } else {
+        Some(&s)
+    }
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    let mut y = v
+    y.push(x)
+    drop y
+    y
+}
+
+fn vec() -> Vec<T> {
+    let mut y = vec()
+    drop y
+    y
+}
+
+fn drop_all(v: Vec<T>) {
+    let y = v
+    drop y
+}
+
+fn drop_ref(v: &T) {
+    let y = v
+    drop y
+}
+
+fn drop_field(v: &T) {
+    let y = v
+    drop y
+}
+
+fn drop_destruct(v: &T) {
+    let y = v
+    drop y
+}
+
+fn drop_match(v: &T) {
+    let y = v
+    drop y
+}
+
+fn drop_match_alt(v: &T) {
+    let y = v
+    drop y
+}
+
+fn drop_return(v: &T) {
+    let y = v
+    drop y
+}
+
+fn drop_continue(v: &T) {
+    let y = v
+    drop y
+}
+
+fn drop_break(v: &T) {
+    let y = v
+    drop y
+}
+
+fn drop_if(v: &T) {
+    let y = v
+    drop y
+}
+
+fn drop_if_else(v: &T) {
+    let y = v
+    drop y
+}
+
+fn drop_while(v: &T) {
+    let y = v
+    drop y
+}
+
+fn drop_while_let(v: &T) {
+    let y = v
+    drop y
+}
+
+fn drop_match_arms(v: &T) {
+    let y = v
+    drop y
+}
+
+fn drop_match_arms_alt(v: &T) {
+    let y = v
+    drop y
+}
+
+fn drop_match_arms_field(v: &T) {
+    let y = v
+    drop y
+}
+
+fn drop_match_arms_destruct(v: &T) {
+    let y = v
+    drop y
+}
+
+fn drop_match_arms_match(v: &T) {
+    let y = v
+    drop y
+}
+
+fn drop_match_arms_match_alt(v: &T) {
+    let y = v
+    drop y
+}
+
+fn drop_match_arms_if(v: &T) {
+    let y = v
+    drop y
+}
+
+fn drop_match_arms_if_else(v: &T) {
+    let y = v
+    drop y
+}
+
+fn drop_match_arms_while(v: &T) {
+    let y = v
+    drop y
+}
+
+fn drop_match_arms_while_let(v: &T) {
+    let y = v
+    drop y
+}
+
+fn drop_match_arms_for(v: &T) {
+    let y = v
+    drop y
+}
+
+fn drop_match_arms_for_loop(v: &T) {
+    let y = v
+    drop y
+}
+
+fn drop_match_arms_loop(v: &T) {
+    let y = v
+    drop y
+}
+
+fn drop_match_arms_loop_let(v: &T) {
+    let y = v
+    drop y
+}
+
+fn drop_match_arms_for_each(v: &T) {
+    let y = v
+    drop y
+}
+
+fn drop_match_arms_for_each_loop(v: &T) {
+    let y = v
+    drop y
+}
+
+fn drop_match_arms_loop_each(v: &T) {
+    let y = v
+    drop y
+}
+
+fn drop_match_arms_loop_each_let(v: &T) {
+    let y = v
+    drop y
+}
+
+fn drop_match_arms_match_expr(v: &T) {
+    let y = v
+    drop y
+}
+
+fn drop_match_arms_match_expr_let(v: &T) {
+    let y = v
+    drop y
+}
+
+fn drop_match_arms_match_expr_loop(v: &T) {
+    let y = v
+    drop y
+}
+
+fn drop_match_arms_match_expr_loop_let(v: &T) {
+    let y = v
+    drop y
+}
+
+fn drop_match_arms_match_expr_for(v: &T) {
+    let y = v
+    drop y
+}
+
+fn drop_match_arms_match_expr_for_loop(v: &T) {
+    let y = v
+    drop y
+}
+
+fn drop_match_arms_match_expr_loop_let(v: &T) {
+    let y = v
+    drop y
+}
+
+fn drop_match_arms_match_expr_for_each(v: &T) {
+    let y = v
+    drop y
+}
+
+fn drop_match_arms_match_expr_for_each_loop(v: &T) {
+    let y = v
+    drop y
+}
+
+fn drop_match_arms_match_expr_loop_each(v: &T) {
+    let y = v
+    drop y
+}
+
+fn drop_match_arms_match_expr_loop_each_let(v: &T) {
+    let y = v
+    drop y
+}
+
+fn drop_match_arms_match_expr_match(v: &T) {
+    let y = v
+    drop y
+}
+
+fn drop_match_arms_match_expr_match_let(v: &T) {
+    let y = v
+    drop y
+}
+
+fn drop_match_arms_match_expr_match_loop(v: &T) {
+    let y = v
+    drop y
+}
+
+fn drop_match_arms_match_expr_match_loop_let(v: &T) {
+    let y = v
+    drop y
+}
+
+fn drop_match_arms_match_expr_match_for(v: &T) {
+    let y = v
+    drop y
+}
+
+fn drop_match_arms_match_expr_match_for_loop(v: &T) {
+    let y = v
+    drop y
+}
+
+fn drop_match_arms_match_expr_match_for_let(v: &T) {
+    let y = v
+    drop y
+}
+
+fn drop_match_arms_match_expr_match_for_each(v: &T) {
+    let y = v
+    drop y
+}
+
+fn drop

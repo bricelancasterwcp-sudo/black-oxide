@@ -1,0 +1,232 @@
+fn main() {
+    let result = range(1, 7).fold(1, mul)
+    print(result)
+}
+
+fn mul(acc: Int, item: Int) -> Int {
+    acc * item
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in a.to_int_lossy() + 1.to_int_lossy() - 1.to_int_lossy() {
+        if i.to_int_lossy() < b.to_int_lossy() {
+            result = push(result, i)
+        }
+    }
+    result
+}
+
+fn to_int_lossy(n: Int) -> Int {
+    trunc(n)
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    for c in chars(s) {
+        print(c)
+    }
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = vec()
+    let mut index = 0.to_int_lossy()
+    while index.to_int_lossy() < str_len(s).to_int_lossy() {
+        result = push(result, substr(s, index, index + 1))
+        index = index + 1.to_int_lossy()
+    }
+    result
+}
+
+fn substr(s: Str, start: Int, end: Int) -> Str {
+    let mut result = ""
+    let mut index = start.to_int_lossy()
+    while index.to_int_lossy() < end.to_int_lossy() {
+        result = concat(result, char_at(s, index))
+        index = index + 1.to_int_lossy()
+    }
+    result
+}
+
+fn char_at(s: Str, i: Int) -> Str {
+    if i.to_int_lossy() >= str_len(s).to_int_lossy() {
+        return ""
+    }
+    let mut result = ""
+    result = concat(result, s.chars().nth(i.to_int_lossy()).unwrap())
+    result
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut result = ""
+    let mut number = n.to_int_lossy()
+    if number.to_int_lossy() < 0.to_int_lossy() {
+        result = concat(result, "-")
+        number = number.abs()
+    }
+    if number.to_int_lossy() == 0.to_int_lossy() {
+        result = concat(result, "0")
+    } else {
+        while number.to_int_lossy() > 0.to_int_lossy() {
+            let digit = number % 10.to_int_lossy()
+            result = concat(result, int_to_str(digit))
+            number = number / 10.to_int_lossy()
+        }
+    }
+    result
+}
+
+fn abs(n: Int) -> Int {
+    if n.to_int_lossy() < 0.to_int_lossy() {
+        return -n
+    }
+    n
+}
+
+fn rem(n: Int, m: Int) -> Int {
+    n - m * (trunc(n / m))
+}
+
+fn trunc(x: Float) -> Int {
+    let x2 = x.to_int_lossy()
+    if x - x2 >= 0.5 {
+        x2 + 1.to_int_lossy()
+    } else {
+        x2
+    }
+}
+
+fn to_int_lossy(n: Float) -> Int {
+    trunc(n)
+}
+
+fn len(v: Vec<Int>) -> Int {
+    let mut result = 0.to_int_lossy()
+    for _ in v {
+        result = result + 1.to_int_lossy()
+    }
+    result
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    if i.to_int_lossy() >= len(v).to_int_lossy() {
+        return None
+    }
+    Some(v.chars().nth(i.to_int_lossy()).unwrap())
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut result = vec()
+    for item in v {
+        result = push(result, item)
+    }
+    result = push(result, x)
+    result
+}
+
+fn fold(v: Vec<Int>, init: Int, f: FnMut) -> Int {
+    let mut result = init
+    for item in v {
+        result = f(result, item)
+    }
+    result
+}
+
+fn print_str(s: Str) {
+    for c in chars(s) {
+        print(c)
+    }
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn main() {
+    let result = range(1, 7).fold(1, mul)
+    print(result)
+}
+
+fn mul(acc: Int, item: Int) -> Int {
+    acc * item
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in a.to_int_lossy() + 1.to_int_lossy() - 1.to_int_lossy() {
+        if i.to_int_lossy() < b.to_int_lossy() {
+            result = push(result, i)
+        }
+    }
+    result
+}
+
+fn to_int_lossy(n: Int) -> Int {
+    trunc(n)
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    for c in chars(s) {
+        print(c)
+    }
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = vec()
+    let mut index = 0.to_int_lossy()
+    while index.to_int_lossy() < str_len(s).to_int_lossy() {
+        result = push(result, substr(s, index, index + 1))
+        index = index + 1.to_int_lossy()
+    }
+    result
+}
+
+fn substr(s: Str, start: Int, end: Int) -> Str {
+    let mut result = ""
+    let mut index = start.to_int_lossy()
+    while index.to_int_lossy() < end.to_int_lossy() {
+        result = concat(result, char_at(s, index))
+        index = index + 1.to_int_lossy()
+    }
+    result
+}
+
+fn char_at(s: Str, i: Int) -> Str {
+    if i.to_int_lossy() >= str_len(s).to_int_lossy() {
+        return ""
+    }
+    let mut result = ""
+    result = concat(result, s.chars().nth(i.to_int_lossy()).unwrap())
+    result
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut result = ""
+    let mut number = n.to_int_lossy()
+    if number.to_int_lossy() < 0.to_int_lossy() {
+        result = concat(result, "-")
+        number = number.abs()
+    }
+    if number.to_int_lossy() == 0.to_int_lossy() {
+        result = concat(result, "0")
+    } else {
+        while number.to_int_lossy() > 0.to_int_lossy() {
+            let digit = number % 10.to_int_lossy()
+            result = concat(result, int_to_str(digit))
+            number = number / 10.to_int_lossy()
+        }
+    }
+    result
+}
+
+fn abs(n: Int) -> Int {
+    if n.to_int_lossy() < 0.to_int_lossy() {
+        return -n
+    }

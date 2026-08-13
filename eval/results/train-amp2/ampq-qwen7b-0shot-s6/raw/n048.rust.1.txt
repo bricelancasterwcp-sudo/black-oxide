@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let list = vec![4, 7, 4, 9, 4];
+    for (index, &value) in list.iter().enumerate() {
+        if value == 4 {
+            println!("{}", index);
+        }
+    }
+}
+```

@@ -1,0 +1,21 @@
+struct Figure { id: Int, value: Int }
+
+fn smallest(f1: Figure, f2: Figure) -> Figure {
+    if f1.value < f2.value {
+        f1
+    } else {
+        f2
+    }
+}
+
+fn gap(largest: Figure, smallest: Figure) -> Int {
+    largest.value - smallest.value
+}
+
+fn main() {
+    let figures = vec(Figure { id: 8, value: 10 }, Figure { id: 3, value: 2 }, Figure { id: 11, value: 15 }, Figure { id: 6, value: 7 })
+    let s = figures.fold(Figure { id: 0, value: 1000 }, smallest)
+    let l = figures.fold(Figure { id: 0, value: 0 }, move || largest)
+    print(s.value)
+    print(gap(l, s))
+}

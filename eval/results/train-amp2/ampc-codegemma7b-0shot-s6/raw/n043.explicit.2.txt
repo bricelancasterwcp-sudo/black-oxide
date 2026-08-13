@@ -1,0 +1,353 @@
+fn enqueue(q: &Vec<Int>, x: Int) -> Vec<Int> {
+    if q.len() == 0 {
+        return vec(x)
+    } else {
+        return push(q, x)
+    }
+}
+
+fn dequeue(q: &Vec<Int>) -> Option<Int> {
+    if q.len() == 0 {
+        return None
+    } else {
+        return Some(get(q, q.len() - 1).unwrap())
+    }
+}
+
+fn main() {
+    let mut queue = vec(1, 2, 3, 4, 5)
+    queue = enqueue(&queue, 0)
+    print(dequeue(&queue))
+    print(dequeue(&queue))
+    print(dequeue(&queue))
+    print(dequeue(&queue))
+    print(dequeue(&queue))
+    print(dequeue(&queue))
+}
+
+fn print(x: Option<Int>) {
+    if letSome(v) == x {
+        print(v)
+    } else {
+        print("null")
+    }
+}
+
+fn print(x: Int) {
+    print(format("{}", x))
+}
+
+fn print(x: Str) {
+    print(format("{}", x))
+}
+
+fn print(x: Vec<Int>) {
+    print(format("{}", x))
+}
+
+fn print(x: Unit) {
+    print(format("{}", x))
+}
+
+fn print(x: Float) {
+    print(format("{}", x))
+}
+
+fn print(x: Bool) {
+    print(format("{}", x))
+}
+
+fn print(x: &Vec<Int>) {
+    print(format("{}", x))
+}
+
+fn print(x: &Int) {
+    print(format("{}", x))
+}
+
+fn print(x: &Str) {
+    print(format("{}", x))
+}
+
+fn print(x: &Unit) {
+    print(format("{}", x))
+}
+
+fn print(x: &Float) {
+    print(format("{}", x))
+}
+
+fn print(x: &Bool) {
+    print(format("{}", x))
+}
+
+fn print(x: &Option<Int>) {
+    if letSome(v) == x {
+        print(v)
+    } else {
+        print("null")
+    }
+}
+
+fn print(x: &Vec<Str>) {
+    print(format("{}", x))
+}
+
+fn print(x: &Int) {
+    print(format("{}", x))
+}
+
+fn print(x: &Str) {
+    print(format("{}", x))
+}
+
+fn print(x: &Vec<Int>) {
+    print(format("{}", x))
+}
+
+fn print(x: &Int) {
+    print(format("{}", x))
+}
+
+fn print(x: &Str) {
+    print(format("{}", x))
+}
+
+fn print(x: &Vec<Str>) {
+    print(format("{}", x))
+}
+
+fn print(x: &Int) {
+    print(format("{}", x))
+}
+
+fn print(x: &Str) {
+    print(format("{}", x))
+}
+
+fn print(x: &Vec<Str>) {
+    print(format("{}", x))
+}
+
+fn print(x: &Int) {
+    print(format("{}", x))
+}
+
+fn print(x: &Str) {
+    print(format("{}", x))
+}
+
+fn print(x: &Vec<Str>) {
+    print(format("{}", x))
+}
+
+fn print(x: &Int) {
+    print(format("{}", x))
+}
+
+fn print(x: &Str) {
+    print(format("{}", x))
+}
+
+fn print(x: &Vec<Str>) {
+    print(format("{}", x))
+}
+
+fn print(x: &Int) {
+    print(format("{}", x))
+}
+
+fn print(x: &Str) {
+    print(format("{}", x))
+}
+
+fn print(x: &Vec<Str>) {
+    print(format("{}", x))
+}
+
+fn print(x: &Int) {
+    print(format("{}", x))
+}
+
+fn print(x: &Str) {
+    print(format("{}", x))
+}
+
+fn print(x: &Vec<Str>) {
+    print(format("{}", x))
+}
+
+fn print(x: &Int) {
+    print(format("{}", x))
+}
+
+fn print(x: &Str) {
+    print(format("{}", x))
+}
+
+fn print(x: &Vec<Str>) {
+    print(format("{}", x))
+}
+
+fn print(x: &Int) {
+    print(format("{}", x))
+}
+
+fn print(x: &Str) {
+    print(format("{}", x))
+}
+
+fn print(x: &Vec<Str>) {
+    print(format("{}", x))
+}
+
+fn print(x: &Int) {
+    print(format("{}", x))
+}
+
+fn print(x: &Str) {
+    print(format("{}", x))
+}
+
+fn print(x: &Vec<Str>) {
+    print(format("{}", x))
+}
+
+fn print(x: &Int) {
+    print(format("{}", x))
+}
+
+fn print(x: &Str) {
+    print(format("{}", x))
+}
+
+fn print(x: &Vec<Str>) {
+    print(format("{}", x))
+}
+
+fn print(x: &Int) {
+    print(format("{}", x))
+}
+
+fn print(x: &Str) {
+    print(format("{}", x))
+}
+
+fn print(x: &Vec<Str>) {
+    print(format("{}", x))
+}
+
+fn print(x: &Int) {
+    print(format("{}", x))
+}
+
+fn print(x: &Str) {
+    print(format("{}", x))
+}
+
+fn print(x: &Vec<Str>) {
+    print(format("{}", x))
+}
+
+fn print(x: &Int) {
+    print(format("{}", x))
+}
+
+fn print(x: &Str) {
+    print(format("{}", x))
+}
+
+fn print(x: &Vec<Str>) {
+    print(format("{}", x))
+}
+
+fn print(x: &Int) {
+    print(format("{}", x))
+}
+
+fn print(x: &Str) {
+    print(format("{}", x))
+}
+
+fn print(x: &Vec<Str>) {
+    print(format("{}", x))
+}
+
+fn print(x: &Int) {
+    print(format("{}", x))
+}
+
+fn print(x: &Str) {
+    print(format("{}", x))
+}
+
+fn print(x: &Vec<Str>) {
+    print(format("{}", x))
+}
+
+fn print(x: &Int) {
+    print(format("{}", x))
+}
+
+fn print(x: &Str) {
+    print(format("{}", x))
+}
+
+fn print(x: &Vec<Str>) {
+    print(format("{}", x))
+}
+
+fn print(x: &Int) {
+    print(format("{}", x))
+}
+
+fn print(x: &Str) {
+    print(format("{}", x))
+}
+
+fn print(x: &Vec<Str>) {
+    print(format("{}", x))
+}
+
+fn print(x: &Int) {
+    print(format("{}", x))
+}
+
+fn print(x: &Str) {
+    print(format("{}", x))
+}
+
+fn print(x: &Vec<Str>) {
+    print(format("{}", x))
+}
+
+fn print(x: &Int) {
+    print(format("{}", x))
+}
+
+fn print(x: &Str) {
+    print(format("{}", x))
+}
+
+fn print(x: &Vec<Str>) {
+    print(format("{}", x))
+}
+
+fn print(x: &Int) {
+    print(format("{}", x))
+}
+
+fn print(x: &Str) {
+    print(format("{}", x))
+}
+
+fn print(x: &Vec<Str>) {
+    print(format("{}", x))
+}
+
+fn print(x: &Int) {
+    print(format("{}", x))
+}
+
+fn print(x: &Str) {
+    print

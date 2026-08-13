@@ -1,0 +1,19 @@
+fn main() {
+    let values = vec(12, 5, 20, 8, 17)
+    let mut largest = values.get(0)
+    let mut second_largest = largest
+    let mut i = 1
+    while i < values.len() {
+        let current = values.get(i)
+        if current > largest {
+            second_largest = largest
+            largest = current
+        } else if current > second_largest {
+            second_largest = current
+        }
+        i = i + 1
+    }
+    print_int(largest)
+    print("\n")
+    print_int(second_largest)
+}

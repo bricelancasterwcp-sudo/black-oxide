@@ -1,0 +1,12 @@
+fn open(w: &Str) -> Str {
+    substring(w, 0, 1)
+}
+
+fn close(w: &Str) -> Str {
+    substring(w, -1, 1)
+}
+
+fn main() {
+    print(open(&granitestr))
+    print(close(&granitestr))
+}

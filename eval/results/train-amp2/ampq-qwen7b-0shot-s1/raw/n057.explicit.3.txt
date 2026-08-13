@@ -1,0 +1,22 @@
+fn find_longest_word(word1: &Str, word2: &Str, word3: &Str) -> Str {
+    if word1.len() >= word2.len() && word1.len() >= word3.len() {
+        word1
+    } else if word2.len() >= word1.len() && word2.len() >= word3.len() {
+        word2
+    } else {
+        word3
+    }
+}
+
+fn main() {
+    let fig = "fig"
+    let banana = "banana"
+    let kiwi = "kiwi"
+    let longest = find_longest_word(&fig, &banana, &kiwi)
+    let length = longest.len()
+    print_str(longest)
+    print_int(length)
+    drop fig
+    drop banana
+    drop kiwi
+}

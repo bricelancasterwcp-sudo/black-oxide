@@ -1,0 +1,405 @@
+fn main() {
+    let word = "drum"
+    let reversed: Str = word.chars().map(char_to_str).collect()
+    print(word)
+    print(reversed)
+}
+
+fn char_to_str(c: Char) -> Str {
+    c.to_string()
+}
+
+fn main() {
+    let word = "drum"
+    let reversed: Str = word.chars().map(char_to_str).collect()
+    print(word)
+    print(reversed)
+}
+
+fn char_to_str(c: Char) -> Str {
+    c.to_string()
+}
+
+fn main() {
+    let word = "drum"
+    let reversed: Str = word.chars().map(char_to_str).collect()
+    print(word)
+    print(reversed)
+}
+
+fn char_to_str(c: Char) -> Str {
+    c.to_string()
+}
+
+fn main() {
+    let word = "drum"
+    let reversed: Str = word.chars().map(char_to_str).collect()
+    print(word)
+    print(reversed)
+}
+
+fn char_to_str(c: Char) -> Str {
+    c.to_string()
+}
+
+fn main() {
+    let word = "drum"
+    let reversed: Str = word.chars().map(char_to_str).collect()
+    print(word)
+    print(reversed)
+}
+
+fn char_to_str(c: Char) -> Str {
+    c.to_string()
+}
+
+fn main() {
+    let word = "drum"
+    let reversed: Str = word.chars().map(char_to_str).collect()
+    print(word)
+    print(reversed)
+}
+
+fn char_to_str(c: Char) -> Str {
+    c.to_string()
+}
+
+fn main() {
+    let word = "drum"
+    let reversed: Str = word.chars().map(char_to_str).collect()
+    print(word)
+    print(reversed)
+}
+
+fn char_to_str(c: Char) -> Str {
+    c.to_string()
+}
+
+fn main() {
+    let word = "drum"
+    let reversed: Str = word.chars().map(char_to_str).collect()
+    print(word)
+    print(reversed)
+}
+
+fn char_to_str(c: Char) -> Str {
+    c.to_string()
+}
+
+fn main() {
+    let word = "drum"
+    let reversed: Str = word.chars().map(char_to_str).collect()
+    print(word)
+    print(reversed)
+}
+
+fn char_to_str(c: Char) -> Str {
+    c.to_string()
+}
+
+fn main() {
+    let word = "drum"
+    let reversed: Str = word.chars().map(char_to_str).collect()
+    print(word)
+    print(reversed)
+}
+
+fn char_to_str(c: Char) -> Str {
+    c.to_string()
+}
+
+fn main() {
+    let word = "drum"
+    let reversed: Str = word.chars().map(char_to_str).collect()
+    print(word)
+    print(reversed)
+}
+
+fn char_to_str(c: Char) -> Str {
+    c.to_string()
+}
+
+fn main() {
+    let word = "drum"
+    let reversed: Str = word.chars().map(char_to_str).collect()
+    print(word)
+    print(reversed)
+}
+
+fn char_to_str(c: Char) -> Str {
+    c.to_string()
+}
+
+fn main() {
+    let word = "drum"
+    let reversed: Str = word.chars().map(char_to_str).collect()
+    print(word)
+    print(reversed)
+}
+
+fn char_to_str(c: Char) -> Str {
+    c.to_string()
+}
+
+fn main() {
+    let word = "drum"
+    let reversed: Str = word.chars().map(char_to_str).collect()
+    print(word)
+    print(reversed)
+}
+
+fn char_to_str(c: Char) -> Str {
+    c.to_string()
+}
+
+fn main() {
+    let word = "drum"
+    let reversed: Str = word.chars().map(char_to_str).collect()
+    print(word)
+    print(reversed)
+}
+
+fn char_to_str(c: Char) -> Str {
+    c.to_string()
+}
+
+fn main() {
+    let word = "drum"
+    let reversed: Str = word.chars().map(char_to_str).collect()
+    print(word)
+    print(reversed)
+}
+
+fn char_to_str(c: Char) -> Str {
+    c.to_string()
+}
+
+fn main() {
+    let word = "drum"
+    let reversed: Str = word.chars().map(char_to_str).collect()
+    print(word)
+    print(reversed)
+}
+
+fn char_to_str(c: Char) -> Str {
+    c.to_string()
+}
+
+fn main() {
+    let word = "drum"
+    let reversed: Str = word.chars().map(char_to_str).collect()
+    print(word)
+    print(reversed)
+}
+
+fn char_to_str(c: Char) -> Str {
+    c.to_string()
+}
+
+fn main() {
+    let word = "drum"
+    let reversed: Str = word.chars().map(char_to_str).collect()
+    print(word)
+    print(reversed)
+}
+
+fn char_to_str(c: Char) -> Str {
+    c.to_string()
+}
+
+fn main() {
+    let word = "drum"
+    let reversed: Str = word.chars().map(char_to_str).collect()
+    print(word)
+    print(reversed)
+}
+
+fn char_to_str(c: Char) -> Str {
+    c.to_string()
+}
+
+fn main() {
+    let word = "drum"
+    let reversed: Str = word.chars().map(char_to_str).collect()
+    print(word)
+    print(reversed)
+}
+
+fn char_to_str(c: Char) -> Str {
+    c.to_string()
+}
+
+fn main() {
+    let word = "drum"
+    let reversed: Str = word.chars().map(char_to_str).collect()
+    print(word)
+    print(reversed)
+}
+
+fn char_to_str(c: Char) -> Str {
+    c.to_string()
+}
+
+fn main() {
+    let word = "drum"
+    let reversed: Str = word.chars().map(char_to_str).collect()
+    print(word)
+    print(reversed)
+}
+
+fn char_to_str(c: Char) -> Str {
+    c.to_string()
+}
+
+fn main() {
+    let word = "drum"
+    let reversed: Str = word.chars().map(char_to_str).collect()
+    print(word)
+    print(reversed)
+}
+
+fn char_to_str(c: Char) -> Str {
+    c.to_string()
+}
+
+fn main() {
+    let word = "drum"
+    let reversed: Str = word.chars().map(char_to_str).collect()
+    print(word)
+    print(reversed)
+}
+
+fn char_to_str(c: Char) -> Str {
+    c.to_string()
+}
+
+fn main() {
+    let word = "drum"
+    let reversed: Str = word.chars().map(char_to_str).collect()
+    print(word)
+    print(reversed)
+}
+
+fn char_to_str(c: Char) -> Str {
+    c.to_string()
+}
+
+fn main() {
+    let word = "drum"
+    let reversed: Str = word.chars().map(char_to_str).collect()
+    print(word)
+    print(reversed)
+}
+
+fn char_to_str(c: Char) -> Str {
+    c.to_string()
+}
+
+fn main() {
+    let word = "drum"
+    let reversed: Str = word.chars().map(char_to_str).collect()
+    print(word)
+    print(reversed)
+}
+
+fn char_to_str(c: Char) -> Str {
+    c.to_string()
+}
+
+fn main() {
+    let word = "drum"
+    let reversed: Str = word.chars().map(char_to_str).collect()
+    print(word)
+    print(reversed)
+}
+
+fn char_to_str(c: Char) -> Str {
+    c.to_string()
+}
+
+fn main() {
+    let word = "drum"
+    let reversed: Str = word.chars().map(char_to_str).collect()
+    print(word)
+    print(reversed)
+}
+
+fn char_to_str(c: Char) -> Str {
+    c.to_string()
+}
+
+fn main() {
+    let word = "drum"
+    let reversed: Str = word.chars().map(char_to_str).collect()
+    print(word)
+    print(reversed)
+}
+
+fn char_to_str(c: Char) -> Str {
+    c.to_string()
+}
+
+fn main() {
+    let word = "drum"
+    let reversed: Str = word.chars().map(char_to_str).collect()
+    print(word)
+    print(reversed)
+}
+
+fn char_to_str(c: Char) -> Str {
+    c.to_string()
+}
+
+fn main() {
+    let word = "drum"
+    let reversed: Str = word.chars().map(char_to_str).collect()
+    print(word)
+    print(reversed)
+}
+
+fn char_to_str(c: Char) -> Str {
+    c.to_string()
+}
+
+fn main() {
+    let word = "drum"
+    let reversed: Str = word.chars().map(char_to_str).collect()
+    print(word)
+    print(reversed)
+}
+
+fn char_to_str(c: Char) -> Str {
+    c.to_string()
+}
+
+fn main() {
+    let word = "drum"
+    let reversed: Str = word.chars().map(char_to_str).collect()
+    print(word)
+    print(reversed)
+}
+
+fn char_to_str(c: Char) -> Str {
+    c.to_string()
+}
+
+fn main() {
+    let word = "drum"
+    let reversed: Str = word.chars().map(char_to_str).collect()
+    print(word)
+    print(reversed)
+}
+
+fn char_to_str(c: Char) -> Str {
+    c.to_string()
+}
+
+fn main() {
+    let word = "drum"
+    let reversed: Str = word.chars().map(char_to_str).collect()
+    print(word)
+    print(reversed)
+}
+
+fn char_to_str(c: Char) -> Str {
+    c.to

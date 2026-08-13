@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let width = 2;
+    let height = 3;
+    let mut area = width * height;
+    width = 5;
+    area = width * height;
+    println!("Area: {}", area);
+}
+```

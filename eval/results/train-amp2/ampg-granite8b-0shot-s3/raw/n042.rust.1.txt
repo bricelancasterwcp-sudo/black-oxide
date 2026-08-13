@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let values = [12, 5, 20, 8, 17];
+    let mut largest = values[0];
+    let mut second_largest = values[0];
+
+    for &value in &values {
+        if value > largest {
+            second_largest = largest;
+            largest = value;
+        } else if value > second_largest {
+            second_largest = value;
+        }
+    }
+
+    println!("{}", largest);
+    println!("{}", second_largest);
+}
+```

@@ -1,0 +1,10 @@
+struct Word {
+    first: Char,
+    last: Char,
+}
+
+fn main() {
+    let granite = Word { first: Char { letter: "g" }, last: Char { letter: "e" } }
+    print(granite.first.letter)
+    print(granite.last.letter)
+}

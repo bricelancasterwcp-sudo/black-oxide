@@ -1,0 +1,8 @@
+fn main() {
+    print("go for green\n")
+    drop print
+    print("stop for red\n")
+    drop print
+    print("wait for yellow\n")
+    drop print
+}

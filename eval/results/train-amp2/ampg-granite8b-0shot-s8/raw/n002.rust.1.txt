@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let mut product = 1;
+    for i in 1..=6 {
+        product *= i;
+    }
+    println!("{}", product);
+}
+```
+
+Explanation:
+This Rust program calculates the product of all whole numbers from 1 to 6 and prints the result. The main function initializes a variable `product` to 1. It then uses a for loop to iterate from 1 to 6, multiplying each number to the `product` variable. Finally, it prints the value of `product` using the `println!` macro.

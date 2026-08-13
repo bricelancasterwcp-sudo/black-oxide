@@ -1,0 +1,16 @@
+const LIST: [i32; 2] = [10, 20];
+
+fn main() {
+    let one = LIST.get(0);
+    let four = LIST.get(3);
+
+    match one {
+        Some(number) => println!("The first number is {}", number),
+        None => println!("The list is empty"),
+    }
+
+    match four {
+        Some(number) => println!("The fourth number is {}", number),
+        None => println!("The list is empty"),
+    }
+}

@@ -1,0 +1,33 @@
+fn count(s: &Str) -> Int {
+    let mut words = 0
+    let mut chars = 0
+    for c in s.chars() {
+        if c == b {
+            words = words + 1
+        }
+        chars = chars + 1
+    }
+    print(words)
+    print(chars)
+}
+
+fn main() {
+    count("when in doubt go home")
+}
+
+fn count(s: &Str) -> Int {
+    let mut words = 0
+    let mut chars = 0
+    for c in s.chars() {
+        if c == b {
+            words = words + 1
+        }
+        chars = chars + 1
+    }
+    print(words)
+    print(chars)
+}
+
+fn main() {
+    count("when in doubt go home")
+}

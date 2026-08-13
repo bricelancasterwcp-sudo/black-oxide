@@ -1,0 +1,256 @@
+fn main() {
+    let mut rect = Rect { width: 2, height: 3 }
+    rect.width = 5
+    print(area(rect))
+}
+
+struct Rect { width: Int, height: Int }
+
+fn area(r: Rect) -> Int {
+    r.width * r.height
+}
+
+fn area(mutr: Rect) -> Int {
+    mutr.width = 5
+    mutr.width * mutr.height
+}
+
+fn area(mutr: Rect) -> Int {
+    mutr.width = 5
+    r.width * r.height // r.width still works because it's copied
+}
+
+fn area(r: Rect) -> Int {
+    let w = r.width
+    w * r.height
+}
+
+fn area(r: Rect) -> Int {
+    let w = r.width
+    w = w + 1 // w is now 3
+    w * r.height
+}
+
+fn area(r: Rect) -> Int {
+    let w = r.width
+    w = 5 // w is now 5
+    w * r.height
+}
+
+fn area(r: Rect) -> Int {
+    let area = r.width * r.height
+    area
+}
+
+fn area(r: Rect) -> Int {
+    let area = r.width * r.height
+    area = area + 1 // area is now 10
+    area
+}
+
+fn area(r: Rect) -> Int {
+    let area = r.width * r.height
+    area = area + 1 // area is now 10
+    area = area + 1 // area is now 11
+    area
+}
+
+fn area(r: Rect) -> Int {
+    let area = r.width * r.height
+    area = area + 1 // area is now 11
+    area = area + 1 // area is now 12
+    area
+}
+
+fn area(r: Rect) -> Int {
+    let area = r.width * r.height
+    area = area + 1 // area is now 12
+    area = area + 1 // area is now 13
+    area
+}
+
+fn area(r: Rect) -> Int {
+    let area = r.width * r.height
+    area = area + 1 // area is now 13
+    area = area + 1 // area is now 14
+    area
+}
+
+fn area(r: Rect) -> Int {
+    let area = r.width * r.height
+    area = area + 1 // area is now 14
+    area = area + 1 // area is now 15
+    area
+}
+
+fn area(r: Rect) -> Int {
+    let area = r.width * r.height
+    area = area + 1 // area is now 15
+    area = area + 1 // area is now 16
+    area
+}
+
+fn area(r: Rect) -> Int {
+    let area = r.width * r.height
+    area = area + 1 // area is now 16
+    area = area + 1 // area is now 17
+    area
+}
+
+fn area(r: Rect) -> Int {
+    let area = r.width * r.height
+    area = area + 1 // area is now 17
+    area = area + 1 // area is now 18
+    area
+}
+
+fn area(r: Rect) -> Int {
+    let area = r.width * r.height
+    area = area + 1 // area is now 18
+    area = area + 1 // area is now 19
+    area
+}
+
+fn area(r: Rect) -> Int {
+    let area = r.width * r.height
+    area = area + 1 // area is now 19
+    area = area + 1 // area is now 20
+    area
+}
+
+fn area(r: Rect) -> Int {
+    let area = r.width * r.height
+    area = area + 1 // area is now 20
+    area = area + 1 // area is now 21
+    area
+}
+
+fn area(r: Rect) -> Int {
+    let area = r.width * r.height
+    area = area + 1 // area is now 21
+    area = area + 1 // area is now 22
+    area
+}
+
+fn area(r: Rect) -> Int {
+    let area = r.width * r.height
+    area = area + 1 // area is now 22
+    area = area + 1 // area is now 23
+    area
+}
+
+fn area(r: Rect) -> Int {
+    let area = r.width * r.height
+    area = area + 1 // area is now 23
+    area = area + 1 // area is now 24
+    area
+}
+
+fn area(r: Rect) -> Int {
+    let area = r.width * r.height
+    area = area + 1 // area is now 24
+    area = area + 1 // area is now 25
+    area
+}
+
+fn area(r: Rect) -> Int {
+    let area = r.width * r.height
+    area = area + 1 // area is now 25
+    area = area + 1 // area is now 26
+    area
+}
+
+fn area(r: Rect) -> Int {
+    let area = r.width * r.height
+    area = area + 1 // area is now 26
+    area = area + 1 // area is now 27
+    area
+}
+
+fn area(r: Rect) -> Int {
+    let area = r.width * r.height
+    area = area + 1 // area is now 27
+    area = area + 1 // area is now 28
+    area
+}
+
+fn area(r: Rect) -> Int {
+    let area = r.width * r.height
+    area = area + 1 // area is now 28
+    area = area + 1 // area is now 29
+    area
+}
+
+fn area(r: Rect) -> Int {
+    let area = r.width * r.height
+    area = area + 1 // area is now 29
+    area = area + 1 // area is now 30
+    area
+}
+
+fn area(r: Rect) -> Int {
+    let area = r.width * r.height
+    area = area + 1 // area is now 30
+    area = area + 1 // area is now 31
+    area
+}
+
+fn area(r: Rect) -> Int {
+    let area = r.width * r.height
+    area = area + 1 // area is now 31
+    area = area + 1 // area is now 32
+    area
+}
+
+fn area(r: Rect) -> Int {
+    let area = r.width * r.height
+    area = area + 1 // area is now 32
+    area = area + 1 // area is now 33
+    area
+}
+
+fn area(r: Rect) -> Int {
+    let area = r.width * r.height
+    area = area + 1 // area is now 33
+    area = area + 1 // area is now 34
+    area
+}
+
+fn area(r: Rect) -> Int {
+    let area = r.width * r.height
+    area = area + 1 // area is now 34
+    area = area + 1 // area is now 35
+    area
+}
+
+fn area(r: Rect) -> Int {
+    let area = r.width * r.height
+    area = area + 1 // area is now 35
+    area = area + 1 // area is now 36
+    area
+}
+
+fn area(r: Rect) -> Int {
+    let area = r.width * r.height
+    area = area + 1 // area is now 36
+    area = area + 1 // area is now 37
+    area
+}
+
+fn area(r: Rect) -> Int {
+    let area = r.width * r.height
+    area = area + 1 // area is now 37
+    area = area + 1 // area is now 38
+    area
+}
+
+fn area(r: Rect) -> Int {
+    let area = r.width * r.height
+    area = area + 1 // area is now 38
+    area = area + 1 // area is now 39
+    area
+}
+
+fn area(r: Rect) -> Int {
+    let area = r.width * r.height
+    area = area + 1 // area is

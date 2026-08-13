@@ -1,0 +1,17 @@
+fn collect_even() -> Vec<Int> {
+    let mut result = vec()
+    for i in range(1, 11) {
+        if i % 2 == 0 {
+            push(result, i)
+        }
+    }
+    result
+}
+
+fn main() {
+    let even_nums = collect_even()
+    for num in even_nums.iter().rev() {
+        print_str(int_to_str(num))
+    }
+    drop even_nums
+}

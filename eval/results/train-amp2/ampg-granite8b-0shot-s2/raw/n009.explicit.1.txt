@@ -1,0 +1,8 @@
+fn main() {
+    let digits = vec(4, 3, 2, 1)
+    let mut result = vec()
+    for digit in digits {
+        result = push(result, digit)
+    }
+    print(result)
+}

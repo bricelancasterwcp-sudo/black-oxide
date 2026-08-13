@@ -1,0 +1,380 @@
+fn main() {
+    let sum = sum_big(make_big_vec(), 20)
+    print(sum)
+}
+
+fn make_big_vec() -> Vec<Int> {
+    let mut v = vec()
+    for i in range(1, 21) {
+        v = push(v, i)
+    }
+    v
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let mut total = 0
+    for x in &v {
+        if x % 2 == 0 && x <= limit {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn print(x: Int) {
+    drop x
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v
+}
+
+fn vec() -> Vec<Int> {
+    vec()
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    vec()
+}
+
+fn clone(x: Int) -> Int {
+    x
+}
+
+fn to_float(x: Int) -> Float {
+    x
+}
+
+fn trunc(x: Float) -> Int {
+    x
+}
+
+fn main() {
+    let nums = make_big_vec()
+    print(sum_big(&nums, 20))
+    drop nums
+}
+
+fn make_big_vec() -> Vec<Int> {
+    let mut v = vec()
+    for i in range(1, 21) {
+        v = push(v, i)
+    }
+    v
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let mut total = 0
+    for x in &v {
+        if x % 2 == 0 && x <= limit {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn print(x: Int) {
+    drop x
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v
+}
+
+fn vec() -> Vec<Int> {
+    vec()
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    vec()
+}
+
+fn clone(x: Int) -> Int {
+    x
+}
+
+fn to_float(x: Int) -> Float {
+    x
+}
+
+fn trunc(x: Float) -> Int {
+    x
+}
+
+fn main() {
+    let nums = make_big_vec()
+    print(sum_big(&nums, 20))
+    drop nums
+}
+
+fn make_big_vec() -> Vec<Int> {
+    let mut v = vec()
+    for i in range(1, 21) {
+        v = push(v, i)
+    }
+    v
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let mut total = 0
+    for x in &v {
+        if x % 2 == 0 && x <= limit {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn print(x: Int) {
+    drop x
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v
+}
+
+fn vec() -> Vec<Int> {
+    vec()
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    vec()
+}
+
+fn clone(x: Int) -> Int {
+    x
+}
+
+fn to_float(x: Int) -> Float {
+    x
+}
+
+fn trunc(x: Float) -> Int {
+    x
+}
+
+fn main() {
+    let nums = make_big_vec()
+    print(sum_big(&nums, 20))
+    drop nums
+}
+
+fn make_big_vec() -> Vec<Int> {
+    let mut v = vec()
+    for i in range(1, 21) {
+        v = push(v, i)
+    }
+    v
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let mut total = 0
+    for x in &v {
+        if x % 2 == 0 && x <= limit {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn print(x: Int) {
+    drop x
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v
+}
+
+fn vec() -> Vec<Int> {
+    vec()
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    vec()
+}
+
+fn clone(x: Int) -> Int {
+    x
+}
+
+fn to_float(x: Int) -> Float {
+    x
+}
+
+fn trunc(x: Float) -> Int {
+    x
+}
+
+fn main() {
+    let nums = make_big_vec()
+    print(sum_big(&nums, 20))
+    drop nums
+}
+
+fn make_big_vec() -> Vec<Int> {
+    let mut v = vec()
+    for i in range(1, 21) {
+        v = push(v, i)
+    }
+    v
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let mut total = 0
+    for x in &v {
+        if x % 2 == 0 && x <= limit {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn print(x: Int) {
+    drop x
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v
+}
+
+fn vec() -> Vec<Int> {
+    vec()
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    vec()
+}
+
+fn clone(x: Int) -> Int {
+    x
+}
+
+fn to_float(x: Int) -> Float {
+    x
+}
+
+fn trunc(x: Float) -> Int {
+    x
+}
+
+fn main() {
+    let nums = make_big_vec()
+    print(sum_big(&nums, 20))
+    drop nums
+}
+
+fn make_big_vec() -> Vec<Int> {
+    let mut v = vec()
+    for i in range(1, 21) {
+        v = push(v, i)
+    }
+    v
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let mut total = 0
+    for x in &v {
+        if x % 2 == 0 && x <= limit {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn print(x: Int) {
+    drop x
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v
+}
+
+fn vec() -> Vec<Int> {
+    vec()
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    vec()
+}
+
+fn clone(x: Int) -> Int {
+    x
+}
+
+fn to_float(x: Int) -> Float {
+    x
+}
+
+fn trunc(x: Float) -> Int {
+    x
+}
+
+fn main() {
+    let nums = make_big_vec()
+    print(sum_big(&nums, 20))
+    drop nums
+}
+
+fn make_big_vec() -> Vec<Int> {
+    let mut v = vec()
+    for i in range(1, 21) {
+        v = push(v, i)
+    }
+    v
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let mut total = 0
+    for x in &v {
+        if x % 2 == 0 && x <= limit {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn print(x: Int) {
+    drop x
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v
+}
+
+fn vec() -> Vec<Int> {
+    vec()
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    vec()
+}
+
+fn clone(x: Int) -> Int {
+    x
+}
+
+fn to_float(x: Int) -> Float {
+    x
+}
+
+fn trunc(x: Float) -> Int {
+    x
+}
+
+fn main() {
+    let nums = make_big_vec()
+    print(sum_big(&nums, 20))
+    drop nums
+}
+
+fn make_big_vec() -> Vec<Int> {
+    let mut v = vec()
+    for i in range(1, 21) {
+        v = push(v, i)
+    }
+    v
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let mut total = 0
+    for x

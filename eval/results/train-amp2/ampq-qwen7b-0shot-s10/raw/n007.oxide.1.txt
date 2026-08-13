@@ -1,0 +1,299 @@
+fn main() {
+    let number = 9875
+    let sum = number.to_string().chars().map(str_to_int).sum()
+    print(sum)
+}
+
+fn str_to_int(c: Str) -> Int {
+    parse_int(c).unwrap()
+}
+
+fn to_string(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn map(f: FnMut<Int>, v: Vec<Int>) -> Vec<Int> {
+    v.into_iter().map(f).collect()
+}
+
+fn sum(v: Vec<Int>) -> Int {
+    v.into_iter().sum()
+}
+
+fn print(n: Int) {
+    print_str(to_string(n))
+}
+
+fn print_str(s: Str) {
+    let _ = concat(s, "\n")
+}
+
+fn clone(x: Int) -> Int {
+    x
+}
+
+fn str_len(s: Str) -> Int {
+    s.len() - 1
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    a + b
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    s.chars().map(to_string).collect()
+}
+
+fn int_to_str(n: Int) -> Str {
+    n.to_string()
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    s.parse().ok()
+}
+
+fn to_float(n: Int) -> Float {
+    n.to_f64()
+}
+
+fn trunc(x: Float) -> Int {
+    x.trunc()  // toward zero
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    (a + 1).to(b - 1).collect()
+}
+
+fn len(v: Vec<Int>) -> Int {
+    v.len()
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    if i < 0 || i >= len(v) {
+        None
+    } else {
+        Some(v.get(i).unwrap().clone())
+    }
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut v = v
+    v.push(x)
+    v
+}
+
+fn vec() -> Vec<Int> {
+    VecIntVec()
+}
+
+fn vec_int_vec() -> Vec<Int> {
+    VecIntVec()
+}
+
+struct VecIntVec {
+    data: Vec<Int>,
+}
+
+fn new_vec_int_vec() -> VecIntVec {
+    VecIntVec(data == VecIntVec())
+}
+
+fn push_vec_int_vec(v: VecIntVec, x: Int) -> VecIntVec {
+    let mut v = v
+    v.data.push(x)
+    v
+}
+
+fn len_vec_int_vec(v: VecIntVec) -> Int {
+    v.data.len()
+}
+
+fn get_vec_int_vec(v: VecIntVec, i: Int) -> Option<Int> {
+    if i < 0 || i >= len_vec_int_vec(v) {
+        None
+    } else {
+        Some(v.data.get(i).unwrap().clone())
+    }
+}
+
+fn vec_int_vec_empty() -> VecIntVec {
+    VecIntVec(data == VecIntVec())
+}
+
+fn vec_int_vec_push(v: VecIntVec, x: Int) -> VecIntVec {
+    let mut v = v
+    v.data.push(x)
+    v
+}
+
+fn vec_int_vec_len(v: VecIntVec) -> Int {
+    v.data.len()
+}
+
+fn vec_int_vec_get(v: VecIntVec, i: Int) -> Option<Int> {
+    if i < 0 || i >= vec_int_vec_len(v) {
+        None
+    } else {
+        Some(v.data.get(i).unwrap().clone())
+    }
+}
+
+fn vec_int_vec_push_vec(v: VecIntVec, x: Vec<Int>) -> VecIntVec {
+    let mut v = v
+    v.data.extend(x)
+    v
+}
+
+fn vec_int_vec_len_vec(v: VecIntVec) -> Int {
+    v.data.len()
+}
+
+fn vec_int_vec_get_vec(v: VecIntVec, i: Int) -> Option<Vec<Int>> {
+    if i < 0 || i >= vec_int_vec_len_vec(v) {
+        None
+    } else {
+        Some(v.data.get(i).unwrap().clone())
+    }
+}
+
+fn vec_int_vec_push_vec_vec(v: VecIntVec, x: Vec<Vec<Int>>) -> VecIntVec {
+    let mut v = v
+    v.data.extend(x)
+    v
+}
+
+fn vec_int_vec_len_vec_vec(v: VecIntVec) -> Int {
+    v.data.len()
+}
+
+fn vec_int_vec_get_vec_vec(v: VecIntVec, i: Int) -> Option<Vec<Vec_Int>> {
+    if i < 0 || i >= vec_int_vec_len_vec_vec(v) {
+        None
+    } else {
+        Some(v.data.get(i).unwrap().clone())
+    }
+}
+
+fn vec_int_vec_push_vec_vec_vec(v: VecIntVec, x: Vec<Vec<Vec_Int>>) -> VecIntVec {
+    let mut v = v
+    v.data.extend(x)
+    v
+}
+
+fn vec_int_vec_len_vec_vec_vec(v: VecIntVec) -> Int {
+    v.data.len()
+}
+
+fn vec_int_vec_get_vec_vec_vec(v: VecIntVec, i: Int) -> Option<Vec<Vec_vec_int>> {
+    if i < 0 || i >= vec_int_vec_len_vec_vec_vec(v) {
+        None
+    } else {
+        Some(v.data.get(i).unwrap().clone())
+    }
+}
+
+fn vec_int_vec_push_vec_vec_vec_vec(v: VecIntVec, x: Vec<Vec<Vec_vec_int>>) -> VecIntVec {
+    let mut v = v
+    v.data.extend(x)
+    v
+}
+
+fn vec_int_vec_len_vec_vec_vec_vec(v: VecIntVec) -> Int {
+    v.data.len()
+}
+
+fn vec_int_vec_get_vec_vec_vec_vec(v: VecIntVec, i: Int) -> Option<Vec<Vec_vec_vec_int>> {
+    if i < 0 || i >= vec_int_vec_len_vec_vec_vec_vec(v) {
+        None
+    } else {
+        Some(v.data.get(i).unwrap().clone())
+    }
+}
+
+fn vec_int_vec_push_vec_vec_vec_vec_vec(v: VecIntVec, x: Vec<Vec<Vec_vec_vec_int>>) -> VecIntVec {
+    let mut v = v
+    v.data.extend(x)
+    v
+}
+
+fn vec_int_vec_len_vec_vec_vec_vec_vec(v: VecIntVec) -> Int {
+    v.data.len()
+}
+
+fn vec_int_vec_get_vec_vec_vec_vec_vec(v: VecIntVec, i: Int) -> Option<Vec<Vec_vec_vec_vec_int>> {
+    if i < 0 || i >= vec_int_vec_len_vec_vec_vec_vec_vec(v) {
+        None
+    } else {
+        Some(v.data.get(i).unwrap().clone())
+    }
+}
+
+fn vec_int_vec_push_vec_vec_vec_vec_vec_vec(v: VecIntVec, x: Vec<Vec<Vec_vec_vec_vec_int>>) -> VecIntVec {
+    let mut v = v
+    v.data.extend(x)
+    v
+}
+
+fn vec_int_vec_len_vec_vec_vec_vec_vec_vec(v: VecIntVec) -> Int {
+    v.data.len()
+}
+
+fn vec_int_vec_get_vec_vec_vec_vec_vec_vec(v: VecIntVec, i: Int) -> Option<Vec<Vec_vec_vec_vec_vec_int>> {
+    if i < 0 || i >= vec_int_vec_len_vec_vec_vec_vec_vec_vec(v) {
+        None
+    } else {
+        Some(v.data.get(i).unwrap().clone())
+    }
+}
+
+fn vec_int_vec_push_vec_vec_vec_vec_vec_vec_vec(v: VecIntVec, x: Vec<Vec<Vec_vec_vec_vec_vec_int>>) -> VecIntVec {
+    let mut v = v
+    v.data.extend(x)
+    v
+}
+
+fn vec_int_vec_len_vec_vec_vec_vec_vec_vec_vec(v: VecIntVec) -> Int {
+    v.data.len()
+}
+
+fn vec_int_vec_get_vec_vec_vec_vec_vec_vec_vec(v: VecIntVec, i: Int) -> Option<Vec<Vec_vec_vec_vec_vec_vec_int>> {
+    if i < 0 || i >= vec_int_vec_len_vec_vec_vec_vec_vec_vec_vec(v) {
+        None
+    } else {
+        Some(v.data.get(i).unwrap().clone())
+    }
+}
+
+fn vec_int_vec_push_vec_vec_vec_vec_vec_vec_vec_vec(v: VecIntVec, x: Vec<Vec<Vec_vec_vec_vec_vec_vec_int>>) -> VecIntVec {
+    let mut v = v
+    v.data.extend(x)
+    v
+}
+
+fn vec_int_vec_len_vec_vec_vec_vec_vec_vec_vec_vec(v: VecIntVec) -> Int {
+    v.data.len()
+}
+
+fn vec_int_vec_get_vec_vec_vec_vec_vec_vec_vec_vec(v: VecIntVec, i: Int) -> Option<Vec<Vec_vec_vec_vec_vec_vec_vec_int>> {
+    if i < 0 || i >= vec_int_vec_len_vec_vec_vec_vec_vec_vec_vec_vec(v) {
+        None
+    } else {
+        Some(v.data.get(i).unwrap().clone())
+    }
+}
+
+fn vec_int_vec_push_vec_vec_vec_vec_vec_vec_vec_vec_vec(v: VecIntVec, x: Vec<Vec<Vec_vec_vec_vec_vec_vec_vec_int>>) -> VecIntVec {
+    let mut v = v
+    v.data.extend(x)
+    v
+}
+
+fn vec_int_vec_len_vec_vec_vec_vec_vec_vec_vec_vec_vec(v: VecIntVec) -> Int {
+    v.data.len()
+}
+
+fn vec_int_vec_get_vec_vec_vec_vec_vec_vec_vec_vec_vec(v: VecIntVec, i: Int) -> Option<Vec<Vec_vec_vec_vec_vec_vec_vec_vec_int>> {
+    if i < 0 || i >= vec_int_vec_len_vec_vec_vec_vec_vec_vec_vec_vec_vec(v) {
+        None
+    } else {
+        Some

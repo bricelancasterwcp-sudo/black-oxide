@@ -1,0 +1,26 @@
+fn print_stock(a: Int, b: Int, p: Float) {
+    print("Stock #1:")
+    print(a)
+    print(" units at ")
+    print(p)
+    print(" each")
+    print(" = ")
+    print(a * p)
+    print("\n")
+    print("Stock #2:")
+    print(b)
+    print(" units at ")
+    print(p)
+    print(" each")
+    print(" = ")
+    print(b * p)
+    print("\n")
+    print("Total value:")
+    print(a * p + b * p)
+    print("\n")
+}
+
+fn main() {
+    print_stock(4, 5, 3.0)
+    print_stock(5, 4, 2.0)
+}

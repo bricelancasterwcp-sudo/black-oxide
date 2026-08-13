@@ -1,0 +1,18 @@
+fn main() {
+    let values = push(push(push(push(vec(), 12), 5), 20), 8)
+    let max = values
+    let mut second_max = 0
+    for x in &values {
+        if x > &max {
+            second_max = max
+            max = x
+        } else if x > &second_max {
+            second_max = x
+        }
+    }
+    drop max
+    print(second_max)
+    drop second_max
+    print(max)
+    drop values
+}

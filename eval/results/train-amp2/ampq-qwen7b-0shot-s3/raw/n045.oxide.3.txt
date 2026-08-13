@@ -1,0 +1,9 @@
+struct LogEntry { entry: Int }
+
+fn main() {
+    let log = vec(LogEntry { entry: 6 }, LogEntry { entry: 7 }, LogEntry { entry: 8 }, LogEntry { entry: 9 })
+    let first = log.get(0).unwrap().entry
+    let last = log.get(3).unwrap().entry
+    print(first)
+    print(last)
+}

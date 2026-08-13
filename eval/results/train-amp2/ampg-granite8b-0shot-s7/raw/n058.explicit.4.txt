@@ -1,0 +1,21 @@
+fn main() {
+    let coffee = "coffee".to_string()
+    let mut first = true
+    let mut letters = Vec()
+    for x in coffee.chars() {
+        if first {
+            first = false
+            continue
+        }
+        if letters.contains(&x) {
+            continue
+        }
+        letters.push(x)
+    }
+    drop coffee
+    for letter in &letters {
+        print_str(letter)
+        print_str("\n")
+    }
+    drop letters
+}

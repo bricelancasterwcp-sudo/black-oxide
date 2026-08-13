@@ -1,0 +1,15 @@
+struct Measurement { value: Int }
+
+fn sort_measurements(mutmeasurements: Vec<Measurement>) -> Vec<Measurement> {
+    measurements.sort_by_key(move || measurements.value)
+    measurements
+}
+
+fn main() {
+    let measurements = vec(vec(value == 9), vec(value == 2), vec(value == 7), vec(value == 4))
+    let sorted = sort_measurements(measurements)
+    for m in sorted {
+        print(m.value)
+        print_str("\n")
+    }
+}

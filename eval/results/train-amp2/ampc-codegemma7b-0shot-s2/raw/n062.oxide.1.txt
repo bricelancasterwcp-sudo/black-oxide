@@ -1,0 +1,13 @@
+fn print_color(c: Str) {
+    match c {
+        Str(s) => print_str(s),
+        _ => print_str("invalid color"),
+    }
+}
+
+fn main() {
+    print_color("green")
+    print_color("red")
+    print_color("yellow")
+    print_color("blue")
+}

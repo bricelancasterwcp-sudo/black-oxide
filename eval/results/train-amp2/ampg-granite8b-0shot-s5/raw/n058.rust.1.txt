@@ -1,0 +1,20 @@
+```rust
+fn main() {
+  let coffee = "coffee";
+  for ch in coffee.chars() {
+    if coffee.matches(ch).count() > 1 {
+      println!("{}", ch);
+    }
+  }
+}
+```
+
+```
+c
+o
+f
+e
+```
+
+You can run the code in this playground:
+https://play.rust-lang.org/?version=stable&mode=debug&edition=2021&gist=832d17918188772388e34706a6552f0

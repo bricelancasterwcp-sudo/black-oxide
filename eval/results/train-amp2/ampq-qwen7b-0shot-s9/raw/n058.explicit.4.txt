@@ -1,0 +1,11 @@
+fn main() {
+    let word = "coffee"
+    let mut seen = vec()
+    for c in word.chars() {
+        if letSome(_) == get(seen, c) {
+            continue
+        }
+        push(seen, c)
+        print(c)
+    }
+}

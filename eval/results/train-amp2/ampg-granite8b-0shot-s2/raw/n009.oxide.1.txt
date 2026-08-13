@@ -1,0 +1,11 @@
+fn reverse_digits(n: Int) -> Int {
+    let mut reversed = 0
+    for digit in (0 <= n && n < 10).guard().iter(n) {
+        reversed = (reversed * 10) + digit
+    }
+    reversed
+}
+
+fn main() {
+    print(reverse_digits(1234))
+}

@@ -1,0 +1,462 @@
+fn main() {
+    let fig8 = 8
+    let fig3 = 3
+    let fig11 = 11
+    let fig6 = 6
+    let min = min_of(min_of(fig8, fig3), min_of(fig11, fig6))
+    let max = max_of(max_of(fig8, fig3), max_of(fig11, fig6))
+    let gap = max - min
+    print(min)
+    print(gap)
+    drop min
+    drop max
+    drop gap
+}
+
+fn min_of(a: Int, b: Int) -> Int {
+    if a < b {
+        a
+    } else {
+        b
+    }
+}
+
+fn max_of(a: Int, b: Int) -> Int {
+    if a > b {
+        a
+    } else {
+        b
+    }
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}

@@ -1,0 +1,24 @@
+struct WordKeyboard { letters: Vec<Char> }
+
+fn vowel_count(w: WordKeyboard) -> Int {
+    let vowels = vec("a", "e", "i", "o", "u")
+    let mut vowel_count = 0
+    for letter in w.letters {
+        if contains(vowels, letter) {
+            vowel_count = vowel_count + 1
+        }
+    }
+    vowel_count
+}
+
+fn consonant_count(w: WordKeyboard) -> Int {
+    len(w.letters) - vowel_count(w)
+}
+
+fn main() {
+    let word_keyboard = WordKeyboard { letters: vec_from_string(" qwertyuiopasdfghjklzxcvbnm") }
+    print_str("Vowels: ")
+    print(vowel_count(word_keyboard))
+    print_str(", consonants: ")
+    print(consonant_count(word_keyboard))
+}

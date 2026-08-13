@@ -1,0 +1,19 @@
+fn value(line: Vec<Int>) -> Int {
+    let sum = 0
+    for x in &line {
+        sum = sum + x
+    }
+    sum
+}
+
+fn main() {
+    let line1 = push(push(vec(), 3), 3)
+    let line2 = push(push(vec(), 2), 2)
+    let total = concat(line1, line2)
+    print(value(line1))
+    print(value(line2))
+    print(value(total))
+    drop line1
+    drop line2
+    drop total
+}

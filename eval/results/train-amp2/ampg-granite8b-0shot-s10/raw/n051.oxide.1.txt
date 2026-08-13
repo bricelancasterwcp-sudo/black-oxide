@@ -1,0 +1,11 @@
+struct Word { letter: Str }
+
+fn main() {
+    print(Word { letter: "g" }).letter
+    print(Word { letter: "r" }).letter
+    print(Word { letter: "a" }).letter
+    print(Word { letter: "n" }).letter
+    print(Word { letter: "i" }).letter
+    print(Word { letter: "t" }).letter
+    print(Word { letter: "e" }).letter
+}

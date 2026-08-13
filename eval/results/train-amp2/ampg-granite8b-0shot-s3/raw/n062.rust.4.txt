@@ -1,0 +1,16 @@
+const SIGNAL_GREEN: &str = "go for green";
+const SIGNAL_RED: &str = "stop for red";
+const SIGNAL_YELLOW: &str = "wait for yellow";
+
+fn main() {
+    let signals = ["green", "red", "yellow"];
+
+    for signal in signals {
+        match signal {
+            "green" => println!("{}", SIGNAL_GREEN),
+            "red" => println!("{}", SIGNAL_RED),
+            "yellow" => println!("{}", SIGNAL_YELLOW),
+            _ => println!("Invalid signal"),
+        }
+    }
+}

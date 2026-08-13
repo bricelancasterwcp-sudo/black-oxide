@@ -1,0 +1,25 @@
+fn longest(a: &Str, b: &Str, c: &Str) -> String {
+    if a.len() > b.len() {
+        if a.len() > c.len() {
+            a.to_string()
+        } else {
+            c.to_string()
+        }
+    } else {
+        if b.len() > c.len() {
+            b.to_string()
+        } else {
+            c.to_string()
+        }
+    }
+}
+
+fn main() {
+    let fig = "fig".to_string()
+    let banana = "banana".to_string()
+    let kiwi = "kiwi".to_string()
+    let longest_fruit = longest(&fig, &banana, &kiwi)
+    print(longest_fruit)
+    print(longest_fruit.len())
+    drop longest_fruit
+}

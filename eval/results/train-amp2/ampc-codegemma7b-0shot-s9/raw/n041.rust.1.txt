@@ -1,0 +1,7 @@
+fn main() {
+    let mut measurements = [9, 2, 7, 4];
+    measurements.sort_unstable();
+    for measurement in measurements {
+        println!("{}", measurement);
+    }
+}

@@ -1,0 +1,13 @@
+fn total(a: Int, b: Int, c: Int) -> Int {
+    a * b + c
+}
+
+fn main() {
+    let four_three = total(4, 3, 4 * 3)
+    let five_two = total(5, 2, 5 * 2)
+    print(four_three)
+    print(five_two)
+    print(total(four_three, five_two, four_three + five_two))
+    drop four_three
+    drop five_two
+}

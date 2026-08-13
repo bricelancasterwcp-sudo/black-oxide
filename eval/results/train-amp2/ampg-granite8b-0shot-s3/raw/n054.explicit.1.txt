@@ -1,0 +1,27 @@
+fn vowel_count(word: &Str) -> Int {
+    let mut vowels = 0
+    for letter in chars(word) {
+        match letter {
+            Str(v) => if v == "a" || v == "e" || v == "i" || v == "o" || v == "u" { vowels == vowels + 1 } else { vowels },
+            _ => vowels,
+        }
+    }
+    vowels
+}
+
+fn consonant_count(word: &Str) -> Int {
+    let mut consonants = 0
+    for letter in chars(word) {
+        match letter {
+            Str(v) => if v == "a" || v == "e" || v == "i" || v == "o" || v == "u" { consonants } else { consonants == consonants + 1 },
+            _ => consonants,
+        }
+    }
+    consonants
+}
+
+fn main() {
+    let word = "oxide"
+    print(vowel_count(&word))
+    print(consonant_count(&word))
+}

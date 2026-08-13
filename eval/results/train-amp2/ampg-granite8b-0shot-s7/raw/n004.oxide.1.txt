@@ -1,0 +1,18 @@
+struct IntSeq {
+    a: Int,
+    b: Int,
+}
+
+fn nth_term(s: IntSeq, n: Int) -> Int {
+    if n == 1 {
+        s.a
+    } else if n == 2 {
+        s.b
+    } else {
+        nth_term(IntSeq { a: s.b, b: s.a + s.b }, n - 1)
+    }
+}
+
+fn main() {
+    print(nth_term(IntSeq { a: 1, b: 1 }, 10))
+}

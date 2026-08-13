@@ -1,0 +1,8 @@
+fn main() {
+    let drum = "drum"
+    let reversed = concat(&str_len, drum)
+    print_str(&reversed)
+    print_str(drum)
+    drop reversed
+    drop drum
+}

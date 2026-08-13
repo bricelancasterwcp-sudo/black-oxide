@@ -1,0 +1,7 @@
+struct LogEntry { entry: Int }
+
+fn main() {
+    let log = vec(LogEntry { entry: 6 }, LogEntry { entry: 7 }, LogEntry { entry: 8 }, LogEntry { entry: 9 })
+    print(log.get(0).unwrap().entry)  // 6
+    print(log.get(3).unwrap().entry)  // 9
+}

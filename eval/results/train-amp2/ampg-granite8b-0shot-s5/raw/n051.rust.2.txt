@@ -1,0 +1,4 @@
+fn main() {
+    println!("{}", std::char::from_u32(128800).unwrap());
+    println!("{}", std::char::from_u32(128802).unwrap());
+}

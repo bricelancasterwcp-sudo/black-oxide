@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let (x, y) = (20, 4);
+    match divide(x, y) {
+        Ok(result) => println!("{} / {} = {}", x, y, result),
+        Err(_) => println!("Cannot divide by zero!"),
+    }
+}
+
+fn divide(x: i32, y: i32) -> Result<i32, std::fmt::Error> {
+    if y == 0 {
+        Err("Division by zero is not allowed")?
+    } else {
+        Ok(x / y)
+    }
+}
+```

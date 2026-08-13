@@ -1,0 +1,16 @@
+fn main() {
+    let measurements = vec(9, 2, 7, 4)
+    let mut sorted_measurements = measurements
+    for x in &mut_sorted_measurements {
+        for y in &mut_sorted_measurements {
+            if x > y {
+                let temp = x
+                x = y
+                y = temp
+            }
+        }
+    }
+    for x in sorted_measurements {
+        print(x)
+    }
+}

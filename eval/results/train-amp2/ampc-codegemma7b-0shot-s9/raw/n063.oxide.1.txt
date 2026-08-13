@@ -1,0 +1,9 @@
+fn main() {
+    let four_price = 3
+    let five_price = 2
+    let four_value = four_price * 4
+    let five_value = five_price * 5
+    print(four_value)
+    print(five_value)
+    print(four_value + five_value)
+}

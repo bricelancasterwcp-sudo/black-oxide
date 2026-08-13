@@ -1,0 +1,15 @@
+fn reverse_string(s: Str) -> Str {
+    let chars = chars(s)
+    let mut result = vec()
+    for c in chars {
+        push(result, c)
+    }
+    let reversed = concat(vec(), result)
+    reversed
+}
+
+fn main() {
+    let s = "1234"
+    let reversed = reverse_string(s)
+    print_str(reversed)
+}

@@ -1,0 +1,14 @@
+fn main() {
+    let mut balance = 0
+    print_int(balance)
+    balance = balance + 3
+    print_int(balance)
+    balance = balance + 1
+    print_int(balance)
+    balance = balance + 4
+    print_int(balance)
+    balance = balance + 1
+    print_int(balance)
+    balance = balance + 5
+    print_int(balance)
+}

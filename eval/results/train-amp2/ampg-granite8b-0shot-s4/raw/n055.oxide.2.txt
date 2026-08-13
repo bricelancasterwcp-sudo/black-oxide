@@ -1,0 +1,271 @@
+fn main() {
+    let mut entries = vec(8, oak(), 15)
+    match read_exactly(entries) {
+        Ok(vec) => print(vec),
+        Err(leftovers) => {
+            print("bad!")
+            print(get(leftovers, 0)?)
+        },
+    }
+}
+
+fn oak() -> Int {
+    42
+}
+
+fn read_exactly(v: Vec<Int>) -> Result<Vec<Int>, Vec<Int>> {
+    if v.len() == 0 {
+        Err(v)
+    } else {
+        Ok(get(v, 0)?)
+    }
+}
+
+fn main() {
+    let mut entries = vec(8, oak(), 15)
+    match read_exactly(entries) {
+        Ok(vec) => print(vec),
+        Err(leftovers) => {
+            print("bad!")
+            print(get(leftovers, 0)?)
+        },
+    }
+}
+
+fn oak() -> Int {
+    42
+}
+
+fn read_exactly(v: Vec<Int>) -> Result<Vec<Int>, Vec<Int>> {
+    if v.len() == 0 {
+        Err(v)
+    } else {
+        Ok(get(v, 0)?)
+    }
+}
+
+fn main() {
+    let mut entries = vec(8, oak(), 15)
+    match read_exactly(entries) {
+        Ok(vec) => print(vec),
+        Err(leftovers) => {
+            print("bad!")
+            print(get(leftovers, 0)?)
+        },
+    }
+}
+
+fn oak() -> Int {
+    42
+}
+
+fn read_exactly(v: Vec<Int>) -> Result<Vec<Int>, Vec<Int>> {
+    if v.len() == 0 {
+        Err(v)
+    } else {
+        Ok(get(v, 0)?)
+    }
+}
+
+fn main() {
+    let mut entries = vec(8, oak(), 15)
+    match read_exactly(entries) {
+        Ok(vec) => print(vec),
+        Err(leftovers) => {
+            print("bad!")
+            print(get(leftovers, 0)?)
+        },
+    }
+}
+
+fn oak() -> Int {
+    42
+}
+
+fn read_exactly(v: Vec<Int>) -> Result<Vec<Int>, Vec<Int>> {
+    if v.len() == 0 {
+        Err(v)
+    } else {
+        Ok(get(v, 0)?)
+    }
+}
+
+fn main() {
+    let mut entries = vec(8, oak(), 15)
+    match read_exactly(entries) {
+        Ok(vec) => print(vec),
+        Err(leftovers) => {
+            print("bad!")
+            print(get(leftovers, 0)?)
+        },
+    }
+}
+
+fn oak() -> Int {
+    42
+}
+
+fn read_exactly(v: Vec<Int>) -> Result<Vec<Int>, Vec<Int>> {
+    if v.len() == 0 {
+        Err(v)
+    } else {
+        Ok(get(v, 0)?)
+    }
+}
+
+fn main() {
+    let mut entries = vec(8, oak(), 15)
+    match read_exactly(entries) {
+        Ok(vec) => print(vec),
+        Err(leftovers) => {
+            print("bad!")
+            print(get(leftovers, 0)?)
+        },
+    }
+}
+
+fn oak() -> Int {
+    42
+}
+
+fn read_exactly(v: Vec<Int>) -> Result<Vec<Int>, Vec<Int>> {
+    if v.len() == 0 {
+        Err(v)
+    } else {
+        Ok(get(v, 0)?)
+    }
+}
+
+fn main() {
+    let mut entries = vec(8, oak(), 15)
+    match read_exactly(entries) {
+        Ok(vec) => print(vec),
+        Err(leftovers) => {
+            print("bad!")
+            print(get(leftovers, 0)?)
+        },
+    }
+}
+
+fn oak() -> Int {
+    42
+}
+
+fn read_exactly(v: Vec<Int>) -> Result<Vec<Int>, Vec<Int>> {
+    if v.len() == 0 {
+        Err(v)
+    } else {
+        Ok(get(v, 0)?)
+    }
+}
+
+fn main() {
+    let mut entries = vec(8, oak(), 15)
+    match read_exactly(entries) {
+        Ok(vec) => print(vec),
+        Err(leftovers) => {
+            print("bad!")
+            print(get(leftovers, 0)?)
+        },
+    }
+}
+
+fn oak() -> Int {
+    42
+}
+
+fn read_exactly(v: Vec<Int>) -> Result<Vec<Int>, Vec<Int>> {
+    if v.len() == 0 {
+        Err(v)
+    } else {
+        Ok(get(v, 0)?)
+    }
+}
+
+fn main() {
+    let mut entries = vec(8, oak(), 15)
+    match read_exactly(entries) {
+        Ok(vec) => print(vec),
+        Err(leftovers) => {
+            print("bad!")
+            print(get(leftovers, 0)?)
+        },
+    }
+}
+
+fn oak() -> Int {
+    42
+}
+
+fn read_exactly(v: Vec<Int>) -> Result<Vec<Int>, Vec<Int>> {
+    if v.len() == 0 {
+        Err(v)
+    } else {
+        Ok(get(v, 0)?)
+    }
+}
+
+fn main() {
+    let mut entries = vec(8, oak(), 15)
+    match read_exactly(entries) {
+        Ok(vec) => print(vec),
+        Err(leftovers) => {
+            print("bad!")
+            print(get(leftovers, 0)?)
+        },
+    }
+}
+
+fn oak() -> Int {
+    42
+}
+
+fn read_exactly(v: Vec<Int>) -> Result<Vec<Int>, Vec<Int>> {
+    if v.len() == 0 {
+        Err(v)
+    } else {
+        Ok(get(v, 0)?)
+    }
+}
+
+fn main() {
+    let mut entries = vec(8, oak(), 15)
+    match read_exactly(entries) {
+        Ok(vec) => print(vec),
+        Err(leftovers) => {
+            print("bad!")
+            print(get(leftovers, 0)?)
+        },
+    }
+}
+
+fn oak() -> Int {
+    42
+}
+
+fn read_exactly(v: Vec<Int>) -> Result<Vec<Int>, Vec<Int>> {
+    if v.len() == 0 {
+        Err(v)
+    } else {
+        Ok(get(v, 0)?)
+    }
+}
+
+fn main() {
+    let mut entries = vec(8, oak(), 15)
+    match read_exactly(entries) {
+        Ok(vec) => print(vec),
+        Err(leftovers) => {
+            print("bad!")
+            print(get(leftovers, 0)?)
+        },
+    }
+}
+
+fn oak() -> Int {
+    42
+}
+
+fn read_exactly(v: Vec<Int>) -> Result<Vec<Int>, Vec<Int>> {
+    if v.len() == 0 {
+        Err(

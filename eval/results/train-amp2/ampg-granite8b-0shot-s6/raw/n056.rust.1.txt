@@ -1,0 +1,12 @@
+fn main() {
+    let mut t = 0;
+    let mut f = 0;
+    for &s in &["7", "x", "9", "?"] {
+        match s.parse::<u32>() {
+            Ok(_) => t += 1,
+            Err(_) => f += 1,
+        }
+    }
+    println!("{}", t);
+    println!("{}", f);
+}

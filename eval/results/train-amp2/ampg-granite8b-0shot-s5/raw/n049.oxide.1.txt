@@ -1,0 +1,377 @@
+fn main() {
+    let fig = match figure() {
+        Figure8 => "8",
+        Figure3 => "3",
+        Figure11 => "11",
+        Figure6 => "6",
+    }
+    let mut prev = fig
+    for fig in figure_sequence() {
+        print_str(prev)
+        print_str(" ")
+        prev = match fig {
+            Figure8 => "8",
+            Figure3 => "3",
+            Figure11 => "11",
+            Figure6 => "6",
+        }
+    }
+}
+
+enum Figure {
+    Figure3,
+    Figure6,
+    Figure8,
+    Figure11,
+}
+
+fn figure() -> Figure {
+    let n = rand_int(12)
+    match n {
+        Rng(i) => match i % 4 {
+            Rng(i) => match i {
+                Rng(i) => match i {
+                    Rng(i) => match i {
+                        Rng(i) => match i {
+                            Rng(i) => match i {
+                                Rng(i) => match i {
+                                    Rng(i) => match i {
+                                        Rng(i) => match_figure()._1,
+                                        Rng(i) => match_figure()._1,
+                                        Rng(i) => match_figure()._1,
+                                    },
+                                    Rng(i) => match_figure()._1,
+                                },
+                                Rng(i) => match_figure()._1,
+                            },
+                            Rng(i) => match_figure()._1,
+                        },
+                    },
+                },
+            },
+        },
+    }
+}
+
+fn figure_sequence() -> Vec<Figure> {
+    let mut figs = vec()
+    loop_infinitely(figs, figure(), figs.push)
+}
+
+enum Range {
+    Rng(Int),
+}
+
+fn rand_int(n: Int) -> Range {
+    Range(0)
+}
+
+fn loop_infinitely(acc: Vec<Figure>, first: Figure, add: Move<Figure>) {
+    let mut fig = first
+    loop_infinitely(acc, fig, add)
+}
+
+fn match_figure() -> Match<Figure, Figure> {
+    Match(Figure3, Figure3)
+}
+
+enum MatchArm {
+    Match(Figure, Figure),
+}
+
+fn match_figure() -> MatchArm {
+    Match(Figure3, Figure3)
+}
+
+enum Match {
+    Match(Figure, Figure),
+}
+
+enum Move {
+    Move(Figure),
+}
+
+fn loop_infinitely(acc: Vec<Figure>, first: Figure, add: Move<Figure>) {
+    let mut fig = first
+    loop_infinitely(acc, fig, add)
+}
+
+enum LoopArm {
+    Loop(Vec<Figure>),
+}
+
+fn loop_infinitely() -> LoopArm {
+    Loop(vec())
+}
+
+enum Loop {
+    Loop(Vec<Figure>),
+}
+
+fn match_figure() -> Loop {
+    Loop(vec())
+}
+
+enum WhileArm {
+    While(Bool),
+}
+
+fn match_figure() -> WhileArm {
+    While(true)
+}
+
+enum While {
+    While(Bool),
+}
+
+fn loop_infinitely(acc: Vec<Figure>, first: Figure, add: Move<Figure>) {
+    let mut fig = first
+    loop_infinitely(acc, fig, add)
+}
+
+fn match_figure() -> While {
+    While(true)
+}
+
+enum IfArm {
+    If(Bool),
+}
+
+fn match_figure() -> IfArm {
+    If(true)
+}
+
+enum If {
+    If(Bool),
+}
+
+fn loop_infinitely(acc: Vec<Figure>, first: Figure, add: Move<Figure>) {
+    let mut fig = first
+    loop_infinitely(acc, fig, add)
+}
+
+fn match_figure() -> If {
+    If(true)
+}
+
+enum LetArm {
+    Let(Figure),
+}
+
+fn match_figure() -> LetArm {
+    Let(Figure3)
+}
+
+enum Let {
+    Let(Figure),
+}
+
+fn loop_infinitely(acc: Vec<Figure>, first: Figure, add: Move<Figure>) {
+    let mut fig = first
+    loop_infinitely(acc, fig, add)
+}
+
+fn match_figure() -> Let {
+    Let(Figure3)
+}
+
+enum BlockArm {
+    Block(Vec<Figure>),
+}
+
+fn match_figure() -> BlockArm {
+    Block(vec())
+}
+
+enum Block {
+    Block(Vec<Figure>),
+}
+
+fn loop_infinitely(acc: Vec<Figure>, first: Figure, add: Move<Figure>) {
+    let mut fig = first
+    loop_infinitely(acc, fig, add)
+}
+
+fn match_figure() -> Block {
+    Block(vec())
+}
+
+fn main() {
+    let fig = match figure() {
+        Figure8 => "8",
+        Figure3 => "3",
+        Figure11 => "11",
+        Figure6 => "6",
+    }
+    let mut prev = fig
+    for fig in figure_sequence() {
+        print_str(prev)
+        print_str(" ")
+        prev = match fig {
+            Figure8 => "8",
+            Figure3 => "3",
+            Figure11 => "11",
+            Figure6 => "6",
+        }
+    }
+}
+
+enum Figure {
+    Figure3,
+    Figure6,
+    Figure8,
+    Figure11,
+}
+
+fn figure() -> Figure {
+    let n = rand_int(12)
+    match n {
+        Rng(i) => match i % 4 {
+            Rng(i) => match i {
+                Rng(i) => match i {
+                    Rng(i) => match i {
+                        Rng(i) => match i {
+                            Rng(i) => match i {
+                                Rng(i) => match_figure()._1,
+                                Rng(i) => match_figure()._1,
+                                Rng(i) => match_figure()._1,
+                            },
+                            Rng(i) => match_figure()._1,
+                        },
+                    },
+                },
+            },
+        },
+    }
+}
+
+fn figure_sequence() -> Vec<Figure> {
+    let mut figs = vec()
+    loop_infinitely(figs, figure(), figs.push)
+}
+
+enum Range {
+    Rng(Int),
+}
+
+fn rand_int(n: Int) -> Range {
+    Range(0)
+}
+
+fn loop_infinitely(acc: Vec<Figure>, first: Figure, add: Move<Figure>) {
+    let mut fig = first
+    loop_infinitely(acc, fig, add)
+}
+
+fn match_figure() -> Match<Figure, Figure> {
+    Match(Figure3, Figure3)
+}
+
+enum MatchArm {
+    Match(Figure, Figure),
+}
+
+fn match_figure() -> MatchArm {
+    Match(Figure3, Figure3)
+}
+
+enum Match {
+    Match(Figure, Figure),
+}
+
+enum Move {
+    Move(Figure),
+}
+
+fn loop_infinitely(acc: Vec<Figure>, first: Figure, add: Move<Figure>) {
+    let mut fig = first
+    loop_infinitely(acc, fig, add)
+}
+
+enum LoopArm {
+    Loop(Vec<Figure>),
+}
+
+fn loop_infinitely() -> LoopArm {
+    Loop(vec())
+}
+
+enum Loop {
+    Loop(Vec<Figure>),
+}
+
+fn match_figure() -> Loop {
+    Loop(vec())
+}
+
+enum WhileArm {
+    While(Bool),
+}
+
+fn match_figure() -> WhileArm {
+    While(true)
+}
+
+enum While {
+    While(Bool),
+}
+
+fn loop_infinitely(acc: Vec<Figure>, first: Figure, add: Move<Figure>) {
+    let mut fig = first
+    loop_infinitely(acc, fig, add)
+}
+
+fn match_figure() -> While {
+    While(true)
+}
+
+enum IfArm {
+    If(Bool),
+}
+
+fn match_figure() -> IfArm {
+    If(true)
+}
+
+enum If {
+    If(Bool),
+}
+
+fn loop_infinitely(acc: Vec<Figure>, first: Figure, add: Move<Figure>) {
+    let mut fig = first
+    loop_infinitely(acc, fig, add)
+}
+
+fn match_figure() -> If {
+    If(true)
+}
+
+enum LetArm {
+    Let(Figure),
+}
+
+fn match_figure() -> LetArm {
+    Let(Figure3)
+}
+
+enum Let {
+    Let(Figure),
+}
+
+fn loop_infinitely(acc: Vec<Figure>, first: Figure, add: Move<Figure>) {
+    let mut fig = first
+    loop_infinitely(acc, fig, add)
+}
+
+fn match_figure() -> Let {
+    Let(Figure3)
+}
+
+enum BlockArm {
+    Block(Vec<Figure>),
+}
+
+fn match_figure() -> BlockArm {
+    Block(vec())
+}
+

@@ -1,0 +1,17 @@
+fn price_two(n: Int) -> Int {
+    n * 2
+}
+
+fn price_three(n: Int) -> Int {
+    n * 3
+}
+
+fn main() {
+    let four = 4
+    let five = 5
+    let v1 = price_three(four)
+    let v2 = price_two(five)
+    print(v1)
+    print(v2)
+    print(v1 + v2)
+}

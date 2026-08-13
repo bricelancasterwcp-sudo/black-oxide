@@ -1,0 +1,13 @@
+fn print_number_or_bad(s: Str) -> Str {
+    match parse_int(s)? {
+        Some(n) => int_to_str(n),
+        None => "bad".to_string(),
+    }
+}
+
+fn main() {
+    let entries = vec_of_str("8", "oak", "15")
+    for entry in entries {
+        print(print_number_or_bad(entry))
+    }
+}

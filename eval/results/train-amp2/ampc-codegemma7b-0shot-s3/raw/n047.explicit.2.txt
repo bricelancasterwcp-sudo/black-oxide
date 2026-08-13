@@ -1,0 +1,25 @@
+fn collect_even(n: Int) -> Vec<Int> {
+    let mut v = vec()
+    let mut i = 1
+    while i <= n {
+        if i % 2 == 0 {
+            v = push(v, i)
+        }
+        i = i + 1
+    }
+    v
+}
+
+fn print_rev(v: &Vec<Int>) {
+    let mut i = len(v) - 1
+    while i >= 0 {
+        print(get(v, i))
+        i = i - 1
+    }
+}
+
+fn main() {
+    let nums = collect_even(10)
+    print_rev(&nums)
+    drop nums
+}

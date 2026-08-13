@@ -1,0 +1,279 @@
+fn main() {
+    let mut v = vec()
+    for i in 10.down_to(1) {
+        if i % 2 == 0 {
+            v = push(v, i)
+        }
+    }
+    for x in v.iter().rev() {
+        print(x)
+        print_str("\n")
+    }
+}
+
+fn push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    vec_push(mutvec, x)
+    mutvec
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) {
+    let len = len(mutvec)
+    mutvec = realloc(mutvec, len + 1)
+    let addr = mutvec.as_mut_ptr() + len * size_of(Int)
+    copy_memory(addr, x)
+}
+
+fn realloc(mutvec: Vec<Int>, new_len: Int) -> Vec<Int> {
+    let old_len = len(mutvec)
+    if old_len >= new_len {
+        return mutvec
+    }
+    let mut new_vec = vec()
+    for i in 0.to(new_len) {
+        if i < old_len {
+            let x = get(mutvec, i)?
+            new_vec = push(new_vec, x)
+        } else {
+            new_vec = push(new_vec, 0)
+        }
+    }
+    new_vec
+}
+
+fn copy_memory(addr: Pointer<Int>, x: Int) {
+    unsafe
+    store_int(addr, x)
+}
+
+fn store_int(addr: Pointer<Int>, x: Int) {
+    unsafe
+    write_int(addr, x)
+}
+
+fn write_int(addr: Pointer<Int>, x: Int) {
+    let bytes = x.to_bytes()
+    for i in 0.to(size_of(Int)) {
+        unsafe
+        store_byte(addr + i, bytes(i))
+    }
+}
+
+fn store_byte(addr: Pointer<Int>, b: Byte) {
+    unsafe
+    write_byte(addr, b)
+}
+
+fn write_byte(addr: Pointer<Int>, b: Byte) {
+    unsafe
+    write_mem(addr, b)
+}
+
+fn write_mem(addr: Pointer<Int>, b: Byte) {
+    unsafe
+    ptr_write_byte(addr, b)
+}
+
+fn ptr_write_byte(addr: Pointer<Int>, b: Byte) {
+    ptr_write_byte(addr, b)
+}
+
+fn size_of(t: Type) -> Int {
+    size_of(t)
+}
+
+fn as_mut_ptr(v: Vec<Int>) -> Pointer<Int> {
+    as_mut_ptr(v)
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    get(v, i)
+}
+
+fn len(v: Vec<Int>) -> Int {
+    len(v)
+}
+
+fn realloc(v: Vec<Int>, new_len: Int) -> Vec<Int> {
+    realloc(v, new_len)
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn type_name(t: Type) -> Str {
+    type_name(t)
+}
+
+fn print_str(s: Str) {
+    print_str(s)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn ptr_write_byte(addr: Pointer<Int>, b: Byte) {
+    unsafe
+    ptr_write_byte(addr, b)
+}
+
+fn ptr_write_byte(addr: Pointer<Int>, b: Byte) {
+    unsafe
+    ptr_write_byte(addr, b)
+}
+
+fn type_name(t: Type) -> Str {
+    type_name(t)
+}
+
+fn main() {
+    let mut v = vec()
+    for i in 10.down_to(1) {
+        if i % 2 == 0 {
+            v = push(v, i)
+        }
+    }
+    for x in v.iter().rev() {
+        print(x)
+        print_str("\n")
+    }
+}
+
+fn push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    vec_push(mutvec, x)
+    mutvec
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) {
+    let len = len(mutvec)
+    mutvec = realloc(mutvec, len + 1)
+    let addr = mutvec.as_mut_ptr() + len * size_of(Int)
+    copy_memory(addr, x)
+}
+
+fn realloc(mutvec: Vec<Int>, new_len: Int) -> Vec<Int> {
+    let old_len = len(mutvec)
+    if old_len >= new_len {
+        return mutvec
+    }
+    let mut new_vec = vec()
+    for i in 0.to(new_len) {
+        if i < old_len {
+            let x = get(mutvec, i)?
+            new_vec = push(new_vec, x)
+        } else {
+            new_vec = push(new_vec, 0)
+        }
+    }
+    new_vec
+}
+
+fn copy_memory(addr: Pointer<Int>, x: Int) {
+    unsafe
+    store_int(addr, x)
+}
+
+fn store_int(addr: Pointer<Int>, x: Int) {
+    unsafe
+    write_int(addr, x)
+}
+
+fn write_int(addr: Pointer<Int>, x: Int) {
+    let bytes = x.to_bytes()
+    for i in 0.to(size_of(Int)) {
+        unsafe
+        store_byte(addr + i, bytes(i))
+    }
+}
+
+fn store_byte(addr: Pointer<Int>, b: Byte) {
+    unsafe
+    write_byte(addr, b)
+}
+
+fn write_byte(addr: Pointer<Int>, b: Byte) {
+    unsafe
+    write_mem(addr, b)
+}
+
+fn write_mem(addr: Pointer<Int>, b: Byte) {
+    unsafe
+    ptr_write_byte(addr, b)
+}
+
+fn ptr_write_byte(addr: Pointer<Int>, b: Byte) {
+    ptr_write_byte(addr, b)
+}
+
+fn size_of(t: Type) -> Int {
+    size_of(t)
+}
+
+fn as_mut_ptr(v: Vec<Int>) -> Pointer<Int> {
+    as_mut_ptr(v)
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    get(v, i)
+}
+
+fn len(v: Vec<Int>) -> Int {
+    len(v)
+}
+
+fn realloc(v: Vec<Int>, new_len: Int) -> Vec<Int> {
+    realloc(v, new_len)
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn type_name(t: Type) -> Str {
+    type_name(t)
+}
+
+fn print_str(s: Str) {
+    print_str(s)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn ptr_write_byte(addr: Pointer<Int>, b: Byte) {
+    unsafe
+    ptr_write_byte(addr, b)
+}
+
+fn ptr_write_byte(addr: Pointer<Int>, b: Byte) {
+    unsafe
+    ptr_write_byte(addr, b)
+}
+
+fn type_name(t: Type) -> Str {
+    type_name(t)
+}
+
+fn main() {
+    let mut v = vec()
+    for i in 10.down_to(1) {
+        if i % 2 == 0 {
+            v = push(v, i)
+        }
+    }
+    for x in v.iter().rev() {
+        print(x)
+        print_str("\n")
+    }
+}
+
+fn push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    vec_push(mutvec, x)
+    mutvec
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) {
+    let len = len(mutvec)
+    mutvec = realloc(mutvec, len

@@ -1,0 +1,14 @@
+fn divide(x: Float, y: Float) -> Result<Float, Str> {
+    if y == 0.0 {
+        Err("Cannot divide by zero!".to_string())
+    } else {
+        Ok(x / y)
+    }
+}
+
+fn main() {
+    match divide(20.0, 4.0) {
+        Ok(result) => print(result),
+        Err(error) => print_str(error),
+    }
+}

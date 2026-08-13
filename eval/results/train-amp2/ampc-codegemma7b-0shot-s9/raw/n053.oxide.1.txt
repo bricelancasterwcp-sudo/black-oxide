@@ -1,0 +1,13 @@
+fn main() {
+    let word = "drum".to_string()
+    let mut rev = "".to_string()
+    let mut normal = "".to_string()
+    for c in word.chars().rev() {
+        rev.push(c)
+    }
+    for c in word.chars() {
+        normal.push(c)
+    }
+    print_str(rev)
+    print_str(normal)
+}

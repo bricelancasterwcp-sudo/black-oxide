@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let x = [12, 5, 20, 8, 17];
+    let mut largest = 0;
+    let mut second_largest = 0;
+    for i in &x {
+        if *i > largest {
+            second_largest = largest;
+            largest = *i;
+        } else if *i > second_largest {
+            second_largest = *i;
+        }
+    }
+    println!("{}", largest);
+    println!("{}", second_largest);
+}
+```
+
+(Note that this code may not work as expected if there are multiple equal largest values, in which case it will only print one of them)

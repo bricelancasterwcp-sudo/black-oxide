@@ -1,0 +1,334 @@
+fn main() {
+    let four = 4
+    let three = 3
+    let two = 2
+    let five = 5
+    let first = push(push(vec(), four), three)
+    let second = push(push(vec(), two), two)
+    print(len(&first))
+    print(len(&second))
+    let both = push(first, second)
+    print(len(&both))
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let v = clone(&v)
+    push(v, x)
+}
+
+fn clone(x: &Int) -> Int {
+    let x = clone(&x)
+    x
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    let v = clone(&v)
+    let len = 0
+    for _ in &v {
+        let len = len + 1
+    }
+    len
+}
+
+fn print(x: &Int) {
+    let x = clone(&x)
+    print_str(str_len(int_to_str(x)))
+}
+
+fn print_str(s: &Str) {
+    let s = clone(&s)
+    print_str_raw(s)
+}
+
+fn print_str_raw(s: Str) {
+    native_print_str(s)
+}
+
+fn native_print_str(s: Str) {
+    s
+}
+
+fn vec() -> Vec<Int> {
+    let vec = Vec { data: 0, len: 0 }
+    vec
+}
+
+struct Vec {
+    data: Int,
+    len: Int,
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let a = clone(&a)
+    let b = clone(&b)
+    let vec = vec()
+    for i in a.to_float() < b.to_float() {
+        let vec = push(vec, i)
+    }
+    vec
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    let a = clone(&a)
+    let b = clone(&b)
+    let s = str_cat(a, b)
+    drop a
+    drop b
+    s
+}
+
+fn str_cat(a: Str, b: Str) -> Str {
+    let a = clone(&a)
+    let b = clone(&b)
+    let s = Str { data: 0, len: 0 }
+    s
+}
+
+struct Str {
+    data: Int,
+    len: Int,
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let s = clone(&s)
+    let vec = vec()
+    for c in range(0, s.len) {
+        let c = get(s, c)
+        let vec = push(vec, c)
+    }
+    vec
+}
+
+fn int_to_str(n: Int) -> Str {
+    let n = clone(&n)
+    let s = Str { data: 0, len: 0 }
+    s
+}
+
+fn to_float(n: Int) -> Float {
+    let n = clone(&n)
+    n.to_float()
+}
+
+fn trunc(x: Float) -> Int {
+    let x = clone(&x)
+    x.trunc()
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    let s = clone(&s)
+    let s = clone(&s)
+    let n = parse_int_raw(s)
+    drop s
+    n
+}
+
+fn parse_int_raw(s: Str) -> Option<Int> {
+    native_parse_int(s)
+}
+
+fn native_parse_int(s: Str) -> Option<Int> {
+    Some(0)
+}
+
+fn drop_vec(v: &Vec<Int>) {
+    let v = clone(&v)
+    drop_vec_raw(v)
+}
+
+fn drop_vec_raw(v: Vec<Int>) {
+    native_drop_vec(v)
+}
+
+fn native_drop_vec(v: Vec<Int>) {
+    drop v
+}
+
+fn drop_str(s: &Str) {
+    let s = clone(&s)
+    drop_str_raw(s)
+}
+
+fn drop_str_raw(s: Str) {
+    native_drop_str(s)
+}
+
+fn native_drop_str(s: Str) {
+    drop s
+}
+
+fn drop_int(n: &Int) {
+    let n = clone(&n)
+    drop_int_raw(n)
+}
+
+fn drop_int_raw(n: Int) {
+    native_drop_int(n)
+}
+
+fn native_drop_int(n: Int) {
+    drop n
+}
+
+fn clone_int(n: &Int) -> Int {
+    let n = clone(&n)
+    n
+}
+
+fn clone_str(s: &Str) -> Str {
+    let s = clone(&s)
+    s
+}
+
+fn clone_vec(v: &Vec<Int>) -> Vec<Int> {
+    let v = clone(&v)
+    v
+}
+
+fn clone_option(o: Option<Int>) -> Option<Int> {
+    let o = clone(&o)
+    o
+}
+
+fn clone_result(r: Result<Int, Int>) -> Result<Int, Int> {
+    let r = clone(&r)
+    r
+}
+
+fn clone_tuple(t: &Tuple2<Int, Int>) -> Tuple2<Int, Int> {
+    let t = clone(&t)
+    t
+}
+
+fn clone_enum(e: &Enum) -> Enum {
+    let e = clone(&e)
+    e
+}
+
+struct Enum {
+    tag: Int,
+    data: Int,
+}
+
+fn clone_lambda(f: &Lambda) -> Lambda {
+    let f = clone(&f)
+    f
+}
+
+fn clone_lambda_capture(f: &LambdaCapture) -> LambdaCapture {
+    let f = clone(&f)
+    f
+}
+
+fn clone_lambda_capture_capture(f: &LambdaCaptureCapture) -> LambdaCaptureCapture {
+    let f = clone(&f)
+    f
+}
+
+struct Lambda {
+    body: Int,
+    captures: Vec<LambdaCapture>,
+}
+
+struct LambdaCapture {
+    tag: Int,
+    data: Int,
+}
+
+struct LambdaCaptureCapture {
+    body: Int,
+    captures: Vec<LambdaCaptureCapture>,
+}
+
+fn clone_slice(s: &Slice<Int>) -> Slice<Int> {
+    let s = clone(&s)
+    s
+}
+
+struct Slice {
+    data: Int,
+    len: Int,
+}
+
+fn clone_trait_object(o: &TraitObject) -> TraitObject {
+    let o = clone(&o)
+    o
+}
+
+struct TraitObject {
+    tag: Int,
+    data: Int,
+}
+
+fn clone_struct(s: &Struct) -> Struct {
+    let s = clone(&s)
+    s
+}
+
+struct Struct {
+    f: Int,
+}
+
+fn clone_union(u: &Union) -> Union {
+    let u = clone(&u)
+    u
+}
+
+struct Union {
+    tag: Int,
+    data: Int,
+}
+
+fn clone_lambda_capture_capture_capture(f: &LambdaCaptureCaptureCapture) -> LambdaCaptureCaptureCapture {
+    let f = clone(&f)
+    f
+}
+
+struct LambdaCaptureCaptureCapture {
+    body: Int,
+    captures: Vec<LambdaCaptureCaptureCapture>,
+}
+
+fn clone_lambda_capture_capture_capture_capture(f: &LambdaCaptureCaptureCaptureCaptureCapture) -> LambdaCaptureCaptureCaptureCaptureCapture {
+    let f = clone(&f)
+    f
+}
+
+struct LambdaCaptureCaptureCaptureCaptureCapture {
+    body: Int,
+    captures: Vec<LambdaCaptureCaptureCaptureCaptureCaptureCapture>,
+}
+
+fn main() {
+    let four = 4
+    let three = 3
+    let two = 2
+    let five = 5
+    let first = push(push(vec(), four), three)
+    let second = push(push(vec(), two), two)
+    print(len(&first))
+    print(len(&second))
+    let both = push(first, second)
+    print(len(&both))
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let v = clone(&v)
+    push_raw(v, x)
+}
+
+fn push_raw(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let v = clone(&v)
+    let len = len(&v)
+    let v = resize(v, len + 1)
+    set(&v, len, x)
+}
+
+fn resize(v: Vec<Int>, new_len: Int) -> Vec<Int> {
+    let v = clone(&v)
+    let v = resize_raw(v, new_len)
+    drop v
+    v
+}
+
+fn resize_raw(v: Vec<Int>, new_len

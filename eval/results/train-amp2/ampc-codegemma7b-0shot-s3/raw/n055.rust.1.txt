@@ -1,0 +1,13 @@
+fn main() {
+    let mut entries = Vec::new();
+    entries.push("8");
+    entries.push("oak");
+    entries.push("15");
+
+    for entry in entries {
+        match entry.parse::<usize>() {
+            Ok(number) => println!("{}", number),
+            Err(_) => println!("bad"),
+        }
+    }
+}

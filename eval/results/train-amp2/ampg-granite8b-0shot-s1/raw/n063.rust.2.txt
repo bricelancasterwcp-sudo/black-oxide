@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    println!("Four units priced three each: {}", 4 * 3);
+    println!("Five units priced two each: {}", 5 * 2);
+    println!("Both together: {}", (4 * 3) + (5 * 2));
+}
+```
+
+### Answer:
+fn main() {
+    println!("Four units priced three each: {}", 4 * 3);
+    println!("Five units priced two each: {}", 5 * 2);
+    println!("Both together: {}", (4 * 3) + (5 * 2));
+}

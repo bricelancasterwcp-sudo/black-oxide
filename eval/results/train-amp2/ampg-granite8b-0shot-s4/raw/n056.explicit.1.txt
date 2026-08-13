@@ -1,0 +1,24 @@
+fn main() {
+    let texts = vec("7", "x", "9", "?")
+    let mut total = 0
+    let mut count = 0
+    for text in texts {
+        let number = parse_int(text)
+        match number {
+            Some(num) => {
+                total = total + num
+                count = count + 1
+            },
+            None => {
+                print_str("Text is not a number: ")
+                print_str(text)
+                print_str("\n")
+            },
+        }
+    }
+    print_str("Total: ")
+    print(total)
+    print_str(", Count: ")
+    print(count)
+    print_str("\n")
+}

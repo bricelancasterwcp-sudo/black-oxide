@@ -1,0 +1,21 @@
+fn process(x: Option<Int>, y: Option<Str>, z: Option<Int>) {
+    match x {
+        Some(n) => print(n),
+        None => print("bad"),
+    }
+    print_str(" ")
+    match y {
+        Some(s) => print_str(&s),
+        None => print("bad"),
+    }
+    print_str(" ")
+    match z {
+        Some(n) => print(n),
+        None => print("bad"),
+    }
+    print_str("\n")
+}
+
+fn main() {
+    process(Some(8), Some("oak"), Some(15))
+}

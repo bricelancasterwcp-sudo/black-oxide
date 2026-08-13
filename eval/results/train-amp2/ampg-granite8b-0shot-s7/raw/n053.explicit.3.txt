@@ -1,0 +1,13 @@
+fn drum(word: Str) -> Str {
+    let mut letters = chars(word)
+    let mut output = ""
+    for _ in 0.step_to(str_len(word), 1) {
+        output = concat(output, get(&letters, str_len(output) - 1))
+    }
+    drop letters
+    output
+}
+
+fn main() {
+    print(drum("drum"))
+}

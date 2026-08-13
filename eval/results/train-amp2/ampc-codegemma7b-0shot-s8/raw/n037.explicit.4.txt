@@ -1,0 +1,363 @@
+fn main() {
+    let mut r = Rect { width: 2, height: 3 }
+    r.width = 5
+    print(area(&r))
+    drop r
+}
+
+struct Rect {
+    width: Int,
+    height: Int,
+}
+
+fn area(r: &Rect) -> Int {
+    r.width * r.height
+}
+
+fn change_width(r: &Rect, new_width: Int) -> Rect {
+    Rect(new_width, r.height)
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn drop_rc(r: Rect) {
+    drop r
+}
+
+fn clone(x: &Rect) -> Rect {
+    Rect(x.width, x.height)
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut v = v
+    push(&mut, v, x)
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    let v = v
+    len(&v)
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    let v = v
+    get(&v, i)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let a = a
+    let b = b
+    range(&a, &b)
+}
+
+fn to_float(n: Int) -> Float {
+    let n = n
+    to_float(&n)
+}
+
+fn trunc(x: Float) -> Int {
+    let x = x
+    trunc(&x)
+}
+
+fn vec() -> Vec<Int> {
+    let v = vec()
+    vec(&v)
+}
+
+fn push(v: &Vec<Int>, x: Int) -> Vec<Int> {
+    let mut v = v
+    push(&mut, v, x)
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    let v = v
+    len(&v)
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    let v = v
+    get(&v, i)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let a = a
+    let b = b
+    range(&a, &b)
+}
+
+fn clone(x: &Int) -> Int {
+    let x = x
+    clone(&x)
+}
+
+fn str_len(s: Str) -> Int {
+    let s = s
+    str_len(&s)
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let a = a
+    let b = b
+    concat(&a, &b)
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let s = s
+    chars(&s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    let n = n
+    int_to_str(&n)
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    let s = s
+    parse_int(&s)
+}
+
+fn drop_rc(r: Rect) {
+    drop r
+}
+
+fn change_width(r: &Rect, new_width: Int) -> Rect {
+    Rect(new_width, r.height)
+}
+
+fn drop_rc(r: Rect) {
+    drop r
+}
+
+fn drop_rc(r: Rect) {
+    drop r
+}
+
+fn drop_rc(r: Rect) {
+    drop r
+}
+
+fn drop_rc(r: Rect) {
+    drop r
+}
+
+fn drop_rc(r: Rect) {
+    drop r
+}
+
+fn drop_rc(r: Rect) {
+    drop r
+}
+
+fn drop_rc(r: Rect) {
+    drop r
+}
+
+fn drop_rc(r: Rect) {
+    drop r
+}
+
+fn drop_rc(r: Rect) {
+    drop r
+}
+
+fn drop_rc(r: Rect) {
+    drop r
+}
+
+fn drop_rc(r: Rect) {
+    drop r
+}
+
+fn drop_rc(r: Rect) {
+    drop r
+}
+
+fn drop_rc(r: Rect) {
+    drop r
+}
+
+fn drop_rc(r: Rect) {
+    drop r
+}
+
+fn drop_rc(r: Rect) {
+    drop r
+}
+
+fn drop_rc(r: Rect) {
+    drop r
+}
+
+fn drop_rc(r: Rect) {
+    drop r
+}
+
+fn drop_rc(r: Rect) {
+    drop r
+}
+
+fn drop_rc(r: Rect) {
+    drop r
+}
+
+fn drop_rc(r: Rect) {
+    drop r
+}
+
+fn drop_rc(r: Rect) {
+    drop r
+}
+
+fn drop_rc(r: Rect) {
+    drop r
+}
+
+fn drop_rc(r: Rect) {
+    drop r
+}
+
+fn main() {
+    let mut r = Rect { width: 2, height: 3 }
+    r.width = 5
+    print(area(&r))
+    drop r
+}
+
+struct Rect {
+    width: Int,
+    height: Int,
+}
+
+fn area(r: &Rect) -> Int {
+    r.width * r.height
+}
+
+fn change_width(r: &Rect, new_width: Int) -> Rect {
+    Rect(new_width, r.height)
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn drop_rc(r: Rect) {
+    drop r
+}
+
+fn clone(x: &Rect) -> Rect {
+    Rect(x.width, x.height)
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut v = v
+    push(&mut, v, x)
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    let v = v
+    len(&v)
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    let v = v
+    get(&v, i)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let a = a
+    let b = b
+    range(&a, &b)
+}
+
+fn to_float(n: Int) -> Float {
+    let n = n
+    to_float(&n)
+}
+
+fn trunc(x: Float) -> Int {
+    let x = x
+    trunc(&x)
+}
+
+fn vec() -> Vec<Int> {
+    let v = vec()
+    vec(&v)
+}
+
+fn push(v: &Vec<Int>, x: Int) -> Vec<Int> {
+    let mut v = v
+    push(&mut, v, x)
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    let v = v
+    len(&v)
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    let v = v
+    get(&v, i)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let a = a
+    let b = b
+    range(&a, &b)
+}
+
+fn clone(x: &Int) -> Int {
+    let x = x
+    clone(&x)
+}
+
+fn str_len(s: Str) -> Int {
+    let s = s
+    str_len(&s)
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let a = a
+    let b = b
+    concat(&a, &b)
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let s = s
+    chars(&s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    let n = n
+    int_to_str(&n)
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    let s = s
+    parse_int(&s)
+}
+
+fn drop_rc(r: Rect) {
+    drop r
+}
+
+fn change_width(r: &Rect, new_width: Int) -> Rect {
+    Rect(new_width, r.height)
+}
+
+fn drop_rc(r: Rect) {
+    drop r
+}
+
+fn drop_rc(r: Rect) {
+    drop r
+}
+
+fn drop_rc(r: Rect) {
+    drop r
+}
+
+fn drop_rc(r: Rect) {
+    drop r
+}

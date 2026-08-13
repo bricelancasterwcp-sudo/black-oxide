@@ -1,0 +1,24 @@
+struct TrafficSignal { color: Str }
+
+fn main() {
+    let signals = vec("green", "red", "yellow")
+    for signal in signals {
+        match signal {
+            Str(b) => match b {
+                Str(c) => match c {
+                    Str(d) => match d {
+                        Str(e) => match e {
+                            Str(f) => match f {
+                                Str(g) => match g {
+                                    Str(h) => match h {
+                                        Str(i) => matchStri,
+                                    },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+        }
+    }
+}

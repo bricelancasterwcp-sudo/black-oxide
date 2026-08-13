@@ -1,0 +1,15 @@
+fn main() {
+    let (x, y) = (20, 4);
+    match divide(x, y) {
+        Ok(result) => println!("{} / {} = {}", x, y, result),
+        Err(e) => println!("Cannot divide by zero! {}", e),
+    }
+}
+
+fn divide(x: i32, y: i32) -> Result<i32, std::fmt::Error> {
+    if y == 0 {
+        Err(std::fmt::Error::new("Division by zero is not allowed"))?
+    } else {
+        Ok(x / y)
+    }
+}

@@ -1,0 +1,445 @@
+fn main() {
+    let mut total = 0
+    let mut count = 0
+    for x in &vec_from_file {
+        if x > 7 {
+            total = total + x
+            count = count + 1
+        }
+    }
+    print(total)
+    print(count)
+    drop total
+    drop count
+}
+
+fn vec_from_file() -> Vec<Int> {
+    let mut v = vec()
+    for line in file("7.txt").iter_lines() {
+        let x = parse_int(line).unwrap()
+        push(v, x)
+    }
+    v
+}
+
+fn file(name: &Str) -> Vec<Str> {
+    let mut v = vec()
+    for line in open(name).iter_lines() {
+        push(v, line)
+    }
+    v
+}
+
+fn open(name: &Str) -> File {
+    File(name)
+}
+
+struct File {
+    name: Str,
+}
+
+fn iter_lines(self: &File) -> Vec<Str> {
+    vec() // no lines for now
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    None
+}
+
+fn print(x: Int) {
+    drop x
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v
+}
+
+fn vec() -> Vec<Int> {
+    vec()
+}
+
+fn drop_resource(x: T) {
+    drop x
+}
+
+fn drop_resource_ref(x: &T) {
+    drop x
+}
+
+fn drop_resource_mut(x: &T) {
+    drop x
+}
+
+fn clone(x: T) -> T {
+    x
+}
+
+fn clone_ref(x: &T) -> T {
+    x
+}
+
+fn clone_mut(x: &T) -> T {
+    x
+}
+
+fn box_new(x: T) -> Box<T> {
+    Box(x)
+}
+
+fn box_new_ref(x: &T) -> Box<T> {
+    Box(x)
+}
+
+fn box_new_mut(x: &T) -> Box<T> {
+    Box(x)
+}
+
+struct Box {
+    value: T,
+}
+
+struct Rc {
+    value: T,
+}
+
+struct Arc {
+    value: T,
+}
+
+struct RefCell {
+    value: T,
+}
+
+struct Once {
+    value: T,
+}
+
+struct Cell {
+    value: T,
+}
+
+struct Mutex {
+    value: T,
+}
+
+struct MutexGuard {
+    value: T,
+}
+
+struct RwLock {
+    value: T,
+}
+
+struct RwLockReadGuard {
+    value: T,
+}
+
+struct RwLockWriteGuard {
+    value: T,
+}
+
+struct Weak {
+    value: T,
+}
+
+fn main() {
+    let a = box_new(0)
+    let b = clone_ref(&a)
+    drop_resource(a)
+    print_ref(b)
+    drop_resource_ref(b)
+}
+
+fn print_ref(x: &Int) {
+    drop x
+}
+
+fn vec_from_file(path: &Str) -> Vec<Int> {
+    vec() // no lines for now
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    None
+}
+
+fn print(x: Int) {
+    drop x
+}
+
+fn box_new(x: T) -> Box<T> {
+    Box(x)
+}
+
+fn box_new_ref(x: &T) -> Box<T> {
+    Box(x)
+}
+
+fn box_new_mut(x: &T) -> Box<T> {
+    Box(x)
+}
+
+struct Box {
+    value: T,
+}
+
+struct Rc {
+    value: T,
+}
+
+struct Arc {
+    value: T,
+}
+
+struct RefCell {
+    value: T,
+}
+
+struct Once {
+    value: T,
+}
+
+struct Cell {
+    value: T,
+}
+
+struct Mutex {
+    value: T,
+}
+
+struct MutexGuard {
+    value: T,
+}
+
+struct RwLock {
+    value: T,
+}
+
+struct RwLockReadGuard {
+    value: T,
+}
+
+struct RwLockWriteGuard {
+    value: T,
+}
+
+struct Weak {
+    value: T,
+}
+
+fn main() {
+    let a = box_new(0)
+    let b = clone_ref(&a)
+    print_ref(a)
+    print_ref(b)
+    drop_resource(a)
+    drop_resource_ref(b)
+}
+
+fn print_ref(x: &Int) {
+    drop x
+}
+
+fn vec_from_file(path: &Str) -> Vec<Int> {
+    vec() // no lines for now
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    None
+}
+
+fn print(x: Int) {
+    drop x
+}
+
+fn box_new(x: T) -> Box<T> {
+    Box(x)
+}
+
+fn box_new_ref(x: &T) -> Box<T> {
+    Box(x)
+}
+
+fn box_new_mut(x: &T) -> Box<T> {
+    Box(x)
+}
+
+struct Box {
+    value: T,
+}
+
+struct Rc {
+    value: T,
+}
+
+struct Arc {
+    value: T,
+}
+
+struct RefCell {
+    value: T,
+}
+
+struct Once {
+    value: T,
+}
+
+struct Cell {
+    value: T,
+}
+
+struct Mutex {
+    value: T,
+}
+
+struct MutexGuard {
+    value: T,
+}
+
+struct RwLock {
+    value: T,
+}
+
+struct RwLockReadGuard {
+    value: T,
+}
+
+struct RwLockWriteGuard {
+    value: T,
+}
+
+struct Weak {
+    value: T,
+}
+
+fn main() {
+    let a = box_new(0)
+    let b = clone_ref(&a)
+    print_ref(a)
+    print_ref(b)
+    drop_resource(a)
+    drop_resource_ref(b)
+}
+
+fn print_ref(x: &Int) {
+    drop x
+}
+
+fn vec_from_file(path: &Str) -> Vec<Int> {
+    vec() // no lines for now
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    None
+}
+
+fn print(x: Int) {
+    drop x
+}
+
+fn box_new(x: T) -> Box<T> {
+    Box(x)
+}
+
+fn box_new_ref(x: &T) -> Box<T> {
+    Box(x)
+}
+
+fn box_new_mut(x: &T) -> Box<T> {
+    Box(x)
+}
+
+struct Box {
+    value: T,
+}
+
+struct Rc {
+    value: T,
+}
+
+struct Arc {
+    value: T,
+}
+
+struct RefCell {
+    value: T,
+}
+
+struct Once {
+    value: T,
+}
+
+struct Cell {
+    value: T,
+}
+
+struct Mutex {
+    value: T,
+}
+
+struct MutexGuard {
+    value: T,
+}
+
+struct RwLock {
+    value: T,
+}
+
+struct RwLockReadGuard {
+    value: T,
+}
+
+struct RwLockWriteGuard {
+    value: T,
+}
+
+struct Weak {
+    value: T,
+}
+
+fn main() {
+    let a = box_new(0)
+    let b = clone_ref(&a)
+    print_ref(a)
+    print_ref(b)
+    drop_resource(a)
+    drop_resource_ref(b)
+}
+
+fn print_ref(x: &Int) {
+    drop x
+}
+
+fn vec_from_file(path: &Str) -> Vec<Int> {
+    vec() // no lines for now
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    None
+}
+
+fn print(x: Int) {
+    drop x
+}
+
+fn box_new(x: T) -> Box<T> {
+    Box(x)
+}
+
+fn box_new_ref(x: &T) -> Box<T> {
+    Box(x)
+}
+
+fn box_new_mut(x: &T) -> Box<T> {
+    Box(x)
+}
+
+struct Box {
+    value: T,
+}
+
+struct Rc {
+    value: T,
+}
+
+struct Arc {
+    value: T

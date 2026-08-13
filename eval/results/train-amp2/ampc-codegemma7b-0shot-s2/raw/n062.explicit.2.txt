@@ -1,0 +1,286 @@
+fn print_message(color: &Str) {
+    if color == "green" {
+        print("go for green\n")
+    } else if color == "red" {
+        print("stop for red\n")
+    } else if color == "yellow" {
+        print("wait for yellow\n")
+    } else {
+        print("invalid color\n")
+    }
+}
+
+fn main() {
+    print_message(&green)
+    print_message(&red)
+    print_message(&yellow)
+    print_message("purple")
+}
+
+fn green() -> Str {
+    return "green".to_string()
+}
+
+fn red() -> Str {
+    return "red".to_string()
+}
+
+fn yellow() -> Str {
+    return "yellow".to_string()
+}
+
+fn purple() -> Str {
+    return "purple".to_string()
+}
+
+fn print(color: &Str) {
+    print(color)
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    return vec(v, x)
+}
+
+fn len(v: Vec<Int>) -> Int {
+    return v.len()
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    return Some(v.get(i))
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    return (a.to_string()).to_string()
+}
+
+fn clone(x: &Int) -> Int {
+    return x.clone()
+}
+
+fn str_len(s: &Str) -> Int {
+    return s.len()
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    return a + b
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    return s.chars().map(char_to_str).collect()
+}
+
+fn int_to_str(n: &Int) -> Str {
+    return n.to_string()
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    return Some(s.parse())
+}
+
+fn to_float(n: &Int) -> Float {
+    return n.to_float()
+}
+
+fn trunc(x: &Int) -> Int {
+    return x.trunc()
+}
+
+fn print_int(n: &Int) {
+    print(n)
+}
+
+fn print_float(n: &Float) {
+    print(n)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn print_bool(b: &Bool) {
+    print(b)
+}
+
+fn print_unit() {
+    print("")
+}
+
+fn print_vec(v: &Vec<Int>) {
+    print(v)
+}
+
+fn print_option(o: &Option<Int>) {
+    print(o)
+}
+
+fn print_result(r: &Result<Int, Int>) {
+    print(r)
+}
+
+fn eq_int(a: &Int, b: &Int) -> Bool {
+    return a == b
+}
+
+fn eq_float(a: &Float, b: &Float) -> Bool {
+    return a == b
+}
+
+fn eq_str(a: &Str, b: &Str) -> Bool {
+    return a == b
+}
+
+fn eq_bool(a: &Bool, b: &Bool) -> Bool {
+    return a == b
+}
+
+fn eq_unit(a: &Unit, b: &Unit) -> Bool {
+    return a == b
+}
+
+fn eq_vec(a: &Vec<Int>, b: &Vec<Int>) -> Bool {
+    return a == b
+}
+
+fn eq_option(a: &Option<Int>, b: &Option<Int>) -> Bool {
+    return a == b
+}
+
+fn eq_result(a: &Result<Int, Int>, b: &Result<Int, Int>) -> Bool {
+    return a == b
+}
+
+fn add_int(a: &Int, b: &Int) -> Int {
+    return a + b
+}
+
+fn add_float(a: &Float, b: &Float) -> Float {
+    return a + b
+}
+
+fn add_str(a: &Str, b: &Str) -> Str {
+    return a + b
+}
+
+fn add_bool(a: &Bool, b: &Bool) -> Bool {
+    return a && b
+}
+
+fn add_unit(a: &Unit, b: &Unit) -> Unit {
+    return Unit
+}
+
+fn add_vec(a: &Vec<Int>, b: &Vec<Int>) -> Vec<Int> {
+    return vec(a, b)
+}
+
+fn add_option(a: &Option<Int>, b: &Option<Int>) -> Option<Int> {
+    return Some(a + b)
+}
+
+fn add_result(a: &Result<Int, Int>, b: &Result<Int, Int>) -> Result<Int, Int> {
+    return a + b
+}
+
+fn sub_int(a: &Int, b: &Int) -> Int {
+    return a - b
+}
+
+fn sub_float(a: &Float, b: &Float) -> Float {
+    return a - b
+}
+
+fn sub_str(a: &Str, b: &Str) -> Str {
+    return a - b
+}
+
+fn sub_bool(a: &Bool, b: &Bool) -> Bool {
+    return a && !b
+}
+
+fn sub_unit(a: &Unit, b: &Unit) -> Unit {
+    return Unit
+}
+
+fn sub_vec(a: &Vec<Int>, b: &Vec<Int>) -> Vec<Int> {
+    return vec(a, b)
+}
+
+fn sub_option(a: &Option<Int>, b: &Option<Int>) -> Option<Int> {
+    return Some(a - b)
+}
+
+fn sub_result(a: &Result<Int, Int>, b: &Result<Int, Int>) -> Result<Int, Int> {
+    return a - b
+}
+
+fn mul_int(a: &Int, b: &Int) -> Int {
+    return a * b
+}
+
+fn mul_float(a: &Float, b: &Float) -> Float {
+    return a * b
+}
+
+fn mul_str(a: &Str, b: &Str) -> Str {
+    return a * b
+}
+
+fn mul_bool(a: &Bool, b: &Bool) -> Bool {
+    return a && a
+}
+
+fn mul_unit(a: &Unit, b: &Unit) -> Unit {
+    return Unit
+}
+
+fn mul_vec(a: &Vec<Int>, b: &Vec<Int>) -> Vec<Int> {
+    return vec(a, b)
+}
+
+fn mul_option(a: &Option<Int>, b: &Option<Int>) -> Option<Int> {
+    return Some(a * b)
+}
+
+fn mul_result(a: &Result<Int, Int>, b: &Result<Int, Int>) -> Result<Int, Int> {
+    return a * b
+}
+
+fn div_int(a: &Int, b: &Int) -> Int {
+    return a / b
+}
+
+fn div_float(a: &Float, b: &Float) -> Float {
+    return a / b
+}
+
+fn div_str(a: &Str, b: &Str) -> Str {
+    return a / b
+}
+
+fn div_bool(a: &Bool, b: &Bool) -> Bool {
+    return a && false
+}
+
+fn div_unit(a: &Unit, b: &Unit) -> Unit {
+    return Unit
+}
+
+fn div_vec(a: &Vec<Int>, b: &Vec<Int>) -> Vec<Int> {
+    return vec(a, b)
+}
+
+fn div_option(a: &Option<Int>, b: &Option<Int>) -> Option<Int> {
+    return Some(a / b)
+}
+
+fn div_result(a: &Result<Int, Int>, b: &Result<Int, Int>) -> Result<Int, Int> {
+    return a / b
+}
+
+fn rem_int(a: &Int, b: &Int) -> Int {
+    return a % b
+}
+
+fn rem_float(a: &Float, b: &Float) -> Float {
+    return a % b
+}

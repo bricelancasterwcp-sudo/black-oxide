@@ -1,0 +1,325 @@
+fn main() {
+    let total = (1 + 2 + 3 + 4 + 5).map(i32_to_i32).map(i32_to_i32).map(i32_to_i32).sum()
+    print(total)
+}
+
+fn i32_to_i32(x: Int) -> Int {
+    x * x * x
+}
+
+fn sum(v: Vec<Int>) -> Int {
+    v.reduce(0, i32_add)
+}
+
+fn i32_add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn main() {
+    let nums = (1 + 2 + 3 + 4 + 5).map(i32_to_i32).sum()
+    print(nums)
+}
+
+fn i32_to_i32(x: Int) -> Int {
+    x * x * x
+}
+
+fn sum(v: Vec<Int>) -> Int {
+    v.reduce(0, i32_add)
+}
+
+fn i32_add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn main() {
+    let nums = (1 + 2 + 3 + 4 + 5).map(i32_to_i32).sum()
+    print(nums)
+}
+
+fn i32_to_i32(x: Int) -> Int {
+    x * x * x
+}
+
+fn sum(v: Vec<Int>) -> Int {
+    v.reduce(0, i32_add)
+}
+
+fn i32_add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn main() {
+    let nums = (1 + 2 + 3 + 4 + 5).map(i32_to_i32).sum()
+    print(nums)
+}
+
+fn i32_to_i32(x: Int) -> Int {
+    x * x * x
+}
+
+fn sum(v: Vec<Int>) -> Int {
+    v.reduce(0, i32_add)
+}
+
+fn i32_add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn main() {
+    let nums = (1 + 2 + 3 + 4 + 5).map(i32_to_i32).sum()
+    print(nums)
+}
+
+fn i32_to_i32(x: Int) -> Int {
+    x * x * x
+}
+
+fn sum(v: Vec<Int>) -> Int {
+    v.reduce(0, i32_add)
+}
+
+fn i32_add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn main() {
+    let nums = (1 + 2 + 3 + 4 + 5).map(i32_to_i32).sum()
+    print(nums)
+}
+
+fn i32_to_i32(x: Int) -> Int {
+    x * x * x
+}
+
+fn sum(v: Vec<Int>) -> Int {
+    v.reduce(0, i32_add)
+}
+
+fn i32_add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn main() {
+    let nums = (1 + 2 + 3 + 4 + 5).map(i32_to_i32).sum()
+    print(nums)
+}
+
+fn i32_to_i32(x: Int) -> Int {
+    x * x * x
+}
+
+fn sum(v: Vec<Int>) -> Int {
+    v.reduce(0, i32_add)
+}
+
+fn i32_add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn main() {
+    let nums = (1 + 2 + 3 + 4 + 5).map(i32_to_i32).sum()
+    print(nums)
+}
+
+fn i32_to_i32(x: Int) -> Int {
+    x * x * x
+}
+
+fn sum(v: Vec<Int>) -> Int {
+    v.reduce(0, i32_add)
+}
+
+fn i32_add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn main() {
+    let nums = (1 + 2 + 3 + 4 + 5).map(i32_to_i32).sum()
+    print(nums)
+}
+
+fn i32_to_i32(x: Int) -> Int {
+    x * x * x
+}
+
+fn sum(v: Vec<Int>) -> Int {
+    v.reduce(0, i32_add)
+}
+
+fn i32_add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn main() {
+    let nums = (1 + 2 + 3 + 4 + 5).map(i32_to_i32).sum()
+    print(nums)
+}
+
+fn i32_to_i32(x: Int) -> Int {
+    x * x * x
+}
+
+fn sum(v: Vec<Int>) -> Int {
+    v.reduce(0, i32_add)
+}
+
+fn i32_add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn main() {
+    let nums = (1 + 2 + 3 + 4 + 5).map(i32_to_i32).sum()
+    print(nums)
+}
+
+fn i32_to_i32(x: Int) -> Int {
+    x * x * x
+}
+
+fn sum(v: Vec<Int>) -> Int {
+    v.reduce(0, i32_add)
+}
+
+fn i32_add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn main() {
+    let nums = (1 + 2 + 3 + 4 + 5).map(i32_to_i32).sum()
+    print(nums)
+}
+
+fn i32_to_i32(x: Int) -> Int {
+    x * x * x
+}
+
+fn sum(v: Vec<Int>) -> Int {
+    v.reduce(0, i32_add)
+}
+
+fn i32_add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn main() {
+    let nums = (1 + 2 + 3 + 4 + 5).map(i32_to_i32).sum()
+    print(nums)
+}
+
+fn i32_to_i32(x: Int) -> Int {
+    x * x * x
+}
+
+fn sum(v: Vec<Int>) -> Int {
+    v.reduce(0, i32_add)
+}
+
+fn i32_add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn main() {
+    let nums = (1 + 2 + 3 + 4 + 5).map(i32_to_i32).sum()
+    print(nums)
+}
+
+fn i32_to_i32(x: Int) -> Int {
+    x * x * x
+}
+
+fn sum(v: Vec<Int>) -> Int {
+    v.reduce(0, i32_add)
+}
+
+fn i32_add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn main() {
+    let nums = (1 + 2 + 3 + 4 + 5).map(i32_to_i32).sum()
+    print(nums)
+}
+
+fn i32_to_i32(x: Int) -> Int {
+    x * x * x
+}
+
+fn sum(v: Vec<Int>) -> Int {
+    v.reduce(0, i32_add)
+}
+
+fn i32_add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn main() {
+    let nums = (1 + 2 + 3 + 4 + 5).map(i32_to_i32).sum()
+    print(nums)
+}
+
+fn i32_to_i32(x: Int) -> Int {
+    x * x * x
+}
+
+fn sum(v: Vec<Int>) -> Int {
+    v.reduce(0, i32_add)
+}
+
+fn i32_add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn main() {
+    let nums = (1 + 2 + 3 + 4 + 5).map(i32_to_i32).sum()
+    print(nums)
+}
+
+fn i32_to_i32(x: Int) -> Int {
+    x * x * x
+}
+
+fn sum(v: Vec<Int>) -> Int {
+    v.reduce(0, i32_add)
+}
+
+fn i32_add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn main() {
+    let nums = (1 + 2 + 3 + 4 + 5).map(i32_to_i32).sum()
+    print(nums)
+}
+
+fn i32_to_i32(x: Int) -> Int {
+    x * x * x
+}
+
+fn sum(v: Vec<Int>) -> Int {
+    v.reduce(0, i32_add)
+}
+
+fn i32_add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn main() {
+    let nums = (1 + 2 + 3 + 4 + 5).map(i32_to_i32).sum()
+    print(nums)
+}
+
+fn i32_to_i32(x: Int) -> Int {
+    x * x * x
+}
+
+fn sum(v: Vec<Int>) -> Int {
+    v.reduce(0, i32_add)
+}
+
+fn i32_add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn main() {
+   

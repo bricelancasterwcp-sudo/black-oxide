@@ -1,0 +1,8 @@
+fn main() {
+    let banana = "banana".to_string().chars().collect()
+    for i in 0.to_int().to(len(banana).to_int()) {
+        if banana.get(i).unwrap() == "n".to_string().chars().nth(0).unwrap() {
+            print(i.to_string())
+        }
+    }
+}

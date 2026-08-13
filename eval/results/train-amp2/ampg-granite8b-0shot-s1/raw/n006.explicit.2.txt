@@ -1,0 +1,11 @@
+fn find_power_of_two() -> Int {
+    let mut x = 2
+    while x <= 100 {
+        x = x * 2
+    }
+    x
+}
+
+fn main() {
+    print(find_power_of_two())
+}

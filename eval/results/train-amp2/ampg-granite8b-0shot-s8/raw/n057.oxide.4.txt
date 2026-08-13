@@ -1,0 +1,23 @@
+struct Fruit { name: Str, letter_count: Int }
+
+fn most_letters(fig: Fruit, banana: Fruit, kiwi: Fruit) -> Fruit {
+    match fig.letter_count < banana.letter_count {
+        True => match fig.letter_count < kiwi.letter_count {
+            True => fig,
+            False => kiwi,
+        },
+        False => match banana.letter_count < kiwi.letter_count {
+            True => banana,
+            False => kiwi,
+        },
+    }
+}
+
+fn main() {
+    let fig = Fruit { name: "fig", letter_count: 3 }
+    let banana = Fruit { name: "banana", letter_count: 6 }
+    let kiwi = Fruit { name: "kiwi", letter_count: 4 }
+    let fruit = most_letters(fig, banana, kiwi)
+    print_str(fruit.name)
+    print(fruit.letter_count)
+}

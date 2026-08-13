@@ -1,0 +1,15 @@
+struct Line { four: Int, two: Int }
+
+fn line_value(l: Line) -> Int {
+    let Line { four, two } = l
+    four * 3 + two * 2
+}
+
+fn main() {
+    let l1 = Line { four: 4, two: 0 }
+    let l2 = Line { four: 0, two: 5 }
+    print(line_value(l1))
+    print(line_value(l2))
+    let l = Line { four: 4, two: 5 }
+    print(line_value(l))
+}

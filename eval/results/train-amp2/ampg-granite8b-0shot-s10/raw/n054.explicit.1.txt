@@ -1,0 +1,15 @@
+fn count_vowels(word: &Str) -> Int {
+    let mut count = 0
+    let vowels = "aeiou"
+    for letter in chars(&word) {
+        if get(&vowels, letter) == Some(true) {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn main() {
+    let word = "oxide"
+    print(count_vowels(&word))
+}

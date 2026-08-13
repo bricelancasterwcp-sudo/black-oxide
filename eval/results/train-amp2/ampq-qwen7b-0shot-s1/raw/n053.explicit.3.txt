@@ -1,0 +1,423 @@
+fn main() {
+    let drum = "drum"
+    let reversed = concat(characters(drum), drum)
+    print_str(reversed)
+    print_str(drum)
+    drop reversed
+    drop drum
+}
+
+fn characters(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn characters(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn main() {
+    let drum = "drum"
+    let reversed = concat(characters(drum), drum)
+    print_str(reversed)
+    print_str(drum)
+    drop reversed
+    drop drum
+}
+
+fn characters(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn characters(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn main() {
+    let drum = "drum"
+    let reversed = concat(characters(drum), drum)
+    print_str(reversed)
+    print_str(drum)
+    drop reversed
+    drop drum
+}
+
+fn characters(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn characters(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn main() {
+    let drum = "drum"
+    let reversed = concat(characters(drum), drum)
+    print_str(reversed)
+    print_str(drum)
+    drop reversed
+    drop drum
+}
+
+fn characters(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn characters(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn main() {
+    let drum = "drum"
+    let reversed = concat(characters(drum), drum)
+    print_str(reversed)
+    print_str(drum)
+    drop reversed
+    drop drum
+}
+
+fn characters(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn characters(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn main() {
+    let drum = "drum"
+    let reversed = concat(characters(drum), drum)
+    print_str(reversed)
+    print_str(drum)
+    drop reversed
+    drop drum
+}
+
+fn characters(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn characters(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn main() {
+    let drum = "drum"
+    let reversed = concat(characters(drum), drum)
+    print_str(reversed)
+    print_str(drum)
+    drop reversed
+    drop drum
+}
+
+fn characters(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn characters(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn main() {
+    let drum = "drum"
+    let reversed = concat(characters(drum), drum)
+    print_str(reversed)
+    print_str(drum)
+    drop reversed
+    drop drum
+}
+
+fn characters(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn characters(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn main() {
+    let drum = "drum"
+    let reversed = concat(characters(drum), drum)
+    print_str(reversed)
+    print_str(drum)
+    drop reversed
+    drop drum
+}
+
+fn characters(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn characters(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn main() {
+    let drum = "drum"
+    let reversed = concat(characters(drum), drum)
+    print_str(reversed)
+    print_str(drum)
+    drop reversed
+    drop drum
+}
+
+fn characters(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn characters(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn main() {
+    let drum = "drum"
+    let reversed = concat(characters(drum), drum)
+    print_str(reversed)
+    print_str(drum)
+    drop reversed
+    drop drum
+}
+
+fn characters(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn characters(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn main() {
+    let drum = "drum"
+    let reversed = concat(characters(drum), drum)
+    print_str(reversed)
+    print_str(drum)
+    drop reversed
+    drop drum
+}
+
+fn characters(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn characters(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn main() {
+    let drum = "drum"
+    let reversed = concat(characters(drum), drum)
+    print_str(reversed)
+    print_str(drum)
+    drop reversed
+    drop drum
+}
+
+fn characters(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn characters(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn main() {
+    let drum = "drum"
+    let reversed = concat(characters(drum), drum)
+    print_str(reversed)
+    print_str(drum)
+    drop reversed
+    drop drum
+}
+
+fn characters(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn characters(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn main() {
+    let drum = "drum"
+    let reversed = concat(characters(drum), drum)
+    print_str(reversed)
+    print_str(drum)
+    drop reversed
+    drop drum
+}
+
+fn characters(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn characters(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn main() {
+    let drum = "drum"
+    let reversed = concat(characters(drum), drum)
+    print_str(reversed)
+    print_str(drum)
+    drop reversed
+    drop drum
+}
+
+fn characters(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn characters(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn main() {
+    let drum = "drum"
+    let reversed = concat(characters(drum), drum)
+    print_str(reversed)
+    print_str(drum)
+    drop reversed
+    drop drum
+}
+
+fn characters(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn characters(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn main() {
+    let drum = "drum"
+    let reversed = concat(characters(drum), drum)
+    print_str(reversed)
+    print_str(drum)
+    drop reversed
+    drop drum
+}
+
+fn characters(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn characters(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn main() {
+    let drum = "drum"
+    let reversed = concat(characters(drum), drum)
+    print_str(reversed)
+    print_str(drum)
+    drop reversed
+    drop drum
+}
+
+fn characters(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn characters(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn main() {
+    let drum = "drum"
+    let reversed = concat(characters(drum), drum)
+    print_str(reversed)
+    print_str(drum)
+    drop reversed
+    drop drum
+}
+
+fn characters(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn characters(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn main() {
+    let drum = "drum"
+    let reversed = concat(characters(drum), drum)
+    print_str(reversed)
+    print_str(drum)
+    drop reversed
+    drop drum
+}
+
+fn characters(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn characters(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn main() {
+    let drum = "drum"
+    let reversed = concat(characters(drum), drum)
+    print_str(reversed)
+    print_str(drum)
+    drop reversed
+    drop drum
+}
+
+fn characters(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn characters(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn main() {
+    let drum = "drum"
+    let reversed = concat(characters(drum), drum)
+    print_str(reversed)
+    print_str(drum)
+    drop reversed
+    drop drum
+}
+
+fn characters(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn characters(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn main() {
+    let drum = "drum"
+    let reversed = concat(characters(drum), drum)
+    print_str(reversed)
+    print_str(drum)
+    drop reversed
+    drop drum
+}
+
+fn characters(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn characters(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn main() {
+    let drum = "drum"
+    let reversed = concat(characters(drum), drum)
+    print_str(reversed)
+    print_str(drum)
+    drop reversed
+    drop drum
+}
+
+fn characters(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn characters(s: &Str) -> Vec<Str> {
+    chars(s)

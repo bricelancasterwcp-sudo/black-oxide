@@ -1,0 +1,343 @@
+fn main() {
+    IntelliSense  //}
+    let total = sum_even(range(1, 20 + 1).iter().collect())
+    IntelliSense  //}
+    print(total)
+}
+
+fn sum_even(numbers: Vec<Int>) -> Int {
+    let mut total = 0
+    for n in numbers {
+        if n % 2 == 0 {
+            total = total + n
+        }
+    }
+    total
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    let mut i = a
+    while i < b {
+        result = push(result, i)
+        i = i + 1
+    }
+    result
+}
+
+fn sum_even(numbers: Vec<Int>) -> Int {
+    let mut total = 0
+    for n in numbers {
+        if n % 2 == 0 {
+            total = total + n
+        }
+    }
+    total
+}
+
+fn main() {
+    let total = sum_even(range(1, 20 + 1).iter().collect())
+    print(total)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    let mut i = a
+    while i < b {
+        result = push(result, i)
+        i = i + 1
+    }
+    result
+}
+
+fn sum_even(numbers: Vec<Int>) -> Int {
+    let mut total = 0
+    for n in numbers {
+        if n % 2 == 0 {
+            total = total + n
+        }
+    }
+    total
+}
+
+fn main() {
+    let total = sum_even(range(1, 20 + 1).iter().collect())
+    print(total)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    let mut i = a
+    while i < b {
+        result = push(result, i)
+        i = i + 1
+    }
+    result
+}
+
+fn sum_even(numbers: Vec<Int>) -> Int {
+    let mut total = 0
+    for n in numbers {
+        if n % 2 == 0 {
+            total = total + n
+        }
+    }
+    total
+}
+
+fn main() {
+    let total = sum_even(range(1, 20 + 1).iter().collect())
+    print(total)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    let mut i = a
+    while i < b {
+        result = push(result, i)
+        i = i + 1
+    }
+    result
+}
+
+fn sum_even(numbers: Vec<Int>) -> Int {
+    let mut total = 0
+    for n in numbers {
+        if n % 2 == 0 {
+            total = total + n
+        }
+    }
+    total
+}
+
+fn main() {
+    let total = sum_even(range(1, 20 + 1).iter().collect())
+    print(total)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    let mut i = a
+    while i < b {
+        result = push(result, i)
+        i = i + 1
+    }
+    result
+}
+
+fn sum_even(numbers: Vec<Int>) -> Int {
+    let mut total = 0
+    for n in numbers {
+        if n % 2 == 0 {
+            total = total + n
+        }
+    }
+    total
+}
+
+fn main() {
+    let total = sum_even(range(1, 20 + 1).iter().collect())
+    print(total)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    let mut i = a
+    while i < b {
+        result = push(result, i)
+        i = i + 1
+    }
+    result
+}
+
+fn sum_even(numbers: Vec<Int>) -> Int {
+    let mut total = 0
+    for n in numbers {
+        if n % 2 == 0 {
+            total = total + n
+        }
+    }
+    total
+}
+
+fn main() {
+    let total = sum_even(range(1, 20 + 1).iter().collect())
+    print(total)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    let mut i = a
+    while i < b {
+        result = push(result, i)
+        i = i + 1
+    }
+    result
+}
+
+fn sum_even(numbers: Vec<Int>) -> Int {
+    let mut total = 0
+    for n in numbers {
+        if n % 2 == 0 {
+            total = total + n
+        }
+    }
+    total
+}
+
+fn main() {
+    let total = sum_even(range(1, 20 + 1).iter().collect())
+    print(total)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    let mut i = a
+    while i < b {
+        result = push(result, i)
+        i = i + 1
+    }
+    result
+}
+
+fn sum_even(numbers: Vec<Int>) -> Int {
+    let mut total = 0
+    for n in numbers {
+        if n % 2 == 0 {
+            total = total + n
+        }
+    }
+    total
+}
+
+fn main() {
+    let total = sum_even(range(1, 20 + 1).iter().collect())
+    print(total)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    let mut i = a
+    while i < b {
+        result = push(result, i)
+        i = i + 1
+    }
+    result
+}
+
+fn sum_even(numbers: Vec<Int>) -> Int {
+    let mut total = 0
+    for n in numbers {
+        if n % 2 == 0 {
+            total = total + n
+        }
+    }
+    total
+}
+
+fn main() {
+    let total = sum_even(range(1, 20 + 1).iter().collect())
+    print(total)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    let mut i = a
+    while i < b {
+        result = push(result, i)
+        i = i + 1
+    }
+    result
+}
+
+fn sum_even(numbers: Vec<Int>) -> Int {
+    let mut total = 0
+    for n in numbers {
+        if n % 2 == 0 {
+            total = total + n
+        }
+    }
+    total
+}
+
+fn main() {
+    let total = sum_even(range(1, 20 + 1).iter().collect())
+    print(total)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    let mut i = a
+    while i < b {
+        result = push(result, i)
+        i = i + 1
+    }
+    result
+}
+
+fn sum_even(numbers: Vec<Int>) -> Int {
+    let mut total = 0
+    for n in numbers {
+        if n % 2 == 0 {
+            total = total + n
+        }
+    }
+    total
+}
+
+fn main() {
+    let total = sum_even(range(1, 20 + 1).iter().collect())
+    print(total)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    let mut i = a
+    while i < b {
+        result = push(result, i)
+        i = i + 1
+    }
+    result
+}
+
+fn sum_even(numbers: Vec<Int>) -> Int {
+    let mut total = 0
+    for n in numbers {
+        if n % 2 == 0 {
+            total = total + n
+        }
+    }
+    total
+}
+
+fn main() {
+    let total = sum_even(range(1, 20 + 1).iter().collect())
+    print(total)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    let mut i = a
+    while i < b {
+        result = push(result, i)
+        i = i + 1
+    }
+    result
+}
+
+fn sum_even(numbers: Vec<Int>) -> Int {
+    let mut total = 0
+    for n in numbers {
+        if n % 2 == 0 {
+            total = total + n
+        }
+    }
+    total
+}
+
+fn main() {
+    let total = sum_even(range(1, 20 + 1).iter().collect())
+    print(total)
+}
+
+fn range(a: Int

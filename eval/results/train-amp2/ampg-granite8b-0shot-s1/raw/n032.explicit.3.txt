@@ -1,0 +1,29 @@
+fn add_nums(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn main() {
+    let first_point = Point { x: 1, y: 5 }
+    let second_point = Point { x: 10, y: first_point.y }
+    print(add_nums(second_point.x, second_point.y))
+}
+
+struct Point {
+    x: Int,
+    y: Int,
+}
+
+struct Point {
+    x: Int,
+    y: Int,
+}
+
+fn add_nums(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn main() {
+    let first_point = Point { x: 1, y: 5 }
+    let second_point = Point { x: 10, y: first_point.y }
+    print(add_nums(second_point.x, second_point.y))
+}

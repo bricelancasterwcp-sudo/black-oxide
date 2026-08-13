@@ -1,0 +1,11 @@
+fn main() {
+    let s = "banana"
+    let n = str_len(s)
+    for i in range(0, n) {
+        let c = chars(s)??
+        if c == "n" {
+            print(i)
+            print_str("\n")
+        }
+    }
+}

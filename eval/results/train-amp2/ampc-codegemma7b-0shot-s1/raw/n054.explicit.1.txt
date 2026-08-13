@@ -1,0 +1,15 @@
+fn main() {
+    let word = "keyboard".to_lowercase()
+    let vowels = vec_chars("aeiou")
+    let mut vowel_count = 0
+    let mut consonant_count = 0
+    for c in word.chars() {
+        if vowels.contains(&c) {
+            vowel_count = vowel_count + 1
+        } else {
+            consonant_count = consonant_count + 1
+        }
+    }
+    print("Vowels: {}\n", vowel_count)
+    print("Consonants: {}\n", consonant_count)
+}

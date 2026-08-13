@@ -1,0 +1,21 @@
+fn find_positions(nums: &Vec<Int>, target: Int) -> Vec<Int> {
+    let mut positions = Vec()
+    for i in range(0, len(nums)) {
+        if get(nums, i) == Some(target) {
+            push(positions, i)
+        }
+    }
+    positions
+}
+
+fn main() {
+    let nums = push(push(push(vec(), 4), 7), 4)
+    nums = push(nums, 9)
+    nums = push(nums, 4)
+    let positions = find_positions(&nums, 4)
+    for pos in &positions {
+        print(pos)
+    }
+    drop nums
+    drop positions
+}

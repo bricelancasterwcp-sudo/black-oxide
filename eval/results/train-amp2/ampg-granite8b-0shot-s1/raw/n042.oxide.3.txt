@@ -1,0 +1,58 @@
+fn main() {
+    let v = vec(12, 5, 20, 8, 17)
+    print(last(v))
+    print(second_big(v))
+}
+
+struct Reading { label: Str, values: Vec<Int> }
+
+fn last(v: Vec<Int>) -> Option<Int> {
+    if len(v) == 0 {
+        return None
+    }
+    Some(get(v, len(v) - 1)?)
+}
+
+fn second_big(v: Vec<Int>) -> Option<Int> {
+    let mut big = -1
+    let mut second_big = -1
+    for x in v {
+        if x > big {
+            second_big = big
+            big = x
+        } else if x > second_big {
+            second_big = x
+        }
+    }
+    if big == -1 {
+        None
+    } else {
+        Some(second_big)
+    }
+}
+
+fn first_big(v: Vec<Int>) -> Int {
+    let found = -1
+    for x in v {
+        if x > 10 {
+            found = x
+            break
+        }
+    }
+    found
+}
+
+fn second(v: Vec<Int>) -> Option<Int> {
+    let x = get(v, 1)?
+    Some(x + 1)
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(vec(), 3), 42) }
+    print(first_big(r.values))
+    let r2 = Reading { label: "lab2", ..r }
+    match second(r2.values) {
+        Some(n) => print(n),
+        None => print_str("too short"),
+    }
+}

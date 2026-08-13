@@ -1,0 +1,58 @@
+fn area_square(side: Float) -> Float {
+    side * side
+}
+
+fn main() {
+    let square = 4.0
+    let area = area_square(square)
+    print_str("The area of the square is ")
+    print_str(area_to_str(area))
+}
+
+fn area_to_str(area: Float) -> Str {
+    let pi = 3.0
+    let area_str = int_to_str((area * pi).to_int())
+    area_str
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn print(x: Float) {
+    print_str(int_to_str(x.to_int()))
+}
+
+fn int_to_str(n: Int) -> Str {
+    let chars = vec()
+    let mut num = n
+    while num > 0 {
+        chars.push(int_to_char(num % 10))
+        num = num / 10
+    }
+    let mut result = ""
+    for c in chars {
+        result = result + c
+    }
+    result
+}
+
+fn int_to_char(n: Int) -> Str {
+    let chars = vec("0", "1", "2", "3", "4", "5", "6", "7", "8", "9")
+    chars.get(n).unwrap()
+}
+
+fn to_int(f: Float) -> Int {
+    f.to_int()
+}
+
+fn to_float(i: Int) -> Float {
+    i.to_float()
+}
+
+fn main() {
+    let square = 4.0
+    let area = area_square(square)
+    print_str("The area of the square is ")
+    print_str(area_to_str(area))
+}

@@ -1,0 +1,47 @@
+fn drum() -> Str {
+    let mut r = vec()
+    for c in "drum".chars() {
+        r.insert(0, c)
+    }
+    str_join("", r)
+}
+
+fn main() {
+    print(drum())
+    print(str_rev(drum()))
+}
+
+fn str_join(sep: Str, v: Vec<Str>) -> Str {
+    let mut r = ""
+    for x in v {
+        r = r + sep + x
+    }
+    r
+}
+
+fn str_rev(s: Str) -> Str {
+    let mut r = vec()
+    for c in s.chars() {
+        r.insert(0, c)
+    }
+    str_join("", r)
+}
+
+struct Drum {
+    name: Str,
+    letters: Vec<Str>,
+}
+
+fn drum() -> Drum {
+    let mut r = vec()
+    for c in "drum".chars() {
+        r.insert(0, c)
+    }
+    Drum(str_join("", r), r)
+}
+
+fn main() {
+    let d = drum()
+    print(d.name)
+    print(str_rev(d.letters))
+}

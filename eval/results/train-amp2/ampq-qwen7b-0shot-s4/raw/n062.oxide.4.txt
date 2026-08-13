@@ -1,0 +1,22 @@
+struct Signal { name: Str }
+
+fn main() {
+    let signals = vec(Signal { name: "green" }, Signal { name: "red" }, Signal { name: "yellow" })
+    for signal in signals {
+        match signal.name.as_str() {
+            Some(x) => match x {
+                Some(x) => {
+                    if x == "green" {
+                        print_str("go for green")
+                    } else if x == "red" {
+                        print_str("stop for red")
+                    } else if x == "yellow" {
+                        print_str("wait for yellow")
+                    }
+                },
+                None => print_str("unknown signal"),
+            },
+            None => print_str("unknown signal"),
+        }
+    }
+}

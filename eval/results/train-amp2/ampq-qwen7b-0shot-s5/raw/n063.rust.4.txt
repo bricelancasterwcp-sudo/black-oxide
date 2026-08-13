@@ -1,0 +1,8 @@
+fn main() {
+    let line1 = 4 * 3;
+    let line2 = 5 * 2;
+    let total = line1 + line2;
+    println!("Line 1: {}", line1);
+    println!("Line 2: {}", line2);
+    println!("Total: {}", total);
+}

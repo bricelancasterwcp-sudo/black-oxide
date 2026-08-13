@@ -1,0 +1,25 @@
+fn arrange(scores: Vec<Int>) -> Vec<Int> {
+    let mut sorted_scores = scores.clone_from(scores)
+    sorted_scores.sort_by(std_cmp_int)
+    sorted_scores.reverse()
+    sorted_scores
+}
+
+fn std_cmp_int(a: Int, b: Int) -> Ordering {
+    if a > b {
+        Ordering.greater
+    } else if a == b {
+        Ordering.equal
+    } else {
+        Ordering.less
+    }
+}
+
+fn main() {
+    let scores = vec(2, 9, 5)
+    let sorted_scores = arrange(scores)
+    for score in sorted_scores {
+        print(score)
+        print_str("\n")
+    }
+}

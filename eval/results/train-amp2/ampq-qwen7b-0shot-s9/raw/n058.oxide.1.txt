@@ -1,0 +1,3 @@
+fn main() {
+    let word = "coffee".chars().collect_vec().group_by().filter_map_or(None, Some).filter_or(None, Some).map_or(None, Some).map_or(None, Some).print_each_line()
+}

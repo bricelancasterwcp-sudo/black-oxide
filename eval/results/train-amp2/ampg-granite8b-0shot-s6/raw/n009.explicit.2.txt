@@ -1,0 +1,16 @@
+fn reverse_number(mut_n: Int) -> Int {
+    let mut result: Int = 0
+    while mut_n > 0 {
+        result = result * 10 + mut_n % 10
+        mut_n = mut_n / 10
+    }
+    result
+}
+
+fn main() {
+    let mut_n = 1234
+    let mut_reverse = reverse_number(mut_n)
+    print(mut_reverse)
+    drop mut_n
+    drop mut_reverse
+}

@@ -1,0 +1,152 @@
+fn main() {
+    let a = Point { x: 10, y: 20 }
+    let b = Point { x: 5, y: 15 }
+    print(a.x + b.x + a.y + b.y)
+}
+
+struct Point {
+    x: Int,
+    y: Int,
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn println(x: Int) {
+    print_str(to_str(x))
+    print_str("\n")
+}
+
+fn to_str(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn print_str(s: Str) {
+    native_print(s)
+}
+
+fn native_print(s: Str) {
+    loop_label1a_start
+    loop_label1b_start
+    let mut i = 0
+    let len = str_len(s)
+    loop_label2a_start
+    while i < len {
+        let c = chars(s).get(i)
+        print_char(c)
+        i = i + 1
+        loop_label2a_end
+    }
+    loop_label2b_start
+    loop_label1b_end
+    loop_label1a_end
+    return
+}
+
+fn print_char(c: Str) {
+    native_print_char(c)
+}
+
+fn native_print_char(c: Str) {
+    if c == "\n" {
+        native_print("\n")
+    } else {
+        native_print_char_no_newline(c)
+    }
+    return
+}
+
+fn native_print_char_no_newline(c: Str) {
+    return
+}
+
+fn str_len(s: Str) -> Int {
+    len(chars(s))
+}
+
+fn loop_label1a_start() {
+    return
+}
+
+fn loop_label1b_start() {
+    return
+}
+
+fn loop_label1a_end() {
+    return
+}
+
+fn loop_label1b_end() {
+    return
+}
+
+fn loop_label2a_start() {
+    return
+}
+
+fn loop_label2a_end() {
+    return
+}
+
+fn loop_label2b_start() {
+    return
+}
+
+fn loop_label2b_end() {
+    return
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    return
+}
+
+fn char_at(s: Str, i: Int) -> Str {
+    return
+}
+
+fn len(v: Vec<T>) -> Int {
+    return
+}
+
+fn get(v: Vec<T>, i: Int) -> Option<T> {
+    return
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    return
+}
+
+fn int_to_str(n: Int) -> Str {
+    return
+}
+
+fn to_float(n: Int) -> Float {
+    return
+}
+
+fn trunc(x: Float) -> Int {
+    return
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    return
+}
+
+fn clone(x: T) -> T {
+    return
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    return
+}
+
+fn main() {
+    let a = Point { x: 10, y: 20 }
+    let b = Point { x: 5, y: 15 }
+    print(a.x + b.x + a.y + b.y)
+}

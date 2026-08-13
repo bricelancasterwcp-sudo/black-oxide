@@ -1,0 +1,20 @@
+fn fig(a: &Str, b: &Str, c: &Str) -> Int {
+    let fig_str = concat(a, concat(b, c))
+    len(&fig_str)
+}
+
+fn main() {
+    let fig_len = fig("fig", " ", "-")
+    let banana_len = len("banana")
+    let kiwi_len = len("kiwi")
+    let longest = if fig_len > banana_len { fig_len } else { banana_len }
+    if longest > kiwi_len {
+        print(kiwi_len)
+        drop kiwi_len
+    } else {
+        print(longest)
+        drop longest
+    }
+    drop fig_len
+    drop banana_len
+}

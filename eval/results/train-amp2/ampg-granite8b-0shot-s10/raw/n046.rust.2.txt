@@ -1,0 +1,18 @@
+fn main() {
+    let samples = [5, 12, 3, 18, 9];
+    let cutoff = 10;
+
+    let mut below = 0;
+    let mut above = 0;
+
+    for &sample in &samples {
+        if sample < cutoff {
+            below += 1;
+        } else {
+            above += 1;
+        }
+    }
+
+    println!("Below the cutoff: {}", below);
+    println!("Above or equal to the cutoff: {}", above);
+}

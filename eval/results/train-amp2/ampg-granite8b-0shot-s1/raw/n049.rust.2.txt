@@ -1,0 +1,25 @@
+```rust
+fn main() {
+    let a = [8, 3, 11, 6];
+
+    let smallest = a.iter().min().unwrap();
+    let largest = a.iter().max().unwrap();
+
+    println!("Smallest: {}", smallest);
+    println!("Largest: {}", largest);
+    println!("Gap: {}", largest - smallest);
+}
+```
+
+This program will produce the correct output:
+
+```
+Smallest: 3
+Largest: 11
+Gap: 8
+```
+
+Explanation:
+- The original program had a syntax error: `unwrap()` was missing after `min()` and `max()`.
+- `unwrap()` is a method that returns a reference to the value inside an `Option` type, and it panics if the `Option` is `None`. In this case, it's used to panic if `min()` or `max()` return `None`.
+- The corrected program uses `unwrap()` to get the smallest and largest values from the array `a`, and then prints them out along with the gap between them.

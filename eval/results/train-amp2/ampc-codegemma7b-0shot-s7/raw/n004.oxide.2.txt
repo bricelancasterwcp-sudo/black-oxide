@@ -1,0 +1,10 @@
+fn main() {
+    let mut a = 1
+    let mut b = 1
+    for _ in 2.0.range(10) {
+        let c = (a.to_float() + b.to_float()).trunc()
+        a = b
+        b = c
+    }
+    print(a)
+}

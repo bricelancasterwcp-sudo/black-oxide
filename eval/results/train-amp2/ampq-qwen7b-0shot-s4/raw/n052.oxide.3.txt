@@ -1,0 +1,10 @@
+fn main() {
+    let s = "banana"
+    for i in range(0, str_len(s)) {
+        let ch = s.chars().nth(i).unwrap()
+        if ch == "n" {
+            print(i)
+            print_str("\n")
+        }
+    }
+}

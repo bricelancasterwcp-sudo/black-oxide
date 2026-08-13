@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    for signal in ["green", "red", "yellow"] {
+        match signal {
+            "green" => println!("go"),
+            "red" => println!("stop"),
+            "yellow" => println!("wait"),
+            _ => println!("unknown signal"),
+        }
+    }
+}
+```

@@ -1,0 +1,13 @@
+fn main() {
+    let fig = "fig".len()
+    let banana = "banana".len()
+    let kiwi = "kiwi".len()
+    let max_len = if fig > banana { if fig > kiwi { fig } else { kiwi } } else { if banana > kiwi { banana } else { kiwi } }
+    match max_len {
+        _ => match max_len {
+            Fig => print("fig", fig),
+            Banana => print("banana", banana),
+            Kiwi => print("kiwi", kiwi),
+        },
+    }
+}

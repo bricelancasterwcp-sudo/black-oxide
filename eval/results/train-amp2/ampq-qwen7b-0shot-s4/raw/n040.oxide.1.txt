@@ -1,0 +1,23 @@
+struct Shape { square: Option<Int>, circle: Option<Int> }
+
+fn area(shape: Shape) -> Float {
+    match shape {
+        Shape(square, circle) => match (square.map(square_area(3.0, _)) || circle.map(circle_area(3.0, _))) {
+            Some(a) => a,
+            None => 0.0,
+        },
+    }
+}
+
+fn square_area(pi: Float, side: Int) -> Float {
+    pi * side * side
+}
+
+fn circle_area(pi: Float, radius: Int) -> Float {
+    pi * radius * radius
+}
+
+fn main() {
+    let shape = Shape { square: Some(4), circle: None }
+    print(area(shape))
+}

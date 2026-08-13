@@ -1,0 +1,18 @@
+fn main() {
+    let txt = read_line().unwrap()
+    match txt.parse() {
+        Ok(n) => print(n),
+        Err(_) => print_str("bad"),
+    }
+    let txt = read_line().unwrap()
+    if txt == "oak" {
+        print_str("good")
+    } else {
+        print_str("bad")
+    }
+    let txt = read_line().unwrap()
+    match txt.parse() {
+        Ok(n) => print(n),
+        Err(_) => print_str("bad"),
+    }
+}

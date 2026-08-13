@@ -1,0 +1,20 @@
+fn main() {
+    let a = parse_int("8")
+    if a == None {
+        print("bad")
+    } else {
+        print(a.unwrap())
+    }
+    let b = parse_int("oak")
+    if b == None {
+        print("bad")
+    } else {
+        print(b.unwrap())
+    }
+    let c = parse_int("15")
+    if c == None {
+        print("bad")
+    } else {
+        print(c.unwrap())
+    }
+}

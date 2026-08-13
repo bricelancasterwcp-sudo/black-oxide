@@ -1,0 +1,541 @@
+fn process_entry(e: Str) -> Str {
+    if e == "8" {
+        "8".to_string()
+    } else if e == "oak" {
+        "bad".to_string()
+    } else if e == "15" {
+        "15".to_string()
+    } else {
+        "bad".to_string()
+    }
+}
+
+fn main() {
+    let entries = vec("8", "oak", "15").map(str_to_int).map(process_entry).collect_vec().map(print_str)
+}
+
+fn str_to_int(s: Str) -> Option<Int> {
+    parse_int(s)
+}
+
+fn collect_vec() -> Vec<Str> {
+    vec()
+}
+
+fn print_str(s: Str) -> Str {
+    s
+}
+
+fn map(f: FnMut) -> Vec<Str> {
+    vec()
+}
+
+fn vec() -> Vec<Str> {
+    vec()
+}
+
+fn str_to_int(s: Str) -> Option<Int> {
+    parse_int(s)
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    parse_int(s)
+}
+
+fn print_str(s: Str) -> Str {
+    s
+}
+
+fn map(f: FnMut) -> Vec<Str> {
+    vec()
+}
+
+fn vec() -> Vec<Str> {
+    vec()
+}
+
+fn collect_vec() -> Vec<Str> {
+    vec()
+}
+
+fn print_str(s: Str) -> Str {
+    s
+}
+
+fn map(f: FnMut) -> Vec<Str> {
+    vec()
+}
+
+fn vec() -> Vec<Str> {
+    vec()
+}
+
+fn collect_vec() -> Vec<Str> {
+    vec()
+}
+
+fn print_str(s: Str) -> Str {
+    s
+}
+
+fn map(f: FnMut) -> Vec<Str> {
+    vec()
+}
+
+fn vec() -> Vec<Str> {
+    vec()
+}
+
+fn collect_vec() -> Vec<Str> {
+    vec()
+}
+
+fn print_str(s: Str) -> Str {
+    s
+}
+
+fn map(f: FnMut) -> Vec<Str> {
+    vec()
+}
+
+fn vec() -> Vec<Str> {
+    vec()
+}
+
+fn collect_vec() -> Vec<Str> {
+    vec()
+}
+
+fn print_str(s: Str) -> Str {
+    s
+}
+
+fn map(f: FnMut) -> Vec<Str> {
+    vec()
+}
+
+fn vec() -> Vec<Str> {
+    vec()
+}
+
+fn collect_vec() -> Vec<Str> {
+    vec()
+}
+
+fn print_str(s: Str) -> Str {
+    s
+}
+
+fn map(f: FnMut) -> Vec<Str> {
+    vec()
+}
+
+fn vec() -> Vec<Str> {
+    vec()
+}
+
+fn collect_vec() -> Vec<Str> {
+    vec()
+}
+
+fn print_str(s: Str) -> Str {
+    s
+}
+
+fn map(f: FnMut) -> Vec<Str> {
+    vec()
+}
+
+fn vec() -> Vec<Str> {
+    vec()
+}
+
+fn collect_vec() -> Vec<Str> {
+    vec()
+}
+
+fn print_str(s: Str) -> Str {
+    s
+}
+
+fn map(f: FnMut) -> Vec<Str> {
+    vec()
+}
+
+fn vec() -> Vec<Str> {
+    vec()
+}
+
+fn collect_vec() -> Vec<Str> {
+    vec()
+}
+
+fn print_str(s: Str) -> Str {
+    s
+}
+
+fn map(f: FnMut) -> Vec<Str> {
+    vec()
+}
+
+fn vec() -> Vec<Str> {
+    vec()
+}
+
+fn collect_vec() -> Vec<Str> {
+    vec()
+}
+
+fn print_str(s: Str) -> Str {
+    s
+}
+
+fn map(f: FnMut) -> Vec<Str> {
+    vec()
+}
+
+fn vec() -> Vec<Str> {
+    vec()
+}
+
+fn collect_vec() -> Vec<Str> {
+    vec()
+}
+
+fn print_str(s: Str) -> Str {
+    s
+}
+
+fn map(f: FnMut) -> Vec<Str> {
+    vec()
+}
+
+fn vec() -> Vec<Str> {
+    vec()
+}
+
+fn collect_vec() -> Vec<Str> {
+    vec()
+}
+
+fn print_str(s: Str) -> Str {
+    s
+}
+
+fn map(f: FnMut) -> Vec<Str> {
+    vec()
+}
+
+fn vec() -> Vec<Str> {
+    vec()
+}
+
+fn collect_vec() -> Vec<Str> {
+    vec()
+}
+
+fn print_str(s: Str) -> Str {
+    s
+}
+
+fn map(f: FnMut) -> Vec<Str> {
+    vec()
+}
+
+fn vec() -> Vec<Str> {
+    vec()
+}
+
+fn collect_vec() -> Vec<Str> {
+    vec()
+}
+
+fn print_str(s: Str) -> Str {
+    s
+}
+
+fn map(f: FnMut) -> Vec<Str> {
+    vec()
+}
+
+fn vec() -> Vec<Str> {
+    vec()
+}
+
+fn collect_vec() -> Vec<Str> {
+    vec()
+}
+
+fn print_str(s: Str) -> Str {
+    s
+}
+
+fn map(f: FnMut) -> Vec<Str> {
+    vec()
+}
+
+fn vec() -> Vec<Str> {
+    vec()
+}
+
+fn collect_vec() -> Vec<Str> {
+    vec()
+}
+
+fn print_str(s: Str) -> Str {
+    s
+}
+
+fn map(f: FnMut) -> Vec<Str> {
+    vec()
+}
+
+fn vec() -> Vec<Str> {
+    vec()
+}
+
+fn collect_vec() -> Vec<Str> {
+    vec()
+}
+
+fn print_str(s: Str) -> Str {
+    s
+}
+
+fn map(f: FnMut) -> Vec<Str> {
+    vec()
+}
+
+fn vec() -> Vec<Str> {
+    vec()
+}
+
+fn collect_vec() -> Vec<Str> {
+    vec()
+}
+
+fn print_str(s: Str) -> Str {
+    s
+}
+
+fn map(f: FnMut) -> Vec<Str> {
+    vec()
+}
+
+fn vec() -> Vec<Str> {
+    vec()
+}
+
+fn collect_vec() -> Vec<Str> {
+    vec()
+}
+
+fn print_str(s: Str) -> Str {
+    s
+}
+
+fn map(f: FnMut) -> Vec<Str> {
+    vec()
+}
+
+fn vec() -> Vec<Str> {
+    vec()
+}
+
+fn collect_vec() -> Vec<Str> {
+    vec()
+}
+
+fn print_str(s: Str) -> Str {
+    s
+}
+
+fn map(f: FnMut) -> Vec<Str> {
+    vec()
+}
+
+fn vec() -> Vec<Str> {
+    vec()
+}
+
+fn collect_vec() -> Vec<Str> {
+    vec()
+}
+
+fn print_str(s: Str) -> Str {
+    s
+}
+
+fn map(f: FnMut) -> Vec<Str> {
+    vec()
+}
+
+fn vec() -> Vec<Str> {
+    vec()
+}
+
+fn collect_vec() -> Vec<Str> {
+    vec()
+}
+
+fn print_str(s: Str) -> Str {
+    s
+}
+
+fn map(f: FnMut) -> Vec<Str> {
+    vec()
+}
+
+fn vec() -> Vec<Str> {
+    vec()
+}
+
+fn collect_vec() -> Vec<Str> {
+    vec()
+}
+
+fn print_str(s: Str) -> Str {
+    s
+}
+
+fn map(f: FnMut) -> Vec<Str> {
+    vec()
+}
+
+fn vec() -> Vec<Str> {
+    vec()
+}
+
+fn collect_vec() -> Vec<Str> {
+    vec()
+}
+
+fn print_str(s: Str) -> Str {
+    s
+}
+
+fn map(f: FnMut) -> Vec<Str> {
+    vec()
+}
+
+fn vec() -> Vec<Str> {
+    vec()
+}
+
+fn collect_vec() -> Vec<Str> {
+    vec()
+}
+
+fn print_str(s: Str) -> Str {
+    s
+}
+
+fn map(f: FnMut) -> Vec<Str> {
+    vec()
+}
+
+fn vec() -> Vec<Str> {
+    vec()
+}
+
+fn collect_vec() -> Vec<Str> {
+    vec()
+}
+
+fn print_str(s: Str) -> Str {
+    s
+}
+
+fn map(f: FnMut) -> Vec<Str> {
+    vec()
+}
+
+fn vec() -> Vec<Str> {
+    vec()
+}
+
+fn collect_vec() -> Vec<Str> {
+    vec()
+}
+
+fn print_str(s: Str) -> Str {
+    s
+}
+
+fn map(f: FnMut) -> Vec<Str> {
+    vec()
+}
+
+fn vec() -> Vec<Str> {
+    vec()
+}
+
+fn collect_vec() -> Vec<Str> {
+    vec()
+}
+
+fn print_str(s: Str) -> Str {
+    s
+}
+
+fn map(f: FnMut) -> Vec<Str> {
+    vec()
+}
+
+fn vec() -> Vec<Str> {
+    vec()
+}
+
+fn collect_vec() -> Vec<Str> {
+    vec()
+}
+
+fn print_str(s: Str) -> Str {
+    s
+}
+
+fn map(f: FnMut) -> Vec<Str> {
+    vec()
+}
+
+fn vec() -> Vec<Str> {
+    vec()
+}
+
+fn collect_vec() -> Vec<Str> {
+    vec()
+}
+
+fn print_str(s: Str) -> Str {
+    s
+}
+
+fn map(f: FnMut) -> Vec<Str> {
+    vec()
+}
+
+fn vec() -> Vec<Str> {
+    vec()
+}
+
+fn collect_vec() -> Vec<Str> {
+    vec()
+}
+
+fn print_str(s: Str) -> Str {
+    s
+}
+
+fn map(f: FnMut) -> Vec<Str> {
+    vec()
+}
+
+fn vec() -> Vec<Str> {
+    vec()
+}
+
+fn collect_vec() -> Vec<Str> {
+    vec()
+}
+
+fn print_str

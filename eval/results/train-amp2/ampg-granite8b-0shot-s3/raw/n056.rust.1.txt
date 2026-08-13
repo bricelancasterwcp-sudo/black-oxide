@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let mut total = 0;
+    let mut count = 0;
+    for i in [7, 10, 9, 2].iter() {
+        if let Ok(num) = i.to_string().parse::<i32>() {
+            total += num;
+            count += 1;
+        }
+    }
+    println!("{}", total);
+    println!("{}", 4 - count);
+}
+```

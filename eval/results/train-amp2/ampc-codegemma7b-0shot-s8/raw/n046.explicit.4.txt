@@ -1,0 +1,16 @@
+fn main() {
+    let nums = vec(5, 12, 3, 18, 9)
+    let cutoff = 10
+    let mut total_below = 0
+    let mut total_above = 0
+    for x in &nums {
+        if x < &cutoff {
+            total_below = total_below + 1
+        } else {
+            total_above = total_above + 1
+        }
+    }
+    print(total_below)
+    print(total_above)
+    drop nums
+}

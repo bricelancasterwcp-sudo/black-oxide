@@ -1,0 +1,13 @@
+fn drum_reverse(x: &Str) -> Str {
+    let mut result = String
+    for c in x.chars().rev() {
+        result.push(c)
+    }
+    result
+}
+
+fn main() {
+    let word = "drum"
+    print(drum_reverse(&word))
+    print(word)
+}

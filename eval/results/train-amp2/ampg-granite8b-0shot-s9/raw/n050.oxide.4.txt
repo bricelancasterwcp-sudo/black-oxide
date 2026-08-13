@@ -1,0 +1,25 @@
+struct Score { value: Int, rank: Int }
+
+fn score_rank(s: Score) -> Int {
+    s.rank
+}
+
+fn score_value(s: Score) -> Int {
+    s.value
+}
+
+fn main() {
+    let scores = vec(Score { value: 2, rank: 1 }, Score { value: 9, rank: 3 }, Score { value: 5, rank: 2 })
+    let ranks = map(scores, score_rank)
+    let values = map(scores, score_value)
+    let sorted_scores = sort(scores, rank_cmp)
+    for r in ranks {
+        print(r)
+    }
+    for v in values {
+        print(v)
+    }
+    for s in sorted_scores {
+        print(s)
+    }
+}

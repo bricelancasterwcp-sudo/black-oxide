@@ -1,0 +1,13 @@
+use std::collections::HashSet;
+
+fn main() {
+    let mut seen_letters: HashSet<char> = HashSet::new();
+    let word = "coffee";
+
+    for letter in word.chars() {
+        if !seen_letters.contains(&letter) {
+            println!("{}", letter);
+            seen_letters.insert(letter);
+        }
+    }
+}

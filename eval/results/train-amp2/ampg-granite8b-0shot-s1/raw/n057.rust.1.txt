@@ -1,0 +1,9 @@
+fn main() {
+    let names = &["fig", "banana", "kiwi"];
+    let longest = names
+        .iter()
+        .max_by_key(|n| n.len())
+        .expect("No names?");
+    println!("{}", longest);
+    println!("{}", longest.len());
+}

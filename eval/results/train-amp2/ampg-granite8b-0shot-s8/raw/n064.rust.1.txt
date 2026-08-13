@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let list = vec![10, 20];
+    println!("position 1: {:?}", list.get(0));
+    println!("position 4: {:?}", list.get(3));
+}
+```
+
+The `list.get(0)` method returns an `Option<&i32>`. When the index is valid, it returns `Some(&i32)`, otherwise it returns `None`. By using `unwrap()` or `unwrap_or()`, we can extract the value or provide a default value when the index is out of bounds.

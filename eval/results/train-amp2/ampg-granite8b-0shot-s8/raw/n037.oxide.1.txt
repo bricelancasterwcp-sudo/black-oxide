@@ -1,0 +1,10 @@
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn main() {
+    let mut rect = Rectangle { width: 2, height: 3 }
+    rect.width = 5
+    print(rect.width * rect.height)
+}

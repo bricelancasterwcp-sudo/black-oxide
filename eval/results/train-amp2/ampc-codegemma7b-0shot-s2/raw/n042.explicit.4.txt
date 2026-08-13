@@ -1,0 +1,16 @@
+fn max_two(a: Int, b: Int) -> Int {
+    if a > b {
+        a
+    } else {
+        b
+    }
+}
+
+fn main() {
+    let nums = vec(12, 5, 20, 8, 17)
+    let largest = max_two(max_two(nums.get(0).unwrap(), nums.get(1).unwrap()), max_two(nums.get(2).unwrap(), max_two(nums.get(3).unwrap(), nums.get(4).unwrap())))
+    let second_largest = max_two(max_two(nums.get(0).unwrap(), nums.get(1).unwrap()), max_two(nums.get(2).unwrap(), max_two(nums.get(3).unwrap(), nums.get(4).unwrap()))) - largest
+    print(largest)
+    print(second_largest)
+    drop nums
+}

@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let numbers: Vec<i32> = vec![8, 15];
+    let strings: Vec<&str> = vec!["oak"];
+    let mixed: Vec< mixed_type> = vec![8, 15, "oak"];
+    for number in numbers.iter() {
+        println!("{}", number);
+    }
+    for string in strings.iter() {
+        println!("{}", string);
+    }
+    for mixed in mixed.iter() {
+        match mixed {
+            i if *i > 0 => println!("{}", i),
+            _ => println!("bad"),
+        }
+    }
+}
+```

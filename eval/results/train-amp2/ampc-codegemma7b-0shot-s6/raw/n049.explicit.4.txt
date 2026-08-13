@@ -1,0 +1,18 @@
+fn main() {
+    let mut v = vec(8, 3, 11, 6)
+    let mut smallest = v.get(0)
+    let mut largest = v.get(0)
+    for i in 1.upto(v.len()) {
+        if v.get(i) < smallest {
+            smallest = v.get(i)
+        }
+        if v.get(i) > largest {
+            largest = v.get(i)
+        }
+    }
+    print(smallest)
+    print(largest - smallest)
+    drop smallest
+    drop largest
+    drop v
+}

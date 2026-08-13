@@ -1,0 +1,11 @@
+fn main() {
+    let list = vec(10, 20)
+    match get(list, 1) {
+        Some(n) => print(n),
+        None => print_str("none"),
+    }
+    match get(list, 4) {
+        Some(n) => print(n),
+        None => print_str("none"),
+    }
+}

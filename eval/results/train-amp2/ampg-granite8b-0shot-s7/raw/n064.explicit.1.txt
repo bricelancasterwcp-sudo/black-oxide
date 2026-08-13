@@ -1,0 +1,35 @@
+fn list() -> List {
+    push(push(vec(), 10), 20)
+}
+
+fn at_pos(l: List, pos: Int) -> Option<Int> {
+    let mut p = l
+    let mut i = 0
+    while p != nil {
+        if i == pos {
+            return get(p, 0)
+        }
+        p = get(p, 1)
+        i = i + 1
+    }
+    none
+}
+
+fn print_opt(o: Option<Int>) {
+    match o {
+        Some(x) => {
+            print(x)
+            print("\n")
+        },
+        None => {
+            print("None\n")
+        },
+    }
+}
+
+fn main() {
+    let l = list()
+    print_opt(at_pos(l, 0))
+    drop l
+    print_opt(at_pos(l, 1))
+}

@@ -1,0 +1,18 @@
+use std::io;
+
+fn main() {
+    let mut balance = 0;
+
+    deposit(3);
+    deposit(1);
+    deposit(4);
+    deposit(1);
+    deposit(5);
+
+    println!("{}", balance);
+}
+
+fn deposit(amount: i32) {
+    global! { balance += amount; }
+    println!("{}", balance);
+}

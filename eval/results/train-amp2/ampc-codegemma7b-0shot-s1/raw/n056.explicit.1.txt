@@ -1,0 +1,16 @@
+fn total(values: &Vec<Option<Int>>) -> Int {
+    let mut total = 0
+    for n in values {
+        match n {
+            Some(x) => total == total + x,
+            None => total == total + 0,
+        }
+    }
+    total
+}
+
+fn main() {
+    let nums = vec(Some(7), Some(x), Some(9), None)
+    print(total(&nums))
+    print(4 - len(&nums))
+}

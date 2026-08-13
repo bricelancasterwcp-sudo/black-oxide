@@ -1,0 +1,41 @@
+fn phrase_count(phrase: &Str) -> Int {
+    let words = split_by(phrase, is_whitespace)
+    len(&words)
+}
+
+fn phrase_char_count(phrase: &Str) -> Int {
+    let words = split_by(phrase, is_whitespace)
+    let mut count = 0
+    for word in &words {
+        count = count + len(&word) + 1
+    }
+    count
+}
+
+fn is_whitespace(c: Char) -> Bool {
+    c == 32 || c == 9 || c == 10
+}
+
+fn split_by(s: &Str, p: &Fn<Char>) -> Vec<Str> {
+    let mut v = vec()
+    let mut start = 0
+    for i in 0.to(len(&s)) {
+        let c = get(&s, i)
+        if p(&c) {
+            if i > start {
+                push(&mut && v, s.slice(start, i))
+            }
+            start = i + 1
+        }
+    }
+    if start < len(&s) {
+        push(&mut && v, s.slice(start, len(&s)))
+    }
+    v
+}
+
+fn main() {
+    let s = "I love programming"
+    print(phrase_count(&s))
+    print(phrase_char_count(&s))
+}

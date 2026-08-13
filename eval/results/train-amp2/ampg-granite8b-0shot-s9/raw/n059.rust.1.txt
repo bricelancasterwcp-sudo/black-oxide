@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let s = "when in doubt go home";
+    let words: Vec<&str> = s.split_whitespace().collect();
+    println!("{}", words.len());
+    println!("{}", s.len());
+}
+```
+
+$ cargo run
+  4
+  19

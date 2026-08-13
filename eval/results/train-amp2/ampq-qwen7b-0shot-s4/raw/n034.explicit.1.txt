@@ -1,0 +1,16 @@
+fn second_entry(v: &Vec<Int>) -> Option<Int> {
+    if v.len() > 1 {
+        Some(v.get(1).unwrap())
+    } else {
+        None
+    }
+}
+
+fn main() {
+    let nums = vec(7, 8, 9)
+    match second_entry(&nums) {
+        Some(x) => print(x),
+        None => print_str("none"),
+    }
+    drop nums
+}

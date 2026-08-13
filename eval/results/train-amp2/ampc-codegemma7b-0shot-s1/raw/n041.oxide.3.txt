@@ -1,0 +1,16 @@
+fn print_in_order(mutvalues: Vec<Int>) {
+    values.sort_unstable_by(stdcmp_int)
+    for x in values {
+        print(x)
+        println()
+    }
+}
+
+fn main() {
+    let mut values = vec()
+    values = push(values, 9)
+    values = push(values, 2)
+    values = push(values, 7)
+    values = push(values, 4)
+    print_in_order(values)
+}

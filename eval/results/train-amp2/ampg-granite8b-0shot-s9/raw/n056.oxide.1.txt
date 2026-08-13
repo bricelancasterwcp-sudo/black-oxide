@@ -1,0 +1,33 @@
+struct Text {
+    texts: Vec<Text>,
+    num: Option<Int>,
+}
+
+fn read_text() -> Text {
+    Text
+}
+
+fn sum_text(text: Text) -> Int {
+    let mut total = 0
+    let mut had_some = false
+    for x in text.texts {
+        let subtotal = sum_text(x)
+        total = total + subtotal
+        had_some = true
+    }
+    match text.num {
+        None => {
+            if had_some {
+                total
+            } else {
+                0
+            }
+        },
+        Some(n) => total + n,
+    }
+}
+
+fn main() {
+    let text = read_text()
+    print(sum_text(text))
+}

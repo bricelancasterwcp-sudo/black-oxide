@@ -1,0 +1,20 @@
+struct Result { total: Int }
+
+fn is_even(n: Int) -> Bool {
+    n % 2 == 0
+}
+
+fn sum_even(a: Int, b: Int) -> Int {
+    let mut total = 0
+    for i in range(a, b + 1) {
+        if is_even(i) {
+            total = total + i
+        }
+    }
+    total
+}
+
+fn main() {
+    let r = Result { total: sum_even(1, 20) }
+    print(r.total)
+}

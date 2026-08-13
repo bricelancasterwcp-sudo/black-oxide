@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut total = 0;
+
+    for num in 1..=20 {
+        if num % 2 == 0 {
+            total += num;
+        }
+    }
+
+    println!("Total of even numbers: {}", total);
+}
+```

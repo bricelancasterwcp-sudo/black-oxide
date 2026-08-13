@@ -1,0 +1,328 @@
+fn main() {
+    let a = parse_int("8")
+    print(&a)
+    drop a
+    let b = parse_int("oak")
+    print(&b)
+    drop b
+    let c = parse_int("15")
+    print(&c)
+    drop c
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    if letOk(n) == parse_int(s) {
+        Some(n)
+    } else {
+        None
+    }
+}
+
+fn main() {
+    let a = parse_int("8")
+    print(&a)
+    drop a
+    let b = parse_int("oak")
+    print(&b)
+    drop b
+    let c = parse_int("15")
+    print(&c)
+    drop c
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    if letOk(n) == parse_int(s) {
+        Some(n)
+    } else {
+        None
+    }
+}
+
+fn main() {
+    let a = parse_int("8")
+    print(&a)
+    drop a
+    let b = parse_int("oak")
+    print(&b)
+    drop b
+    let c = parse_int("15")
+    print(&c)
+    drop c
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    if letOk(n) == parse_int(s) {
+        Some(n)
+    } else {
+        None
+    }
+}
+
+fn main() {
+    let a = parse_int("8")
+    print(&a)
+    drop a
+    let b = parse_int("oak")
+    print(&b)
+    drop b
+    let c = parse_int("15")
+    print(&c)
+    drop c
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    if letOk(n) == parse_int(s) {
+        Some(n)
+    } else {
+        None
+    }
+}
+
+fn main() {
+    let a = parse_int("8")
+    print(&a)
+    drop a
+    let b = parse_int("oak")
+    print(&b)
+    drop b
+    let c = parse_int("15")
+    print(&c)
+    drop c
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    if letOk(n) == parse_int(s) {
+        Some(n)
+    } else {
+        None
+    }
+}
+
+fn main() {
+    let a = parse_int("8")
+    print(&a)
+    drop a
+    let b = parse_int("oak")
+    print(&b)
+    drop b
+    let c = parse_int("15")
+    print(&c)
+    drop c
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    if letOk(n) == parse_int(s) {
+        Some(n)
+    } else {
+        None
+    }
+}
+
+fn main() {
+    let a = parse_int("8")
+    print(&a)
+    drop a
+    let b = parse_int("oak")
+    print(&b)
+    drop b
+    let c = parse_int("15")
+    print(&c)
+    drop c
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    if letOk(n) == parse_int(s) {
+        Some(n)
+    } else {
+        None
+    }
+}
+
+fn main() {
+    let a = parse_int("8")
+    print(&a)
+    drop a
+    let b = parse_int("oak")
+    print(&b)
+    drop b
+    let c = parse_int("15")
+    print(&c)
+    drop c
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    if letOk(n) == parse_int(s) {
+        Some(n)
+    } else {
+        None
+    }
+}
+
+fn main() {
+    let a = parse_int("8")
+    print(&a)
+    drop a
+    let b = parse_int("oak")
+    print(&b)
+    drop b
+    let c = parse_int("15")
+    print(&c)
+    drop c
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    if letOk(n) == parse_int(s) {
+        Some(n)
+    } else {
+        None
+    }
+}
+
+fn main() {
+    let a = parse_int("8")
+    print(&a)
+    drop a
+    let b = parse_int("oak")
+    print(&b)
+    drop b
+    let c = parse_int("15")
+    print(&c)
+    drop c
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    if letOk(n) == parse_int(s) {
+        Some(n)
+    } else {
+        None
+    }
+}
+
+fn main() {
+    let a = parse_int("8")
+    print(&a)
+    drop a
+    let b = parse_int("oak")
+    print(&b)
+    drop b
+    let c = parse_int("15")
+    print(&c)
+    drop c
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    if letOk(n) == parse_int(s) {
+        Some(n)
+    } else {
+        None
+    }
+}
+
+fn main() {
+    let a = parse_int("8")
+    print(&a)
+    drop a
+    let b = parse_int("oak")
+    print(&b)
+    drop b
+    let c = parse_int("15")
+    print(&c)
+    drop c
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    if letOk(n) == parse_int(s) {
+        Some(n)
+    } else {
+        None
+    }
+}
+
+fn main() {
+    let a = parse_int("8")
+    print(&a)
+    drop a
+    let b = parse_int("oak")
+    print(&b)
+    drop b
+    let c = parse_int("15")
+    print(&c)
+    drop c
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    if letOk(n) == parse_int(s) {
+        Some(n)
+    } else {
+        None
+    }
+}
+
+fn main() {
+    let a = parse_int("8")
+    print(&a)
+    drop a
+    let b = parse_int("oak")
+    print(&b)
+    drop b
+    let c = parse_int("15")
+    print(&c)
+    drop c
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    if letOk(n) == parse_int(s) {
+        Some(n)
+    } else {
+        None
+    }
+}
+
+fn main() {
+    let a = parse_int("8")
+    print(&a)
+    drop a
+    let b = parse_int("oak")
+    print(&b)
+    drop b
+    let c = parse_int("15")
+    print(&c)
+    drop c
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    if letOk(n) == parse_int(s) {
+        Some(n)
+    } else {
+        None
+    }
+}
+
+fn main() {
+    let a = parse_int("8")
+    print(&a)
+    drop a
+    let b = parse_int("oak")
+    print(&b)
+    drop b
+    let c = parse_int("15")
+    print(&c)
+    drop c
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    if letOk(n) == parse_int(s) {
+        Some(n)
+    } else {
+        None
+    }
+}
+
+fn main() {
+    let a = parse_int("8")
+    print(&a)
+    drop a
+    let b = parse_int("oak")
+    print(&b)
+    drop b
+    

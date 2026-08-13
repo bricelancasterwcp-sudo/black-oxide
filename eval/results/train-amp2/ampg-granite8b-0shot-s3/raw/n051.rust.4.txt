@@ -1,0 +1,4 @@
+fn main() {
+    println!("{}", "granite".chars().nth(1).unwrap());
+    println!("{}", "granite".chars().nth(6).unwrap());
+}

@@ -1,0 +1,33 @@
+fn min(a: Int, b: Int) -> Int {
+    if a < b {
+        a
+    } else {
+        b
+    }
+}
+
+fn max(a: Int, b: Int) -> Int {
+    if a > b {
+        a
+    } else {
+        b
+    }
+}
+
+fn gap(a: Int, b: Int) -> Int {
+    max(a, b) - min(a, b)
+}
+
+fn main() {
+    let figures = vec(8, 3, 11, 6)
+    let smallest = min(figures.get(0)?, figures.get(1)?)
+    let largest = max(figures.get(0)?, figures.get(1)?)
+    for i in 2 == figures.len() {
+        let num = figures.get(i)??
+        smallest = min(smallest, num)
+        largest = max(largest, num)
+    }
+    let gap_val = gap(largest, smallest)
+    print(smallest)
+    print(gap_val)
+}

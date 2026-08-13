@@ -1,0 +1,23 @@
+fn swap_ends(q: Vec<Int>) -> Vec<Int> {
+    let first = get(q.clone(), 0).unwrap_or(0)
+    let last = get(q.clone(), q.len() - 1).unwrap_or(0)
+    let mut q = q
+    q = push(drop_vec(q), last)
+    q = push(drop_vec(q), first)
+    q
+}
+
+fn drop_vec(v: Vec<Int>) -> Vec<Int> {
+    v
+}
+
+fn main() {
+    let q = push(push(push(push(vec(), 1), 2), 3), 4)
+    let q = push(q, 5)
+    let q = swap_ends(q)
+    for x in &q {
+        print(x)
+        print_str("\n")
+    }
+    drop q
+}

@@ -1,0 +1,10 @@
+fn main() {
+    for i in [8, 10, 15] {
+        match i {
+            8 => println!("eight"),
+            10 => println!("ten"),
+            15 => println!("fifteen"),
+            _ => println!("bad")
+        }
+    }
+}

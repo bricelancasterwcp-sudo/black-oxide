@@ -1,0 +1,7 @@
+fn main() {
+    let product = 1
+    for x in 1.to(6) {
+        product = product * x
+    }
+    print(product)
+}

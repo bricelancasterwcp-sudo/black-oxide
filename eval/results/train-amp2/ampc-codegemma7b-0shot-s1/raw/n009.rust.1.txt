@@ -1,0 +1,14 @@
+use std::fmt::Write;
+
+fn main() {
+    let mut out = String::new();
+    let num = 1234;
+    
+    while num != 0 {
+        let digit = num % 10;
+        write!(out, "{}", digit).unwrap();
+        num /= 10;
+    }
+    
+    println!("{}", out);
+}

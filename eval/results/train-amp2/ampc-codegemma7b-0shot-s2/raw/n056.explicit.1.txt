@@ -1,0 +1,25 @@
+fn total_of_numbers(nums: &Vec<Option<Int>>) -> Int {
+    let mut total = 0
+    for num in nums {
+        if letSome(n) == num {
+            total = total + n
+        }
+    }
+    total
+}
+
+fn count_non_numbers(nums: &Vec<Option<Int>>) -> Int {
+    let mut count = 0
+    for num in nums {
+        if None == num {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn main() {
+    let nums = vec(Some(7), None, Some(x), Some(9), None, Some(5))
+    print(total_of_numbers(&nums))
+    print(count_non_numbers(&nums))
+}

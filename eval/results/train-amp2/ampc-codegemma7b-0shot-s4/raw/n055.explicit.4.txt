@@ -1,0 +1,17 @@
+fn main() {
+    let x = parse_int("8")
+    let y = parse_int("oak")
+    let z = parse_int("15")
+    print(match x {
+            Some(n) => n,
+            None => "bad",
+        })
+    print(match y {
+            Some(n) => n,
+            None => "bad",
+        })
+    print(match z {
+            Some(n) => n,
+            None => "bad",
+        })
+}

@@ -1,0 +1,13 @@
+use std::io;
+
+fn main() {
+    let mut result = Vec::new();
+    for num in 1..=10 {
+        if num % 2 == 0 {
+            result.insert(0, num);
+        }
+    }
+    for num in result {
+        println!("{}", num);
+    }
+}

@@ -1,0 +1,17 @@
+fn main() {
+    let a = Some(8)
+    let b: Option<Str> = None
+    let c = Some(15)
+    match a {
+        Some(x) => print(&x),
+        None => print("bad"),
+    }
+    match b {
+        Some(x) => print(&x),
+        None => print("bad"),
+    }
+    match c {
+        Some(x) => print(&x),
+        None => print("bad"),
+    }
+}

@@ -1,0 +1,66 @@
+fn main() {
+    let line1 = vec(3, 3, 3, 3)
+    let line2 = vec(2, 2, 2, 2, 2)
+    print(sum(&line1))
+    print(sum(&line2))
+    print(sum(concat(&line1, &line2)))
+    drop line1
+    drop line2
+}
+
+fn sum(v: &Vec<Int>) -> Int {
+    let total = 0
+    for x in &v {
+        total = total + x
+    }
+    total
+}
+
+fn concat(a: &Vec<Int>, b: &Vec<Int>) -> Vec<Int> {
+    let mut v = a.clone()
+    for x in b {
+        v = push(v, x)
+    }
+    v
+}
+
+fn vec(items: Int, item_count: Int) -> Vec<Int> {
+    let mut v = vec()
+    for _ in 0 < item_count {
+        v = push(v, items)
+    }
+    v
+}
+
+fn push(v: &Vec<Int>, x: Int) -> Vec<Int> {
+    let mut v = v.clone()
+    v = push(v, x)
+    v
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let total = 0
+    for x in &v {
+        if x > limit {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn extend(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(&v, x)
+}
+
+fn main() {
+    let nums = push(push(vec(), 5), 40)
+    let bigger = extend(clone(&nums), 70)
+    print(sum_big(&nums, 10))
+    drop nums
+    print(sum_big(&bigger, 10))
+    drop bigger
+}

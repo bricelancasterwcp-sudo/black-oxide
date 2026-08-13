@@ -1,0 +1,21 @@
+fn len(v: Vec<Str>) -> Int {
+    let mut acc = 0
+    for x in v {
+        acc = acc + 1
+    }
+    acc
+}
+
+fn chars(s: Str) -> Int {
+    let mut acc = 0
+    for c in s.chars() {
+        acc = acc + 1
+    }
+    acc
+}
+
+fn main() {
+    let s = Str("when in doubt go home")
+    print(len(vec(s)))
+    print(chars(s))
+}

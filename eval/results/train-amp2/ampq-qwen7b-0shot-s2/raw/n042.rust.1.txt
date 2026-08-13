@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let mut nums = vec![12, 5, 20, 8, 17];
+    nums.sort();
+    println!("{}", nums[nums.len() - 1]);
+    println!("{}", nums[nums.len() - 2]);
+}
+```

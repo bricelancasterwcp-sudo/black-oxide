@@ -1,0 +1,24 @@
+fn main() {
+    let mut values = vec(9, 2, 7, 4)
+    let mut i = 0
+    while i < 4 {
+        let j = i + 1
+        if j < 4 {
+            if values.get(j) < values.get(i) {
+                let tmp = values.get(j)
+                values.set(j, values.get(i))
+                values.set(i, tmp)
+                i = i - 1
+            }
+        }
+        i = i + 1
+    }
+    print(values.get(0))
+    drop values
+    print(values.get(1))
+    drop values
+    print(values.get(2))
+    drop values
+    print(values.get(3))
+    drop values
+}

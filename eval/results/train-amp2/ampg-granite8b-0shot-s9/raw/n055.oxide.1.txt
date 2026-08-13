@@ -1,0 +1,12 @@
+fn main() {
+    let v = vec(8, oak, 15)
+    for x in v {
+        if x < 10 {
+            print(x)
+        } else if x == 15 {
+            print_str("fantastic")
+        } else {
+            print_str("bad")
+        }
+    }
+}

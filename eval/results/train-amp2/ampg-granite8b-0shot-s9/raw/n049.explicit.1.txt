@@ -1,0 +1,422 @@
+fn main() {
+    let nums = push(push(vec(), 5), 40)
+    let bigger = extend(clone(&nums), 70)
+    print(sum_big(&nums, 10))
+    drop nums
+    print(sum_big(&bigger, 10))
+    drop bigger
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let total = 0
+    for x in &v {
+        if x > limit {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn extend(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn print(n: Int) {
+    n
+}
+
+fn vec() -> Vec<T> {
+    T
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    T
+}
+
+fn len(v: Vec<T>) -> Int {
+    T
+}
+
+fn get(v: Vec<T>, i: Int) -> Option<T> {
+    T
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    Int
+}
+
+fn clone(x: T) -> T {
+    x
+}
+
+fn str_len(s: Str) -> Int {
+    s
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    a + b
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    s
+}
+
+fn int_to_str(n: Int) -> Str {
+    n
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    s
+}
+
+fn to_float(n: Int) -> Float {
+    n
+}
+
+fn trunc(x: Float) -> Int {
+    x
+}
+
+struct Vec {
+    data: Vec<T>,
+    len: Int,
+}
+
+struct Option {
+    value: T,
+    is_some: Bool,
+}
+
+struct Result {
+    value: T,
+    is_ok: Bool,
+}
+
+enum Shape {
+    Circle(Float),
+    Rectangle(Float, Float),
+    Nullary,
+}
+
+enum Ordering {
+    Less,
+    Equal,
+    Greater,
+}
+
+enum Option2 {
+    Some(T),
+    None,
+}
+
+enum Result2 {
+    Ok(T),
+    Err(E),
+}
+
+enum Either {
+    L(Int),
+    R(Str),
+}
+
+struct Circle {
+    center: Point,
+    radius: Float,
+}
+
+struct Point {
+    x: Float,
+    y: Float,
+}
+
+struct Circle2 {
+    center: Point,
+    radius: Float,
+}
+
+struct Point2 {
+    x: Float,
+    y: Float,
+}
+
+fn area(c: Circle) -> Float {
+    c.radius * c.radius * 3.14
+}
+
+fn center(c: &Circle) -> Point {
+    c.center
+}
+
+fn area2(c: &Circle2) -> Float {
+    c.radius * c.radius * 3.14
+}
+
+fn center2(c: &Circle2) -> Point2 {
+    c.center
+}
+
+fn area3(c: Circle2) -> Float {
+    c.radius * c.radius * 3.14
+}
+
+fn center3(c: Circle2) -> Point2 {
+    c.center
+}
+
+fn area4(c: &Circle2) -> Float {
+    c.radius * c.radius * 3.14
+}
+
+fn center4(c: &Circle2) -> Point2 {
+    c.center
+}
+
+fn main() {
+    let circle = Circle { center: Point { x: 1.0, y: 2.0 }, radius: 3.0 }
+    print(area(&circle))
+    print(area2(&circle))
+    print(area3(clone(&circle)))
+    print(area4(&circle))
+}
+
+fn print(n: Int) {
+    n
+}
+
+fn vec() -> Vec<T> {
+    T
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    T
+}
+
+fn len(v: Vec<T>) -> Int {
+    T
+}
+
+fn get(v: Vec<T>, i: Int) -> Option<T> {
+    T
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    Int
+}
+
+fn clone(x: T) -> T {
+    x
+}
+
+fn str_len(s: Str) -> Int {
+    s
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    a + b
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    s
+}
+
+fn int_to_str(n: Int) -> Str {
+    n
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    s
+}
+
+fn to_float(n: Int) -> Float {
+    n
+}
+
+fn trunc(x: Float) -> Int {
+    x
+}
+
+struct Vec {
+    data: Vec<T>,
+    len: Int,
+}
+
+struct Option {
+    value: T,
+    is_some: Bool,
+}
+
+struct Result {
+    value: T,
+    is_ok: Bool,
+}
+
+enum Shape {
+    Circle(Float),
+    Rectangle(Float, Float),
+    Nullary,
+}
+
+enum Ordering {
+    Less,
+    Equal,
+    Greater,
+}
+
+enum Option2 {
+    Some(T),
+    None,
+}
+
+enum Result2 {
+    Ok(T),
+    Err(E),
+}
+
+enum Either {
+    L(Int),
+    R(Str),
+}
+
+struct Circle {
+    center: Point,
+    radius: Float,
+}
+
+struct Point {
+    x: Float,
+    y: Float,
+}
+
+struct Circle2 {
+    center: Point,
+    radius: Float,
+}
+
+struct Point2 {
+    x: Float,
+    y: Float,
+}
+
+fn area(c: Circle) -> Float {
+    c.radius * c.radius * 3.14
+}
+
+fn center(c: &Circle) -> Point {
+    c.center
+}
+
+fn area2(c: &Circle2) -> Float {
+    c.radius * c.radius * 3.14
+}
+
+fn center2(c: &Circle2) -> Point2 {
+    c.center
+}
+
+fn area3(c: Circle2) -> Float {
+    c.radius * c.radius * 3.14
+}
+
+fn center3(c: Circle2) -> Point2 {
+    c.center
+}
+
+fn area4(c: &Circle2) -> Float {
+    c.radius * c.radius * 3.14
+}
+
+fn center4(c: &Circle2) -> Point2 {
+    c.center
+}
+
+fn main() {
+    let circle = Circle { center: Point { x: 1.0, y: 2.0 }, radius: 3.0 }
+    print(area(&circle))
+    print(area2(&circle))
+    print(area3(clone(&circle)))
+    print(area4(&circle))
+}
+
+fn print(n: Int) {
+    n
+}
+
+fn vec() -> Vec<T> {
+    T
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    T
+}
+
+fn len(v: Vec<T>) -> Int {
+    T
+}
+
+fn get(v: Vec<T>, i: Int) -> Option<T> {
+    T
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    Int
+}
+
+fn clone(x: T) -> T {
+    x
+}
+
+fn str_len(s: Str) -> Int {
+    s
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    a + b
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    s
+}
+
+fn int_to_str(n: Int) -> Str {
+    n
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    s
+}
+
+fn to_float(n: Int) -> Float {
+    n
+}
+
+fn trunc(x: Float) -> Int {
+    x
+}
+
+struct Vec {
+    data: Vec<T>,
+    len: Int,
+}
+
+struct Option {
+    value: T,
+    is_some: Bool,
+}
+
+struct Result {
+    value: T,
+    is_ok: Bool,
+}
+
+enum Shape {
+    Circle(Float),
+    Rectangle(Float, Float),
+    Nullary,
+}
+
+enum Ordering {
+    Less,
+    Equal,
+    Greater,
+}
+

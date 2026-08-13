@@ -1,0 +1,17 @@
+struct List { values: Vec<Str> }
+
+fn get_value(list: Vec<Str>, index: Int) -> Option<Str> {
+    get(list, index)?
+}
+
+fn main() {
+    let list = List { values: push(push(vec(), "10"), "20") }
+    match get_value(list.values, 1) {
+        Some(value) => print_str(value),
+        None => print_str("none"),
+    }
+    match get_value(list.values, 4) {
+        Some(value) => print_str(value),
+        None => print_str("none"),
+    }
+}

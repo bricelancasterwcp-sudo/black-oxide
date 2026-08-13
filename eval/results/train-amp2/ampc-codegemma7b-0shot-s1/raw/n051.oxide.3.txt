@@ -1,0 +1,13 @@
+fn first(c: Str) -> Str {
+    c.chars().nth(0).unwrap()
+}
+
+fn last(c: Str) -> Str {
+    c.chars().nth(c.len() - 1).unwrap()
+}
+
+fn main() {
+    let word = "granite".to_string()
+    print(first(word))
+    print(last(word))
+}

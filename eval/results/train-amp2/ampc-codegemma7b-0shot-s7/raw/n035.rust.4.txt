@@ -1,0 +1,15 @@
+fn division(x: i32, y: i32) -> Result<i32, String> {
+    if y == 0 {
+        Err("Cannot divide by zero".to_string())
+    } else {
+        Ok(x / y)
+    }
+}
+
+fn main() {
+    let result = division(20, 4);
+    match result {
+        Ok(result) => println!("Result: {}", result),
+        Err(e) => println!("Error: {}", e),
+    }
+}

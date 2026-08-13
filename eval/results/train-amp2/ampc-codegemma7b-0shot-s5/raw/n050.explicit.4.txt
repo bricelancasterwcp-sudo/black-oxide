@@ -1,0 +1,19 @@
+fn arrange(a: Int, b: Int, c: Int) -> Vec<Int> {
+    let mut v: Vec<Int> = vec(a, b, c)
+    v.sort()
+    v
+}
+
+fn main() {
+    print(arrange(2, 9, 5))
+}
+
+fn arrange(a: Int, b: Int, c: Int) -> Vec<Int> {
+    let mut v: Vec<Int> = vec(a, b, c)
+    v.sort()
+    v
+}
+
+fn main() {
+    print(arrange(2, 9, 5))
+}

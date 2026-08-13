@@ -1,0 +1,27 @@
+struct Log { entries: Vec<Int> }
+
+fn first_big(v: Vec<Int>) -> Int {
+    let found = -1
+    for x in v {
+        if x > 10 {
+            found = x
+            break
+        }
+    }
+    found
+}
+
+fn second(v: Vec<Int>) -> Option<Int> {
+    let x = get(v, 1)?
+    Some(x + 1)
+}
+
+fn main() {
+    let log = Log { entries: push(push(push(vec(), 6), 7), 8), ldots: push(vec(), 9) }
+    print(first_big(log.entries))
+    let log2 = Log { entries: push(vec(), first_big(log.entries)), ldots: push(vec(), 9) }
+    match second(log2.entries) {
+        Some(n) => print(n),
+        None => print_str("too short"),
+    }
+}

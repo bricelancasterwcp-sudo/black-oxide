@@ -1,0 +1,21 @@
+struct List { first: Int, second: Int }
+
+fn get_position(l: List, pos: Int) -> Option<Int> {
+    match pos {
+        PositionOne => Some(l.first),
+        PositionTwo => Some(l.second),
+        _ => None,
+    }
+}
+
+fn main() {
+    let l = List { first: 10, second: 20 }
+    match get_position(l, 1) {
+        Some(n) => print(n),
+        None => print_str("none"),
+    }
+    match get_position(l, 4) {
+        Some(n) => print(n),
+        None => print_str("none"),
+    }
+}

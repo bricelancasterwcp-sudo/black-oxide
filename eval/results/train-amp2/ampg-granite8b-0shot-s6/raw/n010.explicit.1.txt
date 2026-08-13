@@ -1,0 +1,12 @@
+fn is_prime(n: Int) -> Bool {
+    2 <= n && (2 <= n && (for_range(2, trunc(sqrt(to_float(n)))) || n % _ != 0))
+}
+
+fn main() {
+    let n = 91
+    if is_prime(n) {
+        print_str("yes\n")
+    } else {
+        print_str("no\n")
+    }
+}

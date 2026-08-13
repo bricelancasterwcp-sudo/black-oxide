@@ -1,0 +1,11 @@
+struct G {
+    x: Int,
+}
+
+fn main() {
+    let g = G { x: 42 }
+    let a = g.x
+    let b = g.x
+    print(a)
+    print(b)
+}

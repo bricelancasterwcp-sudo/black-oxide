@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let mut queue = vec![1, 2, 3, 4, 5];
+    let first = queue.remove(0);
+    queue.push(first);
+    for number in queue {
+        println!("{}", number);
+    }
+}
+```

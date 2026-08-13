@@ -1,0 +1,17 @@
+fn main() {
+    let samples = vec![5, 12, 3, 18, 9];
+    let cutoff = 10;
+    let mut under = 0;
+    let mut over = 0;
+
+    for &sample in &samples {
+        if sample < cutoff {
+            under += 1;
+        } else {
+            over += 1;
+        }
+    }
+
+    println!("Under cutoff: {}", under);
+    println!("Over or at cutoff: {}", over);
+}

@@ -1,0 +1,28 @@
+struct Shape {
+    kind: ShapeKind,
+}
+
+struct Square {
+    side: Int,
+}
+
+struct Circle {
+    radius: Int,
+}
+
+enum ShapeKind {
+    Square(Square),
+    Circle(Circle),
+}
+
+fn area(shape: Shape) -> Int {
+    match shape.kind {
+        ShapeKindSquare(sq) => sq.side * sq.side,
+        ShapeKindCircle(cr) => 3 * cr.radius * cr.radius,
+    }
+}
+
+fn main() {
+    let s = Shape { kind: ShapeKindCircle(Circle { radius: 2 }) }
+    print(area(s))
+}

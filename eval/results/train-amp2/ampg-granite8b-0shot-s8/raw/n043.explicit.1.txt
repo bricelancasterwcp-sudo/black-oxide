@@ -1,0 +1,43 @@
+fn main() {
+    let queue = push(push(push(push(vec(), 1), 2), 3), 4)
+    let first = pop(&queue)
+    let last = pop(&queue)
+    push(queue, first)
+    push(queue, last)
+    loop_while(queue, 0, 5, 1, "queue", "push(queue, first)", "push(queue, last)", "print(pop(&queue))")
+}
+
+fn loop_while(queue: Vec<Int>, i: Int, n: Int, d: Int, str1: Str, str2: Str, str3: Str, str4: Str) -> Vec<Int> {
+    if i < n {
+        let q = push(queue, i + d)
+        print(q)
+        loop_while(q, i + 1, n, d, str1, str2, str3, str4)
+    } else {
+        queue
+    }
+}
+
+fn pop(q: &Vec<Int>) -> Int {
+    let last = get(&q, len(&q) - 1)
+    drop q
+    last
+}
+
+fn push(q: Vec<Int>, x: Int) -> Vec<Int> {
+    let len = len(&q)
+    let q2 = clone(&q)
+    set(&q2, len, x)
+    q2
+}
+
+fn set(q: &Vec<Int>, i: Int, x: Int) -> Vec<Int> {
+    let q2 = clone(&q)
+    for j in 0 < i {
+        set(&q2, j, get(&q, j))
+    }
+    set(&q2, i, x)
+    q2
+}
+
+fn get(q: &Vec<Int>, i: Int) -> Int {
+    let x = clone(&get_ref_for_copy_val_test_only_internal_use_only_please_please_do_not_call_me_directly_or_your_code_will_probably_explosion_with_fire_and_the_end_of_the_world_as_we_know_it_okay_thats_what_the_code_says_now_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_go_away_

@@ -1,0 +1,87 @@
+fn main() {
+    let mut measurements = vec_int(4)
+    measurements = push(measurements, 9)
+    measurements = push(measurements, 2)
+    measurements = push(measurements, 7)
+    measurements = push(measurements, 4)
+    for i in range(0, 4) {
+        print(get(&measurements, i))
+        drop measurements
+    }
+}
+
+fn vec_int(size: Int) -> Vec<Int> {
+    vec()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut new_v = clone(v)
+    new_v.push(x)
+    new_v
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    if i >= len(v) {
+        None
+    } else {
+        Some(v.get(i))
+    }
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    v.len()
+}
+
+fn print(x: Option<Int>) {
+    match x {
+        Some(x) => print(x),
+        None => print("null"),
+    }
+}
+
+fn drop_int(x: Int) {
+    drop x
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in a.to_int().value() + 1.to_int().value() {
+        if i >= b.to_int().value() {
+            break
+        }
+        result.push(i)
+    }
+    result
+}
+
+fn clone(x: Vec<Int>) -> Vec<Int> {
+    let mut new_v = vec()
+    for i in range(0, len(&x)) {
+        new_v.push(x.get(i))
+    }
+    new_v
+}
+
+fn to_int(x: Int) -> Int {
+    trunc(x)
+}
+
+fn trunc(x: Int) -> Int {
+    if x >= 0 {
+        x
+    } else {
+        0
+    }
+}
+
+fn main() {
+    let mut measurements = vec_int(4)
+    measurements = push(measurements, 9)
+    measurements = push(measurements, 2)
+    measurements = push(measurements, 7)
+    measurements = push(measurements, 4)
+    for i in range(0, 4) {
+        print(get(&measurements, i))
+        drop_int(measurements)
+    }
+}

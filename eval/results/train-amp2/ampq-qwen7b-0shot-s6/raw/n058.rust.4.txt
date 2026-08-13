@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let word = "coffee";
+    let mut chars = word.chars();
+    let mut seen = std::collections::HashSet::new();
+
+    while let Some(c) = chars.next() {
+        if !seen.contains(&c) {
+            if word.matches(c).count() > 1 {
+                println!("{}", c);
+                seen.insert(c);
+            }
+        }
+    }
+}
+```

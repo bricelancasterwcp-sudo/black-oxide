@@ -1,0 +1,5 @@
+fn main() {
+    let reading = 0
+    let reading = reading + 7
+    print(reading)
+}

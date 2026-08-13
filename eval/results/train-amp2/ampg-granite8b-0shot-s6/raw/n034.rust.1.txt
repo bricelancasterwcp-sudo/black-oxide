@@ -1,0 +1,14 @@
+fn main() {
+    let list: Vec<i32> = vec![7, 8, 9];
+    let second = get_second_item(&list);
+    match second {
+        Some(x) => println!("{}", x),
+        None => println!("None"),
+    }
+}
+
+fn get_second_item(list: &[i32]) -> Option<&i32> {
+    let mut iter = list.iter();
+    iter.next();
+    iter.next()
+}

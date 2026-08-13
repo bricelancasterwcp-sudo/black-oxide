@@ -1,0 +1,14 @@
+fn main() {
+    match parse_int("8") {
+        Some(n) => print_str(int_to_str(n)),
+        None => print_str("bad"),
+    }
+    match parse_int("oak") {
+        Some(n) => print_str(int_to_str(n)),
+        None => print_str("bad"),
+    }
+    match parse_int("15") {
+        Some(n) => print_str(int_to_str(n)),
+        None => print_str("bad"),
+    }
+}

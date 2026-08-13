@@ -1,0 +1,18 @@
+fn main() {
+    let numbers = vec![8, 3, 11, 6];
+    let mut smallest = numbers[0];
+    let mut largest = numbers[0];
+
+    for number in numbers {
+        if number < smallest {
+            smallest = number;
+        }
+        if number > largest {
+            largest = number;
+        }
+    }
+
+    println!("Smallest: {}", smallest);
+    println!("Largest: {}", largest);
+    println!("Gap: {}", largest - smallest);
+}

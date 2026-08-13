@@ -1,0 +1,7 @@
+fn main() {
+    let granite = "granite".to_string()
+    let first = granite.chars().nth(0).unwrap()
+    let last = granite.chars().nth(7).unwrap()
+    print(first)
+    print(last)
+}

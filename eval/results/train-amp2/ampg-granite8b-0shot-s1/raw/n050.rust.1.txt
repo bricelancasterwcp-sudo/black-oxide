@@ -1,0 +1,9 @@
+fn main() {
+    println!("{}", [9, 5, 2].iter().max().unwrap());
+    println!("{}", [9, 5, 2].iter().max().unwrap_or(0));
+    println!("{}", [9, 5, 2].iter().max().unwrap_or_default());
+
+    println!("{}", [9, 5, 2].iter().min().unwrap());
+    println!("{}", [9, 5, 2].iter().min().unwrap_or(0));
+    println!("{}", [9, 5, 2].iter().min().unwrap_or_default());
+}

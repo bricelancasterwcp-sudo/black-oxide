@@ -1,0 +1,21 @@
+use std::collections::HashSet;
+
+fn main() {
+    let mut nums = HashSet::new();
+    nums.insert(7);
+    nums.insert(9);
+
+    let mut total = 0;
+    let mut missing = 0;
+
+    for c in ["7", "x", "9", "?"].iter() {
+        if nums.contains(&c) {
+            total += 1;
+        } else {
+            missing += 1;
+        }
+    }
+
+    println!("Total: {}", total);
+    println!("Missing: {}", missing);
+}

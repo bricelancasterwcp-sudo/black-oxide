@@ -1,0 +1,15 @@
+struct Queue { head: Int, tail: Int, entries: Vec<Int> }
+
+fn main() {
+    let q = Queue { head: 0, tail: 4, entries: push(push(push(push(vec(), 1), 2), 3), 4), ush: push(push(push(push(vec(), 5), 4), 3), 2), ush: push(push(push(vec(), 1), 5), 4), ush: push(vec(), 3), ush: push(vec(), 2), ush: push(vec(), 1) }
+    print(q.head)
+    let last = q.entries.pop().unwrap()
+    let first = q.entries.pop().unwrap()
+    q.entries = push(q.entries, first)
+    q.entries = push(q.entries, last)
+    print(q.head)
+    print(q.tail)
+    for x in q.entries {
+        print(x)
+    }
+}

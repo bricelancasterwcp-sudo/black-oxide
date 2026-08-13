@@ -1,0 +1,15 @@
+fn four_units(x: Int) -> Int {
+    4 * x
+}
+
+fn two_units(x: Int) -> Int {
+    2 * x
+}
+
+fn main() {
+    let line_1 = four_units(3)
+    let line_2 = two_units(5)
+    print(line_1)
+    print(line_2)
+    print(line_1 + line_2)
+}

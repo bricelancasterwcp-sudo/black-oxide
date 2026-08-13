@@ -1,0 +1,34 @@
+struct Reading { label: Str, values: Vec<Int> }
+
+fn second_largest(v: Vec<Int>) -> Option<Int> {
+    let mut largest = -1
+    let mut second_largest = -1
+    for x in v {
+        if x > largest {
+            second_largest = largest
+            largest = x
+        } else if x > second_largest && x != largest {
+            second_largest = x
+        }
+    }
+    if second_largest == -1 {
+        None
+    } else {
+        Some(second_largest)
+    }
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(push(push(vec(), 12), 5), 20), 8), push: push(vec(), 17) }
+    if letSome(n) == second_largest(r.values) {
+        print(n)
+    } else {
+        print_str("too short")
+    }
+    let r2 = Reading { label: "lab2", ..r }
+    if letSome(n) == second_largest(r2.values) {
+        print(n)
+    } else {
+        print_str("too short")
+    }
+}

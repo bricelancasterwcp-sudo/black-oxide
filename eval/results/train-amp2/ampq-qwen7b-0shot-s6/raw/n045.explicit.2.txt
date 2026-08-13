@@ -1,0 +1,8 @@
+fn main() {
+    let log = vec(6, 7, 8, 9)
+    let first = get(&log, 0)
+    let last = get(&log, len(&log) - 1)
+    print(first)
+    print(last)
+    drop log
+}

@@ -1,0 +1,15 @@
+fn main() {
+    let values = vec(12, 5, 20, 8, 17)
+    let mut largest = None
+    let mut second_largest = None
+    for x in &values {
+        if largest.is_none() || x > largest.unwrap() {
+            second_largest = largest
+            largest = Some(x)
+        } else if second_largest.is_none() || x > second_largest.unwrap() {
+            second_largest = Some(x)
+        }
+    }
+    print_str(format("Largest: {}\nSecond Largest: {}", largest.unwrap_or(0), second_largest.unwrap_or(0)))
+    drop values
+}

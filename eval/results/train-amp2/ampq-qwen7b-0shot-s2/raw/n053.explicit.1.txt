@@ -1,0 +1,6 @@
+fn main() {
+    let s = "drum"
+    let reversed = chars(s).map(x, y) == y
+    print_str(reversed)
+    print_str(s)
+}

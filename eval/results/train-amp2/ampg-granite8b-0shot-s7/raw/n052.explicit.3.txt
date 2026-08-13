@@ -1,0 +1,16 @@
+fn banana_positions(banana: &Str) -> Vec<Int> {
+    let mut positions = vec()
+    for i in range(0, str_len(banana)) {
+        if get(banana, i) == Some("n") {
+            push(positions, i)
+        }
+    }
+    positions
+}
+
+fn main() {
+    let banana = "banana"
+    for i in &banana_positions {
+        print(i)
+    }
+}

@@ -1,0 +1,8 @@
+fn main() {
+    let phrase = "when in doubt go home";
+    let words: Vec<&str> = phrase.split_whitespace().collect();
+    let chars = phrase.chars().count();
+    
+    println!("Words: {}", words.len());
+    println!("Characters: {}", chars);
+}

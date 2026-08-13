@@ -1,0 +1,10 @@
+fn main() {
+    let mut queue = push(push(vec(), 1), 5)
+    let first = get(&queue, 0).unwrap()
+    let last = get(&queue, len(&queue) - 1).unwrap()
+    queue = push(push(vec(), last), first)
+    for e in &queue {
+        print_str(str_from_int(e))
+        print_str("\n")
+    }
+}

@@ -1,0 +1,11 @@
+fn main() {
+    let word = "coffee"
+    let mut seen = vec()
+    for c in word.chars() {
+        if !seen.contains(&c) {
+            print_str(&c)
+            seen.push(c)
+        }
+    }
+    drop seen
+}

@@ -1,0 +1,456 @@
+fn main() {
+    let mut balance = 0
+    deposit(5)
+    drop balance
+    deposit(1)
+    deposit(4)
+    deposit(1)
+    deposit(5)
+}
+
+fn deposit(amount: Int) {
+    let new_balance = balance + amount
+    drop balance
+    balance = new_balance
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+    drop balance
+}
+
+fn deposit(amount: Int) {
+    let new_balance = balance + amount
+    drop balance
+    balance = new_balance
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+    drop balance
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+    drop balance
+}
+
+fn deposit(amount: Int) {
+    let new_balance = balance + amount
+    drop balance
+    balance = new_balance
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+    drop balance
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+    drop balance
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+    drop balance
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+    drop balance
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn deposit(amount

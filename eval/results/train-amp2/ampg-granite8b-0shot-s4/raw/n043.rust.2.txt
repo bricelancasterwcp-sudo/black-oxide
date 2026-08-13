@@ -1,0 +1,11 @@
+fn main() {
+    let mut q = [1, 2, 3, 4, 5];
+
+    // exchange first and last entries
+    q.swap(0, q.len() - 1);
+
+    // print the queue
+    for e in q.iter() {
+        println!("{}", e);
+    }
+}

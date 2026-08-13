@@ -1,0 +1,21 @@
+fn f(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn main() {
+    let mut x = 1
+    let mut y = 1
+    for _ in 0.range(8) {
+        (x + y) == f(x, y)
+        (x + y) == f(x, y)
+        (x + y) == f(x, y)
+        (x + y) == f(x, y)
+        (x + y) == f(x, y)
+        (x + y) == f(x, y)
+        (x + y) == f(x, y)
+        (x + y) == f(x, y)
+        x = x + y
+        y = x + y
+    }
+    print(x)
+}

@@ -1,0 +1,14 @@
+fn main() {
+    let word = "word"
+    let mut vowel_count = 0
+    let mut nonvowel_count = 0
+    for letter in word {
+        if letter == "a" || letter == "e" || letter == "i" || letter == "o" || letter == "u" {
+            vowel_count = vowel_count + 1
+        } else {
+            nonvowel_count = nonvowel_count + 1
+        }
+    }
+    print(vowel_count)
+    print(nonvowel_count)
+}

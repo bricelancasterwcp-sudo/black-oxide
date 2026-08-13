@@ -1,0 +1,391 @@
+fn main() {
+    let rect = Rectangle(9, 3)
+    print(area(&rect))
+    print(perimeter(&rect))
+}
+
+fn area(r: &Rectangle) -> Int {
+    r.across * r.down
+}
+
+fn perimeter(r: &Rectangle) -> Int {
+    area(r) * 2
+}
+
+struct Rectangle {
+    across: Int,
+    down: Int,
+}
+
+fn main() {
+    let rect = Rectangle(9, 3)
+    print(area(&rect))
+    print(perimeter(&rect))
+}
+
+fn area(r: &Rectangle) -> Int {
+    r.across * r.down
+}
+
+fn perimeter(r: &Rectangle) -> Int {
+    area(r) * 2
+}
+
+struct Rectangle {
+    across: Int,
+    down: Int,
+}
+
+fn main() {
+    let rect = Rectangle(9, 3)
+    print(area(&rect))
+    print(perimeter(&rect))
+}
+
+fn area(r: &Rectangle) -> Int {
+    r.across * r.down
+}
+
+fn perimeter(r: &Rectangle) -> Int {
+    area(r) * 2
+}
+
+struct Rectangle {
+    across: Int,
+    down: Int,
+}
+
+fn main() {
+    let rect = Rectangle(9, 3)
+    print(area(&rect))
+    print(perimeter(&rect))
+}
+
+fn area(r: &Rectangle) -> Int {
+    r.across * r.down
+}
+
+fn perimeter(r: &Rectangle) -> Int {
+    area(r) * 2
+}
+
+struct Rectangle {
+    across: Int,
+    down: Int,
+}
+
+fn main() {
+    let rect = Rectangle(9, 3)
+    print(area(&rect))
+    print(perimeter(&rect))
+}
+
+fn area(r: &Rectangle) -> Int {
+    r.across * r.down
+}
+
+fn perimeter(r: &Rectangle) -> Int {
+    area(r) * 2
+}
+
+struct Rectangle {
+    across: Int,
+    down: Int,
+}
+
+fn main() {
+    let rect = Rectangle(9, 3)
+    print(area(&rect))
+    print(perimeter(&rect))
+}
+
+fn area(r: &Rectangle) -> Int {
+    r.across * r.down
+}
+
+fn perimeter(r: &Rectangle) -> Int {
+    area(r) * 2
+}
+
+struct Rectangle {
+    across: Int,
+    down: Int,
+}
+
+fn main() {
+    let rect = Rectangle(9, 3)
+    print(area(&rect))
+    print(perimeter(&rect))
+}
+
+fn area(r: &Rectangle) -> Int {
+    r.across * r.down
+}
+
+fn perimeter(r: &Rectangle) -> Int {
+    area(r) * 2
+}
+
+struct Rectangle {
+    across: Int,
+    down: Int,
+}
+
+fn main() {
+    let rect = Rectangle(9, 3)
+    print(area(&rect))
+    print(perimeter(&rect))
+}
+
+fn area(r: &Rectangle) -> Int {
+    r.across * r.down
+}
+
+fn perimeter(r: &Rectangle) -> Int {
+    area(r) * 2
+}
+
+struct Rectangle {
+    across: Int,
+    down: Int,
+}
+
+fn main() {
+    let rect = Rectangle(9, 3)
+    print(area(&rect))
+    print(perimeter(&rect))
+}
+
+fn area(r: &Rectangle) -> Int {
+    r.across * r.down
+}
+
+fn perimeter(r: &Rectangle) -> Int {
+    area(r) * 2
+}
+
+struct Rectangle {
+    across: Int,
+    down: Int,
+}
+
+fn main() {
+    let rect = Rectangle(9, 3)
+    print(area(&rect))
+    print(perimeter(&rect))
+}
+
+fn area(r: &Rectangle) -> Int {
+    r.across * r.down
+}
+
+fn perimeter(r: &Rectangle) -> Int {
+    area(r) * 2
+}
+
+struct Rectangle {
+    across: Int,
+    down: Int,
+}
+
+fn main() {
+    let rect = Rectangle(9, 3)
+    print(area(&rect))
+    print(perimeter(&rect))
+}
+
+fn area(r: &Rectangle) -> Int {
+    r.across * r.down
+}
+
+fn perimeter(r: &Rectangle) -> Int {
+    area(r) * 2
+}
+
+struct Rectangle {
+    across: Int,
+    down: Int,
+}
+
+fn main() {
+    let rect = Rectangle(9, 3)
+    print(area(&rect))
+    print(perimeter(&rect))
+}
+
+fn area(r: &Rectangle) -> Int {
+    r.across * r.down
+}
+
+fn perimeter(r: &Rectangle) -> Int {
+    area(r) * 2
+}
+
+struct Rectangle {
+    across: Int,
+    down: Int,
+}
+
+fn main() {
+    let rect = Rectangle(9, 3)
+    print(area(&rect))
+    print(perimeter(&rect))
+}
+
+fn area(r: &Rectangle) -> Int {
+    r.across * r.down
+}
+
+fn perimeter(r: &Rectangle) -> Int {
+    area(r) * 2
+}
+
+struct Rectangle {
+    across: Int,
+    down: Int,
+}
+
+fn main() {
+    let rect = Rectangle(9, 3)
+    print(area(&rect))
+    print(perimeter(&rect))
+}
+
+fn area(r: &Rectangle) -> Int {
+    r.across * r.down
+}
+
+fn perimeter(r: &Rectangle) -> Int {
+    area(r) * 2
+}
+
+struct Rectangle {
+    across: Int,
+    down: Int,
+}
+
+fn main() {
+    let rect = Rectangle(9, 3)
+    print(area(&rect))
+    print(perimeter(&rect))
+}
+
+fn area(r: &Rectangle) -> Int {
+    r.across * r.down
+}
+
+fn perimeter(r: &Rectangle) -> Int {
+    area(r) * 2
+}
+
+struct Rectangle {
+    across: Int,
+    down: Int,
+}
+
+fn main() {
+    let rect = Rectangle(9, 3)
+    print(area(&rect))
+    print(perimeter(&rect))
+}
+
+fn area(r: &Rectangle) -> Int {
+    r.across * r.down
+}
+
+fn perimeter(r: &Rectangle) -> Int {
+    area(r) * 2
+}
+
+struct Rectangle {
+    across: Int,
+    down: Int,
+}
+
+fn main() {
+    let rect = Rectangle(9, 3)
+    print(area(&rect))
+    print(perimeter(&rect))
+}
+
+fn area(r: &Rectangle) -> Int {
+    r.across * r.down
+}
+
+fn perimeter(r: &Rectangle) -> Int {
+    area(r) * 2
+}
+
+struct Rectangle {
+    across: Int,
+    down: Int,
+}
+
+fn main() {
+    let rect = Rectangle(9, 3)
+    print(area(&rect))
+    print(perimeter(&rect))
+}
+
+fn area(r: &Rectangle) -> Int {
+    r.across * r.down
+}
+
+fn perimeter(r: &Rectangle) -> Int {
+    area(r) * 2
+}
+
+struct Rectangle {
+    across: Int,
+    down: Int,
+}
+
+fn main() {
+    let rect = Rectangle(9, 3)
+    print(area(&rect))
+    print(perimeter(&rect))
+}
+
+fn area(r: &Rectangle) -> Int {
+    r.across * r.down
+}
+
+fn perimeter(r: &Rectangle) -> Int {
+    area(r) * 2
+}
+
+struct Rectangle {
+    across: Int,
+    down: Int,
+}
+
+fn main() {
+    let rect = Rectangle(9, 3)
+    print(area(&rect))
+    print(perimeter(&rect))
+}
+
+fn area(r: &Rectangle) -> Int {
+    r.across * r.down
+}
+
+fn perimeter(r: &Rectangle) -> Int {
+    area(r) * 2
+}
+
+struct Rectangle {
+    across: Int,
+    down: Int,
+}
+
+fn main() {
+    let rect = Rectangle(9, 3)
+    print(area(&rect))
+    print(perimeter(&rect))
+}
+
+fn area(r: &Rectangle) -> Int {
+    r.across * r.down
+}
+
+fn perimeter(r: &Rectangle) ->

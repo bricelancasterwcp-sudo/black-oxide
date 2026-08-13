@@ -1,0 +1,18 @@
+fn drum(name: Str) -> Str {
+    let letters = chars(&name)
+    let backwards = reverse(&letters)
+    let forwards = concat(&backwards, &letters)
+    forwards
+}
+
+fn reverse(v: &Vec<Str>) -> Vec<Str> {
+    let mut r = vec()
+    for x in &v {
+        push(&mut, x)
+    }
+    r
+}
+
+fn main() {
+    print(drum("drum"))
+}

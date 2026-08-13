@@ -1,0 +1,19 @@
+use std::cmp::Ordering;
+
+fn main() {
+    let samples = [5, 12, 3, 18, 9];
+    let cutoff = 10;
+
+    let under_count = samples
+        .iter()
+        .filter(|&x| x.cmp(&cutoff).eq(&Ordering::Less))
+        .count();
+
+    let at_or_over_count = samples
+        .iter()
+        .filter(|&x| x.cmp(&cutoff).ge(&Ordering::Equal))
+        .count();
+
+    println!("Under: {}", under_count);
+    println!("At or Over: {}", at_or_over_count);
+}

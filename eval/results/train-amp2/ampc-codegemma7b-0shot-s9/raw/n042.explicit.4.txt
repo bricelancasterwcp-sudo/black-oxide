@@ -1,0 +1,16 @@
+fn main() {
+    let nums = vec(12, 5, 20, 8, 17)
+    let mut biggest = nums.first().unwrap()
+    let mut second_biggest = None
+    for num in nums.iter() {
+        if num > biggest {
+            second_biggest = Some(biggest)
+            biggest = num
+        } else if second_biggest.is_none() || num > second_biggest.unwrap() {
+            second_biggest = Some(num)
+        }
+    }
+    print(biggest)
+    print(second_biggest.unwrap())
+    drop nums
+}

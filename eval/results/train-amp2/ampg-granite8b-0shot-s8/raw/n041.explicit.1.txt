@@ -1,0 +1,342 @@
+fn main() {
+    let mut measurements = vec(9, 2, 7, 4)
+    let mut sorted = measurements.clone()
+    sort(&mutsorted)
+    for num in &sorted {
+        print(num)
+    }
+}
+
+fn sort(v: &Vec<Int>) {
+    let mut i = 0
+    while i < len(&v) {
+        let mut j = i
+        while j < len(&v) {
+            if get(&v, j) < get(&v, j + 1) {
+                let temp = get(&v, j)
+                set(&mutv, j, get(&v, j + 1))
+                set(&mutv, j + 1, temp)
+            }
+            j = j + 1
+        }
+        i = i + 1
+    }
+}
+
+fn print(n: Int) {
+    print_str(to_str(n))
+}
+
+fn to_str(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Int {
+    v.get(i)
+}
+
+fn set(v: &Vec<Int>, i: Int, x: Int) {
+    v.set(i, x)
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    v.len()
+}
+
+fn clone(x: &Int) -> Int {
+    x.clone()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn print_str(s: Str) {
+    s.print()
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    Vec()
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    a + b
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    Vec()
+}
+
+fn int_to_str(n: Int) -> Str {
+    Str()
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    None
+}
+
+fn to_float(n: Int) -> Float {
+    0.0
+}
+
+fn trunc(x: Float) -> Int {
+    0
+}
+
+fn main() {
+    let nums = push(push(vec(), 5), 40)
+    let bigger = extend(clone(&nums), 70)
+    print(sum_big(&nums, 10))
+    drop nums
+    print(sum_big(&bigger, 10))
+    drop bigger
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let total = 0
+    for x in &v {
+        if x > limit {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn extend(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn print(n: Int) {
+    print_str(to_str(n))
+}
+
+fn to_str(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Int {
+    v.get(i)
+}
+
+fn set(v: &Vec<Int>, i: Int, x: Int) {
+    v.set(i, x)
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    v.len()
+}
+
+fn clone(x: &Int) -> Int {
+    x.clone()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn print_str(s: Str) {
+    s.print()
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    Vec()
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    a + b
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    Vec()
+}
+
+fn int_to_str(n: Int) -> Str {
+    Str()
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    None
+}
+
+fn to_float(n: Int) -> Float {
+    0.0
+}
+
+fn trunc(x: Float) -> Int {
+    0
+}
+
+fn main() {
+    let nums = push(push(vec(), 5), 40)
+    let bigger = extend(clone(&nums), 70)
+    print(sum_big(&nums, 10))
+    drop nums
+    print(sum_big(&bigger, 10))
+    drop bigger
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let total = 0
+    for x in &v {
+        if x > limit {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn extend(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn print(n: Int) {
+    print_str(to_str(n))
+}
+
+fn to_str(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Int {
+    v.get(i)
+}
+
+fn set(v: &Vec<Int>, i: Int, x: Int) {
+    v.set(i, x)
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    v.len()
+}
+
+fn clone(x: &Int) -> Int {
+    x.clone()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn print_str(s: Str) {
+    s.print()
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    Vec()
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    a + b
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    Vec()
+}
+
+fn int_to_str(n: Int) -> Str {
+    Str()
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    None
+}
+
+fn to_float(n: Int) -> Float {
+    0.0
+}
+
+fn trunc(x: Float) -> Int {
+    0
+}
+
+fn main() {
+    let nums = push(push(vec(), 5), 40)
+    let bigger = extend(clone(&nums), 70)
+    print(sum_big(&nums, 10))
+    drop nums
+    print(sum_big(&bigger, 10))
+    drop bigger
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let total = 0
+    for x in &v {
+        if x > limit {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn extend(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn print(n: Int) {
+    print_str(to_str(n))
+}
+
+fn to_str(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Int {
+    v.get(i)
+}
+
+fn set(v: &Vec<Int>, i: Int, x: Int) {
+    v.set(i, x)
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    v.len()
+}
+
+fn clone(x: &Int) -> Int {
+    x.clone()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn print_str(s: Str) {
+    s.print()
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    Vec()
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    a + b
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    Vec()
+}
+
+fn int_to_str(n: Int) -> Str {
+    Str()
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    None
+}
+

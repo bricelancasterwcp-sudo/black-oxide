@@ -1,0 +1,19 @@
+fn sort_scores() {
+    let mut scores = vec(2, 9, 5)
+    while scores.len() > 1 {
+        let mut max_index = 0
+        for i in 1 <= scores.len() {
+            if scores.get(i) > scores.get(max_index) {
+                max_index = i
+            }
+        }
+        scores = push(concat(slice(&scores, 0, max_index), slice(&scores, max_index + 1, scores.len())), scores.get(max_index))
+    }
+    for score in scores {
+        print(score)
+    }
+}
+
+fn main() {
+    sort_scores()
+}

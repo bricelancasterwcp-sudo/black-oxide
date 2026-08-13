@@ -1,0 +1,27 @@
+fn sum_seven(nums: &Vec<Option<Int>>) -> Int {
+    let mut total = 0
+    for num in nums {
+        if letSome(x) == num {
+            if x == 7 {
+                total = total + x
+            }
+        }
+    }
+    total
+}
+
+fn count_missing(nums: &Vec<Option<Int>>) -> Int {
+    let mut missing = 0
+    for num in nums {
+        if None == num {
+            missing = missing + 1
+        }
+    }
+    missing
+}
+
+fn main() {
+    let nums = vec(Some(7), None, Some(9), Some(7), None, Some(3), Some(4))
+    print(sum_seven(&nums))
+    print(count_missing(&nums))
+}

@@ -1,0 +1,9 @@
+fn drum() {
+    let d = "drum"
+    let _ = d
+}
+
+fn main() {
+    drum()
+    print_str("moc.drum")
+}

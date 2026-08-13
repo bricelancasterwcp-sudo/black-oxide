@@ -1,0 +1,21 @@
+fn enqueue(mutdq: Vec<Int>, x: Int) -> Vec<Int> {
+    push(dq, x)
+}
+
+fn dequeue(mutdq: Vec<Int>) -> Vec<Int> {
+    push(dq, dq.get(0))
+}
+
+fn main() {
+    let mutdq = push(vec(), 1)
+    dq = enqueue(dq, 2)
+    dq = enqueue(dq, 3)
+    dq = enqueue(dq, 4)
+    dq = enqueue(dq, 5)
+    print(dq)
+    dq = dequeue(dq)
+    print(dq)
+    dq = dequeue(dq)
+    print(dq)
+    drop dq
+}

@@ -1,0 +1,334 @@
+fn main() {
+    let mut balance = 0
+    deposit(3)
+    print(balance)
+    deposit(1)
+    print(balance)
+    deposit(4)
+    print(balance)
+    deposit(1)
+    print(balance)
+    deposit(5)
+    print(balance)
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn print(value: Int) {
+    print_str(int_to_str(value))
+    print_str("\n")
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut digits = vec()
+    let mut num = n
+    while num > 0 {
+        digits.push(num % 10)
+        num = num / 10
+    }
+    let mut result = str()
+    for digit in digits {
+        result = concat(result, int_to_str(digit))
+    }
+    result
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut result = str()
+    for c in a {
+        result = concat(result, c)
+    }
+    for c in b {
+        result = concat(result, c)
+    }
+    result
+}
+
+fn print_str(s: Str) {
+    for c in s {
+        print(c)
+    }
+}
+
+fn print(c: Char) {
+    let num = c - Char(0)
+    for i in 0 < num {
+        print(Char(i))
+    }
+}
+
+fn main() {
+    let mut balance = 0
+    deposit(3)
+    print(balance)
+    deposit(1)
+    print(balance)
+    deposit(4)
+    print(balance)
+    deposit(1)
+    print(balance)
+    deposit(5)
+    print(balance)
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn print(value: Int) {
+    print_str(int_to_str(value))
+    print_str("\n")
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut digits = vec()
+    let mut num = n
+    while num > 0 {
+        digits.push(num % 10)
+        num = num / 10
+    }
+    let mut result = str()
+    for digit in digits {
+        result = concat(result, int_to_str(digit))
+    }
+    result
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut result = str()
+    for c in a {
+        result = concat(result, c)
+    }
+    for c in b {
+        result = concat(result, c)
+    }
+    result
+}
+
+fn print_str(s: Str) {
+    for c in s {
+        print(c)
+    }
+}
+
+fn print(c: Char) {
+    let num = c - Char(0)
+    for i in 0 < num {
+        print(Char(i))
+    }
+}
+
+fn main() {
+    let mut balance = 0
+    deposit(3)
+    print(balance)
+    deposit(1)
+    print(balance)
+    deposit(4)
+    print(balance)
+    deposit(1)
+    print(balance)
+    deposit(5)
+    print(balance)
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn print(value: Int) {
+    print_str(int_to_str(value))
+    print_str("\n")
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut digits = vec()
+    let mut num = n
+    while num > 0 {
+        digits.push(num % 10)
+        num = num / 10
+    }
+    let mut result = str()
+    for digit in digits {
+        result = concat(result, int_to_str(digit))
+    }
+    result
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut result = str()
+    for c in a {
+        result = concat(result, c)
+    }
+    for c in b {
+        result = concat(result, c)
+    }
+    result
+}
+
+fn print_str(s: Str) {
+    for c in s {
+        print(c)
+    }
+}
+
+fn print(c: Char) {
+    let num = c - Char(0)
+    for i in 0 < num {
+        print(Char(i))
+    }
+}
+
+fn main() {
+    let mut balance = 0
+    deposit(3)
+    print(balance)
+    deposit(1)
+    print(balance)
+    deposit(4)
+    print(balance)
+    deposit(1)
+    print(balance)
+    deposit(5)
+    print(balance)
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn print(value: Int) {
+    print_str(int_to_str(value))
+    print_str("\n")
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut digits = vec()
+    let mut num = n
+    while num > 0 {
+        digits.push(num % 10)
+        num = num / 10
+    }
+    let mut result = str()
+    for digit in digits {
+        result = concat(result, int_to_str(digit))
+    }
+    result
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut result = str()
+    for c in a {
+        result = concat(result, c)
+    }
+    for c in b {
+        result = concat(result, c)
+    }
+    result
+}
+
+fn print_str(s: Str) {
+    for c in s {
+        print(c)
+    }
+}
+
+fn print(c: Char) {
+    let num = c - Char(0)
+    for i in 0 < num {
+        print(Char(i))
+    }
+}
+
+fn main() {
+    let mut balance = 0
+    deposit(3)
+    print(balance)
+    deposit(1)
+    print(balance)
+    deposit(4)
+    print(balance)
+    deposit(1)
+    print(balance)
+    deposit(5)
+    print(balance)
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn print(value: Int) {
+    print_str(int_to_str(value))
+    print_str("\n")
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut digits = vec()
+    let mut num = n
+    while num > 0 {
+        digits.push(num % 10)
+        num = num / 10
+    }
+    let mut result = str()
+    for digit in digits {
+        result = concat(result, int_to_str(digit))
+    }
+    result
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut result = str()
+    for c in a {
+        result = concat(result, c)
+    }
+    for c in b {
+        result = concat(result, c)
+    }
+    result
+}
+
+fn print_str(s: Str) {
+    for c in s {
+        print(c)
+    }
+}
+
+fn print(c: Char) {
+    let num = c - Char(0)
+    for i in 0 < num {
+        print(Char(i))
+    }
+}
+
+fn main() {
+    let mut balance = 0
+    deposit(3)
+    print(balance)
+    deposit(1)
+    print(balance)
+    deposit(4)
+    print(balance)
+    deposit(1)
+    print(balance)
+    deposit(5)
+    print(balance)
+}
+
+fn deposit(amount: Int) {
+    balance = balance + amount
+}
+
+fn print(value: Int) {
+    print_str(int_to_str(value))
+    print_str("\n")
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut digits = vec()
+    let mut num = n
+    while num > 0 {
+        digits.push(num % 10)
+        num = num /

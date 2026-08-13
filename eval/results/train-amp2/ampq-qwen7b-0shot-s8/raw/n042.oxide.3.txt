@@ -1,0 +1,41 @@
+struct Reading { label: Str, values: Vec<Int> }
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(push(push(vec(), 12), 5), 20), 8), pushvec: push(push(vec(), 17)) }
+    print(max(r.values))
+    print(second_max(r.values))
+}
+
+fn max(v: Vec<Int>) -> Int {
+    let mut max_val = -1
+    for x in v {
+        if x > max_val {
+            max_val = x
+        }
+    }
+    max_val
+}
+
+fn second_max(v: Vec<Int>) -> Option<Int> {
+    let mut max_val = -1
+    let mut second_max_val = -1
+    for x in v {
+        if x > max_val {
+            second_max_val = max_val
+            max_val = x
+        } else if x > second_max_val && x != max_val {
+            second_max_val = x
+        }
+    }
+    if second_max_val == -1 {
+        None
+    } else {
+        Some(second_max_val)
+    }
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(push(push(vec(), 12), 5), 20), 8), pushvec: push(push(vec(), 17)) }
+    print(max(r.values))
+    print(second_max(r.values))
+}

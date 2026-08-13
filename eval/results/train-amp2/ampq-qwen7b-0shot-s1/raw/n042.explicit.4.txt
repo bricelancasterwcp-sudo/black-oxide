@@ -1,0 +1,30 @@
+fn find_largest(numbers: &Vec<Int>) -> Int {
+    let mut largest = 0
+    for x in &numbers {
+        if x > &largest {
+            largest = x
+        }
+    }
+    largest
+}
+
+fn find_second_largest(numbers: &Vec<Int>, largest: Int) -> Int {
+    let mut second_largest = 0
+    for x in &numbers {
+        if x < &largest && x > &second_largest {
+            second_largest = x
+        }
+    }
+    second_largest
+}
+
+fn main() {
+    let nums = push(push(push(push(vec(), 12), 5), 20), 8)
+    let nums_copy = clone(&nums)
+    let largest = find_largest(&nums_copy)
+    print(largest)
+    drop nums_copy
+    let second_largest = find_second_largest(&nums, largest)
+    print(second_largest)
+    drop nums
+}

@@ -1,0 +1,28 @@
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    vec_push(v, x)
+}
+
+fn pop(v: Vec<Int>) -> Option<Int> {
+    if len(v) == 0 {
+        None
+    } else {
+        Some(vec_pop(v))
+    }
+}
+
+fn peek(v: Vec<Int>) -> Option<Int> {
+    if len(v) == 0 {
+        None
+    } else {
+        Some(v.last().unwrap())
+    }
+}
+
+fn main() {
+    let mut queue = vec(1, 2, 3, 4, 5)
+    let last = pop(queue).unwrap()
+    queue = push(pop(queue).unwrap(), last)
+    for x in queue {
+        print(x)
+    }
+}

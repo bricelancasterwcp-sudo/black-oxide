@@ -1,0 +1,11 @@
+struct Queue { values: Vec<Int> }
+
+fn main() {
+    let mut q = Queue { values: vec(1, 2, 3, 4, 5) }
+    let first = q.values.get(0)?.clone()
+    let last = q.values.get(q.values.len() - 1)?.clone()
+    q.values = push(push(vec(), last), first)
+    for x in q.values {
+        print(x)
+    }
+}

@@ -1,0 +1,10 @@
+fn main() {
+    let across = 9;
+    let down = 3;
+
+    let area = across * down;
+    let edge = 2 * (across + down);
+
+    println!("The area is {} square feet.", area);
+    println!("The distance around the edge is {} feet.", edge);
+}

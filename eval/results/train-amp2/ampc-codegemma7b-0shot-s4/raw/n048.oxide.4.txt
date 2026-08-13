@@ -1,0 +1,11 @@
+fn main() {
+    let seq = vec(4, 7, 4, 9, 4)
+    let mut idx = -1
+    for x in seq {
+        if x == 4 {
+            idx = idx + 1
+            print(idx)
+            print_str("\n")
+        }
+    }
+}

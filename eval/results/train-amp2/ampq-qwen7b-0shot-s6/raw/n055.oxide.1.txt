@@ -1,0 +1,405 @@
+fn main() {
+    let a = "8".parse_int().unwrap_or_else(_bad)
+    let b = "oak".parse_int().unwrap_or_else(_bad)
+    let c = "15".parse_int().unwrap_or_else(_bad)
+    print(a)
+    print(b)
+    print(c)
+}
+
+fn _bad() -> Int {
+    print_str("bad")
+    -1
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn print(i: Int) {
+    print_str(int_to_str(i))
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    let mut chars = chars(s)
+    if chars.len() == 0 {
+        return None
+    }
+    let mut negative = false
+    if chars.get(0) == Some("-") {
+        negative = true
+        chars = chars.slice(1, chars.len())
+    }
+    let mut result = 0
+    for char in chars {
+        result = result * 10 + char.to_int()
+    }
+    if negative {
+        Some(-result)
+    } else {
+        Some(result)
+    }
+}
+
+fn to_int(char: Str) -> Int {
+    char.to_int()
+}
+
+fn int_to_str(n: Int) -> Str {
+    n.to_str()
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn print(i: Int) {
+    print_str(int_to_str(i))
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    let mut chars = chars(s)
+    if chars.len() == 0 {
+        return None
+    }
+    let mut negative = false
+    if chars.get(0) == Some("-") {
+        negative = true
+        chars = chars.slice(1, chars.len())
+    }
+    let mut result = 0
+    for char in chars {
+        result = result * 10 + char.to_int()
+    }
+    if negative {
+        Some(-result)
+    } else {
+        Some(result)
+    }
+}
+
+fn to_int(char: Str) -> Int {
+    char.to_int()
+}
+
+fn int_to_str(n: Int) -> Str {
+    n.to_str()
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn print(i: Int) {
+    print_str(int_to_str(i))
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    let mut chars = chars(s)
+    if chars.len() == 0 {
+        return None
+    }
+    let mut negative = false
+    if chars.get(0) == Some("-") {
+        negative = true
+        chars = chars.slice(1, chars.len())
+    }
+    let mut result = 0
+    for char in chars {
+        result = result * 10 + char.to_int()
+    }
+    if negative {
+        Some(-result)
+    } else {
+        Some(result)
+    }
+}
+
+fn to_int(char: Str) -> Int {
+    char.to_int()
+}
+
+fn int_to_str(n: Int) -> Str {
+    n.to_str()
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn print(i: Int) {
+    print_str(int_to_str(i))
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    let mut chars = chars(s)
+    if chars.len() == 0 {
+        return None
+    }
+    let mut negative = false
+    if chars.get(0) == Some("-") {
+        negative = true
+        chars = chars.slice(1, chars.len())
+    }
+    let mut result = 0
+    for char in chars {
+        result = result * 10 + char.to_int()
+    }
+    if negative {
+        Some(-result)
+    } else {
+        Some(result)
+    }
+}
+
+fn to_int(char: Str) -> Int {
+    char.to_int()
+}
+
+fn int_to_str(n: Int) -> Str {
+    n.to_str()
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn print(i: Int) {
+    print_str(int_to_str(i))
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    let mut chars = chars(s)
+    if chars.len() == 0 {
+        return None
+    }
+    let mut negative = false
+    if chars.get(0) == Some("-") {
+        negative = true
+        chars = chars.slice(1, chars.len())
+    }
+    let mut result = 0
+    for char in chars {
+        result = result * 10 + char.to_int()
+    }
+    if negative {
+        Some(-result)
+    } else {
+        Some(result)
+    }
+}
+
+fn to_int(char: Str) -> Int {
+    char.to_int()
+}
+
+fn int_to_str(n: Int) -> Str {
+    n.to_str()
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn print(i: Int) {
+    print_str(int_to_str(i))
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    let mut chars = chars(s)
+    if chars.len() == 0 {
+        return None
+    }
+    let mut negative = false
+    if chars.get(0) == Some("-") {
+        negative = true
+        chars = chars.slice(1, chars.len())
+    }
+    let mut result = 0
+    for char in chars {
+        result = result * 10 + char.to_int()
+    }
+    if negative {
+        Some(-result)
+    } else {
+        Some(result)
+    }
+}
+
+fn to_int(char: Str) -> Int {
+    char.to_int()
+}
+
+fn int_to_str(n: Int) -> Str {
+    n.to_str()
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn print(i: Int) {
+    print_str(int_to_str(i))
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    let mut chars = chars(s)
+    if chars.len() == 0 {
+        return None
+    }
+    let mut negative = false
+    if chars.get(0) == Some("-") {
+        negative = true
+        chars = chars.slice(1, chars.len())
+    }
+    let mut result = 0
+    for char in chars {
+        result = result * 10 + char.to_int()
+    }
+    if negative {
+        Some(-result)
+    } else {
+        Some(result)
+    }
+}
+
+fn to_int(char: Str) -> Int {
+    char.to_int()
+}
+
+fn int_to_str(n: Int) -> Str {
+    n.to_str()
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn print(i: Int) {
+    print_str(int_to_str(i))
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    let mut chars = chars(s)
+    if chars.len() == 0 {
+        return None
+    }
+    let mut negative = false
+    if chars.get(0) == Some("-") {
+        negative = true
+        chars = chars.slice(1, chars.len())
+    }
+    let mut result = 0
+    for char in chars {
+        result = result * 10 + char.to_int()
+    }
+    if negative {
+        Some(-result)
+    } else {
+        Some(result)
+    }
+}
+
+fn to_int(char: Str) -> Int {
+    char.to_int()
+}
+
+fn int_to_str(n: Int) -> Str {
+    n.to_str()
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn print(i: Int) {
+    print_str(int_to_str(i))
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    let mut chars = chars(s)
+    if chars.len() == 0 {
+        return None
+    }
+    let mut negative = false
+    if chars.get(0) == Some("-") {
+        negative = true
+        chars = chars.slice(1, chars.len())
+    }
+    let mut result = 0
+    for char in chars {
+        result = result * 10 + char.to_int()
+    }
+    if negative {
+        Some(-result)
+    } else {
+        Some(result)
+    }
+}
+
+fn to_int(char: Str) -> Int {
+    char.to_int()
+}
+
+fn int_to_str(n: Int) -> Str {
+    n.to_str()
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn print(i: Int) {
+    print_str(int_to_str(i))
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    let mut chars = chars(s)
+    if chars.len() == 0 {
+        return None
+    }
+    let mut negative = false
+    if chars.get(0) == Some("-") {
+        negative = true
+        chars = chars.slice(1, chars.len())
+    }
+    let mut result = 0
+    for char in chars {
+        result = result * 10 + char.to_int()
+    }
+    if negative {
+        Some(-result)
+    } else {
+        Some(result)
+    }
+}
+
+fn to_int(char: Str) -> Int {
+    char.to_int()
+}
+
+fn int_to_str(n: Int) -> Str {
+    n.to_str()
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn print(i: Int) {
+    print_str(int_to_str(i))
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    let mut chars = chars(s)
+    if chars.len() == 0 {
+        return None
+    }
+    let mut negative = false
+    if chars.get(0) == Some("-") {
+        negative = true
+        chars = chars.slice(1, chars.len())
+    }
+    let mut result = 0
+    for char in chars {
+        result = result *

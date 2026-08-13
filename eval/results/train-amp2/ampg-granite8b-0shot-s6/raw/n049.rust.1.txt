@@ -1,0 +1,22 @@
+fn main() {
+    let mut a = 8;
+    let mut b = 3;
+    let mut c = 11;
+    let mut d = 6;
+
+    if a > b {
+        std::mem::swap(&mut a, &mut b);
+    }
+    if c > d {
+        std::mem::swap(&mut c, &mut d);
+    }
+    if a > c {
+        std::mem::swap(&mut a, &mut c);
+    }
+    if b > d {
+        std::mem::swap(&mut b, &mut d);
+    }
+
+    println!("{}", a);
+    println!("{}", d - a);
+}

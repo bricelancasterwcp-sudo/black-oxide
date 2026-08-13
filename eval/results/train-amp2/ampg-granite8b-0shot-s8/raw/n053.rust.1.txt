@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let word = "drum";
+    println!("{}", reverse_word(word));
+    println!("{}", word);
+}
+
+fn reverse_word(word: &str) -> String {
+    let mut reversed = String::new();
+    for c in word.chars().rev() {
+        reversed.push(c);
+    }
+    reversed
+}
+```

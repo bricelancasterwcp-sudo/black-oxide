@@ -1,0 +1,8 @@
+struct Rating { score: Int }
+
+fn main() {
+    let top_scores = vec(Rating { score: 5 }, Rating { score: 9 }, Rating { score: 2 })
+    for score in top_scores {
+        print(score.score)
+    }
+}

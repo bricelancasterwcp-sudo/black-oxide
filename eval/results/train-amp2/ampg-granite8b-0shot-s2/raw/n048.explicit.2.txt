@@ -1,0 +1,18 @@
+fn mixer(v: Vec<Int>) -> Vec<Int> {
+    let mut i = 0
+    let mut out = vec()
+    while i < len(&v) {
+        if v.get(i) == Some(&v) {
+            out = push(out, v)
+        }
+        i = i + 1
+    }
+    out
+}
+
+fn main() {
+    let x = mixer(vec())
+    print_str("x has ")
+    print(len(&x))
+    print_str(" elements.")
+}

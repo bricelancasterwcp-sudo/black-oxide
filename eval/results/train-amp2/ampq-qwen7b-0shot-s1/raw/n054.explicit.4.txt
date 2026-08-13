@@ -1,0 +1,18 @@
+fn count_vowels(s: &Str) -> Int {
+    let vowels = "aeiou"
+    let mut count = 0
+    for c in chars(s) {
+        if vowels.find(c).is_some() {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn main() {
+    let keyboard = "qwertyuiopasdfghjklzxcvbnm"
+    let vowel_count = count_vowels(keyboard)
+    let consonant_count = keyboard.len() - vowel_count
+    print(vowel_count)
+    print(consonant_count)
+}

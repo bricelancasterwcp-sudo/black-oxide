@@ -1,0 +1,19 @@
+struct Bank { balance: Int }
+
+fn deposit(b: Bank, amount: Int) -> Bank {
+    Bank(b.balance + amount)
+}
+
+fn main() {
+    let mut balance = Bank(0)
+    balance = deposit(balance, 3)
+    print(balance.balance)
+    balance = deposit(balance, 1)
+    print(balance.balance)
+    balance = deposit(balance, 4)
+    print(balance.balance)
+    balance = deposit(balance, 1)
+    print(balance.balance)
+    balance = deposit(balance, 5)
+    print(balance.balance)
+}

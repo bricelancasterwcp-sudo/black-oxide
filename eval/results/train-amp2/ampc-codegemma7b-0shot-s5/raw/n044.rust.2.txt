@@ -1,0 +1,17 @@
+use std::collections::VecDeque;
+
+fn main() {
+    let mut bank = VecDeque::new();
+    bank.push_back(0);
+
+    for amount in [3, 1, 4, 1, 5] {
+        let mut new_amount = amount;
+        while new_amount > 0 {
+            let current = bank.pop_front().unwrap();
+            let next = (current + new_amount) % bank.len();
+            bank.insert(next, current + new_amount);
+            new_amount -= 1;
+        }
+        println!("{}", bank[0]);
+    }
+}

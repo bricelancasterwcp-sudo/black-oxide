@@ -1,0 +1,338 @@
+fn main() {
+    let mut result = vec()
+    for x in 10 {
+        if x % 2 == 0 {
+            result = push(result, x)
+        }
+    }
+    for x in result.iter().rev() {
+        print_str(to_str(x))
+        print_str("\n")
+    }
+    drop result
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut new = v
+    new.push(x)
+    new
+}
+
+fn to_str(n: Int) -> Str {
+    if n < 0 {
+        return "negative"
+    }
+    return "positive"
+}
+
+fn print_str(s: Str) {
+    let mut chars = chars(s)
+    for c in chars.iter() {
+        print(c)
+    }
+}
+
+fn print(c: Str) {
+    if c == "negative" {
+        print_str("-")
+    }
+    if c == "positive" {
+        print_str("+")
+    }
+}
+
+fn len(v: Vec<Int>) -> Int {
+    let mut i = 0
+    for _ in v.iter() {
+        i = i + 1
+    }
+    i
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = vec()
+    for c in s.chars() {
+        result = push(result, to_str(c.to_int()))
+    }
+    result
+}
+
+fn to_int(c: Char) -> Int {
+    if c == "-" {
+        return -1
+    }
+    if c == "+" {
+        return 1
+    }
+    return 0
+}
+
+fn main() {
+    let mut result = vec()
+    for x in 10 {
+        if x % 2 == 0 {
+            result = push(result, x)
+        }
+    }
+    for x in result.iter().rev() {
+        print_str(to_str(x))
+        print_str("\n")
+    }
+    drop result
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut new = v
+    new.push(x)
+    new
+}
+
+fn to_str(n: Int) -> Str {
+    if n < 0 {
+        return "negative"
+    }
+    return "positive"
+}
+
+fn print_str(s: Str) {
+    let mut chars = chars(s)
+    for c in chars.iter() {
+        print(c)
+    }
+}
+
+fn print(c: Str) {
+    if c == "negative" {
+        print_str("-")
+    }
+    if c == "positive" {
+        print_str("+")
+    }
+}
+
+fn len(v: Vec<Int>) -> Int {
+    let mut i = 0
+    for _ in v.iter() {
+        i = i + 1
+    }
+    i
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = vec()
+    for c in s.chars() {
+        result = push(result, to_str(c.to_int()))
+    }
+    result
+}
+
+fn to_int(c: Char) -> Int {
+    if c == "-" {
+        return -1
+    }
+    if c == "+" {
+        return 1
+    }
+    return 0
+}
+
+fn main() {
+    let mut result = vec()
+    for x in 10 {
+        if x % 2 == 0 {
+            result = push(result, x)
+        }
+    }
+    for x in result.iter().rev() {
+        print_str(to_str(x))
+        print_str("\n")
+    }
+    drop result
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut new = v
+    new.push(x)
+    new
+}
+
+fn to_str(n: Int) -> Str {
+    if n < 0 {
+        return "negative"
+    }
+    return "positive"
+}
+
+fn print_str(s: Str) {
+    let mut chars = chars(s)
+    for c in chars.iter() {
+        print(c)
+    }
+}
+
+fn print(c: Str) {
+    if c == "negative" {
+        print_str("-")
+    }
+    if c == "positive" {
+        print_str("+")
+    }
+}
+
+fn len(v: Vec<Int>) -> Int {
+    let mut i = 0
+    for _ in v.iter() {
+        i = i + 1
+    }
+    i
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = vec()
+    for c in s.chars() {
+        result = push(result, to_str(c.to_int()))
+    }
+    result
+}
+
+fn to_int(c: Char) -> Int {
+    if c == "-" {
+        return -1
+    }
+    if c == "+" {
+        return 1
+    }
+    return 0
+}
+
+fn main() {
+    let mut result = vec()
+    for x in 10 {
+        if x % 2 == 0 {
+            result = push(result, x)
+        }
+    }
+    for x in result.iter().rev() {
+        print_str(to_str(x))
+        print_str("\n")
+    }
+    drop result
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut new = v
+    new.push(x)
+    new
+}
+
+fn to_str(n: Int) -> Str {
+    if n < 0 {
+        return "negative"
+    }
+    return "positive"
+}
+
+fn print_str(s: Str) {
+    let mut chars = chars(s)
+    for c in chars.iter() {
+        print(c)
+    }
+}
+
+fn print(c: Str) {
+    if c == "negative" {
+        print_str("-")
+    }
+    if c == "positive" {
+        print_str("+")
+    }
+}
+
+fn len(v: Vec<Int>) -> Int {
+    let mut i = 0
+    for _ in v.iter() {
+        i = i + 1
+    }
+    i
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = vec()
+    for c in s.chars() {
+        result = push(result, to_str(c.to_int()))
+    }
+    result
+}
+
+fn to_int(c: Char) -> Int {
+    if c == "-" {
+        return -1
+    }
+    if c == "+" {
+        return 1
+    }
+    return 0
+}
+
+fn main() {
+    let mut result = vec()
+    for x in 10 {
+        if x % 2 == 0 {
+            result = push(result, x)
+        }
+    }
+    for x in result.iter().rev() {
+        print_str(to_str(x))
+        print_str("\n")
+    }
+    drop result
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut new = v
+    new.push(x)
+    new
+}
+
+fn to_str(n: Int) -> Str {
+    if n < 0 {
+        return "negative"
+    }
+    return "positive"
+}
+
+fn print_str(s: Str) {
+    let mut chars = chars(s)
+    for c in chars.iter() {
+        print(c)
+    }
+}
+
+fn print(c: Str) {
+    if c == "negative" {
+        print_str("-")
+    }
+    if c == "positive" {
+        print_str("+")
+    }
+}
+
+fn len(v: Vec<Int>) -> Int {
+    let mut i = 0
+    for _ in v.iter() {
+        i = i + 1
+    }
+    i
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = vec()
+    for c in s.chars() {
+        result = push(result, to_str(c.to_int()))
+    }
+    result
+}
+
+fn to_int(c: Char) -> Int {
+    if c == "-" {
+        return -1

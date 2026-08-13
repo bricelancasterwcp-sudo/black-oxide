@@ -1,0 +1,16 @@
+struct List {
+    head: Option<Int>,
+    tail: Option<Box<List>>,
+}
+
+fn get(list: Box<List>, i: Int) -> Option<Int> {
+    match i {
+        _ => None,
+    }
+}
+
+fn main() {
+    let xs = Box { head: Some(10), tail: Some(Box { head: Some(20), tail: None }) }
+    print(get(xs, 0)?)
+    print(get(xs, 3)?)
+}

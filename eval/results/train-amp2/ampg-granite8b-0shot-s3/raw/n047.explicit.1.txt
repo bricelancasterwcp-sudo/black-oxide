@@ -1,0 +1,14 @@
+fn main() {
+    let mut list = vec()
+    for i in range(1, 11) {
+        if i % 2 == 0 {
+            push(list, i)
+        }
+    }
+    for i in range(1, 6) {
+        drop list
+    }
+    for i in range(1, 6) {
+        print(get(&list, i).unwrap())
+    }
+}

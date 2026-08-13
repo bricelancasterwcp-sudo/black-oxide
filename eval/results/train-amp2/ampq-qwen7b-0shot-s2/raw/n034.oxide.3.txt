@@ -1,0 +1,15 @@
+fn second(v: Vec<Int>) -> Option<Int> {
+    match get(v, 1)? {
+        Some(x) => Some(x + 1),
+        None => None,
+    }
+}
+
+fn main() {
+    let v1 = push(push(vec(), 7), 8)
+    let v2 = push(push(vec(), 8), 9)
+    let v3 = vec()
+    print(second(v1).unwrap_or(0))
+    print(second(v2).unwrap_or(0))
+    print(second(v3).unwrap_or(0))
+}

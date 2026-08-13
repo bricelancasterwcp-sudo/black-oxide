@@ -1,0 +1,6 @@
+fn main() {
+    let entries = vec(6, 7, 8, 9)
+    print(entries.get(0))
+    print(entries.get(3))
+    drop entries
+}

@@ -1,0 +1,17 @@
+struct Deposit {
+    camp: Str,
+    amount: Int,
+}
+
+fn balance(deposits: Vec<Deposit>) -> Int {
+    let mut balance = 0
+    for deposit in deposits {
+        balance = balance + deposit.amount
+    }
+    balance
+}
+
+fn main() {
+    let deposits = vec(Deposit { camp: "Las Vegas", amount: 3 }, Deposit { camp: "San Francisco", amount: 1 }, Deposit { camp: "New York", amount: 4 }, Deposit { camp: "Chicago", amount: 1 }, Deposit { camp: "Houston", amount: 5 })
+    print(balance(deposits))
+}

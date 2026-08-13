@@ -1,0 +1,5 @@
+fn main() {
+    println!("{}", [2, 9, 5].iter().max().unwrap());
+    println!("{}", [2, 9, 5].iter().max().unwrap());
+    println!("{}", [2, 9, 5].iter().max().unwrap());
+}

@@ -1,0 +1,14 @@
+fn divide(a: Int, b: Int) -> Option<Int> {
+    if b == 0 {
+        None
+    } else {
+        Some(a / b)
+    }
+}
+
+fn main() {
+    match divide(20, 4) {
+        Some(ans) => print(ans),
+        None => print("bad") < dropans,
+    }
+}

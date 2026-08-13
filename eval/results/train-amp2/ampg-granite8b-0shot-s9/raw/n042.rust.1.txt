@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let values = [12, 5, 20, 8, 17];
+    let (largest, second_largest) = values.iter().fold((0, 0), |acc, &x| {
+        if x > acc.0 {
+            (x, acc.0)
+        } else if x > acc.1 {
+            (acc.0, x)
+        } else {
+            (acc.0, acc.1)
+        }
+    });
+
+    println!("{}", largest);
+    println!("{}", second_largest);
+}
+```

@@ -1,0 +1,11 @@
+fn main() {
+    let scores = vec(2, 9, 5)
+    let mut sorted_scores = vec()
+    for s in scores {
+        sorted_scores = push(sorted_scores, s)
+    }
+    for s in sorted_scores {
+        print(s)
+        print_str("\n")
+    }
+}

@@ -1,0 +1,24 @@
+fn find_duplicates(word: &Str) -> Vec<Str> {
+    let mut seen = Vec()
+    let mut dupes = Vec()
+    for c in chars(&word) {
+        if seen.contains(&c) {
+            dupes = push(dupes, c)
+        } else {
+            seen = push(seen, c)
+        }
+    }
+    dupes
+}
+
+fn main() {
+    let coffee = "coffee"
+    let dups = find_duplicates(&coffee)
+    if len(&dups) > 0 {
+        print(concat("duplicates: ", &dups))
+    } else {
+        print("no duplicates")
+    }
+    drop coffee
+    drop dups
+}

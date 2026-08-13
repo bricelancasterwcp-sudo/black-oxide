@@ -1,0 +1,147 @@
+fn main() {
+    let entries = vec(8, oak, 15)
+    let mut iter = &entries
+    loop_entry(iter)
+    drop iter
+}
+
+fn loop_entry(iter: &Vec<Str>) {
+    while letSome(entry) == iter {
+        match entry {
+            Str(s) => {
+                print_str(s)
+                print("\n")
+            },
+            _ => {
+                print_str("bad\n")
+            },
+        }
+        iter = &iter
+    }
+}
+
+fn oak() -> Str {
+    "oak"
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn print(s: &Str) {
+    todo
+}
+
+fn vec() -> Vec<T> {
+    todo
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    todo
+}
+
+fn clone(x: T) -> T {
+    todo
+}
+
+fn str_len(s: &Str) -> Int {
+    todo
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    todo
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    todo
+}
+
+fn int_to_str(n: Int) -> Str {
+    todo
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    todo
+}
+
+fn to_float(n: Int) -> Float {
+    todo
+}
+
+fn trunc(x: Float) -> Int {
+    todo
+}
+
+fn loop_entry(iter: &Vec<Str>) {
+    while letSome(entry) == iter {
+        match entry {
+            Str(s) => {
+                print_str(s)
+                print("\n")
+            },
+            _ => {
+                print_str("bad\n")
+            },
+        }
+        iter = &iter
+    }
+}
+
+fn oak() -> Str {
+    "oak"
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn print(s: &Str) {
+    todo
+}
+
+fn vec() -> Vec<T> {
+    todo
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    todo
+}
+
+fn clone(x: T) -> T {
+    todo
+}
+
+fn str_len(s: &Str) -> Int {
+    todo
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    todo
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    todo
+}
+
+fn int_to_str(n: Int) -> Str {
+    todo
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    todo
+}
+
+fn to_float(n: Int) -> Float {
+    todo
+}
+
+fn trunc(x: Float) -> Int {
+    todo
+}
+
+fn main() {
+    let entries = vec(8, oak, 15)
+    let mut iter = &entries
+    loop_entry(iter)
+    drop iter
+}

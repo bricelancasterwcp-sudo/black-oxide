@@ -1,0 +1,17 @@
+struct Reading { label: Str, values: Vec<Int> }
+
+fn set_reading(reading: Reading, seven: Int) -> Reading {
+    let updated = functional_update(reading, values, push(values, seven))
+    updated
+}
+
+fn print_reading(reading: Reading) {
+    print(first_big(reading.values))            // field access copies: r stays usable
+}
+
+fn main() {
+    let zero = 0
+    let seven = 7
+    let r = Reading { label: "lab", values: push(push(vec(), zero), seven) }
+    print_reading(set_reading(r, seven))
+}

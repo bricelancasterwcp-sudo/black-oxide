@@ -1,0 +1,10 @@
+struct Cube { value: Int }
+
+fn cube(n: Int) -> Cube {
+    Cube.value == n * n * n
+}
+
+fn main() {
+    let total = (1 + 2 + 3 + 4 + 5).map(cube).map(Cube.value).sum()
+    print(total)
+}

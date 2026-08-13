@@ -1,0 +1,305 @@
+fn main() {
+    let a = 5
+    let b = 10
+    print(a1b22(a, b))
+    print(a1b22(a, b))
+}
+
+fn a1b22(a: Int, b: Int) -> Int {
+    let mut c = 0
+    let mut d = 0
+    for i in range(a, b) {
+        c = c + i
+        if is_digit(i) {
+            d = d + 1
+        }
+    }
+    c + d
+}
+
+fn is_digit(x: Int) -> Bool {
+    x >= 48 && x <= 57
+}
+
+fn print(x: Int) {
+    print_str("The total is ")
+    print_int(x)
+    print_str("\n")
+}
+
+fn print_str(s: Str) {
+    let n = str_len(s)
+    for i in range(0, n) {
+        print_char(get(s, i)?)
+    }
+}
+
+fn print_char(c: Int) {
+    print_str(chars(c))
+}
+
+fn print_int(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut v = vec()
+    for i in a.to(b - 1) {
+        v = push(v, i)
+    }
+    v
+}
+
+fn vec() -> Vec<T> {
+    let mut v = Vec { data: 0, len: 0 }
+    v.data = alloc(0)
+    v
+}
+
+fn push(mutexisting: Vec<T>, x: T) -> Vec<T> {
+    let len = existing.len
+    existing.len = len + 1
+    if len == 0 {
+        existing.data = alloc(1)
+    } else {
+        let prev = get(existing.data, len - 1)?
+        existing.data = alloc(len + 1)
+        set(existing.data, len, prev)
+    }
+    set(existing.data, len, x)
+    existing
+}
+
+fn len(v: Vec<T>) -> Int {
+    v.len
+}
+
+fn get(v: Vec<T>, i: Int) -> Option<T> {
+    if i >= v.len {
+        None
+    } else {
+        Some(get_unchecked(v.data, i))
+    }
+}
+
+fn get_unchecked(v: Int, i: Int) -> T {
+    load(v + i * size_of(T))
+}
+
+fn set(v: Int, i: Int, x: T) {
+    store(v + i * size_of(T), x)
+}
+
+fn alloc(n: Int) -> Int {
+    let v = malloc(n * size_of(T))
+    v + size_of(Int) * 2
+}
+
+fn load(p: Int) -> T {
+    let x = malloc(size_of(T))
+    store(x, p)
+    x + size_of(Int)
+}
+
+fn store(p: Int, x: T) {
+    let q = load(p)
+    write(q, x)
+}
+
+fn malloc(n: Int) -> Int {
+    let old = memory
+    memory = memory + n
+    old
+}
+
+fn size_of(x: T) -> Int {
+    let x = load(x)
+    let size = x + size_of(Int)
+    write(x, 0)
+    size
+}
+
+fn write(p: Int, x: T) {
+    p + size_of(Int)
+}
+
+fn free(p: Int) {
+    memory = p
+}
+
+fn is_digit(x: Int) -> Bool {
+    x >= 48 && x <= 57
+}
+
+fn print(x: Int) {
+    print_str("The total is ")
+    print_int(x)
+    print_str("\n")
+}
+
+fn print_str(s: Str) {
+    let n = str_len(s)
+    for i in range(0, n) {
+        print_char(get(s, i)?)
+    }
+}
+
+fn print_char(c: Int) {
+    print_str(chars(c))
+}
+
+fn print_int(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut v = vec()
+    for i in a.to(b - 1) {
+        v = push(v, i)
+    }
+    v
+}
+
+fn vec() -> Vec<T> {
+    let mut v = Vec { data: 0, len: 0 }
+    v.data = alloc(0)
+    v
+}
+
+fn push(mutexisting: Vec<T>, x: T) -> Vec<T> {
+    let len = existing.len
+    existing.len = len + 1
+    if len == 0 {
+        existing.data = alloc(1)
+    } else {
+        let prev = get(existing.data, len - 1)?
+        existing.data = alloc(len + 1)
+        set(existing.data, len, prev)
+    }
+    set(existing.data, len, x)
+    existing
+}
+
+fn len(v: Vec<T>) -> Int {
+    v.len
+}
+
+fn get(v: Vec<T>, i: Int) -> Option<T> {
+    if i >= v.len {
+        None
+    } else {
+        Some(get_unchecked(v.data, i))
+    }
+}
+
+fn get_unchecked(v: Int, i: Int) -> T {
+    load(v + i * size_of(T))
+}
+
+fn set(v: Int, i: Int, x: T) {
+    store(v + i * size_of(T), x)
+}
+
+fn alloc(n: Int) -> Int {
+    let v = malloc(n * size_of(T))
+    v + size_of(Int) * 2
+}
+
+fn load(p: Int) -> T {
+    let x = malloc(size_of(T))
+    store(x, p)
+    x + size_of(Int)
+}
+
+fn store(p: Int, x: T) {
+    let q = load(p)
+    write(q, x)
+}
+
+fn malloc(n: Int) -> Int {
+    let old = memory
+    memory = memory + n
+    old
+}
+
+fn size_of(x: T) -> Int {
+    let x = load(x)
+    let size = x + size_of(Int)
+    write(x, 0)
+    size
+}
+
+fn write(p: Int, x: T) {
+    p + size_of(Int)
+}
+
+fn free(p: Int) {
+    memory = p
+}
+
+fn is_digit(x: Int) -> Bool {
+    x >= 48 && x <= 57
+}
+
+fn print(x: Int) {
+    print_str("The total is ")
+    print_int(x)
+    print_str("\n")
+}
+
+fn print_str(s: Str) {
+    let n = str_len(s)
+    for i in range(0, n) {
+        print_char(get(s, i)?)
+    }
+}
+
+fn print_char(c: Int) {
+    print_str(chars(c))
+}
+
+fn print_int(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut v = vec()
+    for i in a.to(b - 1) {
+        v = push(v, i)
+    }
+    v
+}
+
+fn vec() -> Vec<T> {
+    let mut v = Vec { data: 0, len: 0 }
+    v.data = alloc(0)
+    v
+}
+
+fn push(mutexisting: Vec<T>, x: T) -> Vec<T> {
+    let len = existing.len
+    existing.len = len + 1
+    if len == 0 {
+        existing.data = alloc(1)
+    } else {
+        let prev = get(existing.data, len - 1)?
+        existing.data = alloc(len + 1)
+        set(existing.data, len, prev)
+    }
+    set(existing.data, len, x)
+    existing
+}
+
+fn len(v: Vec<T>) -> Int {
+    v.len
+}
+
+fn get(v: Vec<T>, i: Int) -> Option<T> {
+    if i >= v.len {
+        None
+    } else {
+        Some(get_unchecked(v.data, i))
+    }
+}
+
+fn get_unchecked(

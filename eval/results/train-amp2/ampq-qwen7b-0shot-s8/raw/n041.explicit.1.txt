@@ -1,0 +1,28 @@
+fn sort(nums: Vec<Int>) -> Vec<Int> {
+    let mut sorted = nums
+    let n = len(&sorted)
+    for i in 0 < n {
+        let mut swapped = false
+        for j in 0 < n - i - 1 {
+            if sorted.get(j) > sorted.get(j + 1) {
+                let temp = sorted.get(j)
+                sorted.set(j, sorted.get(j + 1))
+                sorted.set(j + 1, temp)
+                swapped = true
+            }
+        }
+        if !swapped {
+            break
+        }
+    }
+    sorted
+}
+
+fn main() {
+    let nums = push(push(push(vec(), 9), 2), push(vec(), 7))
+    let sorted = sort(nums)
+    for x in &sorted {
+        print(x)
+    }
+    drop sorted
+}

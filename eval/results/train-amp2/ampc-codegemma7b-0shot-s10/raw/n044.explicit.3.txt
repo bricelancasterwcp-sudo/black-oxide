@@ -1,0 +1,285 @@
+fn main() {
+    let mut balance = 0
+    let mut deposits = vec(3, 1, 4, 1, 5)
+    for x in deposits {
+        balance = balance + x
+        println(balance)
+    }
+}
+
+fn println(x: Int) {
+    let s = int_to_str(x)
+    push(vec(), s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    if n < 0 {
+        return concat(str_len("-"), int_to_str(-n))
+    }
+    if n < 10 {
+        return str_len("0") + str_len(n)
+    }
+    let mut digits = vec()
+    while n != 0 {
+        digits = push(digits, n % 10)
+        n = trunc(n / 10)
+    }
+    let digits = reverse(digits)
+    let mut s = str_len("")
+    for d in &digits {
+        s = concat(s, int_to_str(d))
+    }
+    return s
+}
+
+fn reverse(mutv: Vec<Int>) -> Vec<Int> {
+    let mut result = vec()
+    while len(mutv) != 0 {
+        result = push(result, pop(&mutv))
+    }
+    return result
+}
+
+fn pop(v: &Vec<Int>) -> Int {
+    let len = len(v)
+    if len == 0 {
+        return 0
+    }
+    let x = v.get(len - 1)
+    drop v
+    return x
+}
+
+fn str_len(s: Str) -> Str {
+    let mut n = 0
+    for _ in &s {
+        n = n + 1
+    }
+    return n
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut result = vec()
+    for c in &a {
+        result = push(result, c)
+    }
+    for c in &b {
+        result = push(result, c)
+    }
+    let result = reverse(result)
+    let mut s = str_len("")
+    for c in &result {
+        s = concat(s, int_to_str(c))
+    }
+    return s
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    let mut n = 0
+    for _ in &v {
+        n = n + 1
+    }
+    return n
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut result = v
+    result = result.concat(x)
+    return result
+}
+
+fn concat(mutv: Vec<Int>, x: Int) -> Vec<Int> {
+    mutv = push(mutv, x)
+    return mutv
+}
+
+fn drop_vec(v: &Vec<Int>) {
+    for _ in &v {
+        drop v
+    }
+}
+
+fn vec(x: Int, y: Int, z: Int, w: Int, t: Int) -> Vec<Int> {
+    let mut v = vec()
+    v = push(v, x)
+    v = push(v, y)
+    v = push(v, z)
+    v = push(v, w)
+    v = push(v, t)
+    return v
+}
+
+fn drop_ref(v: &Int) {
+    drop v
+}
+
+fn main() {
+    let mut balance = 0
+    let mut deposits = vec(3, 1, 4, 1, 5)
+    for x in deposits {
+        balance = balance + x
+        println(balance)
+    }
+}
+
+fn println(x: Int) {
+    let s = int_to_str(x)
+    push(vec(), s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    if n < 0 {
+        return concat(str_len("-"), int_to_str(-n))
+    }
+    if n < 10 {
+        return str_len("0") + str_len(n)
+    }
+    let mut digits = vec()
+    while n != 0 {
+        digits = push(digits, n % 10)
+        n = trunc(n / 10)
+    }
+    let digits = reverse(digits)
+    let mut s = str_len("")
+    for d in &digits {
+        s = concat(s, int_to_str(d))
+    }
+    return s
+}
+
+fn reverse(mutv: Vec<Int>) -> Vec<Int> {
+    let mut result = vec()
+    while len(mutv) != 0 {
+        result = push(result, pop(&mutv))
+    }
+    return result
+}
+
+fn pop(v: &Vec<Int>) -> Int {
+    let len = len(v)
+    if len == 0 {
+        return 0
+    }
+    let x = v.get(len - 1)
+    drop v
+    return x
+}
+
+fn str_len(s: Str) -> Str {
+    let mut n = 0
+    for _ in &s {
+        n = n + 1
+    }
+    return n
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut result = vec()
+    for c in &a {
+        result = push(result, c)
+    }
+    for c in &b {
+        result = push(result, c)
+    }
+    let result = reverse(result)
+    let mut s = str_len("")
+    for c in &result {
+        s = concat(s, int_to_str(c))
+    }
+    return s
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    let mut n = 0
+    for _ in &v {
+        n = n + 1
+    }
+    return n
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut result = v
+    result = result.concat(x)
+    return result
+}
+
+fn concat(mutv: Vec<Int>, x: Int) -> Vec<Int> {
+    mutv = push(mutv, x)
+    return mutv
+}
+
+fn drop_vec(v: &Vec<Int>) {
+    for _ in &v {
+        drop v
+    }
+}
+
+fn vec(x: Int, y: Int, z: Int, w: Int, t: Int) -> Vec<Int> {
+    let mut v = vec()
+    v = push(v, x)
+    v = push(v, y)
+    v = push(v, z)
+    v = push(v, w)
+    v = push(v, t)
+    return v
+}
+
+fn drop_ref(v: &Int) {
+    drop v
+}
+
+fn main() {
+    let mut balance = 0
+    let mut deposits = vec(3, 1, 4, 1, 5)
+    for x in deposits {
+        balance = balance + x
+        println(balance)
+    }
+}
+
+fn println(x: Int) {
+    let s = int_to_str(x)
+    push(vec(), s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    if n < 0 {
+        return concat(str_len("-"), int_to_str(-n))
+    }
+    if n < 10 {
+        return str_len("0") + str_len(n)
+    }
+    let mut digits = vec()
+    while n != 0 {
+        digits = push(digits, n % 10)
+        n = trunc(n / 10)
+    }
+    let digits = reverse(digits)
+    let mut s = str_len("")
+    for d in &digits {
+        s = concat(s, int_to_str(d))
+    }
+    return s
+}
+
+fn reverse(mutv: Vec<Int>) -> Vec<Int> {
+    let mut result = vec()
+    while len(mutv) != 0 {
+        result = push(result, pop(&mutv))
+    }
+    return result
+}
+
+fn pop(v: &Vec<Int>) -> Int {
+    let len = len(v)
+    if len == 0 {
+        return 0
+    }
+    let x = v.get(len - 1)
+    drop v
+    return x
+}
+
+fn str_len(s: Str) -> Str {
+    let mut n = 0
+    for _ in

@@ -1,0 +1,307 @@
+fn max(x: &Int, y: &Int) -> Int {
+    if x > y {
+        return x.clone()
+    }
+    y.clone()
+}
+
+fn main() {
+    let nums = vec(12, 5, 20, 8, 17)
+    let mut max_num = &nums
+    let mut second_max_num = &nums
+    for n in &nums {
+        if max_num == n {
+            second_max_num = max(second_max_num, n)
+        } else {
+            max_num = max(max_num, n)
+            if max_num != n {
+                second_max_num = max(max_num, second_max_num)
+            }
+        }
+    }
+    print(max_num)
+    print(second_max_num)
+}
+
+fn clone(x: &Int) -> Int {
+    return x.clone()
+}
+
+fn vec(v: Int, a: Int, b: Int, c: Int, d: Int) -> Vec<Int> {
+    let mut result = vec()
+    result.push(v)
+    result.push(a)
+    result.push(b)
+    result.push(c)
+    result.push(d)
+    return result
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Str) {
+    print(x)
+}
+
+fn print(x: &Vec<Int>) {
+    print(x)
+}
+
+fn print(x: &Vec<Str>) {
+    print(x)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Str) {
+    print(x)
+}
+
+fn print(x: Vec<Int>) {
+    print(x)
+}
+
+fn print(x: Vec<Str>) {
+    print(x)
+}
+
+fn len(x: &Vec<Int>) -> Int {
+    let mut result = 0
+    for _ in x {
+        result = result + 1
+    }
+    return result
+}
+
+fn push(x: Vec<Int>, v: Int) -> Vec<Int> {
+    let mut result = x
+    result.push(v)
+    return result
+}
+
+fn get(x: &Vec<Int>, i: Int) -> Option<Int> {
+    if i >= len(x) {
+        return None
+    }
+    return Some(x.clone())
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in a + 1.to_int() - 1.to_int() + 1.to_int() / b.to_int() {
+        result.push(i)
+    }
+    return result
+}
+
+fn chars(x: &Str) -> Vec<Str> {
+    let mut result = vec()
+    for c in x.chars() {
+        result.push(c.to_string())
+    }
+    return result
+}
+
+fn int_to_str(x: Int) -> Str {
+    return x.to_string()
+}
+
+fn parse_int(x: &Str) -> Option<Int> {
+    return Some(x.parse())
+}
+
+fn to_float(x: Int) -> Float {
+    return x.to_float()
+}
+
+fn trunc(x: Float) -> Int {
+    return x.trunc()
+}
+
+fn drop_int(x: &Int) {
+    drop x
+}
+
+fn drop_int(x: &Vec<Int>) {
+    drop x
+}
+
+fn drop_int(x: &Str) {
+    drop x
+}
+
+fn drop_int(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_int(x: Int) {
+    drop x
+}
+
+fn drop_int(x: Str) {
+    drop x
+}
+
+fn drop_int(x: Vec<Int>) {
+    drop x
+}
+
+fn drop_int(x: Vec<Str>) {
+    drop x
+}
+
+fn drop_int(x: &Int, y: &Int) {
+    drop x
+    drop y
+}
+
+fn drop_int(x: &Vec<Int>, y: &Int) {
+    drop x
+    drop y
+}
+
+fn drop_int(x: &Int, y: &Vec<Int>) {
+    drop x
+    drop y
+}
+
+fn drop_int(x: &Vec<Int>, y: &Vec<Int>) {
+    drop x
+    drop y
+}
+
+fn drop_int(x: &Int, y: &Int, z: &Int) {
+    drop x
+    drop y
+    drop z
+}
+
+fn drop_int(x: &Vec<Int>, y: &Int, z: &Int) {
+    drop x
+    drop y
+    drop z
+}
+
+fn drop_int(x: &Int, y: &Vec<Int>, z: &Int) {
+    drop x
+    drop y
+    drop z
+}
+
+fn drop_int(x: &Vec<Int>, y: &Vec<Int>, z: &Int) {
+    drop x
+    drop y
+    drop z
+}
+
+fn drop_int(x: &Int, y: &Int, z: &Int, w: &Int) {
+    drop x
+    drop y
+    drop z
+    drop w
+}
+
+fn drop_int(x: &Vec<Int>, y: &Int, z: &Int, w: &Int) {
+    drop x
+    drop y
+    drop z
+    drop w
+}
+
+fn drop_int(x: &Int, y: &Vec<Int>, z: &Int, w: &Int) {
+    drop x
+    drop y
+    drop z
+    drop w
+}
+
+fn drop_int(x: &Vec<Int>, y: &Vec<Int>, z: &Int, w: &Int) {
+    drop x
+    drop y
+    drop z
+    drop w
+}
+
+fn drop_int(x: &Int, y: &Int, z: &Int, w: &Int, v: &Int) {
+    drop x
+    drop y
+    drop z
+    drop w
+    drop v
+}
+
+fn drop_int(x: &Vec<Int>, y: &Int, z: &Int, w: &Int, v: &Int) {
+    drop x
+    drop y
+    drop z
+    drop w
+    drop v
+}
+
+fn drop_int(x: &Int, y: &Vec<Int>, z: &Int, w: &Int, v: &Int) {
+    drop x
+    drop y
+    drop z
+    drop w
+    drop v
+}
+
+fn drop_int(x: &Vec<Int>, y: &Vec<Int>, z: &Int, w: &Int, v: &Int) {
+    drop x
+    drop y
+    drop z
+    drop w
+    drop v
+}
+
+fn drop_int(x: &Int, y: &Int, z: &Int, w: &Int, v: &Int, t: &Int) {
+    drop x
+    drop y
+    drop z
+    drop w
+    drop v
+    drop t
+}
+
+fn drop_int(x: &Vec<Int>, y: &Int, z: &Int, w: &Int, v: &Int, t: &Int) {
+    drop x
+    drop y
+    drop z
+    drop w
+    drop v
+    drop t
+}
+
+fn drop_int(x: &Int, y: &Vec<Int>, z: &Int, w: &Int, v: &Int, t: &Int) {
+    drop x
+    drop y
+    drop z
+    drop w
+    drop v
+    drop t
+}
+
+fn drop_int(x: &Vec<Int>, y: &Vec<Int>, z: &Int, w: &Int, v: &Int, t: &Int) {
+    drop x
+    drop y
+    drop z
+    drop w
+    drop v
+    drop t
+}
+
+fn drop_int(x: &Int, y: &Int, z: &Int, w: &Int, v: &Int, t: &Int, s: &Int) {
+    drop x
+    drop y
+    drop z
+    drop w
+    drop v
+    drop t
+    drop s
+}
+
+fn drop_int(x: &Vec<Int>, y:

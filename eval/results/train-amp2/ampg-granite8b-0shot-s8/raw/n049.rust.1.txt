@@ -1,0 +1,20 @@
+```rust
+fn main() {
+    let mut smallest = 22;
+    let mut largest = 2;
+
+    let figures = [8, 3, 11, 6];
+
+    for &figure in &figures {
+        if figure < smallest {
+            smallest = figure;
+        }
+        if figure > largest {
+            largest = figure;
+        }
+    }
+
+    println!("{}", smallest);
+    println!("{}", largest - smallest);
+}
+```

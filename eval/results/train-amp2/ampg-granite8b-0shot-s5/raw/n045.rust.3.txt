@@ -1,0 +1,18 @@
+const ENTRIES: &[i32] = &[6, 7, 8, 9];
+
+fn main() {
+    println!("First entry: {}", ENTRIES[0]);
+    println!("Last entry: {}", ENTRIES[ENTRIES.len() - 1]);
+}
+
+fn get_first_and_last_entry() -> (i32, i32) {
+    (ENTRIES[0], ENTRIES[ENTRIES.len() - 1])
+}
+
+fn print_first_and_last_entry() {
+    let (first, last) = get_first_and_last_entry();
+    println!("First entry: {}", first);
+    println!("Last entry: {}", last);
+}
+
+print_first_and_last_entry();

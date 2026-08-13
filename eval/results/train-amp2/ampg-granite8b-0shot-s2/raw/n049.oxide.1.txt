@@ -1,0 +1,32 @@
+fn min(a: Int, b: Int) -> Int {
+    if a < b {
+        a
+    } else {
+        b
+    }
+}
+
+fn max(a: Int, b: Int) -> Int {
+    if a > b {
+        a
+    } else {
+        b
+    }
+}
+
+fn gap(figures: Vec<Int>) -> Int {
+    let mut f = figures
+    let first = f.pop().unwrap()
+    let last = f.pop().unwrap()
+    let mut maxf = first
+    for fig in f {
+        if fig > maxf {
+            maxf = fig
+        }
+    }
+    max(maxf, last) - min(first, maxf)
+}
+
+fn main() {
+    print(gap(vec(3, 8, 11, 6)))
+}

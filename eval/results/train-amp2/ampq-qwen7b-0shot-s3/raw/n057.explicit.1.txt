@@ -1,0 +1,25 @@
+fn max_len_name(a: &Str, b: &Str, c: &Str) -> Str {
+    let mut max_name = a
+    let mut max_len = str_len(a)
+    if str_len(b) > max_len {
+        max_name = b
+        max_len = str_len(b)
+    }
+    if str_len(c) > max_len {
+        max_name = c
+        max_len = str_len(c)
+    }
+    concat(max_name, int_to_str(max_len))
+}
+
+fn main() {
+    let fig = str_len("fig")
+    let banana = str_len("banana")
+    let kiwi = str_len("kiwi")
+    let result = max_len_name("fig", "banana", "kiwi")
+    print(result)
+    drop fig
+    drop banana
+    drop kiwi
+    drop result
+}

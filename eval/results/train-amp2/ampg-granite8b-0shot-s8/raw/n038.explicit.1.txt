@@ -1,0 +1,120 @@
+fn main() {
+    let mut sensor = Sensor { reading: 0.0 }
+    sensor.set(7.0)
+    print(sensor.get())
+}
+
+struct Sensor {
+    reading: Float,
+}
+
+fn set(s: &Sensor, new: Float) -> Sensor {
+    Sensor(new)
+}
+
+fn get(s: &Sensor) -> Float {
+    s.reading
+}
+
+fn print(x: Float) {
+    println(x)
+}
+
+fn println(x: Float) {
+    print_str(float_to_str(x) + "\n")
+}
+
+fn float_to_str(x: Float) -> Str {
+    let mut v = vec()
+    for i in range(0, 15) {
+        push(v, char(48 + trunc(x)))
+        x = (x - trunc(x)) * 10.0
+    }
+    concat(chars("\n"), v)
+}
+
+fn char(x: Int) -> Str {
+    let mut v = vec()
+    push(v, x)
+    concat(v, v)
+}
+
+fn vec() -> Vec<T> {
+    Vec()
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    let mut v = clone(&v)
+    push_mut(&mut, x)
+    v
+}
+
+fn push_mut(v: &Vec<T>, x: T) {
+    let mut v = v
+    let mut i = len(&v)
+    push_at_mut(&mut, i, x)
+}
+
+fn push_at_mut(v: &Vec<T>, i: Int, x: T) {
+    let mut v = v
+    let mut i = i
+    if i < 0 || i > len(&v) {
+        panic()
+    }
+    v = ensure_capacity(v, i + 1)
+    if i < len(&v) {
+        memmove(v, i + 1, i, len(&v) - i)
+    }
+    write(v, i, x)
+}
+
+fn len(v: &Vec<T>) -> Int {
+    v.len
+}
+
+fn clone(v: &Vec<T>) -> Vec<T> {
+    let mut v = vec()
+    for i in range(0, len(&v)) {
+        push(v, get(v, i))
+    }
+    v
+}
+
+fn get(v: &Vec<T>, i: Int) -> T {
+    v.data
+}
+
+fn write(v: &Vec<T>, i: Int, x: T) {
+    v.data = x
+}
+
+fn panic() {
+    loop()
+}
+
+fn memmove(v: &Vec<T>, dest: Int, src: Int, count: Int) {
+    loop()
+}
+
+fn ensure_capacity(v: &Vec<T>, min_cap: Int) -> Vec<T> {
+    loop()
+}
+
+fn print_str(s: Str) {
+    loop()
+}
+
+struct Vec {
+    data: T,
+    len: Int,
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    loop()
+}
+
+fn main() {
+    let mut sensor = Sensor { reading: 0.0 }
+    sensor.set(7.0)
+    print(sensor.get())
+}

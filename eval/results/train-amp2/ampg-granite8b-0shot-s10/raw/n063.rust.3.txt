@@ -1,0 +1,7 @@
+fn main() {
+    let four_for_three = 4 * 3;
+    let five_for_two = 5 * 2;
+    println!(" Four for three is {}.", four_for_three);
+    println!("Five for two is {}.", five_for_two);
+    println!("These two things cost {} in total.", four_for_three + five_for_two);
+}

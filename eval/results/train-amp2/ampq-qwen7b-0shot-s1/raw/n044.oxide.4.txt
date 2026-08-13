@@ -1,0 +1,7 @@
+fn main() {
+    let mut balance = 0.0
+    for deposit in vec(3.0, 1.0, 4.0, 1.0, 5.0) {
+        balance = balance + deposit
+        print_str(balance.to_string() + "\n")
+    }
+}

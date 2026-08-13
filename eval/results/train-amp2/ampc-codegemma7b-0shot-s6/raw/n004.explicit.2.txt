@@ -1,0 +1,16 @@
+fn sum(a: &Int, b: &Int) -> Int {
+    a + b
+}
+
+fn seq(n: Int) -> Int {
+    if n <= 2 {
+        1
+    } else {
+        sum(&seq, &seq)
+    }
+}
+
+fn main() {
+    print(seq(10))
+    drop seq
+}

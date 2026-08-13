@@ -1,0 +1,25 @@
+struct Line {
+    four: Int,
+    five: Int,
+}
+
+fn four_cost(n: Int) -> Int {
+    n * 3
+}
+
+fn five_cost(n: Int) -> Int {
+    n * 2
+}
+
+fn value(four: Int, five: Int) -> Int {
+    four_cost(four) + five_cost(five)
+}
+
+fn main() {
+    let l1 = Line { four: 4, five: 0 }
+    let l2 = Line { four: 0, five: 5 }
+    print(l1)
+    print(l2)
+    print(value(l1.four, l1.five))
+    print(value(l2.four, l2.five))
+}

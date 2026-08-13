@@ -1,0 +1,19 @@
+fn is_prime(n: Int) -> Bool {
+    let mut i = 2
+    while i * i <= n {
+        if n % i == 0 {
+            return false
+        }
+        i = i + 1
+    }
+    true
+}
+
+fn main() {
+    let result = is_prime(91)
+    if result {
+        print_str("yes")
+    } else {
+        print_str("no")
+    }
+}

@@ -1,0 +1,6 @@
+fn main() {
+    let banana = "banana".to_string()
+    for i in 0.to_int() < banana.len() {
+        print(banana.get(i).unwrap())
+    }
+}

@@ -1,0 +1,395 @@
+fn print_first_and_last(word: &Str) {
+    print_char(word.chars().nth(0).unwrap())
+    print_char(word.chars().nth(word.len() - 1).unwrap())
+}
+
+fn print(s: &Str, i: Int) {
+    print_char(s.chars().nth(i).unwrap())
+}
+
+fn print_char(c: Char) {
+    print(c)
+}
+
+fn main() {
+    print_first_and_last("granite")
+}
+
+fn print(c: Char) {
+    print_str(&c)
+}
+
+fn print_str(s: &Str) {
+    println(s)
+}
+
+fn println(s: &Str) {
+    print(s)
+    print("\n")
+}
+
+fn print(c: Char) {
+    print_str(&c)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn println(s: &Str) {
+    print(s)
+    print("\n")
+}
+
+fn print(c: Char) {
+    print_str(&c)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn println(s: &Str) {
+    print(s)
+    print("\n")
+}
+
+fn print(c: Char) {
+    print_str(&c)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn println(s: &Str) {
+    print(s)
+    print("\n")
+}
+
+fn print(c: Char) {
+    print_str(&c)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn println(s: &Str) {
+    print(s)
+    print("\n")
+}
+
+fn print(c: Char) {
+    print_str(&c)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn println(s: &Str) {
+    print(s)
+    print("\n")
+}
+
+fn print(c: Char) {
+    print_str(&c)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn println(s: &Str) {
+    print(s)
+    print("\n")
+}
+
+fn print(c: Char) {
+    print_str(&c)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn println(s: &Str) {
+    print(s)
+    print("\n")
+}
+
+fn print(c: Char) {
+    print_str(&c)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn println(s: &Str) {
+    print(s)
+    print("\n")
+}
+
+fn print(c: Char) {
+    print_str(&c)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn println(s: &Str) {
+    print(s)
+    print("\n")
+}
+
+fn print(c: Char) {
+    print_str(&c)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn println(s: &Str) {
+    print(s)
+    print("\n")
+}
+
+fn print(c: Char) {
+    print_str(&c)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn println(s: &Str) {
+    print(s)
+    print("\n")
+}
+
+fn print(c: Char) {
+    print_str(&c)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn println(s: &Str) {
+    print(s)
+    print("\n")
+}
+
+fn print(c: Char) {
+    print_str(&c)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn println(s: &Str) {
+    print(s)
+    print("\n")
+}
+
+fn print(c: Char) {
+    print_str(&c)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn println(s: &Str) {
+    print(s)
+    print("\n")
+}
+
+fn print(c: Char) {
+    print_str(&c)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn println(s: &Str) {
+    print(s)
+    print("\n")
+}
+
+fn print(c: Char) {
+    print_str(&c)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn println(s: &Str) {
+    print(s)
+    print("\n")
+}
+
+fn print(c: Char) {
+    print_str(&c)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn println(s: &Str) {
+    print(s)
+    print("\n")
+}
+
+fn print(c: Char) {
+    print_str(&c)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn println(s: &Str) {
+    print(s)
+    print("\n")
+}
+
+fn print(c: Char) {
+    print_str(&c)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn println(s: &Str) {
+    print(s)
+    print("\n")
+}
+
+fn print(c: Char) {
+    print_str(&c)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn println(s: &Str) {
+    print(s)
+    print("\n")
+}
+
+fn print(c: Char) {
+    print_str(&c)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn println(s: &Str) {
+    print(s)
+    print("\n")
+}
+
+fn print(c: Char) {
+    print_str(&c)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn println(s: &Str) {
+    print(s)
+    print("\n")
+}
+
+fn print(c: Char) {
+    print_str(&c)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn println(s: &Str) {
+    print(s)
+    print("\n")
+}
+
+fn print(c: Char) {
+    print_str(&c)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn println(s: &Str) {
+    print(s)
+    print("\n")
+}
+
+fn print(c: Char) {
+    print_str(&c)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn println(s: &Str) {
+    print(s)
+    print("\n")
+}
+
+fn print(c: Char) {
+    print_str(&c)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn println(s: &Str) {
+    print(s)
+    print("\n")
+}
+
+fn print(c: Char) {
+    print_str(&c)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn println(s: &Str) {
+    print(s)
+    print("\n")
+}
+
+fn print(c: Char) {
+    print_str(&c)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn println(s: &Str) {
+    print(s)
+    print("\n")
+}
+
+fn print(c: Char)

@@ -1,0 +1,21 @@
+fn sort(a: Int, b: Int, c: Int, d: Int) -> Vec<Int> {
+    let mut result = vec()
+    let x = if a < b { a } else { b }
+    let y = if a < b { b } else { a }
+    let z = if x < c { x } else { c }
+    let w = if x < c { c } else { x }
+    let u = if z < d { z } else { d }
+    let v = if z < d { d } else { z }
+    result = push(result, u)
+    result = push(result, v)
+    result
+}
+
+fn main() {
+    let sorted = sort(9, 2, 7, 4)
+    for x in &sorted {
+        print_int(x)
+        print_str("\n")
+    }
+    drop sorted
+}

@@ -1,0 +1,24 @@
+```rust
+use std::io;
+
+fn main() {
+    let mut total = 0;
+    let mut not_total = 0;
+
+    for i in 0..4 {
+        let mut input = String::new();
+        io::stdin().read_line(&mut input).unwrap();
+
+        let trimmed = input.trim();
+
+        if trimmed.chars().nth(0).unwrap() == '?' {
+            not_total += 1;
+        } else {
+            total += trimmed.parse::<i32>().unwrap();
+        }
+    }
+
+    println!("Total of ones that hold a number: {}", total);
+    println!("Total of ones that do not hold a number: {}", not_total);
+}
+```

@@ -1,0 +1,33 @@
+fn find_max(nums: &Vec<Int>) -> Int {
+    let mut max = clone(nums.get(0).unwrap())
+    for num in nums {
+        if num > max {
+            max = clone(num)
+        }
+    }
+    max
+}
+
+fn find_second_max(nums: &Vec<Int>) -> Int {
+    let mut max1 = clone(nums.get(0).unwrap())
+    let mut max2 = clone(nums.get(0).unwrap())
+    for num in nums {
+        if num > max1 {
+            max2 = clone(max1)
+            max1 = clone(num)
+        } else if num > max2 && num != max1 {
+            max2 = clone(num)
+        }
+    }
+    max2
+}
+
+fn main() {
+    let nums = vec(12, 5, 20, 8, 17)
+    let max = find_max(&nums)
+    let second_max = find_second_max(&nums)
+    print(max)
+    drop nums
+    print(second_max)
+    drop second_max
+}

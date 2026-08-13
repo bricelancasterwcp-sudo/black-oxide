@@ -1,0 +1,399 @@
+struct Text { line: Int, contents: Str }
+
+fn main() {
+    let lines: Vec<Text> = vec()
+    let mut total = 0
+    let mut count = 0
+    for line in lines {
+        let c = line.contents
+        match c {
+            Str(s) => {
+                let x = s.parse_int()
+                match x {
+                    Some(n) => {
+                        total = total + n
+                        count = count + 1
+                    },
+                    None => continue_outer_loop(),
+                }
+            },
+            _ => continue_outer_loop(),
+        }
+    }
+    print(total)
+    print(count)
+}
+
+fn continue_outer_loop() {
+    return
+}
+
+fn main() {
+    let lines: Vec<Text> = vec()
+    let mut total = 0
+    let mut count = 0
+    for line in lines {
+        let c = line.contents
+        match c {
+            Str(s) => {
+                let x = s.parse_int()
+                match x {
+                    Some(n) => {
+                        total = total + n
+                        count = count + 1
+                    },
+                    None => continue_outer_loop(),
+                }
+            },
+            _ => continue_outer_loop(),
+        }
+    }
+    print(total)
+    print(count)
+}
+
+fn continue_outer_loop() {
+    return
+}
+
+fn main() {
+    let lines: Vec<Text> = vec()
+    let mut total = 0
+    let mut count = 0
+    for line in lines {
+        let c = line.contents
+        match c {
+            Str(s) => {
+                let x = s.parse_int()
+                match x {
+                    Some(n) => {
+                        total = total + n
+                        count = count + 1
+                    },
+                    None => continue_outer_loop(),
+                }
+            },
+            _ => continue_outer_loop(),
+        }
+    }
+    print(total)
+    print(count)
+}
+
+fn continue_outer_loop() {
+    return
+}
+
+fn main() {
+    let lines: Vec<Text> = vec()
+    let mut total = 0
+    let mut count = 0
+    for line in lines {
+        let c = line.contents
+        match c {
+            Str(s) => {
+                let x = s.parse_int()
+                match x {
+                    Some(n) => {
+                        total = total + n
+                        count = count + 1
+                    },
+                    None => continue_outer_loop(),
+                }
+            },
+            _ => continue_outer_loop(),
+        }
+    }
+    print(total)
+    print(count)
+}
+
+fn continue_outer_loop() {
+    return
+}
+
+fn main() {
+    let lines: Vec<Text> = vec()
+    let mut total = 0
+    let mut count = 0
+    for line in lines {
+        let c = line.contents
+        match c {
+            Str(s) => {
+                let x = s.parse_int()
+                match x {
+                    Some(n) => {
+                        total = total + n
+                        count = count + 1
+                    },
+                    None => continue_outer_loop(),
+                }
+            },
+            _ => continue_outer_loop(),
+        }
+    }
+    print(total)
+    print(count)
+}
+
+fn continue_outer_loop() {
+    return
+}
+
+fn main() {
+    let lines: Vec<Text> = vec()
+    let mut total = 0
+    let mut count = 0
+    for line in lines {
+        let c = line.contents
+        match c {
+            Str(s) => {
+                let x = s.parse_int()
+                match x {
+                    Some(n) => {
+                        total = total + n
+                        count = count + 1
+                    },
+                    None => continue_outer_loop(),
+                }
+            },
+            _ => continue_outer_loop(),
+        }
+    }
+    print(total)
+    print(count)
+}
+
+fn continue_outer_loop() {
+    return
+}
+
+fn main() {
+    let lines: Vec<Text> = vec()
+    let mut total = 0
+    let mut count = 0
+    for line in lines {
+        let c = line.contents
+        match c {
+            Str(s) => {
+                let x = s.parse_int()
+                match x {
+                    Some(n) => {
+                        total = total + n
+                        count = count + 1
+                    },
+                    None => continue_outer_loop(),
+                }
+            },
+            _ => continue_outer_loop(),
+        }
+    }
+    print(total)
+    print(count)
+}
+
+fn continue_outer_loop() {
+    return
+}
+
+fn main() {
+    let lines: Vec<Text> = vec()
+    let mut total = 0
+    let mut count = 0
+    for line in lines {
+        let c = line.contents
+        match c {
+            Str(s) => {
+                let x = s.parse_int()
+                match x {
+                    Some(n) => {
+                        total = total + n
+                        count = count + 1
+                    },
+                    None => continue_outer_loop(),
+                }
+            },
+            _ => continue_outer_loop(),
+        }
+    }
+    print(total)
+    print(count)
+}
+
+fn continue_outer_loop() {
+    return
+}
+
+fn main() {
+    let lines: Vec<Text> = vec()
+    let mut total = 0
+    let mut count = 0
+    for line in lines {
+        let c = line.contents
+        match c {
+            Str(s) => {
+                let x = s.parse_int()
+                match x {
+                    Some(n) => {
+                        total = total + n
+                        count = count + 1
+                    },
+                    None => continue_outer_loop(),
+                }
+            },
+            _ => continue_outer_loop(),
+        }
+    }
+    print(total)
+    print(count)
+}
+
+fn continue_outer_loop() {
+    return
+}
+
+fn main() {
+    let lines: Vec<Text> = vec()
+    let mut total = 0
+    let mut count = 0
+    for line in lines {
+        let c = line.contents
+        match c {
+            Str(s) => {
+                let x = s.parse_int()
+                match x {
+                    Some(n) => {
+                        total = total + n
+                        count = count + 1
+                    },
+                    None => continue_outer_loop(),
+                }
+            },
+            _ => continue_outer_loop(),
+        }
+    }
+    print(total)
+    print(count)
+}
+
+fn continue_outer_loop() {
+    return
+}
+
+fn main() {
+    let lines: Vec<Text> = vec()
+    let mut total = 0
+    let mut count = 0
+    for line in lines {
+        let c = line.contents
+        match c {
+            Str(s) => {
+                let x = s.parse_int()
+                match x {
+                    Some(n) => {
+                        total = total + n
+                        count = count + 1
+                    },
+                    None => continue_outer_loop(),
+                }
+            },
+            _ => continue_outer_loop(),
+        }
+    }
+    print(total)
+    print(count)
+}
+
+fn continue_outer_loop() {
+    return
+}
+
+fn main() {
+    let lines: Vec<Text> = vec()
+    let mut total = 0
+    let mut count = 0
+    for line in lines {
+        let c = line.contents
+        match c {
+            Str(s) => {
+                let x = s.parse_int()
+                match x {
+                    Some(n) => {
+                        total = total + n
+                        count = count + 1
+                    },
+                    None => continue_outer_loop(),
+                }
+            },
+            _ => continue_outer_loop(),
+        }
+    }
+    print(total)
+    print(count)
+}
+
+fn continue_outer_loop() {
+    return
+}
+
+fn main() {
+    let lines: Vec<Text> = vec()
+    let mut total = 0
+    let mut count = 0
+    for line in lines {
+        let c = line.contents
+        match c {
+            Str(s) => {
+                let x = s.parse_int()
+                match x {
+                    Some(n) => {
+                        total = total + n
+                        count = count + 1
+                    },
+                    None => continue_outer_loop(),
+                }
+            },
+            _ => continue_outer_loop(),
+        }
+    }
+    print(total)
+    print(count)
+}
+
+fn continue_outer_loop() {
+    return
+}
+
+fn main() {
+    let lines: Vec<Text> = vec()
+    let mut total = 0
+    let mut count = 0
+    for line in lines {
+        let c = line.contents
+        match c {
+            Str(s) => {
+                let x = s.parse_int()
+                match x {
+                    Some(n) => {
+                        total = total + n
+                        count = count + 1
+                    },
+                    None => continue_outer_loop(),
+                }
+            },
+            _ => continue_outer_loop(),
+        }
+    }
+    print(total)
+    print(count)
+}
+
+fn continue_outer_loop() {
+    return
+}
+
+fn main() {
+    let lines: Vec<Text> = vec()
+    let mut total = 0
+    let mut count = 0
+    for line in

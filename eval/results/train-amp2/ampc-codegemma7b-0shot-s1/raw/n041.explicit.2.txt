@@ -1,0 +1,20 @@
+fn sort(x: &Int, y: &Int) -> Int {
+    if x < y {
+        return x.clone()
+    }
+    y.clone()
+}
+
+fn main() {
+    let mut v = vec(9, 2, 7, 4)
+    let mut i = 0
+    while i < 4 {
+        let j = i + 1
+        if j < 4 {
+            let tmp = sort(&v, &v)
+            v = tmp
+        }
+        i = j
+    }
+    print(v)
+}

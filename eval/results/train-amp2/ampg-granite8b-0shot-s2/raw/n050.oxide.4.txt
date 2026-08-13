@@ -1,0 +1,14 @@
+fn sort(scores: Vec<Int>) -> Vec<Int> {
+    let mut sorted = vec()
+    for score in scores {
+        sorted = push(sorted, score)
+    }
+    sorted.sort()
+    sorted
+}
+
+fn main() {
+    let scores = sort(range(2, 11))
+    print_str("The highest score is ")
+    print(scores.last().unwrap())
+}

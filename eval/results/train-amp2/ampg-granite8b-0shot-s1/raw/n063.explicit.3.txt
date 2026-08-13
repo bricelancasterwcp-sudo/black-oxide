@@ -1,0 +1,37 @@
+fn price_one_line(four_price: Int, five_price: Int) -> Int {
+    let four = 4
+    let five = 5
+    (four * four_price) + (five * five_price)
+}
+
+fn print_two_lines(first: Int, second: Int) {
+    print(first)
+    print(second)
+}
+
+fn main() {
+    let line_one = price_one_line(3, 2)
+    let line_two = price_one_line(3, 2)
+    print_two_lines(line_one, line_two)
+    drop line_one
+    drop line_two
+}
+
+fn price_one_line(four_price: Int, five_price: Int) -> Int {
+    let four = 4
+    let five = 5
+    (four * four_price) + (five * five_price)
+}
+
+fn print_two_lines(first: Int, second: Int) {
+    print(first)
+    print(second)
+}
+
+fn main() {
+    let line_one = price_one_line(3, 2)
+    let line_two = price_one_line(3, 2)
+    print_two_lines(line_one, line_two)
+    drop line_one
+    drop line_two
+}

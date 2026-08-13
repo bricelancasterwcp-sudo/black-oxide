@@ -1,0 +1,98 @@
+fn main() {
+    let mut balance = 0
+    balance = deposit(balance, 3)
+    print(balance)
+    balance = deposit(balance, 1)
+    print(balance)
+    balance = deposit(balance, 4)
+    print(balance)
+    balance = deposit(balance, 1)
+    print(balance)
+    balance = deposit(balance, 5)
+    print(balance)
+}
+
+fn deposit(balance: Int, amount: Int) -> Int {
+    balance + amount
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    print(push(vec(), s))
+}
+
+fn int_to_str(n: Int) -> Str {
+    if n == 0 {
+        return "0"
+    }
+    let mut digits = vec()
+    let mut nn = n
+    while nn != 0 {
+        digits = push(digits, nn % 10)
+        nn = trunc(nn / 10)
+    }
+    let mut s = vec()
+    for d in digits {
+        s = push(s, int_to_str(d))
+    }
+    return join(s, "")
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    let mut v2 = v
+    v2.push(x)
+    return v2
+}
+
+fn join(mutv: Vec<Str>, sep: Str) -> Str {
+    if len(v) == 0 {
+        return sep
+    }
+    let mut s = v.pop().unwrap()
+    while len(v) != 0 {
+        s = concat(s, sep, v.pop().unwrap())
+    }
+    return s
+}
+
+fn len(v: Vec<T>) -> Int {
+    let mut i = 0
+    for _ in v {
+        i = i + 1
+    }
+    return i
+}
+
+fn trunc(x: Int) -> Int {
+    if x < 0 {
+        return x
+    }
+    let mut x2 = x
+    let mut r = 0
+    while x2 >= 10 {
+        x2 = trunc(x2 / 10)
+        r = r + 1
+    }
+    return r
+}
+
+fn deposit(balance: Int, amount: Int) -> Int {
+    balance + amount
+}
+
+fn main() {
+    let mut balance = 0
+    balance = deposit(balance, 3)
+    print(balance)
+    balance = deposit(balance, 1)
+    print(balance)
+    balance = deposit(balance, 4)
+    print(balance)
+    balance = deposit(balance, 1)
+    print(balance)
+    balance = deposit(balance, 5)
+    print(balance)
+}

@@ -1,0 +1,8 @@
+fn main() {
+    let square_side = 4;
+    let pi = 3.0;
+    let square_area = square_side * square_side;
+    let circle_area = pi * square_side * square_side;
+    println!("Area of square: {}", square_area);
+    println!("Area of circle with side {} as radius: {}", square_side, circle_area);
+}

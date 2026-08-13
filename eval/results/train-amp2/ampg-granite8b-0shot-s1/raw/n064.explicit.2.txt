@@ -1,0 +1,49 @@
+fn main() {
+    let list = push(push(vec(), 10), 20)
+    let one = get(&list, 0)
+    let four = get(&list, 3)
+    print(one)
+    drop list
+    print(four)
+}
+
+struct List {
+    val: Int,
+    next: Option<List>,
+}
+
+fn get(list: &List, i: Int) -> Option<Int> {
+    let mut cur = list
+    while i > 0 {
+        if cur.next == None {
+            return None
+        }
+        cur = &cur
+    }
+    Some(cur.val)
+}
+
+struct List {
+    val: Int,
+    next: Option<List>,
+}
+
+fn get(list: &List, i: Int) -> Option<Int> {
+    let mut cur = list
+    while i > 0 {
+        if cur.next == None {
+            return None
+        }
+        cur = &cur
+    }
+    Some(cur.val)
+}
+
+fn main() {
+    let list = push(push(vec(), 10), 20)
+    let one = get(&list, 0)
+    let four = get(&list, 3)
+    print(one)
+    drop list
+    print(four)
+}

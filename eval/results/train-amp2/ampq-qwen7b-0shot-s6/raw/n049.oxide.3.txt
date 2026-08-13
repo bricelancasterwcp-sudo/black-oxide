@@ -1,0 +1,33 @@
+struct Figure { size: Int }
+
+fn smallest(figures: Vec<Figure>) -> Figure {
+    let mut min = figures.pop().unwrap()
+    for f in figures {
+        if f.size < min.size {
+            min = f
+        }
+    }
+    min
+}
+
+fn gap_between_largest_and_smallest(figures: Vec<Figure>) -> Int {
+    let mut max = figures.pop().unwrap()
+    let mut min = figures.pop().unwrap()
+    for f in figures {
+        if f.size > max.size {
+            max = f
+        }
+        if f.size < min.size {
+            min = f
+        }
+    }
+    max.size - min.size
+}
+
+fn main() {
+    let figures = vec(Figure { size: 8 }, Figure { size: 3 }, Figure { size: 11 }, Figure { size: 6 })
+    let smallest_figure = smallest(figures.clone())
+    print(smallest_figure.size)
+    let gap = gap_between_largest_and_smallest(figures)
+    print(gap)
+}

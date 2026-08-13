@@ -1,0 +1,19 @@
+fn main() {
+    let signals = ["green", "red", "yellow"];
+
+    for signal in signals {
+        match signal {
+            "green" => println!("Signal for green"),
+            "red" => println!("Signal for red"),
+            "yellow" => println!("Signal for yellow"),
+            _ => (),
+        }
+
+        std::thread::sleep(std::time::Duration::from_secs(match signal {
+            "green" => 1,
+            "red" => 3,
+            "yellow" => 5,
+            _ => 0,
+        }));
+    }
+}

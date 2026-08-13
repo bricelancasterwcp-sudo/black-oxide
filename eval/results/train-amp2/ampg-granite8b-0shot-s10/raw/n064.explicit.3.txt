@@ -1,0 +1,8 @@
+fn main() {
+    let mut list = push(push(vec(), 10), 20)
+    let one = get(&list, 0)
+    drop list
+    let four = get(&list, 3)
+    print(one)
+    print(four)
+}

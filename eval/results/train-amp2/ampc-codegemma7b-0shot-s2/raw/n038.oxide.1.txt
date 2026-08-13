@@ -1,0 +1,308 @@
+fn main() {
+    struct_reading_test(7)
+}
+
+fn struct_reading_test(n: Int) {
+    struct_reading(n)
+}
+
+fn struct_reading(n: Int) {
+    let mut sensor = Sensor { reading: 0 }
+    sensor.reading = n
+    print(sensor.reading)
+}
+
+struct Sensor {
+    reading: Int,
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn println(x: Int) {
+    print(x)
+    print("\n")
+}
+
+struct Int {
+    n: Int,
+}
+
+fn println(x: Str) {
+    print(x)
+    print("\n")
+}
+
+fn print(x: Str) {
+    let mut i = 0
+    while i < len(x) {
+        print(get(chars(x), i)?)
+        i = i + 1
+    }
+}
+
+fn len(x: Vec<Str>) -> Int {
+    let mut i = 0
+    while get(x, i).is_some() {
+        i = i + 1
+    }
+    Int(i)
+}
+
+fn get(v: Vec<Str>, i: Int) -> Option<Str> {
+    if i.n >= len(v).n {
+        None
+    } else {
+        Some(v.n)
+    }
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut v = vec()
+    let mut i = 0
+    while get(str_chars(s), i).is_some() {
+        v = push(v, get(str_chars(s), i)?)
+        i = i + 1
+    }
+    v
+}
+
+fn str_chars(s: Str) -> Vec<Str> {
+    let mut v = vec()
+    let mut i = 0
+    while get(str_bytes(s), i).is_some() {
+        v = push(v, get(str_bytes(s), i)?.to_char())
+        i = i + 1
+    }
+    v
+}
+
+fn get(v: Vec<Char>, i: Int) -> Option<Char> {
+    if i.n >= len(v).n {
+        None
+    } else {
+        Some(v.n)
+    }
+}
+
+fn len(x: Vec<Char>) -> Int {
+    let mut i = 0
+    while get(x, i).is_some() {
+        i = i + 1
+    }
+    Int(i)
+}
+
+fn get(v: Vec<Char>, i: Int) -> Option<Char> {
+    if i.n >= len(v).n {
+        None
+    } else {
+        Some(v.n)
+    }
+}
+
+fn to_char(b: Byte) -> Option<Char> {
+    if b >= 32 && b <= 127 {
+        Some(Char(b))
+    } else {
+        None
+    }
+}
+
+fn str_bytes(s: Str) -> Vec<Byte> {
+    let mut v = vec()
+    let mut i = 0
+    while get(s, i).is_some() {
+        v = push(v, get(s, i)?)
+        i = i + 1
+    }
+    v
+}
+
+fn get(s: Str, i: Int) -> Option<Byte> {
+    if i.n >= len(s).n {
+        None
+    } else {
+        Some(s.n)
+    }
+}
+
+fn len(x: Str) -> Int {
+    let mut i = 0
+    while get(x, i).is_some() {
+        i = i + 1
+    }
+    Int(i)
+}
+
+struct Byte {
+    b: Byte,
+}
+
+fn get(s: Str, i: Int) -> Option<Byte> {
+    if i.n >= len(s).n {
+        None
+    } else {
+        Some(Byte(s.n))
+    }
+}
+
+struct Char {
+    c: Char,
+}
+
+fn get(s: Str, i: Int) -> Option<Char> {
+    if i.n >= len(s).n {
+        None
+    } else {
+        Some(Char(s.n))
+    }
+}
+
+fn print(x: Char) {
+    print(to_char(Byte(x.c)))
+}
+
+fn to_char(b: Byte) -> Option<Char> {
+    if b >= 32 && b <= 127 {
+        Some(Char(b))
+    } else {
+        None
+    }
+}
+
+fn print(x: Byte) {
+    let mut i = 0
+    while get(to_char(x), i).is_some() {
+        print(get(to_char(x), i)?)
+        i = i + 1
+    }
+}
+
+struct Sensor {
+    reading: Int,
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn println(x: Int) {
+    print(x)
+    print("\n")
+}
+
+fn println(x: Str) {
+    print(x)
+    print("\n")
+}
+
+fn print(x: Str) {
+    let mut i = 0
+    while i < len(x) {
+        print(get(chars(x), i)?)
+        i = i + 1
+    }
+}
+
+fn len(x: Vec<Str>) -> Int {
+    let mut i = 0
+    while get(x, i).is_some() {
+        i = i + 1
+    }
+    Int(i)
+}
+
+fn get(v: Vec<Str>, i: Int) -> Option<Str> {
+    if i.n >= len(v).n {
+        None
+    } else {
+        Some(v.n)
+    }
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut v = vec()
+    let mut i = 0
+    while get(str_chars(s), i).is_some() {
+        v = push(v, get(str_chars(s), i)?)
+        i = i + 1
+    }
+    v
+}
+
+fn str_chars(s: Str) -> Vec<Str> {
+    let mut v = vec()
+    let mut i = 0
+    while get(str_bytes(s), i).is_some() {
+        v = push(v, get(str_bytes(s), i)?.to_char())
+        i = i + 1
+    }
+    v
+}
+
+fn get(v: Vec<Char>, i: Int) -> Option<Char> {
+    if i.n >= len(v).n {
+        None
+    } else {
+        Some(v.n)
+    }
+}
+
+fn len(x: Vec<Char>) -> Int {
+    let mut i = 0
+    while get(x, i).is_some() {
+        i = i + 1
+    }
+    Int(i)
+}
+
+fn get(v: Vec<Char>, i: Int) -> Option<Char> {
+    if i.n >= len(v).n {
+        None
+    } else {
+        Some(v.n)
+    }
+}
+
+fn to_char(b: Byte) -> Option<Char> {
+    if b >= 32 && b <= 127 {
+        Some(Char(b))
+    } else {
+        None
+    }
+}
+
+fn str_bytes(s: Str) -> Vec<Byte> {
+    let mut v = vec()
+    let mut i = 0
+    while get(s, i).is_some() {
+        v = push(v, get(s, i)?)
+        i = i + 1
+    }
+    v
+}
+
+fn get(s: Str, i: Int) -> Option<Byte> {
+    if i.n >= len(s).n {
+        None
+    } else {
+        Some(s.n)
+    }
+}
+
+fn len(x: Str) -> Int {
+    let mut i = 0
+    while get(x, i).is_some() {
+        i = i + 1
+    }
+    Int(i)
+}
+
+struct Byte {
+    b: Byte,
+}
+
+fn get(s: Str, i: Int) -> Option<Byte> {
+    if i.n

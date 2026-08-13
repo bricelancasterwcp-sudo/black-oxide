@@ -1,0 +1,17 @@
+fn print_green() {
+    print("go")
+}
+
+fn print_red() {
+    print("stop")
+}
+
+fn print_yellow() {
+    print("wait")
+}
+
+fn main() {
+    print_green()
+    print_red()
+    print_yellow()
+}

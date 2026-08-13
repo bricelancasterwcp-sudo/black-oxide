@@ -1,0 +1,248 @@
+fn area(shape: &Shape) -> Float {
+    match shape {
+        Square(s) => s * s,
+        Circle(r) => {
+            let pi = 3.0
+            pi * r * r
+        },
+    }
+}
+
+fn main() {
+    let square = Square(4)
+    let circle = Circle(5)
+    print(area(&square))
+    print(area(&circle))
+}
+
+enum Shape {
+    Square(Int),
+    Circle(Int),
+}
+
+enum Unit {
+    Int(Int),
+    Float(Float),
+}
+
+fn print(x: Unit) {
+    match x {
+        Unit(i) => print_int(i),
+        Unit(f) => print_float(f),
+    }
+}
+
+fn print_int(n: Int) {
+    let digits = range(0, int_to_str(n).len())
+    for d in &digits {
+        print_char(char_at(&str_from_chars, d))
+    }
+    print_char(char_at(&str_from_chars, digits.len()))
+}
+
+fn print_float(n: Float) {
+    let digits = range(0, int_to_str(trunc(n)).len())
+    for d in &digits {
+        print_char(char_at(&str_from_chars, d))
+    }
+    print_char(char_at(&str_from_chars, digits.len()))
+    print_char(char_at(&str_from_chars, digits.len() + 1))
+}
+
+fn print_char(c: Char) {
+    let offset = 48
+    push(chars(str_from_chars), int_to_str(offset + c))
+}
+
+fn char_at(s: &Vec<Str>, i: Int) -> Char {
+    str_to_chars(get(s, i).unwrap())
+}
+
+fn str_to_chars(s: Str) -> Char {
+    let offset = 48
+    int_to_str(str_len(s) - 1)
+    for c in chars(s) {
+        if int_to_str(char_at(&str_from_chars, c)) == str_len(s) - 1 {
+            return c - offset
+        }
+    }
+    0
+}
+
+fn str_len(s: Str) -> Int {
+    let digits = range(0, int_to_str(s).len())
+    for d in &digits {
+        print_char(char_at(&str_from_chars, d))
+    }
+    print_char(char_at(&str_from_chars, digits.len()))
+    digits.len() + 1
+}
+
+fn str_from_chars(s: Vec<Str>) -> Str {
+    let digits = range(0, int_to_str(s).len())
+    for d in &digits {
+        print_char(char_at(&str_from_chars, d))
+    }
+    print_char(char_at(&str_from_chars, digits.len()))
+    str_len(digits)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut v = vec()
+    for i in a + 1 < b {
+        push(v, i)
+    }
+    v
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut new_v = v
+    new_v.push(x)
+    new_v
+}
+
+fn clone(x: &Vec<Int>) -> Vec<Int> {
+    let mut new_v = vec()
+    for i in &x {
+        new_v.push(i)
+    }
+    new_v
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    if i < 0 || i >= v.len() {
+        None
+    } else {
+        Some(v.get(i).unwrap())
+    }
+}
+
+fn int_to_str(n: Int) -> Str {
+    let digits = range(0, n)
+    let mut new_digits = digits
+    new_digits.reverse()
+    str_len(new_digits)
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut v = vec()
+    for i in range(0, int_to_str(s).len()) {
+        v.push(str_from_chars(get(&str_to_chars_v, i).unwrap()))
+    }
+    v
+}
+
+fn str_to_chars_v(s: Str) -> Vec<Char> {
+    let mut v = vec()
+    for c in chars(s) {
+        push(v, c)
+    }
+    v
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    let digits = range(0, int_to_str(s).len())
+    let mut num = 0
+    for d in &digits {
+        if get(&chars_v, d).unwrap() >= 48 && get(&chars_v, d).unwrap() <= 57 {
+            num = num * 10 + get(&chars_v, d).unwrap() - 48
+        } else {
+            return None
+        }
+    }
+    Some(num)
+}
+
+fn to_float(n: Int) -> Float {
+    let digits = range(0, int_to_str(n).len())
+    let mut num = 0.0
+    for d in &digits {
+        num = num * 10.0 + get(&chars_v, d).unwrap() - 48
+    }
+    num
+}
+
+fn trunc(x: Float) -> Int {
+    let digits = range(0, int_to_str(x).len())
+    let mut num = 0
+    for d in &digits {
+        if get(&chars_v, d).unwrap() >= 48 && get(&chars_v, d).unwrap() <= 57 {
+            num = num * 10 + get(&chars_v, d).unwrap() - 48
+        } else {
+            return num
+        }
+    }
+    num
+}
+
+fn chars_v(s: Str) -> Vec<Char> {
+    let mut v = vec()
+    for c in chars(s) {
+        push(v, c)
+    }
+    v
+}
+
+fn main() {
+    let square = Square(4)
+    let circle = Circle(5)
+    print(area(&square))
+    print(area(&circle))
+}
+
+enum Shape {
+    Square(Int),
+    Circle(Int),
+}
+
+enum Unit {
+    Int(Int),
+    Float(Float),
+}
+
+fn print(x: Unit) {
+    match x {
+        Unit(i) => print_int(i),
+        Unit(f) => print_float(f),
+    }
+}
+
+fn print_int(n: Int) {
+    let digits = range(0, int_to_str(n).len())
+    for d in &digits {
+        print_char(char_at(&str_from_chars, d))
+    }
+    print_char(char_at(&str_from_chars, digits.len()))
+}
+
+fn print_float(n: Float) {
+    let digits = range(0, int_to_str(trunc(n)).len())
+    for d in &digits {
+        print_char(char_at(&str_from_chars, d))
+    }
+    print_char(char_at(&str_from_chars, digits.len()))
+    print_char(char_at(&str_from_chars, digits.len() + 1))
+}
+
+fn print_char(c: Char) {
+    let offset = 48
+    push(chars(str_from_chars), int_to_str(offset + c))
+}
+
+fn char_at(s: &Vec<Str>, i: Int) -> Char {
+    str_to_chars(get(s, i).unwrap())
+}
+
+fn str_to_chars(s: Str) -> Char {
+    let offset = 48
+    int_to_str(str_len(s) - 1)
+    for c in chars(s) {
+        if int_to_str(char_at(&str_from_chars, c)) == str_len(s) - 1 {
+            return c - offset
+        }
+    }
+    0
+}
+
+fn str_len(s: Str) -> Int {
+    let digits = range(0, int_to_str(s).len

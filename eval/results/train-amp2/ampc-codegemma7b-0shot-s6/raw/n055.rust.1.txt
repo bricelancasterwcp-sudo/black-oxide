@@ -1,0 +1,14 @@
+use std::io::{stdin, Result};
+
+fn main() -> Result<()> {
+    for line in stdin().lines() {
+        let line = line?;
+        let num = line.parse::<u32>()?;
+        match num {
+            8 => println!("The number is eight"),
+            15 => println!("The number is fifteen"),
+            _ => println!("bad"),
+        }
+    }
+    Ok(())
+}

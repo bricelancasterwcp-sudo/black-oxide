@@ -1,0 +1,12 @@
+fn main() {
+    let four_unit_price = 3;
+    let five_unit_price = 2;
+    let four_units = 4;
+    let five_units = 5;
+    let four_line_value = four_units * four_unit_price;
+    let five_line_value = five_units * five_unit_price;
+    let total_value = four_line_value + five_line_value;
+    println!("Four line value: {}", four_line_value);
+    println!("Five line value: {}", five_line_value);
+    println!("Total value: {}", total_value);
+}

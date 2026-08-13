@@ -1,0 +1,13 @@
+fn main() {
+    let mut acc = vec()
+    loop
+    let line = read_line()?
+    match line.parse() {
+        Ok(n) => acc == push(acc, n),
+        Err(_) => break_if(acc.len() < 3),
+    }
+    for n in acc {
+        print(n)
+    }
+    print_str("bad")
+}

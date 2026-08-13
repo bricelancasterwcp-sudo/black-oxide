@@ -1,0 +1,23 @@
+struct Reading { label: Str, values: Vec<Int> }
+
+fn sort(v: Vec<Int>) -> Vec<Int> {
+    let mut sorted = v.clone()
+    for i in 0 < sorted.len() {
+        for j in i + 1 < sorted.len() {
+            if sorted.get(i) > sorted.get(j) {
+                let temp = sorted.get(i)
+                sorted.set(i, sorted.get(j))
+                sorted.set(j, temp)
+            }
+        }
+    }
+    sorted
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(push(vec(), 9), 2), 7) }
+    let sorted_values = sort(r.values.clone())
+    for x in sorted_values {
+        print(x)
+    }
+}

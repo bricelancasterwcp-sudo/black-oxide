@@ -1,0 +1,14 @@
+fn main() {
+    let input = str_len("a1b22")
+    let mut digits_count = 0
+    let mut total = 0
+    for c in chars(input) {
+        if c >= "0" && c <= "9" {
+            digits_count = digits_count + 1
+            total = total + int_to_str(parse_int(c).unwrap()).parse().unwrap()
+        }
+    }
+    print(total)
+    print(digits_count)
+    drop input
+}

@@ -1,0 +1,25 @@
+struct Line {
+    items: Vec<Item>,
+}
+
+struct Item {
+    price: Int,
+    quantity: Int,
+}
+
+fn value_of_line(l: Line) -> Int {
+    let mut total = 0
+    for item in l.items {
+        total = total + item.price * item.quantity
+    }
+    total
+}
+
+fn main() {
+    let line1 = Line { items: push(push(vec(), Item { price: 3, quantity: 4 }), Item { price: 2, quantity: 5 }) }
+    print(value_of_line(line1))
+    let line2 = Line { items: push(vec(), Item { price: 3, quantity: 4 }) }
+    print(value_of_line(line2))
+    let combined = Line { items: push(push(vec(), Item { price: 3, quantity: 4 }), Item { price: 2, quantity: 5 }) }
+    print(value_of_line(combined))
+}

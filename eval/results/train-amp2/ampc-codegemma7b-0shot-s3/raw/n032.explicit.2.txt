@@ -1,0 +1,239 @@
+fn main() {
+    let p1 = point(1, 5)
+    let p2 = point(10, 5)
+    print(p1.x + p2.x)
+    drop_point(&p1)
+    drop_point(&p2)
+}
+
+struct Point {
+    x: Int,
+    y: Int,
+}
+
+fn point(x: Int, y: Int) -> Point {
+    Point(x, y)
+}
+
+fn drop_point(p: &Point) {
+    drop p
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn int_to_str(mut_x: Int) -> Str {
+    let mut_chars = vec()
+    while mut_x != 0 {
+        let mut_digit = mut_x % 10
+        mut_x = trunc(mut_x / 10)
+        push(mut_chars, int_to_str(mut_digit))
+    }
+    let mut_result = str()
+    for mut_ch in &mut_chars {
+        mut_result = concat(mut_result, mut_ch)
+    }
+    if mut_result == str() {
+        mut_result = str("0")
+    }
+    mut_result
+}
+
+fn print_str(s: Str) {
+    for mut_ch in chars(s) {
+        print_ch(mut_ch)
+    }
+}
+
+fn print_ch(mut_ch: Str) {
+    let mut_num = int_to_str(str_len(mut_ch))
+    let mut_digit = mut_num % 10
+    mut_num = trunc(mut_num / 10)
+    print_str(int_to_str(mut_digit))
+    let mut_digit = mut_num % 10
+    mut_num = trunc(mut_num / 10)
+    print_str(int_to_str(mut_digit))
+    let mut_digit = mut_num % 10
+    mut_num = trunc(mut_num / 10)
+    print_str(int_to_str(mut_digit))
+    let mut_digit = mut_num % 10
+    mut_num = trunc(mut_num / 10)
+    print_str(int_to_str(mut_digit))
+    print_str(mut_ch)
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut_result = a
+    for mut_ch in chars(b) {
+        mut_result = concat(mut_result, mut_ch)
+    }
+    mut_result
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut_result = vec()
+    let mut_cursor = 0
+    let mut_top = 0
+    let mut_bottom = str_len(s) - 1
+    while mut_cursor <= mut_top && mut_cursor <= mut_bottom {
+        if s.chars().nth(mut_cursor) == s.chars().nth(mut_bottom) {
+            push(mut_result, str(&s).substring(mut_cursor, mut_cursor + 1))
+            mut_cursor = mut_cursor + 1
+            mut_bottom = mut_bottom - 1
+        } else if s.chars().nth(mut_cursor) == s.chars().nth(mut_top) {
+            push(mut_result, str(&s).substring(mut_cursor, mut_cursor + 1))
+            mut_cursor = mut_cursor + 1
+            mut_top = mut_top - 1
+        } else {
+            break
+        }
+    }
+    mut_result
+}
+
+fn str(s: &Vec<Str>) -> Str {
+    let mut_result = str()
+    for mut_ch in s {
+        mut_result = concat(mut_result, mut_ch)
+    }
+    mut_result
+}
+
+fn str(s: &Vec<Str>, start: Int, end: Int) -> Str {
+    let mut_result = str()
+    for mut_ch in s.iter().cloned().take(end - start + 1).skip(start) {
+        mut_result = concat(mut_result, mut_ch)
+    }
+    mut_result
+}
+
+fn str(s: &Vec<Str>, start: Int) -> Str {
+    let mut_result = str()
+    for mut_ch in s.iter().cloned().take(str_len(s) - start + 1).skip(start) {
+        mut_result = concat(mut_result, mut_ch)
+    }
+    mut_result
+}
+
+fn str(s: &Str) -> Int {
+    let mut_result = 0
+    let mut_cursor = 0
+    let mut_top = 0
+    let mut_bottom = str_len(s) - 1
+    let mut_multiplier = 1
+    while mut_cursor <= mut_top && mut_cursor <= mut_bottom {
+        let mut_digit = int_to_str(str_len(str(&s).substring(mut_cursor, mut_cursor + 1)))
+        mut_result = mut_result + multiplier * digit
+        mut_multiplier = mut_multiplier * 10
+        mut_cursor = mut_cursor + 1
+    }
+    mut_result
+}
+
+fn str_len(s: Str) -> Int {
+    let mut_result = 0
+    for mut_ch in chars(s) {
+        mut_result = mut_result + 1
+    }
+    mut_result
+}
+
+fn trunc(x: Int) -> Int {
+    if x < 0 {
+        0
+    } else {
+        x
+    }
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    let mut_result = v
+    push_back(mut_result, x)
+    mut_result
+}
+
+fn push_back(mut_v: Vec<T>, x: T) {
+    let mut_size = len(mut_v)
+    mut_v.set(mut_size, x)
+    let mut_new_size = mut_size + 1
+    while mut_new_size != len(mut_v) {
+        mut_new_size = len(mut_v)
+    }
+}
+
+fn len(v: Vec<T>) -> Int {
+    let mut_result = 0
+    for _ in v {
+        mut_result = mut_result + 1
+    }
+    mut_result
+}
+
+fn set(mut_v: Vec<T>, index: Int, value: T) {
+    if index >= len(mut_v) {
+        panic("index out of bounds")
+    } else {
+        mut_v.push(value)
+    }
+}
+
+fn drop_all(v: Vec<T>) {
+    drop v
+}
+
+fn drop_all(v: &Vec<T>) {
+    for mut_elem in v {
+        drop mut_elem
+    }
+}
+
+fn drop_all(v: &Vec<T>, start: Int) {
+    for mut_elem in v.iter().cloned().take(str_len(v) - start + 1).skip(start) {
+        drop mut_elem
+    }
+}
+
+fn drop_all(v: &Vec<T>, start: Int, end: Int) {
+    for mut_elem in v.iter().cloned().take(end - start + 1).skip(start) {
+        drop mut_elem
+    }
+}
+
+fn drop_all(v: &Vec<T>, end: Int) {
+    for mut_elem in v.iter().cloned().take(end + 1) {
+        drop mut_elem
+    }
+}
+
+fn drop_all(v: &Vec<T>, index: Int) {
+    if index >= len(v) {
+        panic("index out of bounds")
+    } else {
+        drop v
+    }
+}
+
+fn drop_all(v: &Vec<T>, index: Int, value: T) {
+    if index >= len(v) {
+        panic("index out of bounds")
+    } else {
+        drop v
+    }
+}
+
+fn drop_all(v: &Vec<T>, start: Int, end: Int, value: T) {
+    if start >= end {
+        panic("invalid range")
+    } else {
+        drop v
+    }
+}
+
+fn drop_all(v: &Vec<T>) {
+    for mut_elem in v {
+        drop mut_elem
+    }
+}
+
+fn drop_all(

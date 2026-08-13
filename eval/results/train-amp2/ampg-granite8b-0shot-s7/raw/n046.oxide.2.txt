@@ -1,0 +1,15 @@
+fn count_in_range(values: Vec<Int>, cutoff: Int) -> Int {
+    let mut count = 0
+    for x in values {
+        if x > cutoff {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn main() {
+    let values = push(push(push(push(vec(), 5), 12), 3), 18)
+    let cutoff = 10
+    print(count_in_range(values, cutoff))
+}

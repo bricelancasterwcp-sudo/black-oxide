@@ -1,0 +1,14 @@
+fn div(n: Int, d: Int) -> Option<Int> {
+    if d == 0 {
+        None
+    } else {
+        Some(n / d)
+    }
+}
+
+fn main() {
+    match div(20, 4) {
+        Some(n) => print(n),
+        None => print_str("bad"),
+    }
+}

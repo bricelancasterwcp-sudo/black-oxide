@@ -1,0 +1,37 @@
+struct Queue { values: Vec<Int> }
+
+fn first(v: Vec<Int>) -> Int {
+    get(v, 0)?
+}
+
+fn last(v: Vec<Int>) -> Int {
+    get(v, len(v) - 1)?
+}
+
+fn main() {
+    let q = Queue { values: vec(1, 2, 3, 4, 5) }
+    let Queue { values } = q
+    let values = push(push(vec(), last(values)?), first(values)?)
+    for x in values {
+        print(x)
+    }
+}
+
+struct Queue { values: Vec<Int> }
+
+fn first(v: Vec<Int>) -> Int {
+    get(v, 0)?
+}
+
+fn last(v: Vec<Int>) -> Int {
+    get(v, len(v) - 1)?
+}
+
+fn main() {
+    let q = Queue { values: vec(1, 2, 3, 4, 5) }
+    let Queue { values } = q
+    let values = push(push(vec(), last(values)?), first(values)?)
+    for x in values {
+        print(x)
+    }
+}

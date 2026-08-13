@@ -1,0 +1,25 @@
+struct WordKeyboard {
+    vowels: Int,
+    consonants: Int,
+}
+
+fn vowel_count(word: Str) -> WordKeyboard {
+    let mut vowels = 0
+    let mut consonants = 0
+    for c in chars(word) {
+        match c {
+            Str(c) => match c {
+                _ => {
+                    consonants = consonants + 1
+                },
+            },
+        }
+    }
+    WordKeyboard(vowels, consonants)
+}
+
+fn main() {
+    let word = "hello"
+    let result = vowel_count(word)
+    print(result.vowels)
+}

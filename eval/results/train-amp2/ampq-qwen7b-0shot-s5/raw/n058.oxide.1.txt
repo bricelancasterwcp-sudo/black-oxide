@@ -1,0 +1,36 @@
+struct Counters { a: Int, b: Int, c: Int, d: Int, e: Int }
+
+fn main() {
+    let mut counters = Counters { a: 0, b: 0, c: 0, d: 0, e: 0 }
+    let word = "coffee"
+    for ch in word.chars() {
+        match ch {
+            Some(c) => {
+                match c {
+                    Some(akey) => {
+                        match akey {
+                            Some(a) => {
+                                match a {
+                                    Some(akey) => match akey {
+                                        Some(a) => match_counters() && counters.a == a + 1,
+                                        _ => counters.a == 1,
+                                    },
+                                    _ => counters.a == 1,
+                                }
+                            },
+                            _ => counters.a == 1,
+                        }
+                    },
+                    _ => counters.a == 1,
+                }
+            },
+            _ => counters.a == 1,
+        }
+    }
+    for i in range(97, 123) {
+        let c = char(i)
+        if match_counters(Counter) && counters.a == i {
+            print(c)
+        }
+    }
+}

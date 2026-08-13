@@ -1,0 +1,15 @@
+enum Shape {
+    Square(Int),
+    Circle(Float),
+}
+
+fn area(shape: Shape) -> Float {
+    match shape {
+        Square(s) => to_float(s) * to_float(s),
+        Circle(r) => r * r * 3.14159265358979323846,
+    }
+}
+
+fn main() {
+    print(area(Square(4)))
+}

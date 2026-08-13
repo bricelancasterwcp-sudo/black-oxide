@@ -1,0 +1,25 @@
+fn max(a: Int, b: Int) -> Int {
+    if a > b {
+        a
+    } else {
+        b
+    }
+}
+
+fn main() {
+    let nums = vec(12, 5, 20, 8, 17)
+    let mut max_val = nums.get(0).unwrap()
+    let mut second_max_val = nums.get(1).unwrap()
+    for x in &nums {
+        if x > max_val {
+            second_max_val = max_val
+            max_val = x
+        } else if x > second_max_val {
+            second_max_val = x
+        }
+    }
+    print(max_val)
+    print_str("\n")
+    print(second_max_val)
+    drop nums
+}

@@ -1,0 +1,13 @@
+fn print_sorted_measurements(measurements: &Vec<Int>) {
+    let mut ordered_measurements = measurements.clone()
+    ordered_measurements.sort_unstable()
+    for measurement in &ordered_measurements {
+        print(measurement)
+        print("\n")
+    }
+}
+
+fn main() {
+    let measurements = vec(9, 2, 7, 4)
+    print_sorted_measurements(&measurements)
+}

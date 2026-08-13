@@ -1,0 +1,6 @@
+fn main() {
+    let mut result = vec_int(0, 10).filter(lambda(x) % 2 == 0).collect(vec_int())
+    for x in result.chars().rev() {
+        print(x)
+    }
+}

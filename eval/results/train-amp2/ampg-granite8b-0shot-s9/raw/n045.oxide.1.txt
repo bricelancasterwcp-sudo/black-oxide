@@ -1,0 +1,37 @@
+struct Log { entries: Vec<Int> }
+
+fn first(log: Log) -> Int {
+    let entry = get(log.entries, 0)?
+    print(entry)
+    entry
+}
+
+fn last(log: Log) -> Int {
+    let entry = get(log.entries, len(log.entries) - 1)?
+    print(entry)
+    entry
+}
+
+fn main() {
+    let log = Log { entries: push(push(push(vec(), 6), 7), 8), ush_back_10_times: 10 }
+    print(last(log))
+}
+
+struct Log { entries: Vec<Int>, push_back_10_times: Int }
+
+fn first(log: Log) -> Int {
+    let entry = get(log.entries, 0)?
+    print(entry)
+    entry
+}
+
+fn last(log: Log) -> Int {
+    let entry = get(log.entries, len(log.entries) - 1)?
+    print(entry)
+    entry
+}
+
+fn main() {
+    let log = Log { entries: push(push(push(vec(), 6), 7), 8), push_back_10_times: 10 }
+    print(last(log))
+}

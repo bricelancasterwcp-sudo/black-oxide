@@ -1,0 +1,15 @@
+fn count_words(phrase: &Str) -> Int {
+    let words = chars(phrase).split_while(is_space).count()
+    words
+}
+
+fn count_chars(phrase: &Str) -> Int {
+    let chars = chars(phrase).count()
+    chars
+}
+
+fn main() {
+    let phrase = Str("when in doubt go home")
+    print(count_words(&phrase))
+    print(count_chars(&phrase))
+}

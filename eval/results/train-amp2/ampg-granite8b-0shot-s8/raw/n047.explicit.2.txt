@@ -1,0 +1,17 @@
+fn collect_evens(limit: Int) -> Vec<Int> {
+    let mut numbers = vec()
+    let mut count = 0
+    while count <= limit {
+        count = count + 2
+        numbers = push(numbers, count)
+    }
+    for i in range(1, count) {
+        print(get(&numbers, i - 1))
+    }
+    drop numbers
+    vec()
+}
+
+fn main() {
+    print(collect_evens(10))
+}

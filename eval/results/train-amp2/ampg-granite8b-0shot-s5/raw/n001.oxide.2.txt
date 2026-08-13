@@ -1,0 +1,8 @@
+struct Point { x: Float, y: Float }
+
+fn main() {
+    let origin = Point { x: 0.0, y: 0.0 }
+    let mut p = origin
+    p.x = 3.0
+    print(p)
+}

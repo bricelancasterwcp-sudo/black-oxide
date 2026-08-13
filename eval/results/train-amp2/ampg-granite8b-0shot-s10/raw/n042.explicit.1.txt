@@ -1,0 +1,15 @@
+fn main() {
+    let numbers = vec(12, 5, 20, 8, 17)
+    let mut largest = numbers
+    let mut second_largest = numbers
+    drop second_largest
+    for x in &largest {
+        for y in &second_largest {
+            if x > y {
+                second_largest = y
+            }
+        }
+    }
+    print(largest)
+    print(second_largest)
+}

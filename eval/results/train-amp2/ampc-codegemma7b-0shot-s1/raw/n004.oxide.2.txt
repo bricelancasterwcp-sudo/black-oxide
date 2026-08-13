@@ -1,0 +1,16 @@
+fn next(v: Option<Int>) -> Option<Int> {
+    match v {
+        Some(a) => Some(a + 1),
+        None => Some(1),
+    }
+}
+
+fn main() {
+    let mut v = Some(1)
+    for _ in 0.range(9) {
+        let c = v
+        v = next(v)
+        print(c)
+    }
+    print(v)
+}

@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let figures = [8, 3, 11, 6];
+    let mut smallest = figures[0];
+    let mut largest = figures[0];
+
+    for figure in figures {
+        if figure < smallest {
+            smallest = figure;
+        }
+        if figure > largest {
+            largest = figure;
+        }
+    }
+
+    println!("Smallest: {}", smallest);
+    println!("Gap: {}", largest - smallest);
+}
+```

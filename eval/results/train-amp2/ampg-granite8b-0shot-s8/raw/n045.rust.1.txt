@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let log = [6, 7, 8, 9];
+    println!("{}", log[0]);
+    println!("{}", log[log.len() - 1]);
+}
+```
+
+The log holds the entries 6, 7, 8, and 9 in order. The first entry is accessed using index 0, and the last entry is accessed using index log.len() - 1. The println! macro is used to print the values of these entries.

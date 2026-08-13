@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let log = vec![6, 7, 8, 9];
+    let start = log.first().unwrap();
+    let end = log.last().unwrap();
+    println!("Start: {}, End: {}", start, end);
+}
+```

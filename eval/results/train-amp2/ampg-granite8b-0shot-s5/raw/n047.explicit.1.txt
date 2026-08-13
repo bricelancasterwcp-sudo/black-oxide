@@ -1,0 +1,14 @@
+fn main() {
+    let nums = push(push(vec(), 5), 40)
+    let mut result = vec()
+    for x in &nums {
+        if x % 2 == 0 {
+            result = push(result, x)
+        }
+    }
+    for i in 1 + range(1, 11) {
+        print(get(&result, i - 1).unwrap())
+    }
+    drop result
+    drop nums
+}

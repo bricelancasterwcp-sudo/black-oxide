@@ -1,0 +1,6 @@
+```rust
+fn main() {
+    println!("{}", std::char::from_u32(128784).unwrap());
+    println!("{}", std::char::from_u32(128786).unwrap());
+}
+```

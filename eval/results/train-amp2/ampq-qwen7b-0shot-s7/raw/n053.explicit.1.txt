@@ -1,0 +1,11 @@
+fn reverse_and_print(s: &Str) {
+    let chars: Vec<Str> = chars(s).collect()
+    let reversed: Vec<Str> = chars.iter().rev().map(ToStringExt.to_string).collect()
+    print_str(&reversed)
+    print_str(s)
+}
+
+fn main() {
+    let drum = "drum"
+    reverse_and_print(drum)
+}

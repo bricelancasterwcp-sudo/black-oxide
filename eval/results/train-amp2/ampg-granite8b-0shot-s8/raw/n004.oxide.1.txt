@@ -1,0 +1,24 @@
+struct Sequence {
+    head: Int,
+    tail: Int,
+    next: Option<Box<Sequence>>,
+}
+
+fn get_10th_term(sequence: Sequence) -> Int {
+    if sequence.head == 1 && sequence.tail == 1 {
+        match sequence.next {
+            Some(next) => get_10th_term(next),
+            None => sequence.head,
+        }
+    } else {
+        match sequence.next {
+            Some(next) => get_10th_term(next),
+            None => sequence.head + sequence.tail,
+        }
+    }
+}
+
+fn main() {
+    let sequence = Sequence { head: 1, tail: 1, next: None }
+    print(get_10th_term(sequence))
+}

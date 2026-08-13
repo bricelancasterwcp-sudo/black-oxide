@@ -1,0 +1,24 @@
+fn process_input(val: Option<Int>, name: &Str, num: Option<Int>) -> Str {
+    match (val.unwrap_or(0) + num.unwrap_or(0)) {
+        Eight => "8".to_string(),
+        Oak => "oak".to_string(),
+        Fifteen => "15".to_string(),
+        _ => "bad".to_string(),
+    }
+}
+
+fn main() {
+    let a = Some(8)
+    let b = Some(15)
+    let c = Some(5)
+    let d = None
+    let e = None
+    let f = Some(10)
+    print(process_input(a, &format_args_args, b))
+    drop a
+    drop b
+    drop c
+    drop d
+    drop e
+    drop f
+}

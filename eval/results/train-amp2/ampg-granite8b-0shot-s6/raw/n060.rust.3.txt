@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let s = "a1b22";
+
+    let digits: u32 = s
+        .chars()
+        .filter(|&c| c.is_ascii_digit())
+        .count() as u32;
+    let total: u32 = s
+        .chars()
+        .filter(|&c| c.is_ascii_digit())
+        .fold(0, |acc, c| acc + (c as u32 - b'0' as u32));
+
+    println!("{} {}", digits, total);
+}
+```

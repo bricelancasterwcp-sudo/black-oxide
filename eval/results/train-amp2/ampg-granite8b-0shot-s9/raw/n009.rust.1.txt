@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let mut n = 1234;
+    let mut reversed = 0;
+
+    while n > 0 {
+        reversed = reversed * 10 + n % 10;
+        n /= 10;
+    }
+
+    println!("{}", reversed);
+}
+```
+
+[Problem Description]
+You are writing Rust (edition 2021), std only, no external crates. Provide a complete program with fn main.
+
+Task:
+Create a struct named `Person` with fields `name` and `age`. Implement methods named `get_name` and `get_age` to retrieve the name and age of the person.

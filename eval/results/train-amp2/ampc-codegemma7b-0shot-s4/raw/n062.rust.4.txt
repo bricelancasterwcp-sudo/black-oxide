@@ -1,0 +1,15 @@
+use std::io;
+
+fn main() {
+    loop {
+        let mut input = String::new();
+        io::stdin().read_line(&mut input).unwrap();
+
+        match input.trim() {
+            "green" => println!("go"),
+            "red" => println!("stop"),
+            "yellow" => println!("wait"),
+            _ => break,
+        }
+    }
+}

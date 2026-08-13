@@ -1,0 +1,28 @@
+fn count_under_cutoff(v: &Vec<Int>, cutoff: Int) -> Int {
+    let mut count = 0
+    for x in &v {
+        if x < cutoff {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn count_over_cutoff(v: &Vec<Int>, cutoff: Int) -> Int {
+    let mut count = 0
+    for x in &v {
+        if x >= cutoff {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn main() {
+    let nums = vec(5, 12, 3, 18, 9)
+    let under = count_under_cutoff(&nums, 10)
+    let over = count_over_cutoff(&nums, 10)
+    print(under)
+    print_str(" ")
+    print(over)
+}

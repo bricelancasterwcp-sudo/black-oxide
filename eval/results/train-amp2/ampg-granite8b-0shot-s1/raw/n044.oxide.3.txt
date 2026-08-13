@@ -1,0 +1,17 @@
+struct Bank { deposit: Int, balance: Int }
+
+fn add_deposit(mutb: Bank, d: Int) -> Bank {
+    b.deposit = d
+    b.balance = b.balance + b.deposit
+    b
+}
+
+fn main() {
+    let mut b = Bank { deposit: 0, balance: 0 }
+    b = add_deposit(b, 3)
+    b = add_deposit(b, 1)
+    b = add_deposit(b, 4)
+    b = add_deposit(b, 1)
+    b = add_deposit(b, 5)
+    print(b.balance)
+}

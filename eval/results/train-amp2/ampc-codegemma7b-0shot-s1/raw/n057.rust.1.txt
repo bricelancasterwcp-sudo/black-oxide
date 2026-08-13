@@ -1,0 +1,14 @@
+use std::cmp::Ordering;
+
+fn longest(first: &str, second: &str) -> &str {
+    match first.len().cmp(&second.len()) {
+        Ordering::Less => second,
+        Ordering::Greater => first,
+        Ordering::Equal => first,
+    }
+}
+
+fn main() {
+    let fruit = longest("fig", longest("banana", "kiwi"));
+    println!("The longest fruit is {} with {} letters", fruit, fruit.len());
+}

@@ -1,0 +1,17 @@
+fn smallest(l: Vec<Int>) -> Int {
+    let mut s = 100
+    for x in &l {
+        if x < s {
+            s = x
+        }
+    }
+    s
+}
+
+fn main() {
+    let measurements = push(push(vec(), 9), push(vec(), 2))
+    let smallest_measurement = smallest(measurements)
+    print(smallest_measurement)
+    drop smallest_measurement
+    drop measurements
+}

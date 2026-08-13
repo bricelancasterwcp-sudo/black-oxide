@@ -1,0 +1,11 @@
+fn log(entries: &Vec<Int>) -> Int {
+    let start = entries.first().unwrap()
+    let end = entries.last().unwrap()
+    return start + end
+}
+
+fn main() {
+    let entries = vec(6, 7, 8, 9)
+    print(log(&entries))
+    drop entries
+}

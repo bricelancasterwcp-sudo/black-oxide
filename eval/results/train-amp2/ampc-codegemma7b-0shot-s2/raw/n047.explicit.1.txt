@@ -1,0 +1,16 @@
+fn print_rev(v: &Vec<Int>) {
+    for x in v.iter().rev() {
+        print(x)
+    }
+}
+
+fn main() {
+    let mut nums = vec()
+    for i in 10 {
+        if i % 2 == 0 {
+            nums = push(nums, i)
+        }
+    }
+    print_rev(&nums)
+    drop nums
+}

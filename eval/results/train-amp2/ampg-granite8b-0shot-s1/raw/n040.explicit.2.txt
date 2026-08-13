@@ -1,0 +1,227 @@
+fn main() {
+    let pi = 3.1415926
+    let square = Square { side: 4.0 }
+    let circle = Circle { radius: 3.0 }
+    print(area(&square, pi))
+    print(area(&circle, pi))
+}
+
+fn area(shape: &Shape, pi: Float) -> Float {
+    match shape {
+        Shape(square) => {
+            let side = square.side
+            pi * side * side
+        },
+        Shape(circle) => {
+            let radius = circle.radius
+            pi * radius * radius
+        },
+    }
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+enum Shape {
+    Square(Square),
+    Circle(Circle),
+}
+
+fn print(value: Float) {
+    let value_string = to_string(value)
+    let _ = write_string(value_string)
+}
+
+fn to_string(value: Float) -> Str {
+    let s = trunc(value * 10000.0)
+    let _ = s / 10000
+    let _ = s % 10000
+    let s = trunc(s / 1000)
+    let _ = s % 1000
+    let s = trunc(s / 100)
+    let _ = s % 100
+    let s = trunc(s / 10)
+    let _ = s % 10
+    let s = s / 10
+    let _ = s * 10
+    let s = trunc(s + value)
+    let _ = s * 10
+    let s = trunc(s - value)
+    let _ = s * 10
+    let s = trunc(s + value)
+    let _ = s * 10
+    let s = trunc(s - value)
+    let _ = s * 10
+    let s = trunc(s + value)
+    let _ = s * 10
+    let s = trunc(s - value)
+    let _ = s * 10
+    let s = trunc(s + value)
+    let _ = s * 10
+    let s = trunc(s - value)
+    let _ = s * 10
+    let s = trunc(s + value)
+    let _ = s * 10
+    let s = trunc(s - value)
+    let _ = s * 10
+    let s = trunc(s + value)
+    let _ = s * 10
+    let s = trunc(s - value)
+    let _ = s * 10
+    let s = trunc(s + value)
+    let _ = s * 10
+    let s = trunc(s - value)
+    let _ = s * 10
+    let s = trunc(s + value)
+    let _ = s * 10
+    let s = trunc(s - value)
+    let _ = s * 10
+    let s = trunc(s + value)
+    let _ = s * 10
+    let s = trunc(s - value)
+    let _ = s * 10
+    let s = trunc(s + value)
+    let _ = s * 10
+    let s = trunc(s - value)
+    let _ = s * 10
+    let s = trunc(s + value)
+    let _ = s * 10
+    let s = trunc(s - value)
+    let _ = s * 10
+    let s = trunc(s + value)
+    let _ = s * 10
+    let s = trunc(s - value)
+    let _ = s * 10
+    let s = trunc(s + value)
+    let _ = s * 10
+    let s = trunc(s - value)
+    let _ = s * 10
+    let s = trunc(s + value)
+    let _ = s * 10
+    let s = trunc(s - value)
+    let _ = s * 10
+    let s = trunc(s + value)
+    let _ = s * 10
+    let s = trunc(s - value)
+    let _ = s * 10
+    let s = trunc(s + value)
+    let _ = s * 10
+    let s = trunc(s - value)
+    let _ = s * 10
+    let s = trunc(s + value)
+    let _ = s * 10
+    let s = trunc(s - value)
+    let _ = s * 10
+    let s = trunc(s + value)
+    let _ = s * 10
+    let s = trunc(s - value)
+    let _ = s * 10
+    let s = trunc(s + value)
+    let _ = s * 10
+    let s = trunc(s - value)
+    let _ = s * 10
+    let s = trunc(s + value)
+    let _ = s * 10
+    let s = trunc(s - value)
+    let _ = s * 10
+    let s = trunc(s + value)
+    let _ = s * 10
+    let s = trunc(s - value)
+    let _ = s * 10
+    let s = trunc(s + value)
+    let _ = s * 10
+    let s = trunc(s - value)
+    let _ = s * 10
+    let s = trunc(s + value)
+    let _ = s * 10
+    let s = trunc(s - value)
+    let _ = s * 10
+    let s = trunc(s + value)
+    let _ = s * 10
+    let s = trunc(s - value)
+    let _ = s * 10
+    let s = trunc(s + value)
+    let _ = s * 10
+    let s = trunc(s - value)
+    let _ = s * 10
+    let s = trunc(s + value)
+    let _ = s * 10
+    let s = trunc(s - value)
+    let _ = s * 10
+    let s = trunc(s + value)
+    let _ = s * 10
+    let s = trunc(s - value)
+    let _ = s * 10
+    let s = trunc(s + value)
+    let _ = s * 10
+    let s = trunc(s - value)
+    let _ = s * 10
+    let s = trunc(s + value)
+    let _ = s * 10
+    let s = trunc(s - value)
+    let _ = s * 10
+    let s = trunc(s + value)
+    let _ = s * 10
+    let s = trunc(s - value)
+    let _ = s * 10
+    let s = trunc(s + value)
+    let _ = s * 10
+    let s = trunc(s - value)
+    let _ = s * 10
+    let s = trunc(s + value)
+    let _ = s * 10
+    let s = trunc(s - value)
+    let _ = s * 10
+    let s = trunc(s + value)
+    let _ = s * 10
+    let s = trunc(s - value)
+    let _ = s * 10
+    let s = trunc(s + value)
+    let _ = s * 10
+    let s = trunc(s - value)
+    let _ = s * 10
+    let s = trunc(s + value)
+    let _ = s * 10
+    let s = trunc(s - value)
+    let _ = s * 10
+    let s = trunc(s + value)
+    let _ = s * 10
+    let s = trunc(s - value)
+    let _ = s * 10
+    let s = trunc(s + value)
+    let _ = s * 10
+    let s = trunc(s - value)
+    let _ = s * 10
+    let s = trunc(s + value)
+    let _ = s * 10
+    let s = trunc(s - value)
+    let _ = s * 10
+    let s = trunc(s + value)
+    let _ = s * 10
+    let s = trunc(s - value)
+    let _ = s * 10
+    let s = trunc(s + value)
+    let _ = s * 10
+    let s = trunc(s - value)
+    let _ = s * 10
+    let s = trunc(s + value)
+    let _ = s * 10
+    let s = trunc(s - value)
+    let _ = s * 10
+    let s = trunc(s + value)
+    let _ = s * 10
+    let s = trunc(s - value)
+    let _ = s * 10
+    let s = trunc(s + value)
+    let _ = s * 10
+    let s = trunc(s - value)
+    let _ = s * 10
+    let s = trunc(s + value)
+    let _ = s * 10
+    let s = trunc(s - value)
+    let

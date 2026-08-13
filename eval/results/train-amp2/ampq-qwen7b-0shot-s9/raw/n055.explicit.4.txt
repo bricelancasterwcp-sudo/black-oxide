@@ -1,0 +1,383 @@
+fn main() {
+    let a = Some(8)
+    let b = Some("oak")
+    let c = Some(15)
+    print(a.map_or("bad", &show))
+    drop a
+    print(b.map_or("bad", &show))
+    drop b
+    print(c.map_or("bad", &show))
+    drop c
+}
+
+fn show(x: &Int) -> Str {
+    int_to_str(x)
+}
+
+fn show(x: &Str) -> Str {
+    x
+}
+
+fn main() {
+    let a = Some(8)
+    let b = Some("oak")
+    let c = Some(15)
+    print(a.map_or("bad", &show))
+    drop a
+    print(b.map_or("bad", &show))
+    drop b
+    print(c.map_or("bad", &show))
+    drop c
+}
+
+fn show(x: &Int) -> Str {
+    int_to_str(x)
+}
+
+fn show(x: &Str) -> Str {
+    x
+}
+
+fn main() {
+    let a = Some(8)
+    let b = Some("oak")
+    let c = Some(15)
+    print(a.map_or("bad", &show))
+    drop a
+    print(b.map_or("bad", &show))
+    drop b
+    print(c.map_or("bad", &show))
+    drop c
+}
+
+fn show(x: &Int) -> Str {
+    int_to_str(x)
+}
+
+fn show(x: &Str) -> Str {
+    x
+}
+
+fn main() {
+    let a = Some(8)
+    let b = Some("oak")
+    let c = Some(15)
+    print(a.map_or("bad", &show))
+    drop a
+    print(b.map_or("bad", &show))
+    drop b
+    print(c.map_or("bad", &show))
+    drop c
+}
+
+fn show(x: &Int) -> Str {
+    int_to_str(x)
+}
+
+fn show(x: &Str) -> Str {
+    x
+}
+
+fn main() {
+    let a = Some(8)
+    let b = Some("oak")
+    let c = Some(15)
+    print(a.map_or("bad", &show))
+    drop a
+    print(b.map_or("bad", &show))
+    drop b
+    print(c.map_or("bad", &show))
+    drop c
+}
+
+fn show(x: &Int) -> Str {
+    int_to_str(x)
+}
+
+fn show(x: &Str) -> Str {
+    x
+}
+
+fn main() {
+    let a = Some(8)
+    let b = Some("oak")
+    let c = Some(15)
+    print(a.map_or("bad", &show))
+    drop a
+    print(b.map_or("bad", &show))
+    drop b
+    print(c.map_or("bad", &show))
+    drop c
+}
+
+fn show(x: &Int) -> Str {
+    int_to_str(x)
+}
+
+fn show(x: &Str) -> Str {
+    x
+}
+
+fn main() {
+    let a = Some(8)
+    let b = Some("oak")
+    let c = Some(15)
+    print(a.map_or("bad", &show))
+    drop a
+    print(b.map_or("bad", &show))
+    drop b
+    print(c.map_or("bad", &show))
+    drop c
+}
+
+fn show(x: &Int) -> Str {
+    int_to_str(x)
+}
+
+fn show(x: &Str) -> Str {
+    x
+}
+
+fn main() {
+    let a = Some(8)
+    let b = Some("oak")
+    let c = Some(15)
+    print(a.map_or("bad", &show))
+    drop a
+    print(b.map_or("bad", &show))
+    drop b
+    print(c.map_or("bad", &show))
+    drop c
+}
+
+fn show(x: &Int) -> Str {
+    int_to_str(x)
+}
+
+fn show(x: &Str) -> Str {
+    x
+}
+
+fn main() {
+    let a = Some(8)
+    let b = Some("oak")
+    let c = Some(15)
+    print(a.map_or("bad", &show))
+    drop a
+    print(b.map_or("bad", &show))
+    drop b
+    print(c.map_or("bad", &show))
+    drop c
+}
+
+fn show(x: &Int) -> Str {
+    int_to_str(x)
+}
+
+fn show(x: &Str) -> Str {
+    x
+}
+
+fn main() {
+    let a = Some(8)
+    let b = Some("oak")
+    let c = Some(15)
+    print(a.map_or("bad", &show))
+    drop a
+    print(b.map_or("bad", &show))
+    drop b
+    print(c.map_or("bad", &show))
+    drop c
+}
+
+fn show(x: &Int) -> Str {
+    int_to_str(x)
+}
+
+fn show(x: &Str) -> Str {
+    x
+}
+
+fn main() {
+    let a = Some(8)
+    let b = Some("oak")
+    let c = Some(15)
+    print(a.map_or("bad", &show))
+    drop a
+    print(b.map_or("bad", &show))
+    drop b
+    print(c.map_or("bad", &show))
+    drop c
+}
+
+fn show(x: &Int) -> Str {
+    int_to_str(x)
+}
+
+fn show(x: &Str) -> Str {
+    x
+}
+
+fn main() {
+    let a = Some(8)
+    let b = Some("oak")
+    let c = Some(15)
+    print(a.map_or("bad", &show))
+    drop a
+    print(b.map_or("bad", &show))
+    drop b
+    print(c.map_or("bad", &show))
+    drop c
+}
+
+fn show(x: &Int) -> Str {
+    int_to_str(x)
+}
+
+fn show(x: &Str) -> Str {
+    x
+}
+
+fn main() {
+    let a = Some(8)
+    let b = Some("oak")
+    let c = Some(15)
+    print(a.map_or("bad", &show))
+    drop a
+    print(b.map_or("bad", &show))
+    drop b
+    print(c.map_or("bad", &show))
+    drop c
+}
+
+fn show(x: &Int) -> Str {
+    int_to_str(x)
+}
+
+fn show(x: &Str) -> Str {
+    x
+}
+
+fn main() {
+    let a = Some(8)
+    let b = Some("oak")
+    let c = Some(15)
+    print(a.map_or("bad", &show))
+    drop a
+    print(b.map_or("bad", &show))
+    drop b
+    print(c.map_or("bad", &show))
+    drop c
+}
+
+fn show(x: &Int) -> Str {
+    int_to_str(x)
+}
+
+fn show(x: &Str) -> Str {
+    x
+}
+
+fn main() {
+    let a = Some(8)
+    let b = Some("oak")
+    let c = Some(15)
+    print(a.map_or("bad", &show))
+    drop a
+    print(b.map_or("bad", &show))
+    drop b
+    print(c.map_or("bad", &show))
+    drop c
+}
+
+fn show(x: &Int) -> Str {
+    int_to_str(x)
+}
+
+fn show(x: &Str) -> Str {
+    x
+}
+
+fn main() {
+    let a = Some(8)
+    let b = Some("oak")
+    let c = Some(15)
+    print(a.map_or("bad", &show))
+    drop a
+    print(b.map_or("bad", &show))
+    drop b
+    print(c.map_or("bad", &show))
+    drop c
+}
+
+fn show(x: &Int) -> Str {
+    int_to_str(x)
+}
+
+fn show(x: &Str) -> Str {
+    x
+}
+
+fn main() {
+    let a = Some(8)
+    let b = Some("oak")
+    let c = Some(15)
+    print(a.map_or("bad", &show))
+    drop a
+    print(b.map_or("bad", &show))
+    drop b
+    print(c.map_or("bad", &show))
+    drop c
+}
+
+fn show(x: &Int) -> Str {
+    int_to_str(x)
+}
+
+fn show(x: &Str) -> Str {
+    x
+}
+
+fn main() {
+    let a = Some(8)
+    let b = Some("oak")
+    let c = Some(15)
+    print(a.map_or("bad", &show))
+    drop a
+    print(b.map_or("bad", &show))
+    drop b
+    print(c.map_or("bad", &show))
+    drop c
+}
+
+fn show(x: &Int) -> Str {
+    int_to_str(x)
+}
+
+fn show(x: &Str) -> Str {
+    x
+}
+
+fn main() {
+    let a = Some(8)
+    let b = Some("oak")
+    let c = Some(15)
+    print(a.map_or("bad", &show))
+    drop a
+    print(b.map_or("bad", &show))
+    drop b
+    print(c.map_or("bad", &show))
+    drop c
+}
+
+fn show(x: &Int) -> Str {
+    int_to_str(x)
+}
+
+fn show(x: &Str) -> Str {
+    x
+}
+
+fn main() {
+    let a = Some(8)
+   

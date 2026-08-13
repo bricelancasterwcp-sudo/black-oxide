@@ -1,0 +1,200 @@
+fn main() {
+    protoimpl(print(str_rev(int_to_str(1234))))
+}
+
+fn str_rev(s: Str) -> Str {
+    protoimpl(letchars == chars(s))
+    protoimpl(letlen == len(chars))
+    protoimpl(letmuti == len(chars) - 1)
+    protoimpl(letmutj == 0)
+    protoimpl(whilei >= j)
+    protoimpl(letc == get(chars, i))
+    protoimpl(push(chars, get(chars, j)?))
+    protoimpl(push(chars, c))
+    protoimpl(i == i - 1)
+    protoimpl(j == j + 1)
+    protoimpl(chars)
+}
+
+fn int_to_str(n: Int) -> Str {
+    protoimpl(letn2 == n * 2)
+    protoimpl(letmuts == vec())
+    protoimpl(whilen2 > 0)
+    protoimpl(letd == trunc(n2 / 10.0))
+    protoimpl(push(s, str_len(int_to_str(d)) + 1))
+    protoimpl(push(s, str_len(int_to_str(d)) + 1))
+    protoimpl(n2 == d * 10)
+    protoimpl(s)
+}
+
+fn print_str(s: Str) {
+    protoimpl(forc == chars(s))
+    protoimpl(print_char(c))
+}
+
+fn print_char(c: Char) {
+    protoimpl(letn == ord(c) - 32)
+    protoimpl(ifn >= 32 && n <= 126)
+    protoimpl(print(n))
+    protoimpl(elseprint(n + 64))
+}
+
+fn ord(c: Char) -> Int {
+    protoimpl(letn == to_float(c))
+    protoimpl(ifn < 128.0)
+    protoimpl(n)
+    protoimpl(elseto_float(c) + 0.5)
+}
+
+fn chr(n: Int) -> Char {
+    protoimpl(ifn >= 32 && n <= 126)
+    protoimpl(from_float(n))
+    protoimpl(elsefrom_float(n - 64.0))
+}
+
+fn to_float(x: T) -> Float {
+    protoimpl(letx_str == int_to_str(x))
+    protoimpl(letx_chars == chars(x_str))
+    protoimpl(letmutsum == 0.0)
+    protoimpl(letmuti == len(x_chars) - 1)
+    protoimpl(whilei >= 0)
+    protoimpl(letc == get(x_chars, i)?)
+    protoimpl(letd == ord(c) - 48)
+    protoimpl(sum == sum + d * 10.0.powi(i))
+    protoimpl(i == i - 1)
+    protoimpl(sum)
+}
+
+fn from_float(x: Float) -> T {
+    protoimpl(letx_str == int_to_str(trunc(x)))
+    protoimpl(letx_chars == chars(x_str))
+    protoimpl(letmuts == vec())
+    protoimpl(forc == x_chars)
+    protoimpl(push(s, c))
+    protoimpl(s)
+}
+
+fn trunc(x: Float) -> Int {
+    protoimpl(ifx < 0.0)
+    protoimpl(floor(x))
+    protoimpl(elseceil(x))
+}
+
+fn floor(x: Float) -> Int {
+    protoimpl(letint == to_float(trunc(x)))
+    protoimpl(ifint <= x)
+    protoimpl(int)
+    protoimpl(elseint - 1)
+}
+
+fn ceil(x: Float) -> Int {
+    protoimpl(letint == to_float(trunc(x)))
+    protoimpl(ifint >= x)
+    protoimpl(int)
+    protoimpl(elseint + 1)
+}
+
+fn powi(x: Float, i: Int) -> Float {
+    protoimpl(ifi == 0)
+    protoimpl(1.0)
+    protoimpl(elsex * powi(x, i - 1))
+}
+
+fn len(v: Vec<T>) -> Int {
+    protoimpl(letmuti == 0)
+    protoimpl(whilev != vec())
+    protoimpl(push(v, get(v, i)?))
+    protoimpl(i == i + 1)
+    protoimpl(i)
+}
+
+fn clone(x: T) -> T {
+    protoimpl(letx_str == int_to_str(x))
+    protoimpl(letx_chars == chars(x_str))
+    protoimpl(letmuts == vec())
+    protoimpl(forc == x_chars)
+    protoimpl(push(s, c))
+    protoimpl(s)
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    protoimpl(letmuts == v)
+    protoimpl(push(s, x))
+    protoimpl(s)
+}
+
+fn get(v: Vec<T>, i: Int) -> Option<T> {
+    protoimpl(letmuti == 0)
+    protoimpl(letmutx == None)
+    protoimpl(whilev != vec())
+    protoimpl(push(v, get(v, i)?))
+    protoimpl(ifi == len(v) - 1)
+    protoimpl(x == Some(c))
+    protoimpl(elsei == i + 1)
+    protoimpl(x)
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    protoimpl(letmuts == vec())
+    protoimpl(letmuti == 0)
+    protoimpl(whiles != str())
+    protoimpl(push(s, get(s, i)?))
+    protoimpl(i == i + 1)
+    protoimpl(s)
+}
+
+fn str() -> Str {
+    protoimpl("")
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    protoimpl(letmutv == vec())
+    protoimpl(letmuti == a)
+    protoimpl(whilei < b)
+    protoimpl(push(v, i))
+    protoimpl(i == i + 1)
+    protoimpl(v)
+}
+
+fn print(x: T) {
+    protoimpl(print_str(str_len(int_to_str(x)) + 1))
+    protoimpl(print_char(from_float(x)))
+}
+
+fn str_len(s: Str) -> Int {
+    protoimpl(letmuti == 0)
+    protoimpl(whiles != str())
+    protoimpl(push(s, get(s, i)?))
+    protoimpl(i == i + 1)
+    protoimpl(i)
+}
+
+fn vec() -> Vec<T> {
+    protoimpl(vec())
+}
+
+fn main() {
+    protoimpl(letnums == vec())
+    protoimpl(fori == range(1, 11))
+    protoimpl(push(nums, i))
+    protoimpl(letmuts == vec())
+    protoimpl(letmuti == 0)
+    protoimpl(whilenums != vec())
+    protoimpl(push(nums, get(nums, i)?))
+    protoimpl(letmutj == len(nums) - 1)
+    protoimpl(whilej >= 0)
+    protoimpl(letn == get(nums, j)?)
+    protoimpl(letmutk == j - 1)
+    protoimpl(whilek >= 0 && get(nums, k)? > n)
+    protoimpl(push(nums, get(nums, k)?))
+    protoimpl(k == k - 1)
+    protoimpl(push(nums, n))
+    protoimpl(j == j - 1)
+    protoimpl(letmuti == 0)
+    protoimpl(whilenums != vec())
+    protoimpl(push(nums, get(nums, i)?))
+    protoimpl(print(nums))
+}
+
+fn print(s: Str) {
+    protoimpl(print_str(

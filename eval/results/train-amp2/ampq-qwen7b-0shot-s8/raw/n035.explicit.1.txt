@@ -1,0 +1,16 @@
+fn divide(a: Int, b: Int) -> Option<Int> {
+    if b == 0 {
+        None
+    } else {
+        Some(a / b)
+    }
+}
+
+fn main() {
+    let result = divide(20, 4)??
+    print(result)
+    drop result
+    let bad = divide(20, 0)??
+    print(bad)
+    drop bad
+}

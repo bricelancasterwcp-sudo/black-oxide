@@ -1,0 +1,317 @@
+fn smallest(v: Vec<Int>) -> Int {
+    let mut min = v.first().unwrap_or_else(panic_empty_vec)
+    for x in v {
+        if x < min {
+            min = x
+        }
+    }
+    min
+}
+
+fn largest(v: Vec<Int>) -> Int {
+    let mut max = v.first().unwrap_or_else(panic_empty_vec)
+    for x in v {
+        if x > max {
+            max = x
+        }
+    }
+    max
+}
+
+fn gap(v: Vec<Int>) -> Int {
+    largest(v) - smallest(v)
+}
+
+fn main() {
+    let figures = vec(8, 3, 11, 6)
+    println(smallest(figures))
+    println(gap(figures))
+}
+
+fn panic_empty_vec() -> Int {
+    panic("vector is empty")
+}
+
+fn smallest(v: Vec<Int>) -> Int {
+    let mut min = v.first().unwrap_or_else(panic_empty_vec)
+    for x in v {
+        if x < min {
+            min = x
+        }
+    }
+    min
+}
+
+fn largest(v: Vec<Int>) -> Int {
+    let mut max = v.first().unwrap_or_else(panic_empty_vec)
+    for x in v {
+        if x > max {
+            max = x
+        }
+    }
+    max
+}
+
+fn gap(v: Vec<Int>) -> Int {
+    largest(v) - smallest(v)
+}
+
+fn main() {
+    let figures = vec(8, 3, 11, 6)
+    println(smallest(figures))
+    println(gap(figures))
+}
+
+fn panic_empty_vec() -> Int {
+    panic("vector is empty")
+}
+
+fn smallest(v: Vec<Int>) -> Int {
+    let mut min = v.first().unwrap_or_else(panic_empty_vec)
+    for x in v {
+        if x < min {
+            min = x
+        }
+    }
+    min
+}
+
+fn largest(v: Vec<Int>) -> Int {
+    let mut max = v.first().unwrap_or_else(panic_empty_vec)
+    for x in v {
+        if x > max {
+            max = x
+        }
+    }
+    max
+}
+
+fn gap(v: Vec<Int>) -> Int {
+    largest(v) - smallest(v)
+}
+
+fn main() {
+    let figures = vec(8, 3, 11, 6)
+    println(smallest(figures))
+    println(gap(figures))
+}
+
+fn panic_empty_vec() -> Int {
+    panic("vector is empty")
+}
+
+fn smallest(v: Vec<Int>) -> Int {
+    let mut min = v.first().unwrap_or_else(panic_empty_vec)
+    for x in v {
+        if x < min {
+            min = x
+        }
+    }
+    min
+}
+
+fn largest(v: Vec<Int>) -> Int {
+    let mut max = v.first().unwrap_or_else(panic_empty_vec)
+    for x in v {
+        if x > max {
+            max = x
+        }
+    }
+    max
+}
+
+fn gap(v: Vec<Int>) -> Int {
+    largest(v) - smallest(v)
+}
+
+fn main() {
+    let figures = vec(8, 3, 11, 6)
+    println(smallest(figures))
+    println(gap(figures))
+}
+
+fn panic_empty_vec() -> Int {
+    panic("vector is empty")
+}
+
+fn smallest(v: Vec<Int>) -> Int {
+    let mut min = v.first().unwrap_or_else(panic_empty_vec)
+    for x in v {
+        if x < min {
+            min = x
+        }
+    }
+    min
+}
+
+fn largest(v: Vec<Int>) -> Int {
+    let mut max = v.first().unwrap_or_else(panic_empty_vec)
+    for x in v {
+        if x > max {
+            max = x
+        }
+    }
+    max
+}
+
+fn gap(v: Vec<Int>) -> Int {
+    largest(v) - smallest(v)
+}
+
+fn main() {
+    let figures = vec(8, 3, 11, 6)
+    println(smallest(figures))
+    println(gap(figures))
+}
+
+fn panic_empty_vec() -> Int {
+    panic("vector is empty")
+}
+
+fn smallest(v: Vec<Int>) -> Int {
+    let mut min = v.first().unwrap_or_else(panic_empty_vec)
+    for x in v {
+        if x < min {
+            min = x
+        }
+    }
+    min
+}
+
+fn largest(v: Vec<Int>) -> Int {
+    let mut max = v.first().unwrap_or_else(panic_empty_vec)
+    for x in v {
+        if x > max {
+            max = x
+        }
+    }
+    max
+}
+
+fn gap(v: Vec<Int>) -> Int {
+    largest(v) - smallest(v)
+}
+
+fn main() {
+    let figures = vec(8, 3, 11, 6)
+    println(smallest(figures))
+    println(gap(figures))
+}
+
+fn panic_empty_vec() -> Int {
+    panic("vector is empty")
+}
+
+fn smallest(v: Vec<Int>) -> Int {
+    let mut min = v.first().unwrap_or_else(panic_empty_vec)
+    for x in v {
+        if x < min {
+            min = x
+        }
+    }
+    min
+}
+
+fn largest(v: Vec<Int>) -> Int {
+    let mut max = v.first().unwrap_or_else(panic_empty_vec)
+    for x in v {
+        if x > max {
+            max = x
+        }
+    }
+    max
+}
+
+fn gap(v: Vec<Int>) -> Int {
+    largest(v) - smallest(v)
+}
+
+fn main() {
+    let figures = vec(8, 3, 11, 6)
+    println(smallest(figures))
+    println(gap(figures))
+}
+
+fn panic_empty_vec() -> Int {
+    panic("vector is empty")
+}
+
+fn smallest(v: Vec<Int>) -> Int {
+    let mut min = v.first().unwrap_or_else(panic_empty_vec)
+    for x in v {
+        if x < min {
+            min = x
+        }
+    }
+    min
+}
+
+fn largest(v: Vec<Int>) -> Int {
+    let mut max = v.first().unwrap_or_else(panic_empty_vec)
+    for x in v {
+        if x > max {
+            max = x
+        }
+    }
+    max
+}
+
+fn gap(v: Vec<Int>) -> Int {
+    largest(v) - smallest(v)
+}
+
+fn main() {
+    let figures = vec(8, 3, 11, 6)
+    println(smallest(figures))
+    println(gap(figures))
+}
+
+fn panic_empty_vec() -> Int {
+    panic("vector is empty")
+}
+
+fn smallest(v: Vec<Int>) -> Int {
+    let mut min = v.first().unwrap_or_else(panic_empty_vec)
+    for x in v {
+        if x < min {
+            min = x
+        }
+    }
+    min
+}
+
+fn largest(v: Vec<Int>) -> Int {
+    let mut max = v.first().unwrap_or_else(panic_empty_vec)
+    for x in v {
+        if x > max {
+            max = x
+        }
+    }
+    max
+}
+
+fn gap(v: Vec<Int>) -> Int {
+    largest(v) - smallest(v)
+}
+
+fn main() {
+    let figures = vec(8, 3, 11, 6)
+    println(smallest(figures))
+    println(gap(figures))
+}
+
+fn panic_empty_vec() -> Int {
+    panic("vector is empty")
+}
+
+fn smallest(v: Vec<Int>) -> Int {
+    let mut min = v.first().unwrap_or_else(panic_empty_vec)
+    for x in v {
+        if x < min {
+            min = x
+        }
+    }
+    min
+}
+
+fn largest(

@@ -1,0 +1,15 @@
+fn reverse(s: Str) -> Str {
+    let mut chars = chars(s)
+    let mut result = vec()
+    while letSome(c) == chars.pop() {
+        push(result, c)
+    }
+    concat("", result)
+}
+
+fn main() {
+    let word = "drum"
+    let reversed = reverse(word)
+    print_str(reversed)
+    print_str(word)
+}

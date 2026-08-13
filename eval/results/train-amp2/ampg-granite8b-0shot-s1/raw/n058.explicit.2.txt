@@ -1,0 +1,17 @@
+fn find_all_unique_letters_in_a_word(word: &String) -> Vec<Char> {
+    let mut result: Vec<Char> = vec()
+    for letter in word.chars() {
+        if !result.contains(&letter) {
+            result.push(letter)
+        }
+    }
+    return result
+}
+
+fn main() {
+    let word = "coffee".to_string()
+    let unique_letters = find_all_unique_letters_in_a_word(&word)
+    for letter in unique_letters {
+        print(letter)
+    }
+}

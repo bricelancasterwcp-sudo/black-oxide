@@ -1,0 +1,21 @@
+fn count_over_cutoff(numbers: Vec<Int>, cutoff: Int) -> Tuple<Int, Int> {
+    let mut under = 0
+    let mut over = 0
+    for num in numbers {
+        if num < cutoff {
+            under = under + 1
+        } else {
+            over = over + 1
+        }
+    }
+    (under.into_tuple(over))
+}
+
+fn main() {
+    let numbers = push(push(push(push(vec(), 5), 12), 3), 18)
+    let numbers = push(numbers, 9)
+    let result = count_over_cutoff(numbers, 10)
+    print(result.under)  // prints 3
+    print_str(" ")
+    print(result.over)  // prints 2
+}

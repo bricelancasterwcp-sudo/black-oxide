@@ -1,0 +1,20 @@
+struct Reading { label: Str, values: Vec<Int> }
+
+fn word_count(s: Str) -> Int {
+    let words = s.split_whitespace().count()
+    words
+}
+
+fn char_count(s: Str) -> Int {
+    let chars = s.chars().count()
+    chars
+}
+
+fn main() {
+    let phrase = "when in doubt go home"
+    let words = word_count(phrase.clone())
+    let chars = char_count(phrase.clone())
+    print(words)
+    print_str(" ")
+    print(chars)
+}

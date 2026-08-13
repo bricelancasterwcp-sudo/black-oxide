@@ -1,0 +1,4 @@
+fn main() {
+    let sum = (1 + 2 + 3 + 4 + 5).to_float()
+    print(sum * sum * sum)
+}

@@ -1,0 +1,7 @@
+fn main() {
+    let mut values = vec(12, 5, 20, 8, 17)
+    let largest = values.iter().max().unwrap()
+    print(largest)
+    let second_largest = values.iter().filter(x || x != largest).max().unwrap()
+    print(second_largest)
+}

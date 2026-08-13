@@ -1,0 +1,269 @@
+fn main() {
+    let mut scores = vec(9, 5, 2)
+    scores.sort_by(stdcmp)
+    for score in scores {
+        print(score)
+        print("\n")
+    }
+}
+
+fn stdcmp(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+enum Ordering {
+    Less,
+    Greater,
+    Equal,
+}
+
+fn cmp(a: &Int, b: &Int) -> Ordering {
+    if a < b {
+        Ordering.less
+    } else if a > b {
+        Ordering.greater
+    } else {
+        Ordering.equal
+    }
+}
+
+fn print(x: Int) {
+    let s = int_to_str(x)
+    print_str(s)
+}
+
+fn print_str(s: Str) {
+    let chars = chars(s)
+    for c in chars {
+        print(c)
+    }
+}
+
+fn vec(elem: T) -> Vec<T> {
+    let mut result = Vec { len: 0, buf: vec() }
+    push(result, elem)
+    result
+}
+
+fn push(mutvec: Vec<T>, elem: T) -> Vec<T> {
+    let len = vec.len
+    vec.buf.push(elem)
+    vec.len = len + 1
+    vec
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut result = Str { len: 0, buf: vec() }
+    let mut x = n
+    while x > 0 {
+        let digit = x % 10
+        let digit_str = int_to_str(digit)
+        push(result, digit_str)
+        x = trunc(x / 10)
+    }
+    result
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = Vec { len: 0, buf: vec() }
+    let mut index = 0
+    while index < s.len {
+        let c = s.buf(index)
+        let c_str = str_len(c)
+        push(result, c_str)
+        index = index + 1
+    }
+    result
+}
+
+fn str_len(s: Str) -> Str {
+    let mut result = Str { len: 0, buf: vec() }
+    let mut index = 0
+    while index < s.len {
+        index = index + 1
+        result.len = result.len + 1
+    }
+    result
+}
+
+fn trunc(x: Int) -> Int {
+    if x >= 0 {
+        x
+    } else {
+        x - 1
+    }
+}
+
+fn sort_by(mutvec: Vec<T>, mutcompare: FnMut2<T, T, Ordering>) -> Vec<T> {
+    for i in 0.upto(vec.len - 1) {
+        for j in i + 1.upto(vec.len - 1) {
+            let ordering = compare(vec.buf(i), vec.buf(j))
+            if ordering == Ordering.greater {
+                let temp = vec.buf(i)
+                vec.buf(i) == vec.buf(j)
+                vec.buf(j) == temp
+            }
+        }
+    }
+    vec
+}
+
+fn upto(x: Int, y: Int) -> Range {
+    Range(x, y)
+}
+
+struct Range {
+    start: Int,
+    end: Int,
+}
+
+fn buf(s: Str, index: Int) -> Char {
+    s.buf(index)
+}
+
+struct Char {
+    len: Int,
+    buf: Vec<Int>,
+}
+
+fn len(s: Str) -> Int {
+    s.len
+}
+
+fn drop_str(s: Str) {
+    let mut index = 0
+    while index < s.len {
+        index = index + 1
+    }
+}
+
+fn drop_int(i: Int) {
+    let mut x = i
+    while x > 0 {
+        x = trunc(x / 10)
+    }
+}
+
+fn drop_char(c: Char) {
+    let mut index = 0
+    while index < c.len {
+        index = index + 1
+    }
+}
+
+fn drop_range(r: Range) {
+    for i in r.start.upto(r.end) {
+        println(i)
+    }
+}
+
+fn drop_vec(v: Vec<T>) {
+    for i in 0.upto(v.len - 1) {
+        drop_str(v.buf(i))
+    }
+}
+
+fn drop_fn_mut2(f: FnMut2<T, T, Ordering>) {
+    let mut x = f(Int(0), Int(0))
+    let mut y = f(Int(0), Int(0))
+    let _ = f(x, y)
+}
+
+fn drop_vec_mut(v: &Vec<T>) {
+    for i in 0.upto(v.len - 1) {
+        drop_str(v.buf(i))
+    }
+}
+
+fn drop_enum(e: Ordering) {
+    match e {
+        Ordering(ordering) => {
+            drop_str(ordering)
+        },
+    }
+}
+
+fn drop_int_to_str(i: Int) {
+    let _ = int_to_str(i)
+}
+
+fn drop_print_str(s: Str) {
+    let _ = print_str(s)
+}
+
+fn drop_print(i: Int) {
+    let _ = print(i)
+}
+
+fn drop_vec_sort_by(v: Vec<T>) {
+    let _ = sort_by(v, fn_mut2(sort_by_impl))
+}
+
+fn drop_fn_mut2(f: FnMut2<T, T, Ordering>) {
+    let mut x = f(Int(0), Int(0))
+    let mut y = f(Int(0), Int(0))
+    let _ = f(x, y)
+}
+
+fn drop_sort_by_impl(a: T, b: T) -> Ordering {
+    let _ = a
+    let _ = b
+    Ordering.equal
+}
+
+fn drop_main() {
+    let _ = main()
+}
+
+fn drop_ox0200(a: FnMut2<T, T, Ordering>) {
+    let _ = stdcmp(Int(0), Int(0))
+}
+
+fn drop_ox0401(a: FnMut2<T, T, Ordering>) {
+    let mut f = a
+    let _ = f(Int(0), Int(0))
+    let _ = f(Int(0), Int(0))
+}
+
+fn drop_ox0402(a: FnMut2<T, T, Ordering>) {
+    let mut f = a
+    let _ = f(Int(0), Int(0))
+    let _ = f(Int(0), Int(0))
+    drop_fn_mut2(f)
+}
+
+fn drop_ox0403(a: FnMut2<T, T, Ordering>) {
+    let mut f = a
+    let _ = f(Int(0), Int(0))
+    let _ = f(Int(0), Int(0))
+    drop_fn_mut2(f)
+    drop_fn_mut2(f)
+}
+
+fn drop_ox0404(a: FnMut2<T, T, Ordering>) {
+    let mut f = a
+    let _ = f(Int(0), Int(0))
+    drop_fn_mut2(f)
+}
+
+fn drop_ox0405(a: FnMut2<T, T, Ordering>) {
+    let mut f = a
+    let _ = f(Int(0), Int(0))
+    drop_fn_mut2(f)
+    drop_fn_mut2(f)
+}
+
+fn drop_ox0406(a: FnMut2<T, T, Ordering>) {
+    let mut f = a
+    let _ = f(Int(0), Int(0))
+    drop_fn_mut2(f)
+    drop_fn_mut2(f)
+    drop_fn_mut2(f)
+}
+
+fn drop_ox0407(a: FnMut2<T, T, Ordering>) {
+    let mut f = a
+    let _ = f(Int(0), Int(0))
+    drop_fn_mut2(f)
+    drop_fn_mut2(f)
+    drop

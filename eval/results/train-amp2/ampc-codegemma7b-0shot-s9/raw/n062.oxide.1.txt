@@ -1,0 +1,11 @@
+fn main() {
+    let green = "go for green"
+    let red = "stop for red"
+    let yellow = "wait for yellow"
+    match get(get(get(vec(), 0), 0)?, 0)? {
+        Some(green) => print(green),
+        Some(red) => print(red),
+        Some(yellow) => print(yellow),
+        None => print_str("invalid signal"),
+    }
+}

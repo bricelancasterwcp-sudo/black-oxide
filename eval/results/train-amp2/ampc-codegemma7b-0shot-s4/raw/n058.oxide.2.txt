@@ -1,0 +1,15 @@
+fn first_letter(s: Str) -> Vec<Char> {
+    let mut seen = vec_char()
+    for c in s.chars() {
+        if !seen.contains(c) {
+            seen.push(c)
+            print(c)
+        }
+    }
+    seen
+}
+
+fn main() {
+    let word = "coffee"
+    first_letter(word)
+}

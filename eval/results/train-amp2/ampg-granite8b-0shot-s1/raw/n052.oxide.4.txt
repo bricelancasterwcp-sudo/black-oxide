@@ -1,0 +1,17 @@
+struct Banana {
+    word: Str,
+}
+
+fn banana_n_positions(b: Banana) -> Vec<Int> {
+    let positions = vec()
+    for i in range(0, str_len(b.word)) {
+        if b.word.get(i) == Some("n") {
+            positions = push(positions, i)
+        }
+    }
+    positions
+}
+
+fn main() {
+    print(banana_n_positions(Banana { word: "banana" }))
+}

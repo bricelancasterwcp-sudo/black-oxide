@@ -1,0 +1,102 @@
+fn main() {
+    let f = fig(vec("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z")).len()
+    let b = banana(vec("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z")).len()
+    let k = kiwi(vec("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z")).len()
+    if f > b && f > k {
+        print(f)
+    } else if b > f && b > k {
+        print(b)
+    } else {
+        print(k)
+    }
+}
+
+fn fig(words: Vec<Str>) -> Vec<Str> {
+    let mut result = vec()
+    for word in words {
+        if word.len() == 3 {
+            result = push(result, word)
+        }
+    }
+    result
+}
+
+fn banana(words: Vec<Str>) -> Vec<Str> {
+    let mut result = vec()
+    for word in words {
+        if word.len() == 5 {
+            result = push(result, word)
+        }
+    }
+    result
+}
+
+fn kiwi(words: Vec<Str>) -> Vec<Str> {
+    let mut result = vec()
+    for word in words {
+        if word.len() == 4 {
+            result = push(result, word)
+        }
+    }
+    result
+}
+
+fn print(x: Int) {
+    print_str(to_string(x))
+}
+
+fn to_string(x: Int) -> Str {
+    int_to_str(x)
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    let mut v = clone(v)
+    v = append(v, vec(x))
+    v
+}
+
+fn append(v: Vec<T>, w: Vec<T>) -> Vec<T> {
+    let mut v = clone(v)
+    for x in w {
+        v = push(v, x)
+    }
+    v
+}
+
+fn clone(x: T) -> T {
+    x
+}
+
+fn vec() -> Vec<T> {
+    vec()
+}
+
+fn len(v: Vec<T>) -> Int {
+    len(v)
+}
+
+fn get(v: Vec<T>, i: Int) -> Option<T> {
+    get(v, i)
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    parse_int(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    range(a, b)
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(vec(), 3), 42) }
+    print(first_big(r.values))            // field access copies: r stays usable
+    let r2 = Reading { label: "lab2", ..r }
+    match second(r2.values) {
+        Some(n) => print(n),
+        None => print_str("too short"),
+    }
+}

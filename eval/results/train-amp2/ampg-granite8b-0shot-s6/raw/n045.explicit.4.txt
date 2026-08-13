@@ -1,0 +1,47 @@
+fn main() {
+    let log = push(push(push(vec(), 6), 7), 8)
+    print(get(&log, 0))
+    print(get(&log, 3))
+    drop log
+}
+
+fn get(log: &Vec<Int>, i: Int) -> Option<Int> {
+    if i >= len(&log) {
+        None
+    } else {
+        Some(log.get(i))
+    }
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut v = v
+    v.push(x)
+    v
+}
+
+fn vec() -> Vec<Int> {
+    vec()
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    v.len()
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print_str(s: Str) {
+    print_str(s)
+}
+
+fn clone(x: Int) -> Int {
+    x
+}
+
+fn main() {
+    let log = push(push(push(vec(), 6), 7), 8)
+    print(get(&log, 0))
+    print(get(&log, 3))
+    drop log
+}

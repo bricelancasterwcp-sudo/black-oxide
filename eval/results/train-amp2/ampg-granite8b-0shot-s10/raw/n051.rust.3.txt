@@ -1,0 +1,4 @@
+fn main() {
+    println!("{}", b'g' as char);
+    println!("{}", b'e' as char);
+}

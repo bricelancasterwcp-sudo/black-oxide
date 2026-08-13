@@ -1,0 +1,261 @@
+fn main() {
+    let n = 9875
+    let sum = reduce(n, 0, add)
+    print(sum)
+}
+
+fn reduce(n: Int, init: Int, op: Int, b: Int) -> Int {
+    if n == 0 {
+        init
+    } else {
+        reduce(trunc(n / 10), op(init, trunc(n % 10)), op, b)
+    }
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn print(x: Int) {
+    println(str_concat("print: ", int_to_str(x)))
+}
+
+fn println(s: Str) {
+    system_println(s)
+}
+
+fn system_println(s: Str) {
+    print_str(s)
+    print_str("\n")
+}
+
+fn str_concat(s1: Str, s2: Str) -> Str {
+    let a = clone(s1)
+    let b = clone(s2)
+    let len_a = str_len(a)
+    let len_b = str_len(b)
+    let c = vec_with_len(len_a + len_b)
+    for i in range(0, len_a) {
+        c = vec_set(c, i, str_get(a, i))
+    }
+    for i in range(0, len_b) {
+        c = vec_set(c, len_a + i, str_get(b, i))
+    }
+    c
+}
+
+fn system_println(s: Str) {
+    print_str(s)
+    print_str("\n")
+}
+
+fn str_concat(s1: Str, s2: Str) -> Str {
+    let a = clone(s1)
+    let b = clone(s2)
+    let len_a = str_len(a)
+    let len_b = str_len(b)
+    let c = vec_with_len(len_a + len_b)
+    for i in range(0, len_a) {
+        c = vec_set(c, i, str_get(a, i))
+    }
+    for i in range(0, len_b) {
+        c = vec_set(c, len_a + i, str_get(b, i))
+    }
+    c
+}
+
+fn main() {
+    let n = 9875
+    let sum = reduce(n, 0, add)
+    print(sum)
+}
+
+fn reduce(n: Int, init: Int, op: Int, b: Int) -> Int {
+    if n == 0 {
+        init
+    } else {
+        reduce(trunc(n / 10), op(init, trunc(n % 10)), op, b)
+    }
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn print(x: Int) {
+    println(str_concat("print: ", int_to_str(x)))
+}
+
+fn println(s: Str) {
+    system_println(s)
+}
+
+fn str_concat(s1: Str, s2: Str) -> Str {
+    let a = clone(s1)
+    let b = clone(s2)
+    let len_a = str_len(a)
+    let len_b = str_len(b)
+    let c = vec_with_len(len_a + len_b)
+    for i in range(0, len_a) {
+        c = vec_set(c, i, str_get(a, i))
+    }
+    for i in range(0, len_b) {
+        c = vec_set(c, len_a + i, str_get(b, i))
+    }
+    c
+}
+
+fn system_println(s: Str) {
+    print_str(s)
+    print_str("\n")
+}
+
+fn main() {
+    let n = 9875
+    let sum = reduce(n, 0, add)
+    print(sum)
+}
+
+fn reduce(n: Int, init: Int, op: Int, b: Int) -> Int {
+    if n == 0 {
+        init
+    } else {
+        reduce(trunc(n / 10), op(init, trunc(n % 10)), op, b)
+    }
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn print(x: Int) {
+    println(str_concat("print: ", int_to_str(x)))
+}
+
+fn println(s: Str) {
+    system_println(s)
+}
+
+fn str_concat(s1: Str, s2: Str) -> Str {
+    let a = clone(s1)
+    let b = clone(s2)
+    let len_a = str_len(a)
+    let len_b = str_len(b)
+    let c = vec_with_len(len_a + len_b)
+    for i in range(0, len_a) {
+        c = vec_set(c, i, str_get(a, i))
+    }
+    for i in range(0, len_b) {
+        c = vec_set(c, len_a + i, str_get(b, i))
+    }
+    c
+}
+
+fn system_println(s: Str) {
+    print_str(s)
+    print_str("\n")
+}
+
+fn main() {
+    let n = 9875
+    let sum = reduce(n, 0, add)
+    print(sum)
+}
+
+fn reduce(n: Int, init: Int, op: Int, b: Int) -> Int {
+    if n == 0 {
+        init
+    } else {
+        reduce(trunc(n / 10), op(init, trunc(n % 10)), op, b)
+    }
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn print(x: Int) {
+    println(str_concat("print: ", int_to_str(x)))
+}
+
+fn println(s: Str) {
+    system_println(s)
+}
+
+fn str_concat(s1: Str, s2: Str) -> Str {
+    let a = clone(s1)
+    let b = clone(s2)
+    let len_a = str_len(a)
+    let len_b = str_len(b)
+    let c = vec_with_len(len_a + len_b)
+    for i in range(0, len_a) {
+        c = vec_set(c, i, str_get(a, i))
+    }
+    for i in range(0, len_b) {
+        c = vec_set(c, len_a + i, str_get(b, i))
+    }
+    c
+}
+
+fn system_println(s: Str) {
+    print_str(s)
+    print_str("\n")
+}
+
+fn main() {
+    let n = 9875
+    let sum = reduce(n, 0, add)
+    print(sum)
+}
+
+fn reduce(n: Int, init: Int, op: Int, b: Int) -> Int {
+    if n == 0 {
+        init
+    } else {
+        reduce(trunc(n / 10), op(init, trunc(n % 10)), op, b)
+    }
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn print(x: Int) {
+    println(str_concat("print: ", int_to_str(x)))
+}
+
+fn println(s: Str) {
+    system_println(s)
+}
+
+fn str_concat(s1: Str, s2: Str) -> Str {
+    let a = clone(s1)
+    let b = clone(s2)
+    let len_a = str_len(a)
+    let len_b = str_len(b)
+    let c = vec_with_len(len_a + len_b)
+    for i in range(0, len_a) {
+        c = vec_set(c, i, str_get(a, i))
+    }
+    for i in range(0, len_b) {
+        c = vec_set(c, len_a + i, str_get(b, i))
+    }
+    c
+}
+
+fn system_println(s: Str) {
+    print_str(s)
+    print_str("\n")
+}
+
+fn main() {
+    let n = 9875
+    let sum = reduce(n, 0, add)
+    print(sum)
+}
+
+fn reduce(n: Int, init: Int, op: Int, b: Int) -> Int {
+    if n == 0 {
+        init
+    } else {
+        reduce(trunc(

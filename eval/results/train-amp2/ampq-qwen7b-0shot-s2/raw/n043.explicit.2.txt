@@ -1,0 +1,25 @@
+fn exchange(v: Vec<Int>) -> Vec<Int> {
+    let len = len(v)
+    if len > 1 {
+        let first = get(v, 0)?.unwrap()
+        let last = get(v, len - 1)?.unwrap()
+        let mut new_v = push(vec(), last)
+        for i in 1 {
+            let x = get(v, i)?.unwrap()
+            new_v = push(new_v, x)
+        }
+        new_v = push(new_v, first)
+        new_v
+    } else {
+        v
+    }
+}
+
+fn main() {
+    let mut q = push(push(push(push(push(vec(), 1), 2), 3), 4), 5)
+    q = exchange(q)
+    for x in &q {
+        print(x)
+    }
+    drop q
+}

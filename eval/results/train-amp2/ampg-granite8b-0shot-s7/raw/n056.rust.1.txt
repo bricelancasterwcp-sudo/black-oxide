@@ -1,0 +1,20 @@
+```rust
+fn main(){
+    let mut total=0;
+    let mut count=0;
+    for text in ["7","x","9","?"].iter(){
+        match text.parse::<i32>(){
+            Ok(_)=>total+=text.parse().unwrap(),
+            Err(_)=>count+=1,
+        };
+    }
+    println!("total: {}",total);
+    println!("count: {}",count);
+}
+```
+
+Output:
+```text
+total: 16
+count: 2
+```

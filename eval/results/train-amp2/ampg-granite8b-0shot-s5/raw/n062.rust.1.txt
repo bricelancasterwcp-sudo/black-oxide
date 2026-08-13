@@ -1,0 +1,14 @@
+```rust
+const SIGNAL: &str = "green";
+
+fn main() {
+    for signal in [SIGNAL, "red", "yellow"] {
+        match signal {
+            "green" => println!("go for {}", signal),
+            "red" => println!("stop for {}", signal),
+            "yellow" => println!("wait for {}", signal),
+            _ => unreachable!(),
+        }
+    }
+}
+```

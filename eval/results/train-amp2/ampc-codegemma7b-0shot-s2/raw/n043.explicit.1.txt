@@ -1,0 +1,12 @@
+fn main() {
+    let mut queue = vec(1, 2, 3, 4, 5)
+    let first = queue.first().unwrap()
+    let last = queue.last().unwrap()
+    queue.remove(0)
+    queue.pop()
+    queue.insert(0, last)
+    queue.push(first)
+    for num in queue {
+        print(num)
+    }
+}

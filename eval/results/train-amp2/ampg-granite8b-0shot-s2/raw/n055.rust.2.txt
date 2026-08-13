@@ -1,0 +1,19 @@
+fn main() {
+    use std::io::{self, BufRead};
+    let mut s = io::BufReader::new(io::stdin()).lines();
+    match s.next() {
+        Some(Ok(n)) => print!("{}", n),
+        _ => print!("bad"),
+    }
+    print!("\n");
+    match s.next() {
+        Some(Ok(n)) => print!("{}", n),
+        _ => print!("bad"),
+    }
+    print!("\n");
+    match s.next() {
+        Some(Ok(n)) => print!("{}", n),
+        _ => print!("bad"),
+    }
+    print!("\n");
+}

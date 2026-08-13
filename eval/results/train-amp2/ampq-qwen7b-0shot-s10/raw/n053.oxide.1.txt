@@ -1,0 +1,20 @@
+struct StrBuilder { chars: Vec<Str> }
+
+fn push_char(builder: StrBuilder, ch: Str) -> StrBuilder {
+    StrBuilder
+    chars = push(builder.chars, ch)
+}
+
+fn reverse_str(s: Str) -> Str {
+    let mut builder = StrBuilder { chars: vec() }
+    for ch in chars(s) {
+        builder = push_char(builder, ch)
+    }
+    concat(vec(), builder.chars)
+}
+
+fn main() {
+    let drum = "drum"
+    print(reverse_str(drum))
+    print(drum)
+}

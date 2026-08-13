@@ -1,0 +1,83 @@
+fn main() {
+    let f1 = four_for_three()
+    let f2 = five_for_two()
+    print(f1)
+    print(f2)
+    print(f1 + f2)
+}
+
+fn four_for_three() -> Int {
+    let mut units = 0
+    for _ in 0.range(4) {
+        units = units + 1
+    }
+    units * 3
+}
+
+fn five_for_two() -> Int {
+    let mut units = 0
+    for _ in 0.range(5) {
+        units = units + 1
+    }
+    units * 2
+}
+
+fn print(n: Int) {
+    println_int(n)
+}
+
+fn println_int(n: Int) {
+    print_str(str_int(n))
+    print_str("\n")
+}
+
+fn str_int(n: Int) -> Str {
+    let mut s = ""
+    let mut n = n
+    while n > 0 {
+        n = n - 1
+        s = "0" + s
+    }
+    s
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut v = vec()
+    for i in a.range(b) {
+        v = push(v, i)
+    }
+    v
+}
+
+fn clone(x: T) -> T {
+    x
+}
+
+fn print_str(s: Str) {
+    for c in chars(&s) {
+        putchar(c)
+    }
+}
+
+fn putchar(c: Str) {
+    _ = c
+}
+
+fn vec() -> Vec<T> {
+    Vec()
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    v + vec(x)
+}
+
+fn len(v: Vec<T>) -> Int {
+    v.len()
+}
+
+fn get(v: Vec<T>, i: Int) -> Option<T> {
+    let mut idx = i
+    if idx < 0 {
+        None
+    } else {
+        loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_2_continue_3_loop_label_1_break_

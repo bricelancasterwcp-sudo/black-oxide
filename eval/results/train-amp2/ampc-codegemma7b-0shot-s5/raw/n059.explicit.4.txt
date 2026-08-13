@@ -1,0 +1,57 @@
+fn word_count(str: &Str) -> Int {
+    let mut count = 0
+    let mut last_space = true
+    for c in str.chars() {
+        if c == " " {
+            last_space = true
+        } else {
+            if last_space {
+                count = count + 1
+            }
+            last_space = false
+        }
+    }
+    count
+}
+
+fn character_count(str: &Str) -> Int {
+    str.len()
+}
+
+fn main() {
+    let text = "when in doubt go home"
+    print(word_count(text))
+    print(character_count(text))
+}
+
+fn main() {
+    let text = "when in doubt go home"
+    print(word_count(text))
+    print(character_count(text))
+}
+
+fn word_count(str: &Str) -> Int {
+    let mut count = 0
+    let mut last_space = true
+    for c in str.chars() {
+        if c == " " {
+            last_space = true
+        } else {
+            if last_space {
+                count = count + 1
+            }
+            last_space = false
+        }
+    }
+    count
+}
+
+fn character_count(str: &Str) -> Int {
+    str.len()
+}
+
+fn main() {
+    let text = "when in doubt go home"
+    print(word_count(text))
+    print(character_count(text))
+}

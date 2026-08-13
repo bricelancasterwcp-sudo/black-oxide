@@ -1,0 +1,282 @@
+fn main() {
+    let p1 = Point { x: 1, y: 5 }
+    let p2 = Point { x: 10, y: p1.y }
+    print(p1.x + p2.x)
+}
+
+struct Point { x: Int, y: Int }
+
+fn print(n: Int) {
+    print_str(to_str(n))
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn to_str(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn int_to_str(n: Int) -> Str {
+    "0123456789abcdefghijklmnopqrstuvwxyz"
+    let mut res = ""
+    let mut n = n
+    while n > 0 {
+        let c = char(n % 10 + ord("0"))
+        res = c + res
+        n = n / 10
+    }
+    res
+}
+
+fn char(n: Int) -> Str {
+    let mut buf = vec(0)
+    buf.push(n)
+    Str(buf)
+}
+
+fn ord(c: Str) -> Int {
+    c.chars().next().unwrap() - ord("0")
+}
+
+fn ord(c: Str) -> Int {
+    let mut chars = c.chars()
+    let first = chars.next().unwrap()
+    let mut sum = 0
+    for c in chars {
+        sum = sum * 26 + int(c) - int("a")
+    }
+    sum + int(first) - int("a")
+}
+
+fn int(c: Str) -> Int {
+    ord(c) - ord("0")
+}
+
+fn break_line() {
+    print_str("\n")
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(vec(), 3), 42) }
+    print(first_big(r.values))            // field access copies: r stays usable
+    let r2 = Reading { label: "lab2", ..r }
+    match second(r2.values) {
+        Some(n) => print(n),
+        None => print_str("too short"),
+    }
+}
+
+struct Reading { label: Str, values: Vec<Int> }
+
+fn first_big(v: Vec<Int>) -> Int {
+    let found = -1
+    for x in v {
+        if x > 10 {
+            found = x
+            break
+        }
+    }
+    found
+}
+
+fn second(v: Vec<Int>) -> Option<Int> {
+    let x = get(v, 1)?
+    Some(x + 1)
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    if i < 0 || i >= len(v) {
+        None
+    } else {
+        Some(v.get(i).unwrap().clone())
+    }
+}
+
+fn len(v: Vec<Int>) -> Int {
+    let mut i = 0
+    for _ in v {
+        i = i + 1
+    }
+    i
+}
+
+fn break_line() {
+    print_str("\n")
+}
+
+fn main() {
+    let p1 = Point { x: 1, y: 5 }
+    let p2 = Point { x: 10, y: p1.y }
+    print(p1.x + p2.x)
+}
+
+struct Point { x: Int, y: Int }
+
+fn print(n: Int) {
+    print_str(to_str(n))
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn to_str(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn int_to_str(n: Int) -> Str {
+    "0123456789abcdefghijklmnopqrstuvwxyz"
+    let mut res = ""
+    let mut n = n
+    while n > 0 {
+        let c = char(n % 10 + ord("0"))
+        res = c + res
+        n = n / 10
+    }
+    res
+}
+
+fn char(n: Int) -> Str {
+    let mut buf = vec(0)
+    buf.push(n)
+    Str(buf)
+}
+
+fn ord(c: Str) -> Int {
+    c.chars().next().unwrap() - ord("0")
+}
+
+fn ord(c: Str) -> Int {
+    let mut chars = c.chars()
+    let first = chars.next().unwrap()
+    let mut sum = 0
+    for c in chars {
+        sum = sum * 26 + int(c) - int("a")
+    }
+    sum + int(first) - int("a")
+}
+
+fn int(c: Str) -> Int {
+    ord(c) - ord("0")
+}
+
+fn break_line() {
+    print_str("\n")
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(vec(), 3), 42) }
+    print(first_big(r.values))            // field access copies: r stays usable
+    let r2 = Reading { label: "lab2", ..r }
+    match second(r2.values) {
+        Some(n) => print(n),
+        None => print_str("too short"),
+    }
+}
+
+struct Reading { label: Str, values: Vec<Int> }
+
+fn first_big(v: Vec<Int>) -> Int {
+    let found = -1
+    for x in v {
+        if x > 10 {
+            found = x
+            break
+        }
+    }
+    found
+}
+
+fn second(v: Vec<Int>) -> Option<Int> {
+    let x = get(v, 1)?
+    Some(x + 1)
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    if i < 0 || i >= len(v) {
+        None
+    } else {
+        Some(v.get(i).unwrap().clone())
+    }
+}
+
+fn len(v: Vec<Int>) -> Int {
+    let mut i = 0
+    for _ in v {
+        i = i + 1
+    }
+    i
+}
+
+fn break_line() {
+    print_str("\n")
+}
+
+fn main() {
+    let p1 = Point { x: 1, y: 5 }
+    let p2 = Point { x: 10, y: p1.y }
+    print(p1.x + p2.x)
+}
+
+struct Point { x: Int, y: Int }
+
+fn print(n: Int) {
+    print_str(to_str(n))
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn to_str(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn int_to_str(n: Int) -> Str {
+    "0123456789abcdefghijklmnopqrstuvwxyz"
+    let mut res = ""
+    let mut n = n
+    while n > 0 {
+        let c = char(n % 10 + ord("0"))
+        res = c + res
+        n = n / 10
+    }
+    res
+}
+
+fn char(n: Int) -> Str {
+    let mut buf = vec(0)
+    buf.push(n)
+    Str(buf)
+}
+
+fn ord(c: Str) -> Int {
+    c.chars().next().unwrap() - ord("0")
+}
+
+fn ord(c: Str) -> Int {
+    let mut chars = c.chars()
+    let first = chars.next().unwrap()
+    let mut sum = 0
+    for c in chars {
+        sum = sum * 26 + int(c) - int("a")
+    }
+    sum + int(first) - int("a")
+}
+
+fn int(c: Str) -> Int {
+    ord(c) - ord("0")
+}
+
+fn break_line() {
+    print_str("\n")
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(vec(), 3), 42) }
+    print(first_big(r.values))            // field access copies: r stays usable
+    let r2 = Reading { label: "lab2", ..r }
+    match second(r2.values) {
+        Some(n) => print(n),

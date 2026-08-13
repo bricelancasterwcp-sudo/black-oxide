@@ -1,0 +1,35 @@
+fn main() {
+    let fig = "fig".to_string()
+    let banana = "banana".to_string()
+    let kiwi = "kiwi".to_string()
+    let mut fruit = fig
+    if fruit.len() < banana.len() {
+        fruit = banana
+    }
+    if fruit.len() < kiwi.len() {
+        fruit = kiwi
+    }
+    print(fruit)
+    print(fruit.len())
+}
+
+fn longest(a: &Str, b: &Str) -> Str {
+    if a.len() > b.len() {
+        a.to_string()
+    } else {
+        b.to_string()
+    }
+}
+
+fn main() {
+    let fig = "fig".to_string()
+    let banana = "banana".to_string()
+    let kiwi = "kiwi".to_string()
+    let mut fruit = fig
+    fruit = longest(&fruit, &banana)
+    if fruit.len() < kiwi.len() {
+        fruit = kiwi
+    }
+    print(fruit)
+    print(fruit.len())
+}

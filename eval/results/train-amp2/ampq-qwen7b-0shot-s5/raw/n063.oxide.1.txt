@@ -1,0 +1,13 @@
+struct Line { price: Int, units: Int }
+
+fn value(line: Line) -> Int {
+    line.price * line.units
+}
+
+fn main() {
+    let line1 = Line { price: 3, units: 4 }
+    let line2 = Line { price: 2, units: 5 }
+    print(value(line1))
+    print(value(line2))
+    print(value(Line { price: 3, units: 4 }) + value(Line { price: 2, units: 5 }))
+}

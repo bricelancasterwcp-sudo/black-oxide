@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut n = 100;
+    let mut p = 0;
+    while n > 0 {
+        n >>= 1;
+        p += 1;
+    }
+    println!("{}", 1 << (p - 1));
+}
+```

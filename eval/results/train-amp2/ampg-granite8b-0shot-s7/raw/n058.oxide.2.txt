@@ -1,0 +1,9 @@
+struct S { x: Int, y: Int }
+
+fn main() {
+    let s = S { x: 3, y: 4 }
+    match s {
+        S(x, _) => print(x),
+        _ => print_str("huh?") <= this_is_a_comment_after_an_expression,
+    }
+}

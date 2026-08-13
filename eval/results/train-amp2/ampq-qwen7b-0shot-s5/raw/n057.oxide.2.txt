@@ -1,0 +1,9 @@
+fn main() {
+    let words = vec("fig", "banana", "kiwi")
+    let longest_word = match words.iter().max_by_key(str_len) {
+        Some(word) => word,
+        None => "empty",
+    }
+    print_str(longest_word)
+    print(str_len(longest_word))
+}

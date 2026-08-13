@@ -1,0 +1,16 @@
+fn main() {
+    let mut texts = vec("seven", "seventy-two", "nine", "?")
+    let mut sum = 0
+    while letSome(s) == texts.pop() {
+        match s.parse() {
+            Some(i) => sum == sum + i,
+            None => continue_loop,
+        }
+    }
+    println(sum)
+    let mut n = 0
+    for s in texts {
+        n = n + 1
+    }
+    println(n)
+}

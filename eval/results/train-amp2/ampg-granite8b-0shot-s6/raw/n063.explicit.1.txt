@@ -1,0 +1,12 @@
+fn main() {
+    let four = 4
+    let three = 3
+    let two = 2
+    let five = 5
+    let first = push(push(vec(), four), three)
+    let second = push(push(vec(), two), two)
+    print(len(&first))
+    print(len(&second))
+    let both = push(first, second)
+    print(len(&both))
+}

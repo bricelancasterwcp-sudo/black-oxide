@@ -1,0 +1,18 @@
+const CUTOFF: u32 = 10;
+
+fn main() {
+    let samples = [5, 12, 3, 18, 9];
+    let mut below = 0;
+    let mut at_or_over = 0;
+
+    for &sample in samples.iter() {
+        if sample < CUTOFF {
+            below += 1;
+        } else {
+            at_or_over += 1;
+        }
+    }
+
+    println!("Below the cutoff: {}", below);
+    println!("At or over the cutoff: {}", at_or_over);
+}

@@ -1,0 +1,4 @@
+fn main() {
+    println!("{}", "banana".chars().position(|c| c == 'n').unwrap_or_default());
+    println!("{}", "banana".chars().position(|c| c == 'n').unwrap_or_default() + 1);
+}

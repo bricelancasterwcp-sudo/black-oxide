@@ -1,0 +1,9 @@
+fn main() {
+    let mut count = 0;
+    for num in 1..=36 {
+        if 36 % num == 0 {
+            count += 1;
+        }
+    }
+    println!("{}", count);
+}

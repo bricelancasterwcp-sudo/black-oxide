@@ -1,0 +1,50 @@
+#![no_std]
+
+mod imp {
+    use core::fmt::Debug;
+
+    pub trait Shape: Debug {
+        fn area(&self) -> f64;
+    }
+
+    #[derive(Debug)]
+    pub struct Square {
+        side: f64,
+    }
+
+    impl Square {
+        pub fn new(side: f64) -> Self {
+            Self { side }
+        }
+    }
+
+    impl Shape for Square {
+        fn area(&self) -> f64 {
+            self.side * self.side
+        }
+    }
+
+    #[derive(Debug)]
+    pub struct Circle {
+        radius: f64,
+    }
+
+    impl Circle {
+        pub const PI: f64 = 3.0;
+
+        pub fn new(radius: f64) -> Self {
+            Self { radius }
+        }
+    }
+
+    impl Shape for Circle {
+        fn area(&self) -> f64 {
+            Self::PI * self.radius * self.radius
+        }
+    }
+}
+
+fn main() {
+    let square = imp::Square::new(4.0);
+    println!("Area of square: {}", square.area());
+}

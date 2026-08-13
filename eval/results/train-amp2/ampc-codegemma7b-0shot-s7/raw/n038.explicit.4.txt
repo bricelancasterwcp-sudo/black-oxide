@@ -1,0 +1,423 @@
+fn main() {
+    let mut device = Device { sensor: Sensor { reading: 0 } }
+    device.sensor.reading = 7
+    print(device.sensor.reading)
+    drop device
+}
+
+struct Device {
+    sensor: Sensor,
+}
+
+struct Sensor {
+    reading: Int,
+}
+
+fn print(x: Int) {
+    let _ = x
+}
+
+fn drop_impl(_: Device) {
+    let _ = _
+}
+
+fn clone(_: Device) -> Device {
+    let _ = _
+    device
+}
+
+fn push(_: Device, _: Int) -> Device {
+    let _ = _
+    device
+}
+
+fn get(_: Device, _: Int) -> Option<Int> {
+    let _ = _
+    None
+}
+
+fn len(_: Device) -> Int {
+    let _ = _
+    0
+}
+
+fn range(_: Int, _: Int) -> Vec<Int> {
+    let _ = _
+    vec()
+}
+
+fn to_float(_: Int) -> Float {
+    let _ = _
+    0.0
+}
+
+fn trunc(_: Float) -> Int {
+    let _ = _
+    0
+}
+
+fn str_len(_: Str) -> Int {
+    let _ = _
+    0
+}
+
+fn chars(_: Str) -> Vec<Str> {
+    let _ = _
+    vec()
+}
+
+fn int_to_str(_: Int) -> Str {
+    let _ = _
+    "0"
+}
+
+fn parse_int(_: Str) -> Option<Int> {
+    let _ = _
+    None
+}
+
+fn print_str(_: Str) {
+    let _ = _
+}
+
+fn vec() -> Vec<Int> {
+    let _ = _
+    vec()
+}
+
+fn drop_impl(_: Sensor) {
+    let _ = _
+}
+
+fn clone(_: Sensor) -> Sensor {
+    let _ = _
+    sensor
+}
+
+fn push(_: Sensor, _: Int) -> Sensor {
+    let _ = _
+    sensor
+}
+
+fn get(_: Sensor, _: Int) -> Option<Int> {
+    let _ = _
+    None
+}
+
+fn len(_: Sensor) -> Int {
+    let _ = _
+    0
+}
+
+fn range(_: Int, _: Int) -> Vec<Int> {
+    let _ = _
+    vec()
+}
+
+fn to_float(_: Int) -> Float {
+    let _ = _
+    0.0
+}
+
+fn trunc(_: Float) -> Int {
+    let _ = _
+    0
+}
+
+fn str_len(_: Str) -> Int {
+    let _ = _
+    0
+}
+
+fn chars(_: Str) -> Vec<Str> {
+    let _ = _
+    vec()
+}
+
+fn int_to_str(_: Int) -> Str {
+    let _ = _
+    "0"
+}
+
+fn parse_int(_: Str) -> Option<Int> {
+    let _ = _
+    None
+}
+
+fn print_str(_: Str) {
+    let _ = _
+}
+
+fn vec() -> Vec<Int> {
+    let _ = _
+    vec()
+}
+
+fn drop_impl(_: Int) {
+    let _ = _
+}
+
+fn clone(_: Int) -> Int {
+    let _ = _
+    0
+}
+
+fn push(_: Vec<Int>, _: Int) -> Vec<Int> {
+    let _ = _
+    vec()
+}
+
+fn get(_: Vec<Int>, _: Int) -> Option<Int> {
+    let _ = _
+    None
+}
+
+fn len(_: Vec<Int>) -> Int {
+    let _ = _
+    0
+}
+
+fn range(_: Int, _: Int) -> Vec<Int> {
+    let _ = _
+    vec()
+}
+
+fn to_float(_: Int) -> Float {
+    let _ = _
+    0.0
+}
+
+fn trunc(_: Float) -> Int {
+    let _ = _
+    0
+}
+
+fn str_len(_: Str) -> Int {
+    let _ = _
+    0
+}
+
+fn chars(_: Str) -> Vec<Str> {
+    let _ = _
+    vec()
+}
+
+fn int_to_str(_: Int) -> Str {
+    let _ = _
+    "0"
+}
+
+fn parse_int(_: Str) -> Option<Int> {
+    let _ = _
+    None
+}
+
+fn print_str(_: Str) {
+    let _ = _
+}
+
+fn vec() -> Vec<Int> {
+    let _ = _
+    vec()
+}
+
+fn drop_impl(_: Float) {
+    let _ = _
+}
+
+fn clone(_: Float) -> Float {
+    let _ = _
+    0.0
+}
+
+fn push(_: Float, _: Int) -> Float {
+    let _ = _
+    0.0
+}
+
+fn get(_: Float, _: Int) -> Option<Int> {
+    let _ = _
+    None
+}
+
+fn len(_: Float) -> Int {
+    let _ = _
+    0
+}
+
+fn range(_: Int, _: Int) -> Vec<Int> {
+    let _ = _
+    vec()
+}
+
+fn to_float(_: Int) -> Float {
+    let _ = _
+    0.0
+}
+
+fn trunc(_: Float) -> Int {
+    let _ = _
+    0
+}
+
+fn str_len(_: Str) -> Int {
+    let _ = _
+    0
+}
+
+fn chars(_: Str) -> Vec<Str> {
+    let _ = _
+    vec()
+}
+
+fn int_to_str(_: Int) -> Str {
+    let _ = _
+    "0"
+}
+
+fn parse_int(_: Str) -> Option<Int> {
+    let _ = _
+    None
+}
+
+fn print_str(_: Str) {
+    let _ = _
+}
+
+fn vec() -> Vec<Int> {
+    let _ = _
+    vec()
+}
+
+fn drop_impl(_: Str) {
+    let _ = _
+}
+
+fn clone(_: Str) -> Str {
+    let _ = _
+    "0".to_string()
+}
+
+fn push(_: Str, _: Int) -> Str {
+    let _ = _
+    "0".to_string()
+}
+
+fn get(_: Str, _: Int) -> Option<Int> {
+    let _ = _
+    None
+}
+
+fn len(_: Str) -> Int {
+    let _ = _
+    0
+}
+
+fn range(_: Int, _: Int) -> Vec<Int> {
+    let _ = _
+    vec()
+}
+
+fn to_float(_: Int) -> Float {
+    let _ = _
+    0.0
+}
+
+fn trunc(_: Float) -> Int {
+    let _ = _
+    0
+}
+
+fn str_len(_: Str) -> Int {
+    let _ = _
+    0
+}
+
+fn chars(_: Str) -> Vec<Str> {
+    let _ = _
+    vec()
+}
+
+fn main() {
+    let mut device = Device { sensor: Sensor { reading: 0 } }
+    device.sensor.reading = 7
+    print(device.sensor.reading)
+    drop device
+}
+
+struct Device {
+    sensor: Sensor,
+}
+
+struct Sensor {
+    reading: Int,
+}
+
+fn print(x: Int) {
+    let _ = x
+}
+
+fn drop_impl(_: Device) {
+    let _ = _
+}
+
+fn clone(_: Device) -> Device {
+    let _ = _
+    device
+}
+
+fn push(_: Device, _: Int) -> Device {
+    let _ = _
+    device
+}
+
+fn get(_: Device, _: Int) -> Option<Int> {
+    let _ = _
+    None
+}
+
+fn len(_: Device) -> Int {
+    let _ = _
+    0
+}
+
+fn range(_: Int, _: Int) -> Vec<Int> {
+    let _ = _
+    vec()
+}
+
+fn to_float(_: Int) -> Float {
+    let _ = _
+    0.0
+}
+
+fn trunc(_: Float) -> Int {
+    let _ = _
+    0
+}
+
+fn str_len(_: Str) -> Int {
+    let _ = _
+    0
+}
+
+fn chars(_: Str) -> Vec<Str> {
+    let _ = _
+    vec()
+}
+
+fn int_to_str(_: Int) -> Str {
+    let _ = _
+    "0"
+}
+
+fn parse_int(_: Str) -> Option<Int> {
+    let _ = _
+    None
+}
+
+fn print_str(_: Str) {
+    let _ = _
+}
+
+fn

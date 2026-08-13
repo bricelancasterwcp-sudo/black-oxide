@@ -1,0 +1,10 @@
+struct Word { letters: Vec<Char> }
+
+fn reverse(w: Word) -> Word {
+    Word(reverse(w.letters))
+}
+
+fn main() {
+    let word = Word("drum".chars().collect())
+    print(reverse(word).letters)
+}

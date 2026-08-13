@@ -1,0 +1,22 @@
+struct EvenNumbers { start: Int, end: Int }
+
+fn collect(s: EvenNumbers) -> Vec<Int> {
+    let mut result = vec()
+    let mut i = s.start
+    while i <= s.end {
+        result = push(result, i)
+        i = i + 2
+    }
+    result
+}
+
+fn print_in_reverse(v: Vec<Int>) {
+    for i in range(len(v), 0, -1) {
+        print(get(v, i - 1)?)
+    }
+}
+
+fn main() {
+    let result = collect(EvenNumbers { start: 1, end: 10 })
+    print_in_reverse(result)
+}

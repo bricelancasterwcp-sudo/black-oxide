@@ -1,0 +1,7 @@
+fn main() {
+    let mut seq = [9, 2, 7, 4];
+    seq.sort_unstable();
+    for num in seq {
+        println!("{}", num);
+    }
+}

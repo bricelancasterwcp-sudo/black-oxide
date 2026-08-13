@@ -1,0 +1,218 @@
+fn sum_known(nums: Vec<Option<Int>>) -> Result<Int, String> {
+    let total = nums.iter().fold(0, add_if_some)
+    Ok(total)
+}
+
+fn add_if_some(acc: Int, n: Option<Int>) -> Result<Int, String> {
+    match n {
+        Some(x) => Ok(acc + x),
+        None => Ok(acc),
+    }
+}
+
+fn main() {
+    let nums = vec(Some(7), None, Some(Some(9)), Some(9), None, Some(3))
+    match sum_known(nums) {
+        Ok(total) => print(total),
+        Err(msg) => print_str(msg),
+    }
+    let nums = vec(Some(7), None, None, Some(9), None, Some(3))
+    match sum_known(nums) {
+        Ok(total) => print(total),
+        Err(msg) => print_str(msg),
+    }
+}
+
+fn add_if_some(acc: Int, n: Option<Int>) -> Result<Int, String> {
+    match n {
+        Some(x) => Ok(acc + x),
+        None => Ok(acc),
+    }
+}
+
+fn sum_known(nums: Vec<Option<Int>>) -> Result<Int, String> {
+    let total = nums.iter().fold(0, add_if_some)
+    Ok(total)
+}
+
+fn add_if_some(acc: Int, n: Option<Int>) -> Result<Int, String> {
+    match n {
+        Some(x) => Ok(acc + x),
+        None => Ok(acc),
+    }
+}
+
+fn main() {
+    let nums = vec(Some(7), None, Some(Some(9)), Some(9), None, Some(3))
+    match sum_known(nums) {
+        Ok(total) => print(total),
+        Err(msg) => print_str(msg),
+    }
+    let nums = vec(Some(7), None, None, Some(9), None, Some(3))
+    match sum_known(nums) {
+        Ok(total) => print(total),
+        Err(msg) => print_str(msg),
+    }
+}
+
+fn add_if_some(acc: Int, n: Option<Int>) -> Result<Int, String> {
+    match n {
+        Some(x) => Ok(acc + x),
+        None => Ok(acc),
+    }
+}
+
+fn sum_known(nums: Vec<Option<Int>>) -> Result<Int, String> {
+    let total = nums.iter().fold(0, add_if_some)
+    Ok(total)
+}
+
+fn add_if_some(acc: Int, n: Option<Int>) -> Result<Int, String> {
+    match n {
+        Some(x) => Ok(acc + x),
+        None => Ok(acc),
+    }
+}
+
+fn main() {
+    let nums = vec(Some(7), None, Some(Some(9)), Some(9), None, Some(3))
+    match sum_known(nums) {
+        Ok(total) => print(total),
+        Err(msg) => print_str(msg),
+    }
+    let nums = vec(Some(7), None, None, Some(9), None, Some(3))
+    match sum_known(nums) {
+        Ok(total) => print(total),
+        Err(msg) => print_str(msg),
+    }
+}
+
+fn add_if_some(acc: Int, n: Option<Int>) -> Result<Int, String> {
+    match n {
+        Some(x) => Ok(acc + x),
+        None => Ok(acc),
+    }
+}
+
+fn sum_known(nums: Vec<Option<Int>>) -> Result<Int, String> {
+    let total = nums.iter().fold(0, add_if_some)
+    Ok(total)
+}
+
+fn add_if_some(acc: Int, n: Option<Int>) -> Result<Int, String> {
+    match n {
+        Some(x) => Ok(acc + x),
+        None => Ok(acc),
+    }
+}
+
+fn main() {
+    let nums = vec(Some(7), None, Some(Some(9)), Some(9), None, Some(3))
+    match sum_known(nums) {
+        Ok(total) => print(total),
+        Err(msg) => print_str(msg),
+    }
+    let nums = vec(Some(7), None, None, Some(9), None, Some(3))
+    match sum_known(nums) {
+        Ok(total) => print(total),
+        Err(msg) => print_str(msg),
+    }
+}
+
+fn add_if_some(acc: Int, n: Option<Int>) -> Result<Int, String> {
+    match n {
+        Some(x) => Ok(acc + x),
+        None => Ok(acc),
+    }
+}
+
+fn sum_known(nums: Vec<Option<Int>>) -> Result<Int, String> {
+    let total = nums.iter().fold(0, add_if_some)
+    Ok(total)
+}
+
+fn add_if_some(acc: Int, n: Option<Int>) -> Result<Int, String> {
+    match n {
+        Some(x) => Ok(acc + x),
+        None => Ok(acc),
+    }
+}
+
+fn main() {
+    let nums = vec(Some(7), None, Some(Some(9)), Some(9), None, Some(3))
+    match sum_known(nums) {
+        Ok(total) => print(total),
+        Err(msg) => print_str(msg),
+    }
+    let nums = vec(Some(7), None, None, Some(9), None, Some(3))
+    match sum_known(nums) {
+        Ok(total) => print(total),
+        Err(msg) => print_str(msg),
+    }
+}
+
+fn add_if_some(acc: Int, n: Option<Int>) -> Result<Int, String> {
+    match n {
+        Some(x) => Ok(acc + x),
+        None => Ok(acc),
+    }
+}
+
+fn sum_known(nums: Vec<Option<Int>>) -> Result<Int, String> {
+    let total = nums.iter().fold(0, add_if_some)
+    Ok(total)
+}
+
+fn add_if_some(acc: Int, n: Option<Int>) -> Result<Int, String> {
+    match n {
+        Some(x) => Ok(acc + x),
+        None => Ok(acc),
+    }
+}
+
+fn main() {
+    let nums = vec(Some(7), None, Some(Some(9)), Some(9), None, Some(3))
+    match sum_known(nums) {
+        Ok(total) => print(total),
+        Err(msg) => print_str(msg),
+    }
+    let nums = vec(Some(7), None, None, Some(9), None, Some(3))
+    match sum_known(nums) {
+        Ok(total) => print(total),
+        Err(msg) => print_str(msg),
+    }
+}
+
+fn add_if_some(acc: Int, n: Option<Int>) -> Result<Int, String> {
+    match n {
+        Some(x) => Ok(acc + x),
+        None => Ok(acc),
+    }
+}
+
+fn sum_known(nums: Vec<Option<Int>>) -> Result<Int, String> {
+    let total = nums.iter().fold(0, add_if_some)
+    Ok(total)
+}
+
+fn add_if_some(acc: Int, n: Option<Int>) -> Result<Int, String> {
+    match n {
+        Some(x) => Ok(acc + x),
+        None => Ok(acc),
+    }
+}
+
+fn main() {
+    let nums = vec(Some(7), None, Some(Some(9)), Some(9), None, Some(3))
+    match sum_known(nums) {
+        Ok(total) => print(total),
+        Err(msg) => print_str(msg),
+    }
+    let nums = vec(Some(7), None, None, Some(9), None, Some(3))
+    match sum_known(nums) {
+        Ok(total) => print(total),
+        Err(msg) => print_str(msg),
+    }
+}
+
+fn add_if_some

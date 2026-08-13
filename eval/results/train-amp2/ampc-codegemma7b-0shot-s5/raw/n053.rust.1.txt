@@ -1,0 +1,5 @@
+fn main() {
+    let word = "drum".chars().rev().collect::<String>();
+    println!("{}", word);
+    println!("{}", "drum");
+}

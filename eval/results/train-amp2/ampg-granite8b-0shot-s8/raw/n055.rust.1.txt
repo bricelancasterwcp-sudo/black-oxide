@@ -1,0 +1,26 @@
+```rust
+fn main() {
+    let mut line = String::new();
+    std::io::stdin().read_line(&mut line).unwrap();
+    match line.trim().parse::<u32>() {
+        Ok(num) => println!("{}", num),
+        Err(_) => println!("bad"),
+    }
+
+    let mut line = String::new();
+    std::io::stdin().read_line(&mut line).unwrap();
+    match line.trim() {
+        "8" => println!("8"),
+        "oak" => println!("oak"),
+        "15" => println!("15"),
+        _ => println!("bad"),
+    }
+
+    let mut line = String::new();
+    std::io::stdin().read_line(&mut line).unwrap();
+    match line.trim().parse::<u32>() {
+        Ok(num) => println!("{}", num),
+        Err(_) => println!("bad"),
+    }
+}
+```

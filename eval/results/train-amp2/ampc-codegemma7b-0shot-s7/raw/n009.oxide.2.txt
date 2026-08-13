@@ -1,0 +1,13 @@
+fn digits(n: Int) -> Str {
+    let mut digits = vec()
+    let mut nn = n
+    while nn > 0 {
+        digits.push(int_to_str(nn % 10))
+        nn = trunc(nn / 10)
+    }
+    concat(digits.into_iter().rev().collect()).into_str()
+}
+
+fn main() {
+    print(digits(1234))
+}

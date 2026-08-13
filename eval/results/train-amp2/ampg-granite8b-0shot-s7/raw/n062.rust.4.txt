@@ -1,0 +1,12 @@
+fn main() {
+  let mut input = String::new();
+  std::io::stdin().read_line(&mut input).unwrap();
+  let input = input.trim();
+  let output = match input {
+    "green" => "go for green",
+    "red" => "stop for red",
+    "yellow" => "wait for yellow",
+    _ => "no idea"
+  };
+  println!("{}", output);
+}

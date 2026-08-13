@@ -1,0 +1,322 @@
+fn main() {
+    let mut r = Rectangle { width: 2, height: 3 }
+    r.width = 5
+    print(r.area())
+}
+
+struct Rectangle { width: Int, height: Int }
+
+fn area(self: Rectangle) -> Int {
+    self.width * self.height
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    for c in chars(s) {
+        print(ord(c))
+    }
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut v = vec()
+    for c in s.chars() {
+        v.push(str_from_char(c))
+    }
+    v
+}
+
+fn str_from_char(c: Char) -> Str {
+    let mut s = vec()
+    s.push(c)
+    Str(s)
+}
+
+fn ord(c: Char) -> Int {
+    c.code_point()
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut s = vec()
+    let mut nn = n
+    while nn != 0 {
+        let digit = nn % 10
+        s.push(char(digit + ord_0))
+        nn = nn / 10
+    }
+    if s.len() == 0 {
+        s.push(char(ord_0))
+    }
+    Str(s)
+}
+
+fn char(c: Int) -> Char {
+    Char(c)
+}
+
+fn ord_0() -> Int {
+    48
+}
+
+struct Char { code_point: Int }
+
+fn code_point(self: Char) -> Int {
+    self.code_point
+}
+
+struct Str { data: Vec<Char> }
+
+fn data(self: Str) -> Vec<Char> {
+    self.data
+}
+
+fn chars(self: Str) -> Vec<Char> {
+    self.data.clone()
+}
+
+fn push(v: Vec<Char>, c: Char) -> Vec<Char> {
+    let mut v2 = v
+    v2.push(c)
+    v2
+}
+
+fn str_len(s: Str) -> Int {
+    s.data.len()
+}
+
+fn print_str(s: Str) {
+    for c in s.chars() {
+        print(ord(c))
+    }
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn main() {
+    let mut r = Rectangle { width: 2, height: 3 }
+    r.width = 5
+    print(r.area())
+}
+
+struct Rectangle { width: Int, height: Int }
+
+fn area(self: Rectangle) -> Int {
+    self.width * self.height
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    for c in chars(s) {
+        print(ord(c))
+    }
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut v = vec()
+    for c in s.chars() {
+        v.push(str_from_char(c))
+    }
+    v
+}
+
+fn str_from_char(c: Char) -> Str {
+    let mut s = vec()
+    s.push(c)
+    Str(s)
+}
+
+fn ord(c: Char) -> Int {
+    c.code_point()
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut s = vec()
+    let mut nn = n
+    while nn != 0 {
+        let digit = nn % 10
+        s.push(char(digit + ord_0))
+        nn = nn / 10
+    }
+    if s.len() == 0 {
+        s.push(char(ord_0))
+    }
+    Str(s)
+}
+
+fn char(c: Int) -> Char {
+    Char(c)
+}
+
+fn ord_0() -> Int {
+    48
+}
+
+struct Char { code_point: Int }
+
+fn code_point(self: Char) -> Int {
+    self.code_point
+}
+
+struct Str { data: Vec<Char> }
+
+fn data(self: Str) -> Vec<Char> {
+    self.data
+}
+
+fn chars(self: Str) -> Vec<Char> {
+    self.data.clone()
+}
+
+fn push(v: Vec<Char>, c: Char) -> Vec<Char> {
+    let mut v2 = v
+    v2.push(c)
+    v2
+}
+
+fn str_len(s: Str) -> Int {
+    s.data.len()
+}
+
+fn print_str(s: Str) {
+    for c in s.chars() {
+        print(ord(c))
+    }
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn main() {
+    let mut r = Rectangle { width: 2, height: 3 }
+    r.width = 5
+    print(r.area())
+}
+
+struct Rectangle { width: Int, height: Int }
+
+fn area(self: Rectangle) -> Int {
+    self.width * self.height
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    for c in chars(s) {
+        print(ord(c))
+    }
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut v = vec()
+    for c in s.chars() {
+        v.push(str_from_char(c))
+    }
+    v
+}
+
+fn str_from_char(c: Char) -> Str {
+    let mut s = vec()
+    s.push(c)
+    Str(s)
+}
+
+fn ord(c: Char) -> Int {
+    c.code_point()
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut s = vec()
+    let mut nn = n
+    while nn != 0 {
+        let digit = nn % 10
+        s.push(char(digit + ord_0))
+        nn = nn / 10
+    }
+    if s.len() == 0 {
+        s.push(char(ord_0))
+    }
+    Str(s)
+}
+
+fn char(c: Int) -> Char {
+    Char(c)
+}
+
+fn ord_0() -> Int {
+    48
+}
+
+struct Char { code_point: Int }
+
+fn code_point(self: Char) -> Int {
+    self.code_point
+}
+
+struct Str { data: Vec<Char> }
+
+fn data(self: Str) -> Vec<Char> {
+    self.data
+}
+
+fn chars(self: Str) -> Vec<Char> {
+    self.data.clone()
+}
+
+fn push(v: Vec<Char>, c: Char) -> Vec<Char> {
+    let mut v2 = v
+    v2.push(c)
+    v2
+}
+
+fn str_len(s: Str) -> Int {
+    s.data.len()
+}
+
+fn print_str(s: Str) {
+    for c in s.chars() {
+        print(ord(c))
+    }
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn main() {
+    let mut r = Rectangle { width: 2, height: 3 }
+    r.width = 5
+    print(r.area())
+}
+
+struct Rectangle { width: Int, height: Int }
+
+fn area(self: Rectangle) -> Int {
+    self.width * self.height
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    for c in chars(s) {
+        print(ord(c))
+    }
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut v = vec()
+    for c in s.chars() {
+        v.push(str_from_char(c))
+    }
+    v

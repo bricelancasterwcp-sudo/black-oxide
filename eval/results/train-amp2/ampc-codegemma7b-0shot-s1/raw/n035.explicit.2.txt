@@ -1,0 +1,303 @@
+fn divide(a: Float, b: Float) -> Result<Float, String> {
+    if b == 0.0 {
+        Err("Division by zero!".to_string())
+    } else {
+        Ok(a / b)
+    }
+}
+
+fn main() {
+    let result = divide(20.0, 4.0).unwrap_or_else(println)
+    print(result)
+    let result = divide(20.0, 0.0).unwrap_or_else(println)
+    print(result)
+}
+
+fn println(msg: &Str) {
+    print(msg)
+    print("\n")
+}
+
+fn print(msg: &Str) {
+    for c in msg.chars() {
+        print(c)
+    }
+}
+
+fn print(n: Int) {
+    if n >= 10 {
+        print(n / 10)
+        print(n % 10)
+    } else {
+        print(n)
+    }
+}
+
+fn print(f: Float) {
+    let s = int_to_str(trunc(f))
+    print(s)
+    if f - trunc(f) >= 0.5 {
+        print(".5")
+    } else if f - trunc(f) >= 0.25 {
+        print(".25")
+    } else if f - trunc(f) >= 0.125 {
+        print(".125")
+    } else {
+        print(".0")
+    }
+}
+
+fn int_to_str(n: Int) -> Str {
+    if n >= 10 {
+        let s = int_to_str(n / 10)
+        return concat(s, int_to_str(n % 10))
+    } else {
+        return str_len("0") + n
+    }
+}
+
+fn str_len(s: &Str) -> Str {
+    let mut len = 0
+    for _ in s.chars() {
+        len = len + 1
+    }
+    return len
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    let mut result = a.to_string()
+    result.push_str(&b)
+    return result
+}
+
+fn trunc(x: Float) -> Int {
+    if x >= 0.0 {
+        return int(x)
+    } else {
+        return int(x) - 1
+    }
+}
+
+fn int(x: Float) -> Int {
+    return x
+}
+
+fn float(x: Int) -> Float {
+    return x
+}
+
+fn bool(x: Int) -> Bool {
+    if x == 0 {
+        return false
+    } else {
+        return true
+    }
+}
+
+fn str(x: &Str) -> Str {
+    return x.to_string()
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut result = vec()
+    for c in s.chars() {
+        result.push(str(c))
+    }
+    return result
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in a + 1 < b {
+        result.push(i)
+    }
+    return result
+}
+
+fn clone(x: &T) -> T {
+    return x.clone()
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    let mut result = v
+    result.push(x)
+    return result
+}
+
+fn len(v: &Vec<T>) -> Int {
+    return v.len()
+}
+
+fn get(v: &Vec<T>, i: Int) -> Option<T> {
+    if i >= 0 && i < v.len() {
+        return Some(v.get(i).unwrap())
+    } else {
+        return None
+    }
+}
+
+fn vec() -> Vec<T> {
+    return vec()
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn print(x: &Str) {
+    for c in x.chars() {
+        print(c)
+    }
+}
+
+fn print(n: Int) {
+    if n >= 10 {
+        print(n / 10)
+        print(n % 10)
+    } else {
+        print(n)
+    }
+}
+
+fn print(f: Float) {
+    let s = int_to_str(trunc(f))
+    print(s)
+    if f - trunc(f) >= 0.5 {
+        print(".5")
+    } else if f - trunc(f) >= 0.25 {
+        print(".25")
+    } else if f - trunc(f) >= 0.125 {
+        print(".125")
+    } else {
+        print(".0")
+    }
+}
+
+fn int_to_str(n: Int) -> Str {
+    if n >= 10 {
+        let s = int_to_str(n / 10)
+        return concat(s, int_to_str(n % 10))
+    } else {
+        return str_len("0") + n
+    }
+}
+
+fn str_len(s: &Str) -> Str {
+    let mut len = 0
+    for _ in s.chars() {
+        len = len + 1
+    }
+    return len
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    let mut result = a.to_string()
+    result.push_str(&b)
+    return result
+}
+
+fn trunc(x: Float) -> Int {
+    if x >= 0.0 {
+        return int(x)
+    } else {
+        return int(x) - 1
+    }
+}
+
+fn int(x: Float) -> Int {
+    return x
+}
+
+fn float(x: Int) -> Float {
+    return x
+}
+
+fn bool(x: Int) -> Bool {
+    if x == 0 {
+        return false
+    } else {
+        return true
+    }
+}
+
+fn str(x: &Str) -> Str {
+    return x.to_string()
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut result = vec()
+    for c in s.chars() {
+        result.push(str(c))
+    }
+    return result
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in a + 1 < b {
+        result.push(i)
+    }
+    return result
+}
+
+fn clone(x: &T) -> T {
+    return x.clone()
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    let mut result = v
+    result.push(x)
+    return result
+}
+
+fn len(v: &Vec<T>) -> Int {
+    return v.len()
+}
+
+fn get(v: &Vec<T>, i: Int) -> Option<T> {
+    if i >= 0 && i < v.len() {
+        return Some(v.get(i).unwrap())
+    } else {
+        return None
+    }
+}
+
+fn vec() -> Vec<T> {
+    return vec()
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn print(x: &Str) {
+    for c in x.chars() {
+        print(c)
+    }
+}
+
+fn print(n: Int) {
+    if n >= 10 {
+        print(n / 10)
+        print(n % 10)
+    } else {
+        print(n)
+    }
+}
+
+fn print(f: Float) {
+    let s = int_to_str(trunc(f))
+    print(s)
+    if f - trunc(f) >= 0.5 {
+        print(".5")
+    } else if f - trunc(f) >= 0.25 {
+        print(".25")
+    } else if f - trunc(f) >= 0.125 {
+        print(".125")
+    } else {
+        print(".0")
+    }
+}
+
+fn int_to_str(n: Int) -> Str {
+    if n >= 10 {

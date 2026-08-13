@@ -1,0 +1,24 @@
+fn list() -> List<Int> {
+    push(push(vec(), 10), 20)
+}
+
+fn get(l: &List<Int>, pos: Int) -> Option<Int> {
+    if pos == 0 {
+        return Some(l.head)
+    } else {
+        return get(&l, pos - 1)
+    }
+}
+
+fn print_list(l: &List<Int>) {
+    if letSome(head) == get(l, 0) {
+        print(head)
+        print_list(&l)
+    }
+}
+
+fn main() {
+    let l = list()
+    print_list(&l)
+    drop l
+}

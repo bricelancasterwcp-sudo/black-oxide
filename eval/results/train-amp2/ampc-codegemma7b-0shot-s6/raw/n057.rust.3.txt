@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let mut longest_name = "";
+    let mut longest_length = 0;
+
+    let names = ["fig", "banana", "kiwi"];
+
+    for name in names {
+        if name.len() > longest_length {
+            longest_name = name;
+            longest_length = name.len();
+        }
+    }
+
+    println!("Longest name: {}", longest_name);
+    println!("Letter count: {}", longest_length);
+}
+```

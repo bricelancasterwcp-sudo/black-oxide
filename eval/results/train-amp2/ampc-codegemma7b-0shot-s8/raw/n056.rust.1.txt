@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let mut total = 0;
+    let mut count = 0;
+
+    for c in "7,x,9,?" {
+        if let '0'..='9' = c {
+            total += c as i32 - '0' as i32;
+            count += 1;
+        }
+    }
+
+    println!("Total: {}", total);
+    println!("Count: {}", count);
+}
+```

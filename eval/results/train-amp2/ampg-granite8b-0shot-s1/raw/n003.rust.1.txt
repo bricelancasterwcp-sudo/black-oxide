@@ -1,0 +1,3 @@
+fn main() {
+    println!("{}", (1..=36).filter(|&x| 36 % x == 0).count())
+}

@@ -1,0 +1,7 @@
+fn main() {
+    let mut entries = vec(6, 7, 8, 9)
+    let first = entries.first()
+    entries.pop()
+    print(first)
+    print(entries.last())
+}

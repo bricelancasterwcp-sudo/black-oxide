@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let mut rect = Rectangle { width: 2, height: 3 };
+    rect.width = 5;
+    println!("The area of the rectangle is {} square pixels.", area(&rect));
+}
+
+fn area(rectangle: &Rectangle) -> u32 {
+    rectangle.width * rectangle.height
+}
+
+struct Rectangle {
+    width: u32,
+    height: u32,
+}
+```

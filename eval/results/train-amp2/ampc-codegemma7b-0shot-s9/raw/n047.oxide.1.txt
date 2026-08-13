@@ -1,0 +1,12 @@
+fn main() {
+    let mut v = vec_int(0, 10)
+    let mut result = vec()
+    for x in v {
+        if x % 2 == 0 {
+            result = push(result, x)
+        }
+    }
+    for y in range(len(result), 0, -1) {
+        print(get(result, y)?)
+    }
+}

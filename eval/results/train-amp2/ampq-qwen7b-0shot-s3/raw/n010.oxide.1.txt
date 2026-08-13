@@ -1,0 +1,14 @@
+fn main() {
+    let mut is_prime = true
+    for i in range(2, 91) {
+        if 91 % i == 0 {
+            is_prime = false
+            break
+        }
+    }
+    if is_prime {
+        print_str("yes")
+    } else {
+        print_str("no")
+    }
+}

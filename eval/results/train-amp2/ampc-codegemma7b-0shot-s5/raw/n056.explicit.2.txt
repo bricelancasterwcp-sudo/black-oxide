@@ -1,0 +1,44 @@
+fn sum_7x9(nums: &Vec<Option<Int>>) -> Option<Int> {
+    let mut total = None
+    for x in nums {
+        match x {
+            Some(y) => {
+                if y % 7 == 0 || y % 9 == 0 {
+                    total = match total {
+                        Some(z) => Some(z + y),
+                        None => Some(y),
+                    }
+                }
+            },
+            None => continue_opt(),
+        }
+    }
+    total
+}
+
+fn count_7x9(nums: &Vec<Option<Int>>) -> Option<Int> {
+    let mut count = None
+    for x in nums {
+        match x {
+            Some(y) => {
+                if y % 7 == 0 || y % 9 == 0 {
+                    count = match count {
+                        Some(z) => Some(z + 1),
+                        None => Some(1),
+                    }
+                }
+            },
+            None => continue_opt(),
+        }
+    }
+    count
+}
+
+fn main() {
+    let nums = vec(Some(7), None, Some(21), Some(27), Some(45), None, Some(9), Some(18), None, Some(27))
+    let total = sum_7x9(&nums)
+    let count = count_7x9(&nums)
+    print(total)
+    print(count)
+    drop nums
+}

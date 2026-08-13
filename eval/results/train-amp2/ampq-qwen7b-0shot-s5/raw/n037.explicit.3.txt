@@ -1,0 +1,6 @@
+fn main() {
+    let width = 2.0 * 3.0
+    let area = width * to_float(5.0)
+    print(to_str(area))
+    drop area
+}

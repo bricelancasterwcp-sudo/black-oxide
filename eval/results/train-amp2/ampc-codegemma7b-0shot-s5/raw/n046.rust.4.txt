@@ -1,0 +1,15 @@
+fn main() {
+    let samples = [5, 12, 3, 18, 9];
+    let cutoff = 10;
+    let (under_cutoff, over_cutoff) = samples
+        .iter()
+        .fold((0, 0), |(under, over), &sample| {
+            if sample < cutoff {
+                (under + 1, over)
+            } else {
+                (under, over + 1)
+            }
+        });
+    println!("Under cutoff: {}", under_cutoff);
+    println!("Over cutoff: {}", over_cutoff);
+}

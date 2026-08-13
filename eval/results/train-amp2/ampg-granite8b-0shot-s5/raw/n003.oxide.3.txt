@@ -1,0 +1,22 @@
+struct Point { x: Float, y: Float }
+
+fn dist2(p: Point) -> Float {
+    p.x * p.x + p.y * p.y
+}
+
+fn main() {
+    let mut best = Point { x: 0.0, y: 0.0 }
+    let mut max_dist = 0.0
+    for i in range(0, 100) {
+        for j in range(0, 100) {
+            let p = Point { x: to_float(i), y: to_float(j) }
+            let cur_dist = dist2(p)
+            if cur_dist > max_dist {
+                max_dist = cur_dist
+                best = p
+            }
+        }
+    }
+    print_str("Best: ")
+    print(best)
+}

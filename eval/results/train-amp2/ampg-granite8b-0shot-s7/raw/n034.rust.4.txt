@@ -1,0 +1,31 @@
+fn get_second(list: &[i32]) -> Option<&i32> {
+    if list.len() < 2 {
+        return None;
+    }
+    Some(&list[1])
+}
+
+fn main() {
+    let list1 = vec![7, 8, 9];
+    let list2 = vec![7];
+    let list3 = vec![];
+
+    let result1 = get_second(&list1);
+    let result2 = get_second(&list2);
+    let result3 = get_second(&list3);
+
+    match result1 {
+        Some(val) => println!("Second element in list1: {}", val),
+        None => println!("No second element in list1"),
+    }
+
+    match result2 {
+        Some(val) => println!("Second element in list2: {}", val),
+        None => println!("No second element in list2"),
+    }
+
+    match result3 {
+        Some(val) => println!("Second element in list3: {}", val),
+        None => println!("No second element in list3"),
+    }
+}

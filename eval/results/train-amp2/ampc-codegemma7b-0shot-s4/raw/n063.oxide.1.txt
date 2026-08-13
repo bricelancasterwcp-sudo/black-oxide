@@ -1,0 +1,7 @@
+fn main() {
+    let p1 = 4 * 3
+    let p2 = 5 * 2
+    print(p1)
+    print(p2)
+    print(p1 + p2)
+}

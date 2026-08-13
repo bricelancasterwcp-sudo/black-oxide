@@ -1,0 +1,13 @@
+fn main() {
+    let mut out = vec_int()
+    for x in range(1, 11) {
+        if x % 2 == 0 {
+            out = push(out, x)
+        }
+    }
+    let mut i = len(out) - 1
+    while i >= 0 {
+        print(get(out, i)?)
+        i = i - 1
+    }
+}

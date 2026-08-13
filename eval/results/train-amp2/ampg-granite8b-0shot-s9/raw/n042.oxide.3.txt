@@ -1,0 +1,65 @@
+fn main() {
+    let v = push(push(push(push(vec(), 12), 5), 20), 8)
+    print(max(v))
+    let v = push(push(push(vec(), 17), 5), 20)
+    print(max(v))
+}
+
+fn max(v: Vec<Int>) -> Int {
+    let mut best = 0
+    for x in v {
+        if x > best {
+            best = x
+        }
+    }
+    best
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.clone().push(x)
+}
+
+fn vec() -> Vec<Int> {
+    vec()
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn clone(x: Int) -> Int {
+    x
+}
+
+fn max(v: Vec<Int>) -> Int {
+    let mut best = 0
+    for x in v {
+        if x > best {
+            best = x
+        }
+    }
+    best
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.clone().push(x)
+}
+
+fn vec() -> Vec<Int> {
+    vec()
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn clone(x: Int) -> Int {
+    x
+}
+
+fn main() {
+    let v = push(push(push(push(vec(), 12), 5), 20), 8)
+    print(max(v))
+    let v = push(push(push(vec(), 17), 5), 20)
+    print(max(v))
+}

@@ -1,0 +1,103 @@
+fn main() {
+    let p = Point { x: 1, y: 5 }
+    let p2 = Point { x: 10, y: 5 }
+    print(p.x + p2.x)
+}
+
+struct Point { x: Int, y: Int }
+
+fn print(n: Int) {
+    let s = int_to_str(n)
+    print_str(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut digits: Vec<Str> = vec()
+    let mut n2 = n
+    while n2 > 0 {
+        digits.push(char_to_digit((n2 % 10) + 48))
+        n2 = n2 / 10
+    }
+    let digits_rev: Vec<Str> = digits.iter().rev().collect()
+    let s: Str = digits_rev.concat()
+    s
+}
+
+fn char_to_digit(c: Int) -> Str {
+    let s: Str = string(c)
+    s
+}
+
+fn string(c: Int) -> Str {
+    let mut chars: Vec<Str> = vec()
+    chars.push(char_to_digit(c))
+    let s: Str = chars.concat()
+    s
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut chars: Vec<Str> = vec()
+    for c in a.chars() {
+        chars.push(c)
+    }
+    for c in b.chars() {
+        chars.push(c)
+    }
+    let s: Str = chars.concat()
+    s
+}
+
+fn print_str(s: Str) {
+    let mut chars: Vec<Str> = vec()
+    for c in s.chars() {
+        chars.push(char_to_digit(c))
+    }
+    let digits_rev: Vec<Str> = chars.iter().rev().collect()
+    let s: Str = digits_rev.concat()
+    print(s)
+}
+
+fn print(n: Int) {
+    let s = int_to_str(n)
+    print_str(s)
+}
+
+fn char_to_digit(c: Int) -> Str {
+    let s: Str = string(c)
+    s
+}
+
+fn string(c: Int) -> Str {
+    let mut chars: Vec<Str> = vec()
+    chars.push(char_to_digit(c))
+    let s: Str = chars.concat()
+    s
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut chars: Vec<Str> = vec()
+    for c in a.chars() {
+        chars.push(c)
+    }
+    for c in b.chars() {
+        chars.push(c)
+    }
+    let s: Str = chars.concat()
+    s
+}
+
+fn print_str(s: Str) {
+    let mut chars: Vec<Str> = vec()
+    for c in s.chars() {
+        chars.push(char_to_digit(c))
+    }
+    let digits_rev: Vec<Str> = chars.iter().rev().collect()
+    let s: Str = digits_rev.concat()
+    print(s)
+}
+
+fn main() {
+    let p = Point { x: 1, y: 5 }
+    let p2 = Point { x: 10, y: 5 }
+    print(p.x + p2.x)
+}

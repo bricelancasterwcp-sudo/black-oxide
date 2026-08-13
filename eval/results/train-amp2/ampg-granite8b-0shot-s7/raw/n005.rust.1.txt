@@ -1,0 +1,5 @@
+```rust
+fn main() {
+    println!("{}", (1..=20).filter(|&x| x % 2 == 0).sum::<i32>());
+}
+```

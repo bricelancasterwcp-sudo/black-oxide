@@ -1,0 +1,11 @@
+fn main() {
+    let mut texts = vec("seven", "nine", "ten", "?")
+    let mut total = 0
+    for x in texts.iter_mut() {
+        if letOk(n) == parse_int(x) {
+            total = total + n
+        }
+    }
+    print(total)
+    print(len(texts) - total)
+}

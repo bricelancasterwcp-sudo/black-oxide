@@ -1,0 +1,21 @@
+fn find_4s(v: &Vec<Int>) -> Vec<Int> {
+    let mut positions = Vec()
+    for i in 0.range(v.len()) {
+        if v.get(i) == Some(&amp) {
+            push(positions, i)
+        }
+    }
+    positions
+}
+
+fn main() {
+    let nums = push(push(push(vec(), 4), 7), push(vec(), 4))
+    push(nums, 9)
+    push(nums, 4)
+    let positions = find_4s(&nums)
+    for pos in &positions {
+        print(pos)
+    }
+    drop nums
+    drop positions
+}

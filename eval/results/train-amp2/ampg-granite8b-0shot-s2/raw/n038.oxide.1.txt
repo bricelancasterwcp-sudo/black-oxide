@@ -1,0 +1,9 @@
+fn set_reading(sensor: Sensor) -> Int {
+    7
+}
+
+fn main() {
+    let sensor = Sensor { reading: 0 }
+    let reading = set_reading(sensor)
+    print(reading)
+}

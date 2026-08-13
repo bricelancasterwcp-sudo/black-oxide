@@ -1,0 +1,14 @@
+fn sort_scores(scores: Vec<Int>) -> Vec<Int> {
+    let mut sorted = scores.clone()
+    sorted.sort()
+    sorted.reverse()
+    sorted
+}
+
+fn main() {
+    let scores = vec(2, 9, 5)
+    let sorted_scores = sort_scores(scores)
+    for score in sorted_scores {
+        print(score)
+    }
+}

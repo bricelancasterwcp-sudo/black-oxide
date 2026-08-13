@@ -1,0 +1,14 @@
+struct List { head: Option<Int>, tail: Vec<Int> }
+
+fn get_list_elem(list: List, pos: Int) -> Option<Int> {
+    match get(list.tail, pos - 1)? {
+        Some(n) => Some(n),
+        None => list.head,
+    }
+}
+
+fn main() {
+    let list = List { head: None, tail: push(push(vec(), 10), 20) }
+    print(get_list_elem(list, 1)?)
+    print(get_list_elem(list, 4)?)
+}

@@ -1,0 +1,125 @@
+fn main() {
+    let square = Shape { side: 4.0, kind: Kind { tag: Tag { variant: Square } } }
+    print(area(&square))
+}
+
+fn area(shape: &Shape) -> Float {
+    match shape.kind {
+        Kind(refTag) => match refTag.variant {
+            Square => side_area(shape.side),
+            Circle => circle_area(shape.radius),
+        },
+    }
+}
+
+fn side_area(s: Float) -> Float {
+    s * s
+}
+
+fn circle_area(r: Float) -> Float {
+    3.14 * r * r
+}
+
+struct Shape {
+    side: Float,
+    kind: Kind,
+}
+
+struct Kind {
+    tag: Tag,
+}
+
+struct Tag {
+    variant: Variant,
+}
+
+enum Variant {
+    Square,
+    Circle,
+}
+
+struct Point {
+    x: Float,
+    y: Float,
+}
+
+fn main() {
+    let p = Point { x: 1.0, y: 2.0 }
+    print_str("x + y = ")
+    print(p.x + p.y)
+}
+
+struct Point {
+    x: Float,
+    y: Float,
+}
+
+struct Rect {
+    top_left: Point,
+    bottom_right: Point,
+}
+
+fn area(r: &Rect) -> Float {
+    (r.bottom_right.x - r.top_left.x) * (r.bottom_right.y - r.top_left.y)
+}
+
+fn main() {
+    let r = Rect { top_left: Point { x: 1.0, y: 2.0 }, bottom_right: Point { x: 3.0, y: 4.0 } }
+    print(area(&r))
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn main() {
+    print(add(add(2, 3), 4))
+}
+
+fn main() {
+    let x = 5
+    let y = 10
+    let z = add(x, y)
+    print(z)
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn main() {
+    let x = 5
+    let z = add(x, 10)
+    print(z)
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn main() {
+    let z = add(5, 10)
+    print(z)
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn main() {
+    print(add(5, 10))
+}
+
+fn main() {
+    let x = 5
+    let y = 10
+    print(x + y)
+}
+
+fn main() {
+    print(5 + 10)
+}
+
+fn main() {
+    print(5 + 10)
+}

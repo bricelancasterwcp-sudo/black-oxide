@@ -1,0 +1,160 @@
+fn main() {
+    let start = Point { x: 1, y: 5 }
+    let end = Point { x: 11, y: 5 }
+    print(start.x + &end)
+}
+
+struct Point {
+    x: Int,
+    y: Int,
+}
+
+fn print(n: Int) {
+    print_str(int_to_str(n))
+}
+
+fn int_to_str(n: Int) -> Str {
+    if n < 0 {
+        concat("-", int_to_str(-n))
+    } else if n < 10 {
+        Str(n + 48)
+    } else {
+        concat(int_to_str(n / 10), int_to_str(n % 10))
+    }
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    Str(a.chars().into_iter().chain(b.chars().into_iter()).collect())
+}
+
+fn print_str(s: Str) {
+    for c in s.chars {
+        print(c)
+    }
+}
+
+fn print(c: Char) {
+    if c < 10 {
+        print_str(Str(c + 48))
+    } else {
+        let mut digits = vec()
+        let mut n = c - 10
+        while n >= 10 {
+            digits.push(n % 10)
+            n = n / 10
+        }
+        digits.push(n)
+        for d in digits.iter().rev() {
+            print_str(Str(d + 48))
+        }
+    }
+}
+
+struct Str {
+    chars: Vec<Char>,
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    let mut result = v
+    result.push(x)
+    result
+}
+
+struct Vec {
+    len: Int,
+    items: Box<RefCell<Item>>,
+}
+
+enum Item {
+    Empty,
+    Cons(T, Box<RefCell<Item>>),
+}
+
+fn len(v: &Vec) -> Int {
+    v.len
+}
+
+fn get(v: &Vec, i: Int) -> Option<T> {
+    if i >= v.len {
+        None
+    } else {
+        let mut current = &v
+        for _ in 0.upto(i) {
+            current = match &current {
+                Item(crate_item) => match crate_item {
+                    Item(crate_item) => match crate_item {
+                        Item(crate_item) => match crate_item {
+                            Item(crate_item) => match crate_item {
+                                Item(crate_item) => match crate_item {
+                                    Item(crate_item) => matchcrate_item,
+                                    Item(crate_item) => matchcrate_item,
+                                    Item(crate_item) => matchcrate_item,
+                                    Item(crate_item) => matchcrate_item,
+                                    Item(crate_item) => matchcrate_item,
+                                    Item(crate_item) => matchcrate_item,
+                                    Item(crate_item) => matchcrate_item,
+                                    Item(crate_item) => matchcrate_item,
+                                },
+                            },
+                        },
+                    },
+                },
+                Item(crate_item) => matchcrate_item,
+                Item(crate_item) => matchcrate_item,
+                Item(crate_item) => matchcrate_item,
+                Item(crate_item) => matchcrate_item,
+                Item(crate_item) => matchcrate_item,
+                Item(crate_item) => matchcrate_item,
+                Item(crate_item) => matchcrate_item,
+            }
+        }
+        Some(current.chars.get(0).unwrap())
+    }
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in a.upto(b) {
+        result.push(i)
+    }
+    result
+}
+
+fn clone(x: &T) -> T {
+    x.clone()
+}
+
+fn str_len(s: &Str) -> Int {
+    s.chars.len()
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut result = vec()
+    for c in s.chars {
+        result.push(Str(c))
+    }
+    result
+}
+
+fn to_float(n: Int) -> Float {
+    n
+}
+
+fn trunc(x: Float) -> Int {
+    if x < 0.0 {
+        (x - 0.5).floor()
+    } else {
+        (x + 0.5).floor()
+    }
+}
+
+struct Point {
+    x: Int,
+    y: Int,
+}
+
+fn main() {
+    let start = Point { x: 1, y: 5 }
+    let end = Point { x: 11, y: 5 }
+    print(start.x + &end)
+}

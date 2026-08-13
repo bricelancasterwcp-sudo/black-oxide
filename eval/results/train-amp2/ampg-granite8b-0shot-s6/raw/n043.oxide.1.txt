@@ -1,0 +1,27 @@
+struct Queue {
+    enrollment: Vec<Int>,
+    departure: Vec<Int>,
+}
+
+fn main() {
+    let mut q = Queue { enrollment: vec(), departure: vec() }
+    q.enrollment = push(q.enrollment, 1)
+    q.enrollment = push(q.enrollment, 2)
+    q.enrollment = push(q.enrollment, 3)
+    q.enrollment = push(q.enrollment, 4)
+    q.enrollment = push(q.enrollment, 5)
+    print_str("Queue before rotation:\n")
+    for n in q.enrollment {
+        print(n)
+        print_str("\n")
+    }
+    let first = get(q.enrollment, 0)?
+    let last = get(q.enrollment, len(q.enrollment) - 1)?
+    q.enrollment = vec()
+    q.departure = push(q.departure, first)
+    q.departure = push(q.departure, last)
+    for n in q.departure {
+        print(n)
+        print_str("\n")
+    }
+}

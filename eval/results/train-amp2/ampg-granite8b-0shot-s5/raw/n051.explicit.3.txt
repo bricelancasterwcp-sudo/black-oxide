@@ -1,0 +1,8 @@
+fn substring(w: &Str, from: Int, len: Int) -> Str {
+    w.chars().nth(from).unwrap() + w.chars().nth(from + len).unwrap()
+}
+
+fn main() {
+    print(substring(&granitestr, 0, 1))
+    print(substring(&granitestr, granitestr.len() - 1, 1))
+}

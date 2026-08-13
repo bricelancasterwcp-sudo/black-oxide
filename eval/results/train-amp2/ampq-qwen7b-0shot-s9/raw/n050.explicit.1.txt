@@ -1,0 +1,7 @@
+fn main() {
+    let scores = vec(2, 9, 5).sort_desc().to_vec()
+    for score in scores {
+        print_str(format_int(score))
+    }
+    drop scores
+}

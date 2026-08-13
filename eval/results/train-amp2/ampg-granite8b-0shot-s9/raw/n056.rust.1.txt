@@ -1,0 +1,20 @@
+```rust
+fn main() {
+    let mut n = 0;
+    let mut m = 0;
+    for _ in 0..4 {
+        match std::io::stdin().read_line() {
+            Ok(s) => {
+                if let Ok(x) = s.trim().parse() {
+                    n += x;
+                } else {
+                    m += 1;
+                }
+            }
+            Err(_) => break,
+        }
+    }
+    println!("{}", n);
+    println!("{}", m);
+}
+```

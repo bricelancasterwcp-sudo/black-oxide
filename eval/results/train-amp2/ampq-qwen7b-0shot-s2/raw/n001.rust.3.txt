@@ -1,0 +1,4 @@
+fn main() {
+    let total: u32 = (1..=5).map(|x: u32| x.pow(3)).sum();
+    println!("{}", total);
+}

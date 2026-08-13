@@ -1,0 +1,10 @@
+fn main() {
+    let banana = "banana"
+    let mut pos = 0
+    while pos < str_len(&banana) {
+        if get(&banana, pos) == "n" {
+            print(pos)
+        }
+        pos = pos + 1
+    }
+}

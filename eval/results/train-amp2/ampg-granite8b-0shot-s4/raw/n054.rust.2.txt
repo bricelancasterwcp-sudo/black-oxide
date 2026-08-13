@@ -1,0 +1,15 @@
+fn main() {
+    let word = "keyboard";
+    let mut vowel_count = 0;
+    let mut consonant_count = 0;
+
+    for letter in word.chars() {
+        match letter {
+            'a' | 'e' | 'i' | 'o' | 'u' => vowel_count += 1,
+            _ => consonant_count += 1,
+        }
+    }
+
+    println!("Number of vowels: {}", vowel_count);
+    println!("Number of consonants: {}", consonant_count);
+}

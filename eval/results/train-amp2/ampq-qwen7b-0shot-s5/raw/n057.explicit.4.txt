@@ -1,0 +1,20 @@
+fn max_len(s1: &Str, s2: &Str) -> Int {
+    if str_len(s1) > str_len(s2) {
+        str_len(s1)
+    } else {
+        str_len(s2)
+    }
+}
+
+fn main() {
+    let fig = "fig"
+    let banana = "banana"
+    let kiwi = "kiwi"
+    let max_length = max_len(fig, banana)
+    let max_str = if str_len(fig) > str_len(kiwi) { fig } else { kiwi }
+    print_str(max_str)
+    print(max_length)
+    drop fig
+    drop banana
+    drop kiwi
+}

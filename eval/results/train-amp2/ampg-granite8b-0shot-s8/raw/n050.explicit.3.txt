@@ -1,0 +1,11 @@
+fn main() {
+    let mut scores = vec(5, 9, 2)
+    scores = push(scores, 4)
+    scores = push(scores, 8)
+    scores = push(scores, 1)
+    for score in &scores {
+        print(score)
+        print("\n")
+    }
+    drop scores
+}

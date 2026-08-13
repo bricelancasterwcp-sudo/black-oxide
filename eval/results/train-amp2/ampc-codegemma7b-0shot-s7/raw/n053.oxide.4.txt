@@ -1,0 +1,68 @@
+fn reverse_string(s: Str) -> Str {
+    let mut result = vec_int()
+    for c in chars(s) {
+        push(result, char_to_int(c))
+    }
+    let mut s2 = str_int("")
+    for i in range(0, len(result)) {
+        s2 = concat(s2, int_to_str(get(result, len(result) - 1 - i)?)? + " " - remove(result, len(result) - 1 - i) - remove(result, len(result)) - 1)
+    }
+    str_int(s2)
+}
+
+fn main() {
+    let drum = str_int("drum")
+    print(reverse_string(drum))
+    print(drum)
+}
+
+fn char_to_int(c: Str) -> Int {
+    match c {
+        Str(x) => match x {
+            Some(y) => y - 97 + 1,
+            None => 0,
+        },
+    }
+}
+
+fn int_to_char(i: Int) -> Str {
+    if i < 1 || i > 26 {
+        return str_int("")
+    }
+    Str(Some(i + 96))
+}
+
+fn str_int(s: Str) -> Str {
+    Str(Some(s))
+}
+
+fn vec_int() -> Vec<Int> {
+    vec()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut v2 = v
+    v2.push(x)
+    v2
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    if i < 0 || i >= len(v) {
+        return None
+    }
+    Some(v.get(i).unwrap())
+}
+
+fn len(v: Vec<Int>) -> Int {
+    v.len()
+}
+
+fn remove(v: Vec<Int>, i: Int) -> Vec<Int> {
+    let mut v2 = v
+    v2.remove(i)
+    v2
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec_int()
+    for i in a.to_int()() + 1.to_int()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_int()()() - 1.to_

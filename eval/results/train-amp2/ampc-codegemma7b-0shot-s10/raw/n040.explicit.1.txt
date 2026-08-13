@@ -1,0 +1,665 @@
+fn area(s: &Square) -> Float {
+    s.side * s.side
+}
+
+fn area(c: &Circle) -> Float {
+    PI * c.radius * c.radius
+}
+
+fn main() {
+    let s = Square { side: 4.0 }
+    let c = Circle { radius: 4.0 }
+    print(area(&s))
+    print(area(&c))
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Square {
+    

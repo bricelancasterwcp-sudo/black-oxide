@@ -1,0 +1,9 @@
+struct N { n: Int }
+
+fn main() {
+    let fig = N { n: 5 }
+    let kiwi = N { n: 10 }
+    let banana = N { n: 8 }
+    let name = if fig.n > banana.n && fig.n > kiwi.n { "fig" } else { "banana" }
+    print_str(name)
+}

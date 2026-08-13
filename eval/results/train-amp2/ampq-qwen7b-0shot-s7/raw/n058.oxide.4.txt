@@ -1,0 +1,10 @@
+fn main() {
+    let mut seen = Vec.new()
+    let mut word = "coffee".chars().collect()
+    for ch in word {
+        if !seen.contains(ch) && word.contains(ch) {
+            seen.push(ch)
+            print(ch)
+        }
+    }
+}

@@ -1,0 +1,69 @@
+fn main() {
+    let a = parse_int("8")
+    match a {
+        Some(n) => print(n),
+        None => print_str("bad"),
+    }
+    let b = parse_str("oak")
+    match b {
+        Some(n) => print(n),
+        None => print_str("bad"),
+    }
+    let c = parse_int("15")
+    match c {
+        Some(n) => print(n),
+        None => print_str("bad"),
+    }
+}
+
+fn parse_str(s: Str) -> Option<Str> {
+    if s == "oak" {
+        Some("oak".to_string())
+    } else {
+        None
+    }
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    if s == "8" {
+        Some(8)
+    } else if s == "15" {
+        Some(15)
+    } else {
+        None
+    }
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn print(i: Int) {
+    print(i)
+}
+
+fn print(s: Str) {
+    print(s)
+}
+
+fn print(f: Float) {
+    print(f)
+}
+
+fn main() {
+    let a = parse_int("8")
+    match a {
+        Some(n) => print(n),
+        None => print_str("bad"),
+    }
+    let b = parse_str("oak")
+    match b {
+        Some(n) => print(n),
+        None => print_str("bad"),
+    }
+    let c = parse_int("15")
+    match c {
+        Some(n) => print(n),
+        None => print_str("bad"),
+    }
+}

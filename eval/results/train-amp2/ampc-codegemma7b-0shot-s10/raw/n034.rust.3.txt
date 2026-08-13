@@ -1,0 +1,13 @@
+fn main() {
+    println!("{:?}", second_entry(vec![7]).unwrap_or_else(|_| "none"));
+    println!("{:?}", second_entry(vec![7, 8]).unwrap_or_else(|_| "none"));
+    println!("{:?}", second_entry(vec![7, 8, 9]).unwrap_or_else(|_| "none"));
+}
+
+fn second_entry(lst: Vec<i32>) -> Result<Option<i32>, &'static str> {
+    if lst.len() < 2 {
+        Err("not enough elements")
+    } else {
+        Ok(Some(lst[1]))
+    }
+}

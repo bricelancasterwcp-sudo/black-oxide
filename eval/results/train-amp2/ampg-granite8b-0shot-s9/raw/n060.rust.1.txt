@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let s = "a1b22";
+    let sum: u32 = s.chars().filter(|&c| c.is_ascii_digit()).sum();
+    let count: u32 = s.chars().filter(|&c| c.is_ascii_digit()).count();
+    println!("sum: {}, count: {}", sum, count);
+}
+```

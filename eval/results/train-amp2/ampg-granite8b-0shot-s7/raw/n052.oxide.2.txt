@@ -1,0 +1,12 @@
+fn banana() {
+    let s = "banana".to_string()
+    for i in 0.to_float().trunc().range(6.to_float().trunc()) {
+        if s.chars().get(i.trunc()) == Some("n") {
+            print(i)
+        }
+    }
+}
+
+fn main() {
+    banana()
+}

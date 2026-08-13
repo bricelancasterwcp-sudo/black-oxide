@@ -1,0 +1,16 @@
+fn main() {
+    let nums = vec(10, 20)
+    let a = get(&nums, 1)
+    let b = get(&nums, 4)
+    if a.is_some() {
+        print(a.unwrap())
+    } else {
+        print_str("None")
+    }
+    if b.is_some() {
+        print(b.unwrap())
+    } else {
+        print_str("None")
+    }
+    drop nums
+}

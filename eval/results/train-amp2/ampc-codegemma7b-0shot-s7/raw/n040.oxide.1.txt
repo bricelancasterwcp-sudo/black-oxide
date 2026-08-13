@@ -1,0 +1,12 @@
+fn area_square(s: Float) -> Float {
+    s * s
+}
+
+fn area_circle(r: Float) -> Float {
+    3.14159 * r * r
+}
+
+fn main() {
+    print(area_square(4.0))
+    print(area_circle(2.5))
+}

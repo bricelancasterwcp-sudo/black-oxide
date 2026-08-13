@@ -1,0 +1,11 @@
+```rust
+const FIGURES: &[u32] = &[8, 3, 11, 6];
+
+fn main() {
+    let smallest = *FIGURES.iter().min().unwrap();
+    let largest = *FIGURES.iter().max().unwrap();
+
+    println!("{}", smallest);
+    println!("{}", largest - smallest);
+}
+```

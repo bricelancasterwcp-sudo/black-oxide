@@ -1,0 +1,32 @@
+struct Signal { value: Str }
+
+fn main() {
+    let signals = vec(Signal { value: "green" }, Signal { value: "red" }, Signal { value: "yellow" })
+    for s in signals {
+        match s.value {
+            Str(value) => match value {
+                Str(x) => match x {
+                    Str(y) => match y {
+                        Str(z) => match z {
+                            Str(a) => match a {
+                                Str(b) => match b {
+                                    Str(c) => match c {
+                                        Str(d) => match_d,
+                                        _ => panic_str,
+                                    },
+                                    _ => panic_str,
+                                },
+                                _ => panic_str,
+                            },
+                            _ => panic_str,
+                        },
+                        _ => panic_str,
+                    },
+                    _ => panic_str,
+                },
+                _ => panic_str,
+            },
+            _ => panic_str,
+        }
+    }
+}

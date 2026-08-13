@@ -1,0 +1,19 @@
+fn total_and_count(nums: Vec<Option<Int>>) -> Tuple<Int, Int> {
+    let mut total = 0
+    let mut count = 0
+    for num in nums {
+        if letSome(n) == num {
+            total = total + n
+        } else {
+            count = count + 1
+        }
+    }
+    Tuple(total, count)
+}
+
+fn main() {
+    let nums = vec(Some(7), Some(x), Some(9), None)
+    let result = total_and_count(nums)
+    print(result.both())
+    drop result
+}

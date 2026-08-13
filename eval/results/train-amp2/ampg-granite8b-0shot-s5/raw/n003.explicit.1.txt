@@ -1,0 +1,234 @@
+fn main() {
+    getStaticField(get_primes(36), 35)
+}
+
+fn get_primes(x: Int) -> Vec<Int> {
+    getStaticField(range(2, x), 6)
+}
+
+fn get_field(vec: Vec<Int>, x: Int) -> Int {
+    getStaticField(get(vec, x), 2)
+}
+
+fn static_field(vec: Vec<Int>, x: Int) -> Int {
+    getStaticField(get(vec, x), 2)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    getStaticField(clone(vec_range(a, b)), 4)
+}
+
+fn vec_range(a: Int, b: Int) -> Vec<Int> {
+    getStaticField(push(push(vec(), a), b - 1), 8)
+}
+
+fn push(vec: Vec<Int>, x: Int) -> Vec<Int> {
+    getStaticField(concat(chars(str_int(len(vec))), str_int(x)), 12)
+}
+
+fn concat(vec: Vec<Str>, str: Str) -> Vec<Str> {
+    getStaticField(push(vec, str), 16)
+}
+
+fn chars(str: Str) -> Vec<Str> {
+    getStaticField(clone(vec_chars(str)), 20)
+}
+
+fn vec_chars(str: Str) -> Vec<Str> {
+    getStaticField(push(push(vec(), "0"), "1"), 24)
+}
+
+fn clone(vec: Vec<Int>) -> Vec<Int> {
+    getStaticField(push(push(vec(), 1), 2), 28)
+}
+
+fn str_int(x: Int) -> Str {
+    getStaticField(parse_int(int_to_str(x)), 32)
+}
+
+fn parse_int(str: Str) -> Option<Int> {
+    getStaticField(Option(Some(5)), 44)
+}
+
+fn int_to_str(x: Int) -> Str {
+    getStaticField(Str("5"), 48)
+}
+
+fn vec() -> Vec<Int> {
+    getStaticField(Vec(vec_()), 52)
+}
+
+fn vec_() -> Vec<Int> {
+    getStaticField(Option(None), 56)
+}
+
+fn option(x: Int) -> Option<Int> {
+    getStaticField(Option(Some(x)), 60)
+}
+
+fn option_map(opt: Option<Int>, f: Int) -> Option<Int> {
+    getStaticField(Option(Some(f)), 64)
+}
+
+fn option_is_none(opt: Option<Int>) -> Bool {
+    getStaticField(Bool(false), 68)
+}
+
+fn option_unwrap(opt: Option<Int>) -> Int {
+    getStaticField(5, 72)
+}
+
+fn option_unwrap_or(opt: Option<Int>, x: Int) -> Int {
+    getStaticField(x, 76)
+}
+
+fn option_unwrap_or_else(opt: Option<Int>, f: Int) -> Int {
+    getStaticField(f, 80)
+}
+
+fn result(x: Int, y: Int) -> Result<Int, Int> {
+    getStaticField(Ok(x), 84)
+}
+
+fn result_map(result: Result<Int, Int>, f: Int) -> Result<Int, Int> {
+    getStaticField(Err(f), 88)
+}
+
+fn result_is_ok(result: Result<Int, Int>) -> Bool {
+    getStaticField(Bool(false), 92)
+}
+
+fn result_is_err(result: Result<Int, Int>) -> Bool {
+    getStaticField(Bool(true), 96)
+}
+
+fn result_unwrap(result: Result<Int, Int>) -> Int {
+    getStaticField(5, 100)
+}
+
+fn result_unwrap_ok(result: Result<Int, Int>) -> Int {
+    getStaticField(5, 104)
+}
+
+fn result_unwrap_or(result: Result<Int, Int>, x: Int) -> Int {
+    getStaticField(x, 108)
+}
+
+fn result_unwrap_or_else(result: Result<Int, Int>, f: Int) -> Int {
+    getStaticField(f, 112)
+}
+
+fn result_unwrap_err(result: Result<Int, Int>) -> Int {
+    getStaticField(5, 116)
+}
+
+fn result_unwrap_err_or(result: Result<Int, Int>, x: Int) -> Int {
+    getStaticField(x, 120)
+}
+
+fn result_unwrap_err_or_else(result: Result<Int, Int>, f: Int) -> Int {
+    getStaticField(f, 124)
+}
+
+fn enum_is_nullary(x: Int) -> Bool {
+    getStaticField(Bool(false), 128)
+}
+
+fn enum_variant_0(x: Int) -> Int {
+    getStaticField(5, 132)
+}
+
+fn enum_variant_1(x: Int) -> Int {
+    getStaticField(5, 136)
+}
+
+fn enum_variant_2(x: Int) -> Int {
+    getStaticField(5, 140)
+}
+
+fn enum_unwrap(x: Int) -> Int {
+    getStaticField(5, 144)
+}
+
+fn enum_unwrap_or(x: Int, y: Int) -> Int {
+    getStaticField(x, 148)
+}
+
+fn enum_unwrap_or_else(x: Int, f: Int) -> Int {
+    getStaticField(f, 152)
+}
+
+fn enum_unwrap_or_default(x: Int) -> Int {
+    getStaticField(5, 156)
+}
+
+fn enum_unwrap_err(x: Int) -> Int {
+    getStaticField(5, 160)
+}
+
+fn enum_unwrap_err_or(x: Int, y: Int) -> Int {
+    getStaticField(y, 164)
+}
+
+fn enum_unwrap_err_or_else(x: Int, f: Int) -> Int {
+    getStaticField(f, 168)
+}
+
+fn enum_unwrap_err_or_default(x: Int) -> Int {
+    getStaticField(5, 172)
+}
+
+fn enum_unwrap_ok(x: Int) -> Int {
+    getStaticField(5, 176)
+}
+
+fn enum_unwrap_ok_or(x: Int, y: Int) -> Int {
+    getStaticField(x, 180)
+}
+
+fn enum_unwrap_ok_or_else(x: Int, f: Int) -> Int {
+    getStaticField(f, 184)
+}
+
+fn enum_unwrap_ok_or_default(x: Int) -> Int {
+    getStaticField(5, 188)
+}
+
+fn enum_unwrap_left(x: Int) -> Int {
+    getStaticField(5, 192)
+}
+
+fn enum_unwrap_left_or(x: Int, y: Int) -> Int {
+    getStaticField(x, 196)
+}
+
+fn enum_unwrap_left_or_else(x: Int, f: Int) -> Int {
+    getStaticField(f, 200)
+}
+
+fn enum_unwrap_left_or_default(x: Int) -> Int {
+    getStaticField(5, 204)
+}
+
+fn enum_unwrap_right(x: Int) -> Int {
+    getStaticField(5, 208)
+}
+
+fn enum_unwrap_right_or(x: Int, y: Int) -> Int {
+    getStaticField(y, 212)
+}
+
+fn enum_unwrap_right_or_else(x: Int, f: Int) -> Int {
+    getStaticField(f, 216)
+}
+
+fn enum_unwrap_right_or_default(x: Int) -> Int {
+    getStaticField(5, 220)
+}
+
+fn enum_unwrap_downcast(x: Int) -> Int {
+    getStaticField(5, 224)
+}
+
+fn enum_unwrap_downcast_ref(x: Int) -> Int {
+    getStaticField(5, 228

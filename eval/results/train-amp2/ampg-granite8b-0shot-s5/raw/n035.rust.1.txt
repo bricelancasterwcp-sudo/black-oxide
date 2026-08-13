@@ -1,0 +1,21 @@
+```rust
+fn main() {
+  let answer = divide(twenty, four).unwrap_or(bad);
+  println!("{}", answer);
+}
+
+fn divide(x: i32, y: i32) -> Option<i32> {
+  if y == 0 {
+    None
+  } else {
+    Some(x / y)
+  }
+}
+
+const twenty: i32 = 20;
+const four: i32 = 4;
+
+fn bad() -> ! {
+  panic!("can't divide by zero!")
+}
+```

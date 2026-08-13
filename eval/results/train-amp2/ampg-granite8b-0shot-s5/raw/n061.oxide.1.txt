@@ -1,0 +1,15 @@
+struct Rectangle { length: Int, width: Int }
+
+fn area(r: Rectangle) -> Int {
+    3 * r.length + 2 * r.width
+}
+
+fn circumference(r: Rectangle) -> Int {
+    r.length + r.width + r.length + r.width
+}
+
+fn main() {
+    let rectangle = Rectangle { length: 9, width: 3 }
+    print(area(rectangle))
+    print(circumference(rectangle))
+}

@@ -1,0 +1,21 @@
+fn longest(a: Str, b: Str, c: Str) -> Str {
+    if len(a) >= len(b) {
+        if len(a) >= len(c) {
+            a
+        } else {
+            c
+        }
+    } else {
+        if len(b) >= len(c) {
+            b
+        } else {
+            c
+        }
+    }
+}
+
+fn main() {
+    let x = longest("fig", "banana", "kiwi")
+    print(x)
+    print(len(x))
+}

@@ -1,0 +1,173 @@
+fn area(r: &Rectangle) -> Float {
+    r.width * r.height
+}
+
+fn perimeter(r: &Rectangle) -> Float {
+    2.0 * (r.width + r.height)
+}
+
+fn main() {
+    let rect = Rectangle { width: 9.0, height: 3.0 }
+    print(area(&rect))
+    print(perimeter(&rect))
+    drop_any(&rect)
+}
+
+struct Rectangle {
+    width: Float,
+    height: Float,
+}
+
+fn print(x: Float) {
+    print(format("{:.1}", x))
+}
+
+fn print(s: Str) {
+    print(s)
+}
+
+fn drop_any(x: &Any) {
+    let _ = x
+}
+
+enum Any {
+    Int(Int),
+    Float(Float),
+    Str(Str),
+}
+
+fn format(format: Str, args: Any) -> Str {
+    format(format, args)
+}
+
+fn to_string(x: Int) -> Str {
+    to_string(x)
+}
+
+fn to_string(x: Float) -> Str {
+    to_string(x)
+}
+
+fn to_string(x: Str) -> Str {
+    to_string(x)
+}
+
+fn main() {
+    let _ = main()
+}
+
+fn area(r: &Rectangle) -> Float {
+    r.width * r.height
+}
+
+fn perimeter(r: &Rectangle) -> Float {
+    2.0 * (r.width + r.height)
+}
+
+fn main() {
+    let rect = Rectangle { width: 9.0, height: 3.0 }
+    print(area(&rect))
+    print(perimeter(&rect))
+    drop_any(&rect)
+}
+
+struct Rectangle {
+    width: Float,
+    height: Float,
+}
+
+fn print(x: Float) {
+    print(format("{:.1}", x))
+}
+
+fn print(s: Str) {
+    print(s)
+}
+
+fn drop_any(x: &Any) {
+    let _ = x
+}
+
+enum Any {
+    Int(Int),
+    Float(Float),
+    Str(Str),
+}
+
+fn format(format: Str, args: Any) -> Str {
+    format(format, args)
+}
+
+fn to_string(x: Int) -> Str {
+    to_string(x)
+}
+
+fn to_string(x: Float) -> Str {
+    to_string(x)
+}
+
+fn to_string(x: Str) -> Str {
+    to_string(x)
+}
+
+fn main() {
+    let _ = main()
+}
+
+fn area(r: &Rectangle) -> Float {
+    r.width * r.height
+}
+
+fn perimeter(r: &Rectangle) -> Float {
+    2.0 * (r.width + r.height)
+}
+
+fn main() {
+    let rect = Rectangle { width: 9.0, height: 3.0 }
+    print(area(&rect))
+    print(perimeter(&rect))
+    drop_any(&rect)
+}
+
+struct Rectangle {
+    width: Float,
+    height: Float,
+}
+
+fn print(x: Float) {
+    print(format("{:.1}", x))
+}
+
+fn print(s: Str) {
+    print(s)
+}
+
+fn drop_any(x: &Any) {
+    let _ = x
+}
+
+enum Any {
+    Int(Int),
+    Float(Float),
+    Str(Str),
+}
+
+fn format(format: Str, args: Any) -> Str {
+    format(format, args)
+}
+
+fn to_string(x: Int) -> Str {
+    to_string(x)
+}
+
+fn to_string(x: Float) -> Str {
+    to_string(x)
+}
+
+fn to_string(x: Str) -> Str {
+    to_string(x)
+}
+
+fn main() {
+    let _ = main()
+}

@@ -1,0 +1,17 @@
+fn most_letters(fruits: Vec<String>) -> String {
+    let mut max_letters = 0
+    let mut most_letter_fruit = String
+    for fruit in fruits {
+        if fruit.len() > max_letters {
+            max_letters = fruit.len()
+            most_letter_fruit = fruit
+        }
+    }
+    most_letter_fruit
+}
+
+fn main() {
+    let fruits = vec("fig".to_string(), "banana".to_string(), "kiwi".to_string())
+    print(most_letters(fruits))
+    print(most_letters(fruits).len())
+}

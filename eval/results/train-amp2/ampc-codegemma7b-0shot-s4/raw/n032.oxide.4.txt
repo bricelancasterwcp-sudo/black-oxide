@@ -1,0 +1,17 @@
+fn main() {
+    let p1 = Point { x: 1, y: 5 }
+    let p2 = Point { x: 10, y: p1.y }
+    print(p1.x + p2.x)
+}
+
+struct Point { x: Int, y: Int }
+
+fn add(p1: Point, p2: Point) -> Int {
+    return p1.x + p2.x
+}
+
+fn main() {
+    let p1 = Point { x: 1, y: 5 }
+    let p2 = Point { x: 10, y: p1.y }
+    print(add(p1, p2))
+}

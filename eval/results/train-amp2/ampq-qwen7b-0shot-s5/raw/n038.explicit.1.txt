@@ -1,0 +1,9 @@
+fn set_and_print_sensor_reading() {
+    let mut sensor_reading = 0
+    sensor_reading = 7
+    print(sensor_reading)
+}
+
+fn main() {
+    set_and_print_sensor_reading()
+}

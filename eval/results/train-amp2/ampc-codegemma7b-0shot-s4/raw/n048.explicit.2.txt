@@ -1,0 +1,35 @@
+fn main() {
+    let mut list = vec(4, 7, 4, 9, 4)
+    let mut count = 0
+    for x in 0 {
+        if list.get(x) == Some(&amp <= 4) {
+            print(count)
+            count = count + 1
+        }
+    }
+    drop list
+}
+
+fn main() {
+    let mut list = vec(4, 7, 4, 9, 4)
+    let mut count = 0
+    for x in 0 {
+        if list.get(x) == Some(&amp <= 4) {
+            print(count)
+            count = count + 1
+        }
+    }
+    drop list
+}
+
+fn main() {
+    let mut list = vec(4, 7, 4, 9, 4)
+    let mut count = 0
+    for x in 0 {
+        if list.get(x) == Some(&amp <= 4) {
+            print(count)
+            count = count + 1
+        }
+    }
+    drop list
+}

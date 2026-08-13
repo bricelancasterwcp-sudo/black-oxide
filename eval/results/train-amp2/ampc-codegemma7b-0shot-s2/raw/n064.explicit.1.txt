@@ -1,0 +1,13 @@
+fn lookup(nums: &Vec<Int>, pos: Int) -> Option<Int> {
+    if pos < nums.len() {
+        Some(nums.get(pos)?)
+    } else {
+        None
+    }
+}
+
+fn main() {
+    let nums = vec(10, 20)
+    print(lookup(&nums, 1))
+    print(lookup(&nums, 4))
+}

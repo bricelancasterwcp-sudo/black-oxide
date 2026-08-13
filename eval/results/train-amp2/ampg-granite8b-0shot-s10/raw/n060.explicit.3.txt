@@ -1,0 +1,13 @@
+fn main() {
+    let text = "The text a1b22 mixes letters and digits. Print the total of all digit characters, then how many digit characters there are."
+    let mut digits = 0
+    let mut count = 0
+    for c in text.chars() {
+        if c.is_ascii_digit() {
+            digits = digits + c.to_digit(10).unwrap()
+            count = count + 1
+        }
+    }
+    print(digits)
+    print(count)
+}

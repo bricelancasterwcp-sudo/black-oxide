@@ -1,0 +1,20 @@
+fn exchange(queue: &Vec<Int>) -> Vec<Int> {
+    let first = queue.first().cloned().unwrap()
+    let last = queue.last().cloned().unwrap()
+    let mut new_queue = queue.clone()
+    new_queue.remove(0)
+    new_queue.pop()
+    new_queue.insert(0, last)
+    new_queue.push(first)
+    new_queue
+}
+
+fn main() {
+    let mut queue = vec(1, 2, 3, 4, 5)
+    queue = exchange(&queue)
+    print(queue.first().cloned().unwrap())
+    print(queue.get(1).cloned().unwrap())
+    print(queue.get(2).cloned().unwrap())
+    print(queue.get(3).cloned().unwrap())
+    print(queue.last().cloned().unwrap())
+}

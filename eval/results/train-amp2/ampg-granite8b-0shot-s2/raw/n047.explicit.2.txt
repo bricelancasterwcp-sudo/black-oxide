@@ -1,0 +1,23 @@
+fn collect(v: &Vec<Int>, limit: Int) -> Vec<Int> {
+    let mut collected = vec()
+    for x in &v {
+        if x % 2 == 0 && x <= limit {
+            collected = push(collected, x)
+        }
+    }
+    collected
+}
+
+fn main() {
+    let nums = push(push(push(push(vec(), 1), 2), 3), 4)
+    let evens = collect(&nums, 4)
+    for i in range(0, len(&evens)) {
+        print_str("Index: ")
+        print(i)
+        print_str(" Value: ")
+        print(get(&evens, i))
+        print("\n")
+    }
+    drop nums
+    drop evens
+}

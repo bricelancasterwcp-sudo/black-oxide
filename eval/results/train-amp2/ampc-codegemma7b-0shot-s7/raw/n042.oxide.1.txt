@@ -1,0 +1,17 @@
+fn main() {
+    let x = vec(12, 5, 20, 8, 17)
+    let mut largest = x.get(0).unwrap()
+    let mut second_largest = x.get(0).unwrap()
+    for i in 1.range(x.len()) {
+        let y = x.get(i).unwrap()
+        if y > largest {
+            second_largest = largest
+            largest = y
+        } else if y > second_largest {
+            second_largest = y
+        }
+    }
+    print(largest)
+    print_str("\n")
+    print(second_largest)
+}

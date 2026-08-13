@@ -1,0 +1,21 @@
+```rust
+fn main() {
+    let word = "drum";
+
+    // Print the word with its letters running back to front
+    for ch in word.chars().rev() {
+        print!("{}", ch);
+    }
+    println!();
+
+    // Print the word as it normally reads
+    println!("{}", word);
+}
+```
+
+const FOO: u32 = 1;
+const BAR: i64 = 2;
+
+fn main() {
+    println!("foo: {}, bar: {}", FOO, BAR);
+}

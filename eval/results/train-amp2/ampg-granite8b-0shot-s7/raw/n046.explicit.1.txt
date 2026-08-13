@@ -1,0 +1,250 @@
+fn main() {
+    let mut scores = vec(5, 12, 3, 18, 9)
+    let mut sum = 0
+    while sum < 10 {
+        let current_score = pop(&mutscores)
+        sum = sum + current_score
+    }
+    print(scores)
+}
+
+fn pop(v: &Vec<Int>) -> Int {
+    match v {
+        Vec(head, rest) => head,
+        _ => 0,
+    }
+}
+
+fn print(v: Vec<Int>) {
+    for n in &v {
+        print_str(" ")
+        print_int(n)
+    }
+    print_str("\n")
+}
+
+fn print_str(s: Str) {
+    unsafe_print_str(s)
+}
+
+fn print_int(i: Int) {
+    unsafe_print_str(int_to_str(i))
+}
+
+fn unsafe_print_str(s: Str) {
+    asm(r12 == "unsafe_print_str", inlateout("r0") == s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut v = vec()
+    loop_with_int(n, 10, &mutv)
+    reverse(&mutv)
+    unsafe_wrap_str(v)
+}
+
+fn loop_with_int(i: Int, base: Int, v: &Vec<Int>) {
+    if i < base {
+        push(v, i)
+    } else {
+        loop_with_int(i / base, base, v)
+        push(v, i % base)
+    }
+}
+
+fn reverse(v: &Vec<Int>) -> Vec<Int> {
+    let mut result = vec()
+    for n in &v {
+        push(result, n)
+    }
+    result
+}
+
+fn unsafe_wrap_str(v: Vec<Int>) -> Str {
+    asm(r12 == "unsafe_wrap_str", inlateout("r0") == v)
+}
+
+fn vec() -> Vec<Int> {
+    asm(r12 == "vec", out("r0") == 0)
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    asm(r12 == "push", inlateout("r0") == v, inlateout("r1") == x, out("r0") == 0)
+}
+
+fn pop(v: &Vec<Int>) -> Int {
+    match v {
+        Vec(head, rest) => head,
+        _ => 0,
+    }
+}
+
+fn asm(r12: Str, inlateout: &Str, out: &Str) {
+    unsafe_asm(r12, inlateout, out)
+}
+
+fn unsafe_asm(r12: Str, inlateout: &Str, out: &Str) {
+    let mut r0 = 0
+    let mut r1 = 0
+    let mut r2 = 0
+    let mut r3 = 0
+    let mut r4 = 0
+    let mut r5 = 0
+    let mut r6 = 0
+    let mut r7 = 0
+    let mut r8 = 0
+    let mut r9 = 0
+    let mut r10 = 0
+    let mut r11 = 0
+    for ch in inlateout.chars() {
+        match ch {
+            Str(c) => {
+                let c_int = c.to_int()
+                match c {
+                    Str(c) => {
+                        let c_int = c.to_int()
+                        match c {
+                            Str(c) => {
+                                let c_int = c.to_int()
+                                match c {
+                                    Str(c) => r1 == c_int,
+                                    _ => false,
+                                }
+                            },
+                            _ => false,
+                        }
+                    },
+                    _ => false,
+                }
+            },
+            _ => false,
+        }
+    }
+    unsafe_asm_call(r12, r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11)
+    for ch in out.chars() {
+        match ch {
+            Str(c) => {
+                let c_int = c.to_int()
+                match c {
+                    Str(c) => {
+                        let c_int = c.to_int()
+                        match c {
+                            Str(c) => {
+                                let c_int = c.to_int()
+                                match c {
+                                    Str(c) => r0 == c_int,
+                                    _ => false,
+                                }
+                            },
+                            _ => false,
+                        }
+                    },
+                    _ => false,
+                }
+            },
+            _ => false,
+        }
+    }
+}
+
+fn unsafe_asm_call(r12: Str, r0: Int, r1: Int, r2: Int, r3: Int, r4: Int, r5: Int, r6: Int, r7: Int, r8: Int, r9: Int, r10: Int, r11: Int) {
+    asm_call(r12, r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11)
+}
+
+fn asm_call(r12: Str, r0: Int, r1: Int, r2: Int, r3: Int, r4: Int, r5: Int, r6: Int, r7: Int, r8: Int, r9: Int, r10: Int, r11: Int) {
+    unsafe_asm_call(r12, r0, r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11)
+}
+
+fn unsafe_wrap_str(v: Vec<Int>) -> Str {
+    asm(r12 == "unsafe_wrap_str", inlateout("r0") == v)
+}
+
+fn vec() -> Vec<Int> {
+    asm(r12 == "vec", out("r0") == 0)
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    asm(r12 == "push", inlateout("r0") == v, inlateout("r1") == x, out("r0") == 0)
+}
+
+fn pop(v: &Vec<Int>) -> Int {
+    match v {
+        Vec(head, rest) => head,
+        _ => 0,
+    }
+}
+
+fn reverse(v: &Vec<Int>) -> Vec<Int> {
+    let mut result = vec()
+    for n in &v {
+        push(result, n)
+    }
+    result
+}
+
+fn main() {
+    let mut scores = vec(5, 12, 3, 18, 9)
+    let mut sum = 0
+    while sum < 10 {
+        let current_score = pop(&mutscores)
+        sum = sum + current_score
+    }
+    print(scores)
+}
+
+fn pop(v: &Vec<Int>) -> Int {
+    match v {
+        Vec(head, rest) => head,
+        _ => 0,
+    }
+}
+
+fn print(v: Vec<Int>) {
+    for n in &v {
+        print_str(" ")
+        print_int(n)
+    }
+    print_str("\n")
+}
+
+fn print_str(s: Str) {
+    unsafe_print_str(s)
+}
+
+fn print_int(i: Int) {
+    unsafe_print_str(int_to_str(i))
+}
+
+fn unsafe_print_str(s: Str) {
+    asm(r12 == "unsafe_print_str", inlateout("r0") == s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut v = vec()
+    loop_with_int(n, 10, &mutv)
+    reverse(&mutv)
+    unsafe_wrap_str(v)
+}
+
+fn loop_with_int(i: Int, base: Int, v: &Vec<Int>) {
+    if i < base {
+        push(v, i)
+    } else {
+        loop_with_int(i / base, base, v)
+        push(v, i % base)
+    }
+}
+
+fn reverse(v: &Vec<Int>) -> Vec<Int> {
+    let mut result = vec()
+    for n in &v {
+        push(result, n)
+    }
+    result
+}
+
+fn unsafe_wrap_str(v: Vec<Int>) -> Str {
+    asm(r12 == "unsafe_wrap_str", inlateout("r0") == v)
+}
+
+fn vec() -> Vec<Int> {
+    asm(

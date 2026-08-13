@@ -1,0 +1,12 @@
+struct Log {
+    entries: Vec<Int>,
+}
+
+fn main() {
+    let log = Log { entries: vec() }
+    for i in range(6, 10) {
+        log.entries = push(log.entries, i)
+    }
+    print(get(log.entries, 0)?)
+    print(get(log.entries, 3)?)
+}

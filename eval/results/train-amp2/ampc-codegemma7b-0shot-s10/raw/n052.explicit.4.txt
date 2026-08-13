@@ -1,0 +1,17 @@
+fn main() {
+    let word = "banana".to_string()
+    for i in 0.upto(word.len()) {
+        if word.chars().nth(i).unwrap() == "n".chars().nth(0).unwrap() {
+            print(i)
+        }
+    }
+}
+
+fn main() {
+    let word = "banana".to_string()
+    for i in 0.upto(word.len()) {
+        if word.chars().nth(i).unwrap() == "n".chars().nth(0).unwrap() {
+            print(i)
+        }
+    }
+}

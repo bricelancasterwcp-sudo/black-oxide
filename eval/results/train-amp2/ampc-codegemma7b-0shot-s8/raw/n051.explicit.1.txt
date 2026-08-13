@@ -1,0 +1,5 @@
+fn main() {
+    let stone = "granite"
+    print(stone.chars().next())
+    print(stone.chars().last())
+}

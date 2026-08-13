@@ -1,0 +1,11 @@
+fn main() {
+    let digits = vec(4, 7, 4, 9, 4)
+    let mut position = 0
+    for x in &digits {
+        if x == &mut {
+            print(position)
+            print("\n")
+        }
+        position = position + 1
+    }
+}

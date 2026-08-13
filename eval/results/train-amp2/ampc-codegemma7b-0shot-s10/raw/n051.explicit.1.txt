@@ -1,0 +1,5 @@
+fn main() {
+    let g = "granite".to_string()
+    print(g.chars().nth(0).unwrap())
+    print(g.chars().nth(g.len() - 1).unwrap())
+}

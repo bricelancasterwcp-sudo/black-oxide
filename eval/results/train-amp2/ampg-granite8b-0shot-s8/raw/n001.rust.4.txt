@@ -1,0 +1,4 @@
+fn main() {
+    let total = (1..=5).fold(0, |acc, x| acc + x * x * x);
+    println!("The total is {}", total);
+}

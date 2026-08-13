@@ -1,0 +1,15 @@
+fn main() {
+    let text = "a1b22";
+    let mut total = 0;
+    let mut count = 0;
+
+    for c in text.chars() {
+        if c.is_ascii_digit() {
+            total += c.to_digit(10).unwrap() as i32;
+            count += 1;
+        }
+    }
+
+    println!("total: {}", total);
+    println!("count: {}", count);
+}

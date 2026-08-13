@@ -1,0 +1,16 @@
+struct Product { val: Int }
+
+fn multiply(v: Vec<Int>) -> Product {
+    let mut prod = 1
+    for x in v {
+        prod = prod * x
+    }
+    Product(val == prod)
+}
+
+fn main() {
+    let v = push(push(push(push(push(vec(), 1), 2), 3), 4), 5)
+    let v = push(v, 6)
+    let p = multiply(v)
+    print(p.val)
+}

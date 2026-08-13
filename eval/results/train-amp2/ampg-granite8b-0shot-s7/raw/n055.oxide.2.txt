@@ -1,0 +1,22 @@
+fn parse_int(s: Str) -> Option<Int> {
+    let mut iter = chars(s).iter()
+    let sign = match iter.next() {
+        Some(c) => match c {
+            _ => return_none(),
+        },
+        _ => return_none(),
+    }
+    let mut result = 0
+    while letSome(c) == iter.next() {
+        match c {
+            _ => return_none(),
+        }
+    }
+    Some(result)
+}
+
+fn main() {
+    let s = "8"
+    let result = parse_int(s)?
+    print(result)
+}

@@ -1,0 +1,15 @@
+fn main() {
+    let four_unit_price = 3
+    let five_unit_price = 2
+    let stock_4 = 4 * four_unit_price
+    let stock_5 = 5 * five_unit_price
+    let value_of_4 = stock_4
+    let value_of_5 = stock_5
+    let value_of_both = value_of_4 + value_of_5
+    print(stock_4)
+    drop stock_4
+    print(stock_5)
+    drop stock_5
+    print(value_of_both)
+    drop value_of_both
+}

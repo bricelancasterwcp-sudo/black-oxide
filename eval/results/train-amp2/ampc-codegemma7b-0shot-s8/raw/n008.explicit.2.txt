@@ -1,0 +1,9 @@
+fn main() {
+    let mut count = 0
+    for x in 1.to_int().unwrap() + 1.to_int().unwrap() {
+        if x % 3.to_int().unwrap() == 0.to_int().unwrap() || x % 5.to_int().unwrap() == 0.to_int().unwrap() {
+            count = count + 1.to_int().unwrap()
+        }
+    }
+    print(count)
+}

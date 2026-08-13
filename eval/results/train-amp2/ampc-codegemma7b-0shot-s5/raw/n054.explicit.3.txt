@@ -1,0 +1,132 @@
+fn count_vowels(s: &Str) -> Int {
+    let mut vowels = 0
+    for c in s.chars() {
+        match c {
+            _ => {
+                if "aeiouAEIOU".contains(c) {
+                    vowels = vowels + 1
+                }
+            },
+            _ => break_match(),
+        }
+    }
+    vowels
+}
+
+fn count_non_vowels(s: &Str) -> Int {
+    let mut non_vowels = 0
+    for c in s.chars() {
+        match c {
+            _ => {
+                if !"aeiouAEIOU".contains(c) {
+                    non_vowels = non_vowels + 1
+                }
+            },
+            _ => break_match(),
+        }
+    }
+    non_vowels
+}
+
+fn main() {
+    let word = "keyboard"
+    let vowels = count_vowels(word)
+    let non_vowels = count_non_vowels(word)
+    print("Number of vowels: {}\n", vowels)
+    print("Number of non-vowels: {}\n", non_vowels)
+}
+
+fn break_match() {
+    panic("Match arms must be exhaustive.")
+}
+
+fn contains(s: &Str, c: Char) -> Bool {
+    for ch in s.chars() {
+        if ch == c {
+            return true
+        }
+    }
+    false
+}
+
+fn print(s: &Str, a: Int) {
+    println(s, a)
+}
+
+fn print(s: &Str, a: Int, b: Int) {
+    println(s, a, b)
+}
+
+fn print(s: &Str, a: Int, b: Int, c: Int) {
+    println(s, a, b, c)
+}
+
+fn print(s: &Str, a: Int, b: Int, c: Int, d: Int) {
+    println(s, a, b, c, d)
+}
+
+fn print(s: &Str, a: Int, b: Int, c: Int, d: Int, e: Int) {
+    println(s, a, b, c, d, e)
+}
+
+fn print(s: &Str, a: Int, b: Int, c: Int, d: Int, e: Int, f: Int) {
+    println(s, a, b, c, d, e, f)
+}
+
+fn print(s: &Str, a: Int, b: Int, c: Int, d: Int, e: Int, f: Int, g: Int) {
+    println(s, a, b, c, d, e, f, g)
+}
+
+fn print(s: &Str, a: Int, b: Int, c: Int, d: Int, e: Int, f: Int, g: Int, h: Int) {
+    println(s, a, b, c, d, e, f, g, h)
+}
+
+fn print(s: &Str, a: Int, b: Int, c: Int, d: Int, e: Int, f: Int, g: Int, h: Int, i: Int) {
+    println(s, a, b, c, d, e, f, g, h, i)
+}
+
+fn print(s: &Str, a: Int, b: Int, c: Int, d: Int, e: Int, f: Int, g: Int, h: Int, i: Int, j: Int) {
+    println(s, a, b, c, d, e, f, g, h, i, j)
+}
+
+fn print(s: &Str, a: Int, b: Int, c: Int, d: Int, e: Int, f: Int, g: Int, h: Int, i: Int, j: Int, k: Int) {
+    println(s, a, b, c, d, e, f, g, h, i, j, k)
+}
+
+fn print(s: &Str, a: Int, b: Int, c: Int, d: Int, e: Int, f: Int, g: Int, h: Int, i: Int, j: Int, k: Int, l: Int) {
+    println(s, a, b, c, d, e, f, g, h, i, j, k, l)
+}
+
+fn print(s: &Str, a: Int, b: Int, c: Int, d: Int, e: Int, f: Int, g: Int, h: Int, i: Int, j: Int, k: Int, l: Int, m: Int) {
+    println(s, a, b, c, d, e, f, g, h, i, j, k, l, m)
+}
+
+fn print(s: &Str, a: Int, b: Int, c: Int, d: Int, e: Int, f: Int, g: Int, h: Int, i: Int, j: Int, k: Int, l: Int, m: Int, n: Int) {
+    println(s, a, b, c, d, e, f, g, h, i, j, k, l, m, n)
+}
+
+fn print(s: &Str, a: Int, b: Int, c: Int, d: Int, e: Int, f: Int, g: Int, h: Int, i: Int, j: Int, k: Int, l: Int, m: Int, n: Int, o: Int) {
+    println(s, a, b, c, d, e, f, g, h, i, j, k, l, m, n, o)
+}
+
+fn print(s: &Str, a: Int, b: Int, c: Int, d: Int, e: Int, f: Int, g: Int, h: Int, i: Int, j: Int, k: Int, l: Int, m: Int, n: Int, o: Int, p: Int) {
+    println(s, a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p)
+}
+
+fn print(s: &Str, a: Int, b: Int, c: Int, d: Int, e: Int, f: Int, g: Int, h: Int, i: Int, j: Int, k: Int, l: Int, m: Int, n: Int, o: Int, p: Int, q: Int) {
+    println(s, a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q)
+}
+
+fn print(s: &Str, a: Int, b: Int, c: Int, d: Int, e: Int, f: Int, g: Int, h: Int, i: Int, j: Int, k: Int, l: Int, m: Int, n: Int, o: Int, p: Int, q: Int, r: Int) {
+    println(s, a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r)
+}
+
+fn print(s: &Str, a: Int, b: Int, c: Int, d: Int, e: Int, f: Int, g: Int, h: Int, i: Int, j: Int, k: Int, l: Int, m: Int, n: Int, o: Int, p: Int, q: Int, r: Int, s: Int) {
+    println(s, a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s)
+}
+
+fn print(s: &Str, a: Int, b: Int, c: Int, d: Int, e: Int, f: Int, g: Int, h: Int, i: Int, j: Int, k: Int, l: Int, m: Int, n: Int, o: Int, p: Int, q: Int, r: Int, s: Int, t: Int) {
+    println(s, a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t)
+}
+
+fn print(s: &Str, a: Int, b: Int, c: Int, d: Int, e: Int, f: Int, g: Int, h: Int, i: Int, j: Int, k: Int, l: Int, m: Int, n: Int, o: Int

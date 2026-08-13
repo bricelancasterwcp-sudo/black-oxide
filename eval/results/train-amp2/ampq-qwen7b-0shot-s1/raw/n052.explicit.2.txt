@@ -1,0 +1,20 @@
+fn find_n(word: &Str) -> Vec<Int> {
+    let mut positions = vec()
+    for i in range(0, str_len(word)) {
+        let ch = get(word, i)
+        if ch == Some("n") {
+            push(positions, i)
+        }
+    }
+    positions
+}
+
+fn main() {
+    let banana = "banana"
+    let n_positions = find_n(banana)
+    for pos in &n_positions {
+        print(pos)
+    }
+    drop banana
+    drop n_positions
+}

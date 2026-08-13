@@ -1,0 +1,9 @@
+fn main() {
+    let four_three = 4 * 3;
+    let five_two = 5 * 2;
+    let total = four_three + five_two;
+
+    println!("Four units of three cost {}", four_three);
+    println!("Five units of two cost {}", five_two);
+    println!("In total, it cost {}", total);
+}

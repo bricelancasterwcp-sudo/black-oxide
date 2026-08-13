@@ -1,0 +1,9 @@
+fn main() {
+    let n1 = parse_int("7")
+    let n2 = parse_int("x")
+    let n3 = parse_int("9")
+    let n4 = parse_int("?")
+    let total = n1.unwrap_or(0) + n2.unwrap_or(0) + n3.unwrap_or(0) + n4.unwrap_or(0)
+    print(total)
+    print(4 - 4)
+}

@@ -1,0 +1,10 @@
+fn main() {
+    for signal in ["green", "red", "yellow"].iter() {
+        match *signal {
+            "green" => println!("go"),
+            "red" => println!("stop"),
+            "yellow" => println!("wait"),
+            _ => unreachable!(),
+        }
+    }
+}

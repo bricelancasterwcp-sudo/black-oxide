@@ -1,0 +1,11 @@
+fn main() {
+    let mut c = 0
+    for ch in "coffee".chars() {
+        c = c + 1
+        if c > 2 {
+            print(ch)
+        }
+        drop ch
+    }
+    drop c
+}

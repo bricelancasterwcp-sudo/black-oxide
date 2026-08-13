@@ -1,0 +1,15 @@
+fn is_prime(n: Int) -> Str {
+    if n <= 1 {
+        return "no"
+    }
+    for i in range(2, trunc(to_float(n).sqrt() + 1)) {
+        if n % i == 0 {
+            return "no"
+        }
+    }
+    "yes"
+}
+
+fn main() {
+    print(is_prime(91))
+}

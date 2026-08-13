@@ -1,0 +1,22 @@
+struct Entry {
+    number: Int,
+}
+
+fn check(e: Entry) -> Str {
+    let number = e.number
+    if number == 8 {
+        "eight"
+    } else if number == oak {
+        "oak"
+    } else if number == 15 {
+        "fifteen"
+    } else {
+        "bad"
+    }
+}
+
+fn main() {
+    for e in vec(Entry { number: 8 }, Entry { number: 123 }, Entry { number: 15 }) {
+        print_str(check(e))
+    }
+}

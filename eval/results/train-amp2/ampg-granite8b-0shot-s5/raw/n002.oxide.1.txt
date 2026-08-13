@@ -1,0 +1,15 @@
+struct Product { p: Int }
+
+fn multiply() -> Product {
+    let mut p = 1
+    for i in 1.range(7) {
+        p = p * i
+    }
+    Product(p)
+}
+
+fn main() {
+    match multiply() {
+        Product(n) => print(n),
+    }
+}

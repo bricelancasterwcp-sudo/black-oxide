@@ -1,0 +1,18 @@
+fn count_above_cutoff(values: Vec<Int>, cutoff: Int) -> Vec<Int> {
+    let mut below = 0
+    let mut above = 0
+    for x in values {
+        if x < cutoff {
+            below = below + 1
+        } else {
+            above = above + 1
+        }
+    }
+    vec(below, above)
+}
+
+fn main() {
+    let values = push(push(push(push(push(vec(), 5), 12), 3), 18), 9)
+    let result = count_above_cutoff(values, 10)
+    print(result)
+}

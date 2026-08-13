@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let nine_across = 9;
+    let three_down = 3;
+
+    let area = nine_across * three_down;
+    let perimeter = 2 * (nine_across + three_down);
+
+    println!("Area: {}", area);
+    println!("Perimeter: {}", perimeter);
+}
+```
+
+Output:
+```
+Area: 27
+Perimeter: 36
+```

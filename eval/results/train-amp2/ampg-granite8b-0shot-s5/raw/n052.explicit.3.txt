@@ -1,0 +1,10 @@
+fn main() {
+    let banana = "banana"
+    let mut n_positions = vec()
+    for i in 0 < banana.len() {
+        if banana.get(i) == Some("n") {
+            push(&mut && n_positions, i)
+        }
+    }
+    print(&n_positions)
+}

@@ -1,0 +1,15 @@
+struct Sensor {
+    reading: Int,
+}
+
+fn set(s: &Sensor) -> Sensor {
+    Sensor(7)
+}
+
+fn main() {
+    let sensor = Sensor(0)
+    let sensor_two = set(&sensor)
+    print(sensor_two.reading)
+    drop sensor
+    drop sensor_two
+}

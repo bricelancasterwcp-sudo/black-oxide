@@ -1,0 +1,454 @@
+fn set_sensor(device: &Device) {
+    let sensor = &device // a linear sensor is borrowed
+    sensor.reading = 7
+}
+
+fn main() {
+    let device = Device { sensor: Sensor { reading: 0 } }
+    set_sensor(&device)
+    print(device.sensor.reading)
+}
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn println(x: Int) {
+    loop()
+}
+
+fn loop() {
+    loop()
+}
+
+fn println(x: Int) {
+    loop()
+}
+
+fn main() {
+    let device = Device { sensor: Sensor { reading: 0 } }
+    set_sensor(&device)
+    print(device.sensor.reading)
+}
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn println(x: Int) {
+    loop()
+}
+
+fn loop() {
+    loop()
+}
+
+fn println(x: Int) {
+    loop()
+}
+
+fn main() {
+    let device = Device { sensor: Sensor { reading: 0 } }
+    set_sensor(&device)
+    print(device.sensor.reading)
+}
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn println(x: Int) {
+    loop()
+}
+
+fn loop() {
+    loop()
+}
+
+fn println(x: Int) {
+    loop()
+}
+
+fn main() {
+    let device = Device { sensor: Sensor { reading: 0 } }
+    set_sensor(&device)
+    print(device.sensor.reading)
+}
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn println(x: Int) {
+    loop()
+}
+
+fn loop() {
+    loop()
+}
+
+fn println(x: Int) {
+    loop()
+}
+
+fn main() {
+    let device = Device { sensor: Sensor { reading: 0 } }
+    set_sensor(&device)
+    print(device.sensor.reading)
+}
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn println(x: Int) {
+    loop()
+}
+
+fn loop() {
+    loop()
+}
+
+fn println(x: Int) {
+    loop()
+}
+
+fn main() {
+    let device = Device { sensor: Sensor { reading: 0 } }
+    set_sensor(&device)
+    print(device.sensor.reading)
+}
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn println(x: Int) {
+    loop()
+}
+
+fn loop() {
+    loop()
+}
+
+fn println(x: Int) {
+    loop()
+}
+
+fn main() {
+    let device = Device { sensor: Sensor { reading: 0 } }
+    set_sensor(&device)
+    print(device.sensor.reading)
+}
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn println(x: Int) {
+    loop()
+}
+
+fn loop() {
+    loop()
+}
+
+fn println(x: Int) {
+    loop()
+}
+
+fn main() {
+    let device = Device { sensor: Sensor { reading: 0 } }
+    set_sensor(&device)
+    print(device.sensor.reading)
+}
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn println(x: Int) {
+    loop()
+}
+
+fn loop() {
+    loop()
+}
+
+fn println(x: Int) {
+    loop()
+}
+
+fn main() {
+    let device = Device { sensor: Sensor { reading: 0 } }
+    set_sensor(&device)
+    print(device.sensor.reading)
+}
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn println(x: Int) {
+    loop()
+}
+
+fn loop() {
+    loop()
+}
+
+fn println(x: Int) {
+    loop()
+}
+
+fn main() {
+    let device = Device { sensor: Sensor { reading: 0 } }
+    set_sensor(&device)
+    print(device.sensor.reading)
+}
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn println(x: Int) {
+    loop()
+}
+
+fn loop() {
+    loop()
+}
+
+fn println(x: Int) {
+    loop()
+}
+
+fn main() {
+    let device = Device { sensor: Sensor { reading: 0 } }
+    set_sensor(&device)
+    print(device.sensor.reading)
+}
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn println(x: Int) {
+    loop()
+}
+
+fn loop() {
+    loop()
+}
+
+fn println(x: Int) {
+    loop()
+}
+
+fn main() {
+    let device = Device { sensor: Sensor { reading: 0 } }
+    set_sensor(&device)
+    print(device.sensor.reading)
+}
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn println(x: Int) {
+    loop()
+}
+
+fn loop() {
+    loop()
+}
+
+fn println(x: Int) {
+    loop()
+}
+
+fn main() {
+    let device = Device { sensor: Sensor { reading: 0 } }
+    set_sensor(&device)
+    print(device.sensor.reading)
+}
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn println(x: Int) {
+    loop()
+}
+
+fn loop() {
+    loop()
+}
+
+fn println(x: Int) {
+    loop()
+}
+
+fn main() {
+    let device = Device { sensor: Sensor { reading: 0 } }
+    set_sensor(&device)
+    print(device.sensor.reading)
+}
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn println(x: Int) {
+    loop()
+}
+
+fn loop() {
+    loop()
+}
+
+fn println(x: Int) {
+    loop()
+}
+
+fn main() {
+    let device = Device { sensor: Sensor { reading: 0 } }
+    set_sensor(&device)
+    print(device.sensor.reading)
+}
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn println(x: Int) {
+    loop()
+}
+
+fn loop() {
+    loop()
+}
+
+fn println(x: Int) {
+    loop()
+}
+
+fn main() {
+    let device = Device { sensor: Sensor { reading: 0 } }
+    set_sensor(&device)
+    print(device.sensor.reading)
+}
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn println(x: Int) {
+    loop()
+}
+
+fn loop() {
+    loop()
+}
+
+fn println(x: Int) {
+    loop()
+}
+
+fn main() {
+    let device = Device { sensor: Sensor { reading: 0 } }
+    set_sensor(&device)
+    print(device.sensor.reading)
+}
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn println(x: Int) {
+    loop()
+}
+
+fn loop() {
+    loop()
+}
+
+fn println(x: Int) {
+    loop()
+}
+
+fn main() {
+    let device = Device { sensor: Sensor { reading: 0 } }
+    set_sensor(&device)
+    print(device.sensor.reading)
+}
+
+struct Device

@@ -1,0 +1,14 @@
+fn reverse_num(num: Int) -> Int {
+    let mut reversed = 0
+    let mut num_copy = num
+    while num_copy > 0 {
+        let digit = num_copy % 10
+        reversed = reversed * 10 + digit
+        num_copy = num_copy / 10
+    }
+    reversed
+}
+
+fn main() {
+    print(reverse_num(1234))
+}

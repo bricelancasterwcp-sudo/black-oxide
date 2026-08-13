@@ -1,0 +1,17 @@
+fn main() {
+    let keyboard = "qwertyuiopasdfghjklzxcvbnm";
+    let vowels = "aeiou";
+    let mut vowel_count = 0;
+    let mut consonant_count = 0;
+
+    for letter in keyboard.chars() {
+        if vowels.to_lowercase().contains(letter.to_lowercase().next().unwrap()) {
+            vowel_count += 1;
+        } else {
+            consonant_count += 1;
+        }
+    }
+
+    println!("Vowels: {}", vowel_count);
+    println!("Consonants: {}", consonant_count);
+}

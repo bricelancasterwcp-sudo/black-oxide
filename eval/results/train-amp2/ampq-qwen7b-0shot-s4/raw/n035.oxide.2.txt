@@ -1,0 +1,18 @@
+struct DivideResult { answer: Int, error: Str }
+
+fn divide(a: Int, b: Int) -> DivideResult {
+    if b == 0 {
+        DivideResult(answer == -1, error == "bad")
+    } else {
+        DivideResult(answer == a / b, error == "")
+    }
+}
+
+fn main() {
+    let res = divide(20, 4)
+    if res.error == "bad" {
+        print_str(res.error)
+    } else {
+        print(res.answer)
+    }
+}

@@ -1,0 +1,52 @@
+fn drum() -> Str {
+    let d = "mom"
+    let r = "dad"
+    let u = "dad"
+    let a = "mom"
+    let s = "dad"
+    concat(concat(concat(concat(d, "dad"), a), "dad"), s)
+}
+
+fn main() {
+    print(drum())
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    a + b
+}
+
+fn print(s: Str) {
+    native_print(s)
+}
+
+fn native_print(s: Str) {
+    s
+}
+
+fn print_str(s: Str) {
+    native_print_str(s)
+}
+
+fn native_print_str(s: Str) {
+    s
+}
+
+fn len(s: Str) -> Int {
+    s.len()
+}
+
+fn drop_str(s: Str) {
+    s
+}
+
+fn clone_str(s: Str) -> Str {
+    s
+}
+
+fn main() {
+    let a = "a"
+    let b = "b"
+    print_str(concat(a, b))
+    drop_str(a)
+    drop_str(b)
+}

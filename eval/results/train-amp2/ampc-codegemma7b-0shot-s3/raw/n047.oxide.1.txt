@@ -1,0 +1,9 @@
+fn main() {
+    let mut v = vec_int(0, 10, 2).unwrap_or(vec())
+    let mut i = len(v)
+    while i > 0 {
+        i = i - 1
+        print(get(v, i).unwrap_or(0))
+        print_str("\n")
+    }
+}

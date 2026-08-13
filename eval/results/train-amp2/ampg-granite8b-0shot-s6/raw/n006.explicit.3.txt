@@ -1,0 +1,14 @@
+fn is_power_of_two(n: Int) -> Bool {
+    16 <= n && n < 32
+}
+
+fn main() {
+    let mut n = 100
+    while n > 0 {
+        if is_power_of_two(n) {
+            print(n)
+        }
+        drop n
+        n = n - 1
+    }
+}

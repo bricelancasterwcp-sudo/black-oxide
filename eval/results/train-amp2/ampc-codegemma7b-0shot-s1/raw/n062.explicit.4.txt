@@ -1,0 +1,340 @@
+fn print_signal(s: &Str) {
+    if s == "green" {
+        print("go")
+    } else if s == "red" {
+        print("stop")
+    } else if s == "yellow" {
+        print("wait")
+    }
+}
+
+fn main() {
+    let green = "green".to_string()
+    let red = "red".to_string()
+    let yellow = "yellow".to_string()
+    print_signal(&green)
+    print_signal(&red)
+    print_signal(&yellow)
+}
+
+fn print(msg: &Str) {
+    println(msg)
+}
+
+fn to_string(s: &Str) -> Str {
+    s.to_string()
+}
+
+fn len(s: &Str) -> Int {
+    s.len()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    (a + 1).to_int().unwrap()
+}
+
+fn clone(x: &Int) -> Int {
+    x.clone()
+}
+
+fn str_len(s: &Str) -> Int {
+    s.len()
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    a.to_string() + &b
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut v = vec()
+    for c in s.chars() {
+        v.push(c.to_string())
+    }
+    v
+}
+
+fn int_to_str(n: Int) -> Str {
+    n.to_string()
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    s.parse().ok()
+}
+
+fn to_float(n: Int) -> Float {
+    n.to_float()
+}
+
+fn trunc(x: Float) -> Int {
+    x.trunc()
+}
+
+fn drop_int(x: &Int) {
+    drop x
+}
+
+fn drop_str(x: &Str) {
+    drop x
+}
+
+fn drop_vec(v: &Vec<Int>) {
+    drop v
+}
+
+fn drop_float(x: &Float) {
+    drop x
+}
+
+fn drop_option(o: &Option<Int>) {
+    drop o
+}
+
+fn drop_result(r: &Result<Int, Str>) {
+    drop r
+}
+
+fn drop_tuple(t: &Tuple) {
+    drop t
+}
+
+fn drop_struct(s: &Struct) {
+    drop s
+}
+
+fn drop_enum(e: &Enum) {
+    drop e
+}
+
+fn drop_unit(u: &Unit) {
+    drop u
+}
+
+fn drop_marker(m: &Marker) {
+    drop m
+}
+
+fn drop_none(n: &None) {
+    drop n
+}
+
+fn drop_some(s: &Some<Int>) {
+    drop s
+}
+
+fn drop_ok(o: &Ok<Int>) {
+    drop o
+}
+
+fn drop_err(e: &Err<Str>) {
+    drop e
+}
+
+fn drop_tuple_unit(t: &TupleUnit) {
+    drop t
+}
+
+fn drop_tuple_int(t: &TupleInt) {
+    drop t
+}
+
+fn drop_tuple_float(t: &TupleFloat) {
+    drop t
+}
+
+fn drop_tuple_str(t: &TupleStr) {
+    drop t
+}
+
+fn drop_tuple_vec(t: &TupleVec) {
+    drop t
+}
+
+fn drop_tuple_option(t: &TupleOption) {
+    drop t
+}
+
+fn drop_tuple_result(t: &TupleResult) {
+    drop t
+}
+
+fn drop_tuple_struct(t: &TupleStruct) {
+    drop t
+}
+
+fn drop_tuple_enum(t: &TupleEnum) {
+    drop t
+}
+
+fn drop_tuple_marker(t: &TupleMarker) {
+    drop t
+}
+
+fn drop_tuple_none(t: &TupleNone) {
+    drop t
+}
+
+fn drop_tuple_some(t: &TupleSome) {
+    drop t
+}
+
+fn drop_tuple_ok(t: &TupleOk) {
+    drop t
+}
+
+fn drop_tuple_err(t: &TupleErr) {
+    drop t
+}
+
+fn drop_tuple_tuple_unit(t: &TupleTupleUnit) {
+    drop t
+}
+
+fn drop_tuple_tuple_int(t: &TupleTupleInt) {
+    drop t
+}
+
+fn drop_tuple_tuple_float(t: &TupleTupleFloat) {
+    drop t
+}
+
+fn drop_tuple_tuple_str(t: &TupleTupleStr) {
+    drop t
+}
+
+fn drop_tuple_tuple_vec(t: &TupleTupleVec) {
+    drop t
+}
+
+fn drop_tuple_tuple_option(t: &TupleTupleOption) {
+    drop t
+}
+
+fn drop_tuple_tuple_result(t: &TupleTupleResult) {
+    drop t
+}
+
+fn drop_tuple_tuple_struct(t: &TupleTupleStruct) {
+    drop t
+}
+
+fn drop_tuple_tuple_enum(t: &TupleTupleEnum) {
+    drop t
+}
+
+fn drop_tuple_tuple_marker(t: &TupleTupleMarker) {
+    drop t
+}
+
+fn drop_tuple_tuple_none(t: &TupleTupleNone) {
+    drop t
+}
+
+fn drop_tuple_tuple_some(t: &TupleTupleSome) {
+    drop t
+}
+
+fn drop_tuple_tuple_ok(t: &TupleTupleOk) {
+    drop t
+}
+
+fn drop_tuple_tuple_err(t: &TupleTupleErr) {
+    drop t
+}
+
+fn drop_tuple_tuple_tuple_unit(t: &TupleTupleTupleUnit) {
+    drop t
+}
+
+fn drop_tuple_tuple_tuple_int(t: &TupleTupleTupleInt) {
+    drop t
+}
+
+fn drop_tuple_tuple_tuple_float(t: &TupleTupleTupleFloat) {
+    drop t
+}
+
+fn drop_tuple_tuple_tuple_str(t: &TupleTupleTupleStr) {
+    drop t
+}
+
+fn drop_tuple_tuple_tuple_vec(t: &TupleTupleTupleVec) {
+    drop t
+}
+
+fn drop_tuple_tuple_tuple_option(t: &TupleTupleTupleOption) {
+    drop t
+}
+
+fn drop_tuple_tuple_tuple_result(t: &TupleTupleTupleResult) {
+    drop t
+}
+
+fn drop_tuple_tuple_tuple_struct(t: &TupleTupleTupleStruct) {
+    drop t
+}
+
+fn drop_tuple_tuple_tuple_enum(t: &TupleTupleTupleEnum) {
+    drop t
+}
+
+fn drop_tuple_tuple_tuple_marker(t: &TupleTupleTupleMarker) {
+    drop t
+}
+
+fn drop_tuple_tuple_tuple_none(t: &TupleTupleTupleNone) {
+    drop t
+}
+
+fn drop_tuple_tuple_tuple_some(t: &TupleTupleTupleSome) {
+    drop t
+}
+
+fn drop_tuple_tuple_tuple_ok(t: &TupleTupleTupleOk) {
+    drop t
+}
+
+fn drop_tuple_tuple_tuple_err(t: &TupleTupleTupleErr) {
+    drop t
+}
+
+fn drop_tuple_tuple_tuple_tuple_unit(t: &TupleTupleTupleTupleUnit) {
+    drop t
+}
+
+fn drop_tuple_tuple_tuple_tuple_int(t: &TupleTupleTupleTupleInt) {
+    drop t
+}
+
+fn drop_tuple_tuple_tuple_tuple_float(t: &TupleTupleTupleTupleFloat) {
+    drop t
+}
+
+fn drop_tuple_tuple_tuple_tuple_str(t: &TupleTupleTupleTupleStr) {
+    drop t
+}
+
+fn drop_tuple_tuple_tuple_tuple_vec(t: &TupleTupleTupleTupleVec) {
+    drop t
+}
+
+fn drop_tuple_tuple_tuple_tuple_option(t: &TupleTupleTupleTupleOption) {
+    drop t
+}
+
+fn drop_tuple_tuple_tuple_tuple_result(t: &TupleTupleTupleTupleResult) {
+    drop t
+}
+
+fn drop_tuple_tuple_tuple_tuple_struct(t: &TupleTupleTupleTupleStruct) {
+    drop t
+}
+
+fn drop_tuple_tuple_tuple_tuple_enum(t: &TupleTupleTupleTupleEnum) {
+    drop t
+}
+
+fn drop_tuple_tuple_tuple

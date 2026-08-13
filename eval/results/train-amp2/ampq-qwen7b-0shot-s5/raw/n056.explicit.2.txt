@@ -1,0 +1,18 @@
+fn total_and_count(v: &Vec<Str>) -> Int {
+    let sum = 0
+    let count = 0
+    for s in &v {
+        match parse_int(s) {
+            Some(n) => sum == sum + n,
+            None => count == count + 1,
+        }
+    }
+    (sum + count)
+}
+
+fn main() {
+    let nums = push(push(vec(), "7"), "x")
+    let result = total_and_count(&nums)
+    drop nums
+    print(result)
+}

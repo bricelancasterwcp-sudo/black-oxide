@@ -1,0 +1,264 @@
+fn main() {
+    let sum = range(1, 21)
+    filter(x, x % 2 == 0)
+    fold(0, add, x)
+    print(sum)
+}
+
+fn filter(v: Vec<Int>, f: FnMutIntInt) -> Vec<Int> {
+    let mut r = vec()
+    for x in v {
+        if f(x) {
+            push(r, x)
+        }
+    }
+    r
+}
+
+fn fold(acc: Int, f: FnMutIntIntInt, x: Int) -> Int {
+    let mut a = acc
+    a = f(a, x)
+    a
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut r = vec()
+    for i in a.to_int_unchecked() < b.to_int_unchecked() {
+        push(r, i)
+    }
+    r
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    for c in chars(s) {
+        print(c)
+    }
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut s = str_len(n)
+    for i in (0.to_int_unchecked() < s.to_int_unchecked()).rev() {
+        s = concat(int_to_str(trunc(n / 10)), char(trunc(n % 10) + 48))
+    }
+    s
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut r = vec()
+    for i in (0.to_int_unchecked() < s.to_int_unchecked()).rev() {
+        push(r, get(s, i).unwrap())
+    }
+    r
+}
+
+fn get(v: Str, i: Int) -> Option<Str> {
+    let mut r = None
+    if i.to_int_unchecked() >= 0.to_int_unchecked() && i.to_int_unchecked() < len(v).to_int_unchecked() {
+        r = Some(str_len(v))
+    }
+    r
+}
+
+fn len(v: Str) -> Int {
+    let mut r = 0.to_int_unchecked()
+    for _ in chars(v) {
+        r = r + 1
+    }
+    r
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut r = v
+    r = r + vec(x)
+    r
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn trunc(x: Float) -> Int {
+    let mut r = x
+    if r < 0.0 {
+        r = r - 0.5
+    }
+    Int(r.to_int_unchecked())
+}
+
+fn char(c: Int) -> Str {
+    let mut r = str_len(c)
+    for i in (0.to_int_unchecked() < r.to_int_unchecked()).rev() {
+        r = concat(int_to_str(trunc(c / 10)), char(trunc(c % 10) + 48))
+    }
+    r
+}
+
+fn to_float(n: Int) -> Float {
+    Float(n.to_int_unchecked())
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    let mut r = None
+    if len(s) > 0 {
+        let mut x = 0.to_int_unchecked()
+        for c in chars(s) {
+            x = x * 10 + (parse_digit(c)? - 48)
+        }
+        r = Some(x)
+    }
+    r
+}
+
+fn parse_digit(c: Str) -> Option<Int> {
+    let mut r = None
+    if c >= "0" && c <= "9" {
+        r = Some(c.to_int_unchecked())
+    }
+    r
+}
+
+fn is_digit(c: Str) -> Bool {
+    c >= "0" && c <= "9"
+}
+
+fn is_uppercase(c: Str) -> Bool {
+    c >= "A" && c <= "Z"
+}
+
+fn is_lowercase(c: Str) -> Bool {
+    c >= "a" && c <= "z"
+}
+
+fn to_lowercase(c: Str) -> Str {
+    if is_uppercase(c) {
+        char(c.to_int_unchecked() + 32)
+    } else {
+        c
+    }
+}
+
+fn to_uppercase(c: Str) -> Str {
+    if is_lowercase(c) {
+        char(c.to_int_unchecked() - 32)
+    } else {
+        c
+    }
+}
+
+fn is_alphanumeric(c: Str) -> Bool {
+    is_digit(c) || is_uppercase(c) || is_lowercase(c)
+}
+
+fn reverse(s: Str) -> Str {
+    let mut r = str_len(s)
+    let mut t = vec()
+    for i in (0.to_int_unchecked() < r.to_int_unchecked()).rev() {
+        push(t, get(s, i).unwrap())
+    }
+    r = vec()
+    for c in t {
+        push(r, c)
+    }
+    r
+}
+
+fn join(a: Str, b: Str) -> Str {
+    let mut r = a
+    r = concat(r, b)
+    r
+}
+
+fn split(s: Str, sep: Str) -> Vec<Str> {
+    let mut r = vec()
+    let mut start = 0.to_int_unchecked()
+    for i in (0.to_int_unchecked() < len(s).to_int_unchecked()).rev() {
+        if get(s, i).unwrap() == sep {
+            push(r, substring(s, start, i))
+            start = i + 1
+        }
+    }
+    push(r, substring(s, start, len(s)))
+    r
+}
+
+fn substring(s: Str, start: Int, end: Int) -> Str {
+    let mut r = vec()
+    for i in start.to_int_unchecked() < end.to_int_unchecked() {
+        push(r, get(s, i).unwrap())
+    }
+    r
+}
+
+fn cmp(a: Int, b: Int) -> Int {
+    if a < b {
+        -1
+    } else if a > b {
+        1
+    } else {
+        0
+    }
+}
+
+fn min(a: Int, b: Int) -> Int {
+    if a < b {
+        a
+    } else {
+        b
+    }
+}
+
+fn max(a: Int, b: Int) -> Int {
+    if a > b {
+        a
+    } else {
+        b
+    }
+}
+
+fn abs(a: Float) -> Float {
+    if a < 0.0 {
+        -a
+    } else {
+        a
+    }
+}
+
+fn sqrt(a: Float) -> Float {
+    let mut r = a
+    for _ in (0.to_int_unchecked() < 100.to_int_unchecked()).rev() {
+        r = (r + a / r) / 2.0
+    }
+    r
+}
+
+fn sin(a: Float) -> Float {
+    let mut r = a
+    for i in (1.to_int_unchecked() < 10.to_int_unchecked()).rev() {
+        r = r - (pow(a, 2.to_int_unchecked()) / factorial(2.to_int_unchecked() * i))
+    }
+    r
+}
+
+fn cos(a: Float) -> Float {
+    let mut r = 1.0
+    for i in (1.to_int_unchecked() < 10.to_int_unchecked()).rev() {
+        r = r - (pow(a, 2.to_int_unchecked()) / factorial(2.to_int_unchecked() * i))
+    }
+    r
+}
+
+fn tan(a: Float) -> Float {
+    sin(a) / cos(a)
+}
+
+fn pow(a: Float, b: Int) -> Float {
+    let mut r = a
+    for _ in (0.to

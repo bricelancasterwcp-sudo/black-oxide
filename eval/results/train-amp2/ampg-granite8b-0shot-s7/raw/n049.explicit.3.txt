@@ -1,0 +1,33 @@
+fn figure_8(a: Int, b: Int, c: Int) -> Int {
+    let d = a * b
+    let e = d * c
+    if e > 0 {
+        e
+    } else {
+        -e
+    }
+}
+
+fn figure_3(a: Int) -> Int {
+    let b = a * 2
+    let c = figure_8(b, -b, 1)
+    b + c
+}
+
+fn figure_11(a: Int, b: Int) -> Int {
+    let c = figure_3(b)
+    let d = a * b
+    c + d
+}
+
+fn figure_6(a: Int, b: Int) -> Int {
+    let c = figure_11(a, b)
+    let d = figure_8(a, b, 1)
+    c + d
+}
+
+fn main() {
+    print(figure_6(1, 2))
+    print(figure_6(3, 4))
+    print(figure_6(5, 6))
+}

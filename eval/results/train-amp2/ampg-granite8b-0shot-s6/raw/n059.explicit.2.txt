@@ -1,0 +1,57 @@
+fn word_count(phrase: &Str) -> Int {
+    let word_count = 0
+    let current_word = ""
+    for char in &chars_in_str {
+        if char.is_ascii_punctuation() {
+            drop current_word
+            drop word_count
+        } else if char.is_ascii_whitespace() {
+            continue
+        } else {
+            current_word = current_word + char
+        }
+    }
+    word_count + 1
+}
+
+fn char_count(phrase: &Str) -> Int {
+    len(&chars_in_str)
+}
+
+fn main() {
+    print("Enter a phrase: ")
+    let phrase = read_line()
+    print("The number of words in the phrase is ")
+    print(word_count(&phrase))
+    print(" and the number of characters is ")
+    print(char_count(&phrase))
+}
+
+fn chars_in_str(s: &Str) -> Vec<Str> {
+    let chars = vec()
+    for i in 0 < len(&s) {
+        push(chars, s.get(i))
+    }
+    chars
+}
+
+fn read_line() -> Str {
+    let mut buffer = ""
+    for char in &chars_in_str {
+        if char == "\n" {
+            break
+        } else {
+            buffer = buffer + char
+        }
+    }
+    buffer
+}
+
+fn main() {
+    print("Enter a phrase: ")
+    let phrase = read_line()
+    print("The number of words in the phrase is ")
+    print(word_count(&phrase))
+    print(" and the number of characters is ")
+    print(char_count(&phrase))
+}

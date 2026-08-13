@@ -1,0 +1,9 @@
+use std::collections::VecDeque;
+
+fn main() {
+    let mut queue = VecDeque::from([1, 2, 3, 4, 5]);
+    queue.push_back(queue.pop_front().unwrap());
+    for entry in queue {
+        println!("{}", entry);
+    }
+}

@@ -1,0 +1,13 @@
+```rust
+const FIGURES: [usize; 4] = [8, 3, 11, 6];
+
+fn main() {
+    let smallest = *FIGURES.iter().min().unwrap();
+    let largest = *FIGURES.iter().max().unwrap();
+
+    println!("{}", smallest);
+    println!("{}", largest - smallest);
+}
+```
+
+This solution uses the const keyword to define an array of figures. Then, the iter method is used to create an iterator over the elements of the array. The min and max methods are then used to find the smallest and largest elements of the iterator, respectively. Finally, the results are printed using the println! macro.

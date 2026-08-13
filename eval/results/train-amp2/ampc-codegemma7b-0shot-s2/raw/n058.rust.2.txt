@@ -1,0 +1,8 @@
+fn main() {
+    let mut seen: std::collections::HashSet<char> = std::collections::HashSet::new();
+    for c in "coffee".chars() {
+        if !seen.insert(c) {
+            println!("{}", c);
+        }
+    }
+}

@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let mut numbers = Vec::new();
+    for i in 1..=10 {
+        if i % 2 == 0 {
+            numbers.push(i);
+        }
+    }
+    for number in numbers.iter().rev() {
+        println!("{}", number);
+    }
+}
+```
+
+This code snippet collects every even number from 1 through 10 into a vector called `numbers`, then prints the vector in reverse order using the `iter().rev()` method.

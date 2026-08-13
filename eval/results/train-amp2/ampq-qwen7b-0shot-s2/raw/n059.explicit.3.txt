@@ -1,0 +1,13 @@
+fn word_count(s: &Str) -> Int {
+    let words = s.split_whitespace().count() + 1
+    let chars = s.len()
+    words
+}
+
+fn main() {
+    let phrase = "when in doubt go home"
+    let words = word_count(&phrase)
+    let chars = phrase.len()
+    print(words)
+    print(chars)
+}

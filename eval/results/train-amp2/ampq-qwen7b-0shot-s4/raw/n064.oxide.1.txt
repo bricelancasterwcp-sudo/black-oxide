@@ -1,0 +1,13 @@
+struct List { one: Option<Int>, four: Option<Int> }
+
+fn main() {
+    let list = List { one: Some(10), four: Some(20) }
+    match list.one {
+        Some(n) => print(n),
+        None => print_str("none"),
+    }
+    match list.four {
+        Some(n) => print(n),
+        None => print_str("none"),
+    }
+}

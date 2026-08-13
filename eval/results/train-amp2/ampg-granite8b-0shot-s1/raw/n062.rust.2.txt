@@ -1,0 +1,22 @@
+```rust
+use std::thread;
+use std::time::Duration;
+
+fn main() {
+    let colors = ["green", "red", "yellow"];
+    for color in colors {
+        match color {
+            "green" => println!("Signal for {}", color),
+            "red" => println!("Signal for {}", color),
+            "yellow" => println!("Signal for {}", color),
+            _ => (),
+        }
+        thread::sleep(Duration::from_secs(match color {
+            "green" => 1,
+            "red" => 3,
+            "yellow" => 5,
+            _ => 0,
+        }));
+    }
+}
+```

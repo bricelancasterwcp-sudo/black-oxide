@@ -1,0 +1,27 @@
+fn deposit(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn main() {
+    let mut balance = 0
+    balance = deposit(balance, 3)
+    print_str("Balance after deposit 3: ")
+    print(balance)
+    print_str("\n")
+    balance = deposit(balance, 1)
+    print_str("Balance after deposit 1: ")
+    print(balance)
+    print_str("\n")
+    balance = deposit(balance, 4)
+    print_str("Balance after deposit 4: ")
+    print(balance)
+    print_str("\n")
+    balance = deposit(balance, 1)
+    print_str("Balance after deposit 1: ")
+    print(balance)
+    print_str("\n")
+    balance = deposit(balance, 5)
+    print_str("Balance after deposit 5: ")
+    print(balance)
+    print_str("\n")
+}

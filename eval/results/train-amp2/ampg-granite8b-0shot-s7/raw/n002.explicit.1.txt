@@ -1,0 +1,261 @@
+fn main() {
+    print(multiply(1, 2, 3, 4, 5, 6))
+}
+
+fn multiply(a: Int, b: Int, c: Int, d: Int, e: Int, f: Int) -> Int {
+    a * b * c * d * e * f
+}
+
+fn multiply_recursive(a: Int, b: Int, c: Int, d: Int, e: Int, f: Int) -> Int {
+    if f < 2 {
+        a * b * c * d * e
+    } else {
+        multiply_recursive(a, b, c, d, e, f - 1) * f
+    }
+}
+
+fn multiply_mutual_recursive(a: Int, b: Int, c: Int, d: Int, e: Int, f: Int) -> Int {
+    if f < 2 {
+        a * b * c * d * e
+    } else {
+        multiply_iterative(a, b, c, d, e, f - 1) * f
+    }
+}
+
+fn multiply_iterative(a: Int, b: Int, c: Int, d: Int, e: Int, f: Int) -> Int {
+    let mut acc = 1
+    let mut i = f
+    while i > 1 {
+        acc = acc * i
+        i = i - 1
+    }
+    a * b * c * d * e * acc
+}
+
+fn multiply_tail_recursive(a: Int, b: Int, c: Int, d: Int, e: Int, f: Int) -> Int {
+    if f < 2 {
+        a * b * c * d * e
+    } else {
+        multiply_tail_recursive(a, b, c, d, e, f - 1) * f
+    }
+}
+
+fn multiply_big(n: Int) -> Int {
+    let mut acc = 1
+    let mut i = n
+    while i > 1 {
+        acc = acc * i
+        i = i - 1
+    }
+    acc
+}
+
+fn multiply_big_mutual_recursive(n: Int) -> Int {
+    if n < 2 {
+        1
+    } else {
+        multiply_big_tail_recursive(n - 1) * n
+    }
+}
+
+fn multiply_big_tail_recursive(n: Int) -> Int {
+    if n < 2 {
+        1
+    } else {
+        multiply_big(n - 1) * n
+    }
+}
+
+fn multiply_big_iterative(n: Int) -> Int {
+    let mut acc = 1
+    let mut i = n
+    while i > 1 {
+        acc = acc * i
+        i = i - 1
+    }
+    acc
+}
+
+fn multiply_big_tree(n: Int) -> Int {
+    if n < 3 {
+        multiply_big(n)
+    } else {
+        let left = multiply_big_tree(n / 2)
+        let right = multiply_big_tree(n - n / 2)
+        left * right
+    }
+}
+
+fn multiply_big_mutual_recursive_tree(n: Int) -> Int {
+    if n < 3 {
+        multiply_big_mutual_recursive(n)
+    } else {
+        let left = multiply_big_mutual_recursive_tree(n / 2)
+        let right = multiply_big_mutual_recursive_tree(n - n / 2)
+        left * right
+    }
+}
+
+fn multiply_big_tail_recursive_tree(n: Int) -> Int {
+    if n < 3 {
+        multiply_big_tail_recursive(n)
+    } else {
+        let left = multiply_big_tail_recursive_tree(n / 2)
+        let right = multiply_big_tail_recursive_tree(n - n / 2)
+        left * right
+    }
+}
+
+fn multiply_big_iterative_tree(n: Int) -> Int {
+    let mut acc = 1
+    let mut i = n
+    while i > 1 {
+        if i % 2 == 1 {
+            acc = acc * i
+        }
+        i = i / 2
+    }
+    acc
+}
+
+fn multiply_big_branch_and_bound(n: Int) -> Int {
+    if n < 3 {
+        multiply_big(n)
+    } else {
+        let left = multiply_big_branch_and_bound(n / 2)
+        let right = multiply_big_branch_and_bound(n - n / 2)
+        if left < right {
+            left * left
+        } else {
+            right * right
+        }
+    }
+}
+
+fn multiply_big_mutual_recursive_branch_and_bound(n: Int) -> Int {
+    if n < 3 {
+        multiply_big_mutual_recursive(n)
+    } else {
+        let left = multiply_big_mutual_recursive_branch_and_bound(n / 2)
+        let right = multiply_big_mutual_recursive_branch_and_bound(n - n / 2)
+        if left < right {
+            left * left
+        } else {
+            right * right
+        }
+    }
+}
+
+fn multiply_big_tail_recursive_branch_and_bound(n: Int) -> Int {
+    if n < 3 {
+        multiply_big_tail_recursive(n)
+    } else {
+        let left = multiply_big_tail_recursive_branch_and_bound(n / 2)
+        let right = multiply_big_tail_recursive_branch_and_bound(n - n / 2)
+        if left < right {
+            left * left
+        } else {
+            right * right
+        }
+    }
+}
+
+fn multiply_big_iterative_branch_and_bound(n: Int) -> Int {
+    let mut acc = 1
+    let mut i = n
+    while i > 1 {
+        if i % 2 == 1 {
+            acc = acc * i
+        }
+        i = i / 2
+    }
+    acc * acc
+}
+
+fn multiply_big_branch_and_bound_tree(n: Int) -> Int {
+    if n < 3 {
+        multiply_big_branch_and_bound(n)
+    } else {
+        let left = multiply_big_branch_and_bound_tree(n / 2)
+        let right = multiply_big_branch_and_bound_tree(n - n / 2)
+        if left < right {
+            left * left
+        } else {
+            right * right
+        }
+    }
+}
+
+fn multiply_big_mutual_recursive_branch_and_bound_tree(n: Int) -> Int {
+    if n < 3 {
+        multiply_big_mutual_recursive_branch_and_bound(n)
+    } else {
+        let left = multiply_big_mutual_recursive_branch_and_bound_tree(n / 2)
+        let right = multiply_big_mutual_recursive_branch_and_bound_tree(n - n / 2)
+        if left < right {
+            left * left
+        } else {
+            right * right
+        }
+    }
+}
+
+fn multiply_big_tail_recursive_branch_and_bound_tree(n: Int) -> Int {
+    if n < 3 {
+        multiply_big_tail_recursive_branch_and_bound(n)
+    } else {
+        let left = multiply_big_tail_recursive_branch_and_bound_tree(n / 2)
+        let right = multiply_big_tail_recursive_branch_and_bound_tree(n - n / 2)
+        if left < right {
+            left * left
+        } else {
+            right * right
+        }
+    }
+}
+
+fn multiply_big_iterative_branch_and_bound_tree(n: Int) -> Int {
+    let mut acc = 1
+    let mut i = n
+    while i > 1 {
+        if i % 2 == 1 {
+            acc = acc * i
+        }
+        i = i / 2
+    }
+    acc * acc
+}
+
+fn multiply_big_branch_and_bound_iterative(n: Int) -> Int {
+    if n < 3 {
+        multiply_big_branch_and_bound(n)
+    } else {
+        let mut acc = 1
+        let mut i = n
+        while i > 1 {
+            if i % 2 == 1 {
+                acc = acc * i
+            }
+            i = i / 2
+        }
+        acc * acc
+    }
+}
+
+fn multiply_big_mutual_recursive_branch_and_bound_iterative(n: Int) -> Int {
+    if n < 3 {
+        multiply_big_mutual_recursive_branch_and_bound(n)
+    } else {
+        let mut acc = 1
+        let mut i = n
+        while i > 1 {
+            if i % 2 == 1 {
+                acc = acc * i
+            }
+            i = i / 2
+        }
+        acc * acc
+    }
+}
+
+fn multiply_big_tail_recursive_branch_and_bound

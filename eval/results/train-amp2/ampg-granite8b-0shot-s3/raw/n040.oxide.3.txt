@@ -1,0 +1,24 @@
+struct Shape {
+    area: Int,
+}
+
+struct Square {
+    side: Int,
+}
+
+struct Circle {
+    radius: Int,
+}
+
+fn area(shape: Shape) -> Int {
+    shape.area
+}
+
+fn main() {
+    let square = Square { side: 4 }
+    let circle = Circle { radius: 4 }
+    let square_area = area(Square { side: 4 })
+    let circle_area = area(Circle { radius: 4 })
+    print(square_area)
+    print(circle_area)
+}

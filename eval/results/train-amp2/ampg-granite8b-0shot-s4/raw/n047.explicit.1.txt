@@ -1,0 +1,16 @@
+fn collect(v: &Vec<Int>, target: &Vec<Int>, n: Int) -> Vec<Int> {
+    if n < 1 {
+        return clone(&target)
+    }
+    let v = clone(&v)
+    let target = clone(&target)
+    collect(v, push(target, get(&v, n - 1).unwrap()), n - 2)
+}
+
+fn main() {
+    let v = push(push(vec(), 2), 4)
+    let target = vec()
+    print(collect(&v, &target, len(&v)))
+    drop v
+    drop target
+}

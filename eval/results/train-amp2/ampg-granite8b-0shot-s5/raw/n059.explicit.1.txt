@@ -1,0 +1,20 @@
+fn count_words_and_chars(phrase: &String) -> Int {
+    let words: Vec<Str> = phrase.split(" ").collect()
+    let mut num_words: Int = 0
+    for word in &words {
+        num_words = num_words + 1
+    }
+    let mut num_chars: Int = 0
+    for word in &words {
+        for ch in &chars_in_word {
+            num_chars = num_chars + 1
+        }
+    }
+    (num_words + num_chars)
+}
+
+fn main() {
+    let phrase = "the quick brown fox jumps over the lazy dog"
+    let word_and_char_count = count_words_and_chars(&phrase)
+    print(word_and_char_count)
+}

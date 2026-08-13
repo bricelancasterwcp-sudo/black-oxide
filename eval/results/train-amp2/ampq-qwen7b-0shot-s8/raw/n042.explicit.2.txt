@@ -1,0 +1,16 @@
+fn main() {
+    let nums = vec(12, 5, 20, 8, 17)
+    let mut max = None
+    let mut second_max = None
+    for x in &nums {
+        if max.is_none() || x > max.unwrap() {
+            second_max = max
+            max = Some(x)
+        } else if second_max.is_none() || (x > second_max.unwrap() && x != max.unwrap()) {
+            second_max = Some(x)
+        }
+    }
+    print(max.unwrap())
+    print(second_max.unwrap())
+    drop nums
+}

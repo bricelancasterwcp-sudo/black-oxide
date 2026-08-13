@@ -1,0 +1,12 @@
+struct Line {
+    units: Int,
+    price_per_unit: Int,
+}
+
+fn main() {
+    let line1 = Line { units: 4, price_per_unit: 3 }
+    let line2 = Line { units: 5, price_per_unit: 2 }
+    print(line1.units * line1.price_per_unit)
+    print(line2.units * line2.price_per_unit)
+    print((line1.units * line1.price_per_unit) + (line2.units * line2.price_per_unit))
+}

@@ -1,0 +1,31 @@
+fn main() {
+    let vowels = "aeiouAEIOU".chars().collect_vec().into_iter().fold(0, move || v, c) || ifowel(c) == 1 || 0 || v + 1
+    let consonants = 26 - vowels
+    print(vowels)
+    print(consonants)
+}
+
+fn ifowel(c: Str) -> Int {
+    if "aeiouAEIOU".contains(c) {
+        1
+    } else {
+        0
+    }
+}
+
+fn collect_vec() -> Vec<Str> {
+    vec()
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn main() {
+    let nums = push(push(vec(), 5), 40)
+    let bigger = extend(clone(&nums), 70)
+    print(sum_big(&nums, 10))
+    drop nums
+    print(sum_big(&bigger, 10))
+    drop bigger
+}

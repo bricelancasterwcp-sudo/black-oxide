@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let word = "drum";
+
+    // Print the word with its letters running back to front
+    for c in word.chars().rev() {
+        print!("{}", c);
+    }
+    println!();
+
+    // Print the word as it normally reads
+    println!("{}", word);
+}
+```

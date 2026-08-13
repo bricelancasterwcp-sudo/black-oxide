@@ -1,0 +1,161 @@
+fn main() {
+    let nums = push(push(vec(), 5), 40)
+    let bigger = extend(clone(&nums), 70)
+    print(sum_big(&nums, 10))
+    drop nums
+    print(sum_big(&bigger, 10))
+    drop bigger
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let total = 0
+    for x in &v {
+        if x > limit {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn extend(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let vec = vec()
+    let mut i = a
+    while i < b {
+        push(vec, i)
+        i = i + 1
+    }
+    vec
+}
+
+fn print(x: Str) {
+    print_str(x)
+    print_str("\n")
+}
+
+fn print_str(s: Str) {
+    extern_print_str(s)
+}
+
+fn clone(x: T) -> T {
+    x
+}
+
+fn extern_print_str(s: Str) {
+    drop s
+}
+
+fn len(v: Vec<T>) -> Int {
+    extern_len(v)
+}
+
+fn extern_len(v: Vec<T>) -> Int {
+    drop v
+    0
+}
+
+fn get(v: Vec<T>, i: Int) -> Option<T> {
+    extern_get(v, i)
+}
+
+fn extern_get(v: Vec<T>, i: Int) -> Option<T> {
+    drop v
+    drop i
+    None
+}
+
+fn to_float(x: Int) -> Float {
+    extern_to_float(x)
+}
+
+fn extern_to_float(x: Int) -> Float {
+    0.0
+}
+
+fn trunc(x: Float) -> Int {
+    extern_trunc(x)
+}
+
+fn extern_trunc(x: Float) -> Int {
+    0
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    extern_concat(a, b)
+}
+
+fn extern_concat(a: Str, b: Str) -> Str {
+    drop a
+    drop b
+    ""
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    extern_chars(s)
+}
+
+fn extern_chars(s: Str) -> Vec<Str> {
+    drop s
+    vec()
+}
+
+fn int_to_str(x: Int) -> Str {
+    extern_int_to_str(x)
+}
+
+fn extern_int_to_str(x: Int) -> Str {
+    drop x
+    ""
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    extern_parse_int(s)
+}
+
+fn extern_parse_int(s: Str) -> Option<Int> {
+    drop s
+    None
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let vec = vec()
+    let mut i = a
+    while i < b {
+        push(vec, i)
+        i = i + 1
+    }
+    vec
+}
+
+fn drop_vec(v: Vec<T>) {
+    for e in &v {
+        drop e
+    }
+    drop v
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let total = 0
+    for x in &v {
+        if x > limit {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn extend(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn main() {
+    let nums = push(push(vec(), 5), 40)
+    let bigger = extend(clone(&nums), 70)
+    print(sum_big(&nums, 10))
+    drop nums
+    print(sum_big(&bigger, 10))
+    drop bigger
+}

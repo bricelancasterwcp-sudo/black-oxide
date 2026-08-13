@@ -1,0 +1,8 @@
+fn multiply(a: Int, b: Int, c: Int, d: Int, e: Int, f: Int) -> Int {
+    a * b * c * d * e * f
+}
+
+fn main() {
+    let product = multiply(1, 2, 3, 4, 5, 6)
+    print(product)
+}

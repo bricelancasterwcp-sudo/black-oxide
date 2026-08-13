@@ -1,0 +1,308 @@
+fn main() {
+    let mut v = vec(12, 5, 20, 8, 17)
+    v.sort_by_key(std_cmp_int)
+    print(get(v, len(v) - 1)?)
+    print(get(v, len(v) - 2)?)
+}
+
+fn std_cmp_int(i: Int, j: Int) -> Ordering {
+    match i.cmp(j) {
+        Ordering(lt) => lt,
+        Ordering(gt) => gt,
+        Ordering(eq) => eq,
+    }
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    if i >= 0 && i < len(v) {
+        Some(v.get(i))
+    } else {
+        None
+    }
+}
+
+fn len(v: Vec<Int>) -> Int {
+    v.len()
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print(x: Str) {
+    print(x)
+}
+
+enum Ordering {
+    Lt,
+    Gt,
+    Eq,
+}
+
+fn cmp(i: Int, j: Int) -> Ordering {
+    if i < j {
+        Ordering(Lt)
+    } else if i > j {
+        Ordering(Gt)
+    } else {
+        Ordering(Eq)
+    }
+}
+
+fn std_cmp_int(i: Int, j: Int) -> Ordering {
+    cmp(i, j)
+}
+
+fn vec(v: Int, x: Int, y: Int, z: Int, w: Int) -> Vec<Int> {
+    vec(v, x, y, z, w)
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn sort_by_key(v: Vec<Int>, f: FnMutIntIntOrdering) -> Vec<Int> {
+    sort_by_key(v, f)
+}
+
+fn _int_to_str(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn _parse_int(s: Str) -> Option<Int> {
+    parse_int(s)
+}
+
+fn _to_float(n: Int) -> Float {
+    to_float(n)
+}
+
+fn _trunc(x: Float) -> Int {
+    trunc(x)
+}
+
+fn _chars(s: Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn _concat(a: Str, b: Str) -> Str {
+    concat(a, b)
+}
+
+fn _str_len(s: Str) -> Int {
+    str_len(s)
+}
+
+fn _get(v: Vec<Int>, i: Int) -> Option<Int> {
+    get(v, i)
+}
+
+fn _len(v: Vec<Int>) -> Int {
+    len(v)
+}
+
+fn _print(x: Int) {
+    print(x)
+}
+
+fn _print(x: Str) {
+    print(x)
+}
+
+fn _first_big(v: Vec<Int>) -> Int {
+    first_big(v)
+}
+
+fn _second(v: Vec<Int>) -> Option<Int> {
+    second(v)
+}
+
+fn _main() {
+    main()
+}
+
+fn _Reading(label: Str, values: Vec<Int>) -> Reading {
+    Reading(label, values)
+}
+
+fn _vec(v: Int, x: Int, y: Int, z: Int, w: Int) -> Vec<Int> {
+    vec(v, x, y, z, w)
+}
+
+fn _push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn _sort_by_key(v: Vec<Int>, f: FnMutIntIntOrdering) -> Vec<Int> {
+    sort_by_key(v, f)
+}
+
+fn _int_to_str(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn _parse_int(s: Str) -> Option<Int> {
+    parse_int(s)
+}
+
+fn _to_float(n: Int) -> Float {
+    to_float(n)
+}
+
+fn _trunc(x: Float) -> Int {
+    trunc(x)
+}
+
+fn _chars(s: Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn _concat(a: Str, b: Str) -> Str {
+    concat(a, b)
+}
+
+fn _str_len(s: Str) -> Int {
+    str_len(s)
+}
+
+fn _get(v: Vec<Int>, i: Int) -> Option<Int> {
+    get(v, i)
+}
+
+fn _len(v: Vec<Int>) -> Int {
+    len(v)
+}
+
+fn _print(x: Int) {
+    print(x)
+}
+
+fn _print(x: Str) {
+    print(x)
+}
+
+fn _first_big(v: Vec<Int>) -> Int {
+    first_big(v)
+}
+
+fn _second(v: Vec<Int>) -> Option<Int> {
+    second(v)
+}
+
+fn _main() {
+    main()
+}
+
+fn _Reading(label: Str, values: Vec<Int>) -> Reading {
+    Reading(label, values)
+}
+
+fn _vec(v: Int, x: Int, y: Int, z: Int, w: Int) -> Vec<Int> {
+    vec(v, x, y, z, w)
+}
+
+fn _push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn _sort_by_key(v: Vec<Int>, f: FnMutIntIntOrdering) -> Vec<Int> {
+    sort_by_key(v, f)
+}
+
+fn _int_to_str(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn _parse_int(s: Str) -> Option<Int> {
+    parse_int(s)
+}
+
+fn _to_float(n: Int) -> Float {
+    to_float(n)
+}
+
+fn _trunc(x: Float) -> Int {
+    trunc(x)
+}
+
+fn _chars(s: Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn _concat(a: Str, b: Str) -> Str {
+    concat(a, b)
+}
+
+fn _str_len(s: Str) -> Int {
+    str_len(s)
+}
+
+fn _get(v: Vec<Int>, i: Int) -> Option<Int> {
+    get(v, i)
+}
+
+fn _len(v: Vec<Int>) -> Int {
+    len(v)
+}
+
+fn _print(x: Int) {
+    print(x)
+}
+
+fn _print(x: Str) {
+    print(x)
+}
+
+fn _first_big(v: Vec<Int>) -> Int {
+    first_big(v)
+}
+
+fn _second(v: Vec<Int>) -> Option<Int> {
+    second(v)
+}
+
+fn _main() {
+    main()
+}
+
+fn _Reading(label: Str, values: Vec<Int>) -> Reading {
+    Reading(label, values)
+}
+
+fn _vec(v: Int, x: Int, y: Int, z: Int, w: Int) -> Vec<Int> {
+    vec(v, x, y, z, w)
+}
+
+fn _push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn _sort_by_key(v: Vec<Int>, f: FnMutIntIntOrdering) -> Vec<Int> {
+    sort_by_key(v, f)
+}
+
+fn _int_to_str(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn _parse_int(s: Str) -> Option<Int> {
+    parse_int(s)
+}
+
+fn _to_float(n: Int) -> Float {
+    to_float(n)
+}
+
+fn _trunc(x: Float) -> Int {
+    trunc(x)
+}
+
+fn _chars(s: Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn _concat(a: Str, b: Str) -> Str {
+    concat(a, b)
+}
+
+fn

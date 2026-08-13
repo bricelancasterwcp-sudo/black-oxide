@@ -1,0 +1,20 @@
+use std::collections::VecDeque;
+
+fn main() {
+    let mut queue = VecDeque::new();
+    queue.push_back(1);
+    queue.push_back(2);
+    queue.push_back(3);
+    queue.push_back(4);
+    queue.push_back(5);
+
+    let first = queue.pop_front().unwrap();
+    let last = queue.pop_back().unwrap();
+
+    queue.push_back(first);
+    queue.push_front(last);
+
+    for entry in queue {
+        println!("{}", entry);
+    }
+}

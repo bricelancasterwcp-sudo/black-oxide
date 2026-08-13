@@ -1,0 +1,296 @@
+fn main() {
+    let color = read_color()
+    if color == "green" {
+        print("go")
+    } else if color == "red" {
+        print("stop")
+    } else if color == "yellow" {
+        print("wait")
+    }
+    drop color
+}
+
+fn read_color() -> String {
+    let mut input = String.new()
+    std.io.stdin().read_line(&mut).expect("error reading input")
+    input.trim().to_lowercase()
+}
+
+fn print(s: String) {
+    println(s)
+}
+
+fn read_line(s: &String) -> String {
+    let mut input = String.new()
+    std.io.stdin().read_line(&mut).expect("error reading input")
+    input.trim().to_lowercase()
+}
+
+fn expect(s: String, e: String) {
+    if s != e {
+        panic("expected '{}', got '{}'", e, s)
+    }
+}
+
+fn main() {
+    let color = read_color()
+    if color == "green" {
+        print("go")
+    } else if color == "red" {
+        print("stop")
+    } else if color == "yellow" {
+        print("wait")
+    }
+    drop color
+}
+
+fn read_color() -> String {
+    let mut input = String.new()
+    std.io.stdin().read_line(&mut).expect("error reading input")
+    input.trim().to_lowercase()
+}
+
+fn print(s: String) {
+    println(s)
+}
+
+fn read_line(s: &String) -> String {
+    let mut input = String.new()
+    std.io.stdin().read_line(&mut).expect("error reading input")
+    input.trim().to_lowercase()
+}
+
+fn expect(s: String, e: String) {
+    if s != e {
+        panic("expected '{}', got '{}'", e, s)
+    }
+}
+
+fn main() {
+    let color = read_color()
+    if color == "green" {
+        print("go")
+    } else if color == "red" {
+        print("stop")
+    } else if color == "yellow" {
+        print("wait")
+    }
+    drop color
+}
+
+fn read_color() -> String {
+    let mut input = String.new()
+    std.io.stdin().read_line(&mut).expect("error reading input")
+    input.trim().to_lowercase()
+}
+
+fn print(s: String) {
+    println(s)
+}
+
+fn read_line(s: &String) -> String {
+    let mut input = String.new()
+    std.io.stdin().read_line(&mut).expect("error reading input")
+    input.trim().to_lowercase()
+}
+
+fn expect(s: String, e: String) {
+    if s != e {
+        panic("expected '{}', got '{}'", e, s)
+    }
+}
+
+fn main() {
+    let color = read_color()
+    if color == "green" {
+        print("go")
+    } else if color == "red" {
+        print("stop")
+    } else if color == "yellow" {
+        print("wait")
+    }
+    drop color
+}
+
+fn read_color() -> String {
+    let mut input = String.new()
+    std.io.stdin().read_line(&mut).expect("error reading input")
+    input.trim().to_lowercase()
+}
+
+fn print(s: String) {
+    println(s)
+}
+
+fn read_line(s: &String) -> String {
+    let mut input = String.new()
+    std.io.stdin().read_line(&mut).expect("error reading input")
+    input.trim().to_lowercase()
+}
+
+fn expect(s: String, e: String) {
+    if s != e {
+        panic("expected '{}', got '{}'", e, s)
+    }
+}
+
+fn main() {
+    let color = read_color()
+    if color == "green" {
+        print("go")
+    } else if color == "red" {
+        print("stop")
+    } else if color == "yellow" {
+        print("wait")
+    }
+    drop color
+}
+
+fn read_color() -> String {
+    let mut input = String.new()
+    std.io.stdin().read_line(&mut).expect("error reading input")
+    input.trim().to_lowercase()
+}
+
+fn print(s: String) {
+    println(s)
+}
+
+fn read_line(s: &String) -> String {
+    let mut input = String.new()
+    std.io.stdin().read_line(&mut).expect("error reading input")
+    input.trim().to_lowercase()
+}
+
+fn expect(s: String, e: String) {
+    if s != e {
+        panic("expected '{}', got '{}'", e, s)
+    }
+}
+
+fn main() {
+    let color = read_color()
+    if color == "green" {
+        print("go")
+    } else if color == "red" {
+        print("stop")
+    } else if color == "yellow" {
+        print("wait")
+    }
+    drop color
+}
+
+fn read_color() -> String {
+    let mut input = String.new()
+    std.io.stdin().read_line(&mut).expect("error reading input")
+    input.trim().to_lowercase()
+}
+
+fn print(s: String) {
+    println(s)
+}
+
+fn read_line(s: &String) -> String {
+    let mut input = String.new()
+    std.io.stdin().read_line(&mut).expect("error reading input")
+    input.trim().to_lowercase()
+}
+
+fn expect(s: String, e: String) {
+    if s != e {
+        panic("expected '{}', got '{}'", e, s)
+    }
+}
+
+fn main() {
+    let color = read_color()
+    if color == "green" {
+        print("go")
+    } else if color == "red" {
+        print("stop")
+    } else if color == "yellow" {
+        print("wait")
+    }
+    drop color
+}
+
+fn read_color() -> String {
+    let mut input = String.new()
+    std.io.stdin().read_line(&mut).expect("error reading input")
+    input.trim().to_lowercase()
+}
+
+fn print(s: String) {
+    println(s)
+}
+
+fn read_line(s: &String) -> String {
+    let mut input = String.new()
+    std.io.stdin().read_line(&mut).expect("error reading input")
+    input.trim().to_lowercase()
+}
+
+fn expect(s: String, e: String) {
+    if s != e {
+        panic("expected '{}', got '{}'", e, s)
+    }
+}
+
+fn main() {
+    let color = read_color()
+    if color == "green" {
+        print("go")
+    } else if color == "red" {
+        print("stop")
+    } else if color == "yellow" {
+        print("wait")
+    }
+    drop color
+}
+
+fn read_color() -> String {
+    let mut input = String.new()
+    std.io.stdin().read_line(&mut).expect("error reading input")
+    input.trim().to_lowercase()
+}
+
+fn print(s: String) {
+    println(s)
+}
+
+fn read_line(s: &String) -> String {
+    let mut input = String.new()
+    std.io.stdin().read_line(&mut).expect("error reading input")
+    input.trim().to_lowercase()
+}
+
+fn expect(s: String, e: String) {
+    if s != e {
+        panic("expected '{}', got '{}'", e, s)
+    }
+}
+
+fn main() {
+    let color = read_color()
+    if color == "green" {
+        print("go")
+    } else if color == "red" {
+        print("stop")
+    } else if color == "yellow" {
+        print("wait")
+    }
+    drop color
+}
+
+fn read_color() -> String {
+    let mut input = String.new()
+    std.io.stdin().read_line(&mut).expect("error reading input")
+    input.trim().to_lowercase()
+}
+
+fn print(s: String) {
+    println(s)
+}
+
+fn read_line(s: &String) -> String {
+    let mut input = String

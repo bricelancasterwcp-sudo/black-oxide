@@ -1,0 +1,10 @@
+fn main() {
+    let mut log = push(vec(), 6)
+    push(log, 7)
+    let first = log
+    push(log, 8)
+    let last = log
+    print(first)
+    print(last)
+    drop log
+}

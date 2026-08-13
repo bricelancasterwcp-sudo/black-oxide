@@ -1,0 +1,20 @@
+fn count_cuts(nums: &Vec<Int>, cutoff: Int) -> Vec<Int> {
+    let mut below = 0
+    let mut at_or_over = 0
+    for x in &nums {
+        if x < cutoff {
+            below = below + 1
+        } else {
+            at_or_over = at_or_over + 1
+        }
+    }
+    vec(below, at_or_over)
+}
+
+fn main() {
+    let nums = push(push(push(push(vec(), 5), 12), 3), 18)
+    let counts = count_cuts(&nums, 10)
+    print(counts)
+    drop nums
+    drop counts
+}

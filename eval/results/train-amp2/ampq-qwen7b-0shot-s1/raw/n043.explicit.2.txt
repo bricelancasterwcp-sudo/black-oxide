@@ -1,0 +1,17 @@
+fn exchange_first_last(v: Vec<Int>) -> Vec<Int> {
+    let first = v.get(0).unwrap().clone() // Reads first element and clones it
+    let last = v.get(v.len() - 1).unwrap().clone() // Reads last element and clones it
+    let mut v = v.clone() // Clones the entire vector to avoid move
+    v.pop().unwrap() // Removes the last element
+    v.insert(0, last) // Inserts the last element at the start
+    v.push(first) // Pushes the first element at the end
+    v // Returns the modified vector
+}
+
+fn main() {
+    let mut queue = vec(1, 2, 3, 4, 5)
+    queue = exchange_first_last(queue)
+    for x in &queue {
+        print_str(x.to_str())
+    }
+}

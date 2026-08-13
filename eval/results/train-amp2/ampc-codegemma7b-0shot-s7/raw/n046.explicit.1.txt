@@ -1,0 +1,15 @@
+fn main() {
+    let num_list = vec(5, 12, 3, 18, 9)
+    let cutoff = 10
+    let mut below_count = 0
+    let mut equal_count = 0
+    for num in num_list {
+        if num < cutoff {
+            below_count = below_count + 1
+        } else if num >= cutoff {
+            equal_count = equal_count + 1
+        }
+    }
+    print(below_count)
+    print(equal_count)
+}

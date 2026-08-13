@@ -1,0 +1,31 @@
+struct Scores { high: Int, medium: Int, low: Int }
+
+fn arrange(high: Int, medium: Int, low: Int) -> Scores {
+    let scores = Scores { high: 0, medium: 0, low: 0 }
+    let scores = match high >= medium {
+        True => functional_update(scores, high, high),
+        False => functional_update(scores, medium, high),
+    }
+    let scores = match medium >= low {
+        True => functional_update(scores, medium, medium),
+        False => functional_update(scores, low, medium),
+    }
+    let scores = match high >= low {
+        True => functional_update(scores, high, high),
+        False => functional_update(scores, low, high),
+    }
+    scores
+}
+
+fn functional_update(scores: Scores, from: Int, to: Int) -> Scores {
+    match to {
+        _ => scores,
+    }
+}
+
+fn main() {
+    let scores = arrange(2, 9, 5)
+    print(scores.high)
+    print(scores.medium)
+    print(scores.low)
+}

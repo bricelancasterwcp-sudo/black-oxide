@@ -1,0 +1,16 @@
+struct Point { x: Float, y: Float }
+
+fn distance_squared(p: Point) -> Float {
+    p.x * p.x + p.y * p.y
+}
+
+fn distance(p: Point) -> Float {
+    distance_squared(p).trunc()
+}
+
+fn main() {
+    let p1 = Point { x: 0.0, y: 3.0 }
+    let p2 = Point { x: 4.0, y: 0.0 }
+    print(distance(p1))
+    print(distance(p2))
+}

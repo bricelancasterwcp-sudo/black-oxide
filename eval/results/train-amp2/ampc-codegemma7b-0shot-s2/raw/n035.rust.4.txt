@@ -1,0 +1,17 @@
+#![no_std]
+
+use core::panic;
+use core::fmt::Write;
+
+fn divide(x: i32, y: i32) -> i32 {
+    if y == 0 {
+        panic!("Cannot divide by zero");
+    }
+    x / y
+}
+
+fn main() {
+    let result = divide(20, 4);
+    let mut stdout: *mut () = unsafe { core::ptr::null_mut() };
+    write!(stdout, "20 / 4 = {}", result).unwrap();
+}

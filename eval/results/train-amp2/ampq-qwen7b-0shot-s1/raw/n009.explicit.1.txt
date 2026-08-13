@@ -1,0 +1,9 @@
+fn main() {
+    let num = 1234
+    let digits = num.to_str()
+    let reversed = concat(chars(digits), chars(digits).reverse())
+    print(reversed)
+    drop num
+    drop digits
+    drop reversed
+}

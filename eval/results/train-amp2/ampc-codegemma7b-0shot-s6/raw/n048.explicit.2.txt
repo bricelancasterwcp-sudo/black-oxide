@@ -1,0 +1,9 @@
+fn main() {
+    let nums = vec(4, 7, 4, 9, 4)
+    for i in 0.upto(nums.len()) {
+        if nums.get(i) == Some(&int_of_4) {
+            print(i)
+        }
+    }
+    drop nums
+}

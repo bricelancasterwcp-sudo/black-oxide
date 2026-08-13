@@ -1,0 +1,14 @@
+fn main() {
+    match parse_int(text_input()) {
+        Some(n) => print(n),
+        None => print_str("bad"),
+    }
+    match parse_str(text_input()) {
+        Some(s) => print_str(s),
+        None => print_str("bad"),
+    }
+    match parse_int(text_input()) {
+        Some(n) => print(n),
+        None => print_str("bad"),
+    }
+}

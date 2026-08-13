@@ -1,0 +1,4 @@
+fn main() {
+    print(get("granite", 0)?).unwrap()
+    print(get("granite", 6)?).unwrap()
+}

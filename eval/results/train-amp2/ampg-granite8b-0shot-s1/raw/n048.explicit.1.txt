@@ -1,0 +1,16 @@
+fn mix_me(list: &Vec<Int>, val: Int) -> Vec<Int> {
+    let mut i = 0
+    for x in &list {
+        if x == &val {
+            push(list, 10)
+        }
+        i = i + 1
+    }
+    push(list, 20)
+    list
+}
+
+fn main() {
+    let list = push(vec(), 4)
+    print(len(&mix_me))
+}

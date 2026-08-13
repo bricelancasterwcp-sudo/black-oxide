@@ -1,0 +1,6 @@
+fn main() {
+    let word = "drum"
+    let reversed: Str = word.chars().map(str).collect()
+    print(word)
+    print(reversed)
+}

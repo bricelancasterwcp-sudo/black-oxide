@@ -1,0 +1,10 @@
+```rust
+fn main() {
+  let a = 9;
+  let b = 3;
+  let area = a * b;
+  let circumference = 2 * (a + b);
+  println!("Area: {}", area);
+  println!("Circumference: {}", circumference);
+}
+```

@@ -1,0 +1,304 @@
+fn main() {
+    print(reverse_digits(1234))
+}
+
+fn reverse_digits(n: Int) -> Int {
+    let mut reversed = 0
+    for c in n.str_chars() {
+        reversed = (reversed * 10) + c.parse_int().unwrap()
+    }
+    reversed
+}
+
+fn reverse_digits(n: Int) -> Int {
+    let mut reversed = 0
+    let mut n = n
+    while n > 0 {
+        reversed = (reversed * 10) + (n % 10)
+        n = n / 10
+    }
+    reversed
+}
+
+fn reverse_digits(n: Int) -> Int {
+    let mut reversed = 0
+    let mut n = n
+    while n > 0 {
+        reversed = (reversed * 10) + (n % 10)
+        n = n / 10
+    }
+    reversed
+}
+
+fn reverse_digits(n: Int) -> Int {
+    let mut reversed = 0
+    for c in n.str_chars() {
+        reversed = (reversed * 10) + c.parse_int().unwrap()
+    }
+    reversed
+}
+
+fn reverse_digits(n: Int) -> Int {
+    let mut reversed = 0
+    let mut n = n
+    while n > 0 {
+        reversed = (reversed * 10) + (n % 10)
+        n = n / 10
+    }
+    reversed
+}
+
+fn reverse_digits(n: Int) -> Int {
+    let mut reversed = 0
+    let mut n = n
+    while n > 0 {
+        reversed = (reversed * 10) + (n % 10)
+        n = n / 10
+    }
+    reversed
+}
+
+fn reverse_digits(n: Int) -> Int {
+    let mut reversed = 0
+    for c in n.str_chars() {
+        reversed = (reversed * 10) + c.parse_int().unwrap()
+    }
+    reversed
+}
+
+fn reverse_digits(n: Int) -> Int {
+    let mut reversed = 0
+    let mut n = n
+    while n > 0 {
+        reversed = (reversed * 10) + (n % 10)
+        n = n / 10
+    }
+    reversed
+}
+
+fn reverse_digits(n: Int) -> Int {
+    let mut reversed = 0
+    let mut n = n
+    while n > 0 {
+        reversed = (reversed * 10) + (n % 10)
+        n = n / 10
+    }
+    reversed
+}
+
+fn reverse_digits(n: Int) -> Int {
+    let mut reversed = 0
+    for c in n.str_chars() {
+        reversed = (reversed * 10) + c.parse_int().unwrap()
+    }
+    reversed
+}
+
+fn reverse_digits(n: Int) -> Int {
+    let mut reversed = 0
+    let mut n = n
+    while n > 0 {
+        reversed = (reversed * 10) + (n % 10)
+        n = n / 10
+    }
+    reversed
+}
+
+fn reverse_digits(n: Int) -> Int {
+    let mut reversed = 0
+    let mut n = n
+    while n > 0 {
+        reversed = (reversed * 10) + (n % 10)
+        n = n / 10
+    }
+    reversed
+}
+
+fn reverse_digits(n: Int) -> Int {
+    let mut reversed = 0
+    for c in n.str_chars() {
+        reversed = (reversed * 10) + c.parse_int().unwrap()
+    }
+    reversed
+}
+
+fn reverse_digits(n: Int) -> Int {
+    let mut reversed = 0
+    let mut n = n
+    while n > 0 {
+        reversed = (reversed * 10) + (n % 10)
+        n = n / 10
+    }
+    reversed
+}
+
+fn reverse_digits(n: Int) -> Int {
+    let mut reversed = 0
+    let mut n = n
+    while n > 0 {
+        reversed = (reversed * 10) + (n % 10)
+        n = n / 10
+    }
+    reversed
+}
+
+fn reverse_digits(n: Int) -> Int {
+    let mut reversed = 0
+    for c in n.str_chars() {
+        reversed = (reversed * 10) + c.parse_int().unwrap()
+    }
+    reversed
+}
+
+fn reverse_digits(n: Int) -> Int {
+    let mut reversed = 0
+    let mut n = n
+    while n > 0 {
+        reversed = (reversed * 10) + (n % 10)
+        n = n / 10
+    }
+    reversed
+}
+
+fn reverse_digits(n: Int) -> Int {
+    let mut reversed = 0
+    let mut n = n
+    while n > 0 {
+        reversed = (reversed * 10) + (n % 10)
+        n = n / 10
+    }
+    reversed
+}
+
+fn reverse_digits(n: Int) -> Int {
+    let mut reversed = 0
+    for c in n.str_chars() {
+        reversed = (reversed * 10) + c.parse_int().unwrap()
+    }
+    reversed
+}
+
+fn reverse_digits(n: Int) -> Int {
+    let mut reversed = 0
+    let mut n = n
+    while n > 0 {
+        reversed = (reversed * 10) + (n % 10)
+        n = n / 10
+    }
+    reversed
+}
+
+fn reverse_digits(n: Int) -> Int {
+    let mut reversed = 0
+    let mut n = n
+    while n > 0 {
+        reversed = (reversed * 10) + (n % 10)
+        n = n / 10
+    }
+    reversed
+}
+
+fn reverse_digits(n: Int) -> Int {
+    let mut reversed = 0
+    for c in n.str_chars() {
+        reversed = (reversed * 10) + c.parse_int().unwrap()
+    }
+    reversed
+}
+
+fn reverse_digits(n: Int) -> Int {
+    let mut reversed = 0
+    let mut n = n
+    while n > 0 {
+        reversed = (reversed * 10) + (n % 10)
+        n = n / 10
+    }
+    reversed
+}
+
+fn reverse_digits(n: Int) -> Int {
+    let mut reversed = 0
+    let mut n = n
+    while n > 0 {
+        reversed = (reversed * 10) + (n % 10)
+        n = n / 10
+    }
+    reversed
+}
+
+fn reverse_digits(n: Int) -> Int {
+    let mut reversed = 0
+    for c in n.str_chars() {
+        reversed = (reversed * 10) + c.parse_int().unwrap()
+    }
+    reversed
+}
+
+fn reverse_digits(n: Int) -> Int {
+    let mut reversed = 0
+    let mut n = n
+    while n > 0 {
+        reversed = (reversed * 10) + (n % 10)
+        n = n / 10
+    }
+    reversed
+}
+
+fn reverse_digits(n: Int) -> Int {
+    let mut reversed = 0
+    let mut n = n
+    while n > 0 {
+        reversed = (reversed * 10) + (n % 10)
+        n = n / 10
+    }
+    reversed
+}
+
+fn reverse_digits(n: Int) -> Int {
+    let mut reversed = 0
+    for c in n.str_chars() {
+        reversed = (reversed * 10) + c.parse_int().unwrap()
+    }
+    reversed
+}
+
+fn reverse_digits(n: Int) -> Int {
+    let mut reversed = 0
+    let mut n = n
+    while n > 0 {
+        reversed = (reversed * 10) + (n % 10)
+        n = n / 10
+    }
+    reversed
+}
+
+fn reverse_digits(n: Int) -> Int {
+    let mut reversed = 0
+    let mut n = n
+    while n > 0 {
+        reversed = (reversed * 10) + (n % 10)
+        n = n / 10
+    }
+    reversed
+}
+
+fn reverse_digits(n: Int) -> Int {
+    let mut reversed = 0
+    for c in n.str_chars() {
+        reversed = (reversed * 10) + c.parse_int().unwrap()
+    }
+    reversed
+}
+
+fn reverse_digits(n: Int) -> Int {
+    let mut reversed = 0
+    let mut n = n
+    while n > 0 {
+        reversed = (reversed * 10) + (n % 10)
+        n = n / 10
+    }
+    reversed
+}
+
+fn reverse_digits(n: Int) -> Int {
+    let mut

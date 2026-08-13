@@ -1,0 +1,6 @@
+fn main() {
+    let log = push(push(push(vec(), 6), 7), 8)
+    print(get(&log, 0))
+    print(get(&log, 3))
+    drop log
+}

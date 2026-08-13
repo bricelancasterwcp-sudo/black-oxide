@@ -1,0 +1,8 @@
+fn main() {
+    let coffee = "coffee";
+    for ch in coffee.chars() {
+        if coffee.chars().filter(|&c| c == ch).count() > 1 {
+            println!("{}", ch);
+        }
+    }
+}

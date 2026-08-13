@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let mut list = Vec::new();
+
+    for num in 1..=10 {
+        if num % 2 == 0 {
+            list.push(num);
+        }
+    }
+
+    for num in list.iter().rev() {
+        println!("{}", num);
+    }
+}
+```

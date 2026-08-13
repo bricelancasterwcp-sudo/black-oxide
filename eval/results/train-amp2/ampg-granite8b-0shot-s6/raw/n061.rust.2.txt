@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let three = 3;
+    let nine = 9;
+    let area = three * nine;
+    let edge = two_dimensional_edge(nine, three);
+    println!("Area: {}", area);
+    println!("Edge: {}", edge);
+}
+
+fn two_dimensional_edge(width: u32, height: u32) -> u32 {
+    width * 2 + height * 2
+}
+```

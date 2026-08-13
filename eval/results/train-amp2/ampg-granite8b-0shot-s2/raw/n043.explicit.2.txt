@@ -1,0 +1,21 @@
+fn enqueue(q: Vec<Int>, x: Int) -> Vec<Int> {
+    push(q, x)
+}
+
+fn dequeue(q: Vec<Int>) -> Vec<Int> {
+    push(q, q.get(0))
+}
+
+fn main() {
+    let q = push(vec(), 1)
+    q = enqueue(q, 2)
+    q = enqueue(q, 3)
+    q = enqueue(q, 4)
+    q = enqueue(q, 5)
+    print(q)
+    q = dequeue(q)
+    print(q)
+    q = dequeue(q)
+    print(q)
+    drop q
+}

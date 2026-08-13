@@ -1,0 +1,18 @@
+struct Word {
+    data: Str,
+    index: Int,
+}
+
+fn run(word: Str) -> Str {
+    let mut w = Word { data: word, index: len(word) - 1 }
+    let mut result = Str("")
+    while w.index >= 0 {
+        result = concat(result, get(w.data, w.index)?)
+        w.index = w.index - 1
+    }
+    result
+}
+
+fn main() {
+    print(run("drum"))
+}

@@ -1,0 +1,7 @@
+fn main() {
+    let mut a = [8, 3, 11, 6];
+    a.sort();
+    println!("Smallest: {}", a[0]);
+    println!("Largest: {}", a[a.len() - 1]);
+    println!("Gap: {}", a[a.len() - 1] - a[0]);
+}

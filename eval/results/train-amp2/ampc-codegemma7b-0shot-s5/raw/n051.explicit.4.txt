@@ -1,0 +1,9 @@
+fn print_first_and_last(word: &Str) {
+    print("{}", word.chars().next().unwrap())
+    print("{}", word.chars().next_back().unwrap())
+}
+
+fn main() {
+    let word = "granite"
+    print_first_and_last(&word)
+}

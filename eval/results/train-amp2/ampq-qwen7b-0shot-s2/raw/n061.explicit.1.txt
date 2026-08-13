@@ -1,0 +1,55 @@
+fn main() {
+    let rect = Rectangle { width: 9, height: 3 }
+    print(rect.area())
+    print(rect.perimeter())
+    drop rect
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn area(rect: &Rectangle) -> Int {
+    rect.width * rect.height
+}
+
+fn perimeter(rect: &Rectangle) -> Int {
+    2 * (rect.width + rect.height)
+}
+
+struct Point {
+    x: Int,
+    y: Int,
+}
+
+fn distance(p1: &Point, p2: &Point) -> Int {
+    ((p1.x - p2.x) * (p1.x - p2.x) + (p1.y - p2.y) * (p1.y - p2.y)).sqrt()
+}
+
+fn main() {
+    let rect = Rectangle { width: 9, height: 3 }
+    print(rect.area())
+    print(rect.perimeter())
+    drop rect
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn area(rect: &Rectangle) -> Int {
+    rect.width * rect.height
+}
+
+fn perimeter(rect: &Rectangle) -> Int {
+    2 * (rect.width + rect.height)
+}
+
+fn main() {
+    let rect = Rectangle { width: 9, height: 3 }
+    print(rect.area())
+    print(rect.perimeter())
+    drop rect
+}

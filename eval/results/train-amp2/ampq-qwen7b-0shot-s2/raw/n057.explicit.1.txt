@@ -1,0 +1,20 @@
+fn find_max_length_name(names: Vec<Str>) -> Str {
+    let mut max_name = names.first().unwrap().clone()
+    let mut max_length = str_len(max_name)
+    for name in names {
+        let length = str_len(name)
+        if length > max_length {
+            max_name = name
+            max_length = length
+        }
+    }
+    max_name
+}
+
+fn main() {
+    let names = vec_str("fig", "banana", "kiwi")
+    let max_name = find_max_length_name(clone(&names))
+    print_str(max_name)
+    print_int(str_len(max_name))
+    drop names
+}

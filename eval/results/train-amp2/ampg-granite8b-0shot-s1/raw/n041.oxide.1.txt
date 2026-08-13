@@ -1,0 +1,39 @@
+fn sort(list: Vec<Int>) -> Vec<Int> {
+    let n = len(list)
+    if n < 2 {
+        return list
+    }
+    let m = trunc(to_float(n) / 2.0)
+    let l = sort(get(list, 0)?, m)?
+    let r = sort(get(list, m)?, n - m)?
+    merge(l, r)
+}
+
+fn merge(l: Vec<Int>, r: Vec<Int>) -> Vec<Int> {
+    let mut result = vec()
+    let mut i = 0
+    let mut j = 0
+    while i < len(l) && j < len(r) {
+        if get(l, i)? < get(r, j)? {
+            push(result, get(l, i)?)
+            i = i + 1
+        } else {
+            push(result, get(r, j)?)
+            j = j + 1
+        }
+    }
+    while i < len(l) {
+        push(result, get(l, i)?)
+        i = i + 1
+    }
+    while j < len(r) {
+        push(result, get(r, j)?)
+        j = j + 1
+    }
+    result
+}
+
+fn main() {
+    let numbers = push(push(push(vec(), 4), 2), 9)
+    print(sort(numbers))
+}

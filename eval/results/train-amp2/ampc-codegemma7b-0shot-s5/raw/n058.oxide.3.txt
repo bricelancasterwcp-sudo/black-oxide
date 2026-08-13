@@ -1,0 +1,14 @@
+fn first_dup(s: Str) -> Str {
+    let mut seen = vec_char()
+    for c in chars(s) {
+        if contains(seen, c) {
+            return c
+        }
+        seen = push(seen, c)
+    }
+    "no duplicates"
+}
+
+fn main() {
+    print_str(first_dup("coffee"))
+}

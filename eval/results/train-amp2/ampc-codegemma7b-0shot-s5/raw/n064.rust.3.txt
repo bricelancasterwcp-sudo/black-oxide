@@ -1,0 +1,10 @@
+fn main() {
+    let mut list = [Some(10), None, Some(20), None, Some(30)];
+
+    for pos in [1, 4] {
+        match list.get(pos - 1) {
+            Some(value) => println!("Found {} at position {}", value, pos),
+            None => println!("No value found at position {}", pos),
+        }
+    }
+}

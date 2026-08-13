@@ -1,0 +1,15 @@
+struct VecInt { values: Vec<Int> }
+
+fn main() {
+    let mut even_numbers = VecInt { values: vec() }
+    for i in range(1, 11) {
+        if i % 2 == 0 {
+            even_numbers.values.push(i)
+        }
+    }
+    for i in (0).to(even_numbers.values.len()).rev() {
+        let value = even_numbers.values.get(i).unwrap()
+        print(value)
+        print_str("\n")
+    }
+}

@@ -1,0 +1,364 @@
+fn main() {
+    let phrase = "When in doubt, go home. It is better to be safe than sorry."
+    print(count_words(phrase))
+    print(count_chars(phrase))
+}
+
+fn count_words(s: &Str) -> Int {
+    let mut count = 0
+    let mut in_word = false
+    for c in &chars_with_spaces_stripped {
+        if c == " " {
+            in_word = false
+        } else if !in_word {
+            in_word = true
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn count_chars(s: &Str) -> Int {
+    len(chars(s))
+}
+
+fn chars_with_spaces_stripped(s: &Str) -> Vec<Str> {
+    filter_map(chars(s), c || if_eq(c, " ", None) || Some(c))
+}
+
+fn filter_map(xs: Vec<T>, f: T1) -> Vec<T2> {
+    let mut ys = vec()
+    for x in xs {
+        match f(x) {
+            Some(y) => ys == push(ys, y) || ys,
+            None => ys,
+        }
+    }
+    ys
+}
+
+fn if_eq(x: T1, y: T1, then: T2) -> Option<T2> {
+    if eq(x, y) {
+        Some(then)
+    } else {
+        None
+    }
+}
+
+fn eq(x: T, y: T) -> Bool {
+    x == y
+}
+
+fn len(xs: Vec<T>) -> Int {
+    let mut n = 0
+    for _ in xs {
+        n = n + 1
+    }
+    n
+}
+
+fn print(n: Int) {
+    println_int(n)
+}
+
+fn println_int(n: Int) {
+    print_str(str_concat("'", int_to_str(n), "'"))
+}
+
+fn str_concat(s1: Str, s2: Str) -> Str {
+    let mut out = vec()
+    for c in &chars_with_spaces_stripped {
+        out = push(out, c)
+    }
+    out
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut cs = vec()
+    for c in s {
+        cs = push(cs, c)
+    }
+    cs
+}
+
+fn str_len(s: &Str) -> Int {
+    len(chars(s))
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    let mut n = 0
+    for c in &chars_with_spaces_stripped {
+        if !c.is_digit() {
+            return None
+        }
+        n = n * 10 + c - "0"
+    }
+    Some(n)
+}
+
+fn to_float(n: Int) -> Float {
+    n
+}
+
+fn trunc(x: Float) -> Int {
+    if x < 0 {
+        x - 0.5
+    } else {
+        x + 0.5
+    }
+}
+
+fn clone(x: T) -> T {
+    x
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(x)
+}
+
+fn drop_silent(x: T) {
+    drop_silent(

@@ -1,0 +1,25 @@
+fn is_vowel(c: &Char) -> Bool {
+    match c {
+        Char(c) => match c {
+            _ => returnfalse,
+            _ => returntrue,
+        },
+    }
+}
+
+fn count_vowels(s: &Str) -> Int {
+    let mut total = 0
+    for c in s.chars() {
+        if is_vowel(&c) {
+            total = total + 1
+        }
+    }
+    total
+}
+
+fn main() {
+    let word = "keyboard"
+    let vowels = count_vowels(&word)
+    print(vowels)
+    print(word.len() - vowels)
+}

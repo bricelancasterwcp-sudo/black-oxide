@@ -1,0 +1,19 @@
+struct Banana {
+    word: Str,
+}
+
+fn find_ns(b: Banana) -> Vec<Int> {
+    let mut positions = vec()
+    let word = b.word
+    for i in 0 < range(0, len(word)) {
+        if get(word, i) == 110 {
+            positions = push(positions, i)
+        }
+    }
+    positions
+}
+
+fn main() {
+    let b = Banana { word: "banana" }
+    print(find_ns(b))
+}

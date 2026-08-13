@@ -1,0 +1,20 @@
+fn main() {
+    let mut position = 0;
+    let mut found = false;
+
+    loop {
+        if position > 4 {
+            break;
+        }
+
+        if position == 4 {
+            found = true;
+        }
+
+        if found {
+            println!("{}", position);
+        }
+
+        position += 1;
+    }
+}

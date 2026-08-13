@@ -1,0 +1,12 @@
+fn main() {
+    let mut list = vec()
+    for i in range(1, 11) {
+        if i % 2 == 0 {
+            list = push(list, i)
+        }
+    }
+    for i in range(10, -1, -1) {
+        print(get(list, i))
+    }
+    drop list
+}

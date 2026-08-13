@@ -1,0 +1,83 @@
+fn main() {
+    let mut seq = vec(9, 2, 7, 4)
+    sort_unstable(seq)
+    for x in seq {
+        print(x)
+        print_str("\n")
+    }
+}
+
+fn sort_unstable(mutseq: Vec<Int>) {
+    let mut swapped = true
+    while swapped {
+        swapped = false
+        for i in 0.to_int().wrapping_sub(1).wrapping_add(1).to_int().wrapping_sub(1).wrapping_add(1).to_int().wrapping_sub(1).wrapping_add(1) {
+            if seq.get(i) > seq.get(i.wrapping_add(1)) {
+                swapped = true
+                let tmp = seq.get(i)
+                seq.set(i, seq.get(i.wrapping_add(1)))
+                seq.set(i.wrapping_add(1), tmp)
+            }
+        }
+    }
+}
+
+fn get(v: Vec<Int>, i: Int) -> Int {
+    return v.get(i)
+}
+
+fn set(v: Vec<Int>, i: Int, x: Int) {
+    v.set(i, x)
+}
+
+fn to_int(f: Float) -> Int {
+    return f.trunc()
+}
+
+fn wrapping_add(f: Float, g: Float) -> Float {
+    return f + g
+}
+
+fn wrapping_sub(f: Float, g: Float) -> Float {
+    return f - g
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn print(f: Float) {
+    println(f)
+}
+
+fn len(v: Vec<Int>) -> Int {
+    return v.len()
+}
+
+fn vec(n: Int, m: Int, o: Int, p: Int) -> Vec<Int> {
+    return vec(n, m, o, p)
+}
+
+fn sort_unstable(mutseq: Vec<Int>) {
+    let mut swapped = true
+    while swapped {
+        swapped = false
+        for i in 0.to_int().wrapping_sub(1).wrapping_add(1).to_int().wrapping_sub(1).wrapping_add(1).to_int().wrapping_sub(1).wrapping_add(1) {
+            if get(mutseq, i) > get(mutseq, i.wrapping_add(1)) {
+                swapped = true
+                let tmp = get(mutseq, i)
+                set(mutseq, i, get(mutseq, i.wrapping_add(1)))
+                set(mutseq, i.wrapping_add(1), tmp)
+            }
+        }
+    }
+}
+
+fn main() {
+    let mut seq = vec(9, 2, 7, 4)
+    sort_unstable(seq)
+    for x in seq {
+        print(x)
+        print_str("\n")
+    }
+}

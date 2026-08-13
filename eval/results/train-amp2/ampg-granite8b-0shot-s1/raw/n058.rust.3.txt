@@ -1,0 +1,7 @@
+fn main() {
+    for c in "coffee" {
+        if "coffee".ends_with(c) {
+            println!("{}", c);
+        }
+    }
+}

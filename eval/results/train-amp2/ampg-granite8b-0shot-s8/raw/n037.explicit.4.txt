@@ -1,0 +1,29 @@
+fn main() {
+    let rectangle = Rectangle { width: 2, height: 3, name: "main rectangle" }
+    rectangle.set_width(5)
+    print(rectangle.area())
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+    name: Str,
+}
+
+fn set_width(self: &Rectangle, new_width: Int) {
+    self.width = new_width
+}
+
+fn area(self: &Rectangle) -> Int {
+    self.width * self.height
+}
+
+fn print(s: Str) {
+    drop s
+}
+
+fn main() {
+    let rectangle = Rectangle { width: 2, height: 3, name: "main rectangle" }
+    rectangle.set_width(5)
+    print(rectangle.area())
+}

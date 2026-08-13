@@ -1,0 +1,11 @@
+fn main() {
+    let phrase = "When in doubt, go home. Count the words first, then add the spaces in between to count the characters. Then add 1 to account for the final period. It's not as hard as it sounds, is it? Go home and try it out on paper before coding it. You'll be glad you did."
+    let words: Vec<Str> = phrase.chars().collect()
+    let mut total = 0
+    for word in words {
+        total = total + len(word)
+    }
+    print_str("There are ")
+    print(total)
+    print_str(" characters in this string.")
+}

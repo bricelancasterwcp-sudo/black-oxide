@@ -1,0 +1,17 @@
+struct List { data: Vec<Int> }
+
+fn push_back(l: List, x: Int) -> List {
+    List(data == push(l.data.clone(), x))
+}
+
+fn main() {
+    let mut even_list = List(data == vec())
+    for i in range(1, 11) {
+        if i % 2 == 0 {
+            even_list = push_back(even_list, i)
+        }
+    }
+    for i in range(len(even_list.data) - 1, -1, -1) {
+        print(get(even_list.data, i))
+    }
+}

@@ -1,0 +1,24 @@
+struct Queue { values: Vec<Int> }
+
+fn first_last_swap(q: Queue) -> Queue {
+    let mut q = q
+    if q.values.len() > 1 {
+        let first = q.values.remove(0)
+        let last = q.values.pop().unwrap()
+        q.values.insert(0, last)
+        q.values.push(first)
+    }
+    q
+}
+
+fn print_queue(q: Queue) {
+    for x in q.values {
+        print(x)
+    }
+}
+
+fn main() {
+    let q = Queue { values: vec(1, 2, 3, 4, 5) }
+    let q = first_last_swap(q)
+    print_queue(q)
+}

@@ -1,0 +1,8 @@
+fn main() {
+    let measurements = vec(9, 2, 7, 4)
+    let sorted = measurements.sort()
+    for m in sorted {
+        print_str(m)
+        print_str("\n")
+    }
+}

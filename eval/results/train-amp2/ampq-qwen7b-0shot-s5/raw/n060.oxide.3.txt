@@ -1,0 +1,420 @@
+fn main() {
+    let s = "a1b22"
+    let mut total = 0
+    let mut count = 0
+    for c in s.chars() {
+        if c >= "0" && c <= "9" {
+            let num = parse_int(c).unwrap_or(0)
+            total = total + num
+            count = count + 1
+        }
+    }
+    print(total)
+    print(count)
+}
+
+fn parse_int(c: Str) -> Option<Int> {
+    to_int(c)
+}
+
+fn to_int(s: Str) -> Option<Int> {
+    parse_int(s)
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    to_int(s)
+}
+
+fn to_int(s: Str) -> Option<Int> {
+    match parse_int(s) {
+        Some(n) => Some(n),
+        None => None,
+    }
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    to_int(s)
+}
+
+fn to_int(s: Str) -> Option<Int> {
+    match parse_int(s) {
+        Some(n) => Some(n),
+        None => None,
+    }
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    to_int(s)
+}
+
+fn to_int(s: Str) -> Option<Int> {
+    match parse_int(s) {
+        Some(n) => Some(n),
+        None => None,
+    }
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    to_int(s)
+}
+
+fn to_int(s: Str) -> Option<Int> {
+    match parse_int(s) {
+        Some(n) => Some(n),
+        None => None,
+    }
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    to_int(s)
+}
+
+fn to_int(s: Str) -> Option<Int> {
+    match parse_int(s) {
+        Some(n) => Some(n),
+        None => None,
+    }
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    to_int(s)
+}
+
+fn to_int(s: Str) -> Option<Int> {
+    match parse_int(s) {
+        Some(n) => Some(n),
+        None => None,
+    }
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    to_int(s)
+}
+
+fn to_int(s: Str) -> Option<Int> {
+    match parse_int(s) {
+        Some(n) => Some(n),
+        None => None,
+    }
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    to_int(s)
+}
+
+fn to_int(s: Str) -> Option<Int> {
+    match parse_int(s) {
+        Some(n) => Some(n),
+        None => None,
+    }
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    to_int(s)
+}
+
+fn to_int(s: Str) -> Option<Int> {
+    match parse_int(s) {
+        Some(n) => Some(n),
+        None => None,
+    }
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    to_int(s)
+}
+
+fn to_int(s: Str) -> Option<Int> {
+    match parse_int(s) {
+        Some(n) => Some(n),
+        None => None,
+    }
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    to_int(s)
+}
+
+fn to_int(s: Str) -> Option<Int> {
+    match parse_int(s) {
+        Some(n) => Some(n),
+        None => None,
+    }
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    to_int(s)
+}
+
+fn to_int(s: Str) -> Option<Int> {
+    match parse_int(s) {
+        Some(n) => Some(n),
+        None => None,
+    }
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    to_int(s)
+}
+
+fn to_int(s: Str) -> Option<Int> {
+    match parse_int(s) {
+        Some(n) => Some(n),
+        None => None,
+    }
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    to_int(s)
+}
+
+fn to_int(s: Str) -> Option<Int> {
+    match parse_int(s) {
+        Some(n) => Some(n),
+        None => None,
+    }
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    to_int(s)
+}
+
+fn to_int(s: Str) -> Option<Int> {
+    match parse_int(s) {
+        Some(n) => Some(n),
+        None => None,
+    }
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    to_int(s)
+}
+
+fn to_int(s: Str) -> Option<Int> {
+    match parse_int(s) {
+        Some(n) => Some(n),
+        None => None,
+    }
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    to_int(s)
+}
+
+fn to_int(s: Str) -> Option<Int> {
+    match parse_int(s) {
+        Some(n) => Some(n),
+        None => None,
+    }
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    to_int(s)
+}
+
+fn to_int(s: Str) -> Option<Int> {
+    match parse_int(s) {
+        Some(n) => Some(n),
+        None => None,
+    }
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    to_int(s)
+}
+
+fn to_int(s: Str) -> Option<Int> {
+    match parse_int(s) {
+        Some(n) => Some(n),
+        None => None,
+    }
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    to_int(s)
+}
+
+fn to_int(s: Str) -> Option<Int> {
+    match parse_int(s) {
+        Some(n) => Some(n),
+        None => None,
+    }
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    to_int(s)
+}
+
+fn to_int(s: Str) -> Option<Int> {
+    match parse_int(s) {
+        Some(n) => Some(n),
+        None => None,
+    }
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    to_int(s)
+}
+
+fn to_int(s: Str) -> Option<Int> {
+    match parse_int(s) {
+        Some(n) => Some(n),
+        None => None,
+    }
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    to_int(s)
+}
+
+fn to_int(s: Str) -> Option<Int> {
+    match parse_int(s) {
+        Some(n) => Some(n),
+        None => None,
+    }
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    to_int(s)
+}
+
+fn to_int(s: Str) -> Option<Int> {
+    match parse_int(s) {
+        Some(n) => Some(n),
+        None => None,
+    }
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    to_int(s)
+}
+
+fn to_int(s: Str) -> Option<Int> {
+    match parse_int(s) {
+        Some(n) => Some(n),
+        None => None,
+    }
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    to_int(s)
+}
+
+fn to_int(s: Str) -> Option<Int> {
+    match parse_int(s) {
+        Some(n) => Some(n),
+        None => None,
+    }
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    to_int(s)
+}
+
+fn to_int(s: Str) -> Option<Int> {
+    match parse_int(s) {
+        Some(n) => Some(n),
+        None => None,
+    }
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    to_int(s)
+}
+
+fn to_int(s: Str) -> Option<Int> {
+    match parse_int(s) {
+        Some(n) => Some(n),
+        None => None,
+    }
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    to_int(s)
+}
+
+fn to_int(s: Str) -> Option<Int> {
+    match parse_int(s) {
+        Some(n) => Some(n),
+        None => None,
+    }
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    to_int(s)
+}
+
+fn to_int(s: Str) -> Option<Int> {
+    match parse_int(s) {
+        Some(n) => Some(n),
+        None => None,
+    }
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    to_int(s)
+}
+
+fn to_int(s: Str) -> Option<Int> {
+    match parse_int(s) {
+        Some(n) => Some(n),
+        None => None,
+    }
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    to_int(s)
+}
+
+fn to_int(s: Str) -> Option<Int> {
+    match parse_int(s) {
+        Some(n) => Some(n),
+        None => None,
+    }
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    to_int(s)
+}
+
+fn to_int(s: Str) -> Option<Int> {
+    match parse_int(s) {
+        Some(n) => Some(n),
+        None => None,
+    }
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    to_int(s)
+}
+
+fn to_int(s: Str) -> Option<Int> {
+    match parse_int(s) {
+        Some(n) => Some(n),
+        None => None,
+    }
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    to_int(s)
+}
+
+fn to_int(s: Str) -> Option<Int> {
+    match parse_int(s) {
+        Some(n) => Some(n),
+        None => None,
+    }
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    to_int(s)
+}
+
+fn to_int(s: Str) -> Option<Int> {
+    match parse_int(s) {
+        Some(n) => Some(n),
+        None => None,
+    }
+}
+
+fn

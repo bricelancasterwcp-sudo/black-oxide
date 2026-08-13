@@ -1,0 +1,13 @@
+fn main() {
+    let vowels = "aeiouAEIOU".to_string()
+    let mut vowels_count = 0
+    let mut not_vowels_count = 0
+    for c in "keyboard".chars() {
+        if vowels.contains(&c) {
+            vowels_count = vowels_count + 1
+        } else {
+            not_vowels_count = not_vowels_count + 1
+        }
+    }
+    print("Vowels: {}, Not vowels: {}", vowels_count, not_vowels_count)
+}

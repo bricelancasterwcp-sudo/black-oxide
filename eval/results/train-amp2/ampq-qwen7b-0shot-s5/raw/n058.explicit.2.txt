@@ -1,0 +1,17 @@
+fn main() {
+    let s = "coffee"
+    let mut seen = vec()
+    let mut unique = vec()
+    for c in s.chars() {
+        if !seen.contains(&c) {
+            seen.push(c)
+        } else if !unique.contains(&c) {
+            unique.push(c)
+        }
+    }
+    for c in unique {
+        print(c)
+    }
+    drop seen
+    drop unique
+}

@@ -1,0 +1,22 @@
+```rust
+fn main() {
+    let mut rectangle = Rectangle { width: 2, height: 3 };
+    rectangle.change_width(5);
+    println!("Area: {}", rectangle.area());
+}
+
+struct Rectangle {
+    width: u32,
+    height: u32,
+}
+
+impl Rectangle {
+    fn change_width(&mut self, new_width: u32) {
+        self.width = new_width;
+    }
+
+    fn area(&self) -> u32 {
+        self.width * self.height
+    }
+}
+```

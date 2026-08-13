@@ -1,0 +1,11 @@
+use std::io;
+
+fn main() {
+    let mut count = 0;
+    for n in 1..=50 {
+        if n % 3 == 0 || n % 5 == 0 {
+            count += 1;
+        }
+    }
+    println!("There are {} numbers from 1 to 50 that divide evenly by three or by five", count);
+}

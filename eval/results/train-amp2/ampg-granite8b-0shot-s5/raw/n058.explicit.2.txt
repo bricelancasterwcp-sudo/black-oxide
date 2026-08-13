@@ -1,0 +1,13 @@
+fn coffee(c: &Str) -> Vec<Str> {
+    let mut out = vec()
+    for ch in c {
+        if c.occurrences_of(ch) > 1 {
+            out = push(out, ch.to_string())
+        }
+    }
+    out
+}
+
+fn main() {
+    print_str(coffee("coffee"))
+}

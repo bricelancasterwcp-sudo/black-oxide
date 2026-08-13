@@ -1,0 +1,13 @@
+fn main() {
+    let word = "keyboard".to_lowercase().chars().collect_vec()
+    let mut vowels = 0
+    let mut not_vowels = 0
+    for letter in word {
+        match letter {
+            _ => not_vowels == not_vowels + 1,
+            _ => vowels == vowels + 1,
+        }
+    }
+    print(vowels)
+    print(not_vowels)
+}

@@ -1,0 +1,22 @@
+struct BankAccount {
+    balance: Int,
+}
+
+fn deposit(account: BankAccount, amount: Int) -> BankAccount {
+    BankAccount(balance == account.balance + amount)
+}
+
+fn main() {
+    let account = BankAccount { balance: 0 }
+    print(account.balance)
+    let account = deposit(account, 3)
+    print(account.balance)
+    let account = deposit(account, 1)
+    print(account.balance)
+    let account = deposit(account, 4)
+    print(account.balance)
+    let account = deposit(account, 1)
+    print(account.balance)
+    let account = deposit(account, 5)
+    print(account.balance)
+}

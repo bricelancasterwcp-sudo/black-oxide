@@ -1,0 +1,13 @@
+fn print_n(s: &Str) {
+    for i in 0.upto(s.len()) {
+        if s.chars().nth(i) == Some(&b) {
+            print_int(i)
+            newline()
+        }
+    }
+}
+
+fn main() {
+    let banana = str("banana")
+    print_n(&banana)
+}

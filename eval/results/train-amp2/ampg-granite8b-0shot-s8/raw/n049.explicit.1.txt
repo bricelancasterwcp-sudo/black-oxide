@@ -1,0 +1,29 @@
+fn main() {
+    let mut a = 42
+    let b = 42
+    let c = 42
+    let d = 42
+    let e = 42
+    let f = 42
+    let g = 42
+    let h = 42
+    let i = 42
+    let j = 42
+    let k = 42
+    let l = 42
+    let m = 42
+    let n = 42
+    let o = 42
+    let p = 42
+    let q = 42
+    let r = 42
+    let s = 42
+    let t = 42
+    let u = 42
+    let v = 42
+    let w = 42
+    let x = 42
+    let y = 42
+    let z = 42
+    print(x)
+}

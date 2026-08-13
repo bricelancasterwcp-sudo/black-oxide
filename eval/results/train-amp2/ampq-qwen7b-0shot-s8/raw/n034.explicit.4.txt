@@ -1,0 +1,13 @@
+fn second(v: Vec<Int>) -> Option<Int> {
+    match v {
+        Vec(x, y, rest) => Some(y),
+        Vec(_, y, rest) => Some(y),
+        _ => None,
+    }
+}
+
+fn main() {
+    print(second(vec(7)))
+    print(second(vec(8)))
+    print(second(vec(9)))
+}

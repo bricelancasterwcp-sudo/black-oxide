@@ -1,0 +1,257 @@
+fn main() {
+    let mut scores = vec(2, 9, 5)
+    scores.sort_by_key(std_cmp_int)
+    for score in &scores {
+        print(&score)
+    }
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a: &Int, b: &Int) -> Ordering {
+    a.cmp(b)
+}
+
+fn std_cmp_int(a

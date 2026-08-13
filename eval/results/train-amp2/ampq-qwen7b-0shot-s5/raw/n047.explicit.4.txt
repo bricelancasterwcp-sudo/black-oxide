@@ -1,0 +1,24 @@
+fn collect_evens(start: Int, end: Int) -> Vec<Int> {
+    let mut evens = vec()
+    for num in range(start, end + 1) {
+        if num % 2 == 0 {
+            evens = push(evens, num)
+        }
+    }
+    evens
+}
+
+fn print_reversed(v: &Vec<Int>) {
+    let mut i = v.len() - 1
+    while i >= 0 {
+        print(&v)
+        print("\n")
+        i = i - 1
+    }
+}
+
+fn main() {
+    let evens = collect_evens(1, 10)
+    print_reversed(&evens)
+    drop evens
+}

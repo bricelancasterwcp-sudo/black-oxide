@@ -1,0 +1,15 @@
+```rust
+fn get_second<T>(list: &[T]) -> Option<&T> {
+    list.get(1)
+}
+
+fn main() {
+    let list7 = vec![7];
+    let list8 = vec![8, 9];
+    let list9 = vec![9, 10, 11];
+
+    println!("{:?}", get_second(&list7)); // None
+    println!("{:?}", get_second(&list8)); // Some(&9)
+    println!("{:?}", get_second(&list9)); // Some(&10)
+}
+```

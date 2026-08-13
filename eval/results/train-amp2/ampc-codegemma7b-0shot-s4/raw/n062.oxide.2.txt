@@ -1,0 +1,571 @@
+fn main() {
+    match receive() {
+        SignalGreen => print_str("go for green"),
+        SignalRed => print_str("stop for red"),
+        SignalYellow => print_str("wait for yellow"),
+    }
+}
+
+enum Signal {
+    SignalGreen,
+    SignalRed,
+    SignalYellow,
+}
+
+fn receive() -> Signal {
+    SignalGreen
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+struct Str {
+    value: String,
+}
+
+fn print(x: Str) {
+    println(x.value)
+}
+
+enum SignalGreen {
+    SignalGreen,
+}
+
+enum SignalRed {
+    SignalRed,
+}
+
+enum SignalYellow {
+    SignalYellow,
+}
+
+enum Signal {
+    SignalGreen,
+    SignalRed,
+    SignalYellow,
+}
+
+fn receive() -> Signal {
+    SignalGreen
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+struct Str {
+    value: String,
+}
+
+fn print(x: Str) {
+    println(x.value)
+}
+
+enum SignalGreen {
+    SignalGreen,
+}
+
+enum SignalRed {
+    SignalRed,
+}
+
+enum SignalYellow {
+    SignalYellow,
+}
+
+enum Signal {
+    SignalGreen,
+    SignalRed,
+    SignalYellow,
+}
+
+fn receive() -> Signal {
+    SignalGreen
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+struct Str {
+    value: String,
+}
+
+fn print(x: Str) {
+    println(x.value)
+}
+
+enum SignalGreen {
+    SignalGreen,
+}
+
+enum SignalRed {
+    SignalRed,
+}
+
+enum SignalYellow {
+    SignalYellow,
+}
+
+enum Signal {
+    SignalGreen,
+    SignalRed,
+    SignalYellow,
+}
+
+fn receive() -> Signal {
+    SignalGreen
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+struct Str {
+    value: String,
+}
+
+fn print(x: Str) {
+    println(x.value)
+}
+
+enum SignalGreen {
+    SignalGreen,
+}
+
+enum SignalRed {
+    SignalRed,
+}
+
+enum SignalYellow {
+    SignalYellow,
+}
+
+enum Signal {
+    SignalGreen,
+    SignalRed,
+    SignalYellow,
+}
+
+fn receive() -> Signal {
+    SignalGreen
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+struct Str {
+    value: String,
+}
+
+fn print(x: Str) {
+    println(x.value)
+}
+
+enum SignalGreen {
+    SignalGreen,
+}
+
+enum SignalRed {
+    SignalRed,
+}
+
+enum SignalYellow {
+    SignalYellow,
+}
+
+enum Signal {
+    SignalGreen,
+    SignalRed,
+    SignalYellow,
+}
+
+fn receive() -> Signal {
+    SignalGreen
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+struct Str {
+    value: String,
+}
+
+fn print(x: Str) {
+    println(x.value)
+}
+
+enum SignalGreen {
+    SignalGreen,
+}
+
+enum SignalRed {
+    SignalRed,
+}
+
+enum SignalYellow {
+    SignalYellow,
+}
+
+enum Signal {
+    SignalGreen,
+    SignalRed,
+    SignalYellow,
+}
+
+fn receive() -> Signal {
+    SignalGreen
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+struct Str {
+    value: String,
+}
+
+fn print(x: Str) {
+    println(x.value)
+}
+
+enum SignalGreen {
+    SignalGreen,
+}
+
+enum SignalRed {
+    SignalRed,
+}
+
+enum SignalYellow {
+    SignalYellow,
+}
+
+enum Signal {
+    SignalGreen,
+    SignalRed,
+    SignalYellow,
+}
+
+fn receive() -> Signal {
+    SignalGreen
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+struct Str {
+    value: String,
+}
+
+fn print(x: Str) {
+    println(x.value)
+}
+
+enum SignalGreen {
+    SignalGreen,
+}
+
+enum SignalRed {
+    SignalRed,
+}
+
+enum SignalYellow {
+    SignalYellow,
+}
+
+enum Signal {
+    SignalGreen,
+    SignalRed,
+    SignalYellow,
+}
+
+fn receive() -> Signal {
+    SignalGreen
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+struct Str {
+    value: String,
+}
+
+fn print(x: Str) {
+    println(x.value)
+}
+
+enum SignalGreen {
+    SignalGreen,
+}
+
+enum SignalRed {
+    SignalRed,
+}
+
+enum SignalYellow {
+    SignalYellow,
+}
+
+enum Signal {
+    SignalGreen,
+    SignalRed,
+    SignalYellow,
+}
+
+fn receive() -> Signal {
+    SignalGreen
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+struct Str {
+    value: String,
+}
+
+fn print(x: Str) {
+    println(x.value)
+}
+
+enum SignalGreen {
+    SignalGreen,
+}
+
+enum SignalRed {
+    SignalRed,
+}
+
+enum SignalYellow {
+    SignalYellow,
+}
+
+enum Signal {
+    SignalGreen,
+    SignalRed,
+    SignalYellow,
+}
+
+fn receive() -> Signal {
+    SignalGreen
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+struct Str {
+    value: String,
+}
+
+fn print(x: Str) {
+    println(x.value)
+}
+
+enum SignalGreen {
+    SignalGreen,
+}
+
+enum SignalRed {
+    SignalRed,
+}
+
+enum SignalYellow {
+    SignalYellow,
+}
+
+enum Signal {
+    SignalGreen,
+    SignalRed,
+    SignalYellow,
+}
+
+fn receive() -> Signal {
+    SignalGreen
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+struct Str {
+    value: String,
+}
+
+fn print(x: Str) {
+    println(x.value)
+}
+
+enum SignalGreen {
+    SignalGreen,
+}
+
+enum SignalRed {
+    SignalRed,
+}
+
+enum SignalYellow {
+    SignalYellow,
+}
+
+enum Signal {
+    SignalGreen,
+    SignalRed,
+    SignalYellow,
+}
+
+fn receive() -> Signal {
+    SignalGreen
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+struct Str {
+    value: String,
+}
+
+fn print(x: Str) {
+    println(x.value)
+}
+
+enum SignalGreen {
+    SignalGreen,
+}
+
+enum SignalRed {
+    SignalRed,
+}
+
+enum SignalYellow {
+    SignalYellow,
+}
+
+enum Signal {
+    SignalGreen,
+    SignalRed,
+    SignalYellow,
+}
+
+fn receive() -> Signal {
+    SignalGreen
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+struct Str {
+    value: String,
+}
+
+fn print(x: Str) {
+    println(x.value)
+}
+
+enum SignalGreen {
+    SignalGreen,
+}
+
+enum SignalRed {
+    SignalRed,
+}
+
+enum SignalYellow {
+    SignalYellow,
+}
+
+enum Signal {
+    SignalGreen,
+    SignalRed,
+    SignalYellow,
+}
+
+fn receive() -> Signal {
+    SignalGreen
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+struct Str {
+    value: String,
+}
+
+fn print(x: Str) {
+    println(x.value)
+}
+
+enum SignalGreen {
+    SignalGreen,
+}
+
+enum SignalRed {
+    SignalRed,
+}
+
+enum SignalYellow {
+    SignalYellow,
+}
+
+enum Signal {
+    SignalGreen,
+    SignalRed,
+    SignalYellow,
+}
+
+fn receive() -> Signal {
+    SignalGreen
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+struct Str {
+    value: String,
+}
+
+fn print(x: Str) {
+    println(x.value)
+}
+
+enum SignalGreen {
+    SignalGreen,
+}
+
+enum SignalRed {
+    SignalRed,
+}
+
+enum SignalYellow {
+    SignalYellow,
+}
+
+enum Signal {
+    SignalGreen,
+    SignalRed,
+    SignalYellow,
+}
+
+fn receive() -> Signal {
+    SignalGreen
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+struct Str {
+    value: String,
+}
+
+fn print(x: Str)

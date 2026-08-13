@@ -1,0 +1,19 @@
+struct Drum {
+    beats: Vec<String>,
+}
+
+fn run_drum(d: Drum) {
+    for beat in d.beats {
+        println(beat)
+    }
+}
+
+fn main() {
+    let drum = Drum { beats: vec() }
+    let mut drum = push(drum, "to".to_string())
+    drum = push(drum, "co".to_string())
+    drum = push(drum, "do".to_string())
+    drum = push(drum, "ra".to_string())
+    drum = push(drum, "mi".to_string())
+    run_drum(drum)
+}

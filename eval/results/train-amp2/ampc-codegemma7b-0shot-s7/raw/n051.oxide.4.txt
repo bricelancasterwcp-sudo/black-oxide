@@ -1,0 +1,4 @@
+fn main() {
+    print(chars("granite").first().unwrap().chars().next().unwrap())
+    print(chars("granite").last().unwrap().chars().next().unwrap())
+}

@@ -1,0 +1,45 @@
+fn main() {
+    let mut x = None;
+    let mut y = None;
+    let mut z = None;
+    
+    for line in std::io::stdin().lines() {
+        let line = line.unwrap();
+        match line.parse::<usize>() {
+            Ok(n) => {
+                if x.is_none() {
+                    x = Some(n);
+                } else if y.is_none() {
+                    y = Some(n);
+                } else if z.is_none() {
+                    z = Some(n);
+                }
+            }
+            Err(_) => {
+                if line == "oak" {
+                    if x.is_none() {
+                        print!("bad ");
+                    } else {
+                        print!("{} ", x.unwrap());
+                        x = None;
+                    }
+                } else if line == "15" {
+                    if y.is_none() {
+                        print!("bad ");
+                    } else {
+                        print!("{} ", y.unwrap());
+                        y = None;
+                    }
+                } else {
+                    if z.is_none() {
+                        print!("bad ");
+                    } else {
+                        print!("{} ", z.unwrap());
+                        z = None;
+                    }
+                }
+            }
+        }
+    }
+    print!("\n");
+}

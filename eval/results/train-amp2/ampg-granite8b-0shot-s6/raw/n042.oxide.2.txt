@@ -1,0 +1,7 @@
+fn main() {
+    let numbers = vec(12, 5, 20, 8, 17)
+    let largest = numbers.iter().max().unwrap()
+    let second_largest = numbers.iter().max().unwrap()
+    print(largest)
+    print(second_largest)
+}

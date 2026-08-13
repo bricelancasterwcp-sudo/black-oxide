@@ -1,0 +1,19 @@
+fn main() {
+    let word = "drum".chars().collect().reverse().concat().print_str()
+}
+
+fn main() {
+    let word = "drum".chars().collect().reverse().concat().print_str()
+}
+
+fn main() {
+    let word = "drum".chars().collect().reverse().concat().print_str()
+}
+
+fn main() {
+    let word = "drum".chars().collect().reverse().concat().print_str()
+}
+
+fn main() {
+    let word = "drum".chars().collect().reverse().concat().print_str()
+}

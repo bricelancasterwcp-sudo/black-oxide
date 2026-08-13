@@ -1,0 +1,14 @@
+fn main() {
+    let mut even_nums = vec()
+    for i in range(1, 11) {
+        if i % 2 == 0 {
+            even_nums = push(even_nums, i)
+        }
+    }
+    let mut i = len(even_nums) - 1
+    while i >= 0 {
+        print(even_nums.get(i))
+        i = i - 1
+    }
+    drop even_nums
+}

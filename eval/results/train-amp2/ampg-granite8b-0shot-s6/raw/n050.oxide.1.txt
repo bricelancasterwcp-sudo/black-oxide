@@ -1,0 +1,48 @@
+struct Score { number: Int }
+
+fn sort_scores(scores: Vec<Score>) -> Vec<Score> {
+    match scores.len() {
+        Nothing => vec(),
+        Just(one) => scores,
+        Many(n) => {
+            let half = n / 2
+            let first_half = get(scores, 0, half)?
+            let second_half = get(scores, half, n)?
+            let sorted_first_half = sort_scores(first_half)
+            let sorted_second_half = sort_scores(second_half)
+            merge_scores(sorted_first_half, sorted_second_half)
+        },
+    }
+}
+
+fn merge_scores(s1: Vec<Score>, s2: Vec<Score>) -> Vec<Score> {
+    let mut i = 0
+    let mut j = 0
+    let mut merged = vec()
+    while i < len(s1) && j < len(s2) {
+        let s1_score = get(s1, i)?
+        let s2_score = get(s2, j)?
+        if s1_score.number <= s2_score.number {
+            push(merged, s1_score)
+            i = i + 1
+        } else {
+            push(merged, s2_score)
+            j = j + 1
+        }
+    }
+    if i < len(s1) {
+        push(merged, get(s1, i, len(s1))?)
+    }
+    if j < len(s2) {
+        push(merged, get(s2, j, len(s2))?)
+    }
+    merged
+}
+
+fn main() {
+    let scores = push(push(vec(), Score { number: 5 }), Score { number: 9 })
+    let sorted_scores = sort_scores(scores)
+    for score in sorted_scores {
+        print(score.number)
+    }
+}

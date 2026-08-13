@@ -1,0 +1,19 @@
+fn main() {
+    let numbers = vec(12, 5, 20, 8, 17)
+    let mut iter = &numbers
+    let mut largest = 0
+    let mut second_largest = 0
+    for x in iter {
+        if x > largest {
+            second_largest = largest
+            largest = x
+        } else if x > second_largest {
+            second_largest = x
+        }
+    }
+    drop iter
+    drop largest
+    drop second_largest
+    print(largest)
+    print(second_largest)
+}

@@ -1,0 +1,15 @@
+fn main() {
+    let text = "a1b22"
+    let digits = 0
+    let count = 0
+    for c in text {
+        if c.is_digit(10) {
+            digits = digits + c
+            count = count + 1
+        }
+    }
+    print_str("digits: ")
+    print(digits)
+    print_str(" count: ")
+    print(count)
+}

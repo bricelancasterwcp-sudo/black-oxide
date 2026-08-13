@@ -1,0 +1,37 @@
+struct EvenList { first: Int, rest: Option<Box<EvenList>> }
+
+fn even(n: Int) -> Bool {
+    n % 2 == 0
+}
+
+fn collect() -> EvenList {
+    let mut l = vec()
+    for i in range(1, 11) {
+        if even(i) {
+            l = push(l, i)
+        }
+    }
+    let l = reverse(l)
+    EvenList(l.first, Some(Box { last: l.first, rest: None }))
+}
+
+fn reverse(mutvl: Vec<Int>) -> Vec<Int> {
+    let mut l = vec()
+    while len(vl) > 0 {
+        l = push(l, get(vl, 0)?)
+        vl = get(vl, 1)?
+    }
+    l
+}
+
+fn print_list(mutl: EvenList) {
+    while len(l.rest) > 0 {
+        print(l.first)
+        l = l.rest?
+    }
+    print(l.first)
+}
+
+fn main() {
+    print_list(collect())
+}

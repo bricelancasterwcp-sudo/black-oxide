@@ -1,0 +1,10 @@
+fn main() {
+    let coffee = "coffee";
+    let mut seen = std::collections::HashSet::new();
+
+    for ch in coffee.chars() {
+        if !seen.insert(ch) {
+            println!("{}", ch);
+        }
+    }
+}

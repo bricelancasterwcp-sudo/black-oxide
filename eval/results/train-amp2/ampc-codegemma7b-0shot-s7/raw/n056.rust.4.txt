@@ -1,0 +1,14 @@
+fn main() {
+    let mut sum = 0;
+    let mut count = 0;
+
+    for c in ["7", "x", "9", "?"] {
+        if let Ok(num) = c.parse::<i32>() {
+            sum += num;
+            count += 1;
+        }
+    }
+
+    println!("Sum: {}", sum);
+    println!("Count: {}", 4 - count);
+}

@@ -1,0 +1,9 @@
+fn main() {
+    let input = vec_str("8", "oak", "15")
+    for entry in input {
+        match entry {
+            Some(num) => print(num),
+            None => print("bad"),
+        }
+    }
+}

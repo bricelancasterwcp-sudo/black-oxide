@@ -1,0 +1,329 @@
+fn main() {
+    let log = push(push(vec(), 6), 7)
+    let first = pop(&log)
+    drop log
+    let last = pop(&log)
+    drop log
+    print(first)
+    print(last)
+}
+
+fn pop(log: &Vec<Int>) -> Int {
+    let mut last = 0
+    for i in 0.upto(len(&log) - 1) {
+        last = get(&log, i).unwrap()
+    }
+    last
+}
+
+fn print(x: Int) {
+    "print(" + to_str(x) + ")"
+}
+
+fn to_str(x: Int) -> Str {
+    to_str(x)
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    len(v)
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    get(v, i)
+}
+
+fn vec() -> Vec<Int> {
+    vec()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn upt(a: Int, b: Int) -> Vec<Int> {
+    range(a, b)
+}
+
+fn to_float(x: Int) -> Float {
+    to_float(x)
+}
+
+fn clone(x: Int) -> Int {
+    clone(x)
+}
+
+fn upto(a: Int, b: Int) -> Vec<Int> {
+    upt(a, b)
+}
+
+fn main() {
+    let log = push(push(vec(), 6), 7)
+    let first = pop(&log)
+    drop log
+    let last = pop(&log)
+    drop log
+    print(first)
+    print(last)
+}
+
+fn pop(log: &Vec<Int>) -> Int {
+    let mut last = 0
+    for i in 0.upto(len(&log) - 1) {
+        last = get(&log, i).unwrap()
+    }
+    last
+}
+
+fn print(x: Int) {
+    "print(" + to_str(x) + ")"
+}
+
+fn to_str(x: Int) -> Str {
+    to_str(x)
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    len(v)
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    get(v, i)
+}
+
+fn vec() -> Vec<Int> {
+    vec()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn upt(a: Int, b: Int) -> Vec<Int> {
+    range(a, b)
+}
+
+fn to_float(x: Int) -> Float {
+    to_float(x)
+}
+
+fn clone(x: Int) -> Int {
+    clone(x)
+}
+
+fn upto(a: Int, b: Int) -> Vec<Int> {
+    upt(a, b)
+}
+
+fn main() {
+    let log = push(push(vec(), 6), 7)
+    let first = pop(&log)
+    drop log
+    let last = pop(&log)
+    drop log
+    print(first)
+    print(last)
+}
+
+fn pop(log: &Vec<Int>) -> Int {
+    let mut last = 0
+    for i in 0.upto(len(&log) - 1) {
+        last = get(&log, i).unwrap()
+    }
+    last
+}
+
+fn print(x: Int) {
+    "print(" + to_str(x) + ")"
+}
+
+fn to_str(x: Int) -> Str {
+    to_str(x)
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    len(v)
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    get(v, i)
+}
+
+fn vec() -> Vec<Int> {
+    vec()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn upt(a: Int, b: Int) -> Vec<Int> {
+    range(a, b)
+}
+
+fn to_float(x: Int) -> Float {
+    to_float(x)
+}
+
+fn clone(x: Int) -> Int {
+    clone(x)
+}
+
+fn upto(a: Int, b: Int) -> Vec<Int> {
+    upt(a, b)
+}
+
+fn main() {
+    let log = push(push(vec(), 6), 7)
+    let first = pop(&log)
+    drop log
+    let last = pop(&log)
+    drop log
+    print(first)
+    print(last)
+}
+
+fn pop(log: &Vec<Int>) -> Int {
+    let mut last = 0
+    for i in 0.upto(len(&log) - 1) {
+        last = get(&log, i).unwrap()
+    }
+    last
+}
+
+fn print(x: Int) {
+    "print(" + to_str(x) + ")"
+}
+
+fn to_str(x: Int) -> Str {
+    to_str(x)
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    len(v)
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    get(v, i)
+}
+
+fn vec() -> Vec<Int> {
+    vec()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn upt(a: Int, b: Int) -> Vec<Int> {
+    range(a, b)
+}
+
+fn to_float(x: Int) -> Float {
+    to_float(x)
+}
+
+fn clone(x: Int) -> Int {
+    clone(x)
+}
+
+fn upto(a: Int, b: Int) -> Vec<Int> {
+    upt(a, b)
+}
+
+fn main() {
+    let log = push(push(vec(), 6), 7)
+    let first = pop(&log)
+    drop log
+    let last = pop(&log)
+    drop log
+    print(first)
+    print(last)
+}
+
+fn pop(log: &Vec<Int>) -> Int {
+    let mut last = 0
+    for i in 0.upto(len(&log) - 1) {
+        last = get(&log, i).unwrap()
+    }
+    last
+}
+
+fn print(x: Int) {
+    "print(" + to_str(x) + ")"
+}
+
+fn to_str(x: Int) -> Str {
+    to_str(x)
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    len(v)
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    get(v, i)
+}
+
+fn vec() -> Vec<Int> {
+    vec()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn upt(a: Int, b: Int) -> Vec<Int> {
+    range(a, b)
+}
+
+fn to_float(x: Int) -> Float {
+    to_float(x)
+}
+
+fn clone(x: Int) -> Int {
+    clone(x)
+}
+
+fn upto(a: Int, b: Int) -> Vec<Int> {
+    upt(a, b)
+}
+
+fn main() {
+    let log = push(push(vec(), 6), 7)
+    let first = pop(&log)
+    drop log
+    let last = pop(&log)
+    drop log
+    print(first)
+    print(last)
+}
+
+fn pop(log: &Vec<Int>) -> Int {
+    let mut last = 0
+    for i in 0.upto(len(&log) - 1) {
+        last = get(&log, i).unwrap()
+    }
+    last
+}
+
+fn print(x: Int) {
+    "print(" + to_str(x) + ")"
+}
+
+fn to_str(x: Int) -> Str {
+    to_str(x)
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    len(v)
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    get(v, i)
+}
+
+fn vec() -> Vec<Int> {
+    vec()
+}
+
+fn push

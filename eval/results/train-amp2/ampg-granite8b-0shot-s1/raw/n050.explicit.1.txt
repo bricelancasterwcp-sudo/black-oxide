@@ -1,0 +1,38 @@
+fn sort(xs: &Vec<Int>) -> Vec<Int> {
+    if xs.len() <= 1 {
+        return clone(&xs)
+    } else {
+        let pivot = get(&xs, 0)
+        let less = sort(clone(&xs))
+        let greater = sort(clone(&xs))
+        let mut result = vec()
+        let mut less_index = 0
+        let mut greater_index = 0
+        while less_index < less.len() && greater_index < greater.len() {
+            if less.get(less_index) < greater.get(greater_index) {
+                push(result, less.get(less_index))
+                less_index = less_index + 1
+            } else {
+                push(result, greater.get(greater_index))
+                greater_index = greater_index + 1
+            }
+        }
+        for i in range(less_index, less.len()) {
+            push(result, less.get(i))
+        }
+        for i in range(greater_index, greater.len()) {
+            push(result, greater.get(i))
+        }
+        push(result, pivot)
+        result
+    }
+}
+
+fn main() {
+    let numbers = vec()
+    for i in range(0, 10) {
+        push(numbers, i)
+    }
+    print(numbers)
+    print(sort(&numbers))
+}

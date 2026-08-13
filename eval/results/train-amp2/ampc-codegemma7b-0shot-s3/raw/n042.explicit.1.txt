@@ -1,0 +1,18 @@
+fn max(a: &Int, b: &Int) -> Int {
+    if a > b {
+        return a.clone()
+    } else {
+        return b.clone()
+    }
+}
+
+fn main() {
+    let values = vec(12, 5, 20, 8, 17)
+    let max_value = max(&values, &values)
+    let second_max_value = max(&values, &max_value)
+    print(max_value)
+    print(second_max_value)
+    drop values
+    drop max_value
+    drop second_max_value
+}

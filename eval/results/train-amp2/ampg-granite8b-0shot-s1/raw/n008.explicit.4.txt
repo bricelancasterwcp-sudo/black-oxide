@@ -1,0 +1,18 @@
+fn divisible(n: Int) -> Bool {
+    return (n % 3 == 0) || (n % 5 == 0)
+}
+
+fn count_divisible_from_to(from: Int, to: Int) -> Int {
+    let mut counter = 0
+    for x in range(from, to) {
+        if divisible(x) {
+            counter = counter + 1
+        }
+    }
+    drop counter
+    counter
+}
+
+fn main() {
+    print(count_divisible_from_to(1, 50))
+}

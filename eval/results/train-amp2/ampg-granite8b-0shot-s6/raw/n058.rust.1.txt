@@ -1,0 +1,8 @@
+fn main() {
+    let w = "coffee";
+    for c in w.chars() {
+        if w.matches(c).count() > 1 {
+            println!("{}", c);
+        }
+    }
+}

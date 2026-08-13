@@ -1,0 +1,34 @@
+struct Reading { label: Str, values: Vec<Int> }
+
+fn first_big(v: Vec<Int>) -> Int {
+    let mut found = -1
+    for x in v {
+        if x > found {
+            found = x
+        }
+    }
+    found
+}
+
+fn second(v: Vec<Int>) -> Option<Int> {
+    let mut sorted = clone(v)
+    sorted.sort()
+    if sorted.len() >= 2 {
+        Some(sorted.get(sorted.len() - 2).unwrap())
+    } else {
+        None
+    }
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(push(push(vec(), 12), 5), 20), 8) }
+    let r2 = Reading { label: "lab2", ..r }
+    match first_big(r2.values) {
+        Some(n) => print(n),
+        None => print_str("no values"),
+    }
+    match second(r2.values) {
+        Some(n) => print(n),
+        None => print_str("no values"),
+    }
+}

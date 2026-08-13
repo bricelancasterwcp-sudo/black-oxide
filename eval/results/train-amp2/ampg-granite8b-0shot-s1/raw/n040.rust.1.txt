@@ -1,0 +1,10 @@
+fn main() {
+    let square_side = 4.0;
+    let square_area = square_side * square_side;
+    println!("Area of square with side {:?} is {:?}", square_side, square_area);
+
+    let circle_radius = 4.0;
+    const PI: f64 = 3.0;
+    let circle_area = PI * circle_radius * circle_radius;
+    println!("Area of circle with radius {:?} is {:?}", circle_radius, circle_area);
+}

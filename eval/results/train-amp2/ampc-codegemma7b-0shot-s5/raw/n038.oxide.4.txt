@@ -1,0 +1,307 @@
+fn main() {
+    let mut device = Device { sensor: Sensor { reading: 0 } }
+    device.sensor.reading = 7
+    print(device.sensor.reading)
+}
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    if n.value == 0 {
+        return Str("0")
+    }
+    let mut digits: Vec<Str> = vec()
+    let mut n2 = n.value
+    while n2 > 0 {
+        let digit = n2 % 10
+        digits.push(int_to_str(digit))
+        n2 = n2 / 10
+    }
+    let mut result = Str("")
+    for d in digits.chars().rev() {
+        result = concat(result, d)
+    }
+    result
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut result = Str("")
+    for c in a.chars() {
+        result = concat(result, c)
+    }
+    for c in b.chars() {
+        result = concat(result, c)
+    }
+    result
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut result = v
+    result.append(x)
+    result
+}
+
+fn len(v: Vec<Int>) -> Int {
+    let mut result = 0
+    for _ in v.chars() {
+        result = result + 1
+    }
+    result
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    if i < len(v) {
+        return Some(v.chars().nth(i).unwrap())
+    }
+    None
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in a + 1 < b {
+        result.append(i)
+    }
+    result
+}
+
+fn clone(x: Int) -> Int {
+    return x
+}
+
+fn str_len(s: Str) -> Int {
+    return len(s)
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = vec()
+    for c in s.chars() {
+        result.append(Str(c))
+    }
+    result
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    let mut result = 0
+    let mut multiplier = 1
+    for c in s.chars().rev() {
+        let digit = int_to_str(c - 48)
+        if digit < 10 {
+            result = result + multiplier * digit
+            multiplier = multiplier * 10
+        } else {
+            return None
+        }
+    }
+    Some(result)
+}
+
+fn to_float(n: Int) -> Float {
+    return Float(n)
+}
+
+fn trunc(x: Float) -> Int {
+    if x.value < 0 {
+        return Int(x.value - 0.5)
+    } else {
+        return Int(x.value + 0.5)
+    }
+}
+
+struct Float { value: Int }
+
+struct Int { value: Int }
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    if n.value == 0 {
+        return Str("0")
+    }
+    let mut digits: Vec<Str> = vec()
+    let mut n2 = n.value
+    while n2 > 0 {
+        let digit = n2 % 10
+        digits.push(int_to_str(digit))
+        n2 = n2 / 10
+    }
+    let mut result = Str("")
+    for d in digits.chars().rev() {
+        result = concat(result, d)
+    }
+    result
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut result = Str("")
+    for c in a.chars() {
+        result = concat(result, c)
+    }
+    for c in b.chars() {
+        result = concat(result, c)
+    }
+    result
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut result = v
+    result.append(x)
+    result
+}
+
+fn len(v: Vec<Int>) -> Int {
+    let mut result = 0
+    for _ in v.chars() {
+        result = result + 1
+    }
+    result
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    if i < len(v) {
+        return Some(v.chars().nth(i).unwrap())
+    }
+    None
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in a + 1 < b {
+        result.append(i)
+    }
+    result
+}
+
+fn clone(x: Int) -> Int {
+    return x
+}
+
+fn str_len(s: Str) -> Int {
+    return len(s)
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = vec()
+    for c in s.chars() {
+        result.append(Str(c))
+    }
+    result
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    let mut result = 0
+    let mut multiplier = 1
+    for c in s.chars().rev() {
+        let digit = int_to_str(c - 48)
+        if digit < 10 {
+            result = result + multiplier * digit
+            multiplier = multiplier * 10
+        } else {
+            return None
+        }
+    }
+    Some(result)
+}
+
+fn to_float(n: Int) -> Float {
+    return Float(n)
+}
+
+fn trunc(x: Float) -> Int {
+    if x.value < 0 {
+        return Int(x.value - 0.5)
+    } else {
+        return Int(x.value + 0.5)
+    }
+}
+
+struct Float { value: Int }
+
+struct Int { value: Int }
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    if n.value == 0 {
+        return Str("0")
+    }
+    let mut digits: Vec<Str> = vec()
+    let mut n2 = n.value
+    while n2 > 0 {
+        let digit = n2 % 10
+        digits.push(int_to_str(digit))
+        n2 = n2 / 10
+    }
+    let mut result = Str("")
+    for d in digits.chars().rev() {
+        result = concat(result, d)
+    }
+    result
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut result = Str("")
+    for c in a.chars() {
+        result = concat(result, c)
+    }
+    for c in b.chars() {
+        result = concat(result, c)
+    }
+    result
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut result = v
+    result.append(x)
+    result
+}
+
+fn len(v: Vec<Int>) -> Int {
+    let mut result = 0
+    for _ in v.chars() {
+        result = result + 1
+    }
+    result
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    if i < len(v) {
+        return Some(v.chars().nth(i).unwrap())
+    }
+    None
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in a + 1 < b {
+        result.append(i)
+    }
+    result
+}
+
+fn clone(x: Int) -> Int {
+    return x
+}
+
+fn str_len(s

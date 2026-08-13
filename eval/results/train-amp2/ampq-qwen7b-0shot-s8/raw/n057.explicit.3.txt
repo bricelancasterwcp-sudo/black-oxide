@@ -1,0 +1,22 @@
+fn main() {
+    let fig = "fig".len()
+    let banana = "banana".len()
+    let kiwi = "kiwi".len()
+    if fig > banana {
+        if fig > kiwi {
+            print_str("fig")
+            print(fig)
+        } else {
+            print_str("kiwi")
+            print(kiwi)
+        }
+    } else {
+        if banana > kiwi {
+            print_str("banana")
+            print(banana)
+        } else {
+            print_str("kiwi")
+            print(kiwi)
+        }
+    }
+}

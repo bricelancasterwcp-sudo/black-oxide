@@ -1,0 +1,11 @@
+struct Score {
+    num: Int,
+    rank: Int,
+}
+
+fn main() {
+    let scores = vec(Score { num: 5, rank: 1 }, Score { num: 9, rank: 2 }, Score { num: 2, rank: 3 })
+    for score in scores {
+        print(score.num)
+    }
+}

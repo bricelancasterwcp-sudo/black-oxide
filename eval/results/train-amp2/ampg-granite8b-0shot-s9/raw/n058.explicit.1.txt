@@ -1,0 +1,164 @@
+fn main() {
+    let c = coffee()
+    let mut mocha = c.clone()
+    for c in c {
+        if mocha.contains(c) {
+            print(c)
+            mocha.remove(c)
+        }
+    }
+}
+
+fn coffee() -> Str {
+    "coffee"
+}
+
+struct Str {
+    data: Vec<Str>,
+    pos: Int,
+}
+
+fn contains(s: &Str, c: Str) -> Bool {
+    if s.pos >= len(&s) {
+        return false
+    }
+    let here = get(&s, s.pos)
+    if here == c {
+        return true
+    }
+    return contains(&s, c)
+}
+
+fn remove(s: &Str, c: Str) -> Str {
+    if s.pos >= len(&s) {
+        return clone(&s)
+    }
+    let here = get(&s, s.pos)
+    if here == c {
+        let new_data = clone(&s)
+        drop new_data
+        new_data.pos = s.pos + 1
+        return new_data
+    }
+    return remove(&s, c)
+}
+
+fn print(c: Str) {
+    drop c
+}
+
+fn len(s: &Str) -> Int {
+    if s.pos >= len(&s) {
+        return 0
+    }
+    return 1 + len(&s)
+}
+
+fn get(s: &Str, i: Int) -> Str {
+    if i >= len(&s) {
+        EX0001 // "EX0001: bare read of a linear value"
+    }
+    return get(&s, i + 1)
+}
+
+fn clone(s: &Str) -> Str {
+    return clone(&s)
+}
+
+fn drop_str(s: Str) {
+    drop s
+}
+
+fn drop_int(i: Int) {
+    drop i
+}
+
+fn drop_bool(b: Bool) {
+    drop b
+}
+
+fn drop_vec_str(v: Vec<Str>) {
+    drop v
+}
+
+fn drop_vec_int(v: Vec<Int>) {
+    drop v
+}
+
+fn drop_vec_bool(v: Vec<Bool>) {
+    drop v
+}
+
+fn drop_option_str(o: Option<Str>) {
+    drop o
+}
+
+fn drop_option_int(o: Option<Int>) {
+    drop o
+}
+
+fn drop_option_bool(o: Option<Bool>) {
+    drop o
+}
+
+fn drop_result_str_int(r: Result<Str, Int>) {
+    drop r
+}
+
+fn drop_result_str_bool(r: Result<Str, Bool>) {
+    drop r
+}
+
+fn drop_result_int_str(r: Result<Int, Str>) {
+    drop r
+}
+
+fn drop_result_int_bool(r: Result<Int, Bool>) {
+    drop r
+}
+
+fn drop_result_bool_str(r: Result<Bool, Str>) {
+    drop r
+}
+
+fn drop_result_bool_int(r: Result<Bool, Int>) {
+    drop r
+}
+
+fn print_str(s: Str) {
+    drop s
+}
+
+fn vec() -> Vec<Str> {
+    drop vec
+    Vec(vec(), 0)
+}
+
+fn push(v: &Vec<Str>, x: Str) -> Vec<Str> {
+    if v.pos >= len(&v) {
+        EX0003 // "EX0003: missing `drop` at the value's"
+    }
+    let new_data = clone(&v)
+    drop new_data
+    new_data.data.push(x)
+    return new_data
+}
+
+fn to_float(n: Int) -> Float {
+    drop n
+    EX0004 // "EX0004: a `drop` where the value is"
+}
+
+fn trunc(x: Float) -> Int {
+    drop x
+    EX0004 // "EX0004: a `drop` where the value is"
+}
+
+fn main() {
+    let nums = push(push(vec(), 5), 40)
+    let bigger = extend(clone(&nums), 70)
+    print(sum_big(&nums, 10))
+    drop nums
+    print(sum_big(&bigger, 10))
+    drop bigger
+}

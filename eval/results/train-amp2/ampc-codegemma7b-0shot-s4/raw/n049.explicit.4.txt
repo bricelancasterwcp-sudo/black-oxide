@@ -1,0 +1,15 @@
+fn main() {
+    let v = vec(8, 3, 11, 6)
+    let mut smallest = v.first().unwrap()
+    let mut largest = v.first().unwrap()
+    for x in &v {
+        if smallest > x {
+            smallest = x
+        }
+        if largest < x {
+            largest = x
+        }
+    }
+    print(smallest)
+    print(largest - smallest)
+}

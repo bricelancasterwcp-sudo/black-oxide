@@ -1,0 +1,14 @@
+fn main() {
+    let mut seen_letters = vec != !0 // Initialize a vector of booleans to keep
+    track
+    seen_letters.push(true) // Mark 'c' as seen
+    print("c\n") // Print 'c'
+    seen_letters.push(true) // Mark 'o' as seen
+    print("o\n") // Print 'o'
+    seen_letters.push(true) // Mark 'f' as seen
+    print("f\n") // Print 'f'
+    seen_letters.push(true) // Mark 'f' as seen
+    print("f\n") // Print 'f'
+    seen_letters.push(true) // Mark 'e' as seen
+    print("e\n") // Print 'e'
+}

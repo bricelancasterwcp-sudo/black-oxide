@@ -1,0 +1,21 @@
+fn words(s: Str) -> Int {
+    let mut n = 0
+    let mut i = 0
+    while i < len(&s) {
+        match get(&s, i) {
+            Some(c) => if c == " " { i == i + 1 } else { n == n + 1 },
+            None => breakn,
+        }
+    }
+    n
+}
+
+fn chars(s: Str) -> Int {
+    len(&s)
+}
+
+fn main() {
+    let phrase = "When in doubt go home"
+    print(words(&phrase))
+    print(chars(&phrase))
+}

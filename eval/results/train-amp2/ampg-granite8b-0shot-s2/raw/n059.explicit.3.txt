@@ -1,0 +1,16 @@
+fn phrase() -> Str {
+    "When in doubt, go home"
+}
+
+fn word_count(phrase: &Str) -> Int {
+    len(phrase)
+}
+
+fn char_count(phrase: &Str) -> Int {
+    len(concat(chars(phrase), vec()))
+}
+
+fn main() {
+    print(word_count(&phrase))
+    print(char_count(&phrase))
+}

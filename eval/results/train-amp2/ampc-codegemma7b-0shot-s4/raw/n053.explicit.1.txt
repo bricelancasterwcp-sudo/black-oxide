@@ -1,0 +1,91 @@
+fn drum() -> Str {
+    let mut result = Str(vec())
+    for c in "drum".chars() {
+        result = push(result, c)
+    }
+    result
+}
+
+fn main() {
+    print(reverse(&drum))
+    print(drum())
+}
+
+fn reverse(s: &Str) -> Str {
+    let mut result = Str(vec())
+    for c in s.chars().rev() {
+        result = push(result, c)
+    }
+    result
+}
+
+fn push(v: Str, x: Char) -> Str {
+    let mut result = v.chars().collect()
+    result.push(x)
+    Str(result)
+}
+
+struct Str {
+    chars: Vec<Char>,
+}
+
+fn chars(s: &Str) -> Vec<Char> {
+    s.chars.clone()
+}
+
+fn len(s: &Str) -> Int {
+    Int(s.chars.len())
+}
+
+fn print(s: &Str) {
+    for c in chars(s) {
+        print(c)
+    }
+    print("\n")
+}
+
+fn print(c: Char) {
+    print(&c)
+}
+
+fn print(i: Int) {
+    print(&to_str)
+}
+
+struct Int {
+    value: Integer,
+}
+
+fn to_str(i: Int) -> Str {
+    let mut result = Str(vec())
+    let mut x = i
+    while x.value > 0 {
+        let digit = x.value % 10
+        result = push(result, Char(digit + 48))
+        x.value = x.value / 10
+    }
+    result
+}
+
+struct Integer {
+    value: Integer,
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    let mut result = Int(0)
+    let mut multiplier = Int(1)
+    for c in s.chars().rev() {
+        if c.value < 48 || c.value > 57 {
+            return None
+        }
+        result.value = result.value + multiplier.value * (c.value - 48)
+        multiplier.value = multiplier.value * 10
+    }
+    Some(result)
+}
+
+fn main() {
+    print(parse_int(&drum))
+    print(parse_int(&reverse))
+    print(parse_int(&drum))
+}

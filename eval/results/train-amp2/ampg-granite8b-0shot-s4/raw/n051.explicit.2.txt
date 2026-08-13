@@ -1,0 +1,6 @@
+fn main() {
+    let granite = "granite".to_string()
+    print(granite.chars().next().unwrap())
+    drop granite
+    print(granite.chars().next().unwrap())
+}

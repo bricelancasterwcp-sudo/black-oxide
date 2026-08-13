@@ -1,0 +1,16 @@
+fn main() {
+    let mut n = 91
+    let mut div = 2
+    while div < n {
+        if n % div == 0 {
+            print("no")
+            drop n
+            drop div
+            return
+        }
+        div = div + 1
+    }
+    print("yes")
+    drop n
+    drop div
+}

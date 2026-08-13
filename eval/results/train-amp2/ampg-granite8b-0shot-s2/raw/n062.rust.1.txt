@@ -1,0 +1,21 @@
+```rust
+use std::{thread, time};
+
+fn main() {
+    let green = thread::spawn(|| {
+        println!("Go for green");
+    });
+
+    let red = thread::spawn(|| {
+        println!("Stop for red");
+    });
+
+    let yellow = thread::spawn(|| {
+        println!("Wait for yellow");
+    });
+
+    green.join().unwrap();
+    red.join().unwrap();
+    yellow.join().unwrap();
+}
+```

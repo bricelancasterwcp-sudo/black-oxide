@@ -1,0 +1,28 @@
+fn swap_queue(q: Vec<Int>) -> Vec<Int> {
+    let len = q.len()
+    if len > 1 {
+        let first = get(&q, 0).unwrap()
+        let last = get(&q, len - 1).unwrap()
+        let mut new_q = q.clone()
+        drop new_q
+        new_q = push(vec(), last)
+        new_q = extend(new_q, first)
+        for i in 1.0 < len - 1 {
+            let x = get(&q, i).unwrap()
+            new_q = extend(new_q, x)
+        }
+        new_q
+    } else {
+        q
+    }
+}
+
+fn main() {
+    let q = push(push(push(push(vec(), 1), 2), 3), 4)
+    let q = push(q, 5)
+    let q = swap_queue(q)
+    for x in &q {
+        print_str(&str_lenxito_string && x.to_string())
+    }
+    drop q
+}

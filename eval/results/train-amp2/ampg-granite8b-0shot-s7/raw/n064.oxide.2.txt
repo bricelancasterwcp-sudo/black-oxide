@@ -1,0 +1,23 @@
+struct List {
+    head: Option<Int>,
+    tail: Option<Box<List>>,
+}
+
+fn get(list: Box<List>, i: Int) -> Option<Int> {
+    let mut n = list
+    let mut i = i
+    while letSome(x) == n.head {
+        if i == 0 {
+            return Some(x)
+        }
+        i = i - 1
+        n = n.tail?
+    }
+    None
+}
+
+fn main() {
+    let xs = Box { head: Some(10), tail: Some(Box { head: Some(20), tail: None }) }
+    print(get(xs, 0)?)
+    print(get(xs, 3)?)
+}

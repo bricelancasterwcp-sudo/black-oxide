@@ -1,0 +1,16 @@
+fn main() {
+    let fig = "fig"
+    let banana = "banana"
+    let kiwi = "kiwi"
+    let longest = if str_len(fig) > str_len(banana) { fig } else { banana }
+    if str_len(longest) > str_len(kiwi) {
+        print_str(longest)
+        print(str_len(longest))
+    } else {
+        print_str(kiwi)
+        print(str_len(kiwi))
+    }
+    drop fig
+    drop banana
+    drop kiwi
+}

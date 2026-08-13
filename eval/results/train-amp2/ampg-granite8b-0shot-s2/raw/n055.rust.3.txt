@@ -1,0 +1,22 @@
+fn main() {
+    let mut input = String::new();
+    std::io::stdin().read_line(&mut input).unwrap();
+    match input.trim().parse::<i32>() {
+        Ok(n) => println!("{}", n),
+        Err(_) => println!("bad"),
+    }
+
+    let mut input = String::new();
+    std::io::stdin().read_line(&mut input).unwrap();
+    match input.trim().parse::<i32>() {
+        Ok(n) => println!("{}", n),
+        Err(_) => println!("bad"),
+    }
+
+    let mut input = String::new();
+    std::io::stdin().read_line(&mut input).unwrap();
+    match input.trim().parse::<i32>() {
+        Ok(n) => println!("{}", n),
+        Err(_) => println!("bad"),
+    }
+}

@@ -1,0 +1,12 @@
+const SIGNALS: [&str; 3] = ["green", "red", "yellow"];
+
+fn main() {
+    for signal in SIGNALS.iter() {
+        match *signal {
+            "green" => println!("go for {}", signal),
+            "red" => println!("stop for {}", signal),
+            "yellow" => println!("wait for {}", signal),
+            _ => unreachable!(),
+        }
+    }
+}

@@ -1,0 +1,15 @@
+struct S { x: Int, y: Int }
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn f(a: Int) -> Int {
+    let x = 1
+    let y = 2
+    add(x, a) + y
+}
+
+fn main() {
+    print(f(4))
+}

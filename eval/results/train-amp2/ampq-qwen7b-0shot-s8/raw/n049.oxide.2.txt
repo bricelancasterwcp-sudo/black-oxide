@@ -1,0 +1,25 @@
+struct Figure { value: Int }
+
+fn smallest(figs: Vec<Figure>) -> Figure {
+    let mut min = figs.pop().unwrap_or(Figure { value: Int.max_value() })
+    for fig in figs {
+        if fig.value < min.value {
+            min = fig
+        }
+    }
+    min
+}
+
+fn gap(figs: Vec<Figure>) -> Int {
+    let max = figs.iter().max_by_key(figs.iter().map(fig.value)).unwrap().value
+    let min = smallest(figs).value
+    max - min
+}
+
+fn main() {
+    let figures = vec(Figure { value: 8 }, Figure { value: 3 }, Figure { value: 11 }, Figure { value: 6 })
+    let min_figure = smallest(figures.clone())
+    let gap_value = gap(figures)
+    print(min_figure.value)
+    print(gap_value)
+}

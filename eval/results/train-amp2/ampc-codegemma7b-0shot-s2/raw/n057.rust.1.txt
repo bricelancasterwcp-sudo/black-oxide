@@ -1,0 +1,13 @@
+fn main() {
+    let mut name = String::new();
+    let mut count = 0;
+
+    for word in ["fig", "banana", "kiwi"] {
+        if word.len() > count {
+            name = word.to_string();
+            count = word.len();
+        }
+    }
+
+    println!("Longest name: {}, with {} letters", name, count);
+}

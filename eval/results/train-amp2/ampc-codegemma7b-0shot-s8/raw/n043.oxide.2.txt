@@ -1,0 +1,8 @@
+fn main() {
+    let mut queue = vec(1, 2, 3, 4, 5)
+    let first = queue.remove(0)
+    queue.insert(queue.len() - 1, first)
+    for x in queue {
+        print(x)
+    }
+}

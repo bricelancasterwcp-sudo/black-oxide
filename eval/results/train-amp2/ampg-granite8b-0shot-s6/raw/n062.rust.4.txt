@@ -1,0 +1,11 @@
+fn main() {
+    let signals = [
+        "go for green",
+        "stop for red",
+        "wait for yellow"
+    ];
+
+    for signal in signals {
+        println!("{}", signal);
+    }
+}

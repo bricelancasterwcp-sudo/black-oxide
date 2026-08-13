@@ -1,0 +1,432 @@
+fn main() {
+    let mut vec = vec(9, 2, 7, 4)
+    for _ in range(0, len(vec)) {
+        let mut min = 0
+        for y in range(0, len(vec)) {
+            if get(vec, y) < get(vec, min) {
+                min = y
+            }
+        }
+        print(get(vec, min))
+        vec = push(remove(vec, min))
+    }
+}
+
+fn remove(v: Vec<Int>, i: Int) -> Vec<Int> {
+    let mut result = vec()
+    let mut j = 0
+    for x in v {
+        if j != i {
+            result = push(result, x)
+        }
+        j = j + 1
+    }
+    result
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut result = vec()
+    for y in v {
+        result = push(result, y)
+    }
+    result = push(result, x)
+    result
+}
+
+fn len(v: Vec<Int>) -> Int {
+    v.len()
+}
+
+fn get(v: Vec<Int>, i: Int) -> Int {
+    v.get(i)
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn vec_push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    Vec_push(v, x)
+}
+
+fn vec_len(v: Vec<Int>) -> Int {
+    Vec_len(v)
+}
+
+fn vec_get(v: Vec<Int>, i: Int) -> Int {
+    Vec_get(v, i)
+}
+
+fn vec_print(x: Int) {
+    Vec_print(x)
+}
+
+fn vec_new() -> Vec<Int> {
+    Vec_new()
+}
+
+fn vec_push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    Vec_push(v, x)
+}
+
+fn vec_len(v: Vec<Int>) -> Int {
+    Vec_len(v)
+}
+
+fn vec_get(v: Vec<Int>, i: Int) -> Int {
+    Vec_get(v, i)
+}
+
+fn vec_print(x: Int) {
+    Vec_print(x)
+}
+
+fn vec_new() -> Vec<Int> {
+    Vec_new()
+}
+
+fn vec_push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    Vec_push(v, x)
+}
+
+fn vec_len(v: Vec<Int>) -> Int {
+    Vec_len(v)
+}
+
+fn vec_get(v: Vec<Int>, i: Int) -> Int {
+    Vec_get(v, i)
+}
+
+fn vec_print(x: Int) {
+    Vec_print(x)
+}
+
+fn vec_new() -> Vec<Int> {
+    Vec_new()
+}
+
+fn vec_push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    Vec_push(v, x)
+}
+
+fn vec_len(v: Vec<Int>) -> Int {
+    Vec_len(v)
+}
+
+fn vec_get(v: Vec<Int>, i: Int) -> Int {
+    Vec_get(v, i)
+}
+
+fn vec_print(x: Int) {
+    Vec_print(x)
+}
+
+fn vec_new() -> Vec<Int> {
+    Vec_new()
+}
+
+fn vec_push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    Vec_push(v, x)
+}
+
+fn vec_len(v: Vec<Int>) -> Int {
+    Vec_len(v)
+}
+
+fn vec_get(v: Vec<Int>, i: Int) -> Int {
+    Vec_get(v, i)
+}
+
+fn vec_print(x: Int) {
+    Vec_print(x)
+}
+
+fn vec_new() -> Vec<Int> {
+    Vec_new()
+}
+
+fn vec_push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    Vec_push(v, x)
+}
+
+fn vec_len(v: Vec<Int>) -> Int {
+    Vec_len(v)
+}
+
+fn vec_get(v: Vec<Int>, i: Int) -> Int {
+    Vec_get(v, i)
+}
+
+fn vec_print(x: Int) {
+    Vec_print(x)
+}
+
+fn vec_new() -> Vec<Int> {
+    Vec_new()
+}
+
+fn vec_push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    Vec_push(v, x)
+}
+
+fn vec_len(v: Vec<Int>) -> Int {
+    Vec_len(v)
+}
+
+fn vec_get(v: Vec<Int>, i: Int) -> Int {
+    Vec_get(v, i)
+}
+
+fn vec_print(x: Int) {
+    Vec_print(x)
+}
+
+fn vec_new() -> Vec<Int> {
+    Vec_new()
+}
+
+fn vec_push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    Vec_push(v, x)
+}
+
+fn vec_len(v: Vec<Int>) -> Int {
+    Vec_len(v)
+}
+
+fn vec_get(v: Vec<Int>, i: Int) -> Int {
+    Vec_get(v, i)
+}
+
+fn vec_print(x: Int) {
+    Vec_print(x)
+}
+
+fn vec_new() -> Vec<Int> {
+    Vec_new()
+}
+
+fn vec_push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    Vec_push(v, x)
+}
+
+fn vec_len(v: Vec<Int>) -> Int {
+    Vec_len(v)
+}
+
+fn vec_get(v: Vec<Int>, i: Int) -> Int {
+    Vec_get(v, i)
+}
+
+fn vec_print(x: Int) {
+    Vec_print(x)
+}
+
+fn vec_new() -> Vec<Int> {
+    Vec_new()
+}
+
+fn vec_push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    Vec_push(v, x)
+}
+
+fn vec_len(v: Vec<Int>) -> Int {
+    Vec_len(v)
+}
+
+fn vec_get(v: Vec<Int>, i: Int) -> Int {
+    Vec_get(v, i)
+}
+
+fn vec_print(x: Int) {
+    Vec_print(x)
+}
+
+fn vec_new() -> Vec<Int> {
+    Vec_new()
+}
+
+fn vec_push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    Vec_push(v, x)
+}
+
+fn vec_len(v: Vec<Int>) -> Int {
+    Vec_len(v)
+}
+
+fn vec_get(v: Vec<Int>, i: Int) -> Int {
+    Vec_get(v, i)
+}
+
+fn vec_print(x: Int) {
+    Vec_print(x)
+}
+
+fn vec_new() -> Vec<Int> {
+    Vec_new()
+}
+
+fn vec_push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    Vec_push(v, x)
+}
+
+fn vec_len(v: Vec<Int>) -> Int {
+    Vec_len(v)
+}
+
+fn vec_get(v: Vec<Int>, i: Int) -> Int {
+    Vec_get(v, i)
+}
+
+fn vec_print(x: Int) {
+    Vec_print(x)
+}
+
+fn vec_new() -> Vec<Int> {
+    Vec_new()
+}
+
+fn vec_push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    Vec_push(v, x)
+}
+
+fn vec_len(v: Vec<Int>) -> Int {
+    Vec_len(v)
+}
+
+fn vec_get(v: Vec<Int>, i: Int) -> Int {
+    Vec_get(v, i)
+}
+
+fn vec_print(x: Int) {
+    Vec_print(x)
+}
+
+fn vec_new() -> Vec<Int> {
+    Vec_new()
+}
+
+fn vec_push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    Vec_push(v, x)
+}
+
+fn vec_len(v: Vec<Int>) -> Int {
+    Vec_len(v)
+}
+
+fn vec_get(v: Vec<Int>, i: Int) -> Int {
+    Vec_get(v, i)
+}
+
+fn vec_print(x: Int) {
+    Vec_print(x)
+}
+
+fn vec_new() -> Vec<Int> {
+    Vec_new()
+}
+
+fn vec_push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    Vec_push(v, x)
+}
+
+fn vec_len(v: Vec<Int>) -> Int {
+    Vec_len(v)
+}
+
+fn vec_get(v: Vec<Int>, i: Int) -> Int {
+    Vec_get(v, i)
+}
+
+fn vec_print(x: Int) {
+    Vec_print(x)
+}
+
+fn vec_new() -> Vec<Int> {
+    Vec_new()
+}
+
+fn vec_push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    Vec_push(v, x)
+}
+
+fn vec_len(v: Vec<Int>) -> Int {
+    Vec_len(v)
+}
+
+fn vec_get(v: Vec<Int>, i: Int) -> Int {
+    Vec_get(v, i)
+}
+
+fn vec_print(x: Int) {
+    Vec_print(x)
+}
+
+fn vec_new() -> Vec<Int> {
+    Vec_new()
+}
+
+fn vec_push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    Vec_push(v, x)
+}
+
+fn vec_len(v: Vec<Int>) -> Int {
+    Vec_len(v)
+}
+
+fn vec_get(v: Vec<Int>, i: Int) -> Int {
+    Vec_get(v, i)
+}
+
+fn vec_print(x: Int) {
+    Vec_print(x)
+}
+
+fn vec_new() -> Vec<Int> {
+    Vec_new()
+}
+
+fn vec_push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    Vec_push(v, x)
+}
+
+fn vec_len(v: Vec<Int>) -> Int {
+    Vec_len(v)
+}
+
+fn vec_get(v: Vec<Int>, i: Int) -> Int {
+    Vec_get(v, i)
+}
+
+fn vec_print(x: Int) {
+    Vec_print(x)
+}
+
+fn vec_new() -> Vec<Int> {
+    Vec_new()
+}
+
+fn vec_push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    Vec_push(v, x)
+}
+
+fn vec_len(v: Vec<Int>) -> Int {
+    Vec_len(v)
+}
+
+fn vec_get(v: Vec<Int>, i: Int) -> Int {
+    Vec_get(v, i)
+}
+
+fn vec_print(x: Int) {
+    Vec_print(x)
+}
+
+fn vec_new() -> Vec<Int> {
+    Vec_new()
+}
+
+fn vec_push(v

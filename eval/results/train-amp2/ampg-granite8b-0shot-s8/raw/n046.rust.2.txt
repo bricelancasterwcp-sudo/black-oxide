@@ -1,0 +1,10 @@
+fn main() {
+    let samples = [5, 12, 3, 18, 9];
+    let cutoff = 10;
+
+    let under = samples.iter().filter(|&x| x < cutoff).count();
+    let at_or_over = samples.iter().filter(|&x| x >= cutoff).count();
+
+    println!("There are {} numbers less than the cutoff.", under);
+    println!("There are {} numbers at or over the cutoff.", at_or_over);
+}

@@ -1,0 +1,6 @@
+fn main(){
+    let mut figures = [11, 8, 3, 6];
+    figures.sort_unstable();
+    println!("{}", figures[0]);
+    println!("{}", figures[3] - figures[0]);
+}

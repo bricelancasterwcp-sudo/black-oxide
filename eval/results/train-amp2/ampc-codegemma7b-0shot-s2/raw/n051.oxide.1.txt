@@ -1,0 +1,15 @@
+fn first_letter(word: Str) -> Str {
+    let chars = chars(word)
+    chars.first().unwrap()
+}
+
+fn last_letter(word: Str) -> Str {
+    let chars = chars(word)
+    chars.last().unwrap()
+}
+
+fn main() {
+    let granite = "granite"
+    print(first_letter(granite))
+    print(last_letter(granite))
+}

@@ -1,0 +1,8 @@
+fn main() {
+    let scores = [2, 9, 5];
+    let sorted_scores = scores.iter().sorted().rev();
+
+    for score in sorted_scores {
+        println!("{}", score);
+    }
+}

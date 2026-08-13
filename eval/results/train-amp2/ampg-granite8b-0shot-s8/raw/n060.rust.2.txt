@@ -1,0 +1,13 @@
+fn main() {
+    let a1b22 = "a1b22";
+    let mut count = 0;
+    let mut digit_count = 0;
+    for c in a1b22.chars() {
+        if c.is_ascii_digit() {
+            count += c as usize - '0' as usize;
+            digit_count += 1;
+        }
+    }
+    println!("Total of all digit characters: {}", count);
+    println!("Number of digit characters: {}", digit_count);
+}

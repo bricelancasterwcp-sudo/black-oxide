@@ -1,0 +1,14 @@
+fn main() {
+    let word = "coffee"
+    let mut seen = vec()
+    for ch in word.chars() {
+        if !seen.contains(&ch) {
+            if word.matches(ch).count() > 1 {
+                print_str(&ch)
+                push(seen, ch)
+            }
+        }
+    }
+    drop word
+    drop seen
+}

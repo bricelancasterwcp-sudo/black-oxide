@@ -1,0 +1,21 @@
+fn enqueue(v: &Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn first(v: &Vec<Int>) -> Int {
+    v.get(0).unwrap()
+}
+
+fn last(v: &Vec<Int>) -> Int {
+    v.get(len(v) - 1).unwrap()
+}
+
+fn main() {
+    let mut queue = enqueue(enqueue(enqueue(enqueue(enqueue(vec(), 1), 2), 3), 4), 5)
+    queue = enqueue(&queue, last(&queue))
+    queue = enqueue(&queue, first(&queue))
+    for x in &queue {
+        print(x)
+    }
+    drop queue
+}

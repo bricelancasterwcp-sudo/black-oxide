@@ -1,0 +1,16 @@
+fn main() {
+    let scores = vec(5, 12, 3, 18, 9)
+    let cutoff = 10
+    let under = 0
+    let at_or_over = 0
+    for score in &scores {
+        if score < cutoff {
+            under = under + 1
+        } else {
+            at_or_over = at_or_over + 1
+        }
+    }
+    drop scores // EX0003
+    print(under)
+    print(at_or_over)
+}

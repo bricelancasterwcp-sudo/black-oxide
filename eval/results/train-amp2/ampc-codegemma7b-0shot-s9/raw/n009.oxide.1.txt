@@ -1,0 +1,13 @@
+fn digits(n: Int) -> Vec<Int> {
+    let mut digits = vec()
+    let mut nn = n
+    while nn > 0 {
+        digits = push(digits, nn % 10)
+        nn = nn / 10
+    }
+    digits
+}
+
+fn main() {
+    print(digits(1234))
+}

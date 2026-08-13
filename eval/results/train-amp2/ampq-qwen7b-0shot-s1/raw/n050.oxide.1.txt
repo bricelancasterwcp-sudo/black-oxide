@@ -1,0 +1,7 @@
+fn main() {
+    let mut scores = vec(2, 9, 5)
+    scores.sort_by_int_desc()
+    for score in scores {
+        print(score)
+    }
+}

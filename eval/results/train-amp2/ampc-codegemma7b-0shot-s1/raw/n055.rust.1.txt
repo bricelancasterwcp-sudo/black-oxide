@@ -1,0 +1,31 @@
+use std::io::{ErrorKind, Result};
+
+fn main() -> Result<()> {
+    let input1 = "8";
+    let input2 = "oak";
+    let input3 = "15";
+
+    let number1 = input1.parse::<u8>();
+    let number2 = input2.parse::<u8>();
+    let number3 = input3.parse::<u8>();
+
+    if let Ok(n) = number1 {
+        println!("{}", n);
+    } else {
+        println!("bad");
+    }
+
+    if let Ok(n) = number2 {
+        println!("{}", n);
+    } else {
+        println!("bad");
+    }
+
+    if let Ok(n) = number3 {
+        println!("{}", n);
+    } else {
+        println!("bad");
+    }
+
+    Ok(())
+}

@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let mut balance = 0;
+    deposit(3);
+    deposit(1);
+    deposit(4);
+    deposit(1);
+    deposit(5);
+}
+
+fn deposit(amount: i32) {
+    let new_balance = balance + amount;
+    println!("{}", new_balance);
+    balance = new_balance;
+}
+```

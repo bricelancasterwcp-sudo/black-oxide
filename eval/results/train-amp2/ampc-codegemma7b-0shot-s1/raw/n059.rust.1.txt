@@ -1,0 +1,15 @@
+use std::collections::HashSet;
+use std::env;
+
+fn main() {
+    let phrase = "when in doubt go home";
+
+    // Count words
+    let words = phrase.split_whitespace().count();
+
+    // Count characters including spaces
+    let chars = phrase.chars().count();
+
+    println!("Number of words: {}", words);
+    println!("Number of characters: {}", chars);
+}

@@ -1,0 +1,32 @@
+fn smallest(a: Int, b: Int, c: Int, d: Int) -> Int {
+    let mut min = a
+    if b < min {
+        min = b
+    }
+    if c < min {
+        min = c
+    }
+    if d < min {
+        min = d
+    }
+    min
+}
+
+fn max_minus_min(a: Int, b: Int, c: Int, d: Int) -> Int {
+    let max = if a > b { a } else { b }
+    let max = if max > c { max } else { c }
+    let max = if max > d { max } else { d }
+    let min = smallest(a, b, c, d)
+    max - min
+}
+
+fn main() {
+    let figures = vec(8, 3, 11, 6)
+    let min_figure = smallest(figures.get(0).unwrap_or(&i32), figures.get(1).unwrap_or(&i32), figures.get(2).unwrap_or(&i32), figures.get(3).unwrap_or(&i32))
+    let gap = max_minus_min(figures.get(0).unwrap_or(&i32), figures.get(1).unwrap_or(&i32), figures.get(2).unwrap_or(&i32), figures.get(3).unwrap_or(&i32))
+    print(min_figure)
+    drop figures
+    print(gap)
+    drop min_figure
+    drop gap
+}

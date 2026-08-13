@@ -1,0 +1,24 @@
+fn process_entry(e: Option<Int>, s: &Str, n: Option<Int>) -> Vec<Str> {
+    let mut result = vec()?
+    if letSome(val) == e {
+        result.push(int_to_str(val))?
+    } else {
+        result.push("bad")?
+    }
+    if letSome(val) == n {
+        result.push(int_to_str(val))?
+    } else {
+        result.push("bad")?
+    }
+    result
+}
+
+fn main() {
+    let entries = vec(Some(8), Some(15), None)
+    for entry in entries {
+        let processed = process_entry(entry, "oak", None)?
+        for line in processed {
+            print(line)?
+        }
+    }
+}

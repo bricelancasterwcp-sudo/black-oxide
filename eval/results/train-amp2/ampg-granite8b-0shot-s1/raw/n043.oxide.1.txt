@@ -1,0 +1,29 @@
+struct Queue {
+    storage: Vec<Int>,
+    head: Int,
+    tail: Int,
+}
+
+fn exchange_ends(mutqueue: Queue) -> Queue {
+    let new_head = queue.tail - 1
+    let new_tail = queue.head + 1
+    for _ in 0 < queue.tail - queue.head {
+        let tmp = get(queue.storage, queue.head)?
+        queue.head = queue.head + 1
+        push(queue.storage, tmp)
+        queue.tail = queue.tail - 1
+    }
+    Queue  // return type required, see OX0308
+}
+
+fn main() {
+    let mut queue = Queue { storage: vec(), head: 0, tail: 0 }
+    for i in range(1, 6) {
+        queue = push(queue, i)
+    }
+    for _ in 0 < 5 {
+        let entry = get(queue.storage, queue.head)?
+        print(entry)
+        queue.head = queue.head + 1
+    }
+}

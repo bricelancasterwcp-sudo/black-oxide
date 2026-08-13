@@ -1,0 +1,35 @@
+struct Reading { label: Str, values: Vec<Int> }
+
+fn first_big(v: Vec<Int>) -> Int {
+    let found = -1
+    for x in v {
+        if x > 10 {
+            found = x
+            break
+        }
+    }
+    found
+}
+
+fn second(v: Vec<Int>) -> Option<Int> {
+    let x = get(v, 1)?
+    Some(x + 1)
+}
+
+fn positions_of_four(v: Vec<Int>) -> Vec<Int> {
+    let mut pos = vec()
+    for i in range(0, len(v)) {
+        if get(v, i) == Some(4) {
+            push(pos, i)
+        }
+    }
+    pos
+}
+
+fn main() {
+    let v = vec(4, 7, 4, 9, 4)
+    let pos = positions_of_four(v.clone())
+    for p in pos {
+        print(p)
+    }
+}

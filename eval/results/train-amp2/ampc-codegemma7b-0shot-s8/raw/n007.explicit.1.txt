@@ -1,0 +1,12 @@
+fn digits(mutn: Int) -> Int {
+    let mut total = 0
+    while n > 0 {
+        total = total + n % 10
+        n = n / 10
+    }
+    total
+}
+
+fn main() {
+    print(digits(9875))
+}

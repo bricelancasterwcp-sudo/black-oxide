@@ -1,0 +1,13 @@
+fn sum_even() -> Int {
+    let mut acc = 0
+    for x in range(1, 21) {
+        if x % 2 == 0 {
+            acc = acc + x
+        }
+    }
+    acc
+}
+
+fn main() {
+    print(sum_even())
+}

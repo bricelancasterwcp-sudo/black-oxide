@@ -1,0 +1,12 @@
+fn main() {
+    let num = 1234
+    let digits = num.to_str()
+    let chars: Vec<Str> = chars(digits)
+    let reversed = chars.reverse()
+    let result: Str = concat(reversed, Vec())
+    print(result)
+    drop num
+    drop digits
+    drop chars
+    drop result
+}

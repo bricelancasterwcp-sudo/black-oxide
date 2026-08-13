@@ -1,0 +1,116 @@
+fn main() {
+    let p0 = Point { x: 1, y: 2 }
+    let p1 = Point { x: 10, y: 5 }
+    print(p0.x + p1.x)
+}
+
+struct Point {
+    x: Int,
+    y: Int,
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn println(x: Int) {
+    let mut out = "0"
+    loop_while(x > 0, x == 0, x == 0, x == 0, x == 0, x == 0)
+    drop out
+}
+
+fn loop_while(cond1: Bool, cond2: Bool, cond3: Bool, cond4: Bool, cond5: Bool, cond6: Bool) {
+    if cond1 {
+        if cond2 {
+            if cond3 {
+                if cond4 {
+                    if cond5 {
+                        if cond6 {
+                            return
+                        } else {
+                            drop cond6
+                        }
+                    } else {
+                        drop cond5
+                    }
+                } else {
+                    drop cond4
+                }
+            } else {
+                drop cond3
+            }
+        } else {
+            drop cond2
+        }
+    } else {
+        drop cond1
+    }
+}
+
+fn drop_vec(v: &Vec<Int>) {
+    for _ in v {
+        drop _
+    }
+    drop v
+}
+
+fn clone(x: Int) -> Int {
+    x
+}
+
+fn make_vec() -> Vec<Int> {
+    vec()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    0
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    None
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    vec()
+}
+
+fn str_len(s: Str) -> Int {
+    0
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    a
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    vec()
+}
+
+fn int_to_str(n: Int) -> Str {
+    "0"
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    None
+}
+
+fn to_float(n: Int) -> Float {
+    0.0
+}
+
+fn trunc(x: Float) -> Int {
+    0
+}
+
+fn println_str(s: Str) {
+    println(s)
+}
+
+fn main() {
+    let v = make_vec()
+    drop_vec(&v)
+}

@@ -1,0 +1,25 @@
+use std::io;
+
+fn main() {
+    let mut vowels = 0;
+    let mut not_vowels = 0;
+
+    loop {
+        let mut c = String::new();
+        io::stdin().read_line(&mut c).expect("Failed to read line");
+
+        let c = c.chars().next().unwrap();
+        if c == 'q' {
+            break;
+        }
+
+        match c {
+            'a' | 'e' | 'i' | 'o' | 'u' => vowels += 1,
+            'A' | 'E' | 'I' | 'O' | 'U' => vowels += 1,
+            _ => not_vowels += 1,
+        }
+    }
+
+    println!("Vowels: {}", vowels);
+    println!("Not vowels: {}", not_vowels);
+}

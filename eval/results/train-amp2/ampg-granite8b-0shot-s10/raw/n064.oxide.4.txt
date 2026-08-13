@@ -1,0 +1,12 @@
+struct List {
+    hd: Option<Int>,
+    tl: Option<Box<List>>,
+}
+
+fn main() {
+    let list = push(push(vec(), 10), 20)
+    let one = get(list, 0)?
+    let four = get(get(list, 3)?, 0)?
+    print(one)
+    print(four)
+}

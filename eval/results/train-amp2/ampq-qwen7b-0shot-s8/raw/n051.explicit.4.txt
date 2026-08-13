@@ -1,0 +1,7 @@
+fn main() {
+    let s = "granite"
+    let first = &s   // reads s
+    let last = &s  // reads s
+    print_str(&first)  // reads first
+    print_str(&last)  // reads last
+}

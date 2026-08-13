@@ -1,0 +1,17 @@
+fn longest(v: Vec<Str>) -> Str {
+    let mut longest = Str("")
+    let mut longest_length = 0
+    for x in v {
+        if x.len() > longest_length {
+            longest = x
+            longest_length = x.len()
+        }
+    }
+    longest
+}
+
+fn main() {
+    let v = vec("fig".to_string(), "banana".to_string(), "kiwi".to_string())
+    print(longest(v))
+    print(longest_length(v))
+}

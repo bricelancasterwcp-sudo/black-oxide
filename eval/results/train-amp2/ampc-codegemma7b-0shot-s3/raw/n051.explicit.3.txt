@@ -1,0 +1,20 @@
+fn print_first_last(word: &Str) {
+    print_char(first(word))
+    print_char(last(word))
+}
+
+fn first(word: &Str) -> Char {
+    return word.chars().next().unwrap()
+}
+
+fn last(word: &Str) -> Char {
+    return word.chars().last().unwrap()
+}
+
+fn print_char(c: Char) {
+    print(c)
+}
+
+fn main() {
+    print_first_last("granite")
+}

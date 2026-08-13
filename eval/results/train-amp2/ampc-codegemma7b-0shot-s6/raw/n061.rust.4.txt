@@ -1,0 +1,10 @@
+use std::io;
+
+fn main() {
+    let width = 9;
+    let height = 3;
+    let area = width * height;
+    println!("Area: {}", area);
+    let perimeter = 2 * (width + height);
+    println!("Perimeter: {}", perimeter);
+}

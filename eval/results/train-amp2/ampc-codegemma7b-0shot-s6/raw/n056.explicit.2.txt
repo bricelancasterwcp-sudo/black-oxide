@@ -1,0 +1,307 @@
+fn main() {
+    let seven = maybe_number(7)
+    let nine = maybe_number(9)
+    let x = maybe_number(x)
+    let question = maybe_number(question)
+    let sum = seven + nine + x + question
+    print(sum)
+    print(4 - sum)
+}
+
+fn maybe_number(n: Int) -> Int {
+    if n == 7 || n == 9 || n == x || n == question {
+        n
+    } else {
+        0
+    }
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn print(n: Int) {
+    let s = int_to_str(n)
+    print_str(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    if n == 0 {
+        "0"
+    } else {
+        let mut s = ""
+        while n != 0 {
+            let digit = n % 10
+            let digit_str = int_to_str(digit)
+            s = concat(digit_str, s)
+            n = trunc(n / 10)
+        }
+        s
+    }
+}
+
+fn print_str(s: Str) {
+    for c in chars(s) {
+        print(c)
+    }
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = vec()
+    let mut i = 0
+    while i < str_len(s) {
+        let c = get(s, i)
+        if c != None {
+            push(result, c.unwrap())
+        }
+        i = i + 1
+    }
+    result
+}
+
+fn get(s: Str, i: Int) -> Option<Str> {
+    if i >= 0 && i < str_len(s) {
+        Some(str_slice(s, i, i + 1))
+    } else {
+        None
+    }
+}
+
+fn str_slice(s: Str, start: Int, end: Int) -> Str {
+    let mut result = ""
+    let mut i = start
+    while i < end {
+        let c = get(s, i)
+        if c != None {
+            result = concat(result, c.unwrap())
+        }
+        i = i + 1
+    }
+    result
+}
+
+fn str_len(s: Str) -> Int {
+    let mut count = 0
+    let mut i = 0
+    while get(s, i) != None {
+        count = count + 1
+        i = i + 1
+    }
+    count
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut result = a
+    result = concat(result, b)
+    result
+}
+
+fn trunc(n: Int) -> Int {
+    if n < 0 {
+        n
+    } else {
+        n - (n % 1)
+    }
+}
+
+fn x(n: Int) -> Int {
+    if n == 7 || n == 9 || n == x || n == question {
+        n
+    } else {
+        0
+    }
+}
+
+fn question(n: Int) -> Int {
+    if n == 7 || n == 9 || n == x || n == question {
+        n
+    } else {
+        0
+    }
+}
+
+fn main() {
+    let seven = maybe_number(7)
+    let nine = maybe_number(9)
+    let x = maybe_number(x)
+    let question = maybe_number(question)
+    let sum = seven + nine + x + question
+    print(sum)
+    print(4 - sum)
+}
+
+fn maybe_number(n: Int) -> Int {
+    if n == 7 || n == 9 || n == x || n == question {
+        n
+    } else {
+        0
+    }
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn print(n: Int) {
+    let s = int_to_str(n)
+    print_str(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    if n == 0 {
+        "0"
+    } else {
+        let mut s = ""
+        while n != 0 {
+            let digit = n % 10
+            let digit_str = int_to_str(digit)
+            s = concat(digit_str, s)
+            n = trunc(n / 10)
+        }
+        s
+    }
+}
+
+fn print_str(s: Str) {
+    for c in chars(s) {
+        print(c)
+    }
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = vec()
+    let mut i = 0
+    while i < str_len(s) {
+        let c = get(s, i)
+        if c != None {
+            push(result, c.unwrap())
+        }
+        i = i + 1
+    }
+    result
+}
+
+fn get(s: Str, i: Int) -> Option<Str> {
+    if i >= 0 && i < str_len(s) {
+        Some(str_slice(s, i, i + 1))
+    } else {
+        None
+    }
+}
+
+fn str_slice(s: Str, start: Int, end: Int) -> Str {
+    let mut result = ""
+    let mut i = start
+    while i < end {
+        let c = get(s, i)
+        if c != None {
+            result = concat(result, c.unwrap())
+        }
+        i = i + 1
+    }
+    result
+}
+
+fn str_len(s: Str) -> Int {
+    let mut count = 0
+    let mut i = 0
+    while get(s, i) != None {
+        count = count + 1
+        i = i + 1
+    }
+    count
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut result = a
+    result = concat(result, b)
+    result
+}
+
+fn trunc(n: Int) -> Int {
+    if n < 0 {
+        n
+    } else {
+        n - (n % 1)
+    }
+}
+
+fn x(n: Int) -> Int {
+    if n == 7 || n == 9 || n == x || n == question {
+        n
+    } else {
+        0
+    }
+}
+
+fn question(n: Int) -> Int {
+    if n == 7 || n == 9 || n == x || n == question {
+        n
+    } else {
+        0
+    }
+}
+
+fn main() {
+    let seven = maybe_number(7)
+    let nine = maybe_number(9)
+    let x = maybe_number(x)
+    let question = maybe_number(question)
+    let sum = seven + nine + x + question
+    print(sum)
+    print(4 - sum)
+}
+
+fn maybe_number(n: Int) -> Int {
+    if n == 7 || n == 9 || n == x || n == question {
+        n
+    } else {
+        0
+    }
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn print(n: Int) {
+    let s = int_to_str(n)
+    print_str(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    if n == 0 {
+        "0"
+    } else {
+        let mut s = ""
+        while n != 0 {
+            let digit = n % 10
+            let digit_str = int_to_str(digit)
+            s = concat(digit_str, s)
+            n = trunc(n / 10)
+        }
+        s
+    }
+}
+
+fn print_str(s: Str) {
+    for c in chars(s) {
+        print(c)
+    }
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = vec()
+    let mut i = 0
+    while i < str_len(s) {
+        let c = get(s, i)
+        if c != None {
+            push(result, c.unwrap())
+        }
+        i = i + 1
+    }
+    result
+}
+
+fn get(s: Str, i: Int) -> Option<Str> {
+    if i >= 0

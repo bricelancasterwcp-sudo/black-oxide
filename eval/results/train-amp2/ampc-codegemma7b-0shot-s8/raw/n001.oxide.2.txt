@@ -1,0 +1,7 @@
+fn main() {
+    let mut total = 0
+    for n in 1.range(6) {
+        total = total + n.pow(3)
+    }
+    print(total)
+}

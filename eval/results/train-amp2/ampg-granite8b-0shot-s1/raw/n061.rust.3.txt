@@ -1,0 +1,18 @@
+```rust
+static WIDTH: u32 = 9;
+static HEIGHT: u32 = 3;
+
+fn main() {
+    /* Rectangle measures nine across and three down. */
+
+    /* Calculate the area it covers */
+    let area = WIDTH * HEIGHT;
+
+    /* Calculate the total distance around its edge */
+    let perimeter = 2 * (WIDTH + HEIGHT);
+
+    /* Print the results */
+    println!("Area: {}", area);
+    println!("Perimeter: {}", perimeter);
+}
+```

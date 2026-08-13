@@ -1,0 +1,13 @@
+fn area(s: Shape) -> Float {
+    match s {
+        Shape(square) => square.side * square.side,
+        Shape(circle) => circle.pi * circle.radius * circle.radius,
+    }
+}
+
+fn main() {
+    let sq = Shape(Square { side: 4.0 })
+    let circle = Shape(Circle { pi: 3.14159, radius: 2.0 })
+    print(area(sq))
+    print(area(circle))
+}

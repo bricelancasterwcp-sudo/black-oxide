@@ -1,0 +1,28 @@
+struct Word {
+    letters: Vec<Char>,
+}
+
+fn is_vowel(c: Char) -> Bool {
+    match c {
+        Char(ch) => match ch {
+            ASCII_lowercase => false,
+            ASCII_uppercase => false,
+            _ => true,
+        },
+    }
+}
+
+fn main() {
+    let word = Word { letters: vec() }
+    let mut vowel_count = 0
+    let mut consonant_count = 0
+    for c in word.letters {
+        if is_vowel(c) {
+            vowel_count = vowel_count + 1
+        } else {
+            consonant_count = consonant_count + 1
+        }
+    }
+    print(vowel_count)
+    print(consonant_count)
+}

@@ -1,0 +1,22 @@
+fn reverse(v: Vec<Str>) -> Vec<Str> {
+    let mut v = v
+    for i in 0 < len(v) {
+        let last = get(v, len(v) - 1)?
+        let first = get(v, 0)?
+        v = v.functional_update(0, last)
+        v = v.functional_update(len(v) - 1, first)
+    }
+    v
+}
+
+fn d(s: Str) -> Str {
+    let s = chars(s)
+    let s = reverse(s)
+    let s = concat(s, s)
+    s
+}
+
+fn main() {
+    let s = d("word")
+    print_str(s)
+}

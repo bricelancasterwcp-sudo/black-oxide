@@ -1,0 +1,32 @@
+fn largest(xs: &Vec<Int>) -> Int {
+    let mut max = xs.get(0)
+    for i in 1.step(xs.len()) {
+        let x = xs.get(i)
+        if x > max {
+            max = x
+        }
+    }
+    max
+}
+
+fn second_largest(xs: &Vec<Int>) -> Int {
+    let mut max = xs.get(0)
+    let mut second = xs.get(0)
+    for i in 1.step(xs.len()) {
+        let x = xs.get(i)
+        if x > max {
+            second = max
+            max = x
+        } else if x > second {
+            second = x
+        }
+    }
+    second
+}
+
+fn main() {
+    let xs = vec(12, 5, 20, 8, 17)
+    print(largest(&xs))
+    print(second_largest(&xs))
+    drop xs
+}

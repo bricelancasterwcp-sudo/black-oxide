@@ -1,0 +1,7 @@
+fn main() {
+    let word = "banana"
+    let n_positions: Vec<Int> = range(0, str_len(word)).filter_map || i || get(word, i) == Some("n")? || Some(i) || None
+    for pos in n_positions {
+        print(pos)
+    }
+}

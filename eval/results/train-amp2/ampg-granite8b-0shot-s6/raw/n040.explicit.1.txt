@@ -1,0 +1,293 @@
+fn main() {
+    let sq = Square { side: 4.0, pi: 3.0, area: 0.0, perimeter: 0.0, name: "sq" }
+    let circle = Circle { radius: 4.0, area: 0.0, perimeter: 0.0, name: "circle" }
+    let area = sq.area()
+    print_str(area)
+}
+
+struct Circle {
+    radius: Float,
+    area: Float,
+    perimeter: Float,
+    name: Str,
+}
+
+struct Square {
+    side: Float,
+    pi: Float,
+    area: Float,
+    perimeter: Float,
+    name: Str,
+}
+
+fn area(this: &Square) -> Float {
+    this.side * this.side * this.pi
+}
+
+fn perimeter(this: &Square) -> Float {
+    4 * this.side
+}
+
+fn area(this: &Circle) -> Float {
+    this.radius * this.radius * 3.14
+}
+
+fn perimeter(this: &Circle) -> Float {
+    2 * this.radius * 3.14
+}
+
+fn main() {
+    let sq = Square { side: 4.0, pi: 3.0, area: 0.0, perimeter: 0.0, name: "sq" }
+    let circle = Circle { radius: 4.0, area: 0.0, perimeter: 0.0, name: "circle" }
+    let area = sq.area()
+    print_str(area)
+}
+
+struct Circle {
+    radius: Float,
+    area: Float,
+    perimeter: Float,
+    name: Str,
+}
+
+struct Square {
+    side: Float,
+    pi: Float,
+    area: Float,
+    perimeter: Float,
+    name: Str,
+}
+
+fn area(this: &Square) -> Float {
+    this.side * this.side * this.pi
+}
+
+fn perimeter(this: &Square) -> Float {
+    4 * this.side
+}
+
+fn area(this: &Circle) -> Float {
+    this.radius * this.radius * 3.14
+}
+
+fn perimeter(this: &Circle) -> Float {
+    2 * this.radius * 3.14
+}
+
+fn main() {
+    let sq = Square { side: 4.0, pi: 3.0, area: 0.0, perimeter: 0.0, name: "sq" }
+    let circle = Circle { radius: 4.0, area: 0.0, perimeter: 0.0, name: "circle" }
+    let area = sq.area()
+    print_str(area)
+}
+
+struct Circle {
+    radius: Float,
+    area: Float,
+    perimeter: Float,
+    name: Str,
+}
+
+struct Square {
+    side: Float,
+    pi: Float,
+    area: Float,
+    perimeter: Float,
+    name: Str,
+}
+
+fn area(this: &Square) -> Float {
+    this.side * this.side * this.pi
+}
+
+fn perimeter(this: &Square) -> Float {
+    4 * this.side
+}
+
+fn area(this: &Circle) -> Float {
+    this.radius * this.radius * 3.14
+}
+
+fn perimeter(this: &Circle) -> Float {
+    2 * this.radius * 3.14
+}
+
+fn main() {
+    let sq = Square { side: 4.0, pi: 3.0, area: 0.0, perimeter: 0.0, name: "sq" }
+    let circle = Circle { radius: 4.0, area: 0.0, perimeter: 0.0, name: "circle" }
+    let area = sq.area()
+    print_str(area)
+}
+
+struct Circle {
+    radius: Float,
+    area: Float,
+    perimeter: Float,
+    name: Str,
+}
+
+struct Square {
+    side: Float,
+    pi: Float,
+    area: Float,
+    perimeter: Float,
+    name: Str,
+}
+
+fn area(this: &Square) -> Float {
+    this.side * this.side * this.pi
+}
+
+fn perimeter(this: &Square) -> Float {
+    4 * this.side
+}
+
+fn area(this: &Circle) -> Float {
+    this.radius * this.radius * 3.14
+}
+
+fn perimeter(this: &Circle) -> Float {
+    2 * this.radius * 3.14
+}
+
+fn main() {
+    let sq = Square { side: 4.0, pi: 3.0, area: 0.0, perimeter: 0.0, name: "sq" }
+    let circle = Circle { radius: 4.0, area: 0.0, perimeter: 0.0, name: "circle" }
+    let area = sq.area()
+    print_str(area)
+}
+
+struct Circle {
+    radius: Float,
+    area: Float,
+    perimeter: Float,
+    name: Str,
+}
+
+struct Square {
+    side: Float,
+    pi: Float,
+    area: Float,
+    perimeter: Float,
+    name: Str,
+}
+
+fn area(this: &Square) -> Float {
+    this.side * this.side * this.pi
+}
+
+fn perimeter(this: &Square) -> Float {
+    4 * this.side
+}
+
+fn area(this: &Circle) -> Float {
+    this.radius * this.radius * 3.14
+}
+
+fn perimeter(this: &Circle) -> Float {
+    2 * this.radius * 3.14
+}
+
+fn main() {
+    let sq = Square { side: 4.0, pi: 3.0, area: 0.0, perimeter: 0.0, name: "sq" }
+    let circle = Circle { radius: 4.0, area: 0.0, perimeter: 0.0, name: "circle" }
+    let area = sq.area()
+    print_str(area)
+}
+
+struct Circle {
+    radius: Float,
+    area: Float,
+    perimeter: Float,
+    name: Str,
+}
+
+struct Square {
+    side: Float,
+    pi: Float,
+    area: Float,
+    perimeter: Float,
+    name: Str,
+}
+
+fn area(this: &Square) -> Float {
+    this.side * this.side * this.pi
+}
+
+fn perimeter(this: &Square) -> Float {
+    4 * this.side
+}
+
+fn area(this: &Circle) -> Float {
+    this.radius * this.radius * 3.14
+}
+
+fn perimeter(this: &Circle) -> Float {
+    2 * this.radius * 3.14
+}
+
+fn main() {
+    let sq = Square { side: 4.0, pi: 3.0, area: 0.0, perimeter: 0.0, name: "sq" }
+    let circle = Circle { radius: 4.0, area: 0.0, perimeter: 0.0, name: "circle" }
+    let area = sq.area()
+    print_str(area)
+}
+
+struct Circle {
+    radius: Float,
+    area: Float,
+    perimeter: Float,
+    name: Str,
+}
+
+struct Square {
+    side: Float,
+    pi: Float,
+    area: Float,
+    perimeter: Float,
+    name: Str,
+}
+
+fn area(this: &Square) -> Float {
+    this.side * this.side * this.pi
+}
+
+fn perimeter(this: &Square) -> Float {
+    4 * this.side
+}
+
+fn area(this: &Circle) -> Float {
+    this.radius * this.radius * 3.14
+}
+
+fn perimeter(this: &Circle) -> Float {
+    2 * this.radius * 3.14
+}
+
+fn main() {
+    let sq = Square { side: 4.0, pi: 3.0, area: 0.0, perimeter: 0.0, name: "sq" }
+    let circle = Circle { radius: 4.0, area: 0.0, perimeter: 0.0, name: "circle" }
+    let area = sq.area()
+    print_str(area)
+}
+
+struct Circle {
+    radius: Float,
+    area: Float,
+    perimeter: Float,
+    name: Str,
+}
+
+struct Square {
+    side: Float,
+    pi: Float,
+    area: Float,
+    perimeter: Float,
+    name: Str,
+}
+
+fn area(this: &Square) -> Float {
+    this.side * this.side * this.pi
+}
+
+fn perimeter(this: &

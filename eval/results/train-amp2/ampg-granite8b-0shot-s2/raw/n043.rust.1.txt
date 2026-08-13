@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let mut queue = [1, 2, 3, 4, 5];
+    let first = queue.swap_remove(0);
+    queue.push(first);
+    for &item in &queue {
+        println!("{}", item);
+    }
+}
+```

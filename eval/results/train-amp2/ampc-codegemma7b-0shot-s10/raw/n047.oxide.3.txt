@@ -1,0 +1,12 @@
+fn main() {
+    let mut evens = vec_int()
+    for i in 1.range(10) {
+        if i % 2 == 0 {
+            evens = push(evens, i)
+        }
+    }
+    for i in range(len(evens), 0, -1) {
+        print(get(evens, i)?)
+        print_str("\n")
+    }
+}

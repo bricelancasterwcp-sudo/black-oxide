@@ -1,0 +1,315 @@
+fn main() {
+    let s = "coffee".chars().collect()
+    let mut seen = vec_int()
+    for c in s {
+        if !contains(seen, c) {
+            print(c)
+            seen = push(seen, c)
+        }
+    }
+}
+
+fn contains(v: Vec<Char>, c: Char) -> Bool {
+    for x in v {
+        if x == c {
+            return true
+        }
+    }
+    false
+}
+
+fn push(v: Vec<Char>, c: Char) -> Vec<Char> {
+    let mut r = v
+    r.push(c)
+    r
+}
+
+fn vec_int() -> Vec<Char> {
+    vec()
+}
+
+fn print(c: Char) {
+    print_str(str_char(c))
+}
+
+fn print_str(s: Str) {
+    let mut c = s
+    while len(c) > 0 {
+        let x = get(c, 0)?
+        print_char(x)
+        c = str_slice(c, 1)
+    }
+}
+
+fn print_char(c: Char) {
+    print(int_to_str(char_to_int(c)))
+}
+
+fn str_slice(s: Str, n: Int) -> Str {
+    if n < 0 {
+        return s
+    }
+    let mut r = s
+    for _ in 0.upto(n) {
+        r = str_drop(r)
+    }
+    r
+}
+
+fn str_drop(mutc: Str) -> Str {
+    if len(mutc) == 0 {
+        return mutc
+    }
+    let x = get(mutc, 0)?
+    mutc = str_slice(mutc, 1)
+    mutc
+}
+
+fn str_char(c: Char) -> Str {
+    let mut v = vec()
+    push(v, c)
+    str(v)
+}
+
+fn str(v: Vec<Char>) -> Str {
+    let mut r = ""
+    for c in v {
+        r = concat(r, str_char(c))
+    }
+    r
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut r = a
+    r = r + b
+    r
+}
+
+fn int_to_str(n: Int) -> Str {
+    if n == 0 {
+        return "0".to_string()
+    }
+    let mut r = ""
+    let mut x = n
+    while x > 0 {
+        let rem = trunc(div(x, 10))
+        x = rem
+        let c = char(rem + 48)
+        r = concat(r, str_char(c))
+    }
+    r
+}
+
+fn char_to_int(c: Char) -> Int {
+    let mut r = 0
+    for x in 0.upto(256) {
+        if char(x) == c {
+            r = x
+            break
+        }
+    }
+    r
+}
+
+fn div(n: Int, d: Int) -> Int {
+    let q = trunc(n / d)
+    q
+}
+
+fn len(s: Str) -> Int {
+    let mut r = 0
+    for _ in s.chars() {
+        r = r + 1
+    }
+    r
+}
+
+fn get(v: Vec<Char>, i: Int) -> Option<Char> {
+    if i < 0 || i >= len(v) {
+        return None
+    }
+    Some(v.chars().nth(i).unwrap())
+}
+
+fn main() {
+    let s = "coffee".chars().collect()
+    let mut seen = vec_int()
+    for c in s {
+        if !contains(seen, c) {
+            print(c)
+            seen = push(seen, c)
+        }
+    }
+}
+
+fn contains(v: Vec<Char>, c: Char) -> Bool {
+    for x in v {
+        if x == c {
+            return true
+        }
+    }
+    false
+}
+
+fn push(v: Vec<Char>, c: Char) -> Vec<Char> {
+    let mut r = v
+    r.push(c)
+    r
+}
+
+fn vec_int() -> Vec<Char> {
+    vec()
+}
+
+fn print(c: Char) {
+    print_str(str_char(c))
+}
+
+fn print_str(s: Str) {
+    let mut c = s
+    while len(c) > 0 {
+        let x = get(c, 0)?
+        print_char(x)
+        c = str_slice(c, 1)
+    }
+}
+
+fn print_char(c: Char) {
+    print(int_to_str(char_to_int(c)))
+}
+
+fn str_slice(s: Str, n: Int) -> Str {
+    if n < 0 {
+        return s
+    }
+    let mut r = s
+    for _ in 0.upto(n) {
+        r = str_drop(r)
+    }
+    r
+}
+
+fn str_drop(mutc: Str) -> Str {
+    if len(mutc) == 0 {
+        return mutc
+    }
+    let x = get(mutc, 0)?
+    mutc = str_slice(mutc, 1)
+    mutc
+}
+
+fn str_char(c: Char) -> Str {
+    let mut v = vec()
+    push(v, c)
+    str(v)
+}
+
+fn str(v: Vec<Char>) -> Str {
+    let mut r = ""
+    for c in v {
+        r = concat(r, str_char(c))
+    }
+    r
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut r = a
+    r = r + b
+    r
+}
+
+fn int_to_str(n: Int) -> Str {
+    if n == 0 {
+        return "0".to_string()
+    }
+    let mut r = ""
+    let mut x = n
+    while x > 0 {
+        let rem = trunc(div(x, 10))
+        x = rem
+        let c = char(rem + 48)
+        r = concat(r, str_char(c))
+    }
+    r
+}
+
+fn char_to_int(c: Char) -> Int {
+    let mut r = 0
+    for x in 0.upto(256) {
+        if char(x) == c {
+            r = x
+            break
+        }
+    }
+    r
+}
+
+fn div(n: Int, d: Int) -> Int {
+    let q = trunc(n / d)
+    q
+}
+
+fn len(s: Str) -> Int {
+    let mut r = 0
+    for _ in s.chars() {
+        r = r + 1
+    }
+    r
+}
+
+fn get(v: Vec<Char>, i: Int) -> Option<Char> {
+    if i < 0 || i >= len(v) {
+        return None
+    }
+    Some(v.chars().nth(i).unwrap())
+}
+
+fn main() {
+    let s = "coffee".chars().collect()
+    let mut seen = vec_int()
+    for c in s {
+        if !contains(seen, c) {
+            print(c)
+            seen = push(seen, c)
+        }
+    }
+}
+
+fn contains(v: Vec<Char>, c: Char) -> Bool {
+    for x in v {
+        if x == c {
+            return true
+        }
+    }
+    false
+}
+
+fn push(v: Vec<Char>, c: Char) -> Vec<Char> {
+    let mut r = v
+    r.push(c)
+    r
+}
+
+fn vec_int() -> Vec<Char> {
+    vec()
+}
+
+fn print(c: Char) {
+    print_str(str_char(c))
+}
+
+fn print_str(s: Str) {
+    let mut c = s
+    while len(c) > 0 {
+        let x = get(c, 0)?
+        print_char(x)
+        c = str_slice(c, 1)
+    }
+}
+
+fn print_char(c: Char) {
+    print(int_to_str(char_to_int(c)))
+}
+
+fn str_slice(s: Str, n: Int) -> Str {
+    if n

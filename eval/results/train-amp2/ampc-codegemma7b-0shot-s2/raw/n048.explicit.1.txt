@@ -1,0 +1,17 @@
+fn count_threes(nums: &Vec<Int>) -> Vec<Int> {
+    let mut positions = vec()
+    for i in 0.to(nums.len()) {
+        if nums.get(i) == &some_int {
+            positions.push(i)
+        }
+    }
+    positions
+}
+
+fn main() {
+    let nums = vec(4, 7, 4, 9, 4)
+    let positions = count_threes(&nums)
+    for pos in &positions {
+        print(pos)
+    }
+}

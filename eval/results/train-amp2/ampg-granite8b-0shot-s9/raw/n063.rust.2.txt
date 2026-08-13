@@ -1,0 +1,7 @@
+fn main() {
+    let units_4 = 4;
+    let units_5 = 5;
+    println!("Line 1: ${}", units_4 * 3);
+    println!("Line 2: ${}", units_5 * 2);
+    println!("Total:   ${}", (units_4 * 3) + (units_5 * 2));
+}

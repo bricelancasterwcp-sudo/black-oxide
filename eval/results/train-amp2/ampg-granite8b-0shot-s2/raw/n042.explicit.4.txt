@@ -1,0 +1,22 @@
+fn largest_two(a: Int, b: Int, c: Int, d: Int, e: Int) -> Int {
+    let largest = max(a, b)
+    let second_largest = max(largest, max(c, max(d, e)))
+    second_largest
+}
+
+fn max(a: Int, b: Int) -> Int {
+    if a > b {
+        a
+    } else {
+        b
+    }
+}
+
+fn main() {
+    let largest = largest_two(12, 5, 20, 8, 17)
+    let second_largest = largest_two(largest, 5, 20, 8, 17)
+    print(largest)
+    drop largest
+    print(second_largest)
+    drop second_largest
+}

@@ -1,0 +1,173 @@
+fn add(p: &Point) -> Int {
+    p.x + p.y
+}
+
+fn new_point(p: &Point) -> Point {
+    Point(p.y, p.x + 10)
+}
+
+fn main() {
+    let p = Point(1, 5)
+    print(add(&p))
+    let q = new_point(&p)
+    print(add(&q))
+    drop p
+    drop q
+}
+
+struct Point {
+    x: Int,
+    y: Int,
+}
+
+fn add(p: &Point) -> Int {
+    p.x + p.y
+}
+
+fn new_point(p: &Point) -> Point {
+    Point(p.y, p.x + 10)
+}
+
+fn main() {
+    let p = Point(1, 5)
+    print(add(&p))
+    let q = new_point(&p)
+    print(add(&q))
+    drop p
+    drop q
+}
+
+struct Point {
+    x: Int,
+    y: Int,
+}
+
+fn add(p: &Point) -> Int {
+    p.x + p.y
+}
+
+fn new_point(p: &Point) -> Point {
+    Point(p.y, p.x + 10)
+}
+
+fn main() {
+    let p = Point(1, 5)
+    print(add(&p))
+    let q = new_point(&p)
+    print(add(&q))
+    drop p
+    drop q
+}
+
+struct Point {
+    x: Int,
+    y: Int,
+}
+
+fn add(p: &Point) -> Int {
+    p.x + p.y
+}
+
+fn new_point(p: &Point) -> Point {
+    Point(p.y, p.x + 10)
+}
+
+fn main() {
+    let p = Point(1, 5)
+    print(add(&p))
+    let q = new_point(&p)
+    print(add(&q))
+    drop p
+    drop q
+}
+
+struct Point {
+    x: Int,
+    y: Int,
+}
+
+fn add(p: &Point) -> Int {
+    p.x + p.y
+}
+
+fn new_point(p: &Point) -> Point {
+    Point(p.y, p.x + 10)
+}
+
+fn main() {
+    let p = Point(1, 5)
+    print(add(&p))
+    let q = new_point(&p)
+    print(add(&q))
+    drop p
+    drop q
+}
+
+struct Point {
+    x: Int,
+    y: Int,
+}
+
+fn add(p: &Point) -> Int {
+    p.x + p.y
+}
+
+fn new_point(p: &Point) -> Point {
+    Point(p.y, p.x + 10)
+}
+
+fn main() {
+    let p = Point(1, 5)
+    print(add(&p))
+    let q = new_point(&p)
+    print(add(&q))
+    drop p
+    drop q
+}
+
+struct Point {
+    x: Int,
+    y: Int,
+}
+
+fn add(p: &Point) -> Int {
+    p.x + p.y
+}
+
+fn new_point(p: &Point) -> Point {
+    Point(p.y, p.x + 10)
+}
+
+fn main() {
+    let p = Point(1, 5)
+    print(add(&p))
+    let q = new_point(&p)
+    print(add(&q))
+    drop p
+    drop q
+}
+
+struct Point {
+    x: Int,
+    y: Int,
+}
+
+fn add(p: &Point) -> Int {
+    p.x + p.y
+}
+
+fn new_point(p: &Point) -> Point {
+    Point(p.y, p.x + 10)
+}
+
+fn main() {
+    let p = Point(1, 5)
+    print(add(&p))
+    let q = new_point(&p)
+    print(add(&q))
+    drop p
+    drop q
+}
+
+struct Point {
+    x

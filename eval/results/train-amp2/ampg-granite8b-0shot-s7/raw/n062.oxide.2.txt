@@ -1,0 +1,23 @@
+struct S { x: Int, y: Int }
+
+fn foo(x: Int, y: Int) -> S {
+    let z = x + y
+    S(x, z)
+}
+
+fn bar(x: Int, y: Int) -> S {
+    let z = x + y
+    S(y, z)
+}
+
+fn main() {
+    let x: Int = 1
+    let y: Int = 2
+    let z = foo(x, y)
+    print_str("x = ")
+    print(x)
+    print_str(", y = ")
+    print(y)
+    print_str(", z = ")
+    print(z.x + z.y)
+}

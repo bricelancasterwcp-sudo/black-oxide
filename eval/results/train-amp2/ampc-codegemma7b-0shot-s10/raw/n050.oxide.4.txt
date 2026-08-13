@@ -1,0 +1,333 @@
+fn main() {
+    let mut scores = vec(2, 9, 5)
+    scores.sort_by_key(std_cmp_int)
+    for s in scores {
+        print(s)
+        print_str("\n")
+    }
+}
+
+fn std_cmp_int(a: Int, b: Int) -> Int {
+    if a > b {
+        return 1
+    } else if a < b {
+        return -1
+    } else {
+        return 0
+    }
+}
+
+fn std_cmp_int(a: Int, b: Int) -> Int {
+    if a > b {
+        return 1
+    } else if a < b {
+        return -1
+    } else {
+        return 0
+    }
+}
+
+fn std_cmp_int(a: Int, b: Int) -> Int {
+    if a > b {
+        return 1
+    } else if a < b {
+        return -1
+    } else {
+        return 0
+    }
+}
+
+fn std_cmp_int(a: Int, b: Int) -> Int {
+    if a > b {
+        return 1
+    } else if a < b {
+        return -1
+    } else {
+        return 0
+    }
+}
+
+fn std_cmp_int(a: Int, b: Int) -> Int {
+    if a > b {
+        return 1
+    } else if a < b {
+        return -1
+    } else {
+        return 0
+    }
+}
+
+fn std_cmp_int(a: Int, b: Int) -> Int {
+    if a > b {
+        return 1
+    } else if a < b {
+        return -1
+    } else {
+        return 0
+    }
+}
+
+fn std_cmp_int(a: Int, b: Int) -> Int {
+    if a > b {
+        return 1
+    } else if a < b {
+        return -1
+    } else {
+        return 0
+    }
+}
+
+fn std_cmp_int(a: Int, b: Int) -> Int {
+    if a > b {
+        return 1
+    } else if a < b {
+        return -1
+    } else {
+        return 0
+    }
+}
+
+fn std_cmp_int(a: Int, b: Int) -> Int {
+    if a > b {
+        return 1
+    } else if a < b {
+        return -1
+    } else {
+        return 0
+    }
+}
+
+fn std_cmp_int(a: Int, b: Int) -> Int {
+    if a > b {
+        return 1
+    } else if a < b {
+        return -1
+    } else {
+        return 0
+    }
+}
+
+fn std_cmp_int(a: Int, b: Int) -> Int {
+    if a > b {
+        return 1
+    } else if a < b {
+        return -1
+    } else {
+        return 0
+    }
+}
+
+fn std_cmp_int(a: Int, b: Int) -> Int {
+    if a > b {
+        return 1
+    } else if a < b {
+        return -1
+    } else {
+        return 0
+    }
+}
+
+fn std_cmp_int(a: Int, b: Int) -> Int {
+    if a > b {
+        return 1
+    } else if a < b {
+        return -1
+    } else {
+        return 0
+    }
+}
+
+fn std_cmp_int(a: Int, b: Int) -> Int {
+    if a > b {
+        return 1
+    } else if a < b {
+        return -1
+    } else {
+        return 0
+    }
+}
+
+fn std_cmp_int(a: Int, b: Int) -> Int {
+    if a > b {
+        return 1
+    } else if a < b {
+        return -1
+    } else {
+        return 0
+    }
+}
+
+fn std_cmp_int(a: Int, b: Int) -> Int {
+    if a > b {
+        return 1
+    } else if a < b {
+        return -1
+    } else {
+        return 0
+    }
+}
+
+fn std_cmp_int(a: Int, b: Int) -> Int {
+    if a > b {
+        return 1
+    } else if a < b {
+        return -1
+    } else {
+        return 0
+    }
+}
+
+fn std_cmp_int(a: Int, b: Int) -> Int {
+    if a > b {
+        return 1
+    } else if a < b {
+        return -1
+    } else {
+        return 0
+    }
+}
+
+fn std_cmp_int(a: Int, b: Int) -> Int {
+    if a > b {
+        return 1
+    } else if a < b {
+        return -1
+    } else {
+        return 0
+    }
+}
+
+fn std_cmp_int(a: Int, b: Int) -> Int {
+    if a > b {
+        return 1
+    } else if a < b {
+        return -1
+    } else {
+        return 0
+    }
+}
+
+fn std_cmp_int(a: Int, b: Int) -> Int {
+    if a > b {
+        return 1
+    } else if a < b {
+        return -1
+    } else {
+        return 0
+    }
+}
+
+fn std_cmp_int(a: Int, b: Int) -> Int {
+    if a > b {
+        return 1
+    } else if a < b {
+        return -1
+    } else {
+        return 0
+    }
+}
+
+fn std_cmp_int(a: Int, b: Int) -> Int {
+    if a > b {
+        return 1
+    } else if a < b {
+        return -1
+    } else {
+        return 0
+    }
+}
+
+fn std_cmp_int(a: Int, b: Int) -> Int {
+    if a > b {
+        return 1
+    } else if a < b {
+        return -1
+    } else {
+        return 0
+    }
+}
+
+fn std_cmp_int(a: Int, b: Int) -> Int {
+    if a > b {
+        return 1
+    } else if a < b {
+        return -1
+    } else {
+        return 0
+    }
+}
+
+fn std_cmp_int(a: Int, b: Int) -> Int {
+    if a > b {
+        return 1
+    } else if a < b {
+        return -1
+    } else {
+        return 0
+    }
+}
+
+fn std_cmp_int(a: Int, b: Int) -> Int {
+    if a > b {
+        return 1
+    } else if a < b {
+        return -1
+    } else {
+        return 0
+    }
+}
+
+fn std_cmp_int(a: Int, b: Int) -> Int {
+    if a > b {
+        return 1
+    } else if a < b {
+        return -1
+    } else {
+        return 0
+    }
+}
+
+fn std_cmp_int(a: Int, b: Int) -> Int {
+    if a > b {
+        return 1
+    } else if a < b {
+        return -1
+    } else {
+        return 0
+    }
+}
+
+fn std_cmp_int(a: Int, b: Int) -> Int {
+    if a > b {
+        return 1
+    } else if a < b {
+        return -1
+    } else {
+        return 0
+    }
+}
+
+fn std_cmp_int(a: Int, b: Int) -> Int {
+    if a > b {
+        return 1
+    } else if a < b {
+        return -1
+    } else {
+        return 0
+    }
+}
+
+fn std_cmp_int(a: Int, b: Int) -> Int {
+    if a > b {
+        return 1
+    } else if a < b {
+        return -1
+    } else {
+        return 0
+    }
+}
+
+fn std_cmp_int(a: Int, b: Int) -> Int {
+    if a > b {
+        return 1
+    }

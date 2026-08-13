@@ -1,0 +1,12 @@
+fn is_power_of_two(n: Int) -> Bool {
+    n != 0 && (n && (n - 1)) == 0
+}
+
+fn main() {
+    for i in (0).to(100) {
+        if is_power_of_two(i) {
+            print(i)
+            break
+        }
+    }
+}

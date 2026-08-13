@@ -1,0 +1,20 @@
+fn is_prime(n: Int) -> Bool {
+    if n <= 1 {
+        return false
+    }
+    for i in range(2, n) {
+        if n % i == 0 {
+            return false
+        }
+    }
+    true
+}
+
+fn main() {
+    let number = 91
+    if is_prime(number) {
+        print_str("yes")
+    } else {
+        print_str("no")
+    }
+}

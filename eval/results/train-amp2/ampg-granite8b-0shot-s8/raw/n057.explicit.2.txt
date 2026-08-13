@@ -1,0 +1,9 @@
+fn main() {
+    let fig = "fig".to_string().len() + "banana".to_string().len() + "kiwi".to_string().len()
+    let result = fig > "fig".to_string().len() + "banana".to_string().len() + "kiwi".to_string().len()
+    if result {
+        println("The name with the most letters is kiwi")
+    } else {
+        println("The name with the most letters is fig")
+    }
+}

@@ -1,0 +1,7 @@
+fn main() {
+    let log = vec(6, 7, 8, 9)
+    let start = log.get(0).unwrap()
+    let end = log.get(log.len() - 1).unwrap()
+    print(start)
+    print(end)
+}

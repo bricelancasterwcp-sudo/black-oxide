@@ -1,0 +1,11 @@
+fn main() {
+    let v = vec(4, 7, 4, 9, 4)
+    let mut acc = 0
+    for x in v {
+        if x == 4 {
+            print(acc + 1)
+            acc = acc + 1
+        }
+    }
+    print(acc)
+}

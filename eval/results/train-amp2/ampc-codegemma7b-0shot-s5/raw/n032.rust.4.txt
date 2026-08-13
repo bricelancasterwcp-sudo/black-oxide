@@ -1,0 +1,7 @@
+fn main() {
+    let mut x1 = 1;
+    let mut y1 = 5;
+    let mut x2 = x1 + 10;
+    let y2 = y1;
+    println!("{}", x1 + y1 + x2 + y2);
+}

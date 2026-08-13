@@ -1,0 +1,43 @@
+struct Keyboard {
+    letters: Vec<Char>,
+}
+
+enum Char {
+    Vowel,
+    Consonant,
+}
+
+fn count_vowels(keyboard: Keyboard) -> Int {
+    let mut num_vowels = 0
+    for c in keyboard.letters {
+        match c {
+            Char(v) => match v {
+                Char(v) => match v {
+                    Char(v) => match v {
+                        Char(v) => match v {
+                            Char(v) => match v {
+                                Vowel => num_vowels == num_vowels + 1,
+                                _ => false,
+                            },
+                            _ => false,
+                        },
+                        _ => false,
+                    },
+                    _ => false,
+                },
+                _ => false,
+            },
+        }
+    }
+    num_vowels
+}
+
+fn count_consonants(keyboard: Keyboard) -> Int {
+    len(keyboard.letters) - count_vowels(keyboard)
+}
+
+fn main() {
+    let keyboard = Keyboard { letters: push(push(vec(), Char(Vowel)), Char(Consonant)) }
+    let num_vowels = count_vowels(keyboard)
+    print(num_vowels)
+}

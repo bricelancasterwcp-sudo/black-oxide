@@ -1,0 +1,16 @@
+fn div_or_die(x: Int, y: Int) -> Option<Int> {
+    if y == 0 {
+        None
+    } else {
+        Some(x / y)
+    }
+}
+
+fn main() {
+    let twenty = 20
+    let four = 4
+    match div_or_die(twenty, four) {
+        None => print("bad"),
+        Some(n) => print(n),
+    }
+}

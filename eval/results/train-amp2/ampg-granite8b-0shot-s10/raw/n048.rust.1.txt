@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let numbers = vec![4, 7, 4, 9, 4];
+    for (index, &number) in numbers.iter().enumerate() {
+        if number == 4 {
+            println!("{}", index);
+        }
+    }
+}
+```
+
+This code defines a vector of numbers, and then iterates through the vector using the `iter().enumerate()` method. For each element in the vector, it checks if the element is equal to 4 using the reference operator `&`. If the element is 4, it prints the index of that element. This solution prints the index of each occurrence of 4 in the vector.

@@ -1,0 +1,108 @@
+fn largest(v: Vec<Int>) -> Int {
+    let mut largest = -1
+    for x in v {
+        if x > largest {
+            largest = x
+        }
+    }
+    largest
+}
+
+fn second_largest(v: Vec<Int>) -> Option<Int> {
+    let mut second = -1
+    for x in v {
+        if x > second {
+            second = x
+        }
+    }
+    if second == -1 {
+        None
+    } else {
+        Some(second)
+    }
+}
+
+fn main() {
+    print(largest(range(12, 22)))
+    match second_largest(range(12, 22)) {
+        Some(x) => print(x),
+        None => print_str("no second largest"),
+    }
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut v = vec()
+    for i in a.to(b - 1) {
+        v = push(v, i)
+    }
+    v
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    if i >= 0 && i < len(v) {
+        Some(clone(v.get(i)))
+    } else {
+        None
+    }
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut v2 = v
+    v2 = v2.clone()
+    v2 = v2.push(x)
+    v2
+}
+
+fn len(v: Vec<Int>) -> Int {
+    trunc(to_float(len_(v)))
+}
+
+fn len_(v: Vec<Int>) -> Float {
+    let mut i = 0.0
+    for _ in v {
+        i = i + 1.0
+    }
+    i
+}
+
+fn clone(x: Int) -> Int {
+    x
+}
+
+fn to_float(x: Int) -> Float {
+    x.to_f64().unwrap()
+}
+
+fn trunc(x: Float) -> Int {
+    x.floor()
+}
+
+fn print(x: Int) {
+    print_str(str_concat("val=", int_to_str(x)))
+    print_str("\n")
+}
+
+fn print_str(s: Str) {
+    print_str("val=")
+    print_str(s)
+    print_str("\n")
+}
+
+fn str_concat(a: Str, b: Str) -> Str {
+    let mut s = ""
+    s = s + a
+    s = s + b
+    s
+}
+
+fn int_to_str(n: Int) -> Str {
+    n.to_string()
+}
+
+fn main() {
+    print(largest(range(12, 22)))
+    match second_largest(range(12, 22)) {
+        Some(x) => print(x),
+        None => print_str("no second largest"),
+    }
+}

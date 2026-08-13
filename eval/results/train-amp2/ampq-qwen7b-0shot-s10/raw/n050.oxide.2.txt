@@ -1,0 +1,15 @@
+struct Scores { scores: Vec<Int> }
+
+fn sort_scores(scores: Vec<Int>) -> Vec<Int> {
+    let mut sorted = scores.clone()
+    sorted.sort_by_int_descending()
+    sorted
+}
+
+fn main() {
+    let scores = Scores { scores: vec(2, 9, 5) }
+    let sorted_scores = sort_scores(scores.scores.clone())
+    for score in sorted_scores {
+        print_str(score.to_string())
+    }
+}

@@ -1,0 +1,20 @@
+use std::collections::HashMap;
+
+fn main() {
+    let mut piggy_bank = HashMap::new();
+    piggy_bank.insert("deposit", 0);
+
+    deposit(&mut piggy_bank, 3);
+    deposit(&mut piggy_bank, 1);
+    deposit(&mut piggy_bank, 4);
+    deposit(&mut piggy_bank, 1);
+    deposit(&mut piggy_bank, 5);
+
+    for (_key, amount) in piggy_bank {
+        println!("{}", amount);
+    }
+}
+
+fn deposit(piggy_bank: &mut HashMap<&str, u32>, amount: u32) {
+    *piggy_bank.entry("deposit").or_insert(0) += amount;
+}

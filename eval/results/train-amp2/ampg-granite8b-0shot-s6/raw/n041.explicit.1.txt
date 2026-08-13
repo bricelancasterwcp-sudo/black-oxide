@@ -1,0 +1,81 @@
+fn main() {
+    let measurements = vec(9, 2, 7, 4).sort_by_key(measure_temparature)
+    for m in measurements {
+        print(m)
+    }
+}
+
+fn measure_temparature(x: Int) -> Int {
+    x * 3 / 2
+}
+
+fn sort_by_key(v: Vec<Int>, f: Int) -> Vec<Int> {
+    push(v, f)
+}
+
+fn print(x: Int) {
+    print_str(str_cat(str_cat("Temparature ", int_to_str(x)), " degrees.\n"))
+}
+
+fn str_cat(a: Str, b: Str) -> Str {
+    concat(a, b)
+}
+
+fn int_to_str(n: Int) -> Str {
+    trunc(to_float(n))
+}
+
+fn to_float(n: Int) -> Float {
+    n
+}
+
+fn trunc(x: Float) -> Int {
+    x
+}
+
+fn print_str(s: Str) {
+    s
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v
+}
+
+fn vec() -> Vec<Int> {
+    v
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    v
+}
+
+fn clone(x: Int) -> Int {
+    x
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    v
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    a
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    s
+}
+
+fn str_len(s: Str) -> Int {
+    s
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    s
+}
+
+fn main() {
+    let measurements = vec(9, 2, 7, 4).sort_by_key(measure_temparature)
+    for m in measurements {
+        print(m)
+    }
+}

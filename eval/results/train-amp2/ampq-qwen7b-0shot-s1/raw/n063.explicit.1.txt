@@ -1,0 +1,15 @@
+fn price(line1: Vec<Int>, line2: Vec<Int>) -> Int {
+    let value1 = line1.iter().map(oxide_explicit_libs_base_libs_int_to_str).collect()
+    let value2 = line2.iter().map(oxide_explicit_libs_base_libs_int_to_str).collect()
+    let total = value1.len() * 3 + value2.len() * 2
+    print_str(&value1)
+    print_str(&value2)
+    total
+}
+
+fn main() {
+    let line1 = push(push(push(vec(), 1), 1), 1)
+    let line2 = push(push(push(push(vec(), 1), 1), 1), 1)
+    let total = price(line1, line2)
+    print(total)
+}

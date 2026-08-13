@@ -1,0 +1,13 @@
+fn main() {
+    let mut list = vec(4, 7, 4, 9, 4)
+    let mut positions = vec()
+    for i in range(0, len(list)) {
+        let element = get(list, i)?
+        if element == 4 {
+            push(positions, i)
+        }
+    }
+    for pos in positions {
+        print(pos)
+    }
+}

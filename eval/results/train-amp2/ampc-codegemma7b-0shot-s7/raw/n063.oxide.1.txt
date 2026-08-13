@@ -1,0 +1,8 @@
+fn main() {
+    let f4 = 4 * 3
+    let f5 = 5 * 2
+    let f = f4 + f5
+    print(f4)
+    print(f5)
+    print(f)
+}

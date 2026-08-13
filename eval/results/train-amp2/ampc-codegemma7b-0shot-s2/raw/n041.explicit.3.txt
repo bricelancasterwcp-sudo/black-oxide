@@ -1,0 +1,20 @@
+fn sort_measurements(mutmeasurements: Vec<Int>) -> Vec<Int> {
+    for i in 0.len(measurements) {
+        for j in (i + 1).len(measurements) {
+            if measurements(i) > measurements(j) {
+                let temp = measurements(i)
+                measurements(i) == measurements(j)
+                measurements(j) == temp
+            }
+        }
+    }
+    measurements
+}
+
+fn main() {
+    let mut measurements = vec(9, 2, 7, 4)
+    for measurement in sort_measurements(measurements) {
+        print(measurement)
+        print("\n")
+    }
+}

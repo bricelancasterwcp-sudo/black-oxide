@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    println!("{:?}", second(7)); // Some(8)
+    println!("{:?}", second(8)); // Some(9)
+    println!("{:?}", second(9)); // None
+}
+
+fn second<T>(lst: &[T]) -> Option<&T> {
+    if lst.len() >= 2 {
+        Some(&lst[1])
+    } else {
+        None
+    }
+}
+```

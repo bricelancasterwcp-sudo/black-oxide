@@ -1,0 +1,12 @@
+fn area(r: &Rectangle) -> Int {
+    r.width * r.height
+}
+
+fn main() {
+    let r = Rectangle { width: 2, height: 3 }
+    print(area(&r))
+    drop r
+    let r = Rectangle { width: 5, height: 4 }
+    print(area(&r))
+    drop r
+}

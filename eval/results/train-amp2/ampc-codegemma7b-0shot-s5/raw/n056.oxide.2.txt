@@ -1,0 +1,366 @@
+fn main() {
+    let seven = maybe_number(7).map(Some).unwrap_or(0)
+    let nine = maybe_number(9).map(Some).unwrap_or(0)
+    let x = maybe_number("x").map(Some).unwrap_or(0)
+    let question = maybe_number("?").map(Some).unwrap_or(0)
+    println(seven + x + nine + question)
+    println(4 - (seven + x + nine + question))
+}
+
+fn maybe_number(s: Str) -> Option<Int> {
+    match s.parse() {
+        Ok(n) => Some(n),
+        Err(_) => None,
+    }
+}
+
+fn maybe_number(i: Int) -> Option<Int> {
+    Some(i)
+}
+
+fn maybe_number(c: Char) -> Option<Int> {
+    if c.is_numeric() {
+        Some(c.to_digit().unwrap() - 48)
+    } else {
+        None
+    }
+}
+
+fn maybe_number(s: Str) -> Option<Int> {
+    if s.chars().all(is_number) {
+        Some(s.parse().unwrap())
+    } else {
+        None
+    }
+}
+
+fn is_number(c: Char) -> Bool {
+    c.is_numeric() || c == "?"
+}
+
+fn is_number(i: Int) -> Bool {
+    false
+}
+
+fn is_number(c: Char) -> Bool {
+    false
+}
+
+fn is_number(s: Str) -> Bool {
+    false
+}
+
+fn is_number(v: Vec<Int>) -> Bool {
+    false
+}
+
+fn is_number(v: Vec<Str>) -> Bool {
+    false
+}
+
+fn is_number(v: Vec<Char>) -> Bool {
+    false
+}
+
+fn is_number(o: Option<Int>) -> Bool {
+    false
+}
+
+fn is_number(o: Option<Str>) -> Bool {
+    false
+}
+
+fn is_number(o: Option<Char>) -> Bool {
+    false
+}
+
+fn is_number(o: Option<Vec<Int>>) -> Bool {
+    false
+}
+
+fn is_number(o: Option<Vec<Str>>) -> Bool {
+    false
+}
+
+fn is_number(o: Option<Vec<Char>>) -> Bool {
+    false
+}
+
+fn is_number(f: Float) -> Bool {
+    false
+}
+
+fn is_number(u: Unit) -> Bool {
+    false
+}
+
+fn is_number(b: Bool) -> Bool {
+    false
+}
+
+fn is_number(s: Str) -> Bool {
+    false
+}
+
+fn is_number(v: Vec<Int>) -> Bool {
+    false
+}
+
+fn is_number(v: Vec<Str>) -> Bool {
+    false
+}
+
+fn is_number(v: Vec<Char>) -> Bool {
+    false
+}
+
+fn is_number(o: Option<Int>) -> Bool {
+    false
+}
+
+fn is_number(o: Option<Str>) -> Bool {
+    false
+}
+
+fn is_number(o: Option<Char>) -> Bool {
+    false
+}
+
+fn is_number(o: Option<Vec<Int>>) -> Bool {
+    false
+}
+
+fn is_number(o: Option<Vec<Str>>) -> Bool {
+    false
+}
+
+fn is_number(o: Option<Vec<Char>>) -> Bool {
+    false
+}
+
+fn is_number(f: Float) -> Bool {
+    false
+}
+
+fn is_number(u: Unit) -> Bool {
+    false
+}
+
+fn is_number(b: Bool) -> Bool {
+    false
+}
+
+fn is_number(s: Str) -> Bool {
+    false
+}
+
+fn is_number(v: Vec<Int>) -> Bool {
+    false
+}
+
+fn is_number(v: Vec<Str>) -> Bool {
+    false
+}
+
+fn is_number(v: Vec<Char>) -> Bool {
+    false
+}
+
+fn is_number(o: Option<Int>) -> Bool {
+    false
+}
+
+fn is_number(o: Option<Str>) -> Bool {
+    false
+}
+
+fn is_number(o: Option<Char>) -> Bool {
+    false
+}
+
+fn is_number(o: Option<Vec<Int>>) -> Bool {
+    false
+}
+
+fn is_number(o: Option<Vec<Str>>) -> Bool {
+    false
+}
+
+fn is_number(o: Option<Vec<Char>>) -> Bool {
+    false
+}
+
+fn is_number(f: Float) -> Bool {
+    false
+}
+
+fn is_number(u: Unit) -> Bool {
+    false
+}
+
+fn is_number(b: Bool) -> Bool {
+    false
+}
+
+fn is_number(s: Str) -> Bool {
+    false
+}
+
+fn is_number(v: Vec<Int>) -> Bool {
+    false
+}
+
+fn is_number(v: Vec<Str>) -> Bool {
+    false
+}
+
+fn is_number(v: Vec<Char>) -> Bool {
+    false
+}
+
+fn is_number(o: Option<Int>) -> Bool {
+    false
+}
+
+fn is_number(o: Option<Str>) -> Bool {
+    false
+}
+
+fn is_number(o: Option<Char>) -> Bool {
+    false
+}
+
+fn is_number(o: Option<Vec<Int>>) -> Bool {
+    false
+}
+
+fn is_number(o: Option<Vec<Str>>) -> Bool {
+    false
+}
+
+fn is_number(o: Option<Vec<Char>>) -> Bool {
+    false
+}
+
+fn is_number(f: Float) -> Bool {
+    false
+}
+
+fn is_number(u: Unit) -> Bool {
+    false
+}
+
+fn is_number(b: Bool) -> Bool {
+    false
+}
+
+fn is_number(s: Str) -> Bool {
+    false
+}
+
+fn is_number(v: Vec<Int>) -> Bool {
+    false
+}
+
+fn is_number(v: Vec<Str>) -> Bool {
+    false
+}
+
+fn is_number(v: Vec<Char>) -> Bool {
+    false
+}
+
+fn is_number(o: Option<Int>) -> Bool {
+    false
+}
+
+fn is_number(o: Option<Str>) -> Bool {
+    false
+}
+
+fn is_number(o: Option<Char>) -> Bool {
+    false
+}
+
+fn is_number(o: Option<Vec<Int>>) -> Bool {
+    false
+}
+
+fn is_number(o: Option<Vec<Str>>) -> Bool {
+    false
+}
+
+fn is_number(o: Option<Vec<Char>>) -> Bool {
+    false
+}
+
+fn is_number(f: Float) -> Bool {
+    false
+}
+
+fn is_number(u: Unit) -> Bool {
+    false
+}
+
+fn is_number(b: Bool) -> Bool {
+    false
+}
+
+fn is_number(s: Str) -> Bool {
+    false
+}
+
+fn is_number(v: Vec<Int>) -> Bool {
+    false
+}
+
+fn is_number(v: Vec<Str>) -> Bool {
+    false
+}
+
+fn is_number(v: Vec<Char>) -> Bool {
+    false
+}
+
+fn is_number(o: Option<Int>) -> Bool {
+    false
+}
+
+fn is_number(o: Option<Str>) -> Bool {
+    false
+}
+
+fn is_number(o: Option<Char>) -> Bool {
+    false
+}
+
+fn is_number(o: Option<Vec<Int>>) -> Bool {
+    false
+}
+
+fn is_number(o: Option<Vec<Str>>) -> Bool {
+    false
+}
+
+fn is_number(o: Option<Vec<Char>>) -> Bool {
+    false
+}
+
+fn is_number(f: Float) -> Bool {
+    false
+}
+
+fn is_number(u: Unit) -> Bool {
+    false
+}
+
+fn is_number(b: Bool) -> Bool {
+    false
+}
+
+fn is_number(s: Str) -> Bool {
+    false
+}
+
+fn is_number(v: Vec<Int>) -> Bool {
+    false

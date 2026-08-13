@@ -1,0 +1,23 @@
+struct Count { under: Int, over: Int }
+
+fn count_samples(samples: Vec<Int>, cutoff: Int) -> Count {
+    let mut under = 0
+    let mut over = 0
+    for x in samples {
+        if x < cutoff {
+            under = under + 1
+        } else {
+            over = over + 1
+        }
+    }
+    Count(under, over)
+}
+
+fn main() {
+    let samples = push(push(push(push(vec(), 5), 12), 3), 18)
+    let samples2 = push(samples, 9)
+    let count = count_samples(samples2, 10)
+    print(count.under)
+    print_str(" ")
+    print(count.over)
+}

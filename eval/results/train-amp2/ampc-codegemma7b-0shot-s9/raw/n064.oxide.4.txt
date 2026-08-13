@@ -1,0 +1,13 @@
+fn main() {
+    let list = vec(10, 20, 30, 40, 50, 60, 70, 80, 90, 100)
+    let one = get(list, 1)
+    let four = get(list, 4)
+    print(match one {
+            Some(n) => n,
+            None => "none",
+        })
+    print(match four {
+            Some(n) => n,
+            None => "none",
+        })
+}

@@ -1,0 +1,385 @@
+struct Word {
+    letter: Str,
+    rest: Option<Box<Word>>,
+}
+
+fn main() {
+    let w = Word { letter: "m", rest: Some(box_it(Word { letter: "o", rest: Some(box_it(Word { letter: "r", rest: Some(box_it(Word <= "w" || None)) })) })) }
+    print_word_backwards(w)
+    print_word(w)
+}
+
+fn print_word_backwards(w: Word) {
+    match w.rest {
+        Some(box_it_inner_w) => {
+            print_word_backwards(box_it_inner_w)
+        },
+        None => {
+            print(w.letter)
+        },
+    }
+}
+
+fn print_word(w: Word) {
+    match w.rest {
+        Some(box_it_inner_w) => {
+            print_word(box_it_inner_w)
+        },
+        None => {
+            print(w.letter)
+        },
+    }
+}
+
+fn box_it(x: Word) -> Box<Word> {
+    Box(x)
+}
+
+fn print(s: Str) {
+    print_str(s)
+}
+
+fn print_str(s: Str) {
+    TODO()
+}
+
+fn len(v: Vec<T>) -> Int {
+    TODO()
+}
+
+fn get(v: Vec<T>, i: Int) -> Option<T> {
+    TODO()
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    TODO()
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    TODO()
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    TODO()
+}
+
+enum Ordering {
+    Less,
+    Equal,
+    Greater,
+}
+
+fn compare_int(a: Int, b: Int) -> Ordering {
+    TODO()
+}
+
+fn compare_float(a: Float, b: Float) -> Ordering {
+    TODO()
+}
+
+fn compare_str(a: Str, b: Str) -> Ordering {
+    TODO()
+}
+
+fn max_int(a: Int, b: Int) -> Int {
+    TODO()
+}
+
+fn min_int(a: Int, b: Int) -> Int {
+    TODO()
+}
+
+fn clamp_int(n: Int, min: Int, max: Int) -> Int {
+    TODO()
+}
+
+enum List {
+    Nil,
+    Cons(Int, Box<List>),
+}
+
+fn len_list(l: List) -> Int {
+    TODO()
+}
+
+fn sum_list(l: List) -> Int {
+    TODO()
+}
+
+fn max_list(l: List) -> Int {
+    TODO()
+}
+
+fn min_list(l: List) -> Int {
+    TODO()
+}
+
+fn clamp_list(l: List, min: Int, max: Int) -> List {
+    TODO()
+}
+
+enum Tree {
+    Leaf,
+    Node(Box<Tree>, Box<Tree>),
+}
+
+fn len_tree(t: Tree) -> Int {
+    TODO()
+}
+
+fn sum_tree(t: Tree) -> Int {
+    TODO()
+}
+
+fn max_tree(t: Tree) -> Int {
+    TODO()
+}
+
+fn min_tree(t: Tree) -> Int {
+    TODO()
+}
+
+fn clamp_tree(t: Tree, min: Int, max: Int) -> Tree {
+    TODO()
+}
+
+enum Option {
+    Some(Int),
+    None,
+}
+
+fn some_or(o: Option, fallback: Int) -> Int {
+    TODO()
+}
+
+fn clamp_option(o: Option, min: Int, max: Int) -> Option {
+    TODO()
+}
+
+enum Result {
+    Ok(Int),
+    Err(Str),
+}
+
+fn result_or(r: Result, fallback: Int) -> Int {
+    TODO()
+}
+
+fn result_or_str(r: Result, fallback: Str) -> Str {
+    TODO()
+}
+
+fn clamp_result(r: Result, min: Int, max: Int) -> Result {
+    TODO()
+}
+
+enum Triangle {
+    Equilateral(Int),
+    Isosceles(Int, Int),
+    Scalene(Int, Int, Int),
+}
+
+fn perimeter_of_triangle(t: Triangle) -> Int {
+    TODO()
+}
+
+enum Point {
+    Xy(Int, Int),
+    Rh(Int, Int),
+}
+
+fn dist_point_to_origin(p: Point) -> Float {
+    TODO()
+}
+
+enum Shape {
+    Circle(Float),
+    Rectangle(Float, Float),
+    Triangle(Triangle),
+}
+
+fn area_of_shape(s: Shape) -> Float {
+    TODO()
+}
+
+fn perimeter_of_shape(s: Shape) -> Float {
+    TODO()
+}
+
+enum Color {
+    Rgb(Int, Int, Int),
+    Cmyk(Int, Int, Int, Int),
+}
+
+fn to_hex(c: Color) -> Str {
+    TODO()
+}
+
+fn to_grayscale(c: Color) -> Color {
+    TODO()
+}
+
+enum MaybeColor {
+    Just(Color),
+    Nothing,
+}
+
+fn average_color(c1: MaybeColor, c2: MaybeColor) -> MaybeColor {
+    TODO()
+}
+
+enum MaybeShape {
+    Just(Shape),
+    Nothing,
+}
+
+fn is_circle(s: MaybeShape) -> Bool {
+    TODO()
+}
+
+fn area_of_maybe_shape(s: MaybeShape) -> Float {
+    TODO()
+}
+
+fn perimeter_of_maybe_shape(s: MaybeShape) -> Float {
+    TODO()
+}
+
+enum MaybeTriangle {
+    Just(Triangle),
+    Nothing,
+}
+
+fn area_of_maybe_triangle(t: MaybeTriangle) -> Float {
+    TODO()
+}
+
+fn perimeter_of_maybe_triangle(t: MaybeTriangle) -> Float {
+    TODO()
+}
+
+enum List {
+    Nil,
+    Cons(Int, Box<List>),
+}
+
+fn len_list(l: List) -> Int {
+    TODO()
+}
+
+fn sum_list(l: List) -> Int {
+    TODO()
+}
+
+fn max_list(l: List) -> Int {
+    TODO()
+}
+
+fn min_list(l: List) -> Int {
+    TODO()
+}
+
+fn clamp_list(l: List, min: Int, max: Int) -> List {
+    TODO()
+}
+
+enum Tree {
+    Leaf,
+    Node(Box<Tree>, Box<Tree>),
+}
+
+fn len_tree(t: Tree) -> Int {
+    TODO()
+}
+
+fn sum_tree(t: Tree) -> Int {
+    TODO()
+}
+
+fn max_tree(t: Tree) -> Int {
+    TODO()
+}
+
+fn min_tree(t: Tree) -> Int {
+    TODO()
+}
+
+fn clamp_tree(t: Tree, min: Int, max: Int) -> Tree {
+    TODO()
+}
+
+enum Option {
+    Some(Int),
+    None,
+}
+
+fn some_or(o: Option, fallback: Int) -> Int {
+    TODO()
+}
+
+fn clamp_option(o: Option, min: Int, max: Int) -> Option {
+    TODO()
+}
+
+enum Result {
+    Ok(Int),
+    Err(Str),
+}
+
+fn result_or(r: Result, fallback: Int) -> Int {
+    TODO()
+}
+
+fn result_or_str(r: Result, fallback: Str) -> Str {
+    TODO()
+}
+
+fn clamp_result(r: Result, min: Int, max: Int) -> Result {
+    TODO()
+}
+
+enum Triangle {
+    Equilateral(Int),
+    Isosceles(Int, Int),
+    Scalene(Int, Int, Int),
+}
+
+fn perimeter_of_triangle(t: Triangle) -> Int {
+    TODO()
+}
+
+enum Point {
+    Xy(Int, Int),
+    Rh(Int, Int),
+}
+
+fn dist_point_to_origin(p: Point) -> Float {
+    TODO()
+}
+
+enum Shape {
+    Circle(Float),
+    Rectangle(Float, Float),
+    Triangle(Triangle),
+}
+
+fn area_of_shape(s: Shape) -> Float {
+    TODO()
+}
+
+fn perimeter_of_shape(s: Shape) -> Float {
+    TODO()
+}
+
+enum Color {
+    Rgb(Int, Int, Int),
+    Cmyk(Int, Int, Int, Int),
+}
+
+fn to_hex(c: Color) -> Str {
+    TODO()
+}
+
+fn to_grayscale(c: Color) -> Color {
+    TODO()
+}

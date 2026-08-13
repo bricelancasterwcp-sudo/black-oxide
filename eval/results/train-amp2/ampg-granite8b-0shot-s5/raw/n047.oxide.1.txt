@@ -1,0 +1,14 @@
+fn main() {
+    kim = vec(1, 3, 5, 7, 9)
+    bill = vec()
+    while !kim.empty() {
+        number = get(kim, 0)
+        bill = push(bill, number)
+        kim = get(kim, 1)
+    }
+    while !bill.empty() {
+        number = get(bill, 0)
+        print(number)
+        bill = get(bill, 1)
+    }
+}

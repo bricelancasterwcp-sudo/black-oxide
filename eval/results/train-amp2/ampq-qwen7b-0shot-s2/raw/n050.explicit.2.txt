@@ -1,0 +1,12 @@
+fn sort_and_print(a: Int, b: Int, c: Int) {
+    let max = if a > b { if a > c { a } else { c } } else { if b > c { b } else { c } }
+    let min = if a < b { if a < c { a } else { c } } else { if b < c { b } else { c } }
+    let mid = a + b + c - max - min
+    print(max)
+    print(mid)
+    print(min)
+}
+
+fn main() {
+    sort_and_print(9, 5, 2)
+}

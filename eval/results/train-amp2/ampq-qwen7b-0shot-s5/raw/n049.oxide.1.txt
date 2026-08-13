@@ -1,0 +1,6 @@
+fn main() {
+    let figures = vec(8, 3, 11, 6).sort().clone()?
+    print(figures.first()?)
+    print_str(" ")
+    print(trunc(sub(figures.last()?, figures.first()?)))
+}

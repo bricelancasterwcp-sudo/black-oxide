@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let log = vec![6, 7, 8, 9];
+    println!("{}", log.first().unwrap());
+    println!("{}", log.last().unwrap());
+}
+```
+
+[Answer]
+fn main() {
+    let log = vec![6, 7, 8, 9];
+    println!("{}", log.first().unwrap());
+    println!("{}", log.last().unwrap());
+}

@@ -1,0 +1,15 @@
+fn main() {
+    let v = vec(8, 3, 11, 6)
+    let mut s = v.iter().copied().min().unwrap()
+    let mut l = v.iter().copied().max().unwrap()
+    for x in v {
+        if x < s {
+            s = x
+        }
+        if x > l {
+            l = x
+        }
+    }
+    print(s)
+    print(l - s)
+}

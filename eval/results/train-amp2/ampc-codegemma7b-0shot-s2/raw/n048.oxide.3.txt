@@ -1,0 +1,16 @@
+fn find_four(v: Vec<Int>) -> Vec<Int> {
+    let mut positions = vec()
+    for i in 0.upto(len(v)) {
+        if v.get(i) == Some(4) {
+            positions.push(i)
+        }
+    }
+    positions
+}
+
+fn main() {
+    let v = vec(4, 7, 4, 9, 4)
+    for p in find_four(v) {
+        print_str(format_str("{} ", p))
+    }
+}

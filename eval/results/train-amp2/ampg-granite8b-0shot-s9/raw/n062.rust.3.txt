@@ -1,0 +1,12 @@
+fn main() {
+    let mut buf = String::new();
+    std::io::stdin().read_line(&mut buf).unwrap();
+    let signal = buf.trim();
+
+    match signal {
+        "green" => println!("go for green"),
+        "red" => println!("stop for red"),
+        "yellow" => println!("wait for yellow"),
+        _ => println!("unknown signal"),
+    }
+}

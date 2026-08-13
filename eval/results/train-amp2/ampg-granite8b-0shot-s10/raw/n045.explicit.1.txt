@@ -1,0 +1,341 @@
+fn main() {
+    let log = push(push(push(vec(), 6), 7), 8)
+    let first = log
+    let last = pop(&log)
+    print(first)
+    drop first
+    print(last)
+    drop last
+}
+
+fn pop(log: &Vec<Int>) -> Int {
+    len(&log) - 1
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let new = clone(&v)
+    push(new, x)
+}
+
+fn vec() -> Vec<T> {
+    let v = vec()
+    push(v, 0)
+}
+
+fn print(x: Int) {
+    print_str(str_from_int(x))
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn str_from_int(n: Int) -> Str {
+    to_str(n)
+}
+
+fn to_str(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn println(s: Str) {
+    print_str(concat(s, "\n"))
+}
+
+fn int_to_str(n: Int) -> Str {
+    "Int"
+}
+
+fn clone(x: T) -> T {
+    x
+}
+
+fn len(v: &Vec<T>) -> Int {
+    "Int"
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    "Vec<Str>"
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    "Str"
+}
+
+fn to_float(n: Int) -> Float {
+    0.0
+}
+
+fn trunc(x: Float) -> Int {
+    0
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    "Vec<Int>"
+}
+
+fn get(v: &Vec<T>, i: Int) -> Option<T> {
+    "Option<T>"
+}
+
+fn format(s: Str, xs: Vec<Str>) -> Str {
+    "Str"
+}
+
+fn type_name() -> Str {
+    "Str"
+}
+
+fn file() -> File {
+    "File"
+}
+
+fn write(f: &File, s: Str) {
+    "()"
+}
+
+fn open() -> File {
+    "File"
+}
+
+fn read(f: &File) -> Str {
+    "Str"
+}
+
+fn close(f: &File) {
+    "()"
+}
+
+fn read_int(s: Str) -> Option<Int> {
+    "Option<Int>"
+}
+
+fn read_str(s: Str) -> Option<Str> {
+    "Option<Str>"
+}
+
+fn read_float(s: Str) -> Option<Float> {
+    "Option<Float>"
+}
+
+fn read_bool(s: Str) -> Option<Bool> {
+    "Option<Bool>"
+}
+
+fn read_file(s: Str) -> Option<File> {
+    "Option<File>"
+}
+
+fn read_line(f: &File) -> Option<Str> {
+    "Option<Str>"
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    "Option<Int>"
+}
+
+fn parse_float(s: Str) -> Option<Float> {
+    "Option<Float>"
+}
+
+fn parse_bool(s: Str) -> Option<Bool> {
+    "Option<Bool>"
+}
+
+fn parse_file(s: Str) -> Option<File> {
+    "Option<File>"
+}
+
+fn parse_line(s: Str) -> Option<Str> {
+    "Option<Str>"
+}
+
+fn read_line(f: &File) -> Option<Str> {
+    "Option<Str>"
+}
+
+fn line_to_str(l: Line) -> Str {
+    "Str"
+}
+
+fn line_to_int(l: Line) -> Option<Int> {
+    "Option<Int>"
+}
+
+fn line_to_float(l: Line) -> Option<Float> {
+    "Option<Float>"
+}
+
+fn line_to_bool(l: Line) -> Option<Bool> {
+    "Option<Bool>"
+}
+
+fn line_to_file(l: Line) -> Option<File> {
+    "Option<File>"
+}
+
+fn line_to_line(l: Line) -> Line {
+    "Line"
+}
+
+fn str_to_line(s: Str) -> Line {
+    "Line"
+}
+
+fn line_to_str(l: Line) -> Str {
+    "Str"
+}
+
+fn line_to_int(l: Line) -> Option<Int> {
+    "Option<Int>"
+}
+
+fn line_to_float(l: Line) -> Option<Float> {
+    "Option<Float>"
+}
+
+fn line_to_bool(l: Line) -> Option<Bool> {
+    "Option<Bool>"
+}
+
+fn line_to_file(l: Line) -> Option<File> {
+    "Option<File>"
+}
+
+fn line_to_line(l: Line) -> Line {
+    "Line"
+}
+
+fn str_to_line(s: Str) -> Line {
+    "Line"
+}
+
+fn line_to_str(l: Line) -> Str {
+    "Str"
+}
+
+fn line_to_int(l: Line) -> Option<Int> {
+    "Option<Int>"
+}
+
+fn line_to_float(l: Line) -> Option<Float> {
+    "Option<Float>"
+}
+
+fn line_to_bool(l: Line) -> Option<Bool> {
+    "Option<Bool>"
+}
+
+fn line_to_file(l: Line) -> Option<File> {
+    "Option<File>"
+}
+
+fn line_to_line(l: Line) -> Line {
+    "Line"
+}
+
+fn str_to_line(s: Str) -> Line {
+    "Line"
+}
+
+fn line_to_str(l: Line) -> Str {
+    "Str"
+}
+
+fn line_to_int(l: Line) -> Option<Int> {
+    "Option<Int>"
+}
+
+fn line_to_float(l: Line) -> Option<Float> {
+    "Option<Float>"
+}
+
+fn line_to_bool(l: Line) -> Option<Bool> {
+    "Option<Bool>"
+}
+
+fn line_to_file(l: Line) -> Option<File> {
+    "Option<File>"
+}
+
+fn line_to_line(l: Line) -> Line {
+    "Line"
+}
+
+fn str_to_line(s: Str) -> Line {
+    "Line"
+}
+
+fn line_to_str(l: Line) -> Str {
+    "Str"
+}
+
+fn line_to_int(l: Line) -> Option<Int> {
+    "Option<Int>"
+}
+
+fn line_to_float(l: Line) -> Option<Float> {
+    "Option<Float>"
+}
+
+fn line_to_bool(l: Line) -> Option<Bool> {
+    "Option<Bool>"
+}
+
+fn line_to_file(l: Line) -> Option<File> {
+    "Option<File>"
+}
+
+fn line_to_line(l: Line) -> Line {
+    "Line"
+}
+
+fn str_to_line(s: Str) -> Line {
+    "Line"
+}
+
+fn line_to_str(l: Line) -> Str {
+    "Str"
+}
+
+fn line_to_int(l: Line) -> Option<Int> {
+    "Option<Int>"
+}
+
+fn line_to_float(l: Line) -> Option<Float> {
+    "Option<Float>"
+}
+
+fn line_to_bool(l: Line) -> Option<Bool> {
+    "Option<Bool>"
+}
+
+fn line_to_file(l: Line) -> Option<File> {
+    "Option<File>"
+}
+
+fn line_to_line(l: Line) -> Line {
+    "Line"
+}
+
+fn str_to_line(s: Str) -> Line {
+    "Line"
+}
+
+fn line_to_str(l: Line) -> Str {
+    "Str"
+}
+
+fn line_to_int(l: Line) -> Option<Int> {
+    "Option<Int>"
+}
+
+fn line_to_float(l: Line) -> Option<Float> {
+    "Option<Float>"
+}
+
+fn line_to_bool(l: Line) -> Option<Bool> {
+    "Option<Bool>"
+}
+
+fn line_to_file(l: Line) -> Option<

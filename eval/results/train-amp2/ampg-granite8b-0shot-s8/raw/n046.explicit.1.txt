@@ -1,0 +1,176 @@
+fn main() {
+    let nums = push(push(vec(), 5), 40)
+    let bigger = extend(clone(&nums), 70)
+    print(sum_big(&nums, 10))
+    drop nums
+    print(sum_big(&bigger, 10))
+    drop bigger
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let total = 0
+    for x in &v {
+        if x > limit {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn extend(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn vec() -> Vec<T> {
+    Vec
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    Vec
+}
+
+fn len(v: Vec<T>) -> Int {
+    Int
+}
+
+fn get(v: Vec<T>, i: Int) -> Option<T> {
+    Option
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    Vec
+}
+
+fn clone(x: T) -> T {
+    T
+}
+
+fn str_len(s: Str) -> Int {
+    Int
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    Str
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    Vec
+}
+
+fn int_to_str(n: Int) -> Str {
+    Str
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    Option
+}
+
+fn to_float(n: Int) -> Float {
+    Float
+}
+
+fn trunc(x: Float) -> Int {
+    Int
+}
+
+fn print(x: T) {
+    T
+}
+
+fn print_str(s: Str) {
+    Str
+}
+
+fn drop_name() {
+    T
+}
+
+fn drop_name_ref() {
+    &mut && T
+}
+
+fn drop_name_mut() {
+    &mut && mut && mut && T
+}
+
+fn drop_name_ref_mut() {
+    &mut && mut && mut && mut && mut && T
+}
+
+fn drop_name_ref_mut_ref() {
+    &mut && mut && mut && mut && mut && mut && mut && T
+}
+
+fn drop_name_ref_mut_ref_mut() {
+    &mut && mut && mut && mut && mut && mut && mut && mut && T
+}
+
+fn drop_name_ref_mut_ref_mut_ref() {
+    &mut && mut && mut && mut && mut && mut && mut && mut && mut && T
+}
+
+fn drop_name_ref_mut_ref_mut_ref_mut() {
+    &mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && T
+}
+
+fn drop_name_ref_mut_ref_mut_ref_mut_ref() {
+    &mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && T
+}
+
+fn drop_name_ref_mut_ref_mut_ref_mut_ref_mut() {
+    &mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && T
+}
+
+fn drop_name_ref_mut_ref_mut_ref_mut_ref_mut_ref() {
+    &mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && T
+}
+
+fn drop_name_ref_mut_ref_mut_ref_mut_ref_mut_ref_mut() {
+    &mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && T
+}
+
+fn drop_name_ref_mut_ref_mut_ref_mut_ref_mut_ref_mut_ref() {
+    &mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && T
+}
+
+fn drop_name_ref_mut_ref_mut_ref_mut_ref_mut_ref_mut_ref_mut() {
+    &mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && T
+}
+
+fn drop_name_ref_mut_ref_mut_ref_mut_ref_mut_ref_mut_ref_mut_ref() {
+    &mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && T
+}
+
+fn drop_name_ref_mut_ref_mut_ref_mut_ref_mut_ref_mut_ref_mut_ref_mut() {
+    &mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && T
+}
+
+fn drop_name_ref_mut_ref_mut_ref_mut_ref_mut_ref_mut_ref_mut_ref_mut_ref() {
+    &mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && T
+}
+
+fn drop_name_ref_mut_ref_mut_ref_mut_ref_mut_ref_mut_ref_mut_ref_mut_ref_mut() {
+    &mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && T
+}
+
+fn drop_name_ref_mut_ref_mut_ref_mut_ref_mut_ref_mut_ref_mut_ref_mut_ref_mut_ref() {
+    &mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && T
+}
+
+fn drop_name_ref_mut_ref_mut_ref_mut_ref_mut_ref_mut_ref_mut_ref_mut_ref_mut_ref_mut() {
+    &mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && T
+}
+
+fn drop_name_ref_mut_ref_mut_ref_mut_ref_mut_ref_mut_ref_mut_ref_mut_ref_mut_ref_mut_ref() {
+    &mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && T
+}
+
+fn drop_name_ref_mut_ref_mut_ref_mut_ref_mut_ref_mut_ref_mut_ref_mut_ref_mut_ref_mut_ref_mut() {
+    &mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && T
+}
+
+fn drop_name_ref_mut_ref_mut_ref_mut_ref_mut_ref_mut_ref_mut_ref_mut_ref_mut_ref_mut_ref_mut_ref() {
+    &mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && mut && T
+}
+
+fn drop_name_ref_mut_ref_mut_ref_mut_ref_mut_ref_mut_ref_mut_ref_mut_ref_mut_ref_mut_ref_mut

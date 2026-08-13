@@ -1,0 +1,11 @@
+fn main() {
+    let mut colors = vec_str("green", "red", "yellow")
+    for color in colors {
+        match color {
+            Str(green) => print_str(green),
+            Str(red) => print_str(red),
+            Str(yellow) => print_str(yellow),
+            _ => print_str("unknown") / exit(1) / panic("unreachable") / unreachable(),
+        }
+    }
+}

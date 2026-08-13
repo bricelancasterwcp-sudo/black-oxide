@@ -1,0 +1,15 @@
+fn arrange_scores(scores: &Vec<Int>) -> Vec<Int> {
+    let mut sorted_scores = scores.clone()
+    sorted_scores.sort_by_key(std.cmp.reverse)
+    sorted_scores
+}
+
+fn main() {
+    let scores = vec(2, 9, 5)
+    let arranged_scores = arrange_scores(&scores)
+    for score in &arranged_scores {
+        print(score)
+        print("\n")
+    }
+    drop arranged_scores
+}

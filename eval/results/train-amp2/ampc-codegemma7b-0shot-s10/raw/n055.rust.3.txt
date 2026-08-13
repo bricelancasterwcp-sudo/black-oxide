@@ -1,0 +1,29 @@
+fn main() {
+    let mut number = None;
+    let mut word = None;
+
+    loop {
+        let input = std::io::stdin().read_line().unwrap().trim().to_string();
+        if input.is_empty() {
+            break;
+        }
+
+        if let Ok(n) = input.parse::<i32>() {
+            number = Some(n);
+        } else {
+            word = Some(input);
+        }
+    }
+
+    if let Some(n) = number {
+        println!("{}", n);
+    } else {
+        println!("bad");
+    }
+
+    if let Some(w) = word {
+        println!("{}", w);
+    } else {
+        println!("bad");
+    }
+}

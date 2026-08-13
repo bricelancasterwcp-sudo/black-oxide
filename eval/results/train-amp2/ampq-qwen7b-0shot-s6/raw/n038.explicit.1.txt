@@ -1,0 +1,6 @@
+fn main() {
+    let mut reading = 0
+    reading = 7
+    print(reading)
+    drop reading
+}

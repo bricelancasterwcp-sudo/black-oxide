@@ -1,0 +1,47 @@
+fn main() {
+    let log = push(push(push(vec(), 6), 7), 8, 9)
+    print(get(log, 0)?)
+    print(get(log, len(log) - 1)?)
+}
+
+fn push(v: Vec<Int>, e: Int) -> Vec<Int> {
+    v + e
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    if i < 0 || i >= len(v) {
+        None
+    } else {
+        Some(v.get(i))
+    }
+}
+
+fn len(v: Vec<Int>) -> Int {
+    v.len()
+}
+
+fn vec() -> Vec<Int> {
+    Vec(0)
+}
+
+fn print(x: Int) {
+    "console.log(" + x.to_string() + ")"
+}
+
+fn to_string(x: Int) -> Str {
+    x.to_string()
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    s.parse_int()
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn main() {
+    let log = push(push(push(vec(), 6), 7), 8, 9)
+    print(get(log, 0)?)
+    print(get(log, len(log) - 1)?)
+}

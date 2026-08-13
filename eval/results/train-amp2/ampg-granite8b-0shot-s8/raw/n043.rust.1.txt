@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let mut q = std::collections::VecDeque::new();
+    for i in 1..=5 {
+        q.push_back(i);
+    }
+
+    q.swap(0, q.len() - 1);
+
+    for i in q {
+        println!("{}", i);
+    }
+}
+```

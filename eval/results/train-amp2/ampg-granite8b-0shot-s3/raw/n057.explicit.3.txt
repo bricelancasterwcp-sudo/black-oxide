@@ -1,0 +1,27 @@
+fn fig() -> Str {
+    "fig"
+}
+
+fn banana() -> Str {
+    "banana"
+}
+
+fn kiwi() -> Str {
+    "kiwi"
+}
+
+fn longest(a: &Str, b: &Str, c: &Str) -> Str {
+    if len(&a) > len(&b) && len(&a) > len(&c) {
+        a
+    } else if len(&b) > len(&c) {
+        b
+    } else {
+        c
+    }
+}
+
+fn main() {
+    let result = longest(&fig, &banana, &kiwi)
+    print_str(&result)
+    print(len(&result))
+}

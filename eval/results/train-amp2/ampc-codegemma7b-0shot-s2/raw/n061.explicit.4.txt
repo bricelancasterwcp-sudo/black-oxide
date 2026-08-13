@@ -1,0 +1,14 @@
+fn area(l: Float, w: Float) -> Float {
+    l * w
+}
+
+fn perimeter(l: Float, w: Float) -> Float {
+    2.0 * (l + w)
+}
+
+fn main() {
+    let rect = (3.0 / 4.0 * 9.0 / 4.0)
+    print(area(9.0 / 4.0, 3.0 / 4.0))
+    print(perimeter(9.0 / 4.0, 3.0 / 4.0))
+    drop rect
+}

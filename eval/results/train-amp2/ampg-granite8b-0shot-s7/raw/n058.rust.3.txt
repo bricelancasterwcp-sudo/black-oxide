@@ -1,0 +1,8 @@
+fn main(){
+    let mut unique_chars = std::collections::HashSet::new();
+    for c in "coffee".chars() {
+        if unique_chars.insert(c) {
+            println!("{}", c);
+        }
+    }
+}

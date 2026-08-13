@@ -1,0 +1,10 @@
+fn main() {
+    let mut num = 100
+    while num > 1 {
+        if num % 2 == 0 {
+            print(num)
+            num = num / 2
+        }
+        num = num - 1
+    }
+}

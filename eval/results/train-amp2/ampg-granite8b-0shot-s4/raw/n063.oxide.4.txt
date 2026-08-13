@@ -1,0 +1,13 @@
+struct Product { name: Str, price: Int }
+
+fn make_line(units: Int, price: Int) -> Product {
+    Product(units * price, units)
+}
+
+fn main() {
+    let line_4u_3 = make_line(4, 3)
+    let line_5u_2 = make_line(5, 2)
+    print(line_4u_3.price)
+    print(line_5u_2.price)
+    print(line_4u_3.price + line_5u_2.price)
+}

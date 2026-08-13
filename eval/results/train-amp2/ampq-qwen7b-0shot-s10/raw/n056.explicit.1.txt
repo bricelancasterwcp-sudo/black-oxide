@@ -1,0 +1,13 @@
+fn main() {
+    let mut total = 0
+    let mut count = 0
+    for x in vec(7, x, 9, "?") {
+        if letSome(n) == parse_int(x) {
+            total = total + n
+        } else {
+            count = count + 1
+        }
+    }
+    print(total)
+    print(count)
+}

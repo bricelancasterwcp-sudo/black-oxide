@@ -1,0 +1,9 @@
+struct Log { entries: Vec<Int> }
+
+fn main() {
+    let log = Log { entries: vec(6, 7, 8, 9) }
+    let start = log.entries.get(0)?.clone()
+    let end = log.entries.get(log.entries.len() - 1)?.clone()
+    print(start)
+    print(end)
+}

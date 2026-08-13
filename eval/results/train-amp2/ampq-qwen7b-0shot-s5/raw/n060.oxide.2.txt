@@ -1,0 +1,14 @@
+fn main() {
+    let s = "a1b22"
+    let mut total = 0
+    let mut count = 0
+    for c in s.chars() {
+        if c >= "0" && c <= "9" {
+            let num = c.to_int().unwrap_or(0)
+            total = total + num
+            count = count + 1
+        }
+    }
+    print(total)
+    print(count)
+}

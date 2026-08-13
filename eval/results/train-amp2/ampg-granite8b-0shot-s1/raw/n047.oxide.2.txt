@@ -1,0 +1,20 @@
+fn main() {
+    let mut xs = vec()    // 'xs' has type 'Vec<Int>'
+    for i in 10.downto(1) {
+        xs = push(xs, i)    // 'xs' has type 'Vec<Int>'
+    }
+    let mut j = 10
+    loop  // implicit return type is 'Unit'
+    if j == 1 {
+        break_loop
+    }
+    print(j)
+    while j > 0 {
+        print(j)
+        if j == 5 {
+            continue_loop
+        }
+        j = j - 1
+    }
+    print_str("Done!")
+}

@@ -1,0 +1,16 @@
+fn helper(list: Vec<Int>) -> Option<Int> {
+    match list {
+        Vec(first, second, _) => Some(second),
+        _ => None,
+    }
+}
+
+fn main() {
+    print(helper(push(push(vec(), 7), 8)))
+    print(helper(push(vec(), 9)))
+}
+
+fn main() {
+    print(helper(push(push(vec(), 7), 8)))
+    print(helper(push(vec(), 9)))
+}

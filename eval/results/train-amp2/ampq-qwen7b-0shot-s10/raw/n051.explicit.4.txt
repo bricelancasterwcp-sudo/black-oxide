@@ -1,0 +1,541 @@
+fn main() {
+    let s = "granite"
+    let chars = chars(s)
+    print(&chars)
+    print(&chars)
+    drop s
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    s.chars().map(str_len).collect()
+}
+
+fn str_len(c: Str) -> Str {
+    format(&c)
+}
+
+fn print(s: &Str) {
+    print_str(s)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {
+    drop_str(s)
+}
+
+fn drop_str(s: &Str) {

@@ -1,0 +1,17 @@
+fn main() {
+    let a = parse_int("8")
+    let b = parse_int("oak")
+    let c = parse_int("15")
+    match a {
+        Some(n) => print(n),
+        None => print_str("bad"),
+    }
+    match b {
+        Some(n) => print(n),
+        None => print_str("bad"),
+    }
+    match c {
+        Some(n) => print(n),
+        None => print_str("bad"),
+    }
+}

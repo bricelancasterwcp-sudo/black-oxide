@@ -1,0 +1,22 @@
+struct TrafficSignal { color: Str }
+
+fn main() {
+    let signals = vec("green", "red", "yellow")
+    for signal in signals {
+        match signal {
+            Str(color) => match color {
+                Str(color) => match color {
+                    Str(color) => match color {
+                        Str(color) => match color {
+                            Str(color) => match color {
+                                Str(color) => match color {
+                                    Str(color) => if color == "green" { print_str() } else { ifStri },
+                                },
+                            },
+                        },
+                    },
+                },
+            },
+        }
+    }
+}

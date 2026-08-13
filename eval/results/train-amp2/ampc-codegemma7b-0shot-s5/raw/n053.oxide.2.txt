@@ -1,0 +1,10 @@
+fn drum() {
+    let r = "drum".chars().rev().collect()
+    print(r)
+    let r2 = r.chars().rev().collect()
+    print_str(r2)
+}
+
+fn main() {
+    drum()
+}

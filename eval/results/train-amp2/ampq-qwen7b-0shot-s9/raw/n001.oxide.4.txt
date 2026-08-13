@@ -1,0 +1,14 @@
+struct CubeSum { total: Int }
+
+fn sum_cubes() -> CubeSum {
+    let mut total = 0
+    for i in range(1, 6) {
+        total = total + i * i * i
+    }
+    CubeSum(total)
+}
+
+fn main() {
+    let result = sum_cubes()
+    print(result.total)
+}

@@ -1,0 +1,7 @@
+fn main() {
+    let str = "when in doubt go home".to_string()
+    let words = str.split_whitespace().count()
+    let chars = str.chars().count()
+    print(words)
+    print(chars)
+}

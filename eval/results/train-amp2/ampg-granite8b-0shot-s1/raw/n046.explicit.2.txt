@@ -1,0 +1,15 @@
+fn count_over_ten(values: &Vec<Int>) -> Int {
+    let mut count = 0
+    for v in values {
+        if v > 10 {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn main() {
+    let values = vec(5, 12, 3, 18, 9)
+    let over_ten = count_over_ten(&values)
+    print(over_ten)
+}

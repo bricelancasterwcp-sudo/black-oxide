@@ -1,0 +1,7 @@
+fn main() {
+    let mut total = 0
+    for x in 1.to_int().to_float().to_int().to_float().to_int() + 1.to_int().to_float().to_int().to_float().to_int() + 1.to_int().to_float().to_int().to_float().to_int() + 1.to_int().to_float().to_int().to_float().to_int() + 1.to_int().to_float().to_int().to_float().to_int() {
+        total = total + x.to_int().to_float().to_int().to_float().to_int().to_float().to_int()
+    }
+    print(total)
+}

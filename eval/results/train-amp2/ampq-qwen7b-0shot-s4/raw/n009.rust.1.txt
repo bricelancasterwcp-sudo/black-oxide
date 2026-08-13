@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let number = 1234;
+    let reversed_number: i32 = number.to_string().chars().rev().collect::<String>().parse().unwrap();
+    println!("{}", reversed_number);
+}
+```

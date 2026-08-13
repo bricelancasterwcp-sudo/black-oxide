@@ -1,0 +1,16 @@
+fn deposit(account: Int, amount: Int) -> Int {
+    account + amount
+}
+
+fn main() {
+    let balance = deposit(0, 3)
+    print(balance)
+    let balance = deposit(balance, 1)
+    print(balance)
+    let balance = deposit(balance, 4)
+    print(balance)
+    let balance = deposit(balance, 1)
+    print(balance)
+    let balance = deposit(balance, 5)
+    print(balance)
+}

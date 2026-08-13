@@ -1,0 +1,15 @@
+fn first_multiple(s: Str) -> Vec<Str> {
+    let mut seen = vec_str()
+    let mut output = vec_str()
+    for c in chars(s) {
+        if !contains(seen, c) {
+            seen = push(seen, c)
+            output = push(output, c)
+        }
+    }
+    output
+}
+
+fn main() {
+    print_str(first_multiple("coffee"))
+}

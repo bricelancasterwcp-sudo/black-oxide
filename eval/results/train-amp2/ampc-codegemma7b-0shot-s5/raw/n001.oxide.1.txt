@@ -1,0 +1,12 @@
+fn sum_cubes(v: Vec<Int>) -> Int {
+    let mut acc = 0
+    for x in v {
+        acc = acc + (x * x * x)
+    }
+    acc
+}
+
+fn main() {
+    let numbers = range(1, 6)
+    print(sum_cubes(numbers))
+}

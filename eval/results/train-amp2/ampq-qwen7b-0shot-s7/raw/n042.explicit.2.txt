@@ -1,0 +1,23 @@
+fn main() {
+    let a = 12
+    let b = 5
+    let c = 20
+    let d = 8
+    let e = 17
+    let mut max = a
+    let mut second_max = b
+    if c > max {
+        second_max = max
+        max = c
+    }
+    if d > max {
+        second_max = max
+        max = d
+    }
+    if e > max {
+        second_max = max
+        max = e
+    }
+    print(max)
+    print(second_max)
+}

@@ -1,0 +1,21 @@
+struct Shape {
+    variant: ShapeVariant,
+}
+
+enum ShapeVariant {
+    Square(Float),
+    Circle(Float),
+}
+
+fn area(shape: Shape) -> Float {
+    match shape.variant {
+        ShapeVariant(side) => side * side,
+        ShapeVariant(r) => 3.14 * r * r,
+    }
+}
+
+fn main() {
+    let square = Shape { variant: ShapeVariant(4.0) }
+    let circle = Shape { variant: ShapeVariant(7.0) }
+    print(area(square))
+}

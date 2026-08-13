@@ -1,0 +1,11 @@
+fn main() {
+    let word = "coffee";
+    let mut seen_letters = Vec::new();
+
+    for letter in word.chars() {
+        if !seen_letters.contains(&letter) {
+            seen_letters.push(letter);
+            println!("{}", letter);
+        }
+    }
+}

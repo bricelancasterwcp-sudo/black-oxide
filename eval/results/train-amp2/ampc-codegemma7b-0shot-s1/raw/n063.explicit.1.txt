@@ -1,0 +1,9 @@
+fn print_lines(line1: Int, line2: Int) {
+    print(line1 * 3)
+    print(line2 * 2)
+    print(line1 * 3 + line2 * 2)
+}
+
+fn main() {
+    print_lines(4, 5)
+}

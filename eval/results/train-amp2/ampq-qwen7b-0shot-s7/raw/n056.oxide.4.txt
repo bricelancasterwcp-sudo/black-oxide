@@ -1,0 +1,28 @@
+fn total_and_count(nums: Vec<Str>) -> Vec<Int> {
+    let mut total = 0
+    let mut count = 0
+    for num in nums {
+        match parse_int(num) {
+            Some(n) => {
+                total = total + n
+            },
+            None => {
+                count = count + 1
+            },
+        }
+    }
+    vec(total, count)
+}
+
+fn main() {
+    let result = total_and_count(vec(int_to_str(7), "x", int_to_str(9), "?"))
+    match result.get(0) {
+        Some(n) => print(n),
+        None => print_str("0"),
+    }
+    print_str(" ")
+    match result.get(1) {
+        Some(n) => print(n),
+        None => print_str("0"),
+    }
+}

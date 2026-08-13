@@ -1,0 +1,20 @@
+fn arrange(mutnums: Vec<Int>) -> Vec<Int> {
+    for i in 0.upto(nums.len() - 1) {
+        for j in (i + 1).upto(nums.len()) {
+            if nums.get(i).unwrap_or_default() < nums.get(j).unwrap_or_default() {
+                let tmp = nums.get(i).unwrap_or_default()
+                nums.set(i, nums.get(j).unwrap_or_default())
+                nums.set(j, tmp)
+            }
+        }
+    }
+    nums
+}
+
+fn main() {
+    let mut scores = vec(2, 9, 5)
+    for score in arrange(scores) {
+        print_str(to_string(score))
+        print_str("\n")
+    }
+}

@@ -1,0 +1,21 @@
+fn max(x: Int, y: Int) -> Int {
+    if x > y {
+        x
+    } else {
+        y
+    }
+}
+
+fn second_largest(v: Vec<Int>) -> Int {
+    let a = max(v.get(0)?, v.get(1)?)
+    let b = max(v.get(2)?, v.get(3)?)
+    if a > b {
+        b
+    } else {
+        a
+    }
+}
+
+fn main() {
+    print(second_largest(vec(12, 5, 20, 8, 17)))
+}

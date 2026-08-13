@@ -1,0 +1,7 @@
+fn main() {
+    let word = "granite"
+    print_str(&word)
+    let last_char = word.chars().last().unwrap() == word.chars().nth(word.len() - 1).unwrap()
+    print_str(&last_char)
+    drop word
+}

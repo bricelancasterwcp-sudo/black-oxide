@@ -1,0 +1,5 @@
+fn main() {
+    let word = "drum".chars().collect(Collectors.toList()).reverse().concat().chars().collect(Collectors.toList()).concat()
+    print(word)
+    print_str("drum")
+}

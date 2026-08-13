@@ -1,0 +1,15 @@
+fn signal(s: &Str) {
+    match s {
+        Green => print("go"),
+        Red => print("stop"),
+        Yellow => print("wait"),
+    }
+}
+
+fn main() {
+    let signals = vec("green", "red", "yellow")
+    for s in &signals {
+        signal(s)
+    }
+    drop signals
+}

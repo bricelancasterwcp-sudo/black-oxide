@@ -1,0 +1,18 @@
+fn count(v: Vec<Int>, limit: Int) -> Int {
+    let mut total = 0
+    for x in v {
+        if x > limit {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn main() {
+    let nums = push(push(vec(), 5), 40)
+    let bigger = push(clone(&nums), 70)
+    print(count(nums, 10))
+    drop nums
+    print(count(bigger, 10))
+    drop bigger
+}

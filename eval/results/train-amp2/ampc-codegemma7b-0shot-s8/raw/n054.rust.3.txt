@@ -1,0 +1,14 @@
+fn main() {
+    let mut vowels = 0;
+    let mut consonants = 0;
+
+    for c in "keyboard".chars() {
+        match c {
+            'a' | 'e' | 'i' | 'o' | 'u' => vowels += 1,
+            _ => consonants += 1,
+        }
+    }
+
+    println!("Vowels: {}", vowels);
+    println!("Consonants: {}", consonants);
+}

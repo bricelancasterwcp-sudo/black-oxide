@@ -1,0 +1,16 @@
+fn print_first_and_last(word: &Str) {
+    print(&word, 0)
+    print(&word, word.len() - 1)
+}
+
+fn print(s: &Str, i: Int) {
+    print_char(s.chars().nth(i).unwrap())
+}
+
+fn print_char(c: Char) {
+    print(c)
+}
+
+fn main() {
+    print_first_and_last("granite")
+}

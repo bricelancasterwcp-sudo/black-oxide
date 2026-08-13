@@ -1,0 +1,43 @@
+fn main() {
+    let seven = Some(7)
+    let x = None
+    let nine = Some(9)
+    let q = None
+    match (seven.clone()) {
+        Some(s) => print(s),
+        None => print_str("no 7"),
+    }
+    match (x.clone()) {
+        Some(s) => print(s),
+        None => print_str("no x"),
+    }
+    match (nine.clone()) {
+        Some(s) => print(s),
+        None => print_str("no 9"),
+    }
+    match (q.clone()) {
+        Some(s) => print(s),
+        None => print_str("no ?"),
+    }
+    let total = seven.unwrap_or(0) + nine.unwrap_or(0)
+    print_str("\n")
+    print(total)
+    print_str("\n")
+    let count = match (seven.clone()) {
+        Some(s) => 1,
+        None => 0,
+    }
+    match (x.clone()) {
+        Some(s) => 1,
+        None => 0,
+    }
+    match (nine.clone()) {
+        Some(s) => 1,
+        None => 0,
+    }
+    match (q.clone()) {
+        Some(s) => 1,
+        None => 0,
+    }
+    print(count)
+}

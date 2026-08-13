@@ -1,0 +1,11 @@
+struct Reading { label: Str, value: Int }
+
+fn set_and_print(r: Reading) {
+    r.value = 7
+    print(r.value)
+}
+
+fn main() {
+    let r = Reading { label: "sensor", value: 0 }
+    set_and_print(r)
+}

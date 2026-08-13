@@ -1,0 +1,75 @@
+fn main() {
+    let num = 9875
+    let digits = vec_to_chars(to_string(num))
+    let sum = digits.map(parse_int).unwrap().sum()
+    print_number(sum)
+}
+
+fn vec_to_chars(s: Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn to_string(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn parse_int(s: Str) -> Int {
+    parse_int(s).unwrap()
+}
+
+fn sum(numbers: Vec<Int>) -> Int {
+    numbers.iter().sum()
+}
+
+fn map(numbers: Vec<Int>, f: Fn<Int>) -> Vec<Int> {
+    numbers.iter().map(f).collect()
+}
+
+fn iterate(numbers: Vec<Int>, f: Fn<Int>) {
+    for n in numbers {
+        f(n)
+    }
+}
+
+fn collect(numbers: Vec<Int>, f: Fn<Int>) -> Vec<Int> {
+    numbers.iter().map(f).collect()
+}
+
+fn unwrap(option: Option<Int>) -> Int {
+    option.unwrap()
+}
+
+fn iterate_and_map(numbers: Vec<Int>, f: Fn<Int>) -> Vec<Int> {
+    numbers.iter().map(f).collect()
+}
+
+fn print_number(num: Int) {
+    print(num)
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    parse_int(s)
+}
+
+fn to_string(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn vec_to_chars(s: Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn main() {
+    let num = 9875
+    let digits = vec_to_chars(to_string(num))
+    let sum = digits.map(parse_int).unwrap().sum()
+    print_number(sum)
+}

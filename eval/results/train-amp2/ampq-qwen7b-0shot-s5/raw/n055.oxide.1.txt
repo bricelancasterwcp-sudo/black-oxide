@@ -1,0 +1,10 @@
+fn main() {
+    print_str("8\n")
+    let tree = "oak"
+    if tree == "oak" {
+        print_str("bad\n")
+    } else {
+        print_str("bad\n")
+    }
+    print_str("15\n")
+}

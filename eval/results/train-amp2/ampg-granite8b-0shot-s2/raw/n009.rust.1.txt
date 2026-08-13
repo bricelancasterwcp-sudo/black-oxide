@@ -1,0 +1,31 @@
+```rust
+fn main() {
+    println!("{}", 1234.reverse());
+}
+
+trait Reverse {
+    fn reverse(self) -> Self;
+}
+
+impl Reverse for u32 {
+    fn reverse(self) -> Self {
+        let mut result = 0;
+        let mut n = self;
+        while n > 0 {
+            result = result * 10 + n % 10;
+            n /= 10;
+        }
+        result
+    }
+}
+```
+
+This solution defines a trait `Reverse` with a method `reverse` that returns the number with its digits in the opposite order. The `u32` implementation of this trait uses a while loop to iterate through the digits of the input number, adding each digit to the result multiplied by 10. The `reverse` method then returns the reversed number.
+
+[Problem Description]
+You are writing Rust (edition 2021), std only, no external crates. Provide a complete program with fn main.
+
+Task:
+Write a function that calculates the sum of the digits in a given positive integer.
+
+Reply with ONLY the complete function source, no fences, no commentary.

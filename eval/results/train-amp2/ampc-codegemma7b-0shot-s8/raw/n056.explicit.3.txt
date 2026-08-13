@@ -1,0 +1,156 @@
+fn main() {
+    let seven = parse_int("7")
+    let nine = parse_int("9")
+    let x = parse_int("x")
+    let question = parse_int("?")
+    let total = int_to_str(match seven {
+            Some(n) => n + match_int(nine, x, question) + match_int(x, question, seven) + match_int(question, seven, nine),
+            None => 0,
+        })
+    print(concat(str_len(total), total))
+    print(str_len(match_int(seven, nine, x)))
+    print(str_len(match_int(seven, question, x)))
+    print(str_len(match_int(question, seven, x)))
+    print(str_len(match_int(question, x, seven)))
+    print(str_len(match_int(x, seven, question)))
+    print(str_len(match_int(x, question, seven)))
+    print(str_len(match_int(x, nine, question)))
+    print(str_len(match_int(nine, x, question)))
+    print(str_len(match_int(question, x, nine)))
+    print(str_len(match_int(question, nine, x)))
+    print(str_len(match_int(seven, nine, question)))
+    print(str_len(match_int(seven, question, nine)))
+    print(str_len(match_int(question, seven, nine)))
+    print(str_len(match_int(question, nine, seven)))
+    print(str_len(match_int(nine, question, seven)))
+    print(str_len(match_int(nine, seven, question)))
+    print(str_len(match_int(question, seven, question)))
+    print(str_len(match_int(question, question, seven)))
+    print(str_len(match_int(question, question, nine)))
+    print(str_len(match_int(question, question, x)))
+    print(str_len(match_int(x, question, question)))
+    print(str_len(match_int(x, x, question)))
+    print(str_len(match_int(x, x, seven)))
+    print(str_len(match_int(x, x, nine)))
+    print(str_len(match_int(seven, x, x)))
+    print(str_len(match_int(nine, x, x)))
+    print(str_len(match_int(question, x, x)))
+    print(str_len(match_int(seven, seven, seven)))
+    print(str_len(match_int(seven, seven, nine)))
+    print(str_len(match_int(seven, seven, x)))
+    print(str_len(match_int(seven, nine, nine)))
+    print(str_len(match_int(seven, nine, x)))
+    print(str_len(match_int(seven, x, nine)))
+    print(str_len(match_int(nine, seven, seven)))
+    print(str_len(match_int(nine, seven, nine)))
+    print(str_len(match_int(nine, seven, x)))
+    print(str_len(match_int(nine, nine, seven)))
+    print(str_len(match_int(nine, nine, nine)))
+    print(str_len(match_int(nine, nine, x)))
+    print(str_len(match_int(nine, x, seven)))
+    print(str_len(match_int(nine, x, nine)))
+    print(str_len(match_int(nine, x, x)))
+    print(str_len(match_int(x, seven, seven)))
+    print(str_len(match_int(x, seven, nine)))
+    print(str_len(match_int(x, seven, x)))
+    print(str_len(match_int(x, nine, seven)))
+    print(str_len(match_int(x, nine, nine)))
+    print(str_len(match_int(x, nine, x)))
+    print(str_len(match_int(x, x, seven)))
+    print(str_len(match_int(x, x, nine)))
+    print(str_len(match_int(x, x, x)))
+}
+
+fn match_int(a: Option<Int>, b: Option<Int>, c: Option<Int>) -> Int {
+    match a {
+        Some(n) => match b {
+            Some(m) => match c {
+                Some(o) => n + m + o,
+                None => n + m,
+            },
+            None => n,
+        },
+        None => 0,
+    }
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    let mut parsed = 0
+    for c in s.chars() {
+        match c {
+            Digit(d) => parsed == parsed * 10 + d - 48,
+            _ => returnNone(),
+        }
+    }
+    Some(parsed)
+}
+
+fn returnNone() -> None {
+    None
+}
+
+fn str_len(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut result = String.new()
+    let mut num = n
+    while num > 0 {
+        let rem = num % 10
+        result.insert(0, (rem + 48) - 0)
+        num = num / 10
+    }
+    result
+}
+
+fn print(s: Str) {
+    print(s)
+}
+
+fn print(n: Int) {
+    print(int_to_str(n))
+}
+
+fn print(b: Bool) {
+    print(if b { "true" } else { "false" })
+}
+
+fn main() {
+    let seven = parse_int("7")
+    let nine = parse_int("9")
+    let x = parse_int("x")
+    let question = parse_int("?")
+    let total = int_to_str(match seven {
+            Some(n) => n + match_int(nine, x, question) + match_int(x, question, seven) + match_int(question, seven, nine),
+            None => 0,
+        })
+    print(concat(str_len(total), total))
+    print(str_len(match_int(seven, nine, x)))
+    print(str_len(match_int(seven, question, x)))
+    print(str_len(match_int(question, seven, x)))
+    print(str_len(match_int(question, x, seven)))
+    print(str_len(match_int(x, seven, question)))
+    print(str_len(match_int(x, question, seven)))
+    print(str_len(match_int(x, nine, question)))
+    print(str_len(match_int(nine, x, question)))
+    print(str_len(match_int(question, x, nine)))
+    print(str_len(match_int(question, nine, x)))
+    print(str_len(match_int(seven, nine, question)))
+    print(str_len(match_int(seven, question, nine)))
+    print(str_len(match_int(question, seven, nine)))
+    print(str_len(match_int(question, nine, seven)))
+    print(str_len(match_int(nine, question, seven)))
+    print(str_len(match_int(nine, seven, question)))
+    print(str_len(match_int(question, seven, question)))
+    print(str_len(match_int(question, question, seven)))
+    print(str_len(match_int(question, question, nine)))
+    print(str_len(match_int(question, question, x)))
+    print(str_len(match_int(x, question, question)))
+    print(str_len(match_int(x, x, question)))
+    print(str_len(match_int(x, x, seven)))
+    print(str_len(match_int(x, x, nine)))
+    print(str_len(match_int(seven, x, x)))
+    print(str_len(match_int(nine, x, x)))
+    print(str_len(match_int(question, x, x)))
+    print(str_len(match_

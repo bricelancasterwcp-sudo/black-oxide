@@ -1,0 +1,27 @@
+fn count_vowels(word: Str) -> Int {
+    let vowels = "aeiouAEIOU"
+    let mut count = 0
+    for char in chars(&word) {
+        if str_len(char) == 1 && get(chars(vowels), int_to_str(char.as_bytes().get(0).unwrap() - 96)) == Some(true) {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn count_consonants(word: Str) -> Int {
+    let vowels = "aeiouAEIOU"
+    let mut count = 0
+    for char in chars(&word) {
+        if str_len(char) == 1 && get(chars(vowels), int_to_str(char.as_bytes().get(0).unwrap() - 96)) == None {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn main() {
+    let word = "aeiouy"
+    print(count_vowels(word))
+    print(count_consonants(word))
+}

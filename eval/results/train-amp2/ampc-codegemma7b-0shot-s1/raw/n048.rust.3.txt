@@ -1,0 +1,18 @@
+```rust
+use std::collections::HashSet;
+
+fn main() {
+    let list = vec![4, 7, 4, 9, 4];
+    let mut positions: HashSet<usize> = HashSet::new();
+
+    for (i, &item) in list.iter().enumerate() {
+        if item == 4 {
+            positions.insert(i);
+        }
+    }
+
+    for position in positions {
+        println!("{}", position);
+    }
+}
+```

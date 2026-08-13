@@ -1,0 +1,8 @@
+fn main() {
+    let s = "banana"
+    for i in range(0, str_len(s)) {
+        if s.chars().nth(i).unwrap() == "n" {
+            print(i)
+        }
+    }
+}

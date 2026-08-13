@@ -1,0 +1,18 @@
+fn digits_sum(n: Int) -> Int {
+    let mut acc = 0
+    let mut n = n
+    while n > 0 {
+        acc = push(acc, n % 10)
+        n = trunc(n / 10)
+    }
+    let mut sum = 0
+    while acc > 0 {
+        sum = sum + get(acc, 0)?
+        acc = trunc(acc / 10)
+    }
+    sum
+}
+
+fn main() {
+    print(digits_sum(9875))
+}

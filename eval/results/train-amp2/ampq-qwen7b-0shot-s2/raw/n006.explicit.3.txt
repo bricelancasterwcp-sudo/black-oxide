@@ -1,0 +1,18 @@
+fn log2(n: Int) -> Int {
+    let mut count = 0
+    while n > 1 {
+        n = n / 2
+        count = count + 1
+    }
+    count
+}
+
+fn main() {
+    let max_power = 100
+    let mut power = 1
+    while power * 2 <= max_power {
+        power = power * 2
+    }
+    print(power)
+    drop power
+}

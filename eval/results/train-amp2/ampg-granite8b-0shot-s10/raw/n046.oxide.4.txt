@@ -1,0 +1,11 @@
+fn main() {
+    let mut n = 0
+    let mut fives = vec()
+    while n < 100 {
+        n = n + 1
+        if n % 5 == 0 {
+            fives = push(fives, n)
+        }
+    }
+    print(len(fives))
+}

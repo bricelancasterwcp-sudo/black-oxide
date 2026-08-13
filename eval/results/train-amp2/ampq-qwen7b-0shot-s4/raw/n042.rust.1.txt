@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let values = [12, 5, 20, 8, 17];
+    let mut max1 = i32::MIN;
+    let mut max2 = i32::MIN;
+
+    for &value in &values {
+        if value > max1 {
+            max2 = max1;
+            max1 = value;
+        } else if value > max2 {
+            max2 = value;
+        }
+    }
+
+    println!("{}", max1);
+    println!("{}", max2);
+}
+```

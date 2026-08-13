@@ -1,0 +1,37 @@
+struct Reading { label: Str, values: Vec<Int> }
+
+fn first_big(v: Vec<Int>) -> Int {
+    let found = -1
+    for x in v {
+        if x > 10 {
+            found = x
+            break
+        }
+    }
+    found
+}
+
+fn main() {
+    let zero = 0
+    let seven = 7
+    let r = Reading { label: "lab", values: push(push(vec(), zero), seven) }
+    print(first_big(r.values))            // field access copies: r stays usable
+}
+
+struct Reading { label: Str, values: Vec<Int> }
+
+fn set_reading(reading: Reading, seven: Int) -> Reading {
+    let updated = Reading { values: push(reading.values, seven), ..reading }
+    updated
+}
+
+fn print_reading(reading: Reading) {
+    print(first_big(reading.values))            // field access copies: r stays usable
+}
+
+fn main() {
+    let zero = 0
+    let seven = 7
+    let r = Reading { label: "lab", values: push(push(vec(), zero), seven) }
+    print_reading(set_reading(r, seven))
+}

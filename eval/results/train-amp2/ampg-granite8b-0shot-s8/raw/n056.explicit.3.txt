@@ -1,0 +1,11 @@
+fn main() {
+    let mut texts = vec("7".to_string(), "x".to_string(), "9".to_string(), "?".to_string())
+    let mut total = 0
+    for text in texts {
+        let number = text.parse()
+        if number.is_ok() {
+            total = total + number.unwrap()
+        }
+    }
+    print(total)
+}

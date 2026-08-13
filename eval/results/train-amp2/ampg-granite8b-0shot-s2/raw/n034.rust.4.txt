@@ -1,0 +1,20 @@
+const FOO: Option<&'static [i32]> = Some(&[7, 8, 9][..]);
+
+fn helper(list: &[i32]) -> Option<&i32> {
+    if list.len() < 2 {
+        return None;
+    }
+    Some(&list[1])
+}
+
+fn main() {
+    if let Some(list) = FOO {
+        if let Some(second) = helper(list) {
+            println!("{}", second);
+        } else {
+            println!("None");
+        }
+    } else {
+        println!("None");
+    }
+}

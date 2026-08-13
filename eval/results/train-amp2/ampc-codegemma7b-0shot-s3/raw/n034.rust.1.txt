@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let numbers = vec![7, 8, 9];
+    let second_number = numbers.get(1).cloned();
+    println!("{:?}", second_number); // Output: Some(8)
+
+    let numbers = vec![7];
+    let second_number = numbers.get(1).cloned();
+    println!("{:?}", second_number); // Output: None
+}
+```

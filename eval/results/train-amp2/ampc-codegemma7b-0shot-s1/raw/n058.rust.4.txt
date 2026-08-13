@@ -1,0 +1,14 @@
+use std::collections::HashMap;
+
+fn main() {
+    let word = "coffee";
+
+    let mut seen_letters: HashMap<char, bool> = HashMap::new();
+
+    for letter in word.chars() {
+        if !seen_letters.contains_key(&letter) {
+            seen_letters.insert(letter, true);
+            println!("{}", letter);
+        }
+    }
+}

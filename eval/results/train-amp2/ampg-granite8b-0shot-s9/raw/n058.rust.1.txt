@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let s = "coffee";
+    let mut letters = std::collections::HashSet::new();
+
+    for c in s.chars() {
+        if !letters.insert(c) {
+            println!("{}", c);
+        }
+    }
+}
+```

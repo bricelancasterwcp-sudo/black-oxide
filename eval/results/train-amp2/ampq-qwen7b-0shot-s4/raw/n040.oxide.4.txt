@@ -1,0 +1,58 @@
+struct Shape { square: Option<Int>, circle: Option<Int> }
+
+fn area(shape: Shape) -> Float {
+    match shape {
+        Shape(square, circle) => match (square.map(square_area(3.0, square.unwrap())) || circle.map(circle_area(3.0, circle.unwrap()))) {
+            Some(a) => a,
+            None => 0.0,
+        },
+    }
+}
+
+fn square_area(pi: Float, side: Int) -> Float {
+    pi * side.to_float() * side.to_float()
+}
+
+fn circle_area(pi: Float, radius: Int) -> Float {
+    pi * radius.to_float() * radius.to_float()
+}
+
+fn main() {
+    let shape = Shape { square: Some(4), circle: None }
+    print(area(shape))
+}
+
+fn square_area(pi: Float, side: Int) -> Float {
+    pi * side.to_float() * side.to_float()
+}
+
+fn circle_area(pi: Float, radius: Int) -> Float {
+    pi * radius.to_float() * radius.to_float()
+}
+
+fn main() {
+    let shape = Shape { square: Some(4), circle: None }
+    print(area(shape))
+}
+
+fn area(shape: Shape) -> Float {
+    match shape {
+        Shape(square, circle) => match (square.map(square_area(3.0, square.unwrap())) || circle.map(circle_area(3.0, circle.unwrap()))) {
+            Some(a) => a,
+            None => 0.0,
+        },
+    }
+}
+
+fn square_area(pi: Float, side: Int) -> Float {
+    pi * side.to_float() * side.to_float()
+}
+
+fn circle_area(pi: Float, radius: Int) -> Float {
+    pi * radius.to_float() * radius.to_float()
+}
+
+fn main() {
+    let shape = Shape { square: Some(4), circle: None }
+    print(area(shape))
+}

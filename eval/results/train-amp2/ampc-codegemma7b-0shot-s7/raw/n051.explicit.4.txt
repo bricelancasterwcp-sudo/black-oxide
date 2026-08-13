@@ -1,0 +1,6 @@
+fn main() {
+    print("g")
+    drop print
+    print("e")
+    drop print
+}

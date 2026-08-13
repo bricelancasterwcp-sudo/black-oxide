@@ -1,0 +1,313 @@
+fn divide(a: Float, b: Float) -> Result<Float, String> {
+    if b == 0.0 {
+        Err("Cannot divide by zero".to_string())
+    } else {
+        Ok(a / b)
+    }
+}
+
+fn main() {
+    let result = divide(20.0, 4.0).unwrap_or_else(print_bad)
+    print(result)
+}
+
+fn print_bad(e: String) {
+    print("Bad: {}", e)
+}
+
+fn print(x: Float) {
+    print(x)
+}
+
+fn print_str(x: Str) {
+    print(x)
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    v + vec(x)
+}
+
+fn len(v: &Vec<T>) -> Int {
+    v.len()
+}
+
+fn get(v: &Vec<T>, i: Int) -> Option<T> {
+    v.get(i)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    (a + 1).upto(b).collect()
+}
+
+fn clone(x: &T) -> T {
+    x.clone()
+}
+
+fn str_len(s: &Str) -> Int {
+    s.len()
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    a.to_string() + &b
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    s.chars().map(str).collect()
+}
+
+fn int_to_str(n: Int) -> Str {
+    n.to_string()
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    s.parse()
+}
+
+fn to_float(n: Int) -> Float {
+    n.to_float()
+}
+
+fn trunc(x: Float) -> Int {
+    x.trunc()
+}
+
+fn print(x: Float) {
+    print(x)
+}
+
+fn print_str(x: Str) {
+    print(x)
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    v + vec(x)
+}
+
+fn len(v: &Vec<T>) -> Int {
+    v.len()
+}
+
+fn get(v: &Vec<T>, i: Int) -> Option<T> {
+    v.get(i)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    (a + 1).upto(b).collect()
+}
+
+fn clone(x: &T) -> T {
+    x.clone()
+}
+
+fn str_len(s: &Str) -> Int {
+    s.len()
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    a.to_string() + &b
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    s.chars().map(str).collect()
+}
+
+fn int_to_str(n: Int) -> Str {
+    n.to_string()
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    s.parse()
+}
+
+fn to_float(n: Int) -> Float {
+    n.to_float()
+}
+
+fn trunc(x: Float) -> Int {
+    x.trunc()
+}
+
+fn main() {
+    let result = divide(20.0, 4.0).unwrap_or_else(print_bad)
+    print(result)
+}
+
+fn print_bad(e: String) {
+    print("Bad: {}", e)
+}
+
+fn print(x: Float) {
+    print(x)
+}
+
+fn print_str(x: Str) {
+    print(x)
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    v + vec(x)
+}
+
+fn len(v: &Vec<T>) -> Int {
+    v.len()
+}
+
+fn get(v: &Vec<T>, i: Int) -> Option<T> {
+    v.get(i)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    (a + 1).upto(b).collect()
+}
+
+fn clone(x: &T) -> T {
+    x.clone()
+}
+
+fn str_len(s: &Str) -> Int {
+    s.len()
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    a.to_string() + &b
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    s.chars().map(str).collect()
+}
+
+fn int_to_str(n: Int) -> Str {
+    n.to_string()
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    s.parse()
+}
+
+fn to_float(n: Int) -> Float {
+    n.to_float()
+}
+
+fn trunc(x: Float) -> Int {
+    x.trunc()
+}
+
+fn main() {
+    let result = divide(20.0, 4.0).unwrap_or_else(print_bad)
+    print(result)
+}
+
+fn print_bad(e: String) {
+    print("Bad: {}", e)
+}
+
+fn print(x: Float) {
+    print(x)
+}
+
+fn print_str(x: Str) {
+    print(x)
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    v + vec(x)
+}
+
+fn len(v: &Vec<T>) -> Int {
+    v.len()
+}
+
+fn get(v: &Vec<T>, i: Int) -> Option<T> {
+    v.get(i)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    (a + 1).upto(b).collect()
+}
+
+fn clone(x: &T) -> T {
+    x.clone()
+}
+
+fn str_len(s: &Str) -> Int {
+    s.len()
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    a.to_string() + &b
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    s.chars().map(str).collect()
+}
+
+fn int_to_str(n: Int) -> Str {
+    n.to_string()
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    s.parse()
+}
+
+fn to_float(n: Int) -> Float {
+    n.to_float()
+}
+
+fn trunc(x: Float) -> Int {
+    x.trunc()
+}
+
+fn main() {
+    let result = divide(20.0, 4.0).unwrap_or_else(print_bad)
+    print(result)
+}
+
+fn print_bad(e: String) {
+    print("Bad: {}", e)
+}
+
+fn print(x: Float) {
+    print(x)
+}
+
+fn print_str(x: Str) {
+    print(x)
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    v + vec(x)
+}
+
+fn len(v: &Vec<T>) -> Int {
+    v.len()
+}
+
+fn get(v: &Vec<T>, i: Int) -> Option<T> {
+    v.get(i)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    (a + 1).upto(b).collect()
+}
+
+fn clone(x: &T) -> T {
+    x.clone()
+}
+
+fn str_len(s: &Str) -> Int {
+    s.len()
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    a.to_string() + &b
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    s.chars().map(str).collect()
+}
+
+fn int_to_str(n: Int) -> Str {
+    n.to_string()
+}
+
+fn parse_int(

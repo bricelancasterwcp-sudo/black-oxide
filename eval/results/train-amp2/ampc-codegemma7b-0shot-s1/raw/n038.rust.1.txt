@@ -1,0 +1,29 @@
+use std::mem;
+
+struct Sensor {
+    reading: u8,
+}
+
+struct Device {
+    sensor: Sensor,
+}
+
+impl Sensor {
+    fn new() -> Self {
+        Self { reading: 0 }
+    }
+}
+
+impl Device {
+    fn new() -> Self {
+        Self {
+            sensor: Sensor::new(),
+        }
+    }
+}
+
+fn main() {
+    let mut device = Device::new();
+    device.sensor.reading = 7;
+    println!("{}", device.sensor.reading);
+}

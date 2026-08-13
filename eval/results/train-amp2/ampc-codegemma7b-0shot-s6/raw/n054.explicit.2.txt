@@ -1,0 +1,159 @@
+fn is_vowel(c: &Char) -> Bool {
+    match c {
+        Char(a) => match a {
+            In(b) => match b {
+                In(c) => match c {
+                    In(d) => match d {
+                        In(e) => true,
+                        _ => false,
+                    },
+                    _ => false,
+                },
+                _ => false,
+            },
+            _ => false,
+        },
+    }
+}
+
+fn main() {
+    let word = get(parse_str("keyboard"), 0).unwrap()
+    let mut vowel_count = 0
+    let mut consonant_count = 0
+    for c in chars(&word) {
+        if is_vowel(&c) {
+            vowel_count = vowel_count + 1
+        } else {
+            consonant_count = consonant_count + 1
+        }
+    }
+    print(format("Vowels: {}, Consonants: {}", vowel_count, consonant_count))
+}
+
+fn parse_str(s: &Str) -> Option<Vec<Char>> {
+    let mut result = vec()
+    for c in s.chars() {
+        result.push(Char(c))
+    }
+    Some(result)
+}
+
+fn format(s: &Str, args: Int) -> Str {
+    let mut result = String()
+    result.push_str(s)
+    result.push_str(&args)
+    Str(result)
+}
+
+fn chars(s: &Str) -> Vec<Char> {
+    let mut result = vec()
+    for c in s.chars() {
+        result.push(Char(c))
+    }
+    result
+}
+
+struct Char {
+    value: Char,
+}
+
+struct In {
+    value: In,
+}
+
+struct Str {
+    value: String,
+}
+
+enum Option {
+    Some(T),
+    None,
+}
+
+fn get(v: &Vec<T>, i: Int) -> Option<T> {
+    if i < v.len() {
+        Some(v.get(i))
+    } else {
+        None
+    }
+}
+
+fn print(s: Str) {
+    println(s.value)
+}
+
+fn unwrap(o: Option<T>) -> T {
+    match o {
+        Option(a) => a,
+        Option(b) => panic(),
+    }
+}
+
+fn len(v: &Vec<T>) -> Int {
+    v.len()
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    let mut result = v
+    result.push(x)
+    result
+}
+
+fn clone(x: &T) -> T {
+    x.clone()
+}
+
+fn to_float(n: Int) -> Float {
+    n.to_float()
+}
+
+fn trunc(x: Float) -> Int {
+    x.trunc()
+}
+
+fn bool(b: Bool) -> Int {
+    if b {
+        1
+    } else {
+        0
+    }
+}
+
+fn int(i: Int) -> Int {
+    i
+}
+
+fn str(s: &Str) -> Str {
+    s.clone()
+}
+
+fn int_to_str(n: Int) -> Str {
+    n.to_string().into()
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    s.parse().ok()
+}
+
+enum Float {
+    Value(Float),
+}
+
+enum Bool {
+    True,
+    False,
+}
+
+fn main() {
+    let word = get(parse_str("keyboard"), 0).unwrap()
+    let mut vowel_count = 0
+    let mut consonant_count = 0
+    for c in chars(&word) {
+        if is_vowel(&c) {
+            vowel_count = vowel_count + 1
+        } else {
+            consonant_count = consonant_count + 1
+        }
+    }
+    print(format("Vowels: {}, Consonants: {}", vowel_count, consonant_count))
+}

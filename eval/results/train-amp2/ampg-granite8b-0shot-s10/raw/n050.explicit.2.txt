@@ -1,0 +1,8 @@
+fn main() {
+    let mut scores = vec(2, 9, 5)
+    let top_score = get(&scores, 0)
+    scores = push(scores, 7)
+    print(top_score)
+    drop scores
+    drop top_score
+}

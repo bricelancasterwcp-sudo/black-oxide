@@ -1,0 +1,22 @@
+fn print_reverse(x: Int) {
+    if x >= 1000 {
+        print((x / 1000) % 10)
+        print((x / 100) % 10)
+        print((x / 10) % 10)
+        print(x % 10)
+    } else if x >= 100 {
+        print((x / 100) % 10)
+        print((x / 10) % 10)
+        print(x % 10)
+    } else if x >= 10 {
+        print((x / 10) % 10)
+        print(x % 10)
+    } else {
+        print(x)
+    }
+    drop x // drop should be the last use of the last
+}
+
+fn main() {
+    print_reverse(1234)
+}

@@ -1,0 +1,8 @@
+struct S { f: Int }
+
+fn main() {
+    let x = 5
+    let s = S { f: 17 }
+    print(s.f)
+    print(x)
+}

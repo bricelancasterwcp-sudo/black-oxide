@@ -1,0 +1,19 @@
+fn positions(v: &Vec<Int>, x: Int) -> Vec<Int> {
+    let mut pos = vec()
+    for i in range(0, v.len()) {
+        if get(v, i) == Some(x) {
+            push(pos, i)
+        }
+    }
+    pos
+}
+
+fn main() {
+    let nums = push(push(push(vec(), 4), 7), 4)
+    let pos = positions(&nums, 4)
+    for p in &pos {
+        print(p)
+    }
+    drop nums
+    drop pos
+}

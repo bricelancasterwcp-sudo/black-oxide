@@ -1,0 +1,13 @@
+fn runback(s: Str) -> Str {
+    let mut r = String.new()
+    for c in s.chars().rev() {
+        r.push(c)
+    }
+    r
+}
+
+fn main() {
+    let s = "drum"
+    print_str(runback(s))
+    print_str(s)
+}

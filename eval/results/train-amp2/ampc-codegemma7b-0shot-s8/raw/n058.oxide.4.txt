@@ -1,0 +1,11 @@
+fn main() {
+    let s = "coffee".to_string()
+    let mut seen: Vec<Char> = vec()
+    for c in s.chars() {
+        if !seen.contains(c) {
+            seen.push(c)
+            print_str(c)
+            print_str("\n")
+        }
+    }
+}

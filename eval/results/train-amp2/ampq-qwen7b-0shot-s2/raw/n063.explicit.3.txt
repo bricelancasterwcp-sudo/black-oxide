@@ -1,0 +1,13 @@
+fn price(x: Int, y: Int) -> Int {
+    x * 3 + y * 2
+}
+
+fn main() {
+    let line1 = price(4, 0)
+    let line2 = price(0, 5)
+    print(line1)
+    print(line2)
+    print(price(line1, line2))
+    drop line1
+    drop line2
+}

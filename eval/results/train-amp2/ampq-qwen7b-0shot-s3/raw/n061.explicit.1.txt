@@ -1,0 +1,15 @@
+fn area(w: Int, h: Int) -> Int {
+    w * h
+}
+
+fn perimeter(w: Int, h: Int) -> Int {
+    2 * (w + h)
+}
+
+fn main() {
+    let rect = (9.0.to_int().clone(&rect, 3.0.to_int().clone(&rect, rect)) - 10)
+    print(area(9, 3))
+    drop rect
+    print(perimeter(9, 3))
+    drop rect
+}

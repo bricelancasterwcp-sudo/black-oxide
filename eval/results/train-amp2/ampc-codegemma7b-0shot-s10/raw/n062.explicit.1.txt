@@ -1,0 +1,11 @@
+fn main() {
+    let green = "go for green".to_string()
+    let red = "stop for red".to_string()
+    let yellow = "wait for yellow".to_string()
+    print(green)
+    print(red)
+    print(yellow)
+    drop green
+    drop red
+    drop yellow
+}

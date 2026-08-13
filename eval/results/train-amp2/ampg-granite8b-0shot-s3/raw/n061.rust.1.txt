@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let width = 9;
+    let height = 3;
+
+    println!("Area: {}", width * height);
+    println!("Perimeter: {}", (width + height) * 2);
+}
+```

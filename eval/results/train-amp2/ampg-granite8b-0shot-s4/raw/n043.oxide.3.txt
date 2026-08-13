@@ -1,0 +1,11 @@
+struct Queue { front: Vec<Int>, back: Vec<Int> }
+
+fn main() {
+    let mut q = Queue { front: vec(), back: push(vec(), 5) }
+    q.front = push(q.front, get(q.back, 0)?)
+    q.back = get(q.back, 1)?
+    for x in q.back {
+        print(x)
+        print_str("\n")
+    }
+}

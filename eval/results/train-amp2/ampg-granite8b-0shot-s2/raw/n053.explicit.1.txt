@@ -1,0 +1,13 @@
+fn reverse_drum(drum: &Str) -> Str {
+    let mut letters = clone(&drum)
+    let mut reversed = ""
+    while len(&letters) > 0 {
+        reversed = concat(reversed, get(&letters, 0).unwrap())
+        letters = drop_last(&letters)
+    }
+    reversed
+}
+
+fn main() {
+    print(reverse_drum("word"))
+}

@@ -1,0 +1,24 @@
+fn main() {
+    let mut number = None;
+    let mut word = None;
+    let mut number2 = None;
+
+    number = Some(8);
+    word = Some("oak");
+    number2 = Some(15);
+
+    match number {
+        Some(n) => println!("{}", n),
+        None => println!("bad"),
+    }
+
+    match word {
+        Some(w) => println!("{}", w),
+        None => println!("bad"),
+    }
+
+    match number2 {
+        Some(n) => println!("{}", n),
+        None => println!("bad"),
+    }
+}

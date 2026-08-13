@@ -1,0 +1,12 @@
+fn word_count(s: &Str) -> Int {
+    let chars: Vec<Str> = chars(s).collect()
+    chars.filter_eq(&str_len).count()
+}
+
+fn main() {
+    let phrase = "when in doubt go home"
+    let words = word_count(&phrase)
+    let chars = str_len(&phrase)
+    print(words)
+    print(chars)
+}

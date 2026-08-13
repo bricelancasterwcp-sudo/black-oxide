@@ -1,0 +1,6 @@
+fn main() {
+    let drum = "drum";
+    let mut reversed = drum.chars().rev().collect::<String>();
+    println!("{}", reversed);
+    println!("{}", drum);
+}

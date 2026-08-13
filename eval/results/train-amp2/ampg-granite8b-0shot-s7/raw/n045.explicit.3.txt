@@ -1,0 +1,10 @@
+fn print_log(log: &Vec<Int>) {
+    print(get(log, 0).unwrap())
+    print(get(log, (log.len() - 1) % log.len()).unwrap())
+}
+
+fn main() {
+    let log = vec(6, 7, 8, 9)
+    print_log(&log)
+    drop log
+}

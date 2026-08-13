@@ -1,0 +1,27 @@
+fn digit_count(s: Str) -> Int {
+    let mut digits = 0
+    let mut total = 0
+    for c in chars(s) {
+        if c.parse_int().is_some() {
+            digits = digits + 1
+            total = total + c.parse_int().unwrap()
+        }
+    }
+    return digits
+}
+
+fn digit_count2(s: Str) -> Int {
+    let mut digits = 0
+    for c in chars(s) {
+        if c.parse_int().is_some() {
+            digits = digits + 1
+        }
+    }
+    return digits
+}
+
+fn main() {
+    let s = "a1b22"
+    print(digit_count(s))
+    print(digit_count2(s))
+}

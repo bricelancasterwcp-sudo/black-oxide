@@ -1,0 +1,39 @@
+struct Reading { label: Str, values: Vec<Int> }
+
+fn largest(v: Vec<Int>) -> Int {
+    let mut largest = 0
+    for x in v {
+        if x > largest {
+            largest = x
+        }
+    }
+    largest
+}
+
+fn second_largest(v: Vec<Int>) -> Option<Int> {
+    let mut largest = 0
+    let mut second = 0
+    for x in v {
+        if x > largest {
+            second = largest
+            largest = x
+        } else if x > second {
+            second = x
+        }
+    }
+    if largest > second {
+        Some(second)
+    } else {
+        None
+    }
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(vec(), 12), 5) }
+    print(largest(r.values))
+    let r2 = Reading { label: "lab2", ..r }
+    match second_largest(r2.values) {
+        Some(n) => print(n),
+        None => print_str("no second largest"),
+    }
+}

@@ -1,0 +1,11 @@
+fn main() {
+    let mut positions = [None, Some(10), None, Some(20)];
+
+    for position in [1, 4] {
+        match positions[position - 1] {
+            Some(value) => println!("Position {} contains {}", position, value),
+            None => println!("Position {} is empty", position),
+        }
+    }
+}
+```

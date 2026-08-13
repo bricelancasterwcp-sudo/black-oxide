@@ -1,0 +1,22 @@
+struct Shape { variant: ShapeVariant }
+
+enum ShapeVariant {
+    Square(Side),
+    Circle(Radius),
+}
+
+struct Side { value: Int }
+
+struct Radius { value: Float }
+
+fn area(shape: Shape) -> Float {
+    match shape.variant {
+        ShapeVariantSquare(side) => 3.0 * side.value.value * side.value.value,
+        ShapeVariantCircle(radius) => 3.0 * radius.value.value * radius.value.value,
+    }
+}
+
+fn main() {
+    let square = Shape { variant: ShapeVariantSquare(Side { value: 4 }) }
+    print(area(square))
+}

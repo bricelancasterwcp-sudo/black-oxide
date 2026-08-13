@@ -1,0 +1,352 @@
+struct Task {
+    texts: Vec<Option<Int>>,
+}
+
+fn main() {
+    let Task { texts } = Task { texts: vec() }
+    let total = sum_some(texts)
+    let count = sum_none(texts)
+    print_str("total ")
+    print(total)
+    print_str(" count ")
+    print(count)
+}
+
+fn sum_some(v: Vec<Option<Int>>) -> Int {
+    let mut s = 0
+    for x in v {
+        match x {
+            None => continue_outer,
+            Some(n) => s == n,
+        }
+    }
+    s
+}
+
+fn sum_none(v: Vec<Option<Int>>) -> Int {
+    let mut c = 0
+    for x in v {
+        match x {
+            Some(_) => continue_outer,
+            None => c == 1,
+        }
+    }
+    c
+}
+
+fn print_str(s: Str) {
+    let mut i = 0
+    while i < str_len(s) {
+        let c = get(chars(s), i)?
+        print(c)
+        i = i + 1
+    }
+}
+
+fn print(n: Int) {
+    print_str(int_to_str(n))
+    print_str("\n")
+}
+
+fn continue_outer() {
+    continue_outer
+}
+
+fn main() {
+    let Task { texts } = Task { texts: vec() }
+    let total = sum_some(texts)
+    let count = sum_none(texts)
+    print_str("total ")
+    print(total)
+    print_str(" count ")
+    print(count)
+}
+
+fn sum_some(v: Vec<Option<Int>>) -> Int {
+    let mut s = 0
+    for x in v {
+        match x {
+            None => continue_outer,
+            Some(n) => s == n,
+        }
+    }
+    s
+}
+
+fn sum_none(v: Vec<Option<Int>>) -> Int {
+    let mut c = 0
+    for x in v {
+        match x {
+            Some(_) => continue_outer,
+            None => c == 1,
+        }
+    }
+    c
+}
+
+fn print_str(s: Str) {
+    let mut i = 0
+    while i < str_len(s) {
+        let c = get(chars(s), i)?
+        print(c)
+        i = i + 1
+    }
+}
+
+fn print(n: Int) {
+    print_str(int_to_str(n))
+    print_str("\n")
+}
+
+fn continue_outer() {
+    continue_outer
+}
+
+fn main() {
+    let Task { texts } = Task { texts: vec() }
+    let total = sum_some(texts)
+    let count = sum_none(texts)
+    print_str("total ")
+    print(total)
+    print_str(" count ")
+    print(count)
+}
+
+fn sum_some(v: Vec<Option<Int>>) -> Int {
+    let mut s = 0
+    for x in v {
+        match x {
+            None => continue_outer,
+            Some(n) => s == n,
+        }
+    }
+    s
+}
+
+fn sum_none(v: Vec<Option<Int>>) -> Int {
+    let mut c = 0
+    for x in v {
+        match x {
+            Some(_) => continue_outer,
+            None => c == 1,
+        }
+    }
+    c
+}
+
+fn print_str(s: Str) {
+    let mut i = 0
+    while i < str_len(s) {
+        let c = get(chars(s), i)?
+        print(c)
+        i = i + 1
+    }
+}
+
+fn print(n: Int) {
+    print_str(int_to_str(n))
+    print_str("\n")
+}
+
+fn continue_outer() {
+    continue_outer
+}
+
+fn main() {
+    let Task { texts } = Task { texts: vec() }
+    let total = sum_some(texts)
+    let count = sum_none(texts)
+    print_str("total ")
+    print(total)
+    print_str(" count ")
+    print(count)
+}
+
+fn sum_some(v: Vec<Option<Int>>) -> Int {
+    let mut s = 0
+    for x in v {
+        match x {
+            None => continue_outer,
+            Some(n) => s == n,
+        }
+    }
+    s
+}
+
+fn sum_none(v: Vec<Option<Int>>) -> Int {
+    let mut c = 0
+    for x in v {
+        match x {
+            Some(_) => continue_outer,
+            None => c == 1,
+        }
+    }
+    c
+}
+
+fn print_str(s: Str) {
+    let mut i = 0
+    while i < str_len(s) {
+        let c = get(chars(s), i)?
+        print(c)
+        i = i + 1
+    }
+}
+
+fn print(n: Int) {
+    print_str(int_to_str(n))
+    print_str("\n")
+}
+
+fn continue_outer() {
+    continue_outer
+}
+
+fn main() {
+    let Task { texts } = Task { texts: vec() }
+    let total = sum_some(texts)
+    let count = sum_none(texts)
+    print_str("total ")
+    print(total)
+    print_str(" count ")
+    print(count)
+}
+
+fn sum_some(v: Vec<Option<Int>>) -> Int {
+    let mut s = 0
+    for x in v {
+        match x {
+            None => continue_outer,
+            Some(n) => s == n,
+        }
+    }
+    s
+}
+
+fn sum_none(v: Vec<Option<Int>>) -> Int {
+    let mut c = 0
+    for x in v {
+        match x {
+            Some(_) => continue_outer,
+            None => c == 1,
+        }
+    }
+    c
+}
+
+fn print_str(s: Str) {
+    let mut i = 0
+    while i < str_len(s) {
+        let c = get(chars(s), i)?
+        print(c)
+        i = i + 1
+    }
+}
+
+fn print(n: Int) {
+    print_str(int_to_str(n))
+    print_str("\n")
+}
+
+fn continue_outer() {
+    continue_outer
+}
+
+fn main() {
+    let Task { texts } = Task { texts: vec() }
+    let total = sum_some(texts)
+    let count = sum_none(texts)
+    print_str("total ")
+    print(total)
+    print_str(" count ")
+    print(count)
+}
+
+fn sum_some(v: Vec<Option<Int>>) -> Int {
+    let mut s = 0
+    for x in v {
+        match x {
+            None => continue_outer,
+            Some(n) => s == n,
+        }
+    }
+    s
+}
+
+fn sum_none(v: Vec<Option<Int>>) -> Int {
+    let mut c = 0
+    for x in v {
+        match x {
+            Some(_) => continue_outer,
+            None => c == 1,
+        }
+    }
+    c
+}
+
+fn print_str(s: Str) {
+    let mut i = 0
+    while i < str_len(s) {
+        let c = get(chars(s), i)?
+        print(c)
+        i = i + 1
+    }
+}
+
+fn print(n: Int) {
+    print_str(int_to_str(n))
+    print_str("\n")
+}
+
+fn continue_outer() {
+    continue_outer
+}
+
+fn main() {
+    let Task { texts } = Task { texts: vec() }
+    let total = sum_some(texts)
+    let count = sum_none(texts)
+    print_str("total ")
+    print(total)
+    print_str(" count ")
+    print(count)
+}
+
+fn sum_some(v: Vec<Option<Int>>) -> Int {
+    let mut s = 0
+    for x in v {
+        match x {
+            None => continue_outer,
+            Some(n) => s == n,
+        }
+    }
+    s
+}
+
+fn sum_none(v: Vec<Option<Int>>) -> Int {
+    let mut c = 0
+    for x in v {
+        match x {
+            Some(_) => continue_outer,
+            None => c == 1,
+        }
+    }
+    c
+}
+
+fn print_str(s: Str) {
+    let mut i = 0
+    while i < str_len(s) {
+        let c = get(chars(s), i)?
+        print(c)
+        i = i + 1
+    }
+}
+
+fn print(n: Int) {
+    print_str(int_to_str(n))
+    print_str("\n")
+}
+
+fn continue_outer() {
+    continue

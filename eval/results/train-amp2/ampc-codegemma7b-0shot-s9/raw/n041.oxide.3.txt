@@ -1,0 +1,15 @@
+fn main() {
+    let mut v = vec(9, 2, 7, 4)
+    for x in range(0, len(v)) {
+        for y in range(x + 1, len(v)) {
+            if v.get(x) > v.get(y) {
+                v = push(v, get(v, x)? - get(v, y)?)
+                v = v.drain(x + 1, y + 1).collect()
+            }
+        }
+    }
+    for x in v {
+        print(x)
+        print_str("\n")
+    }
+}

@@ -1,0 +1,428 @@
+fn main() {
+    let product = multiply(multiply(multiply(multiply(multiply(1, 2), 3), 4), 5), 6)
+    print(product)
+    drop product
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn println(x: Int) {
+    print(x)
+    print("\n")
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn multiply(a: Int, b: Int) -> Int {

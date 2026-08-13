@@ -1,0 +1,13 @@
+fn second_entry<T>(list: &[T]) -> Option<&T> {
+    list.get(1)
+}
+
+fn main() {
+    let list7 = [7];
+    let list8 = [8, 8];
+    let list9 = [9, 9, 9];
+
+    println!("{:?}", second_entry(&list7)); // None
+    println!("{:?}", second_entry(&list8)); // Some(&8)
+    println!("{:?}", second_entry(&list9)); // Some(&9)
+}

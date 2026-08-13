@@ -1,0 +1,16 @@
+```rust
+use std::io;
+
+fn main() {
+    let (four_price, five_price) = (3, 2);
+    let (four_stock, five_stock) = (4, 5);
+
+    let four_value = four_price * four_stock;
+    let five_value = five_price * five_stock;
+    let total_value = four_value + five_value;
+
+    println!("Four lines value: {}", four_value);
+    println!("Five lines value: {}", five_value);
+    println!("Total lines value: {}", total_value);
+}
+```

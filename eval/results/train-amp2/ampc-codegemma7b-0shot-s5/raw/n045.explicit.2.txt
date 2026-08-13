@@ -1,0 +1,349 @@
+fn print_log_start_end(log: &Vec<Int>) {
+    let mut start = None
+    let mut end = None
+    for entry in log {
+        if start == None {
+            start = Some(entry)
+        }
+        end = Some(entry)
+    }
+    if letSome(first) == start {
+        print(first)
+    }
+    if letSome(last) == end {
+        print(last)
+    }
+}
+
+fn main() {
+    let log = push(push(push(vec(), 6), 7), 8)
+    push(log, 9)
+    print_log_start_end(&log)
+    drop log
+}
+
+fn print(x: Int) {
+    print_str(to_str(x))
+}
+
+fn to_str(n: Int) -> Str {
+    return str_len(int_to_str(n))
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn print_str(s: Str) {
+    print_str(s)
+}
+
+fn vec() -> Vec<T> {
+    vec()
+}
+
+fn int_to_str(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn str_len(s: Str) -> Int {
+    str_len(s)
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    get(v, i)
+}
+
+fn len(v: Vec<Int>) -> Int {
+    len(v)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    range(a, b)
+}
+
+fn clone(x: T) -> T {
+    clone(x)
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    concat(a, b)
+}
+
+fn drop_any(name: &Any) {
+    drop name
+}
+
+fn drop_int(name: Int) {
+    drop name
+}
+
+fn drop_float(name: Float) {
+    drop name
+}
+
+fn drop_bool(name: Bool) {
+    drop name
+}
+
+fn drop_str(name: Str) {
+    drop name
+}
+
+fn drop_unit(name: Unit) {
+    drop name
+}
+
+fn drop_vec(name: Vec<T>) {
+    drop name
+}
+
+fn drop_option(name: Option<T>) {
+    drop name
+}
+
+fn drop_result(name: Result<T, E>) {
+    drop name
+}
+
+fn drop_struct(name: MyStruct) {
+    drop name
+}
+
+fn drop_enum(name: MyEnum) {
+    drop name
+}
+
+fn drop_lifetime(name: &Lifetime) {
+    drop name
+}
+
+fn drop_raw_pointer(name: &RawPtr<T>) {
+    drop name
+}
+
+fn drop_arc(name: &Arc<T>) {
+    drop name
+}
+
+fn drop_sync(name: &Sync<T>) {
+    drop name
+}
+
+fn drop_cell(name: &Cell<T>) {
+    drop name
+}
+
+fn drop_refcell(name: &RefCell<T>) {
+    drop name
+}
+
+fn drop_rc(name: &Rc<T>) {
+    drop name
+}
+
+fn drop_unsafe_cell(name: &UnsafeCell<T>) {
+    drop name
+}
+
+fn drop_unique(name: &Unique<T>) {
+    drop name
+}
+
+fn drop_marker(name: &Marker) {
+    drop name
+}
+
+fn drop_mutex(name: &Mutex<T>) {
+    drop name
+}
+
+fn drop_channel(name: &Channel<T>) {
+    drop name
+}
+
+fn drop_thread(name: &Thread) {
+    drop name
+}
+
+fn drop_future(name: &Future<T>) {
+    drop name
+}
+
+fn drop_async(name: &Async<T>) {
+    drop name
+}
+
+fn drop_io(name: &IO<T>) {
+    drop name
+}
+
+fn drop_proc(name: &Proc<T>) {
+    drop name
+}
+
+fn drop_macro(name: &Macro<T>) {
+    drop name
+}
+
+fn drop_lifetime_ref(name: &LifetimeRef<T>) {
+    drop name
+}
+
+fn drop_lifetime_mut(name: &LifetimeMut<T>) {
+    drop name
+}
+
+fn drop_lifetime_a(name: &LifetimeA<T>) {
+    drop name
+}
+
+fn drop_lifetime_b(name: &LifetimeB<T>) {
+    drop name
+}
+
+fn drop_lifetime_c(name: &LifetimeC<T>) {
+    drop name
+}
+
+fn drop_lifetime_d(name: &LifetimeD<T>) {
+    drop name
+}
+
+fn drop_lifetime_e(name: &LifetimeE<T>) {
+    drop name
+}
+
+fn drop_lifetime_f(name: &LifetimeF<T>) {
+    drop name
+}
+
+fn drop_lifetime_g(name: &LifetimeG<T>) {
+    drop name
+}
+
+fn drop_lifetime_h(name: &LifetimeH<T>) {
+    drop name
+}
+
+fn drop_lifetime_i(name: &LifetimeI<T>) {
+    drop name
+}
+
+fn drop_lifetime_j(name: &LifetimeJ<T>) {
+    drop name
+}
+
+fn drop_lifetime_k(name: &LifetimeK<T>) {
+    drop name
+}
+
+fn drop_lifetime_l(name: &LifetimeL<T>) {
+    drop name
+}
+
+fn drop_lifetime_m(name: &LifetimeM<T>) {
+    drop name
+}
+
+fn drop_lifetime_n(name: &LifetimeN<T>) {
+    drop name
+}
+
+fn drop_lifetime_o(name: &LifetimeO<T>) {
+    drop name
+}
+
+fn drop_lifetime_p(name: &LifetimeP<T>) {
+    drop name
+}
+
+fn drop_lifetime_q(name: &LifetimeQ<T>) {
+    drop name
+}
+
+fn drop_lifetime_r(name: &LifetimeR<T>) {
+    drop name
+}
+
+fn drop_lifetime_s(name: &LifetimeS<T>) {
+    drop name
+}
+
+fn drop_lifetime_t(name: &LifetimeT<T>) {
+    drop name
+}
+
+fn drop_lifetime_u(name: &LifetimeU<T>) {
+    drop name
+}
+
+fn drop_lifetime_v(name: &LifetimeV<T>) {
+    drop name
+}
+
+fn drop_lifetime_w(name: &LifetimeW<T>) {
+    drop name
+}
+
+fn drop_lifetime_x(name: &LifetimeX<T>) {
+    drop name
+}
+
+fn drop_lifetime_y(name: &LifetimeY<T>) {
+    drop name
+}
+
+fn drop_lifetime_z(name: &LifetimeZ<T>) {
+    drop name
+}
+
+fn drop_lifetime_a_b(name: &LifetimeAB<T>) {
+    drop name
+}
+
+fn drop_lifetime_a_c(name: &LifetimeAC<T>) {
+    drop name
+}
+
+fn drop_lifetime_a_d(name: &LifetimeAD<T>) {
+    drop name
+}
+
+fn drop_lifetime_a_e(name: &LifetimeAE<T>) {
+    drop name
+}
+
+fn drop_lifetime_a_f(name: &LifetimeAF<T>) {
+    drop name
+}
+
+fn drop_lifetime_a_g(name: &LifetimeAG<T>) {
+    drop name
+}
+
+fn drop_lifetime_a_h(name: &LifetimeAH<T>) {
+    drop name
+}
+
+fn drop_lifetime_a_i(name: &LifetimeAI<T>) {
+    drop name
+}
+
+fn drop_lifetime_a_j(name: &LifetimeAJ<T>) {
+    drop name
+}
+
+fn drop_lifetime_a_k(name: &LifetimeAK<T>) {
+    drop name
+}
+
+fn drop_lifetime_a_l(name: &LifetimeAL<T>) {
+    drop name
+}
+
+fn drop_lifetime_a_m

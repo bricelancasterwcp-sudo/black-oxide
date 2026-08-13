@@ -1,0 +1,12 @@
+fn main() {
+    let mut total = 0
+    let mut count = 0
+    for i in range(1, 10) {
+        if i % 3 == 0 || i % 5 == 0 {
+            total = total + i
+            count = count + 1
+        }
+    }
+    print(total)
+    print(count)
+}

@@ -1,0 +1,17 @@
+struct StringReverser { original: Str, reversed: Str }
+
+fn reverse_string(s: Str) -> Str {
+    let mut chars = chars(s)
+    let mut reversed = Str("")
+    while letSome(c) == chars.next() {
+        reversed = concat(c, reversed)
+    }
+    reversed
+}
+
+fn main() {
+    let drum = "drum"
+    let reversed = reverse_string(drum)
+    print(reversed)
+    print(drum)
+}

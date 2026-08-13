@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut evens = Vec::new();
+    for i in 1..11 {
+        if i % 2 == 0 {
+            evens.push(i);
+        }
+    }
+    for i in (0..evens.len()).rev() {
+        println!("{}", evens[i]);
+    }
+}
+```

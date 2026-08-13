@@ -1,0 +1,13 @@
+fn main() {
+    let mut input = String::new();
+    std::io::stdin().read_line(&mut input).unwrap();
+    let answer = match input.trim().parse::<i32>() {
+        Ok(num) => match num {
+            8 => " bad",
+            15 => " bad",
+            _ => " oak",
+        },
+        Err(_) => " bad",
+    };
+    println!("{}", answer);
+}

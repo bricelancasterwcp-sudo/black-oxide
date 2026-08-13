@@ -1,0 +1,27 @@
+struct Reading { label: Str, values: Vec<Int> }
+
+fn sum_digits(n: Int) -> Int {
+    let mut acc = 0
+    for x in n.chars() {
+        acc = acc + x.to_int() - 48
+    }
+    acc
+}
+
+fn main() {
+    print(sum_digits(9875))
+}
+
+struct Reading { label: Str, values: Vec<Int> }
+
+fn sum_digits(n: Int) -> Int {
+    let mut acc = 0
+    for x in n.chars() {
+        acc = acc + x.to_int() - 48
+    }
+    acc
+}
+
+fn main() {
+    print(sum_digits(9875))
+}

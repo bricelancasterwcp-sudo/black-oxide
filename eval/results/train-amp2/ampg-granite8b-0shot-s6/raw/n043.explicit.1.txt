@@ -1,0 +1,10 @@
+fn main() {
+    let mut q = push(push(push(push(vec(), 1), 2), 3), 4)
+    let front = q.pop().unwrap()
+    let back = q.pop().unwrap()
+    q = push(q, front)
+    q = push(q, back)
+    while !q.is_empty() {
+        print(q.pop().unwrap())
+    }
+}

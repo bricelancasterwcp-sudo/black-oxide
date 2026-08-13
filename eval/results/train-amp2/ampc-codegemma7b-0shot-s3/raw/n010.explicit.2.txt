@@ -1,0 +1,19 @@
+fn is_prime(x: Int) -> Bool {
+    if x <= 1 {
+        return false
+    }
+    for i in 2.to_int() {
+        if i * i > x {
+            break
+        }
+        if x % i == 0 {
+            return false
+        }
+    }
+    true
+}
+
+fn main() {
+    let n = parse_int(get_line()?).unwrap()
+    print(if is_prime(n) { "yes" } else { "no" })
+}

@@ -1,0 +1,8 @@
+fn main() {
+    let nums = vec(4, 7, 4, 9, 4)
+    for i in range(0, len(nums)) {
+        if get(nums, i)? == 4 {
+            print(i)
+        }
+    }
+}

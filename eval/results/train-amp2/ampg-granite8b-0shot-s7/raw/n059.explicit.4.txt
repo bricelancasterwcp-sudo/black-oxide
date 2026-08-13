@@ -1,0 +1,17 @@
+fn word_counter(phrase: &Str) -> Int {
+    let mut count = 0
+    for c in &chars_utf8 {
+        if c.is_whitespace() {
+            if count > 0 {
+                count = count + 1
+            }
+        } else {
+            count = 1
+        }
+    }
+    count
+}
+
+fn main() {
+    print(word_counter("When in doubt go home."))
+}

@@ -1,0 +1,9 @@
+fn main() {
+    let figures = vec(8, 3, 11, 6)
+    let smallest = figures.clone().into_iter().min().unwrap()
+    let largest = figures.clone().into_iter().max().unwrap()
+    print(smallest)
+    print_str(" ")
+    print(largest - smallest)
+    drop figures
+}

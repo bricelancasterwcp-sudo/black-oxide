@@ -1,8 +1,0 @@
-fn main() {
-    let v = vec![4, 7, 4, 9, 4];
-    for (i, x) in v.iter().enumerate() {
-        if *x == 4 {
-            println!("{}", i);
-        }
-    }
-}

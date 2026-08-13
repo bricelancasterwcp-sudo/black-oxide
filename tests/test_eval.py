@@ -47,7 +47,7 @@ ARMS = ("oxide", "explicit", "rust")
 EXT = {"oxide": "ox", "explicit": "ox", "rust": "rs"}
 SUBMISSION_CAP = 4
 
-TASK_KEYS = {"id", "title", "prompt", "expected_stdout", "difficulty"}
+TASK_KEYS = {"id", "title", "prompt", "expected_stdout", "difficulty", "class"}
 DIAG_KEYS = {"code", "col", "end_col", "end_line", "line", "message", "notes",
              "suggestion"}
 NOTE_KEYS = {"col", "line"}

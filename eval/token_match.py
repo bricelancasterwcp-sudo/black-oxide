@@ -10,8 +10,10 @@ without the real tokenizer (Task 5 supplies the pinned Qwen counter).
 from __future__ import annotations
 
 import hashlib
+import json
 from collections.abc import Callable
 from dataclasses import dataclass
+from pathlib import Path
 
 from eval.train_corpus import normalize_source
 
@@ -158,4 +160,58 @@ def build_matched(
         dropped=tuple(sorted(dropped, key=lambda d: (d.cls, d.arm, d.sha256, d.task))),
         budgets=tuple(budgets),
         prompt_tokens=prompt_tokens,
+    )
+
+
+MANIFEST_KEYS = frozenset({
+    "tokenizer", "classes", "totals", "prompt_tokens",
+    "dropped", "counts_source", "contamination", "token_efficiency",
+})
+
+
+def _example_row(e: Example) -> dict:
+    return {"task": e.task, "class": e.cls, "source": e.source,
+            "text": e.text, "sha256": e.sha256, "sup_tokens": e.sup_tokens}
+
+
+def write_matched(
+    out_dir: Path,
+    result: MatchResult,
+    *,
+    tokenizer: dict,
+    counts_source: dict,
+    contamination: dict,
+    token_efficiency: dict,
+) -> None:
+    """Serialize a MatchResult; byte-identical for equal inputs, no timestamps."""
+    out_dir.mkdir(parents=True, exist_ok=True)
+    for arm in ARMS:
+        lines = [json.dumps(_example_row(e), ensure_ascii=False, sort_keys=True)
+                 for e in result.kept[arm]]
+        (out_dir / f"{arm}.jsonl").write_text("\n".join(lines) + "\n", encoding="utf-8")
+    manifest = {
+        "tokenizer": tokenizer,
+        "classes": [
+            {"class": b.cls, "budget": b.budget, "kept_tokens": b.kept_tokens,
+             "kept_examples": b.kept_examples, "gap": b.gap,
+             "quantization_step": b.quantization_step}
+            for b in result.budgets
+        ],
+        "totals": {
+            "kept_tokens": {arm: sum(e.sup_tokens for e in result.kept[arm]) for arm in ARMS},
+            "kept_examples": {arm: len(result.kept[arm]) for arm in ARMS},
+        },
+        "prompt_tokens": result.prompt_tokens,
+        "dropped": [
+            {"task": d.task, "arm": d.arm, "class": d.cls,
+             "sha256": d.sha256, "sup_tokens": d.sup_tokens}
+            for d in result.dropped
+        ],
+        "counts_source": counts_source,
+        "contamination": contamination,
+        "token_efficiency": token_efficiency,
+    }
+    (out_dir / "manifest.json").write_text(
+        json.dumps(manifest, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8",
     )

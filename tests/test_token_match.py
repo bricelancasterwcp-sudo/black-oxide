@@ -3,14 +3,18 @@
 All tests use a word-count token counter so the core is exercised
 without the real tokenizer; Task 5 adds the real-counter path.
 """
+import json
+
 import pytest
 
 from eval.token_match import (
     ARMS,
     Example,
+    MANIFEST_KEYS,
     MatchError,
     build_matched,
     sha256_hex,
+    write_matched,
 )
 
 
@@ -141,3 +145,60 @@ def test_prompt_tokens_reported_per_arm():
     for arm in ARMS:
         expected = sum(words(tasks[e.task]["prompt"]) for e in result.kept[arm])
         assert result.prompt_tokens[arm] == expected
+
+
+def build_and_write(tmp_path):
+    tasks, references, amplified = corpus()
+    result = build_matched(tasks, references, amplified, words)
+    write_matched(
+        tmp_path,
+        result,
+        tokenizer={"id": "test", "sha256": "0" * 64},
+        counts_source={"roots": ["r1"], "commit": "abc"},
+        contamination={"hits": 0, "programs_checked": 9},
+        token_efficiency={"references": {}, "amplified": {}},
+    )
+    return result
+
+
+def test_write_is_byte_deterministic(tmp_path):
+    a_dir, b_dir = tmp_path / "a", tmp_path / "b"
+    a_dir.mkdir(); b_dir.mkdir()
+    tasks, references, amplified = corpus()
+    kwargs = dict(
+        tokenizer={"id": "test", "sha256": "0" * 64},
+        counts_source={"roots": ["r1"], "commit": "abc"},
+        contamination={"hits": 0, "programs_checked": 9},
+        token_efficiency={"references": {}, "amplified": {}},
+    )
+    write_matched(a_dir, build_matched(tasks, references, amplified, words), **kwargs)
+    write_matched(b_dir, build_matched(
+        dict(reversed(list(tasks.items()))), references, amplified, words), **kwargs)
+    for name in ("oxide.jsonl", "rust.jsonl", "manifest.json"):
+        assert (a_dir / name).read_bytes() == (b_dir / name).read_bytes()
+
+
+def test_manifest_completeness(tmp_path):
+    build_and_write(tmp_path)
+    manifest = json.loads((tmp_path / "manifest.json").read_text(encoding="utf-8"))
+    assert set(manifest) == set(MANIFEST_KEYS)
+    for row in manifest["classes"]:
+        assert set(row) == {"class", "budget", "kept_tokens",
+                            "kept_examples", "gap", "quantization_step"}
+    for row in manifest["dropped"]:
+        assert set(row) == {"task", "arm", "class", "sha256", "sup_tokens"}
+    assert set(manifest["totals"]) == {"kept_tokens", "kept_examples"}
+
+
+def test_jsonl_round_trip_matches_result(tmp_path):
+    result = build_and_write(tmp_path)
+    for arm in ARMS:
+        rows = [json.loads(line) for line in
+                (tmp_path / f"{arm}.jsonl").read_text(encoding="utf-8").splitlines()]
+        assert [
+            (r["task"], r["class"], r["source"], r["text"], r["sha256"], r["sup_tokens"])
+            for r in rows
+        ] == [
+            (e.task, e.cls, e.source, e.text, e.sha256, e.sup_tokens)
+            for e in result.kept[arm]
+        ]

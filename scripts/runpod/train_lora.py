@@ -47,10 +47,15 @@ class Examples(torch.utils.data.Dataset):
             user = harness.build_prompt(
                 arm, rec["task"], tasks_path=TRAIN_TASKS, include_lead=False
             )
-            prompt_ids = tok.apply_chat_template(
+            # Render as a STRING (the form the F2 gate byte-verified against
+            # llama-server) and tokenize explicitly: apply_chat_template's
+            # tokenize=True return type varies across transformers versions
+            # (list vs BatchEncoding) — crashed live on the pod.
+            rendered = tok.apply_chat_template(
                 [{"role": "user", "content": user}],
-                add_generation_prompt=True, tokenize=True,
+                add_generation_prompt=True, tokenize=False,
             )
+            prompt_ids = tok(rendered, add_special_tokens=False)["input_ids"]
             prog_ids = tok(rec["text"], add_special_tokens=False)["input_ids"]
             prog_ids = prog_ids + [tok.eos_token_id]
             ids = (prompt_ids + prog_ids)[:MAX_LEN]

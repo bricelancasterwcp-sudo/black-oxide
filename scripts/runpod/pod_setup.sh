@@ -13,6 +13,11 @@ if ! command -v rustc >/dev/null; then
 fi
 if [ ! -d llama.cpp ]; then
   git clone https://github.com/ggml-org/llama.cpp.git
+fi
+if [ ! -x llama.cpp/build/bin/llama-server ]; then
+  # the runpod/pytorch image ships nvcc off PATH (learned on pod g41ma10i0c35kv)
+  export CUDACXX=/usr/local/cuda/bin/nvcc
+  export PATH=/usr/local/cuda/bin:$PATH
   cmake -S llama.cpp -B llama.cpp/build -DGGML_CUDA=ON -DCMAKE_BUILD_TYPE=Release
   cmake --build llama.cpp/build -j "$(nproc)" --target llama-server llama-quantize
 fi

@@ -405,7 +405,15 @@ def test_calling_an_int_local_reports_not_callable() -> None:
         pytest.param("fn f() { print(zzz) }", "OX0200", id="unknown-identifier"),
         pytest.param("fn f() { print(len) }", "OX0201", id="builtin-as-value"),
         pytest.param("fn f() { }\nfn f() { }", "OX0203", id="duplicate-fn"),
-        pytest.param("fn print() { }", "OX0203", id="fn-clashes-with-builtin"),
+        # A `fn` clashing with a builtin no longer reports OX0203: the fix
+        # round (2026-08-28, dossier-4 "builtin-shadowing" ruling) makes
+        # this a program-wide SHADOW instead of a collision -- covered in
+        # tests/test_v04_shadowing.py, not here. Struct/enum names are NOT
+        # covered by that exception and still hard-clash unconditionally,
+        # which this case now exercises instead.
+        pytest.param(
+            "struct print { x: Int }", "OX0203", id="struct-clashes-with-builtin"
+        ),
         pytest.param("fn f(a: Int, a: Int) { }", "OX0204", id="duplicate-param"),
         pytest.param(
             "struct P { x: Int, y: Int }\nfn f(p: P) { let P { x, x } = p }",

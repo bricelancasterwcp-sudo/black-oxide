@@ -34,6 +34,7 @@ from src.codegen.support import (
     exposed_struct_lit,
     float_repr,
     iter_nodes,
+    prelude_for,
     rust_string,
     rust_type,
     span_key,
@@ -44,7 +45,7 @@ from src.diagnostics import Diagnostic
 from src.parser import ast
 from src.sema.analyze import SemaResult, analyze
 from src.sema.linear import DropPoint
-from src.sema.types import UNIT, is_copy
+from src.sema.types import BUILTINS, UNIT, is_copy
 
 # ------------------------------------------------------------------ public API
 
@@ -58,6 +59,14 @@ def emit_rust(res: SemaResult) -> str:
         raise ValueError("emit_rust: SemaResult has diagnostics")
     renames = type_renames(res.module)
     eq_types = eq_derive_types(res)
+    # Fix round (dossier-4 builtin shadowing): a user `fn` sharing a
+    # builtin's name makes that builtin unreachable program-wide (resolve.py
+    # routes every reachable call site to the user's fn and rejects the
+    # method-sugar route entirely) -- keeping its prelude definition would
+    # only leave a dead item colliding with the user's same-named fn as a
+    # duplicate top-level Rust definition (E0428), so it is omitted.
+    shadowed_builtins = frozenset(res.resolve.fns) & frozenset(BUILTINS)
+    prelude_text = PRELUDE if not shadowed_builtins else prelude_for(shadowed_builtins)
     items: list[str] = []
     has_main = False
     for item in res.module.items:
@@ -72,7 +81,7 @@ def emit_rust(res: SemaResult) -> str:
                 items.append(_FnEmitter(res, item, renames).emit())
     if not has_main:
         items.append("fn main() {}")
-    return HEADER + "\n\n" + PRELUDE + "\n\n" + "\n\n".join(items) + "\n"
+    return HEADER + "\n\n" + prelude_text + "\n\n" + "\n\n".join(items) + "\n"
 
 
 def transpile(source: str) -> tuple[str | None, list[Diagnostic]]:
@@ -679,10 +688,20 @@ class _FnEmitter:
         return f"{callee}({', '.join(args_out)})"
 
     def _ref_required(self, callee: str, index: int) -> bool:
-        """Does this argument position require ref-form (section 22)?"""
-        table = BUILTIN_REF.get(callee)
-        if table is not None:
-            return index < len(table) and table[index]
+        """Does this argument position require ref-form (section 22)?
+
+        Fix round (dossier-4 builtin shadowing): BUILTIN_REF is a static
+        per-builtin-name table describing the ALWAYS-generic prelude
+        signature, so it only applies while ``callee`` genuinely still
+        dispatches there. A shadowing user fn of the same name (e.g. a
+        user `contains`) is monomorphized like any other user fn -- its
+        ref-ness must come from the modes+is_copy computation below, not
+        from the unrelated builtin's fixed signature.
+        """
+        if callee not in self.res.resolve.fns:
+            table = BUILTIN_REF.get(callee)
+            if table is not None:
+                return index < len(table) and table[index]
         modes = self.res.modes.modes.get(callee, ())
         if index >= len(modes) or modes[index] != "read":
             return False

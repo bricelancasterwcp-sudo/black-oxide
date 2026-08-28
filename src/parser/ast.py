@@ -211,6 +211,16 @@ class Call:
     span: Span
     callee: Expr
     args: tuple[Expr, ...]
+    # Fix round (dossier-4 builtin shadowing, 2026-08-28): True only for a
+    # Call synthesized by §53's receiver-first method-call sugar
+    # (`_builtin_method`). Additive default so every other Call
+    # construction site (hand-written calls, §55's vec(...) push-chain
+    # desugar) is unaffected; resolve.py reads it to refuse method-form
+    # dispatch to a builtin name a user `fn` has shadowed (method syntax
+    # is builtins-only) without needing to distinguish sugar from a
+    # hand-written call anywhere else -- `dump()` deliberately does not
+    # print this field, so the §53/§55 byte-identity tests are unaffected.
+    via_method_sugar: bool = False
 
 
 @dataclass(frozen=True, slots=True)

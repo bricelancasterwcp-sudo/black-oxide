@@ -350,7 +350,9 @@ class _ExprParserMixin:
         self._skip_nl, self._no_struct_lit = saved
         span = Span(receiver.span.start, rparen.span.end)
         callee = Var(self._new_id(), name_tok.span, name_tok.lexeme)
-        return Call(self._new_id(), span, callee, tuple(args))
+        return Call(
+            self._new_id(), span, callee, tuple(args), via_method_sugar=True
+        )
 
     def _desugar_vec_call(
         self, vec_var: Var, args: list[Expr], call_span: Span

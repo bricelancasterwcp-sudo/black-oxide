@@ -98,6 +98,13 @@ repair capability transfers from generation-only training is a finding.
 Building a seeded-defect training pipeline for both arms is scope this
 track does not need yet — recorded as a limitation.
 
+> **Amended 2026-08-27 (experiment plan):** "bare prompt" means bare of
+> lead material (card/preamble). The arm-neutral `OUTPUT_CONTRACT` is
+> included in the training user turn so the train and eval renderings
+> are byte-equal (`harness.build_prompt(..., include_lead=False)` is
+> the single rendering function for both). Prompt tokens were never
+> matched, only reported, so this changes no budget.
+
 **5. Corpus composition: references plus amplified, references never
 trimmed.** Each task contributes its reference solution and its
 amplified verified programs, per arm. Trimming touches amplified

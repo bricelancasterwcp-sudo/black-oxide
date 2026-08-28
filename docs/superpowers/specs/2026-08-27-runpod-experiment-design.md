@@ -215,6 +215,14 @@ this repo's series, with the withdrawn-claims discipline in force.
 Every new instrument follows the house test discipline (mutation-tested
 tests, real-data acceptance pins where committed data exists).
 
+> **Amended 2026-08-27 (implementation):** the K=4 repair loop already
+> exists — `harness.Session`/`driver.run_session` implement exactly the
+> spec's loop (MAX_ATTEMPTS=4, diagnostics fed back, per-session token
+> accounting). The `eval/repair_loop.py` row is withdrawn; the metric
+> extraction lands in `eval/experiment_report.py` instead. Also
+> amended: the base-rs arms keep `RUST_PREAMBLE` (their measured lead
+> condition); the card table's "no" refers to the language card only.
+
 ## Honest limits
 
 - Pilot-scale corpus: ~17k supervised tokens per arm. The

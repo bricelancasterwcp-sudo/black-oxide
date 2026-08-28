@@ -45,6 +45,7 @@ def run_session(
     raw_dir: Path,
     tasks_path: Path | None = None,
     seed: int = 1,
+    include_lead: bool = True,
 ) -> dict:
     """Drive one task/arm to a verdict or the attempt cap.
 
@@ -82,7 +83,9 @@ def run_session(
         tasks_path=tasks_path,
         results_root=results_root,
     )
-    prompt = harness.build_prompt(arm, task_id, shots=shots, tasks_path=tasks_path)
+    prompt = harness.build_prompt(
+        arm, task_id, shots=shots, tasks_path=tasks_path, include_lead=include_lead
+    )
     raw_dir.mkdir(parents=True, exist_ok=True)
 
     compliant: list[bool] = []
@@ -129,6 +132,7 @@ def run_session(
             task_id=task_id,
             shots=shots,
             tasks_path=tasks_path,
+            include_lead=include_lead,
         )
 
     # first/verdict are always populated by this point -- the

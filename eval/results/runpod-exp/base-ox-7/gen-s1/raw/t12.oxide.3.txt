@@ -1,0 +1,3 @@
+```rust
+print_str(concat(int_to_str(str_len("stack")).map(|i| chars("stack")[str_len("stack") - i - 1]).collect(), ""))
+```

@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let mut a = 1;
+    let mut b = 1;
+
+    for _ in 0..18 { // Changed from 19 to 18 because we need to reach the 20th term
+        let temp = a + b;
+        a = b;
+        b = temp;
+    }
+
+    println!("The 20th term is {}", b);
+}
+```

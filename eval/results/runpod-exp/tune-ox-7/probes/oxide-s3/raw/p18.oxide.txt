@@ -1,0 +1,6 @@
+fn main() {
+    let s = "abcdefghij"
+    print(str_len(s))
+    let t = concat(s, copy(s))
+    print(str_len(t))
+}

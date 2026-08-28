@@ -1,0 +1,9 @@
+```
+fn main() {
+    let o = Some(concat("ab", "cd"));
+    match clone(o) {
+        Some(s) => print(str_len(s) * 5),
+        None => print(0),
+    }
+}
+```

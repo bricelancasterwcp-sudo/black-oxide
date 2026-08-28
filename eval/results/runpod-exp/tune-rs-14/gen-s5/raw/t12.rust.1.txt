@@ -1,0 +1,7 @@
+fn main() {
+    let s = "stack";
+    let mut chars: Vec<char> = s.chars().collect();
+    chars.reverse();
+    let reversed_s: String = chars.into_iter().collect();
+    println!("{}", reversed_s);
+}

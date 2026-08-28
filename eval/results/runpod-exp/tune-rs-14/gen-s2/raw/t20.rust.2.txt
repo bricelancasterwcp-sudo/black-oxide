@@ -1,0 +1,18 @@
+fn main() {
+    let pen = (3, 4);
+    let pad = (9, 2);
+    let ink = (5, 3);
+    let items = vec![pen, pad, ink];
+    let total_cost: u32 = items.iter().map(|&(price, quantity)| price * quantity).sum();
+    println!("{}", total_cost);
+    let mut max_cost = 0;
+    let mut max_item = "";
+    for (name, &(price, quantity)) in vec![("pen", &pen), ("pad", &pad), ("ink", &ink)].iter() {
+        let cost = price * quantity;
+        if cost > max_cost {
+            max_cost = cost;
+            max_item = name;
+        }
+    }
+    println!("{}", max_item);
+}

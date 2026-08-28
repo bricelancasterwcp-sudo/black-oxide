@@ -1,0 +1,27 @@
+fn count_s_and_distinct(s: Str) -> (Int, Int) {
+    let mut s_count = 0
+    let mut seen = Vec<Bool>()
+    for c in chars(s) {
+        if c == "s" {
+            s_count = s_count + 1
+        }
+        let mut is_new = True
+        for sc in seen.clone() {
+            if sc == (c == "s") {
+                is_new = False
+                break
+            }
+        }
+        if is_new {
+            seen = push(seen, c == "s")
+        }
+    }
+    (s_count, len(seen))
+}
+
+fn main() {
+    let text = "mississippi"
+    let (s_count, distinct_count) = count_s_and_distinct(text)
+    print(s_count)
+    print(distinct_count)
+}

@@ -1,0 +1,20 @@
+```rust
+fn main() {
+    let result = divide(100, 5);
+    println!("{}", result);
+
+    let result = divide(100, 0);
+    println!("{}", result);
+
+    let result = divide(100, 4);
+    println!("{}", result);
+}
+
+fn divide(dividend: Int, divisor: Int) -> Option<Int> {
+    if divisor == 0 {
+        None
+    } else {
+        Some(dividend / divisor)
+    }
+}
+```

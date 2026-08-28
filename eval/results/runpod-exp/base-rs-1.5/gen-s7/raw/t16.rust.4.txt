@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let dividend = 100;
+    println!("Dividing {} by 5:", dividend);
+    if dividend % 5 == 0 {
+        println!("{}", dividend / 5);
+    } else {
+        println!("undefined");
+    }
+
+    println!("\nDividing {} by 4:", dividend);
+    if dividend % 4 == 0 {
+        println!("{}", dividend / 4);
+    } else {
+        println!("undefined");
+    }
+}
+```

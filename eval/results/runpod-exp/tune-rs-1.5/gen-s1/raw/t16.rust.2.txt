@@ -1,0 +1,11 @@
+fn main() {
+    let mut x = 100;
+    for y in [5, 0, 4] {
+        if y == 0 {
+            println!("undefined");
+        } else {
+            println!("{}", x / y);
+            x %= y;
+        }
+    }
+}

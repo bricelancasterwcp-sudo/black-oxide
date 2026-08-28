@@ -1,0 +1,17 @@
+fn main() {
+    let mut total_cost = 0;
+    let mut max_price_item_name = "";
+    for (name, price, quantity) in [
+        ("pen", 3, 4),
+        ("pad", 9, 2),
+        ("ink", 5, 3),
+    ] {
+        let item_cost = price * quantity;
+        total_cost += item_cost;
+        if item_cost > total_cost {
+            max_price_item_name = name;
+        }
+    }
+    println!("{}", total_cost);
+    println!("{}", max_price_item_name);
+}

@@ -1,0 +1,15 @@
+struct Item { name: Str, price: Int, quantity: Int }
+fn main() {
+    let pen = Item { name: "pen", price: 3, quantity: 4 }
+    let pad = Item { name: "pad", price: 9, quantity: 2 }
+    let ink = Item { name: "ink", price: 5, quantity: 3 }
+    let total = pen.price * pen.quantity + pad.price * pad.quantity + ink.price * ink.quantity
+    print(total)
+    if pen.price * pen.quantity > pad.price * pad.quantity && pen.price * pen.quantity > ink.price * ink.quantity {
+        print(pen.name)
+    } else if pad.price * pad.quantity > ink.price * ink.quantity {
+        print(pad.name)
+    } else {
+        print(ink.name)
+    }
+}

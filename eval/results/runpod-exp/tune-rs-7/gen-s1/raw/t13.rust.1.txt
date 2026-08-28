@@ -1,0 +1,6 @@
+fn main() {
+    let words = ["level", "stereo", "rotor"];
+    for word in words {
+        println!("{}", word.chars().eq(word.chars().rev()));
+    }
+}

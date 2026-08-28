@@ -1,0 +1,11 @@
+```
+struct Pair { a: Vec<Int>, b: Str }
+
+fn main() {
+    let s = Pair { a: push(push(vec(), 1), 2), b: "hello" }
+    let s2 = Pair { a: clone(s.a), b: clone(s.b) }
+    print(len(s2.a))
+    print(str_len(s2.b))
+    print(str_len(s2.b))
+}
+```

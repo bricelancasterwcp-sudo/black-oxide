@@ -1,0 +1,18 @@
+fn main() {
+    let pen = ("pen", 3, 4);
+    let pad = ("pad", 9, 2);
+    let ink = ("ink", 5, 3);
+    let items = [pen, pad, ink];
+    let total_cost: i32 = items.iter().map(|&(name, price, quantity)| price * quantity).sum();
+    println!("{}", total_cost);
+    let mut max_cost = 0;
+    let mut max_item = "";
+    for &(name, price, quantity) in &items {
+        let cost = price * quantity;
+        if cost > max_cost {
+            max_cost = cost;
+            max_item = name;
+        }
+    }
+    println!("{}", max_item);
+}

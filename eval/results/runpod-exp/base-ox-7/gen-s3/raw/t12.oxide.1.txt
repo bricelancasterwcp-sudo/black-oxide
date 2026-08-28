@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let s = "stack";
+    for c in chars(s).rev() {
+        print(c);
+    }
+}
+```

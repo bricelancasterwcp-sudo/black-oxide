@@ -1,0 +1,8 @@
+```text
+fn main() {
+    let s = "abcdefghij"
+    print(str_len(s))
+    let t = concat(clone(s), s)
+    print(str_len(t))
+}
+```

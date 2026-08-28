@@ -1,0 +1,19 @@
+```rust
+struct List { elements: Vec<Int> }
+
+fn main() {
+    let list = List { elements: vec![10, 20, 30] };
+    
+    if let Some(element) = get(&list.elements, 1) {
+        print(element);
+    } else {
+        print(-1);
+    }
+    
+    if let Some(element) = get(&list.elements, 4) {
+        print(element);
+    } else {
+        print(-1);
+    }
+}
+```

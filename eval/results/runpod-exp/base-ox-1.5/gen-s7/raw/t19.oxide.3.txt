@@ -1,0 +1,12 @@
+```rust
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn main() {
+    let r = Rectangle { width: 7, height: 4 };
+    print(int_to_str(r.area()));            // field access copies: r stays usable
+    print(int_to_str(r.perimeter()));
+}
+```

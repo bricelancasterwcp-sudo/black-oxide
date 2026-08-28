@@ -1,0 +1,16 @@
+```rust
+struct Reading { label: Str, values: Vec<Int> }
+
+fn get_or_default(v: Vec<Int>, i: Int) -> Int {
+    match get(v, i) {
+        Some(x) => x,
+        None => -1,
+    }
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(push(vec(), 10), 20), 30) }
+    print(get_or_default(r.values, 1))  // should print 20
+    print(get_or_default(r.values, 5))  // should print -1
+}
+```

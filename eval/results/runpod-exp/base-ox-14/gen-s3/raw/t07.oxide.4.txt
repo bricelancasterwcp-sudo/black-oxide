@@ -1,0 +1,1 @@
+fn main() { let mut multiples = vec(); let mut sum = 0; for i in range(1, 9) { let multiple = i * 3; multiples = push(multiples, multiple); sum = sum + multiple } print(sum) }

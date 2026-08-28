@@ -1,0 +1,22 @@
+fn main() {
+    let shapes = [
+        Shape::Rectangle(3, 4),
+        Shape::Triangle(3, 4, 5),
+        Shape::Rectangle(2, 5),
+    ];
+    for shape in shapes {
+        println!("{}", shape.perimeter());
+    }
+}
+enum Shape {
+    Rectangle(i64, i64),
+    Triangle(i64, i64, i64),
+}
+impl Shape {
+    fn perimeter(&self) -> i64 {
+        match self {
+            Shape::Rectangle(a, b) => 2 * (a + b),
+            Shape::Triangle(a, b, c) => a + b + c,
+        }
+    }
+}

@@ -1,0 +1,7 @@
+fn main() {
+    let s = "stack";
+    let chars: Vec<char> = s.chars().collect();
+    for c in chars.iter().rev() {
+        print!("{}", c);
+    }
+}

@@ -1,0 +1,5 @@
+fn main() {
+    let s = "mississippi";
+    println!("{}", s.matches('s').count());
+    println!("{}", s.chars().collect::<std::collections::HashSet<_>>().len());
+}

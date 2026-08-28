@@ -1,0 +1,19 @@
+struct Rectangle { width: Int, height: Int }
+fn perimeter(r: Rectangle) -> Int {
+    2 * (r.width + r.height)
+}
+fn sum(v: Vec<Int>) -> Int {
+    let mut acc = 0
+    for x in v {
+        acc = acc + x
+    }
+    acc
+}
+fn main() {
+    let r1 = Rectangle { width: 3, height: 4 }
+    print(perimeter(r1))
+    let t1 = Triangle { sides: vec(3, 4, 5) }
+    print(sum(t1.sides))
+    let r2 = Rectangle { width: 2, height: 5 }
+    print(perimeter(r2))
+}

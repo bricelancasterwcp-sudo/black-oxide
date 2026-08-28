@@ -1,0 +1,9 @@
+fn main() {
+    for &d in &[5, 0, 4] {
+        if d == 0 {
+            println!("undefined");
+        } else {
+            println!("{}", 100 / d);
+        }
+    }
+}

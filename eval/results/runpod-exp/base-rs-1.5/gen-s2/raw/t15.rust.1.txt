@@ -1,0 +1,21 @@
+```rust
+fn main() {
+    let numbers = vec!["12", "x", "30"];
+    let mut valid_sum: i32 = 0;
+    let mut invalid_count: usize = 0;
+
+    for number in numbers {
+        match number.parse::<i32>() {
+            Ok(num) => {
+                valid_sum += num;
+            }
+            Err(_) => {
+                invalid_count += 1;
+            }
+        }
+    }
+
+    println!("Sum of valid integers: {}", valid_sum);
+    println!("Count of invalid integers: {}", invalid_count);
+}
+```

@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let mut list = vec![10, 20, 30];
+    println!("{}", list[1]); // Output: 20
+    println!("{}", list[4]); // Output: -1 (position 5 is out of bounds)
+}
+```

@@ -1,0 +1,10 @@
+fn main() {
+    let a = 1
+    let b = 1
+    for _ in range(0, 18) {
+        let temp = a + b
+        a = b
+        b = temp
+    }
+    print(b)
+}

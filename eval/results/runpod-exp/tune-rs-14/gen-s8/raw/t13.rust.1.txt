@@ -1,0 +1,6 @@
+fn main() {
+    for word in ["level", "stereo", "rotor"] {
+        let reversed: String = word.chars().rev().collect();
+        println!("{}", word == reversed);
+    }
+}

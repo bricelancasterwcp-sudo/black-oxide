@@ -1,0 +1,12 @@
+fn gcd(a: Int, b: Int) -> Int {
+    let mut r = rem(a, b)
+    while r != 0 {
+        a = b
+        b = r
+        r = rem(a, b)
+    }
+    b
+}
+fn main() {
+    print(gcd(252, 105))
+}

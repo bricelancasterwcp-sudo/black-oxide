@@ -1,0 +1,12 @@
+fn main() {
+    let o = Some(concat("ab", "cd"))
+    match o {
+        Some(s) => print(str_len(s) * 5),
+        None => print(0),
+    }
+    if let Some(s) = clone(o) {
+        print(str_len(s) * 6)
+    } else {
+        print(0)
+    }
+}

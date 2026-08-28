@@ -1,0 +1,18 @@
+fn f(o: Option<Vec<Int>>) -> Option<Int> {
+    let v = o.as_ref().map(|v| len(v) * 10)
+    let w = o.as_ref().map(|w| len(w))
+    match (v, w) {
+        (Some(n), Some(m)) => Some(n + m),
+        _ => None,
+    }
+}
+fn main() {
+    match f(Some(push(push(vec(), 1), 2))) {
+        Some(n) => print(n),
+        None => print(0),
+    }
+    match f(None) {
+        Some(n) => print(n),
+        None => print(99),
+    }
+}

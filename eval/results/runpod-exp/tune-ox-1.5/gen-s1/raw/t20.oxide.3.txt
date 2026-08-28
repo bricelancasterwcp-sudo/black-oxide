@@ -1,0 +1,23 @@
+fn main() {
+    let pen = (3, 4)
+    let pad = (9, 2)
+    let ink = (5, 3)
+    let items = vec(pen, pad, ink)
+    let total_cost = fold(items, 0, |acc, (price, quantity)| acc + price * quantity)
+    let max_cost_item = fold(items, None, |acc, (price, quantity)| {
+        if let Some((_, max_quantity)) = acc {
+            if quantity > max_quantity {
+                Some((price, quantity))
+            } else {
+                acc
+            }
+        } else {
+            Some((price, quantity))
+        }
+    })
+    print(total_cost)
+    match max_cost_item {
+        Some((max_price, max_quantity)) => print_str(str(max_price) + " " + str(max_quantity)),
+        None => print_str("No items"),
+    }
+}

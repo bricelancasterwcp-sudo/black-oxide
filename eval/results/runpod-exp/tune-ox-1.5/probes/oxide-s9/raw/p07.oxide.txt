@@ -1,0 +1,12 @@
+struct Bag { items: Vec<Int>, label: Str }
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut a = v
+    a.push(x)
+    a
+}
+fn main() {
+    let v = push(push(vec(), 1), 2)
+    let b = Bag { items: v, label: "hello" }
+    print(len(v))
+    print(str_len(b.label))
+}

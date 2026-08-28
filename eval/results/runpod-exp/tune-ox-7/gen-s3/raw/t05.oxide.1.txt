@@ -1,0 +1,16 @@
+fn fibonacci(n: Int) -> Int {
+    if n <= 1 {
+        return 1
+    }
+    let a = 1
+    let b = 1
+    for _ in range(2, n + 1) {
+        let temp = a + b
+        a = b
+        b = temp
+    }
+    b
+}
+fn main() {
+    print(fibonacci(20))
+}

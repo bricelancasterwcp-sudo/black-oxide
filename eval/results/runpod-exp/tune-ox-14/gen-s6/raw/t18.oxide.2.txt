@@ -1,0 +1,29 @@
+fn main() {
+    let r1 = rect(3, 4)
+    let t1 = triangle(3, 4, 5)
+    let r2 = rect(2, 5)
+    print(perimeter_rect(r1))
+    print(perimeter_triangle(t1))
+    print(perimeter_rect(r2))
+}
+fn rect(w: Int, h: Int) -> Rect {
+    Rect { width: w, height: h }
+}
+fn triangle(a: Int, b: Int, c: Int) -> Triangle {
+    Triangle { side1: a, side2: b, side3: c }
+}
+struct Rect {
+    width: Int,
+    height: Int,
+}
+struct Triangle {
+    side1: Int,
+    side2: Int,
+    side3: Int,
+}
+fn perimeter_rect(r: Rect) -> Int {
+    2 * (r.width + r.height)
+}
+fn perimeter_triangle(t: Triangle) -> Int {
+    t.side1 + t.side2 + t.side3
+}

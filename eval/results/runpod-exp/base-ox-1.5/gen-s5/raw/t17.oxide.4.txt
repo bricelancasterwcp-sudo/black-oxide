@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let v = vec![10, 20, 30];
+    if 1 <= 5 && 5 < v.len() {
+        print(v[1]);
+    }
+    if 5 <= 5 && 5 < v.len() {
+        print(v[4]);
+    }
+}
+```

@@ -1,0 +1,10 @@
+```
+fn main() {
+    let mut v = push(push(vec(), 1), 2);
+    print(len(v));
+    for x in v {
+        let mut new_v = push(new_v, x);
+    }
+    print(len(new_v));
+}
+```

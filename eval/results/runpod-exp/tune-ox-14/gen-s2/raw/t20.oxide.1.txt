@@ -1,0 +1,18 @@
+struct Item { name: Str, price: Int, quantity: Int }
+fn main() {
+    let pen = Item { name: "pen", price: 3, quantity: 4 }
+    let pad = Item { name: "pad", price: 9, quantity: 2 }
+    let ink = Item { name: "ink", price: 5, quantity: 3 }
+    let total_cost = pen.price * pen.quantity + pad.price * pad.quantity + ink.price * ink.quantity
+    print(total_cost)
+    let mut max_cost = 0
+    let mut max_item = ""
+    for item in vec(pen, pad, ink) {
+        let cost = item.price * item.quantity
+        if cost > max_cost {
+            max_cost = cost
+            max_item = item.name
+        }
+    }
+    print(max_item)
+}

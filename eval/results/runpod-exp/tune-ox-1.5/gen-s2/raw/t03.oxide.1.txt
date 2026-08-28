@@ -1,0 +1,13 @@
+fn gcd(a: Int, b: Int) -> Int {
+    let mut x = max(a, b)
+    let mut y = min(a, b)
+    while y != 0 {
+        let z = y
+        y = x % y
+        x = z
+    }
+    x
+}
+fn main() {
+    print(gcd(252, 105))
+}

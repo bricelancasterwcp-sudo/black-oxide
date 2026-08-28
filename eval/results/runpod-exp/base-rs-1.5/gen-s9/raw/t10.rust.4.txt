@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let numbers = vec![4, 1, 7, 3, 9, 2];
+    let count = numbers.iter().filter(|&&x| x > 3).count();
+    
+    for &num in numbers.iter().filter(|&&x| x > 3) {
+        println!("{}", num);
+    }
+    
+    println!("Number of values kept: {}", count);
+}
+```

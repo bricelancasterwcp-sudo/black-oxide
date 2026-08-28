@@ -1,0 +1,12 @@
+fn main() {
+    for s in vec("level", "stereo", "rotor") {
+        let chars = chars(s)
+        let mut is_palindrome = true
+        for (i, c) in enumerate(chars) {
+            if c != chars(len(chars) - 1 - i) {
+                is_palindrome = false
+            }
+        }
+        print(is_palindrome)
+    }
+}

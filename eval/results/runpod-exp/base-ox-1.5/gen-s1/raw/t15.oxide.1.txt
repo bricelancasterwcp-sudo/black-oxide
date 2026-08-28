@@ -1,0 +1,23 @@
+```rust
+use std::str::FromStr;
+
+fn main() {
+    let mut sum = 0;
+    let mut count = 0;
+
+    for s in ["12", "x", "30"].iter() {
+        match i32::from_str(s) {
+            Ok(n) => {
+                sum += n;
+                count += 1;
+            }
+            Err(_) => {
+                println!("Failed to parse '{}'", s);
+            }
+        }
+    }
+
+    println!("Sum: {}", sum);
+    println!("Count: {}", count);
+}
+```

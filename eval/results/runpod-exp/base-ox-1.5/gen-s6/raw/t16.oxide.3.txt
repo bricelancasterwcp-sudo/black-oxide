@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let result = divide(100, 5);
+    println!("{}", result);
+
+    if divisor == 0 {
+        None
+    } else {
+        Some(dividend / divisor)
+    }
+}
+```

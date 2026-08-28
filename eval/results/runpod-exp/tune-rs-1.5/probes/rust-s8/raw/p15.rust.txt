@@ -1,0 +1,5 @@
+fn f(o: Option<Vec<i32>>) -> Option<usize> {
+    let v = o?;
+    let w = o.unwrap();
+    Some(v.len() * 10 + w.len())
+}

@@ -1,0 +1,14 @@
+struct Item { unit_price: Int, quantity: Int }
+fn main() {
+    let pen = Item { unit_price: 3, quantity: 4 }
+    let pad = Item { unit_price: 9, quantity: 2 }
+    let ink = Item { unit_price: 5, quantity: 3 }
+    let items = vec(pen, pad, ink)
+    let total_cost = items.iter().map(|item| item.unit_price * item.quantity).sum()
+    let max_cost_item = items.into_iter().max_by_key(|item| item.unit_price * item.quantity)
+    print(total_cost)
+    match max_cost_item {
+        Some(item) => print_str(item.name()),
+        None => print_str("No items"),
+    }
+}

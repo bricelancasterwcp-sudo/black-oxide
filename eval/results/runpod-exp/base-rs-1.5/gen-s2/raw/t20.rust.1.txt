@@ -1,0 +1,20 @@
+```rust
+fn main() {
+    let pen = (3, 4);
+    let pad = (9, 2);
+    let ink = (5, 3);
+
+    let combined_cost = pen.0 * pen.1 + pad.0 * pad.1 + ink.0 * ink.1;
+    println!("Combined cost: {}", combined_cost);
+
+    let highest_cost_item = if pen.0 * pen.1 > pad.0 * pad.1 && pen.0 * pen.1 > ink.0 * ink.1 {
+        "pen"
+    } else if pad.0 * pad.1 > pen.0 * pen.1 && pad.0 * pad.1 > ink.0 * ink.1 {
+        "pad"
+    } else {
+        "ink"
+    };
+
+    println!("Item with the highest cost: {}", highest_cost_item);
+}
+```

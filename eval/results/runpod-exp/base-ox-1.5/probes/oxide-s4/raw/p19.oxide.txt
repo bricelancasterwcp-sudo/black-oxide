@@ -1,0 +1,11 @@
+```
+fn main() {
+    let s = "hello world"
+    let n = 42;
+    let t = s.clone(); // Clone at the move site to keep 's' available
+    print(str_len(t));
+    if n > 3 {
+        print(str_len(s)); // Read before the move
+    }
+}
+```

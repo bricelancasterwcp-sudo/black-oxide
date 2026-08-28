@@ -1,0 +1,26 @@
+```rust
+fn main() {
+    let v = vec![3, 8, -2, 12, 7];
+    let mut pos_count = 0;
+    let mut max_value = None;
+
+    for &x in &v {
+        if x > 0 {
+            pos_count += 1;
+            if let Some(&current_max) = max_value {
+                if x > current_max {
+                    max_value = Some(x);
+                }
+            } else {
+                max_value = Some(x);
+            }
+        }
+    }
+
+    println!("Number of positive values: {}", pos_count);
+    match max_value {
+        Some(max) => println!("Largest value: {}", max),
+        None => println!("No positive values found"),
+    }
+}
+```

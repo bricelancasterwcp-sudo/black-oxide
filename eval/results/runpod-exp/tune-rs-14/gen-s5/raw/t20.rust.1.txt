@@ -1,0 +1,11 @@
+fn main() {
+    let items = vec![
+        ("pen", 3, 4),
+        ("pad", 9, 2),
+        ("ink", 5, 3),
+    ];
+    let total_cost: i32 = items.iter().map(|(_, price, quantity)| price * quantity).sum();
+    println!("{}", total_cost);
+    let (name, _, _) = items.iter().max_by_key(|(_, price, quantity)| price * quantity).unwrap();
+    println!("{}", name);
+}

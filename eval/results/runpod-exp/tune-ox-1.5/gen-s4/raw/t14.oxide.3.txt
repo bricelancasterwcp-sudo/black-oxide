@@ -1,0 +1,13 @@
+fn main() {
+    let s = "mississippi"
+    let mut count = 0
+    let mut seen = HashSet::new()
+    for c in chars(s) {
+        if c == 's' {
+            count = count + 1
+        }
+        seen.insert(c)
+    }
+    print(count)
+    print(seen.len())
+}

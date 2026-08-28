@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let s = String::from("mississippi");
+    let mut count_s = 0;
+    let mut unique_chars: Vec<char> = vec![];
+
+    for c in s.chars() {
+        if c == 's' {
+            count_s += 1;
+        }
+        if !unique_chars.contains(&c) {
+            unique_chars.push(c);
+        }
+    }
+
+    println!("The character 's' occurs {} times.", count_s);
+    println!("The distinct characters are: {:?}", unique_chars);
+}
+```

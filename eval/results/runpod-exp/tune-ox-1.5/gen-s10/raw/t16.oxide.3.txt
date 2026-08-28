@@ -1,0 +1,24 @@
+fn divide(n: Int, d: Int) -> Option<Int> {
+    if d == 0 {
+        None
+    } else {
+        Some(n / d)
+    }
+}
+fn main() {
+    let result = divide(100, 5)
+    match result {
+        Some(q) => print(q),
+        None => print_str("undefined"),
+    }
+    let result = divide(100, 0)
+    match result {
+        Some(q) => print(q),
+        None => print_str("undefined"),
+    }
+    let result = divide(100, 4)
+    match result {
+        Some(q) => print(q),
+        None => print_str("undefined"),
+    }
+}

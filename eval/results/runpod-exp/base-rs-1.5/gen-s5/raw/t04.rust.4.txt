@@ -1,0 +1,23 @@
+```rust
+fn is_prime(n: isize) -> bool {
+    if n <= 1 {
+        return false;
+    }
+    for i in 2..=((n as f64).sqrt() as isize) + 1 { // Corrected the range to include the square root plus one
+        if n % i == 0 {
+            return false;
+        }
+    }
+    true
+}
+
+fn main() {
+    let mut count = 0;
+    for i in 2..100 {
+        if is_prime(i) {
+            count += 1;
+        }
+    }
+    println!("There are {} prime numbers strictly less than 100.", count);
+}
+```

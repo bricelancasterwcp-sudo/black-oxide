@@ -1,15 +1,7 @@
 fn main() {
     let v = vec(8, 3, 11, 6)
-    let lo = 1000000
-    let hi = 0
-    for x in v {
-        if x < lo {
-            lo = x
-        }
-        if x > hi {
-            hi = x
-        }
-    }
+    let lo = unwrap_or(min(v), 1000000)
+    let hi = unwrap_or(max(v), 0)
     print(lo)
     print(hi - lo)
 }

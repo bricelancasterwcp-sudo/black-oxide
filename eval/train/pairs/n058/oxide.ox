@@ -8,12 +8,7 @@ fn main() {
                 count = count + 1
             }
         }
-        let seen = false
-        for r in reported {
-            if r == c {
-                seen = true
-            }
-        }
+        let seen = contains(reported, c)
         if count > 1 && seen == false {
             print_str(c)
             reported = push(reported, c)

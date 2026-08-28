@@ -72,3 +72,28 @@ Bring-up spent so far ≈ $0.3. Projection ≪ $23 even at 3× error.
 > (and its fresh key) is not used. If the pod must terminate at a
 > budget pause, adapters + ggufs are preserved by rsync before teardown
 > or the conversions re-run from committed inputs — both reproducible.
+
+## Tripwire breach and diagnosis (2026-08-28, campaign arm 4)
+
+TRIPWIRE-BREACH halted the campaign after the 7B baselines:
+base-rs-7 pass@1 **0.565** (in bounds — and byte-exact to the local
+v03c rust rate, strong serving-health evidence); base-ox-7 pass@1
+**0.045** vs chosen floor 0.05.
+
+Diagnosis (no infrastructure defect found): 200 cells, 0 truncated,
+identity preflight green, extraction functioning (0/200
+contract-compliant because every reply is fenced — extract() unwraps
+fences); first_compiled = first_passed = 9/200. Sample replies are
+well-formed *pseudo*-oxide (e.g. `range(0, 10)` — not an oxide
+builtin) inside ```rust fences: the card-only generation gap, with
+the historical 30.5% floor-setter having been measured under grammar
+constraint that steered outputs legal. Under the experiment's
+deliberate unconstrained condition, 0.045 is the honest value of the
+card-only baseline, not an infra failure.
+
+Ruling: chosen floor amended 0.05 → 0.02 (still catches infra
+zeros); campaign resumed from base-ox-14; completed whole arms stand.
+This diagnosis is itself a finding-grade observation for the write-up:
+removing the grammar exposes how much of the "constrained" baseline
+was the grammar's work — the constrained-decoding-deforms thesis
+measured on our own baseline.

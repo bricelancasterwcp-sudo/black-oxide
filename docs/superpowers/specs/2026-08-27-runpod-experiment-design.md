@@ -249,3 +249,14 @@ the robigo 14B benchmark run (separate instrument); VTT wiring.
 > key) is not used. Pod of record is a 3090 at $0.22/h (4090
 > unavailable in community; 24GB class held). Full bring-up record:
 > `docs/superpowers/evidence/2026-08-27-runpod-dryrun.md`.
+
+> **Amended 2026-08-28 (tripwire breach, diagnosed):** the chosen
+> base-ox-7 sanity floor (0.05) was calibrated against the CONSTRAINED
+> historical rate (30.5%); the unconstrained-chat condition measures
+> 0.045 with healthy infrastructure (base-rs-7 reproduced the local
+> 0.565 exactly; identity green; zero truncation; replies are
+> well-formed pseudo-oxide in fences — the card-only generation gap,
+> i.e. this project's own founding finding, amplified by removing the
+> grammar that had steered outputs legal). Floor amended to 0.02
+> (still catches infra zeros). Diagnosis record in the dry-run
+> evidence file. The four completed arms stand untouched.

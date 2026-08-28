@@ -200,6 +200,13 @@ This report contains no recommendations. The ranked table is data for the wave's
 
 ## Ranked demand (replies, summed over arms and spellings)
 
+> **Erratum (2026-08-28).** This instrument counts pattern *presence* in
+> replies, not *rejection* by the compiler. The #1-ranked `ranges` family
+> below is demand for an already-existing builtin — `range(a, b)` has
+> shipped since v0.2 and was already on the card (see SPEC §58.3) — not
+> demand for new language surface. Read every ranking in this table as an
+> upper bound on unmet demand, not a measurement of it.
+
 | family | total demand | dominant spelling | dominant count |
 |---|---|---|---|
 | ranges | 1065 | range_call | 773 |

@@ -2788,6 +2788,19 @@ the frozen `eval/solutions/{oxide,explicit}/t14.ox` corpus's own
 hand-rolled `fn contains` helper colliding with the new `contains`
 builtin above; §54's admit-what-they-write law. Commit: `6e52a73`.
 
+**Recorded seam: shadowing × the §55 vec-literal desugar.** §55's
+`vec(...)` sugar synthesizes `push` (and, for the empty case, `vec`)
+calls *by name* at parse time. A user program that defines `fn push`
+therefore has every `vec(...)` literal's desugared push-chain resolve to
+that user function instead of the builtin — typically surfacing as a
+type error at the first mismatched call, i.e. fail-closed, not a silent
+miscompile. A user `fn vec` with arity greater than 0 shadows the
+0-arg literal form the same way (the literal itself, `vec()`, still
+requires a same-name `fn vec` of arity 0 to collide, per the shadowing
+rule above). Measured demand for either name is near-zero in the
+census corpus. This is recorded as a known interaction between the two
+wave-1 features, not fixed.
+
 This supersedes, in place — old text struck through, not deleted — at
 three sites: §16's `OX0203` table row ("duplicate top-level name (incl.
 clash with a builtin)"), §20 item 10 ("fn named `print` OX0203"), and

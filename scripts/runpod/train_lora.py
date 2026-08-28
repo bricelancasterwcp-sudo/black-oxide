@@ -114,7 +114,9 @@ def main() -> int:
     )
     Trainer(
         model=model, args=targs, train_dataset=ds,
-        data_collator=lambda b: collate(b, tok.pad_token_id or tok.eos_token_id),
+        data_collator=lambda b: collate(
+            b, tok.pad_token_id if tok.pad_token_id is not None else tok.eos_token_id
+        ),
     ).train()
     model.save_pretrained(args.out)
     (args.out / "provenance.json").write_text(json.dumps({

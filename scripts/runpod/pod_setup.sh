@@ -5,7 +5,7 @@ cd /workspace
 if [ ! -d oxide ]; then
   git clone https://github.com/bricelancasterwcp-sudo/black-oxide.git oxide
 fi
-pip install --break-system-packages -q peft==0.20.0 bitsandbytes accelerate
+pip install --break-system-packages -q transformers==5.5.0 accelerate==1.14.0 peft==0.20.0 bitsandbytes
 # rustc is the harness oracle — the eval side of this pod needs it:
 if ! command -v rustc >/dev/null; then
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --profile minimal

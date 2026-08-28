@@ -661,7 +661,7 @@ diagnostic contributes NO DropPoints (its drops are suppressed).
 | OX0200 | resolve | unknown identifier |
 | OX0201 | resolve | function/builtin name used as a value (non-callee) |
 | OX0202 | resolve/infer | unknown type or struct name, or wrong type arity |
-| OX0203 | resolve | duplicate top-level name (incl. clash with a builtin) |
+| OX0203 | resolve | duplicate top-level name (~~incl. clash with a builtin~~ — a `fn` clash is superseded by v0.4 shadowing; struct/enum names still hard-clash — see §58.2) |
 | OX0204 | resolve | duplicate binder (params or one pattern) |
 | OX0300 | infer | type mismatch (unification failure) |
 | OX0301 | infer | infinite type (occurs check) |
@@ -789,7 +789,7 @@ with §18).
 7. Annotations: good `Vec<Int>`; `let x: Int = 1.5` OX0300; unknown name OX0202; `Vec<Int, Int>` OX0202; `Int<Int>` OX0202.
 8. `let v = vec()` alone → OX0302.
 9. `len()` and calling an Int local → OX0303.
-10. Resolution: OX0200; OX0201; duplicate fn OX0203; fn named `print` OX0203; dup param OX0204; dup destructure binder OX0204; shadowing legal with independent types (`['Int','Bool']`).
+10. Resolution: OX0200; OX0201; duplicate fn OX0203; ~~fn named `print` OX0203~~ — superseded by v0.4 builtin shadowing (a `fn` named `print` now shadows the builtin instead of erroring; the still-true half of the case — `struct print { x: Int }` OX0203 — is pinned as `struct-clashes-with-builtin` in `tests/test_sema_types.py`; see §58.2); dup param OX0204; dup destructure binder OX0204; shadowing legal with independent types (`['Int','Bool']`).
 11. Modes: S3/S4/S8 goldens; returned copy param stays `read`; pure recursion stays `read` (`fn r(v: Vec<Int>) { r(v) }` → `('read',)`); destructured param `own` (S7).
 12. Gates: resolve error suppresses infer codes; parse error yields only lex/parse codes; analyze never raises on Part II garbage inputs.
 
@@ -2656,6 +2656,18 @@ it. Measured on the closing-baseline corpus, `duplicate top-level name
 both pre-change corpora, `g0c` and `g1c`), and in 5 attempts across 2
 sessions counting all four repair attempts.
 
+> **Superseded by v0.4 shadowing (see §58.2).** A user program that
+> writes `fn to_str(...)` no longer hits `OX0203` — it now shadows the
+> builtin program-wide (free calls and recursion resolve to the user
+> function; the builtin's receiver-first method form becomes
+> unreachable in that program). Shadowing was motivated independently
+> (the v0.4 `contains` builtin colliding with `eval/solutions/t14.ox`'s
+> own hand-rolled helper, not by this paragraph's `to_str` cost), but
+> generalizes to every builtin including this one. The paragraph above
+> is retained unedited as the historical record of why the alias was
+> added and the OX0203-clash cost it carried before v0.4 — not a
+> currently-accurate description of `fn to_str`'s behavior today.
+
 **Why this exists.** In the v0.3 taxonomy (dossier 3) models were said to
 "call conversions that don't exist". Measured over the 600 constrained
 oxide first attempts of the G0 baseline, that is not what the corpus
@@ -2705,3 +2717,123 @@ is `12/52` = **23.1%**, and `parse_int` already covers it.
 
 Either way `to_int` is the deferred `2.to(n)` range demand wearing a
 conversion's name, not parsing — and `parse_int` already covers parsing.
+
+## 58. v0.4 wave 1 — 2026-08-28 amendment
+
+Normative. Ships per
+`docs/superpowers/specs/2026-08-28-v04-efficiency-wave1-design.md` (design
+authority) and the census-gate ruling recorded in
+`.superpowers/sdd/2026-08-28-v04-efficiency-wave1/progress.md`. Amends
+§0 item 1, §16, §20, §57 as cross-referenced below; nothing else changes.
+
+### 58.1 New builtins
+
+All six take receiver-first method syntax per §53 (`v.sort()` means
+`sort(v)`, `v.contains(x)` means `contains(v, x)`, etc.):
+
+| builtin | signature | modes | Rust transpile |
+|---|---|---|---|
+| `sort(v)` | `Vec<T> -> Vec<T>` (generic, `T: Ord`) | `("own",)` | `{ let mut t = v; t.sort(); t }` |
+| `min(v)` | `Vec<T> -> Option<T>` (generic, `T: Ord + Clone`; empty → `None`) | `("read",)` | `v.iter().min().cloned()` |
+| `max(v)` | `Vec<T> -> Option<T>` (generic, `T: Ord + Clone`; empty → `None`) | `("read",)` | `v.iter().max().cloned()` |
+| `sum(v)` | `Vec<Int> -> Int` (NOT generic; empty → `0`) | `("read",)` | `v.iter().sum()` |
+| `contains(v, x)` | `(Vec<T>, T) -> Bool` (generic, `T: PartialEq`) | `("read","read")` | `v.contains(x)` — prelude sig `contains<T: PartialEq>(v: &Vec<T>, x: &T)` |
+| `unwrap_or(o, d)` | `(Option<T>, T) -> T` (generic) | `("own","own")` | `match o { Some(x) => x, None => d }` |
+
+`BUILTIN_REF` (`src/codegen/support.py`): `sort (False,)`, `min (True,)`,
+`max (True,)`, `sum (True,)`, `contains (True, True)`, `unwrap_or
+(False, False)`. `min`/`max` use `.cloned()`, not `.copied()` — matching
+`get`'s `T: Clone` convention rather than requiring `T: Copy` (which
+would reject e.g. a future `Vec<Str>`). `unwrap_or`'s `o` mode ("own")
+mirrors the language's two existing MOVE-use precedents for reaching
+inside an `Option` — `match`'s scrutinee (§28) and `?`'s operand (§36)
+— not `get`'s "read" mode, which governs a *Vec* input producing an
+`Option`, not an already-existing `Option`'s payload. `d`'s "own" mode
+mirrors `push`'s inserted-value convention: `d` may become the returned
+value verbatim on the `None` path.
+
+Commits: `c68ad27` (sort/min/max/sum/contains), `c37d268` (unwrap_or).
+
+### 58.2 Builtin shadowing (supersedes §16's OX0203 row, §20 item 10, §57's reserved-name paragraph)
+
+A top-level `fn` whose name matches a builtin now **shadows** it for the
+whole program: the user definition wins everywhere (free calls,
+recursion), and the builtin — including its receiver-first method form
+— becomes entirely unreachable in that program. A shadowed name used as
+a method (e.g. `v.contains(x)` where `contains` is user-defined) is
+refused as an unknown identifier (`OX0200`), not silently retargeted; no
+new diagnostic code was added. Struct/enum names and `BUILTIN_VARIANTS`
+(`Some`/`None`/`Ok`/`Err`) are **not** covered — they still hard-clash
+with a builtin exactly as before (`OX0203`); the rule is scoped to `fn`
+only. An earlier *definition* of the same name still hard-clashes too
+(`OX0203`) — shadowing permits exactly one builtin-clashing `fn`, not
+duplicate suppression.
+
+Four cooperating seams, not one: the naming collision itself
+(`src/sema/resolve.py::_declare_name`, `allow_builtin_shadow`); free-call
+precedence (`src/sema/infer.py::_call`, already correct — `fn_sigs` was
+already checked before `BUILTINS`); method-form refusal (a new
+`ast.Call.via_method_sugar` marker plus `resolve.py::_callee`, since
+`recv.name(args)` desugars to a plain `Call` node structurally identical
+to a hand-written free call — §53); and codegen non-collision
+(`src/codegen/support.py`'s prelude restructured into `prelude_for(shadowed)`,
+omitting a builtin's prelude copy when a user `fn` of the same name
+exists, since two same-named free `fn`s in one Rust module is `rustc`
+error E0428 — plus a `BUILTIN_REF` gate in `rust.py::_ref_required` so a
+shadowing fn's own read/own modes govern its call sites' ref-form,
+not the builtin's fixed table).
+
+Grounds: dossier-4 demand (deferred-demand ledger), measured directly by
+the frozen `eval/solutions/{oxide,explicit}/t14.ox` corpus's own
+hand-rolled `fn contains` helper colliding with the new `contains`
+builtin above; §54's admit-what-they-write law. Commit: `6e52a73`.
+
+This supersedes, in place — old text struck through, not deleted — at
+three sites: §16's `OX0203` table row ("duplicate top-level name (incl.
+clash with a builtin)"), §20 item 10 ("fn named `print` OX0203"), and
+§57's "`to_str` is now a reserved top-level name" paragraph.
+
+### 58.3 Census-gate deferrals (recorded, not shipped this wave)
+
+Measured by `eval/demand_census.py` over the wave-0 corpus (4,800 raw
+replies + 80 reference solutions + 582 amplified programs), deferred to
+wave 2 with counts recorded per the gate ruling: dotdot ranges (`a..b`
+syntax, 292 — a 1.5B-only dialect quirk, and superseded as the range
+*spelling* by the builtin `range(a, b)` below regardless); `if let` (35
+— grammar-sized work, sub-threshold against `contains`'s 44); index
+assignment (bracket-form `v[i] = x`, 28; `.set` method-form, 0 — zero
+measured model demand for the method spelling); strings vocabulary (4 —
+wave 2 per the design spec's out-of-scope list).
+
+`range(a, b) -> Vec<Int>` (half-open `[a, b)`, empty when `a >= b`) is
+**not new** — it shipped as a working v0.2 builtin since the
+repository's first commit and is already on the card (line 79). The
+census measured call-spelling *presence* across the
+corpus, not *rejection*: `range_call` (773 occurrences) simply outranked
+the unshipped `a..b` dotdot spelling (292) as the dominant surface form
+already in active use, dominant in every arm ≥7B. Commit `b84f423` pins
+the pre-existing construct with tests; no `src/` change was required.
+
+### 58.4 Card freeze lift (§0 item 1)
+
+§0 item 1 froze `LANGUAGE_CARD.md`/`LANGUAGE_CARD_EXPLICIT.md`'s exact
+strings against retokenization until "the fine-tune track (§32.4), where
+the corpus is regenerated and comparability resets anyway" — the
+occasion §0 itself named in advance. Wave 1 regenerates the training
+corpus (re-amplification with card-v0.4, per the design spec's dynamic
+loop) — that is this occasion. The freeze lifts here, non-silently:
+both cards gained the six §58.1 builtins and one shadowing sentence
+(§58.2), in each card's own voice.
+
+Word counts (`wc -w`), recorded per the design spec's "the card is a
+measured instrument" instruction:
+
+| card | before | after |
+|---|---|---|
+| `LANGUAGE_CARD.md` | 895 | 988 |
+| `LANGUAGE_CARD_EXPLICIT.md` | 980 | 1082 |
+
+`tests/test_cards.py`'s `CORE_WORD_LIMIT` pin is raised 900 → 1000 in
+the same commit, non-silently (988 exceeded the old pin); the 10%
+cross-card tolerance (`WORD_COUNT_TOLERANCE`) is unchanged and still
+holds (94-word gap against a 98.8-word allowance at core=988).

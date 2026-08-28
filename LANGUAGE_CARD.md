@@ -77,6 +77,12 @@ push(v, x) -> Vec<T>          # consumes v, returns it with x appended
 len(v) -> Int                 # length of a Vec
 get(v, i) -> Option<T>        # element copy at index i
 range(a, b) -> Vec<Int>       # integers a..b-1
+sort(v) -> Vec<T>             # consumes v, returns it sorted
+min(v) -> Option<T>           # smallest element, or None if empty
+max(v) -> Option<T>           # largest element, or None if empty
+sum(v) -> Int                 # sum of an Int vec, 0 if empty
+contains(v, x) -> Bool        # true if v has an element equal to x
+unwrap_or(o, d) -> T          # consumes o and d; Some(x) -> x, None -> d
 clone(x) -> T                 # fresh copy of any value
 str_len(s) -> Int             # characters in a Str
 concat(a, b) -> Str           # consumes both, returns a+b
@@ -86,6 +92,9 @@ parse_int(s) -> Option<Int>
 to_float(n) -> Float          # Int to Float
 trunc(x) -> Int               # Float to Int, toward zero
 ```
+
+A `fn` you define with a builtin's name shadows it for the whole program —
+the builtin, method form included, becomes unreachable there.
 
 ## Example
 

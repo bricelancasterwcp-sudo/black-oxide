@@ -102,3 +102,17 @@ rsyncs now mandatory), budget ceiling for the wave-2 dynamic loop:
 Ownership semantics; the learnability experiment; merges (owner's);
 public write-up (owner-gated); wave-3 planning beyond the feed-forward
 this wave's report will produce.
+
+> **Amended 2026-08-28 (census-v2 gate, before any implementation):**
+> the gated slate is `+=`/`-=`/`*=` (statement sugar; 64/64 = 100%
+> mechanical rejection at presence in base-ox-7, 660 amp presence) and
+> `count(v, x)` (occurrence_count hand-rolled 11 refs / 12 amp).
+> Deferred with counts: `if let` (68 amp presence < the pre-registered
+> 89 bar), bracket index-assign (0 campaign presence), `remove_at`
+> (2 hand-rolled refs), strings vocabulary (string_build 1/1 — the
+> strings residual is not hand-rolled-pattern-shaped; wave 3 gets a
+> pairwise token-diff attribution instrument instead). Slate-dependent
+> targets re-set per the spec's own conditional-target pattern:
+> overall ≤ 1.09, vectors ≤ 1.25, arithmetic ≤ 1.02, strings hold
+> 1.159 ± 0.03, structs hold ≤ 1.00 (consistency at exact hits
+> ≈ 1.083).

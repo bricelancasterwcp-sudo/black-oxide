@@ -15,6 +15,7 @@ from src.lexer.lexer import Lexer
 from src.lexer.tokens import Token, TokenKind
 from src.parser.ast import (
     Assign,
+    BinOp,
     BindPat,
     Block,
     Break,
@@ -37,6 +38,7 @@ from src.parser.ast import (
     Stmt,
     StructDecl,
     TypeExpr,
+    Var,
     While,
 )
 from src.parser.expressions import _ExprParserMixin
@@ -67,6 +69,18 @@ _ITEM_START: frozenset[TokenKind] = frozenset(
 _TERM_LOOKAHEAD: frozenset[TokenKind] = frozenset(
     {TokenKind.NEWLINE, TokenKind.RBRACE, TokenKind.EOF}
 )
+
+# v0.4 wave-2 (Task 4): compound assignment `x += e` / `x -= e` / `x *= e`,
+# statement-level sugar for `x = x <op> e`. Census gate ruling (2026-08-28):
+# targets are plain identifiers only this wave -- field/index targets are
+# out of scope (deferred; they would need the §56 FieldAssign AST path) --
+# so this table only ever drives the IDENT-prefixed dispatch in
+# ``_statement``, never a general binary operator.
+_COMPOUND_ASSIGN_OPS: dict[TokenKind, str] = {
+    TokenKind.PLUSEQ: "+",
+    TokenKind.MINUSEQ: "-",
+    TokenKind.STAREQ: "*",
+}
 
 
 class _ParseError(Exception):
@@ -445,6 +459,16 @@ class Parser(_ExprParserMixin):
         # EQ (EQEQ is a distinct token kind, so `x == y` stays a comparison).
         if kind is TokenKind.IDENT and self._peek_next().kind is TokenKind.EQ:
             return self._assign_stmt()
+        # Compound assignment (v0.4 wave-2 Task 4): IDENT immediately
+        # followed by PLUSEQ/MINUSEQ/STAREQ. Tried only after the field-
+        # assign and plain-assign branches above, so it never intercepts
+        # `p.x += 1` (peek_next there is DOT, not a compound-assign kind --
+        # that expression falls through to `_expr_stmt`, whose `_expect_term`
+        # then reports the same OX0101 a plain-assign attempt on a
+        # non-identifier target already gets; field/index targets stay out
+        # of scope this wave without any special-casing).
+        if kind is TokenKind.IDENT and self._peek_next().kind in _COMPOUND_ASSIGN_OPS:
+            return self._compound_assign_stmt()
         return self._expr_stmt()
 
     def _skip_optional_mut(self) -> None:
@@ -571,6 +595,28 @@ class Parser(_ExprParserMixin):
         self._expect_term()
         span = Span(name_tok.span.start, value.span.end)
         return Assign(self._new_id(), span, name_tok.lexeme, value)
+
+    def _compound_assign_stmt(self) -> Assign:
+        """`x += e` / `x -= e` / `x *= e` (v0.4 wave-2 Task 4).
+
+        Parser-level sugar only: desugars straight to the same ``Assign``
+        node ``_assign_stmt`` builds, wrapping a synthesized ``BinOp`` whose
+        lhs is a fresh ``Var`` reading the target and whose op is the
+        compound operator's arithmetic half (`+=` -> `+`, etc). No new AST
+        node, so every later phase (resolve/infer/modes/linear/codegen)
+        sees exactly what it would see for the hand-written `x = x <op> e`
+        twin -- byte-identical Rust, identical diagnostics, identical
+        linearity treatment of ``x`` (tests/test_v04_wave2.py).
+        """
+        name_tok = self._advance()  # IDENT (lookahead-verified by _statement)
+        op_tok = self._advance()  # PLUSEQ / MINUSEQ / STAREQ
+        rhs = self._parse_expr(0)
+        self._expect_term()
+        lhs_read = Var(self._new_id(), name_tok.span, name_tok.lexeme)
+        op = _COMPOUND_ASSIGN_OPS[op_tok.kind]
+        value_span = Span(name_tok.span.start, rhs.span.end)
+        value = BinOp(self._new_id(), value_span, op, lhs_read, rhs)
+        return Assign(self._new_id(), value_span, name_tok.lexeme, value)
 
     def _try_field_assign(self) -> FieldAssign | None:
         """`a.b.c = e` (SPEC.md §56), or None with the cursor restored.

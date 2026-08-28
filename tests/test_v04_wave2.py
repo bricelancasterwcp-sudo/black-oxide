@@ -30,6 +30,8 @@ import pytest
 
 from eval.rustc_adapter import find_rustc
 from src.codegen.rust import transpile
+from src.lexer.lexer import Lexer
+from src.lexer.tokens import TokenKind
 from src.sema.analyze import analyze, diag_codes
 
 _rustc_candidate = find_rustc()
@@ -218,3 +220,229 @@ def test_shadowing_fn_wins_the_free_call_form(tmp_path):
 def test_shadowing_fn_wins_the_free_call_form_diagnostics_clean():
     source = SHADOW_SRC + "fn main() {\n    print(count(vec(1, 2, 2, 3), 2))\n}\n"
     assert codes(source) == []
+
+
+# ---------------------------------------------------------------------------
+# Task 4: compound assignment `x += e` / `x -= e` / `x *= e` -- statement-
+# level sugar desugaring to `x = x <op> e` at PARSE TIME
+# (src/parser/parser.py `_compound_assign_stmt`). No new AST node: the
+# existing `Assign` wraps a synthesized `BinOp`, so sema and codegen never
+# see the compound form -- every test below either proves byte-for-byte
+# equivalence with the hand-written desugared twin (the §55 pattern,
+# tests/test_codegen.py's
+# ``test_variadic_vec_literal_emits_byte_identical_rust_to_the_push_chain``)
+# or reuses the twin's own diagnostic/runtime behaviour as the oracle.
+#
+# Scope (census gate v2 ruling,
+# .superpowers/sdd/2026-08-28-v04-efficiency-wave2/progress.md): exactly
+# `+=`/`-=`/`*=`; targets are plain identifiers only -- field/index targets
+# are out this wave. `p.x += 1` needs no special-casing to stay out: DOT
+# isn't a compound-assign lookahead kind, so it falls through to the
+# ordinary expression-statement path and fails with the same OX0101
+# "expected end of statement" the parser already gives any trailing
+# operator after a complete expression.
+# ---------------------------------------------------------------------------
+
+
+def lexer_kinds(src: str) -> list[TokenKind]:
+    return [t.kind for t in Lexer(src).tokenize()]
+
+
+# ---- Lexer: `+=`/`-=`/`*=` are single tokens (mirrors tests/test_lexer.py's
+# maximal-munch parametrization for the pre-existing two-char operators) ----
+
+
+@pytest.mark.parametrize(
+    ("src", "kind"),
+    [
+        ("a+=b", TokenKind.PLUSEQ),
+        ("a-=b", TokenKind.MINUSEQ),
+        ("a*=b", TokenKind.STAREQ),
+    ],
+    ids=["plus-eq", "minus-eq", "star-eq"],
+)
+def test_compound_assign_operator_is_one_token_not_two(src, kind):
+    # A `-=` -> MINUS-then-EQ mutant would show as two tokens (MINUS, EQ)
+    # here instead of one MINUSEQ; this test's IDENT/NEWLINE/EOF framing
+    # catches that directly on token *count*, not just kind identity.
+    assert lexer_kinds(src) == [
+        TokenKind.IDENT,
+        kind,
+        TokenKind.IDENT,
+        TokenKind.NEWLINE,
+        TokenKind.EOF,
+    ]
+
+
+def test_compound_assign_operator_lexes_with_no_spaces():
+    # `a+=1`, no whitespace: still one PLUSEQ token, not PLUS then EQ.
+    assert lexer_kinds("a+=1") == [
+        TokenKind.IDENT,
+        TokenKind.PLUSEQ,
+        TokenKind.INT,
+        TokenKind.NEWLINE,
+        TokenKind.EOF,
+    ]
+
+
+def test_spaced_plus_equals_stays_two_separate_tokens():
+    # `a + = 1`: maximal munch is adjacency-based, not whitespace-based --
+    # PLUS and EQ are not adjacent here, so they lex exactly as they did
+    # before this feature existed (two separate tokens), never merging into
+    # PLUSEQ across the space.
+    assert lexer_kinds("a + = 1") == [
+        TokenKind.IDENT,
+        TokenKind.PLUS,
+        TokenKind.EQ,
+        TokenKind.INT,
+        TokenKind.NEWLINE,
+        TokenKind.EOF,
+    ]
+
+
+# ---- Byte-identity: sugar and its hand-written desugared twin transpile to
+# identical Rust (the §55 pattern) ------------------------------------------
+
+BYTE_IDENTITY_CASES = [
+    pytest.param(
+        "fn main() { let x = 1\n x += 2\n print(x) }",
+        "fn main() { let x = 1\n x = x + 2\n print(x) }",
+        id="plus-eq",
+    ),
+    pytest.param(
+        "fn main() { let x = 5\n x -= 2\n print(x) }",
+        "fn main() { let x = 5\n x = x - 2\n print(x) }",
+        id="minus-eq",
+    ),
+    pytest.param(
+        "fn main() { let x = 3\n x *= 2\n print(x) }",
+        "fn main() { let x = 3\n x = x * 2\n print(x) }",
+        id="star-eq",
+    ),
+]
+
+
+@pytest.mark.parametrize(("sugar", "twin"), BYTE_IDENTITY_CASES)
+def test_compound_assign_transpiles_byte_identical_to_hand_written_twin(sugar, twin):
+    # A desugar-drops-the-left-operand mutant (`x += e` -> `x = e`) or an
+    # operator-swap mutant (`+=` -> `-`) changes the emitted BinOp's shape,
+    # so it would break this equality without needing rustc at all.
+    sugar_rust, sugar_diags = transpile(sugar)
+    twin_rust, twin_diags = transpile(twin)
+    assert sugar_diags == []
+    assert twin_diags == []
+    assert sugar_rust == twin_rust
+
+
+# ---- Stdout: accumulation loops, one hand-computed expectation per operator
+
+STDOUT_CASES = [
+    pytest.param(
+        "fn main() {\n"
+        "    let s = 0\n"
+        "    for i in range(0, 5) { s += i }\n"
+        "    print(s)\n"
+        "}\n",
+        "10\n",  # 0+0+1+2+3+4
+        id="plus-eq-accumulation",
+    ),
+    pytest.param(
+        "fn main() {\n"
+        "    let s = 20\n"
+        "    for i in range(0, 5) { s -= i }\n"
+        "    print(s)\n"
+        "}\n",
+        "10\n",  # 20-0-1-2-3-4
+        id="minus-eq-accumulation",
+    ),
+    pytest.param(
+        "fn main() {\n"
+        "    let s = 1\n"
+        "    for i in range(1, 5) { s *= i }\n"
+        "    print(s)\n"
+        "}\n",
+        "24\n",  # 1*1*2*3*4
+        id="star-eq-accumulation",
+    ),
+]
+
+
+@requires_rustc
+@pytest.mark.parametrize(("source", "expected_stdout"), STDOUT_CASES)
+def test_compound_assign_runtime_stdout(source, expected_stdout, tmp_path):
+    assert compile_and_run(source, tmp_path) == expected_stdout
+
+
+# ---- Str `+=`: `+` is defined only for Int/Float (src/sema/infer.py's
+# _NUMERIC_NAMES); Oxide spells string concatenation `concat(a, b)`, not
+# `+`. So `s += "b"` desugars to the equally-invalid `s = s + "b"` and must
+# report the SAME diagnostic that hand-written form already gets -- OX0305,
+# not a bespoke "no += for Str" code. ----------------------------------
+
+
+def test_plus_eq_on_str_reports_the_same_diagnostic_as_the_hand_written_plus():
+    sugar = 'fn main() {\n let s = "a"\n s += "b"\n print(s)\n}\n'
+    twin = 'fn main() {\n let s = "a"\n s = s + "b"\n print(s)\n}\n'
+    assert codes(sugar) == ["OX0305"]
+    assert codes(sugar) == codes(twin)
+
+
+# ---- Ownership: the desugared RHS is a BinOp, whose operands are always
+# READ uses regardless of assignment context (src/sema/cfg.py `_expr`'s
+# BinOp case) -- so a moved variable referenced anywhere inside `e` must
+# still trip the existing OX0400 use-after-move check, exactly as it would
+# for the hand-written twin. --------------------------------------------
+
+
+def test_plus_eq_rhs_reading_a_moved_variable_reports_use_after_move():
+    sugar = (
+        "fn main() {\n"
+        "    let v = vec()\n"
+        "    let w = push(v, 1)\n"
+        "    let x = 1\n"
+        "    x += len(v)\n"
+        "    print(x)\n"
+        "}\n"
+    )
+    twin = (
+        "fn main() {\n"
+        "    let v = vec()\n"
+        "    let w = push(v, 1)\n"
+        "    let x = 1\n"
+        "    x = x + len(v)\n"
+        "    print(x)\n"
+        "}\n"
+    )
+    assert codes(sugar) == ["OX0400"]
+    assert codes(sugar) == codes(twin)
+
+
+# ---- Malformed forms: no new diagnostic codes -- the parser's existing
+# machinery already covers a non-identifier target or a split `+ =`. -------
+
+MALFORMED_CASES = [
+    pytest.param(
+        "fn main() {\n x + = 1\n}\n",
+        ["OX0100"],
+        id="plus-space-eq-not-a-compound-operator",
+    ),
+    pytest.param(
+        "fn main() {\n let x = 1\n 1 += x\n}\n",
+        ["OX0101"],
+        id="literal-target-not-an-identifier",
+    ),
+    pytest.param(
+        "struct P { x: Int }\n"
+        "fn main() {\n"
+        "    let p = P { x: 1 }\n"
+        "    p.x += 1\n"
+        "}\n",
+        ["OX0101"],
+        id="field-target-out-of-scope-this-wave",
+    ),
+]
+
+
+@pytest.mark.parametrize(("source", "expected_codes"), MALFORMED_CASES)
+def test_malformed_compound_assign_uses_existing_error_codes(source, expected_codes):
+    assert codes(source) == expected_codes

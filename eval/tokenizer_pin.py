@@ -72,5 +72,44 @@ def committed_pin() -> str:
     return file_hash
 
 
+INSTRUCT_REPOS = (
+    "Qwen/Qwen2.5-Coder-1.5B-Instruct",
+    "Qwen/Qwen2.5-Coder-7B-Instruct",
+    "Qwen/Qwen2.5-Coder-14B-Instruct",
+)
+
+
+def fetch_instruct(dest: Path = TOKENIZER_DIR) -> dict:
+    """Attest the -Instruct checkpoints against the committed pin.
+
+    The token matching was computed under the pinned tokenizer; a
+    mismatching instruct tokenizer invalidates it, so this raises
+    rather than recording the difference.
+    """
+    committed = committed_pin()
+    entries = []
+    for repo in INSTRUCT_REPOS:
+        info = json.loads(_get(_API.format(repo=repo)))
+        rev = info["sha"]
+        blob = _get(_RESOLVE.format(repo=repo, rev=rev))
+        digest = hashlib.sha256(blob).hexdigest()
+        if digest != committed:
+            raise PinError(
+                f"{repo} tokenizer.json {digest} != committed pin "
+                f"{committed}; the token matching is invalid for this "
+                f"checkpoint — stop the experiment"
+            )
+        entries.append({"repo": repo, "revision": rev, "sha256": digest})
+    prov = json.loads((dest / "provenance.json").read_text(encoding="utf-8"))
+    prov["instruct_repos"] = entries
+    (dest / "provenance.json").write_text(
+        json.dumps(prov, indent=2, sort_keys=True) + "\n", encoding="utf-8"
+    )
+    return prov
+
+
 if __name__ == "__main__":
-    print(json.dumps(fetch(), indent=2, sort_keys=True))
+    import sys
+
+    _fn = fetch_instruct if "instruct" in sys.argv[1:] else fetch
+    print(json.dumps(_fn(), indent=2, sort_keys=True))

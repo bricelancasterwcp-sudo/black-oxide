@@ -15,7 +15,7 @@ from collections.abc import Callable
 from dataclasses import dataclass
 from pathlib import Path
 
-from eval.train_corpus import normalize_source
+from eval.train_corpus import PAIRS_ROOT, collect_verified, load_train_tasks, normalize_source
 
 ARMS = ("oxide", "rust")
 _SOURCE_RANK = {"reference": 0, "amplified": 1}
@@ -215,3 +215,33 @@ def write_matched(
         json.dumps(manifest, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
         encoding="utf-8",
     )
+
+
+AMP_ROOTS = (
+    Path("eval/results/train-amp2"),
+    Path("eval/results/train-amp2-slice"),
+)
+
+
+def load_matched_inputs() -> tuple[
+    dict[str, dict],
+    dict[tuple[str, str], str],
+    dict[tuple[str, str], set[str]],
+]:
+    """Tasks, references, and merged amplified programs for kept tasks only.
+
+    Merging the amp2 and slice roots and restricting to the live
+    tasks.jsonl reproduces the corpus the difficulty band cleared on
+    2026-08-13 (slice REPORT: merged band PASS 30/30).
+    """
+    tasks = load_train_tasks()
+    references = {}
+    for tid in tasks:
+        for arm, fname in (("oxide", "oxide.ox"), ("rust", "rust.rs")):
+            references[(tid, arm)] = (PAIRS_ROOT / tid / fname).read_text(encoding="utf-8")
+    amplified: dict[tuple[str, str], set[str]] = {}
+    for root in AMP_ROOTS:
+        for (task, arm), progs in collect_verified(root).items():
+            if task in tasks:
+                amplified.setdefault((task, arm), set()).update(progs)
+    return tasks, references, amplified

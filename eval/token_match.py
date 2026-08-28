@@ -9,13 +9,22 @@ without the real tokenizer (Task 5 supplies the pinned Qwen counter).
 """
 from __future__ import annotations
 
+import argparse
 import hashlib
 import json
+import subprocess
 from collections.abc import Callable
 from dataclasses import dataclass
 from pathlib import Path
 
-from eval.train_corpus import PAIRS_ROOT, collect_verified, load_train_tasks, normalize_source
+from eval.tokenizer_pin import TOKENIZER_FILE, committed_pin
+from eval.train_corpus import (
+    PAIRS_ROOT,
+    collect_verified,
+    contamination_report,
+    load_train_tasks,
+    normalize_source,
+)
 
 ARMS = ("oxide", "rust")
 _SOURCE_RANK = {"reference": 0, "amplified": 1}
@@ -245,3 +254,98 @@ def load_matched_inputs() -> tuple[
             if task in tasks:
                 amplified.setdefault((task, arm), set()).update(progs)
     return tasks, references, amplified
+
+
+MATCHED_DIR = Path("eval/train/matched")
+
+
+def qwen_counter() -> Callable[[str], int]:
+    """Supervised-token counter under the pinned tokenizer: ids + terminator."""
+    from tokenizers import Tokenizer  # deferred: heavy, Task-5-only dependency
+
+    tok = Tokenizer.from_file(str(TOKENIZER_FILE))
+    return lambda text: len(tok.encode(text).ids) + 1
+
+
+def token_efficiency(
+    tasks: dict[str, dict],
+    references: dict[tuple[str, str], str],
+    amplified: dict[tuple[str, str], set[str]],
+    count_tokens: Callable[[str], int],
+) -> dict:
+    """Descriptive estimand, computed PRE-trim over the full verified corpus.
+
+    The spec's decision 10: tokens per program, per class and overall,
+    references and amplified separately. Measured before trimming
+    because the estimand is about the languages, not the kept sample.
+    """
+    from eval.train_corpus import normalize_source as _norm
+
+    sections: dict[str, dict] = {"references": {}, "amplified": {}}
+    pools: dict[str, dict[tuple[str, str], list[int]]] = {"references": {}, "amplified": {}}
+    for tid, task in tasks.items():
+        cls = task["class"]
+        for arm in ARMS:
+            pools["references"].setdefault((cls, arm), []).append(
+                count_tokens(_norm(references[(tid, arm)]))
+            )
+            for text in sorted(amplified.get((tid, arm), set())):
+                pools["amplified"].setdefault((cls, arm), []).append(count_tokens(text))
+    classes = sorted({t["class"] for t in tasks.values()})
+    for section, by_key in pools.items():
+        table: dict[str, dict] = {}
+        for cls in classes + ["overall"]:
+            table[cls] = {}
+            for arm in ARMS:
+                values = (
+                    [v for (c, a), vs in by_key.items() if a == arm for v in vs]
+                    if cls == "overall"
+                    else by_key.get((cls, arm), [])
+                )
+                mean = round(sum(values) / len(values), 2) if values else 0.0
+                table[cls][arm] = {"n": len(values), "mean_sup_tokens": mean}
+        sections[section] = table
+    return sections
+
+
+def _git_head() -> str:
+    return subprocess.run(
+        ["git", "rev-parse", "HEAD"], capture_output=True, text=True, check=True
+    ).stdout.strip()
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description="Build the matched training corpus.")
+    parser.add_argument("--out", type=Path, default=MATCHED_DIR)
+    args = parser.parse_args(argv)
+
+    pin = committed_pin()  # raises PinError on any mismatch — fail closed
+    tasks, references, amplified = load_matched_inputs()
+    count = qwen_counter()
+    result = build_matched(tasks, references, amplified, count)
+
+    programs = {
+        f"{arm}/{e.task}/{e.sha256[:12]}": e.text
+        for arm in ARMS
+        for e in result.kept[arm]
+    }
+    hits = contamination_report(tasks, programs)
+    if hits:
+        raise MatchError(f"matched corpus is contaminated: {hits}")
+
+    write_matched(
+        args.out,
+        result,
+        tokenizer={"id": "Qwen/Qwen2.5-Coder (shared, see provenance)", "sha256": pin},
+        counts_source={"roots": [str(r) for r in AMP_ROOTS], "commit": _git_head()},
+        contamination={"hits": 0, "programs_checked": len(programs)},
+        token_efficiency=token_efficiency(tasks, references, amplified, count),
+    )
+    for b in result.budgets:
+        print(f"{b.cls}: budget={b.budget} kept={b.kept_tokens} gap={b.gap} step={b.quantization_step}")
+    print(f"dropped={len(result.dropped)} examples")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

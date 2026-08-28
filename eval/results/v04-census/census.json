@@ -1,0 +1,267 @@
+{
+  "families": {
+    "contains": {
+      "method": "\\.\\s*contains\\s*\\("
+    },
+    "index_assign": {
+      "bracket": "\\w+\\s*\\[\\s*\\w+\\s*\\]\\s*=[^=]",
+      "set_method": "\\.\\s*set\\s*\\("
+    },
+    "minmax": {
+      "free": "(?<![.\\w])(?:min|max)\\s*\\(",
+      "method": "\\.\\s*(?:min|max)\\s*\\("
+    },
+    "option": {
+      "if_let": "\\bif\\s+let\\s+Some",
+      "question": "\\)\\s*\\?",
+      "unwrap_or": "unwrap_or\\s*\\("
+    },
+    "ranges": {
+      "dotdot": "\\b\\w+\\s*\\.\\.=?\\s*\\w+",
+      "range_call": "\\brange\\s*\\(",
+      "to_method": "\\.\\s*to\\s*\\(\\s*\\w+\\s*\\)"
+    },
+    "sort": {
+      "free": "(?<![.\\w])sort\\s*\\(",
+      "method": "\\.\\s*sort\\s*\\("
+    },
+    "strings": {
+      "format": "\\bformat!\\s*\\(",
+      "join": "\\.\\s*join\\s*\\(",
+      "split": "\\.\\s*split\\s*\\("
+    },
+    "sum": {
+      "free": "(?<![.\\w])sum\\s*\\(",
+      "method": "\\.\\s*sum\\s*\\("
+    }
+  },
+  "meta": {
+    "oxide_arms": [
+      "base-ox-1.5",
+      "base-ox-14",
+      "base-ox-7",
+      "tune-ox-1.5",
+      "tune-ox-14",
+      "tune-ox-7"
+    ],
+    "program_classes": [
+      "arithmetic/loops",
+      "strings",
+      "structs/option",
+      "vectors"
+    ],
+    "reply_files_scanned": 3478,
+    "runpod_root": "eval/results/runpod-exp"
+  },
+  "programs": {
+    "contains": {
+      "method": {
+        "amplified": {
+          "strings": 1
+        },
+        "reference": {
+          "strings": 2
+        }
+      }
+    },
+    "index_assign": {
+      "bracket": {
+        "amplified": {
+          "strings": 1
+        },
+        "reference": {}
+      },
+      "set_method": {
+        "amplified": {},
+        "reference": {}
+      }
+    },
+    "minmax": {
+      "free": {
+        "amplified": {},
+        "reference": {}
+      },
+      "method": {
+        "amplified": {
+          "vectors": 8
+        },
+        "reference": {
+          "vectors": 2
+        }
+      }
+    },
+    "option": {
+      "if_let": {
+        "amplified": {
+          "structs/option": 2,
+          "vectors": 1
+        },
+        "reference": {
+          "strings": 1
+        }
+      },
+      "question": {
+        "amplified": {
+          "arithmetic/loops": 1
+        },
+        "reference": {
+          "structs/option": 2
+        }
+      },
+      "unwrap_or": {
+        "amplified": {},
+        "reference": {}
+      }
+    },
+    "ranges": {
+      "dotdot": {
+        "amplified": {
+          "arithmetic/loops": 75,
+          "strings": 1,
+          "vectors": 1
+        },
+        "reference": {
+          "arithmetic/loops": 7
+        }
+      },
+      "range_call": {
+        "amplified": {
+          "arithmetic/loops": 54
+        },
+        "reference": {
+          "arithmetic/loops": 7
+        }
+      },
+      "to_method": {
+        "amplified": {},
+        "reference": {}
+      }
+    },
+    "sort": {
+      "free": {
+        "amplified": {},
+        "reference": {}
+      },
+      "method": {
+        "amplified": {
+          "vectors": 9
+        },
+        "reference": {
+          "vectors": 2
+        }
+      }
+    },
+    "strings": {
+      "format": {
+        "amplified": {},
+        "reference": {}
+      },
+      "join": {
+        "amplified": {},
+        "reference": {}
+      },
+      "split": {
+        "amplified": {},
+        "reference": {
+          "strings": 1
+        }
+      }
+    },
+    "sum": {
+      "free": {
+        "amplified": {},
+        "reference": {}
+      },
+      "method": {
+        "amplified": {
+          "arithmetic/loops": 9
+        },
+        "reference": {}
+      }
+    }
+  },
+  "replies": {
+    "contains": {
+      "method": {
+        "base-ox-1.5": 36,
+        "base-ox-7": 4,
+        "tune-ox-1.5": 4
+      }
+    },
+    "index_assign": {
+      "bracket": {
+        "base-ox-7": 28
+      },
+      "set_method": {}
+    },
+    "minmax": {
+      "free": {
+        "tune-ox-1.5": 28,
+        "tune-ox-14": 1
+      },
+      "method": {
+        "base-ox-1.5": 20
+      }
+    },
+    "option": {
+      "if_let": {
+        "base-ox-1.5": 16,
+        "base-ox-14": 15,
+        "tune-ox-1.5": 4
+      },
+      "question": {
+        "base-ox-1.5": 4,
+        "base-ox-14": 89,
+        "base-ox-7": 16
+      },
+      "unwrap_or": {
+        "base-ox-1.5": 20,
+        "base-ox-14": 4
+      }
+    },
+    "ranges": {
+      "dotdot": {
+        "base-ox-1.5": 264,
+        "base-ox-7": 28
+      },
+      "range_call": {
+        "base-ox-14": 202,
+        "base-ox-7": 264,
+        "tune-ox-1.5": 81,
+        "tune-ox-14": 164,
+        "tune-ox-7": 62
+      },
+      "to_method": {}
+    },
+    "sort": {
+      "free": {
+        "base-ox-14": 40,
+        "base-ox-7": 36,
+        "tune-ox-1.5": 40,
+        "tune-ox-14": 40,
+        "tune-ox-7": 40
+      },
+      "method": {
+        "base-ox-1.5": 12,
+        "base-ox-7": 4
+      }
+    },
+    "strings": {
+      "format": {
+        "base-ox-1.5": 4
+      },
+      "join": {},
+      "split": {}
+    },
+    "sum": {
+      "free": {
+        "tune-ox-14": 6
+      },
+      "method": {
+        "base-ox-1.5": 40,
+        "base-ox-7": 36,
+        "tune-ox-1.5": 24
+      }
+    }
+  }
+}

@@ -243,3 +243,9 @@ tests, real-data acceptance pins where committed data exists).
 Corpus scale-up; repair-format training data; constrained-decoding
 arms; any non-Qwen subject; serving quantizations other than q8_0;
 the robigo 14B benchmark run (separate instrument); VTT wiring.
+
+> **Amended 2026-08-28 (dry run):** artifacts persist on the pod and
+> results rsync home after each tranche; the S3 store (and its fresh
+> key) is not used. Pod of record is a 3090 at $0.22/h (4090
+> unavailable in community; 24GB class held). Full bring-up record:
+> `docs/superpowers/evidence/2026-08-27-runpod-dryrun.md`.

@@ -140,6 +140,28 @@ fn trunc(x: f64) -> i64 {
 
 fn to_str(x: i64) -> String {
     x.to_string()
+}
+
+fn sort<T: Ord>(v: Vec<T>) -> Vec<T> {
+    let mut t = v;
+    t.sort();
+    t
+}
+
+fn min<T: Ord + Clone>(v: &Vec<T>) -> Option<T> {
+    v.iter().min().cloned()
+}
+
+fn max<T: Ord + Clone>(v: &Vec<T>) -> Option<T> {
+    v.iter().max().cloned()
+}
+
+fn sum(v: &Vec<i64>) -> i64 {
+    v.iter().sum()
+}
+
+fn contains<T: PartialEq>(v: &Vec<T>, x: &T) -> bool {
+    v.contains(x)
 }"""
 
 R1_MAIN = """fn main() {

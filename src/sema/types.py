@@ -138,6 +138,42 @@ BUILTINS: dict[str, BuiltinSig] = {
     # and 6 programs defined `fn to_str` themselves rather than use the
     # longer name. Int only: the language has no overloading.
     "to_str": BuiltinSig(params=(INT,), ret=STR, modes=("read",), generics=()),
+    # ---- v0.4 builtins (Task 3 gate ruling), modes pinned ----
+    # sort/set-style consuming vs min/max/sum/contains-style reading, mirroring
+    # push and get/len respectively. `set` is CUT by the gate ruling (the
+    # provisional slate listed it; the ruling struck it) and is not present.
+    "sort": BuiltinSig(
+        params=(TCon("Vec", (_A,)),),
+        ret=TCon("Vec", (_A,)),
+        modes=("own",),
+        generics=(_A,),
+    ),
+    "min": BuiltinSig(
+        params=(TCon("Vec", (_A,)),),
+        ret=TCon("Option", (_A,)),
+        modes=("read",),
+        generics=(_A,),
+    ),
+    "max": BuiltinSig(
+        params=(TCon("Vec", (_A,)),),
+        ret=TCon("Option", (_A,)),
+        modes=("read",),
+        generics=(_A,),
+    ),
+    "sum": BuiltinSig(
+        params=(TCon("Vec", (INT,)),), ret=INT, modes=("read",), generics=()
+    ),
+    # x's mode mirrors ==/!= (SPEC.md §14 EQ_OPS / eq_derive_types): equality
+    # comparison never consumes its operands (BUILTIN_REF/`_binop_text` emit
+    # ref-form for non-Copy operands on both sides), so `contains`'s searched
+    # value is read, not moved -- consistent with `push`'s VALUE slot being
+    # "own" only because it is being inserted (consumed), not compared.
+    "contains": BuiltinSig(
+        params=(TCon("Vec", (_A,)), _A),
+        ret=BOOL,
+        modes=("read", "read"),
+        generics=(_A,),
+    ),
 }
 
 

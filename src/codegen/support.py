@@ -99,6 +99,28 @@ fn trunc(x: f64) -> i64 {
 
 fn to_str(x: i64) -> String {
     x.to_string()
+}
+
+fn sort<T: Ord>(v: Vec<T>) -> Vec<T> {
+    let mut t = v;
+    t.sort();
+    t
+}
+
+fn min<T: Ord + Clone>(v: &Vec<T>) -> Option<T> {
+    v.iter().min().cloned()
+}
+
+fn max<T: Ord + Clone>(v: &Vec<T>) -> Option<T> {
+    v.iter().max().cloned()
+}
+
+fn sum(v: &Vec<i64>) -> i64 {
+    v.iter().sum()
+}
+
+fn contains<T: PartialEq>(v: &Vec<T>, x: &T) -> bool {
+    v.contains(x)
 }"""
 
 # --------------------------------------------------------------------- naming
@@ -175,6 +197,15 @@ BUILTIN_REF: dict[str, tuple[bool, ...]] = {
     "to_float": (False,),
     "trunc": (False,),
     "to_str": (False,),
+    # v0.4 (Task 3): sort takes Vec<T> by value (consuming, like push's `v`);
+    # min/max/sum/contains take &Vec<T> (reading, like get/len); contains'
+    # searched value is also a ref (mirrors clone's unconditional `&T`, not
+    # push's owned value slot -- see the mode note on BUILTINS["contains"]).
+    "sort": (False,),
+    "min": (True,),
+    "max": (True,),
+    "sum": (True,),
+    "contains": (True, True),
 }
 
 

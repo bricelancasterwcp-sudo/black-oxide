@@ -121,6 +121,38 @@ def test_repair_rounds_stay_cardfree(tmp_path):
         assert card[:80] not in prompt
 
 
+def test_run_arm_extra_provenance_merged(tmp_path):
+    """--gguf-sha / --llamacpp-commit (threaded through as
+    `extra_provenance`) must land in provenance.json alongside the
+    fields `run_arm` always records itself -- not replace them."""
+    spec = next(s for s in ARM_SPECS if s.name == "tune-ox-7")
+    client = FakeClient(_passing_reply())
+    run_arm(spec, host="http://unused", results_root=tmp_path / "exp",
+            tasks_path=_one_task_file(tmp_path), seeds=(1,),
+            families=("gen",), client=client,
+            extra_provenance={"gguf_sha256": "x"})
+    provenance = json.loads(
+        (tmp_path / "exp" / "tune-ox-7" / "provenance.json").read_text()
+    )
+    assert provenance["gguf_sha256"] == "x"
+    assert provenance["name"] == "tune-ox-7"  # existing fields untouched
+
+
+def test_run_arm_extra_provenance_none_default_unchanged(tmp_path):
+    """None (the default) must not add or remove anything from
+    provenance.json -- existing callers are untouched."""
+    spec = next(s for s in ARM_SPECS if s.name == "tune-ox-7")
+    client = FakeClient(_passing_reply())
+    run_arm(spec, host="http://unused", results_root=tmp_path / "exp",
+            tasks_path=_one_task_file(tmp_path), seeds=(1,),
+            families=("gen",), client=client)
+    provenance = json.loads(
+        (tmp_path / "exp" / "tune-ox-7" / "provenance.json").read_text()
+    )
+    assert "gguf_sha256" not in provenance
+    assert "llamacpp_commit" not in provenance
+
+
 def test_run_arm_cardfree_probes_end_to_end(tmp_path):
     """include_card=False threading from run_arm through
     probe_campaign.run_campaign -> run_corpus -> build_probe_prompt, proven

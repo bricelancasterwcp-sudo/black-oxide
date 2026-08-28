@@ -17,6 +17,7 @@ from eval.experiment_report import (
     gen_metrics,
     load_cells,
     paired_pass1,
+    paired_strict_repair,
     require_complete,
     strict_repair_rate,
     unpaired_pass1,
@@ -122,16 +123,38 @@ def test_load_cells_reads_all_seed_runs(tmp_path):
     assert len(load_cells(arm)) == 2
 
 
-def _probe_row(arm, strict):
-    return {"arm": arm, "strict": strict, "lenient": strict, "codes": []}
+def _probe_row(arm, strict, defect):
+    return {"arm": arm, "strict": strict, "lenient": strict, "codes": [],
+            "defect": defect}
 
 
 def _write_probe_cell(probes_root, lang, seed, strict_flags):
+    # `defect` defaults to the row's position ("class0", "class1", ...):
+    # harmless for `strict_repair_rate`/`summarize` (neither reads it),
+    # and gives `paired_strict_repair` a real, position-matched class key
+    # to pair on when a fixture writes the SAME strict_flags length for
+    # both sides of a comparison.
     cell = Path(probes_root) / f"{lang}-s{seed}"
     cell.mkdir(parents=True, exist_ok=True)
     (cell / "probe_results.jsonl").write_text(
-        "\n".join(json.dumps(_probe_row(lang, s)) for s in strict_flags) + "\n",
+        "\n".join(
+            json.dumps(_probe_row(lang, s, f"class{i}"))
+            for i, s in enumerate(strict_flags)
+        ) + "\n",
         encoding="utf-8",
+    )
+
+
+def _write_probe_cell_classed(probes_root, lang, seed, defect_flags):
+    """Like `_write_probe_cell`, but the caller picks the (defect, strict)
+    pairs and their order explicitly -- used where the row-insertion
+    order into `_class_rates`'s dict must be controlled (proving pairing
+    is by `defect` key, not by position)."""
+    cell = Path(probes_root) / f"{lang}-s{seed}"
+    cell.mkdir(parents=True, exist_ok=True)
+    rows = [_probe_row(lang, strict, defect) for defect, strict in defect_flags]
+    (cell / "probe_results.jsonl").write_text(
+        "\n".join(json.dumps(r) for r in rows) + "\n", encoding="utf-8",
     )
 
 
@@ -143,6 +166,54 @@ def test_strict_repair_rate_pools_seeds_via_probe_summarize(tmp_path):
     r = strict_repair_rate(tmp_path)
     assert r["n"] == 5
     assert r["rate"] == pytest.approx(3 / 5)
+
+
+def test_paired_strict_repair_hand_computed(tmp_path):
+    # 3 shared defect classes, one seed-cell per side. Insertion order
+    # into `_class_rates`'s per-side dict is DELIBERATELY reversed
+    # between the two sides (a: d1,d2,d3 / b: d3,d2,d1), and the class
+    # rates are chosen so a positional (insertion-order) zip gives a
+    # DIFFERENT two_se_pp than matching by the `defect` key -- see the
+    # hand computation below. The same values also give a non-symmetric
+    # diff set, so a population-SD (n, not n-1) mutation in the shared
+    # `_paired_rates` helper is caught too.
+    a_root, b_root = tmp_path / "a", tmp_path / "b"
+    _write_probe_cell_classed(a_root, "oxide", 1, [
+        ("d1", True), ("d1", True), ("d1", True), ("d1", True), ("d1", True),
+        ("d1", True), ("d1", True), ("d1", True), ("d1", True), ("d1", False),
+        ("d2", True), ("d2", True), ("d2", True), ("d2", True), ("d2", True),
+        ("d2", True), ("d2", False), ("d2", False), ("d2", False), ("d2", False),
+        ("d3", True), ("d3", True), ("d3", False), ("d3", False), ("d3", False),
+        ("d3", False), ("d3", False), ("d3", False), ("d3", False), ("d3", False),
+    ])
+    _write_probe_cell_classed(b_root, "rust", 1, [
+        ("d3", True), ("d3", True), ("d3", True), ("d3", False), ("d3", False),
+        ("d3", False), ("d3", False), ("d3", False), ("d3", False), ("d3", False),
+        ("d2", True), ("d2", True), ("d2", True), ("d2", True), ("d2", True),
+        ("d2", False), ("d2", False), ("d2", False), ("d2", False), ("d2", False),
+        ("d1", True), ("d1", True), ("d1", True), ("d1", True), ("d1", False),
+        ("d1", False), ("d1", False), ("d1", False), ("d1", False), ("d1", False),
+    ])
+    r = paired_strict_repair(a_root, b_root)
+    # per-class rates: a={d1: 9/10=0.9, d2: 6/10=0.6, d3: 2/10=0.2}
+    #                  b={d3: 3/10=0.3, d2: 5/10=0.5, d1: 4/10=0.4}
+    # paired-by-KEY diffs (d1,d2,d3): 0.5, 0.1, -0.1 -> delta=16.7pp,
+    # sample SE -> two_se=35.3pp (hand-verified; a positional zip using
+    # each side's insertion order instead gives 46.7pp, a population-SD
+    # denominator gives 28.8pp -- both wrong and distinguishable here).
+    assert r["delta_pp"] == 16.7
+    assert r["two_se_pp"] == 35.3
+    assert r["n"] == 3
+
+
+def test_paired_strict_repair_mismatched_classes_raises(tmp_path):
+    a_root, b_root = tmp_path / "a", tmp_path / "b"
+    _write_probe_cell_classed(a_root, "oxide", 1,
+                               [("d1", True), ("d2", True)])
+    _write_probe_cell_classed(b_root, "rust", 1,
+                               [("d1", True), ("d3", False)])
+    with pytest.raises(ReportError, match="identical defect-class sets"):
+        paired_strict_repair(a_root, b_root)
 
 
 def _write_gen_cell(root, arm_name, seed=1, rows=None):
@@ -172,22 +243,30 @@ def test_build_report_repair_primaries_and_headline_hand_computed(tmp_path):
     _write_probe_cell(root / "tune-rs-7" / "probes", "rust", 1, [True] * 4 + [False] * 6)     # 0.4/10
     _write_probe_cell(root / "base-rs-14" / "probes", "rust", 1, [True] * 3 + [False] * 7)    # 0.3/10
 
-    report = build_report(root)
+    report = build_report(root, strict_shape=False)
 
-    # hand: 0.8 vs 0.2 -> delta 60.0, 2SE = 2*sqrt(.16/10+.16/10)*100 = 35.8
+    # `_write_probe_cell` tags row i's defect "classI" by position, so
+    # tune-ox-{s}/tune-rs-{s} pairs of equal length share class0..class9
+    # -- the paired (per-class) construction over one replicate per class
+    # reduces to the plain per-arm rate for delta_pp (same as the old
+    # unpaired numbers below), but two_se_pp is now the PAIRED sample-SE
+    # over per-class diffs, not the two-binomials formula -- hand-verified
+    # via the same {0,1}-diffs construction as test_paired_pass1_hand_computed.
+    # hand: diffs [0,0,1,1,1,1,1,1,0,0] -> delta 60.0, sample 2SE = 32.7
     assert report["primaries"]["1.5"]["repair"] == {
-        "tune_ox": 0.8, "tune_rs": 0.2, "delta_pp": 60.0, "two_se_pp": 35.8,
+        "delta_pp": 60.0, "two_se_pp": 32.7, "n": 10,
     }
-    # hand: 0.7 vs 0.4 -> delta 30.0, 2SE = 2*sqrt(.021+.024)*100 = 42.4
+    # hand: diffs [0,0,0,0,1,1,1,0,0,0] -> delta 30.0, sample 2SE = 30.6
     assert report["primaries"]["7"]["repair"] == {
-        "tune_ox": 0.7, "tune_rs": 0.4, "delta_pp": 30.0, "two_se_pp": 42.4,
+        "delta_pp": 30.0, "two_se_pp": 30.6, "n": 10,
     }
-    # hand: 0.5 vs 0.5 (both filler) -> delta 0.0, 2SE = 2*sqrt(.025+.025)*100 = 44.7
+    # hand: both sides identical filler -> all-zero diffs -> delta 0.0, 2SE 0.0
     assert report["primaries"]["14"]["repair"] == {
-        "tune_ox": 0.5, "tune_rs": 0.5, "delta_pp": 0.0, "two_se_pp": 44.7,
+        "delta_pp": 0.0, "two_se_pp": 0.0, "n": 10,
     }
-    # headline: tune-ox-7 (0.7/10) vs base-rs-14 (0.3/10), generic a/b keys
-    # -- base-rs-14 is not "tune_rs", so it must not be labelled that way.
+    # headline stays UNPAIRED (the spec's own choice, not an impossibility):
+    # tune-ox-7 (0.7/10) vs base-rs-14 (0.3/10), generic a/b keys -- unchanged
+    # by the primaries-side paired refactor.
     assert report["headline"]["repair"] == {
         "a": 0.7, "b": 0.3, "delta_pp": 40.0, "two_se_pp": 41.0,
     }
@@ -200,6 +279,13 @@ def test_build_report_repair_primaries_and_headline_hand_computed(tmp_path):
             load_cells(root / f"tune-ox-{s}"), load_cells(root / f"tune-rs-{s}")
         )
         assert report["primaries"][s]["gen"] == expected
+
+    # repair wiring: same check, against `paired_strict_repair` directly.
+    for s in SIZES:
+        expected = paired_strict_repair(
+            root / f"tune-ox-{s}" / "probes", root / f"tune-rs-{s}" / "probes"
+        )
+        assert report["primaries"][s]["repair"] == expected
 
 
 def _filtered_probes_root(tmp_path, real_root, lang):
@@ -255,7 +341,7 @@ def test_build_report_efficiency_ratio_and_none_propagation(tmp_path):
     _write_gen_cell(root, "tune-ox-7",
                      rows=[_cell("t1", False, False, 5, 999), _cell("t2", False, False, 5, 999)])
 
-    report = build_report(root)
+    report = build_report(root, strict_shape=False)
 
     # hand: 80.0 / 40.0 = 2.0
     assert report["efficiency"]["1.5"]["gen_tokens_to_green_ratio"] == pytest.approx(2.0)
@@ -263,6 +349,29 @@ def test_build_report_efficiency_ratio_and_none_propagation(tmp_path):
     assert report["efficiency"]["7"]["gen_tokens_to_green_ratio"] is None
     # size "14" untouched: both sides default to 50.0 -> ratio 1.0 (sanity)
     assert report["efficiency"]["14"]["gen_tokens_to_green_ratio"] == pytest.approx(1.0)
+
+
+def test_build_report_strict_shape_names_bad_arm(tmp_path):
+    """The real campaign shape is 20 tasks x 10 seeds = 200 cells per arm.
+    `strict_shape=True` (the CLI's default) must refuse a short arm by
+    name rather than silently scoring it as a smaller-n result. Every
+    arm otherwise has a complete, scoreable shape (full 200-cell gen
+    fixture and probe filler) so this test fails on the shape check
+    specifically -- not on some unrelated missing-data error that would
+    happen to also mention "base-ox-1.5" in its message and mask a
+    disabled shape check."""
+    root = tmp_path
+    full_shape = [_cell(f"t{n:02d}", True, True) for _ in range(10) for n in range(1, 21)]
+    lang_for = {a: ("oxide" if "-ox-" in a else "rust") for a in ARM_NAMES}
+    for arm in ARM_NAMES:
+        (root / arm).mkdir()
+        (root / arm / ".DONE").write_text("")
+        rows = full_shape[:-1] if arm == "base-ox-1.5" else full_shape
+        _write_gen_cell(root, arm, rows=rows)
+        _write_probe_cell(root / arm / "probes", lang_for[arm], 1, [True] * 5 + [False] * 5)
+    with pytest.raises(ReportError, match="base-ox-1.5"):
+        build_report(root)  # strict_shape defaults to True
+    build_report(root, strict_shape=False)  # otherwise a fully valid report
 
 
 def test_acceptance_v03_closing_baseline_qwen():

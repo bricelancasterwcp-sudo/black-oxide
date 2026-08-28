@@ -81,6 +81,7 @@ def run_arm(
     seeds: tuple[int, ...] = SEEDS,
     families: tuple[str, ...] = ("gen", "probes"),
     client: object | None = None,
+    extra_provenance: dict | None = None,
 ) -> None:
     arm_dir = Path(results_root) / spec.name
     if (arm_dir / ".DONE").is_file():
@@ -97,6 +98,11 @@ def run_arm(
     if client is None:
         client = make_client(spec, host)
         provenance["identity"] = identity_preflight(client, spec)
+    if extra_provenance:
+        # Caller-supplied provenance (e.g. --gguf-sha / --llamacpp-commit
+        # from the pod wrapper) merged in last: it augments, never
+        # replaces, the fields this function always records itself.
+        provenance.update(extra_provenance)
     (arm_dir / "provenance.json").write_text(
         json.dumps(provenance, indent=2, sort_keys=True) + "\n",
         encoding="utf-8",
@@ -133,9 +139,24 @@ def main(argv: list[str] | None = None) -> int:
                         choices=[s.name for s in ARM_SPECS])
     parser.add_argument("--host", default="http://127.0.0.1:8081")
     parser.add_argument("--root", type=Path, required=True)
+    parser.add_argument(
+        "--gguf-sha", default=None,
+        help="sha256 of the served GGUF; recorded in provenance.json",
+    )
+    parser.add_argument(
+        "--llamacpp-commit", default=None,
+        help="llama.cpp commit the server was built from; recorded in "
+             "provenance.json",
+    )
     args = parser.parse_args(argv)
     spec = next(s for s in ARM_SPECS if s.name == args.arm)
-    run_arm(spec, host=args.host, results_root=args.root)
+    extra_provenance: dict = {}
+    if args.gguf_sha is not None:
+        extra_provenance["gguf_sha256"] = args.gguf_sha
+    if args.llamacpp_commit is not None:
+        extra_provenance["llamacpp_commit"] = args.llamacpp_commit
+    run_arm(spec, host=args.host, results_root=args.root,
+            extra_provenance=extra_provenance or None)
     print(f"{spec.name}: DONE")
     return 0
 

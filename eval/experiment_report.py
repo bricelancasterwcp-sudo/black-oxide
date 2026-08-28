@@ -64,19 +64,41 @@ def _rates_by_task(cells: list[dict]) -> dict[str, float]:
     return {t: sum(v) / len(v) for t, v in by.items()}
 
 
-def paired_pass1(a_cells: list[dict], b_cells: list[dict]) -> dict:
-    ta, tb = _rates_by_task(a_cells), _rates_by_task(b_cells)
-    tasks = sorted(set(ta) & set(tb))
-    if len(tasks) < 2:
-        raise ReportError("paired delta needs >= 2 shared tasks")
-    diffs = [ta[t] - tb[t] for t in tasks]
+def _paired_rates(ra: dict[str, float], rb: dict[str, float]) -> dict:
+    """The paired-delta / 2-SE construction shared by every "same
+    construction as co-primary" endpoint the spec registers: match `ra`
+    and `rb` by key (never by position -- two rate dicts built from
+    differently-ordered inputs must still pair correctly), take per-key
+    differences, and report the mean difference with a sample-SE-based
+    2-SE band.
+
+    `paired_pass1` (per-task rates) and `paired_strict_repair` (per-
+    defect-class rates) both route their arithmetic through this single
+    function, so "same construction" is not just a claim in a comment --
+    a mutation to the shared math here breaks both callers' tests at
+    once.
+    """
+    keys = sorted(set(ra) & set(rb))
+    if len(keys) < 2:
+        raise ReportError("paired delta needs >= 2 shared keys")
+    diffs = [ra[k] - rb[k] for k in keys]
     delta = sum(diffs) / len(diffs)
     var = sum((d - delta) ** 2 for d in diffs) / (len(diffs) - 1)
     se = (var / len(diffs)) ** 0.5
     return {
         "delta_pp": round(delta * 100, 1),
         "two_se_pp": round(2 * se * 100, 1),
-        "n_tasks": len(tasks),
+        "n": len(keys),
+    }
+
+
+def paired_pass1(a_cells: list[dict], b_cells: list[dict]) -> dict:
+    ta, tb = _rates_by_task(a_cells), _rates_by_task(b_cells)
+    result = _paired_rates(ta, tb)
+    return {
+        "delta_pp": result["delta_pp"],
+        "two_se_pp": result["two_se_pp"],
+        "n_tasks": result["n"],
     }
 
 
@@ -96,9 +118,13 @@ def _unpaired_binomial(a_rate: float, a_n: int, b_rate: float, b_n: int) -> dict
     """Same 2-SE-on-two-binomials formula as `unpaired_pass1`, but starting
     from already-aggregated (rate, n) pairs rather than cell rows — the
     shape `strict_repair_rate` produces, since probe outcomes are not
-    `first_passed` cells. Generic `a`/`b` keys, same as `unpaired_pass1`;
-    callers relabel to named keys when the comparison has fixed roles
-    (e.g. primaries' tune_ox/tune_rs)."""
+    `first_passed` cells. Generic `a`/`b` keys, same as `unpaired_pass1`.
+
+    Only the HEADLINE strict-repair comparison uses this. The spec
+    registers "Unpaired Welch-style 2-SE" for the headline endpoint by
+    choice, not because pairing across languages is impossible — it is
+    not: see `paired_strict_repair` for the paired construction the spec
+    registers for the repair co-primary (endpoint 1)."""
     se = (a_rate * (1 - a_rate) / a_n + b_rate * (1 - b_rate) / b_n) ** 0.5
     return {
         "a": a_rate,
@@ -119,16 +145,13 @@ def _ratio_or_none(a_mean: float | None, b_mean: float | None) -> float | None:
     return round(a_mean / b_mean, 3)
 
 
-def strict_repair_rate(probes_root: Path) -> dict:
-    """Reuse eval.probe's committed scoring over the campaign cell dirs.
-
-    `probes_root` holds one probe_campaign.py cell per (language-arm,
-    seed): `<arm>-s<seed>/probe_results.jsonl`, each line one already-
-    scored `eval.probe.score()` result. This function does not rescore
-    anything -- it loads the persisted rows and reduces them with
-    `eval.probe.summarize`, the same aggregation the campaign itself
-    writes to each cell's `probe_summary.json`, just pooled over every
-    seed found under `probes_root` instead of one cell at a time.
+def _load_probe_rows(probes_root: Path) -> list[dict]:
+    """Every already-scored `eval.probe.score()` result row persisted
+    under `probes_root`: one probe_campaign.py cell per (language-arm,
+    seed), `<arm>-s<seed>/probe_results.jsonl`. Shared by every reader of
+    this on-disk layout (`strict_repair_rate`, `paired_strict_repair`) so
+    there is exactly one place that knows the glob and the JSONL format --
+    this never rescores anything, only reads what was already judged.
     """
     probes_root = Path(probes_root)
     results: list[dict] = []
@@ -136,6 +159,68 @@ def strict_repair_rate(probes_root: Path) -> dict:
         for line in results_path.read_text(encoding="utf-8").splitlines():
             if line.strip():
                 results.append(json.loads(line))
+    return results
+
+
+def _class_rates(results: list[dict]) -> dict[str, float]:
+    """Per-defect-class strict-pass rate, pooled over every seed replicate
+    of that class. The repair-side analogue of `_rates_by_task`: `defect`
+    is the seeded-defect class identifier (`eval/probes.jsonl` carries
+    exactly one `defect` per probe `id`, shared 1:1 across language
+    arms), the way `task` identifies a generation task shared across
+    arms.
+    """
+    by: dict[str, list[bool]] = {}
+    for r in results:
+        by.setdefault(r["defect"], []).append(bool(r["strict"]))
+    return {d: sum(v) / len(v) for d, v in by.items()}
+
+
+def paired_strict_repair(a_probes_root: Path, b_probes_root: Path) -> dict:
+    """Repair's co-primary: the spec's endpoint 1 registers "Same
+    construction for strict repair rate as co-primary" -- i.e. the same
+    paired machinery as `paired_pass1`, over per-defect-class strict-pass
+    rates instead of per-task pass rates. Routes through `_paired_rates`,
+    the exact function `paired_pass1` uses, so the construction really is
+    the same code, not just the same formula typed twice.
+
+    Reuses `eval.probe`'s already-scored rows via `_load_probe_rows` --
+    nothing here re-judges pass/fail. The 20 seeded-defect classes are
+    shared 1:1 across the oxide/rust probe corpora (`eval/probes.jsonl`),
+    so pairing on `defect` is not merely possible but exact: a mismatched
+    class set between the two sides is a data-integrity fault, not
+    something to quietly intersect around the way `_paired_rates` alone
+    would, so it raises rather than falling back to the overlap.
+    """
+    a_results = _load_probe_rows(a_probes_root)
+    b_results = _load_probe_rows(b_probes_root)
+    if not a_results:
+        raise ReportError(f"no probe cells found under {a_probes_root}")
+    if not b_results:
+        raise ReportError(f"no probe cells found under {b_probes_root}")
+    ra, rb = _class_rates(a_results), _class_rates(b_results)
+    if set(ra) != set(rb):
+        raise ReportError(
+            f"paired strict repair needs identical defect-class sets: "
+            f"only in {a_probes_root}: {sorted(set(ra) - set(rb))}; "
+            f"only in {b_probes_root}: {sorted(set(rb) - set(ra))}"
+        )
+    return _paired_rates(ra, rb)
+
+
+def strict_repair_rate(probes_root: Path) -> dict:
+    """Reuse eval.probe's committed scoring over the campaign cell dirs.
+
+    `probes_root` holds one probe_campaign.py cell per (language-arm,
+    seed): `<arm>-s<seed>/probe_results.jsonl`, each line one already-
+    scored `eval.probe.score()` result. This function does not rescore
+    anything -- it loads the persisted rows (via `_load_probe_rows`) and
+    reduces them with `eval.probe.summarize`, the same aggregation the
+    campaign itself writes to each cell's `probe_summary.json`, just
+    pooled over every seed found under `probes_root` instead of one cell
+    at a time.
+    """
+    results = _load_probe_rows(probes_root)
     if not results:
         raise ReportError(f"no probe cells found under {probes_root}")
     summary = summarize(results)
@@ -158,36 +243,57 @@ def require_complete(root: Path) -> None:
         )
 
 
-def build_report(root: Path) -> dict:
+def _check_shape(cells_by_arm: dict[str, list[dict]]) -> None:
+    """Every arm must be exactly 200 cells over exactly 20 distinct tasks
+    -- the spec's 20 tasks x 10 seeds generation shape. A silently short
+    or malformed arm (a partial run, a task that failed to enqueue, a
+    seed accidentally run twice) would otherwise score as a valid but
+    smaller-n result instead of the infrastructure fault it actually is.
+    """
+    for a, cells in cells_by_arm.items():
+        n_tasks = len({c["task"] for c in cells})
+        if len(cells) != 200 or n_tasks != 20:
+            raise ReportError(
+                f"{a}: expected exactly 200 cells over 20 tasks, found "
+                f"{len(cells)} cells over {n_tasks} tasks"
+            )
+
+
+def build_report(root: Path, *, strict_shape: bool = True) -> dict:
     require_complete(root)
     root = Path(root)
-    arms = {a: gen_metrics(load_cells(root / a)) for a in ARM_NAMES}
+    cells_by_arm = {a: load_cells(root / a) for a in ARM_NAMES}
+    if strict_shape:
+        _check_shape(cells_by_arm)
+    arms = {a: gen_metrics(cells_by_arm[a]) for a in ARM_NAMES}
     repair = {a: strict_repair_rate(root / a / "probes") for a in ARM_NAMES}
     primaries = {}
     for s in SIZES:
-        rep = _unpaired_binomial(
-            repair[f"tune-ox-{s}"]["rate"], repair[f"tune-ox-{s}"]["n"],
-            repair[f"tune-rs-{s}"]["rate"], repair[f"tune-rs-{s}"]["n"],
-        )
         primaries[s] = {
-            "gen": paired_pass1(load_cells(root / f"tune-ox-{s}"),
-                                load_cells(root / f"tune-rs-{s}")),
-            # Strict repair rates come from independent probe corpora per
-            # language-arm, not shared tasks -- a task-paired delta is not
-            # possible across languages, so this is the unpaired-binomial
-            # form (same formula as `unpaired_pass1`) over probe outcomes.
-            # Relabeled from generic a/b to the fixed tune_ox/tune_rs roles
-            # every size uses.
-            "repair": {
-                "tune_ox": rep["a"], "tune_rs": rep["b"],
-                "delta_pp": rep["delta_pp"], "two_se_pp": rep["two_se_pp"],
-            },
+            "gen": paired_pass1(cells_by_arm[f"tune-ox-{s}"],
+                                cells_by_arm[f"tune-rs-{s}"]),
+            # Same paired construction as "gen" above (`_paired_rates`,
+            # shared with `paired_pass1`) -- the spec's endpoint 1
+            # registers "Same construction for strict repair rate as
+            # co-primary". Pairing IS possible here: the 20 seeded-defect
+            # classes are shared 1:1 across the oxide/rust probe corpora
+            # (`eval/probes.jsonl`). The HEADLINE repair comparison below
+            # stays unpaired -- not because pairing across languages is
+            # impossible, but because the spec explicitly registers
+            # "Unpaired Welch-style 2-SE" for the headline endpoint.
+            "repair": paired_strict_repair(
+                root / f"tune-ox-{s}" / "probes",
+                root / f"tune-rs-{s}" / "probes",
+            ),
         }
     headline = {
-        "gen": unpaired_pass1(load_cells(root / "tune-ox-7"),
-                              load_cells(root / "base-rs-14")),
+        "gen": unpaired_pass1(cells_by_arm["tune-ox-7"],
+                              cells_by_arm["base-rs-14"]),
         # tune-ox-7 vs base-rs-14 is not a tune_ox/tune_rs pair -- generic
         # a/b keys, same convention as `unpaired_pass1`'s own "gen" above.
+        # Unpaired by the spec's own registered choice for the headline
+        # endpoint (see the primaries loop above for the co-primary,
+        # which pairs).
         "repair": _unpaired_binomial(
             repair["tune-ox-7"]["rate"], repair["tune-ox-7"]["n"],
             repair["base-rs-14"]["rate"], repair["base-rs-14"]["n"],

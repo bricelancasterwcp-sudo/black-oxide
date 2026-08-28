@@ -4,8 +4,9 @@
 set -euo pipefail
 GGUF="$1"; ARM="$2"; PORT=8081; ROOT=/workspace/results
 cd /workspace/oxide
+SHA=$(sha256sum "$GGUF" | cut -d' ' -f1)
 /workspace/llama.cpp/build/bin/llama-server -m "$GGUF" -c 8192 -ngl 99 \
-  --port "$PORT" --host 127.0.0.1 >"/workspace/serve-$ARM.log" 2>&1 &
+  --jinja --port "$PORT" --host 127.0.0.1 >"/workspace/serve-$ARM.log" 2>&1 &
 SERVER=$!
 trap 'kill -9 $SERVER 2>/dev/null || true' EXIT
 for i in $(seq 1 120); do
@@ -13,7 +14,8 @@ for i in $(seq 1 120); do
   sleep 5
   if [ "$i" = 120 ]; then echo "SERVER-NEVER-HEALTHY" >&2; exit 1; fi
 done
-python -m eval.exp_campaign --arm "$ARM" --host "http://127.0.0.1:$PORT" --root "$ROOT"
+python -m eval.exp_campaign --arm "$ARM" --host "http://127.0.0.1:$PORT" --root "$ROOT" \
+  --gguf-sha "$SHA" --llamacpp-commit "$(cat /workspace/llamacpp.commit)"
 kill -9 $SERVER 2>/dev/null || true
 for i in $(seq 1 60); do
   curl -sf "http://127.0.0.1:$PORT/health" >/dev/null || break

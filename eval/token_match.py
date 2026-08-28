@@ -140,7 +140,11 @@ def build_matched(
             arm_kept = [
                 e
                 for e in by_class.get((cls, arm), ())
-                if not (arm == surplus_arm and (e.task, e.sha256) in removed)
+                if not (
+                    arm == surplus_arm
+                    and e.source == "amplified"
+                    and (e.task, e.sha256) in removed
+                )
             ]
             kept[arm].extend(arm_kept)
             kept_tokens[arm] = sum(e.sup_tokens for e in arm_kept)

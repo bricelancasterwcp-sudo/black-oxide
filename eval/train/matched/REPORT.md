@@ -3,17 +3,43 @@
 2026-08-27 (build date). Spec:
 docs/superpowers/specs/2026-08-27-token-matching-design.md. Built by
 `python -m eval.token_match` at commit
-a17199f018638c522c05814478c932336a03434f.
+9c899da4e9fad78a24b074977233cec44fd7f405.
+
+Rebuilt 2026-08-27 as part of a fix wave (finding F1): the kept-filter
+in `build_matched` removed rows by `(task, sha256)` membership in the
+dropped-amplified set without checking `source`, so whenever an
+amplified program was byte-identical to its own task's reference
+(same normalized text, hence same sha256), the filter struck the
+reference too — silently, in violation of spec decision 5
+("references never trimmed"). This had happened twice in the prior
+committed corpus: oxide task n032 (structs/option) and rust task n052
+(strings) each carried 39 reference rows instead of 40. The filter now
+additionally requires `source == "amplified"`; both references are
+restored below.
 
 ## Budgets
 
 | class | budget (sup tokens) | oxide kept (tok / n) | rust kept (tok / n) | gap | step |
 |---|---|---|---|---|---|
 | arithmetic/loops | 7074 | 7074 / 103 | 7033 / 135 | 41 | 104 |
-| strings | 1566 | 1566 / 20 | 1498 / 25 | 68 | 162 |
-| structs/option | 4814 | 4727 / 65 | 4814 / 72 | 87 | 145 |
+| strings | 1566 | 1566 / 20 | 1537 / 26 | 29 | 162 |
+| structs/option | 4814 | 4783 / 66 | 4814 / 72 | 31 | 145 |
 | vectors | 3802 | 3802 / 40 | 3735 / 59 | 67 | 202 |
-| **total** | **17256** | **17169 / 228** | **17080 / 291** | 263 (sum) | — |
+| **total** | **17256** | **17225 / 229** | **17119 / 292** | — | — |
+
+The totals row omits a single "gap" cell on purpose. The four
+per-class gaps sum to 168 tokens (41+29+31+67), but that sum is not a
+corpus-level measurement — it adds four independent per-class
+quantization artifacts as if they pointed the same way. They don't:
+rust is the short arm in three classes (arithmetic/loops, strings,
+vectors) and oxide is the short arm in the fourth (structs/option), so
+at the corpus level the shortfalls partly cancel rather than
+accumulate. The actual corpus-level kept-token difference is
+|17225 − 17119| = **106 tokens**, distinct from and smaller than the
+168-token sum of per-class gaps. Neither number is wrong; they answer
+different questions (worst-case per-class quantization loss added up,
+versus the net token count the two arms actually differ by), and only
+the second is a real aggregate.
 
 Dropped: 141 examples (22 oxide, 119 rust) — full list in
 manifest.json, named not deleted. By class: arithmetic/loops 14 (all
@@ -37,7 +63,7 @@ programs on average in both sets (71.17 vs 58.3 references, 75.53 vs
 point opposite ways (spec decision 10) did not hold at the token
 level. The gap is somewhat wider under amplification than in the
 hand-authored references — oxide runs about 22% larger than rust in
-references versus about 29% larger in amplified — driven mostly by
+references versus about 29% larger in amplified — concentrated in
 vectors and strings, where oxide's amplified mean rises while rust's
 falls relative to their own references. One class inverts the overall
 pattern: structs/option has oxide smaller than rust in references
@@ -46,6 +72,13 @@ pattern: structs/option has oxide smaller than rust in references
 
 ## Guards
 
-Contamination: 0 hits over 519 kept programs.
+Contamination: 0 hits over 521 kept programs.
 Tokenizer pin: c0382117ea32, attested from 3 checkpoints
 (eval/train/tokenizer/provenance.json).
+
+`counts_source.commit` in manifest.json records the git HEAD at build
+time — the code state that produced this corpus — not the commit that
+ships this corpus. It cannot record the latter: that commit does not
+exist yet when the build runs, so the field structurally always trails
+by one commit for a build-then-commit workflow (F3, noted rather than
+engineered around).

@@ -33,6 +33,15 @@ def corpus():
     whole candidate list (as with 'alpha' and a single-task 'beta'),
     every removal order reaches the same end state and the order is
     unobservable. See test_trim_order_is_hash_order.
+
+    n004's oxide amplified set also includes "fn main() { d }" —
+    byte-identical (same normalized text, same sha256) to n004's own
+    oxide reference. It sorts last among the beta/oxide candidates by
+    sha256, so trimming reaches and removes it: (task="n004", sha256)
+    lands in `removed` while a reference row with that exact (task,
+    sha256) also exists. A filter that keys removal on (task, sha256)
+    alone — instead of also requiring source == "amplified" — strikes
+    the reference too. See test_references_survive_every_task_both_arms.
     """
     tasks = {
         "n001": {"class": "alpha", "prompt": "add two numbers"},
@@ -56,7 +65,7 @@ def corpus():
         ("n002", "rust"): {"ten eleven twelve thirteen"},
         ("n003", "oxide"): {"a b c d e f g h", "i j k l m n"},
         ("n003", "rust"): {"o p q"},
-        ("n004", "oxide"): {"red", "blue"},
+        ("n004", "oxide"): {"red", "blue", "fn main() { d }"},
     }
     return tasks, references, amplified
 

@@ -17,27 +17,27 @@
     {
       "budget": 1566,
       "class": "strings",
-      "gap": 68,
+      "gap": 29,
       "kept_examples": {
         "oxide": 20,
-        "rust": 25
+        "rust": 26
       },
       "kept_tokens": {
         "oxide": 1566,
-        "rust": 1498
+        "rust": 1537
       },
       "quantization_step": 162
     },
     {
       "budget": 4814,
       "class": "structs/option",
-      "gap": 87,
+      "gap": 31,
       "kept_examples": {
-        "oxide": 65,
+        "oxide": 66,
         "rust": 72
       },
       "kept_tokens": {
-        "oxide": 4727,
+        "oxide": 4783,
         "rust": 4814
       },
       "quantization_step": 145
@@ -59,10 +59,10 @@
   ],
   "contamination": {
     "hits": 0,
-    "programs_checked": 519
+    "programs_checked": 521
   },
   "counts_source": {
-    "commit": "a17199f018638c522c05814478c932336a03434f",
+    "commit": "9c899da4e9fad78a24b074977233cec44fd7f405",
     "roots": [
       "eval/results/train-amp2",
       "eval/results/train-amp2-slice"
@@ -1058,8 +1058,8 @@
     }
   ],
   "prompt_tokens": {
-    "oxide": 6218,
-    "rust": 7821
+    "oxide": 6249,
+    "rust": 7845
   },
   "token_efficiency": {
     "amplified": {
@@ -1173,12 +1173,12 @@
   },
   "totals": {
     "kept_examples": {
-      "oxide": 228,
-      "rust": 291
+      "oxide": 229,
+      "rust": 292
     },
     "kept_tokens": {
-      "oxide": 17169,
-      "rust": 17080
+      "oxide": 17225,
+      "rust": 17119
     }
   }
 }

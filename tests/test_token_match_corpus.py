@@ -84,6 +84,23 @@ def test_committed_matched_corpus_is_uncontaminated():
     assert _manifest()["contamination"]["programs_checked"] == len(programs)
 
 
+def test_committed_matched_corpus_has_one_reference_per_task_both_arms():
+    """References are never trimmed (spec decision 5): each arm's committed
+    matched/{arm}.jsonl must carry exactly 40 reference rows, one per task
+    in tasks.jsonl. A filter that strikes a reference whenever it shares
+    (task, sha256) with a dropped amplified program silently loses rows
+    here without failing any other guard — this is the enforcement.
+    """
+    tasks = load_train_tasks()
+    assert len(tasks) == 40
+    for arm in ARMS:
+        rows = [json.loads(line) for line in
+                (MATCHED_DIR / f"{arm}.jsonl").read_text(encoding="utf-8").splitlines()]
+        ref_tasks = [r["task"] for r in rows if r["source"] == "reference"]
+        assert len(ref_tasks) == 40
+        assert set(ref_tasks) == set(tasks)
+
+
 def test_committed_budgets_hold():
     manifest = _manifest()
     for row in manifest["classes"]:

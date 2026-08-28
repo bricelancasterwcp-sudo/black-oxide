@@ -1,0 +1,10 @@
+fn main() {
+    let mut m = 252;
+    let mut n = 105;
+    while m != 0 {
+        let temp = m;
+        m = n % m;
+        n = temp;
+    }
+    println!("{}", n);
+}

@@ -1,0 +1,28 @@
+```rust
+fn main() {
+    let mut sum = 0;
+    let mut count = 0;
+
+    if let Some(x) = parse_int(&"7") {
+        sum += x;
+        count += 1;
+    }
+
+    if let Some(x) = parse_int(&"x") {
+        sum += x;
+        count += 1;
+    }
+
+    if let Some(x) = parse_int(&"9") {
+        sum += x;
+        count += 1;
+    }
+
+    if let Some(_) = parse_int(&"?") {
+        sum += 0; // ? is treated as None
+        count += 1;
+    }
+
+    print!("Total: {}, Count: {}", sum, count);
+}
+```

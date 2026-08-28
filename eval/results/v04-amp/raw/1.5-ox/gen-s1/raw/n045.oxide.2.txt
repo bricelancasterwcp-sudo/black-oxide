@@ -1,0 +1,7 @@
+```
+fn main() {
+    let mut log = vec![6, 7, 8, 9];
+    print(log[0]); // prints 6
+    println!("{}", log.pop()); // prints 9
+}
+```

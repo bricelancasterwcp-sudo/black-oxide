@@ -1,0 +1,7 @@
+fn main() {
+    for s in vec("level", "stereo", "rotor") {
+        let chars = collect(s.chars())
+        let reversed_chars = collect(chars.iter().rev().cloned())
+        print(equals(concat(chars), concat(reversed_chars)))
+    }
+}

@@ -1,0 +1,18 @@
+fn main() {
+    let samples = vec![5, 12, 3, 18, 9];
+    let cutoff = 10;
+
+    let mut below_cutoff_count = 0;
+    let mut above_or_equal_cutoff_count = 0;
+
+    for &sample in &samples {
+        if sample < cutoff {
+            below_cutoff_count += 1;
+        } else {
+            above_or_equal_cutoff_count += 1;
+        }
+    }
+
+    println!("Below the cutoff: {}", below_cutoff_count);
+    println!("Above or equal to the cutoff: {}", above_or_equal_cutoff_count);
+}

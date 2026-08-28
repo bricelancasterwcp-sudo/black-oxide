@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut num = 1234;
+    while num > 0 {
+        print!("{} ", num % 10);
+        num /= 10;
+    }
+}
+```
+
+The original code had a logical error in the while loop condition. The correct condition should be `num > 0` to ensure that the loop continues until all digits have been printed.

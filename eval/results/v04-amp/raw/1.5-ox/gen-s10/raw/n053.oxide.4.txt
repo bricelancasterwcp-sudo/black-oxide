@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let drum = "drum";
+    let reversed_drum: String = drum.chars().rev().collect();
+    println!("{}", reversed_drum);
+    println!("{}", drum);
+}
+```

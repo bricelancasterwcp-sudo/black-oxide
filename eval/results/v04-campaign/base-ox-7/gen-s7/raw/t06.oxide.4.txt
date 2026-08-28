@@ -1,0 +1,9 @@
+fn main() {
+    for num in range(1, 1000) {
+        let sum = (1..num).filter(|x| num % x == 0).sum();
+        if sum == num {
+            print(num);
+            print_str("\n");
+        }
+    }
+}

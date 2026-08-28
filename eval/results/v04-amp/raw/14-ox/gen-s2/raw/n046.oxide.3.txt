@@ -1,0 +1,20 @@
+fn count_under_and_over(vec: Vec<Int>, cutoff: Int) -> (Int, Int) {
+    let under = 0
+    let over = 0
+    for x in vec {
+        if x < cutoff {
+            under = under + 1
+        } else {
+            over = over + 1
+        }
+    }
+    (under, over)
+}
+
+fn main() {
+    let values = vec!(5, 12, 3, 18, 9)
+    let cutoff = 10
+    let (under, over) = count_under_and_over(values, cutoff)
+    print(under)
+    print(over)
+}

@@ -1,0 +1,14 @@
+```rust
+struct Queue { items: Vec<Int> }
+
+fn main() {
+    let mut q = Queue { items: vec(1, 2, 3, 4, 5) };
+    let first = q.items[0];
+    let last = q.items[q.items.len() - 1];
+    q.items[0] = last;
+    q.items[q.items.len() - 1] = first;
+    for item in &q.items {
+        print(item);
+    }
+}
+```

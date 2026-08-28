@@ -1,0 +1,17 @@
+```oxide
+fn reverse(s: Str) -> Str {
+    let mut chars = chars(s)
+    let mut reversed = vec()
+    while !chars.is_empty() {
+        reversed = push(reversed, pop(chars))
+    }
+    concat(reversed, "")
+}
+
+fn main() {
+    let word = "drum"
+    print(reverse(word))  // prints "murd"
+    print_str("\n")       // newline
+    print(word)         // prints "drum"
+}
+```

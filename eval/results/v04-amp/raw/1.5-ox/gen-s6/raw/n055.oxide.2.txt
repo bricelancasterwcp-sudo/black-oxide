@@ -1,0 +1,28 @@
+```rust
+fn main() {
+    let a = match read_str("Enter first entry: ") {
+        Some(s) => s,
+        None => "bad".to_string(),
+    };
+    print!("{}", a);
+
+    let b = match read_str("Enter second entry: ") {
+        Some(s) => s,
+        None => "bad".to_string(),
+    };
+    print!("{}", b);
+
+    let c = match read_str("Enter third entry: ") {
+        Some(s) => s,
+        None => "bad".to_string(),
+    };
+    print!("{}", c);
+}
+
+fn read_str(prompt: &str) -> Option<String> {
+    let mut input = String::new();
+    print!("{}", prompt);
+    io::stdin().read_line(&mut input).expect("Failed to read line");
+    input.trim_end().parse::<String>().ok()
+}
+```

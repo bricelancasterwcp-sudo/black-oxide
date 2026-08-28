@@ -1,0 +1,7 @@
+fn main() {
+    let side = 4;
+    let radius = 3.0;
+
+    println!("Area of square: {}", side * side);
+    println!("Area of circle: {:.2}", std::f64::consts::PI * radius * radius);
+}

@@ -1,0 +1,15 @@
+fn main() {
+    let list = vec![7, 8, 9];
+    match get_second(&list) {
+        Some(value) => println!("Second entry: {}", value),
+        None => println!("No second entry"),
+    }
+}
+
+fn get_second<T>(list: &[T]) -> Option<&T> {
+    if list.len() > 1 {
+        Some(&list[1])
+    } else {
+        None
+    }
+}

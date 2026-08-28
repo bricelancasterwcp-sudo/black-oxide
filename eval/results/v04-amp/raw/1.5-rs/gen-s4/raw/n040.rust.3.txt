@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let side = 4;
+    let radius = 3.0;
+
+    println!("Area of square: {}", area_of_square(side));
+    println!("Area of circle: {:.2}", area_of_circle(radius));
+}
+
+fn area_of_square(side: isize) -> f64 {
+    side * side as f64
+}
+
+fn area_of_circle(radius: f64) -> f64 {
+    radius * radius * std::f64::consts::PI
+}
+```

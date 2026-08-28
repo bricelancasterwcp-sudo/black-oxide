@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let mut total = 0;
+    let line1_value = 4 * 3 + 5 * 2;
+    let line2_value = 4 * 3 + 5 * 2;
+
+    println!("Line 1 value: {}", line1_value);
+    println!("Line 2 value: {}", line2_value);
+
+    total += line1_value;
+    total += line2_value;
+
+    println!("Total value: {}", total);
+}
+```

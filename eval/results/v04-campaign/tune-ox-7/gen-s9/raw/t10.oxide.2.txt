@@ -1,0 +1,13 @@
+fn main() {
+    let v = vec(4, 1, 7, 3, 9, 2)
+    for x in v {
+        if x > 3 {
+            print(x)
+        }
+    }
+    let count = 0
+    for _ in range(len(v)) {
+        count = count + 1
+    }
+    print(count)
+}

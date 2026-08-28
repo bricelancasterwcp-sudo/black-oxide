@@ -1,0 +1,13 @@
+fn main() {
+    let nums = vec(4, 1, 7, 3, 9, 2)
+    let mut kept = vec()
+    for n in nums {
+        if n > 3 {
+            push(kept, n)
+        }
+    }
+    for k in kept {
+        print(k)
+    }
+    print(len(kept))
+}

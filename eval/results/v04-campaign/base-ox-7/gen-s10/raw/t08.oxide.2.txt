@@ -1,0 +1,27 @@
+```rust
+fn count_and_max(v: Vec<Int>) -> (Int, Option<Int>) {
+    let mut pos_count = 0;
+    let mut max_val = None;
+    for x in v {
+        if x > 0 {
+            pos_count += 1;
+        }
+        max_val = match max_val {
+            Some(m) => Some(if x > m { x } else { m }),
+            None => Some(x),
+        };
+    }
+    (pos_count, max_val)
+}
+
+fn main() {
+    let v = push(push(push(push(vec(), 3), 8), -2), 12);
+    let mut v = push(v, 7);
+    let (pos_count, max_val) = count_and_max(v);
+    print(pos_count);
+    match max_val {
+        Some(n) => print(n),
+        None => print_str("no values"),
+    }
+}
+```

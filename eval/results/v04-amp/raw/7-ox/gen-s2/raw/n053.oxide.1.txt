@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let word = "drum";
+    let reversed: Str = word.chars().rev().collect();
+    print_str(&reversed);
+    print_str(word);
+}
+```

@@ -1,0 +1,6 @@
+fn main() {
+    let s = "granite";
+    print(s.chars().next().unwrap());
+    println();
+    print_str(&s[s.len() - 1..]);
+}

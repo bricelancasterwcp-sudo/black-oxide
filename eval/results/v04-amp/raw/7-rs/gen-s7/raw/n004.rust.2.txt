@@ -1,0 +1,9 @@
+fn main() {
+    let mut terms = [1, 1];
+    for _ in 2..10 {
+        let next_term = terms[0] + terms[1];
+        terms[0] = terms[1];
+        terms[1] = next_term;
+    }
+    println!("{}", terms[1]);
+}

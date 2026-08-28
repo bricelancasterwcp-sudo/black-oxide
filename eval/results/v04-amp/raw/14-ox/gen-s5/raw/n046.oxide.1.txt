@@ -1,0 +1,27 @@
+```text
+fn count_below_and_above(v: Vec<Int>, cutoff: Int) -> (Int, Int) {
+    let below = 0
+    let above = 0
+    for x in v {
+        if x < cutoff {
+            below = below + 1
+        } else {
+            above = above + 1
+        }
+    }
+    (below, above)
+}
+
+fn main() {
+    let values = vec()
+    values = push(values, 5)
+    values = push(values, 12)
+    values = push(values, 3)
+    values = push(values, 18)
+    values = push(values, 9)
+    let cutoff = 10
+    let (below, above) = count_below_and_above(values, cutoff)
+    print(below)
+    print(above)
+}
+```

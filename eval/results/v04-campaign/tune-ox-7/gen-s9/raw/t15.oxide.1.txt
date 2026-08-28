@@ -1,0 +1,11 @@
+fn main() {
+    let s = vec("12", "x", "30")
+    let (sum, fail) = fold(s, (0, 0), |(acc, cnt), x| {
+        match parse_int(x) {
+            Some(n) => (acc + n, cnt),
+            None => (acc, cnt + 1)
+        }
+    })
+    print(sum)
+    print(fail)
+}

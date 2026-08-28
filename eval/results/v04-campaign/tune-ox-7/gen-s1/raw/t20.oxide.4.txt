@@ -1,0 +1,13 @@
+fn main() {
+    let pen = { price: 3, quantity: 4 }
+    let pad = { price: 9, quantity: 2 }
+    let ink = { price: 5, quantity: 3 }
+    let total_cost = pen.price * pen.quantity + pad.price * pad.quantity + ink.price * ink.quantity
+    print(total_cost)
+    let max_item = if pen.price * pen.quantity > pad.price * pad.quantity {
+        if pen.price * pen.quantity > ink.price * ink.quantity { "pen" } else { "ink" }
+    } else {
+        if pad.price * pad.quantity > ink.price * ink.quantity { "pad" } else { "ink" }
+    }
+    print(max_item)
+}

@@ -1,0 +1,14 @@
+```oxide
+fn main() {
+    let nums = vec(7, 4, 9, 10);
+    let mut sum_even = 0;
+    for num in nums {
+        if num % 2 == 1 {
+            print(num * 2);
+        } else {
+            sum_even += num;
+        }
+    }
+    print(sum_even);
+}
+```

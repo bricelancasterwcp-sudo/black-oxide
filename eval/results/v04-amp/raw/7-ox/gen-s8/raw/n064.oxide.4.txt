@@ -1,0 +1,29 @@
+```rust
+struct List { value: Int, next: Option<Box<List>> }
+
+fn get_at(list: &List, pos: Int) -> Option<Int> {
+    if pos == 0 {
+        Some(list.value)
+    } else if let Some(next) = list.next.as_ref() {
+        get_at(next, pos - 1)
+    } else {
+        None
+    }
+}
+
+fn main() {
+    let list = List { value: 10, next: Some(Box::new(List { value: 20, next: None })) };
+    match get_at(&list, 1) {
+        Some(n) => print(n),
+        None => print_str("none"),
+    }
+    if let Some(next) = list.next.as_ref() {
+        match get_at(next, 3) {
+            Some(n) => print(n),
+            None => print_str("none"),
+        }
+    } else {
+        print_str("none");
+    }
+}
+```

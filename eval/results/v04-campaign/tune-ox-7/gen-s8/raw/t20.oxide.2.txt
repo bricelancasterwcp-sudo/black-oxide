@@ -1,0 +1,26 @@
+struct Item { name: Str, unit_price: Int, quantity: Int }
+fn main() {
+    let items = vec(
+        Item { name: "pen", unit_price: 3, quantity: 4 },
+        Item { name: "pad", unit_price: 9, quantity: 2 },
+        Item { name: "ink", unit_price: 5, quantity: 3 },
+    )
+    let mut total_cost = 0
+    for item in items {
+        let cost = item.unit_price * item.quantity
+        total_cost += cost
+        print_str(item.name)
+        print_int(cost)
+    }
+    print_int(total_cost)
+    let mut max_item = None
+    for item in items {
+        if max_item == None || item.unit_price > max_item.unwrap().unit_price {
+            max_item = Some(item)
+        }
+    }
+    match max_item {
+        Some(max_item) => print_str(max_item.name),
+        None => print_str("no items"),
+    }
+}

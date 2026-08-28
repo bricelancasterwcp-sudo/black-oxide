@@ -1,0 +1,9 @@
+```rust
+struct Log { entries: Vec<Int> }
+
+fn main() {
+    let log = Log { entries: vec![6, 7, 8, 9] };
+    print(log.entries[0]);            // field access copies: r stays usable
+    print(log.entries.last().unwrap());  // use .last() to get the last element of a Vec
+}
+```

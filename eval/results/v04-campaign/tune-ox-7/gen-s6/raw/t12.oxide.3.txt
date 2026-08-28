@@ -1,0 +1,6 @@
+fn main() {
+    let s = "stack"
+    for c in reverse(chars(s)) {
+        print(c)
+    }
+}

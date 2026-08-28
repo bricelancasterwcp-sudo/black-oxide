@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let a = read_str("Enter first entry: ");
+    if a == "8" { println!("8"); } else { println!("bad"); }
+
+    let b = read_str("Enter second entry: ");
+    if b == "oak" { println!("oak"); } else { println!("bad"); }
+
+    let c = read_str("Enter third entry: ");
+    if c == "15" { println!("15"); } else { println!("bad"); }
+}
+
+fn read_str(prompt: &str) -> String {
+    print!("{}", prompt);
+    let mut input = String::new();
+    std::io::stdin().read_line(&mut input).expect("Failed to read line");
+    input.trim().to_string()
+}
+```

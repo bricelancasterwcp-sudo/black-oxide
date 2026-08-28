@@ -1,0 +1,17 @@
+fn main() {
+    let a = parse_int("12")
+    let b = parse_int("x")
+    let c = parse_int("30")
+    match a {
+        Some(n) => print(n),
+        None => print(0),
+    }
+    match b {
+        Some(_) => print(0),
+        None => print(1),
+    }
+    match c {
+        Some(n) => print(n),
+        None => print(0),
+    }
+}

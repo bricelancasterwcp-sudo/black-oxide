@@ -1,0 +1,18 @@
+fn main() {
+    for s in vec("level", "stereo", "rotor") {
+        print(is_palindrome(s))
+    }
+}
+fn is_palindrome(s: Str) -> Bool {
+    let len = str_len(s)
+    for i in range(0, len / 2) {
+        if chars_at(s, i) != chars_at(s, len - i - 1) {
+            return false
+        }
+    }
+    true
+}
+fn chars_at(s: Str, index: Int) -> Char {
+    let chars = str_chars(s)
+    chars[index]
+}

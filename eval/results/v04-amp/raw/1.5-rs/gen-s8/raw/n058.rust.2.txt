@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let mut count = [0; 26];
+    let word = "coffee";
+    
+    for c in word.chars() {
+        if c.is_alphabetic() {
+            count[(c as u8 - b'a') as usize] += 1;
+        }
+    }
+    
+    for i in 0..26 {
+        if count[i] > 1 {
+            print!("{}", char::from_u32(i + b'a').unwrap());
+        }
+    }
+}
+```

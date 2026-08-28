@@ -1,0 +1,9 @@
+```text
+fn main() {
+    let word = "drum";
+    let reversed: Vec<Str> = chars(word).sort();
+    let reversed_str = concat(reversed);
+    print_str(reversed_str);
+    print_str(word);
+}
+```

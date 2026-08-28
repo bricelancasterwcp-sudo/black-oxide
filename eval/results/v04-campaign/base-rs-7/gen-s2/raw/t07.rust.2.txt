@@ -1,0 +1,10 @@
+fn main() {
+    let mut sum = 0;
+    for i in 1..=8 {
+        let multiple = i * 3;
+        print!("{}", multiple);
+        if i < 8 { print!(" "); }
+        sum += multiple;
+    }
+    println!("\nSum: {}", sum);
+}

@@ -2,7 +2,7 @@
 # Serve one gguf and run one campaign arm; SIGKILL + port-down teardown.
 # usage: serve_arm.sh <gguf_path> <arm_name>
 set -euo pipefail
-GGUF="$1"; ARM="$2"; PORT=8081; ROOT=/workspace/results
+GGUF="$1"; ARM="$2"; PORT=8090; ROOT=/workspace/results
 # non-interactive ssh skips ~/.profile: put the oracle and cuda on PATH
 export PATH="$HOME/.cargo/bin:/usr/local/cuda/bin:$PATH"
 cd /workspace/oxide

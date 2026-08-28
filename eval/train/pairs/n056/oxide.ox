@@ -3,8 +3,8 @@ fn main() {
     let failed = 0
     for s in vec("7", "x", "9", "?") {
         match parse_int(s) {
-            Some(n) => { total = total + n },
-            None => { failed = failed + 1 },
+            Some(n) => { total += n },
+            None => { failed += 1 },
         }
     }
     print(total)

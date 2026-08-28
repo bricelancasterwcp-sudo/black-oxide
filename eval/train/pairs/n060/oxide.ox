@@ -4,8 +4,8 @@ fn main() {
     for c in chars("a1b22") {
         let n = unwrap_or(parse_int(c), -1)
         if n >= 0 {
-            total = total + n
-            count = count + 1
+            total += n
+            count += 1
         }
     }
     print(total)

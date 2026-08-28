@@ -108,6 +108,17 @@ def _unpaired_binomial(a_rate: float, a_n: int, b_rate: float, b_n: int) -> dict
     }
 
 
+def _ratio_or_none(a_mean: float | None, b_mean: float | None) -> float | None:
+    """`a_mean / b_mean`, rounded to 3 decimals -- or None if EITHER side
+    is censored. A ratio computed against a censored (None) mean would
+    look like a measurement while actually encoding "we don't know"; the
+    censoring already named in `gen_metrics` must propagate here rather
+    than being silently treated as a real number (or worse, as 0)."""
+    if a_mean is None or b_mean is None:
+        return None
+    return round(a_mean / b_mean, 3)
+
+
 def strict_repair_rate(probes_root: Path) -> dict:
     """Reuse eval.probe's committed scoring over the campaign cell dirs.
 
@@ -182,11 +193,21 @@ def build_report(root: Path) -> dict:
             repair["base-rs-14"]["rate"], repair["base-rs-14"]["n"],
         ),
     }
+    efficiency = {
+        s: {
+            "gen_tokens_to_green_ratio": _ratio_or_none(
+                arms[f"tune-ox-{s}"]["tokens_to_green_mean"],
+                arms[f"tune-rs-{s}"]["tokens_to_green_mean"],
+            ),
+        }
+        for s in SIZES
+    }
     return {
         "arms": arms,
         "repair": repair,
         "primaries": primaries,
         "headline": headline,
+        "efficiency": efficiency,
         "window_trend_gen_pp": [primaries[s]["gen"]["delta_pp"] for s in SIZES],
     }
 

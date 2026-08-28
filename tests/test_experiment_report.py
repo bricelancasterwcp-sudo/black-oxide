@@ -145,10 +145,11 @@ def test_strict_repair_rate_pools_seeds_via_probe_summarize(tmp_path):
     assert r["rate"] == pytest.approx(3 / 5)
 
 
-def _write_gen_cell(root, arm_name, seed=1):
+def _write_gen_cell(root, arm_name, seed=1, rows=None):
     run = root / arm_name / f"gen-s{seed}"
-    run.mkdir(parents=True)
-    rows = [_cell("t1", True, True), _cell("t2", False, False, 5)]
+    run.mkdir(parents=True, exist_ok=True)  # exist_ok: tests override one arm's default
+    if rows is None:
+        rows = [_cell("t1", True, True), _cell("t2", False, False, 5)]
     (run / "cells.jsonl").write_text(
         "\n".join(json.dumps(r) for r in rows) + "\n", encoding="utf-8"
     )
@@ -199,6 +200,69 @@ def test_build_report_repair_primaries_and_headline_hand_computed(tmp_path):
             load_cells(root / f"tune-ox-{s}"), load_cells(root / f"tune-rs-{s}")
         )
         assert report["primaries"][s]["gen"] == expected
+
+
+def _filtered_probes_root(tmp_path, real_root, lang):
+    """A tmp root holding only `lang`'s cells from a real committed
+    campaign, symlinked in (never copied/modified) -- `strict_repair_rate`
+    refuses a probes_root that mixes more than one language-arm, and a
+    real campaign directory like `ownership-probe-deepseek/` holds all
+    three at once."""
+    filtered = tmp_path / lang
+    filtered.mkdir()
+    for cell in sorted(real_root.glob(f"{lang}-s*")):
+        (filtered / cell.name).symlink_to(cell.resolve(), target_is_directory=True)
+    return filtered
+
+
+def test_acceptance_ownership_probe_deepseek_strict_rates(tmp_path):
+    """`eval/results/ownership-probe-deepseek/REPORT.md` states the raw
+    counts directly (lines ~109-111): rust 164/200 = 82.0%,
+    oxide 43/200 = 21.5%, explicit 15/200 = 7.5%. This is the one
+    committed campaign laid out in the `<arm>-s<seed>/probe_results.jsonl`
+    layout `strict_repair_rate` consumes (`ownership-probe-deepseek` is
+    for DeepSeek-Coder-V2-Lite, not qwen -- see the report's STOP note on
+    why no committed layout can pin qwen's published 73.0/14.0 the same
+    way)."""
+    real_root = Path("eval/results/ownership-probe-deepseek")
+    expected = {
+        "oxide": {"rate": 0.215, "n": 200},
+        "explicit": {"rate": 0.075, "n": 200},
+        "rust": {"rate": 0.82, "n": 200},
+    }
+    for lang, exp in expected.items():
+        r = strict_repair_rate(_filtered_probes_root(tmp_path, real_root, lang))
+        assert r == exp
+
+
+def test_build_report_efficiency_ratio_and_none_propagation(tmp_path):
+    root = tmp_path
+    lang_for = {a: ("oxide" if "-ox-" in a else "rust") for a in ARM_NAMES}
+    for arm in ARM_NAMES:
+        (root / arm).mkdir()
+        (root / arm / ".DONE").write_text("")
+        _write_gen_cell(root, arm)  # default: t1 green @ tokens_out=50, t2 censored
+        _write_probe_cell(root / arm / "probes", lang_for[arm], 1, [True] * 5 + [False] * 5)
+
+    # size "1.5": both sides green with distinct token means -> hand ratio
+    _write_gen_cell(root, "tune-ox-1.5",
+                     rows=[_cell("t1", True, True, 1, 80), _cell("t2", False, False, 5)])
+    _write_gen_cell(root, "tune-rs-1.5",
+                     rows=[_cell("t1", True, True, 1, 40), _cell("t2", False, False, 5)])
+
+    # size "7": tune-ox-7 never goes green (fully censored) -> mean is None,
+    # so the ratio must be None even though tune-rs-7's mean is a real number.
+    _write_gen_cell(root, "tune-ox-7",
+                     rows=[_cell("t1", False, False, 5, 999), _cell("t2", False, False, 5, 999)])
+
+    report = build_report(root)
+
+    # hand: 80.0 / 40.0 = 2.0
+    assert report["efficiency"]["1.5"]["gen_tokens_to_green_ratio"] == pytest.approx(2.0)
+    # None-propagation: tune-ox-7 censored -> ratio None, not 0 and not a number
+    assert report["efficiency"]["7"]["gen_tokens_to_green_ratio"] is None
+    # size "14" untouched: both sides default to 50.0 -> ratio 1.0 (sanity)
+    assert report["efficiency"]["14"]["gen_tokens_to_green_ratio"] == pytest.approx(1.0)
 
 
 def test_acceptance_v03_closing_baseline_qwen():

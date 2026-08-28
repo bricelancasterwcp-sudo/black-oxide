@@ -42,6 +42,7 @@ BUILTIN_METHOD_NAMES: frozenset[str] = frozenset(
         "clone",
         "concat",
         "contains",
+        "count",
         "get",
         "int_to_str",
         "len",

@@ -164,6 +164,10 @@ fn contains<T: PartialEq>(v: &Vec<T>, x: &T) -> bool {
     v.contains(x)
 }
 
+fn count<T: PartialEq>(v: &Vec<T>, x: &T) -> i64 {
+    v.iter().filter(|e| *e == x).count() as i64
+}
+
 fn unwrap_or<T>(o: Option<T>, d: T) -> T {
     match o {
         Some(x) => x,

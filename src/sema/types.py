@@ -174,6 +174,19 @@ BUILTINS: dict[str, BuiltinSig] = {
         modes=("read", "read"),
         generics=(_A,),
     ),
+    # ---- v0.4 wave-2 builtins (Task 3 census gate v2 ruling: slate of 2,
+    # count(v, x) -> Int shipped; remove_at/first/last cut), modes pinned ----
+    # count(v, x) -> Int: occurrences of x in v. Same reading modes as
+    # contains -- it is contains's sibling (a filtered count instead of a
+    # membership test), so both slots are "read" for the identical reason
+    # given on BUILTINS["contains"] above: counting, like equality
+    # comparison, never consumes its operands.
+    "count": BuiltinSig(
+        params=(TCon("Vec", (_A,)), _A),
+        ret=INT,
+        modes=("read", "read"),
+        generics=(_A,),
+    ),
     # ---- v0.4 builtins (Task 5 gate ruling), modes pinned ----
     # Both slots are "own": mirrors the language's two EXISTING ways of
     # reaching inside an Option -- match's scrutinee is a MOVE use (section

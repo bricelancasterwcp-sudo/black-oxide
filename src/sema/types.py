@@ -174,6 +174,25 @@ BUILTINS: dict[str, BuiltinSig] = {
         modes=("read", "read"),
         generics=(_A,),
     ),
+    # ---- v0.4 builtins (Task 5 gate ruling), modes pinned ----
+    # Both slots are "own": mirrors the language's two EXISTING ways of
+    # reaching inside an Option -- match's scrutinee is a MOVE use (section
+    # 28, cfg.py::_match) and '?''s operand is a MOVE use (section 36,
+    # cfg.py::_expr's ast.Try case) -- neither treats "reading" an Option's
+    # payload as a non-consuming borrow. unwrap_or's `o` mirrors that
+    # established convention rather than get/min/max's read-mode Vec
+    # param (those READ a Vec to PRODUCE an Option; there is no existing
+    # precedent for reading an Option's payload without consuming it).
+    # `d` is "own" because it may become the returned value verbatim on
+    # the None path (T, potentially a non-Copy Vec<_>) -- mirroring why
+    # push's inserted value is "own" (genuinely transferred), not read's
+    # borrow-and-clone shape.
+    "unwrap_or": BuiltinSig(
+        params=(TCon("Option", (_A,)), _A),
+        ret=_A,
+        modes=("own", "own"),
+        generics=(_A,),
+    ),
 }
 
 

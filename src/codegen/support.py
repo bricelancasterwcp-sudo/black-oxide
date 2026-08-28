@@ -123,6 +123,15 @@ _PRELUDE_FNS: tuple[tuple[str, str], ...] = (
         "    v.contains(x)\n"
         "}",
     ),
+    (
+        "unwrap_or",
+        "fn unwrap_or<T>(o: Option<T>, d: T) -> T {\n"
+        "    match o {\n"
+        "        Some(x) => x,\n"
+        "        None => d,\n"
+        "    }\n"
+        "}",
+    ),
 )
 
 
@@ -221,6 +230,9 @@ BUILTIN_REF: dict[str, tuple[bool, ...]] = {
     "max": (True,),
     "sum": (True,),
     "contains": (True, True),
+    # v0.4 (Task 5): both slots are owned/by-value (no ref-form) -- matches
+    # the "own" modes above, both args are moved into unwrap_or<T>.
+    "unwrap_or": (False, False),
 }
 
 

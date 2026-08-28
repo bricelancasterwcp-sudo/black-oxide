@@ -58,6 +58,7 @@ BUILTIN_METHOD_NAMES: frozenset[str] = frozenset(
         "to_float",
         "to_str",
         "trunc",
+        "unwrap_or",
         "vec",
     }
 )

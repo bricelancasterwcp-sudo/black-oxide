@@ -162,6 +162,13 @@ fn sum(v: &Vec<i64>) -> i64 {
 
 fn contains<T: PartialEq>(v: &Vec<T>, x: &T) -> bool {
     v.contains(x)
+}
+
+fn unwrap_or<T>(o: Option<T>, d: T) -> T {
+    match o {
+        Some(x) => x,
+        None => d,
+    }
 }"""
 
 R1_MAIN = """fn main() {

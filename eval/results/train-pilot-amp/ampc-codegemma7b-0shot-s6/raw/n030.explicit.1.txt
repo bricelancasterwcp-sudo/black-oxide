@@ -1,0 +1,19 @@
+fn count_vowels(word: &Str) -> Int {
+    let vowels = "aeiouAEIOU".to_string().chars().collect()
+    let mut count = 0
+    for c in word.chars() {
+        if vowels.contains(&c) {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn main() {
+    let words = vec("hello", "world", "rust")
+    let mut total_vowels = 0
+    for word in &words {
+        total_vowels = total_vowels + count_vowels(word)
+    }
+    print(total_vowels)
+}

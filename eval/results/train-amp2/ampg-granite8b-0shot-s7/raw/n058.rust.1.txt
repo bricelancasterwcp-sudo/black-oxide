@@ -1,0 +1,8 @@
+```rust
+fn main(){
+    let mut c = 0;
+    for c in "coffee".chars().unique() {
+        println!("{}", c);
+    }
+}
+```

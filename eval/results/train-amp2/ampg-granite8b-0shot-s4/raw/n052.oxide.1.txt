@@ -1,0 +1,15 @@
+fn banana(b: Str) -> Str {
+    let n = 3
+    let s = "banana"
+    print(n)
+    print(s)
+    print(get(s, n)?)
+    let s = push(push(push(s, b), b), b)
+    print(len(s))
+    print(get(s, n)?)
+    s
+}
+
+fn main() {
+    print(banana("a"))
+}

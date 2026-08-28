@@ -1,0 +1,9 @@
+use std::io;
+
+fn main() {
+    let mut x = 1;
+    let y = 5;
+    let mut x2 = x + 10;
+    let y2 = y;
+    println!("{}", x2 + y2);
+}

@@ -1,0 +1,15 @@
+fn change_area(mutrectangle: &Vec<Int>) -> Vec<Int> {
+    rectangle = push(rectangle, 5)
+    rectangle
+}
+
+fn area(rectangle: &Vec<Int>) -> Int {
+    return (rectangle.get(0).unwrap() * rectangle.get(1).unwrap())
+}
+
+fn main() {
+    let mut rectangle = vec(2, 3)
+    rectangle = change_area(&rectangle)
+    print(area(&rectangle))
+    drop rectangle
+}

@@ -1,0 +1,6 @@
+fn main() {
+    let mut list = [10, 20];
+    let get = |pos| list.get(pos);
+    println!("{:?}", get(0));
+    println!("{:?}", get(3));
+}

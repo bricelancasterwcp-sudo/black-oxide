@@ -1,0 +1,7 @@
+fn main() {
+    let nums = vec(12, 5, 20, 8, 17)
+    let largest = nums.iter().max().unwrap()
+    let second_largest = nums.iter().filter(move || nums != largest).max().unwrap()
+    print_str(largest.to_string())
+    print_str(second_largest.to_string())
+}

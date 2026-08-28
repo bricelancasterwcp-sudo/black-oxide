@@ -1,0 +1,13 @@
+fn fibonacci(n: Int) -> Int {
+    if n < 2 {
+        1
+    } else {
+        let f1 = fibonacci(n - 1)
+        let f2 = fibonacci(n - 2)
+        f1 + f2
+    }
+}
+
+fn main() {
+    print(fibonacci(9))
+}

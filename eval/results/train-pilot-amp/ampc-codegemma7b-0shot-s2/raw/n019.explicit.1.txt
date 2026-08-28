@@ -1,0 +1,15 @@
+fn length(v: &Vec<Int>) -> Int {
+    let mut count = 0
+    for _ in &v {
+        count = count + 1
+    }
+    count
+}
+
+fn main() {
+    let nums = vec(1, 2, 3)
+    let other = vec(4, 5)
+    print(length(&nums) + length(&other))
+    drop nums
+    drop other
+}

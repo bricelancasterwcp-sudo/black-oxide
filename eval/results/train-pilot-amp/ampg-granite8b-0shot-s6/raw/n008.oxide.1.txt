@@ -1,0 +1,289 @@
+struct Reading { label: Str, values: Vec<Int> }
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(vec(), 3), 42) }
+    let found = loop_find(r.values, 10)
+    print(found)
+}
+
+fn loop_find(v: Vec<Int>, target: Int) -> Int {
+    let mut found = -1
+    for x in v {
+        if x > target {
+            break
+        }
+        if x % 3 == 0 || x % 5 == 0 {
+            found = x
+        }
+    }
+    found
+}
+
+fn loop_find_clone(v: Vec<Int>, target: Int) -> Option<Int> {
+    for x in v {
+        if x > target {
+            break
+        }
+        if x % 3 == 0 || x % 5 == 0 {
+            return Some(x)
+        }
+    }
+    None
+}
+
+fn loop_find_ref(v: Vec<Int>, target: Int) -> Option<Int> {
+    for x in v {
+        if x > target {
+            break
+        }
+        if x % 3 == 0 || x % 5 == 0 {
+            return Some(x)
+        }
+    }
+    None
+}
+
+fn loop_find_mut(v: Vec<Int>, target: Int) -> Option<Int> {
+    for mut_x in v {
+        if mut_x > target {
+            break
+        }
+        if mut_x % 3 == 0 || mut_x % 5 == 0 {
+            return Some(mut_x)
+        }
+    }
+    None
+}
+
+fn loop_find_ref_mut(v: Vec<Int>, target: Int) -> Option<Int> {
+    for x in v {
+        if x > target {
+            break
+        }
+        if x % 3 == 0 || x % 5 == 0 {
+            return Some(x)
+        }
+    }
+    None
+}
+
+fn loop_find_while(v: Vec<Int>, target: Int) -> Option<Int> {
+    let mut index: Int = 0
+    while index < len(v) {
+        let x = get(v, index)?
+        if x > target {
+            break
+        }
+        if x % 3 == 0 || x % 5 == 0 {
+            return Some(x)
+        }
+        index = index + 1
+    }
+    None
+}
+
+fn loop_find_for(v: Vec<Int>, target: Int) -> Option<Int> {
+    for index in range(0, len(v)) {
+        let x = get(v, index)?
+        if x > target {
+            break
+        }
+        if x % 3 == 0 || x % 5 == 0 {
+            return Some(x)
+        }
+    }
+    None
+}
+
+fn loop_find_for_ref(v: Vec<Int>, target: Int) -> Option<Int> {
+    for index in range(0, len(v)) {
+        let x = get(v, index)?
+        if x > target {
+            break
+        }
+        if x % 3 == 0 || x % 5 == 0 {
+            return Some(x)
+        }
+    }
+    None
+}
+
+fn loop_find_for_mut(v: Vec<Int>, target: Int) -> Option<Int> {
+    for index in range(0, len(v)) {
+        let mut_x = get(v, index)?
+        if mut_x > target {
+            break
+        }
+        if mut_x % 3 == 0 || mut_x % 5 == 0 {
+            return Some(mut_x)
+        }
+    }
+    None
+}
+
+fn loop_find_for_ref_mut(v: Vec<Int>, target: Int) -> Option<Int> {
+    for index in range(0, len(v)) {
+        let x = get(v, index)?
+        if x > target {
+            break
+        }
+        if x % 3 == 0 || x % 5 == 0 {
+            return Some(x)
+        }
+    }
+    None
+}
+
+fn loop_find_match(v: Vec<Int>, target: Int) -> Option<Int> {
+    for x in v {
+        match x {
+            _ => continue_loop,
+        }
+        if x % 3 == 0 || x % 5 == 0 {
+            return Some(x)
+        }
+    }
+    None
+}
+
+fn loop_find_match_ref(v: Vec<Int>, target: Int) -> Option<Int> {
+    for x in v {
+        match x {
+            _ => continue_loop,
+        }
+        if x % 3 == 0 || x % 5 == 0 {
+            return Some(x)
+        }
+    }
+    None
+}
+
+fn loop_find_match_mut(v: Vec<Int>, target: Int) -> Option<Int> {
+    for mut_x in v {
+        match mut_x {
+            _ => continue_loop,
+        }
+        if mut_x % 3 == 0 || mut_x % 5 == 0 {
+            return Some(mut_x)
+        }
+    }
+    None
+}
+
+fn loop_find_match_ref_mut(v: Vec<Int>, target: Int) -> Option<Int> {
+    for x in v {
+        match x {
+            _ => continue_loop,
+        }
+        if x % 3 == 0 || x % 5 == 0 {
+            return Some(x)
+        }
+    }
+    None
+}
+
+fn loop_find_while_mut(v: Vec<Int>, target: Int) -> Option<Int> {
+    let mut index: Int = 0
+    while index < len(v) {
+        let mut_x = get(v, index)?
+        if mut_x > target {
+            break
+        }
+        if mut_x % 3 == 0 || mut_x % 5 == 0 {
+            return Some(mut_x)
+        }
+        index = index + 1
+    }
+    None
+}
+
+fn loop_find_while_ref_mut(v: Vec<Int>, target: Int) -> Option<Int> {
+    let mut index: Int = 0
+    while index < len(v) {
+        let mut_x = get(v, index)?
+        if mut_x > target {
+            break
+        }
+        if mut_x % 3 == 0 || mut_x % 5 == 0 {
+            return Some(mut_x)
+        }
+        index = index + 1
+    }
+    None
+}
+
+fn loop_find_while_ref(v: Vec<Int>, target: Int) -> Option<Int> {
+    let mut index: Int = 0
+    while index < len(v) {
+        let x = get(v, index)?
+        if x > target {
+            break
+        }
+        if x % 3 == 0 || x % 5 == 0 {
+            return Some(x)
+        }
+        index = index + 1
+    }
+    None
+}
+
+fn loop_find_while_ref_ref(v: Vec<Int>, target: Int) -> Option<Int> {
+    let mut index: Int = 0
+    while index < len(v) {
+        let x = get(v, index)?
+        if x > target {
+            break
+        }
+        if x % 3 == 0 || x % 5 == 0 {
+            return Some(x)
+        }
+        index = index + 1
+    }
+    None
+}
+
+fn loop_find_while_ref_ref_ref(v: Vec<Int>, target: Int) -> Option<Int> {
+    let mut index: Int = 0
+    while index < len(v) {
+        let x = get(v, index)?
+        if x > target {
+            break
+        }
+        if x % 3 == 0 || x % 5 == 0 {
+            return Some(x)
+        }
+        index = index + 1
+    }
+    None
+}
+
+fn loop_find_while_ref_ref_ref_ref(v: Vec<Int>, target: Int) -> Option<Int> {
+    let mut index: Int = 0
+    while index < len(v) {
+        let x = get(v, index)?
+        if x > target {
+            break
+        }
+        if x % 3 == 0 || x % 5 == 0 {
+            return Some(x)
+        }
+        index = index + 1
+    }
+    None
+}
+
+fn loop_find_for_ref_ref_ref_ref(v: Vec<Int>, target: Int) -> Option<Int> {
+    for index in range(0, len(v)) {
+        let x = get(v, index)?
+        if x > target {
+            break
+        }
+        if x % 3 == 0 || x % 5 == 0 {
+            return Some(x)
+        }
+    }
+    None
+}
+
+fn loop_find_for_ref_ref_ref_ref_ref(v: Vec<Int>, target: Int) -> Option<Int> {
+    for index in range(0,

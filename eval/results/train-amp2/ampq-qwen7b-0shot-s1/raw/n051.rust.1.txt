@@ -1,0 +1,7 @@
+fn main() {
+    let word = "granite";
+    let first_char = word.chars().next().unwrap();
+    let last_char = word.chars().last().unwrap();
+    println!("{}", first_char);
+    println!("{}", last_char);
+}

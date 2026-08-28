@@ -1,0 +1,13 @@
+fn square_area(s: Float) -> Float {
+    s * s
+}
+
+fn circle_area(r: Float) -> Float {
+    let pi = 3.0
+    pi * r * r
+}
+
+fn main() {
+    print(square_area(4.0))
+    print(circle_area(5.0))
+}

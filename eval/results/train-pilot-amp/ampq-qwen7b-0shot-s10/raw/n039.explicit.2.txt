@@ -1,0 +1,9 @@
+fn main() {
+    let list = vec(1, 2)
+    let entry = get(&list, 5)
+    match entry {
+        Some(_) => print_str("none"),
+        None => print_str("none"),
+    }
+    drop list
+}

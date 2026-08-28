@@ -1,0 +1,15 @@
+fn max(nums: &Vec<Int>) -> Int {
+    let mut max = nums.get(0).unwrap()
+    for x in &nums {
+        if x > &max {
+            max = x
+        }
+    }
+    max
+}
+
+fn main() {
+    let nums = vec(5, 3, 9, 1, 7)
+    print(max(&nums))
+    drop nums
+}

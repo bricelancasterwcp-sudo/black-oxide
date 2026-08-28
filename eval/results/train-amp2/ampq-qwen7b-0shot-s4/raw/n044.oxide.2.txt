@@ -1,0 +1,20 @@
+struct BankAccount { balance: Int }
+
+fn deposit(acc: BankAccount, amount: Int) -> BankAccount {
+    BankAccount  // consume acc and return a new one
+    balance = acc.balance + amount
+}
+
+fn main() {
+    let mut acc = BankAccount { balance: 0 }
+    acc = deposit(acc, 3)
+    print(acc.balance)
+    acc = deposit(acc, 1)
+    print(acc.balance)
+    acc = deposit(acc, 4)
+    print(acc.balance)
+    acc = deposit(acc, 1)
+    print(acc.balance)
+    acc = deposit(acc, 5)
+    print(acc.balance)
+}

@@ -1,0 +1,15 @@
+fn longest(names: &Vec<Str>) -> Str {
+    let mut longest = Str("")
+    for name in names {
+        if name.len() > longest.len() {
+            longest = name.clone()
+        }
+    }
+    longest
+}
+
+fn main() {
+    let names = vec(Str("fig"), Str("banana"), Str("kiwi"))
+    print(longest(&names))
+    print(longest(&names).len())
+}

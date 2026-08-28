@@ -1,0 +1,30 @@
+#![no_std]
+#![no_main]
+
+use core::panic;
+
+fn division(x: i32, y: i32) -> i32 {
+    if y == 0 {
+        panic!("Cannot divide by zero");
+    }
+    x / y
+}
+
+fn main() {
+    let result = division(20, 4);
+    println!("{}", result);
+}
+
+use core::fmt::{Write, Arguments};
+
+pub fn write_fmt(args: Arguments) -> fmt::Result {
+    // Write the arguments to the standard output
+    write!(unsafe { core::ptr::null_mut() }, "{}\0", args)
+}
+
+#[panic_handler]
+fn panic(_info: &panic::PanicInfo) -> ! {
+    // Print the panic message to the standard output
+    write_fmt(format_args!("{}", _info)).unwrap();
+    loop {}
+}

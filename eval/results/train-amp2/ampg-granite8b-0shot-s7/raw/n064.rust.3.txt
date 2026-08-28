@@ -1,0 +1,15 @@
+fn main() {
+    let numbers = vec![10, 20];
+    let position_one = numbers.get(0);
+    let position_four = numbers.get(3);
+
+    match position_one {
+        Some(num) => println!("Position 1: {}", num),
+        None => println!("Position 1 is empty"),
+    }
+
+    match position_four {
+        Some(num) => println!("Position 4: {}", num),
+        None => println!("Position 4 is empty"),
+    }
+}

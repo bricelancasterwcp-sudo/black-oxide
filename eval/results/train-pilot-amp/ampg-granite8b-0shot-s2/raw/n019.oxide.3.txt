@@ -1,0 +1,21 @@
+fn count_entries(first: Vec<Int>, second: Vec<Int>) -> Int {
+    let mut first_iter = first.iter()
+    let mut second_iter = second.iter()
+    let mut count = 0
+    while letSome(first_entry) == first_iter.next() {
+        while letSome(second_entry) == second_iter.next() {
+            if second_entry > first_entry {
+                count = count + 1
+            } else if second_entry < first_entry {
+                break
+            }
+        }
+    }
+    count
+}
+
+fn main() {
+    let list_1 = vec(1, 2, 3)
+    let list_2 = vec(4, 5)
+    print(count_entries(list_1, list_2))
+}

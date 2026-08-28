@@ -1,0 +1,14 @@
+use std::collections::HashMap;
+
+fn main() {
+    let mut my_list = HashMap::new();
+    my_list.insert(0, 10);
+    my_list.insert(1, 20);
+    my_list.insert(2, 30);
+    my_list.insert(3, 40);
+
+    match my_list.get(&1) { // Corrected key from &2 to &1
+        Some(value) => println!("The value at position two is: {}", value),
+        None => println!("Missing"),
+    }
+}

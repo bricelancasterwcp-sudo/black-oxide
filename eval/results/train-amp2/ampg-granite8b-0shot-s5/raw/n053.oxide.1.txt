@@ -1,0 +1,224 @@
+fn main() {
+    let word = "drum"
+    print_str(word)
+    let letters = reverse_letters(word)
+    print_str(letters)
+}
+
+fn reverse_letters(word: Str) -> Str {
+    let mut result = String.new()
+    for i in range(len(word), 0) {
+        result = concat(result, get(word, i - 1).unwrap())
+    }
+    result
+}
+
+fn reverse_letters_mut(word: Str) -> Str {
+    let mut result = String.new()
+    for i in range(len(word), 0) {
+        result = concat(result, get_mut(word, i - 1).unwrap())
+    }
+    result
+}
+
+fn reverse_letters_iter(word: Str) -> Str {
+    let mut result = String.new()
+    for ch in word.chars() {
+        result = concat(result, ch)
+    }
+    result
+}
+
+fn reverse_letters_str_iter(word: Str) -> Str {
+    let mut result = String.new()
+    for ch in word {
+        result = concat(result, ch)
+    }
+    result
+}
+
+fn reverse_letters_bytes(word: Str) -> Str {
+    let mut result = String.new()
+    for b in word.bytes() {
+        result = concat(result, String.from_utf8_lossy(b.as_ref()))
+    }
+    result
+}
+
+fn reverse_letters_str(word: Str) -> Str {
+    let mut result = String.new()
+    for ch in word.chars() {
+        result = concat(result, String.from(ch))
+    }
+    result
+}
+
+fn reverse_letters_str_str_iter(word: Str) -> Str {
+    let mut result = String.new()
+    for ch in word.chars() {
+        result = concat(result, String.from(ch))
+    }
+    result
+}
+
+fn reverse_letters_str_str_bytes(word: Str) -> Str {
+    let mut result = String.new()
+    for b in word.bytes() {
+        result = concat(result, String.from_utf8_lossy(b.as_ref()))
+    }
+    result
+}
+
+fn reverse_letters_str_str_utf8(word: Str) -> Str {
+    let mut result = String.new()
+    for b in word.as_bytes() {
+        result = concat(result, String.from_utf8_lossy(b))
+    }
+    result
+}
+
+fn reverse_letters_str_str(word: Str) -> Str {
+    let mut result = String.new()
+    for ch in word {
+        result = concat(result, ch)
+    }
+    result
+}
+
+fn reverse_letters_str_str_string(word: Str) -> Str {
+    let mut result = String.new()
+    for ch in word {
+        result = concat(result, String.from(ch))
+    }
+    result
+}
+
+fn reverse_letters_str_str_string_as_bytes(word: Str) -> Str {
+    let mut result = String.new()
+    for b in word.as_bytes() {
+        result = concat(result, String.from_utf8_lossy(b))
+    }
+    result
+}
+
+fn reverse_letters_str_str_string_as_utf8(word: Str) -> Str {
+    let mut result = String.new()
+    for b in word.as_bytes() {
+        result = concat(result, String.from_utf8_lossy(b))
+    }
+    result
+}
+
+fn reverse_letters_str_str_string_as_utf8_chars(word: Str) -> Str {
+    let mut result = String.new()
+    for ch in word.as_bytes() {
+        result = concat(result, String.from_utf8_lossy(ch))
+    }
+    result
+}
+
+fn reverse_letters_str_str_string_as_utf8_chars_iter(word: Str) -> Str {
+    let mut result = String.new()
+    for ch in word.as_bytes() {
+        result = concat(result, String.from_utf8_lossy(ch))
+    }
+    result
+}
+
+fn reverse_letters_str_str_string_as_utf8_chars_bytes(word: Str) -> Str {
+    let mut result = String.new()
+    for b in word.as_bytes() {
+        result = concat(result, String.from_utf8_lossy(b))
+    }
+    result
+}
+
+fn reverse_letters_str_str_string_as_utf8_chars_bytes_as_str(word: Str) -> Str {
+    let mut result = String.new()
+    for b in word.as_bytes() {
+        result = concat(result, String.from_utf8_lossy(b))
+    }
+    result
+}
+
+fn reverse_letters_str_str_string_as_utf8_chars_bytes_as_str_as_bytes(word: Str) -> Str {
+    let mut result = String.new()
+    for b in word.as_bytes() {
+        result = concat(result, String.from_utf8_lossy(b))
+    }
+    result
+}
+
+fn reverse_letters_str_str_string_as_utf8_chars_bytes_as_str_as_bytes_iter(word: Str) -> Str {
+    let mut result = String.new()
+    for b in word.as_bytes() {
+        result = concat(result, String.from_utf8_lossy(b))
+    }
+    result
+}
+
+fn reverse_letters_str_str_string_as_utf8_chars_bytes_as_str_as_bytes_as_u8(word: Str) -> Str {
+    let mut result = String.new()
+    for b in word.as_bytes() {
+        result = concat(result, String.from_utf8_lossy(b))
+    }
+    result
+}
+
+fn reverse_letters_str_str_string_as_utf8_chars_bytes_as_str_as_bytes_as_u8_as_char(word: Str) -> Str {
+    let mut result = String.new()
+    for b in word.as_bytes() {
+        result = concat(result, String.from_utf8_lossy(b))
+    }
+    result
+}
+
+fn reverse_letters_str_str_string_as_utf8_chars_bytes_as_str_as_bytes_as_u8_as_char_str(word: Str) -> Str {
+    let mut result = String.new()
+    for b in word.as_bytes() {
+        result = concat(result, String.from_utf8_lossy(b))
+    }
+    result
+}
+
+fn reverse_letters_str_str_string_as_utf8_chars_bytes_as_str_as_bytes_as_u8_as_char_str_chars(word: Str) -> Str {
+    let mut result = String.new()
+    for b in word.as_bytes() {
+        result = concat(result, String.from_utf8_lossy(b))
+    }
+    result
+}
+
+fn reverse_letters_str_str_string_as_utf8_chars_bytes_as_str_as_bytes_as_u8_as_char_str_chars_bytes(word: Str) -> Str {
+    let mut result = String.new()
+    for b in word.as_bytes() {
+        result = concat(result, String.from_utf8_lossy(b))
+    }
+    result
+}
+
+fn reverse_letters_str_str_string_as_utf8_chars_bytes_as_str_as_bytes_as_u8_as_char_str_chars_bytes_as_str(word: Str) -> Str {
+    let mut result = String.new()
+    for b in word.as_bytes() {
+        result = concat(result, String.from_utf8_lossy(b))
+    }
+    result
+}
+
+fn reverse_letters_str_str_string_as_utf8_chars_bytes_as_str_as_bytes_as_u8_as_char_str_chars_bytes_as_str_chars(word: Str) -> Str {
+    let mut result = String.new()
+    for b in word.as_bytes() {
+        result = concat(result, String.from_utf8_lossy(b))
+    }
+    result
+}
+
+fn reverse_letters_str_str_string_as_utf8_chars_bytes_as_str_as_bytes_as_u8_as_char_str_chars_bytes_as_str_chars_bytes(word: Str) -> Str {
+    let mut result = String.new()
+    for b in word.as_bytes() {
+        result = concat(result, String.from_utf8_lossy(b))
+    }
+    result
+}
+
+fn reverse

@@ -1,0 +1,75 @@
+fn len(s: &Str) -> Int {
+    let mut count = 0
+    for _ in chars(s) {
+        count = count + 1
+    }
+    count
+}
+
+fn main() {
+    let word = str("programming")
+    print(len(&word))
+    drop word
+}
+
+fn str(s: String) -> Str {
+    s
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut chars = Vec.new()
+    for c in s.chars() {
+        chars.push(str(c.to_string()))
+    }
+    chars
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    let mut v = v
+    v.push(x)
+    v
+}
+
+fn print(x: Int) -> Unit {
+    println("{:?}", x)
+}
+
+fn drop_str(s: Str) -> Unit {
+    drop s
+}
+
+fn clone(x: &Str) -> Str {
+    let mut x = x.to_string()
+    x.push_str("")
+    x
+}
+
+fn print(x: &Str) -> Unit {
+    println("{}", x)
+}
+
+fn drop_str(s: Str) -> Unit {
+    drop s
+}
+
+fn int(i: Int) -> Int {
+    i
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn main() {
+    let word = str("programming")
+    print(len(&word))
+    drop_str(word)
+    let chars = chars(&word)
+    let len = int(chars.len())
+    print(&len)
+    drop_str(len)
+    let mut chars = chars
+    chars.push(str(""))
+    print(&chars)
+    drop_str(chars)
+}

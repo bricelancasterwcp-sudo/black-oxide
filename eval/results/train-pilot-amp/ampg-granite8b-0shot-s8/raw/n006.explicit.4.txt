@@ -1,0 +1,21 @@
+fn main() {
+    let mut i = 100
+    loop_start(i)
+    let power = 2
+    if power > i {
+        loop_end()
+        break_start()
+        break_end()
+    }
+    let mut power = power
+    while_start(power)
+    if power * 2 <= i {
+        loop_start(power)
+        let power = power * 2
+        loop_end()
+        continue_start()
+        continue_end()
+    }
+    loop_end()
+    print(power)
+}

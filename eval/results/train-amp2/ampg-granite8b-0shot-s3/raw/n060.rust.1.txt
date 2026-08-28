@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let text = "a1b22";
+    let mut total = 0;
+    let mut count = 0;
+    for c in text.chars() {
+        if c.is_ascii_digit() {
+            total += c as usize - '0' as usize;
+            count += 1;
+        }
+    }
+    println!("total of digit chars: {}", total);
+    println!("number of digit chars: {}", count);
+}
+```

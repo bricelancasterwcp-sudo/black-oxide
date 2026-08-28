@@ -1,0 +1,19 @@
+struct Num { val: Int }
+
+fn read_num() -> Num {
+    let s = read_str()
+    match parse_int(s) {
+        None => bad(),
+        Some(n) => Num { val: n },
+    }
+}
+
+fn add_one(n: Num) -> Num {
+    Num(n.val + 1)
+}
+
+fn main() {
+    let n = read_num()
+    let n2 = add_one(n)
+    print_int(n2.val)
+}

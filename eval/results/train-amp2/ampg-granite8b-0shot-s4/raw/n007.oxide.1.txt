@@ -1,0 +1,14 @@
+struct Int {
+    value: Int32,
+}
+
+fn digits_sum(n: Int) -> Int {
+    let sum = 0
+    for x in n.value.to_string().chars() {
+        sum + digits_sum(parse_int(str(x)).unwrap())
+    }
+}
+
+fn main() {
+    print(digits_sum(9875))
+}

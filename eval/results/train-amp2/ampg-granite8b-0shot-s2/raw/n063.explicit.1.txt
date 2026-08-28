@@ -1,0 +1,25 @@
+fn price(count: Int, unit_price: Float) -> Float {
+    unit_price * count
+}
+
+fn stocked_value(stocked: Int, two_each: Float, three_each: Float) -> Float {
+    price(stocked, two_each) + price(stocked, three_each)
+}
+
+fn main() {
+    print(stocked_value(4, 2.0, 3.0))
+    print(stocked_value(5, 2.0, 3.0))
+}
+
+fn price(count: Int, unit_price: Float) -> Float {
+    unit_price * count
+}
+
+fn stocked_value(stocked: Int, two_each: Float, three_each: Float) -> Float {
+    price(stocked, two_each) + price(stocked, three_each)
+}
+
+fn main() {
+    print(stocked_value(4, 2.0, 3.0))
+    print(stocked_value(5, 2.0, 3.0))
+}

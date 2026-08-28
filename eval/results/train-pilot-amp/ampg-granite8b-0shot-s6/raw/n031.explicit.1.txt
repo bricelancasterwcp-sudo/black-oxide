@@ -1,0 +1,381 @@
+fn main() {
+    let rect = Rect { width: 7, height: 6 }
+    print(area(&rect))
+    drop rect
+}
+
+struct Rect { width: Int, height: Int }
+
+fn area(r: &Rect) -> Int {
+    r.width * r.height
+}
+
+fn print(s: Str) {
+    print_str(s)
+}
+
+fn print_str(s: Str) {
+    todo()
+}
+
+fn area(r: &Rect) -> Int {
+    r.width * r.height
+}
+
+fn main() {
+    let rect = Rect { width: 7, height: 6 }
+    print(area(&rect))
+    drop rect
+}
+
+struct Rect { width: Int, height: Int }
+
+fn area(r: &Rect) -> Int {
+    r.width * r.height
+}
+
+fn print(s: Str) {
+    print_str(s)
+}
+
+fn print_str(s: Str) {
+    todo()
+}
+
+fn area(r: &Rect) -> Int {
+    r.width * r.height
+}
+
+fn main() {
+    let rect = Rect { width: 7, height: 6 }
+    print(area(&rect))
+    drop rect
+}
+
+struct Rect { width: Int, height: Int }
+
+fn area(r: &Rect) -> Int {
+    r.width * r.height
+}
+
+fn print(s: Str) {
+    print_str(s)
+}
+
+fn print_str(s: Str) {
+    todo()
+}
+
+fn area(r: &Rect) -> Int {
+    r.width * r.height
+}
+
+fn main() {
+    let rect = Rect { width: 7, height: 6 }
+    print(area(&rect))
+    drop rect
+}
+
+struct Rect { width: Int, height: Int }
+
+fn area(r: &Rect) -> Int {
+    r.width * r.height
+}
+
+fn print(s: Str) {
+    print_str(s)
+}
+
+fn print_str(s: Str) {
+    todo()
+}
+
+fn area(r: &Rect) -> Int {
+    r.width * r.height
+}
+
+fn main() {
+    let rect = Rect { width: 7, height: 6 }
+    print(area(&rect))
+    drop rect
+}
+
+struct Rect { width: Int, height: Int }
+
+fn area(r: &Rect) -> Int {
+    r.width * r.height
+}
+
+fn print(s: Str) {
+    print_str(s)
+}
+
+fn print_str(s: Str) {
+    todo()
+}
+
+fn area(r: &Rect) -> Int {
+    r.width * r.height
+}
+
+fn main() {
+    let rect = Rect { width: 7, height: 6 }
+    print(area(&rect))
+    drop rect
+}
+
+struct Rect { width: Int, height: Int }
+
+fn area(r: &Rect) -> Int {
+    r.width * r.height
+}
+
+fn print(s: Str) {
+    print_str(s)
+}
+
+fn print_str(s: Str) {
+    todo()
+}
+
+fn area(r: &Rect) -> Int {
+    r.width * r.height
+}
+
+fn main() {
+    let rect = Rect { width: 7, height: 6 }
+    print(area(&rect))
+    drop rect
+}
+
+struct Rect { width: Int, height: Int }
+
+fn area(r: &Rect) -> Int {
+    r.width * r.height
+}
+
+fn print(s: Str) {
+    print_str(s)
+}
+
+fn print_str(s: Str) {
+    todo()
+}
+
+fn area(r: &Rect) -> Int {
+    r.width * r.height
+}
+
+fn main() {
+    let rect = Rect { width: 7, height: 6 }
+    print(area(&rect))
+    drop rect
+}
+
+struct Rect { width: Int, height: Int }
+
+fn area(r: &Rect) -> Int {
+    r.width * r.height
+}
+
+fn print(s: Str) {
+    print_str(s)
+}
+
+fn print_str(s: Str) {
+    todo()
+}
+
+fn area(r: &Rect) -> Int {
+    r.width * r.height
+}
+
+fn main() {
+    let rect = Rect { width: 7, height: 6 }
+    print(area(&rect))
+    drop rect
+}
+
+struct Rect { width: Int, height: Int }
+
+fn area(r: &Rect) -> Int {
+    r.width * r.height
+}
+
+fn print(s: Str) {
+    print_str(s)
+}
+
+fn print_str(s: Str) {
+    todo()
+}
+
+fn area(r: &Rect) -> Int {
+    r.width * r.height
+}
+
+fn main() {
+    let rect = Rect { width: 7, height: 6 }
+    print(area(&rect))
+    drop rect
+}
+
+struct Rect { width: Int, height: Int }
+
+fn area(r: &Rect) -> Int {
+    r.width * r.height
+}
+
+fn print(s: Str) {
+    print_str(s)
+}
+
+fn print_str(s: Str) {
+    todo()
+}
+
+fn area(r: &Rect) -> Int {
+    r.width * r.height
+}
+
+fn main() {
+    let rect = Rect { width: 7, height: 6 }
+    print(area(&rect))
+    drop rect
+}
+
+struct Rect { width: Int, height: Int }
+
+fn area(r: &Rect) -> Int {
+    r.width * r.height
+}
+
+fn print(s: Str) {
+    print_str(s)
+}
+
+fn print_str(s: Str) {
+    todo()
+}
+
+fn area(r: &Rect) -> Int {
+    r.width * r.height
+}
+
+fn main() {
+    let rect = Rect { width: 7, height: 6 }
+    print(area(&rect))
+    drop rect
+}
+
+struct Rect { width: Int, height: Int }
+
+fn area(r: &Rect) -> Int {
+    r.width * r.height
+}
+
+fn print(s: Str) {
+    print_str(s)
+}
+
+fn print_str(s: Str) {
+    todo()
+}
+
+fn area(r: &Rect) -> Int {
+    r.width * r.height
+}
+
+fn main() {
+    let rect = Rect { width: 7, height: 6 }
+    print(area(&rect))
+    drop rect
+}
+
+struct Rect { width: Int, height: Int }
+
+fn area(r: &Rect) -> Int {
+    r.width * r.height
+}
+
+fn print(s: Str) {
+    print_str(s)
+}
+
+fn print_str(s: Str) {
+    todo()
+}
+
+fn area(r: &Rect) -> Int {
+    r.width * r.height
+}
+
+fn main() {
+    let rect = Rect { width: 7, height: 6 }
+    print(area(&rect))
+    drop rect
+}
+
+struct Rect { width: Int, height: Int }
+
+fn area(r: &Rect) -> Int {
+    r.width * r.height
+}
+
+fn print(s: Str) {
+    print_str(s)
+}
+
+fn print_str(s: Str) {
+    todo()
+}
+
+fn area(r: &Rect) -> Int {
+    r.width * r.height
+}
+
+fn main() {
+    let rect = Rect { width: 7, height: 6 }
+    print(area(&rect))
+    drop rect
+}
+
+struct Rect { width: Int, height: Int }
+
+fn area(r: &Rect) -> Int {
+    r.width * r.height
+}
+
+fn print(s: Str) {
+    print_str(s)
+}
+
+fn print_str(s: Str) {
+    todo()
+}
+
+fn area(r: &Rect) -> Int {
+    r.width * r.height
+}
+
+fn main() {
+    let rect = Rect { width: 7, height: 6 }
+    print(area(&rect))
+    drop rect
+}
+
+struct Rect { width: Int, height: Int }
+
+fn area(r: &Rect) -> Int {
+    r.width * r.height
+}
+
+fn print(s: Str) {
+    print_str(s)
+}
+
+fn print_str(s: Str) {
+    todo()
+}
+
+fn area(r: &Rect

@@ -1,0 +1,12 @@
+fn print_list(list: Vec<Int>) {
+    for item in list.into_iter().rev() {
+        print(item)
+        print_str("\n")
+    }
+}
+
+fn main() {
+    let list = vec(1, 2, 3, 4)
+    print_list(clone(&list))
+    drop list
+}

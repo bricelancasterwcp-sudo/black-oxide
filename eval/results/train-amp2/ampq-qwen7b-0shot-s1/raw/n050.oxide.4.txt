@@ -1,0 +1,407 @@
+fn main() {
+    let mut scores = vec(2, 9, 5)
+    scores.sort_by_key_int_desc()
+    for score in scores {
+        print_str(score.to_string())
+    }
+}
+
+fn sort_by_int_desc(v: Vec<Int>) -> Vec<Int> {
+    let mut sorted = v.clone()
+    sorted.sort_by_key_int_desc()
+    sorted
+}
+
+fn sort_by_key_int_desc(v: Vec<Int>) {
+    for i in 0 {
+        for j in (i + 1) {
+            if v.get(i)? > v.get(j)? {
+                let temp = v.get(i)?
+                v.set(i, v.get(j)?)
+                v.set(j, temp)
+            }
+        }
+    }
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    v.get(i)
+}
+
+fn set(v: Vec<Int>, i: Int, value: Int) {
+    v.set(i, value)
+}
+
+fn to_string(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn print(x: Any) {
+    print_str(x.to_string())
+}
+
+fn to_int(s: Str) -> Option<Int> {
+    parse_int(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    n.to_string()
+}
+
+fn sort_by_key_int_desc(v: Vec<Int>) {
+    for i in 0 {
+        for j in (i + 1) {
+            if v.get(i)? > v.get(j)? {
+                let temp = v.get(i)?
+                v.set(i, v.get(j)?)
+                v.set(j, temp)
+            }
+        }
+    }
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    v.get(i)
+}
+
+fn set(v: Vec<Int>, i: Int, value: Int) {
+    v.set(i, value)
+}
+
+fn to_string(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn print(x: Any) {
+    print_str(x.to_string())
+}
+
+fn to_int(s: Str) -> Option<Int> {
+    parse_int(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    n.to_string()
+}
+
+fn sort_by_key_int_desc(v: Vec<Int>) {
+    for i in 0 {
+        for j in (i + 1) {
+            if v.get(i)? > v.get(j)? {
+                let temp = v.get(i)?
+                v.set(i, v.get(j)?)
+                v.set(j, temp)
+            }
+        }
+    }
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    v.get(i)
+}
+
+fn set(v: Vec<Int>, i: Int, value: Int) {
+    v.set(i, value)
+}
+
+fn to_string(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn print(x: Any) {
+    print_str(x.to_string())
+}
+
+fn to_int(s: Str) -> Option<Int> {
+    parse_int(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    n.to_string()
+}
+
+fn sort_by_key_int_desc(v: Vec<Int>) {
+    for i in 0 {
+        for j in (i + 1) {
+            if v.get(i)? > v.get(j)? {
+                let temp = v.get(i)?
+                v.set(i, v.get(j)?)
+                v.set(j, temp)
+            }
+        }
+    }
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    v.get(i)
+}
+
+fn set(v: Vec<Int>, i: Int, value: Int) {
+    v.set(i, value)
+}
+
+fn to_string(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn print(x: Any) {
+    print_str(x.to_string())
+}
+
+fn to_int(s: Str) -> Option<Int> {
+    parse_int(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    n.to_string()
+}
+
+fn sort_by_key_int_desc(v: Vec<Int>) {
+    for i in 0 {
+        for j in (i + 1) {
+            if v.get(i)? > v.get(j)? {
+                let temp = v.get(i)?
+                v.set(i, v.get(j)?)
+                v.set(j, temp)
+            }
+        }
+    }
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    v.get(i)
+}
+
+fn set(v: Vec<Int>, i: Int, value: Int) {
+    v.set(i, value)
+}
+
+fn to_string(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn print(x: Any) {
+    print_str(x.to_string())
+}
+
+fn to_int(s: Str) -> Option<Int> {
+    parse_int(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    n.to_string()
+}
+
+fn sort_by_key_int_desc(v: Vec<Int>) {
+    for i in 0 {
+        for j in (i + 1) {
+            if v.get(i)? > v.get(j)? {
+                let temp = v.get(i)?
+                v.set(i, v.get(j)?)
+                v.set(j, temp)
+            }
+        }
+    }
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    v.get(i)
+}
+
+fn set(v: Vec<Int>, i: Int, value: Int) {
+    v.set(i, value)
+}
+
+fn to_string(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn print(x: Any) {
+    print_str(x.to_string())
+}
+
+fn to_int(s: Str) -> Option<Int> {
+    parse_int(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    n.to_string()
+}
+
+fn sort_by_key_int_desc(v: Vec<Int>) {
+    for i in 0 {
+        for j in (i + 1) {
+            if v.get(i)? > v.get(j)? {
+                let temp = v.get(i)?
+                v.set(i, v.get(j)?)
+                v.set(j, temp)
+            }
+        }
+    }
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    v.get(i)
+}
+
+fn set(v: Vec<Int>, i: Int, value: Int) {
+    v.set(i, value)
+}
+
+fn to_string(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn print(x: Any) {
+    print_str(x.to_string())
+}
+
+fn to_int(s: Str) -> Option<Int> {
+    parse_int(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    n.to_string()
+}
+
+fn sort_by_key_int_desc(v: Vec<Int>) {
+    for i in 0 {
+        for j in (i + 1) {
+            if v.get(i)? > v.get(j)? {
+                let temp = v.get(i)?
+                v.set(i, v.get(j)?)
+                v.set(j, temp)
+            }
+        }
+    }
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    v.get(i)
+}
+
+fn set(v: Vec<Int>, i: Int, value: Int) {
+    v.set(i, value)
+}
+
+fn to_string(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn print(x: Any) {
+    print_str(x.to_string())
+}
+
+fn to_int(s: Str) -> Option<Int> {
+    parse_int(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    n.to_string()
+}
+
+fn sort_by_key_int_desc(v: Vec<Int>) {
+    for i in 0 {
+        for j in (i + 1) {
+            if v.get(i)? > v.get(j)? {
+                let temp = v.get(i)?
+                v.set(i, v.get(j)?)
+                v.set(j, temp)
+            }
+        }
+    }
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    v.get(i)
+}
+
+fn set(v: Vec<Int>, i: Int, value: Int) {
+    v.set(i, value)
+}
+
+fn to_string(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn print(x: Any) {
+    print_str(x.to_string())
+}
+
+fn to_int(s: Str) -> Option<Int> {
+    parse_int(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    n.to_string()
+}
+
+fn sort_by_key_int_desc(v: Vec<Int>) {
+    for i in 0 {
+        for j in (i + 1) {
+            if v.get(i)? > v.get(j)? {
+                let temp = v.get(i)?
+                v.set(i, v.get(j)?)
+                v.set(j, temp)
+            }
+        }
+    }
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    v.get(i)
+}
+
+fn set(v: Vec<Int>, i: Int, value: Int) {
+    v.set(i, value)
+}
+
+fn to_string(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn print(x: Any) {
+    print_str(x.to_string())
+}
+
+fn to_int(s:

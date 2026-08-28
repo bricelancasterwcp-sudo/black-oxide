@@ -1,0 +1,14 @@
+fn total_value(items: Vec<Item>) -> Int {
+    let mut total = 0
+    for item in items {
+        total = total + item.quantity * item.value
+    }
+    total
+}
+
+struct Item { quantity: Int, value: Int }
+
+fn main() {
+    let items = vec(Item { quantity: 4, value: 3 }, Item { quantity: 5, value: 2 })
+    print(total_value(items))
+}

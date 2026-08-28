@@ -1,0 +1,12 @@
+fn main() {
+    const SIDE: f64 = 4.0;
+    const PI: f64 = 3.14159;
+
+    let area = square(SIDE);
+
+    println!("area = {}", area);
+}
+
+fn square(side: f64) -> f64 {
+    side * side
+}

@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut sum = 0;
+    let n = 9875;
+    while n > 0 {
+        sum += n % 10;
+        n /= 10;
+    }
+    println!("{}", sum);
+}
+```
+
+[Answer Source](https://stackoverflow.com/a/64281344/155423)

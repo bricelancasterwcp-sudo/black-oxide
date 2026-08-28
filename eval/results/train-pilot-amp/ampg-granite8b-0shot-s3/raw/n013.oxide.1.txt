@@ -1,0 +1,75 @@
+fn main() {
+    let mut readings = vec(5, 3, 9, 1, 7)
+    let mut largest = -1
+    while readings.len() > 0 {
+        let reading = pop(readings)
+        if reading > largest {
+            largest = reading
+        }
+    }
+    print(largest)
+}
+
+fn pop(v: Vec<Int>) -> Int {
+    let last = get(v, v.len() - 1)?
+    let shorter = take(v, 0, v.len() - 1)
+    push(shorter, last)
+}
+
+fn take(v: Vec<T>, begin: Int, end: Int) -> Vec<T> {
+    if begin > end {
+        vec()
+    } else {
+        push(take(v, begin + 1, end), get(v, begin)?)
+    }
+}
+
+struct Vec { data: Vec<T>, len: Int }
+
+fn len(v: Vec<T>) -> Int {
+    v.len
+}
+
+fn get(v: Vec<T>, i: Int) -> Option<T> {
+    if i < v.len {
+        Some(v.data.get(i))
+    } else {
+        None
+    }
+}
+
+fn push(v: Vec<T>, item: T) -> Vec<T> {
+    let mut v = v
+    v.data.push(item)
+    v.len = v.len + 1
+    v
+}
+
+fn vec() -> Vec<T> {
+    Vec()
+}
+
+fn main() {
+    let mut readings = vec()
+    while true {
+        print_str("Enter a number or 'done': ")
+        let s = read_line()
+        match parse_int(s) {
+            Some(n) => readings == push(readings, n),
+            None => {
+                if s == "done" {
+                    break_
+                } else {
+                    print_str("Invalid input\n")
+                }
+            },
+        }
+    }
+    if len(readings) == 0 {
+        print_str("No readings\n")
+    } else {
+        let largest = first_big(readings)
+        print_str("Largest: ")
+        print(largest)
+    }
+}

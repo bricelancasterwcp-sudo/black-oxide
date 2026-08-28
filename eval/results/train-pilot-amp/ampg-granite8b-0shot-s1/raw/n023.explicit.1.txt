@@ -1,0 +1,8 @@
+fn phrase_chars(phrase: &Str) -> Int {
+    len(&phrase)
+}
+
+fn main() {
+    let phrase = "hello world"
+    print(phrase_chars(&phrase))
+}

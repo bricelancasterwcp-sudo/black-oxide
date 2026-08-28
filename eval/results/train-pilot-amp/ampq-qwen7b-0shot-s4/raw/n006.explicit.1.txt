@@ -1,0 +1,12 @@
+fn max_power_of_two(limit: Int) -> Int {
+    let mut n = limit
+    while n > 1 {
+        n = n / 2
+    }
+    n
+}
+
+fn main() {
+    let max_pow = max_power_of_two(100)
+    print(max_pow)
+}

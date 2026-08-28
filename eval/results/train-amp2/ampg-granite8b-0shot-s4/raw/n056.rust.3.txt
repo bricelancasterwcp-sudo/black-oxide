@@ -1,0 +1,12 @@
+fn main() {
+    let mut sum = 0;
+    let mut count = 0;
+    for num in [7, 0, 9, 3].iter() {
+        if let Ok(n) = num {
+            sum += n;
+            count += 1;
+        }
+    }
+    println!("{}", sum);
+    println!("{}", 4 - count);
+}

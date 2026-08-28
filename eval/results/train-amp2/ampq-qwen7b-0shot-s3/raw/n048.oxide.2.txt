@@ -1,0 +1,10 @@
+struct Reading { label: Str, values: Vec<Int> }
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(push(push(vec(), 4), 7), 4), 9) }
+    for i in range(0, len(r.values)) {
+        if get(r.values, i)? == 4 {
+            print(i)
+        }
+    }
+}

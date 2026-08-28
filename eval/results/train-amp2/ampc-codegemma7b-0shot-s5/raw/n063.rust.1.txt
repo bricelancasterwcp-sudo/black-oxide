@@ -1,0 +1,15 @@
+fn main() {
+    let line_a_price = 3;
+    let line_a_quantity = 4;
+    let line_a_value = line_a_price * line_a_quantity;
+
+    let line_b_price = 2;
+    let line_b_quantity = 5;
+    let line_b_value = line_b_price * line_b_quantity;
+
+    let total_value = line_a_value + line_b_value;
+
+    println!("Line A value: {}", line_a_value);
+    println!("Line B value: {}", line_b_value);
+    println!("Total value: {}", total_value);
+}

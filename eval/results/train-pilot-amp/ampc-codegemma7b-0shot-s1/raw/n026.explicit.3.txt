@@ -1,0 +1,28 @@
+fn to_str(n: Int) -> Str {
+    let mut digits = vec()
+    let mut rem = n
+    while rem != 0 {
+        digits = push(digits, rem % 10)
+        rem = trunc(rem / 10)
+    }
+    let mut output = str()
+    for digit in &digits {
+        output = concat(output, int_to_str(digit))
+    }
+    output
+}
+
+fn len(s: &Str) -> Int {
+    let mut count = 0
+    for _ in s {
+        count = count + 1
+    }
+    count
+}
+
+fn main() {
+    let number = 2026
+    let text = to_str(number)
+    print(len(&text))
+    drop text
+}

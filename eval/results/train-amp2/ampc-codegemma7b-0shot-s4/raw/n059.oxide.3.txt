@@ -1,0 +1,6 @@
+fn main() {
+    let s = "when in doubt go home".to_string()
+    let n_words = s.split_whitespace().count()
+    let n_chars = s.len()
+    print("{} {}", n_words, n_chars)
+}

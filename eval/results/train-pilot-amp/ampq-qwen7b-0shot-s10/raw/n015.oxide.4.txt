@@ -1,0 +1,5 @@
+fn main() {
+    let numbers = vec(5, 3, 9, 1, 7)
+    let count = numbers.filter(x || x > 4).len()
+    print(count)
+}

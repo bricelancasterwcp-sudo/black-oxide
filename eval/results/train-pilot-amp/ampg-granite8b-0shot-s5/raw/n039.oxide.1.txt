@@ -1,0 +1,19 @@
+struct List { val: Int, next: Option<Box<List>> }
+
+fn find(lst: Option<Box<List>>, pos: Int) -> Option<Int> {
+    match lst {
+        Some(boxList) => {
+            if boxList.val == pos {
+                return Some(pos)
+            } else {
+                return find(boxList.next, pos)
+            }
+        },
+        None => None,
+    }
+}
+
+fn main() {
+    let list = Some(box(List { val: 1, next: Some(box(List { val: 2, next: None })) }))
+    print(find(list, 5))
+}

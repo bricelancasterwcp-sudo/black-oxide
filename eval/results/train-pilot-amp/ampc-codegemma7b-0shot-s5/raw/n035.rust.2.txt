@@ -1,0 +1,17 @@
+#![no_std]
+#![no_main]
+
+use core::panic;
+
+fn division(x: i32, y: i32) -> i32 {
+    if y == 0 {
+        panic!("Cannot divide by zero");
+    }
+    x / y
+}
+
+fn main() {
+    let result = division(20, 4);
+    println!("{}", result);
+}
+```

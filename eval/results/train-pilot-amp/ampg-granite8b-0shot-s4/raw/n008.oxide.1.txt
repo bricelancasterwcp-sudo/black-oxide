@@ -1,0 +1,21 @@
+struct Int {
+    value: Int,
+}
+
+fn is_divisible_by(x: Int, y: Int) -> Bool {
+    x % y == 0
+}
+
+fn count_divisors(n: Int) -> Int {
+    let mut count = 0
+    for x in range(1, n) {
+        if is_divisible_by(x, 3) || is_divisible_by(x, 5) {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn main() {
+    print(count_divisors(50))
+}

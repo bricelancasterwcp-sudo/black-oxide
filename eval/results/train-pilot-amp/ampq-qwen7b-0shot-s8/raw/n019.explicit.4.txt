@@ -1,0 +1,4 @@
+fn main() {
+    let list1 = push(push(vec(), 1), 2).push(3).clone().concat(concat(vec(), 4), vec()).concat(concat(vec(), 5), vec()).len()
+    print(list1)
+}

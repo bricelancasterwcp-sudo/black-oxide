@@ -1,0 +1,20 @@
+struct TrafficLight { current: Str }
+
+fn next_light(light: TrafficLight) -> TrafficLight {
+    match light.current {
+        Str(ref_str) => match ref_str {
+            Str(a) => if a == "green" { TrafficLight { current: Str("yellow") } } else { TrafficLight { current: Str("red") } },
+            _ => TrafficLight { current: Str("red") },
+        },
+        _ => TrafficLight { current: Str("red") },
+    }
+}
+
+fn main() {
+    let light = TrafficLight { current: Str("green") }
+    print_str("Go for green")
+    let light = next_light(light)
+    print_str("Wait for yellow")
+    let light = next_light(light)
+    print_str("Stop for red")
+}

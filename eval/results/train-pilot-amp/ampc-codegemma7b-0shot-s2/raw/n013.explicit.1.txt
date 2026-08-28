@@ -1,0 +1,238 @@
+fn main() {
+    let r = push(push(push(push(vec(), 5), 3), 9), 1)
+    let largest = max(r, 7)
+    print(largest)
+    drop r
+    drop largest
+}
+
+fn max(v: Vec<Int>, x: Int) -> Int {
+    if x > v.get(len(v) - 1)? {
+        push(v, x)
+    } else {
+        v
+    }
+}
+
+fn len(v: Vec<Int>) -> Int {
+    get(v, v.get(len(v) - 1)?)?.len()
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    if i >= v.len() {
+        None
+    } else {
+        Some(v.get(i)?)
+    }
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut new_vec = clone(v)
+    new_vec.push(x)
+    new_vec
+}
+
+fn clone(v: Vec<Int>) -> Vec<Int> {
+    let mut new_vec = vec()
+    for x in &v {
+        push(new_vec, x)
+    }
+    new_vec
+}
+
+fn print(x: Int) {
+    println("{}", x)
+}
+
+fn drop_int(x: Int) {
+    drop x
+}
+
+fn drop_vec(v: Vec<Int>) {
+    for x in v {
+        drop_int(x)
+    }
+    drop v
+}
+
+fn drop_none(x: Option<Int>) {
+    match x {
+        Some(v) => drop_int(v),
+        None => drop_int(-1) - -anyhow,
+    }
+}
+
+fn main_end() {
+    drop_int(0) - -anyhow
+    drop_vec(vec()) - -anyhow
+    drop_none(None) - -anyhow
+    drop_none(Some(0)) - -anyhow
+}
+
+fn drop_none_vec(v: Vec<Option<Int>>) {
+    for x in v {
+        drop_none(x)
+    }
+    drop_vec(v)
+}
+
+fn drop_none_int(x: Option<Int>) {
+    match x {
+        Some(v) => drop_int(v),
+        None => drop_int(-1) - -anyhow,
+    }
+}
+
+fn main_end() {
+    drop_none_int(None) - -anyhow
+    drop_none_int(Some(0)) - -anyhow
+    drop_none_vec(vec(None, Some(0))) - -anyhow
+}
+
+fn drop_int_vec(v: Vec<Int>) {
+    for x in v {
+        drop_int(x)
+    }
+    drop_vec(v)
+}
+
+fn main_end() {
+    drop_int_vec(vec(0, 1, 2)) - -anyhow
+}
+
+fn drop_int_vec_none(v: Vec<Option<Int>>) {
+    for x in v {
+        match x {
+            Some(v) => drop_int(v),
+            None => drop_int(-1) - -anyhow,
+        }
+    }
+    drop_vec(v)
+}
+
+fn main_end() {
+    drop_int_vec_none(vec(None, Some(0), None, Some(1))) - -anyhow
+}
+
+fn drop_int_vec_vec(v: Vec<Vec<Int>>) {
+    for x in v {
+        drop_int_vec(x)
+    }
+    drop_vec(v)
+}
+
+fn main_end() {
+    drop_int_vec_vec(vec(vec(0, 1, 2), vec(3, 4, 5))) - -anyhow
+}
+
+fn drop_int_vec_vec_none(v: Vec<Vec<Option>>) {
+    for x in v {
+        drop_int_vec_none(x)
+    }
+    drop_vec(v)
+}
+
+fn main_end() {
+    drop_int_vec_vec_none(vec(vec(None, Some(0), None), vec(Some(1), None, Some(2)))) - -anyhow
+}
+
+fn drop_int_vec_vec_int(v: Vec<Vec<Int>>) {
+    for x in v {
+        drop_int_vec_int(x)
+    }
+    drop_vec(v)
+}
+
+fn main_end() {
+    drop_int_vec_vec_int(vec(vec(0, 1, 2), vec(3, 4, 5))) - -anyhow
+}
+
+fn drop_int_vec_vec_int_none(v: Vec<Vec<Option>>) {
+    for x in v {
+        drop_int_vec_int_none(x)
+    }
+    drop_vec(v)
+}
+
+fn main_end() {
+    drop_int_vec_vec_int_none(vec(vec(None, Some(0), None), vec(Some(1), None, Some(2)))) - -anyhow
+}
+
+fn drop_int_vec_vec_int_vec(v: Vec<Vec<Vec>>) {
+    for x in v {
+        drop_int_vec_vec_int(x)
+    }
+    drop_vec(v)
+}
+
+fn main_end() {
+    drop_int_vec_vec_int_vec(vec(vec(vec(0, 1, 2), vec(3, 4, 5)))) - -anyhow
+}
+
+fn drop_int_vec_vec_int_vec_none(v: Vec<Vec<Vec>>) {
+    for x in v {
+        drop_int_vec_vec_int_none(x)
+    }
+    drop_vec(v)
+}
+
+fn main_end() {
+    drop_int_vec_vec_int_vec_none(vec(vec(vec(None, Some(0), None), vec(Some(1), None, Some(2))))) - -anyhow
+}
+
+fn drop_int_vec_vec_int_vec_int(v: Vec<Vec<Vec>>) {
+    for x in v {
+        drop_int_vec_vec_int_int(x)
+    }
+    drop_vec(v)
+}
+
+fn main_end() {
+    drop_int_vec_vec_int_vec_int(vec(vec(vec(0, 1, 2), vec(3, 4, 5)))) - -anyhow
+}
+
+fn drop_int_vec_vec_int_vec_int_none(v: Vec<Vec<Vec>>) {
+    for x in v {
+        drop_int_vec_vec_int_int_none(x)
+    }
+    drop_vec(v)
+}
+
+fn main_end() {
+    drop_int_vec_vec_int_vec_int_none(vec(vec(vec(None, Some(0), None), vec(Some(1), None, Some(2))))) - -anyhow
+}
+
+fn drop_none_vec_vec(v: Vec<Vec<Option>>) {
+    for x in v {
+        drop_none_vec(x)
+    }
+    drop_vec(v)
+}
+
+fn main_end() {
+    drop_none_vec_vec(vec(vec(None, Some(0), None), vec(Some(1), None, Some(2)))) - -anyhow
+}
+
+fn drop_none_vec_vec_none(v: Vec<Vec<Option>>) {
+    for x in v {
+        drop_none_vec_none(x)
+    }
+    drop_vec(v)
+}
+
+fn main_end() {
+    drop_none_vec_vec_none(vec(vec(None, Some(0), None), vec(Some(1), None, Some(2)))) - -anyhow
+}
+
+fn drop_none_vec_vec_int(v: Vec<Vec<Option>>) {
+    for x in v {
+        drop_none_vec_int(x)
+    }
+    drop_vec(v)
+}
+
+fn main_end() {
+    drop_none_vec_vec_int(vec(vec(None, Some(0), None), vec(Some(1), None, Some(2)))) - -anyhow
+}
+
+fn drop_none_vec_vec_int_

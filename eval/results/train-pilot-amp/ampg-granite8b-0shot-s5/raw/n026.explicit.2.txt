@@ -1,0 +1,23 @@
+fn digits(number: Int) -> Vec<Int> {
+    let mut output = vec()
+    while number > 0 {
+        let digit = number % 10
+        let digit_str = int_to_str(digit)
+        output = push(output, digit_str)
+        number = number / 10
+    }
+    output
+}
+
+fn digit_count(number: Int) -> Int {
+    let digit_strings = digits(number)
+    let lengths = map(digit_strings, str_len)
+    let total = sum(lengths)
+    total
+}
+
+fn main() {
+    let number = 2026
+    let digit_count = digit_count(number)
+    print(digit_count)
+}

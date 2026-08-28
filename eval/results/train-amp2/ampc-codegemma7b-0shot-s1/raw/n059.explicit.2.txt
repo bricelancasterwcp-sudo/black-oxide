@@ -1,0 +1,25 @@
+fn len(v: &Vec<Str>) -> Int {
+    let mut total = 0
+    for x in &v {
+        total = total + x.len()
+    }
+    total
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut v = vec()
+    for c in s.chars() {
+        v.push(str_len(c.to_string()))
+    }
+    v
+}
+
+fn main() {
+    let text = push(push(vec(), "when"), "in")
+    let text = push(text, "doubt")
+    let text = push(text, "go")
+    let text = push(text, "home")
+    print(len(&text))
+    let chars = chars(&text)
+    print(len(&chars))
+}

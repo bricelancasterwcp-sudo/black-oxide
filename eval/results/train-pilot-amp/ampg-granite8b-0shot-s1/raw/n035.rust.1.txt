@@ -1,0 +1,13 @@
+fn divide(dividend: u32, divisor: u32) -> Result<u32, &'static str> {
+    if divisor == 0 {
+        return Err("Cannot divide by zero");
+    }
+    Ok(dividend / divisor)
+}
+
+fn main() {
+    match divide(20, 4) {
+        Ok(answer) => println!("{}", answer),
+        Err(err) => println!("{}", err),
+    }
+}

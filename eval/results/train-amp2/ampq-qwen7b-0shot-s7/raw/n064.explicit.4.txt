@@ -1,0 +1,20 @@
+fn main() {
+    let mut list = vec(10, 20)
+    let first = get(&list, 1)
+    let second = get(&list, 4)
+    if first.is_some() {
+        print_str("First element: ")
+        print(first.unwrap())
+    } else {
+        print_str("First element is empty")
+    }
+    print_str("\n")
+    if second.is_some() {
+        print_str("Second element: ")
+        print(second.unwrap())
+    } else {
+        print_str("Second element is empty")
+    }
+    print_str("\n")
+    drop list
+}

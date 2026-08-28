@@ -1,0 +1,18 @@
+use std::process;
+
+fn division(a: i32, b: i32) -> Result<i32, std::process::ExitCode> {
+    if b == 0 {
+        Err(process::ExitCode::FAILURE)
+    } else {
+        Ok(a / b)
+    }
+}
+
+fn main() {
+    let result = division(20, 4).unwrap_or(0);
+    println!("Result: {}", result);
+    match division(20, 0) {
+        Ok(result) => println!("Result: {}", result),
+        Err(_) => println!("Bad division!"),
+    }
+}

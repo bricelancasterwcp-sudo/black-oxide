@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let mut count = 0;
+    let mut highest = 0;
+
+    for number in &[6, 11, 3, 14, 9] {
+        if *number > 5 {
+            count += 1;
+        }
+
+        if *number > highest {
+            highest = *number;
+        }
+    }
+
+    println!("{} of the readings exceed five.", count);
+    println!("The highest reading is {}.", highest);
+}
+```

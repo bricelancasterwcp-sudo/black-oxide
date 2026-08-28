@@ -1,0 +1,10 @@
+fn main() {
+    match parse_int("abc") {
+        Some(n) => print(n),
+        None => print("bad"),
+    }
+    match parse_int("123") {
+        Some(n) => print(n),
+        None => print("bad"),
+    }
+}

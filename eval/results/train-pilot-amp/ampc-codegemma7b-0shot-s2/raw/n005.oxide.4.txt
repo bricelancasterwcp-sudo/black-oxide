@@ -1,0 +1,13 @@
+fn total(n: Int) -> Int {
+    if n == 0 {
+        return 0
+    } else if n % 2 == 0 {
+        return n + total(n - 1)
+    } else {
+        return total(n - 1)
+    }
+}
+
+fn main() {
+    print(total(20))
+}

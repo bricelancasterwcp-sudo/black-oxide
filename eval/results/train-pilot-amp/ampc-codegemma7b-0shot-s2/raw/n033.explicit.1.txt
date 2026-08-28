@@ -1,0 +1,38 @@
+fn is_green(signal: &Str) -> Bool {
+    return signal == "green"
+}
+
+fn is_yellow(signal: &Str) -> Bool {
+    return signal == "yellow"
+}
+
+fn is_red(signal: &Str) -> Bool {
+    return signal == "red"
+}
+
+fn print_go_for_green(signal: &Str) {
+    if is_green(signal) {
+        print("go")
+    }
+}
+
+fn print_wait_for_yellow(signal: &Str) {
+    if is_yellow(signal) {
+        print("wait")
+    }
+}
+
+fn print_stop_for_red(signal: &Str) {
+    if is_red(signal) {
+        print("stop")
+    }
+}
+
+fn main() {
+    let signal = "green"
+    print_go_for_green(&signal)
+    let signal = "yellow"
+    print_wait_for_yellow(&signal)
+    let signal = "red"
+    print_stop_for_red(&signal)
+}

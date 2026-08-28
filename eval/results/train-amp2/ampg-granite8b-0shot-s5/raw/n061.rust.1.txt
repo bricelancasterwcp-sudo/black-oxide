@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    // area
+    let a = 3 * 9;
+    println!("{}", a);
+
+    // perimeter
+    let p = 2 * (3 + 9);
+    println!("{}", p);
+}
+```

@@ -1,0 +1,18 @@
+struct FactorCount {
+    count: Int,
+}
+
+fn factor_count(n: Int) -> FactorCount {
+    let mut count = 0
+    for d in range(1, n + 1) {
+        if n % d == 0 {
+            count = count + 1
+        }
+    }
+    FactorCount(count)
+}
+
+fn main() {
+    let count = factor_count(36).count
+    print(count)
+}

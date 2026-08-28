@@ -1,0 +1,6 @@
+fn main() {
+    let measurements = vec(7, 2, 9, 4).sort()
+    for x in measurements {
+        print(x)
+    }
+}

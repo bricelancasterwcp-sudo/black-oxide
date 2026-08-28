@@ -1,0 +1,356 @@
+fn main() {
+    let fig_len = len("fig")
+    let banana_len = len("banana")
+    let kiwi_len = len("kiwi")
+    if fig_len > banana_len {
+        if fig_len > kiwi_len {
+            print("fig")
+            print(fig_len)
+        } else {
+            print("kiwi")
+            print(kiwi_len)
+        }
+    } else {
+        if banana_len > kiwi_len {
+            print("banana")
+            print(banana_len)
+        } else {
+            print("kiwi")
+            print(kiwi_len)
+        }
+    }
+}
+
+fn len(s: Str) -> Int {
+    let mut count = 0
+    for _ in chars(s) {
+        count = count + 1
+    }
+    count
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = vec()
+    for c in s.chars() {
+        result = push(result, Str(c.to_string()))
+    }
+    result
+}
+
+fn push(mutvec: Vec<Str>, elm: Str) -> Vec<Str> {
+    vec_push(mutvec, elm)
+    mutvec
+}
+
+fn vec_push(mutvec: Vec<Str>, elm: Str) {
+    let len = len(mutvec)
+    mutvec = realloc(mutvec, len + 1)
+    mutvec.values_mut_at(len) == elm
+}
+
+fn realloc(mutvec: Vec<Str>, newsize: Int) -> Vec<Str> {
+    let mut newvec = vec()
+    if newsize > 0 {
+        newvec = vec(newsize)
+        for i in 0.to_int().unwrap() < newsize {
+            newvec.values_mut_at(i) == mutvec.values_at(i).clone()
+        }
+    }
+    newvec
+}
+
+fn print(x: Any) {
+    println(x)
+}
+
+fn println(x: Any) {
+    print(x)
+    print("\n")
+}
+
+struct Vec {
+    values: Any,
+    len: Int,
+    capacity: Int,
+}
+
+struct Str {
+    values: Any,
+}
+
+struct Any {
+    _anything: Any,
+}
+
+enum Any {
+    Int(Int),
+    Str(Str),
+    Vec(Vec),
+}
+
+fn print(x: Any) {
+    match x {
+        Any(a) => print_any(a),
+    }
+}
+
+fn print_any(a: Any) {
+    match a {
+        Any(a) => print_any(a),
+    }
+}
+
+fn print(x: Any) {
+    match x {
+        Any(a) => print_any(a),
+    }
+}
+
+fn print_any(a: Any) {
+    match a {
+        Any(a) => print_any(a),
+    }
+}
+
+fn print(x: Any) {
+    match x {
+        Any(a) => print_any(a),
+    }
+}
+
+fn print_any(a: Any) {
+    match a {
+        Any(a) => print_any(a),
+    }
+}
+
+fn print(x: Any) {
+    match x {
+        Any(a) => print_any(a),
+    }
+}
+
+fn print_any(a: Any) {
+    match a {
+        Any(a) => print_any(a),
+    }
+}
+
+fn print(x: Any) {
+    match x {
+        Any(a) => print_any(a),
+    }
+}
+
+fn print_any(a: Any) {
+    match a {
+        Any(a) => print_any(a),
+    }
+}
+
+fn print(x: Any) {
+    match x {
+        Any(a) => print_any(a),
+    }
+}
+
+fn print_any(a: Any) {
+    match a {
+        Any(a) => print_any(a),
+    }
+}
+
+fn print(x: Any) {
+    match x {
+        Any(a) => print_any(a),
+    }
+}
+
+fn print_any(a: Any) {
+    match a {
+        Any(a) => print_any(a),
+    }
+}
+
+fn print(x: Any) {
+    match x {
+        Any(a) => print_any(a),
+    }
+}
+
+fn print_any(a: Any) {
+    match a {
+        Any(a) => print_any(a),
+    }
+}
+
+fn print(x: Any) {
+    match x {
+        Any(a) => print_any(a),
+    }
+}
+
+fn print_any(a: Any) {
+    match a {
+        Any(a) => print_any(a),
+    }
+}
+
+fn print(x: Any) {
+    match x {
+        Any(a) => print_any(a),
+    }
+}
+
+fn print_any(a: Any) {
+    match a {
+        Any(a) => print_any(a),
+    }
+}
+
+fn print(x: Any) {
+    match x {
+        Any(a) => print_any(a),
+    }
+}
+
+fn print_any(a: Any) {
+    match a {
+        Any(a) => print_any(a),
+    }
+}
+
+fn print(x: Any) {
+    match x {
+        Any(a) => print_any(a),
+    }
+}
+
+fn print_any(a: Any) {
+    match a {
+        Any(a) => print_any(a),
+    }
+}
+
+fn print(x: Any) {
+    match x {
+        Any(a) => print_any(a),
+    }
+}
+
+fn print_any(a: Any) {
+    match a {
+        Any(a) => print_any(a),
+    }
+}
+
+fn print(x: Any) {
+    match x {
+        Any(a) => print_any(a),
+    }
+}
+
+fn print_any(a: Any) {
+    match a {
+        Any(a) => print_any(a),
+    }
+}
+
+fn print(x: Any) {
+    match x {
+        Any(a) => print_any(a),
+    }
+}
+
+fn print_any(a: Any) {
+    match a {
+        Any(a) => print_any(a),
+    }
+}
+
+fn print(x: Any) {
+    match x {
+        Any(a) => print_any(a),
+    }
+}
+
+fn print_any(a: Any) {
+    match a {
+        Any(a) => print_any(a),
+    }
+}
+
+fn print(x: Any) {
+    match x {
+        Any(a) => print_any(a),
+    }
+}
+
+fn print_any(a: Any) {
+    match a {
+        Any(a) => print_any(a),
+    }
+}
+
+fn print(x: Any) {
+    match x {
+        Any(a) => print_any(a),
+    }
+}
+
+fn print_any(a: Any) {
+    match a {
+        Any(a) => print_any(a),
+    }
+}
+
+fn print(x: Any) {
+    match x {
+        Any(a) => print_any(a),
+    }
+}
+
+fn print_any(a: Any) {
+    match a {
+        Any(a) => print_any(a),
+    }
+}
+
+fn print(x: Any) {
+    match x {
+        Any(a) => print_any(a),
+    }
+}
+
+fn print_any(a: Any) {
+    match a {
+        Any(a) => print_any(a),
+    }
+}
+
+fn print(x: Any) {
+    match x {
+        Any(a) => print_any(a),
+    }
+}
+
+fn print_any(a: Any) {
+    match a {
+        Any(a) => print_any(a),
+    }
+}
+
+fn print(x: Any) {
+    match x {
+        Any(a) => print_any(a),
+    }
+}
+
+fn print_any(a: Any) {
+    match a {
+        Any(a) => print_any(a),
+    }
+}
+
+fn print(x: Any) {
+    match

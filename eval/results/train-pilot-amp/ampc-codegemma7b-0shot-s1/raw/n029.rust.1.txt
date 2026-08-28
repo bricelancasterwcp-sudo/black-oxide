@@ -1,0 +1,11 @@
+use std::fmt::Write;
+
+fn main() {
+    let mut text = String::new();
+
+    write!(text, "one ").unwrap();
+    write!(text, "two ").unwrap();
+    write!(text, "three ").unwrap();
+
+    println!("{}", text);
+}

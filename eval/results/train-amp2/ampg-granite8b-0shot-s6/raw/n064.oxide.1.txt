@@ -1,0 +1,40 @@
+struct List { head: Link, tail: Link }
+
+enum Link {
+    Cons(Int, Link),
+    Nil,
+}
+
+fn get(lst: List, pos: Int) -> Option<Int> {
+    let mut cur = lst.head
+    let mut i = 0
+    loop  // (1) loop, not recursion, to get the "?"
+    match cur {
+        Nil => None,
+        Cons(x, next) => {
+            if i == pos {
+                return Some(x)
+            }
+            cur = next
+            i = i + 1
+        },
+    }
+}
+
+fn main() {
+    let lst10 = List { head: Cons(10, Nil), tail: Nil }
+    let lst20 = List { head: Cons(20, Nil), tail: Nil }
+    let lst1020 = List { head: Cons(10, Cons(20, Nil)), tail: Nil }
+    let lst102010 = List { head: Cons(10, Cons(20, Cons(10, Nil))), tail: Nil }
+    for lst in vec(lst10, lst20, lst1020, lst102010) {
+        match get(lst, 0) {
+            Some(n) => print(n),
+            None => print_str("none"),
+        }
+        match get(lst, 3) {
+            Some(n) => print(n),
+            None => print_str("none"),
+        }
+        print_str("\n")
+    }
+}

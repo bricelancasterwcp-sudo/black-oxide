@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    const TEXT: &str = "417";
+    let num: Result<u32, _> = TEXT.parse();
+    match num {
+        Ok(n) => println!("{}", n + 1),
+        Err(_) => println!("bad")
+    }
+}
+```

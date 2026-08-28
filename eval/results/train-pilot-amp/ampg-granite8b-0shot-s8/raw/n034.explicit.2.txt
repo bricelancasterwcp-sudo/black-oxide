@@ -1,0 +1,10 @@
+fn helper(a: Vec<Int>) -> Option<Int> {
+    let second = a.get(1)
+    drop a
+    second
+}
+
+fn main() {
+    print(helper(vec(7, 8, 9)))
+    print(helper(vec()))
+}

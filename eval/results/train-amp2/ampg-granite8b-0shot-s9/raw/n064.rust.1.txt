@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let list = vec![10, 20];
+
+    match list.get(0) {
+        Some(&n) => println!("The first element is: {}", n),
+        None => println!("The first element does not exist"),
+    }
+
+    match list.get(3) {
+        Some(&n) => println!("The fourth element is: {}", n),
+        None => println!("The fourth element does not exist"),
+    }
+}
+```

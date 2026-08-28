@@ -1,0 +1,28 @@
+struct Numbers { values: Vec<Int> }
+
+fn count_below_cutoff(v: Vec<Int>, cutoff: Int) -> Int {
+    let mut count = 0
+    for x in v {
+        if x < cutoff {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn count_at_or_over_cutoff(v: Vec<Int>, cutoff: Int) -> Int {
+    let mut count = 0
+    for x in v {
+        if x >= cutoff {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn main() {
+    let nums = Numbers { values: vec(5, 12, 3, 18) }
+    let nums2 = Numbers { values: vec(9, 5, 12, 3) }
+    print(count_below_cutoff(nums.values, 10))  // prints 2
+    print(count_at_or_over_cutoff(nums2.values, 10))  // prints 3
+}

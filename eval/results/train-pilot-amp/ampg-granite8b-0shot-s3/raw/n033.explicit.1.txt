@@ -1,0 +1,91 @@
+fn main() {
+    let nums = push(push(vec(), 5), 40)
+    let bigger = extend(clone(&nums), 70)
+    print(sum_big(&nums, 10))
+    drop nums
+    print(sum_big(&bigger, 10))
+    drop bigger
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let total = 0
+    for x in &v {
+        if x > limit {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn extend(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn print(x: Str) {
+    "print_str"(&x)
+}
+
+fn vec() -> Vec<Int> {
+    "vec"()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    "push"(v, x)
+}
+
+fn len(v: Vec<Int>) -> Int {
+    "len"(v)
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    "get"(v, i)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    "range"(a, b)
+}
+
+fn clone(x: Int) -> Int {
+    "clone"(x)
+}
+
+fn str_len(s: Str) -> Int {
+    "str_len"(s)
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    "concat"(a, b)
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    "chars"(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    "int_to_str"(n)
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    "parse_int"(s)
+}
+
+fn to_float(n: Int) -> Float {
+    "to_float"(n)
+}
+
+fn trunc(x: Float) -> Int {
+    "trunc"(x)
+}
+
+fn print_str(s: Str) {
+    "print_str"(s)
+}
+
+fn main() {
+    let nums = push(push(vec(), 5), 40)
+    let bigger = extend(clone(&nums), 70)
+    print(sum_big(&nums, 10))
+    drop nums
+    print(sum_big(&bigger, 10))
+    drop bigger
+}

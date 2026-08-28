@@ -1,0 +1,654 @@
+struct Signal { value: Str }
+
+fn main() {
+    let signals = vec(Signal { value: "green" }, Signal { value: "red" }, Signal { value: "yellow" })
+    for s in signals {
+        match s.value {
+            Str(x) => match x {
+                Str(y) => match y {
+                    Str(z) => match z {
+                        Str(a) => match a {
+                            Str(b) => match b {
+                                Str(c) => match c {
+                                    Str(d) => match d {
+                                        Str(e) => match_e(),
+                                        _ => panic_str(),
+                                    },
+                                    _ => panic_str(),
+                                },
+                                _ => panic_str(),
+                            },
+                            _ => panic_str(),
+                        },
+                        _ => panic_str(),
+                    },
+                    _ => panic_str(),
+                },
+                _ => panic_str(),
+            },
+            _ => panic_str(),
+        }
+    }
+}
+
+fn match_e() {
+    print_str("go")
+}
+
+fn panic_str() {
+    panic("unknown signal")
+}
+
+fn match_d() {
+    print_str("stop")
+}
+
+fn match_c() {
+    print_str("wait")
+}
+
+fn match_b() {
+    print_str("wait")
+}
+
+fn match_a() {
+    print_str("wait")
+}
+
+fn match_z() {
+    print_str("wait")
+}
+
+fn match_y() {
+    print_str("wait")
+}
+
+fn match_x() {
+    print_str("wait")
+}
+
+fn match_w() {
+    print_str("wait")
+}
+
+fn match_v() {
+    print_str("wait")
+}
+
+fn match_u() {
+    print_str("wait")
+}
+
+fn match_t() {
+    print_str("wait")
+}
+
+fn match_s() {
+    print_str("wait")
+}
+
+fn match_r() {
+    print_str("wait")
+}
+
+fn match_q() {
+    print_str("wait")
+}
+
+fn match_p() {
+    print_str("wait")
+}
+
+fn match_o() {
+    print_str("wait")
+}
+
+fn match_n() {
+    print_str("wait")
+}
+
+fn match_m() {
+    print_str("wait")
+}
+
+fn match_l() {
+    print_str("wait")
+}
+
+fn match_k() {
+    print_str("wait")
+}
+
+fn match_j() {
+    print_str("wait")
+}
+
+fn match_i() {
+    print_str("wait")
+}
+
+fn match_h() {
+    print_str("wait")
+}
+
+fn match_g() {
+    print_str("wait")
+}
+
+fn match_f() {
+    print_str("wait")
+}
+
+fn match_e() {
+    print_str("wait")
+}
+
+fn match_d() {
+    print_str("wait")
+}
+
+fn match_c() {
+    print_str("wait")
+}
+
+fn match_b() {
+    print_str("wait")
+}
+
+fn match_a() {
+    print_str("wait")
+}
+
+fn match_z() {
+    print_str("wait")
+}
+
+fn match_y() {
+    print_str("wait")
+}
+
+fn match_x() {
+    print_str("wait")
+}
+
+fn match_w() {
+    print_str("wait")
+}
+
+fn match_v() {
+    print_str("wait")
+}
+
+fn match_u() {
+    print_str("wait")
+}
+
+fn match_t() {
+    print_str("wait")
+}
+
+fn match_s() {
+    print_str("wait")
+}
+
+fn match_r() {
+    print_str("wait")
+}
+
+fn match_q() {
+    print_str("wait")
+}
+
+fn match_p() {
+    print_str("wait")
+}
+
+fn match_o() {
+    print_str("wait")
+}
+
+fn match_n() {
+    print_str("wait")
+}
+
+fn match_m() {
+    print_str("wait")
+}
+
+fn match_l() {
+    print_str("wait")
+}
+
+fn match_k() {
+    print_str("wait")
+}
+
+fn match_j() {
+    print_str("wait")
+}
+
+fn match_i() {
+    print_str("wait")
+}
+
+fn match_h() {
+    print_str("wait")
+}
+
+fn match_g() {
+    print_str("wait")
+}
+
+fn match_f() {
+    print_str("wait")
+}
+
+fn match_e() {
+    print_str("wait")
+}
+
+fn match_d() {
+    print_str("wait")
+}
+
+fn match_c() {
+    print_str("wait")
+}
+
+fn match_b() {
+    print_str("wait")
+}
+
+fn match_a() {
+    print_str("wait")
+}
+
+fn match_z() {
+    print_str("wait")
+}
+
+fn match_y() {
+    print_str("wait")
+}
+
+fn match_x() {
+    print_str("wait")
+}
+
+fn match_w() {
+    print_str("wait")
+}
+
+fn match_v() {
+    print_str("wait")
+}
+
+fn match_u() {
+    print_str("wait")
+}
+
+fn match_t() {
+    print_str("wait")
+}
+
+fn match_s() {
+    print_str("wait")
+}
+
+fn match_r() {
+    print_str("wait")
+}
+
+fn match_q() {
+    print_str("wait")
+}
+
+fn match_p() {
+    print_str("wait")
+}
+
+fn match_o() {
+    print_str("wait")
+}
+
+fn match_n() {
+    print_str("wait")
+}
+
+fn match_m() {
+    print_str("wait")
+}
+
+fn match_l() {
+    print_str("wait")
+}
+
+fn match_k() {
+    print_str("wait")
+}
+
+fn match_j() {
+    print_str("wait")
+}
+
+fn match_i() {
+    print_str("wait")
+}
+
+fn match_h() {
+    print_str("wait")
+}
+
+fn match_g() {
+    print_str("wait")
+}
+
+fn match_f() {
+    print_str("wait")
+}
+
+fn match_e() {
+    print_str("wait")
+}
+
+fn match_d() {
+    print_str("wait")
+}
+
+fn match_c() {
+    print_str("wait")
+}
+
+fn match_b() {
+    print_str("wait")
+}
+
+fn match_a() {
+    print_str("wait")
+}
+
+fn match_z() {
+    print_str("wait")
+}
+
+fn match_y() {
+    print_str("wait")
+}
+
+fn match_x() {
+    print_str("wait")
+}
+
+fn match_w() {
+    print_str("wait")
+}
+
+fn match_v() {
+    print_str("wait")
+}
+
+fn match_u() {
+    print_str("wait")
+}
+
+fn match_t() {
+    print_str("wait")
+}
+
+fn match_s() {
+    print_str("wait")
+}
+
+fn match_r() {
+    print_str("wait")
+}
+
+fn match_q() {
+    print_str("wait")
+}
+
+fn match_p() {
+    print_str("wait")
+}
+
+fn match_o() {
+    print_str("wait")
+}
+
+fn match_n() {
+    print_str("wait")
+}
+
+fn match_m() {
+    print_str("wait")
+}
+
+fn match_l() {
+    print_str("wait")
+}
+
+fn match_k() {
+    print_str("wait")
+}
+
+fn match_j() {
+    print_str("wait")
+}
+
+fn match_i() {
+    print_str("wait")
+}
+
+fn match_h() {
+    print_str("wait")
+}
+
+fn match_g() {
+    print_str("wait")
+}
+
+fn match_f() {
+    print_str("wait")
+}
+
+fn match_e() {
+    print_str("wait")
+}
+
+fn match_d() {
+    print_str("wait")
+}
+
+fn match_c() {
+    print_str("wait")
+}
+
+fn match_b() {
+    print_str("wait")
+}
+
+fn match_a() {
+    print_str("wait")
+}
+
+fn match_z() {
+    print_str("wait")
+}
+
+fn match_y() {
+    print_str("wait")
+}
+
+fn match_x() {
+    print_str("wait")
+}
+
+fn match_w() {
+    print_str("wait")
+}
+
+fn match_v() {
+    print_str("wait")
+}
+
+fn match_u() {
+    print_str("wait")
+}
+
+fn match_t() {
+    print_str("wait")
+}
+
+fn match_s() {
+    print_str("wait")
+}
+
+fn match_r() {
+    print_str("wait")
+}
+
+fn match_q() {
+    print_str("wait")
+}
+
+fn match_p() {
+    print_str("wait")
+}
+
+fn match_o() {
+    print_str("wait")
+}
+
+fn match_n() {
+    print_str("wait")
+}
+
+fn match_m() {
+    print_str("wait")
+}
+
+fn match_l() {
+    print_str("wait")
+}
+
+fn match_k() {
+    print_str("wait")
+}
+
+fn match_j() {
+    print_str("wait")
+}
+
+fn match_i() {
+    print_str("wait")
+}
+
+fn match_h() {
+    print_str("wait")
+}
+
+fn match_g() {
+    print_str("wait")
+}
+
+fn match_f() {
+    print_str("wait")
+}
+
+fn match_e() {
+    print_str("wait")
+}
+
+fn match_d() {
+    print_str("wait")
+}
+
+fn match_c() {
+    print_str("wait")
+}
+
+fn match_b() {
+    print_str("wait")
+}
+
+fn match_a() {
+    print_str("wait")
+}
+
+fn match_z() {
+    print_str("wait")
+}
+
+fn match_y() {
+    print_str("wait")
+}
+
+fn match_x() {
+    print_str("wait")
+}
+
+fn match_w() {
+    print_str("wait")
+}
+
+fn match_v() {
+    print_str("wait")
+}
+
+fn match_u() {
+    print_str("wait")
+}
+
+fn match_t() {
+    print_str("wait")
+}
+
+fn match_s() {
+    print_str("wait")
+}
+
+fn match_r() {
+    print_str("wait")
+}
+
+fn match_q() {
+    print_str("wait")
+}
+
+fn match_p() {
+    print_str("wait")
+}
+
+fn match_o() {
+    print_str("wait")
+}
+
+fn match_n() {
+    print_str("wait")
+}
+
+fn match_m() {
+    print_str("wait")
+}
+
+fn match_l() {
+    print_str("wait")
+}
+
+fn match_k() {
+    print_str("wait")
+}
+
+fn match_j() {
+    print_str("wait")
+}
+
+fn match_i() {
+    print_str("wait")
+}
+
+fn match_h() {
+    print_str("wait")
+}
+
+fn match_g() {

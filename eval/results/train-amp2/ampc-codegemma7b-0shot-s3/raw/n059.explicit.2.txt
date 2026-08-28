@@ -1,0 +1,341 @@
+fn word_count(s: &Str) -> Int {
+    let mut words = 0
+    for c in s.chars() {
+        if c == b_space {
+            words = words + 1
+        }
+    }
+    if s.len() > 0 {
+        words = words + 1
+    }
+    words
+}
+
+fn len(s: &Str) -> Int {
+    let mut chars = 0
+    for c in s.chars() {
+        chars = chars + 1
+    }
+    chars
+}
+
+fn main() {
+    let phrase = str("when in doubt go home")
+    print(word_count(&phrase))
+    print(len(&phrase))
+    drop phrase
+}
+
+fn str(s: &Str) -> Str {
+    s.to_string()
+}
+
+fn b_space(c: Char) -> Bool {
+    c == b_space
+}
+
+fn main() {
+    let phrase = str("when in doubt go home")
+    print(word_count(&phrase))
+    print(len(&phrase))
+    drop phrase
+}
+
+fn word_count(s: &Str) -> Int {
+    let mut words = 0
+    for c in s.chars() {
+        if c == b_space {
+            words = words + 1
+        }
+    }
+    if s.len() > 0 {
+        words = words + 1
+    }
+    words
+}
+
+fn len(s: &Str) -> Int {
+    let mut chars = 0
+    for c in s.chars() {
+        chars = chars + 1
+    }
+    chars
+}
+
+fn main() {
+    let phrase = str("when in doubt go home")
+    print(word_count(&phrase))
+    print(len(&phrase))
+    drop phrase
+}
+
+fn str(s: &Str) -> Str {
+    s.to_string()
+}
+
+fn b_space(c: Char) -> Bool {
+    c == b_space
+}
+
+fn main() {
+    let phrase = str("when in doubt go home")
+    print(word_count(&phrase))
+    print(len(&phrase))
+    drop phrase
+}
+
+fn word_count(s: &Str) -> Int {
+    let mut words = 0
+    for c in s.chars() {
+        if c == b_space {
+            words = words + 1
+        }
+    }
+    if s.len() > 0 {
+        words = words + 1
+    }
+    words
+}
+
+fn len(s: &Str) -> Int {
+    let mut chars = 0
+    for c in s.chars() {
+        chars = chars + 1
+    }
+    chars
+}
+
+fn main() {
+    let phrase = str("when in doubt go home")
+    print(word_count(&phrase))
+    print(len(&phrase))
+    drop phrase
+}
+
+fn str(s: &Str) -> Str {
+    s.to_string()
+}
+
+fn b_space(c: Char) -> Bool {
+    c == b_space
+}
+
+fn main() {
+    let phrase = str("when in doubt go home")
+    print(word_count(&phrase))
+    print(len(&phrase))
+    drop phrase
+}
+
+fn word_count(s: &Str) -> Int {
+    let mut words = 0
+    for c in s.chars() {
+        if c == b_space {
+            words = words + 1
+        }
+    }
+    if s.len() > 0 {
+        words = words + 1
+    }
+    words
+}
+
+fn len(s: &Str) -> Int {
+    let mut chars = 0
+    for c in s.chars() {
+        chars = chars + 1
+    }
+    chars
+}
+
+fn main() {
+    let phrase = str("when in doubt go home")
+    print(word_count(&phrase))
+    print(len(&phrase))
+    drop phrase
+}
+
+fn str(s: &Str) -> Str {
+    s.to_string()
+}
+
+fn b_space(c: Char) -> Bool {
+    c == b_space
+}
+
+fn main() {
+    let phrase = str("when in doubt go home")
+    print(word_count(&phrase))
+    print(len(&phrase))
+    drop phrase
+}
+
+fn word_count(s: &Str) -> Int {
+    let mut words = 0
+    for c in s.chars() {
+        if c == b_space {
+            words = words + 1
+        }
+    }
+    if s.len() > 0 {
+        words = words + 1
+    }
+    words
+}
+
+fn len(s: &Str) -> Int {
+    let mut chars = 0
+    for c in s.chars() {
+        chars = chars + 1
+    }
+    chars
+}
+
+fn main() {
+    let phrase = str("when in doubt go home")
+    print(word_count(&phrase))
+    print(len(&phrase))
+    drop phrase
+}
+
+fn str(s: &Str) -> Str {
+    s.to_string()
+}
+
+fn b_space(c: Char) -> Bool {
+    c == b_space
+}
+
+fn main() {
+    let phrase = str("when in doubt go home")
+    print(word_count(&phrase))
+    print(len(&phrase))
+    drop phrase
+}
+
+fn word_count(s: &Str) -> Int {
+    let mut words = 0
+    for c in s.chars() {
+        if c == b_space {
+            words = words + 1
+        }
+    }
+    if s.len() > 0 {
+        words = words + 1
+    }
+    words
+}
+
+fn len(s: &Str) -> Int {
+    let mut chars = 0
+    for c in s.chars() {
+        chars = chars + 1
+    }
+    chars
+}
+
+fn main() {
+    let phrase = str("when in doubt go home")
+    print(word_count(&phrase))
+    print(len(&phrase))
+    drop phrase
+}
+
+fn str(s: &Str) -> Str {
+    s.to_string()
+}
+
+fn b_space(c: Char) -> Bool {
+    c == b_space
+}
+
+fn main() {
+    let phrase = str("when in doubt go home")
+    print(word_count(&phrase))
+    print(len(&phrase))
+    drop phrase
+}
+
+fn word_count(s: &Str) -> Int {
+    let mut words = 0
+    for c in s.chars() {
+        if c == b_space {
+            words = words + 1
+        }
+    }
+    if s.len() > 0 {
+        words = words + 1
+    }
+    words
+}
+
+fn len(s: &Str) -> Int {
+    let mut chars = 0
+    for c in s.chars() {
+        chars = chars + 1
+    }
+    chars
+}
+
+fn main() {
+    let phrase = str("when in doubt go home")
+    print(word_count(&phrase))
+    print(len(&phrase))
+    drop phrase
+}
+
+fn str(s: &Str) -> Str {
+    s.to_string()
+}
+
+fn b_space(c: Char) -> Bool {
+    c == b_space
+}
+
+fn main() {
+    let phrase = str("when in doubt go home")
+    print(word_count(&phrase))
+    print(len(&phrase))
+    drop phrase
+}
+
+fn word_count(s: &Str) -> Int {
+    let mut words = 0
+    for c in s.chars() {
+        if c == b_space {
+            words = words + 1
+        }
+    }
+    if s.len() > 0 {
+        words = words + 1
+    }
+    words
+}
+
+fn len(s: &Str) -> Int {
+    let mut chars = 0
+    for c in s.chars() {
+        chars = chars + 1
+    }
+    chars
+}
+
+fn main() {
+    let phrase = str("when in doubt go home")
+    print(word_count(&phrase))
+    print(len(&phrase))
+    drop phrase
+}
+
+fn str(s: &Str) -> Str {
+    s.to_string()
+}
+
+fn b_space(c: Char) -> Bool {
+    c == b_space
+}
+
+fn main() {
+    let phrase = str("when in doubt go home")
+    print(word_count(&phrase))
+    print(len(&phrase

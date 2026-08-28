@@ -1,0 +1,15 @@
+fn main() {
+    let fig = "fig".to_string()
+    let banana = "banana".to_string()
+    let kiwi = "kiwi".to_string()
+    if fig.len() > banana.len() && fig.len() > kiwi.len() {
+        println(&fig)
+        println(fig.len())
+    } else if banana.len() > kiwi.len() {
+        println(&banana)
+        println(banana.len())
+    } else {
+        println(&kiwi)
+        println(kiwi.len())
+    }
+}

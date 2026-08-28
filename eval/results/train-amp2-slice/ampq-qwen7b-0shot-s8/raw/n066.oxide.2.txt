@@ -1,0 +1,22 @@
+struct Batch {
+    entries: Vec<Int>,
+}
+
+fn filter_entries(b: Batch) -> Vec<Int> {
+    let mut filtered = vec()
+    for e in b.entries {
+        if e < 10 {
+            filtered = push(filtered, e)
+        }
+    }
+    filtered
+}
+
+fn main() {
+    let batch = Batch { entries: push(push(push(push(vec(), 9), 2), 12), 5) }
+    let kept = filter_entries(batch)
+    for e in kept {
+        print(e)
+    }
+    print(len(kept))
+}

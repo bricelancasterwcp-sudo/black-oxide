@@ -1,0 +1,17 @@
+fn sum_multiples(limit: Int) -> Int {
+    let mut total = 0
+    let mut count = 0
+    let mut num = 4
+    while count < limit {
+        total = total + num
+        count = count + 1
+        num = num + 4
+    }
+    total
+}
+
+fn main() {
+    let result = sum_multiples(6)
+    print(result)
+    drop result
+}

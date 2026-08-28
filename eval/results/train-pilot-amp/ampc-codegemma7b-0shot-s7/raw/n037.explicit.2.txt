@@ -1,0 +1,377 @@
+fn main() {
+    let mut rec = Rectangle { width: 2, height: 3 }
+    rec.width = 5
+    print(rec.area())
+    drop rec
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn area(r: &Rectangle) -> Int {
+    r.width * r.height
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut res = v
+    res.push(x)
+    res
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn drop_int(i: Int) {
+    drop i
+}
+
+fn clone(i: &Int) -> Int {
+    let mut res = Int
+    res = i
+    res
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    let mut res = Int
+    res = v.len()
+    res
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    let mut res = Option
+    res = v.get(i)
+    res
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut res = Vec
+    for i in a.to_int() + 1.to_int() {
+        if i < b.to_int() {
+            res.push(i)
+        }
+    }
+    res
+}
+
+fn clone_int(i: &Int) -> Int {
+    let mut res = Int
+    res = i
+    res
+}
+
+fn str_len(s: &Str) -> Int {
+    let mut res = Int
+    res = s.len()
+    res
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    let mut res = Str
+    res = a + b
+    res
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut res = Vec
+    for c in s.chars() {
+        res.push(c.to_string())
+    }
+    res
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut res = Str
+    res = n.to_string()
+    res
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    let mut res = Option
+    res = s.parse()
+    res
+}
+
+fn to_float(n: Int) -> Float {
+    let mut res = Float
+    res = n.to_float()
+    res
+}
+
+fn trunc(x: Float) -> Int {
+    let mut res = Int
+    res = x.trunc()
+    res
+}
+
+fn drop_str(s: Str) {
+    drop s
+}
+
+fn drop_vec(v: Vec<Int>) {
+    drop v
+}
+
+fn drop_option(o: Option<Int>) {
+    drop o
+}
+
+fn drop_result(r: Result<Int, String>) {
+    drop r
+}
+
+fn drop_tuple(t: Tuple) {
+    drop t
+}
+
+fn drop_struct(s: Rectangle) {
+    drop s
+}
+
+fn drop_enum(e: Shape) {
+    drop e
+}
+
+enum Shape {
+    Circle(Float),
+    Square(Int),
+    Triangle(Int, Int),
+}
+
+struct Tuple {
+    a: Int,
+    b: Int,
+}
+
+enum Option {
+    Some(Int),
+    None,
+}
+
+enum Result {
+    Ok(Int),
+    Err(String),
+}
+
+enum Rectangle {
+    Width(Int),
+    Height(Int),
+}
+
+fn main() {
+    let mut rec = Rectangle { width: 2, height: 3 }
+    rec.width = 5
+    print(rec.area())
+    drop rec
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn area(r: &Rectangle) -> Int {
+    r.width * r.height
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut res = v
+    res.push(x)
+    res
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn drop_int(i: Int) {
+    drop i
+}
+
+fn clone(i: &Int) -> Int {
+    let mut res = Int
+    res = i
+    res
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    let mut res = Int
+    res = v.len()
+    res
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    let mut res = Option
+    res = v.get(i)
+    res
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut res = Vec
+    for i in a.to_int() + 1.to_int() {
+        if i < b.to_int() {
+            res.push(i)
+        }
+    }
+    res
+}
+
+fn clone_int(i: &Int) -> Int {
+    let mut res = Int
+    res = i
+    res
+}
+
+fn str_len(s: &Str) -> Int {
+    let mut res = Int
+    res = s.len()
+    res
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    let mut res = Str
+    res = a + b
+    res
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut res = Vec
+    for c in s.chars() {
+        res.push(c.to_string())
+    }
+    res
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut res = Str
+    res = n.to_string()
+    res
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    let mut res = Option
+    res = s.parse()
+    res
+}
+
+fn to_float(n: Int) -> Float {
+    let mut res = Float
+    res = n.to_float()
+    res
+}
+
+fn trunc(x: Float) -> Int {
+    let mut res = Int
+    res = x.trunc()
+    res
+}
+
+fn drop_str(s: Str) {
+    drop s
+}
+
+fn drop_vec(v: Vec<Int>) {
+    drop v
+}
+
+fn drop_option(o: Option<Int>) {
+    drop o
+}
+
+fn drop_result(r: Result<Int, String>) {
+    drop r
+}
+
+fn drop_tuple(t: Tuple) {
+    drop t
+}
+
+fn drop_struct(s: Rectangle) {
+    drop s
+}
+
+fn drop_enum(e: Shape) {
+    drop e
+}
+
+enum Shape {
+    Circle(Float),
+    Square(Int),
+    Triangle(Int, Int),
+}
+
+struct Tuple {
+    a: Int,
+    b: Int,
+}
+
+enum Option {
+    Some(Int),
+    None,
+}
+
+enum Result {
+    Ok(Int),
+    Err(String),
+}
+
+enum Rectangle {
+    Width(Int),
+    Height(Int),
+}
+
+fn main() {
+    let mut rec = Rectangle { width: 2, height: 3 }
+    rec.width = 5
+    print(rec.area())
+    drop rec
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn area(r: &Rectangle) -> Int {
+    r.width * r.height
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut res = v
+    res.push(x)
+    res
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn drop_int(i: Int) {
+    drop i
+}
+
+fn clone(i: &Int) -> Int {
+    let mut res = Int
+    res = i
+    res
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    let mut res = Int
+    res = v.len()
+    res
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    let mut res = Option
+    res = v.get(i)
+    res
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut res = Vec
+    for i in a.to_int() + 1.to_int() {
+        if i < b.to_int() {
+            res.push(i)

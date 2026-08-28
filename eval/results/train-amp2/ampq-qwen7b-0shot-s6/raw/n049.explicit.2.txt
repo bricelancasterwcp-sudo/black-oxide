@@ -1,0 +1,9 @@
+fn main() {
+    let figures = vec(3, 8, 6, 11)
+    let min_figure = figures.iter().min().unwrap()
+    let max_figure = figures.iter().max().unwrap()
+    let gap = max_figure - min_figure
+    print(min_figure)
+    print(gap)
+    drop figures
+}

@@ -1,0 +1,21 @@
+struct Result { sum: Int }
+
+fn multiples_of_four(n: Int) -> Vec<Int> {
+    let mut result = vec()
+    let mut count = 0
+    let mut i = 0
+    while count < n {
+        i = i + 1
+        if i % 4 == 0 {
+            result = push(result, i)
+            count = count + 1
+        }
+    }
+    result
+}
+
+fn main() {
+    let multiples = multiples_of_four(6)
+    let total = multiples.fold(Result { sum: 0 }, move || letacc, x || acc.sum + x)
+    print(total.sum)
+}

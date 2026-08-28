@@ -1,0 +1,16 @@
+fn main() {
+    let three_cost = 3;
+    let two_cost = 2;
+    let four_count = 4;
+    let five_count = 5;
+
+    let four_value = three_cost * four_count;
+    let five_value = two_cost * five_count;
+
+    println!("Four line value: {}", four_value);
+    println!("Five line value: {}", five_value);
+
+    let total_value = four_value + five_value;
+
+    println!("Total value: {}", total_value);
+}

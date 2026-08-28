@@ -1,0 +1,12 @@
+fn count_within(values: Vec<Int>, cutoff: Int) -> Vec<Int> {
+    let under = values.iter().filter(move || x || x < cutoff).count()
+    let at_or_over = values.iter().filter(move || x || x >= cutoff).count()
+    vec(under, at_or_over)
+}
+
+fn main() {
+    let samples = vec(5, 12, 3, 18, 9)
+    let cutoff = 10
+    let result = count_within(samples, cutoff)
+    print(result)
+}

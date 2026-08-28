@@ -1,0 +1,9 @@
+fn main() {
+    let s = "banana"
+    for c in chars(&s) {
+        if c == "n" {
+            print(i)
+        }
+        let i = i + 1
+    }
+}

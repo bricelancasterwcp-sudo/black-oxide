@@ -1,0 +1,314 @@
+fn change_width(r: &Rectangle, new_width: Int) -> Rectangle {
+    Rectangle(new_width, r.height)
+}
+
+fn area(r: &Rectangle) -> Int {
+    r.width * r.height
+}
+
+fn main() {
+    let mut r = Rectangle(2, 3)
+    r = change_width(&r, 5)
+    print(area(&r))
+    drop_value(&r)
+    print(area(&r))
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+enum Color {
+    Red,
+    Green,
+    Blue,
+}
+
+enum Shape {
+    Circle(Float),
+    Square(Int),
+    Rectangle(Int, Int),
+}
+
+enum Result {
+    Ok(Value),
+    Err(Error),
+}
+
+enum Option {
+    Some(Value),
+    None,
+}
+
+enum Vec {
+    Nil,
+    Cons(Value, Vec),
+}
+
+enum Str {
+    Empty,
+    Cons(Char, Str),
+}
+
+enum Unit {
+    Unit,
+}
+
+enum Bool {
+    False,
+    True,
+}
+
+enum Int {
+    Zero,
+    One,
+    Two,
+    Three,
+    Four,
+    Five,
+    Six,
+    Seven,
+    Eight,
+    Nine,
+    Plus(Int, Int),
+    Minus(Int, Int),
+    Multiply(Int, Int),
+    Divide(Int, Int),
+}
+
+enum Float {
+    Zero,
+    One,
+    Two,
+    Three,
+    Four,
+    Five,
+    Six,
+    Seven,
+    Eight,
+    Nine,
+    Plus(Float, Float),
+    Minus(Float, Float),
+    Multiply(Float, Float),
+    Divide(Float, Float),
+}
+
+enum Char {
+    A,
+    B,
+    C,
+    D,
+    E,
+    F,
+    G,
+    H,
+    I,
+    J,
+    K,
+    L,
+    M,
+    N,
+    O,
+    P,
+    Q,
+    R,
+    S,
+    T,
+    U,
+    V,
+    W,
+    X,
+    Y,
+    Z,
+}
+
+enum Error {
+    ZeroDivision,
+    OutOfBounds,
+    InvalidSyntax,
+    FileNotFound,
+}
+
+enum Value {
+    Int(Int),
+    Float(Float),
+    Bool(Bool),
+    Str(Str),
+    Unit(Unit),
+    Color(Color),
+    Shape(Shape),
+    Result(Result),
+    Option(Option),
+    Vec(Vec),
+}
+
+fn print(v: Value) {
+    match v {
+        Value(i) => print(i),
+    }
+}
+
+fn print_str(s: Str) {
+    match s {
+        Str(i) => print(i),
+    }
+}
+
+fn vec() -> Vec {
+    Vec(Nil)
+}
+
+fn push(v: Vec, x: Value) -> Vec {
+    Cons(x, v)
+}
+
+fn len(v: Vec) -> Int {
+    match v {
+        Nil => Int(0),
+        Cons(_, tail) => Plus(Int(1), len(tail)),
+    }
+}
+
+fn get(v: Vec, i: Int) -> Option {
+    match v {
+        Nil => None,
+        Cons(head, tail) => if i == Int(0) { Some(head) } else { get(tail, Minus(i, Int(1))) },
+    }
+}
+
+fn range(a: Int, b: Int) -> Vec {
+    if a >= b {
+        Nil
+    } else {
+        Cons(a, range(Plus(a, Int(1)), b))
+    }
+}
+
+fn clone(x: Value) -> Value {
+    match x {
+        Value(i) => i,
+    }
+}
+
+fn str_len(s: Str) -> Int {
+    match s {
+        Empty => Int(0),
+        Cons(head, tail) => Plus(Int(1), str_len(tail)),
+    }
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    match a {
+        Empty => b,
+        Cons(head, tail) => Cons(head, concat(tail, b)),
+    }
+}
+
+fn chars(s: Str) -> Vec {
+    match s {
+        Empty => Nil,
+        Cons(head, tail) => Cons(head, chars(tail)),
+    }
+}
+
+fn int_to_str(n: Int) -> Str {
+    match n {
+        Int(i) => match i {
+            Zero => Str(Empty),
+            One => Cons(Char(A), Str(Empty)),
+            Two => Cons(Char(B), Str(Empty)),
+            Three => Cons(Char(C), Str(Empty)),
+            Four => Cons(Char(D), Str(Empty)),
+            Five => Cons(Char(E), Str(Empty)),
+            Six => Cons(Char(F), Str(Empty)),
+            Seven => Cons(Char(G), Str(Empty)),
+            Eight => Cons(Char(H), Str(Empty)),
+            Nine => Cons(Char(I), Str(Empty)),
+            Plus(a, b) => concat(int_to_str(a), int_to_str(b)),
+            Minus(a, b) => concat(int_to_str(a), int_to_str(b)),
+            Multiply(a, b) => concat(int_to_str(a), int_to_str(b)),
+            Divide(a, b) => concat(int_to_str(a), int_to_str(b)),
+        },
+    }
+}
+
+fn parse_int(s: Str) -> Option {
+    match s {
+        Empty => None,
+        Cons(head, tail) => match head {
+            A => Some(Int(One)),
+            B => Some(Int(Two)),
+            C => Some(Int(Three)),
+            D => Some(Int(Four)),
+            E => Some(Int(Five)),
+            F => Some(Int(Six)),
+            G => Some(Int(Seven)),
+            H => Some(Int(Eight)),
+            I => Some(Int(Nine)),
+            _ => None,
+        },
+    }
+}
+
+fn to_float(n: Int) -> Float {
+    match n {
+        Int(i) => match i {
+            Zero => Float(Zero),
+            One => Float(One),
+            Two => Float(Two),
+            Three => Float(Three),
+            Four => Float(Four),
+            Five => Float(Five),
+            Six => Float(Six),
+            Seven => Float(Seven),
+            Eight => Float(Eight),
+            Nine => Float(Nine),
+            Plus(a, b) => Plus(to_float(a), to_float(b)),
+            Minus(a, b) => Minus(to_float(a), to_float(b)),
+            Multiply(a, b) => Multiply(to_float(a), to_float(b)),
+            Divide(a, b) => Divide(to_float(a), to_float(b)),
+        },
+    }
+}
+
+fn trunc(x: Float) -> Int {
+    match x {
+        Float(i) => match i {
+            Zero => Int(Zero),
+            One => Int(One),
+            Two => Int(Two),
+            Three => Int(Three),
+            Four => Int(Four),
+            Five => Int(Five),
+            Six => Int(Six),
+            Seven => Int(Seven),
+            Eight => Int(Eight),
+            Nine => Int(Nine),
+            Plus(a, b) => Plus(trunc(a), trunc(b)),
+            Minus(a, b) => Minus(trunc(a), trunc(b)),
+            Multiply(a, b) => Multiply(trunc(a), trunc(b)),
+            Divide(a, b) => Divide(trunc(a), trunc(b)),
+        },
+    }
+}
+
+fn drop_value(v: &Value) {
+    match v {
+        Value(i) => drop_value(i),
+    }
+}
+
+fn drop_int(i: &Int) {
+    match i {
+        Zero => drop_int(Zero),
+        One => drop_int(One),
+        Two => drop_int(Two),
+        Three => drop_int(Three),
+        Four => drop_int(Four),
+        Five => drop_int(Five),
+        Six => drop_int(Six),
+        Seven => drop_int(Seven),
+        Eight => drop_int(Eight),
+        Nine => drop_int(Nine),
+        Plus(a, b)

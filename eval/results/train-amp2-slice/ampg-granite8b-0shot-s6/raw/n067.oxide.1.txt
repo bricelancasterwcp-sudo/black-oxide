@@ -1,0 +1,60 @@
+struct List { val: Int, next: Option<Box<List>> }
+
+fn walk(l: Option<Box<List>>) -> Option<Int> {
+    let mut total = 0
+    let mut n = l
+    while letSome(x) == n {
+        if x.val % 2 == 0 {
+            total = total + x.val
+        } else {
+            print(x.val * 2)
+        }
+        n = x.next
+    }
+    Some(total)
+}
+
+fn main() {
+    let l = Some(Box { val: 7, next: Some(Box { val: 4, next: None }) })
+    let l = Some(Box { val: 9, next: Some(Box { val: 10, next: l }) })
+    match walk(l) {
+        Some(n) => print(n),
+        None => print_str("end of list"),
+    }
+}
+
+enum Color {
+    RGB(Int, Int, Int),
+    HSL(Int, Int, Int),
+}
+
+struct HSL { h: Int, s: Int, l: Int }
+
+fn lighten(c: Color) -> Color {
+    let hsl = match c {
+        RGB(r, g, b) => {
+            let r = to_float(r) / 255.0
+            let g = to_float(g) / 255.0
+            let b = to_float(b) / 255.0
+            let h = 0.0
+            let s = 0.0
+            let l = (r + g + b) / 3.0
+            HSL(trunc(h * 360.0), trunc(s * 100.0), trunc(l * 100.0))
+        },
+        HSL(h, s, l) => HSL(h, s, l),
+    }
+    RGB(hsl.h, hsl.s, hsl.l)
+}
+
+fn main() {
+    let c = HSL { h: 90, s: 90, l: 40 }
+    let c = lighten(c)
+    match c {
+        RGB(r, g, b) => {
+            print(r)
+            print(g)
+            print(b)
+        },
+        HSL(_, _, _) => print_str("huh?"),
+    }
+}

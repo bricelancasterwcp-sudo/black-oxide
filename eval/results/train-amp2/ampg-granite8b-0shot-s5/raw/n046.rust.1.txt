@@ -1,0 +1,11 @@
+```rust
+const CUTOFF: usize = 10;
+
+fn main() {
+    let samples = [5, 12, 3, 18, 9];
+    let under_cutoff = samples.iter().filter(|&&x| x < CUTOFF).count();
+    let at_or_over_cutoff = samples.iter().filter(|&&x| x >= CUTOFF).count();
+    println!("{} fall under the cutoff.", under_cutoff);
+    println!("{} sit at or over the cutoff.", at_or_over_cutoff);
+}
+```

@@ -1,0 +1,299 @@
+fn main() {
+    let one_to_ten = vec(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+    let div_by_three = vec()
+    for number in &one_to_ten {
+        if number % 3 == 0 {
+            div_by_three = push(div_by_three, number)
+        }
+    }
+    let sum = sum_big(&div_by_three, 0)
+    print(sum)
+    drop div_by_three
+    drop one_to_ten
+}
+
+fn sum_big(v: &Vec<Int>, acc: Int) -> Int {
+    if len(&v) == 0 {
+        return acc
+    } else {
+        return sum_big(&v, acc + get(&v, 0))
+    }
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    let mut i = a
+    while i < b {
+        result = push(result, i)
+        i = i + 1
+    }
+    result
+}
+
+fn main() {
+    let numbers = range(1, 11)
+    let div_by_three = filter(numbers, 3)
+    let sum = sum_big(&div_by_three, 0)
+    print(sum)
+    drop div_by_three
+    drop numbers
+}
+
+fn filter(v: &Vec<Int>, target: Int) -> Vec<Int> {
+    let mut result = vec()
+    for number in &v {
+        if number % target == 0 {
+            result = push(result, number)
+        }
+    }
+    result
+}
+
+fn sum_big(v: &Vec<Int>, acc: Int) -> Int {
+    if len(&v) == 0 {
+        return acc
+    } else {
+        return sum_big(&v, acc + get(&v, 0))
+    }
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    let mut i = a
+    while i < b {
+        result = push(result, i)
+        i = i + 1
+    }
+    result
+}
+
+fn main() {
+    let numbers = range(1, 11)
+    let div_by_three = filter(numbers, 3)
+    let sum = sum_big(&div_by_three, 0)
+    print(sum)
+    drop div_by_three
+    drop numbers
+}
+
+fn filter(v: &Vec<Int>, target: Int) -> Vec<Int> {
+    let mut result = vec()
+    for number in &v {
+        if number % target == 0 {
+            result = push(result, number)
+        }
+    }
+    result
+}
+
+fn sum_big(v: &Vec<Int>, acc: Int) -> Int {
+    if len(&v) == 0 {
+        return acc
+    } else {
+        return sum_big(&v, acc + get(&v, 0))
+    }
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    let mut i = a
+    while i < b {
+        result = push(result, i)
+        i = i + 1
+    }
+    result
+}
+
+fn main() {
+    let numbers = range(1, 11)
+    let div_by_three = filter(numbers, 3)
+    let sum = sum_big(&div_by_three, 0)
+    print(sum)
+    drop div_by_three
+    drop numbers
+}
+
+fn filter(v: &Vec<Int>, target: Int) -> Vec<Int> {
+    let mut result = vec()
+    for number in &v {
+        if number % target == 0 {
+            result = push(result, number)
+        }
+    }
+    result
+}
+
+fn sum_big(v: &Vec<Int>, acc: Int) -> Int {
+    if len(&v) == 0 {
+        return acc
+    } else {
+        return sum_big(&v, acc + get(&v, 0))
+    }
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    let mut i = a
+    while i < b {
+        result = push(result, i)
+        i = i + 1
+    }
+    result
+}
+
+fn main() {
+    let numbers = range(1, 11)
+    let div_by_three = filter(numbers, 3)
+    let sum = sum_big(&div_by_three, 0)
+    print(sum)
+    drop div_by_three
+    drop numbers
+}
+
+fn filter(v: &Vec<Int>, target: Int) -> Vec<Int> {
+    let mut result = vec()
+    for number in &v {
+        if number % target == 0 {
+            result = push(result, number)
+        }
+    }
+    result
+}
+
+fn sum_big(v: &Vec<Int>, acc: Int) -> Int {
+    if len(&v) == 0 {
+        return acc
+    } else {
+        return sum_big(&v, acc + get(&v, 0))
+    }
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    let mut i = a
+    while i < b {
+        result = push(result, i)
+        i = i + 1
+    }
+    result
+}
+
+fn main() {
+    let numbers = range(1, 11)
+    let div_by_three = filter(numbers, 3)
+    let sum = sum_big(&div_by_three, 0)
+    print(sum)
+    drop div_by_three
+    drop numbers
+}
+
+fn filter(v: &Vec<Int>, target: Int) -> Vec<Int> {
+    let mut result = vec()
+    for number in &v {
+        if number % target == 0 {
+            result = push(result, number)
+        }
+    }
+    result
+}
+
+fn sum_big(v: &Vec<Int>, acc: Int) -> Int {
+    if len(&v) == 0 {
+        return acc
+    } else {
+        return sum_big(&v, acc + get(&v, 0))
+    }
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    let mut i = a
+    while i < b {
+        result = push(result, i)
+        i = i + 1
+    }
+    result
+}
+
+fn main() {
+    let numbers = range(1, 11)
+    let div_by_three = filter(numbers, 3)
+    let sum = sum_big(&div_by_three, 0)
+    print(sum)
+    drop div_by_three
+    drop numbers
+}
+
+fn filter(v: &Vec<Int>, target: Int) -> Vec<Int> {
+    let mut result = vec()
+    for number in &v {
+        if number % target == 0 {
+            result = push(result, number)
+        }
+    }
+    result
+}
+
+fn sum_big(v: &Vec<Int>, acc: Int) -> Int {
+    if len(&v) == 0 {
+        return acc
+    } else {
+        return sum_big(&v, acc + get(&v, 0))
+    }
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    let mut i = a
+    while i < b {
+        result = push(result, i)
+        i = i + 1
+    }
+    result
+}
+
+fn main() {
+    let numbers = range(1, 11)
+    let div_by_three = filter(numbers, 3)
+    let sum = sum_big(&div_by_three, 0)
+    print(sum)
+    drop div_by_three
+    drop numbers
+}
+
+fn filter(v: &Vec<Int>, target: Int) -> Vec<Int> {
+    let mut result = vec()
+    for number in &v {
+        if number % target == 0 {
+            result = push(result, number)
+        }
+    }
+    result
+}
+
+fn sum_big(v: &Vec<Int>, acc: Int) -> Int {
+    if len(&v) == 0 {
+        return acc
+    } else {
+        return sum_big(&v, acc + get(&v, 0))
+    }
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    let mut i = a
+    while i < b {
+        result = push(result, i)
+        i = i + 1
+    }
+    result
+}
+
+fn main() {
+    let numbers = range(1, 11)
+    let div_by_three = filter(numbers, 3)
+    let sum = sum_big(&div_by_three, 0)
+    print(sum)
+    drop div_by_three
+    drop numbers
+}

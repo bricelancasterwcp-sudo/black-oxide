@@ -1,0 +1,345 @@
+fn main() {
+    let list = vec(10, 20, 30, 40)
+    let entry = get(list, 2)
+    match entry {
+        Some(x) => print(x),
+        None => print_str("missing"),
+    }
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    if i >= v.len() {
+        None
+    } else {
+        Some(v.get(i).unwrap())
+    }
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn len(v: Vec<Int>) -> Int {
+    v.len()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut result = v
+    result.push(x)
+    result
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in a + 1 < b {
+        result.push(i)
+    }
+    result
+}
+
+fn clone(x: Int) -> Int {
+    x
+}
+
+fn str_len(s: Str) -> Int {
+    s.len()
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    a + b
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = vec()
+    for c in s.chars() {
+        result.push(c.to_string())
+    }
+    result
+}
+
+fn int_to_str(n: Int) -> Str {
+    n.to_string()
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    match s.parse() {
+        Ok(n) => Some(n),
+        Err(_) => None,
+    }
+}
+
+fn to_float(n: Int) -> Float {
+    n.to_float()
+}
+
+fn trunc(x: Float) -> Int {
+    x.trunc()
+}
+
+fn print_debug(x: Any) {
+    println(x)
+}
+
+fn debug_print(x: Any) {
+    println(x)
+}
+
+fn debug_print_str(s: Str) {
+    println(s)
+}
+
+fn debug_print_line(s: Str) {
+    println(s)
+}
+
+fn debug_print_line_no_color(s: Str) {
+    println(s)
+}
+
+fn debug_print_err(s: Str) {
+    println(s)
+}
+
+fn debug_print_err_no_color(s: Str) {
+    println(s)
+}
+
+fn debug_print_debug(s: Str) {
+    println(s)
+}
+
+fn debug_print_debug_no_color(s: Str) {
+    println(s)
+}
+
+fn debug_print_warn(s: Str) {
+    println(s)
+}
+
+fn debug_print_warn_no_color(s: Str) {
+    println(s)
+}
+
+fn debug_print_info(s: Str) {
+    println(s)
+}
+
+fn debug_print_info_no_color(s: Str) {
+    println(s)
+}
+
+fn debug_print_trace(s: Str) {
+    println(s)
+}
+
+fn debug_print_trace_no_color(s: Str) {
+    println(s)
+}
+
+fn debug_print_stack(s: Str) {
+    println(s)
+}
+
+fn debug_print_stack_no_color(s: Str) {
+    println(s)
+}
+
+fn debug_print_heap(s: Str) {
+    println(s)
+}
+
+fn debug_print_heap_no_color(s: Str) {
+    println(s)
+}
+
+fn debug_print_all(s: Str) {
+    println(s)
+}
+
+fn debug_print_all_no_color(s: Str) {
+    println(s)
+}
+
+fn debug_print_mem(s: Str) {
+    println(s)
+}
+
+fn debug_print_mem_no_color(s: Str) {
+    println(s)
+}
+
+fn debug_print_time(s: Str) {
+    println(s)
+}
+
+fn debug_print_time_no_color(s: Str) {
+    println(s)
+}
+
+fn debug_print_cpu(s: Str) {
+    println(s)
+}
+
+fn debug_print_cpu_no_color(s: Str) {
+    println(s)
+}
+
+fn debug_print_gpu(s: Str) {
+    println(s)
+}
+
+fn debug_print_gpu_no_color(s: Str) {
+    println(s)
+}
+
+fn debug_print_disk(s: Str) {
+    println(s)
+}
+
+fn debug_print_disk_no_color(s: Str) {
+    println(s)
+}
+
+fn debug_print_net(s: Str) {
+    println(s)
+}
+
+fn debug_print_net_no_color(s: Str) {
+    println(s)
+}
+
+fn debug_print_env(s: Str) {
+    println(s)
+}
+
+fn debug_print_env_no_color(s: Str) {
+    println(s)
+}
+
+fn debug_print_file(s: Str) {
+    println(s)
+}
+
+fn debug_print_file_no_color(s: Str) {
+    println(s)
+}
+
+fn debug_print_dir(s: Str) {
+    println(s)
+}
+
+fn debug_print_dir_no_color(s: Str) {
+    println(s)
+}
+
+fn debug_print_process(s: Str) {
+    println(s)
+}
+
+fn debug_print_process_no_color(s: Str) {
+    println(s)
+}
+
+fn debug_print_thread(s: Str) {
+    println(s)
+}
+
+fn debug_print_thread_no_color(s: Str) {
+    println(s)
+}
+
+fn debug_print_task(s: Str) {
+    println(s)
+}
+
+fn debug_print_task_no_color(s: Str) {
+    println(s)
+}
+
+fn debug_print_job(s: Str) {
+    println(s)
+}
+
+fn debug_print_job_no_color(s: Str) {
+    println(s)
+}
+
+fn debug_print_queue(s: Str) {
+    println(s)
+}
+
+fn debug_print_queue_no_color(s: Str) {
+    println(s)
+}
+
+fn debug_print_stack_frame(s: Str) {
+    println(s)
+}
+
+fn debug_print_stack_frame_no_color(s: Str) {
+    println(s)
+}
+
+fn debug_print_heap_block(s: Str) {
+    println(s)
+}
+
+fn debug_print_heap_block_no_color(s: Str) {
+    println(s)
+}
+
+fn debug_print_file_handle(s: Str) {
+    println(s)
+}
+
+fn debug_print_file_handle_no_color(s: Str) {
+    println(s)
+}
+
+fn debug_print_dir_handle(s: Str) {
+    println(s)
+}
+
+fn debug_print_dir_handle_no_color(s: Str) {
+    println(s)
+}
+
+fn debug_print_process_handle(s: Str) {
+    println(s)
+}
+
+fn debug_print_process_handle_no_color(s: Str) {
+    println(s)
+}
+
+fn debug_print_thread_handle(s: Str) {
+    println(s)
+}
+
+fn debug_print_thread_handle_no_color(s: Str) {
+    println(s)
+}
+
+fn debug_print_task_handle(s: Str) {
+    println(s)
+}
+
+fn debug_print_task_handle_no_color(s: Str) {
+    println(s)
+}
+
+fn debug_print_job_handle(s: Str) {
+    println(s)
+}
+
+fn debug_print_job_handle_no_color(s: Str) {
+    println(s)
+}
+
+fn main() {
+    let list = vec(10, 20, 30, 40)
+    let

@@ -1,0 +1,358 @@
+fn main() {
+    let rectangle = Rectangle { width: 7, height: 6 }
+    print(area(&rectangle))
+    drop rectangle
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn area(rectangle: &Rectangle) -> Int {
+    rectangle.width * rectangle.height
+}
+
+fn print(x: Int) {
+    println(to_str(x))
+}
+
+fn println(s: Str) {
+    print_str(s + "\n")
+}
+
+fn to_str(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut digits = vec()
+    let mut n = n
+    while n > 0 {
+        push(digits, (n % 10) + 48)
+        n = n / 10
+    }
+    let mut s = ""
+    for i in range(0, len(&digits)) {
+        s = s + get(&digits, i)
+    }
+    s
+}
+
+fn clone(x: T) -> T {
+    x
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn vec() -> Vec<T> {
+    vec()
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    push(v, x)
+}
+
+fn len(v: Vec<T>) -> Int {
+    len(v)
+}
+
+fn get(v: Vec<T>, i: Int) -> Option<T> {
+    get(v, i)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    range(a, b)
+}
+
+fn trunc(x: Float) -> Int {
+    trunc(x)
+}
+
+fn to_float(n: Int) -> Float {
+    to_float(n)
+}
+
+fn main() {
+    let rectangle = Rectangle { width: 7, height: 6 }
+    print(area(&rectangle))
+    drop rectangle
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn area(rectangle: &Rectangle) -> Int {
+    rectangle.width * rectangle.height
+}
+
+fn print(x: Int) {
+    println(to_str(x))
+}
+
+fn println(s: Str) {
+    print_str(s + "\n")
+}
+
+fn to_str(n: Int) -> Str {
+    let mut digits = vec()
+    let mut n = n
+    while n > 0 {
+        push(digits, (n % 10) + 48)
+        n = n / 10
+    }
+    let mut s = ""
+    for i in range(0, len(&digits)) {
+        s = s + get(&digits, i)
+    }
+    s
+}
+
+fn clone(x: T) -> T {
+    x
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn vec() -> Vec<T> {
+    vec()
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    push(v, x)
+}
+
+fn len(v: Vec<T>) -> Int {
+    len(v)
+}
+
+fn get(v: Vec<T>, i: Int) -> Option<T> {
+    get(v, i)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    range(a, b)
+}
+
+fn trunc(x: Float) -> Int {
+    trunc(x)
+}
+
+fn to_float(n: Int) -> Float {
+    to_float(n)
+}
+
+fn main() {
+    let rectangle = Rectangle { width: 7, height: 6 }
+    print(area(&rectangle))
+    drop rectangle
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn area(rectangle: &Rectangle) -> Int {
+    rectangle.width * rectangle.height
+}
+
+fn print(x: Int) {
+    println(to_str(x))
+}
+
+fn println(s: Str) {
+    print_str(s + "\n")
+}
+
+fn to_str(n: Int) -> Str {
+    let mut digits = vec()
+    let mut n = n
+    while n > 0 {
+        push(digits, (n % 10) + 48)
+        n = n / 10
+    }
+    let mut s = ""
+    for i in range(0, len(&digits)) {
+        s = s + get(&digits, i)
+    }
+    s
+}
+
+fn clone(x: T) -> T {
+    x
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn vec() -> Vec<T> {
+    vec()
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    push(v, x)
+}
+
+fn len(v: Vec<T>) -> Int {
+    len(v)
+}
+
+fn get(v: Vec<T>, i: Int) -> Option<T> {
+    get(v, i)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    range(a, b)
+}
+
+fn trunc(x: Float) -> Int {
+    trunc(x)
+}
+
+fn to_float(n: Int) -> Float {
+    to_float(n)
+}
+
+fn main() {
+    let rectangle = Rectangle { width: 7, height: 6 }
+    print(area(&rectangle))
+    drop rectangle
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn area(rectangle: &Rectangle) -> Int {
+    rectangle.width * rectangle.height
+}
+
+fn print(x: Int) {
+    println(to_str(x))
+}
+
+fn println(s: Str) {
+    print_str(s + "\n")
+}
+
+fn to_str(n: Int) -> Str {
+    let mut digits = vec()
+    let mut n = n
+    while n > 0 {
+        push(digits, (n % 10) + 48)
+        n = n / 10
+    }
+    let mut s = ""
+    for i in range(0, len(&digits)) {
+        s = s + get(&digits, i)
+    }
+    s
+}
+
+fn clone(x: T) -> T {
+    x
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn vec() -> Vec<T> {
+    vec()
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    push(v, x)
+}
+
+fn len(v: Vec<T>) -> Int {
+    len(v)
+}
+
+fn get(v: Vec<T>, i: Int) -> Option<T> {
+    get(v, i)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    range(a, b)
+}
+
+fn trunc(x: Float) -> Int {
+    trunc(x)
+}
+
+fn to_float(n: Int) -> Float {
+    to_float(n)
+}
+
+fn main() {
+    let rectangle = Rectangle { width: 7, height: 6 }
+    print(area(&rectangle))
+    drop rectangle
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn area(rectangle: &Rectangle) -> Int {
+    rectangle.width * rectangle.height
+}
+
+fn print(x: Int) {
+    println(to_str(x))
+}
+
+fn println(s: Str) {
+    print_str(s + "\n")
+}
+
+fn to_str(n: Int) -> Str {
+    let mut digits = vec()
+    let mut n = n
+    while n > 0 {
+        push(digits, (n % 10) + 48)
+        n = n / 10
+    }
+    let mut s = ""
+    for i in range(0, len(&digits)) {
+        s = s + get(&digits, i)
+    }
+    s
+}
+
+fn clone(x: T) -> T {
+    x
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn vec() -> Vec<T> {
+    vec()
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    push(v, x)
+}
+
+fn len(v: Vec<T>) -> Int {
+    len(v)
+}
+
+fn get(v: Vec<T>, i: Int) -> Option<T> {
+    get(v, i)
+}
+
+fn range(a: Int, b: Int)

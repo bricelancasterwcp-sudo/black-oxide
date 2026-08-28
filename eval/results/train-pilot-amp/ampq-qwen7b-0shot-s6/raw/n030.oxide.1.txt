@@ -1,0 +1,22 @@
+struct Word { text: Str }
+
+fn is_vowel(c: Str) -> Bool {
+    c == "a" || c == "e" || c == "i" || c == "o" || c == "u"
+}
+
+fn count_vowels(words: Vec<Word>) -> Int {
+    let mut count = 0
+    for word in words {
+        for c in chars(word.text) {
+            if is_vowel(c) {
+                count = count + 1
+            }
+        }
+    }
+    count
+}
+
+fn main() {
+    let words = push(push(vec(), Word { text: "hello" }), Word { text: "world" })
+    print(count_vowels(words))
+}

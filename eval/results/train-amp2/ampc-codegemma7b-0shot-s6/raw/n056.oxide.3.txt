@@ -1,0 +1,394 @@
+fn main() {
+    let seven = read_number(7).map(Some).unwrap_or(0)
+    let nine = read_number(9).map(Some).unwrap_or(0)
+    let x = read_number(x).map(Some).unwrap_or(0)
+    let question = read_number(question).map(Some).unwrap_or(0)
+    print(seven + nine + x + question)
+    print(4 - (seven + nine + x + question).count())
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int) -> Option<Int> {
+    None
+}
+
+fn read_number(_: Int)

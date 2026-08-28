@@ -1,0 +1,50 @@
+fn main() {
+    let sum = sum_digits(9875)
+    print(sum)
+}
+
+struct State {
+    number: Int,
+    digits: Vec<Int>,
+}
+
+fn create_state() -> State {
+    let mut state = State { number: 0, digits: vec() }
+    state
+}
+
+fn get_number() -> Int {
+    let number = prompt("Please enter a number: ")
+    number
+}
+
+fn sum_digits(number: Int) -> Int {
+    let digits = number.chars().map(digit_value)
+    let mut result = 0
+    for digit in digits {
+        result = add(result, digit)
+    }
+    result
+}
+
+fn digit_value(character: Str) -> Int {
+    let value = parse_int(character)
+    value?
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn prompt(message: Str) -> Str {
+    message
+}
+
+fn print(value: Str) {
+    value
+}
+
+fn main() {
+    let sum = sum_digits(9875)
+    print(sum)
+}

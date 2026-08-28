@@ -1,0 +1,14 @@
+fn divide(n: Int, d: Int) -> Result<Int, Str> {
+    if d == 0 {
+        Err("bad")
+    } else {
+        Ok(n / d)
+    }
+}
+
+fn main() {
+    match divide(20, 4) {
+        Ok(n) => print(n),
+        Err(e) => print_str(e),
+    }
+}

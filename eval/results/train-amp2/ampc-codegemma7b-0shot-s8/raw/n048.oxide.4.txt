@@ -1,0 +1,9 @@
+fn main() {
+    let nums = vec(4, 7, 4, 9, 4)
+    for i in 0.upto(len(nums) - 1) {
+        if nums.get(i) == Some(4) {
+            print(i)
+            print_str("\n")
+        }
+    }
+}

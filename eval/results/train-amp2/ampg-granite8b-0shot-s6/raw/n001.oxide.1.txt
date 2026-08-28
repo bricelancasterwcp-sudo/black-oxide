@@ -1,0 +1,286 @@
+fn main() {
+    let total_cubes = sum_cubes(5)
+    print(total_cubes)
+}
+
+fn sum_cubes(n: Int) -> Int {
+    let mut sum = 0
+    for i in range(1, n + 1) {
+        sum = push(sum, cube(i))
+    }
+    sum
+}
+
+fn cube(n: Int) -> Int {
+    n * n * n
+}
+
+fn print(n: Int) {
+    println(to_str(n))
+}
+
+fn println(s: Str) {
+    print_str(s)
+    print_str("\n")
+}
+
+fn to_str(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut v = vec()
+    for i in a.to(b) {
+        v = push(v, i)
+    }
+    v
+}
+
+fn main() {
+    let v = vec(1, 2, 3)
+    print(sum(v))
+}
+
+fn sum(v: Vec<Int>) -> Int {
+    foldl(0, v, add)
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn foldl(init: T, v: Vec<T>, f: F) -> T {
+    let mut acc = init
+    for x in v {
+        acc = f(acc, x)
+    }
+    acc
+}
+
+fn main() {
+    let v = vec(1, 2, 3, 4, 5, 6)
+    print(sum_evens(v))
+}
+
+fn sum_evens(v: Vec<Int>) -> Int {
+    foldl(0, filter(v, even), add)
+}
+
+fn even(n: Int) -> Bool {
+    n % 2 == 0
+}
+
+fn main() {
+    let v = vec(1, 2, 3, 4, 5, 6)
+    print(max(v))
+}
+
+fn max(v: Vec<Int>) -> Option<Int> {
+    foldl(None, v, max2)
+}
+
+fn max2(x: Option<Int>, y: Int) -> Option<Int> {
+    if x == None || y > x? {
+        Some(y)
+    } else {
+        x
+    }
+}
+
+fn main() {
+    let v = vec("foo", "bar", "baz")
+    print(concat_all(v))
+}
+
+fn concat_all(v: Vec<Str>) -> Str {
+    foldl(Str, v, concat)
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    a + b
+}
+
+fn main() {
+    let v = vec(1, 2, 3, 4, 5, 6)
+    print(sum_odds(v))
+}
+
+fn sum_odds(v: Vec<Int>) -> Int {
+    foldl(0, filter(v, odd), add)
+}
+
+fn odd(n: Int) -> Bool {
+    n % 2 == 1
+}
+
+fn main() {
+    let v = vec(1, 2, 3, 4, 5, 6)
+    print(sum_div_by(v, 3))
+}
+
+fn sum_div_by(v: Vec<Int>, n: Int) -> Int {
+    foldl(0, filter(v, div_by(n)), add)
+}
+
+fn div_by(n: Int) -> F {
+    let f = fn_(x) == x % n
+    f
+}
+
+fn main() {
+    let v = vec(1, 2, 3, 4, 5, 6)
+    print(product(v))
+}
+
+fn product(v: Vec<Int>) -> Int {
+    foldl(1, v, mul)
+}
+
+fn mul(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn main() {
+    let v = vec(1, 2, 3, 4, 5, 6)
+    print(sum_if_even(v))
+}
+
+fn sum_if_even(v: Vec<Int>) -> Int {
+    foldl(0, v, add_if_even)
+}
+
+fn add_if_even(a: Int, b: Int) -> Int {
+    if b % 2 == 0 {
+        a + b
+    } else {
+        a
+    }
+}
+
+fn main() {
+    let v = vec(1, 2, 3, 4, 5, 6)
+    print(max_3(v))
+}
+
+fn max_3(v: Vec<Int>) -> Option<Int> {
+    foldl(None, v, max3)
+}
+
+fn max3(x: Option<Int>, y: Int) -> Option<Int> {
+    if x == None || y > x? {
+        Some(y)
+    } else {
+        x
+    }
+}
+
+fn main() {
+    let v = vec(1, 2, 3, 4, 5, 6)
+    print(sum_div_by_2(v))
+}
+
+fn sum_div_by_2(v: Vec<Int>) -> Int {
+    foldl(0, filter(v, div_by_2), add)
+}
+
+fn div_by_2(n: Int) -> Bool {
+    n % 2 == 0
+}
+
+fn main() {
+    let v = vec(1, 2, 3, 4, 5, 6)
+    print(sum_div_by_3_or_5(v))
+}
+
+fn sum_div_by_3_or_5(v: Vec<Int>) -> Int {
+    foldl(0, filter(v, div_by_3_or_5), add)
+}
+
+fn div_by_3_or_5(n: Int) -> Bool {
+    n % 3 == 0 || n % 5 == 0
+}
+
+fn main() {
+    let v = vec("a", "bb", "ccc", "dddd", "eeeee")
+    print(join_with(v, "-"))
+}
+
+fn join_with(v: Vec<Str>, sep: Str) -> Str {
+    foldl(Str, v, add_sep)
+}
+
+fn add_sep(a: Str, b: Str) -> Str {
+    a + sep + b
+}
+
+fn main() {
+    let v = vec(1, 2, 3, 4, 5, 6)
+    print(sum_squares(v))
+}
+
+fn sum_squares(v: Vec<Int>) -> Int {
+    foldl(0, v, add_square)
+}
+
+fn add_square(a: Int, b: Int) -> Int {
+    a + square(b)
+}
+
+fn square(n: Int) -> Int {
+    n * n
+}
+
+fn main() {
+    let v = vec("a", "bb", "ccc", "dddd", "eeeee")
+    print(join_with(v, "-"))
+}
+
+fn join_with(v: Vec<Str>, sep: Str) -> Str {
+    foldl(Str, v, add_sep)
+}
+
+fn add_sep(a: Str, b: Str) -> Str {
+    a + sep + b
+}
+
+fn main() {
+    let v = vec(1, 2, 3, 4, 5, 6)
+    print(sum_squares(v))
+}
+
+fn sum_squares(v: Vec<Int>) -> Int {
+    foldl(0, v, add_square)
+}
+
+fn add_square(a: Int, b: Int) -> Int {
+    a + square(b)
+}
+
+fn square(n: Int) -> Int {
+    n * n
+}
+
+fn main() {
+    let v = vec("a", "bb", "ccc", "dddd", "eeeee")
+    print(join_with(v, "-"))
+}
+
+fn join_with(v: Vec<Str>, sep: Str) -> Str {
+    foldl(Str, v, add_sep)
+}
+
+fn add_sep(a: Str, b: Str) -> Str {
+    a + sep + b
+}
+
+fn main() {
+    let v = vec(1, 2, 3, 4, 5, 6)
+    print(sum_squares(v))
+}
+
+fn sum_squares(v: Vec<Int>) -> Int {
+    foldl(0, v, add_square)
+}
+
+fn add_square(a: Int, b: Int) -> Int {
+   

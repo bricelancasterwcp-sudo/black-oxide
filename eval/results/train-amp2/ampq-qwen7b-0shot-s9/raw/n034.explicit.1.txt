@@ -1,0 +1,14 @@
+fn second(v: &Vec<Int>) -> Option<Int> {
+    match v.len() {
+        _ => None,
+        _ => Some(v.get(1)?.clone()),
+    }
+}
+
+fn main() {
+    let nums = vec(7, 8, 9)
+    match second(&nums) {
+        Some(x) => print(x),
+        None => print_str("None"),
+    }
+}

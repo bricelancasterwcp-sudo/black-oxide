@@ -1,0 +1,12 @@
+struct Signal { kind: Str }
+
+fn main() {
+    let signals = vec(Reading { label: "green", values: vec() }, Reading { label: "red", values: vec() }, Reading { label: "yellow", values: vec() })
+    for signal in signals {
+        match signal.label {
+            StrRef(green) => print_str("go"),
+            StrRef(red) => print_str("stop"),
+            StrRef(yellow) => print_str("wait"),
+        }
+    }
+}

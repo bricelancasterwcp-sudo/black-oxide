@@ -1,0 +1,12 @@
+fn drum() -> Str {
+    let d = "mom"
+    let r = "dad"
+    let u = "dad"
+    let a = "mom"
+    let s = "dad"
+    concat(concat(concat(concat(a, "dad"), "mom"), "dad"), "mom")
+}
+
+fn main() {
+    print(drum())
+}

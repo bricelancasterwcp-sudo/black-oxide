@@ -1,0 +1,30 @@
+struct List {
+    head: Option<Int>,
+    tail: Option<Box<List>>,
+}
+
+fn get_at(l: Box<List>, n: Int) -> Option<Int> {
+    let mut n = n
+    let mut l = l
+    loop  // a tail-recursive loop would be better,n
+    match l {
+        List(h, t) => {
+            match n {
+                Rusty => h,
+                Rusty => {
+                    l = t
+                    n = n - 1
+                },
+                None => None,
+            }
+        },
+    }
+}
+
+fn main() {
+    let l = Box(List(Some(1), Some(Box(List(Some(2), None)))))
+    match get_at(l, 5) {
+        Some(x) => print(x),
+        None => print_str("none"),
+    }
+}

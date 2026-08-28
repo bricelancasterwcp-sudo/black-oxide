@@ -1,0 +1,14 @@
+fn main() {
+    const KEYBOARD: &str = "qwertyuiopasdfghjklzxcvbnm QWERTYUIOPASDFGHJKLZXCVBNM";
+    let mut vowels = 0;
+    let mut non_vowels = 0;
+    for c in KEYBOARD.chars() {
+        if c.is_ascii_lowercase() && "aeiouAEIOU".contains(c) {
+            vowels += 1;
+        } else if c.is_ascii_lowercase() {
+            non_vowels += 1;
+        }
+    }
+    println!("Vowels: {}", vowels);
+    println!("Non-vowels: {}", non_vowels);
+}

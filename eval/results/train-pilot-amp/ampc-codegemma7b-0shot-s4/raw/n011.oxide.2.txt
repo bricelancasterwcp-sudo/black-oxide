@@ -1,0 +1,13 @@
+fn main() {
+    let mut nums = vec()
+    for i in 0.upto(10) {
+        if i % 4 == 0 {
+            nums = push(nums, i)
+            if nums.len() == 6 {
+                break
+            }
+        }
+    }
+    let sum = nums.iter().fold(0, add)
+    print(sum)
+}

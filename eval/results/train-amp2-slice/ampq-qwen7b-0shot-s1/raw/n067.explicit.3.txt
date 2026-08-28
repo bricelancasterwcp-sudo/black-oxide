@@ -1,0 +1,19 @@
+fn double_odd_print_total_even(v: &Vec<Int>) -> Int {
+    let mut total = 0
+    for x in &v {
+        if x % 2 != 0 {
+            let doubled = x * 2
+            print(&doubled)
+        } else {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn main() {
+    let nums = push(push(push(push(vec(), 7), 4), 9), 10)
+    let result = double_odd_print_total_even(&nums)
+    print(result)
+    drop nums
+}

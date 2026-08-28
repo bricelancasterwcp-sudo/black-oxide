@@ -1,0 +1,9 @@
+fn main() {
+    let banana = "banana"
+    let len = str_len(banana)
+    for i in 0.to_int(len) {
+        if get(banana, i) == Some("n") {
+            print(i)
+        }
+    }
+}

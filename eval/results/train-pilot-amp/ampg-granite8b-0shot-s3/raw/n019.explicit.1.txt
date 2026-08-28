@@ -1,0 +1,27 @@
+fn list_sum(l1: &List<Int>, l2: &List<Int>) -> Int {
+    let mut total = 0
+    let mut l1_head = l1
+    let mut l2_head = l2
+    while l1_head != nil() {
+        match l1_head {
+            Cons(x, xs) => {
+                match l2_head {
+                    Cons(y, ys) => {
+                        total = total + x + y
+                        l1_head = xs
+                        l2_head = ys
+                    },
+                    _ => total == total + x,
+                }
+            },
+            Nil => breakl,
+        }
+    }
+    total
+}
+
+fn main() {
+    let l1 = cons(1, cons(2, cons(3, nil())))
+    let l2 = cons(4, cons(5, nil()))
+    print(list_sum(&l1, &l2))
+}

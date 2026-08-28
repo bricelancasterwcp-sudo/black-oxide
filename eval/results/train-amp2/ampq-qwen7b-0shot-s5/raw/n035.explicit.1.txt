@@ -1,0 +1,43 @@
+fn safe_divide(dividend: Int, divisor: Int) -> Result<Int, Str> {
+    if divisor == 0 {
+        Err("bad".into())
+    } else {
+        Ok(dividend / divisor)
+    }
+}
+
+fn main() {
+    let result = safe_divide(20, 4).unwrap_or_else(drop_str)
+    match result {
+        Ok(ans) => print(ans),
+        Err(msg) => print_str(msg),
+    }
+}
+
+fn drop_str(s: Str) -> Str {
+    drop s
+}
+
+fn print(ans: Int) {
+    print_str(int_to_str(ans))
+}
+
+fn print_str(s: Str) {
+    print(&s)
+}
+
+fn drop_str(s: Str) {
+    drop s
+}
+
+fn drop_int(i: Int) {
+    drop i
+}
+
+fn main() {
+    let result = safe_divide(20, 4).unwrap_or_else(drop_str)
+    match result {
+        Ok(ans) => print(ans),
+        Err(msg) => print_str(msg),
+    }
+}

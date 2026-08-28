@@ -1,0 +1,10 @@
+fn main() {
+    let nums = vec(4, 7, 4, 9, 4)
+    let mut idx = 0
+    for x in &nums {
+        if x == &mut && 4 {
+            println(idx)
+        }
+        idx = idx + 1
+    }
+}

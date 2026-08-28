@@ -1,0 +1,18 @@
+use std::io;
+
+fn main() {
+    let mut input = String::new();
+
+    loop {
+        match io::stdin().read_line(&mut input) {
+            Ok(_) => break,
+            Err(e) => println!("Error reading input: {}", e),
+        }
+    }
+
+    if let Ok(number) = input.parse::<i32>() {
+        println!("Not a number");
+    } else {
+        println!("Bad");
+    }
+}

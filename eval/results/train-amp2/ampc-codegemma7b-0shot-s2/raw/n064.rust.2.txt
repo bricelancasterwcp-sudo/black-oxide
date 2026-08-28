@@ -1,0 +1,8 @@
+fn main() {
+    let mut list = Vec::new();
+    list.push(10);
+    list.push(20);
+
+    println!("{:?}", list[0]);
+    println!("{:?}", list[4]);
+}

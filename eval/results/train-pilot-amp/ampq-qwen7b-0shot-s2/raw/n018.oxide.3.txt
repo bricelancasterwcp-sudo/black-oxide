@@ -1,0 +1,18 @@
+fn reverse(v: Vec<Int>) -> Vec<Int> {
+    let mut result = vec()
+    for x in v {
+        result.push(x)
+    }
+    result
+}
+
+fn print_list(v: Vec<Int>) {
+    for x in reverse(v) {
+        print_str(x.to_string())
+    }
+}
+
+fn main() {
+    let v = push(push(push(vec(), 1), 2), 3)
+    print_list(v)
+}

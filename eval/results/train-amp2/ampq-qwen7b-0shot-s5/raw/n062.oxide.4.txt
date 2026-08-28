@@ -1,0 +1,13 @@
+struct Signal { kind: Str }
+
+fn main() {
+    let signals = vec(Signal { kind: "green" }, Signal { kind: "red" }, Signal { kind: "yellow" })
+    for signal in signals {
+        match signal.kind {
+            Str(green) => print_str("go"),
+            Str(red) => print_str("stop"),
+            Str(yellow) => print_str("wait"),
+            _ => panic("Unknown signal"),
+        }
+    }
+}

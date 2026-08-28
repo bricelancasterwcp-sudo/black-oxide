@@ -1,0 +1,13 @@
+fn main() {
+    let arr = [9, 2, 12, 5, 16];
+    let mut keep = Vec::new();
+    for &num in &arr {
+        if num < 10 {
+            keep.push(num);
+        }
+    }
+    for num in keep {
+        println!("{}", num);
+    }
+    println!("Kept {} numbers.", keep.len());
+}

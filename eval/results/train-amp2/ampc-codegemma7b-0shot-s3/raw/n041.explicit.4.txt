@@ -1,0 +1,41 @@
+fn print_sorted(mutnums: Vec<Int>) {
+    drop nums
+    let mut smallest = nums.pop().unwrap()
+    let mut second_smallest = nums.pop().unwrap()
+    let mut third_smallest = nums.pop().unwrap()
+    let mut largest = nums.pop().unwrap()
+    if smallest > second_smallest {
+        std_swap(&mutsmallest, &mutsecond_smallest)
+    }
+    if smallest > third_smallest {
+        std_swap(&mutsmallest, &mutthird_smallest)
+    }
+    if smallest > largest {
+        std_swap(&mutsmallest, &mutlargest)
+    }
+    if second_smallest > third_smallest {
+        std_swap(&mutsecond_smallest, &mutthird_smallest)
+    }
+    if second_smallest > largest {
+        std_swap(&mutsecond_smallest, &mutlargest)
+    }
+    if third_smallest > largest {
+        std_swap(&mutthird_smallest, &mutlargest)
+    }
+    print(smallest)
+    print(second_smallest)
+    print(third_smallest)
+    print(largest)
+}
+
+fn std_swap(a: &Int, b: &Int) {
+    let tmp = a
+    a = b
+    b = tmp
+}
+
+fn main() {
+    let mut nums = vec(9, 2, 7, 4)
+    print_sorted(nums)
+    drop nums
+}

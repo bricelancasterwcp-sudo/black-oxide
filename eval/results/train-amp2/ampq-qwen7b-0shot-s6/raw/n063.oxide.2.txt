@@ -1,0 +1,13 @@
+struct Line { items: Vec<Int>, price_per_item: Int }
+
+fn value(line: Line) -> Int {
+    line.items.len() * line.price_per_item
+}
+
+fn main() {
+    let line1 = Line { items: push(push(vec(), 1), 1), price_per_item: 3 }
+    let line2 = Line { items: push(push(vec(), 1), 1), price_per_item: 2 }
+    print(value(line1))
+    print(value(line2))
+    print(value(Line { items: vec(), price_per_item: 0 }))
+}

@@ -1,0 +1,5 @@
+fn main() {
+    let readings = vec![5, 3, 9, 1, 7];
+    let largest = *readings.iter().max().unwrap();
+    println!("The largest reading is {}", largest);
+}

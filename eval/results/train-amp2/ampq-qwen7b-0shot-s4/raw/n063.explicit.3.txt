@@ -1,0 +1,61 @@
+fn main() {
+    let line1 = push(push(vec(), 3), 3)
+    let line2 = push(push(vec(), 2), 2)
+    let total = push(push(vec(), 3), 2)
+    print(sum(&line1))
+    print(sum(&line2))
+    print(sum(&total))
+    drop line1
+    drop line2
+    drop total
+}
+
+fn sum(v: &Vec<Int>) -> Int {
+    let total = 0
+    for x in &v {
+        total = total + x
+    }
+    total
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut new_v = v.clone()
+    new_v.push(x)
+    new_v
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn print(x: Int) {
+    print_int(x)
+}
+
+fn print_int(x: Int) {
+    print_str(x.to_string().as_str())
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    s.parse().ok()
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    v.len()
+}
+
+fn clone(x: &Vec<Int>) -> Vec<Int> {
+    x.clone()
+}
+
+fn main() {
+    let line1 = push(push(vec(), 3), 3)
+    let line2 = push(push(vec(), 2), 2)
+    let total = push(push(vec(), 3), 2)
+    print(sum(&line1))
+    print(sum(&line2))
+    print(sum(&total))
+    drop line1
+    drop line2
+    drop total
+}

@@ -1,0 +1,6 @@
+fn main() {
+    let nums = vec(4, 8, 15, 16, 23, 42).iter().copied()
+    let sum = nums.fold(0, core_ops_add)
+    let mean = sum / nums.len()
+    print(mean)
+}

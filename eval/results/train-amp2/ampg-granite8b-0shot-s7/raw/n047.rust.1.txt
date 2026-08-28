@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let even_numbers = (1..=10).filter(|&x| x % 2 == 0).collect::<Vec<_>>();
+
+    for number in even_numbers.into_iter().rev() {
+        println!("{}", number);
+    }
+}
+```

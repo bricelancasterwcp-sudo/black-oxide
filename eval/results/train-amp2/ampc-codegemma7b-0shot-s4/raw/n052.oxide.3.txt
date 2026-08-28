@@ -1,0 +1,8 @@
+fn main() {
+    let s = "banana".to_string()
+    for i in 0.to_int() {
+        if s.chars().nth(i) == Some("n".chars().nth(0)) {
+            print(i)
+        }
+    }
+}

@@ -1,0 +1,40 @@
+fn print_cat() {
+    for c in "cat".chars() {
+        print(&c)
+    }
+}
+
+fn main() {
+    print_cat()
+}
+
+fn print_cat() {
+    for c in "cat".chars() {
+        print(&c)
+    }
+    drop c
+}
+
+fn main() {
+    print_cat()
+}
+
+fn print_cat() {
+    for c in "cat".chars() {
+        print(&c)
+    }
+}
+
+fn main() {
+    print_cat()
+}
+
+fn print_cat() {
+    for c in "cat".chars() {
+        print(&c)
+    }
+}
+
+fn main() {
+    print_cat()
+}

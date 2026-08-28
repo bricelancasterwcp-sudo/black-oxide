@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    println!(
+        "{}",
+        Point { x: 10, y: 5 }.x + Point { x: 1, y: 5 }.y
+    );
+}
+
+struct Point {
+    x: i32,
+    y: i32,
+}
+```

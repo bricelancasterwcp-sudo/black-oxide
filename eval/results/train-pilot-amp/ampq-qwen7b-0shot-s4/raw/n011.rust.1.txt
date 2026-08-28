@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let mut multiples = Vec::new();
+    let mut count = 0;
+    let mut num = 4;
+
+    while count < 6 {
+        multiples.push(num);
+        count += 1;
+        num += 4;
+    }
+
+    let total: i32 = multiples.iter().sum();
+    println!("Total: {}", total);
+}
+```

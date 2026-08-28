@@ -1,0 +1,7 @@
+fn main() {
+    let total = 1
+    for x in 1.range(7) {
+        total = total * x
+    }
+    print(total)
+}

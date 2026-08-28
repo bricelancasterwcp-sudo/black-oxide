@@ -1,0 +1,7 @@
+fn main() {
+    let measurements = vec(9, 2, 7, 4).reverse().sort()
+    print(measurements.get(0))
+    print(measurements.get(1))
+    print(measurements.get(2))
+    print(measurements.get(3))
+}

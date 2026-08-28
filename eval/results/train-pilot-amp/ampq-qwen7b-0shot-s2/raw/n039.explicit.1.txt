@@ -1,0 +1,10 @@
+fn main() {
+    let empty_list: Vec<Int> = vec()
+    let index = 5
+    if index < empty_list.len() {
+        print_str("None")
+    } else {
+        print_str("None")
+    }
+    drop empty_list
+}

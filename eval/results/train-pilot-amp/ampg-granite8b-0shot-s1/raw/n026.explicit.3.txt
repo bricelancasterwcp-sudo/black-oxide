@@ -1,0 +1,9 @@
+fn two_k_two_six() -> Str {
+    "2026"
+}
+
+fn main() {
+    let string = two_k_two_six()
+    print(str_len(&string))
+    drop string
+}

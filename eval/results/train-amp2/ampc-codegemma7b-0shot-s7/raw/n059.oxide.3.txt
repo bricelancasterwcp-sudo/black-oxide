@@ -1,0 +1,281 @@
+fn main() {
+    let str = "when in doubt go home".to_string()
+    let words = split_whitespace(str).count()
+    let chars = str.chars().count()
+    print(words)
+    print(chars)
+}
+
+fn split_whitespace(s: Str) -> Vec<Str> {
+    s.split_whitespace().collect()
+}
+
+fn main() {
+    let str = "when in doubt go home".to_string()
+    let words = split_whitespace(str).count()
+    let chars = str.chars().count()
+    print(words)
+    print(chars)
+}
+
+fn split_whitespace(s: Str) -> Vec<Str> {
+    s.split_whitespace().collect()
+}
+
+fn main() {
+    let str = "when in doubt go home".to_string()
+    let words = split_whitespace(str).count()
+    let chars = str.chars().count()
+    print(words)
+    print(chars)
+}
+
+fn split_whitespace(s: Str) -> Vec<Str> {
+    s.split_whitespace().collect()
+}
+
+fn main() {
+    let str = "when in doubt go home".to_string()
+    let words = split_whitespace(str).count()
+    let chars = str.chars().count()
+    print(words)
+    print(chars)
+}
+
+fn split_whitespace(s: Str) -> Vec<Str> {
+    s.split_whitespace().collect()
+}
+
+fn main() {
+    let str = "when in doubt go home".to_string()
+    let words = split_whitespace(str).count()
+    let chars = str.chars().count()
+    print(words)
+    print(chars)
+}
+
+fn split_whitespace(s: Str) -> Vec<Str> {
+    s.split_whitespace().collect()
+}
+
+fn main() {
+    let str = "when in doubt go home".to_string()
+    let words = split_whitespace(str).count()
+    let chars = str.chars().count()
+    print(words)
+    print(chars)
+}
+
+fn split_whitespace(s: Str) -> Vec<Str> {
+    s.split_whitespace().collect()
+}
+
+fn main() {
+    let str = "when in doubt go home".to_string()
+    let words = split_whitespace(str).count()
+    let chars = str.chars().count()
+    print(words)
+    print(chars)
+}
+
+fn split_whitespace(s: Str) -> Vec<Str> {
+    s.split_whitespace().collect()
+}
+
+fn main() {
+    let str = "when in doubt go home".to_string()
+    let words = split_whitespace(str).count()
+    let chars = str.chars().count()
+    print(words)
+    print(chars)
+}
+
+fn split_whitespace(s: Str) -> Vec<Str> {
+    s.split_whitespace().collect()
+}
+
+fn main() {
+    let str = "when in doubt go home".to_string()
+    let words = split_whitespace(str).count()
+    let chars = str.chars().count()
+    print(words)
+    print(chars)
+}
+
+fn split_whitespace(s: Str) -> Vec<Str> {
+    s.split_whitespace().collect()
+}
+
+fn main() {
+    let str = "when in doubt go home".to_string()
+    let words = split_whitespace(str).count()
+    let chars = str.chars().count()
+    print(words)
+    print(chars)
+}
+
+fn split_whitespace(s: Str) -> Vec<Str> {
+    s.split_whitespace().collect()
+}
+
+fn main() {
+    let str = "when in doubt go home".to_string()
+    let words = split_whitespace(str).count()
+    let chars = str.chars().count()
+    print(words)
+    print(chars)
+}
+
+fn split_whitespace(s: Str) -> Vec<Str> {
+    s.split_whitespace().collect()
+}
+
+fn main() {
+    let str = "when in doubt go home".to_string()
+    let words = split_whitespace(str).count()
+    let chars = str.chars().count()
+    print(words)
+    print(chars)
+}
+
+fn split_whitespace(s: Str) -> Vec<Str> {
+    s.split_whitespace().collect()
+}
+
+fn main() {
+    let str = "when in doubt go home".to_string()
+    let words = split_whitespace(str).count()
+    let chars = str.chars().count()
+    print(words)
+    print(chars)
+}
+
+fn split_whitespace(s: Str) -> Vec<Str> {
+    s.split_whitespace().collect()
+}
+
+fn main() {
+    let str = "when in doubt go home".to_string()
+    let words = split_whitespace(str).count()
+    let chars = str.chars().count()
+    print(words)
+    print(chars)
+}
+
+fn split_whitespace(s: Str) -> Vec<Str> {
+    s.split_whitespace().collect()
+}
+
+fn main() {
+    let str = "when in doubt go home".to_string()
+    let words = split_whitespace(str).count()
+    let chars = str.chars().count()
+    print(words)
+    print(chars)
+}
+
+fn split_whitespace(s: Str) -> Vec<Str> {
+    s.split_whitespace().collect()
+}
+
+fn main() {
+    let str = "when in doubt go home".to_string()
+    let words = split_whitespace(str).count()
+    let chars = str.chars().count()
+    print(words)
+    print(chars)
+}
+
+fn split_whitespace(s: Str) -> Vec<Str> {
+    s.split_whitespace().collect()
+}
+
+fn main() {
+    let str = "when in doubt go home".to_string()
+    let words = split_whitespace(str).count()
+    let chars = str.chars().count()
+    print(words)
+    print(chars)
+}
+
+fn split_whitespace(s: Str) -> Vec<Str> {
+    s.split_whitespace().collect()
+}
+
+fn main() {
+    let str = "when in doubt go home".to_string()
+    let words = split_whitespace(str).count()
+    let chars = str.chars().count()
+    print(words)
+    print(chars)
+}
+
+fn split_whitespace(s: Str) -> Vec<Str> {
+    s.split_whitespace().collect()
+}
+
+fn main() {
+    let str = "when in doubt go home".to_string()
+    let words = split_whitespace(str).count()
+    let chars = str.chars().count()
+    print(words)
+    print(chars)
+}
+
+fn split_whitespace(s: Str) -> Vec<Str> {
+    s.split_whitespace().collect()
+}
+
+fn main() {
+    let str = "when in doubt go home".to_string()
+    let words = split_whitespace(str).count()
+    let chars = str.chars().count()
+    print(words)
+    print(chars)
+}
+
+fn split_whitespace(s: Str) -> Vec<Str> {
+    s.split_whitespace().collect()
+}
+
+fn main() {
+    let str = "when in doubt go home".to_string()
+    let words = split_whitespace(str).count()
+    let chars = str.chars().count()
+    print(words)
+    print(chars)
+}
+
+fn split_whitespace(s: Str) -> Vec<Str> {
+    s.split_whitespace().collect()
+}
+
+fn main() {
+    let str = "when in doubt go home".to_string()
+    let words = split_whitespace(str).count()
+    let chars = str.chars().count()
+    print(words)
+    print(chars)
+}
+
+fn split_whitespace(s: Str) -> Vec<Str> {
+    s.split_whitespace().collect()
+}
+
+fn main() {
+    let str = "when in doubt go home".to_string()
+    let words = split_whitespace(str).count()
+    let chars = str.chars().count()
+    print(words)
+    print(chars)
+}
+
+fn split_whitespace(s: Str) -> Vec<Str> {
+    s.split_whitespace().collect()
+}
+
+fn main() {
+    let str = "when in doubt go home".to_string()
+    let words = split_whitespace(str).count()
+    let chars = str.chars().count()
+    print

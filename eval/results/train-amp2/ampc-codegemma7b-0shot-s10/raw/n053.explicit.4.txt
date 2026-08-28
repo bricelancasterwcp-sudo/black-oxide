@@ -1,0 +1,11 @@
+fn reverse(s: &Str) -> Str {
+    let mut result = String(s.chars().rev().collect())
+    drop result
+    result
+}
+
+fn main() {
+    let drum = "drum"
+    print(reverse(&drum))
+    print(drum)
+}

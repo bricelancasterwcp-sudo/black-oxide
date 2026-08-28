@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let word = "hello world";
+    let vowels = "aeiouAEIOU";
+    let count = word.chars().filter(|&c| vowels.contains(c)).count();
+    println!("There are {} vowels in the word.", count);
+}
+```

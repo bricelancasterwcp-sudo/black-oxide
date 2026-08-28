@@ -1,0 +1,11 @@
+fn main() {
+    let mut q = vec(1, 2, 3, 4, 5)
+    let first = q.pop().unwrap()
+    let last = q.remove(0)
+    q.insert(0, last)
+    q.push(first)
+    for x in q {
+        print(x)
+        print_str("\n")
+    }
+}

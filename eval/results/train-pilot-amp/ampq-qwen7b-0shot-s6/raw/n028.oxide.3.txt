@@ -1,0 +1,7 @@
+fn main() {
+    let input = parse_int("abc")?
+    match input {
+        Some(n) => print(n),
+        None => print_str("bad"),
+    }
+}

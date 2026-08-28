@@ -1,0 +1,119 @@
+fn get_second(v: Vec<Int>) -> Option<Int> {
+    if v.len() > 1 {
+        Some(v.get(1).unwrap().clone())
+    } else {
+        None
+    }
+}
+
+fn main() {
+    let nums = push(push(vec(), 7), 8)
+    let second = get_second(clone(&nums))
+    match second {
+        Some(x) => print_str(format_str("Second item: {}", x)),
+        None => print_str("No second item"),
+    }
+    drop nums
+}
+
+fn format_str(s: Str) -> Str {
+    s
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn clone(x: &Int) -> Int {
+    clone(x)
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    len(v)
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    get(v, i)
+}
+
+fn main() {
+    let nums = push(push(vec(), 7), 8)
+    let second = get_second(clone(&nums))
+    match second {
+        Some(x) => print_str(format_str("Second item: {}", x)),
+        None => print_str("No second item"),
+    }
+    drop nums
+}
+
+fn format_str(s: Str) -> Str {
+    s
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn clone(x: &Int) -> Int {
+    clone(x)
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    len(v)
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    get(v, i)
+}
+
+fn main() {
+    let nums = push(push(vec(), 7), 8)
+    let second = get_second(clone(&nums))
+    match second {
+        Some(x) => print_str(format_str("Second item: {}", x)),
+        None => print_str("No second item"),
+    }
+    drop nums
+}
+
+fn format_str(s: Str) -> Str {
+    s
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn clone(x: &Int) -> Int {
+    clone(x)
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    len(v)
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    get(v, i)
+}
+
+fn main() {
+    let nums = push(push(vec(), 7), 8)
+    let second = get_second(clone(&nums))
+    match second {
+        Some(x) => print_str(format_str("Second item: {}", x)),
+        None => print_str("No second item"),
+    }
+    drop nums
+}

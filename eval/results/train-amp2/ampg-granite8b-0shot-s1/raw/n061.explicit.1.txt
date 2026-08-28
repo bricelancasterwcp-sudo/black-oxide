@@ -1,0 +1,16 @@
+fn area(s: &Shape) -> Int {
+    s.len() * s.width()
+}
+
+fn perimeter(s: &Shape) -> Int {
+    s.len() + s.len() + s.width() + s.width()
+}
+
+fn main() {
+    let square = Circle(1.5)
+    print(area(&square))
+    print(perimeter(&square))
+    let triangle = Triangle(1.0, 2.0)
+    print(area(&triangle))
+    print(perimeter(&triangle))
+}

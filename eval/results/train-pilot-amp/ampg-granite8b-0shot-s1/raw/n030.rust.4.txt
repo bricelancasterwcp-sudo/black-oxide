@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let word = "aeiou";
+    let vowels = word.chars().filter(|&c| "aeiouAEIOU".contains(c)).count() as u8;
+    println!("{}", vowels);
+}
+```

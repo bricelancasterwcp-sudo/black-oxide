@@ -1,0 +1,12 @@
+fn divide(x: Int, y: Int) -> Int {
+    if y == 0 {
+        panic("zero divide")
+    }
+    x / y
+}
+
+fn main() {
+    let answer = divide(20, 4)
+    print(answer)
+    drop answer
+}

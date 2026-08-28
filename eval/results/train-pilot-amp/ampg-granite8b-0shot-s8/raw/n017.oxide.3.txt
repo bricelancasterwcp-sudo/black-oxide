@@ -1,0 +1,29 @@
+struct List { value: Int, next: Option<Box<List>> }
+
+fn at_two(ls: Box<List>) -> Option<Int> {
+    let List { value, next } = ls
+    match next {
+        Some(next) => {
+            let List { value, next } = next
+            match next {
+                Some(next) => {
+                    let List { value, next } = next
+                    match next {
+                        Some(next) => at_two(next),
+                        None => Some(value),
+                    }
+                },
+                None => Some(value),
+            }
+        },
+        None => None,
+    }
+}
+
+fn main() {
+    let l = Box { value: 10, next: Some(Box { value: 20, next: Some(Box { value: 30, next: Some(Box { value: 40, next: None }) }) }) }
+    match at_two(l) {
+        Some(n) => print(n),
+        None => print_str("missing"),
+    }
+}

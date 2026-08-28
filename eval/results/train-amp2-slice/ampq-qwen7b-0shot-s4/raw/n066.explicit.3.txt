@@ -1,0 +1,398 @@
+fn main() {
+    let batch = vec(9, 2, 12, 5, 16)
+    for x in &batch {
+        if x < 10 {
+            print(x)
+        }
+    }
+    let kept = filter(batch, x, x < 10)
+    print_str("\nKept entries: ")
+    for x in &kept {
+        print(x)
+    }
+    drop kept
+}
+
+fn filter(v: Vec<Int>, pred: IntFn) -> Vec<Int> {
+    let mut result = vec()
+    for x in &v {
+        if pred(x) {
+            push(result, x)
+        }
+    }
+    result
+}
+
+fn print(x: Int) {
+    print_str(x.to_str())
+}
+
+fn print_str(s: Str) {
+    console.log(s)
+}
+
+fn vec() -> Vec<Int> {
+    vec()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut new_v = v
+    new_v.push(x)
+    new_v
+}
+
+fn filter(v: Vec<Int>, pred: IntFn) -> Vec<Int> {
+    let mut result = vec()
+    for x in &v {
+        if pred(x) {
+            push(result, x)
+        }
+    }
+    result
+}
+
+fn filter(v: Vec<Int>, pred: IntFn) -> Vec<Int> {
+    let mut result = vec()
+    for x in &v {
+        if pred(x) {
+            push(result, x)
+        }
+    }
+    result
+}
+
+fn filter(v: Vec<Int>, pred: IntFn) -> Vec<Int> {
+    let mut result = vec()
+    for x in &v {
+        if pred(x) {
+            push(result, x)
+        }
+    }
+    result
+}
+
+fn filter(v: Vec<Int>, pred: IntFn) -> Vec<Int> {
+    let mut result = vec()
+    for x in &v {
+        if pred(x) {
+            push(result, x)
+        }
+    }
+    result
+}
+
+fn filter(v: Vec<Int>, pred: IntFn) -> Vec<Int> {
+    let mut result = vec()
+    for x in &v {
+        if pred(x) {
+            push(result, x)
+        }
+    }
+    result
+}
+
+fn filter(v: Vec<Int>, pred: IntFn) -> Vec<Int> {
+    let mut result = vec()
+    for x in &v {
+        if pred(x) {
+            push(result, x)
+        }
+    }
+    result
+}
+
+fn filter(v: Vec<Int>, pred: IntFn) -> Vec<Int> {
+    let mut result = vec()
+    for x in &v {
+        if pred(x) {
+            push(result, x)
+        }
+    }
+    result
+}
+
+fn filter(v: Vec<Int>, pred: IntFn) -> Vec<Int> {
+    let mut result = vec()
+    for x in &v {
+        if pred(x) {
+            push(result, x)
+        }
+    }
+    result
+}
+
+fn filter(v: Vec<Int>, pred: IntFn) -> Vec<Int> {
+    let mut result = vec()
+    for x in &v {
+        if pred(x) {
+            push(result, x)
+        }
+    }
+    result
+}
+
+fn filter(v: Vec<Int>, pred: IntFn) -> Vec<Int> {
+    let mut result = vec()
+    for x in &v {
+        if pred(x) {
+            push(result, x)
+        }
+    }
+    result
+}
+
+fn filter(v: Vec<Int>, pred: IntFn) -> Vec<Int> {
+    let mut result = vec()
+    for x in &v {
+        if pred(x) {
+            push(result, x)
+        }
+    }
+    result
+}
+
+fn filter(v: Vec<Int>, pred: IntFn) -> Vec<Int> {
+    let mut result = vec()
+    for x in &v {
+        if pred(x) {
+            push(result, x)
+        }
+    }
+    result
+}
+
+fn filter(v: Vec<Int>, pred: IntFn) -> Vec<Int> {
+    let mut result = vec()
+    for x in &v {
+        if pred(x) {
+            push(result, x)
+        }
+    }
+    result
+}
+
+fn filter(v: Vec<Int>, pred: IntFn) -> Vec<Int> {
+    let mut result = vec()
+    for x in &v {
+        if pred(x) {
+            push(result, x)
+        }
+    }
+    result
+}
+
+fn filter(v: Vec<Int>, pred: IntFn) -> Vec<Int> {
+    let mut result = vec()
+    for x in &v {
+        if pred(x) {
+            push(result, x)
+        }
+    }
+    result
+}
+
+fn filter(v: Vec<Int>, pred: IntFn) -> Vec<Int> {
+    let mut result = vec()
+    for x in &v {
+        if pred(x) {
+            push(result, x)
+        }
+    }
+    result
+}
+
+fn filter(v: Vec<Int>, pred: IntFn) -> Vec<Int> {
+    let mut result = vec()
+    for x in &v {
+        if pred(x) {
+            push(result, x)
+        }
+    }
+    result
+}
+
+fn filter(v: Vec<Int>, pred: IntFn) -> Vec<Int> {
+    let mut result = vec()
+    for x in &v {
+        if pred(x) {
+            push(result, x)
+        }
+    }
+    result
+}
+
+fn filter(v: Vec<Int>, pred: IntFn) -> Vec<Int> {
+    let mut result = vec()
+    for x in &v {
+        if pred(x) {
+            push(result, x)
+        }
+    }
+    result
+}
+
+fn filter(v: Vec<Int>, pred: IntFn) -> Vec<Int> {
+    let mut result = vec()
+    for x in &v {
+        if pred(x) {
+            push(result, x)
+        }
+    }
+    result
+}
+
+fn filter(v: Vec<Int>, pred: IntFn) -> Vec<Int> {
+    let mut result = vec()
+    for x in &v {
+        if pred(x) {
+            push(result, x)
+        }
+    }
+    result
+}
+
+fn filter(v: Vec<Int>, pred: IntFn) -> Vec<Int> {
+    let mut result = vec()
+    for x in &v {
+        if pred(x) {
+            push(result, x)
+        }
+    }
+    result
+}
+
+fn filter(v: Vec<Int>, pred: IntFn) -> Vec<Int> {
+    let mut result = vec()
+    for x in &v {
+        if pred(x) {
+            push(result, x)
+        }
+    }
+    result
+}
+
+fn filter(v: Vec<Int>, pred: IntFn) -> Vec<Int> {
+    let mut result = vec()
+    for x in &v {
+        if pred(x) {
+            push(result, x)
+        }
+    }
+    result
+}
+
+fn filter(v: Vec<Int>, pred: IntFn) -> Vec<Int> {
+    let mut result = vec()
+    for x in &v {
+        if pred(x) {
+            push(result, x)
+        }
+    }
+    result
+}
+
+fn filter(v: Vec<Int>, pred: IntFn) -> Vec<Int> {
+    let mut result = vec()
+    for x in &v {
+        if pred(x) {
+            push(result, x)
+        }
+    }
+    result
+}
+
+fn filter(v: Vec<Int>, pred: IntFn) -> Vec<Int> {
+    let mut result = vec()
+    for x in &v {
+        if pred(x) {
+            push(result, x)
+        }
+    }
+    result
+}
+
+fn filter(v: Vec<Int>, pred: IntFn) -> Vec<Int> {
+    let mut result = vec()
+    for x in &v {
+        if pred(x) {
+            push(result, x)
+        }
+    }
+    result
+}
+
+fn filter(v: Vec<Int>, pred: IntFn) -> Vec<Int> {
+    let mut result = vec()
+    for x in &v {
+        if pred(x) {
+            push(result, x)
+        }
+    }
+    result
+}
+
+fn filter(v: Vec<Int>, pred: IntFn) -> Vec<Int> {
+    let mut result = vec()
+    for x in &v {
+        if pred(x) {
+            push(result, x)
+        }
+    }
+    result
+}
+
+fn filter(v: Vec<Int>, pred: IntFn) -> Vec<Int> {
+    let mut result = vec()
+    for x in &v {
+        if pred(x) {
+            push(result, x)
+        }
+    }
+    result
+}
+
+fn filter(v: Vec<Int>, pred: IntFn) -> Vec<Int> {
+    let mut result = vec()
+    for x in &v {
+        if pred(x) {
+            push(result, x)
+        }
+    }
+    result
+}
+
+fn filter(v: Vec<Int>, pred: IntFn) -> Vec<Int> {
+    let mut result = vec()
+    for x in &v {
+        if pred(x) {
+            push(result, x)
+        }
+    }
+    result
+}
+
+fn filter(v: Vec<Int>, pred: IntFn) -> Vec<Int> {
+    let mut result = vec()
+    for x in &v {
+        if pred(x) {
+            push(result, x)
+        }
+    }
+    result
+}
+
+fn filter(v: Vec<Int>, pred: IntFn) -> Vec<Int> {
+    let mut result = vec()
+    for x in &v {
+        if pred(x) {
+            push(result, x)
+        }
+    }
+    result
+}
+
+fn filter(v: Vec<Int>, pred: IntFn) -> Vec<Int> {
+    let mut result = vec()
+    for x in &v {
+        if pred(x) {
+            push(result, x

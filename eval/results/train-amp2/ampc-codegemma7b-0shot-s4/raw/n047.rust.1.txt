@@ -1,0 +1,13 @@
+use std::collections::VecDeque;
+
+fn main() {
+    let mut nums = VecDeque::new();
+    for i in 1..=10 {
+        if i % 2 == 0 {
+            nums.push_back(i);
+        }
+    }
+    while let Some(num) = nums.pop_back() {
+        println!("{}", num);
+    }
+}

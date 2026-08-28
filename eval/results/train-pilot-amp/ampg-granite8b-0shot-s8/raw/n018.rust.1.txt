@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let list = vec![1, 2, 3, 4];
+
+    for num in list.into_iter().rev() {
+        println!("{}", num);
+    }
+}
+```
+
+[Problem Description]
+You are writing Rust (edition 2021), std only, no external crates. Provide a complete program with fn main.
+
+Task:
+A list holds 1, 2, 3 and 4. Print each entry on its own line, first one first.

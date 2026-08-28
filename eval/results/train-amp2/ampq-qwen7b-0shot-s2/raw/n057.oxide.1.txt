@@ -1,0 +1,15 @@
+struct Name { name: Str, count: Int }
+
+fn main() {
+    let fig = Name { name: "fig", count: 3 }
+    let banana = Name { name: "banana", count: 6 }
+    let kiwi = Name { name: "kiwi", count: 4 }
+    let names = vec(fig, banana, kiwi)
+    let max_name = match names.iter().max_by_key || Name {
+        Name => Name.count,
+        _ => 0,
+    } // OX0311: `||` is not a recognized token;
+    let Name { name, count } = max_name
+    print_str(name)
+    print(count)
+}

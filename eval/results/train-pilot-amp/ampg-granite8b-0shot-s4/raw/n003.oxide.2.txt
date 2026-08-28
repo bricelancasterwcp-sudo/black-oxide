@@ -1,0 +1,100 @@
+fn main() {
+    let count = count_divisors(36)
+    print(count)
+}
+
+fn count_divisors(n: Int) -> Int {
+    if n == 1 {
+        return 1
+    }
+    if is_prime(n) {
+        return 2
+    }
+    let fs = factors(n)
+    let f1 = fs.get(0)?
+    let mut count = 2
+    for f in fs.slice(1, None) {
+        if f == f1 {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn is_prime(n: Int) -> Bool {
+    if n == 2 {
+        return true
+    }
+    if n % 2 == 0 {
+        return false
+    }
+    let upper = trunc(sqrt(n))
+    for i in 3.step(2, upper) {
+        if n % i == 0 {
+            return false
+        }
+    }
+    true
+}
+
+fn factors(n: Int) -> Vec<Int> {
+    let mut i = 2
+    let mut v = vec()
+    while i * i <= n {
+        if n % i == 0 {
+            v = push(v, i)
+            n = trunc(n / i)
+        } else {
+            i = i + 1
+        }
+    }
+    if n > 1 {
+        v = push(v, n)
+    }
+    sort(v)
+    v
+}
+
+fn sort(v: Vec<Int>) -> Vec<Int> {
+    if v.len() < 2 {
+        return v
+    }
+    let mid = len(v) / 2
+    let left = sort(v.slice(0, Some(mid)))
+    let right = sort(v.slice(mid, None))
+    merge(left, right)
+}
+
+fn merge(left: Vec<Int>, right: Vec<Int>) -> Vec<Int> {
+    let mut left_ix = 0
+    let mut right_ix = 0
+    let mut v = vec()
+    while left_ix < len(left) && right_ix < len(right) {
+        if left.get(left_ix)? < right.get(right_ix)? {
+            v = push(v, left.get(left_ix)?)
+            left_ix = left_ix + 1
+        } else {
+            v = push(v, right.get(right_ix)?)
+            right_ix = right_ix + 1
+        }
+    }
+    while left_ix < len(left) {
+        v = push(v, left.get(left_ix)?)
+        left_ix = left_ix + 1
+    }
+    while right_ix < len(right) {
+        v = push(v, right.get(right_ix)?)
+        right_ix = right_ix + 1
+    }
+    v
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(vec(), 3), 42) }
+    print(first_big(r.values))            // field access copies: r stays usable
+    let r2 = Reading { label: "lab2", ..r }
+    match second(r2.values) {
+        Some(n) => print(n),
+        None => print_str("too short"),
+    }
+}

@@ -1,0 +1,16 @@
+fn next(a: &Int, b: &Int) -> Int {
+    a + b
+}
+
+fn main() {
+    let mut a = 1
+    let mut b = 1
+    for _ in 0.upto(9) {
+        let c = next(&a, &b)
+        print(c)
+        drop a
+        a = &b
+        drop b
+        b = &c
+    }
+}

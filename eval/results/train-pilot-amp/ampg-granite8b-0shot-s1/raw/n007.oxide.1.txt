@@ -1,0 +1,14 @@
+fn main() {
+    printed = 0
+    num = 9875
+    loop_range = range(0, 5)
+    loop_range_len = len(loop_range)
+    loop_range_idx = 0
+    while loop_range_idx < loop_range_len {
+        loop_range_idx_current_value = get(loop_range, loop_range_idx).unwrap()
+        digit = get(num, loop_range_idx_current_value).unwrap()
+        printed = printed + digit
+        loop_range_idx = loop_range_idx + 1
+    }
+    print(printed)
+}

@@ -1,0 +1,25 @@
+fn min_max(v: Vec<Int>) -> Option<Int> {
+    if v.len() == 0 {
+        None
+    } else {
+        let mut min_val = v.first().copied().unwrap_or(0)
+        let mut max_val = v.first().copied().unwrap_or(0)
+        for x in v {
+            if x < min_val {
+                min_val = x
+            }
+            if x > max_val {
+                max_val = x
+            }
+        }
+        Some(max_val - min_val)
+    }
+}
+
+fn main() {
+    let figures = vec(8, 3, 11, 6)
+    match min_max(figures) {
+        Some(gap) => print(gap),
+        None => print_str("empty vector"),
+    }
+}

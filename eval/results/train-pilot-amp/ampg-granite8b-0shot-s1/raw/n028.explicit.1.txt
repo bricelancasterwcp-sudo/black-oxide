@@ -1,0 +1,8 @@
+fn main() {
+    let n = parse_int(read_line()).unwrap_or(0)
+    if n <= 0 {
+        print("bad")
+        return
+    }
+    print(n)
+}

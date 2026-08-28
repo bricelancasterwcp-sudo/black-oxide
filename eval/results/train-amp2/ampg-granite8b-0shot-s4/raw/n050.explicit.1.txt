@@ -1,0 +1,268 @@
+fn main() {
+    let scores = vec(2, 9, 5)
+    let mut sorted = clone(&scores)
+    for i in 0.until(sorted.len()) {
+        for j in i + 1.until(sorted.len()) {
+            if sorted.get(j) < sorted.get(i) {
+                let tmp = sorted.get(i)
+                sorted = functional_update(sorted, i, sorted.get(j))
+                sorted = functional_update(sorted, j, tmp)
+            }
+        }
+    }
+    for score in &sorted {
+        print(score)
+    }
+}
+
+fn functional_update(v: Vec<Int>, index: Int, val: Int) -> Vec<Int> {
+    let mut result = clone(&v)
+    result = functional_update_helper(result, index, val)
+    result
+}
+
+fn functional_update_helper(v: Vec<Int>, index: Int, val: Int) -> Vec<Int> {
+    if index == 0 {
+        push(push(vec(), val), v.get(1.into()))
+    } else {
+        push(functional_update_helper(v, index - 1.into(), v.get(index)), val)
+    }
+}
+
+fn print(x: Int) {
+    println(trunc(x).to_str())
+}
+
+fn println(s: Str) {
+    print_str(s + "\n")
+}
+
+enum Option {
+    Some(T),
+    Nullary,
+}
+
+fn functional_update(v: Vec<Int>, index: Int, val: Int) -> Vec<Int> {
+    let mut result = clone(&v)
+    result = functional_update_helper(result, index, val)
+    result
+}
+
+fn functional_update_helper(v: Vec<Int>, index: Int, val: Int) -> Vec<Int> {
+    if index == 0 {
+        push(push(vec(), val), v.get(1.into()))
+    } else {
+        push(functional_update_helper(v, index - 1.into(), v.get(index)), val)
+    }
+}
+
+fn print(x: Int) {
+    println(trunc(x).to_str())
+}
+
+fn println(s: Str) {
+    print_str(s + "\n")
+}
+
+enum Option {
+    Some(T),
+    Nullary,
+}
+
+fn functional_update(v: Vec<Int>, index: Int, val: Int) -> Vec<Int> {
+    let mut result = clone(&v)
+    result = functional_update_helper(result, index, val)
+    result
+}
+
+fn functional_update_helper(v: Vec<Int>, index: Int, val: Int) -> Vec<Int> {
+    if index == 0 {
+        push(push(vec(), val), v.get(1.into()))
+    } else {
+        push(functional_update_helper(v, index - 1.into(), v.get(index)), val)
+    }
+}
+
+fn print(x: Int) {
+    println(trunc(x).to_str())
+}
+
+fn println(s: Str) {
+    print_str(s + "\n")
+}
+
+enum Option {
+    Some(T),
+    Nullary,
+}
+
+fn functional_update(v: Vec<Int>, index: Int, val: Int) -> Vec<Int> {
+    let mut result = clone(&v)
+    result = functional_update_helper(result, index, val)
+    result
+}
+
+fn functional_update_helper(v: Vec<Int>, index: Int, val: Int) -> Vec<Int> {
+    if index == 0 {
+        push(push(vec(), val), v.get(1.into()))
+    } else {
+        push(functional_update_helper(v, index - 1.into(), v.get(index)), val)
+    }
+}
+
+fn print(x: Int) {
+    println(trunc(x).to_str())
+}
+
+fn println(s: Str) {
+    print_str(s + "\n")
+}
+
+enum Option {
+    Some(T),
+    Nullary,
+}
+
+fn functional_update(v: Vec<Int>, index: Int, val: Int) -> Vec<Int> {
+    let mut result = clone(&v)
+    result = functional_update_helper(result, index, val)
+    result
+}
+
+fn functional_update_helper(v: Vec<Int>, index: Int, val: Int) -> Vec<Int> {
+    if index == 0 {
+        push(push(vec(), val), v.get(1.into()))
+    } else {
+        push(functional_update_helper(v, index - 1.into(), v.get(index)), val)
+    }
+}
+
+fn print(x: Int) {
+    println(trunc(x).to_str())
+}
+
+fn println(s: Str) {
+    print_str(s + "\n")
+}
+
+enum Option {
+    Some(T),
+    Nullary,
+}
+
+fn functional_update(v: Vec<Int>, index: Int, val: Int) -> Vec<Int> {
+    let mut result = clone(&v)
+    result = functional_update_helper(result, index, val)
+    result
+}
+
+fn functional_update_helper(v: Vec<Int>, index: Int, val: Int) -> Vec<Int> {
+    if index == 0 {
+        push(push(vec(), val), v.get(1.into()))
+    } else {
+        push(functional_update_helper(v, index - 1.into(), v.get(index)), val)
+    }
+}
+
+fn print(x: Int) {
+    println(trunc(x).to_str())
+}
+
+fn println(s: Str) {
+    print_str(s + "\n")
+}
+
+enum Option {
+    Some(T),
+    Nullary,
+}
+
+fn functional_update(v: Vec<Int>, index: Int, val: Int) -> Vec<Int> {
+    let mut result = clone(&v)
+    result = functional_update_helper(result, index, val)
+    result
+}
+
+fn functional_update_helper(v: Vec<Int>, index: Int, val: Int) -> Vec<Int> {
+    if index == 0 {
+        push(push(vec(), val), v.get(1.into()))
+    } else {
+        push(functional_update_helper(v, index - 1.into(), v.get(index)), val)
+    }
+}
+
+fn print(x: Int) {
+    println(trunc(x).to_str())
+}
+
+fn println(s: Str) {
+    print_str(s + "\n")
+}
+
+enum Option {
+    Some(T),
+    Nullary,
+}
+
+fn functional_update(v: Vec<Int>, index: Int, val: Int) -> Vec<Int> {
+    let mut result = clone(&v)
+    result = functional_update_helper(result, index, val)
+    result
+}
+
+fn functional_update_helper(v: Vec<Int>, index: Int, val: Int) -> Vec<Int> {
+    if index == 0 {
+        push(push(vec(), val), v.get(1.into()))
+    } else {
+        push(functional_update_helper(v, index - 1.into(), v.get(index)), val)
+    }
+}
+
+fn print(x: Int) {
+    println(trunc(x).to_str())
+}
+
+fn println(s: Str) {
+    print_str(s + "\n")
+}
+
+enum Option {
+    Some(T),
+    Nullary,
+}
+
+fn functional_update(v: Vec<Int>, index: Int, val: Int) -> Vec<Int> {
+    let mut result = clone(&v)
+    result = functional_update_helper(result, index, val)
+    result
+}
+
+fn functional_update_helper(v: Vec<Int>, index: Int, val: Int) -> Vec<Int> {
+    if index == 0 {
+        push(push(vec(), val), v.get(1.into()))
+    } else {
+        push(functional_update_helper(v, index - 1.into(), v.get(index)), val)
+    }
+}
+
+fn print(x: Int) {
+    println(trunc(x).to_str())
+}
+
+fn println(s: Str) {
+    print_str(s + "\n")
+}
+
+enum Option {
+    Some(T),
+    Nullary,
+}
+
+fn functional_update(v: Vec<Int>, index: Int, val: Int) -> Vec<Int> {
+    let mut result = clone(&v)
+    result = functional_update_helper(result, index, val)
+    result
+}
+
+fn functional_update_helper(v: Vec<Int>, index: Int, val: Int) -> Vec<Int> {
+   

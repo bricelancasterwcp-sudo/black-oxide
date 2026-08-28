@@ -1,0 +1,11 @@
+fn main() {
+    let mut numbers = vec_int(9, 2, 12, 5, 16)
+    let mut counter = 0
+    for x in &numbers {
+        if x < 10 {
+            print(x)
+            counter = counter + 1
+        }
+    }
+    print(counter)
+}

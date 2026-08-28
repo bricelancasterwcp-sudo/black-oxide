@@ -1,0 +1,29 @@
+fn main() {
+    let green = true
+    let red = false
+    let yellow = true
+    let stop = true
+    let go = false
+    let wait = true
+    while green || red || yellow {
+        if red {
+            stop = true
+            go = false
+            wait = false
+        }
+        if yellow {
+            stop = false
+            go = false
+            wait = true
+        }
+        if go {
+            print_str("Go!")
+        }
+        if stop {
+            print_str("Stop!")
+        }
+        if wait {
+            print_str("Wait!")
+        }
+    }
+}

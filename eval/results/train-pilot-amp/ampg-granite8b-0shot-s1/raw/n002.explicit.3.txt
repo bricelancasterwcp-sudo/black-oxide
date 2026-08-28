@@ -1,0 +1,11 @@
+fn fact(x: Int) -> Int {
+    if x > 1 {
+        x * fact(x - 1)
+    } else {
+        1
+    }
+}
+
+fn main() {
+    print(fact(6))
+}

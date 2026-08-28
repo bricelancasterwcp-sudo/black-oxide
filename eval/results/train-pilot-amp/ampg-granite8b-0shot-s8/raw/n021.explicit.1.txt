@@ -1,0 +1,10 @@
+fn main() {
+    let word = "programming".to_string().chars().collect()
+    let mut index = 0
+    let mut count = 0
+    while index < word.len() {
+        count = count + 1
+        drop index
+    }
+    drop count
+}

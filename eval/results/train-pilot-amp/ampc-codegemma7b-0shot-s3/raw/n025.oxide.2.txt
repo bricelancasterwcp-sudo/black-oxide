@@ -1,0 +1,16 @@
+fn read_int() -> Option<Int> {
+    let s = stdin().read_line()?.trim().to_lowercase().chars().collect()
+    if s.len() == 1 && (s.get(0)? == "0" || s.get(0)? == "1" || s.get(0)? == "2" || s.get(0)? == "3" || s.get(0)? == "4" || s.get(0)? == "5" || s.get(0)? == "6" || s.get(0)? == "7" || s.get(0)? == "8" || s.get(0)? == "9") {
+        return Some(s.get(0)?.to_digit(10)? - 48)
+    } else {
+        return None
+    }
+}
+
+fn main() {
+    let num = read_int()
+    match num {
+        Some(n) => print(n + 1),
+        None => print_str("bad"),
+    }
+}

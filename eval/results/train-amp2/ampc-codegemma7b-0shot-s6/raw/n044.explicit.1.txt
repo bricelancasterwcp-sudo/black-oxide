@@ -1,0 +1,296 @@
+fn main() {
+    let mut balance = 0.0
+    deposit(3.0)
+    print(balance)
+    deposit(1.0)
+    print(balance)
+    deposit(4.0)
+    print(balance)
+    deposit(1.0)
+    print(balance)
+    deposit(5.0)
+    print(balance)
+}
+
+fn deposit(amount: Float) -> Float {
+    let new_balance = balance + amount
+    balance = new_balance
+    new_balance
+}
+
+fn print(balance: Float) {
+    let str_balance = int_to_str(trunc(balance))
+    print_str(str_balance)
+    print_str("\n")
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut digits = vec()
+    let mut num = n
+    while num > 0 {
+        digits.push(num % 10)
+        num = num / 10
+    }
+    let mut str_balance = str()
+    for digit in digits {
+        str_balance = concat(str_balance, int_to_str(digit))
+    }
+    str_balance
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut c = str()
+    for char in a.chars() {
+        c = concat(c, char)
+    }
+    for char in b.chars() {
+        c = concat(c, char)
+    }
+    c
+}
+
+fn trunc(x: Float) -> Int {
+    if x >= 0.0 {
+        trunc(x - 0.5) + 1
+    } else {
+        trunc(x + 0.5) - 1
+    }
+}
+
+fn print_str(s: Str) {
+    for char in s.chars() {
+        print(char)
+    }
+}
+
+fn print(c: Char) {
+    if c == 76 {
+        print_str(".")
+    } else if c == 77 {
+        print_str(",")
+    } else if c == 78 {
+        print_str("\n")
+    } else {
+        print_str(char)
+    }
+}
+
+fn char(c: Int) -> Char {
+    if c >= 0 && c <= 25 {
+        c + 65
+    } else if c >= 26 && c <= 51 {
+        c + 71
+    } else {
+        c + 48
+    }
+}
+
+fn main() {
+    let mut balance = 0.0
+    deposit(3.0)
+    print(balance)
+    deposit(1.0)
+    print(balance)
+    deposit(4.0)
+    print(balance)
+    deposit(1.0)
+    print(balance)
+    deposit(5.0)
+    print(balance)
+}
+
+fn deposit(amount: Float) -> Float {
+    let new_balance = balance + amount
+    balance = new_balance
+    new_balance
+}
+
+fn print(balance: Float) {
+    let str_balance = int_to_str(trunc(balance))
+    print_str(str_balance)
+    print_str("\n")
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut digits = vec()
+    let mut num = n
+    while num > 0 {
+        digits.push(num % 10)
+        num = num / 10
+    }
+    let mut str_balance = str()
+    for digit in digits {
+        str_balance = concat(str_balance, int_to_str(digit))
+    }
+    str_balance
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut c = str()
+    for char in a.chars() {
+        c = concat(c, char)
+    }
+    for char in b.chars() {
+        c = concat(c, char)
+    }
+    c
+}
+
+fn trunc(x: Float) -> Int {
+    if x >= 0.0 {
+        trunc(x - 0.5) + 1
+    } else {
+        trunc(x + 0.5) - 1
+    }
+}
+
+fn print_str(s: Str) {
+    for char in s.chars() {
+        print(char)
+    }
+}
+
+fn print(c: Char) {
+    if c == 76 {
+        print_str(".")
+    } else if c == 77 {
+        print_str(",")
+    } else if c == 78 {
+        print_str("\n")
+    } else {
+        print_str(char)
+    }
+}
+
+fn char(c: Int) -> Char {
+    if c >= 0 && c <= 25 {
+        c + 65
+    } else if c >= 26 && c <= 51 {
+        c + 71
+    } else {
+        c + 48
+    }
+}
+
+fn main() {
+    let mut balance = 0.0
+    deposit(3.0)
+    print(balance)
+    deposit(1.0)
+    print(balance)
+    deposit(4.0)
+    print(balance)
+    deposit(1.0)
+    print(balance)
+    deposit(5.0)
+    print(balance)
+}
+
+fn deposit(amount: Float) -> Float {
+    let new_balance = balance + amount
+    balance = new_balance
+    new_balance
+}
+
+fn print(balance: Float) {
+    let str_balance = int_to_str(trunc(balance))
+    print_str(str_balance)
+    print_str("\n")
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut digits = vec()
+    let mut num = n
+    while num > 0 {
+        digits.push(num % 10)
+        num = num / 10
+    }
+    let mut str_balance = str()
+    for digit in digits {
+        str_balance = concat(str_balance, int_to_str(digit))
+    }
+    str_balance
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut c = str()
+    for char in a.chars() {
+        c = concat(c, char)
+    }
+    for char in b.chars() {
+        c = concat(c, char)
+    }
+    c
+}
+
+fn trunc(x: Float) -> Int {
+    if x >= 0.0 {
+        trunc(x - 0.5) + 1
+    } else {
+        trunc(x + 0.5) - 1
+    }
+}
+
+fn print_str(s: Str) {
+    for char in s.chars() {
+        print(char)
+    }
+}
+
+fn print(c: Char) {
+    if c == 76 {
+        print_str(".")
+    } else if c == 77 {
+        print_str(",")
+    } else if c == 78 {
+        print_str("\n")
+    } else {
+        print_str(char)
+    }
+}
+
+fn char(c: Int) -> Char {
+    if c >= 0 && c <= 25 {
+        c + 65
+    } else if c >= 26 && c <= 51 {
+        c + 71
+    } else {
+        c + 48
+    }
+}
+
+fn main() {
+    let mut balance = 0.0
+    deposit(3.0)
+    print(balance)
+    deposit(1.0)
+    print(balance)
+    deposit(4.0)
+    print(balance)
+    deposit(1.0)
+    print(balance)
+    deposit(5.0)
+    print(balance)
+}
+
+fn deposit(amount: Float) -> Float {
+    let new_balance = balance + amount
+    balance = new_balance
+    new_balance
+}
+
+fn print(balance: Float) {
+    let str_balance = int_to_str(trunc(balance))
+    print_str(str_balance)
+    print_str("\n")
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut digits = vec()
+    let mut num = n
+    while num > 0 {
+        digits.push(num % 10)
+        num = num / 10
+    }
+    let mut str_balance = str()
+    for digit

@@ -1,0 +1,13 @@
+fn smallest(l: Vec<Int>) -> Int {
+    let mut s = 100
+    for x in &l {
+        if x < s {
+            s = x
+        }
+    }
+    s
+}
+
+fn main() {
+    print(smallest(push(push(vec(), 9), 2), push(vec(), 7), push(vec(), 4)))
+}

@@ -1,0 +1,11 @@
+fn reverse(name: &Str) -> Str {
+    let mut reversed = ""
+    for i in (0).to(str_len(&name) - 1) {
+        reversed = concat(&reversed, get(&chars, i))
+    }
+    reversed
+}
+
+fn main() {
+    print(reverse("drum"))
+}

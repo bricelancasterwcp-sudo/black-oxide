@@ -1,0 +1,7 @@
+fn main() {
+    let n = 1
+    for i in 1 < 10 {
+        n = n + i
+    }
+    print(n)
+}

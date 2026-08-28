@@ -1,0 +1,6 @@
+fn main(){
+    [8,15,"oak"].into_iter().for_each(|n| match n{
+        i if i>0 => println!("{}",i),
+        _ => println!("bad"),
+    })
+}

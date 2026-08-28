@@ -1,0 +1,14 @@
+fn main() {
+    use std::io::Read;
+    let mut buf = [0u8; 1];
+    match std::io::stdin().read(&mut buf) {
+        Ok(n) => {
+            if n == 0 {
+                println!("bad");
+            } else {
+                println!("good");
+            }
+        }
+        Err(_) => println!("bad"),
+    }
+}

@@ -1,0 +1,9 @@
+fn main() {
+    print("go for green")
+    drop _signal
+    let _signal = "yellow"
+    print("wait for yellow")
+    drop _signal
+    let _signal = "red"
+    print("stop for red")
+}

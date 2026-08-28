@@ -1,0 +1,422 @@
+fn main() {
+    let mut scores = vec(2, 9, 5)
+    scores.sort_by_key(std.cmp.reverse)
+    for score in &scores {
+        println(score)
+    }
+}
+
+fn main() {
+    let mut scores = vec(2, 9, 5)
+    scores.sort_by_key(stdcmpreverse)
+    for score in &scores {
+        println(score)
+    }
+}
+
+fn stdcmpreverse(a: &Int, b: &Int) -> Ordering {
+    b.cmp(a)
+}
+
+fn println(x: &Int) {
+    print(x)
+    print("\n")
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print(x: &Int) {
+    print(x)
+}
+
+fn print

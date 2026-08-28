@@ -1,0 +1,9 @@
+fn get_two(list: &Vec<Int>) -> Int {
+    get(list, 2)
+}
+
+fn main() {
+    let list = push(push(push(push(vec(), 10), 20), 30), 40)
+    print(get_two(&list))
+    drop list
+}

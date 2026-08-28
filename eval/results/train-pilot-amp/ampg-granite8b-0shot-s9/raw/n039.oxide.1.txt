@@ -1,0 +1,18 @@
+struct List { head: Int, tail: Vec<Int> }
+
+fn get_fifth(l: List) -> Option<Int> {
+    let mut result = None
+    for i in range(0, 5) {
+        result = if i == 4 { Some(get(l.tail, i)?) } else { result }
+    }
+    result
+}
+
+fn main() {
+    let l = List { head: 1, tail: push(vec(), 2) }
+    let l2 = List { head: 42, ..l }
+    match get_fifth(l2) {
+        Some(n) => print(n),
+        None => print_str("not found"),
+    }
+}

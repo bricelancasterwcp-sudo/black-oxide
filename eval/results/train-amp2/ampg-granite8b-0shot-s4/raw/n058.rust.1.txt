@@ -1,0 +1,9 @@
+fn main() {
+    let coffee = "coffee";
+    let mut letters = std::collections::HashSet::new();
+    for letter in coffee.chars() {
+        if !letters.insert(letter) {
+            println!("{}", letter);
+        }
+    }
+}

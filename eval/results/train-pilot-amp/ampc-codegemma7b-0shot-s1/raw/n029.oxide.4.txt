@@ -1,0 +1,6 @@
+fn main() {
+    let one = int_to_str(1)
+    let two = int_to_str(2)
+    let three = int_to_str(3)
+    print(concat(concat(one, " "), concat(two, " "), three))
+}

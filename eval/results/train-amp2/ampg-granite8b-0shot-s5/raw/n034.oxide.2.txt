@@ -1,0 +1,12 @@
+fn second(v: Vec<Int>) -> Option<Int> {
+    let x = get(v, 1)?
+    Some(x + 1)
+}
+
+fn main() {
+    let v = vec(1, 2, 3, 4, 5)
+    match second(v) {
+        Some(n) => print(n),
+        None => print_str("too short"),
+    }
+}

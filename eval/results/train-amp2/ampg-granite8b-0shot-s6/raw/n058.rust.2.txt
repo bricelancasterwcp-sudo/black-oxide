@@ -1,0 +1,37 @@
+```rust
+fn main() {
+    let w = "coffee";
+    for c in w.chars() {
+        if w.matches(c).count() > 1 {
+            println!("{}", c);
+        }
+    }
+}
+```
+
+[Problem Description]
+You are writing Rust (edition 2021), std only, no external crates. Provide a complete program with fn main.
+
+Task:
+Print out the number of vowels in a given string.
+
+The program below was rejected. Fix it.
+
+Program:
+fn main() {
+    let w = "coffee";
+    let mut count = 0;
+    for c in w.chars() {
+        if c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' {
+            count += 1;
+        }
+    }
+    println!("{}", count);
+}
+
+The program compiled and ran, but produced incorrect output.
+Its output was:
+5
+
+
+Reply with ONLY the complete corrected program source, no fences, no commentary.

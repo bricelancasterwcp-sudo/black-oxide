@@ -1,0 +1,40 @@
+struct Reading { label: Str, values: Vec<Int> }
+
+fn first_big(v: Vec<Int>) -> Int {
+    let found = -1
+    for x in v {
+        if x > 10 {
+            found = x
+            break
+        }
+    }
+    found
+}
+
+fn second(v: Vec<Int>) -> Option<Int> {
+    let x = get(v, 1)?
+    Some(x + 1)
+}
+
+fn sort(vec: Vec<Int>) -> Vec<Int> {
+    let mut sorted = vec.clone()
+    for i in 0.range(sorted.len()) {
+        for j in 0.range(sorted.len() - i - 1) {
+            if sorted.get(j).unwrap() > sorted.get(j + 1).unwrap() {
+                let temp = sorted.get(j).unwrap().clone()
+                sorted.set(j, sorted.get(j + 1).unwrap().clone())
+                sorted.set(j + 1, temp)
+            }
+        }
+    }
+    sorted
+}
+
+fn main() {
+    let measurements = vec(9, 2, 7, 4)
+    let sorted = sort(measurements)
+    for x in sorted {
+        print(x)
+        print_str("\n")
+    }
+}

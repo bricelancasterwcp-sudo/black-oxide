@@ -1,0 +1,16 @@
+struct SumAndCube { sum: Int, cube: Int }
+
+fn sum_and_cube(n: Int) -> SumAndCube {
+    let sum = (1 + n).div(2).mul(n)
+    let cube = sum.mul(sum).mul(sum)
+    SumAndCube(sum, cube)
+}
+
+fn main() {
+    let mut total = 0
+    for n in 1 + 100 + 1 {
+        let SumAndCube { sum, cube } = sum_and_cube(n)
+        total = total + cube
+    }
+    print(total)
+}

@@ -1,0 +1,12 @@
+fn log2(mutn: Int) -> Int {
+    while (mutn && 1) == 0 {
+        mutn = mutn / 2
+    }
+    mutn
+}
+
+fn main() {
+    let x = log2(100)
+    print(x)
+    drop x
+}

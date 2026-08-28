@@ -1,0 +1,16 @@
+fn area(w: Int, h: Int) -> Int {
+    w * h
+}
+
+fn perimeter(w: Int, h: Int) -> Int {
+    2 * (w + h)
+}
+
+fn main() {
+    let rect = (9.0.to_int() - trunc(0.5, 9.0.to_int()) - trunc(0.5, 3.0.to_int())) * (3.0.to_int() - trunc(0.5, 3.0.to_int()) - trunc(0.5, 3.0.to_int()))
+    print(rect)
+    drop rect
+    let peri = 2 * (9.0.to_int() - trunc(0.5, 9.0.to_int()) - trunc(0.5, 3.0.to_int()) + 3.0.to_int() - trunc(0.5, 3.0.to_int()) - trunc(0.5, 3.0.to_int()))
+    print(peri)
+    drop peri
+}

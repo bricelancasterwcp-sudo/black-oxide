@@ -1,0 +1,15 @@
+fn walk(a: &Vec<Int>, b: Int, c: &Vec<Int>) -> Int {
+    let mut total = 0
+    for i in 0 <= a.len() && i < b {
+        if i % 2 == 1 {
+            print(2 * a.get(i).unwrap())
+            total = total + 2 * a.get(i).unwrap()
+        }
+    }
+    total + walk(c, b + 1, a)
+}
+
+fn main() {
+    let a = push(push(push(push(vec(), 7), 4), 9), 10)
+    print(walk(&a, 0, &a))
+}

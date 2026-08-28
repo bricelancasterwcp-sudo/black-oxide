@@ -1,0 +1,6 @@
+fn main() {
+    for c in "coffee".chars() {
+        print(&c)
+        drop c
+    }
+}

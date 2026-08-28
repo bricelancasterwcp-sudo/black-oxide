@@ -1,0 +1,33 @@
+fn deposit(balance: &Int, amount: Int) -> Int {
+    let new_balance = balance + amount
+    drop balance
+    new_balance
+}
+
+fn withdraw(balance: &Int, amount: Int) -> Int {
+    let new_balance = balance - amount
+    drop balance
+    new_balance
+}
+
+fn check_balance(balance: Int) {
+    if balance >= 0 {
+        print("You have enough money.")
+    } else {
+        print("You're overdrawn.")
+    }
+}
+
+fn main() {
+    let mut balance = 0
+    balance = deposit(&balance, 3)
+    check_balance(balance)
+    balance = withdraw(&balance, 1)
+    check_balance(balance)
+    balance = deposit(&balance, 4)
+    check_balance(balance)
+    balance = withdraw(&balance, 1)
+    check_balance(balance)
+    balance = deposit(&balance, 5)
+    check_balance(balance)
+}

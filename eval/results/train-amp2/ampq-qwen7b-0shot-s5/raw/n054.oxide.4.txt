@@ -1,0 +1,14 @@
+fn main() {
+    let vowels = "aeiouAEIOU".chars().collectVec()
+    let mut vowel_count = 0
+    let mut non_vowel_count = 0
+    for c in "keyboard".chars() {
+        if vowels.contains(c) {
+            vowel_count = vowel_count + 1
+        } else {
+            non_vowel_count = non_vowel_count + 1
+        }
+    }
+    print(vowel_count)
+    print(non_vowel_count)
+}

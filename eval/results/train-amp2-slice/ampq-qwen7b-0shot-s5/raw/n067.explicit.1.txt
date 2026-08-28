@@ -1,0 +1,18 @@
+fn process_list(v: Vec<Int>) -> Int {
+    let mut total_even = 0
+    for x in v {
+        if x % 2 != 0 {
+            print(x * 2)
+            print_str("\n")
+        } else {
+            total_even = total_even + x
+        }
+    }
+    total_even
+}
+
+fn main() {
+    let nums = vec(7, 4, 9, 10)
+    let result = process_list(nums)
+    print(result)
+}

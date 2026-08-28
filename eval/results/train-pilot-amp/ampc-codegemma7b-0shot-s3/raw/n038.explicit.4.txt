@@ -1,0 +1,384 @@
+fn main() {
+    let mut device = Device { sensor: Sensor { reading: 0 } }
+    device.sensor.reading = 7
+    print(device.sensor.reading)
+    drop device
+}
+
+struct Device {
+    sensor: Sensor,
+}
+
+struct Sensor {
+    reading: Int,
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn drop_device(mut_device: Device) {
+    drop mut_device
+}
+
+fn drop_sensor(mut_sensor: Sensor) {
+    drop mut_sensor
+}
+
+fn drop_reading(mut_reading: Int) {
+    drop mut_reading
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn len(v: Vec<Int>) -> Int {
+    len(v)
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    get(v, i)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    range(a, b)
+}
+
+fn clone(x: Int) -> Int {
+    clone(x)
+}
+
+fn str_len(s: Str) -> Int {
+    str_len(s)
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    concat(a, b)
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    parse_int(s)
+}
+
+fn to_float(n: Int) -> Float {
+    to_float(n)
+}
+
+fn trunc(x: Int) -> Int {
+    trunc(x)
+}
+
+fn drop_int(mut_int: Int) {
+    drop mut_int
+}
+
+fn drop_float(mut_float: Float) {
+    drop mut_float
+}
+
+fn drop_bool(mut_bool: Bool) {
+    drop mut_bool
+}
+
+fn drop_str(mut_str: Str) {
+    drop mut_str
+}
+
+fn drop_unit() {
+    drop_unit()
+}
+
+fn drop_vec(mut_vec: Vec<Int>) {
+    drop mut_vec
+}
+
+fn drop_option(mut_option: Option<Int>) {
+    drop mut_option
+}
+
+fn drop_result(mut_result: Result<Int, Int>) {
+    drop mut_result
+}
+
+fn drop_device(mut_device: Device) {
+    drop mut_device
+}
+
+fn drop_sensor(mut_sensor: Sensor) {
+    drop mut_sensor
+}
+
+fn drop_reading(mut_reading: Int) {
+    drop mut_reading
+}
+
+fn drop_device(mut_device: Device) {
+    drop mut_device
+}
+
+fn drop_sensor(mut_sensor: Sensor) {
+    drop mut_sensor
+}
+
+fn drop_reading(mut_reading: Int) {
+    drop mut_reading
+}
+
+fn drop_device(mut_device: Device) {
+    drop mut_device
+}
+
+fn drop_sensor(mut_sensor: Sensor) {
+    drop mut_sensor
+}
+
+fn drop_reading(mut_reading: Int) {
+    drop mut_reading
+}
+
+fn drop_device(mut_device: Device) {
+    drop mut_device
+}
+
+fn drop_sensor(mut_sensor: Sensor) {
+    drop mut_sensor
+}
+
+fn drop_reading(mut_reading: Int) {
+    drop mut_reading
+}
+
+fn drop_device(mut_device: Device) {
+    drop mut_device
+}
+
+fn drop_sensor(mut_sensor: Sensor) {
+    drop mut_sensor
+}
+
+fn drop_reading(mut_reading: Int) {
+    drop mut_reading
+}
+
+fn drop_device(mut_device: Device) {
+    drop mut_device
+}
+
+fn drop_sensor(mut_sensor: Sensor) {
+    drop mut_sensor
+}
+
+fn drop_reading(mut_reading: Int) {
+    drop mut_reading
+}
+
+fn drop_device(mut_device: Device) {
+    drop mut_device
+}
+
+fn drop_sensor(mut_sensor: Sensor) {
+    drop mut_sensor
+}
+
+fn drop_reading(mut_reading: Int) {
+    drop mut_reading
+}
+
+fn drop_device(mut_device: Device) {
+    drop mut_device
+}
+
+fn drop_sensor(mut_sensor: Sensor) {
+    drop mut_sensor
+}
+
+fn drop_reading(mut_reading: Int) {
+    drop mut_reading
+}
+
+fn drop_device(mut_device: Device) {
+    drop mut_device
+}
+
+fn drop_sensor(mut_sensor: Sensor) {
+    drop mut_sensor
+}
+
+fn drop_reading(mut_reading: Int) {
+    drop mut_reading
+}
+
+fn drop_device(mut_device: Device) {
+    drop mut_device
+}
+
+fn drop_sensor(mut_sensor: Sensor) {
+    drop mut_sensor
+}
+
+fn drop_reading(mut_reading: Int) {
+    drop mut_reading
+}
+
+fn drop_device(mut_device: Device) {
+    drop mut_device
+}
+
+fn drop_sensor(mut_sensor: Sensor) {
+    drop mut_sensor
+}
+
+fn drop_reading(mut_reading: Int) {
+    drop mut_reading
+}
+
+fn drop_device(mut_device: Device) {
+    drop mut_device
+}
+
+fn drop_sensor(mut_sensor: Sensor) {
+    drop mut_sensor
+}
+
+fn drop_reading(mut_reading: Int) {
+    drop mut_reading
+}
+
+fn drop_device(mut_device: Device) {
+    drop mut_device
+}
+
+fn drop_sensor(mut_sensor: Sensor) {
+    drop mut_sensor
+}
+
+fn drop_reading(mut_reading: Int) {
+    drop mut_reading
+}
+
+fn drop_device(mut_device: Device) {
+    drop mut_device
+}
+
+fn drop_sensor(mut_sensor: Sensor) {
+    drop mut_sensor
+}
+
+fn drop_reading(mut_reading: Int) {
+    drop mut_reading
+}
+
+fn drop_device(mut_device: Device) {
+    drop mut_device
+}
+
+fn drop_sensor(mut_sensor: Sensor) {
+    drop mut_sensor
+}
+
+fn drop_reading(mut_reading: Int) {
+    drop mut_reading
+}
+
+fn drop_device(mut_device: Device) {
+    drop mut_device
+}
+
+fn drop_sensor(mut_sensor: Sensor) {
+    drop mut_sensor
+}
+
+fn drop_reading(mut_reading: Int) {
+    drop mut_reading
+}
+
+fn drop_device(mut_device: Device) {
+    drop mut_device
+}
+
+fn drop_sensor(mut_sensor: Sensor) {
+    drop mut_sensor
+}
+
+fn drop_reading(mut_reading: Int) {
+    drop mut_reading
+}
+
+fn drop_device(mut_device: Device) {
+    drop mut_device
+}
+
+fn drop_sensor(mut_sensor: Sensor) {
+    drop mut_sensor
+}
+
+fn drop_reading(mut_reading: Int) {
+    drop mut_reading
+}
+
+fn drop_device(mut_device: Device) {
+    drop mut_device
+}
+
+fn drop_sensor(mut_sensor: Sensor) {
+    drop mut_sensor
+}
+
+fn drop_reading(mut_reading: Int) {
+    drop mut_reading
+}
+
+fn drop_device(mut_device: Device) {
+    drop mut_device
+}
+
+fn drop_sensor(mut_sensor: Sensor) {
+    drop mut_sensor
+}
+
+fn drop_reading(mut_reading: Int) {
+    drop mut_reading
+}
+
+fn drop_device(mut_device: Device) {
+    drop mut_device
+}
+
+fn drop_sensor(mut_sensor: Sensor) {
+    drop mut_sensor
+}
+
+fn drop_reading(mut_reading: Int) {
+    drop mut_reading
+}
+
+fn drop_device(mut_device: Device) {
+    drop mut_device
+}
+
+fn drop_sensor(mut_sensor: Sensor) {
+    drop mut_sensor
+}
+
+fn drop_reading(mut_reading: Int) {
+    drop mut_reading
+}
+
+fn drop_device(mut_device: Device) {
+    drop mut_device
+}
+
+fn drop_sensor(mut_sensor: Sensor) {
+    drop mut_sensor
+}
+
+fn drop_reading

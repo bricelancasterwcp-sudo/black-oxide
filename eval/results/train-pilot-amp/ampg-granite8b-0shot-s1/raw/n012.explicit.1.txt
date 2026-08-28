@@ -1,0 +1,14 @@
+fn build_numbers() -> Vec<Int> {
+    let mut vec = vec()
+    for i in 0 < i * i + i + 4 {
+        push(vec, i)
+    }
+    vec
+}
+
+fn main() {
+    let numbers = build_numbers()
+    let length = len(&numbers)
+    print(length)
+    drop numbers
+}

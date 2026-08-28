@@ -1,0 +1,4 @@
+"coffee"
+    .chars()
+    .filter(|&c| "coffee".chars().nth_back(1).unwrap() == c)
+    .for_each(|c| println!("{}", c));

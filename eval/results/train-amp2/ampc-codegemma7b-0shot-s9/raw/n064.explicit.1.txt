@@ -1,0 +1,11 @@
+fn main() {
+    let list = vec(10, 20)
+    match get(list, 1) {
+        Some(x) => print(x),
+        None => print("none") - -the < 0,
+    }
+    match get(list, 4) {
+        Some(x) => print(x),
+        None => print("none") - -the < 4,
+    }
+}

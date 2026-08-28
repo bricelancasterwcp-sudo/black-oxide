@@ -1,0 +1,16 @@
+use std::collections::HashMap;
+
+fn main() {
+    let mut accounts: HashMap<u32, u32> = HashMap::new();
+    accounts.insert(1, 0);
+    accounts.insert(2, 0);
+    accounts.insert(3, 0);
+    accounts.insert(4, 0);
+    accounts.insert(5, 0);
+
+    for deposit in vec![3, 1, 4, 1, 5] {
+        let balance = accounts.entry(deposit).or_insert(0);
+        *balance += 1;
+        println!("{}", balance);
+    }
+}

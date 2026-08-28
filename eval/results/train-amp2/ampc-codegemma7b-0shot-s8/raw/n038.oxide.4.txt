@@ -1,0 +1,290 @@
+fn main() {
+    let mut device = Device { sensor: Sensor { reading: SensorReading { value: Int { value: IntValue { value: 0 } } } } }
+    device.sensor.reading.value.value.value = 7
+    print(device.sensor.reading.value.value.value)
+}
+
+fn print(x: Int) {
+    let s = int_to_str(x)
+    print_str(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    "TODO"
+}
+
+fn print_str(s: Str) {
+    "TODO"
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    "TODO"
+}
+
+struct Int { value: IntValue }
+
+struct IntValue { value: Int }
+
+struct Str { value: StrValue }
+
+struct StrValue { value: String }
+
+enum SensorReading {
+    Int(Int),
+}
+
+struct Sensor { reading: SensorReading }
+
+struct Device { sensor: Sensor }
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    "TODO"
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    "TODO"
+}
+
+fn clone(x: Int) -> Int {
+    "TODO"
+}
+
+fn str_len(s: Str) -> Int {
+    "TODO"
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    "TODO"
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    "TODO"
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    "TODO"
+}
+
+fn to_float(n: Int) -> Float {
+    "TODO"
+}
+
+fn trunc(x: Float) -> Int {
+    "TODO"
+}
+
+enum Float {
+    Int(Int),
+}
+
+enum FloatValue {
+    Int(Int),
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    if i >= 0 && i < v.len() {
+        Some(v.get(i).cloned())
+    } else {
+        None
+    }
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = Vec.new()
+    for i in a.value.value.value.value.value.value() {
+        if i >= b.value.value.value.value.value.value() {
+            result.push(i)
+        }
+    }
+    result
+}
+
+fn clone(x: Int) -> Int {
+    Int(IntValue(IntValueValue(x.value.value.value)))
+}
+
+fn str_len(s: Str) -> Int {
+    Int(IntValue(IntValueValue(s.value.value.len())))
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    Str(StrValue(StrValueValue(a.value.value.to_string() + b.value.value.to_string())))
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = Vec.new()
+    for c in s.value.value.chars() {
+        result.push(Str(StrValue(StrValueValue(c.to_string()))))
+    }
+    result
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    match s.value.value.parse() {
+        Ok(n) => Some(Int(IntValue(IntValueValue(n)))),
+        Err(_) => None,
+    }
+}
+
+fn to_float(n: Int) -> Float {
+    Float(FloatValue(FloatValueValue(n.value.value.value.to_string())))
+}
+
+fn trunc(x: Float) -> Int {
+    Int(IntValue(IntValueValue(x.value.value.value.floor())))
+}
+
+fn main() {
+    let mut device = Device { sensor: Sensor { reading: SensorReading { value: Int { value: IntValue { value: 0 } } } } }
+    device.sensor.reading.value.value.value = 7
+    print(device.sensor.reading.value.value.value)
+}
+
+fn print(x: Int) {
+    let s = int_to_str(x)
+    print_str(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    "TODO"
+}
+
+fn print_str(s: Str) {
+    "TODO"
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    "TODO"
+}
+
+struct Int { value: IntValue }
+
+struct IntValue { value: Int }
+
+struct Str { value: StrValue }
+
+struct StrValue { value: String }
+
+enum SensorReading {
+    Int(Int),
+}
+
+struct Sensor { reading: SensorReading }
+
+struct Device { sensor: Sensor }
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    if i >= 0 && i < v.len() {
+        Some(v.get(i).cloned())
+    } else {
+        None
+    }
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = Vec.new()
+    for i in a.value.value.value.value.value.value() {
+        if i >= b.value.value.value.value.value.value() {
+            result.push(i)
+        }
+    }
+    result
+}
+
+fn clone(x: Int) -> Int {
+    Int(IntValue(IntValueValue(x.value.value.value)))
+}
+
+fn str_len(s: Str) -> Int {
+    Int(IntValue(IntValueValue(s.value.value.len())))
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    Str(StrValue(StrValueValue(a.value.value.to_string() + b.value.value.to_string())))
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = Vec.new()
+    for c in s.value.value.chars() {
+        result.push(Str(StrValue(StrValueValue(c.to_string()))))
+    }
+    result
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    match s.value.value.parse() {
+        Ok(n) => Some(Int(IntValue(IntValueValue(n)))),
+        Err(_) => None,
+    }
+}
+
+fn to_float(n: Int) -> Float {
+    Float(FloatValue(FloatValueValue(n.value.value.value.to_string())))
+}
+
+fn trunc(x: Float) -> Int {
+    Int(IntValue(IntValueValue(x.value.value.value.floor())))
+}
+
+fn main() {
+    let mut device = Device { sensor: Sensor { reading: SensorReading { value: Int { value: IntValue { value: 0 } } } } }
+    device.sensor.reading.value.value.value = 7
+    print(device.sensor.reading.value.value.value)
+}
+
+fn print(x: Int) {
+    let s = int_to_str(x)
+    print_str(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    "TODO"
+}
+
+fn print_str(s: Str) {
+    "TODO"
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    "TODO"
+}
+
+struct Int { value: IntValue }
+
+struct IntValue { value: Int }
+
+struct Str { value: StrValue }
+
+struct StrValue { value: String }
+
+enum SensorReading {
+    Int(Int),
+}
+
+struct Sensor { reading: SensorReading }
+
+struct Device { sensor: Sensor }
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    if i >= 0 && i < v.len() {
+        Some(v.get(i).cloned())
+    } else {
+        None
+    }
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = Vec.new()
+    for i in a.value.value.value.value.value.value() {
+        if i >= b.value.value.value.value.value.value() {
+            result.push(i)
+        }
+    }
+    result
+}
+
+fn clone(x: Int) -> Int {
+    Int(IntValue(IntValueValue(x.value.value.value)))
+}
+
+fn str_

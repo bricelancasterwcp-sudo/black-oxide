@@ -1,0 +1,17 @@
+struct List { value: Int, next: Option<Box<List>> }
+
+fn print_list(mut_list: Option<Box<List>>) {
+    match mut_list {
+        Some(mut_node) => {
+            print_list(mut_node.next.take())
+            print(mut_node.value)
+            print_str("\n")
+        },
+        None => print_str(""),
+    }
+}
+
+fn main() {
+    let list = Some(Box { value: 4, next: Some(Box { value: 3, next: Some(Box { value: 2, next: Some(Box { value: 1, next: None }) }) }) })
+    print_list(list)
+}

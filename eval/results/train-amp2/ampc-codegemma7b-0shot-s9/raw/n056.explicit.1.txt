@@ -1,0 +1,20 @@
+fn main() {
+    let seven = parse_int("7")
+    let x = parse_int("x")
+    let nine = parse_int("9")
+    let question = parse_int("?")
+    let mut count = 0
+    if seven.is_some() {
+        count = count + seven.unwrap()
+    }
+    if x.is_some() {
+        count = count + x.unwrap()
+    }
+    if nine.is_some() {
+        count = count + nine.unwrap()
+    }
+    if question.is_none() {
+        count = count + 1
+    }
+    print(count)
+}

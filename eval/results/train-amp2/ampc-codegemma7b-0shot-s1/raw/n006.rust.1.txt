@@ -1,0 +1,21 @@
+use std::cmp::Ordering;
+
+fn main() {
+    let mut x = 1;
+    loop {
+        match x.cmp(&(100 as f64)) {
+            Ordering::Less => {
+                x *= 2.0;
+            },
+            Ordering::Equal => {
+                println!("{}", x);
+                break;
+            },
+            Ordering::Greater => {
+                x /= 2.0;
+                println!("{}", x);
+                break;
+            },
+        }
+    }
+}

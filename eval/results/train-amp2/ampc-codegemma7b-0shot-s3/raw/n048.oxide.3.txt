@@ -1,0 +1,8 @@
+fn main() {
+    let v = vec(4, 7, 4, 9, 4)
+    for i in 0.upto(len(v)) {
+        if get(v, i) == Some(4) {
+            print(i)
+        }
+    }
+}

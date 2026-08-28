@@ -1,0 +1,16 @@
+fn main() {
+    let number = 91
+    let mut is_prime = true
+    for i in 2 <= i && i < number {
+        if number % i == 0 {
+            is_prime = false
+            break
+        }
+    }
+    if is_prime {
+        print_str("yes")
+    } else {
+        print_str("no")
+    }
+    drop number
+}

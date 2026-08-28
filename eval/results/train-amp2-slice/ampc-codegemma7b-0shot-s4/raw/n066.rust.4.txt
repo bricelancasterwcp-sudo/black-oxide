@@ -1,0 +1,12 @@
+use std::io::Write;
+
+fn main() {
+    let mut kept = 0;
+    for num in [9, 2, 12, 5, 16] {
+        if num < 10 {
+            print!("{} \n", num);
+            kept += 1;
+        }
+    }
+    print!("Kept {} entries\n", kept);
+}

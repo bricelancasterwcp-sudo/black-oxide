@@ -1,0 +1,7 @@
+fn main() {
+    let phrase = "when in doubt go home";
+    let words = phrase.split_whitespace().collect::<Vec<&str>>();
+    let characters = phrase.chars().collect::<Vec<char>>();
+    println!("Number of words: {}", words.len());
+    println!("Number of characters: {}", characters.len());
+}

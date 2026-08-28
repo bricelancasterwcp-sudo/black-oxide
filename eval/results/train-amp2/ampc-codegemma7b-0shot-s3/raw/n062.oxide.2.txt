@@ -1,0 +1,12 @@
+fn main() {
+    let mut signal = "green"
+    loop
+    match signal {
+        Green => print_str("go"),
+        Red => print_str("stop"),
+        Yellow => print_str("wait"),
+        _ => break_loop,
+    }
+    signal = read_line()?
+    continue_loop
+}

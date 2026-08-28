@@ -1,0 +1,10 @@
+fn main() {
+    let coffee = "coffee".to_string()
+    let mut seen = vec.new()
+    for c in coffee.chars() {
+        if !seen.contains_key(c) {
+            seen.insert(c, 0)
+            print(c)
+        }
+    }
+}

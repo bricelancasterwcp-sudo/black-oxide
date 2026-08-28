@@ -1,0 +1,18 @@
+fn walk(n: Int) -> Int {
+    let mut total = 0
+    let mut step = 7
+    while step <= n {
+        if step % 2 == 1 {
+            print(step * 2)
+            println()
+        } else {
+            total = total + step
+        }
+        step = step + 4
+    }
+    total
+}
+
+fn main() {
+    print(walk(9))
+}

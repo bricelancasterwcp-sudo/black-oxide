@@ -1,0 +1,15 @@
+fn between(list1: Vec<Int>, list2: Vec<Int>) -> Int {
+    let mut count = 0
+    for i in list1 {
+        if list2.contains(i) {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn main() {
+    let list1 = vec(1, 2, 3)
+    let list2 = vec(4, 5)
+    print(between(list1, list2))
+}

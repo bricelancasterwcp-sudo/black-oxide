@@ -1,0 +1,23 @@
+struct List { head: Int, tail: Link }
+
+enum Link {
+    One(Int),
+    Two(Int, Int),
+    More(Box<List>),
+}
+
+fn get(l: Link, n: Int) -> Option<Int> {
+    match l {
+        One(x) => if n == 0 { Some(x) } else { None },
+        Two(x, y) => if n == 0 { Some(x) } else { get(y, n - 1) },
+        More(inner) => get(inner.head, n - 1),
+    }
+}
+
+fn main() {
+    let l = More(Box { head: 1, tail: More(Box { head: 2, tail: One(3) }) })
+    match get(l, 4) {
+        Some(x) => print(x),
+        None => print_str("none"),
+    }
+}

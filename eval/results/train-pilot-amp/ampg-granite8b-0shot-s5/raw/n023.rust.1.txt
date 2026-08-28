@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    println!("hello world".len());
+}
+```
+
+Note that this uses the `len` method on a string slice, which is equivalent to using `strlen` in C or `String::len` in Rust.

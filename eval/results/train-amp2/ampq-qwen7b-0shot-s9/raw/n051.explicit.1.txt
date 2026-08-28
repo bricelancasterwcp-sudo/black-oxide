@@ -1,0 +1,6 @@
+fn main() {
+    let word = "granite"
+    print_str(&word)
+    print_str(&word)
+    drop word
+}

@@ -1,0 +1,491 @@
+struct Values { list: Vec<Int> }
+
+fn main() {
+    let v = Values { list: push(push(push(push(vec(), 12), 5), 20), 8), push: 17 }
+    let mut sorted = v.list.clone()
+    sorted.sort_by_int(Int.compare)
+    let max = sorted.pop()
+    let second_max = sorted.pop()
+    print(max)
+    print_str("\n")
+    print(second_max)
+}
+
+fn sort_by_int(v: Vec<Int>, cmp: Int) -> Vec<Int> {
+    v.sort(cmp)
+    v
+}
+
+fn pop(v: Vec<Int>) -> Int {
+    v.pop()
+}
+
+fn compare(a: Int, b: Int) -> Int {
+    if a > b {
+        1
+    } else if a < b {
+        -1
+    } else {
+        0
+    }
+}
+
+fn print_int(x: Int) {
+    print(x)
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn clone(x: Vec<Int>) -> Vec<Int> {
+    x.clone()
+}
+
+fn pop(v: Vec<Int>) -> Int {
+    v.pop()
+}
+
+fn compare(a: Int, b: Int) -> Int {
+    if a > b {
+        1
+    } else if a < b {
+        -1
+    } else {
+        0
+    }
+}
+
+fn print_int(x: Int) {
+    print(x)
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn clone(x: Vec<Int>) -> Vec<Int> {
+    x.clone()
+}
+
+fn pop(v: Vec<Int>) -> Int {
+    v.pop()
+}
+
+fn compare(a: Int, b: Int) -> Int {
+    if a > b {
+        1
+    } else if a < b {
+        -1
+    } else {
+        0
+    }
+}
+
+fn print_int(x: Int) {
+    print(x)
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn clone(x: Vec<Int>) -> Vec<Int> {
+    x.clone()
+}
+
+fn pop(v: Vec<Int>) -> Int {
+    v.pop()
+}
+
+fn compare(a: Int, b: Int) -> Int {
+    if a > b {
+        1
+    } else if a < b {
+        -1
+    } else {
+        0
+    }
+}
+
+fn print_int(x: Int) {
+    print(x)
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn clone(x: Vec<Int>) -> Vec<Int> {
+    x.clone()
+}
+
+fn pop(v: Vec<Int>) -> Int {
+    v.pop()
+}
+
+fn compare(a: Int, b: Int) -> Int {
+    if a > b {
+        1
+    } else if a < b {
+        -1
+    } else {
+        0
+    }
+}
+
+fn print_int(x: Int) {
+    print(x)
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn clone(x: Vec<Int>) -> Vec<Int> {
+    x.clone()
+}
+
+fn pop(v: Vec<Int>) -> Int {
+    v.pop()
+}
+
+fn compare(a: Int, b: Int) -> Int {
+    if a > b {
+        1
+    } else if a < b {
+        -1
+    } else {
+        0
+    }
+}
+
+fn print_int(x: Int) {
+    print(x)
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn clone(x: Vec<Int>) -> Vec<Int> {
+    x.clone()
+}
+
+fn pop(v: Vec<Int>) -> Int {
+    v.pop()
+}
+
+fn compare(a: Int, b: Int) -> Int {
+    if a > b {
+        1
+    } else if a < b {
+        -1
+    } else {
+        0
+    }
+}
+
+fn print_int(x: Int) {
+    print(x)
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn clone(x: Vec<Int>) -> Vec<Int> {
+    x.clone()
+}
+
+fn pop(v: Vec<Int>) -> Int {
+    v.pop()
+}
+
+fn compare(a: Int, b: Int) -> Int {
+    if a > b {
+        1
+    } else if a < b {
+        -1
+    } else {
+        0
+    }
+}
+
+fn print_int(x: Int) {
+    print(x)
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn clone(x: Vec<Int>) -> Vec<Int> {
+    x.clone()
+}
+
+fn pop(v: Vec<Int>) -> Int {
+    v.pop()
+}
+
+fn compare(a: Int, b: Int) -> Int {
+    if a > b {
+        1
+    } else if a < b {
+        -1
+    } else {
+        0
+    }
+}
+
+fn print_int(x: Int) {
+    print(x)
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn clone(x: Vec<Int>) -> Vec<Int> {
+    x.clone()
+}
+
+fn pop(v: Vec<Int>) -> Int {
+    v.pop()
+}
+
+fn compare(a: Int, b: Int) -> Int {
+    if a > b {
+        1
+    } else if a < b {
+        -1
+    } else {
+        0
+    }
+}
+
+fn print_int(x: Int) {
+    print(x)
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn clone(x: Vec<Int>) -> Vec<Int> {
+    x.clone()
+}
+
+fn pop(v: Vec<Int>) -> Int {
+    v.pop()
+}
+
+fn compare(a: Int, b: Int) -> Int {
+    if a > b {
+        1
+    } else if a < b {
+        -1
+    } else {
+        0
+    }
+}
+
+fn print_int(x: Int) {
+    print(x)
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn clone(x: Vec<Int>) -> Vec<Int> {
+    x.clone()
+}
+
+fn pop(v: Vec<Int>) -> Int {
+    v.pop()
+}
+
+fn compare(a: Int, b: Int) -> Int {
+    if a > b {
+        1
+    } else if a < b {
+        -1
+    } else {
+        0
+    }
+}
+
+fn print_int(x: Int) {
+    print(x)
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn clone(x: Vec<Int>) -> Vec<Int> {
+    x.clone()
+}
+
+fn pop(v: Vec<Int>) -> Int {
+    v.pop()
+}
+
+fn compare(a: Int, b: Int) -> Int {
+    if a > b {
+        1
+    } else if a < b {
+        -1
+    } else {
+        0
+    }
+}
+
+fn print_int(x: Int) {
+    print(x)
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn clone(x: Vec<Int>) -> Vec<Int> {
+    x.clone()
+}
+
+fn pop(v: Vec<Int>) -> Int {
+    v.pop()
+}
+
+fn compare(a: Int, b: Int) -> Int {
+    if a > b {
+        1
+    } else if a < b {
+        -1
+    } else {
+        0
+    }
+}
+
+fn print_int(x: Int) {
+    print(x)
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn clone(x: Vec<Int>) -> Vec

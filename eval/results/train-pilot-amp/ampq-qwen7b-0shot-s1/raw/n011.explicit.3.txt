@@ -1,0 +1,25 @@
+fn collect_multiples_of_four(limit: Int) -> Vec<Int> {
+    let mut multiples = vec()
+    let mut i = 0
+    while i < limit {
+        if i * 4 % 4 == 0 {
+            multiples = push(multiples, i * 4)
+        }
+        i = i + 1
+    }
+    multiples
+}
+
+fn sum_vec(v: Vec<Int>) -> Int {
+    let mut total = 0
+    for x in &v {
+        total = total + x
+    }
+    total
+}
+
+fn main() {
+    let multiples = collect_multiples_of_four(20)
+    print(sum_vec(&multiples))
+    drop multiples
+}

@@ -1,0 +1,9 @@
+fn main() {
+    let a = 5
+    let b = 3
+    let c = 9
+    let d = 1
+    let e = 7
+    let count = 0 + (if a > 4 { 1 } else { 0 }) + (if b > 4 { 1 } else { 0 }) + (if c > 4 { 1 } else { 0 }) + (if d > 4 { 1 } else { 0 }) + (if e > 4 { 1 } else { 0 })
+    print(count)
+}

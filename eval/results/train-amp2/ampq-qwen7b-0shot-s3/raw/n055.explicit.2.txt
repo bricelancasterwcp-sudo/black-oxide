@@ -1,0 +1,12 @@
+fn process_entry(entry: Option<Str>) -> Str {
+    match entry {
+        Some(e) => e.to_string(),
+        None => "bad".to_string(),
+    }
+}
+
+fn main() {
+    print(process_entry(Some("8")))
+    print(process_entry(Some("oak")))
+    print(process_entry(Some("15")))
+}

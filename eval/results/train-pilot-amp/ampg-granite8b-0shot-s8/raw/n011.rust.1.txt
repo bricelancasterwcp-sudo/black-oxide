@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut list = Vec::new();
+    for i in 0..6 {
+        let multiple = 4 * i;
+        list.push(multiple);
+    }
+    let total = list.iter().sum();
+    println!("Total: {}", total);
+}
+```

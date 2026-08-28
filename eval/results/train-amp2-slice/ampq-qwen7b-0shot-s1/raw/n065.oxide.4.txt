@@ -1,0 +1,32 @@
+struct Reading { label: Str, values: Vec<Int> }
+
+fn first_big(v: Vec<Int>) -> Int {
+    let found = -1
+    for x in v {
+        if x > 5 {
+            found = x
+            break
+        }
+    }
+    found
+}
+
+fn max(v: Vec<Int>) -> Int {
+    let mut max_val = -1
+    for x in v {
+        if x > max_val {
+            max_val = x
+        }
+    }
+    max_val
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(push(push(vec(), 6), 11), 3), 14) }
+    print(first_big(r.values))            // field access copies: r stays usable
+    let r2 = Reading { label: "lab2", ..r }
+    match max(r2.values) {
+        Some(n) => print(n),
+        None => print_str("too short"),
+    }
+}

@@ -1,0 +1,14 @@
+struct Log { entries: Vec<Int> }
+
+fn first(log: Log) -> Int {
+    get(log.entries, 0)?
+}
+
+fn last(log: Log) -> Int {
+    get(log.entries, len(log.entries) - 1)?
+}
+
+fn main() {
+    print(first(Log { entries: vec(6, 7, 8, 9) }))
+    print(last(Log { entries: vec(6, 7, 8, 9) }))
+}

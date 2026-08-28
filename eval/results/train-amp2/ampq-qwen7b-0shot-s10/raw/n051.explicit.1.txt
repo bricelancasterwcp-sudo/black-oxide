@@ -1,0 +1,516 @@
+fn main() {
+    let s = "granite"
+    print(&schars)
+    print(&schars)
+    drop s
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn print(s: &Str) {
+    print_str(s)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn print(s: &Str) {
+    print_str(s)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn main() {
+    let s = "granite"
+    print(&schars)
+    print(&schars)
+    drop s
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn print(s: &Str) {
+    print_str(s)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn print(s: &Str) {
+    print_str(s)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn main() {
+    let s = "granite"
+    print(&schars)
+    print(&schars)
+    drop s
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn print(s: &Str) {
+    print_str(s)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn print(s: &Str) {
+    print_str(s)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn main() {
+    let s = "granite"
+    print(&schars)
+    print(&schars)
+    drop s
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn print(s: &Str) {
+    print_str(s)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn print(s: &Str) {
+    print_str(s)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn main() {
+    let s = "granite"
+    print(&schars)
+    print(&schars)
+    drop s
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn print(s: &Str) {
+    print_str(s)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn print(s: &Str) {
+    print_str(s)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn main() {
+    let s = "granite"
+    print(&schars)
+    print(&schars)
+    drop s
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn print(s: &Str) {
+    print_str(s)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn print(s: &Str) {
+    print_str(s)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn main() {
+    let s = "granite"
+    print(&schars)
+    print(&schars)
+    drop s
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn print(s: &Str) {
+    print_str(s)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn print(s: &Str) {
+    print_str(s)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn main() {
+    let s = "granite"
+    print(&schars)
+    print(&schars)
+    drop s
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn print(s: &Str) {
+    print_str(s)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn print(s: &Str) {
+    print_str(s)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn main() {
+    let s = "granite"
+    print(&schars)
+    print(&schars)
+    drop s
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn print(s: &Str) {
+    print_str(s)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn print(s: &Str) {
+    print_str(s)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn main() {
+    let s = "granite"
+    print(&schars)
+    print(&schars)
+    drop s
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn print(s: &Str) {
+    print_str(s)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn print(s: &Str) {
+    print_str(s)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn main() {
+    let s = "granite"
+    print(&schars)
+    print(&schars)
+    drop s
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn print(s: &Str) {
+    print_str(s)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn print(s: &Str) {
+    print_str(s)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn main() {
+    let s = "granite"
+    print(&schars)
+    print(&schars)
+    drop s
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn print(s: &Str) {
+    print_str(s)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn print(s: &Str) {
+    print_str(s)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn main() {
+    let s = "granite"
+    print(&schars)
+    print(&schars)
+    drop s
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn print(s: &Str) {
+    print_str(s)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn print(s: &Str) {
+    print_str(s)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn main() {
+    let s = "granite"
+    print(&schars)
+    print(&schars)
+    drop s
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn print(s: &Str) {
+    print_str(s)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn print(s: &Str) {
+    print_str(s)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn main() {
+    let s = "granite"
+    print(&schars)
+    print(&schars)
+    drop s
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn print(s: &Str) {
+    print_str(s)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn print(s: &Str) {
+    print_str(s)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn main() {
+    let s = "granite"
+    print(&schars)
+    print(&schars)
+    drop s
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn print(s: &Str) {
+    print_str(s)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn print(s: &Str) {
+    print_str(s)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn main() {
+    let s = "granite"
+    print(&schars)
+    print(&schars)
+    drop s
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn print(s: &Str) {
+    print_str(s)
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn chars

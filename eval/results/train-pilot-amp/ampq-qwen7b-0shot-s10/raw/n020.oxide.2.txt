@@ -1,0 +1,13 @@
+struct Reading { label: Str, values: Vec<Int> }
+
+fn mean(v: Vec<Int>) -> Float {
+    let sum = v.iter().fold(0, Int.to_float)
+    sum / v.len() - to_float(v.len())
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(push(push(vec(), 4), 8), 15), 16) }
+    let r2 = Reading { label: "lab2", ..r }
+    let values = push(push(push(push(r2.values, 23), 42), 0), 0)
+    print(to_float(mean(values)))
+}

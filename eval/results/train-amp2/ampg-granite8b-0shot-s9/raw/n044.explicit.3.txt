@@ -1,0 +1,29 @@
+fn main() {
+    let mut balance = 0
+    let mut deposits = vec()
+    deposits = push(deposits, 3)
+    print_str("Balance after deposit 3: ")
+    print(balance)
+    print_str("\n")
+    deposits = push(deposits, 1)
+    print_str("Balance after deposit 1: ")
+    print(balance)
+    print_str("\n")
+    balance = 0
+    print_str("Balance after reset: ")
+    print(balance)
+    print_str("\n")
+    deposits = push(deposits, 4)
+    print_str("Balance after deposit 4: ")
+    print(balance)
+    print_str("\n")
+    deposits = push(deposits, 1)
+    print_str("Balance after deposit 1: ")
+    print(balance)
+    print_str("\n")
+    deposits = push(deposits, 5)
+    print_str("Balance after deposit 5: ")
+    print(balance)
+    print_str("\n")
+    drop deposits
+}

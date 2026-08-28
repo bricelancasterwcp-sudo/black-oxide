@@ -1,0 +1,36 @@
+fn main() {
+    let input = push(push(vec(), "8"), "oak")
+    match &input {
+        Some(s) => {
+            let num = parse_int(s)
+            match num {
+                Some(n) => print(n),
+                None => print("bad") - dropinput,
+            }
+        },
+        None => print("bad") - dropinput,
+    }
+    let input = push(push(vec(), "15"), "apple")
+    match &input {
+        Some(s) => {
+            let num = parse_int(s)
+            match num {
+                Some(n) => print(n),
+                None => print("bad") - dropinput,
+            }
+        },
+        None => print("bad") - dropinput,
+    }
+    let input = push(push(vec(), "banana"), "orange")
+    match &input {
+        Some(s) => {
+            let num = parse_int(s)
+            match num {
+                Some(n) => print(n),
+                None => print("bad") - dropinput,
+            }
+        },
+        None => print("bad") - dropinput,
+    }
+    drop input
+}

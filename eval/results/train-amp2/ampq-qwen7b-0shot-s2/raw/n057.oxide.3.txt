@@ -1,0 +1,12 @@
+struct Name { name: Str, count: Int }
+
+fn main() {
+    let fig = Name { name: "fig", count: 3 }
+    let banana = Name { name: "banana", count: 6 }
+    let kiwi = Name { name: "kiwi", count: 4 }
+    let names = vec(fig, banana, kiwi)
+    let max_name = names.iter().max_by_key(Name.count).unwrap_or_else(move || Name(name == "", count == 0))
+    let Name { name, count } = max_name
+    print_str(name)
+    print(count)
+}

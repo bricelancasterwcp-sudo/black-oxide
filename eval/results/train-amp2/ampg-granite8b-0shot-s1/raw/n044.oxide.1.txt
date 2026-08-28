@@ -1,0 +1,16 @@
+struct Bank { deposit: Int, balance: Int }
+
+fn add_deposit(b: Bank, d: Int) -> Bank {
+    let b = Bank { deposit: 0, ..b }
+    let b = Bank { balance: b.balance + b.deposit, ..b }
+    Bank  // Bank is an expression, so we return it
+}
+
+fn main() {
+    let b = Bank { deposit: 3, balance: 0 }
+    let b = add_deposit(b, 1)
+    let b = add_deposit(b, 4)
+    let b = add_deposit(b, 1)
+    let b = add_deposit(b, 5)
+    print(b.balance)
+}

@@ -1,0 +1,16 @@
+struct Square { side: Float }
+
+struct Circle { radius: Float }
+
+fn area_square(s: Square) -> Float {
+    s.side * s.side * 3.0
+}
+
+fn area_circle(c: Circle) -> Float {
+    c.radius * c.radius * 3.0
+}
+
+fn main() {
+    let s = Square { side: 4.0 }
+    print(area_square(s))
+}

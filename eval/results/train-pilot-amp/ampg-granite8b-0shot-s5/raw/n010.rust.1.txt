@@ -1,0 +1,16 @@
+```rust
+fn main() {
+  let n = 91;
+  let mut count = 0;
+  for i in 2..n {
+    if n % i == 0 {
+      count += 1;
+    }
+  }
+  if count == 0 {
+    println!("yes");
+  } else {
+    println!("no");
+  }
+}
+```

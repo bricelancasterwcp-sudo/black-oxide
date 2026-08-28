@@ -1,0 +1,37 @@
+fn deposits(mut_balance: &Int, deposits: &Vec<Int>) -> Int {
+    for x in deposits {
+        if x == mut_balance {
+            mut_balance = mut_balance + x
+        } else {
+            mut_balance = mut_balance - x
+        }
+    }
+    mut_balance.clone()
+}
+
+fn main() {
+    let mut_balance = &mut  // Replace with your initial balance
+    let deposits = vec(3, 1, 4, 1, 5)
+    print(deposits(&mut_balance, &deposits))
+    drop deposits
+    drop mut_balance
+}
+
+fn deposits(mut_balance: &Int, deposits: &Vec<Int>) -> Int {
+    for x in deposits {
+        if x == mut_balance {
+            mut_balance = mut_balance + x
+        } else {
+            mut_balance = mut_balance - x
+        }
+    }
+    mut_balance.clone()
+}
+
+fn main() {
+    let mut_balance = &mut  // Replace with your initial balance
+    let deposits = vec(3, 1, 4, 1, 5)
+    print(deposits(&mut_balance, &deposits))
+    drop deposits
+    drop mut_balance
+}

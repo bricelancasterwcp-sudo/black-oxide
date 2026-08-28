@@ -1,0 +1,22 @@
+fn enqueue(mutQueue: &Vec<Int>, a: Int) -> Vec<Int> {
+    push(clone(&mutQueue), a)
+}
+
+fn dequeue(mutQueue: &Vec<Int>) -> Vec<Int> {
+    let first = get(mutQueue, 0)
+    let last = get(mutQueue, len(mutQueue) - 1)
+    push(clone(&mutQueue), last)
+}
+
+fn main() {
+    let queue = vec()
+    let queue = push(queue, 1)
+    let queue = push(queue, 2)
+    let queue = push(queue, 3)
+    let queue = push(queue, 4)
+    let queue = push(queue, 5)
+    print_str("After enqueue:")
+    queue = enqueue(&queue, 5)
+    print_str("After dequeue:")
+    queue = dequeue(&queue)
+}

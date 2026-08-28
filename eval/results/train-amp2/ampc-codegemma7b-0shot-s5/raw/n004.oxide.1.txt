@@ -1,0 +1,12 @@
+fn third(v: Vec<Int>) -> Int {
+    let x = get(v, 9)?
+    x + get(v, 8)?
+}
+
+fn main() {
+    let v = push(push(vec(), 1), 1)
+    for _ in 0.range(8) {
+        v = push(v, third(v))
+    }
+    print(third(v))
+}

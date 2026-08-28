@@ -1,0 +1,8 @@
+struct Entry {
+    value: Option<Int>,
+    text: Str,
+}
+
+fn main() {
+    let entries = vec(Entry { value: Some(8), text: "oak" }, Entry { value: None, text: "15" }, Entry { value: Some(15), text: "bad" }).map(x || matchx.value? || print_str("bad")).for_each(print)
+}

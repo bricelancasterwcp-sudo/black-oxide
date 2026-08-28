@@ -1,0 +1,9 @@
+fn main() {
+    let readings = vec(6, 11, 3, 14, 9)
+    let count = readings.iter().filter || x > 5 || count + 1
+    print(count)
+    drop readings
+    let max_reading = readings.iter().fold || max || current || ifcurrent > max || current || max
+    print(max_reading)
+    drop max_reading
+}

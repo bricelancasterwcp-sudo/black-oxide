@@ -1,0 +1,93 @@
+struct Point { x: Int, y: Int }
+
+fn main() {
+    let p = Point { x: 0, y: 0 }
+    let q = Point { x: 0, y: 1 }
+    let r = Point { x: 1, y: 2 }
+    print_str(format_point(p))
+}
+
+fn format_point(p: Point) -> Str {
+    let xstr = int_to_str(p.x)
+    let ystr = int_to_str(p.y)
+    concat(xstr, concat(str_lit(","), ystr))
+}
+
+fn str_lit(s: Str) -> Str {
+    concat("\"", concat(s, "\""))
+}
+
+fn add_point(p: Point, q: Point) -> Point {
+    Point(p.x + q.x, p.y + q.y)
+}
+
+fn get_y(p: Point) -> Int {
+    p.y
+}
+
+fn make_vec() -> Vec<Int> {
+    push(push(vec(), 1), 2)
+}
+
+fn print_vec(v: Vec<Int>) {
+    for x in v {
+        print(x)
+    }
+}
+
+fn print_vec2(v: Vec<Int>) {
+    for x in v {
+        print(x)
+        print_str(",")
+    }
+}
+
+fn get_vec_first(v: Vec<Int>) -> Option<Int> {
+    match len(v) {
+        L0 => None,
+        _ => Some(get(v, 0)?),
+    }
+}
+
+fn len(v: Vec<Int>) -> Int {
+    len(v)
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    get(v, i)
+}
+
+fn loop_add() -> Int {
+    let acc = vec()
+    for i in range(0, 10) {
+        let acc2 = push(acc, i)
+        acc = acc2
+    }
+    len(acc)
+}
+
+fn loop_add_by_ref() -> Int {
+    let acc = vec()
+    for i in range(0, 10) {
+        acc = push(acc, i)
+    }
+    len(acc)
+}
+
+fn loop_add_by_ref_rev() -> Int {
+    let acc = vec()
+    for i in range(0, 10) {
+        let acc2 = push(acc, i)
+        acc = acc2
+    }
+    len(acc)
+}
+
+fn main() {
+    print_vec(make_vec())
+    print_vec2(make_vec())
+    print(get_vec_first(make_vec())?)
+    print(loop_add())
+    print(loop_add_by_ref())
+    print(loop_add_by_ref_rev())
+}

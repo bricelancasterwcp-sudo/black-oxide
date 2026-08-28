@@ -1,0 +1,13 @@
+fn main() {
+    let units_three = 4
+    let units_two = 5
+    let value_three = 3
+    let value_two = 2
+    let total_value = (units_three * value_three) + (units_two * value_two)
+    print(total_value)
+    drop value_two
+    drop value_three
+    drop units_two
+    drop units_three
+    drop total_value
+}

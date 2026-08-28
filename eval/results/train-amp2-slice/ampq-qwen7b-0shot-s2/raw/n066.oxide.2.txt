@@ -1,0 +1,19 @@
+fn filter_and_count(v: Vec<Int>) -> Int {
+    let mut count = 0
+    let mut kept = vec()
+    for x in v {
+        if x < 10 {
+            print(x)
+            print_str("\n")
+            kept = push(kept, x)
+            count = count + 1
+        }
+    }
+    print(count)
+    count
+}
+
+fn main() {
+    let v = push(push(push(push(vec(), 9), 2), 12), 5)
+    let kept_count = filter_and_count(v)
+}

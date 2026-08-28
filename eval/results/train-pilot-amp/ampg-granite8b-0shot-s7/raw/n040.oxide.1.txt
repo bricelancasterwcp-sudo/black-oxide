@@ -1,0 +1,15 @@
+struct Square { side: Int }
+
+struct Circle { radius: Int }
+
+fn area(s: Shape) -> Int {
+    match s {
+        Square(s) => s.side * s.side,
+        Circle(c) => c.radius * c.radius * 3,
+    }
+}
+
+fn main() {
+    let square = Square { side: 4 }
+    print(area(square))
+}

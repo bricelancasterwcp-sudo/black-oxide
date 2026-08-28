@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let input = "8\noak\n15";
+    let lines: Vec<&str> = input.lines().collect();
+    match lines[0].parse() {
+        Ok(n) => println!("{}", n),
+        Err(_) => println!("bad"),
+    }
+    match lines[1] {
+        "oak" => println!("{}", lines[1]),
+        _ => println!("bad"),
+    }
+    match lines[2].parse() {
+        Ok(n) => println!("{}", n),
+        Err(_) => println!("bad"),
+    }
+}
+```

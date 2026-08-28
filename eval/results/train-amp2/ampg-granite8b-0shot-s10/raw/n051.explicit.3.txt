@@ -1,0 +1,8 @@
+fn main() {
+    let granite = "granite".to_string()
+    let first_letter = granite.chars().nth(0).unwrap()
+    let second_letter = granite.chars().nth(granite.len() - 1).unwrap()
+    print_str(&first_letter)
+    print_str(&second_letter)
+    drop granite
+}

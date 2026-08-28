@@ -1,0 +1,5 @@
+fn main() {
+    let name = "granite"
+    print(name.get(0))
+    drop name
+}

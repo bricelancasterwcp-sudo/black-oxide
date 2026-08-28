@@ -1,0 +1,13 @@
+fn print_unique(s: Str) {
+    let mut seen: Vec<Char> = vec()
+    for c in s.chars() {
+        if !seen.contains(c) {
+            print(c)
+            seen.push(c)
+        }
+    }
+}
+
+fn main() {
+    print_unique(Str("coffee"))
+}

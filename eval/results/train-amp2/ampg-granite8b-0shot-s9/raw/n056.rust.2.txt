@@ -1,0 +1,15 @@
+fn main() {
+    let mut n = 0;
+    let mut m = 0;
+    for _ in 0..4 {
+        let mut s = String::new();
+        std::io::stdin().read_line(&mut s).unwrap();
+        if let Ok(x) = s.trim().parse() {
+            n += x;
+        } else {
+            m += 1;
+        }
+    }
+    println!("{}", n);
+    println!("{}", m);
+}

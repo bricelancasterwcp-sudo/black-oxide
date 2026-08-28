@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let nums = vec![7, 8, 9];
+    let second = nums.get(1).cloned();
+    if let Some(n) = second {
+        println!("{}", n);
+    } else {
+        println!("None");
+    }
+}
+```

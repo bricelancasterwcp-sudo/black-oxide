@@ -1,0 +1,24 @@
+struct Word {
+    first: Char,
+    last: Char,
+}
+
+fn main() {
+    let granite = Word { first: Char { letter: "g" }, last: Char { letter: "e" } }
+    print(granite.first.letter)
+    print(granite.last.letter)
+}
+
+struct Char {
+    letter: Str,
+}
+
+struct Str {
+    data: Vec<Int>,
+}
+
+fn main() {
+    let granite = Word { first: Char { letter: Str { data: vec(103) } }, last: Char { letter: Str { data: vec(101) } } }
+    print(granite.first.letter.data.get(0)?)
+    print(granite.last.letter.data.get(0)?)
+}

@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let mut vowels = 0;
+    let mut not_vowels = 0;
+
+    for letter in "keyboard".chars() {
+        if letter.is_ascii_vowel() {
+            vowels += 1;
+        } else {
+            not_vowels += 1;
+        }
+    }
+
+    println!("There are {} vowels and {} not vowels", vowels, not_vowels);
+}
+```

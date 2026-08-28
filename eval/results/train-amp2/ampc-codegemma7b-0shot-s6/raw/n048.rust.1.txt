@@ -1,0 +1,15 @@
+use std::io;
+
+fn main() {
+    let list = vec![4, 7, 4, 9, 4];
+    let mut count = 0;
+
+    for (i, &item) in list.iter().enumerate() {
+        if item == 4 {
+            count += 1;
+            println!("{}", i);
+        }
+    }
+
+    println!("Total occurrences of 4: {}", count);
+}

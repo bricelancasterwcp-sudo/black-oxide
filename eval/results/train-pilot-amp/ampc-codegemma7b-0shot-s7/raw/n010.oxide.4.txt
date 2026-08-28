@@ -1,0 +1,305 @@
+fn is_prime(n: Int) -> Bool {
+    if n <= 1 {
+        return false
+    }
+    for i in range(2, trunc(sqrt(n)) + 1) {
+        if n % i == 0 {
+            return false
+        }
+    }
+    true
+}
+
+fn main() {
+    print(is_prime(91))
+}
+
+fn sqrt(n: Float) -> Float {
+    let mut x = n
+    let mut y = 0.0
+    while x - y > 0.000001 {
+        y = x
+        x = (x + n / x) * 0.5
+    }
+    x
+}
+
+fn trunc(x: Float) -> Int {
+    let i = Int(x)
+    if (x - i) >= 0.5 {
+        i + 1
+    } else {
+        i
+    }
+}
+
+fn sqrt(n: Int) -> Float {
+    let mut x = Float(n)
+    let mut y = 0.0
+    while x - y > 0.000001 {
+        y = x
+        x = (x + n / x) * 0.5
+    }
+    x
+}
+
+fn trunc(x: Int) -> Int {
+    x
+}
+
+fn sqrt(n: Float) -> Float {
+    let mut x = n
+    let mut y = 0.0
+    while x - y > 0.000001 {
+        y = x
+        x = (x + n / x) * 0.5
+    }
+    x
+}
+
+fn trunc(x: Int) -> Int {
+    let i = Int(x)
+    if (x - i) >= 0.5 {
+        i + 1
+    } else {
+        i
+    }
+}
+
+fn sqrt(n: Int) -> Float {
+    let mut x = Float(n)
+    let mut y = 0.0
+    while x - y > 0.000001 {
+        y = x
+        x = (x + n / x) * 0.5
+    }
+    x
+}
+
+fn trunc(x: Int) -> Int {
+    x
+}
+
+fn sqrt(n: Float) -> Float {
+    let mut x = n
+    let mut y = 0.0
+    while x - y > 0.000001 {
+        y = x
+        x = (x + n / x) * 0.5
+    }
+    x
+}
+
+fn trunc(x: Int) -> Int {
+    let i = Int(x)
+    if (x - i) >= 0.5 {
+        i + 1
+    } else {
+        i
+    }
+}
+
+fn sqrt(n: Int) -> Float {
+    let mut x = Float(n)
+    let mut y = 0.0
+    while x - y > 0.000001 {
+        y = x
+        x = (x + n / x) * 0.5
+    }
+    x
+}
+
+fn trunc(x: Int) -> Int {
+    x
+}
+
+fn sqrt(n: Float) -> Float {
+    let mut x = n
+    let mut y = 0.0
+    while x - y > 0.000001 {
+        y = x
+        x = (x + n / x) * 0.5
+    }
+    x
+}
+
+fn trunc(x: Int) -> Int {
+    let i = Int(x)
+    if (x - i) >= 0.5 {
+        i + 1
+    } else {
+        i
+    }
+}
+
+fn sqrt(n: Int) -> Float {
+    let mut x = Float(n)
+    let mut y = 0.0
+    while x - y > 0.000001 {
+        y = x
+        x = (x + n / x) * 0.5
+    }
+    x
+}
+
+fn trunc(x: Int) -> Int {
+    x
+}
+
+fn sqrt(n: Float) -> Float {
+    let mut x = n
+    let mut y = 0.0
+    while x - y > 0.000001 {
+        y = x
+        x = (x + n / x) * 0.5
+    }
+    x
+}
+
+fn trunc(x: Int) -> Int {
+    let i = Int(x)
+    if (x - i) >= 0.5 {
+        i + 1
+    } else {
+        i
+    }
+}
+
+fn sqrt(n: Int) -> Float {
+    let mut x = Float(n)
+    let mut y = 0.0
+    while x - y > 0.000001 {
+        y = x
+        x = (x + n / x) * 0.5
+    }
+    x
+}
+
+fn trunc(x: Int) -> Int {
+    x
+}
+
+fn sqrt(n: Float) -> Float {
+    let mut x = n
+    let mut y = 0.0
+    while x - y > 0.000001 {
+        y = x
+        x = (x + n / x) * 0.5
+    }
+    x
+}
+
+fn trunc(x: Int) -> Int {
+    let i = Int(x)
+    if (x - i) >= 0.5 {
+        i + 1
+    } else {
+        i
+    }
+}
+
+fn sqrt(n: Int) -> Float {
+    let mut x = Float(n)
+    let mut y = 0.0
+    while x - y > 0.000001 {
+        y = x
+        x = (x + n / x) * 0.5
+    }
+    x
+}
+
+fn trunc(x: Int) -> Int {
+    x
+}
+
+fn sqrt(n: Float) -> Float {
+    let mut x = n
+    let mut y = 0.0
+    while x - y > 0.000001 {
+        y = x
+        x = (x + n / x) * 0.5
+    }
+    x
+}
+
+fn trunc(x: Int) -> Int {
+    let i = Int(x)
+    if (x - i) >= 0.5 {
+        i + 1
+    } else {
+        i
+    }
+}
+
+fn sqrt(n: Int) -> Float {
+    let mut x = Float(n)
+    let mut y = 0.0
+    while x - y > 0.000001 {
+        y = x
+        x = (x + n / x) * 0.5
+    }
+    x
+}
+
+fn trunc(x: Int) -> Int {
+    x
+}
+
+fn sqrt(n: Float) -> Float {
+    let mut x = n
+    let mut y = 0.0
+    while x - y > 0.000001 {
+        y = x
+        x = (x + n / x) * 0.5
+    }
+    x
+}
+
+fn trunc(x: Int) -> Int {
+    let i = Int(x)
+    if (x - i) >= 0.5 {
+        i + 1
+    } else {
+        i
+    }
+}
+
+fn sqrt(n: Int) -> Float {
+    let mut x = Float(n)
+    let mut y = 0.0
+    while x - y > 0.000001 {
+        y = x
+        x = (x + n / x) * 0.5
+    }
+    x
+}
+
+fn trunc(x: Int) -> Int {
+    x
+}
+
+fn sqrt(n: Float) -> Float {
+    let mut x = n
+    let mut y = 0.0
+    while x - y > 0.000001 {
+        y = x
+        x = (x + n / x) * 0.5
+    }
+    x
+}
+
+fn trunc(x: Int) -> Int {
+    let i = Int(x)
+    if (x - i) >= 0.5 {
+        i + 1
+    } else {
+        i
+    }
+}
+
+fn sqrt(n: Int) -> Float {
+    let mut x = Float(n)
+    let mut y = 0.0
+    while x - y > 0.000001 {
+        y = x
+        x = (x + n / x) * 0.

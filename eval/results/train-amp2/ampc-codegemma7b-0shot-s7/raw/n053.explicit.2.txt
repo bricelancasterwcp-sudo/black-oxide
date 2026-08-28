@@ -1,0 +1,459 @@
+fn drum() -> Str {
+    let mut r = Str { chars: vec() }
+    for c in "drum".chars() {
+        r = push(r, c)
+    }
+    r
+}
+
+fn main() {
+    let drum = drum()
+    print(drum)
+    print(reverse(&drum))
+    drop drum
+}
+
+fn reverse(s: &Str) -> Str {
+    let mut r = Str { chars: vec() }
+    for c in &s {
+        r = push(r, c)
+    }
+    r
+}
+
+fn push(mutv: Str, c: Char) -> Str {
+    mutv.chars.push(c)
+    mutv
+}
+
+struct Str {
+    chars: Vec<Char>,
+}
+
+fn print(s: Str) {
+    for c in &s {
+        print(c)
+    }
+    print("\n")
+}
+
+fn drop_str(s: &Str) {
+    for c in &s {
+        drop c
+    }
+}
+
+fn len(s: &Str) -> Int {
+    s.chars.len()
+}
+
+fn get(s: &Str, i: Int) -> Option<Char> {
+    if i >= len(s) {
+        None
+    } else {
+        Some(s.chars.get(i).unwrap())
+    }
+}
+
+fn chars(s: &Str) -> Vec<Char> {
+    let mut v = vec()
+    for c in &s {
+        v.push(c)
+    }
+    v
+}
+
+fn str_len(s: &Str) -> Int {
+    s.chars.len()
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut v = a.chars
+    for c in b.chars {
+        v.push(c)
+    }
+    Str(v)
+}
+
+fn clone(s: &Str) -> Str {
+    Str(chars(&s))
+}
+
+fn to_float(n: Int) -> Float {
+    n
+}
+
+fn trunc(x: Float) -> Int {
+    x
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut v = vec()
+    for c in n.to_string().chars() {
+        v.push(c)
+    }
+    Str(v)
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    let mut n = 0
+    for c in s.chars {
+        if !c.is_digit(10) {
+            return None
+        }
+        n = n * 10 + (c - b)
+    }
+    Some(n)
+}
+
+enum Int {
+    Int(Int),
+    Unit,
+}
+
+enum Float {
+    Float(Float),
+    Unit,
+}
+
+enum Char {
+    Char(Char),
+    Unit,
+}
+
+enum Str {
+    Str(Vec<Char>),
+    Unit,
+}
+
+enum Vec {
+    Vec(Vec),
+    Unit,
+}
+
+enum Option {
+    Option(Option),
+    Unit,
+}
+
+enum Result {
+    Result(Result),
+    Unit,
+}
+
+enum Unit {
+    Unit,
+}
+
+enum Variant {
+    Variant(Variant),
+    Nullary,
+}
+
+enum Enum {
+    Enum(Enum),
+    Nullary,
+}
+
+enum Struct {
+    Struct(Struct),
+    Nullary,
+}
+
+enum Item {
+    Item(Item),
+    Nullary,
+}
+
+enum Statement {
+    Statement(Statement),
+    Nullary,
+}
+
+enum Expression {
+    Expression(Expression),
+    Nullary,
+}
+
+enum Type {
+    Type(Type),
+    Nullary,
+}
+
+enum Parameter {
+    Parameter(Parameter),
+    Nullary,
+}
+
+enum Block {
+    Block(Block),
+    Nullary,
+}
+
+enum Function {
+    Function(Function),
+    Nullary,
+}
+
+enum Program {
+    Program(Program),
+    Nullary,
+}
+
+enum Match {
+    Match(Match),
+    Nullary,
+}
+
+enum VariantPattern {
+    VariantPattern(VariantPattern),
+    Nullary,
+}
+
+enum EnumPattern {
+    EnumPattern(EnumPattern),
+    Nullary,
+}
+
+enum StructPattern {
+    StructPattern(StructPattern),
+    Nullary,
+}
+
+enum ParameterPattern {
+    ParameterPattern(ParameterPattern),
+    Nullary,
+}
+
+enum StatementPattern {
+    StatementPattern(StatementPattern),
+    Nullary,
+}
+
+enum ExpressionPattern {
+    ExpressionPattern(ExpressionPattern),
+    Nullary,
+}
+
+enum TypePattern {
+    TypePattern(TypePattern),
+    Nullary,
+}
+
+enum ProgramPattern {
+    ProgramPattern(ProgramPattern),
+    Nullary,
+}
+
+enum MatchPattern {
+    MatchPattern(MatchPattern),
+    Nullary,
+}
+
+enum VariantCase {
+    VariantCase(VariantCase),
+    Nullary,
+}
+
+enum EnumCase {
+    EnumCase(EnumCase),
+    Nullary,
+}
+
+enum StructCase {
+    StructCase(StructCase),
+    Nullary,
+}
+
+enum ParameterCase {
+    ParameterCase(ParameterCase),
+    Nullary,
+}
+
+enum StatementCase {
+    StatementCase(StatementCase),
+    Nullary,
+}
+
+enum ExpressionCase {
+    ExpressionCase(ExpressionCase),
+    Nullary,
+}
+
+enum TypeCase {
+    TypeCase(TypeCase),
+    Nullary,
+}
+
+enum ProgramCase {
+    ProgramCase(ProgramCase),
+    Nullary,
+}
+
+enum Error {
+    Error(Error),
+    Nullary,
+}
+
+enum Warning {
+    Warning(Warning),
+    Nullary,
+}
+
+enum Location {
+    Location(Location),
+    Nullary,
+}
+
+enum Span {
+    Span(Span),
+    Nullary,
+}
+
+enum ItemBody {
+    ItemBody(ItemBody),
+    Nullary,
+}
+
+enum StatementBody {
+    StatementBody(StatementBody),
+    Nullary,
+}
+
+enum ExpressionBody {
+    ExpressionBody(ExpressionBody),
+    Nullary,
+}
+
+enum TypeBody {
+    TypeBody(TypeBody),
+    Nullary,
+}
+
+enum ParameterBody {
+    ParameterBody(ParameterBody),
+    Nullary,
+}
+
+enum BlockBody {
+    BlockBody(BlockBody),
+    Nullary,
+}
+
+enum FunctionBody {
+    FunctionBody(FunctionBody),
+    Nullary,
+}
+
+enum ProgramBody {
+    ProgramBody(ProgramBody),
+    Nullary,
+}
+
+enum MatchBody {
+    MatchBody(MatchBody),
+    Nullary,
+}
+
+enum VariantPatternBody {
+    VariantPatternBody(VariantPatternBody),
+    Nullary,
+}
+
+enum EnumPatternBody {
+    EnumPatternBody(EnumPatternBody),
+    Nullary,
+}
+
+enum StructPatternBody {
+    StructPatternBody(StructPatternBody),
+    Nullary,
+}
+
+enum ParameterPatternBody {
+    ParameterPatternBody(ParameterPatternBody),
+    Nullary,
+}
+
+enum StatementPatternBody {
+    StatementPatternBody(StatementPatternBody),
+    Nullary,
+}
+
+enum ExpressionPatternBody {
+    ExpressionPatternBody(ExpressionPatternBody),
+    Nullary,
+}
+
+enum TypePatternBody {
+    TypePatternBody(TypePatternBody),
+    Nullary,
+}
+
+enum ProgramPatternBody {
+    ProgramPatternBody(ProgramPatternBody),
+    Nullary,
+}
+
+enum MatchPatternBody {
+    MatchPatternBody(MatchPatternBody),
+    Nullary,
+}
+
+enum VariantCaseBody {
+    VariantCaseBody(VariantCaseBody),
+    Nullary,
+}
+
+enum EnumCaseBody {
+    EnumCaseBody(EnumCaseBody),
+    Nullary,
+}
+
+enum StructCaseBody {
+    StructCaseBody(StructCaseBody),
+    Nullary,
+}
+
+enum ParameterCaseBody {
+    ParameterCaseBody(ParameterCaseBody),
+    Nullary,
+}
+
+enum StatementCaseBody {
+    StatementCaseBody(StatementCaseBody),
+    Nullary,
+}
+
+enum ExpressionCaseBody {
+    ExpressionCaseBody(ExpressionCaseBody),
+    Nullary,
+}
+
+enum TypeCaseBody {
+    TypeCaseBody(TypeCaseBody),
+    Nullary,
+}
+
+enum ProgramCaseBody {
+    ProgramCaseBody(ProgramCaseBody),
+    Nullary,
+}
+
+fn drum() -> Str {
+    let mut r = Str { chars: vec() }
+    for c in "drum".chars() {
+        r = push(r, c)
+    }
+    r
+}
+
+fn main() {
+    let drum = drum()
+    print(drum)
+    print(reverse(&drum))
+    drop drum
+}
+
+fn reverse(s: &Str) -> Str {
+    let mut r = Str { chars: vec()

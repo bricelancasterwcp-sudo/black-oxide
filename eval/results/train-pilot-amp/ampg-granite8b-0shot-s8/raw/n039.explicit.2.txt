@@ -1,0 +1,61 @@
+fn main() {
+    let list = push(push(vec(), 1), 2)
+    print(get(&list, 5))
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    if i >= 0 && i < len(&v) {
+        Some(v.get(i.trunc()))
+    } else {
+        None
+    }
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut v = v
+    v.push(x)
+    v
+}
+
+fn vec() -> Vec<Int> {
+    let mut v = vec()
+    v
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    v.len()
+}
+
+fn print(x: Option<Int>) {
+    match x {
+        Some(x) => print_str(str_cat("Some(", int_to_str(x), ")")),
+        None => print_str("None"),
+    }
+}
+
+fn str_cat(a: Str, b: Str) -> Str {
+    let mut s = str()
+    s = str_cat(s, a)
+    s = str_cat(s, b)
+    s
+}
+
+fn str() -> Str {
+    let mut s = str()
+    s
+}
+
+fn print_str(s: Str) {
+    s
+}
+
+fn int_to_str(n: Int) -> Str {
+    str_cat(str_cat(str_cat(str_cat(str_cat(str_cat(str(), "0"), "0"), "0"), "0"), "0"), "0")
+}
+
+fn clone(x: T) -> T {
+    x
+}
+
+fn str_len(s: Str) -> Int {
+    len(&chars_to_vec_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str_cat_str

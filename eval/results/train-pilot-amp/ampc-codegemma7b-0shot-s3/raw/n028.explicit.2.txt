@@ -1,0 +1,16 @@
+fn read_number() -> Result<Int, Str> {
+    let input = read_str()?
+    match parse_int(&input) {
+        Some(n) => Ok(n),
+        None => Err("Invalid input".to_str())?,
+    }
+}
+
+fn main() {
+    let nums = push(push(vec(), 5), 40)
+    let bigger = extend(clone(&nums), 70)
+    print(sum_big(&nums, 10))
+    drop nums
+    print(sum_big(&bigger, 10))
+    drop bigger
+}

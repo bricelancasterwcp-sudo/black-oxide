@@ -1,0 +1,12 @@
+use std::io::{self, Write};
+
+fn main() {
+    let mut s = String::new();
+    io::stdin().read_line(&mut s).unwrap();
+    match s.trim() {
+        "green" => println!("go"),
+        "red" => println!("stop"),
+        "yellow" => println!("wait"),
+        _ => println!("Invalid signal"),
+    }
+}

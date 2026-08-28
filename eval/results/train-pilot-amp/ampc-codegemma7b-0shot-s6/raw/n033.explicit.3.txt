@@ -1,0 +1,14 @@
+fn main() {
+    print("go\n")
+    print("for\n")
+    print("green\n")
+    print("wait\n")
+    drop green
+    print("for\n")
+    print("yellow\n")
+    print("stop\n")
+    drop yellow
+    print("for\n")
+    print("red\n")
+    drop red
+}

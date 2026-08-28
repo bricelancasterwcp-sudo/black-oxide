@@ -1,0 +1,15 @@
+```rust
+const L: [i32; 2] = [10, 20];
+
+fn main() {
+    let a = L.get(0);
+    let b = L.get(3);
+    match (a, b) {
+        (Some(&a), Some(&b)) => {
+            println!("{}", a);
+            println!("{}", b);
+        },
+        _ => println!("No such index")
+    }
+}
+```

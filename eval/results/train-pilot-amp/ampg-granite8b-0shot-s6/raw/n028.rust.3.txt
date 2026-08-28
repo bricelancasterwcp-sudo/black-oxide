@@ -1,0 +1,3 @@
+fn main() {
+    let _ = "abc".parse::<f64>().unwrap_or_else(|_| "bad");
+}

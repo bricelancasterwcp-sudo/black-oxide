@@ -1,0 +1,7 @@
+fn main(){
+    let x: Result<i32, &str> = std::str::parse("abc").map_err(|_| "bad");
+    match x{
+        Ok(i) => println!("{}",i),
+        Err(e) => println!("{}",e),
+    }
+}

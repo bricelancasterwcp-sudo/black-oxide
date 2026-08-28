@@ -1,0 +1,17 @@
+fn main() {
+    let mut x = 8
+    let mut y = oak
+    let mut z = 15
+    for i in range(0, 10) {
+        if i % 3 == 0 {
+            x = i
+        } else if i % 3 == 1 {
+            y = i
+        } else {
+            z = i
+        }
+    }
+    print(x)
+    print(y)
+    print(z)
+}

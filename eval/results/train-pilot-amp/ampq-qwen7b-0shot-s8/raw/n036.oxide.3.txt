@@ -1,0 +1,8 @@
+struct Stock { item: Str, units: Int, value_per_unit: Float }
+
+fn main() {
+    let stock1 = Stock { item: "Item 1", units: 4, value_per_unit: 3.0 }
+    let stock2 = Stock { item: "Item 2", units: 5, value_per_unit: 2.0 }
+    let total_value = (stock1.units * to_float(stock1.value_per_unit)) + (stock2.units * to_float(stock2.value_per_unit))
+    print(total_value)
+}

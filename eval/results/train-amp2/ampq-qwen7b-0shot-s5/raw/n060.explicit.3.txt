@@ -1,0 +1,21 @@
+fn sum_and_count(digits: &Vec<Str>) -> Int {
+    let total = 0
+    let count = 0
+    for d in digits {
+        match d.parse_int() {
+            Some(_) => {
+                total = total + d.parse_int().unwrap()
+                count = count + 1
+            },
+            None => {
+                continue_to_next
+            },
+        }
+    }
+    (total + count)
+}
+
+fn main() {
+    let numbers = vec(vec_str("a1b22"))
+    print(sum_and_count(&numbers))
+}

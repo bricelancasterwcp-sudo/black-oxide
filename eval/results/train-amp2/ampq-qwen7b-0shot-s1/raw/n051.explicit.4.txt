@@ -1,0 +1,7 @@
+fn main() {
+    let granite = "granite"
+    let first = &granite
+    let last = &granite
+    print_str(&first)
+    print_str(&last)
+}

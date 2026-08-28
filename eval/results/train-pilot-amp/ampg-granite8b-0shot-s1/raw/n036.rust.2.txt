@@ -1,0 +1,8 @@
+```rust
+const FOUR_Units_THREE_Each: u32 = 4 * 3;
+const FIVE_Units_TWO_Each: u32 = 5 * 2;
+
+fn main() {
+    println!("{:?}", FOUR_Units_THREE_Each + FIVE_Units_TWO_Each);
+}
+```

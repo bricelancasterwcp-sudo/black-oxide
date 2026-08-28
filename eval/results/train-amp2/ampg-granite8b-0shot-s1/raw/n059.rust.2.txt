@@ -1,0 +1,12 @@
+```rust
+const PHRASE: &str = "when in doubt go home";
+
+fn main() {
+    let words = PHRASE.split_whitespace().collect::<Vec<_>>();
+    let num_words = words.len();
+    let num_chars = PHRASE.len();
+
+    println!("Number of words: {}", num_words);
+    println!("Number of characters (including spaces): {}", num_chars);
+}
+```

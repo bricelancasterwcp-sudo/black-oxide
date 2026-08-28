@@ -1,0 +1,25 @@
+fn product() -> Int {
+    let mut total = 1
+    for i in 1.to(6) {
+        total = total * i
+    }
+    total
+}
+
+fn main() {
+    print(product())
+    drop product
+}
+
+fn product() -> Int {
+    let mut total = 1
+    for i in 1.to(6) {
+        total = total * i
+    }
+    total
+}
+
+fn main() {
+    print(product())
+    drop product
+}

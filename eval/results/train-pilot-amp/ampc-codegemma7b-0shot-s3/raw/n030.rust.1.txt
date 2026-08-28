@@ -1,0 +1,15 @@
+```rust
+use std::io::{stdin, Read};
+
+fn main() {
+    let mut input = String::new();
+    stdin().read_to_string(&mut input).unwrap();
+
+    let vowels = input.chars().filter(|c| match c {
+        'a' | 'e' | 'i' | 'o' | 'u' => true,
+        _ => false,
+    }).count();
+
+    println!("The number of vowels is {}", vowels);
+}
+```

@@ -1,0 +1,8 @@
+fn main() {
+    let list = push(push(vec(), 20), 10)
+    print(get(&list, 0))
+    drop list
+    print(get(&list, 1))
+    drop list
+    print(get(&list, 2))
+}

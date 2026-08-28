@@ -1,0 +1,14 @@
+fn main() {
+  let mut total = 0;
+  let mut count = 0;
+  
+  for &x in &[7, 10, 9, 3, 8, 4] {
+    if let Ok(n) = x.try_into() {
+      total += n;
+      count += 1;
+    }
+  }
+  
+  println!("{}", total);
+  println!("{}", 4 - count);
+}

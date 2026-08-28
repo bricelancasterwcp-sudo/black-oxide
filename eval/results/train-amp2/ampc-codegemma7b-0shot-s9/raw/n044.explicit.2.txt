@@ -1,0 +1,18 @@
+fn main() {
+    let mut balance = 0
+    balance = balance + 3
+    print(balance)
+    drop balance
+    balance = balance - 1
+    print(balance)
+    drop balance
+    balance = balance + 4
+    print(balance)
+    drop balance
+    balance = balance - 1
+    print(balance)
+    drop balance
+    balance = balance + 5
+    print(balance)
+    drop balance
+}

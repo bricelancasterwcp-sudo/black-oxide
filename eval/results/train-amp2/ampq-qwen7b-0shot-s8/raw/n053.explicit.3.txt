@@ -1,0 +1,15 @@
+fn reverse_print(s: &Str) {
+    for c in chars(s) {
+        print(c)
+    }
+    print_str("\n")
+}
+
+fn main() {
+    let drum = str_len("drum") == 4 && chars("drum") == vec("d", "r", "u", "m")
+    if drum {
+        reverse_print("drum")
+        reverse_print("drum")
+    }
+    drop drum
+}

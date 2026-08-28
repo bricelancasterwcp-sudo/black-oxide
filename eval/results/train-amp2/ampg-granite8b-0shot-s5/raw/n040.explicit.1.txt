@@ -1,0 +1,184 @@
+fn main() {
+    justo_ok()
+}
+
+fn just_ok() -> Int {
+    let x = 3.1415
+    let side = 4.0
+    Circle(side).area()
+}
+
+struct Circle {
+    radius: Float,
+}
+
+struct Point {
+    x: Float,
+    y: Float,
+}
+
+struct Rect {
+    top_left: Point,
+    bottom_right: Point,
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Triangle {
+    base: Float,
+    height: Float,
+}
+
+enum Shape {
+    Circle(Float),
+    Rectangle(Rect),
+    Triangle(Triangle),
+    Nullary,
+}
+
+fn area(shape: &Shape) -> Float {
+    match shape {
+        Circle(radius) => {
+            PI * radius * radius
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+            rip
+        

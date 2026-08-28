@@ -1,0 +1,20 @@
+fn unique_chars(s: &Str) -> Vec<Char> {
+    let mut seen: Vec<Char> = vec()
+    for c in s.chars() {
+        if !seen.contains(&c) {
+            seen.push(c)
+            print(&c)
+            drop seen
+        }
+    }
+    seen
+}
+
+fn main() {
+    unique_chars("coffee")
+    print("\n")
+    unique_chars("mississippi")
+    print("\n")
+    unique_chars("hello")
+    print("\n")
+}

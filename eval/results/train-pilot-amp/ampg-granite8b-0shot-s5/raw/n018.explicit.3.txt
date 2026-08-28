@@ -1,0 +1,15 @@
+fn list_elements(list: &Vec<Int>) -> Vec<Int> {
+    let mut new_list = vec()
+    for element in list {
+        push(new_list, element)
+    }
+    new_list
+}
+
+fn main() {
+    let list = push(push(vec(), 1), 2)
+    for element in &list_elements {
+        print(element)
+    }
+    drop list
+}

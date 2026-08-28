@@ -1,0 +1,21 @@
+fn count_values(values: &Vec<Int>, cutoff: Int) -> Vec<Int> {
+    let mut under_cutoff = 0
+    let mut at_cutoff = 0
+    for value in values {
+        if value < &cutoff {
+            under_cutoff = under_cutoff + 1
+        } else {
+            at_cutoff = at_cutoff + 1
+        }
+    }
+    push(push(vec(), under_cutoff), at_cutoff)
+}
+
+fn main() {
+    let values = vec(5, 12, 3, 18, 9)
+    let cutoff = 10
+    let counts = count_values(&values, cutoff)
+    print(counts)
+    drop values
+    drop counts
+}

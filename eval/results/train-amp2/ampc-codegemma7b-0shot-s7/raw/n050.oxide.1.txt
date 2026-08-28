@@ -1,0 +1,275 @@
+fn main() {
+    let mut v = vec(2, 9, 5)
+    v.sort_by_key(std_cmp_reverse)
+    for x in v {
+        print(x)
+        print_str("\n")
+    }
+}
+
+fn std_cmp_reverse(a: Int, b: Int) -> Ordering {
+    match a.cmp(b) {
+        Ordering(a) => Ordering(b),
+        _ => Ordering(a),
+    }
+}
+
+fn vec(x: Int, y: Int, z: Int) -> Vec<Int> {
+    let mut v = Vec(x)
+    push(v, y)
+    push(v, z)
+    v
+}
+
+fn push(mut_vec: Vec<Int>, elem: Int) -> Vec<Int> {
+    mut_vec.push(elem)
+    mut_vec
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    for c in chars(s) {
+        print(int_to_str(ord(c)))
+    }
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut digits = vec()
+    let mut x = n
+    while x > 0 {
+        digits.push(rem(x, 10))
+        x = trunc(div(x, 10))
+    }
+    let mut result = vec()
+    for d in digits {
+        result.push(char(trunc(add(d, 48))))
+    }
+    Str(result)
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = vec()
+    for i in range(0, str_len(s)) {
+        result.push(Str(vec(ord(get(s, i)?))))
+    }
+    result
+}
+
+fn ord(c: Str) -> Int {
+    match c.chars().nth(0) {
+        Some(ch) => ch.into(),
+        None => 0,
+    }
+}
+
+fn rem(a: Int, b: Int) -> Int {
+    trunc(mul(a, inv(b)))
+}
+
+fn inv(a: Int) -> Int {
+    trunc(div(1, a))
+}
+
+fn mul(a: Int, b: Int) -> Int {
+    trunc(add(mul_float(to_float(a), to_float(b)), 0.5))
+}
+
+fn div(a: Int, b: Int) -> Float {
+    to_float(a) / to_float(b)
+}
+
+fn add(a: Int, b: Int) -> Int {
+    trunc(add_float(to_float(a), to_float(b)))
+}
+
+fn add_float(a: Float, b: Float) -> Float {
+    a + b
+}
+
+fn to_float(n: Int) -> Float {
+    Float(n)
+}
+
+fn trunc(x: Float) -> Int {
+    Int(x)
+}
+
+enum Ordering {
+    Less,
+    Equal,
+    Greater,
+}
+
+fn cmp(a: Int, b: Int) -> Ordering {
+    if a < b {
+        Ordering(Less)
+    } else if a == b {
+        Ordering(Equal)
+    } else {
+        Ordering(Greater)
+    }
+}
+
+fn std_cmp_reverse(a: Int, b: Int) -> Ordering {
+    cmp(a, b)
+}
+
+struct Str { chars: Vec<Str> }
+
+fn ord(c: Str) -> Int {
+    match c.chars.chars().nth(0) {
+        Some(ch) => ch.into(),
+        None => 0,
+    }
+}
+
+fn str_len(s: Str) -> Int {
+    s.chars.len()
+}
+
+fn get(s: Str, i: Int) -> Option<Str> {
+    if i < str_len(s) {
+        Some(s.chars.chars().nth(i)?)
+    } else {
+        None
+    }
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    s.chars.chars().map(Str).collect()
+}
+
+fn push(mut_vec: Vec<Str>, elem: Str) -> Vec<Str> {
+    mut_vec.push(elem)
+    mut_vec
+}
+
+fn vec(x: Int, y: Int, z: Int) -> Vec<Str> {
+    let mut v = vec()
+    push(v, Str(vec(x)))
+    push(v, Str(vec(y)))
+    push(v, Str(vec(z)))
+    v
+}
+
+fn print(x: Str) {
+    for c in chars(x) {
+        print(int_to_str(ord(c)))
+    }
+}
+
+fn print_str(s: Str) {
+    for c in chars(s) {
+        print(int_to_str(ord(c)))
+    }
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut digits = vec()
+    let mut x = n
+    while x > 0 {
+        digits.push(rem(x, 10))
+        x = trunc(div(x, 10))
+    }
+    let mut result = vec()
+    for d in digits {
+        result.push(char(trunc(add(d, 48))))
+    }
+    Str(result)
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = vec()
+    for i in range(0, str_len(s)) {
+        result.push(Str(vec(ord(get(s, i)?))))
+    }
+    result
+}
+
+fn ord(c: Str) -> Int {
+    match c.chars.chars().nth(0) {
+        Some(ch) => ch.into(),
+        None => 0,
+    }
+}
+
+fn str_len(s: Str) -> Int {
+    s.chars.len()
+}
+
+fn get(s: Str, i: Int) -> Option<Str> {
+    if i < str_len(s) {
+        Some(s.chars.chars().nth(i)?)
+    } else {
+        None
+    }
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    s.chars.chars().map(Str).collect()
+}
+
+fn push(mut_vec: Vec<Str>, elem: Str) -> Vec<Str> {
+    mut_vec.push(elem)
+    mut_vec
+}
+
+fn vec(x: Int, y: Int, z: Int) -> Vec<Str> {
+    let mut v = vec()
+    push(v, Str(vec(x)))
+    push(v, Str(vec(y)))
+    push(v, Str(vec(z)))
+    v
+}
+
+fn print(x: Str) {
+    for c in chars(x) {
+        print(int_to_str(ord(c)))
+    }
+}
+
+fn print_str(s: Str) {
+    for c in chars(s) {
+        print(int_to_str(ord(c)))
+    }
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut digits = vec()
+    let mut x = n
+    while x > 0 {
+        digits.push(rem(x, 10))
+        x = trunc(div(x, 10))
+    }
+    let mut result = vec()
+    for d in digits {
+        result.push(char(trunc(add(d, 48))))
+    }
+    Str(result)
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = vec()
+    for i in range(0, str_len(s)) {
+        result.push(Str(vec(ord(get(s, i)?))))
+    }
+    result
+}
+
+fn ord(c: Str) -> Int {
+    match c.chars.chars().nth(0) {
+        Some(ch) => ch.into(),
+        None => 0,
+    }
+}
+
+fn str_len(s: Str) -> Int {
+    s.chars.len()
+}
+
+fn get(s: Str, i: Int) -> Option<Str> {
+    if i < str_len(s) {
+        Some(s.chars.chars().nth(i

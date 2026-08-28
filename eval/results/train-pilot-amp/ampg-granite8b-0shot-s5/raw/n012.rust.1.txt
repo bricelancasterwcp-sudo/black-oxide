@@ -1,0 +1,24 @@
+```rust
+fn main() {
+    let list: Vec<i32> = (0..15).collect();
+    println!("len = {}", list.len());
+}
+```
+
+Alternatively, you could use a closure to generate the values and not worry about the type at all:
+
+```rust
+fn main() {
+    let list: Vec<_> = (0..15).collect();
+    println!("len = {}", list.len());
+}
+```
+
+If you need an iterator over the numbers instead of a Vec, you can use the range directly:
+
+```rust
+fn main() {
+    let list = 0..15;
+    println!("len = {}", list.len());
+}
+```

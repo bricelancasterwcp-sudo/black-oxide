@@ -1,0 +1,401 @@
+fn main() {
+    let mut balance = 0
+    deposit(&mut - deposits == 3, balance)
+    print(balance)
+    deposit(&mut - deposits == 1, balance)
+    print(balance)
+    deposit(&mut - deposits == 4, balance)
+    print(balance)
+    deposit(&mut - deposits == 1, balance)
+    print(balance)
+    deposit(&mut - deposits == 5, balance)
+    print(balance)
+    drop balance
+}
+
+fn deposit(amount: Int, balance: &Int) {
+    balance = balance + amount
+}
+
+fn print(value: &Int) {
+    print_str(str_len(to_float(value)))
+}
+
+fn str_len(s: &Str) -> Int {
+    len(s)
+}
+
+fn to_float(n: Int) -> Float {
+    int_to_float(n)
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn int_to_float(n: Int) -> Float {
+    to_float(n)
+}
+
+fn len(s: &Str) -> Int {
+    str_len(s)
+}
+
+fn drop_balance(balance: Int) {
+    drop balance
+}
+
+fn drop_amount(amount: Int) {
+    drop amount
+}
+
+fn main() {
+    let mut balance = 0
+    deposit(&mut - deposits == 3, balance)
+    print(balance)
+    deposit(&mut - deposits == 1, balance)
+    print(balance)
+    deposit(&mut - deposits == 4, balance)
+    print(balance)
+    deposit(&mut - deposits == 1, balance)
+    print(balance)
+    deposit(&mut - deposits == 5, balance)
+    print(balance)
+    drop_balance(balance)
+}
+
+fn deposit(amount: Int, balance: &Int) {
+    balance = balance + amount
+}
+
+fn print(value: &Int) {
+    print_str(str_len(to_float(value)))
+}
+
+fn str_len(s: &Str) -> Int {
+    len(s)
+}
+
+fn to_float(n: Int) -> Float {
+    int_to_float(n)
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn int_to_float(n: Int) -> Float {
+    to_float(n)
+}
+
+fn len(s: &Str) -> Int {
+    str_len(s)
+}
+
+fn drop_balance(balance: Int) {
+    drop balance
+}
+
+fn drop_amount(amount: Int) {
+    drop amount
+}
+
+fn main() {
+    let mut balance = 0
+    deposit(&mut - deposits == 3, balance)
+    print(balance)
+    deposit(&mut - deposits == 1, balance)
+    print(balance)
+    deposit(&mut - deposits == 4, balance)
+    print(balance)
+    deposit(&mut - deposits == 1, balance)
+    print(balance)
+    deposit(&mut - deposits == 5, balance)
+    print(balance)
+    drop_balance(balance)
+}
+
+fn deposit(amount: Int, balance: &Int) {
+    balance = balance + amount
+}
+
+fn print(value: &Int) {
+    print_str(str_len(to_float(value)))
+}
+
+fn str_len(s: &Str) -> Int {
+    len(s)
+}
+
+fn to_float(n: Int) -> Float {
+    int_to_float(n)
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn int_to_float(n: Int) -> Float {
+    to_float(n)
+}
+
+fn len(s: &Str) -> Int {
+    str_len(s)
+}
+
+fn drop_balance(balance: Int) {
+    drop balance
+}
+
+fn drop_amount(amount: Int) {
+    drop amount
+}
+
+fn main() {
+    let mut balance = 0
+    deposit(&mut - deposits == 3, balance)
+    print(balance)
+    deposit(&mut - deposits == 1, balance)
+    print(balance)
+    deposit(&mut - deposits == 4, balance)
+    print(balance)
+    deposit(&mut - deposits == 1, balance)
+    print(balance)
+    deposit(&mut - deposits == 5, balance)
+    print(balance)
+    drop_balance(balance)
+}
+
+fn deposit(amount: Int, balance: &Int) {
+    balance = balance + amount
+}
+
+fn print(value: &Int) {
+    print_str(str_len(to_float(value)))
+}
+
+fn str_len(s: &Str) -> Int {
+    len(s)
+}
+
+fn to_float(n: Int) -> Float {
+    int_to_float(n)
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn int_to_float(n: Int) -> Float {
+    to_float(n)
+}
+
+fn len(s: &Str) -> Int {
+    str_len(s)
+}
+
+fn drop_balance(balance: Int) {
+    drop balance
+}
+
+fn drop_amount(amount: Int) {
+    drop amount
+}
+
+fn main() {
+    let mut balance = 0
+    deposit(&mut - deposits == 3, balance)
+    print(balance)
+    deposit(&mut - deposits == 1, balance)
+    print(balance)
+    deposit(&mut - deposits == 4, balance)
+    print(balance)
+    deposit(&mut - deposits == 1, balance)
+    print(balance)
+    deposit(&mut - deposits == 5, balance)
+    print(balance)
+    drop_balance(balance)
+}
+
+fn deposit(amount: Int, balance: &Int) {
+    balance = balance + amount
+}
+
+fn print(value: &Int) {
+    print_str(str_len(to_float(value)))
+}
+
+fn str_len(s: &Str) -> Int {
+    len(s)
+}
+
+fn to_float(n: Int) -> Float {
+    int_to_float(n)
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn int_to_float(n: Int) -> Float {
+    to_float(n)
+}
+
+fn len(s: &Str) -> Int {
+    str_len(s)
+}
+
+fn drop_balance(balance: Int) {
+    drop balance
+}
+
+fn drop_amount(amount: Int) {
+    drop amount
+}
+
+fn main() {
+    let mut balance = 0
+    deposit(&mut - deposits == 3, balance)
+    print(balance)
+    deposit(&mut - deposits == 1, balance)
+    print(balance)
+    deposit(&mut - deposits == 4, balance)
+    print(balance)
+    deposit(&mut - deposits == 1, balance)
+    print(balance)
+    deposit(&mut - deposits == 5, balance)
+    print(balance)
+    drop_balance(balance)
+}
+
+fn deposit(amount: Int, balance: &Int) {
+    balance = balance + amount
+}
+
+fn print(value: &Int) {
+    print_str(str_len(to_float(value)))
+}
+
+fn str_len(s: &Str) -> Int {
+    len(s)
+}
+
+fn to_float(n: Int) -> Float {
+    int_to_float(n)
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn int_to_float(n: Int) -> Float {
+    to_float(n)
+}
+
+fn len(s: &Str) -> Int {
+    str_len(s)
+}
+
+fn drop_balance(balance: Int) {
+    drop balance
+}
+
+fn drop_amount(amount: Int) {
+    drop amount
+}
+
+fn main() {
+    let mut balance = 0
+    deposit(&mut - deposits == 3, balance)
+    print(balance)
+    deposit(&mut - deposits == 1, balance)
+    print(balance)
+    deposit(&mut - deposits == 4, balance)
+    print(balance)
+    deposit(&mut - deposits == 1, balance)
+    print(balance)
+    deposit(&mut - deposits == 5, balance)
+    print(balance)
+    drop_balance(balance)
+}
+
+fn deposit(amount: Int, balance: &Int) {
+    balance = balance + amount
+}
+
+fn print(value: &Int) {
+    print_str(str_len(to_float(value)))
+}
+
+fn str_len(s: &Str) -> Int {
+    len(s)
+}
+
+fn to_float(n: Int) -> Float {
+    int_to_float(n)
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn int_to_float(n: Int) -> Float {
+    to_float(n)
+}
+
+fn len(s: &Str) -> Int {
+    str_len(s)
+}
+
+fn drop_balance(balance: Int) {
+    drop balance
+}
+
+fn drop_amount(amount: Int) {
+    drop amount
+}
+
+fn main() {
+    let mut balance = 0
+    deposit(&mut - deposits == 3, balance)
+    print(balance)
+    deposit(&mut - deposits == 1, balance)
+    print(balance)
+    deposit(&mut - deposits == 4, balance)
+    print(balance)
+    deposit(&mut - deposits == 1, balance)
+    print(balance)
+    deposit(&mut - deposits == 5, balance)
+    print(balance)
+    drop_balance(balance)
+}
+
+fn deposit(amount: Int, balance: &Int) {
+    balance = balance + amount
+}
+
+fn print(value: &Int) {
+    print_str(str_len(to_float(value)))
+}
+
+fn str_len(s: &Str) -> Int {
+    len(s)
+}
+
+fn to_float(n: Int) -> Float {
+    int_to_float(n)
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn int_to_float(n: Int) -> Float {
+    to_float(n)
+}
+
+fn len(s: &Str) -> Int {
+    str_len(s)
+}
+
+fn drop_balance

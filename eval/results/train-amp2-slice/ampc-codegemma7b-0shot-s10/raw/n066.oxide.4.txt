@@ -1,0 +1,349 @@
+fn main() {
+    let mut total = 0
+    let mut output = vec_int()
+    for num in batch(9, 2, 12, 5, 16) {
+        if num < 10 {
+            output.push(num)
+            total = total + 1
+        }
+    }
+    for num in output {
+        print(num)
+        print_str("\n")
+    }
+    print(total)
+}
+
+fn vec_int() -> Vec<Int> {
+    vec()
+}
+
+fn batch(i: Int, j: Int, k: Int, l: Int, m: Int) -> Vec<Int> {
+    vec(i, j, k, l, m)
+}
+
+fn print(x: Any) {
+    println("{:?}", x)
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn int(n: Any) -> Int {
+    n.clone().unwrap_or_else(int_to_str)
+}
+
+fn any(n: Any) -> Any {
+    n
+}
+
+fn str(s: Any) -> Str {
+    s.clone().unwrap_or_else(str_len)
+}
+
+fn any_to_int(n: Any) -> Int {
+    int(n)
+}
+
+fn any_to_str(s: Any) -> Str {
+    str(s)
+}
+
+fn int_to_str(n: Any) -> Str {
+    n.clone().unwrap_or_else(int_to_str)
+}
+
+fn str_len(s: Any) -> Str {
+    s.clone().unwrap_or_else(str_len)
+}
+
+fn any_to_any(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_2(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_3(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_4(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_5(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_6(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_7(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_8(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_9(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_10(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_11(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_12(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_13(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_14(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_15(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_16(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_17(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_18(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_19(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_20(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_21(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_22(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_23(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_24(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_25(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_26(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_27(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_28(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_29(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_30(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_31(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_32(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_33(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_34(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_35(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_36(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_37(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_38(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_39(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_40(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_41(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_42(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_43(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_44(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_45(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_46(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_47(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_48(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_49(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_50(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_51(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_52(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_53(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_54(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_55(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_56(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_57(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_58(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_59(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_60(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_61(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_62(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_63(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_64(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_65(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_66(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_67(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_68(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_69(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_70(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_71(n: Any) -> Any {
+    n
+}
+
+fn any_to_any_72(n: Any) -> Any {
+    n
+}
+
+fn any

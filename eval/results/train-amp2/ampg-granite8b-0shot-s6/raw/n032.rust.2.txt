@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let s = (1, 5);
+    let t = (10, 5);
+    let u = (s.0 + t.0, s.1 + t.1);
+    println!("{:?}", u);
+}
+```

@@ -1,0 +1,12 @@
+fn divide(x: f64, y: f64) -> f64 {
+    if y == 0.0 {
+        panic!("Cannot divide by zero");
+    } else {
+        x / y
+    }
+}
+
+fn main() {
+    let result = divide(20.0, 4.0);
+    println!("The result is {}", result);
+}

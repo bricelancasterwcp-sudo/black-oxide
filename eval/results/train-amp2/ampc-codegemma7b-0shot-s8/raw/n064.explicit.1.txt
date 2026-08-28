@@ -1,0 +1,8 @@
+fn main() {
+    let mut nums = vec(10, 20)
+    let one = get(&nums, 1)
+    let four = get(&nums, 4)
+    print(one)
+    print(four)
+    drop nums
+}

@@ -1,0 +1,10 @@
+fn main() {
+    let entries = ["8", "oak", "15"];
+
+    for entry in entries {
+        match entry.parse::<usize>() {
+            Ok(num) => println!("{}", num),
+            Err(_) => println!("bad"),
+        }
+    }
+}

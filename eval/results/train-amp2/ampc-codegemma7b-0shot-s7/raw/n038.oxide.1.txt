@@ -1,0 +1,231 @@
+fn main() {
+    let mut s = Sensor { reading: 0 }
+    s.reading = 7
+    print(s.reading)
+}
+
+struct Sensor { reading: Int }
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    "0123456789abcdef"
+    let mut digits = vec()
+    let mut n2 = n
+    while n2 != 0 {
+        digits.push(to_char(n2 % 16))
+        n2 = trunc(n2 / 16)
+    }
+    let mut s = Str { len: digits.len(), data: digits }
+    reverse(s)
+    s
+}
+
+fn to_char(n: Int) -> Str {
+    if n < 10 {
+        return Str { len: 1, data: vec_char("0123456789".chars().nth(n)) }
+    }
+    Str
+    let mut digits = vec_char("abcdefghijklmnopqrstuvwxyz".chars().nth(n - 10))
+    digits.push(Str { len: 1, data: vec_char(".") })
+    let mut s = Str { len: digits.len(), data: digits }
+    reverse(s)
+    s
+}
+
+fn reverse(muts: Str) -> Str {
+    let mut d = 0
+    let mut h = muts.len - 1
+    while d < h {
+        swap(muts.data, d, h)
+        d = d + 1
+        h = h - 1
+    }
+    muts
+}
+
+fn swap(v: Vec<Str>, i: Int, j: Int) {
+    let tmp = v.get(i)
+    v.set(i, v.get(j))
+    v.set(j, tmp)
+}
+
+fn vec_char(c: Char) -> Vec<Str> {
+    let mut v = vec()
+    v.push(Str { len: 1, data: vec_char(c) })
+    v
+}
+
+fn vec_str(s: Str) -> Vec<Str> {
+    let mut v = vec()
+    for c in s.data {
+        v.push(Str { len: 1, data: vec_char(c) })
+    }
+    v
+}
+
+struct Str { len: Int, data: Vec<Str> }
+
+fn print(x: Str) {
+    print_str(x)
+}
+
+fn print_str(s: Str) {
+    for c in s.data {
+        print(c)
+    }
+}
+
+fn reverse(muts: Str) -> Str {
+    let mut d = 0
+    let mut h = muts.len - 1
+    while d < h {
+        swap(muts.data, d, h)
+        d = d + 1
+        h = h - 1
+    }
+    muts
+}
+
+fn swap(v: Vec<Str>, i: Int, j: Int) {
+    let tmp = v.get(i)
+    v.set(i, v.get(j))
+    v.set(j, tmp)
+}
+
+fn vec_char(c: Char) -> Vec<Str> {
+    let mut v = vec()
+    v.push(Str { len: 1, data: vec_char(c) })
+    v
+}
+
+fn vec_str(s: Str) -> Vec<Str> {
+    let mut v = vec()
+    for c in s.data {
+        v.push(Str { len: 1, data: vec_char(c) })
+    }
+    v
+}
+
+struct Sensor { reading: Int }
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    "0123456789abcdef"
+    let mut digits = vec()
+    let mut n2 = n
+    while n2 != 0 {
+        digits.push(to_char(n2 % 16))
+        n2 = trunc(n2 / 16)
+    }
+    let mut s = Str { len: digits.len(), data: digits }
+    reverse(s)
+    s
+}
+
+fn to_char(n: Int) -> Str {
+    if n < 10 {
+        return Str { len: 1, data: vec_char("0123456789".chars().nth(n)) }
+    }
+    Str
+    let mut digits = vec_char("abcdefghijklmnopqrstuvwxyz".chars().nth(n - 10))
+    digits.push(Str { len: 1, data: vec_char(".") })
+    let mut s = Str { len: digits.len(), data: digits }
+    reverse(s)
+    s
+}
+
+fn reverse(muts: Str) -> Str {
+    let mut d = 0
+    let mut h = muts.len - 1
+    while d < h {
+        swap(muts.data, d, h)
+        d = d + 1
+        h = h - 1
+    }
+    muts
+}
+
+fn swap(v: Vec<Str>, i: Int, j: Int) {
+    let tmp = v.get(i)
+    v.set(i, v.get(j))
+    v.set(j, tmp)
+}
+
+fn vec_char(c: Char) -> Vec<Str> {
+    let mut v = vec()
+    v.push(Str { len: 1, data: vec_char(c) })
+    v
+}
+
+fn vec_str(s: Str) -> Vec<Str> {
+    let mut v = vec()
+    for c in s.data {
+        v.push(Str { len: 1, data: vec_char(c) })
+    }
+    v
+}
+
+struct Str { len: Int, data: Vec<Str> }
+
+fn print(x: Str) {
+    print_str(x)
+}
+
+fn print_str(s: Str) {
+    for c in s.data {
+        print(c)
+    }
+}
+
+fn reverse(muts: Str) -> Str {
+    let mut d = 0
+    let mut h = muts.len - 1
+    while d < h {
+        swap(muts.data, d, h)
+        d = d + 1
+        h = h - 1
+    }
+    muts
+}
+
+fn swap(v: Vec<Str>, i: Int, j: Int) {
+    let tmp = v.get(i)
+    v.set(i, v.get(j))
+    v.set(j, tmp)
+}
+
+fn vec_char(c: Char) -> Vec<Str> {
+    let mut v = vec()
+    v.push(Str { len: 1, data: vec_char(c) })
+    v
+}
+
+fn vec_str(s: Str) -> Vec<Str> {
+    let mut v = vec()
+    for c in s.data {
+        v.push(Str { len: 1, data: vec_char(c) })
+    }
+    v
+}
+
+struct Sensor { reading: Int }
+
+fn main() {
+    let mut s = Sensor { reading: 0 }
+    s.reading = 7
+    print(s.reading)
+}

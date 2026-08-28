@@ -1,0 +1,149 @@
+fn main() {
+    let word = "banana".to_string().chars().collect_vec().into_iter().enumerate().filter_map(move || if_eq(second(pair()), "n")).map(pair_first).map(print_str).collect_vec()
+}
+
+fn if_eq(a: Str, b: Str) -> Bool {
+    a == b
+}
+
+fn second(p: Vec<Str>) -> Str {
+    p.get(1).unwrap().clone()
+}
+
+fn pair() -> Vec<Str> {
+    vec(vec("banana".to_string().chars().collect_vec()))
+}
+
+fn pair_first(pair: Vec<Str>) -> Str {
+    pair.get(0).unwrap().clone()
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn collect_vec(iter: Vec<Str>) -> Vec<Str> {
+    iter
+}
+
+fn vec(v: Vec<Str>) -> Vec<Str> {
+    v
+}
+
+fn vec_to_vec(v: Vec<Vec<Str>>) -> Vec<Str> {
+    v.concat()
+}
+
+fn vec_to_vec_to_vec(v: Vec<Vec<VecStr>>) -> Vec<Str> {
+    v.concat()
+}
+
+fn vec_to_vec_to_vec_to_vec(v: Vec<Vec<VecVecStr>>) -> Vec<Str> {
+    v.concat()
+}
+
+fn vec_to_vec_to_vec_to_vec_to_vec(v: Vec<Vec<VecVecVecStr>>) -> Vec<Str> {
+    v.concat()
+}
+
+fn vec_to_vec_to_vec_to_vec_to_vec_to_vec(v: Vec<Vec<VecVecVecVecStr>>) -> Vec<Str> {
+    v.concat()
+}
+
+fn vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec(v: Vec<Vec<VecVecVecVecVecStr>>) -> Vec<Str> {
+    v.concat()
+}
+
+fn vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec(v: Vec<Vec<VecVecVecVecVecVecStr>>) -> Vec<Str> {
+    v.concat()
+}
+
+fn vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec(v: Vec<Vec<VecVecVecVecVecVecVecStr>>) -> Vec<Str> {
+    v.concat()
+}
+
+fn vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec(v: Vec<Vec<VecVecVecVecVecVecVecVecStr>>) -> Vec<Str> {
+    v.concat()
+}
+
+fn vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec(v: Vec<Vec<VecVecVecVecVecVecVecVecVecStr>>) -> Vec<Str> {
+    v.concat()
+}
+
+fn vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec(v: Vec<Vec<VecVecVecVecVecVecVecVecVecVecStr>>) -> Vec<Str> {
+    v.concat()
+}
+
+fn vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec(v: Vec<Vec<VecVecVecVecVecVecVecVecVecVecVecStr>>) -> Vec<Str> {
+    v.concat()
+}
+
+fn vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec(v: Vec<Vec<VecVecVecVecVecVecVecVecVecVecVecVecStr>>) -> Vec<Str> {
+    v.concat()
+}
+
+fn vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec(v: Vec<Vec<VecVecVecVecVecVecVecVecVecVecVecVecVecStr>>) -> Vec<Str> {
+    v.concat()
+}
+
+fn vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec(v: Vec<Vec<VecVecVecVecVecVecVecVecVecVecVecVecVecVecStr>>) -> Vec<Str> {
+    v.concat()
+}
+
+fn vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec(v: Vec<Vec<VecVecVecVecVecVecVecVecVecVecVecVecVecVecVecStr>>) -> Vec<Str> {
+    v.concat()
+}
+
+fn vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec(v: Vec<Vec<VecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecStr>>) -> Vec<Str> {
+    v.concat()
+}
+
+fn vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec(v: Vec<Vec<VecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecStr>>) -> Vec<Str> {
+    v.concat()
+}
+
+fn vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec(v: Vec<Vec<VecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecStr>>) -> Vec<Str> {
+    v.concat()
+}
+
+fn vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec(v: Vec<Vec<VecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecStr>>) -> Vec<Str> {
+    v.concat()
+}
+
+fn vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec(v: Vec<Vec<VecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecStr>>) -> Vec<Str> {
+    v.concat()
+}
+
+fn vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec(v: Vec<Vec<VecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecStr>>) -> Vec<Str> {
+    v.concat()
+}
+
+fn vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec(v: Vec<Vec<VecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecStr>>) -> Vec<Str> {
+    v.concat()
+}
+
+fn vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec(v: Vec<Vec<VecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecStr>>) -> Vec<Str> {
+    v.concat()
+}
+
+fn vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec(v: Vec<Vec<VecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecStr>>) -> Vec<Str> {
+    v.concat()
+}
+
+fn vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec(v: Vec<Vec<VecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecStr>>) -> Vec<Str> {
+    v.concat()
+}
+
+fn vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec(v: Vec<Vec<VecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecStr>>) -> Vec<Str> {
+    v.concat()
+}
+
+fn vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec(v: Vec<Vec<VecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecStr>>) -> Vec<Str> {
+    v.concat()
+}
+
+fn vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec(v: Vec<Vec<VecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecVecStr>>) -> Vec<Str> {
+    v.concat()
+}
+
+fn vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec_to_vec

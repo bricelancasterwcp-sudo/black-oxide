@@ -1,0 +1,20 @@
+```rust
+fn main() {
+    let samples = [5, 12, 3, 18, 9];
+    let cutoff = 10;
+
+    let (under_cutoff, at_or_over_cutoff) = samples
+        .iter()
+        .fold((0, 0), |(mut under, mut at), &sample| {
+            if sample < cutoff {
+                under += 1;
+            } else {
+                at += 1;
+            }
+            (under, at)
+        });
+
+    println!("Under cutoff: {}", under_cutoff);
+    println!("At or over cutoff: {}", at_or_over_cutoff);
+}
+```

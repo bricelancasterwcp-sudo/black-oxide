@@ -1,0 +1,12 @@
+fn print_numbers() -> Str {
+    let one = "one"
+    let two = "two"
+    let three = "three"
+    let mut result = concat(concat(one, ", "), concat(two, ", "))
+    result = result + " " + three + "."
+    result
+}
+
+fn main() {
+    print(print_numbers())
+}

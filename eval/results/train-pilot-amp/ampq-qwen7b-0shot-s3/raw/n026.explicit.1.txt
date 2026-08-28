@@ -1,0 +1,29 @@
+fn to_str(n: Int) -> Str {
+    if n < 10 {
+        concat(int_to_str(n), "")
+    } else {
+        let last_digit = n % 10
+        let rest = n / 10
+        let rest_str = to_str(rest)
+        concat(rest_str, int_to_str(last_digit))
+    }
+}
+
+fn count_chars(s: &Str) -> Int {
+    let mut count = 0
+    for _ in chars(s) {
+        count = count + 1
+    }
+    count
+}
+
+fn main() {
+    let number = 2026
+    let number_str = to_str(number)
+    let char_count = count_chars(&number_str)
+    print(number_str)
+    print_str("\n")
+    print(to_str(char_count))
+    print_str("\n")
+    drop number_str
+}

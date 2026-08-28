@@ -1,0 +1,51 @@
+fn readings(a: Int, b: Int, c: Int, d: Int, e: Int) -> Int {
+    let mut num_readings = 0
+    let mut highest_reading = 0
+    if a > 5 {
+        num_readings = num_readings + 1
+        highest_reading = a
+    }
+    if b > 5 {
+        num_readings = num_readings + 1
+        highest_reading = b
+    }
+    if c > 5 {
+        num_readings = num_readings + 1
+        highest_reading = c
+    }
+    if d > 5 {
+        num_readings = num_readings + 1
+        highest_reading = d
+    }
+    if e > 5 {
+        num_readings = num_readings + 1
+        highest_reading = e
+    }
+    return num_readings
+}
+
+fn highest(a: Int, b: Int, c: Int, d: Int, e: Int) -> Int {
+    let mut highest_reading = 0
+    if a > highest_reading {
+        highest_reading = a
+    }
+    if b > highest_reading {
+        highest_reading = b
+    }
+    if c > highest_reading {
+        highest_reading = c
+    }
+    if d > highest_reading {
+        highest_reading = d
+    }
+    if e > highest_reading {
+        highest_reading = e
+    }
+    return highest_reading
+}
+
+fn main() {
+    let readings = readings(6, 11, 3, 14, 9)
+    print(readings)
+    print(highest(6, 11, 3, 14, 9))
+}

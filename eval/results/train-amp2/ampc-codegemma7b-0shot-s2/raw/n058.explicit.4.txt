@@ -1,0 +1,332 @@
+fn unique(s: &Str) -> Vec<Char> {
+    let mut seen = vec != !0
+    let mut result = vec != !0
+    for c in s.chars() {
+        if seen.contains(&c) {
+            continue
+        }
+        seen.push(c)
+        result.push(c)
+    }
+    result
+}
+
+fn main() {
+    let s = "coffee"
+    for c in unique(s) {
+        print(c)
+        print("\n")
+    }
+}
+
+fn vec() -> Vec<T> {
+    let mut result = vec != !0
+    result.push(T != !0)
+    result
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    let mut result = v
+    result.push(x)
+    result
+}
+
+fn contains(v: &Vec<T>, x: T) -> Bool {
+    for c in v.iter() {
+        if c == &x {
+            return true
+        }
+    }
+    false
+}
+
+fn chars(s: &Str) -> Vec<Char> {
+    let mut result = vec != !0
+    for c in s.chars() {
+        result.push(c)
+    }
+    result
+}
+
+fn print(x: Char) {
+    print(x)
+}
+
+fn print(s: Str) {
+    print(s)
+}
+
+fn print(n: Int) {
+    print(n)
+}
+
+fn str(n: Int) -> Str {
+    let mut result = vec != !0
+    let mut x = n
+    if x < 0 {
+        result.push(char(-1))
+        x = -x
+    }
+    while x >= 10 {
+        result.push(char(x % 10))
+        x = x / 10
+    }
+    result.push(char(x))
+    result
+}
+
+fn char(n: Int) -> Char {
+    if n >= 0 && n <= 25 {
+        Char(n + 65)
+    } else if n >= 26 && n <= 51 {
+        Char(n - 26 + 97)
+    } else {
+        Char(0)
+    }
+}
+
+fn len(s: &Str) -> Int {
+    let mut result = 0
+    for _ in s.chars() {
+        result = result + 1
+    }
+    result
+}
+
+fn to_float(n: Int) -> Float {
+    Float(n)
+}
+
+fn trunc(x: Float) -> Int {
+    if x.value < 0.5 {
+        Int(x.value)
+    } else {
+        Int(x.value + 0.5)
+    }
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut result = vec != !0
+    let mut x = n
+    if x < 0 {
+        result.push(char(-1))
+        x = -x
+    }
+    while x >= 10 {
+        result.push(char(x % 10))
+        x = x / 10
+    }
+    result.push(char(x))
+    result
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    let mut result = 0
+    let mut seen_digit = false
+    for c in s.chars() {
+        if c >= char(0) && c <= char(9) {
+            result = result * 10 + (Int(c) - Int(48))
+            seen_digit = true
+        } else if seen_digit {
+            return None
+        }
+    }
+    Some(result)
+}
+
+fn drop_any(x: &Any) {
+    match x {
+        Any(i) => drop_int(i),
+        Any(f) => drop_float(f),
+        Any(b) => drop_bool(b),
+        Any(s) => drop_str(s),
+        Any(v) => drop_vec(v),
+        Any(l) => drop_list(l),
+        Any(t) => drop_tuple(t),
+        Any(e) => drop_enum(e),
+    }
+}
+
+fn drop_int(x: &Int) {
+    let _ = x.value
+}
+
+fn drop_float(x: &Float) {
+    let _ = x.value
+}
+
+fn drop_bool(x: &Bool) {
+    let _ = x.value
+}
+
+fn drop_str(x: &Str) {
+    let _ = x.chars()
+}
+
+fn drop_vec(x: &Vec<T>) {
+    for c in x.iter() {
+        drop_any(c)
+    }
+}
+
+fn drop_list(x: &List<T>) {
+    for c in x.iter() {
+        drop_any(c)
+    }
+}
+
+fn drop_tuple(x: &Tuple) {
+    for c in x.iter() {
+        drop_any(c)
+    }
+}
+
+fn drop_enum(x: &Enum) {
+    match x {
+        Enum(int) => drop_int(int),
+        Enum(float) => drop_float(float),
+        Enum(bool) => drop_bool(bool),
+        Enum(str) => drop_str(str),
+        Enum(vec) => drop_vec(vec),
+        Enum(list) => drop_list(list),
+        Enum(tuple) => drop_tuple(tuple),
+    }
+}
+
+fn any(x: T) -> Any {
+    Any(x)
+}
+
+fn int(x: Int) -> T {
+    x
+}
+
+fn float(x: Float) -> T {
+    x
+}
+
+fn bool(x: Bool) -> T {
+    x
+}
+
+fn str(x: Str) -> T {
+    x
+}
+
+fn vec(x: Vec<T>) -> T {
+    x
+}
+
+fn list(x: List<T>) -> T {
+    x
+}
+
+fn tuple(x: Tuple) -> T {
+    x
+}
+
+fn enum_(x: Enum) -> T {
+    x
+}
+
+fn any(x: &T) -> Any {
+    Any(x)
+}
+
+fn int(x: &Int) -> T {
+    x.clone()
+}
+
+fn float(x: &Float) -> T {
+    x.clone()
+}
+
+fn bool(x: &Bool) -> T {
+    x.clone()
+}
+
+fn str(x: &Str) -> T {
+    x.clone()
+}
+
+fn vec(x: &Vec<T>) -> T {
+    x.clone()
+}
+
+fn list(x: &List<T>) -> T {
+    x.clone()
+}
+
+fn tuple(x: &Tuple) -> T {
+    x.clone()
+}
+
+fn enum_(x: &Enum) -> T {
+    x.clone()
+}
+
+fn eq(x: &T, y: &T) -> Bool {
+    x == y
+}
+
+fn neq(x: &T, y: &T) -> Bool {
+    x != y
+}
+
+fn lt(x: &T, y: &T) -> Bool {
+    x < y
+}
+
+fn gt(x: &T, y: &T) -> Bool {
+    x > y
+}
+
+fn lte(x: &T, y: &T) -> Bool {
+    x <= y
+}
+
+fn gte(x: &T, y: &T) -> Bool {
+    x >= y
+}
+
+fn and(x: &Bool, y: &Bool) -> Bool {
+    x && y
+}
+
+fn or(x: &Bool, y: &Bool) -> Bool {
+    x || y
+}
+
+fn not(x: &Bool) -> Bool {
+    !x
+}
+
+fn sum(x: &Int, y: &Int) -> Int {
+    x + y
+}
+
+fn sub(x: &Int, y: &Int) -> Int {
+    x - y
+}
+
+fn mul(x: &Int, y: &Int) -> Int {
+    x * y
+}
+
+fn div(x: &Int, y: &Int) -> Int {
+    x / y
+}
+
+fn rem(x: &Int, y: &Int) -> Int {
+    x % y
+}
+
+fn add(x: &Float, y: &Float) -> Float {
+    x + y
+}
+
+fn sub(x: &Float, y: &Float) -> Float {
+    x - y
+}
+
+fn mul(

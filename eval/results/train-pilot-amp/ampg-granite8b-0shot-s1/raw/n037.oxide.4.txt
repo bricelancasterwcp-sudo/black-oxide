@@ -1,0 +1,32 @@
+fn main() {
+    let rectangle = Rectangle { width: 2, height: 3 }
+    print(area(Rectangle { width: 5, ..rectangle }))
+}
+
+struct Rectangle { width: Int, height: Int }
+
+fn area(r: Rectangle) -> Int {
+    r.width * r.height
+}
+
+struct Rectangle { width: Int, height: Int }
+
+fn main() {
+    let rectangle = Rectangle { width: 2, height: 3 }
+    let rectangle = Rectangle { width: 5, ..rectangle }
+    print(area(rectangle))
+}
+
+struct Rectangle { width: Int, height: Int }
+
+fn area(r: Rectangle) -> Int {
+    r.width * r.height
+}
+
+struct Rectangle { width: Int, height: Int }
+
+fn main() {
+    let rectangle = Rectangle { width: 2, height: 3 }
+    let rectangle = Rectangle { width: 5, ..rectangle }
+    print(area(rectangle))
+}

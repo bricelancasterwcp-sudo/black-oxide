@@ -1,0 +1,6 @@
+fn main() {
+    let nums = [4, 8, 15, 16, 23, 42];
+    let sum: i32 = nums.iter().sum();
+    let mean = sum as f64 / nums.len() as f64;
+    println!("Mean: {}", mean);
+}

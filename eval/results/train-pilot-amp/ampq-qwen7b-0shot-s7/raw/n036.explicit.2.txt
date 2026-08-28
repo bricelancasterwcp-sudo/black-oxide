@@ -1,0 +1,13 @@
+fn total_value() -> Int {
+    let four_units = push(push(vec(), 3), 3)
+    let five_units = push(push(vec(), 2), 2)
+    let total = 4 * four_units.get(0).unwrap() + 5 * five_units.get(0).unwrap()
+    print(total)
+    drop four_units
+    drop five_units
+    total
+}
+
+fn main() {
+    total_value()
+}

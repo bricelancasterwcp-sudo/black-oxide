@@ -1,0 +1,13 @@
+fn main() {
+    let mut list = push(push(vec(), 7), 4)
+    let mut sum = 0
+    for item in &list {
+        if item % 2 == 1 {
+            print(item * 2)
+        } else {
+            sum = sum + item
+        }
+    }
+    print(sum)
+    drop list
+}

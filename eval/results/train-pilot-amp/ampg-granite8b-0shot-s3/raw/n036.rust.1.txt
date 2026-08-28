@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let four_units_worth_three = 4 * 3;
+    let five_units_worth_two = 5 * 2;
+    println!("{}", four_units_worth_three + five_units_worth_two);
+}
+```
+
+Explanation:
+The given code snippet already provides a correct solution to the problem. It declares two variables, `four_units_worth_three` and `five_units_worth_two`, which represent the total value of the stocked items. The values are calculated by multiplying the quantity and price of each item. Finally, the total value is printed to the console using the `println!` macro.

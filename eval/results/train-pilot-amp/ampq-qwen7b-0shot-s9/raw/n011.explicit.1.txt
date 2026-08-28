@@ -1,0 +1,16 @@
+fn sum_multiples_of_four(limit: Int) -> Int {
+    let total = 0
+    let mut count = 0
+    let mut multiple = 4
+    while count < limit {
+        total = total + multiple
+        multiple = multiple + 4
+        count = count + 1
+    }
+    total
+}
+
+fn main() {
+    let result = sum_multiples_of_four(6)
+    print(result)
+}

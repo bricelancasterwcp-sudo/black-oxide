@@ -1,0 +1,14 @@
+fn count_a(word: &Str) -> Int {
+    let mut a_count = 0
+    for c in &chars_owned_by_word {
+        if c == "a" {
+            a_count = a_count + 1
+        }
+    }
+    a_count
+}
+
+fn main() {
+    let banana = "banana"
+    print(count_a(&banana))
+}

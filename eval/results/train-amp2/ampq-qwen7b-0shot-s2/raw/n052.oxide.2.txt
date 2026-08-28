@@ -1,0 +1,306 @@
+fn main() {
+    let word = "banana".chars().enumerate().filter_map(move || if_char_eq_n).print_positions()
+}
+
+fn if_char_eq_n(i: Int, c: Str) -> Option<Int> {
+    if c == "n" {
+        Some(i)
+    } else {
+        None
+    }
+}
+
+fn print_positions(self: Vec<Int>) {
+    for pos in self {
+        println(pos)
+    }
+}
+
+fn enumerate(self: Vec<Str>) -> Vec<Tuple<Int, Str>> {
+    self.into_iter().enumerate().map(move || Tuple(_, _)).collect()
+}
+
+fn filter_map(self: Vec<Tuple<Int, Str>>, f: Fn<Int, Str>) -> Vec<Int> {
+    self.into_iter().filter_map(move || f).collect()
+}
+
+fn into_iter(self: Vec<Str>) -> VecIterator<Str> {
+    VecIterator(self)
+}
+
+fn map(self: VecIterator<Str>, f: Fn<Str>) -> VecIterator<Str> {
+    VecIterator(self.into_iter().map(move || f))
+}
+
+struct VecIterator {
+    iter: VecIteratorImpl,
+}
+
+struct VecIteratorImpl {
+    index: Int,
+    values: Vec<Str>,
+}
+
+fn next(self: VecIterator) -> Option<Str> {
+    let next = self.iter.next()
+    if next.is_some() {
+        Some(next.unwrap())
+    } else {
+        None
+    }
+}
+
+fn len(self: VecIterator) -> Int {
+    self.iter.len()
+}
+
+fn enumerate(self: VecIterator) -> VecIterator<Str> {
+    VecIterator(self.iter.enumerate().map(move || Tuple(_, _)))
+}
+
+fn filter_map(self: VecIterator, f: Fn<Str>) -> VecIterator<Str> {
+    VecIterator(self.into_iter().filter_map(move || f))
+}
+
+fn into_iter(self: VecIterator) -> VecIteratorImpl {
+    VecIteratorImpl(self.iter.into_iter())
+}
+
+fn map(self: VecIteratorImpl, f: Fn<Str>) -> VecIteratorImpl {
+    VecIteratorImpl(self.index, self.values.map(move || f))
+}
+
+fn next(self: VecIteratorImpl) -> Option<Str> {
+    if self.index < self.values.len() {
+        let next = self.values.get(self.index)
+        self.index = self.index + 1
+        next
+    } else {
+        None
+    }
+}
+
+fn len(self: VecIteratorImpl) -> Int {
+    self.values.len()
+}
+
+fn enumerate(self: VecIteratorImpl) -> VecIteratorImpl {
+    VecIteratorImpl(self.index, self.values.enumerate().map(move || Tuple(_, _)))
+}
+
+fn filter_map(self: VecIteratorImpl, f: Fn<Str>) -> VecIteratorImpl {
+    VecIteratorImpl(self.index, self.values.filter_map(move || f))
+}
+
+fn into_iter(self: VecIteratorImpl) -> VecIteratorImpl {
+    VecIteratorImpl(self.index, self.values.into_iter())
+}
+
+fn map(self: VecIteratorImpl, f: Fn<Str>) -> VecIteratorImpl {
+    VecIteratorImpl(self.index, self.values.map(move || f))
+}
+
+fn next(self: VecIteratorImpl) -> Option<Str> {
+    if self.index < self.values.len() {
+        let next = self.values.get(self.index)
+        self.index = self.index + 1
+        next
+    } else {
+        None
+    }
+}
+
+fn len(self: VecIteratorImpl) -> Int {
+    self.values.len()
+}
+
+fn enumerate(self: VecIteratorImpl) -> VecIteratorImpl {
+    VecIteratorImpl(self.index, self.values.enumerate().map(move || Tuple(_, _)))
+}
+
+fn filter_map(self: VecIteratorImpl, f: Fn<Str>) -> VecIteratorImpl {
+    VecIteratorImpl(self.index, self.values.filter_map(move || f))
+}
+
+fn into_iter(self: VecIteratorImpl) -> VecIteratorImpl {
+    VecIteratorImpl(self.index, self.values.into_iter())
+}
+
+fn map(self: VecIteratorImpl, f: Fn<Str>) -> VecIteratorImpl {
+    VecIteratorImpl(self.index, self.values.map(move || f))
+}
+
+fn next(self: VecIteratorImpl) -> Option<Str> {
+    if self.index < self.values.len() {
+        let next = self.values.get(self.index)
+        self.index = self.index + 1
+        next
+    } else {
+        None
+    }
+}
+
+fn len(self: VecIteratorImpl) -> Int {
+    self.values.len()
+}
+
+fn enumerate(self: VecIteratorImpl) -> VecIteratorImpl {
+    VecIteratorImpl(self.index, self.values.enumerate().map(move || Tuple(_, _)))
+}
+
+fn filter_map(self: VecIteratorImpl, f: Fn<Str>) -> VecIteratorImpl {
+    VecIteratorImpl(self.index, self.values.filter_map(move || f))
+}
+
+fn into_iter(self: VecIteratorImpl) -> VecIteratorImpl {
+    VecIteratorImpl(self.index, self.values.into_iter())
+}
+
+fn map(self: VecIteratorImpl, f: Fn<Str>) -> VecIteratorImpl {
+    VecIteratorImpl(self.index, self.values.map(move || f))
+}
+
+fn next(self: VecIteratorImpl) -> Option<Str> {
+    if self.index < self.values.len() {
+        let next = self.values.get(self.index)
+        self.index = self.index + 1
+        next
+    } else {
+        None
+    }
+}
+
+fn len(self: VecIteratorImpl) -> Int {
+    self.values.len()
+}
+
+fn enumerate(self: VecIteratorImpl) -> VecIteratorImpl {
+    VecIteratorImpl(self.index, self.values.enumerate().map(move || Tuple(_, _)))
+}
+
+fn filter_map(self: VecIteratorImpl, f: Fn<Str>) -> VecIteratorImpl {
+    VecIteratorImpl(self.index, self.values.filter_map(move || f))
+}
+
+fn into_iter(self: VecIteratorImpl) -> VecIteratorImpl {
+    VecIteratorImpl(self.index, self.values.into_iter())
+}
+
+fn map(self: VecIteratorImpl, f: Fn<Str>) -> VecIteratorImpl {
+    VecIteratorImpl(self.index, self.values.map(move || f))
+}
+
+fn next(self: VecIteratorImpl) -> Option<Str> {
+    if self.index < self.values.len() {
+        let next = self.values.get(self.index)
+        self.index = self.index + 1
+        next
+    } else {
+        None
+    }
+}
+
+fn len(self: VecIteratorImpl) -> Int {
+    self.values.len()
+}
+
+fn enumerate(self: VecIteratorImpl) -> VecIteratorImpl {
+    VecIteratorImpl(self.index, self.values.enumerate().map(move || Tuple(_, _)))
+}
+
+fn filter_map(self: VecIteratorImpl, f: Fn<Str>) -> VecIteratorImpl {
+    VecIteratorImpl(self.index, self.values.filter_map(move || f))
+}
+
+fn into_iter(self: VecIteratorImpl) -> VecIteratorImpl {
+    VecIteratorImpl(self.index, self.values.into_iter())
+}
+
+fn map(self: VecIteratorImpl, f: Fn<Str>) -> VecIteratorImpl {
+    VecIteratorImpl(self.index, self.values.map(move || f))
+}
+
+fn next(self: VecIteratorImpl) -> Option<Str> {
+    if self.index < self.values.len() {
+        let next = self.values.get(self.index)
+        self.index = self.index + 1
+        next
+    } else {
+        None
+    }
+}
+
+fn len(self: VecIteratorImpl) -> Int {
+    self.values.len()
+}
+
+fn enumerate(self: VecIteratorImpl) -> VecIteratorImpl {
+    VecIteratorImpl(self.index, self.values.enumerate().map(move || Tuple(_, _)))
+}
+
+fn filter_map(self: VecIteratorImpl, f: Fn<Str>) -> VecIteratorImpl {
+    VecIteratorImpl(self.index, self.values.filter_map(move || f))
+}
+
+fn into_iter(self: VecIteratorImpl) -> VecIteratorImpl {
+    VecIteratorImpl(self.index, self.values.into_iter())
+}
+
+fn map(self: VecIteratorImpl, f: Fn<Str>) -> VecIteratorImpl {
+    VecIteratorImpl(self.index, self.values.map(move || f))
+}
+
+fn next(self: VecIteratorImpl) -> Option<Str> {
+    if self.index < self.values.len() {
+        let next = self.values.get(self.index)
+        self.index = self.index + 1
+        next
+    } else {
+        None
+    }
+}
+
+fn len(self: VecIteratorImpl) -> Int {
+    self.values.len()
+}
+
+fn enumerate(self: VecIteratorImpl) -> VecIteratorImpl {
+    VecIteratorImpl(self.index, self.values.enumerate().map(move || Tuple(_, _)))
+}
+
+fn filter_map(self: VecIteratorImpl, f: Fn<Str>) -> VecIteratorImpl {
+    VecIteratorImpl(self.index, self.values.filter_map(move || f))
+}
+
+fn into_iter(self: VecIteratorImpl) -> VecIteratorImpl {
+    VecIteratorImpl(self.index, self.values.into_iter())
+}
+
+fn map(self: VecIteratorImpl, f: Fn<Str>) -> VecIteratorImpl {
+    VecIteratorImpl(self.index, self.values.map(move || f))
+}
+
+fn next(self: VecIteratorImpl) -> Option<Str> {
+    if self.index < self.values.len() {
+        let next = self.values.get(self.index)
+        self.index = self.index + 1
+        next
+    } else {
+        None
+    }
+}
+
+fn len(self: VecIteratorImpl) -> Int {
+    self.values.len()
+}
+
+fn enumerate(self: VecIteratorImpl) -> VecIteratorImpl {
+    VecIteratorImpl(self.index, self.values.enumerate().map(move || Tuple(_, _)))
+}
+
+fn filter_map(self: VecIteratorImpl, f: Fn<Str>) -> VecIteratorImpl {
+    VecIteratorImpl(self.index, self.values.filter_map(move || f))
+}
+
+fn into_iter(self: VecIteratorImpl) -> VecIteratorImpl {
+    VecIteratorImpl

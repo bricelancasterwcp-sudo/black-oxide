@@ -1,0 +1,355 @@
+fn main() {
+    let blackoxide = oxide("black") + oxide("oxide")
+    print(blackoxide)
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string()
+}
+
+fn oxide(a: &Str) -> Str {
+    a.to_string

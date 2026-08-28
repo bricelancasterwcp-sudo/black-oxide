@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    match "green" {
+        "green" => println!("go"),
+        "red" => println!("stop"),
+        "yellow" => println!("wait"),
+        _ => panic!("unknown signal"),
+    }
+}
+```

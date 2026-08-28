@@ -1,0 +1,14 @@
+fn main() {
+    let list = [7, 4, 9, 10];
+    let mut even_sum = 0;
+
+    for &item in list.iter() {
+        if item % 2 == 0 {
+            even_sum += item;
+        } else {
+            println!("{}", item * 2);
+        }
+    }
+
+    println!("Total of even entries: {}", even_sum);
+}

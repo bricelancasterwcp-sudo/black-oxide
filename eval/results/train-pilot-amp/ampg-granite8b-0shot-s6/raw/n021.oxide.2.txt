@@ -1,0 +1,11 @@
+struct Word { body: Str }
+
+fn main() {
+    print(len(Word { body: "programming" }))
+}
+
+struct Word { body: Str }
+
+fn main() {
+    print(len(Word { body: "programming".to_string() }))
+}

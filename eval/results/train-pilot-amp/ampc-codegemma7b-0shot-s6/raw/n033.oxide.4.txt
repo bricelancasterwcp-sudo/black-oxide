@@ -1,0 +1,12 @@
+fn main() {
+    let green = true
+    let yellow = false
+    let signal = green
+    if green {
+        print_str("go for green")
+    } else if yellow {
+        print_str("wait for yellow")
+    } else {
+        print_str("stop for red")
+    }
+}

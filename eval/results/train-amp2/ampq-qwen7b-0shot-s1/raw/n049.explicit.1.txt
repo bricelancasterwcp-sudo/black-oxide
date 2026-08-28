@@ -1,0 +1,22 @@
+fn smallest(a: Int, b: Int) -> Int {
+    if a < b {
+        a
+    } else {
+        b
+    }
+}
+
+fn gap(a: Int, b: Int, c: Int, d: Int) -> Int {
+    let max = if a > b && a > c && a > d { a } else { if b > c && b > d { b } else { if c > d { c } else { d } } }
+    let min = smallest(smallest(a, b), smallest(c, d))
+    max - min
+}
+
+fn main() {
+    let figure_8 = 8
+    let figure_3 = 3
+    let figure_11 = 11
+    let figure_6 = 6
+    print(smallest(figure_8, smallest(figure_3, smallest(figure_11, figure_6))))
+    print(gap(figure_8, figure_3, figure_11, figure_6))
+}

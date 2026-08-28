@@ -1,0 +1,21 @@
+struct List { item: Int, next: Option<List> }
+
+fn lookup(list: List, pos: Int) -> Option<Int> {
+    let mut current = Some(list)
+    for _ in 0 < pos {
+        current = current?.next
+    }
+    current?.item
+}
+
+fn main() {
+    let list = List { item: 10, next: Some(List { item: 20, next: None }) }
+    match lookup(list, 1) {
+        Some(n) => print(n),
+        None => print_str("none"),
+    }
+    match lookup(list, 4) {
+        Some(n) => print(n),
+        None => print_str("none"),
+    }
+}

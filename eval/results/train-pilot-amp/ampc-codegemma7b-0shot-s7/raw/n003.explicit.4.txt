@@ -1,0 +1,14 @@
+fn count_factors(n: Int) -> Int {
+    let mut count = 0
+    for i in 1.to_int() + 1.to_int() {
+        if n % i.to_int() == 0.to_int() {
+            count = count + 1.to_int()
+        }
+    }
+    count
+}
+
+fn main() {
+    print(count_factors(36.to_int()))
+    drop count
+}

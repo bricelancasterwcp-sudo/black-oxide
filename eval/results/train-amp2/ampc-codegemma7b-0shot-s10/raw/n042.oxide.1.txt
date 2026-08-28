@@ -1,0 +1,15 @@
+fn main() {
+    let values = vec(12, 5, 20, 8, 17)
+    let mut largest = values.first().unwrap()
+    let mut second_largest = None
+    for value in values.iter().skip(1) {
+        if value > largest {
+            second_largest = Some(largest)
+            largest = value
+        } else if second_largest.is_none() || value > second_largest.unwrap() {
+            second_largest = Some(value)
+        }
+    }
+    print(largest)
+    print(second_largest.unwrap())
+}

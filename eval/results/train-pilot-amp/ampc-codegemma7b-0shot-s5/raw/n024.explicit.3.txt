@@ -1,0 +1,297 @@
+fn main() {
+    let word = str_len("banana")
+    let count = 0
+    for c in chars(word) {
+        if c == "a" {
+            count = count + 1
+        }
+    }
+    print(count)
+    drop word
+}
+
+fn str_len(s: &Str) -> Int {
+    let mut len = 0
+    for _ in chars(s) {
+        len = len + 1
+    }
+    len
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut chars = vec()
+    let mut idx = 0
+    while idx < s.len() {
+        chars.push(s.chars().nth(idx).unwrap())
+        idx = idx + 1
+    }
+    chars
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut chars = vec()
+    let mut idx = 0
+    while idx < s.len() {
+        chars.push(s.chars().nth(idx).unwrap())
+        idx = idx + 1
+    }
+    chars
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    let mut new_vec = vec()
+    for e in v {
+        new_vec.push(e)
+    }
+    new_vec.push(x)
+    new_vec
+}
+
+fn print(x: Int) {
+    let mut str = String.from("")
+    let mut idx = 0
+    while idx < x.to_string().len() {
+        str.push(x.to_string().chars().nth(idx).unwrap())
+        idx = idx + 1
+    }
+    print(str)
+}
+
+fn drop_string(s: &Str) {
+    let mut idx = 0
+    while idx < s.len() {
+        let c = s.chars().nth(idx).unwrap()
+        drop c
+        idx = idx + 1
+    }
+}
+
+fn print(x: String) {
+    let mut idx = 0
+    while idx < x.len() {
+        print(x.chars().nth(idx).unwrap())
+        idx = idx + 1
+    }
+}
+
+fn drop_string(s: &Str) {
+    let mut idx = 0
+    while idx < s.len() {
+        let c = s.chars().nth(idx).unwrap()
+        drop c
+        idx = idx + 1
+    }
+}
+
+fn drop_string(s: &Str) {
+    let mut idx = 0
+    while idx < s.len() {
+        let c = s.chars().nth(idx).unwrap()
+        drop c
+        idx = idx + 1
+    }
+}
+
+fn main() {
+    let word = str_len("banana")
+    let count = 0
+    for c in chars(word) {
+        if c == "a" {
+            count = count + 1
+        }
+    }
+    print(count)
+    drop word
+}
+
+fn str_len(s: &Str) -> Int {
+    let mut len = 0
+    for _ in chars(s) {
+        len = len + 1
+    }
+    len
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut chars = vec()
+    let mut idx = 0
+    while idx < s.len() {
+        chars.push(s.chars().nth(idx).unwrap())
+        idx = idx + 1
+    }
+    chars
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut chars = vec()
+    let mut idx = 0
+    while idx < s.len() {
+        chars.push(s.chars().nth(idx).unwrap())
+        idx = idx + 1
+    }
+    chars
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    let mut new_vec = vec()
+    for e in v {
+        new_vec.push(e)
+    }
+    new_vec.push(x)
+    new_vec
+}
+
+fn print(x: Int) {
+    let mut str = String.from("")
+    let mut idx = 0
+    while idx < x.to_string().len() {
+        str.push(x.to_string().chars().nth(idx).unwrap())
+        idx = idx + 1
+    }
+    print(str)
+}
+
+fn drop_string(s: &Str) {
+    let mut idx = 0
+    while idx < s.len() {
+        let c = s.chars().nth(idx).unwrap()
+        drop c
+        idx = idx + 1
+    }
+}
+
+fn print(x: String) {
+    let mut idx = 0
+    while idx < x.len() {
+        print(x.chars().nth(idx).unwrap())
+        idx = idx + 1
+    }
+}
+
+fn drop_string(s: &Str) {
+    let mut idx = 0
+    while idx < s.len() {
+        let c = s.chars().nth(idx).unwrap()
+        drop c
+        idx = idx + 1
+    }
+}
+
+fn drop_string(s: &Str) {
+    let mut idx = 0
+    while idx < s.len() {
+        let c = s.chars().nth(idx).unwrap()
+        drop c
+        idx = idx + 1
+    }
+}
+
+fn main() {
+    let word = str_len("banana")
+    let count = 0
+    for c in chars(word) {
+        if c == "a" {
+            count = count + 1
+        }
+    }
+    print(count)
+    drop word
+}
+
+fn str_len(s: &Str) -> Int {
+    let mut len = 0
+    for _ in chars(s) {
+        len = len + 1
+    }
+    len
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut chars = vec()
+    let mut idx = 0
+    while idx < s.len() {
+        chars.push(s.chars().nth(idx).unwrap())
+        idx = idx + 1
+    }
+    chars
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut chars = vec()
+    let mut idx = 0
+    while idx < s.len() {
+        chars.push(s.chars().nth(idx).unwrap())
+        idx = idx + 1
+    }
+    chars
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    let mut new_vec = vec()
+    for e in v {
+        new_vec.push(e)
+    }
+    new_vec.push(x)
+    new_vec
+}
+
+fn print(x: Int) {
+    let mut str = String.from("")
+    let mut idx = 0
+    while idx < x.to_string().len() {
+        str.push(x.to_string().chars().nth(idx).unwrap())
+        idx = idx + 1
+    }
+    print(str)
+}
+
+fn drop_string(s: &Str) {
+    let mut idx = 0
+    while idx < s.len() {
+        let c = s.chars().nth(idx).unwrap()
+        drop c
+        idx = idx + 1
+    }
+}
+
+fn print(x: String) {
+    let mut idx = 0
+    while idx < x.len() {
+        print(x.chars().nth(idx).unwrap())
+        idx = idx + 1
+    }
+}
+
+fn drop_string(s: &Str) {
+    let mut idx = 0
+    while idx < s.len() {
+        let c = s.chars().nth(idx).unwrap()
+        drop c
+        idx = idx + 1
+    }
+}
+
+fn drop_string(s: &Str) {
+    let mut idx = 0
+    while idx < s.len() {
+        let c = s.chars().nth(idx).unwrap()
+        drop c
+        idx = idx + 1
+    }
+}
+
+fn main() {
+    let word = str_len("banana")
+    let count = 0
+    for c in chars(word) {
+        if c == "a" {
+            count = count + 1
+        }
+    }
+    print(count)
+    drop word
+}
+
+fn str_len(s: &Str) -> Int {
+    let mut len = 0
+    for _ in chars(s) {

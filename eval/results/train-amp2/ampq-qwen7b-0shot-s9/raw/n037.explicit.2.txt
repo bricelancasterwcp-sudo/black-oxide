@@ -1,0 +1,10 @@
+fn area(w: Int, h: Int) -> Int {
+    w * h
+}
+
+fn main() {
+    let rect = (2.0.to_int().unwrap_or_default()) * (3.0.to_int().unwrap_or_default())
+    let new_width = 5.0.to_int().unwrap_or_default()
+    let new_area = area(new_width, rect)
+    print_str(new_area.to_string())
+}

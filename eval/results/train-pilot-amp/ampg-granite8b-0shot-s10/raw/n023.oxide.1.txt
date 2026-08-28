@@ -1,0 +1,6 @@
+struct Point { x: Int, y: Int }
+
+fn main() {
+    let origin = Point { x: 0, y: 0 }
+    print(origin.x)
+}

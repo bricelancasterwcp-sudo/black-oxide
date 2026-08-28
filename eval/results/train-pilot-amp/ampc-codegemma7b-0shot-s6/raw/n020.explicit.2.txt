@@ -1,0 +1,13 @@
+fn mean(nums: &Vec<Int>) -> Int {
+    let total = 0
+    for num in nums {
+        total = total + &num
+    }
+    total / nums.len()
+}
+
+fn main() {
+    let nums = vec(4, 8, 15, 16, 23, 42)
+    print(mean(&nums))
+    drop nums
+}

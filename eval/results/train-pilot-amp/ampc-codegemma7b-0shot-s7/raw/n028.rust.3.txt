@@ -1,0 +1,9 @@
+fn main() {
+    let mut buffer = String::new();
+    std::io::stdin().read_line(&mut buffer).unwrap();
+    let number = buffer.parse::<usize>();
+    match number {
+        Ok(_) => println!("Good"),
+        Err(_) => println!("Bad")
+    }
+}

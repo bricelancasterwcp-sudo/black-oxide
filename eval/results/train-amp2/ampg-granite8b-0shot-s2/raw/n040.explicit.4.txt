@@ -1,0 +1,22 @@
+fn area(s: &Shape) -> Float {
+    match s {
+        Shapekinds(kind) => {
+            let radius = 0.0
+            let pi = 3.0
+            match kind {
+                Square(side) => {
+                    pi * side * side
+                },
+                Circle(radius) => {
+                    pi * radius * radius
+                },
+            }
+        },
+    }
+}
+
+fn main() {
+    let s = Shapekinds(Square(4))
+    print(area(&s))
+    drop s
+}

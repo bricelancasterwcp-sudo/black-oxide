@@ -1,0 +1,5 @@
+```rust
+fn main() {
+    println!("The area of the rectangle is {} square pixels.", 7 * 6);
+}
+```

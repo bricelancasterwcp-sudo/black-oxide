@@ -1,0 +1,16 @@
+fn count_large(nums: &Vec<Int>, threshold: Int) -> Int {
+    let mut count = 0
+    for num in &nums {
+        if num > threshold {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn main() {
+    let numbers = push(push(vec(), 5), 3)
+    let result = count_large(&numbers, 4)
+    print(result)
+    drop numbers
+}

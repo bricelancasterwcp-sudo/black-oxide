@@ -1,0 +1,419 @@
+fn main() {
+    let number = 9875
+    let sum = sum_digits(number)
+    print(sum)
+}
+
+fn sum_digits(n: Int) -> Int {
+    let mut sum = 0
+    let mut num = n
+    while num > 0 {
+        sum = sum + num % 10
+        num = num / 10
+    }
+    sum
+}
+
+fn print(x: Int) {
+    let s = int_to_str(x)
+    print_str(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut s = ""
+    let mut num = n
+    if num == 0 {
+        return "0"
+    }
+    while num > 0 {
+        s = str_char((num % 10) + 48) + s
+        num = num / 10
+    }
+    s
+}
+
+fn str_char(c: Int) -> Str {
+    chr(c)
+}
+
+fn chr(i: Int) -> Str {
+    char(i)
+}
+
+fn char(c: Int) -> Str {
+    c.to_string()
+}
+
+fn print_str(s: Str) {
+    let mut i = 0
+    while i < str_len(s) {
+        print_char(s.get(i))
+        i = i + 1
+    }
+}
+
+fn print_char(c: Str) {
+    print_str(c)
+}
+
+fn str_len(s: Str) -> Int {
+    s.len() - 1
+}
+
+fn get(s: Str, i: Int) -> Option<Str> {
+    if i == 0 {
+        Some(s.get(0))
+    } else {
+        None
+    }
+}
+
+fn vec() -> Vec<Int> {
+    Vec(Int)
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push_back(x)
+    v
+}
+
+fn push_back(v: Vec<Int>, x: Int) {
+    v.push_back(x)
+}
+
+fn vec_len(v: Vec<Int>) -> Int {
+    v.len()
+}
+
+fn main() {
+    let number = 9875
+    let sum = sum_digits(number)
+    print(sum)
+}
+
+fn sum_digits(n: Int) -> Int {
+    let mut sum = 0
+    let mut num = n
+    while num > 0 {
+        sum = sum + num % 10
+        num = num / 10
+    }
+    sum
+}
+
+fn print(x: Int) {
+    let s = int_to_str(x)
+    print_str(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut s = ""
+    let mut num = n
+    if num == 0 {
+        return "0"
+    }
+    while num > 0 {
+        s = str_char((num % 10) + 48) + s
+        num = num / 10
+    }
+    s
+}
+
+fn str_char(c: Int) -> Str {
+    chr(c)
+}
+
+fn chr(i: Int) -> Str {
+    char(i)
+}
+
+fn char(c: Int) -> Str {
+    c.to_string()
+}
+
+fn print_str(s: Str) {
+    let mut i = 0
+    while i < str_len(s) {
+        print_char(s.get(i))
+        i = i + 1
+    }
+}
+
+fn print_char(c: Str) {
+    print_str(c)
+}
+
+fn str_len(s: Str) -> Int {
+    s.len() - 1
+}
+
+fn get(s: Str, i: Int) -> Option<Str> {
+    if i == 0 {
+        Some(s.get(0))
+    } else {
+        None
+    }
+}
+
+fn vec() -> Vec<Int> {
+    Vec(Int)
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push_back(x)
+    v
+}
+
+fn push_back(v: Vec<Int>, x: Int) {
+    v.push_back(x)
+}
+
+fn vec_len(v: Vec<Int>) -> Int {
+    v.len()
+}
+
+fn main() {
+    let number = 9875
+    let sum = sum_digits(number)
+    print(sum)
+}
+
+fn sum_digits(n: Int) -> Int {
+    let mut sum = 0
+    let mut num = n
+    while num > 0 {
+        sum = sum + num % 10
+        num = num / 10
+    }
+    sum
+}
+
+fn print(x: Int) {
+    let s = int_to_str(x)
+    print_str(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut s = ""
+    let mut num = n
+    if num == 0 {
+        return "0"
+    }
+    while num > 0 {
+        s = str_char((num % 10) + 48) + s
+        num = num / 10
+    }
+    s
+}
+
+fn str_char(c: Int) -> Str {
+    chr(c)
+}
+
+fn chr(i: Int) -> Str {
+    char(i)
+}
+
+fn char(c: Int) -> Str {
+    c.to_string()
+}
+
+fn print_str(s: Str) {
+    let mut i = 0
+    while i < str_len(s) {
+        print_char(s.get(i))
+        i = i + 1
+    }
+}
+
+fn print_char(c: Str) {
+    print_str(c)
+}
+
+fn str_len(s: Str) -> Int {
+    s.len() - 1
+}
+
+fn get(s: Str, i: Int) -> Option<Str> {
+    if i == 0 {
+        Some(s.get(0))
+    } else {
+        None
+    }
+}
+
+fn vec() -> Vec<Int> {
+    Vec(Int)
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push_back(x)
+    v
+}
+
+fn push_back(v: Vec<Int>, x: Int) {
+    v.push_back(x)
+}
+
+fn vec_len(v: Vec<Int>) -> Int {
+    v.len()
+}
+
+fn main() {
+    let number = 9875
+    let sum = sum_digits(number)
+    print(sum)
+}
+
+fn sum_digits(n: Int) -> Int {
+    let mut sum = 0
+    let mut num = n
+    while num > 0 {
+        sum = sum + num % 10
+        num = num / 10
+    }
+    sum
+}
+
+fn print(x: Int) {
+    let s = int_to_str(x)
+    print_str(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut s = ""
+    let mut num = n
+    if num == 0 {
+        return "0"
+    }
+    while num > 0 {
+        s = str_char((num % 10) + 48) + s
+        num = num / 10
+    }
+    s
+}
+
+fn str_char(c: Int) -> Str {
+    chr(c)
+}
+
+fn chr(i: Int) -> Str {
+    char(i)
+}
+
+fn char(c: Int) -> Str {
+    c.to_string()
+}
+
+fn print_str(s: Str) {
+    let mut i = 0
+    while i < str_len(s) {
+        print_char(s.get(i))
+        i = i + 1
+    }
+}
+
+fn print_char(c: Str) {
+    print_str(c)
+}
+
+fn str_len(s: Str) -> Int {
+    s.len() - 1
+}
+
+fn get(s: Str, i: Int) -> Option<Str> {
+    if i == 0 {
+        Some(s.get(0))
+    } else {
+        None
+    }
+}
+
+fn vec() -> Vec<Int> {
+    Vec(Int)
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push_back(x)
+    v
+}
+
+fn push_back(v: Vec<Int>, x: Int) {
+    v.push_back(x)
+}
+
+fn vec_len(v: Vec<Int>) -> Int {
+    v.len()
+}
+
+fn main() {
+    let number = 9875
+    let sum = sum_digits(number)
+    print(sum)
+}
+
+fn sum_digits(n: Int) -> Int {
+    let mut sum = 0
+    let mut num = n
+    while num > 0 {
+        sum = sum + num % 10
+        num = num / 10
+    }
+    sum
+}
+
+fn print(x: Int) {
+    let s = int_to_str(x)
+    print_str(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut s = ""
+    let mut num = n
+    if num == 0 {
+        return "0"
+    }
+    while num > 0 {
+        s = str_char((num % 10) + 48) + s
+        num = num / 10
+    }
+    s
+}
+
+fn str_char(c: Int) -> Str {
+    chr(c)
+}
+
+fn chr(i: Int) -> Str {
+    char(i)
+}
+
+fn char(c: Int) -> Str {
+    c.to_string()
+}
+
+fn print_str(s: Str) {
+    let mut i = 0
+    while i < str_len(s) {
+        print_char(s.get(i))
+        i = i + 1
+    }
+}
+
+fn print_char(c: Str) {
+    print_str(c)
+}
+
+fn str_len(s: Str) -> Int {
+    s.len() - 1
+}
+
+fn get(s: Str, i: Int) -> Option<Str> {
+    if i == 0 {
+        Some(s.get(0))
+    } else {
+        None
+    }
+}
+
+fn vec() -> Vec

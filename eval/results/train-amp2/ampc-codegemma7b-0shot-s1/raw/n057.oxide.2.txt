@@ -1,0 +1,18 @@
+fn find_longest(f: Str, b: Str, k: Str) -> Str {
+    let len_f = str_len(f)
+    let len_b = str_len(b)
+    let len_k = str_len(k)
+    if len_f >= len_b && len_f >= len_k {
+        f
+    } else if len_b >= len_f && len_b >= len_k {
+        b
+    } else {
+        k
+    }
+}
+
+fn main() {
+    let fruit = find_longest("fig", "banana", "kiwi")
+    print_str(fruit)
+    print(str_len(fruit))
+}

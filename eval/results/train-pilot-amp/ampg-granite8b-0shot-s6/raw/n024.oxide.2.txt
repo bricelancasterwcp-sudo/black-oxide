@@ -1,0 +1,18 @@
+struct Banana {
+    value: Str,
+}
+
+fn a_count(banana: Banana) -> Int {
+    let mut count: Int = 0
+    for ch in chars(banana.value) {
+        if ch == "a" {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn main() {
+    let banana = Banana { value: "banana".to_str() }
+    print(a_count(banana))
+}

@@ -1,0 +1,10 @@
+struct Rect { width: Int, height: Int }
+
+fn area(r: Rect) -> Int {
+    r.width * r.height
+}
+
+fn main() {
+    let r = Rect { width: 7, height: 6 }
+    print(area(r))
+}

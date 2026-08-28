@@ -1,0 +1,16 @@
+struct DivideResult { value: Float, error: Str }
+
+fn divide(a: Float, b: Float) -> DivideResult {
+    if b == 0.0 {
+        DivideResult(0.0, "bad".to_string())
+    } else {
+        DivideResult(a / b, "".to_string())
+    }
+}
+
+fn main() {
+    let result = divide(20.0, 4.0)
+    match result {
+        DivideResult(value, error) => if error == "bad" { print_str(error) } else { print(value) },
+    }
+}

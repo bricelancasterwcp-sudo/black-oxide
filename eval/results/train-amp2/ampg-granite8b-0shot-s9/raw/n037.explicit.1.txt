@@ -1,0 +1,78 @@
+fn main() {
+    let mut rect = Rectangle { width: 2, height: 3 }
+    rect.width = 5
+    print(area(&rect))
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn area(r: &Rectangle) -> Int {
+    r.width * r.height
+}
+
+fn print(n: Int) {
+    println(int_to_str(n))
+}
+
+fn println(s: &Str) {
+    print_str(s)
+    print_str("\n")
+}
+
+fn int_to_str(n: Int) -> Str {
+    to_str(&format_int_hex_no_0x_prefix_buffer, n)
+}
+
+fn to_str(b: &Vec<U8>, n: Int) -> Str {
+    let mut s = clone(&b)
+    for _ in 0 < n {
+        push(s, u8(n % 10))
+        n = n / 10
+    }
+    let mut result = vec()
+    while len(&s) > 0 {
+        result = push(result, pop(&s))
+    }
+    let mut result_str = clone(&result)
+    for i in 0 < len(&result) {
+        if i % 2 == 0 {
+            push(result_str, u8(48 + get(&result, i)))
+        } else {
+            push(result_str, u8(48 + get(&result, i) / 10))
+            push(result_str, u8(48 + get(&result, i) % 10))
+        }
+    }
+    result_str
+}
+
+fn format_int_hex_no_0x_prefix_buffer(b: &Vec<U8>, n: Int) -> Vec<U8> {
+    let mut s = clone(&b)
+    for _ in 0 < n {
+        push(s, u8(n % 16))
+        n = n / 16
+    }
+    let mut result = vec()
+    while len(&s) > 0 {
+        result = push(result, pop(&s))
+    }
+    let mut result_str = clone(&result)
+    for i in 0 < len(&result) {
+        push(result_str, u8(48 + get(&result, i) % 16))
+    }
+    result_str
+}
+
+fn u8(n: Int) -> U8 {
+    n.trunc()
+}
+
+fn get(v: &Vec<T>, i: Int) -> T {
+    if i >= len(&v) {
+        panic()
+    }
+    let mut result = clone(v)
+    for _ in 0 < i {
+        drop pop_last_mut_no_drop_guard_here_because_i_am_confused_and_this_is_not_a_real_program_but_i_just_wanna_try_it_out_and_i_am_ok_with_doing_this_because_i_just_wanna_try_it_out_and_i_am_ok_with_doing_this_because_i_just_wanna_try_it_out_and_i_am_ok_with_doing_this_because_i_just_wanna_try_it_out_and_i_am_ok_with_doing_this_because_i_just_wanna_try_it_out_and_i_am_ok_with_doing_this_because_i_just_wanna_try_it_out_and_i_am_ok_with_doing_this_because_i_just_wanna_try_it_out_and_i_am_ok_with_doing_this_because_i_just_wanna_try_it_out_and_i_am_ok_with_doing_this_because_i_just_wanna_try_it_out_and_i_am_ok_with_doing_this_because_i_just_wanna_try_it_out_and_i_am_ok_with_doing_this_because_i_just_wanna_try_it_out_and_i_am_ok_with_doing_this_because_i_just_wanna_try_it_out_and_i_am_ok_with_doing_this_because_i_just_wanna_try_it_out_and_i_am_ok_with_doing_this_because_i_just_wanna_try_it_out_and_i_am_ok_with_doing_this_because_i_just_wanna_try_it_out_and_i_am_ok_with_doing_this_because_i_just_wanna_try_it_out_and_i_am_ok_with_doing_this_because_i_just_wanna_try_it_out_and_i_am_ok_with_doing_this_because_i_just_wanna_try_it_out_and_i_am_ok_with_doing_this_because_i_just_wanna_try_it_out_and_i_am_ok_with_doing_this_because_i_just_wanna_try_it_out_and_i_am_ok_with_doing_this_because_i_just_wanna_try_it_out_and_i_am_ok_with_doing_this_because_i_just_wanna_try_it_out_and_i_am_ok_with_doing_this_because_i_just_wanna_try_it_out_and_i_am_ok_with_doing_this_because_i_just_wanna_try_it_out_and_i_am_ok_with_doing_this_because_i_just_wanna_try_it_out_and_i_am_ok_with_doing_this_because_i_just_wanna_try_it_out_and_i_am_ok_with_doing_this_because_i_just_wanna_try_it_out_and_i_am_ok_with_doing_this_because_i_just_wanna_try_it_out_and_i_am_ok_with_doing_this_because_i_just_wanna_try_it_out_and_i_am_ok_with_doing_this_because_i_just_wanna_try_it_out_and_i_am_ok_with_doing_this_because_i_just_wanna_try_it_out_and_i_am_ok_with_doing_this_because_i_just_wanna_try_it_out_and_i_am_ok_with_doing_this_because_i_just_wanna_try_it_out_and_i_am_ok_with_doing_this_because_i_just_wanna_try_it_out_and_i_am_ok_with_doing_this_because_i_just_wanna_try_it_out_and_i_am_ok_with_doing_this_because_i_just_wanna_try_it_out_and_i_am_ok_with_doing_this_because_i_just_wanna_try_it_out_and_i_am_ok_with_doing_this_because_i_just_wanna_try_it_out_and_i_am_ok_with_doing_this_because_i_just_wanna_try_it_out_and_i_am_ok_with_doing_this_because_i_just_wanna_try_it_out_and_i_am_ok_with_doing_this_because_i_just_wanna_try_it_out_and_i_am_ok_with_doing_this_because_i_just_wanna_try_it_out_and_i_am_ok_with_doing_this_because_i_just_wanna_try_it_out_and_i_am_ok_with_doing_this_because_i_just_wanna_try_it_out_and_i_am_ok_with_doing_this_because_i_just_wanna_try_it_out_and_i_am_ok_with_doing_this_because_i_just_wanna_try_it_out_and_i_am_ok_with_doing_this_because_i_just_wanna_try_it_out_and_i

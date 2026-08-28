@@ -1,0 +1,16 @@
+fn to_text(n: Int) -> Str {
+    let mut s = str()
+    while n > 0 {
+        let digit = n % 10
+        s = concat(to_str(digit), s)
+        n = n / 10
+    }
+    s
+}
+
+fn main() {
+    let num = 2026
+    let text = to_text(num)
+    let len = len(text)
+    print(len)
+}

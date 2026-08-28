@@ -1,0 +1,22 @@
+fn is_green(c: Str) -> Bool {
+    c == "green"
+}
+
+fn is_yellow(c: Str) -> Bool {
+    c == "yellow"
+}
+
+fn is_red(c: Str) -> Bool {
+    c == "red"
+}
+
+fn main() {
+    let color = read_line()?.trim().to_lowercase()
+    if is_green(color) {
+        print_str("go")
+    } else if is_yellow(color) {
+        print_str("wait")
+    } else if is_red(color) {
+        print_str("stop")
+    }
+}

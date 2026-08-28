@@ -1,0 +1,17 @@
+struct SampleSet { samples: Vec<Int> }
+
+fn main() {
+    let s = SampleSet { samples: push(push(push(push(vec(), 5), 12), 3), 18), _push: 9 } // Add 9 as well to include in the cutoff
+    let mut below = 0
+    let mut above = 0
+    for sample in s.samples {
+        if sample < 10 {
+            below = below + 1
+        } else {
+            above = above + 1
+        }
+    }
+    print(below)
+    print_str(" ")
+    print(above)
+}

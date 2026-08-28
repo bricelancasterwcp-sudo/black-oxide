@@ -1,0 +1,8 @@
+fn main() {
+    let v = vec(12, 5, 20, 8, 17)
+    let max = v.iter().max().unwrap()
+    print(max)
+    let filtered: Vec<Int> = v.iter().filter(x || x != max).cloned().collect()
+    let second_max = filtered.iter().max().unwrap()
+    print(second_max)
+}

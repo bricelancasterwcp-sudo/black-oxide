@@ -1,0 +1,7 @@
+fn main() {
+    let mut measurements: Vec<u32> = vec![9, 2, 7, 4];
+    measurements.sort();
+    for measurement in measurements {
+        println!("{}", measurement);
+    }
+}

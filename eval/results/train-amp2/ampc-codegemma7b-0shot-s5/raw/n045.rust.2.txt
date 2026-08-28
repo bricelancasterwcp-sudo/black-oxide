@@ -1,0 +1,5 @@
+fn main() {
+    let mut entries = vec![6, 7, 8, 9];
+    println!("Starting with: {}", entries.first().unwrap());
+    println!("Ending with: {}", entries.last().unwrap());
+}

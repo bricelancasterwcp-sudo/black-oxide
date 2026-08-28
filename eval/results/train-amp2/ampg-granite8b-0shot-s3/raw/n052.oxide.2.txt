@@ -1,0 +1,21 @@
+struct Banana {
+    banana: Str,
+}
+
+fn every_n_position(banana: Str) -> Vec<Int> {
+    let mut vec = vec()
+    for i in range(0, len(banana)) {
+        if get(banana, i) == "n" {
+            vec = push(vec, i)
+        }
+    }
+    vec
+}
+
+fn main() {
+    let banana = "banana"
+    print_str("The letter n lives at the following positions:")
+    for position in every_n_position(banana) {
+        print(position)
+    }
+}

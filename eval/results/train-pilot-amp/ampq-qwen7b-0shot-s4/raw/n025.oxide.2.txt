@@ -1,0 +1,8 @@
+fn parse_and_add_one(s: Str) -> Str {
+    let num = parse_int(s)?
+    int_to_str(num + 1).unwrap_or("bad".into())
+}
+
+fn main() {
+    print(parse_and_add_one("417"))
+}

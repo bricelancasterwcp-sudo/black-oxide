@@ -1,0 +1,13 @@
+fn main() {
+    let mut balance = 0;
+    deposit(3, &mut balance);
+    deposit(1, &mut balance);
+    deposit(4, &mut balance);
+    deposit(1, &mut balance);
+    deposit(5, &mut balance);
+}
+
+fn deposit(amount: u32, balance: &mut u32) {
+    *balance += amount;
+    println!("balance: {}", balance);
+}

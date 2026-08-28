@@ -1,0 +1,5 @@
+fn main() {
+    let word_sequence = "aeiou";
+    let vowels: Vec<char> = word_sequence.chars().filter(|c| "aeiouAEIOU".contains(c)).collect();
+    println!("{}", vowels.len());
+}

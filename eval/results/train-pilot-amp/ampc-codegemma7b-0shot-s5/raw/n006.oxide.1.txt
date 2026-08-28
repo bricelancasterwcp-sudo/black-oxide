@@ -1,0 +1,12 @@
+fn largest_power2(max: Int) -> Int {
+    let mut x = 1
+    loop   // `loop` is a statement, not an expr, so 
+    if x > max {
+        breakx
+    }
+    x = x * 2
+}
+
+fn main() {
+    print(largest_power2(100))
+}

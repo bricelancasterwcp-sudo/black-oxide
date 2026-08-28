@@ -1,0 +1,356 @@
+fn main() {
+    let mut nums = vec()
+    for i in range(1, 4) {
+        let x = i * 4
+        nums = push(nums, x)
+    }
+    let total = sum(&nums)
+    print(total)
+    drop nums
+}
+
+fn sum(v: &Vec<Int>) -> Int {
+    let mut total = 0
+    for x in &v {
+        total = total + x
+    }
+    total
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in a.range(b) {
+        result = push(result, i)
+    }
+    result
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut new = vec()
+    for y in &v {
+        new = push(new, y)
+    }
+    new = push(new, x)
+    new
+}
+
+fn print(x: Int) {
+    let s = int_to_str(x)
+    print_str(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut result = ""
+    let mut n = n
+    while n > 0 {
+        let digit = n % 10
+        n = n / 10
+        result = chars(str_len(result) - 1).push(char_to_str(digit)).join("")
+    }
+    result
+}
+
+fn char_to_str(c: Int) -> Str {
+    let mut result = ""
+    result = result.push(char(c + 48))
+    result
+}
+
+fn str_len(s: Str) -> Int {
+    let mut len = 0
+    for _ in &s {
+        len = len + 1
+    }
+    len
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = vec()
+    for i in range(0, str_len(s)) {
+        result = push(result, char_to_str(s.chars().nth(i).unwrap() - 48))
+    }
+    result
+}
+
+fn join(v: Vec<Str>, sep: Str) -> Str {
+    let mut result = ""
+    for i in &v {
+        if str_len(result) > 0 {
+            result = result.push(sep)
+        }
+        result = result.push(i)
+    }
+    result
+}
+
+fn print_str(s: Str) {
+    let result = "print_str(" + s + ")"
+    print(result)
+}
+
+fn drop_name(name: String) {
+    let result = "drop " + name
+    print(result)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in a.range(b) {
+        result = push(result, i)
+    }
+    result
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut new = vec()
+    for y in &v {
+        new = push(new, y)
+    }
+    new = push(new, x)
+    new
+}
+
+fn print(x: Int) {
+    let s = int_to_str(x)
+    print_str(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut result = ""
+    let mut n = n
+    while n > 0 {
+        let digit = n % 10
+        n = n / 10
+        result = chars(str_len(result) - 1).push(char_to_str(digit)).join("")
+    }
+    result
+}
+
+fn char_to_str(c: Int) -> Str {
+    let mut result = ""
+    result = result.push(char(c + 48))
+    result
+}
+
+fn str_len(s: Str) -> Int {
+    let mut len = 0
+    for _ in &s {
+        len = len + 1
+    }
+    len
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = vec()
+    for i in range(0, str_len(s)) {
+        result = push(result, char_to_str(s.chars().nth(i).unwrap() - 48))
+    }
+    result
+}
+
+fn join(v: Vec<Str>, sep: Str) -> Str {
+    let mut result = ""
+    for i in &v {
+        if str_len(result) > 0 {
+            result = result.push(sep)
+        }
+        result = result.push(i)
+    }
+    result
+}
+
+fn print_str(s: Str) {
+    let result = "print_str(" + s + ")"
+    print(result)
+}
+
+fn drop_name(name: String) {
+    let result = "drop " + name
+    print(result)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in a.range(b) {
+        result = push(result, i)
+    }
+    result
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut new = vec()
+    for y in &v {
+        new = push(new, y)
+    }
+    new = push(new, x)
+    new
+}
+
+fn print(x: Int) {
+    let s = int_to_str(x)
+    print_str(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut result = ""
+    let mut n = n
+    while n > 0 {
+        let digit = n % 10
+        n = n / 10
+        result = chars(str_len(result) - 1).push(char_to_str(digit)).join("")
+    }
+    result
+}
+
+fn char_to_str(c: Int) -> Str {
+    let mut result = ""
+    result = result.push(char(c + 48))
+    result
+}
+
+fn str_len(s: Str) -> Int {
+    let mut len = 0
+    for _ in &s {
+        len = len + 1
+    }
+    len
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = vec()
+    for i in range(0, str_len(s)) {
+        result = push(result, char_to_str(s.chars().nth(i).unwrap() - 48))
+    }
+    result
+}
+
+fn join(v: Vec<Str>, sep: Str) -> Str {
+    let mut result = ""
+    for i in &v {
+        if str_len(result) > 0 {
+            result = result.push(sep)
+        }
+        result = result.push(i)
+    }
+    result
+}
+
+fn print_str(s: Str) {
+    let result = "print_str(" + s + ")"
+    print(result)
+}
+
+fn drop_name(name: String) {
+    let result = "drop " + name
+    print(result)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in a.range(b) {
+        result = push(result, i)
+    }
+    result
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut new = vec()
+    for y in &v {
+        new = push(new, y)
+    }
+    new = push(new, x)
+    new
+}
+
+fn print(x: Int) {
+    let s = int_to_str(x)
+    print_str(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut result = ""
+    let mut n = n
+    while n > 0 {
+        let digit = n % 10
+        n = n / 10
+        result = chars(str_len(result) - 1).push(char_to_str(digit)).join("")
+    }
+    result
+}
+
+fn char_to_str(c: Int) -> Str {
+    let mut result = ""
+    result = result.push(char(c + 48))
+    result
+}
+
+fn str_len(s: Str) -> Int {
+    let mut len = 0
+    for _ in &s {
+        len = len + 1
+    }
+    len
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = vec()
+    for i in range(0, str_len(s)) {
+        result = push(result, char_to_str(s.chars().nth(i).unwrap() - 48))
+    }
+    result
+}
+
+fn join(v: Vec<Str>, sep: Str) -> Str {
+    let mut result = ""
+    for i in &v {
+        if str_len(result) > 0 {
+            result = result.push(sep)
+        }
+        result = result.push(i)
+    }
+    result
+}
+
+fn print_str(s: Str) {
+    let result = "print_str(" + s + ")"
+    print(result)
+}
+
+fn drop_name(name: String) {
+    let result = "drop " + name
+    print(result)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in a.range(b) {
+        result = push(result, i)
+    }
+    result
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut new = vec()
+    for y in &v {
+        new = push(new, y)
+    }
+    new = push(new, x)
+    new
+}
+
+fn print(x: Int) {
+    let s = int_to_str(x)
+    print_str(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut result = ""
+    let mut n = n
+    while n > 0 {
+        let digit = n % 10
+        n = n / 10
+        result = chars(str_len(result) - 1).push(char_to_str(digit)).join("")
+    }
+    result
+}
+

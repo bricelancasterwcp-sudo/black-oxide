@@ -1,0 +1,30 @@
+fn main() {
+    println(sum_big(nums(), 10))
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let total = 0
+    for x in &v {
+        if x > limit {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn nums() -> Vec<Int> {
+    push(push(vec(), 5), 40)
+}
+
+fn extend(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn main() {
+    let nums = push(push(vec(), 5), 40)
+    let bigger = extend(clone(&nums), 70)
+    print(sum_big(&nums, 10))
+    drop nums
+    print(sum_big(&bigger, 10))
+    drop bigger
+}

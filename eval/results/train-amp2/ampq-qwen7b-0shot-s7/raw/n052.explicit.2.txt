@@ -1,0 +1,12 @@
+fn main() {
+    let s = "banana"
+    drop s
+    let mut i = 0
+    for c in chars(&s) {
+        drop c
+        if c == "n" {
+            print(i)
+        }
+        i = i + 1
+    }
+}

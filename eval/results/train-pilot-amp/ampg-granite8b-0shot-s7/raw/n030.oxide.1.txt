@@ -1,0 +1,14 @@
+struct Counter {
+    vowels: Int,
+    consonants: Int,
+}
+
+fn count_vowels(s: Str) -> Counter {
+    Counter(0, 0)
+}
+
+fn main() {
+    let s = "the quick brown fox jumps over the lazy dog"
+    let c = count_vowels(s)
+    print(c.consonants)
+}

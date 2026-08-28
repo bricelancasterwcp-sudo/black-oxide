@@ -1,0 +1,10 @@
+fn main() {
+    let mut div_by_three = vec()
+    for i in range(1, 11) {
+        if i % 3 == 0 {
+            div_by_three = push(div_by_three, i)
+        }
+    }
+    let total = div_by_three.iter().map(x, x).fold(0, add)
+    print(total)
+}

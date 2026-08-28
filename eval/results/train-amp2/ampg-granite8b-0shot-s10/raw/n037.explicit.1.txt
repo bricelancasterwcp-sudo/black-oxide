@@ -1,0 +1,28 @@
+fn main() {
+    let rectangle = Rectangle { width: 2, height: 3 }
+    let five = 5
+    let rectangle_wider = rectangle.change_width(five)
+    let area = rectangle_wider.area()
+    print(area)
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn change_width(self: &Rectangle, new_width: Int) -> Rectangle {
+    Rectangle(width == new_width, height == self.height)
+}
+
+fn area(self: &Rectangle) -> Int {
+    self.width * self.height
+}
+
+fn main() {
+    let rectangle = Rectangle { width: 2, height: 3 }
+    let five = 5
+    let rectangle_wider = rectangle.change_width(five)
+    let area = rectangle_wider.area()
+    print(area)
+}

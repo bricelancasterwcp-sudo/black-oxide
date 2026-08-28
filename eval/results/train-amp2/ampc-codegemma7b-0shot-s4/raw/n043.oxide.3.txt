@@ -1,0 +1,9 @@
+fn main() {
+    let mut q = vec(1, 2, 3, 4, 5)
+    let first = q.pop_front().unwrap()
+    q.push_back(first)
+    while letSome(x) == q.pop_front() {
+        print(x)
+        print_str("\n")
+    }
+}

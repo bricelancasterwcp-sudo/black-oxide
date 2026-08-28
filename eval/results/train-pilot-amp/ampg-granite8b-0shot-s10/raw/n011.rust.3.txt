@@ -1,0 +1,9 @@
+fn main() {
+    let mut list = Vec::new();
+    for i in 1..=6 {
+        list.push(4 * i);
+    }
+
+    let total: i32 = list.iter().sum();
+    println!("Total: {}", total);
+}

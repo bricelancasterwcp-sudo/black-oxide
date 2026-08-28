@@ -1,0 +1,14 @@
+fn main() {
+    let s = "banana".to_string()
+    let mut n_positions = vec_new()
+    for i in 0.to_int() {
+        if &s == "n" {
+            push(n_positions, i)
+        }
+    }
+    for p in &n_positions {
+        print(p)
+    }
+    drop s
+    drop n_positions
+}

@@ -1,0 +1,4 @@
+fn main() {
+    let word = "programming".to_string().chars().collect(Collectors.toList()).len()
+    print(word)
+}

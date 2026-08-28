@@ -1,0 +1,9 @@
+fn main() {
+    let scores = vec(2, 9, 5)
+    let sorted: Vec<Int> = scores.clone().sort()
+    for score in &sorted {
+        print(score)
+    }
+    drop scores
+    drop sorted
+}

@@ -1,0 +1,5 @@
+fn main() {
+    let point = Point { x: 1, y: 2 }
+    let ten_across = Point { x: 10, y: point.y }
+    print(ten_across.x + ten_across.y)
+}

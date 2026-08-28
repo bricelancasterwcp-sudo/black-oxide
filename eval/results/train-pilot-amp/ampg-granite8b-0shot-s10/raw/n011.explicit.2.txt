@@ -1,0 +1,11 @@
+fn main() {
+    let mut xs = vec()
+    for i in 0 < 20 {
+        xs = push(xs, i * 4)
+    }
+    let total = 0
+    for x in &xs {
+        total = total + x
+    }
+    print(total)
+}

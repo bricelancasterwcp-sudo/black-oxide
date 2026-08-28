@@ -1,0 +1,23 @@
+fn min(a: Int, b: Int) -> Int {
+    if a < b {
+        a
+    } else {
+        b
+    }
+}
+
+fn max(a: Int, b: Int) -> Int {
+    if a > b {
+        a
+    } else {
+        b
+    }
+}
+
+fn main() {
+    let figures = vec(8, 3, 11, 6)
+    let min_figure = min(min(min(figures.get(0)?, figures.get(1)?), figures.get(2)?), figures.get(3)?)
+    let max_figure = max(max(max(figures.get(0)?, figures.get(1)?), figures.get(2)?), figures.get(3)?)
+    print(min_figure)
+    print(max_figure - min_figure)
+}

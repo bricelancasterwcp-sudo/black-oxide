@@ -1,0 +1,42 @@
+struct Queue {
+    rear: Int,
+    front: Int,
+    items: Vec<Int>,
+}
+
+fn enqueue(q: Queue, e: Int) -> Queue {
+    Queue  //@1
+    front = q.front
+    rear = q.rear + 1
+    if (q.rear + 1) == len(q.items) {
+        items = push(q.items, e)
+    }
+    elseitems = q.items
+    elseitems = functional_update(items, q.rear, e)
+    elsereturn  //@7 Queue {front, rear, items}
+}
+
+fn dequeue(q: Queue) -> Queue {
+    Queue  //@1
+    front = q.front + 1
+    items = q.items
+    return  //@5 Queue {front, rear, items}
+}
+
+fn main() {
+    Queue == q
+    q = Queue { front: 0, rear: 0, items: push(vec(), 1) }
+    q = enqueue(q, 2)
+    q = enqueue(q, 3)
+    q = enqueue(q, 4)
+    q = enqueue(q, 5)
+    q = dequeue(q)
+    q = dequeue(q)
+    print(q)
+    q = dequeue(q)
+    print(q)
+    q = dequeue(q)
+    print(q)
+    q = dequeue(q)
+    print(q)
+}

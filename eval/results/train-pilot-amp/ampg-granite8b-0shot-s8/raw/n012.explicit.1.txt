@@ -1,0 +1,9 @@
+fn main() {
+    let mut list = vec()
+    let mut i = 0
+    while i < 15 {
+        list = push(list, i)
+        i = i + 1
+    }
+    print(len(&list))
+}

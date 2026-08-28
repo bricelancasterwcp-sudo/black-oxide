@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let word = "oxide".to_string();
+    let black = "black".to_string();
+    let result = word + &black;
+    println!("{}", result);
+}
+```
+
+This program will compile and run correctly, producing the expected output:
+```
+oxideblack
+```
+
+It uses the `to_string` method to convert the string literals into `String` objects, concatenates them using the `+` operator, and then prints the result using the `println!` macro.

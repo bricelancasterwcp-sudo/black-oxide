@@ -1,0 +1,7 @@
+fn main() {
+    let mut terms = [1, 1];
+    for _ in 0..8 {
+        terms = [terms[1], terms.iter().sum()];
+    }
+    println!("{}", terms[1]);
+}

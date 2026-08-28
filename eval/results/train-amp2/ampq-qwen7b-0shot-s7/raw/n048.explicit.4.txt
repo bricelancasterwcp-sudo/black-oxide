@@ -1,0 +1,19 @@
+fn find_indices(v: &Vec<Int>, target: Int) -> Vec<Int> {
+    let mut indices = vec()
+    for i in range(0, v.len()) {
+        match v.get(i) {
+            Some(x) => if x == &target { push(indices, i) } else { drop_indices },
+            None => drop_indices,
+        }
+    }
+    indices
+}
+
+fn main() {
+    let nums = vec(4, 7, 4, 9, 4)
+    let positions = find_indices(&nums, 4)
+    for pos in &positions {
+        print(pos)
+    }
+    drop nums
+}

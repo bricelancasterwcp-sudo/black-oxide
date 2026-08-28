@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    if let Ok(n) = std::env::args().nth(1).and_then(|s| s.parse::<u32>().ok()) {
+        println!("{}", n + 1);
+    } else {
+        println!("bad");
+    }
+}
+```
+
+This solution takes the first command line argument as a string and attempts to parse it as a u32. If the parsing is successful, it adds 1 to the number and prints the result. If the parsing fails, it prints "bad".
+
+Note: This solution assumes that the input will always be a valid u32. If the input could be non-numeric, additional error handling would be needed.

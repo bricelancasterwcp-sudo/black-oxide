@@ -1,0 +1,30 @@
+```rust
+fn main() {
+    let mut balance = 0;
+
+    // Deposit 3
+    balance = deposit(balance, 3);
+    println!("Balance after deposit of 3: {}", balance);
+
+    // Deposit 1
+    balance = deposit(balance, 1);
+    println!("Balance after deposit of 1: {}", balance);
+
+    // Deposit 4
+    balance = deposit(balance, 4);
+    println!("Balance after deposit of 4: {}", balance);
+
+    // Deposit 1
+    balance = deposit(balance, 1);
+    println!("Balance after deposit of 1: {}", balance);
+
+    // Deposit 5
+    balance = deposit(balance, 5);
+    println!("Balance after deposit of 5: {}", balance);
+}
+
+fn deposit(mut balance: i32, amount: i32) -> i32 {
+    balance += amount;
+    balance
+}
+```

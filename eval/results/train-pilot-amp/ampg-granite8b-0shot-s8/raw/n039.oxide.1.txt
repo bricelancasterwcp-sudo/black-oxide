@@ -1,0 +1,10 @@
+struct List {
+    cons: Option<Int>,
+    cars: Option<List>,
+}
+
+fn main() {
+    let l = cons(1, cons(2, nil()))
+    let fifth = get(get(get(get(l, 1), 2), 3), 4)
+    print(fifth)
+}

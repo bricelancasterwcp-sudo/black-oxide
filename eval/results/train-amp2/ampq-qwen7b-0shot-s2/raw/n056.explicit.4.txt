@@ -1,0 +1,16 @@
+fn total_and_missing(nums: Vec<Option<Int>>) -> Int {
+    let mut total = 0
+    let mut missing = 0
+    for num in nums {
+        match num {
+            Some(n) => total == total + n,
+            None => missing == missing + 1,
+        }
+    }
+    total + missing
+}
+
+fn main() {
+    let nums = vec(Some(7), Some(3), Some(9), None)
+    print(total_and_missing(nums))
+}

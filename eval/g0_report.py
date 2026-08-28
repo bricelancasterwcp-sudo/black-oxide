@@ -25,7 +25,8 @@ from collections import Counter
 from pathlib import Path
 
 from eval import rollup
-from eval.driver import MODELS, build_run_id, is_complete, parse_seeds, unknown_slugs
+from eval.driver import (MODELS, build_run_id, is_complete, parse_seeds,
+                         sessions_per_run, unknown_slugs)
 
 _REPO_ROOT = Path(__file__).resolve().parent.parent
 PILOT_ROOT = _REPO_ROOT / "eval" / "results" / "6a-pilot"
@@ -62,26 +63,33 @@ def _stage(code: str) -> str | None:
 
 
 def missing_runs(
-    root: Path, models: list[str], seeds: list[int], prefix: str
+    root: Path, models: list[str], seeds: list[int], prefix: str,
+    tasks_path: Path | None = None,
 ) -> list[str]:
     """Run ids among (models x seeds) that eval.driver.is_complete
-    rejects -- missing entirely, or short of the pinned 60-cell session
-    count. Mirrors eval.rollup.aggregate's grid-completeness guard, for
-    the same reason: profiling an in-progress G0 root as though it were
-    finished silently reports a partial measurement as a complete one.
+    rejects -- missing entirely, or short of the session count implied by
+    ``tasks_path``. Mirrors eval.rollup.aggregate's grid-completeness
+    guard, for the same reason: profiling an in-progress root as though it
+    were finished silently reports a partial measurement as a complete one.
+
+    The expected count is derived, not pinned at 60: a root generated from
+    a corpus of a different size (the training corpus is 40 tasks, so 120
+    cells) would otherwise read as complete at exactly half, which is the
+    failure this function exists to prevent rather than commit.
     """
+    expected = sessions_per_run(tasks_path)
     return [
         run_id
         for slug in models
         for seed in seeds
         for run_id in (build_run_id(slug, 0, seed, prefix=prefix),)
-        if not is_complete(root / run_id)
+        if not is_complete(root / run_id, expected)
     ]
 
 
 def profile(
     *, root: Path, models: list[str], seeds: list[int], prefix: str,
-    partial: bool = False,
+    partial: bool = False, tasks_path: Path | None = None,
 ) -> dict:
     """Per-model diagnostic profile: arm rates, stage histograms, the
     OX04xx gate count, the paired oxide/explicit delta, and the
@@ -101,10 +109,10 @@ def profile(
     ``ZeroDivisionError`` -- since dividing by an empty denominator means
     the profile itself is malformed, not just incomplete.
     """
-    missing = missing_runs(root, models, seeds, prefix)
+    missing = missing_runs(root, models, seeds, prefix, tasks_path)
     if missing and not partial:
         raise RuntimeError(
-            f"incomplete G0 root {root}: {len(missing)} run(s) missing or "
+            f"incomplete root {root}: {len(missing)} run(s) missing or "
             f"incomplete (first: {missing[0]}). Pass --partial to profile "
             f"the complete runs only -- a root silently missing "
             f"in-progress runs reads as a finished measurement."
@@ -386,6 +394,10 @@ def main(argv: list[str] | None = None) -> int:
                              f"{DEMAND_CHARS!r}, first attempts, both "
                              "Oxide arms, per family)")
     parser.add_argument("--validate-pilot", action="store_true")
+    parser.add_argument("--tasks", default=None,
+                        help="task corpus the root was generated from "
+                             "(default: eval/tasks.jsonl); sets the "
+                             "expected cell count per run")
     parser.add_argument("--partial", action="store_true",
                         help="profile the complete runs only, skipping "
                              "any missing or in-progress ones instead of "
@@ -426,7 +438,8 @@ def main(argv: list[str] | None = None) -> int:
             print(f"--partial: skipping {len(skipped)} incomplete run(s): "
                   + ", ".join(skipped), file=sys.stderr)
     out = profile(root=args.root, models=slugs, seeds=seeds,
-                  prefix=args.run_prefix, partial=args.partial)
+                  prefix=args.run_prefix, partial=args.partial,
+                  tasks_path=Path(args.tasks) if args.tasks else None)
     _print_report(out, slugs)
 
     if args.samples:

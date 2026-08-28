@@ -1,0 +1,19 @@
+use std::io;
+
+fn main() {
+    let mut readings = [6, 11, 3, 14, 9];
+    let mut count = 0;
+    let mut highest = readings[0];
+
+    for reading in readings.iter() {
+        if *reading > 5 {
+            count += 1;
+        }
+        if *reading > highest {
+            highest = *reading;
+        }
+    }
+
+    println!("Number of readings exceeding five: {}", count);
+    println!("Highest reading: {}", highest);
+}

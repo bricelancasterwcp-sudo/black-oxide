@@ -1,0 +1,19 @@
+fn blackoxide() {
+    print(black_oxide())
+}
+
+fn black_oxide() -> Str {
+    "blackoxide"
+}
+
+fn main() {
+    blackoxide()
+}
+
+fn black_oxide() -> Str {
+    "blackoxide"
+}
+
+fn main() {
+    print(black_oxide())
+}

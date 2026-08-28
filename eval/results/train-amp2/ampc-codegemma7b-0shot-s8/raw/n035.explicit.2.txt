@@ -1,0 +1,342 @@
+fn divide(a: Float, b: Float) -> Result<Float, String> {
+    if b == 0.0 {
+        Err("Cannot divide by zero!".to_string())
+    } else {
+        Ok(a / b)
+    }
+}
+
+fn main() {
+    let result = divide(20.0, 4.0).unwrap_or_else(print_err)
+    print(result)
+}
+
+fn print_err(e: String) {
+    print("Error: {}", e)
+}
+
+fn print(x: Float) {
+    print(x)
+}
+
+fn print_str(s: Str) {
+    print_str(s)
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn len(v: Vec<Int>) -> Int {
+    len(v)
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    get(v, i)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    range(a, b)
+}
+
+fn clone(x: Int) -> Int {
+    clone(x)
+}
+
+fn str_len(s: Str) -> Int {
+    str_len(s)
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    concat(a, b)
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    parse_int(s)
+}
+
+fn to_float(n: Int) -> Float {
+    to_float(n)
+}
+
+fn trunc(x: Float) -> Int {
+    trunc(x)
+}
+
+fn print(x: Float) {
+    print(x)
+}
+
+fn print_str(s: Str) {
+    print_str(s)
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn len(v: Vec<Int>) -> Int {
+    len(v)
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    get(v, i)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    range(a, b)
+}
+
+fn clone(x: Int) -> Int {
+    clone(x)
+}
+
+fn str_len(s: Str) -> Int {
+    str_len(s)
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    concat(a, b)
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    parse_int(s)
+}
+
+fn to_float(n: Int) -> Float {
+    to_float(n)
+}
+
+fn trunc(x: Float) -> Int {
+    trunc(x)
+}
+
+fn print(x: Float) {
+    print(x)
+}
+
+fn print_str(s: Str) {
+    print_str(s)
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn len(v: Vec<Int>) -> Int {
+    len(v)
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    get(v, i)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    range(a, b)
+}
+
+fn clone(x: Int) -> Int {
+    clone(x)
+}
+
+fn str_len(s: Str) -> Int {
+    str_len(s)
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    concat(a, b)
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    parse_int(s)
+}
+
+fn to_float(n: Int) -> Float {
+    to_float(n)
+}
+
+fn trunc(x: Float) -> Int {
+    trunc(x)
+}
+
+fn print(x: Float) {
+    print(x)
+}
+
+fn print_str(s: Str) {
+    print_str(s)
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn len(v: Vec<Int>) -> Int {
+    len(v)
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    get(v, i)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    range(a, b)
+}
+
+fn clone(x: Int) -> Int {
+    clone(x)
+}
+
+fn str_len(s: Str) -> Int {
+    str_len(s)
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    concat(a, b)
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    parse_int(s)
+}
+
+fn to_float(n: Int) -> Float {
+    to_float(n)
+}
+
+fn trunc(x: Float) -> Int {
+    trunc(x)
+}
+
+fn print(x: Float) {
+    print(x)
+}
+
+fn print_str(s: Str) -> Str {
+    print_str(s)
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn len(v: Vec<Int>) -> Int {
+    len(v)
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    get(v, i)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    range(a, b)
+}
+
+fn clone(x: Int) -> Int {
+    clone(x)
+}
+
+fn str_len(s: Str) -> Int {
+    str_len(s)
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    concat(a, b)
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    parse_int(s)
+}
+
+fn to_float(n: Int) -> Float {
+    to_float(n)
+}
+
+fn trunc(x: Float) -> Int {
+    trunc(x)
+}
+
+fn print(x: Float) {
+    print(x)
+}
+
+fn print_str(s: Str) -> Str {
+    print_str(s)
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn len(v: Vec<Int>) -> Int {
+    len(v)
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    get(v, i)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    range(a, b)
+}
+
+fn clone(x: Int) -> Int {
+    clone(x)
+}
+
+fn str_len(s: Str) -> Int {
+    str_len(s)
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    concat(a, b)
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn parse_

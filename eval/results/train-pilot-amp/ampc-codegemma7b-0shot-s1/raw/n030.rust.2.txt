@@ -1,0 +1,14 @@
+use std::io::{self, Read};
+
+fn main() {
+    let mut buffer = String::new();
+    io::stdin().read_to_string(&mut buffer).unwrap();
+    let mut vowels = 0;
+    for c in buffer.chars() {
+        match c.to_lowercase() {
+            'a' | 'e' | 'i' | 'o' | 'u' => vowels += 1,
+            _ => ()
+        }
+    }
+    println!("The number of vowels is {}", vowels);
+}

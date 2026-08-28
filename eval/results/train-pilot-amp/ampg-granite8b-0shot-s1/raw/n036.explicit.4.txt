@@ -1,0 +1,9 @@
+fn stocked() -> Int {
+    let four_3s = push(push(push(vec(), 3), 3), 3)
+    let five_2s = push(push(push(push(vec(), 2), 2), 2), 2)
+    push(five_2s, 4) + four_3s
+}
+
+fn main() {
+    print(stocked())
+}

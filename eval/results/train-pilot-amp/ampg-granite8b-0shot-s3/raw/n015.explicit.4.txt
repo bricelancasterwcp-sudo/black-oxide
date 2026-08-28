@@ -1,0 +1,14 @@
+fn readings(readings: Vec<Int>) -> Int {
+    let mut count = 0
+    for r in &readings {
+        if r > 4 {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn main() {
+    let readings = vec(5, 3, 9, 1, 7)
+    print(readings(readings))
+}

@@ -1,0 +1,396 @@
+struct List {
+    head: Int,
+    tail: Option<Box<List>>,
+}
+
+fn main() {
+    let list = List { head: 1, tail: Some(box_it(List { head: 2, tail: Some(box_it(List { head: 3, tail: None })) })) }
+    for_each_number(list, print)
+}
+
+fn for_each_number(list: List, f: Box<FnMut<Int>>) {
+    if letSome(box_it(list)) == list.tail {
+        for_each_number(list, f)
+    }
+    f(list.head)
+}
+
+fn box_it(x: List) -> Box<List> {
+    box_x
+}
+
+fn print(x: Int) {
+    print_x
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn main() {
+    print(add(1, 2))
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn main() {
+    print(add(1, 2))
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn main() {
+    print(add(1, 2))
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn main() {
+    print(add(1, 2))
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn main() {
+    print(add(1, 2))
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn main() {
+    print(add(1, 2))
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn main() {
+    print(add(1, 2))
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn main() {
+    print(add(1, 2))
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn main() {
+    print(add(1, 2))
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn main() {
+    print(add(1, 2))
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn main() {
+    print(add(1, 2))
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn main() {
+    print(add(1, 2))
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn main() {
+    print(add(1, 2))
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn main() {
+    print(add(1, 2))
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn main() {
+    print(add(1, 2))
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn main() {
+    print(add(1, 2))
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn main() {
+    print(add(1, 2))
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn main() {
+    print(add(1, 2))
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn main() {
+    print(add(1, 2))
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn main() {
+    print(add(1, 2))
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn main() {
+    print(add(1, 2))
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn main() {
+    print(add(1, 2))
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn main() {
+    print(add(1, 2))
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn main() {
+    print(add(1, 2))
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn main() {
+    print(add(1, 2))
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn main() {
+    print(add(1, 2))
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn main() {
+    print(add(1, 2))
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn main() {
+    print(add(1, 2))
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn main() {
+    print(add(1, 2))
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn main() {
+    print(add(1, 2))
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn main() {
+    print(add(1, 2))
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn main() {
+    print(add(1, 2))
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn main() {
+    print(add(1, 2))
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn main() {
+    print(add(1, 2))
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn main() {
+    print(add(1, 2))
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn main() {
+    print(add(1, 2))
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn main() {
+    print(add(1, 2))
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn main() {
+    print(add(1, 2))
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn main() {
+    print(add(1, 2))
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn main() {
+    print(add(1, 2))
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn main() {
+    print(add(1, 2))
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn main() {
+    print(add(1, 2))
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn main() {
+    print(add(1, 2))
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn main() {
+    print(add(1, 2))
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn main() {
+    print(add(1, 2))
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn main() {
+    print(add(1, 2))
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}

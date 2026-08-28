@@ -1,0 +1,12 @@
+fn find_biggest(n: Int) -> Int {
+    let mut acc = 1
+    loop
+    if acc > n {
+        breakacc = acc / 2
+    }
+    acc
+}
+
+fn main() {
+    print(find_biggest(100))
+}

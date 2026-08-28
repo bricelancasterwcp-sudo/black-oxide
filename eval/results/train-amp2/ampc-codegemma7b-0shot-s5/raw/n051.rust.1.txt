@@ -1,0 +1,5 @@
+fn main() {
+    let granite = "granite";
+    println!("{}", granite.chars().next().unwrap());
+    println!("{}", granite.chars().last().unwrap());
+}

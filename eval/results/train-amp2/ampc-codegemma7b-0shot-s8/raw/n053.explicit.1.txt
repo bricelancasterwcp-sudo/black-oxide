@@ -1,0 +1,14 @@
+fn drum_back(s: &Str) -> Str {
+    let mut rev_str = String.new()
+    for c in s.chars().rev() {
+        rev_str.push(c)
+    }
+    rev_str
+}
+
+fn main() {
+    let drum = "drum"
+    print(drum_back(&drum))
+    print(drum)
+    drop drum
+}

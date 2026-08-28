@@ -1,0 +1,11 @@
+struct Stock {
+    count: Int,
+    price: Int,
+}
+
+fn main() {
+    let stock_1 = Stock { count: 4, price: 3 }
+    let stock_2 = Stock { count: 5, price: 2 }
+    let stock_total = stock_1.count * stock_1.price + stock_2.count * stock_2.price
+    print(stock_total)
+}

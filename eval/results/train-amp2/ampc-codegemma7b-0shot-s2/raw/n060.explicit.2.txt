@@ -1,0 +1,27 @@
+fn digits_sum(s: &Str) -> Int {
+    let mut total = 0
+    let mut count = 0
+    for c in s.chars() {
+        if c >= bchar(0) && c <= bchar(9) {
+            total = total + int(c)
+            count = count + 1
+        }
+    }
+    total
+}
+
+fn digits_count(s: &Str) -> Int {
+    let mut count = 0
+    for c in s.chars() {
+        if c >= bchar(0) && c <= bchar(9) {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn main() {
+    let text = "a1b22"
+    print(digits_sum(&text))
+    print(digits_count(&text))
+}

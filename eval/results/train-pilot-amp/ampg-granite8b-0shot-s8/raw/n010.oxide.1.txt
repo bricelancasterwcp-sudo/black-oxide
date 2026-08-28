@@ -1,0 +1,14 @@
+fn main() {
+    let mut n = 91
+    let mut i = 2
+    while i * i <= n {
+        if n % i == 0 {
+            print_str("no")
+            break
+        }
+        i = i + 1
+    }
+    if i * i > n {
+        print_str("yes")
+    }
+}

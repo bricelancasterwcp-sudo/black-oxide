@@ -1,0 +1,9 @@
+fn main() {
+    let foods = ["fig", "banana", "kiwi"];
+    let longest = foods
+        .iter()
+        .max_by_key(|food| food.len())
+        .unwrap();
+    println!("{}", longest);
+    println!("{}", longest.len());
+}

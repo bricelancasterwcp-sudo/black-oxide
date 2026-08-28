@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let text = String::from("417");
+    let number = text.parse::<usize>();
+    match number {
+        Ok(n) => println!("{}", n + 1),
+        Err(_) => println!("bad"),
+    }
+}
+```

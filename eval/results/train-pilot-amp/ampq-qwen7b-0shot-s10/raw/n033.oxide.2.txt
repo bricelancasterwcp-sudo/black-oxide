@@ -1,0 +1,16 @@
+struct Signal { state: Str }
+
+fn main() {
+    let s = Signal { state: "green" }
+    if s.state == "green" {
+        print_str("go for green")
+    }
+    let s2 = Signal { state: "yellow" }
+    if s2.state == "yellow" {
+        print_str("wait for yellow")
+    }
+    let s3 = Signal { state: "red" }
+    if s3.state == "red" {
+        print_str("stop for red")
+    }
+}

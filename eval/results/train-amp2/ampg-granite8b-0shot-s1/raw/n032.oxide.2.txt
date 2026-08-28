@@ -1,0 +1,6 @@
+fn main() {
+    let punto = Point { x: 1, y: 2 }
+    let punto2 = Point { x: 10, y: punto.y }
+    let ris = punto2.x + punto2.y
+    print(ris)
+}

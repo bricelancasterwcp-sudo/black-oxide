@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let list = vec![10, 20];
+    let position_one = list.get(0);
+    let position_four = list.get(3);
+
+    match position_one {
+        Some(&value) => println!("{}", value),
+        None => println!("None"),
+    }
+
+    match position_four {
+        Some(&value) => println!("{}", value),
+        None => println!("None"),
+    }
+}
+```

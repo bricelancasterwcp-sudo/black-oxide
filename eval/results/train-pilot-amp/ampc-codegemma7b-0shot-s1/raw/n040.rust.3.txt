@@ -1,0 +1,7 @@
+use std::f64::consts::PI;
+
+fn main() {
+    let square = 4.0;
+    let area = square * square;
+    println!("The area of the square is {}", area);
+}

@@ -1,0 +1,9 @@
+fn main() {
+    let mut n = 9875;
+    let mut total = 0;
+    while n > 0 {
+        total += n % 10;
+        n /= 10;
+    }
+    println!("{}", total);
+}

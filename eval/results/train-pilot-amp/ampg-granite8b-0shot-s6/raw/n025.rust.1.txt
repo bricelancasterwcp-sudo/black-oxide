@@ -1,0 +1,9 @@
+fn main() {
+    let text = "417";
+
+    if let Ok(num) = text.parse::<u32>() {
+        println!("{}", num + 1);
+    } else {
+        println!("bad");
+    }
+}

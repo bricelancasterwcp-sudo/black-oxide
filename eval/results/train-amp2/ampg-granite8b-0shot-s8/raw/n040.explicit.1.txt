@@ -1,0 +1,48 @@
+fn main() {
+    let side = 4
+    let square = Shape.square(side)
+    print_str("The area of the square is ")
+    print(square.area())
+}
+
+fn square(side: Int) -> Shape {
+    Shape.square(side)
+}
+
+enum Shape {
+    Square(Int),
+    Circle(Float),
+}
+
+struct Shape {
+    area: Int,
+    perimeter: Int,
+}
+
+fn area(self: Shape) -> Int {
+    match self {
+        Shape(s) => s * s,
+        Circle(r) => 3.1416 * r * r,
+    }
+}
+
+fn perimeter(self: Shape) -> Int {
+    match self {
+        Shape(s) => 4 * s,
+        Circle(r) => 2 * 3.1416 * r,
+    }
+}
+
+fn square(side: Int) -> Shape {
+    Shape(side, side)
+}
+
+fn circle(radius: Float) -> Shape {
+    Shape(radius, radius)
+}
+
+fn main() {
+    let shape = Shape(4, 4)
+    let area = shape.area()
+    print(area)
+}

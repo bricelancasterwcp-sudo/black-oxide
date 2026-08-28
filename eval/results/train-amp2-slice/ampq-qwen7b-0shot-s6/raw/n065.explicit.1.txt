@@ -1,0 +1,7 @@
+fn main() {
+    let readings = vec(6, 11, 3, 14, 9)
+    let above_five = readings.iter().filter_map || ifreading > 5 || Some(reading) || None || collect()
+    print(above_five.len())
+    print(max(readings))
+    drop readings
+}

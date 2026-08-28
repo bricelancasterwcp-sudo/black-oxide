@@ -1,0 +1,36 @@
+fn main() {
+    let s = "a1b22"
+    let mut i = 0
+    let mut d = 0
+    while i < s.len() {
+        match s.get(i) {
+            Some(c) => {
+                match c {
+                    _ => {
+                        i = i + 1
+                        continue_loop
+                    },
+                    _ => {
+                        match c.to_digit(10) {
+                            None => {
+                                i = i + 1
+                                continue_loop
+                            },
+                            Some(_) => {
+                                d = d + 1
+                                i = i + 1
+                                continue_loop
+                            },
+                        }
+                    },
+                }
+            },
+            None => {
+                break_loop
+            },
+        }
+    }
+    print(d)
+    print("\n")
+    print(s.len())
+}

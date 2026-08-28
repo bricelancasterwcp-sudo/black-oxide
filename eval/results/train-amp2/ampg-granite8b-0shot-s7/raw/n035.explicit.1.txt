@@ -1,0 +1,22 @@
+fn divide_helper(x: Int, y: Int) -> Option<Int> {
+    if y == 0 {
+        None
+    } else {
+        Some(x / y)
+    }
+}
+
+fn divide(x: Int, y: Int) {
+    match divide_helper(x, y) {
+        Some(result) => {
+            print(result)
+        },
+        None => {
+            print("bad")
+        },
+    }
+}
+
+fn main() {
+    divide(20, 4)
+}

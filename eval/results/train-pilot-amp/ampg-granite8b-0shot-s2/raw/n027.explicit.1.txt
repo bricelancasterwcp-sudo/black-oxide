@@ -1,0 +1,9 @@
+fn cat_lines() {
+    print_str("c\n")
+    print_str("a\n")
+    print_str("t\n")
+}
+
+fn main() {
+    cat_lines()
+}

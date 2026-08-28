@@ -1,0 +1,8 @@
+fn main() {
+    let input_text = read_line().unwrap_or_else(String, "bad".to_string())
+    let number = match input_text.parse() {
+        Ok(n) => n,
+        Err(_) => "bad".to_string(),
+    }
+    print(number)
+}

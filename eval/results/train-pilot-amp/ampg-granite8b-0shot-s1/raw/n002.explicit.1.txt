@@ -1,0 +1,7 @@
+fn fact(x: Int) -> Int {
+    4 * fact(x - 1)
+}
+
+fn main() {
+    print(fact(6))
+}

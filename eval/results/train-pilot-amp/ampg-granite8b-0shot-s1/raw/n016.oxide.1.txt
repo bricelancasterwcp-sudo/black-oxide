@@ -1,0 +1,54 @@
+fn main() {
+    UNSIGNED_INTEGERS.iter().filter(div_by_3).sum()
+}
+
+fn div_by_3(i: UNSIGNED_INTEGER) -> BOOLEAN {
+    i % 3 == 0
+}
+
+fn main() {
+    let x = 5
+    println(x + 1)
+}
+
+fn main() {
+    let x = 5
+    let y = x + 1
+    println(y)
+}
+
+fn main() {
+    let x = 5
+    println(x + 1)
+    println(x + 1)
+}
+
+fn main() {
+    let x = 5
+    println(x + 1)
+    println(x + 2)
+}
+
+fn main() {
+    let x = 5
+    println(x + 1)
+    println(x + 2)
+    println(x + 3)
+}
+
+fn main() {
+    let x = 5
+    println(x + 1)
+    println(x + 2)
+    println(x + 3)
+    println(x + 4)
+}
+
+fn main() {
+    let x = 5
+    println(x + 1)
+    println(x + 2)
+    println(x + 3)
+    println(x + 4)
+    println(x + 5)
+}

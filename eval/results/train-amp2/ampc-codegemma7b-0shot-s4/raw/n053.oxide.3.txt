@@ -1,0 +1,122 @@
+fn reverse(s: Str) -> Str {
+    let mut result = vec()
+    for c in chars(s) {
+        push(result, c)
+    }
+    str_from_chars(result)
+}
+
+fn main() {
+    let word = "drum"
+    print(reverse(word))
+    print_str(word)
+}
+
+fn str_from_chars(c: Vec<Str>) -> Str {
+    let mut result = ""
+    for s in c {
+        result = concat(result, s)
+    }
+    result
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = vec()
+    for i in 0.to_int().to_float() + 0.1.to_int().to_float() {
+        if i >= str_len(s).to_float() {
+            break
+        }
+        result.push(get(s, i).unwrap())
+    }
+    result
+}
+
+fn push(mutv: Vec<Str>, x: Str) -> Vec<Str> {
+    v.push(x)
+    v
+}
+
+fn vec() -> Vec<Str> {
+    vec()
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    print(str_len(s))
+    for c in chars(s) {
+        print(c)
+    }
+}
+
+fn len(v: Vec<Str>) -> Int {
+    v.to_str().to_int().to_float()
+}
+
+fn get(v: Vec<Str>, i: Float) -> Option<Str> {
+    if i >= str_len(v.to_str()).to_float() {
+        return None
+    }
+    return Some(v.to_str().chars().nth(i.to_int()).unwrap())
+}
+
+fn str_len(s: Str) -> Int {
+    s.chars().len().to_int()
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut result = a
+    result.push_str(b.to_str())
+    result
+}
+
+fn clone(x: Str) -> Str {
+    let mut result = ""
+    result.push_str(x.to_str())
+    result
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut result = ""
+    if n < 0 {
+        result.push_str("-")
+        n = n.abs()
+    }
+    let mut n = n
+    while n >= 10 {
+        result.push_str(int_to_str(n % 10).to_str())
+        n = n / 10
+    }
+    result.push_str(int_to_str(n % 10).to_str())
+    result
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    let mut result = 0
+    let mut sign = 1
+    let mut index = 0
+    if s.chars().nth(0).unwrap() == "-" {
+        sign = -1
+        index = 1
+    }
+    for c in s.chars().skip(index) {
+        result = result * 10 + c.to_digit(10).unwrap()
+    }
+    return Some(result * sign)
+}
+
+fn to_float(n: Int) -> Float {
+    n.to_float()
+}
+
+fn trunc(x: Float) -> Int {
+    x.trunc()
+}
+
+fn main() {
+    let word = "drum"
+    print(reverse(word))
+    print_str(word)
+}

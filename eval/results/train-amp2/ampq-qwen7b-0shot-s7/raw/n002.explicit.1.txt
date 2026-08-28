@@ -1,0 +1,15 @@
+fn factorial(v: &Vec<Int>) -> Int {
+    let total = 1
+    for x in &v {
+        total = total * x
+    }
+    total
+}
+
+fn main() {
+    let nums = push(push(push(push(vec(), 1), 2), 3), 4)
+    nums.push(5)
+    nums.push(6)
+    print(factorial(&nums))
+    drop nums
+}

@@ -1,0 +1,27 @@
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    if i < 0 || i >= len(&v) {
+        None
+    } else {
+        Some(get_helper(&v, i))
+    }
+}
+
+fn get_helper(v: &Vec<Int>, i: Int) -> Int {
+    if i == 0 {
+        v.get(0)
+    } else {
+        get_helper(&v, i - 1)
+    }
+}
+
+fn main() {
+    let list = push(push(push(vec(), 10), 20), 30)
+    let result = get(&list, 1)
+    match result {
+        None => print("missing"),
+        Some(x) => {
+            print(x)
+            println("missing")
+        },
+    }
+}

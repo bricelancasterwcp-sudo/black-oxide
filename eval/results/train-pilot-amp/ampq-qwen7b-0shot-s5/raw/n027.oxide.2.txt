@@ -1,0 +1,17 @@
+struct Strs { chars: Vec<Str> }
+
+fn chars(s: Str) -> Strs {
+    let mut res = Vec()
+    for c in str_chars(s) {
+        push(res, c)
+    }
+    Strs(res)
+}
+
+fn main() {
+    let s = "cat"
+    for c in chars(s).chars {
+        print_str(c)
+        print_str("\n")
+    }
+}

@@ -1,0 +1,20 @@
+fn main() {
+    let mut x = 1
+    while x * 2 <= 100 {
+        x = x * 2
+    }
+    print(x - 1)
+}
+
+fn drop_x(x: Int) {
+    drop x
+}
+
+fn main() {
+    let mut x = 1
+    while x * 2 <= 100 {
+        x = x * 2
+    }
+    print(x - 1)
+    drop_x(x)
+}

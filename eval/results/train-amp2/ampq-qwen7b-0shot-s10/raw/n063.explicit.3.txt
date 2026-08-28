@@ -1,0 +1,11 @@
+fn main() {
+    let line1 = push(push(vec(), 3), 3)
+    let line2 = push(push(vec(), 2), 2)
+    let total = push(push(vec(), clone(&line1)), clone(&line2))
+    print(&line1)
+    drop line1
+    print(&line2)
+    drop line2
+    print(&total)
+    drop total
+}

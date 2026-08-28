@@ -1,0 +1,24 @@
+fn deposits(mut_balance: Int) -> Int {
+    let deposit_1 = 3
+    let deposit_2 = 1
+    let deposit_3 = 4
+    let deposit_4 = 1
+    let deposit_5 = 5
+    mut_balance = push(mut_balance, deposit_1)
+    print(mut_balance)
+    mut_balance = push(mut_balance, deposit_2)
+    print(mut_balance)
+    mut_balance = push(mut_balance, deposit_3)
+    print(mut_balance)
+    mut_balance = push(mut_balance, deposit_4)
+    print(mut_balance)
+    mut_balance = push(mut_balance, deposit_5)
+    print(mut_balance)
+    mut_balance
+}
+
+fn main() {
+    let initial_balance = 0
+    let final_balance = deposits(initial_balance)
+    print(final_balance)
+}

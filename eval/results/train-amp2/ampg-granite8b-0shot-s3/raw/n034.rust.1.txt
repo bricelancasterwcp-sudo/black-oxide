@@ -1,0 +1,23 @@
+```rust
+const fn get_second(list: [u8; 3]) -> Option<u8> {
+    if list.len() >= 2 {
+        return Some(list[1]);
+    }
+    None
+}
+
+fn main() {
+    println!("{:?}", get_second([7, 8, 9]));
+    println!("{:?}", get_second([7, 8]));
+    println!("{:?}", get_second([7]));
+}
+```
+
+The `get_second` function takes a list of three bytes and returns an `Option<u8>`. If the list has at least two elements, it returns the second element as an `Option::Some`. Otherwise, it returns `Option::None`.
+
+In the `main` function, we call `get_second` with different lists and print the results. The output will be:
+```
+Some(8)
+Some(8)
+None
+```

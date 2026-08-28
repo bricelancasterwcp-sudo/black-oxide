@@ -1,0 +1,10 @@
+fn main() {
+    let list1 = push(push(vec(), 1), 2)
+    let list2 = push(push(vec(), 4), 5)
+    let len1 = len(&list1)
+    let len2 = len(&list2)
+    let sum = len1 + len2
+    print(sum)
+    drop list1
+    drop list2
+}

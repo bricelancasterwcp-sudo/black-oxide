@@ -1,0 +1,7 @@
+fn main() {
+    let word = "granite"
+    let first_letter = word.chars().nth(0).unwrap()
+    let last_letter = word.chars().last().unwrap()
+    print(first_letter)
+    print(last_letter)
+}

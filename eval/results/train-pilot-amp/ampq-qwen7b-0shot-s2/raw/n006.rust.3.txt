@@ -1,0 +1,7 @@
+fn main() {
+    let mut num = 100;
+    while num > 1 {
+        num >>= 1;
+    }
+    println!("{}", num);
+}

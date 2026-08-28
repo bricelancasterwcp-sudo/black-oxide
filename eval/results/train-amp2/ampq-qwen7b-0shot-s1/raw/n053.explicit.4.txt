@@ -1,0 +1,371 @@
+fn main() {
+    let drum = "drum"
+    let reversed = concat(chars(drum).iter().rev().map(str), drum)
+    print_str(reversed)
+    print_str(drum)
+    drop reversed
+    drop drum
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    s.chars().map(str).collect()
+}
+
+fn concat(a: Vec<Str>, b: &Str) -> Str {
+    format("{}{}", a.join(""), b)
+}
+
+fn str(c: Char) -> Str {
+    c.to_string()
+}
+
+fn main() {
+    let drum = "drum"
+    let reversed = concat(chars(drum).iter().rev().map(str), drum)
+    print_str(reversed)
+    print_str(drum)
+    drop reversed
+    drop drum
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    s.chars().map(str).collect()
+}
+
+fn concat(a: Vec<Str>, b: &Str) -> Str {
+    format("{}{}", a.join(""), b)
+}
+
+fn str(c: Char) -> Str {
+    c.to_string()
+}
+
+fn main() {
+    let drum = "drum"
+    let reversed = concat(chars(drum).iter().rev().map(str), drum)
+    print_str(reversed)
+    print_str(drum)
+    drop reversed
+    drop drum
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    s.chars().map(str).collect()
+}
+
+fn concat(a: Vec<Str>, b: &Str) -> Str {
+    format("{}{}", a.join(""), b)
+}
+
+fn str(c: Char) -> Str {
+    c.to_string()
+}
+
+fn main() {
+    let drum = "drum"
+    let reversed = concat(chars(drum).iter().rev().map(str), drum)
+    print_str(reversed)
+    print_str(drum)
+    drop reversed
+    drop drum
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    s.chars().map(str).collect()
+}
+
+fn concat(a: Vec<Str>, b: &Str) -> Str {
+    format("{}{}", a.join(""), b)
+}
+
+fn str(c: Char) -> Str {
+    c.to_string()
+}
+
+fn main() {
+    let drum = "drum"
+    let reversed = concat(chars(drum).iter().rev().map(str), drum)
+    print_str(reversed)
+    print_str(drum)
+    drop reversed
+    drop drum
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    s.chars().map(str).collect()
+}
+
+fn concat(a: Vec<Str>, b: &Str) -> Str {
+    format("{}{}", a.join(""), b)
+}
+
+fn str(c: Char) -> Str {
+    c.to_string()
+}
+
+fn main() {
+    let drum = "drum"
+    let reversed = concat(chars(drum).iter().rev().map(str), drum)
+    print_str(reversed)
+    print_str(drum)
+    drop reversed
+    drop drum
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    s.chars().map(str).collect()
+}
+
+fn concat(a: Vec<Str>, b: &Str) -> Str {
+    format("{}{}", a.join(""), b)
+}
+
+fn str(c: Char) -> Str {
+    c.to_string()
+}
+
+fn main() {
+    let drum = "drum"
+    let reversed = concat(chars(drum).iter().rev().map(str), drum)
+    print_str(reversed)
+    print_str(drum)
+    drop reversed
+    drop drum
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    s.chars().map(str).collect()
+}
+
+fn concat(a: Vec<Str>, b: &Str) -> Str {
+    format("{}{}", a.join(""), b)
+}
+
+fn str(c: Char) -> Str {
+    c.to_string()
+}
+
+fn main() {
+    let drum = "drum"
+    let reversed = concat(chars(drum).iter().rev().map(str), drum)
+    print_str(reversed)
+    print_str(drum)
+    drop reversed
+    drop drum
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    s.chars().map(str).collect()
+}
+
+fn concat(a: Vec<Str>, b: &Str) -> Str {
+    format("{}{}", a.join(""), b)
+}
+
+fn str(c: Char) -> Str {
+    c.to_string()
+}
+
+fn main() {
+    let drum = "drum"
+    let reversed = concat(chars(drum).iter().rev().map(str), drum)
+    print_str(reversed)
+    print_str(drum)
+    drop reversed
+    drop drum
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    s.chars().map(str).collect()
+}
+
+fn concat(a: Vec<Str>, b: &Str) -> Str {
+    format("{}{}", a.join(""), b)
+}
+
+fn str(c: Char) -> Str {
+    c.to_string()
+}
+
+fn main() {
+    let drum = "drum"
+    let reversed = concat(chars(drum).iter().rev().map(str), drum)
+    print_str(reversed)
+    print_str(drum)
+    drop reversed
+    drop drum
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    s.chars().map(str).collect()
+}
+
+fn concat(a: Vec<Str>, b: &Str) -> Str {
+    format("{}{}", a.join(""), b)
+}
+
+fn str(c: Char) -> Str {
+    c.to_string()
+}
+
+fn main() {
+    let drum = "drum"
+    let reversed = concat(chars(drum).iter().rev().map(str), drum)
+    print_str(reversed)
+    print_str(drum)
+    drop reversed
+    drop drum
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    s.chars().map(str).collect()
+}
+
+fn concat(a: Vec<Str>, b: &Str) -> Str {
+    format("{}{}", a.join(""), b)
+}
+
+fn str(c: Char) -> Str {
+    c.to_string()
+}
+
+fn main() {
+    let drum = "drum"
+    let reversed = concat(chars(drum).iter().rev().map(str), drum)
+    print_str(reversed)
+    print_str(drum)
+    drop reversed
+    drop drum
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    s.chars().map(str).collect()
+}
+
+fn concat(a: Vec<Str>, b: &Str) -> Str {
+    format("{}{}", a.join(""), b)
+}
+
+fn str(c: Char) -> Str {
+    c.to_string()
+}
+
+fn main() {
+    let drum = "drum"
+    let reversed = concat(chars(drum).iter().rev().map(str), drum)
+    print_str(reversed)
+    print_str(drum)
+    drop reversed
+    drop drum
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    s.chars().map(str).collect()
+}
+
+fn concat(a: Vec<Str>, b: &Str) -> Str {
+    format("{}{}", a.join(""), b)
+}
+
+fn str(c: Char) -> Str {
+    c.to_string()
+}
+
+fn main() {
+    let drum = "drum"
+    let reversed = concat(chars(drum).iter().rev().map(str), drum)
+    print_str(reversed)
+    print_str(drum)
+    drop reversed
+    drop drum
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    s.chars().map(str).collect()
+}
+
+fn concat(a: Vec<Str>, b: &Str) -> Str {
+    format("{}{}", a.join(""), b)
+}
+
+fn str(c: Char) -> Str {
+    c.to_string()
+}
+
+fn main() {
+    let drum = "drum"
+    let reversed = concat(chars(drum).iter().rev().map(str), drum)
+    print_str(reversed)
+    print_str(drum)
+    drop reversed
+    drop drum
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    s.chars().map(str).collect()
+}
+
+fn concat(a: Vec<Str>, b: &Str) -> Str {
+    format("{}{}", a.join(""), b)
+}
+
+fn str(c: Char) -> Str {
+    c.to_string()
+}
+
+fn main() {
+    let drum = "drum"
+    let reversed = concat(chars(drum).iter().rev().map(str), drum)
+    print_str(reversed)
+    print_str(drum)
+    drop reversed
+    drop drum
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    s.chars().map(str).collect()
+}
+
+fn concat(a: Vec<Str>, b: &Str) -> Str {
+    format("{}{}", a.join(""), b)
+}
+
+fn str(c: Char) -> Str {
+    c.to_string()
+}
+
+fn main() {
+    let drum = "drum"
+    let reversed = concat(chars(drum).iter().rev().map(str), drum)
+    print_str(reversed)
+    print_str(drum)
+    drop reversed
+    drop drum
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    s.chars().map(str).collect()
+}
+
+fn concat(a: Vec<Str>, b: &Str) -> Str {
+    format("{}{}", a.join(""), b)
+}
+
+fn str(c: Char) -> Str {
+    c.to_string()
+}
+
+fn main() {
+    let drum = "drum"
+    let reversed = concat(chars(drum).iter().rev().map(str), drum)
+    print_str(reversed)
+    print_str(drum)
+    drop reversed
+    drop drum
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    s.chars().map(str).collect()
+}
+
+fn concat(a: Vec<Str>, b: &

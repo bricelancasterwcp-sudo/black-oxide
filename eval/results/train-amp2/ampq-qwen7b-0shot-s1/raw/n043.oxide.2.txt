@@ -1,0 +1,445 @@
+struct Queue { values: Vec<Int> }
+
+fn main() {
+    let q = Queue { values: vec(1, 2, 3, 4, 5) }
+    let first = get(q.values, 0)?
+    let last = get(q.values, len(q.values) - 1)?
+    let q2 = Queue { values: push(push(vec(), last), first) }
+    for x in q2.values {
+        print(x)
+    }
+}
+
+fn drop_first(v: Vec<Int>) -> Vec<Int> {
+    v.tail()
+}
+
+fn drop_last(v: Vec<Int>) -> Vec<Int> {
+    v.slice(0, len(v) - 1)
+}
+
+fn tail(v: Vec<Int>) -> Vec<Int> {
+    v.slice(1, len(v))
+}
+
+fn head(v: Vec<Int>) -> Vec<Int> {
+    v.slice(0, 1)
+}
+
+fn slice(v: Vec<Int>, start: Int, end: Int) -> Vec<Int> {
+    v.slice(start, end)
+}
+
+fn len(v: Vec<Int>) -> Int {
+    v.len()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    v.get(i)
+}
+
+fn clone(x: Vec<Int>) -> Vec<Int> {
+    x.clone()
+}
+
+fn print(x: Int) {
+    print_str(x.to_str())
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn vec(v: Vec<Int>) -> Vec<Int> {
+    v
+}
+
+fn tail(v: Vec<Int>) -> Vec<Int> {
+    v.tail()
+}
+
+fn head(v: Vec<Int>) -> Vec<Int> {
+    v.head()
+}
+
+fn slice(v: Vec<Int>, start: Int, end: Int) -> Vec<Int> {
+    v.slice(start, end)
+}
+
+fn len(v: Vec<Int>) -> Int {
+    v.len()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    v.get(i)
+}
+
+fn clone(x: Vec<Int>) -> Vec<Int> {
+    x.clone()
+}
+
+fn print(x: Int) {
+    print_str(x.to_str())
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn vec(v: Vec<Int>) -> Vec<Int> {
+    v
+}
+
+fn tail(v: Vec<Int>) -> Vec<Int> {
+    v.tail()
+}
+
+fn head(v: Vec<Int>) -> Vec<Int> {
+    v.head()
+}
+
+fn slice(v: Vec<Int>, start: Int, end: Int) -> Vec<Int> {
+    v.slice(start, end)
+}
+
+fn len(v: Vec<Int>) -> Int {
+    v.len()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    v.get(i)
+}
+
+fn clone(x: Vec<Int>) -> Vec<Int> {
+    x.clone()
+}
+
+fn print(x: Int) {
+    print_str(x.to_str())
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn vec(v: Vec<Int>) -> Vec<Int> {
+    v
+}
+
+fn tail(v: Vec<Int>) -> Vec<Int> {
+    v.tail()
+}
+
+fn head(v: Vec<Int>) -> Vec<Int> {
+    v.head()
+}
+
+fn slice(v: Vec<Int>, start: Int, end: Int) -> Vec<Int> {
+    v.slice(start, end)
+}
+
+fn len(v: Vec<Int>) -> Int {
+    v.len()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    v.get(i)
+}
+
+fn clone(x: Vec<Int>) -> Vec<Int> {
+    x.clone()
+}
+
+fn print(x: Int) {
+    print_str(x.to_str())
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn vec(v: Vec<Int>) -> Vec<Int> {
+    v
+}
+
+fn tail(v: Vec<Int>) -> Vec<Int> {
+    v.tail()
+}
+
+fn head(v: Vec<Int>) -> Vec<Int> {
+    v.head()
+}
+
+fn slice(v: Vec<Int>, start: Int, end: Int) -> Vec<Int> {
+    v.slice(start, end)
+}
+
+fn len(v: Vec<Int>) -> Int {
+    v.len()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    v.get(i)
+}
+
+fn clone(x: Vec<Int>) -> Vec<Int> {
+    x.clone()
+}
+
+fn print(x: Int) {
+    print_str(x.to_str())
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn vec(v: Vec<Int>) -> Vec<Int> {
+    v
+}
+
+fn tail(v: Vec<Int>) -> Vec<Int> {
+    v.tail()
+}
+
+fn head(v: Vec<Int>) -> Vec<Int> {
+    v.head()
+}
+
+fn slice(v: Vec<Int>, start: Int, end: Int) -> Vec<Int> {
+    v.slice(start, end)
+}
+
+fn len(v: Vec<Int>) -> Int {
+    v.len()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    v.get(i)
+}
+
+fn clone(x: Vec<Int>) -> Vec<Int> {
+    x.clone()
+}
+
+fn print(x: Int) {
+    print_str(x.to_str())
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn vec(v: Vec<Int>) -> Vec<Int> {
+    v
+}
+
+fn tail(v: Vec<Int>) -> Vec<Int> {
+    v.tail()
+}
+
+fn head(v: Vec<Int>) -> Vec<Int> {
+    v.head()
+}
+
+fn slice(v: Vec<Int>, start: Int, end: Int) -> Vec<Int> {
+    v.slice(start, end)
+}
+
+fn len(v: Vec<Int>) -> Int {
+    v.len()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    v.get(i)
+}
+
+fn clone(x: Vec<Int>) -> Vec<Int> {
+    x.clone()
+}
+
+fn print(x: Int) {
+    print_str(x.to_str())
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn vec(v: Vec<Int>) -> Vec<Int> {
+    v
+}
+
+fn tail(v: Vec<Int>) -> Vec<Int> {
+    v.tail()
+}
+
+fn head(v: Vec<Int>) -> Vec<Int> {
+    v.head()
+}
+
+fn slice(v: Vec<Int>, start: Int, end: Int) -> Vec<Int> {
+    v.slice(start, end)
+}
+
+fn len(v: Vec<Int>) -> Int {
+    v.len()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    v.get(i)
+}
+
+fn clone(x: Vec<Int>) -> Vec<Int> {
+    x.clone()
+}
+
+fn print(x: Int) {
+    print_str(x.to_str())
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn vec(v: Vec<Int>) -> Vec<Int> {
+    v
+}
+
+fn tail(v: Vec<Int>) -> Vec<Int> {
+    v.tail()
+}
+
+fn head(v: Vec<Int>) -> Vec<Int> {
+    v.head()
+}
+
+fn slice(v: Vec<Int>, start: Int, end: Int) -> Vec<Int> {
+    v.slice(start, end)
+}
+
+fn len(v: Vec<Int>) -> Int {
+    v.len()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    v.get(i)
+}
+
+fn clone(x: Vec<Int>) -> Vec<Int> {
+    x.clone()
+}
+
+fn print(x: Int) {
+    print_str(x.to_str())
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn vec(v: Vec<Int>) -> Vec<Int> {
+    v
+}
+
+fn tail(v: Vec<Int>) -> Vec<Int> {
+    v.tail()
+}
+
+fn head(v: Vec<Int>) -> Vec<Int> {
+    v.head()
+}
+
+fn slice(v: Vec<Int>, start: Int, end: Int) -> Vec<Int> {
+    v.slice(start, end)
+}
+
+fn len(v: Vec<Int>) -> Int {
+    v.len()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    v.get(i)
+}
+
+fn clone(x: Vec<Int>) -> Vec<Int> {
+    x.clone()
+}
+
+fn print(x: Int) {

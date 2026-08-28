@@ -1,0 +1,21 @@
+use std::io;
+
+fn main() {
+    let mut numbers = vec![9, 2, 12, 5, 16];
+    let mut kept_count = 0;
+
+    numbers.retain(|&x| {
+        if x < 10 {
+            kept_count += 1;
+            true
+        } else {
+            false
+        }
+    });
+
+    for number in &numbers {
+        println!("{}", number);
+    }
+
+    println!("Kept {} numbers", kept_count);
+}

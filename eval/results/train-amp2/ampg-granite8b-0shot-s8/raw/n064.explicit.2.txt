@@ -1,0 +1,13 @@
+fn list_lookup(l: Vec<Int>, pos: Int) -> Option<Int> {
+    match pos {
+        Int(i) => get(&l, i),
+        _ => None,
+    }
+}
+
+fn main() {
+    let l = push(push(push(push(vec(), 10), 20), 30), 40)
+    print(list_lookup(&l, 1))
+    print(list_lookup(&l, 4))
+    drop l
+}

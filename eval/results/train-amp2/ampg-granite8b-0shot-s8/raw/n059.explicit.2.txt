@@ -1,0 +1,16 @@
+fn word_count(text: Str) -> Int {
+    let mut chars = 0
+    let mut words = 1
+    for ch in chars(&text) {
+        chars = chars + 1
+        if ch == " " {
+            words = words + 1
+        }
+    }
+    words
+}
+
+fn main() {
+    let text = "The quick brown fox jumps over the lazy dog"
+    print(word_count(&text))
+}

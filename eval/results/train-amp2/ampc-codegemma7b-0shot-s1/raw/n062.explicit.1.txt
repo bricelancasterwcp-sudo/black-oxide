@@ -1,0 +1,15 @@
+fn print_signal(s: &Str) {
+    if s == "green" {
+        print("go")
+    } else if s == "red" {
+        print("stop")
+    } else if s == "yellow" {
+        print("wait")
+    }
+}
+
+fn main() {
+    print_signal(&green)
+    print_signal(&red)
+    print_signal(&yellow)
+}

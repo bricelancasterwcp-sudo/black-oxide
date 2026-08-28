@@ -1,0 +1,18 @@
+fn int_to_str(n: Int) -> Str {
+    if n < 0 {
+        concat("-", int_to_str(-n))
+    } else if n < 10 {
+        str_len(to_str(n))
+    } else {
+        let digits: Vec<Str> = range(0, n)
+        digits.iter().map(int_to_str).join("")
+    }
+}
+
+fn main() {
+    let num = 2026
+    let text = int_to_str(num)
+    print(text)
+    print(int_to_str(chars(text).len()))
+    drop text
+}

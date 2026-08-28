@@ -1,0 +1,17 @@
+fn print_digit(n: Number) {
+    print(n.value)
+}
+
+struct Number { value: Int }
+
+fn number_from_str(s: Str) -> Option<Number> {
+    let c = get(s, 0)?
+    Some(Number { value: c - b })
+}
+
+fn main() {
+    let two = Number { value: 2 }
+    let six = Number { value: 2 + 2 + 2 }
+    print_digit(two)
+    print_digit(six)
+}

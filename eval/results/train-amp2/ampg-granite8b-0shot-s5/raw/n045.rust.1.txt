@@ -1,0 +1,8 @@
+```rust
+const ENTRIES: &[i32] = &[6, 7, 8, 9];
+
+fn main() {
+    println!("First entry: {}", ENTRIES.first().unwrap());
+    println!("Last entry: {}", ENTRIES.last().unwrap());
+}
+```

@@ -1,0 +1,14 @@
+struct Sequence {
+    previous: Int,
+    current: Int,
+}
+
+fn main() {
+    let s = Sequence { previous: 1, current: 1 }
+    for i in 1.range(11) {
+        print(s.current)
+        let next = s.current + s.previous
+        s.previous = s.current
+        s.current = next
+    }
+}

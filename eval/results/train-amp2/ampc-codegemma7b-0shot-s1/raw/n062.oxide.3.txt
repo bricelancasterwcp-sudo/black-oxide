@@ -1,0 +1,12 @@
+fn print_signal(c: Str) {
+    match c {
+        Str(s) => print_str(s),
+        _ => print_str("unknown signal"),
+    }
+}
+
+fn main() {
+    print_signal(Str("green"))
+    print_signal(Str("red"))
+    print_signal(Str("yellow"))
+}

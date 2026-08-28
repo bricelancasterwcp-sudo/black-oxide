@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let list = vec![7, 8, 9];
+    let result = second(list);
+    match result {
+        Some(n) => println!("Second entry: {}", n),
+        None => println!("No second entry"),
+    }
+}
+
+fn second<T>(list: Vec<T>) -> Option<T> {
+    let mut iter = list.into_iter();
+    iter.next()?;
+    iter.next()
+}
+```

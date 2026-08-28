@@ -1,0 +1,15 @@
+fn open(g: &Granit) -> Char {
+    g.first()
+}
+
+fn close(g: Granit) -> Char {
+    g.last()
+}
+
+fn main() {
+    let g = push(push(vec(), "h"), "e")
+    let o = open(&g)
+    print(o)
+    let c = close(g)
+    print(c)
+}

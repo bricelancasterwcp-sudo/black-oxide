@@ -1,0 +1,9 @@
+fn print_cat() {
+    print_str("c")
+    print_str("a")
+    print_str("t")
+}
+
+fn main() {
+    print_cat()
+}

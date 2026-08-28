@@ -1,0 +1,5 @@
+fn main() {
+    let a = 4.0 + 8.0 + 15.0 + 16.0 + 23.0 + 42.0
+    let mean = a / 6.0
+    print(mean)
+}

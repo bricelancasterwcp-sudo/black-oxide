@@ -1,0 +1,13 @@
+```rust
+fn main(){
+    let batch = vec![9,2,12,5,16];
+    let mut keep = Vec::new();
+    for n in batch.into_iter(){
+        if n < 10 {keep.push(n);}
+    }
+    println!("{}",keep.len());
+    for n in keep.into_iter(){
+        println!("{}",n);
+    }
+}
+```

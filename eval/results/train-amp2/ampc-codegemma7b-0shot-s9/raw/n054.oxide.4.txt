@@ -1,0 +1,18 @@
+fn is_vowel(c: Str) -> Bool {
+    c == "a" || c == "e" || c == "i" || c == "o" || c == "u"
+}
+
+fn main() {
+    let word = "keyboard"
+    let mut vowels = 0
+    let mut consonants = 0
+    for letter in word.chars() {
+        if is_vowel(Str(letter)) {
+            vowels = vowels + 1
+        } else {
+            consonants = consonants + 1
+        }
+    }
+    print(vowels)
+    print(consonants)
+}

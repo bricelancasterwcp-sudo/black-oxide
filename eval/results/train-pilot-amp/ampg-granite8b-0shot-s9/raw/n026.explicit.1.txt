@@ -1,0 +1,317 @@
+fn main() {
+    let number = 2026
+    let text = int_to_str(number)
+    let text_len = str_len(&text)
+    print_str("number: ")
+    print(number)
+    print_str("\ntext: ")
+    print(&text)
+    print_str("\nlength: ")
+    print(text_len)
+}
+
+fn int_to_str(number: Int) -> Str {
+    let mut text = vec()
+    let mut number = number
+    let digit: Int = 10
+    while number > 0 {
+        let digit_value = number % digit
+        let digit_text = match digit_value {
+            LOWER_0 => "0",
+            LOWER_1 => "1",
+            LOWER_2 => "2",
+            LOWER_3 => "3",
+            LOWER_4 => "4",
+            LOWER_5 => "5",
+            LOWER_6 => "6",
+            LOWER_7 => "7",
+            LOWER_8 => "8",
+            LOWER_9 => "9",
+            _ => panic("unknown digit value"),
+        }
+        text = push(text, digit_text)
+        number = number / digit
+    }
+    concat(&text, "")
+}
+
+fn str_len(text: &Str) -> Int {
+    len(&chars_in_str)
+}
+
+fn chars_in_str(text: &Str) -> Vec<Str> {
+    let text_length = str_len(text)
+    let mut result = vec()
+    for i in 0.to_int(text_length) {
+        result = push(result, get_char(text, i))
+    }
+    result
+}
+
+fn get_char(text: &Str, i: Int) -> Str {
+    get(&chars_in_str, i)
+}
+
+fn panic(message: &Str) -> Never {
+    print_str("\npanic: ")
+    print(&message)
+    abort()
+}
+
+fn abort() -> Never {
+    loop()
+}
+
+enum Never {
+    Never,
+}
+
+fn to_int(lower: Lower) -> Int {
+    match lower {
+        LOWER_0 => 0,
+        LOWER_1 => 1,
+        LOWER_2 => 2,
+        LOWER_3 => 3,
+        LOWER_4 => 4,
+        LOWER_5 => 5,
+        LOWER_6 => 6,
+        LOWER_7 => 7,
+        LOWER_8 => 8,
+        LOWER_9 => 9,
+        _ => panic("unknown digit value"),
+    }
+}
+
+enum Lower {
+    LOWER_0,
+    LOWER_1,
+    LOWER_2,
+    LOWER_3,
+    LOWER_4,
+    LOWER_5,
+    LOWER_6,
+    LOWER_7,
+    LOWER_8,
+    LOWER_9,
+    UNKNOWN_LOWER,
+}
+
+fn is_digit(lower: Lower) -> Bool {
+    match lower {
+        LOWER_0 => true,
+        LOWER_1 => true,
+        LOWER_2 => true,
+        LOWER_3 => true,
+        LOWER_4 => true,
+        LOWER_5 => true,
+        LOWER_6 => true,
+        LOWER_7 => true,
+        LOWER_8 => true,
+        LOWER_9 => true,
+        _ => false,
+    }
+}
+
+fn is_lower(letter: Letter) -> Bool {
+    match letter {
+        LOWER_A => true,
+        LOWER_B => true,
+        LOWER_C => true,
+        LOWER_D => true,
+        LOWER_E => true,
+        LOWER_F => true,
+        LOWER_G => true,
+        LOWER_H => true,
+        LOWER_I => true,
+        LOWER_J => true,
+        LOWER_K => true,
+        LOWER_L => true,
+        LOWER_M => true,
+        LOWER_N => true,
+        LOWER_O => true,
+        LOWER_P => true,
+        LOWER_Q => true,
+        LOWER_R => true,
+        LOWER_S => true,
+        LOWER_T => true,
+        LOWER_U => true,
+        LOWER_V => true,
+        LOWER_W => true,
+        LOWER_X => true,
+        LOWER_Y => true,
+        LOWER_Z => true,
+        _ => false,
+    }
+}
+
+enum Letter {
+    LOWER_A,
+    LOWER_B,
+    LOWER_C,
+    LOWER_D,
+    LOWER_E,
+    LOWER_F,
+    LOWER_G,
+    LOWER_H,
+    LOWER_I,
+    LOWER_J,
+    LOWER_K,
+    LOWER_L,
+    LOWER_M,
+    LOWER_N,
+    LOWER_O,
+    LOWER_P,
+    LOWER_Q,
+    LOWER_R,
+    LOWER_S,
+    LOWER_T,
+    LOWER_U,
+    LOWER_V,
+    LOWER_W,
+    LOWER_X,
+    LOWER_Y,
+    LOWER_Z,
+    UNKNOWN_LETTER,
+}
+
+fn lower_of_letter(letter: Letter) -> Lower {
+    match letter {
+        UPPER_A => LOWER_A,
+        UPPER_B => LOWER_B,
+        UPPER_C => LOWER_C,
+        UPPER_D => LOWER_D,
+        UPPER_E => LOWER_E,
+        UPPER_F => LOWER_F,
+        UPPER_G => LOWER_G,
+        UPPER_H => LOWER_H,
+        UPPER_I => LOWER_I,
+        UPPER_J => LOWER_J,
+        UPPER_K => LOWER_K,
+        UPPER_L => LOWER_L,
+        UPPER_M => LOWER_M,
+        UPPER_N => LOWER_N,
+        UPPER_O => LOWER_O,
+        UPPER_P => LOWER_P,
+        UPPER_Q => LOWER_Q,
+        UPPER_R => LOWER_R,
+        UPPER_S => LOWER_S,
+        UPPER_T => LOWER_T,
+        UPPER_U => LOWER_U,
+        UPPER_V => LOWER_V,
+        UPPER_W => LOWER_W,
+        UPPER_X => LOWER_X,
+        UPPER_Y => LOWER_Y,
+        UPPER_Z => LOWER_Z,
+        _ => UNKNOWN_LOWER,
+    }
+}
+
+enum Letter {
+    UPPER_A,
+    UPPER_B,
+    UPPER_C,
+    UPPER_D,
+    UPPER_E,
+    UPPER_F,
+    UPPER_G,
+    UPPER_H,
+    UPPER_I,
+    UPPER_J,
+    UPPER_K,
+    UPPER_L,
+    UPPER_M,
+    UPPER_N,
+    UPPER_O,
+    UPPER_P,
+    UPPER_Q,
+    UPPER_R,
+    UPPER_S,
+    UPPER_T,
+    UPPER_U,
+    UPPER_V,
+    UPPER_W,
+    UPPER_X,
+    UPPER_Y,
+    UPPER_Z,
+    UNKNOWN_LETTER,
+}
+
+fn letter_of_lower(lower: Lower) -> Letter {
+    match lower {
+        LOWER_A => UPPER_A,
+        LOWER_B => UPPER_B,
+        LOWER_C => UPPER_C,
+        LOWER_D => UPPER_D,
+        LOWER_E => UPPER_E,
+        LOWER_F => UPPER_F,
+        LOWER_G => UPPER_G,
+        LOWER_H => UPPER_H,
+        LOWER_I => UPPER_I,
+        LOWER_J => UPPER_J,
+        LOWER_K => UPPER_K,
+        LOWER_L => UPPER_L,
+        LOWER_M => UPPER_M,
+        LOWER_N => UPPER_N,
+        LOWER_O => UPPER_O,
+        LOWER_P => UPPER_P,
+        LOWER_Q => UPPER_Q,
+        LOWER_R => UPPER_R,
+        LOWER_S => UPPER_S,
+        LOWER_T => UPPER_T,
+        LOWER_U => UPPER_U,
+        LOWER_V => UPPER_V,
+        LOWER_W => UPPER_W,
+        LOWER_X => UPPER_X,
+        LOWER_Y => UPPER_Y,
+        LOWER_Z => UPPER_Z,
+        _ => UNKNOWN_LETTER,
+    }
+}
+
+enum Letter {
+    UPPER_A,
+    UPPER_B,
+    UPPER_C,
+    UPPER_D,
+    UPPER_E,
+    UPPER_F,
+    UPPER_G,
+    UPPER_H,
+    UPPER_I,
+    UPPER_J,
+    UPPER_K,
+    UPPER_L,
+    UPPER_M,
+    UPPER_N,
+    UPPER_O,
+    UPPER_P,
+    UPPER_Q,
+    UPPER_R,
+    UPPER_S,
+    UPPER_T,
+    UPPER_U,
+    UPPER_V,
+    UPPER_W,
+    UPPER_X,
+    UPPER_Y,
+    UPPER_Z,
+    UNKNOWN_LETTER,
+}
+
+fn letter_of_char(character: Char) -> Letter {
+    match character {
+        CHARACTER_A => UPPER_A,
+        CHARACTER_B => UPPER_B,
+        CHARACTER_C => UPPER_C,
+        CHARACTER_D => UPPER_D,
+        CHARACTER_E => UPPER_E,
+        CHARACTER_F => UPPER_F,
+        CHARACTER_G => UPPER_G,
+        CHARACTER_H => UPPER_H,
+        CHARACTER_I => UPPER_I,
+        CHARACTER_J => UPPER_J,
+        CHARACTER_K => UPPER_K,
+        CHARACTER_L => UPPER_L,
+        CHARACTER_M => UPPER_M,
+        CHARACTER_N => UPPER_N,
+        CHARACTER_O => UPPER_O

@@ -1,0 +1,16 @@
+struct List { head: Int, tail: Option<Box<List>> }
+
+fn walk(list: List) -> Int {
+    let mut sum = 0
+    let mut n = list
+    while n.head % 2 == 0 {
+        sum = sum + n.head
+        n = n.tail.unwrap()
+    }
+    print(n.head * 2)
+    sum + n.head
+}
+
+fn main() {
+    print(walk(List { head: 7, tail: Some(Box { head: 4, tail: Some(Box { head: 9, tail: Some(Box { head: 10, tail: None }) }) }) }) <= 41)
+}

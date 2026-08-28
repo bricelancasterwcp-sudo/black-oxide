@@ -1,0 +1,431 @@
+fn main() {
+    println(str_len("hello world"))
+}
+
+fn println(s: &Str) {
+    print(s)
+    print_str("\n")
+}
+
+fn str_len(s: &Str) -> Int {
+    len(s)
+}
+
+fn len(s: &Str) -> Int {
+    s.len()
+}
+
+fn print(s: &Str) {
+    print_str(s)
+}
+
+fn print_str(s: &Str) {
+    s.print_str()
+}
+
+struct Str {
+    data: Vec<Char>,
+    len: Int,
+    cap: Int,
+    alloc: Int,
+    alloc_cap: Int,
+}
+
+struct Vec {
+    data: Vec<Char>,
+    len: Int,
+    cap: Int,
+    alloc: Int,
+    alloc_cap: Int,
+}
+
+struct Char {
+    value: Int,
+}
+
+fn main() {
+    let hello = "Hello, world!".to_string()
+    println(&hello)
+}
+
+fn println(s: &Str) {
+    print(s)
+    print_str("\n")
+}
+
+fn print(s: &Str) {
+    print_str(s)
+}
+
+fn print_str(s: &Str) {
+    s.print_str()
+}
+
+struct Str {
+    data: Vec<Char>,
+    len: Int,
+    cap: Int,
+    alloc: Int,
+    alloc_cap: Int,
+}
+
+struct Vec {
+    data: Vec<Char>,
+    len: Int,
+    cap: Int,
+    alloc: Int,
+    alloc_cap: Int,
+}
+
+struct Char {
+    value: Int,
+}
+
+struct Int {
+    value: Int,
+}
+
+fn to_string(s: &Str) -> String {
+    String(s.to_string())
+}
+
+struct String {
+    data: Vec<Char>,
+    len: Int,
+    cap: Int,
+    alloc: Int,
+    alloc_cap: Int,
+}
+
+fn main() {
+    let hello = "Hello, world!".to_string()
+    let s = to_string(&hello)
+    print_str(&s)
+}
+
+fn println(s: &Str) {
+    print(s)
+    print_str("\n")
+}
+
+fn print(s: &Str) {
+    print_str(s)
+}
+
+fn print_str(s: &Str) {
+    s.print_str()
+}
+
+struct Str {
+    data: Vec<Char>,
+    len: Int,
+    cap: Int,
+    alloc: Int,
+    alloc_cap: Int,
+}
+
+struct Vec {
+    data: Vec<Char>,
+    len: Int,
+    cap: Int,
+    alloc: Int,
+    alloc_cap: Int,
+}
+
+struct Char {
+    value: Int,
+}
+
+struct Int {
+    value: Int,
+}
+
+fn to_string(s: &Str) -> String {
+    String(s.to_string())
+}
+
+struct String {
+    data: Vec<Char>,
+    len: Int,
+    cap: Int,
+    alloc: Int,
+    alloc_cap: Int,
+}
+
+fn main() {
+    let hello = "Hello, world!".to_string()
+    let s = to_string(&hello)
+    print_str(&s)
+}
+
+fn println(s: &Str) {
+    print(s)
+    print_str("\n")
+}
+
+fn print(s: &Str) {
+    print_str(s)
+}
+
+fn print_str(s: &Str) {
+    s.print_str()
+}
+
+struct Str {
+    data: Vec<Char>,
+    len: Int,
+    cap: Int,
+    alloc: Int,
+    alloc_cap: Int,
+}
+
+struct Vec {
+    data: Vec<Char>,
+    len: Int,
+    cap: Int,
+    alloc: Int,
+    alloc_cap: Int,
+}
+
+struct Char {
+    value: Int,
+}
+
+struct Int {
+    value: Int,
+}
+
+fn to_string(s: &Str) -> String {
+    String(s.to_string())
+}
+
+struct String {
+    data: Vec<Char>,
+    len: Int,
+    cap: Int,
+    alloc: Int,
+    alloc_cap: Int,
+}
+
+fn main() {
+    let hello = "Hello, world!".to_string()
+    let s = to_string(&hello)
+    println(&s)
+}
+
+fn println(s: &Str) {
+    print(s)
+    print_str("\n")
+}
+
+fn print(s: &Str) {
+    print_str(s)
+}
+
+fn print_str(s: &Str) {
+    s.print_str()
+}
+
+struct Str {
+    data: Vec<Char>,
+    len: Int,
+    cap: Int,
+    alloc: Int,
+    alloc_cap: Int,
+}
+
+struct Vec {
+    data: Vec<Char>,
+    len: Int,
+    cap: Int,
+    alloc: Int,
+    alloc_cap: Int,
+}
+
+struct Char {
+    value: Int,
+}
+
+struct Int {
+    value: Int,
+}
+
+fn to_string(s: &Str) -> String {
+    String(s.to_string())
+}
+
+struct String {
+    data: Vec<Char>,
+    len: Int,
+    cap: Int,
+    alloc: Int,
+    alloc_cap: Int,
+}
+
+fn main() {
+    let hello = "Hello, world!".to_string()
+    let s = to_string(&hello)
+    println(&s)
+}
+
+fn println(s: &Str) {
+    print(s)
+    print_str("\n")
+}
+
+fn print(s: &Str) {
+    print_str(s)
+}
+
+fn print_str(s: &Str) {
+    s.print_str()
+}
+
+struct Str {
+    data: Vec<Char>,
+    len: Int,
+    cap: Int,
+    alloc: Int,
+    alloc_cap: Int,
+}
+
+struct Vec {
+    data: Vec<Char>,
+    len: Int,
+    cap: Int,
+    alloc: Int,
+    alloc_cap: Int,
+}
+
+struct Char {
+    value: Int,
+}
+
+struct Int {
+    value: Int,
+}
+
+fn to_string(s: &Str) -> String {
+    String(s.to_string())
+}
+
+struct String {
+    data: Vec<Char>,
+    len: Int,
+    cap: Int,
+    alloc: Int,
+    alloc_cap: Int,
+}
+
+fn main() {
+    let hello = "Hello, world!".to_string()
+    let s = to_string(&hello)
+    println(&s)
+}
+
+fn println(s: &Str) {
+    print(s)
+    print_str("\n")
+}
+
+fn print(s: &Str) {
+    print_str(s)
+}
+
+fn print_str(s: &Str) {
+    s.print_str()
+}
+
+struct Str {
+    data: Vec<Char>,
+    len: Int,
+    cap: Int,
+    alloc: Int,
+    alloc_cap: Int,
+}
+
+struct Vec {
+    data: Vec<Char>,
+    len: Int,
+    cap: Int,
+    alloc: Int,
+    alloc_cap: Int,
+}
+
+struct Char {
+    value: Int,
+}
+
+struct Int {
+    value: Int,
+}
+
+fn to_string(s: &Str) -> String {
+    String(s.to_string())
+}
+
+struct String {
+    data: Vec<Char>,
+    len: Int,
+    cap: Int,
+    alloc: Int,
+    alloc_cap: Int,
+}
+
+fn main() {
+    let hello = "Hello, world!".to_string()
+    let s = to_string(&hello)
+    println(&s)
+}
+
+fn println(s: &Str) {
+    print(s)
+    print_str("\n")
+}
+
+fn print(s: &Str) {
+    print_str(s)
+}
+
+fn print_str(s: &Str) {
+    s.print_str()
+}
+
+struct Str {
+    data: Vec<Char>,
+    len: Int,
+    cap: Int,
+    alloc: Int,
+    alloc_cap: Int,
+}
+
+struct Vec {
+    data: Vec<Char>,
+    len: Int,
+    cap: Int,
+    alloc: Int,
+    alloc_cap: Int,
+}
+
+struct Char {
+    value: Int,
+}
+
+struct Int {
+    value: Int,
+}
+
+fn to_string(s: &Str) -> String {
+    String(s.to_string())
+}
+
+struct String {
+    data: Vec<Char>,
+    len: Int,
+    cap: Int,
+    alloc: Int,
+    alloc_cap: Int,
+}
+
+fn main() {
+    let hello = "

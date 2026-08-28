@@ -1,0 +1,15 @@
+fn int_to_str(n: Int) -> Str {
+    if n < 10 {
+        if n == 0 {
+            return "0".to_owned()
+        }
+        return format("%c", n + 48)
+    } else {
+        return format("%c%c", int_to_str(n / 10), int_to_str(n % 10))
+    }
+}
+
+fn main() {
+    let s = int_to_str(2026)
+    print(str_len(s))
+}

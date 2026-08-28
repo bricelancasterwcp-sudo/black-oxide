@@ -1,0 +1,396 @@
+struct Multiples {
+    multiplier: Int,
+    multiples: Vec<Int>,
+}
+
+fn main() {
+    let result = fold(range(4, 24), vec(), append_multiples(2))
+    print(sum(result))
+}
+
+fn append_multiples(m: Int) -> Function<Vec<Int>, Vec<Int>> {
+    fn_mut(acc, i) == push(acc, i * m)
+}
+
+fn fold(v: Vec<Int>, init: T, f: Function<T, T>) -> T {
+    let acc = init
+    for x in v {
+        acc = f(acc, x)
+    }
+    acc
+}
+
+fn sum(v: Vec<Int>) -> Int {
+    fold(v, 0, add)
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+struct Function {
+    fn_mut: Function2,
+}
+
+struct Function2 {
+    fn_mut: Function3,
+}
+
+struct Function3 {
+    fn_mut: Function4,
+}
+
+struct Function4 {
+    fn_mut: Function5,
+}
+
+struct Function5 {
+    fn_mut: Function6,
+}
+
+struct Function6 {
+    fn_mut: Function7,
+}
+
+struct Function7 {
+    fn_mut: Function8,
+}
+
+struct Function8 {
+    fn_mut: Function9,
+}
+
+struct Function9 {
+    fn_mut: Function10,
+}
+
+struct Function10 {
+    fn_mut: Function11,
+}
+
+struct Function11 {
+    fn_mut: Function12,
+}
+
+struct Function12 {
+    fn_mut: Function13,
+}
+
+struct Function13 {
+    fn_mut: Function14,
+}
+
+struct Function14 {
+    fn_mut: Function15,
+}
+
+struct Function15 {
+    fn_mut: Function16,
+}
+
+struct Function16 {
+    fn_mut: Function17,
+}
+
+struct Function17 {
+    fn_mut: Function18,
+}
+
+struct Function18 {
+    fn_mut: Function19,
+}
+
+struct Function19 {
+    fn_mut: Function20,
+}
+
+struct Function20 {
+    fn_mut: Function21,
+}
+
+struct Function21 {
+    fn_mut: Function22,
+}
+
+struct Function22 {
+    fn_mut: Function23,
+}
+
+struct Function23 {
+    fn_mut: Function24,
+}
+
+struct Function24 {
+    fn_mut: Function25,
+}
+
+struct Function25 {
+    fn_mut: Function26,
+}
+
+struct Function26 {
+    fn_mut: Function27,
+}
+
+struct Function27 {
+    fn_mut: Function28,
+}
+
+struct Function28 {
+    fn_mut: Function29,
+}
+
+struct Function29 {
+    fn_mut: Function30,
+}
+
+struct Function30 {
+    fn_mut: Function31,
+}
+
+struct Function31 {
+    fn_mut: Function32,
+}
+
+struct Function32 {
+    fn_mut: Function33,
+}
+
+struct Function33 {
+    fn_mut: Function34,
+}
+
+struct Function34 {
+    fn_mut: Function35,
+}
+
+struct Function35 {
+    fn_mut: Function36,
+}
+
+struct Function36 {
+    fn_mut: Function37,
+}
+
+struct Function37 {
+    fn_mut: Function38,
+}
+
+struct Function38 {
+    fn_mut: Function39,
+}
+
+struct Function39 {
+    fn_mut: Function40,
+}
+
+struct Function40 {
+    fn_mut: Function41,
+}
+
+struct Function41 {
+    fn_mut: Function42,
+}
+
+struct Function42 {
+    fn_mut: Function43,
+}
+
+struct Function43 {
+    fn_mut: Function44,
+}
+
+struct Function44 {
+    fn_mut: Function45,
+}
+
+struct Function45 {
+    fn_mut: Function46,
+}
+
+struct Function46 {
+    fn_mut: Function47,
+}
+
+struct Function47 {
+    fn_mut: Function48,
+}
+
+struct Function48 {
+    fn_mut: Function49,
+}
+
+struct Function49 {
+    fn_mut: Function50,
+}
+
+struct Function50 {
+    fn_mut: Function51,
+}
+
+struct Function51 {
+    fn_mut: Function52,
+}
+
+struct Function52 {
+    fn_mut: Function53,
+}
+
+struct Function53 {
+    fn_mut: Function54,
+}
+
+struct Function54 {
+    fn_mut: Function55,
+}
+
+struct Function55 {
+    fn_mut: Function56,
+}
+
+struct Function56 {
+    fn_mut: Function57,
+}
+
+struct Function57 {
+    fn_mut: Function58,
+}
+
+struct Function58 {
+    fn_mut: Function59,
+}
+
+struct Function59 {
+    fn_mut: Function60,
+}
+
+struct Function60 {
+    fn_mut: Function61,
+}
+
+struct Function61 {
+    fn_mut: Function62,
+}
+
+struct Function62 {
+    fn_mut: Function63,
+}
+
+struct Function63 {
+    fn_mut: Function64,
+}
+
+struct Function64 {
+    fn_mut: Function65,
+}
+
+struct Function65 {
+    fn_mut: Function66,
+}
+
+struct Function66 {
+    fn_mut: Function67,
+}
+
+struct Function67 {
+    fn_mut: Function68,
+}
+
+struct Function68 {
+    fn_mut: Function69,
+}
+
+struct Function69 {
+    fn_mut: Function70,
+}
+
+struct Function70 {
+    fn_mut: Function71,
+}
+
+struct Function71 {
+    fn_mut: Function72,
+}
+
+struct Function72 {
+    fn_mut: Function73,
+}
+
+struct Function73 {
+    fn_mut: Function74,
+}
+
+struct Function74 {
+    fn_mut: Function75,
+}
+
+struct Function75 {
+    fn_mut: Function76,
+}
+
+struct Function76 {
+    fn_mut: Function77,
+}
+
+struct Function77 {
+    fn_mut: Function78,
+}
+
+struct Function78 {
+    fn_mut: Function79,
+}
+
+struct Function79 {
+    fn_mut: Function80,
+}
+
+struct Function80 {
+    fn_mut: Function81,
+}
+
+struct Function81 {
+    fn_mut: Function82,
+}
+
+struct Function82 {
+    fn_mut: Function83,
+}
+
+struct Function83 {
+    fn_mut: Function84,
+}
+
+struct Function84 {
+    fn_mut: Function85,
+}
+
+struct Function85 {
+    fn_mut: Function86,
+}
+
+struct Function86 {
+    fn_mut: Function87,
+}
+
+struct Function87 {
+    fn_mut: Function88,
+}
+
+struct Function88 {
+    fn_mut: Function89,
+}
+
+struct Function89 {
+    fn_mut: Function90,
+}
+
+struct Function90 {
+    fn_mut: Function91,
+}
+
+struct Function91 {
+    fn_mut: Function92,
+}
+
+struct Function92 {
+    fn_mut: Function93,

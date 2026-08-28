@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let drum = "drum";
+    println!("{}", reverse(drum));
+    println!("{}", drum);
+}
+
+fn reverse(s: &str) -> String {
+    s.chars().rev().collect()
+}
+```
+
+[Problem Description]
+You are writing Rust (edition 2021), std only, no external crates. Provide a complete program with fn main.
+
+Task:
+Print the phrase "I ♥ Rust!" five times.

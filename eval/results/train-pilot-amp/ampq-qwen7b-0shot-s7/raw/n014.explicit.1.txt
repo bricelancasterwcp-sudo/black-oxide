@@ -1,0 +1,16 @@
+fn min(x: Int, y: Int) -> Int {
+    if x < y {
+        x
+    } else {
+        y
+    }
+}
+
+fn main() {
+    let readings = vec(5, 3, 9, 1, 7)
+    let mut min_val = readings.get(0)
+    for r in &readings {
+        min_val = min(min_val, r)
+    }
+    print(min_val)
+}

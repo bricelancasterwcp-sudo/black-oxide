@@ -1,0 +1,6 @@
+fn main() {
+    let values = vec(4, 8, 15, 16, 23, 42)
+    let sum = values.iter().map(Int).sum()
+    let mean = sum / 6
+    print(mean)
+}

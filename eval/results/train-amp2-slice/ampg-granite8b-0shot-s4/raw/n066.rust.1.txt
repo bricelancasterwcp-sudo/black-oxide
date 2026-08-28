@@ -1,0 +1,8 @@
+fn main() {
+    let batch = vec![9, 2, 12, 5, 16];
+    let kept_entries: Vec<i32> = batch.iter().filter(|x| **x < 10).cloned().collect();
+    for entry in kept_entries {
+        println!("{}", entry);
+    }
+    println!("Number of kept entries: {}", kept_entries.len());
+}

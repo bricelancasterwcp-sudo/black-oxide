@@ -1,0 +1,346 @@
+fn main() {
+    let rect = Rectangle { width: 2, height: 3 }
+    let rect = rect.with_width(5)
+    print(rect.area())
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn with_width(self: &Rectangle, new_width: Int) -> Rectangle {
+    Rectangle(width == new_width, height == self.height)
+}
+
+fn area(self: &Rectangle) -> Int {
+    self.width * self.height
+}
+
+fn print(x: Int) {
+    drop x
+}
+
+fn clone(x: T) -> T {
+    drop x
+}
+
+fn main() {
+    let nums = push(push(vec(), 5), 40)
+    let bigger = extend(clone(&nums), 70)
+    print(sum_big(&nums, 10))
+    drop nums
+    print(sum_big(&bigger, 10))
+    drop bigger
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let total = 0
+    for x in &v {
+        if x > limit {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn extend(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn print(x: Int) {
+    drop x
+}
+
+fn clone(x: T) -> T {
+    drop x
+}
+
+fn main() {
+    let rect = Rectangle { width: 2, height: 3 }
+    let rect = rect.with_width(5)
+    print(rect.area())
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn with_width(self: &Rectangle, new_width: Int) -> Rectangle {
+    Rectangle(width == new_width, height == self.height)
+}
+
+fn area(self: &Rectangle) -> Int {
+    self.width * self.height
+}
+
+fn print(x: Int) {
+    drop x
+}
+
+fn clone(x: T) -> T {
+    drop x
+}
+
+fn main() {
+    let nums = push(push(vec(), 5), 40)
+    let bigger = extend(clone(&nums), 70)
+    print(sum_big(&nums, 10))
+    drop nums
+    print(sum_big(&bigger, 10))
+    drop bigger
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let total = 0
+    for x in &v {
+        if x > limit {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn extend(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn print(x: Int) {
+    drop x
+}
+
+fn clone(x: T) -> T {
+    drop x
+}
+
+fn main() {
+    let rect = Rectangle { width: 2, height: 3 }
+    let rect = rect.with_width(5)
+    print(rect.area())
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn with_width(self: &Rectangle, new_width: Int) -> Rectangle {
+    Rectangle(width == new_width, height == self.height)
+}
+
+fn area(self: &Rectangle) -> Int {
+    self.width * self.height
+}
+
+fn print(x: Int) {
+    drop x
+}
+
+fn clone(x: T) -> T {
+    drop x
+}
+
+fn main() {
+    let nums = push(push(vec(), 5), 40)
+    let bigger = extend(clone(&nums), 70)
+    print(sum_big(&nums, 10))
+    drop nums
+    print(sum_big(&bigger, 10))
+    drop bigger
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let total = 0
+    for x in &v {
+        if x > limit {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn extend(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn print(x: Int) {
+    drop x
+}
+
+fn clone(x: T) -> T {
+    drop x
+}
+
+fn main() {
+    let rect = Rectangle { width: 2, height: 3 }
+    let rect = rect.with_width(5)
+    print(rect.area())
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn with_width(self: &Rectangle, new_width: Int) -> Rectangle {
+    Rectangle(width == new_width, height == self.height)
+}
+
+fn area(self: &Rectangle) -> Int {
+    self.width * self.height
+}
+
+fn print(x: Int) {
+    drop x
+}
+
+fn clone(x: T) -> T {
+    drop x
+}
+
+fn main() {
+    let nums = push(push(vec(), 5), 40)
+    let bigger = extend(clone(&nums), 70)
+    print(sum_big(&nums, 10))
+    drop nums
+    print(sum_big(&bigger, 10))
+    drop bigger
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let total = 0
+    for x in &v {
+        if x > limit {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn extend(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn print(x: Int) {
+    drop x
+}
+
+fn clone(x: T) -> T {
+    drop x
+}
+
+fn main() {
+    let rect = Rectangle { width: 2, height: 3 }
+    let rect = rect.with_width(5)
+    print(rect.area())
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn with_width(self: &Rectangle, new_width: Int) -> Rectangle {
+    Rectangle(width == new_width, height == self.height)
+}
+
+fn area(self: &Rectangle) -> Int {
+    self.width * self.height
+}
+
+fn print(x: Int) {
+    drop x
+}
+
+fn clone(x: T) -> T {
+    drop x
+}
+
+fn main() {
+    let nums = push(push(vec(), 5), 40)
+    let bigger = extend(clone(&nums), 70)
+    print(sum_big(&nums, 10))
+    drop nums
+    print(sum_big(&bigger, 10))
+    drop bigger
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let total = 0
+    for x in &v {
+        if x > limit {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn extend(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn print(x: Int) {
+    drop x
+}
+
+fn clone(x: T) -> T {
+    drop x
+}
+
+fn main() {
+    let rect = Rectangle { width: 2, height: 3 }
+    let rect = rect.with_width(5)
+    print(rect.area())
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn with_width(self: &Rectangle, new_width: Int) -> Rectangle {
+    Rectangle(width == new_width, height == self.height)
+}
+
+fn area(self: &Rectangle) -> Int {
+    self.width * self.height
+}
+
+fn print(x: Int) {
+    drop x
+}
+
+fn clone(x: T) -> T {
+    drop x
+}
+
+fn main() {
+    let nums = push(push(vec(), 5), 40)
+    let bigger = extend(clone(&nums), 70)
+    print(sum_big(&nums, 10))
+    drop nums
+    print(sum_big(&bigger, 10))
+    drop bigger
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let total = 0
+    for x in &v {
+        if x > limit {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn extend(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn print(x: Int) {
+    drop x
+}
+
+fn clone(x: T) -> T {
+    drop x

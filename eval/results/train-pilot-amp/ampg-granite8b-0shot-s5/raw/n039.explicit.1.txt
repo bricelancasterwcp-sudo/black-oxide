@@ -1,0 +1,190 @@
+fn main() {
+    let list = push(vec(), 1)
+    let index = 5
+    print(get(&list, index))
+}
+
+fn push(mutNsV: Vec<Int>, x: Int) -> Vec<Int> {
+    v = push(v, x)
+    drop v
+    v
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    if i < 0 || i >= len(&v) {
+        None
+    } else {
+        Some(v.get(i))
+    }
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    v.len()
+}
+
+fn print(x: Option<Int>) {
+    if letSome(x) == x {
+        print_str(x.to_str())
+    }
+}
+
+fn print_str(s: Str) {
+    std_print(s)
+}
+
+fn std_print(s: Str) {
+    drop s
+    s
+}
+
+fn drop_main(x: Vec<Int>) {
+    drop x
+}
+
+fn drop_list(v: Vec<Int>) {
+    drop v
+}
+
+fn drop_index(i: Int) {
+    drop i
+}
+
+fn drop_option(x: Option<Int>) {
+    drop x
+}
+
+fn drop_str(s: Str) {
+    drop s
+}
+
+fn drop_std_print(s: Str) {
+    drop s
+}
+
+fn clone_main(x: Vec<Int>) -> Vec<Int> {
+    x
+}
+
+fn clone_list(v: Vec<Int>) -> Vec<Int> {
+    v
+}
+
+fn clone_index(i: Int) -> Int {
+    i
+}
+
+fn clone_option(x: Option<Int>) -> Option<Int> {
+    x
+}
+
+fn clone_str(s: Str) -> Str {
+    s
+}
+
+fn clone_std_print(s: Str) -> Str {
+    s
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    push(push(vec(), a), b - 1)
+}
+
+fn str_len(s: Str) -> Int {
+    s.len()
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    a + b
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = vec()
+    for c in s.chars() {
+        result = push(result, c)
+    }
+    drop s
+    result
+}
+
+fn int_to_str(n: Int) -> Str {
+    n.to_str()
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    s.parse_int()
+}
+
+fn to_float(n: Int) -> Float {
+    n.to_float()
+}
+
+fn trunc(x: Float) -> Int {
+    x.trunc()
+}
+
+fn assert_eq(a: Int, b: Int) {
+    if a != b {
+        print_str("Assertion failed: ".to_str())
+        print_str(a.to_str())
+        print_str(" != ".to_str())
+        print_str(b.to_str())
+        print_str("\n".to_str())
+        drop a
+        drop b
+        drop_main(vec())
+        std_exit(1)
+    }
+}
+
+fn assert_eq_option(a: Option<Int>, b: Option<Int>) {
+    if a != b {
+        print_str("Assertion failed: ".to_str())
+        print_str(a.to_str())
+        print_str(" != ".to_str())
+        print_str(b.to_str())
+        print_str("\n".to_str())
+        drop a
+        drop b
+        drop_main(vec())
+        std_exit(1)
+    }
+}
+
+fn assert_eq_str(a: Str, b: Str) {
+    if a != b {
+        print_str("Assertion failed: ".to_str())
+        print_str(a)
+        print_str(" != ".to_str())
+        print_str(b)
+        print_str("\n".to_str())
+        drop a
+        drop b
+        drop_main(vec())
+        std_exit(1)
+    }
+}
+
+fn assert_eq_str_option(a: Option<Str>, b: Option<Str>) {
+    if a != b {
+        print_str("Assertion failed: ".to_str())
+        print_str(a.to_str())
+        print_str(" != ".to_str())
+        print_str(b.to_str())
+        print_str("\n".to_str())
+        drop a
+        drop b
+        drop_main(vec())
+        std_exit(1)
+    }
+}
+
+fn main_test() {
+    let list = push(vec(), 1)
+    let index = 0
+    assert_eq(get(&list, index), Some(1))
+    let index = 1
+    assert_eq(get(&list, index), None)
+}
+
+fn main_test_clone() {
+    let list = clone(&push_clone_helper1102000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000

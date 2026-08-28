@@ -1,0 +1,4 @@
+fn main() {
+    let list: Vec<i32> = (0..15).collect();
+    println!("len = {}", list.len());
+}

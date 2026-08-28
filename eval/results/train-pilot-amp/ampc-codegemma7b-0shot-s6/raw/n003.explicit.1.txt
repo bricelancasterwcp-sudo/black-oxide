@@ -1,0 +1,13 @@
+fn count_divisors(n: Int) -> Int {
+    let mut total = 0
+    for x in 1.to(n) {
+        if n % x == 0 {
+            total = total + 1
+        }
+    }
+    total
+}
+
+fn main() {
+    print(count_divisors(36))
+}

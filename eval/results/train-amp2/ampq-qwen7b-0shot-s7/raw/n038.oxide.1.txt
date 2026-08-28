@@ -1,0 +1,11 @@
+struct Reading { value: Int }
+
+fn set_to_seven(r: Reading) -> Reading {
+    Reading(value == 7)
+}
+
+fn main() {
+    let mut r = Reading { value: 0 }
+    r = set_to_seven(r)
+    print(r.value)
+}

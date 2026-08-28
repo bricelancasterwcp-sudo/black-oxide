@@ -1,0 +1,301 @@
+fn main() {
+    let colors = vec("green", "red", "yellow")
+    for color in colors {
+        match color {
+            Str(green) => print_str(green),
+            Str(red) => print_str(red),
+            Str(yellow) => print_str(yellow),
+            _ => print_str("unknown"),
+        }
+    }
+}
+
+fn vec(a: T, b: T, c: T) -> Vec<T> {
+    return Vec(a, b, c)
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn print(x: Any) {
+    println(x)
+}
+
+fn any_to_str(x: Any) -> Str {
+    match x {
+        Int(n) => int_to_str(n),
+        Float(f) => format_float(f),
+        Bool(b) => if b { Str("true") } else { Str("false") },
+        Str(s) => s,
+        Vec(v) => format_vec(v),
+        _ => Str("unknown"),
+    }
+}
+
+fn format_float(f: Float) -> Str {
+    format("%.2f", f)
+}
+
+fn format_vec(v: Vec<Any>) -> Str {
+    let mut s = Str("[").to_string()
+    for x in v {
+        s = s + any_to_str(x) + ","
+    }
+    if s.len() > 1 {
+        s = s.slice(0, s.len() - 1)
+    }
+    s + "]"
+}
+
+fn int_to_str(n: Int) -> Str {
+    format("%d", n)
+}
+
+enum Any {
+    Int(Int),
+    Float(Float),
+    Bool(Bool),
+    Str(Str),
+    Vec(Vec<Any>),
+}
+
+enum Str {
+    String(String),
+}
+
+fn format_str(s: Str) -> String {
+    match s {
+        Str(s) => s,
+    }
+}
+
+fn print_str(s: Str) {
+    print(format_str(s))
+}
+
+fn println(x: Any) {
+    print(format_str(any_to_str(x)))
+}
+
+fn any(a: Any, b: Any, c: Any) -> Any {
+    return Any(a, b, c)
+}
+
+fn vec(a: Any, b: Any, c: Any) -> Vec<Any> {
+    return Vec(a, b, c)
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn print(x: Any) {
+    println(x)
+}
+
+fn any_to_str(x: Any) -> Str {
+    match x {
+        Int(n) => int_to_str(n),
+        Float(f) => format_float(f),
+        Bool(b) => if b { Str("true") } else { Str("false") },
+        Str(s) => s,
+        Vec(v) => format_vec(v),
+        _ => Str("unknown"),
+    }
+}
+
+fn format_float(f: Float) -> Str {
+    format("%.2f", f)
+}
+
+fn format_vec(v: Vec<Any>) -> Str {
+    let mut s = Str("[").to_string()
+    for x in v {
+        s = s + any_to_str(x) + ","
+    }
+    if s.len() > 1 {
+        s = s.slice(0, s.len() - 1)
+    }
+    s + "]"
+}
+
+fn int_to_str(n: Int) -> Str {
+    format("%d", n)
+}
+
+enum Any {
+    Int(Int),
+    Float(Float),
+    Bool(Bool),
+    Str(Str),
+    Vec(Vec<Any>),
+}
+
+enum Str {
+    String(String),
+}
+
+fn format_str(s: Str) -> String {
+    match s {
+        Str(s) => s,
+    }
+}
+
+fn print_str(s: Str) {
+    print(format_str(s))
+}
+
+fn println(x: Any) {
+    print(format_str(any_to_str(x)))
+}
+
+fn any(a: Any, b: Any, c: Any) -> Any {
+    return Any(a, b, c)
+}
+
+fn vec(a: Any, b: Any, c: Any) -> Vec<Any> {
+    return Vec(a, b, c)
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn print(x: Any) {
+    println(x)
+}
+
+fn any_to_str(x: Any) -> Str {
+    match x {
+        Int(n) => int_to_str(n),
+        Float(f) => format_float(f),
+        Bool(b) => if b { Str("true") } else { Str("false") },
+        Str(s) => s,
+        Vec(v) => format_vec(v),
+        _ => Str("unknown"),
+    }
+}
+
+fn format_float(f: Float) -> Str {
+    format("%.2f", f)
+}
+
+fn format_vec(v: Vec<Any>) -> Str {
+    let mut s = Str("[").to_string()
+    for x in v {
+        s = s + any_to_str(x) + ","
+    }
+    if s.len() > 1 {
+        s = s.slice(0, s.len() - 1)
+    }
+    s + "]"
+}
+
+fn int_to_str(n: Int) -> Str {
+    format("%d", n)
+}
+
+enum Any {
+    Int(Int),
+    Float(Float),
+    Bool(Bool),
+    Str(Str),
+    Vec(Vec<Any>),
+}
+
+enum Str {
+    String(String),
+}
+
+fn format_str(s: Str) -> String {
+    match s {
+        Str(s) => s,
+    }
+}
+
+fn print_str(s: Str) {
+    print(format_str(s))
+}
+
+fn println(x: Any) {
+    print(format_str(any_to_str(x)))
+}
+
+fn any(a: Any, b: Any, c: Any) -> Any {
+    return Any(a, b, c)
+}
+
+fn vec(a: Any, b: Any, c: Any) -> Vec<Any> {
+    return Vec(a, b, c)
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn print(x: Any) {
+    println(x)
+}
+
+fn any_to_str(x: Any) -> Str {
+    match x {
+        Int(n) => int_to_str(n),
+        Float(f) => format_float(f),
+        Bool(b) => if b { Str("true") } else { Str("false") },
+        Str(s) => s,
+        Vec(v) => format_vec(v),
+        _ => Str("unknown"),
+    }
+}
+
+fn format_float(f: Float) -> Str {
+    format("%.2f", f)
+}
+
+fn format_vec(v: Vec<Any>) -> Str {
+    let mut s = Str("[").to_string()
+    for x in v {
+        s = s + any_to_str(x) + ","
+    }
+    if s.len() > 1 {
+        s = s.slice(0, s.len() - 1)
+    }
+    s + "]"
+}
+
+fn int_to_str(n: Int) -> Str {
+    format("%d", n)
+}
+
+enum Any {
+    Int(Int),
+    Float(Float),
+    Bool(Bool),
+    Str(Str),
+    Vec(Vec<Any>),
+}
+
+enum Str {
+    String(String),
+}
+
+fn format_str(s: Str) -> String {
+    match s {
+        Str(s) => s,
+    }
+}
+
+fn print_str(s: Str) {
+    print(format_str(s))
+}
+
+fn println(x: Any) {
+    print(format_str(any_to_str(x)))
+}
+
+fn any(a: Any, b: Any, c: Any) -> Any {
+    return Any(a, b, c)
+}
+
+fn vec(a: Any,

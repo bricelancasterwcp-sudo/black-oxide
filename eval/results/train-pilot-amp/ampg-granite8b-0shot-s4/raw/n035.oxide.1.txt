@@ -1,0 +1,14 @@
+fn div(x: Int, y: Int) -> Result<Int, Str> {
+    if y == 0 {
+        Err("bad")
+    } else {
+        Ok(x / y)
+    }
+}
+
+fn main() {
+    match div(20, 4) {
+        Ok(n) => print(n),
+        Err(e) => print_str(e),
+    }
+}

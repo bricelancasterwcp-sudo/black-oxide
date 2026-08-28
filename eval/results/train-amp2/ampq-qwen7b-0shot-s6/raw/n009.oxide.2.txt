@@ -1,0 +1,16 @@
+struct Reading { label: Str, values: Vec<Int> }
+
+fn reverse_string(s: Str) -> Str {
+    let chars = chars(s)
+    let mut reversed = vec()
+    for c in chars {
+        reversed = push(reversed, c)
+    }
+    concat(vec(), reversed)
+}
+
+fn main() {
+    let s = int_to_str(1234)
+    let reversed = reverse_string(s)
+    print_str(reversed)
+}

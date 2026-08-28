@@ -1,0 +1,16 @@
+fn helper(list: Vec<String>) -> Option<String> {
+    if list.len() >= 2 {
+        Some(list.get(1).unwrap().clone())
+    } else {
+        None
+    }
+}
+
+fn main() {
+    let list7 = vec_from_str("a,b,c").unwrap()
+    let list8 = vec_from_str("a,b").unwrap()
+    let list9 = vec_from_str("a").unwrap()
+    print(helper(list7))
+    print(helper(list8))
+    print(helper(list9))
+}

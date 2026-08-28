@@ -1,0 +1,19 @@
+fn max(a: Int, b: Int) -> Int {
+    if a > b {
+        a
+    } else {
+        b
+    }
+}
+
+fn second_largest(v: Vec<Int>) -> Int {
+    let sorted = sort_vec(&v)
+    max(sorted.get(0), sorted.get(1))
+}
+
+fn main() {
+    let nums = push(push(vec(), 12), 5)
+    print(max(40, 20))
+    print(second_largest(&nums))
+    drop nums
+}

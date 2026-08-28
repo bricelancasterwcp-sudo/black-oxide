@@ -1,0 +1,459 @@
+fn main() {
+    let word = "coffee".chars().collect_vec().group_by().map_or(None, Some).map_or(None, Some).map_or(None, Some).map_or(None, Some).print_each_line()
+}
+
+fn collect_vec(v: Vec<Str>) -> Vec<Str> {
+    v
+}
+
+fn group_by(v: Vec<Str>) -> Vec<Str> {
+    v
+}
+
+fn map_or(v: Vec<Str>, f: Vec<Str>) -> Vec<Str> {
+    v
+}
+
+fn print_each_line(v: Vec<Str>) {
+    for c in v {
+        print(c + "\n")
+    }
+}
+
+fn some(v: Str) -> Option<Str> {
+    Some(v)
+}
+
+fn none() -> Option<Str> {
+    None
+}
+
+fn is_some(v: Option<Str>) -> Bool {
+    match v {
+        Some(_) => True,
+        None => False,
+    }
+}
+
+fn unwrap(v: Option<Str>) -> Str {
+    match v {
+        Some(x) => x,
+        None => "",
+    }
+}
+
+fn print(s: Str) {
+    print_str(s)
+}
+
+fn print_str(s: Str) {
+    print(s + "\n")
+}
+
+fn collect_vec(v: Vec<Str>) -> Vec<Str> {
+    v
+}
+
+fn group_by(v: Vec<Str>) -> Vec<Str> {
+    v
+}
+
+fn map_or(v: Vec<Str>, f: Vec<Str>) -> Vec<Str> {
+    v
+}
+
+fn print_each_line(v: Vec<Str>) {
+    for c in v {
+        print(c + "\n")
+    }
+}
+
+fn some(v: Str) -> Option<Str> {
+    Some(v)
+}
+
+fn none() -> Option<Str> {
+    None
+}
+
+fn is_some(v: Option<Str>) -> Bool {
+    match v {
+        Some(_) => True,
+        None => False,
+    }
+}
+
+fn unwrap(v: Option<Str>) -> Str {
+    match v {
+        Some(x) => x,
+        None => "",
+    }
+}
+
+fn print(s: Str) {
+    print_str(s)
+}
+
+fn print_str(s: Str) {
+    print(s + "\n")
+}
+
+fn collect_vec(v: Vec<Str>) -> Vec<Str> {
+    v
+}
+
+fn group_by(v: Vec<Str>) -> Vec<Str> {
+    v
+}
+
+fn map_or(v: Vec<Str>, f: Vec<Str>) -> Vec<Str> {
+    v
+}
+
+fn print_each_line(v: Vec<Str>) {
+    for c in v {
+        print(c + "\n")
+    }
+}
+
+fn some(v: Str) -> Option<Str> {
+    Some(v)
+}
+
+fn none() -> Option<Str> {
+    None
+}
+
+fn is_some(v: Option<Str>) -> Bool {
+    match v {
+        Some(_) => True,
+        None => False,
+    }
+}
+
+fn unwrap(v: Option<Str>) -> Str {
+    match v {
+        Some(x) => x,
+        None => "",
+    }
+}
+
+fn print(s: Str) {
+    print_str(s)
+}
+
+fn print_str(s: Str) {
+    print(s + "\n")
+}
+
+fn collect_vec(v: Vec<Str>) -> Vec<Str> {
+    v
+}
+
+fn group_by(v: Vec<Str>) -> Vec<Str> {
+    v
+}
+
+fn map_or(v: Vec<Str>, f: Vec<Str>) -> Vec<Str> {
+    v
+}
+
+fn print_each_line(v: Vec<Str>) {
+    for c in v {
+        print(c + "\n")
+    }
+}
+
+fn some(v: Str) -> Option<Str> {
+    Some(v)
+}
+
+fn none() -> Option<Str> {
+    None
+}
+
+fn is_some(v: Option<Str>) -> Bool {
+    match v {
+        Some(_) => True,
+        None => False,
+    }
+}
+
+fn unwrap(v: Option<Str>) -> Str {
+    match v {
+        Some(x) => x,
+        None => "",
+    }
+}
+
+fn print(s: Str) {
+    print_str(s)
+}
+
+fn print_str(s: Str) {
+    print(s + "\n")
+}
+
+fn collect_vec(v: Vec<Str>) -> Vec<Str> {
+    v
+}
+
+fn group_by(v: Vec<Str>) -> Vec<Str> {
+    v
+}
+
+fn map_or(v: Vec<Str>, f: Vec<Str>) -> Vec<Str> {
+    v
+}
+
+fn print_each_line(v: Vec<Str>) {
+    for c in v {
+        print(c + "\n")
+    }
+}
+
+fn some(v: Str) -> Option<Str> {
+    Some(v)
+}
+
+fn none() -> Option<Str> {
+    None
+}
+
+fn is_some(v: Option<Str>) -> Bool {
+    match v {
+        Some(_) => True,
+        None => False,
+    }
+}
+
+fn unwrap(v: Option<Str>) -> Str {
+    match v {
+        Some(x) => x,
+        None => "",
+    }
+}
+
+fn print(s: Str) {
+    print_str(s)
+}
+
+fn print_str(s: Str) {
+    print(s + "\n")
+}
+
+fn collect_vec(v: Vec<Str>) -> Vec<Str> {
+    v
+}
+
+fn group_by(v: Vec<Str>) -> Vec<Str> {
+    v
+}
+
+fn map_or(v: Vec<Str>, f: Vec<Str>) -> Vec<Str> {
+    v
+}
+
+fn print_each_line(v: Vec<Str>) {
+    for c in v {
+        print(c + "\n")
+    }
+}
+
+fn some(v: Str) -> Option<Str> {
+    Some(v)
+}
+
+fn none() -> Option<Str> {
+    None
+}
+
+fn is_some(v: Option<Str>) -> Bool {
+    match v {
+        Some(_) => True,
+        None => False,
+    }
+}
+
+fn unwrap(v: Option<Str>) -> Str {
+    match v {
+        Some(x) => x,
+        None => "",
+    }
+}
+
+fn print(s: Str) {
+    print_str(s)
+}
+
+fn print_str(s: Str) {
+    print(s + "\n")
+}
+
+fn collect_vec(v: Vec<Str>) -> Vec<Str> {
+    v
+}
+
+fn group_by(v: Vec<Str>) -> Vec<Str> {
+    v
+}
+
+fn map_or(v: Vec<Str>, f: Vec<Str>) -> Vec<Str> {
+    v
+}
+
+fn print_each_line(v: Vec<Str>) {
+    for c in v {
+        print(c + "\n")
+    }
+}
+
+fn some(v: Str) -> Option<Str> {
+    Some(v)
+}
+
+fn none() -> Option<Str> {
+    None
+}
+
+fn is_some(v: Option<Str>) -> Bool {
+    match v {
+        Some(_) => True,
+        None => False,
+    }
+}
+
+fn unwrap(v: Option<Str>) -> Str {
+    match v {
+        Some(x) => x,
+        None => "",
+    }
+}
+
+fn print(s: Str) {
+    print_str(s)
+}
+
+fn print_str(s: Str) {
+    print(s + "\n")
+}
+
+fn collect_vec(v: Vec<Str>) -> Vec<Str> {
+    v
+}
+
+fn group_by(v: Vec<Str>) -> Vec<Str> {
+    v
+}
+
+fn map_or(v: Vec<Str>, f: Vec<Str>) -> Vec<Str> {
+    v
+}
+
+fn print_each_line(v: Vec<Str>) {
+    for c in v {
+        print(c + "\n")
+    }
+}
+
+fn some(v: Str) -> Option<Str> {
+    Some(v)
+}
+
+fn none() -> Option<Str> {
+    None
+}
+
+fn is_some(v: Option<Str>) -> Bool {
+    match v {
+        Some(_) => True,
+        None => False,
+    }
+}
+
+fn unwrap(v: Option<Str>) -> Str {
+    match v {
+        Some(x) => x,
+        None => "",
+    }
+}
+
+fn print(s: Str) {
+    print_str(s)
+}
+
+fn print_str(s: Str) {
+    print(s + "\n")
+}
+
+fn collect_vec(v: Vec<Str>) -> Vec<Str> {
+    v
+}
+
+fn group_by(v: Vec<Str>) -> Vec<Str> {
+    v
+}
+
+fn map_or(v: Vec<Str>, f: Vec<Str>) -> Vec<Str> {
+    v
+}
+
+fn print_each_line(v: Vec<Str>) {
+    for c in v {
+        print(c + "\n")
+    }
+}
+
+fn some(v: Str) -> Option<Str> {
+    Some(v)
+}
+
+fn none() -> Option<Str> {
+    None
+}
+
+fn is_some(v: Option<Str>) -> Bool {
+    match v {
+        Some(_) => True,
+        None => False,
+    }
+}
+
+fn unwrap(v: Option<Str>) -> Str {
+    match v {
+        Some(x) => x,
+        None => "",
+    }
+}
+
+fn print(s: Str) {
+    print_str(s)
+}
+
+fn print_str(s: Str) {
+    print(s + "\n")
+}
+
+fn collect_vec(v: Vec<Str>) -> Vec<Str> {
+    v
+}
+
+fn group_by(v: Vec<Str>) -> Vec<Str> {
+    v
+}
+
+fn map_or(v: Vec<Str>, f: Vec<Str>) -> Vec<Str> {
+    v
+}
+
+fn print_each_line(v: Vec<Str>) {
+    for c in v {
+        print(c + "\n")
+    }
+}
+
+fn some(v: Str) -> Option<Str> {
+    Some(v)
+}
+
+fn none

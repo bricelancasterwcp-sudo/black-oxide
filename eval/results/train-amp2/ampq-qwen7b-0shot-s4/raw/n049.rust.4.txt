@@ -1,0 +1,7 @@
+fn main() {
+    let figures = vec![8, 3, 11, 6];
+    let smallest = figures.iter().cloned().min().unwrap();
+    let largest = figures.iter().cloned().max().unwrap();
+    let gap = largest - smallest;
+    println!("{} {}", smallest, gap);
+}

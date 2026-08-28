@@ -1,0 +1,16 @@
+fn print_start(s: &Str) {
+    print_str("The word starts with ")
+    print(s.chars().first().unwrap())
+}
+
+fn print_end(s: &Str) {
+    print_str("The word ends with ")
+    print(s.chars().last().unwrap())
+}
+
+fn main() {
+    let granite = "granite"
+    print_start(&granite)
+    drop granite
+    print_end(&granite)
+}

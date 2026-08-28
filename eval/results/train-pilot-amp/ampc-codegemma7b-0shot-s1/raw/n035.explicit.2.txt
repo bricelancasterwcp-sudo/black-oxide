@@ -1,0 +1,54 @@
+fn divide(a: Float, b: Float) -> Result<Float, String> {
+    if b == 0.0 {
+        Err("Division by zero!".to_string())
+    } else {
+        Ok(a / b)
+    }
+}
+
+fn main() {
+    let result = divide(20.0, 4.0).unwrap_or_else(println)
+    print(result)
+    let result = divide(20.0, 0.0).unwrap_or_else(println)
+    print(result)
+}
+
+fn println(msg: &Str) {
+    print(msg)
+    print("\n")
+}
+
+fn print(msg: &Str) {
+    for c in msg.chars() {
+        print(c)
+    }
+}
+
+fn print(n: Int) {
+    if n >= 10 {
+        print(n / 10)
+        print(n % 10)
+    } else {
+        print(n)
+    }
+}
+
+fn print(f: Float) {
+    let s = int_to_str(trunc(f * 100.0))
+    print(".")
+    print(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    if n == 0 {
+        return "0".to_string()
+    }
+    let mut digits = vec()
+    let mut x = n
+    while x != 0 {
+        digits.push(x % 10)
+        x = x / 10
+    }
+    let mut result = "".to_string()
+    for d in digits.iter().rev() {
+        result = result + &int_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit_to_str_digit

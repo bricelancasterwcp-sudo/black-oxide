@@ -1,0 +1,15 @@
+fn vowel_count(text: &Str) -> Int {
+    let vowels = vec("a", "e", "i", "o", "u")
+    let mut count = 0
+    for c in &text {
+        if get(vowels, c) {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn main() {
+    let input = "code"
+    print(vowel_count(&input))
+}

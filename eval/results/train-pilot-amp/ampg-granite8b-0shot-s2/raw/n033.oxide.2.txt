@@ -1,0 +1,29 @@
+fn go_for_green() -> Unit {
+    print_str("Green!\n")
+}
+
+fn wait_for_yellow() -> Unit {
+    print_str("Yellow!\n")
+}
+
+fn stop_at_red() -> Unit {
+    print_str("Red!\n")
+}
+
+fn main() -> Unit {
+    go_for_green()
+    wait_for_yellow()
+    stop_at_red()
+}
+
+fn main() {
+    print_str("Green!\n")
+    print_str("Yellow!\n")
+    print_str("Red!\n")
+}
+
+fn main() {
+    go_for_green()
+    wait_for_yellow()
+    stop_at_red()
+}

@@ -1,0 +1,16 @@
+struct Number { value: Int }
+
+fn reverse_digits(n: Number) -> Number {
+    let mut value = n.value
+    let mut reversed = 0
+    while value > 0 {
+        reversed = reversed * 10 + value % 10
+        value = value / 10
+    }
+    Number(value == reversed)
+}
+
+fn main() {
+    let num = Number { value: 1234 }
+    print(reverse_digits(num).value)
+}

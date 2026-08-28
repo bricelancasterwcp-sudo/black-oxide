@@ -1,0 +1,16 @@
+struct Str { data: Vec<Str> }
+
+fn reverse(s: Str) -> Str {
+    let mut result = vec()?
+    for ch in chars(s.data) {
+        result = push(result, ch)
+    }
+    Str(result)
+}
+
+fn main() {
+    let word = Str { data: vec(vec(char_to_str(b_d)), vec(char_to_str(b_r)), vec(char_to_str(b_u)), vec(char_to_str(b_m))) }
+    let reversed = reverse(word)
+    print_str(reversed.data)
+    print_str(word.data)
+}

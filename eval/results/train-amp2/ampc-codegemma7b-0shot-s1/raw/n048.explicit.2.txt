@@ -1,0 +1,20 @@
+fn count_fours(numbers: &Vec<Int>) -> Vec<Int> {
+    let mut positions = vec()
+    for i in 0.to_int() {
+        if numbers.get(i) == 4 {
+            positions = push(positions, i)
+        }
+    }
+    positions
+}
+
+fn main() {
+    let numbers = vec(4, 7, 4, 9, 4)
+    let positions = count_fours(&numbers)
+    for p in &positions {
+        print(p)
+        print("\n")
+    }
+    drop numbers
+    drop positions
+}

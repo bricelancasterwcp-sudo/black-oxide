@@ -1,0 +1,419 @@
+fn main() {
+    let result = divide(20, 4)?
+    print(result)
+}
+
+fn divide(a: Int, b: Int) -> Result<Float, Str> {
+    if b == 0 {
+        return Err("bad".to_string())
+    }
+    Ok(a.to_float() / b.to_float())
+}
+
+fn print(x: Float) {
+    print_str(format_float(x, 2))
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn format_float(f: Float, precision: Int) -> Str {
+    format("{:.prec$}", f, prec == precision)
+}
+
+fn to_string(s: Str) -> Str {
+    s.clone()
+}
+
+fn clone(x: Str) -> Str {
+    x.clone()
+}
+
+fn main() {
+    let result = divide(20, 4)?
+    print(result)
+}
+
+fn divide(a: Int, b: Int) -> Result<Float, Str> {
+    if b == 0 {
+        return Err("bad".to_string())
+    }
+    Ok(a.to_float() / b.to_float())
+}
+
+fn print(x: Float) {
+    print_str(format_float(x, 2))
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn format_float(f: Float, precision: Int) -> Str {
+    format("{:.prec$}", f, prec == precision)
+}
+
+fn to_string(s: Str) -> Str {
+    s.clone()
+}
+
+fn clone(x: Str) -> Str {
+    x.clone()
+}
+
+fn main() {
+    let result = divide(20, 4)?
+    print(result)
+}
+
+fn divide(a: Int, b: Int) -> Result<Float, Str> {
+    if b == 0 {
+        return Err("bad".to_string())
+    }
+    Ok(a.to_float() / b.to_float())
+}
+
+fn print(x: Float) {
+    print_str(format_float(x, 2))
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn format_float(f: Float, precision: Int) -> Str {
+    format("{:.prec$}", f, prec == precision)
+}
+
+fn to_string(s: Str) -> Str {
+    s.clone()
+}
+
+fn clone(x: Str) -> Str {
+    x.clone()
+}
+
+fn main() {
+    let result = divide(20, 4)?
+    print(result)
+}
+
+fn divide(a: Int, b: Int) -> Result<Float, Str> {
+    if b == 0 {
+        return Err("bad".to_string())
+    }
+    Ok(a.to_float() / b.to_float())
+}
+
+fn print(x: Float) {
+    print_str(format_float(x, 2))
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn format_float(f: Float, precision: Int) -> Str {
+    format("{:.prec$}", f, prec == precision)
+}
+
+fn to_string(s: Str) -> Str {
+    s.clone()
+}
+
+fn clone(x: Str) -> Str {
+    x.clone()
+}
+
+fn main() {
+    let result = divide(20, 4)?
+    print(result)
+}
+
+fn divide(a: Int, b: Int) -> Result<Float, Str> {
+    if b == 0 {
+        return Err("bad".to_string())
+    }
+    Ok(a.to_float() / b.to_float())
+}
+
+fn print(x: Float) {
+    print_str(format_float(x, 2))
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn format_float(f: Float, precision: Int) -> Str {
+    format("{:.prec$}", f, prec == precision)
+}
+
+fn to_string(s: Str) -> Str {
+    s.clone()
+}
+
+fn clone(x: Str) -> Str {
+    x.clone()
+}
+
+fn main() {
+    let result = divide(20, 4)?
+    print(result)
+}
+
+fn divide(a: Int, b: Int) -> Result<Float, Str> {
+    if b == 0 {
+        return Err("bad".to_string())
+    }
+    Ok(a.to_float() / b.to_float())
+}
+
+fn print(x: Float) {
+    print_str(format_float(x, 2))
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn format_float(f: Float, precision: Int) -> Str {
+    format("{:.prec$}", f, prec == precision)
+}
+
+fn to_string(s: Str) -> Str {
+    s.clone()
+}
+
+fn clone(x: Str) -> Str {
+    x.clone()
+}
+
+fn main() {
+    let result = divide(20, 4)?
+    print(result)
+}
+
+fn divide(a: Int, b: Int) -> Result<Float, Str> {
+    if b == 0 {
+        return Err("bad".to_string())
+    }
+    Ok(a.to_float() / b.to_float())
+}
+
+fn print(x: Float) {
+    print_str(format_float(x, 2))
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn format_float(f: Float, precision: Int) -> Str {
+    format("{:.prec$}", f, prec == precision)
+}
+
+fn to_string(s: Str) -> Str {
+    s.clone()
+}
+
+fn clone(x: Str) -> Str {
+    x.clone()
+}
+
+fn main() {
+    let result = divide(20, 4)?
+    print(result)
+}
+
+fn divide(a: Int, b: Int) -> Result<Float, Str> {
+    if b == 0 {
+        return Err("bad".to_string())
+    }
+    Ok(a.to_float() / b.to_float())
+}
+
+fn print(x: Float) {
+    print_str(format_float(x, 2))
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn format_float(f: Float, precision: Int) -> Str {
+    format("{:.prec$}", f, prec == precision)
+}
+
+fn to_string(s: Str) -> Str {
+    s.clone()
+}
+
+fn clone(x: Str) -> Str {
+    x.clone()
+}
+
+fn main() {
+    let result = divide(20, 4)?
+    print(result)
+}
+
+fn divide(a: Int, b: Int) -> Result<Float, Str> {
+    if b == 0 {
+        return Err("bad".to_string())
+    }
+    Ok(a.to_float() / b.to_float())
+}
+
+fn print(x: Float) {
+    print_str(format_float(x, 2))
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn format_float(f: Float, precision: Int) -> Str {
+    format("{:.prec$}", f, prec == precision)
+}
+
+fn to_string(s: Str) -> Str {
+    s.clone()
+}
+
+fn clone(x: Str) -> Str {
+    x.clone()
+}
+
+fn main() {
+    let result = divide(20, 4)?
+    print(result)
+}
+
+fn divide(a: Int, b: Int) -> Result<Float, Str> {
+    if b == 0 {
+        return Err("bad".to_string())
+    }
+    Ok(a.to_float() / b.to_float())
+}
+
+fn print(x: Float) {
+    print_str(format_float(x, 2))
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn format_float(f: Float, precision: Int) -> Str {
+    format("{:.prec$}", f, prec == precision)
+}
+
+fn to_string(s: Str) -> Str {
+    s.clone()
+}
+
+fn clone(x: Str) -> Str {
+    x.clone()
+}
+
+fn main() {
+    let result = divide(20, 4)?
+    print(result)
+}
+
+fn divide(a: Int, b: Int) -> Result<Float, Str> {
+    if b == 0 {
+        return Err("bad".to_string())
+    }
+    Ok(a.to_float() / b.to_float())
+}
+
+fn print(x: Float) {
+    print_str(format_float(x, 2))
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn format_float(f: Float, precision: Int) -> Str {
+    format("{:.prec$}", f, prec == precision)
+}
+
+fn to_string(s: Str) -> Str {
+    s.clone()
+}
+
+fn clone(x: Str) -> Str {
+    x.clone()
+}
+
+fn main() {
+    let result = divide(20, 4)?
+    print(result)
+}
+
+fn divide(a: Int, b: Int) -> Result<Float, Str> {
+    if b == 0 {
+        return Err("bad".to_string())
+    }
+    Ok(a.to_float() / b.to_float())
+}
+
+fn print(x: Float) {
+    print_str(format_float(x, 2))
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn format_float(f: Float, precision: Int) -> Str {
+    format("{:.prec$}", f, prec == precision)
+}
+
+fn to_string(s: Str) -> Str {
+    s.clone()
+}
+
+fn clone(x: Str) -> Str {
+    x.clone()
+}
+
+fn main() {
+    let result = divide(20, 4)?
+    print(result)
+}
+
+fn divide(a: Int, b: Int) -> Result<Float, Str> {
+    if b == 0 {
+        return Err("bad".to_string())
+    }
+    Ok(a.to_float() / b.to_float())
+}
+
+fn print(x: Float) {
+    print_str(format_float(x, 2))
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn format_float(f: Float, precision: Int) -> Str {
+    format("{:.prec$}", f, prec == precision)
+}
+
+fn to_string(s: Str) -> Str {
+    s.clone()
+}
+
+fn clone(x: Str) -> Str {
+    x.clone()
+}
+
+fn main() {
+    let result = divide(20, 4)?
+    print

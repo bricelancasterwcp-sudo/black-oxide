@@ -1,0 +1,5 @@
+fn main() {
+    print_str("Green!\n")
+    print_str("Yellow!\n")
+    print_str("Red!\n")
+}

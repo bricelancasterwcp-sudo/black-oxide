@@ -1,0 +1,11 @@
+fn main() {
+    let text = "417"
+    let num = parse_int(text)
+    if num.is_some() {
+        let num = num.unwrap()
+        let result = num + 1
+        print(result)
+    } else {
+        print_str("bad")
+    }
+}

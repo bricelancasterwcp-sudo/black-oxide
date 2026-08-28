@@ -1,0 +1,13 @@
+fn deposits(bal: &Int, dep: &Int) -> Int {
+    let mut balance = bal + dep
+    balance
+}
+
+fn main() {
+    let mut balance = &mut         // starting balance
+    println(deposits(&balance, &mut && 3))
+    println(deposits(&balance, &mut && 1))
+    println(deposits(&balance, &mut && 4))
+    println(deposits(&balance, &mut && 1))
+    println(deposits(&balance, &mut && 5))
+}

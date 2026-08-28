@@ -1,0 +1,8 @@
+fn main() {
+    let nums = vec(10, 20, 30, 40)
+    match get(&nums, 2) {
+        Some(x) => print_str(x),
+        None => print_str("missing"),
+    }
+    drop nums
+}

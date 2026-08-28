@@ -1,0 +1,299 @@
+fn main() {
+    let text = "banana".to_string()
+    let mut position = 0
+    for letter in text.chars() {
+        if letter == "n" {
+            println("{}", position)
+        }
+        position = position + 1
+    }
+}
+
+fn println(x: &String) {
+    let stdout = std_out()
+    let mut stdout = stdout.lock()
+    stdout.write_string(x)
+    stdout.write_string("\n")
+    stdout.flush()
+}
+
+fn std_out() -> Mutex<File> {
+    let stdout = std_err()
+    Mutex.new(stdout)
+}
+
+fn std_err() -> File {
+    File.stderr(std_err())
+}
+
+fn std_err() -> File {
+    File.stderr(std_err())
+}
+
+fn write_string(file: &File, string: &String) {
+    let mut file = file.lock()
+    file.write_string(string)
+}
+
+fn flush(file: &File) {
+    let mut file = file.lock()
+    file.flush()
+}
+
+fn write_string(file: &File, string: &String) {
+    let mut file = file.lock()
+    file.write_string(string)
+}
+
+fn flush(file: &File) {
+    let mut file = file.lock()
+    file.flush()
+}
+
+fn write_string(file: &File, string: &String) {
+    let mut file = file.lock()
+    file.write_string(string)
+}
+
+fn flush(file: &File) {
+    let mut file = file.lock()
+    file.flush()
+}
+
+fn write_string(file: &File, string: &String) {
+    let mut file = file.lock()
+    file.write_string(string)
+}
+
+fn flush(file: &File) {
+    let mut file = file.lock()
+    file.flush()
+}
+
+fn write_string(file: &File, string: &String) {
+    let mut file = file.lock()
+    file.write_string(string)
+}
+
+fn flush(file: &File) {
+    let mut file = file.lock()
+    file.flush()
+}
+
+fn write_string(file: &File, string: &String) {
+    let mut file = file.lock()
+    file.write_string(string)
+}
+
+fn flush(file: &File) {
+    let mut file = file.lock()
+    file.flush()
+}
+
+fn write_string(file: &File, string: &String) {
+    let mut file = file.lock()
+    file.write_string(string)
+}
+
+fn flush(file: &File) {
+    let mut file = file.lock()
+    file.flush()
+}
+
+fn write_string(file: &File, string: &String) {
+    let mut file = file.lock()
+    file.write_string(string)
+}
+
+fn flush(file: &File) {
+    let mut file = file.lock()
+    file.flush()
+}
+
+fn write_string(file: &File, string: &String) {
+    let mut file = file.lock()
+    file.write_string(string)
+}
+
+fn flush(file: &File) {
+    let mut file = file.lock()
+    file.flush()
+}
+
+fn write_string(file: &File, string: &String) {
+    let mut file = file.lock()
+    file.write_string(string)
+}
+
+fn flush(file: &File) {
+    let mut file = file.lock()
+    file.flush()
+}
+
+fn write_string(file: &File, string: &String) {
+    let mut file = file.lock()
+    file.write_string(string)
+}
+
+fn flush(file: &File) {
+    let mut file = file.lock()
+    file.flush()
+}
+
+fn write_string(file: &File, string: &String) {
+    let mut file = file.lock()
+    file.write_string(string)
+}
+
+fn flush(file: &File) {
+    let mut file = file.lock()
+    file.flush()
+}
+
+fn write_string(file: &File, string: &String) {
+    let mut file = file.lock()
+    file.write_string(string)
+}
+
+fn flush(file: &File) {
+    let mut file = file.lock()
+    file.flush()
+}
+
+fn write_string(file: &File, string: &String) {
+    let mut file = file.lock()
+    file.write_string(string)
+}
+
+fn flush(file: &File) {
+    let mut file = file.lock()
+    file.flush()
+}
+
+fn write_string(file: &File, string: &String) {
+    let mut file = file.lock()
+    file.write_string(string)
+}
+
+fn flush(file: &File) {
+    let mut file = file.lock()
+    file.flush()
+}
+
+fn write_string(file: &File, string: &String) {
+    let mut file = file.lock()
+    file.write_string(string)
+}
+
+fn flush(file: &File) {
+    let mut file = file.lock()
+    file.flush()
+}
+
+fn write_string(file: &File, string: &String) {
+    let mut file = file.lock()
+    file.write_string(string)
+}
+
+fn flush(file: &File) {
+    let mut file = file.lock()
+    file.flush()
+}
+
+fn write_string(file: &File, string: &String) {
+    let mut file = file.lock()
+    file.write_string(string)
+}
+
+fn flush(file: &File) {
+    let mut file = file.lock()
+    file.flush()
+}
+
+fn write_string(file: &File, string: &String) {
+    let mut file = file.lock()
+    file.write_string(string)
+}
+
+fn flush(file: &File) {
+    let mut file = file.lock()
+    file.flush()
+}
+
+fn write_string(file: &File, string: &String) {
+    let mut file = file.lock()
+    file.write_string(string)
+}
+
+fn flush(file: &File) {
+    let mut file = file.lock()
+    file.flush()
+}
+
+fn write_string(file: &File, string: &String) {
+    let mut file = file.lock()
+    file.write_string(string)
+}
+
+fn flush(file: &File) {
+    let mut file = file.lock()
+    file.flush()
+}
+
+fn write_string(file: &File, string: &String) {
+    let mut file = file.lock()
+    file.write_string(string)
+}
+
+fn flush(file: &File) {
+    let mut file = file.lock()
+    file.flush()
+}
+
+fn write_string(file: &File, string: &String) {
+    let mut file = file.lock()
+    file.write_string(string)
+}
+
+fn flush(file: &File) {
+    let mut file = file.lock()
+    file.flush()
+}
+
+fn write_string(file: &File, string: &String) {
+    let mut file = file.lock()
+    file.write_string(string)
+}
+
+fn flush(file: &File) {
+    let mut file = file.lock()
+    file.flush()
+}
+
+fn write_string(file: &File, string: &String) {
+    let mut file = file.lock()
+    file.write_string(string)
+}
+
+fn flush(file: &File) {
+    let mut file = file.lock()
+    file.flush()
+}
+
+fn write_string(file: &File, string: &String) {
+    let mut file = file.lock()
+    file.write_string(string)
+}
+
+fn flush(file: &File) {
+    let mut file = file.lock()
+    file.flush()
+}
+
+fn write_string(file: &File, string: &String) {
+    let mut file = file.lock()
+    file.write_string(string)
+}
+
+fn flush(file: &File) {
+    let mut file = file.

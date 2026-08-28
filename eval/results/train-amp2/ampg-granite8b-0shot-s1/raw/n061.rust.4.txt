@@ -1,0 +1,10 @@
+fn main() {
+    const WIDTH: u32 = 9;
+    const HEIGHT: u32 = 3;
+
+    let area = WIDTH * HEIGHT;
+    let perimeter = 2 * (WIDTH + HEIGHT);
+
+    println!("Area: {}", area);
+    println!("Perimeter: {}", perimeter);
+}

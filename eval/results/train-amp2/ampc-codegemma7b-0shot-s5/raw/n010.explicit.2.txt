@@ -1,0 +1,336 @@
+fn is_prime(x: Int) -> Bool {
+    if x == 1 {
+        return false
+    }
+    let mut i = 2
+    while i * i <= x {
+        if x % i == 0 {
+            return false
+        }
+        i = i + 1
+    }
+    true
+}
+
+fn main() {
+    let n = 91
+    if is_prime(n) {
+        print("Yes")
+    } else {
+        print("No")
+    }
+}
+
+fn print(s: Str) {
+    println(s)
+}
+
+fn println(s: Str) {
+    print(s)
+    print("\n")
+}
+
+fn print(i: Int) {
+    print(to_string(i))
+}
+
+fn to_string(i: Int) -> Str {
+    if i == 0 {
+        return "0"
+    }
+    let mut s = ""
+    let mut n = i
+    while n > 0 {
+        let d = n % 10
+        n = n / 10
+        s = char_to_str(d) + s
+    }
+    s
+}
+
+fn char_to_str(c: Int) -> Str {
+    if c >= 0 && c <= 9 {
+        return string(c + 48)
+    }
+    panic("Invalid character")
+}
+
+fn string(i: Int) -> Str {
+    let mut s = ""
+    let mut n = i
+    while n > 0 {
+        let d = n % 10
+        n = n / 10
+        s = char_to_str(d) + s
+    }
+    s
+}
+
+fn println(i: Int) {
+    print(i)
+    print("\n")
+}
+
+fn print(c: Char) {
+    print(to_string(int(c)))
+}
+
+fn int(c: Char) -> Int {
+    if c >= 48 && c <= 57 {
+        return c - 48
+    }
+    panic("Invalid character")
+}
+
+fn to_string(c: Char) -> Str {
+    return string(int(c))
+}
+
+fn string(c: Char) -> Str {
+    return string(int(c))
+}
+
+fn char_to_str(c: Int) -> Str {
+    if c >= 0 && c <= 9 {
+        return string(c + 48)
+    }
+    panic("Invalid character")
+}
+
+fn to_string(f: Float) -> Str {
+    let i = int(f)
+    let frac = f - i
+    let frac_str = to_string(frac)
+    if frac_str.len() > 5 {
+        return string(i) + "." + frac_str.substring(0, 6)
+    }
+    string(i) + "." + frac_str
+}
+
+fn substring(s: Str, start: Int, end: Int) -> Str {
+    let mut result = ""
+    for i in start + 1.to_int() {
+        if i < end {
+            result = result + string(s.charAt(i))
+        } else {
+            break
+        }
+    }
+    return result
+}
+
+fn charAt(s: Str, i: Int) -> Char {
+    if i >= 0 && i < s.len() {
+        return s.chars().nth(i).unwrap()
+    }
+    panic("Index out of bounds")
+}
+
+fn len(s: Str) -> Int {
+    return s.chars().count()
+}
+
+fn to_string(b: Bool) -> Str {
+    if b {
+        return "True"
+    } else {
+        return "False"
+    }
+}
+
+fn len(v: Vec<T>) -> Int {
+    return v.len()
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    let mut new_vec = v
+    new_vec.push(x)
+    return new_vec
+}
+
+fn get(v: Vec<T>, i: Int) -> Option<T> {
+    if i >= 0 && i < v.len() {
+        return Some(v.get(i).unwrap())
+    } else {
+        return None
+    }
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in a + 1.to_int() {
+        if i <= b {
+            result.push(i)
+        } else {
+            break
+        }
+    }
+    return result
+}
+
+fn clone(x: T) -> T {
+    return x
+}
+
+fn str_len(s: Str) -> Int {
+    return s.len()
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    return a + b
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = vec()
+    for c in s.chars() {
+        result.push(string(c))
+    }
+    return result
+}
+
+fn int_to_str(n: Int) -> Str {
+    if n == 0 {
+        return "0"
+    }
+    let mut s = ""
+    let mut m = n
+    while m > 0 {
+        let d = m % 10
+        m = m / 10
+        s = char_to_str(d) + s
+    }
+    s
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    let mut result = 0
+    let mut multiplier = 1
+    for c in s.chars().rev() {
+        if c >= 48 && c <= 57 {
+            result = result + multiplier * (c - 48)
+            multiplier = multiplier * 10
+        } else {
+            return None
+        }
+    }
+    Some(result)
+}
+
+fn to_float(n: Int) -> Float {
+    return n
+}
+
+fn trunc(x: Int) -> Int {
+    if x >= 0 {
+        return x
+    } else {
+        return -x - 1
+    }
+}
+
+fn drop_vec(v: Vec<T>) {
+    let mut i = v.len() - 1.to_int()
+    while i >= 0 {
+        drop v
+        i = i - 1
+    }
+}
+
+fn drop_struct(s: MyStruct) {
+    drop s
+}
+
+fn drop_enum(e: MyEnum) {
+    drop e
+}
+
+fn drop_int(i: Int) {
+    drop i
+}
+
+fn drop_float(f: Float) {
+    drop f
+}
+
+fn drop_bool(b: Bool) {
+    drop b
+}
+
+fn drop_str(s: Str) {
+    drop s
+}
+
+fn drop_char(c: Char) {
+    drop c
+}
+
+fn drop_unit(u: Unit) {
+    drop u
+}
+
+fn drop_option(o: Option<T>) {
+    if o != None {
+        drop o
+    }
+}
+
+fn drop_result(r: Result<T, E>) {
+    if r != Ok(T) {
+        drop r
+    }
+}
+
+fn drop_vec(v: Vec<T>) {
+    let mut i = v.len() - 1.to_int()
+    while i >= 0 {
+        drop v
+        i = i - 1
+    }
+}
+
+fn drop_struct(s: MyStruct) {
+    drop s
+}
+
+fn drop_enum(e: MyEnum) {
+    drop e
+}
+
+fn drop_int(i: Int) {
+    drop i
+}
+
+fn drop_float(f: Float) {
+    drop f
+}
+
+fn drop_bool(b: Bool) {
+    drop b
+}
+
+fn drop_str(s: Str) {
+    drop s
+}
+
+fn drop_char(c: Char) {
+    drop c
+}
+
+fn drop_unit(u: Unit) {
+    drop u
+}
+
+fn drop_option(o: Option<T>) {
+    if o != None {
+        drop o
+    }
+}
+
+fn drop_result(r: Result<T, E>) {
+    if r != Ok(T) {
+        drop r
+    }
+}
+
+fn drop_vec(v: Vec<T>) {
+    let mut

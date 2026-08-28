@@ -1,0 +1,19 @@
+fn main() {
+    let nums = vec(3, 6, 9)
+    let total = 0
+    for x in &nums {
+        total = total + x
+    }
+    print(total)
+    drop nums
+}
+
+fn main() {
+    let nums = vec(3, 6, 9)
+    let total = 0
+    for x in &nums {
+        total = total + x
+    }
+    print(total)
+    drop nums
+}

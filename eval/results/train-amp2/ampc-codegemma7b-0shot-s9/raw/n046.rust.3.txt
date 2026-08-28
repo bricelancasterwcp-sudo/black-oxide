@@ -1,0 +1,18 @@
+fn main() {
+    let samples = [5, 12, 3, 18, 9];
+    let cutoff = 10;
+
+    let (below_cutoff, at_or_above_cutoff) = samples
+        .iter()
+        .fold((0, 0), |(mut below, mut at_or_above), &sample| {
+            if sample < cutoff {
+                below += 1;
+            } else {
+                at_or_above += 1;
+            }
+            (below, at_or_above)
+        });
+
+    println!("Samples below cutoff: {}", below_cutoff);
+    println!("Samples at or above cutoff: {}", at_or_above_cutoff);
+}

@@ -1,0 +1,16 @@
+struct Result { count: Int }
+
+fn count_divisors(n: Int) -> Result {
+    let mut count = 0
+    for i in range(1, n + 1) {
+        if n % i == 0 {
+            count = count + 1
+        }
+    }
+    Result(count)
+}
+
+fn main() {
+    let result = count_divisors(36)
+    print(result.count)
+}

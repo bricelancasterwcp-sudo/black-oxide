@@ -1,0 +1,8 @@
+fn main() {
+    let str = "drum".to_string()
+    for x in str.chars().rev() {
+        print(&x)
+    }
+    print(&str)
+    drop str
+}

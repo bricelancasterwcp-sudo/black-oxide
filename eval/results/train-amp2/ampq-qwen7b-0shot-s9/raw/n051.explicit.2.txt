@@ -1,0 +1,7 @@
+fn main() {
+    let word = "granite"
+    print_str(&word)
+    let last_char = &wordchars_last_char == word.len() - 1
+    print_str(&last_char)
+    drop word
+}

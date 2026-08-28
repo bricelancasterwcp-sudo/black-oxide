@@ -1,0 +1,6 @@
+fn main() {
+    let mut values = [12, 5, 20, 8, 17];
+    values.sort_by(|a, b| b.cmp(a));
+    println!("{}", values[0]);
+    println!("{}", values[1]);
+}

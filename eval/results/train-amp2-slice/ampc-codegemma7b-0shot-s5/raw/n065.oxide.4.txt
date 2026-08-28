@@ -1,0 +1,11 @@
+fn readings() -> Vec<Int> {
+    vec(6, 11, 3, 14, 9)
+}
+
+fn main() {
+    let v = readings()
+    let big = v.iter().filter(move || x || x > 5).count()
+    let high = v.iter().max().unwrap_or_else(move || panic("empty"))
+    print(big)
+    print(high)
+}

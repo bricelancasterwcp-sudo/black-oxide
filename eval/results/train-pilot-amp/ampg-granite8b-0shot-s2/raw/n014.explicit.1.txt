@@ -1,0 +1,19 @@
+fn min_set(readings: Vec<Int>) -> Int {
+    let mut current_min = readings.get(0).unwrap_or(&panic_error_i32)
+    let mut result = current_min
+    for i in 1.range_to(readings.len()) {
+        let current = readings.get(i).unwrap_or(&panic_error_i32)
+        if current < current_min {
+            result = current
+            current_min = current
+        } else if current < result {
+            result = current
+        }
+    }
+    result
+}
+
+fn main() {
+    let readings = vec(5, 3, 9, 1, 7)
+    print(min_set(&readings))
+}

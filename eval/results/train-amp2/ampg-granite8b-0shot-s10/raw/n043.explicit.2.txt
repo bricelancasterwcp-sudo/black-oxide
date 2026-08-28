@@ -1,0 +1,10 @@
+fn main() {
+    let queue = push(push(push(push(vec(), 1), 2), 3), 4)
+    let first = pop(&queue)
+    let last = pop(&queue)
+    push(queue, last)
+    push(queue, first)
+    while !queue.is_empty() {
+        print(pop(&queue))
+    }
+}

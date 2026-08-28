@@ -1,0 +1,127 @@
+fn main() {
+    let word = "drum"
+    print(word)
+    print_str(rver)
+}
+
+fn rver(word: Str) -> Str {
+    let mut word = word
+    let mut i = 0
+    while i < len(word) {
+        let c = get(word, i)?
+        let j = len(word) - 1 - i
+        let last = get(word, j)?
+        set(word, i, last)
+        set(word, j, c)
+        i = i + 1
+    }
+    word
+}
+
+fn set(word: Str, i: Int, c: Char) {
+    let s = vec_from_str(str_from_char(c))
+    let word = functional_update(word, i, s)
+    print(word)
+}
+
+fn functional_update(word: Str, index: Int, value: Vec<Char>) -> Str {
+    let mut result = vec()
+    let mut i = 0
+    while i < len(word) {
+        if i == index {
+            result = concat(result, value)
+        } else {
+            let c = get(word, i)?
+            let s = vec_from_str(str_from_char(c))
+            result = push(result, s)
+        }
+        i = i + 1
+    }
+    str_from_vec(result)
+}
+
+fn vec_from_str(s: Str) -> Vec<Char> {
+    let mut result = vec()
+    let mut i = 0
+    while i < len(s) {
+        let c = get(s, i)?
+        result = push(result, c)
+        i = i + 1
+    }
+    result
+}
+
+fn str_from_vec(v: Vec<Char>) -> Str {
+    let mut result = ""
+    let mut i = 0
+    while i < len(v) {
+        let c = get(v, i)?
+        result = concat(result, str_from_char(c))
+        i = i + 1
+    }
+    result
+}
+
+fn str_from_char(c: Char) -> Str {
+    let mut result = ""
+    result = concat(result, str_from_char(c))
+    result
+}
+
+fn get(v: Vec<Char>, i: Int) -> Option<Char> {
+    None
+}
+
+fn push(v: Vec<Char>, x: Char) -> Vec<Char> {
+    v
+}
+
+fn len(v: Vec<Char>) -> Int {
+    0
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    a + b
+}
+
+fn vec() -> Vec<Char> {
+    vec()
+}
+
+fn print(s: Str) {
+    print_str(s)
+}
+
+fn print_str(s: Str) {
+    print_str(s)
+}
+
+fn char_from_int(n: Int) -> Char {
+    ""
+}
+
+fn int_from_char(c: Char) -> Int {
+    0
+}
+
+fn print(s: Str) {
+    print_str(s)
+}
+
+fn print_str(s: Str) {
+    print_str(s)
+}
+
+fn char_from_int(n: Int) -> Char {
+    ""
+}
+
+fn int_from_char(c: Char) -> Int {
+    0
+}
+
+fn main() {
+    let word = "drum"
+    print(word)
+    print_str(rver(word))
+}

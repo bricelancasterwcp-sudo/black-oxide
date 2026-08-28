@@ -1,0 +1,9 @@
+fn main() {
+    let a = read_int().transpose()?
+    let b = read_int().transpose()?
+    let c = read_int().transpose()?
+    let d = read_int().transpose()?
+    let total = a.unwrap_or(0) + b.unwrap_or(0) + c.unwrap_or(0) + d.unwrap_or(0)
+    print(total)
+    print(4 - (a.is_some() + b.is_some() + c.is_some() + d.is_some()))
+}

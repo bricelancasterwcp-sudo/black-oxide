@@ -1,0 +1,306 @@
+fn main() {
+    let line1 = push(push(vec(), 3), 3)
+    let line2 = push(push(vec(), 2), 2)
+    let total = push(push(line1.clone(), 3), 2)
+    print(sum_big(&line1, 0))
+    drop line1
+    print(sum_big(&line2, 0))
+    drop line2
+    print(sum_big(&total, 0))
+    drop total
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let total = 0
+    for x in &v {
+        if x > limit {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn extend(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut new_v = v
+    new_v.push(x)
+    new_v
+}
+
+fn clone(x: &Int) -> Int {
+    x.clone()
+}
+
+fn clone_vec(v: Vec<Int>) -> Vec<Int> {
+    let mut new_v = Vec(Int)
+    for x in v {
+        new_v.push(clone(&x))
+    }
+    new_v
+}
+
+fn print(x: Int) {
+    print_str(&int_to_str_clone)
+}
+
+fn print_str(s: &Str) {
+    for c in chars(s) {
+        print_char(c)
+    }
+}
+
+fn print_char(c: Str) {
+    print_str(&c)
+}
+
+fn int_to_str_clone(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut s = Str
+    let mut n = n
+    while n > 0 {
+        let d = n % 10
+        n = n / 10
+        s = concat(int_to_char_clone(d), s)
+    }
+    s
+}
+
+fn int_to_char_clone(n: Int) -> Str {
+    int_to_char(n)
+}
+
+fn int_to_char(n: Int) -> Str {
+    let mut c = Char
+    if n < 10 {
+        c = Char(n + 48)
+    } else {
+        c = Char(n + 55)
+    }
+    Str(c)
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut chars = Vec(Str)
+    let mut i = 0
+    while i < str_len(s) {
+        let c = s.get(i)
+        chars.push(c)
+        i = i + 1
+    }
+    chars
+}
+
+fn str_len(s: &Str) -> Int {
+    s.len()
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut new_str = Str
+    let mut i = 0
+    while i < str_len(&a) {
+        let c = a.get(i)
+        new_str = concat_char(new_str, c)
+        i = i + 1
+    }
+    i = 0
+    while i < str_len(&b) {
+        let c = b.get(i)
+        new_str = concat_char(new_str, c)
+        i = i + 1
+    }
+    new_str
+}
+
+fn concat_char(s: Str, c: Str) -> Str {
+    let new_str = concat(s, c)
+    new_str
+}
+
+fn drop_vec(v: Vec<Int>) {
+    let _ = v
+}
+
+fn drop_int(i: Int) {
+    let _ = i
+}
+
+fn drop_str(s: Str) {
+    let _ = s
+}
+
+fn drop_char(c: Char) {
+    let _ = c
+}
+
+fn drop_option(o: Option<Str>) {
+    let _ = o
+}
+
+fn drop_result(r: Result<Int, Str>) {
+    let _ = r
+}
+
+fn drop_vec_option(v: Vec<Option<Str>>) {
+    let _ = v
+}
+
+fn drop_vec_result(v: Vec<Result<Int, Str>>) {
+    let _ = v
+}
+
+fn drop_vec_vec(v: Vec<Vec<Int>>) {
+    let _ = v
+}
+
+fn drop_vec_vec_option(v: Vec<Vec<OptionStr>>) {
+    let _ = v
+}
+
+fn drop_vec_vec_result(v: Vec<Vec<ResultInt, Str>>) {
+    let _ = v
+}
+
+fn drop_vec_vec_vec(v: Vec<Vec<Vec_Int>>) {
+    let _ = v
+}
+
+fn drop_vec_vec_vec_option(v: Vec<Vec<VecOptionStr>>) {
+    let _ = v
+}
+
+fn drop_vec_vec_vec_result(v: Vec<Vec<VecResultInt, Str>>) {
+    let _ = v
+}
+
+fn drop_vec_vec_vec_vec(v: Vec<Vec<VecVec_Int>>) {
+    let _ = v
+}
+
+fn drop_vec_vec_vec_vec_option(v: Vec<Vec<VecVecOptionStr>>) {
+    let _ = v
+}
+
+fn drop_vec_vec_vec_vec_result(v: Vec<Vec<VecVecResultInt, Str>>) {
+    let _ = v
+}
+
+fn drop_vec_vec_vec_vec_vec(v: Vec<Vec<VecVecVec_Int>>) {
+    let _ = v
+}
+
+fn drop_vec_vec_vec_vec_vec_option(v: Vec<Vec<VecVecVecOptionStr>>) {
+    let _ = v
+}
+
+fn drop_vec_vec_vec_vec_vec_result(v: Vec<Vec<VecVecVecResultInt, Str>>) {
+    let _ = v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec(v: Vec<Vec<VecVecVecVec_Int>>) {
+    let _ = v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_option(v: Vec<Vec<VecVecVecVecOptionStr>>) {
+    let _ = v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_result(v: Vec<Vec<VecVecVecVecResultInt, Str>>) {
+    let _ = v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec(v: Vec<Vec<VecVecVecVecVec_Int>>) {
+    let _ = v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_option(v: Vec<Vec<VecVecVecVecVecOptionStr>>) {
+    let _ = v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_result(v: Vec<Vec<VecVecVecVecVecResultInt, Str>>) {
+    let _ = v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_vec(v: Vec<Vec<VecVecVecVecVecVec_Int>>) {
+    let _ = v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_vec_option(v: Vec<Vec<VecVecVecVecVecVecOptionStr>>) {
+    let _ = v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_vec_result(v: Vec<Vec<VecVecVecVecVecVecResultInt, Str>>) {
+    let _ = v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_vec_vec(v: Vec<Vec<VecVecVecVecVecVecVec_Int>>) {
+    let _ = v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_vec_vec_option(v: Vec<Vec<VecVecVecVecVecVecVecOptionStr>>) {
+    let _ = v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_vec_vec_result(v: Vec<Vec<VecVecVecVecVecVecVecResultInt, Str>>) {
+    let _ = v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_vec_vec_vec(v: Vec<Vec<VecVecVecVecVecVecVecVec_Int>>) {
+    let _ = v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_vec_vec_vec_option(v: Vec<Vec<VecVecVecVecVecVecVecVecOptionStr>>) {
+    let _ = v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_vec_vec_vec_result(v: Vec<Vec<VecVecVecVecVecVecVecVecResultInt, Str>>) {
+    let _ = v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_vec_vec_vec_vec(v: Vec<Vec<VecVecVecVecVecVecVecVecVec_Int>>) {
+    let _ = v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_vec_vec_vec_vec_option(v: Vec<Vec<VecVecVecVecVecVecVecVecVecOptionStr>>) {
+    let _ = v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_vec_vec_vec_vec_result(v: Vec<Vec<VecVecVecVecVecVecVecVecVecResultInt, Str>>) {
+    let _ = v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_vec_vec_vec_vec_vec(v: Vec<Vec<VecVecVecVecVecVecVecVecVecVec_Int>>) {
+    let _ = v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_vec_vec_vec_vec_vec_option(v: Vec<Vec<VecVecVecVecVecVecVecVecVecVecOptionStr>>) {
+    let _ = v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_vec_vec_vec_vec_vec_result(v: Vec<Vec<VecVecVecVecVecVecVecVecVecVecResultInt, Str>>) {
+    let _ = v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_vec_vec_vec_vec_vec_vec(v: Vec<Vec<VecVecVecVecVecVecVecVecVecVecVec_Int>>) {
+    let _ = v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_vec_vec_vec_vec_vec_vec_option(v: Vec<Vec<VecVecVecVecVecVecVecVecVecVecVecOptionStr>>) {
+    let _ = v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_vec_vec_vec_vec_vec_vec_result(v: Vec<Vec<VecVecVecVecVecVecVecVecVecVecVecResultInt, Str>>) {
+    let _ = v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_vec_vec_vec_vec_vec_vec_vec(v: Vec<Vec<VecVecVecVecVecVecVecVecVecVecVecVec_Int>>) {
+    let _ = v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_vec_vec_vec_vec_vec_vec_vec_option(v: Vec<Vec<VecVecVecVecVecVecVecVecVecVecVecVecOptionStr>>) {
+    let _ = v

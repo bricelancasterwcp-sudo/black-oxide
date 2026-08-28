@@ -1,0 +1,5 @@
+fn main() {
+    let side = 4;
+    let area = side * side;
+    println!("The area of the square is: {}", area);
+}

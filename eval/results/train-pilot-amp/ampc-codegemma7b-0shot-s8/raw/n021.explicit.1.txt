@@ -1,0 +1,5 @@
+fn main() {
+    let str = str_len("programming")
+    print(str)
+    drop str
+}

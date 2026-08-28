@@ -1,0 +1,5 @@
+fn main() {
+    let log: Vec<i32> = vec![6, 7, 8, 9];
+    println!("{}", log.first().unwrap());
+    println!("{}", log.last().unwrap());
+}

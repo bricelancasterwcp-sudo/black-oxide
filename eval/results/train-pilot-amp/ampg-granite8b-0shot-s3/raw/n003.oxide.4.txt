@@ -1,0 +1,7 @@
+struct Point { x: Int, y: Int }
+
+fn main() {
+    let p = Point { x: 1, y: 2 }
+    let q = Point { x: 4, y: p.y }
+    print(q.x)
+}

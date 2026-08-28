@@ -1,0 +1,15 @@
+fn main() {
+    let mut total = 0
+    let mut walk = 0
+    let mut n = 7
+    while n != 0 {
+        walk = walk + 1
+        if n % 2 != 0 {
+            println("{}", n * 2)
+        } else {
+            total = total + n
+        }
+        n = n - 1
+    }
+    print("{}", total)
+}

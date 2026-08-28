@@ -1,0 +1,11 @@
+fn main() {
+    let mut counter = 0
+    for number in vec(9, 2, 12, 5, 16) {
+        if number < 10 {
+            print(number)
+            print_str("\n")
+            counter = counter + 1
+        }
+    }
+    print(counter)
+}

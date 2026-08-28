@@ -1,0 +1,6 @@
+fn main() {
+    let mut a = vec(1, 2, 3, 4)
+    while len(a) > 0 {
+        print(pop(a))
+    }
+}

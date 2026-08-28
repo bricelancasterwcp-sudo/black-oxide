@@ -1,0 +1,171 @@
+fn main() {
+    let num_str = read_str()?
+    match parse_int(num_str) {
+        Some(num) => print(num + 1),
+        None => print_str("bad"),
+    }
+}
+
+fn read_str() -> Option<Str> {
+    let line = String(os_read_line()?).trim_end()
+    if line.len() > 0 {
+        Some(line)
+    } else {
+        None
+    }
+}
+
+fn os_read_line() -> Result<Vec<Char>, Str> {
+    let mut line = Vec(read_byte()?).to_vec()
+    while line.len() < 1024 {
+        line.push(read_byte()?)
+    }
+    Ok(line)
+}
+
+fn read_byte() -> Result<Char, Str> {
+    let mut buf = Vec(0).to_vec()
+    read_exact(buf)?
+    Ok(buf.first().unwrap() - 48)
+}
+
+fn read_exact(bytes: Vec<Char>) -> Result<Vec<Char>, Str> {
+    let mut buf = bytes.to_vec()
+    match os_read(buf) {
+        Ok(n) => Ok(buf),
+        Err(_) => Err("read error".to_string()),
+    }
+}
+
+fn os_read(bytes: Vec<Char>) -> Result<Int, Str> {
+    let mut bytes = bytes.to_vec()
+    let n = match read_n(bytes) {
+        Ok(n) => n,
+        Err(_) => returnErr("read error".to_string()),
+    }
+    Ok(n)
+}
+
+fn read_n(bytes: Vec<Char>) -> Result<Int, Str> {
+    let mut buf = bytes.to_vec()
+    match os_read_n(buf) {
+        Ok(n) => Ok(n),
+        Err(_) => Err("read error".to_string()),
+    }
+}
+
+fn os_read_n(bytes: Vec<Char>) -> Result<Int, Str> {
+    let mut buf = bytes.to_vec()
+    match os_read_n_bytes(buf) {
+        Ok(n) => Ok(n),
+        Err(_) => Err("read error".to_string()),
+    }
+}
+
+fn os_read_n_bytes(bytes: Vec<Char>) -> Result<Int, Str> {
+    let mut buf = bytes.to_vec()
+    match os_read_n_bytes_internal(buf) {
+        Ok(n) => Ok(n),
+        Err(_) => Err("read error".to_string()),
+    }
+}
+
+fn os_read_n_bytes_internal(bytes: Vec<Char>) -> Result<Int, Str> {
+    let mut buf = bytes.to_vec()
+    match os_read_n_bytes_internal_internal(buf) {
+        Ok(n) => Ok(n),
+        Err(_) => Err("read error".to_string()),
+    }
+}
+
+fn os_read_n_bytes_internal_internal(bytes: Vec<Char>) -> Result<Int, Str> {
+    let mut buf = bytes.to_vec()
+    match os_read_n_bytes_internal_internal_internal(buf) {
+        Ok(n) => Ok(n),
+        Err(_) => Err("read error".to_string()),
+    }
+}
+
+fn os_read_n_bytes_internal_internal_internal(bytes: Vec<Char>) -> Result<Int, Str> {
+    let mut buf = bytes.to_vec()
+    match os_read_n_bytes_internal_internal_internal_internal(buf) {
+        Ok(n) => Ok(n),
+        Err(_) => Err("read error".to_string()),
+    }
+}
+
+fn os_read_n_bytes_internal_internal_internal_internal(bytes: Vec<Char>) -> Result<Int, Str> {
+    let mut buf = bytes.to_vec()
+    match os_read_n_bytes_internal_internal_internal_internal_internal(buf) {
+        Ok(n) => Ok(n),
+        Err(_) => Err("read error".to_string()),
+    }
+}
+
+fn os_read_n_bytes_internal_internal_internal_internal_internal(bytes: Vec<Char>) -> Result<Int, Str> {
+    let mut buf = bytes.to_vec()
+    match os_read_n_bytes_internal_internal_internal_internal_internal_internal(buf) {
+        Ok(n) => Ok(n),
+        Err(_) => Err("read error".to_string()),
+    }
+}
+
+fn os_read_n_bytes_internal_internal_internal_internal_internal_internal(bytes: Vec<Char>) -> Result<Int, Str> {
+    let mut buf = bytes.to_vec()
+    match os_read_n_bytes_internal_internal_internal_internal_internal_internal_internal(buf) {
+        Ok(n) => Ok(n),
+        Err(_) => Err("read error".to_string()),
+    }
+}
+
+fn os_read_n_bytes_internal_internal_internal_internal_internal_internal_internal(bytes: Vec<Char>) -> Result<Int, Str> {
+    let mut buf = bytes.to_vec()
+    match os_read_n_bytes_internal_internal_internal_internal_internal_internal_internal_internal(buf) {
+        Ok(n) => Ok(n),
+        Err(_) => Err("read error".to_string()),
+    }
+}
+
+fn os_read_n_bytes_internal_internal_internal_internal_internal_internal_internal_internal(bytes: Vec<Char>) -> Result<Int, Str> {
+    let mut buf = bytes.to_vec()
+    match os_read_n_bytes_internal_internal_internal_internal_internal_internal_internal_internal_internal(buf) {
+        Ok(n) => Ok(n),
+        Err(_) => Err("read error".to_string()),
+    }
+}
+
+fn os_read_n_bytes_internal_internal_internal_internal_internal_internal_internal_internal_internal(bytes: Vec<Char>) -> Result<Int, Str> {
+    let mut buf = bytes.to_vec()
+    match os_read_n_bytes_internal_internal_internal_internal_internal_internal_internal_internal_internal_internal(buf) {
+        Ok(n) => Ok(n),
+        Err(_) => Err("read error".to_string()),
+    }
+}
+
+fn os_read_n_bytes_internal_internal_internal_internal_internal_internal_internal_internal_internal_internal_internal(bytes: Vec<Char>) -> Result<Int, Str> {
+    let mut buf = bytes.to_vec()
+    match os_read_n_bytes_internal_internal_internal_internal_internal_internal_internal_internal_internal_internal_internal_internal(buf) {
+        Ok(n) => Ok(n),
+        Err(_) => Err("read error".to_string()),
+    }
+}
+
+fn os_read_n_bytes_internal_internal_internal_internal_internal_internal_internal_internal_internal_internal_internal_internal_internal(bytes: Vec<Char>) -> Result<Int, Str> {
+    let mut buf = bytes.to_vec()
+    match os_read_n_bytes_internal_internal_internal_internal_internal_internal_internal_internal_internal_internal_internal_internal_internal_internal(buf) {
+        Ok(n) => Ok(n),
+        Err(_) => Err("read error".to_string()),
+    }
+}
+
+fn os_read_n_bytes_internal_internal_internal_internal_internal_internal_internal_internal_internal_internal_internal_internal_internal_internal(bytes: Vec<Char>) -> Result<Int, Str> {
+    let mut buf = bytes.to_vec()
+    match os_read_n_bytes_internal_internal_internal_internal_internal_internal_internal_internal_internal_internal_internal_internal_internal_internal_internal(buf) {
+        Ok(n) => Ok(n),
+        Err(_) => Err("read error".to_string()),
+    }
+}
+
+fn os_read_n_bytes_internal_internal_internal_internal_internal_internal_internal_internal_internal_internal_internal_internal_internal_internal_internal(bytes: Vec<Char>) -> Result<Int, Str> {
+    let mut buf = bytes.to_vec()
+    match os_read_n_bytes_internal_internal_internal_internal_internal_internal_internal_internal_internal_internal_internal_internal_internal_internal

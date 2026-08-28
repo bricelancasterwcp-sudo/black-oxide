@@ -1,0 +1,18 @@
+struct Reading { label: Str, values: Vec<Int> }
+
+fn position_of_four(v: Vec<Int>) -> Vec<Int> {
+    let mut positions = vec()
+    for i in range(0, len(v)) {
+        if get(v, i)? == 4 {
+            push(positions, i)
+        }
+    }
+    positions
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: vec(4, 7, 4, 9, 4) }
+    for pos in position_of_four(r.values) {
+        print(pos)
+    }
+}

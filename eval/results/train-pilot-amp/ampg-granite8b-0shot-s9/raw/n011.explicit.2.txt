@@ -1,0 +1,14 @@
+fn main() {
+    let mut list = vec()
+    for i in range(1, 13) {
+        list = push(list, i)
+    }
+    let mut total = 0
+    for x in &list {
+        if x % 4 == 0 {
+            total = total + x
+        }
+    }
+    print(total)
+    drop list
+}

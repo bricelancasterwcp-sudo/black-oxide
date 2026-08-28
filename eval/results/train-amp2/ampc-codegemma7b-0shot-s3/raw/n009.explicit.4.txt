@@ -1,0 +1,10 @@
+fn print_reverse(n: Int) {
+    if n >= 10 {
+        print_reverse(trunc(n / 10))
+    }
+    print(int_to_str(trunc(n % 10)))
+}
+
+fn main() {
+    print_reverse(1234)
+}

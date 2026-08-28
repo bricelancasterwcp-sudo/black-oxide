@@ -1,0 +1,7 @@
+use std::io;
+
+fn main() {
+    let p1 = (1, 5);
+    let p2 = (1 + 10, 5);
+    println!("{}", p1.0 + p2.0)
+}

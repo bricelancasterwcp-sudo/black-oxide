@@ -1,0 +1,432 @@
+fn main() {
+    let input = vec_str("8", "oak", "15")
+    for entry in input {
+        match entry {
+            Some(num) => print_int(num),
+            None => print_str("bad"),
+        }
+    }
+}
+
+fn vec_str(s1: &Str, s2: &Str, s3: &Str) -> Vec<Option<Int>> {
+    vec(Some(to_int(s1)), None, Some(to_int(s3)))
+}
+
+fn to_int(s: &Str) -> Int {
+    parse_int(s).unwrap_or(0)
+}
+
+fn print_int(x: Int) {
+    println(x)
+}
+
+fn print_str(s: &Str) {
+    println(s)
+}
+
+fn vec() -> Vec<Option<Int>> {
+    Vec(vec())
+}
+
+fn push(v: Vec<Option<Int>>, x: Option<Int>) -> Vec<Option<Int>> {
+    v.push(x)
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    s.parse().ok()
+}
+
+fn unwrap_or(x: Option<Int>, default: Int) -> Int {
+    x.unwrap_or(default)
+}
+
+fn unwrap(x: Option<Int>) -> Int {
+    x.unwrap()
+}
+
+fn vec() -> Vec<Int> {
+    Vec(vec())
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    v.len()
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    v.get(i).cloned()
+}
+
+fn to_int(s: &Str) -> Int {
+    parse_int(s).unwrap_or(0)
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    s.parse().ok()
+}
+
+fn unwrap_or(x: Option<Int>, default: Int) -> Int {
+    x.unwrap_or(default)
+}
+
+fn unwrap(x: Option<Int>) -> Int {
+    x.unwrap()
+}
+
+fn print_int(x: Int) {
+    println(x)
+}
+
+fn print_str(s: &Str) {
+    println(s)
+}
+
+fn vec() -> Vec<Int> {
+    Vec(vec())
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    v.len()
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    v.get(i).cloned()
+}
+
+fn to_int(s: &Str) -> Int {
+    parse_int(s).unwrap_or(0)
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    s.parse().ok()
+}
+
+fn unwrap_or(x: Option<Int>, default: Int) -> Int {
+    x.unwrap_or(default)
+}
+
+fn unwrap(x: Option<Int>) -> Int {
+    x.unwrap()
+}
+
+fn print_int(x: Int) {
+    println(x)
+}
+
+fn print_str(s: &Str) {
+    println(s)
+}
+
+fn vec() -> Vec<Int> {
+    Vec(vec())
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    v.len()
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    v.get(i).cloned()
+}
+
+fn to_int(s: &Str) -> Int {
+    parse_int(s).unwrap_or(0)
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    s.parse().ok()
+}
+
+fn unwrap_or(x: Option<Int>, default: Int) -> Int {
+    x.unwrap_or(default)
+}
+
+fn unwrap(x: Option<Int>) -> Int {
+    x.unwrap()
+}
+
+fn print_int(x: Int) {
+    println(x)
+}
+
+fn print_str(s: &Str) {
+    println(s)
+}
+
+fn vec() -> Vec<Int> {
+    Vec(vec())
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    v.len()
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    v.get(i).cloned()
+}
+
+fn to_int(s: &Str) -> Int {
+    parse_int(s).unwrap_or(0)
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    s.parse().ok()
+}
+
+fn unwrap_or(x: Option<Int>, default: Int) -> Int {
+    x.unwrap_or(default)
+}
+
+fn unwrap(x: Option<Int>) -> Int {
+    x.unwrap()
+}
+
+fn print_int(x: Int) {
+    println(x)
+}
+
+fn print_str(s: &Str) {
+    println(s)
+}
+
+fn vec() -> Vec<Int> {
+    Vec(vec())
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    v.len()
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    v.get(i).cloned()
+}
+
+fn to_int(s: &Str) -> Int {
+    parse_int(s).unwrap_or(0)
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    s.parse().ok()
+}
+
+fn unwrap_or(x: Option<Int>, default: Int) -> Int {
+    x.unwrap_or(default)
+}
+
+fn unwrap(x: Option<Int>) -> Int {
+    x.unwrap()
+}
+
+fn print_int(x: Int) {
+    println(x)
+}
+
+fn print_str(s: &Str) {
+    println(s)
+}
+
+fn vec() -> Vec<Int> {
+    Vec(vec())
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    v.len()
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    v.get(i).cloned()
+}
+
+fn to_int(s: &Str) -> Int {
+    parse_int(s).unwrap_or(0)
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    s.parse().ok()
+}
+
+fn unwrap_or(x: Option<Int>, default: Int) -> Int {
+    x.unwrap_or(default)
+}
+
+fn unwrap(x: Option<Int>) -> Int {
+    x.unwrap()
+}
+
+fn print_int(x: Int) {
+    println(x)
+}
+
+fn print_str(s: &Str) {
+    println(s)
+}
+
+fn vec() -> Vec<Int> {
+    Vec(vec())
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    v.len()
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    v.get(i).cloned()
+}
+
+fn to_int(s: &Str) -> Int {
+    parse_int(s).unwrap_or(0)
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    s.parse().ok()
+}
+
+fn unwrap_or(x: Option<Int>, default: Int) -> Int {
+    x.unwrap_or(default)
+}
+
+fn unwrap(x: Option<Int>) -> Int {
+    x.unwrap()
+}
+
+fn print_int(x: Int) {
+    println(x)
+}
+
+fn print_str(s: &Str) {
+    println(s)
+}
+
+fn vec() -> Vec<Int> {
+    Vec(vec())
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    v.len()
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    v.get(i).cloned()
+}
+
+fn to_int(s: &Str) -> Int {
+    parse_int(s).unwrap_or(0)
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    s.parse().ok()
+}
+
+fn unwrap_or(x: Option<Int>, default: Int) -> Int {
+    x.unwrap_or(default)
+}
+
+fn unwrap(x: Option<Int>) -> Int {
+    x.unwrap()
+}
+
+fn print_int(x: Int) {
+    println(x)
+}
+
+fn print_str(s: &Str) {
+    println(s)
+}
+
+fn vec() -> Vec<Int> {
+    Vec(vec())
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    v.len()
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    v.get(i).cloned()
+}
+
+fn to_int(s: &Str) -> Int {
+    parse_int(s).unwrap_or(0)
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    s.parse().ok()
+}
+
+fn unwrap_or(x: Option<Int>, default: Int) -> Int {
+    x.unwrap_or(default)
+}
+
+fn unwrap(x: Option<Int>) -> Int {
+    x.unwrap()
+}
+
+fn print_int(x: Int) {
+    println(x)
+}
+
+fn print_str(s: &Str) {
+    println(s)
+}
+
+fn vec() -> Vec<Int> {
+    Vec(vec())
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    v.len()
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    v.get(i).cloned()
+}
+
+fn to_int(s: &Str) -> Int {
+    parse_int(s).unwrap_or(0)
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    s.parse().ok()
+}
+
+fn unwrap_or(x: Option<Int>, default: Int) -> Int {
+   

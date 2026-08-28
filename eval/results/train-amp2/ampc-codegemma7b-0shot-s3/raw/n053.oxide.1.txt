@@ -1,0 +1,12 @@
+fn drum() -> Str {
+    let mut r = vec()
+    for c in "drum".chars() {
+        r.insert(0, c)
+    }
+    str_join("", r)
+}
+
+fn main() {
+    print(drum())
+    print(str_rev(drum()))
+}

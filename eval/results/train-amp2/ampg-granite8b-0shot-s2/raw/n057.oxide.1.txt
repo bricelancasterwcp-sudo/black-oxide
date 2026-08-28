@@ -1,0 +1,17 @@
+fn fig() -> Int {
+    3
+}
+
+fn banana() -> Int {
+    7
+}
+
+fn kiwi() -> Int {
+    5
+}
+
+fn main() {
+    let food = if len(vec(fig(), banana(), kiwi())) > 5 { "many" } else { "few" }
+    print(food)
+    print(len(food))
+}

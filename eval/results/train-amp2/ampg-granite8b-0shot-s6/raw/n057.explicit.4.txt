@@ -1,0 +1,12 @@
+fn main() {
+    let fig = String("fig".to_string())
+    let banana = String("banana".to_string())
+    let kiwi = String("kiwi".to_string())
+    let longest = match fig.len() {
+        _ => fig,
+        _ => banana,
+        _ => kiwi,
+    }
+    println(longest)
+    println(longest.len())
+}

@@ -1,0 +1,93 @@
+struct Number {
+    digits: Vec<Int>,
+}
+
+fn reverse_int(n: Int) -> Int {
+    let mut result = 0
+    while n > 0 {
+        result = 10 * result + n % 10
+        n = n / 10
+    }
+    result
+}
+
+fn main() {
+    let mut number = Number { digits: vec() }
+    while true {
+        let digit = read_int()
+        if digit == -1 {
+            break
+        }
+        number = Number { digits: push(number.digits, digit) }
+        if digit == 0 {
+            continue
+        }
+        number = Number { digits: push(number.digits, 0) }
+        break
+    }
+    print(number.digits.len())
+    let mut i = number.digits.len() - 1
+    while i >= 0 {
+        let digit = get(number.digits, i)?
+        if digit == 0 {
+            i = i - 1
+            continue
+        }
+        let reversed_digit = reverse_int(digit)
+        number = Number { digits: push(number.digits, reversed_digit) }
+        if reversed_digit == 0 {
+            i = i - 1
+            continue
+        }
+        number = Number { digits: push(number.digits, 0) }
+        break
+    }
+    print(number.digits)
+}
+
+struct Number {
+    digits: Vec<Int>,
+}
+
+fn reverse_int(n: Int) -> Int {
+    let mut result = 0
+    while n > 0 {
+        result = 10 * result + n % 10
+        n = n / 10
+    }
+    result
+}
+
+fn main() {
+    let mut number = Number { digits: vec() }
+    while true {
+        let digit = read_int()
+        if digit == -1 {
+            break
+        }
+        number = Number { digits: push(number.digits, digit) }
+        if digit == 0 {
+            continue
+        }
+        number = Number { digits: push(number.digits, 0) }
+        break
+    }
+    print(number.digits.len())
+    let mut i = number.digits.len() - 1
+    while i >= 0 {
+        let digit = get(number.digits, i)?
+        if digit == 0 {
+            i = i - 1
+            continue
+        }
+        let reversed_digit = reverse_int(digit)
+        number = Number { digits: push(number.digits, reversed_digit) }
+        if reversed_digit == 0 {
+            i = i - 1
+            continue
+        }
+        number = Number { digits: push(number.digits, 0) }
+        break
+    }
+    print(number.digits)
+}

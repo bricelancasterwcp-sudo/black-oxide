@@ -1,0 +1,16 @@
+struct Measurement { value: Int }
+
+fn print_measurements(measurements: Vec<Measurement>) {
+    for measurement in measurements {
+        print(measurement.value)
+    }
+}
+
+fn main() {
+    let measurements = vec()
+    let measurements = push(measurements, Measurement { value: 9 })
+    let measurements = push(measurements, Measurement { value: 2 })
+    let measurements = push(measurements, Measurement { value: 7 })
+    let measurements = push(measurements, Measurement { value: 4 })
+    print_measurements(measurements)
+}

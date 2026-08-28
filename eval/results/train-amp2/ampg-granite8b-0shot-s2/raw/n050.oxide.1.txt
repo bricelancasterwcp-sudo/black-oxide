@@ -1,0 +1,29 @@
+fn sort(scores: Vec<Int>) -> Vec<Int> {
+    let mut sorted = vec()
+    for score in scores {
+        insert_by_bubble_sort(score, sorted)
+    }
+    sorted
+}
+
+fn insert_by_bubble_sort(score: Int, mutscores: Vec<Int>) -> Vec<Int> {
+    let mut i = 0
+    while i < scores.len() && score > scores.get(i).unwrap() {
+        i = i + 1
+    }
+    scores = push(scores, score)
+    for j in (i + 1) <= scores.len() {
+        scores = functional_update(scores, j - 1, scores.get(j).unwrap())
+    }
+    scores
+}
+
+fn functional_update(vec: Vec<Int>, i: Int, new_val: Int) -> Vec<Int> {
+    push(push(vec.slice(0, i), new_val), vec.slice(i + 1, vec.len()))
+}
+
+fn main() {
+    let scores = sort(range(2, 11))
+    print_str("The highest score is ")
+    print(scores.last().unwrap())
+}

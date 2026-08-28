@@ -1,0 +1,4 @@
+fn main() {
+    let result = push(push(push(vec(), 1), 2), 3)
+    print(result)
+}

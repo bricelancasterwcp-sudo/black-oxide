@@ -1,0 +1,327 @@
+fn len(s: &Str) -> Int {
+    let mut count = 0
+    for _ in chars(s) {
+        count = count + 1
+    }
+    count
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut result = vec()
+    for c in s.chars() {
+        result = push(result, Str(c.to_string()))
+    }
+    result
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    let mut result = v
+    result = result + x
+    result
+}
+
+fn str_len(s: &Str) -> Int {
+    len(s)
+}
+
+fn main() {
+    print(len(&str_lit))
+}
+
+struct StrLit {
+    text: Str,
+}
+
+fn str_lit() -> StrLit {
+    StrLit("programming")
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut result = vec()
+    for c in s.chars() {
+        result = push(result, Str(c.to_string()))
+    }
+    result
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    let mut result = v
+    result = result + x
+    result
+}
+
+fn str_len(s: &Str) -> Int {
+    len(s)
+}
+
+fn len(s: &Str) -> Int {
+    let mut count = 0
+    for _ in chars(s) {
+        count = count + 1
+    }
+    count
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut result = vec()
+    for c in s.chars() {
+        result = push(result, Str(c.to_string()))
+    }
+    result
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    let mut result = v
+    result = result + x
+    result
+}
+
+fn str_len(s: &Str) -> Int {
+    len(s)
+}
+
+fn main() {
+    print(len(&str_lit))
+}
+
+struct StrLit {
+    text: Str,
+}
+
+fn str_lit() -> StrLit {
+    StrLit("programming")
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut result = vec()
+    for c in s.chars() {
+        result = push(result, Str(c.to_string()))
+    }
+    result
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    let mut result = v
+    result = result + x
+    result
+}
+
+fn str_len(s: &Str) -> Int {
+    len(s)
+}
+
+fn len(s: &Str) -> Int {
+    let mut count = 0
+    for _ in chars(s) {
+        count = count + 1
+    }
+    count
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut result = vec()
+    for c in s.chars() {
+        result = push(result, Str(c.to_string()))
+    }
+    result
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    let mut result = v
+    result = result + x
+    result
+}
+
+fn str_len(s: &Str) -> Int {
+    len(s)
+}
+
+fn main() {
+    print(len(&str_lit))
+}
+
+struct StrLit {
+    text: Str,
+}
+
+fn str_lit() -> StrLit {
+    StrLit("programming")
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut result = vec()
+    for c in s.chars() {
+        result = push(result, Str(c.to_string()))
+    }
+    result
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    let mut result = v
+    result = result + x
+    result
+}
+
+fn str_len(s: &Str) -> Int {
+    len(s)
+}
+
+fn main() {
+    print(len(&str_lit))
+}
+
+struct StrLit {
+    text: Str,
+}
+
+fn str_lit() -> StrLit {
+    StrLit("programming")
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut result = vec()
+    for c in s.chars() {
+        result = push(result, Str(c.to_string()))
+    }
+    result
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    let mut result = v
+    result = result + x
+    result
+}
+
+fn str_len(s: &Str) -> Int {
+    len(s)
+}
+
+fn main() {
+    print(len(&str_lit))
+}
+
+struct StrLit {
+    text: Str,
+}
+
+fn str_lit() -> StrLit {
+    StrLit("programming")
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut result = vec()
+    for c in s.chars() {
+        result = push(result, Str(c.to_string()))
+    }
+    result
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    let mut result = v
+    result = result + x
+    result
+}
+
+fn str_len(s: &Str) -> Int {
+    len(s)
+}
+
+fn main() {
+    print(len(&str_lit))
+}
+
+struct StrLit {
+    text: Str,
+}
+
+fn str_lit() -> StrLit {
+    StrLit("programming")
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut result = vec()
+    for c in s.chars() {
+        result = push(result, Str(c.to_string()))
+    }
+    result
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    let mut result = v
+    result = result + x
+    result
+}
+
+fn str_len(s: &Str) -> Int {
+    len(s)
+}
+
+fn main() {
+    print(len(&str_lit))
+}
+
+struct StrLit {
+    text: Str,
+}
+
+fn str_lit() -> StrLit {
+    StrLit("programming")
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut result = vec()
+    for c in s.chars() {
+        result = push(result, Str(c.to_string()))
+    }
+    result
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    let mut result = v
+    result = result + x
+    result
+}
+
+fn str_len(s: &Str) -> Int {
+    len(s)
+}
+
+fn main() {
+    print(len(&str_lit))
+}
+
+struct StrLit {
+    text: Str,
+}
+
+fn str_lit() -> StrLit {
+    StrLit("programming")
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut result = vec()
+    for c in s.chars() {
+        result = push(result, Str(c.to_string()))
+    }
+    result
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    let mut result = v
+    result = result + x
+    result
+}
+
+fn str_len(s: &Str) -> Int {
+    len(s)
+}
+
+fn main() {
+    print(len(&str_lit))
+}
+
+struct StrLit {
+    text: Str,
+}
+
+fn str_lit() -> StrLit {

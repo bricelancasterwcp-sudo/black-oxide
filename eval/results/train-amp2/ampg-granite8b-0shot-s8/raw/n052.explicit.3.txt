@@ -1,0 +1,20 @@
+fn banana(a: &Str, b: &Str, c: &Str) -> Str {
+    let mut result = Str("")
+    for i in 0 <= range(0, len(a)) {
+        if get(a, i) == Some("n") {
+            result = result + "n"
+        } else if get(b, i) == Some("n") {
+            result = result + "n"
+        } else if get(c, i) == Some("n") {
+            result = result + "n"
+        }
+    }
+    drop result
+    drop b
+    drop c
+    result
+}
+
+fn main() {
+    print(banana("banana", "orange", "banana"))
+}

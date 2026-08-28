@@ -1,0 +1,10 @@
+fn main() {
+    let banana = "banana"
+    let len = str_len(banana)
+    for i in 0.to_int(len) {
+        let ch = get(banana, i)
+        if ch == Some("n") {
+            print(i)
+        }
+    }
+}

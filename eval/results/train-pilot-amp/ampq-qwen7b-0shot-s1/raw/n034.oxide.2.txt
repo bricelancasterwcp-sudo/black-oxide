@@ -1,0 +1,14 @@
+struct Pair { a: Int, b: Int }
+
+fn second(v: Vec<Int>) -> Option<Int> {
+    get(v, 1)
+}
+
+fn main() {
+    let v7 = vec(7, 8, 9)
+    let v8 = vec(7)
+    let v9 = vec()
+    print(second(v7).unwrap_or(-1))
+    print(second(v8).unwrap_or(-1))
+    print(second(v9).unwrap_or(-1))
+}

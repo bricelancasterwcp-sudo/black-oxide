@@ -1,0 +1,14 @@
+fn read_int() -> Option<Int> {
+    let s = Str(stdin().read_line()?.trim())
+    match parse_int(s) {
+        Some(n) => Some(n),
+        None => None,
+    }
+}
+
+fn main() {
+    match read_int() {
+        Some(n) => print(n),
+        None => print_str("bad"),
+    }
+}

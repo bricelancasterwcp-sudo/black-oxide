@@ -1,0 +1,28 @@
+struct Reading { label: Str, values: Vec<Int> }
+
+fn count_big(v: Vec<Int>) -> Int {
+    let mut count = 0
+    for x in v {
+        if x > 5 {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn max_reading(v: Vec<Int>) -> Int {
+    let mut max = -1
+    for x in v {
+        if x > max {
+            max = x
+        }
+    }
+    max
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(push(push(vec(), 6), 11), 3), 14), pushvec: 9 } // Corrected the push function usage
+    print(count_big(r.values))
+    print_str("\n")
+    print(max_reading(r.values))
+}

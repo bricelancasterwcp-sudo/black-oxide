@@ -1,0 +1,293 @@
+fn main() {
+    let mut total = 0
+    let mut order = 0
+    while order < 4 {
+        let n = walk()?
+        if n % 2 == 1 {
+            print(n * 2)
+            print_str("\n")
+        } else {
+            total = total + n
+        }
+        order = order + 1
+    }
+    print(total)
+}
+
+fn walk() -> Int {
+    let n = int_to_str(7)
+    let n = int_to_str(4)
+    let n = int_to_str(9)
+    let n = int_to_str(10)
+    parse_int(n)
+}
+
+fn main() {
+    let mut total = 0
+    let mut order = 0
+    while order < 4 {
+        let n = walk()?
+        if n % 2 == 1 {
+            print(n * 2)
+            print_str("\n")
+        } else {
+            total = total + n
+        }
+        order = order + 1
+    }
+    print(total)
+}
+
+fn walk() -> Int {
+    let n = int_to_str(7)
+    let n = int_to_str(4)
+    let n = int_to_str(9)
+    let n = int_to_str(10)
+    parse_int(n)
+}
+
+fn main() {
+    let mut total = 0
+    let mut order = 0
+    while order < 4 {
+        let n = walk()?
+        if n % 2 == 1 {
+            print(n * 2)
+            print_str("\n")
+        } else {
+            total = total + n
+        }
+        order = order + 1
+    }
+    print(total)
+}
+
+fn walk() -> Int {
+    let n = int_to_str(7)
+    let n = int_to_str(4)
+    let n = int_to_str(9)
+    let n = int_to_str(10)
+    parse_int(n)
+}
+
+fn main() {
+    let mut total = 0
+    let mut order = 0
+    while order < 4 {
+        let n = walk()?
+        if n % 2 == 1 {
+            print(n * 2)
+            print_str("\n")
+        } else {
+            total = total + n
+        }
+        order = order + 1
+    }
+    print(total)
+}
+
+fn walk() -> Int {
+    let n = int_to_str(7)
+    let n = int_to_str(4)
+    let n = int_to_str(9)
+    let n = int_to_str(10)
+    parse_int(n)
+}
+
+fn main() {
+    let mut total = 0
+    let mut order = 0
+    while order < 4 {
+        let n = walk()?
+        if n % 2 == 1 {
+            print(n * 2)
+            print_str("\n")
+        } else {
+            total = total + n
+        }
+        order = order + 1
+    }
+    print(total)
+}
+
+fn walk() -> Int {
+    let n = int_to_str(7)
+    let n = int_to_str(4)
+    let n = int_to_str(9)
+    let n = int_to_str(10)
+    parse_int(n)
+}
+
+fn main() {
+    let mut total = 0
+    let mut order = 0
+    while order < 4 {
+        let n = walk()?
+        if n % 2 == 1 {
+            print(n * 2)
+            print_str("\n")
+        } else {
+            total = total + n
+        }
+        order = order + 1
+    }
+    print(total)
+}
+
+fn walk() -> Int {
+    let n = int_to_str(7)
+    let n = int_to_str(4)
+    let n = int_to_str(9)
+    let n = int_to_str(10)
+    parse_int(n)
+}
+
+fn main() {
+    let mut total = 0
+    let mut order = 0
+    while order < 4 {
+        let n = walk()?
+        if n % 2 == 1 {
+            print(n * 2)
+            print_str("\n")
+        } else {
+            total = total + n
+        }
+        order = order + 1
+    }
+    print(total)
+}
+
+fn walk() -> Int {
+    let n = int_to_str(7)
+    let n = int_to_str(4)
+    let n = int_to_str(9)
+    let n = int_to_str(10)
+    parse_int(n)
+}
+
+fn main() {
+    let mut total = 0
+    let mut order = 0
+    while order < 4 {
+        let n = walk()?
+        if n % 2 == 1 {
+            print(n * 2)
+            print_str("\n")
+        } else {
+            total = total + n
+        }
+        order = order + 1
+    }
+    print(total)
+}
+
+fn walk() -> Int {
+    let n = int_to_str(7)
+    let n = int_to_str(4)
+    let n = int_to_str(9)
+    let n = int_to_str(10)
+    parse_int(n)
+}
+
+fn main() {
+    let mut total = 0
+    let mut order = 0
+    while order < 4 {
+        let n = walk()?
+        if n % 2 == 1 {
+            print(n * 2)
+            print_str("\n")
+        } else {
+            total = total + n
+        }
+        order = order + 1
+    }
+    print(total)
+}
+
+fn walk() -> Int {
+    let n = int_to_str(7)
+    let n = int_to_str(4)
+    let n = int_to_str(9)
+    let n = int_to_str(10)
+    parse_int(n)
+}
+
+fn main() {
+    let mut total = 0
+    let mut order = 0
+    while order < 4 {
+        let n = walk()?
+        if n % 2 == 1 {
+            print(n * 2)
+            print_str("\n")
+        } else {
+            total = total + n
+        }
+        order = order + 1
+    }
+    print(total)
+}
+
+fn walk() -> Int {
+    let n = int_to_str(7)
+    let n = int_to_str(4)
+    let n = int_to_str(9)
+    let n = int_to_str(10)
+    parse_int(n)
+}
+
+fn main() {
+    let mut total = 0
+    let mut order = 0
+    while order < 4 {
+        let n = walk()?
+        if n % 2 == 1 {
+            print(n * 2)
+            print_str("\n")
+        } else {
+            total = total + n
+        }
+        order = order + 1
+    }
+    print(total)
+}
+
+fn walk() -> Int {
+    let n = int_to_str(7)
+    let n = int_to_str(4)
+    let n = int_to_str(9)
+    let n = int_to_str(10)
+    parse_int(n)
+}
+
+fn main() {
+    let mut total = 0
+    let mut order = 0
+    while order < 4 {
+        let n = walk()?
+        if n % 2 == 1 {
+            print(n * 2)
+            print_str("\n")
+        } else {
+            total = total + n
+        }
+        order = order + 1
+    }
+    print(total)
+}
+
+fn walk() -> Int {
+    let n = int_to_str(7)
+    let n = int_to_str(4)
+    let n = int_to_str(9)
+    let n = int_to_str(10)
+    parse_int(n)
+}
+
+fn main() {
+    let mut total = 0
+    let mut order = 0
+    while order < 4 {
+        let

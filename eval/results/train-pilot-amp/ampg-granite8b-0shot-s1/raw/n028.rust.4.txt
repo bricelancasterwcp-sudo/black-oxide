@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let result = std::str::parse::<u8>("abc");
+    if let Err(_) = result {
+        println!("bad");
+    }
+}
+```

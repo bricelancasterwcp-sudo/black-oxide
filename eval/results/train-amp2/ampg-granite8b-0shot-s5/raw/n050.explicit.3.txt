@@ -1,0 +1,22 @@
+fn sort(scores: &Vec<Int>) -> Vec<Int> {
+    if len(scores) <= 1 {
+        return clone(scores)
+    }
+    let pivot = scores.get(0).unwrap()
+    let mut l = vec()
+    let mut g = vec()
+    for score in &scores {
+        if score > &pivot {
+            l = push(l, score)
+        } else {
+            g = push(g, score)
+        }
+    }
+    concat(sort(&l), push(sort(&g), pivot))
+}
+
+fn main() {
+    let scores = push(push(push(vec(), 2), 9), 5)
+    print(sort(&scores))
+    drop scores
+}

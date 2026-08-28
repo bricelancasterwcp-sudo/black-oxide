@@ -1,0 +1,20 @@
+struct Queue { items: Vec<Int> }
+
+fn push_back(q: Queue, x: Int) -> Queue {
+    Queue  // TODO: implement
+}
+
+fn pop_front(q: Queue) -> Option<Int> {
+    None  // TODO: implement
+}
+
+fn main() {
+    let q = Queue { items: vec(1, 2, 3, 4, 5) }
+    let last = pop_front(q)?
+    let first = pop_front(q)?
+    let q = push_back(q, last)
+    let q = push_back(q, first)
+    for x in q.items {
+        print(x)
+    }
+}

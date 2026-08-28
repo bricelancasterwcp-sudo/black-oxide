@@ -1,0 +1,4 @@
+fn main() {
+    println!("{}", "drum".chars().rev().collect::<String>());
+    println!("{}", "drum");
+}

@@ -1,0 +1,13 @@
+fn count_words_and_chars(sentence: &Str) -> Int {
+    let words: Vec<Str> = sentence.split_whitespace().collect()
+    let word_count = words.len()
+    let char_count = sentence.len()
+    word_count + char_count
+}
+
+fn main() {
+    let phrase = "when in doubt go home"
+    let total = count_words_and_chars(phrase)
+    print(total)
+    drop phrase
+}

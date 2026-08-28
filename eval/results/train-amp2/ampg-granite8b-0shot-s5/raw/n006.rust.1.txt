@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    for i in (0..12).rev() {
+        if 1 << i <= 100 {
+            println!("{}", 1 << i);
+            break;
+        }
+    }
+}
+```

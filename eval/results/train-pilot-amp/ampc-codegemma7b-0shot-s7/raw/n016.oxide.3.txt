@@ -1,0 +1,13 @@
+fn main() {
+    let mut accum = 0
+    let mut list = vec()
+    for x in 1.to(10) {
+        if x % 3 == 0 {
+            accum = accum + x
+            list = push(list, x)
+        }
+    }
+    print(accum)
+    print(len(list))
+    print_str(str_len(format_str("total: {}", accum)))
+}

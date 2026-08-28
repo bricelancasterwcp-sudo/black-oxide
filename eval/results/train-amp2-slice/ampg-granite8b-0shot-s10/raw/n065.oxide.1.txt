@@ -1,0 +1,201 @@
+fn main() {
+    println(how_many_over_five(vec(6, 11, 3, 14, 9)))
+    println(highest_reading(vec(6, 11, 3, 14, 9)))
+}
+
+fn how_many_over_five(readings: Vec<Int>) -> Int {
+    let mut count = 0
+    for reading in readings {
+        if reading > 5 {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn highest_reading(readings: Vec<Int>) -> Int {
+    let mut max = 0
+    for reading in readings {
+        if reading > max {
+            max = reading
+        }
+    }
+    max
+}
+
+fn print(x: Int) {
+    println(int_to_str(x))
+}
+
+fn println(s: Str) {
+    print_str(s + "\n")
+}
+
+fn print_str(s: Str) {
+    native_print_str(s)
+}
+
+fn native_print_str(s: Str) {
+    print_str_impl(s)
+}
+
+fn print_str_impl(s: Str) {
+    print_str_impl_impl(s)
+}
+
+fn print_str_impl_impl(s: Str) {
+    native_print_str(s)
+}
+
+fn vec() -> Vec<T> {
+    vec_impl()
+}
+
+fn vec_impl() -> Vec<T> {
+    Vec()
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    push_impl(v, x)
+}
+
+fn push_impl(v: Vec<T>, x: T) -> Vec<T> {
+    Vec(v, x)
+}
+
+fn len(v: Vec<T>) -> Int {
+    len_impl(v)
+}
+
+fn len_impl(v: Vec<T>) -> Int {
+    len_impl_impl(v)
+}
+
+fn len_impl_impl(v: Vec<T>) -> Int {
+    native_len(v)
+}
+
+fn get(v: Vec<T>, i: Int) -> Option<T> {
+    get_impl(v, i)
+}
+
+fn get_impl(v: Vec<T>, i: Int) -> Option<T> {
+    get_impl_impl(v, i)
+}
+
+fn get_impl_impl(v: Vec<T>, i: Int) -> Option<T> {
+    native_get(v, i)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    range_impl(a, b)
+}
+
+fn range_impl(a: Int, b: Int) -> Vec<Int> {
+    range_impl_impl(a, b)
+}
+
+fn range_impl_impl(a: Int, b: Int) -> Vec<Int> {
+    native_range(a, b)
+}
+
+fn clone(x: T) -> T {
+    clone_impl(x)
+}
+
+fn clone_impl(x: T) -> T {
+    clone_impl_impl(x)
+}
+
+fn clone_impl_impl(x: T) -> T {
+    native_clone(x)
+}
+
+fn str_len(s: Str) -> Int {
+    str_len_impl(s)
+}
+
+fn str_len_impl(s: Str) -> Int {
+    str_len_impl_impl(s)
+}
+
+fn str_len_impl_impl(s: Str) -> Int {
+    native_str_len(s)
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    concat_impl(a, b)
+}
+
+fn concat_impl(a: Str, b: Str) -> Str {
+    concat_impl_impl(a, b)
+}
+
+fn concat_impl_impl(a: Str, b: Str) -> Str {
+    native_concat(a, b)
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    chars_impl(s)
+}
+
+fn chars_impl(s: Str) -> Vec<Str> {
+    chars_impl_impl(s)
+}
+
+fn chars_impl_impl(s: Str) -> Vec<Str> {
+    native_chars(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    int_to_str_impl(n)
+}
+
+fn int_to_str_impl(n: Int) -> Str {
+    int_to_str_impl_impl(n)
+}
+
+fn int_to_str_impl_impl(n: Int) -> Str {
+    native_int_to_str(n)
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    parse_int_impl(s)
+}
+
+fn parse_int_impl(s: Str) -> Option<Int> {
+    parse_int_impl_impl(s)
+}
+
+fn parse_int_impl_impl(s: Str) -> Option<Int> {
+    native_parse_int(s)
+}
+
+fn to_float(n: Int) -> Float {
+    to_float_impl(n)
+}
+
+fn to_float_impl(n: Int) -> Float {
+    to_float_impl_impl(n)
+}
+
+fn to_float_impl_impl(n: Int) -> Float {
+    native_to_float(n)
+}
+
+fn trunc(x: Float) -> Int {
+    trunc_impl(x)
+}
+
+fn trunc_impl(x: Float) -> Int {
+    trunc_impl_impl(x)
+}
+
+fn trunc_impl_impl(x: Float) -> Int {
+    native_trunc(x)
+}
+
+fn main() {
+    println(how_many_over_five(vec(6, 11, 3, 14, 9)))
+    println(highest_reading(vec(6, 11, 3, 14, 9)))
+}

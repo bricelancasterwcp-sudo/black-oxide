@@ -1,0 +1,8 @@
+fn main() {
+    let s = "banana";
+    for (pos, c) in s.char_indices() {
+        if c == 'n' {
+            println!("{}", pos);
+        }
+    }
+}

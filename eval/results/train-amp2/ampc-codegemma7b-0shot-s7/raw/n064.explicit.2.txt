@@ -1,0 +1,332 @@
+fn main() {
+    let v = vec(10, 20)
+    print(get(&v, 1))
+    print(get(&v, 4))
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    if i < v.len() {
+        Some(v.get(i).unwrap())
+    } else {
+        None
+    }
+}
+
+fn print(o: Option<Int>) {
+    match o {
+        Some(n) => print(n),
+        None => print("None"),
+    }
+}
+
+fn print(n: Int) {
+    print("{}", n)
+}
+
+fn print(s: &Str) {
+    print("{}", s)
+}
+
+fn print() {
+    print("\n")
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    if i < v.len() {
+        Some(v.get(i).unwrap())
+    } else {
+        None
+    }
+}
+
+fn main() {
+    let v = vec(10, 20)
+    print(get(&v, 1))
+    print(get(&v, 4))
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    if i < v.len() {
+        Some(v.get(i).unwrap())
+    } else {
+        None
+    }
+}
+
+fn print(o: Option<Int>) {
+    match o {
+        Some(n) => print(n),
+        None => print("None"),
+    }
+}
+
+fn print(n: Int) {
+    print("{}", n)
+}
+
+fn print(s: &Str) {
+    print("{}", s)
+}
+
+fn print() {
+    print("\n")
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    if i < v.len() {
+        Some(v.get(i).unwrap())
+    } else {
+        None
+    }
+}
+
+fn main() {
+    let v = vec(10, 20)
+    print(get(&v, 1))
+    print(get(&v, 4))
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    if i < v.len() {
+        Some(v.get(i).unwrap())
+    } else {
+        None
+    }
+}
+
+fn print(o: Option<Int>) {
+    match o {
+        Some(n) => print(n),
+        None => print("None"),
+    }
+}
+
+fn print(n: Int) {
+    print("{}", n)
+}
+
+fn print(s: &Str) {
+    print("{}", s)
+}
+
+fn print() {
+    print("\n")
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    if i < v.len() {
+        Some(v.get(i).unwrap())
+    } else {
+        None
+    }
+}
+
+fn main() {
+    let v = vec(10, 20)
+    print(get(&v, 1))
+    print(get(&v, 4))
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    if i < v.len() {
+        Some(v.get(i).unwrap())
+    } else {
+        None
+    }
+}
+
+fn print(o: Option<Int>) {
+    match o {
+        Some(n) => print(n),
+        None => print("None"),
+    }
+}
+
+fn print(n: Int) {
+    print("{}", n)
+}
+
+fn print(s: &Str) {
+    print("{}", s)
+}
+
+fn print() {
+    print("\n")
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    if i < v.len() {
+        Some(v.get(i).unwrap())
+    } else {
+        None
+    }
+}
+
+fn main() {
+    let v = vec(10, 20)
+    print(get(&v, 1))
+    print(get(&v, 4))
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    if i < v.len() {
+        Some(v.get(i).unwrap())
+    } else {
+        None
+    }
+}
+
+fn print(o: Option<Int>) {
+    match o {
+        Some(n) => print(n),
+        None => print("None"),
+    }
+}
+
+fn print(n: Int) {
+    print("{}", n)
+}
+
+fn print(s: &Str) {
+    print("{}", s)
+}
+
+fn print() {
+    print("\n")
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    if i < v.len() {
+        Some(v.get(i).unwrap())
+    } else {
+        None
+    }
+}
+
+fn main() {
+    let v = vec(10, 20)
+    print(get(&v, 1))
+    print(get(&v, 4))
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    if i < v.len() {
+        Some(v.get(i).unwrap())
+    } else {
+        None
+    }
+}
+
+fn print(o: Option<Int>) {
+    match o {
+        Some(n) => print(n),
+        None => print("None"),
+    }
+}
+
+fn print(n: Int) {
+    print("{}", n)
+}
+
+fn print(s: &Str) {
+    print("{}", s)
+}
+
+fn print() {
+    print("\n")
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    if i < v.len() {
+        Some(v.get(i).unwrap())
+    } else {
+        None
+    }
+}
+
+fn main() {
+    let v = vec(10, 20)
+    print(get(&v, 1))
+    print(get(&v, 4))
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    if i < v.len() {
+        Some(v.get(i).unwrap())
+    } else {
+        None
+    }
+}
+
+fn print(o: Option<Int>) {
+    match o {
+        Some(n) => print(n),
+        None => print("None"),
+    }
+}
+
+fn print(n: Int) {
+    print("{}", n)
+}
+
+fn print(s: &Str) {
+    print("{}", s)
+}
+
+fn print() {
+    print("\n")
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    if i < v.len() {
+        Some(v.get(i).unwrap())
+    } else {
+        None
+    }
+}
+
+fn main() {
+    let v = vec(10, 20)
+    print(get(&v, 1))
+    print(get(&v, 4))
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    if i < v.len() {
+        Some(v.get(i).unwrap())
+    } else {
+        None
+    }
+}
+
+fn print(o: Option<Int>) {
+    match o {
+        Some(n) => print(n),
+        None => print("None"),
+    }
+}
+
+fn print(n: Int) {
+    print("{}", n)
+}
+
+fn print(s: &Str) {
+    print("{}", s)
+}
+
+fn print() {
+    print("\n")
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    if i < v.len() {
+        Some(v.get(i).unwrap())
+    } else {
+        None
+    }
+}
+
+fn main() {
+    let v = vec(10, 20)
+    print(get(&v, 1))
+    print(get(&v, 4))

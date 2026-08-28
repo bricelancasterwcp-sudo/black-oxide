@@ -1,0 +1,7 @@
+fn main() {
+    let mut total = 0;
+    for i in 1..6 {
+        total += i * i * i;
+    }
+    println!("{}", total);
+}

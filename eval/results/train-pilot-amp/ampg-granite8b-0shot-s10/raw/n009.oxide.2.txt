@@ -1,0 +1,17 @@
+struct IntPair { first: Int, second: Int }
+
+fn reverse_int(x: Int) -> Int {
+    if x < 10 {
+        x
+    } else {
+        let d1 = x % 10
+        let d10 = x / 10
+        reverse_int(d10) * 10 + reverse_int(d1)
+    }
+}
+
+fn main() {
+    let p = IntPair { first: 123, second: 456 }
+    let r = reverse_int(p.second)
+    print(r)
+}

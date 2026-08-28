@@ -1,0 +1,15 @@
+fn sum_evens(limit: Int) -> Int {
+    let total = 0
+    for x in range(1, limit + 1) {
+        if x % 2 == 0 {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn main() {
+    let result = sum_evens(20)
+    print(result)
+    drop result
+}

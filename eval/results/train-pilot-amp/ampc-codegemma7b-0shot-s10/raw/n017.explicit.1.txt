@@ -1,0 +1,8 @@
+fn main() {
+    let list = vec(10, 20, 30, 40)
+    if len(&list) >= 2 {
+        print(get(&list, 2).unwrap())
+    } else {
+        print("missing")
+    }
+}

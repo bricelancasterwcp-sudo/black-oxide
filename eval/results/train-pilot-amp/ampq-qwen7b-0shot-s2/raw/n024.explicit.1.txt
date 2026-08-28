@@ -1,0 +1,372 @@
+fn main() {
+    let word = "banana"
+    let count = count_a(&word)
+    print(count)
+    drop word
+}
+
+fn count_a(word: &Str) -> Int {
+    let mut count = 0
+    for c in chars(&word) {
+        if c == "a" {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut result = vec()
+    for i in range(0, str_len(&s)) {
+        result = push(result, get(&s, i))
+    }
+    result
+}
+
+fn str_len(s: &Str) -> Int {
+    s.len()
+}
+
+fn get(v: &Str, i: Int) -> Str {
+    let s = &v
+    let c = &s
+    &c
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    let mut result = v
+    result = push(result, x)
+    result
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    let mut result = v
+    result = push(result, x)
+    result
+}
+
+fn main() {
+    let word = "banana"
+    let count = count_a(&word)
+    print(count)
+    drop word
+}
+
+fn count_a(word: &Str) -> Int {
+    let mut count = 0
+    for c in chars(&word) {
+        if c == "a" {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut result = vec()
+    for i in range(0, str_len(&s)) {
+        result = push(result, get(&s, i))
+    }
+    result
+}
+
+fn str_len(s: &Str) -> Int {
+    s.len()
+}
+
+fn get(v: &Str, i: Int) -> Str {
+    let s = &v
+    let c = &s
+    &c
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    let mut result = v
+    result = push(result, x)
+    result
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    let mut result = v
+    result = push(result, x)
+    result
+}
+
+fn main() {
+    let word = "banana"
+    let count = count_a(&word)
+    print(count)
+    drop word
+}
+
+fn count_a(word: &Str) -> Int {
+    let mut count = 0
+    for c in chars(&word) {
+        if c == "a" {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut result = vec()
+    for i in range(0, str_len(&s)) {
+        result = push(result, get(&s, i))
+    }
+    result
+}
+
+fn str_len(s: &Str) -> Int {
+    s.len()
+}
+
+fn get(v: &Str, i: Int) -> Str {
+    let s = &v
+    let c = &s
+    &c
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    let mut result = v
+    result = push(result, x)
+    result
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    let mut result = v
+    result = push(result, x)
+    result
+}
+
+fn main() {
+    let word = "banana"
+    let count = count_a(&word)
+    print(count)
+    drop word
+}
+
+fn count_a(word: &Str) -> Int {
+    let mut count = 0
+    for c in chars(&word) {
+        if c == "a" {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut result = vec()
+    for i in range(0, str_len(&s)) {
+        result = push(result, get(&s, i))
+    }
+    result
+}
+
+fn str_len(s: &Str) -> Int {
+    s.len()
+}
+
+fn get(v: &Str, i: Int) -> Str {
+    let s = &v
+    let c = &s
+    &c
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    let mut result = v
+    result = push(result, x)
+    result
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    let mut result = v
+    result = push(result, x)
+    result
+}
+
+fn main() {
+    let word = "banana"
+    let count = count_a(&word)
+    print(count)
+    drop word
+}
+
+fn count_a(word: &Str) -> Int {
+    let mut count = 0
+    for c in chars(&word) {
+        if c == "a" {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut result = vec()
+    for i in range(0, str_len(&s)) {
+        result = push(result, get(&s, i))
+    }
+    result
+}
+
+fn str_len(s: &Str) -> Int {
+    s.len()
+}
+
+fn get(v: &Str, i: Int) -> Str {
+    let s = &v
+    let c = &s
+    &c
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    let mut result = v
+    result = push(result, x)
+    result
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    let mut result = v
+    result = push(result, x)
+    result
+}
+
+fn main() {
+    let word = "banana"
+    let count = count_a(&word)
+    print(count)
+    drop word
+}
+
+fn count_a(word: &Str) -> Int {
+    let mut count = 0
+    for c in chars(&word) {
+        if c == "a" {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut result = vec()
+    for i in range(0, str_len(&s)) {
+        result = push(result, get(&s, i))
+    }
+    result
+}
+
+fn str_len(s: &Str) -> Int {
+    s.len()
+}
+
+fn get(v: &Str, i: Int) -> Str {
+    let s = &v
+    let c = &s
+    &c
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    let mut result = v
+    result = push(result, x)
+    result
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    let mut result = v
+    result = push(result, x)
+    result
+}
+
+fn main() {
+    let word = "banana"
+    let count = count_a(&word)
+    print(count)
+    drop word
+}
+
+fn count_a(word: &Str) -> Int {
+    let mut count = 0
+    for c in chars(&word) {
+        if c == "a" {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut result = vec()
+    for i in range(0, str_len(&s)) {
+        result = push(result, get(&s, i))
+    }
+    result
+}
+
+fn str_len(s: &Str) -> Int {
+    s.len()
+}
+
+fn get(v: &Str, i: Int) -> Str {
+    let s = &v
+    let c = &s
+    &c
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    let mut result = v
+    result = push(result, x)
+    result
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    let mut result = v
+    result = push(result, x)
+    result
+}
+
+fn main() {
+    let word = "banana"
+    let count = count_a(&word)
+    print(count)
+    drop word
+}
+
+fn count_a(word: &Str) -> Int {
+    let mut count = 0
+    for c in chars(&word) {
+        if c == "a" {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut result = vec()
+    for i in range(0, str_len(&s)) {
+        result = push(result, get(&s, i))
+    }
+    result
+}
+
+fn str_len(s: &Str) -> Int {
+    s.len()
+}
+
+fn get(v: &Str, i: Int) -> Str {
+    let s = &v
+    let c = &s
+    &c
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    let mut result = v
+    result = push(result, x)
+    result
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    let mut

@@ -1,0 +1,8 @@
+fn main() {
+    let items_1 = vec(1, 1, 1, 1)
+    let items_2 = vec(2, 2, 2, 2, 2)
+    let total_value = (items_1.len() * 3) + (items_2.len() * 2)
+    print(total_value)
+    drop items_1
+    drop items_2
+}

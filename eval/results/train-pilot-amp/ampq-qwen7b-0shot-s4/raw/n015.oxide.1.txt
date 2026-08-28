@@ -1,0 +1,14 @@
+fn count_larger_than_four(v: Vec<Int>) -> Int {
+    let mut count = 0
+    for x in v {
+        if x > 4 {
+            count = push(count, 1)
+        }
+    }
+    count
+}
+
+fn main() {
+    let v = push(push(push(vec(), 3), 4), 5)
+    print(count_larger_than_four(v))
+}

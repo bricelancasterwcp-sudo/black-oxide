@@ -1,0 +1,10 @@
+fn main() {
+    let numbers = vec![5, 3, 9, 1, 7];
+    let mut largest = numbers[0];
+    for num in numbers {
+        if num > largest {
+            largest = num;
+        }
+    }
+    println!("The largest number is: {}", largest);
+}

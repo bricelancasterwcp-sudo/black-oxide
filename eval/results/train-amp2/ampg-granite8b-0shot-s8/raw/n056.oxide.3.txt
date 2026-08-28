@@ -1,0 +1,26 @@
+struct Texts {
+    texts: Vec<Option<Int>>,
+}
+
+fn count_total(texts: Texts) -> Int {
+    texts.texts.iter().filter_map(id).sum()
+}
+
+fn count_nones(texts: Texts) -> Int {
+    texts.texts.len() - texts.texts.iter().filter_map(id).count()
+}
+
+fn id(x: Option<Int>) -> Option<Int> {
+    x
+}
+
+fn main() {
+    let texts = Texts { texts: vec() }
+    for i in range(1, 10) {
+        let texts = texts
+        texts.texts = push(texts.texts, Some(i))
+        print(i)
+        print(count_total(texts))
+        print(count_nones(texts))
+    }
+}

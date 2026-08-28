@@ -1,0 +1,10 @@
+struct Cat { meow: Str }
+
+fn main() {
+    let cat = Cat { meow: "Meow!" }
+    let mut x = 0
+    while x < len(cat.meow) {
+        print_str(get(cat.meow, x).unwrap())
+        x = x + 1
+    }
+}

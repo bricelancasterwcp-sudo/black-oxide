@@ -1,0 +1,8 @@
+fn main() {
+    let batch = vec(9, 2, 12, 5, 16)
+    let kept = batch.filter(x, x < 10).collect()
+    for num in kept {
+        print(num)
+    }
+    print(len(kept))
+}

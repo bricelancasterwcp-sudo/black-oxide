@@ -1,0 +1,152 @@
+fn main() {
+    let seven = read_number("7")
+    let nine = read_number("9")
+    let x = read_number("x")
+    let question = read_number("?")
+    let sum = seven + nine + x + question
+    print(sum)
+    print(4 - sum)
+}
+
+fn read_number(s: &Str) -> Int {
+    match parse_int(s) {
+        Some(n) => n,
+        None => 0,
+    }
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    match s {
+        Str(n) => match n.chars().nth(0) {
+            Some(c) => match c {
+                _ => Some(int_to_str(n).parse().unwrap()),
+            },
+            None => None,
+        },
+        _ => None,
+    }
+}
+
+fn int_to_str(n: Int) -> Str {
+    format("%d", n)
+}
+
+fn print(x: Int) {
+    print_str(str_len(int_to_str(x)))
+}
+
+fn print_str(n: Int) {
+    let mut v = vec()
+    for _ in 0.range(n) {
+        push(v, Str("0"))
+    }
+    chars(concat(v))
+}
+
+fn chars(s: Str) {
+    for c in s.chars() {
+        print(c)
+    }
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    format("%s%s", a, b)
+}
+
+fn format(fmt: &Str, args: Int) -> Str {
+    let mut result = Str("")
+    for c in fmt.chars() {
+        if c == "%" {
+            result = concat(result, int_to_str(args))
+        } else {
+            result = concat(result, Str(c))
+        }
+    }
+    result
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    let mut new_v = v
+    new_v.push(x)
+    new_v
+}
+
+fn read_number(s: &Str) -> Int {
+    match parse_int(s) {
+        Some(n) => n,
+        None => 0,
+    }
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    match s {
+        Str(n) => match n.chars().nth(0) {
+            Some(c) => match c {
+                _ => Some(int_to_str(n).parse().unwrap()),
+            },
+            None => None,
+        },
+        _ => None,
+    }
+}
+
+fn int_to_str(n: Int) -> Str {
+    format("%d", n)
+}
+
+fn print(x: Int) {
+    print_str(str_len(int_to_str(x)))
+}
+
+fn print_str(n: Int) {
+    let mut v = vec()
+    for _ in 0.range(n) {
+        push(v, Str("0"))
+    }
+    chars(concat(v))
+}
+
+fn chars(s: Str) {
+    for c in s.chars() {
+        print(c)
+    }
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    format("%s%s", a, b)
+}
+
+fn format(fmt: &Str, args: Int) -> Str {
+    let mut result = Str("")
+    for c in fmt.chars() {
+        if c == "%" {
+            result = concat(result, int_to_str(args))
+        } else {
+            result = concat(result, Str(c))
+        }
+    }
+    result
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    let mut new_v = v
+    new_v.push(x)
+    new_v
+}
+
+fn drop_all(v: Vec<Str>) {
+    for x in v {
+        drop x
+    }
+}
+
+fn main() {
+    let seven = read_number("7")
+    let nine = read_number("9")
+    let x = read_number("x")
+    let question = read_number("?")
+    let sum = seven + nine + x + question
+    print(sum)
+    print(4 - sum)
+    drop_all(vec(seven, nine, x, question))
+}

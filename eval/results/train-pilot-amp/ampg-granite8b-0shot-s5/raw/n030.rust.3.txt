@@ -1,0 +1,5 @@
+fn main() {
+    let text = "Hello, world!";
+    let count = text.chars().filter(|c| matches!(c, 'a' | 'e' | 'i' | 'o' | 'u')).count();
+    println!("Number of vowels: {}", count);
+}

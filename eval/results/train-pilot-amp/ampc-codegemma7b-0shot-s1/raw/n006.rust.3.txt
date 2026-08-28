@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut x = 1;
+    loop {
+        if x <= 100 {
+            x *= 2;
+        } else {
+            println!("{}", x);
+            break;
+        }
+    }
+}
+```

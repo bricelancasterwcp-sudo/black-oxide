@@ -1,0 +1,11 @@
+fn main() {
+  let mut total = 0;
+  for num in [7, 4, 9, 10].iter() {
+    if num % 2 == 0 {
+      total += num;
+    } else {
+      println!("{}", num * 2);
+    }
+  }
+  println!("Total of even entries: {}", total);
+}

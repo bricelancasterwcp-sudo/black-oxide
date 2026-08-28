@@ -1,0 +1,31 @@
+fn main() {
+    let mut log = vec(6, 7, 8, 9)
+    let start = log.first().unwrap()
+    print(start)
+    let end = log.last().unwrap()
+    print(end)
+}
+
+fn first(v: &Vec<Int>) -> Option<Int> {
+    if v.len() == 0 {
+        None
+    } else {
+        Some(v.get(0).unwrap())
+    }
+}
+
+fn last(v: &Vec<Int>) -> Option<Int> {
+    if v.len() == 0 {
+        None
+    } else {
+        Some(v.get(v.len() - 1).unwrap())
+    }
+}
+
+fn main() {
+    let mut log = vec(6, 7, 8, 9)
+    let start = first(&log)
+    print(start)
+    let end = last(&log)
+    print(end)
+}

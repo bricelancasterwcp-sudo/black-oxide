@@ -1,0 +1,9 @@
+fn main() {
+    let mut count = 0;
+    for num in 1..=50 {
+        if num % 3 == 0 || num % 5 == 0 {
+            count += 1;
+        }
+    }
+    println!("There are {} numbers from 1 to 50 that divide evenly by three or five.", count);
+}

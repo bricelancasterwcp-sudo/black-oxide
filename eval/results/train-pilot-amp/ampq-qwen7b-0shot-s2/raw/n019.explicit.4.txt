@@ -1,0 +1,11 @@
+fn count_total(a: &Vec<Int>, b: &Vec<Int>) -> Int {
+    len(a) + len(b)
+}
+
+fn main() {
+    let list1 = push(push(vec(), 1), 2)
+    let list2 = push(push(vec(), 4), 5)
+    print(count_total(&list1, &list2))
+    drop list1
+    drop list2
+}

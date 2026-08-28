@@ -1,0 +1,13 @@
+use std::collections::LinkedList;
+
+fn main() {
+    let mut list = LinkedList::new();
+    list.push_back(1);
+    list.push_back(2);
+    list.push_back(3);
+    list.push_back(4);
+
+    while let Some(back) = list.pop_back() {
+        println!("{}", back);
+    }
+}

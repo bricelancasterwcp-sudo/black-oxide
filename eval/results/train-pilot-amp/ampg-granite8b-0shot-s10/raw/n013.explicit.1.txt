@@ -1,0 +1,15 @@
+fn max(set: &Vec<Int>) -> Int {
+    let mut largest = set.get(0)
+    for x in set {
+        if x > largest {
+            largest = x
+        }
+    }
+    largest
+}
+
+fn main() {
+    let nums = push(push(vec(), 5), 40)
+    print(max(&nums))
+    drop nums
+}

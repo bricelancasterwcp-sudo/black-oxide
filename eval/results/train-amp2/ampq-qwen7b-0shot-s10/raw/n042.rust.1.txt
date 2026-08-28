@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let mut values = vec![12, 5, 20, 8, 17];
+    values.sort_unstable();
+    let largest = values.pop().unwrap();
+    let second_largest = values.pop().unwrap();
+    println!("{}", largest);
+    println!("{}", second_largest);
+}
+```

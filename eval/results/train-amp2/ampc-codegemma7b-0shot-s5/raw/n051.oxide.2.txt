@@ -1,0 +1,8 @@
+fn granite() {
+    print_str("g\n")
+}
+
+fn main() {
+    granite()
+    print_str("\n")
+}

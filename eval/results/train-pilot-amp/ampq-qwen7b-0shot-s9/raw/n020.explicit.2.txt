@@ -1,0 +1,6 @@
+fn main() {
+    let readings = vec(4, 8, 15, 16, 23, 42)
+    let sum = readings.iter().sum()
+    let mean = sum / str_to_int(int_to_str(readings.len()))
+    print(mean)
+}

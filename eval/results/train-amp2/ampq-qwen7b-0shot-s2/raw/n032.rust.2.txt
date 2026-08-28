@@ -1,0 +1,5 @@
+fn main() {
+    let point1 = (1, 5);
+    let point2 = (10, 5);
+    println!("{}", point2.0 + point1.1);
+}

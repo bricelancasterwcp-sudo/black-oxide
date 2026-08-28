@@ -1,0 +1,21 @@
+fn main() {
+    let text_input = "8\noak\n15"
+    let text_to_string = text_input.split_lines().next().unwrap_or("").to_string()
+    let x = parse_int(text_to_string)
+    match x {
+        Some(n) => print(n),
+        None => print_str("bad"),
+    }
+    let text_to_string = text_input.split_lines().nth(1).unwrap_or("").to_string()
+    let x = parse_int(text_to_string)
+    match x {
+        Some(n) => print(n),
+        None => print_str("bad"),
+    }
+    let text_to_string = text_input.split_lines().nth(2).unwrap_or("").to_string()
+    let x = parse_int(text_to_string)
+    match x {
+        Some(n) => print(n),
+        None => print_str("bad"),
+    }
+}

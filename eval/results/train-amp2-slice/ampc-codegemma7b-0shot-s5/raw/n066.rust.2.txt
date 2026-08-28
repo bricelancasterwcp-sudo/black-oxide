@@ -1,0 +1,10 @@
+fn main() {
+    let mut result = 0;
+    for i in [9, 2, 12, 5, 16] {
+        if i < 10 {
+            println!("{}", i);
+            result += 1;
+        }
+    }
+    println!("{} number(s) kept", result);
+}

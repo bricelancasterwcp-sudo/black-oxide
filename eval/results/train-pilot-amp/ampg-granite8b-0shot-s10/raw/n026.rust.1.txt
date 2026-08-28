@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let x = 2026;
+    let text = x.to_string();
+    println!("{}", text.len());
+}
+```
+
+Output:
+```
+4
+```

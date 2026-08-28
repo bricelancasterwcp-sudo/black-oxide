@@ -1,0 +1,11 @@
+fn main() {
+    let mut list = vec()
+    for x in 10 {
+        if x % 3 == 0 {
+            list = push(list, x)
+        }
+    }
+    let sum = list.iter().fold(0, &mut || x + y)
+    print(sum)
+    drop list
+}

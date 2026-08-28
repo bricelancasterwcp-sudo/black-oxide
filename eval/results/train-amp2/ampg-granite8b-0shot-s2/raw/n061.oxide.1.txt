@@ -1,0 +1,15 @@
+struct Point { x: Int, y: Int }
+
+fn area(p: Point) -> Int {
+    p.x * p.y
+}
+
+fn perimeter(p: Point) -> Int {
+    p.x * 2 + p.y * 2
+}
+
+fn main() {
+    let p1 = Point { x: 3, y: 4 }
+    print(area(p1))
+    print(perimeter(p1))
+}

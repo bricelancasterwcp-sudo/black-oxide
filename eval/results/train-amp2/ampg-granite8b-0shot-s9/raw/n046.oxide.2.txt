@@ -1,0 +1,7 @@
+fn main() {
+    let total = 5 + 12 + 3 + 18 + 9
+    let under_ten = total - (12 + 18)
+    let over_ten = total - under_ten
+    print(under_ten)
+    print(over_ten)
+}

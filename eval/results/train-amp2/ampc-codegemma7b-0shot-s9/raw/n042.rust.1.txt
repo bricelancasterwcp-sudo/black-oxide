@@ -1,0 +1,6 @@
+fn main() {
+    let mut nums = [12, 5, 20, 8, 17];
+    nums.sort_unstable();
+    println!("{}", nums[4]);
+    println!("{}", nums[3]);
+}

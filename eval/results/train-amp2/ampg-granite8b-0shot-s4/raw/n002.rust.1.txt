@@ -1,0 +1,3 @@
+fn main() {
+    println!("{}", (1..=6).product::<u32>());
+}

@@ -1,0 +1,159 @@
+fn main() {
+    let scores = vec(2, 9, 5)
+    let sorted_scores = sort(scores)
+    for score in sorted_scores {
+        print(score)
+    }
+}
+
+fn sort(vec: Vec<Int>) -> Vec<Int> {
+    if len(&vec) <= 1 {
+        vec
+    } else {
+        let mut left = vec()
+        let mut right = vec()
+        for i in 0.to_i64(len(&vec) - 1) {
+            let score = get(&vec, i)
+            if score < 5 {
+                left = push(left, score)
+            } else {
+                right = push(right, score)
+            }
+        }
+        concat(sort(left), sort(right))
+    }
+}
+
+fn print(n: Int) {
+    let s = int_to_str(n)
+    print_str(s)
+    print_str("\n")
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    clone(v).len()
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    clone(v).get(i)
+}
+
+fn push(vec: Vec<Int>, x: Int) -> Vec<Int> {
+    let n = vec.len()
+    let mut v = vec
+    v = v.resize(n + 1)
+    v = set(&v, n, x)
+    v
+}
+
+fn set(vec: &Vec<Int>, i: Int, x: Int) -> Vec<Int> {
+    clone(vec).set(i, x)
+}
+
+fn concat(s1: Str, s2: Str) -> Str {
+    clone(s1).concat(s2)
+}
+
+fn int_to_str(n: Int) -> Str {
+    clone(n).to_string()
+}
+
+fn to_float(n: Int) -> Float {
+    clone(n).to_float()
+}
+
+fn trunc(x: Float) -> Int {
+    clone(x).trunc()
+}
+
+fn clone(x: T) -> T {
+    x
+}
+
+fn resize(vec: Vec<Int>, n: Int) -> Vec<Int> {
+    vec.resize(n)
+}
+
+fn get(vec: &Vec<Int>, i: Int) -> Option<Int> {
+    vec.get(i)
+}
+
+fn sort(vec: Vec<Int>) -> Vec<Int> {
+    if len(&vec) <= 1 {
+        vec
+    } else {
+        let mut left = vec()
+        let mut right = vec()
+        for i in 0.to_i64(len(&vec) - 1) {
+            let score = get(&vec, i)
+            if score < 5 {
+                left = push(left, score)
+            } else {
+                right = push(right, score)
+            }
+        }
+        concat(sort(left), sort(right))
+    }
+}
+
+fn print(n: Int) {
+    let s = int_to_str(n)
+    print_str(s)
+    print_str("\n")
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    clone(v).len()
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    clone(v).get(i)
+}
+
+fn push(vec: Vec<Int>, x: Int) -> Vec<Int> {
+    let n = vec.len()
+    let mut v = vec
+    v = v.resize(n + 1)
+    v = set(&v, n, x)
+    v
+}
+
+fn set(vec: &Vec<Int>, i: Int, x: Int) -> Vec<Int> {
+    clone(vec).set(i, x)
+}
+
+fn concat(s1: Str, s2: Str) -> Str {
+    clone(s1).concat(s2)
+}
+
+fn int_to_str(n: Int) -> Str {
+    clone(n).to_string()
+}
+
+fn to_float(n: Int) -> Float {
+    clone(n).to_float()
+}
+
+fn trunc(x: Float) -> Int {
+    clone(x).trunc()
+}
+
+fn clone(x: T) -> T {
+    x
+}
+
+fn resize(vec: Vec<Int>, n: Int) -> Vec<Int> {
+    vec.resize(n)
+}
+
+fn get(vec: &Vec<Int>, i: Int) -> Option<Int> {
+    vec.get(i)
+}
+
+fn main() {
+    let scores = vec(2, 9, 5)
+    let sorted_scores = sort(scores)
+    for score in sorted_scores {
+        print(score)
+    }
+}

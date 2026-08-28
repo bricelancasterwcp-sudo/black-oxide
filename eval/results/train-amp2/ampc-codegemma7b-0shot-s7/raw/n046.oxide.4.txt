@@ -1,0 +1,8 @@
+fn main() {
+    let values = vec(5, 12, 3, 18, 9)
+    let cutoff = 10
+    let under = values.iter().filter(move || x < cutoff).count()
+    let at = values.iter().filter(move || x >= cutoff).count()
+    print(under)
+    print(at)
+}

@@ -1,0 +1,11 @@
+fn print_reverse(s: &Str) {
+    for c in s.chars().rev() {
+        print(&c)
+    }
+}
+
+fn main() {
+    let word = "drum"
+    print_reverse(word)
+    print(word)
+}

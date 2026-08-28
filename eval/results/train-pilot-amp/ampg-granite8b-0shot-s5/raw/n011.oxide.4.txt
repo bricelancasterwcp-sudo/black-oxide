@@ -1,0 +1,33 @@
+fn main() {
+    let four = 4
+    let mut multiples = vec()
+    for x in range(0, 12) {
+        let multiple = push(multiples, four)
+    }
+    let total = fold(multiples, 0, add, x)
+    print(total)
+}
+
+fn fold(v: Vec<Int>, acc: Int, op: Int, x: Int) -> Int {
+    match v {
+        Vec(head, rest) => {
+            let next = op(head, x)
+            fold(rest, acc, op, next)
+        },
+        Vec(nullary) => acc,
+    }
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn main() {
+    let four = 4
+    let mut multiples = vec()
+    for x in range(0, 12) {
+        let multiple = push(multiples, four)
+    }
+    let total = fold(multiples, 0, add, x)
+    print(total)
+}

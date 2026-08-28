@@ -1,0 +1,19 @@
+fn compare_fruits(fruit1: &Str, fruit2: &Str) -> Str {
+    if fruit1.len() > fruit2.len() {
+        return fruit1.to_string()
+    } else if fruit2.len() > fruit1.len() {
+        return fruit2.to_string()
+    } else {
+        return "Equal".to_string()
+    }
+}
+
+fn main() {
+    let fig = "fig".to_string()
+    let banana = "banana".to_string()
+    let kiwi = "kiwi".to_string()
+    let longest_fruit = compare_fruits(&fig, &banana)
+    let longest_fruit = compare_fruits(&longest_fruit, &kiwi)
+    print(longest_fruit)
+    print(longest_fruit.len())
+}

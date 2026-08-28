@@ -1,0 +1,117 @@
+struct Reading { label: Str, values: Vec<Int> }
+
+fn first_big(v: Vec<Int>) -> Int {
+    let found = -1
+    for x in v {
+        if x > 10 {
+            found = x
+            break
+        }
+    }
+    found
+}
+
+fn second(v: Vec<Int>) -> Option<Int> {
+    let x = get(v, 1)?
+    Some(x + 1)
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(vec(), 3), 42) }
+    print(first_big(r.values))            // field access copies: r stays usable
+    let r2 = Reading { label: "lab2", ..r }
+    match second(r2.values) {
+        Some(n) => print(n),
+        None => print_str("too short"),
+    }
+}
+
+struct Point { x: Int, y: Int }
+
+fn distance(p1: Point, p2: Point) -> Float {
+    let x = p2.x - p1.x
+    let y = p2.y - p1.y
+    to_float(x * x + y * y)
+}
+
+fn main() {
+    let p1 = Point { x: 0, y: 0 }
+    let p2 = Point { x: 3, y: 4 }
+    print(distance(p1, p2))
+}
+
+struct Circle { center: Point, radius: Int }
+
+fn area(c: Circle) -> Float {
+    let r2 = to_float(c.radius * c.radius)
+    let pi = 3.14159
+    pi * r2
+}
+
+fn main() {
+    let c = Circle { center: Point { x: 0, y: 0 }, radius: 1000 }
+    print(area(c))
+}
+
+struct Shape {
+    kind: ShapeKind,
+    x: Int,
+    y: Int,
+}
+
+enum ShapeKind {
+    Circle(Int),
+    Rect(Int, Int),
+}
+
+fn area(shape: Shape) -> Float {
+    match shape.kind {
+        ShapeKind => 0.0,
+        Circle(radius) => {
+            let r2 = to_float(radius * radius)
+            let pi = 3.14159
+            pi * r2
+        },
+        Rect(w, h) => to_float(w * h),
+    }
+}
+
+fn main() {
+    let shape = Shape { kind: ShapeKind, x: 100, y: 200 }
+    print(area(shape))
+}
+
+struct Student {
+    name: Str,
+    grades: Vec<Int>,
+}
+
+struct School {
+    name: Str,
+    students: Vec<Student>,
+}
+
+fn average_grade(school: School, student_name: Str) -> Option<Float> {
+    for student in school.students {
+        if student.name == student_name {
+            let mut sum = 0.0
+            for grade in student.grades {
+                sum = sum + to_float(grade)
+            }
+            let count = to_float(len(student.grades))
+            return Some(sum / count)
+        }
+    }
+    None
+}
+
+fn main() {
+    let s = School { name: "Foo High", students: vec() }
+    let s = push(s, Student { name: "Alice", grades: push(vec(), 85) })
+    let s = push(s, Student { name: "Bob", grades: push(push(vec(), 70), 100) })
+    let s = push(s, Student { name: "Charlie", grades: push(push(push(vec(), 90), 80), 90) })
+    match average_grade(s, "Bob") {
+        Some(x) => print(x),
+        None => print_str("not found"),
+    }
+}

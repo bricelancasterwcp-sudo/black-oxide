@@ -1,0 +1,46 @@
+fn main() {
+    getStaticField(input()).parse().map_or("bad", add_one).println()
+}
+
+fn add_one(num: Int) -> Int {
+    num + 1
+}
+
+fn input() -> Str {
+    "417"
+}
+
+fn getStaticField(str: Str) -> Str {
+    str
+}
+
+fn parse(str: Str) -> Int {
+    str.parse().unwrap()
+}
+
+fn println(str: Str) {
+    "println!(" + str + ")"
+}
+
+fn map_or(option: Option<Int>, default: Int, f: &FnOnce<Int>) -> Str {
+    match option {
+        Some(value) => f(value),
+        None => default,
+    }
+}
+
+fn println(str: Str) {
+    "println!(" + str + ")"
+}
+
+fn parse(str: Str) -> Int {
+    str.parse().unwrap()
+}
+
+fn println(str: Str) {
+    print(str)
+}
+
+fn main() {
+    getStaticField(input()).parse().map_or("bad", add_one).println()
+}

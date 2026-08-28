@@ -1,0 +1,8 @@
+struct Granite { opens: Str, closes: Str }
+
+fn main() {
+    let g = Granite { opens: "G", closes: "N" }
+    print(g.opens)
+    print_str("\n")
+    print(g.closes)
+}

@@ -1,0 +1,11 @@
+fn main() {
+  const PI: f64 = 3.0;
+  let side = 4;
+  let area = square(side);
+  println!("The area of the square is {} square units.", area);
+}
+
+fn square(side: u32) -> f64 {
+  PI * (side as f64) * (side as f64)
+}
+

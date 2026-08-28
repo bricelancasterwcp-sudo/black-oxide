@@ -1,0 +1,11 @@
+fn cube_sum_to_5() -> Int {
+    let total = 0
+    for x in 1 <= range(0, 6) {
+        total = total + x * x * x
+    }
+    total
+}
+
+fn main() {
+    print(cube_sum_to_5())
+}

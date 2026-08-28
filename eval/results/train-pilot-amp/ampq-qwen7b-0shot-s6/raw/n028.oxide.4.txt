@@ -1,0 +1,8 @@
+fn main() {
+    let input = parse_int("abc")?
+    if input.is_none() {
+        print_str("bad")
+    } else {
+        print(input.unwrap())
+    }
+}

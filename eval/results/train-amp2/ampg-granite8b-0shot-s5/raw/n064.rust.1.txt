@@ -1,0 +1,10 @@
+```rust
+const LIST: &[i32] = &[10, 20];
+
+fn main() {
+    let p1 = LIST.get(0);
+    let p2 = LIST.get(3);
+    println!("p1 = {:?}", p1);
+    println!("p2 = {:?}", p2);
+}
+```

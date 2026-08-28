@@ -1,0 +1,9 @@
+fn main() {
+    let mut counter = 0
+    for x in 1.range(36) {
+        if 36 % x == 0 {
+            counter = counter + 1
+        }
+    }
+    print(counter)
+}

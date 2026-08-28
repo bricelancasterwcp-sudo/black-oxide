@@ -1,0 +1,24 @@
+fn walk_and_print(v: Vec<Int>) -> Int {
+    let mut total = 0
+    let mut count = 0
+    for x in v {
+        if x % 2 == 1 {
+            print(x * 2)
+            print_str("\n")
+            count = count + 1
+        } else {
+            total = total + x
+        }
+    }
+    if count == 0 {
+        print_str("\n")
+    }
+    total
+}
+
+fn main() {
+    let v = push(push(push(push(vec(), 7), 4), 9), 10)
+    let total = walk_and_print(v)
+    print_str("\n")
+    print(total)
+}

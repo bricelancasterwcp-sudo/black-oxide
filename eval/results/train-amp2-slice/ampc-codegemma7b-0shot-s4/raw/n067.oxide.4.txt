@@ -1,0 +1,273 @@
+fn main() {
+    let mut acc = 0
+    let mut total = 0
+    for x in walk(7, 4, 9, 10) {
+        if x % 2 == 1 {
+            print(x * 2)
+            println()
+        } else {
+            acc = acc + x
+        }
+    }
+    print(acc)
+}
+
+fn walk(a: Int, b: Int, c: Int, d: Int) -> Vec<Int> {
+    push(push(push(vec(), a), b), c)
+    push(walk(b, c, d, a), d)
+}
+
+fn push(mutv: Vec<Int>, x: Int) -> Vec<Int> {
+    vpush(mutv, x)
+    mutv
+}
+
+fn vpush(mutv: Vec<Int>, x: Int) {
+    mutv.push(x)
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    if i >= len(v) {
+        None
+    } else {
+        Some(v.get(i))
+    }
+}
+
+fn len(v: Vec<Int>) -> Int {
+    let mut acc = 0
+    for _ in v {
+        acc = acc + 1
+    }
+    acc
+}
+
+fn print(x: Int) {
+    let s = int_to_str(x)
+    for c in chars(s) {
+        print_char(c)
+    }
+}
+
+fn print_str(s: Str) {
+    for c in chars(s) {
+        print_char(c)
+    }
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut acc = Str("")
+    let mut x = n
+    while x >= 10 {
+        let y = x % 10
+        acc = concat(int_to_str(trunc(x / 10)), char_to_str(y + 48))
+        x = trunc(x / 10)
+    }
+    acc = concat(acc, char_to_str(x + 48))
+    acc
+}
+
+fn char_to_str(c: Int) -> Str {
+    let s = int_to_str(c)
+    get(chars(s), 0).unwrap()
+}
+
+fn print_char(c: Str) {
+    if c == "0" {
+        print(0)
+    } else if c == "1" {
+        print(1)
+    } else if c == "2" {
+        print(2)
+    } else {
+        print(3)
+    }
+}
+
+fn print(x: Int) {
+    let s = int_to_str(x)
+    for c in chars(s) {
+        print_char(c)
+    }
+    print_char("\n".to_str())
+}
+
+fn print_str(s: Str) {
+    for c in chars(s) {
+        print_char(c)
+    }
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut acc = Str("")
+    let mut x = n
+    while x >= 10 {
+        let y = x % 10
+        acc = concat(int_to_str(trunc(x / 10)), char_to_str(y + 48))
+        x = trunc(x / 10)
+    }
+    acc = concat(acc, char_to_str(x + 48))
+    acc
+}
+
+fn char_to_str(c: Int) -> Str {
+    let s = int_to_str(c)
+    get(chars(s), 0).unwrap()
+}
+
+fn print_char(c: Str) {
+    if c == "0" {
+        print(0)
+    } else if c == "1" {
+        print(1)
+    } else if c == "2" {
+        print(2)
+    } else {
+        print(3)
+    }
+}
+
+fn print(x: Int) {
+    let s = int_to_str(x)
+    for c in chars(s) {
+        print_char(c)
+    }
+    print_char("\n".to_str())
+}
+
+fn print_str(s: Str) {
+    for c in chars(s) {
+        print_char(c)
+    }
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut acc = Str("")
+    let mut x = n
+    while x >= 10 {
+        let y = x % 10
+        acc = concat(int_to_str(trunc(x / 10)), char_to_str(y + 48))
+        x = trunc(x / 10)
+    }
+    acc = concat(acc, char_to_str(x + 48))
+    acc
+}
+
+fn char_to_str(c: Int) -> Str {
+    let s = int_to_str(c)
+    get(chars(s), 0).unwrap()
+}
+
+fn print_char(c: Str) {
+    if c == "0" {
+        print(0)
+    } else if c == "1" {
+        print(1)
+    } else if c == "2" {
+        print(2)
+    } else {
+        print(3)
+    }
+}
+
+fn print(x: Int) {
+    let s = int_to_str(x)
+    for c in chars(s) {
+        print_char(c)
+    }
+    print_char("\n".to_str())
+}
+
+fn print_str(s: Str) {
+    for c in chars(s) {
+        print_char(c)
+    }
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut acc = Str("")
+    let mut x = n
+    while x >= 10 {
+        let y = x % 10
+        acc = concat(int_to_str(trunc(x / 10)), char_to_str(y + 48))
+        x = trunc(x / 10)
+    }
+    acc = concat(acc, char_to_str(x + 48))
+    acc
+}
+
+fn char_to_str(c: Int) -> Str {
+    let s = int_to_str(c)
+    get(chars(s), 0).unwrap()
+}
+
+fn print_char(c: Str) {
+    if c == "0" {
+        print(0)
+    } else if c == "1" {
+        print(1)
+    } else if c == "2" {
+        print(2)
+    } else {
+        print(3)
+    }
+}
+
+fn print(x: Int) {
+    let s = int_to_str(x)
+    for c in chars(s) {
+        print_char(c)
+    }
+    print_char("\n".to_str())
+}
+
+fn print_str(s: Str) {
+    for c in chars(s) {
+        print_char(c)
+    }
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut acc = Str("")
+    let mut x = n
+    while x >= 10 {
+        let y = x % 10
+        acc = concat(int_to_str(trunc(x / 10)), char_to_str(y + 48))
+        x = trunc(x / 10)
+    }
+    acc = concat(acc, char_to_str(x + 48))
+    acc
+}
+
+fn char_to_str(c: Int) -> Str {
+    let s = int_to_str(c)
+    get(chars(s), 0).unwrap()
+}
+
+fn print_char(c: Str) {
+    if c == "0" {
+        print(0)
+    } else if c == "1" {
+        print(1)
+    } else if c == "2" {
+        print(2)
+    } else {
+        print(3)
+    }
+}
+
+fn print(x: Int) {
+    let s = int_to_str(x)
+    for c in chars(s) {
+        print_char(c)
+    }
+    print_char("\n".to_str())
+}
+
+fn print_str(s: Str) {
+    for c in chars(s) {
+        print_char(c)
+    }
+}
+
+fn

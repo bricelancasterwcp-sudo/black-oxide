@@ -1,0 +1,10 @@
+fn main() {
+    let v = vec(5, 3, 9, 1, 7)
+    let mut smallest = get(v, 0).unwrap()
+    for x in v {
+        if x < smallest {
+            smallest = x
+        }
+    }
+    print(smallest)
+}

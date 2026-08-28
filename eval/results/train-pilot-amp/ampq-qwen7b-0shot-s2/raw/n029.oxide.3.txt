@@ -1,0 +1,4 @@
+fn main() {
+    let text = concat("one", " two", " three")
+    print(text)
+}

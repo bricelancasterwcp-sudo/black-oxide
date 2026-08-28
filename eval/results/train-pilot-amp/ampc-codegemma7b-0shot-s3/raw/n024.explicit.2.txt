@@ -1,0 +1,11 @@
+fn main() {
+    let word = "banana".to_string()
+    let mut count = 0
+    for c in word.chars() {
+        if c == "a".chars().next().unwrap() {
+            count = count + 1
+        }
+    }
+    print(count)
+    drop word
+}

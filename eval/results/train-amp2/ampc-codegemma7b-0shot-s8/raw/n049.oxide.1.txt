@@ -1,0 +1,43 @@
+fn main() {
+    let mut f8 = 8
+    let mut f3 = 3
+    let mut f11 = 11
+    let mut f6 = 6
+    if f8 < f3 {
+        if f8 < f11 {
+            if f8 < f6 {
+                print(f8)
+                print(f11 - f8)
+            } else {
+                print(f6)
+                print(f11 - f6)
+            }
+        } else {
+            if f3 < f6 {
+                print(f3)
+                print(f11 - f3)
+            } else {
+                print(f6)
+                print(f11 - f6)
+            }
+        }
+    } else {
+        if f3 < f11 {
+            if f3 < f6 {
+                print(f3)
+                print(f11 - f3)
+            } else {
+                print(f6)
+                print(f11 - f6)
+            }
+        } else {
+            if f8 < f6 {
+                print(f8)
+                print(f11 - f8)
+            } else {
+                print(f6)
+                print(f11 - f6)
+            }
+        }
+    }
+}

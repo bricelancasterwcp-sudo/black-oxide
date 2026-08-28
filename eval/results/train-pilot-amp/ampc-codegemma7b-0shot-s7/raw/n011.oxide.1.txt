@@ -1,0 +1,8 @@
+fn main() {
+    let mut numbers = vec(4, 8, 12, 16, 20, 24)
+    let mut total = 0
+    for num in numbers {
+        total = total + num
+    }
+    print(total)
+}

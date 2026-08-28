@@ -1,0 +1,14 @@
+fn lookup(v: &Vec<Int>, n: Int) -> Option<Int> {
+    if n >= 0 && n <= 9 {
+        v.get(n)
+    } else {
+        None
+    }
+}
+
+fn main() {
+    let list = vec(10, 20)
+    print(&lookup, &list, 1)
+    print(&lookup, &list, 4)
+    drop list
+}

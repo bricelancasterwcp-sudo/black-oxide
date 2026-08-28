@@ -1,0 +1,17 @@
+fn get_second(list: &Vec<Int>) -> Option<Int> {
+    if list.len() > 1 {
+        Some(list.get(1).unwrap())
+    } else {
+        None
+    }
+}
+
+fn main() {
+    let nums = push(push(vec(), 7), 8000)
+    let second = get_second(&nums)
+    match second {
+        Some(x) => print(x),
+        None => print("None"),
+    }
+    drop nums
+}

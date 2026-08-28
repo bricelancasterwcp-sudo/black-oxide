@@ -1,0 +1,7 @@
+fn main() {
+    let mut product = 1;
+    for number in 1..=6 {
+        product *= number;
+    }
+    println!("{}", product);
+}

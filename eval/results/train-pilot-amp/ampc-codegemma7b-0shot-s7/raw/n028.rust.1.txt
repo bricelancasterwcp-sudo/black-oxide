@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let number = std::io::stdin().read_line().unwrap().parse::<usize>();
+    match number {
+        Ok(_) => println!("Good"),
+        Err(_) => println!("Bad")
+    }
+}
+```

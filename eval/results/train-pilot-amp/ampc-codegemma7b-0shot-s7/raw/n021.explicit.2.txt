@@ -1,0 +1,342 @@
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(len(concat(chars("programming"), chars("a"))))
+}
+
+fn main() {
+    print(

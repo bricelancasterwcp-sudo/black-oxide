@@ -1,0 +1,320 @@
+fn main() {
+    let mut multiples = vec()
+    for i in range(0, 6) {
+        push(multiples, 4 * i)
+    }
+    let total = add(&mutmultiples, &mutmultiples)
+    print(total)
+    drop multiples
+}
+
+fn add(a: &Vec<Int>, b: &Vec<Int>) -> Int {
+    let mut result = 0
+    for i in range(0, a.len()) {
+        result = result + a.get(i).unwrap()
+    }
+    for i in range(0, b.len()) {
+        result = result + b.get(i).unwrap()
+    }
+    result
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in a.to(b) {
+        push(result, i)
+    }
+    result
+}
+
+fn push(mutvec: &Vec<Int>, new_item: Int) -> Vec<Int> {
+    let mut v = clone(&mutvec)
+    for i in range(0, v.len()) {
+        v = functional_update(v, i, v.get(i).unwrap())
+    }
+    functional_update(v, v.len(), new_item)
+}
+
+fn functional_update(vec: Vec<Int>, i: Int, new_item: Int) -> Vec<Int> {
+    let mut result = vec
+    result.set(i, new_item)
+    result
+}
+
+fn clone(v: &Vec<Int>) -> Vec<Int> {
+    push(vec(), v.get(0).unwrap())
+}
+
+fn print(x: Int) {
+    print_str(format_int(x))
+}
+
+fn format_int(x: Int) -> Str {
+    let mut s = str()
+    if x == 0 {
+        push(s, "0")
+    } else {
+        let mut n = x
+        let mut digits = vec()
+        while n != 0 {
+            push(digits, (n % 10).to_string())
+            n = n / 10
+        }
+        for i in range(0, digits.len()) {
+            push(s, digits.get(digits.len() - i - 1).unwrap())
+        }
+    }
+    s
+}
+
+fn str() -> Str {
+    ""
+}
+
+fn drop_vec(v: &Vec<Int>) {
+    for i in range(0, v.len()) {
+        drop v
+    }
+}
+
+fn drop_str(s: &Str) {
+    for i in range(0, s.len()) {
+        drop s
+    }
+}
+
+fn drop_int(n: &Int) {
+    drop n
+}
+
+fn drop_float(f: &Float) {
+    drop f
+}
+
+fn drop_bool(b: &Bool) {
+    drop b
+}
+
+fn drop_unit(u: &Unit) {
+    drop u
+}
+
+fn drop_option(o: &Option<Int>) {
+    drop o
+}
+
+fn drop_result(r: &Result<Int, Str>) {
+    drop r
+}
+
+fn drop_vec_int(v: &Vec<Int>) {
+    for i in range(0, v.len()) {
+        drop v
+    }
+}
+
+fn drop_struct(s: &Circle) {
+    drop s
+}
+
+fn drop_enum(e: &Shape) {
+    drop e
+}
+
+fn drop_fn(f: &Fn) {
+    drop f
+}
+
+fn drop_trait(t: &Trait) {
+    drop t
+}
+
+fn drop_ref(r: &Ref) {
+    drop r
+}
+
+fn drop_ref_mut(r: &RefMut) {
+    drop r
+}
+
+fn drop_box(b: &Box) {
+    drop b
+}
+
+fn drop_arc(a: &Arc) {
+    drop a
+}
+
+fn drop_rc(r: &Rc) {
+    drop r
+}
+
+fn drop_cell(c: &Cell) {
+    drop c
+}
+
+fn drop_ref_cell(r: &RefCell) {
+    drop r
+}
+
+fn drop_slice(s: &Slice) {
+    drop s
+}
+
+fn drop_str_slice(s: &StrSlice) {
+    drop s
+}
+
+fn drop_trait_object(t: &TraitObject) {
+    drop t
+}
+
+fn drop_generator(g: &Generator) {
+    drop g
+}
+
+fn drop_generator_state(g: &GeneratorState) {
+    drop g
+}
+
+fn drop_tuple(t: &Tuple) {
+    drop t
+}
+
+fn drop_array(a: &Array) {
+    drop a
+}
+
+fn drop_tuple_array(a: &TupleArray) {
+    drop a
+}
+
+fn drop_tuple_array_vec(a: &TupleArrayVec) {
+    drop a
+}
+
+fn drop_tuple_array_box(a: &TupleArrayBox) {
+    drop a
+}
+
+fn drop_tuple_array_arc(a: &TupleArrayArc) {
+    drop a
+}
+
+fn drop_tuple_array_rc(a: &TupleArrayRc) {
+    drop a
+}
+
+fn drop_tuple_array_cell(a: &TupleArrayCell) {
+    drop a
+}
+
+fn drop_tuple_array_ref_cell(a: &TupleArrayRefCell) {
+    drop a
+}
+
+fn drop_tuple_array_slice(a: &TupleArraySlice) {
+    drop a
+}
+
+fn drop_tuple_array_str_slice(a: &TupleArrayStrSlice) {
+    drop a
+}
+
+fn drop_tuple_array_trait_object(a: &TupleArrayTraitObject) {
+    drop a
+}
+
+fn drop_tuple_array_generator(a: &TupleArrayGenerator) {
+    drop a
+}
+
+fn drop_tuple_array_generator_state(a: &TupleArrayGeneratorState) {
+    drop a
+}
+
+fn drop_tuple_array_tuple(a: &TupleArrayTuple) {
+    drop a
+}
+
+fn drop_tuple_array_array(a: &TupleArrayArray) {
+    drop a
+}
+
+fn drop_tuple_array_tuple_array(a: &TupleArrayTupleArray) {
+    drop a
+}
+
+fn drop_tuple_array_tuple_array_vec(a: &TupleArrayTupleArrayVec) {
+    drop a
+}
+
+fn drop_tuple_array_tuple_array_box(a: &TupleArrayTupleArrayBox) {
+    drop a
+}
+
+fn drop_tuple_array_tuple_array_arc(a: &TupleArrayTupleArrayArc) {
+    drop a
+}
+
+fn drop_tuple_array_tuple_array_rc(a: &TupleArrayTupleArrayRc) {
+    drop a
+}
+
+fn drop_tuple_array_tuple_array_cell(a: &TupleArrayTupleArrayCell) {
+    drop a
+}
+
+fn drop_tuple_array_tuple_array_ref_cell(a: &TupleArrayTupleArrayRefCell) {
+    drop a
+}
+
+fn drop_tuple_array_tuple_array_slice(a: &TupleArrayTupleArraySlice) {
+    drop a
+}
+
+fn drop_tuple_array_tuple_array_str_slice(a: &TupleArrayTupleArrayStrSlice) {
+    drop a
+}
+
+fn drop_tuple_array_tuple_array_trait_object(a: &TupleArrayTupleArrayTraitObject) {
+    drop a
+}
+
+fn drop_tuple_array_tuple_array_generator(a: &TupleArrayTupleArrayGenerator) {
+    drop a
+}
+
+fn drop_tuple_array_tuple_array_generator_state(a: &TupleArrayTupleArrayGeneratorState) {
+    drop a
+}
+
+fn drop_ref_vec(r: &RefVec) {
+    drop r
+}
+
+fn drop_ref_vec_vec(r: &RefVecVec) {
+    drop r
+}
+
+fn drop_ref_vec_box(r: &RefVecBox) {
+    drop r
+}
+
+fn drop_ref_vec_arc(r: &RefVecArc) {
+    drop r
+}
+
+fn drop_ref_vec_rc(r: &RefVecRc) {
+    drop r
+}
+
+fn drop_ref_vec_cell(r: &RefVecCell) {
+    drop r
+}
+
+fn drop_ref_vec_ref_cell(r: &RefVecRefCell) {
+    drop r
+}
+
+fn drop_ref_vec_slice(r: &

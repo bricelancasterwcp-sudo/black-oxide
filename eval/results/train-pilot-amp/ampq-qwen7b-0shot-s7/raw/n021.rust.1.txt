@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let word = "programming";
+    let length = word.len();
+    println!("The word '{}' has {} characters.", word, length);
+}
+```

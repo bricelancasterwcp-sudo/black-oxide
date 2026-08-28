@@ -1,0 +1,10 @@
+struct WordBlack {
+    black: Str,
+    oxide: Str,
+}
+
+fn main() {
+    let black_oxide = WordBlack { black: "black", oxide: "oxide" }
+    print(black_oxide.black)
+    print(black_oxide.oxide)
+}

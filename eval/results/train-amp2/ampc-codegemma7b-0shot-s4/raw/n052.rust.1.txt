@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let word = "banana";
+
+    for (i, c) in word.char_indices() {
+        if c == 'n' {
+            println!("{}", i);
+        }
+    }
+}
+```

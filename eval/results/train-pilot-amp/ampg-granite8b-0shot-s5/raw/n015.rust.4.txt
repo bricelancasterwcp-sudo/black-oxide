@@ -1,0 +1,7 @@
+fn main() {
+    let nums = [1, 2, 3, 4, 5];
+
+    let count = nums.iter().filter(|&x| *x > 4).count();
+
+    println!("{}", count);
+}

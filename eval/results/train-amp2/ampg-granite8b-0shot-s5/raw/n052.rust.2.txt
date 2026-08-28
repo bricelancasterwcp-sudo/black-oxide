@@ -1,0 +1,11 @@
+fn main() {
+    let mut positions = Vec::new();
+    for (pos, ch) in "banana".chars().enumerate() {
+        if ch == 'n' {
+            positions.push(pos);
+        }
+    }
+    for pos in positions {
+        println!("{}", pos);
+    }
+}

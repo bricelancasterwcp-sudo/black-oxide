@@ -1,0 +1,44 @@
+struct List { head: Item, tail: Vec<Item> }
+
+enum Item {
+    Empty,
+    Data(Int),
+    Cons(Box<Item>),
+}
+
+fn get(l: List, pos: Int) -> Option<Int> {
+    let mut i = 0
+    for e in l.tail {
+        if i == pos {
+            return match e {
+                Empty => None,
+                Data(n) => Some(n),
+                Cons(e) => get(List { head: Empty, tail: vec(e) }, 0),
+            }
+        }
+        i = i + 1
+    }
+    if l.head == Empty {
+        None
+    } else {
+        Some(match l.head {
+                Empty => 0,
+                Data(n) => n,
+                Cons(e) => get(List { head: Empty, tail: vec(e) }, 0),
+                _ => 0,
+                _ => 0,
+            })
+    }
+}
+
+fn main() {
+    let list = List { head: Item.data(10), tail: push(vec(), Item.data(20)) }
+    match get(list, 0) {
+        Some(n) => print(n),
+        None => print_str("empty list"),
+    }
+    match get(list, 3) {
+        Some(n) => print(n),
+        None => print_str("empty list"),
+    }
+}

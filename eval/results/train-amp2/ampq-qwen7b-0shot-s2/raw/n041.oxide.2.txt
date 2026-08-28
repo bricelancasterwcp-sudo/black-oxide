@@ -1,0 +1,23 @@
+fn sort(a: Vec<Int>) -> Vec<Int> {
+    let mut sorted = a
+    let n = len(sorted)
+    for i in range(0, n) {
+        for j in range(0, n - i - 1) {
+            let x = get(sorted, j)?
+            let y = get(sorted, j + 1)?
+            if x > y {
+                sorted.set(j, y)
+                sorted.set(j + 1, x)
+            }
+        }
+    }
+    sorted
+}
+
+fn main() {
+    let measurements = push(push(push(vec(), 9), 2), 7)
+    let sorted = sort(measurements)
+    for x in sorted {
+        print(x)
+    }
+}

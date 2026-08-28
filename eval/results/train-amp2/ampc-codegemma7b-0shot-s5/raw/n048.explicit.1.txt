@@ -1,0 +1,17 @@
+fn print_positions(list: &Vec<Int>) {
+    let mut i = 0
+    for x in list {
+        if x == &four {
+            print(i)
+        }
+        i = i + 1
+    }
+}
+
+fn main() {
+    let four = 4
+    let list = vec(4, 7, 4, 9, 4)
+    print_positions(&list)
+    drop four
+    drop list
+}

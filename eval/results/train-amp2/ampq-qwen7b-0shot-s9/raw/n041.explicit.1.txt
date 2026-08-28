@@ -1,0 +1,13 @@
+fn sort(a: Int, b: Int, c: Int, d: Int) -> Vec<Int> {
+    let mut arr = vec(a, b, c, d)
+    arr.sort()
+    arr
+}
+
+fn main() {
+    let sorted = sort(9, 2, 7, 4)
+    for x in sorted {
+        print_str(x.to_str())
+    }
+    drop sorted
+}

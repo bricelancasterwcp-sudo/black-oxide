@@ -1,0 +1,9 @@
+use std::cmp::Ordering;
+
+fn main() {
+    let mut measurements: Vec<i32> = vec![9, 2, 7, 4];
+    measurements.sort_by(|a, b| a.cmp(b));
+    for measurement in measurements {
+        println!("{}", measurement);
+    }
+}

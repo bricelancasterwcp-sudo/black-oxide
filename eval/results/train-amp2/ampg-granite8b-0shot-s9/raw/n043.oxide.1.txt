@@ -1,0 +1,12 @@
+struct Queue {
+    head: Vec<Int>,
+    tail: Vec<Int>,
+}
+
+fn main() {
+    let q = Queue { head: vec(), tail: range(1, 6) }
+    let h = push(q.head, get(q.tail, 0)?)
+    let t = pop(q.tail)
+    print(h)
+    print(t)
+}

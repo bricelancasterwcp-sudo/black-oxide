@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let input = vec![7, 8, 9];
+    let result = get_second_item(&input);
+    match result {
+        Some(val) => println!("Second item: {}", val),
+        None => println!("No second item"),
+    }
+}
+
+fn get_second_item(list: &[i32]) -> Option<i32> {
+    list.get(1).cloned()
+}
+```

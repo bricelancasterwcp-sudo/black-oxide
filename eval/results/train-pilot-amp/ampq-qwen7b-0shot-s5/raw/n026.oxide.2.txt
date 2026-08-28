@@ -1,0 +1,24 @@
+struct NumberText {
+    text: Str,
+}
+
+fn int_to_text(n: Int) -> NumberText {
+    if n == 0 {
+        NumberText(text == "zero")
+    } else if n == 1 {
+        NumberText(text == "one")
+    } else if n == 2 {
+        NumberText(text == "two")
+    } else {
+        NumberText(text == "twenty two six")
+    }
+}
+
+fn main() {
+    let twenty_two_six = int_to_text(2026)
+    let text_length = str_len(twenty_two_six.text)
+    print_str(twenty_two_six.text)
+    print_str(" has ")
+    print(text_length)
+    print_str(" characters")
+}

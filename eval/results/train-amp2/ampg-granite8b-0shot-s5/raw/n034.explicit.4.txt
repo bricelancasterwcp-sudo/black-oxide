@@ -1,0 +1,283 @@
+fn get_second_item(list: Vec<Int>) -> Option<Int> {
+    match list {
+        Vec(_, y, _) => Some(y),
+        Vec(_, _, z) => Some(z),
+        Vec(_, _, _) => None,
+    }
+}
+
+fn main() {
+    print(get_second_item(range(7, 10))?)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut v = push(vec(), a)
+    while a < b {
+        v = push(v, a)
+        a = a + 1
+    }
+    v
+}
+
+fn print(x: Int) {
+    println(str_concat("Number: ", str_from_int(x)))
+}
+
+fn println(s: Str) {
+    IO.println(s)
+}
+
+fn str_concat(s: Str, t: Str) -> Str {
+    let mut v = vec()
+    let mut i = 0
+    while i < str_len(s) {
+        v = push(v, str_get(s, i))
+        i = i + 1
+    }
+    i = 0
+    while i < str_len(t) {
+        v = push(v, str_get(t, i))
+        i = i + 1
+    }
+    str_from_chars(v)
+}
+
+fn str_from_int(n: Int) -> Str {
+    str_from_chars(push(push(push(push(push(vec(), str_get("0", n % 10))), str_get("0", n % 100 / 10)), str_get("0", n % 1000 / 100)), str_get("0", n / 1000)))
+}
+
+fn str_get(s: Str, i: Int) -> Str {
+    chars(s).index(i)
+}
+
+fn str_from_chars(v: Vec<Str>) -> Str {
+    concat(str_concat(str_concat(str_concat(str_concat(str_concat(str_concat("\"", chars(v).index(0)), "\""), chars(v).index(1)), "\""), chars(v).index(2)), "\""), chars(v).index(3))
+}
+
+fn main() {
+    print(sum_big(clone(&nums), 10))
+    drop nums
+    print(sum_big(&bigger, 10))
+    drop bigger
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let total = 0
+    let i = 0
+    while i < vec_len(v) {
+        if vec_get(v, i) > limit {
+            total = total + vec_get(v, i)
+        }
+        i = i + 1
+    }
+    total
+}
+
+fn extend(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut v = push(vec(), a)
+    let mut i = a
+    while i < b {
+        v = push(v, i)
+        i = i + 1
+    }
+    v
+}
+
+struct Point {
+    x: Int,
+    y: Int,
+}
+
+struct Circle {
+    radius: Float,
+    center: Point,
+}
+
+fn area(shape: &Shape) -> Float {
+    match shape {
+        Point(_, _) => 0.0,
+        Circle(c) => PI * c.radius * c.radius,
+    }
+}
+
+fn main() {
+    print(area(&circle))
+    drop circle
+    print(area(&square))
+    drop square
+}
+
+fn circle() -> Shape {
+    Circle(Circle { radius: 5.0, center: Point(5, 5) })
+}
+
+fn square() -> Shape {
+    Point(Point { x: 5, y: 5 }, Point(5, 5))
+}
+
+struct Shape {
+    area: Float,
+}
+
+fn main() {
+    let nums = push(push(vec(), 5), 40)
+    let bigger = extend(clone(&nums), 70)
+    print(sum_big(&nums, 10))
+    drop nums
+    print(sum_big(&bigger, 10))
+    drop bigger
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let total = 0
+    let i = 0
+    while i < vec_len(v) {
+        if vec_get(v, i) > limit {
+            total = total + vec_get(v, i)
+        }
+        i = i + 1
+    }
+    total
+}
+
+fn extend(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut v = push(vec(), a)
+    let mut i = a
+    while i < b {
+        v = push(v, i)
+        i = i + 1
+    }
+    v
+}
+
+fn main() {
+    let nums = push(push(vec(), 5), 40)
+    let bigger = extend(clone(&nums), 70)
+    print(sum_big(&nums, 10))
+    drop nums
+    print(sum_big(&bigger, 10))
+    drop bigger
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let total = 0
+    let i = 0
+    while i < vec_len(v) {
+        if vec_get(v, i) > limit {
+            total = total + vec_get(v, i)
+        }
+        i = i + 1
+    }
+    total
+}
+
+fn extend(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut v = push(vec(), a)
+    let mut i = a
+    while i < b {
+        v = push(v, i)
+        i = i + 1
+    }
+    v
+}
+
+fn main() {
+    print(sum_big(clone(&nums), 10))
+    drop nums
+    print(sum_big(&bigger, 10))
+    drop bigger
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let total = 0
+    let i = 0
+    while i < vec_len(v) {
+        if vec_get(v, i) > limit {
+            total = total + vec_get(v, i)
+        }
+        i = i + 1
+    }
+    total
+}
+
+fn extend(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut v = push(vec(), a)
+    let mut i = a
+    while i < b {
+        v = push(v, i)
+        i = i + 1
+    }
+    v
+}
+
+fn main() {
+    let nums = push(push(vec(), 5), 40)
+    let bigger = extend(clone(&nums), 70)
+    print(sum_big(&nums, 10))
+    drop nums
+    print(sum_big(&bigger, 10))
+    drop bigger
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let total = 0
+    let i = 0
+    while i < vec_len(v) {
+        if vec_get(v, i) > limit {
+            total = total + vec_get(v, i)
+        }
+        i = i + 1
+    }
+    total
+}
+
+fn extend(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut v = push(vec(), a)
+    let mut i = a
+    while i < b {
+        v = push(v, i)
+        i = i + 1
+    }
+    v
+}
+
+fn main() {
+    print(sum_big(clone(&nums), 10))
+    drop nums
+    print(sum_big(&bigger, 10))
+    drop bigger
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let total = 0
+    let i = 0
+    while i < vec_len(v) {
+        if vec_get(v, i) > limit {
+            total = total + vec_get(v, i)
+        }
+        i = i + 1
+    }
+    total
+}
+
+fn extend(v: Vec<Int>, x: Int) -> Vec

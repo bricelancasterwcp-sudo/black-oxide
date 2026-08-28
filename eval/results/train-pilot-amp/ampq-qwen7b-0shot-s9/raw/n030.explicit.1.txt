@@ -1,0 +1,19 @@
+fn count_vowels(word: &Str) -> Int {
+    let vowels = "aeiouAEIOU"
+    let mut count = 0
+    for char in chars(word) {
+        if vowels.contains(char) {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn main() {
+    let word = "Oxide Explicit"
+    let vowel_count = count_vowels(&word)
+    print_str(word)
+    print(" has ")
+    print(vowel_count)
+    print_str(" vowels")
+}

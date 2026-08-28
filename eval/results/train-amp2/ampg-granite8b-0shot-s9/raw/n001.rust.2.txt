@@ -1,0 +1,9 @@
+fn main() {
+    let mut total = 0;
+
+    for i in 1..=5 {
+        total += i * i * i;
+    }
+
+    println!("The sum of the cubes from 1 to 5 is: {}", total);
+}

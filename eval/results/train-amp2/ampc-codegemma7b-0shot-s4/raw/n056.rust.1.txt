@@ -1,0 +1,12 @@
+fn main() {
+    let mut sum = 0;
+    let mut count = 0;
+    for c in "7,x,9,?" {
+        if let '0'..='9' = c {
+            sum += c as i32 - '0' as i32;
+            count += 1;
+        }
+    }
+    println!("Sum: {}", sum);
+    println!("Count: {}", count);
+}

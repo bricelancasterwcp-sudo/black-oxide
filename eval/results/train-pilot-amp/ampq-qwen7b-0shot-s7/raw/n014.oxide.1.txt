@@ -1,0 +1,16 @@
+struct Reading { values: Vec<Int> }
+
+fn min(v: Vec<Int>) -> Int {
+    let mut min = v.get(0)?.clone()
+    for x in v {
+        if x < min {
+            min = x
+        }
+    }
+    min
+}
+
+fn main() {
+    let r = Reading { values: vec(5, 3, 9, 1, 7) }
+    print(min(r.values))
+}

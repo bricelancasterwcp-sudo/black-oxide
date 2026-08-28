@@ -1,0 +1,5 @@
+fn main() {
+    let word = "banana"
+    let count = word.chars().filter_eq("a").len()
+    print(count)
+}

@@ -1,0 +1,19 @@
+fn coffee_letters(s: Str) -> Vec<Str> {
+    let mut seen: Vec<Char> = vec()
+    let mut output: Vec<Str> = vec()
+    for c in s.chars() {
+        if !seen.contains_char(c) {
+            seen.push(c)
+            output.push(to_str(c))
+        }
+    }
+    output
+}
+
+fn main() {
+    let s = "coffee"
+    for l in coffee_letters(s) {
+        print_str(l)
+        print_str("\n")
+    }
+}

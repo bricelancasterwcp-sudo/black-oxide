@@ -1,0 +1,29 @@
+struct Range {
+    start: Int,
+    end: Int,
+}
+
+fn sum_even(range: Range) -> Int {
+    let mut sum = 0
+    for x in range.start.range(range.end) {
+        if x % 2 == 0 {
+            sum = sum + x
+        }
+    }
+    sum
+}
+
+fn range(start: Int, end: Int) -> Vec<Int> {
+    let mut result = Vec()
+    let mut i = start
+    while i < end {
+        result = push(result, i)
+        i = i + 1
+    }
+    result
+}
+
+fn main() {
+    let r = Range { start: 1, end: 21 }
+    print(sum_even(r))
+}

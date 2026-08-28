@@ -1,0 +1,342 @@
+fn main() {
+    let word = Str("programming")
+    print(chars(word).len())
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut result = Vec()
+    for c in s {
+        result = push(result, Str(c))
+    }
+    result
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    let mut result = v
+    result.push(x)
+    result
+}
+
+fn len(v: &Vec<Str>) -> Int {
+    let mut result = Int(0)
+    for _ in v {
+        result = add(result, Int(1))
+    }
+    result
+}
+
+fn add(a: Int, b: Int) -> Int {
+    Int(a.val + b.val)
+}
+
+struct Str {
+    val: String,
+}
+
+fn main() {
+    let word = Str("programming")
+    print(chars(word).len())
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut result = Vec()
+    for c in s {
+        result = push(result, Str(c))
+    }
+    result
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    let mut result = v
+    result.push(x)
+    result
+}
+
+fn len(v: &Vec<Str>) -> Int {
+    let mut result = Int(0)
+    for _ in v {
+        result = add(result, Int(1))
+    }
+    result
+}
+
+fn add(a: Int, b: Int) -> Int {
+    Int(a.val + b.val)
+}
+
+struct Str {
+    val: String,
+}
+
+fn main() {
+    let word = Str("programming")
+    print(chars(word).len())
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut result = Vec()
+    for c in s {
+        result = push(result, Str(c))
+    }
+    result
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    let mut result = v
+    result.push(x)
+    result
+}
+
+fn len(v: &Vec<Str>) -> Int {
+    let mut result = Int(0)
+    for _ in v {
+        result = add(result, Int(1))
+    }
+    result
+}
+
+fn add(a: Int, b: Int) -> Int {
+    Int(a.val + b.val)
+}
+
+struct Str {
+    val: String,
+}
+
+fn main() {
+    let word = Str("programming")
+    print(chars(word).len())
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut result = Vec()
+    for c in s {
+        result = push(result, Str(c))
+    }
+    result
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    let mut result = v
+    result.push(x)
+    result
+}
+
+fn len(v: &Vec<Str>) -> Int {
+    let mut result = Int(0)
+    for _ in v {
+        result = add(result, Int(1))
+    }
+    result
+}
+
+fn add(a: Int, b: Int) -> Int {
+    Int(a.val + b.val)
+}
+
+struct Str {
+    val: String,
+}
+
+fn main() {
+    let word = Str("programming")
+    print(chars(word).len())
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut result = Vec()
+    for c in s {
+        result = push(result, Str(c))
+    }
+    result
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    let mut result = v
+    result.push(x)
+    result
+}
+
+fn len(v: &Vec<Str>) -> Int {
+    let mut result = Int(0)
+    for _ in v {
+        result = add(result, Int(1))
+    }
+    result
+}
+
+fn add(a: Int, b: Int) -> Int {
+    Int(a.val + b.val)
+}
+
+struct Str {
+    val: String,
+}
+
+fn main() {
+    let word = Str("programming")
+    print(chars(word).len())
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut result = Vec()
+    for c in s {
+        result = push(result, Str(c))
+    }
+    result
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    let mut result = v
+    result.push(x)
+    result
+}
+
+fn len(v: &Vec<Str>) -> Int {
+    let mut result = Int(0)
+    for _ in v {
+        result = add(result, Int(1))
+    }
+    result
+}
+
+fn add(a: Int, b: Int) -> Int {
+    Int(a.val + b.val)
+}
+
+struct Str {
+    val: String,
+}
+
+fn main() {
+    let word = Str("programming")
+    print(chars(word).len())
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut result = Vec()
+    for c in s {
+        result = push(result, Str(c))
+    }
+    result
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    let mut result = v
+    result.push(x)
+    result
+}
+
+fn len(v: &Vec<Str>) -> Int {
+    let mut result = Int(0)
+    for _ in v {
+        result = add(result, Int(1))
+    }
+    result
+}
+
+fn add(a: Int, b: Int) -> Int {
+    Int(a.val + b.val)
+}
+
+struct Str {
+    val: String,
+}
+
+fn main() {
+    let word = Str("programming")
+    print(chars(word).len())
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut result = Vec()
+    for c in s {
+        result = push(result, Str(c))
+    }
+    result
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    let mut result = v
+    result.push(x)
+    result
+}
+
+fn len(v: &Vec<Str>) -> Int {
+    let mut result = Int(0)
+    for _ in v {
+        result = add(result, Int(1))
+    }
+    result
+}
+
+fn add(a: Int, b: Int) -> Int {
+    Int(a.val + b.val)
+}
+
+struct Str {
+    val: String,
+}
+
+fn main() {
+    let word = Str("programming")
+    print(chars(word).len())
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut result = Vec()
+    for c in s {
+        result = push(result, Str(c))
+    }
+    result
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    let mut result = v
+    result.push(x)
+    result
+}
+
+fn len(v: &Vec<Str>) -> Int {
+    let mut result = Int(0)
+    for _ in v {
+        result = add(result, Int(1))
+    }
+    result
+}
+
+fn add(a: Int, b: Int) -> Int {
+    Int(a.val + b.val)
+}
+
+struct Str {
+    val: String,
+}
+
+fn main() {
+    let word = Str("programming")
+    print(chars(word).len())
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut result = Vec()
+    for c in s {
+        result = push(result, Str(c))
+    }
+    result
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    let mut result = v
+    result.push(x)
+    result
+}
+
+fn len(v: &Vec<Str>) -> Int {
+    let mut result = Int(0)
+    for _ in v {
+        result = add(result, Int(1))
+    }
+    result
+}
+

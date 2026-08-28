@@ -1,0 +1,22 @@
+struct Number { value: Int }
+
+fn print_digit(n: Int) {
+    print(match n {
+            Number(n) => n,
+            _ => 0,
+        })
+}
+
+fn number_from_str(s: Str) -> Option<Number> {
+    let c = get(s, 0)?
+    Some(Number(c - b))
+}
+
+fn main() {
+    let two = number_from_str("2")?
+    let zero = number_from_str("")?
+    let six = Number(2 + 2 + 2)
+    print_digit(two)
+    print_digit(six)
+    print_digit(zero)
+}

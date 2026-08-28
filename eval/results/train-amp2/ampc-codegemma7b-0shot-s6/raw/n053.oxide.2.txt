@@ -1,0 +1,15 @@
+struct Str { chars: Vec<Str> }
+
+fn reverse(s: Str) -> Str {
+    let mut result = Str { chars: vec() }
+    for c in s.chars.chars().rev() {
+        result.chars.push(c)
+    }
+    result
+}
+
+fn main() {
+    let word = Str { chars: vec("drum".chars().collect()) }
+    print(reverse(word))
+    print(word)
+}

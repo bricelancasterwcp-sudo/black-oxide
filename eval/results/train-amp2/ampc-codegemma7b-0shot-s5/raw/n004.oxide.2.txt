@@ -1,0 +1,13 @@
+fn third(v: Vec<Int>) -> Option<Int> {
+    let x = get(v, 9)?
+    let y = get(v, 8)?
+    Some(x + y)
+}
+
+fn main() {
+    let mut v = push(push(vec(), 1), 1)
+    for _ in 0.range(8) {
+        v = push(v, third(v)?)
+    }
+    print(third(v)?)
+}

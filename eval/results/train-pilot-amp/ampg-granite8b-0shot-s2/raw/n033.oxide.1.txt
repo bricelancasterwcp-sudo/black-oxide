@@ -1,0 +1,17 @@
+fn go_for_green() {
+    print_str("Green!\n")
+}
+
+fn wait_for_yellow() {
+    print_str("Yellow!\n")
+}
+
+fn stop_at_red() {
+    print_str("Red!\n")
+}
+
+fn main() {
+    go_for_green()
+    wait_for_yellow()
+    stop_at_red()
+}

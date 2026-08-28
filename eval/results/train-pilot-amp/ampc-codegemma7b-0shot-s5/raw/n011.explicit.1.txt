@@ -1,0 +1,15 @@
+fn sum_four_multiples(v: &Vec<Int>) -> Int {
+    let total = 0
+    for x in v {
+        if x % 4 == 0 {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn main() {
+    let nums = vec(4, 8, 12, 16, 20, 24, 28, 32, 36, 40)
+    print(sum_four_multiples(&nums))
+    drop nums
+}

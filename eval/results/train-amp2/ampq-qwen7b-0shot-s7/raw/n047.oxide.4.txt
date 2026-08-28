@@ -1,0 +1,14 @@
+struct VecInt { values: Vec<Int> }
+
+fn main() {
+    let mut even_numbers = VecInt { values: vec() }
+    for i in range(1, 11) {
+        if i % 2 == 0 {
+            even_numbers.values.push(i)
+        }
+    }
+    for value in even_numbers.values.iter().rev() {
+        print_str(value)
+        print_str("\n")
+    }
+}

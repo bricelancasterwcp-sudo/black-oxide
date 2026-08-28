@@ -1,0 +1,15 @@
+fn main() {
+    let mut total = 0
+    let mut count = 0
+    for text in vec("7", "x", "9", "?") {
+        match parse_int(text) {
+            Some(num) => {
+                total = total + num
+                count = count + 1
+            },
+            None => count == count + 1,
+        }
+    }
+    print(total)
+    print(count)
+}

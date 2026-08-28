@@ -1,0 +1,29 @@
+fn max(a: Int, b: Int) -> Int {
+    if a > b {
+        a
+    } else {
+        b
+    }
+}
+
+fn main() {
+    let readings = vec(5, 3, 9, 1, 7)
+    let max_reading = readings.iter().fold(readings.first().unwrap(), max)
+    print(max_reading)
+    drop readings
+}
+
+fn max(a: Int, b: Int) -> Int {
+    if a > b {
+        a
+    } else {
+        b
+    }
+}
+
+fn main() {
+    let readings = vec(5, 3, 9, 1, 7)
+    let max_reading = readings.iter().fold(readings.first().unwrap(), max)
+    print(max_reading)
+    drop readings
+}

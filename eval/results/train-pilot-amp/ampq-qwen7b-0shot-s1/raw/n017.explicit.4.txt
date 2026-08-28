@@ -1,0 +1,14 @@
+fn get_entry_or_missing(v: &Vec<Int>, pos: Int) -> Str {
+    match get(v, pos) {
+        Some(x) => int_to_str(x),
+        None => "missing",
+    }
+}
+
+fn main() {
+    let nums = vec(10, 20, 30, 40)
+    let entry = get_entry_or_missing(&nums, 2)
+    print_str(&entry)
+    drop nums
+    drop entry
+}

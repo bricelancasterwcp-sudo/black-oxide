@@ -1,0 +1,290 @@
+fn main() {
+    let s = oxide_string("black") + oxide_string("oxide")
+    print(s)
+}
+
+fn oxide_string(s: Str) -> Str {
+    s
+}
+
+struct Str {
+    ptr: Pointer<Char>,
+    len: Int,
+}
+
+struct Pointer {
+    ptr: RawPointer,
+}
+
+struct RawPointer {
+    ptr: Usize,
+}
+
+fn print(s: Str) {
+    let c: Char = get(s, 0)?
+    print_str(Str { ptr: Pointer { ptr: RawPointer { ptr: c.ptr } }, len: 1 })
+}
+
+fn print_str(s: Str) {
+    for c in s.chars() {
+        print(c)
+    }
+}
+
+fn len(s: Str) -> Int {
+    s.len
+}
+
+fn get(s: Str, i: Int) -> Option<Char> {
+    if i >= s.len {
+        None
+    } else {
+        Some(Char { ptr: Pointer { ptr: RawPointer { ptr: s.ptr.ptr + i } }, len: 1 })
+    }
+}
+
+fn char(c: Char) -> Str {
+    Str_from_ptr(Pointer { ptr: RawPointer { ptr: c.ptr } }, 1)
+}
+
+fn oxide_string(s: Str) -> Str {
+    s
+}
+
+fn main() {
+    let s = oxide_string("black") + oxide_string("oxide")
+    print(s)
+}
+
+fn print(s: Str) {
+    let c: Char = get(s, 0)?
+    print_str(Str { ptr: Pointer { ptr: RawPointer { ptr: c.ptr } }, len: 1 })
+}
+
+fn print_str(s: Str) {
+    for c in s.chars() {
+        print(c)
+    }
+}
+
+fn len(s: Str) -> Int {
+    s.len
+}
+
+fn get(s: Str, i: Int) -> Option<Char> {
+    if i >= s.len {
+        None
+    } else {
+        Some(Char { ptr: Pointer { ptr: RawPointer { ptr: s.ptr.ptr + i } }, len: 1 })
+    }
+}
+
+fn char(c: Char) -> Str {
+    Str_from_ptr(Pointer { ptr: RawPointer { ptr: c.ptr } }, 1)
+}
+
+fn oxide_string(s: Str) -> Str {
+    s
+}
+
+fn main() {
+    let s = oxide_string("black") + oxide_string("oxide")
+    print(s)
+}
+
+fn print(s: Str) {
+    let c: Char = get(s, 0)?
+    print_str(Str { ptr: Pointer { ptr: RawPointer { ptr: c.ptr } }, len: 1 })
+}
+
+fn print_str(s: Str) {
+    for c in s.chars() {
+        print(c)
+    }
+}
+
+fn len(s: Str) -> Int {
+    s.len
+}
+
+fn get(s: Str, i: Int) -> Option<Char> {
+    if i >= s.len {
+        None
+    } else {
+        Some(Char { ptr: Pointer { ptr: RawPointer { ptr: s.ptr.ptr + i } }, len: 1 })
+    }
+}
+
+fn char(c: Char) -> Str {
+    Str_from_ptr(Pointer { ptr: RawPointer { ptr: c.ptr } }, 1)
+}
+
+fn oxide_string(s: Str) -> Str {
+    s
+}
+
+fn main() {
+    let s = oxide_string("black") + oxide_string("oxide")
+    print(s)
+}
+
+fn print(s: Str) {
+    let c: Char = get(s, 0)?
+    print_str(Str { ptr: Pointer { ptr: RawPointer { ptr: c.ptr } }, len: 1 })
+}
+
+fn print_str(s: Str) {
+    for c in s.chars() {
+        print(c)
+    }
+}
+
+fn len(s: Str) -> Int {
+    s.len
+}
+
+fn get(s: Str, i: Int) -> Option<Char> {
+    if i >= s.len {
+        None
+    } else {
+        Some(Char { ptr: Pointer { ptr: RawPointer { ptr: s.ptr.ptr + i } }, len: 1 })
+    }
+}
+
+fn char(c: Char) -> Str {
+    Str_from_ptr(Pointer { ptr: RawPointer { ptr: c.ptr } }, 1)
+}
+
+fn oxide_string(s: Str) -> Str {
+    s
+}
+
+fn main() {
+    let s = oxide_string("black") + oxide_string("oxide")
+    print(s)
+}
+
+fn print(s: Str) {
+    let c: Char = get(s, 0)?
+    print_str(Str { ptr: Pointer { ptr: RawPointer { ptr: c.ptr } }, len: 1 })
+}
+
+fn print_str(s: Str) {
+    for c in s.chars() {
+        print(c)
+    }
+}
+
+fn len(s: Str) -> Int {
+    s.len
+}
+
+fn get(s: Str, i: Int) -> Option<Char> {
+    if i >= s.len {
+        None
+    } else {
+        Some(Char { ptr: Pointer { ptr: RawPointer { ptr: s.ptr.ptr + i } }, len: 1 })
+    }
+}
+
+fn char(c: Char) -> Str {
+    Str_from_ptr(Pointer { ptr: RawPointer { ptr: c.ptr } }, 1)
+}
+
+fn oxide_string(s: Str) -> Str {
+    s
+}
+
+fn main() {
+    let s = oxide_string("black") + oxide_string("oxide")
+    print(s)
+}
+
+fn print(s: Str) {
+    let c: Char = get(s, 0)?
+    print_str(Str { ptr: Pointer { ptr: RawPointer { ptr: c.ptr } }, len: 1 })
+}
+
+fn print_str(s: Str) {
+    for c in s.chars() {
+        print(c)
+    }
+}
+
+fn len(s: Str) -> Int {
+    s.len
+}
+
+fn get(s: Str, i: Int) -> Option<Char> {
+    if i >= s.len {
+        None
+    } else {
+        Some(Char { ptr: Pointer { ptr: RawPointer { ptr: s.ptr.ptr + i } }, len: 1 })
+    }
+}
+
+fn char(c: Char) -> Str {
+    Str_from_ptr(Pointer { ptr: RawPointer { ptr: c.ptr } }, 1)
+}
+
+fn oxide_string(s: Str) -> Str {
+    s
+}
+
+fn main() {
+    let s = oxide_string("black") + oxide_string("oxide")
+    print(s)
+}
+
+fn print(s: Str) {
+    let c: Char = get(s, 0)?
+    print_str(Str { ptr: Pointer { ptr: RawPointer { ptr: c.ptr } }, len: 1 })
+}
+
+fn print_str(s: Str) {
+    for c in s.chars() {
+        print(c)
+    }
+}
+
+fn len(s: Str) -> Int {
+    s.len
+}
+
+fn get(s: Str, i: Int) -> Option<Char> {
+    if i >= s.len {
+        None
+    } else {
+        Some(Char { ptr: Pointer { ptr: RawPointer { ptr: s.ptr.ptr + i } }, len: 1 })
+    }
+}
+
+fn char(c: Char) -> Str {
+    Str_from_ptr(Pointer { ptr: RawPointer { ptr: c.ptr } }, 1)
+}
+
+fn oxide_string(s: Str) -> Str {
+    s
+}
+
+fn main() {
+    let s = oxide_string("black") + oxide_string("oxide")
+    print(s)
+}
+
+fn print(s: Str) {
+    let c: Char = get(s, 0)?
+    print_str(Str { ptr: Pointer { ptr: RawPointer { ptr: c.ptr } }, len: 1 })
+}
+
+fn print_str(s: Str) {
+    for c in s.chars() {
+        print(c)
+    }
+}
+
+fn len(s: Str) -> Int {
+    s.len
+}
+
+fn get(s: Str, i: Int) -> Option<

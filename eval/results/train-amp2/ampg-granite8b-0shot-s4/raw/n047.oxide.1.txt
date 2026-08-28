@@ -1,0 +1,17 @@
+struct Range {
+    start: Int,
+    end: Int,
+}
+
+fn main() {
+    let range = Range { start: 1, end: 10 }
+    let mut list = vec()
+    for i in range.start.range(range.end) {
+        if i % 2 == 0 {
+            list = push(list, i)
+        }
+    }
+    for i in list.range(0) {
+        print(i)
+    }
+}

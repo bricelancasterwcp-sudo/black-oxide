@@ -1,0 +1,234 @@
+fn main() {
+    let text = read_text()
+    match parse_int(text) {
+        Some(n) => print(n + 1),
+        None => print_str("bad"),
+    }
+}
+
+fn read_text() -> Str {
+    read_line()
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    if s.len() == 0 {
+        return None
+    }
+    let mut it = s.chars()
+    let first = it.next()? - b0
+    if first < 0 || first > 9 {
+        return None
+    }
+    let mut n = first
+    for c in it {
+        let d = c - b0
+        if d < 0 || d > 9 {
+            return None
+        }
+        if (n < i32_max / 10) && (n * 10 < i32_max - d) {
+            n = n * 10 + d
+        } else {
+            return None
+        }
+    }
+    Some(n)
+}
+
+fn read_line() -> Str {
+    let mut buf = vec()
+    loop_line(b0, move || buf)
+}
+
+fn loop_line(buf: Vec<Int>, k: Move<Vec<Int>>) -> Str {
+    print_str("? ")
+    let mut line = vec()
+    for c in get_chars() {
+        if c == b_lf {
+            break
+        }
+        line = push(line, c)
+    }
+    k(line)
+}
+
+fn get_chars() -> Vec<Int> {
+    let mut buf = vec()
+    loop_char(b0, move || buf)
+}
+
+fn loop_char(buf: Vec<Int>, k: Move<Vec<Int>>) -> Vec<Int> {
+    let c = read_char()
+    if c < 0 {
+        k(buf)
+    } else {
+        loop_char(push(buf, c), move || buf)
+    }
+}
+
+fn read_char() -> Int {
+    let mut buf = vec()
+    loop_char_1(b0, b0, move || buf)
+}
+
+fn loop_char_1(c: Int, acc: Int, k: Move<Vec<Int>>) -> Int {
+    if c == b_lf || c == b_eof {
+        if acc == b0 {
+            -1
+        } else {
+            k(push(vec(), acc))
+        }
+    } else {
+        loop_char_1(read_char(), push(vec(), c), move || buf)
+    }
+}
+
+fn print(n: Int) {
+    if n == 0 {
+        print_str("0")
+    } else {
+        let mut buf = vec()
+        let mut q = n
+        while q > 0 {
+            let r = q % 10
+            q = q / 10
+            buf = push(buf, r + b0)
+        }
+        loop_print_1(buf)
+    }
+}
+
+fn loop_print_1(buf: Vec<Int>) {
+    for i in range(len(buf), 0, -1) {
+        print_char(get(buf, i - 1)?)
+    }
+}
+
+fn print_str(s: Str) {
+    loop_print_1(chars(s))
+}
+
+fn print_char(c: Int) {
+    write_char(c)
+}
+
+fn write_char(c: Int) {
+    let _ = c
+}
+
+fn read_text() -> Str {
+    let mut buf = vec()
+    loop_line(b0, move || buf)
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    if s.len() == 0 {
+        return None
+    }
+    let mut it = s.chars()
+    let first = it.next()? - b0
+    if first < 0 || first > 9 {
+        return None
+    }
+    let mut n = first
+    for c in it {
+        let d = c - b0
+        if d < 0 || d > 9 {
+            return None
+        }
+        if (n < i32_max / 10) && (n * 10 < i32_max - d) {
+            n = n * 10 + d
+        } else {
+            return None
+        }
+    }
+    Some(n)
+}
+
+fn read_line() -> Str {
+    let mut buf = vec()
+    loop_line(b0, move || buf)
+}
+
+fn loop_line(buf: Vec<Int>, k: Move<Vec<Int>>) -> Str {
+    print_str("? ")
+    let mut line = vec()
+    for c in get_chars() {
+        if c == b_lf {
+            break
+        }
+        line = push(line, c)
+    }
+    k(line)
+}
+
+fn get_chars() -> Vec<Int> {
+    let mut buf = vec()
+    loop_char(b0, move || buf)
+}
+
+fn loop_char(buf: Vec<Int>, k: Move<Vec<Int>>) -> Vec<Int> {
+    let c = read_char()
+    if c < 0 {
+        k(buf)
+    } else {
+        loop_char(push(buf, c), move || buf)
+    }
+}
+
+fn read_char() -> Int {
+    let mut buf = vec()
+    loop_char_1(b0, b0, move || buf)
+}
+
+fn loop_char_1(c: Int, acc: Int, k: Move<Vec<Int>>) -> Int {
+    if c == b_lf || c == b_eof {
+        if acc == b0 {
+            -1
+        } else {
+            k(push(vec(), acc))
+        }
+    } else {
+        loop_char_1(read_char(), push(vec(), c), move || buf)
+    }
+}
+
+fn print(n: Int) {
+    if n == 0 {
+        print_str("0")
+    } else {
+        let mut buf = vec()
+        let mut q = n
+        while q > 0 {
+            let r = q % 10
+            q = q / 10
+            buf = push(buf, r + b0)
+        }
+        loop_print_1(buf)
+    }
+}
+
+fn loop_print_1(buf: Vec<Int>) {
+    for i in range(len(buf), 0, -1) {
+        print_char(get(buf, i - 1)?)
+    }
+}
+
+fn print_str(s: Str) {
+    loop_print_1(chars(s))
+}
+
+fn print_char(c: Int) {
+    write_char(c)
+}
+
+fn write_char(c: Int) {
+    let _ = c
+}
+
+fn main() {
+    let text = read_text()
+    match parse_int(text) {
+        Some(n) => print(n + 1),
+        None => print_str("bad"),
+    }
+}

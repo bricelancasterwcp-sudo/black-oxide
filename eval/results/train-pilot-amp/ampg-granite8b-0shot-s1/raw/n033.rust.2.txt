@@ -1,0 +1,26 @@
+```rust
+#![allow(unused_must_use)]
+
+fn main() {
+    let mut signal = "green".to_string();
+
+    loop {
+        eprintln!("go for {}", signal);
+        std::thread::sleep(std::time::Duration::from_secs(1));
+
+        if signal == "green" {
+            signal = "yellow".to_string();
+        } else if signal == "yellow" {
+            signal = "red".to_string();
+        } else if signal == "red" {
+            break;
+        }
+
+        eprintln!("wait for {}", signal);
+        std::thread::sleep(std::time::Duration::from_secs(3));
+
+        eprintln!("stop for {}", signal);
+        std::thread::sleep(std::time::Duration::from_secs(1));
+    }
+}
+```

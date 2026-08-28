@@ -1,0 +1,236 @@
+fn main() {
+    let result = range(1, 7).fold(1, mul)
+    print(result)
+}
+
+fn mul(acc: Int, item: Int) -> Int {
+    acc * item
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in a.to_int_lossy() + 1.to_int_lossy() - 1.to_int_lossy() {
+        if i.to_int_lossy() < b.to_int_lossy() {
+            result = push(result, i)
+        }
+    }
+    result
+}
+
+fn to_int_lossy(n: Int) -> Int {
+    trunc(n)
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    for c in chars(s) {
+        print(c)
+    }
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = vec()
+    let mut index = 0.to_int_lossy()
+    while index.to_int_lossy() < str_len(s).to_int_lossy() {
+        result = push(result, substr(s, index, index + 1))
+        index = index + 1.to_int_lossy()
+    }
+    result
+}
+
+fn substr(s: Str, start: Int, end: Int) -> Str {
+    let mut result = ""
+    let mut index = start.to_int_lossy()
+    while index.to_int_lossy() < end.to_int_lossy() {
+        result = concat(result, char_at(s, index))
+        index = index + 1.to_int_lossy()
+    }
+    result
+}
+
+fn char_at(s: Str, i: Int) -> Str {
+    get(chars(s), i)?
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut result = ""
+    let mut number = n
+    while number.to_int_lossy() > 0.to_int_lossy() {
+        let digit = trunc(number % 10.to_int_lossy())
+        result = concat(result, char_at("0123456789", digit))
+        number = number / 10.to_int_lossy()
+    }
+    result
+}
+
+fn to_int_lossy(n: Float) -> Int {
+    trunc(n)
+}
+
+fn trunc(x: Float) -> Int {
+    if x < 0.to_float() {
+        x.floor().to_int_lossy()
+    } else {
+        x.ceil().to_int_lossy()
+    }
+}
+
+fn floor(x: Float) -> Float {
+    let i = trunc(x)
+    if x - i >= 0.5.to_float() {
+        i + 1.to_float()
+    } else {
+        i.to_float()
+    }
+}
+
+fn ceil(x: Float) -> Float {
+    let i = trunc(x)
+    if x - i < 0.5.to_float() {
+        i.to_float()
+    } else {
+        i + 1.to_float()
+    }
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    if i.to_int_lossy() < len(v).to_int_lossy() {
+        Some(v.clone().values.get(i.to_int_lossy()))
+    } else {
+        None
+    }
+}
+
+fn len(v: Vec<Int>) -> Int {
+    v.clone().values.len().to_int_lossy()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut result = v.clone()
+    result.values = push(result.values, x)
+    result
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in a.to_int_lossy() + 1.to_int_lossy() - 1.to_int_lossy() {
+        if i.to_int_lossy() < b.to_int_lossy() {
+            result = push(result, i)
+        }
+    }
+    result
+}
+
+fn to_int_lossy(n: Int) -> Int {
+    trunc(n)
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    for c in chars(s) {
+        print(c)
+    }
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = vec()
+    let mut index = 0.to_int_lossy()
+    while index.to_int_lossy() < str_len(s).to_int_lossy() {
+        result = push(result, substr(s, index, index + 1))
+        index = index + 1.to_int_lossy()
+    }
+    result
+}
+
+fn substr(s: Str, start: Int, end: Int) -> Str {
+    let mut result = ""
+    let mut index = start.to_int_lossy()
+    while index.to_int_lossy() < end.to_int_lossy() {
+        result = concat(result, char_at(s, index))
+        index = index + 1.to_int_lossy()
+    }
+    result
+}
+
+fn char_at(s: Str, i: Int) -> Str {
+    get(chars(s), i)?
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut result = ""
+    let mut number = n
+    while number.to_int_lossy() > 0.to_int_lossy() {
+        let digit = trunc(number % 10.to_int_lossy())
+        result = concat(result, char_at("0123456789", digit))
+        number = number / 10.to_int_lossy()
+    }
+    result
+}
+
+fn to_int_lossy(n: Float) -> Int {
+    trunc(n)
+}
+
+fn trunc(x: Float) -> Int {
+    if x < 0.to_float() {
+        x.floor().to_int_lossy()
+    } else {
+        x.ceil().to_int_lossy()
+    }
+}
+
+fn floor(x: Float) -> Float {
+    let i = trunc(x)
+    if x - i >= 0.5.to_float() {
+        i + 1.to_float()
+    } else {
+        i.to_float()
+    }
+}
+
+fn ceil(x: Float) -> Float {
+    let i = trunc(x)
+    if x - i < 0.5.to_float() {
+        i.to_float()
+    } else {
+        i + 1.to_float()
+    }
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    if i.to_int_lossy() < len(v).to_int_lossy() {
+        Some(v.clone().values.get(i.to_int_lossy()))
+    } else {
+        None
+    }
+}
+
+fn len(v: Vec<Int>) -> Int {
+    v.clone().values.len().to_int_lossy()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut result = v.clone()
+    result.values = push(result.values, x)
+    result
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    let mut result = v.clone()
+    result.values = push(result.values, x)
+    result
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    let mut result = v.clone()
+    result.values.push(x)
+    result
+}
+
+fn fold(v: Vec<T>, init: T

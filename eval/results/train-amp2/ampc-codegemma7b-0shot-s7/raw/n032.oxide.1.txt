@@ -1,0 +1,287 @@
+fn main() {
+    let start = Point { x: 1, y: 5 }
+    let end = Point { x: 10, y: 5 }
+    print(start.x + end.x)
+}
+
+struct Point { x: Int, y: Int }
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut buf: Vec<Str> = range(0, 10)
+    let mut index = 0
+    if n < 0 {
+        push(buf, Str("-"))
+        index = 1
+        n = -n
+    }
+    while n >= 10 {
+        let digit = n % 10
+        push(buf, int_to_str(digit))
+        n = trunc(n / 10.0)
+    }
+    push(buf, int_to_str(n))
+    let mut s = Str("")
+    for c in range(index, len(buf)) {
+        s = concat(s, get(buf, c)?)
+    }
+    s
+}
+
+fn print_str(s: Str) {
+    print(len(s))
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut v = vec()
+    for i in a.min(b) + 1.0.min(a, b) {
+        push(v, i)
+    }
+    v
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    if i >= 0 && i < len(v) {
+        Some(v.get(i)?)
+    } else {
+        None
+    }
+}
+
+fn len(v: Vec<Int>) -> Int {
+    let mut count = 0
+    for _ in v {
+        count = count + 1
+    }
+    count
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut new_v = vec()
+    for item in v {
+        push(new_v, item)
+    }
+    push(new_v, x)
+}
+
+fn trunc(x: Float) -> Int {
+    if x >= 0.0 {
+        floor(x)
+    } else {
+        ceil(x)
+    }
+}
+
+fn floor(x: Float) -> Int {
+    let i = Int(x)
+    if x >= float(i) {
+        i
+    } else {
+        i - 1
+    }
+}
+
+fn ceil(x: Float) -> Int {
+    let i = Int(x)
+    if x <= float(i) {
+        i
+    } else {
+        i + 1
+    }
+}
+
+fn float(i: Int) -> Float {
+    Float(i)
+}
+
+fn str(s: Str) -> Str {
+    s
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    let mut new_v = vec()
+    for item in v {
+        push(new_v, item)
+    }
+    push(new_v, x)
+}
+
+fn len(v: Vec<Str>) -> Int {
+    let mut count = 0
+    for _ in v {
+        count = count + 1
+    }
+    count
+}
+
+fn get(v: Vec<Str>, i: Int) -> Option<Str> {
+    if i >= 0 && i < len(v) {
+        Some(v.get(i)?)
+    } else {
+        None
+    }
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut new_s = Str("")
+    for c in a {
+        push(new_s, str(c))
+    }
+    for c in b {
+        push(new_s, str(c))
+    }
+    new_s
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut v = vec()
+    for i in a.min(b) + 1.0.min(a, b) {
+        push(v, i)
+    }
+    v
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut buf: Vec<Str> = range(0, 10)
+    let mut index = 0
+    if n < 0 {
+        push(buf, Str("-"))
+        index = 1
+        n = -n
+    }
+    while n >= 10 {
+        let digit = n % 10
+        push(buf, int_to_str(digit))
+        n = trunc(n / 10.0)
+    }
+    push(buf, int_to_str(n))
+    let mut s = Str("")
+    for c in range(index, len(buf)) {
+        s = concat(s, get(buf, c)?)
+    }
+    s
+}
+
+fn print_str(s: Str) {
+    print(len(s))
+}
+
+fn main() {
+    let start = Point { x: 1, y: 5 }
+    let end = Point { x: 10, y: 5 }
+    print(start.x + end.x)
+}
+
+struct Point { x: Int, y: Int }
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut buf: Vec<Str> = range(0, 10)
+    let mut index = 0
+    if n < 0 {
+        push(buf, Str("-"))
+        index = 1
+        n = -n
+    }
+    while n >= 10 {
+        let digit = n % 10
+        push(buf, int_to_str(digit))
+        n = trunc(n / 10.0)
+    }
+    push(buf, int_to_str(n))
+    let mut s = Str("")
+    for c in range(index, len(buf)) {
+        s = concat(s, get(buf, c)?)
+    }
+    s
+}
+
+fn print_str(s: Str) {
+    print(len(s))
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut v = vec()
+    for i in a.min(b) + 1.0.min(a, b) {
+        push(v, i)
+    }
+    v
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    if i >= 0 && i < len(v) {
+        Some(v.get(i)?)
+    } else {
+        None
+    }
+}
+
+fn len(v: Vec<Int>) -> Int {
+    let mut count = 0
+    for _ in v {
+        count = count + 1
+    }
+    count
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut new_v = vec()
+    for item in v {
+        push(new_v, item)
+    }
+    push(new_v, x)
+}
+
+fn trunc(x: Float) -> Int {
+    if x >= 0.0 {
+        floor(x)
+    } else {
+        ceil(x)
+    }
+}
+
+fn floor(x: Float) -> Int {
+    let i = Int(x)
+    if x >= float(i) {
+        i
+    } else {
+        i - 1
+    }
+}
+
+fn ceil(x: Float) -> Int {
+    let i = Int(x)
+    if x <= float(i) {
+        i
+    } else {
+        i + 1
+    }
+}
+
+fn float(i: Int) -> Float {
+    Float(i)
+}
+
+fn str(s: Str) -> Str {
+    s
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    let mut new_v = vec()
+    for item in v {
+        push(new_v, item)
+    }
+    push(new_v, x)
+}
+
+fn len(v: Vec<Str>) -> Int

@@ -1,0 +1,15 @@
+fn len(v: &Vec<Int>) -> Int {
+    let mut total = 0
+    for _ in &v {
+        total = total + 1
+    }
+    total
+}
+
+fn main() {
+    let list1 = vec(1, 2, 3)
+    let list2 = vec(4, 5)
+    print(len(&list1) + len(&list2))
+    drop list1
+    drop list2
+}

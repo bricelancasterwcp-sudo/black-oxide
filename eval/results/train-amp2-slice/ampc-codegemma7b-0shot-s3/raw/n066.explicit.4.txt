@@ -1,0 +1,12 @@
+fn keep_entries(nums: Vec<String>) -> Vec<String> {
+    nums.into_iter()
+    filter_map(x || ifx(x.parse().ok(), x))
+    take_while(x || x.parse().unwrap() < 10)
+    collect()
+}
+
+fn main() {
+    let nums = vec_str("9, 2, 12, 5, 16".split(",").map(str_trim).collect())
+    print(keep_entries(nums))
+    print(len(keep_entries(nums)))
+}

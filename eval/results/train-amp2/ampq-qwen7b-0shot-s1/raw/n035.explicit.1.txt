@@ -1,0 +1,14 @@
+fn div(x: Int, y: Int) -> Result<Int, Str> {
+    if y == 0 {
+        Err("bad".to_string())
+    } else {
+        Ok(x / y)
+    }
+}
+
+fn main() {
+    let result = div(20, 4)??
+    print(result)
+    let result = div(20, 0)??
+    print(result)
+}

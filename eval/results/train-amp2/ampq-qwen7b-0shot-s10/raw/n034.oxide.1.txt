@@ -1,0 +1,9 @@
+fn second(v: Vec<Int>) -> Option<Int> {
+    get(v, 1)?
+}
+
+fn main() {
+    print(second(push(push(vec(), 7), 8)))  // Some(8)
+    print(second(push(vec(), 9)))         // None
+    print(second(push(push(vec(), 10), 11))) // Some(11)
+}

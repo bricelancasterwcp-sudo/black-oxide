@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let list = vec![4, 7, 4, 9, 4];
+    let value_to_find = 4;
+    let mut position = 0;
+
+    for &item in list.iter() {
+        if item == value_to_find {
+            println!("{}", position);
+        }
+        position += 1;
+    }
+}
+```

@@ -1,0 +1,14 @@
+fn main() {
+    let width = 9;
+    let height = 3;
+    println!("Area: {}", area(width, height));
+    println!("Perimeter: {}", perimeter(width, height));
+}
+
+fn area(width: u32, height: u32) -> u32 {
+    width * height
+}
+
+fn perimeter(width: u32, height: u32) -> u32 {
+    2 * (width + height)
+}

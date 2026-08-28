@@ -1,0 +1,9 @@
+struct List { items: Vec<Int> }
+
+fn main() {
+    let mut lst = List { items: vec() }
+    for i in range(0, 15) {
+        lst.items = push(lst.items, i)
+    }
+    print(len(lst.items))
+}

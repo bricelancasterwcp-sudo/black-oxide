@@ -1,0 +1,21 @@
+fn count(v: &Vec<Int>, cutoff: Int) -> Tuple<Int, Int> {
+    let mut under = 0
+    let mut over = 0
+    for x in v {
+        if x < cutoff {
+            under = under + 1
+        } else {
+            over = over + 1
+        }
+    }
+    (under + over)
+}
+
+fn main() {
+    let nums = push(push(vec(), 5), 12)
+    let bigger = extend(clone(&nums), 3)
+    print(count(&nums, 10))
+    drop nums
+    print(count(&bigger, 10))
+    drop bigger
+}

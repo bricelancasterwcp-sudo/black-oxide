@@ -1,0 +1,15 @@
+```rust
+fn get_second_item<T>(list: &[T]) -> Option<&T> {
+    list.get(1)
+}
+
+fn main() {
+    let list7: [u8; 7] = [1, 2, 3, 4, 5, 6, 7];
+    let list8: [u8; 2] = [10, 20];
+    let list9: [u8; 0] = [];
+
+    println!("{:?}", get_second_item(&list7)); // Some(3)
+    println!("{:?}", get_second_item(&list8)); // Some(20)
+    println!("{:?}", get_second_item(&list9)); // None
+}
+```

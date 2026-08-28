@@ -1,0 +1,492 @@
+fn main() {
+    let mut scores = vec(2, 9, 5)
+    scores.sort_by_int_desc()
+    for score in scores {
+        print_str(score.to_string())
+        print_str("\n")
+    }
+}
+
+fn sort_by_int_desc(v: Vec<Int>) -> Vec<Int> {
+    v.sort()
+    v.reverse()
+    v
+}
+
+fn vec(a: Int, b: Int, c: Int) -> Vec<Int> {
+    vec(vec(a), vec(b), vec(c))
+}
+
+fn to_string(i: Int) -> Str {
+    int_to_str(i)
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn print(x: Str) {
+    println(x)
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn sort(v: Vec<Int>) -> Vec<Int> {
+    v.sort()
+    v
+}
+
+fn reverse(v: Vec<Int>) -> Vec<Int> {
+    v.reverse()
+    v
+}
+
+fn int_to_str(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_int(s: Str) -> Int {
+    parse_int(s).unwrap()
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    s.parse_int()
+}
+
+fn println(x: Str) {
+    print(x)
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn sort(v: Vec<Int>) -> Vec<Int> {
+    v.sort()
+    v
+}
+
+fn reverse(v: Vec<Int>) -> Vec<Int> {
+    v.reverse()
+    v
+}
+
+fn int_to_str(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_int(s: Str) -> Int {
+    parse_int(s).unwrap()
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    s.parse_int()
+}
+
+fn println(x: Str) {
+    print(x)
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn sort(v: Vec<Int>) -> Vec<Int> {
+    v.sort()
+    v
+}
+
+fn reverse(v: Vec<Int>) -> Vec<Int> {
+    v.reverse()
+    v
+}
+
+fn int_to_str(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_int(s: Str) -> Int {
+    parse_int(s).unwrap()
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    s.parse_int()
+}
+
+fn println(x: Str) {
+    print(x)
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn sort(v: Vec<Int>) -> Vec<Int> {
+    v.sort()
+    v
+}
+
+fn reverse(v: Vec<Int>) -> Vec<Int> {
+    v.reverse()
+    v
+}
+
+fn int_to_str(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_int(s: Str) -> Int {
+    parse_int(s).unwrap()
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    s.parse_int()
+}
+
+fn println(x: Str) {
+    print(x)
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn sort(v: Vec<Int>) -> Vec<Int> {
+    v.sort()
+    v
+}
+
+fn reverse(v: Vec<Int>) -> Vec<Int> {
+    v.reverse()
+    v
+}
+
+fn int_to_str(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_int(s: Str) -> Int {
+    parse_int(s).unwrap()
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    s.parse_int()
+}
+
+fn println(x: Str) {
+    print(x)
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn sort(v: Vec<Int>) -> Vec<Int> {
+    v.sort()
+    v
+}
+
+fn reverse(v: Vec<Int>) -> Vec<Int> {
+    v.reverse()
+    v
+}
+
+fn int_to_str(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_int(s: Str) -> Int {
+    parse_int(s).unwrap()
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    s.parse_int()
+}
+
+fn println(x: Str) {
+    print(x)
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn sort(v: Vec<Int>) -> Vec<Int> {
+    v.sort()
+    v
+}
+
+fn reverse(v: Vec<Int>) -> Vec<Int> {
+    v.reverse()
+    v
+}
+
+fn int_to_str(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_int(s: Str) -> Int {
+    parse_int(s).unwrap()
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    s.parse_int()
+}
+
+fn println(x: Str) {
+    print(x)
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn sort(v: Vec<Int>) -> Vec<Int> {
+    v.sort()
+    v
+}
+
+fn reverse(v: Vec<Int>) -> Vec<Int> {
+    v.reverse()
+    v
+}
+
+fn int_to_str(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_int(s: Str) -> Int {
+    parse_int(s).unwrap()
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    s.parse_int()
+}
+
+fn println(x: Str) {
+    print(x)
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn sort(v: Vec<Int>) -> Vec<Int> {
+    v.sort()
+    v
+}
+
+fn reverse(v: Vec<Int>) -> Vec<Int> {
+    v.reverse()
+    v
+}
+
+fn int_to_str(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_int(s: Str) -> Int {
+    parse_int(s).unwrap()
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    s.parse_int()
+}
+
+fn println(x: Str) {
+    print(x)
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn sort(v: Vec<Int>) -> Vec<Int> {
+    v.sort()
+    v
+}
+
+fn reverse(v: Vec<Int>) -> Vec<Int> {
+    v.reverse()
+    v
+}
+
+fn int_to_str(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_int(s: Str) -> Int {
+    parse_int(s).unwrap()
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    s.parse_int()
+}
+
+fn println(x: Str) {
+    print(x)
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn sort(v: Vec<Int>) -> Vec<Int> {
+    v.sort()
+    v
+}
+
+fn reverse(v: Vec<Int>) -> Vec<Int> {
+    v.reverse()
+    v
+}
+
+fn int_to_str(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_int(s: Str) -> Int {
+    parse_int(s).unwrap()
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    s.parse_int()
+}
+
+fn println(x: Str) {
+    print(x)
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn sort(v: Vec<Int>) -> Vec<Int> {
+    v.sort()
+    v
+}
+
+fn reverse(v: Vec<Int>) -> Vec<Int> {
+    v.reverse()
+    v
+}
+
+fn int_to_str(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_int(s: Str) -> Int {
+    parse_int(s).unwrap()
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    s.parse_int()
+}
+
+fn println(x: Str) {
+    print(x)
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn sort(v: Vec<Int>) -> Vec<Int> {
+    v.sort()
+    v
+}
+
+fn reverse(v: Vec<Int>) -> Vec<Int> {
+    v.reverse()
+    v
+}
+
+fn int_to_str(i: Int) -> Str {
+    i.to_string()
+}
+
+fn to_int(s: Str) -> Int {
+    parse_int(s).unwrap()
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    s.parse_int()
+}
+
+fn println(x: Str) {
+    print(x)
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn sort(v: Vec<Int>) -> Vec<Int> {
+    v.sort()
+    v
+}
+
+fn reverse(v: Vec<Int>) -> Vec<Int> {
+    v.reverse()
+    v
+}
+
+fn

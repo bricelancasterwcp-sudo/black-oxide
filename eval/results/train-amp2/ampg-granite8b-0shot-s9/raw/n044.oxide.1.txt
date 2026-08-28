@@ -1,0 +1,328 @@
+struct Deposit { amount: Int, balance: Int }
+
+fn main() {
+    let mut balance = 0
+    for d in deposits() {
+        balance = push(balance, d)
+    }
+    print(balance)
+}
+
+fn deposits() -> Vec<Deposit> {
+    vec(Deposit { amount: 3, balance: 0 }, Deposit { amount: 1, balance: 0 }, Deposit { amount: 4, balance: 0 }, Deposit { amount: 1, balance: 0 }, Deposit { amount: 5, balance: 0 })
+}
+
+fn push(vec: Vec<Deposit>, x: Deposit) -> Vec<Deposit> {
+    vec(x, vec)
+}
+
+enum List {
+    Cell(Int, Box<List>),
+    Nil,
+}
+
+fn main() {
+    let list = push(push(Nil, 1), 2)
+    print(list_sum(list))
+}
+
+fn list_sum(list: List) -> Int {
+    match list {
+        Nil => 0,
+        Cell(head, tail) => head + list_sum(tail),
+    }
+}
+
+fn push(list: List, x: Int) -> List {
+    Cell(x, Box(list))
+}
+
+struct Point { x: Int, y: Int }
+
+fn move_to(pt: Point, x: Int, y: Int) -> Point {
+    Point(x, y)
+}
+
+fn main() {
+    let p = Point(1, 2)
+    let newp = move_to(p, 3, 4)
+    print(newp)
+}
+
+fn move_to(pt: Point, x: Int, y: Int) -> Point {
+    Point(x, y)
+}
+
+struct List {
+    head: Int,
+    tail: Option<Box<List>>,
+}
+
+fn main() {
+    let list = push(push(Nil, 1), 2)
+    print(list_sum(list))
+}
+
+fn list_sum(list: List) -> Int {
+    match list {
+        Nil => 0,
+        Cell(head, tail) => head + list_sum(tail),
+    }
+}
+
+fn push(list: List, x: Int) -> List {
+    List(x, Some(Box(list)))
+}
+
+struct Point { x: Int, y: Int }
+
+fn main() {
+    let pt = Point(3, 4)
+    print(pt.x)
+    print(pt.y)
+}
+
+struct Point { x: Int, y: Int }
+
+fn main() {
+    let pt = Point(3, 4)
+    print(pt.x)
+    print(pt.y)
+}
+
+enum Option {
+    Some(Int),
+    None,
+}
+
+fn main() {
+    let opt = Some(42)
+    print(opt?)
+}
+
+enum Option {
+    Some(Int),
+    None,
+}
+
+fn main() {
+    let opt = None
+    print(opt?)
+}
+
+struct Point { x: Int, y: Int }
+
+fn main() {
+    let p1 = Point(1, 2)
+    let p2 = Point(3, 4)
+    let x = p1.x + p2.x
+    let y = p1.y + p2.y
+    print(Point(x, y))
+}
+
+struct Point { x: Int, y: Int }
+
+fn main() {
+    let p = Point(3, 4)
+    let p2 = Point { x: p.x, ..p }
+    print(p2)
+}
+
+struct Point { x: Int, y: Int }
+
+fn main() {
+    let p = Point(3, 4)
+    let p2 = Point { x: p.x, y: 5 }
+    print(p2)
+}
+
+struct Point { x: Int, y: Int }
+
+fn main() {
+    let p = Point(3, 4)
+    let p2 = Point { x: p.x, ..p }
+    print(p2)
+}
+
+struct Point { x: Int, y: Int }
+
+fn main() {
+    let p = Point(3, 4)
+    let p2 = Point { ..p }
+    print(p2)
+}
+
+struct Point { x: Int, y: Int }
+
+fn main() {
+    let mut p = Point(3, 4)
+    p.y = 5
+    print(p)
+}
+
+struct Point { x: Int, y: Int }
+
+fn main() {
+    let p = Point(3, 4)
+    print(p.x + p.y)
+}
+
+struct Point { x: Int, y: Int }
+
+fn main() {
+    let p = Point(3, 4)
+    print(p.x + p.y)
+}
+
+struct Point { x: Int, y: Int }
+
+fn main() {
+    let mut p = Point(3, 4)
+    p.y = 5
+    print(p)
+}
+
+struct Point { x: Int, y: Int }
+
+fn main() {
+    let p = Point(3, 4)
+    print(p.x + p.y)
+}
+
+struct Point { x: Int, y: Int }
+
+fn main() {
+    let p = Point(3, 4)
+    print(p.x + p.y)
+}
+
+struct Point { x: Int, y: Int }
+
+fn main() {
+    let p = Point(3, 4)
+    print(p.x + p.y)
+}
+
+struct Point { x: Int, y: Int }
+
+fn main() {
+    let p = Point(3, 4)
+    print(p.x + p.y)
+}
+
+struct Point { x: Int, y: Int }
+
+fn main() {
+    let p = Point(3, 4)
+    print(p.x + p.y)
+}
+
+struct Point { x: Int, y: Int }
+
+fn main() {
+    let p = Point(3, 4)
+    print(p.x + p.y)
+}
+
+struct Point { x: Int, y: Int }
+
+fn main() {
+    let p = Point(3, 4)
+    print(p.x + p.y)
+}
+
+struct Point { x: Int, y: Int }
+
+fn main() {
+    let p = Point(3, 4)
+    print(p.x + p.y)
+}
+
+struct Point { x: Int, y: Int }
+
+fn main() {
+    let p = Point(3, 4)
+    print(p.x + p.y)
+}
+
+struct Point { x: Int, y: Int }
+
+fn main() {
+    let p = Point(3, 4)
+    print(p.x + p.y)
+}
+
+struct Point { x: Int, y: Int }
+
+fn main() {
+    let p = Point(3, 4)
+    print(p.x + p.y)
+}
+
+struct Point { x: Int, y: Int }
+
+fn main() {
+    let p = Point(3, 4)
+    print(p.x + p.y)
+}
+
+struct Point { x: Int, y: Int }
+
+fn main() {
+    let p = Point(3, 4)
+    print(p.x + p.y)
+}
+
+struct Point { x: Int, y: Int }
+
+fn main() {
+    let p = Point(3, 4)
+    print(p.x + p.y)
+}
+
+struct Point { x: Int, y: Int }
+
+fn main() {
+    let p = Point(3, 4)
+    print(p.x + p.y)
+}
+
+struct Point { x: Int, y: Int }
+
+fn main() {
+    let p = Point(3, 4)
+    print(p.x + p.y)
+}
+
+struct Point { x: Int, y: Int }
+
+fn main() {
+    let p = Point(3, 4)
+    print(p.x + p.y)
+}
+
+struct Point { x: Int, y: Int }
+
+fn main() {
+    let p = Point(3, 4)
+    print(p.x + p.y)
+}
+
+struct Point { x: Int, y: Int }
+
+fn main() {
+    let p = Point(3, 4)
+    print(p.x + p.y)
+}
+
+struct Point { x: Int, y: Int }
+
+fn main() {
+    let p = Point(3, 4)
+    print(p.x + p.y)
+}
+
+struct Point { x: Int, y: Int }
+
+fn main() {
+    let p = Point(3, 4

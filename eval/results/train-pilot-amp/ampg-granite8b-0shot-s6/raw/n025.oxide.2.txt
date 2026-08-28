@@ -1,0 +1,182 @@
+fn main() {
+    print(read_int() + 1)
+}
+
+fn read_int() -> Int {
+    let text = read_line()
+    match parse_int(text) {
+        Some(n) => n,
+        None => bad(),
+    }
+}
+
+fn read_line() -> Str {
+    ""
+}
+
+fn bad() -> Int {
+    panic("bad")
+}
+
+fn panic(msg: Str) -> Int {
+    print_str(msg)
+    -1
+}
+
+fn print(x: Int) -> Unit {
+    print_str(str_from_int(x))
+}
+
+fn str_from_int(x: Int) -> Str {
+    ""
+}
+
+fn print_str(s: Str) -> Unit {
+    ""
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    None
+}
+
+struct Int { value: Int }
+
+struct Str { value: Str }
+
+struct Unit { value: Unit }
+
+struct Option { value: Option }
+
+struct Some { value: Some }
+
+struct None { value: None }
+
+struct Result { value: Result }
+
+struct Ok { value: Ok }
+
+struct Err { value: Err }
+
+struct Vec { value: Vec }
+
+struct Vec_ { value: Vec_ }
+
+struct Push { value: Push }
+
+struct Let { value: Let }
+
+struct Let_ { value: Let_ }
+
+struct While { value: While }
+
+struct For { value: For }
+
+struct Break { value: Break }
+
+struct Continue { value: Continue }
+
+struct Match { value: Match }
+
+struct Match_ { value: Match_ }
+
+struct Match_arm { value: Match_arm }
+
+struct Match_arm_ { value: Match_arm_ }
+
+struct Match_arm_Nullary { value: Match_arm_Nullary }
+
+struct Match_arm_Variant { value: Match_arm_Variant }
+
+struct Match_arm_Pattern { value: Match_arm_Pattern }
+
+struct Match_arm_Pattern_ { value: Match_arm_Pattern_ }
+
+struct Match_arm_Pattern_Binders { value: Match_arm_Pattern_Binders }
+
+struct Match_arm_Pattern_Binders_ { value: Match_arm_Pattern_Binders_ }
+
+struct Match_arm_Pattern_Binders_Variant { value: Match_arm_Pattern_Binders_Variant }
+
+struct Match_arm_Pattern_Binders_Variant_ { value: Match_arm_Pattern_Binders_Variant_ }
+
+struct Match_arm_Pattern_Binders_Variant_Nullary { value: Match_arm_Pattern_Binders_Variant_Nullary }
+
+struct Match_arm_Pattern_Binders_Variant_Nullary_ { value: Match_arm_Pattern_Binders_Variant_Nullary_ }
+
+struct Match_arm_Pattern_Binders_Variant_ { value: Match_arm_Pattern_Binders_Variant_ }
+
+struct Match_arm_Pattern_Binders_Variant__ { value: Match_arm_Pattern_Binders_Variant__ }
+
+struct Match_arm_Pattern_Binders_Variant__Tuple { value: Match_arm_Pattern_Binders_Variant__Tuple }
+
+struct Match_arm_Pattern_Binders_Variant__Tuple_ { value: Match_arm_Pattern_Binders_Variant__Tuple_ }
+
+struct Match_arm_Pattern_Binders_Variant__Tuple__ { value: Match_arm_Pattern_Binders_Variant__Tuple__ }
+
+struct Match_arm_Pattern_Binders_Variant__Tuple___ { value: Match_arm_Pattern_Binders_Variant__Tuple___ }
+
+struct Match_arm_Pattern_Binders_Variant__Tuple____ { value: Match_arm_Pattern_Binders_Variant__Tuple____ }
+
+struct Match_arm_Pattern_Binders_Variant__Tuple_____ { value: Match_arm_Pattern_Binders_Variant__Tuple_____ }
+
+struct Match_arm_Pattern_Binders_Variant__Tuple______ { value: Match_arm_Pattern_Binders_Variant__Tuple______ }
+
+struct Match_arm_Pattern_Binders_Variant__Tuple_______ { value: Match_arm_Pattern_Binders_Variant__Tuple_______ }
+
+struct Match_arm_Pattern_Binders_Variant__Tuple________ { value: Match_arm_Pattern_Binders_Variant__Tuple________ }
+
+struct Match_arm_Pattern_Binders_Variant__Tuple_________ { value: Match_arm_Pattern_Binders_Variant__Tuple_________ }
+
+struct Match_arm_Pattern_Binders_Variant__Tuple__________ { value: Match_arm_Pattern_Binders_Variant__Tuple__________ }
+
+struct Match_arm_Pattern_Binders_Variant__Tuple___________ { value: Match_arm_Pattern_Binders_Variant__Tuple___________ }
+
+struct Match_arm_Pattern_Binders_Variant__Tuple____________ { value: Match_arm_Pattern_Binders_Variant__Tuple____________ }
+
+struct Match_arm_Pattern_Binders_Variant__Tuple_____________ { value: Match_arm_Pattern_Binders_Variant__Tuple_____________ }
+
+struct Match_arm_Pattern_Binders_Variant__Tuple______________ { value: Match_arm_Pattern_Binders_Variant__Tuple______________ }
+
+struct Match_arm_Pattern_Binders_Variant__Tuple_______________ { value: Match_arm_Pattern_Binders_Variant__Tuple_______________ }
+
+struct Match_arm_Pattern_Binders_Variant__Tuple________________ { value: Match_arm_Pattern_Binders_Variant__Tuple________________ }
+
+struct Match_arm_Pattern_Binders_Variant__Tuple_________________ { value: Match_arm_Pattern_Binders_Variant__Tuple_________________ }
+
+struct Match_arm_Pattern_Binders_Variant__Tuple__________________ { value: Match_arm_Pattern_Binders_Variant__Tuple__________________ }
+
+struct Match_arm_Pattern_Binders_Variant__Tuple___________________ { value: Match_arm_Pattern_Binders_Variant__Tuple___________________ }
+
+struct Match_arm_Pattern_Binders_Variant__Tuple____________________ { value: Match_arm_Pattern_Binders_Variant__Tuple____________________ }
+
+struct Match_arm_Pattern_Binders_Variant__Tuple_____________________ { value: Match_arm_Pattern_Binders_Variant__Tuple_____________________ }
+
+struct Match_arm_Pattern_Binders_Variant__Tuple______________________ { value: Match_arm_Pattern_Binders_Variant__Tuple______________________ }
+
+struct Match_arm_Pattern_Binders_Variant__Tuple_______________________ { value: Match_arm_Pattern_Binders_Variant__Tuple_______________________ }
+
+struct Match_arm_Pattern_Binders_Variant__Tuple________________________ { value: Match_arm_Pattern_Binders_Variant__Tuple________________________ }
+
+struct Match_arm_Pattern_Binders_Variant__Tuple_________________________ { value: Match_arm_Pattern_Binders_Variant__Tuple_________________________ }
+
+struct Match_arm_Pattern_Binders_Variant__Tuple__________________________ { value: Match_arm_Pattern_Binders_Variant__Tuple__________________________ }
+
+struct Match_arm_Pattern_Binders_Variant__Tuple___________________________ { value: Match_arm_Pattern_Binders_Variant__Tuple___________________________ }
+
+struct Match_arm_Pattern_Binders_Variant__Tuple______________________________ { value: Match_arm_Pattern_Binders_Variant__Tuple______________________________ }
+
+struct Match_arm_Pattern_Binders_Variant__Tuple_______________________________ { value: Match_arm_Pattern_Binders_Variant__Tuple_______________________________ }
+
+struct Match_arm_Pattern_Binders_Variant__Tuple________________________________ { value: Match_arm_Pattern_Binders_Variant__Tuple________________________________ }
+
+struct Match_arm_Pattern_Binders_Variant__Tuple_________________________________ { value: Match_arm_Pattern_Binders_Variant__Tuple_________________________________ }
+
+struct Match_arm_Pattern_Binders_Variant__Tuple__________________________________ { value: Match_arm_Pattern_Binders_Variant__Tuple__________________________________ }
+
+struct Match_arm_Pattern_Binders_Variant__Tuple___________________________________ { value: Match_arm_Pattern_Binders_Variant__Tuple___________________________________ }
+
+struct Match_arm_Pattern_Binders_Variant__Tuple______________________________________ { value: Match_arm_Pattern_Binders_Variant__Tuple______________________________________ }
+
+struct Match_arm_Pattern_Binders_Variant__Tuple_______________________________________ { value: Match_arm_Pattern_Binders_Variant__Tuple_______________________________________ }
+
+struct Match_arm_Pattern_Binders_

@@ -1,0 +1,9 @@
+fn area(w: Int, h: Int) -> Int {
+    w * h
+}
+
+fn main() {
+    let rect = (2.0).to_int() * 3
+    let new_rect = rect.clone() + (3.0).to_int()
+    print(area(new_rect, 5))
+}

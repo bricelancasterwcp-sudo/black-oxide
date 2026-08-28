@@ -1,0 +1,506 @@
+fn digit_sum(n: Int) -> Int {
+    let mut sum = 0
+    let digits = int_to_str(n).chars().map(parse_int).map_result()
+    for digit in digits {
+        sum = sum + digit
+    }
+    sum
+}
+
+fn main() {
+    print(digit_sum(9875))
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    parse_int(s)
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f: FnMutResult) -> Result {
+    f()
+}
+
+fn map_result(f:

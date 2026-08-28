@@ -1,0 +1,88 @@
+struct Panic { msg: String }
+
+fn main() {
+    let xs = push(push(vec(), 4), 8)
+    let found = first_big(xs)
+    match second(xs) {
+        Some(n) => print(n),
+        None => print_str("too short"),
+    }
+    if found > 100 {
+        print_str("big!")
+    } else {
+        print(found)
+    }
+}
+
+fn first_big(v: Vec<Int>) -> Int {
+    let found = -1
+    for x in v {
+        if x > 10 {
+            found = x
+            break
+        }
+    }
+    found
+}
+
+fn second(v: Vec<Int>) -> Option<Int> {
+    let x = get(v, 1)?
+    Some(x + 1)
+}
+
+struct Reading { label: Str, values: Vec<Int> }
+
+struct Point { x: Int, y: Int }
+
+fn translate(p: Point, dx: Int, dy: Int) -> Point {
+    Point(p.x + dx, p.y + dy)
+}
+
+struct Circle { radius: Float }
+
+struct Shape { kind: ShapeKind }
+
+enum ShapeKind {
+    Circle(Circle),
+    Rect(Rect),
+    Nullary,
+}
+
+struct Rect { width: Int, height: Int }
+
+fn area(s: Shape) -> Float {
+    match s.kind {
+        ShapeKind(refCk) => match refCk {
+            Circle(refCk) => 3.14 * refCk.radius * refCk.radius,
+            Rect(refCk) => refCk.width * refCk.height,
+            Nullary => 0.0,
+        },
+    }
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(vec(), 4), 8) }
+    print(first_big(r.values))            // field access copies: r stays usable
+    let r2 = Reading { label: "lab2", ..r }
+    match second(r2.values) {
+        Some(n) => print(n),
+        None => print_str("too short"),
+    }
+    if first_big(r.values) > 100 {
+        print_str("big!")
+    } else {
+        print(first_big(r.values))
+    }
+    let p = Point(1, 2)
+    print(p.x)
+    print(p.y)
+    let p2 = translate(p, 3, 4)
+    print(p2.x)
+    print(p2.y)
+    let circle = Circle(1.5)
+    print(circle.radius)
+    let c2 = Circle(circle.radius + 1.0)
+    print(c2.radius)
+    let s = Shape(Circle(Circle(1.5).radius + 1.0).radius + 1.0).kind
+    print(area(s))
+}

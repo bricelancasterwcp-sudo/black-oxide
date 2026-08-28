@@ -1,0 +1,16 @@
+struct Fruit { name: Str, letters: Int }
+
+fn longest(f: Vec<Fruit>) -> Str {
+    let mut longest = Fruit { name: "", letters: 0 }
+    for fruit in f {
+        if fruit.letters > longest.letters {
+            longest = fruit
+        }
+    }
+    longest.name
+}
+
+fn main() {
+    let fruits = vec(Fruit { name: "fig", letters: 3 }, Fruit { name: "banana", letters: 6 }, Fruit { name: "kiwi", letters: 4 })
+    print(longest(fruits))
+}

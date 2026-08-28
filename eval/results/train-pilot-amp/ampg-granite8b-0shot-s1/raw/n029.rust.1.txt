@@ -1,0 +1,8 @@
+fn main() {
+    let x = "one";
+    let y = "two";
+    let z = "three";
+    println!("{}", x);
+    println!("{}", y);
+    println!("{}", z);
+}

@@ -1,0 +1,10 @@
+fn main() {
+    let r = push(push(push(push(vec(), 5), 3), 9), push(push(vec(), 1), 7))
+    let mut max = -1
+    for x in r {
+        if x > max {
+            max = x
+        }
+    }
+    print(max)
+}

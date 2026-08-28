@@ -1,0 +1,23 @@
+struct WordSeq {
+    words: Vec<Str>,
+    pos: Int,
+}
+
+fn vowel_count(seq: WordSeq) -> Int {
+    let mut count = 0
+    while letSOME(word) == get(seq.words, seq.pos) {
+        for c in chars(word) {
+            if c == "a" || c == "e" || c == "i" || c == "o" || c == "u" {
+                count = count + 1
+            }
+        }
+        let seq2 = WordSeq { words: seq.words, pos: seq.pos + 1 }
+        seq = seq2
+    }
+    count
+}
+
+fn main() {
+    let seq = WordSeq { words: push(push(vec(), "hello"), "world"), pos: 0 }
+    print(vowel_count(seq))
+}

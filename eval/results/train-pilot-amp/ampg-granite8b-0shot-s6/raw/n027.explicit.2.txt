@@ -1,0 +1,106 @@
+fn main() {
+    let word = "cat"
+    print(word.get(0))
+    print("\n")
+    print(word.get(1))
+    print("\n")
+    print(word.get(2))
+    print("\n")
+}
+
+fn get(v: &Vec<Str>, i: Int) -> Option<Str> {
+    if i < 0 || i >= len(&v) {
+        None
+    } else {
+        Some(v.get(i))
+    }
+}
+
+fn print(s: &Str) {
+    let n = len(&s)
+    let c = chars(&s)
+    for i in 0.to_int(n) {
+        print_str(get(&c, i))
+    }
+}
+
+fn len(v: &Vec<T>) -> Int {
+    let n = 0
+    for _ in v {
+        n + 1
+    }
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let n = len(&s)
+    let c = vec()
+    for i in 0.to_int(n) {
+        push(c, s.get(i))
+    }
+    c
+}
+
+fn to_int(x: Float) -> Int {
+    trunc(x)
+}
+
+fn to_float(x: Int) -> Float {
+    x.to_float()
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    let n = len(&a)
+    let c = vec()
+    for i in 0.to_int(n) {
+        push(c, a.get(i))
+    }
+    let n = len(&b)
+    for i in 0.to_int(n) {
+        push(c, b.get(i))
+    }
+    c
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    let n = len(&s)
+    if n == 0 {
+        None
+    } else {
+        let c = chars(&s)
+        let mut x = 0.to_int()
+        for i in 0.to_int(n) {
+            let d = c.get(i) - "0".get(0)
+            if d < 0 || d > 9 {
+                None
+            } else {
+                x = 10.to_int() * x + d
+            }
+        }
+        Some(x)
+    }
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let n = len(&s)
+    let c = vec()
+    for i in a.to_int(b) {
+        push(c, i)
+    }
+    c
+}
+
+fn clone(x: T) -> T {
+    x
+}
+
+fn main() {
+    let s = "cat"
+    let n = len(&s)
+    if n == 3 {
+        print(s)
+    } else if n == 2 {
+        print("c")
+        print("a")
+        print("t")
+    }
+}

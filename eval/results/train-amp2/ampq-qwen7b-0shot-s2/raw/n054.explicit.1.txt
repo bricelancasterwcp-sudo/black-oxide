@@ -1,0 +1,416 @@
+fn main() {
+    let vowels = "aeiouAEIOU".chars().collect_vec().into_iter().fold(0, 0 || vowel_count(&vowels, _))
+    let consonants = 26 - vowels
+    print(vowels)
+    print(consonants)
+}
+
+fn vowel_count(vowels: &Vec<Char>, c: Char) -> Int {
+    if vowels.contains(&c) {
+        1
+    } else {
+        0
+    }
+}
+
+fn collect_vec() -> Vec<Char> {
+    let mut vec = Vec()
+    vec.push_back(c)
+    vec
+}
+
+fn push_back(v: Vec<Char>, c: Char) -> Vec<Char> {
+    v.push_back(c)
+    v
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    s.split("").collect_vec()
+}
+
+fn int_to_str(n: Int) -> Str {
+    n.to_string()
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    s.parse().ok()
+}
+
+fn to_float(n: Int) -> Float {
+    n.to_float()
+}
+
+fn trunc(x: Float) -> Int {
+    x.trunc()
+}
+
+fn drop_name(name: Str) {
+    name
+}
+
+fn drop_vec(v: Vec<Char>) {
+    v
+}
+
+fn drop_str(s: Str) {
+    s
+}
+
+fn drop_float(x: Float) {
+    x
+}
+
+fn drop_int(n: Int) {
+    n
+}
+
+fn drop_unit(unit: Unit) {
+    unit
+}
+
+fn drop_option_none() {
+    None
+}
+
+fn drop_option_some(x: Int) {
+    Some(x)
+}
+
+fn drop_result_ok(x: Int) {
+    Ok(x)
+}
+
+fn drop_result_err(e: Str) {
+    Err(e)
+}
+
+fn drop_vec_int(v: Vec<Int>) {
+    v
+}
+
+fn drop_vec_str(v: Vec<Str>) {
+    v
+}
+
+fn drop_vec_float(v: Vec<Float>) {
+    v
+}
+
+fn drop_vec_unit(v: Vec<Unit>) {
+    v
+}
+
+fn drop_vec_option_none(v: Vec<Option<Int>>) {
+    v
+}
+
+fn drop_vec_option_some(v: Vec<Option<Int>>) {
+    v
+}
+
+fn drop_vec_result_ok(v: Vec<Result<Int, Str>>) {
+    v
+}
+
+fn drop_vec_result_err(v: Vec<Result<Int, Str>>) {
+    v
+}
+
+fn drop_vec_vec_int(v: Vec<Vec<Int>>) {
+    v
+}
+
+fn drop_vec_vec_str(v: Vec<Vec<Str>>) {
+    v
+}
+
+fn drop_vec_vec_float(v: Vec<Vec<Float>>) {
+    v
+}
+
+fn drop_vec_vec_unit(v: Vec<Vec<Unit>>) {
+    v
+}
+
+fn drop_vec_vec_option_none(v: Vec<Vec<Option>>) {
+    v
+}
+
+fn drop_vec_vec_option_some(v: Vec<Vec<Option>>) {
+    v
+}
+
+fn drop_vec_vec_result_ok(v: Vec<Vec<Result>>) {
+    v
+}
+
+fn drop_vec_vec_result_err(v: Vec<Vec<Result>>) {
+    v
+}
+
+fn drop_vec_vec_vec_int(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_str(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_float(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_unit(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_option_none(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_option_some(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_result_ok(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_result_err(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_int(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_str(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_float(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_unit(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_option_none(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_option_some(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_result_ok(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_result_err(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_vec_int(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_vec_str(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_vec_float(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_vec_unit(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_vec_option_none(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_vec_option_some(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_vec_result_ok(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_vec_result_err(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_int(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_str(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_float(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_unit(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_option_none(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_option_some(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_result_ok(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_result_err(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_int(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_str(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_float(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_unit(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_option_none(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_option_some(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_result_ok(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_result_err(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_vec_int(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_vec_str(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_vec_float(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_vec_unit(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_vec_option_none(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_vec_option_some(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_vec_result_ok(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_vec_result_err(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_vec_vec_int(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_vec_vec_str(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_vec_vec_float(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_vec_vec_unit(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_vec_vec_option_none(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_vec_vec_option_some(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_vec_vec_result_ok(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_vec_vec_result_err(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_vec_vec_vec_int(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_vec_vec_vec_str(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_vec_vec_vec_float(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_vec_vec_vec_unit(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_vec_vec_vec_option_none(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_vec_vec_vec_option_some(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_vec_vec_vec_result_ok(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_vec_vec_vec_result_err(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_vec_vec_vec_vec_int(v: Vec<Vec<Vec>>) {
+    v
+}
+
+fn drop_vec_vec_vec_vec_vec_vec_vec_vec_vec_vec_vec_str(v: Vec<Vec<Vec>>) {
+    v

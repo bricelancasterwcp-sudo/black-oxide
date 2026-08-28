@@ -1,0 +1,13 @@
+fn sum_two(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn main() {
+    let mut seq = vec(1, 1)
+    for _ in 0.upto(8) {
+        let next = sum_two(seq.get(seq.len() - 1).unwrap(), seq.get(seq.len() - 2).unwrap())
+        push(seq, next)
+    }
+    print(seq.get(9).unwrap())
+    drop seq
+}

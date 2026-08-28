@@ -1,0 +1,398 @@
+fn main() {
+    let mut sensor = Sensor { reading: 0 }
+    sensor.reading = 7
+    print(sensor.reading)
+}
+
+struct Sensor {
+    reading: Int,
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn int_to_str(n: Int) -> Str {
+    if n == 0 {
+        return "0"
+    }
+    let mut digits = vec()
+    let mut n = n
+    while n != 0 {
+        digits = push(digits, n % 10)
+        n = trunc(n / 10)
+    }
+    let mut result = ""
+    for d in &digits {
+        result = concat(result, int_to_str(d))
+    }
+    result
+}
+
+fn print_str(s: Str) {
+    for c in &chars {
+        print(c)
+    }
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    if s == "" {
+        return vec()
+    }
+    let mut result = vec(s.chars().next().unwrap())
+    for c in s.chars().skip(1) {
+        result = push(result, c)
+    }
+    result
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    let mut v = v
+    v.push(x)
+    v
+}
+
+fn vec() -> Vec<T> {
+    Vec()
+}
+
+fn trunc(x: Int) -> Int {
+    if x >= 0 {
+        return x
+    }
+    return x + 1
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut result = a
+    for c in &chars {
+        result = concat(result, c)
+    }
+    result
+}
+
+fn drop_sensor(sensor: Sensor) {
+    drop sensor
+}
+
+fn drop_int(x: Int) {
+    drop x
+}
+
+fn drop_str(s: Str) {
+    drop s
+}
+
+fn drop_vec(v: Vec<T>) {
+    drop v
+}
+
+fn drop_char(c: Str) {
+    drop c
+}
+
+fn drop_digits(digits: Vec<Int>) {
+    drop digits
+}
+
+fn drop_result(result: Str) {
+    drop result
+}
+
+fn drop_n(n: Int) {
+    drop n
+}
+
+fn drop_c(c: Int) {
+    drop c
+}
+
+fn drop_digits_1(digits: Vec<Int>) {
+    drop digits
+}
+
+fn drop_result_1(result: Str) {
+    drop result
+}
+
+fn drop_n_1(n: Int) {
+    drop n
+}
+
+fn drop_c_1(c: Int) {
+    drop c
+}
+
+fn drop_digits_2(digits: Vec<Int>) {
+    drop digits
+}
+
+fn drop_result_2(result: Str) {
+    drop result
+}
+
+fn drop_n_2(n: Int) {
+    drop n
+}
+
+fn drop_c_2(c: Int) {
+    drop c
+}
+
+fn drop_digits_3(digits: Vec<Int>) {
+    drop digits
+}
+
+fn drop_result_3(result: Str) {
+    drop result
+}
+
+fn drop_n_3(n: Int) {
+    drop n
+}
+
+fn drop_c_3(c: Int) {
+    drop c
+}
+
+fn drop_digits_4(digits: Vec<Int>) {
+    drop digits
+}
+
+fn drop_result_4(result: Str) {
+    drop result
+}
+
+fn drop_n_4(n: Int) {
+    drop n
+}
+
+fn drop_c_4(c: Int) {
+    drop c
+}
+
+fn drop_digits_5(digits: Vec<Int>) {
+    drop digits
+}
+
+fn drop_result_5(result: Str) {
+    drop result
+}
+
+fn drop_n_5(n: Int) {
+    drop n
+}
+
+fn drop_c_5(c: Int) {
+    drop c
+}
+
+fn drop_digits_6(digits: Vec<Int>) {
+    drop digits
+}
+
+fn drop_result_6(result: Str) {
+    drop result
+}
+
+fn drop_n_6(n: Int) {
+    drop n
+}
+
+fn drop_c_6(c: Int) {
+    drop c
+}
+
+fn drop_digits_7(digits: Vec<Int>) {
+    drop digits
+}
+
+fn drop_result_7(result: Str) {
+    drop result
+}
+
+fn drop_n_7(n: Int) {
+    drop n
+}
+
+fn drop_c_7(c: Int) {
+    drop c
+}
+
+fn drop_digits_8(digits: Vec<Int>) {
+    drop digits
+}
+
+fn drop_result_8(result: Str) {
+    drop result
+}
+
+fn drop_n_8(n: Int) {
+    drop n
+}
+
+fn drop_c_8(c: Int) {
+    drop c
+}
+
+fn drop_digits_9(digits: Vec<Int>) {
+    drop digits
+}
+
+fn drop_result_9(result: Str) {
+    drop result
+}
+
+fn drop_n_9(n: Int) {
+    drop n
+}
+
+fn drop_c_9(c: Int) {
+    drop c
+}
+
+fn drop_digits_10(digits: Vec<Int>) {
+    drop digits
+}
+
+fn drop_result_10(result: Str) {
+    drop result
+}
+
+fn drop_n_10(n: Int) {
+    drop n
+}
+
+fn drop_c_10(c: Int) {
+    drop c
+}
+
+fn drop_digits_11(digits: Vec<Int>) {
+    drop digits
+}
+
+fn drop_result_11(result: Str) {
+    drop result
+}
+
+fn drop_n_11(n: Int) {
+    drop n
+}
+
+fn drop_c_11(c: Int) {
+    drop c
+}
+
+fn drop_digits_12(digits: Vec<Int>) {
+    drop digits
+}
+
+fn drop_result_12(result: Str) {
+    drop result
+}
+
+fn drop_n_12(n: Int) {
+    drop n
+}
+
+fn drop_c_12(c: Int) {
+    drop c
+}
+
+fn drop_digits_13(digits: Vec<Int>) {
+    drop digits
+}
+
+fn drop_result_13(result: Str) {
+    drop result
+}
+
+fn drop_n_13(n: Int) {
+    drop n
+}
+
+fn drop_c_13(c: Int) {
+    drop c
+}
+
+fn drop_digits_14(digits: Vec<Int>) {
+    drop digits
+}
+
+fn drop_result_14(result: Str) {
+    drop result
+}
+
+fn drop_n_14(n: Int) {
+    drop n
+}
+
+fn drop_c_14(c: Int) {
+    drop c
+}
+
+fn drop_digits_15(digits: Vec<Int>) {
+    drop digits
+}
+
+fn drop_result_15(result: Str) {
+    drop result
+}
+
+fn drop_n_15(n: Int) {
+    drop n
+}
+
+fn drop_c_15(c: Int) {
+    drop c
+}
+
+fn drop_digits_16(digits: Vec<Int>) {
+    drop digits
+}
+
+fn drop_result_16(result: Str) {
+    drop result
+}
+
+fn drop_n_16(n: Int) {
+    drop n
+}
+
+fn drop_c_16(c: Int) {
+    drop c
+}
+
+fn drop_digits_17(digits: Vec<Int>) {
+    drop digits
+}
+
+fn drop_result_17(result: Str) {
+    drop result
+}
+
+fn drop_n_17(n: Int) {
+    drop n
+}
+
+fn drop_c_17(c: Int) {
+    drop c
+}
+
+fn drop_digits_18(digits: Vec<Int>) {
+    drop digits
+}
+
+fn drop_result_18(result: Str) {
+    drop result
+}
+
+fn drop_n_18(n: Int) {
+    drop n
+}
+
+fn drop_c_18(c: Int) {
+    drop c
+}
+
+fn drop_digits_19(digits

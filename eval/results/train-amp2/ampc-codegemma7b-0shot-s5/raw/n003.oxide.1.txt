@@ -1,0 +1,9 @@
+fn main() {
+    let mut count = 0
+    for x in 1.to_int().to_float() + 1.0 / 2.0.to_int().to_float() <= 36.0 {
+        if 36 % x.to_int().to_float() == 0.0 {
+            count = count + 1
+        }
+    }
+    print(count)
+}

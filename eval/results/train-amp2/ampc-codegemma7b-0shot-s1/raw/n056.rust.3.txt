@@ -1,0 +1,20 @@
+```rust
+use std::collections::HashMap;
+
+fn main() {
+    let texts = ["7", "x", "9", "?"];
+    let mut numbers = HashMap::new();
+
+    for text in texts {
+        if let Ok(number) = text.parse::<u32>() {
+            numbers.insert(text, number);
+        }
+    }
+
+    let total_numbers = numbers.len();
+    let not_numbers = texts.len() - total_numbers;
+
+    println!("Total numbers: {}", total_numbers);
+    println!("Not numbers: {}", not_numbers);
+}
+```

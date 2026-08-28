@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut i = 0;
+    for num in [4, 7, 4, 9, 4] {
+        if num == 4 {
+            println!("{}", i);
+        }
+        i += 1;
+    }
+}
+```

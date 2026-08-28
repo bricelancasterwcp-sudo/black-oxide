@@ -1,0 +1,11 @@
+fn stock(n: Int, p: Float) -> Float {
+    n * p
+}
+
+fn main() {
+    let four = 4
+    let two = 2
+    let three = 3.0
+    let five = 5.0
+    print(stock(stock(four, three), stock(to_float(five), two)))
+}

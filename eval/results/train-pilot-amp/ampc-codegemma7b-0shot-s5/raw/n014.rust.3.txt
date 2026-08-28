@@ -1,0 +1,12 @@
+fn main() {
+    let readings = vec![5, 3, 9, 1, 7];
+    let mut smallest = std::usize::MAX;
+
+    for reading in readings {
+        if reading < smallest {
+            smallest = reading;
+        }
+    }
+
+    println!("The smallest reading is: {}", smallest);
+}

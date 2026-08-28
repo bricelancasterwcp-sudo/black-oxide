@@ -1,0 +1,62 @@
+fn main() {
+    "~/bin/oxide" < solution.oxi
+}
+
+fn is_prime(x: Int) -> Bool {
+    if x <= 1 {
+        false
+    }
+    elseif  // 2 is the only even prime
+    2 == x
+    elseif
+    2 <= x && x % 2 == 0
+    ivec = range(3, x / 2)
+    for y in ivec {
+        if x % y == 0 {
+            false
+        }
+    }
+    true
+}
+
+fn main() {
+    if is_prime(91) {
+        print_str("yes\n")
+    }
+    elseif
+    91 <= 0
+    ivec = range(3, 91 / 2)
+    for y in ivec {
+        if 91 % y == 0 {
+            print_str("no\n")
+            break
+        }
+    }
+}
+
+enum Answer {
+    Yes,
+    No,
+}
+
+fn is_prime(x: Int) -> Answer {
+    if x <= 1 {
+        Answer.no
+    }
+    elseif
+    2 <= x && x % 2 == 0
+    ivec = range(3, x / 2)
+    for y in ivec {
+        if x % y == 0 {
+            Answer.no
+        }
+    }
+    Answer.yes
+}
+
+fn main() {
+    match is_prime(91) {
+        Answer_Yes => print_str("yes\n"),
+        Answer_No => print_str("no\n"),
+    }
+}

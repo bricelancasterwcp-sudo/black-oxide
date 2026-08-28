@@ -1,0 +1,7 @@
+struct Granite { letter: Str }
+
+fn main() {
+    let g = Granite { letter: "granite" }
+    print(g.letter.chars().next().unwrap())
+    print(g.letter.chars().last().unwrap())
+}

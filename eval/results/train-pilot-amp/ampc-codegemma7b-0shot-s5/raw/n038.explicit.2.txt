@@ -1,0 +1,235 @@
+fn main() {
+    let mut device = Device { sensor: Sensor { reading: 0 } }
+    device.sensor.reading = 7
+    print(device.sensor.reading)
+}
+
+struct Device {
+    sensor: Sensor,
+}
+
+struct Sensor {
+    reading: Int,
+}
+
+fn print(x: Int) {
+    let s = int_to_str(x)
+    print_str(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    let s = "0123456789"
+    if n < 10 {
+        return str_slice(s, n, n + 1)
+    } else {
+        return concat(int_to_str(trunc(n / 10)), str_slice(s, trunc(n % 10), trunc(n % 10) + 1))
+    }
+}
+
+fn str_slice(s: &Str, start: Int, end: Int) -> Str {
+    let mut result = Str { data: 0, len: 0 }
+    for i in start < end {
+        result = push(result, str_char(s, i))
+    }
+    result
+}
+
+fn str_char(s: &Str, index: Int) -> Str {
+    let c = s.chars().nth(index)
+    if c == None {
+        return Str { data: 0, len: 0 }
+    } else {
+        return str_chr(c.unwrap())
+    }
+}
+
+fn str_chr(c: Char) -> Str {
+    let s = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!\"#$%&'()=~+-*/.,:;?@[]^_`{}|\\"
+    let index = c - 32
+    if index < 0 || index >= len(s) {
+        return Str { data: 0, len: 0 }
+    } else {
+        return str_slice(s, index, index + 1)
+    }
+}
+
+fn len(s: &Str) -> Int {
+    let mut result = 0
+    for _ in s.chars() {
+        result = result + 1
+    }
+    result
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut result = Str { data: 0, len: 0 }
+    for c in a.chars() {
+        result = push(result, c)
+    }
+    for c in b.chars() {
+        result = push(result, c)
+    }
+    result
+}
+
+fn push(v: Str, x: Char) -> Str {
+    let mut result = v
+    for i in 0 < result.len {
+        result = result.set(i, result.chars().nth(i).unwrap())
+    }
+    result = result.set(result.len, x)
+    result.len = result.len + 1
+    result
+}
+
+fn str_len(s: &Str) -> Int {
+    let mut result = 0
+    for _ in s.chars() {
+        result = result + 1
+    }
+    result
+}
+
+fn print_str(s: Str) {
+    for c in s.chars() {
+        print(c)
+    }
+    print("\n")
+}
+
+fn print(x: Char) {
+    let c = x - 32
+    let s = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!\"#$%&'()=~+-*/.,:;?@[]^_`{}|\\"
+    let index = c
+    if index >= 0 && index < len(s) {
+        print(s.chars().nth(index).unwrap())
+    }
+}
+
+fn print(x: Int) {
+    let s = int_to_str(x)
+    print_str(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    let s = "0123456789"
+    if n < 10 {
+        return str_slice(s, n, n + 1)
+    } else {
+        return concat(int_to_str(trunc(n / 10)), str_slice(s, trunc(n % 10), trunc(n % 10) + 1))
+    }
+}
+
+fn str_slice(s: &Str, start: Int, end: Int) -> Str {
+    let mut result = Str { data: 0, len: 0 }
+    for i in start < end {
+        result = push(result, str_char(s, i))
+    }
+    result
+}
+
+fn str_char(s: &Str, index: Int) -> Str {
+    let c = s.chars().nth(index)
+    if c == None {
+        return Str { data: 0, len: 0 }
+    } else {
+        return str_chr(c.unwrap())
+    }
+}
+
+fn str_chr(c: Char) -> Str {
+    let s = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!\"#$%&'()=~+-*/.,:;?@[]^_`{}|\\"
+    let index = c - 32
+    if index < 0 || index >= len(s) {
+        return Str { data: 0, len: 0 }
+    } else {
+        return str_slice(s, index, index + 1)
+    }
+}
+
+fn len(s: &Str) -> Int {
+    let mut result = 0
+    for _ in s.chars() {
+        result = result + 1
+    }
+    result
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut result = Str { data: 0, len: 0 }
+    for c in a.chars() {
+        result = push(result, c)
+    }
+    for c in b.chars() {
+        result = push(result, c)
+    }
+    result
+}
+
+fn push(v: Str, x: Char) -> Str {
+    let mut result = v
+    for i in 0 < result.len {
+        result = result.set(i, result.chars().nth(i).unwrap())
+    }
+    result = result.set(result.len, x)
+    result.len = result.len + 1
+    result
+}
+
+fn str_len(s: &Str) -> Int {
+    let mut result = 0
+    for _ in s.chars() {
+        result = result + 1
+    }
+    result
+}
+
+fn print_str(s: Str) {
+    for c in s.chars() {
+        print(c)
+    }
+    print("\n")
+}
+
+fn print(x: Char) {
+    let c = x - 32
+    let s = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!\"#$%&'()=~+-*/.,:;?@[]^_`{}|\\"
+    let index = c
+    if index >= 0 && index < len(s) {
+        print(s.chars().nth(index).unwrap())
+    }
+}
+
+fn print(x: Int) {
+    let s = int_to_str(x)
+    print_str(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    let s = "0123456789"
+    if n < 10 {
+        return str_slice(s, n, n + 1)
+    } else {
+        return concat(int_to_str(trunc(n / 10)), str_slice(s, trunc(n % 10), trunc(n % 10) + 1))
+    }
+}
+
+fn str_slice(s: &Str, start: Int, end: Int) -> Str {
+    let mut result = Str { data: 0, len: 0 }
+    for i in start < end {
+        result = push(result, str_char(s, i))
+    }
+    result
+}
+
+fn str_char(s: &Str, index: Int) -> Str {
+    let c = s.chars().nth(index)
+    if c == None {
+        return Str { data: 0, len: 0 }
+    } else {
+        return str_chr(c.unwrap())
+    }
+}
+
+fn str_chr(c: Char) -> Str {
+    let s = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!\"#$%&'()=~+-*/.,:;

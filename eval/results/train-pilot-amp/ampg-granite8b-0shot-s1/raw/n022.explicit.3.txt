@@ -1,0 +1,11 @@
+fn join_the_oxide(black: Str, oxide: Str) -> Str {
+    black + oxide
+}
+
+fn main() {
+    let black = "black"
+    let oxide = "oxide"
+    print(join_the_oxide(black, oxide))
+    drop black
+    drop oxide
+}

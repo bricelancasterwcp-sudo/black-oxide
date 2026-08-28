@@ -1,0 +1,7 @@
+fn main() {
+    let mut scores = vec(2, 9, 5)
+    scores.sort_by_key(std.cmp.reverse)
+    for score in &scores {
+        println(score)
+    }
+}

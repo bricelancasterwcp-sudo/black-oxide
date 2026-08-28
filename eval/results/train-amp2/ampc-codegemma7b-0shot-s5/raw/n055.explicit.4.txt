@@ -1,0 +1,19 @@
+fn main() {
+    let numbers = vec("8", "oak", "15")
+    for s in &numbers {
+        match s {
+            Ok(num) => print(num),
+            Err(_) => print("bad"),
+        }
+    }
+}
+
+fn main() {
+    let numbers = vec("8", "oak", "15")
+    for s in &numbers {
+        match s {
+            Ok(num) => print(num),
+            Err(_) => print("bad"),
+        }
+    }
+}

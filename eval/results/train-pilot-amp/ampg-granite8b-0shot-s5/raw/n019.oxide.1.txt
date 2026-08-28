@@ -1,0 +1,262 @@
+struct List {
+    head: Int,
+    tail: Option<List>,
+}
+
+fn main() {
+    let l1 = List { head: 1, tail: Some(List { head: 2, tail: Some(List { head: 3, tail: None }) }) }
+    let l2 = List { head: 4, tail: Some(List { head: 5, tail: None }) }
+    let l3 = concat(l1, l2)
+    let count = len(l3)
+    print(count)
+}
+
+fn concat(l1: List, l2: List) -> List {
+    match l1.tail {
+        None => List { head: l1.head, tail: Some(l2) },
+        Some(r1) => List { head: l1.head, tail: Some(concat(r1, l2)) },
+    }
+}
+
+fn len(l: List) -> Int {
+    match l.tail {
+        None => 1,
+        Some(r) => 1 + len(r),
+    }
+}
+
+fn print(x: Int) {
+    print_str(to_str(x))
+}
+
+fn print_str(s: Str) {
+    print_str("OX: ")
+    print_str(s)
+    print_str("\n")
+}
+
+fn to_str(n: Int) -> Str {
+    str_concat("Int(", int_to_str(n), ")")
+}
+
+fn str_concat(a: Str, b: Str) -> Str {
+    let len_a = str_len(a)
+    let len_b = str_len(b)
+    let res = vec()
+    for i in 0 < i + 1 {
+        res = push(res, get(a, i)?)
+    }
+    for j in 0 < j + 1 {
+        res = push(res, get(b, j)?)
+    }
+    res
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut v = vec()
+    let mut n_copy = n
+    while n_copy > 0 {
+        let d = trunc(n_copy % 10.0)
+        let s = get(range(48, 58), d + 1)?
+        v = push(v, s)
+        n_copy = trunc(n_copy / 10.0)
+    }
+    let s = concat(v, vec("".to_string()))
+    s
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    if i >= 0 && i < len(v) {
+        Some(get_helper(v, i))
+    } else {
+        None
+    }
+}
+
+fn get_helper(v: Vec<Int>, i: Int) -> Int {
+    if i == 0 {
+        return head(v)
+    } else {
+        return get_helper(tail(v)?, i - 1)
+    }
+}
+
+fn head(v: Vec<Int>) -> Int {
+    match v {
+        Vec(first, _) => first,
+    }
+}
+
+fn tail(v: Vec<Int>) -> Option<Vec<Int>> {
+    match v {
+        Vec(_, rest) => rest,
+    }
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    Vec(x, v)
+}
+
+struct Vec {
+    head: Int,
+    tail: Option<Vec>,
+}
+
+fn len(v: Vec) -> Int {
+    match v.tail {
+        None => 1,
+        Some(r) => 1 + len(r),
+    }
+}
+
+fn main() {
+    let l1 = List { head: 1, tail: Some(List { head: 2, tail: Some(List { head: 3, tail: None }) }) }
+    let l2 = List { head: 4, tail: Some(List { head: 5, tail: None }) }
+    let l3 = concat(l1, l2)
+    let count = len(l3)
+    print(count)
+}
+
+fn concat(l1: List, l2: List) -> List {
+    match l1.tail {
+        None => List { head: l1.head, tail: Some(l2) },
+        Some(r1) => List { head: l1.head, tail: Some(concat(r1, l2)) },
+    }
+}
+
+fn len(l: List) -> Int {
+    match l.tail {
+        None => 1,
+        Some(r) => 1 + len(r),
+    }
+}
+
+fn print(x: Int) {
+    print_str(to_str(x))
+}
+
+fn print_str(s: Str) {
+    print_str("OX: ")
+    print_str(s)
+    print_str("\n")
+}
+
+fn to_str(n: Int) -> Str {
+    str_concat("Int(", int_to_str(n), ")")
+}
+
+fn str_concat(a: Str, b: Str) -> Str {
+    let len_a = str_len(a)
+    let len_b = str_len(b)
+    let res = vec()
+    for i in 0 < i + 1 {
+        res = push(res, get(a, i)?)
+    }
+    for j in 0 < j + 1 {
+        res = push(res, get(b, j)?)
+    }
+    res
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut v = vec()
+    let mut n_copy = n
+    while n_copy > 0 {
+        let d = trunc(n_copy % 10.0)
+        let s = get(range(48, 58), d + 1)?
+        v = push(v, s)
+        n_copy = trunc(n_copy / 10.0)
+    }
+    let s = concat(v, vec("".to_string()))
+    s
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    if i >= 0 && i < len(v) {
+        Some(get_helper(v, i))
+    } else {
+        None
+    }
+}
+
+fn get_helper(v: Vec<Int>, i: Int) -> Int {
+    if i == 0 {
+        return head(v)
+    } else {
+        return get_helper(tail(v)?, i - 1)
+    }
+}
+
+fn head(v: Vec<Int>) -> Int {
+    match v {
+        Vec(first, _) => first,
+    }
+}
+
+fn tail(v: Vec<Int>) -> Option<Vec<Int>> {
+    match v {
+        Vec(_, rest) => rest,
+    }
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    Vec(x, v)
+}
+
+struct Vec {
+    head: Int,
+    tail: Option<Vec>,
+}
+
+fn len(v: Vec) -> Int {
+    match v.tail {
+        None => 1,
+        Some(r) => 1 + len(r),
+    }
+}
+
+fn main() {
+    let l1 = List { head: 1, tail: Some(List { head: 2, tail: Some(List { head: 3, tail: None }) }) }
+    let l2 = List { head: 4, tail: Some(List { head: 5, tail: None }) }
+    let l3 = concat(l1, l2)
+    let count = len(l3)
+    print(count)
+}
+
+fn concat(l1: List, l2: List) -> List {
+    match l1.tail {
+        None => List { head: l1.head, tail: Some(l2) },
+        Some(r1) => List { head: l1.head, tail: Some(concat(r1, l2)) },
+    }
+}
+
+fn len(l: List) -> Int {
+    match l.tail {
+        None => 1,
+        Some(r) => 1 + len(r),
+    }
+}
+
+fn print(x: Int) {
+    print_str(to_str(x))
+}
+
+fn print_str(s: Str) {
+    print_str("OX: ")
+    print_str(s)
+    print_str("\n")
+}
+
+fn to_str(n: Int) -> Str {
+    str_concat("Int(", int_to_str(n), ")")
+}
+
+fn str_concat(a: Str, b: Str) -> Str {
+    let len_a = str_len(a)
+    let len_b = str_len(b)
+    let res = vec()
+    for i in 0 < i + 1 {
+        res = push(res, get(a, i)?)
+    }
+    for j in 0 < j + 1 {
+        res =

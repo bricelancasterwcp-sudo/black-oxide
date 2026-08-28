@@ -1,0 +1,9 @@
+fn main() {
+    let list = vec(10, 20, 30, 40)
+    let entry = get(&list, 1)
+    print_str(match entry {
+            SOME(x) => int_to_str(x),
+            None => "missing",
+        })
+    drop list
+}

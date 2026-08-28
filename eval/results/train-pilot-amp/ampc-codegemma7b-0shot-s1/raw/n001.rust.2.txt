@@ -1,0 +1,9 @@
+use std::io::{Write, stdout};
+
+fn main() {
+    let mut total = 0;
+    for n in 1..=5 {
+        total += i32::pow(n, 3);
+    }
+    write!(stdout(), "{}", total).unwrap();
+}

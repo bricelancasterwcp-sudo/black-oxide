@@ -1,0 +1,16 @@
+fn main() {
+    let nums = vec(12, 5, 20, 8, 17)
+    let first = nums.get(0)
+    let mut second = None
+    let mut largest = first
+    for i in range(1, nums.len()) {
+        let num = nums.get(i)
+        largest = if num > largest { num } else { largest }
+        second = if num > second { Some(num) } else { second }
+    }
+    print_str("The second largest number is ")
+    print(second.unwrap())
+    print_str("\n")
+    print_str("The largest number is ")
+    print(largest)
+}

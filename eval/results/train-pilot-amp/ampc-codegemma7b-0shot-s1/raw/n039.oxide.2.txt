@@ -1,0 +1,7 @@
+fn main() {
+    let a = vec(1, 2)
+    match get(a, 5) {
+        Some(x) => print(x),
+        None => print_str("none"),
+    }
+}

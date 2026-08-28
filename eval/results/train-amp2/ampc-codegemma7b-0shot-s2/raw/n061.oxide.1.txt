@@ -1,0 +1,14 @@
+fn area(width: Float, height: Float) -> Float {
+    width * height
+}
+
+fn perimeter(width: Float, height: Float) -> Float {
+    2.0 * (width + height)
+}
+
+fn main() {
+    let width = 9.0
+    let height = 3.0
+    print(area(width, height))
+    print(perimeter(width, height))
+}

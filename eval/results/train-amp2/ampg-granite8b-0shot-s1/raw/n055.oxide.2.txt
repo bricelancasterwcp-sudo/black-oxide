@@ -1,0 +1,23 @@
+struct Entry {
+    number: Option<Int>,
+}
+
+fn print_entry(e: Entry) {
+    match e.number {
+        None => print_str("no number\n"),
+        Some(n) => {
+            print_str("number: ")
+            print(n)
+            print_str("\n")
+        },
+    }
+}
+
+fn main() {
+    let e1 = Entry { number: Some(8) }
+    let e2 = Entry { number: Some(15) }
+    let e3 = Entry { number: None }
+    print_entry(e1)
+    print_entry(e2)
+    print_entry(e3)
+}

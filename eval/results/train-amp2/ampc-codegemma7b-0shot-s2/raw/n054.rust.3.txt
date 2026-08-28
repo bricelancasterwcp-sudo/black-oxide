@@ -1,0 +1,23 @@
+fn is_vowel(c: char) -> bool {
+    match c {
+        'a' | 'e' | 'i' | 'o' | 'u' => true,
+        'A' | 'E' | 'I' | 'O' | 'U' => true,
+        _ => false,
+    }
+}
+
+fn main() {
+    let mut vowels = 0;
+    let mut consonants = 0;
+
+    for c in "keyboard".chars() {
+        if is_vowel(c) {
+            vowels += 1;
+        } else {
+            consonants += 1;
+        }
+    }
+
+    println!("Vowels: {}", vowels);
+    println!("Consonants: {}", consonants);
+}

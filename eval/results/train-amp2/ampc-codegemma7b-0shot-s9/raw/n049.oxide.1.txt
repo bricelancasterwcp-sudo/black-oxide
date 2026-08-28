@@ -1,0 +1,15 @@
+fn main() {
+    let v = vec(8, 3, 11, 6)
+    let mut min = v.first().unwrap()
+    let mut max = v.first().unwrap()
+    for n in v {
+        if n < min {
+            min = n
+        }
+        if n > max {
+            max = n
+        }
+    }
+    print(min)
+    print(max - min)
+}

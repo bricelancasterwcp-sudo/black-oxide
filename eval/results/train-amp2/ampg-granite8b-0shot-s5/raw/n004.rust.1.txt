@@ -1,0 +1,18 @@
+```rust
+fn main() {
+  let mut a = 1;
+  let mut b = 1;
+  let mut count = 0;
+
+  while count < 10 {
+    let c = a + b;
+    a = b;
+    b = c;
+    count += 1;
+  }
+
+  println!("{}", b);
+}
+```
+
+This is the complete program source for a Rust program that prints the tenth term of the Fibonacci sequence. It initializes variables a and b to 1, and a count variable to 0. It then enters a while loop that continues until the count reaches 10. Within the loop, it calculates the next term of the sequence by adding the current values of a and b, and assigns it to the variable c. It then updates the values of a and b to be the previous values of b and c, respectively. Finally, it increments the count variable by 1. Once the count reaches 10, the program prints the value of b, which is the tenth term of the sequence.

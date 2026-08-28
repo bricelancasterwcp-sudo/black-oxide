@@ -1,0 +1,12 @@
+fn main() {
+    let phrase = "hello world"
+    let mut i = 0
+    while i < str_len(phrase) {
+        if phrase.get(i) == Some(&_) {
+            i = i + 1
+        } else {
+            break
+        }
+    }
+    print(i)
+}

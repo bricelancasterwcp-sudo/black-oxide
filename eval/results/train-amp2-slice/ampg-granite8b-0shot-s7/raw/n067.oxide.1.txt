@@ -1,0 +1,23 @@
+struct Pair { x: Int, y: Int }
+
+fn walk(vec: Vec<Int>) -> Int {
+    let total = 0
+    for i in range(0, vec.len()) {
+        let x = get(vec, i)?
+        if x % 2 == 1 {
+            let x2 = x * 2
+            print_str(str_from_int(x2))
+            print_str("\n")
+        } else {
+            let total2 = total + x
+            print_str(str_from_int(total2))
+            print_str("\n")
+        }
+    }
+    total
+}
+
+fn main() {
+    let v = push(push(push(vec(), 1), 2), 3)
+    print(walk(v))
+}

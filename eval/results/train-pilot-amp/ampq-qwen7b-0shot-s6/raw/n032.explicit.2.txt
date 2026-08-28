@@ -1,0 +1,347 @@
+fn main() {
+    let p1 = Point { x: 1, y: 5 }
+    let p2 = Point { x: 10, y: p1.y }
+    print_str(&int_to_str && (p2.x + p2.y))
+}
+
+struct Point {
+    x: Int,
+    y: Int,
+}
+
+fn print_str(s: &Str) {
+    println(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut result = vec()
+    let mut n = n
+    while n > 0 {
+        let digit = n % 10
+        let digit = int_to_str(digit)
+        push(result, &digit)
+        n = n / 10
+    }
+    let result = concat(result, vec())
+    result
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    let mut result = v
+    push(result, x)
+    result
+}
+
+fn print(x: Str) {
+    let x = int_to_str(&x)
+    print_str(&x)
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut result = vec()
+    let mut n = n
+    while n > 0 {
+        let digit = n % 10
+        let digit = int_to_str(digit)
+        push(result, &digit)
+        n = n / 10
+    }
+    let result = concat(result, vec())
+    result
+}
+
+fn pow(base: Int, exp: Int) -> Int {
+    let mut result = 1
+    for _ in range(0, exp) {
+        result = result * base
+    }
+    result
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in range(a + 1, b) {
+        push(result, i)
+    }
+    result
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut result = v
+    push(result, x)
+    result
+}
+
+fn print(x: Int) {
+    let x = int_to_str(&x)
+    print_str(&x)
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    let s = str_len(&n)
+    let mut result = vec()
+    for i in range(0, s) {
+        let digit = to_float(trunc(n / pow(10, i)))
+        let digit = int_to_str(&digit)
+        push(result, &digit)
+    }
+    let result = concat(result, vec())
+    result
+}
+
+fn pow(base: Int, exp: Int) -> Int {
+    let mut result = 1
+    for _ in range(0, exp) {
+        result = result * base
+    }
+    result
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in range(a + 1, b) {
+        push(result, i)
+    }
+    result
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut result = v
+    push(result, x)
+    result
+}
+
+fn print(x: Int) {
+    let x = int_to_str(&x)
+    print_str(&x)
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    let s = str_len(&n)
+    let mut result = vec()
+    for i in range(0, s) {
+        let digit = to_float(trunc(n / pow(10, i)))
+        let digit = int_to_str(&digit)
+        push(result, &digit)
+    }
+    let result = concat(result, vec())
+    result
+}
+
+fn pow(base: Int, exp: Int) -> Int {
+    let mut result = 1
+    for _ in range(0, exp) {
+        result = result * base
+    }
+    result
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in range(a + 1, b) {
+        push(result, i)
+    }
+    result
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut result = v
+    push(result, x)
+    result
+}
+
+fn print(x: Int) {
+    let x = int_to_str(&x)
+    print_str(&x)
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    let s = str_len(&n)
+    let mut result = vec()
+    for i in range(0, s) {
+        let digit = to_float(trunc(n / pow(10, i)))
+        let digit = int_to_str(&digit)
+        push(result, &digit)
+    }
+    let result = concat(result, vec())
+    result
+}
+
+fn pow(base: Int, exp: Int) -> Int {
+    let mut result = 1
+    for _ in range(0, exp) {
+        result = result * base
+    }
+    result
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in range(a + 1, b) {
+        push(result, i)
+    }
+    result
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut result = v
+    push(result, x)
+    result
+}
+
+fn print(x: Int) {
+    let x = int_to_str(&x)
+    print_str(&x)
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    let s = str_len(&n)
+    let mut result = vec()
+    for i in range(0, s) {
+        let digit = to_float(trunc(n / pow(10, i)))
+        let digit = int_to_str(&digit)
+        push(result, &digit)
+    }
+    let result = concat(result, vec())
+    result
+}
+
+fn pow(base: Int, exp: Int) -> Int {
+    let mut result = 1
+    for _ in range(0, exp) {
+        result = result * base
+    }
+    result
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in range(a + 1, b) {
+        push(result, i)
+    }
+    result
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut result = v
+    push(result, x)
+    result
+}
+
+fn print(x: Int) {
+    let x = int_to_str(&x)
+    print_str(&x)
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    let s = str_len(&n)
+    let mut result = vec()
+    for i in range(0, s) {
+        let digit = to_float(trunc(n / pow(10, i)))
+        let digit = int_to_str(&digit)
+        push(result, &digit)
+    }
+    let result = concat(result, vec())
+    result
+}
+
+fn pow(base: Int, exp: Int) -> Int {
+    let mut result = 1
+    for _ in range(0, exp) {
+        result = result * base
+    }
+    result
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in range(a + 1, b) {
+        push(result, i)
+    }
+    result
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut result = v
+    push(result, x)
+    result
+}
+
+fn print(x: Int) {
+    let x = int_to_str(&x)
+    print_str(&x)
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    let s = str_len(&n)
+    let mut result = vec()
+    for i in range(0, s) {
+        let digit = to_float(trunc(n / pow(10, i)))
+        let digit = int_to_str(&digit)
+        push(result, &digit)
+    }
+    let result = concat(result, vec())
+    result
+}
+
+fn pow(base: Int, exp: Int) -> Int {
+    let mut result = 1
+    for _ in range(0, exp) {
+        result = result * base
+    }
+    result
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in range(a + 1, b) {
+        push(result, i)
+    }
+    result
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut result = v
+    push(result, x)
+    result
+}
+
+fn print(x: Int) {
+    let x = int_to_str(&x)
+    print_str(&x)
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    let s = str_len(&n)
+    let mut result = vec()
+    for i in range(0, s) {
+        let digit = to_float(trunc(n / pow(10, i)))
+        let digit = int_to_str(&digit)

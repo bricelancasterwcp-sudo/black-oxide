@@ -1,0 +1,15 @@
+fn positions_of_four(v: &Vec<Int>) {
+    let mut pos = 0
+    for x in v {
+        if x == 4 {
+            print_str(int_to_str(pos))
+        }
+        pos = pos + 1
+    }
+}
+
+fn main() {
+    let nums = vec(4, 7, 4, 9, 4)
+    positions_of_four(&nums)
+    drop nums
+}

@@ -1,0 +1,28 @@
+struct Reading { label: Str, values: Vec<Int> }
+
+fn count_above_five(v: Vec<Int>) -> Int {
+    let mut count = 0
+    for x in v {
+        if x > 5 {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn max_reading(v: Vec<Int>) -> Int {
+    let mut max_val = -1
+    for x in v {
+        if x > max_val {
+            max_val = x
+        }
+    }
+    max_val
+}
+
+fn main() {
+    let r = Reading { label: "readings", values: push(push(push(push(push(vec(), 6), 11), 3), 14), 9) }
+    print(count_above_five(r.values))
+    print_str("\n")
+    print(max_reading(r.values))
+}

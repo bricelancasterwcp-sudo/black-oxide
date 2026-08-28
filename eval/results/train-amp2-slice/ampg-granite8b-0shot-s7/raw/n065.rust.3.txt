@@ -1,0 +1,17 @@
+fn main() {
+  let readings = [6, 11, 3, 14, 9];
+  let mut count = 0;
+  let mut highest = 0;
+
+  for reading in readings.iter() {
+    if *reading > 5 {
+      count += 1;
+    }
+    if *reading > highest {
+      highest = *reading;
+    }
+  }
+
+  println!("{} of them exceed five.", count);
+  println!("The highest reading of all is {}.", highest);
+}

@@ -1,0 +1,10 @@
+fn reverse_print(word: &Str) {
+    let rev = chars(word).reverse().collect()
+    print_str(&rev)
+}
+
+fn main() {
+    let drum = "drum"
+    reverse_print(drum)
+    print_str(drum)
+}

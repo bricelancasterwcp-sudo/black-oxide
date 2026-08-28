@@ -1,0 +1,5 @@
+fn main() {
+    let whole_numbers = (0..15).collect::<Vec<_>>();
+    println!("{:?}", whole_numbers);
+    println!("The list contains {} items", whole_numbers.len());
+}

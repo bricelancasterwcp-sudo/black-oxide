@@ -1,0 +1,173 @@
+fn main() {
+    let list1 = push(push(push(vec(), 1), 2), 3)
+    let list2 = push(vec(), 4)
+    let list3 = push(vec(), 5)
+    let length = sum_big(&list1, 0) + len(&list2) + len(&list3) - 3
+    print(length)
+    drop list1
+    drop list2
+    drop list3
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let total = 0
+    for x in &v {
+        if x > limit {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut v = v
+    v = push_helper(v, x)
+    v
+}
+
+fn push_helper(mut: Vec<Int>, x: Int) -> Vec<Int> {
+    mut = append_helper(mut, x)
+    mut
+}
+
+fn append_helper(mut: Vec<Int>, x: Int) -> Vec<Int> {
+    let len = len(&mut)
+    mut = resize(mut, len + 1)
+    set(&mut, len, x)
+    mut
+}
+
+fn resize(mut: Vec<Int>, new_len: Int) -> Vec<Int> {
+    let old_len = len(&mut)
+    if new_len == old_len {
+        mut
+    } else if new_len < old_len {
+        unsafe_resize(&mut, new_len)
+    } else {
+        let new_capacity = capacity(&mut)
+        if new_capacity >= new_len {
+            unsafe_resize(&mut, new_len)
+        } else {
+            let mut new = Vec { capacity: new_len, len: new_len }
+            unsafe_copy(&mut, 0, &mut, 0, old_len)
+            new
+        }
+    }
+}
+
+fn unsafe_resize(v: &Vec<Int>, new_len: Int) -> Vec<Int> {
+    v.len = new_len
+    v
+}
+
+fn unsafe_copy(source: &Vec<Int>, src_index: Int, dest: &Vec<Int>, dest_index: Int, count: Int) -> Vec<Int> {
+    let src_ptr = &source
+    let dest_ptr = &dest
+    let src_start = src_ptr + src_index
+    let dest_start = dest_ptr + dest_index
+    loop_range(0, count) || i || unsafe_set(&mut * dest_start, i, unsafe_get(&mut * src_start, i))
+    dest
+}
+
+fn set(v: &Vec<Int>, index: Int, val: Int) -> Vec<Int> {
+    unsafe_set(&mut * v, index, val)
+}
+
+fn unsafe_set(v: &Vec<Int>, index: Int, val: Int) -> Vec<Int> {
+    let v_ptr = &v
+    let v_start = v_ptr + index
+    unsafe_set(v_start, val)
+}
+
+fn unsafe_set(v: &Int, val: Int) -> Int {
+    v = val
+    v
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    v.len
+}
+
+fn capacity(v: &Vec<Int>) -> Int {
+    v.capacity
+}
+
+fn loop_range(start: Int, end: Int) {
+    loop || i || if_then_else(i < end, block_with_value(loop_range(i + 1, end)))
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn println(x: Int) {
+    print_str("i32 = ")
+    print_int(x)
+    print_str("\n")
+}
+
+fn print_str(s: Str) {
+    puts(s)
+}
+
+fn print_int(n: Int) {
+    print_str(int_to_str(n))
+}
+
+fn puts(s: Str) {
+    _puts(s)
+}
+
+fn _puts(s: Str) {
+    stdout_file = stdout
+    write(stdout_file, s)
+}
+
+fn write(file: File, s: Str) {
+    _write(file, s)
+}
+
+fn _write(file: File, s: Str) {
+    unsafe_write(file, s, len(s))
+}
+
+fn unsafe_write(file: File, s: Str, size: Int) -> Int {
+    let file_ptr = &file
+    let s_ptr = &s
+    let buf = s_ptr + 0
+    write(file_ptr, buf, size)
+}
+
+fn drop_helper(v: Vec<Int>) {
+    drop_helper_rec(&v, 0)
+}
+
+fn drop_helper_rec(v: &Vec<Int>, start: Int) {
+    let len = len(v)
+    if start < len {
+        unsafe_drop(&mut * v, start)
+        drop_helper_rec(v, start + 1)
+    }
+}
+
+fn unsafe_drop(v: &Vec<Int>, index: Int) {
+    let v_ptr = &v
+    let v_start = v_ptr + index
+    unsafe_drop(v_start)
+}
+
+fn unsafe_drop(v: &Int) {
+    v = 0
+    v
+}
+
+fn main() {
+    let list1 = push(push(push(vec(), 1), 2), 3)
+    let list2 = push(vec(), 4)
+    let list3 = push(vec(), 5)
+    let length = sum_big(&list1, 0) + len(&list2) + len(&list3) - 3
+    print(length)
+    drop list1
+    drop list2
+    drop list3
+}

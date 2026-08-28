@@ -1,0 +1,31 @@
+fn largest(v: Vec<Int>) -> Int {
+    let mut max = -1
+    for x in v {
+        if x > max {
+            max = x
+        }
+    }
+    max
+}
+
+fn second_largest(v: Vec<Int>) -> Int {
+    let mut first = -1
+    let mut second = -1
+    for x in v {
+        if x > first {
+            second = first
+            first = x
+        } else if x > second && x != first {
+            second = x
+        }
+    }
+    second
+}
+
+fn main() {
+    let values = push(push(push(push(vec(), 12), 5), 20), 8)
+    values = push(values, 17)
+    print(largest(values))
+    print_str("\n")
+    print(second_largest(values))
+}

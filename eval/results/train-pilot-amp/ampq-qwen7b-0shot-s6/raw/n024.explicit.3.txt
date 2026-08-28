@@ -1,0 +1,20 @@
+fn count_a(word: &Str) -> Int {
+    let mut count = 0
+    for char in chars(word) {
+        if char == "a" {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn main() {
+    let word = "banana"
+    let count = count_a(&word)
+    print_str("The word '")
+    print_str(word)
+    print_str("' contains '")
+    print(count)
+    print_str("' 'a's.")
+    drop word
+}

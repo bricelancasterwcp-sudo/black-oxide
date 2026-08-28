@@ -1,0 +1,13 @@
+struct Point { x: Int, y: Int }
+
+fn make_second(p: Point) -> Point {
+    let Point { x, y } = p
+    Point  // return type is Point, not Point { x, y:
+    (10)   // this is an Int, so we need a Tuple type
+}
+
+fn main() {
+    let p = Point { x: 1, y: 5 }
+    let p2 = make_second(p)
+    print(p2.x + p2.y)
+}

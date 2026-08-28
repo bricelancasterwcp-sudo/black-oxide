@@ -1,0 +1,13 @@
+fn divisible_by(number: Int, divisor: Int) -> Bool {
+    number % divisor == 0
+}
+
+fn main() {
+    let mut total = 0
+    for i in 1.to(50) {
+        if divisible_by(i, 3) || divisible_by(i, 5) {
+            total = total + i
+        }
+    }
+    print(total)
+}

@@ -1,0 +1,24 @@
+fn signal(color: &Str) -> Str {
+    if color == "green" {
+        return "go for green".to_string()
+    } else if color == "yellow" {
+        return "wait for yellow".to_string()
+    } else if color == "red" {
+        return "stop for red".to_string()
+    } else {
+        return "Invalid color".to_string()
+    }
+}
+
+fn main() {
+    let green = "green".to_string()
+    let yellow = "yellow".to_string()
+    let red = "red".to_string()
+    println(signal(&green))
+    println(signal(&yellow))
+    println(signal(&red))
+    println(signal(&yellow))
+    println(signal(&green))
+    println(signal(&red))
+    println(signal(&red))
+}

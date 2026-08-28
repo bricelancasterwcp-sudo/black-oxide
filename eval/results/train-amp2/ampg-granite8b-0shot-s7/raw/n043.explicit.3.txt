@@ -1,0 +1,11 @@
+fn main() {
+    let mut queue = push(push(push(push(vec(), 1), 2), 3), 4)
+    let front = queue
+    queue = queue.tail
+    let back = queue
+    queue = push(back, queue.head)
+    print(queue.head)
+    drop queue
+    print(front.head)
+    drop front
+}

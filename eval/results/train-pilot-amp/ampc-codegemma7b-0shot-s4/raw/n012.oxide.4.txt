@@ -1,0 +1,10 @@
+fn main() {
+    let mut x = vec()
+    for i in 0 {
+        if i >= 15 {
+            break
+        }
+        x = push(x, i)
+    }
+    print(len(x))
+}

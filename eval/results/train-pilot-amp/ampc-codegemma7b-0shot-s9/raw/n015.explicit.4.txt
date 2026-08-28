@@ -1,0 +1,7 @@
+fn main() {
+    let nums = vec(5, 40, 70, 10, 35, 22, 50, 90, 20, 15)
+    let four = Int(4)
+    let bigger = nums.iter().filter(&x > &four).count()
+    print(bigger)
+    drop nums
+}

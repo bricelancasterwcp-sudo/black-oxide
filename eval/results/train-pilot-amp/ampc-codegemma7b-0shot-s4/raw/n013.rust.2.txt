@@ -1,0 +1,16 @@
+use std::cmp::Ordering;
+
+fn main() {
+    let readings = [5, 3, 9, 1, 7];
+
+    let mut largest = readings[0];
+
+    for reading in readings.iter().skip(1) {
+        match reading.cmp(&largest) {
+            Ordering::Greater => largest = *reading,
+            _ => (),
+        }
+    }
+
+    println!("Largest reading: {}", largest);
+}

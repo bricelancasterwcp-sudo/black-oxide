@@ -1,0 +1,11 @@
+fn main() {
+    let mut sum = 0;
+    let mut nums = Vec::new();
+    for i in 1..=6 {
+        let num = i * 4;
+        nums.push(num);
+        sum += num;
+    }
+    println!("Multiples of 4: {:?}", nums);
+    println!("Sum of multiples of 4: {}", sum);
+}

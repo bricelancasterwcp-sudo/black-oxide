@@ -1,0 +1,622 @@
+fn main() {
+    let mut device = Device { sensor: Sensor { reading: 0 } }
+    device.sensor.reading = 7
+    print(device.sensor.reading)
+    drop device
+}
+
+struct Device {
+    sensor: Sensor,
+}
+
+struct Sensor {
+    reading: Int,
+}
+
+struct Int {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}
+
+struct Integer {
+    value: Integer,
+}

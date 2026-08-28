@@ -1,0 +1,9 @@
+struct Number { digits: Vec<Int> }
+
+fn reverse(n: Number) -> Number {
+    Number(n.digits.iter().rev().cloned().collect())
+}
+
+fn main() {
+    print(reverse(Number(vec(1, 2, 3, 4))))
+}

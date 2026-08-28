@@ -1,0 +1,60 @@
+fn main() {
+    let rect = Rect { across: 9, down: 3 }
+    print(area(&rect))
+    print(perimeter(&rect))
+    drop rect
+}
+
+struct Rect {
+    across: Int,
+    down: Int,
+}
+
+fn area(r: &Rect) -> Int {
+    r.across * r.down
+}
+
+fn perimeter(r: &Rect) -> Int {
+    2 * (r.across + r.down)
+}
+
+fn print(x: Int) {
+    println(str_len(to_string(x)))
+}
+
+fn println(x: Int) {
+    print_str("result: ")
+    print(x)
+    print_str("\n")
+}
+
+fn to_string(x: Int) -> Str {
+    int_to_str(x)
+}
+
+fn clone(x: Int) -> Int {
+    x
+}
+
+fn drop_ref(x: Int) {
+    drop x
+}
+
+fn drop_value(x: Int) {
+    drop_ref(x)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut v = vec()
+    for i in a < b {
+        push(v, i)
+    }
+    v
+}
+
+fn main() {
+    let rect = Rect { across: 9, down: 3 }
+    print(area(&rect))
+    print(perimeter(&rect))
+    drop_value(rect)
+}

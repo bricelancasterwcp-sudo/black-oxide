@@ -1,0 +1,11 @@
+struct Signal { color: Str }
+
+fn main() {
+    let signals = vec(Signal { color: "green" }, Signal { color: "red" }, Signal { color: "yellow" })
+    for signal in signals {
+        match signal.color {
+            Str(s) => if s == "green" { print_str("go") } else { print_str("stop") },
+            _ => print_str("wait"),
+        }
+    }
+}

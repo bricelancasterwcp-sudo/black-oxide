@@ -1,0 +1,9 @@
+fn main() {
+    let mut counter = 0
+    for i in 1.01.to(50) {
+        if i % 3 == 0 || i % 5 == 0 {
+            counter = counter + 1
+        }
+    }
+    print(counter)
+}

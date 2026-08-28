@@ -1,0 +1,336 @@
+fn main() {
+    let total = (1.to(20).filter_map(to_even).sum())
+    print(total)
+}
+
+fn to_even(n: Int) -> Option<Int> {
+    if n % 2 == 0 {
+        Some(n)
+    } else {
+        None
+    }
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut v = vec()
+    for i in a.to(b - 1) {
+        v = push(v, i)
+    }
+    v
+}
+
+fn filter_map(f: FnOnce<Int>) -> Vec<Int> {
+    let mut v = vec()
+    for i in 0.to(10) {
+        let x = f(i)
+        match x {
+            Some(y) => v == push(v, y),
+            None => continue_label,
+        }
+    }
+    v
+}
+
+fn sum(v: Vec<Int>) -> Int {
+    let mut s = 0
+    for x in v {
+        s = s + x
+    }
+    s
+}
+
+fn print(n: Int) {
+    print_str(n.to_str())
+}
+
+fn print_str(s: Str) {
+    let s = clone(s)
+    let v = chars(s)
+    for c in v {
+        let c = clone(c)
+        print_str_char(c)
+    }
+}
+
+fn print_str_char(c: Str) {
+    match c {
+        StringChar(ch) => print_char(ch),
+        _ => print_str("?"),
+    }
+}
+
+fn print_char(ch: Char) {
+    match ch {
+        CharPrintable(ch) => {
+            let c = ch + 0
+            print_str(c.to_str())
+        },
+        _ => print_str("?"),
+    }
+}
+
+fn to_str(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn char_to_str(ch: Char) -> Str {
+    ch.to_str()
+}
+
+fn clone(x: T) -> T {
+    match x {
+        Int(n) => Int(n),
+        Float(f) => Float(f),
+        Bool(b) => Bool(b),
+        Str(s) => Str(s),
+        Unit => Unit,
+        Vec(v) => {
+            let mut v2 = vec()
+            for x in v {
+                let x = clone(x)
+                v2 = push(v2, x)
+            }
+            Vec(v2)
+        },
+        Option(o) => {
+            match o {
+                Some(x) => Some(clone(x)),
+                None => None,
+            }
+        },
+        Result(r) => {
+            match r {
+                Ok(x) => Ok(clone(x)),
+                Err(e) => Err(clone(e)),
+            }
+        },
+        Struct(fields) => {
+            let fields2 = functional_update_clone(fields)
+            Struct(fields2)
+        },
+        Enum(name, fields) => {
+            let fields2 = functional_update_clone(fields)
+            Enum(name, fields2)
+        },
+    }
+}
+
+fn functional_update_clone(fields: Vec<Field>) -> Vec<Field> {
+    let mut fields2 = vec()
+    for f in fields {
+        let f = match f {
+            Field(name, x) => {
+                let x = clone(x)
+                Field(name, x)
+            },
+        }
+        fields2 = push(fields2, f)
+    }
+    fields2
+}
+
+enum T {
+    Int(Int),
+    Float(Float),
+    Bool(Bool),
+    Str(Str),
+    Unit,
+    Vec(Vec<T>),
+    Option(Option<T>),
+    Result(Result<T, T>),
+    Struct(Vec<Field>),
+    Enum(Str, Vec<Field>),
+}
+
+enum Field {
+    Field(Str, T),
+}
+
+fn continue_label() {
+    loop_label
+}
+
+fn loop_label() {
+    let n = 0.to(20).filter_map(to_even).sum()
+    print(n)
+}
+
+fn to_even(n: Int) -> Option<Int> {
+    if n % 2 == 0 {
+        Some(n)
+    } else {
+        None
+    }
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut v = vec()
+    for i in a.to(b - 1) {
+        v = push(v, i)
+    }
+    v
+}
+
+fn filter_map(f: FnOnce<Int>) -> Vec<Int> {
+    let mut v = vec()
+    for i in 0.to(10) {
+        let x = f(i)
+        match x {
+            Some(y) => v == push(v, y),
+            None => continue_label,
+        }
+    }
+    v
+}
+
+fn sum(v: Vec<Int>) -> Int {
+    let mut s = 0
+    for x in v {
+        s = s + x
+    }
+    s
+}
+
+fn print(n: Int) {
+    print_str(n.to_str())
+}
+
+fn print_str(s: Str) {
+    let s = clone(s)
+    let v = chars(s)
+    for c in v {
+        let c = clone(c)
+        print_str_char(c)
+    }
+}
+
+fn print_str_char(c: Str) {
+    match c {
+        StringChar(ch) => print_char(ch),
+        _ => print_str("?"),
+    }
+}
+
+fn print_char(ch: Char) {
+    match ch {
+        CharPrintable(ch) => {
+            let c = ch + 0
+            print_str(c.to_str())
+        },
+        _ => print_str("?"),
+    }
+}
+
+fn to_str(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn char_to_str(ch: Char) -> Str {
+    ch.to_str()
+}
+
+fn continue_label() {
+    loop_label
+}
+
+fn loop_label() {
+    let n = 0.to(20).filter_map(to_even).sum()
+    print(n)
+}
+
+fn to_even(n: Int) -> Option<Int> {
+    if n % 2 == 0 {
+        Some(n)
+    } else {
+        None
+    }
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut v = vec()
+    for i in a.to(b - 1) {
+        v = push(v, i)
+    }
+    v
+}
+
+fn filter_map(f: FnOnce<Int>) -> Vec<Int> {
+    let mut v = vec()
+    for i in 0.to(10) {
+        let x = f(i)
+        match x {
+            Some(y) => v == push(v, y),
+            None => continue_label,
+        }
+    }
+    v
+}
+
+fn sum(v: Vec<Int>) -> Int {
+    let mut s = 0
+    for x in v {
+        s = s + x
+    }
+    s
+}
+
+fn print(n: Int) {
+    print_str(n.to_str())
+}
+
+fn print_str(s: Str) {
+    let s = clone(s)
+    let v = chars(s)
+    for c in v {
+        let c = clone(c)
+        print_str_char(c)
+    }
+}
+
+fn print_str_char(c: Str) {
+    match c {
+        StringChar(ch) => print_char(ch),
+        _ => print_str("?"),
+    }
+}
+
+fn print_char(ch: Char) {
+    match ch {
+        CharPrintable(ch) => {
+            let c = ch + 0
+            print_str(c.to_str())
+        },
+        _ => print_str("?"),
+    }
+}
+
+fn to_str(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn char_to_str(ch: Char) -> Str {
+    ch.to_str()
+}
+
+fn continue_label() {
+    loop_label
+}
+
+fn loop_label() {
+    let n = 0.to(20).filter_map(to_even).sum()
+    print(n)
+}
+
+fn to_even(n: Int) -> Option<Int> {
+    if n % 2 == 0 {
+        Some(n)
+    } else {
+        None
+    }
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut v = vec()
+    for i in a.to(b - 1) {
+        v = push(v, i)
+    }

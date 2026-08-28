@@ -1,0 +1,17 @@
+fn reverse(n: Int) -> Int {
+    let mut digits = vec()
+    let mut num = n
+    while num > 0 {
+        digits.push(num % 10)
+        num = num / 10
+    }
+    let mut reversed = 0
+    for digit in &digits {
+        reversed = reversed * 10 + digit
+    }
+    reversed
+}
+
+fn main() {
+    print(reverse(1234))
+}

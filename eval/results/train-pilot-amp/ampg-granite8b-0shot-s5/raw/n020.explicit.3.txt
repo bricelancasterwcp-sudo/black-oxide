@@ -1,0 +1,32 @@
+fn main() {
+    let four = 4
+    let eight = 8
+    let fifteen = 15
+    let sixteen = 16
+    let twentyThree = 23
+    let fortyTwo = 42
+    print(mean(four, eight, fifteen, sixteen, twentyThree, fortyTwo))
+}
+
+fn mean(a: Int, b: Int, c: Int, d: Int, e: Int, f: Int) -> Int {
+    let sum = a + b + c + d + e + f
+    sum / 6
+}
+
+fn drop_first_if_even(first: Int, rest: Vec<Int>) -> Vec<Int> {
+    let rest_clone = clone(rest)
+    if first % 2 == 0 {
+        rest_clone
+    } else {
+        push(rest_clone, first)
+    }
+}
+
+fn main() {
+    let four = 4
+    let five = 5
+    let six = 6
+    let seven = 7
+    let eight = 8
+    print(drop_first_if_even(four, vec()))
+}

@@ -1,0 +1,312 @@
+fn area(l: Float, b: Float) -> Float {
+    l * b
+}
+
+fn perimeter(l: Float, b: Float) -> Float {
+    2.0 * (l + b)
+}
+
+fn main() {
+    let a = area(9.0, 3.0)
+    let p = perimeter(9.0, 3.0)
+    print(a)
+    print(p)
+    drop a
+    drop p
+}
+
+fn drop_if_owned(x: &Option<Int>) {
+    if letSome(x) == x {
+        drop x
+    }
+}
+
+fn drop_if_owned(x: &Option<Float>) {
+    if letSome(x) == x {
+        drop x
+    }
+}
+
+fn drop_if_owned(x: &Option<Str>) {
+    if letSome(x) == x {
+        drop x
+    }
+}
+
+fn drop_if_owned(x: &Option<Vec<Int>>) {
+    if letSome(x) == x {
+        drop x
+    }
+}
+
+fn drop_if_owned(x: &Option<Vec<Float>>) {
+    if letSome(x) == x {
+        drop x
+    }
+}
+
+fn drop_if_owned(x: &Option<Vec<Str>>) {
+    if letSome(x) == x {
+        drop x
+    }
+}
+
+fn drop_if_owned(x: &Option<Unit>) {
+    if letSome(x) == x {
+        drop x
+    }
+}
+
+fn drop_if_owned(x: &Option<Circle>) {
+    if letSome(x) == x {
+        drop x
+    }
+}
+
+fn drop_if_owned(x: &Option<Square>) {
+    if letSome(x) == x {
+        drop x
+    }
+}
+
+fn drop_if_owned(x: &Option<Triangle>) {
+    if letSome(x) == x {
+        drop x
+    }
+}
+
+fn drop_if_owned(x: &Option<Rectangle>) {
+    if letSome(x) == x {
+        drop x
+    }
+}
+
+fn drop_if_owned(x: &Option<Hexagon>) {
+    if letSome(x) == x {
+        drop x
+    }
+}
+
+fn drop_if_owned(x: &Option<Heptagon>) {
+    if letSome(x) == x {
+        drop x
+    }
+}
+
+fn drop_if_owned(x: &Option<Octagon>) {
+    if letSome(x) == x {
+        drop x
+    }
+}
+
+fn drop_if_owned(x: &Option<Dodecagon>) {
+    if letSome(x) == x {
+        drop x
+    }
+}
+
+fn drop_if_owned(x: &Option<Icosahedron>) {
+    if letSome(x) == x {
+        drop x
+    }
+}
+
+fn drop_if_owned(x: &Option<Dodecahedron>) {
+    if letSome(x) == x {
+        drop x
+    }
+}
+
+fn drop_if_owned(x: &Option<Result<Int, String>>) {
+    if letSome(x) == x {
+        drop x
+    }
+}
+
+fn drop_if_owned(x: &Option<Result<Float, String>>) {
+    if letSome(x) == x {
+        drop x
+    }
+}
+
+fn drop_if_owned(x: &Option<Result<Str, String>>) {
+    if letSome(x) == x {
+        drop x
+    }
+}
+
+fn drop_if_owned(x: &Option<Result<VecInt, String>>) {
+    if letSome(x) == x {
+        drop x
+    }
+}
+
+fn drop_if_owned(x: &Option<Result<VecFloat, String>>) {
+    if letSome(x) == x {
+        drop x
+    }
+}
+
+fn drop_if_owned(x: &Option<Result<VecStr, String>>) {
+    if letSome(x) == x {
+        drop x
+    }
+}
+
+fn drop_if_owned(x: &Option<Result<Unit, String>>) {
+    if letSome(x) == x {
+        drop x
+    }
+}
+
+fn drop_if_owned(x: &Option<Result<Circle, String>>) {
+    if letSome(x) == x {
+        drop x
+    }
+}
+
+fn drop_if_owned(x: &Option<Result<Square, String>>) {
+    if letSome(x) == x {
+        drop x
+    }
+}
+
+fn drop_if_owned(x: &Option<Result<Triangle, String>>) {
+    if letSome(x) == x {
+        drop x
+    }
+}
+
+fn drop_if_owned(x: &Option<Result<Rectangle, String>>) {
+    if letSome(x) == x {
+        drop x
+    }
+}
+
+fn drop_if_owned(x: &Option<Result<Hexagon, String>>) {
+    if letSome(x) == x {
+        drop x
+    }
+}
+
+fn drop_if_owned(x: &Option<Result<Heptagon, String>>) {
+    if letSome(x) == x {
+        drop x
+    }
+}
+
+fn drop_if_owned(x: &Option<Result<Octagon, String>>) {
+    if letSome(x) == x {
+        drop x
+    }
+}
+
+fn drop_if_owned(x: &Option<Result<Dodecagon, String>>) {
+    if letSome(x) == x {
+        drop x
+    }
+}
+
+fn drop_if_owned(x: &Option<Result<Icosahedron, String>>) {
+    if letSome(x) == x {
+        drop x
+    }
+}
+
+fn drop_if_owned(x: &Option<Result<Dodecahedron, String>>) {
+    if letSome(x) == x {
+        drop x
+    }
+}
+
+fn drop_if_owned(x: &Option<Result<T, String>>) {
+    if letSome(x) == x {
+        drop x
+    }
+}
+
+fn drop_if_owned(x: &Option<Option<Int>>) {
+    if letSome(x) == x {
+        drop x
+    }
+}
+
+fn drop_if_owned(x: &Option<Option<Float>>) {
+    if letSome(x) == x {
+        drop x
+    }
+}
+
+fn drop_if_owned(x: &Option<Option<Str>>) {
+    if letSome(x) == x {
+        drop x
+    }
+}
+
+fn drop_if_owned(x: &Option<Option<VecInt>>) {
+    if letSome(x) == x {
+        drop x
+    }
+}
+
+fn drop_if_owned(x: &Option<Option<VecFloat>>) {
+    if letSome(x) == x {
+        drop x
+    }
+}
+
+fn drop_if_owned(x: &Option<Option<VecStr>>) {
+    if letSome(x) == x {
+        drop x
+    }
+}
+
+fn drop_if_owned(x: &Option<Option<Unit>>) {
+    if letSome(x) == x {
+        drop x
+    }
+}
+
+fn drop_if_owned(x: &Option<Option<Circle>>) {
+    if letSome(x) == x {
+        drop x
+    }
+}
+
+fn drop_if_owned(x: &Option<Option<Square>>) {
+    if letSome(x) == x {
+        drop x
+    }
+}
+
+fn drop_if_owned(x: &Option<Option<Triangle>>) {
+    if letSome(x) == x {
+        drop x
+    }
+}
+
+fn drop_if_owned(x: &Option<Option<Rectangle>>) {
+    if letSome(x) == x {
+        drop x
+    }
+}
+
+fn drop_if_owned(x: &Option<Option<Hexagon>>) {
+    if letSome(x) == x {
+        drop x
+    }
+}
+
+fn drop_if_owned(x: &Option<Option<Heptagon>>) {
+    if letSome(x) == x {
+        drop x
+    }
+}
+
+fn drop_if_owned(x: &Option<Option<Octagon>>) {
+    if letSome(x) == x {
+        drop x
+    }
+}
+
+fn drop_if_

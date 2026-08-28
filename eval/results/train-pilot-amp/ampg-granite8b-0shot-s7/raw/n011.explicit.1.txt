@@ -1,0 +1,8 @@
+fn main() {
+    let xs = vec(4, 8, 12, 16, 20, 24, 28, 32, 36, 40)
+    let mut total = 0
+    for x in &xs {
+        total = total + x
+    }
+    print(total)
+}

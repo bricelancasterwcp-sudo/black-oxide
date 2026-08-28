@@ -1,0 +1,22 @@
+struct Stack { first: Int, rest: Vec<Int> }
+
+fn pop(v: Vec<Int>) -> Option<Int> {
+    match v {
+        Vec(_, _) => {
+            let x = v.first
+            Some(x)
+        },
+        _ => None,
+    }
+}
+
+fn main() {
+    let s = Stack { first: 1, rest: push(push(vec(), 2), 3) }
+    match pop(s.rest) {
+        Some(n) => {
+            let s2 = Stack { first: n, rest: s.rest }
+            print(s2.first)
+        },
+        _ => print_str("empty"),
+    }
+}

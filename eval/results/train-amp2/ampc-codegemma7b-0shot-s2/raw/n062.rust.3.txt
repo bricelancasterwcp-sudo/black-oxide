@@ -1,0 +1,5 @@
+fn main() {
+    print!("Go for green\n");
+    print!("Stop for red\n");
+    print!("Wait for yellow\n");
+}

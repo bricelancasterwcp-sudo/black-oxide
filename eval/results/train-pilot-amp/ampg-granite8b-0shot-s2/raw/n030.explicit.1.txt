@@ -1,0 +1,298 @@
+fn main() {
+    getStaticField(5, 0)
+    getOrElse(9)
+    getOrElse(10)
+    getOrElse(12)
+    Drop
+    getOrElse(25)
+}
+
+fn getField(struct_ref: &StructType, field_idx: Int) -> Int {
+    ifeq(field_idx, 0)
+    Drop
+    Drop
+    Drop
+    Ret
+}
+
+fn getElse(struct_ref: &StructType) -> Int {
+    ifeq(struct_ref.field_1, 0)
+    Drop
+    Drop
+    Drop
+    Ret
+}
+
+fn getOrField(struct_ref: &StructType, field_idx: Int) -> Int {
+    ifeq(field_idx, 0)
+    Drop
+    Drop
+    Drop
+    Ret
+}
+
+fn getOrElse(struct_ref: &StructType) -> Int {
+    ifeq(struct_ref.field_1, 0)
+    Drop
+    Drop
+    Drop
+    Ret
+}
+
+fn getField(struct_ref: &StructType, field_idx: Int) -> Int {
+    Ret
+}
+
+fn getOrField(struct_ref: &StructType, field_idx: Int) -> Int {
+    Ret
+}
+
+fn getOrElse(struct_ref: &StructType) -> Int {
+    Ret
+}
+
+fn getField(struct_ref: &StructType, field_idx: Int) -> Int {
+    Ret
+}
+
+fn getOrField(struct_ref: &StructType, field_idx: Int) -> Int {
+    Ret
+}
+
+fn getOrElse(struct_ref: &StructType) -> Int {
+    Ret
+}
+
+fn getField(struct_ref: &StructType, field_idx: Int) -> Int {
+    Ret
+}
+
+fn getOrField(struct_ref: &StructType, field_idx: Int) -> Int {
+    Ret
+}
+
+fn getOrElse(struct_ref: &StructType) -> Int {
+    Ret
+}
+
+fn getField(struct_ref: &StructType, field_idx: Int) -> Int {
+    Ret
+}
+
+fn getOrField(struct_ref: &StructType, field_idx: Int) -> Int {
+    Ret
+}
+
+fn getOrElse(struct_ref: &StructType) -> Int {
+    Ret
+}
+
+fn getField(struct_ref: &StructType, field_idx: Int) -> Int {
+    Ret
+}
+
+fn getOrField(struct_ref: &StructType, field_idx: Int) -> Int {
+    Ret
+}
+
+fn getOrElse(struct_ref: &StructType) -> Int {
+    Ret
+}
+
+fn getField(struct_ref: &StructType, field_idx: Int) -> Int {
+    Ret
+}
+
+fn getOrField(struct_ref: &StructType, field_idx: Int) -> Int {
+    Ret
+}
+
+fn getOrElse(struct_ref: &StructType) -> Int {
+    Ret
+}
+
+fn getField(struct_ref: &StructType, field_idx: Int) -> Int {
+    Ret
+}
+
+fn getOrField(struct_ref: &StructType, field_idx: Int) -> Int {
+    Ret
+}
+
+fn getOrElse(struct_ref: &StructType) -> Int {
+    Ret
+}
+
+fn getField(struct_ref: &StructType, field_idx: Int) -> Int {
+    Ret
+}
+
+fn getOrField(struct_ref: &StructType, field_idx: Int) -> Int {
+    Ret
+}
+
+fn getOrElse(struct_ref: &StructType) -> Int {
+    Ret
+}
+
+fn getField(struct_ref: &StructType, field_idx: Int) -> Int {
+    Ret
+}
+
+fn getOrField(struct_ref: &StructType, field_idx: Int) -> Int {
+    Ret
+}
+
+fn getOrElse(struct_ref: &StructType) -> Int {
+    Ret
+}
+
+fn getField(struct_ref: &StructType, field_idx: Int) -> Int {
+    Ret
+}
+
+fn getOrField(struct_ref: &StructType, field_idx: Int) -> Int {
+    Ret
+}
+
+fn getOrElse(struct_ref: &StructType) -> Int {
+    Ret
+}
+
+fn getField(struct_ref: &StructType, field_idx: Int) -> Int {
+    Ret
+}
+
+fn getOrField(struct_ref: &StructType, field_idx: Int) -> Int {
+    Ret
+}
+
+fn getOrElse(struct_ref: &StructType) -> Int {
+    Ret
+}
+
+fn getField(struct_ref: &StructType, field_idx: Int) -> Int {
+    Ret
+}
+
+fn getOrField(struct_ref: &StructType, field_idx: Int) -> Int {
+    Ret
+}
+
+fn getOrElse(struct_ref: &StructType) -> Int {
+    Ret
+}
+
+fn getField(struct_ref: &StructType, field_idx: Int) -> Int {
+    Ret
+}
+
+fn getOrField(struct_ref: &StructType, field_idx: Int) -> Int {
+    Ret
+}
+
+fn getOrElse(struct_ref: &StructType) -> Int {
+    Ret
+}
+
+fn getField(struct_ref: &StructType, field_idx: Int) -> Int {
+    Ret
+}
+
+fn getOrField(struct_ref: &StructType, field_idx: Int) -> Int {
+    Ret
+}
+
+fn getOrElse(struct_ref: &StructType) -> Int {
+    Ret
+}
+
+fn getField(struct_ref: &StructType, field_idx: Int) -> Int {
+    Ret
+}
+
+fn getOrField(struct_ref: &StructType, field_idx: Int) -> Int {
+    Ret
+}
+
+fn getOrElse(struct_ref: &StructType) -> Int {
+    Ret
+}
+
+fn getField(struct_ref: &StructType, field_idx: Int) -> Int {
+    Ret
+}
+
+fn getOrField(struct_ref: &StructType, field_idx: Int) -> Int {
+    Ret
+}
+
+fn getOrElse(struct_ref: &StructType) -> Int {
+    Ret
+}
+
+fn getField(struct_ref: &StructType, field_idx: Int) -> Int {
+    Ret
+}
+
+fn getOrField(struct_ref: &StructType, field_idx: Int) -> Int {
+    Ret
+}
+
+fn getOrElse(struct_ref: &StructType) -> Int {
+    Ret
+}
+
+fn getField(struct_ref: &StructType, field_idx: Int) -> Int {
+    Ret
+}
+
+fn getOrField(struct_ref: &StructType, field_idx: Int) -> Int {
+    Ret
+}
+
+fn getOrElse(struct_ref: &StructType) -> Int {
+    Ret
+}
+
+fn getField(struct_ref: &StructType, field_idx: Int) -> Int {
+    Ret
+}
+
+fn getOrField(struct_ref: &StructType, field_idx: Int) -> Int {
+    Ret
+}
+
+fn getOrElse(struct_ref: &StructType) -> Int {
+    Ret
+}
+
+fn getField(struct_ref: &StructType, field_idx: Int) -> Int {
+    Ret
+}
+
+fn getOrField(struct_ref: &StructType, field_idx: Int) -> Int {
+    Ret
+}
+
+fn getOrElse(struct_ref: &StructType) -> Int {
+    Ret
+}
+
+fn getField(struct_ref: &StructType, field_idx: Int) -> Int {
+    Ret
+}
+
+fn getOrField(struct_ref: &StructType, field_idx: Int) -> Int {
+    Ret
+}
+
+fn getOrElse(struct_ref: &StructType) -> Int {
+    Ret
+}
+
+fn getField(struct_ref: &StructType, field_idx: Int) -> Int {
+    Ret
+}
+
+fn getOrField(struct_ref: &StructType,

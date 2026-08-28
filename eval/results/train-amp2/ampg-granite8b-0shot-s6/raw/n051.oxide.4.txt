@@ -1,0 +1,8 @@
+struct Word { value: Str }
+
+fn main() {
+    let w = Word { value: "granite" }
+    let letter = get(w.value, 1)?
+    print(letter)
+    print(get(w.value, 8)?)
+}

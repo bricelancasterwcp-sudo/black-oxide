@@ -1,0 +1,18 @@
+fn find_positions(lst: Vec<Int>) -> Vec<Int> {
+    let mut positions = vec()
+    for i in range(0, len(lst)) {
+        if lst.get(i)? == 4 {
+            push(positions, i)
+        }
+    }
+    positions
+}
+
+fn main() {
+    let lst = push(push(push(push(vec(), 4), 7), 4), 9)
+    push(push(lst, 4), 4)
+    for pos in find_positions(lst) {
+        print(pos)
+        print_str("\n")
+    }
+}

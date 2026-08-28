@@ -1,0 +1,26 @@
+struct Divider { dividend: Int, divisor: Int, quotient: Int }
+
+fn divide(dividend: Int, divisor: Int) -> Divider {
+    if divisor == 0 {
+        Divider(dividend, divisor, 0)
+    } else {
+        Divider(dividend, divisor, dividend / divisor)
+    }
+}
+
+fn print_divider(d: Divider) {
+    match d {
+        Divider(dividend, divisor, quotient) => {
+            if divisor == 0 {
+                print_str("bad")
+            } else {
+                print(quotient)
+            }
+        },
+    }
+}
+
+fn main() {
+    let d = divide(20, 4)
+    print_divider(d)
+}

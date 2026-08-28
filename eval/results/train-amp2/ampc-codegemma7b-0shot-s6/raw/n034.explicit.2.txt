@@ -1,0 +1,13 @@
+fn second(v: &Vec<Int>) -> Option<Int> {
+    if v.len() < 2 {
+        None
+    } else {
+        Some(&v)
+    }
+}
+
+fn main() {
+    print(second(&vec))
+    print(second(&vec))
+    print(second(&vec))
+}

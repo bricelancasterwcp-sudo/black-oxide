@@ -1,0 +1,22 @@
+struct Keyboard { letters: Vec<Char> }
+
+fn num_vowels(k: Keyboard) -> Int {
+    let mut num_vowels = 0
+    for l in k.letters {
+        if l == "a" || l == "e" || l == "i" || l == "o" || l == "u" {
+            num_vowels = num_vowels + 1
+        }
+    }
+    num_vowels
+}
+
+fn num_consonants(k: Keyboard) -> Int {
+    len(k.letters) - num_vowels(k)
+}
+
+fn main() {
+    let letters = vec_from_str("abcdefghijklmnopqrstuvwxyz")
+    let k = Keyboard { letters: letters }
+    print(num_vowels(k))
+    print(num_consonants(k))
+}

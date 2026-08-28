@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let word = "cat";
+    for letter in word.chars() {
+        println!("{}", letter);
+    }
+}
+```

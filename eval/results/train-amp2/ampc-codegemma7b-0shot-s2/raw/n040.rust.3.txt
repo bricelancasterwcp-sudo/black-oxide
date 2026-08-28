@@ -1,0 +1,5 @@
+fn main() {
+    let a = 4;
+    let pi = 3.14159; // Corrected value of pi
+    println!("{}", a as f64 * a as f64 * pi);
+}

@@ -1,0 +1,30 @@
+fn main() {
+    let p1 = Point { x: 1, y: 5 }
+    let p2 = Point { x: 10, y: p1.y }
+    let result = add(p2.x, p2.y)
+    print(result)
+    drop p1
+    drop p2
+}
+
+struct Point {
+    x: Int,
+    y: Int,
+}
+
+fn print(i: Int) {
+    println(i)
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn main() {
+    let p1 = Point { x: 1, y: 5 }
+    let p2 = Point { x: 10, y: p1.y }
+    let result = add(p2.x, p2.y)
+    print(result)
+    drop p1
+    drop p2
+}

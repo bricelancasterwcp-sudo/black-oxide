@@ -1,0 +1,357 @@
+fn main() {
+    let numbers = vec(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+    let divisible_by_three = filter(numbers, is_divisible_by_three)
+    let total = sum(divisible_by_three)
+    print(total)
+}
+
+fn is_divisible_by_three(x: Int) -> Bool {
+    x % 3 == 0
+}
+
+fn filter(input: Vec<Int>, predicate: &Fn<Int>) -> Vec<Int> {
+    let mut output = vec()
+    for x in &input {
+        if predicate(x) {
+            push(output, x)
+        }
+    }
+    output
+}
+
+fn sum(input: Vec<Int>) -> Int {
+    let mut total = 0
+    for x in &input {
+        total = total + x
+    }
+    total
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+    print_str("\n")
+}
+
+fn vec() -> Vec<T> {
+    Vec()
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    v
+}
+
+fn len(v: Vec<T>) -> Int {
+    0
+}
+
+fn clone(x: T) -> T {
+    x
+}
+
+fn str_len(s: Str) -> Int {
+    0
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    a
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    vec()
+}
+
+fn int_to_str(n: Int) -> Str {
+    ""
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    None
+}
+
+fn to_float(n: Int) -> Float {
+    0.0
+}
+
+fn trunc(x: Float) -> Int {
+    0
+}
+
+fn main() {
+    let numbers = push(push(vec(), 1), 2)
+    let divisible_by_three = filter(numbers, is_divisible_by_three)
+    let total = sum(divisible_by_three)
+    print(total)
+}
+
+fn is_divisible_by_three(x: Int) -> Bool {
+    x % 3 == 0
+}
+
+fn filter(input: Vec<Int>, predicate: &Fn<Int>) -> Vec<Int> {
+    let mut output = vec()
+    for x in &input {
+        if predicate(x) {
+            push(output, x)
+        }
+    }
+    output
+}
+
+fn sum(input: Vec<Int>) -> Int {
+    let mut total = 0
+    for x in &input {
+        total = total + x
+    }
+    total
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+    print_str("\n")
+}
+
+fn vec() -> Vec<T> {
+    Vec()
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    v
+}
+
+fn len(v: Vec<T>) -> Int {
+    0
+}
+
+fn clone(x: T) -> T {
+    x
+}
+
+fn str_len(s: Str) -> Int {
+    0
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    a
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    vec()
+}
+
+fn int_to_str(n: Int) -> Str {
+    ""
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    None
+}
+
+fn to_float(n: Int) -> Float {
+    0.0
+}
+
+fn trunc(x: Float) -> Int {
+    0
+}
+
+fn main() {
+    let numbers = push(push(vec(), 1), 2)
+    let divisible_by_three = filter(numbers, is_divisible_by_three)
+    let total = sum(divisible_by_three)
+    print(total)
+}
+
+fn is_divisible_by_three(x: Int) -> Bool {
+    x % 3 == 0
+}
+
+fn filter(input: Vec<Int>, predicate: &Fn<Int>) -> Vec<Int> {
+    let mut output = vec()
+    for x in &input {
+        if predicate(x) {
+            push(output, x)
+        }
+    }
+    output
+}
+
+fn sum(input: Vec<Int>) -> Int {
+    let mut total = 0
+    for x in &input {
+        total = total + x
+    }
+    total
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+    print_str("\n")
+}
+
+fn vec() -> Vec<T> {
+    Vec()
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    v
+}
+
+fn len(v: Vec<T>) -> Int {
+    0
+}
+
+fn clone(x: T) -> T {
+    x
+}
+
+fn str_len(s: Str) -> Int {
+    0
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    a
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    vec()
+}
+
+fn int_to_str(n: Int) -> Str {
+    ""
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    None
+}
+
+fn to_float(n: Int) -> Float {
+    0.0
+}
+
+fn trunc(x: Float) -> Int {
+    0
+}
+
+fn main() {
+    let numbers = push(push(vec(), 1), 2)
+    let divisible_by_three = filter(numbers, is_divisible_by_three)
+    let total = sum(divisible_by_three)
+    print(total)
+}
+
+fn is_divisible_by_three(x: Int) -> Bool {
+    x % 3 == 0
+}
+
+fn filter(input: Vec<Int>, predicate: &Fn<Int>) -> Vec<Int> {
+    let mut output = vec()
+    for x in &input {
+        if predicate(x) {
+            push(output, x)
+        }
+    }
+    output
+}
+
+fn sum(input: Vec<Int>) -> Int {
+    let mut total = 0
+    for x in &input {
+        total = total + x
+    }
+    total
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+    print_str("\n")
+}
+
+fn vec() -> Vec<T> {
+    Vec()
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    v
+}
+
+fn len(v: Vec<T>) -> Int {
+    0
+}
+
+fn clone(x: T) -> T {
+    x
+}
+
+fn str_len(s: Str) -> Int {
+    0
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    a
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    vec()
+}
+
+fn int_to_str(n: Int) -> Str {
+    ""
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    None
+}
+
+fn to_float(n: Int) -> Float {
+    0.0
+}
+
+fn trunc(x: Float) -> Int {
+    0
+}
+
+fn main() {
+    let numbers = push(push(vec(), 1), 2)
+    let divisible_by_three = filter(numbers, is_divisible_by_three)
+    let total = sum(divisible_by_three)
+    print(total)
+}
+
+fn is_divisible_by_three(x: Int) -> Bool {
+    x % 3 == 0
+}
+
+fn filter(input: Vec<Int>, predicate: &Fn<Int>) -> Vec<Int> {
+    let mut output = vec()
+    for x in &input {
+        if predicate(x) {
+            push(output, x)
+        }
+    }
+    output
+}
+
+fn sum(input: Vec<Int>) -> Int {
+    let mut total = 0
+    for x in &input {
+        total = total + x
+    }
+    total
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+    print_str("\n")
+}
+
+fn vec() -> Vec<T> {
+    Vec()
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    v
+}
+
+fn len(v: Vec<T>) -> Int {
+    0
+}

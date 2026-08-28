@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let nums = vec![4, 7, 4, 9, 4];
+    for (i, num) in nums.iter().enumerate() {
+        if num == &4 {
+            println!("{}", i);
+        }
+    }
+}
+```

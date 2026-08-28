@@ -1,0 +1,10 @@
+fn main() {
+    let mut v = vec(4, 7, 4, 9, 4)
+    let mut index = 0
+    while index < len(v) {
+        if get(v, index)? == 4 {
+            print(index)
+        }
+        index = index + 1
+    }
+}

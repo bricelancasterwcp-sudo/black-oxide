@@ -1,0 +1,17 @@
+struct Letter {
+    is_vowel: Bool,
+}
+
+fn main() {
+    let letters = vec("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z")
+    let mut vowel_count = 0
+    let mut non_vowel_count = 0
+    for letter in letters {
+        if letter == "a" || letter == "e" || letter == "i" || letter == "o" || letter == "u" || letter == "A" || letter == "E" || letter == "I" || letter == "O" || letter == "U" {
+            vowel_count = vowel_count + 1
+        } else {
+            non_vowel_count = non_vowel_count + 1
+        }
+    }
+    print_str("vowels: ").print(vowel_count).print_str(" non-vowels: ").print(non_vowel_count).print_str("\n")
+}

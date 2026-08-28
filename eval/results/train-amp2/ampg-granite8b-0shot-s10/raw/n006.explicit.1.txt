@@ -1,0 +1,7 @@
+fn main() {
+    let mut i = 100
+    while i > 0 {
+        print(i)
+        i = trunc(i / 2)
+    }
+}

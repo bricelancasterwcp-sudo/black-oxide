@@ -1,0 +1,13 @@
+fn main() {
+    let mut total = 0
+    let mut walk = 7
+    while walk != 10 {
+        println(walk)
+        println(walk * 2)
+        if walk % 2 == 0 {
+            total = total + walk
+        }
+        walk = walk + 3
+    }
+    println(total)
+}

@@ -1,0 +1,13 @@
+fn reverse(n: Int) -> Int {
+    if n < 10 {
+        return n
+    }
+    let rem = n % 10
+    let div = (n / 10)
+    (reverse(div) * 10) + rem
+}
+
+fn main() {
+    print(reverse(1234))
+    drop reverse
+}

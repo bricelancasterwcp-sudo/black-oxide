@@ -1,0 +1,13 @@
+struct Point { x: Int, y: Int }
+
+fn dist(a: Point, b: Point) -> Float {
+    let dx = a.x - b.x
+    let dy = a.y - b.y
+    to_float(dx * dx + dy * dy)
+}
+
+fn main() {
+    let a = Point { x: 1, y: 2 }
+    let b = Point { x: 4, y: 5 }
+    print(dist(a, b))
+}

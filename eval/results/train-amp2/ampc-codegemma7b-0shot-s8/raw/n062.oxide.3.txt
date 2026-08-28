@@ -1,0 +1,17 @@
+fn main() {
+    let signal = "green".to_str()
+    match signal {
+        Ok(s) => {
+            if s == "green" {
+                print_str("go for green")
+            } else if s == "red" {
+                print_str("stop for red")
+            } else if s == "yellow" {
+                print_str("wait for yellow")
+            } else {
+                print_str("unknown signal")
+            }
+        },
+        Err(_) => print_str("invalid signal"),
+    }
+}

@@ -1,0 +1,35 @@
+fn main() {
+    let abc = parse_int("abc")
+    if abc.is_none() {
+        print("bad")
+    } else {
+        print(int_to_str(abc.unwrap()))
+    }
+}
+
+fn main() {
+    let abc = parse_int("abc")
+    if abc.is_none() {
+        print("bad")
+    } else {
+        print(int_to_str(abc.unwrap()))
+    }
+}
+
+fn main() {
+    let abc = parse_int("abc")
+    if abc.is_none() {
+        print("bad")
+    } else {
+        print(int_to_str(abc.unwrap()))
+    }
+}
+
+fn main() {
+    let abc = parse_int("abc")
+    if abc.is_none() {
+        print("bad")
+    } else {
+        print(int_to_str(abc.unwrap()))
+    }
+}

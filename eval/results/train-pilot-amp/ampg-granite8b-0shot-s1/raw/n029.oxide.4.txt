@@ -1,0 +1,4 @@
+fn main() {
+    let s = "one two three".to_vec()
+    print(s)
+}

@@ -1,0 +1,11 @@
+use std::io;
+
+fn main() {
+    let mut line = String::new();
+    io::stdin().read_line(&mut line).unwrap();
+    let num = line.trim().parse::<i32>().ok();
+    match num {
+        Some(n) => println!("{}", n + 1),
+        None => println!("bad"),
+    }
+}

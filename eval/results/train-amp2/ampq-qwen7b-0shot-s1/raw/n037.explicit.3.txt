@@ -1,0 +1,30 @@
+fn main() {
+    let rect = Point { x: 2, y: 3 }
+    let rect = Point { x: 5, ..rect }
+    print_rect(&rect)
+}
+
+struct Point {
+    x: Int,
+    y: Int,
+}
+
+fn print_rect(rect: &Point) {
+    let area = rect.x * rect.y
+    print_str(&area)
+}
+
+fn print_str(s: &Int) {
+    let output = s.to_string()
+    print(&output)
+}
+
+fn clone(x: &Point) -> Point {
+    Point(x.x, x.y)
+}
+
+fn main() {
+    let rect = Point { x: 2, y: 3 }
+    let rect = Point { x: 5, ..rect }
+    print_rect(&rect)
+}

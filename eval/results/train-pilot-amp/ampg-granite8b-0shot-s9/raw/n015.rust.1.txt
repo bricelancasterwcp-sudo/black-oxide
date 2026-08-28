@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let numbers = [3, 4, 5, 6, 7, 8, 9];
+    let mut count = 0;
+    
+    for number in &numbers {
+        if *number > 4 {
+            count += 1;
+        }
+    }
+    
+    println!("There are {} numbers larger than 4.", count);
+}
+```

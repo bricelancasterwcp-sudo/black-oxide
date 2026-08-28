@@ -1,0 +1,9 @@
+fn main() {
+    let list = [1, 2];
+    let index = 5;
+
+    match list.get(index) {
+        Some(item) => println!("{}", item),
+        None => println!("None"),
+    }
+}

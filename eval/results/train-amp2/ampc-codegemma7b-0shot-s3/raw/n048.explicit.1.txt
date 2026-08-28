@@ -1,0 +1,13 @@
+fn print_positions(nums: &Vec<Int>) {
+    for i in 0.upto(nums.len()) {
+        if nums.get(i) == Some(&int_to_str_impl) {
+            print(i)
+        }
+    }
+}
+
+fn main() {
+    let nums = vec(4, 7, 4, 9, 4)
+    print_positions(&nums)
+    drop nums
+}

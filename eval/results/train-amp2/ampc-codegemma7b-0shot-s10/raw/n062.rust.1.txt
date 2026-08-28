@@ -1,0 +1,21 @@
+fn main() {
+    let mut current_signal = String::new();
+
+    loop {
+        current_signal.clear();
+
+        // Wait for input
+        std::io::stdin().read_line(&mut current_signal).unwrap();
+
+        // Convert to lowercase
+        current_signal = current_signal.to_lowercase();
+
+        // Print meaning
+        match current_signal.as_str() {
+            "green" => println!("go"),
+            "red" => println!("stop"),
+            "yellow" => println!("wait"),
+            _ => println!("Invalid signal"),
+        }
+    }
+}

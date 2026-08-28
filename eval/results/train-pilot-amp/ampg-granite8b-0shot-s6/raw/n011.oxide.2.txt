@@ -1,0 +1,48 @@
+struct Reading { label: Str, values: Vec<Int> }
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(vec(), 3), 42) }
+    let mut r2 = Reading { label: "lab2", ..r }
+    let mut acc = vec()
+    for x in r2.values {
+        acc = push(acc, x)
+        if x > 10 {
+            break
+        }
+    }
+    print(sum(acc))
+}
+
+fn sum(v: Vec<Int>) -> Int {
+    let mut acc = 0
+    for x in v {
+        acc = acc + x
+    }
+    acc
+}
+
+fn first_big(v: Vec<Int>) -> Int {
+    let found = -1
+    for x in v {
+        if x > 10 {
+            found = x
+            break
+        }
+    }
+    found
+}
+
+fn second(v: Vec<Int>) -> Option<Int> {
+    let x = get(v, 1)?
+    Some(x + 1)
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(vec(), 3), 42) }
+    print(first_big(r.values))            // field access copies: r stays usable
+    let r2 = Reading { label: "lab2", ..r }
+    match second(r2.values) {
+        Some(n) => print(n),
+        None => print_str("too short"),
+    }
+}

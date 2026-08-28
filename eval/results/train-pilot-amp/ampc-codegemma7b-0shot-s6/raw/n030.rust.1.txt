@@ -1,0 +1,19 @@
+use std::io::{stdin, Result};
+
+fn main() -> Result<()> {
+    let mut vowels = 0;
+    loop {
+        let mut line = String::new();
+        stdin().read_line(&mut line)?;
+        if line.trim() == "" {
+            break;
+        }
+        for c in line.chars() {
+            if matches!(c, 'a' | 'e' | 'i' | 'o' | 'u') {
+                vowels += 1;
+            }
+        }
+    }
+    println!("Total vowels: {}", vowels);
+    Ok(())
+}

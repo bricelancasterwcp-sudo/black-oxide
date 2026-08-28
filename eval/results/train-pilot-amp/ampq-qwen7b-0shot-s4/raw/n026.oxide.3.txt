@@ -1,0 +1,16 @@
+fn int_to_str(n: Int) -> Str {
+    match n {
+        _ => "2026".to_string(),
+    }
+}
+
+fn str_len(s: Str) -> Int {
+    s.len()
+}
+
+fn main() {
+    let text = int_to_str(2026)
+    let length = str_len(text)
+    print_str(text)
+    print(length)
+}

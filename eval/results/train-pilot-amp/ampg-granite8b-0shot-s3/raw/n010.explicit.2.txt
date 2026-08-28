@@ -1,0 +1,16 @@
+fn main() {
+    let mut n = 91
+    while n > 1 {
+        let mut m = 2
+        while m <= n / m {
+            if n % m == 0 {
+                print_str("no\n")
+                return
+            }
+            m = m + 1
+        }
+        n = n - 1
+        drop n
+    }
+    print_str("yes\n")
+}

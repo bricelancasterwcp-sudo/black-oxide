@@ -1,0 +1,3 @@
+fn main() {
+    let word = "banana".to_string().chars().collect_vec().into_iter().enumerate().filter_map(move || if_(!eq(second(pair), "n"))).map(pair_first).map(print_str).collect_vec()
+}

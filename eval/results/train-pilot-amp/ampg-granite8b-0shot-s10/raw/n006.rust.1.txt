@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let mut power_of_two = 1;
+    while power_of_two <= 100 {
+        power_of_two *= 2;
+    }
+    println!("{}", power_of_two / 2);
+}
+```
+
+Explanation:
+In this solution, we start with an initial value of `power_of_two` set to 1. We then enter a while loop that continues until `power_of_two` exceeds 100. Inside the loop, we multiply `power_of_two` by 2 to get the next power of two. Once the loop condition is no longer satisfied, we divide `power_of_two` by 2 to obtain the biggest power of two that does not exceed 100, and we print the result.

@@ -1,0 +1,352 @@
+struct PrimeChecker {
+    number: Int,
+}
+
+fn main() {
+    let mut pc = PrimeChecker { number: 91 }
+    let mut is_prime = true
+    while is_prime {
+        let d = first_big(push(vec(), 2), pc.number)
+        if d * d > pc.number {
+            is_prime = false
+        } else if pc.number % d == 0 {
+            is_prime = false
+        } else {
+            pc.number = pc.number / d
+        }
+    }
+    if pc.number == 1 {
+        print_str("yes")
+    } else {
+        print_str("no")
+    }
+}
+
+fn first_big(v: Vec<Int>, n: Int) -> Int {
+    let found = -1
+    for x in v {
+        if x > n {
+            found = x
+            break
+        }
+    }
+    found
+}
+
+fn second(v: Vec<Int>) -> Option<Int> {
+    let x = get(v, 1)?
+    Some(x + 1)
+}
+
+fn third(v: Vec<Int>) -> Option<Int> {
+    match get(v, 2) {
+        Some(x) => Some(x),
+        None => None,
+    }
+}
+
+fn fourth(v: Vec<Int>) -> Option<Int> {
+    match get(v, 2) {
+        Some(x) => Some(x),
+        _ => None,
+    }
+}
+
+fn fifth(v: Vec<Int>) -> Option<Int> {
+    match v {
+        Vec(_, _, _) => Some(3),
+        _ => None,
+    }
+}
+
+fn sixth() {
+    let mut v = vec()
+    v = push(v, 1)
+    v = push(v, 2)
+    print(get(v, 1)?)
+}
+
+fn seventh(x: Int, y: Int) -> Int {
+    let a = x + 3
+    let b = y + 4
+    a + b
+}
+
+fn eighth() {
+    let x = 5
+    let y = 7
+    let a = x + 3
+    let b = y + 4
+    print(a + b)
+}
+
+fn ninth() {
+    let x = 5
+    let y = 7
+    let a = x + 3
+    let b = y + 4
+    print(a + b)
+}
+
+fn tenth() {
+    let x = 5
+    let y = 7
+    let a = x + 3
+    let b = y + 4
+    print(a + b)
+}
+
+fn eleventh() {
+    let x = 5
+    let y = 7
+    let a = x + 3
+    let b = y + 4
+    print(a + b)
+}
+
+fn twelfth() {
+    let x = 5
+    let y = 7
+    let a = x + 3
+    let b = y + 4
+    print(a + b)
+}
+
+fn thirteenth() {
+    let x = 5
+    let y = 7
+    let a = x + 3
+    let b = y + 4
+    print(a + b)
+}
+
+fn fourteenth() {
+    let x = 5
+    let y = 7
+    let a = x + 3
+    let b = y + 4
+    print(a + b)
+}
+
+fn fifteenth() {
+    let x = 5
+    let y = 7
+    let a = x + 3
+    let b = y + 4
+    print(a + b)
+}
+
+fn sixteenth() {
+    let x = 5
+    let y = 7
+    let a = x + 3
+    let b = y + 4
+    print(a + b)
+}
+
+fn seventeenth() {
+    let x = 5
+    let y = 7
+    let a = x + 3
+    let b = y + 4
+    print(a + b)
+}
+
+fn eigteenth() {
+    let x = 5
+    let y = 7
+    let a = x + 3
+    let b = y + 4
+    print(a + b)
+}
+
+fn ninteenth() {
+    let x = 5
+    let y = 7
+    let a = x + 3
+    let b = y + 4
+    print(a + b)
+}
+
+fn twentieth() {
+    let x = 5
+    let y = 7
+    let a = x + 3
+    let b = y + 4
+    print(a + b)
+}
+
+fn twentyfirst() {
+    let x = 5
+    let y = 7
+    let a = x + 3
+    let b = y + 4
+    print(a + b)
+}
+
+fn twentysecond() {
+    let x = 5
+    let y = 7
+    let a = x + 3
+    let b = y + 4
+    print(a + b)
+}
+
+fn twentythird() {
+    let x = 5
+    let y = 7
+    let a = x + 3
+    let b = y + 4
+    print(a + b)
+}
+
+fn twentyfourth() {
+    let x = 5
+    let y = 7
+    let a = x + 3
+    let b = y + 4
+    print(a + b)
+}
+
+fn twentyfifth() {
+    let x = 5
+    let y = 7
+    let a = x + 3
+    let b = y + 4
+    print(a + b)
+}
+
+fn twentysixth() {
+    let x = 5
+    let y = 7
+    let a = x + 3
+    let b = y + 4
+    print(a + b)
+}
+
+fn twentyseventh() {
+    let x = 5
+    let y = 7
+    let a = x + 3
+    let b = y + 4
+    print(a + b)
+}
+
+fn twentyeighth() {
+    let x = 5
+    let y = 7
+    let a = x + 3
+    let b = y + 4
+    print(a + b)
+}
+
+fn twentyninth() {
+    let x = 5
+    let y = 7
+    let a = x + 3
+    let b = y + 4
+    print(a + b)
+}
+
+fn thirtieth() {
+    let x = 5
+    let y = 7
+    let a = x + 3
+    let b = y + 4
+    print(a + b)
+}
+
+fn thirtyfirst() {
+    let x = 5
+    let y = 7
+    let a = x + 3
+    let b = y + 4
+    print(a + b)
+}
+
+fn thirtysecond() {
+    let x = 5
+    let y = 7
+    let a = x + 3
+    let b = y + 4
+    print(a + b)
+}
+
+fn thirtythird() {
+    let x = 5
+    let y = 7
+    let a = x + 3
+    let b = y + 4
+    print(a + b)
+}
+
+fn thirtyfourth() {
+    let x = 5
+    let y = 7
+    let a = x + 3
+    let b = y + 4
+    print(a + b)
+}
+
+fn thirtyfifth() {
+    let x = 5
+    let y = 7
+    let a = x + 3
+    let b = y + 4
+    print(a + b)
+}
+
+fn thirtysixth() {
+    let x = 5
+    let y = 7
+    let a = x + 3
+    let b = y + 4
+    print(a + b)
+}
+
+fn thirtyseventh() {
+    let x = 5
+    let y = 7
+    let a = x + 3
+    let b = y + 4
+    print(a + b)
+}
+
+fn thirtyeighth() {
+    let x = 5
+    let y = 7
+    let a = x + 3
+    let b = y + 4
+    print(a + b)
+}
+
+fn thirtyninth() {
+    let x = 5
+    let y = 7
+    let a = x + 3
+    let b = y + 4
+    print(a + b)
+}
+
+fn fortieth() {
+    let x = 5
+    let y = 7
+    let a = x + 3
+    let b = y + 4
+    print(a + b)
+}
+
+fn fortyfirst() {
+    let x = 5
+    let y = 7
+    let a = x + 3
+    let b = y + 4
+    print(a + b)
+}
+
+fn fortysecond() {
+    let x = 5
+    let y = 7
+    let a = x + 3
+    let b = y + 4
+    print(a +

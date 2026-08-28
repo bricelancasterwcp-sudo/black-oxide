@@ -1,0 +1,8 @@
+fn main() {
+    for line in std_input() {
+        match parse_int(line) {
+            Some(n) => print(n),
+            None => print_str("bad"),
+        }
+    }
+}

@@ -1,0 +1,305 @@
+fn main() {
+    let scores = push(push(vec(), 5), 9)
+    let sorted = sort(&scores)
+    print(sorted)
+    drop scores
+    drop sorted
+}
+
+fn sort(scores: &Vec<Int>) -> Vec<Int> {
+    let mut less = vec()
+    let mut greater = vec()
+    for x in &scores {
+        if x < 5 {
+            less = push(less, x)
+        } else {
+            greater = push(greater, x)
+        }
+    }
+    let mut result = vec()
+    let mut left = 0
+    let mut right = 0
+    while left < len(&less) && right < len(&greater) {
+        if get(&less, left) < get(&greater, right) {
+            result = push(result, get(&less, left))
+            left = left + 1
+        } else {
+            result = push(result, get(&greater, right))
+            right = right + 1
+        }
+    }
+    while left < len(&less) {
+        result = push(result, get(&less, left))
+        left = left + 1
+    }
+    while right < len(&greater) {
+        result = push(result, get(&greater, right))
+        right = right + 1
+    }
+    result
+}
+
+fn print(s: &Str) {
+    let mut i = 0
+    while i < str_len(s) {
+        print_str(get(chars(s), i))
+        i = i + 1
+    }
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    let mut result = v
+    result = append(result, vec(x))
+    result
+}
+
+fn append(a: Vec<T>, b: Vec<T>) -> Vec<T> {
+    let mut result = a
+    for x in &b {
+        result = push(result, x)
+    }
+    result
+}
+
+fn len(v: &Vec<T>) -> Int {
+    truncate(parse_int(get(str_split(str_split(to_str(len_str(&v))), "len("), 1)))
+}
+
+fn truncate(n: Float) -> Int {
+    trunc(n)
+}
+
+fn to_str(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn len_str(v: &Vec<T>) -> Str {
+    to_str(len(v))
+}
+
+fn get(v: &Vec<T>, i: Int) -> T {
+    index(v, i)
+}
+
+fn index(a: &Vec<T>, i: Int) -> T {
+    clone(get_raw(a, i))
+}
+
+fn get_raw(a: &Vec<T>, i: Int) -> T {
+    clone(get(a, i))
+}
+
+fn vec() -> Vec<T> {
+    Vec()
+}
+
+fn clone(x: T) -> T {
+    x
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    Option(parse_int_raw(s))
+}
+
+fn parse_int_raw(s: Str) -> Int {
+    to_float(s)
+}
+
+fn to_float(n: Int) -> Float {
+    n
+}
+
+fn str_split(s: Str, sep: Str) -> Vec<Str> {
+    let mut result = vec()
+    let i = chars(s)
+    let j = chars(sep)
+    let n = len(&i)
+    let m = len(&j)
+    let mut k = 0
+    while k < n {
+        let l = match_prefix(&i, &j, k)
+        if l == -1 {
+            result = push(result, get(i, k))
+            k = k + 1
+        } else {
+            k = k + l
+        }
+    }
+    result
+}
+
+fn match_prefix(i: &Vec<Str>, j: &Vec<Str>, k: Int) -> Int {
+    let n = len(i)
+    let m = len(j)
+    let mut l = 0
+    while l < m && k + l < n {
+        if get(i, k + l) != get(j, l) {
+            break
+        }
+        l = l + 1
+    }
+    if l == m {
+        l
+    } else {
+        -1
+    }
+}
+
+fn str_len(s: Str) -> Int {
+    len(&chars_vec)
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    chars_vec
+}
+
+fn chars_vec() -> Vec<Str> {
+    vec("c", "h", "a", "r", "s")
+}
+
+fn truncate(n: Float) -> Int {
+    trunc(n)
+}
+
+fn trunc(x: Float) -> Int {
+    x
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut s = vec()
+    let mut x = n
+    if x < 0 {
+        s = push(s, "-")
+        x = -x
+    }
+    if x < 10 {
+        s = push(s, str_from_digit(x))
+    } else {
+        let q = x / 10
+        let r = x % 10
+        s = push(s, int_to_str(q))
+        s = push(s, str_from_digit(r))
+    }
+    s
+}
+
+fn str_from_digit(n: Int) -> Str {
+    let s = vec()
+    match n {
+        Rendering => s,
+        _ => s,
+    }
+}
+
+fn print_str(s: Str) {
+    let mut i = 0
+    while i < len(&s) {
+        print_str(get(s, i))
+        i = i + 1
+    }
+}
+
+fn main() {
+    let scores = push(push(vec(), 5), 9)
+    let sorted = sort(&scores)
+    print(sorted)
+    drop scores
+    drop sorted
+}
+
+fn sort(scores: &Vec<Int>) -> Vec<Int> {
+    let mut less = vec()
+    let mut greater = vec()
+    for x in &scores {
+        if x < 5 {
+            less = push(less, x)
+        } else {
+            greater = push(greater, x)
+        }
+    }
+    let mut result = vec()
+    let mut left = 0
+    let mut right = 0
+    while left < len(&less) && right < len(&greater) {
+        if get(&less, left) < get(&greater, right) {
+            result = push(result, get(&less, left))
+            left = left + 1
+        } else {
+            result = push(result, get(&greater, right))
+            right = right + 1
+        }
+    }
+    while left < len(&less) {
+        result = push(result, get(&less, left))
+        left = left + 1
+    }
+    while right < len(&greater) {
+        result = push(result, get(&greater, right))
+        right = right + 1
+    }
+    result
+}
+
+fn print(s: &Str) {
+    let mut i = 0
+    while i < str_len(s) {
+        print_str(get(chars(s), i))
+        i = i + 1
+    }
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    let mut result = v
+    result = append(result, vec(x))
+    result
+}
+
+fn append(a: Vec<T>, b: Vec<T>) -> Vec<T> {
+    let mut result = a
+    for x in &b {
+        result = push(result, x)
+    }
+    result
+}
+
+fn len(v: &Vec<T>) -> Int {
+    truncate(parse_int(get(str_split(str_split(to_str(len_str(&v))), "len("), 1)))
+}
+
+fn truncate(n: Float) -> Int {
+    trunc(n)
+}
+
+fn to_str(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn len_str(v: &Vec<T>) -> Str {
+    to_str(len(v))
+}
+
+fn get(v: &Vec<T>, i: Int) -> T {
+    index(v, i)
+}
+
+fn index(a: &Vec<T>, i: Int) -> T {
+    clone(get_raw(a, i))
+}
+
+fn get_raw(a: &Vec<T>, i: Int) -> T {
+    clone(get(a, i))
+}
+
+fn vec() -> Vec<T> {
+    Vec()
+}
+
+fn clone(x: T) -> T {
+    x
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    Option(parse_int_raw(s))
+}
+
+fn parse_int_raw(s: Str) -> Int {

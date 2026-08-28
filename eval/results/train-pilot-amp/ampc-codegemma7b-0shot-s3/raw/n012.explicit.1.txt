@@ -1,0 +1,10 @@
+fn main() {
+    let mut numbers = vec()
+    for i in 0 {
+        if i < 15 {
+            numbers = push(numbers, i)
+        }
+    }
+    print(len(&numbers))
+    drop numbers
+}

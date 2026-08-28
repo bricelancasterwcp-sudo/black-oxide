@@ -1,0 +1,19 @@
+```rust
+use std::cmp::Ordering;
+
+fn main() {
+    let samples = [5, 12, 3, 18, 9];
+    let cutoff = 10;
+
+    let (under_cutoff, at_or_over_cutoff) = samples
+        .iter()
+        .fold((0, 0), |(under, at), &sample| match sample.cmp(&cutoff) {
+            Ordering::Less => (under + 1, at),
+            Ordering::Greater => (under, at + 1),
+            Ordering::Equal => (under, at + 1),
+        });
+
+    println!("Samples under cutoff: {}", under_cutoff);
+    println!("Samples at or over cutoff: {}", at_or_over_cutoff);
+}
+```

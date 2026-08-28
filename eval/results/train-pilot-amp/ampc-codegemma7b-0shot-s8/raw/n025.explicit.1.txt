@@ -1,0 +1,14 @@
+fn main() {
+    let num_str = str_len(text - 3)
+    if num_str == 0 {
+        print("bad")
+    } else {
+        let num = parse_int(text - 3)
+        if num == None {
+            print("bad")
+        } else {
+            let num = int_to_str(num + 1)
+            print(num)
+        }
+    }
+}

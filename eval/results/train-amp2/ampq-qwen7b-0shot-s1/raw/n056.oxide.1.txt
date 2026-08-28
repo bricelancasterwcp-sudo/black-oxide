@@ -1,0 +1,19 @@
+struct Reading { values: Vec<Str> }
+
+fn main() {
+    let r = Reading { values: vec("7", "x", "9", "?") }
+    let mut total = 0
+    let mut count = 0
+    for s in r.values {
+        match parse_int(s) {
+            Some(n) => {
+                total = total + n
+            },
+            None => {
+                count = count + 1
+            },
+        }
+    }
+    print(total)
+    print(count)
+}

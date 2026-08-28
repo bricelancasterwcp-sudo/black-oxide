@@ -1,0 +1,9 @@
+fn count_vowels(words: Vec<Str>) -> Int {
+    let vowels = "aeiouAEIOU".chars().collect()
+    words.iter().fold(0, 0 || acc, word || acc + word.chars().filter(vowels.contains).count())
+}
+
+fn main() {
+    let words = vec("hello", "world", "rustacean")
+    print(count_vowels(words))
+}

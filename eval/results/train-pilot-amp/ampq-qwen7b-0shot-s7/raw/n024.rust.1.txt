@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let word = "banana";
+    let count = word.chars().filter(|&c| c == 'a').count();
+    println!("{}", count);
+}
+```

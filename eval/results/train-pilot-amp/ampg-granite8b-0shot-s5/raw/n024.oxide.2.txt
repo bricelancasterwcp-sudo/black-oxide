@@ -1,0 +1,15 @@
+fn main() {
+    let printed = false
+    for c in "banana" {
+        if c == "a" {
+            print(1)
+            printed = true
+            break
+            continue
+            return
+        }
+    }
+    if !printed {
+        print(0)
+    }
+}

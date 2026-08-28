@@ -1,0 +1,16 @@
+struct List { head: Int, tail: Option<Box<List>> }
+
+fn second(xs: List) -> Option<Int> {
+    match xs.tail {
+        Some(cdr) => Some(cdr.head),
+        None => None,
+    }
+}
+
+fn main() {
+    let list = List { head: 1, tail: Some(box(List { head: 2, tail: Some(box(List { head: 3, tail: None })) })) }
+    match second(list) {
+        Some(n) => print(n),
+        None => print_str("not enough"),
+    }
+}

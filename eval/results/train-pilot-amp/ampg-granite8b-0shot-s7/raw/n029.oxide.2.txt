@@ -1,0 +1,8 @@
+struct A { x: Int }
+
+fn main() {
+    let a = A { x: 1 }
+    let b = a
+    let c = A { x: 2 }
+    print(c.x)
+}

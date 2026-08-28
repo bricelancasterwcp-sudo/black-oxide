@@ -1,0 +1,253 @@
+fn main() {
+    let state = get_signal()?
+    if state == "green" {
+        print_str("go")
+    } else if state == "yellow" {
+        print_str("wait")
+    } else if state == "red" {
+        print_str("stop")
+    } else {
+        print_str("unknown")
+    }
+}
+
+fn get_signal() -> Option<Str> {
+    print_str("Enter signal: ")
+    let mut input = String.new()
+    std_in().read_line_into(input)
+    if input == "" {
+        None
+    } else {
+        Some(input.trim().to_lowercase())
+    }
+}
+
+fn std_in() -> StdIn {
+    let mut stdin = std_in_raw()
+    stdin.set_unget(false)
+    stdin
+}
+
+fn std_in_raw() -> StdInRaw {
+    unsafe
+    std_in_raw_internal()
+}
+
+fn std_in_raw_internal() -> StdInRaw {
+    let mut stdin = StdInRaw { buffer: 0 }
+    stdin.init()
+    stdin
+}
+
+struct StdInRaw {
+    buffer: CInt,
+}
+
+fn std_in_raw_internal() -> StdInRaw {
+    let mut stdin = StdInRaw { buffer: 0 }
+    stdin.init()
+    stdin
+}
+
+fn std_in_raw_init(stdin: UnsafeMutablePointer<StdInRaw>) {
+    stdin.write_bytes(b_stdin_init)
+}
+
+fn std_in_raw_set_unget(stdin: UnsafeMutablePointer<StdInRaw>, unget: CInt) {
+    stdin.write_bytes(b_stdin_set_unget)
+    stdin.write_int(unget)
+}
+
+fn std_in_raw_read_line(stdin: UnsafeMutablePointer<StdInRaw>, output: UnsafeMutablePointer<CChar>) -> CInt {
+    stdin.write_bytes(b_stdin_read_line)
+    stdin.write_pointer(output)
+}
+
+struct StdIn {
+    stdin: UnsafeMutablePointer<StdInRaw>,
+}
+
+fn std_in_init(stdin: UnsafeMutablePointer<StdIn>) {
+    stdin.write_bytes(b_stdin_init)
+}
+
+fn std_in_set_unget(stdin: UnsafeMutablePointer<StdIn>, unget: CInt) {
+    stdin.write_bytes(b_stdin_set_unget)
+    stdin.write_int(unget)
+}
+
+fn std_in_read_line(stdin: UnsafeMutablePointer<StdIn>, output: UnsafeMutablePointer<CChar>) -> CInt {
+    stdin.write_bytes(b_stdin_read_line)
+    stdin.write_pointer(output)
+}
+
+fn get_signal() -> Option<Str> {
+    print_str("Enter signal: ")
+    let mut input = String.new()
+    std_in().read_line_into(input)
+    if input == "" {
+        None
+    } else {
+        Some(input.trim().to_lowercase())
+    }
+}
+
+fn std_in() -> StdIn {
+    let mut stdin = std_in_raw()
+    stdin.set_unget(false)
+    stdin
+}
+
+fn std_in_raw() -> StdInRaw {
+    unsafe
+    std_in_raw_internal()
+}
+
+fn std_in_raw_internal() -> StdInRaw {
+    let mut stdin = StdInRaw { buffer: 0 }
+    stdin.init()
+    stdin
+}
+
+struct StdInRaw {
+    buffer: CInt,
+}
+
+fn std_in_raw_init(stdin: UnsafeMutablePointer<StdInRaw>) {
+    stdin.write_bytes(b_stdin_init)
+}
+
+fn std_in_raw_set_unget(stdin: UnsafeMutablePointer<StdInRaw>, unget: CInt) {
+    stdin.write_bytes(b_stdin_set_unget)
+    stdin.write_int(unget)
+}
+
+fn std_in_raw_read_line(stdin: UnsafeMutablePointer<StdInRaw>, output: UnsafeMutablePointer<CChar>) -> CInt {
+    stdin.write_bytes(b_stdin_read_line)
+    stdin.write_pointer(output)
+}
+
+struct StdIn {
+    stdin: UnsafeMutablePointer<StdInRaw>,
+}
+
+fn std_in_init(stdin: UnsafeMutablePointer<StdIn>) {
+    stdin.write_bytes(b_stdin_init)
+}
+
+fn std_in_set_unget(stdin: UnsafeMutablePointer<StdIn>, unget: CInt) {
+    stdin.write_bytes(b_stdin_set_unget)
+    stdin.write_int(unget)
+}
+
+fn std_in_read_line(stdin: UnsafeMutablePointer<StdIn>, output: UnsafeMutablePointer<CChar>) -> CInt {
+    stdin.write_bytes(b_stdin_read_line)
+    stdin.write_pointer(output)
+}
+
+fn print_str(s: Str) {
+    write_bytes(b_print)
+    write_pointer(s)
+}
+
+fn write_bytes(bytes: CBytes) {
+    let mut stdout = std_out_raw()
+    stdout.write_bytes(bytes)
+}
+
+fn write_pointer(p: Pointer) {
+    let mut stdout = std_out_raw()
+    stdout.write_pointer(p)
+}
+
+fn std_out() -> StdOut {
+    let mut stdout = std_out_raw()
+    stdout.set_unget(false)
+    stdout
+}
+
+fn std_out_raw() -> StdOutRaw {
+    unsafe
+    std_out_raw_internal()
+}
+
+fn std_out_raw_internal() -> StdOutRaw {
+    let mut stdout = StdOutRaw { buffer: 0 }
+    stdout.init()
+    stdout
+}
+
+struct StdOutRaw {
+    buffer: CInt,
+}
+
+fn std_out_raw_init(stdout: UnsafeMutablePointer<StdOutRaw>) {
+    stdout.write_bytes(b_stdout_init)
+}
+
+fn std_out_raw_set_unget(stdout: UnsafeMutablePointer<StdOutRaw>, unget: CInt) {
+    stdout.write_bytes(b_stdout_set_unget)
+    stdout.write_int(unget)
+}
+
+fn std_out_raw_write_bytes(stdout: UnsafeMutablePointer<StdOutRaw>, bytes: CBytes) {
+    stdout.write_bytes(bytes)
+}
+
+fn std_out_raw_write_pointer(stdout: UnsafeMutablePointer<StdOutRaw>, p: Pointer) {
+    stdout.write_pointer(p)
+}
+
+struct StdOut {
+    stdout: UnsafeMutablePointer<StdOutRaw>,
+}
+
+fn std_out_init(stdout: UnsafeMutablePointer<StdOut>) {
+    stdout.write_bytes(b_stdout_init)
+}
+
+fn std_out_set_unget(stdout: UnsafeMutablePointer<StdOut>, unget: CInt) {
+    stdout.write_bytes(b_stdout_set_unget)
+    stdout.write_int(unget)
+}
+
+fn std_out_write_bytes(stdout: UnsafeMutablePointer<StdOut>, bytes: CBytes) {
+    stdout.write_bytes(bytes)
+}
+
+fn std_out_write_pointer(stdout: UnsafeMutablePointer<StdOut>, p: Pointer) {
+    stdout.write_pointer(p)
+}
+
+fn write_bytes(bytes: CBytes) {
+    let mut stdout = std_out_raw()
+    stdout.write_bytes(bytes)
+}
+
+fn write_pointer(p: Pointer) {
+    let mut stdout = std_out_raw()
+    stdout.write_pointer(p)
+}
+
+fn b_stdin_init() -> CBytes {
+    b_push_arg(b_init_arg(b_read_stdin))
+}
+
+fn b_stdin_set_unget() -> CBytes {
+    b_push_arg(b_set_unget_arg(b_read_stdin))
+}
+
+fn b_stdin_read_line() -> CBytes {
+    b_push_arg(b_read_line_arg(b_read_stdin))
+}
+
+fn b_stdout_init() -> CBytes {
+    b_push_arg(b_init_arg(b_write_stdout))
+}
+
+fn b_stdout_set_unget() -> CBytes {
+    b_push_arg(b_set_unget_arg(b_write_stdout))
+}
+
+fn b_stdout_write_bytes() -> CBytes {
+    

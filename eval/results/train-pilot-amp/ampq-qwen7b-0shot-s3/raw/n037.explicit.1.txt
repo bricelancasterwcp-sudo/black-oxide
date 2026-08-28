@@ -1,0 +1,94 @@
+fn main() {
+    let rect = Rectangle { width: 2, height: 3 }
+    let rect = Rectangle { width: 5, ..rect }
+    print(rect.area())
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn area(rect: &Rectangle) -> Int {
+    rect.width * rect.height
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn println(x: Int) {
+    print(x)
+}
+
+fn println(x: Str) {
+    print(x)
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn str_len(s: Str) -> Int {
+    s.len()
+}
+
+fn int_to_str(n: Int) -> Str {
+    n.to_string()
+}
+
+fn to_float(n: Int) -> Float {
+    n.to_float()
+}
+
+fn trunc(x: Float) -> Int {
+    x.trunc()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn vec_len(v: Vec<Int>) -> Int {
+    v.len()
+}
+
+fn vec_get(v: Vec<Int>, i: Int) -> Option<Int> {
+    v.get(i)
+}
+
+fn vec_concat(a: Vec<Int>, b: Vec<Int>) -> Vec<Int> {
+    a.concat(b)
+}
+
+fn vec_chars(s: Str) -> Vec<Str> {
+    s.chars().map(int_to_str).collect()
+}
+
+fn vec_range(a: Int, b: Int) -> Vec<Int> {
+    (a + 1).min(b - 1).range_to(b - 1).map(int_to_str).collect()
+}
+
+fn vec_clone(x: Vec<Int>) -> Vec<Int> {
+    x.clone()
+}
+
+fn vec_drop(v: Vec<Int>) {
+    drop v
+}
+
+fn drop_name(name: &Rectangle) {
+    drop name
+}
+
+fn main() {
+    let rect = Rectangle { width: 2, height: 3 }
+    let rect = Rectangle { width: 5, ..rect }
+    let area = area(&rect)
+    print(area)
+    drop_name(&rect)
+}

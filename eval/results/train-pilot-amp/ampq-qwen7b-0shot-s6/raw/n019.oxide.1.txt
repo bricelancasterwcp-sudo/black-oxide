@@ -1,0 +1,15 @@
+struct List { value: Int, next: Option<Box<List>> }
+
+fn count_entries(list: Option<Box<List>>) -> Int {
+    match list {
+        Some(node) => 1 + count_entries(node.next),
+        None => 0,
+    }
+}
+
+fn main() {
+    let list1 = Some(Box { value: 1, next: Some(Box { value: 2, next: Some(Box { value: 3, next: None }) }) })
+    let list2 = Some(Box { value: 4, next: Some(Box { value: 5, next: None }) })
+    let total_entries = count_entries(list1) + count_entries(list2)
+    print(total_entries)
+}

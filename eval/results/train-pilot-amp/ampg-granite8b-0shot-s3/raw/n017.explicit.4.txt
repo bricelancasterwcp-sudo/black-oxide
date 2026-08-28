@@ -1,0 +1,16 @@
+fn list_entry(list: &Vec<Int>, index: Int) -> Option<Int> {
+    if index < 0 || index >= len(list) {
+        return None
+    }
+    Some(get(list, index))
+}
+
+fn main() {
+    let list = push(push(push(vec(), 10), 20), 30)
+    let entry = list_entry(&list, 1)
+    drop list
+    match entry {
+        Some(x) => print(x),
+        None => print("missing"),
+    }
+}

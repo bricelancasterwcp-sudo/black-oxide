@@ -1,0 +1,9 @@
+fn main() {
+    let word = "banana".to_string()
+    for i in 0.to_int() {
+        if word.chars().nth(i).unwrap_or_default() == "n".chars().nth(0).unwrap_or_default() {
+            print(i)
+            print("\n")
+        }
+    }
+}

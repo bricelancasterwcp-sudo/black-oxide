@@ -1,0 +1,12 @@
+fn sum_cubes(n: Int) -> Int {
+    let mut total = 0
+    for i in 1.to(n) {
+        total = total + i * i * i
+    }
+    total
+}
+
+fn main() {
+    let answer = sum_cubes(5)
+    print(answer)
+}

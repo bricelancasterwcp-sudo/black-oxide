@@ -1,0 +1,16 @@
+fn len(s: &Str) -> Int {
+    let mut i = 0
+    while i < s.len() {
+        if s.get(i) == " " {
+            break
+        }
+        i = i + 1
+    }
+    i
+}
+
+fn main() {
+    let phrase = "hello world"
+    print(len(&phrase))
+    drop phrase
+}

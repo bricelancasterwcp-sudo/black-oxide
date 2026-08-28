@@ -1,0 +1,9 @@
+fn main() {
+    for i in 2..91 {
+        if 91 % i == 0 {
+            println!("yes");
+            return;
+        }
+    }
+    println!("no");
+}

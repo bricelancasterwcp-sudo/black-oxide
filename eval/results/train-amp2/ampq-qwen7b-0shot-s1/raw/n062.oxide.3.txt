@@ -1,0 +1,18 @@
+fn main() {
+    let signals = vec("green", "red", "yellow")
+    for signal in signals {
+        match signal {
+            Some(signal) => match signal {
+                Str(value) => match value {
+                    Str(val) => match val {
+                        Str(x) => if x == "green" { print_str("go") } else { if x == "red" { print_str("stop") } else { if x == "yellow" { print_str("wait") } else { print_str("unknown") } } },
+                        _ => print_str("unknown"),
+                    },
+                    _ => print_str("unknown"),
+                },
+                _ => print_str("unknown"),
+            },
+            None => print_str("unknown"),
+        }
+    }
+}

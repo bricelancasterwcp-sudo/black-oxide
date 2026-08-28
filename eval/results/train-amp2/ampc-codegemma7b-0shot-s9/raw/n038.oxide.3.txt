@@ -1,0 +1,262 @@
+fn main() {
+    let mut device = Device { sensor: Sensor { reading: 0 } }
+    device.sensor.reading = 7
+    print(device.sensor.reading)
+}
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+fn print(n: Int) {
+    if n < 10 {
+        print_str("0")
+    }
+    print_str(int_to_str(n))
+}
+
+fn print_str(s: Str) {
+    for c in chars(s) {
+        print(ord(c))
+    }
+}
+
+fn int_to_str(mutn: Int) -> Str {
+    let mut digits: Vec<Int> = vec()
+    if mutn == 0 {
+        digits.push(0)
+    } else {
+        while mutn != 0 {
+            digits.push(trunc(mutn % 10))
+            mutn = trunc(mutn / 10)
+        }
+    }
+    let mut result: Str = Str("")
+    for d in digits {
+        result = concat(result, int_to_str(d))
+    }
+    result
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result: Vec<Str> = vec()
+    for c in range(0, str_len(s)) {
+        result.push(str_to_char(get(s, c).unwrap()))
+    }
+    result
+}
+
+fn str_to_char(n: Int) -> Str {
+    if n >= 48 && n <= 57 {
+        return int_to_str(n - 48)
+    }
+    if n >= 65 && n <= 90 {
+        return int_to_str(n - 65 + 10)
+    }
+    if n >= 97 && n <= 122 {
+        return int_to_str(n - 97 + 36)
+    }
+    panic("bad rune")
+}
+
+fn ord(c: Str) -> Int {
+    let mut digits: Vec<Int> = vec()
+    for ch in chars(c) {
+        digits.push(get(int_to_str(ord(ch)), 0).unwrap())
+    }
+    let mut result: Int = 0
+    let mut factor: Int = 1
+    for d in digits {
+        result = result + factor * d
+        factor = factor * 10
+    }
+    result
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut result: Str = a
+    for c in chars(b) {
+        result = concat(result, int_to_str(ord(c)))
+    }
+    result
+}
+
+fn trunc(mutn: Float) -> Int {
+    if mutn < 0.0 {
+        return -(trunc(-mutn))
+    }
+    let mut result: Int = 0
+    let mut factor: Float = 1.0
+    while mutn >= factor {
+        result = result + 1
+        mutn = mutn - factor
+        factor = factor * 10.0
+    }
+    result
+}
+
+fn ord(c: Str) -> Int {
+    let mut digits: Vec<Int> = vec()
+    for ch in chars(c) {
+        digits.push(get(int_to_str(ord(ch)), 0).unwrap())
+    }
+    let mut result: Int = 0
+    let mut factor: Int = 1
+    for d in digits {
+        result = result + factor * d
+        factor = factor * 10
+    }
+    result
+}
+
+fn str_len(s: Str) -> Int {
+    let mut result: Int = 0
+    for _ in range(0, s.len()) {
+        result = result + 1
+    }
+    result
+}
+
+fn get(v: Vec<T>, i: Int) -> Option<T> {
+    if i >= 0 && i < v.len() {
+        return Some(v.clone().get(i))
+    }
+    None
+}
+
+fn len(v: Vec<T>) -> Int {
+    let mut result: Int = 0
+    for _ in range(0, v.len()) {
+        result = result + 1
+    }
+    result
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    let mut result: Vec<T> = v
+    result.push(x)
+    result
+}
+
+fn vec() -> Vec<T> {
+    let mut result: Vec<T> = vec()
+    result
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result: Vec<Int> = vec()
+    for i in a.min(b) + 1.min(-a).max(-b) + 1.min(a).max(b) - 1.min(-a).max(-b) {
+        result.push(i)
+    }
+    result
+}
+
+fn clone(x: T) -> T {
+    x
+}
+
+fn main() {
+    let mut device = Device { sensor: Sensor { reading: 0 } }
+    device.sensor.reading = 7
+    print(device.sensor.reading)
+}
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+fn print(n: Int) {
+    if n < 10 {
+        print_str("0")
+    }
+    print_str(int_to_str(n))
+}
+
+fn print_str(s: Str) {
+    for c in chars(s) {
+        print(ord(c))
+    }
+}
+
+fn int_to_str(mutn: Int) -> Str {
+    let mut digits: Vec<Int> = vec()
+    if mutn == 0 {
+        digits.push(0)
+    } else {
+        while mutn != 0 {
+            digits.push(trunc(mutn % 10))
+            mutn = trunc(mutn / 10)
+        }
+    }
+    let mut result: Str = Str("")
+    for d in digits {
+        result = concat(result, int_to_str(d))
+    }
+    result
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result: Vec<Str> = vec()
+    for c in range(0, str_len(s)) {
+        result.push(str_to_char(get(s, c).unwrap()))
+    }
+    result
+}
+
+fn str_to_char(n: Int) -> Str {
+    if n >= 48 && n <= 57 {
+        return int_to_str(n - 48)
+    }
+    if n >= 65 && n <= 90 {
+        return int_to_str(n - 65 + 10)
+    }
+    if n >= 97 && n <= 122 {
+        return int_to_str(n - 97 + 36)
+    }
+    panic("bad rune")
+}
+
+fn ord(c: Str) -> Int {
+    let mut digits: Vec<Int> = vec()
+    for ch in chars(c) {
+        digits.push(get(int_to_str(ord(ch)), 0).unwrap())
+    }
+    let mut result: Int = 0
+    let mut factor: Int = 1
+    for d in digits {
+        result = result + factor * d
+        factor = factor * 10
+    }
+    result
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut result: Str = a
+    for c in chars(b) {
+        result = concat(result, int_to_str(ord(c)))
+    }
+    result
+}
+
+fn trunc(mutn: Float) -> Int {
+    if mutn < 0.0 {
+        return -(trunc(-mutn))
+    }
+    let mut result: Int = 0
+    let mut factor: Float = 1.0
+    while mutn >= factor {
+        result = result + 1
+        mutn = mutn - factor
+        factor = factor * 10.0
+    }
+    result
+}
+
+fn ord(c: Str) -> Int {
+    let mut digits: Vec<Int> = vec()
+    for ch in chars(c) {
+        digits.push(get(int_to_str(ord(ch)), 0).unwrap())
+    }
+    let mut result: Int = 0
+    let mut factor: Int = 1
+    for

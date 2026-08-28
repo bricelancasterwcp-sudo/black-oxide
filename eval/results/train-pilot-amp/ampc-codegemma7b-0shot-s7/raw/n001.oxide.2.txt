@@ -1,0 +1,4 @@
+fn main() {
+    let sum = range(1, 6).iter().map(int_to_str).map(parse_int).map(Some).unwrap_or(0).map(trunc).map(float_to_int).fold(0, add)
+    print(sum)
+}

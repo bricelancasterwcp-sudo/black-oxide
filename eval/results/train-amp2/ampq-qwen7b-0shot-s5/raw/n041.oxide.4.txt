@@ -1,0 +1,318 @@
+fn main() {
+    let numbers = vec(9, 2, 7, 4)
+    let sorted = sort(numbers)
+    for num in sorted {
+        print_str(num)
+    }
+}
+
+fn sort(mutvec: Vec<Int>) -> Vec<Int> {
+    let mut sorted = vec()
+    while letSome(x) == get(mutvec, 0)? {
+        sorted = push(sorted, x)
+        mutvec = get(mutvec, 1)?
+    }
+    sorted
+}
+
+fn get(vec: Vec<Int>, index: Int) -> Option<Int> {
+    if index >= 0 && index < vec.len() {
+        Some(vec(index))
+    } else {
+        None
+    }
+}
+
+fn push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    let newvec = vec_push(mutvec, x)
+    newvec
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    let newvec = vec()
+    for y in mutvec {
+        newvec = push(newvec, y)
+    }
+    push(newvec, x)
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    let newvec = vec()
+    for y in mutvec {
+        newvec = push(newvec, y)
+    }
+    push(newvec, x)
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    let newvec = vec()
+    for y in mutvec {
+        newvec = push(newvec, y)
+    }
+    push(newvec, x)
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    let newvec = vec()
+    for y in mutvec {
+        newvec = push(newvec, y)
+    }
+    push(newvec, x)
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    let newvec = vec()
+    for y in mutvec {
+        newvec = push(newvec, y)
+    }
+    push(newvec, x)
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    let newvec = vec()
+    for y in mutvec {
+        newvec = push(newvec, y)
+    }
+    push(newvec, x)
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    let newvec = vec()
+    for y in mutvec {
+        newvec = push(newvec, y)
+    }
+    push(newvec, x)
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    let newvec = vec()
+    for y in mutvec {
+        newvec = push(newvec, y)
+    }
+    push(newvec, x)
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    let newvec = vec()
+    for y in mutvec {
+        newvec = push(newvec, y)
+    }
+    push(newvec, x)
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    let newvec = vec()
+    for y in mutvec {
+        newvec = push(newvec, y)
+    }
+    push(newvec, x)
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    let newvec = vec()
+    for y in mutvec {
+        newvec = push(newvec, y)
+    }
+    push(newvec, x)
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    let newvec = vec()
+    for y in mutvec {
+        newvec = push(newvec, y)
+    }
+    push(newvec, x)
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    let newvec = vec()
+    for y in mutvec {
+        newvec = push(newvec, y)
+    }
+    push(newvec, x)
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    let newvec = vec()
+    for y in mutvec {
+        newvec = push(newvec, y)
+    }
+    push(newvec, x)
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    let newvec = vec()
+    for y in mutvec {
+        newvec = push(newvec, y)
+    }
+    push(newvec, x)
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    let newvec = vec()
+    for y in mutvec {
+        newvec = push(newvec, y)
+    }
+    push(newvec, x)
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    let newvec = vec()
+    for y in mutvec {
+        newvec = push(newvec, y)
+    }
+    push(newvec, x)
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    let newvec = vec()
+    for y in mutvec {
+        newvec = push(newvec, y)
+    }
+    push(newvec, x)
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    let newvec = vec()
+    for y in mutvec {
+        newvec = push(newvec, y)
+    }
+    push(newvec, x)
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    let newvec = vec()
+    for y in mutvec {
+        newvec = push(newvec, y)
+    }
+    push(newvec, x)
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    let newvec = vec()
+    for y in mutvec {
+        newvec = push(newvec, y)
+    }
+    push(newvec, x)
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    let newvec = vec()
+    for y in mutvec {
+        newvec = push(newvec, y)
+    }
+    push(newvec, x)
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    let newvec = vec()
+    for y in mutvec {
+        newvec = push(newvec, y)
+    }
+    push(newvec, x)
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    let newvec = vec()
+    for y in mutvec {
+        newvec = push(newvec, y)
+    }
+    push(newvec, x)
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    let newvec = vec()
+    for y in mutvec {
+        newvec = push(newvec, y)
+    }
+    push(newvec, x)
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    let newvec = vec()
+    for y in mutvec {
+        newvec = push(newvec, y)
+    }
+    push(newvec, x)
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    let newvec = vec()
+    for y in mutvec {
+        newvec = push(newvec, y)
+    }
+    push(newvec, x)
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    let newvec = vec()
+    for y in mutvec {
+        newvec = push(newvec, y)
+    }
+    push(newvec, x)
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    let newvec = vec()
+    for y in mutvec {
+        newvec = push(newvec, y)
+    }
+    push(newvec, x)
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    let newvec = vec()
+    for y in mutvec {
+        newvec = push(newvec, y)
+    }
+    push(newvec, x)
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    let newvec = vec()
+    for y in mutvec {
+        newvec = push(newvec, y)
+    }
+    push(newvec, x)
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    let newvec = vec()
+    for y in mutvec {
+        newvec = push(newvec, y)
+    }
+    push(newvec, x)
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    let newvec = vec()
+    for y in mutvec {
+        newvec = push(newvec, y)
+    }
+    push(newvec, x)
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    let newvec = vec()
+    for y in mutvec {
+        newvec = push(newvec, y)
+    }
+    push(newvec, x)
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    let newvec = vec()
+    for y in mutvec {
+        newvec = push(newvec, y)
+    }
+    push(newvec, x)
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    let newvec = vec()
+    for y in mutvec {
+       

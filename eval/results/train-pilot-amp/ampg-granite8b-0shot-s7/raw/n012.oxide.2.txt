@@ -1,0 +1,10 @@
+struct Nat {
+    head: Int,
+    tail: Vec<Nat>,
+}
+
+fn main() {
+    let zero = Nat { head: 0, tail: vec() }
+    let fifteen = push(Nat { head: 1, tail: vec() }, Nat { head: 14, tail: vec() })
+    print(len(range(zero, fifteen)))
+}

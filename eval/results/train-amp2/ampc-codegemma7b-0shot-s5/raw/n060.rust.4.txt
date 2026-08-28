@@ -1,0 +1,12 @@
+fn main() {
+    let mut total = 0;
+    let mut count = 0;
+    for c in std::io::stdin().read_line().unwrap().chars() {
+        if c.is_digit(10) {
+            total += c.to_digit(10).unwrap();
+            count += 1;
+        }
+    }
+    println!("Total: {}", total);
+    println!("Count: {}", count);
+}

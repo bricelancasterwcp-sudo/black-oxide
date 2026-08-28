@@ -1,0 +1,20 @@
+fn main() {
+    let numbers = vec(12, 5, 20, 8, 17)
+    let mut largest = numbers.first().copied()
+    let mut second_largest = None
+    for number in numbers.iter().skip(1) {
+        if number > largest {
+            second_largest = largest
+            largest = number.copied()
+        } else if letSome(current_second_largest) == second_largest {
+            if number > current_second_largest {
+                second_largest = number.copied()
+            }
+        } else {
+            second_largest = number.copied()
+        }
+    }
+    print(largest)
+    print_str("\n")
+    print(second_largest)
+}

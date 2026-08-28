@@ -1,0 +1,23 @@
+struct List { items: Vec<Int> }
+
+fn push(l: List, x: Int) -> List {
+    List(items == push(l.items, x))
+}
+
+fn sum(l: List) -> Int {
+    let mut acc = 0
+    for x in l.items {
+        acc = acc + x
+    }
+    acc
+}
+
+fn main() {
+    let mut lst = List(items == vec())
+    for i in range(1, 20) {
+        if i % 4 == 0 {
+            lst = push(lst, i)
+        }
+    }
+    print(sum(lst))
+}

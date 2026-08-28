@@ -1,0 +1,214 @@
+fn count_vowels(word: &Str) -> Int {
+    let mut vowels = 0
+    for c in word.chars() {
+        if c == "a" || c == "e" || c == "i" || c == "o" || c == "u" {
+            vowels = vowels + 1
+        }
+    }
+    vowels
+}
+
+fn main() {
+    let words = vec("hello", "world", "rust", "is", "awesome")
+    let total_vowels = 0
+    for word in words {
+        total_vowels = total_vowels + count_vowels(word)
+    }
+    print(total_vowels)
+}
+
+fn clone(x: &T) -> T {
+    x.clone()
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    let mut v = v
+    v.push(x)
+    v
+}
+
+fn len(v: &Vec<T>) -> Int {
+    v.len()
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    s.chars().map(str).collect()
+}
+
+fn to_float(n: Int) -> Float {
+    n.to_float()
+}
+
+fn trunc(x: Float) -> Int {
+    x.trunc()
+}
+
+fn get(v: &Vec<T>, i: Int) -> Option<T> {
+    v.get(i)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    (a + 1)
+    a = a + 1
+    a < b
+    a = a + 1
+    a
+}
+
+fn str_len(s: &Str) -> Int {
+    s.len()
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    a.to_owned() + b.to_owned()
+}
+
+fn print_str(s: &Str) {
+    println(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    n.to_string()
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    s.parse()
+}
+
+fn vec() -> Vec<T> {
+    Vec()
+}
+
+fn drop_vec(v: Vec<T>) {
+    v.drop_in_place()
+}
+
+fn drop_int(n: Int) {
+    n.drop_in_place()
+}
+
+fn drop_float(n: Float) {
+    n.drop_in_place()
+}
+
+fn drop_str(s: &Str) {
+    s.drop_in_place()
+}
+
+fn drop_bool(b: Bool) {
+    b.drop_in_place()
+}
+
+fn drop_option(o: &Option<T>) {
+    o.drop_in_place()
+}
+
+fn drop_result(o: &Result<T, E>) {
+    o.drop_in_place()
+}
+
+fn drop_unit() {
+    Unit.drop_in_place()
+}
+
+fn drop_char(c: Char) {
+    c.drop_in_place()
+}
+
+fn drop_tuple_2(t: &Tuple<T, U>) {
+    t.drop_in_place()
+}
+
+fn drop_tuple_3(t: &Tuple<T, U, V>) {
+    t.drop_in_place()
+}
+
+fn drop_tuple_4(t: &Tuple<T, U, V, W>) {
+    t.drop_in_place()
+}
+
+fn drop_tuple_5(t: &Tuple<T, U, V, W, X>) {
+    t.drop_in_place()
+}
+
+fn drop_tuple_6(t: &Tuple<T, U, V, W, X, Y>) {
+    t.drop_in_place()
+}
+
+fn drop_tuple_7(t: &Tuple<T, U, V, W, X, Y, Z>) {
+    t.drop_in_place()
+}
+
+fn drop_tuple_8(t: &Tuple<T, U, V, W, X, Y, Z, AA>) {
+    t.drop_in_place()
+}
+
+fn drop_tuple_9(t: &Tuple<T, U, V, W, X, Y, Z, AA, BB>) {
+    t.drop_in_place()
+}
+
+fn drop_tuple_10(t: &Tuple<T, U, V, W, X, Y, Z, AA, BB, CC>) {
+    t.drop_in_place()
+}
+
+fn drop_tuple_11(t: &Tuple<T, U, V, W, X, Y, Z, AA, BB, CC, DD>) {
+    t.drop_in_place()
+}
+
+fn drop_tuple_12(t: &Tuple<T, U, V, W, X, Y, Z, AA, BB, CC, DD, EE>) {
+    t.drop_in_place()
+}
+
+fn drop_tuple_13(t: &Tuple<T, U, V, W, X, Y, Z, AA, BB, CC, DD, EE, FF>) {
+    t.drop_in_place()
+}
+
+fn drop_tuple_14(t: &Tuple<T, U, V, W, X, Y, Z, AA, BB, CC, DD, EE, FF, GG>) {
+    t.drop_in_place()
+}
+
+fn drop_tuple_15(t: &Tuple<T, U, V, W, X, Y, Z, AA, BB, CC, DD, EE, FF, GG, HH>) {
+    t.drop_in_place()
+}
+
+fn drop_tuple_16(t: &Tuple<T, U, V, W, X, Y, Z, AA, BB, CC, DD, EE, FF, GG, HH, II>) {
+    t.drop_in_place()
+}
+
+fn drop_tuple_17(t: &Tuple<T, U, V, W, X, Y, Z, AA, BB, CC, DD, EE, FF, GG, HH, II, JJ>) {
+    t.drop_in_place()
+}
+
+fn drop_tuple_18(t: &Tuple<T, U, V, W, X, Y, Z, AA, BB, CC, DD, EE, FF, GG, HH, II, JJ, KK>) {
+    t.drop_in_place()
+}
+
+fn drop_tuple_19(t: &Tuple<T, U, V, W, X, Y, Z, AA, BB, CC, DD, EE, FF, GG, HH, II, JJ, KK, LL>) {
+    t.drop_in_place()
+}
+
+fn drop_tuple_20(t: &Tuple<T, U, V, W, X, Y, Z, AA, BB, CC, DD, EE, FF, GG, HH, II, JJ, KK, LL, MM>) {
+    t.drop_in_place()
+}
+
+fn drop_tuple_21(t: &Tuple<T, U, V, W, X, Y, Z, AA, BB, CC, DD, EE, FF, GG, HH, II, JJ, KK, LL, MM, NN>) {
+    t.drop_in_place()
+}
+
+fn drop_tuple_22(t: &Tuple<T, U, V, W, X, Y, Z, AA, BB, CC, DD, EE, FF, GG, HH, II, JJ, KK, LL, MM, NN, OO>) {
+    t.drop_in_place()
+}
+
+fn drop_tuple_23(t: &Tuple<T, U, V, W, X, Y, Z, AA, BB, CC, DD, EE, FF, GG, HH, II, JJ, KK, LL, MM, NN, OO, PP>) {
+    t.drop_in_place()
+}
+
+fn drop_tuple_24(t: &Tuple<T, U, V, W, X, Y, Z, AA, BB, CC, DD, EE, FF, GG, HH, II, JJ, KK, LL, MM, NN, OO, PP, QQ>) {
+    t.drop_in_place()
+}
+
+fn drop_tuple_25(t: &Tuple<T, U, V, W, X, Y, Z, AA, BB, CC, DD, EE, FF, GG, HH, II, JJ, KK, LL, MM, NN, OO, PP, QQ, RR>) {

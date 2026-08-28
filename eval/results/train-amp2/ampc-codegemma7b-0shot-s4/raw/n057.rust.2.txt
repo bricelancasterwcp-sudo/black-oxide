@@ -1,0 +1,15 @@
+fn main() {
+    let mut most_letters = 0;
+    let mut most_letters_name = "";
+
+    let names = ["fig", "banana", "kiwi"];
+
+    for name in names {
+        if name.len() > most_letters {
+            most_letters = name.len();
+            most_letters_name = name;
+        }
+    }
+
+    println!("The fruit with the most letters is {} with {} letters", most_letters_name, most_letters);
+}

@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut v = Vec::new();
+    for i in (1..=10).step_by(2) {
+        v.push(i);
+    }
+    for i in (0..v.len()).rev() {
+        println!("{}", v[i]);
+    }
+}
+```

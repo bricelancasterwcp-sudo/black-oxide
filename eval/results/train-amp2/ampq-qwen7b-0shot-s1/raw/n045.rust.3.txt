@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let log_entries = [6, 7, 8, 9];
+    println!("Start with: {}", log_entries[0]);
+    println!("End with: {}", log_entries[log_entries.len() - 1]);
+}
+```

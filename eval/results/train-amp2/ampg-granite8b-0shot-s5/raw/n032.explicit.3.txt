@@ -1,0 +1,110 @@
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let total = 0
+    for x in &v {
+        if x > limit {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn extend(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn make_point(h: Int) -> Point {
+    Point(h, 10)
+}
+
+fn print_point(p: &Point) {
+    print_str("Point { ")
+    print(p.x)
+    print_str(", ")
+    print(p.y)
+    print_str(" }")
+}
+
+fn add_point(p1: &Point, p2: &Point) -> Point {
+    Point(p1.x + p2.x, p1.y + p2.y)
+}
+
+fn main() {
+    let p = make_point(5)
+    print_point(&p)
+    drop p
+    let q = make_point(10)
+    print_point(&q)
+    drop q
+    let p2 = add_point(&p, &q)
+    print_str(" added to ")
+    print_point(&q)
+    print_str(" is ")
+    print_point(&p2)
+}
+
+struct Point {
+    x: Int,
+    y: Int,
+}
+
+struct Shape {
+    kind: ShapeKind,
+}
+
+enum ShapeKind {
+    Circle(Float),
+    Rect(Float, Float),
+}
+
+fn area(s: &Shape) -> Float {
+    match s.kind {
+        Circle(r) => to_float(3.14) * r * r,
+        Rect(w, h) => w * h,
+    }
+}
+
+fn main() {
+    let c = Circle(to_float(5.0))
+    print(area(&c))
+    drop c
+    let r = Rect(to_float(3.0), to_float(4.0))
+    print(area(&r))
+    drop r
+}
+
+fn print_point(p: &Point) {
+    print_str("Point { ")
+    print(p.x)
+    print_str(", ")
+    print(p.y)
+    print_str(" }")
+}
+
+fn main() {
+    let p = Point(5, 10)
+    print_point(&p)
+}
+
+fn print_shape(s: &Shape) {
+    print_str("Shape: ")
+    match &s {
+        Circle(r) => {
+            print_str("circle, radius ")
+            print(r)
+        },
+        Rect(w, h) => {
+            print_str("rectangle, width ")
+            print(w)
+            print_str(", height ")
+            print(h)
+        },
+    }
+}
+
+fn main() {
+    let c = Circle(to_float(5.0))
+    let r = Rect(to_float(3.0), to_float(4.0))
+    print_shape(&c)
+    print_str(", ")
+    print_shape(&r)
+}

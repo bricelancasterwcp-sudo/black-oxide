@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let words = vec!["hello", "world", "rust", "programming"];
+    let vowels = "aeiou";
+    let count = words.iter().flat_map(|word| word.chars()).filter(|&c| vowels.contains(c.to_lowercase().next().unwrap())).count();
+    println!("Number of vowels: {}", count);
+}
+```

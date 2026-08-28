@@ -1,0 +1,6 @@
+fn main() {
+    let mut queue = [1, 2, 3, 4, 5];
+    queue.swap(0, queue.len() - 1);
+    let first = queue.swap_remove(0);
+    println!("{}", queue.iter().fmt("\n"));
+}

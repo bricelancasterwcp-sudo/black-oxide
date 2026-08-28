@@ -1,0 +1,9 @@
+struct Item { price: Int, units: Int }
+
+fn main() {
+    let line1 = Item { price: 3, units: 4 }
+    let line2 = Item { price: 2, units: 5 }
+    print(line1.price * line1.units)
+    print(line2.price * line2.units)
+    print((line1.price * line1.units) + (line2.price * line2.units))
+}

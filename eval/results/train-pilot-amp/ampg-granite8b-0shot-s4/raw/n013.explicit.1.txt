@@ -1,0 +1,22 @@
+fn main() {
+    let mut a = 5
+    let mut b = 3
+    let mut c = 9
+    let mut d = 1
+    let mut e = 7
+    let mut result = 0
+    if a > b {
+        if b > c {
+            result = a
+        } else {
+            result = c
+        }
+    } else {
+        if c > d {
+            result = d
+        } else {
+            result = e
+        }
+    }
+    print(result)
+}

@@ -1,0 +1,43 @@
+struct Score { value: Int }
+
+fn main() {
+    let scores = vec(Score { value: 2 }, Score { value: 9 }, Score { value: 5 })
+    let sorted_scores = scores.sort_by_key(score_value).reverse()
+    for score in sorted_scores {
+        print(score_value(score))
+    }
+}
+
+fn score_value(score: Score) -> Int {
+    score.value
+}
+
+fn vec(items: Vec<Score>) -> Vec<Score> {
+    items
+}
+
+fn sort_by_key(scores: Vec<Score>, key: FnMutScoreInt) -> Vec<Score> {
+    scores.sort_by_key(key)
+    scores
+}
+
+fn reverse(scores: Vec<Score>) -> Vec<Score> {
+    scores.reverse()
+    scores
+}
+
+fn print(value: Int) {
+    println(value)
+}
+
+fn score_value(score: Score) -> Int {
+    score.value
+}
+
+fn main() {
+    let scores = vec(Score { value: 2 }, Score { value: 9 }, Score { value: 5 })
+    let sorted_scores = scores.sort_by_key(score_value).reverse()
+    for score in sorted_scores {
+        print(score_value(score))
+    }
+}

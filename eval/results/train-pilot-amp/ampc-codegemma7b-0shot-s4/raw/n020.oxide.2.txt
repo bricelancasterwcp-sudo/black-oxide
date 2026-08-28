@@ -1,0 +1,9 @@
+fn mean(nums: Vec<Int>) -> Int {
+    let sum = nums.iter().fold(0, add) / nums.len()
+    trunc(sum)
+}
+
+fn main() {
+    let readings = vec(4, 8, 15, 16, 23, 42)
+    print(mean(readings))
+}

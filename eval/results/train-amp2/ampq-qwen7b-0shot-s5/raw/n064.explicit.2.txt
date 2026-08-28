@@ -1,0 +1,18 @@
+fn get_value(vec: &Vec<Int>, pos: Int) -> Option<Int> {
+    get(vec, pos)
+}
+
+fn main() {
+    let vec = vec(10, 20)
+    let val1 = get_value(&vec, 1)
+    let val4 = get_value(&vec, 4)
+    match val1 {
+        Some(x) => print_int(x),
+        None => print_str("None"),
+    }
+    match val4 {
+        Some(x) => print_int(x),
+        None => print_str("None"),
+    }
+    drop vec
+}

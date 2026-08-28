@@ -1,0 +1,11 @@
+fn main() {
+    for _ in 0..3 {
+        let mut input = String::new();
+        std::io::stdin().read_line(&mut input).unwrap();
+
+        match input.trim().parse::<i32>() {
+            Ok(n) => println!("{}", n),
+            Err(_) => println!("bad"),
+        }
+    }
+}

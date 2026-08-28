@@ -1,0 +1,23 @@
+fn main() {
+    let nums = vec(4, 7, 4, 9, 4)
+    let mut pos = 0
+    for x in &nums {
+        if x == &nums {
+            print(pos)
+        }
+        pos = pos + 1
+    }
+    drop nums
+}
+
+fn main() {
+    let nums = vec(4, 7, 4, 9, 4)
+    let mut pos = 0
+    for x in &nums {
+        if x == &nums {
+            print(pos)
+        }
+        pos = pos + 1
+    }
+    drop nums
+}

@@ -1,0 +1,18 @@
+fn letter_counter(word: &Str) -> Int {
+    let mut vowels = 0
+    let mut consonants = 0
+    for letter in &chars && word {
+        if &letter == "a" || &letter == "e" || &letter == "i" || &letter == "o" || &letter == "u" {
+            vowels = vowels + 1
+        } else {
+            consonants = consonants + 1
+        }
+    }
+    (vowels + consonants)
+}
+
+fn main() {
+    print(letter_counter("code"))
+    print(letter_counter("rosettacode"))
+    print(letter_counter("oxide"))
+}

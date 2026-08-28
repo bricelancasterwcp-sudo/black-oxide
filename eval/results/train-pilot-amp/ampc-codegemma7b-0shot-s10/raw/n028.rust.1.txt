@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let mut buf = [0u8; 1024];
+    match std::io::stdin().read(&mut buf) {
+        Ok(_) => panic!("expected failure"),
+        Err(std::io::ErrorKind::InvalidData) => println!("bad"),
+        Err(e) => panic!("unexpected error: {}", e),
+    }
+}
+```

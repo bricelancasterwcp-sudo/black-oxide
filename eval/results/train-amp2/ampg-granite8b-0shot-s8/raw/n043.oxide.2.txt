@@ -1,0 +1,11 @@
+struct Queue { head: Int, tail: Int, entries: Vec<Int> }
+
+fn main() {
+    let v = vec(1, 2, 3, 4, 5)
+    let mut q = Queue { head: 0, tail: 5, entries: v }
+    q.head = q.tail - 1
+    q.tail = 0
+    for i in 0 < q.tail {
+        print(get(q.entries, i)?)
+    }
+}

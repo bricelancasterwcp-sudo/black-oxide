@@ -1,0 +1,27 @@
+struct List { head: Option<Node> }
+
+struct Node { value: Int, next: Option<Node> }
+
+fn push(l: List, v: Int) -> List {
+    List(Some(Node { value: v, next: l.head }))
+}
+
+fn total(l: List) -> Int {
+    let mut sum = 0
+    let mut current = l.head
+    while letSome(Node { value: v, next: next }) == current {
+        sum = sum + v
+        current = next
+    }
+    sum
+}
+
+fn main() {
+    let mut list = List(None)
+    for i in range(1, 11) {
+        if i % 3 == 0 {
+            list = push(list, i)
+        }
+    }
+    print(total(list))
+}

@@ -1,0 +1,13 @@
+struct Number { value: Int }
+
+fn add_one(n: Number) -> Number {
+    let Number { value } = n
+    Number(value + 1)
+}
+
+fn main() {
+    let one = Number(1)
+    let two = add_one(one)
+    let three = add_one(two)
+    print(three.value)
+}

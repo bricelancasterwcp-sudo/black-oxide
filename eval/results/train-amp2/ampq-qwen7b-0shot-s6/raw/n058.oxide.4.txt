@@ -1,0 +1,3 @@
+fn main() {
+    let word = "coffee".to_string().chars().fold(stdcollectionshashmaphashmapnew(), move || mut || c || match_cnt || if_cnt || if_cnt > 1 || None).iter().filter_map(move || if_cnt || if_cnt > 1 || None).for_each(print)
+}

@@ -1,0 +1,257 @@
+fn is_prime(n: Int) -> Bool {
+    if n <= 1 {
+        return false
+    }
+    for i in range(2, trunc(sqrt(n)) + 1) {
+        if n % i == 0 {
+            return false
+        }
+    }
+    true
+}
+
+fn main() {
+    print(is_prime(91))
+}
+
+fn sqrt(x: Float) -> Float {
+    let mut acc = 0.0
+    let mut k = 1.0
+    loop
+    let y = (acc + k) / 2.0
+    if (y - acc) < 0.000001 {
+        breaky
+    }
+    acc = y
+    k = k / 2.0
+    loop
+    acc
+}
+
+enum Variant {
+    Nullary,
+    Variant(Int, Int),
+}
+
+struct Point {
+    x: Int,
+    y: Int,
+}
+
+enum Shape {
+    Circle(Float),
+    Square(Int),
+    Triangle(Int, Int),
+}
+
+struct Reading {
+    label: Str,
+    values: Vec<Int>,
+}
+
+fn first_big(v: Vec<Int>) -> Int {
+    let found = -1
+    for x in v {
+        if x > 10 {
+            found = x
+            break
+        }
+    }
+    found
+}
+
+fn second(v: Vec<Int>) -> Option<Int> {
+    let x = get(v, 1)?
+    Some(x + 1)
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(vec(), 3), 42) }
+    print(first_big(r.values))            // field access copies: r stays usable
+    let r2 = Reading { label: "lab2", ..r }
+    match second(r2.values) {
+        Some(n) => print(n),
+        None => print_str("too short"),
+    }
+}
+
+fn print(x: Any) {
+    match x {
+        Int(n) => print_str(int_to_str(n)),
+        Float(n) => print_str(float_to_str(n)),
+        Bool(b) => print_str(if b { "true" } else { "false" }),
+        Str(s) => print_str(s),
+        Unit => print_str("()"),
+        Vec(v) => {
+            print_str("[")
+            for i in range(0, len(v) - 1) {
+                print(v.get(i).unwrap())
+                print_str(", ")
+            }
+            if len(v) > 0 {
+                print(v.get(len(v) - 1).unwrap())
+            }
+            print_str("]")
+        },
+        Struct(s) => {
+            print_str("{")
+            for f in fields(s) {
+                print_str(f.name)
+                print_str(": ")
+                print(f.value)
+                print_str(", ")
+            }
+            if fields(s).len() > 0 {
+                let f = fields(s).get(fields(s).len() - 1)
+                print_str(f.name)
+                print_str(": ")
+                print(f.value)
+            }
+            print_str("}")
+        },
+        Enum(e) => {
+            match e {
+                Variant(a, b) => {
+                    print_str("Variant(")
+                    print(a)
+                    print_str(", ")
+                    print(b)
+                    print_str(")")
+                },
+                Nullary => print_str("Nullary"),
+            }
+        },
+    }
+}
+
+fn print_str(s: Str) {
+    for c in chars(s) {
+        print(c)
+    }
+}
+
+fn vec() -> Vec<T> {
+    let mut v = Vec { len: 0, cap: 0, data: 0 }
+    v.len = 0
+    v.cap = 4
+    v.data = alloc(v.cap * stdsize(T))
+    v
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    let mut v = v
+    let len = v.len
+    if len == v.cap {
+        let mut new_cap = v.cap + 4
+        if new_cap > 1024 {
+            new_cap = 1024
+        }
+        let new_data = alloc(new_cap * stdsize(T))
+        copy(v.data, new_data, len * stdsize(T))
+        drop(v.data)
+        v.data = new_data
+        v.cap = new_cap
+    }
+    let offset = len * stdsize(T)
+    copy(x, v.data + offset, stdsize(T))
+    v.len = len + 1
+    v
+}
+
+fn len(v: Vec<T>) -> Int {
+    v.len
+}
+
+fn get(v: Vec<T>, i: Int) -> Option<T> {
+    if i >= v.len {
+        None
+    } else {
+        Some(copy(v.data + i * stdsize(T), 0, stdsize(T)))
+    }
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut v = vec()
+    for i in a + 1 < b {
+        push(v, i)
+    }
+    v
+}
+
+fn clone(x: Any) -> Any {
+    match x {
+        Int(n) => Int(n),
+        Float(n) => Float(n),
+        Bool(b) => Bool(b),
+        Str(s) => Str(s),
+        Unit => Unit,
+        Vec(v) => {
+            let mut new_v = vec()
+            for i in range(0, len(v)) {
+                push(new_v, clone(v.get(i).unwrap()))
+            }
+            new_v
+        },
+        Struct(s) => {
+            let mut new_s = Struct { name: s.name, fields: vec() }
+            for f in fields(s) {
+                let new_f = Field { name: f.name, value: clone(f.value) }
+                push(new_s.fields, new_f)
+            }
+            new_s
+        },
+        Enum(e) => match e {
+            Variant(a, b) => Enum(Variant(clone(a), clone(b))),
+            Nullary => Enum(Nullary),
+        },
+    }
+}
+
+fn str_len(s: Str) -> Int {
+    let mut len = 0
+    for _ in chars(s) {
+        len = len + 1
+    }
+    len
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut new_s = Str { len: 0, data: 0 }
+    let a_len = str_len(a)
+    let b_len = str_len(b)
+    let new_len = a_len + b_len
+    new_s.len = new_len
+    new_s.data = alloc(new_len + 1)
+    copy(a, new_s.data, a_len)
+    copy(b, new_s.data + a_len, b_len)
+    new_s.data.set(new_len, 0)
+    new_s
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut v = vec()
+    for i in range(0, str_len(s)) {
+        let c = copy(s.data + i, 0, 1)
+        push(v, c)
+    }
+    v
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut s = Str { len: 0, data: 0 }
+    let mut n = n
+    if n < 0 {
+        n = -n
+        push(s, Str("-"))
+    }
+    if n == 0 {
+        push(s, Str("0"))
+    } else {
+        let mut digits = vec()
+        while n > 0 {
+            let digit = n % 10
+            digits.push(digit)
+            n = n / 10
+        }
+        for i in range(0, len(digits)) {
+            let digit = digits.get(len(

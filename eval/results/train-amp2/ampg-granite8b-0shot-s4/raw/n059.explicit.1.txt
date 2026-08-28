@@ -1,0 +1,23 @@
+fn word_count(s: &Str) -> Int {
+    let words = 0
+    for c in &chars_vec {
+        if c == " " {
+            words = words + 1
+        }
+    }
+    words + 1
+}
+
+fn char_count(s: &Str) -> Int {
+    let chars = 0
+    for c in &chars_vec {
+        chars = chars + 1
+    }
+    chars
+}
+
+fn main() {
+    let phrase = "When in doubt go home"
+    print(word_count(&phrase))
+    print(char_count(&phrase))
+}

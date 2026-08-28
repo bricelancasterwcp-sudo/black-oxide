@@ -1,0 +1,14 @@
+fn coffee(text: Str) {
+    let mut seen: Vec<Char> = vec()
+    for c in text.chars() {
+        if seen.contains(c) {
+            continue
+        }
+        seen.push(c)
+        print(c)
+    }
+}
+
+fn main() {
+    coffee("coffee")
+}

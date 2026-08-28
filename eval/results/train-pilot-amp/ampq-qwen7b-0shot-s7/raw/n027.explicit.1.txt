@@ -1,0 +1,5 @@
+fn main() {
+    for c in chars("cat") {
+        print_str(c)
+    }
+}

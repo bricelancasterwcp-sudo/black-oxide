@@ -1,0 +1,5 @@
+fn main() {
+    const PHRASE: &str = "when in doubt go home";
+    println!("Number of words: {}", PHRASE.split_whitespace().count());
+    println!("Number of characters (including spaces): {}", PHRASE.len());
+}

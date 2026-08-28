@@ -1,0 +1,13 @@
+fn main() {
+    let word_sequence = "Hello, world!";
+    let vowels = "aeiouAEIOU";
+    let mut count = 0;
+
+    for c in word_sequence.chars() {
+        if vowels.contains(c) {
+            count += 1;
+        }
+    }
+
+    println!("Number of vowels: {}", count);
+}

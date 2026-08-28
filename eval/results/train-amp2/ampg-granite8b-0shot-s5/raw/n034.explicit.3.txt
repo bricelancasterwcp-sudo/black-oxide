@@ -1,0 +1,11 @@
+fn get_second_item(list: Vec<Int>) -> Option<Int> {
+    match list {
+        Vec(_, y, _) => Some(y),
+        Vec(_, _, z) => Some(z),
+        Vec(_, _, _) => None,
+    }
+}
+
+fn main() {
+    print(get_second_item(range(7, 10))?)
+}

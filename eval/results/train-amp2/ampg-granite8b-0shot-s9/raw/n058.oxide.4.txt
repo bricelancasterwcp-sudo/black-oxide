@@ -1,0 +1,21 @@
+struct Coffee { letters: Vec<Str> }
+
+fn unique_letters(coffee: Coffee) {
+    let mut seen = set()
+    let mut first = set()
+    for l in coffee.letters {
+        if seen.contains(l) {
+            if !first.contains(l) {
+                print(l)
+                first.add(l)
+            }
+        } else {
+            seen.add(l)
+        }
+    }
+}
+
+fn main() {
+    let coffee = Coffee { letters: vec_str("coco") }
+    unique_letters(coffee)
+}

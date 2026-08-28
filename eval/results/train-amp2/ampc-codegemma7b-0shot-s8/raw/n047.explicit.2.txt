@@ -1,0 +1,13 @@
+fn main() {
+    let mut result = vec()
+    for x in 10 {
+        if x % 2 == 0 {
+            result = push(result, x)
+        }
+    }
+    for x in result.iter().rev() {
+        print_str(to_str(x))
+        print_str("\n")
+    }
+    drop result
+}

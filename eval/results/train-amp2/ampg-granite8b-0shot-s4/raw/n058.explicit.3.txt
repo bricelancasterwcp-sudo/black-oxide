@@ -1,0 +1,14 @@
+fn main() {
+    let coffee = "coffee"
+    let mut first_time = true
+    for c in coffee {
+        if first_time {
+            for d in coffee {
+                if c == d {
+                    print_str(&c)
+                }
+            }
+            first_time = false
+        }
+    }
+}

@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    match divide(20, 4) {
+        Some(result) => println!("{}", result),
+        None => println!("bad"),
+    }
+}
+
+fn divide(a: i32, b: i32) -> Option<i32> {
+    if b == 0 {
+        None
+    } else {
+        Some(a / b)
+    }
+}
+```

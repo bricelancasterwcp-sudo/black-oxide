@@ -1,0 +1,163 @@
+struct Log {
+    entries: Vec<Int>,
+}
+
+fn main() {
+    let log = Log { entries: vec() }
+    let log = push(log, 6)
+    let log = push(log, 7)
+    let log = push(log, 8)
+    let log = push(log, 9)
+    let log = push(log, first_big(log.entries))
+    let log = push(log, second(log.entries).unwrap_or(-1))
+    print(log.entries)
+}
+
+fn first_big(v: Vec<Int>) -> Int {
+    let found = -1
+    for x in v {
+        if x > 10 {
+            found = x
+            break
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+            ick
+       

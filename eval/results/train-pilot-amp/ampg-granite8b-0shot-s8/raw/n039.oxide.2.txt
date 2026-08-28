@@ -1,0 +1,19 @@
+struct List {
+    cons: Option<Int>,
+    cars: Option<List>,
+}
+
+fn cons(head: Int, tail: List) -> List {
+    List  // return type can be omitted because it's
+    (Some(head) == Some(tail.cons) && tail.cars == None)
+}
+
+fn nil() -> List {
+    List(None, None)
+}
+
+fn main() {
+    let l = cons(1, cons(2, nil()))
+    let fifth = get(get(get(get(l, 1), 2), 3), 4)
+    print(fifth)
+}

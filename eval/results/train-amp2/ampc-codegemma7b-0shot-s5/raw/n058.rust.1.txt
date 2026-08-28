@@ -1,0 +1,10 @@
+fn main() {
+    let mut seen = [false; 26];
+    for c in "coffee".chars() {
+        let idx: usize = (c as u8 - b'a') as usize;
+        if !seen[idx] {
+            seen[idx] = true;
+            println!("{}", c);
+        }
+    }
+}

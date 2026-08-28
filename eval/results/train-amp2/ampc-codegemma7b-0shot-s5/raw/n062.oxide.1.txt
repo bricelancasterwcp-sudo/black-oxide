@@ -1,0 +1,11 @@
+fn main() {
+    let signals = vec("green", "red", "yellow")
+    for s in signals {
+        match s {
+            None => print_str("missing signal"),
+            Some(green) => print_str("go for green"),
+            Some(red) => print_str("stop for red"),
+            Some(yellow) => print_str("wait for yellow"),
+        }
+    }
+}

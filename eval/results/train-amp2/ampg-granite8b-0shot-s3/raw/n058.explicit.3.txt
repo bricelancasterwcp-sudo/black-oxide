@@ -1,0 +1,19 @@
+fn coffee(s: Str) -> Str {
+    let mut seen = vec()
+    for c in s {
+        let mut duplicate = false
+        for x in &seen {
+            if x == &c {
+                duplicate = true
+            }
+        }
+        if !duplicate {
+            seen = push(seen, c)
+        }
+    }
+    seen
+}
+
+fn main() {
+    print(coffee("coffee"))
+}

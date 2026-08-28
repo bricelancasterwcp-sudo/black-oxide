@@ -1,0 +1,281 @@
+fn main() {
+    let a = 8
+    let b = 3
+    let c = 11
+    let d = 6
+    let min = min(a, b, c, d)
+    let max = max(a, b, c, d)
+    print(min)
+    print(max - min)
+}
+
+fn min(a: Int, b: Int, c: Int, d: Int) -> Int {
+    if a < b {
+        if a < c {
+            if a < d {
+                a
+            } else {
+                d
+            }
+        } else {
+            if c < d {
+                c
+            } else {
+                d
+            }
+        }
+    } else {
+        if b < c {
+            if b < d {
+                b
+            } else {
+                d
+            }
+        } else {
+            if c < d {
+                c
+            } else {
+                d
+            }
+        }
+    }
+}
+
+fn max(a: Int, b: Int, c: Int, d: Int) -> Int {
+    if a > b {
+        if a > c {
+            if a > d {
+                a
+            } else {
+                d
+            }
+        } else {
+            if c > d {
+                c
+            } else {
+                d
+            }
+        }
+    } else {
+        if b > c {
+            if b > d {
+                b
+            } else {
+                d
+            }
+        } else {
+            if c > d {
+                c
+            } else {
+                d
+            }
+        }
+    }
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    for c in chars(s) {
+        print_char(c)
+    }
+}
+
+fn print_char(c: Str) {
+    let mut stdout = stdout_lock()
+    unsafe_print_char(stdout, c)
+}
+
+fn stdout_lock() -> UnsafeMutablePointer<Stdout> {
+    let mut stdout = UnsafeMutablePointer_NULL
+    unsafe_stdout_init_lock(stdout)
+    stdout
+}
+
+fn unsafe_stdout_init_lock(mut_ptr: UnsafeMutablePointer<Stdout>) -> UnsafeMutablePointer<Stdout> {
+    let stderr_ptr = unsafe_stderr()
+    unsafe_init_stdout_lock(mut_ptr, stderr_ptr)
+    mut_ptr
+}
+
+fn unsafe_stderr() -> UnsafeMutablePointer<Stderr> {
+    let stderr_ptr = UnsafeMutablePointer_NULL
+    unsafe_stderr_init(stderr_ptr)
+    stderr_ptr
+}
+
+fn unsafe_stderr_init(mut_ptr: UnsafeMutablePointer<Stderr>) -> UnsafeMutablePointer<Stderr> {
+    unsafe_init_stderr(mut_ptr)
+    mut_ptr
+}
+
+fn unsafe_init_stdout_lock(mut_ptr: UnsafeMutablePointer<Stdout>, stderr: UnsafeMutablePointer<Stderr>) -> UnsafeMutablePointer<Stdout> {
+    unsafe_init_stdout(mut_ptr, stderr)
+    mut_ptr
+}
+
+fn unsafe_init_stderr(mut_ptr: UnsafeMutablePointer<Stderr>) -> UnsafeMutablePointer<Stderr> {
+    unsafe_init_stderr(mut_ptr)
+    mut_ptr
+}
+
+fn unsafe_print_char(mut_ptr: UnsafeMutablePointer<Stdout>, c: Str) {
+    unsafe_print_char(mut_ptr, c)
+}
+
+fn stdout_init() -> UnsafeMutablePointer<Stdout> {
+    let mut stdout = UnsafeMutablePointer_NULL
+    unsafe_stdout_init(stdout)
+    stdout
+}
+
+fn unsafe_stdout_init(mut_ptr: UnsafeMutablePointer<Stdout>) -> UnsafeMutablePointer<Stdout> {
+    let stderr_ptr = unsafe_stderr()
+    unsafe_init_stdout(mut_ptr, stderr_ptr)
+    mut_ptr
+}
+
+fn unsafe_init_stdout(mut_ptr: UnsafeMutablePointer<Stdout>, stderr: UnsafeMutablePointer<Stderr>) -> UnsafeMutablePointer<Stdout> {
+    unsafe_init_stdout(mut_ptr, stderr)
+    mut_ptr
+}
+
+fn print_str(s: Str) {
+    for c in chars(s) {
+        print_char(c)
+    }
+}
+
+fn print_char(c: Str) {
+    let mut stdout = stdout_lock()
+    unsafe_print_char(stdout, c)
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = vec()
+    for i in 0 < s.len() {
+        result.push(get(s, i)?)
+    }
+    result
+}
+
+fn get(s: Str, i: Int) -> Option<Str> {
+    if i >= s.len() {
+        None
+    } else {
+        Some(s.chars().nth(i).unwrap())
+    }
+}
+
+fn int_to_str(mut_ptr: Int) -> Str {
+    let mut result = str()
+    while mut_ptr > 0 {
+        let rem = mut_ptr % 10
+        result = format("%c%s", rem + 48, result)
+        mut_ptr = mut_ptr / 10
+    }
+    result
+}
+
+fn str() -> Str {
+    let mut result = Str_NULL
+    unsafe_str_init(result)
+    result
+}
+
+fn unsafe_str_init(mut_ptr: Str) -> Str {
+    let stdout_ptr = unsafe_stdout()
+    unsafe_init_str(mut_ptr, stdout_ptr)
+    mut_ptr
+}
+
+fn unsafe_init_str(mut_ptr: Str, stdout: UnsafeMutablePointer<Stdout>) -> Str {
+    unsafe_init_str(mut_ptr, stdout)
+    mut_ptr
+}
+
+fn unsafe_init_stdout(mut_ptr: UnsafeMutablePointer<Stdout>, stderr: UnsafeMutablePointer<Stderr>) -> UnsafeMutablePointer<Stdout> {
+    unsafe_init_stdout(mut_ptr, stderr)
+    mut_ptr
+}
+
+fn unsafe_init_stderr(mut_ptr: UnsafeMutablePointer<Stderr>) -> UnsafeMutablePointer<Stderr> {
+    unsafe_init_stderr(mut_ptr)
+    mut_ptr
+}
+
+fn unsafe_init_stdout(mut_ptr: UnsafeMutablePointer<Stdout>, stderr: UnsafeMutablePointer<Stderr>) {
+    unsafe_init_stdout(mut_ptr, stderr)
+}
+
+fn unsafe_init_stderr(mut_ptr: UnsafeMutablePointer<Stderr>) {
+    unsafe_init_stderr(mut_ptr)
+}
+
+fn unsafe_print_char(mut_ptr: UnsafeMutablePointer<Stdout>, c: Str) {
+    unsafe_print_char(mut_ptr, c)
+}
+
+fn stdout_init() -> UnsafeMutablePointer<Stdout> {
+    let mut stdout = UnsafeMutablePointer_NULL
+    unsafe_stdout_init(stdout)
+    stdout
+}
+
+fn unsafe_stdout_init(mut_ptr: UnsafeMutablePointer<Stdout>) -> UnsafeMutablePointer<Stdout> {
+    let stderr_ptr = unsafe_stderr()
+    unsafe_init_stdout(mut_ptr, stderr_ptr)
+    mut_ptr
+}
+
+fn unsafe_init_stdout(mut_ptr: UnsafeMutablePointer<Stdout>, stderr: UnsafeMutablePointer<Stderr>) -> UnsafeMutablePointer<Stdout> {
+    unsafe_init_stdout(mut_ptr, stderr)
+    mut_ptr
+}
+
+fn print_str(s: Str) {
+    for c in chars(s) {
+        print_char(c)
+    }
+}
+
+fn print_char(c: Str) {
+    let mut stdout = stdout_lock()
+    unsafe_print_char(stdout, c)
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = vec()
+    for i in 0 < s.len() {
+        result.push(get(s, i)?)
+    }
+    result
+}
+
+fn get(s: Str, i: Int) -> Option<Str> {
+    if i >= s.len() {
+        None
+    } else {
+        Some(s.chars().nth(i).unwrap())
+    }
+}
+
+fn main() {
+    let a = 8
+    let b = 3
+    let c = 11
+    let d = 6
+    let min = min(a, b, c, d)
+    let max = max(a, b, c, d)
+    print(min)
+    print(max - min)
+}
+
+fn min(a: Int, b: Int, c: Int, d: Int) -> Int {
+    if a < b {
+        if a < c {
+            if a < d {
+                a
+            }

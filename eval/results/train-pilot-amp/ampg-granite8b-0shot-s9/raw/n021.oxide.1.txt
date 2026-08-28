@@ -1,0 +1,15 @@
+struct Word {
+    letter: Str,
+    rest: Option<Box<Word>>,
+}
+
+fn len(word: Word) -> Int {
+    match word {
+        Word(l, r) => 1 + len(r?),
+    }
+}
+
+fn main() {
+    let p = Word("p", Some(Box(Word("r", Some(Box(Word("o", Some(Box(Word())))))))), o, g, r, a, m, i, n, g) == 10
+    print(len(p))
+}

@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let mut even_numbers = Vec::new();
+
+    for number in 1..=10 {
+        if number % 2 == 0 {
+            even_numbers.push(number);
+        }
+    }
+
+    for number in even_numbers.iter().rev() {
+        println!("{}", number);
+    }
+}
+```

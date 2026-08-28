@@ -1,0 +1,5 @@
+fn main() {
+    print("go")
+    print("stop")
+    print("wait")
+}

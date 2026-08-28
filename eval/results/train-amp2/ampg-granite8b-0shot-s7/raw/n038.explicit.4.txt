@@ -1,0 +1,62 @@
+fn main() {
+    let sensor = Sensor { reading: 0 }
+    let device = Device { sensor: &sensor }
+    set_reading(&mut * device.sensor, 7)
+    print(device.sensor.reading)
+}
+
+struct Device {
+    sensor: Sensor,
+}
+
+struct Sensor {
+    reading: Int,
+}
+
+fn set_reading(sensor: &Sensor, reading: Int) {
+    sensor.reading = reading
+}
+
+fn print(x: Int) {
+    println(to_str(x))
+}
+
+fn to_str(x: Int) -> Str {
+    "1234567890"
+}
+
+fn println(x: Str) {
+    print_str(x)
+}
+
+fn main() {
+    let nums = push(push(vec(), 5), 40)
+    let bigger = extend(clone(&nums), 70)
+    print(sum_big(&nums, 10))
+    drop nums
+    print(sum_big(&bigger, 10))
+    drop bigger
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let total = 0
+    for x in &v {
+        if x > limit {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn extend(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn main() {
+    let nums = push(push(vec(), 5), 40)
+    let bigger = extend(clone(&nums), 70)
+    print(sum_big(&nums, 10))
+    drop nums
+    print(sum_big(&bigger, 10))
+    drop bigger
+}

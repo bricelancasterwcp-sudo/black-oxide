@@ -1,0 +1,13 @@
+fn main() {
+    println!("{:?}", nth(7, 2)); // Some(8)
+    println!("{:?}", nth(8, 2)); // Some(9)
+    println!("{:?}", nth(9, 2)); // None
+}
+
+fn nth(n: u32, pos: u32) -> Option<u32> {
+    if n < pos {
+        None
+    } else {
+        Some(n - pos + 1)
+    }
+}

@@ -1,0 +1,56 @@
+fn get_middle(v: &Vec<Int>, idx: Int) {
+    if idx >= v.len() {
+        print("missing")
+    } else {
+        print(&v)
+    }
+}
+
+fn main() {
+    let nums = vec(10, 20, 30, 40)
+    get_middle(&nums, 2)
+    get_middle(&nums, 4)
+}
+
+fn print(s: &Str) {
+    print_str(s)
+}
+
+fn print(n: Int) {
+    print_int(n)
+}
+
+fn print(n: Float) {
+    print_float(n)
+}
+
+fn print(v: &Vec<Int>) {
+    for x in v {
+        print(x)
+    }
+}
+
+fn print(x: Int) {
+    print_int(x)
+}
+
+fn print(x: Float) {
+    print_float(x)
+}
+
+fn print(b: Bool) {
+    print_bool(b)
+}
+
+fn print(u: Unit) {
+    print_unit(u)
+}
+
+fn print(t: &Type) {
+    print_type(t)
+}
+
+fn print(o: &Option<Int>) {
+    match o {
+        Some(x) => print(x),
+        None => print("None") > None? - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no - -no -

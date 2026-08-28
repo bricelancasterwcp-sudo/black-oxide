@@ -1,0 +1,7 @@
+fn main() {
+    let list = vec![1, 2];
+    match list.get(4) {
+        Some(x) => println!("{}", x),
+        None => println!("None"),
+    }
+}

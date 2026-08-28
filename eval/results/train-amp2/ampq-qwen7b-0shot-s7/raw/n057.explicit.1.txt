@@ -1,0 +1,14 @@
+fn main() {
+    let mut max_name = "fig"
+    let mut max_len = 3
+    let names = vec_str("banana", "kiwi", "fig")
+    for name in &names {
+        let len = str_len(name)
+        if len > max_len {
+            max_len = len
+            max_name = name
+        }
+    }
+    print_str(max_name)
+    print(max_len)
+}

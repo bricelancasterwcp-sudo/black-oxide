@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let text = "Hello, world!";
+    let count = text.chars().filter(|c| c.is_ascii_vowel()).count();
+    println!("Number of vowels: {}", count);
+}
+```

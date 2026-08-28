@@ -1,0 +1,14 @@
+struct Reading { label: Str, values: Vec<Int> }
+
+fn sum_digits(n: Int) -> Int {
+    let mut sum = 0
+    let digits = int_to_str(n).chars().map(parse_int).filter_map(identity).collect()
+    for d in digits {
+        sum = sum + d
+    }
+    sum
+}
+
+fn main() {
+    print(sum_digits(9875))
+}

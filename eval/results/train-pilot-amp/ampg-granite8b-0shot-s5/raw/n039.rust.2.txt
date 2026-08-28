@@ -1,0 +1,10 @@
+fn main() {
+    let l = vec![1, 2];
+    println!("{:?}", l.get(4));
+}
+
+// Answer:
+fn main() {
+    let l = vec![1, 2];
+    println!("{:?}", l.get(4));
+}

@@ -1,0 +1,31 @@
+fn set_and_print(sensor: &Sensor) {
+    sensor.set(7)
+    print(sensor.get())
+}
+
+fn main() {
+    let mut sensor = Sensor { reading: 0 }
+    set_and_print(&sensor)
+}
+
+struct Sensor {
+    reading: Int,
+}
+
+fn new_sensor() -> Sensor {
+    Sensor
+}
+
+fn set(sensor: &Sensor, value: Int) {
+    sensor.reading = value
+}
+
+fn get(sensor: &Sensor) -> Int {
+    sensor.reading
+}
+
+fn main() {
+    let mut sensor = Sensor { reading: 0 }
+    set(&sensor, 7)
+    print(get(&sensor))
+}

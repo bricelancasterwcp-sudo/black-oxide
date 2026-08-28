@@ -1,0 +1,13 @@
+```rust
+use std::io::{stdin, Read};
+
+fn main() {
+    let mut input = String::new();
+    stdin().read_line(&mut input).expect("Failed to read line");
+    if let Ok(num) = input.trim().parse::<usize>() {
+        println!("Number: {}", num);
+    } else {
+        println!("Bad");
+    }
+}
+```

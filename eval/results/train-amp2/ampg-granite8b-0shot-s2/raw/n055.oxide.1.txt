@@ -1,0 +1,15 @@
+struct Item {
+    name: Str,
+    quantity: Int,
+}
+
+fn add_item(items: Vec<Item>, name: Str, quantity: Int) -> Vec<Item> {
+    push(items, Item { name: name, quantity: quantity })
+}
+
+fn main() {
+    let items = vec()
+    let items = add_item(items, "oak", 8)
+    let items = add_item(items, "paper", 15)
+    print_str("done")
+}

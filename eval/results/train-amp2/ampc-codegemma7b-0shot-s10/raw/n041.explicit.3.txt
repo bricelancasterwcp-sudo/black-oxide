@@ -1,0 +1,19 @@
+fn main() {
+    let mut v = vec(9, 2, 7, 4)
+    for i in 0.to(v.len() - 1) {
+        for j in (i + 1).to(v.len() - 1) {
+            if v.get(i) > v.get(j) {
+                let temp = v.get(i)
+                v.set(i, v.get(j))
+                v.set(j, temp)
+            }
+        }
+    }
+    for i in 0.to(v.len() - 1) {
+        print(v.get(i))
+        if i != v.len() - 1 {
+            print(" ")
+        }
+    }
+    print("\n")
+}

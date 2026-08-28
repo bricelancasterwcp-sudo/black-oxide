@@ -1,0 +1,6 @@
+fn main() {
+    let four_at_three = 4 * 3;
+    let five_at_two = 5 * 2;
+    let total_value = four_at_three + five_at_two;
+    println!("Total value: {}", total_value);
+}

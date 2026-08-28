@@ -1,0 +1,179 @@
+fn main() {
+    let mut list = push(push(push(vec(), 1), 2), 3)
+    let last = pop(&mut_list)
+    drop last
+    let last = pop(&mut_list)
+    drop last
+    let last = pop(&mut_list)
+    drop last
+    let last = pop(&mut_list)
+    drop last
+}
+
+fn pop(v: &Vec<Int>) -> Int {
+    match v {
+        Vec(ref_data) => {
+            let len = len(ref_data)
+            if len == 0 {
+                panic("popping empty vector")
+            } else {
+                get(ref_data, len - 1)
+            }
+        },
+    }
+}
+
+fn panic(s: Str) -> None {
+    print_str("Oops: ")
+    print_str(s)
+    print_str("\n")
+    None
+}
+
+fn print(x: Int) -> Unit {
+    print_str(int_to_str(x))
+    print_str("\n")
+}
+
+fn print_str(s: Str) -> Unit {
+    unsafe_system_call(3, s)
+}
+
+fn unsafe_system_call(number: Int, arg1: Str) -> Unit {
+    return
+}
+
+fn vec() -> Vec<T> {
+    Vec(ref_vec())
+}
+
+fn ref_vec() -> Vec<T> {
+    Vec(vec_data())
+}
+
+fn vec_data() -> Vec<T> {
+    Vec(ref_data())
+}
+
+fn ref_data() -> Vec<T> {
+    Vec(data())
+}
+
+fn data() -> Vec<T> {
+    Vec(0)
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    Vec(ref_data())
+}
+
+fn len(v: Vec<T>) -> Int {
+    match v {
+        Vec(ref_data) => len(ref_data) + 1,
+    }
+}
+
+fn get(v: Vec<T>, i: Int) -> T {
+    if i == 0 {
+        match v {
+            Vec(ref_data) => get(ref_data, i),
+        }
+    } else {
+        i - 1
+    }
+}
+
+fn match_arm(a: Int, b: Str) -> None {
+    match a {
+        INT(ref_x) => match_arm(ref_x, b),
+        _ => {
+            match b {
+                STR(ref_s) => {
+                    let s = ref_s
+                    if s == "a" {
+                        None
+                    } else {
+                        print_str("No match for ")
+                        print_str(s)
+                        print_str("\n")
+                        None
+                    }
+                },
+                _ => panic("Bad match"),
+            }
+        },
+    }
+}
+
+fn match_expr(a: Int, b: Str) -> None {
+    match a {
+        INT(ref_x) => match_expr(ref_x, b),
+        _ => match_expr(0, b),
+    }
+}
+
+fn match_multi_arm(a: Int, b: Str, c: Int) -> None {
+    match a {
+        INT(ref_x) => match_multi_arm(ref_x, b, c),
+        STR(ref_s) => {
+            let s = ref_s
+            if s == "a" {
+                None
+            } else if s == "b" {
+                None
+            } else {
+                print_str("No match for ")
+                print_str(s)
+                print_str("\n")
+                None
+            }
+        },
+        _ => match_multi_arm(0, b, c),
+    }
+}
+
+fn match_chain(a: Int, b: Str, c: Int) -> None {
+    match a {
+        INT(ref_x) => match_chain(ref_x, b, c),
+        STR(ref_s) => match_chain(ref_s, b, c),
+        BOOL(ref_x) => {
+            let x = ref_x
+            if x == TRUE {
+                None
+            } else if x == FALSE {
+                None
+            } else {
+                panic("Bad match")
+            }
+        },
+        _ => panic("Bad match"),
+    }
+}
+
+fn main() {
+    let v = vec()
+    let a = push(v, 1)
+    let b = push(a, 2)
+    let c = push(b, 3)
+    let d = push(c, 4)
+    print(get(a, 0))
+    print(get(b, 1))
+    print(get(c, 2))
+    print(get(d, 3))
+    print(len(a))
+    print(len(b))
+    print(len(c))
+    print(len(d))
+    print_str("First\n")
+    match_expr(1, "a")
+    print_str("Middle\n")
+    match_multi_arm(1, "a", 0)
+    print_str("Last\n")
+    match_chain(1, "a", 0)
+    drop d
+    drop c
+    drop b
+    drop a
+    print_str("After dropping\n")
+    match_chain(1, "a", 0)
+}

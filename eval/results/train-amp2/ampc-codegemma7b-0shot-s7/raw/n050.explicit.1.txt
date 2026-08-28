@@ -1,0 +1,283 @@
+fn main() {
+    let scores = vec(2, 9, 5)
+    let mut sorted_scores = scores.clone()
+    sorted_scores.sort_by(stdcmp)
+    for score in sorted_scores {
+        print(score)
+    }
+}
+
+fn stdcmp(a: &Int, b: &Int) -> Ordering {
+    b.cmp(a)
+}
+
+fn main() {
+    let scores = vec(2, 9, 5)
+    let mut sorted_scores = scores.clone()
+    sorted_scores.sort_by(stdcmp)
+    for score in sorted_scores {
+        print(score)
+    }
+}
+
+fn stdcmp(a: &Int, b: &Int) -> Ordering {
+    b.cmp(a)
+}
+
+fn main() {
+    let scores = vec(2, 9, 5)
+    let mut sorted_scores = scores.clone()
+    sorted_scores.sort_by(stdcmp)
+    for score in sorted_scores {
+        print(score)
+    }
+}
+
+fn stdcmp(a: &Int, b: &Int) -> Ordering {
+    b.cmp(a)
+}
+
+fn main() {
+    let scores = vec(2, 9, 5)
+    let mut sorted_scores = scores.clone()
+    sorted_scores.sort_by(stdcmp)
+    for score in sorted_scores {
+        print(score)
+    }
+}
+
+fn stdcmp(a: &Int, b: &Int) -> Ordering {
+    b.cmp(a)
+}
+
+fn main() {
+    let scores = vec(2, 9, 5)
+    let mut sorted_scores = scores.clone()
+    sorted_scores.sort_by(stdcmp)
+    for score in sorted_scores {
+        print(score)
+    }
+}
+
+fn stdcmp(a: &Int, b: &Int) -> Ordering {
+    b.cmp(a)
+}
+
+fn main() {
+    let scores = vec(2, 9, 5)
+    let mut sorted_scores = scores.clone()
+    sorted_scores.sort_by(stdcmp)
+    for score in sorted_scores {
+        print(score)
+    }
+}
+
+fn stdcmp(a: &Int, b: &Int) -> Ordering {
+    b.cmp(a)
+}
+
+fn main() {
+    let scores = vec(2, 9, 5)
+    let mut sorted_scores = scores.clone()
+    sorted_scores.sort_by(stdcmp)
+    for score in sorted_scores {
+        print(score)
+    }
+}
+
+fn stdcmp(a: &Int, b: &Int) -> Ordering {
+    b.cmp(a)
+}
+
+fn main() {
+    let scores = vec(2, 9, 5)
+    let mut sorted_scores = scores.clone()
+    sorted_scores.sort_by(stdcmp)
+    for score in sorted_scores {
+        print(score)
+    }
+}
+
+fn stdcmp(a: &Int, b: &Int) -> Ordering {
+    b.cmp(a)
+}
+
+fn main() {
+    let scores = vec(2, 9, 5)
+    let mut sorted_scores = scores.clone()
+    sorted_scores.sort_by(stdcmp)
+    for score in sorted_scores {
+        print(score)
+    }
+}
+
+fn stdcmp(a: &Int, b: &Int) -> Ordering {
+    b.cmp(a)
+}
+
+fn main() {
+    let scores = vec(2, 9, 5)
+    let mut sorted_scores = scores.clone()
+    sorted_scores.sort_by(stdcmp)
+    for score in sorted_scores {
+        print(score)
+    }
+}
+
+fn stdcmp(a: &Int, b: &Int) -> Ordering {
+    b.cmp(a)
+}
+
+fn main() {
+    let scores = vec(2, 9, 5)
+    let mut sorted_scores = scores.clone()
+    sorted_scores.sort_by(stdcmp)
+    for score in sorted_scores {
+        print(score)
+    }
+}
+
+fn stdcmp(a: &Int, b: &Int) -> Ordering {
+    b.cmp(a)
+}
+
+fn main() {
+    let scores = vec(2, 9, 5)
+    let mut sorted_scores = scores.clone()
+    sorted_scores.sort_by(stdcmp)
+    for score in sorted_scores {
+        print(score)
+    }
+}
+
+fn stdcmp(a: &Int, b: &Int) -> Ordering {
+    b.cmp(a)
+}
+
+fn main() {
+    let scores = vec(2, 9, 5)
+    let mut sorted_scores = scores.clone()
+    sorted_scores.sort_by(stdcmp)
+    for score in sorted_scores {
+        print(score)
+    }
+}
+
+fn stdcmp(a: &Int, b: &Int) -> Ordering {
+    b.cmp(a)
+}
+
+fn main() {
+    let scores = vec(2, 9, 5)
+    let mut sorted_scores = scores.clone()
+    sorted_scores.sort_by(stdcmp)
+    for score in sorted_scores {
+        print(score)
+    }
+}
+
+fn stdcmp(a: &Int, b: &Int) -> Ordering {
+    b.cmp(a)
+}
+
+fn main() {
+    let scores = vec(2, 9, 5)
+    let mut sorted_scores = scores.clone()
+    sorted_scores.sort_by(stdcmp)
+    for score in sorted_scores {
+        print(score)
+    }
+}
+
+fn stdcmp(a: &Int, b: &Int) -> Ordering {
+    b.cmp(a)
+}
+
+fn main() {
+    let scores = vec(2, 9, 5)
+    let mut sorted_scores = scores.clone()
+    sorted_scores.sort_by(stdcmp)
+    for score in sorted_scores {
+        print(score)
+    }
+}
+
+fn stdcmp(a: &Int, b: &Int) -> Ordering {
+    b.cmp(a)
+}
+
+fn main() {
+    let scores = vec(2, 9, 5)
+    let mut sorted_scores = scores.clone()
+    sorted_scores.sort_by(stdcmp)
+    for score in sorted_scores {
+        print(score)
+    }
+}
+
+fn stdcmp(a: &Int, b: &Int) -> Ordering {
+    b.cmp(a)
+}
+
+fn main() {
+    let scores = vec(2, 9, 5)
+    let mut sorted_scores = scores.clone()
+    sorted_scores.sort_by(stdcmp)
+    for score in sorted_scores {
+        print(score)
+    }
+}
+
+fn stdcmp(a: &Int, b: &Int) -> Ordering {
+    b.cmp(a)
+}
+
+fn main() {
+    let scores = vec(2, 9, 5)
+    let mut sorted_scores = scores.clone()
+    sorted_scores.sort_by(stdcmp)
+    for score in sorted_scores {
+        print(score)
+    }
+}
+
+fn stdcmp(a: &Int, b: &Int) -> Ordering {
+    b.cmp(a)
+}
+
+fn main() {
+    let scores = vec(2, 9, 5)
+    let mut sorted_scores = scores.clone()
+    sorted_scores.sort_by(stdcmp)
+    for score in sorted_scores {
+        print(score)
+    }
+}
+
+fn stdcmp(a: &Int, b: &Int) -> Ordering {
+    b.cmp(a)
+}
+
+fn main() {
+    let scores = vec(2, 9, 5)
+    let mut sorted_scores = scores.clone()
+    sorted_scores.sort_by(stdcmp)
+    for score in sorted_scores {
+        print(score)
+    }
+}
+
+fn stdcmp(a: &Int, b: &Int) -> Ordering {
+    b.cmp(a)
+}
+
+fn main() {
+    let scores = vec(2, 9, 5)
+    let mut sorted_scores = scores.clone()
+    sorted_scores.sort_by(stdcmp)
+    for score in sorted_scores {
+        print(score)
+    }
+}
+
+fn stdcmp(a: &Int,

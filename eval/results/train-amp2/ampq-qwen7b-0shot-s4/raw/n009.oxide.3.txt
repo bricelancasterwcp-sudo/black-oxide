@@ -1,0 +1,10 @@
+fn main() {
+    let s = int_to_str(1234)
+    let chars = chars(s)
+    let mut reversed = vec()
+    reversed = push(reversed, chars.get(chars.len() - 1)?)
+    reversed = push(reversed, chars.get(chars.len() - 2)?)
+    reversed = push(reversed, chars.get(chars.len() - 3)?)
+    reversed = push(reversed, chars.get(chars.len() - 4)?)
+    print_str(concat(reversed))
+}

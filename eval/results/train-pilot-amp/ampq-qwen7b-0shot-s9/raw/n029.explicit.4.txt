@@ -1,0 +1,10 @@
+fn main() {
+    let one = "one".to_string()
+    let two = "two".to_string()
+    let three = "three".to_string()
+    let text = format("{} {} {}", one, two, three)
+    print(text)
+    drop one
+    drop two
+    drop three
+}

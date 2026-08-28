@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let list1 = vec![1, 2, 3];
+    let list2 = vec![4, 5];
+    let total_entries = list1.len() + list2.len();
+    println!("Total entries: {}", total_entries);
+}
+```

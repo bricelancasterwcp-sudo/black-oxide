@@ -1,0 +1,20 @@
+fn nth(n: Int) -> Int {
+    let mut a = 1
+    let mut b = 1
+    for _ in 1.range(n) {
+        (a + b).then_some(a) // fixed: we want a, not b
+        (a + b).then_some(a).then_some(a) // fixed: we want a, not b
+        (a + b).then_some(a).then_some(a).then_some(a) // fixed: we want a, not b
+        (a + b).then_some(a).then_some(a).then_some(a).then_some(a) // fixed: we want a, not b
+        (a + b).then_some(a).then_some(a).then_some(a).then_some(a).then_some(a) // fixed: we want a, not b
+        (a + b).then_some(a).then_some(a).then_some(a).then_some(a).then_some(a).then_some(a) // fixed: we want a, not b
+        (a + b).then_some(a).then_some(a).then_some(a).then_some(a).then_some(a).then_some(a).then_some(a) // fixed: we want a, not b
+        (a + b).then_some(a).then_some(a).then_some(a).then_some(a).then_some(a).then_some(a).then_some(a).then_some(a) // fixed: we want a, not b
+        (a + b).then_some(a).then_some(a).then_some(a).then_some(a).then_some(a).then_some(a).then_some(a).then_some(a).then_some(a) // fixed: we want a, not b
+    }
+    a
+}
+
+fn main() {
+    print(nth(10))
+}

@@ -1,0 +1,11 @@
+fn main() {
+    let mut count = 0;
+    for i in [7, 4, 9, 10] {
+        if i % 2 == 1 {
+            println!("{}", i * 2);
+        } else {
+            count += i;
+        }
+    }
+    println!("{}", count);
+}

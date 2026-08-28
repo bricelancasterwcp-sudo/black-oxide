@@ -1,0 +1,303 @@
+fn main() {
+    let s = Str("banana")
+    let mut count = 0
+    for c in chars(s) {
+        if c == Str("a") {
+            count = count + 1
+        }
+    }
+    print(count)
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = Vec()
+    for i in 0 < s.len() {
+        result = push(result, Str(substring(s, i, i + 1)))
+    }
+    result
+}
+
+fn substring(s: Str, start: Int, end: Int) -> Str {
+    let mut result = Str("")
+    for i in start < end {
+        result = push(result, s.chars().nth(i))
+    }
+    result
+}
+
+fn nth(v: Vec<T>, n: Int) -> Option<T> {
+    if n >= len(v) {
+        return None
+    }
+    Some(get(v, n))
+}
+
+fn len(v: Vec<T>) -> Int {
+    let mut count = 0
+    for _ in v {
+        count = count + 1
+    }
+    count
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    let mut result = v
+    result = push(result, x)
+    result
+}
+
+fn print(x: Int) {
+    let s = int_to_str(x)
+    print_str(s)
+}
+
+fn print_str(s: Str) {
+    let mut chars = chars(s)
+    for c in chars {
+        print_char(c)
+    }
+}
+
+fn print_char(c: Str) {
+    let mut chars = chars(c)
+    for b in chars {
+        print_byte(b)
+    }
+}
+
+fn print_byte(b: Int) {
+    let s = int_to_str(b)
+    print_str(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut s = Str("")
+    let mut nn = n
+    while nn > 0 {
+        let digit = nn % 10
+        let c = int_to_char(digit)
+        s = push(s, c)
+        nn = trunc(nn / 10)
+    }
+    if s == Str("") {
+        return Str("0")
+    }
+    s
+}
+
+fn int_to_char(n: Int) -> Str {
+    if n < 10 {
+        return Str(char(n + 48))
+    }
+    Str(char(n + 55))
+}
+
+fn char(n: Int) -> Str {
+    let s = int_to_str(n)
+    chars(s).nth(0)
+}
+
+fn substring(s: Str, start: Int, end: Int) -> Str {
+    let mut result = Str("")
+    for i in start < end {
+        result = push(result, s.chars().nth(i))
+    }
+    result
+}
+
+fn nth(v: Vec<T>, n: Int) -> Option<T> {
+    if n >= len(v) {
+        return None
+    }
+    Some(get(v, n))
+}
+
+fn len(v: Vec<T>) -> Int {
+    let mut count = 0
+    for _ in v {
+        count = count + 1
+    }
+    count
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    let mut result = v
+    result = push(result, x)
+    result
+}
+
+fn print(x: Int) {
+    let s = int_to_str(x)
+    print_str(s)
+}
+
+fn print_str(s: Str) {
+    let mut chars = chars(s)
+    for c in chars {
+        print_char(c)
+    }
+}
+
+fn print_char(c: Str) {
+    let mut chars = chars(c)
+    for b in chars {
+        print_byte(b)
+    }
+}
+
+fn print_byte(b: Int) {
+    let s = int_to_str(b)
+    print_str(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut s = Str("")
+    let mut nn = n
+    while nn > 0 {
+        let digit = nn % 10
+        let c = int_to_char(digit)
+        s = push(s, c)
+        nn = trunc(nn / 10)
+    }
+    if s == Str("") {
+        return Str("0")
+    }
+    s
+}
+
+fn int_to_char(n: Int) -> Str {
+    if n < 10 {
+        return Str(char(n + 48))
+    }
+    Str(char(n + 55))
+}
+
+fn char(n: Int) -> Str {
+    let s = int_to_str(n)
+    chars(s).nth(0)
+}
+
+fn substring(s: Str, start: Int, end: Int) -> Str {
+    let mut result = Str("")
+    for i in start < end {
+        result = push(result, s.chars().nth(i))
+    }
+    result
+}
+
+fn nth(v: Vec<T>, n: Int) -> Option<T> {
+    if n >= len(v) {
+        return None
+    }
+    Some(get(v, n))
+}
+
+fn len(v: Vec<T>) -> Int {
+    let mut count = 0
+    for _ in v {
+        count = count + 1
+    }
+    count
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    let mut result = v
+    result = push(result, x)
+    result
+}
+
+fn print(x: Int) {
+    let s = int_to_str(x)
+    print_str(s)
+}
+
+fn print_str(s: Str) {
+    let mut chars = chars(s)
+    for c in chars {
+        print_char(c)
+    }
+}
+
+fn print_char(c: Str) {
+    let mut chars = chars(c)
+    for b in chars {
+        print_byte(b)
+    }
+}
+
+fn print_byte(b: Int) {
+    let s = int_to_str(b)
+    print_str(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut s = Str("")
+    let mut nn = n
+    while nn > 0 {
+        let digit = nn % 10
+        let c = int_to_char(digit)
+        s = push(s, c)
+        nn = trunc(nn / 10)
+    }
+    if s == Str("") {
+        return Str("0")
+    }
+    s
+}
+
+fn int_to_char(n: Int) -> Str {
+    if n < 10 {
+        return Str(char(n + 48))
+    }
+    Str(char(n + 55))
+}
+
+fn char(n: Int) -> Str {
+    let s = int_to_str(n)
+    chars(s).nth(0)
+}
+
+fn substring(s: Str, start: Int, end: Int) -> Str {
+    let mut result = Str("")
+    for i in start < end {
+        result = push(result, s.chars().nth(i))
+    }
+    result
+}
+
+fn nth(v: Vec<T>, n: Int) -> Option<T> {
+    if n >= len(v) {
+        return None
+    }
+    Some(get(v, n))
+}
+
+fn len(v: Vec<T>) -> Int {
+    let mut count = 0
+    for _ in v {
+        count = count + 1
+    }
+    count
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    let mut result = v
+    result = push(result, x)
+    result
+}
+
+fn print(x: Int) {
+    let s = int_to_str(x)
+    print_str(s)
+}
+
+fn print_str(s: Str) {
+    let mut chars = chars(s)
+    for c in chars {
+        print_char(c)
+    }
+}
+
+fn print_char(c: Str) {
+    let mut chars = chars(c)
+    for b in chars

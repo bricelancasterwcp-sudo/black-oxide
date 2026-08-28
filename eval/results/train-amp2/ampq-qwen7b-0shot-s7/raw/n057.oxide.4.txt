@@ -1,0 +1,20 @@
+fn max_len_name(names: Vec<Str>) -> Str {
+    let mut max_name = ""
+    let mut max_len = 0
+    for name in names {
+        let len = str_len(name)
+        if len > max_len {
+            max_len = len
+            max_name = name
+        }
+    }
+    max_name
+}
+
+fn main() {
+    let names = push(push(push(vec(), "fig"), "banana"), "kiwi")
+    let max_name = max_len_name(names)
+    let max_len = str_len(max_name)
+    print(max_name)
+    print(max_len)
+}

@@ -1,0 +1,261 @@
+fn main() {
+    let mut acc = vec(0, 0, 0, 0, 0, 0)
+    let mut i = 0
+    loop_with_carry(4, 6, 1, move || acc, _i, carry, n || push(acc, n * carry))
+    let total = acc.iter().fold(0, add)
+    print(total)
+}
+
+fn loop_with_carry(mul: Int, times: Int, start: Int, mutf: FnMutMutRefOfVec<Int, Int, Int, Int, Int>) -> Int {
+    let mut i = start
+    let mut carry = 1
+    while i < times {
+        let n = i * mul + carry
+        let new_carry = n / mul
+        let new_acc = push(vec(), n % mul)
+        let acc = new_acc
+        i = i + 1
+        carry = new_carry
+        mutf(acc, i, carry, n)
+    }
+    carry
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut ret = v
+    ret.push(x)
+    ret
+}
+
+fn vec(x: Int, y: Int, z: Int, w: Int, t: Int, s: Int) -> Vec<Int> {
+    let mut ret = Vec(x)
+    ret.push(y)
+    ret.push(z)
+    ret.push(w)
+    ret.push(t)
+    ret.push(s)
+    ret
+}
+
+fn iter(v: Vec<Int>) -> Vec<Int> {
+    let mut ret = vec()
+    for x in v {
+        ret.push(x)
+    }
+    ret
+}
+
+fn fold(v: Vec<Int>, init: Int, mutf: FnMutRefOfInt, mutc: FnMutRefOfInt, mutt: FnMutRefOfInt) -> Int {
+    let mut acc = init
+    let mut i = 0
+    for x in v {
+        acc = mutf(acc, i, x)
+        i = i + 1
+    }
+    acc
+}
+
+fn print(x: Int) {
+    let s = int_to_str(x)
+    print_str(s)
+}
+
+fn print_str(s: Str) {
+    let mut chars = chars(s)
+    for c in chars {
+        print(c)
+    }
+}
+
+fn int_to_str(n: Int) -> Str {
+    let digits = vec(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+    let mut digits_rev = vec()
+    let mut n2 = n
+    while n2 > 0 {
+        let d = n2 % 10
+        digits_rev.push(digits(d))
+        n2 = trunc(n2 / 10)
+    }
+    let digits_rev2 = iter(digits_rev)
+    let s = fold(digits_rev2, Str(" "), str_concat, str_concat, str_concat)
+    s
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut ret = vec()
+    let mut chars = s
+    while len(chars) > 0 {
+        let c = get(chars, 0)
+        ret.push(c)
+        chars = drop(chars, 1)
+    }
+    ret
+}
+
+fn drop(v: Vec<Str>, n: Int) -> Vec<Str> {
+    let mut ret = vec()
+    for i in 0 + n < len(v) {
+        ret.push(v(i))
+    }
+    ret
+}
+
+fn get(v: Vec<Str>, i: Int) -> Str {
+    v(i)
+}
+
+fn len(v: Vec<Str>) -> Int {
+    let mut i = 0
+    for _ in v {
+        i = i + 1
+    }
+    i
+}
+
+fn str_concat(a: Str, b: Str) -> Str {
+    let mut ret = a
+    ret = str_push(ret, b)
+    ret
+}
+
+fn str_push(s: Str, c: Str) -> Str {
+    let mut ret = s
+    ret = str_append(ret, c)
+    ret
+}
+
+fn str_append(mut_s: Str, c: Str) -> Str {
+    let mut chars = chars(mut_s)
+    chars.push(c)
+    let chars = iter(chars)
+    fold(chars, Str(" "), str_concat, str_concat, str_concat)
+}
+
+fn trunc(n: Int) -> Int {
+    if n >= 0 {
+        n
+    } else {
+        -n - 1
+    }
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn drop(v: Vec<Int>, n: Int) -> Vec<Int> {
+    let mut ret = vec()
+    for i in 0 + n < len(v) {
+        ret.push(v(i))
+    }
+    ret
+}
+
+fn get(v: Vec<Int>, i: Int) -> Int {
+    v(i)
+}
+
+fn len(v: Vec<Int>) -> Int {
+    let mut i = 0
+    for _ in v {
+        i = i + 1
+    }
+    i
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut ret = v
+    ret.push(x)
+    ret
+}
+
+fn vec(x: Int, y: Int, z: Int, w: Int, t: Int, s: Int) -> Vec<Int> {
+    let mut ret = Vec(x)
+    ret.push(y)
+    ret.push(z)
+    ret.push(w)
+    ret.push(t)
+    ret.push(s)
+    ret
+}
+
+fn iter(v: Vec<Int>) -> Vec<Int> {
+    let mut ret = vec()
+    for x in v {
+        ret.push(x)
+    }
+    ret
+}
+
+fn fold(v: Vec<Int>, init: Int, mutf: FnMutRefOfInt, mutc: FnMutRefOfInt, mutt: FnMutRefOfInt) -> Int {
+    let mut acc = init
+    let mut i = 0
+    for x in v {
+        acc = mutf(acc, i, x)
+        i = i + 1
+    }
+    acc
+}
+
+fn print(x: Int) {
+    let s = int_to_str(x)
+    print_str(s)
+}
+
+fn print_str(s: Str) {
+    let mut chars = chars(s)
+    for c in chars {
+        print(c)
+    }
+}
+
+fn int_to_str(n: Int) -> Str {
+    let digits = vec(0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+    let mut digits_rev = vec()
+    let mut n2 = n
+    while n2 > 0 {
+        let d = n2 % 10
+        digits_rev.push(digits(d))
+        n2 = trunc(n2 / 10)
+    }
+    let digits_rev2 = iter(digits_rev)
+    let s = fold(digits_rev2, Str(" "), str_concat, str_concat, str_concat)
+    s
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut ret = vec()
+    let mut chars = s
+    while len(chars) > 0 {
+        let c = get(chars, 0)
+        ret.push(c)
+        chars = drop(chars, 1)
+    }
+    ret
+}
+
+fn drop(v: Vec<Str>, n: Int) -> Vec<Str> {
+    let mut ret = vec()
+    for i in 0 + n < len(v) {
+        ret.push(v(i))
+    }
+    ret
+}
+
+fn get(v: Vec<Str>, i: Int) -> Str {
+    v(i)
+}
+
+fn len(v: Vec<Str>) -> Int {
+    let mut i = 0
+    for _ in v {
+        i = i + 1
+    }
+    i
+}
+
+fn str_concat(a: Str, b: Str

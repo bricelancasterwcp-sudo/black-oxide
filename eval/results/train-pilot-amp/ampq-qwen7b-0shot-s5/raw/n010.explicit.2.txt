@@ -1,0 +1,16 @@
+fn is_prime(n: Int) -> Str {
+    if n <= 1 {
+        return "no".to_string()
+    }
+    for i in range(2, n) {
+        if n % i == 0 {
+            return "no".to_string()
+        }
+    }
+    "yes".to_string()
+}
+
+fn main() {
+    let result = is_prime(91)
+    print_str(result)
+}

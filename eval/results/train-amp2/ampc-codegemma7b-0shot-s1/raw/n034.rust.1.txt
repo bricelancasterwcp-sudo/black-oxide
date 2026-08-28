@@ -1,0 +1,30 @@
+use std::cmp::Ordering;
+
+fn main() {
+    let second_seven = second_entry(7).unwrap_or("none");
+    println!("second_seven: {}", second_seven);
+
+    let second_eight = second_entry(8).unwrap_or("none");
+    println!("second_eight: {}", second_eight);
+
+    let second_nine = second_entry(9).unwrap_or("none");
+    println!("second_nine: {}", second_nine);
+}
+
+fn second_entry<T>(entry: T) -> Option<T>
+where
+    T: Copy + Eq + Ord,
+{
+    let mut entries = vec![entry];
+
+    match entries.pop() {
+        Some(first) => match entries.pop() {
+            Some(second) => Some(second),
+            None => {
+                entries.push(first);
+                None
+            }
+        },
+        None => None,
+    }
+}

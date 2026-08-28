@@ -1,0 +1,5 @@
+fn main() {
+    let word = "granite"
+    print(chars(word).first())
+    print(chars(word).last())
+}

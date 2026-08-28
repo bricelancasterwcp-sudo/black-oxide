@@ -1,0 +1,34 @@
+fn area(shape: Shape) -> Float {
+    match shape {
+        Square(s) => s * s,
+        Circle(r) => r * r * 3.14159,
+    }
+}
+
+fn main() {
+    print(area(Square(4)))
+}
+
+enum Shape {
+    Square(Int),
+    Circle(Float),
+}
+
+enum Result {
+    Ok(Float),
+    Err,
+}
+
+fn area(shape: Shape) -> Result {
+    match shape {
+        Square(s) => Ok(s * s),
+        Circle(r) => Ok(r * r * 3.14159),
+    }
+}
+
+fn main() {
+    match area(Square(4)) {
+        Ok(a) => print(a),
+        Err => print_str("bad shape"),
+    }
+}

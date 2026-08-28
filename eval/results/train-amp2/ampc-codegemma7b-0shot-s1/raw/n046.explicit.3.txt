@@ -1,0 +1,20 @@
+fn cutoff(values: &Vec<Int>, cutoff: Int) -> Int {
+    let mut less_than_cutoff = 0
+    let mut greater_than_cutoff = 0
+    for value in values {
+        if value < &cutoff {
+            less_than_cutoff = less_than_cutoff + 1
+        } else {
+            greater_than_cutoff = greater_than_cutoff + 1
+        }
+    }
+    return less_than_cutoff
+}
+
+fn main() {
+    let numbers = vec(5, 12, 3, 18, 9)
+    let cutoff_value = 10
+    let less_than_cutoff = cutoff(&numbers, cutoff_value)
+    print(less_than_cutoff)
+    print(greater_than_cutoff)
+}

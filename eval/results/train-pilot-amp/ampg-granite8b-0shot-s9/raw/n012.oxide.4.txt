@@ -1,0 +1,26 @@
+struct List {
+    head: Int,
+    tail: Option<Box<List>>,
+}
+
+fn build_list() -> Box<List> {
+    let mut list: Box<List> = Box { head: 0, tail: None }
+    for i in 10 {
+        let boxed_tail = Box { head: i, tail: None }
+        list.tail = Some(boxed_tail)
+        list = boxed_tail
+    }
+    list
+}
+
+fn get_size(list: Box<List>) -> Int {
+    match list.tail {
+        None => 1,
+        Some(box_tail) => 1 + get_size(box_tail),
+    }
+}
+
+fn main() {
+    let list = build_list()
+    print(get_size(list))
+}

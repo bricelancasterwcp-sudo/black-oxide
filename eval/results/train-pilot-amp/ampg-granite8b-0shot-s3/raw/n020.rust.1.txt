@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let readings = [4, 8, 15, 16, 23, 42];
+    let mean = readings.iter().sum::<f64>() / readings.len() as f64;
+    println!("{}", mean as i32);
+}
+```
+
+The `mean` variable is declared as a `f64` to ensure floating-point division. By casting it to `i32` and then printing it, we are truncating the decimal part, which is the expected behavior.

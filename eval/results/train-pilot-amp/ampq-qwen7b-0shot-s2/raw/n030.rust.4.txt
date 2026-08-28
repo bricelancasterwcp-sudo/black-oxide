@@ -1,0 +1,6 @@
+fn main() {
+    let word = "sequence";
+    let vowels = "aeiou";
+    let count = word.chars().filter(|&c| vowels.contains(c.to_ascii_lowercase())).count();
+    println!("Number of vowels: {}", count);
+}

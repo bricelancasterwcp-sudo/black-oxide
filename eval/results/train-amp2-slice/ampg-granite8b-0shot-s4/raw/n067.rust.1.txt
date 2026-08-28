@@ -1,0 +1,11 @@
+fn main() {
+    let mut total = 0;
+    for x in &[7, 4, 9, 10] {
+        if *x % 2 == 1 {
+            println!("{}", 2 * x);
+        } else {
+            total += x;
+        }
+    }
+    println!("{}", total);
+}

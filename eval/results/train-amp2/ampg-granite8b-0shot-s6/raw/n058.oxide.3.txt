@@ -1,0 +1,26 @@
+struct Coffee { cups: Vec<Str> }
+
+fn show_unique(coffee: Coffee) {
+    let mut letters = vec()
+    for cup in coffee.cups {
+        for letter in cup.chars() {
+            if !contains(letters, letter) {
+                push(letters, letter)
+            }
+        }
+    }
+    for letter in letters {
+        print(letter)
+        print_str("\n")
+    }
+}
+
+fn main() {
+    let c = Coffee { cups: vec() }
+    push(c.cups, "hot water")
+    push(c.cups, "coffee")
+    push(c.cups, "hot water")
+    push(c.cups, "milk")
+    push(c.cups, "coffee")
+    show_unique(c)
+}

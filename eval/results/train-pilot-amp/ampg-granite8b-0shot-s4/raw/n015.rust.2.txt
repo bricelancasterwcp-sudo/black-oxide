@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let numbers = [1, 2, 3, 4, 5];
+
+    let larger_than_four = numbers.iter().filter(|&&x| x > 4).count();
+
+    println!("There are {} numbers larger than four", larger_than_four);
+}
+```

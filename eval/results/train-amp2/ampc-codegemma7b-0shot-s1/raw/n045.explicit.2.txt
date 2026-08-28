@@ -1,0 +1,22 @@
+fn log_reader(log: &Vec<Int>) -> Int {
+    let mut start = None
+    let mut end = None
+    for x in log {
+        if start == None {
+            start = Some(x)
+        } else {
+            end = Some(x)
+        }
+    }
+    if letSome(v) == start {
+        return v
+    } else {
+        return -1
+    }
+}
+
+fn main() {
+    let log = vec(6, 7, 8, 9)
+    print(log_reader(&log))
+    drop log
+}

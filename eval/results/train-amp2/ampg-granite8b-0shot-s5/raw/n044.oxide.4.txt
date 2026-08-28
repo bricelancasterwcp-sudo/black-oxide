@@ -1,0 +1,8 @@
+fn main() {
+    let mut balance = 0
+    for deposit in range(3, 7) {
+        let new_balance = deposit + balance
+        balance = new_balance
+    }
+    print(balance)
+}

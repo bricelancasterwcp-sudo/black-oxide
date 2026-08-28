@@ -1,0 +1,3 @@
+fn main() {
+    "coffee".chars().unique().for_each(|c| println!("{}", c));
+}

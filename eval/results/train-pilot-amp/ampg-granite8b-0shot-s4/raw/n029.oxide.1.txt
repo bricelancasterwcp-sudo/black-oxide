@@ -1,0 +1,23 @@
+struct One { value: Int }
+
+fn one() -> One {
+    One(1)
+}
+
+fn two(one: One) -> Int {
+    one.value + 1
+}
+
+fn three(two: Int) -> Int {
+    two + 1
+}
+
+fn main() {
+    let three_text = concat(concat(str_len("one"), str_len("two")), str_len("three"))
+    let one = one()
+    let two = two(one)
+    let three = three(two)
+    let three_str = int_to_str(three)
+    print_str("one two three: ")
+    print_str(three_str)
+}

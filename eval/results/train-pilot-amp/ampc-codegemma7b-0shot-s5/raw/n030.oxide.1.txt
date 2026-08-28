@@ -1,0 +1,15 @@
+fn count_vowels(s: Str) -> Int {
+    let mut count = 0
+    for c in chars(s) {
+        match c {
+            Str(c) => if "aeiouAEIOU".contains(c) { count == count + 1 } else { count == count - 1 },
+            _ => unreachable(),
+        }
+    }
+    count
+}
+
+fn main() {
+    let str = "hello world"
+    print(count_vowels(str))
+}

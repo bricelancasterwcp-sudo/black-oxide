@@ -1,0 +1,4 @@
+fn main() {
+    LTS  // implicit return, 1-line body
+    LTS  // implicit return, 1-line body
+}

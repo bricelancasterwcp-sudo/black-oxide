@@ -1,0 +1,205 @@
+fn min_set(readings: Vec<Int>) -> Int {
+    let mut current_min = readings.get(0).unwrap_or(&panic_error_i32)
+    let mut result = current_min
+    for i in 1.range_to(readings.len()) {
+        let current = readings.get(i).unwrap_or(&panic_error_i32)
+        if current < current_min {
+            result = current
+            current_min = current
+        } else if current < result {
+            result = current
+        }
+    }
+    result
+}
+
+fn main() {
+    let readings = vec(5, 3, 9, 1, 7)
+    print(min_set(&readings))
+}
+
+fn panic_error_i32() -> Int {
+    panic_error("unimplemented")
+}
+
+fn panic_error(s: &Str) -> Int {
+    loop_forever()
+}
+
+fn loop_forever() -> Int {
+    loop_forever()
+}
+
+fn test_min_set() {
+    assert_eq(5, min_set(vec(5, 3, 9, 1, 7)))
+    assert_eq(3, min_set(vec(3, 3, 3, 3, 3)))
+}
+
+fn assert_eq(expected: Int, actual: Int) {
+    if expected == actual {
+        print("expected {}, got {}\n", expected, actual)
+    } else {
+        panic_error("assertion failed")
+    }
+}
+
+fn print(s: &Str, i: Int, b: Bool) {
+    loop_forever()
+}
+
+fn test_print() {
+    print("hi\n", 5, true)
+}
+
+fn panic_error_str(s: &Str) -> Str {
+    panic_error_str(s)
+}
+
+fn panic_error_str(s: &Str) -> Str {
+    panic_error("unimplemented")
+}
+
+fn loop_forever() -> Str {
+    loop_forever()
+}
+
+fn test_min_set_str() {
+    assert_eq("a", min_set_str(vec("b", "c", "a")))
+    assert_eq("a", min_set_str(vec("a", "a", "a")))
+}
+
+fn assert_eq(expected: &Str, actual: &Str) {
+    if expected == actual {
+        print("expected {}, got {}\n", expected, actual)
+    } else {
+        panic_error("assertion failed")
+    }
+}
+
+fn min_set_str(readings: Vec<Str>) -> Str {
+    let mut current_min = readings.get(0).unwrap_or(&panic_error_str)
+    let mut result = current_min
+    for i in 1.range_to(readings.len()) {
+        let current = readings.get(i).unwrap_or(&panic_error_str)
+        if current < current_min {
+            result = current
+            current_min = current
+        } else if current < result {
+            result = current
+        }
+    }
+    result
+}
+
+fn test_min_set_str_ref() {
+    let a = "a"
+    assert_eq("a", min_set_str_ref(vec(a, "c", "a")))
+    assert_eq("a", min_set_str_ref(vec("a", "a", "a")))
+}
+
+fn assert_eq(expected: &Str, actual: &Str) {
+    if expected == actual {
+        print("expected {}, got {}\n", expected, actual)
+    } else {
+        panic_error("assertion failed")
+    }
+}
+
+fn min_set_str_ref(readings: Vec<Str>) -> Str {
+    let mut current_min = readings.get(0).unwrap_or(&panic_error_str)
+    let mut result = current_min
+    for i in 1.range_to(readings.len()) {
+        let current = readings.get(i).unwrap_or(&panic_error_str)
+        if current < current_min {
+            result = current
+            current_min = current
+        } else if current < result {
+            result = current
+        }
+    }
+    result
+}
+
+fn test_min_set_vec() {
+    assert_eq(vec(5), min_set_vec(vec(vec(5))))
+    assert_eq(vec(5), min_set_vec(vec(vec(5, 5)), vec(5), vec(5, 5)))
+}
+
+fn assert_eq(expected: Vec<Int>, actual: Vec<Int>) {
+    if expected == actual {
+        print("expected {}, got {}\n", expected, actual)
+    } else {
+        panic_error("assertion failed")
+    }
+}
+
+fn min_set_vec(readings: Vec<Vec<Int>>) -> Vec<Int> {
+    let mut current_min = readings.get(0).unwrap_or(&panic_error_vec).get(0).unwrap_or(&panic_error_i32)
+    let mut result = current_min
+    for i in 1.range_to(readings.len()) {
+        let current = readings.get(i).unwrap_or(&panic_error_vec).get(0).unwrap_or(&panic_error_i32)
+        if current < current_min {
+            result = current
+            current_min = current
+        } else if current < result {
+            result = current
+        }
+    }
+    vec(result)
+}
+
+fn test_min_set_vec_ref() {
+    let a = vec(5)
+    assert_eq(vec(5), min_set_vec_ref(vec(vec(a))))
+    assert_eq(vec(5), min_set_vec_ref(vec(vec(a, a)), vec(a), vec(a, a)))
+}
+
+fn assert_eq(expected: Vec<Int>, actual: Vec<Int>) {
+    if expected == actual {
+        print("expected {}, got {}\n", expected, actual)
+    } else {
+        panic_error("assertion failed")
+    }
+}
+
+fn min_set_vec_ref(readings: Vec<Vec<Vec>>) -> Vec<Int> {
+    let mut current_min = readings.get(0).unwrap_or(&panic_error_vec).get(0).unwrap_or(&panic_error_vec).get(0).unwrap_or(&panic_error_i32)
+    let mut result = current_min
+    for i in 1.range_to(readings.len()) {
+        let current = readings.get(i).unwrap_or(&panic_error_vec).get(0).unwrap_or(&panic_error_vec).get(0).unwrap_or(&panic_error_i32)
+        if current < current_min {
+            result = current
+            current_min = current
+        } else if current < result {
+            result = current
+        }
+    }
+    vec(result)
+}
+
+fn test_min_set_vec_ref_ref() {
+    let a = vec(5)
+    let b = vec(vec(a))
+    assert_eq(vec(5), min_set_vec_ref_ref(vec(b)))
+    assert_eq(vec(5), min_set_vec_ref_ref(vec(b, b), vec(a), vec(b, b)))
+}
+
+fn assert_eq(expected: Vec<Int>, actual: Vec<Int>) {
+    if expected == actual {
+        print("expected {}, got {}\n", expected, actual)
+    } else {
+        panic_error("assertion failed")
+    }
+}
+
+fn min_set_vec_ref_ref(readings: Vec<Vec<Vec>>) -> Vec<Int> {
+    let mut current_min = readings.get(0).unwrap_or(&panic_error_vec).get(0).unwrap_or(&panic_error_vec).get(0).unwrap_or(&panic_error_vec).get(0).unwrap_or(&panic_error_i32)
+    let mut result = current_min
+    for i in 1.range_to(readings.len()) {
+        let current = readings.get(i).unwrap_or(&panic_error_vec).get(0).unwrap_or(&panic_error_vec).get(0).unwrap_or(&panic_error_vec).get(0).unwrap_or(&panic_error_i32)
+        if current < current_min {
+            result = current
+            current_min = current
+        } else if current < result {
+            result = current
+        }

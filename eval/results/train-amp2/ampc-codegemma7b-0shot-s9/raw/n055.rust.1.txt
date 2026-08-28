@@ -1,0 +1,14 @@
+fn main() {
+    let mut entries = [String::new(), String::new(), String::new()];
+    entries[0] = "8".to_string();
+    entries[1] = "oak".to_string();
+    entries[2] = "15".to_string();
+
+    for entry in entries {
+        let number = entry.parse::<u32>();
+        match number {
+            Ok(n) => println!("{}", n),
+            Err(_) => println!("bad"),
+        }
+    }
+}

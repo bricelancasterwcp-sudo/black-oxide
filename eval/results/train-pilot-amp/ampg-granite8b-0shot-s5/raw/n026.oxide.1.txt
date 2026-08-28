@@ -1,0 +1,15 @@
+struct Number { value: Int }
+
+fn string_length(n: Int) -> Int {
+    let mut s = number_to_string(n)
+    let mut length = 0
+    while length < str_len(s) {
+        length = length + 1
+        s = trunc(to_float(length))
+    }
+    length
+}
+
+fn main() {
+    print(string_length(2026))
+}

@@ -1,0 +1,8 @@
+fn main() {
+    let readings = vec(5, 3, 9, 1, 7)
+    let largest = readings.iter().copied().max()
+    match largest {
+        Some(n) => print(n),
+        None => print_str("empty set"),
+    }
+}

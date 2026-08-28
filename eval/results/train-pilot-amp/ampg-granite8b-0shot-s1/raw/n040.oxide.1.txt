@@ -1,0 +1,10 @@
+fn area(s: Shape) -> Float {
+    match s {
+        Square(s) => 4.0 * s * s,
+        Circle(r) => 3.1416 * r * r,
+    }
+}
+
+fn main() {
+    print(area(Square(4.0)))
+}

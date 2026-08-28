@@ -1,0 +1,23 @@
+fn smallest_to_largest(measurements: Vec<Int>) -> Vec<Int> {
+    let mut measurements = measurements
+    let mut i = 0
+    while i < len(&measurements) {
+        let mut j = i + 1
+        while j < len(&measurements) {
+            if measurements.get(j) < measurements.get(i) {
+                measurements = functional_update(measurements, j, measurements.get(i))
+            }
+            j = j + 1
+        }
+        i = i + 1
+    }
+    measurements
+}
+
+fn main() {
+    let measurements = vec(9, 2, 4, 7)
+    let sorted_measurements = smallest_to_largest(measurements)
+    for measurement in &sorted_measurements {
+        print(measurement)
+    }
+}

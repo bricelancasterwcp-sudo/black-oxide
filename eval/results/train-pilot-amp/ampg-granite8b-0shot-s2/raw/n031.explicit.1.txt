@@ -1,0 +1,8 @@
+fn area(r: &Rectangle) -> Int {
+    r.width * r.height
+}
+
+fn main() {
+    let square = Rectangle { width: 7, height: 7 }
+    print(area(&square))
+}

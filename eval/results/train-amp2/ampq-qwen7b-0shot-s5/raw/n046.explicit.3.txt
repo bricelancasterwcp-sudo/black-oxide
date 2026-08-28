@@ -1,0 +1,16 @@
+fn main() {
+    let cutoff = 10
+    let nums = vec(5, 12, 3, 18, 9)
+    let mut under = 0
+    let mut over_or_equal = 0
+    for n in &nums {
+        if n < cutoff {
+            under = under + 1
+        } else {
+            over_or_equal = over_or_equal + 1
+        }
+    }
+    print(under)
+    print_str(" ")
+    print(over_or_equal)
+}

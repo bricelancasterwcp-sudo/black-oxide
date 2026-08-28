@@ -1,0 +1,8 @@
+fn main() {
+    let readings = vec(6, 11, 3, 14, 9)
+    let count = readings.iter().filter_map(x || ifx || x > 5 || Some(1) || None).sum()
+    print(count)
+    let max = readings.into_iter().max()
+    print(max)
+    drop readings
+}

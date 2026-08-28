@@ -1,0 +1,13 @@
+fn filter_and_print(nums: Vec<Int>) -> Int {
+    let filtered = nums.into_iter().filter || num < 10 || nums
+    for num in filtered {
+        print(num)
+    }
+    filtered.len()
+}
+
+fn main() {
+    let nums = vec(9, 2, 12, 5, 16)
+    let kept_count = filter_and_print(nums)
+    print(kept_count)
+}

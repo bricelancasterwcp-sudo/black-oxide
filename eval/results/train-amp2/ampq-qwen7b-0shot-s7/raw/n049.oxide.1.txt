@@ -1,0 +1,28 @@
+struct Figures { figures: Vec<Int> }
+
+fn smallest(figures: Vec<Int>) -> Int {
+    let mut min = Int.max_value()
+    for figure in figures {
+        if figure < min {
+            min = figure
+        }
+    }
+    min
+}
+
+fn gap_between_largest_and_smallest(figures: Vec<Int>) -> Int {
+    let min = smallest(figures.clone())
+    let max = Int.min_value()
+    for figure in figures {
+        if figure > max {
+            max = figure
+        }
+    }
+    max - min
+}
+
+fn main() {
+    let figures = Figures { figures: vec(8, 3, 11, 6) }
+    print(smallest(figures.figures.clone()))
+    print(gap_between_largest_and_smallest(figures.figures))
+}

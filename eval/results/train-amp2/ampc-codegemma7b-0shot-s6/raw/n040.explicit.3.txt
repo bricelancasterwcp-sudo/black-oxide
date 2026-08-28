@@ -1,0 +1,207 @@
+fn area(s: Square) -> Float {
+    return s.side * s.side
+}
+
+fn area(c: Circle) -> Float {
+    return 3.14159 * c.radius * c.radius
+}
+
+fn main() {
+    let square = Square { side: 4 }
+    let circle = Circle { radius: 5 }
+    print(area(square))
+    print(area(circle))
+}
+
+struct Square {
+    side: Int,
+}
+
+struct Circle {
+    radius: Int,
+}
+
+struct Float {
+    value: Float,
+}
+
+struct Int {
+    value: Int,
+}
+
+fn print(f: Float) {
+    print(f.value)
+}
+
+fn print(i: Int) {
+    print(i.value)
+}
+
+fn print(s: Str) {
+    print(s.value)
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut v2 = v
+    v2.push(x)
+    return v2
+}
+
+fn vec() -> Vec<Int> {
+    return Vec { length: 0, capacity: 0, data: alloc(0) }
+}
+
+fn len(v: Vec<Int>) -> Int {
+    return v.length
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    if i >= v.length {
+        return None
+    } else {
+        return Some(Int { value: v.data.offset(i * 4).read_int() })
+    }
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut v = vec()
+    for i in a.value.to_int() + 1.to_int() {
+        if i < b.value.to_int() {
+            push(v, Int { value: i })
+        }
+    }
+    return v
+}
+
+fn clone(x: Int) -> Int {
+    return Int { value: x.value }
+}
+
+fn str_len(s: Str) -> Int {
+    return s.length
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut s = Str { length: a.length + b.length, capacity: a.length + b.length, data: alloc(a.length + b.length) }
+    copy(a.data, s.data, a.length)
+    copy(b.data, s.data.offset(a.length), b.length)
+    return s
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut v = vec()
+    for i in 0.to_int() {
+        if i < s.length {
+            push(v, Str { length: 1, capacity: 1, data: alloc(1) })
+            s.data.offset(i).write_char(v.data.offset(v.length).read_char())
+        }
+    }
+    return v
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut s = Str { length: 0, capacity: 0, data: alloc(0) }
+    let mut n2 = n.value
+    if n2 < 0 {
+        n2 = -n2
+        push(s, Str { length: 1, capacity: 1, data: alloc(1) })
+        s.data.offset(0).write_char(b_minus)
+    }
+    let mut digits = vec()
+    while n2 > 0 {
+        digits.push(Int { value: n2 % 10 })
+        n2 = n2 / 10
+    }
+    for i in digits.len() - 1.to_int() {
+        push(s, Str { length: 1, capacity: 1, data: alloc(1) })
+        s.data.offset(s.length).write_char(digits.data.offset(i).read_char() + b_0)
+    }
+    return s
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    let mut n = 0
+    let mut negative = false
+    for i in 0.to_int() {
+        if i < s.length {
+            let c = s.data.offset(i).read_char()
+            if c == b_minus {
+                negative = true
+            } else if c >= b_0 {
+                n = n * 10 + (c - b_0)
+            } else {
+                if n == 0 {
+                    return None
+                } else {
+                    break
+                }
+            }
+        }
+    }
+    if negative {
+        return Some(Int { value: -n })
+    } else {
+        return Some(Int { value: n })
+    }
+}
+
+fn to_float(n: Int) -> Float {
+    return Float { value: n.value.to_float() }
+}
+
+fn trunc(x: Int) -> Int {
+    if x.value.to_int() >= 0 {
+        return Int { value: x.value.to_int() }
+    } else {
+        return Int { value: (x.value.to_int() - 1) }
+    }
+}
+
+fn alloc(size: Int) -> Pointer {
+    return Pointer { value: malloc(size.value) }
+}
+
+fn copy(src: Pointer, dst: Pointer, size: Int) {
+    memcpy(dst.value, src.value, size.value)
+}
+
+fn drop_pointer(p: Pointer) {
+    free(p.value)
+}
+
+struct Pointer {
+    value: Pointer,
+}
+
+fn drop_int(i: Int) {
+    drop_pointer(i.value)
+}
+
+fn drop_float(f: Float) {
+    drop_pointer(f.value)
+}
+
+fn drop_str(s: Str) {
+    drop_pointer(s.data)
+}
+
+fn drop_vec(v: Vec<Int>) {
+    for i in 0.to_int() {
+        if i < v.length {
+            drop_int(v.data.offset(i).read_int())
+        }
+    }
+    drop_pointer(v.data)
+}
+
+fn drop_square(s: Square) {
+    drop_int(s.side)
+}
+
+fn drop_circle(c: Circle) {
+    drop_int(c.radius)
+}
+
+fn main() {
+    drop_pointer(main.value)
+}

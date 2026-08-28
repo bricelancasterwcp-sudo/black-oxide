@@ -1,0 +1,13 @@
+fn main() {
+    let v = push(push(vec(), 3), 2)
+    let four = len(v)
+    let five = len(push(vec(), 5))
+    print(4 * four + 5 * five)
+}
+
+fn main() {
+    let v = push(push(vec(), 3), 2)
+    let four = len(v)
+    let five = len(push(vec(), 5))
+    print(4 * four + 5 * five)
+}

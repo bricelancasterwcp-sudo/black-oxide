@@ -1,0 +1,20 @@
+fn double(x: Int) -> Int {
+    2 * x
+}
+
+fn walk_and_sum(xs: &Vec<Int>) -> Int {
+    let mut total = 0
+    for x in &xs {
+        if x % 2 == 1 {
+            total = total + double(x)
+        }
+    }
+    total
+}
+
+fn main() {
+    let xs = push(push(push(vec(), 7), 4), 9)
+    let total = walk_and_sum(&xs)
+    print(total)
+    drop xs
+}

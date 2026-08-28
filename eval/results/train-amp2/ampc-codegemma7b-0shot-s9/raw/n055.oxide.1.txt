@@ -1,0 +1,18 @@
+fn main() {
+    let input = vec_str(text_input()?).expect("bad input: not a text line")
+    let mut cursor = 0
+    while cursor < input.len() {
+        if input.starts_at(cursor, "8") {
+            print("8\n")
+            cursor = cursor + 1
+        } else if input.starts_at(cursor, "oak") {
+            print("bad\n")
+            cursor = input.find_char_from(cursor, "\n").expect("bad input: missing newline") + 1
+        } else if input.starts_at(cursor, "15") {
+            print("15\n")
+            cursor = cursor + 2
+        } else {
+            panic("bad input: unexpected token")
+        }
+    }
+}

@@ -1,0 +1,30 @@
+fn smallest(a: Int, b: Int) -> Int {
+    if a < b {
+        a
+    } else {
+        b
+    }
+}
+
+fn gap(large: Int, small: Int) -> Int {
+    large - small
+}
+
+fn largest(a: Int, b: Int) -> Int {
+    if a > b {
+        a
+    } else {
+        b
+    }
+}
+
+fn main() {
+    let fig8 = 8
+    let fig3 = 3
+    let fig11 = 11
+    let fig6 = 6
+    let small = smallest(smallest(fig8, fig3), smallest(fig11, fig6))
+    let large = largest(largest(fig8, fig3), largest(fig11, fig6))
+    print(small)
+    print(gap(large, small))
+}

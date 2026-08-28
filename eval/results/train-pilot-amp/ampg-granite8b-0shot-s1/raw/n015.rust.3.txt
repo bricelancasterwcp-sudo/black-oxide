@@ -1,0 +1,5 @@
+fn main() {
+    let data = [1, 3, 4, 5, 6, 7];
+    let larger_than_four = data.iter().filter(|&&n| n > 4).copied().collect::<Vec<_>>();
+    println!("There are {} numbers larger than 4", larger_than_four.len());
+}

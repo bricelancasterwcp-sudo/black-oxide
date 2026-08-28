@@ -1,0 +1,249 @@
+fn main() {
+    let number = 9875
+    let sum = sum_digits(number)
+    print(sum)
+}
+
+fn sum_digits(n: Int) -> Int {
+    let mut sum = 0
+    let mut num = n
+    while num > 0 {
+        sum = sum + num % 10
+        num = num / 10
+    }
+    sum
+}
+
+fn print(x: Int) {
+    let s = int_to_str(x)
+    print_str(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut s = ""
+    let mut num = n
+    if num == 0 {
+        return "0"
+    }
+    while num > 0 {
+        s = str_char((num % 10) + 48) + s
+        num = num / 10
+    }
+    s
+}
+
+fn str_char(c: Int) -> Str {
+    let mut s = ""
+    s = s + &str_char_inner_c
+    s
+}
+
+fn str_char_inner_c(c: Int) -> Str {
+    let mut s = ""
+    let mut i = 0
+    while i < 256 {
+        if i == c {
+            return s
+        }
+        i = i + 1
+    }
+    ""
+}
+
+fn print_str(s: Str) {
+    let mut i = 0
+    while i < str_len(s) {
+        print_char(str_char_at(s, i))
+        i = i + 1
+    }
+}
+
+fn print_char(c: Str) {
+    let mut i = 0
+    while i < str_len(c) {
+        print_char_inner_c(str_char_at(c, i))
+        i = i + 1
+    }
+}
+
+fn print_char_inner_c(c: Str) {
+    let mut i = 0
+    while i < str_len(c) {
+        print_char_inner_inner_c(str_char_at(c, i))
+        i = i + 1
+    }
+}
+
+fn print_char_inner_inner_c(c: Str) {
+    let mut i = 0
+    while i < str_len(c) {
+        print_char_inner_inner_inner_c(str_char_at(c, i))
+        i = i + 1
+    }
+}
+
+fn print_char_inner_inner_inner_c(c: Str) {
+    let mut i = 0
+    while i < str_len(c) {
+        print_char_inner_inner_inner_inner_c(str_char_at(c, i))
+        i = i + 1
+    }
+}
+
+fn print_char_inner_inner_inner_inner_c(c: Str) {
+    let mut i = 0
+    while i < str_len(c) {
+        print_char_inner_inner_inner_inner_inner_c(str_char_at(c, i))
+        i = i + 1
+    }
+}
+
+fn print_char_inner_inner_inner_inner_inner_c(c: Str) {
+    let mut i = 0
+    while i < str_len(c) {
+        print_char_inner_inner_inner_inner_inner_inner_c(str_char_at(c, i))
+        i = i + 1
+    }
+}
+
+fn print_char_inner_inner_inner_inner_inner_inner_c(c: Str) {
+    let mut i = 0
+    while i < str_len(c) {
+        print_char_inner_inner_inner_inner_inner_inner_inner_c(str_char_at(c, i))
+        i = i + 1
+    }
+}
+
+fn print_char_inner_inner_inner_inner_inner_inner_inner_c(c: Str) {
+    let mut i = 0
+    while i < str_len(c) {
+        print_char_inner_inner_inner_inner_inner_inner_inner_inner_c(str_char_at(c, i))
+        i = i + 1
+    }
+}
+
+fn print_char_inner_inner_inner_inner_inner_inner_inner_inner_c(c: Str) {
+    let mut i = 0
+    while i < str_len(c) {
+        print_char_inner_inner_inner_inner_inner_inner_inner_inner_inner_c(str_char_at(c, i))
+        i = i + 1
+    }
+}
+
+fn print_char_inner_inner_inner_inner_inner_inner_inner_inner_inner_c(c: Str) {
+    let mut i = 0
+    while i < str_len(c) {
+        print_char_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_c(str_char_at(c, i))
+        i = i + 1
+    }
+}
+
+fn print_char_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_c(c: Str) {
+    let mut i = 0
+    while i < str_len(c) {
+        print_char_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_c(str_char_at(c, i))
+        i = i + 1
+    }
+}
+
+fn print_char_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_c(c: Str) {
+    let mut i = 0
+    while i < str_len(c) {
+        print_char_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_c(str_char_at(c, i))
+        i = i + 1
+    }
+}
+
+fn print_char_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_c(c: Str) {
+    let mut i = 0
+    while i < str_len(c) {
+        print_char_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_c(str_char_at(c, i))
+        i = i + 1
+    }
+}
+
+fn print_char_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_c(c: Str) {
+    let mut i = 0
+    while i < str_len(c) {
+        print_char_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_c(str_char_at(c, i))
+        i = i + 1
+    }
+}
+
+fn print_char_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_c(c: Str) {
+    let mut i = 0
+    while i < str_len(c) {
+        print_char_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_c(str_char_at(c, i))
+        i = i + 1
+    }
+}
+
+fn print_char_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_c(c: Str) {
+    let mut i = 0
+    while i < str_len(c) {
+        print_char_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_c(str_char_at(c, i))
+        i = i + 1
+    }
+}
+
+fn print_char_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_c(c: Str) {
+    let mut i = 0
+    while i < str_len(c) {
+        print_char_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_c(str_char_at(c, i))
+        i = i + 1
+    }
+}
+
+fn print_char_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_c(c: Str) {
+    let mut i = 0
+    while i < str_len(c) {
+        print_char_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_c(str_char_at(c, i))
+        i = i + 1
+    }
+}
+
+fn print_char_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_c(c: Str) {
+    let mut i = 0
+    while i < str_len(c) {
+        print_char_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_c(str_char_at(c, i))
+        i = i + 1
+    }
+}
+
+fn print_char_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_c(c: Str) {
+    let mut i = 0
+    while i < str_len(c) {
+        print_char_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_c(str_char_at(c, i))
+        i = i + 1
+    }
+}
+
+fn print_char_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_c(c: Str) {
+    let mut i = 0
+    while i < str_len(c) {
+        print_char_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_c(str_char_at(c, i))
+        i = i + 1
+    }
+}
+
+fn print_char_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_c(c: Str) {
+    let mut i = 0
+    while i < str_len(c) {
+        print_char_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_c(str_char_at(c, i))
+        i = i + 1
+    }
+}
+
+fn print_char_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_c(c: Str) {
+    let mut i = 0
+    while i < str_len(c) {
+        print_char_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_c(str_char_at(c, i))
+        i = i + 1
+    }
+}
+
+fn print_char_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_c(c: Str) {
+    let mut i = 0
+    while i < str_len(c) {
+        print_char_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_inner_c(str_char_at(c, i))
+        i = i

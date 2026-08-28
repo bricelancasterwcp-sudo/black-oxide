@@ -1,0 +1,277 @@
+struct List { head: Int, tail: Link }
+
+enum Link {
+    Nil,
+    Cons(Int, Link),
+}
+
+fn is_odd(n: Int) -> Bool {
+    n % 2 != 0
+}
+
+fn double(n: Int) -> Int {
+    2 * n
+}
+
+fn main() {
+    let list = Cons(7, Cons(4, Cons(9, Cons(10, Nil))))
+    let total_of_evens = walk(list, 0)
+    print(total_of_evens)
+}
+
+fn walk(list: Link, total_so_far: Int) -> Int {
+    match list {
+        Nil => total_so_far,
+        Cons(head, tail) => {
+            if !is_odd(head) {
+                total_so_far + double(head)
+            } else {
+                total_so_far
+            }
+            walk(tail, total_so_far)
+        },
+    }
+}
+
+fn main() {
+    let list = Cons(7, Cons(4, Cons(9, Cons(10, Nil))))
+    let total_of_evens = walk(list, 0)
+    print(total_of_evens)
+}
+
+fn walk(list: Link, total_so_far: Int) -> Int {
+    match list {
+        Nil => total_so_far,
+        Cons(head, tail) => {
+            if !is_odd(head) {
+                total_so_far + double(head)
+            } else {
+                total_so_far
+            }
+            walk(tail, total_so_far)
+        },
+    }
+}
+
+fn main() {
+    let list = Cons(7, Cons(4, Cons(9, Cons(10, Nil))))
+    let total_of_evens = walk(list, 0)
+    print(total_of_evens)
+}
+
+fn walk(list: Link, total_so_far: Int) -> Int {
+    match list {
+        Nil => total_so_far,
+        Cons(head, tail) => {
+            if !is_odd(head) {
+                total_so_far + double(head)
+            } else {
+                total_so_far
+            }
+            walk(tail, total_so_far)
+        },
+    }
+}
+
+fn main() {
+    let list = Cons(7, Cons(4, Cons(9, Cons(10, Nil))))
+    let total_of_evens = walk(list, 0)
+    print(total_of_evens)
+}
+
+fn walk(list: Link, total_so_far: Int) -> Int {
+    match list {
+        Nil => total_so_far,
+        Cons(head, tail) => {
+            if !is_odd(head) {
+                total_so_far + double(head)
+            } else {
+                total_so_far
+            }
+            walk(tail, total_so_far)
+        },
+    }
+}
+
+fn main() {
+    let list = Cons(7, Cons(4, Cons(9, Cons(10, Nil))))
+    let total_of_evens = walk(list, 0)
+    print(total_of_evens)
+}
+
+fn walk(list: Link, total_so_far: Int) -> Int {
+    match list {
+        Nil => total_so_far,
+        Cons(head, tail) => {
+            if !is_odd(head) {
+                total_so_far + double(head)
+            } else {
+                total_so_far
+            }
+            walk(tail, total_so_far)
+        },
+    }
+}
+
+fn main() {
+    let list = Cons(7, Cons(4, Cons(9, Cons(10, Nil))))
+    let total_of_evens = walk(list, 0)
+    print(total_of_evens)
+}
+
+fn walk(list: Link, total_so_far: Int) -> Int {
+    match list {
+        Nil => total_so_far,
+        Cons(head, tail) => {
+            if !is_odd(head) {
+                total_so_far + double(head)
+            } else {
+                total_so_far
+            }
+            walk(tail, total_so_far)
+        },
+    }
+}
+
+fn main() {
+    let list = Cons(7, Cons(4, Cons(9, Cons(10, Nil))))
+    let total_of_evens = walk(list, 0)
+    print(total_of_evens)
+}
+
+fn walk(list: Link, total_so_far: Int) -> Int {
+    match list {
+        Nil => total_so_far,
+        Cons(head, tail) => {
+            if !is_odd(head) {
+                total_so_far + double(head)
+            } else {
+                total_so_far
+            }
+            walk(tail, total_so_far)
+        },
+    }
+}
+
+fn main() {
+    let list = Cons(7, Cons(4, Cons(9, Cons(10, Nil))))
+    let total_of_evens = walk(list, 0)
+    print(total_of_evens)
+}
+
+fn walk(list: Link, total_so_far: Int) -> Int {
+    match list {
+        Nil => total_so_far,
+        Cons(head, tail) => {
+            if !is_odd(head) {
+                total_so_far + double(head)
+            } else {
+                total_so_far
+            }
+            walk(tail, total_so_far)
+        },
+    }
+}
+
+fn main() {
+    let list = Cons(7, Cons(4, Cons(9, Cons(10, Nil))))
+    let total_of_evens = walk(list, 0)
+    print(total_of_evens)
+}
+
+fn walk(list: Link, total_so_far: Int) -> Int {
+    match list {
+        Nil => total_so_far,
+        Cons(head, tail) => {
+            if !is_odd(head) {
+                total_so_far + double(head)
+            } else {
+                total_so_far
+            }
+            walk(tail, total_so_far)
+        },
+    }
+}
+
+fn main() {
+    let list = Cons(7, Cons(4, Cons(9, Cons(10, Nil))))
+    let total_of_evens = walk(list, 0)
+    print(total_of_evens)
+}
+
+fn walk(list: Link, total_so_far: Int) -> Int {
+    match list {
+        Nil => total_so_far,
+        Cons(head, tail) => {
+            if !is_odd(head) {
+                total_so_far + double(head)
+            } else {
+                total_so_far
+            }
+            walk(tail, total_so_far)
+        },
+    }
+}
+
+fn main() {
+    let list = Cons(7, Cons(4, Cons(9, Cons(10, Nil))))
+    let total_of_evens = walk(list, 0)
+    print(total_of_evens)
+}
+
+fn walk(list: Link, total_so_far: Int) -> Int {
+    match list {
+        Nil => total_so_far,
+        Cons(head, tail) => {
+            if !is_odd(head) {
+                total_so_far + double(head)
+            } else {
+                total_so_far
+            }
+            walk(tail, total_so_far)
+        },
+    }
+}
+
+fn main() {
+    let list = Cons(7, Cons(4, Cons(9, Cons(10, Nil))))
+    let total_of_evens = walk(list, 0)
+    print(total_of_evens)
+}
+
+fn walk(list: Link, total_so_far: Int) -> Int {
+    match list {
+        Nil => total_so_far,
+        Cons(head, tail) => {
+            if !is_odd(head) {
+                total_so_far + double(head)
+            } else {
+                total_so_far
+            }
+            walk(tail, total_so_far)
+        },
+    }
+}
+
+fn main() {
+    let list = Cons(7, Cons(4, Cons(9, Cons(10, Nil))))
+    let total_of_evens = walk(list, 0)
+    print(total_of_evens)
+}
+
+fn walk(list: Link, total_so_far: Int) -> Int {
+    match list {
+        Nil => total_so_far,
+        Cons(head, tail) => {
+            if !is_odd(head) {
+                total_so_far + double(head)
+            } else {
+                total_so_far
+            }
+            walk(tail, total_so_far)
+        },
+    }
+}
+
+fn main() {
+    let list = Cons(7, Cons(4, Cons(9, Cons(10, Nil

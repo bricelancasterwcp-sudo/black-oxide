@@ -1,0 +1,7 @@
+fn black_oxide() {
+    print_str("wordoxideblack")
+}
+
+fn main() {
+    black_oxide()
+}

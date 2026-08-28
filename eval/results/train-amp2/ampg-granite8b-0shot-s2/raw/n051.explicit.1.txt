@@ -1,0 +1,13 @@
+fn print(x: &Str) {
+    print_str(x)
+}
+
+fn main() {
+    print("g")
+    print("r")
+    print("a")
+    print("n")
+    print("i")
+    print("t")
+    print("e")
+}

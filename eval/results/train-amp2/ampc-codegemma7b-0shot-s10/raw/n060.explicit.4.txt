@@ -1,0 +1,27 @@
+fn count_digits(text: &Str) -> Int {
+    let mut total = 0
+    let mut count = 0
+    for c in text.chars() {
+        if c >= b48 && c <= b57 {
+            total = total + (c - b48)
+            count = count + 1
+        }
+    }
+    (total)
+}
+
+fn count_digit_count(text: &Str) -> Int {
+    let mut count = 0
+    for c in text.chars() {
+        if c >= b48 && c <= b57 {
+            count = count + 1
+        }
+    }
+    (count)
+}
+
+fn main() {
+    let text = "a1b22"
+    print(count_digits(&text))
+    print(count_digit_count(&text))
+}

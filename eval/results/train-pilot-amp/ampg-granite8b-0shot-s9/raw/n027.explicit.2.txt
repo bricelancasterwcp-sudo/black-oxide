@@ -1,0 +1,7 @@
+fn main() {
+    let cat = "cat"
+    print(cat.len())
+    print_str(cat.get(0))
+    print_str(cat.get(1))
+    print_str(cat.get(2))
+}

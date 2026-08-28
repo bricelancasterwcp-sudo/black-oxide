@@ -1,0 +1,17 @@
+fn area(length: Int, width: Int) -> Int {
+    length * width
+}
+
+fn perimeter(length: Int, width: Int) -> Int {
+    2 * (length + width)
+}
+
+fn main() {
+    let rect = (9 * 3)
+    let area_val = area(9, 3)
+    let perimeter_val = perimeter(9, 3)
+    print_str("Area: ")
+    print(area_val)
+    print_str("Perimeter: ")
+    print(perimeter_val)
+}

@@ -1,0 +1,5 @@
+fn main() {
+    let four_unit = 4 * 3
+    let five_unit = 5 * 2
+    print(four_unit + five_unit)
+}

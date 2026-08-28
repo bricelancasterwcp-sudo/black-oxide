@@ -1,0 +1,12 @@
+fn main() {
+    let mut total = 0
+    let mut count = 0
+    for num in &vec_expr {
+        if letSome(n) == num {
+            total = total + n
+            count = count + 1
+        }
+    }
+    print(total)
+    print(count)
+}

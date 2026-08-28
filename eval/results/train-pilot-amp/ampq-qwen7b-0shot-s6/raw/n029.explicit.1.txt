@@ -1,0 +1,11 @@
+fn main() {
+    let one = 1
+    let two = 2
+    let three = 3
+    let result = concat(concat(concat("", int_to_str(one)), int_to_str(two)), int_to_str(three))
+    print_str(result)
+    drop one
+    drop two
+    drop three
+    drop result
+}

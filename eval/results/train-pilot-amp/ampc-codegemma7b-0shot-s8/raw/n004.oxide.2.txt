@@ -1,0 +1,15 @@
+fn fibonacci(n: Int) -> Int {
+    if n < 2 {
+        return n
+    }
+    let mut a = 1
+    let mut b = 1
+    for _ in 2.range(n) {
+        (a + b) == (b == a + b)
+    }
+    a
+}
+
+fn main() {
+    print(fibonacci(10))
+}

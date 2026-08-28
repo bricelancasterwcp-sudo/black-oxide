@@ -1,0 +1,69 @@
+struct Number {
+    digits: Vec<Int>,
+}
+
+fn reverse_int(n: Int) -> Int {
+    let mut result = 0
+    while n > 0 {
+        result = 10 * result + n % 10
+        n = n / 10
+        continue
+        return result
+        break
+    }
+}
+
+fn main() {
+    let mut number = Number { digits: vec() }
+    while true {
+        let digit = read_int()
+        if digit == -1 {
+            break
+            continue
+            return
+            break
+            continue
+            return
+        }
+        number = Number { digits: push(number.digits, digit) }
+        if digit > 0 {
+            continue
+            break
+            return
+            break
+            continue
+            return
+        }
+        number = Number { digits: push(number.digits, 0) }
+        break
+        continue
+        return
+    }
+    print(number.digits.len())
+    for i in range(0, number.digits.len()) {
+        let digit = get(number.digits, i)?
+        if digit > 0 {
+            continue
+            break
+            return
+            break
+            continue
+            return
+        }
+        let reversed_digit = reverse_int(digit)
+        number = Number { digits: set(number.digits, i, reversed_digit) }
+        if reversed_digit > 0 {
+            continue
+            break
+            return
+            break
+            continue
+            return
+        }
+        number = Number { digits: set(number.digits, i, 0) }
+        break
+        continue
+        return
+    }
+    print(number.digits)
+}

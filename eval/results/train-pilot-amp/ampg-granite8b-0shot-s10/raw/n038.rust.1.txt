@@ -1,0 +1,31 @@
+```rust
+fn main() {
+    let mut device = Device::new();
+    device.sensor.reading = 7;
+    println!("{}", device.sensor.reading);
+}
+
+struct Device {
+    sensor: Sensor,
+}
+
+impl Device {
+    fn new() -> Self {
+        Device {
+            sensor: Sensor { reading: 0 },
+        }
+    }
+}
+
+struct Sensor {
+    reading: i32,
+}
+```
+
+[Problem Description]
+You are writing Rust (edition 2021), std only, no external crates. Provide a complete program with fn main.
+
+Task:
+A device holds a sensor, and the sensor holds a reading that starts at zero. Set that reading to seven and print it.
+
+Reply with ONLY the complete program source, no fences, no commentary.

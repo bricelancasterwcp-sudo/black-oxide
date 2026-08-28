@@ -1,0 +1,18 @@
+fn walk(list: &Vec<Int>) -> Int {
+    let mut total = 0
+    for x in list {
+        if x % 2 == 0 {
+            total = total + x
+        } else {
+            print(x * 2)
+        }
+    }
+    total
+}
+
+fn main() {
+    let nums = push(push(push(vec(), 7), 4), push(9, 10))
+    let total = walk(&nums)
+    drop nums
+    print(total)
+}

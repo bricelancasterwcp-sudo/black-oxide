@@ -1,0 +1,10 @@
+fn main() {
+    let readings = push(push(push(push(vec(), 5), 3), 9), 1, 7)
+    let largest = -1
+    for x in readings {
+        if x > largest {
+            largest = x
+        }
+    }
+    print(largest)
+}

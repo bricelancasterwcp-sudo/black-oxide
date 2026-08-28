@@ -1,0 +1,485 @@
+fn main() {
+    let mut device = Device { sensor: Sensor { reading: 0 } }
+    device.sensor.reading = 7
+    print(device.sensor.reading)
+}
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    "0"
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    vec(x, v)
+}
+
+fn vec() -> Vec<Int> {
+    vec()
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    Some(v.first().cloned())
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    vec()
+}
+
+fn clone(x: Int) -> Int {
+    x
+}
+
+fn str_len(s: Str) -> Int {
+    0
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    a
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    vec()
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    Some(0)
+}
+
+fn to_float(n: Int) -> Float {
+    0.0
+}
+
+fn trunc(x: Float) -> Int {
+    0
+}
+
+struct Float { x: Int }
+
+struct Int { x: Int }
+
+struct Str { x: String }
+
+struct Vec { x: Vec<Int> }
+
+struct Option { x: Option<Int> }
+
+struct Result { x: Result<Int, String> }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+struct Sensor

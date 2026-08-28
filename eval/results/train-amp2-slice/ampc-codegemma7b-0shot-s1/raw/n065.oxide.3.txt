@@ -1,0 +1,11 @@
+fn readings() -> Vec<Int> {
+    vec(6, 11, 3, 14, 9)
+}
+
+fn main() {
+    let v = readings()
+    let c = v.iter().filter(x && x > 5).count()
+    let h = v.iter().max().unwrap_or_default()
+    print(c)
+    print(h)
+}

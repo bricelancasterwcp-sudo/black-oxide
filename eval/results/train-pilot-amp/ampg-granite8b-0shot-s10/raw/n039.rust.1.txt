@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut list = Vec::new();
+    list.push(1);
+    list.push(2);
+    match list.get(5) {
+        Some(&val) => println!("entry at position five is {}", val),
+        None => println!("no entry at position five"),
+    }
+}
+```

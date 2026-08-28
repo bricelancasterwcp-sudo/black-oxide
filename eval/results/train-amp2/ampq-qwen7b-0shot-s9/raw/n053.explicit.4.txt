@@ -1,0 +1,14 @@
+fn reverse_print(s: &Str) -> Str {
+    let chars: Vec<Str> = chars(s).collect()
+    let reversed: Vec<Str> = chars.iter().cloned().rev().collect()
+    concat(reversed.join(""), "")
+}
+
+fn main() {
+    let word = "drum"
+    let reversed = reverse_print(word)
+    print_str(&reversed)
+    drop reversed
+    print_str(word)
+    drop word
+}

@@ -1,0 +1,21 @@
+fn main() {
+    let sensor = Reading { value: 0 }
+    sensor.value = 7
+    print(sensor.value)
+    drop sensor
+}
+
+struct Reading {
+    value: Int,
+}
+
+struct Device {
+    sensor: Reading,
+}
+
+fn main() {
+    let device = Device { sensor: Reading { value: 0 } }
+    device.sensor.value = 7
+    print(device.sensor.value)
+    drop device
+}

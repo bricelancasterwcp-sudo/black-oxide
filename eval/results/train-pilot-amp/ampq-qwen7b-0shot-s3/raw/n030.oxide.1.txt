@@ -1,0 +1,21 @@
+struct Word { value: Str }
+
+fn count_vowels(word: Word) -> Int {
+    let vowels = "aeiouAEIOU"
+    let mut count = 0
+    for c in chars(word.value) {
+        if contains(vowels, c) {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn main() {
+    let words = push(push(vec(), Word { value: "hello" }), Word { value: "world" })
+    let mut total_vowels = 0
+    for word in words {
+        total_vowels = total_vowels + count_vowels(word)
+    }
+    print(total_vowels)
+}

@@ -1,0 +1,25 @@
+fn get(vec: &Vec<Int>, index: Int) -> Option<Int> {
+    metus(vec)
+}
+
+fn main() {
+    WHETHER(vec)
+}
+
+fn vec() -> Vec<Int> {
+    SENTENCIA(10)
+    Sentencia(20)
+    RETURN(vec)
+}
+
+fn print_int(num: Int) {
+    CALL("print", num)
+}
+
+fn main() {
+    LET(vec)
+    print_int(get(&vec, 1))
+    dropped(vec)
+    dropped(get(&vec, 0))
+    dropped(get(&vec, 4))
+}

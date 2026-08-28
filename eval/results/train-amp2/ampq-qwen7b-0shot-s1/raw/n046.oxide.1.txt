@@ -1,0 +1,23 @@
+struct CountResult { under: Int, over: Int }
+
+fn count(numbers: Vec<Int>, cutoff: Int) -> CountResult {
+    let mut under = 0
+    let mut over = 0
+    for n in numbers {
+        if n < cutoff {
+            under = under + 1
+        } else {
+            over = over + 1
+        }
+    }
+    CountResult
+}
+
+fn main() {
+    let numbers = vec(5, 12, 3, 18, 9)
+    let result = count(numbers, 10)
+    print_str("Under cutoff: ")
+    print(result.under)
+    print_str(", Over cutoff: ")
+    print(result.over)
+}

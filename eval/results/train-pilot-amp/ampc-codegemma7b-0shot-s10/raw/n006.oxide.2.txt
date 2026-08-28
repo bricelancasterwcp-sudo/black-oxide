@@ -1,0 +1,10 @@
+fn main() {
+    let mut x = 1
+    loop
+    if x > 100 {
+        breakx = x / 2
+    } else {
+        x = x * 2
+    }
+    print(x)
+}

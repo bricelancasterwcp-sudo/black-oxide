@@ -1,0 +1,11 @@
+use std::io;
+
+fn main() {
+    let four_line_value = 4 * 3;
+    let five_line_value = 5 * 2;
+    let total_value = four_line_value + five_line_value;
+
+    println!("Four line value: {}", four_line_value);
+    println!("Five line value: {}", five_line_value);
+    println!("Total value: {}", total_value);
+}

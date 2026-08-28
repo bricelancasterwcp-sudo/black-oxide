@@ -1,0 +1,83 @@
+fn main() {
+    let readings = vec(6, 11, 3, 14, 9)
+    let over_five = filter(readings, n || n > 5)
+    print(len(over_five))
+    if len(over_five) > 0 {
+        print(max(over_five))
+    }
+}
+
+fn filter(v: Vec<Int>, p: Int) -> Vec<Int> {
+    let mut out = vec()
+    for x in v {
+        if p(x) {
+            out = push(out, x)
+        }
+    }
+    out
+}
+
+fn max(v: Vec<Int>) -> Int {
+    let mut m = get(v, 0)?
+    for x in v {
+        if x > m {
+            m = x
+        }
+    }
+    m
+}
+
+fn print(x: Int) {
+    println(to_string(x))
+}
+
+fn println(s: Str) {
+    system_print(s)
+    system_print("\n")
+}
+
+fn system_print(s: Str) {
+    call("system::print", s)
+}
+
+fn call(f: Str, a: Str) -> Str {
+    a
+}
+
+fn to_string(n: Int) -> Str {
+    n
+}
+
+fn map(v: Vec<Int>, f: Int) -> Vec<Int> {
+    let mut out = vec()
+    for x in v {
+        out = push(out, f(x))
+    }
+    out
+}
+
+fn reduce(v: Vec<Int>, f: Int, e: Int) -> Int {
+    let mut acc = e
+    for x in v {
+        acc = f(acc, x)
+    }
+    acc
+}
+
+fn sum(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn multiply(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn square(x: Int) -> Int {
+    x * x
+}
+
+fn main() {
+    let numbers = vec(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+    let squares = map(numbers, square)
+    print(sum(reduce(squares, sum, 0), 1))
+}

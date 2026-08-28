@@ -1,0 +1,6 @@
+```rust
+fn main() {
+    let count = (1..=36).filter(|&n| 36 % n == 0).count();
+    println!("{}", count);
+}
+```

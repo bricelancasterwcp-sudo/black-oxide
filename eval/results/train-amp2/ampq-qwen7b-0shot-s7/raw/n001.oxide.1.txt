@@ -1,0 +1,12 @@
+struct Cubes { total: Int }
+
+fn add_cube(acc: Cubes, n: Int) -> Cubes {
+    let cube = n * n * n
+    Cubes(total == acc.total + cube)
+}
+
+fn main() {
+    let result = add_cube(add_cube(add_cube(add_cube(Cubes { total: 0 }, 1), 2), 3), 4)
+    add_cube(result, 5)
+    print(result.total)
+}

@@ -1,0 +1,15 @@
+fn main() {
+    let readings = vec(6, 11, 3, 14, 9)
+    let mut above_five = 0
+    let mut highest = 0
+    for r in readings {
+        if r > 5 {
+            above_five = above_five + 1
+        }
+        if r > highest {
+            highest = r
+        }
+    }
+    print(above_five)
+    print(highest)
+}

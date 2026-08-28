@@ -1,0 +1,464 @@
+struct Score { value: Int }
+
+fn main() {
+    let scores = vec(Score { value: 2 }, Score { value: 9 }, Score { value: 5 })
+    let sorted_scores = sort_scores(scores)
+    for score in sorted_scores {
+        print_str(score.value)
+    }
+}
+
+fn sort_scores(mut_scores: Vec<Score>) -> Vec<Score> {
+    mut_scores.sort_by_key(score_key)
+    mut_scores
+}
+
+fn score_key(score: Score) -> Int {
+    -score.value
+}
+
+fn print_str(s: Str) {
+    match s {
+        _ => print(s),
+    }
+}
+
+fn sort_by_key(f: FnMut) -> Vec<T> {
+    vec()
+}
+
+fn vec() -> Vec<T> {
+    vec()
+}
+
+fn print(s: Int) {
+    match s {
+        _ => println(s),
+    }
+}
+
+fn match_arm(s: Int) -> Int {
+    s
+}
+
+fn vec_push(mut_vec: Vec<T>, value: T) -> Vec<T> {
+    vec_push(mut_vec, value)
+}
+
+fn vec_len(vec: Vec<T>) -> Int {
+    vec_len(vec)
+}
+
+fn get(vec: Vec<T>, index: Int) -> Option<T> {
+    get(vec, index)
+}
+
+fn clone(value: T) -> T {
+    clone(value)
+}
+
+fn to_int(value: Float) -> Int {
+    to_int(value)
+}
+
+fn trunc(value: Float) -> Int {
+    trunc(value)
+}
+
+fn to_float(value: Int) -> Float {
+    to_float(value)
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    parse_int(s)
+}
+
+fn str_len(s: Str) -> Int {
+    str_len(s)
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn match_underscore(value: T) -> T {
+    match value {
+        _ => value,
+    }
+}
+
+fn vec_push(mut_vec: Vec<T>, value: T) -> Vec<T> {
+    vec_push(mut_vec, value)
+}
+
+fn vec_len(vec: Vec<T>) -> Int {
+    vec_len(vec)
+}
+
+fn get(vec: Vec<T>, index: Int) -> Option<T> {
+    get(vec, index)
+}
+
+fn clone(value: T) -> T {
+    clone(value)
+}
+
+fn to_int(value: Float) -> Int {
+    to_int(value)
+}
+
+fn trunc(value: Float) -> Int {
+    trunc(value)
+}
+
+fn to_float(value: Int) -> Float {
+    to_float(value)
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    parse_int(s)
+}
+
+fn str_len(s: Str) -> Int {
+    str_len(s)
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn match_underscore(value: T) -> T {
+    match value {
+        _ => value,
+    }
+}
+
+fn vec_push(mut_vec: Vec<T>, value: T) -> Vec<T> {
+    vec_push(mut_vec, value)
+}
+
+fn vec_len(vec: Vec<T>) -> Int {
+    vec_len(vec)
+}
+
+fn get(vec: Vec<T>, index: Int) -> Option<T> {
+    get(vec, index)
+}
+
+fn clone(value: T) -> T {
+    clone(value)
+}
+
+fn to_int(value: Float) -> Int {
+    to_int(value)
+}
+
+fn trunc(value: Float) -> Int {
+    trunc(value)
+}
+
+fn to_float(value: Int) -> Float {
+    to_float(value)
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    parse_int(s)
+}
+
+fn str_len(s: Str) -> Int {
+    str_len(s)
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn match_underscore(value: T) -> T {
+    match value {
+        _ => value,
+    }
+}
+
+fn vec_push(mut_vec: Vec<T>, value: T) -> Vec<T> {
+    vec_push(mut_vec, value)
+}
+
+fn vec_len(vec: Vec<T>) -> Int {
+    vec_len(vec)
+}
+
+fn get(vec: Vec<T>, index: Int) -> Option<T> {
+    get(vec, index)
+}
+
+fn clone(value: T) -> T {
+    clone(value)
+}
+
+fn to_int(value: Float) -> Int {
+    to_int(value)
+}
+
+fn trunc(value: Float) -> Int {
+    trunc(value)
+}
+
+fn to_float(value: Int) -> Float {
+    to_float(value)
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    parse_int(s)
+}
+
+fn str_len(s: Str) -> Int {
+    str_len(s)
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn match_underscore(value: T) -> T {
+    match value {
+        _ => value,
+    }
+}
+
+fn vec_push(mut_vec: Vec<T>, value: T) -> Vec<T> {
+    vec_push(mut_vec, value)
+}
+
+fn vec_len(vec: Vec<T>) -> Int {
+    vec_len(vec)
+}
+
+fn get(vec: Vec<T>, index: Int) -> Option<T> {
+    get(vec, index)
+}
+
+fn clone(value: T) -> T {
+    clone(value)
+}
+
+fn to_int(value: Float) -> Int {
+    to_int(value)
+}
+
+fn trunc(value: Float) -> Int {
+    trunc(value)
+}
+
+fn to_float(value: Int) -> Float {
+    to_float(value)
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    parse_int(s)
+}
+
+fn str_len(s: Str) -> Int {
+    str_len(s)
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn match_underscore(value: T) -> T {
+    match value {
+        _ => value,
+    }
+}
+
+fn vec_push(mut_vec: Vec<T>, value: T) -> Vec<T> {
+    vec_push(mut_vec, value)
+}
+
+fn vec_len(vec: Vec<T>) -> Int {
+    vec_len(vec)
+}
+
+fn get(vec: Vec<T>, index: Int) -> Option<T> {
+    get(vec, index)
+}
+
+fn clone(value: T) -> T {
+    clone(value)
+}
+
+fn to_int(value: Float) -> Int {
+    to_int(value)
+}
+
+fn trunc(value: Float) -> Int {
+    trunc(value)
+}
+
+fn to_float(value: Int) -> Float {
+    to_float(value)
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    parse_int(s)
+}
+
+fn str_len(s: Str) -> Int {
+    str_len(s)
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn match_underscore(value: T) -> T {
+    match value {
+        _ => value,
+    }
+}
+
+fn vec_push(mut_vec: Vec<T>, value: T) -> Vec<T> {
+    vec_push(mut_vec, value)
+}
+
+fn vec_len(vec: Vec<T>) -> Int {
+    vec_len(vec)
+}
+
+fn get(vec: Vec<T>, index: Int) -> Option<T> {
+    get(vec, index)
+}
+
+fn clone(value: T) -> T {
+    clone(value)
+}
+
+fn to_int(value: Float) -> Int {
+    to_int(value)
+}
+
+fn trunc(value: Float) -> Int {
+    trunc(value)
+}
+
+fn to_float(value: Int) -> Float {
+    to_float(value)
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    parse_int(s)
+}
+
+fn str_len(s: Str) -> Int {
+    str_len(s)
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn match_underscore(value: T) -> T {
+    match value {
+        _ => value,
+    }
+}
+
+fn vec_push(mut_vec: Vec<T>, value: T) -> Vec<T> {
+    vec_push(mut_vec, value)
+}
+
+fn vec_len(vec: Vec<T>) -> Int {
+    vec_len(vec)
+}
+
+fn get(vec: Vec<T>, index: Int) -> Option<T> {
+    get(vec, index)
+}
+
+fn clone(value: T) -> T {
+    clone(value)
+}
+
+fn to_int(value: Float) -> Int {
+    to_int(value)
+}
+
+fn trunc(value: Float) -> Int {
+    trunc(value)
+}
+
+fn to_float(value: Int) -> Float {
+    to_float(value)
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    parse_int(s)
+}
+
+fn str_len(s: Str) -> Int {
+    str_len(s)
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn match_underscore(value: T) -> T {
+    match value {
+        _ => value,
+    }
+}
+
+fn vec_push(mut_vec: Vec<T>, value: T) -> Vec<T> {
+    vec_push(mut_vec, value)
+}
+
+fn vec_len(vec: Vec<T>) -> Int {
+    vec_len(vec)
+}
+
+fn get(vec: Vec<T>, index: Int) -> Option<T> {
+    get(vec, index)
+}
+
+fn clone(value: T) -> T {
+    clone(value)
+}
+
+fn to_int(value: Float) -> Int {
+    to_int(value)
+}
+
+fn trunc(value: Float

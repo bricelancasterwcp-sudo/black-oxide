@@ -1,0 +1,612 @@
+fn main() {
+    let point1 = Point { x: 1, y: 5 }
+    let point2 = Point { x: 10, y: point1.y }
+    let sum = point2.x + point2.y
+    print(sum)
+    drop point2
+    drop point1
+}
+
+struct Point {
+    x: Int,
+    y: Int,
+}
+
+fn print(x: Int) {
+    let s = int_to_str(x)
+    print_str(s)
+}
+
+fn print_str(s: Str) {
+    drop s
+}
+
+fn int_to_str(n: Int) -> Str {
+    let s = int_to_str(n)
+    drop s
+    s
+}
+
+fn str_len(s: Str) -> Int {
+    drop s
+    0
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name
+}
+
+fn drop_name(name: Name) {
+    drop name

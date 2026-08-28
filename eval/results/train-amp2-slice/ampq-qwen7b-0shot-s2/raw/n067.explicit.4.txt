@@ -1,0 +1,34 @@
+fn double_if_odd(x: Int) -> Int {
+    if x % 2 != 0 {
+        x * 2
+    } else {
+        x
+    }
+}
+
+fn sum_evens(v: &Vec<Int>) -> Int {
+    let mut total = 0
+    for x in v {
+        if x % 2 == 0 {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn walk_and_print(v: Vec<Int>) {
+    let mut total = 0
+    for x in v {
+        let doubled = double_if_odd(x)
+        if doubled != x {
+            print(int_to_str(doubled))
+        }
+    }
+    print(int_to_str(sum_evens(&v)))
+}
+
+fn main() {
+    let nums = push(push(push(push(vec(), 7), 4), 9), 10)
+    walk_and_print(nums)
+    drop nums
+}

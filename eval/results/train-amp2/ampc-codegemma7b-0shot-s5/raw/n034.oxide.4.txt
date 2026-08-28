@@ -1,0 +1,111 @@
+fn second(v: Vec<Int>) -> Option<Int> {
+    let x = get(v, 1).clone()?
+    Some(x + 1)
+}
+
+fn main() {
+    print(second(vec(7, 8, 9)))
+    print(second(vec(7)))
+    print(second(vec()))
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    if i < len(v) {
+        Some(v.get(i).unwrap())
+    } else {
+        None
+    }
+}
+
+fn len(v: Vec<Int>) -> Int {
+    v.len()
+}
+
+fn unwrap(o: Option<Int>) -> Int {
+    match o {
+        Some(x) => x,
+        None => panic(),
+        _ => unreachable(),
+    }
+}
+
+fn print(o: Option<Int>) {
+    match o {
+        Some(x) => print(x),
+        None => print_str("None"),
+    }
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn println(s: Str) {
+    print(s)
+    print("\n")
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut new = v
+    push(new, x)
+    new
+}
+
+fn push(mutv: Vec<Int>, x: Int) -> Vec<Int> {
+    v.push(x)
+    v
+}
+
+fn clone(x: Int) -> Int {
+    x
+}
+
+fn str_len(s: Str) -> Int {
+    s.len()
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    a + b
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut v = vec()
+    for c in s.chars() {
+        v.push(c)
+    }
+    v
+}
+
+fn int_to_str(n: Int) -> Str {
+    n.to_string()
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    let mut n = 0
+    for c in s.chars() {
+        let x = c.to_digit(10)
+        if x == None {
+            return None
+        }
+        n = n * 10 + x.unwrap()
+    }
+    Some(n)
+}
+
+fn to_float(n: Int) -> Float {
+    n.to_float()
+}
+
+fn trunc(x: Float) -> Int {
+    x.trunc()
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(vec(), 3), 42) }
+    print(first_big(r.values))            // field access copies: r stays usable
+    let r2 = Reading { label: "lab2", ..r }
+    match second(r2.values) {
+        Some(n) => print(n),
+        None => print_str("too short"),
+    }
+}

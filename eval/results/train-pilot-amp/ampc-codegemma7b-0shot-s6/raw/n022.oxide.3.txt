@@ -1,0 +1,4 @@
+fn main() {
+    let joined = "black" + "oxide"
+    print(joined)
+}

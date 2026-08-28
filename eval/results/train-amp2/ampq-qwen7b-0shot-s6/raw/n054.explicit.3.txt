@@ -1,0 +1,23 @@
+fn count_letters(s: &Str) -> Vec<Int> {
+    let mut vowels = 0
+    let mut consonants = 0
+    for c in s.chars() {
+        match c {
+            _ => {
+                if "aeiouAEIOU".contains(c) {
+                    vowels = vowels + 1
+                } else {
+                    consonants = consonants + 1
+                }
+            },
+        }
+    }
+    vec(vowels, consonants)
+}
+
+fn main() {
+    let s = "keyboard"
+    let counts = count_letters(&s)
+    print(counts.get(0).unwrap())
+    print(counts.get(1).unwrap())
+}

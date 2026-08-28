@@ -1,0 +1,13 @@
+fn seq_tenth() -> Int {
+    let mut a = 1
+    let mut b = 1
+    for _ in 0 < 10 {
+        b = a + b
+        a = b - a
+    }
+    b
+}
+
+fn main() {
+    print(seq_tenth())
+}

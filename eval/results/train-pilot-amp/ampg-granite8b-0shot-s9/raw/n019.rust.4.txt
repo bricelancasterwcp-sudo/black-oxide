@@ -1,0 +1,7 @@
+fn main() {
+    let list1 = vec![1, 2, 3];
+    let list2 = vec![4, 5];
+
+    let count = list1.iter().filter(|&num| list2.contains(num)).count();
+    println!("Number of common elements: {}", count);
+}

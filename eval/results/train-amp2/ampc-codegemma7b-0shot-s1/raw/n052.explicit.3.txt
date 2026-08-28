@@ -1,0 +1,78 @@
+fn find_n_positions(word: &Str) -> Vec<Int> {
+    let mut positions = vecnew()
+    for i in 0.to_int(word.len()) {
+        if word.chars().nth(i).unwrap() == "n" {
+            positions.push(i)
+        }
+    }
+    positions
+}
+
+fn main() {
+    let word = "banana"
+    let positions = find_n_positions(word)
+    for position in positions {
+        print(position)
+    }
+}
+
+fn vecnew() -> Vec<Int> {
+    return vec()
+}
+
+fn nth(v: &Vec<Int>, n: Int) -> Option<Int> {
+    if n < 0 || n >= v.len() {
+        return None
+    }
+    return Some(v.get(n))
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    return v.len()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut new_v = v
+    new_v.push(x)
+    return new_v
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn to_int(x: Int, y: Int) -> Int {
+    return x + y
+}
+
+fn unwrap(v: Option<Int>) -> Int {
+    return v.unwrap()
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    return s.chars().map(char_to_str).collect()
+}
+
+fn char_to_str(c: Char) -> Str {
+    return c.to_string()
+}
+
+fn nth_unwrap(v: &Vec<Str>, n: Int) -> Str {
+    return nth(v, n).unwrap()
+}
+
+fn str(s: &Str) -> Str {
+    return s.to_string()
+}
+
+fn equals(a: &Str, b: &Str) -> Bool {
+    return a == b
+}
+
+fn main() {
+    let word = "banana"
+    let positions = find_n_positions(word)
+    for position in positions {
+        print(position)
+    }
+}

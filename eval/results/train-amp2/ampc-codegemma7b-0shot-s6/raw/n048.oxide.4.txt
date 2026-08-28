@@ -1,0 +1,297 @@
+fn main() {
+    let v = vec(4, 7, 4, 9, 4)
+    let mut acc = 0
+    for x in v {
+        if x == 4 {
+            print(acc)
+            acc = acc + 1
+        }
+    }
+    print(acc)
+}
+
+fn vec(x: Int, xs: Vec<Int>) -> Vec<Int> {
+    push(xs, x)
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut v2 = v
+    v2.push(x)
+    v2
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    let stdout = std_io_stdout()
+    write(stdout, s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    format("%d", n)
+}
+
+fn write(stdout: StdOut, s: Str) {
+    stdout.write_str(s)
+}
+
+fn std_io_stdout() -> StdOut {
+    std_io_stdout_locked(std_io_stdout_lock())
+}
+
+fn std_io_stdout_locked(stdout: StdOutLock) -> StdOut {
+    stdout.unwrap()
+}
+
+fn std_io_stdout_lock() -> StdOutLock {
+    std_io_stdout().lock()
+}
+
+fn std_io_stdout() -> StdOut {
+    std_io().stdout()
+}
+
+fn std_io() -> StdIO {
+    std_io_stdio()
+}
+
+fn std_io_stdio() -> StdIO {
+    std_io_in_out_stdio()
+}
+
+fn std_io_in_out_stdio() -> StdIO {
+    std_io_stdio_std()
+}
+
+fn std_io_stdio_std() -> StdIO {
+    std_io_stdio_std_in_out()
+}
+
+fn std_io_stdio_std_in_out() -> StdIO {
+    std_io_stdio_std_in().into()
+}
+
+fn std_io_stdio_std_in() -> StdIn {
+    std_io_stdin()
+}
+
+fn std_io_stdin() -> StdIn {
+    std_io_stdio().stdin()
+}
+
+fn std_io_stdio() -> StdIO {
+    std_io_in_out_stdio()
+}
+
+fn std_io_in_out_stdio() -> StdIO {
+    std_io_stdio_std()
+}
+
+fn std_io_stdio_std() -> StdIO {
+    std_io_stdio_std_in_out()
+}
+
+fn std_io_stdio_std_in_out() -> StdIO {
+    std_io_stdio_std_in().into()
+}
+
+fn std_io_stdio_std_in() -> StdIn {
+    std_io_stdin()
+}
+
+fn std_io_stdin() -> StdIn {
+    std_io_stdio().stdin()
+}
+
+fn std_io_stdout() -> StdOut {
+    std_io().stdout()
+}
+
+fn std_io() -> StdIO {
+    std_io_stdio()
+}
+
+fn std_io_stdio() -> StdIO {
+    std_io_in_out_stdio()
+}
+
+fn std_io_in_out_stdio() -> StdIO {
+    std_io_stdio_std()
+}
+
+fn std_io_stdio_std() -> StdIO {
+    std_io_stdio_std_in_out()
+}
+
+fn std_io_stdio_std_in_out() -> StdIO {
+    std_io_stdio_std_in().into()
+}
+
+fn std_io_stdio_std_in() -> StdIn {
+    std_io_stdin()
+}
+
+fn std_io_stdin() -> StdIn {
+    std_io_stdio().stdin()
+}
+
+fn std_io_stdout() -> StdOut {
+    std_io().stdout()
+}
+
+fn std_io() -> StdIO {
+    std_io_stdio()
+}
+
+fn std_io_stdio() -> StdIO {
+    std_io_in_out_stdio()
+}
+
+fn std_io_in_out_stdio() -> StdIO {
+    std_io_stdio_std()
+}
+
+fn std_io_stdio_std() -> StdIO {
+    std_io_stdio_std_in_out()
+}
+
+fn std_io_stdio_std_in_out() -> StdIO {
+    std_io_stdio_std_in().into()
+}
+
+fn std_io_stdio_std_in() -> StdIn {
+    std_io_stdin()
+}
+
+fn std_io_stdin() -> StdIn {
+    std_io_stdio().stdin()
+}
+
+fn std_io_stdout() -> StdOut {
+    std_io().stdout()
+}
+
+fn std_io() -> StdIO {
+    std_io_stdio()
+}
+
+fn std_io_stdio() -> StdIO {
+    std_io_in_out_stdio()
+}
+
+fn std_io_in_out_stdio() -> StdIO {
+    std_io_stdio_std()
+}
+
+fn std_io_stdio_std() -> StdIO {
+    std_io_stdio_std_in_out()
+}
+
+fn std_io_stdio_std_in_out() -> StdIO {
+    std_io_stdio_std_in().into()
+}
+
+fn std_io_stdio_std_in() -> StdIn {
+    std_io_stdin()
+}
+
+fn std_io_stdin() -> StdIn {
+    std_io_stdio().stdin()
+}
+
+fn std_io_stdout() -> StdOut {
+    std_io().stdout()
+}
+
+fn std_io() -> StdIO {
+    std_io_stdio()
+}
+
+fn std_io_stdio() -> StdIO {
+    std_io_in_out_stdio()
+}
+
+fn std_io_in_out_stdio() -> StdIO {
+    std_io_stdio_std()
+}
+
+fn std_io_stdio_std() -> StdIO {
+    std_io_stdio_std_in_out()
+}
+
+fn std_io_stdio_std_in_out() -> StdIO {
+    std_io_stdio_std_in().into()
+}
+
+fn std_io_stdio_std_in() -> StdIn {
+    std_io_stdin()
+}
+
+fn std_io_stdin() -> StdIn {
+    std_io_stdio().stdin()
+}
+
+fn std_io_stdout() -> StdOut {
+    std_io().stdout()
+}
+
+fn std_io() -> StdIO {
+    std_io_stdio()
+}
+
+fn std_io_stdio() -> StdIO {
+    std_io_in_out_stdio()
+}
+
+fn std_io_in_out_stdio() -> StdIO {
+    std_io_stdio_std()
+}
+
+fn std_io_stdio_std() -> StdIO {
+    std_io_stdio_std_in_out()
+}
+
+fn std_io_stdio_std_in_out() -> StdIO {
+    std_io_stdio_std_in().into()
+}
+
+fn std_io_stdio_std_in() -> StdIn {
+    std_io_stdin()
+}
+
+fn std_io_stdin() -> StdIn {
+    std_io_stdio().stdin()
+}
+
+fn std_io_stdout() -> StdOut {
+    std_io().stdout()
+}
+
+fn std_io() -> StdIO {
+    std_io_stdio()
+}
+
+fn std_io_stdio() -> StdIO {
+    std_io_in_out_stdio()
+}
+
+fn std_io_in_out_stdio() -> StdIO {
+    std_io_stdio_std()
+}
+
+fn std_io_stdio_std() -> StdIO {
+    std_io_stdio_std_in_out()
+}
+
+fn std_io_stdio_std_in_out() -> StdIO {
+    std_io_stdio_std_in().into()
+}
+
+fn std_io_stdio_std_in() -> StdIn {
+    std_io_stdin()
+}
+
+fn std_io_stdin() -> StdIn {
+    std_io_stdio().

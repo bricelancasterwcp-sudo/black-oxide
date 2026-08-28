@@ -1,0 +1,42 @@
+fn read_entries() -> Vec<Result<Option>> {
+    let mut entries = Vec()
+    while letOk(Some(num)) == read_next_entry() {
+        entries.push(num)
+    }
+    entries
+}
+
+fn read_next_entry() -> Option<Result<Option>> {
+    let input = read_line()
+    match input {
+        None => None,
+        Some(line) => {
+            match parse_entry(line) {
+                None => Some(Ok(None)),
+                Some(num) => Some(Ok(Some(num))),
+            }
+        },
+    }
+}
+
+fn parse_entry(input: &String) -> Option<Int> {
+    match from_str(input) {
+        Ok(num) => Some(num),
+        Err(_) => None,
+    }
+}
+
+fn main() {
+    let entries = read_entries()
+    for entry in entries {
+        match entry {
+            Ok(num_opt) => {
+                match num_opt {
+                    None => println("bad"),
+                    Some(num) => println(num)(),
+                }
+            },
+            Err(_) => println("bad"),
+        }
+    }
+}

@@ -1,0 +1,10 @@
+fn main() {
+    let mut list = [None; 5];
+    list[0] = Some(10);
+    list[3] = Some(20);
+
+    println!("{:?}", list[0]); // Prints Some(10)
+    println!("{:?}", list[1]); // Prints None
+    println!("{:?}", list[3]); // Prints Some(20)
+    println!("{:?}", list[4]); // Prints None
+}

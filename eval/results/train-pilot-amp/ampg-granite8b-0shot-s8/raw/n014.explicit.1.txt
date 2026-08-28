@@ -1,0 +1,102 @@
+fn main() {
+    let mut v = vec()
+    v = push(v, 5)
+    v = push(v, 3)
+    v = push(v, 9)
+    v = push(v, 1)
+    v = push(v, 7)
+    print(min(v))
+}
+
+fn min(v: Vec<Int>) -> Int {
+    let mut result = v
+    for i in 1.0.to_float().trunc() < v.len().to_float().trunc() {
+        let x = get(v, i).unwrap()
+        let y = get(result, i).unwrap()
+        if x < y {
+            result = functional_update(result, i, x)
+        }
+    }
+    result
+}
+
+fn functional_update(v: Vec<Int>, i: Int, x: Int) -> Vec<Int> {
+    let mut v2 = v
+    v2 = push(v2, x)
+    v2
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut v2 = v
+    v2 = extend(v2, x)
+    v2
+}
+
+fn extend(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut v2 = v
+    v2 = push(v2, x)
+    v2
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    if i < 0.0.to_float().trunc() {
+        None
+    } else {
+        Some(v)
+    }
+}
+
+fn print(x: Int) {
+    let _ = x
+}
+
+fn to_float(x: Int) -> Float {
+    x.to_float().trunc()
+}
+
+fn trunc(x: Float) -> Int {
+    x.trunc()
+}
+
+fn clone(x: Int) -> Int {
+    x
+}
+
+fn vec() -> Vec<Int> {
+    let mut v = vec()
+    v = push(v, 0)
+    v
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut v2 = v
+    v2 = extend(v2, x)
+    v2
+}
+
+fn extend(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut v2 = v
+    v2 = push(v2, x)
+    v2
+}
+
+fn print(x: Int) {
+    let _ = x
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut v = vec()
+    for i in a.to_float().trunc() < b.to_float().trunc() {
+        v = push(v, i)
+    }
+    v
+}
+
+fn main() {
+    let nums = push(push(vec(), 5), 40)
+    let bigger = extend(clone(&nums), 70)
+    print(sum_big(&nums, 10))
+    drop nums
+    print(sum_big(&bigger, 10))
+    drop bigger
+}

@@ -1,0 +1,13 @@
+fn count_a_in_banana(word: Str) -> Int {
+    let mut count = 0
+    for letter in word.chars() {
+        if letter == "a" {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn main() {
+    print(count_a_in_banana("banana"))
+}

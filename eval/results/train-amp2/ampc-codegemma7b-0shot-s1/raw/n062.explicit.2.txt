@@ -1,0 +1,18 @@
+fn print_signal(s: &Str) {
+    if s == "green" {
+        print("go")
+    } else if s == "red" {
+        print("stop")
+    } else if s == "yellow" {
+        print("wait")
+    }
+}
+
+fn main() {
+    let green = "green".to_string()
+    let red = "red".to_string()
+    let yellow = "yellow".to_string()
+    print_signal(&green)
+    print_signal(&red)
+    print_signal(&yellow)
+}

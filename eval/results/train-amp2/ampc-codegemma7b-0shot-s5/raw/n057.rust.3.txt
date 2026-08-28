@@ -1,0 +1,13 @@
+fn main() {
+    let mut max_length = 0;
+    let mut longest_name = "";
+
+    for name in ["fig", "banana", "kiwi"] {
+        if name.len() > max_length {
+            max_length = name.len();
+            longest_name = name;
+        }
+    }
+
+    println!("The longest name is {} with {} letters", longest_name, max_length);
+}

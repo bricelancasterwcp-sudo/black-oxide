@@ -1,0 +1,13 @@
+fn main() {
+    let mut multiples = Vec(Int)
+    let mut sum = 0
+    let mut i = 0
+    while i < 6 {
+        let multiple = 4 * i
+        multiples = push(multiples, multiple)
+        sum = sum + multiple
+        i = i + 1
+    }
+    print(sum)
+    drop multiples
+}

@@ -1,0 +1,27 @@
+struct List {
+    elm: Int,
+    next: Option<Box<List>>,
+}
+
+fn get(lst: Box<List>, pos: Int) -> Option<Int> {
+    if lst.elm == pos {
+        Some(lst.elm)
+    } else {
+        match lst.next {
+            Some(n) => get(n, pos),
+            None => None,
+        }
+    }
+}
+
+fn main() {
+    let list = Box { elm: 10, next: Some(Box { elm: 20, next: None }) }
+    match get(list, 1) {
+        Some(n) => print(n),
+        None => print_str("empty"),
+    }
+    match get(list, 4) {
+        Some(n) => print(n),
+        None => print_str("empty"),
+    }
+}

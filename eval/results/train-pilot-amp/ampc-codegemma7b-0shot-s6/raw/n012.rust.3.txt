@@ -1,0 +1,9 @@
+use std::collections::LinkedList;
+
+fn main() {
+    let mut numbers = LinkedList::new();
+    for i in 0..=14 {
+        numbers.push_back(i);
+    }
+    println!("List contains {} elements", numbers.len());
+}

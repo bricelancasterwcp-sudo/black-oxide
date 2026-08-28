@@ -1,0 +1,16 @@
+fn first_repeated(word: Str) -> Str {
+    let mut seen = vec()
+    let mut output = Str("")
+    for c in word.chars() {
+        if seen.contains_char(c) {
+            output = concat(output, c)
+        } else {
+            seen.push(c)
+        }
+    }
+    output
+}
+
+fn main() {
+    print(first_repeated("coffee"))
+}

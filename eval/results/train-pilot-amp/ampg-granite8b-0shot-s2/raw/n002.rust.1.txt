@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    println!("{}", (1..=6).product::<u32>());
+}
+```
+
+This program uses the `product` method provided by the `Iterator` trait to multiply together all the numbers from 1 to 6. The `product` method takes the product of all the items in the iterator and returns it as the final result. In this case, since we are multiplying whole numbers, we can specify the type of the product as `u32` to ensure that we get an unsigned 32-bit integer.

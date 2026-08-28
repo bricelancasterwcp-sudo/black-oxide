@@ -1,0 +1,16 @@
+fn read_number(s: &Str) -> Result<Int, Str> {
+    match parse_int(s) {
+        Some(n) => Ok(n),
+        None => Err("bad".to_string()),
+    }
+}
+
+fn main() {
+    let input = "abc".to_string()
+    let result = read_number(&input)
+    match result {
+        Ok(n) => print(n),
+        Err(e) => print_str(e),
+    }
+    drop input
+}

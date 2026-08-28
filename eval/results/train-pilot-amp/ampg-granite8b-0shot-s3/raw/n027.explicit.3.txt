@@ -1,0 +1,15 @@
+fn print_letter(l: &Str) {
+    print(l)
+}
+
+fn main() {
+    let cat = "cat"
+    let c = get(&cat, 0)
+    print_letter(&c)
+    drop c
+    let a = get(&cat, 1)
+    print_letter(&a)
+    drop a
+    let t = get(&cat, 2)
+    print_letter(&t)
+}

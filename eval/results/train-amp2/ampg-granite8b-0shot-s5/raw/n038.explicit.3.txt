@@ -1,0 +1,9 @@
+fn set_sensor(device: &Device, value: Int) -> Device {
+    Device(Sensor(value))
+}
+
+fn main() {
+    let device = Device(Sensor(0))
+    let device = set_sensor(&device, 7)
+    print(device.sensor.value)
+}

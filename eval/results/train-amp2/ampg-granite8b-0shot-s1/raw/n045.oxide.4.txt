@@ -1,0 +1,27 @@
+fn first_log_entry(log: Vec<Int>) -> Int {
+    get(log, 0)?
+}
+
+fn last_log_entry(log: Vec<Int>) -> Int {
+    get(log, len(log) - 1)?
+}
+
+fn main() {
+    let log = push(push(push(vec(), 6), 7), 8)
+    print(first_log_entry(log))
+    print(last_log_entry(log))
+}
+
+fn first_log_entry(log: Vec<Int>) -> Int {
+    get(log, 0)?
+}
+
+fn last_log_entry(log: Vec<Int>) -> Int {
+    get(log, len(log) - 1)?
+}
+
+fn main() {
+    let log = push(push(push(vec(), 6), 7), 8)
+    print(first_log_entry(log))
+    print(last_log_entry(log))
+}

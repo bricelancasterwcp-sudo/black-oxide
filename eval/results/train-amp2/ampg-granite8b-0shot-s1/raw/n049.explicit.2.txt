@@ -1,0 +1,17 @@
+fn main() {
+    let a = 11
+    let b = 8
+    print(a + b)
+    let c = 3
+    let d = 11
+    print(c + d)
+}
+
+fn main() {
+    let a = 11
+    let b = 8
+    print(a + b)
+    let c = 3
+    let d = 11
+    print(c + d)
+}

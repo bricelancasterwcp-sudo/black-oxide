@@ -1,0 +1,9 @@
+fn main() {
+    let fig_len = str_len("fig")
+    let banana_len = str_len("banana")
+    let kiwi_len = str_len("kiwi")
+    let max_len = if fig_len > banana_len && fig_len > kiwi_len { fig_len } else { if banana_len > kiwi_len { banana_len } else { kiwi_len } }
+    let max_word = if max_len == fig_len { "fig" } else { if max_len == banana_len { "banana" } else { "kiwi" } }
+    print(max_word)
+    print(max_len)
+}

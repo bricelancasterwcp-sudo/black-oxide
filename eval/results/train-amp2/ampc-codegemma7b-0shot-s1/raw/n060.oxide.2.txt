@@ -1,0 +1,29 @@
+fn is_digit(c: Str) -> Bool {
+    c >= "0" && c <= "9"
+}
+
+fn sum_digits(s: Str) -> Int {
+    let mut sum = 0
+    for c in s.chars() {
+        if is_digit(c) {
+            sum = sum + (c - "0").to_int().unwrap()
+        }
+    }
+    sum
+}
+
+fn count_digits(s: Str) -> Int {
+    let mut count = 0
+    for c in s.chars() {
+        if is_digit(c) {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn main() {
+    let s = "a1b22"
+    print(sum_digits(s))
+    print(count_digits(s))
+}

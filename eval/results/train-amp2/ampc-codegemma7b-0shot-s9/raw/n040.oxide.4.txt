@@ -1,0 +1,42 @@
+fn area(s: Shape) -> Float {
+    match s {
+        Shape(square) => square.side * square.side,
+        Shape(circle) => circle.pi * circle.radius * circle.radius,
+    }
+}
+
+fn main() {
+    let sq = Shape(Square { side: 4.0 })
+    let circle = Shape(Circle { pi: 3.14159, radius: 2.0 })
+    print(area(sq))
+    print(area(circle))
+}
+
+enum Shape {
+    Square(Square),
+    Circle(Circle),
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    pi: Float,
+    radius: Float,
+}
+
+struct Point { x: Int, y: Int }
+
+fn is_valid(p: Point) -> Bool {
+    p.x >= 0 && p.y >= 0 && p.x < 100 && p.y < 100
+}
+
+fn main() {
+    let p = Point { x: 5, y: 30 }
+    if is_valid(p) {
+        print_str("OK")
+    } else {
+        print_str("Invalid")
+    }
+}

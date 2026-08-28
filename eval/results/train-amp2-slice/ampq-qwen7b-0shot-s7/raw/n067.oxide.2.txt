@@ -1,0 +1,21 @@
+struct Node { value: Int, next: Option<Box<Node>> }
+
+fn walk_and_print(node: Option<Box<Node>>, total: Int) -> Int {
+    match node {
+        Some(boxed_node) => {
+            let current_value = boxed_node.value * 2
+            if current_value % 2 != 0 {
+                print(current_value)
+            }
+            let new_total = if boxed_node.value % 2 == 0 { total + boxed_node.value } else { total }
+            walk_and_print(boxed_node.next, new_total)
+        },
+        None => total,
+    }
+}
+
+fn main() {
+    let list = Some(Box { value: 7, next: Some(Box { value: 4, next: Some(Box { value: 9, next: Some(Box { value: 10, next: None }) }) }) })
+    let total = walk_and_print(list, 0)
+    print(total)
+}

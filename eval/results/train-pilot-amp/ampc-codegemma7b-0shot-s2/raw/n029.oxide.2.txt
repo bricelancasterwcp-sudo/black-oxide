@@ -1,0 +1,5 @@
+fn main() {
+    print_str("one")
+    print_str("two")
+    print_str("three")
+}

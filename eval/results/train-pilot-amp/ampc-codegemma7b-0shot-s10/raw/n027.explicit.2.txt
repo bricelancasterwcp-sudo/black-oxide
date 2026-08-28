@@ -1,0 +1,11 @@
+fn main() {
+    let c = "c"
+    print(c)
+    drop c
+    let a = "a"
+    print(a)
+    drop a
+    let t = "t"
+    print(t)
+    drop t
+}

@@ -1,0 +1,18 @@
+struct Word { text: Str }
+
+fn count_vowels(words: Vec<Word>) -> Int {
+    let mut count = 0
+    for word in words {
+        for c in chars(word.text) {
+            if c == "a" || c == "e" || c == "i" || c == "o" || c == "u" || c == "A" || c == "E" || c == "I" || c == "O" || c == "U" {
+                count = count + 1
+            }
+        }
+    }
+    count
+}
+
+fn main() {
+    let words = push(push(vec(), Word { text: "hello" }), Word { text: "world" })
+    print(count_vowels(words))
+}

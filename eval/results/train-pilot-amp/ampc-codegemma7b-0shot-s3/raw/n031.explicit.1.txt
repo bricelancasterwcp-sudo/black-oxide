@@ -1,0 +1,7 @@
+fn area(width: Int, height: Int) -> Int {
+    width * height
+}
+
+fn main() {
+    print(area(7, 6))
+}

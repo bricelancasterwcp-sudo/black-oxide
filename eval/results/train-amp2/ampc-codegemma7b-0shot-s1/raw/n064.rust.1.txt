@@ -1,0 +1,19 @@
+use std::collections::HashMap;
+
+fn main() {
+    let mut numbers = HashMap::new();
+    numbers.insert(1, 10);
+    numbers.insert(4, 20);
+
+    if let Some(num) = numbers.get(&1) {
+        println!("Position 1: {}", num);
+    } else {
+        println!("Position 1: None");
+    }
+
+    if let Some(num) = numbers.get(&4) {
+        println!("Position 4: {}", num);
+    } else {
+        println!("Position 4: None");
+    }
+}

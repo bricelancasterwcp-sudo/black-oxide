@@ -1,0 +1,16 @@
+struct ResultStruct { count: Int }
+
+fn count_a(s: Str) -> ResultStruct {
+    let mut count = 0
+    for c in chars(s) {
+        if c == "a" {
+            count = count + 1
+        }
+    }
+    ResultStruct(count)
+}
+
+fn main() {
+    let result = count_a("banana")
+    print(result.count)
+}

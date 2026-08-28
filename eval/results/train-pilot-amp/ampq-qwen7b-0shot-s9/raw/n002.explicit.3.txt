@@ -1,0 +1,14 @@
+fn product(v: &Vec<Int>) -> Int {
+    let mut prod = 1
+    for x in v {
+        prod = prod * x
+    }
+    prod
+}
+
+fn main() {
+    let nums = vec(1, 2, 3, 4, 5, 6)
+    let prod = product(&nums)
+    print(prod)
+    drop nums
+}

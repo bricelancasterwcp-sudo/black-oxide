@@ -1,0 +1,21 @@
+struct Reading { label: Str, values: Vec<Int> }
+
+fn min_reading(v: Vec<Int>) -> Option<Int> {
+    let mut min = v.get(0)?.clone()
+    for x in v {
+        if letSome(y) == Some(x) {
+            if y < min {
+                min = y
+            }
+        }
+    }
+    Some(min)
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(push(push(vec(), 5), 3), 9), 1) }
+    match min_reading(r.values) {
+        Some(n) => print(n),
+        None => print_str("no values"),
+    }
+}

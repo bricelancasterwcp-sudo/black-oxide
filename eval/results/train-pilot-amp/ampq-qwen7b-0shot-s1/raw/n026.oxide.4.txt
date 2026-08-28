@@ -1,0 +1,24 @@
+fn num_to_str(n: Int) -> Str {
+    match n {
+        OX0 => "0",
+        OX1 => "1",
+        OX2 => "2",
+        OX3 => "3",
+        OX4 => "4",
+        OX5 => "5",
+        OX6 => "6",
+        OX7 => "7",
+        OX8 => "8",
+        OX9 => "9",
+        _ => "error",
+    }
+}
+
+fn main() {
+    let str_num = num_to_str(2026)
+    let len = str_len(str_num)
+    print_str(str_num)
+    print_str(" has ")
+    print(len)
+    print_str(" characters")
+}

@@ -1,0 +1,21 @@
+struct List { one: Option<Int>, four: Option<Int> }
+
+fn get_value(l: List, pos: Int) -> Option<Int> {
+    match pos {
+        One => l.one,
+        Four => l.four,
+        _ => None,
+    }
+}
+
+fn main() {
+    let l = List { one: Some(10), four: Some(20) }
+    match get_value(l, 1) {
+        Some(n) => print(n),
+        None => print_str("none"),
+    }
+    match get_value(l, 4) {
+        Some(n) => print(n),
+        None => print_str("none"),
+    }
+}

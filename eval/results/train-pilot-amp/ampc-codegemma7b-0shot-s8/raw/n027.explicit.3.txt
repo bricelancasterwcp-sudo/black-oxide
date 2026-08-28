@@ -1,0 +1,11 @@
+fn main() {
+    let c = Str("c")
+    let a = Str("a")
+    let t = Str("t")
+    print(c)
+    drop c
+    print(a)
+    drop a
+    print(t)
+    drop t
+}

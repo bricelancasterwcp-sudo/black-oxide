@@ -1,0 +1,10 @@
+struct Number { digits: Vec<Int> }
+
+fn main() {
+    let mut n = Number { digits: push(push(vec(), 4), 3) }
+    for i in range(0, len(n.digits)) {
+        let d = n.digits
+        n.digits = push(push(vec(), get(d, len(d) - i - 1)?), get(d, i)?)
+    }
+    print(n.digits)
+}

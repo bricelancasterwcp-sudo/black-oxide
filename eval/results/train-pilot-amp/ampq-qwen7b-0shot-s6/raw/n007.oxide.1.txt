@@ -1,0 +1,8 @@
+fn main() {
+    let mut sum = 0
+    let digits = int_to_str(9875).chars()
+    for d in digits {
+        sum = sum + parse_int(d)??
+    }
+    print(sum)
+}

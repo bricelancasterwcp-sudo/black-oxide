@@ -1,0 +1,365 @@
+fn main() {
+    let mut x = green(5)
+    loop_green(x)
+    loop_yellow(x)
+}
+
+fn loop_green(x: Int) {
+    green(x)
+    let mut x = green(10)
+    loop_yellow(x)
+}
+
+fn loop_yellow(x: Int) {
+    yellow(x)
+    let mut x = green(20)
+    loop_green(x)
+}
+
+fn green(x: Int) -> Int {
+    if x > 10 {
+        red(x)
+    } else {
+        yellow(x)
+    }
+}
+
+fn red(x: Int) -> Int {
+    loop_yellow(x)
+}
+
+fn yellow(x: Int) -> Int {
+    loop_green(x)
+}
+
+fn check(s: Str) {
+    assert_eq(green(5), 5)
+    assert_eq(red(5), -1)
+    assert_eq(yellow(5), 5)
+}
+
+fn assert_eq(a: Int, b: Int) {
+    if a != b {
+        print_str("error\n")
+        fail()
+    }
+}
+
+fn fail() {
+    loop_yellow(42)
+}
+
+fn print_str(_: Str) {
+    loop_green(0)
+}
+
+fn loop_green(x: Int) {
+    green(x)
+    let mut x = green(10)
+    loop_yellow(x)
+}
+
+fn loop_yellow(x: Int) {
+    yellow(x)
+    let mut x = green(20)
+    loop_green(x)
+}
+
+fn green(x: Int) -> Int {
+    if x > 10 {
+        red(x)
+    } else {
+        yellow(x)
+    }
+}
+
+fn red(x: Int) -> Int {
+    loop_yellow(x)
+}
+
+fn yellow(x: Int) -> Int {
+    loop_green(x)
+}
+
+fn check(s: Str) {
+    assert_eq(green(5), 5)
+    assert_eq(red(5), -1)
+    assert_eq(yellow(5), 5)
+}
+
+fn assert_eq(a: Int, b: Int) {
+    if a != b {
+        print_str("error\n")
+        fail()
+    }
+}
+
+fn fail() {
+    loop_yellow(42)
+}
+
+fn print_str(_: Str) {
+    loop_green(0)
+}
+
+fn loop_green(x: Int) {
+    green(x)
+    let mut x = green(10)
+    loop_yellow(x)
+}
+
+fn loop_yellow(x: Int) {
+    yellow(x)
+    let mut x = green(20)
+    loop_green(x)
+}
+
+fn green(x: Int) -> Int {
+    if x > 10 {
+        red(x)
+    } else {
+        yellow(x)
+    }
+}
+
+fn red(x: Int) -> Int {
+    loop_yellow(x)
+}
+
+fn yellow(x: Int) -> Int {
+    loop_green(x)
+}
+
+fn check(s: Str) {
+    assert_eq(green(5), 5)
+    assert_eq(red(5), -1)
+    assert_eq(yellow(5), 5)
+}
+
+fn assert_eq(a: Int, b: Int) {
+    if a != b {
+        print_str("error\n")
+        fail()
+    }
+}
+
+fn fail() {
+    loop_yellow(42)
+}
+
+fn print_str(_: Str) {
+    loop_green(0)
+}
+
+fn loop_green(x: Int) {
+    green(x)
+    let mut x = green(10)
+    loop_yellow(x)
+}
+
+fn loop_yellow(x: Int) {
+    yellow(x)
+    let mut x = green(20)
+    loop_green(x)
+}
+
+fn green(x: Int) -> Int {
+    if x > 10 {
+        red(x)
+    } else {
+        yellow(x)
+    }
+}
+
+fn red(x: Int) -> Int {
+    loop_yellow(x)
+}
+
+fn yellow(x: Int) -> Int {
+    loop_green(x)
+}
+
+fn check(s: Str) {
+    assert_eq(green(5), 5)
+    assert_eq(red(5), -1)
+    assert_eq(yellow(5), 5)
+}
+
+fn assert_eq(a: Int, b: Int) {
+    if a != b {
+        print_str("error\n")
+        fail()
+    }
+}
+
+fn fail() {
+    loop_yellow(42)
+}
+
+fn print_str(_: Str) {
+    loop_green(0)
+}
+
+fn loop_green(x: Int) {
+    green(x)
+    let mut x = green(10)
+    loop_yellow(x)
+}
+
+fn loop_yellow(x: Int) {
+    yellow(x)
+    let mut x = green(20)
+    loop_green(x)
+}
+
+fn green(x: Int) -> Int {
+    if x > 10 {
+        red(x)
+    } else {
+        yellow(x)
+    }
+}
+
+fn red(x: Int) -> Int {
+    loop_yellow(x)
+}
+
+fn yellow(x: Int) -> Int {
+    loop_green(x)
+}
+
+fn check(s: Str) {
+    assert_eq(green(5), 5)
+    assert_eq(red(5), -1)
+    assert_eq(yellow(5), 5)
+}
+
+fn assert_eq(a: Int, b: Int) {
+    if a != b {
+        print_str("error\n")
+        fail()
+    }
+}
+
+fn fail() {
+    loop_yellow(42)
+}
+
+fn print_str(_: Str) {
+    loop_green(0)
+}
+
+fn loop_green(x: Int) {
+    green(x)
+    let mut x = green(10)
+    loop_yellow(x)
+}
+
+fn loop_yellow(x: Int) {
+    yellow(x)
+    let mut x = green(20)
+    loop_green(x)
+}
+
+fn green(x: Int) -> Int {
+    if x > 10 {
+        red(x)
+    } else {
+        yellow(x)
+    }
+}
+
+fn red(x: Int) -> Int {
+    loop_yellow(x)
+}
+
+fn yellow(x: Int) -> Int {
+    loop_green(x)
+}
+
+fn check(s: Str) {
+    assert_eq(green(5), 5)
+    assert_eq(red(5), -1)
+    assert_eq(yellow(5), 5)
+}
+
+fn assert_eq(a: Int, b: Int) {
+    if a != b {
+        print_str("error\n")
+        fail()
+    }
+}
+
+fn fail() {
+    loop_yellow(42)
+}
+
+fn print_str(_: Str) {
+    loop_green(0)
+}
+
+fn loop_green(x: Int) {
+    green(x)
+    let mut x = green(10)
+    loop_yellow(x)
+}
+
+fn loop_yellow(x: Int) {
+    yellow(x)
+    let mut x = green(20)
+    loop_green(x)
+}
+
+fn green(x: Int) -> Int {
+    if x > 10 {
+        red(x)
+    } else {
+        yellow(x)
+    }
+}
+
+fn red(x: Int) -> Int {
+    loop_yellow(x)
+}
+
+fn yellow(x: Int) -> Int {
+    loop_green(x)
+}
+
+fn check(s: Str) {
+    assert_eq(green(5), 5)
+    assert_eq(red(5), -1)
+    assert_eq(yellow(5), 5)
+}
+
+fn assert_eq(a: Int, b: Int) {
+    if a != b {
+        print_str("error\n")
+        fail()
+    }
+}
+
+fn fail() {
+    loop_yellow(42)
+}
+
+fn print_str(_: Str) {
+    loop_green(0)
+}
+
+fn loop_green(x: Int) {
+    green(x)
+    let mut x = green(10)
+    loop_yellow(x)
+}
+
+fn loop_yellow(x: Int) {
+    yellow(x)
+    let mut x = green(20)
+    loop_green(x)
+}
+
+fn green(x: Int) -> Int {
+    if x > 10 {
+        red(x)
+    } else

@@ -1,0 +1,17 @@
+fn word_count(s: Str) -> Int {
+    let words = s.split(" ").collect()
+    words.len()
+}
+
+fn char_count(s: Str) -> Int {
+    s.chars().len()
+}
+
+fn main() {
+    let phrase = "when in doubt go home"
+    let words = word_count(phrase)
+    let chars = char_count(phrase)
+    print(words)
+    print_str(" ")
+    print(chars)
+}

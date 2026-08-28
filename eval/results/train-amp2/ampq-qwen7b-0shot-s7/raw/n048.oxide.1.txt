@@ -1,0 +1,16 @@
+fn positions_of_four(v: Vec<Int>) -> Vec<Int> {
+    let mut positions = vec()
+    for i in range(0, len(v)) {
+        if get(v, i)? == 4 {
+            push(positions, i)
+        }
+    }
+    positions
+}
+
+fn main() {
+    let v = vec(4, 7, 4, 9, 4)
+    for p in positions_of_four(v) {
+        print(p)
+    }
+}

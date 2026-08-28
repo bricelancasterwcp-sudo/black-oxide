@@ -1,0 +1,9 @@
+fn main() {
+    let signal = "green"
+    match signal {
+        Green => print_str("go for green"),
+        Red => print_str("stop for red"),
+        Yellow => print_str("wait for yellow"),
+        _ => print_str("unknown"),
+    }
+}

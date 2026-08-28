@@ -1,0 +1,12 @@
+fn main() {
+    let l1 = push(push(vec(), 1), 2)
+    let l2 = push(vec(), 3)
+    let mut total = 0
+    for x in &l1 {
+        total = total + x
+    }
+    for x in &l2 {
+        total = total + x
+    }
+    print(total)
+}

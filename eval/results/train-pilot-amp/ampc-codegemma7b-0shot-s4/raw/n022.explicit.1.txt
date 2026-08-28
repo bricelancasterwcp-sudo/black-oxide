@@ -1,0 +1,9 @@
+fn blackoxide() -> Str {
+    let oxide = "oxide"
+    let black = "black"
+    concat(black, oxide)
+}
+
+fn main() {
+    print(blackoxide())
+}

@@ -1,0 +1,4 @@
+fn main() {
+    let numbers = vec![10, 20, 30, 40];
+    println!("{}", numbers.get(2).unwrap_or(&"missing".to_string()));
+}

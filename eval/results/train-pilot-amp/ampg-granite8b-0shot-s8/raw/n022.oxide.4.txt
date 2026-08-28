@@ -1,0 +1,5 @@
+struct Words { black: Str, oxide: Str }
+
+fn main() {
+    print(concat(Words { black: "black", oxide: "oxide" }, " "))
+}

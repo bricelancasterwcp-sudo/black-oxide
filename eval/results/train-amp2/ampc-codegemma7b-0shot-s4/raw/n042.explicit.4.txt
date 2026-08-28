@@ -1,0 +1,16 @@
+fn main() {
+    let numbers = vec(12, 5, 20, 8, 17)
+    let mut largest = numbers.first().unwrap()
+    let mut second_largest = numbers.first().unwrap()
+    for number in numbers.iter() {
+        if number > largest {
+            second_largest = largest
+            largest = number
+        } else if number > second_largest && number != largest {
+            second_largest = number
+        }
+    }
+    print(largest)
+    print(second_largest)
+    drop numbers
+}

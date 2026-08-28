@@ -1,0 +1,7 @@
+fn main() {
+    let x = 42
+    let y = "abc".parse_int()
+    print(x)
+    print(y)
+    drop y
+}

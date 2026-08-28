@@ -1,0 +1,24 @@
+fn collect() -> Vec<Int> {
+    let mut result = vec()
+    for i in 0 < 11 {
+        if i % 2 == 0 {
+            result = push(result, i)
+        }
+    }
+    result
+}
+
+fn print_list(v: Vec<Int>) {
+    let mut i = len(&v) - 1
+    while i >= 0 {
+        print(get(&v, i))
+        drop i
+        i = i - 1
+    }
+}
+
+fn main() {
+    let evens = collect()
+    drop evens
+    print_list(evens)
+}

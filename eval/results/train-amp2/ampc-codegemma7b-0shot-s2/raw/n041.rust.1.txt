@@ -1,0 +1,42 @@
+fn main() {
+    let mut x = 9;
+    let mut y = 2;
+    let mut z = 7;
+    let mut w = 4;
+
+    if x > y {
+        let tmp = x;
+        x = y;
+        y = tmp;
+    }
+    if y > z {
+        let tmp = y;
+        y = z;
+        z = tmp;
+    }
+    if z > w {
+        let tmp = z;
+        z = w;
+        w = tmp;
+    }
+    if x > y {
+        let tmp = x;
+        x = y;
+        y = tmp;
+    }
+    if y > z {
+        let tmp = y;
+        y = z;
+        z = tmp;
+    }
+    if z > w {
+        let tmp = z;
+        z = w;
+        w = tmp;
+    }
+
+    println!("{}", x);
+    println!("{}", y);
+    println!("{}", z);
+    println!("{}", w);
+}

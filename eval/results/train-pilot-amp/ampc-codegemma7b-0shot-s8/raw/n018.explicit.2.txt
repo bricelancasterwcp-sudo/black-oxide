@@ -1,0 +1,228 @@
+fn main() {
+    let mut nums = vec(1, 2, 3, 4)
+    while letSome(x) == pop(&mut && nums) {
+        print(x)
+        print_str("\n")
+    }
+}
+
+fn pop(v: &Vec<Int>) -> Option<Int> {
+    if len(v) == 0 {
+        None
+    } else {
+        let mut new_v = vec()
+        for i in 0 < len(v) - 1 {
+            push(new_v, get(v, i))
+        }
+        Some(get(&v, len(v) - 1))
+    }
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    let mut total = 0
+    for _ in &v {
+        total = total + 1
+    }
+    total
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Int {
+    if i >= len(v) {
+        panic("Index out of bounds")
+    } else {
+        let mut new_v = vec()
+        for j in 0 < i {
+            push(new_v, get(v, j))
+        }
+        let x = v.get(i)
+        for j in i + 1 < len(v) {
+            push(new_v, get(v, j))
+        }
+        x
+    }
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut new_v = vec()
+    for i in 0 < len(v) {
+        push(new_v, get(v, i))
+    }
+    push(new_v, x)
+}
+
+fn print_str(s: Str) {
+    let mut new_s = str_len(s)
+    for i in 0 < len(s) {
+        print(get(s, i))
+    }
+}
+
+fn print(x: Int) {
+    if x < 0 {
+        print_str("-")
+        x = trunc(x)
+    }
+    let mut digits = vec()
+    if x == 0 {
+        push(digits, 0)
+    } else {
+        while x > 0 {
+            let r = trunc(x % 10)
+            push(digits, r)
+            x = trunc(x / 10)
+        }
+    }
+    for i in len(digits) - 1 < 0 {
+        print(get(digits, i))
+    }
+}
+
+fn str_len(s: Str) -> Int {
+    let mut total = 0
+    for _ in &s {
+        total = total + 1
+    }
+    total
+}
+
+fn get(s: &Str, i: Int) -> Int {
+    if i >= str_len(s) {
+        panic("Index out of bounds")
+    } else {
+        let mut new_s = str_len(s)
+        for j in 0 < i {
+            get(s, j)
+        }
+        let x = s.get(i)
+        for j in i + 1 < str_len(s) {
+            get(s, j)
+        }
+        x
+    }
+}
+
+fn push(s: Str, x: Int) -> Str {
+    let mut new_s = str_len(s)
+    for i in 0 < str_len(s) {
+        push(new_s, get(s, i))
+    }
+    push(new_s, x)
+}
+
+fn trunc(x: Int) -> Int {
+    if x < 0 {
+        x
+    } else {
+        x - x % 1
+    }
+}
+
+fn panic(msg: Str) {
+    let mut new_msg = str_len(msg)
+    for i in 0 < str_len(msg) {
+        print(get(msg, i))
+    }
+    halt
+}
+
+fn halt() {
+    loop()
+}
+
+fn vec(elem: Int) -> Vec<Int> {
+    let mut new_vec = vec()
+    push(new_vec, elem)
+    new_vec
+}
+
+fn vec(elem: Int, elem2: Int) -> Vec<Int> {
+    let mut new_vec = vec(elem)
+    push(new_vec, elem2)
+    new_vec
+}
+
+fn vec(elem: Int, elem2: Int, elem3: Int) -> Vec<Int> {
+    let mut new_vec = vec(elem)
+    push(new_vec, elem2)
+    push(new_vec, elem3)
+    new_vec
+}
+
+fn vec(elem: Int, elem2: Int, elem3: Int, elem4: Int) -> Vec<Int> {
+    let mut new_vec = vec(elem)
+    push(new_vec, elem2)
+    push(new_vec, elem3)
+    push(new_vec, elem4)
+    new_vec
+}
+
+fn vec(elem: Int, elem2: Int, elem3: Int, elem4: Int, elem5: Int) -> Vec<Int> {
+    let mut new_vec = vec(elem)
+    push(new_vec, elem2)
+    push(new_vec, elem3)
+    push(new_vec, elem4)
+    push(new_vec, elem5)
+    new_vec
+}
+
+fn vec(elem: Int, elem2: Int, elem3: Int, elem4: Int, elem5: Int, elem6: Int) -> Vec<Int> {
+    let mut new_vec = vec(elem)
+    push(new_vec, elem2)
+    push(new_vec, elem3)
+    push(new_vec, elem4)
+    push(new_vec, elem5)
+    push(new_vec, elem6)
+    new_vec
+}
+
+fn vec(elem: Int, elem2: Int, elem3: Int, elem4: Int, elem5: Int, elem6: Int, elem7: Int) -> Vec<Int> {
+    let mut new_vec = vec(elem)
+    push(new_vec, elem2)
+    push(new_vec, elem3)
+    push(new_vec, elem4)
+    push(new_vec, elem5)
+    push(new_vec, elem6)
+    push(new_vec, elem7)
+    new_vec
+}
+
+fn vec(elem: Int, elem2: Int, elem3: Int, elem4: Int, elem5: Int, elem6: Int, elem7: Int, elem8: Int) -> Vec<Int> {
+    let mut new_vec = vec(elem)
+    push(new_vec, elem2)
+    push(new_vec, elem3)
+    push(new_vec, elem4)
+    push(new_vec, elem5)
+    push(new_vec, elem6)
+    push(new_vec, elem7)
+    push(new_vec, elem8)
+    new_vec
+}
+
+fn vec(elem: Int, elem2: Int, elem3: Int, elem4: Int, elem5: Int, elem6: Int, elem7: Int, elem8: Int, elem9: Int) -> Vec<Int> {
+    let mut new_vec = vec(elem)
+    push(new_vec, elem2)
+    push(new_vec, elem3)
+    push(new_vec, elem4)
+    push(new_vec, elem5)
+    push(new_vec, elem6)
+    push(new_vec, elem7)
+    push(new_vec, elem8)
+    push(new_vec, elem9)
+    new_vec
+}
+
+fn vec(elem: Int, elem2: Int, elem3: Int, elem4: Int, elem5: Int, elem6: Int, elem7: Int, elem8: Int, elem9: Int, elem10: Int) -> Vec<Int> {
+    let mut new_vec = vec(elem)
+    push(new_vec, elem2)
+    push(new_vec, elem3)
+    push(new_vec, elem4)
+    push(new_vec, elem5)
+    push(new_vec, elem6)
+    push(new_vec, elem7)
+    push(new_vec, elem8)
+    push(new_vec, elem9)
+    push(new_vec, elem10)
+    new_vec
+}
+
+fn vec(elem: Int, elem2: Int, elem3: Int, elem4: Int, elem5: Int, elem6: Int, elem7

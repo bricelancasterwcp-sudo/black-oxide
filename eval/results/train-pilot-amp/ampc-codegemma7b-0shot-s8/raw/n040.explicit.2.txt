@@ -1,0 +1,321 @@
+fn area(s: &Square) -> Float {
+    s.side * s.side
+}
+
+fn area(c: &Circle) -> Float {
+    3.0 * c.radius * c.radius
+}
+
+fn main() {
+    let square = Square { side: 4.0 }
+    let circle = Circle { radius: 2.0 }
+    print(area(&square))
+    print(area(&circle))
+    drop_expr(&square)
+    drop_expr(&circle)
+}
+
+struct Square {
+    side: Float,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+fn print(x: Float) {
+    print_str(str_len(int_to_str(trunc(x))) + &int_to_str)
+}
+
+fn print_str(s: Int) {
+    let mut v = vec()
+    for i in 0.to(s) {
+        push(v, chars("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz".to_string())(i))
+    }
+    for c in &v {
+        print_char(c)
+    }
+}
+
+fn print_char(c: Str) {
+    let mut v = vec()
+    for i in 0.to(len(c)) {
+        push(v, get(c, i))
+    }
+    for b in &v {
+        if b >= &b01100001 {
+            print_char(&b01100001)
+            print_char(&b01100010)
+            print_char(&b01100011)
+        } else if b >= &b01100100 {
+            print_char(&b01100100)
+            print_char(&b01100101)
+            print_char(&b01100110)
+        } else if b >= &b01100111 {
+            print_char(&b01100111)
+            print_char(&b01101000)
+            print_char(&b01101001)
+        } else {
+            print_char(&b01100000)
+            print_char(&b01100001)
+            print_char(&b01100010)
+        }
+    }
+}
+
+fn len(s: &Str) -> Int {
+    let mut c = 0
+    for _ in s {
+        c = c + 1
+    }
+    c
+}
+
+fn get(s: &Str, i: Int) -> Str {
+    let mut v = vec()
+    for j in 0.to(len(s)) {
+        if j == i {
+            push(v, s(j))
+        }
+    }
+    for b in &v {
+        b
+    }
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut v = vec()
+    for i in 0.to(len(s)) {
+        push(v, s(i))
+    }
+    v
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut v = vec()
+    if n == 0 {
+        push(v, "0".to_string())
+    } else {
+        while n > 0 {
+            let digit = n % 10
+            push(v, digit_to_char(digit))
+            n = n / 10
+        }
+        let mut result = "".to_string()
+        for i in (0.to(len(v))).rev() {
+            result = result + &v
+        }
+        result
+    }
+}
+
+fn digit_to_char(d: Int) -> Str {
+    if d <= 9 {
+        return int_to_str(d)
+    }
+    match d {
+        _ => "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz".to_string()(d - 10) % 26 + 65 % 26 + 48 % 26,
+    }
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    let mut result = 0
+    let mut factor = 1
+    for c in s {
+        if c >= &b01100000 && c <= &b01100111 {
+            result = result + factor * (c - b01100000)
+            factor = factor * 10
+        } else if c >= &b00100000 && c <= &b00101111 {
+            return None
+        } else {
+            return None
+        }
+    }
+    Some(result)
+}
+
+fn to_float(n: Int) -> Float {
+    n.to_float()
+}
+
+fn trunc(x: Float) -> Int {
+    if x < 0.0 {
+        return (x - 0.5).to_int()
+    } else {
+        return (x + 0.5).to_int()
+    }
+}
+
+fn drop_expr(x: &Square) {
+    drop x
+}
+
+fn drop_expr(x: &Circle) {
+    drop x
+}
+
+fn drop_expr(x: &Int) {
+    drop x
+}
+
+fn drop_expr(x: &Float) {
+    drop x
+}
+
+fn drop_expr(x: &Str) {
+    drop x
+}
+
+fn drop_expr(x: &Vec<Int>) {
+    drop x
+}
+
+fn drop_expr(x: &Option<Int>) {
+    drop x
+}
+
+fn drop_expr(x: &Result<Int, Int>) {
+    drop x
+}
+
+fn drop_expr(x: &Square) {
+    drop x
+}
+
+fn drop_expr(x: &Circle) {
+    drop x
+}
+
+fn drop_expr(x: &Int) {
+    drop x
+}
+
+fn drop_expr(x: &Float) {
+    drop x
+}
+
+fn drop_expr(x: &Str) {
+    drop x
+}
+
+fn drop_expr(x: &Vec<Int>) {
+    drop x
+}
+
+fn drop_expr(x: &Option<Int>) {
+    drop x
+}
+
+fn drop_expr(x: &Result<Int, Int>) {
+    drop x
+}
+
+fn drop_expr(x: &Square) {
+    drop x
+}
+
+fn drop_expr(x: &Circle) {
+    drop x
+}
+
+fn drop_expr(x: &Int) {
+    drop x
+}
+
+fn drop_expr(x: &Float) {
+    drop x
+}
+
+fn drop_expr(x: &Str) {
+    drop x
+}
+
+fn drop_expr(x: &Vec<Int>) {
+    drop x
+}
+
+fn drop_expr(x: &Option<Int>) {
+    drop x
+}
+
+fn drop_expr(x: &Result<Int, Int>) {
+    drop x
+}
+
+fn drop_expr(x: &Square) {
+    drop x
+}
+
+fn drop_expr(x: &Circle) {
+    drop x
+}
+
+fn drop_expr(x: &Int) {
+    drop x
+}
+
+fn drop_expr(x: &Float) {
+    drop x
+}
+
+fn drop_expr(x: &Str) {
+    drop x
+}
+
+fn drop_expr(x: &Vec<Int>) {
+    drop x
+}
+
+fn drop_expr(x: &Option<Int>) {
+    drop x
+}
+
+fn drop_expr(x: &Result<Int, Int>) {
+    drop x
+}
+
+fn drop_expr(x: &Square) {
+    drop x
+}
+
+fn drop_expr(x: &Circle) {
+    drop x
+}
+
+fn drop_expr(x: &Int) {
+    drop x
+}
+
+fn drop_expr(x: &Float) {
+    drop x
+}
+
+fn drop_expr(x: &Str) {
+    drop x
+}
+
+fn drop_expr(x: &Vec<Int>) {
+    drop x
+}
+
+fn drop_expr(x: &Option<Int>) {
+    drop x
+}
+
+fn drop_expr(x: &Result<Int, Int>) {
+    drop x
+}
+
+fn drop_expr(x: &Square) {
+    drop x
+}
+
+fn drop_expr(x: &Circle) {
+    drop x
+}
+
+fn drop_expr(x: &Int) {
+    drop x
+}
+
+fn drop_expr

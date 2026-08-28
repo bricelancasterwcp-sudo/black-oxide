@@ -1,0 +1,15 @@
+struct WordCount { words: Int, chars: Int }
+
+fn count(s: Str) -> WordCount {
+    let words = s.split_whitespace().count()
+    let chars = s.len()
+    WordCount(words, chars)
+}
+
+fn main() {
+    let phrase = "when in doubt go home"
+    let wc = count(phrase)
+    print(wc.words)
+    print_str(" ")
+    print(wc.chars)
+}

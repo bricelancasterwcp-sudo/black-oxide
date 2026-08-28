@@ -1,0 +1,16 @@
+fn longest_fruit(fruits: Vec<Str>) -> Str {
+    let mut longest = Str("")
+    let mut length = 0
+    for fruit in fruits {
+        if fruit.len() > length {
+            longest = fruit.clone()
+            length = fruit.len()
+        }
+    }
+    longest
+}
+
+fn main() {
+    let fruits = vec("fig", "banana", "kiwi")
+    print(longest_fruit(fruits).len())
+}

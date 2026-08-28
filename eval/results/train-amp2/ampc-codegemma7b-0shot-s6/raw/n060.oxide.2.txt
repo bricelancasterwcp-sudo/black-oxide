@@ -1,0 +1,16 @@
+fn digit_count(s: Str) -> Int {
+    let mut total = 0
+    let mut count = 0
+    for c in s.chars() {
+        if c >= "0" && c <= "9" {
+            total = total + c.to_digit(10).unwrap()
+            count = count + 1
+        }
+    }
+    return total + count
+}
+
+fn main() {
+    let s = "a1b22"
+    print(digit_count(s))
+}

@@ -1,0 +1,14 @@
+fn main() {
+    let mut q = vec(1, 2, 3, 4, 5)
+    let first = get(q, 0)?
+    let last = get(q, 4)?
+    let mut new_q = q.clone()
+    new_q.remove(0)
+    new_q.insert(0, last)
+    new_q.remove(4)
+    new_q.insert(4, first)
+    for x in &new_q {
+        print(x)
+    }
+    drop new_q
+}

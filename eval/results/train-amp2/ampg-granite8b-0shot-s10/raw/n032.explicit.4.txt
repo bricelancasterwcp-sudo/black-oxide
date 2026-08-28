@@ -1,0 +1,31 @@
+fn main() {
+    let point = Point { x: 1, y: 2 }
+    let second = Point { x: 10, y: point.y }
+    print(point.x + second.x)
+}
+
+struct Point { x: Int, y: Int }
+
+fn print(x: Int) {
+    drop x
+}
+
+fn drop_point(p: &Point) {
+    drop p
+}
+
+fn print_point(p: Point) {
+    print(p.x)
+}
+
+fn point_plus(p: &Point, x: Int) -> Point {
+    Point  // implicit return, no semicolon
+    x + p.x
+    p.y
+}
+
+fn main() {
+    let point = Point { x: 1, y: 2 }
+    let second = Point { x: 10, y: point.y }
+    print(point.x + second.x)
+}

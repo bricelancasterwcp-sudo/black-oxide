@@ -1,0 +1,7 @@
+fn main() {
+    let mut list = vec()
+    for i in 0 <= i {
+        push(&mut, list, i)
+    }
+    print(len(&list))
+}

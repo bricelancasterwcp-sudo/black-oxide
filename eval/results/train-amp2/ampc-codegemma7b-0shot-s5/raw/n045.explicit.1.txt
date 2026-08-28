@@ -1,0 +1,23 @@
+fn print_log_start_end(log: &Vec<Int>) {
+    let mut start = None
+    let mut end = None
+    for entry in log {
+        if start == None {
+            start = Some(entry)
+        }
+        end = Some(entry)
+    }
+    if letSome(first) == start {
+        print(first)
+    }
+    if letSome(last) == end {
+        print(last)
+    }
+}
+
+fn main() {
+    let log = push(push(push(vec(), 6), 7), 8)
+    push(log, 9)
+    print_log_start_end(&log)
+    drop log
+}

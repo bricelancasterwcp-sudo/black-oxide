@@ -1,0 +1,15 @@
+fn print_three() {
+    let one: Str = "one".to_string()
+    let two: Str = "two".to_string()
+    let three: Str = "three".to_string()
+    print_str(&one)
+    drop one
+    print_str(&two)
+    drop two
+    print_str(&three)
+    drop three
+}
+
+fn main() {
+    print_three()
+}

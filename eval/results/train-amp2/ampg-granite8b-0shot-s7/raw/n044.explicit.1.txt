@@ -1,0 +1,300 @@
+fn main() {
+    let mut balance = 0
+    deposit(balance, 3)
+    print(balance)
+    deposit(balance, 1)
+    print(balance)
+    deposit(balance, 4)
+    print(balance)
+    deposit(balance, 1)
+    print(balance)
+    deposit(balance, 5)
+    print(balance)
+}
+
+fn deposit(mutbalance: Int, amount: Int) {
+    balance = balance + amount
+}
+
+fn print(n: Int) {
+    print_str(str_from_int(n))
+}
+
+fn str_from_int(n: Int) -> Str {
+    let mut s = String.new()
+    if n < 0 {
+        s = push(s, "-")
+        n = trunc(n)
+    }
+    let mut n = trunc(n)
+    if n == 0 {
+        return push(s, "0")
+    }
+    loop  // this is tail-recursive, the compiler is
+    let digit = to_float(n % 10)
+    let digit_char = to_str(digit)
+    s = push(s, digit_char)
+    n = trunc(n / 10)
+    if n == 0 {
+        return s
+    }
+}
+
+fn to_str(n: Float) -> Str {
+    let chars = chars("0123456789")
+    let s = vec()
+    let mut n = trunc(n)
+    if n < 0 {
+        s = push(s, "-")
+        n = trunc(n)
+    }
+    loop  // this is tail-recursive, the compiler is
+    let digit = n % 10
+    s = push(s, chars.get(digit).expect("digit out of range"))
+    n = trunc(n / 10)
+    if n == 0 {
+        return s
+    }
+}
+
+fn print_str(s: Str) {
+    let len = len(s)
+    let mut i: Int = 0
+    while i < len {
+        print_char(s.get(i).expect("out-of-bounds"))
+        i = i + 1
+    }
+}
+
+fn print_char(c: Char) {
+    print_str(chars(c))
+}
+
+fn chars(c: Char) -> Str {
+    let s = vec()
+    if c >= 32 && c <= 127 {
+        s = push(s, c)
+    } else {
+        s = push(s, "?")
+    }
+    return s
+}
+
+fn vec() -> Vec<T> {
+    Vec.new()
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    let mut v = v
+    v = append(v, x)
+    return v
+}
+
+fn append(v: Vec<T>, x: T) -> Vec<T> {
+    let mut v = v
+    v = push(v, x)
+    return v
+}
+
+fn len(v: Vec<T>) -> Int {
+    v.len()
+}
+
+fn get(v: Vec<T>, i: Int) -> Option<T> {
+    v.get(i)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut v = vec()
+    let mut i = a
+    while i < b {
+        v = push(v, i)
+        i = i + 1
+    }
+    v
+}
+
+fn clone(x: T) -> T {
+    x
+}
+
+fn str_len(s: Str) -> Int {
+    s.len()
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    a + b
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut v = vec()
+    let mut i: Int = 0
+    while i < str_len(s) {
+        v = push(v, s.get(i).expect("out-of-bounds"))
+        i = i + 1
+    }
+    v
+}
+
+fn int_to_str(n: Int) -> Str {
+    let chars = chars("0123456789")
+    let s = vec()
+    let mut n = trunc(n)
+    if n < 0 {
+        s = push(s, "-")
+        n = trunc(n)
+    }
+    loop  // this is tail-recursive, the compiler is
+    let digit = n % 10
+    s = push(s, chars.get(digit).expect("digit out of range"))
+    n = trunc(n / 10)
+    if n == 0 {
+        return s
+    }
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    if str_len(s) == 0 {
+        None
+    } else {
+        let mut n: Int = 0
+        let mut i: Int = 0
+        if s.get(0).expect("out-of-bounds") == "-" {
+            i = i + 1
+        }
+        while i < str_len(s) {
+            let c = s.get(i).expect("out-of-bounds")
+            let d = char_to_digit(c)
+            if d.is_none() {
+                return None
+            }
+            n = n * 10 + d.unwrap()
+            i = i + 1
+        }
+        if s.get(0).expect("out-of-bounds") == "-" {
+            Some(trunc(n) * -1)
+        } else {
+            Some(n)
+        }
+    }
+}
+
+fn char_to_digit(c: Char) -> Option<Int> {
+    if c >= "0" && c <= "9" {
+        Some(c - "0")
+    } else {
+        None
+    }
+}
+
+fn to_float(n: Int) -> Float {
+    n.to_float()
+}
+
+fn trunc(x: Float) -> Int {
+    x.trunc()
+}
+
+fn main() {
+    let mut balance = 0
+    deposit(balance, 3)
+    print(balance)
+    deposit(balance, 1)
+    print(balance)
+    deposit(balance, 4)
+    print(balance)
+    deposit(balance, 1)
+    print(balance)
+    deposit(balance, 5)
+    print(balance)
+}
+
+fn deposit(mutbalance: Int, amount: Int) {
+    balance = balance + amount
+}
+
+fn print(n: Int) {
+    print_str(str_from_int(n))
+}
+
+fn str_from_int(n: Int) -> Str {
+    let mut s = String.new()
+    if n < 0 {
+        s = push(s, "-")
+        n = trunc(n)
+    }
+    let mut n = trunc(n)
+    if n == 0 {
+        return push(s, "0")
+    }
+    loop  // this is tail-recursive, the compiler is
+    let digit = to_float(n % 10)
+    let digit_char = to_str(digit)
+    s = push(s, digit_char)
+    n = trunc(n / 10)
+    if n == 0 {
+        return s
+    }
+}
+
+fn to_str(n: Float) -> Str {
+    let chars = chars("0123456789")
+    let s = vec()
+    let mut n = trunc(n)
+    if n < 0 {
+        s = push(s, "-")
+        n = trunc(n)
+    }
+    loop  // this is tail-recursive, the compiler is
+    let digit = n % 10
+    s = push(s, chars.get(digit).expect("digit out of range"))
+    n = trunc(n / 10)
+    if n == 0 {
+        return s
+    }
+}
+
+fn print_str(s: Str) {
+    let len = len(s)
+    let mut i: Int = 0
+    while i < len {
+        print_char(s.get(i).expect("out-of-bounds"))
+        i = i + 1
+    }
+}
+
+fn print_char(c: Char) {
+    print_str(chars(c))
+}
+
+fn chars(c: Char) -> Str {
+    let s = vec()
+    if c >= 32 && c <= 127 {
+        s = push(s, c)
+    } else {
+        s = push(s, "?")
+    }
+    return s
+}
+
+fn vec() -> Vec<T> {
+    Vec.new()
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    let mut v = v
+    v = append(v, x)
+    return v
+}
+
+fn append(v: Vec<T>, x: T) -> Vec<T> {
+    let mut v = v
+    v = push(v, x)
+    return v
+}
+
+fn len(v: Vec<T>) -> Int {
+    v.len()
+}
+
+fn get(v: Vec<T

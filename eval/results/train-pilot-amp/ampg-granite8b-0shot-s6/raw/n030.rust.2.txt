@@ -1,0 +1,13 @@
+fn main() {
+    let word_seq = "a e i o u a e i o u a e i o u";
+    let vowels: [char; 5] = ['a', 'e', 'i', 'o', 'u'];
+    let mut count = 0;
+
+    for ch in word_seq.chars() {
+        if vowels.contains(&ch) {
+            count += 1;
+        }
+    }
+
+    println!("There are {} vowels in the word sequence.", count);
+}

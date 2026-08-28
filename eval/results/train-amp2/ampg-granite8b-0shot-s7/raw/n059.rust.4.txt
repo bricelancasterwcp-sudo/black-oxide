@@ -1,0 +1,7 @@
+fn main(){
+    let phrase = "when in doubt go home";
+    let word_count = phrase.split_whitespace().count();
+    let char_count = phrase.len();
+    println!("Number of words: {}", word_count);
+    println!("Number of characters: {}", char_count);
+}

@@ -1,0 +1,14 @@
+fn banana() -> Vec<Int> {
+    let banana = "banana".chars().collect()
+    let n_posns = vec()
+    for i in range(0, banana.len()) {
+        if get(&banana, i) == Some("n") {
+            push(n_posns, i)
+        }
+    }
+    n_posns
+}
+
+fn main() {
+    print(banana())
+}

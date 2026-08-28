@@ -1,0 +1,4 @@
+fn main() {
+    let str = str_len(concat(str_len("hello"), str_len(" "), str_len("world")))
+    print(str)
+}

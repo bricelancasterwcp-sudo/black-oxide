@@ -1,0 +1,294 @@
+fn main() {
+    let s = prompt_str("Enter a number: ")?.to_lowercase()
+    let n = parse_int(s)
+    match n {
+        Some(num) => print(num),
+        None => print_str("bad"),
+    }
+}
+
+fn prompt_str(s: Str) -> Option<Str> {
+    print_str(s)
+    let mut buf = String { capacity: 0, len: 0, data: 0 }
+    let n = read_line(buf)
+    if n > 0 {
+        Some(buf.into_str())
+    } else {
+        None
+    }
+}
+
+fn read_line(mutbuf: String) -> Int {
+    let mut c = getchar()
+    while c != EOF {
+        if c == 10 {
+            break
+        }
+        push(mutbuf, c)
+        c = getchar()
+    }
+    mutbuf.len()
+}
+
+fn getchar() -> Int {
+    let mut c = 0
+    unsafe
+    asm(push(rdi, c) + call(sys_get_char) + pop(rdi) + ret)
+    c
+}
+
+fn sys_get_char() -> Int {
+    extern
+    fn_name(".text.sys_get_char")
+}
+
+fn read_line(mutbuf: String) -> Int {
+    let mut c = getchar()
+    while c != EOF {
+        if c == 10 {
+            break
+        }
+        push(mutbuf, c)
+        c = getchar()
+    }
+    mutbuf.len()
+}
+
+fn getchar() -> Int {
+    let mut c = 0
+    unsafe
+    asm(push(rdi, c) + call(sys_get_char) + pop(rdi) + ret)
+    c
+}
+
+fn sys_get_char() -> Int {
+    extern
+    fn_name(".text.sys_get_char")
+}
+
+fn prompt_str(s: Str) -> Option<Str> {
+    print_str(s)
+    let mut buf = String { capacity: 0, len: 0, data: 0 }
+    let n = read_line(buf)
+    if n > 0 {
+        Some(buf.into_str())
+    } else {
+        None
+    }
+}
+
+fn read_line(mutbuf: String) -> Int {
+    let mut c = getchar()
+    while c != EOF {
+        if c == 10 {
+            break
+        }
+        push(mutbuf, c)
+        c = getchar()
+    }
+    mutbuf.len()
+}
+
+fn getchar() -> Int {
+    let mut c = 0
+    unsafe
+    asm(push(rdi, c) + call(sys_get_char) + pop(rdi) + ret)
+    c
+}
+
+fn sys_get_char() -> Int {
+    extern
+    fn_name(".text.sys_get_char")
+}
+
+fn prompt_str(s: Str) -> Option<Str> {
+    print_str(s)
+    let mut buf = String { capacity: 0, len: 0, data: 0 }
+    let n = read_line(buf)
+    if n > 0 {
+        Some(buf.into_str())
+    } else {
+        None
+    }
+}
+
+fn read_line(mutbuf: String) -> Int {
+    let mut c = getchar()
+    while c != EOF {
+        if c == 10 {
+            break
+        }
+        push(mutbuf, c)
+        c = getchar()
+    }
+    mutbuf.len()
+}
+
+fn getchar() -> Int {
+    let mut c = 0
+    unsafe
+    asm(push(rdi, c) + call(sys_get_char) + pop(rdi) + ret)
+    c
+}
+
+fn sys_get_char() -> Int {
+    extern
+    fn_name(".text.sys_get_char")
+}
+
+fn main() {
+    let s = prompt_str("Enter a number: ")?.to_lowercase()
+    let n = parse_int(s)
+    match n {
+        Some(num) => print(num),
+        None => print_str("bad"),
+    }
+}
+
+fn prompt_str(s: Str) -> Option<Str> {
+    print_str(s)
+    let mut buf = String { capacity: 0, len: 0, data: 0 }
+    let n = read_line(buf)
+    if n > 0 {
+        Some(buf.into_str())
+    } else {
+        None
+    }
+}
+
+fn read_line(mutbuf: String) -> Int {
+    let mut c = getchar()
+    while c != EOF {
+        if c == 10 {
+            break
+        }
+        push(mutbuf, c)
+        c = getchar()
+    }
+    mutbuf.len()
+}
+
+fn getchar() -> Int {
+    let mut c = 0
+    unsafe
+    asm(push(rdi, c) + call(sys_get_char) + pop(rdi) + ret)
+    c
+}
+
+fn sys_get_char() -> Int {
+    extern
+    fn_name(".text.sys_get_char")
+}
+
+fn main() {
+    let s = prompt_str("Enter a number: ")?.to_lowercase()
+    let n = parse_int(s)
+    match n {
+        Some(num) => print(num),
+        None => print_str("bad"),
+    }
+}
+
+fn prompt_str(s: Str) -> Option<Str> {
+    print_str(s)
+    let mut buf = String { capacity: 0, len: 0, data: 0 }
+    let n = read_line(buf)
+    if n > 0 {
+        Some(buf.into_str())
+    } else {
+        None
+    }
+}
+
+fn read_line(mutbuf: String) -> Int {
+    let mut c = getchar()
+    while c != EOF {
+        if c == 10 {
+            break
+        }
+        push(mutbuf, c)
+        c = getchar()
+    }
+    mutbuf.len()
+}
+
+fn getchar() -> Int {
+    let mut c = 0
+    unsafe
+    asm(push(rdi, c) + call(sys_get_char) + pop(rdi) + ret)
+    c
+}
+
+fn sys_get_char() -> Int {
+    extern
+    fn_name(".text.sys_get_char")
+}
+
+fn main() {
+    let s = prompt_str("Enter a number: ")?.to_lowercase()
+    let n = parse_int(s)
+    match n {
+        Some(num) => print(num),
+        None => print_str("bad"),
+    }
+}
+
+fn prompt_str(s: Str) -> Option<Str> {
+    print_str(s)
+    let mut buf = String { capacity: 0, len: 0, data: 0 }
+    let n = read_line(buf)
+    if n > 0 {
+        Some(buf.into_str())
+    } else {
+        None
+    }
+}
+
+fn read_line(mutbuf: String) -> Int {
+    let mut c = getchar()
+    while c != EOF {
+        if c == 10 {
+            break
+        }
+        push(mutbuf, c)
+        c = getchar()
+    }
+    mutbuf.len()
+}
+
+fn getchar() -> Int {
+    let mut c = 0
+    unsafe
+    asm(push(rdi, c) + call(sys_get_char) + pop(rdi) + ret)
+    c
+}
+
+fn sys_get_char() -> Int {
+    extern
+    fn_name(".text.sys_get_char")
+}
+
+fn main() {
+    let s = prompt_str("Enter a number: ")?.to_lowercase()
+    let n = parse_int(s)
+    match n {
+        Some(num) => print(num),
+        None => print_str("bad"),
+    }
+}
+
+fn prompt_str(s: Str) -> Option<Str> {
+    print_str(s)
+    let mut buf = String { capacity: 0, len: 0, data: 0 }
+    let n = read_line(buf)
+    if n > 0 {
+        Some(buf.into_str())
+    } else {
+        None
+    }
+}
+
+fn read_line(mutbuf: String) -> Int {
+    let mut c = getchar()
+    while c != EOF {
+        if

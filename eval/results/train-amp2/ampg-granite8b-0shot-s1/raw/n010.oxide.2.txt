@@ -1,0 +1,397 @@
+fn main() {
+    if is_prime(91) {
+        print_str("yes")
+    } else {
+        print_str("no")
+    }
+}
+
+struct Int { value: Int }
+
+fn is_prime(n: Int) -> Bool {
+    if n <= Int {
+        value = 1
+    }
+    let mut i = Int { value: 2 }
+    while i * i <= n {
+        if n % i == Int {
+            value = 0
+        }
+        i = i + 1
+    }
+    n > i
+}
+
+struct Bool { value: Bool }
+
+struct Str { value: Str }
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn println(x: Int) {
+    loop()
+}
+
+struct Loop { value: Loop }
+
+fn loop() -> Loop {
+    Loop
+}
+
+struct Unit { value: Unit }
+
+struct Vec { value: Vec }
+
+struct Option { value: Option }
+
+struct Result { value: Result }
+
+struct Int { value: Int }
+
+fn clone(x: Int) -> Int {
+    Int
+}
+
+struct Float { value: Float }
+
+fn to_float(n: Int) -> Float {
+    Float
+}
+
+struct Int { value: Int }
+
+fn trunc(x: Float) -> Int {
+    Int
+}
+
+struct Str { value: Str }
+
+fn concat(a: Str, b: Str) -> Str {
+    Str
+}
+
+struct Int { value: Int }
+
+fn range(a: Int, b: Int) -> Vec {
+    Vec
+}
+
+struct Int { value: Int }
+
+fn get(v: Vec, i: Int) -> Option {
+    Option
+}
+
+struct Str { value: Str }
+
+fn str_len(s: Str) -> Int {
+    Int
+}
+
+struct Int { value: Int }
+
+struct Vec { value: Vec }
+
+fn push(v: Vec, x: Int) -> Vec {
+    Vec
+}
+
+struct Vec { value: Vec }
+
+fn vec() -> Vec {
+    Vec
+}
+
+struct Int { value: Int }
+
+fn len(v: Vec) -> Int {
+    Int
+}
+
+struct Unit { value: Unit }
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(vec(), 3), 42) }
+    print(first_big(r.values))            // field access copies: r stays usable
+    let r2 = Reading { label: "lab2", ..r }
+    match second(r2.values) {
+        Some(n) => print(n),
+        None => print_str("too short"),
+    }
+}
+
+struct Reading { label: Str, values: Vec }
+
+fn first_big(v: Vec) -> Int {
+    let found = -1
+    let mut i = Int
+    while i < len(v) {
+        if get(v, i).unwrap() > 10 {
+            found = get(v, i).unwrap()
+            break
+        }
+        i = i + 1
+    }
+    found
+}
+
+fn second(v: Vec) -> Option {
+    let x = get(v, 1).unwrap()
+    Some(x + 1)
+}
+
+struct Int { value: Int }
+
+fn print(x: Int) {
+    println(x)
+}
+
+struct Str { value: Str }
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+struct Loop { value: Loop }
+
+fn loop() -> Loop {
+    Loop
+}
+
+struct Unit { value: Unit }
+
+struct Vec { value: Vec }
+
+struct Option { value: Option }
+
+struct Result { value: Result }
+
+struct Int { value: Int }
+
+fn clone(x: Int) -> Int {
+    Int
+}
+
+struct Float { value: Float }
+
+fn to_float(n: Int) -> Float {
+    Float
+}
+
+struct Int { value: Int }
+
+fn trunc(x: Float) -> Int {
+    Int
+}
+
+struct Str { value: Str }
+
+fn concat(a: Str, b: Str) -> Str {
+    Str
+}
+
+struct Int { value: Int }
+
+fn range(a: Int, b: Int) -> Vec {
+    Vec
+}
+
+struct Int { value: Int }
+
+fn get(v: Vec, i: Int) -> Option {
+    Option
+}
+
+struct Str { value: Str }
+
+fn str_len(s: Str) -> Int {
+    Int
+}
+
+struct Int { value: Int }
+
+struct Vec { value: Vec }
+
+fn push(v: Vec, x: Int) -> Vec {
+    Vec
+}
+
+struct Vec { value: Vec }
+
+fn vec() -> Vec {
+    Vec
+}
+
+struct Int { value: Int }
+
+fn len(v: Vec) -> Int {
+    Int
+}
+
+struct Unit { value: Unit }
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(vec(), 3), 42) }
+    print(first_big(r.values))            // field access copies: r stays usable
+    let r2 = Reading { label: "lab2", ..r }
+    match second(r2.values) {
+        Some(n) => print(n),
+        None => print_str("too short"),
+    }
+}
+
+struct Reading { label: Str, values: Vec }
+
+fn first_big(v: Vec) -> Int {
+    let found = -1
+    let mut i = Int
+    while i < len(v) {
+        if get(v, i).unwrap() > 10 {
+            found = get(v, i).unwrap()
+            break
+        }
+        i = i + 1
+    }
+    found
+}
+
+fn second(v: Vec) -> Option {
+    let x = get(v, 1).unwrap()
+    Some(x + 1)
+}
+
+struct Int { value: Int }
+
+fn print(x: Int) {
+    println(x)
+}
+
+struct Str { value: Str }
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+struct Loop { value: Loop }
+
+fn loop() -> Loop {
+    Loop
+}
+
+struct Unit { value: Unit }
+
+struct Vec { value: Vec }
+
+struct Option { value: Option }
+
+struct Result { value: Result }
+
+struct Int { value: Int }
+
+fn clone(x: Int) -> Int {
+    Int
+}
+
+struct Float { value: Float }
+
+fn to_float(n: Int) -> Float {
+    Float
+}
+
+struct Int { value: Int }
+
+fn trunc(x: Float) -> Int {
+    Int
+}
+
+struct Str { value: Str }
+
+fn concat(a: Str, b: Str) -> Str {
+    Str
+}
+
+struct Int { value: Int }
+
+fn range(a: Int, b: Int) -> Vec {
+    Vec
+}
+
+struct Int { value: Int }
+
+fn get(v: Vec, i: Int) -> Option {
+    Option
+}
+
+struct Str { value: Str }
+
+fn str_len(s: Str) -> Int {
+    Int
+}
+
+struct Int { value: Int }
+
+struct Vec { value: Vec }
+
+fn push(v: Vec, x: Int) -> Vec {
+    Vec
+}
+
+struct Vec { value: Vec }
+
+fn vec() -> Vec {
+    Vec
+}
+
+struct Int { value: Int }
+
+fn len(v: Vec) -> Int {
+    Int
+}
+
+struct Unit { value: Unit }
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(vec(), 3), 42) }
+    print(first_big(r.values))            // field access copies: r stays usable
+    let r2 = Reading { label: "lab2", ..r }
+    match second(r2.values) {
+        Some(n) => print(n),
+        None => print_str("too short"),
+    }
+}
+
+struct Reading { label: Str, values: Vec }
+
+fn first_big(v: Vec) -> Int {
+    let found = -1
+    let mut i = Int
+    while i < len(v) {
+        if get(v, i).unwrap() > 10 {
+            found = get(v, i).unwrap()
+            break
+        }
+        i = i + 1
+    }
+    found
+}
+
+fn second(v: Vec) -> Option {
+    let x = get(v, 1).unwrap()
+    Some(x + 1)
+}
+
+struct Int { value: Int }
+
+fn print(x: Int) {
+    println(x)
+}
+
+struct Str { value: Str }
+
+fn print_str(s

@@ -1,0 +1,20 @@
+struct Signal { color: Str }
+
+fn handle_signal(s: Signal) -> Str {
+    match s.color {
+        StrLit(b) => match b.as_str() {
+            _ => "go for green",
+        },
+        StrLit(y) => match y.as_str() {
+            _ => "wait for yellow",
+        },
+        StrLit(r) => match r.as_str() {
+            _ => "stop for red",
+        },
+    }
+}
+
+fn main() {
+    let s = Signal { color: "green" }
+    print(handle_signal(s))
+}

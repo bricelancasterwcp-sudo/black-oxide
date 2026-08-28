@@ -1,0 +1,16 @@
+struct Reading { values: Vec<Int> }
+
+fn max_value(v: Vec<Int>) -> Int {
+    let mut max = -1
+    for x in v {
+        if x > max {
+            max = x
+        }
+    }
+    max
+}
+
+fn main() {
+    let r = Reading { values: vec(5, 3, 9, 1, 7) }
+    print(max_value(r.values))
+}

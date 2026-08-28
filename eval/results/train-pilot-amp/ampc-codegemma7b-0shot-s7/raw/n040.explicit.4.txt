@@ -1,0 +1,16 @@
+fn area_square(s: Int) -> Float {
+    return (to_float(s) * to_float(s))
+}
+
+fn area_circle(r: Float) -> Float {
+    return (3.14 * r * r)
+}
+
+fn main() {
+    let square = area_square(4)
+    let circle = area_circle(2.5)
+    print(square)
+    print(circle)
+    drop square
+    drop circle
+}

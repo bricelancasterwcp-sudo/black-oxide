@@ -1,0 +1,14 @@
+fn main() {
+    let signal = read_signal()
+    match signal {
+        Red => {
+            println("Stop")
+        },
+        Yellow => {
+            println("Wait")
+        },
+        Green => {
+            println("Go!")
+        },
+    }
+}

@@ -1,0 +1,9 @@
+fn main() {
+  let list = vec![1, 2];
+  let index = 4;
+  if index < list.len() {
+    println!("{}", list[index]);
+  } else {
+    println!("None");
+  }
+}

@@ -1,0 +1,8 @@
+struct Item { name: Str, value: Int, units: Int }
+
+fn main() {
+    let item1 = Item { name: "Item 1", value: 3, units: 4 }
+    let item2 = Item { name: "Item 2", value: 2, units: 5 }
+    let total_value = (item1.value * item1.units) + (item2.value * item2.units)
+    print(total_value)
+}

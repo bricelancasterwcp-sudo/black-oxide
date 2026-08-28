@@ -1,0 +1,16 @@
+fn main() {
+    let mut input = String::new();
+
+    std::io::stdin().read_line(&mut input).expect("Failed to read line");
+    let signal = input.trim();
+
+    match signal {
+        "green" => println!("go for green"),
+        "yellow" => {
+            println!("wait for yellow");
+            std::thread::sleep(std::time::Duration::from_secs(1));
+            println!("stop for red");
+        },
+        _ => println!("unknown signal")
+    }
+}

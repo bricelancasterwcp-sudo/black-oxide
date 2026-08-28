@@ -1,0 +1,16 @@
+fn area(w: Int, h: Int) -> Int {
+    w * h
+}
+
+fn main() {
+    let w = 2
+    let h = 3
+    let r = area(w, h)
+    drop w
+    drop h
+    let w = 5
+    let a = area(w, h)
+    drop w
+    drop h
+    print(a)
+}

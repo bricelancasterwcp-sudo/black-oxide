@@ -1,0 +1,30 @@
+```rust
+use std::io::{stdin, stdout, Write};
+
+fn main() {
+    loop {
+        print!("Go for green, wait for yellow, stop for red: ");
+        stdout().flush().unwrap();
+
+        let mut input = String::new();
+        stdin().read_line(&mut input).unwrap();
+        let input = input.trim();
+
+        match input {
+            "green" => {
+                println!("Green light");
+            }
+            "yellow" => {
+                println!("Yellow light");
+            }
+            "red" => {
+                println!("Red light");
+                break;
+            }
+            _ => {
+                println!("Invalid input");
+            }
+        }
+    }
+}
+```

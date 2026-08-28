@@ -1,0 +1,36 @@
+struct DivResult {
+    value: Int,
+    error: Option<Str>,
+}
+
+fn divide(a: Int, b: Int) -> DivResult {
+    if b == 0 {
+        DivResult(value == 0, error == Some("bad"))
+    } else {
+        DivResult(value == a / b, error == None)
+    }
+}
+
+fn main() {
+    let result = divide(20, 4)
+    match result.error {
+        Some(error) => print_str(error),
+        None => print(result.value),
+    }
+}
+
+fn divide(a: Int, b: Int) -> DivResult {
+    if b == 0 {
+        DivResult(value == 0, error == Some("bad"))
+    } else {
+        DivResult(value == a / b, error == None)
+    }
+}
+
+fn main() {
+    let result = divide(20, 4)
+    match result.error {
+        Some(error) => print_str(error),
+        None => print(result.value),
+    }
+}

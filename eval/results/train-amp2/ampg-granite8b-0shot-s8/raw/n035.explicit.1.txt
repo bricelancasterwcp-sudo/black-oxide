@@ -1,0 +1,22 @@
+fn divide(a: Int, b: Int) -> Option<Int> {
+    if b == 0 {
+        None
+    } else {
+        Some(a / b)
+    }
+}
+
+fn print_answer(ans: Option<Int>) {
+    match ans {
+        Some(x) => {
+            print(x)
+        },
+        None => {
+            print_str("bad")
+        },
+    }
+}
+
+fn main() {
+    print_answer(divide(20, 4))
+}

@@ -1,0 +1,10 @@
+struct PowerTwo { value: Int }
+
+fn main() {
+    let mut p = PowerTwo { value: 1 }
+    while p.value < 100 {
+        let old = p
+        p = PowerTwo { value: p.value * 2 }
+        print(p.value)
+    }
+}

@@ -1,0 +1,17 @@
+fn main() {
+    let word = "word keyboard letter by letter. Print how many letters are vowels, then how many are not. Reply with ONLY the complete corrected program source, no fences, no commentary."
+    let vowels = 0
+    let consonants = 0
+    for letter in &word {
+        match letter {
+            _ => {
+                vowels = vowels + 1
+            },
+            _ => {
+                consonants = consonants + 1
+            },
+        }
+    }
+    print(vowels)
+    print(consonants)
+}

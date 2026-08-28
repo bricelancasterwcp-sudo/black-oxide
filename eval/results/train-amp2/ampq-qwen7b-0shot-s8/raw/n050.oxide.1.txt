@@ -1,0 +1,8 @@
+struct Scores { values: Vec<Int> }
+
+fn main() {
+    let scores = Scores { values: vec(5, 2, 9) }
+    for score in scores.values {
+        print(score)
+    }
+}

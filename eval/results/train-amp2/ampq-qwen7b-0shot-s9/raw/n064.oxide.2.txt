@@ -1,0 +1,13 @@
+struct List { values: Vec<Int> }
+
+fn main() {
+    let list = List { values: push(push(vec(), 10), 20) }
+    match get(list.values, 1) {
+        Some(x) => print(x),
+        None => print_str("empty"),
+    }
+    match get(list.values, 3) {
+        Some(x) => print(x),
+        None => print_str("empty"),
+    }
+}

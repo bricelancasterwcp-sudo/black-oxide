@@ -1,0 +1,25 @@
+struct List { data: Vec<Int>, len: Int }
+
+fn main() {
+    let mut v = vec()
+    v = push(v, 10)
+    v = push(v, 20)
+    let l = List { data: v, len: 2 }
+    let a = get(l.data, l.len - 1 - 1)?
+    print(a)
+    let b = get(l.data, 0)?
+    print(b)
+}
+
+struct List { data: Vec<Int>, len: Int }
+
+fn main() {
+    let mut v = vec()
+    v = push(v, 10)
+    v = push(v, 20)
+    let l = List { data: v, len: 2 }
+    let a = get(l.data, l.len - 1 - 1)?
+    print(a)
+    let b = get(l.data, 0)?
+    print(b)
+}

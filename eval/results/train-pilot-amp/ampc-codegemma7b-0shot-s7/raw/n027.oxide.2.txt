@@ -1,0 +1,6 @@
+fn main() {
+    let c = "cat".chars().collect()
+    for x in c {
+        print_str(x)
+    }
+}

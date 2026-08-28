@@ -1,0 +1,21 @@
+fn is_prime(n: Int) -> Bool {
+    if n == 1 {
+        return false
+    }
+    if n == 2 {
+        return true
+    }
+    if n % 2 == 0 {
+        return false
+    }
+    for i in range(3, n) {
+        if n % i == 0 {
+            return false
+        }
+    }
+    true
+}
+
+fn main() {
+    print(is_prime(91))
+}

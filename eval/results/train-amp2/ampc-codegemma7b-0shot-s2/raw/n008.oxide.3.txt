@@ -1,0 +1,13 @@
+fn count(n: Int) -> Int {
+    let mut acc = 0
+    for i in 1.to(n) {
+        if i % 3 == 0 || i % 5 == 0 {
+            acc = acc + 1
+        }
+    }
+    acc
+}
+
+fn main() {
+    print(count(50))
+}

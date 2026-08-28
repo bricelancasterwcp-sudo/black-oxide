@@ -1,0 +1,14 @@
+fn swap_ends(q: &Vec<Int>) -> Vec<Int> {
+    let mut q = clone(q)
+    push(q, get(&q, 0).unwrap())
+    drop get
+    push(q, get(&q, len(&q) - 1).unwrap())
+    drop get
+    q
+}
+
+fn main() {
+    let q = push(push(push(push(vec(), 1), 2), 3), 4)
+    print(swap_ends(&q))
+    drop q
+}

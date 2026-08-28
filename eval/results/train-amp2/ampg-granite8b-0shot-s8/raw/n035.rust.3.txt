@@ -1,0 +1,15 @@
+fn main() {
+    let result = divide(20, 4);
+    match result {
+        Ok(answer) => println!("The answer is {}", answer),
+        Err(_) => println!("Bad!"),
+    }
+}
+
+fn divide(numerator: i32, denominator: i32) -> Result<i32, ()> {
+    if denominator == 0 {
+        Err(())
+    } else {
+        Ok(numerator / denominator)
+    }
+}

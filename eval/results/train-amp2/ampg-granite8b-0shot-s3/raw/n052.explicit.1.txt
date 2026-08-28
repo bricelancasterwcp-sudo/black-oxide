@@ -1,0 +1,9 @@
+fn main() {
+    let banana = "banana".to_string()
+    for i in 0.to_float() < banana.len() {
+        if banana.chars().get(i).unwrap() == &n {
+            print(i)
+        }
+    }
+    drop banana
+}

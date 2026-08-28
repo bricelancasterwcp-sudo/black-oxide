@@ -1,0 +1,21 @@
+```rust
+fn main() {
+    let scores = [2, 9, 5];
+    let mut sorted_scores = [0; 3];
+    let mut idx = 0;
+    while idx < scores.len() {
+        let mut max_idx = idx;
+        for j in (idx + 1)..scores.len() {
+            if scores[j] > scores[max_idx] {
+                max_idx = j;
+            }
+        }
+        sorted_scores[idx] = scores[max_idx];
+        scores[max_idx] = 0;
+        idx += 1;
+    }
+    for score in sorted_scores {
+        println!("{}", score);
+    }
+}
+```

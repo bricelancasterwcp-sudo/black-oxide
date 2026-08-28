@@ -1,0 +1,283 @@
+fn main() {
+    let mut r = Rectangle(2, 3)
+    r.w = 5
+    print(area(&r))
+    drop r
+}
+
+struct Rectangle {
+    w: Int,
+    h: Int,
+}
+
+fn area(r: &Rectangle) -> Int {
+    r.w * r.h
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    print_str_impl(s)
+}
+
+fn print_str_impl(s: Str) {
+    for c in chars(s) {
+        print_char(c)
+    }
+}
+
+fn print_char(c: Str) {
+    print_char_impl(c)
+}
+
+fn print_char_impl(c: Str) {
+    unsafe_print_char(c)
+}
+
+fn unsafe_print_char(c: Str) {
+    let mut b = 0
+    for i in 0.upto(len(c)) {
+        b = concat(b, int_to_str(ord(c, i)))
+    }
+    print_str_impl(b)
+}
+
+fn ord(s: Str, i: Int) -> Int {
+    ord_impl(s, i)
+}
+
+fn ord_impl(s: Str, i: Int) -> Int {
+    unsafe_ord(s, i)
+}
+
+fn unsafe_ord(s: Str, i: Int) -> Int {
+    let mut b = 0
+    for c in chars(s) {
+        b = concat(b, int_to_str(ord_char(c)))
+    }
+    to_int(unsafe_eval(b, i))
+}
+
+fn ord_char(c: Str) -> Int {
+    ord_char_impl(c)
+}
+
+fn ord_char_impl(c: Str) -> Int {
+    unsafe_ord_char(c)
+}
+
+fn unsafe_ord_char(c: Str) -> Int {
+    unsafe_eval("ord", int_to_str(first(c)))
+}
+
+fn first(s: Str) -> Int {
+    first_impl(s)
+}
+
+fn first_impl(s: Str) -> Int {
+    unsafe_first(s)
+}
+
+fn unsafe_first(s: Str) -> Int {
+    unsafe_eval("first", s)
+}
+
+fn unsafe_eval(f: Str, a: Str) -> Str {
+    let mut res = 0
+    for i in 0.upto(len(a)) {
+        res = concat(res, int_to_str(unsafe_call(f, int_to_str(a, i))))
+    }
+    res
+}
+
+fn unsafe_call(f: Str, a: Str) -> Int {
+    let mut res = 0
+    for i in 0.upto(len(a)) {
+        res = concat(res, int_to_str(unsafe_add(f, int_to_str(a, i))))
+    }
+    to_int(unsafe_eval(res))
+}
+
+fn unsafe_add(f: Str, a: Str) -> Int {
+    unsafe_eval(f, concat(a, int_to_str(1)))
+}
+
+fn to_int(s: Str) -> Int {
+    to_int_impl(s)
+}
+
+fn to_int_impl(s: Str) -> Int {
+    unsafe_to_int(s)
+}
+
+fn unsafe_to_int(s: Str) -> Int {
+    let mut res = 0
+    for i in 0.upto(len(s)) {
+        res = concat(res, int_to_str(unsafe_mul(int_to_str(s, i), int_to_str(10))))
+    }
+    unsafe_eval(res)
+}
+
+fn unsafe_mul(a: Str, b: Str) -> Int {
+    unsafe_eval(concat(a, int_to_str(unsafe_add(b, int_to_str(1)))), int_to_str(2))
+}
+
+fn len(s: Str) -> Int {
+    len_impl(s)
+}
+
+fn len_impl(s: Str) -> Int {
+    unsafe_len(s)
+}
+
+fn unsafe_len(s: Str) -> Int {
+    unsafe_eval("len", s)
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    concat_impl(a, b)
+}
+
+fn concat_impl(a: Str, b: Str) -> Str {
+    unsafe_concat(a, b)
+}
+
+fn unsafe_concat(a: Str, b: Str) -> Str {
+    unsafe_eval("concat", concat(a, b))
+}
+
+fn to_float(n: Int) -> Float {
+    to_float_impl(n)
+}
+
+fn to_float_impl(n: Int) -> Float {
+    unsafe_to_float(n)
+}
+
+fn unsafe_to_float(n: Int) -> Float {
+    unsafe_eval("to_float", int_to_str(n))
+}
+
+fn trunc(x: Int) -> Int {
+    trunc_impl(x)
+}
+
+fn trunc_impl(x: Int) -> Int {
+    unsafe_trunc(x)
+}
+
+fn unsafe_trunc(x: Int) -> Int {
+    unsafe_eval("trunc", int_to_str(x))
+}
+
+fn print_float(x: Float) {
+    print_float_impl(x)
+}
+
+fn print_float_impl(x: Float) {
+    unsafe_print_float(x)
+}
+
+fn unsafe_print_float(x: Float) {
+    unsafe_eval("print_float", int_to_str(x))
+}
+
+fn main() {
+    let mut r = Rectangle(2, 3)
+    r.w = 5
+    print(area(&r))
+    drop r
+}
+
+struct Rectangle {
+    w: Int,
+    h: Int,
+}
+
+fn area(r: &Rectangle) -> Int {
+    r.w * r.h
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    print_str_impl(s)
+}
+
+fn print_str_impl(s: Str) {
+    for c in chars(s) {
+        print_char(c)
+    }
+}
+
+fn print_char(c: Str) {
+    print_char_impl(c)
+}
+
+fn print_char_impl(c: Str) {
+    unsafe_print_char(c)
+}
+
+fn unsafe_print_char(c: Str) {
+    let mut b = 0
+    for i in 0.upto(len(c)) {
+        b = concat(b, int_to_str(ord(c, i)))
+    }
+    print_str_impl(b)
+}
+
+fn ord(s: Str, i: Int) -> Int {
+    ord_impl(s, i)
+}
+
+fn ord_impl(s: Str, i: Int) -> Int {
+    unsafe_ord(s, i)
+}
+
+fn unsafe_ord(s: Str, i: Int) -> Int {
+    let mut b = 0
+    for c in chars(s) {
+        b = concat(b, int_to_str(ord_char(c)))
+    }
+    to_int(unsafe_eval(b, i))
+}
+
+fn ord_char(c: Str) -> Int {
+    ord_char_impl(c)
+}
+
+fn ord_char_impl(c: Str) -> Int {
+    unsafe_ord_char(c)
+}
+
+fn unsafe_ord_char(c: Str) -> Int {
+    unsafe_eval("ord", int_to_str(first(c)))
+}
+
+fn first(s: Str) -> Int {
+    first_impl(s)
+}
+
+fn first_impl(s: Str) -> Int {
+    unsafe_first(s)
+}
+
+fn unsafe_first(s: Str) -> Int {
+    unsafe_eval("first", s)
+}
+
+fn unsafe_eval(f: Str, a: Str) -> Str {
+    let mut res = 0
+    for i in 0.upto(len(a)) {
+        res = concat(res, int_to_str(unsafe_call(f, int_to_str(a, i))))
+    }
+    res
+}
+
+fn unsafe_call(f: Str, a: Str) -> Int {
+    let mut res = 0
+    for

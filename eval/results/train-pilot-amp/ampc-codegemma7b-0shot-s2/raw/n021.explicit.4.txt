@@ -1,0 +1,80 @@
+fn count(s: &Str) -> Int {
+    let mut total = 0
+    for c in chars(&s) {
+        total = total + 1
+    }
+    total
+}
+
+fn main() {
+    print(count(&str_lit_str_literal_programming))
+}
+
+fn str_lit_str_literal_programming() -> Str {
+    return Str("programming")
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut total = vec()
+    for c in s.chars() {
+        total.push(Str(c.to_string()))
+    }
+    total
+}
+
+fn str_len(s: &Str) -> Int {
+    let mut total = 0
+    for c in chars(s) {
+        total = total + 1
+    }
+    total
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    let mut total = v
+    total.push(x)
+    return total
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn int_to_str(n: Int) -> Str {
+    return Str(n.to_string())
+}
+
+fn clone(x: &Str) -> Str {
+    return Str(x.to_string())
+}
+
+fn get(v: &Vec<Str>, i: Int) -> Option<Str> {
+    if i < v.len() {
+        return Some(clone(&v))
+    }
+    return None
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut total = vec()
+    for i in a.to_int() + 1.to_int() < b.to_int() {
+        total.push(i)
+    }
+    total
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    return Str(a.to_string() + b.to_string())
+}
+
+fn to_float(n: Int) -> Float {
+    return n.to_float()
+}
+
+fn trunc(x: Float) -> Int {
+    return x.trunc()
+}
+
+fn main() {
+    print(str_len(&str_lit_str_literal_programming))
+}

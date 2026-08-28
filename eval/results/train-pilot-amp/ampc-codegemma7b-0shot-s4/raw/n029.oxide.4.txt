@@ -1,0 +1,4 @@
+fn main() {
+    let x = concat(concat(int_to_str(1), " "), int_to_str(2))
+    print(concat(x, " ", int_to_str(3)))
+}

@@ -1,0 +1,9 @@
+struct Rectangle { width: Int, height: Int }
+
+fn area(r: Rectangle) -> Int {
+    r.width * r.height
+}
+
+fn main() {
+    print(area(Rectangle { width: 7, height: 6 }))
+}

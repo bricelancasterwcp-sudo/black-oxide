@@ -1,0 +1,6 @@
+fn main() {
+    let mut list = Vec::new();
+    list.push(1);
+    list.push(2);
+    println!("{:?}", list.get(5));
+}

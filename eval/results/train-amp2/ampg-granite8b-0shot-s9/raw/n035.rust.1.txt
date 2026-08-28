@@ -1,0 +1,22 @@
+```rust
+fn main() {
+    let twenty = 20;
+    let four = 4;
+
+    let answer = divide(twenty, four);
+
+    if let Some(a) = answer {
+        println!("{}", a);
+    } else {
+        println!("bad")
+    }
+}
+
+fn divide(dividend: i32, divisor: i32) -> Option<i32> {
+    if divisor == 0 {
+        return None;
+    }
+
+    Some(dividend / divisor)
+}
+```

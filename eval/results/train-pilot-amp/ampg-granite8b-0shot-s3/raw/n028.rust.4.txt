@@ -1,0 +1,15 @@
+fn main() {
+    let mut buffer = String::new();
+    match std::io::stdin().lock().read_line(&mut buffer) {
+        Ok(_) => {}
+        Err(_) => {
+            println!("bad");
+            return;
+        }
+    }
+    if let Ok(num) = buffer.trim().parse::<f64>() {
+        println!("{:?}", num);
+    } else {
+        println!("bad");
+    }
+}

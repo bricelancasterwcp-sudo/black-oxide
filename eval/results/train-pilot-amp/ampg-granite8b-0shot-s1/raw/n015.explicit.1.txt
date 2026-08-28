@@ -1,0 +1,15 @@
+fn larger_than_4(nums: &Vec<Int>) -> Int {
+    let count = 0
+    for x in &nums {
+        if x > 4 {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn main() {
+    let nums = vec(1, 9, 5, 4, 7, 0)
+    print(larger_than_4(&nums))
+    drop nums
+}

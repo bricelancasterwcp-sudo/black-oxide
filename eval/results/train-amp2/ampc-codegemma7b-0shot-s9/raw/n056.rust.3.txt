@@ -1,0 +1,48 @@
+fn main() {
+    let mut total = 0;
+    let mut not_total = 0;
+    let mut x = String::new();
+    let mut y = String::new();
+    let mut z = String::new();
+    let mut w = String::new();
+
+    println!("Enter text 1:");
+    std::io::stdin().read_line(&mut x).unwrap();
+    x = x.trim().to_lowercase();
+
+    println!("Enter text 2:");
+    std::io::stdin().read_line(&mut y).unwrap();
+    y = y.trim().to_lowercase();
+
+    println!("Enter text 3:");
+    std::io::stdin().read_line(&mut z).unwrap();
+    z = z.trim().to_lowercase();
+
+    println!("Enter text 4:");
+    std::io::stdin().read_line(&mut w).unwrap();
+    w = w.trim().to_lowercase();
+
+    if x.chars().nth(0).unwrap() == '7' {
+        total += 1;
+    } else {
+        not_total += 1;
+    }
+    if y.chars().nth(0).unwrap() == '7' {
+        total += 1;
+    } else {
+        not_total += 1;
+    }
+    if z.chars().nth(0).unwrap() == '7' {
+        total += 1;
+    } else {
+        not_total += 1;
+    }
+    if w.chars().nth(0).unwrap() == '7' {
+        total += 1;
+    } else {
+        not_total += 1;
+    }
+
+    println!("Total 7's: {}", total);
+    println!("Total not 7's: {}", not_total);
+}

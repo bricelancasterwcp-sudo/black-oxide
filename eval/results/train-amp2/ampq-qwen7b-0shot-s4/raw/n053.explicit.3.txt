@@ -1,0 +1,10 @@
+fn reverse_and_print(s: Str) {
+    let chars = chars(s)
+    let reversed = concat(vec(), chars.iter().rev().cloned().map(str_len).collect())
+    print_str(reversed)
+    print_str(s)
+}
+
+fn main() {
+    reverse_and_print("drum")
+}

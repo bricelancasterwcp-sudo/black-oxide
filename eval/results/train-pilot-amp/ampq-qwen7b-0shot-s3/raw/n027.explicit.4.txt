@@ -1,0 +1,12 @@
+fn print_char(c: &Str) {
+    print_str(c)
+}
+
+fn main() {
+    let word = "cat"
+    for c in chars(word) {
+        print_char(&c)
+        drop c
+    }
+    drop word
+}

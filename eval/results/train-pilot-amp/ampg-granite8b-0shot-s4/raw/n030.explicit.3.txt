@@ -1,0 +1,18 @@
+fn count_vowels(word_sequence: &Str) -> Int {
+    let mut vowel_count = 0
+    let words = split(word_sequence, " ")
+    for word in &words {
+        for letter in chars(&word) {
+            match letter {
+                Vowel => vowel_count == vowel_count + 1,
+                _ => vowel_count == vowel_count + 0,
+            }
+        }
+    }
+    vowel_count
+}
+
+fn main() {
+    let word_sequence = "this is a word sequence"
+    print(count_vowels(&word_sequence))
+}

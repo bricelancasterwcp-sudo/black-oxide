@@ -1,0 +1,19 @@
+fn main() {
+    let values = [12, 5, 20, 8, 17];
+    
+    let (largest, second_largest) = values.iter().cloned().fold(
+        (std::i32::MIN, std::i32::MIN),
+        |(max, second_max), x| {
+            if x > max {
+                (x, max)
+            } else if x > second_max {
+                (max, x)
+            } else {
+                (max, second_max)
+            }
+        },
+    );
+    
+    println!("{}", largest);
+    println!("{}", second_largest);
+}

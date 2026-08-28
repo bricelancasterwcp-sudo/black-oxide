@@ -1,0 +1,310 @@
+fn main() {
+    let phrase = "when in doubt go home".to_string()
+    let word_count = split(phrase, " ").len()
+    let character_count = str_len(phrase)
+    print(word_count)
+    print(character_count)
+}
+
+fn split(s: Str, delimiter: Str) -> Vec<Str> {
+    let mut result = vec()
+    let mut start = 0
+    let mut end = 0
+    while end < str_len(s) {
+        if str_eq(substring(s, end, end + 1), delimiter) {
+            push(result, substring(s, start, end))
+            start = end + 1
+        }
+        end = end + 1
+    }
+    push(result, substring(s, start, end))
+    result
+}
+
+fn substring(s: Str, start: Int, end: Int) -> Str {
+    let mut result = ""
+    for i in start < end {
+        result = concat(result, substring(s, i, i + 1))
+    }
+    result
+}
+
+fn str_eq(a: Str, b: Str) -> Bool {
+    let mut i = 0
+    while i < str_len(a) && i < str_len(b) {
+        if not(str_eq(substring(a, i, i + 1), substring(b, i, i + 1))) {
+            return False
+        }
+        i = i + 1
+    }
+    str_len(a) == str_len(b)
+}
+
+fn str_len(s: Str) -> Int {
+    let mut result = 0
+    for _ in chars(s) {
+        result = result + 1
+    }
+    result
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = vec()
+    for i in 0 < str_len(s) {
+        push(result, substring(s, i, i + 1))
+    }
+    result
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut result = ""
+    for s in vec(a, b) {
+        result = result + s
+    }
+    result
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    let mut result = v
+    result.append(x)
+    result
+}
+
+fn print(x: T) {
+    println(x)
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn to_string(x: T) -> Str {
+    x.to_string()
+}
+
+fn bool_to_str(b: Bool) -> Str {
+    if b {
+        "true".to_string()
+    } else {
+        "false".to_string()
+    }
+}
+
+fn int_to_str(i: Int) -> Str {
+    i.to_string()
+}
+
+fn float_to_str(f: Float) -> Str {
+    f.to_string()
+}
+
+fn option_to_str(o: Option<T>) -> Str {
+    match o {
+        Some(x) => x.to_string(),
+        None => "None".to_string(),
+    }
+}
+
+fn result_to_str(r: Result<T, E>) -> Str {
+    match r {
+        Ok(x) => x.to_string(),
+        Err(e) => e.to_string(),
+    }
+}
+
+fn vec_to_str(v: Vec<T>) -> Str {
+    let mut result = "["
+    for i in 0 < len(v) {
+        result = concat(result, to_string(v.get(i).unwrap()))
+        if i != len(v) - 1 {
+            result = concat(result, ", ")
+        }
+    }
+    concat(result, "]")
+}
+
+fn struct_to_str(s: Struct) -> Str {
+    let mut result = "{"
+    for f in struct_fields(s) {
+        result = concat(result, concat(f.name, ": "))
+        result = concat(result, to_string(f.value))
+        result = concat(result, ", ")
+    }
+    concat(result, "}")
+}
+
+fn enum_to_str(e: Enum) -> Str {
+    match e {
+        Variant(args) => {
+            let mut result = e.name
+            for a in args {
+                result = concat(result, concat(", ", to_string(a)))
+            }
+            result
+        },
+        Nullary => e.name.to_string(),
+    }
+}
+
+fn tuple_to_str(t: Tuple) -> Str {
+    let mut result = "("
+    for i in 0 < len(t) {
+        result = concat(result, to_string(t.get(i).unwrap()))
+        if i != len(t) - 1 {
+            result = concat(result, ", ")
+        }
+    }
+    concat(result, ")")
+}
+
+fn int_to_float(i: Int) -> Float {
+    i.to_float()
+}
+
+fn float_to_int(f: Float) -> Int {
+    f.trunc()
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn sub(a: Int, b: Int) -> Int {
+    a - b
+}
+
+fn mul(a: Int, b: Int) -> Int {
+    a * b
+}
+
+fn div(a: Int, b: Int) -> Int {
+    a / b
+}
+
+fn rem(a: Int, b: Int) -> Int {
+    a % b
+}
+
+fn lt(a: Int, b: Int) -> Bool {
+    a < b
+}
+
+fn gt(a: Int, b: Int) -> Bool {
+    a > b
+}
+
+fn le(a: Int, b: Int) -> Bool {
+    a <= b
+}
+
+fn ge(a: Int, b: Int) -> Bool {
+    a >= b
+}
+
+fn eq(a: Int, b: Int) -> Bool {
+    a == b
+}
+
+fn ne(a: Int, b: Int) -> Bool {
+    a != b
+}
+
+fn not(a: Bool) -> Bool {
+    !a
+}
+
+fn and(a: Bool, b: Bool) -> Bool {
+    a && b
+}
+
+fn or(a: Bool, b: Bool) -> Bool {
+    a || b
+}
+
+fn xor(a: Bool, b: Bool) -> Bool {
+    a != b
+}
+
+fn bitand(a: Int, b: Int) -> Int {
+    a && b
+}
+
+fn bitor(a: Int, b: Int) -> Int {
+    a || b
+}
+
+fn bitxor(a: Int, b: Int) -> Int {
+    a != b
+}
+
+fn bitnot(a: Int) -> Int {
+    !a
+}
+
+fn shift_left(a: Int, b: Int) -> Int {
+    a.shift_left(b)
+}
+
+fn shift_right(a: Int, b: Int) -> Int {
+    a.shift_right(b)
+}
+
+fn assert(cond: Bool) {
+    if not(cond) {
+        panic("assertion failed")
+    }
+}
+
+fn panic(msg: Str) {
+    println(msg)
+    exit(1)
+}
+
+fn exit(code: Int) {
+    std(code)
+}
+
+fn std(code: Int) {
+    std(code)
+}
+
+fn clone(x: T) -> T {
+    x.clone()
+}
+
+fn len(v: Vec<T>) -> Int {
+    v.len()
+}
+
+fn get(v: Vec<T>, i: Int) -> Option<T> {
+    v.get(i)
+}
+
+fn append(v: Vec<T>, x: T) -> Vec<T> {
+    let mut result = v
+    result.append(x)
+    result
+}
+
+fn struct_fields(s: Struct) -> Vec<StructField> {
+    s.fields
+}
+
+fn enum_variant_args(e: Variant) -> Vec<T> {
+    e.args
+}
+
+fn tuple_elems(t: Tuple) -> Vec<T> {
+    t.elems
+}
+
+fn is_some(o: Option<T>) -> Bool {
+    o != None
+}
+
+fn is_none(o: Option<T>) -> Bool {
+    o == None
+}
+
+fn unwrap(o: Option<T>) -> T {
+    

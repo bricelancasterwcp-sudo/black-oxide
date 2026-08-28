@@ -1,0 +1,11 @@
+fn d(s: Str) -> Str {
+    let s = chars(s)
+    let s = reverse(s)
+    let s = concat(s, s)
+    s
+}
+
+fn main() {
+    let s = d("word")
+    print_str(s)
+}

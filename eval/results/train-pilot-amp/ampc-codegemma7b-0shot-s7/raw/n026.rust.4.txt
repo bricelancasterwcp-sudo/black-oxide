@@ -1,0 +1,4 @@
+fn main() {
+    let number_as_text = format!("{:?}", 2026);
+    println!("Number of characters: {}", number_as_text.len());
+}

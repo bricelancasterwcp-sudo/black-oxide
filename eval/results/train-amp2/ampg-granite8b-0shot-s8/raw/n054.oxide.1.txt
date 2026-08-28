@@ -1,0 +1,30 @@
+struct Word { letters: Vec<Char> }
+
+fn is_vowel(c: Char) -> Bool {
+    let vowels = vec("a", "e", "i", "o", "u")
+    for vowel in vowels {
+        if c == vowel {
+            return true
+        }
+    }
+    false
+}
+
+fn count_vowels_and_consonants(word: Word) -> Tuple<Int, Int> {
+    let mut vowels = 0
+    let mut consonants = 0
+    for letter in word.letters {
+        if is_vowel(letter) {
+            vowels = vowels + 1
+        } else {
+            consonants = consonants + 1
+        }
+    }
+    (vowels.clone() + 100 * consonants.clone() + 10000 * word.letters.len().clone())
+}
+
+fn main() {
+    let word = Word { letters: vec("l", "o", "n", "g", "e", "r", "s") }
+    let vowels_consonants = count_vowels_and_consonants(word)
+    print(vowels_consonants)
+}

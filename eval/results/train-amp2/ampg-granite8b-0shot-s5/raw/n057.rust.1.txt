@@ -1,0 +1,33 @@
+```rust
+fn main() {
+    let name = "fig";
+    let second = "banana";
+    let third = "kiwi";
+    let mut name_length = 0;
+    let mut second_length = 0;
+    let mut third_length = 0;
+
+    for c in name.chars() {
+        name_length += 1;
+    }
+
+    for c in second.chars() {
+        second_length += 1;
+    }
+
+    for c in third.chars() {
+        third_length += 1;
+    }
+
+    let (biggest_name, biggest_count) = if name_length > second_length && name_length > third_length {
+        (name, name_length)
+    } else if second_length > third_length {
+        (second, second_length)
+    } else {
+        (third, third_length)
+    };
+
+    println!("The longest name is: {}", biggest_name);
+    println!("Their length is: {}", biggest_count);
+}
+```

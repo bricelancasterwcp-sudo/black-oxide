@@ -1,0 +1,14 @@
+```rust
+fn main(){
+    let mut input = String::new();
+    std::io::stdin().read_line(&mut input).unwrap();
+    let input: Vec<&str> = input.trim().split(' ').collect();
+
+    for x in &input {
+        match x.parse::<i32>() {
+            Ok(num) => println!("{}", num),
+            Err(_) => println!("bad")
+        }
+    }
+}
+```

@@ -1,0 +1,11 @@
+struct Log { entries: Vec<Int> }
+
+fn main() {
+    let log = Log { entries: vec(6, 7, 8, 9) }
+    if letSome(x) == log.entries.get(0) {
+        print(x)
+    }
+    if letSome(x) == log.entries.get(log.entries.len() - 1) {
+        print(x)
+    }
+}

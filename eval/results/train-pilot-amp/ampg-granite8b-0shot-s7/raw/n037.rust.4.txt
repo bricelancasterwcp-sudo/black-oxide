@@ -1,0 +1,13 @@
+fn main() {
+    // Change this to make the rectangle five units wide.
+    let width = 2;
+
+    // The height is 3 for this rectangle.
+    let height = 3;
+
+    // Calculate the area of the rectangle.
+    let area = width * height;
+
+    // Print the area of the rectangle.
+    println!("The area of the rectangle is {} square units.", area);
+}

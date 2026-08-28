@@ -1,0 +1,310 @@
+fn main() {
+    let mut n = 2026
+    let mut s = "0"
+    while n > 0 {
+        n = n - 1
+        s = concat(&s, "1")
+    }
+    print(s)
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    let mut result = a
+    let mut i = 0
+    while i < str_len(b) {
+        result = push(result, get(b, i))
+        i = i + 1
+    }
+    result
+}
+
+fn print(s: &Str) {
+    let mut i = 0
+    while i < str_len(s) {
+        print_str(get(s, i))
+        i = i + 1
+    }
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Int {
+    if i < 0 {
+        panic("Index out of bounds")
+    } else if i >= len(v) {
+        panic("Index out of bounds")
+    }
+    v.get(i)
+}
+
+fn panic(s: &Str) -> Int {
+    loop()
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    let mut i = a
+    while i < b {
+        result = push(result, i)
+        i = i + 1
+    }
+    result
+}
+
+fn str_len(s: &Str) -> Int {
+    len(s)
+}
+
+fn clone(x: Int) -> Int {
+    x
+}
+
+fn to_float(x: Int) -> Float {
+    x
+}
+
+fn trunc(x: Float) -> Int {
+    x
+}
+
+fn main() {
+    let v = vec(1, 2, 3)
+    let r = range(5, 7)
+    let s = concat(&v, &v)
+    let t = concat(&v, &r)
+    let u = concat(&s, &t)
+    let x = 3
+    let y = 7
+    let z = x + y
+    print(to_str(z))
+}
+
+fn to_str(x: Int) -> Str {
+    to_str_helper(x, 10)
+}
+
+fn to_str_helper(x: Int, base: Int) -> Str {
+    if x < 0 {
+        concat(to_str_helper(-x, base), "-")
+    } else if x < base {
+        concat(to_str_helper(x / base, base), get(to_str_digits(), x % base))
+    } else if x == 0 {
+        "0"
+    } else {
+        panic("Base conversion error: number too large")
+    }
+}
+
+fn to_str_digits() -> Str {
+    "0123456789abcdefghijklmnopqrstuvwxyz"
+}
+
+fn panic(s: &Str) -> Str {
+    loop()
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    let mut result = a
+    let mut i = 0
+    while i < str_len(b) {
+        result = push(result, get(b, i))
+        i = i + 1
+    }
+    result
+}
+
+fn print(s: &Str) {
+    let mut i = 0
+    while i < str_len(s) {
+        print_str(get(s, i))
+        i = i + 1
+    }
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Int {
+    if i < 0 {
+        panic("Index out of bounds")
+    } else if i >= len(v) {
+        panic("Index out of bounds")
+    }
+    v.get(i)
+}
+
+fn panic(s: &Str) -> Int {
+    loop()
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    let mut i = a
+    while i < b {
+        result = push(result, i)
+        i = i + 1
+    }
+    result
+}
+
+fn str_len(s: &Str) -> Int {
+    len(s)
+}
+
+fn clone(x: Int) -> Int {
+    x
+}
+
+fn to_float(x: Int) -> Float {
+    x
+}
+
+fn trunc(x: Float) -> Int {
+    x
+}
+
+fn main() {
+    let v = vec(1, 2, 3)
+    let r = range(5, 7)
+    let s = concat(&v, &v)
+    let t = concat(&v, &r)
+    let u = concat(&s, &t)
+    let x = 3
+    let y = 7
+    let z = x + y
+    print(to_str(z))
+}
+
+fn to_str(x: Int) -> Str {
+    to_str_helper(x, 10)
+}
+
+fn to_str_helper(x: Int, base: Int) -> Str {
+    if x < 0 {
+        concat(to_str_helper(-x, base), "-")
+    } else if x < base {
+        concat(to_str_helper(x / base, base), get(to_str_digits(), x % base))
+    } else if x == 0 {
+        "0"
+    } else {
+        panic("Base conversion error: number too large")
+    }
+}
+
+fn to_str_digits() -> Str {
+    "0123456789abcdefghijklmnopqrstuvwxyz"
+}
+
+fn panic(s: &Str) -> Str {
+    loop()
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    let mut result = a
+    let mut i = 0
+    while i < str_len(b) {
+        result = push(result, get(b, i))
+        i = i + 1
+    }
+    result
+}
+
+fn print(s: &Str) {
+    let mut i = 0
+    while i < str_len(s) {
+        print_str(get(s, i))
+        i = i + 1
+    }
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Int {
+    if i < 0 {
+        panic("Index out of bounds")
+    } else if i >= len(v) {
+        panic("Index out of bounds")
+    }
+    v.get(i)
+}
+
+fn panic(s: &Str) -> Int {
+    loop()
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    let mut i = a
+    while i < b {
+        result = push(result, i)
+        i = i + 1
+    }
+    result
+}
+
+fn str_len(s: &Str) -> Int {
+    len(s)
+}
+
+fn clone(x: Int) -> Int {
+    x
+}
+
+fn to_float(x: Int) -> Float {
+    x
+}
+
+fn trunc(x: Float) -> Int {
+    x
+}
+
+fn main() {
+    let v = vec(1, 2, 3)
+    let r = range(5, 7)
+    let s = concat(&v, &v)
+    let t = concat(&v, &r)
+    let u = concat(&s, &t)
+    let x = 3
+    let y = 7
+    let z = x + y
+    print(to_str(z))
+}
+
+fn to_str(x: Int) -> Str {
+    to_str_helper(x, 10)
+}
+
+fn to_str_helper(x: Int, base: Int) -> Str {
+    if x < 0 {
+        concat(to_str_helper(-x, base), "-")
+    } else if x < base {
+        concat(to_str_helper(x / base, base), get(to_str_digits(), x % base))
+    } else if x == 0 {
+        "0"
+    } else {
+        panic("Base conversion error: number too large")
+    }
+}
+
+fn to_str_digits() -> Str {
+    "0123456789abcdefghijklmnopqrstuvwxyz"
+}
+
+fn panic(s: &Str) -> Str {
+    loop()
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    let mut result = a
+    let mut i = 0
+    while i < str_len(b) {
+        result = push(result, get(b, i))
+        i = i + 1
+    }
+    result
+}
+
+fn print(s: &Str) {
+    let mut i = 0
+    while i < str_len(s) {
+        print_str(get(s, i))
+        i = i + 1
+    }
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Int {
+    if i < 0 {
+        panic("

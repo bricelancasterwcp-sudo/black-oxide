@@ -1,0 +1,12 @@
+fn main() {
+    let mut v = vec(4, 7, 4, 9, 4)
+    let mut i = 0
+    while i < len(v) {
+        print(i)
+        i = i + 1
+        if v == vec(4, 7, 4, 9, 4) {
+            break
+        }
+        v = push(v, 4) // Fix this line
+    }
+}

@@ -1,0 +1,12 @@
+fn print_three() {
+    let one = "one"
+    let two = "two"
+    let three = "three"
+    print_str(one)
+    print_str(two)
+    print_str(three)
+}
+
+fn main() {
+    print_three()
+}

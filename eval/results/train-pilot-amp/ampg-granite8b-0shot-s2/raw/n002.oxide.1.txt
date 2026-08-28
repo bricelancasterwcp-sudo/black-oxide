@@ -1,0 +1,18 @@
+struct Number { value: Int }
+
+fn multiply(x: Int, y: Int) -> Int {
+    x * y
+}
+
+fn factorial(n: Int) -> Int {
+    if n <= 1 {
+        1
+    } else {
+        n * factorial(n - 1)
+    }
+}
+
+fn main() {
+    let product = multiply(1, multiply(2, multiply(3, multiply(4, multiply(5, 6)))))
+    print(product)
+}

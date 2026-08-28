@@ -1,0 +1,55 @@
+```rust
+fn main() {
+    let list = (0..15).collect::<Vec<u32>>();
+    println!("{}", list.len());
+}
+```
+
+```rust
+fn main() {
+    let list = (0..15).collect::<Vec<_>>();
+    println!("{}", list.len());
+}
+```
+
+```rust
+fn main() {
+    let list = (0..15).collect();
+    println!("{}", list.len());
+}
+```
+
+```rust
+fn main() {
+    let list = (0..15).collect::<Vec<_>>();
+    println!("{}", list.len());
+}
+```
+
+```rust
+fn main() {
+    let list = (0..15).collect::<Vec<i32>>();
+    println!("{}", list.len());
+}
+```
+
+```rust
+fn main() {
+    let list = (0..15).collect::<Vec<i32>>();
+    println!("{}", list.len());
+}
+```
+
+```rust
+fn main() {
+    let list = (0..15).collect::<Vec<i32>>();
+    println!("{}", list.len());
+}
+```
+
+```rust
+fn main() {
+    let list = (0..15).collect::<Vec<i32>>();
+    println!("{}", list.len());
+}
+```

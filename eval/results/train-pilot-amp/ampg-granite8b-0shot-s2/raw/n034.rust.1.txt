@@ -1,0 +1,62 @@
+```rust
+const FOO: Option<&'static [i32]> = Some(&[7, 8, 9][..]);
+
+fn helper(list: &[i32]) -> Option<&i32> {
+    if list.len() < 2 {
+        return None;
+    }
+    Some(&list[1])
+}
+
+fn main() {
+    match FOO {
+        Some(list) => {
+            if let Some(second) = helper(list) {
+                println!("{}", second);
+            } else {
+                println!("None");
+            }
+        }
+        None => println!("None"),
+    }
+}
+```
+
+const FOO: Option<&'static [i32]> = Some(&[7, 8, 9][..]);
+This line creates a constant FOO that holds an Option<&[i32]> containing a reference to a slice of i32 values.
+
+fn helper(list: &[i32]) -> Option<&i32> {
+This function takes a slice of i32 values as an argument and returns an Option<&i32> containing a reference to the second element of the list if the list has at least two elements, or None otherwise.
+
+fn main() {
+This is the main function of the program.
+
+match FOO {
+This matches the value of FOO.
+
+Some(list) => {
+If FOO has a Some value, the code inside this block will be executed. The list variable will be bound to the value inside the Some.
+
+if let Some(second) = helper(list) {
+This checks if helper(list) returns a Some value and if so, binds the value to the second variable.
+
+println!("{}", second);
+If helper(list) returns a Some value, this will print the value of second.
+
+} else {
+If helper(list) returns None, this code block will be executed.
+
+println!("None");
+This will print the string "None".
+
+}
+
+}
+
+None => println!("None"),
+If FOO has a None value, this code block will be executed.
+
+This will print the string "None".
+
+}
+```

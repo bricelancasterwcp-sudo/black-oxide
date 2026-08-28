@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let nums = vec![12, 5, 20, 8, 17];
+    let mut sorted = nums.clone();
+    sorted.sort();
+    sorted.reverse();
+    println!("{}", sorted[0]);
+    println!("{}", sorted[1]);
+}
+```

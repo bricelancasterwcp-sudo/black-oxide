@@ -1,0 +1,21 @@
+fn enqueue(q: &Vec<Int>, x: Int) -> Vec<Int> {
+    push(q, x)
+}
+
+fn dequeue(q: &Vec<Int>) -> Option<Int> {
+    if len(q) == 0 {
+        None
+    } else {
+        Some(get(q, 0))
+    }
+}
+
+fn main() {
+    let mut queue = vec(1, 2, 3, 4, 5)
+    let last = dequeue(&queue)
+    queue = enqueue(&queue, last)
+    while letSome(front) == dequeue(&queue) {
+        print(front)
+        queue = enqueue(&queue, front)
+    }
+}

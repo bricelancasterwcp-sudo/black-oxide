@@ -1,0 +1,372 @@
+fn main() {
+    green_light(green_light(red_light(green_light(red_light(wait(yellow_light(wait(red_light(green_light())))))))), wait(red_light(wait(green_light())))).wait()
+}
+
+fn green_light(light: Light) -> Light {
+    light
+}
+
+fn red_light(light: Light) {
+    light.stop()
+}
+
+fn yellow_light(light: Light) {
+    light.wait()
+}
+
+struct Light {
+    signals: Vec<Signal>,
+    index: Option<Size>,
+}
+
+enum Signal {
+    Go,
+    Stop,
+    Wait,
+}
+
+fn wait(light: Light) {
+    match light.signals.get(light.index.unwrap()) {
+        Some(signal) => match signal {
+            SignalGo => {
+                green_light(light)
+            },
+            SignalStop => {
+                red_light(light)
+            },
+            SignalWait => {
+                yellow_light(light)
+            },
+        },
+        None => {
+            println("No signal")
+        },
+    }
+}
+
+fn wait(light: Light) {
+    light.wait()
+}
+
+fn main() {
+    green_light(green_light(red_light(green_light(red_light(wait(yellow_light(wait(red_light(green_light())))))))), wait(red_light(wait(green_light())))).wait()
+}
+
+fn green_light(light: Light) -> Light {
+    light
+}
+
+fn red_light(light: Light) {
+    light.stop()
+}
+
+fn yellow_light(light: Light) {
+    light.wait()
+}
+
+struct Light {
+    signals: Vec<Signal>,
+    index: Option<Size>,
+}
+
+enum Signal {
+    Go,
+    Stop,
+    Wait,
+}
+
+fn wait(light: Light) {
+    match light.signals.get(light.index.unwrap()) {
+        Some(signal) => match signal {
+            SignalGo => {
+                green_light(light)
+            },
+            SignalStop => {
+                red_light(light)
+            },
+            SignalWait => {
+                yellow_light(light)
+            },
+        },
+        None => {
+            println("No signal")
+        },
+    }
+}
+
+fn wait(light: Light) {
+    light.wait()
+}
+
+fn main() {
+    green_light(green_light(red_light(green_light(red_light(wait(yellow_light(wait(red_light(green_light())))))))), wait(red_light(wait(green_light())))).wait()
+}
+
+fn green_light(light: Light) -> Light {
+    light
+}
+
+fn red_light(light: Light) {
+    light.stop()
+}
+
+fn yellow_light(light: Light) {
+    light.wait()
+}
+
+struct Light {
+    signals: Vec<Signal>,
+    index: Option<Size>,
+}
+
+enum Signal {
+    Go,
+    Stop,
+    Wait,
+}
+
+fn wait(light: Light) {
+    match light.signals.get(light.index.unwrap()) {
+        Some(signal) => match signal {
+            SignalGo => {
+                green_light(light)
+            },
+            SignalStop => {
+                red_light(light)
+            },
+            SignalWait => {
+                yellow_light(light)
+            },
+        },
+        None => {
+            println("No signal")
+        },
+    }
+}
+
+fn wait(light: Light) {
+    light.wait()
+}
+
+fn main() {
+    green_light(green_light(red_light(green_light(red_light(wait(yellow_light(wait(red_light(green_light())))))))), wait(red_light(wait(green_light())))).wait()
+}
+
+fn green_light(light: Light) -> Light {
+    light
+}
+
+fn red_light(light: Light) {
+    light.stop()
+}
+
+fn yellow_light(light: Light) {
+    light.wait()
+}
+
+struct Light {
+    signals: Vec<Signal>,
+    index: Option<Size>,
+}
+
+enum Signal {
+    Go,
+    Stop,
+    Wait,
+}
+
+fn wait(light: Light) {
+    match light.signals.get(light.index.unwrap()) {
+        Some(signal) => match signal {
+            SignalGo => {
+                green_light(light)
+            },
+            SignalStop => {
+                red_light(light)
+            },
+            SignalWait => {
+                yellow_light(light)
+            },
+        },
+        None => {
+            println("No signal")
+        },
+    }
+}
+
+fn wait(light: Light) {
+    light.wait()
+}
+
+fn main() {
+    green_light(green_light(red_light(green_light(red_light(wait(yellow_light(wait(red_light(green_light())))))))), wait(red_light(wait(green_light())))).wait()
+}
+
+fn green_light(light: Light) -> Light {
+    light
+}
+
+fn red_light(light: Light) {
+    light.stop()
+}
+
+fn yellow_light(light: Light) {
+    light.wait()
+}
+
+struct Light {
+    signals: Vec<Signal>,
+    index: Option<Size>,
+}
+
+enum Signal {
+    Go,
+    Stop,
+    Wait,
+}
+
+fn wait(light: Light) {
+    match light.signals.get(light.index.unwrap()) {
+        Some(signal) => match signal {
+            SignalGo => {
+                green_light(light)
+            },
+            SignalStop => {
+                red_light(light)
+            },
+            SignalWait => {
+                yellow_light(light)
+            },
+        },
+        None => {
+            println("No signal")
+        },
+    }
+}
+
+fn wait(light: Light) {
+    light.wait()
+}
+
+fn main() {
+    green_light(green_light(red_light(green_light(red_light(wait(yellow_light(wait(red_light(green_light())))))))), wait(red_light(wait(green_light())))).wait()
+}
+
+fn green_light(light: Light) -> Light {
+    light
+}
+
+fn red_light(light: Light) {
+    light.stop()
+}
+
+fn yellow_light(light: Light) {
+    light.wait()
+}
+
+struct Light {
+    signals: Vec<Signal>,
+    index: Option<Size>,
+}
+
+enum Signal {
+    Go,
+    Stop,
+    Wait,
+}
+
+fn wait(light: Light) {
+    match light.signals.get(light.index.unwrap()) {
+        Some(signal) => match signal {
+            SignalGo => {
+                green_light(light)
+            },
+            SignalStop => {
+                red_light(light)
+            },
+            SignalWait => {
+                yellow_light(light)
+            },
+        },
+        None => {
+            println("No signal")
+        },
+    }
+}
+
+fn wait(light: Light) {
+    light.wait()
+}
+
+fn main() {
+    green_light(green_light(red_light(green_light(red_light(wait(yellow_light(wait(red_light(green_light())))))))), wait(red_light(wait(green_light())))).wait()
+}
+
+fn green_light(light: Light) -> Light {
+    light
+}
+
+fn red_light(light: Light) {
+    light.stop()
+}
+
+fn yellow_light(light: Light) {
+    light.wait()
+}
+
+struct Light {
+    signals: Vec<Signal>,
+    index: Option<Size>,
+}
+
+enum Signal {
+    Go,
+    Stop,
+    Wait,
+}
+
+fn wait(light: Light) {
+    match light.signals.get(light.index.unwrap()) {
+        Some(signal) => match signal {
+            SignalGo => {
+                green_light(light)
+            },
+            SignalStop => {
+                red_light(light)
+            },
+            SignalWait => {
+                yellow_light(light)
+            },
+        },
+        None => {
+            println("No signal")
+        },
+    }
+}
+
+fn wait(light: Light) {
+    light.wait()
+}
+
+fn main() {
+    green_light(green_light(red_light(green_light(red_light(wait(yellow_light(wait(red_light(green_light())))))))), wait(red_light(wait(green_light())))).wait()
+}
+
+fn green_light(light: Light) -> Light {
+    light
+}
+
+fn red_light(light: Light) {
+    light.stop()
+}
+
+fn yellow_light(light: Light) {
+    light.wait()
+}
+
+struct Light {
+    signals: Vec<Signal>,
+    index: Option<Size>,
+}
+
+enum Signal

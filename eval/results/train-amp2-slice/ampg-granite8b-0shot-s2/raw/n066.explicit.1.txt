@@ -1,0 +1,110 @@
+fn main() {
+    let nums = push(push(vec(), 5), 40)
+    let bigger = extend(clone(&nums), 70)
+    print(sum_big(&nums, 10))
+    drop nums
+    print(sum_big(&bigger, 10))
+    drop bigger
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let total = 0
+    for x in &v {
+        if x > limit {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn extend(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut v = vec()
+    for i in a.to_int() < b {
+        v = push(v, i)
+    }
+    v
+}
+
+fn print_str(s: Str) {
+    let mut v = vec()
+    for c in s {
+        v = push(v, c)
+    }
+    print(str_concat(&v))
+    drop v
+}
+
+fn str_concat(v: &Vec<Str>) -> Str {
+    let mut s = ""
+    for x in v {
+        s = s + x
+    }
+    s
+}
+
+fn repeat(s: Str, n: Int) -> Str {
+    let mut v = vec()
+    for _ in range(0, n) {
+        v = push(v, s)
+    }
+    str_concat(&v)
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut v = vec()
+    for c in s {
+        v = push(v, c)
+    }
+    v
+}
+
+fn split(s: Str, delimiter: Str) -> Vec<Str> {
+    let mut v = vec()
+    let mut word = ""
+    for c in s {
+        if c == delimiter {
+            v = push(v, word)
+            word = ""
+        } else {
+            word = word + c
+        }
+    }
+    if word != "" {
+        v = push(v, word)
+    }
+    v
+}
+
+fn join(v: &Vec<Str>, delimiter: Str) -> Str {
+    let mut s = ""
+    for x in v {
+        s = s + x + delimiter
+    }
+    s
+}
+
+fn first_char(s: Str) -> Char {
+    chars(s).head().unwrap()
+}
+
+fn last_char(s: Str) -> Option<Char> {
+    chars(s).last()
+}
+
+fn is_palindrome(s: Str) -> Bool {
+    let chars = chars(s)
+    for i in range(0, chars.len().to_int() / 2) {
+        if chars.get(i) != chars.get(chars.len().to_int() - i - 1) {
+            return false
+        }
+    }
+    true
+}
+
+fn main() {
+    print_str(repeat("abc", 3))
+    print_str(join(&split_by_last_char_and_trim_spaces_and_newlines_and_join_with_asterisks_and_add_exclamation_marks_if_not_empty_and_make_a_palindrome_if_it_isnt_already_one_and_pad_with_spaces_to_a_length_of_50_and_center_align_it_using_a_template_string_and_convert_to_upper_case_and_print_it, " "), "*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*!*

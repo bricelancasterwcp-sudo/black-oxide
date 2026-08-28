@@ -1,0 +1,21 @@
+use std::io::{stdin, StdoutLock};
+
+fn main() {
+    let mut stdout = StdoutLock::new();
+    let mut line = String::new();
+
+    loop {
+        stdout.write_all(b"Enter number: ").unwrap();
+        stdout.flush().unwrap();
+
+        stdin().read_line(&mut line).unwrap();
+        if line == "exit\n" {
+            break;
+        }
+
+        let number: u32 = line.trim().parse().unwrap();
+
+        stdout.write_all(format!("You entered: {}\n", number).as_bytes()).unwrap();
+        stdout.flush().unwrap();
+    }
+}

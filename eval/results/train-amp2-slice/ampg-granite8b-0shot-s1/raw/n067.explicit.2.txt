@@ -1,0 +1,14 @@
+fn double_list(list: Vec<Int>, sum: Int) -> Int {
+    let total = sum
+    for x in list {
+        if x % 2 == 1 {
+            total = total + x * 2
+        }
+    }
+    total
+}
+
+fn main() {
+    let list = vec(7, 4, 9, 10)
+    print(double_list(list, 0))
+}

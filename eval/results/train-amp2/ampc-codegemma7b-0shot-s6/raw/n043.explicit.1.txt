@@ -1,0 +1,26 @@
+fn enqueue(q: &Vec<Int>, x: Int) -> Vec<Int> {
+    if q.len() == 0 {
+        return vec(x)
+    } else {
+        return push(q, x)
+    }
+}
+
+fn dequeue(q: &Vec<Int>) -> Option<Int> {
+    if q.len() == 0 {
+        return None
+    } else {
+        return Some(get(q, 0).unwrap())
+    }
+}
+
+fn main() {
+    let mut queue = vec(1, 2, 3, 4, 5)
+    queue = enqueue(&queue, 0)
+    print(dequeue(&queue))
+    print(dequeue(&queue))
+    print(dequeue(&queue))
+    print(dequeue(&queue))
+    print(dequeue(&queue))
+    print(dequeue(&queue))
+}

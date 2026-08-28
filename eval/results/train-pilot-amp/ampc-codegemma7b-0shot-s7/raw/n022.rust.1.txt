@@ -1,0 +1,5 @@
+fn main() {
+    let word = "blackoxide";
+    let joined = word.replace(" ", "");
+    println!("{}", joined);
+}

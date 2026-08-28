@@ -1,0 +1,52 @@
+fn read_8(s: &Str) -> Int {
+    let mut i = 0
+    for c in s.chars() {
+        if c >= 48 && c <= 57 {
+            i = i * 10 + (c - 48)
+        } else {
+            break
+        }
+    }
+    i
+}
+
+fn read_oak(s: &Str) -> Int {
+    let mut i = 0
+    for c in s.chars() {
+        if c == 79 {
+            i = i + 1
+        } else if c == 65 {
+            i = i + 2
+        } else if c == 69 {
+            i = i + 3
+        } else {
+            break
+        }
+    }
+    i
+}
+
+fn read_15(s: &Str) -> Int {
+    let mut i = 0
+    for c in s.chars() {
+        if c == 49 {
+            i = i + 1
+        } else if c == 53 {
+            i = i + 2
+        } else if c == 53 {
+            i = i + 3
+        } else {
+            break
+        }
+    }
+    i
+}
+
+fn main() {
+    let s = "8"
+    print(read_8(&s))
+    let s = "oak"
+    print(read_oak(&s))
+    let s = "15"
+    print(read_15(&s))
+}

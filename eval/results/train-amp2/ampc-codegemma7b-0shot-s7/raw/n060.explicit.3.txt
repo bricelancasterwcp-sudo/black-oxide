@@ -1,0 +1,20 @@
+fn count(s: &Str) -> Result<Int, String> {
+    let mut digits = 0
+    let mut total = 0
+    for c in s.chars() {
+        if c.is_digit(10) {
+            digits = digits + 1
+            total = total + c.to_digit(10).unwrap()
+        }
+    }
+    Ok((digits))
+}
+
+fn main() {
+    let text = "a1b22"
+    let result = count(text)
+    match result {
+        Ok(digits) => println("Total: {}", digits),
+        Err(e) => println("Error: {}", e),
+    }
+}

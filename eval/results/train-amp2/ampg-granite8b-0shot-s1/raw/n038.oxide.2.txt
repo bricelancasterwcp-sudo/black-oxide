@@ -1,0 +1,12 @@
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+fn set_sensor(device: Device, seven: Int) -> Device {
+    device.sensor.reading = seven
+    device
+}
+
+fn main() {
+    print(set_sensor(Device, 7).sensor.reading)
+}

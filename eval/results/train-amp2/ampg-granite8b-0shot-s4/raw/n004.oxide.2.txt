@@ -1,0 +1,10 @@
+struct Seq { head: Int, tail: Seq }
+
+fn main() {
+    let mut seq = Seq { head: 1, tail: Seq { head: 1, tail: vec() } }
+    for _ in 0 < 10 {
+        let Seq { head, tail } = seq
+        seq = tail
+        print(head)
+    }
+}

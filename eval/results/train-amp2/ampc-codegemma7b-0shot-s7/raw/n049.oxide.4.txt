@@ -1,0 +1,420 @@
+fn main() {
+    let fig8 = 8
+    let fig3 = 3
+    let fig11 = 11
+    let fig6 = 6
+    let smallest = min(min(fig8, fig3), min(fig11, fig6))
+    let largest = max(max(fig8, fig3), max(fig11, fig6))
+    print(smallest)
+    print(largest - smallest)
+}
+
+fn min(a: Int, b: Int) -> Int {
+    if a <= b {
+        a
+    } else {
+        b
+    }
+}
+
+fn max(a: Int, b: Int) -> Int {
+    if a >= b {
+        a
+    } else {
+        b
+    }
+}
+
+fn max(a: Int, b: Int) -> Int {
+    if a >= b {
+        a
+    } else {
+        b
+    }
+}
+
+fn min(a: Int, b: Int) -> Int {
+    if a <= b {
+        a
+    } else {
+        b
+    }
+}
+
+fn max(a: Int, b: Int) -> Int {
+    if a >= b {
+        a
+    } else {
+        b
+    }
+}
+
+fn min(a: Int, b: Int) -> Int {
+    if a <= b {
+        a
+    } else {
+        b
+    }
+}
+
+fn max(a: Int, b: Int) -> Int {
+    if a >= b {
+        a
+    } else {
+        b
+    }
+}
+
+fn min(a: Int, b: Int) -> Int {
+    if a <= b {
+        a
+    } else {
+        b
+    }
+}
+
+fn max(a: Int, b: Int) -> Int {
+    if a >= b {
+        a
+    } else {
+        b
+    }
+}
+
+fn min(a: Int, b: Int) -> Int {
+    if a <= b {
+        a
+    } else {
+        b
+    }
+}
+
+fn max(a: Int, b: Int) -> Int {
+    if a >= b {
+        a
+    } else {
+        b
+    }
+}
+
+fn min(a: Int, b: Int) -> Int {
+    if a <= b {
+        a
+    } else {
+        b
+    }
+}
+
+fn max(a: Int, b: Int) -> Int {
+    if a >= b {
+        a
+    } else {
+        b
+    }
+}
+
+fn min(a: Int, b: Int) -> Int {
+    if a <= b {
+        a
+    } else {
+        b
+    }
+}
+
+fn max(a: Int, b: Int) -> Int {
+    if a >= b {
+        a
+    } else {
+        b
+    }
+}
+
+fn min(a: Int, b: Int) -> Int {
+    if a <= b {
+        a
+    } else {
+        b
+    }
+}
+
+fn max(a: Int, b: Int) -> Int {
+    if a >= b {
+        a
+    } else {
+        b
+    }
+}
+
+fn min(a: Int, b: Int) -> Int {
+    if a <= b {
+        a
+    } else {
+        b
+    }
+}
+
+fn max(a: Int, b: Int) -> Int {
+    if a >= b {
+        a
+    } else {
+        b
+    }
+}
+
+fn min(a: Int, b: Int) -> Int {
+    if a <= b {
+        a
+    } else {
+        b
+    }
+}
+
+fn max(a: Int, b: Int) -> Int {
+    if a >= b {
+        a
+    } else {
+        b
+    }
+}
+
+fn min(a: Int, b: Int) -> Int {
+    if a <= b {
+        a
+    } else {
+        b
+    }
+}
+
+fn max(a: Int, b: Int) -> Int {
+    if a >= b {
+        a
+    } else {
+        b
+    }
+}
+
+fn min(a: Int, b: Int) -> Int {
+    if a <= b {
+        a
+    } else {
+        b
+    }
+}
+
+fn max(a: Int, b: Int) -> Int {
+    if a >= b {
+        a
+    } else {
+        b
+    }
+}
+
+fn min(a: Int, b: Int) -> Int {
+    if a <= b {
+        a
+    } else {
+        b
+    }
+}
+
+fn max(a: Int, b: Int) -> Int {
+    if a >= b {
+        a
+    } else {
+        b
+    }
+}
+
+fn min(a: Int, b: Int) -> Int {
+    if a <= b {
+        a
+    } else {
+        b
+    }
+}
+
+fn max(a: Int, b: Int) -> Int {
+    if a >= b {
+        a
+    } else {
+        b
+    }
+}
+
+fn min(a: Int, b: Int) -> Int {
+    if a <= b {
+        a
+    } else {
+        b
+    }
+}
+
+fn max(a: Int, b: Int) -> Int {
+    if a >= b {
+        a
+    } else {
+        b
+    }
+}
+
+fn min(a: Int, b: Int) -> Int {
+    if a <= b {
+        a
+    } else {
+        b
+    }
+}
+
+fn max(a: Int, b: Int) -> Int {
+    if a >= b {
+        a
+    } else {
+        b
+    }
+}
+
+fn min(a: Int, b: Int) -> Int {
+    if a <= b {
+        a
+    } else {
+        b
+    }
+}
+
+fn max(a: Int, b: Int) -> Int {
+    if a >= b {
+        a
+    } else {
+        b
+    }
+}
+
+fn min(a: Int, b: Int) -> Int {
+    if a <= b {
+        a
+    } else {
+        b
+    }
+}
+
+fn max(a: Int, b: Int) -> Int {
+    if a >= b {
+        a
+    } else {
+        b
+    }
+}
+
+fn min(a: Int, b: Int) -> Int {
+    if a <= b {
+        a
+    } else {
+        b
+    }
+}
+
+fn max(a: Int, b: Int) -> Int {
+    if a >= b {
+        a
+    } else {
+        b
+    }
+}
+
+fn min(a: Int, b: Int) -> Int {
+    if a <= b {
+        a
+    } else {
+        b
+    }
+}
+
+fn max(a: Int, b: Int) -> Int {
+    if a >= b {
+        a
+    } else {
+        b
+    }
+}
+
+fn min(a: Int, b: Int) -> Int {
+    if a <= b {
+        a
+    } else {
+        b
+    }
+}
+
+fn max(a: Int, b: Int) -> Int {
+    if a >= b {
+        a
+    } else {
+        b
+    }
+}
+
+fn min(a: Int, b: Int) -> Int {
+    if a <= b {
+        a
+    } else {
+        b
+    }
+}
+
+fn max(a: Int, b: Int) -> Int {
+    if a >= b {
+        a
+    } else {
+        b
+    }
+}
+
+fn min(a: Int, b: Int) -> Int {
+    if a <= b {
+        a
+    } else {
+        b
+    }
+}
+
+fn max(a: Int, b: Int) -> Int {
+    if a >= b {
+        a
+    } else {
+        b
+    }
+}
+
+fn min(a: Int, b: Int) -> Int {
+    if a <= b {
+        a
+    } else {
+        b
+    }
+}
+
+fn max(a: Int, b: Int) -> Int {
+    if a >= b {
+        a
+    } else {
+        b
+    }
+}
+
+fn min(a: Int, b: Int) -> Int {
+    if a <= b {
+        a
+    } else {
+        b
+    }
+}
+
+fn max(a: Int, b: Int) -> Int {
+    if a >= b {
+        a
+    } else {
+        b
+    }
+}
+
+fn min(a: Int

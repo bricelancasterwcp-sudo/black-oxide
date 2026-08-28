@@ -1,0 +1,10 @@
+fn parse_and_add_one(s: Str) -> Str {
+    match parse_int(s) {
+        Some(num) => int_to_str(num + 1),
+        None => "bad".into(),
+    }
+}
+
+fn main() {
+    print(parse_and_add_one("417"))
+}

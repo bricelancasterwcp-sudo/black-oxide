@@ -1,0 +1,22 @@
+```rust
+fn main() {
+    let mut n = 91;
+    if n == 1 {
+        println!("no");
+        return;
+    }
+
+    let mut i = 2;
+    while i * i <= n {
+        if n % i == 0 {
+            println!("no");
+            return;
+        }
+        i += 1;
+    }
+
+    println!("yes");
+}
+```
+
+I hope this helps! Let me know if you have any further questions.

@@ -1,0 +1,6 @@
+fn main() {
+    let c = "coffee";
+    for c in c.chars() {
+        println!("{}", c);
+    }
+}

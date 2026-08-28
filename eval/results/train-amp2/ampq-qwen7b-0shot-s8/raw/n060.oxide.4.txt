@@ -1,0 +1,74 @@
+fn main() {
+    let s = "a1b22".chars().map(to_int).sum()
+    let count = s.chars().filter(is_digit).count()
+    print(s)
+    print(count)
+}
+
+fn to_int(c: Str) -> Int {
+    c.parse_int().unwrap()
+}
+
+fn is_digit(c: Str) -> Bool {
+    c >= "0" && c <= "9"
+}
+
+fn print(x: Int) -> Unit {
+    println(x)
+}
+
+fn println(x: Int) -> Unit {
+    print(x)
+    print_str("\n")
+}
+
+fn print_str(s: Str) -> Unit {
+    println(s)
+}
+
+fn unwrap(x: Option<Int>) -> Int {
+    match x {
+        Some(n) => n,
+        None => panic("unwrap called on None"),
+    }
+}
+
+fn panic(s: Str) -> Unit {
+    eprintln(s)
+    exit(1)
+}
+
+fn exit(code: Int) -> Unit {
+    stdlib_exit(code)
+}
+
+fn stdlib_exit(code: Int) -> Unit {
+    stdlib_exit_impl(code)
+}
+
+fn stdlib_exit_impl(code: Int) -> Unit {
+    unsafe_exit(code)
+}
+
+fn unsafe_exit(code: Int) -> Unit {
+    unsafe_exit_impl(code)
+}
+
+fn unsafe_exit_impl(code: Int) -> Unit {
+    abort()
+}
+
+fn abort() -> Unit {
+    unsafe_abort()
+}
+
+fn unsafe_abort() -> Unit {
+    stdlib_exit_impl(1)
+}
+
+fn main() {
+    let s = "a1b22".chars().map(to_int).sum()
+    let count = s.chars().filter(is_digit).count()
+    print(s)
+    print(count)
+}

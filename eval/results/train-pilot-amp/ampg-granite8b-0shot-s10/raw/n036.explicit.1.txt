@@ -1,0 +1,114 @@
+fn main() {
+    let stocked = push(push(push(push(vec(), 3 * 4), 2 * 5), 3 * 4), 2 * 5)
+    print(sum_big(&stocked, 0))
+    drop stocked
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let total = 0
+    for x in &v {
+        if x > limit {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn extend(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn print(x: Int) {
+    drop x
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    drop v
+    drop x
+    vec()
+}
+
+fn vec() -> Vec<Int> {
+    vec()
+}
+
+fn clone(x: Int) -> Int {
+    drop x
+    x
+}
+
+fn to_float(x: Int) -> Float {
+    drop x
+    0.0
+}
+
+fn trunc(x: Float) -> Int {
+    drop x
+    0
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    drop a
+    drop b
+    vec()
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    drop v
+    drop i
+    None
+}
+
+fn len(v: Vec<Int>) -> Int {
+    drop v
+    0
+}
+
+fn str_len(s: Str) -> Int {
+    drop s
+    0
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    drop a
+    drop b
+    ""
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    drop s
+    vec()
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    drop s
+    None
+}
+
+fn int_to_str(n: Int) -> Str {
+    drop n
+    ""
+}
+
+fn print_str(s: Str) {
+    drop s
+}
+
+fn exit(x: Int) {
+    drop x
+}
+
+fn assert(x: Bool) {
+    drop x
+}
+
+fn assert_eq(a: Int, b: Int) {
+    drop a
+    drop b
+}
+
+fn main() {
+    let stocked = push(push(push(push(vec(), 3 * 4), 2 * 5), 3 * 4), 2 * 5)
+    print(sum_big(&stocked, 0))
+    drop stocked
+}

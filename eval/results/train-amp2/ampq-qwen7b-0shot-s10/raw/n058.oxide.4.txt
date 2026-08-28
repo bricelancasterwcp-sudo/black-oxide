@@ -1,0 +1,389 @@
+fn main() {
+    let word = "coffee"
+    let mut seen = Vec()
+    for c in chars(word) {
+        if contains(seen, c) {
+            continue
+        }
+        if contains(word, c, seen.len()) {
+            print_str(c)
+            push(seen, c)
+        }
+    }
+}
+
+fn contains(s: Str, c: Str) -> Bool {
+    contains(s, c, 0)
+}
+
+fn contains(s: Str, c: Str, start: Int) -> Bool {
+    for i in range(start, str_len(s)) {
+        if get(s, i) == Some(c) {
+            return True
+        }
+    }
+    False
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    concat(v, vec(x))
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn print_str(s: Str) {
+    print_str(s)
+}
+
+fn str_len(s: Str) -> Int {
+    str_len(s)
+}
+
+fn get(s: Str, i: Int) -> Option<Str> {
+    get(s, i)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    range(a, b)
+}
+
+fn contains(s: Str, c: Str) -> Bool {
+    contains(s, c, 0)
+}
+
+fn contains(s: Str, c: Str, start: Int) -> Bool {
+    for i in range(start, str_len(s)) {
+        if get(s, i) == Some(c) {
+            return True
+        }
+    }
+    False
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    concat(v, vec(x))
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn print_str(s: Str) {
+    print_str(s)
+}
+
+fn str_len(s: Str) -> Int {
+    str_len(s)
+}
+
+fn get(s: Str, i: Int) -> Option<Str> {
+    get(s, i)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    range(a, b)
+}
+
+fn contains(s: Str, c: Str) -> Bool {
+    contains(s, c, 0)
+}
+
+fn contains(s: Str, c: Str, start: Int) -> Bool {
+    for i in range(start, str_len(s)) {
+        if get(s, i) == Some(c) {
+            return True
+        }
+    }
+    False
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    concat(v, vec(x))
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn print_str(s: Str) {
+    print_str(s)
+}
+
+fn str_len(s: Str) -> Int {
+    str_len(s)
+}
+
+fn get(s: Str, i: Int) -> Option<Str> {
+    get(s, i)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    range(a, b)
+}
+
+fn contains(s: Str, c: Str) -> Bool {
+    contains(s, c, 0)
+}
+
+fn contains(s: Str, c: Str, start: Int) -> Bool {
+    for i in range(start, str_len(s)) {
+        if get(s, i) == Some(c) {
+            return True
+        }
+    }
+    False
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    concat(v, vec(x))
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn print_str(s: Str) {
+    print_str(s)
+}
+
+fn str_len(s: Str) -> Int {
+    str_len(s)
+}
+
+fn get(s: Str, i: Int) -> Option<Str> {
+    get(s, i)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    range(a, b)
+}
+
+fn contains(s: Str, c: Str) -> Bool {
+    contains(s, c, 0)
+}
+
+fn contains(s: Str, c: Str, start: Int) -> Bool {
+    for i in range(start, str_len(s)) {
+        if get(s, i) == Some(c) {
+            return True
+        }
+    }
+    False
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    concat(v, vec(x))
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn print_str(s: Str) {
+    print_str(s)
+}
+
+fn str_len(s: Str) -> Int {
+    str_len(s)
+}
+
+fn get(s: Str, i: Int) -> Option<Str> {
+    get(s, i)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    range(a, b)
+}
+
+fn contains(s: Str, c: Str) -> Bool {
+    contains(s, c, 0)
+}
+
+fn contains(s: Str, c: Str, start: Int) -> Bool {
+    for i in range(start, str_len(s)) {
+        if get(s, i) == Some(c) {
+            return True
+        }
+    }
+    False
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    concat(v, vec(x))
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn print_str(s: Str) {
+    print_str(s)
+}
+
+fn str_len(s: Str) -> Int {
+    str_len(s)
+}
+
+fn get(s: Str, i: Int) -> Option<Str> {
+    get(s, i)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    range(a, b)
+}
+
+fn contains(s: Str, c: Str) -> Bool {
+    contains(s, c, 0)
+}
+
+fn contains(s: Str, c: Str, start: Int) -> Bool {
+    for i in range(start, str_len(s)) {
+        if get(s, i) == Some(c) {
+            return True
+        }
+    }
+    False
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    concat(v, vec(x))
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn print_str(s: Str) {
+    print_str(s)
+}
+
+fn str_len(s: Str) -> Int {
+    str_len(s)
+}
+
+fn get(s: Str, i: Int) -> Option<Str> {
+    get(s, i)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    range(a, b)
+}
+
+fn contains(s: Str, c: Str) -> Bool {
+    contains(s, c, 0)
+}
+
+fn contains(s: Str, c: Str, start: Int) -> Bool {
+    for i in range(start, str_len(s)) {
+        if get(s, i) == Some(c) {
+            return True
+        }
+    }
+    False
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    concat(v, vec(x))
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn print_str(s: Str) {
+    print_str(s)
+}
+
+fn str_len(s: Str) -> Int {
+    str_len(s)
+}
+
+fn get(s: Str, i: Int) -> Option<Str> {
+    get(s, i)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    range(a, b)
+}
+
+fn contains(s: Str, c: Str) -> Bool {
+    contains(s, c, 0)
+}
+
+fn contains(s: Str, c: Str, start: Int) -> Bool {
+    for i in range(start, str_len(s)) {
+        if get(s, i) == Some(c) {
+            return True
+        }
+    }
+    False
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    concat(v, vec(x))
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn print_str(s: Str) {
+    print_str(s)
+}
+
+fn str_len(s: Str) -> Int {
+    str_len(s)
+}
+
+fn get(s: Str, i: Int) -> Option<Str> {
+    get(s, i)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    range(a, b)
+}
+
+fn contains(s: Str, c: Str) -> Bool {
+    contains(s, c, 0)
+}
+
+fn contains(s: Str, c: Str, start: Int) -> Bool {
+    for i in range(start, str_len(s)) {
+        if get(s, i) == Some(c) {
+            return True
+        }
+    }
+    False
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    concat(v, vec(x))
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn print_str(s: Str) {
+    print_str(s)
+}
+
+fn str_len(s: Str) -> Int {
+    str_len(s)
+}
+
+fn get(s: Str, i: Int) -> Option<Str> {
+    get(s, i)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    range(a, b)
+}
+
+fn contains(s: Str, c: Str) -> Bool {
+    contains(s, c, 0)
+}
+
+fn contains(s: Str, c: Str, start: Int

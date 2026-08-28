@@ -1,0 +1,14 @@
+fn second(v: Vec<Int>) -> Option<Int> {
+    if len(v) > 1 {
+        let x = get(v, 1)?
+        Some(x + 1)
+    } else {
+        None
+    }
+}
+
+fn main() {
+    print(second(vec(7)).unwrap_or(0))
+    print(second(vec(8)).unwrap_or(0))
+    print(second(vec(9)).unwrap_or(0))
+}

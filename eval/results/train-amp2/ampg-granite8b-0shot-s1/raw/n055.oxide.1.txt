@@ -1,0 +1,18 @@
+struct Entry {
+    number: Int,
+}
+
+fn print_entry(e: Entry) {
+    print_str("number: ")
+    print(e.number)
+    print_str("\n")
+}
+
+fn main() {
+    let e1 = Entry { number: 8 }
+    let e2 = Entry { number: 15 }
+    let e3 = Entry { number: 100 }
+    print_entry(e1)
+    print_entry(e2)
+    print_entry(e3)
+}

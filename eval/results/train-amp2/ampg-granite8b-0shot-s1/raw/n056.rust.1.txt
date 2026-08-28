@@ -1,0 +1,5 @@
+fn main(){
+    let total = [7, 4, 9, 15].iter().filter(|i| **i != ?).fold(0, |acc, i| acc + i);
+    let not_total = [7, 4, 9, 15].iter().filter(|i| **i == ?).count();
+    println!("total: {}, not total: {}", total, not_total);
+}

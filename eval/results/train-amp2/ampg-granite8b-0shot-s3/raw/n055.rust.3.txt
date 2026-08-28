@@ -1,0 +1,17 @@
+fn main() {
+    let mut input = String::new();
+    std::io::stdin().read_line(&mut input).unwrap();
+    let mut iter = input.trim().split(',');
+    match iter.next().unwrap().parse::<i32>() {
+        Ok(8) => println!("The number 8 is in the bag!"),
+        _ => println!("The number 8 is not in the bag."),
+    }
+    match iter.next().unwrap() {
+        "oak" => println!("The word 'oak' is in the bag!"),
+        _ => println!("The word 'oak' is not in the bag."),
+    }
+    match iter.next().unwrap().parse::<i32>() {
+        Ok(15) => println!("The number 15 is in the bag!"),
+        _ => println!("The number 15 is not in the bag."),
+    }
+}

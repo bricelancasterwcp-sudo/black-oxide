@@ -1,0 +1,24 @@
+fn collect_multiples(into: &Vec<Int>, target: Int) -> Vec<Int> {
+    let mut v = push(vec(), 0)
+    let mut i = 0
+    while i < target {
+        i = i + 4
+        v = push(v, i)
+    }
+    v
+}
+
+fn print_total(v: Vec<Int>) {
+    let mut sum = 0
+    for x in &v {
+        sum = sum + x
+    }
+    print(sum)
+}
+
+fn main() {
+    let mut multiples = vec()
+    let v = collect_multiples(&mutMultiples, 24)
+    print_total(v)
+    drop multiples
+}

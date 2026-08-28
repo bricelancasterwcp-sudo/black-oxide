@@ -1,0 +1,376 @@
+fn main() {
+    let r = Reading { label: "lab", values: push(push(vec(), 3), 42) }
+    print(first_big(r.values))            // field access copies: r stays usable
+    let r2 = Reading { label: "lab2", ..r }
+    match second(r2.values) {
+        Some(n) => print(n),
+        None => print_str("too short"),
+    }
+}
+
+struct Reading { label: Str, values: Vec<Int> }
+
+fn first_big(v: Vec<Int>) -> Int {
+    let found = -1
+    for x in v {
+        if x > 10 {
+            found = x
+            break
+        }
+    }
+    found
+}
+
+fn second(v: Vec<Int>) -> Option<Int> {
+    let x = get(v, 1)?
+    Some(x + 1)
+}
+
+fn print(x: Int) {
+    println("Int: {}", x)
+}
+
+fn print_str(s: Str) {
+    println("Str: {}", s)
+}
+
+fn vec() -> Vec<Int> {
+    Vec(vec)
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn len(v: Vec<Int>) -> Int {
+    len(v)
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    get(v, i)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    range(a, b)
+}
+
+fn clone(x: Int) -> Int {
+    x
+}
+
+fn str_len(s: Str) -> Int {
+    str_len(s)
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    a + b
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    parse_int(s)
+}
+
+fn to_float(n: Int) -> Float {
+    to_float(n)
+}
+
+fn trunc(x: Float) -> Int {
+    trunc(x)
+}
+
+struct Str { str: String }
+
+struct Int { int: Number }
+
+struct Float { float: Number }
+
+struct Bool { bool: Boolish }
+
+struct Unit { unit: Nil }
+
+struct Vec { vec: Vec<T> }
+
+struct Option { option: Option<T> }
+
+struct Result { result: Result<T, E> }
+
+fn println(s: Str) {
+    println(s.str)
+}
+
+fn println(i: Int) {
+    println(i.int)
+}
+
+fn println(f: Float) {
+    println(f.float)
+}
+
+fn println(b: Bool) {
+    println(b.bool)
+}
+
+fn println(u: Unit) {
+    println(u.unit)
+}
+
+fn println(v: Vec<T>) {
+    println(v.vec)
+}
+
+fn println(o: Option<T>) {
+    println(o.option)
+}
+
+fn println(r: Result<T, E>) {
+    println(r.result)
+}
+
+enum Nil {
+    Nil,
+}
+
+enum Number {
+    Int(Int),
+    Float(Float),
+}
+
+enum Boolish {
+    True,
+    False,
+}
+
+enum T {
+    Int(Int),
+    Float(Float),
+    Bool(Bool),
+    Unit(Unit),
+    Vec(Vec<T>),
+    Str(Str),
+    Option(Option<T>),
+    Result(Result<T, E>),
+}
+
+enum E {
+    Int(Int),
+    Float(Float),
+    Bool(Bool),
+    Unit(Unit),
+    Vec(Vec<T>),
+    Str(Str),
+    Option(Option<T>),
+    Result(Result<T, E>),
+}
+
+enum Vec {
+    Vec(Vec<T>),
+}
+
+enum Option {
+    Some(T),
+    None,
+}
+
+enum Result {
+    Ok(T),
+    Err(E),
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(vec(), 3), 42) }
+    print(first_big(r.values))            // field access copies: r stays usable
+    let r2 = Reading { label: "lab2", ..r }
+    match second(r2.values) {
+        Some(n) => print(n),
+        None => print_str("too short"),
+    }
+}
+
+struct Reading { label: Str, values: Vec<Int> }
+
+fn first_big(v: Vec<Int>) -> Int {
+    let found = -1
+    for x in v {
+        if x > 10 {
+            found = x
+            break
+        }
+    }
+    found
+}
+
+fn second(v: Vec<Int>) -> Option<Int> {
+    let x = get(v, 1)?
+    Some(x + 1)
+}
+
+fn print(x: Int) {
+    println("Int: {}", x)
+}
+
+fn print_str(s: Str) {
+    println("Str: {}", s)
+}
+
+fn vec() -> Vec<Int> {
+    Vec(vec)
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn len(v: Vec<Int>) -> Int {
+    len(v)
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    get(v, i)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    range(a, b)
+}
+
+fn clone(x: Int) -> Int {
+    x
+}
+
+fn str_len(s: Str) -> Int {
+    str_len(s)
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    a + b
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    parse_int(s)
+}
+
+fn to_float(n: Int) -> Float {
+    to_float(n)
+}
+
+fn trunc(x: Float) -> Int {
+    trunc(x)
+}
+
+struct Str { str: String }
+
+struct Int { int: Number }
+
+struct Float { float: Number }
+
+struct Bool { bool: Boolish }
+
+struct Unit { unit: Nil }
+
+struct Vec { vec: Vec<T> }
+
+struct Option { option: Option<T> }
+
+struct Result { result: Result<T, E> }
+
+fn println(s: Str) {
+    println(s.str)
+}
+
+fn println(i: Int) {
+    println(i.int)
+}
+
+fn println(f: Float) {
+    println(f.float)
+}
+
+fn println(b: Bool) {
+    println(b.bool)
+}
+
+fn println(u: Unit) {
+    println(u.unit)
+}
+
+fn println(v: Vec<T>) {
+    println(v.vec)
+}
+
+fn println(o: Option<T>) {
+    println(o.option)
+}
+
+fn println(r: Result<T, E>) {
+    println(r.result)
+}
+
+enum Nil {
+    Nil,
+}
+
+enum Number {
+    Int(Int),
+    Float(Float),
+}
+
+enum Boolish {
+    True,
+    False,
+}
+
+enum T {
+    Int(Int),
+    Float(Float),
+    Bool(Bool),
+    Unit(Unit),
+    Vec(Vec<T>),
+    Str(Str),
+    Option(Option<T>),
+    Result(Result<T, E>),
+}
+
+enum E {
+    Int(Int),
+    Float(Float),
+    Bool(Bool),
+    Unit(Unit),
+    Vec(Vec<T>),
+    Str(Str),
+    Option(Option<T>),
+    Result(Result<T, E>),
+}
+
+enum Vec {
+    Vec(Vec<T>),
+}
+
+enum Option {
+    Some(T),
+    None,
+}
+
+enum Result {
+    Ok(T),
+    Err(E),
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(vec(), 3), 42) }
+    print(first_big(r.values))            // field access copies: r stays usable
+    let r2 = Reading {

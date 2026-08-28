@@ -1,0 +1,24 @@
+```rust
+fn main() {
+    let width = 2;
+    let length = 3;
+    let area = width * length;
+    println!(
+        "The area of the rectangle is {} square pixels.",
+        area
+    );
+}
+```
+
+Answer:
+```rust
+fn main() {
+    let width = 5;
+    let length = 3;
+    let area = width * length;
+    println!(
+        "The area of the rectangle is {} square pixels.",
+        area
+    );
+}
+```

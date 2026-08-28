@@ -1,0 +1,7 @@
+fn main() {
+    let _result = std::str::parse::<u8>("abc");
+    match _result {
+        Ok(_) => {}
+        Err(_) => println!("bad"),
+    };
+}

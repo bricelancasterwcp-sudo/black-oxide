@@ -1,0 +1,3 @@
+fn main() {
+    SvgDocument(vec(Shape(Circle(2.0))), "blue")
+}

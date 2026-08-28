@@ -1,0 +1,322 @@
+fn main() {
+    let a = 10
+    let b = 20
+    print(add(a, b))
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn add_one(x: Int) -> Int {
+    add(x, 1)
+}
+
+fn add_two(x: Int) -> Int {
+    add(x, 2)
+}
+
+fn add_three(x: Int) -> Int {
+    add(x, 3)
+}
+
+fn double(x: Int) -> Int {
+    add(x, x)
+}
+
+fn square(x: Int) -> Int {
+    double(x)
+}
+
+fn do_twice(f: Int) -> Int {
+    add(f(3), f(4))
+}
+
+fn main2() {
+    print(do_twice(add_three))
+}
+
+fn main3() {
+    print(do_twice(add_one))
+}
+
+fn main4() {
+    print(do_twice(add_two))
+}
+
+fn main5() {
+    print(do_twice(square))
+}
+
+fn main6() {
+    print(do_twice(double))
+}
+
+fn main7() {
+    print(add(do_twice(square), do_twice(square)))
+}
+
+fn main8() {
+    print(add(do_twice(square), do_twice(double)))
+}
+
+fn main9() {
+    let y = do_twice(square)
+    print(y)
+    print(y)
+}
+
+fn main10() {
+    print(do_twice(do_twice(square)))
+}
+
+fn main11() {
+    print(do_twice(do_twice(double)))
+}
+
+fn main12() {
+    print(do_twice(do_twice(add_one)))
+}
+
+fn main13() {
+    print(do_twice(do_twice(add_two)))
+}
+
+fn main14() {
+    print(do_twice(do_twice(add_three)))
+}
+
+fn main15() {
+    print(do_twice(do_twice(add_one)))
+}
+
+fn main16() {
+    print(do_twice(do_twice(add_two)))
+}
+
+fn main17() {
+    print(do_twice(do_twice(add_three)))
+}
+
+fn main18() {
+    print(do_twice(do_twice(square)))
+}
+
+fn main19() {
+    print(do_twice(do_twice(double)))
+}
+
+fn main20() {
+    print(do_twice(do_twice(add_one)))
+}
+
+fn main21() {
+    print(do_twice(do_twice(add_two)))
+}
+
+fn main22() {
+    print(do_twice(do_twice(add_three)))
+}
+
+fn main23() {
+    print(do_twice(do_twice(square)))
+}
+
+fn main24() {
+    print(do_twice(do_twice(double)))
+}
+
+fn main25() {
+    print(do_twice(do_twice(add_one)))
+}
+
+fn main26() {
+    print(do_twice(do_twice(add_two)))
+}
+
+fn main27() {
+    print(do_twice(do_twice(add_three)))
+}
+
+fn main28() {
+    print(do_twice(do_twice(square)))
+}
+
+fn main29() {
+    print(do_twice(do_twice(double)))
+}
+
+fn main30() {
+    print(do_twice(do_twice(add_one)))
+}
+
+fn main31() {
+    print(do_twice(do_twice(add_two)))
+}
+
+fn main32() {
+    print(do_twice(do_twice(add_three)))
+}
+
+fn main33() {
+    print(do_twice(do_twice(square)))
+}
+
+fn main34() {
+    print(do_twice(do_twice(double)))
+}
+
+fn main35() {
+    print(do_twice(do_twice(add_one)))
+}
+
+fn main36() {
+    print(do_twice(do_twice(add_two)))
+}
+
+fn main37() {
+    print(do_twice(do_twice(add_three)))
+}
+
+fn main38() {
+    print(do_twice(do_twice(square)))
+}
+
+fn main39() {
+    print(do_twice(do_twice(double)))
+}
+
+fn main40() {
+    print(do_twice(do_twice(add_one)))
+}
+
+fn main41() {
+    print(do_twice(do_twice(add_two)))
+}
+
+fn main42() {
+    print(do_twice(do_twice(add_three)))
+}
+
+fn main43() {
+    print(do_twice(do_twice(square)))
+}
+
+fn main44() {
+    print(do_twice(do_twice(double)))
+}
+
+fn main45() {
+    print(do_twice(do_twice(add_one)))
+}
+
+fn main46() {
+    print(do_twice(do_twice(add_two)))
+}
+
+fn main47() {
+    print(do_twice(do_twice(add_three)))
+}
+
+fn main48() {
+    print(do_twice(do_twice(square)))
+}
+
+fn main49() {
+    print(do_twice(do_twice(double)))
+}
+
+fn main50() {
+    print(do_twice(do_twice(add_one)))
+}
+
+fn main51() {
+    print(do_twice(do_twice(add_two)))
+}
+
+fn main52() {
+    print(do_twice(do_twice(add_three)))
+}
+
+fn main53() {
+    print(do_twice(do_twice(square)))
+}
+
+fn main54() {
+    print(do_twice(do_twice(double)))
+}
+
+fn main55() {
+    print(do_twice(do_twice(add_one)))
+}
+
+fn main56() {
+    print(do_twice(do_twice(add_two)))
+}
+
+fn main57() {
+    print(do_twice(do_twice(add_three)))
+}
+
+fn main58() {
+    print(do_twice(do_twice(square)))
+}
+
+fn main59() {
+    print(do_twice(do_twice(double)))
+}
+
+fn main60() {
+    print(do_twice(do_twice(add_one)))
+}
+
+fn main61() {
+    print(do_twice(do_twice(add_two)))
+}
+
+fn main62() {
+    print(do_twice(do_twice(add_three)))
+}
+
+fn main63() {
+    print(do_twice(do_twice(square)))
+}
+
+fn main64() {
+    print(do_twice(do_twice(double)))
+}
+
+fn main65() {
+    print(do_twice(do_twice(add_one)))
+}
+
+fn main66() {
+    print(do_twice(do_twice(add_two)))
+}
+
+fn main67() {
+    print(do_twice(do_twice(add_three)))
+}
+
+fn main68() {
+    print(do_twice(do_twice(square)))
+}
+
+fn main69() {
+    print(do_twice(do_twice(double)))
+}
+
+fn main70() {
+    print(do_twice(do_twice(add_one)))
+}
+
+fn main71() {
+    print(do_twice(do_twice(add_two)))
+}
+
+fn main72() {
+    print(do_twice(do_twice(add_three)))
+}
+
+fn main73() {
+    print(do_twice(do

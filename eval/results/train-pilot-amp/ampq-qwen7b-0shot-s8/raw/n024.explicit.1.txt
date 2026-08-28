@@ -1,0 +1,15 @@
+fn count_a(word: &Str) -> Int {
+    let count = 0
+    for c in word {
+        if c == "a" {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn main() {
+    let word = "banana"
+    print(count_a(word))
+    drop word
+}

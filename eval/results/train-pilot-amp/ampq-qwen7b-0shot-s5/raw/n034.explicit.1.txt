@@ -1,0 +1,17 @@
+fn get_second(v: Vec<Int>) -> Option<Int> {
+    if v.len() > 1 {
+        Some(v.get(1).unwrap().clone())
+    } else {
+        None
+    }
+}
+
+fn main() {
+    let nums = push(push(vec(), 7), 8)
+    let second = get_second(nums)
+    match second {
+        Some(n) => print_str(n),
+        None => print_str("None"),
+    }
+    drop nums
+}

@@ -1,0 +1,12 @@
+fn main() {
+    let mut nums = vec()
+    for i in 10 {
+        if i % 2 == 0 {
+            nums = push(nums, i)
+        }
+    }
+    for i in range(0, len(nums)) {
+        print(nums.get(len(nums) - i - 1))
+    }
+    drop nums
+}

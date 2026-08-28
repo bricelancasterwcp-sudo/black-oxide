@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let word = "keyboard";
+    let mut vowels = 0;
+    let mut consonants = 0;
+
+    for letter in word.chars() {
+        if letter.is_ascii_lowercase() && "aeiou".contains(letter) {
+            vowels += 1;
+        } else if letter.is_ascii_lowercase() && !"aeiou".contains(letter) {
+            consonants += 1;
+        }
+    }
+
+    println!("Vowels: {}", vowels);
+    println!("Consonants: {}", consonants);
+}
+```

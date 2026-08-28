@@ -1,0 +1,4 @@
+fn main() {
+    let product: i32 = (1..=6).product();
+    println!("{}", product);
+}

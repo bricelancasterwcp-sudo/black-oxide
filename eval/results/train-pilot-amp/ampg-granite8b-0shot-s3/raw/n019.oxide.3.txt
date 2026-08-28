@@ -1,0 +1,14 @@
+struct List { head: Int, tail: Option<Box<List>> }
+
+fn len(l: List) -> Int {
+    let mut n = 0
+    for x in l {
+        n = n + 1
+    }
+    n
+}
+
+fn main() {
+    let l = List { head: 1, tail: Some(Box { head: 2, tail: Some(Box { head: 3, tail: None }) }) }
+    print(len(l))
+}

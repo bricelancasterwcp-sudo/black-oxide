@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let numbers = [9, 2, 12, 5, 16];
+    let mut kept_numbers = Vec::new();
+
+    for &number in &numbers {
+        if number < 10 {
+            kept_numbers.push(number);
+        }
+    }
+
+    for &number in &kept_numbers {
+        println!("{}", number);
+    }
+
+    println!("Kept {} numbers", kept_numbers.len());
+}
+```

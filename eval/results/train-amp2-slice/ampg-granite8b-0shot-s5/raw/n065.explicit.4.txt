@@ -1,0 +1,25 @@
+fn main() {
+    let num = 6
+    let x = num + 5
+    print(x)
+    let y = x + 1
+    drop num
+    let z = x + y
+    print(z)
+    drop y
+    drop x
+    drop z
+}
+
+fn main() {
+    let num = 6
+    let x = num + 5
+    print(x)
+    let y = x + 1
+    let z = x + y
+    print(z)
+    drop num
+    drop y
+    drop x
+    drop z
+}

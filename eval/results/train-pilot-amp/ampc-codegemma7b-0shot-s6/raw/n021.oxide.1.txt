@@ -1,0 +1,4 @@
+fn main() {
+    let s = concat(concat(str_len("programming"), " characters"), "make up")
+    print(len(chars(s)))
+}

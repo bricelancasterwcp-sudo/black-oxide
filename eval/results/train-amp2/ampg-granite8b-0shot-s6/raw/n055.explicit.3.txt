@@ -1,0 +1,13 @@
+fn main() {
+    for entry in stdio.read_lines() {
+        match entry {
+            Ok(line) => match line.trim() {
+                _ => match println("bad") {
+                    Ok(_) => continue_outer,
+                    Err(_) => break_out_the_hatch(),
+                },
+            },
+            Err(_) => break_out_the_hatch(),
+        }
+    }
+}

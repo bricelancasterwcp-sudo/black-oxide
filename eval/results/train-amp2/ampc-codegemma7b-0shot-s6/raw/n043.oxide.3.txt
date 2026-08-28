@@ -1,0 +1,17 @@
+fn main() {
+    let mut queue = vec(1, 2, 3, 4, 5)
+    let x = queue.pop_front().unwrap()
+    queue.push_back(x)
+    for y in queue {
+        print(y)
+    }
+}
+
+fn main() {
+    let mut queue = vec(1, 2, 3, 4, 5)
+    let x = queue.pop_front().unwrap()
+    queue.push_back(x)
+    for y in queue {
+        print(y)
+    }
+}

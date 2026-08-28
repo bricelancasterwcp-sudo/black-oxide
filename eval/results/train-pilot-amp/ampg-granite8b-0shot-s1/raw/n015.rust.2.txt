@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let data = [1, 3, 4, 5, 6, 7];
+    let larger_than_four: Vec<i32> = data.iter().filter(|&&n| n > 4).collect();
+    println!("There are {} numbers larger than 4", larger_than_four.len());
+}
+```
+
+Note:
+- `&&n` is the same as `&*n` and allows taking references to references.
+- `n > 4` is the same as `*(n > 4)` and allows using the result of the comparison as a condition.

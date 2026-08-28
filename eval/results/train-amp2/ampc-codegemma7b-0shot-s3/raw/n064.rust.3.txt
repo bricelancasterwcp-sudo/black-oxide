@@ -1,0 +1,7 @@
+fn main() {
+    let mut list = [0; 10];
+    list[0] = 10;
+    list[1] = 20;
+    println!("{:?}", list[0]); // prints 10
+    println!("{:?}", list[4]); // prints nothing, because the position is empty
+}

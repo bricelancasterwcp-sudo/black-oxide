@@ -1,0 +1,14 @@
+fn main() {
+    let seven = read_int()?
+    let x = read_int()?
+    let nine = read_int()?
+    let question = read_int()
+    match (seven.is_none() == false) {
+        True => print(seven.unwrap() + x.unwrap() + nine.unwrap()),
+        False => print(0),
+    }
+    match (question.is_none() == false) {
+        True => print(1),
+        False => print(0),
+    }
+}

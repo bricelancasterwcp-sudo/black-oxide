@@ -1918,16 +1918,41 @@ def test_preflight_reports_a_corpus_that_does_not_load(tmp_path):
     assert any("corpus" in p for p in problems)
 
 
-def test_preflight_reports_a_corpus_size_decoupled_from_sessions_per_run(tmp_path):
-    # SESSIONS_PER_RUN=60 is what is_complete judges a run against. If the
-    # corpus ever changes size, every run would be mis-judged complete.
-    tasks_path = tmp_path / "tasks.jsonl"
-    tasks_path.write_text(
+def test_preflight_reports_an_eval_corpus_decoupled_from_sessions_per_run(
+    tmp_path, monkeypatch
+):
+    # SESSIONS_PER_RUN=60 is the documented length every published campaign
+    # is read against, so a silent resize of eval/tasks.jsonl would strand
+    # them. This drives the EVAL corpus off its pinned size directly; it
+    # used to simulate that by passing an alternate tasks_path, which no
+    # longer expresses the same thing -- an explicitly supplied corpus is
+    # now a legitimate different size (the training corpus), and
+    # driver.sessions_per_run derives the expected count for it.
+    shrunk = tmp_path / "tasks.jsonl"
+    shrunk.write_text(
         json.dumps({"id": "tA", "prompt": "p", "expected_stdout": "1\n"}) + "\n",
         encoding="utf-8",
     )
-    problems = preflight_environment([0], tasks_path=tasks_path)
+    monkeypatch.setattr(driver.harness, "TASKS_PATH", shrunk)
+    problems = preflight_environment([0])
     assert any("SESSIONS_PER_RUN" in p for p in problems)
+
+
+def test_preflight_accepts_an_alternate_corpus_of_a_different_size(tmp_path):
+    # The training corpus is 40 tasks. Preflight must not reject it merely
+    # for differing from the eval corpus's pinned length.
+    alt = tmp_path / "train.jsonl"
+    alt.write_text(
+        "".join(
+            json.dumps({"id": f"n{i:03d}", "prompt": "p", "expected_stdout": "1\n"})
+            + "\n"
+            for i in range(1, 41)
+        ),
+        encoding="utf-8",
+    )
+    assert not any(
+        "SESSIONS_PER_RUN" in p for p in preflight_environment([0], tasks_path=alt)
+    )
 
 
 def test_preflight_reports_arms_short_of_shots_for_the_3shot_condition(monkeypatch):
@@ -3004,3 +3029,73 @@ def test_live_constrained_generation_emits_no_syntax_diagnostics(tmp_path):
     )
     assert complete > 0, "every generation hit the token cap; result is vacuous"
     assert syntax == [], syntax
+
+
+def test_main_threads_the_tasks_flag_to_preflight_and_the_grid(tmp_path, monkeypatch):
+    """--tasks must reach BOTH preflight and run_grid.
+
+    Without it an amplification run would silently generate against
+    eval/tasks.jsonl -- the held-out eval corpus -- contaminating the
+    training set with the very tasks the fine-tune is scored on, and
+    producing a large, meaningless gain.
+    """
+    corpus = tmp_path / "train.jsonl"
+    corpus.write_text(
+        '{"id": "n001", "title": "T", "difficulty": "intro", '
+        '"prompt": "P", "expected_stdout": "1\\n"}\n',
+        encoding="utf-8",
+    )
+    seen: dict[str, object] = {}
+
+    stub_clients = {arm: _StaleServerStub("/blobs/sha256-abc") for arm in harness.ARMS}
+    monkeypatch.setattr(
+        driver, "make_arm_clients",
+        lambda backend, slug, *, constrained, host: stub_clients,
+    )
+    monkeypatch.setattr(
+        driver, "preflight_environment",
+        lambda shot_counts, tasks_path=None: seen.__setitem__("preflight", tasks_path) or [],
+    )
+    monkeypatch.setattr(
+        driver, "run_grid",
+        lambda *a, **kw: (seen.__setitem__("grid", kw.get("tasks_path")),
+                          {"aborted": False})[1],
+    )
+
+    code = driver.main([
+        "--models", "qwen7b", "--shots", "0", "--seeds", "1",
+        "--tasks", str(corpus),
+    ])
+
+    assert code == 0
+    assert seen["preflight"] == corpus
+    assert seen["grid"] == corpus
+
+
+def test_main_defaults_tasks_path_to_none_when_the_flag_is_absent(monkeypatch):
+    """The default must stay None so every already-published campaign
+    command keeps resolving to eval/tasks.jsonl via harness.TASKS_PATH.
+
+    A default of anything else would silently repoint g0c/g1c/v03c
+    reproduction commands at a different corpus.
+    """
+    seen: dict[str, object] = {}
+    stub_clients = {arm: _StaleServerStub("/blobs/sha256-abc") for arm in harness.ARMS}
+    monkeypatch.setattr(
+        driver, "make_arm_clients",
+        lambda backend, slug, *, constrained, host: stub_clients,
+    )
+    monkeypatch.setattr(
+        driver, "preflight_environment",
+        lambda shot_counts, tasks_path=None: seen.__setitem__("preflight", tasks_path) or [],
+    )
+    monkeypatch.setattr(
+        driver, "run_grid",
+        lambda *a, **kw: (seen.__setitem__("grid", kw.get("tasks_path")),
+                          {"aborted": False})[1],
+    )
+
+    driver.main(["--models", "qwen7b", "--shots", "0", "--seeds", "1"])
+
+    assert seen["preflight"] is None
+    assert seen["grid"] is None

@@ -1,0 +1,8 @@
+fn len_programming() -> Int {
+    let s = "programming"
+    str_len(s)
+}
+
+fn main() {
+    print(len_programming())
+}

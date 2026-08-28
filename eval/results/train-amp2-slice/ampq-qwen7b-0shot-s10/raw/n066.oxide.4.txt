@@ -1,0 +1,22 @@
+struct Batch {
+    entries: Vec<Int>,
+}
+
+fn keep_under_ten(batch: Batch) -> Vec<Int> {
+    let mut kept = Vec()
+    for entry in batch.entries {
+        if entry < 10 {
+            kept = push(kept, entry)
+        }
+    }
+    kept
+}
+
+fn main() {
+    let batch = Batch { entries: push(push(push(push(vec(), 9), 2), 12), 5) }
+    let kept = keep_under_ten(batch)
+    for entry in kept {
+        print(entry)
+    }
+    print(len(kept))
+}

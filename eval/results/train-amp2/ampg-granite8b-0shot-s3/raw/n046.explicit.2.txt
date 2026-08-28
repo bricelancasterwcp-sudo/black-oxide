@@ -1,0 +1,19 @@
+fn count_in_slice(slice: &Vec<Int>, cutoff: Int) -> Int {
+    let mut count = 0
+    for n in &slice {
+        if n > cutoff {
+            count = count + 1
+        }
+    }
+    drop count
+    drop slice
+    count
+}
+
+fn main() {
+    let values = vec(5, 12, 3, 18, 9)
+    let count_under = count_in_slice(&values, 10)
+    let count_at_or_over = count_in_slice(&values, 10)
+    print(count_under)
+    print(count_at_or_over)
+}

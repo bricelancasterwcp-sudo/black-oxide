@@ -1,0 +1,12 @@
+fn digits(n: Int) -> Int {
+    if n < 10 {
+        return n
+    }
+    let r = n % 10
+    let d = digits(n / 10)
+    d + r
+}
+
+fn main() {
+    print(digits(9875))
+}

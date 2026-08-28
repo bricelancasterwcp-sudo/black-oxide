@@ -1,0 +1,3 @@
+fn main() {
+    let texts = vec("7", "x", "9", "?").map(parse_int).filter_map(identity).fold(0, add).print().println("count: ").println(vec("7", "x", "9", "?").filter_map(parse_int).count()).print().println("non-numbers: ").println(vec("7", "x", "9", "?").filter_map(parse_int).map_or(0, identity).print().println("count: ").println(vec("7", "x", "9", "?").filter_map(parse_int).map_or(0, identity).count()))
+}

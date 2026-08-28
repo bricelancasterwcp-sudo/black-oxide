@@ -1,0 +1,18 @@
+struct Counting { total: Int }
+
+fn count_divisible(v: Vec<Int>) -> Counting {
+    let mut total = 0
+    for x in v {
+        if x % 3 == 0 || x % 5 == 0 {
+            total = total + 1
+        }
+    }
+    Counting(total)
+}
+
+fn main() {
+    let v = range(1, 51)
+    let result = count_divisible(v)
+    print_str("Count: ")
+    print(result.total)
+}

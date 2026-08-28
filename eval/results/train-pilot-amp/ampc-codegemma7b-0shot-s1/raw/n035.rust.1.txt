@@ -1,0 +1,16 @@
+use std::process;
+
+fn division(a: i32, b: i32) -> i32 {
+    if b == 0 {
+        process::exit(1)
+    } else {
+        a / b
+    }
+}
+
+fn main() {
+    let result = division(20, 4);
+    println!("Result: {}", result);
+    let result = division(20, 0);
+    println!("Result: {}", result);
+}

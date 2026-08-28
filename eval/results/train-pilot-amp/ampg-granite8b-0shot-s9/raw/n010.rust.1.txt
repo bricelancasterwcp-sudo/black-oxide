@@ -1,0 +1,6 @@
+```rust
+fn main() {
+    let is_prime = (2..91).all(|i| 91 % i != 0);
+    println!("{}", if is_prime {"yes"} else {"no"});
+}
+```

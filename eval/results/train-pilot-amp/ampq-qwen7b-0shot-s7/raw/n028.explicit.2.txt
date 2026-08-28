@@ -1,0 +1,26 @@
+fn read_and_print() {
+    if letOk(num) == parse_int("abc") {
+        print(num)
+    } else {
+        print("bad")
+    }
+}
+
+fn parse_int(s: Str) -> Result<Int, Str> {
+    match s.parse() {
+        Ok(num) => Ok(num),
+        Err(_) => Err(s),
+    }
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn main() {
+    read_and_print()
+}

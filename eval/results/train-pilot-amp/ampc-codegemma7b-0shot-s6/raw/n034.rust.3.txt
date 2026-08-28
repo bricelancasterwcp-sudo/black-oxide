@@ -1,0 +1,15 @@
+use std::option::Option;
+
+fn second(iter: &[i32]) -> Option<i32> {
+    match iter.get(1) {
+        Some(x) => Some(*x),
+        None => None,
+    }
+}
+
+fn main() {
+    println!("{:?}", second(&[])); // None
+    println!("{:?}", second(&[7])); // None
+    println!("{:?}", second(&[7, 8])); // Some(8)
+    println!("{:?}", second(&[7, 8, 9])); // Some(8)
+}

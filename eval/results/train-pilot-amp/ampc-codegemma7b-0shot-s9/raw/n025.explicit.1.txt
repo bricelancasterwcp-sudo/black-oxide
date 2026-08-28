@@ -1,0 +1,9 @@
+fn main() {
+    let num = parse_int(get(read_str(), 0))
+    if num.is_none() {
+        print("bad")
+    } else {
+        let num = int_to_str(num.unwrap() + 1)
+        print(num)
+    }
+}

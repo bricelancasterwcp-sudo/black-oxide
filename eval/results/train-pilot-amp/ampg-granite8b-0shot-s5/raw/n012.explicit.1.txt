@@ -1,0 +1,15 @@
+fn build_numbers() -> Vec<Int> {
+    let mut i = 0
+    let mut result = vec()
+    while i < 15 {
+        push(result, i)
+        i = i + 1
+    }
+    result
+}
+
+fn main() {
+    let numbers = build_numbers()
+    print(len(&numbers))
+    drop numbers
+}

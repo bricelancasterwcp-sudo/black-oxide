@@ -1,0 +1,11 @@
+fn main() {
+  let batch = vec![9, 2, 12, 5, 16];
+  
+  let under_ten: Vec<_> = batch.iter().filter(|&x| *x < 10).collect();
+  
+  for entry in &under_ten {
+    println!("{}", entry);
+  }
+  
+  println!("{} entries kept.", under_ten.len());
+}

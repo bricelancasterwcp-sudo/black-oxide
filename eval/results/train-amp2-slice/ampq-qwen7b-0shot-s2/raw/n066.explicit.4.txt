@@ -1,0 +1,18 @@
+fn filter(v: &Vec<Int>, limit: Int) -> Vec<Int> {
+    let mut result = vec()
+    for x in v {
+        if x < &limit {
+            push(result, x)
+        }
+    }
+    result
+}
+
+fn main() {
+    let nums = vec(9, 2, 12, 5, 16)
+    let kept = filter(&nums, 10)
+    for n in kept {
+        print(n)
+    }
+    print(len(&kept))
+}

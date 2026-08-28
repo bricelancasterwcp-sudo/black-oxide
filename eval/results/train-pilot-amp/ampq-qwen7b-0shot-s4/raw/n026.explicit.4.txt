@@ -1,0 +1,20 @@
+fn int_to_str(n: Int) -> Str {
+    match n {
+        ToString => n.to_string(),
+    }
+}
+
+fn str_len(s: &Str) -> Int {
+    let mut len = 0
+    for _ in s.chars() {
+        len = len + 1
+    }
+    len
+}
+
+fn main() {
+    let text = int_to_str(2026)
+    let length = str_len(&text)
+    print(length)
+    drop text
+}

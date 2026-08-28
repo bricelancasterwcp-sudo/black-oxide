@@ -1,0 +1,15 @@
+fn main() {
+    let mut counter = 0
+    let mut result = vec()
+    for num in vec(9, 2, 12, 5, 16) {
+        if num < 10 {
+            counter = counter + 1
+            result = push(result, num)
+        }
+    }
+    for num in result {
+        print(num)
+        print_str("\n")
+    }
+    print(counter)
+}

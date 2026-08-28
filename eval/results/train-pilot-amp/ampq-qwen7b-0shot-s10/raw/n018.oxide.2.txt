@@ -1,0 +1,13 @@
+struct List { head: Option<Int>, tail: Option<Box<List>> }
+
+fn print_list(list: List) {
+    match list.tail {
+        Some(boxed_list) => print_list(boxed_list),
+        None => print(list.head.unwrap()),
+    }
+}
+
+fn main() {
+    let list = List { head: Some(4), tail: Some(Box.new(List { head: Some(3), tail: Some(Box.new(List { head: Some(2), tail: Some(Box.new(List)) })) })) }  // Fixed the list construction
+    print_list(list)
+}

@@ -1,0 +1,8 @@
+fn main() {
+    let input = std::io::stdin().read_line(&mut String::new()).unwrap();
+    let number = input.trim().parse::<i32>();
+    match number {
+        Ok(num) => println!("{}", num + 1),
+        Err(_) => println!("bad"),
+    }
+}

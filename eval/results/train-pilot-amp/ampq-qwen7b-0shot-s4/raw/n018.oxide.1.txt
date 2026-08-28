@@ -1,0 +1,16 @@
+struct List { value: Int, next: Option<Box<List>> }
+
+fn print_list(list: Option<Box<List>>) {
+    match list {
+        Some(node) => {
+            print_list(node.next?)
+            print(node.value)
+        },
+        None => print_str(""),
+    }
+}
+
+fn main() {
+    let list = Some(Box { value: 4, next: Some(Box { value: 3, next: Some(Box { value: 2, next: Some(Box { value: 1, next: None }) }) }) })
+    print_list(list)
+}

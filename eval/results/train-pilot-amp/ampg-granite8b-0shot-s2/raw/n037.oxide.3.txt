@@ -1,0 +1,23 @@
+struct Point { x: Int, y: Int }
+
+fn main() {
+    let mut p = Point { x: 2, y: 3 }
+    p.x = 5
+    print(area(p))
+}
+
+fn area(p: Point) -> Int {
+    p.x * p.y
+}
+
+struct Rectangle { p1: Point, p2: Point }
+
+fn area(r: Rectangle) -> Int {
+    (r.p2.x - r.p1.x) * (r.p2.y - r.p1.y)
+}
+
+fn main() {
+    let mut r = Rectangle { p1: Point { x: 1, y: 1 }, p2: Point { x: 3, y: 4 } }
+    r.p1.x = 5
+    print(area(r))
+}

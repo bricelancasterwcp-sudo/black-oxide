@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let numbers = vec![5, 3, 9, 1, 7];
+    let smallest = numbers.iter().min().unwrap();
+    println!("{}", smallest);
+}
+```

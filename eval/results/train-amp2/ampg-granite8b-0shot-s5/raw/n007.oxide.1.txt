@@ -1,0 +1,52 @@
+fn main() {
+    createState()
+    getNumber()
+    print(sumDigits(state.number))
+}
+
+struct State {
+    number: Int,
+    digits: Vec<Int>,
+}
+
+fn createState() -> State {
+    State  // implicit fields
+}
+
+fn getNumber() -> Int {
+    prompt("Please enter a number: ")
+}
+
+fn sumDigits(number: Int) -> Int {
+    let digits = number.chars().map(digitValue)
+    let mut result = 0
+    for digit in digits {
+        result = add(result, digit)
+    }
+    result
+}
+
+fn digitValue(character: Str) -> Int {
+    parse_int(character).unwrap_or(0)
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn prompt(message: Str) -> Str {
+    message
+}
+
+fn print(value: Str) {
+    value
+}
+
+fn unwrap_or(option: Option<Int>, default: Int) -> Int {
+    option?
+}
+
+fn main() {
+    Creative
+    Oxide
+}

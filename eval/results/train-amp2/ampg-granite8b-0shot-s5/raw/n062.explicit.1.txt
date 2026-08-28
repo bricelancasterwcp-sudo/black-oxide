@@ -1,0 +1,419 @@
+fn main() {
+    green_light_for_go_for_green()
+    red_light_for_stop_for_red()
+    yellow_light_for_wait_for_yellow()
+}
+
+fn green_light_for_go_for_green() {
+    let signal = Signal(Red)
+    println(format("Green light for go for green"))
+    println(signal)
+}
+
+fn red_light_for_stop_for_red() {
+    println(format("Red light for stop for red"))
+}
+
+fn yellow_light_for_wait_for_yellow() {
+    let signal = Signal(Green)
+    println(format("Yellow light for wait for yellow"))
+    println(signal)
+}
+
+enum SignalColor {
+    Red,
+    Yellow,
+    Green,
+}
+
+struct Signal {
+    color: SignalColor,
+}
+
+fn format(input: &Signal) -> String {
+    String(format("Signal color is {}", input.color))
+}
+
+fn println(input: &Signal) {
+    print(format(&input))
+    print("\n")
+}
+
+fn print(input: &Signal) {
+    String(format("Signal color is {}", input.color))
+}
+
+fn main() {
+    let signal = Signal(Red)
+    print(format(&signal))
+    print("\n")
+}
+
+enum SignalColor {
+    Red,
+    Yellow,
+    Green,
+}
+
+struct Signal {
+    color: SignalColor,
+}
+
+fn format(input: &Signal) -> String {
+    String(format("Signal color is {}", input.color))
+}
+
+fn println(input: &Signal) {
+    print(format(&input))
+    print("\n")
+}
+
+fn print(input: &Signal) {
+    String(format("Signal color is {}", input.color))
+}
+
+fn main() {
+    let signal = Signal(Red)
+    print(format(&signal))
+    print("\n")
+}
+
+enum SignalColor {
+    Red,
+    Yellow,
+    Green,
+}
+
+struct Signal {
+    color: SignalColor,
+}
+
+fn format(input: &Signal) -> String {
+    String(format("Signal color is {}", input.color))
+}
+
+fn println(input: &Signal) {
+    print(format(&input))
+    print("\n")
+}
+
+fn print(input: &Signal) {
+    String(format("Signal color is {}", input.color))
+}
+
+fn main() {
+    let signal = Signal(Red)
+    print(format(&signal))
+    print("\n")
+}
+
+enum SignalColor {
+    Red,
+    Yellow,
+    Green,
+}
+
+struct Signal {
+    color: SignalColor,
+}
+
+fn format(input: &Signal) -> String {
+    String(format("Signal color is {}", input.color))
+}
+
+fn println(input: &Signal) {
+    print(format(&input))
+    print("\n")
+}
+
+fn print(input: &Signal) {
+    String(format("Signal color is {}", input.color))
+}
+
+fn main() {
+    let signal = Signal(Red)
+    print(format(&signal))
+    print("\n")
+}
+
+enum SignalColor {
+    Red,
+    Yellow,
+    Green,
+}
+
+struct Signal {
+    color: SignalColor,
+}
+
+fn format(input: &Signal) -> String {
+    String(format("Signal color is {}", input.color))
+}
+
+fn println(input: &Signal) {
+    print(format(&input))
+    print("\n")
+}
+
+fn print(input: &Signal) {
+    String(format("Signal color is {}", input.color))
+}
+
+fn main() {
+    let signal = Signal(Red)
+    print(format(&signal))
+    print("\n")
+}
+
+enum SignalColor {
+    Red,
+    Yellow,
+    Green,
+}
+
+struct Signal {
+    color: SignalColor,
+}
+
+fn format(input: &Signal) -> String {
+    String(format("Signal color is {}", input.color))
+}
+
+fn println(input: &Signal) {
+    print(format(&input))
+    print("\n")
+}
+
+fn print(input: &Signal) {
+    String(format("Signal color is {}", input.color))
+}
+
+fn main() {
+    let signal = Signal(Red)
+    print(format(&signal))
+    print("\n")
+}
+
+enum SignalColor {
+    Red,
+    Yellow,
+    Green,
+}
+
+struct Signal {
+    color: SignalColor,
+}
+
+fn format(input: &Signal) -> String {
+    String(format("Signal color is {}", input.color))
+}
+
+fn println(input: &Signal) {
+    print(format(&input))
+    print("\n")
+}
+
+fn print(input: &Signal) {
+    String(format("Signal color is {}", input.color))
+}
+
+fn main() {
+    let signal = Signal(Red)
+    print(format(&signal))
+    print("\n")
+}
+
+enum SignalColor {
+    Red,
+    Yellow,
+    Green,
+}
+
+struct Signal {
+    color: SignalColor,
+}
+
+fn format(input: &Signal) -> String {
+    String(format("Signal color is {}", input.color))
+}
+
+fn println(input: &Signal) {
+    print(format(&input))
+    print("\n")
+}
+
+fn print(input: &Signal) {
+    String(format("Signal color is {}", input.color))
+}
+
+fn main() {
+    let signal = Signal(Red)
+    print(format(&signal))
+    print("\n")
+}
+
+enum SignalColor {
+    Red,
+    Yellow,
+    Green,
+}
+
+struct Signal {
+    color: SignalColor,
+}
+
+fn format(input: &Signal) -> String {
+    String(format("Signal color is {}", input.color))
+}
+
+fn println(input: &Signal) {
+    print(format(&input))
+    print("\n")
+}
+
+fn print(input: &Signal) {
+    String(format("Signal color is {}", input.color))
+}
+
+fn main() {
+    let signal = Signal(Red)
+    print(format(&signal))
+    print("\n")
+}
+
+enum SignalColor {
+    Red,
+    Yellow,
+    Green,
+}
+
+struct Signal {
+    color: SignalColor,
+}
+
+fn format(input: &Signal) -> String {
+    String(format("Signal color is {}", input.color))
+}
+
+fn println(input: &Signal) {
+    print(format(&input))
+    print("\n")
+}
+
+fn print(input: &Signal) {
+    String(format("Signal color is {}", input.color))
+}
+
+fn main() {
+    let signal = Signal(Red)
+    print(format(&signal))
+    print("\n")
+}
+
+enum SignalColor {
+    Red,
+    Yellow,
+    Green,
+}
+
+struct Signal {
+    color: SignalColor,
+}
+
+fn format(input: &Signal) -> String {
+    String(format("Signal color is {}", input.color))
+}
+
+fn println(input: &Signal) {
+    print(format(&input))
+    print("\n")
+}
+
+fn print(input: &Signal) {
+    String(format("Signal color is {}", input.color))
+}
+
+fn main() {
+    let signal = Signal(Red)
+    print(format(&signal))
+    print("\n")
+}
+
+enum SignalColor {
+    Red,
+    Yellow,
+    Green,
+}
+
+struct Signal {
+    color: SignalColor,
+}
+
+fn format(input: &Signal) -> String {
+    String(format("Signal color is {}", input.color))
+}
+
+fn println(input: &Signal) {
+    print(format(&input))
+    print("\n")
+}
+
+fn print(input: &Signal) {
+    String(format("Signal color is {}", input.color))
+}
+
+fn main() {
+    let signal = Signal(Red)
+    print(format(&signal))
+    print("\n")
+}
+
+enum SignalColor {
+    Red,
+    Yellow,
+    Green,
+}
+
+struct Signal {
+    color: SignalColor,
+}
+
+fn format(input: &Signal) -> String {
+    String(format("Signal color is {}", input.color))
+}
+
+fn println(input: &Signal) {
+    print(format(&input))
+    print("\n")
+}
+
+fn print(input: &Signal) {
+    String(format("Signal color is {}", input.color))
+}
+
+fn main() {
+    let signal = Signal(Red)
+    print(format(&signal))
+    print("\n")
+}
+
+enum SignalColor {
+    Red,
+    Yellow,
+    Green,
+}
+
+struct Signal {
+    color: SignalColor,
+}
+
+fn format(input: &Signal) -> String {
+    String(format("Signal color is {}", input.color))
+}
+
+fn println(input: &Signal) {
+    print(format(&input))
+    print("\n")
+}
+
+fn print(input: &Signal)

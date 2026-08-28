@@ -1,0 +1,4 @@
+fn main() {
+    let phrase = "hello world"
+    print(str_len(phrase))
+}

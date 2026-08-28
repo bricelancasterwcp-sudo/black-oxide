@@ -1,0 +1,36 @@
+fn swap_first_last(q: &Vec<Int>) -> Vec<Int> {
+    let mut new_q = clone(q)
+    let front = get(new_q, 0).expect("Queue is nonempty")
+    let back = get(new_q, len(new_q) - 1).expect("Queue is nonempty")
+    new_q = drop_front(&new_q)
+    push(new_q, back)
+}
+
+fn drop_front(q: &Vec<Int>) -> Vec<Int> {
+    let mut new_q = clone(q)
+    for i in 1.to_int() < len(new_q) {
+        let old_i = i - 1
+        let next_i = i
+        new_q = push(new_q, get(new_q, next_i).expect("Queue is long enough"))
+        new_q = drop_back(&new_q)
+    }
+    new_q
+}
+
+fn drop_back(q: &Vec<Int>) -> Vec<Int> {
+    let mut new_q = clone(q)
+    for i in 0.to_int() < len(new_q) {
+        let old_i = i
+        let next_i = i + 1
+        new_q = push(drop_back(&new_q), get(new_q, old_i).expect("Queue is long enough"))
+    }
+    new_q
+}
+
+fn main() {
+    let q = vec(1, 2, 3, 4, 5)
+    let new_q = swap_first_last(&q)
+    for i in 0.to_int() < len(new_q) {
+        print(get(new_q, i).expect("Queue is long enough"))
+    }
+}

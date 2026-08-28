@@ -1,0 +1,30 @@
+fn count_vowels(words: &Vec<Str>) -> Int {
+    let mut count = 0
+    for word in words {
+        for letter in chars(&word) {
+            match letter {
+                Str(reflit) => {
+                    if reflit == "a" || reflit == "e" || reflit == "i" || reflit == "o" || reflit == "u" {
+                        count = count + 1
+                    }
+                },
+                _ => {
+                    drop reflit
+                },
+            }
+        }
+    }
+    drop word
+    drop letter
+    count
+}
+
+fn main() {
+    let words = push(push(vec(), "aardvark"), "banana")
+    let count = count_vowels(&words)
+    print_str("There are ")
+    print(count)
+    print_str(" vowels.\n")
+    drop words
+    drop count
+}

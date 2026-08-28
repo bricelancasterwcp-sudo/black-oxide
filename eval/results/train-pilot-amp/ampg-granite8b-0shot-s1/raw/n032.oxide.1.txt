@@ -1,0 +1,6 @@
+fn main() {
+    punto = Point { x: 1, y: 2 }
+    punto2 = Point { x: 10, ..punto }
+    ris = punto2.x + punto2.y
+    print(ris)
+}

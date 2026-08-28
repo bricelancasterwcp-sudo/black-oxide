@@ -1,0 +1,29 @@
+```rust
+fn main() {
+    let mut queue: Vec<i32> = vec![1, 2, 3, 4, 5];
+    queue.swap(0, queue.len() - 1);
+    for entry in queue {
+        println!("{}", entry);
+    }
+}
+```
+
+The issue is with this line:
+
+```rust
+queue.swap(0, queue.len() - 1);
+```
+
+It claims that the immutable borrow is occurring later, when in reality it's the other way around.
+
+The fix is to declare the queue as `mut` so that it can be both borrowed and mutated at the same time:
+
+```rust
+fn main() {
+    let mut queue: Vec<i32> = vec![1, 2, 3, 4, 5];
+    queue.swap(0, queue.len() - 1);
+    for entry in queue {
+        println!("{}", entry);
+    }
+}
+```

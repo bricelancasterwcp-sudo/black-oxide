@@ -1,0 +1,13 @@
+fn count_numbers(limit: Int) -> Int {
+    let mut count = 0
+    for num in 1.range(limit + 1) {
+        if num % 3 == 0 || num % 5 == 0 {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn main() {
+    print(count_numbers(50))
+}

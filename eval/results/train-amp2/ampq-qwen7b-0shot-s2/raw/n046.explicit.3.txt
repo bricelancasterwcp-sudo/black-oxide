@@ -1,0 +1,19 @@
+fn main() {
+    let samples = push(push(vec(), 5), 12)
+    push(samples, 3)
+    push(samples, 18)
+    push(samples, 9)
+    let mut under = 0
+    let mut over = 0
+    for x in &samples {
+        if x < 10 {
+            under = under + 1
+        } else {
+            over = over + 1
+        }
+    }
+    print(under)
+    print_str(" ")
+    print(over)
+    drop samples
+}

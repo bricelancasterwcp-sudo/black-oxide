@@ -1,0 +1,14 @@
+fn main() {
+    let balance = 0
+    print(balance)
+    let balance = balance + 3
+    print(balance)
+    let balance = balance + 1
+    print(balance)
+    let balance = balance + 4
+    print(balance)
+    let balance = balance + 1
+    print(balance)
+    let balance = balance + 5
+    print(balance)
+}

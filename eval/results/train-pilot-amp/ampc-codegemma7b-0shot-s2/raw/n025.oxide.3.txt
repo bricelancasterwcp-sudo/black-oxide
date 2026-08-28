@@ -1,0 +1,22 @@
+fn read_num() -> Option<Int> {
+    let line = stdinput().read_line()?.trim_end().chars().collect()
+    if line.len() == 0 {
+        return None
+    }
+    let mut i = 0
+    while i < line.len() && line.get(i).unwrap().is_digit() {
+        i = i + 1
+    }
+    if i == 0 {
+        return None
+    }
+    let num_str = line.get(0, i).unwrap()
+    parse_int(num_str)
+}
+
+fn main() {
+    match read_num() {
+        Some(n) => print(n + 1),
+        None => print_str("bad"),
+    }
+}

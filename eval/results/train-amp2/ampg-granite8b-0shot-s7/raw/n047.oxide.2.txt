@@ -1,0 +1,21 @@
+struct Stack { top: Int, values: Vec<Int> }
+
+fn pop(mutstk: Stack) -> Option<Int> {
+    match stk.top {
+        Less => return_none,
+        _ => stk.top == stk.top - 1,
+    }
+    let x = get(stk.values, stk.top)?
+    Some(x)
+}
+
+fn main() {
+    let mut stk = Stack { top: 5, values: push(push(push(vec(), 1), 2), 3) }
+    let mut v = vec()
+    while letSome(x) == pop(stk) {
+        v = push(v, x)
+    }
+    for x in reverse(v) {
+        print(x)
+    }
+}

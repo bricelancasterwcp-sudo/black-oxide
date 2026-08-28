@@ -1,0 +1,289 @@
+struct Word { chars: Vec<Char> }
+
+fn main() {
+    let drum = Word { chars: vec("drum".chars()) }
+    print_str(runes(drum.chars))
+    print_str(runes(drum.chars))
+}
+
+fn runes(cs: Vec<Char>) -> Str {
+    let mut out = vec()
+    for c in cs {
+        push(out, c)
+    }
+    concat(out, "")
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    let mut v = v
+    v.push(x)
+    v
+}
+
+fn concat(a: Vec<Char>, b: Str) -> Str {
+    a.chars.iter().collect() + b
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+struct Char { code: Int }
+
+enum Wrapper {
+    Some(Int),
+    None,
+}
+
+fn main() {
+    match Some(10) {
+        Some(n) => print(n),
+        None => print_str("nope"),
+    }
+}
+
+fn print(n: Int) {
+    print_str(n.to_string())
+}
+
+fn print_str(s: Str) {
+    print(s.len())
+}
+
+fn to_string(n: Int) -> Str {
+    match n {
+        PROMPT => "PROMPT",
+        QUIT => "QUIT",
+        SEARCH => "SEARCH",
+        OTHER => n.to_string(),
+    }
+}
+
+struct Prompt { text: Str }
+
+enum Command {
+    Search(Str),
+    Quit,
+}
+
+enum Line {
+    Prompt(Prompt),
+    Command(Command),
+}
+
+struct Prompt { text: Str }
+
+struct Command { name: Str, args: Vec<Str> }
+
+enum Line {
+    Prompt(Prompt),
+    Command(Command),
+}
+
+fn parse(s: Str) -> Line {
+    match s {
+        PROMPT => Prompt(Prompt { text: PROMPT }),
+        _ => Command(Command { name: "foo", args: vec() }),
+    }
+}
+
+struct Prompt { text: Str }
+
+struct Command { name: Str, args: Vec<Str> }
+
+enum Line {
+    Prompt(Prompt),
+    Command(Command),
+}
+
+fn parse(s: Str) -> Line {
+    let mut words = s.split_whitespace()
+    if words.next() == PROMPT {
+        Prompt(Prompt { text: PROMPT })
+    } else {
+        Command(Command { name: "foo", args: vec() })
+    }
+}
+
+struct Prompt { text: Str }
+
+struct Command { name: Str, args: Vec<Str> }
+
+enum Line {
+    Prompt(Prompt),
+    Command(Command),
+}
+
+fn parse(s: Str) -> Line {
+    let mut words = s.split_whitespace()
+    match words.next() {
+        Some(w) => if w == PROMPT { Prompt(Prompt { text: PROMPT }) } else { Command(Command { name: "foo", args: vec() }) },
+        None => Command(Command { name: "foo", args: vec() }),
+    }
+}
+
+struct Prompt { text: Str }
+
+struct Command { name: Str, args: Vec<Str> }
+
+enum Line {
+    Prompt(Prompt),
+    Command(Command),
+}
+
+fn parse(s: Str) -> Line {
+    let mut words = s.split_whitespace()
+    let w = words.next()
+    match w {
+        Some(w) => if w == PROMPT { Prompt(Prompt { text: PROMPT }) } else { Command(Command { name: "foo", args: vec() }) },
+        None => Command(Command { name: "foo", args: vec() }),
+    }
+}
+
+struct Prompt { text: Str }
+
+struct Command { name: Str, args: Vec<Str> }
+
+enum Line {
+    Prompt(Prompt),
+    Command(Command),
+}
+
+fn parse(s: Str) -> Line {
+    let words: Vec<Str> = s.split_whitespace().collect()
+    match words.get(0) {
+        Some(w) => if w == PROMPT { Prompt(Prompt { text: PROMPT }) } else { Command(Command { name: "foo", args: vec() }) },
+        None => Command(Command { name: "foo", args: vec() }),
+    }
+}
+
+struct Prompt { text: Str }
+
+struct Command { name: Str, args: Vec<Str> }
+
+enum Line {
+    Prompt(Prompt),
+    Command(Command),
+}
+
+fn parse(s: Str) -> Line {
+    let words: Vec<Str> = s.split_whitespace().collect()
+    match words.get(0) {
+        Some(w) => if w == PROMPT { Prompt(Prompt { text: PROMPT }) } else { Command(Command { name: "foo", args: vec() }) },
+        None => Command(Command { name: "foo", args: vec() }),
+    }
+}
+
+struct Prompt { text: Str }
+
+struct Command { name: Str, args: Vec<Str> }
+
+enum Line {
+    Prompt(Prompt),
+    Command(Command),
+}
+
+fn parse(s: Str) -> Line {
+    let words: Vec<Str> = s.split_whitespace().collect()
+    match words.get(0) {
+        Some(w) => if w == PROMPT { Prompt(Prompt { text: PROMPT }) } else { Command(Command { name: "foo", args: vec() }) },
+        None => Command(Command { name: "foo", args: vec() }),
+    }
+}
+
+struct Prompt { text: Str }
+
+struct Command { name: Str, args: Vec<Str> }
+
+enum Line {
+    Prompt(Prompt),
+    Command(Command),
+}
+
+fn parse(s: Str) -> Line {
+    let words: Vec<Str> = s.split_whitespace().collect()
+    match words.get(0) {
+        Some(w) => if w == PROMPT { Prompt(Prompt { text: PROMPT }) } else { Command(Command { name: "foo", args: vec() }) },
+        None => Command(Command { name: "foo", args: vec() }),
+    }
+}
+
+struct Prompt { text: Str }
+
+struct Command { name: Str, args: Vec<Str> }
+
+enum Line {
+    Prompt(Prompt),
+    Command(Command),
+}
+
+fn parse(s: Str) -> Line {
+    let words: Vec<Str> = s.split_whitespace().collect()
+    match words.get(0) {
+        Some(w) => if w == PROMPT { Prompt(Prompt { text: PROMPT }) } else { Command(Command { name: "foo", args: vec() }) },
+        None => Command(Command { name: "foo", args: vec() }),
+    }
+}
+
+struct Prompt { text: Str }
+
+struct Command { name: Str, args: Vec<Str> }
+
+enum Line {
+    Prompt(Prompt),
+    Command(Command),
+}
+
+fn parse(s: Str) -> Line {
+    let words: Vec<Str> = s.split_whitespace().collect()
+    match words.get(0) {
+        Some(w) => if w == PROMPT { Prompt(Prompt { text: PROMPT }) } else { Command(Command { name: "foo", args: vec() }) },
+        None => Command(Command { name: "foo", args: vec() }),
+    }
+}
+
+struct Prompt { text: Str }
+
+struct Command { name: Str, args: Vec<Str> }
+
+enum Line {
+    Prompt(Prompt),
+    Command(Command),
+}
+
+fn parse(s: Str) -> Line {
+    let words: Vec<Str> = s.split_whitespace().collect()
+    match words.get(0) {
+        Some(w) => if w == PROMPT { Prompt(Prompt { text: PROMPT }) } else { Command(Command { name: "foo", args: vec() }) },
+        None => Command(Command { name: "foo", args: vec() }),
+    }
+}
+
+struct Prompt { text: Str }
+
+struct Command { name: Str, args: Vec<Str> }
+
+enum Line {
+    Prompt(Prompt),
+    Command(Command),
+}
+
+fn parse(s: Str) -> Line {
+    let words: Vec<Str> = s.split_whitespace().collect()
+    match words.get(0) {
+        Some(w) => if w == PROMPT { Prompt(Prompt { text: PROMPT }) } else { Command(Command { name: "foo", args: vec() }) },
+        None => Command(Command { name: "foo", args: vec() }),
+    }
+}
+
+struct Prompt { text: Str }
+
+struct Command { name: Str, args: Vec<Str> }
+
+enum Line {
+    Prompt(Prompt),
+    Command(Command),
+}
+
+fn parse(s: Str) -> Line {
+    let words: Vec<Str> = s.split

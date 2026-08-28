@@ -1,0 +1,9 @@
+fn main() {
+    let word = "drum"
+    let mut backward = ""
+    for letter in word {
+        backward = letter + &backward
+    }
+    print(backward)
+    print(word)
+}

@@ -1,0 +1,5 @@
+fn main() {
+    let readings: [i32; 5] = [5, 3, 9, 1, 7];
+    let smallest: i32 = *readings.iter().min().unwrap();
+    println!("{}", smallest);
+}

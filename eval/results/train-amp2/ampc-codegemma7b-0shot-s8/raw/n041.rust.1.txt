@@ -1,0 +1,7 @@
+fn main() {
+    let mut v = vec![9, 2, 7, 4];
+    v.sort_unstable();
+    for i in v {
+        println!("{}", i);
+    }
+}

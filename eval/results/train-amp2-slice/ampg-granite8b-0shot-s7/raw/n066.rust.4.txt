@@ -1,0 +1,8 @@
+fn main(){
+    let batch = vec![9,2,12,5,16];
+    let keep: Vec<i32> = batch.into_iter().filter(|&n| n < 10).collect();
+    println!("{}",keep.len());
+    for n in keep{
+        println!("{}",n);
+    }
+}

@@ -1,0 +1,297 @@
+fn main() {
+    let n = parse_int(read_line()).unwrap_or(0)
+    if n <= 0 {
+        print("bad")
+        return
+    }
+    print(n)
+}
+
+fn read_line() -> Str {
+    let mut input = ""
+    while input.len() == 0 {
+        input = read_line()
+    }
+    input
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    if s.len() == 0 {
+        return None
+    }
+    let mut i = 0
+    let mut is_neg = false
+    if s.get(0) == "-" {
+        is_neg = true
+        i = 1
+    }
+    let mut acc = 0
+    while i < s.len() {
+        let digit = s.get(i) - 48
+        if digit < 0 || digit > 9 {
+            return None
+        }
+        acc = 10 * acc + digit
+        i = i + 1
+    }
+    if is_neg {
+        Some(-acc)
+    } else {
+        Some(acc)
+    }
+}
+
+fn print(s: Str) {
+    print_str(s)
+    print_str("\n")
+}
+
+fn print_str(s: Str) {
+    unsafe_print_str(s)
+}
+
+fn unsafe_print_str(s: Str) {
+    let s_ptr = s.as_ptr()
+    let s_len = s.len()
+    for i in 0 <= i && i < s_len {
+        let c = s_ptr.offset(i)
+        if c == 10 {
+            unsafe_print_str("\n")
+        } else {
+            unsafe_print_char(c)
+        }
+    }
+}
+
+fn unsafe_print_char(c: Char) {
+    let c = c - 32
+    let c = if c < 32 || c > 126 { 35 } else { c }
+    asm(r12 == 1, r11 == 1, r10 == c, r9 == 4, "int", 0, 0, 0, 0)
+}
+
+fn vec() -> Vec<T> {
+    vec_impl()
+}
+
+fn vec_impl() -> Vec<T> {
+    Vec(0, 0)
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    let v = clone(&v)
+    let v = grow(v, 1)
+    v.set(v.len() - 1, x)
+}
+
+fn len(v: Vec<T>) -> Int {
+    v.len()
+}
+
+fn get(v: Vec<T>, i: Int) -> Option<T> {
+    if i < 0 || i >= v.len() {
+        return None
+    }
+    Some(v.get(i))
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let v = vec()
+    let mut i = a
+    while i < b {
+        v = push(v, i)
+        i = i + 1
+    }
+    v
+}
+
+fn clone(x: T) -> T {
+    if is_linear(x) {
+        &x
+    } else {
+        x
+    }
+}
+
+fn is_linear(x: T) -> Bool {
+    x.is_linear()
+}
+
+fn str_len(s: Str) -> Int {
+    s.len()
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    unsafe_concat(a, b)
+}
+
+fn unsafe_concat(a: Str, b: Str) -> Str {
+    let a_ptr = a.as_ptr()
+    let a_len = a.len()
+    let b_ptr = b.as_ptr()
+    let b_len = b.len()
+    let c = unsafe_malloc(a_len + b_len)
+    for i in 0 <= i && i < a_len {
+        c.set(i, a_ptr.offset(i))
+    }
+    for i in 0 <= i && i < b_len {
+        c.set(a_len + i, b_ptr.offset(i))
+    }
+    c
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let v = vec()
+    let mut i = 0
+    while i < s.len() {
+        v = push(v, unsafe_substr(s, i, 1))
+        i = i + 1
+    }
+    v
+}
+
+fn int_to_str(n: Int) -> Str {
+    unsafe_int_to_str(n)
+}
+
+fn unsafe_int_to_str(n: Int) -> Str {
+    let s = unsafe_malloc(10)
+    let mut i = 9
+    while n > 0 {
+        let d = n % 10
+        s.set(i, d + 48)
+        n = n / 10
+        i = i - 1
+    }
+    s
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    if s.len() == 0 {
+        return None
+    }
+    let mut i = 0
+    let mut is_neg = false
+    if s.get(0) == "-" {
+        is_neg = true
+        i = 1
+    }
+    let mut acc = 0
+    while i < s.len() {
+        let digit = s.get(i) - 48
+        if digit < 0 || digit > 9 {
+            return None
+        }
+        acc = 10 * acc + digit
+        i = i + 1
+    }
+    if is_neg {
+        Some(-acc)
+    } else {
+        Some(acc)
+    }
+}
+
+fn to_float(n: Int) -> Float {
+    n.to_float()
+}
+
+fn trunc(x: Float) -> Int {
+    x.trunc()
+}
+
+fn print(x: T) {
+    print_str(str(x))
+}
+
+fn print_str(s: Str) {
+    unsafe_print_str(s)
+}
+
+fn print_char(c: Char) {
+    unsafe_print_char(c)
+}
+
+fn str(x: T) -> Str {
+    x.str()
+}
+
+fn unsafe_print_str(s: Str) {
+    let s_ptr = s.as_ptr()
+    let s_len = s.len()
+    for i in 0 <= i && i < s_len {
+        let c = s_ptr.offset(i)
+        if c == 10 {
+            unsafe_print_str("\n")
+        } else {
+            unsafe_print_char(c)
+        }
+    }
+}
+
+fn unsafe_print_char(c: Char) {
+    let c = c - 32
+    let c = if c < 32 || c > 126 { 35 } else { c }
+    asm(r12 == 1, r11 == 1, r10 == c, r9 == 4, "int", 0, 0, 0, 0)
+}
+
+fn vec() -> Vec<T> {
+    vec_impl()
+}
+
+fn vec_impl() -> Vec<T> {
+    Vec(0, 0)
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    let v = clone(&v)
+    let v = grow(v, 1)
+    v.set(v.len() - 1, x)
+}
+
+fn len(v: Vec<T>) -> Int {
+    v.len()
+}
+
+fn get(v: Vec<T>, i: Int) -> Option<T> {
+    if i < 0 || i >= v.len() {
+        return None
+    }
+    Some(v.get(i))
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let v = vec()
+    let mut i = a
+    while i < b {
+        v = push(v, i)
+        i = i + 1
+    }
+    v
+}
+
+fn clone(x: T) -> T {
+    if is_linear(x) {
+        &x
+    } else {
+        x
+    }
+}
+
+fn is_linear(x: T) -> Bool {
+    x.is_linear()
+}
+
+fn str_len(s: Str) -> Int {
+    s.len()
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    unsafe_concat(a, b)
+}
+
+fn unsafe_concat(a: Str, b: Str) -> Str {
+    let a_ptr = a.as_ptr()
+    let a_len = a.len()
+    let b_ptr = b.as_ptr()
+    let b_len = b.len()
+    let c = unsafe_

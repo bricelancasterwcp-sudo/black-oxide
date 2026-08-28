@@ -1,0 +1,12 @@
+fn print_log(log: &Vec<Int>) {
+    let first = log.first().unwrap()
+    let last = log.last().unwrap()
+    print("{}", first)
+    print("{}", last)
+}
+
+fn main() {
+    let log = vec(6, 7, 8, 9)
+    print_log(&log)
+    drop log
+}

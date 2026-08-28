@@ -1,0 +1,289 @@
+fn len(s: &Str) -> Int {
+    let mut total = 0
+    for c in chars(s) {
+        total = total + 1
+    }
+    total
+}
+
+fn main() {
+    print(len(&str_lit))
+}
+
+struct Str {
+    ptr: RawPtr,
+    len: Int,
+}
+
+fn str_lit(s: &Str) -> Str {
+    let s = str_len(s)
+    let mut chars = vec()
+    for i in 0 < s {
+        chars.push(get(s, i))
+    }
+    Str(chars.ptr, s)
+}
+
+fn chars(s: &Str) -> Vec<Char> {
+    let mut chars = vec()
+    for i in 0 < s.len {
+        chars.push(get(s.ptr, i))
+    }
+    chars
+}
+
+fn get(ptr: RawPtr, i: Int) -> Char {
+    let raw = get_raw(ptr, i)
+    Char(raw)
+}
+
+fn get_raw(ptr: RawPtr, i: Int) -> Raw {
+    let raw = ptr + (i * SIZE_RAW)
+    read(raw)
+}
+
+fn read(raw: Raw) -> Raw {
+    unsafe
+    raw
+}
+
+fn push(vec: Vec<T>, x: T) -> Vec<T> {
+    let mut vec = vec
+    vec.ptr = realloc(vec.ptr, vec.len + 1)
+    vec.len = vec.len + 1
+    write(vec.ptr + ((vec.len - 1) * SIZE_T), x)
+    vec
+}
+
+fn realloc(ptr: RawPtr, n: Int) -> RawPtr {
+    let new_ptr = malloc(n)
+    copy(ptr, new_ptr, n)
+    free(ptr)
+    new_ptr
+}
+
+fn copy(from: RawPtr, to: RawPtr, n: Int) {
+    for i in 0 < n {
+        write(to + (i * SIZE_T), read(from + (i * SIZE_T)))
+    }
+}
+
+fn write(ptr: RawPtr, x: T) {
+    unsafe
+    ptr.write(x)
+}
+
+fn malloc(n: Int) -> RawPtr {
+    unsafe
+    RawPtr(alloc(n * SIZE_T))
+}
+
+fn alloc(n: Int) -> Raw {
+    let raw = malloc(n)
+    raw.set_zero()
+    raw
+}
+
+fn free(ptr: RawPtr) {
+    unsafe
+    dealloc(ptr)
+}
+
+enum Raw {
+    Ptr(RawPtr),
+    Val(T),
+}
+
+fn size(raw: &Raw) -> Int {
+    match raw {
+        RawPtr(ptr) => SIZE_PTR,
+        RawVal(x) => SIZE_T,
+    }
+}
+
+fn free(raw: &Raw) {
+    match raw {
+        RawPtr(ptr) => drop_ptr(ptr),
+        RawVal(x) => drop_t(x),
+    }
+}
+
+fn copy(src: &Raw, dst: &Raw) {
+    for i in 0 < size(src) {
+        write(dst + i, read(src + i))
+    }
+}
+
+fn drop_t(t: &T) {
+    unsafe
+    drop_raw(t)
+}
+
+fn drop_raw(raw: &Raw) {
+    match raw {
+        RawPtr(ptr) => drop_ptr(ptr),
+        RawVal(x) => drop_ref(x),
+    }
+}
+
+fn drop_ptr(ptr: &RawPtr) {
+    unsafe
+    drop_raw(ptr)
+}
+
+fn drop_ref(ref: &T) {
+    unsafe
+    drop_raw(ref)
+}
+
+fn raw(x: T) -> Raw {
+    unsafe
+    RawVal(x)
+}
+
+fn ref(x: T) -> Raw {
+    unsafe
+    RawPtr(x)
+}
+
+fn raw_ptr(x: RawPtr) -> Raw {
+    unsafe
+    RawPtr(x)
+}
+
+fn as_raw(x: &T) -> Raw {
+    unsafe
+    RawPtr(x)
+}
+
+fn as_ref(x: &Raw) -> T {
+    unsafe
+    x.as_ref()
+}
+
+fn as_ptr(x: &Raw) -> RawPtr {
+    unsafe
+    x.as_ptr()
+}
+
+fn read(raw: Raw) -> T {
+    unsafe
+    raw.read()
+}
+
+fn write(raw: RawPtr, x: T) {
+    unsafe
+    raw.write(x)
+}
+
+fn clone(raw: &Raw) -> Raw {
+    let mut dst = malloc(size(raw))
+    copy(raw, &mut_raw)
+    dst
+}
+
+fn copy_raw(src: &Raw, dst: &Raw) {
+    for i in 0 < size(src) {
+        write(dst + i, read(src + i))
+    }
+}
+
+fn copy_ref(src: &T, dst: &T) {
+    unsafe
+    copy_raw(as_raw(src), as_raw(dst))
+}
+
+fn copy_ptr(src: &RawPtr, dst: &RawPtr) {
+    unsafe
+    copy_raw(as_raw(src), as_raw(dst))
+}
+
+fn copy_ref_ptr(src: &T, dst: &RawPtr) {
+    unsafe
+    copy_raw(as_raw(src), as_ptr(dst))
+}
+
+fn copy_ptr_ref(src: &RawPtr, dst: &T) {
+    unsafe
+    copy_raw(as_ptr(src), as_raw(dst))
+}
+
+fn copy_ref_ref(src: &T, dst: &T) {
+    unsafe
+    copy_raw(as_raw(src), as_raw(dst))
+}
+
+fn copy_ptr_ptr(src: &RawPtr, dst: &RawPtr) {
+    unsafe
+    copy_raw(as_ptr(src), as_ptr(dst))
+}
+
+fn copy_ptr_ref_ptr(src: &RawPtr, dst: &T) {
+    unsafe
+    copy_raw(as_ptr(src), as_ptr(dst))
+}
+
+fn copy_ref_ptr_ref(src: &T, dst: &T) {
+    unsafe
+    copy_raw(as_raw(src), as_raw(dst))
+}
+
+fn copy_ref_ref_ref(src: &T, dst: &T) {
+    unsafe
+    copy_raw(as_raw(src), as_raw(dst))
+}
+
+fn copy_ptr_ptr_ptr(src: &RawPtr, dst: &RawPtr) {
+    unsafe
+    copy_raw(as_ptr(src), as_ptr(dst))
+}
+
+fn copy_ptr_ref_ref_ptr(src: &RawPtr, dst: &T) {
+    unsafe
+    copy_raw(as_ptr(src), as_ptr(dst))
+}
+
+fn copy_ref_ptr_ref_ref(src: &T, dst: &T) {
+    unsafe
+    copy_raw(as_raw(src), as_raw(dst))
+}
+
+fn copy_ref_ref_ref_ref(src: &T, dst: &T) {
+    unsafe
+    copy_raw(as_raw(src), as_raw(dst))
+}
+
+fn copy_ptr_ptr_ptr_ref(src: &RawPtr, dst: &T) {
+    unsafe
+    copy_raw(as_ptr(src), as_ptr(dst))
+}
+
+fn copy_ptr_ref_ref_ref_ptr(src: &RawPtr, dst: &T) {
+    unsafe
+    copy_raw(as_ptr(src), as_ptr(dst))
+}
+
+fn copy_ref_ptr_ref_ref_ref(src: &T, dst: &T) {
+    unsafe
+    copy_raw(as_raw(src), as_raw(dst))
+}
+
+fn copy_ref_ref_ref_ref_ref(src: &T, dst: &T) {
+    unsafe
+    copy_raw(as_raw(src), as_raw(dst))
+}
+
+fn str_len(s: &Str) -> Int {
+    let mut total = 0
+    for c in chars(s) {
+        total = total + 1
+    }
+    total
+}
+
+fn len(s: &Str) -> Int {
+    let mut total = 0
+    for c in chars(s) {
+        total = total + 1
+    }
+    total

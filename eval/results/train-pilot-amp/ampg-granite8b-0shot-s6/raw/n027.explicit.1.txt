@@ -1,0 +1,9 @@
+fn main() {
+    let word = "cat"
+    print(word.get(0))
+    print("\n")
+    print(word.get(1))
+    print("\n")
+    print(word.get(2))
+    print("\n")
+}

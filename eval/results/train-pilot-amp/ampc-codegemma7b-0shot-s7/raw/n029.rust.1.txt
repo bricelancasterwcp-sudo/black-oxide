@@ -1,0 +1,4 @@
+fn main() {
+    let text = "one two three".to_string();
+    println!("{}", text);
+}

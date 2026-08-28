@@ -1,0 +1,393 @@
+fn read_text() -> Option<Int> {
+    let s = Str(417) // Replace with actual input reading
+    parse_int(s)
+}
+
+fn main() {
+    match read_text() {
+        Some(n) => print(n + 1),
+        None => print("bad") - -bad_print,
+    }
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    let mut digits: Vec<Int> = vec()
+    for c in chars(s) {
+        match c {
+            Str(n) => digits.push(n - 48),
+            _ => returnNone(),
+        }
+    }
+    let mut result = 0
+    for n in digits {
+        result = result * 10 + n
+    }
+    Some(result)
+}
+
+fn returnNone() -> Option<Int> {
+    None
+}
+
+fn print(x: Int) {
+    println(x)
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result: Vec<Str> = vec()
+    for i in 0.range(str_len(s)) {
+        result.push(Str(get(s, i).unwrap()))
+    }
+    result
+}
+
+fn str_len(s: Str) -> Int {
+    let mut result = 0
+    for _ in chars(s) {
+        result = result + 1
+    }
+    result
+}
+
+struct Str {
+    number: Int,
+}
+
+struct Int {
+    number: Int,
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut result = v
+    result.push(x)
+    result
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    if i < str_len(v) {
+        Some(v.number)
+    } else {
+        None
+    }
+}
+
+fn clone(x: Int) -> Int {
+    Int(x.number)
+}
+
+fn drop_Int(x: Int) {
+    x.number = 0
+}
+
+fn drop_Str(x: Str) {
+    x.number = 0
+}
+
+fn drop_Vec(v: Vec<Int>) {
+    for x in v {
+        drop_Int(x)
+    }
+}
+
+fn drop_Option(o: Option<Int>) {
+    if letSome(x) == o {
+        drop_Int(x)
+    }
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_chars(s: Vec<Str>) {
+    for x in s {
+        drop_Str(x)
+    }
+}
+
+fn drop_vec_chars(s: Vec<Vec<Str>>) {
+    for v in s {
+        drop_chars(v)
+    }
+}
+
+fn drop_parse_int(s: Str) {
+    drop_Str(s)
+}
+
+fn drop_read_text() {
+    drop_Option(read_text())
+}
+
+fn drop_print(x: Int) {
+    println(x)
+}
+
+fn drop_print_str(s: Str) {
+    println(s)
+}
+
+fn drop_returnNone() {
+    drop_Option(returnNone())
+}
+
+fn drop_if(c: Int, a: Int, b: Int) {
+    if c == a {
+        drop_Int(a)
+    } else {
+        drop_Int(b)
+    }
+}
+
+fn drop_for(x: Int, v: Vec<Int>) {
+    drop_Int(x)
+    drop_Vec(v)
+}
+
+fn drop_while(x: Int, v: Vec<Int>) {
+    drop_Int(x)
+    drop_Vec(v)
+}
+
+fn drop_match(e: Int, a: Int, b: Int) {
+    match e {
+        Int(a) => drop_Int(a),
+        Int(b) => drop_Int(b),
+        _ => drop_Int(0),
+    }
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_Option(main())
+}
+
+fn drop_main() {
+    drop_

@@ -1,0 +1,23 @@
+```rust
+fn main(){
+    let mut smallest = 11;
+    let mut largest = 8;
+
+    println!("{}", smallest);
+
+    smallest = 8;
+    largest = 3;
+
+    println!("{}", smallest);
+
+    smallest = 3;
+    largest = 11;
+
+    println!("{}", smallest);
+
+    smallest = 6;
+    largest = 6;
+
+    println!("{}", smallest);
+}
+```

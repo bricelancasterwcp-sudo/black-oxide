@@ -1,0 +1,540 @@
+fn main() {
+    if is_green() {
+        print("go for green")
+        if is_yellow() {
+            print("wait for yellow")
+            if is_red() {
+                print("stop for red")
+                drop_red()
+            }
+            drop_yellow()
+        }
+        drop_green()
+    }
+}
+
+fn is_green() -> Bool {
+    false
+}
+
+fn is_yellow() -> Bool {
+    false
+}
+
+fn is_red() -> Bool {
+    false
+}
+
+fn print(s: &Str) {
+    println(s)
+}
+
+fn drop_green() {
+    drop_green()
+}
+
+fn drop_yellow() {
+    drop_yellow()
+}
+
+fn drop_red() {
+    drop_red()
+}
+
+fn is_green() -> Bool {
+    true
+}
+
+fn is_yellow() -> Bool {
+    true
+}
+
+fn is_red() -> Bool {
+    true
+}
+
+fn print(s: &Str) {
+    println(s)
+}
+
+fn drop_green() {
+    drop_green()
+}
+
+fn drop_yellow() {
+    drop_yellow()
+}
+
+fn drop_red() {
+    drop_red()
+}
+
+fn is_green() -> Bool {
+    false
+}
+
+fn is_yellow() -> Bool {
+    false
+}
+
+fn is_red() -> Bool {
+    false
+}
+
+fn print(s: &Str) {
+    println(s)
+}
+
+fn drop_green() {
+    drop_green()
+}
+
+fn drop_yellow() {
+    drop_yellow()
+}
+
+fn drop_red() {
+    drop_red()
+}
+
+fn is_green() -> Bool {
+    false
+}
+
+fn is_yellow() -> Bool {
+    false
+}
+
+fn is_red() -> Bool {
+    false
+}
+
+fn print(s: &Str) {
+    println(s)
+}
+
+fn drop_green() {
+    drop_green()
+}
+
+fn drop_yellow() {
+    drop_yellow()
+}
+
+fn drop_red() {
+    drop_red()
+}
+
+fn is_green() -> Bool {
+    false
+}
+
+fn is_yellow() -> Bool {
+    false
+}
+
+fn is_red() -> Bool {
+    false
+}
+
+fn print(s: &Str) {
+    println(s)
+}
+
+fn drop_green() {
+    drop_green()
+}
+
+fn drop_yellow() {
+    drop_yellow()
+}
+
+fn drop_red() {
+    drop_red()
+}
+
+fn is_green() -> Bool {
+    false
+}
+
+fn is_yellow() -> Bool {
+    false
+}
+
+fn is_red() -> Bool {
+    false
+}
+
+fn print(s: &Str) {
+    println(s)
+}
+
+fn drop_green() {
+    drop_green()
+}
+
+fn drop_yellow() {
+    drop_yellow()
+}
+
+fn drop_red() {
+    drop_red()
+}
+
+fn is_green() -> Bool {
+    false
+}
+
+fn is_yellow() -> Bool {
+    false
+}
+
+fn is_red() -> Bool {
+    false
+}
+
+fn print(s: &Str) {
+    println(s)
+}
+
+fn drop_green() {
+    drop_green()
+}
+
+fn drop_yellow() {
+    drop_yellow()
+}
+
+fn drop_red() {
+    drop_red()
+}
+
+fn is_green() -> Bool {
+    false
+}
+
+fn is_yellow() -> Bool {
+    false
+}
+
+fn is_red() -> Bool {
+    false
+}
+
+fn print(s: &Str) {
+    println(s)
+}
+
+fn drop_green() {
+    drop_green()
+}
+
+fn drop_yellow() {
+    drop_yellow()
+}
+
+fn drop_red() {
+    drop_red()
+}
+
+fn is_green() -> Bool {
+    false
+}
+
+fn is_yellow() -> Bool {
+    false
+}
+
+fn is_red() -> Bool {
+    false
+}
+
+fn print(s: &Str) {
+    println(s)
+}
+
+fn drop_green() {
+    drop_green()
+}
+
+fn drop_yellow() {
+    drop_yellow()
+}
+
+fn drop_red() {
+    drop_red()
+}
+
+fn is_green() -> Bool {
+    false
+}
+
+fn is_yellow() -> Bool {
+    false
+}
+
+fn is_red() -> Bool {
+    false
+}
+
+fn print(s: &Str) {
+    println(s)
+}
+
+fn drop_green() {
+    drop_green()
+}
+
+fn drop_yellow() {
+    drop_yellow()
+}
+
+fn drop_red() {
+    drop_red()
+}
+
+fn is_green() -> Bool {
+    false
+}
+
+fn is_yellow() -> Bool {
+    false
+}
+
+fn is_red() -> Bool {
+    false
+}
+
+fn print(s: &Str) {
+    println(s)
+}
+
+fn drop_green() {
+    drop_green()
+}
+
+fn drop_yellow() {
+    drop_yellow()
+}
+
+fn drop_red() {
+    drop_red()
+}
+
+fn is_green() -> Bool {
+    false
+}
+
+fn is_yellow() -> Bool {
+    false
+}
+
+fn is_red() -> Bool {
+    false
+}
+
+fn print(s: &Str) {
+    println(s)
+}
+
+fn drop_green() {
+    drop_green()
+}
+
+fn drop_yellow() {
+    drop_yellow()
+}
+
+fn drop_red() {
+    drop_red()
+}
+
+fn is_green() -> Bool {
+    false
+}
+
+fn is_yellow() -> Bool {
+    false
+}
+
+fn is_red() -> Bool {
+    false
+}
+
+fn print(s: &Str) {
+    println(s)
+}
+
+fn drop_green() {
+    drop_green()
+}
+
+fn drop_yellow() {
+    drop_yellow()
+}
+
+fn drop_red() {
+    drop_red()
+}
+
+fn is_green() -> Bool {
+    false
+}
+
+fn is_yellow() -> Bool {
+    false
+}
+
+fn is_red() -> Bool {
+    false
+}
+
+fn print(s: &Str) {
+    println(s)
+}
+
+fn drop_green() {
+    drop_green()
+}
+
+fn drop_yellow() {
+    drop_yellow()
+}
+
+fn drop_red() {
+    drop_red()
+}
+
+fn is_green() -> Bool {
+    false
+}
+
+fn is_yellow() -> Bool {
+    false
+}
+
+fn is_red() -> Bool {
+    false
+}
+
+fn print(s: &Str) {
+    println(s)
+}
+
+fn drop_green() {
+    drop_green()
+}
+
+fn drop_yellow() {
+    drop_yellow()
+}
+
+fn drop_red() {
+    drop_red()
+}
+
+fn is_green() -> Bool {
+    false
+}
+
+fn is_yellow() -> Bool {
+    false
+}
+
+fn is_red() -> Bool {
+    false
+}
+
+fn print(s: &Str) {
+    println(s)
+}
+
+fn drop_green() {
+    drop_green()
+}
+
+fn drop_yellow() {
+    drop_yellow()
+}
+
+fn drop_red() {
+    drop_red()
+}
+
+fn is_green() -> Bool {
+    false
+}
+
+fn is_yellow() -> Bool {
+    false
+}
+
+fn is_red() -> Bool {
+    false
+}
+
+fn print(s: &Str) {
+    println(s)
+}
+
+fn drop_green() {
+    drop_green()
+}
+
+fn drop_yellow() {
+    drop_yellow()
+}
+
+fn drop_red() {
+    drop_red()
+}
+
+fn is_green() -> Bool {
+    false
+}
+
+fn is_yellow() -> Bool {
+    false
+}
+
+fn is_red() -> Bool {
+    false
+}
+
+fn print(s: &Str) {
+    println(s)
+}
+
+fn drop_green() {
+    drop_green()
+}
+
+fn drop_yellow() {
+    drop_yellow()
+}
+
+fn drop_red() {
+    drop_red()
+}
+
+fn is_green() -> Bool {
+    false
+}
+
+fn is_yellow() -> Bool {
+    false
+}
+
+fn is_red() -> Bool {
+    false
+}
+
+fn print(s: &Str) {
+    println(s)
+}
+
+fn drop_green() {
+    drop_green()
+}
+
+fn

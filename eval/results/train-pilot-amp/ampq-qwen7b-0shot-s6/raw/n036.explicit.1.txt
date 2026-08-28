@@ -1,0 +1,9 @@
+fn total_value() -> Int {
+    let total = (4 * 3) + (5 * 2)
+    print(total)
+    total
+}
+
+fn main() {
+    drop total_value
+}

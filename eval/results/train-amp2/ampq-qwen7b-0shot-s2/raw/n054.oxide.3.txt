@@ -1,0 +1,423 @@
+fn main() {
+    let word = "keyboard"
+    let vowel_count = count_vowels(word)
+    let non_vowel_count = count_non_vowels(word)
+    print(vowel_count)
+    print(non_vowel_count)
+}
+
+fn count_vowels(s: Str) -> Int {
+    let vowels = "aeiouAEIOU"
+    let mut count = 0
+    for c in chars(s) {
+        if vowels.contains(c) {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn count_non_vowels(s: Str) -> Int {
+    let vowels = "aeiouAEIOU"
+    let mut count = 0
+    for c in chars(s) {
+        if !vowels.contains(c) {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = vec()
+    for c in s {
+        result = push(result, int_to_str(c))
+    }
+    result
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut result = ""
+    if n < 0 {
+        result = result + "-"
+        n = -n
+    }
+    while n > 0 {
+        let digit = n % 10
+        n = n / 10
+        result = int_to_char(digit) + result
+    }
+    result
+}
+
+fn int_to_char(n: Int) -> Str {
+    match n {
+        Digit(zer) => "0",
+        Digit(one) => "1",
+        Digit(two) => "2",
+        Digit(three) => "3",
+        Digit(four) => "4",
+        Digit(five) => "5",
+        Digit(six) => "6",
+        Digit(seven) => "7",
+        Digit(eight) => "8",
+        Digit(nine) => "9",
+        _ => "",
+    }
+}
+
+enum Digit {
+    Zero,
+    One,
+    Two,
+    Three,
+    Four,
+    Five,
+    Six,
+    Seven,
+    Eight,
+    Nine,
+}
+
+fn print(s: Str) {
+    let chars = chars(s)
+    for c in chars {
+        print_char(c)
+    }
+}
+
+fn print_char(c: Str) {
+    let int = parse_int(c)
+    if letSome(x) == int {
+        print_int(x)
+    }
+}
+
+fn print_int(x: Int) {
+    let chars = int_to_str(x)
+    let chars = chars.chars()
+    for c in chars {
+        print_char(c)
+    }
+}
+
+fn chars(s: Str) -> Vec<Char> {
+    s.chars().collect()
+}
+
+fn print_str(s: Str) {
+    for c in s {
+        print_char(c)
+    }
+}
+
+fn print_char(c: Char) {
+    let int = parse_int(int_to_str(c))
+    if letSome(x) == int {
+        print_int(x)
+    }
+}
+
+fn print_int(x: Int) {
+    let chars = int_to_str(x)
+    let chars = chars.chars()
+    for c in chars {
+        print_char(c)
+    }
+}
+
+fn chars(s: Str) -> Vec<Char> {
+    s.chars().collect()
+}
+
+fn print_str(s: Str) {
+    for c in s {
+        print_char(c)
+    }
+}
+
+fn print_char(c: Char) {
+    let int = parse_int(int_to_str(c))
+    if letSome(x) == int {
+        print_int(x)
+    }
+}
+
+fn print_int(x: Int) {
+    let chars = int_to_str(x)
+    let chars = chars.chars()
+    for c in chars {
+        print_char(c)
+    }
+}
+
+fn chars(s: Str) -> Vec<Char> {
+    s.chars().collect()
+}
+
+fn print_str(s: Str) {
+    for c in s {
+        print_char(c)
+    }
+}
+
+fn print_char(c: Char) {
+    let int = parse_int(int_to_str(c))
+    if letSome(x) == int {
+        print_int(x)
+    }
+}
+
+fn print_int(x: Int) {
+    let chars = int_to_str(x)
+    let chars = chars.chars()
+    for c in chars {
+        print_char(c)
+    }
+}
+
+fn chars(s: Str) -> Vec<Char> {
+    s.chars().collect()
+}
+
+fn print_str(s: Str) {
+    for c in s {
+        print_char(c)
+    }
+}
+
+fn print_char(c: Char) {
+    let int = parse_int(int_to_str(c))
+    if letSome(x) == int {
+        print_int(x)
+    }
+}
+
+fn print_int(x: Int) {
+    let chars = int_to_str(x)
+    let chars = chars.chars()
+    for c in chars {
+        print_char(c)
+    }
+}
+
+fn chars(s: Str) -> Vec<Char> {
+    s.chars().collect()
+}
+
+fn print_str(s: Str) {
+    for c in s {
+        print_char(c)
+    }
+}
+
+fn print_char(c: Char) {
+    let int = parse_int(int_to_str(c))
+    if letSome(x) == int {
+        print_int(x)
+    }
+}
+
+fn print_int(x: Int) {
+    let chars = int_to_str(x)
+    let chars = chars.chars()
+    for c in chars {
+        print_char(c)
+    }
+}
+
+fn chars(s: Str) -> Vec<Char> {
+    s.chars().collect()
+}
+
+fn print_str(s: Str) {
+    for c in s {
+        print_char(c)
+    }
+}
+
+fn print_char(c: Char) {
+    let int = parse_int(int_to_str(c))
+    if letSome(x) == int {
+        print_int(x)
+    }
+}
+
+fn print_int(x: Int) {
+    let chars = int_to_str(x)
+    let chars = chars.chars()
+    for c in chars {
+        print_char(c)
+    }
+}
+
+fn chars(s: Str) -> Vec<Char> {
+    s.chars().collect()
+}
+
+fn print_str(s: Str) {
+    for c in s {
+        print_char(c)
+    }
+}
+
+fn print_char(c: Char) {
+    let int = parse_int(int_to_str(c))
+    if letSome(x) == int {
+        print_int(x)
+    }
+}
+
+fn print_int(x: Int) {
+    let chars = int_to_str(x)
+    let chars = chars.chars()
+    for c in chars {
+        print_char(c)
+    }
+}
+
+fn chars(s: Str) -> Vec<Char> {
+    s.chars().collect()
+}
+
+fn print_str(s: Str) {
+    for c in s {
+        print_char(c)
+    }
+}
+
+fn print_char(c: Char) {
+    let int = parse_int(int_to_str(c))
+    if letSome(x) == int {
+        print_int(x)
+    }
+}
+
+fn print_int(x: Int) {
+    let chars = int_to_str(x)
+    let chars = chars.chars()
+    for c in chars {
+        print_char(c)
+    }
+}
+
+fn chars(s: Str) -> Vec<Char> {
+    s.chars().collect()
+}
+
+fn print_str(s: Str) {
+    for c in s {
+        print_char(c)
+    }
+}
+
+fn print_char(c: Char) {
+    let int = parse_int(int_to_str(c))
+    if letSome(x) == int {
+        print_int(x)
+    }
+}
+
+fn print_int(x: Int) {
+    let chars = int_to_str(x)
+    let chars = chars.chars()
+    for c in chars {
+        print_char(c)
+    }
+}
+
+fn chars(s: Str) -> Vec<Char> {
+    s.chars().collect()
+}
+
+fn print_str(s: Str) {
+    for c in s {
+        print_char(c)
+    }
+}
+
+fn print_char(c: Char) {
+    let int = parse_int(int_to_str(c))
+    if letSome(x) == int {
+        print_int(x)
+    }
+}
+
+fn print_int(x: Int) {
+    let chars = int_to_str(x)
+    let chars = chars.chars()
+    for c in chars {
+        print_char(c)
+    }
+}
+
+fn chars(s: Str) -> Vec<Char> {
+    s.chars().collect()
+}
+
+fn print_str(s: Str) {
+    for c in s {
+        print_char(c)
+    }
+}
+
+fn print_char(c: Char) {
+    let int = parse_int(int_to_str(c))
+    if letSome(x) == int {
+        print_int(x)
+    }
+}
+
+fn print_int(x: Int) {
+    let chars = int_to_str(x)
+    let chars = chars.chars()
+    for c in chars {
+        print_char(c)
+    }
+}
+
+fn chars(s: Str) -> Vec<Char> {
+    s.chars().collect()
+}
+
+fn print_str(s: Str) {
+    for c in s {
+        print_char(c)
+    }
+}
+
+fn print_char(c: Char) {
+    let int = parse_int(int_to_str(c))
+    if letSome(x) == int {
+        print_int(x)
+    }
+}
+
+fn print_int(x: Int) {
+    let chars = int_to_str(x)
+    let chars = chars.chars()
+    for c in chars {
+        print_char(c)
+    }
+}
+
+fn chars(s: Str) -> Vec<Char> {
+    s.chars().collect()
+}
+
+fn print_str(s: Str) {
+    for c in s {
+        print_char(c)
+    }
+}
+
+fn print_char(c: Char) {
+    let int = parse_int(int_to_str(c))
+    if letSome(x) == int {
+        print_int(x)
+    }
+}
+
+fn print_int(x: Int) {
+    let chars = int_to_str(x)
+   

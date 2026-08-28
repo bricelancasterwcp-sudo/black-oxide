@@ -1,0 +1,394 @@
+fn main() {
+    let input = read_line("Input a number: ")
+    match parse_int(input) {
+        None => print_str("Bad"),
+        Some(n) => print(n + 1),
+    }
+}
+
+fn read_line(s: Str) -> Str {
+    s
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    Some(0)
+}
+
+fn print_str(s: Str) {
+    print(0)
+}
+
+fn print(n: Int) {
+    print(0)
+}
+
+fn len(v: Vec<T>) -> Int {
+    0
+}
+
+fn get(v: Vec<T>, i: Int) -> Option<T> {
+    None
+}
+
+fn vec() -> Vec<T> {
+    vec()
+}
+
+fn push(v: Vec<T>, t: T) -> Vec<T> {
+    v
+}
+
+fn clone(t: T) -> T {
+    t
+}
+
+fn to_float(n: Int) -> Float {
+    0.0
+}
+
+fn trunc(x: Float) -> Int {
+    0
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    a
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    vec()
+}
+
+fn int_to_str(n: Int) -> Str {
+    ""
+}
+
+fn first_big(v: Vec<Int>) -> Int {
+    let found = -1
+    for x in v {
+        if x > 10 {
+            found = x
+            break
+        }
+    }
+    found
+}
+
+fn second(v: Vec<Int>) -> Option<Int> {
+    let x = get(v, 1)?
+    Some(x + 1)
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(vec(), 3), 42) }
+    print(first_big(r.values))            // field access copies: r stays usable
+    let r2 = Reading { label: "lab2", ..r }
+    match second(r2.values) {
+        Some(n) => print(n),
+        None => print_str("too short"),
+    }
+}
+
+struct Reading { label: Str, values: Vec<Int> }
+
+struct Circle { radius: Float }
+
+struct Shape {
+    x: Int,
+    y: Int,
+    height: Int,
+    width: Int,
+}
+
+fn area(shape: Shape) -> Int {
+    0
+}
+
+fn perimeter(shape: Shape) -> Int {
+    0
+}
+
+fn center(shape: Shape) -> Point {
+    Point(0, 0)
+}
+
+struct Point { x: Int, y: Int }
+
+fn distance(p1: Point, p2: Point) -> Float {
+    0.0
+}
+
+enum Shape {
+    Circle(Circle),
+    Rectangle(Rectangle),
+}
+
+struct Circle { radius: Float }
+
+struct Rectangle { height: Int, width: Int }
+
+fn area(shape: Shape) -> Int {
+    0
+}
+
+fn perimeter(shape: Shape) -> Int {
+    0
+}
+
+fn center(shape: Shape) -> Point {
+    Point(0, 0)
+}
+
+struct Point { x: Int, y: Int }
+
+fn distance(p1: Point, p2: Point) -> Float {
+    0.0
+}
+
+enum Shape {
+    Nullary,
+    Unit,
+    Int(Int),
+    Float(Float),
+    Bool(Bool),
+    Str(Str),
+    Option(Option<T>),
+    Result(Result<T, E>),
+    Vec(Vec<T>),
+    Circle(Circle),
+    Rectangle(Rectangle),
+    Point(Int, Int),
+    Tuple(Int, Int),
+    Struct(ShapeStruct),
+    Enum(ShapeEnum),
+}
+
+struct Circle { radius: Float }
+
+struct Rectangle { height: Int, width: Int }
+
+struct ShapeStruct {
+    x: Int,
+    y: Int,
+    height: Int,
+    width: Int,
+}
+
+enum ShapeEnum {
+    Nullary,
+    Unit,
+    Int(Int),
+    Float(Float),
+    Bool(Bool),
+    Str(Str),
+    Option(Option<T>),
+    Result(Result<T, E>),
+    Vec(Vec<T>),
+    Circle(Circle),
+    Rectangle(Rectangle),
+    Point(Int, Int),
+    Tuple(Int, Int),
+    Struct(ShapeStruct),
+    Enum(ShapeEnum),
+}
+
+fn area(shape: Shape) -> Int {
+    0
+}
+
+fn perimeter(shape: Shape) -> Int {
+    0
+}
+
+fn center(shape: Shape) -> Point {
+    Point(0, 0)
+}
+
+struct Point { x: Int, y: Int }
+
+fn distance(p1: Point, p2: Point) -> Float {
+    0.0
+}
+
+enum Shape {
+    Nullary,
+    Unit,
+    Int(Int),
+    Float(Float),
+    Bool(Bool),
+    Str(Str),
+    Option(Option<T>),
+    Result(Result<T, E>),
+    Vec(Vec<T>),
+    Circle(Circle),
+    Rectangle(Rectangle),
+    Point(Int, Int),
+    Tuple(Int, Int),
+    Struct(ShapeStruct),
+    Enum(ShapeEnum),
+}
+
+struct Circle { radius: Float }
+
+struct Rectangle { height: Int, width: Int }
+
+struct ShapeStruct {
+    x: Int,
+    y: Int,
+    height: Int,
+    width: Int,
+}
+
+enum ShapeEnum {
+    Nullary,
+    Unit,
+    Int(Int),
+    Float(Float),
+    Bool(Bool),
+    Str(Str),
+    Option(Option<T>),
+    Result(Result<T, E>),
+    Vec(Vec<T>),
+    Circle(Circle),
+    Rectangle(Rectangle),
+    Point(Int, Int),
+    Tuple(Int, Int),
+    Struct(ShapeStruct),
+    Enum(ShapeEnum),
+}
+
+fn area(shape: Shape) -> Int {
+    0
+}
+
+fn perimeter(shape: Shape) -> Int {
+    0
+}
+
+fn center(shape: Shape) -> Point {
+    Point(0, 0)
+}
+
+struct Point { x: Int, y: Int }
+
+fn distance(p1: Point, p2: Point) -> Float {
+    0.0
+}
+
+enum Shape {
+    Nullary,
+    Unit,
+    Int(Int),
+    Float(Float),
+    Bool(Bool),
+    Str(Str),
+    Option(Option<T>),
+    Result(Result<T, E>),
+    Vec(Vec<T>),
+    Circle(Circle),
+    Rectangle(Rectangle),
+    Point(Int, Int),
+    Tuple(Int, Int),
+    Struct(ShapeStruct),
+    Enum(ShapeEnum),
+}
+
+struct Circle { radius: Float }
+
+struct Rectangle { height: Int, width: Int }
+
+struct ShapeStruct {
+    x: Int,
+    y: Int,
+    height: Int,
+    width: Int,
+}
+
+enum ShapeEnum {
+    Nullary,
+    Unit,
+    Int(Int),
+    Float(Float),
+    Bool(Bool),
+    Str(Str),
+    Option(Option<T>),
+    Result(Result<T, E>),
+    Vec(Vec<T>),
+    Circle(Circle),
+    Rectangle(Rectangle),
+    Point(Int, Int),
+    Tuple(Int, Int),
+    Struct(ShapeStruct),
+    Enum(ShapeEnum),
+}
+
+fn area(shape: Shape) -> Int {
+    0
+}
+
+fn perimeter(shape: Shape) -> Int {
+    0
+}
+
+fn center(shape: Shape) -> Point {
+    Point(0, 0)
+}
+
+struct Point { x: Int, y: Int }
+
+fn distance(p1: Point, p2: Point) -> Float {
+    0.0
+}
+
+enum Shape {
+    Nullary,
+    Unit,
+    Int(Int),
+    Float(Float),
+    Bool(Bool),
+    Str(Str),
+    Option(Option<T>),
+    Result(Result<T, E>),
+    Vec(Vec<T>),
+    Circle(Circle),
+    Rectangle(Rectangle),
+    Point(Int, Int),
+    Tuple(Int, Int),
+    Struct(ShapeStruct),
+    Enum(ShapeEnum),
+}
+
+struct Circle { radius: Float }
+
+struct Rectangle { height: Int, width: Int }
+
+struct ShapeStruct {
+    x: Int,
+    y: Int,
+    height: Int,
+    width: Int,
+}
+
+enum ShapeEnum {
+    Nullary,
+    Unit,
+    Int(Int),
+    Float(Float),
+    Bool(Bool),
+    Str(Str),
+    Option(Option<T>),
+    Result(Result<T, E>),
+    Vec(Vec<T>),
+    Circle(Circle),
+    Rectangle(Rectangle),
+    Point(Int, Int),
+    Tuple(Int, Int),
+    Struct(ShapeStruct),
+    Enum(ShapeEnum),
+}
+
+fn area(shape: Shape) -> Int {
+    0
+}
+
+fn perimeter(shape: Shape) -> Int {
+    0

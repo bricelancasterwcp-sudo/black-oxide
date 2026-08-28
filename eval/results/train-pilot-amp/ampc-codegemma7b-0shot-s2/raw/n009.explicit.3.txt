@@ -1,0 +1,12 @@
+fn main() {
+    let a = 1234
+    let b = a / 1000
+    let c = (a / 100) % 10
+    let d = (a / 10) % 10
+    let e = a % 10
+    print(e)
+    print(d)
+    print(c)
+    print(b)
+    drop a
+}

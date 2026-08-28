@@ -1,0 +1,14 @@
+fn divide(dividend: Int, divisor: Int) -> Result<Int, Str> {
+    if divisor == 0 {
+        Err("bad")
+    } else {
+        Ok(dividend / divisor)
+    }
+}
+
+fn main() {
+    match divide(20, 4) {
+        Ok(answer) => print(answer),
+        Err(reason) => print_str(reason),
+    }
+}

@@ -1,0 +1,10 @@
+fn main() {
+    let list = push(push(push(vec(), 4), 3), 2)
+    for x in &list {
+        print_str("Entry: ")
+        print(x)
+        print_str("\n")
+        drop x
+    }
+    drop list
+}

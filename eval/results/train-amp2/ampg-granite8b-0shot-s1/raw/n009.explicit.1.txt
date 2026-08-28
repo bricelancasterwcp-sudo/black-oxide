@@ -1,0 +1,330 @@
+fn main() {
+    print(number(1234))
+}
+
+fn number(n: Int) -> Int {
+    let mut i = 0
+    while n > 0 {
+        i = i * 10 + (n % 10)
+        n = n / 10
+    }
+    i
+}
+
+fn print(n: Int) {
+    loop_print(n, 0)
+}
+
+fn loop_print(n: Int, i: Int) {
+    if i == 0 {
+        return
+    }
+    print_int(n / i)
+    loop_print(n % i, i / 10)
+}
+
+fn print_int(n: Int) {
+    if n < 10 {
+        print_char(n + 48)
+    } else {
+        print_int(n / 10)
+        print_char(n % 10 + 48)
+    }
+}
+
+fn print_char(n: Int) {
+    if n == 10 {
+        print_str("\n")
+    } else {
+        let mut c = 0
+        if n == 32 {
+            c = 127
+        } else {
+            c = n
+        }
+        let mut v = vec()
+        v = push(v, c)
+        print_str(chars(v))
+    }
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut v = vec()
+    let mut i = 0
+    while i < str_len(s) {
+        v = push(v, s.sub(i, 1))
+        i = i + 1
+    }
+    v
+}
+
+fn str_len(s: Str) -> Int {
+    let mut len = 0
+    let mut i = 0
+    while i < len(s) {
+        len = len + 1
+        i = i + 1
+    }
+    len
+}
+
+fn loop_print(n: Int, i: Int) {
+    if i == 0 {
+        return
+    }
+    loop_print(n % i, i / 10)
+    print_int(n / i)
+}
+
+fn print_int(n: Int) {
+    if n < 10 {
+        print_char(n + 48)
+    } else {
+        print_int(n / 10)
+        print_char(n % 10 + 48)
+    }
+}
+
+fn print_char(n: Int) {
+    if n == 10 {
+        print_str("\n")
+    } else {
+        let mut c = 0
+        if n == 32 {
+            c = 127
+        } else {
+            c = n
+        }
+        let mut v = vec()
+        v = push(v, c)
+        print_str(chars(v))
+    }
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut v = vec()
+    let mut i = 0
+    while i < str_len(s) {
+        v = push(v, s.sub(i, 1))
+        i = i + 1
+    }
+    v
+}
+
+fn str_len(s: Str) -> Int {
+    let mut len = 0
+    let mut i = 0
+    while i < len(s) {
+        len = len + 1
+        i = i + 1
+    }
+    len
+}
+
+fn print_str(s: Str) {
+    let mut i = 0
+    while i < len(s) {
+        print_char(s.sub(i, 1).to_int())
+        i = i + 1
+    }
+}
+
+fn len(v: Vec<T>) -> Int {
+    let mut len = 0
+    let mut i = 0
+    while i < len(v) {
+        len = len + 1
+        i = i + 1
+    }
+    len
+}
+
+fn print_char(n: Int) {
+    if n == 10 {
+        print_str("\n")
+    } else {
+        let mut c = 0
+        if n == 32 {
+            c = 127
+        } else {
+            c = n
+        }
+        let mut v = vec()
+        v = push(v, c)
+        print_str(chars(v))
+    }
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut v = vec()
+    let mut i = 0
+    while i < str_len(s) {
+        v = push(v, s.sub(i, 1))
+        i = i + 1
+    }
+    v
+}
+
+fn str_len(s: Str) -> Int {
+    let mut len = 0
+    let mut i = 0
+    while i < len(s) {
+        len = len + 1
+        i = i + 1
+    }
+    len
+}
+
+fn print_str(s: Str) {
+    let mut i = 0
+    while i < len(s) {
+        print_char(s.sub(i, 1).to_int())
+        i = i + 1
+    }
+}
+
+fn len(v: Vec<T>) -> Int {
+    let mut len = 0
+    let mut i = 0
+    while i < len(v) {
+        len = len + 1
+        i = i + 1
+    }
+    len
+}
+
+fn print_char(n: Int) {
+    if n == 10 {
+        print_str("\n")
+    } else {
+        let mut c = 0
+        if n == 32 {
+            c = 127
+        } else {
+            c = n
+        }
+        let mut v = vec()
+        v = push(v, c)
+        print_str(chars(v))
+    }
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut v = vec()
+    let mut i = 0
+    while i < str_len(s) {
+        v = push(v, s.sub(i, 1))
+        i = i + 1
+    }
+    v
+}
+
+fn str_len(s: Str) -> Int {
+    let mut len = 0
+    let mut i = 0
+    while i < len(s) {
+        len = len + 1
+        i = i + 1
+    }
+    len
+}
+
+fn print_str(s: Str) {
+    let mut i = 0
+    while i < len(s) {
+        print_char(s.sub(i, 1).to_int())
+        i = i + 1
+    }
+}
+
+fn len(v: Vec<T>) -> Int {
+    let mut len = 0
+    let mut i = 0
+    while i < len(v) {
+        len = len + 1
+        i = i + 1
+    }
+    len
+}
+
+fn print_char(n: Int) {
+    if n == 10 {
+        print_str("\n")
+    } else {
+        let mut c = 0
+        if n == 32 {
+            c = 127
+        } else {
+            c = n
+        }
+        let mut v = vec()
+        v = push(v, c)
+        print_str(chars(v))
+    }
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut v = vec()
+    let mut i = 0
+    while i < str_len(s) {
+        v = push(v, s.sub(i, 1))
+        i = i + 1
+    }
+    v
+}
+
+fn str_len(s: Str) -> Int {
+    let mut len = 0
+    let mut i = 0
+    while i < len(s) {
+        len = len + 1
+        i = i + 1
+    }
+    len
+}
+
+fn print_str(s: Str) {
+    let mut i = 0
+    while i < len(s) {
+        print_char(s.sub(i, 1).to_int())
+        i = i + 1
+    }
+}
+
+fn len(v: Vec<T>) -> Int {
+    let mut len = 0
+    let mut i = 0
+    while i < len(v) {
+        len = len + 1
+        i = i + 1
+    }
+    len
+}
+
+fn print_char(n: Int) {
+    if n == 10 {
+        print_str("\n")
+    } else {
+        let mut c = 0
+        if n == 32 {
+            c = 127
+        } else {
+            c = n
+        }
+        let mut v = vec()
+        v = push(v, c)
+        print_str(chars(v))
+    }
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut v = vec()
+    let mut i = 0
+    while i < str_len(s) {
+        v = push(v, s.sub(i, 1))
+        i = i + 1
+    }
+    v
+}
+
+fn str_len(s: Str)

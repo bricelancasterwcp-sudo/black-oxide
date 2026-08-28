@@ -1,0 +1,21 @@
+fn is_vowel(letter: &Str) -> Bool {
+    match letter {
+        _ => false,
+        _ => true,
+    }
+}
+
+fn main() {
+    let word = "keyboard"
+    let mut vowel_count = 0
+    let mut not_vowel_count = 0
+    for letter in word.chars() {
+        if is_vowel(&letter) {
+            vowel_count = vowel_count + 1
+        } else {
+            not_vowel_count = not_vowel_count + 1
+        }
+    }
+    print(vowel_count)
+    print(not_vowel_count)
+}

@@ -1,0 +1,15 @@
+struct PowerOfTwo { value: Int }
+
+fn find_max_power_of_two(limit: Int) -> Int {
+    let mut max_power = 1
+    while max_power * 2 <= limit {
+        max_power = max_power * 2
+    }
+    max_power
+}
+
+fn main() {
+    let limit = 100
+    let result = find_max_power_of_two(limit)
+    print(result)
+}

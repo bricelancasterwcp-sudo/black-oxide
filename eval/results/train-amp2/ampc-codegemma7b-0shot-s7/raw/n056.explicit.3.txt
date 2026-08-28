@@ -1,0 +1,10 @@
+fn main() {
+    let num7 = parse_int("7")
+    let numx = parse_int("x")
+    let num9 = parse_int("9")
+    let num_q = parse_int("?")
+    let sum = int_to_str(to_float(trunc(float(num7) + float(numx))) + float(num9))
+    print(concat("sum = ", sum))
+    let count_n = int_to_str(if num_q { 0 } else { 1 })
+    print(concat("numbers without ? = ", count_n))
+}

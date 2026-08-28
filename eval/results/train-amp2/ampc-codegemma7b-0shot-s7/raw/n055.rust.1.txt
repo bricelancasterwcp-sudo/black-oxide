@@ -1,0 +1,20 @@
+fn main() {
+    let entry1 = "8";
+    let entry2 = "oak";
+    let entry3 = "15";
+
+    match entry1.parse::<usize>() {
+        Ok(number) => println!("{}", number),
+        Err(_) => println!("bad"),
+    }
+
+    match entry2.parse::<usize>() {
+        Ok(number) => println!("{}", number),
+        Err(_) => println!("bad"),
+    }
+
+    match entry3.parse::<usize>() {
+        Ok(number) => println!("{}", number),
+        Err(_) => println!("bad"),
+    }
+}

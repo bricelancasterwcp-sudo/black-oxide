@@ -1,0 +1,7 @@
+fn main() {
+    let list = vec![10, 20, 30, 40];
+    match list.get(2) {
+        Some(entry) => println!("The entry at position two is: {}", entry),
+        None => println!("There is no entry at position two.")
+    }
+}

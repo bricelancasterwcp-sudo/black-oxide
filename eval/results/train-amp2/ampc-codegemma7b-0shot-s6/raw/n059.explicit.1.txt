@@ -1,0 +1,17 @@
+fn count_words(text: &Str) -> Int {
+    let mut words = 0
+    for word in text.split_whitespace() {
+        words = words + 1
+    }
+    words
+}
+
+fn count_characters(text: &Str) -> Int {
+    text.chars().count()
+}
+
+fn main() {
+    let text = "when in doubt go home"
+    print(count_words(&text))
+    print(count_characters(&text))
+}

@@ -1,0 +1,17 @@
+fn enqueue(q: &Vec<Int>, x: Int) -> Vec<Int> {
+    let mut new_q = vec(x, q.clone())
+    for i in 0.to(q.len() - 2) {
+        new_q.push(q.get(i + 1))
+    }
+    new_q
+}
+
+fn main() {
+    let mut q = vec(1, 2, 3, 4, 5)
+    q = enqueue(&q, 0)
+    for x in &q {
+        print(x)
+        print("\n")
+    }
+    drop q
+}

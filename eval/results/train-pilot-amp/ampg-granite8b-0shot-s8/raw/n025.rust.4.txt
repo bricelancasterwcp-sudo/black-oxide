@@ -1,0 +1,7 @@
+fn main() {
+    if let Ok(n) = std::env::args().nth(1).and_then(|s| s.parse::<u32>().ok()) {
+        println!("{}", n + 1);
+    } else {
+        println!("bad");
+    }
+}

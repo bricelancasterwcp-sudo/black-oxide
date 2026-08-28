@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    for (index, c) in "banana".chars().enumerate() {
+        if c == 'n' {
+            println!("{}", index);
+        }
+    }
+}
+```

@@ -1,0 +1,28 @@
+struct Point { x: Int, y: Int }
+
+fn main() {
+    let p = Point { x: 3, y: 4 }
+    print_str("Point: ")
+    print(p.x)
+    print_str(", ")
+    print(p.y)
+    print_str("\n")
+    let q = Point { ..p }
+    print_str("Copy: ")
+    print(q.x)
+    print_str(", ")
+    print(q.y)
+    print_str("\n")
+    q.x = 9
+    print_str("Changed original: ")
+    print(q.x)
+    print_str(", ")
+    print(q.y)
+    print_str("\n")
+    let r = Point { x: 5, ..q }
+    print_str("Copy, changed one: ")
+    print(r.x)
+    print_str(", ")
+    print(r.y)
+    print_str("\n")
+}

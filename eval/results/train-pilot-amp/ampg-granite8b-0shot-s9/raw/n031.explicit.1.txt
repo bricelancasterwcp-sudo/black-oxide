@@ -1,0 +1,208 @@
+fn main() {
+    let rect = Rectangle { width: 7, height: 6 }
+    print(area(&rect))
+}
+
+fn area(r: &Rectangle) -> Int {
+    r.width * r.height
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn drop_example() {
+    let a = 3
+    let b = 4
+    drop a
+    let c = 5
+    print(a) // EX0002, reads a after it is dropped
+    print(b) // EX0004, b is not dead
+    print(c) // EX0004, c is not dead
+}
+
+fn if_example() {
+    let x = 5
+    if x > 10 {
+        drop x // EX0003, x must be dead after `if`
+    } else {
+        drop x // EX0003, x must be dead after `else`
+    }
+    print(x) // EX0004, x is not dead
+}
+
+fn for_example(nums: Vec<Int>) {
+    for n in &nums {
+        if n == 5 {
+            drop n // EX0003, n must be dead at the end of `n
+        }
+    }
+    drop nums // EX0003, nums must be dead at the end of
+    for n in &nums {
+        print(n) // EX0002, reads n after nums is dropped
+    }
+}
+
+fn while_example() {
+    let mut x = 5
+    while x > 10 {
+        drop x // EX0003, x must be dead at the end of `x
+    }
+    drop x // EX0003, x must be dead at the end of `x
+    print(x) // EX0004, x is not dead
+}
+
+fn match_example(num: Int) {
+    match num {
+        ECHO => {
+            drop num // EX0003, num must be dead at the end of
+            print(num) // EX0002, reads num after drop
+        },
+        _ => {
+            drop num // EX0003, num must be dead at the end of
+            print(num) // EX0002, reads num after drop
+        },
+    }
+}
+
+fn let_example() {
+    let mut x = 5
+    x = 7
+    drop x // EX0003, x must be dead at the end of `x
+    print(x) // EX0004, x is not dead
+}
+
+fn option_example(name: Option<Str>) {
+    let name2 = name?
+    drop name // EX0003, name must be dead at the end of
+    print(name) // EX0002, reads name after drop
+    drop name2 // EX0003, name2 must be dead at the end
+    print(name2) // EX0004, name2 is not dead
+}
+
+fn result_example(name: Result<Int, Str>) {
+    let age = name?
+    drop name // EX0003, name must be dead at the end of
+    print(name) // EX0002, reads name after drop
+    drop age // EX0003, age must be dead at the end
+    print(age) // EX0004, age is not dead
+}
+
+fn vec_example() {
+    let v = vec()
+    push(v, 5) // EX0003, v must be dead at the end of
+    print(v) // EX0002, reads v after drop
+}
+
+fn vec_example() {
+    let mut v = vec()
+    push(v, 5)
+    drop v // EX0003, v must be dead at the end of `v
+    print(v) // EX0004, v is not dead
+}
+
+fn ref_example() {
+    let mut x = 5
+    let y = &mut_x // EX0001, cannot take a reference to a `x
+    y = 7
+    drop x // EX0003, x must be dead at the end of
+    drop y // EX0003, y must be dead at the end of
+    print(x) // EX0004, x is not dead
+    print(y) // EX0004, y is not dead
+}
+
+fn ref_example() {
+    let x = 5
+    let y = &x // EX0001, cannot take a reference to a `x
+    drop x // EX0003, x must be dead at the end of
+    drop y // EX0003, y must be dead at the end of
+    print(x) // EX0004, x is not dead
+    print(y) // EX0004, y is not dead
+}
+
+fn ref_example() {
+    let mut x = 5
+    let y = mut_x // EX0001, cannot take a mutable reference
+    y = 7
+    drop x // EX0003, x must be dead at the end of
+    drop y // EX0003, y must be dead at the end of
+    print(x) // EX0004, x is not dead
+    print(y) // EX0004, y is not dead
+}
+
+fn ref_example() {
+    let x = 5
+    let y = mut_x // EX0001, cannot take a mutable reference
+    drop x // EX0003, x must be dead at the end of
+    drop y // EX0003, y must be dead at the end of
+    print(x) // EX0004, x is not dead
+    print(y) // EX0004, y is not dead
+}
+
+fn ref_example() {
+    let mut x = 5
+    let mut y = &mut_x // EX0001, cannot take a reference to a `x
+    y = &mut_x
+    y = 7
+    drop x // EX0003, x must be dead at the end of
+    drop y // EX0003, y must be dead at the end of
+    print(x) // EX0004, x is not dead
+    print(y) // EX0004, y is not dead
+}
+
+fn ref_example() {
+    let x = 5
+    let mut y = &x // EX0001, cannot take a reference to a `x
+    y = &x
+    drop x // EX0003, x must be dead at the end of
+    drop y // EX0003, y must be dead at the end of
+    print(x) // EX0004, x is not dead
+    print(y) // EX0004, y is not dead
+}
+
+fn ref_example() {
+    let mut x = 5
+    let mut y = mut_x // EX0001, cannot take a reference to a `x
+    y = mut_x
+    y = 7
+    drop x // EX0003, x must be dead at the end of
+    drop y // EX0003, y must be dead at the end of
+    print(x) // EX0004, x is not dead
+    print(y) // EX0004, y is not dead
+}
+
+fn ref_example() {
+    let mut x = 5
+    let mut y = mut_x // EX0001, cannot take a reference to a `x
+    y = mut_x
+    y = 7
+    drop x // EX0003, x must be dead at the end of
+    drop y // EX0003, y must be dead at the end of
+    print(x) // EX0004, x is not dead
+    print(y) // EX0004, y is not dead
+}
+
+fn ref_example() {
+    let mut x = 5
+    let mut y = 7
+    let z = mut_x // EX0001, cannot take a reference to a `x
+    y = 3
+    z = 9
+    drop x // EX0003, x must be dead at the end of
+    drop y // EX0003, y must be dead at the end of
+    drop z // EX0003, z must be dead at the end of
+    print(x) // EX0004, x is not dead
+    print(y) // EX0004, y is not dead
+    print(z) // EX0004, z is not dead
+}
+
+fn ref_example() {
+    let mut x = 5
+    let mut y = mut_x // EX0001, cannot take a reference to a `x
+    y = mut_x
+    y = 7
+    drop x // EX0003, x must be dead at the end of
+    drop y // EX0003, y must be dead at the end of
+    print(x) // EX0004, x is not dead
+    print(y) // EX0004, y is

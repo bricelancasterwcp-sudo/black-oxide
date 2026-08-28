@@ -1,0 +1,33 @@
+struct Device {
+    sensor: Sensor,
+}
+
+struct Sensor {
+    reading: i32,
+}
+
+impl std::fmt::Debug for Device {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        f.debug_struct("Device")
+            .field("sensor", &self.sensor)
+            .finish()
+    }
+}
+
+impl std::fmt::Debug for Sensor {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        f.debug_struct("Sensor")
+            .field("reading", &self.reading)
+            .finish()
+    }
+}
+
+fn main() {
+    let mut device = Device {
+        sensor: Sensor { reading: 0 },
+    };
+
+    device.sensor.reading = 7;
+
+    println!("{:?}", device);
+}

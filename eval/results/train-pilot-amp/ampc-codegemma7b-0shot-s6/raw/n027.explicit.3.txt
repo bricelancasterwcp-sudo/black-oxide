@@ -1,0 +1,14 @@
+fn main() {
+    let s = push(push(vec(), "c"), "a")
+    let t = push(push(vec(), "t"), &s)
+    print_str(&t)
+    drop t
+    print_str(&s)
+    drop s
+    let t = push(push(vec(), "t"), &s)
+    print_str(&t)
+    drop t
+    let s = push(push(vec(), "c"), "a")
+    print_str(&s)
+    drop s
+}

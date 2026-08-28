@@ -1,0 +1,15 @@
+fn main() {
+    let a = 8
+    let b = 3
+    let c = 11
+    let d = 6
+    let min = if a < b { a } else { b }
+    let min = if min < c { min } else { c }
+    let min = if min < d { min } else { d }
+    let max = if a > b { a } else { b }
+    let max = if max > c { max } else { c }
+    let max = if max > d { max } else { d }
+    print(min)
+    print_str(" ")
+    print(max - min)
+}

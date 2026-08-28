@@ -1,0 +1,9 @@
+struct List { entries: Vec<Int> }
+
+fn main() {
+    let list = List { entries: push(push(push(push(vec(), 10), 20), 30), 40) }
+    match get(list.entries, 2) {
+        Some(n) => print(n),
+        None => print_str("missing"),
+    }
+}

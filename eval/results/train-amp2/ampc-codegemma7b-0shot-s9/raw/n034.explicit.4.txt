@@ -1,0 +1,15 @@
+fn second(v: &Vec<Int>) -> Option<Int> {
+    if v.len() < 2 {
+        None
+    } else {
+        Some(&v)
+    }
+}
+
+fn main() {
+    let vec_int_8 = vec(8, 9, 10)
+    let x = second(&vec_int_8)
+    print(x)
+    drop vec_int_8
+    drop x
+}

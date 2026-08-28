@@ -1,0 +1,20 @@
+fn is_green() -> Bool {
+    true
+}
+
+fn wait_for_yellow() {
+    print("waiting for yellow\n")
+}
+
+fn stop_for_red() {
+    print("stopping\n")
+}
+
+fn main() {
+    if is_green() {
+        print("go for green\n")
+        let wait = wait_for_yellow()
+        drop wait
+        stop_for_red()
+    }
+}

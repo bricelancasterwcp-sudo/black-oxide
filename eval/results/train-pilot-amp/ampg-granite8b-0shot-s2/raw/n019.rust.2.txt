@@ -1,0 +1,9 @@
+fn main() {
+    let list1 = vec![1, 2, 3];
+    let list2 = vec![4, 5];
+
+    let lower = *list1.iter().max().unwrap();
+    let upper = *list2.iter().min().unwrap();
+
+    println!("{} entries between {} and {}", upper - lower, lower, upper);
+}

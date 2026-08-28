@@ -1,0 +1,20 @@
+fn count(v1: Vec<Int>, v2: Vec<Int>) -> Int {
+    let a = len(v1) + len(v2)
+    for x in v1 {
+        if x >= 4 {
+            a = a - 1
+        }
+    }
+    for x in v2 {
+        if x <= 2 {
+            a = a - 1
+        }
+    }
+    a
+}
+
+fn main() {
+    let v1 = vec(1, 2, 3)
+    let v2 = vec(4, 5)
+    print(count(v1, v2))
+}

@@ -1,0 +1,189 @@
+struct Stock {
+    four_unit: Int,
+    three_unit: Int,
+    two_unit: Int,
+}
+
+fn main() {
+    let stock = Stock { four_unit: 2, three_unit: 4, two_unit: 5 }
+    print(total_value(stock))
+}
+
+fn total_value(s: Stock) -> Int {
+    let four_value = s.four_unit * 4
+    let three_value = s.three_unit * 3
+    let two_value = s.two_unit * 2
+    four_value + three_value + two_value
+}
+
+fn total_value_v2(s: Stock) -> Int {
+    s.four_unit * 4 + s.three_unit * 3 + s.two_unit * 2
+}
+
+fn total_value_v3(s: Stock) -> Int {
+    let four_value = s.four_unit * 4
+    let three_value = s.three_unit * 3
+    let two_value = s.two_unit * 2
+    four_value + three_value + two_value
+}
+
+fn total_value_v4(s: Stock) -> Int {
+    s.four_unit * 4 + s.three_unit * 3 + s.two_unit * 2
+}
+
+fn total_value_v5(s: Stock) -> Int {
+    let four_value = s.four_unit * 4
+    let three_value = s.three_unit * 3
+    let two_value = s.two_unit * 2
+    four_value + three_value + two_value
+}
+
+fn total_value_v6(s: Stock) -> Int {
+    s.four_unit * 4 + s.three_unit * 3 + s.two_unit * 2
+}
+
+fn total_value_v7(s: Stock) -> Int {
+    let four_value = s.four_unit * 4
+    let three_value = s.three_unit * 3
+    let two_value = s.two_unit * 2
+    four_value + three_value + two_value
+}
+
+fn total_value_v8(s: Stock) -> Int {
+    let four_value = s.four_unit * 4
+    let three_value = s.three_unit * 3
+    let two_value = s.two_unit * 2
+    four_value + three_value + two_value
+}
+
+fn total_value_v9(s: Stock) -> Int {
+    let four_value = s.four_unit * 4
+    let three_value = s.three_unit * 3
+    let two_value = s.two_unit * 2
+    four_value + three_value + two_value
+}
+
+fn total_value_v10(s: Stock) -> Int {
+    let four_value = s.four_unit * 4
+    let three_value = s.three_unit * 3
+    let two_value = s.two_unit * 2
+    four_value + three_value + two_value
+}
+
+fn total_value_v11(s: Stock) -> Int {
+    s.four_unit * 4 + s.three_unit * 3 + s.two_unit * 2
+}
+
+fn total_value_v12(s: Stock) -> Int {
+    s.four_unit * 4 + s.three_unit * 3 + s.two_unit * 2
+}
+
+fn total_value_v13(s: Stock) -> Int {
+    s.four_unit * 4 + s.three_unit * 3 + s.two_unit * 2
+}
+
+fn total_value_v14(s: Stock) -> Int {
+    let four_value = s.four_unit * 4
+    let three_value = s.three_unit * 3
+    let two_value = s.two_unit * 2
+    four_value + three_value + two_value
+}
+
+fn total_value_v15(s: Stock) -> Int {
+    let four_value = s.four_unit * 4
+    let three_value = s.three_unit * 3
+    let two_value = s.two_unit * 2
+    four_value + three_value + two_value
+}
+
+fn total_value_v16(s: Stock) -> Int {
+    let four_value = s.four_unit * 4
+    let three_value = s.three_unit * 3
+    let two_value = s.two_unit * 2
+    four_value + three_value + two_value
+}
+
+fn total_value_v17(s: Stock) -> Int {
+    let four_value = s.four_unit * 4
+    let three_value = s.three_unit * 3
+    let two_value = s.two_unit * 2
+    four_value + three_value + two_value
+}
+
+fn total_value_v18(s: Stock) -> Int {
+    s.four_unit * 4 + s.three_unit * 3 + s.two_unit * 2
+}
+
+fn total_value_v19(s: Stock) -> Int {
+    s.four_unit * 4 + s.three_unit * 3 + s.two_unit * 2
+}
+
+fn total_value_v20(s: Stock) -> Int {
+    s.four_unit * 4 + s.three_unit * 3 + s.two_unit * 2
+}
+
+fn total_value_v21(s: Stock) -> Int {
+    s.four_unit * 4 + s.three_unit * 3 + s.two_unit * 2
+}
+
+fn total_value_v22(s: Stock) -> Int {
+    s.four_unit * 4 + s.three_unit * 3 + s.two_unit * 2
+}
+
+fn total_value_v23(s: Stock) -> Int {
+    s.four_unit * 4 + s.three_unit * 3 + s.two_unit * 2
+}
+
+fn total_value_v24(s: Stock) -> Int {
+    s.four_unit * 4 + s.three_unit * 3 + s.two_unit * 2
+}
+
+fn total_value_v25(s: Stock) -> Int {
+    s.four_unit * 4 + s.three_unit * 3 + s.two_unit * 2
+}
+
+fn total_value_v26(s: Stock) -> Int {
+    s.four_unit * 4 + s.three_unit * 3 + s.two_unit * 2
+}
+
+fn total_value_v27(s: Stock) -> Int {
+    s.four_unit * 4 + s.three_unit * 3 + s.two_unit * 2
+}
+
+fn total_value_v28(s: Stock) -> Int {
+    s.four_unit * 4 + s.three_unit * 3 + s.two_unit * 2
+}
+
+fn total_value_v29(s: Stock) -> Int {
+    s.four_unit * 4 + s.three_unit * 3 + s.two_unit * 2
+}
+
+fn total_value_v30(s: Stock) -> Int {
+    s.four_unit * 4 + s.three_unit * 3 + s.two_unit * 2
+}
+
+fn total_value_v31(s: Stock) -> Int {
+    s.four_unit * 4 + s.three_unit * 3 + s.two_unit * 2
+}
+
+fn total_value_v32(s: Stock) -> Int {
+    s.four_unit * 4 + s.three_unit * 3 + s.two_unit * 2
+}
+
+fn total_value_v33(s: Stock) -> Int {
+    let four_value = s.four_unit * 4
+    let three_value = s.three_unit * 3
+    let two_value = s.two_unit * 2
+    four_value + three_value + two_value
+}
+
+fn total_value_v34(s: Stock) -> Int {
+    s.four_unit * 4 + s.three_unit * 3 + s.two_unit * 2
+}
+
+fn total_value_v35(s: Stock) -> Int {
+    s.four_unit * 4 + s.three_unit * 3 + s.two_unit * 2
+}
+
+fn total_value_v36(s: Stock) -> Int {
+    s.

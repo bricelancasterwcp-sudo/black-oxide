@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let point_a = (1, 5);
+    let point_b = (10, 5);
+    println!("{} {}", point_a.0 + point_b.0, point_a.1 + point_b.1);
+}
+```

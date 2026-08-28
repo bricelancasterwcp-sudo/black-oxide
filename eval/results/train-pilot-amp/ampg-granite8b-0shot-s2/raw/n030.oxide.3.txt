@@ -1,0 +1,23 @@
+fn vowel_count(s: Str) -> Int {
+    let mut count = 0
+    for c in s.chars() {
+        match c {
+            _ => continue_outer,
+        }
+        match c {
+            _ => continue_outer,
+        }
+        match c {
+            _ => continue_outer,
+        }
+        match c {
+            _ => continue_outer,
+        }
+        count = count + 1
+    }
+    count
+}
+
+fn main() {
+    print(vowel_count("oxide is a language"))
+}

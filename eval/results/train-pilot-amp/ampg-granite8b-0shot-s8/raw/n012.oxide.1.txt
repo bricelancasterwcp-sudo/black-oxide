@@ -1,0 +1,13 @@
+struct Counter { value: Int }
+
+fn make_counter(start: Int) -> Counter {
+    Counter(start)
+}
+
+fn main() {
+    let mut counter = make_counter(1)
+    for i in range(0, 15) {
+        print(counter.value)
+        counter = Counter(counter.value + 1)
+    }
+}

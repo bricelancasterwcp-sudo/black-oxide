@@ -1,0 +1,301 @@
+fn main() {
+    struct_field_copy(7)
+}
+
+fn struct_field_copy(seven: Int) {
+    struct_field_copy_inner(seven)
+}
+
+fn struct_field_copy_inner(mut_seven: Int) {
+    let reading = Reading { label: "sensor".to_string(), values: vec_push(vec_push(vec(), mut_seven), 7) }
+    print(get(reading.values, 0).unwrap())
+}
+
+struct Reading { label: Str, values: Vec<Int> }
+
+fn vec_push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    return push(v, x)
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    return match v.get(i) {
+        Some(x) => Some(x.clone()),
+        None => None,
+    }
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    return vec_push(v, x)
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    return to_string(n)
+}
+
+fn to_string(n: Int) -> Str {
+    return format("{:?}", n)
+}
+
+fn to_float(n: Int) -> Float {
+    return float(n)
+}
+
+fn float(n: Int) -> Float {
+    return Float(n)
+}
+
+struct Float { value: Int }
+
+fn trunc(x: Float) -> Int {
+    return trunc(x.value)
+}
+
+fn trunc(x: Int) -> Int {
+    return x
+}
+
+fn str_len(s: Str) -> Int {
+    return len(s)
+}
+
+fn len(s: Str) -> Int {
+    return s.len()
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    return split(s)
+}
+
+fn split(s: Str) -> Vec<Str> {
+    return vec_split(s, "")
+}
+
+fn vec_split(v: Str, s: Str) -> Vec<Str> {
+    return split(v, s)
+}
+
+fn split(v: Str, s: Str) -> Vec<Str> {
+    return split(v, s)
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    return match int(s) {
+        Some(x) => Some(x),
+        None => None,
+    }
+}
+
+fn int(s: Str) -> Option<Int> {
+    return match int(s) {
+        Some(x) => Some(x),
+        None => None,
+    }
+}
+
+fn int(s: Str) -> Option<Int> {
+    return match parse(s) {
+        Ok(x) => Some(x),
+        Err(_) => None,
+    }
+}
+
+fn parse(s: Str) -> Result<Int, String> {
+    return match parse(s) {
+        Ok(x) => Ok(x),
+        Err(e) => Err(e),
+    }
+}
+
+fn parse(s: Str) -> Result<Int, String> {
+    return match s.parse() {
+        Ok(x) => Ok(x),
+        Err(_) => Err("could not parse".to_string()),
+    }
+}
+
+fn main() {
+    struct_field_copy(7)
+}
+
+fn struct_field_copy(seven: Int) {
+    struct_field_copy_inner(seven)
+}
+
+fn struct_field_copy_inner(mut_seven: Int) {
+    let reading = Reading { label: "sensor".to_string(), values: vec_push(vec_push(vec(), mut_seven), 7) }
+    print(get(reading.values, 0).unwrap())
+}
+
+struct Reading { label: Str, values: Vec<Int> }
+
+fn vec_push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    return push(v, x)
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    return match v.get(i) {
+        Some(x) => Some(x.clone()),
+        None => None,
+    }
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    return vec_push(v, x)
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    return to_string(n)
+}
+
+fn to_string(n: Int) -> Str {
+    return format("{:?}", n)
+}
+
+fn to_float(n: Int) -> Float {
+    return float(n)
+}
+
+fn float(n: Int) -> Float {
+    return Float(n)
+}
+
+struct Float { value: Int }
+
+fn trunc(x: Float) -> Int {
+    return trunc(x.value)
+}
+
+fn trunc(x: Int) -> Int {
+    return x
+}
+
+fn str_len(s: Str) -> Int {
+    return len(s)
+}
+
+fn len(s: Str) -> Int {
+    return s.len()
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    return split(s)
+}
+
+fn split(s: Str) -> Vec<Str> {
+    return vec_split(s, "")
+}
+
+fn vec_split(v: Str, s: Str) -> Vec<Str> {
+    return split(v, s)
+}
+
+fn split(v: Str, s: Str) -> Vec<Str> {
+    return split(v, s)
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    return match int(s) {
+        Some(x) => Some(x),
+        None => None,
+    }
+}
+
+fn int(s: Str) -> Option<Int> {
+    return match int(s) {
+        Some(x) => Some(x),
+        None => None,
+    }
+}
+
+fn int(s: Str) -> Option<Int> {
+    return match parse(s) {
+        Ok(x) => Some(x),
+        Err(_) => None,
+    }
+}
+
+fn parse(s: Str) -> Result<Int, String> {
+    return match parse(s) {
+        Ok(x) => Ok(x),
+        Err(e) => Err(e),
+    }
+}
+
+fn parse(s: Str) -> Result<Int, String> {
+    return match s.parse() {
+        Ok(x) => Ok(x),
+        Err(_) => Err("could not parse".to_string()),
+    }
+}
+
+fn main() {
+    struct_field_copy(7)
+}
+
+fn struct_field_copy(seven: Int) {
+    struct_field_copy_inner(seven)
+}
+
+fn struct_field_copy_inner(mut_seven: Int) {
+    let reading = Reading { label: "sensor".to_string(), values: vec_push(vec_push(vec(), mut_seven), 7) }
+    print(get(reading.values, 0).unwrap())
+}
+
+struct Reading { label: Str, values: Vec<Int> }
+
+fn vec_push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    return push(v, x)
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    return match v.get(i) {
+        Some(x) => Some(x.clone()),
+        None => None,
+    }
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    return vec_push(v, x)
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    return to_string(n)
+}
+
+fn to_string(n: Int) -> Str {
+    return format("{:?}", n)
+}
+
+fn to_float(n: Int) -> Float {
+    return float(n)
+}
+
+fn float(n: Int) -> Float {
+    return Float(n)
+}
+
+struct Float

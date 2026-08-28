@@ -1,0 +1,25 @@
+struct Point { x: Int, y: Int }
+
+fn is_on_x_axis(p: Point) -> Bool {
+    p.y == 0
+}
+
+fn dist(p: Point) -> Float {
+    to_float(trunc(p.x.pow(2) + p.y.pow(2))).sqrt()
+}
+
+fn midpoint(p1: Point, p2: Point) -> Point {
+    Point(trunc((p1.x + p2.x) / 2), trunc((p1.y + p2.y) / 2))
+}
+
+fn main() {
+    let p1 = Point { x: 1, y: 2 }
+    let p2 = Point { x: 4, y: 6 }
+    let mp = midpoint(p1, p2)
+    if is_on_x_axis(mp) {
+        print_str("on x-axis")
+    } else {
+        print_str("not on x-axis")
+    }
+    print(dist(mp))
+}

@@ -1,0 +1,14 @@
+fn sum_digits(num: Int) -> Int {
+    let mut sum = 0
+    let digits = int_to_str(num).chars().map(parse_int).collect()
+    for digit in &digits {
+        sum = sum + digit.unwrap()
+    }
+    sum
+}
+
+fn main() {
+    let number = 9875
+    let result = sum_digits(number)
+    print(result)
+}

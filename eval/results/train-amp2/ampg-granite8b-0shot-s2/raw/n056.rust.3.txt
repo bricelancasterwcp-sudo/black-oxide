@@ -1,0 +1,12 @@
+fn main() {
+    let mut total = 0;
+    let mut count = 0;
+    for num in [7, 0, 9, 3].iter() {
+        if let Some(n) = num {
+            total += n;
+            count += 1;
+        }
+    }
+    println!("Total: {}", total);
+    println!("Count: {}", count);
+}

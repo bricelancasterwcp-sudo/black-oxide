@@ -1,0 +1,23 @@
+struct PowerOfTwo { value: Int }
+
+fn is_power_of_two(x: Int) -> Bool {
+    x > 0 && (x && (x - 1)) == 0
+}
+
+fn next_bigger_power_of_two(mutx: Int) -> Option<PowerOfTwo> {
+    while mutx < 100 {
+        mutx = mutx * 2
+    }
+    if mutx == 100 {
+        Some(PowerOfTwo { value: mutx })
+    } else {
+        None
+    }
+}
+
+fn main() {
+    match next_bigger_power_of_two(5) {
+        Some(p) => print(p.value),
+        None => print_str("none"),
+    }
+}

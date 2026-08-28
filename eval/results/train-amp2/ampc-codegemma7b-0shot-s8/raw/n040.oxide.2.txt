@@ -1,0 +1,20 @@
+enum Shape {
+    Square(Float),
+    Circle(Float),
+}
+
+fn pi() -> Float {
+    3.0
+}
+
+fn area(s: Shape) -> Float {
+    match s {
+        Square(x) => x * x,
+        Circle(r) => pi * r * r,
+    }
+}
+
+fn main() {
+    let s = Square(4.0)
+    print(area(s))
+}

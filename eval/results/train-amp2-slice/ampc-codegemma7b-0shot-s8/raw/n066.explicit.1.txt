@@ -1,0 +1,9 @@
+fn main() {
+    let mut x = 0
+    for i in 9 {
+        if i < 10 {
+            x = x + i
+        }
+    }
+    print(x)
+}

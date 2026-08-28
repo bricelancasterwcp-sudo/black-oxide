@@ -1,0 +1,17 @@
+```rust
+fn main(){
+    let n = 91;
+    let mut is_prime = true;
+    if n <= 1 {
+        is_prime = false;
+    } else {
+        for i in 2..n {
+            if n % i == 0 {
+                is_prime = false;
+                break;
+            }
+        }
+    }
+    println!("{}", if is_prime {"yes"} else {"no"});
+}
+```

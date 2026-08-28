@@ -1,0 +1,28 @@
+fn fig8(x: Int, y: Int) -> Int {
+    let z = x + y
+    z
+}
+
+fn fig3(x: Int) -> Int {
+    let y = x + 3
+    fig8(y, y)
+}
+
+fn fig11(x: Int) -> Int {
+    let y = x + 3
+    let z = y + 3
+    fig8(y, z)
+}
+
+fn fig6(x: Int) -> Int {
+    let y = x + 3
+    let z = fig8(y, y)
+    y + z
+}
+
+fn main() {
+    print(fig8(2, 4))
+    print(fig3(2))
+    print(fig11(2))
+    print(fig6(2))
+}

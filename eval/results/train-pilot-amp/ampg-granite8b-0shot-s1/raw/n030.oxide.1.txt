@@ -1,0 +1,26 @@
+fn main() {
+    let word_sequence = "Now I need a drink, alcoholic of course, after the heavy lectures involving quantum mechanics. "
+    let word_sequence_as_bytes = str_len(word_sequence)
+    let word_sequence_as_chars = chars(word_sequence)
+    let vowels = vec()
+    for i in range(0, word_sequence_as_chars) {
+        let current_char = get(word_sequence_as_chars, i)
+        if (current_char == "a") {
+            push(vowels, current_char)
+        }
+        if (current_char == "e") {
+            push(vowels, current_char)
+        }
+        if (current_char == "i") {
+            push(vowels, current_char)
+        }
+        if (current_char == "o") {
+            push(vowels, current_char)
+        }
+        if (current_char == "u") {
+            push(vowels, current_char)
+        }
+    }
+    let number_of_vowels = len(vowels)
+    print(number_of_vowels)
+}

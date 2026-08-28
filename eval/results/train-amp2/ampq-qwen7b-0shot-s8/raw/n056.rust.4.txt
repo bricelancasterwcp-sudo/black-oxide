@@ -1,0 +1,15 @@
+fn main() {
+    let texts = vec!["7", "x", "9", "?"];
+    let mut total = 0;
+    let mut count_non_numbers = 0;
+
+    for text in texts {
+        match text.parse::<i32>() {
+            Ok(num) => total += num,
+            Err(_) => count_non_numbers += 1,
+        }
+    }
+
+    println!("Total: {}", total);
+    println!("Non-numbers: {}", count_non_numbers);
+}

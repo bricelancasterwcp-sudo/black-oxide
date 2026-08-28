@@ -1,0 +1,6 @@
+fn main() {
+    println!("drum");
+    for byte in b"drum" {
+        print!("{}", byte as char);
+    }
+}

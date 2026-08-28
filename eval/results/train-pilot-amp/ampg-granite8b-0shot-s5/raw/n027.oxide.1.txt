@@ -1,0 +1,8 @@
+fn main() {
+    let c = "c"
+    let a = "a"
+    let t = "t"
+    print(c)
+    print(a)
+    print(t)
+}

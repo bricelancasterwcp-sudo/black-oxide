@@ -1,0 +1,10 @@
+struct StockedItem {
+    unit_price: Int,
+    num_units: Int,
+}
+
+fn main() {
+    let stock1 = StockedItem { unit_price: 3, num_units: 4 }
+    let stock2 = StockedItem { unit_price: 2, num_units: 5 }
+    print(stock1.unit_price * stock1.num_units + stock2.unit_price * stock2.num_units)
+}

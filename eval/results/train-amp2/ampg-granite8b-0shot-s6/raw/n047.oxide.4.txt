@@ -1,0 +1,26 @@
+struct List { data: Int, next: Option<Box<List>> }
+
+fn collect_evens() -> Option<Box<List>> {
+    let mut head: Option<Box<List>> = None
+    for i in range(1, 11) {
+        if i % 2 == 0 {
+            head = Some(Box { data: i, next: head })
+        }
+    }
+    head
+}
+
+fn print_list(head: Option<Box<List>>) {
+    let mut inhead = head
+    while inhead.is_some() {
+        let inn = inhead.unwrap()
+        print(inn.data)
+        print("\n")
+        inhead = inn.next
+    }
+}
+
+fn main() {
+    let list = collect_evens()
+    print_list(list)
+}

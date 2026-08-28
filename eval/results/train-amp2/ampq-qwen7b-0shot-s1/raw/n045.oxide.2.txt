@@ -1,0 +1,5 @@
+fn main() {
+    let entries = vec(6, 7, 8, 9)
+    print(print_str(entries.get(0).unwrap()))
+    print(print_str(entries.get(3).unwrap()))
+}

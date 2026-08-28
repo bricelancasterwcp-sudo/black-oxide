@@ -1,0 +1,244 @@
+fn longest_fruit(fruits: &Vec<String>) -> String {
+    let mut longest = fruits.first().unwrap().clone()
+    for fruit in fruits {
+        if fruit.len() > longest.len() {
+            longest = fruit.clone()
+        }
+    }
+    longest
+}
+
+fn main() {
+    let fruits = vec_str("fig", "banana", "kiwi")
+    print(longest_fruit(&fruits))
+    print(longest_fruit(&fruits).len())
+}
+
+fn vec_str(items: &String, items: &String, items: &String) -> Vec<String> {
+    vec(items.to_string(), items.to_string(), items.to_string())
+}
+
+fn longest_fruit(fruits: &Vec<String>) -> String {
+    let mut longest = fruits.first().unwrap().clone()
+    for fruit in fruits {
+        if fruit.len() > longest.len() {
+            longest = fruit.clone()
+        }
+    }
+    longest
+}
+
+fn main() {
+    let fruits = vec_str("fig", "banana", "kiwi")
+    print(longest_fruit(&fruits))
+    print(longest_fruit(&fruits).len())
+}
+
+fn vec_str(items: &String, items: &String, items: &String) -> Vec<String> {
+    vec(items.to_string(), items.to_string(), items.to_string())
+}
+
+fn longest_fruit(fruits: &Vec<String>) -> String {
+    let mut longest = fruits.first().unwrap().clone()
+    for fruit in fruits {
+        if fruit.len() > longest.len() {
+            longest = fruit.clone()
+        }
+    }
+    longest
+}
+
+fn main() {
+    let fruits = vec_str("fig", "banana", "kiwi")
+    print(longest_fruit(&fruits))
+    print(longest_fruit(&fruits).len())
+}
+
+fn vec_str(items: &String, items: &String, items: &String) -> Vec<String> {
+    vec(items.to_string(), items.to_string(), items.to_string())
+}
+
+fn longest_fruit(fruits: &Vec<String>) -> String {
+    let mut longest = fruits.first().unwrap().clone()
+    for fruit in fruits {
+        if fruit.len() > longest.len() {
+            longest = fruit.clone()
+        }
+    }
+    longest
+}
+
+fn main() {
+    let fruits = vec_str("fig", "banana", "kiwi")
+    print(longest_fruit(&fruits))
+    print(longest_fruit(&fruits).len())
+}
+
+fn vec_str(items: &String, items: &String, items: &String) -> Vec<String> {
+    vec(items.to_string(), items.to_string(), items.to_string())
+}
+
+fn longest_fruit(fruits: &Vec<String>) -> String {
+    let mut longest = fruits.first().unwrap().clone()
+    for fruit in fruits {
+        if fruit.len() > longest.len() {
+            longest = fruit.clone()
+        }
+    }
+    longest
+}
+
+fn main() {
+    let fruits = vec_str("fig", "banana", "kiwi")
+    print(longest_fruit(&fruits))
+    print(longest_fruit(&fruits).len())
+}
+
+fn vec_str(items: &String, items: &String, items: &String) -> Vec<String> {
+    vec(items.to_string(), items.to_string(), items.to_string())
+}
+
+fn longest_fruit(fruits: &Vec<String>) -> String {
+    let mut longest = fruits.first().unwrap().clone()
+    for fruit in fruits {
+        if fruit.len() > longest.len() {
+            longest = fruit.clone()
+        }
+    }
+    longest
+}
+
+fn main() {
+    let fruits = vec_str("fig", "banana", "kiwi")
+    print(longest_fruit(&fruits))
+    print(longest_fruit(&fruits).len())
+}
+
+fn vec_str(items: &String, items: &String, items: &String) -> Vec<String> {
+    vec(items.to_string(), items.to_string(), items.to_string())
+}
+
+fn longest_fruit(fruits: &Vec<String>) -> String {
+    let mut longest = fruits.first().unwrap().clone()
+    for fruit in fruits {
+        if fruit.len() > longest.len() {
+            longest = fruit.clone()
+        }
+    }
+    longest
+}
+
+fn main() {
+    let fruits = vec_str("fig", "banana", "kiwi")
+    print(longest_fruit(&fruits))
+    print(longest_fruit(&fruits).len())
+}
+
+fn vec_str(items: &String, items: &String, items: &String) -> Vec<String> {
+    vec(items.to_string(), items.to_string(), items.to_string())
+}
+
+fn longest_fruit(fruits: &Vec<String>) -> String {
+    let mut longest = fruits.first().unwrap().clone()
+    for fruit in fruits {
+        if fruit.len() > longest.len() {
+            longest = fruit.clone()
+        }
+    }
+    longest
+}
+
+fn main() {
+    let fruits = vec_str("fig", "banana", "kiwi")
+    print(longest_fruit(&fruits))
+    print(longest_fruit(&fruits).len())
+}
+
+fn vec_str(items: &String, items: &String, items: &String) -> Vec<String> {
+    vec(items.to_string(), items.to_string(), items.to_string())
+}
+
+fn longest_fruit(fruits: &Vec<String>) -> String {
+    let mut longest = fruits.first().unwrap().clone()
+    for fruit in fruits {
+        if fruit.len() > longest.len() {
+            longest = fruit.clone()
+        }
+    }
+    longest
+}
+
+fn main() {
+    let fruits = vec_str("fig", "banana", "kiwi")
+    print(longest_fruit(&fruits))
+    print(longest_fruit(&fruits).len())
+}
+
+fn vec_str(items: &String, items: &String, items: &String) -> Vec<String> {
+    vec(items.to_string(), items.to_string(), items.to_string())
+}
+
+fn longest_fruit(fruits: &Vec<String>) -> String {
+    let mut longest = fruits.first().unwrap().clone()
+    for fruit in fruits {
+        if fruit.len() > longest.len() {
+            longest = fruit.clone()
+        }
+    }
+    longest
+}
+
+fn main() {
+    let fruits = vec_str("fig", "banana", "kiwi")
+    print(longest_fruit(&fruits))
+    print(longest_fruit(&fruits).len())
+}
+
+fn vec_str(items: &String, items: &String, items: &String) -> Vec<String> {
+    vec(items.to_string(), items.to_string(), items.to_string())
+}
+
+fn longest_fruit(fruits: &Vec<String>) -> String {
+    let mut longest = fruits.first().unwrap().clone()
+    for fruit in fruits {
+        if fruit.len() > longest.len() {
+            longest = fruit.clone()
+        }
+    }
+    longest
+}
+
+fn main() {
+    let fruits = vec_str("fig", "banana", "kiwi")
+    print(longest_fruit(&fruits))
+    print(longest_fruit(&fruits).len())
+}
+
+fn vec_str(items: &String, items: &String, items: &String) -> Vec<String> {
+    vec(items.to_string(), items.to_string(), items.to_string())
+}
+
+fn longest_fruit(fruits: &Vec<String>) -> String {
+    let mut longest = fruits.first().unwrap().clone()
+    for fruit in fruits {
+        if fruit.len() > longest.len() {
+            longest = fruit.clone()
+        }
+    }
+    longest
+}
+
+fn main() {
+    let fruits = vec_str("fig", "banana", "kiwi")
+    print(longest_fruit(&fruits))
+    print(longest_fruit(&fruits).len())
+}
+
+fn vec_str(items: &String, items: &String, items: &String) -> Vec<String> {
+    vec(items.to_string(), items.to_string(), items.to_string())
+}
+
+fn longest_fruit(fruits: &Vec<String>) -> String {
+    let mut longest = fruits.first().unwrap().clone()
+    for fruit in fruits {
+        if fruit.len() >

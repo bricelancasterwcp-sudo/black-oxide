@@ -1,0 +1,7 @@
+```rust
+const L: [i32; 4] = [10, 20, 30, 40];
+
+fn main() {
+    println!("{}", L.get(2).unwrap_or(&"missing"));
+}
+```

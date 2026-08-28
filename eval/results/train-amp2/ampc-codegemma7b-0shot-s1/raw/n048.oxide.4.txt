@@ -1,0 +1,18 @@
+fn find_positions(numbers: Vec<Int>) -> Vec<Int> {
+    let mut positions = vec_int()
+    for i in 0.to(len(numbers) - 1) {
+        if numbers.get(i) == Some(4) {
+            push(positions, i)
+        }
+    }
+    positions
+}
+
+fn main() {
+    let numbers = vec_int(4, 7, 4, 9, 4)
+    let positions = find_positions(numbers)
+    for p in positions {
+        print(p)
+        print_str("\n")
+    }
+}

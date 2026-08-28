@@ -1,0 +1,8 @@
+fn main() {
+    let num = 9875
+    let mut sum = 0
+    for digit in num.to_string().chars() {
+        sum = sum + digit.to_digit(10).unwrap()?
+    }
+    print(sum)
+}

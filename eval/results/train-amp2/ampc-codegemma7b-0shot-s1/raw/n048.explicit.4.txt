@@ -1,0 +1,383 @@
+fn count_fours(numbers: &Vec<Int>) -> Vec<Int> {
+    let mut positions = vec()
+    for i in 0.to_int() {
+        if numbers.get(i) == Some(4) {
+            positions = push(positions, i)
+        }
+    }
+    positions
+}
+
+fn main() {
+    let numbers = vec(4, 7, 4, 9, 4)
+    let positions = count_fours(&numbers)
+    for p in &positions {
+        print(p)
+        print("\n")
+    }
+    drop numbers
+    drop positions
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    vec(x, v)
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    if i < v.len() {
+        Some(v.get(i)?)
+    } else {
+        None
+    }
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    v.len()
+}
+
+fn to_int(x: Int) -> Int {
+    x
+}
+
+fn vec() -> Vec<Int> {
+    vec()
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print_str(x: &Str) {
+    print(x)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut v = vec()
+    for i in a.to_int() {
+        if i < b {
+            v = push(v, i)
+        }
+    }
+    v
+}
+
+fn clone(x: &Int) -> Int {
+    x.clone()
+}
+
+fn str_len(s: &Str) -> Int {
+    s.len()
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    a.to_string() + b.to_string()
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut v = vec()
+    for c in s.chars() {
+        v = push(v, c.to_string())
+    }
+    v
+}
+
+fn int_to_str(n: Int) -> Str {
+    n.to_string()
+}
+
+fn parse_int(s: &Str) -> Option<Int> {
+    match s.parse() {
+        Ok(n) => Some(n),
+        Err(_) => None,
+    }
+}
+
+fn trunc(x: Int) -> Int {
+    if x < 0 {
+        x
+    } else {
+        0
+    }
+}
+
+fn drop_vec(v: &Vec<Int>) {
+    v.iter().for_each(drop_int)
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_positions(p: &Vec<Int>) {
+    p.iter().for_each(drop_int)
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_numbers(n: &Vec<Int>) {
+    drop_vec(n)
+}
+
+fn drop_numbers(n: &Vec<Int>) {
+    drop_vec(n)
+}
+
+fn drop_positions(p: &Vec<Int>) {
+    drop_positions(p)
+}
+
+fn drop_positions(p: &Vec<Int>) {
+    drop_positions(p)
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_positions(p: &Vec<Int>) {
+    drop_positions(p)
+}
+
+fn drop_positions(p: &Vec<Int>) {
+    drop_positions(p)
+}
+
+fn drop_positions(p: &Vec<Int>) {
+    drop_positions(p)
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &Int) {
+    drop i
+}
+
+fn drop_int(i: &

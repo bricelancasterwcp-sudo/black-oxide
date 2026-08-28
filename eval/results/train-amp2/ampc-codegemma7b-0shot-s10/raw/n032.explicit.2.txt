@@ -1,0 +1,428 @@
+fn main() {
+    let start = Point { x: 1, y: 5 }
+    let end = Point { x: 10, y: 5 }
+    print(start.y + end.x)
+}
+
+struct Point {
+    x: Int,
+    y: Int,
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut new_vec = v
+    new_vec.push(x)
+    new_vec
+}
+
+fn print(x: Int) {
+    let s = int_to_str(x)
+    print_str(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut digits = vec()
+    let mut n_copy = n
+    while n_copy > 0 {
+        digits.push(n_copy % 10)
+        n_copy = trunc(n_copy / 10)
+    }
+    let mut s = str()
+    for digit in &digits {
+        s = concat(s, int_to_str(digit))
+    }
+    s
+}
+
+fn print_str(s: Str) {
+    for c in chars(s) {
+        print(c)
+    }
+    print(Unit)
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut chars = vec()
+    let mut s_copy = s
+    while len(s_copy) > 0 {
+        let c = get(s_copy, 0)
+        chars.push(c)
+        s_copy = drop_first(s_copy)
+    }
+    chars
+}
+
+fn drop_first(s: Str) -> Str {
+    let mut new_str = str()
+    for c in chars(s) {
+        if len(new_str) != 0 {
+            new_str = concat(new_str, c)
+        } else {
+            new_str = c
+        }
+    }
+    new_str
+}
+
+fn len(s: Str) -> Int {
+    let mut count = 0
+    for _ in chars(s) {
+        count = count + 1
+    }
+    count
+}
+
+fn get(s: Str, i: Int) -> Str {
+    let mut s_copy = s
+    for _ in 0.to(i) {
+        let c = drop_first(s_copy)
+        s_copy = c
+    }
+    s_copy
+}
+
+fn trunc(x: Int) -> Int {
+    if x < 0 {
+        return x
+    } else {
+        return x - (x % 1)
+    }
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut new_str = str()
+    for c in chars(a) {
+        new_str = concat(new_str, c)
+    }
+    for c in chars(b) {
+        new_str = concat(new_str, c)
+    }
+    new_str
+}
+
+fn clone(x: &T) -> T {
+    let mut new_x = x
+    new_x
+}
+
+enum Unit {
+    Unit,
+}
+
+enum Option {
+    Some(T),
+    None,
+}
+
+enum Result {
+    Ok(T),
+    Err(E),
+}
+
+enum Int {
+    Int(Int),
+}
+
+enum Float {
+    Float(Float),
+}
+
+enum Bool {
+    Bool(Bool),
+}
+
+enum Str {
+    Str(Str),
+}
+
+enum Vec {
+    Vec(Vec),
+}
+
+enum Struct {
+    Struct(Struct),
+}
+
+enum Enum {
+    Enum(Enum),
+}
+
+enum Variant {
+    Variant(Variant),
+}
+
+enum Nullary {
+    Nullary,
+}
+
+enum Pattern {
+    Variant(Binders),
+    Nullary,
+    Underscore,
+}
+
+enum Binders {
+    Binders(Binders),
+    None,
+}
+
+enum Type {
+    Int,
+    Float,
+    Bool,
+    Str,
+    Unit,
+    Vec,
+    Struct,
+    Enum,
+    Option,
+    Result,
+}
+
+enum Parameter {
+    Parameter(Type),
+    Reference(Type),
+}
+
+enum Statement {
+    Let(Identifier, Expression),
+    Reassign(Identifier, Expression),
+    Return(Expression),
+    While(Expression, Block),
+    For(Identifier, Expression, Expression, Block),
+    Break,
+    Continue,
+    Drop(Identifier),
+    Expression(Expression),
+}
+
+enum Expression {
+    Identifier(Identifier),
+    Literal(Literal),
+    Binary(Operator, Expression, Expression),
+    Unary(Operator, Expression),
+    Call(Identifier, Vec),
+    If(Expression, Block, Block),
+    Match(Expression, Vec),
+    Try(Expression),
+    FunctionalUpdate(Identifier, Expression),
+}
+
+enum Identifier {
+    Identifier(Identifier),
+    Field(Identifier, Identifier),
+    Pattern(Pattern),
+}
+
+enum Literal {
+    Int(Int),
+    Float(Float),
+    Bool(Bool),
+    Str(Str),
+    Unit,
+    Nullary,
+}
+
+enum Operator {
+    Plus,
+    Minus,
+    Multiply,
+    Divide,
+    Modulo,
+    Equal,
+    NotEqual,
+    LessThan,
+    GreaterThan,
+    LessThanOrEqual,
+    GreaterThanOrEqual,
+    And,
+    Or,
+    Not,
+    Dereference,
+    Index,
+    Assignement,
+}
+
+enum Block {
+    Block(Vec),
+}
+
+enum Item {
+    Function(Function),
+    Struct(Struct),
+    Enum(Enum),
+}
+
+enum Function {
+    Function(Identifier, Vec, Type),
+}
+
+enum Struct {
+    Struct(Identifier, Vec),
+}
+
+enum Enum {
+    Enum(Identifier, Vec),
+}
+
+enum Variant {
+    Variant(Identifier, Vec),
+}
+
+enum Nullary {
+    Nullary,
+}
+
+enum Pattern {
+    Variant(Binders),
+    Nullary,
+    Underscore,
+}
+
+enum Binders {
+    Binders(Binders),
+    None,
+}
+
+enum Type {
+    Int,
+    Float,
+    Bool,
+    Str,
+    Unit,
+    Vec,
+    Struct,
+    Enum,
+    Option,
+    Result,
+}
+
+enum Parameter {
+    Parameter(Type),
+    Reference(Type),
+}
+
+enum Statement {
+    Let(Identifier, Expression),
+    Reassign(Identifier, Expression),
+    Return(Expression),
+    While(Expression, Block),
+    For(Identifier, Expression, Expression, Block),
+    Break,
+    Continue,
+    Drop(Identifier),
+    Expression(Expression),
+}
+
+enum Expression {
+    Identifier(Identifier),
+    Literal(Literal),
+    Binary(Operator, Expression, Expression),
+    Unary(Operator, Expression),
+    Call(Identifier, Vec),
+    If(Expression, Block, Block),
+    Match(Expression, Vec),
+    Try(Expression),
+    FunctionalUpdate(Identifier, Expression),
+}
+
+enum Identifier {
+    Identifier(Identifier),
+    Field(Identifier, Identifier),
+    Pattern(Pattern),
+}
+
+enum Literal {
+    Int(Int),
+    Float(Float),
+    Bool(Bool),
+    Str(Str),
+    Unit,
+    Nullary,
+}
+
+enum Operator {
+    Plus,
+    Minus,
+    Multiply,
+    Divide,
+    Modulo,
+    Equal,
+    NotEqual,
+    LessThan,
+    GreaterThan,
+    LessThanOrEqual,
+    GreaterThanOrEqual,
+    And,
+    Or,
+    Not,
+    Dereference,
+    Index,
+    Assignement,
+}
+
+enum Block {
+    Block(Vec),
+}
+
+enum Item {
+    Function(Function),
+    Struct(Struct),
+    Enum(Enum),
+}
+
+enum Function {
+    Function(Identifier, Vec, Type),
+}
+
+enum Struct {
+    Struct(Identifier, Vec),
+}
+
+enum Enum {
+    Enum(Identifier, Vec),
+}
+
+enum Variant {
+    Variant(Identifier, Vec),
+}
+
+enum Nullary {
+    Nullary,
+}
+
+enum Pattern {
+    Variant(Binders),
+    Nullary,
+    Underscore,
+}
+
+enum Binders {
+    Binders(Binders),
+    None,
+}
+
+enum Type {
+    Int,
+    Float,
+    Bool,
+    Str,
+    Unit,
+    Vec,
+    Struct,
+    Enum,
+    Option,
+    Result,
+}
+
+enum Parameter {
+    Parameter(Type),
+    Reference(Type),
+}
+
+enum Statement {
+    Let(Identifier, Expression),
+    Reassign(Identifier, Expression),
+    Return(Expression),
+    While(Expression, Block),
+    For(

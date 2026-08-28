@@ -1,0 +1,10 @@
+fn main() {
+    let a = [8, 3, 11, 6];
+
+    let smallest = a.iter().min().unwrap();
+    let largest = a.iter().max().unwrap();
+
+    println!("Smallest: {}", smallest);
+    println!("Largest: {}", largest);
+    println!("Gap: {}", largest - smallest);
+}

@@ -1,0 +1,8 @@
+fn cat() {
+    print_str("c\na\nt\n")
+}
+
+fn main() {
+    cat()
+    cat()
+}

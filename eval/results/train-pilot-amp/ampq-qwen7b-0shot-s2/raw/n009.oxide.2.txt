@@ -1,0 +1,15 @@
+struct Digits { value: Int }
+
+fn reverse(digits: Vec<Int>) -> Vec<Int> {
+    let mut reversed = vec()
+    for digit in digits {
+        reversed = push(reversed, digit)
+    }
+    reversed
+}
+
+fn main() {
+    let digits = vec(1, 2, 3, 4)
+    let reversed_digits = reverse(digits)
+    print(reversed_digits)
+}

@@ -1,0 +1,10 @@
+fn main() {
+    let mut a = 1;
+    let mut b = 1;
+    for _ in 2..10 {
+        let next = a + b;
+        a = b;
+        b = next;
+    }
+    println!("{}", b);
+}

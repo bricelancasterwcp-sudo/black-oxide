@@ -1,0 +1,14 @@
+fn main() {
+    let mut total = 0
+    let mut seen = 0
+    for x in vec(7, 4, 9, 10) {
+        if x % 2 == 0 {
+            total = total + x
+        } else {
+            seen = seen + 1
+            print_str(format("{},", x * 2))
+        }
+    }
+    print_str(format("\nTotal evens: {}\n", total))
+    print_str(format("Odd entries seen: {}\n", seen))
+}

@@ -1,0 +1,9 @@
+fn main() {
+    let mut vec = push(push(push(vec(), 1), 2), 3)
+    push(vec, 4)
+    print(vec.get(3).unwrap())
+    print(vec.get(2).unwrap())
+    print(vec.get(1).unwrap())
+    print(vec.get(0).unwrap())
+    drop vec
+}

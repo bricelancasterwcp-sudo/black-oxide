@@ -1,0 +1,7 @@
+fn main() {
+    let x = 5
+    let y = 6
+    if x + y > 4 {
+        print(x + y)
+    }
+}

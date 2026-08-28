@@ -1,0 +1,10 @@
+fn main() {
+    let mut total = 0;
+    let mut multiples = Vec::new();
+    for i in 1..=6 {
+        let multiple = i * 4;
+        multiples.push(multiple);
+        total += multiple;
+    }
+    println!("Total: {}", total);
+}

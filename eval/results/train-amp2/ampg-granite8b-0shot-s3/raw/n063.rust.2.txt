@@ -1,0 +1,8 @@
+fn main() {
+    let four_for_three = 4 * 3;
+    let five_for_two = 5 * 2;
+
+    println!(" Four for three: {}", four_for_three);
+    println!("Five for two: {}", five_for_two);
+    println!("Total: {}", four_for_three + five_for_two);
+}

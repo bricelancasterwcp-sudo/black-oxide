@@ -1,0 +1,17 @@
+fn walk(nums: Vec<Int>) -> Int {
+    let mut total = 0
+    for n in nums {
+        if n % 2 != 0 {
+            print(n * 2)
+            print_str("\n")
+        } else {
+            total = total + n
+        }
+    }
+    total
+}
+
+fn main() {
+    let v = vec(7, 4, 9, 10)
+    print(walk(v))
+}

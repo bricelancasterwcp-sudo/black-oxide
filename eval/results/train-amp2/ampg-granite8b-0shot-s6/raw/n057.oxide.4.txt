@@ -1,0 +1,8 @@
+struct Name { field: Type }
+
+fn main() {
+    let name = Name { field: "fig" }
+    if len(name.field) > 3 {
+        print(name.field)
+    }
+}

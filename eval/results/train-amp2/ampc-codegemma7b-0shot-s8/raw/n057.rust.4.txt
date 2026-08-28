@@ -1,0 +1,13 @@
+fn main() {
+    let mut max_name = "";
+    let mut max_len = 0;
+
+    for name in ["fig", "banana", "kiwi"] {
+        if name.len() > max_len {
+            max_len = name.len();
+            max_name = name.to_string();
+        }
+    }
+
+    println!("{} {}", max_name, max_len);
+}

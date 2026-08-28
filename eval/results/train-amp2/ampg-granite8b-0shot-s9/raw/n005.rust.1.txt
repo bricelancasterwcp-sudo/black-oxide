@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let mut total = 0;
+
+    for i in 1..=20 {
+        if i % 2 == 0 {
+            total += i;
+        }
+    }
+
+    println!("Total of even numbers: {}", total);
+}
+```
+
+This solution creates a variable total and initializes it to 0. It then uses a for loop to iterate through the numbers 1 to 20. For each number, it checks if the number is even (i % 2 == 0) and if so, adds it to the total. Finally, it prints the total of all even numbers.

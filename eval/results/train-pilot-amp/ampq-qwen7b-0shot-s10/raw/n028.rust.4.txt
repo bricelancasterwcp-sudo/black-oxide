@@ -1,0 +1,5 @@
+fn main() {
+    if let Err(_) = u32::from_str("abc") {
+        println!("bad");
+    }
+}

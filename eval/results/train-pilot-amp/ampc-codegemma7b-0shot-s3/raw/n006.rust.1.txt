@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let mut largest_power_of_two = 1;
+    while largest_power_of_two * 2 <= 100 {
+        largest_power_of_two *= 2;
+    }
+    println!("{}", largest_power_of_two);
+}
+```

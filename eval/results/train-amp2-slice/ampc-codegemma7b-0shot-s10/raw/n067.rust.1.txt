@@ -1,0 +1,15 @@
+fn main() {
+    let mut total = 0;
+    let mut walk = 0;
+    let mut nums = [7, 4, 9, 10];
+    while walk < nums.len() {
+        let num = nums[walk];
+        if num % 2 == 1 {
+            println!("{}", num * 2);
+        } else {
+            total += num;
+        }
+        walk += 1;
+    }
+    println!("{}", total);
+}

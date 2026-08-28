@@ -1,0 +1,8 @@
+fn main() {
+    let mut positions = vec![4, 7, 4, 9, 4];
+    for (i, &x) in positions.iter().enumerate() {
+        if x == 4 {
+            println!("{}", i);
+        }
+    }
+}

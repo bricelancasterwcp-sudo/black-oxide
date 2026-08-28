@@ -1,0 +1,16 @@
+fn max(a: Int, b: Int) -> Int {
+    if a > b {
+        a
+    } else {
+        b
+    }
+}
+
+fn main() {
+    let nums = vec(12, 5, 20, 8, 17)
+    let largest = max(nums, 0)
+    print(largest)
+    let second_largest = max(nums, largest)
+    print(second_largest)
+    drop nums
+}

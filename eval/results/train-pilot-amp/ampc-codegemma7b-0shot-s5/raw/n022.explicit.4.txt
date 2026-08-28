@@ -1,0 +1,319 @@
+fn oxides_black() -> Str {
+    concat("oxide", "black")
+}
+
+fn main() {
+    print(oxides_black())
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut v = v
+    v.push(x)
+    return v
+}
+
+fn print(s: Str) {
+    print_str(s)
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    a + b
+}
+
+fn print_str(s: Str) {
+    let s = str_len(s)
+    for i in 0.range(s) {
+        print(chars(s).get(i).unwrap())
+    }
+}
+
+fn str_len(s: Str) -> Int {
+    let mut i = 0
+    for _ in s {
+        i = i + 1
+    }
+    return i
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut v = vec()
+    for c in s {
+        push(v, c)
+    }
+    return v
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    if i < len(v) {
+        return Some(v.get(i).unwrap())
+    } else {
+        return None
+    }
+}
+
+fn len(v: Vec<Int>) -> Int {
+    let mut i = 0
+    for _ in v {
+        i = i + 1
+    }
+    return i
+}
+
+fn clone(x: Int) -> Int {
+    x
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut s = vec()
+    let mut n = n
+    while n > 0 {
+        let r = n % 10
+        n = trunc(n / 10)
+        s.push(int_to_char(r))
+    }
+    let mut t = ""
+    for c in s {
+        t = t + &c
+    }
+    return t
+}
+
+fn int_to_char(n: Int) -> Str {
+    if n < 10 {
+        return int_to_str(n)
+    } else {
+        let mut c = int_to_str(n - 10)
+        c.push(char(n + 48))
+        return c
+    }
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    let mut n = 0
+    let mut s = s
+    while len(s) > 0 {
+        let c = s.get(0).unwrap()
+        let mut i = 0
+        for d in "0123456789" {
+            if c == d {
+                i = i + 1
+            }
+        }
+        if i == 0 {
+            return None
+        }
+        s = drop_first(s)
+        n = n * 10 + (i - 1)
+    }
+    return Some(n)
+}
+
+fn drop_first(s: Str) -> Str {
+    if len(s) > 0 {
+        return get(s, 1).unwrap()
+    } else {
+        return ""
+    }
+}
+
+fn to_float(n: Int) -> Float {
+    return Float(n)
+}
+
+fn trunc(x: Int) -> Int {
+    if x >= 0 {
+        return x
+    } else {
+        return x - 1
+    }
+}
+
+struct Float {
+    value: Int,
+}
+
+fn main() {
+    let nums = push(push(vec(), 5), 40)
+    let bigger = extend(clone(&nums), 70)
+    print(sum_big(&nums, 10))
+    drop nums
+    print(sum_big(&bigger, 10))
+    drop bigger
+}
+
+fn extend(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let total = 0
+    for x in &v {
+        if x > limit {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn drop_first(s: Str) -> Str {
+    if len(s) > 0 {
+        return get(s, 1).unwrap()
+    } else {
+        return ""
+    }
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    let mut n = 0
+    let mut s = s
+    while len(s) > 0 {
+        let c = s.get(0).unwrap()
+        let mut i = 0
+        for d in "0123456789" {
+            if c == d {
+                i = i + 1
+            }
+        }
+        if i == 0 {
+            return None
+        }
+        s = drop_first(s)
+        n = n * 10 + (i - 1)
+    }
+    return Some(n)
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut s = vec()
+    let mut n = n
+    while n > 0 {
+        let r = n % 10
+        n = trunc(n / 10)
+        s.push(int_to_char(r))
+    }
+    let mut t = ""
+    for c in s {
+        t = t + &c
+    }
+    return t
+}
+
+fn int_to_char(n: Int) -> Str {
+    if n < 10 {
+        return int_to_str(n)
+    } else {
+        let mut c = int_to_str(n - 10)
+        c.push(char(n + 48))
+        return c
+    }
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut v = vec()
+    for c in s {
+        push(v, c)
+    }
+    return v
+}
+
+fn str_len(s: Str) -> Int {
+    let mut i = 0
+    for _ in s {
+        i = i + 1
+    }
+    return i
+}
+
+fn print_str(s: Str) {
+    let s = str_len(s)
+    for i in 0.range(s) {
+        print(chars(s).get(i).unwrap())
+    }
+}
+
+fn print(s: Str) {
+    print_str(s)
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut v = v
+    v.push(x)
+    return v
+}
+
+fn len(v: Vec<Int>) -> Int {
+    let mut i = 0
+    for _ in v {
+        i = i + 1
+    }
+    return i
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    if i < len(v) {
+        return Some(v.get(i).unwrap())
+    } else {
+        return None
+    }
+}
+
+fn clone(x: Int) -> Int {
+    x
+}
+
+fn to_float(n: Int) -> Float {
+    return Float(n)
+}
+
+fn trunc(x: Int) -> Int {
+    if x >= 0 {
+        return x
+    } else {
+        return x - 1
+    }
+}
+
+struct Float {
+    value: Int,
+}
+
+fn oxides_black() -> Str {
+    concat("oxide", "black")
+}
+
+fn main() {
+    print(oxides_black())
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut v = v
+    v.push(x)
+    return v
+}
+
+fn print(s: Str) {
+    print_str(s)
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    a + b
+}
+
+fn print_str(s: Str) {
+    let s = str_len(s)
+    for i in 0.range(s) {
+        print(chars(s).get(i).unwrap())
+    }
+}
+
+fn str_len(s: Str) -> Int {
+    let mut i = 0
+    for _ in s {
+        i = i + 1
+    }
+    return i
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut v = vec()
+    for

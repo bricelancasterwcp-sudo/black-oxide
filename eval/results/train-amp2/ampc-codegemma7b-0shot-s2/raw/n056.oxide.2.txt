@@ -1,0 +1,15 @@
+fn sum(v: Option<Int>) -> Int {
+    match v {
+        Some(n) => n,
+        None => 0,
+    }
+}
+
+fn main() {
+    let seven = Some(7)
+    let x = None
+    let nine = Some(9)
+    let question = None
+    print(sum(seven.clone()) + sum(x.clone()) + sum(nine.clone()) + sum(question.clone()))
+    print(4 - (sum(seven.clone()) + sum(x.clone()) + sum(nine.clone()) + sum(question.clone())))
+}

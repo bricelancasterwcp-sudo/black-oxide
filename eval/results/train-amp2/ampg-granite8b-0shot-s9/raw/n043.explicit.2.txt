@@ -1,0 +1,80 @@
+fn main() {
+    let mut queue = push(push(push(push(vec(), 1), 2), 3), 4)
+    let head = queue
+    let last = pop(&queue)
+    queue = push(queue, pop(&head))
+    queue = push(queue, last)
+    while !queue.is_empty() {
+        print_ln(pop(&queue))
+    }
+}
+
+fn pop(queue: &Vec<Int>) -> Int {
+    get(clone(queue), 0).unwrap()
+}
+
+fn queue_push(queue: Vec<Int>, x: Int) -> Vec<Int> {
+    push(queue, x)
+}
+
+fn queue_pop(queue: Vec<Int>) -> Int {
+    let last = get(clone(queue), queue.len() - 1).unwrap()
+    queue_push(queue, last)
+}
+
+fn print_ln(x: Int) {
+    print(x)
+    print("\n")
+}
+
+fn print(x: Int) {
+    println("number is {}", x)
+}
+
+fn println(s: Str) {
+    print_str(s)
+}
+
+fn print_str(s: Str) {
+    print_str("string is ")
+    print_str(s)
+}
+
+fn vec() -> Vec<Int> {
+    vec()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn is_empty(v: Vec<Int>) -> Bool {
+    v.is_empty()
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    range(a, b)
+}
+
+fn clone(x: Int) -> Int {
+    x
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    get(v, i)
+}
+
+fn main() {
+    let mut queue = vec()
+    queue = push(queue, 1)
+    queue = push(queue, 2)
+    queue = push(queue, 3)
+    queue = push(queue, 4)
+    let head = queue
+    let last = pop(&queue)
+    queue = push(queue, pop(&head))
+    queue = push(queue, last)
+    while !queue.is_empty() {
+        print_ln(pop(&queue))
+    }
+}

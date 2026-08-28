@@ -1,0 +1,13 @@
+fn run_backwards(s: Str) -> Str {
+    let mut result = String()
+    for c in s.chars().rev() {
+        result.push(c)
+    }
+    result
+}
+
+fn main() {
+    let word = "drum"
+    print_str(run_backwards(word))
+    print_str(word)
+}

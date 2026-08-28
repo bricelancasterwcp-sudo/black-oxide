@@ -1,0 +1,389 @@
+fn main() {
+    let sensor = init_sensor()
+    let reading = get_reading(&sensor)
+    set_reading(&mutsensor, 7)
+    print_reading(&reading)
+}
+
+fn init_sensor() -> Sensor {
+    Sensor(0)
+}
+
+fn get_reading(sensor: &Sensor) -> Int {
+    match sensor {
+        Sensor(r) => r.clone(),
+    }
+}
+
+fn set_reading(sensor: &Sensor, n: Int) {
+    match sensor {
+        Sensor(r) => r.clone() == n,
+    }
+}
+
+fn print_reading(n: &Int) {
+    print(n)
+}
+
+struct Sensor {
+    pub0: Int,
+}
+
+struct Int {
+    pub0: Int,
+}
+
+fn print(n: &Int) {
+    println(n)
+}
+
+fn println(n: &Int) {
+    print_str("The reading is ")
+    print_str(n)
+    print_str("\n")
+}
+
+fn clone(n: &Int) -> Int {
+    Int(n.pub0.clone())
+}
+
+fn main() {
+    let sensor = init_sensor()
+    let reading = get_reading(&sensor)
+    set_reading(&mutsensor, 7)
+    print_reading(&reading)
+}
+
+fn init_sensor() -> Sensor {
+    Sensor(0)
+}
+
+fn get_reading(sensor: &Sensor) -> Int {
+    match sensor {
+        Sensor(r) => r.clone(),
+    }
+}
+
+fn set_reading(sensor: &Sensor, n: Int) {
+    match sensor {
+        Sensor(r) => r.clone() == n,
+    }
+}
+
+fn print_reading(n: &Int) {
+    print(n)
+}
+
+struct Sensor {
+    pub0: Int,
+}
+
+struct Int {
+    pub0: Int,
+}
+
+fn print(n: &Int) {
+    println(n)
+}
+
+fn println(n: &Int) {
+    print_str("The reading is ")
+    print_str(n)
+    print_str("\n")
+}
+
+fn clone(n: &Int) -> Int {
+    Int(n.pub0.clone())
+}
+
+fn main() {
+    let sensor = init_sensor()
+    let reading = get_reading(&sensor)
+    set_reading(&mutsensor, 7)
+    print_reading(&reading)
+}
+
+fn init_sensor() -> Sensor {
+    Sensor(0)
+}
+
+fn get_reading(sensor: &Sensor) -> Int {
+    match sensor {
+        Sensor(r) => r.clone(),
+    }
+}
+
+fn set_reading(sensor: &Sensor, n: Int) {
+    match sensor {
+        Sensor(r) => r.clone() == n,
+    }
+}
+
+fn print_reading(n: &Int) {
+    print(n)
+}
+
+struct Sensor {
+    pub0: Int,
+}
+
+struct Int {
+    pub0: Int,
+}
+
+fn print(n: &Int) {
+    println(n)
+}
+
+fn println(n: &Int) {
+    print_str("The reading is ")
+    print_str(n)
+    print_str("\n")
+}
+
+fn clone(n: &Int) -> Int {
+    Int(n.pub0.clone())
+}
+
+fn main() {
+    let sensor = init_sensor()
+    let reading = get_reading(&sensor)
+    set_reading(&mutsensor, 7)
+    print_reading(&reading)
+}
+
+fn init_sensor() -> Sensor {
+    Sensor(0)
+}
+
+fn get_reading(sensor: &Sensor) -> Int {
+    match sensor {
+        Sensor(r) => r.clone(),
+    }
+}
+
+fn set_reading(sensor: &Sensor, n: Int) {
+    match sensor {
+        Sensor(r) => r.clone() == n,
+    }
+}
+
+fn print_reading(n: &Int) {
+    print(n)
+}
+
+struct Sensor {
+    pub0: Int,
+}
+
+struct Int {
+    pub0: Int,
+}
+
+fn print(n: &Int) {
+    println(n)
+}
+
+fn println(n: &Int) {
+    print_str("The reading is ")
+    print_str(n)
+    print_str("\n")
+}
+
+fn clone(n: &Int) -> Int {
+    Int(n.pub0.clone())
+}
+
+fn main() {
+    let sensor = init_sensor()
+    let reading = get_reading(&sensor)
+    set_reading(&mutsensor, 7)
+    print_reading(&reading)
+}
+
+fn init_sensor() -> Sensor {
+    Sensor(0)
+}
+
+fn get_reading(sensor: &Sensor) -> Int {
+    match sensor {
+        Sensor(r) => r.clone(),
+    }
+}
+
+fn set_reading(sensor: &Sensor, n: Int) {
+    match sensor {
+        Sensor(r) => r.clone() == n,
+    }
+}
+
+fn print_reading(n: &Int) {
+    print(n)
+}
+
+struct Sensor {
+    pub0: Int,
+}
+
+struct Int {
+    pub0: Int,
+}
+
+fn print(n: &Int) {
+    println(n)
+}
+
+fn println(n: &Int) {
+    print_str("The reading is ")
+    print_str(n)
+    print_str("\n")
+}
+
+fn clone(n: &Int) -> Int {
+    Int(n.pub0.clone())
+}
+
+fn main() {
+    let sensor = init_sensor()
+    let reading = get_reading(&sensor)
+    set_reading(&mutsensor, 7)
+    print_reading(&reading)
+}
+
+fn init_sensor() -> Sensor {
+    Sensor(0)
+}
+
+fn get_reading(sensor: &Sensor) -> Int {
+    match sensor {
+        Sensor(r) => r.clone(),
+    }
+}
+
+fn set_reading(sensor: &Sensor, n: Int) {
+    match sensor {
+        Sensor(r) => r.clone() == n,
+    }
+}
+
+fn print_reading(n: &Int) {
+    print(n)
+}
+
+struct Sensor {
+    pub0: Int,
+}
+
+struct Int {
+    pub0: Int,
+}
+
+fn print(n: &Int) {
+    println(n)
+}
+
+fn println(n: &Int) {
+    print_str("The reading is ")
+    print_str(n)
+    print_str("\n")
+}
+
+fn clone(n: &Int) -> Int {
+    Int(n.pub0.clone())
+}
+
+fn main() {
+    let sensor = init_sensor()
+    let reading = get_reading(&sensor)
+    set_reading(&mutsensor, 7)
+    print_reading(&reading)
+}
+
+fn init_sensor() -> Sensor {
+    Sensor(0)
+}
+
+fn get_reading(sensor: &Sensor) -> Int {
+    match sensor {
+        Sensor(r) => r.clone(),
+    }
+}
+
+fn set_reading(sensor: &Sensor, n: Int) {
+    match sensor {
+        Sensor(r) => r.clone() == n,
+    }
+}
+
+fn print_reading(n: &Int) {
+    print(n)
+}
+
+struct Sensor {
+    pub0: Int,
+}
+
+struct Int {
+    pub0: Int,
+}
+
+fn print(n: &Int) {
+    println(n)
+}
+
+fn println(n: &Int) {
+    print_str("The reading is ")
+    print_str(n)
+    print_str("\n")
+}
+
+fn clone(n: &Int) -> Int {
+    Int(n.pub0.clone())
+}
+
+fn main() {
+    let sensor = init_sensor()
+    let reading = get_reading(&sensor)
+    set_reading(&mutsensor, 7)
+    print_reading(&reading)
+}
+
+fn init_sensor() -> Sensor {
+    Sensor(0)
+}
+
+fn get_reading(sensor: &Sensor) -> Int {
+    match sensor {
+        Sensor(r) => r.clone(),
+    }
+}
+
+fn set_reading(sensor: &Sensor, n: Int) {
+    match sensor {
+        Sensor(r) => r.clone() == n,
+    }
+}
+
+fn print_reading(n: &Int) {
+    print(n)
+}
+
+struct Sensor {
+    pub0: Int,
+}
+
+struct Int {
+    pub0: Int,
+}
+
+fn print(n: &Int) {
+    println(n)
+}
+
+fn println(n: &Int) {
+    print_str("The reading is ")
+    print_str(n)
+    print_str("\n")
+}
+
+fn clone(n: &Int) ->

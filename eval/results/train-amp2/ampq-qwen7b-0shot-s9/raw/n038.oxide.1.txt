@@ -1,0 +1,7 @@
+struct Reading { value: Int }
+
+fn main() {
+    let mut reading = Reading { value: 0 }
+    reading.value = 7
+    print(reading.value)
+}

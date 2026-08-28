@@ -1,0 +1,117 @@
+fn area(r: &Rectangle) -> Int {
+    r.width * r.height
+}
+
+fn perimeter(r: &Rectangle) -> Int {
+    2 * (r.width + r.height)
+}
+
+fn main() {
+    let r = Rectangle { width: 9, height: 3 }
+    print(area(&r))
+    print(perimeter(&r))
+    drop r
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+enum Shape {
+    Circle(Float),
+    Rectangle(Int, Int),
+}
+
+fn len(s: &Str) -> Int {
+    str_len(s)
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    vec(v, x)
+}
+
+fn print(x: Int) {
+    print_int(x)
+}
+
+fn print_int(n: Int) {
+    print(int_to_str(n))
+}
+
+fn print_str(s: &Str) {
+    print(s)
+}
+
+fn str_len(s: &Str) -> Int {
+    s.len()
+}
+
+fn int_to_str(n: Int) -> Str {
+    format("%d", n)
+}
+
+fn to_float(n: Int) -> Float {
+    n.to_float()
+}
+
+fn trunc(x: Float) -> Int {
+    x.trunc()
+}
+
+fn clone(x: &Int) -> Int {
+    Int(x.value)
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    if i < v.len() {
+        Some(v.get(i))
+    } else {
+        None
+    }
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in a.value + 1 < b.value {
+        result.push(Int(i))
+    }
+    result
+}
+
+fn vec() -> Vec<Int> {
+    vec()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    vec(v, x)
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    v.len()
+}
+
+enum Result {
+    Ok(Int),
+    Err(Str),
+}
+
+fn parse_int(s: &Str) -> Result {
+    let n = s.parse()
+    if n.is_ok() {
+        Ok(Int(n.unwrap()))
+    } else {
+        Err(format("Invalid integer: %s", s))
+    }
+}
+
+struct Int {
+    value: Int,
+}
+
+fn main() {
+    let nums = vec(1, 2, 3, 4, 5, 6, 7, 8, 9)
+    print(sum_big(&nums, 10))
+    print(perimeter(&nums))
+    drop nums
+}

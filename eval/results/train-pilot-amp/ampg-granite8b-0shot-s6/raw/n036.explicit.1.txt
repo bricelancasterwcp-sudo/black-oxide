@@ -1,0 +1,387 @@
+fn main() {
+    let stock = push(push(push(push(vec(), 4), 4), 4), 5)
+    let units = 4
+    let total = sum_big(&stock, units)
+    print(total)
+    drop total
+    drop stock
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let total = 0
+    for x in &v {
+        if x > limit {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v
+}
+
+fn vec() -> Vec<Int> {
+    vec()
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn clone(x: Int) -> Int {
+    x
+}
+
+fn to_float(x: Int) -> Float {
+    x
+}
+
+fn trunc(x: Float) -> Int {
+    x
+}
+
+fn len(v: Vec<Int>) -> Int {
+    v
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    v
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    vec()
+}
+
+fn parse_int(x: Str) -> Option<Int> {
+    x
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    a
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    vec()
+}
+
+fn int_to_str(x: Int) -> Str {
+    x
+}
+
+fn str_len(x: Str) -> Int {
+    x
+}
+
+fn main() {
+    let stock = push(push(push(push(vec(), 4), 4), 4), 5)
+    let units = 4
+    let total = sum_big(&stock, units)
+    print(total)
+    drop total
+    drop stock
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let total = 0
+    for x in &v {
+        if x > limit {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v
+}
+
+fn vec() -> Vec<Int> {
+    vec()
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn clone(x: Int) -> Int {
+    x
+}
+
+fn to_float(x: Int) -> Float {
+    x
+}
+
+fn trunc(x: Float) -> Int {
+    x
+}
+
+fn len(v: Vec<Int>) -> Int {
+    v
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    v
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    vec()
+}
+
+fn parse_int(x: Str) -> Option<Int> {
+    x
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    a
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    vec()
+}
+
+fn int_to_str(x: Int) -> Str {
+    x
+}
+
+fn str_len(x: Str) -> Int {
+    x
+}
+
+fn main() {
+    let stock = push(push(push(push(vec(), 4), 4), 4), 5)
+    let units = 4
+    let total = sum_big(&stock, units)
+    print(total)
+    drop total
+    drop stock
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let total = 0
+    for x in &v {
+        if x > limit {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v
+}
+
+fn vec() -> Vec<Int> {
+    vec()
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn clone(x: Int) -> Int {
+    x
+}
+
+fn to_float(x: Int) -> Float {
+    x
+}
+
+fn trunc(x: Float) -> Int {
+    x
+}
+
+fn len(v: Vec<Int>) -> Int {
+    v
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    v
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    vec()
+}
+
+fn parse_int(x: Str) -> Option<Int> {
+    x
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    a
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    vec()
+}
+
+fn int_to_str(x: Int) -> Str {
+    x
+}
+
+fn str_len(x: Str) -> Int {
+    x
+}
+
+fn main() {
+    let stock = push(push(push(push(vec(), 4), 4), 4), 5)
+    let units = 4
+    let total = sum_big(&stock, units)
+    print(total)
+    drop total
+    drop stock
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let total = 0
+    for x in &v {
+        if x > limit {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v
+}
+
+fn vec() -> Vec<Int> {
+    vec()
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn clone(x: Int) -> Int {
+    x
+}
+
+fn to_float(x: Int) -> Float {
+    x
+}
+
+fn trunc(x: Float) -> Int {
+    x
+}
+
+fn len(v: Vec<Int>) -> Int {
+    v
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    v
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    vec()
+}
+
+fn parse_int(x: Str) -> Option<Int> {
+    x
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    a
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    vec()
+}
+
+fn int_to_str(x: Int) -> Str {
+    x
+}
+
+fn str_len(x: Str) -> Int {
+    x
+}
+
+fn main() {
+    let stock = push(push(push(push(vec(), 4), 4), 4), 5)
+    let units = 4
+    let total = sum_big(&stock, units)
+    print(total)
+    drop total
+    drop stock
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let total = 0
+    for x in &v {
+        if x > limit {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v
+}
+
+fn vec() -> Vec<Int> {
+    vec()
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn clone(x: Int) -> Int {
+    x
+}
+
+fn to_float(x: Int) -> Float {
+    x
+}
+
+fn trunc(x: Float) -> Int {
+    x
+}
+
+fn len(v: Vec<Int>) -> Int {
+    v
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    v
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    vec()
+}
+
+fn parse_int(x: Str) -> Option<Int> {
+    x
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    a
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    vec()
+}
+
+fn int_to_str(x: Int) -> Str {
+    x
+}
+
+fn str_len(x: Str) -> Int {
+    x
+}
+
+fn main() {
+    let stock = push(push(push(push(vec(), 4), 4), 4), 5)
+    let units = 4
+    let total = sum_big(&stock, units)
+    print(total)
+    drop total
+    drop stock
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let total = 0
+    for x in &v

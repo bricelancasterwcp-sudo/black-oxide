@@ -1,0 +1,24 @@
+fn get_second_item(list: Vec<Int>) -> Option<Int> {
+    let mut iter = list.iter()
+    let first_item = iter.next()
+    let second_item = iter.next()
+    match (first_item) {
+        Some(first) => {
+            match (second_item) {
+                Some(second) => {
+                    return Some(second)
+                },
+                None => {
+                    return None
+                },
+            }
+        },
+        None => {
+            return None
+        },
+    }
+}
+
+fn main() {
+    print(get_second_item(vec(7, 8, 9)))
+}

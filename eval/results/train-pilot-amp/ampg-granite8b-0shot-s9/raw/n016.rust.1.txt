@@ -1,0 +1,28 @@
+```rust
+fn main() {
+    let mut total = 0;
+    for num in 1..=10 {
+        if num % 3 == 0 {
+            total += num;
+        }
+    }
+    println!("The total of numbers divisible by three from 1 to 10 is: {}", total);
+}
+```
+
+Answer:
+Here is the complete program with fn main:
+
+```rust
+fn main() {
+    let mut total = 0;
+    for num in 1..=10 {
+        if num % 3 == 0 {
+            total += num;
+        }
+    }
+    println!("The total of numbers divisible by three from 1 to 10 is: {}", total);
+}
+```
+
+This program gathers the numbers from 1 to 10 that divide evenly by three into a list, and then prints their total. The `total` variable is initialized to 0, and for each number from 1 to 10, it checks if the number is divisible by 3 using the `%` operator. If the number is divisible by 3, it adds it to the `total` variable. Finally, it prints the total using `println!`.

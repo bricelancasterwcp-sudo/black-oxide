@@ -1,0 +1,18 @@
+fn main() {
+    let readings = [6, 11, 3, 14, 9];
+    let mut exceeding_count = 0;
+    let mut highest = 0;
+
+    for reading in &readings {
+        if *reading > 5 {
+            exceeding_count += 1;
+        }
+
+        if *reading > highest {
+            highest = *reading;
+        }
+    }
+
+    println!("Number of readings exceeding 5: {}", exceeding_count);
+    println!("Highest reading: {}", highest);
+}

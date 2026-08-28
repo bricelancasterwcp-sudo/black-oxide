@@ -1,0 +1,9 @@
+fn main() {
+    let word = "drum".to_string()
+    let mut rword = String.new()
+    for c in word.chars().rev() {
+        rword.push(c)
+    }
+    print(rword)
+    print(word)
+}

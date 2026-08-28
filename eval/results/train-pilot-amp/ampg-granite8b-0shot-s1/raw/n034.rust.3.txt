@@ -1,0 +1,31 @@
+Here's the complete corrected program source:
+
+```rust
+fn helper(nums: Vec<i32>) -> Option<i32> {
+    if nums.len() >= 2 {
+        return Some(nums[1]);
+    }
+    None
+}
+
+fn main() {
+    let num7: Option<i32> = helper(vec![7, 8, 9]);
+    let num8: Option<i32> = helper(vec![8]);
+    let num9: Option<i32> = helper(vec![9, 10, 11, 12]);
+
+    match num7 {
+        Some(num) => println!("{}", num),
+        None => println!("None"),
+    }
+
+    match num8 {
+        Some(num) => println!("{}", num),
+        None => println!("None"),
+    }
+
+    match num9 {
+        Some(num) => println!("{}", num),
+        None => println!("None"),
+    }
+}
+```

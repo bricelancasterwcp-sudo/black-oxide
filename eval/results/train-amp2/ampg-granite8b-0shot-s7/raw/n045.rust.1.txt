@@ -1,0 +1,7 @@
+```rust
+fn main() {
+  let log = vec![6, 7, 8, 9];
+  println!("{}", log[0]);
+  println!("{}", log[log.len() - 1]);
+}
+```

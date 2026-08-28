@@ -1,0 +1,11 @@
+fn main() {
+    let mut x = 5
+    while x < 10 {
+        x = x + 1
+    }
+    if x > 4 {
+        print_str("More than four\n")
+    } else {
+        print_str("Four or less\n")
+    }
+}

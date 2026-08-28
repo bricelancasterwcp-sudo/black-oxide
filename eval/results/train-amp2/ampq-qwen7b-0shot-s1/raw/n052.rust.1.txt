@@ -1,0 +1,8 @@
+fn main() {
+    let word = "banana";
+    let n_position = word.find('n');
+    match n_position {
+        Some(pos) => println!("{}", pos),
+        None => println!("n not found"),
+    }
+}

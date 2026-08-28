@@ -1,0 +1,6 @@
+fn main() {
+    let mut my_list = vec![1, 2, 3, 4];
+    while let Some(item) = my_list.pop() {
+        println!("{}", item);
+    }
+}

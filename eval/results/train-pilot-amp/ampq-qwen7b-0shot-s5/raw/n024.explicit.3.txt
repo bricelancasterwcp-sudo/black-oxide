@@ -1,0 +1,15 @@
+fn count_a(word: &Str) -> Int {
+    let count = 0
+    for c in chars(word) {
+        if c == "a" {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn main() {
+    let word = &word
+    let count = count_a(word)
+    print(count)
+}

@@ -1,0 +1,5 @@
+fn main() {
+    let width = 5;
+    let height = 3;
+    println!("The area of the rectangle is {} square pixels.", width * height);
+}

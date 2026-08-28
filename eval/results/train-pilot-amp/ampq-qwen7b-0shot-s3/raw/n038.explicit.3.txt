@@ -1,0 +1,11 @@
+fn set_and_print(sensor: Int) -> Int {
+    let new_reading = 7
+    print(new_reading)
+    new_reading
+}
+
+fn main() {
+    let sensor = 0
+    let reading = set_and_print(sensor)
+    print(reading)
+}

@@ -1,0 +1,13 @@
+struct Even { value: Int }
+
+fn main() {
+    let v = vec()
+    for x in range(1, 11) {
+        if x % 2 == 0 {
+            v = push(v, Even { value: x })
+        }
+    }
+    for i in range(0, len(v)) {
+        print(v.values.get(len(v.values) - i - 1).value)
+    }
+}

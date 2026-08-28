@@ -1,0 +1,20 @@
+```rust
+const SAMPLE: [i32; 5] = [5, 12, 3, 18, 9];
+const CUTOFF: i32 = 10;
+
+fn main() {
+    let mut under = 0;
+    let mut at_or_over = 0;
+
+    for num in SAMPLE.iter() {
+        if *num < CUTOFF {
+            under += 1;
+        } else {
+            at_or_over += 1;
+        }
+    }
+
+    println!("Under cutoff: {}", under);
+    println!("At or over cutoff: {}", at_or_over);
+}
+```

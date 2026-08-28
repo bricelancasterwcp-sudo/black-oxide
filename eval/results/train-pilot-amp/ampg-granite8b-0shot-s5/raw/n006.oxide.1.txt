@@ -1,0 +1,9 @@
+struct PowerOf2 { value: Int }
+
+fn main() {
+    let mut x = 1
+    while x * 2 <= 100 {
+        x = x * 2
+    }
+    print(x)
+}

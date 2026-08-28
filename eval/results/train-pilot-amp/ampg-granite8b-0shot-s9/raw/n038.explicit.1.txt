@@ -1,0 +1,38 @@
+fn main() {
+    let sensor = Sensor(0)
+    let device = Device(sensor)
+    let sensor = device.get()
+    sensor.set(7)
+    print(sensor.get())
+}
+
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+fn get(device: &Device) -> Sensor {
+    device.sensor
+}
+
+fn set(sensor: Sensor, reading: Int) {
+    drop sensor
+    sensor.reading = reading
+}
+
+fn get(sensor: &Sensor) -> Int {
+    drop sensor
+    sensor.reading
+}
+
+fn print(n: Int) {
+    drop n
+    println(n)
+}
+
+fn main() {
+    let sensor = Sensor(0)
+    let device = Device(sensor)
+    let sensor = device.get()
+    sensor.set(7)
+    print(sensor.get())
+}

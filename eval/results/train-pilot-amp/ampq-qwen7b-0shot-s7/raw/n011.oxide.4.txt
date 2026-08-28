@@ -1,0 +1,27 @@
+struct List {
+    values: Vec<Int>,
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut new_v = v.clone()
+    new_v.push(x)
+    new_v
+}
+
+fn sum(v: Vec<Int>) -> Int {
+    let mut acc = 0
+    for x in v {
+        acc = acc + x
+    }
+    acc
+}
+
+fn main() {
+    let mut multiples = Vec()
+    let mut i = 1
+    while i <= 6 {
+        multiples = push(multiples, i * 4)
+        i = i + 1
+    }
+    print(sum(multiples))
+}

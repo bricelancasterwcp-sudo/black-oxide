@@ -1,0 +1,21 @@
+struct Bank { balance: Int }
+
+fn deposit(b: Bank, amount: Int) -> Bank {
+    let new_balance = b.balance + amount
+    Bank  // functional update
+    balance = new_balance
+}
+
+fn main() {
+    let mut b = Bank { balance: 0 }
+    b = deposit(b, 3)
+    print(b.balance)
+    b = deposit(b, 1)
+    print(b.balance)
+    b = deposit(b, 4)
+    print(b.balance)
+    b = deposit(b, 1)
+    print(b.balance)
+    b = deposit(b, 5)
+    print(b.balance)
+}

@@ -1,0 +1,8 @@
+fn len(s: Str) -> Int {
+    s.str_len()
+}
+
+fn main() {
+    let hello_world = "hello world"
+    print(len(hello_world))
+}

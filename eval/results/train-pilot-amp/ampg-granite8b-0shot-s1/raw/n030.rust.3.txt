@@ -1,0 +1,13 @@
+Here's the complete corrected program source:
+
+```rust
+fn main() {
+    let word = "aeiou";
+    let vowels = word.chars().filter(|&c| "aeiou".contains(c)).count() as u8;
+    println!("{}", vowels);
+}
+```
+
+The issue in the original program was that it counted the vowels as u32 instead of u8. To fix this, we need to cast the count to u8.
+
+The corrected program uses the `chars()` method to iterate over the characters in the word. Then, it filters the characters to only include vowels using the `filter()` method. Finally, it counts the number of vowels using the `count()` method and casts the count to u8 before printing it.

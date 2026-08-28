@@ -1,0 +1,15 @@
+fn digits(mutnum: Int) -> Vec<Int> {
+    let mut digits = vec()
+    while num > 0 {
+        digits = push(digits, num % 10)
+        num = trunc(num / 10)
+    }
+    digits
+}
+
+fn main() {
+    let num = 1234
+    for d in digits(num) {
+        print(d)
+    }
+}

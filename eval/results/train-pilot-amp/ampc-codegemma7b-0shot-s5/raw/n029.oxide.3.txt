@@ -1,0 +1,294 @@
+fn main() {
+    print(concat(concat(int_to_str(1), int_to_str(2)), int_to_str(3)))
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let s = a + b
+    s
+}
+
+fn int_to_str(n: Int) -> Str {
+    let s = n.to_string()
+    s
+}
+
+fn print(s: Str) {
+    print_str(s)
+}
+
+fn print_str(s: Str) {
+    let mut stdout = std_out()
+    write(stdout, s)
+}
+
+fn std_out() -> StdOut {
+    std_out_stdio()
+}
+
+fn std_out_stdio() -> StdOut {
+    std_stdio()
+}
+
+fn std_stdio() -> StdOut {
+    stdio()
+}
+
+fn stdio() -> StdOut {
+    std_stdio_stdio()
+}
+
+fn std_stdio_stdio() -> StdOut {
+    stdio_stdio()
+}
+
+fn stdio_stdio() -> StdOut {
+    stdio_stdio_stdio_stdio()
+}
+
+fn stdio_stdio_stdio_stdio() -> StdOut {
+    stdio_stdio_stdio_stdio_stdio()
+}
+
+fn write(stdio: StdOut, s: Str) {
+    stdio_write(stdio, s)
+}
+
+fn stdio_write(stdio: StdOut, s: Str) {
+    stdio_write_stdio(stdio, s)
+}
+
+fn stdio_write_stdio(stdio: StdOut, s: Str) {
+    stdio_write_stdio_stdio(stdio, s)
+}
+
+fn stdio_write_stdio_stdio(stdio: StdOut, s: Str) {
+    stdio_write_stdio_stdio_stdio(stdio, s)
+}
+
+fn stdio_write_stdio_stdio_stdio(stdio: StdOut, s: Str) {
+    stdio_write_stdio_stdio_stdio_stdio(stdio, s)
+}
+
+fn stdio_write_stdio_stdio_stdio_stdio(stdio: StdOut, s: Str) {
+    stdio_write_stdio_stdio_stdio_stdio_stdio(stdio, s)
+}
+
+fn std_out_stdio() -> StdOut {
+    std_stdio()
+}
+
+fn std_stdio() -> StdOut {
+    stdio()
+}
+
+fn stdio() -> StdOut {
+    std_stdio_stdio()
+}
+
+fn std_stdio_stdio() -> StdOut {
+    stdio_stdio()
+}
+
+fn stdio_stdio() -> StdOut {
+    stdio_stdio_stdio_stdio()
+}
+
+fn stdio_stdio_stdio_stdio() -> StdOut {
+    stdio_stdio_stdio_stdio_stdio()
+}
+
+fn std_stdio_stdio_stdio() -> StdOut {
+    std_stdio_stdio()
+}
+
+fn std_stdio_stdio_stdio_stdio() -> StdOut {
+    std_stdio_stdio()
+}
+
+fn std_stdio_stdio_stdio_stdio_stdio() -> StdOut {
+    std_stdio_stdio()
+}
+
+fn write(stdio: StdOut, s: Str) {
+    stdio_write(stdio, s)
+}
+
+fn stdio_write(stdio: StdOut, s: Str) {
+    stdio_write_stdio(stdio, s)
+}
+
+fn stdio_write_stdio(stdio: StdOut, s: Str) {
+    stdio_write_stdio_stdio(stdio, s)
+}
+
+fn stdio_write_stdio_stdio(stdio: StdOut, s: Str) {
+    stdio_write_stdio_stdio_stdio(stdio, s)
+}
+
+fn stdio_write_stdio_stdio_stdio(stdio: StdOut, s: Str) {
+    stdio_write_stdio_stdio_stdio_stdio(stdio, s)
+}
+
+fn stdio_write_stdio_stdio_stdio_stdio(stdio: StdOut, s: Str) {
+    stdio_write_stdio_stdio_stdio_stdio_stdio(stdio, s)
+}
+
+fn std_out_stdio() -> StdOut {
+    std_stdio()
+}
+
+fn std_stdio() -> StdOut {
+    stdio()
+}
+
+fn stdio() -> StdOut {
+    std_stdio_stdio()
+}
+
+fn std_stdio_stdio() -> StdOut {
+    stdio_stdio()
+}
+
+fn stdio_stdio() -> StdOut {
+    stdio_stdio_stdio_stdio()
+}
+
+fn stdio_stdio_stdio_stdio() -> StdOut {
+    stdio_stdio_stdio_stdio_stdio()
+}
+
+fn std_stdio_stdio_stdio() -> StdOut {
+    std_stdio_stdio()
+}
+
+fn std_stdio_stdio_stdio_stdio() -> StdOut {
+    std_stdio_stdio()
+}
+
+fn std_stdio_stdio_stdio_stdio_stdio() -> StdOut {
+    std_stdio_stdio()
+}
+
+fn write(stdio: StdOut, s: Str) {
+    stdio_write(stdio, s)
+}
+
+fn stdio_write(stdio: StdOut, s: Str) {
+    stdio_write_stdio(stdio, s)
+}
+
+fn stdio_write_stdio(stdio: StdOut, s: Str) {
+    stdio_write_stdio_stdio(stdio, s)
+}
+
+fn stdio_write_stdio_stdio(stdio: StdOut, s: Str) {
+    stdio_write_stdio_stdio_stdio(stdio, s)
+}
+
+fn stdio_write_stdio_stdio_stdio(stdio: StdOut, s: Str) {
+    stdio_write_stdio_stdio_stdio_stdio(stdio, s)
+}
+
+fn stdio_write_stdio_stdio_stdio_stdio(stdio: StdOut, s: Str) {
+    stdio_write_stdio_stdio_stdio_stdio_stdio(stdio, s)
+}
+
+fn std_out_stdio() -> StdOut {
+    std_stdio()
+}
+
+fn std_stdio() -> StdOut {
+    stdio()
+}
+
+fn stdio() -> StdOut {
+    std_stdio_stdio()
+}
+
+fn std_stdio_stdio() -> StdOut {
+    stdio_stdio()
+}
+
+fn stdio_stdio() -> StdOut {
+    stdio_stdio_stdio_stdio()
+}
+
+fn stdio_stdio_stdio_stdio() -> StdOut {
+    stdio_stdio_stdio_stdio_stdio()
+}
+
+fn std_stdio_stdio_stdio() -> StdOut {
+    std_stdio_stdio()
+}
+
+fn std_stdio_stdio_stdio_stdio() -> StdOut {
+    std_stdio_stdio()
+}
+
+fn std_stdio_stdio_stdio_stdio_stdio() -> StdOut {
+    std_stdio_stdio()
+}
+
+fn write(stdio: StdOut, s: Str) {
+    stdio_write(stdio, s)
+}
+
+fn stdio_write(stdio: StdOut, s: Str) {
+    stdio_write_stdio(stdio, s)
+}
+
+fn stdio_write_stdio(stdio: StdOut, s: Str) {
+    stdio_write_stdio_stdio(stdio, s)
+}
+
+fn stdio_write_stdio_stdio(stdio: StdOut, s: Str) {
+    stdio_write_stdio_stdio_stdio(stdio, s)
+}
+
+fn stdio_write_stdio_stdio_stdio(stdio: StdOut, s: Str) {
+    stdio_write_stdio_stdio_stdio_stdio(stdio, s)
+}
+
+fn stdio_write_stdio_stdio_stdio_stdio(stdio: StdOut, s: Str) {
+    stdio_write_stdio_stdio_stdio_stdio_stdio(stdio, s)
+}
+
+fn std_out_stdio() -> StdOut {
+    std_stdio()
+}
+
+fn std_stdio() -> StdOut {
+    stdio()
+}
+
+fn stdio() -> StdOut {
+    std_stdio_stdio()
+}
+
+fn std_stdio_stdio() -> StdOut {
+    stdio_stdio()
+}
+
+fn stdio_stdio() -> StdOut {
+    stdio_stdio_stdio_stdio()
+}
+
+fn stdio_stdio_stdio_stdio() -> StdOut {
+    stdio_stdio_stdio_stdio_stdio()
+}
+
+fn std_stdio_stdio_stdio() -> StdOut {
+    std_stdio_stdio()
+}
+
+fn std_stdio_stdio_stdio_stdio() -> StdOut {
+    std_stdio_stdio()
+}
+
+fn std_stdio_stdio_stdio_stdio_stdio() -> StdOut {
+    std_stdio_stdio()
+}
+
+fn write(stdio: StdOut, s: Str) {
+    stdio_write(stdio, s)
+}

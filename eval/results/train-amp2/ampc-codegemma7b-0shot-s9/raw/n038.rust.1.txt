@@ -1,0 +1,24 @@
+```rust
+fn main() {
+    let mut device = Device::new();
+    let mut sensor = device.sensor;
+    sensor.reading = 7;
+    println!("{}", sensor.reading);
+}
+
+struct Device {
+    sensor: Sensor,
+}
+
+struct Sensor {
+    reading: u8,
+}
+
+impl Device {
+    fn new() -> Self {
+        Device {
+            sensor: Sensor { reading: 0 },
+        }
+    }
+}
+```

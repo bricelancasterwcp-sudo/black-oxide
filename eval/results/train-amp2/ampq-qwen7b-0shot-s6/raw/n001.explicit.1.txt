@@ -1,0 +1,11 @@
+fn cube(x: Int) -> Int {
+    x * x * x
+}
+
+fn main() {
+    let total = 0
+    for i in range(1, 6) {
+        total = total + cube(i)
+    }
+    print(total)
+}

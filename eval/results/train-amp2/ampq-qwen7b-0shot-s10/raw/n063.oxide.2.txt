@@ -1,0 +1,14 @@
+struct Line { units: Int, price: Int }
+
+fn value(line: Line) -> Int {
+    line.units * line.price
+}
+
+fn main() {
+    let line1 = Line { units: 4, price: 3 }
+    let line2 = Line { units: 5, price: 2 }
+    print(value(line1))
+    print(value(line2))
+    let combined = Line { units: line1.units + line2.units, price: (line1.price + line2.price) / 2 }
+    print(value(combined))
+}

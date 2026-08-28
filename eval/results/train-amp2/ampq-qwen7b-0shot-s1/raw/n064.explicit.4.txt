@@ -1,0 +1,17 @@
+fn lookup(v: &Vec<Int>, pos: Int) -> Option<Int> {
+    get(v, pos)
+}
+
+fn main() {
+    let nums = vec(10, 20)
+    let result1 = lookup(&nums, 1)
+    match result1 {
+        Some(val) => print(val),
+        None => print_str("None"),
+    }
+    let result4 = lookup(&nums, 4)
+    match result4 {
+        Some(val) => print(val),
+        None => print_str("None"),
+    }
+}

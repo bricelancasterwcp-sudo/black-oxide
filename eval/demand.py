@@ -121,3 +121,47 @@ def scan_oxide_arm(root: Path, names: tuple[str, ...] = WATCHED_NAMES) -> dict:
         "unresolved_calls": unresolved_occ,
         "unresolved_call_programs": unresolved_progs,
     }
+
+
+# ------------------------------------------------- v0.4 deferred ledger
+
+# The v0.4 ledger items that are mechanically detectable in source text.
+# Type-based OVERLOADING is deliberately absent: it has no surface form to
+# match -- a program wanting it just calls an existing name with the wrong
+# argument type and fails in the type checker like any other error -- so
+# reporting a count for it would be inventing a signal.
+_IF_LET = re.compile(r"\bif\s+let\b")
+# `2.to(n)` / `0.to(len(v))`: a method on a NUMERIC LITERAL receiver. The
+# literal is what makes this unambiguous -- `v.len()` and `p.x` are legal
+# Black Oxide, and matching any receiver would report the whole language
+# as demand.
+_NUMERIC_RANGE = re.compile(r"(?<![\w.])\d+\s*\.\s*(?:to|until|range)\s*\(")
+# `.set(i, v)` index assignment, in receiver form (`v.set(0, 9)`).
+_SET_METHOD = re.compile(r"\.\s*set\s*\(")
+
+LEDGER_KEYS: tuple[str, ...] = ("if_let", "numeric_range_method", "set", "unwrap_or")
+
+
+def ledger_demand(source: str) -> collections.Counter:
+    """Occurrences of each mechanically-detectable v0.4 ledger item.
+
+    Recorded per the module's measurement rule: callers must aggregate
+    DISTINCT PROGRAMS, not these raw occurrence counts.
+
+    A name the program defines itself scores 0 here. That is not the same
+    as no demand -- it is dossier-4 demand (builtin reimplementation),
+    which ``builtin_self_definitions`` is the counter for. Splitting them
+    keeps "the language lacks this name" separate from "the model wrote it
+    itself", which g3 showed are different frictions with different fixes.
+    """
+    defined = set(_DEF.findall(source))
+    found = collections.Counter({k: 0 for k in LEDGER_KEYS})
+    found["if_let"] = len(_IF_LET.findall(source))
+    found["numeric_range_method"] = len(_NUMERIC_RANGE.findall(source))
+    if "set" not in defined:
+        found["set"] = len(_SET_METHOD.findall(source))
+    if "unwrap_or" not in defined:
+        found["unwrap_or"] = sum(
+            1 for name in _CALL.findall(source) if name == "unwrap_or"
+        ) + len(re.findall(r"\.\s*unwrap_or\s*\(", source))
+    return found

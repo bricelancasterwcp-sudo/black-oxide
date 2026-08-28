@@ -1,0 +1,21 @@
+const FOO: u32 = 20;
+const BAR: u32 = 4;
+
+fn main() {
+    match divide(FOO, BAR) {
+        Ok(ans) => {
+            println!("{} / {} = {}", FOO, BAR, ans);
+        }
+        Err(err) => {
+            println!("{}", err);
+        }
+    }
+}
+
+fn divide(x: u32, y: u32) -> Result<u32, &'static str> {
+    if y == 0 {
+        Err("Can't divide by 0")
+    } else {
+        Ok(x / y)
+    }
+}

@@ -1,0 +1,17 @@
+fn main() {
+    let readings: [i32; 5] = [6, 11, 3, 14, 9];
+    let mut excesses = 0;
+    let mut highest = 0;
+
+    for reading in readings.iter() {
+        if *reading > 5 {
+            excesses += 1;
+        }
+        if *reading > highest {
+            highest = *reading;
+        }
+    }
+
+    println!("{} readings exceed 5", excesses);
+    println!("highest: {}", highest);
+}

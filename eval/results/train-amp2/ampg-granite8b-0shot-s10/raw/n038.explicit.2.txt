@@ -1,0 +1,119 @@
+fn main() {
+    let mut sensor = Device { reading: 0 }
+    sensor.set_reading(7)
+    print(sensor.reading)
+}
+
+struct Device {
+    reading: Int,
+}
+
+fn set_reading(self: &Device, x: Int) {
+    self.reading = x
+}
+
+fn get_reading(self: &Device) -> Int {
+    self.reading
+}
+
+fn print(x: Int) {
+    println(to_str(x))
+}
+
+fn println(s: Str) {
+    unsafe_system_call(4, &s)
+}
+
+fn to_str(n: Int) -> Str {
+    unsafe_system_call(5, n)
+}
+
+fn unsafe_system_call(n: Int, s: Str) -> Str {
+    loop_forever()
+}
+
+fn loop_forever() {
+    while true {
+        yield_time()
+    }
+}
+
+fn yield_time() {
+    loop_forever()
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn main() {
+    print(add(1, 2))
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn main() {
+    print(add(1, 2))
+}
+
+fn main() {
+    let mut sensor = Device { reading: 0 }
+    sensor.set_reading(7)
+    print(sensor.reading)
+}
+
+struct Device {
+    reading: Int,
+}
+
+fn set_reading(self: &Device, x: Int) {
+    self.reading = x
+}
+
+fn get_reading(self: &Device) -> Int {
+    self.reading
+}
+
+fn print(x: Int) {
+    println(to_str(x))
+}
+
+fn println(s: Str) {
+    unsafe_system_call(4, &s)
+}
+
+fn to_str(n: Int) -> Str {
+    unsafe_system_call(5, n)
+}
+
+fn unsafe_system_call(n: Int, s: Str) -> Str {
+    loop_forever()
+}
+
+fn loop_forever() {
+    while true {
+        yield_time()
+    }
+}
+
+fn yield_time() {
+    loop_forever()
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn main() {
+    print(add(1, 2))
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn main() {
+    print(add(1, 2))
+}

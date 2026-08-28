@@ -1,0 +1,18 @@
+fn print_message(color: &Str) {
+    if color == "green" {
+        print("go for green\n")
+    } else if color == "red" {
+        print("stop for red\n")
+    } else if color == "yellow" {
+        print("wait for yellow\n")
+    } else {
+        print("invalid color\n")
+    }
+}
+
+fn main() {
+    print_message("green")
+    print_message("red")
+    print_message("yellow")
+    print_message("purple")
+}

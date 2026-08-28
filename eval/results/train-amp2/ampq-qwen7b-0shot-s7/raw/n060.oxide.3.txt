@@ -1,0 +1,23 @@
+fn total_and_count(s: Str) -> Result<Int, Str> {
+    let mut total = 0
+    let mut count = 0
+    for c in chars(s) {
+        if c >= "0" && c <= "9" {
+            total = total + parse_int(c)?
+            count = count + 1
+        }
+    }
+    Ok((total(count)))
+}
+
+fn main() {
+    let s = "a1b22"
+    match total_and_count(s) {
+        Ok(t) => {
+            print(t.both)
+            print_str(" ")
+            print(count)
+        },
+        Err(_) => print_str("error"),
+    }
+}

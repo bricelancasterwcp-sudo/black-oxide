@@ -1,0 +1,10 @@
+struct Phrase { text: Str }
+
+fn count_chars(p: Phrase) -> Int {
+    str_len(p.text)
+}
+
+fn main() {
+    let phrase = Phrase { text: "hello world" }
+    print(count_chars(phrase))
+}

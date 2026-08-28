@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let log_entries = vec![6, 7, 8, 9];
+    println!("Starts with: {}", log_entries.first().unwrap());
+    println!("Ends with: {}", log_entries.last().unwrap());
+}
+```

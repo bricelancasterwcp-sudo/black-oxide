@@ -1,0 +1,20 @@
+fn count_entries(list1: Vec<Int>, list2: Vec<Int>) -> Int {
+    let mut total = 0
+    for i in list1 {
+        if i > 2 {
+            total = total + 1
+        }
+    }
+    for j in list2.iter() {
+        if j > 2 {
+            total = total + 1
+        }
+    }
+    total
+}
+
+fn main() {
+    let list1 = vec(1, 2, 3)
+    let list2 = vec(4, 5)
+    print(count_entries(list1, list2))
+}

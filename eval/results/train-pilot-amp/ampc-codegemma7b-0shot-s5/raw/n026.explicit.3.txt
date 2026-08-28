@@ -1,0 +1,22 @@
+fn number_to_text(number: Int) -> Str {
+    if number == 0 {
+        return "zero"
+    } else if number == 1 {
+        return "one"
+    } else if number == 2 {
+        return "two"
+    } else {
+        return "other"
+    }
+}
+
+fn len_text(text: &Str) -> Int {
+    return str_len(text)
+}
+
+fn main() {
+    let number = 2026
+    let text = number_to_text(number)
+    print(len_text(&text))
+    drop text
+}

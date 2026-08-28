@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let list = vec![1, 2];
+    match list.get(5) {
+        Some(value) => println!("{}", value),
+        None => println!("none"),
+    }
+}
+```

@@ -1,0 +1,296 @@
+fn main() {
+    let mut scores = vec(9, 5, 2)
+    scores.sort_by(std_cmp)
+    for score in scores {
+        print(score)
+        print_str("\n")
+    }
+}
+
+fn std_cmp(a: Int, b: Int) -> Ordering {
+    if a == b {
+        Ordering(0)
+    } else if a < b {
+        Ordering(-1)
+    } else {
+        Ordering(1)
+    }
+}
+
+fn cmp(a: Int, b: Int) -> Ordering {
+    if a == b {
+        Ordering(0)
+    } else if a < b {
+        Ordering(-1)
+    } else {
+        Ordering(1)
+    }
+}
+
+fn sort_by(v: Vec<Int>, compare: Ordering) -> Vec<Int> {
+    let mut result = vec()
+    for item in v {
+        if compare(item, result.get(result.len() - 1)) == Ordering(0) {
+            push(result, item)
+        } else {
+            result.insert(0, item)
+        }
+    }
+    result
+}
+
+fn std_cmp(a: Int, b: Int) -> Ordering {
+    if a == b {
+        Ordering(0)
+    } else if a < b {
+        Ordering(-1)
+    } else {
+        Ordering(1)
+    }
+}
+
+fn cmp(a: Int, b: Int) -> Ordering {
+    if a == b {
+        Ordering(0)
+    } else if a < b {
+        Ordering(-1)
+    } else {
+        Ordering(1)
+    }
+}
+
+fn sort_by(v: Vec<Int>, compare: Ordering) -> Vec<Int> {
+    let mut result = vec()
+    for item in v {
+        if compare(item, result.get(result.len() - 1)) == Ordering(0) {
+            push(result, item)
+        } else {
+            result.insert(0, item)
+        }
+    }
+    result
+}
+
+fn std_cmp(a: Int, b: Int) -> Ordering {
+    if a == b {
+        Ordering(0)
+    } else if a < b {
+        Ordering(-1)
+    } else {
+        Ordering(1)
+    }
+}
+
+fn cmp(a: Int, b: Int) -> Ordering {
+    if a == b {
+        Ordering(0)
+    } else if a < b {
+        Ordering(-1)
+    } else {
+        Ordering(1)
+    }
+}
+
+fn sort_by(v: Vec<Int>, compare: Ordering) -> Vec<Int> {
+    let mut result = vec()
+    for item in v {
+        if compare(item, result.get(result.len() - 1)) == Ordering(0) {
+            push(result, item)
+        } else {
+            result.insert(0, item)
+        }
+    }
+    result
+}
+
+fn std_cmp(a: Int, b: Int) -> Ordering {
+    if a == b {
+        Ordering(0)
+    } else if a < b {
+        Ordering(-1)
+    } else {
+        Ordering(1)
+    }
+}
+
+fn cmp(a: Int, b: Int) -> Ordering {
+    if a == b {
+        Ordering(0)
+    } else if a < b {
+        Ordering(-1)
+    } else {
+        Ordering(1)
+    }
+}
+
+fn sort_by(v: Vec<Int>, compare: Ordering) -> Vec<Int> {
+    let mut result = vec()
+    for item in v {
+        if compare(item, result.get(result.len() - 1)) == Ordering(0) {
+            push(result, item)
+        } else {
+            result.insert(0, item)
+        }
+    }
+    result
+}
+
+fn std_cmp(a: Int, b: Int) -> Ordering {
+    if a == b {
+        Ordering(0)
+    } else if a < b {
+        Ordering(-1)
+    } else {
+        Ordering(1)
+    }
+}
+
+fn cmp(a: Int, b: Int) -> Ordering {
+    if a == b {
+        Ordering(0)
+    } else if a < b {
+        Ordering(-1)
+    } else {
+        Ordering(1)
+    }
+}
+
+fn sort_by(v: Vec<Int>, compare: Ordering) -> Vec<Int> {
+    let mut result = vec()
+    for item in v {
+        if compare(item, result.get(result.len() - 1)) == Ordering(0) {
+            push(result, item)
+        } else {
+            result.insert(0, item)
+        }
+    }
+    result
+}
+
+fn std_cmp(a: Int, b: Int) -> Ordering {
+    if a == b {
+        Ordering(0)
+    } else if a < b {
+        Ordering(-1)
+    } else {
+        Ordering(1)
+    }
+}
+
+fn cmp(a: Int, b: Int) -> Ordering {
+    if a == b {
+        Ordering(0)
+    } else if a < b {
+        Ordering(-1)
+    } else {
+        Ordering(1)
+    }
+}
+
+fn sort_by(v: Vec<Int>, compare: Ordering) -> Vec<Int> {
+    let mut result = vec()
+    for item in v {
+        if compare(item, result.get(result.len() - 1)) == Ordering(0) {
+            push(result, item)
+        } else {
+            result.insert(0, item)
+        }
+    }
+    result
+}
+
+fn std_cmp(a: Int, b: Int) -> Ordering {
+    if a == b {
+        Ordering(0)
+    } else if a < b {
+        Ordering(-1)
+    } else {
+        Ordering(1)
+    }
+}
+
+fn cmp(a: Int, b: Int) -> Ordering {
+    if a == b {
+        Ordering(0)
+    } else if a < b {
+        Ordering(-1)
+    } else {
+        Ordering(1)
+    }
+}
+
+fn sort_by(v: Vec<Int>, compare: Ordering) -> Vec<Int> {
+    let mut result = vec()
+    for item in v {
+        if compare(item, result.get(result.len() - 1)) == Ordering(0) {
+            push(result, item)
+        } else {
+            result.insert(0, item)
+        }
+    }
+    result
+}
+
+fn std_cmp(a: Int, b: Int) -> Ordering {
+    if a == b {
+        Ordering(0)
+    } else if a < b {
+        Ordering(-1)
+    } else {
+        Ordering(1)
+    }
+}
+
+fn cmp(a: Int, b: Int) -> Ordering {
+    if a == b {
+        Ordering(0)
+    } else if a < b {
+        Ordering(-1)
+    } else {
+        Ordering(1)
+    }
+}
+
+fn sort_by(v: Vec<Int>, compare: Ordering) -> Vec<Int> {
+    let mut result = vec()
+    for item in v {
+        if compare(item, result.get(result.len() - 1)) == Ordering(0) {
+            push(result, item)
+        } else {
+            result.insert(0, item)
+        }
+    }
+    result
+}
+
+fn print(x: Int) {
+    print_int(x)
+}
+
+fn print_str(s: Str) {
+    print_char_buf(s.chars().collect())
+}
+
+fn print_int(x: Int) {
+    let mut x = x
+    let mut digits = vec()
+    loop  // collect digits in reverse order
+    if x == 0 {
+        breakif
+    }
+    digits.push(to_char(trunc(x % 10)))
+    x = trunc(x / 10)
+    digits.iter().rev().for_each(print_char)
+}
+
+fn print_char(c: Char) {
+    print_char_buf(vec(c))
+}
+
+fn print_char_buf(b: Vec<Char>) {
+    print_char_buf_raw(b.len(), b.as_ptr())
+}
+
+fn print_char_buf_raw(len: Int, ptr: Char) {
+    let args = vec(ptr, len)
+    let result = call_built_in_0(print_char_buf_

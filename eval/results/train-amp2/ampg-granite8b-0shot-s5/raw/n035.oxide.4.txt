@@ -1,0 +1,61 @@
+struct Divider { dividend: Int, divisor: Int, quotient: Int }
+
+fn divide(dividend: Int, divisor: Int) -> Option<Divider> {
+    if divisor == 0 {
+        None
+    } else {
+        Some(Divider { dividend: dividend, divisor: divisor, quotient: dividend / divisor })
+    }
+}
+
+fn print_divider(d: Option<Divider>) {
+    match d {
+        Some(divider) => match divider.divisor {
+            Err(_) => print_str("bad"),
+            Ok(divisor) => {
+                if divisor == 0 {
+                    print_str("bad")
+                } else {
+                    print(divider.quotient)
+                }
+            },
+        },
+        None => print_str("bad"),
+    }
+}
+
+fn main() {
+    let d = divide(20, 4)
+    print_divider(d)
+}
+
+struct Divider { dividend: Int, divisor: Int, quotient: Int }
+
+fn divide(dividend: Int, divisor: Int) -> Option<Divider> {
+    if divisor == 0 {
+        None
+    } else {
+        Some(Divider { dividend: dividend, divisor: divisor, quotient: dividend / divisor })
+    }
+}
+
+fn print_divider(d: Option<Divider>) {
+    match d {
+        Some(divider) => match divider.divisor {
+            Err(_) => print_str("bad"),
+            Ok(divisor) => {
+                if divisor == 0 {
+                    print_str("bad")
+                } else {
+                    print(divider.quotient)
+                }
+            },
+        },
+        None => print_str("bad"),
+    }
+}
+
+fn main() {
+    let d = divide(20, 4)
+    print_divider(d)
+}

@@ -1,0 +1,426 @@
+fn main() {
+    let items1 = vec(3, 3, 3, 3)
+    let items2 = vec(2, 2, 2, 2, 2)
+    let total = sum(items1) + sum(items2)
+    print(total)
+    drop items1
+    drop items2
+}
+
+fn sum(items: Vec<Int>) -> Int {
+    let mut total = 0
+    for item in &items {
+        total = total + item
+    }
+    total
+}
+
+fn vec(item: Int, count: Int) -> Vec<Int> {
+    let mut v = Vec()
+    for _ in 0 < count {
+        push(v, item)
+    }
+    v
+}
+
+fn push(v: Vec<Int>, item: Int) -> Vec<Int> {
+    let mut v2 = v
+    push(v2, item)
+    v2
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    n.to_string()
+}
+
+fn sum(items: Vec<Int>) -> Int {
+    let mut total = 0
+    for item in &items {
+        total = total + item
+    }
+    total
+}
+
+fn drop_name(v: Vec<Int>) {
+    drop v
+}
+
+fn vec(item: Int, count: Int) -> Vec<Int> {
+    let mut v = Vec()
+    for _ in 0 < count {
+        push(v, item)
+    }
+    v
+}
+
+fn push(v: Vec<Int>, item: Int) -> Vec<Int> {
+    let mut v2 = v
+    push(v2, item)
+    v2
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    n.to_string()
+}
+
+fn sum(items: Vec<Int>) -> Int {
+    let mut total = 0
+    for item in &items {
+        total = total + item
+    }
+    total
+}
+
+fn drop_name(v: Vec<Int>) {
+    drop v
+}
+
+fn vec(item: Int, count: Int) -> Vec<Int> {
+    let mut v = Vec()
+    for _ in 0 < count {
+        push(v, item)
+    }
+    v
+}
+
+fn push(v: Vec<Int>, item: Int) -> Vec<Int> {
+    let mut v2 = v
+    push(v2, item)
+    v2
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    n.to_string()
+}
+
+fn sum(items: Vec<Int>) -> Int {
+    let mut total = 0
+    for item in &items {
+        total = total + item
+    }
+    total
+}
+
+fn drop_name(v: Vec<Int>) {
+    drop v
+}
+
+fn vec(item: Int, count: Int) -> Vec<Int> {
+    let mut v = Vec()
+    for _ in 0 < count {
+        push(v, item)
+    }
+    v
+}
+
+fn push(v: Vec<Int>, item: Int) -> Vec<Int> {
+    let mut v2 = v
+    push(v2, item)
+    v2
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    n.to_string()
+}
+
+fn sum(items: Vec<Int>) -> Int {
+    let mut total = 0
+    for item in &items {
+        total = total + item
+    }
+    total
+}
+
+fn drop_name(v: Vec<Int>) {
+    drop v
+}
+
+fn vec(item: Int, count: Int) -> Vec<Int> {
+    let mut v = Vec()
+    for _ in 0 < count {
+        push(v, item)
+    }
+    v
+}
+
+fn push(v: Vec<Int>, item: Int) -> Vec<Int> {
+    let mut v2 = v
+    push(v2, item)
+    v2
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    n.to_string()
+}
+
+fn sum(items: Vec<Int>) -> Int {
+    let mut total = 0
+    for item in &items {
+        total = total + item
+    }
+    total
+}
+
+fn drop_name(v: Vec<Int>) {
+    drop v
+}
+
+fn vec(item: Int, count: Int) -> Vec<Int> {
+    let mut v = Vec()
+    for _ in 0 < count {
+        push(v, item)
+    }
+    v
+}
+
+fn push(v: Vec<Int>, item: Int) -> Vec<Int> {
+    let mut v2 = v
+    push(v2, item)
+    v2
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    n.to_string()
+}
+
+fn sum(items: Vec<Int>) -> Int {
+    let mut total = 0
+    for item in &items {
+        total = total + item
+    }
+    total
+}
+
+fn drop_name(v: Vec<Int>) {
+    drop v
+}
+
+fn vec(item: Int, count: Int) -> Vec<Int> {
+    let mut v = Vec()
+    for _ in 0 < count {
+        push(v, item)
+    }
+    v
+}
+
+fn push(v: Vec<Int>, item: Int) -> Vec<Int> {
+    let mut v2 = v
+    push(v2, item)
+    v2
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    n.to_string()
+}
+
+fn sum(items: Vec<Int>) -> Int {
+    let mut total = 0
+    for item in &items {
+        total = total + item
+    }
+    total
+}
+
+fn drop_name(v: Vec<Int>) {
+    drop v
+}
+
+fn vec(item: Int, count: Int) -> Vec<Int> {
+    let mut v = Vec()
+    for _ in 0 < count {
+        push(v, item)
+    }
+    v
+}
+
+fn push(v: Vec<Int>, item: Int) -> Vec<Int> {
+    let mut v2 = v
+    push(v2, item)
+    v2
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    n.to_string()
+}
+
+fn sum(items: Vec<Int>) -> Int {
+    let mut total = 0
+    for item in &items {
+        total = total + item
+    }
+    total
+}
+
+fn drop_name(v: Vec<Int>) {
+    drop v
+}
+
+fn vec(item: Int, count: Int) -> Vec<Int> {
+    let mut v = Vec()
+    for _ in 0 < count {
+        push(v, item)
+    }
+    v
+}
+
+fn push(v: Vec<Int>, item: Int) -> Vec<Int> {
+    let mut v2 = v
+    push(v2, item)
+    v2
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    n.to_string()
+}
+
+fn sum(items: Vec<Int>) -> Int {
+    let mut total = 0
+    for item in &items {
+        total = total + item
+    }
+    total
+}
+
+fn drop_name(v: Vec<Int>) {
+    drop v
+}
+
+fn vec(item: Int, count: Int) -> Vec<Int> {
+    let mut v = Vec()
+    for _ in 0 < count {
+        push(v, item)
+    }
+    v
+}
+
+fn push(v: Vec<Int>, item: Int) -> Vec<Int> {
+    let mut v2 = v
+    push(v2, item)
+    v2
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    n.to_string()
+}
+
+fn sum(items: Vec<Int>) -> Int {
+    let mut total = 0
+    for item in &items {
+        total = total + item
+    }
+    total
+}
+
+fn drop_name(v: Vec<Int>) {
+    drop v
+}
+
+fn vec(item: Int, count: Int) -> Vec<Int> {
+    let mut v = Vec()
+    for _ in 0 < count {
+        push(v, item)
+    }
+    v
+}
+
+fn push(v: Vec<Int>, item: Int) -> Vec<Int> {
+    let mut v2 = v
+    push(v2, item)
+    v2
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    n.to_string()
+}
+
+fn sum(items: Vec<Int>) -> Int {
+    let mut total = 0
+    for item in &items

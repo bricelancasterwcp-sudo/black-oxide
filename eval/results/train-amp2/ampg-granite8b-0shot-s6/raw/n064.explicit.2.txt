@@ -1,0 +1,47 @@
+fn list_get(list: &Vec<Int>, position: Int) -> Option<Int> {
+    let mut iter = &list
+    let mut pos = 0
+    while pos < position {
+        match get(iter, pos) {
+            Some(v) => {
+                if pos == position {
+                    return Some(v)
+                }
+                iter = &v
+                pos = pos + 1
+            },
+            _ => return_none(),
+        }
+    }
+    none()
+}
+
+fn main() {
+    let list = push(push(vec(), 10), 20)
+    let first = list_get(&list, 0)
+    print(first)
+    let fourth = list_get(&list, 3)
+    print(fourth)
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    match i {
+        _ => none(),
+    }
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v
+}
+
+fn vec() -> Vec<Int> {
+    vec()
+}
+
+fn main() {
+    let list = push(push(vec(), 10), 20)
+    let first = list_get(&list, 0)
+    print(first)
+    let fourth = list_get(&list, 3)
+    print(fourth)
+}

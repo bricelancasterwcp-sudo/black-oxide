@@ -1,0 +1,12 @@
+fn count_entries(v1: &Vec<Int>, v2: &Vec<Int>) -> Int {
+    v1.len() + v2.len()
+}
+
+fn main() {
+    let list1 = push(push(vec(), 1), 2)
+    let list2 = push(vec(), 4)
+    let list2 = push(list2, 5)
+    print(count_entries(&list1, &list2))
+    drop list1
+    drop list2
+}

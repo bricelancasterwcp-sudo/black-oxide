@@ -1,0 +1,350 @@
+fn main() {
+    let line1 = buy_lines(4, 3)
+    let line2 = buy_lines(5, 2)
+    print(line1)
+    print(line2)
+    print(line1 + line2)
+}
+
+fn buy_lines(units: Int, price_per_unit: Int) -> Int {
+    price_per_unit * units
+}
+
+fn print(x: Int) {
+    println(to_str(x))
+}
+
+fn println(s: Str) {
+    print_str(s + "\n")
+}
+
+fn to_str(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn print_str(s: Str) {
+    drop s
+}
+
+fn int_to_str(n: Int) -> Str {
+    "FIXME"
+}
+
+fn clone(x: T) -> T {
+    "FIXME"
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    "FIXME"
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    "FIXME"
+}
+
+fn vec() -> Vec<T> {
+    "FIXME"
+}
+
+fn get(v: Vec<T>, i: Int) -> Option<T> {
+    "FIXME"
+}
+
+fn len(v: Vec<T>) -> Int {
+    "FIXME"
+}
+
+fn trunc(x: Float) -> Int {
+    "FIXME"
+}
+
+fn to_float(n: Int) -> Float {
+    "FIXME"
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    "FIXME"
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    "FIXME"
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    "FIXME"
+}
+
+fn str_len(s: Str) -> Int {
+    "FIXME"
+}
+
+fn main() {
+    let nums = push(push(vec(), 5), 40)
+    let bigger = extend(clone(&nums), 70)
+    print(sum_big(&nums, 10))
+    drop nums
+    print(sum_big(&bigger, 10))
+    drop bigger
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let total = 0
+    for x in &v {
+        if x > limit {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn extend(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn print(x: Int) {
+    println(to_str(x))
+}
+
+fn println(s: Str) {
+    print_str(s + "\n")
+}
+
+fn to_str(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn print_str(s: Str) {
+    drop s
+}
+
+fn int_to_str(n: Int) -> Str {
+    "FIXME"
+}
+
+fn clone(x: T) -> T {
+    "FIXME"
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    "FIXME"
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    "FIXME"
+}
+
+fn vec() -> Vec<T> {
+    "FIXME"
+}
+
+fn get(v: Vec<T>, i: Int) -> Option<T> {
+    "FIXME"
+}
+
+fn len(v: Vec<T>) -> Int {
+    "FIXME"
+}
+
+fn trunc(x: Float) -> Int {
+    "FIXME"
+}
+
+fn to_float(n: Int) -> Float {
+    "FIXME"
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    "FIXME"
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    "FIXME"
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    "FIXME"
+}
+
+fn str_len(s: Str) -> Int {
+    "FIXME"
+}
+
+fn main() {
+    let nums = push(push(vec(), 5), 40)
+    let bigger = extend(clone(&nums), 70)
+    print(sum_big(&nums, 10))
+    drop nums
+    print(sum_big(&bigger, 10))
+    drop bigger
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let total = 0
+    for x in &v {
+        if x > limit {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn extend(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn print(x: Int) {
+    println(to_str(x))
+}
+
+fn println(s: Str) {
+    print_str(s + "\n")
+}
+
+fn to_str(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn print_str(s: Str) {
+    drop s
+}
+
+fn int_to_str(n: Int) -> Str {
+    "FIXME"
+}
+
+fn clone(x: T) -> T {
+    "FIXME"
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    "FIXME"
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    "FIXME"
+}
+
+fn vec() -> Vec<T> {
+    "FIXME"
+}
+
+fn get(v: Vec<T>, i: Int) -> Option<T> {
+    "FIXME"
+}
+
+fn len(v: Vec<T>) -> Int {
+    "FIXME"
+}
+
+fn trunc(x: Float) -> Int {
+    "FIXME"
+}
+
+fn to_float(n: Int) -> Float {
+    "FIXME"
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    "FIXME"
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    "FIXME"
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    "FIXME"
+}
+
+fn str_len(s: Str) -> Int {
+    "FIXME"
+}
+
+fn main() {
+    let nums = push(push(vec(), 5), 40)
+    let bigger = extend(clone(&nums), 70)
+    print(sum_big(&nums, 10))
+    drop nums
+    print(sum_big(&bigger, 10))
+    drop bigger
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let total = 0
+    for x in &v {
+        if x > limit {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn extend(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn print(x: Int) {
+    println(to_str(x))
+}
+
+fn println(s: Str) {
+    print_str(s + "\n")
+}
+
+fn to_str(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn print_str(s: Str) {
+    drop s
+}
+
+fn int_to_str(n: Int) -> Str {
+    "FIXME"
+}
+
+fn clone(x: T) -> T {
+    "FIXME"
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    "FIXME"
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    "FIXME"
+}
+
+fn vec() -> Vec<T> {
+    "FIXME"
+}
+
+fn get(v: Vec<T>, i: Int) -> Option<T> {
+    "FIXME"
+}
+
+fn len(v: Vec<T>) -> Int {
+    "FIXME"
+}
+
+fn trunc(x: Float) -> Int {
+    "FIXME"
+}
+
+fn to_float(n: Int) -> Float {
+    "FIXME"
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    "FIXME"
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    "FIXME"
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    "FIXME"
+}
+
+fn str

@@ -1,0 +1,5 @@
+fn main() {
+    let text = "2026".to_string() + " is the year we make the web a better place."
+    print_str(text)
+    print(str_len(text))
+}

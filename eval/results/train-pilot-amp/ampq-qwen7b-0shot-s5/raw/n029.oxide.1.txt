@@ -1,0 +1,14 @@
+struct TextBuilder { content: Str }
+
+fn build_text() -> TextBuilder {
+    let mut builder = TextBuilder { content: "" }
+    builder.content = builder.content + "one"
+    builder.content = builder.content + "two"
+    builder.content = builder.content + "three"
+    builder
+}
+
+fn main() {
+    let text = build_text()
+    print_str(text.content)
+}

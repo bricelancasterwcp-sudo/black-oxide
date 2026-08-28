@@ -1,0 +1,11 @@
+use std::collections::LinkedList;
+
+fn main() {
+    let mut bank = LinkedList::new();
+    bank.push_back(0);
+
+    for amount in [3, 1, 4, 1, 5] {
+        bank.push_back(bank.back().unwrap() + amount);
+        println!("{}", bank.back().unwrap());
+    }
+}

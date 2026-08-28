@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    struct Device {
+        sensor: Sensor,
+    }
+
+    struct Sensor {
+        reading: u8,
+    }
+
+    let mut device = Device {
+        sensor: Sensor { reading: 0 },
+    };
+
+    device.sensor.reading = 7;
+
+    println!("{}", device.sensor.reading);
+}
+```

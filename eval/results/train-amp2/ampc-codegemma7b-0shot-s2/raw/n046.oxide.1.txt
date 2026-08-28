@@ -1,0 +1,19 @@
+fn count(v: Vec<Int>, cutoff: Int) -> Vec<Int> {
+    let mut under = 0
+    let mut over = 0
+    for x in v {
+        if x < cutoff {
+            under = under + 1
+        } else {
+            over = over + 1
+        }
+    }
+    push(push(vec(), under), over)
+}
+
+fn main() {
+    let samples = vec(5, 12, 3, 18, 9)
+    let cutoff = 10
+    let result = count(samples, cutoff)
+    print(result)
+}

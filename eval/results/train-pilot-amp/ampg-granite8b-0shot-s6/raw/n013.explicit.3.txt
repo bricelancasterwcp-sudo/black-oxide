@@ -1,0 +1,4 @@
+fn main() {
+    let set = vec(5, 3, 9, 1, 7).sort().unique().reverse()
+    print(set.get(0))
+}

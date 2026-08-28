@@ -1,0 +1,24 @@
+struct Numbers { total: Int, count: Int }
+
+fn sum_and_count(nums: Vec<Str>) -> Numbers {
+    let mut total = 0
+    let mut count = 0
+    for num in nums {
+        match parse_int(num) {
+            Some(n) => {
+                total = total + n
+                count = count + 1
+            },
+            None => count == count + 1,
+        }
+    }
+    Numbers(total, count)
+}
+
+fn main() {
+    let nums = vec("7", "x", "9", "?")
+    let result = sum_and_count(nums)
+    print(result.total)
+    print_str(" ")
+    print(result.count)
+}

@@ -1,0 +1,51 @@
+fn main() {
+    let v = vec(12, 5, 20, 8, 17)
+    let max = first_big(v.clone())
+    print(max)
+    let v2 = v.clone()
+    let second = second(v2)
+    match second {
+        Some(n) => print(n),
+        None => print_str("too short"),
+    }
+}
+
+fn first_big(v: Vec<Int>) -> Int {
+    let mut max = -1
+    for x in v {
+        if x > max {
+            max = x
+        }
+    }
+    max
+}
+
+fn second(v: Vec<Int>) -> Option<Int> {
+    let mut first_max = -1
+    let mut second_max = -1
+    for x in v {
+        if x > first_max {
+            second_max = first_max
+            first_max = x
+        } else if x > second_max && x != first_max {
+            second_max = x
+        }
+    }
+    if second_max > -1 {
+        Some(second_max)
+    } else {
+        None
+    }
+}
+
+struct Reading { label: Str, values: Vec<Int> }
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(vec(), 3), 42) }
+    print(first_big(r.values))            // field access copies: r stays usable
+    let r2 = Reading { label: "lab2", ..r }
+    match second(r2.values) {
+        Some(n) => print(n),
+        None => print_str("too short"),
+    }
+}

@@ -1,0 +1,20 @@
+struct Result {
+    value: Int,
+    error: Option<Str>,
+}
+
+fn divide(a: Int, b: Int) -> Result {
+    if b == 0 {
+        Result(value == 0, error == Some("bad"))
+    } else {
+        Result(value == a / b, error == None)
+    }
+}
+
+fn main() {
+    let result = divide(20, 4)
+    match result.error {
+        Some(error) => print_str(error),
+        None => print(result.value),
+    }
+}

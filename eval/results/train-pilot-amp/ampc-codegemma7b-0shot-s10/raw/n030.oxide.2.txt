@@ -1,0 +1,14 @@
+fn count_vowels(s: Str) -> Int {
+    let mut count = 0
+    for c in chars(s) {
+        if c == "a" || c == "e" || c == "i" || c == "o" || c == "u" {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn main() {
+    let input = "This is a test string"
+    print(count_vowels(input))
+}

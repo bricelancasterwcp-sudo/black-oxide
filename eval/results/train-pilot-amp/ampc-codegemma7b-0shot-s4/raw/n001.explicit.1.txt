@@ -1,0 +1,8 @@
+fn cube(n: Int) -> Int {
+    n * n * n
+}
+
+fn main() {
+    let total = cube(1) + cube(2) + cube(3) + cube(4) + cube(5)
+    print(total)
+}

@@ -1,0 +1,86 @@
+fn main() {
+    let numbers = vec(9, 2, 7, 4)
+    let sorted = sort(numbers)
+    for num in sorted {
+        print(num)
+    }
+}
+
+fn sort(mutvec: Vec<Int>) -> Vec<Int> {
+    vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(), 9), 2), 7), 4), vec_push(vec_push(vec_push(vec_push(vec_push(), 9), 2), 7), 4), vec_push(vec_push(vec_push(vec_push(), 9), 2), 7), 4), vec_push(vec_push(vec_push(), 9), 2), 7), 4), vec_push(vec_push(), 9), 2), 7)
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(), x), x), x), x), vec_push(vec_push(vec_push(vec_push(), x), x), x), x), vec_push(vec_push(vec_push(), x), x), x), vec_push(vec_push(), x), x), x), vec_push(vec_push(), x), x)
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(), x), x), x), x), vec_push(vec_push(vec_push(vec_push(), x), x), x), x), vec_push(vec_push(vec_push(), x), x), x), vec_push(vec_push(), x), x), x), vec_push(vec_push(), x), x)
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(), x), x), x), x), vec_push(vec_push(vec_push(vec_push(), x), x), x), x), vec_push(vec_push(vec_push(), x), x), x), vec_push(vec_push(), x), x), x), vec_push(vec_push(), x), x)
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(), x), x), x), x), vec_push(vec_push(vec_push(vec_push(), x), x), x), x), vec_push(vec_push(vec_push(), x), x), x), vec_push(vec_push(), x), x), x), vec_push(vec_push(), x), x)
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(), x), x), x), x), vec_push(vec_push(vec_push(vec_push(), x), x), x), x), vec_push(vec_push(vec_push(), x), x), x), vec_push(vec_push(), x), x), x), vec_push(vec_push(), x), x)
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(), x), x), x), x), vec_push(vec_push(vec_push(vec_push(), x), x), x), x), vec_push(vec_push(vec_push(), x), x), x), vec_push(vec_push(), x), x), x), vec_push(vec_push(), x), x)
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(), x), x), x), x), vec_push(vec_push(vec_push(vec_push(), x), x), x), x), vec_push(vec_push(vec_push(), x), x), x), vec_push(vec_push(), x), x), x), vec_push(vec_push(), x), x)
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(), x), x), x), x), vec_push(vec_push(vec_push(vec_push(), x), x), x), x), vec_push(vec_push(vec_push(), x), x), x), vec_push(vec_push(), x), x), x), vec_push(vec_push(), x), x)
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(), x), x), x), x), vec_push(vec_push(vec_push(vec_push(), x), x), x), x), vec_push(vec_push(vec_push(), x), x), x), vec_push(vec_push(), x), x), x), vec_push(vec_push(), x), x)
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(), x), x), x), x), vec_push(vec_push(vec_push(vec_push(), x), x), x), x), vec_push(vec_push(vec_push(), x), x), x), vec_push(vec_push(), x), x), x), vec_push(vec_push(), x), x)
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(), x), x), x), x), vec_push(vec_push(vec_push(vec_push(), x), x), x), x), vec_push(vec_push(vec_push(), x), x), x), vec_push(vec_push(), x), x), x), vec_push(vec_push(), x), x)
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(), x), x), x), x), vec_push(vec_push(vec_push(vec_push(), x), x), x), x), vec_push(vec_push(vec_push(), x), x), x), vec_push(vec_push(), x), x), x), vec_push(vec_push(), x), x)
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(), x), x), x), x), vec_push(vec_push(vec_push(vec_push(), x), x), x), x), vec_push(vec_push(vec_push(), x), x), x), vec_push(vec_push(), x), x), x), vec_push(vec_push(), x), x)
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(), x), x), x), x), vec_push(vec_push(vec_push(vec_push(), x), x), x), x), vec_push(vec_push(vec_push(), x), x), x), vec_push(vec_push(), x), x), x), vec_push(vec_push(), x), x)
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(), x), x), x), x), vec_push(vec_push(vec_push(vec_push(), x), x), x), x), vec_push(vec_push(vec_push(), x), x), x), vec_push(vec_push(), x), x), x), vec_push(vec_push(), x), x)
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(), x), x), x), x), vec_push(vec_push(vec_push(vec_push(), x), x), x), x), vec_push(vec_push(vec_push(), x), x), x), vec_push(vec_push(), x), x), x), vec_push(vec_push(), x), x)
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(), x), x), x), x), vec_push(vec_push(vec_push(vec_push(), x), x), x), x), vec_push(vec_push(vec_push(), x), x), x), vec_push(vec_push(), x), x), x), vec_push(vec_push(), x), x)
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(), x), x), x), x), vec_push(vec_push(vec_push(vec_push(), x), x), x), x), vec_push(vec_push(vec_push(), x), x), x), vec_push(vec_push(), x), x), x), vec_push(vec_push(), x), x)
+}
+
+fn vec_push(mutvec: Vec<Int>, x: Int) -> Vec<Int> {
+    vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(vec_push(), x), x), x), x), vec_push(vec_push(vec_push(vec_push(), x), x), x), x), vec_push(vec_push(vec_push(), x), x), x), vec_push(vec_push

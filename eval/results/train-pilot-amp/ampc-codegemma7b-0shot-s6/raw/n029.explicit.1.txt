@@ -1,0 +1,11 @@
+fn main() {
+    let a = to_str(1)
+    let b = to_str(2)
+    let c = to_str(3)
+    let text = concat(concat(a, b), c)
+    print(text)
+    drop a
+    drop b
+    drop c
+    drop text
+}

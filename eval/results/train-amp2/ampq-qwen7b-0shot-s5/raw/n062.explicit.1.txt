@@ -1,0 +1,13 @@
+fn main() {
+    let signals = vec("green", "red", "yellow")
+    for signal in &signals {
+        if signal == "green" {
+            print("go")
+        } else if signal == "red" {
+            print("stop")
+        } else if signal == "yellow" {
+            print("wait")
+        }
+    }
+    drop signals
+}

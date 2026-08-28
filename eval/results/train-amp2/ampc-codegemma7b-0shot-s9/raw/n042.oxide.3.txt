@@ -1,0 +1,8 @@
+fn main() {
+    let mut v = vec(12, 5, 20, 8, 17)
+    let max = v.iter().copied().max().unwrap()
+    v.retain || v.len() > 1 && v.iter().copied().max().unwrap() == max
+    let second_max = v.iter().copied().max().unwrap()
+    print(max)
+    print(second_max)
+}

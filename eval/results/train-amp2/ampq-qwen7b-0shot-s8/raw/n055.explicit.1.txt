@@ -1,0 +1,13 @@
+fn main() {
+    let mut entries = vec("8", "oak", "15")
+    let mut i = 0
+    while i < entries.len() {
+        match parse_int(entries.get(i)) {
+            Some(n) => print(n),
+            None => print("bad"),
+        }
+        drop entries
+        i = i + 1
+    }
+    drop entries
+}

@@ -1,0 +1,371 @@
+fn main() {
+    let rectangle = Rectangle { width: 7, height: 6 }
+    print(area(&rectangle))
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn area(r: &Rectangle) -> Int {
+    r.width * r.height
+}
+
+fn print(n: Int) {
+    print_str("area = ")
+    print_int(n)
+    print_str("\n")
+}
+
+fn print_str(s: Str) {
+    print_str("area = ")
+    print_int(n)
+    print_str("\n")
+}
+
+fn print_int(n: Int) {
+    print_str("area = ")
+    print_int(n)
+    print_str("\n")
+}
+
+fn area(r: &Rectangle) -> Int {
+    r.width * r.height
+}
+
+fn main() {
+    let rectangle = Rectangle { width: 7, height: 6 }
+    print(area(&rectangle))
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn area(r: &Rectangle) -> Int {
+    r.width * r.height
+}
+
+fn print(n: Int) {
+    print_str("area = ")
+    print_int(n)
+    print_str("\n")
+}
+
+fn print_str(s: Str) {
+    print_str("area = ")
+    print_int(n)
+    print_str("\n")
+}
+
+fn print_int(n: Int) {
+    print_str("area = ")
+    print_int(n)
+    print_str("\n")
+}
+
+fn area(r: &Rectangle) -> Int {
+    r.width * r.height
+}
+
+fn main() {
+    let rectangle = Rectangle { width: 7, height: 6 }
+    print(area(&rectangle))
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn area(r: &Rectangle) -> Int {
+    r.width * r.height
+}
+
+fn print(n: Int) {
+    print_str("area = ")
+    print_int(n)
+    print_str("\n")
+}
+
+fn print_str(s: Str) {
+    print_str("area = ")
+    print_int(n)
+    print_str("\n")
+}
+
+fn print_int(n: Int) {
+    print_str("area = ")
+    print_int(n)
+    print_str("\n")
+}
+
+fn area(r: &Rectangle) -> Int {
+    r.width * r.height
+}
+
+fn main() {
+    let rectangle = Rectangle { width: 7, height: 6 }
+    print(area(&rectangle))
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn area(r: &Rectangle) -> Int {
+    r.width * r.height
+}
+
+fn print(n: Int) {
+    print_str("area = ")
+    print_int(n)
+    print_str("\n")
+}
+
+fn print_str(s: Str) {
+    print_str("area = ")
+    print_int(n)
+    print_str("\n")
+}
+
+fn print_int(n: Int) {
+    print_str("area = ")
+    print_int(n)
+    print_str("\n")
+}
+
+fn area(r: &Rectangle) -> Int {
+    r.width * r.height
+}
+
+fn main() {
+    let rectangle = Rectangle { width: 7, height: 6 }
+    print(area(&rectangle))
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn area(r: &Rectangle) -> Int {
+    r.width * r.height
+}
+
+fn print(n: Int) {
+    print_str("area = ")
+    print_int(n)
+    print_str("\n")
+}
+
+fn print_str(s: Str) {
+    print_str("area = ")
+    print_int(n)
+    print_str("\n")
+}
+
+fn print_int(n: Int) {
+    print_str("area = ")
+    print_int(n)
+    print_str("\n")
+}
+
+fn area(r: &Rectangle) -> Int {
+    r.width * r.height
+}
+
+fn main() {
+    let rectangle = Rectangle { width: 7, height: 6 }
+    print(area(&rectangle))
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn area(r: &Rectangle) -> Int {
+    r.width * r.height
+}
+
+fn print(n: Int) {
+    print_str("area = ")
+    print_int(n)
+    print_str("\n")
+}
+
+fn print_str(s: Str) {
+    print_str("area = ")
+    print_int(n)
+    print_str("\n")
+}
+
+fn print_int(n: Int) {
+    print_str("area = ")
+    print_int(n)
+    print_str("\n")
+}
+
+fn area(r: &Rectangle) -> Int {
+    r.width * r.height
+}
+
+fn main() {
+    let rectangle = Rectangle { width: 7, height: 6 }
+    print(area(&rectangle))
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn area(r: &Rectangle) -> Int {
+    r.width * r.height
+}
+
+fn print(n: Int) {
+    print_str("area = ")
+    print_int(n)
+    print_str("\n")
+}
+
+fn print_str(s: Str) {
+    print_str("area = ")
+    print_int(n)
+    print_str("\n")
+}
+
+fn print_int(n: Int) {
+    print_str("area = ")
+    print_int(n)
+    print_str("\n")
+}
+
+fn area(r: &Rectangle) -> Int {
+    r.width * r.height
+}
+
+fn main() {
+    let rectangle = Rectangle { width: 7, height: 6 }
+    print(area(&rectangle))
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn area(r: &Rectangle) -> Int {
+    r.width * r.height
+}
+
+fn print(n: Int) {
+    print_str("area = ")
+    print_int(n)
+    print_str("\n")
+}
+
+fn print_str(s: Str) {
+    print_str("area = ")
+    print_int(n)
+    print_str("\n")
+}
+
+fn print_int(n: Int) {
+    print_str("area = ")
+    print_int(n)
+    print_str("\n")
+}
+
+fn area(r: &Rectangle) -> Int {
+    r.width * r.height
+}
+
+fn main() {
+    let rectangle = Rectangle { width: 7, height: 6 }
+    print(area(&rectangle))
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn area(r: &Rectangle) -> Int {
+    r.width * r.height
+}
+
+fn print(n: Int) {
+    print_str("area = ")
+    print_int(n)
+    print_str("\n")
+}
+
+fn print_str(s: Str) {
+    print_str("area = ")
+    print_int(n)
+    print_str("\n")
+}
+
+fn print_int(n: Int) {
+    print_str("area = ")
+    print_int(n)
+    print_str("\n")
+}
+
+fn area(r: &Rectangle) -> Int {
+    r.width * r.height
+}
+
+fn main() {
+    let rectangle = Rectangle { width: 7, height: 6 }
+    print(area(&rectangle))
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn area(r: &Rectangle) -> Int {
+    r.width * r.height
+}
+
+fn print(n: Int) {
+    print_str("area = ")
+    print_int(n)
+    print_str("\n")
+}
+
+fn print_str(s: Str) {
+    print_str("area = ")
+    print_int(n)
+    print_str("\n")
+}
+
+fn print_int(n: Int) {
+    print_str("area = ")
+    print_int(n)
+    print_str("\n")
+}
+
+fn area(r: &Rectangle) -> Int {
+    r.width * r.height
+}
+
+fn main() {
+    let rectangle = Rectangle { width: 7, height: 6 }
+    print(area(&rectangle))
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn area(r: &Rectangle) ->

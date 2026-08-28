@@ -1,0 +1,14 @@
+struct Strng { chars: Vec<Str> }
+
+fn reverse(s: Strng) -> Strng {
+    let mut chars = s.chars
+    chars.reverse()
+    Strng(chars)
+}
+
+fn main() {
+    let drum = Strng(vec("d", "r", "u", "m"))
+    let reversed = reverse(drum)
+    print_str(reversed.chars.join(" "))
+    print_str(" drum")
+}

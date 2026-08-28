@@ -1,0 +1,13 @@
+fn main() {
+    let mut readings = vec()
+    for n in range(5, 11) {
+        push(readings, n)
+    }
+    let mut smallest = 100
+    for x in readings {
+        if x < smallest {
+            smallest = x
+        }
+    }
+    print(smallest)
+}

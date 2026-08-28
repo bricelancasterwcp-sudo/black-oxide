@@ -1,0 +1,15 @@
+struct Number { value: Int }
+
+fn divisible_by(number: Number, divisor: Int) -> Bool {
+    number.value % divisor == 0
+}
+
+fn main() {
+    let mut total = 0
+    for i in 1.to(50) {
+        if divisible_by(Number { value: i }, 3) || divisible_by(Number { value: i }, 5) {
+            total = total + i
+        }
+    }
+    print(total)
+}

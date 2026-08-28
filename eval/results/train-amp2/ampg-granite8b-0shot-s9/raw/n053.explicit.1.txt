@@ -1,0 +1,11 @@
+fn word_drum(word: Str) -> Str {
+    let mut reversed = Str("")
+    for letter in chars(word) {
+        reversed = push(reversed, letter)
+    }
+    reversed
+}
+
+fn main() {
+    print(word_drum("drum"))
+}

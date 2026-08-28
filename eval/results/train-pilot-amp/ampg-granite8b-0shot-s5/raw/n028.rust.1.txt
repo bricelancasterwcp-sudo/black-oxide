@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let res = std::env::args().nth(1).and_then(|arg| arg.parse().ok());
+    if let Some(num) = res {
+        println!("{}", num);
+    } else {
+        println!("bad");
+    }
+}
+```

@@ -1,0 +1,9 @@
+fn main() {
+    let mut total = 0;
+    for num in 1..=10 {
+        if num % 3 == 0 {
+            total += num;
+        }
+    }
+    println!("The total of numbers divisible by three from 1 to 10 is: {}", total);
+}

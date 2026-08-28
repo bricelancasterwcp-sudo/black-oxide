@@ -1,0 +1,15 @@
+struct Bank {
+    balance: Int,
+}
+
+fn deposit(bank: Bank, amount: Int) -> Bank {
+    Bank(balance == bank.balance + amount)
+}
+
+fn main() {
+    let mut bank = Bank { balance: 0 }
+    for amount in vec(3, 1, 4, 1, 5) {
+        bank = deposit(bank, amount)
+        print(bank.balance)
+    }
+}

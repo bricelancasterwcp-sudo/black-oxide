@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let readings = vec![6, 11, 3, 14, 9];
+    let mut count = 0;
+    let mut max = readings[0];
+
+    for &reading in &readings {
+        if reading > 5 {
+            count += 1;
+        }
+        if reading > max {
+            max = reading;
+        }
+    }
+
+    println!("{}", count);
+    println!("{}", max);
+}
+```

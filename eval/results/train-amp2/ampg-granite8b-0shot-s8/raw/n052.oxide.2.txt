@@ -1,0 +1,11 @@
+fn main() {
+    let word = "banana".to_str()
+    let len = len(word)
+    let mut i = 0
+    while i < len {
+        if get(word, i) == 110 {
+            print(i)
+        }
+        i = i + 1
+    }
+}

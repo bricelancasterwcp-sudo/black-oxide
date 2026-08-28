@@ -1,0 +1,19 @@
+struct Shape {
+    kind: ShapeKind,
+}
+
+enum ShapeKind {
+    Square(Float),
+    Circle(Float),
+}
+
+fn area(s: Shape) -> Float {
+    match s.kind {
+        ShapeKind => 4.0 * s * s,
+        ShapeKind => 3.1416 * r * r,
+    }
+}
+
+fn main() {
+    print(area(Shape { kind: ShapeKind(Square(4.0)) }))
+}

@@ -1,0 +1,13 @@
+fn smallest(v: Vec<Int>) -> Int {
+    let mut found = -1
+    for x in v {
+        if x < found || found == -1 {
+            found = x
+        }
+    }
+    found
+}
+
+fn main() {
+    print(smallest(vec(5, 3, 9, 1, 7)))
+}

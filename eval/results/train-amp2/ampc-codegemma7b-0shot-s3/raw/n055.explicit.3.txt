@@ -1,0 +1,17 @@
+fn main() {
+    let num = parse_int("8")
+    match num {
+        Some(n) => print(n),
+        None => print("bad"),
+    }
+    let oak = parse_int("oak")
+    match oak {
+        Some(o) => print(o),
+        None => print("bad"),
+    }
+    let num2 = parse_int("15")
+    match num2 {
+        Some(n) => print(n),
+        None => print("bad"),
+    }
+}

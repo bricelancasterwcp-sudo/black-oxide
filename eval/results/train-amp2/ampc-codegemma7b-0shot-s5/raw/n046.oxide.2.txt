@@ -1,0 +1,19 @@
+fn count_by_cutoff(values: Vec<Int>, cutoff: Int) -> Vec<Int> {
+    let mut below_cutoff = 0
+    let mut at_cutoff = 0
+    for value in values {
+        if value < cutoff {
+            below_cutoff = below_cutoff + 1
+        } else {
+            at_cutoff = at_cutoff + 1
+        }
+    }
+    vec(at_cutoff, below_cutoff)
+}
+
+fn main() {
+    let samples = vec(5, 12, 3, 18, 9)
+    let cutoff = 10
+    let counts = count_by_cutoff(samples, cutoff)
+    print(counts)
+}

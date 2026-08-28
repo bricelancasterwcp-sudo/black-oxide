@@ -1,0 +1,34 @@
+struct List {
+    head: Option<Int>,
+    tail: Vec<Int>,
+}
+
+fn get(list: List, i: Int) -> Option<Int> {
+    if i == 0 {
+        list.head
+    } else {
+        let rest = pop(list.tail)?
+        get(rest, i - 1)
+    }
+}
+
+fn pop(v: Vec<Int>) -> Option<Vec<Int>> {
+    match v {
+        Vec(vec) => {
+            let len = len(vec)
+            if len == 0 {
+                None
+            } else {
+                Some(vec(range(0, len - 1)))
+            }
+        },
+    }
+}
+
+fn main() {
+    let l = push(push(List { head: Some(10), tail: vec() }, 20), 30)
+    match get(l, 1) {
+        Some(n) => print(n),
+        None => print_str("empty"),
+    }
+}

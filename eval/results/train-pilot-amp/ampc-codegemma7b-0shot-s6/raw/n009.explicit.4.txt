@@ -1,0 +1,15 @@
+fn digits(n: Int) -> Vec<Int> {
+    if n < 10 {
+        vec(n)
+    } else {
+        let digits = digits(n / 10)
+        push(digits, n % 10)
+    }
+}
+
+fn main() {
+    let number = 1234
+    let digits = digits(number)
+    print(&digits)
+    drop digits
+}

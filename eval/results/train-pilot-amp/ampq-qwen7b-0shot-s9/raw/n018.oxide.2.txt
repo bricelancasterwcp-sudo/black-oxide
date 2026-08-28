@@ -1,0 +1,15 @@
+struct List { head: Option<Int>, tail: Option<Box<List>> }
+
+fn print_list(list: List) {
+    if letSome(x) == list.head {
+        if letSome(rest) == list.tail {
+            print_list(rest)
+        }
+        print(x)
+    }
+}
+
+fn main() {
+    let list = List { head: Some(4), tail: Some(Box(List { head: Some(3), tail: Some(Box(List { head: Some(2), tail: Some(Box(List) == List) })) })) }
+    print_list(list)
+}

@@ -1,0 +1,12 @@
+fn main() {
+    let mut total = 0
+    let mut list = vec()
+    for i in 10 {
+        if i % 3 == 0 {
+            list = push(list, i)
+            total = total + i
+        }
+    }
+    print(total)
+    drop list
+}

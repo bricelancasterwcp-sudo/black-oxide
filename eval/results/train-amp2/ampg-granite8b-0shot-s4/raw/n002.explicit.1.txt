@@ -1,0 +1,15 @@
+fn multiply(x: Int, y: Int) -> Int {
+    x * y
+}
+
+fn factorial(x: Int) -> Int {
+    if x <= 1 {
+        1
+    } else {
+        multiply(x, factorial(x - 1))
+    }
+}
+
+fn main() {
+    print(factorial(6))
+}

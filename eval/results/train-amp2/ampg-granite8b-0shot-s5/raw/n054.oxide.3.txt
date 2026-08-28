@@ -1,0 +1,14 @@
+fn main() {
+    let word = "word keyboard letter by letter".to_string().chars().collect()
+    let mut vowel_count = 0
+    let mut consonant_count = 0
+    for letter in word {
+        if "aeiouAEIOU".contains(letter) {
+            vowel_count = vowel_count + 1
+        } else {
+            consonant_count = consonant_count + 1
+        }
+    }
+    print(vowel_count)
+    print(consonant_count)
+}

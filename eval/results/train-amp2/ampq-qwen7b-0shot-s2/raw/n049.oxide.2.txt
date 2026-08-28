@@ -1,0 +1,12 @@
+fn min_max_gap(figures: Vec<Int>) -> Int {
+    let min_val = figures.clone().iter().min().unwrap().clone()
+    let max_val = figures.clone().iter().max().unwrap().clone()
+    max_val - min_val
+}
+
+fn main() {
+    let figures = vec(8, 3, 11, 6)
+    let min_val = figures.clone().iter().min().unwrap().clone()
+    print(min_val)
+    print(min_max_gap(figures))
+}

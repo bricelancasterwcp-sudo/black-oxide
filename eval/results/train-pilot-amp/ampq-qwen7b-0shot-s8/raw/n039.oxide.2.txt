@@ -1,0 +1,16 @@
+struct List { value: Int, next: Option<Box<List>> }
+
+fn get(list: Option<Box<List>>, index: Int) -> Option<Int> {
+    match list {
+        None => None,
+        Some(node) => if index == 0 { Some(node.value) } else { get(node.next, index - 1) },
+    }
+}
+
+fn main() {
+    let list = Some(Box { value: 1, next: Some(Box { value: 2, next: None }) })
+    match get(list, 5) {
+        Some(n) => print(n),
+        None => print_str("none"),
+    }
+}

@@ -1,0 +1,382 @@
+fn main() {
+    let mut total = 1
+    for x in 1.to(6) {
+        total = total * x
+    }
+    print(total)
+    drop total
+}
+
+fn main() {
+    let mut total = 1
+    for x in 1.to(6) {
+        total = total * x
+    }
+    print(total)
+    drop total
+}
+
+fn main() {
+    let mut total = 1
+    for x in 1.to(6) {
+        total = total * x
+    }
+    print(total)
+    drop total
+}
+
+fn main() {
+    let mut total = 1
+    for x in 1.to(6) {
+        total = total * x
+    }
+    print(total)
+    drop total
+}
+
+fn main() {
+    let mut total = 1
+    for x in 1.to(6) {
+        total = total * x
+    }
+    print(total)
+    drop total
+}
+
+fn main() {
+    let mut total = 1
+    for x in 1.to(6) {
+        total = total * x
+    }
+    print(total)
+    drop total
+}
+
+fn main() {
+    let mut total = 1
+    for x in 1.to(6) {
+        total = total * x
+    }
+    print(total)
+    drop total
+}
+
+fn main() {
+    let mut total = 1
+    for x in 1.to(6) {
+        total = total * x
+    }
+    print(total)
+    drop total
+}
+
+fn main() {
+    let mut total = 1
+    for x in 1.to(6) {
+        total = total * x
+    }
+    print(total)
+    drop total
+}
+
+fn main() {
+    let mut total = 1
+    for x in 1.to(6) {
+        total = total * x
+    }
+    print(total)
+    drop total
+}
+
+fn main() {
+    let mut total = 1
+    for x in 1.to(6) {
+        total = total * x
+    }
+    print(total)
+    drop total
+}
+
+fn main() {
+    let mut total = 1
+    for x in 1.to(6) {
+        total = total * x
+    }
+    print(total)
+    drop total
+}
+
+fn main() {
+    let mut total = 1
+    for x in 1.to(6) {
+        total = total * x
+    }
+    print(total)
+    drop total
+}
+
+fn main() {
+    let mut total = 1
+    for x in 1.to(6) {
+        total = total * x
+    }
+    print(total)
+    drop total
+}
+
+fn main() {
+    let mut total = 1
+    for x in 1.to(6) {
+        total = total * x
+    }
+    print(total)
+    drop total
+}
+
+fn main() {
+    let mut total = 1
+    for x in 1.to(6) {
+        total = total * x
+    }
+    print(total)
+    drop total
+}
+
+fn main() {
+    let mut total = 1
+    for x in 1.to(6) {
+        total = total * x
+    }
+    print(total)
+    drop total
+}
+
+fn main() {
+    let mut total = 1
+    for x in 1.to(6) {
+        total = total * x
+    }
+    print(total)
+    drop total
+}
+
+fn main() {
+    let mut total = 1
+    for x in 1.to(6) {
+        total = total * x
+    }
+    print(total)
+    drop total
+}
+
+fn main() {
+    let mut total = 1
+    for x in 1.to(6) {
+        total = total * x
+    }
+    print(total)
+    drop total
+}
+
+fn main() {
+    let mut total = 1
+    for x in 1.to(6) {
+        total = total * x
+    }
+    print(total)
+    drop total
+}
+
+fn main() {
+    let mut total = 1
+    for x in 1.to(6) {
+        total = total * x
+    }
+    print(total)
+    drop total
+}
+
+fn main() {
+    let mut total = 1
+    for x in 1.to(6) {
+        total = total * x
+    }
+    print(total)
+    drop total
+}
+
+fn main() {
+    let mut total = 1
+    for x in 1.to(6) {
+        total = total * x
+    }
+    print(total)
+    drop total
+}
+
+fn main() {
+    let mut total = 1
+    for x in 1.to(6) {
+        total = total * x
+    }
+    print(total)
+    drop total
+}
+
+fn main() {
+    let mut total = 1
+    for x in 1.to(6) {
+        total = total * x
+    }
+    print(total)
+    drop total
+}
+
+fn main() {
+    let mut total = 1
+    for x in 1.to(6) {
+        total = total * x
+    }
+    print(total)
+    drop total
+}
+
+fn main() {
+    let mut total = 1
+    for x in 1.to(6) {
+        total = total * x
+    }
+    print(total)
+    drop total
+}
+
+fn main() {
+    let mut total = 1
+    for x in 1.to(6) {
+        total = total * x
+    }
+    print(total)
+    drop total
+}
+
+fn main() {
+    let mut total = 1
+    for x in 1.to(6) {
+        total = total * x
+    }
+    print(total)
+    drop total
+}
+
+fn main() {
+    let mut total = 1
+    for x in 1.to(6) {
+        total = total * x
+    }
+    print(total)
+    drop total
+}
+
+fn main() {
+    let mut total = 1
+    for x in 1.to(6) {
+        total = total * x
+    }
+    print(total)
+    drop total
+}
+
+fn main() {
+    let mut total = 1
+    for x in 1.to(6) {
+        total = total * x
+    }
+    print(total)
+    drop total
+}
+
+fn main() {
+    let mut total = 1
+    for x in 1.to(6) {
+        total = total * x
+    }
+    print(total)
+    drop total
+}
+
+fn main() {
+    let mut total = 1
+    for x in 1.to(6) {
+        total = total * x
+    }
+    print(total)
+    drop total
+}
+
+fn main() {
+    let mut total = 1
+    for x in 1.to(6) {
+        total = total * x
+    }
+    print(total)
+    drop total
+}
+
+fn main() {
+    let mut total = 1
+    for x in 1.to(6) {
+        total = total * x
+    }
+    print(total)
+    drop total
+}
+
+fn main() {
+    let mut total = 1
+    for x in 1.to(6) {
+        total = total * x
+    }
+    print(total)
+    drop total
+}
+
+fn main() {
+    let mut total = 1
+    for x in 1.to(6) {
+        total = total * x
+    }
+    print(total)
+    drop total
+}
+
+fn main() {
+    let mut total = 1
+    for x in 1.to(6) {
+        total = total * x
+    }
+    print(total)
+    drop total
+}
+
+fn main() {
+    let mut total = 1
+    for x in 1.to(6) {
+        total = total * x
+    }
+    print(total)
+    drop total
+}
+
+fn main() {
+    let mut total = 1
+    for x in 1.to(6) {
+        total = total * x
+    }
+    print(total)
+    drop total
+}
+
+fn main() {
+    let mut total = 1
+    for x in 1.to(6) {
+        total = total * x

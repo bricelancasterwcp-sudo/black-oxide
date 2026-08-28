@@ -1,0 +1,10 @@
+struct Queue { values: Vec<Int> }
+
+fn main() {
+    let queue = Queue { values: vec(1, 2, 3, 4, 5) }
+    let Queue { values } = queue
+    let values = push(push(vec(), last(values)?), first(values)?)
+    for x in values {
+        print(x)
+    }
+}

@@ -1,0 +1,17 @@
+fn main() {
+    let green_signal = true
+    let red_signal = false
+    let yellow_signal = false
+    if green_signal {
+        print("go for green")
+    }
+    if red_signal {
+        print("stop for red")
+    }
+    if yellow_signal {
+        print("wait for yellow")
+    }
+    drop green_signal
+    drop red_signal
+    drop yellow_signal
+}

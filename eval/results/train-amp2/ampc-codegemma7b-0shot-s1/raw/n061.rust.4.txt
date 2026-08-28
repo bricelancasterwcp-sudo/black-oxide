@@ -1,0 +1,20 @@
+use std::fmt::Display;
+
+fn calculate_area(width: u32, height: u32) -> u32 {
+    width * height
+}
+
+fn calculate_perimeter(width: u32, height: u32) -> u32 {
+    2 * (width + height)
+}
+
+fn main() {
+    let width = 9;
+    let height = 3;
+
+    let area = calculate_area(width as u32, height as u32);
+    let perimeter = calculate_perimeter(width as u32, height as u32);
+
+    println!("Area: {}", area);
+    println!("Perimeter: {}", perimeter);
+}

@@ -1,0 +1,22 @@
+fn walk(v: Vec<Int>) -> Result<Int, String> {
+    let mut total = 0
+    let mut pos = 0
+    while pos < v.len() {
+        let x = v.get(pos).ok_or("out of bounds")?
+        if x % 2 == 0 {
+            total = total + x
+        } else {
+            print_str(x.to_string())
+        }
+        pos = pos + 1
+    }
+    Ok(total)
+}
+
+fn main() {
+    let v = vec(7, 4, 9, 10)
+    match walk(v) {
+        Ok(n) => print_str(n.to_string()),
+        Err(msg) => print_str(msg),
+    }
+}

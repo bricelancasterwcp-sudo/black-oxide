@@ -1,0 +1,18 @@
+fn main() {
+    let mut total = 0
+    let mut i = 0
+    while i < 8 {
+        let value = match i {
+            Ping => 7,
+            Pong => 4,
+            _ => continue_with(2),
+        }
+        if value % 2 == 0 {
+            total = total + value
+        } else {
+            print(value * 2)
+        }
+        i = i + 1
+    }
+    print(total)
+}

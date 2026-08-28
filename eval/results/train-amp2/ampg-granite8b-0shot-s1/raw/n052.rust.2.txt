@@ -1,0 +1,14 @@
+Here's the fixed program:
+
+```rust
+fn main() {
+    println!("{}", "banana".chars().position(|c| c == 'n').unwrap_or_default());
+    println!("{}", "banana".chars().position(|c| c == 'n').unwrap_or_default() + 1);
+}
+```
+
+This program uses the `chars` method to iterate through each character of the string "banana". The `position` method is then used to find the position of the character 'n' within the string. If the character 'n' is found, its position is printed. If the character 'n' is not found, the `unwrap_or_default` method returns the default value of 0, which is then printed.
+
+The `unwrap_or_default` method is used to handle the case when the character 'n' is not found in the string. If the character 'n' is found, its position is printed as expected. If the character 'n' is not found, the default value of 0 is printed instead.
+
+The corrected program should now output the correct positions of the letter 'n' within the word "banana".

@@ -1,0 +1,5 @@
+fn main() {
+    let text = concat(concat(str_lit("one"), str_lit("two")), str_lit("three"))
+    print(text)
+    drop text
+}

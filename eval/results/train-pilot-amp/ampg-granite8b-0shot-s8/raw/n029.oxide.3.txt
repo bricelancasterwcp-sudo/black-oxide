@@ -1,0 +1,17 @@
+struct Number { value: Int }
+
+fn number(i: Int) -> Number {
+    Number(i)
+}
+
+fn add(n1: Number, n2: Number) -> Number {
+    Number(n1.value + n2.value)
+}
+
+fn main() {
+    let one = number(1)
+    let two = number(2)
+    let three = number(3)
+    let sum = add(add(one, two), three)
+    print(sum.value)
+}

@@ -1,0 +1,28 @@
+struct WordSeq { words: Vec<Str> }
+
+fn count_vowels(seq: WordSeq) -> Int {
+    let mut total = 0
+    for w in seq.words {
+        for c in chars(w) {
+            match c {
+                Str(v) => {
+                    let v = v.to_lower()
+                    if v == "a" || v == "e" || v == "i" || v == "o" || v == "u" {
+                        total = total + 1
+                    }
+                },
+                _ => continue_label,
+            }
+        }
+    }
+    total
+}
+
+fn main() {
+    print_str("counting vowels in: ")
+    let seq = WordSeq { words: vec() }
+    for w in str_split("hello world", " ") {
+        seq = push(seq, w)
+    }
+    print(count_vowels(seq))
+}

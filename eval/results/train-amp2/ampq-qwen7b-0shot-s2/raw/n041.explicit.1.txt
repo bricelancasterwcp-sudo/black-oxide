@@ -1,0 +1,11 @@
+fn main() {
+    let a = 9
+    let b = 2
+    let c = 7
+    let d = 4
+    let mut nums = vec(a, b, c, d)
+    nums.sort()
+    for x in nums {
+        print(x)
+    }
+}

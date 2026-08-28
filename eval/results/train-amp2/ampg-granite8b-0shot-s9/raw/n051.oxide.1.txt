@@ -1,0 +1,27 @@
+struct Word {
+    word: Str,
+}
+
+fn open(w: Word) -> Char {
+    let first = w.word.chars().nth(0).unwrap()
+    print(first)
+    first
+}
+
+fn close(w: Word, last: Char) -> Str {
+    let mut chars = w.word.chars()
+    while letSOme(ch) == chars.next() {
+        if ch == last {
+            break
+        }
+    }
+    concat(chars.collect(), w.word)
+}
+
+fn main() {
+    let w = Word { word: "granite" }
+    let first = open(w)
+    print_str(" ")
+    let closed = close(w, first)
+    print(closed)
+}

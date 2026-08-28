@@ -1,0 +1,9 @@
+fn area(width: Int, height: Int) -> Int {
+    width * height
+}
+
+fn main() {
+    let rect = (2.0).to_int() * 3
+    let new_rect = rect + (5.0 - 2.0).to_int() * 3
+    print(area(new_rect, 3))
+}

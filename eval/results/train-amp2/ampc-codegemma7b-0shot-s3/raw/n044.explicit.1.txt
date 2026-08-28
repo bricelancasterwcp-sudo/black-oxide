@@ -1,0 +1,53 @@
+fn deposit(bank: &Bank, amount: Int) -> Bank {
+    let mut new_bank = bank.clone()
+    new_bank.balance = new_bank.balance + amount
+    new_bank
+}
+
+fn main() {
+    let mut bank = Bank { balance: 0 }
+    bank = deposit(&bank, 3)
+    print(bank.balance)
+    bank = deposit(&bank, 1)
+    print(bank.balance)
+    bank = deposit(&bank, 4)
+    print(bank.balance)
+    bank = deposit(&bank, 1)
+    print(bank.balance)
+    bank = deposit(&bank, 5)
+    print(bank.balance)
+}
+
+struct Bank {
+    balance: Int,
+}
+
+fn clone(x: &Bank) -> Bank {
+    Bank(x.balance)
+}
+
+fn print(x: Int) {
+    print(to_str(x))
+}
+
+fn to_str(n: Int) -> Str {
+    if n == 0 {
+        return "0".to_str()
+    }
+    let mut digits: Vec<Str> = vec()
+    let mut num = n
+    while num > 0 {
+        digits.push(int_to_str(num % 10))
+        num = num / 10
+    }
+    digits.reverse()
+    let mut s = "".to_str()
+    for d in digits {
+        s = concat(s, d)
+    }
+    s
+}
+
+fn int_to_str(n: Int) -> Str {
+    if n < 0 {
+        return "-".to_str() + &int_to_str_pos_part_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for_int_impl_for

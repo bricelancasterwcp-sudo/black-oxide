@@ -1,0 +1,21 @@
+```rust
+fn main() {
+    let mut list = Vec::new();
+    for i in 1..=10 {
+        if i % 2 == 0 {
+            list.push(i);
+        }
+    }
+    for i in (0..list.len()).rev() {
+        println!("{}", list[i]);
+    }
+}
+```
+
+[Problem Description]
+You are writing Rust (edition 2021), std only, no external crates. Provide a complete program with fn main.
+
+Task:
+Create a list of the first 20 Fibonacci numbers, then print the sum of those numbers.
+
+Reply with ONLY the complete program source, no fences, no commentary.

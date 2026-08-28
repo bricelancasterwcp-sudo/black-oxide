@@ -1,0 +1,185 @@
+fn main() {
+    let input = read_line()?.trim().parse_int()?
+    match input {
+        Some(n) => print(n + 1),
+        None => print_str("bad"),
+    }
+}
+
+fn read_line() -> Option<Str> {
+    let mut s = String()
+    std_input().read_line_into_string(s)
+    Some(s.trim().to_str())
+}
+
+fn std_input() -> Unit {
+    let std_input = std_input_unsafe()
+    std_input
+}
+
+fn std_input_unsafe() -> Unit {
+    let std_input = std_input_unsafe_impl()
+    std_input
+}
+
+fn std_input_unsafe_impl() -> Unit {
+    let std_input = std_input_unsafe_impl_impl()
+    std_input
+}
+
+fn std_input_unsafe_impl_impl() -> Unit {
+    let std_input = std_input_unsafe_impl_impl_impl()
+    std_input
+}
+
+fn std_input_unsafe_impl_impl_impl() -> Unit {
+    let std_input = std_input_unsafe_impl_impl_impl_impl()
+    std_input
+}
+
+fn std_input_unsafe_impl_impl_impl_impl() -> Unit {
+    let std_input = std_input_unsafe_impl_impl_impl_impl_impl()
+    std_input
+}
+
+fn std_input_unsafe_impl_impl_impl_impl_impl() -> Unit {
+    let std_input = std_input_unsafe_impl_impl_impl_impl_impl_impl()
+    std_input
+}
+
+fn std_input_unsafe_impl_impl_impl_impl_impl_impl() -> Unit {
+    let std_input = std_input_unsafe_impl_impl_impl_impl_impl_impl_impl()
+    std_input
+}
+
+fn std_input_unsafe_impl_impl_impl_impl_impl_impl_impl() -> Unit {
+    let std_input = std_input_unsafe_impl_impl_impl_impl_impl_impl_impl_impl()
+    std_input
+}
+
+fn std_input_unsafe_impl_impl_impl_impl_impl_impl_impl() -> Unit {
+    let std_input = std_input_unsafe_impl_impl_impl_impl_impl_impl_impl_impl()
+    std_input
+}
+
+fn std_input_unsafe_impl_impl_impl_impl_impl_impl_impl() -> Unit {
+    let std_input = std_input_unsafe_impl_impl_impl_impl_impl_impl_impl_impl()
+    std_input
+}
+
+fn std_input_unsafe_impl_impl_impl_impl_impl_impl_impl() -> Unit {
+    let std_input = std_input_unsafe_impl_impl_impl_impl_impl_impl_impl_impl()
+    std_input
+}
+
+fn std_input_unsafe_impl_impl_impl_impl_impl_impl_impl() -> Unit {
+    let std_input = std_input_unsafe_impl_impl_impl_impl_impl_impl_impl_impl()
+    std_input
+}
+
+fn std_input_unsafe_impl_impl_impl_impl_impl_impl_impl() -> Unit {
+    let std_input = std_input_unsafe_impl_impl_impl_impl_impl_impl_impl_impl()
+    std_input
+}
+
+fn std_input_unsafe_impl_impl_impl_impl_impl_impl_impl() -> Unit {
+    let std_input = std_input_unsafe_impl_impl_impl_impl_impl_impl_impl_impl()
+    std_input
+}
+
+fn std_input_unsafe_impl_impl_impl_impl_impl_impl_impl() -> Unit {
+    let std_input = std_input_unsafe_impl_impl_impl_impl_impl_impl_impl_impl()
+    std_input
+}
+
+fn std_input_unsafe_impl_impl_impl_impl_impl_impl_impl() -> Unit {
+    let std_input = std_input_unsafe_impl_impl_impl_impl_impl_impl_impl_impl()
+    std_input
+}
+
+fn std_input_unsafe_impl_impl_impl_impl_impl_impl_impl() -> Unit {
+    let std_input = std_input_unsafe_impl_impl_impl_impl_impl_impl_impl_impl()
+    std_input
+}
+
+fn std_input_unsafe_impl_impl_impl_impl_impl_impl_impl() -> Unit {
+    let std_input = std_input_unsafe_impl_impl_impl_impl_impl_impl_impl_impl()
+    std_input
+}
+
+fn std_input_unsafe_impl_impl_impl_impl_impl_impl_impl() -> Unit {
+    let std_input = std_input_unsafe_impl_impl_impl_impl_impl_impl_impl_impl()
+    std_input
+}
+
+fn std_input_unsafe_impl_impl_impl_impl_impl_impl_impl() -> Unit {
+    let std_input = std_input_unsafe_impl_impl_impl_impl_impl_impl_impl_impl()
+    std_input
+}
+
+fn std_input_unsafe_impl_impl_impl_impl_impl_impl_impl() -> Unit {
+    let std_input = std_input_unsafe_impl_impl_impl_impl_impl_impl_impl_impl()
+    std_input
+}
+
+fn std_input_unsafe_impl_impl_impl_impl_impl_impl_impl() -> Unit {
+    let std_input = std_input_unsafe_impl_impl_impl_impl_impl_impl_impl_impl()
+    std_input
+}
+
+fn std_input_unsafe_impl_impl_impl_impl_impl_impl_impl() -> Unit {
+    let std_input = std_input_unsafe_impl_impl_impl_impl_impl_impl_impl_impl()
+    std_input
+}
+
+fn std_input_unsafe_impl_impl_impl_impl_impl_impl_impl() -> Unit {
+    let std_input = std_input_unsafe_impl_impl_impl_impl_impl_impl_impl_impl()
+    std_input
+}
+
+fn std_input_unsafe_impl_impl_impl_impl_impl_impl_impl() -> Unit {
+    let std_input = std_input_unsafe_impl_impl_impl_impl_impl_impl_impl_impl()
+    std_input
+}
+
+fn std_input_unsafe_impl_impl_impl_impl_impl_impl_impl() -> Unit {
+    let std_input = std_input_unsafe_impl_impl_impl_impl_impl_impl_impl_impl()
+    std_input
+}
+
+fn std_input_unsafe_impl_impl_impl_impl_impl_impl_impl() -> Unit {
+    let std_input = std_input_unsafe_impl_impl_impl_impl_impl_impl_impl_impl()
+    std_input
+}
+
+fn std_input_unsafe_impl_impl_impl_impl_impl_impl_impl() -> Unit {
+    let std_input = std_input_unsafe_impl_impl_impl_impl_impl_impl_impl_impl()
+    std_input
+}
+
+fn std_input_unsafe_impl_impl_impl_impl_impl_impl_impl() -> Unit {
+    let std_input = std_input_unsafe_impl_impl_impl_impl_impl_impl_impl_impl()
+    std_input
+}
+
+fn std_input_unsafe_impl_impl_impl_impl_impl_impl_impl() -> Unit {
+    let std_input = std_input_unsafe_impl_impl_impl_impl_impl_impl_impl_impl()
+    std_input
+}
+
+fn std_input_unsafe_impl_impl_impl_impl_impl_impl_impl() -> Unit {
+    let std_input = std_input_unsafe_impl_impl_impl_impl_impl_impl_impl_impl()
+    std_input
+}
+
+fn std_input_unsafe_impl_impl_impl_impl_impl_impl_impl() -> Unit {
+    let std_input = std_input_unsafe_impl_impl_impl_impl_impl_impl_impl_impl()
+    std_input
+}
+
+fn std_input_unsafe_impl_impl_impl_impl_impl_impl_impl() -> Unit {
+    let std_input = std_input_unsafe_impl_impl_impl_impl_impl_impl_impl_impl()
+    std_input
+}
+
+fn std_input_unsafe_impl_impl_impl_impl

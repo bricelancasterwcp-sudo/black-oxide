@@ -1,0 +1,7 @@
+fn main() {
+    let mut result = 1
+    while result <= 100 {
+        result = result * 2
+    }
+    print(result / 2)
+}

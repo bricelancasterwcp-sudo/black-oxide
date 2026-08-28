@@ -1,0 +1,6 @@
+fn main() {
+    let s = int_to_str(1234)
+    let chars = chars(s)
+    let reversed = concat(vec(), chars.get(chars.len() - 1)?, vec(), chars.get(chars.len() - 2)?, vec(), chars.get(chars.len() - 3)?, vec(), chars.get(chars.len() - 4)?)
+    print_str(reversed)
+}

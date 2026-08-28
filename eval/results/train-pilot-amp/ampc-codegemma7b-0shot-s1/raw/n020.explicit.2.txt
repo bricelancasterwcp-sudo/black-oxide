@@ -1,0 +1,13 @@
+fn sum(nums: &Vec<Int>) -> Float {
+    let mut total = 0
+    for x in nums {
+        total = total + x
+    }
+    (total / nums.len()).to_float()
+}
+
+fn main() {
+    let nums = vec(4, 8, 15, 16, 23, 42)
+    print(sum(&nums))
+    drop nums
+}

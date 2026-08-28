@@ -1,0 +1,20 @@
+fn max(v: &Vec<Int>) -> Int {
+    v.iter().max()
+}
+
+fn second_largest(v: &Vec<Int>) -> Int {
+    let mut sorted = clone(v)
+    push(&mutsorted, 0)
+    drop v
+    let largest = max(&sorted)
+    let second_largest = max(&sorted)
+    drop largest
+    second_largest
+}
+
+fn main() {
+    let nums = vec(17, 12, 5, 20, 8)
+    print(max(&nums))
+    print(second_largest(&nums))
+    drop nums
+}

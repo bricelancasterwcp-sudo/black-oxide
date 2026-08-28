@@ -1,0 +1,16 @@
+use std::io::{stdin, stdout, Write};
+
+fn main() {
+    print!("Enter a number: ");
+    stdout().flush().unwrap();
+
+    let mut input = String::new();
+    stdin().read_line(&mut input).unwrap();
+
+    if let Ok(number) = input.trim().parse::<u32>() {
+        let result = number + 1;
+        println!("The result is: {}", result);
+    } else {
+        println!("Bad");
+    }
+}

@@ -1,0 +1,5 @@
+```rust
+fn main() {
+    println!("{}", 1234.to_string().chars().rev().collect::<String>());
+}
+```

@@ -1,0 +1,13 @@
+fn mean(list: &Vec<Int>) -> Float {
+    let total = 0
+    for num in &list {
+        total = total + num
+    }
+    total / len(&list)
+}
+
+fn main() {
+    let numbers = push(push(vec(), 5), 40)
+    print(mean(&numbers))
+    drop numbers
+}

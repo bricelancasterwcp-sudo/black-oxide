@@ -1,0 +1,53 @@
+struct List { head: Option<Box<Node>>, len: Int }
+
+struct Node { value: Int, next: Option<Box<Node>> }
+
+fn new_list() -> List {
+    List
+}
+
+fn push(l: List, x: Int) -> List {
+    List
+}
+
+fn len(l: List) -> Int {
+    l.len
+}
+
+fn get(l: List, i: Int) -> Option<Int> {
+    let mut current = l.head
+    let mut index = 0
+    while letSome(node) == current {
+        if index == i {
+            return Some(node.value)
+        }
+        current = node.next
+        index = index + 1
+    }
+    None
+}
+
+fn add_to_list(l: List, x: Int) -> List {
+    push(l, x)
+}
+
+fn print_list(l: List) {
+    let mut current = l.head
+    while letSome(node) == current {
+        print(node.value)
+        current = node.next
+    }
+}
+
+fn main() {
+    let mut list = new_list()
+    let mut sum = 0
+    for i in range(1, 11) {
+        if i % 3 == 0 {
+            list = add_to_list(list, i)
+            sum = sum + i
+        }
+    }
+    print_list(list)
+    print(sum)
+}

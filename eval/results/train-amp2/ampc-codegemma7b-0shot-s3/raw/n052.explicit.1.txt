@@ -1,0 +1,11 @@
+fn print_n_positions(word: &Str) {
+    for i in 0.upto(word.len()) {
+        if word.chars().nth(i) == Some(&char_literal) {
+            print(i)
+        }
+    }
+}
+
+fn main() {
+    print_n_positions("banana")
+}

@@ -1,0 +1,11 @@
+use std::io;
+
+fn main() {
+  let mut count = 0;
+  for number in [5, 3, 9, 1, 7] {
+    if number > 4 {
+      count += 1;
+    }
+  }
+  println!("{}", count);
+}

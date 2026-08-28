@@ -1,0 +1,8 @@
+fn main() {
+    let p1 = Point { x: 1, y: 5 }
+    let p2 = Point { x: 10, y: p1.y }
+    let sum = p2.x + p2.y
+    print(sum)
+    drop p1
+    drop p2
+}

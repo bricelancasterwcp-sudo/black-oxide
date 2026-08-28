@@ -1,0 +1,13 @@
+fn main() {
+    use std::thread;
+    use std::time::Duration;
+    for color in ["green", "red", "yellow"] {
+        println!("Signal for {}", color);
+        match color {
+            "green" => thread::sleep(Duration::from_secs(1)),
+            "red" => thread::sleep(Duration::from_secs(3)),
+            "yellow" => thread::sleep(Duration::from_secs(5)),
+            _ => (),
+        }
+    }
+}

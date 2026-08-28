@@ -1,0 +1,10 @@
+fn main() {
+    let readings = vec(5, 3, 9, 1, 7)
+    let mut largest = readings.first()
+    for reading in readings.iter().skip(1) {
+        if largest.is_none() || largest.unwrap() < reading {
+            largest = Some(reading)
+        }
+    }
+    print(largest.unwrap())
+}

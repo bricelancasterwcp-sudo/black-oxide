@@ -1,0 +1,10 @@
+fn main() {
+    let text = "banana".to_string()
+    let mut position = 0
+    for letter in text.chars() {
+        if letter == "n" {
+            println(position)
+        }
+        position = position + 1
+    }
+}

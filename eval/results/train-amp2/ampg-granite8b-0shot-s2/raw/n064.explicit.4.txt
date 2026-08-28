@@ -1,0 +1,17 @@
+fn lookup_at(list: &Vec<Int>, pos: Int) -> Option<Int> {
+    get(list, pos)
+}
+
+fn print_or_none(opt: Option<Int>) {
+    match opt {
+        Some(x) => print(x),
+        _ => print(0),
+    }
+}
+
+fn main() {
+    let list = push(push(push(push(vec(), 10), 20), 30), 40)
+    print_or_none(lookup_at(&list, 1))
+    drop list
+    print_or_none(lookup_at(&list, 4))
+}

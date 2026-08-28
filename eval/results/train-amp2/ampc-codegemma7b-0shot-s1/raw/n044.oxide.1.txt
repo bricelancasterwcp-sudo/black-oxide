@@ -1,0 +1,12 @@
+fn deposit(amount: Int, balance: Int) -> Int {
+    balance + amount
+}
+
+fn main() {
+    let mut balance = 0
+    for amount in vec(3, 1, 4, 1, 5) {
+        balance = deposit(amount, balance)
+        print(balance)
+        print_str("\n")
+    }
+}

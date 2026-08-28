@@ -1,0 +1,331 @@
+fn main() {
+    let oxide_black = oxide("black")
+    print(oxide_black)
+}
+
+fn oxide(s: Str) -> Str {
+    concat("oxide", s)
+}
+
+fn print(s: Str) {
+    print_str(s)
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut c = a
+    push(c, b)
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    let mut w = v
+    let y = clone(x)
+    let z = get(w, 0)
+    drop z
+    w
+}
+
+fn clone(x: Str) -> Str {
+    let mut y = x
+    y
+}
+
+fn get(v: Vec<Str>, i: Int) -> Option<Str> {
+    if i >= len(v) {
+        None
+    } else {
+        Some(v.chars(i))
+    }
+}
+
+fn len(v: Vec<Str>) -> Int {
+    let mut c = 0
+    for _ in &v {
+        c = c + 1
+    }
+    c
+}
+
+fn chars(s: Str) -> Str {
+    let mut c = s
+    let mut d = ""
+    for i in 0.to_int() {
+        if i >= len(c) {
+            break
+        }
+        let e = get(c, i)
+        if e == None {
+            break
+        }
+        let f = int_to_str(i)
+        let g = concat(f, ". ")
+        d = concat(d, g)
+    }
+    d
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut c = n
+    let mut d = ""
+    while c >= 0 {
+        let e = trunc(c)
+        let f = int_to_char(e)
+        d = concat(f, d)
+        c = c - e
+    }
+    d
+}
+
+fn int_to_char(n: Int) -> Str {
+    if n == 0 {
+        return "0"
+    }
+    let mut c = n
+    let mut d = ""
+    while c >= 10 {
+        let e = trunc(c)
+        let f = int_to_char(e)
+        d = concat(f, d)
+        c = c - e
+    }
+    let e = trunc(c)
+    let f = int_to_char(e)
+    concat(f, d)
+}
+
+fn trunc(x: Int) -> Int {
+    if x >= 0 {
+        x
+    } else {
+        0
+    }
+}
+
+fn print_str(s: Str) {
+    let mut c = s
+    for i in 0.to_int() {
+        if i >= len(c) {
+            break
+        }
+        let d = get(c, i)
+        if d == None {
+            break
+        }
+        print(d)
+    }
+}
+
+fn print(s: Str) {
+    let mut c = s
+    for i in 0.to_int() {
+        if i >= len(c) {
+            break
+        }
+        let d = get(c, i)
+        if d == None {
+            break
+        }
+        print_char(d)
+    }
+}
+
+fn print_char(c: Str) {
+    let mut d = c
+    for i in 0.to_int() {
+        if i >= len(d) {
+            break
+        }
+        let e = get(d, i)
+        if e == None {
+            break
+        }
+        print_raw(e)
+    }
+}
+
+fn print_raw(c: Str) {
+    let mut d = c
+    for i in 0.to_int() {
+        if i >= len(d) {
+            break
+        }
+        let e = get(d, i)
+        if e == None {
+            break
+        }
+        print_byte(e)
+    }
+}
+
+fn print_byte(c: Str) {
+    let mut d = c
+    for i in 0.to_int() {
+        if i >= len(d) {
+            break
+        }
+        let e = get(d, i)
+        if e == None {
+            break
+        }
+        print_raw_byte(e)
+    }
+}
+
+fn print_raw_byte(c: Str) {
+    let mut d = c
+    for i in 0.to_int() {
+        if i >= len(d) {
+            break
+        }
+        let e = get(d, i)
+        if e == None {
+            break
+        }
+        print_byte(e)
+    }
+}
+
+fn drop_str(s: Str) {
+    let mut c = s
+    for i in 0.to_int() {
+        if i >= len(c) {
+            break
+        }
+        let d = get(c, i)
+        if d == None {
+            break
+        }
+        drop_str(d)
+    }
+}
+
+fn drop_char(c: Str) {
+    let mut d = c
+    for i in 0.to_int() {
+        if i >= len(d) {
+            break
+        }
+        let e = get(d, i)
+        if e == None {
+            break
+        }
+        drop_str(e)
+    }
+}
+
+fn drop_raw(c: Str) {
+    let mut d = c
+    for i in 0.to_int() {
+        if i >= len(d) {
+            break
+        }
+        let e = get(d, i)
+        if e == None {
+            break
+        }
+        drop_char(e)
+    }
+}
+
+fn drop_byte(c: Str) {
+    let mut d = c
+    for i in 0.to_int() {
+        if i >= len(d) {
+            break
+        }
+        let e = get(d, i)
+        if e == None {
+            break
+        }
+        drop_raw(e)
+    }
+}
+
+fn drop_raw_byte(c: Str) {
+    let mut d = c
+    for i in 0.to_int() {
+        if i >= len(d) {
+            break
+        }
+        let e = get(d, i)
+        if e == None {
+            break
+        }
+        drop_byte(e)
+    }
+}
+
+fn drop_int(n: Int) {
+    let mut c = n
+    while c >= 0 {
+        let d = trunc(c)
+        drop_int(d)
+        c = c - d
+    }
+}
+
+fn drop_float(n: Float) {
+    let mut c = n
+    while c >= 0 {
+        let d = trunc(c)
+        drop_int(d)
+        c = c - d
+    }
+}
+
+fn drop_bool(b: Bool) {
+    if b {
+        drop_int(1)
+    } else {
+        drop_int(0)
+    }
+}
+
+fn drop_unit() {
+    drop_int(0)
+}
+
+fn drop_vec(v: Vec<Str>) {
+    let mut c = v
+    while len(c) > 0 {
+        let d = get(c, 0)
+        drop_str(d)
+        c = drop_first(c)
+    }
+}
+
+fn drop_first(mutv: Vec<Str>) -> Vec<Str> {
+    if len(mutv) == 0 {
+        return mutv
+    }
+    let mutw = mutv
+    let mutx = get(mutw, 0)
+    drop_str(mutx)
+    mutw = drop_first(mutw)
+    mutw
+}
+
+fn drop_option(o: Option<Str>) {
+    if o != None {
+        drop_str(o)
+    }
+}
+
+fn drop_result(r: Result<Str, Str>) {
+    if r != Ok(str) {
+        drop_str(r)
+    }
+}
+
+fn drop_tuple(t: Tuple) {
+    let mut c = t
+    for i in 0.to_int() {
+        if i >= len(c) {
+            break
+        }
+        let d = get(c, i)
+        drop_str(d)
+    }
+}
+
+fn main() {
+    let oxide_black = oxide

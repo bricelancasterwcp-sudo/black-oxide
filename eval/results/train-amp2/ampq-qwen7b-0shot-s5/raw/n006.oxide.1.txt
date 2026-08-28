@@ -1,0 +1,14 @@
+struct Power { value: Int }
+
+fn find_max_power_of_two(max: Int) -> Int {
+    let mut current = 1
+    while current * 2 <= max {
+        current = current * 2
+    }
+    current
+}
+
+fn main() {
+    let result = find_max_power_of_two(100)
+    print(result)
+}

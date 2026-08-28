@@ -1,0 +1,14 @@
+struct Stock { units: Int, value: Int }
+
+fn total_value(stocks: Vec<Stock>) -> Int {
+    let mut total = 0
+    for stock in stocks {
+        total = total + stock.units * stock.value
+    }
+    total
+}
+
+fn main() {
+    let stocks = push(push(vec(), Stock { units: 4, value: 3 }), Stock { units: 5, value: 2 })
+    print(total_value(stocks))
+}

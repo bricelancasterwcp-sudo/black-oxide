@@ -1,0 +1,31 @@
+fn is_vowel(c: &Char) -> Bool {
+    match c {
+        Char(a) => match a {
+            In(b) => match b {
+                In(c) => match c {
+                    In(d) => match d {
+                        In(e) => true,
+                        _ => false,
+                    },
+                    _ => false,
+                },
+                _ => false,
+            },
+            _ => false,
+        },
+    }
+}
+
+fn main() {
+    let word = get(parse_str("keyboard"), 0).unwrap()
+    let mut vowel_count = 0
+    let mut consonant_count = 0
+    for c in chars(&word) {
+        if is_vowel(&c) {
+            vowel_count = vowel_count + 1
+        } else {
+            consonant_count = consonant_count + 1
+        }
+    }
+    print(format("Vowels: {}, Consonants: {}", vowel_count, consonant_count))
+}

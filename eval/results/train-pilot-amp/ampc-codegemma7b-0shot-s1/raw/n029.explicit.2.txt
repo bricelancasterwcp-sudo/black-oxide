@@ -1,0 +1,8 @@
+fn main() {
+    let first = "one".to_string()
+    let second = "two".to_string()
+    let third = "three".to_string()
+    print(first)
+    print(second)
+    print(third)
+}

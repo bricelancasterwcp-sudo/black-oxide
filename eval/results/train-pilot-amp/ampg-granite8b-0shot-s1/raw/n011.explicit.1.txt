@@ -1,0 +1,13 @@
+fn add(a: &Int, b: &Int) -> Int {
+    a + b
+}
+
+fn main() {
+    let multiples = vec()
+    for i in 0 + 4 * range(0, 6) {
+        push(multiples, i)
+    }
+    let total = add(&multiples, &multiples)
+    print(total)
+    drop multiples
+}

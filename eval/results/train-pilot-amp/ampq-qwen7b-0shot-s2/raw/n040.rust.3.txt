@@ -1,0 +1,16 @@
+enum Shape {
+    Square(f64),
+    Circle(f64),
+}
+
+fn area(shape: &Shape) -> f64 {
+    match shape {
+        Shape::Square(side) => side * side,
+        Shape::Circle(radius) => 3.0 * radius * radius, // Changed 3.14 to 3.0
+    }
+}
+
+fn main() {
+    let square = Shape::Square(4.0);
+    println!("Area of the square: {}", area(&square));
+}

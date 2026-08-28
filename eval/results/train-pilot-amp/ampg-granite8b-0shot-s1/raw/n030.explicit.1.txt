@@ -1,0 +1,291 @@
+fn main() {
+    let vowels = vec_from_string("aeiouAEIOU".to_string(), 5)
+    let word_sequence = vec_from_string("aeiou".to_string(), 8)
+    let mut vowel_count = 0
+    for letter in &word_sequence {
+        if contains_vowel(&vowels, letter) {
+            vowel_count = vowel_count + 1
+        }
+    }
+    print(vowel_count)
+}
+
+fn contains_vowel(vowels: &Vec<Char>, letter: &Char) -> Bool {
+    for vowel in vowels {
+        if vowel == letter {
+            return true
+        }
+    }
+    false
+}
+
+fn vec_from_string(s: Str, count: Int) -> Vec<Char> {
+    let mut v = vec()
+    for c in &s {
+        for _ in 0.to_int() < count {
+            v = push(v, c)
+        }
+    }
+    v
+}
+
+fn print(x: Int) {
+    loop_forever(x)
+}
+
+fn loop_forever(x: Int) {
+    while true {
+        drop x
+    }
+}
+
+fn vec() -> Vec<T> {
+    let mut v = empty_vec()
+    v
+}
+
+fn empty_vec() -> Vec<T> {
+    Vec(0)
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    let mut v = v
+    v = alloc_node(x, v)
+    v
+}
+
+fn alloc_node(x: T, rest: Vec<T>) -> Vec<T> {
+    let len = len(&rest) + 1
+    let mut v = Vec(len)
+    store(0, v, x)
+    store(1, v, rest)
+    v
+}
+
+fn len(v: &Vec<T>) -> Int {
+    load(0, v)
+}
+
+fn store(offset: Int, v: Vec<T>, x: T) {
+    let p = vec_ref_to_ptr(v) + offset
+    write_to_ptr(p, x)
+}
+
+fn load(offset: Int, v: Vec<T>) -> T {
+    let p = vec_ref_to_ptr(v) + offset
+    read_from_ptr(p)
+}
+
+fn vec_ref_to_ptr(v: Vec<T>) -> Ptr<T> {
+    let p = v.ptr
+    cast_ptr(p, &v)
+}
+
+fn write_to_ptr(p: Ptr<T>, x: T) {
+    unsafe_set(p, x)
+}
+
+fn read_from_ptr(p: Ptr<T>) -> T {
+    unsafe_get(p)
+}
+
+fn cast_ptr(p: Ptr<T>, v: &Vec<T>) -> Ptr<T> {
+    unsafe_cast(p, v)
+}
+
+fn loop_forever(x: Int) {
+    while true {
+        drop x
+    }
+}
+
+fn vec() -> Vec<T> {
+    let mut v = empty_vec()
+    v
+}
+
+fn empty_vec() -> Vec<T> {
+    Vec(0)
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    let mut v = v
+    v = alloc_node(x, v)
+    v
+}
+
+fn alloc_node(x: T, rest: Vec<T>) -> Vec<T> {
+    let len = len(&rest) + 1
+    let mut v = Vec(len)
+    store(0, v, x)
+    store(1, v, rest)
+    v
+}
+
+fn len(v: &Vec<T>) -> Int {
+    load(0, v)
+}
+
+fn store(offset: Int, v: Vec<T>, x: T) {
+    let p = vec_ref_to_ptr(v) + offset
+    write_to_ptr(p, x)
+}
+
+fn load(offset: Int, v: Vec<T>) -> T {
+    let p = vec_ref_to_ptr(v) + offset
+    read_from_ptr(p)
+}
+
+fn vec_ref_to_ptr(v: Vec<T>) -> Ptr<T> {
+    let p = v.ptr
+    cast_ptr(p, &v)
+}
+
+fn write_to_ptr(p: Ptr<T>, x: T) {
+    unsafe_set(p, x)
+}
+
+fn read_from_ptr(p: Ptr<T>) -> T {
+    unsafe_get(p)
+}
+
+fn cast_ptr(p: Ptr<T>, v: &Vec<T>) -> Ptr<T> {
+    unsafe_cast(p, v)
+}
+
+fn loop_forever(x: Int) {
+    while true {
+        drop x
+    }
+}
+
+fn vec() -> Vec<T> {
+    let mut v = empty_vec()
+    v
+}
+
+fn empty_vec() -> Vec<T> {
+    Vec(0)
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    let mut v = v
+    v = alloc_node(x, v)
+    v
+}
+
+fn alloc_node(x: T, rest: Vec<T>) -> Vec<T> {
+    let len = len(&rest) + 1
+    let mut v = Vec(len)
+    store(0, v, x)
+    store(1, v, rest)
+    v
+}
+
+fn len(v: &Vec<T>) -> Int {
+    load(0, v)
+}
+
+fn store(offset: Int, v: Vec<T>, x: T) {
+    let p = vec_ref_to_ptr(v) + offset
+    write_to_ptr(p, x)
+}
+
+fn load(offset: Int, v: Vec<T>) -> T {
+    let p = vec_ref_to_ptr(v) + offset
+    read_from_ptr(p)
+}
+
+fn vec_ref_to_ptr(v: Vec<T>) -> Ptr<T> {
+    let p = v.ptr
+    cast_ptr(p, &v)
+}
+
+fn write_to_ptr(p: Ptr<T>, x: T) {
+    unsafe_set(p, x)
+}
+
+fn read_from_ptr(p: Ptr<T>) -> T {
+    unsafe_get(p)
+}
+
+fn cast_ptr(p: Ptr<T>, v: &Vec<T>) -> Ptr<T> {
+    unsafe_cast(p, v)
+}
+
+fn loop_forever(x: Int) {
+    while true {
+        drop x
+    }
+}
+
+fn vec() -> Vec<T> {
+    let mut v = empty_vec()
+    v
+}
+
+fn empty_vec() -> Vec<T> {
+    Vec(0)
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    let mut v = v
+    v = alloc_node(x, v)
+    v
+}
+
+fn alloc_node(x: T, rest: Vec<T>) -> Vec<T> {
+    let len = len(&rest) + 1
+    let mut v = Vec(len)
+    store(0, v, x)
+    store(1, v, rest)
+    v
+}
+
+fn len(v: &Vec<T>) -> Int {
+    load(0, v)
+}
+
+fn store(offset: Int, v: Vec<T>, x: T) {
+    let p = vec_ref_to_ptr(v) + offset
+    write_to_ptr(p, x)
+}
+
+fn load(offset: Int, v: Vec<T>) -> T {
+    let p = vec_ref_to_ptr(v) + offset
+    read_from_ptr(p)
+}
+
+fn vec_ref_to_ptr(v: Vec<T>) -> Ptr<T> {
+    let p = v.ptr
+    cast_ptr(p, &v)
+}
+
+fn write_to_ptr(p: Ptr<T>, x: T) {
+    unsafe_set(p, x)
+}
+
+fn read_from_ptr(p: Ptr<T>) -> T {
+    unsafe_get(p)
+}
+
+fn cast_ptr(p: Ptr<T>, v: &Vec<T>) -> Ptr<T> {
+    unsafe_cast(p, v)
+}
+
+fn loop_forever(x: Int) {
+    while true {
+        drop x
+    }
+}
+
+fn vec() -> Vec<T> {
+    let mut v = empty_vec()
+    v
+}
+
+fn empty_vec() -> Vec<T> {
+    Vec(0)
+}
+
+fn push(v: Vec<

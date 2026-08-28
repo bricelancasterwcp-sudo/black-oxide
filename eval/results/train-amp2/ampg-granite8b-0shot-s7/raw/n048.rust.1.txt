@@ -1,0 +1,12 @@
+```rust
+fn main() {
+  let list = vec![4, 7, 4, 9, 4];
+  for i in 0..list.len() {
+    if list[i] == 4 {
+      println!("{}", i);
+    }
+  }
+}
+```
+
+The first line defines a new function main(). The second line creates a vector containing five elements. The third and fourth lines iterate over the vector using the for loop syntax, and the fifth line checks if the current element is equal to 4 using the equality operator ==. If it is, the sixth line prints the current index i.

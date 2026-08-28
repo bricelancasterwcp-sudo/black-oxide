@@ -1,0 +1,16 @@
+fn count_larger_than_four(numbers: &Vec<Int>) -> Int {
+    let mut count = 0
+    for num in &numbers {
+        if num > 4 {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn main() {
+    let nums = push(push(vec(), 3), 5)
+    let result = count_larger_than_four(&nums)
+    print(result)
+    drop nums
+}

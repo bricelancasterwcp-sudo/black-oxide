@@ -1,0 +1,24 @@
+struct Four { num: Int }
+
+struct Five { num: Int }
+
+struct Line { four: Four, five: Five }
+
+fn four_price(u: Four) -> Int {
+    3 * u.num
+}
+
+fn five_price(u: Five) -> Int {
+    2 * u.num
+}
+
+fn line_value(line: Line) -> Int {
+    let Four { num } = line.four
+    let Five { num } = line.five
+    four_price(Four { num: num }) + five_price(Five { num: num })
+}
+
+fn main() {
+    let line = Line { four: Four { num: 4 }, five: Five { num: 5 } }
+    print(line_value(line))
+}

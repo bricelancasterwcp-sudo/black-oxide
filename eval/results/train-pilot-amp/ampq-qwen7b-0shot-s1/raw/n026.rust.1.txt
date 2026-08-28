@@ -1,0 +1,5 @@
+fn main() {
+    let num = 2026;
+    let text = format!("{}", num);
+    println!("{}", text.len());
+}

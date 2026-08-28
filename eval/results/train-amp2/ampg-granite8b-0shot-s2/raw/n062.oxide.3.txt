@@ -1,0 +1,21 @@
+fn go_green() {
+    print("Green")
+}
+
+fn stop_red() {
+    print("Red")
+}
+
+fn wait_yellow() {
+    print("Yellow")
+}
+
+fn traffic_light() {
+    wait_yellow()
+    stop_red()
+    go_green()
+}
+
+fn main() {
+    traffic_light()
+}

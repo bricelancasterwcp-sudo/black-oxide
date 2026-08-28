@@ -1,0 +1,35 @@
+fn four_units() -> Int {
+    4
+}
+
+fn three_each() -> Int {
+    four_units() * 3
+}
+
+fn five_units() -> Int {
+    5
+}
+
+fn two_each() -> Int {
+    five_units() * 2
+}
+
+fn line_one() -> Int {
+    three_each()
+}
+
+fn line_two() -> Int {
+    two_each()
+}
+
+fn both() -> Int {
+    line_one() + line_two()
+}
+
+fn main() {
+    print(line_one())
+    print("\n")
+    print(line_two())
+    print("\n")
+    print(both())
+}

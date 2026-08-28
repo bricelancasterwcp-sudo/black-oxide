@@ -1,0 +1,354 @@
+fn main() {
+    let line1 = push(push(vec(), 3), 3)
+    let line2 = push(push(vec(), 2), 2)
+    let total1 = sum(line1)
+    let total2 = sum(line2)
+    let total = total1 + total2
+    print(total1)
+    print(total2)
+    print(total)
+    drop line1
+    drop line2
+    drop total1
+    drop total2
+    drop total
+}
+
+fn sum(v: Vec<Int>) -> Int {
+    let total = 0
+    for x in &v {
+        total = total + x
+    }
+    total
+}
+
+fn main() {
+    let line1 = push(push(vec(), 3), 3)
+    let line2 = push(push(vec(), 2), 2)
+    let total1 = sum(line1)
+    let total2 = sum(line2)
+    let total = total1 + total2
+    print(total1)
+    print(total2)
+    print(total)
+    drop line1
+    drop line2
+    drop total1
+    drop total2
+    drop total
+}
+
+fn sum(v: Vec<Int>) -> Int {
+    let total = 0
+    for x in &v {
+        total = total + x
+    }
+    total
+}
+
+fn main() {
+    let line1 = push(push(vec(), 3), 3)
+    let line2 = push(push(vec(), 2), 2)
+    let total1 = sum(line1)
+    let total2 = sum(line2)
+    let total = total1 + total2
+    print(total1)
+    print(total2)
+    print(total)
+    drop line1
+    drop line2
+    drop total1
+    drop total2
+    drop total
+}
+
+fn sum(v: Vec<Int>) -> Int {
+    let total = 0
+    for x in &v {
+        total = total + x
+    }
+    total
+}
+
+fn main() {
+    let line1 = push(push(vec(), 3), 3)
+    let line2 = push(push(vec(), 2), 2)
+    let total1 = sum(line1)
+    let total2 = sum(line2)
+    let total = total1 + total2
+    print(total1)
+    print(total2)
+    print(total)
+    drop line1
+    drop line2
+    drop total1
+    drop total2
+    drop total
+}
+
+fn sum(v: Vec<Int>) -> Int {
+    let total = 0
+    for x in &v {
+        total = total + x
+    }
+    total
+}
+
+fn main() {
+    let line1 = push(push(vec(), 3), 3)
+    let line2 = push(push(vec(), 2), 2)
+    let total1 = sum(line1)
+    let total2 = sum(line2)
+    let total = total1 + total2
+    print(total1)
+    print(total2)
+    print(total)
+    drop line1
+    drop line2
+    drop total1
+    drop total2
+    drop total
+}
+
+fn sum(v: Vec<Int>) -> Int {
+    let total = 0
+    for x in &v {
+        total = total + x
+    }
+    total
+}
+
+fn main() {
+    let line1 = push(push(vec(), 3), 3)
+    let line2 = push(push(vec(), 2), 2)
+    let total1 = sum(line1)
+    let total2 = sum(line2)
+    let total = total1 + total2
+    print(total1)
+    print(total2)
+    print(total)
+    drop line1
+    drop line2
+    drop total1
+    drop total2
+    drop total
+}
+
+fn sum(v: Vec<Int>) -> Int {
+    let total = 0
+    for x in &v {
+        total = total + x
+    }
+    total
+}
+
+fn main() {
+    let line1 = push(push(vec(), 3), 3)
+    let line2 = push(push(vec(), 2), 2)
+    let total1 = sum(line1)
+    let total2 = sum(line2)
+    let total = total1 + total2
+    print(total1)
+    print(total2)
+    print(total)
+    drop line1
+    drop line2
+    drop total1
+    drop total2
+    drop total
+}
+
+fn sum(v: Vec<Int>) -> Int {
+    let total = 0
+    for x in &v {
+        total = total + x
+    }
+    total
+}
+
+fn main() {
+    let line1 = push(push(vec(), 3), 3)
+    let line2 = push(push(vec(), 2), 2)
+    let total1 = sum(line1)
+    let total2 = sum(line2)
+    let total = total1 + total2
+    print(total1)
+    print(total2)
+    print(total)
+    drop line1
+    drop line2
+    drop total1
+    drop total2
+    drop total
+}
+
+fn sum(v: Vec<Int>) -> Int {
+    let total = 0
+    for x in &v {
+        total = total + x
+    }
+    total
+}
+
+fn main() {
+    let line1 = push(push(vec(), 3), 3)
+    let line2 = push(push(vec(), 2), 2)
+    let total1 = sum(line1)
+    let total2 = sum(line2)
+    let total = total1 + total2
+    print(total1)
+    print(total2)
+    print(total)
+    drop line1
+    drop line2
+    drop total1
+    drop total2
+    drop total
+}
+
+fn sum(v: Vec<Int>) -> Int {
+    let total = 0
+    for x in &v {
+        total = total + x
+    }
+    total
+}
+
+fn main() {
+    let line1 = push(push(vec(), 3), 3)
+    let line2 = push(push(vec(), 2), 2)
+    let total1 = sum(line1)
+    let total2 = sum(line2)
+    let total = total1 + total2
+    print(total1)
+    print(total2)
+    print(total)
+    drop line1
+    drop line2
+    drop total1
+    drop total2
+    drop total
+}
+
+fn sum(v: Vec<Int>) -> Int {
+    let total = 0
+    for x in &v {
+        total = total + x
+    }
+    total
+}
+
+fn main() {
+    let line1 = push(push(vec(), 3), 3)
+    let line2 = push(push(vec(), 2), 2)
+    let total1 = sum(line1)
+    let total2 = sum(line2)
+    let total = total1 + total2
+    print(total1)
+    print(total2)
+    print(total)
+    drop line1
+    drop line2
+    drop total1
+    drop total2
+    drop total
+}
+
+fn sum(v: Vec<Int>) -> Int {
+    let total = 0
+    for x in &v {
+        total = total + x
+    }
+    total
+}
+
+fn main() {
+    let line1 = push(push(vec(), 3), 3)
+    let line2 = push(push(vec(), 2), 2)
+    let total1 = sum(line1)
+    let total2 = sum(line2)
+    let total = total1 + total2
+    print(total1)
+    print(total2)
+    print(total)
+    drop line1
+    drop line2
+    drop total1
+    drop total2
+    drop total
+}
+
+fn sum(v: Vec<Int>) -> Int {
+    let total = 0
+    for x in &v {
+        total = total + x
+    }
+    total
+}
+
+fn main() {
+    let line1 = push(push(vec(), 3), 3)
+    let line2 = push(push(vec(), 2), 2)
+    let total1 = sum(line1)
+    let total2 = sum(line2)
+    let total = total1 + total2
+    print(total1)
+    print(total2)
+    print(total)
+    drop line1
+    drop line2
+    drop total1
+    drop total2
+    drop total
+}
+
+fn sum(v: Vec<Int>) -> Int {
+    let total = 0
+    for x in &v {
+        total = total + x
+    }
+    total
+}
+
+fn main() {
+    let line1 = push(push(vec(), 3), 3)
+    let line2 = push(push(vec(), 2), 2)
+    let total1 = sum(line1)
+    let total2 = sum(line2)
+    let total = total1 + total2
+    print(total1)
+    print(total2)
+    print(total)
+    drop line1
+    drop line2
+    drop total1
+    drop total2
+    drop total
+}
+
+fn sum(v: Vec<Int>) -> Int {
+    let total = 0
+    for x in &v {
+        total = total + x
+    }
+    total
+}
+
+fn main() {
+    let line1 = push(push(vec(), 3), 3)
+    let line2 = push(push(vec(), 2), 2)
+    let total1 = sum(line1)
+    let total2 = sum(line2)
+    let total = total1 + total2
+    print(total1)
+    print(total2)
+    print(total)
+    drop line1
+    drop line2
+    drop total1
+    drop total2
+    drop total
+}
+
+fn sum(v: Vec<Int>) -> Int {
+    let total

@@ -1,0 +1,22 @@
+fn count_under_over(nums: &Vec<Int>, cutoff: Int) -> Tuple<Int, Int> {
+    let mut under = 0
+    let mut over = 0
+    for num in nums {
+        if num < cutoff {
+            under = under + 1
+        } else {
+            over = over + 1
+        }
+    }
+    Tuple(under, over)
+}
+
+fn main() {
+    let nums = vec(5, 12, 3, 18, 9)
+    let cutoff = 10
+    let result = count_under_over(&nums, cutoff)
+    print(result.under)
+    drop nums
+    print(result.over)
+    drop result
+}

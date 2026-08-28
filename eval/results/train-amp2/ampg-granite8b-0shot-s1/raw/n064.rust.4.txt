@@ -1,0 +1,5 @@
+fn main() {
+    let list = vec![10, 20];
+    println!("The value at position one is {:?}", list.get(0));
+    println!("The value at position four is {:?}", list.get(3));
+}

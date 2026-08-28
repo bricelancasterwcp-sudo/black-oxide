@@ -1,0 +1,5 @@
+fn main() {
+    let divisible_by_three = (1..10).filter(|&x| x % 3 == 0).collect::<Vec<u32>>();
+    let total: u32 = divisible_by_three.iter().sum();
+    println!("Total: {}", total);
+}

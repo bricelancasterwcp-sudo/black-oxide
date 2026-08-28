@@ -1,0 +1,9 @@
+fn main() {
+    let word = "granite"
+    let opening = word.chars().nth(0).unwrap()
+    drop word
+    let closing = word.chars().nth(0).unwrap()
+    print(str_len(&word))
+    print(opening)
+    print(closing)
+}

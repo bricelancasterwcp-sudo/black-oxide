@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let numbers = (1..11).filter(|&x| x % 2 == 0).collect::<Vec<i32>>();
+
+    for number in numbers.into_iter().rev() {
+        println!("{}", number);
+    }
+}
+```

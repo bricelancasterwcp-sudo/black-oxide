@@ -1,0 +1,13 @@
+fn main(){
+    let mut input = String::new();
+    std::io::stdin().read_line(&mut input).unwrap();
+    let input: Vec<String> = input.trim().split(' ').map(|s| s.to_string()).collect();
+
+    for x in input {
+        if let Ok(num) = x.parse::<i32>() {
+            println!("{}", num);
+        } else {
+            println!("bad")
+        }
+    }
+}

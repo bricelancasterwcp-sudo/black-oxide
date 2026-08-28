@@ -1,0 +1,18 @@
+fn first_last(q: Vec<Int>) -> Vec<Int> {
+    let len = len(q)
+    let first = get(q, 0)?
+    let last = get(q, len - 1)?
+    let mut q2 = push(push(vec(), last), first)
+    for i in 1 + len - 2 {
+        q2 = push(q2, get(q, i)?)
+    }
+    q2
+}
+
+fn main() {
+    let mut queue = vec(1, 2, 3, 4, 5)
+    queue = first_last(queue)
+    for x in queue {
+        print(x)
+    }
+}

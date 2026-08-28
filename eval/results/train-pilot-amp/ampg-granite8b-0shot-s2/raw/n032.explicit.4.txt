@@ -1,0 +1,17 @@
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+struct Point {
+    x: Int,
+    y: Int,
+}
+
+fn make_point(x: Int) -> Point {
+    Point(x, 5)
+}
+
+fn main() {
+    let p = make_point(10)
+    print(add(p.x, p.y))
+}

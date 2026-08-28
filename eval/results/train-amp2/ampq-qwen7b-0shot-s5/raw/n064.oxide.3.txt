@@ -1,0 +1,21 @@
+struct List { a: Int, b: Int }
+
+fn get(list: List, i: Int) -> Option<Int> {
+    match i {
+        I0 => Some(list.a),
+        I1 => Some(list.b),
+        _ => None,
+    }
+}
+
+fn main() {
+    let list = List { a: 10, b: 20 }
+    match get(list.clone(), 0) {
+        Some(n) => print(n),
+        None => print_str("none"),
+    }
+    match get(list.clone(), 1) {
+        Some(n) => print(n),
+        None => print_str("none"),
+    }
+}

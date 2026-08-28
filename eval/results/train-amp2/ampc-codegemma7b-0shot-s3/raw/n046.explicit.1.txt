@@ -1,0 +1,41 @@
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let total = 0
+    for x in &v {
+        if x > limit {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn extend(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn main() {
+    let nums = push(push(vec(), 5), 40)
+    let bigger = extend(clone(&nums), 70)
+    print(sum_big(&nums, 10))
+    drop nums
+    print(sum_big(&bigger, 10))
+    drop bigger
+}
+
+fn cutoff(v: &Vec<Int>, cutoff: Int) -> Int {
+    let mut under = 0
+    let mut at = 0
+    for x in &v {
+        if x < cutoff {
+            under = under + 1
+        } else {
+            at = at + 1
+        }
+    }
+    under
+    at
+}
+
+fn main() {
+    let nums = vec(5, 12, 3, 18, 9)
+    print(cutoff(&nums, 10))
+}

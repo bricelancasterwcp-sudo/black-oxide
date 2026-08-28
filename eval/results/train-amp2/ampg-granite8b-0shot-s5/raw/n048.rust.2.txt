@@ -1,0 +1,7 @@
+fn main() {
+    for (i, n) in std::iter::once(0).chain([4, 7, 4, 9, 4].iter().copied()).enumerate() {
+        if n == 4 {
+            println!("{}", i);
+        }
+    }
+}

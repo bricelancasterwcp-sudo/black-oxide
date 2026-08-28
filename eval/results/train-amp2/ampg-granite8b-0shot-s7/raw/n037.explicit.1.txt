@@ -1,0 +1,385 @@
+fn main() {
+    let mut rect = Rectangle { width: 2, height: 3 }
+    rect.width = 5
+    print(rect.area())
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn area(self: &Rectangle) -> Int {
+    self.width * self.height
+}
+
+fn main() {
+    let rect = Rectangle { width: 5, height: 10 }
+    print(rect.area())
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn area(self: &Rectangle) -> Int {
+    self.width * self.height
+}
+
+fn main() {
+    let rect = Rectangle { width: 5, height: 10 }
+    print(rect.area())
+    drop rect
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn area(self: &Rectangle) -> Int {
+    self.width * self.height
+}
+
+fn main() {
+    let mut rect = Rectangle { width: 5, height: 10 }
+    print(rect.area())
+    rect.width = 2
+    print(rect.area())
+    drop rect
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn area(self: &Rectangle) -> Int {
+    self.width * self.height
+}
+
+fn main() {
+    let mut rect = Rectangle { width: 5, height: 10 }
+    print(rect.area())
+    rect.width = 2
+    print(rect.area())
+    drop rect
+    print(rect.area())
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn area(self: &Rectangle) -> Int {
+    self.width * self.height
+}
+
+fn main() {
+    let rect = Rectangle { width: 5, height: 10 }
+    print(rect.area())
+    drop rect
+    print(rect.area())
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn area(self: &Rectangle) -> Int {
+    self.width * self.height
+}
+
+fn main() {
+    let mut rect = Rectangle { width: 5, height: 10 }
+    print(rect.area())
+    rect.width = 2
+    print(rect.area())
+    drop rect
+    print(rect.area())
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn area(self: &Rectangle) -> Int {
+    self.width * self.height
+}
+
+fn main() {
+    let rect = Rectangle { width: 5, height: 10 }
+    print(rect.area())
+    rect.width = 2
+    print(rect.area())
+    drop rect
+    print(rect.area())
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn area(self: &Rectangle) -> Int {
+    self.width * self.height
+}
+
+fn main() {
+    let rect = Rectangle { width: 5, height: 10 }
+    print(rect.area())
+    rect.width = 2
+    print(rect.area())
+    drop rect
+    print(rect.area())
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn area(self: &Rectangle) -> Int {
+    self.width * self.height
+}
+
+fn main() {
+    let rect = Rectangle { width: 5, height: 10 }
+    print(rect.area())
+    rect.width = 2
+    print(rect.area())
+    drop rect
+    print(rect.area())
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn area(self: &Rectangle) -> Int {
+    self.width * self.height
+}
+
+fn main() {
+    let rect = Rectangle { width: 5, height: 10 }
+    print(rect.area())
+    rect.width = 2
+    print(rect.area())
+    drop rect
+    print(rect.area())
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn area(self: &Rectangle) -> Int {
+    self.width * self.height
+}
+
+fn main() {
+    let rect = Rectangle { width: 5, height: 10 }
+    print(rect.area())
+    rect.width = 2
+    print(rect.area())
+    drop rect
+    print(rect.area())
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn area(self: &Rectangle) -> Int {
+    self.width * self.height
+}
+
+fn main() {
+    let rect = Rectangle { width: 5, height: 10 }
+    print(rect.area())
+    rect.width = 2
+    print(rect.area())
+    drop rect
+    print(rect.area())
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn area(self: &Rectangle) -> Int {
+    self.width * self.height
+}
+
+fn main() {
+    let rect = Rectangle { width: 5, height: 10 }
+    print(rect.area())
+    rect.width = 2
+    print(rect.area())
+    drop rect
+    print(rect.area())
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn area(self: &Rectangle) -> Int {
+    self.width * self.height
+}
+
+fn main() {
+    let rect = Rectangle { width: 5, height: 10 }
+    print(rect.area())
+    rect.width = 2
+    print(rect.area())
+    drop rect
+    print(rect.area())
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn area(self: &Rectangle) -> Int {
+    self.width * self.height
+}
+
+fn main() {
+    let rect = Rectangle { width: 5, height: 10 }
+    print(rect.area())
+    rect.width = 2
+    print(rect.area())
+    drop rect
+    print(rect.area())
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn area(self: &Rectangle) -> Int {
+    self.width * self.height
+}
+
+fn main() {
+    let rect = Rectangle { width: 5, height: 10 }
+    print(rect.area())
+    rect.width = 2
+    print(rect.area())
+    drop rect
+    print(rect.area())
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn area(self: &Rectangle) -> Int {
+    self.width * self.height
+}
+
+fn main() {
+    let rect = Rectangle { width: 5, height: 10 }
+    print(rect.area())
+    rect.width = 2
+    print(rect.area())
+    drop rect
+    print(rect.area())
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn area(self: &Rectangle) -> Int {
+    self.width * self.height
+}
+
+fn main() {
+    let rect = Rectangle { width: 5, height: 10 }
+    print(rect.area())
+    rect.width = 2
+    print(rect.area())
+    drop rect
+    print(rect.area())
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn area(self: &Rectangle) -> Int {
+    self.width * self.height
+}
+
+fn main() {
+    let rect = Rectangle { width: 5, height: 10 }
+    print(rect.area())
+    rect.width = 2
+    print(rect.area())
+    drop rect
+    print(rect.area())
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn area(self: &Rectangle) -> Int {
+    self.width * self.height
+}
+
+fn main() {
+    let rect = Rectangle { width: 5, height: 10 }
+    print(rect.area())
+    rect.width = 2
+    print(rect.area())
+    drop rect
+    print(rect.area())
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn area(self: &Rectangle) -> Int {
+    self.width * self.height
+}
+
+fn main() {
+    let rect = Rectangle { width: 5, height: 10 }
+    print(rect.area())
+    rect.width = 2
+    print(rect.area())
+    drop rect
+    print(rect.area())
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn area(self: &Rectangle) -> Int {
+    self.width * self.height
+}
+
+fn main() {
+    let rect = Rectangle { width: 5,

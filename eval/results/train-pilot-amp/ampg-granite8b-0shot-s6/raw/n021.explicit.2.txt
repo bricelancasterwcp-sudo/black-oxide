@@ -1,0 +1,6 @@
+fn main() {
+    let prog = "programming".to_string()
+    let chars = chars(&prog)
+    let count = len(&chars)
+    print(count)
+}

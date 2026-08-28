@@ -1,0 +1,15 @@
+struct Counter {
+    imets: Vec<Int>,
+}
+
+fn main() {
+    let mut counter = Counter { imets: vec() }
+    for i in range(0, 15) {
+        counter = Counter { imets: push(counter.imets, i) }
+    }
+    let mut s = 0
+    for i in counter.imets {
+        s = s + i
+    }
+    print(s)
+}

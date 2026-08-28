@@ -1,0 +1,10 @@
+fn main() {
+    let n_positions = "banana"
+        .char_indices()
+        .filter(|(_, c)| c == &'n')
+        .map(|(i, _)| i);
+
+    for n in n_positions {
+        println!("{}", n);
+    }
+}

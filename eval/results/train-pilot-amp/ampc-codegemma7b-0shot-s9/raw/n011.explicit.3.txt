@@ -1,0 +1,11 @@
+fn main() {
+    let mut nums = vec(4, 8, 12, 16, 20, 24)
+    let mut total = 0
+    for x in &nums {
+        if x % 4 == 0 {
+            total = total + x
+        }
+    }
+    print(total)
+    drop nums
+}

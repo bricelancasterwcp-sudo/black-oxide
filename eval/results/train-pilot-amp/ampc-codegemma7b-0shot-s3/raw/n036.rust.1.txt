@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let four_units = 4;
+    let three_each = 3;
+    let five_units = 5;
+    let two_each = 2;
+
+    let total_value = (four_units * three_each) + (five_units * two_each);
+
+    println!("Total value: {}", total_value);
+}
+```

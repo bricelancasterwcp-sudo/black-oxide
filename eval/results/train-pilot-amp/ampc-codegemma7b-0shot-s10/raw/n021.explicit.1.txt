@@ -1,0 +1,87 @@
+fn len(s: &Str) -> Int {
+    let mut total = 0
+    for c in chars(s) {
+        total = total + 1
+    }
+    total
+}
+
+fn main() {
+    print(len(&str_lit_str))
+}
+
+struct LitStr {
+    chars: Vec<Str>,
+}
+
+fn str_lit_str() -> LitStr {
+    LitStr(vec(str_lit_char, str_lit_char, str_lit_char, str_lit_char, str_lit_char, str_lit_char, str_lit_char, str_lit_char))
+}
+
+fn str_lit_char() -> Str {
+    Str(0)
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut chars = vec()
+    for i in 0.to_int() < s.len() {
+        chars = push(chars, str_index(s, i))
+    }
+    chars
+}
+
+fn str_index(s: &Str, i: Int) -> Str {
+    Str(i)
+}
+
+fn str_len(s: &Str) -> Int {
+    let mut total = 0
+    for _ in chars(s) {
+        total = total + 1
+    }
+    total
+}
+
+fn print(x: Int) {
+    let mut chars = vec()
+    while x > 0.to_int() {
+        chars = push(chars, str_index(&str_lit_digits, mod_int(x, 10)))
+        x = trunc(div_int(x, 10))
+    }
+    for c in chars {
+        print_char(c)
+    }
+    print_char(str_lit_newline)
+}
+
+fn print_char(c: Str) {
+    print_str(&str_lit_char)
+}
+
+fn print_str(s: &Str) {
+    for c in chars(s) {
+        print_char(c)
+    }
+}
+
+struct Str {
+    index: Int,
+}
+
+fn div_int(a: Int, b: Int) -> Int {
+    a / b
+}
+
+fn mod_int(a: Int, b: Int) -> Int {
+    a % b
+}
+
+fn push(v: Vec<Str>, x: Str) -> Vec<Str> {
+    let mut v = v
+    v = push(v, x)
+    v
+}
+
+fn main() {
+    print(len(&str_lit_str))
+}

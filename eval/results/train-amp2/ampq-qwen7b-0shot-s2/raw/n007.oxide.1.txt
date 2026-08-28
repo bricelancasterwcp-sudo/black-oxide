@@ -1,0 +1,16 @@
+struct Num { value: Int }
+
+fn sum_digits(n: Int) -> Int {
+    let mut sum = 0
+    let mut num = n
+    while num > 0 {
+        sum = sum + (num % 10)
+        num = num / 10
+    }
+    sum
+}
+
+fn main() {
+    let num = Num { value: 9875 }
+    print(sum_digits(num.value))
+}

@@ -1,0 +1,8 @@
+fn main() {
+    let word = "hello";
+    let vowels = "aeiou";
+    let count = word.chars()
+                     .filter(|&c| vowels.contains(c.to_ascii_lowercase()))
+                     .count();
+    println!("The word '{}' contains {} vowels.", word, count);
+}

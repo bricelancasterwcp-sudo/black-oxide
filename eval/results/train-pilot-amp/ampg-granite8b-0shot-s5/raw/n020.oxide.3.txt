@@ -1,0 +1,7 @@
+fn main() {
+    let mut sum = 0.0
+    for n in range(4, 43) {
+        sum = sum + (1.0 / to_float(n))
+    }
+    print(sum)
+}

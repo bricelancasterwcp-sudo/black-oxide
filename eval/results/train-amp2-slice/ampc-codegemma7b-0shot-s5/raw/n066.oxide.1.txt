@@ -1,0 +1,11 @@
+fn main() {
+    let mut list = vec(9, 2, 12, 5, 16)
+    let mut total = 0
+    while !list.is_empty() {
+        if list.pop().unwrap() < 10 {
+            print_str(format_str("{}\n", list.pop().unwrap()))
+            total = total + 1
+        }
+    }
+    print_str(format_str("You kept {} entries\n", total))
+}

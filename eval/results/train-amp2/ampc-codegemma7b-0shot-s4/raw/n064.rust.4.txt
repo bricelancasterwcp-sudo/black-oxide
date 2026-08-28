@@ -1,0 +1,17 @@
+use std::collections::LinkedList;
+
+fn main() {
+    let mut list = LinkedList::new();
+    list.push_back(10);
+    list.push_back(20);
+
+    match list.ge(0) {
+        Some(x) => println!("Position 1: {}", x),
+        None => println!("Position 1: None"),
+    }
+
+    match list.ge(4) {
+        Some(x) => println!("Position 4: {}", x),
+        None => println!("Position 4: None"),
+    }
+}

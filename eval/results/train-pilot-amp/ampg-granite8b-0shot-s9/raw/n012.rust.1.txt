@@ -1,0 +1,6 @@
+```rust
+fn main() {
+    let list = (0..15).collect::<Vec<_>>();
+    println!("The list holds {} items", list.len());
+}
+```

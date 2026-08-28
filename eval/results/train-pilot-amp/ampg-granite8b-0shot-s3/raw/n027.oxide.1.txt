@@ -1,0 +1,8 @@
+fn main() {
+    let cat = "cat"
+    print(cat.get(0)?)
+    print("\n")
+    print(cat.get(1)?)
+    print("\n")
+    print(cat.get(2)?)
+}

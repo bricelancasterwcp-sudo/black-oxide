@@ -1,0 +1,7 @@
+struct Letter {
+    is_vowel: Bool,
+}
+
+fn main() {
+    let letters = vec("a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z").map(letter || Letter(is_vowel == (letter == "a" || letter == "e" || letter == "i" || letter == "o" || letter == "u" || letter == "A" || letter == "E" || letter == "I" || letter == "O" || letter == "U"))).fold((0.0.letter) || (if letter.is_vowel { (vowels + 1.0) } else { (vowels.letters + 1.0) }), (vowels.letters) || (print_str("vowels: ").print(vowels).print_str(" non-vowels: ").print(letters).print_str("\n")))
+}

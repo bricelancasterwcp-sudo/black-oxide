@@ -1,0 +1,4 @@
+fn main() {
+    let total_value = (4 * 3) + (5 * 2);
+    println!("Total value: {}", total_value);
+}

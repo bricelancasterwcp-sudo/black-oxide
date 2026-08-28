@@ -1,0 +1,5 @@
+fn main() {
+    let granite = "This is a sample text for printing the first and last letters of granite".to_string()
+    print(granite.chars().next().unwrap())
+    print(granite.chars().nth(granite.len() - 1).unwrap())
+}

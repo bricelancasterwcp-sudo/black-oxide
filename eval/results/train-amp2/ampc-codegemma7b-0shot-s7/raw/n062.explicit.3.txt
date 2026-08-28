@@ -1,0 +1,37 @@
+fn main() {
+    print("go for green\n")
+    print("stop for red\n")
+    print("wait for yellow\n")
+}
+
+fn print(s: Str) {
+    println(s)
+}
+
+fn drop_str(s: &Str) {
+    drop s
+}
+
+fn drop_print(p: &Print) {
+    drop p
+}
+
+struct Print {
+    str: Str,
+}
+
+fn new_print(str: Str) -> Print {
+    Print(str)
+}
+
+fn main() {
+    let p = new_print("go for green\n")
+    print(p.str)
+    drop_print(&p)
+    let p = new_print("stop for red\n")
+    print(p.str)
+    drop_print(&p)
+    let p = new_print("wait for yellow\n")
+    print(p.str)
+    drop_print(&p)
+}

@@ -1,0 +1,24 @@
+fn exchange(q: &Vec<Int>) -> Vec<Int> {
+    let first = q.first().unwrap()
+    let last = q.last().unwrap()
+    let mut new_q = q.to_vec()
+    new_q.remove(0)
+    new_q.push(first)
+    new_q.pop()
+    new_q.insert(0, last)
+    new_q
+}
+
+fn print_queue(q: &Vec<Int>) {
+    for x in q {
+        print("{}", x)
+    }
+    println()
+}
+
+fn main() {
+    let mut queue = vec(1, 2, 3, 4, 5)
+    queue = exchange(&queue)
+    print_queue(&queue)
+    drop queue
+}

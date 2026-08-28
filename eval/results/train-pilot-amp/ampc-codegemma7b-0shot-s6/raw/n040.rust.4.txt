@@ -1,0 +1,8 @@
+use std::f64::consts;
+
+fn main() {
+    let square_side = 4.0;
+    let pi = consts::PI;
+    let square_area = square_side * square_side;
+    println!("Area of the square: {}", square_area);
+}

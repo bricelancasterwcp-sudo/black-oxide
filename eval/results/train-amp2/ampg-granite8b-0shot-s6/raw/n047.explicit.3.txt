@@ -1,0 +1,32 @@
+fn collect_evens_into(mutxs: &Vec<Int>, limit: Int) -> Vec<Int> {
+    let mut xs = clone(&mutxs)
+    let mut result = vec()
+    for x in &mutxs {
+        if x % 2 == 0 {
+            result = push(result, x)
+        }
+    }
+    xs = reverse(&mutxs)
+    for x in &mutxs {
+        if x % 2 == 0 {
+            result = push(result, x)
+        }
+    }
+    xs
+}
+
+fn reverse(v: &Vec<Int>) -> Vec<Int> {
+    let mut result = vec()
+    for x in v {
+        result = push(result, x)
+    }
+    result
+}
+
+fn main() {
+    let numbers = push(push(vec(), 1), 10)
+    let evens = collect_evens_into(&numbers, 1000)
+    print(evens)
+    drop numbers
+    drop evens
+}

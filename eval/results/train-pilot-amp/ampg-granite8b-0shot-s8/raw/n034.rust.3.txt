@@ -1,0 +1,7 @@
+fn main() {
+    let x = [1, 2, 3];
+    match x.get(1) {
+        Some(&second) => println!("{}", second),
+        None => println!("None"),
+    }
+}

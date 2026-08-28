@@ -1,0 +1,21 @@
+struct S { x: Int, y: Int }
+
+fn main() {
+    let mut x = 3
+    x = x + 1
+    match x {
+        Int(n) => {
+            let mut z = 0
+            for i in range(0, 10) {
+                match i {
+                    Int(m) => z == m + 1,
+                    _ => z == z + 1,
+                }
+            }
+            print(z)
+        },
+        _ => {
+            print_str("nope")
+        },
+    }
+}

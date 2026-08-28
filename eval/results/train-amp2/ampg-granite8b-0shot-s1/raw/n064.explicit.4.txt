@@ -1,0 +1,90 @@
+struct List {
+    val: Int,
+    next: Option<List>,
+}
+
+fn get(list: &List, i: Int) -> Option<Int> {
+    let mut cur = list
+    while i > 0 {
+        if cur.next == None {
+            return None
+        }
+        cur = &cur
+    }
+    Some(cur.val)
+}
+
+fn main() {
+    let list = push(push(vec(), 10), 20)
+    let one = get(&list, 0)
+    let four = get(&list, 3)
+    print(one)
+    drop list
+    print(four)
+}
+
+fn print(n: &Int) {
+    println(n)
+}
+
+fn println(n: &Int) {
+    let s = int_to_str(n)
+    print_str(&s)
+    print_str("\n")
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let v = clone(&v)
+    let v = push(v, x)
+    v
+}
+
+fn clone(v: &Vec<Int>) -> Vec<Int> {
+    let mut v = v
+    let mut new_list = vec()
+    loop_list(&mut && v, &mut && new_list)
+    new_list
+}
+
+fn loop_list(list: &List, new_list: &List) {
+    if list.next == None {
+        push(new_list, list.val)
+    } else {
+        loop_list(list.next, new_list)
+    }
+}
+
+fn int_to_str(n: &Int) -> Str {
+    let s = trunc(n)
+    let s = to_float(s)
+    let s = concat(&s, ".0")
+    s
+}
+
+fn to_float(n: Int) -> Float {
+    n
+}
+
+fn trunc(x: Float) -> Int {
+    x
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    let a = clone(a)
+    let a = concat(a, b)
+    a
+}
+
+fn vec() -> Vec<Int> {
+    let v = vec()
+    v
+}
+
+fn main() {
+    let list = push(push(vec(), 10), 20)
+    let one = get(&list, 0)
+    let four = get(&list, 3)
+    print(one)
+    drop list
+    print(four)
+}

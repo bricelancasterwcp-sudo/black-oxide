@@ -1,0 +1,7 @@
+fn main() {
+    let mut measurements: Vec<i32> = vec![9, 2, 7, 4];
+    measurements.sort_unstable();
+    for m in measurements {
+        println!("{}", m);
+    }
+}

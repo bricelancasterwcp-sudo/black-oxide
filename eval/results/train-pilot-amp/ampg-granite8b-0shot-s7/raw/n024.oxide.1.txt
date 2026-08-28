@@ -1,0 +1,15 @@
+struct Counter { count: Int }
+
+fn count_a(s: Str) -> Int {
+    let mut count = Counter { count: 0 }
+    for c in chars(s) {
+        if c == "a" {
+            count = Counter { count: count.count + 1 }
+        }
+    }
+    count.count
+}
+
+fn main() {
+    print(count_a("banana"))
+}

@@ -1,0 +1,17 @@
+fn main() {
+    let x = parse_int(text_input())
+    match x {
+        Some(n) => print(n),
+        None => print_str("bad"),
+    }
+    let s = parse_str(text_input())
+    match s {
+        Some(s) => print_str(s),
+        None => print_str("bad"),
+    }
+    let y = parse_int(text_input())
+    match y {
+        Some(n) => print(n),
+        None => print_str("bad"),
+    }
+}

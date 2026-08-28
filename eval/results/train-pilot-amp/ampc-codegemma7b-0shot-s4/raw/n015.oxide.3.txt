@@ -1,0 +1,15 @@
+fn count_large(nums: Vec<Int>) -> Int {
+    let mut count = 0
+    for num in nums {
+        if num > 4 {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn main() {
+    let numbers = vec(1, 2, 3, 5, 6, 7, 8, 9, 10)
+    let large_count = count_large(numbers)
+    print(large_count)
+}

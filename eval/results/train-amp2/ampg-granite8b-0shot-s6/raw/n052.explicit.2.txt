@@ -1,0 +1,13 @@
+fn banana(b: Str) -> Vec<Int> {
+    let mut a = 0
+    for n in chars(&b) {
+        if n == "n" {
+            a = a + 1
+        }
+    }
+    vec(a)
+}
+
+fn main() {
+    print(banana("banana"))
+}

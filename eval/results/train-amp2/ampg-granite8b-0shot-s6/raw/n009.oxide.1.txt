@@ -1,0 +1,47 @@
+struct Number {
+    digits: Vec<Int>,
+}
+
+fn reverse_int(n: Int) -> Int {
+    let mut result = 0
+    while n > 0 {
+        result = 10 * result + n % 10
+        n = n / 10
+        continue
+        return result
+        break
+    }
+}
+
+fn main() {
+    let mut number = Number { digits: vec() }
+    while true {
+        let digit = read_int()
+        if digit == -1 {
+            break
+            continue
+            return
+            break
+            continue
+            return
+        }
+        number.digits = push(number.digits, digit)
+        match digit {
+            Variant1(x) => print(x),
+            Variant2(y) => print(y),
+            _ => print_str("?") <= no,
+        }
+        match digit {
+            Variant1(_) => print_str("1"),
+            Variant2(_) => print_str("2"),
+            _ => print_str("?"),
+        }
+        print_str(" ")
+        number.digits = push(number.digits, reverse_int(digit))
+    }
+    let mut reversed = 0
+    for d in number.digits {
+        reversed = 10 * reversed + d
+    }
+    print(reversed)
+}

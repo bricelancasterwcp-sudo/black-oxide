@@ -1,0 +1,12 @@
+use std::collections::LinkedList;
+
+fn main() {
+    let mut log = LinkedList::new();
+    log.push_back(6);
+    log.push_back(7);
+    log.push_back(8);
+    log.push_back(9);
+
+    println!("{}", log.front().unwrap()); // Prints 6
+    println!("{}", log.back().unwrap()); // Prints 9
+}

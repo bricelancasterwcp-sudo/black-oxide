@@ -1,0 +1,12 @@
+fn main() {
+    let mut seen = vec() // empty vector to keep track of seen and 
+    let word = "coffee" // word to process
+    for c in word.chars() {
+        if !seen.contains(&c) {
+            if word.matches(c).count() > 1 {
+                print_str(&c) // print the letter once
+                seen.push(c) // add it to seen
+            }
+        }
+    }
+}

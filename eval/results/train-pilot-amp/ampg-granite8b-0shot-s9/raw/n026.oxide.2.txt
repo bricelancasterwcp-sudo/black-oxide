@@ -1,0 +1,16 @@
+fn main() {
+    let mut n = 2026
+    let mut s = str()
+    while n > 0 {
+        let d = n % 10
+        if d == 2 {
+            s = push(s, "two")
+        } else if d == 0 {
+            s = push(s, "zero")
+        } else {
+            s = push(s, to_str(d))
+        }
+        n = trunc(n / 10)
+    }
+    print(len(s))
+}

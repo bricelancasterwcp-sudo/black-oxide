@@ -1,0 +1,31 @@
+fn largest(v: Vec<Int>) -> Int {
+    let mut largest = v.first().unwrap()
+    for x in &v {
+        if x > largest {
+            largest = x
+        }
+    }
+    largest
+}
+
+fn main() {
+    let readings = vec(5, 3, 9, 1, 7)
+    print(largest(readings))
+    drop readings
+}
+
+fn largest(v: Vec<Int>) -> Int {
+    let mut largest = v.first().unwrap()
+    for x in &v {
+        if x > largest {
+            largest = x
+        }
+    }
+    largest
+}
+
+fn main() {
+    let readings = vec(5, 3, 9, 1, 7)
+    print(largest(readings))
+    drop readings
+}

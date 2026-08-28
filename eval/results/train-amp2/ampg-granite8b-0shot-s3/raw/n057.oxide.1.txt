@@ -1,0 +1,233 @@
+fn main() {
+    let fruits = vec("fig", "banana", "kiwi")
+    let longest = find_longest(fruits)
+    if longest.len() > 3 {
+        print(longest)
+    }
+}
+
+fn find_longest(v: Vec<Str>) -> Str {
+    let mut longest = ""
+    for s in v {
+        if s.len() > longest.len() {
+            longest = s
+        }
+    }
+    longest
+}
+
+fn find_longest(v: Vec<Str>) -> Str {
+    v.iter().max_by_key(str_len).unwrap()
+}
+
+fn find_longest(v: Vec<Str>) -> Str {
+    v.into_iter().max_by_key(str_len).unwrap()
+}
+
+fn find_longest(v: Vec<Str>) -> Str {
+    v.into_iter().max_by_key(str_len).unwrap()
+}
+
+fn find_longest(v: Vec<Str>) -> Str {
+    match v.into_iter().max_by_key(str_len) {
+        Some(s) => s,
+        None => panic("no fruits?"),
+    }
+}
+
+fn find_longest(v: Vec<Str>) -> Str {
+    v.iter().max_by_key(str_len).expect("no fruits?")
+}
+
+fn find_longest(v: Vec<Str>) -> Str {
+    match v.iter().max_by_key(str_len) {
+        Some(s) => s,
+        None => panic("no fruits?"),
+    }
+}
+
+fn find_longest(v: Vec<Str>) -> Str {
+    v.iter().max_by_key(str_len).unwrap_or(panic("no fruits?"))
+}
+
+fn find_longest(v: Vec<Str>) -> Str {
+    match v.iter().max_by_key(str_len) {
+        Some(s) => s,
+        None => panic("no fruits?"),
+    }
+}
+
+fn find_longest(v: Vec<Str>) -> Str {
+    v.iter().max_by_key(str_len).expect("no fruits?")
+}
+
+fn find_longest(v: Vec<Str>) -> Str {
+    v.into_iter().max_by_key(str_len).unwrap_or_else(panic)
+}
+
+fn find_longest(v: Vec<Str>) -> Str {
+    match v.into_iter().max_by_key(str_len) {
+        Some(s) => s,
+        None => panic("no fruits?"),
+    }
+}
+
+fn find_longest(v: Vec<Str>) -> Str {
+    v.into_iter().max_by_key(str_len).unwrap_or_else(panic)
+}
+
+fn find_longest(v: Vec<Str>) -> Str {
+    match v.into_iter().max_by_key(str_len) {
+        Some(s) => s,
+        None => panic("no fruits?"),
+    }
+}
+
+fn find_longest(v: Vec<Str>) -> Str {
+    v.into_iter().max_by_key(str_len).unwrap_or_else(panic)
+}
+
+fn find_longest(v: Vec<Str>) -> Str {
+    match v.into_iter().max_by_key(str_len) {
+        Some(s) => s,
+        None => panic("no fruits?"),
+    }
+}
+
+fn find_longest(v: Vec<Str>) -> Str {
+    v.into_iter().max_by_key(str_len).unwrap_or_else(panic)
+}
+
+fn find_longest(v: Vec<Str>) -> Str {
+    match v.into_iter().max_by_key(str_len) {
+        Some(s) => s,
+        None => panic("no fruits?"),
+    }
+}
+
+fn find_longest(v: Vec<Str>) -> Str {
+    v.into_iter().max_by_key(str_len).unwrap_or_else(panic)
+}
+
+fn find_longest(v: Vec<Str>) -> Str {
+    match v.into_iter().max_by_key(str_len) {
+        Some(s) => s,
+        None => panic("no fruits?"),
+    }
+}
+
+fn find_longest(v: Vec<Str>) -> Str {
+    v.into_iter().max_by_key(str_len).unwrap_or_else(panic)
+}
+
+fn find_longest(v: Vec<Str>) -> Str {
+    match v.into_iter().max_by_key(str_len) {
+        Some(s) => s,
+        None => panic("no fruits?"),
+    }
+}
+
+fn find_longest(v: Vec<Str>) -> Str {
+    v.into_iter().max_by_key(str_len).unwrap_or_else(panic)
+}
+
+fn find_longest(v: Vec<Str>) -> Str {
+    match v.into_iter().max_by_key(str_len) {
+        Some(s) => s,
+        None => panic("no fruits?"),
+    }
+}
+
+fn find_longest(v: Vec<Str>) -> Str {
+    v.into_iter().max_by_key(str_len).unwrap_or_else(panic)
+}
+
+fn find_longest(v: Vec<Str>) -> Str {
+    match v.into_iter().max_by_key(str_len) {
+        Some(s) => s,
+        None => panic("no fruits?"),
+    }
+}
+
+fn find_longest(v: Vec<Str>) -> Str {
+    v.into_iter().max_by_key(str_len).unwrap_or_else(panic)
+}
+
+fn find_longest(v: Vec<Str>) -> Str {
+    match v.into_iter().max_by_key(str_len) {
+        Some(s) => s,
+        None => panic("no fruits?"),
+    }
+}
+
+fn find_longest(v: Vec<Str>) -> Str {
+    v.into_iter().max_by_key(str_len).unwrap_or_else(panic)
+}
+
+fn find_longest(v: Vec<Str>) -> Str {
+    match v.into_iter().max_by_key(str_len) {
+        Some(s) => s,
+        None => panic("no fruits?"),
+    }
+}
+
+fn find_longest(v: Vec<Str>) -> Str {
+    v.into_iter().max_by_key(str_len).unwrap_or_else(panic)
+}
+
+fn find_longest(v: Vec<Str>) -> Str {
+    match v.into_iter().max_by_key(str_len) {
+        Some(s) => s,
+        None => panic("no fruits?"),
+    }
+}
+
+fn find_longest(v: Vec<Str>) -> Str {
+    v.into_iter().max_by_key(str_len).unwrap_or_else(panic)
+}
+
+fn find_longest(v: Vec<Str>) -> Str {
+    match v.into_iter().max_by_key(str_len) {
+        Some(s) => s,
+        None => panic("no fruits?"),
+    }
+}
+
+fn find_longest(v: Vec<Str>) -> Str {
+    v.into_iter().max_by_key(str_len).unwrap_or_else(panic)
+}
+
+fn find_longest(v: Vec<Str>) -> Str {
+    match v.into_iter().max_by_key(str_len) {
+        Some(s) => s,
+        None => panic("no fruits?"),
+    }
+}
+
+fn find_longest(v: Vec<Str>) -> Str {
+    v.into_iter().max_by_key(str_len).unwrap_or_else(panic)
+}
+
+fn find_longest(v: Vec<Str>) -> Str {
+    match v.into_iter().max_by_key(str_len) {
+        Some(s) => s,
+        None => panic("no fruits?"),
+    }
+}
+
+fn find_longest(v: Vec<Str>) -> Str {
+    v.into_iter().max_by_key(str_len).unwrap_or_else(panic)
+}
+
+fn find_longest(v: Vec<Str>) -> Str {
+    match v.into_iter().max_by_key(str_len) {
+        Some(s) => s,
+        None => panic("no fruits?"),
+    }
+}
+
+fn find_longest(v: Vec<Str>) -> Str {
+    v.into_iter().max_by_key(str_len).unwrap_or_else(panic)
+}
+
+fn find

@@ -1,0 +1,15 @@
+struct Reading { label: Str, values: Vec<Int> }
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(push(push(vec(), 4), 8), 15), 16) }
+    let r2 = Reading { label: "lab2", ..r }
+    let sum = r2.values.iter().fold(0, add)
+    let count = len(r2.values)
+    let mean = to_float(sum) / to_float(count)
+    let mean_int = trunc(mean)
+    print(mean_int)
+}

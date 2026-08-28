@@ -1,0 +1,14 @@
+fn min(v: Vec<Int>) -> Int {
+    let mut smallest = v.first().unwrap()
+    for x in v {
+        if x < smallest {
+            smallest = x
+        }
+    }
+    smallest
+}
+
+fn main() {
+    let readings = vec(5, 3, 9, 1, 7)
+    print(min(readings))
+}

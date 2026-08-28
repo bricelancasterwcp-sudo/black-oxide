@@ -1,0 +1,5 @@
+fn main() {
+    let readings = vec(5, 3, 9, 1, 7)
+    let count = readings.filter(x || x > 4).len()
+    print(count)
+}

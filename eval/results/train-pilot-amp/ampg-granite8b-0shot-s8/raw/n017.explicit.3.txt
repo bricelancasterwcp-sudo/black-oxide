@@ -1,0 +1,20 @@
+fn get(list: &Vec<Int>, index: Int) -> Option<Int> {
+    if index >= 0 && index < len(&list) {
+        Some(get_helper(&list, index))
+    } else {
+        None
+    }
+}
+
+fn get_helper(list: &Vec<Int>, index: Int) -> Int {
+    match index {
+        O => list.get(0).unwrap(),
+        S(i) => get_helper(list, i).unwrap(),
+        _ => panic("Index out of bounds"),
+    }
+}
+
+fn main() {
+    let list = push(push(push(vec(), 10), 20), 30)
+    print(get(&list, 1).unwrap())
+}

@@ -1,0 +1,17 @@
+use std::cmp;
+
+fn main() {
+  let readings = [6, 11, 3, 14, 9];
+  let mut count = 0;
+  let mut highest = std::i32::MIN;
+
+  for reading in readings {
+    if reading > 5 {
+      count += 1;
+    }
+    highest = cmp::max(highest, reading);
+  }
+
+  println!("Readings exceeding five: {}", count);
+  println!("Highest reading: {}", highest);
+}

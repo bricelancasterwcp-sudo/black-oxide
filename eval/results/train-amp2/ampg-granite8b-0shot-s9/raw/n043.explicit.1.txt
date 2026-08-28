@@ -1,0 +1,10 @@
+fn main() {
+    let mut queue = push(push(push(push(vec(), 1), 2), 3), 4)
+    let head = queue
+    let last = pop(&queue)
+    queue = push(queue, pop(&head))
+    queue = push(queue, last)
+    while !queue.is_empty() {
+        print_ln(pop(&queue))
+    }
+}

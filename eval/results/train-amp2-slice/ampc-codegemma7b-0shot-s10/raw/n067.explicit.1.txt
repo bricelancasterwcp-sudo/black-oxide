@@ -1,0 +1,20 @@
+fn walk(n: Int) -> Int {
+    let mut total = 0
+    let mut pos = 0
+    while pos < n {
+        pos = pos + 1
+        let current = pos
+        if current % 2 == 1 {
+            print(current * 2)
+        } else {
+            total = total + current
+        }
+    }
+    print(total)
+    total
+}
+
+fn main() {
+    let result = walk(10)
+    drop result
+}

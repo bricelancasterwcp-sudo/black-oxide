@@ -1,0 +1,17 @@
+fn main() {
+    let figures = vec(8, 3, 11, 6)
+    let min_figure = get(&figures, 0).unwrap()
+    let max_figure = get(&figures, 0).unwrap()
+    for figure in &figures {
+        if figure < min_figure {
+            min_figure = figure
+        }
+        if figure > max_figure {
+            max_figure = figure
+        }
+    }
+    print(min_figure)
+    let gap = max_figure - min_figure
+    print(gap)
+    drop figures
+}

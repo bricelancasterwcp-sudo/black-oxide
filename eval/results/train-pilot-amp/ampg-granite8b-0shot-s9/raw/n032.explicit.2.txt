@@ -1,0 +1,225 @@
+fn main() {
+    let p1 = Point { x: 1, y: 5 }
+    let p2 = Point { x: 10, y: 5 }
+    let p3 = add(&p1, &p2)
+    print_point(p3)
+    drop p1
+    drop p2
+    drop p3
+}
+
+struct Point { x: Int, y: Int }
+
+fn add(p1: &Point, p2: &Point) -> Point {
+    Point(p1.x + p2.x, p1.y + p2.y)
+}
+
+fn print_point(p: &Point) {
+    print_str("(")
+    print(p.x)
+    print_str(", ")
+    print(p.y)
+    print_str(")")
+}
+
+struct Point { x: Int, y: Int }
+
+fn add(p1: &Point, p2: &Point) -> Point {
+    Point(p1.x + p2.x, p1.y + p2.y)
+}
+
+fn main() {
+    let p1 = Point { x: 1, y: 5 }
+    let p2 = Point { x: 10, y: 5 }
+    let p3 = add(&p1, &p2)
+    print_point(&p3)
+    drop p1
+    drop p2
+    drop p3
+}
+
+fn print_point(p: &Point) {
+    print_str("(")
+    print(p.x)
+    print_str(", ")
+    print(p.y)
+    print_str(")")
+}
+
+struct Point { x: Int, y: Int }
+
+fn add(p1: &Point, p2: &Point) -> Point {
+    Point(p1.x + p2.x, p1.y + p2.y)
+}
+
+fn main() {
+    let p1 = Point { x: 1, y: 5 }
+    let p2 = Point { x: 10, y: 5 }
+    let p3 = add(&p1, &p2)
+    print_point(&p3)
+    drop p1
+    drop p2
+    drop p3
+}
+
+fn print_point(p: &Point) {
+    print_str("(")
+    print(p.x)
+    print_str(", ")
+    print(p.y)
+    print_str(")")
+}
+
+struct Point { x: Int, y: Int }
+
+fn add(p1: &Point, p2: &Point) -> Point {
+    Point(p1.x + p2.x, p1.y + p2.y)
+}
+
+fn main() {
+    let p1 = Point { x: 1, y: 5 }
+    let p2 = Point { x: 10, y: 5 }
+    let p3 = add(&p1, &p2)
+    print_point(&p3)
+    drop p1
+    drop p2
+    drop p3
+}
+
+fn print_point(p: &Point) {
+    print_str("(")
+    print(p.x)
+    print_str(", ")
+    print(p.y)
+    print_str(")")
+}
+
+struct Point { x: Int, y: Int }
+
+fn add(p1: &Point, p2: &Point) -> Point {
+    Point(p1.x + p2.x, p1.y + p2.y)
+}
+
+fn main() {
+    let p1 = Point { x: 1, y: 5 }
+    let p2 = Point { x: 10, y: 5 }
+    let p3 = add(&p1, &p2)
+    print_point(&p3)
+    drop p1
+    drop p2
+    drop p3
+}
+
+fn print_point(p: &Point) {
+    print_str("(")
+    print(p.x)
+    print_str(", ")
+    print(p.y)
+    print_str(")")
+}
+
+struct Point { x: Int, y: Int }
+
+fn add(p1: &Point, p2: &Point) -> Point {
+    Point(p1.x + p2.x, p1.y + p2.y)
+}
+
+fn main() {
+    let p1 = Point { x: 1, y: 5 }
+    let p2 = Point { x: 10, y: 5 }
+    let p3 = add(&p1, &p2)
+    print_point(&p3)
+    drop p1
+    drop p2
+    drop p3
+}
+
+fn print_point(p: &Point) {
+    print_str("(")
+    print(p.x)
+    print_str(", ")
+    print(p.y)
+    print_str(")")
+}
+
+struct Point { x: Int, y: Int }
+
+fn add(p1: &Point, p2: &Point) -> Point {
+    Point(p1.x + p2.x, p1.y + p2.y)
+}
+
+fn main() {
+    let p1 = Point { x: 1, y: 5 }
+    let p2 = Point { x: 10, y: 5 }
+    let p3 = add(&p1, &p2)
+    print_point(&p3)
+    drop p1
+    drop p2
+    drop p3
+}
+
+fn print_point(p: &Point) {
+    print_str("(")
+    print(p.x)
+    print_str(", ")
+    print(p.y)
+    print_str(")")
+}
+
+struct Point { x: Int, y: Int }
+
+fn add(p1: &Point, p2: &Point) -> Point {
+    Point(p1.x + p2.x, p1.y + p2.y)
+}
+
+fn main() {
+    let p1 = Point { x: 1, y: 5 }
+    let p2 = Point { x: 10, y: 5 }
+    let p3 = add(&p1, &p2)
+    print_point(&p3)
+    drop p1
+    drop p2
+    drop p3
+}
+
+fn print_point(p: &Point) {
+    print_str("(")
+    print(p.x)
+    print_str(", ")
+    print(p.y)
+    print_str(")")
+}
+
+struct Point { x: Int, y: Int }
+
+fn add(p1: &Point, p2: &Point) -> Point {
+    Point(p1.x + p2.x, p1.y + p2.y)
+}
+
+fn main() {
+    let p1 = Point { x: 1, y: 5 }
+    let p2 = Point { x: 10, y: 5 }
+    let p3 = add(&p1, &p2)
+    print_point(&p3)
+    drop p1
+    drop p2
+    drop p3
+}
+
+fn print_point(p: &Point) {
+    print_str("(")
+    print(p.x)
+    print_str(", ")
+    print(p.y)
+    print_str(")")
+}
+
+struct Point { x: Int, y: Int }
+
+fn add(p1: &Point, p2: &Point) -> Point {
+    Point(p1.x + p2.x, p1.y + p2.y)
+}
+
+fn main() {
+    let p1 = Point { x: 1, y: 5 }
+    let p2 = Point { x: 

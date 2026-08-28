@@ -1,0 +1,11 @@
+fn main() {
+    let side: f64 = 4.0;
+    let pi: f64 = 3.14159;
+
+    let area = square_area(side, pi);
+    println!("Area of a square of side {} is {}", side, area);
+}
+
+fn square_area(side: f64, pi: f64) -> f64 {
+    side * side * pi
+}

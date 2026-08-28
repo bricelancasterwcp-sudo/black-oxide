@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    assert_eq!(second_entry(vec![1, 2, 3]), Some(2));
+    assert_eq!(second_entry(vec![1]), None);
+    assert_eq!(second_entry(vec![]), None);
+}
+
+fn second_entry<T>(xs: Vec<T>) -> Option<T> {
+    match xs.get(1) {
+        Some(x) => Some(*x),
+        None => None,
+    }
+}
+```

@@ -1,0 +1,264 @@
+fn main() {
+    let mut coffee = "coffee".to_string().chars().collect().to_vec()
+    loop_for_letter(coffee.clone(), "c")
+    loop_for_letter(coffee.clone(), "o")
+    loop_for_letter(coffee.clone(), "f")
+    loop_for_letter(coffee.clone(), "e")
+}
+
+fn loop_for_letter(mutcoffee: Vec<Char>, letter: Str) {
+    let mut i = 0
+    loop_while_letter_not_found(coffee.clone(), letter, i)
+}
+
+fn loop_while_letter_not_found(mutcoffee: Vec<Char>, letter: Str, muti: Int) {
+    if get(coffee, i)? == letter {
+        return
+    }
+    i = i + 1
+    loop_while_letter_not_found(coffee.clone(), letter, i)
+}
+
+fn print(s: Str) {
+    loop_print_one(s.chars().collect().to_vec(), 0)
+}
+
+fn loop_print_one(muts: Vec<Char>, muti: Int) {
+    print_char(get(s, i)?)
+    i = i + 1
+    loop_print_one(s.clone(), i)
+}
+
+fn print_char(c: Char) {
+    print_str(str_concat(str_from_char(c), "\n"))
+}
+
+fn loop_print_one(muts: Vec<Char>, muti: Int) {
+    print_char(get(s, i)?)
+    i = i + 1
+    loop_print_one(s.clone(), i)
+}
+
+fn str_from_char(c: Char) -> Str {
+    let mut v = vec()
+    push(v, c)
+}
+
+fn str_concat(a: Str, b: Str) -> Str {
+    let mut v = vec()
+    for c in a.chars() {
+        push(v, c)
+    }
+    for c in b.chars() {
+        push(v, c)
+    }
+    chars_to_str(v)
+}
+
+fn print_str(s: Str) {
+    loop_print_one(s.chars().collect().to_vec(), 0)
+}
+
+fn loop_print_one(muts: Vec<Char>, muti: Int) {
+    print_char(get(s, i)?)
+    i = i + 1
+    loop_print_one(s.clone(), i)
+}
+
+fn print_char(c: Char) {
+    let mut s = "".to_string()
+    s = s + str_from_char(c)
+    print_str(s)
+}
+
+fn str_from_char(c: Char) -> Str {
+    let mut v = vec()
+    push(v, c)
+    chars_to_str(v)
+}
+
+fn chars_to_str(v: Vec<Char>) -> Str {
+    let mut s = "".to_string()
+    for c in v {
+        s = s + str_from_char(c)
+    }
+    s
+}
+
+fn loop_print_one(muts: Vec<Char>, muti: Int) {
+    print_char(get(s, i)?)
+    i = i + 1
+    loop_print_one(s.clone(), i)
+}
+
+fn print_char(c: Char) {
+    let mut s = "".to_string()
+    s = s + str_from_char(c)
+    print_str(s)
+}
+
+fn str_from_char(c: Char) -> Str {
+    let mut v = vec()
+    push(v, c)
+    chars_to_str(v)
+}
+
+fn chars_to_str(v: Vec<Char>) -> Str {
+    let mut s = "".to_string()
+    for c in v {
+        s = s + str_from_char(c)
+    }
+    s
+}
+
+fn loop_print_one(muts: Vec<Char>, muti: Int) {
+    print_char(get(s, i)?)
+    i = i + 1
+    loop_print_one(s.clone(), i)
+}
+
+fn print_char(c: Char) {
+    let mut s = "".to_string()
+    s = s + str_from_char(c)
+    print_str(s)
+}
+
+fn str_from_char(c: Char) -> Str {
+    let mut v = vec()
+    push(v, c)
+    chars_to_str(v)
+}
+
+fn chars_to_str(v: Vec<Char>) -> Str {
+    let mut s = "".to_string()
+    for c in v {
+        s = s + str_from_char(c)
+    }
+    s
+}
+
+fn loop_print_one(muts: Vec<Char>, muti: Int) {
+    print_char(get(s, i)?)
+    i = i + 1
+    loop_print_one(s.clone(), i)
+}
+
+fn print_char(c: Char) {
+    let mut s = "".to_string()
+    s = s + str_from_char(c)
+    print_str(s)
+}
+
+fn str_from_char(c: Char) -> Str {
+    let mut v = vec()
+    push(v, c)
+    chars_to_str(v)
+}
+
+fn chars_to_str(v: Vec<Char>) -> Str {
+    let mut s = "".to_string()
+    for c in v {
+        s = s + str_from_char(c)
+    }
+    s
+}
+
+fn loop_print_one(muts: Vec<Char>, muti: Int) {
+    print_char(get(s, i)?)
+    i = i + 1
+    loop_print_one(s.clone(), i)
+}
+
+fn print_char(c: Char) {
+    let mut s = "".to_string()
+    s = s + str_from_char(c)
+    print_str(s)
+}
+
+fn str_from_char(c: Char) -> Str {
+    let mut v = vec()
+    push(v, c)
+    chars_to_str(v)
+}
+
+fn chars_to_str(v: Vec<Char>) -> Str {
+    let mut s = "".to_string()
+    for c in v {
+        s = s + str_from_char(c)
+    }
+    s
+}
+
+fn loop_print_one(muts: Vec<Char>, muti: Int) {
+    print_char(get(s, i)?)
+    i = i + 1
+    loop_print_one(s.clone(), i)
+}
+
+fn print_char(c: Char) {
+    let mut s = "".to_string()
+    s = s + str_from_char(c)
+    print_str(s)
+}
+
+fn str_from_char(c: Char) -> Str {
+    let mut v = vec()
+    push(v, c)
+    chars_to_str(v)
+}
+
+fn chars_to_str(v: Vec<Char>) -> Str {
+    let mut s = "".to_string()
+    for c in v {
+        s = s + str_from_char(c)
+    }
+    s
+}
+
+fn loop_print_one(muts: Vec<Char>, muti: Int) {
+    print_char(get(s, i)?)
+    i = i + 1
+    loop_print_one(s.clone(), i)
+}
+
+fn print_char(c: Char) {
+    let mut s = "".to_string()
+    s = s + str_from_char(c)
+    print_str(s)
+}
+
+fn str_from_char(c: Char) -> Str {
+    let mut v = vec()
+    push(v, c)
+    chars_to_str(v)
+}
+
+fn chars_to_str(v: Vec<Char>) -> Str {
+    let mut s = "".to_string()
+    for c in v {
+        s = s + str_from_char(c)
+    }
+    s
+}
+
+fn loop_print_one(muts: Vec<Char>, muti: Int) {
+    print_char(get(s, i)?)
+    i = i + 1
+    loop_print_one(s.clone(), i)
+}
+
+fn print_char(c: Char) {
+    let mut s = "".to_string()
+    s = s + str_from_char(c)
+    print_str(s)
+}
+
+fn str_from_char(c: Char) -> Str {
+    let mut v = vec()
+    push(v, c)
+    chars_to_str(v)
+}
+
+fn chars_to_str(v: Vec<Char>) -> Str {
+    let mut s = "".to_string()
+   

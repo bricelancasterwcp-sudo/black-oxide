@@ -1,0 +1,399 @@
+fn main() {
+    let x = parse_int(read_str(417))
+    if x.is_none() {
+        print("bad")
+    } else {
+        print(int_to_str(x.unwrap() + 1))
+    }
+    drop x
+}
+
+fn read_str(pos: Int) -> Str {
+    return "417"
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    return Some(417)
+}
+
+fn int_to_str(n: Int) -> Str {
+    return "418"
+}
+
+fn print(s: Str) {
+    print(s)
+}
+
+fn drop_none(_: Option<Int>) {
+    return
+}
+
+fn drop_str(_: Str) {
+    return
+}
+
+fn drop_int(_: Int) {
+    return
+}
+
+fn drop_char(_: Str) {
+    return
+}
+
+fn drop_char(_: Char) {
+    return
+}
+
+fn drop_bool(_: Bool) {
+    return
+}
+
+fn drop_float(_: Float) {
+    return
+}
+
+fn drop_vec(_: Vec<Int>) {
+    return
+}
+
+fn push(_: Vec<Int>, _: Int) -> Vec<Int> {
+    return vec()
+}
+
+fn len(_: Vec<Int>) -> Int {
+    return 0
+}
+
+fn get(_: Vec<Int>, _: Int) -> Option<Int> {
+    return None
+}
+
+fn range(_: Int, _: Int) -> Vec<Int> {
+    return vec()
+}
+
+fn clone(_: Int) -> Int {
+    return 417
+}
+
+fn str_len(_: Str) -> Int {
+    return 0
+}
+
+fn concat(_: Str, _: Str) -> Str {
+    return "417418"
+}
+
+fn chars(_: Str) -> Vec<Str> {
+    return vec()
+}
+
+fn int_to_str(_: Int) -> Str {
+    return "418"
+}
+
+fn parse_int(_: Str) -> Option<Int> {
+    return Some(417)
+}
+
+fn to_float(_: Int) -> Float {
+    return 417.0
+}
+
+fn trunc(_: Float) -> Int {
+    return 417
+}
+
+fn print(_: Int) {
+    print(417)
+}
+
+fn drop_none(_: Option<Int>) {
+    return
+}
+
+fn drop_str(_: Str) {
+    return
+}
+
+fn drop_int(_: Int) {
+    return
+}
+
+fn drop_char(_: Str) {
+    return
+}
+
+fn drop_char(_: Char) {
+    return
+}
+
+fn drop_bool(_: Bool) {
+    return
+}
+
+fn drop_float(_: Float) {
+    return
+}
+
+fn drop_vec(_: Vec<Int>) {
+    return
+}
+
+fn push(_: Vec<Int>, _: Int) -> Vec<Int> {
+    return vec()
+}
+
+fn len(_: Vec<Int>) -> Int {
+    return 0
+}
+
+fn get(_: Vec<Int>, _: Int) -> Option<Int> {
+    return None
+}
+
+fn range(_: Int, _: Int) -> Vec<Int> {
+    return vec()
+}
+
+fn clone(_: Int) -> Int {
+    return 417
+}
+
+fn str_len(_: Str) -> Int {
+    return 0
+}
+
+fn concat(_: Str, _: Str) -> Str {
+    return "417418"
+}
+
+fn chars(_: Str) -> Vec<Str> {
+    return vec()
+}
+
+fn int_to_str(_: Int) -> Str {
+    return "418"
+}
+
+fn parse_int(_: Str) -> Option<Int> {
+    return Some(417)
+}
+
+fn to_float(_: Int) -> Float {
+    return 417.0
+}
+
+fn trunc(_: Float) -> Int {
+    return 417
+}
+
+fn print(_: Float) {
+    print(417.0)
+}
+
+fn drop_none(_: Option<Int>) {
+    return
+}
+
+fn drop_str(_: Str) {
+    return
+}
+
+fn drop_int(_: Int) {
+    return
+}
+
+fn drop_char(_: Str) {
+    return
+}
+
+fn drop_char(_: Char) {
+    return
+}
+
+fn drop_bool(_: Bool) {
+    return
+}
+
+fn drop_float(_: Float) {
+    return
+}
+
+fn drop_vec(_: Vec<Int>) {
+    return
+}
+
+fn push(_: Vec<Int>, _: Int) -> Vec<Int> {
+    return vec()
+}
+
+fn len(_: Vec<Int>) -> Int {
+    return 0
+}
+
+fn get(_: Vec<Int>, _: Int) -> Option<Int> {
+    return None
+}
+
+fn range(_: Int, _: Int) -> Vec<Int> {
+    return vec()
+}
+
+fn clone(_: Int) -> Int {
+    return 417
+}
+
+fn str_len(_: Str) -> Int {
+    return 0
+}
+
+fn concat(_: Str, _: Str) -> Str {
+    return "417418"
+}
+
+fn chars(_: Str) -> Vec<Str> {
+    return vec()
+}
+
+fn int_to_str(_: Int) -> Str {
+    return "418"
+}
+
+fn parse_int(_: Str) -> Option<Int> {
+    return Some(417)
+}
+
+fn to_float(_: Int) -> Float {
+    return 417.0
+}
+
+fn trunc(_: Float) -> Int {
+    return 417
+}
+
+fn print(_: Vec<Int>) {
+    print(vec())
+}
+
+fn drop_none(_: Option<Int>) {
+    return
+}
+
+fn drop_str(_: Str) {
+    return
+}
+
+fn drop_int(_: Int) {
+    return
+}
+
+fn drop_char(_: Str) {
+    return
+}
+
+fn drop_char(_: Char) {
+    return
+}
+
+fn drop_bool(_: Bool) {
+    return
+}
+
+fn drop_float(_: Float) {
+    return
+}
+
+fn drop_vec(_: Vec<Int>) {
+    return
+}
+
+fn push(_: Vec<Int>, _: Int) -> Vec<Int> {
+    return vec()
+}
+
+fn len(_: Vec<Int>) -> Int {
+    return 0
+}
+
+fn get(_: Vec<Int>, _: Int) -> Option<Int> {
+    return None
+}
+
+fn range(_: Int, _: Int) -> Vec<Int> {
+    return vec()
+}
+
+fn clone(_: Int) -> Int {
+    return 417
+}
+
+fn str_len(_: Str) -> Int {
+    return 0
+}
+
+fn concat(_: Str, _: Str) -> Str {
+    return "417418"
+}
+
+fn chars(_: Str) -> Vec<Str> {
+    return vec()
+}
+
+fn int_to_str(_: Int) -> Str {
+    return "418"
+}
+
+fn parse_int(_: Str) -> Option<Int> {
+    return Some(417)
+}
+
+fn to_float(_: Int) -> Float {
+    return 417.0
+}
+
+fn trunc(_: Float) -> Int {
+    return 417
+}
+
+fn print(_: Str) {
+    print("418")
+}
+
+fn drop_none(_: Option<Int>) {
+    return
+}
+
+fn drop_str(_: Str) {
+    return
+}
+
+fn drop_int(_: Int) {
+    return
+}
+
+fn drop_char(_: Str) {
+    return
+}
+
+fn drop_char(_: Char) {
+    return
+}
+
+fn drop_bool(_: Bool) {
+    return
+}
+
+fn drop_float(_: Float) {
+    return
+}
+
+fn drop_vec(_: Vec<Int>) {
+    return
+}
+
+fn push(_: Vec<Int>, _: Int) -> Vec<Int> {
+    return vec()
+}
+
+fn len

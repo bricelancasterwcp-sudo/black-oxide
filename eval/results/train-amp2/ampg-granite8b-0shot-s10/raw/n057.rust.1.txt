@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let foods = ["fig", "banana", "kiwi"];
+    let longest = foods.iter().max_by_key(|f| f.len()).unwrap();
+    println!("The longest name is {} with {} letters", longest, longest.len());
+}
+```
+
+Note that this solution uses the `max_by_key` method to find the longest name, and the `unwrap` method to panic if the slice is empty.

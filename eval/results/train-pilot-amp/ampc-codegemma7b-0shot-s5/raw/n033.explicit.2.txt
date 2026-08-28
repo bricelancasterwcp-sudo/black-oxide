@@ -1,0 +1,19 @@
+fn signal(c: Color) {
+    match c {
+        Green => print("go for green"),
+        Yellow => print("wait for yellow"),
+        Red => print("stop for red"),
+    }
+}
+
+enum Color {
+    Green,
+    Yellow,
+    Red,
+}
+
+fn main() {
+    signal(Green)
+    signal(Yellow)
+    signal(Red)
+}

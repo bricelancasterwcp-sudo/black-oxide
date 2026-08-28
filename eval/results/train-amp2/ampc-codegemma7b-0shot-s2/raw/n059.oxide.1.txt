@@ -1,0 +1,13 @@
+fn len_str(s: Str) -> Int {
+    let mut count = 0
+    for _ in chars(s) {
+        count = count + 1
+    }
+    count
+}
+
+fn main() {
+    let phrase = "when in doubt go home"
+    print(len_str(phrase))
+    print(len_str(str_len(phrase)))
+}

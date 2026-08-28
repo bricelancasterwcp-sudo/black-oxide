@@ -1,0 +1,11 @@
+fn main() {
+    let word = str_len("banana")
+    let count = 0
+    for c in chars(word) {
+        if c == "a" {
+            count = count + 1
+        }
+    }
+    print(count)
+    drop word
+}

@@ -1,0 +1,130 @@
+fn sort(v: &Vec<Int>) -> Vec<Int> {
+    let n = len(&v)
+    if n < 2 {
+        clone(&v)
+    } else {
+        let split = n / 2
+        let left = sort(&get_slice_0_to_split_inclusive_from_v)
+        let right = sort(&get_slice_split_to_end_exclusive_from_v)
+        merge(&left, &right)
+    }
+}
+
+fn get_slice_0_to_split_inclusive_from_v(v: &Vec<Int>, split: Int) -> Vec<Int> {
+    clone(&get_slice_0_to_split_inclusive_from_v)
+}
+
+fn get_slice_split_to_end_exclusive_from_v(v: &Vec<Int>, split: Int) -> Vec<Int> {
+    clone(&get_slice_split_to_end_exclusive_from_v)
+}
+
+fn merge(left: &Vec<Int>, right: &Vec<Int>) -> Vec<Int> {
+    let n = len(&left)
+    let m = len(&right)
+    let result = vec()
+    let mut li = 0
+    let mut ri = 0
+    while li < n && ri < m {
+        if get_i_th_element_of_left(&left, li) < get_i_th_element_of_right(&right, ri) {
+            push(&result, get_i_th_element_of_left(&left, li))
+            li = li + 1
+        } else {
+            push(&result, get_i_th_element_of_right(&right, ri))
+            ri = ri + 1
+        }
+    }
+    if li < n {
+        push(&result, get_slice_li_to_n_inclusive_from_left(&left, li, n))
+    } else {
+        push(&result, get_slice_ri_to_m_inclusive_from_right(&right, ri, m))
+    }
+    result
+}
+
+fn get_i_th_element_of_left(left: &Vec<Int>, i: Int) -> Int {
+    get(left, i)
+}
+
+fn get_i_th_element_of_right(right: &Vec<Int>, i: Int) -> Int {
+    get(right, i)
+}
+
+fn get_slice_li_to_n_inclusive_from_left(left: &Vec<Int>, li: Int, n: Int) -> Vec<Int> {
+    get_slice_0_to_n_inclusive_from_left(&left, li, n)
+}
+
+fn get_slice_0_to_n_inclusive_from_left(left: &Vec<Int>, n: Int) -> Vec<Int> {
+    get_slice_0_to_n_inclusive_from_left(&left, 0, n)
+}
+
+fn get_slice_ri_to_m_inclusive_from_right(right: &Vec<Int>, ri: Int, m: Int) -> Vec<Int> {
+    get_slice_0_to_m_inclusive_from_right(&right, ri, m)
+}
+
+fn get_slice_0_to_m_inclusive_from_right(right: &Vec<Int>, m: Int) -> Vec<Int> {
+    get_slice_0_to_m_inclusive_from_right(&right, 0, m)
+}
+
+fn main() {
+    let nums = vec(2, 9, 5)
+    print(sort(&nums))
+    drop nums
+}
+
+enum Option {
+    Some(T),
+    None,
+}
+
+fn get_i_th_element_of_opt(opt: &Option, i: Int) -> Option {
+    match opt {
+        Some(x) => {
+            if i == 0 {
+                Some(x)
+            } else {
+                None
+            }
+        },
+        None => {
+            None
+        },
+    }
+}
+
+fn main() {
+    let opt = Some(4)
+    print(get_i_th_element_of_opt(&opt, 0))
+    print(get_i_th_element_of_opt(&opt, 1))
+    let none = None
+    print(get_i_th_element_of_opt(&none, 0))
+    drop none
+}
+
+enum Result {
+    Ok(T),
+    Err(E),
+}
+
+fn get_i_th_element_of_res(res: &Result, i: Int) -> Result {
+    match res {
+        Ok(x) => {
+            if i == 0 {
+                Ok(x)
+            } else {
+                Err("error")
+            }
+        },
+        Err(e) => {
+            Err(e)
+        },
+    }
+}
+
+fn main() {
+    let opt = Ok(4)
+    print(get_i_th_element_of_res(&opt, 0))
+    print(get_i_th_element_of_res(&opt, 1))
+    let none = Err("error")
+    print(get_i_th_element_of_res(&none, 0))
+    drop none
+}

@@ -1,0 +1,4 @@
+fn main() {
+    let list = (0u32..15u32).collect::<Vec<u32>>();
+    println!("{}", list.len());
+}

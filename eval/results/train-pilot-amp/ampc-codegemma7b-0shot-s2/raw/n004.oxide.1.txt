@@ -1,0 +1,11 @@
+fn next(n: Int) -> Int {
+    if n < 2 {
+        1
+    } else {
+        next(n - 1) + next(n - 2)
+    }
+}
+
+fn main() {
+    print(next(9))
+}

@@ -1,0 +1,13 @@
+fn four_by_three() -> Int {
+    4 * 3
+}
+
+fn five_by_two() -> Int {
+    5 * 2
+}
+
+fn main() {
+    print(four_by_three())
+    print(five_by_two())
+    print(four_by_three() + five_by_two())
+}

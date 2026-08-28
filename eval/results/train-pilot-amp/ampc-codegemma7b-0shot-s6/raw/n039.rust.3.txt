@@ -1,0 +1,8 @@
+fn main() {
+    let list = vec![1, 2];
+
+    match list.get(5) {
+        Some(value) => println!("Value at position 5: {}", value),
+        None => println!("No value at position 5"),
+    }
+}

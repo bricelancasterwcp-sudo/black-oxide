@@ -1,0 +1,16 @@
+fn main() {
+    let mut total = 0;
+    let mut current = 7;
+    loop {
+        if current % 2 != 0 {
+            println!("{}", current * 2);
+        } else {
+            total += current;
+        }
+        if current == 10 {
+            break;
+        }
+        current += 1;
+    }
+    println!("{}", total);
+}

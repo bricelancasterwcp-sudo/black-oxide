@@ -1,0 +1,18 @@
+fn collect_even(nums: &Vec<Int>) -> Vec<Int> {
+    let mut result = vec()
+    for x in nums {
+        if x % 2 == 0 {
+            result = push(result, x)
+        }
+    }
+    result
+}
+
+fn main() {
+    let nums = vec(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+    let evens = collect_even(&nums)
+    for x in evens {
+        print_str(int_to_str(x))
+    }
+    drop evens
+}

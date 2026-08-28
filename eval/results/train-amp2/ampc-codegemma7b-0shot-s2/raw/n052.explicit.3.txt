@@ -1,0 +1,18 @@
+fn find_nth_n(s: &Str) -> Vec<Int> {
+    let mut positions = vec()
+    for i in 0.len(&s) {
+        if s.chars().nth(i) == Some(&str_chr_n) {
+            positions.push(i)
+        }
+    }
+    positions
+}
+
+fn main() {
+    let banana = "banana"
+    let n_positions = find_nth_n(&banana)
+    for position in n_positions {
+        print(position)
+        print("\n")
+    }
+}

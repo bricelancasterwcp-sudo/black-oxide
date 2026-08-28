@@ -1,0 +1,5 @@
+```rust
+fn main() {
+    println!("The word 'programming' has {} characters.", "programming".len());
+}
+```

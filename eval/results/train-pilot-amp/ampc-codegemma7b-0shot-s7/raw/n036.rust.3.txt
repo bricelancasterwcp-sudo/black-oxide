@@ -1,0 +1,5 @@
+fn main() {
+    let (a, b) = (4, 5);
+    let (c, d) = (3, 2);
+    println!("Total value: {}", (a * c) + (b * d));
+}

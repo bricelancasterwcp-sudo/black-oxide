@@ -1,0 +1,28 @@
+fn smallest(l: &Vec<Int>) -> Int {
+    let mut min = l.get(0).unwrap_or(0)
+    for x in l {
+        if x < min {
+            min = x
+        }
+    }
+    min
+}
+
+fn gap(l: &Vec<Int>) -> Int {
+    let max = l.get(0).unwrap_or(0)
+    let min = smallest(l)
+    for x in l {
+        if x > max {
+            max = x
+        }
+    }
+    max - min
+}
+
+fn main() {
+    let figures = vec(8, 3, 11, 6)
+    let min = smallest(&figures)
+    print(min)
+    let gap = gap(&figures)
+    print(gap)
+}

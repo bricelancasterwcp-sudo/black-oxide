@@ -1,0 +1,257 @@
+struct Line { items: Vec<Item> }
+
+struct Unit { price: Int }
+
+enum Item {
+    Unit(Unit),
+    Bundle(Bundle),
+}
+
+struct Bundle { count: Int, price_per: Int }
+
+fn main() {
+    print(total(Line { items: vec(Unit { price: 3 }, Unit { price: 3 }, Unit { price: 3 }, Unit { price: 3 }, Bundle { count: 5, price_per: 2 }) }))
+}
+
+fn total(line: Line) -> Int {
+    let mut total_price = 0
+    for item in line.items {
+        match item {
+            Unit(unit) => total_price == total_price + unit.price,
+            Bundle(bundle) => total_price == total_price + bundle.count * bundle.price_per,
+        }
+    }
+    total_price
+}
+
+fn print(x: Int) {
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x * 1
+    let x = x *

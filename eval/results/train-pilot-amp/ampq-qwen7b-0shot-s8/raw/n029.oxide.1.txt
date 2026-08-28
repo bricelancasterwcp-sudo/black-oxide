@@ -1,0 +1,6 @@
+struct Text { content: Str }
+
+fn main() {
+    let t = Text { content: concat(int_to_str(1), int_to_str(2), int_to_str(3)) }
+    print_str(t.content)
+}

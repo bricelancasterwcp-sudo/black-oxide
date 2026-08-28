@@ -1,0 +1,11 @@
+fn total(units: Int, price: Int) -> Int {
+    units * price
+}
+
+fn main() {
+    let line_1 = total(4, 3)
+    let line_2 = total(5, 2)
+    print(line_1)
+    print(line_2)
+    print(line_1 + line_2)
+}

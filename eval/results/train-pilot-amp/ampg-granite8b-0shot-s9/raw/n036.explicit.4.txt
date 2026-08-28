@@ -1,0 +1,5 @@
+fn main() {
+    let four_unit_items = 4 * 3 + 5 * 2
+    print(four_unit_items)
+    drop four_unit_items
+}

@@ -1,0 +1,3 @@
+fn main() {
+    print(len(concat(int_to_str(2), int_to_str(0), int_to_str(2), int_to_str(6))))
+}

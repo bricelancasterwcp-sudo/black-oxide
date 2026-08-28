@@ -1,0 +1,11 @@
+fn str_len(s: &Str) -> Int {
+    let mut chars = 0
+    for _ in chars(&s) {
+        chars = chars + 1
+    }
+    chars
+}
+
+fn main() {
+    print(str_len(&str_lit_string_literal_hello_world))
+}

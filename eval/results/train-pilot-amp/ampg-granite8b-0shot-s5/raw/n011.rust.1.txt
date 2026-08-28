@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut i = 0;
+    let mut total = 0;
+    let mut nums = Vec::new();
+    while nums.len() < 6 {
+        i += 4;
+        nums.push(i);
+        total += i;
+    }
+    println!("{}", total);
+}
+```

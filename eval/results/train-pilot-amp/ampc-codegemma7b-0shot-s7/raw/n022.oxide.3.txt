@@ -1,0 +1,15 @@
+fn join(a: Str, b: Str) -> Str {
+    a + b
+}
+
+fn main() {
+    print(join("blackoxide"))
+}
+
+fn join(a: Str, b: Str) -> Str {
+    a + b
+}
+
+fn main() {
+    print(join("blackoxide"))
+}

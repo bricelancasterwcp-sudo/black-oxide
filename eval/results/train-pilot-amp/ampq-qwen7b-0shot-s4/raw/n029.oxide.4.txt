@@ -1,0 +1,16 @@
+struct Text { content: Str }
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut result = a.clone()
+    result.push_str(b)
+    result
+}
+
+fn main() {
+    let t1 = Text { content: "one" }
+    let t2 = Text { content: "two" }
+    let t3 = Text { content: "three" }
+    let t4 = concat(t1.content.clone(), t2.content.clone())
+    let t5 = concat(t4, t3.content.clone())
+    print(t5)
+}

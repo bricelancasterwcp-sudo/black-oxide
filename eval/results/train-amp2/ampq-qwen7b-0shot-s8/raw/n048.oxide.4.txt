@@ -1,0 +1,9 @@
+fn main() {
+    let v = vec(4, 7, 4, 9, 4)
+    for i in range(0, len(v)) {
+        if v.get(i)? == 4 {
+            print(i)
+            print_str("\n")
+        }
+    }
+}

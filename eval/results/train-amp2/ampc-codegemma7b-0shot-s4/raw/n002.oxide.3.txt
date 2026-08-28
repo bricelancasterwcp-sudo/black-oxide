@@ -1,0 +1,299 @@
+fn main() {
+    let prod = range(1, 7).fold(1, mul)
+    print(prod)
+}
+
+fn mul(acc: Int, x: Int) -> Int {
+    acc * x
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut v = vec()
+    for i in a + 1.to_int() - 1.to_int() * (b > a) {
+        push(v, i)
+    }
+    v
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    for c in chars(s) {
+        print(c)
+    }
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    if i < len(v) {
+        Some(v.get(i))
+    } else {
+        None
+    }
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut digits = vec()
+    let mut num = n
+    while num > 0 {
+        digits.push(to_char(num % 10))
+        num = trunc(num / 10)
+    }
+    let mut s = str()
+    for d in digits {
+        s = concat(s, d)
+    }
+    s
+}
+
+fn to_char(n: Int) -> Str {
+    match n {
+        _ => "0",
+        _ => "1",
+        _ => "2",
+        _ => "3",
+        _ => "4",
+        _ => "5",
+        _ => "6",
+        _ => "7",
+        _ => "8",
+        _ => "9",
+    }
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut v = vec()
+    for i in 0.to_int() + 1.to_int() * (len(s) > 0) {
+        push(v, get(s, i).unwrap())
+    }
+    v
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    let mut v2 = v
+    v2.append(x)
+    v2
+}
+
+fn len(v: Vec<T>) -> Int {
+    let mut i = 0
+    for _ in v {
+        i = i + 1.to_int()
+    }
+    i
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut s = a
+    for c in chars(b) {
+        s = push(s, c)
+    }
+    s
+}
+
+fn trunc(x: Float) -> Int {
+    if x >= 0 {
+        x.floor()
+    } else {
+        x.ceil()
+    }
+}
+
+fn fold(v: Vec<T>, init: T, f: FnMut2<T, T, T>) -> T {
+    let mut acc = init
+    for x in v {
+        acc = f(acc, x)
+    }
+    acc
+}
+
+fn main() {
+    let prod = range(1, 7).fold(1, mul)
+    print(prod)
+}
+
+fn mul(acc: Int, x: Int) -> Int {
+    acc * x
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut v = vec()
+    for i in a + 1.to_int() - 1.to_int() * (b > a) {
+        push(v, i)
+    }
+    v
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    for c in chars(s) {
+        print(c)
+    }
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    if i < len(v) {
+        Some(v.get(i))
+    } else {
+        None
+    }
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut digits = vec()
+    let mut num = n
+    while num > 0 {
+        digits.push(to_char(num % 10))
+        num = trunc(num / 10)
+    }
+    let mut s = str()
+    for d in digits {
+        s = concat(s, d)
+    }
+    s
+}
+
+fn to_char(n: Int) -> Str {
+    match n {
+        _ => "0",
+        _ => "1",
+        _ => "2",
+        _ => "3",
+        _ => "4",
+        _ => "5",
+        _ => "6",
+        _ => "7",
+        _ => "8",
+        _ => "9",
+    }
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut v = vec()
+    for i in 0.to_int() + 1.to_int() * (len(s) > 0) {
+        push(v, get(s, i).unwrap())
+    }
+    v
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    let mut v2 = v
+    v2.append(x)
+    v2
+}
+
+fn len(v: Vec<T>) -> Int {
+    let mut i = 0
+    for _ in v {
+        i = i + 1.to_int()
+    }
+    i
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut s = a
+    for c in chars(b) {
+        s = push(s, c)
+    }
+    s
+}
+
+fn trunc(x: Float) -> Int {
+    if x >= 0 {
+        x.floor()
+    } else {
+        x.ceil()
+    }
+}
+
+fn fold(v: Vec<T>, init: T, f: FnMut2<T, T, T>) -> T {
+    let mut acc = init
+    for x in v {
+        acc = f(acc, x)
+    }
+    acc
+}
+
+fn main() {
+    let prod = range(1, 7).fold(1, mul)
+    print(prod)
+}
+
+fn mul(acc: Int, x: Int) -> Int {
+    acc * x
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut v = vec()
+    for i in a + 1.to_int() - 1.to_int() * (b > a) {
+        push(v, i)
+    }
+    v
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+}
+
+fn print_str(s: Str) {
+    for c in chars(s) {
+        print(c)
+    }
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    if i < len(v) {
+        Some(v.get(i))
+    } else {
+        None
+    }
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut digits = vec()
+    let mut num = n
+    while num > 0 {
+        digits.push(to_char(num % 10))
+        num = trunc(num / 10)
+    }
+    let mut s = str()
+    for d in digits {
+        s = concat(s, d)
+    }
+    s
+}
+
+fn to_char(n: Int) -> Str {
+    match n {
+        _ => "0",
+        _ => "1",
+        _ => "2",
+        _ => "3",
+        _ => "4",
+        _ => "5",
+        _ => "6",
+        _ => "7",
+        _ => "8",
+        _ => "9",
+    }
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut v = vec()
+    for i in 0.to_int() + 1.to_int() * (len(s) > 0) {
+        push(v, get(s, i).unwrap())
+    }
+    v
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    let mut v2 = v
+    v2.append(x)
+    v2
+}
+
+fn len(v

@@ -1,0 +1,43 @@
+fn readings(a: Int, b: Int, c: Int, d: Int, e: Int) -> Int {
+    let mut x = 0
+    if a > 5 {
+        x = x + 1
+    }
+    if b > 5 {
+        x = x + 1
+    }
+    if c > 5 {
+        x = x + 1
+    }
+    if d > 5 {
+        x = x + 1
+    }
+    if e > 5 {
+        x = x + 1
+    }
+    x
+}
+
+fn highest(a: Int, b: Int, c: Int, d: Int, e: Int) -> Int {
+    let mut h = a
+    if b > h {
+        h = b
+    }
+    if c > h {
+        h = c
+    }
+    if d > h {
+        h = d
+    }
+    if e > h {
+        h = e
+    }
+    h
+}
+
+fn main() {
+    let r = readings(6, 11, 3, 14, 9)
+    print(r)
+    let h = highest(6, 11, 3, 14, 9)
+    print(h)
+}

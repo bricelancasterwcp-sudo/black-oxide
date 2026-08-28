@@ -1,0 +1,16 @@
+fn largest(mutnums: Vec<Int>) -> Int {
+    let mut largest = nums.pop().unwrap()
+    while !nums.is_empty() {
+        let n = nums.pop().unwrap()
+        if n > largest {
+            largest = n
+        }
+    }
+    largest
+}
+
+fn main() {
+    let nums = vec(5, 3, 9, 1, 7)
+    print(largest(nums))
+    drop nums
+}

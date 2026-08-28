@@ -1,0 +1,62 @@
+fn reverse_drum(drum: &Str) -> Str {
+    let mut letters = clone(&drum)
+    let mut reversed = ""
+    while len(&letters) > 0 {
+        reversed = concat(reversed, get(&letters, 0).unwrap())
+        letters = drop_last(&letters)
+    }
+    drop letters
+    reversed
+}
+
+fn main() {
+    print(reverse_drum("word"))
+}
+
+fn drop_last(v: &Vec<Str>) -> Vec<Str> {
+    if len(&v) == 0 {
+        v
+    } else {
+        push(drop_last(&v), "")
+    }
+}
+
+fn clone(v: &Vec<Str>) -> Vec<Str> {
+    push(vec(), v)
+}
+
+fn len(v: &Vec<Str>) -> Int {
+    v.len()
+}
+
+fn get(v: &Vec<Str>, i: Int) -> Option<Str> {
+    v.get(i)
+}
+
+fn concat(a: &Str, b: &Str) -> Str {
+    a + b
+}
+
+fn print(s: &Str) {
+    print_str(s)
+}
+
+fn print_str(s: &Str) {
+    unsafe_print_str(s)
+}
+
+fn unsafe_print_str(s: &Str) {
+    print_str_raw(s)
+}
+
+fn print_str_raw(s: &Str) {
+    println(s)
+}
+
+fn println(s: &Str) {
+    print(s + "\n")
+}
+
+fn main() {
+    print(reverse_drum("word"))
+}

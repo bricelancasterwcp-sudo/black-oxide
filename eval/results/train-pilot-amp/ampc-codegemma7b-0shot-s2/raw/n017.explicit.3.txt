@@ -1,0 +1,14 @@
+fn print_at(v: &Vec<Int>, pos: Int) {
+    if pos >= v.len() {
+        print("missing")
+    } else {
+        print(get(&v, pos).unwrap())
+    }
+}
+
+fn main() {
+    let v = vec(10, 20, 30, 40)
+    print_at(&v, 2)
+    print_at(&v, 5)
+    drop v
+}

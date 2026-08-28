@@ -1,0 +1,4 @@
+fn main() {
+    let num_str = get(parse_int("417"), None)?.to_string()
+    print(to_float(concat(num_str, "1"))?.trunc(0))
+}

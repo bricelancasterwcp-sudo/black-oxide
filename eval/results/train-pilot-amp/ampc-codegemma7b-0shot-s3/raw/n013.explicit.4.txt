@@ -1,0 +1,11 @@
+fn main() {
+    let readings = vec(5, 3, 9, 1, 7)
+    let mut largest = readings.first()
+    for r in &readings {
+        if r > largest {
+            largest = r
+        }
+    }
+    print(largest)
+    drop readings
+}

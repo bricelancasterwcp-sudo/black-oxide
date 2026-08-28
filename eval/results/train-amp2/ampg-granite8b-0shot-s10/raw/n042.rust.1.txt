@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let numbers = vec![12, 5, 20, 8, 17];
+    let (largest, second_largest) = numbers.iter().cloned().fold(
+        (std::i32::MIN, std::i32::MIN),
+        |(mut largest, mut second_largest), n| {
+            if n > largest {
+                second_largest = largest;
+                largest = n;
+            } else if n > second_largest {
+                second_largest = n;
+            }
+            (largest, second_largest)
+        },
+    );
+    println!("{}", largest);
+    println!("{}", second_largest);
+}
+```

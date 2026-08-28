@@ -1,0 +1,431 @@
+fn main() {
+    let figures = vec(8, 3, 11, 6).clone()
+    let min = figures.first().unwrap()
+    let max = figures.last().unwrap()
+    print(min)
+    print_str(" ")
+    print(trunc(sub(max, min)))
+}
+
+fn sub(a: Int, b: Int) -> Int {
+    a - b
+}
+
+fn trunc(x: Float) -> Int {
+    x.trunc()
+}
+
+fn print(x: Int) {
+    print_str(x.to_str())
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn vec(items: Int, items: Int, items: Int, items: Int) -> Vec<Int> {
+    vec(items, items, items, items)
+}
+
+fn clone(x: Vec<Int>) -> Vec<Int> {
+    x.clone()
+}
+
+fn unwrap(x: Option<Int>) -> Int {
+    x.unwrap()
+}
+
+fn first(v: Vec<Int>) -> Option<Int> {
+    v.get(0)
+}
+
+fn last(v: Vec<Int>) -> Option<Int> {
+    v.get(v.len() - 1)
+}
+
+fn to_str(x: Int) -> Str {
+    x.to_str()
+}
+
+fn sub(a: Int, b: Int) -> Int {
+    a - b
+}
+
+fn trunc(x: Float) -> Int {
+    x.trunc()
+}
+
+fn print(x: Int) {
+    print_str(x.to_str())
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn vec(items: Int, items: Int, items: Int, items: Int) -> Vec<Int> {
+    vec(items, items, items, items)
+}
+
+fn clone(x: Vec<Int>) -> Vec<Int> {
+    x.clone()
+}
+
+fn unwrap(x: Option<Int>) -> Int {
+    x.unwrap()
+}
+
+fn first(v: Vec<Int>) -> Option<Int> {
+    v.get(0)
+}
+
+fn last(v: Vec<Int>) -> Option<Int> {
+    v.get(v.len() - 1)
+}
+
+fn to_str(x: Int) -> Str {
+    x.to_str()
+}
+
+fn sub(a: Int, b: Int) -> Int {
+    a - b
+}
+
+fn trunc(x: Float) -> Int {
+    x.trunc()
+}
+
+fn print(x: Int) {
+    print_str(x.to_str())
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn vec(items: Int, items: Int, items: Int, items: Int) -> Vec<Int> {
+    vec(items, items, items, items)
+}
+
+fn clone(x: Vec<Int>) -> Vec<Int> {
+    x.clone()
+}
+
+fn unwrap(x: Option<Int>) -> Int {
+    x.unwrap()
+}
+
+fn first(v: Vec<Int>) -> Option<Int> {
+    v.get(0)
+}
+
+fn last(v: Vec<Int>) -> Option<Int> {
+    v.get(v.len() - 1)
+}
+
+fn to_str(x: Int) -> Str {
+    x.to_str()
+}
+
+fn sub(a: Int, b: Int) -> Int {
+    a - b
+}
+
+fn trunc(x: Float) -> Int {
+    x.trunc()
+}
+
+fn print(x: Int) {
+    print_str(x.to_str())
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn vec(items: Int, items: Int, items: Int, items: Int) -> Vec<Int> {
+    vec(items, items, items, items)
+}
+
+fn clone(x: Vec<Int>) -> Vec<Int> {
+    x.clone()
+}
+
+fn unwrap(x: Option<Int>) -> Int {
+    x.unwrap()
+}
+
+fn first(v: Vec<Int>) -> Option<Int> {
+    v.get(0)
+}
+
+fn last(v: Vec<Int>) -> Option<Int> {
+    v.get(v.len() - 1)
+}
+
+fn to_str(x: Int) -> Str {
+    x.to_str()
+}
+
+fn sub(a: Int, b: Int) -> Int {
+    a - b
+}
+
+fn trunc(x: Float) -> Int {
+    x.trunc()
+}
+
+fn print(x: Int) {
+    print_str(x.to_str())
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn vec(items: Int, items: Int, items: Int, items: Int) -> Vec<Int> {
+    vec(items, items, items, items)
+}
+
+fn clone(x: Vec<Int>) -> Vec<Int> {
+    x.clone()
+}
+
+fn unwrap(x: Option<Int>) -> Int {
+    x.unwrap()
+}
+
+fn first(v: Vec<Int>) -> Option<Int> {
+    v.get(0)
+}
+
+fn last(v: Vec<Int>) -> Option<Int> {
+    v.get(v.len() - 1)
+}
+
+fn to_str(x: Int) -> Str {
+    x.to_str()
+}
+
+fn sub(a: Int, b: Int) -> Int {
+    a - b
+}
+
+fn trunc(x: Float) -> Int {
+    x.trunc()
+}
+
+fn print(x: Int) {
+    print_str(x.to_str())
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn vec(items: Int, items: Int, items: Int, items: Int) -> Vec<Int> {
+    vec(items, items, items, items)
+}
+
+fn clone(x: Vec<Int>) -> Vec<Int> {
+    x.clone()
+}
+
+fn unwrap(x: Option<Int>) -> Int {
+    x.unwrap()
+}
+
+fn first(v: Vec<Int>) -> Option<Int> {
+    v.get(0)
+}
+
+fn last(v: Vec<Int>) -> Option<Int> {
+    v.get(v.len() - 1)
+}
+
+fn to_str(x: Int) -> Str {
+    x.to_str()
+}
+
+fn sub(a: Int, b: Int) -> Int {
+    a - b
+}
+
+fn trunc(x: Float) -> Int {
+    x.trunc()
+}
+
+fn print(x: Int) {
+    print_str(x.to_str())
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn vec(items: Int, items: Int, items: Int, items: Int) -> Vec<Int> {
+    vec(items, items, items, items)
+}
+
+fn clone(x: Vec<Int>) -> Vec<Int> {
+    x.clone()
+}
+
+fn unwrap(x: Option<Int>) -> Int {
+    x.unwrap()
+}
+
+fn first(v: Vec<Int>) -> Option<Int> {
+    v.get(0)
+}
+
+fn last(v: Vec<Int>) -> Option<Int> {
+    v.get(v.len() - 1)
+}
+
+fn to_str(x: Int) -> Str {
+    x.to_str()
+}
+
+fn sub(a: Int, b: Int) -> Int {
+    a - b
+}
+
+fn trunc(x: Float) -> Int {
+    x.trunc()
+}
+
+fn print(x: Int) {
+    print_str(x.to_str())
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn vec(items: Int, items: Int, items: Int, items: Int) -> Vec<Int> {
+    vec(items, items, items, items)
+}
+
+fn clone(x: Vec<Int>) -> Vec<Int> {
+    x.clone()
+}
+
+fn unwrap(x: Option<Int>) -> Int {
+    x.unwrap()
+}
+
+fn first(v: Vec<Int>) -> Option<Int> {
+    v.get(0)
+}
+
+fn last(v: Vec<Int>) -> Option<Int> {
+    v.get(v.len() - 1)
+}
+
+fn to_str(x: Int) -> Str {
+    x.to_str()
+}
+
+fn sub(a: Int, b: Int) -> Int {
+    a - b
+}
+
+fn trunc(x: Float) -> Int {
+    x.trunc()
+}
+
+fn print(x: Int) {
+    print_str(x.to_str())
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn vec(items: Int, items: Int, items: Int, items: Int) -> Vec<Int> {
+    vec(items, items, items, items)
+}
+
+fn clone(x: Vec<Int>) -> Vec<Int> {
+    x.clone()
+}
+
+fn unwrap(x: Option<Int>) -> Int {
+    x.unwrap()
+}
+
+fn first(v: Vec<Int>) -> Option<Int> {
+    v.get(0)
+}
+
+fn last(v: Vec<Int>) -> Option<Int> {
+    v.get(v.len() - 1)
+}
+
+fn to_str(x: Int) -> Str {
+    x.to_str()
+}
+
+fn sub(a: Int, b: Int) -> Int {
+    a - b
+}
+
+fn trunc(x: Float) -> Int {
+    x.trunc()
+}
+
+fn print(x: Int) {
+    print_str(x.to_str())
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn vec(items: Int, items: Int, items: Int, items: Int) -> Vec<Int> {
+    vec(items, items, items, items)
+}
+
+fn clone(x: Vec<Int>) -> Vec<Int> {
+    x.clone()
+}
+
+fn unwrap(x: Option<Int>) -> Int {
+    x.unwrap()
+}
+
+fn first(v: Vec<Int>) -> Option<Int> {
+    v.get(0)
+}
+
+fn last(v: Vec<Int>) -> Option<Int> {
+    v.get(v.len() - 1)
+}
+
+fn to_str(x: Int) -> Str {
+    x.to_str()
+}
+
+fn sub(a: Int, b: Int) -> Int {
+    a - b
+}
+
+fn trunc(x: Float) -> Int {
+    x.trunc()
+}
+
+fn print(x: Int) {
+    print_str(x.to_str())
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn vec(items: Int, items: Int, items: Int, items: Int) -> Vec<Int> {
+    vec(items, items, items, items)
+}
+
+fn clone(x: Vec<Int>) -> Vec<Int> {
+    x.clone()

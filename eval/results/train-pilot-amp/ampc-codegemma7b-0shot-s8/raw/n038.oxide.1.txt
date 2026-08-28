@@ -1,0 +1,104 @@
+fn main() {
+    let mut device = Device { sensor: Sensor { reading: 0 } }
+    device.sensor.reading = 7
+    print(device.sensor.reading)
+}
+
+struct Device { sensor: Sensor }
+
+struct Sensor { reading: Int }
+
+fn print(x: Int) {
+    let s = int_to_str(x)
+    print_str(s)
+}
+
+fn int_to_str(n: Int) -> Str {
+    "TODO"
+}
+
+fn print_str(s: Str) {
+    "TODO"
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    "TODO"
+}
+
+struct Int {
+    value: IntValue,
+}
+
+struct IntValue {
+    value: Int,
+}
+
+struct Str {
+    value: StrValue,
+}
+
+struct StrValue {
+    value: String,
+}
+
+enum SensorReading {
+    Int(Int),
+}
+
+struct Sensor {
+    reading: SensorReading,
+}
+
+struct Device {
+    sensor: Sensor,
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    "TODO"
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    "TODO"
+}
+
+fn clone(x: Int) -> Int {
+    "TODO"
+}
+
+fn str_len(s: Str) -> Int {
+    "TODO"
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    "TODO"
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    "TODO"
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    "TODO"
+}
+
+fn to_float(n: Int) -> Float {
+    "TODO"
+}
+
+fn trunc(x: Float) -> Int {
+    "TODO"
+}
+
+enum Float {
+    Int(Int),
+}
+
+enum FloatValue {
+    Int(Int),
+}
+
+fn main() {
+    let mut device = Device { sensor: Sensor { reading: 0 } }
+    device.sensor.reading = 7
+    print(device.sensor.reading)
+}

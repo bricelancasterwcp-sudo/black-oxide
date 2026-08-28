@@ -1,0 +1,15 @@
+struct Rect { width: Int, height: Int }
+
+fn area(r: Rect) -> Int {
+    r.width * r.height
+}
+
+fn perimeter(r: Rect) -> Int {
+    2 * r.width + 2 * r.height
+}
+
+fn main() {
+    let r = Rect { width: 9, height: 3 }
+    print(area(r))
+    print(perimeter(r))
+}

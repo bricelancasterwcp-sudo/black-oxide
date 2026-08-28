@@ -1,0 +1,16 @@
+fn print_sorted(mutmeasures: Vec<Int>) {
+    measures.sort_unstable_by_key(identity)
+    for m in measures {
+        print(m)
+        print_str("\n")
+    }
+}
+
+fn identity(x: Int) -> Int {
+    x
+}
+
+fn main() {
+    let mut measures = vec(9, 2, 7, 4)
+    print_sorted(measures)
+}

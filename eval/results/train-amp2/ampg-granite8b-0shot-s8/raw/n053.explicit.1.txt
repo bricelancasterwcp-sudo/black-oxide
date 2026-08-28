@@ -1,0 +1,11 @@
+fn drum() {
+    let d = "umraD"
+    print(d)
+    for i in range(0, 7) {
+        print(&d)
+    }
+}
+
+fn main() {
+    drum()
+}

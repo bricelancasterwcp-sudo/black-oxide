@@ -1,0 +1,7 @@
+fn main() {
+    let word = "cat"
+    for c in word.chars() {
+        print(c)
+        print_str("\n")
+    }
+}

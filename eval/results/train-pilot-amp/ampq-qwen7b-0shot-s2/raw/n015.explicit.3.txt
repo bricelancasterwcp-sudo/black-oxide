@@ -1,0 +1,6 @@
+fn main() {
+    let numbers = vec(5, 3, 9, 1, 7)
+    let count = numbers.iter().filter_map(move || ifx > 4).count()
+    print(count)
+    drop numbers
+}

@@ -1,0 +1,29 @@
+fn largest(values: Vec<Int>) -> Int {
+    let mut largest = 0
+    for value in values {
+        if value > largest {
+            largest = value
+        }
+    }
+    largest
+}
+
+fn second_largest(values: Vec<Int>) -> Int {
+    let mut largest = 0
+    let mut second_largest = 0
+    for value in values {
+        if value > largest {
+            second_largest = largest
+            largest = value
+        } else if value > second_largest {
+            second_largest = value
+        }
+    }
+    second_largest
+}
+
+fn main() {
+    let values = vec(12, 5, 20, 8, 17)
+    print(largest(values))
+    print(second_largest(values))
+}

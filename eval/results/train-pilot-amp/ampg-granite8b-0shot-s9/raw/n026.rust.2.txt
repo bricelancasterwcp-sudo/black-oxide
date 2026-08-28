@@ -1,0 +1,5 @@
+fn main() {
+    let year = 2026;
+    let year_text = year.to_string();
+    println!("Number of characters in the year text: {}", year_text.len());
+}

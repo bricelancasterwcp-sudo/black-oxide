@@ -1,0 +1,27 @@
+fn main() {
+    let sum = 4 + 8 + 15 + 16 + 23 + 42
+    let count = 6
+    print(trunc(float(sum) / float(count)))
+}
+
+fn float(n: Int) -> Float {
+    n * 1.0
+}
+
+fn trunc(x: Float) -> Int {
+    if x >= 0.0 {
+        int(x)
+    } else {
+        int(x) - 1
+    }
+}
+
+fn int(n: Float) -> Int {
+    n
+}
+
+fn main() {
+    let sum = 4 + 8 + 15 + 16 + 23 + 42
+    let count = 6
+    print(trunc(float(sum) / float(count)))
+}

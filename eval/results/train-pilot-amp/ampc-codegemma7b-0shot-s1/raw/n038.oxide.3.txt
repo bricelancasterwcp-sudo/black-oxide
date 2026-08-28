@@ -1,0 +1,176 @@
+struct Sensor {
+    reading: Int,
+}
+
+fn device_start_reading(reading: Int) -> Sensor {
+    Sensor(reading)
+}
+
+fn struct_literal(s: Sensor) -> Sensor {
+    s
+}
+
+fn print_reading(self: Sensor) {
+    print(self.reading)
+}
+
+struct Reading { label: Str, values: Vec<Int> }
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    let x = v.get(i)
+    match x {
+        Some(y) => Some(y.clone()),
+        None => None,
+    }
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut nv = v
+    nv.push(x)
+    nv
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn vec() -> Vec<T> {
+    vec()
+}
+
+fn int_to_str(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    range(a, b)
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn to_float(n: Int) -> Float {
+    to_float(n)
+}
+
+fn trunc(x: Float) -> Int {
+    trunc(x)
+}
+
+fn clone(x: T) -> T {
+    x.clone()
+}
+
+fn str_len(s: Str) -> Int {
+    str_len(s)
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    concat(a, b)
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    parse_int(s)
+}
+
+fn main() {
+    let sensor = device_start_reading(7)
+    struct_literal(sensor).print_reading()
+}
+
+fn first_big(v: Vec<Int>) -> Int {
+    let found = -1
+    for x in v {
+        if x > 10 {
+            found = x
+            break
+        }
+    }
+    found
+}
+
+fn second(v: Vec<Int>) -> Option<Int> {
+    let x = get(v, 1)?
+    Some(x + 1)
+}
+
+fn clone(x: T) -> T {
+    x.clone()
+}
+
+fn struct_literal(s: Sensor) -> Sensor {
+    s
+}
+
+fn print_reading(self: Sensor) {
+    print(self.reading)
+}
+
+fn print(x: Int) {
+    print(x)
+}
+
+fn print_str(s: Str) {
+    print(s)
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    let x = v.get(i)
+    match x {
+        Some(y) => Some(y.clone()),
+        None => None,
+    }
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut nv = v
+    nv.push(x)
+    nv
+}
+
+fn int_to_str(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    range(a, b)
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn to_float(n: Int) -> Float {
+    to_float(n)
+}
+
+fn trunc(x: Float) -> Int {
+    trunc(x)
+}
+
+fn str_len(s: Str) -> Int {
+    str_len(s)
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    concat(a, b)
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    parse_int(s)
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(vec(), 3), 42) }
+    print(first_big(r.values))            // field access copies: r stays usable
+    let r2 = Reading { label: "lab2", ..r }
+    match second(r2.values) {
+        Some(n) => print(n),
+        None => print_str("too short"),
+    }
+}

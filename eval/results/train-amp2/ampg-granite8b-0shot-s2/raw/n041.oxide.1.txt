@@ -1,0 +1,265 @@
+fn sort(v: Vec<Int>) -> Vec<Int> {
+    match len(v) {
+        Place(l) => {
+            let mut swapped = true
+            while swapped {
+                swapped = false
+                for i in range(0, l - 1) {
+                    if get(v, i)? > get(v, i + 1)? {
+                        let a = clone(get(v, i)?)
+                        let b = clone(get(v, i + 1)?)
+                        set(v, i, b)
+                        set(v, i + 1, a)
+                        swapped = true
+                    }
+                }
+            }
+            v
+        },
+        Place(l) => {
+            let mut swapped = true
+            while swapped {
+                swapped = false
+                for i in range(0, l - 1) {
+                    if get(v, i)? > get(v, i + 1)? {
+                        let a = clone(get(v, i)?)
+                        let b = clone(get(v, i + 1)?)
+                        set(v, i, b)
+                        set(v, i + 1, a)
+                        swapped = true
+                    }
+                }
+            }
+            v
+        },
+        Place(l) => {
+            let mut swapped = true
+            while swapped {
+                swapped = false
+                for i in range(0, l - 1) {
+                    if get(v, i)? > get(v, i + 1)? {
+                        let a = clone(get(v, i)?)
+                        let b = clone(get(v, i + 1)?)
+                        set(v, i, b)
+                        set(v, i + 1, a)
+                        swapped = true
+                    }
+                }
+            }
+            v
+        },
+        Place(l) => {
+            let mut swapped = true
+            while swapped {
+                swapped = false
+                for i in range(0, l - 1) {
+                    if get(v, i)? > get(v, i + 1)? {
+                        let a = clone(get(v, i)?)
+                        let b = clone(get(v, i + 1)?)
+                        set(v, i, b)
+                        set(v, i + 1, a)
+                        swapped = true
+                    }
+                }
+            }
+            v
+        },
+        Place(l) => {
+            let mut swapped = true
+            while swapped {
+                swapped = false
+                for i in range(0, l - 1) {
+                    if get(v, i)? > get(v, i + 1)? {
+                        let a = clone(get(v, i)?)
+                        let b = clone(get(v, i + 1)?)
+                        set(v, i, b)
+                        set(v, i + 1, a)
+                        swapped = true
+                    }
+                }
+            }
+            v
+        },
+        Place(l) => {
+            let mut swapped = true
+            while swapped {
+                swapped = false
+                for i in range(0, l - 1) {
+                    if get(v, i)? > get(v, i + 1)? {
+                        let a = clone(get(v, i)?)
+                        let b = clone(get(v, i + 1)?)
+                        set(v, i, b)
+                        set(v, i + 1, a)
+                        swapped = true
+                    }
+                }
+            }
+            v
+        },
+        Place(l) => {
+            let mut swapped = true
+            while swapped {
+                swapped = false
+                for i in range(0, l - 1) {
+                    if get(v, i)? > get(v, i + 1)? {
+                        let a = clone(get(v, i)?)
+                        let b = clone(get(v, i + 1)?)
+                        set(v, i, b)
+                        set(v, i + 1, a)
+                        swapped = true
+                    }
+                }
+            }
+            v
+        },
+        Place(l) => {
+            let mut swapped = true
+            while swapped {
+                swapped = false
+                for i in range(0, l - 1) {
+                    if get(v, i)? > get(v, i + 1)? {
+                        let a = clone(get(v, i)?)
+                        let b = clone(get(v, i + 1)?)
+                        set(v, i, b)
+                        set(v, i + 1, a)
+                        swapped = true
+                    }
+                }
+            }
+            v
+        },
+        Place(l) => {
+            let mut swapped = true
+            while swapped {
+                swapped = false
+                for i in range(0, l - 1) {
+                    if get(v, i)? > get(v, i + 1)? {
+                        let a = clone(get(v, i)?)
+                        let b = clone(get(v, i + 1)?)
+                        set(v, i, b)
+                        set(v, i + 1, a)
+                        swapped = true
+                    }
+                }
+            }
+            v
+        },
+        Place(l) => {
+            let mut swapped = true
+            while swapped {
+                swapped = false
+                for i in range(0, l - 1) {
+                    if get(v, i)? > get(v, i + 1)? {
+                        let a = clone(get(v, i)?)
+                        let b = clone(get(v, i + 1)?)
+                        set(v, i, b)
+                        set(v, i + 1, a)
+                        swapped = true
+                    }
+                }
+            }
+            v
+        },
+        Place(l) => {
+            let mut swapped = true
+            while swapped {
+                swapped = false
+                for i in range(0, l - 1) {
+                    if get(v, i)? > get(v, i + 1)? {
+                        let a = clone(get(v, i)?)
+                        let b = clone(get(v, i + 1)?)
+                        set(v, i, b)
+                        set(v, i + 1, a)
+                        swapped = true
+                    }
+                }
+            }
+            v
+        },
+        Place(l) => {
+            let mut swapped = true
+            while swapped {
+                swapped = false
+                for i in range(0, l - 1) {
+                    if get(v, i)? > get(v, i + 1)? {
+                        let a = clone(get(v, i)?)
+                        let b = clone(get(v, i + 1)?)
+                        set(v, i, b)
+                        set(v, i + 1, a)
+                        swapped = true
+                    }
+                }
+            }
+            v
+        },
+        Place(l) => {
+            let mut swapped = true
+            while swapped {
+                swapped = false
+                for i in range(0, l - 1) {
+                    if get(v, i)? > get(v, i + 1)? {
+                        let a = clone(get(v, i)?)
+                        let b = clone(get(v, i + 1)?)
+                        set(v, i, b)
+                        set(v, i + 1, a)
+                        swapped = true
+                    }
+                }
+            }
+            v
+        },
+        Place(l) => {
+            let mut swapped = true
+            while swapped {
+                swapped = false
+                for i in range(0, l - 1) {
+                    if get(v, i)? > get(v, i + 1)? {
+                        let a = clone(get(v, i)?)
+                        let b = clone(get(v, i + 1)?)
+                        set(v, i, b)
+                        set(v, i + 1, a)
+                        swapped = true
+                    }
+                }
+            }
+            v
+        },
+        Place(l) => {
+            let mut swapped = true
+            while swapped {
+                swapped = false
+                for i in range(0, l - 1) {
+                    if get(v, i)? > get(v, i + 1)? {
+                        let a = clone(get(v, i)?)
+                        let b = clone(get(v, i + 1)?)
+                        set(v, i, b)
+                        set(v, i + 1, a)
+                        swapped = true
+                    }
+                }
+            }
+            v
+        },
+        Place(l) => {
+            let mut swapped = true
+            while swapped {
+                swapped = false
+                for i in range(0, l - 1) {
+                    if get(v, i)? > get(v, i + 1)? {
+                        let a = clone(get(v, i)?)
+                        let b = clone(get(v, i + 1)?)
+                        set(v, i, b)
+                        set(v, i + 1, a)
+                        swapped = true
+                    }
+                }
+            }
+            v
+        },
+        Place(l) => {
+            let mut swapped = true
+            while swapped {
+                swapped = false
+                for i in range(0, l - 1) {
+                    if get(v, i)? > get(v, i + 1)? {
+                        let

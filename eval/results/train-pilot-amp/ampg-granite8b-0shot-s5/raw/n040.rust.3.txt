@@ -1,0 +1,18 @@
+const PI: f64 = 3.;
+
+fn main() {
+    let s = Shape::Square { side: 4. };
+    println!("Area of square with side 4 is {}", area(&s));
+}
+
+enum Shape {
+    Square { side: f64 },
+    Circle { radius: f64 },
+}
+
+fn area(shape: &Shape) -> f64 {
+    match shape {
+        Shape::Square { side } => side * side * PI,
+        Shape::Circle { radius } => radius * radius * PI,
+    }
+}

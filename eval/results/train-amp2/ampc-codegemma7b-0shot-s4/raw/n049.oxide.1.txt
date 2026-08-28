@@ -1,0 +1,15 @@
+fn main() {
+    let x = vec(8, 3, 11, 6)
+    let mut min = 1000000000
+    let mut max = -1000000000
+    for i in x {
+        if i < min {
+            min = i
+        }
+        if i > max {
+            max = i
+        }
+    }
+    print(min)
+    print(max - min)
+}

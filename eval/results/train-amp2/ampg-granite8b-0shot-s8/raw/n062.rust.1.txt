@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    println!("Go for green.");
+    println!("Stop for red.");
+    println!("Wait for yellow.");
+}
+```

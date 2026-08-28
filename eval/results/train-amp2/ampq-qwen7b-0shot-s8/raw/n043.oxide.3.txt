@@ -1,0 +1,22 @@
+struct Queue { items: Vec<Int> }
+
+fn enqueue(q: Queue, x: Int) -> Queue {
+    Queue(items == push(q.items, x))
+}
+
+fn dequeue(q: Queue) -> Option<Int> {
+    match get(q.items, 0)? {
+        Some(x) => Some(x),
+        None => None,
+    }
+}
+
+fn main() {
+    let mut q = Queue { items: range(1, 6) }
+    let first = dequeue(q)?
+    let last = dequeue(q)?
+    q = enqueue(enqueue(q, last), first)
+    for x in q.items {
+        print(x)
+    }
+}

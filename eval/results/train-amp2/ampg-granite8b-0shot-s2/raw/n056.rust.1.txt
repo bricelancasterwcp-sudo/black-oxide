@@ -1,0 +1,12 @@
+```rust
+fn main(){
+    let mut total = 0;
+    let mut count = 0;
+    for num in [7, 0, 9, 3].iter(){
+        total += num;
+        count += 1;
+    }
+    println!("Total: {}", total);
+    println!("Count: {}", count);
+}
+```

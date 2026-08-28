@@ -1,0 +1,312 @@
+fn main() {
+    let mut scores = vec(2, 9, 5)
+    scores.sort_by_key(std_cmp_reverse)
+    for x in scores {
+        print(x)
+        println()
+    }
+}
+
+fn std_cmp_reverse(a: Int, b: Int) -> Ordering {
+    b.cmp(a)
+}
+
+fn println(x: Any) -> Unit {
+    print(x)
+    print("\n")
+}
+
+enum Ordering {
+    Less,
+    Equal,
+    Greater,
+}
+
+enum Any {
+    Int(Int),
+    Str(Str),
+    Unit,
+}
+
+fn print(x: Any) -> Unit {
+    match x {
+        Any(i) => {
+            if letAny(i, Int(n)) {
+                print_int(n)
+            } else {
+                unreachable()
+            }
+        },
+        Any(s) => {
+            if letAny(s, Str(st)) {
+                print_str(st)
+            } else {
+                unreachable()
+            }
+        },
+        Any(u) => {
+            if letAny(u, Unit) {
+                print_unit()
+            } else {
+                unreachable()
+            }
+        },
+    }
+}
+
+fn print_int(n: Int) -> Unit {
+    let mut digits = vec()
+    let mut x = n
+    while x > 0 {
+        digits.insert(0, x % 10)
+        x = trunc(x / 10)
+    }
+    if digits.len() == 0 {
+        print_str("0")
+    } else {
+        for d in digits {
+            print_digit(d)
+        }
+    }
+}
+
+fn print_digit(n: Int) -> Unit {
+    match n {
+        Int(n) => {
+            if n < 10 && n >= 0 {
+                print_str(match n {
+                        Int(n) => if n == 0 { Str("0") } else { Str(format("%c", n + 48)) },
+                        Err(_) => unreachable(),
+                    })
+            } else {
+                unreachable()
+            }
+        },
+    }
+}
+
+fn print_str(s: Str) -> Unit {
+    for c in chars(s) {
+        print_char(c)
+    }
+}
+
+fn print_char(c: Str) -> Unit {
+    match c {
+        Str(s) => {
+            if s.len() == 1 {
+                print_unit()
+                print_int(int_to_str(parse_int(s)?)?)
+            } else {
+                unreachable()
+            }
+        },
+    }
+}
+
+fn print_unit() -> Unit {
+    print_str("")
+}
+
+fn letAny(x: Any, y: Any) -> Bool {
+    match x {
+        Any(i) => match y {
+            Any(i) => {
+                if letAny(i, Int(_)) {
+                    return true
+                } else {
+                    return false
+                }
+            },
+            _ => false,
+        },
+        Any(s) => match y {
+            Any(s) => {
+                if letAny(s, Str(_)) {
+                    return true
+                } else {
+                    return false
+                }
+            },
+            _ => false,
+        },
+        Any(u) => match y {
+            Any(u) => {
+                if letAny(u, Unit) {
+                    return true
+                } else {
+                    return false
+                }
+            },
+            _ => false,
+        },
+    }
+}
+
+fn unreachable() -> Nothing {
+    panic("unreachable code")
+}
+
+enum Nothing {
+    Nothing,
+}
+
+fn format(format_str: Str, args: Any) -> Str {
+    let mut result = Str("")
+    let mut pos = 0
+    let mut i = 0
+    while pos < format_str.len() {
+        if format_str.chars().nth(pos) == Some(b % 37) {
+            result = concat(result, Str(format_str.chars().nth(pos + 1).unwrap().to_string()))
+            pos = pos + 2
+        } else {
+            result = concat(result, Str(format_str.chars().nth(pos).unwrap().to_string()))
+            pos = pos + 1
+        }
+    }
+    result
+}
+
+fn to_string(n: Int) -> Str {
+    let mut digits = vec()
+    let mut x = n
+    while x > 0 {
+        digits.insert(0, x % 10)
+        x = trunc(x / 10)
+    }
+    if digits.len() == 0 {
+        return Str("0")
+    } else {
+        let mut result = Str("")
+        for d in digits {
+            result = concat(result, Str(format("%c", d + 48)))
+        }
+        return result
+    }
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = vec()
+    for c in s.chars() {
+        result.push(Str(c.to_string()))
+    }
+    result
+}
+
+fn int_to_str(n: Int) -> Option<Str> {
+    if n < 0 {
+        return None
+    } else {
+        return Some(to_string(n))
+    }
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    if s.chars().nth(0).unwrap().to_digit(10).unwrap() > 9 {
+        return None
+    } else {
+        let mut result = 0
+        for c in s.chars() {
+            result = result * 10 + c.to_digit(10).unwrap()
+        }
+        return Some(Int(result))
+    }
+}
+
+fn trunc(x: Int) -> Int {
+    if x < 0 {
+        return Int(0)
+    } else {
+        return x
+    }
+}
+
+enum Ordering {
+    Less,
+    Equal,
+    Greater,
+}
+
+fn std_cmp_reverse(a: Int, b: Int) -> Ordering {
+    if a > b {
+        Ordering(Greater)
+    } else if a < b {
+        Ordering(Less)
+    } else {
+        Ordering(Equal)
+    }
+}
+
+fn vec(args: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in 0.upto(args) {
+        result.push(i)
+    }
+    result
+}
+
+fn upto(self: Int, b: Int) -> Int {
+    if self < b {
+        self + Int(1)
+    } else {
+        self
+    }
+}
+
+enum Vec {
+    Vec(Vec<Int>),
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut result = v.clone()
+    result.push(x)
+    result
+}
+
+fn len(v: Vec<Int>) -> Int {
+    v.len()
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    if i >= 0 && i < v.len() {
+        return Some(v.get(i).unwrap())
+    } else {
+        return None
+    }
+}
+
+fn clone(x: Int) -> Int {
+    x
+}
+
+fn str_len(s: Str) -> Int {
+    s.len()
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    a + b
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = vec()
+    for c in s.chars() {
+        result.push(Str(c.to_string()))
+    }
+    result
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut digits = vec()
+    let mut x = n
+    while x > 0 {
+        digits.insert(0, x % 10)
+        x = trunc(x / 10)
+    }
+    if digits.len() == 0 {
+        return Str("0")
+    } else {
+        let mut result = Str("")
+        for d in digits {
+            result = concat(result, Str(format("%c", d + 48)))
+        }
+        return result

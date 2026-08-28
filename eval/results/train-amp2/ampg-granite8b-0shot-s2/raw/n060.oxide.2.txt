@@ -1,0 +1,16 @@
+fn a1b22(s: Str) -> Int {
+    let mut count = 0
+    let mut digits = 0
+    for ch in s.chars() {
+        if ch >= 48 && ch <= 57 {
+            count = count + ch - 48
+            digits = digits + 1
+        }
+    }
+    count + digits
+}
+
+fn main() {
+    let s = "1234abc56"
+    print(a1b22(s))
+}

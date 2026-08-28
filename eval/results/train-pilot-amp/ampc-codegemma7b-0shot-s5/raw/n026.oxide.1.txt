@@ -1,0 +1,25 @@
+fn int_to_str(n: Int) -> Str {
+    if n < 10 {
+        return char_to_str(n + 48)
+    }
+    let s = int_to_str(n / 10)
+    concat(s, char_to_str(n % 10 + 48))
+}
+
+fn char_to_str(c: Int) -> Str {
+    return String { chars: vec_push(vec(), c) }
+}
+
+fn str_len(s: Str) -> Int {
+    let mut c = 0
+    for _ in chars(s) {
+        c = c + 1
+    }
+    return c
+}
+
+fn main() {
+    let num = 2026
+    let str_num = int_to_str(num)
+    print(str_len(str_num))
+}

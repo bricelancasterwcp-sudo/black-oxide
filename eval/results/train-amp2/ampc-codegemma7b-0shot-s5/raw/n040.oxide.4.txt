@@ -1,0 +1,568 @@
+fn square_area(side: Float) -> Float {
+    side * side
+}
+
+fn area(shape: Shape) -> Float {
+    match shape {
+        Shape(variant) => match variant {
+            Variant(square) => square_area(square),
+            Variant(circle) => circle * circle * 3.14159,
+        },
+    }
+}
+
+fn main() {
+    print(area(Shape(Variant(Square(4.0)))))
+}
+
+enum Shape {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Type {
+    Float,
+}
+
+enum Type {
+    Int,
+}
+
+enum Type {
+    Bool,
+}
+
+enum Type {
+    Str,
+}
+
+enum Type {
+    Unit,
+}
+
+enum Type {
+    Vec,
+}
+
+enum Type {
+    Option,
+}
+
+enum Type {
+    Result,
+}
+
+enum Type {
+    Struct,
+}
+
+enum Type {
+    Enum,
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant {
+    Square(Float),
+    Circle(Float),
+}
+
+enum Variant

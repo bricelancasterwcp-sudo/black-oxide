@@ -1,0 +1,65 @@
+struct Queue { values: Vec<Int> }
+
+fn main() {
+    let queue = Queue { values: vec(1, 2, 3, 4, 5) }
+    let Queue { values } = queue
+    let values = push(push(vec(), first(values)?), last(values)?)
+    for x in values {
+        print(x)
+    }
+}
+
+fn first(v: Vec<Int>) -> Int {
+    get(v, 0)?
+}
+
+fn last(v: Vec<Int>) -> Int {
+    get(v, len(v) - 1)?
+}
+
+struct Queue { values: Vec<Int> }
+
+fn main() {
+    let queue = Queue { values: vec(1, 2, 3, 4, 5) }
+    let Queue { values } = queue
+    let values = push(push(vec(), last(values)?), first(values)?)
+    for x in values {
+        print(x)
+    }
+}
+
+fn first(v: Vec<Int>) -> Int {
+    get(v, 0)?
+}
+
+fn last(v: Vec<Int>) -> Int {
+    get(v, len(v) - 1)?
+}
+
+fn main() {
+    let q = Queue { values: vec(1, 2, 3, 4, 5) }
+    let Queue { values } = q
+    let values = push(push(vec(), first(values)?), last(values)?)
+    for x in values {
+        print(x)
+    }
+}
+
+struct Queue { values: Vec<Int> }
+
+fn first(v: Vec<Int>) -> Int {
+    get(v, 0)?
+}
+
+fn last(v: Vec<Int>) -> Int {
+    get(v, len(v) - 1)?
+}
+
+fn main() {
+    let q = Queue { values: vec(1, 2, 3, 4, 5) }
+    let Queue { values } = q
+    let values = push(push(vec(), last(values)?), first(values)?)
+    for x in values {
+        print(x)
+    }
+}

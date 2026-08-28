@@ -1,0 +1,18 @@
+struct Coffee { letters: Vec<Char> }
+
+fn main() {
+    let letters = push(push(vec(), "c"), "o")
+    let coffee = Coffee { letters: push(letters, "f") }
+    let coffee = Coffee { letters: push(coffee.letters, "e") }
+    let coffee = Coffee { letters: push(coffee.letters, "e") }
+    let mut seen = vec()
+    for c in coffee.letters {
+        if c == "c" || c == "o" || c == "e" {
+            seen = push(seen, c)
+        }
+    }
+    for c in seen {
+        print(c)
+        print_str("\n")
+    }
+}

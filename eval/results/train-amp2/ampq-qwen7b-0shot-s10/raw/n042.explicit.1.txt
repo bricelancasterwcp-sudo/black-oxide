@@ -1,0 +1,17 @@
+fn main() {
+    let nums = vec(12, 5, 20, 8, 17)
+    let mut max = 0
+    let mut second_max = 0
+    for x in &nums {
+        if x > max {
+            second_max = max
+            max = x
+        } else if x > second_max {
+            second_max = x
+        }
+    }
+    print(max)
+    drop max
+    print(second_max)
+    drop second_max
+}

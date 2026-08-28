@@ -1,0 +1,19 @@
+struct Reading { label: Str, values: Vec<Int> }
+
+fn sum(v: Vec<Int>) -> Int {
+    let mut total = 0
+    for x in v {
+        total = total + x
+    }
+    total
+}
+
+fn main() {
+    let r = Reading { label: "readings", values: push(push(push(push(vec(), 4), 8), 15), 16) }
+    r.values.push(23)
+    r.values.push(42)
+    let total = sum(r.values)
+    let count = len(r.values)
+    let mean = total / count
+    print(mean)
+}

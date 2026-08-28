@@ -1,0 +1,79 @@
+struct Reading { label: Str, values: Vec<Int> }
+
+fn first_big(v: Vec<Int>) -> Int {
+    let found = -1
+    for x in v {
+        if x > 10 {
+            found = x
+            break
+        }
+    }
+    found
+}
+
+fn second(v: Vec<Int>) -> Option<Int> {
+    let x = get(v, 1)?
+    Some(x + 1)
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(vec(), 3), 42) }
+    print(first_big(r.values))            // field access copies: r stays usable
+    let r2 = Reading { label: "lab2", ..r }
+    match second(r2.values) {
+        Some(n) => print(n),
+        None => print_str("too short"),
+    }
+}
+
+struct Figure {
+    x1: Int,
+    y1: Int,
+    x2: Int,
+    y2: Int,
+}
+
+fn area(fig: Figure) -> Int {
+    abs(fig.x1 * fig.y2 - fig.x2 * fig.y1)
+}
+
+fn min(a: Int, b: Int) -> Int {
+    if a < b {
+        a
+    } else {
+        b
+    }
+}
+
+fn max(a: Int, b: Int) -> Int {
+    if a > b {
+        a
+    } else {
+        b
+    }
+}
+
+fn smallest_figure(fig1: Figure, fig2: Figure) -> Figure {
+    let a1 = area(fig1)
+    let a2 = area(fig2)
+    if a1 <= a2 {
+        fig1
+    } else {
+        fig2
+    }
+}
+
+fn gap(fig1: Figure, fig2: Figure) -> Int {
+    let min_a = min(area(fig1), area(fig2))
+    let max_a = max(area(fig1), area(fig2))
+    max_a - min_a
+}
+
+fn main() {
+    let f1 = Figure { x1: 10, y1: 20, x2: 100, y2: 10 }
+    let f2 = Figure { x1: 5, y1: 10, x2: 10, y2: 5 }
+    let smallest = smallest_figure(f1, f2)
+    print(smallest)
+    let gap_size = gap(f1, f2)
+    print(gap_size)
+}

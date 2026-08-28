@@ -1,0 +1,10 @@
+struct Signal { state: Str }
+
+fn main() {
+    let signal = Signal { state: "green" }
+    match signal.state {
+        State => print_str("go for green"),
+        State => print_str("wait for yellow"),
+        State => print_str("stop for red"),
+    }
+}

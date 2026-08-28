@@ -1,0 +1,7 @@
+fn main() {
+    let units_4 = 4 * 3
+    let units_5 = 5 * 2
+    print(units_4)
+    print(units_5)
+    print(units_4 + units_5)
+}

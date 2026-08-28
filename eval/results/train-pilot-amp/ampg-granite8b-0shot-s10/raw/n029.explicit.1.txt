@@ -1,0 +1,8 @@
+fn main() {
+    let a = 1
+    let b = 2
+    let c = 3
+    let output = concat(concat(str_len(&a), "one"), concat(str_len(&b), "two"))
+    push(output, 3)
+    print(output)
+}

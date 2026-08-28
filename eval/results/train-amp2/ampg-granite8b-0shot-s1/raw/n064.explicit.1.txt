@@ -1,0 +1,22 @@
+struct List {
+    val: Int,
+    next: Option<List>,
+}
+
+fn get(list: &List, i: Int) -> Option<Int> {
+    let mut cur = list
+    while i > 0 {
+        if cur.next == None {
+            return None
+        }
+        cur = &cur
+    }
+    Some(cur.val)
+}
+
+fn main() {
+    let list = push(push(vec(), 10), 20)
+    print(get(&list, 0))
+    drop list
+    print(get(&list, 0))
+}

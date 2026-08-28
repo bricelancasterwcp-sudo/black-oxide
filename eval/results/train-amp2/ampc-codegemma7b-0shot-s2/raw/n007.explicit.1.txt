@@ -1,0 +1,8 @@
+fn main() {
+    let digits = str_len(int_to_str(9875))
+    let mut sum = 0
+    for x in &chars_at_pos_range_inclusive_to_exclusive_step_by_1_rev_inclusive_to_exclusive_with_step_size_1_of_chars_at_pos_range_inclusive_to_exclusive_step_by_1_rev_inclusive_to_exclusive_with_step_size_1_of_str_len_of_int_to_str_of_9875_into_digits_into_chars_at_pos_range_inclusive_to_exclusive_step_by_1_rev_inclusive_to_exclusive_with_step_size_1_of_str_len_of_int_to_str_of_9875_into_digits_into_chars_at_pos_range_inclusive_to_exclusive_step_by_1_rev_inclusive_to_exclusive_with_step_size_1_of_digits_into_chars_at_pos_range_inclusive_to_exclusive_step_by_1_rev_inclusive_to_exclusive_with_step_size_1_of_digits {
+        sum = sum + int_to_int(x)
+    }
+    print(sum)
+}

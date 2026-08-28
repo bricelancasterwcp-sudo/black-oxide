@@ -1,0 +1,9 @@
+struct Stocked { four_unit: Int, three_unit: Int, two_unit: Int }
+
+fn total_value(stocked: Stocked) -> Int {
+    stocked.four_unit * 4 + stocked.three_unit * 3 + stocked.two_unit * 2
+}
+
+fn main() {
+    print(total_value(Stocked { four_unit: 2, three_unit: 4, two_unit: 5 }))
+}

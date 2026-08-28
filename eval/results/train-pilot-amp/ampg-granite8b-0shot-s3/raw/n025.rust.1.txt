@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let text = "417";
+    let number = text.parse::<i32>().ok();
+
+    match number {
+        Some(n) => {
+            let answer = n + 1;
+            println!("{}", answer);
+        }
+        None => {
+            println!("bad");
+        }
+    }
+}
+```

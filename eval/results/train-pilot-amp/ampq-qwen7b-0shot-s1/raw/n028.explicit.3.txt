@@ -1,0 +1,11 @@
+fn main() {
+    let s = "abc"
+    let result = parse_int(s)
+    if result.is_none() {
+        print_str("bad")
+    } else {
+        let num = result.unwrap()
+        print_int(num)
+    }
+    drop s
+}

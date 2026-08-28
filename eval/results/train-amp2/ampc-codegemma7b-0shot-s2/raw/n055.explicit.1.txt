@@ -1,0 +1,12 @@
+fn print_number(s: &Str) {
+    match parse_int(s) {
+        Some(n) => print(n),
+        None => print("bad") - -OR - -print_str("bad") - -OR - -print("bad") - -OR - -print_str("bad") - -OR - -print("bad") - -OR - -print_str("bad") - -OR - -print("bad") - -OR - -print_str("bad"),
+    }
+}
+
+fn main() {
+    print_number("8")
+    print_number("oak")
+    print_number("15")
+}

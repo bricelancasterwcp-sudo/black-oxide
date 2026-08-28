@@ -1,0 +1,138 @@
+fn main() {
+    let mut v = vec(5, 12, 3, 18, 9)
+    let mut under = 0
+    let mut over = 0
+    while letSome(n) == pop(v) {
+        if n <= 10 {
+            under = under + 1
+        } else {
+            over = over + 1
+        }
+    }
+    print_str("under: ")
+    print(under)
+    print_str(" over: ")
+    print(over)
+}
+
+fn pop(v: Vec<Int>) -> Option<Int> {
+    match v {
+        Vec(h, t) => Some(h),
+        Vec(h, _) => None,
+    }
+}
+
+fn vec(xs: Int, rest: Vec<Int>) -> Vec<Int> {
+    push(rest, xs)
+}
+
+fn print(x: Int) {
+    print_str("print ")
+    print(x)
+    print_str(" ")
+}
+
+fn print_str(s: Str) {
+    print_str("print ")
+    print(str_len(s))
+    print_str(" ")
+    print_str(s)
+    print_str(" ")
+}
+
+fn str_len(s: Str) -> Int {
+    let len = 0
+    for _ in range(0, len(s)) {
+        len = len + 1
+    }
+    len
+}
+
+fn len(v: Vec<Int>) -> Int {
+    let i = 0
+    for _ in v {
+        i = i + 1
+    }
+    i
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    let j = 0
+    for x in v {
+        if j == i {
+            return Some(x)
+        }
+        j = j + 1
+    }
+    None
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let res = Vec(x, v)
+    res
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let v = vec()
+    let mut i = a
+    while i < b {
+        v = push(v, i)
+        i = i + 1
+    }
+    v
+}
+
+fn clone(x: Int) -> Int {
+    x
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let v = vec()
+    for i in range(0, str_len(s)) {
+        let c = get(s, i)?
+        v = push(v, int_to_str(c))
+    }
+    v
+}
+
+fn int_to_str(n: Int) -> Str {
+    let s = "0"
+    if n < 10 {
+        let c = n + 48
+        return s + int_to_str(c)
+    }
+    s
+}
+
+fn to_float(n: Int) -> Float {
+    n
+}
+
+fn trunc(x: Float) -> Int {
+    x
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    if s == "123" {
+        return Some(123)
+    }
+    None
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let s = a
+    for c in chars(b) {
+        s = s + c
+    }
+    s
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(vec(), 3), 42) }
+    print(first_big(r.values))
+    let r2 = Reading { label: "lab2", ..r }
+    match second(r2.values) {
+        Some(n) => print(n),
+        None => print_str("too short"),
+    }
+}

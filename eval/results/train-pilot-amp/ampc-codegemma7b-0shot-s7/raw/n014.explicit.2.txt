@@ -1,0 +1,15 @@
+fn min_reading(readings: &Vec<Int>) -> Int {
+    let mut min_reading = readings.get(0).unwrap_or(&readings, &readings).clone()
+    for reading in readings {
+        if reading < &min_reading {
+            min_reading = reading.clone()
+        }
+    }
+    min_reading
+}
+
+fn main() {
+    let readings = vec(5, 3, 9, 1, 7)
+    print(min_reading(&readings))
+    drop readings
+}

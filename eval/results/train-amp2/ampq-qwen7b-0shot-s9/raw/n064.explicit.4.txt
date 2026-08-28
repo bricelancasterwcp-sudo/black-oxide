@@ -1,0 +1,14 @@
+fn main() {
+    let list = vec(10, 20)
+    if letSome(x) == get(list, 0) {
+        print(x)
+    } else {
+        print_str("None")
+    }
+    if letSome(x) == get(list, 3) {
+        print(x)
+    } else {
+        print_str("None")
+    }
+    drop list
+}

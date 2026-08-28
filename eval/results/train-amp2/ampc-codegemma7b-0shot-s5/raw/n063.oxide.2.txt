@@ -1,0 +1,7 @@
+fn main() {
+    let four = 4 * 3 + 5 * 2
+    let five = 5 * 3 + 4 * 2
+    print(four)
+    print(five)
+    print(four + five)
+}

@@ -1,0 +1,11 @@
+fn main() {
+    let v = vec(4, 7, 4, 9, 4)
+    let mut pos = 0
+    for x in v {
+        if x == 4 {
+            print(pos)
+            print_str("\n")
+        }
+        pos = pos + 1
+    }
+}

@@ -1,0 +1,45 @@
+fn read_and_print(text: Str) -> Unit {
+    let num = parse_int(text)
+    if num.is_some() {
+        let num = num.unwrap()
+        print_int(num + 1)
+    } else {
+        print_str("bad")
+    }
+}
+
+fn main() {
+    read_and_print("417")
+}
+
+fn print_int(n: Int) -> Unit {
+    print_str(&int_to_str_n)
+}
+
+fn int_to_str_n(n: Int) -> Str {
+    n.to_string()
+}
+
+fn is_some(opt: Option<T>) -> Bool {
+    opt != None
+}
+
+fn unwrap(opt: Option<T>) -> T {
+    if opt.is_some() {
+        opt.unwrap()
+    } else {
+        panic("unwrap called on None")
+    }
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    s.parse().ok()
+}
+
+fn print_str(s: Str) -> Unit {
+    println(s)
+}
+
+fn main() {
+    read_and_print("417")
+}

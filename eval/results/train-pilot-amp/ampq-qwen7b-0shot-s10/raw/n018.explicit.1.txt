@@ -1,0 +1,7 @@
+fn main() {
+    let list = vec(1, 2, 3, 4)
+    for x in &list {
+        print_str(x.to_str())
+    }
+    drop list
+}

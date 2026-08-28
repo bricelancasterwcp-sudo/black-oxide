@@ -1,0 +1,9 @@
+fn main(){
+    if std::iter::successors(Some(2), |&n| if n%91==0{None}else{Some(n+1)})
+    .take_while(|&n|n*n<=91)
+    .any(|n| 91%n==0){
+        println!("no");
+    }else{
+        println!("yes");
+    }
+}

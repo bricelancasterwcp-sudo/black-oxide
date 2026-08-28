@@ -1,0 +1,11 @@
+fn main() {
+    let mut list = vec()
+    for i in 100.step_by(2).rev() {
+        list = push(list, i)
+    }
+    for i in range(0, list.len()) {
+        print(get(&list, i).unwrap())
+        print("\n")
+    }
+    drop list
+}

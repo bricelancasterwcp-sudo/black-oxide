@@ -1,0 +1,49 @@
+fn main() {
+    let state = get_signal()?
+    match state {
+        Green => print_str("go for green"),
+        Yellow => print_str("wait for yellow"),
+        Red => print_str("stop for red"),
+        _ => unreachable(),
+    }
+}
+
+enum Signal {
+    Green,
+    Yellow,
+    Red,
+}
+
+fn get_signal() -> Option<Signal> {
+    Some(Green) // replace with actual logic
+}
+
+fn print_str(s: Str) {
+    print(s) // replace with actual logic
+}
+
+fn get(v: Vec<Signal>, i: Int) -> Option<Signal> {
+    if i >= 0 && i < len(v) {
+        Some(v.get(i))
+    } else {
+        None
+    }
+}
+
+fn len(v: Vec<Signal>) -> Int {
+    v.len() // replace with actual logic
+}
+
+fn unreachable() {
+    panic("unreachable") // replace with actual logic
+}
+
+fn main() {
+    let state = get_signal()?
+    match state {
+        Green => print_str("go for green"),
+        Yellow => print_str("wait for yellow"),
+        Red => print_str("stop for red"),
+        _ => unreachable(),
+    }
+}

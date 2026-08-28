@@ -1,0 +1,9 @@
+fn main() {
+    let drum = "drum".to_string()
+    let mut reversed = "".to_string()
+    for c in drum.chars().rev() {
+        reversed.push(c)
+    }
+    print(reversed)
+    print(drum)
+}

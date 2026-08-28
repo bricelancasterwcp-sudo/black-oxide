@@ -1,0 +1,14 @@
+fn sum(numbers: &Vec<Int>) -> Int {
+    let mut total = 0
+    for x in numbers {
+        total = total + x
+    }
+    total
+}
+
+fn main() {
+    let readings = vec(4, 8, 15, 16, 23, 42)
+    let mean = sum(&readings) / 6
+    print(mean)
+    drop readings
+}

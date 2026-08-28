@@ -1,0 +1,13 @@
+fn main() {
+    let mut even_nums = vec()
+    for x in range(1, 11) {
+        if x % 2 == 0 {
+            even_nums = push(even_nums, x)
+        }
+    }
+    for x in &even_nums {
+        print(x)
+        drop x
+    }
+    drop even_nums
+}

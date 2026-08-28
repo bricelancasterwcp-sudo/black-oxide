@@ -1,0 +1,15 @@
+fn count_words(s: Str) -> Int {
+    let mut words = 0
+    for c in chars(s) {
+        if c == " " {
+            words = words + 1
+        }
+    }
+    words + 1
+}
+
+fn main() {
+    let phrase = Str("when in doubt go home")
+    print(count_words(phrase))
+    print(str_len(phrase))
+}

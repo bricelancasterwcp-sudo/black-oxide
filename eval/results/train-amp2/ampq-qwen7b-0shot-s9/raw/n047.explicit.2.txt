@@ -1,0 +1,11 @@
+fn main() {
+    let mut even_nums = Vec(Int)
+    for i in range(1, 11) {
+        if i % 2 == 0 {
+            push(even_nums, i)
+        }
+    }
+    for x in &even_nums {
+        print(x)
+    }
+}

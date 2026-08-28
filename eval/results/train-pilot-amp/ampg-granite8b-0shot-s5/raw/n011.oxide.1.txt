@@ -1,0 +1,12 @@
+fn main() {
+    Explicitly
+    let four = 4
+    let mut multiples = vec()
+    for x in range(0, 12) {
+        automagical
+        let multiple = push(multiples, four)
+        automagical
+    }
+    let total = fold(multiples, 0, fnacc, x) == acc + x
+    print(total)
+}

@@ -1,0 +1,282 @@
+fn main() {
+    let num = str_cat(int_to_str(1), int_to_str(2))
+    print(str_cat(num, int_to_str(3)))
+}
+
+fn str_cat(a: Str, b: Str) -> Str {
+    concat(a, b)
+}
+
+fn int_to_str(n: Int) -> Str {
+    if n == 0 {
+        return str_dup("0")
+    }
+    let mut digits = vec()
+    let mut num = n
+    while num > 0 {
+        digits = push(digits, num % 10)
+        num = num / 10
+    }
+    let mut result = str_dup("")
+    for digit in &digits {
+        result = str_cat(result, int_to_str(digit))
+    }
+    result
+}
+
+fn str_dup(s: Str) -> Str {
+    clone(s)
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut result = a
+    result = str_cat(result, b)
+    result
+}
+
+fn print(s: Str) {
+    let mut chars = chars(s)
+    for c in &chars {
+        print_char(c)
+    }
+}
+
+fn print_char(c: Str) {
+    let mut chars = chars(c)
+    for _ in &chars {
+        print_str(".")
+    }
+}
+
+fn print_str(s: Str) {
+    let mut chars = chars(s)
+    for c in &chars {
+        print_char(c)
+    }
+}
+
+fn clone(x: Str) -> Str {
+    let mut result = str_dup("")
+    for c in chars(x) {
+        result = str_cat(result, int_to_str(int_to_digit(c)))
+    }
+    result
+}
+
+fn int_to_digit(c: Str) -> Int {
+    let mut chars = chars(c)
+    for digit in &chars {
+        return digit - 48
+    }
+    0
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = vec()
+    let mut index = 0
+    while index < str_len(s) {
+        result = push(result, str_substr(s, index, 1))
+        index = index + 1
+    }
+    result
+}
+
+fn str_substr(s: Str, start: Int, len: Int) -> Str {
+    let mut result = str_dup("")
+    let mut index = start
+    while index < str_len(s) && index < start + len {
+        result = str_cat(result, str_substr(s, index, 1))
+        index = index + 1
+    }
+    result
+}
+
+fn str_len(s: Str) -> Int {
+    let mut result = 0
+    let mut index = 0
+    while index < str_len(s) {
+        index = index + 1
+        result = result + 1
+    }
+    result
+}
+
+fn str_cat(a: Str, b: Str) -> Str {
+    let mut result = a
+    result = str_cat(result, b)
+    result
+}
+
+fn str_dup(s: Str) -> Str {
+    clone(s)
+}
+
+fn clone(x: Str) -> Str {
+    let mut result = str_dup("")
+    for c in chars(x) {
+        result = str_cat(result, int_to_str(int_to_digit(c)))
+    }
+    result
+}
+
+fn int_to_digit(c: Str) -> Int {
+    let mut chars = chars(c)
+    for digit in &chars {
+        return digit - 48
+    }
+    0
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = vec()
+    let mut index = 0
+    while index < str_len(s) {
+        result = push(result, str_substr(s, index, 1))
+        index = index + 1
+    }
+    result
+}
+
+fn str_substr(s: Str, start: Int, len: Int) -> Str {
+    let mut result = str_dup("")
+    let mut index = start
+    while index < str_len(s) && index < start + len {
+        result = str_cat(result, str_substr(s, index, 1))
+        index = index + 1
+    }
+    result
+}
+
+fn str_len(s: Str) -> Int {
+    let mut result = 0
+    let mut index = 0
+    while index < str_len(s) {
+        index = index + 1
+        result = result + 1
+    }
+    result
+}
+
+fn str_cat(a: Str, b: Str) -> Str {
+    let mut result = a
+    result = str_cat(result, b)
+    result
+}
+
+fn str_dup(s: Str) -> Str {
+    clone(s)
+}
+
+fn clone(x: Str) -> Str {
+    let mut result = str_dup("")
+    for c in chars(x) {
+        result = str_cat(result, int_to_str(int_to_digit(c)))
+    }
+    result
+}
+
+fn int_to_digit(c: Str) -> Int {
+    let mut chars = chars(c)
+    for digit in &chars {
+        return digit - 48
+    }
+    0
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = vec()
+    let mut index = 0
+    while index < str_len(s) {
+        result = push(result, str_substr(s, index, 1))
+        index = index + 1
+    }
+    result
+}
+
+fn str_substr(s: Str, start: Int, len: Int) -> Str {
+    let mut result = str_dup("")
+    let mut index = start
+    while index < str_len(s) && index < start + len {
+        result = str_cat(result, str_substr(s, index, 1))
+        index = index + 1
+    }
+    result
+}
+
+fn str_len(s: Str) -> Int {
+    let mut result = 0
+    let mut index = 0
+    while index < str_len(s) {
+        index = index + 1
+        result = result + 1
+    }
+    result
+}
+
+fn str_cat(a: Str, b: Str) -> Str {
+    let mut result = a
+    result = str_cat(result, b)
+    result
+}
+
+fn str_dup(s: Str) -> Str {
+    clone(s)
+}
+
+fn clone(x: Str) -> Str {
+    let mut result = str_dup("")
+    for c in chars(x) {
+        result = str_cat(result, int_to_str(int_to_digit(c)))
+    }
+    result
+}
+
+fn int_to_digit(c: Str) -> Int {
+    let mut chars = chars(c)
+    for digit in &chars {
+        return digit - 48
+    }
+    0
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut result = vec()
+    let mut index = 0
+    while index < str_len(s) {
+        result = push(result, str_substr(s, index, 1))
+        index = index + 1
+    }
+    result
+}
+
+fn str_substr(s: Str, start: Int, len: Int) -> Str {
+    let mut result = str_dup("")
+    let mut index = start
+    while index < str_len(s) && index < start + len {
+        result = str_cat(result, str_substr(s, index, 1))
+        index = index + 1
+    }
+    result
+}
+
+fn str_len(s: Str) -> Int {
+    let mut result = 0
+    let mut index = 0
+    while index < str_len(s) {
+        index = index + 1
+        result = result + 1
+    }
+    result
+}
+
+fn str_cat(a: Str, b: Str) -> Str {
+    let mut result = a
+    result = str_cat(result, b)
+    result
+}
+
+fn str_dup(s: Str) -> Str {
+    clone(s)
+}
+
+fn clone(x:

@@ -1,0 +1,22 @@
+struct List { items: Vec<Int> }
+
+fn collect_evens() -> List {
+    let mut list = List { items: vec() }
+    for i in range(1, 11) {
+        if i % 2 == 0 {
+            list.items = push(list.items, i)
+        }
+    }
+    list
+}
+
+fn print_reverse(list: List) {
+    for i in range(len(list.items) - 1, -1, -1) {
+        print(get(list.items, i))
+    }
+}
+
+fn main() {
+    let evens = collect_evens()
+    print_reverse(evens)
+}

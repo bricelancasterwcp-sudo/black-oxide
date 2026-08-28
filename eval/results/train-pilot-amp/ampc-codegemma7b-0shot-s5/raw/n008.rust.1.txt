@@ -1,0 +1,9 @@
+fn main() {
+    let mut count = 0;
+    for n in 1..=50 {
+        if n % 3 == 0 || n % 5 == 0 {
+            count += 1;
+        }
+    }
+    println!("{}", count);
+}

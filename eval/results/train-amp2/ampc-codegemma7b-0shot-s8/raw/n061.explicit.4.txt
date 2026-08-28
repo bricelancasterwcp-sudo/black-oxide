@@ -1,0 +1,16 @@
+fn area(x: Float, y: Float) -> Float {
+    x * y
+}
+
+fn perimeter(x: Float, y: Float) -> Float {
+    2.0 * (x + y)
+}
+
+fn main() {
+    let a = area(9.0, 3.0)
+    let p = perimeter(9.0, 3.0)
+    print(a)
+    print(p)
+    drop a
+    drop p
+}

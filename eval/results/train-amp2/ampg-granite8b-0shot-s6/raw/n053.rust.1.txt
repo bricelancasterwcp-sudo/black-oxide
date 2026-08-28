@@ -1,0 +1,9 @@
+fn main() {
+    let drum = "drum";
+    let mut rev = String::new();
+    for ch in drum.chars().rev() {
+        rev.push(ch);
+    }
+    println!("{}", drum);
+    println!("{}", rev);
+}

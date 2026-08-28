@@ -1,0 +1,20 @@
+fn deposit(balance: &Int, amount: Int) -> Int {
+    let new_balance = balance + amount
+    drop balance
+    new_balance
+}
+
+fn main() {
+    let balance = 0
+    let balance = deposit(&balance, 3)
+    print(balance)
+    let balance = deposit(&balance, 1)
+    print(balance)
+    let balance = deposit(&balance, 4)
+    print(balance)
+    let balance = deposit(&balance, 1)
+    print(balance)
+    let balance = deposit(&balance, 5)
+    print(balance)
+    drop balance
+}

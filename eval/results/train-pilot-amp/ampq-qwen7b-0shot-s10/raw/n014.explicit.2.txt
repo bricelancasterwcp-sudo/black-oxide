@@ -1,0 +1,14 @@
+fn min(a: Int, b: Int) -> Int {
+    if a < b {
+        a
+    } else {
+        b
+    }
+}
+
+fn main() {
+    let readings = vec(5, 3, 9, 1, 7)
+    let min_val = readings.iter().fold(0, min)
+    print(min_val)
+    drop readings
+}

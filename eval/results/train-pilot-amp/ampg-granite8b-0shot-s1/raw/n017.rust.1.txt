@@ -1,0 +1,8 @@
+fn main() {
+    let list = [10, 20, 30, 40];
+    let second = list.get(1);
+    match second {
+        Some(&val) => println!("Second entry in list is {}", val),
+        None => println!("Missing"),
+    }
+}

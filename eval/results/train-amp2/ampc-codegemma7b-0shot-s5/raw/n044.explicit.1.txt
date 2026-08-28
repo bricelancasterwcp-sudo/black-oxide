@@ -1,0 +1,17 @@
+fn deposit(balance: Int, amount: Int) -> Int {
+    balance + amount
+}
+
+fn main() {
+    let mut balance = 0
+    deposit(balance, 3)
+    print(balance)
+    deposit(balance, 1)
+    print(balance)
+    deposit(balance, 4)
+    print(balance)
+    deposit(balance, 1)
+    print(balance)
+    deposit(balance, 5)
+    print(balance)
+}

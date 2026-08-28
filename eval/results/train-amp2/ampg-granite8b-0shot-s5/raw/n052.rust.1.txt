@@ -1,0 +1,6 @@
+```rust
+fn main() {
+    println!("{}", "banana".chars().position(|ch| ch == 'n').unwrap_or_default());
+    println!("{}", "banana".chars().position(|ch| ch == 'n').unwrap_or_default() + 1);
+}
+```

@@ -1,0 +1,4 @@
+fn main() {
+    let result = "black" + "oxide";
+    println!("{}", result);
+}

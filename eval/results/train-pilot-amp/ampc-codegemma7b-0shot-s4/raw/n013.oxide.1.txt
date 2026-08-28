@@ -1,0 +1,14 @@
+fn max(v: Vec<Int>) -> Int {
+    let mut biggest = -1
+    for x in v {
+        if x > biggest {
+            biggest = x
+        }
+    }
+    biggest
+}
+
+fn main() {
+    let readings = vec(5, 3, 9, 1, 7)
+    print(max(readings))
+}

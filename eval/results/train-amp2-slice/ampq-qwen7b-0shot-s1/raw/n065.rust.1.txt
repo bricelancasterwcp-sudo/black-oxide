@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let readings = vec![6, 11, 3, 14, 9];
+    let count = readings.iter().filter(|&&r| r > 5).count();
+    let max = readings.iter().max().unwrap();
+    println!("{}", count);
+    println!("{}", max);
+}
+```

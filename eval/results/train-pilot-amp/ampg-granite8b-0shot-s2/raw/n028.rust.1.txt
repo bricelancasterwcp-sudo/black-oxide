@@ -1,0 +1,13 @@
+```rust
+use std::io;
+
+fn main() {
+    let mut input = String::new();
+    io::stdin().read_line(&mut input).unwrap();
+    let number: Result<i32, _> = input.trim().parse();
+    match number {
+        Ok(_) => println!("good"),
+        Err(_) => println!("bad"),
+    }
+}
+```

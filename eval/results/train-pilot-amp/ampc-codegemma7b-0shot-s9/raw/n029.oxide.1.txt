@@ -1,0 +1,4 @@
+fn main() {
+    let s = concat(concat(str_len("one"), str_len("two")), str_len("three"))
+    print(s)
+}

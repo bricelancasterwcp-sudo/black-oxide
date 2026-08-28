@@ -1,0 +1,12 @@
+fn read_and_print(text: Str) -> Unit {
+    let num = parse_int(text)
+    if num? {
+        print_int(num? + 1)
+    } else {
+        print_str("bad")
+    }
+}
+
+fn main() {
+    read_and_print("417")
+}

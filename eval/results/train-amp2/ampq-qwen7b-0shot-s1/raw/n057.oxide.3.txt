@@ -1,0 +1,22 @@
+fn main() {
+    let fig = clone("fig")
+    let banana = clone("banana")
+    let kiwi = clone("kiwi")
+    let mut longest = ""
+    let mut max_len = 0
+    if str_len(fig) > max_len {
+        longest = fig
+        max_len = str_len(fig)
+    }
+    if str_len(banana) > max_len {
+        longest = banana
+        max_len = str_len(banana)
+    }
+    if str_len(kiwi) > max_len {
+        longest = kiwi
+        max_len = str_len(kiwi)
+    }
+    print(longest)
+    print_str(" ")
+    print(max_len)
+}

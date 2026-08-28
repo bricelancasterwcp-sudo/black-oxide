@@ -1,0 +1,54 @@
+fn main() {
+    let signal = read_signal()
+    match signal {
+        Red => {
+            print_str("Stop")
+        },
+        Yellow => {
+            print_str("Wait")
+        },
+        Green => {
+            print_str("Go!")
+        },
+    }
+}
+
+struct Signal {
+    color: Color,
+    duration: Int,
+}
+
+fn read_signal() -> Signal {
+    Signal
+}
+
+enum Color {
+    Red,
+    Yellow,
+    Green,
+}
+
+enum Duration {
+    Long,
+    Medium,
+    Short,
+}
+
+fn main() {
+    let signal = read_signal()
+    match signal {
+        Signal(color, duration) => {
+            match color {
+                Red => {
+                    print_str("Stop")
+                },
+                Yellow => {
+                    print_str("Wait")
+                },
+                Green => {
+                    print_str("Go!")
+                },
+            }
+        },
+    }
+}

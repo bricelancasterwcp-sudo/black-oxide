@@ -1,0 +1,11 @@
+fn main() {
+    let vec = vec(4, 7, 4, 9, 4)
+    let mut i = 0
+    while i < len(&vec) {
+        if get(&vec, i) == Some(4) {
+            print(i)
+        }
+        i = i + 1
+    }
+    drop vec
+}

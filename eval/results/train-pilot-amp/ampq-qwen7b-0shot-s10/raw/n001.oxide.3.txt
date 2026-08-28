@@ -1,0 +1,14 @@
+struct Cube { value: Int }
+
+fn cube(n: Int) -> Cube {
+    Cube(value(n * n * n))
+}
+
+fn main() {
+    let mut total = 0
+    for i in range(1, 6) {
+        let Cube { value } = cube(i)
+        total = total + value
+    }
+    print(total)
+}

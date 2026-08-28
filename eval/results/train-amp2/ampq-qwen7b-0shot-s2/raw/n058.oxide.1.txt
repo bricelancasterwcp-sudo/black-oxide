@@ -1,0 +1,18 @@
+struct Cache { seen: Vec<Bool> }
+
+fn process(s: Str, cache: Cache) -> Cache {
+    let mut cache = cache
+    for ch in chars(s) {
+        let idx = str_len(ch) - 1
+        if !cache.seen.get(idx).unwrap_or(false) {
+            cache.seen.set(idx, true)
+            print(ch)
+        }
+    }
+    cache
+}
+
+fn main() {
+    let cache = Cache { seen: vec() }
+    let cache = process("coffee", cache)
+}

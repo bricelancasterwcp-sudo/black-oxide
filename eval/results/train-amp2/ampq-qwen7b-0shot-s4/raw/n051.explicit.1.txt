@@ -1,0 +1,430 @@
+fn main() {
+    let word = "granite"
+    let first = &wordchars
+    let last = &wordchars
+    print_str(first)
+    print_str(last)
+    drop word
+}
+
+fn wordchars(word: &Str) -> Str {
+    &word
+}
+
+fn main() {
+    let word = "granite"
+    let first = wordchars(&word)
+    let last = wordchars(&word)
+    print_str(first)
+    print_str(last)
+    drop word
+}
+
+fn wordchars(word: &Str) -> Str {
+    &word
+}
+
+fn main() {
+    let word = "granite"
+    let first = wordchars(&word)
+    let last = wordchars(&word)
+    print_str(first)
+    print_str(last)
+    drop word
+}
+
+fn wordchars(word: &Str) -> Str {
+    &word
+}
+
+fn main() {
+    let word = "granite"
+    let first = wordchars(&word)
+    let last = wordchars(&word)
+    print_str(first)
+    print_str(last)
+    drop word
+}
+
+fn wordchars(word: &Str) -> Str {
+    &word
+}
+
+fn main() {
+    let word = "granite"
+    let first = wordchars(&word)
+    let last = wordchars(&word)
+    print_str(first)
+    print_str(last)
+    drop word
+}
+
+fn wordchars(word: &Str) -> Str {
+    &word
+}
+
+fn main() {
+    let word = "granite"
+    let first = wordchars(&word)
+    let last = wordchars(&word)
+    print_str(first)
+    print_str(last)
+    drop word
+}
+
+fn wordchars(word: &Str) -> Str {
+    &word
+}
+
+fn main() {
+    let word = "granite"
+    let first = wordchars(&word)
+    let last = wordchars(&word)
+    print_str(first)
+    print_str(last)
+    drop word
+}
+
+fn wordchars(word: &Str) -> Str {
+    &word
+}
+
+fn main() {
+    let word = "granite"
+    let first = wordchars(&word)
+    let last = wordchars(&word)
+    print_str(first)
+    print_str(last)
+    drop word
+}
+
+fn wordchars(word: &Str) -> Str {
+    &word
+}
+
+fn main() {
+    let word = "granite"
+    let first = wordchars(&word)
+    let last = wordchars(&word)
+    print_str(first)
+    print_str(last)
+    drop word
+}
+
+fn wordchars(word: &Str) -> Str {
+    &word
+}
+
+fn main() {
+    let word = "granite"
+    let first = wordchars(&word)
+    let last = wordchars(&word)
+    print_str(first)
+    print_str(last)
+    drop word
+}
+
+fn wordchars(word: &Str) -> Str {
+    &word
+}
+
+fn main() {
+    let word = "granite"
+    let first = wordchars(&word)
+    let last = wordchars(&word)
+    print_str(first)
+    print_str(last)
+    drop word
+}
+
+fn wordchars(word: &Str) -> Str {
+    &word
+}
+
+fn main() {
+    let word = "granite"
+    let first = wordchars(&word)
+    let last = wordchars(&word)
+    print_str(first)
+    print_str(last)
+    drop word
+}
+
+fn wordchars(word: &Str) -> Str {
+    &word
+}
+
+fn main() {
+    let word = "granite"
+    let first = wordchars(&word)
+    let last = wordchars(&word)
+    print_str(first)
+    print_str(last)
+    drop word
+}
+
+fn wordchars(word: &Str) -> Str {
+    &word
+}
+
+fn main() {
+    let word = "granite"
+    let first = wordchars(&word)
+    let last = wordchars(&word)
+    print_str(first)
+    print_str(last)
+    drop word
+}
+
+fn wordchars(word: &Str) -> Str {
+    &word
+}
+
+fn main() {
+    let word = "granite"
+    let first = wordchars(&word)
+    let last = wordchars(&word)
+    print_str(first)
+    print_str(last)
+    drop word
+}
+
+fn wordchars(word: &Str) -> Str {
+    &word
+}
+
+fn main() {
+    let word = "granite"
+    let first = wordchars(&word)
+    let last = wordchars(&word)
+    print_str(first)
+    print_str(last)
+    drop word
+}
+
+fn wordchars(word: &Str) -> Str {
+    &word
+}
+
+fn main() {
+    let word = "granite"
+    let first = wordchars(&word)
+    let last = wordchars(&word)
+    print_str(first)
+    print_str(last)
+    drop word
+}
+
+fn wordchars(word: &Str) -> Str {
+    &word
+}
+
+fn main() {
+    let word = "granite"
+    let first = wordchars(&word)
+    let last = wordchars(&word)
+    print_str(first)
+    print_str(last)
+    drop word
+}
+
+fn wordchars(word: &Str) -> Str {
+    &word
+}
+
+fn main() {
+    let word = "granite"
+    let first = wordchars(&word)
+    let last = wordchars(&word)
+    print_str(first)
+    print_str(last)
+    drop word
+}
+
+fn wordchars(word: &Str) -> Str {
+    &word
+}
+
+fn main() {
+    let word = "granite"
+    let first = wordchars(&word)
+    let last = wordchars(&word)
+    print_str(first)
+    print_str(last)
+    drop word
+}
+
+fn wordchars(word: &Str) -> Str {
+    &word
+}
+
+fn main() {
+    let word = "granite"
+    let first = wordchars(&word)
+    let last = wordchars(&word)
+    print_str(first)
+    print_str(last)
+    drop word
+}
+
+fn wordchars(word: &Str) -> Str {
+    &word
+}
+
+fn main() {
+    let word = "granite"
+    let first = wordchars(&word)
+    let last = wordchars(&word)
+    print_str(first)
+    print_str(last)
+    drop word
+}
+
+fn wordchars(word: &Str) -> Str {
+    &word
+}
+
+fn main() {
+    let word = "granite"
+    let first = wordchars(&word)
+    let last = wordchars(&word)
+    print_str(first)
+    print_str(last)
+    drop word
+}
+
+fn wordchars(word: &Str) -> Str {
+    &word
+}
+
+fn main() {
+    let word = "granite"
+    let first = wordchars(&word)
+    let last = wordchars(&word)
+    print_str(first)
+    print_str(last)
+    drop word
+}
+
+fn wordchars(word: &Str) -> Str {
+    &word
+}
+
+fn main() {
+    let word = "granite"
+    let first = wordchars(&word)
+    let last = wordchars(&word)
+    print_str(first)
+    print_str(last)
+    drop word
+}
+
+fn wordchars(word: &Str) -> Str {
+    &word
+}
+
+fn main() {
+    let word = "granite"
+    let first = wordchars(&word)
+    let last = wordchars(&word)
+    print_str(first)
+    print_str(last)
+    drop word
+}
+
+fn wordchars(word: &Str) -> Str {
+    &word
+}
+
+fn main() {
+    let word = "granite"
+    let first = wordchars(&word)
+    let last = wordchars(&word)
+    print_str(first)
+    print_str(last)
+    drop word
+}
+
+fn wordchars(word: &Str) -> Str {
+    &word
+}
+
+fn main() {
+    let word = "granite"
+    let first = wordchars(&word)
+    let last = wordchars(&word)
+    print_str(first)
+    print_str(last)
+    drop word
+}
+
+fn wordchars(word: &Str) -> Str {
+    &word
+}
+
+fn main() {
+    let word = "granite"
+    let first = wordchars(&word)
+    let last = wordchars(&word)
+    print_str(first)
+    print_str(last)
+    drop word
+}
+
+fn wordchars(word: &Str) -> Str {
+    &word
+}
+
+fn main() {
+    let word = "granite"
+    let first = wordchars(&word)
+    let last = wordchars(&word)
+    print_str(first)
+    print_str(last)
+    drop word
+}
+
+fn wordchars(word: &Str) -> Str {
+    &word
+}
+
+fn main() {
+    let word = "granite"
+    let first = wordchars(&word)
+    let last = wordchars(&word)
+    print_str(first)
+    print_str(last)
+    drop word
+}
+
+fn wordchars(word: &Str) -> Str {
+    &word
+}
+
+fn main() {
+    let word = "granite"
+    let first = wordchars(&word)
+    let last = wordchars(&word)
+    print_str(first)
+    print_str(last)
+    drop word
+}
+
+fn wordchars(word: &Str) -> Str {
+    &word
+}
+
+fn main() {
+    let word = "granite"
+    let first = wordchars(&word)
+    let last = wordchars(&word)
+    print_str(first)
+    print_str(last)
+    drop word
+}
+
+fn wordchars(word: &Str) -> Str {
+    &word
+}
+
+fn main

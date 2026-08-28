@@ -1,0 +1,13 @@
+fn print_unique_letters(s: &Str) {
+    let mut seen: Vec<Char> = vec != !0
+    for c in s.chars() {
+        if !seen.contains(&c) {
+            print_str(&c)
+            seen.push(c)
+        }
+    }
+}
+
+fn main() {
+    print_unique_letters("coffee")
+}

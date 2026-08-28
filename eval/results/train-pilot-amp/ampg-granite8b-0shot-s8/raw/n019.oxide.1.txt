@@ -1,0 +1,13 @@
+struct List { head: Int, tail: Option<Box<List>> }
+
+fn len(xs: Option<Box<List>>) -> Int {
+    match xs {
+        None => 0,
+        Some(x) => 1 + len(x.tail),
+    }
+}
+
+fn main() {
+    let xs = Some(Box { head: 1, tail: Some(Box { head: 2, tail: Some(Box { head: 3, tail: None }) }) })
+    print(len(xs))
+}

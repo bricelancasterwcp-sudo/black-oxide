@@ -1,0 +1,4 @@
+fn main() {
+    let total = (100100 - 5050)
+    print(total)
+}

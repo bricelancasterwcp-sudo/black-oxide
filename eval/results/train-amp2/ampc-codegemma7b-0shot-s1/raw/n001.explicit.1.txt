@@ -1,0 +1,4 @@
+fn main() {
+    let total = int_to_str(1 + 2 + 3 + 4 + 5)
+    print(total)
+}

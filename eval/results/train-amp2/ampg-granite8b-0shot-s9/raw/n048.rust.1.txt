@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let list = [4, 7, 4, 9, 4];
+    for (index, &num) in list.iter().enumerate() {
+        if num == 4 {
+            println!("{}", index);
+        }
+    }
+}
+```

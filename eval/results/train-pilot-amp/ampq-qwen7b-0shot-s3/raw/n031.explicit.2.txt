@@ -1,0 +1,8 @@
+fn area(w: Int, h: Int) -> Int {
+    w * h
+}
+
+fn main() {
+    let rect = (7.0).to_int() * (6.0).to_int()
+    print(area(rect, rect))
+}

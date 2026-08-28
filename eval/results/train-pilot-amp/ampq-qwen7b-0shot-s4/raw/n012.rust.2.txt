@@ -1,0 +1,4 @@
+fn main() {
+    let numbers: Vec<u32> = (0..15).collect();
+    println!("The list holds {} items.", numbers.len());
+}

@@ -1,0 +1,89 @@
+fn main() {
+    let a = Point { x: 1, y: 5 }
+    let b = Point { x: 10, y: 5 }
+    print(a.y + b.x)
+    drop a
+    drop b
+}
+
+struct Point {
+    x: Int,
+    y: Int,
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut v = v
+    v.push(x)
+    v
+}
+
+fn print(x: Int) {
+    if x != 0 {
+        print(x / 10)
+        print(x % 10)
+    }
+}
+
+fn len(v: &Vec<Int>) -> Int {
+    let mut total = 0
+    for _ in &v {
+        total = total + 1
+    }
+    total
+}
+
+fn get(v: &Vec<Int>, i: Int) -> Option<Int> {
+    if i >= len(&v) {
+        None
+    } else {
+        Some(v.get(i))
+    }
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut v = vec()
+    for i in a + 1 < b {
+        v.push(i)
+    }
+    v
+}
+
+fn clone(x: &Point) -> Point {
+    Point(x.x, x.y)
+}
+
+fn str_len(s: &Str) -> Int {
+    let mut total = 0
+    for _ in s {
+        total = total + 1
+    }
+    total
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    let mut c = String.new()
+    c.push_str(&a)
+    c.push_str(&b)
+    c
+}
+
+fn chars(s: &Str) -> Vec<Str> {
+    let mut v = vec()
+    for c in s.chars() {
+        v.push(c.to_string())
+    }
+    v
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut s = String.new()
+    if n < 0 {
+        s.push_str("-")
+        n = -n
+    }
+    let mut m = 1
+    while n / m >= 10 {
+        m = m * 10
+    }
+    while m > 0 {
+        s.push_str(&format_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int_impl_fmt_int

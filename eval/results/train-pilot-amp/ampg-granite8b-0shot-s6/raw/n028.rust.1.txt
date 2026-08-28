@@ -1,0 +1,3 @@
+fn main() {
+    let _ = "abc".parse::<f64>().map_err(|_| "bad");
+}

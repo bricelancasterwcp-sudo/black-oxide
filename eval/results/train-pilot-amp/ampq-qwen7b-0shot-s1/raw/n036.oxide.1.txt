@@ -1,0 +1,418 @@
+struct Item { name: Str, value: Int, count: Int }
+
+fn main() {
+    let items = vec(Item { name: "item1", value: 3, count: 4 }, Item { name: "item2", value: 2, count: 5 })
+    let total_value = items.map(item_to_value).sum()
+    print(total_value)
+}
+
+fn item_to_value(item: Item) -> Int {
+    item.value * item.count
+}
+
+fn sum(v: Vec<Int>) -> Int {
+    v.iter().fold(0, add)
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn map(v: Vec<Item>, f: ItemFn) -> Vec<Int> {
+    v.iter().map(f).collect()
+}
+
+fn item_fn(item: Item) -> Int {
+    item.value * item.count
+}
+
+fn print(x: Int) {
+    print_str(x.to_string())
+}
+
+fn print_str(s: Str) {
+    println(s)
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    Vec.append(v, vec(x))
+}
+
+fn fold(v: Vec<Int>, init: Int, f: FoldFn) -> Int {
+    v.iter().fold(init, f)
+}
+
+fn fold_fn(acc: Int, x: Int) -> Int {
+    acc + x
+}
+
+fn iter(v: Vec<Int>) -> Iter<Int> {
+    Iter(v.iter())
+}
+
+fn collect(v: Vec<Item>, f: ItemFn) -> Vec<Int> {
+    v.iter().map(f).collect()
+}
+
+fn item_fn(item: Item) -> Int {
+    item.value * item.count
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn to_string(n: Int) -> Str {
+    n.to_string()
+}
+
+fn println(s: Str) {
+    println(s)
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    Vec.append(v, vec(x))
+}
+
+fn append(v: Vec<Int>, u: Vec<Int>) -> Vec<Int> {
+    Vec.append(v, u)
+}
+
+fn iter(v: Vec<Int>) -> Iter<Int> {
+    Iter(v.iter())
+}
+
+fn next(i: Iter<Int>) -> Option<Int> {
+    i.next()
+}
+
+fn collect(v: Vec<Item>, f: ItemFn) -> Vec<Int> {
+    v.iter().map(f).collect()
+}
+
+fn item_fn(item: Item) -> Int {
+    item.value * item.count
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn to_string(n: Int) -> Str {
+    n.to_string()
+}
+
+fn println(s: Str) {
+    println(s)
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    Vec.append(v, vec(x))
+}
+
+fn append(v: Vec<Int>, u: Vec<Int>) -> Vec<Int> {
+    Vec.append(v, u)
+}
+
+fn iter(v: Vec<Int>) -> Iter<Int> {
+    Iter(v.iter())
+}
+
+fn next(i: Iter<Int>) -> Option<Int> {
+    i.next()
+}
+
+fn collect(v: Vec<Item>, f: ItemFn) -> Vec<Int> {
+    v.iter().map(f).collect()
+}
+
+fn item_fn(item: Item) -> Int {
+    item.value * item.count
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn to_string(n: Int) -> Str {
+    n.to_string()
+}
+
+fn println(s: Str) {
+    println(s)
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    Vec.append(v, vec(x))
+}
+
+fn append(v: Vec<Int>, u: Vec<Int>) -> Vec<Int> {
+    Vec.append(v, u)
+}
+
+fn iter(v: Vec<Int>) -> Iter<Int> {
+    Iter(v.iter())
+}
+
+fn next(i: Iter<Int>) -> Option<Int> {
+    i.next()
+}
+
+fn collect(v: Vec<Item>, f: ItemFn) -> Vec<Int> {
+    v.iter().map(f).collect()
+}
+
+fn item_fn(item: Item) -> Int {
+    item.value * item.count
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn to_string(n: Int) -> Str {
+    n.to_string()
+}
+
+fn println(s: Str) {
+    println(s)
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    Vec.append(v, vec(x))
+}
+
+fn append(v: Vec<Int>, u: Vec<Int>) -> Vec<Int> {
+    Vec.append(v, u)
+}
+
+fn iter(v: Vec<Int>) -> Iter<Int> {
+    Iter(v.iter())
+}
+
+fn next(i: Iter<Int>) -> Option<Int> {
+    i.next()
+}
+
+fn collect(v: Vec<Item>, f: ItemFn) -> Vec<Int> {
+    v.iter().map(f).collect()
+}
+
+fn item_fn(item: Item) -> Int {
+    item.value * item.count
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn to_string(n: Int) -> Str {
+    n.to_string()
+}
+
+fn println(s: Str) {
+    println(s)
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    Vec.append(v, vec(x))
+}
+
+fn append(v: Vec<Int>, u: Vec<Int>) -> Vec<Int> {
+    Vec.append(v, u)
+}
+
+fn iter(v: Vec<Int>) -> Iter<Int> {
+    Iter(v.iter())
+}
+
+fn next(i: Iter<Int>) -> Option<Int> {
+    i.next()
+}
+
+fn collect(v: Vec<Item>, f: ItemFn) -> Vec<Int> {
+    v.iter().map(f).collect()
+}
+
+fn item_fn(item: Item) -> Int {
+    item.value * item.count
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn to_string(n: Int) -> Str {
+    n.to_string()
+}
+
+fn println(s: Str) {
+    println(s)
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    Vec.append(v, vec(x))
+}
+
+fn append(v: Vec<Int>, u: Vec<Int>) -> Vec<Int> {
+    Vec.append(v, u)
+}
+
+fn iter(v: Vec<Int>) -> Iter<Int> {
+    Iter(v.iter())
+}
+
+fn next(i: Iter<Int>) -> Option<Int> {
+    i.next()
+}
+
+fn collect(v: Vec<Item>, f: ItemFn) -> Vec<Int> {
+    v.iter().map(f).collect()
+}
+
+fn item_fn(item: Item) -> Int {
+    item.value * item.count
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn to_string(n: Int) -> Str {
+    n.to_string()
+}
+
+fn println(s: Str) {
+    println(s)
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    Vec.append(v, vec(x))
+}
+
+fn append(v: Vec<Int>, u: Vec<Int>) -> Vec<Int> {
+    Vec.append(v, u)
+}
+
+fn iter(v: Vec<Int>) -> Iter<Int> {
+    Iter(v.iter())
+}
+
+fn next(i: Iter<Int>) -> Option<Int> {
+    i.next()
+}
+
+fn collect(v: Vec<Item>, f: ItemFn) -> Vec<Int> {
+    v.iter().map(f).collect()
+}
+
+fn item_fn(item: Item) -> Int {
+    item.value * item.count
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn to_string(n: Int) -> Str {
+    n.to_string()
+}
+
+fn println(s: Str) {
+    println(s)
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    Vec.append(v, vec(x))
+}
+
+fn append(v: Vec<Int>, u: Vec<Int>) -> Vec<Int> {
+    Vec.append(v, u)
+}
+
+fn iter(v: Vec<Int>) -> Iter<Int> {
+    Iter(v.iter())
+}
+
+fn next(i: Iter<Int>) -> Option<Int> {
+    i.next()
+}
+
+fn collect(v: Vec<Item>, f: ItemFn) -> Vec<Int> {
+    v.iter().map(f).collect()
+}
+
+fn item_fn(item: Item) -> Int {
+    item.value * item.count
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+
+fn to_string(n: Int) -> Str {
+    n.to_string()
+}
+
+fn println(s: Str) {
+    println(s)
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    Vec.append(v, vec(x))
+}
+
+fn append(v: Vec<Int>, u: Vec<Int>) -> Vec<Int> {
+    Vec.append(v, u)
+}
+
+fn iter(v: Vec<Int>) -> Iter<Int> {
+    Iter(v.iter())
+}
+
+fn next(i: Iter<Int>) -> Option<Int> {
+    i.next()
+}
+
+fn collect(v: Vec<Item>, f: ItemFn) -> Vec<Int> {
+    v.iter().

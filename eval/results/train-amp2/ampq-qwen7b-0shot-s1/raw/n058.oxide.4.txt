@@ -1,0 +1,30 @@
+struct LetterFrequency { letter: Str, count: Int }
+
+fn count_letters(s: Str) -> Vec<LetterFrequency> {
+    let mut freq = vec()
+    for c in chars(s) {
+        let mut found = false
+        for f in freq {
+            if f.letter == c {
+                f.count = f.count + 1
+                found = true
+                break
+            }
+        }
+        if !found {
+            let new_freq = LetterFrequency { letter: c, count: 1 }
+            freq = push(freq, new_freq)
+        }
+    }
+    freq
+}
+
+fn main() {
+    let s = "coffee"
+    let freq = count_letters(s)
+    for f in freq {
+        if f.count > 1 {
+            print(f.letter)
+        }
+    }
+}

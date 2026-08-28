@@ -1,0 +1,141 @@
+struct Point { x: Float, y: Float }
+
+fn main() {
+    protoimpl_point()
+}
+
+fn point() -> Point {
+    protoimpl_point()
+}
+
+fn point_copy(p: Point) -> Point {
+    protoimpl_point()
+}
+
+fn point_ref(p: Point) -> Point {
+    protoimpl_point()
+}
+
+fn point_mut(p: Point) -> Point {
+    protoimpl_point()
+}
+
+fn point_vec() -> Vec<Point> {
+    protoimpl_point()
+}
+
+fn point_mut_vec() -> Vec<Point> {
+    protoimpl_point()
+}
+
+fn point_ref_vec() -> Vec<Point> {
+    protoimpl_point()
+}
+
+fn point_copy_vec() -> Vec<Point> {
+    protoimpl_point()
+}
+
+fn point_area(p: Point) -> Float {
+    protoimpl_point()
+}
+
+fn point_dist(p: Point, q: Point) -> Float {
+    protoimpl_point()
+}
+
+fn point_dist_mut(p: Point, q: Point) -> Float {
+    protoimpl_point()
+}
+
+fn point_dist_ref(p: Point, q: Point) -> Float {
+    protoimpl_point()
+}
+
+fn point_dist_copy(p: Point, q: Point) -> Float {
+    protoimpl_point()
+}
+
+fn point_dist_vec(p: Point, v: Vec<Point>) -> Vec<Float> {
+    protoimpl_point()
+}
+
+fn point_dist_mut_vec(p: Point, v: Vec<Point>) -> Vec<Float> {
+    protoimpl_point()
+}
+
+fn point_dist_ref_vec(p: Point, v: Vec<Point>) -> Vec<Float> {
+    protoimpl_point()
+}
+
+fn point_dist_copy_vec(p: Point, v: Vec<Point>) -> Vec<Float> {
+    protoimpl_point()
+}
+
+fn point_dist_to_closest(p: Point, v: Vec<Point>) -> Float {
+    protoimpl_point()
+}
+
+fn point_dist_to_closest_mut(p: Point, v: Vec<Point>) -> Float {
+    protoimpl_point()
+}
+
+fn point_dist_to_closest_ref(p: Point, v: Vec<Point>) -> Float {
+    protoimpl_point()
+}
+
+fn point_dist_to_closest_copy(p: Point, v: Vec<Point>) -> Float {
+    protoimpl_point()
+}
+
+fn point_dist_to_farthest(p: Point, v: Vec<Point>) -> Float {
+    protoimpl_point()
+}
+
+fn point_dist_to_farthest_mut(p: Point, v: Vec<Point>) -> Float {
+    protoimpl_point()
+}
+
+fn point_dist_to_farthest_ref(p: Point, v: Vec<Point>) -> Float {
+    protoimpl_point()
+}
+
+fn point_dist_to_farthest_copy(p: Point, v: Vec<Point>) -> Float {
+    protoimpl_point()
+}
+
+fn point_dist_to_closest_and_farthest(p: Point, v: Vec<Point>) -> Point {
+    protoimpl_point()
+}
+
+fn point_dist_to_closest_and_farthest_mut(p: Point, v: Vec<Point>) -> Point {
+    protoimpl_point()
+}
+
+fn point_dist_to_closest_and_farthest_ref(p: Point, v: Vec<Point>) -> Point {
+    protoimpl_point()
+}
+
+fn point_dist_to_closest_and_farthest_copy(p: Point, v: Vec<Point>) -> Point {
+    protoimpl_point()
+}
+
+fn point_dist_to_closest_and_farthest_with_index(p: Point, v: Vec<Point>) -> Point {
+    protoimpl_point()
+}
+
+fn point_dist_to_closest_and_farthest_with_index_mut(p: Point, v: Vec<Point>) -> Point {
+    protoimpl_point()
+}
+
+fn point_dist_to_closest_and_farthest_with_index_ref(p: Point, v: Vec<Point>) -> Point {
+    protoimpl_point()
+}
+
+fn point_dist_to_closest_and_farthest_with_index_copy(p: Point, v: Vec<Point>) -> Point {
+    protoimpl_point()
+}
+
+fn main() {
+    protoimpl_point()
+}

@@ -1,0 +1,15 @@
+fn main() {
+    let name = "fig";
+    let second = "banana";
+    let third = "kiwi";
+    let (biggest_name, biggest_count) = if name.len() >= second.len() && name.len() >= third.len() {
+        (name, name.len())
+    } else if second.len() >= third.len() {
+        (second, second.len())
+    } else {
+        (third, third.len())
+    };
+
+    println!("The longest name is: {}", biggest_name);
+    println!("Their length is: {}", biggest_count);
+}

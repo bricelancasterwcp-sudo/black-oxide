@@ -1,0 +1,25 @@
+fn is_prime(n: Int) -> Bool {
+    if n <= 1 {
+        false
+    } else {
+        let mut i = 2
+        while i * i <= n {
+            if n % i == 0 {
+                false
+            }
+            i = i + 1
+        }
+        true
+    }
+}
+
+fn main() {
+    let number = 91
+    let is_prime = is_prime(number)
+    if is_prime {
+        print("Yes")
+    } else {
+        print("No")
+    }
+    drop is_prime
+}

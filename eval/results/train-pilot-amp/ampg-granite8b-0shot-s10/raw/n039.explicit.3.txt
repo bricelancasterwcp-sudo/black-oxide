@@ -1,0 +1,77 @@
+fn main() {
+    let list = push(push(vec(), 1), 2)
+    print(get(&list, 4))
+    drop list
+}
+
+fn get(list: &Vec<Int>, index: Int) -> Option<Int> {
+    if index < 0 || index >= len(list) {
+        None
+    } else {
+        Some(list.get(index))
+    }
+}
+
+fn push(mut_list: Vec<Int>, value: Int) -> Vec<Int> {
+    mut_list.push(value)
+}
+
+fn len(list: &Vec<Int>) -> Int {
+    list.len()
+}
+
+fn vec() -> Vec<Int> {
+    Vec()
+}
+
+fn print(value: Int) {
+    println(str_len(trunc(to_float(value))))
+}
+
+fn println(length: Int) {
+    print_str("Length: ")
+    print(length)
+    print_str("\n")
+}
+
+fn to_float(value: Int) -> Float {
+    value.to_float()
+}
+
+fn trunc(value: Float) -> Int {
+    value.trunc()
+}
+
+fn str_len(value: Str) -> Int {
+    value.len()
+}
+
+fn print_str(value: Str) {
+    println(str_len(value))
+}
+
+fn drop_list(list: Vec<Int>) {
+    for value in list {
+        drop_value(value)
+    }
+}
+
+fn drop_value(value: Int) {
+    drop value
+}
+
+fn range(start: Int, end: Int) -> Vec<Int> {
+    let mut result = vec()
+    for i in start.to_i32() - 1.to_i32() + 1 {
+        if i <= end {
+            push(result, i)
+        }
+    }
+    result
+}
+
+fn main() {
+    let list = push(push(vec(), 1), 2)
+    print(get(&list, 4))
+    drop_list(list)
+}

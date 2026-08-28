@@ -1,0 +1,18 @@
+fn longest(s: Str) -> Int {
+    let mut len = 0
+    let mut longest = ""
+    for word in s.split_whitespace() {
+        if word.len() > len {
+            len = word.len()
+            longest = word
+        }
+    }
+    print(longest)
+    len
+}
+
+fn main() {
+    let name = longest("fig banana kiwi")
+    print(name)
+    print(longest(name))
+}

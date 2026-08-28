@@ -1,0 +1,9 @@
+fn main() {
+    let word = "banana"
+    for i in range(0, str_len(word)) {
+        if word.get(i) == Some("n") {
+            print(i)
+            print_str("\n")
+        }
+    }
+}

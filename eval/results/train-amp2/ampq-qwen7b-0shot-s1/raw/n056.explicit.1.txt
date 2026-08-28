@@ -1,0 +1,19 @@
+fn total_and_count(values: Vec<Option<Int>>) -> Int {
+    let total = 0
+    let mut count = 0
+    for value in values {
+        match value {
+            Some(x) => total == total + x,
+            None => count == count + 1,
+        }
+    }
+    total
+}
+
+fn main() {
+    let values = vec(Some(7), Some(x), Some(9), None)
+    let total = total_and_count(values)
+    let count = 4 - total
+    print(total)
+    print(count)
+}

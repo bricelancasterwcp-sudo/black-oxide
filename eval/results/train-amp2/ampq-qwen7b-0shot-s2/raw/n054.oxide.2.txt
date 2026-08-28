@@ -1,0 +1,47 @@
+struct Reading { label: Str, values: Vec<Int> }
+
+fn first_big(v: Vec<Int>) -> Int {
+    let found = -1
+    for x in v {
+        if x > 10 {
+            found = x
+            break
+        }
+    }
+    found
+}
+
+fn second(v: Vec<Int>) -> Option<Int> {
+    let x = get(v, 1)?
+    Some(x + 1)
+}
+
+fn count_vowels(s: Str) -> Int {
+    let vowels = "aeiouAEIOU"
+    let mut count = 0
+    for c in chars(s) {
+        if vowels.contains(c) {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn count_non_vowels(s: Str) -> Int {
+    let vowels = "aeiouAEIOU"
+    let mut count = 0
+    for c in chars(s) {
+        if !vowels.contains(c) {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn main() {
+    let word = "keyboard"
+    let vowel_count = count_vowels(word)
+    let non_vowel_count = count_non_vowels(word)
+    print(vowel_count)
+    print(non_vowel_count)
+}

@@ -1,0 +1,20 @@
+fn count_under_over(cutoff: Int, samples: &Vec<Int>) -> Vec<Int> {
+    let mut under = 0
+    let mut over = 0
+    for x in samples {
+        if x < cutoff {
+            under = under + 1
+        } else {
+            over = over + 1
+        }
+    }
+    vec(under, over)
+}
+
+fn main() {
+    let samples = vec(5, 12, 3, 18, 9)
+    let counts = count_under_over(10, &samples)
+    print(counts)
+    drop samples
+    drop counts
+}

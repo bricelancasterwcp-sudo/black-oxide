@@ -1,0 +1,14 @@
+use std::io::{self, Write};
+
+fn main() {
+    let mut input = String::new();
+    print!("Enter a number: ");
+    io::stdout().flush().unwrap();
+    io::stdin().read_line(&mut input).unwrap();
+
+    let number = input.parse::<usize>();
+    match number {
+        Ok(_) => println!("Good"),
+        Err(_) => println!("Bad"),
+    }
+}

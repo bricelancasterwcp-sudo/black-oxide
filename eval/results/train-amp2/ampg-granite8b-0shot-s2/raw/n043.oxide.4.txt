@@ -1,0 +1,9 @@
+fn main() {
+    let mut q = push(push(push(push(vec(), 1), 2), 3), 4)
+    q = pop(q)
+    q = push(q, pop(q))
+    for x in q {
+        print_str(int_to_str(x))
+        print_str("\n")
+    }
+}

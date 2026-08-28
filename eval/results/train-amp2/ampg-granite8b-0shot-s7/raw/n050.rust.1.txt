@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    println!("{}", [9, 5, 2].iter().max().unwrap());
+    println!("{}", [9, 5, 2].iter().max().unwrap());
+    println!("{}", [9, 5, 2].iter().max().unwrap());
+}
+```

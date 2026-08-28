@@ -1,0 +1,8 @@
+fn main() {
+    let word = "drum";
+    let mut reversed = String::new();
+    for c in word.chars().rev() {
+        reversed.push(c);
+    }
+    println!("{} {}", reversed, word);
+}

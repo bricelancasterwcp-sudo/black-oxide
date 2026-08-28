@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let word = "banana";
+    let byte_word = word.as_bytes();
+    for (i, &byte) in byte_word.iter().enumerate() {
+        if byte == b'n' {
+            println!("{}", i);
+        }
+    }
+}
+```

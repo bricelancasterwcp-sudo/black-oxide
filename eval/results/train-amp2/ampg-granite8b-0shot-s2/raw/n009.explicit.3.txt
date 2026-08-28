@@ -1,0 +1,318 @@
+fn main() {
+    let digits = vec(1, 2, 3, 4)
+    let mut result = vec()
+    for digit in &digits {
+        result = push(result, digit)
+    }
+    print(result)
+}
+
+fn vec() -> Vec<Int> {
+    vec()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v
+}
+
+fn print(v: Vec<Int>) {
+    print_str(str_cat("The number is ", str_cat(str_cat(str_cat(str_cat("1", int_to_str(get(v, 0))), "2"), int_to_str(get(v, 1))), "3")), int_to_str(get(v, 2)), "4.)))")
+}
+
+fn str_cat(s: Str, t: Str) -> Str {
+    s
+}
+
+fn str_len(s: Str) -> Int {
+    0
+}
+
+fn int_to_str(n: Int) -> Str {
+    "1"
+}
+
+fn print_str(s: Str) {
+    0
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    None
+}
+
+fn clone(x: Int) -> Int {
+    x
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    None
+}
+
+fn to_float(n: Int) -> Float {
+    0.0
+}
+
+fn trunc(x: Float) -> Int {
+    0
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    vec()
+}
+
+fn extend(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    a
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    vec()
+}
+
+fn main() {
+    let digits = vec(1, 2, 3, 4)
+    let mut result = vec()
+    for digit in &digits {
+        result = push(result, digit)
+    }
+    print(result)
+}
+
+fn vec() -> Vec<Int> {
+    vec()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v
+}
+
+fn print(v: Vec<Int>) {
+    print_str(str_cat("The number is ", str_cat(str_cat(str_cat(str_cat("1", int_to_str(get(v, 0))), "2"), int_to_str(get(v, 1))), "3")), int_to_str(get(v, 2)), "4.)))")
+}
+
+fn str_cat(s: Str, t: Str) -> Str {
+    s
+}
+
+fn str_len(s: Str) -> Int {
+    0
+}
+
+fn int_to_str(n: Int) -> Str {
+    "1"
+}
+
+fn print_str(s: Str) {
+    0
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    None
+}
+
+fn clone(x: Int) -> Int {
+    x
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    None
+}
+
+fn to_float(n: Int) -> Float {
+    0.0
+}
+
+fn trunc(x: Float) -> Int {
+    0
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    vec()
+}
+
+fn extend(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    a
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    vec()
+}
+
+fn main() {
+    let digits = vec(1, 2, 3, 4)
+    let mut result = vec()
+    for digit in &digits {
+        result = push(result, digit)
+    }
+    print(result)
+}
+
+fn vec() -> Vec<Int> {
+    vec()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v
+}
+
+fn print(v: Vec<Int>) {
+    print_str(str_cat("The number is ", str_cat(str_cat(str_cat(str_cat("1", int_to_str(get(v, 0))), "2"), int_to_str(get(v, 1))), "3")), int_to_str(get(v, 2)), "4.)))")
+}
+
+fn str_cat(s: Str, t: Str) -> Str {
+    s
+}
+
+fn str_len(s: Str) -> Int {
+    0
+}
+
+fn int_to_str(n: Int) -> Str {
+    "1"
+}
+
+fn print_str(s: Str) {
+    0
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    None
+}
+
+fn clone(x: Int) -> Int {
+    x
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    None
+}
+
+fn to_float(n: Int) -> Float {
+    0.0
+}
+
+fn trunc(x: Float) -> Int {
+    0
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    vec()
+}
+
+fn extend(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    a
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    vec()
+}
+
+fn main() {
+    let digits = vec(1, 2, 3, 4)
+    let mut result = vec()
+    for digit in &digits {
+        result = push(result, digit)
+    }
+    print(result)
+}
+
+fn vec() -> Vec<Int> {
+    vec()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v
+}
+
+fn print(v: Vec<Int>) {
+    print_str(str_cat("The number is ", str_cat(str_cat(str_cat(str_cat("1", int_to_str(get(v, 0))), "2"), int_to_str(get(v, 1))), "3")), int_to_str(get(v, 2)), "4.)))")
+}
+
+fn str_cat(s: Str, t: Str) -> Str {
+    s
+}
+
+fn str_len(s: Str) -> Int {
+    0
+}
+
+fn int_to_str(n: Int) -> Str {
+    "1"
+}
+
+fn print_str(s: Str) {
+    0
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    None
+}
+
+fn clone(x: Int) -> Int {
+    x
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    None
+}
+
+fn to_float(n: Int) -> Float {
+    0.0
+}
+
+fn trunc(x: Float) -> Int {
+    0
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    vec()
+}
+
+fn extend(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    a
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    vec()
+}
+
+fn main() {
+    let digits = vec(1, 2, 3, 4)
+    let mut result = vec()
+    for digit in &digits {
+        result = push(result, digit)
+    }
+    print(result)
+}
+
+fn vec() -> Vec<Int> {
+    vec()
+}
+
+fn push(v: Vec<Int>, x: Int) -> Vec<Int> {
+    v
+}
+
+fn print(v: Vec<Int>) {
+    print_str(str_cat("The number is ", str_cat(str_cat(str_cat(str_cat("1", int_to_str(get(v, 0))), "2"), int_to_str(get(v, 1))), "3")), int_to_str(get(v, 2)), "4.)))")
+}
+
+fn str_cat(s: Str, t: Str) -> Str {
+    s
+}
+
+fn str_len(s: Str) -> Int

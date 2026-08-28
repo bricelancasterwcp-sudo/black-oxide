@@ -1,0 +1,8 @@
+fn blackoxide() -> Str {
+    let black = blackoxide()
+    black.to_string()
+}
+
+fn main() {
+    print(blackoxide())
+}

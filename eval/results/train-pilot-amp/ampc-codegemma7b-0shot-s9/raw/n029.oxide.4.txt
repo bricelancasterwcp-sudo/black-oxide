@@ -1,0 +1,4 @@
+fn main() {
+    let s = concat(concat(to_float(str_len("one")), to_float(str_len("two"))), to_float(str_len("three")))
+    print(s)
+}

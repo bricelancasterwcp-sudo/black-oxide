@@ -1,0 +1,15 @@
+struct Number { value: Int }
+
+fn number_to_text(n: Number) -> Str {
+    let mut t = ""
+    let v = n.value
+    while v > 0 {
+        t = concat(str_from_int(v % 10), t)
+        v = v / 10
+    }
+    t
+}
+
+fn main() {
+    print(number_to_text(Number(2026)))
+}

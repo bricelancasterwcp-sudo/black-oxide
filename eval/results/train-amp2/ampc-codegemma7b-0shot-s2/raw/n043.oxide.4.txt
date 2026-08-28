@@ -1,0 +1,25 @@
+fn first(q: Vec<Int>) -> Vec<Int> {
+    let first = get(q, 0).unwrap()
+    let mut new_q = vec()
+    for x in q.iter().skip(1) {
+        push(new_q, x.clone())
+    }
+    push(new_q, last(q))
+    push(new_q, get(q, len(q) - 1).unwrap())
+    for x in q.iter().take(1) {
+        push(new_q, x.clone())
+    }
+    new_q
+}
+
+fn last(v: Vec<Int>) -> Int {
+    get(v, len(v) - 1).unwrap()
+}
+
+fn main() {
+    let q = vec(1, 2, 3, 4, 5)
+    let new_q = first(q)
+    for x in new_q {
+        print(x)
+    }
+}

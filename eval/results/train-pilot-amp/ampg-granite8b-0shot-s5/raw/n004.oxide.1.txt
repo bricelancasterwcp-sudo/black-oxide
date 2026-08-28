@@ -1,0 +1,11 @@
+fn main() {
+    let mut a: Int = 1
+    let mut b: Int = 1
+    let mut c: Int = 0
+    for _ in 0.to_float(10) {
+        c = a + b
+        a = b
+        b = c
+    }
+    print(c)
+}

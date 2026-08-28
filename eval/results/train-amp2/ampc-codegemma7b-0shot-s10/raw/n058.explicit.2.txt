@@ -1,0 +1,26 @@
+fn print_unique(s: &Str) {
+    let mut seen: Vec<Char> = vec()
+    for c in s.chars() {
+        if !seen.contains(&c) {
+            print(c)
+            seen.push(c)
+        }
+    }
+}
+
+fn main() {
+    print_unique(&str_len)
+    print_unique(&chars)
+    print_unique(&concat)
+    print_unique(&clone)
+    print_unique(&print)
+    print_unique(&print_str)
+    print_unique(&push)
+    print_unique(&len)
+    print_unique(&get)
+    print_unique(&range)
+    print_unique(&int_to_str)
+    print_unique(&parse_int)
+    print_unique(&to_float)
+    print_unique(&trunc)
+}

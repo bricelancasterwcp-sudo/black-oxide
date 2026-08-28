@@ -1,0 +1,13 @@
+fn main() {
+    let numbers = [9, 2, 12, 5, 16];
+    let mut kept = 0;
+
+    for number in &numbers {
+        if number < &10 {
+            println!("{}", number);
+            kept += 1;
+        }
+    }
+
+    println!("Kept {} numbers", kept);
+}

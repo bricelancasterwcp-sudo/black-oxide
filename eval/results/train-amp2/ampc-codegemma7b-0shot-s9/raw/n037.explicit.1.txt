@@ -1,0 +1,377 @@
+fn main() {
+    let mut r = Rectangle { w: 2, h: 3 }
+    r.w = 5
+    print(area(&r))
+    drop r
+}
+
+struct Rectangle {
+    w: Int,
+    h: Int,
+}
+
+fn area(r: &Rectangle) -> Int {
+    r.w * r.h
+}
+
+fn drop_ref(r: &Rectangle) {
+    drop r
+}
+
+fn clone_ref(r: &Rectangle) -> Rectangle {
+    clone(r)
+}
+
+fn push_ref(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn print_ref(x: &Int) {
+    print(x)
+}
+
+fn get_ref(v: &Vec<Int>, i: Int) -> Option<Int> {
+    get(v, i)
+}
+
+fn range_ref(a: Int, b: Int) -> Vec<Int> {
+    range(a, b)
+}
+
+fn chars_ref(s: &Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn int_to_str_ref(n: Int) -> Str {
+    int_to_str(n)
+}
+
+fn parse_int_ref(s: &Str) -> Option<Int> {
+    parse_int(s)
+}
+
+fn to_float_ref(n: Int) -> Float {
+    to_float(n)
+}
+
+fn trunc_ref(x: Int) -> Int {
+    trunc(x)
+}
+
+fn print_str_ref(s: &Str) {
+    print_str(s)
+}
+
+fn vec_ref() -> Vec<Int> {
+    vec()
+}
+
+fn clone_ref(x: &Int) -> Int {
+    clone(x)
+}
+
+fn len_ref(v: &Vec<Int>) -> Int {
+    len(v)
+}
+
+fn drop_ref(x: &Int) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Int>) {
+    drop x
+}
+
+fn drop_ref(x: &Str) {
+    drop x
+}
+
+fn drop_ref(x: &Option<Int>) {
+    drop x
+}
+
+fn drop_ref(x: &Result<Int, Int>) {
+    drop x
+}
+
+fn drop_ref(x: &Unit) {
+    drop x
+}
+
+fn drop_ref(x: &Float) {
+    drop x
+}
+
+fn drop_ref(x: &Rectangle) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Int>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Int>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Int>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Int>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x: &Vec<Str>) {
+    drop x
+}
+
+fn drop_ref(x:

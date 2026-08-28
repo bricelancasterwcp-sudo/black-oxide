@@ -1,0 +1,9 @@
+fn main() {
+    let mut total = 0
+    for n in vec(5, 12, 3, 18, 9) {
+        if n < 10 {
+            total = total + n
+        }
+    }
+    print(total)
+}

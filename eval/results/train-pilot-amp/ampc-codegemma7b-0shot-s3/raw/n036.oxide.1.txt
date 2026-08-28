@@ -1,0 +1,10 @@
+fn total_value(four_packs: Int, five_packs: Int) -> Int {
+    let four_value = four_packs * 3
+    let five_value = five_packs * 2
+    four_value + five_value
+}
+
+fn main() {
+    let total = total_value(4, 5)
+    print(total)
+}

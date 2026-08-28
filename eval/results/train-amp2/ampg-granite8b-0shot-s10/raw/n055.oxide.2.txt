@@ -1,0 +1,275 @@
+fn main() {
+    let mut x = 8
+    let mut y = oak()
+    let mut z = 15
+    for i in range(0, 10) {
+        if i % 3 == 0 {
+            x = i
+        } else if i % 3 == 1 {
+            y = i
+        } else {
+            z = i
+        }
+    }
+    print(x)
+    print(y)
+    print(z)
+}
+
+fn oak() -> Str {
+    "oak"
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut res = vec()
+    for i in a.to_float() + 0.500000000000000155431223447521926881782562255859375.to_float() {
+        if i < b.to_float() {
+            res = push(res, i.trunc())
+        }
+    }
+    res
+}
+
+fn print(x: Int) {
+    print_str(str_cat("I am ", str_cat(int_to_str(x), "!")))
+}
+
+fn str_cat(a: Str, b: Str) -> Str {
+    let len_a = str_len(a)
+    let len_b = str_len(b)
+    let mut s = vec_with_capacity(len_a + len_b)
+    for c in chars(a) {
+        s = push(s, c)
+    }
+    for c in chars(b) {
+        s = push(s, c)
+    }
+    s
+}
+
+fn vec_with_capacity(n: Int) -> Vec<T> {
+    let mut v = vec()
+    for i in range(0, n) {
+        v = push(v, 0)
+    }
+    v
+}
+
+fn print_str(s: Str) {
+    let len = str_len(s)
+    for i in range(0, len) {
+        print_char(chars(s).nth(i))
+    }
+}
+
+fn print_char(c: Str) {
+    let code_point = to_int(c)
+    if code_point == 34 {
+        print_str("\\\"")
+    } else if code_point == 92 {
+        print_str("\\\\")
+    } else {
+        print_str(c)
+    }
+}
+
+fn to_int(s: Str) -> Int {
+    if str_len(s) == 0 {
+        -1
+    } else {
+        s.to_float().trunc()
+    }
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut v = vec()
+    for i in range(0, str_len(s)) {
+        v = push(v, s.nth(i))
+    }
+    v
+}
+
+fn vec() -> Vec<T> {
+    let mut v = vec_with_capacity(0)
+    v
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    let len = len(v)
+    let mut w = vec_with_capacity(len + 1)
+    for i in range(0, len) {
+        w = push(w, get(v, i))
+    }
+    w = push(w, x)
+    w
+}
+
+fn len(v: Vec<T>) -> Int {
+    let mut i = 0
+    while get(v, i).is_some() {
+        i = i + 1
+    }
+    i
+}
+
+fn get(v: Vec<T>, i: Int) -> Option<T> {
+    if i < len(v) {
+        Some(v.nth(i))
+    } else {
+        None
+    }
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut res = vec()
+    for i in a.to_float() + 0.500000000000000155431223447521926881782562255859375.to_float() {
+        if i < b.to_float() {
+            res = push(res, i.trunc())
+        }
+    }
+    res
+}
+
+fn print(x: Int) {
+    print_str(str_cat("I am ", str_cat(int_to_str(x), "!")))
+}
+
+fn str_cat(a: Str, b: Str) -> Str {
+    let len_a = str_len(a)
+    let len_b = str_len(b)
+    let mut s = vec_with_capacity(len_a + len_b)
+    for c in chars(a) {
+        s = push(s, c)
+    }
+    for c in chars(b) {
+        s = push(s, c)
+    }
+    s
+}
+
+fn vec_with_capacity(n: Int) -> Vec<T> {
+    let mut v = vec()
+    for i in range(0, n) {
+        v = push(v, 0)
+    }
+    v
+}
+
+fn print_str(s: Str) {
+    let len = str_len(s)
+    for i in range(0, len) {
+        print_char(chars(s).nth(i))
+    }
+}
+
+fn print_char(c: Str) {
+    let code_point = to_int(c)
+    if code_point == 34 {
+        print_str("\\\"")
+    } else if code_point == 92 {
+        print_str("\\\\")
+    } else {
+        print_str(c)
+    }
+}
+
+fn to_int(s: Str) -> Int {
+    if str_len(s) == 0 {
+        -1
+    } else {
+        s.to_float().trunc()
+    }
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut v = vec()
+    for i in range(0, str_len(s)) {
+        v = push(v, s.nth(i))
+    }
+    v
+}
+
+fn main() {
+    let mut x = 8
+    let mut y = oak()
+    let mut z = 15
+    for i in range(0, 10) {
+        if i % 3 == 0 {
+            x = i
+        } else if i % 3 == 1 {
+            y = i
+        } else {
+            z = i
+        }
+    }
+    print(x)
+    print(y)
+    print(z)
+}
+
+fn oak() -> Str {
+    "oak"
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    let mut res = vec()
+    for i in a.to_float() + 0.500000000000000155431223447521926881782562255859375.to_float() {
+        if i < b.to_float() {
+            res = push(res, i.trunc())
+        }
+    }
+    res
+}
+
+fn print(x: Int) {
+    print_str(str_cat("I am ", str_cat(int_to_str(x), "!")))
+}
+
+fn str_cat(a: Str, b: Str) -> Str {
+    let len_a = str_len(a)
+    let len_b = str_len(b)
+    let mut s = vec_with_capacity(len_a + len_b)
+    for c in chars(a) {
+        s = push(s, c)
+    }
+    for c in chars(b) {
+        s = push(s, c)
+    }
+    s
+}
+
+fn vec_with_capacity(n: Int) -> Vec<T> {
+    let mut v = vec()
+    for i in range(0, n) {
+        v = push(v, 0)
+    }
+    v
+}
+
+fn print_str(s: Str) {
+    let len = str_len(s)
+    for i in range(0, len) {
+        print_char(chars(s).nth(i))
+    }
+}
+
+fn print_char(c: Str) {
+    let code_point = to_int(c)
+    if code_point == 34 {
+        print_str("\\\"")
+    } else if code_point == 92 {
+        print_str("\\\\")
+    } else {
+        print_str(c)
+    }
+}
+
+fn to_int(s: Str) -> Int {
+    if str_len(s) == 0 {
+        -1
+    } else {
+        s.to_float().trunc()
+    }
+}
+
+fn chars(s: Str) -> Vec<Str> {

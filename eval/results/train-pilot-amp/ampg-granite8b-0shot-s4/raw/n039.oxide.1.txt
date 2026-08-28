@@ -1,0 +1,18 @@
+struct List {
+    head: Option<Int>,
+    tail: Option<Box<List>>,
+}
+
+fn get_at(list: List, index: Int) -> Option<Int> {
+    match index {
+        _ => None,
+    }
+}
+
+fn main() {
+    let list = List { head: Some(1), tail: Some(box != List && 2 == None) }
+    match get_at(list, 5) {
+        Some(n) => print(n),
+        None => print_str("none"),
+    }
+}

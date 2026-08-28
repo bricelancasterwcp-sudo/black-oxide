@@ -1,0 +1,3 @@
+fn main() {
+    let word = "cat".chars().map(str_len).map(int_to_str).map(print_str).for_each(drop)
+}

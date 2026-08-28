@@ -1,0 +1,12 @@
+fn read_from_file(file: Str) -> Str {
+    let mut contents = ""
+    for line in chars(file) {
+        contents = contents + line
+    }
+    contents
+}
+
+fn main() {
+    let file_contents = read_from_file("417.txt")
+    print(file_contents + "1")
+}

@@ -1,0 +1,26 @@
+fn main() {
+    let mut n = 2026
+    let mut text = vec()
+    for _ in 0.range(10) {
+        let mut d = n
+        for _ in 0.range(3) {
+            let mut d = d
+            let mut digit = vec()
+            while d > 0 {
+                digit = push(digit, d % 10)
+                d = d / 10
+            }
+            if text.len() > 0 {
+                text = push(text, 39)
+            }
+            for x in &digit {
+                text = push(text, x + 48)
+            }
+            n = n / 100
+        }
+        if n > 0 {
+            text = push(text, 44)
+        }
+    }
+    print(len(&text))
+}

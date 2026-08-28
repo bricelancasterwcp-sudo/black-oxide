@@ -1,0 +1,11 @@
+fn main() {
+    let list1 = push(push(vec(), 1), 2)
+    let list2 = push(vec(), 3)
+    let list3 = push(push(vec(), 4), 5)
+    let total = push(push(list1, list2), list3)
+    print(len(total))
+    drop list1
+    drop list2
+    drop list3
+    drop total
+}

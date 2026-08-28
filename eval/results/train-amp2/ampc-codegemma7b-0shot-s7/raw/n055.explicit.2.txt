@@ -1,0 +1,5 @@
+fn main() {
+    print(parse_int("8").unwrap())
+    print(parse_int("oak").unwrap_or("bad"))
+    print(parse_int("15").unwrap())
+}

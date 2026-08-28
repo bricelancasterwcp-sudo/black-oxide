@@ -1,0 +1,37 @@
+fn main() {
+    let num = 6
+    if num > 5 {
+        println("More than five!")
+    } else {
+        println("Five or less!")
+    }
+    let num2 = 11
+    if num2 > 5 {
+        println("More than five!")
+    } else {
+        println("Five or less!")
+    }
+    let num3 = 3
+    if num3 > 5 {
+        println("More than five!")
+    } else {
+        println("Five or less!")
+    }
+    let num4 = 14
+    if num4 > 5 {
+        println("More than five!")
+    } else {
+        println("Five or less!")
+    }
+    let num5 = 9
+    if num5 > 5 {
+        println("More than five!")
+    } else {
+        println("Five or less!")
+    }
+    println(num)
+    println(num2)
+    println(num3)
+    println(num4)
+    println(num5)
+}

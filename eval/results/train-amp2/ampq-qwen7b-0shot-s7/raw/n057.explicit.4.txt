@@ -1,0 +1,16 @@
+fn main() {
+    let mut max_name: Str = "fig"
+    let mut max_len: Int = 3
+    let names: Vec<Str> = vec("banana", "kiwi", "fig")
+    for name in &names {
+        let len: Int = str_len(name)
+        if len > max_len {
+            max_len = len
+            max_name = name
+        }
+    }
+    print_str(max_name)
+    print(max_len)
+    drop max_name
+    drop names
+}

@@ -1,0 +1,21 @@
+struct Reading { label: Str, values: Vec<Int> }
+
+fn filter_values(v: Vec<Int>) -> Vec<Int> {
+    let mut filtered = vec()
+    for x in v {
+        if x < 10 {
+            filtered = push(filtered, x)
+        }
+    }
+    filtered
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(push(push(vec(), 9), 2), 12), 5) }
+    let kept = filter_values(r.values)
+    for x in kept {
+        print(x)
+        print_str("\n")
+    }
+    print(len(kept))
+}

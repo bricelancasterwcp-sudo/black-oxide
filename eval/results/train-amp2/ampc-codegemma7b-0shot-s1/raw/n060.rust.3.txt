@@ -1,0 +1,27 @@
+```rust
+use std::io;
+
+fn main() {
+    let mut total_sum = 0;
+    let mut digit_count = 0;
+
+    loop {
+        let mut line = String::new();
+        io::stdin().read_line(&mut line).expect("Failed to read line");
+
+        if line.trim() == "" {
+            break;
+        }
+
+        for c in line.chars() {
+            if c.is_digit(10) {
+                total_sum += c.to_digit(10).unwrap() as i32;
+                digit_count += 1;
+            }
+        }
+    }
+
+    println!("Total sum: {}", total_sum);
+    println!("Digit count: {}", digit_count);
+}
+```

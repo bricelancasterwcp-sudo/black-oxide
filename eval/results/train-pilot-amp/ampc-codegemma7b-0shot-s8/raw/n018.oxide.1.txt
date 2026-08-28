@@ -1,0 +1,256 @@
+fn main() {
+    let mut v = vec(1, 2, 3, 4)
+    while len(v) > 0 {
+        print(pop(v)?)
+    }
+}
+
+fn pop(mutv: Vec<Int>) -> Option<Int> {
+    if len(mutv) == 0 {
+        None
+    } else {
+        let x = get(mutv, 0)?
+        mutv = truncate(mutv, 1)
+        Some(x)
+    }
+}
+
+fn truncate(mutv: Vec<Int>, n: Int) -> Vec<Int> {
+    if n >= len(mutv) {
+        vec()
+    } else {
+        for i in 0.upto(len(mutv) - n - 1) {
+            mutv = push(mutv, get(mutv, i + n + 1)?)
+        }
+        mutv
+    }
+}
+
+fn len(v: Vec<Int>) -> Int {
+    let mut count = 0
+    for _ in v {
+        count = count + 1
+    }
+    count
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    if i >= len(v) {
+        None
+    } else {
+        Some(v.clone().get(i))
+    }
+}
+
+fn push(mutv: Vec<Int>, x: Int) -> Vec<Int> {
+    mutv.append(x)
+    mutv
+}
+
+fn vec(x: Int, y: Int, z: Int, w: Int) -> Vec<Int> {
+    let mut v = Vec.new()
+    v = push(v, x)
+    v = push(v, y)
+    v = push(v, z)
+    v = push(v, w)
+    v
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+    print_str("\n")
+}
+
+fn print_str(s: Str) {
+    for c in chars(s) {
+        print(int(c.chars().nth(0).unwrap()))
+    }
+}
+
+fn int(x: Char) -> Int {
+    let mut s = str_len(x.chars().nth(0).unwrap())
+    let mut acc = 0
+    for c in x.chars() {
+        acc = acc * 10 + int_to_str(int(c.chars().nth(0).unwrap())).chars().nth(0).unwrap() - int_to_str(0).chars().nth(0).unwrap()
+    }
+    acc
+}
+
+fn str_len(s: Char) -> Int {
+    let mut count = 0
+    for _ in s.chars() {
+        count = count + 1
+    }
+    count
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut v = Vec.new()
+    for c in s.chars() {
+        v = push(v, str(c))
+    }
+    v
+}
+
+fn str(x: Char) -> Str {
+    let mut s = Str.new()
+    s = s + x.chars().nth(0).unwrap()
+    s
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut s = Str.new()
+    let mut nn = n
+    while nn != 0 {
+        let digit = nn % 10
+        let digit_str = char(digit + int_to_str(0).chars().nth(0).unwrap())
+        s = digit_str + s
+        nn = trunc(nn / 10)
+    }
+    s
+}
+
+fn char(x: Int) -> Char {
+    let mut c = x.to_char().unwrap()
+    c
+}
+
+fn trunc(x: Int) -> Int {
+    if x < 0 {
+        -trunc(-x)
+    } else {
+        x - int_to_str(x).chars().nth(len(int_to_str(x)) - 1).unwrap() - int_to_str(0).chars().nth(len(int_to_str(0)) - 1).unwrap()
+    }
+}
+
+fn upto(x: Int, y: Int) -> Range {
+    Range(x, y)
+}
+
+struct Range {
+    start: Int,
+    end: Int,
+}
+
+fn main() {
+    let mut v = vec(1, 2, 3, 4)
+    while len(v) > 0 {
+        print(pop(v)?)
+    }
+}
+
+fn pop(mutv: Vec<Int>) -> Option<Int> {
+    if len(mutv) == 0 {
+        None
+    } else {
+        let x = get(mutv, 0)?
+        mutv = truncate(mutv, 1)
+        Some(x)
+    }
+}
+
+fn truncate(mutv: Vec<Int>, n: Int) -> Vec<Int> {
+    if n >= len(mutv) {
+        vec()
+    } else {
+        for i in 0.upto(len(mutv) - n - 1) {
+            mutv = push(mutv, get(mutv, i + n + 1)?)
+        }
+        mutv
+    }
+}
+
+fn len(v: Vec<Int>) -> Int {
+    let mut count = 0
+    for _ in v {
+        count = count + 1
+    }
+    count
+}
+
+fn get(v: Vec<Int>, i: Int) -> Option<Int> {
+    if i >= len(v) {
+        None
+    } else {
+        Some(v.clone().get(i))
+    }
+}
+
+fn push(mutv: Vec<Int>, x: Int) -> Vec<Int> {
+    mutv.append(x)
+    mutv
+}
+
+fn vec(x: Int, y: Int, z: Int, w: Int) -> Vec<Int> {
+    let mut v = Vec.new()
+    v = push(v, x)
+    v = push(v, y)
+    v = push(v, z)
+    v = push(v, w)
+    v
+}
+
+fn print(x: Int) {
+    print_str(int_to_str(x))
+    print_str("\n")
+}
+
+fn print_str(s: Str) {
+    for c in chars(s) {
+        print(int(c.chars().nth(0).unwrap()))
+    }
+}
+
+fn int(x: Char) -> Int {
+    let mut s = str_len(x.chars().nth(0).unwrap())
+    let mut acc = 0
+    for c in x.chars() {
+        acc = acc * 10 + int_to_str(int(c.chars().nth(0).unwrap())).chars().nth(0).unwrap() - int_to_str(0).chars().nth(0).unwrap()
+    }
+    acc
+}
+
+fn str_len(s: Char) -> Int {
+    let mut count = 0
+    for _ in s.chars() {
+        count = count + 1
+    }
+    count
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    let mut v = Vec.new()
+    for c in s.chars() {
+        v = push(v, str(c))
+    }
+    v
+}
+
+fn str(x: Char) -> Str {
+    let mut s = Str.new()
+    s = s + x.chars().nth(0).unwrap()
+    s
+}
+
+fn int_to_str(n: Int) -> Str {
+    let mut s = Str.new()
+    let mut nn = n
+    while nn != 0 {
+        let digit = nn % 10
+        let digit_str = char(digit + int_to_str(0).chars().nth(0).unwrap())
+        s = digit_str + s
+        nn = trunc(nn / 10)
+    }
+    s
+}
+
+fn char(x: Int) -> Char {
+    let mut c = x.to_char().unwrap()
+    c
+}
+
+fn trunc(x: Int) -> Int {
+    if x < 0 {
+        -trunc(-x)
+    } else {
+        x - int_to_str(x).chars().nth(len(int_to_str(x)) - 1).unwrap() - int_to_str(0).chars().nth(len(

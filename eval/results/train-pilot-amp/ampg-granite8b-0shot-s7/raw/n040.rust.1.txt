@@ -1,0 +1,16 @@
+```rust
+fn main() {
+  let side = 4;
+  let area = square(side);
+  println!("The area of the square is {} square units.", area);
+}
+
+fn square(side: u32) -> u32 {
+  return side * side;
+}
+```
+
+The output should be:
+```
+The area of the square is 16 square units.
+```

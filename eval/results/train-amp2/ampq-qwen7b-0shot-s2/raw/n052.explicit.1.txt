@@ -1,0 +1,19 @@
+fn find_positions(s: &Str) -> Vec<Int> {
+    let mut positions = vec()
+    for i in range(0, str_len(s)) {
+        if &s == "n" {
+            push(positions, i)
+        }
+    }
+    positions
+}
+
+fn main() {
+    let s = "banana"
+    let pos = find_positions(&s)
+    for p in &pos {
+        print(p)
+    }
+    drop s
+    drop pos
+}

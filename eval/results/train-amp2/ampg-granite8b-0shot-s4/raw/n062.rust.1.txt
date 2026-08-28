@@ -1,0 +1,11 @@
+fn main() {
+    let mut signals = ["green", "red", "yellow"];
+    while let Some(signal) = signals.pop() {
+        match signal {
+            "green" => println!("go for {}", signal),
+            "red" => println!("stop for {}", signal),
+            "yellow" => println!("wait for {}", signal),
+            _ => println!("unknown signal"),
+        }
+    }
+}

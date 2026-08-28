@@ -1,0 +1,12 @@
+const fn list_get(list: &[u8], index: usize) -> Option<&u8> {
+    unsafe { std::ptr::read_volatile(list.get_unchecked(index)) }
+}
+
+fn main() {
+    let list = &[1, 2];
+    let index = 5;
+    match list_get(list, index) {
+        Some(val) => println!("{}", val),
+        None => println!("None"),
+    }
+}

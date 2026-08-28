@@ -1,0 +1,24 @@
+fn swap_first_last(v: Vec<Int>) -> Vec<Int> {
+    let len = len(v)
+    if len > 0 {
+        let first = get(v, 0).unwrap()
+        let last = get(v, len - 1).unwrap()
+        let mut v = v
+        v = push(v, first)
+        drop first
+        v = push(v, last)
+        drop last
+        v = concat(&v, vec())
+        drop v
+    }
+    v
+}
+
+fn main() {
+    let q = vec(1, 2, 3, 4, 5)
+    let q = swap_first_last(q)
+    for x in &q {
+        print(x)
+    }
+    drop q
+}

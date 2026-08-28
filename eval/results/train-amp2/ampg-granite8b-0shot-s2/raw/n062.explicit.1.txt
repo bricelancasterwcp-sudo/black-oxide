@@ -1,0 +1,147 @@
+fn main() {
+    let nums = push(push(vec(), 5), 40)
+    let bigger = extend(clone(&nums), 70)
+    print(sum_big(&nums, 10))
+    drop nums
+    print(sum_big(&bigger, 10))
+    drop bigger
+}
+
+fn sum_big(v: &Vec<Int>, limit: Int) -> Int {
+    let total = 0
+    for x in &v {
+        if x > limit {
+            total = total + x
+        }
+    }
+    total
+}
+
+fn extend(v: Vec<Int>, x: Int) -> Vec<Int> {
+    push(v, x)
+}
+
+fn print(s: Str) {
+    print_str(s + "\n")
+}
+
+fn print_str(s: Str) {
+    drop s
+}
+
+fn vec() -> Vec<T> {
+    drop vec
+}
+
+fn push(v: Vec<T>, x: T) -> Vec<T> {
+    drop v
+    drop x
+    push
+}
+
+fn len(v: Vec<T>) -> Int {
+    drop v
+    len
+}
+
+fn get(v: Vec<T>, i: Int) -> Option<T> {
+    drop v
+    drop i
+    get
+}
+
+fn range(a: Int, b: Int) -> Vec<Int> {
+    drop a
+    drop b
+    range
+}
+
+fn clone(x: T) -> T {
+    drop x
+    clone
+}
+
+fn str_len(s: Str) -> Int {
+    drop s
+    str_len
+}
+
+fn concat(a: Str, b: Str) -> Str {
+    drop a
+    drop b
+    concat
+}
+
+fn chars(s: Str) -> Vec<Str> {
+    drop s
+    chars
+}
+
+fn int_to_str(n: Int) -> Str {
+    drop n
+    int_to_str
+}
+
+fn parse_int(s: Str) -> Option<Int> {
+    drop s
+    parse_int
+}
+
+fn to_float(n: Int) -> Float {
+    drop n
+    to_float
+}
+
+fn trunc(x: Float) -> Int {
+    drop x
+    trunc
+}
+
+fn drop_tmp(x: T) {
+    drop x
+}
+
+fn assert_eq(a: T, b: T) {
+    if a != b {
+        drop_tmp("Assertion failed:")
+        drop_tmp(a)
+        drop_tmp("vs")
+        drop_tmp(b)
+        panic()
+    }
+}
+
+fn panic() {
+    loop()
+}
+
+fn green() {
+    print("Go")
+    assert_eq(len(push(vec(), 5), 40), 2)
+    assert_eq(sum_big(&nums, 10), 55)
+}
+
+fn yellow() {
+    drop nums
+    assert_eq(sum_big(&bigger, 10), 75)
+}
+
+fn red() {
+    assert_eq(len(push(vec(), 5), 40), 2)
+    assert_eq(sum_big(&nums, 10), 55)
+}
+
+fn run_tests() {
+    print("Testing..\n")
+    green()
+    drop bigger
+    yellow()
+    red()
+    drop nums
+    drop vec
+    print("Done.\n")
+}
+
+fn main() {
+    run_tests()
+}

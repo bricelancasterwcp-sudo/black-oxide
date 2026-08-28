@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let mut x = 1;
+    loop {
+        if x as f64 > 100.0 {
+            x /= 2;
+            println!("{}", x);
+            break;
+        } else {
+            x *= 2;
+        }
+    }
+}
+```

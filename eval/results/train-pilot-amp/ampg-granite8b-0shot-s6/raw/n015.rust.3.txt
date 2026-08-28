@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let numbers = vec![1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    let larger_than_four: Vec<u32> = numbers
+        .iter()
+        .filter(|&&x| x > 4)
+        .map(|&x| x)
+        .collect();
+    println!("Larger than four: {:?}", larger_than_four);
+    println!("Count: {}", larger_than_four.len());
+}
+```

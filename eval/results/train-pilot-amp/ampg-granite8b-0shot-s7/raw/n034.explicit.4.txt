@@ -1,0 +1,12 @@
+fn helper(xs: Vec<Int>) -> Option<Int> {
+    match xs {
+        Vec(x, xs) => Some(x),
+        _ => None,
+    }
+}
+
+fn main() {
+    print(helper(push(vec(), 7)))
+    print(helper(push(vec(), 8)))
+    print(helper(push(vec(), 9)))
+}

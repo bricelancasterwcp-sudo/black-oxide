@@ -1,0 +1,16 @@
+fn sum_digits(s: &Str) -> Int {
+    let mut total = 0
+    let mut count = 0
+    for c in chars(s) {
+        if c >= "0" && c <= "9" {
+            total = total + parse_int(c).unwrap()
+            count = count + 1
+        }
+    }
+    (total).to_string() + " " + &count
+}
+
+fn main() {
+    let s = "a1b22"
+    print(sum_digits(&s))
+}

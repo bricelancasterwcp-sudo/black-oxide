@@ -1,0 +1,7 @@
+fn main() {
+    let figures = vec(8, 3, 11, 6)
+    let min = figures.iter().cloned().min().unwrap()
+    let max = figures.iter().cloned().max().unwrap()
+    print(min)
+    print(max - min)
+}

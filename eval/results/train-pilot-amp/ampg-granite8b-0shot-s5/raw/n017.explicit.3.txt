@@ -1,0 +1,11 @@
+fn list_element(list: &Vec<Int>, index: Int) -> Int {
+    let val = get(list, index)
+    return val
+}
+
+fn main() {
+    let list = push(push(push(push(vec(), 40), 30), 20), 10)
+    let pos_two = list_element(&list, 2)
+    drop list
+    print(pos_two)
+}

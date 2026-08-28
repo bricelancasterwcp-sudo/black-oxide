@@ -1,0 +1,14 @@
+use std::collections::HashSet;
+
+fn main() {
+    let mut numbers: HashSet<i32> = HashSet::new();
+
+    for num in 1..=10 {
+        if num % 3 == 0 {
+            numbers.insert(num);
+        }
+    }
+
+    let sum: i32 = numbers.iter().sum();
+    println!("Sum of numbers divisible by 3: {}", sum);
+}

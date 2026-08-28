@@ -1,0 +1,6 @@
+fn main() {
+    let mut numbers = vec![8, 3, 11, 6];
+    numbers.sort_unstable();
+    println!("Smallest: {}", numbers[0]);
+    println!("Gap: {}", numbers[numbers.len() - 1] - numbers[0]);
+}

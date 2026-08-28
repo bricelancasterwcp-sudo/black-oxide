@@ -1,0 +1,86 @@
+fn sort(v: &Vec<Int>) -> Vec<Int> {
+    let n = len(&v)
+    if n < 2 {
+        clone(&v)
+    } else {
+        let split = n / 2
+        let left = sort(&get_slice_0_to_split_inclusive_from_v)
+        let right = sort(&get_slice_split_to_end_exclusive_from_v)
+        merge(&left, &right)
+    }
+}
+
+fn get_slice_0_to_split_inclusive_from_v(v: &Vec<Int>, split: Int) -> Vec<Int> {
+    clone(&get_slice_0_to_split_inclusive_from_v)
+}
+
+fn get_slice_split_to_end_exclusive_from_v(v: &Vec<Int>, split: Int) -> Vec<Int> {
+    clone(&get_slice_split_to_end_exclusive_from_v)
+}
+
+fn merge(left: &Vec<Int>, right: &Vec<Int>) -> Vec<Int> {
+    let n = len(&left) + len(&right)
+    let mut v = vec_with_len(&n)
+    let mut li = 0
+    let mut ri = 0
+    let mut vi = 0
+    while (li < len(&left)) && (ri < len(&right)) {
+        if get(&left, &li) < get(&right, &ri) {
+            set(&mut && v, &vi, &get_at_li)
+            li = li + 1
+        } else {
+            set(&mut && v, &vi, &get_at_ri)
+            ri = ri + 1
+        }
+        vi = vi + 1
+    }
+    if li < len(&left) {
+        push(&mut && v, &get_slice_li_to_end_from_left)
+    } else {
+        push(&mut && v, &get_slice_ri_to_end_from_right)
+    }
+    v
+}
+
+fn vec_with_len(n: &Int) -> Vec<Int> {
+    let mut v = vec()
+    for _ in range(0, n) {
+        v = push(&mut && v, 0)
+    }
+    v
+}
+
+fn get_slice_0_to_split_inclusive_from_v(v: &Vec<Int>, split: Int) -> Vec<Int> {
+    clone(&get_slice_0_to_split_inclusive_from_v)
+}
+
+fn get_slice_split_to_end_exclusive_from_v(v: &Vec<Int>, split: Int) -> Vec<Int> {
+    clone(&get_slice_split_to_end_exclusive_from_v)
+}
+
+fn get_slice_li_to_end_from_left(v: &Vec<Int>, li: Int) -> Vec<Int> {
+    clone(&get_slice_li_to_end_from_left)
+}
+
+fn get_slice_ri_to_end_from_right(v: &Vec<Int>, ri: Int) -> Vec<Int> {
+    clone(&get_slice_ri_to_end_from_right)
+}
+
+fn get_at_li(v: &Vec<Int>, li: Int) -> Int {
+    clone(&get_at_li)
+}
+
+fn get_at_ri(v: &Vec<Int>, ri: Int) -> Int {
+    clone(&get_at_ri)
+}
+
+fn set(v: &Vec<Int>, vi: Int, x: Int) {
+    set(&mut && v, &vi, &x)
+}
+
+fn main() {
+    print(sort(&vec_with_len_9))
+    print(sort(&vec_with_len_2))
+    print(sort(&vec_with_len_7))
+    print(sort(&vec_with_len_4))
+}

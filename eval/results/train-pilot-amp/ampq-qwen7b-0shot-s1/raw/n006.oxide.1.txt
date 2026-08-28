@@ -1,0 +1,16 @@
+struct Power { value: Int }
+
+fn find_max_power() -> Power {
+    let mut max_power = Power { value: 1 }
+    let mut current = 2
+    while current <= 100 {
+        max_power = Power { value: current }
+        current = current * 2
+    }
+    max_power
+}
+
+fn main() {
+    let p = find_max_power()
+    print(p.value)
+}

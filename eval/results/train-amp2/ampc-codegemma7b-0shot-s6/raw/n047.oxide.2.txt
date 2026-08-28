@@ -1,0 +1,12 @@
+fn main() {
+    let mut v = vec_new()
+    for i in 10 {
+        if i % 2 == 0 {
+            v = push(v, i)
+        }
+    }
+    while letSome(x) == pop(v) {
+        print(x)
+        print_str("\n")
+    }
+}

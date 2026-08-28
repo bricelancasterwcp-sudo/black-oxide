@@ -1,0 +1,284 @@
+fn is_prime(n: Int) -> Bool {
+    if n <= 1 {
+        return false
+    }
+    for i in range(2, trunc(sqrt(n)) + 1) {
+        if n % i == 0 {
+            return false
+        }
+    }
+    true
+}
+
+fn main() {
+    let x = int_to_str(91)
+    if is_prime(parse_int(x).unwrap()) {
+        print_str("yes")
+    } else {
+        print_str("no")
+    }
+}
+
+fn sqrt(n: Float) -> Float {
+    let mut x = n
+    let mut y = 0.0
+    while x - y > 0.000001 {
+        y = x
+        x = (x + n / x) * 0.5
+    }
+    x
+}
+
+fn sqrt(n: Int) -> Int {
+    return trunc(sqrt(to_float(n)))
+}
+
+fn sqrt(n: Float) -> Float {
+    let mut x = n
+    let mut y = 0.0
+    while x - y > 0.000001 {
+        y = x
+        x = (x + n / x) * 0.5
+    }
+    x
+}
+
+fn sqrt(n: Int) -> Int {
+    return trunc(sqrt(to_float(n)))
+}
+
+fn sqrt(n: Float) -> Float {
+    let mut x = n
+    let mut y = 0.0
+    while x - y > 0.000001 {
+        y = x
+        x = (x + n / x) * 0.5
+    }
+    x
+}
+
+fn sqrt(n: Int) -> Int {
+    return trunc(sqrt(to_float(n)))
+}
+
+fn sqrt(n: Float) -> Float {
+    let mut x = n
+    let mut y = 0.0
+    while x - y > 0.000001 {
+        y = x
+        x = (x + n / x) * 0.5
+    }
+    x
+}
+
+fn sqrt(n: Int) -> Int {
+    return trunc(sqrt(to_float(n)))
+}
+
+fn sqrt(n: Float) -> Float {
+    let mut x = n
+    let mut y = 0.0
+    while x - y > 0.000001 {
+        y = x
+        x = (x + n / x) * 0.5
+    }
+    x
+}
+
+fn sqrt(n: Int) -> Int {
+    return trunc(sqrt(to_float(n)))
+}
+
+fn sqrt(n: Float) -> Float {
+    let mut x = n
+    let mut y = 0.0
+    while x - y > 0.000001 {
+        y = x
+        x = (x + n / x) * 0.5
+    }
+    x
+}
+
+fn sqrt(n: Int) -> Int {
+    return trunc(sqrt(to_float(n)))
+}
+
+fn sqrt(n: Float) -> Float {
+    let mut x = n
+    let mut y = 0.0
+    while x - y > 0.000001 {
+        y = x
+        x = (x + n / x) * 0.5
+    }
+    x
+}
+
+fn sqrt(n: Int) -> Int {
+    return trunc(sqrt(to_float(n)))
+}
+
+fn sqrt(n: Float) -> Float {
+    let mut x = n
+    let mut y = 0.0
+    while x - y > 0.000001 {
+        y = x
+        x = (x + n / x) * 0.5
+    }
+    x
+}
+
+fn sqrt(n: Int) -> Int {
+    return trunc(sqrt(to_float(n)))
+}
+
+fn sqrt(n: Float) -> Float {
+    let mut x = n
+    let mut y = 0.0
+    while x - y > 0.000001 {
+        y = x
+        x = (x + n / x) * 0.5
+    }
+    x
+}
+
+fn sqrt(n: Int) -> Int {
+    return trunc(sqrt(to_float(n)))
+}
+
+fn sqrt(n: Float) -> Float {
+    let mut x = n
+    let mut y = 0.0
+    while x - y > 0.000001 {
+        y = x
+        x = (x + n / x) * 0.5
+    }
+    x
+}
+
+fn sqrt(n: Int) -> Int {
+    return trunc(sqrt(to_float(n)))
+}
+
+fn sqrt(n: Float) -> Float {
+    let mut x = n
+    let mut y = 0.0
+    while x - y > 0.000001 {
+        y = x
+        x = (x + n / x) * 0.5
+    }
+    x
+}
+
+fn sqrt(n: Int) -> Int {
+    return trunc(sqrt(to_float(n)))
+}
+
+fn sqrt(n: Float) -> Float {
+    let mut x = n
+    let mut y = 0.0
+    while x - y > 0.000001 {
+        y = x
+        x = (x + n / x) * 0.5
+    }
+    x
+}
+
+fn sqrt(n: Int) -> Int {
+    return trunc(sqrt(to_float(n)))
+}
+
+fn sqrt(n: Float) -> Float {
+    let mut x = n
+    let mut y = 0.0
+    while x - y > 0.000001 {
+        y = x
+        x = (x + n / x) * 0.5
+    }
+    x
+}
+
+fn sqrt(n: Int) -> Int {
+    return trunc(sqrt(to_float(n)))
+}
+
+fn sqrt(n: Float) -> Float {
+    let mut x = n
+    let mut y = 0.0
+    while x - y > 0.000001 {
+        y = x
+        x = (x + n / x) * 0.5
+    }
+    x
+}
+
+fn sqrt(n: Int) -> Int {
+    return trunc(sqrt(to_float(n)))
+}
+
+fn sqrt(n: Float) -> Float {
+    let mut x = n
+    let mut y = 0.0
+    while x - y > 0.000001 {
+        y = x
+        x = (x + n / x) * 0.5
+    }
+    x
+}
+
+fn sqrt(n: Int) -> Int {
+    return trunc(sqrt(to_float(n)))
+}
+
+fn sqrt(n: Float) -> Float {
+    let mut x = n
+    let mut y = 0.0
+    while x - y > 0.000001 {
+        y = x
+        x = (x + n / x) * 0.5
+    }
+    x
+}
+
+fn sqrt(n: Int) -> Int {
+    return trunc(sqrt(to_float(n)))
+}
+
+fn sqrt(n: Float) -> Float {
+    let mut x = n
+    let mut y = 0.0
+    while x - y > 0.000001 {
+        y = x
+        x = (x + n / x) * 0.5
+    }
+    x
+}
+
+fn sqrt(n: Int) -> Int {
+    return trunc(sqrt(to_float(n)))
+}
+
+fn sqrt(n: Float) -> Float {
+    let mut x = n
+    let mut y = 0.0
+    while x - y > 0.000001 {
+        y = x
+        x = (x + n / x) * 0.5
+    }
+    x
+}
+
+fn sqrt(n: Int) -> Int {
+    return trunc(sqrt(to_float(n)))
+}
+
+fn sqrt(n: Float) -> Float {
+    let mut x = n
+    let mut y = 0.0
+    while x - y > 0.000001 {
+        y = x
+        x = (x + n / x) * 0.5
+    }
+    x
+}
+
+fn sqrt(n

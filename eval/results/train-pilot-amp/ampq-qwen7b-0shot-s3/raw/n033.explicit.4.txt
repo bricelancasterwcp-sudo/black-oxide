@@ -1,0 +1,8 @@
+fn main() {
+    let signal = "green"
+    print_str("go for green")
+    let signal = "yellow"
+    print_str("wait for yellow")
+    let signal = "red"
+    print_str("stop for red")
+}

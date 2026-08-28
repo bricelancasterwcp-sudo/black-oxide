@@ -1,0 +1,11 @@
+fn main() {
+    let signal = ["green", "red", "yellow"];
+    for s in signal {
+        match s {
+            "green" => println!("go"),
+            "red" => println!("stop"),
+            "yellow" => println!("wait"),
+            _ => {}
+        }
+    }
+}

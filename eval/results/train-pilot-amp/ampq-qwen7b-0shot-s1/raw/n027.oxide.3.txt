@@ -1,0 +1,10 @@
+struct StringSlice { start: Int, end: Int, chars: Vec<Str> }
+
+fn main() {
+    let s = StringSlice { start: 0, end: 3, chars: chars("cat") }
+    for i in range(0, s.end) {
+        let c = get(s.chars, i)?
+        print_str(c)
+        print_str("\n")
+    }
+}

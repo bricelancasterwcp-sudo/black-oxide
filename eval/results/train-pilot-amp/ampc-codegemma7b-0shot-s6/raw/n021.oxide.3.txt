@@ -1,0 +1,14 @@
+fn main() {
+    let s = concat(concat(str_len("programming"), " characters"), "make up")
+    print(len(chars(s)))
+}
+
+fn main() {
+    let s = concat(concat(to_float(str_len("programming")), " characters"), "make up")
+    print(len(chars(s)))
+}
+
+fn main() {
+    let s = concat(concat(to_float(str_len("programming")), " characters"), "make up")
+    print(len(chars(s)))
+}

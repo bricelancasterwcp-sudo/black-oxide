@@ -1,0 +1,6 @@
+fn main() {
+    let four_stocks = 4 * 3
+    let five_stocks = 5 * 2
+    let total = four_stocks + five_stocks
+    print(total)
+}

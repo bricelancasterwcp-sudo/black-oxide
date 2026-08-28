@@ -1,0 +1,343 @@
+fn main() {
+    let mut scores = vec(2, 9, 5).sort_descending().map(print_int)
+}
+
+fn sort_descending(v: Vec<Int>) -> Vec<Int> {
+    v.sort()
+    v.reverse()
+    v
+}
+
+fn print_int(n: Int) {
+    print(n)
+    print_str("\n")
+}
+
+fn map(v: Vec<Int>, f: Int<Int>) -> Vec<Int> {
+    v.map(f)
+}
+
+fn sort(v: Vec<Int>) {
+    v.sort()
+}
+
+fn reverse(v: Vec<Int>) {
+    v.reverse()
+}
+
+fn map_int(f: Int<Int>, x: Int) -> Int {
+    f(x)
+}
+
+fn sort_int(v: Vec<Int>) {
+    v.sort()
+}
+
+fn reverse_int(v: Vec<Int>) {
+    v.reverse()
+}
+
+fn print_int_int(n: Int) {
+    print(n)
+    print_str("\n")
+}
+
+fn map_int_int(f: Int<Int>, x: Int) -> Int {
+    f(x)
+}
+
+fn sort_int_int(v: Vec<Int>) {
+    v.sort()
+}
+
+fn reverse_int_int(v: Vec<Int>) {
+    v.reverse()
+}
+
+fn print_int_int_int(n: Int) {
+    print(n)
+    print_str("\n")
+}
+
+fn map_int_int_int(f: Int<Int>, x: Int) -> Int {
+    f(x)
+}
+
+fn sort_int_int_int(v: Vec<Int>) {
+    v.sort()
+}
+
+fn reverse_int_int_int(v: Vec<Int>) {
+    v.reverse()
+}
+
+fn print_int_int_int_int(n: Int) {
+    print(n)
+    print_str("\n")
+}
+
+fn map_int_int_int_int(f: Int<Int>, x: Int) -> Int {
+    f(x)
+}
+
+fn sort_int_int_int_int(v: Vec<Int>) {
+    v.sort()
+}
+
+fn reverse_int_int_int_int(v: Vec<Int>) {
+    v.reverse()
+}
+
+fn print_int_int_int_int_int(n: Int) {
+    print(n)
+    print_str("\n")
+}
+
+fn map_int_int_int_int_int(f: Int<Int>, x: Int) -> Int {
+    f(x)
+}
+
+fn sort_int_int_int_int_int(v: Vec<Int>) {
+    v.sort()
+}
+
+fn reverse_int_int_int_int_int(v: Vec<Int>) {
+    v.reverse()
+}
+
+fn print_int_int_int_int_int_int(n: Int) {
+    print(n)
+    print_str("\n")
+}
+
+fn map_int_int_int_int_int_int(f: Int<Int>, x: Int) -> Int {
+    f(x)
+}
+
+fn sort_int_int_int_int_int_int(v: Vec<Int>) {
+    v.sort()
+}
+
+fn reverse_int_int_int_int_int_int(v: Vec<Int>) {
+    v.reverse()
+}
+
+fn print_int_int_int_int_int_int_int(n: Int) {
+    print(n)
+    print_str("\n")
+}
+
+fn map_int_int_int_int_int_int_int(f: Int<Int>, x: Int) -> Int {
+    f(x)
+}
+
+fn sort_int_int_int_int_int_int_int(v: Vec<Int>) {
+    v.sort()
+}
+
+fn reverse_int_int_int_int_int_int_int(v: Vec<Int>) {
+    v.reverse()
+}
+
+fn print_int_int_int_int_int_int_int_int(n: Int) {
+    print(n)
+    print_str("\n")
+}
+
+fn map_int_int_int_int_int_int_int_int(f: Int<Int>, x: Int) -> Int {
+    f(x)
+}
+
+fn sort_int_int_int_int_int_int_int_int(v: Vec<Int>) {
+    v.sort()
+}
+
+fn reverse_int_int_int_int_int_int_int_int(v: Vec<Int>) {
+    v.reverse()
+}
+
+fn print_int_int_int_int_int_int_int_int(n: Int) {
+    print(n)
+    print_str("\n")
+}
+
+fn map_int_int_int_int_int_int_int_int_int(f: Int<Int>, x: Int) -> Int {
+    f(x)
+}
+
+fn sort_int_int_int_int_int_int_int_int_int(v: Vec<Int>) {
+    v.sort()
+}
+
+fn reverse_int_int_int_int_int_int_int_int_int(v: Vec<Int>) {
+    v.reverse()
+}
+
+fn print_int_int_int_int_int_int_int_int_int(n: Int) {
+    print(n)
+    print_str("\n")
+}
+
+fn map_int_int_int_int_int_int_int_int_int_int(f: Int<Int>, x: Int) -> Int {
+    f(x)
+}
+
+fn sort_int_int_int_int_int_int_int_int_int_int(v: Vec<Int>) {
+    v.sort()
+}
+
+fn reverse_int_int_int_int_int_int_int_int_int_int(v: Vec<Int>) {
+    v.reverse()
+}
+
+fn print_int_int_int_int_int_int_int_int_int_int(n: Int) {
+    print(n)
+    print_str("\n")
+}
+
+fn map_int_int_int_int_int_int_int_int_int_int_int(f: Int<Int>, x: Int) -> Int {
+    f(x)
+}
+
+fn sort_int_int_int_int_int_int_int_int_int_int_int(v: Vec<Int>) {
+    v.sort()
+}
+
+fn reverse_int_int_int_int_int_int_int_int_int_int_int(v: Vec<Int>) {
+    v.reverse()
+}
+
+fn print_int_int_int_int_int_int_int_int_int_int_int(n: Int) {
+    print(n)
+    print_str("\n")
+}
+
+fn map_int_int_int_int_int_int_int_int_int_int_int_int(f: Int<Int>, x: Int) -> Int {
+    f(x)
+}
+
+fn sort_int_int_int_int_int_int_int_int_int_int_int_int(v: Vec<Int>) {
+    v.sort()
+}
+
+fn reverse_int_int_int_int_int_int_int_int_int_int_int_int(v: Vec<Int>) {
+    v.reverse()
+}
+
+fn print_int_int_int_int_int_int_int_int_int_int_int_int(n: Int) {
+    print(n)
+    print_str("\n")
+}
+
+fn map_int_int_int_int_int_int_int_int_int_int_int_int_int(f: Int<Int>, x: Int) -> Int {
+    f(x)
+}
+
+fn sort_int_int_int_int_int_int_int_int_int_int_int_int_int(v: Vec<Int>) {
+    v.sort()
+}
+
+fn reverse_int_int_int_int_int_int_int_int_int_int_int_int_int(v: Vec<Int>) {
+    v.reverse()
+}
+
+fn print_int_int_int_int_int_int_int_int_int_int_int_int_int(n: Int) {
+    print(n)
+    print_str("\n")
+}
+
+fn map_int_int_int_int_int_int_int_int_int_int_int_int_int_int(f: Int<Int>, x: Int) -> Int {
+    f(x)
+}
+
+fn sort_int_int_int_int_int_int_int_int_int_int_int_int_int_int(v: Vec<Int>) {
+    v.sort()
+}
+
+fn reverse_int_int_int_int_int_int_int_int_int_int_int_int_int_int(v: Vec<Int>) {
+    v.reverse()
+}
+
+fn print_int_int_int_int_int_int_int_int_int_int_int_int_int_int(n: Int) {
+    print(n)
+    print_str("\n")
+}
+
+fn map_int_int_int_int_int_int_int_int_int_int_int_int_int_int_int(f: Int<Int>, x: Int) -> Int {
+    f(x)
+}
+
+fn sort_int_int_int_int_int_int_int_int_int_int_int_int_int_int_int(v: Vec<Int>) {
+    v.sort()
+}
+
+fn reverse_int_int_int_int_int_int_int_int_int_int_int_int_int_int_int(v: Vec<Int>) {
+    v.reverse()
+}
+
+fn print_int_int_int_int_int_int_int_int_int_int_int_int_int_int_int(n: Int) {
+    print(n)
+    print_str("\n")
+}
+
+fn map_int_int_int_int_int_int_int_int_int_int_int_int_int_int_int_int(f: Int<Int>, x: Int) -> Int {
+    f(x)
+}
+
+fn sort_int_int_int_int_int_int_int_int_int_int_int_int_int_int_int_int(v: Vec<Int>) {
+    v.sort()
+}
+
+fn reverse_int_int_int_int_int_int_int_int_int_int_int_int_int_int_int_int(v: Vec<Int>) {
+    v.reverse()
+}
+
+fn print_int_int_int_int_int_int_int_int_int_int_int_int_int_int_int_int(n: Int) {
+    print(n)
+    print_str("\n")
+}
+
+fn map_int_int_int_int_int_int_int_int_int_int_int_int_int_int_int_int_int(f: Int<Int>, x: Int) -> Int {
+    f(x)
+}
+
+fn sort_int_int_int_int_int_int_int_int_int_int_int_int_int_int_int_int_int(v: Vec<Int>) {
+    v.sort()
+}
+
+fn reverse_int_int_int_int_int_int_int_int_int_int_int_int_int_int_int_int_int(v: Vec<Int>) {
+    v.reverse()
+}
+
+fn print_int_int_int_int_int_int_int_int_int_int_int_int_int_int_int_int_int(n: Int) {
+    print(n)
+    print_str("\n")
+}
+
+fn map_int_int_int_int_int_int_int_int_int_int_int_int_int_int_int_int_int_int(f: Int<Int>, x: Int) -> Int {
+    f(x)
+}
+
+fn sort_int_int_int_int_int_int_int_int_int_int_int_int_int_int_int_int_int_int(v: Vec<Int>) {
+    v.sort()
+}
+
+fn reverse_int_int_int_int_int_int_int_int_int_int_int_int_int_int_int_int_int_int(v: Vec<Int>) {
+    v.reverse()
+}
+
+fn print_int_int_int_int_int_int_int_int_int_int_int_int_int_int_int_int_int_int(n: Int) {
+    print(n)
+    print_str("\n")
+}
+
+fn map_int_int_int_int_int_int_int_int_int_int_int_int_int_int_int_int_int_int_int(f: Int<Int>, x: Int) -> Int {
+    f(x)
+}
+
+fn sort_int_int_int_int_int_int_int_int_int_int_int_int_int_int_int_int_int_int_int(v: Vec<Int>) {
+    v.sort()
+}
+
+fn reverse_int_int_int_int_int_int_int_int_int_int_int_int_int_int_int_int_int_int_int(v: Vec<Int>) {
+    v

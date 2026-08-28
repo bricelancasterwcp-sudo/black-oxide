@@ -1,0 +1,13 @@
+fn main() {
+    let mut num = 7
+    let mut total = 0
+    while num < 11 {
+        if num % 2 == 1 {
+            print(num * 2)
+        } else {
+            total = total + num
+        }
+        num = num + 1
+    }
+    print(total)
+}

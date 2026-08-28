@@ -1,0 +1,22 @@
+fn max(x: &Int, y: &Int) -> Int {
+    if x > y {
+        return x.clone()
+    }
+    y.clone()
+}
+
+fn main() {
+    let nums = vec(12, 5, 20, 8, 17)
+    let mut max_num = &nums
+    let mut second_max_num = &nums
+    for n in &nums {
+        if max_num == n {
+            second_max_num = max(second_max_num, n)
+        } else {
+            max_num = max(max_num, n)
+            second_max_num = max(max_num, second_max_num)
+        }
+    }
+    print(max_num)
+    print(second_max_num)
+}

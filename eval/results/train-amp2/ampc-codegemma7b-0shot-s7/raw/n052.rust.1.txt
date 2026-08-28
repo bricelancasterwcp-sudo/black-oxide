@@ -1,0 +1,8 @@
+fn main() {
+    let word = "banana".to_string();
+    for (i, c) in word.chars().enumerate() {
+        if c == 'n' {
+            println!("{}", i);
+        }
+    }
+}

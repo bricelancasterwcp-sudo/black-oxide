@@ -1,0 +1,17 @@
+fn main() {
+    let mut q = vec(1, 2, 3, 4, 5)
+    let first = get(&q, 0)?
+    let last = get(&q, 4)?
+    drop get_mut_q
+    push(&mut_q, last)
+    drop push_last
+    let new_first = get_mut_q
+    drop get_mut_q
+    push(&mut_q, first)
+    drop push_first
+    drop get_mut_q
+    for x in &q {
+        print(x)
+    }
+    drop q
+}

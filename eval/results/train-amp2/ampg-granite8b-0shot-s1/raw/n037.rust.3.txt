@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let mut width = 2;
+    let length = 3;
+    width = 5;
+    let area = width * length;
+    println!(
+        "The area of the rectangle is {} square pixels.",
+        area
+    );
+}
+```

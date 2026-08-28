@@ -1,0 +1,16 @@
+fn get_second(v: &Vec<Int>) -> Option<Int> {
+    if v.len() > 1 {
+        Some(v.get(1).unwrap())
+    } else {
+        None
+    }
+}
+
+fn main() {
+    let nums = vec(7, 8, 9)
+    match get_second(&nums) {
+        Some(x) => print(x),
+        None => print("None"),
+    }
+    drop nums
+}

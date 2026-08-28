@@ -1,0 +1,13 @@
+fn sequence(x: Int, y: Int, n: Int) -> Int {
+    if n == 1 {
+        x
+    } else if n == 2 {
+        y
+    } else {
+        sequence(x, y, n - 1) + sequence(x, y, n - 2)
+    }
+}
+
+fn main() {
+    print(sequence(1, 1, 10))
+}

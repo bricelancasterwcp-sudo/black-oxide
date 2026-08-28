@@ -1,0 +1,7 @@
+fn main() {
+    let mut sum = 0.0
+    for i in 1.trunc() + 1.trunc() * 5.0 {
+        sum = sum + i * i * i
+    }
+    print(sum)
+}

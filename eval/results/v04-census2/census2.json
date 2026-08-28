@@ -1,0 +1,1091 @@
+{
+  "families": {
+    "compound_assign": {
+      "minus_eq": "(?<![+\\-*/=!<>])-=",
+      "plus_eq": "(?<![+\\-*/=!<>])\\+=",
+      "times_eq": "(?<![+\\-*/=!<>])\\*="
+    },
+    "contains": {
+      "method": "\\.\\s*contains\\s*\\("
+    },
+    "index_assign": {
+      "bracket": "\\w+\\s*\\[\\s*\\w+\\s*\\]\\s*=[^=]",
+      "set_method": "\\.\\s*set\\s*\\("
+    },
+    "minmax": {
+      "free": "(?<![.\\w])(?:min|max)\\s*\\(",
+      "method": "\\.\\s*(?:min|max)\\s*\\("
+    },
+    "option": {
+      "if_let": "\\bif\\s+let\\s+Some",
+      "question": "\\)\\s*\\?",
+      "unwrap_or": "unwrap_or\\s*\\("
+    },
+    "ranges": {
+      "dotdot": "\\b\\w+\\s*\\.\\.=?\\s*\\w+",
+      "range_call": "\\brange\\s*\\(",
+      "to_method": "\\.\\s*to\\s*\\(\\s*\\w+\\s*\\)"
+    },
+    "sort": {
+      "free": "(?<![.\\w])sort\\s*\\(",
+      "method": "\\.\\s*sort\\s*\\("
+    },
+    "strings": {
+      "format": "\\bformat!\\s*\\(",
+      "join": "\\.\\s*join\\s*\\(",
+      "split": "\\.\\s*split\\s*\\("
+    },
+    "sum": {
+      "free": "(?<![.\\w])sum\\s*\\(",
+      "method": "\\.\\s*sum\\s*\\("
+    }
+  },
+  "handrolled_patterns": {
+    "minmax_scan": {
+      "structural": "\\b(?P<mm_acc>\\w+)\\s*=\\s*-?\\d+\\b[^{}]*\\bfor\\s+\\w+\\s+in\\b[^{}]*\\{[^{}]*\\bif\\b[^{}]*[<>](?!=)[^{}]*\\{[^{}]*\\b(?P=mm_acc)\\s*=\\s*(?!(?P=mm_acc)\\b)\\w+\\b"
+    },
+    "occurrence_count": {
+      "structural": "\\bfor\\s+\\w+\\s+in\\b[^{}]*\\{[^{}]*\\bif\\b[^{}]*==[^{}]*\\{[^{}]*\\b(?P<occ_acc>\\w+)\\s*(?:\\+=|=\\s*(?P=occ_acc)\\s*\\+)"
+    },
+    "removal_rebuild": {
+      "structural": "\\b(?P<rr_acc>\\w+)\\s*=\\s*vec\\(\\s*\\)[^{}]*\\bfor\\s+\\w+\\s+in\\b[^{}]*\\{[^{}]*\\bif\\b[^{}]*\\{[^{}]*(?:\\}[^{}]*\\belse\\b[^{}]*\\{)?[^{}]*\\bpush\\s*\\(\\s*(?P=rr_acc)\\s*,"
+    },
+    "string_build": {
+      "structural": "(?:\\bchars\\s*\\([^{}]*\\b(?P<sb_acc1>\\w+)\\s*=\\s*(?:\\\"\\\"|vec\\(\\s*\\))[^{}]*\\bfor\\s+\\w+\\s+in\\b[^{}]*\\{[^{}]*\\b(?P=sb_acc1)\\s*=)|(?:\\b(?P<sb_acc2>\\w+)\\s*=\\s*(?:\\\"\\\"|vec\\(\\s*\\))(?=[^{}]*\\bchars\\s*\\()[^{}]*\\bfor\\s+\\w+\\s+in\\b[^{}]*\\{[^{}]*\\b(?P=sb_acc2)\\s*=)"
+    },
+    "sum_scan": {
+      "structural": "\\b(?P<sum_acc>\\w+)\\s*=\\s*0\\b[^{}]*\\bfor\\s+\\w+\\s+in\\b[^{}]*\\{[^{}]*\\b(?P=sum_acc)\\s*(?:\\+=|=\\s*(?P=sum_acc)\\s*\\+)"
+    }
+  },
+  "handrolled_programs": {
+    "minmax_scan": {
+      "amplified": {},
+      "reference": {}
+    },
+    "occurrence_count": {
+      "amplified": {
+        "arithmetic/loops": 10,
+        "vectors": 2
+      },
+      "reference": {
+        "arithmetic/loops": 6,
+        "strings": 3,
+        "vectors": 2
+      }
+    },
+    "removal_rebuild": {
+      "amplified": {},
+      "reference": {
+        "vectors": 2
+      }
+    },
+    "string_build": {
+      "amplified": {
+        "strings": 1
+      },
+      "reference": {
+        "strings": 1
+      }
+    },
+    "sum_scan": {
+      "amplified": {
+        "arithmetic/loops": 6,
+        "vectors": 5
+      },
+      "reference": {
+        "arithmetic/loops": 2,
+        "vectors": 2
+      }
+    }
+  },
+  "meta": {
+    "amp_arms": [
+      "1.5-ox",
+      "1.5-rs",
+      "14-ox",
+      "14-rs",
+      "7-ox",
+      "7-rs"
+    ],
+    "amp_raw_root": "eval/results/v04-amp/raw",
+    "campaign_arms": [
+      "base-ox-7",
+      "base-rs-7",
+      "tune-ox-7",
+      "tune-rs-7"
+    ],
+    "campaign_root": "eval/results/v04-campaign",
+    "program_classes": [
+      "arithmetic/loops",
+      "strings",
+      "structs/option",
+      "vectors"
+    ]
+  },
+  "rejection_crossed": {
+    "amp": {
+      "compound_assign": {
+        "minus_eq": {
+          "1.5-ox": {
+            "present": 0,
+            "rejected": 0
+          },
+          "1.5-rs": {
+            "present": 0,
+            "rejected": 0
+          },
+          "14-ox": {
+            "present": 0,
+            "rejected": 0
+          },
+          "14-rs": {
+            "present": 0,
+            "rejected": 0
+          },
+          "7-ox": {
+            "present": 3,
+            "rejected": 3
+          },
+          "7-rs": {
+            "present": 0,
+            "rejected": 0
+          }
+        },
+        "plus_eq": {
+          "1.5-ox": {
+            "present": 105,
+            "rejected": 105
+          },
+          "1.5-rs": {
+            "present": 121,
+            "rejected": 27
+          },
+          "14-ox": {
+            "present": 0,
+            "rejected": 0
+          },
+          "14-rs": {
+            "present": 120,
+            "rejected": 10
+          },
+          "7-ox": {
+            "present": 115,
+            "rejected": 115
+          },
+          "7-rs": {
+            "present": 108,
+            "rejected": 10
+          }
+        },
+        "times_eq": {
+          "1.5-ox": {
+            "present": 20,
+            "rejected": 20
+          },
+          "1.5-rs": {
+            "present": 20,
+            "rejected": 0
+          },
+          "14-ox": {
+            "present": 1,
+            "rejected": 1
+          },
+          "14-rs": {
+            "present": 20,
+            "rejected": 0
+          },
+          "7-ox": {
+            "present": 17,
+            "rejected": 17
+          },
+          "7-rs": {
+            "present": 10,
+            "rejected": 0
+          }
+        }
+      },
+      "contains": {
+        "method": {
+          "1.5-ox": {
+            "present": 10,
+            "rejected": 10
+          },
+          "1.5-rs": {
+            "present": 11,
+            "rejected": 2
+          },
+          "14-ox": {
+            "present": 0,
+            "rejected": 0
+          },
+          "14-rs": {
+            "present": 0,
+            "rejected": 0
+          },
+          "7-ox": {
+            "present": 8,
+            "rejected": 8
+          },
+          "7-rs": {
+            "present": 0,
+            "rejected": 0
+          }
+        }
+      },
+      "index_assign": {
+        "bracket": {
+          "1.5-ox": {
+            "present": 0,
+            "rejected": 0
+          },
+          "1.5-rs": {
+            "present": 0,
+            "rejected": 0
+          },
+          "14-ox": {
+            "present": 0,
+            "rejected": 0
+          },
+          "14-rs": {
+            "present": 13,
+            "rejected": 13
+          },
+          "7-ox": {
+            "present": 5,
+            "rejected": 5
+          },
+          "7-rs": {
+            "present": 0,
+            "rejected": 0
+          }
+        },
+        "set_method": {
+          "1.5-ox": {
+            "present": 0,
+            "rejected": 0
+          },
+          "1.5-rs": {
+            "present": 0,
+            "rejected": 0
+          },
+          "14-ox": {
+            "present": 0,
+            "rejected": 0
+          },
+          "14-rs": {
+            "present": 0,
+            "rejected": 0
+          },
+          "7-ox": {
+            "present": 0,
+            "rejected": 0
+          },
+          "7-rs": {
+            "present": 0,
+            "rejected": 0
+          }
+        }
+      },
+      "minmax": {
+        "free": {
+          "1.5-ox": {
+            "present": 1,
+            "rejected": 1
+          },
+          "1.5-rs": {
+            "present": 0,
+            "rejected": 0
+          },
+          "14-ox": {
+            "present": 12,
+            "rejected": 8
+          },
+          "14-rs": {
+            "present": 0,
+            "rejected": 0
+          },
+          "7-ox": {
+            "present": 1,
+            "rejected": 1
+          },
+          "7-rs": {
+            "present": 0,
+            "rejected": 0
+          }
+        },
+        "method": {
+          "1.5-ox": {
+            "present": 3,
+            "rejected": 3
+          },
+          "1.5-rs": {
+            "present": 12,
+            "rejected": 0
+          },
+          "14-ox": {
+            "present": 0,
+            "rejected": 0
+          },
+          "14-rs": {
+            "present": 20,
+            "rejected": 0
+          },
+          "7-ox": {
+            "present": 11,
+            "rejected": 11
+          },
+          "7-rs": {
+            "present": 10,
+            "rejected": 0
+          }
+        }
+      },
+      "option": {
+        "if_let": {
+          "1.5-ox": {
+            "present": 11,
+            "rejected": 11
+          },
+          "1.5-rs": {
+            "present": 2,
+            "rejected": 0
+          },
+          "14-ox": {
+            "present": 2,
+            "rejected": 2
+          },
+          "14-rs": {
+            "present": 39,
+            "rejected": 15
+          },
+          "7-ox": {
+            "present": 4,
+            "rejected": 4
+          },
+          "7-rs": {
+            "present": 10,
+            "rejected": 9
+          }
+        },
+        "question": {
+          "1.5-ox": {
+            "present": 27,
+            "rejected": 27
+          },
+          "1.5-rs": {
+            "present": 0,
+            "rejected": 0
+          },
+          "14-ox": {
+            "present": 63,
+            "rejected": 54
+          },
+          "14-rs": {
+            "present": 0,
+            "rejected": 0
+          },
+          "7-ox": {
+            "present": 33,
+            "rejected": 23
+          },
+          "7-rs": {
+            "present": 0,
+            "rejected": 0
+          }
+        },
+        "unwrap_or": {
+          "1.5-ox": {
+            "present": 1,
+            "rejected": 1
+          },
+          "1.5-rs": {
+            "present": 4,
+            "rejected": 3
+          },
+          "14-ox": {
+            "present": 11,
+            "rejected": 8
+          },
+          "14-rs": {
+            "present": 0,
+            "rejected": 0
+          },
+          "7-ox": {
+            "present": 9,
+            "rejected": 9
+          },
+          "7-rs": {
+            "present": 0,
+            "rejected": 0
+          }
+        }
+      },
+      "ranges": {
+        "dotdot": {
+          "1.5-ox": {
+            "present": 76,
+            "rejected": 76
+          },
+          "1.5-rs": {
+            "present": 71,
+            "rejected": 11
+          },
+          "14-ox": {
+            "present": 0,
+            "rejected": 0
+          },
+          "14-rs": {
+            "present": 71,
+            "rejected": 10
+          },
+          "7-ox": {
+            "present": 15,
+            "rejected": 15
+          },
+          "7-rs": {
+            "present": 71,
+            "rejected": 12
+          }
+        },
+        "range_call": {
+          "1.5-ox": {
+            "present": 0,
+            "rejected": 0
+          },
+          "1.5-rs": {
+            "present": 0,
+            "rejected": 0
+          },
+          "14-ox": {
+            "present": 95,
+            "rejected": 39
+          },
+          "14-rs": {
+            "present": 0,
+            "rejected": 0
+          },
+          "7-ox": {
+            "present": 63,
+            "rejected": 60
+          },
+          "7-rs": {
+            "present": 0,
+            "rejected": 0
+          }
+        },
+        "to_method": {
+          "1.5-ox": {
+            "present": 0,
+            "rejected": 0
+          },
+          "1.5-rs": {
+            "present": 0,
+            "rejected": 0
+          },
+          "14-ox": {
+            "present": 0,
+            "rejected": 0
+          },
+          "14-rs": {
+            "present": 0,
+            "rejected": 0
+          },
+          "7-ox": {
+            "present": 0,
+            "rejected": 0
+          },
+          "7-rs": {
+            "present": 0,
+            "rejected": 0
+          }
+        }
+      },
+      "sort": {
+        "free": {
+          "1.5-ox": {
+            "present": 5,
+            "rejected": 5
+          },
+          "1.5-rs": {
+            "present": 0,
+            "rejected": 0
+          },
+          "14-ox": {
+            "present": 20,
+            "rejected": 2
+          },
+          "14-rs": {
+            "present": 0,
+            "rejected": 0
+          },
+          "7-ox": {
+            "present": 24,
+            "rejected": 24
+          },
+          "7-rs": {
+            "present": 0,
+            "rejected": 0
+          }
+        },
+        "method": {
+          "1.5-ox": {
+            "present": 1,
+            "rejected": 1
+          },
+          "1.5-rs": {
+            "present": 3,
+            "rejected": 0
+          },
+          "14-ox": {
+            "present": 6,
+            "rejected": 6
+          },
+          "14-rs": {
+            "present": 10,
+            "rejected": 0
+          },
+          "7-ox": {
+            "present": 3,
+            "rejected": 3
+          },
+          "7-rs": {
+            "present": 10,
+            "rejected": 0
+          }
+        }
+      },
+      "strings": {
+        "format": {
+          "1.5-ox": {
+            "present": 3,
+            "rejected": 3
+          },
+          "1.5-rs": {
+            "present": 0,
+            "rejected": 0
+          },
+          "14-ox": {
+            "present": 0,
+            "rejected": 0
+          },
+          "14-rs": {
+            "present": 0,
+            "rejected": 0
+          },
+          "7-ox": {
+            "present": 0,
+            "rejected": 0
+          },
+          "7-rs": {
+            "present": 0,
+            "rejected": 0
+          }
+        },
+        "join": {
+          "1.5-ox": {
+            "present": 0,
+            "rejected": 0
+          },
+          "1.5-rs": {
+            "present": 0,
+            "rejected": 0
+          },
+          "14-ox": {
+            "present": 0,
+            "rejected": 0
+          },
+          "14-rs": {
+            "present": 0,
+            "rejected": 0
+          },
+          "7-ox": {
+            "present": 0,
+            "rejected": 0
+          },
+          "7-rs": {
+            "present": 0,
+            "rejected": 0
+          }
+        },
+        "split": {
+          "1.5-ox": {
+            "present": 0,
+            "rejected": 0
+          },
+          "1.5-rs": {
+            "present": 0,
+            "rejected": 0
+          },
+          "14-ox": {
+            "present": 0,
+            "rejected": 0
+          },
+          "14-rs": {
+            "present": 0,
+            "rejected": 0
+          },
+          "7-ox": {
+            "present": 0,
+            "rejected": 0
+          },
+          "7-rs": {
+            "present": 0,
+            "rejected": 0
+          }
+        }
+      },
+      "sum": {
+        "free": {
+          "1.5-ox": {
+            "present": 0,
+            "rejected": 0
+          },
+          "1.5-rs": {
+            "present": 0,
+            "rejected": 0
+          },
+          "14-ox": {
+            "present": 1,
+            "rejected": 1
+          },
+          "14-rs": {
+            "present": 0,
+            "rejected": 0
+          },
+          "7-ox": {
+            "present": 4,
+            "rejected": 4
+          },
+          "7-rs": {
+            "present": 0,
+            "rejected": 0
+          }
+        },
+        "method": {
+          "1.5-ox": {
+            "present": 4,
+            "rejected": 4
+          },
+          "1.5-rs": {
+            "present": 3,
+            "rejected": 3
+          },
+          "14-ox": {
+            "present": 0,
+            "rejected": 0
+          },
+          "14-rs": {
+            "present": 0,
+            "rejected": 0
+          },
+          "7-ox": {
+            "present": 1,
+            "rejected": 1
+          },
+          "7-rs": {
+            "present": 1,
+            "rejected": 1
+          }
+        }
+      }
+    },
+    "campaign": {
+      "compound_assign": {
+        "minus_eq": {
+          "base-ox-7": {
+            "present": 0,
+            "rejected": 0
+          },
+          "base-rs-7": {
+            "present": 0,
+            "rejected": 0
+          },
+          "tune-ox-7": {
+            "present": 0,
+            "rejected": 0
+          },
+          "tune-rs-7": {
+            "present": 6,
+            "rejected": 0
+          }
+        },
+        "plus_eq": {
+          "base-ox-7": {
+            "present": 64,
+            "rejected": 64
+          },
+          "base-rs-7": {
+            "present": 71,
+            "rejected": 0
+          },
+          "tune-ox-7": {
+            "present": 9,
+            "rejected": 9
+          },
+          "tune-rs-7": {
+            "present": 80,
+            "rejected": 0
+          }
+        },
+        "times_eq": {
+          "base-ox-7": {
+            "present": 0,
+            "rejected": 0
+          },
+          "base-rs-7": {
+            "present": 0,
+            "rejected": 0
+          },
+          "tune-ox-7": {
+            "present": 0,
+            "rejected": 0
+          },
+          "tune-rs-7": {
+            "present": 0,
+            "rejected": 0
+          }
+        }
+      },
+      "contains": {
+        "method": {
+          "base-ox-7": {
+            "present": 0,
+            "rejected": 0
+          },
+          "base-rs-7": {
+            "present": 0,
+            "rejected": 0
+          },
+          "tune-ox-7": {
+            "present": 0,
+            "rejected": 0
+          },
+          "tune-rs-7": {
+            "present": 0,
+            "rejected": 0
+          }
+        }
+      },
+      "index_assign": {
+        "bracket": {
+          "base-ox-7": {
+            "present": 0,
+            "rejected": 0
+          },
+          "base-rs-7": {
+            "present": 0,
+            "rejected": 0
+          },
+          "tune-ox-7": {
+            "present": 0,
+            "rejected": 0
+          },
+          "tune-rs-7": {
+            "present": 0,
+            "rejected": 0
+          }
+        },
+        "set_method": {
+          "base-ox-7": {
+            "present": 0,
+            "rejected": 0
+          },
+          "base-rs-7": {
+            "present": 0,
+            "rejected": 0
+          },
+          "tune-ox-7": {
+            "present": 0,
+            "rejected": 0
+          },
+          "tune-rs-7": {
+            "present": 0,
+            "rejected": 0
+          }
+        }
+      },
+      "minmax": {
+        "free": {
+          "base-ox-7": {
+            "present": 0,
+            "rejected": 0
+          },
+          "base-rs-7": {
+            "present": 0,
+            "rejected": 0
+          },
+          "tune-ox-7": {
+            "present": 5,
+            "rejected": 0
+          },
+          "tune-rs-7": {
+            "present": 0,
+            "rejected": 0
+          }
+        },
+        "method": {
+          "base-ox-7": {
+            "present": 0,
+            "rejected": 0
+          },
+          "base-rs-7": {
+            "present": 0,
+            "rejected": 0
+          },
+          "tune-ox-7": {
+            "present": 0,
+            "rejected": 0
+          },
+          "tune-rs-7": {
+            "present": 0,
+            "rejected": 0
+          }
+        }
+      },
+      "option": {
+        "if_let": {
+          "base-ox-7": {
+            "present": 2,
+            "rejected": 2
+          },
+          "base-rs-7": {
+            "present": 0,
+            "rejected": 0
+          },
+          "tune-ox-7": {
+            "present": 1,
+            "rejected": 1
+          },
+          "tune-rs-7": {
+            "present": 0,
+            "rejected": 0
+          }
+        },
+        "question": {
+          "base-ox-7": {
+            "present": 0,
+            "rejected": 0
+          },
+          "base-rs-7": {
+            "present": 0,
+            "rejected": 0
+          },
+          "tune-ox-7": {
+            "present": 0,
+            "rejected": 0
+          },
+          "tune-rs-7": {
+            "present": 0,
+            "rejected": 0
+          }
+        },
+        "unwrap_or": {
+          "base-ox-7": {
+            "present": 0,
+            "rejected": 0
+          },
+          "base-rs-7": {
+            "present": 1,
+            "rejected": 0
+          },
+          "tune-ox-7": {
+            "present": 5,
+            "rejected": 0
+          },
+          "tune-rs-7": {
+            "present": 0,
+            "rejected": 0
+          }
+        }
+      },
+      "ranges": {
+        "dotdot": {
+          "base-ox-7": {
+            "present": 9,
+            "rejected": 9
+          },
+          "base-rs-7": {
+            "present": 59,
+            "rejected": 1
+          },
+          "tune-ox-7": {
+            "present": 0,
+            "rejected": 0
+          },
+          "tune-rs-7": {
+            "present": 53,
+            "rejected": 0
+          }
+        },
+        "range_call": {
+          "base-ox-7": {
+            "present": 52,
+            "rejected": 52
+          },
+          "base-rs-7": {
+            "present": 0,
+            "rejected": 0
+          },
+          "tune-ox-7": {
+            "present": 58,
+            "rejected": 22
+          },
+          "tune-rs-7": {
+            "present": 0,
+            "rejected": 0
+          }
+        },
+        "to_method": {
+          "base-ox-7": {
+            "present": 0,
+            "rejected": 0
+          },
+          "base-rs-7": {
+            "present": 0,
+            "rejected": 0
+          },
+          "tune-ox-7": {
+            "present": 0,
+            "rejected": 0
+          },
+          "tune-rs-7": {
+            "present": 0,
+            "rejected": 0
+          }
+        }
+      },
+      "sort": {
+        "free": {
+          "base-ox-7": {
+            "present": 10,
+            "rejected": 10
+          },
+          "base-rs-7": {
+            "present": 0,
+            "rejected": 0
+          },
+          "tune-ox-7": {
+            "present": 10,
+            "rejected": 0
+          },
+          "tune-rs-7": {
+            "present": 0,
+            "rejected": 0
+          }
+        },
+        "method": {
+          "base-ox-7": {
+            "present": 0,
+            "rejected": 0
+          },
+          "base-rs-7": {
+            "present": 10,
+            "rejected": 0
+          },
+          "tune-ox-7": {
+            "present": 0,
+            "rejected": 0
+          },
+          "tune-rs-7": {
+            "present": 10,
+            "rejected": 0
+          }
+        }
+      },
+      "strings": {
+        "format": {
+          "base-ox-7": {
+            "present": 0,
+            "rejected": 0
+          },
+          "base-rs-7": {
+            "present": 0,
+            "rejected": 0
+          },
+          "tune-ox-7": {
+            "present": 0,
+            "rejected": 0
+          },
+          "tune-rs-7": {
+            "present": 0,
+            "rejected": 0
+          }
+        },
+        "join": {
+          "base-ox-7": {
+            "present": 0,
+            "rejected": 0
+          },
+          "base-rs-7": {
+            "present": 0,
+            "rejected": 0
+          },
+          "tune-ox-7": {
+            "present": 0,
+            "rejected": 0
+          },
+          "tune-rs-7": {
+            "present": 0,
+            "rejected": 0
+          }
+        },
+        "split": {
+          "base-ox-7": {
+            "present": 0,
+            "rejected": 0
+          },
+          "base-rs-7": {
+            "present": 0,
+            "rejected": 0
+          },
+          "tune-ox-7": {
+            "present": 0,
+            "rejected": 0
+          },
+          "tune-rs-7": {
+            "present": 0,
+            "rejected": 0
+          }
+        }
+      },
+      "sum": {
+        "free": {
+          "base-ox-7": {
+            "present": 10,
+            "rejected": 10
+          },
+          "base-rs-7": {
+            "present": 0,
+            "rejected": 0
+          },
+          "tune-ox-7": {
+            "present": 4,
+            "rejected": 4
+          },
+          "tune-rs-7": {
+            "present": 0,
+            "rejected": 0
+          }
+        },
+        "method": {
+          "base-ox-7": {
+            "present": 3,
+            "rejected": 3
+          },
+          "base-rs-7": {
+            "present": 15,
+            "rejected": 0
+          },
+          "tune-ox-7": {
+            "present": 0,
+            "rejected": 0
+          },
+          "tune-rs-7": {
+            "present": 6,
+            "rejected": 6
+          }
+        }
+      }
+    }
+  }
+}

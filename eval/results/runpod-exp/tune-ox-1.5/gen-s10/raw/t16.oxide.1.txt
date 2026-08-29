@@ -1,0 +1,20 @@
+fn main() {
+    let result = divide(100, 5)
+    if result.is_some() {
+        print(result.unwrap())
+    } else {
+        print_str("undefined")
+    }
+    let result = divide(100, 0)
+    if result.is_some() {
+        print(result.unwrap())
+    } else {
+        print_str("undefined")
+    }
+    let result = divide(100, 4)
+    if result.is_some() {
+        print(result.unwrap())
+    } else {
+        print_str("undefined")
+    }
+}

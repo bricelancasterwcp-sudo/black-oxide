@@ -1,0 +1,23 @@
+```rust
+fn count_and_max(v: Vec<Int>) -> (Int, Int) {
+    let mut pos_count = 0;
+    let mut max_val = -1000000; // Assuming all values are less than this
+    for x in v {
+        if x > 0 {
+            pos_count += 1;
+        }
+        if x > max_val {
+            max_val = x;
+        }
+    }
+    (pos_count, max_val)
+}
+
+fn main() {
+    let v = push(push(push(push(vec(), 3), 8), -2), 12);
+    v = push(v, 7);
+    let (pos_count, max_val) = count_and_max(v.clone());
+    print(pos_count);
+    print(max_val);
+}
+```

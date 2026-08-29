@@ -1,0 +1,8 @@
+fn main() {
+    let r1 = (3, 4)
+    let t1 = (3, 4, 5)
+    let r2 = (2, 5)
+    print(2 * (r1.0 + r1.1))
+    print(t1.0 + t1.1 + t1.2)
+    print(2 * (r2.0 + r2.1))
+}

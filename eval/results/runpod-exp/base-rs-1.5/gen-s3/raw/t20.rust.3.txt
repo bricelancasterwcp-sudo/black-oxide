@@ -1,0 +1,26 @@
+```rust
+fn main() {
+    let pen = (3, 4);
+    let pad = (9, 2);
+    let ink = (5, 3);
+
+    let total_cost = pen.0 * pen.1 + pad.0 * pad.1 + ink.0 * ink.1;
+    println!("Total cost: {}", total_cost);
+
+    let mut highest_cost_item = None;
+    let mut highest_cost = 0;
+
+    for (item, quantity) in [pen, pad, ink] {
+        let item_cost = item.0 * quantity;
+        if item_cost > highest_cost {
+            highest_cost = item_cost;
+            highest_cost_item = Some(item);
+        }
+    }
+
+    match highest_cost_item {
+        Some((name, _)) => println!("Item with the highest cost: {}", name),
+        None => println!("No items found"),
+    }
+}
+```

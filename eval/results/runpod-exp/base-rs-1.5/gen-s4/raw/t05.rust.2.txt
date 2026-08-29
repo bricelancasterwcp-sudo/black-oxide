@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let mut a = 1;
+    let mut b = 1;
+
+    for _ in 0..18 { // Changed from 0 to 18 to match the problem statement
+        let temp = a + b;
+        a = b;
+        b = temp;
+    }
+
+    println!("The 20th term is {}", b);
+}
+```

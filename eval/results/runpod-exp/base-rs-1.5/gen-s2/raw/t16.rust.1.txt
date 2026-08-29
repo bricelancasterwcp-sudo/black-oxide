@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let dividend = 100;
+    let divisors: [i32; 3] = [5, 0, 4];
+
+    for &divisor in &divisors {
+        if divisor == 0 {
+            println!("undefined");
+        } else {
+            let quotient = dividend / divisor;
+            println!("{}", quotient);
+        }
+    }
+}
+```

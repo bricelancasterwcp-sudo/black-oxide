@@ -249,6 +249,10 @@ class LlamaCppClient:
             "grammar_sha256": grammar_digest(self.grammar),
         }
 
+    def props(self) -> dict:
+        """The server's /props payload (public: campaign identity checks)."""
+        return self._call(f"{self.host}/props")
+
     def version(self) -> str | None:
         """The server's build identifier (section 48: 'version recorded')."""
         build = self._call(f"{self.host}/props").get("build_info")

@@ -1,0 +1,22 @@
+fn main() {
+    let r1 = rect(3, 4)
+    let t1 = triangle(3, 4, 5)
+    let r2 = rect(2, 5)
+    print(perimeter(r1))
+    print(perimeter(t1))
+    print(perimeter(r2))
+}
+fn perimeter(s: Shape) -> Int {
+    match s {
+        Rect(w, h) => 2 * (w + h),
+        Triangle(a, b, c) => a + b + c,
+    }
+}
+struct Rect { width: Int, height: Int }
+struct Triangle { side1: Int, side2: Int, side3: Int }
+fn rect(width: Int, height: Int) -> Rect {
+    Rect { width, height }
+}
+fn triangle(side1: Int, side2: Int, side3: Int) -> Triangle {
+    Triangle { side1, side2, side3 }
+}

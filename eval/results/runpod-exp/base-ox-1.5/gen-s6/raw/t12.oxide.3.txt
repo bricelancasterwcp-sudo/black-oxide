@@ -1,0 +1,14 @@
+```rust
+fn reverse(s: Str) -> Str {
+    let mut chars = Vec::new();
+    for c in s.chars() {
+        chars.push(c);
+    }
+    chars.reverse();
+    chars.into_iter().collect()
+}
+
+fn main() {
+    print(reverse("stack"));
+}
+```

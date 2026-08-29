@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let divisors = [5, 0, 4];
+    for &divisor in divisors.iter() {
+        if divisor == 0 {
+            println!("undefined");
+        } else {
+            let quotient = 100 / divisor;
+            println!("{}", quotient);
+        }
+    }
+}
+```

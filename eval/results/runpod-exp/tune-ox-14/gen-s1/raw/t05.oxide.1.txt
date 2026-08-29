@@ -1,0 +1,13 @@
+struct Term { prev1: Int, prev2: Int }
+fn fib(n: Int) -> Int {
+    if n == 1 || n == 2 {
+        1
+    } else {
+        let t = fib(n - 1)
+        let p = fib(n - 2)
+        t + p
+    }
+}
+fn main() {
+    print(fib(20))
+}

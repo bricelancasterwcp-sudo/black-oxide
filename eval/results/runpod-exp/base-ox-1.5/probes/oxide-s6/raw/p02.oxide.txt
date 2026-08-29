@@ -1,0 +1,9 @@
+```
+fn main() {
+    let a = push(push(vec(), 1), 2);
+    let b = clone(a); // Clone at the first consuming use if both are needed
+    let c = clone(a); // Clone at the first consuming use if both are needed
+    print(len(b));
+    print(len(c));
+}
+```

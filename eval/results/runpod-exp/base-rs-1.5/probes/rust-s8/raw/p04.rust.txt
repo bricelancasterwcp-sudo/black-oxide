@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let mut v = vec![1, 2];
+    println!("{}", v.len());
+    for x in &v {
+        *x += 1; // Fix: use dereference operator to modify the value
+    }
+    println!("{}", v.len());
+}
+```

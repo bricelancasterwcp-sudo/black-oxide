@@ -1,0 +1,6 @@
+fn main() {
+    let words = vec("level", "stereo", "rotor")
+    for word in words {
+        print_str(word == reverse_str(word))
+    }
+}

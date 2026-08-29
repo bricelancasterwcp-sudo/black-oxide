@@ -1,0 +1,8 @@
+fn main() {
+    let a = 100 / 5
+    let b = if 0 == 0 { "undefined" } else { 100 / 0 }
+    let c = 100 / 4
+    print(a)
+    print_str(b)
+    print(c)
+}

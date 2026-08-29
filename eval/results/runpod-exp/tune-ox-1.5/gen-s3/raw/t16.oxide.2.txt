@@ -1,0 +1,12 @@
+fn main() {
+    let result = divide(100, 5)
+    match result {
+        Some(q) => print(q),
+        None => print_str("undefined"),
+    }
+    let result = divide(100, 4)
+    match result {
+        Some(q) => print(q),
+        None => print_str("undefined"),
+    }
+}

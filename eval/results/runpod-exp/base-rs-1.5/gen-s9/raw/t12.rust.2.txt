@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let text = "stack";
+    for (i, c) in text.chars().enumerate().rev() {
+        print!("{}", c);
+    }
+}
+```

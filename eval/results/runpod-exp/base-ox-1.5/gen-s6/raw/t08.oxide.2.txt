@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let mut v = vec![3, 8, -2, 12, 7];
+    let pos_count = v.iter().filter(|&&x| x > 0).count();
+    let largest = *v.iter().max().unwrap_or(&-1);
+    print!("Positive values: {}, Largest value: {}", pos_count, largest);
+}
+```

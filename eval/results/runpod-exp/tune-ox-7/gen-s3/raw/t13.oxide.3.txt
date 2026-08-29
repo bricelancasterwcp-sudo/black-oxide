@@ -1,0 +1,14 @@
+fn main() {
+    let words = vec("level", "stereo", "rotor")
+    for word in words {
+        print(word == reverse_str(word))
+    }
+}
+fn reverse_str(s: Str) -> Str {
+    let mut chars = chars(s)
+    let mut reversed = ""
+    while let Some(c) = next(chars) {
+        reversed = concat(c, reversed)
+    }
+    reversed
+}

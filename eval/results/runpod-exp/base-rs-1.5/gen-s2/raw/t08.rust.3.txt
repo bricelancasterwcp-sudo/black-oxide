@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let numbers = [3, 8, -2, 12, 7];
+    let mut count_positive = 0;
+    let mut max_value = i32::MIN;
+
+    for &number in &numbers {
+        if number > 0 {
+            count_positive += 1;
+        }
+        if number > max_value {
+            max_value = number;
+        }
+    }
+
+    println!("Number of positive values: {}", count_positive);
+    println!("Largest value: {}", max_value);
+}
+```

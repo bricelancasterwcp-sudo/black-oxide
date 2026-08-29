@@ -1,0 +1,218 @@
+{
+  "arms": {
+    "base-ox-1.5": {
+      "censored_sessions": 200,
+      "iters_to_green_mean": null,
+      "n": 200,
+      "pass1": 0.0,
+      "pass10_verifier": 0.0,
+      "tokens_to_green_mean": null
+    },
+    "base-ox-14": {
+      "censored_sessions": 104,
+      "iters_to_green_mean": 1.31,
+      "n": 200,
+      "pass1": 0.38,
+      "pass10_verifier": 0.8,
+      "tokens_to_green_mean": 157.5
+    },
+    "base-ox-7": {
+      "censored_sessions": 191,
+      "iters_to_green_mean": 1.0,
+      "n": 200,
+      "pass1": 0.045,
+      "pass10_verifier": 0.1,
+      "tokens_to_green_mean": 83.9
+    },
+    "base-rs-1.5": {
+      "censored_sessions": 150,
+      "iters_to_green_mean": 1.24,
+      "n": 200,
+      "pass1": 0.19,
+      "pass10_verifier": 0.35,
+      "tokens_to_green_mean": 72.2
+    },
+    "base-rs-14": {
+      "censored_sessions": 90,
+      "iters_to_green_mean": 1.0,
+      "n": 200,
+      "pass1": 0.55,
+      "pass10_verifier": 0.55,
+      "tokens_to_green_mean": 74.5
+    },
+    "base-rs-7": {
+      "censored_sessions": 87,
+      "iters_to_green_mean": 1.0,
+      "n": 200,
+      "pass1": 0.565,
+      "pass10_verifier": 0.6,
+      "tokens_to_green_mean": 66.8
+    },
+    "tune-ox-1.5": {
+      "censored_sessions": 88,
+      "iters_to_green_mean": 1.14,
+      "n": 200,
+      "pass1": 0.485,
+      "pass10_verifier": 0.75,
+      "tokens_to_green_mean": 86.1
+    },
+    "tune-ox-14": {
+      "censored_sessions": 73,
+      "iters_to_green_mean": 1.17,
+      "n": 200,
+      "pass1": 0.545,
+      "pass10_verifier": 0.75,
+      "tokens_to_green_mean": 98.6
+    },
+    "tune-ox-7": {
+      "censored_sessions": 77,
+      "iters_to_green_mean": 1.1,
+      "n": 200,
+      "pass1": 0.555,
+      "pass10_verifier": 0.7,
+      "tokens_to_green_mean": 85.6
+    },
+    "tune-rs-1.5": {
+      "censored_sessions": 43,
+      "iters_to_green_mean": 1.06,
+      "n": 200,
+      "pass1": 0.75,
+      "pass10_verifier": 0.9,
+      "tokens_to_green_mean": 67.0
+    },
+    "tune-rs-14": {
+      "censored_sessions": 1,
+      "iters_to_green_mean": 1.01,
+      "n": 200,
+      "pass1": 0.99,
+      "pass10_verifier": 1.0,
+      "tokens_to_green_mean": 70.3
+    },
+    "tune-rs-7": {
+      "censored_sessions": 23,
+      "iters_to_green_mean": 1.0,
+      "n": 200,
+      "pass1": 0.885,
+      "pass10_verifier": 0.9,
+      "tokens_to_green_mean": 69.1
+    }
+  },
+  "efficiency": {
+    "1.5": {
+      "gen_tokens_to_green_ratio": 1.285
+    },
+    "14": {
+      "gen_tokens_to_green_ratio": 1.403
+    },
+    "7": {
+      "gen_tokens_to_green_ratio": 1.239
+    }
+  },
+  "headline": {
+    "gen": {
+      "a": 0.555,
+      "b": 0.55,
+      "delta_pp": 0.5,
+      "two_se_pp": 9.9
+    },
+    "repair": {
+      "a": 0.455,
+      "b": 0.95,
+      "delta_pp": -49.5,
+      "two_se_pp": 7.7
+    }
+  },
+  "primaries": {
+    "1.5": {
+      "gen": {
+        "delta_pp": -26.5,
+        "n_tasks": 20,
+        "two_se_pp": 28.9
+      },
+      "repair": {
+        "delta_pp": -4.0,
+        "n": 20,
+        "two_se_pp": 26.1
+      }
+    },
+    "14": {
+      "gen": {
+        "delta_pp": -44.5,
+        "n_tasks": 20,
+        "two_se_pp": 21.4
+      },
+      "repair": {
+        "delta_pp": 0.5,
+        "n": 20,
+        "two_se_pp": 24.7
+      }
+    },
+    "7": {
+      "gen": {
+        "delta_pp": -33.0,
+        "n_tasks": 20,
+        "two_se_pp": 26.2
+      },
+      "repair": {
+        "delta_pp": -37.5,
+        "n": 20,
+        "two_se_pp": 21.4
+      }
+    }
+  },
+  "repair": {
+    "base-ox-1.5": {
+      "n": 200,
+      "rate": 0.11
+    },
+    "base-ox-14": {
+      "n": 200,
+      "rate": 0.805
+    },
+    "base-ox-7": {
+      "n": 200,
+      "rate": 0.475
+    },
+    "base-rs-1.5": {
+      "n": 200,
+      "rate": 0.785
+    },
+    "base-rs-14": {
+      "n": 200,
+      "rate": 0.95
+    },
+    "base-rs-7": {
+      "n": 200,
+      "rate": 0.89
+    },
+    "tune-ox-1.5": {
+      "n": 200,
+      "rate": 0.655
+    },
+    "tune-ox-14": {
+      "n": 200,
+      "rate": 0.76
+    },
+    "tune-ox-7": {
+      "n": 200,
+      "rate": 0.455
+    },
+    "tune-rs-1.5": {
+      "n": 200,
+      "rate": 0.695
+    },
+    "tune-rs-14": {
+      "n": 200,
+      "rate": 0.755
+    },
+    "tune-rs-7": {
+      "n": 200,
+      "rate": 0.83
+    }
+  },
+  "window_trend_gen_pp": [
+    -26.5,
+    -33.0,
+    -44.5
+  ]
+}

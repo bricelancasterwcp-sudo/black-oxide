@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let rect1 = (3, 4);
+    let tri1 = (3, 4, 5);
+    let rect2 = (2, 5);
+
+    println!("Perimeter of the first rectangle: {}", 2 * (rect1.0 + rect1.1));
+    println!("Perimeter of the second triangle: {}", 3 * (tri1.0 + tri1.1 + tri1.2));
+    println!("Perimeter of the third rectangle: {}", 2 * (rect2.0 + rect2.1));
+}
+```

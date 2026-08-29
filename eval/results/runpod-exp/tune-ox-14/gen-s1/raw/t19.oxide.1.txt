@@ -1,0 +1,6 @@
+fn main() {
+    let width = 7
+    let height = 4
+    print(width * height)
+    print(2 * (width + height))
+}

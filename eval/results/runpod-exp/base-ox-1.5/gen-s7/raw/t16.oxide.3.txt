@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut quotient = 100 / 5;
+    println!("{}", quotient);
+
+    if 0 == 0 {
+        println!("undefined");
+    } else {
+        quotient = 100 / 4;
+        println!("{}", quotient);
+    }
+}
+```

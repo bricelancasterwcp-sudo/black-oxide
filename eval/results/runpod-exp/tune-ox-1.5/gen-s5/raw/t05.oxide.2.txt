@@ -1,0 +1,12 @@
+fn fibonacci(n: Int) -> Int {
+    if n <= 1 {
+        1
+    } else {
+        let a = fibonacci(n - 1)
+        let b = fibonacci(n - 2)
+        a + b
+    }
+}
+fn main() {
+    print(fibonacci(20))
+}

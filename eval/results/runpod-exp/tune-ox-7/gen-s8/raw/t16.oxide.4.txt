@@ -1,0 +1,8 @@
+fn main() {
+    for n in vec(5, 0, 4) {
+        match div(100, n) {
+            Some(q) => print(q),
+            None => print_str("undefined"),
+        }
+    }
+}

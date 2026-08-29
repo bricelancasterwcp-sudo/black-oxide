@@ -1,0 +1,27 @@
+```rust
+fn main() {
+    let v = vec![3, 8, -2, 12, 7];
+    print(positives(v));
+    print(largest(v));
+}
+
+fn positives(v: Vec<Int>) -> Int {
+    let mut count = 0;
+    for x in v {
+        if x > 0 {
+            count += 1;
+        }
+    }
+    count
+}
+
+fn largest(v: Vec<Int>) -> Option<Int> {
+    let mut max = None;
+    for x in v {
+        if max.is_none() || x > max.unwrap() {
+            max = Some(x);
+        }
+    }
+    max
+}
+```

@@ -1,0 +1,7 @@
+fn main() {
+    let mut acc = 0
+    for x in range(1, 9) {
+        acc = acc + (x * 3)
+    }
+    print(acc)
+}

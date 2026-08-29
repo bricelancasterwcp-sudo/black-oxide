@@ -54,6 +54,7 @@ def initial_context(
     task_id: str,
     shots: int = 0,
     tasks_path: str | Path | None = None,
+    include_lead: bool = True,
 ) -> str:
     """The arm's initial prompt minus its trailing output contract.
 
@@ -62,7 +63,7 @@ def initial_context(
     quietly producing a prompt with a stale tail.
     """
     prompt = harness.build_prompt(
-        arm, task_id, shots=shots, tasks_path=tasks_path
+        arm, task_id, shots=shots, tasks_path=tasks_path, include_lead=include_lead
     )
     contract = harness.OUTPUT_CONTRACT
     if not contract:
@@ -101,6 +102,7 @@ def build_repair_prompt(
     task_id: str,
     shots: int = 0,
     tasks_path: str | Path | None = None,
+    include_lead: bool = True,
 ) -> str:
     """The next-attempt prompt for a rejected program.
 
@@ -112,7 +114,9 @@ def build_repair_prompt(
     """
     if arm not in harness.ARMS:
         raise ValueError(f"unknown arm '{arm}'")
-    context = initial_context(arm, task_id, shots=shots, tasks_path=tasks_path)
+    context = initial_context(
+        arm, task_id, shots=shots, tasks_path=tasks_path, include_lead=include_lead
+    )
     return (
         f"{context}\n\n"
         "The program below was rejected. Fix it.\n\n"

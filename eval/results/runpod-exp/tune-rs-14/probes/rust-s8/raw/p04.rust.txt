@@ -1,0 +1,9 @@
+fn main() {
+    let mut v = vec![1, 2];
+    println!("{}", v.len());
+    for x in &v {
+        let y = *x;
+        v.push(y);
+    }
+    println!("{}", v.len());
+}

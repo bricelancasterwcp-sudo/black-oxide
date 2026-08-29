@@ -1,0 +1,12 @@
+fn main() {
+    let a = 100 / 5
+    print(a)
+    if 0 == 0 {
+        print_str("undefined")
+    } else {
+        let b = 100 / 0
+        print(b)
+    }
+    let c = 100 / 4
+    print(c)
+}

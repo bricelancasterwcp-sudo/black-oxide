@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    for i in 2..1000 {
+        let mut sum = 0;
+        for j in 1..i {
+            if i % j == 0 {
+                sum += j;
+            }
+        }
+        if sum == i {
+            println!("{}", i);
+        }
+    }
+}
+```

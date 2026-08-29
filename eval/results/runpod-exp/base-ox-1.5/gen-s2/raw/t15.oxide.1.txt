@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let mut sum = 0;
+    let mut count = 0;
+
+    for s in vec!["12", "x", "30"] {
+        if let Ok(n) = parse_int(s) {
+            sum += n;
+            count += 1;
+        } else {
+            println!("Failed to parse '{}'", s);
+        }
+    }
+
+    println!("Sum: {}", sum);
+    println!("Count: {}", count);
+}
+```

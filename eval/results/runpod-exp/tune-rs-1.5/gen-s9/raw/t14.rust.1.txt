@@ -1,0 +1,13 @@
+fn main() {
+    let s = "mississippi";
+    let mut count = 0;
+    let mut seen = std::collections::HashSet::new();
+    for c in s.chars() {
+        if c == 's' {
+            count += 1;
+        }
+        seen.insert(c);
+    }
+    println!("{}", count);
+    println!("{}", seen.len());
+}

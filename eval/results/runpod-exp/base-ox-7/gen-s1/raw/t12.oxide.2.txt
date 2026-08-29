@@ -1,0 +1,1 @@
+print_str(concat(str_len("stack").map(|i| chars("stack")[i]).collect(), ""))

@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let v = vec![3, 8, -2, 12, 7];
+    print_positive_count(v);
+    print_largest_value(v);
+}
+
+fn print_positive_count(v: Vec<Int>) {
+    let count = v.iter().filter(|&&x| x > 0).count();
+    println!("Number of positive values: {}", count);
+}
+
+fn print_largest_value(v: Vec<Int>) {
+    let largest = *v.iter().max().unwrap();
+    println!("Largest value: {}", largest);
+}
+```

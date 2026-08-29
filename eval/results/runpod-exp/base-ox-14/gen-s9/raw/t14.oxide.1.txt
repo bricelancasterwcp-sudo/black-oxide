@@ -1,0 +1,40 @@
+```text
+struct Reading { label: Str, values: Vec<Str> }
+
+fn count_s(v: Vec<Str>) -> Int {
+    let count = 0
+    for x in v {
+        if x == "s" {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn distinct_chars(v: Vec<Str>) -> Vec<Str> {
+    let mut seen = vec()
+    for x in v {
+        if !contains(seen, x) {
+            seen = push(seen, x)
+        }
+    }
+    seen
+}
+
+fn contains(v: Vec<Str>, x: Str) -> Bool {
+    for y in v {
+        if y == x {
+            return true
+        }
+    }
+    false
+}
+
+fn main() {
+    let text = "mississippi"
+    let chars = chars(text)
+    print(count_s(chars))
+    let distinct = distinct_chars(chars)
+    print(len(distinct))
+}
+```

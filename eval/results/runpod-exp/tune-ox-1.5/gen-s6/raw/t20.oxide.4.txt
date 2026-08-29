@@ -1,0 +1,16 @@
+struct Item { unit_price: Int, quantity: Int }
+fn main() {
+    let items = vec(Item { unit_price: 3, quantity: 4 }, Item { unit_price: 9, quantity: 2 }, Item { unit_price: 5, quantity: 3 })
+    let combined_cost = items.iter().map(|item| item.unit_price * item.quantity).sum()
+    let mut max_item = None
+    for item in items {
+        if max_item.is_none() || item.unit_price * item.quantity > max_item.as_ref().unwrap().unit_price * max_item.as_ref().unwrap().quantity {
+            max_item = Some(item)
+        }
+    }
+    print(combined_cost)
+    match max_item {
+        Some(item) => print_str(item.name()),
+        None => print_str("No items"),
+    }
+}

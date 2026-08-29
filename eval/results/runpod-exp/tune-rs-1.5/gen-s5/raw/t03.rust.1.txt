@@ -1,0 +1,9 @@
+fn main() {
+    let (mut x, mut y) = (252, 105);
+    while y != 0 {
+        let temp = y;
+        y = x % y;
+        x = temp;
+    }
+    println!("{}", x);
+}

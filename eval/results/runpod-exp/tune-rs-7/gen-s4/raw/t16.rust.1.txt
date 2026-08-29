@@ -1,0 +1,9 @@
+fn main() {
+    let divisors = [5, 0, 4];
+    for &divisor in &divisors {
+        match divisor {
+            0 => println!("undefined"),
+            _ => println!("{}", 100 / divisor),
+        }
+    }
+}

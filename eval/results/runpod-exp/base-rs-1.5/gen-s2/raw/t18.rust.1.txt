@@ -1,0 +1,27 @@
+```rust
+fn main() {
+    let rect1 = (3, 4);
+    let tri1 = (3, 4, 5);
+    let rect2 = (2, 5);
+
+    println!("Perimeter of rectangle 3 by 4: {}", perimeter(rect1));
+    println!("Perimeter of triangle with sides 3, 4, 5: {}", perimeter(tri1));
+    println!("Perimeter of rectangle 2 by 5: {}", perimeter(rect2));
+}
+
+fn perimeter(shape: (u32, u32)) -> u32 {
+    2 * (shape.0 + shape.1)
+}
+
+fn perimeter(shape: (u32, u32, u32)) -> u32 {
+    let a = shape.0;
+    let b = shape.1;
+    let c = shape.2;
+
+    if a == b && b == c {
+        3 * a
+    } else {
+        2 * (a + b + c)
+    }
+}
+```

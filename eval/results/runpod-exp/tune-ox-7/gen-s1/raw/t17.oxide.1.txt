@@ -1,0 +1,12 @@
+struct List { elements: Vec<Int> }
+fn main() {
+    let list = List { elements: vec(10, 20, 30) }
+    match get(list.elements, 1) {
+        Some(x) => print(x),
+        None => print(-1),
+    }
+    match get(list.elements, 5) {
+        Some(x) => print(x),
+        None => print(-1),
+    }
+}

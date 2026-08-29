@@ -1,0 +1,6 @@
+struct Rectangle { width: Int, height: Int }
+fn main() {
+    let r = Rectangle { width: 7, height: 4 }
+    print(r.width * r.height)
+    print(2 * (r.width + r.height))
+}

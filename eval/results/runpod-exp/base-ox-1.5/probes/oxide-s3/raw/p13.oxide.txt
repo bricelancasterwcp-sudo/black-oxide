@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let s = "ab";
+    print(str_len(s) * 10);
+    let mut i = 0;
+    let total = 0;
+    while i < 3 {
+        let t = s.clone(); // Clone the string to avoid moving it in a previous iteration
+        total = total + str_len(t) * 5;
+        i = i + 1;
+    }
+    print(total);
+}
+```

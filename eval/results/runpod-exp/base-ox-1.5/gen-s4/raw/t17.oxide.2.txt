@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let mut v = vec![10, 20, 30];
+    println!("{}", get(&v, 1)); // prints 20
+    println!("{}", get(&v, 5)); // prints -1 (position out of bounds)
+}
+```

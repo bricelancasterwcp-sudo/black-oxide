@@ -1,0 +1,22 @@
+```rust
+struct Rectangle { width: Int, height: Int }
+struct Triangle { side1: Int, side2: Int, side3: Int }
+
+fn perimeter_rect(r: Rectangle) -> Int {
+    2 * (r.width + r.height)
+}
+
+fn perimeter_tri(t: Triangle) -> Int {
+    t.side1 + t.side2 + t.side3
+}
+
+fn main() {
+    let rect1 = Rectangle { width: 3, height: 4 }
+    let tri = Triangle { side1: 3, side2: 4, side3: 5 }
+    let rect2 = Rectangle { width: 2, height: 5 }
+
+    print(perimeter_rect(rect1))
+    print(perimeter_tri(tri))
+    print(perimeter_rect(rect2))
+}
+```

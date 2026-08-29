@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let a = push(push(vec(), 1), 2);
+    let b = clone(a); // Clone 'a' to avoid ownership error
+    print(len(a)); // Use 'a' after cloning
+    print(len(b));
+}
+```
+
+This program now correctly avoids the ownership error by cloning `a` before using it in the `print` statements.

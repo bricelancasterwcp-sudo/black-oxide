@@ -1,0 +1,23 @@
+```oxide
+fn sort(v: Vec<Int>) -> Vec<Int> {
+    let mut sorted = v;
+    for i in range(0, len(sorted)) {
+        for j in range(i + 1, len(sorted)) {
+            if sorted[i] > sorted[j] {
+                let temp = sorted[i];
+                sorted[i] = sorted[j];
+                sorted[j] = temp;
+            }
+        }
+    }
+    sorted
+}
+
+fn main() {
+    let v = push(push(push(push(push(vec(), 5), 3), 8), 1), 9), 2);
+    let sorted_v = sort(v);
+    for x in sorted_v {
+        print(x);
+    }
+}
+```

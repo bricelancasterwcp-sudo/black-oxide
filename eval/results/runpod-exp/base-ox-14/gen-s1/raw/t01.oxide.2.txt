@@ -1,0 +1,6 @@
+```text
+fn main() {
+    let sum = range(0, 10).fold(0, fn(acc, x) { acc + x * x })
+    print(sum)
+}
+```

@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let words = ["level", "stereo", "rotor"];
+    for &word in words.iter() {
+        let is_palindrome = word.chars().eq(word.chars().rev());
+        println!("{}", is_palindrome);
+    }
+}
+```

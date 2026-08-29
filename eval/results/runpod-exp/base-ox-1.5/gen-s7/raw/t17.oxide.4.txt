@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let mut list = vec![10, 20, 30];
+    println!("{}", get(&mut list, 1)); // prints 20
+    println!("{}", get(&mut list, 5)); // prints -1 (position out of bounds)
+}
+
+fn get(list: &mut Vec<Int>, pos: Int) -> Option<Int> {
+    if pos < 0 || pos >= list.len() {
+        return None;
+    }
+    Some(list[pos])
+}
+```

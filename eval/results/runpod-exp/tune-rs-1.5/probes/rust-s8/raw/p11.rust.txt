@@ -1,0 +1,7 @@
+fn main() {
+    let s = Pair { a: vec![1, 2], b: String::from("hello") };
+    let Pair { a, ref b } = s;
+    println!("{}", a.len());
+    println!("{}", b.len());
+    println!("{}", b.len());
+}

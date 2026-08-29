@@ -1,0 +1,23 @@
+```rust
+fn divisors_sum(n: Int) -> Int {
+    let sum = 1
+    for i in range(2, n) {
+        if n % i == 0 {
+            sum = sum + i
+        }
+    }
+    sum
+}
+
+fn is_perfect(n: Int) -> Bool {
+    divisors_sum(n) == n
+}
+
+fn main() {
+    for i in range(1, 1000) {
+        if is_perfect(i) {
+            print(i)
+        }
+    }
+}
+```

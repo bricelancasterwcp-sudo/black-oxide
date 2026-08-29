@@ -1,5 +1,22 @@
 {
   "file": "tokenizer.json",
+  "instruct_repos": [
+    {
+      "repo": "Qwen/Qwen2.5-Coder-1.5B-Instruct",
+      "revision": "2e1fd397ee46e1388853d2af2c993145b0f1098a",
+      "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539"
+    },
+    {
+      "repo": "Qwen/Qwen2.5-Coder-7B-Instruct",
+      "revision": "c03e6d358207e414f1eca0bb1891e29f1db0e242",
+      "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539"
+    },
+    {
+      "repo": "Qwen/Qwen2.5-Coder-14B-Instruct",
+      "revision": "aedcc2d42b622764e023cf882b6652e646b95671",
+      "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539"
+    }
+  ],
   "repos": [
     {
       "repo": "Qwen/Qwen2.5-Coder-1.5B",

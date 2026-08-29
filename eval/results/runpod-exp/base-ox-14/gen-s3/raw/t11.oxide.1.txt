@@ -1,0 +1,41 @@
+```text
+fn main() {
+    let v = vec()
+    v = push(v, 5)
+    v = push(v, 3)
+    v = push(v, 8)
+    v = push(v, 1)
+    v = push(v, 9)
+    v = push(v, 2)
+
+    let sorted = sort(v)
+    for x in sorted {
+        print(x)
+    }
+}
+
+fn sort(mut v: Vec<Int>) -> Vec<Int> {
+    let n = len(v)
+    for i in range(0, n) {
+        for j in range(i + 1, n) {
+            if get(v, i)? > get(v, j)? {
+                let temp = get(v, i)?
+                v = set(v, i, get(v, j)?)
+                v = set(v, j, temp)
+            }
+        }
+    }
+    v
+}
+
+fn set(mut v: Vec<Int>, i: Int, x: Int) -> Vec<Int> {
+    v = push(vec(), x)
+    for j in range(0, i) {
+        v = push(v, get(v, j)?)
+    }
+    for j in range(i + 1, len(v) - 1) {
+        v = push(v, get(v, j)?)
+    }
+    v
+}
+```

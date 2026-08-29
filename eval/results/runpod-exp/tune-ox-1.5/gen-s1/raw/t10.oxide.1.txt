@@ -1,0 +1,12 @@
+struct List { vals: Vec<Int> }
+fn main() {
+    let list = List { vals: vec(4, 1, 7, 3, 9, 2) }
+    let mut count = 0
+    for x in list.vals {
+        if x > 3 {
+            print(x)
+            count = count + 1
+        }
+    }
+    print(count)
+}

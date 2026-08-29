@@ -1,0 +1,11 @@
+fn main() {
+    let mut result = 100;
+    for &divisor in &[5, 0, 4] {
+        if divisor == 0 {
+            println!("undefined");
+        } else {
+            result /= divisor;
+            println!("{}", result);
+        }
+    }
+}

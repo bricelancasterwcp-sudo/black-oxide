@@ -1,0 +1,13 @@
+fn main() {
+    let mut total_cost = 0;
+    let mut max_cost_item = "";
+    for (item, price, quantity) in [("pen", 3, 4), ("pad", 9, 2), ("ink", 5, 3)] {
+        let cost = price * quantity;
+        total_cost += cost;
+        if cost > total_cost {
+            max_cost_item = item;
+        }
+    }
+    println!("{}", total_cost);
+    println!("{}", max_cost_item);
+}

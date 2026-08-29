@@ -1,0 +1,37 @@
+```text
+fn sort(v: Vec<Int>) -> Vec<Int> {
+    let len = len(v)
+    if len <= 1 {
+        return v
+    }
+    let pivot = get(v, len / 2)?
+    let mut left = vec()
+    let mut right = vec()
+    for x in v {
+        if x < pivot {
+            left = push(left, x)
+        } else if x > pivot {
+            right = push(right, x)
+        }
+    }
+    let left = sort(left)?
+    let right = sort(right)?
+    let mut sorted = vec()
+    for x in left {
+        sorted = push(sorted, x)
+    }
+    sorted = push(sorted, pivot)
+    for x in right {
+        sorted = push(sorted, x)
+    }
+    Some(sorted)
+}
+
+fn main() {
+    let v = vec(5, 3, 8, 1, 9, 2)
+    let v = sort(v)?
+    for x in v {
+        print(x)
+    }
+}
+```

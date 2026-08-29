@@ -1,0 +1,46 @@
+```text
+fn main() {
+    let v = vec()
+    v = push(v, 5)
+    v = push(v, 3)
+    v = push(v, 8)
+    v = push(v, 1)
+    v = push(v, 9)
+    v = push(v, 2)
+
+    let sorted = sort(v)
+    for x in sorted {
+        print(x)
+    }
+}
+
+fn sort(v: Vec<Int>) -> Vec<Int> {
+    if len(v) <= 1 {
+        return v
+    }
+
+    let pivot = get(v, 0)?
+    let mut less = vec()
+    let mut greater = vec()
+
+    for x in v {
+        if x < pivot {
+            less = push(less, x)
+        } else {
+            greater = push(greater, x)
+        }
+    }
+
+    let mut sorted = sort(less)
+    sorted = push(sorted, pivot)
+    sorted = append(sorted, sort(greater))
+    return sorted
+}
+
+fn append(v1: Vec<Int>, v2: Vec<Int>) -> Vec<Int> {
+    for x in v2 {
+        v1 = push(v1, x)
+    }
+    return v1
+}
+```

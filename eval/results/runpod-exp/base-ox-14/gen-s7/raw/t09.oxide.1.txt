@@ -1,0 +1,15 @@
+```text
+fn main() {
+    let v = vec()
+    let v = push(v, 1)
+    let v = push(v, 2)
+    let v = push(v, 3)
+    let v = push(v, 4)
+    let v = push(v, 5)
+    for x in range(len(v), 0) {
+        let i = trunc(x)
+        let val = get(v, i)?
+        print(val)
+    }
+}
+```

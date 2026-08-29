@@ -1,0 +1,12 @@
+fn main() {
+    let s = "stack"
+    let mut chars = vec()
+    for c in chars_of(s) {
+        chars = push(chars, c)
+    }
+    let mut result = ""
+    for i in range(len(chars)) {
+        result = result + chars[i]
+    }
+    print(result)
+}

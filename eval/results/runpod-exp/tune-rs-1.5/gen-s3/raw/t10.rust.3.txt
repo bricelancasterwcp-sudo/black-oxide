@@ -1,0 +1,14 @@
+fn main() {
+    let mut v = vec![4, 1, 7, 3, 9, 2];
+    for i in &mut v {
+        if *i <= 3 {
+            *i = 0;
+        }
+    }
+    println!("{}", v.iter().filter(|&&x| x != 0).count());
+    for i in &v {
+        if *i != 0 {
+            println!("{}", i);
+        }
+    }
+}

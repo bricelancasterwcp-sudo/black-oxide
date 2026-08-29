@@ -1,0 +1,21 @@
+```rust
+fn main() {
+    let numbers = vec!["12", "x", "30"];
+    let mut sum: i32 = 0;
+    let mut failures: usize = 0;
+
+    for &num in numbers.iter() {
+        match num.parse::<i32>() {
+            Ok(n) => {
+                sum += n;
+            }
+            Err(_) => {
+                failures += 1;
+            }
+        }
+    }
+
+    println!("Sum of successful parses: {}", sum);
+    println!("Number of failed parses: {}", failures);
+}
+```

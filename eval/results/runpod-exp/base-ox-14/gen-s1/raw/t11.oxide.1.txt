@@ -1,0 +1,29 @@
+```rust
+struct Reading { label: Str, values: Vec<Int> }
+
+fn sort(v: Vec<Int>) -> Vec<Int> {
+    let mut sorted = vec()
+    for x in v {
+        let inserted = false
+        for i in range(0, len(sorted)) {
+            if get(sorted, i)? > x {
+                sorted = push(push(slice(sorted, 0, i), x), slice(sorted, i, len(sorted)))
+                inserted = true
+                break
+            }
+        }
+        if !inserted {
+            sorted = push(sorted, x)
+        }
+    }
+    sorted
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: vec![5, 3, 8, 1, 9, 2] }
+    let sorted_values = sort(r.values)
+    for x in sorted_values {
+        print(x)
+    }
+}
+```

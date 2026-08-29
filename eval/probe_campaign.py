@@ -77,13 +77,23 @@ def write_provenance(root: Path, payload: dict) -> Path:
 
 
 def run_cell(
-    root: Path, arm: str, seed: int, client_factory: Callable[[str], object]
+    root: Path,
+    arm: str,
+    seed: int,
+    client_factory: Callable[[str], object],
+    include_card: bool = True,
 ) -> None:
     """One (arm, seed): every probe in the corpus for that arm."""
     cell = cell_dir(root, arm, seed)
     reset_partial(cell)
     records = _select(load_probes(None), None, arm)
-    run_corpus(client_factory(arm), records, out_dir=cell, seed=seed)
+    run_corpus(
+        client_factory(arm),
+        records,
+        out_dir=cell,
+        seed=seed,
+        include_card=include_card,
+    )
 
 
 def run_campaign(
@@ -93,6 +103,7 @@ def run_campaign(
     *,
     client_factory: Callable[[str], object],
     provenance: dict | None = None,
+    include_card: bool = True,
 ) -> list[tuple[str, int]]:
     """Run every unfinished cell. Returns the cells it ran.
 
@@ -122,6 +133,15 @@ def run_campaign(
         )
     ran: list[tuple[str, int]] = []
     for arm, seed in pending_cells(root, arms, seeds):
-        run_cell(root, arm, seed, client_factory)
+        # Call with the pre-existing 4-arg shape when include_card is at
+        # its default: several tests monkeypatch ``run_cell`` with a
+        # fixed-signature fake predating this parameter, and the
+        # unconditional keyword form would break them for a value that
+        # changes nothing about what runs. Threading still happens --
+        # only the call shape for the untouched default path is pinned.
+        if include_card:
+            run_cell(root, arm, seed, client_factory)
+        else:
+            run_cell(root, arm, seed, client_factory, include_card=include_card)
         ran.append((arm, seed))
     return ran

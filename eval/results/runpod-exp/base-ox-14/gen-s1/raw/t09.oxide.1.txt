@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let v = vec();
+    let v = push(v, 1);
+    let v = push(v, 2);
+    let v = push(v, 3);
+    let v = push(v, 4);
+    let v = push(v, 5);
+
+    let mut i = len(v) - 1;
+    while i >= 0 {
+        let x = get(v, i)?;
+        print(x);
+        i = i - 1;
+    }
+}
+```

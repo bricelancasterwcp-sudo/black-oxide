@@ -1,0 +1,13 @@
+fn gcd(a: isize, b: isize) -> isize {
+    if b == 0 {
+        a
+    } else {
+        gcd(b, a % b)
+    }
+}
+
+fn main() {
+    let num1 = 252;
+    let num2 = 105;
+    println!("The greatest common divisor of {} and {} is {}", num1, num2, gcd(num1, num2));
+}

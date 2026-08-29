@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let numbers = vec![10, 20, 30];
+    
+    if let Some(&element) = numbers.get(1) {
+        println!("Element at position 1: {}", element);
+    } else {
+        println!("Position 1 is out of bounds.");
+    }
+    
+    if let Some(&element) = numbers.get(4) {
+        println!("Element at position 5: {}", element);
+    } else {
+        println!("Position 5 is out of bounds.");
+    }
+}
+```

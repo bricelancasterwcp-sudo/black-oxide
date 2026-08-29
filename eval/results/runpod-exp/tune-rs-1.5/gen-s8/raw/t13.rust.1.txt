@@ -1,0 +1,5 @@
+fn main() {
+    for s in ["level", "stereo", "rotor"] {
+        println!("{}", s.chars().eq(s.chars().rev()));
+    }
+}

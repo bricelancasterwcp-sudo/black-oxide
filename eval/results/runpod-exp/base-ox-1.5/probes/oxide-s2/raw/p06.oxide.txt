@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let s = "hello";
+    let n = 5;
+    if n > 3 {
+        let t = s.clone(); // clone at the noted location
+        print(str_len(t));
+    }
+    print(str_len(s)); // no need to clone here, as it's already available
+}
+```

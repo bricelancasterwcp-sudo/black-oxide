@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let numbers = [10, 20, 30];
+    println!("{}", numbers.get(1).unwrap_or(-1)); // Output: 20
+    println!("{}", numbers.get(5).unwrap_or(&-1)); // Output: -1 (position out of bounds)
+}
+```

@@ -1,0 +1,6 @@
+fn main() {
+    let chars = split_str("stack")
+    for c in chars {
+        print_char(c)
+    }
+}

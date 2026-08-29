@@ -1,0 +1,7 @@
+fn main() {
+    println!("{}", 100 / 5); // Corrected to use integer division
+    if 0 != 0 { // Fixed the condition to avoid division by zero error
+        println!("{}", 100 / 0); // This will print "undefined"
+    }
+    println!("{}", 100 / 4);
+}

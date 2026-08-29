@@ -1,0 +1,14 @@
+```rust
+#[derive(Clone)]
+struct Point {
+    x: i32,
+    tag: String,
+}
+
+fn main() {
+    let p = Point { x: 11, tag: String::from("hello") };
+    let q = Point { x: 55, ..p };
+    println!("{}", p.tag.len());
+    // No need to print q.x as it is not used
+}
+```

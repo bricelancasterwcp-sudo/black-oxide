@@ -1,0 +1,13 @@
+```text
+fn main() {
+    let numbers = vec(4, 1, 7, 3, 9, 2)
+    let mut count = 0
+    for x in numbers {
+        if x > 3 {
+            print(x)
+            count = count + 1
+        }
+    }
+    print(count)
+}
+```

@@ -1,0 +1,10 @@
+fn main() {
+    let mut count = 0;
+    for &x in &[4, 1, 7, 3, 9, 2] {
+        if x > 3 {
+            println!("{}", x);
+            count += 1;
+        }
+    }
+    println!("{}", count);
+}

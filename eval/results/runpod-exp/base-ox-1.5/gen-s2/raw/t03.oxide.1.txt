@@ -1,0 +1,14 @@
+```rust
+fn gcd(a: Int, b: Int) -> Int {
+    if a == 0 {
+        return b;
+    }
+    gcd(b % a, a)
+}
+
+fn main() {
+    let x = 252;
+    let y = 105;
+    print(gcd(x, y));
+}
+```

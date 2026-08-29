@@ -175,13 +175,22 @@ def diagnose(arm: str, source: str) -> list[dict]:
         return _scrub_paths(harness.check_file(arm, path)["diagnostics"])
 
 
-def build_probe_prompt(record: dict, diagnostics: list[dict] | None = None) -> str:
+def build_probe_prompt(
+    record: dict,
+    diagnostics: list[dict] | None = None,
+    *,
+    include_card: bool = True,
+) -> str:
     """The repair prompt for one probe: card, program, diagnostics, task.
 
     `diagnostics` defaults to the real compiler output for `broken`;
     passing them in is for tests and for callers that already ran the
     checker. `expected_stdout` and `fix` are never referenced here -- the
     prompt is built from `broken` alone.
+
+    ``include_card=False`` (the fine-tune experiment's tuned arms) omits
+    the language card / Rust preamble: the tuned model carries the
+    language in its weights.
     """
     arm = record["arm"]
     diags = diagnose(arm, record["broken"]) if diagnostics is None else diagnostics
@@ -191,8 +200,9 @@ def build_probe_prompt(record: dict, diagnostics: list[dict] | None = None) -> s
             f"program; a probe prompt with an empty failure block would ask "
             f"the model to repair a program it is told nothing is wrong with"
         )
+    lead = f"{language_card(arm)}\n\n" if include_card else ""
     return (
-        f"{language_card(arm)}\n\n"
+        f"{lead}"
         f"{PROBE_INSTRUCTION}\n\n"
         f"Program:\n{record['broken']}\n"
         f"Diagnostics:\n{repair.render_diagnostics(diags)}\n\n"
@@ -338,13 +348,14 @@ def run_probe(
     *,
     raw_dir: Path | None = None,
     seed: int = 1,
+    include_card: bool = True,
 ) -> dict:
     """One generation against one probe, scored.
 
     ModelError is deliberately NOT caught: an infrastructure failure
     recorded as a model failure biases every arm toward the null.
     """
-    prompt = build_probe_prompt(record)
+    prompt = build_probe_prompt(record, include_card=include_card)
     generation = client.generate(prompt, seed=seed)
     if raw_dir is not None:
         raw_dir.mkdir(parents=True, exist_ok=True)
@@ -371,6 +382,7 @@ def run_corpus(
     *,
     out_dir: Path,
     seed: int = 1,
+    include_card: bool = True,
 ) -> dict:
     """Every probe in `records`, appending one result line per probe."""
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -385,7 +397,13 @@ def run_corpus(
         )
     results: list[dict] = []
     for record in records:
-        result = run_probe(client, record, raw_dir=out_dir / "raw", seed=seed)
+        result = run_probe(
+            client,
+            record,
+            raw_dir=out_dir / "raw",
+            seed=seed,
+            include_card=include_card,
+        )
         results.append(result)
         with open(results_path, "a", encoding="utf-8") as handle:
             handle.write(json.dumps(result, sort_keys=True) + "\n")

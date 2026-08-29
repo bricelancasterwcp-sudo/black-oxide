@@ -245,23 +245,36 @@ def build_prompt(
     task_id: str,
     shots: int = 0,
     tasks_path: str | Path | None = None,
+    include_lead: bool = True,
 ) -> str:
-    """The complete solver prompt for one task in one arm (section 45)."""
+    """The complete solver prompt for one task in one arm (section 45).
+
+    ``include_lead=False`` (the fine-tune experiment's tuned arms) drops
+    the language card / Rust preamble and forbids shots: the tuned model
+    carries the language in its weights, and the rendering must equal
+    the training rendering exactly.
+    """
     _require_arm(arm)
     if shots < 0:
         raise HarnessError("--shots must be >= 0")
+    if shots and not include_lead:
+        raise HarnessError(
+            "shots require the lead material; card-free prompts are 0-shot"
+        )
     task = _get_task(task_id, tasks_path)
-    if arm == "rust":
-        lead = RUST_PREAMBLE
-    else:
-        card_path = _REPO_ROOT / CARD_FILES[arm]
-        try:
-            lead = card_path.read_text(encoding="utf-8")
-        except OSError as exc:
-            raise HarnessError(
-                f"cannot read language card '{card_path}': {exc}"
-            ) from exc
-    sections = [lead.rstrip("\n")]
+    sections: list[str] = []
+    if include_lead:
+        if arm == "rust":
+            lead = RUST_PREAMBLE
+        else:
+            card_path = _REPO_ROOT / CARD_FILES[arm]
+            try:
+                lead = card_path.read_text(encoding="utf-8")
+            except OSError as exc:
+                raise HarnessError(
+                    f"cannot read language card '{card_path}': {exc}"
+                ) from exc
+        sections.append(lead.rstrip("\n"))
     if shots:
         pairs = load_shots(arm)
         if shots > len(pairs):

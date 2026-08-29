@@ -116,3 +116,14 @@ this wave's report will produce.
 > overall ≤ 1.09, vectors ≤ 1.25, arithmetic ≤ 1.02, strings hold
 > 1.159 ± 0.03, structs hold ≤ 1.00 (consistency at exact hits
 > ≈ 1.083).
+
+> **Amended 2026-08-29 (scale-gate STOP, owner ruling):** the corpus-
+> scale gate held twice (8.8k → 11.0k/arm after the pre-registered
+> +20-seed escalation; single-family seed-scaling flattens: 74→143→188
+> uniques). Owner ruled option (a): amplification re-runs at
+> **temperature 0.8 for corpus generation only** — the sampler pin
+> (0.2) binds measurement arms, not corpus generation, whose quality
+> is oracle-guarded (only compiler-verified programs enter the pool).
+> The final pool = v04-amp (0.2) + amp2 (0.2) + amp3 (0.8), each
+> pool's sampler recorded in provenance; the ≥15k gate and the 0.455
+> floor stand unchanged.

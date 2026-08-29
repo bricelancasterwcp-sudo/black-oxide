@@ -1,0 +1,8 @@
+```
+fn main() {
+    let g = 'G';
+    let r = 'R';
+    print(g);
+    println(r);
+}
+```

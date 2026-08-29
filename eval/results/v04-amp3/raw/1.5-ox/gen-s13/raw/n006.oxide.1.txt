@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let mut i = 1;
+    while true {
+        if pow(i, 2) > 100 {
+            break;
+        }
+        i *= 2;
+    }
+    print(i);
+}
+```

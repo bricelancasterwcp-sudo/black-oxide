@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let numbers = vec![7, 8, 9];
+    match numbers.get(1) {
+        Some(second_entry) => println!("The second entry is: {}", second_entry),
+        None => println!("No second entry found."),
+    }
+}
+```
+
+This program correctly retrieves the second element of a vector and prints it. If there are fewer than two elements in the vector, it prints "No second entry found."

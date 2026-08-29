@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut coffee = "coffe".chars().collect::<Vec<char>>();
+    coffee.sort_unstable();
+    for &c in coffee.iter() {
+        if coffee.iter().position(|&x| x == c).unwrap() != coffee.iter().position(|&x| x == c + 1).unwrap() {
+            println!("{}", c);
+        }
+    }
+}
+```

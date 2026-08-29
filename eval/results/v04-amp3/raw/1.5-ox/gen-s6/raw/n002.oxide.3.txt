@@ -1,0 +1,9 @@
+```
+fn multiply_numbers() -> Int {
+    let mut product = 1;
+    for i in 1..7 {
+        product *= i;
+    }
+    return product; // Fix by removing the trailing semicolons
+}
+```

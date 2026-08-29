@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let a = 4 * 3;
+    let b = 5 * 2;
+    print(a + b);
+}
+```

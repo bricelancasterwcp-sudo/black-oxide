@@ -1,0 +1,14 @@
+```rust
+fn multiply(v: Vec<Int>) -> Int {
+    let mut acc = 1;
+    for x in v {
+        acc *= x;
+    }
+    acc
+}
+
+fn main() {
+    let product = multiply(push(push(push(push(vec(), 1), 2), 3), 4), 5));
+    print(product);
+}
+```

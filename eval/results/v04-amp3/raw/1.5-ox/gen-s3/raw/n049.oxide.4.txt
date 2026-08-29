@@ -1,0 +1,46 @@
+```rust
+struct Figure {
+    name: Str,
+    size: Int,
+}
+
+impl Figure {
+    fn new(name: Str, size: Int) -> Self {
+        Figure { name, size }
+    }
+
+    fn is_smaller(&self, other: &Figure) -> bool {
+        self.size < other.size
+    }
+}
+
+fn main() {
+    let figs = vec![
+        Figure::new("circle", 5),
+        Figure::new("triangle", 8),
+        Figure::new("square", 3),
+        Figure::new("rectangle", 4),
+    ];
+
+    // Sort the figures by size in ascending order
+    figs.sort_by(|a, b| a.size.cmp(&b.size));
+
+    if figs.is_empty() {
+        print_str("No figures available.");
+    } else {
+        // Get the smallest and largest figures
+        let min_fig = *figs.first().unwrap();
+        let max_fig = *figs.last().unwrap();
+
+        // Calculate and print the gap between the largest and the smallest
+        let gap = max_fig.size - min_fig.size;
+        print(min_fig.name);
+        print(" ");
+        print_str("gap");
+        print(" ");
+        print(max_fig.name);
+        print_str(": ");
+        print_str(&gap.to_string());
+    }
+}
+```

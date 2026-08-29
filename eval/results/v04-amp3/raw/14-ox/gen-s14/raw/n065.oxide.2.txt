@@ -1,0 +1,36 @@
+struct Reading { label: Str, values: Vec<Int> }
+
+fn count_greater_than(v: Vec<Int>, threshold: Int) -> Int {
+    let count = 0
+    for x in v {
+        if x > threshold {
+            count += 1
+        }
+    }
+    count
+}
+
+fn find_max(v: Vec<Int>) -> Option<Int> {
+    let mut max_val = None
+    for x in v {
+        match max_val {
+            None => max_val = Some(x),
+            Some(current_max) => {
+                if current_max < x {
+                    max_val = Some(x)
+                }
+            }
+        }
+    }
+    max_val
+}
+
+fn main() {
+    let readings = push(push(push(push(push(vec(), 6), 11), 3), 14), 9)
+    let count = count_greater_than(readings.clone(), 5)
+    print(count)
+    match find_max(readings) {
+        Some(max_val) => print(max_val),
+        None => print_str("No readings"),
+    }
+}

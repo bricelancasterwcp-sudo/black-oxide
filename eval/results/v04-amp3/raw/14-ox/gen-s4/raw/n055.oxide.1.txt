@@ -1,0 +1,22 @@
+```
+struct Entry { label: Str, value: Option<Int> }
+
+fn parse_entry(s: Str) -> Entry {
+    if s == "oak" {
+        Entry { label: s, value: None }
+    } else {
+        Entry { label: s, value: Some(parse_int(s).unwrap_or(-1)) }
+    }
+}
+
+fn main() {
+    let entries = vec("8", "oak", "15");
+    for entry_str in entries {
+        let entry = parse_entry(entry_str);
+        match entry.value {
+            Some(n) => print(n),
+            None => print_str("bad"),
+        }
+    }
+}
+```

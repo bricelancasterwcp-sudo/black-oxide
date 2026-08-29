@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let total: i32 = (1..=5).map(|n| n.pow(3)).sum();
+    println!("The sum of cubes is: {}", total);
+}
+```
+
+Explanation:
+In the original program, `pow` is used instead of `* n * n * n`, which was causing the cube to be multiplied by itself. The correct syntax for calculating the cube of a number in Rust is `n.pow(3)`. This corrected program will now produce the expected output: "The sum of cubes is: 225".

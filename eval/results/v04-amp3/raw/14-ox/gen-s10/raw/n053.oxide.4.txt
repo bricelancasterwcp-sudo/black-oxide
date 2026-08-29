@@ -1,0 +1,12 @@
+```text
+fn main() {
+    let s = "drum";
+    let reversed = "";
+    for c in chars(s) {
+        reversed = concat(c, reversed);
+    }
+    print_str(reversed);
+    print_str("\n");
+    print_str(s);
+}
+```

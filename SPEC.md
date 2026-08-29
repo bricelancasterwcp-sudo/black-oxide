@@ -3081,3 +3081,48 @@ census v2 `REPORT.md`'s `compound_assign` rows
 the pre-shipping *absence* of `+=` correctly, over the wave-1-era corpus,
 before this section's construct existed — the same "measured then, true
 then" reading §58.2 gives the superseded `to_str` paragraph in §57.
+
+### 59.7 Dynamic-estimand defect and its correction (recorded 2026-08-29)
+
+Wave 2's dynamic reading exposed a defect in an instrument the project
+had been quoting since wave 0, and this section records it so the
+correction is normative rather than a report footnote.
+
+**The defect.** The dynamic token-efficiency endpoint was
+`tokens_to_green_mean(oxide) / tokens_to_green_mean(rust)`, where each
+arm's mean is taken over *that arm's own* green sessions. Those sets are
+not the same set, and they change size and difficulty whenever pass@1
+moves. A tuned-arm pass@1 improvement therefore *raises* the arm's mean
+by admitting harder tasks — the number moves for a reason that has
+nothing to do with how many tokens the language costs. This is the
+project's standing bug class: a value that looks like a measurement of
+the subject but is partly a measurement of the instrument's inputs.
+
+**What it cost.** Wave 1's report claimed the dynamic ratio improved
+1.24 → 1.13 and that this "moved the same direction as the static one."
+Applying a single composition-controlled construction to all three
+waves' committed cells shows wave 1 was in fact *worse* than wave 0
+(1.293 vs 1.217). The wave-1 report carries a dated erratum; the
+published values are left visible.
+
+**The correction (binding on wave 3 and after).** The primary dynamic
+endpoint is the **composition-controlled paired ratio**:
+
+1. Pair campaign cells by `(seed, task)` — never by position.
+2. Keep only pairs where *both* arms reached green.
+3. When comparing across waves, restrict to the set of pairs green in
+   *every* wave being compared, and report that set's size and task
+   count alongside the ratio.
+
+The unconditional mean remains reported as a secondary, so the
+historical series stays readable, but it is no longer an endpoint any
+decision may rest on. Any future endpoint whose denominator is a
+model-dependent subset must state, at pre-registration, what keeps the
+compared populations comparable.
+
+**Corollary for the repair loop.** Wave 2 measured `tune-ox-7`'s final
+greens exactly equal to its first-attempt greens (151 = 151): at this
+capability level the repair loop recovers nothing, so `tokens_to_green`
+is almost entirely first-attempt generation length. A future wave that
+sees the repair loop start recovering sessions must re-check whether the
+two constructions have diverged.

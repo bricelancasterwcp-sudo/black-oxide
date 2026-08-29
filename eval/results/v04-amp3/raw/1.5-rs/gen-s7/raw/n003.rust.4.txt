@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut count = 0;
+    for i in 1..=36 {
+        if i * i == 36 { // Corrected condition to check if 'i' squared equals 36 (which means it divides exactly)
+            count += 1;
+        }
+    }
+    println!("There are {} whole numbers from 1 to 36 that divide 36 exactly.", count);
+}
+```

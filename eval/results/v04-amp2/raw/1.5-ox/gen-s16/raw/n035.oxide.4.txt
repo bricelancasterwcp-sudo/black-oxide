@@ -1,0 +1,17 @@
+```rust
+fn divide(a: Int, b: Int) -> Option<Int> {
+    if b == 0 {
+        None
+    } else {
+        Some(a / b)
+    }
+}
+
+fn main() {
+    let result = divide(20, 4);
+    match result {
+        Some(n) => print(n),
+        None => print_str("bad"),
+    }
+}
+```

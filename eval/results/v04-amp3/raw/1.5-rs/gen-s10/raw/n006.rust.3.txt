@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let mut n = 1;
+    while (n * n) <= 100 {
+        n *= 2;
+    }
+    println!("{}", n);
+}
+```
+The problem in your original code was that `println!("{}", n / 2);` printed the result of dividing `n` by 2, which is not what you wanted. The correct output should be the largest power of two less than or equal to 100.

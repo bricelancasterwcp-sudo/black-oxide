@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let inputs = vec!["8", "oak", "15"];
+    for input in inputs {
+        match parse_int(input) {
+            Some(n) => print(n),
+            None => print_str("bad"),
+        }
+    }
+}
+```

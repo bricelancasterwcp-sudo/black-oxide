@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let (x, y) = (Some(7), None);
+    let numbers: [Option<i32>; 4] = [Some(9), x, Some(6), y];
+    let total_sum: i32 = numbers.iter().filter_map(|&n| n).sum();
+    let count_not_number: usize = numbers.iter().filter(|&n| n.is_none()).count();
+
+    println!("Total sum of the ones that do: {}", total_sum);
+    println!("Number of elements that do not hold a number: {}", count_not_number);
+}
+```

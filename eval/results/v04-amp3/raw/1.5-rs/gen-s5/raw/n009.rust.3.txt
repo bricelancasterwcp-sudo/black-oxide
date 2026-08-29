@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let mut arr = [4, 3, 2, 1];
+    println!("{:?}", std::iter::rev(&arr));
+}
+```
+
+In the original code, `arr.reverse()` is trying to mutate a constant array. The fix is to declare `arr` as mutable by adding `mut`. Additionally, `std::iter::rev(&arr)` is used instead of `println!("{:?}", arr.reverse())`, which would not compile due to borrowing errors.

@@ -1,0 +1,23 @@
+```rust
+struct List { value: Int }
+
+fn get(list: Vec<List>, pos: Int) -> Option<Int> {
+    let v = get(list, pos)?
+    Some(v.value)
+}
+
+fn main() {
+    let l = vec![
+        List { value: 10 },
+        List { value: 20 }
+    ];
+    match get(l, 0) {
+        Some(n) => print(n),
+        None => print_str("none"),
+    }
+    match get(l, 3) {
+        Some(n) => print(n),
+        None => print_str("none"),
+    }
+}
+```

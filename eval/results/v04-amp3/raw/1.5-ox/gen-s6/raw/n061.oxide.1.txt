@@ -1,0 +1,17 @@
+```rust
+struct Point { x: Int, y: Int }
+
+fn area(p: Point) -> Int {
+    p.x * p.y
+}
+
+fn perimeter(p: Point) -> Int {
+    2 * (p.x + p.y)
+}
+
+fn main() {
+    let r = Point { x: 9, y: 3 };
+    print(area(r));          // prints the area of the rectangle
+    print(perimeter(r));    // prints the perimeter of the rectangle
+}
+```

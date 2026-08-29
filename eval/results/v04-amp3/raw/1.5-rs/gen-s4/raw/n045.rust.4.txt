@@ -1,0 +1,6 @@
+fn main() {
+    let log = [6, 7, 8, 9];
+
+    println!("The first entry in the log is: {}", log[0]);
+    println!("The last entry in the log is: {}", log[log.len() - 1]);
+}

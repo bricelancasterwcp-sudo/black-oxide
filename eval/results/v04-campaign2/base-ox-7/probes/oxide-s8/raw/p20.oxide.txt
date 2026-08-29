@@ -1,0 +1,15 @@
+fn main() {
+    let v = range(0, 10);
+    print(len(v));
+    let total = 0;
+    let mut acc = vec![];
+    for x in v {
+        if x > 4 {
+            acc.push(x);
+            break;
+        }
+    }
+    let w = push(acc, 5);
+    total = len(w);
+    print(total);
+}

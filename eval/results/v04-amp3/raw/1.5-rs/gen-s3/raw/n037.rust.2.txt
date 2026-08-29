@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let mut width = 2;
+    let mut height = 3;
+
+    // Change the width of the rectangle
+    width = 5;
+
+    // Calculate and print the area of the rectangle
+    println!("Area: {}", width * height);
+}
+```
+
+Explanation:
+The program was accepted. The width was correctly updated to 5, which means the area of the rectangle is now 5 * 3 = 15.

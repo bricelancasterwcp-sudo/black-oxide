@@ -1,0 +1,17 @@
+fn main() {
+    let texts = ["7", "x", "9", "?"];
+
+    let mut sum = 0;
+    let mut count_not = 0;
+
+    for &text in texts.iter() {
+        if text.chars().any(|c| c.is_numeric()) {
+            sum += text.parse::<u32>().unwrap();
+        } else {
+            count_not += 1;
+        }
+    }
+
+    println!("The total of the ones that do is: {}", sum);
+    println!("How many do not is: {}", count_not);
+}

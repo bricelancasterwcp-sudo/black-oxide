@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let input = "8 oak 15";
+    let parts: Vec<&str> = input.split_whitespace().collect();
+
+    for part in parts {
+        match part.parse::<i32>() {
+            Ok(num) => println!("{}", num),
+            Err(_) => println!("bad"),
+        }
+    }
+}
+```

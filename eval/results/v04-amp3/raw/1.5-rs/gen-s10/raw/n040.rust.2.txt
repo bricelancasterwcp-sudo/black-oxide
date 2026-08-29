@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let side = 4.0;
+    let pi = 3.141592653589793;
+    println!("The area of a square of side {} is {}", side, side * side * pi);
+}
+```

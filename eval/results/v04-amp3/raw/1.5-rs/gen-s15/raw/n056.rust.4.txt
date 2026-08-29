@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let texts = vec![Some(7), None, Some(9), Some('?')];
+
+    let sum: i32 = texts.iter().filter_map(|&text| match text {
+        Some(n) => Some(*n),
+        _ => None,
+    }).sum();
+
+    println!("Total of the ones that do: {}", sum);
+    println!("Number of ones that do not: {}", texts.len() - sum as usize);
+}
+```

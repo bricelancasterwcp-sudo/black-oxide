@@ -1,0 +1,19 @@
+```
+fn main() {
+    let batch = vec(9, 2, 12, 5, 16);
+    let kept = vec();
+    let count = 0;
+
+    for x in batch {
+        if x < 10 {
+            kept = push(kept, x);
+            count = count + 1;
+        }
+    }
+
+    for y in kept {
+        print(y);
+    }
+    print(count);
+}
+```

@@ -1,0 +1,21 @@
+```rust
+fn main() {
+    if let Ok(number) = std::str::from_utf8(&b"8".as_ref()) {
+        println!("{}", number);
+    } else {
+        println!("bad");
+    }
+
+    if let Ok(tree) = std::str::from_utf8(&b"oak".as_ref()) {
+        println!("{}", tree);
+    } else {
+        println!("bad");
+    }
+
+    if let Ok(number) = std::str::from_utf8(&b"15".as_ref()) {
+        println!("{}", number);
+    } else {
+        println!("bad");
+    }
+}
+```

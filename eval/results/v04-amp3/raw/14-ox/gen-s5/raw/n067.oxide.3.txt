@@ -1,0 +1,24 @@
+```text
+struct Reading { label: Str, values: Vec<Int> }
+
+fn process_values(v: Vec<Int>) -> Int {
+    let sum_even = 0
+    for x in v {
+        if x % 2 == 0 {
+            sum_even = sum_even + x
+        } else {
+            print(x * 2)
+            print_str("\n")
+        }
+    }
+    sum_even
+}
+
+fn main() {
+    let values = vec(7, 4, 9, 10)
+    let total_even = process_values(values)
+    print("Total of even entries: ")
+    print(total_even)
+    print_str("\n")
+}
+```

@@ -1,0 +1,18 @@
+fn main() {
+    let s = "granite";
+    if str_len(s) > 0 { 
+        print(char_at(s, 0));
+    } else {
+        print('?');
+    }
+    if str_len(s) > 0 { 
+        print(char_at(s, str_len(s) - 1));
+    } else {
+        print('?');
+    }
+}
+
+fn char_at(s: Str, i: Int) -> Str {
+    let chars = chars(s);
+    get(chars, i).unwrap_or("?")
+}

@@ -1,0 +1,7 @@
+fn main() {
+    let v = vec!(10, 20);
+    match (get(v, 0), get(v, 3)) {
+        (Some(a), Some(b)) => print(concat(int_to_str(a), " ", int_to_str(b))),
+        _ => print_str("none"),
+    }
+}

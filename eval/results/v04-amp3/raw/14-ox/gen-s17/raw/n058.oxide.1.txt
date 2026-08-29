@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let word = "coffee";
+    let mut seen = Vec();
+    let mut printed = Vec();
+
+    for c in chars(word) {
+        if !contains(seen, c) {
+            seen = push(seen, c);
+        } else if !contains(printed, c) {
+            print(c);
+            printed = push(printed, c);
+        }
+    }
+}
+```

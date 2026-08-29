@@ -1,0 +1,11 @@
+Here's the completed program:
+
+```rust
+fn main() {
+    let fruit_names = ["fig", "banana", "kiwi"];
+    let longest_fruit = fruit_names.iter().max_by_key(|&&name| name.len()).unwrap();
+    println!("Longest fruit: {} with letter count {}", longest_fruit, longest_fruit.len());
+}
+```
+
+The original program was trying to compare the length of each fruit by comparing `&fruit_name` to `name`. This caused a lifetime error because `name` is a reference to a local variable in the function scope. The correct way to compare the lengths of each fruit is to use `&&name.len()`, which ensures that both references are valid during the comparison.

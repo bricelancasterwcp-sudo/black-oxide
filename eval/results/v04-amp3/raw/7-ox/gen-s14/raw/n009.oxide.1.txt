@@ -1,0 +1,11 @@
+```rust
+fn reverse_number(n: Int) -> Str {
+    let s = int_to_str(n)
+    let chars = chars(s)
+    concat(chars[chars.len() - 1], chars[..chars.len() - 1].concat())
+}
+
+fn main() {
+    print(reverse_number(1234))
+}
+```

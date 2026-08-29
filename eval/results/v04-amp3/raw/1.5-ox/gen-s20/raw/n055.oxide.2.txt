@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    match (read(8), read("oak"), read(15)) {
+        (Ok(n), Ok(oak), Ok(m)) => println!("{} {}", n, m),
+        _ => println!("bad"),
+    }
+}
+
+fn read(x: &str) -> Result<Int, ()> {
+    if x == "8" { Ok(Int::from(8)) } else { Err(()) }
+}
+```

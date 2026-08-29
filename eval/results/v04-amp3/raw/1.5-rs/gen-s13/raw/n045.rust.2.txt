@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let log = [6, 7, 8, 9];
+    println!("The first entry is: {}", log[0]);
+    println!("The last entry is: {}", log[log.len() - 1]);
+}
+```
+
+I've corrected the program by ensuring that `log` is correctly accessed using its length. The index `log.len() - 1` retrieves the last element of the array, which is what's needed for this task.

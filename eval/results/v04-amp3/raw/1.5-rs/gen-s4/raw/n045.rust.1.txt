@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let log = [6, 7, 8, 9];
+
+    println!("The first entry in the log is: {}", log[0]);
+    println!("The last entry in the log is: {}", log[log.len() - 1]);
+}
+```
+
+Explanation:
+- We define a constant `log` which is an array containing the integers 6, 7, 8, and 9.
+- We print the first element of the array using `println!("The first entry in the log is: {}", log[0]);`.
+- We print the last element of the array using `println!("The last entry in the log is: {}", log[log.len() - 1]);`. The `len()` method returns the size of the array, and subtracting one from it gives us the index of the last element.

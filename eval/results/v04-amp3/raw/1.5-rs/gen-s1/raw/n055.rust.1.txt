@@ -1,0 +1,24 @@
+```rust
+fn main() {
+    let a = "8".parse::<i32>().unwrap_or(-1);
+    if a == 8 {
+        println!("good");
+    } else {
+        println!("bad");
+    }
+
+    let b = "oak".parse::<i32>().unwrap_or(-1);
+    if b == 9 {
+        println!("good");
+    } else {
+        println!("bad");
+    }
+
+    let c = "15".parse::<i32>().unwrap_or(-1);
+    if c == 16 {
+        println!("good");
+    } else {
+        println!("bad");
+    }
+}
+```

@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let mut total = 0;
+    for n in 1..=5 {
+        total += n.pow(3);
+    }
+    println!("The sum of cubes from 1 to 5 is: {}", total);
+}
+```

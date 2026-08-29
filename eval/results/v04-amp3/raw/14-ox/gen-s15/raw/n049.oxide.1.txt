@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let values = vec(8, 3, 11, 6);
+    let min_value = min(values)?;
+    print(min_value);
+    let max_value = max(values)?;
+    let gap = max_value - min_value;
+    print(gap);
+}
+```

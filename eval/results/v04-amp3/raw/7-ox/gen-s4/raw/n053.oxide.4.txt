@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let s = "drum";
+    print(concat(str_len(s), " ", reverse(join(chars(s)))))
+}
+
+fn reverse(s: Vec<Str>) -> Str {
+    concat(vec![x for x in s].iter().rev().cloned())
+}
+
+fn join(chars: Vec<Str>) -> Str {
+    concat(chars)
+}
+```

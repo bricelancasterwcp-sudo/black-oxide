@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let s = "when in doubt go home".to_string();
+    print(str_len(s));            // field access copies: s stays usable
+    print_str(concat("words ", to_string(split_str(s).len()), " characters span including spaces"));    
+}
+
+fn str_len(s: String) -> Int {
+    s.len()
+}
+
+fn split_str(s: String) -> Vec<Str> {
+    let mut v = vec![];
+    for c in s.chars() {
+        v.push(c.to_string());
+    }
+    v
+}
+```

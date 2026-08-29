@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    // Initial dimensions of the rectangle
+    let initial_width = 2;
+    let initial_height = 3;
+
+    // Print the initial area
+    println!("Initial area: {} square units", initial_width * initial_height);
+
+    // Change the width to 5
+    let new_width = 5;
+
+    // Print the new area with the updated width
+    println!("New area: {} square units", new_width * initial_height);
+}
+```

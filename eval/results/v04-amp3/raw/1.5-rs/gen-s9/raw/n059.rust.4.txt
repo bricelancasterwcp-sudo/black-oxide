@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let phrase = "when in doubt go home";
+    println!("Words: {}", phrase.split_whitespace().count());
+    println!("Characters (including spaces): {}", phrase.len());
+}
+```
+In the original code snippet, `phrase.len()` was used to count the characters including spaces, which is not what we want. The correct way to count the characters in a string, excluding spaces, in Rust is to subtract the number of spaces from the total length of the string using the `.replace` method to replace spaces with an empty string and then `.len()`.

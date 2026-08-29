@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut v = HashSet::new();
+    for ch in "abcdefghijklmnopqrstuvwxyz".chars() {
+        if "aeiou".contains(ch) {
+            v.insert(ch);
+        }
+    }
+
+    println!("Vowels: {}", v.len());
+    println!("Consonants: {}", 26 - v.len());
+}
+```

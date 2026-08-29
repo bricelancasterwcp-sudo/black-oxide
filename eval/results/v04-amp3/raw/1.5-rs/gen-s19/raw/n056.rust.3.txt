@@ -1,0 +1,23 @@
+```rust
+fn main() {
+    let text = "7, x, 9, ?";
+    
+    let mut sum_of_numbers: u32 = 0;
+    let mut count_of_numbers: usize = 0;
+
+    for c in text.chars() {
+        if !c.is_numeric() {
+            continue;
+        }
+        
+        // Convert character to digit and add to total
+        sum_of_numbers += c.to_digit(10).unwrap_or_default();
+        
+        // Increment count of characters that are digits
+        count_of_numbers += 1;
+    }
+
+    println!("The total of the numbers is: {}", sum_of_numbers);
+    println!("Number of numbers present: {}", count_of_numbers);
+}
+```

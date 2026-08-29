@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let text = "Hello World!";
+    let vowels = ['a', 'e', 'i', 'o', 'u'];
+    let mut vowel_count = 0;
+    let mut consonant_count = 0;
+
+    for ch in text.chars().filter(|c| c.is_alphabetic()) {
+        if vowels.contains(&ch.to_ascii_lowercase()) {
+            vowel_count += 1;
+        } else {
+            consonant_count += 1;
+        }
+    }
+
+    println!("Vowels: {}", vowel_count);
+    println!("Consonants: {}", consonant_count);
+}
+```

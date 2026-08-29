@@ -1,0 +1,19 @@
+```rust
+struct Figure { value: Int }
+
+fn main() {
+    let figs = vec![
+        Figure { value: 10 },
+        Figure { value: 20 },
+        Figure { value: 5 },
+        Figure { value: 30 }
+    ];
+
+    let smallest = *figs.iter().min().unwrap();
+    let largest = *figs.iter().max().unwrap();
+
+    print(smallest);
+    print_str(" ");
+    print(largest - smallest);
+}
+```

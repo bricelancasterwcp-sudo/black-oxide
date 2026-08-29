@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut total = 0;
+    let x = (4 * 3) + (5 * 2);
+    println!("The first line's value is: {}", x);
+    let y = x + 8;  // use of moved value 'x' — fix by cloning at the earlier site or reordering.
+    println!("The second line's value is: {}", y);
+    let combined_value = total + x + y;
+    println!("The combined value is: {}", combined_value);
+}
+```

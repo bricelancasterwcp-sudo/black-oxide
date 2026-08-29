@@ -1,0 +1,8 @@
+fn main() {
+    let samples = vec(5, 12, 3, 18, 9);
+    let cutoff = 10;
+    let (under, over) = samples.iter().fold((0, 0), |(u, o), &x| if x < cutoff { (u + 1, o) } else { (u, o + 1) });
+    print(under);
+    print_str(" ");
+    print(over);
+}

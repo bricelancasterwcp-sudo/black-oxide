@@ -1,0 +1,34 @@
+```text
+struct Reading { label: Str, values: Vec<Int> }
+
+fn first_big(v: Vec<Int>) -> Int {
+    let found = -1
+    for x in v {
+        if x > 10 {
+            found = x
+            break
+        }
+    }
+    found
+}
+
+fn second(v: Vec<Int>) -> Option<Int> {
+    let x = get(v, 1)?
+    Some(x + 1)
+}
+
+fn count_words(s: Str) -> Int {
+    let words = split(s, ' ')
+    len(words)
+}
+
+fn count_chars(s: Str) -> Int {
+    str_len(s)
+}
+
+fn main() {
+    let phrase = "when in doubt go home"
+    print(count_words(phrase))
+    print(count_chars(phrase))
+}
+```

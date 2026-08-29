@@ -1,0 +1,13 @@
+```
+fn main() {
+    let mut balance = 0;
+    balance += 3;
+    println!("{}", balance);
+    balance += 1;
+    println!("{}", balance);
+    balance += 4;
+    println!("{}", balance);
+    balance += 1;
+    println!("{}", balance);
+}
+```

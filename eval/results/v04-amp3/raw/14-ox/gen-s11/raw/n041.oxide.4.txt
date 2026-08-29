@@ -1,0 +1,18 @@
+```text
+struct Reading { label: Str, values: Vec<Int> }
+
+fn print_sorted(v: Vec<Int>) {
+    let sorted = sort(v);
+    for x in sorted {
+        print(x)
+    }
+}
+
+fn main() {
+    let readings = Reading {
+        label: "Measurements",
+        values: push(push(push(push(vec(), 9), 2), 7), 4),
+    };
+    print_sorted(readings.values)
+}
+```

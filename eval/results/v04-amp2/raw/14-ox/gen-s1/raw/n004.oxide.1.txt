@@ -1,0 +1,25 @@
+```text
+fn fib(n: Int) -> Int {
+    let a = 1
+    let b = 1
+    if n == 1 {
+        return a
+    }
+    if n == 2 {
+        return b
+    }
+    let mut i = 3
+    let mut c = 0
+    while i <= n {
+        c = a + b
+        a = b
+        b = c
+        i = i + 1
+    }
+    c
+}
+
+fn main() {
+    print(fib(10))
+}
+```

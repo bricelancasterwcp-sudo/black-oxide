@@ -1,0 +1,22 @@
+```ox
+fn count_below_and_equal(vec: Vec<Int>, cutoff: Int) -> (Int, Int) {
+    let below = 0
+    let equal_or_above = 0
+    for x in vec {
+        if x < cutoff {
+            below += 1
+        } else {
+            equal_or_above += 1
+        }
+    }
+    (below, equal_or_above)
+}
+
+fn main() {
+    let samples = push(push(push(push(push(vec(), 5), 12), 3), 18), 9)
+    let cutoff = 10
+    let (below, equal_or_above) = count_below_and_equal(samples, cutoff)
+    print(below)
+    print(equal_or_above)
+}
+```

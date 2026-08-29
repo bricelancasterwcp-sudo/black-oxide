@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let fig8 = 2;
+    let fig3 = 4;
+    let fig11 = 15;
+    let fig6 = 7;
+
+    println!("smallest figure: {}", min(vec![fig8, fig3, fig11, fig6]));
+    println!("gap between largest and smallest: {}", max(vec![fig8, fig3, fig11, fig6]) - min(vec![fig8, fig3, fig11, fig6]));
+}
+```

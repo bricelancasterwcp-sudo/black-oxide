@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let mut values = vec![9, 2, 7, 4];
+    
+    while !values.is_empty() {
+        let smallest = *values.iter().min().unwrap();
+        print_str(smallest.to_string());
+        
+        for i in (0..values.len()).rev() {
+            if values[i] == smallest {
+                values.remove(i);
+                break;
+            }
+        }
+    }
+}
+```

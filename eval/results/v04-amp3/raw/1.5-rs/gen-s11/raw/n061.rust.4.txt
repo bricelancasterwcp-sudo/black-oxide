@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let length = 9;
+    let width = 3;
+
+    // Calculate area of rectangle
+    let area = length * width;
+
+    // Calculate perimeter of rectangle
+    let perimeter = 2 * (length + width);
+
+    // Print results
+    println!("Area: {}", area);
+    println!("Perimeter: {}", perimeter);
+}
+```

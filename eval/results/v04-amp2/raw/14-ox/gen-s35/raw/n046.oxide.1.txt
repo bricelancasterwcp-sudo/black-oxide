@@ -1,0 +1,30 @@
+```rust
+fn main() {
+    let numbers = vec(5, 12, 3, 18, 9);
+    let cutoff = 10;
+    let below_count = count_below(numbers.clone(), cutoff);
+    let above_count = count_above(numbers, cutoff);
+    print(below_count);
+    print(above_count);
+}
+
+fn count_below(v: Vec<Int>, cutoff: Int) -> Int {
+    let mut count = 0;
+    for x in v {
+        if x < cutoff {
+            count += 1;
+        }
+    }
+    count
+}
+
+fn count_above(v: Vec<Int>, cutoff: Int) -> Int {
+    let mut count = 0;
+    for x in v {
+        if x >= cutoff {
+            count += 1;
+        }
+    }
+    count
+}
+```

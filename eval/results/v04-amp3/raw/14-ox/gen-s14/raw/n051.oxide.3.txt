@@ -1,0 +1,9 @@
+```text
+fn main() {
+    let word = "granite"
+    let first_letter = chars(word).get(0).unwrap_or("".into())
+    let last_letter = chars(word).get(str_len(word) - 1).unwrap_or("".into())
+    print_str(first_letter)
+    print_str(last_letter)
+}
+```

@@ -1,0 +1,29 @@
+```rust
+struct Queue { items: Vec<Int> }
+
+fn enqueue(q: Queue, x: Int) -> Queue {
+    Queue { items: push(q.items, x) }
+}
+
+fn dequeue(q: Queue) -> (Int, Queue) {
+    let x = get(q.items, 0)?;
+    (x, Queue { items: slice(q.items, 1..q.items.len()) })
+}
+
+fn swap_first_last(q: Queue) -> Queue {
+    if q.items.len() < 2 {
+        return q;
+    }
+    let (_, mut q) = dequeue(q);
+    let last = pop(&mut q.items)?;
+    enqueue(Queue { items: push(vec(), last) }, first(q))
+}
+
+fn main() {
+    let mut q = Queue { items: vec(1, 2, 3, 4, 5) };
+    q = swap_first_last(q);
+    for x in q.items {
+        print(x)
+    }
+}
+```

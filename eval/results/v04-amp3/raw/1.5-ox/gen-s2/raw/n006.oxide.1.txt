@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let mut biggest_power_of_two = 1;
+    loop {
+        if biggest_power_of_two * 2 > 100 {
+            break;
+        }
+        biggest_power_of_two *= 2;
+    }
+    print(biggest_power_of_two);
+}
+```

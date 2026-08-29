@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let mut n = 0;
+    while (n * n) <= 100 {
+        n += 1;
+    }
+    println!("{}", n);
+}
+```
+The problem in your original code was that `n` starts at 1, and it is incremented before the condition `(n * n) <= 100` is checked. This means that the loop will not run if `n` is 1, because `(1 * 1) <= 100` is false. To fix this, we should start `n` at 2 and increment it inside the loop before checking the condition.

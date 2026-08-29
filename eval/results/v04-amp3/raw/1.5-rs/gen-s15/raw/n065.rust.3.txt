@@ -1,0 +1,12 @@
+fn main() {
+    let readings = [6, 11, 3, 14, 9];
+    let count_over_five = readings.iter().filter(|&x| x > &5).count();
+    println!("Count of numbers exceeding five: {}", count_over_five);
+
+    if !readings.is_empty() {
+        let highest_reading = *readings.iter().max().unwrap();
+        println!("Highest reading: {}", highest_reading);
+    } else {
+        println!("No readings provided.");
+    }
+}

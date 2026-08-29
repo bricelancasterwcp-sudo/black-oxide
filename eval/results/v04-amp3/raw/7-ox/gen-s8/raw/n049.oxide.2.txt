@@ -1,0 +1,8 @@
+fn main() {
+    let v = vec![8, 3, 11, 6];
+    print(min(v.clone()).unwrap_or(0));
+    print_str(" ");
+    let max_val = max(v).unwrap_or(0);
+    let min_val = min(v.clone()).unwrap_or(0);
+    print(max_val - min_val);
+}

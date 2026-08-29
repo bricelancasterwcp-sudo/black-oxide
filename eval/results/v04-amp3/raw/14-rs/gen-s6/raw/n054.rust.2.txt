@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let keyboard = "qwertyuiopasdfghjklzxcvbnm";
+    let mut vowels_count = 0;
+    let mut consonants_count = 0;
+
+    for letter in keyboard.chars() {
+        if "aeiou".contains(letter) {
+            vowels_count += 1;
+        } else {
+            consonants_count += 1;
+        }
+    }
+
+    println!("Vowels: {}", vowels_count);
+    println!("Consonants: {}", consonants_count);
+}
+```

@@ -1,0 +1,18 @@
+```rust
+use std::io::{stdin, Lines};
+
+fn main() {
+    match stdin().lines().next() {
+        Some(line) => {
+            let signal = line.expect("no input received").trim();
+            match signal {
+                "green" => println!("go for green"),
+                "red" => println!("stop for red"),
+                "yellow" => println!("wait for yellow"),
+                _ => println!("unknown signal"),
+            }
+        },
+        None => println!("no input received"),
+    }
+}
+```

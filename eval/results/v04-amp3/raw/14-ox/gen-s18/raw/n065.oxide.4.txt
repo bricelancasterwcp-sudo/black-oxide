@@ -1,0 +1,44 @@
+```text
+fn count_exceeding(v: Vec<Int>, threshold: Int) -> Int {
+    let mut count = 0
+    for x in v {
+        if x > threshold {
+            count += 1
+        }
+    }
+    count
+}
+
+fn find_max(v: Vec<Int>) -> Option<Int> {
+    let mut max = None
+    for x in v.clone() { // Clone the vector to avoid moving it
+        match max {
+            Some(m) => {
+                if x > m {
+                    max = Some(x)
+                }
+            },
+            None => max = Some(x),
+        }
+    }
+    max
+}
+
+fn main() {
+    let readings = vec()
+    readings.push(6)
+    readings.push(11)
+    readings.push(3)
+    readings.push(14)
+    readings.push(9)
+    
+    let count = count_exceeding(readings.clone(), 5) // Clone the vector to avoid moving it
+    print(count)
+    
+    let max_reading = find_max(readings)
+    match max_reading {
+        Some(n) => print(n),
+        None => print_str("No readings"),
+    }
+}
+```

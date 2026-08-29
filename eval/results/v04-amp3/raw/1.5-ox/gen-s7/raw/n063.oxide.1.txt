@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let unit = 4;
+    let price3 = 3 * unit;
+    let price2 = 5 * unit;
+
+    println!("{}", price3);
+    println!("{}", price2);
+
+    let total = price3 + price2;
+    println!("Total: {}", total);
+}
+```

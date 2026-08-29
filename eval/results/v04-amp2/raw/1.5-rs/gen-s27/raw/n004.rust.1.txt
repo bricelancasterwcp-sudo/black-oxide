@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let mut a = 1;
+    let mut b = 1;
+
+    for _ in 0..9 {
+        let temp = a + b;
+        a = b;
+        b = temp;
+    }
+
+    println!("The tenth term is {}", b);
+}
+```
+
+This program initializes two variables `a` and `b` to the first two terms of the sequence. It then enters a loop that runs 9 times, each time calculating the sum of the last two terms (`temp`) and updating `a` and `b` accordingly. After the loop completes, it prints the tenth term, which is stored in `b`.

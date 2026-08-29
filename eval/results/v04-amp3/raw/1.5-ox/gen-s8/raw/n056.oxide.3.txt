@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let (seven, x, nine, question) = (7, 10, 9, '?');
+    let total = match seven { Some(n) => n, _ => 0 } +
+                 match x   { Some(n) => n, _ => 0 } +
+                 match nine { Some(n) => n, _ => 0 } +
+                 match question { Some(n) => n, None => 0 };
+    println!("Total of numbers: {}", total);
+    let count = match seven { Some(_) => 1, _ => 0 } +
+                  match x   { Some(_) => 1, _ => 0 } +
+                  match nine { Some(_) => 1, _ => 0 } +
+                  match question { None => 1, _ => 0 };
+    println!("Number of non-numbers: {}", count);
+}
+```

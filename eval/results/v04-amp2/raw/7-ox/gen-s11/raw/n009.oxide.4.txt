@@ -1,0 +1,12 @@
+fn reverse_number(n: Int) -> Str {
+    let mut digits = vec()
+    while n > 0 {
+        push(digits, n % 10)
+        n = trunc(n / 10)
+    }
+    concat(map(digits, |d| int_to_str(d)), "")
+}
+
+fn main() {
+    print(reverse_number(1234))
+}

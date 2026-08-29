@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let scores = vec![9, 5, 2];
+    scores.sort_unstable();
+    for &score in &scores {
+        println!("{}", score);
+    }
+}
+```

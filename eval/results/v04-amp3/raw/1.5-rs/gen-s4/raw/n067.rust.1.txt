@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let mut list = vec![7, 4, 9, 10];
+    let mut odd_total: i32 = 0;
+
+    for &num in &list {
+        if num % 2 != 0 {
+            println!("{}", num * 2);
+            odd_total += num;
+        }
+    }
+
+    println!("Total of even entries: {}", odd_total);
+}
+```

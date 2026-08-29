@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let input = "keyboard";
+    let mut vowel_count = 0;
+    let mut non_vowel_count = 0;
+
+    for c in input.chars() {
+        if ["a", "e", "i", "o", "u"].contains(&c.to_lowercase()[..]) {
+            vowel_count += 1;
+        } else {
+            non_vowel_count += 1;
+        }
+    }
+
+    println!("Vowels: {}", vowel_count);
+    println!("Non-vowels: {}", non_vowel_count);
+}
+```

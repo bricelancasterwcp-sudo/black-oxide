@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let numbers = vec![9, 2, 12, 5, 16];
+    let count = numbers.iter().filter(|&n| n < 10).count();
+    for num in &numbers[..count] { // Use slice to keep only the elements
+        println!("{}", num);
+    }
+    println!("Kept {} numbers.", count);
+}
+```

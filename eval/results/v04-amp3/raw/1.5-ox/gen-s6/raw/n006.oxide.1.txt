@@ -1,0 +1,13 @@
+```rust
+fn find_biggest_power_of_two(limit: Int) -> Option<Int> {
+    let mut power = 1;
+    while power * 2 <= limit {
+        power *= 2;
+    }
+    Some(power)
+}
+
+fn main() {
+    print(find_biggest_power_of_two(100).unwrap()); // print the result
+}
+```

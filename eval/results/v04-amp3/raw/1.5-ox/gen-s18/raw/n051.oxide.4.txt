@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    print('g');
+    println();
+    print('e');
+}
+```

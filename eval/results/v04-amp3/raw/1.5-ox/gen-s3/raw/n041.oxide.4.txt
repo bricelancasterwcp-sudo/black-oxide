@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let measurements = vec![9, 2, 7, 4];
+    for measurement in measurements.iter().sorted() {
+        println!("{}", measurement);
+    }
+}
+```

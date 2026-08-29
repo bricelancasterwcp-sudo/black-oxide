@@ -1,0 +1,26 @@
+```rust
+struct List { elements: Vec<Int> }
+
+impl List {
+    fn new(elements: Vec<Int>) -> List {
+        List { elements }
+    }
+
+    fn walk(&mut self) {
+        let mut total = 0;
+        for &x in self.elements.iter() {
+            if x % 2 != 0 {
+                println!("{}", x * 2);
+            } else {
+                total += x;
+            }
+        }
+        println!("Total of even entries: {}", total);
+    }
+}
+
+fn main() {
+    let mut list = List::new(vec![7, 4, 9, 10]);
+    list.walk();
+}
+```

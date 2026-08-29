@@ -1,0 +1,20 @@
+```text
+fn find_n_positions(s: Str) -> Vec<Int> {
+    let positions = vec()
+    let i = 0
+    while i < str_len(s) {
+        if get(s, i)? == 'n' {
+            positions = push(positions, i)
+        }
+        i = i + 1
+    }
+    positions
+}
+
+fn main() {
+    let word = "banana"
+    for pos in find_n_positions(word) {
+        print(pos)
+    }
+}
+```

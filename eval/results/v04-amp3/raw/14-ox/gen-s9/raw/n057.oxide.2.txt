@@ -1,0 +1,16 @@
+fn main() {
+    let fig = "fig"
+    let banana = "banana"
+    let kiwi = "kiwi"
+
+    let fruit_names = vec(fig, banana, kiwi)
+    let longest_name = sort(fruit_names, |a, b| str_len(b) - str_len(a)).get(0)
+
+    match longest_name {
+        Some(name) => {
+            print(name)
+            print(str_len(name))
+        },
+        None => print_str("No names provided")
+    }
+}

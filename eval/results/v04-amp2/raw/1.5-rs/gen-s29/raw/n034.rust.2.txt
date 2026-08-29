@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let numbers = vec![7, 8, 9];
+    match numbers.get(1) {
+        Some(second_entry) => println!("The second entry is {}", second_entry),
+        None => println!("No second entry found"),
+    }
+}
+```

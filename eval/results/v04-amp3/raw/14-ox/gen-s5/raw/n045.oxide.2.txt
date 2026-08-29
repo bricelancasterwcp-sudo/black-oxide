@@ -1,0 +1,9 @@
+```text
+fn main() {
+    let log = vec!(6, 7, 8, 9)
+    let start = get(log, 0).unwrap_or(-1)
+    let end = get(log, len(log) - 1).unwrap_or(-1)
+    print(start)
+    print(end)
+}
+```

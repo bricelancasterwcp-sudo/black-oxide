@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let num = 9875;
+    let mut sum = 0;
+
+    let digits = vec![num / 1000, (num / 100) % 10, (num / 10) % 10, num % 10];
+
+    for &digit in &digits {
+        sum += digit;
+    }
+
+    println!("{}", sum);
+}
+```

@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let text = "when in doubt go home";
+    let words_count = text.split_whitespace().count();
+    let char_count = text.chars().count();
+    println!("Words: {}", words_count);
+    println!("Characters: {}", char_count);
+}
+```
+
+This program defines a variable `text` with the phrase, then uses the `split_whitespace` method to count how many words it contains. It also counts the total number of characters by using the `chars` method, which returns an iterator over each character in the string. The results are printed using the `println!` macro.

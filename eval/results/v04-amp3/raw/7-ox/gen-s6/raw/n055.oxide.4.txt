@@ -1,0 +1,18 @@
+struct Entry { value: Option<Int> }
+
+fn parse_entry(s: Str) -> Entry {
+    match parse_int(s) {
+        Some(n) => Entry { value: Some(n) },
+        None => Entry { value: None }
+    }
+}
+
+fn main() {
+    let entries = vec!(parse_entry("8"), parse_entry("oak"), parse_entry("15"));
+    for e in entries {
+        match e.value? {
+            Some(n) => print(n),
+            None => print_str("bad"),
+        };
+    }
+}

@@ -1,0 +1,28 @@
+```rust
+fn main() {
+    println!("{}", first(8));
+    println!("{}", second("oak"));
+    println!("{}", third(15));
+}
+
+fn first(v: Int) -> Str {
+    match v {
+        8 => "good",
+        _ => "bad"
+    }
+}
+
+fn second(s: Str) -> Str {
+    match s {
+        "oak" => "good",
+        _ => "bad"
+    }
+}
+
+fn third(v: Int) -> Str {
+    match v {
+        15 => "good",
+        _ => "bad"
+    }
+}
+```

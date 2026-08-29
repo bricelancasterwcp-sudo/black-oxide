@@ -1,0 +1,32 @@
+```rust
+use std::io;
+
+fn main() {
+    let mut nums = [0; 4];
+    
+    println!("Enter four integers:");
+    for i in 0..nums.len() {
+        io::stdin().read_line(&mut nums[i]).expect("Failed to read line");
+        match nums[i].trim().parse::<i32>() {
+            Ok(num) => nums[i] = num,
+            Err(_) => println!("Invalid input. Please enter an integer."),
+        }
+    }
+    
+    let mut min = nums[0];
+    let mut max = nums[0];
+    
+    for &num in &nums {
+        if num < min {
+            min = num;
+        } else if num > max {
+            max = num;
+        }
+    }
+    
+    println!("Smallest figure: {}", min);
+    
+    let gap = max - min;
+    println!("Gap between the largest and smallest: {}", gap);
+}
+```

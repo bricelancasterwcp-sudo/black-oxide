@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let s = "coffee";
+    let mut char_count: std::collections::HashMap<char, usize> = std::collections::HashMap::new();
+    
+    for c in s.chars() {
+        *char_count.entry(c).or_insert(0) += 1;
+    }
+    
+    for (c, &count) in char_count.iter().filter(|&(c, &count)| count > 1) {
+        println!("{}", c);
+    }
+}
+```

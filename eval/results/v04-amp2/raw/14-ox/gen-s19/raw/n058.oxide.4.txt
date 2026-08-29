@@ -1,0 +1,39 @@
+```text
+struct LetterCount { letter: Str, count: Int }
+
+fn find_repeated_letters(s: Str) -> Vec<Str> {
+    let mut counts = vec()
+    let mut result = vec()
+
+    for c in chars(s) {
+        let found = false
+        for i in range(0, len(counts)) {
+            if unwrap_or(get(counts, i), LetterCount { letter: "", count: 0 }).letter == c {
+                let count = unwrap_or(get(counts, i), LetterCount { letter: "", count: 0 }).count + 1
+                counts = push(counts, LetterCount { letter: clone(c), count: count })
+                found = true
+                break
+            }
+        }
+        if !found {
+            counts = push(counts, LetterCount { letter: clone(c), count: 1 })
+        }
+    }
+
+    for item in counts {
+        if item.count > 1 {
+            result = push(result, item.letter)
+        }
+    }
+
+    result
+}
+
+fn main() {
+    let word = "coffee"
+    let repeated_letters = find_repeated_letters(word)
+    for letter in repeated_letters {
+        print_str(letter)
+    }
+}
+```

@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let initial_width = 2;
+    let initial_height = 3;
+
+    // Print the initial area
+    println!("Initial area: {} square units", initial_width * initial_height);
+
+    // Change the width to 5
+    let new_width = 5;
+
+    // Calculate the new area with the updated width and print it
+    println!("New area: {} square units", new_width * initial_height);
+}
+```

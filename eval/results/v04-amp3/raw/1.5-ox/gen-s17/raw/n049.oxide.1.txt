@@ -1,0 +1,34 @@
+```rust
+struct Figure {
+    x1: Int,
+    y1: Int,
+    x2: Int,
+    y2: Int,
+}
+
+fn main() {
+    let figures = vec![
+        Figure { x1: 5, y1: 3, x2: 7, y2: 7 },
+        Figure { x1: 2, y1: 6, x2: 4, y2: 8 },
+        Figure { x1: 9, y1: 1, x2: 10, y2: 3 },
+    ];
+
+    let mut min_x = Int::MAX;
+    let mut max_y = Int::MIN;
+
+    for f in figures {
+        if f.x1 < min_x {
+            min_x = f.x1;
+        }
+        if f.y1 > max_y {
+            max_y = f.y1;
+        }
+    }
+
+    print(min_x);
+
+    let gap = max_y - min_x;
+
+    print(gap);
+}
+```

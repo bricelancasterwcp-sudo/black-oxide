@@ -1,0 +1,11 @@
+```
+fn main() {
+    let log = vec();
+    let log = push(log, 6);
+    let log = push(log, 7);
+    let log = push(log, 8);
+    let log = push(log, 9);
+    print(get(log, 0).unwrap_or(-1));
+    print(get(log, len(log) - 1).unwrap_or(-1));
+}
+```

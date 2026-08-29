@@ -1,0 +1,12 @@
+fn main() {
+    let word = "coffee"
+    let mut seen = vec()
+    for c in chars(word) {
+        if contains(seen, c) {
+            continue
+        }
+        print(c)
+        print_str("\n")
+        seen = push(seen, c)
+    }
+}

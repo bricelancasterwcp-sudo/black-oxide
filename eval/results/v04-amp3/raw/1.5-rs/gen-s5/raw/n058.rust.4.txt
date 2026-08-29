@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let mut freq_map = [0; 26];
+    let word = "coffee";
+    for ch in word.chars() {
+        let idx = (ch as u8 - b'a') as usize;
+        freq_map[idx] += 1;
+    }
+
+    for &freq in freq_map.iter().filter(|&&f| f > 0) {
+        print!("{}\n", char::from(b'a' + freq - 1));
+    }
+}
+```
+
+Explanation:
+The problem was that the `print!("{}{}", char::from(b'a' + freq - 1), "\n");` line should be inside the loop. When printing characters, Rust uses the character literal syntax `'\''`. It is not a string but a single character. So the correct way to print each letter is using the format! macro which allows for more complex formatting.

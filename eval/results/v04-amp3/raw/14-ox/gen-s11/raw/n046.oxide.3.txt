@@ -1,0 +1,35 @@
+```text
+struct Reading { label: Str, values: Vec<Int> }
+
+fn below_cutoff(v: Vec<Int>, cutoff: Int) -> Int {
+    let mut count = 0
+    for x in v {
+        if x < cutoff {
+            count += 1
+        }
+    }
+    count
+}
+
+fn above_or_equal_cutoff(v: Vec<Int>, cutoff: Int) -> Int {
+    let mut count = 0
+    for x in v {
+        if x >= cutoff {
+            count += 1
+        }
+    }
+    count
+}
+
+fn main() {
+    let readings = vec()
+    push(readings, 5)
+    push(readings, 12)
+    push(readings, 3)
+    push(readings, 18)
+    push(readings, 9)
+    let cutoff = 10
+    print(below_cutoff(clone(readings), cutoff))
+    print(above_or_equal_cutoff(readings, cutoff))
+}
+```

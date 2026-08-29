@@ -1,0 +1,16 @@
+```rust
+
+fn main() {
+    let mut total = 0;
+    let count = [7, 8, 9, None].iter().map(|&x| if x.is_digit(10) { Some(x.to_string()) } else { None }).count();
+
+    for x in [7, 8, 9, None].iter() {
+        if let Some(val) = x {
+            total += val.parse::<i32>().unwrap();
+        }
+    }
+
+    println!("Total: {}", total);
+    println!("Count: {}", count);
+}
+```

@@ -1,0 +1,18 @@
+Here is the fully corrected version of your program:
+
+```rust
+fn main() {
+    let mut a = 1;
+    let mut b = 1;
+
+    for _ in 0..9 {
+        let temp = a + b;
+        a = b;
+        b = temp;
+    }
+
+    println!("The tenth term is {}", b);
+}
+```
+
+This program correctly computes the tenth term of the Fibonacci sequence and prints it. The loop runs nine times to get the tenth term, as each iteration calculates the next two terms in the sequence.

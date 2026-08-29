@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut signals = vec![];
+    loop {
+        match signals.pop() {
+            Some("green") => println!("go"),
+            Some("red") => println!("stop"),
+            Some("yellow") => println!("wait"),
+            None => break,
+        }
+    }
+}
+```

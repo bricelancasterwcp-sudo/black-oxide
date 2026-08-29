@@ -1,0 +1,28 @@
+```rust
+fn main() {
+    let mut numbers: Vec<i32> = vec![7, 0, 9, 0];
+    let mut count_of_numbers = 0;
+    let mut sum_of_numbers = 0;
+
+    for &number in &numbers {
+        if number != 0 {
+            count_of_numbers += 1;
+            sum_of_numbers += number;
+        }
+    }
+
+    println!("The total of the ones that do is {}", sum_of_numbers);
+    println!("There are {} numbers that do not", numbers.len() - count_of_numbers);
+}
+```
+This code should now correctly print:
+```plaintext
+The total of the ones that do is 16
+There are 2 numbers that do not
+```
+
+Explanation:
+- We first define a vector `numbers` containing the integers 7, 0, 9, and 0.
+- We initialize two variables, `count_of_numbers` to keep track of how many non-zero numbers there are, and `sum_of_numbers` to store their sum.
+- We then iterate over each element in `numbers`. If an element is not zero, we increment `count_of_numbers` and add it to `sum_of_numbers`.
+- Finally, we print the total sum of the non-zero numbers and the count of non-zero numbers.

@@ -1,0 +1,24 @@
+```rust
+fn main() {
+    let mut arr = [9, 2, 7, 4];
+    
+    // Sort the array in ascending order
+    for i in 0..arr.len() {
+        let mut min_idx = i;
+        
+        for j in (i + 1)..arr.len() {
+            if arr[j] < arr[min_idx] {
+                min_idx = j;
+            }
+        }
+        
+        // Swap the found minimum element with the first element
+        arr.swap(i, min_idx);
+    }
+    
+    // Print the sorted array
+    for &num in &arr {
+        println!("{}", num);
+    }
+}
+```

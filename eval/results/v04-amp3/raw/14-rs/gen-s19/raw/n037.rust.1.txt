@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    struct Rectangle {
+        width: u32,
+        height: u32,
+    }
+
+    let mut rect = Rectangle {
+        width: 2,
+        height: 3,
+    };
+
+    rect.width = 5;
+
+    let area = rect.width * rect.height;
+    println!("The area of the rectangle is {}", area);
+}
+```

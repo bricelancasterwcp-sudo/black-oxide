@@ -1,0 +1,9 @@
+```rust
+let s = "coffee"
+for c in chars(s) {
+    let count = count(s, c)
+    if count > 1 {
+        print_str(c)
+    }
+}
+```

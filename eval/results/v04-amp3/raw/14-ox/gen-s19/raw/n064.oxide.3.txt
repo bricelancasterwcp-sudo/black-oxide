@@ -1,0 +1,10 @@
+fn main() {  
+    let v = push(push(vec(), 10), 20);  
+    if let Some(x) = get(v, 1) {  
+        print(x);  
+    }  
+    let v = push(push(vec(), 10), 20); // recreate v  
+    if let Some(y) = get(v, 4) {  
+        print(y);  
+    }  
+}

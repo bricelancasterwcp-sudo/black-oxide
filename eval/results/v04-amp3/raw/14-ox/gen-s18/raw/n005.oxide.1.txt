@@ -1,0 +1,9 @@
+```text
+fn main() {
+    let total = range(1, 21)
+        .filter(v, x -> x % 2 == 0)
+        .map(v, x -> x * x)
+        .sum()
+    print(total)
+}
+```

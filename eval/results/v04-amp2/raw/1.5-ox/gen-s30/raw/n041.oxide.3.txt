@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let v = vec![];
+    let v2 = push(v, 4);
+    let v3 = push(v2, 9);
+    let v4 = push(v3, 7);
+    let v5 = push(v4, 2);
+
+    for x in sort(&v5) {
+        print_str(&x);
+        println!();
+    }
+}
+```

@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let numbers = [8, 3, 11, 6];
+    let mut min = numbers[0];
+    let mut max = numbers[0];
+
+    for &num in &numbers {
+        if num < min {
+            min = num;
+        }
+        if num > max {
+            max = num;
+        }
+    }
+
+    println!("The smallest figure is: {}", min);
+    println!("The gap between the largest and the smallest is: {}", max - min);
+}
+```

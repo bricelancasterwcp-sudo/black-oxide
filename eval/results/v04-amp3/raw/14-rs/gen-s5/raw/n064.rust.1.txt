@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let numbers = vec![10, 20];
+
+    if let Some(&number) = numbers.get(1) {
+        println!("{}", number);
+    } else {
+        println!("none");
+    }
+
+    if let Some(&number) = numbers.get(4) {
+        println!("{}", number);
+    } else {
+        println!("none");
+    }
+}
+```

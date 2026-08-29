@@ -1,0 +1,17 @@
+```text
+struct Reading { label: Str, values: Vec<Str> }
+
+fn print_unique_letters(word: Str) {
+    let mut seen = Vec();
+    for ch in chars(word) {
+        if !contains(seen, ch) {
+            print(ch);
+            seen = push(seen, ch);
+        }
+    }
+}
+
+fn main() {
+    print_unique_letters("coffee");
+}
+```

@@ -1,0 +1,20 @@
+```rust
+fn main() {
+    let mut total = 0;
+    
+    // Calculate the cost for the four units at three dollars each
+    let four_units_cost = 4 * 3;
+    println!("Cost of four units: {}", four_units_cost);
+    
+    // Calculate the cost for the five units at two dollars each
+    let five_units_cost = 5 * 2;
+    println!("Cost of five units: {}", five_units_cost);
+    
+    // Sum up the costs to get the total value
+    total += four_units_cost;
+    total += five_units_cost;
+    
+    // Print the total cost of both lines
+    println!("Total cost of two lines: {}", total);
+}
+```

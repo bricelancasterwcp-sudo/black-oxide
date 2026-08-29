@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let sum = (1..=5).map(|n| n * n * n).sum::<Int>();
+    print(sum);
+}
+```
+
+This program calculates the sum of the cubes of integers from 1 to 5 using Rust's range, map, and sum functions. It then prints the result.

@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let mut max_power = 0;
+    for n in 0.. {
+        if (2i32.pow(n) as i64) > 100 {
+            max_power = n as i64;
+            break;
+        }
+    }
+    print(max_power);
+}
+```

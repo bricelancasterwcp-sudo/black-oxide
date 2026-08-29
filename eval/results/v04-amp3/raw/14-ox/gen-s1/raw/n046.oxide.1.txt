@@ -1,0 +1,20 @@
+```
+fn count_under(v: Vec<Int>, cutoff: Int) -> Int {
+    let mut count = 0
+    for x in v {
+        if x < cutoff {
+            count += 1
+        }
+    }
+    count
+}
+
+fn main() {
+    let numbers = vec!(5, 12, 3, 18, 9)
+    let cutoff = 10
+    let under_count = count_under(numbers.clone(), cutoff)
+    let over_count = len(numbers) - under_count
+    print(under_count)
+    print(over_count)
+}
+```

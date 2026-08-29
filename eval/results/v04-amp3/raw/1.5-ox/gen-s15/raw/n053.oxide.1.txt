@@ -1,0 +1,11 @@
+```rust
+fn reverse(s: Str) -> Str {
+    s.chars().rev().collect()
+}
+
+fn main() {
+    let drum = "drum";
+    println!("Original: {}", drum);
+    println!("Reversed: {}", reverse(drum));
+}
+```

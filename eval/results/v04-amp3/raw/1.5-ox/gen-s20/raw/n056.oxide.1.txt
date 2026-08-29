@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let numbers: Vec<Option<Int>> = vec![Some(7), None, Some(x), None, Some(9), Some(?)];
+    let mut total = 0;
+    let mut count = 0;
+
+    for number in numbers {
+        if number.is_some() {
+            total += number.unwrap();
+            count += 1;
+        }
+    }
+
+    println!("Total: {}", total);
+    println!("Count of ones: {}", count);
+}
+```

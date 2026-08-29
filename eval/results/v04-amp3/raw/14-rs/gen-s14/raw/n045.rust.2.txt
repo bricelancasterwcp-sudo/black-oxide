@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let log = vec![6, 7, 8, 9];
+    if let Some(first) = log.first() {
+        print!("{} ", first);
+    }
+    if let Some(last) = log.last() {
+        println!("{}", last);
+    }
+}
+```

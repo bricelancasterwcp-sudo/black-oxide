@@ -1,0 +1,19 @@
+```
+struct Log { entries: Vec<Int> }
+
+impl Log {
+    fn get_start_entry(&self) -> Int {
+        self.entries[0]
+    }
+}
+
+fn get_end_entry(log: &Log) -> Int {
+    log.entries.last().unwrap()
+}
+
+fn main() {
+    let mut log = Log { entries: vec![6, 7, 8, 9] };
+    println!("{}", log.get_start_entry());
+    println!("{}", log.get_end_entry());
+}
+```

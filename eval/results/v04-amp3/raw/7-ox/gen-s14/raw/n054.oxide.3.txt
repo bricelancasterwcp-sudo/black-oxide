@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let s = "aeiou";
+    let mut vowels = 0;
+    let mut consonants = 0;
+
+    for c in s.chars() {
+        if s.contains(c) {
+            vowels += 1;
+        } else {
+            consonants += 1;
+        }
+    }
+
+    print(vowels);
+    print_str(" ");
+    print(consonants);
+}
+```

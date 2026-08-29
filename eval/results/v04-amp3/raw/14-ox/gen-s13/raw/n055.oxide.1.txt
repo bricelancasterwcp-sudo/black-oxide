@@ -1,0 +1,14 @@
+```rust
+fn parse_and_print(s: Str) {
+    match parse_int(s) {
+        Some(n) => print(n),
+        None => print_str("bad"),
+    }
+}
+
+fn main() {
+    parse_and_print("8")
+    parse_and_print("oak")
+    parse_and_print("15")
+}
+```

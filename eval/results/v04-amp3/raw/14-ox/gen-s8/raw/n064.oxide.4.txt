@@ -1,0 +1,7 @@
+fn main() {
+    let vec = push(push(vec(), 10), 20);
+    let pos_one = get(vec.clone(), 1)?;
+    print(pos_one);
+    let pos_four = get(vec, 4)?;
+    print(pos_four);
+}

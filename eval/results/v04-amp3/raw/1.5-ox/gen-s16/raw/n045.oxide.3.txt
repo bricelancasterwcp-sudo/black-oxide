@@ -1,0 +1,14 @@
+```rust
+struct Log { entries: Vec<Int> }
+
+fn main() {
+    let log = Log { entries: vec![6, 7, 8, 9] };
+    print(log.entries[0]);
+    println(log.entries[log.entries.len() - 1]);
+}
+```
+
+Explanation of the corrections:
+- The first character of an array literal must be `['` and the last character must be `']'.
+- A semicolon (`;`) was missing after the closing brace in the `struct` definition.
+- The `print!` macro requires parentheses around its arguments, so they were added around the entries of the log.

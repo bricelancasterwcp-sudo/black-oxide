@@ -1,0 +1,37 @@
+```rust
+struct Queue { values: Vec<Int> }
+
+fn enqueue(q: Queue, x: Int) -> Queue {
+    push(q, x)
+}
+
+fn dequeue(q: Queue) -> (Int, Queue) {
+    let v = get(q.values, 0)?;
+    (v, Queue { values: drop_first(q.values) })
+}
+
+fn drop_first(v: Vec<Int>) -> Vec<Int> {
+    let mut rest = vec();
+    for x in v.iter().skip(1) {
+        push(rest, *x)
+    }
+    rest
+}
+
+fn main() {
+    let q = enqueue(enqueue(enqueue(enqueue(Queue { values: vec() }, 1), 2), 3), 4);
+    let q = enqueue(q, 5);
+    let (first, q) = dequeue(q);
+    let (_, last) = dequeue(drop_last(q));
+    print(first); print_str("\n");
+    print(last); print_str("\n");
+}
+
+fn drop_last(v: Vec<Int>) -> Vec<Int> {
+    let mut rest = vec();
+    for x in v.iter().take(v.len() - 1) {
+        push(rest, *x)
+    }
+    rest
+}
+```

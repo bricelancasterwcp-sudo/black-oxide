@@ -1,0 +1,20 @@
+fn min(a: Int, b: Int) -> Int {
+    if a < b { a } else { b }
+}
+
+fn max(a: Int, b: Int) -> Int {
+    if a > b { a } else { b }
+}
+
+fn gap(v: Vec<Int>) -> Int {
+    let largest = max(max(v[0], v[1]), v[2])
+    let smallest = min(min(v[0], v[1]), v[2])
+    largest - smallest
+}
+
+fn main() {
+    let figures = vec(8, 3, 11, 6)
+    print(min(figures[0], figures[1]))
+    let g = gap(vec(max(figures[0], figures[1]), max(v[0], v[2]), min(v[0], v[1])))
+    print(g)
+}

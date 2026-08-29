@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let v = push(push(vec(), 9), 7);
+    for x in sort(v.clone()) { // Fixed clone to avoid moving the vector
+        println!("{}", x);
+    }
+}
+```

@@ -1,0 +1,28 @@
+```text
+fn main() {
+    let fruit1 = "fig"
+    let fruit2 = "banana"
+    let fruit3 = "kiwi"
+
+    let len1 = str_len(fruit1)
+    let len2 = str_len(fruit2)
+    let len3 = str_len(fruit3)
+
+    let (max_fruit, max_len) = if len1 > len2 {
+        if len1 > len3 {
+            (fruit1, len1)
+        } else {
+            (fruit3, len3)
+        }
+    } else {
+        if len2 > len3 {
+            (fruit2, len2)
+        } else {
+            (fruit3, len3)
+        }
+    }
+
+    print(max_fruit)
+    print(max_len)
+}
+```

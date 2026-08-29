@@ -1,0 +1,22 @@
+```rust
+fn main() {
+    let sample = [5, 12, 3, 18, 9];
+    let cutoff = 10;
+
+    let mut below_cutoff_count = 0;
+    let mut above_or_equal_cutoff_count = 0;
+
+    for &value in sample.iter() {
+        if value < cutoff {
+            below_cutoff_count += 1;
+        } else {
+            above_or_equal_cutoff_count += 1;
+        }
+    }
+
+    println!("Count of values below the cutoff: {}", below_cutoff_count);
+    println!("Count of values at or above the cutoff: {}", above_or_equal_cutoff_count);
+}
+```
+
+This Rust program takes an array `sample` containing integers and a cutoff value. It iterates over each integer in the sample, counting how many fall under the cutoff (i.e., less than 10) and how many are equal to or greater than the cutoff. Finally, it prints out the counts for both categories.

@@ -1,0 +1,17 @@
+```rust
+struct Rectangle { width: Int, height: Int }
+
+fn change_width(rect: &mut Rectangle, new_width: Int) {
+    rect.width = new_width;
+}
+
+fn main() {
+    let mut r = Rectangle { width: 2, height: 3 };
+    change_width(&mut r, 5);
+    print(r.area());
+}
+```
+In this program:
+- We define a `Rectangle` struct with two fields: `width` and `height`.
+- The `change_width` function takes a mutable reference to a `Rectangle` and updates its `width` field.
+- In the `main` function, we create an instance of `Rectangle`, call `change_width` to change its width, and print the area of the rectangle.

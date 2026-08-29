@@ -1,0 +1,15 @@
+fn main() {
+    let units_3 = vec![1, 2, 3, 4];
+    let units_2 = vec![1, 2, 3, 4, 5];
+
+    let value_units_3: Int = units_3.iter().map(|&x| x * 3).sum();
+    let value_units_2: Int = units_2.iter().map(|&x| x * 2).sum();
+
+    print(value_units_3);
+    print_str("\n");
+    print(value_units_2);
+    print_str("\n");
+
+    let total_value = value_units_3 + value_units_2;
+    print(total_value);
+}

@@ -1,0 +1,23 @@
+```rust
+fn main() {
+    let mut numbers = vec![7, 4, 9, 10];
+    let mut total = 0;
+
+    for i in numbers.iter_mut() {
+        if *i % 2 != 0 { // Check if the number is odd
+            *i *= 2; // Double it and assign back to the variable
+        }
+        if *i % 2 == 0 { // Check if the number is even
+            total += *i; // Add it to the total
+        }
+    }
+
+    for &num in numbers.iter() {
+        if num % 2 != 0 { // Print odd numbers doubled
+            println!("{}", 2 * num);
+        }
+    }
+
+    println!("Total of even entries: {}", total); // Print the total of even entries after the walk
+}
+```

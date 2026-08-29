@@ -1,0 +1,22 @@
+```rust
+fn main() {
+    let a = 9;
+    if a < 10 {
+        println!("{}", a);
+    }
+    if b < 10 {
+        println!("{}", b);
+    }
+    if c < 10 {
+        println!("{}", c);
+    }
+    if d < 10 {
+        println!("{}", d);
+    }
+    if e < 10 {
+        println!("{}", e);
+    }
+
+    println!("Number of kept entries: {}", 5);
+}
+```

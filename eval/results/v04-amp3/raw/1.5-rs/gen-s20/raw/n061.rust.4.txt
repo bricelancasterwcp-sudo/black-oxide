@@ -1,0 +1,10 @@
+fn main() {
+    let area = 9 * 3;
+    
+    // Calculate perimeter of the rectangle
+    let perimeter = 2 * (area + 0);
+    
+    // Print the results
+    println!("Area: {}", area);
+    println!("Perimeter: {}", perimeter);
+}

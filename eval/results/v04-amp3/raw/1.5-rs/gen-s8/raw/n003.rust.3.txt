@@ -1,0 +1,22 @@
+```rust
+fn main() {
+    let count = (1..=36).filter(|&i| i % 36 == 0).count();
+    println!("There are {} whole numbers from 1 to 36 that divide 36 exactly.", count);
+}
+```
+
+Explanation:
+The original program was attempting to check if all numbers from 1 to 36, when divided by 36, result in a remainder of zero. However, this is not correct because division by zero would result in an undefined behavior in Rust.
+
+To fix the problem, we should use the `divisible_by` function provided by the `std::num` module to check if a number divides another number exactly without any remainder. We will modify the program accordingly:
+
+```rust
+fn main() {
+    let count = (1..=36)
+        .filter(|&i| i.divisible_by(36))
+        .count();
+    println!("There are {} whole numbers from 1 to 36 that divide 36 exactly.", count);
+}
+```
+
+This code defines a function `divisible_by` which checks if one number is divisible by another. The filter operation is then used to apply this check to each number in the range from 1 to 36, and the resulting iterator is counted with `.count()`.

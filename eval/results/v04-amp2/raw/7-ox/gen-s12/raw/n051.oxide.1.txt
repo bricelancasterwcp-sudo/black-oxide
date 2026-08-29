@@ -1,0 +1,7 @@
+```oxide
+fn main() {
+    let s = "granite";
+    print_str(&s[0..1]);
+    print_str(&s[s.len()-1..]);
+}
+```

@@ -1,0 +1,10 @@
+fn main() {
+    let dividend = 100;
+    let divisors = [5, 0, 4];
+    for &divisor in divisors.iter() {
+        match divisor {
+            0 => println!("undefined"),
+            _ => println!("{}", dividend / divisor),
+        }
+    }
+}

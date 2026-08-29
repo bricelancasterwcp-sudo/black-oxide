@@ -1,0 +1,1 @@
+fn main() { let word = "granite"; print(word.chars().next()?); print(word.chars().last()?); }

@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let arr = [8, "oak", 15];
+    for i in 0..arr.len() {
+        match arr[i] {
+            8 => print(8),
+            "oak" => print("bad"),
+            15 => print(15),
+            _ => println!("bad"),
+        }
+    }
+}
+```

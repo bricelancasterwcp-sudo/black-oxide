@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let mut count = [0; 26];
+    let coffee: &str = "coffee";
+
+    for c in coffee.chars() {
+        if c.is_alphabetic() {
+            count[c.to_ascii_lowercase() as usize - 'a' as usize] += 1;
+        }
+    }
+
+    for (i, &c) in count.iter().enumerate() {
+        if c > 0 {
+            print!("{}", c as u8 + b'a');
+        }
+    }
+}
+```

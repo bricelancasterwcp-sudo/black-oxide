@@ -1,0 +1,19 @@
+```text
+struct Signal { color: Str }
+
+fn interpret(s: Signal) -> Str {
+    match s.color {
+        "green" => "go",
+        "red" => "stop",
+        "yellow" => "wait",
+        _ => "unknown",
+    }
+}
+
+fn main() {
+    let signals = push(push(push(vec(), Signal { color: "green" }), Signal { color: "red" }), Signal { color: "yellow" })
+    for s in signals {
+        print(interpret(s))
+    }
+}
+```

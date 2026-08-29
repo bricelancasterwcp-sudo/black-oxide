@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let list1 = vec![7, 8, 9];
+    let list2: Vec<i32> = vec![];
+    let list3 = vec![42];
+
+    print_second_entry(&list1); // Should print 8
+    print_second_entry(&list2); // Should print nothing
+    print_second_entry(&list3); // Should print nothing
+}
+
+fn print_second_entry(list: &[i32]) {
+    if let Some(&second) = list.get(1) {
+        println!("{}", second);
+    }
+}
+```

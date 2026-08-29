@@ -1,0 +1,18 @@
+```text
+fn main() {
+    let fig = "fig"
+    let banana = "banana"
+    let kiwi = "kiwi"
+
+    let fruit_names = vec(fig, banana, kiwi)
+    let longest_name = max(fruit_names, |a, b| str_len(a) - str_len(b))
+    
+    match longest_name {
+        Some(name) => {
+            print(name)
+            print(str_len(name))
+        },
+        None => print_str("No names provided")
+    }
+}
+```

@@ -1,0 +1,61 @@
+```text
+struct Letter { char: Str }
+
+fn is_vowel(c: Str) -> Bool {
+    match c {
+        "a" => true,
+        "e" => true,
+        "i" => true,
+        "o" => true,
+        "u" => true,
+        _ => false,
+    }
+}
+
+fn count_vowels_and_consonants(letters: Vec<Letter>) -> (Int, Int) {
+    let mut vowels = 0
+    let mut consonants = 0
+    for l in letters {
+        if is_vowel(l.char) {
+            vowels += 1
+        } else {
+            consonants += 1
+        }
+    }
+    (vowels, consonants)
+}
+
+fn main() {
+    let keyboard_letters = vec![
+        Letter { char: "a" },
+        Letter { char: "b" },
+        Letter { char: "c" },
+        Letter { char: "d" },
+        Letter { char: "e" },
+        Letter { char: "f" },
+        Letter { char: "g" },
+        Letter { char: "h" },
+        Letter { char: "i" },
+        Letter { char: "j" },
+        Letter { char: "k" },
+        Letter { char: "l" },
+        Letter { char: "m" },
+        Letter { char: "n" },
+        Letter { char: "o" },
+        Letter { char: "p" },
+        Letter { char: "q" },
+        Letter { char: "r" },
+        Letter { char: "s" },
+        Letter { char: "t" },
+        Letter { char: "u" },
+        Letter { char: "v" },
+        Letter { char: "w" },
+        Letter { char: "x" },
+        Letter { char: "y" },
+        Letter { char: "z" },
+    ]
+    let (vowels, consonants) = count_vowels_and_consonants(keyboard_letters)
+    print(vowels)
+    print(consonants)
+}
+```

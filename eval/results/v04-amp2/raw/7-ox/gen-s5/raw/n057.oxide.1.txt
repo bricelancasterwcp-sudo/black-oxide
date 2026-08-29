@@ -1,0 +1,29 @@
+```oxide
+fn main() {
+    let fig = "fig";
+    let banana = "banana";
+    let kiwi = "kiwi";
+
+    let mut max_len = 0;
+    let mut max_name = "";
+
+    if str_len(fig) > max_len {
+        max_len = str_len(fig);
+        max_name = fig;
+    }
+
+    if str_len(banana) > max_len {
+        max_len = str_len(banana);
+        max_name = banana;
+    }
+
+    if str_len(kiwi) > max_len {
+        max_len = str_len(kiwi);
+        max_name = kiwi;
+    }
+
+    print(max_name);
+    print_str(" ");
+    print(max_len);
+}
+```

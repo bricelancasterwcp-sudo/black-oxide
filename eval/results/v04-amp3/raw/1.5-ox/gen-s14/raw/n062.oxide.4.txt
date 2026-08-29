@@ -1,0 +1,24 @@
+```rust
+fn main() {
+    let mut state = State::Green;
+    for car in &cars {
+        match state {
+            State::Green => print_str("Go for green"),
+            State::Red => print_str("Stop for red"),
+            State::Yellow => print_str("Wait for yellow"),
+            _ => (),
+        }
+        if car == 2 {
+            state = State::Yellow;
+        } else if car == 3 {
+            state = State::Green;
+        }
+    }
+}
+
+enum State {
+    Green,
+    Red,
+    Yellow,
+}
+```

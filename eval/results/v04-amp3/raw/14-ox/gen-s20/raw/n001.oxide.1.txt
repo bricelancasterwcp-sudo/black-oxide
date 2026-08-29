@@ -1,0 +1,9 @@
+```ox
+fn main() {
+    let sum_of_cubes = 0
+    for i in range(1, 6) {
+        sum_of_cubes = sum_of_cubes + (i * i * i)
+    }
+    print(sum_of_cubes)
+}
+```

@@ -1,0 +1,21 @@
+```
+fn count_under_or_over(cutoff: Int, nums: Vec<Int>) -> (Int, Int) {
+    let mut below = 0;
+    let mut above = 0;
+    for num in nums {
+        if num < cutoff {
+            below += 1;
+        } else if num >= cutoff {
+            above += 1;
+        }
+    }
+    (below, above)
+}
+
+fn main() {
+    let nums: Vec<Int> = vec![5, 12, 3, 18, 9];
+    let (below, above) = count_under_or_over(10, nums);
+    print_str(format!("Below cutoff: {}", below));
+    println_str(format!("Above cutoff: {}", above));
+}
+```

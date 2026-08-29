@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let price_line1 = 4 * 3;
+    let price_line2 = 5 * 2;
+
+    println!("Line 1: {}", price_line1);
+    println!("Line 2: {}", price_line2);
+
+    let total_value = price_line1 + price_line2;
+    println!("Total value: {}", total_value);
+}
+```

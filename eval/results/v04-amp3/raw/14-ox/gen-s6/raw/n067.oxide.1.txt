@@ -1,0 +1,15 @@
+```
+fn main() {
+    let numbers = vec(7, 4, 9, 10);
+    let mut total_even = 0;
+    for n in numbers {
+        if n % 2 == 0 {
+            total_even += n;
+        } else {
+            print(n * 2);
+            println();
+        }
+    }
+    print(total_even);
+}
+```

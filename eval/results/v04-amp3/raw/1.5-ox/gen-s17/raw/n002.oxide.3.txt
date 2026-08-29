@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let mut result = 1;
+    for i in 1..7 {
+        if i % 2 == 0 {
+            continue;
+        }
+        result *= i;
+    }
+    print(result);
+}
+```

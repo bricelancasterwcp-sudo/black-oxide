@@ -1,0 +1,25 @@
+```rust
+fn count_exceeding_five(v: Vec<Int>) -> Int {
+    let mut count = 0;
+    for x in v {
+        if x > 5 {
+            count += 1;
+        }
+    }
+    count
+}
+
+fn max_reading(v: Vec<Int>) -> Option<Int> {
+    sort(v).last()
+}
+
+fn main() {
+    let readings = push(push(push(push(vec(), 6), 11), 3), 14);
+    print(count_exceeding_five(readings))  // Output the number of readings exceeding five
+    let readings = push(readings, 9);      // Add the last reading
+    match max_reading(readings) {
+        Some(max_val) => print(max_val),  // Output the highest reading
+        None => print_str("empty"),
+    }
+}
+```

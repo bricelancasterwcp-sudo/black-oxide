@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let names = vec!["fig", "banana", "kiwi"];
+    let max_name = names.into_iter().max_by_key(|&name| name.len()).unwrap();
+    println!("{} ({})", max_name, max_name.len());
+}
+```

@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut product = 1;
+    for i in 1..=6 {
+        product *= i;
+    }
+    println(product);
+}
+```
+
+This Rust program multiplies every whole number from 1 to 6 together and prints the result. The `let mut` keyword is used to declare a mutable variable `product`, which allows it to be changed during execution. The loop iterates over the numbers from 1 to 6, multiplying each number with the current value of `product`. Finally, the product is printed using `println`.

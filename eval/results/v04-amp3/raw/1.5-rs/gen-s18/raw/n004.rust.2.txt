@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let mut a = 1;
+    let mut b = 1;
+
+    for _ in 1..9 {
+        let temp = b; // Temporary variable to hold current value of b
+        b = a + b; // Update b with the sum of a and b
+        a = temp; // Update a with the temporary value of b
+    }
+    
+    println!("The tenth term is {}", b); // Printing the last term which is the tenth term in the sequence
+}
+```

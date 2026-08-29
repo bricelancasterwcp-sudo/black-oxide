@@ -70,6 +70,18 @@ symmetric retrain is the cleaner design regardless).
 - **Token efficiency (the objective): tokens-to-green ratio 81.5/72.3
   = 1.13, down from wave-0's 1.24.** The dynamic read moved the same
   direction as the static one.
+
+  > **ERRATUM, 2026-08-29 (wave 2).** The claim in this bullet does not
+  > hold. The arithmetic above is correct, but each arm's mean is taken
+  > over *its own* green sessions, and this wave's oxide arm solved
+  > fewer and easier cells (pass@1 0.420 vs wave-0's 0.555) — so the
+  > mean fell for a reason that is not efficiency. Under a construction
+  > that controls composition (pair cells by (seed, task), keep only
+  > cells green in both arms, restrict to the 67 cells green in every
+  > wave), wave 1 was **worse** than wave 0, not better: **1.293 vs
+  > 1.217**. The values above are left visible as published. See
+  > `eval/results/v04-campaign2/REPORT.md` for the full three-wave
+  > table and the replacement estimand wave 3 pre-registers.
 - **G2 uptake: PASS — no dead vocabulary.** Card arm (re-amplification
   replies, per-file counts): sort 212, unwrap_or 120, min/max 90,
   contains 72, sum 40 — every construct used when taught. Tuned arm

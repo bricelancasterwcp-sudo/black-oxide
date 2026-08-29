@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let mut numbers = vec![9, 2, 12, 5, 16];
+    for &mut x in numbers.iter_mut() { // Use iter_mut to get a mutable iterator
+        if x < 10 {
+            *x *= 2; // Use * to mutate the value
+        }
+    }
+    for n in numbers {
+        println!("{}", n);
+    }
+    println!("Kept: {}", numbers.len());
+}
+```

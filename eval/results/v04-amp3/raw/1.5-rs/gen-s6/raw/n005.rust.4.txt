@@ -1,0 +1,4 @@
+fn main() {
+    let sum = (1..=20).filter(|&x| x % 2 == 0).sum::<u32>();
+    println!("The total of all even numbers between 1 and 20 inclusive is: {}", sum);
+}

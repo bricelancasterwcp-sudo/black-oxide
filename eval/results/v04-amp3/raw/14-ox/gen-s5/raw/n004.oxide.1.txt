@@ -1,0 +1,19 @@
+```rust
+fn fibonacci(n: Int) -> Int {
+    if n <= 1 {
+        return 1;
+    }
+    let mut prev = 1;
+    let mut curr = 1;
+    for _ in range(2, n) {
+        let next = prev + curr;
+        prev = curr;
+        curr = next;
+    }
+    curr
+}
+
+fn main() {
+    print(fibonacci(9));
+}
+```

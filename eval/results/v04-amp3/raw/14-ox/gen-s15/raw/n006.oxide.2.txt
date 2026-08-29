@@ -1,0 +1,21 @@
+```text
+fn is_power_of_two(n: Int) -> Bool {
+    n > 0 && (n & (n - 1)) == 0
+}
+
+fn find_largest_power_of_two(limit: Int) -> Int {
+    let mut max_power = -1
+    for i in range(1, limit + 1) {
+        if is_power_of_two(i) {
+            max_power = i
+        }
+    }
+    max_power
+}
+
+fn main() {
+    let limit = 100
+    let largest_power = find_largest_power_of_two(limit)
+    print(largest_power)
+}
+```

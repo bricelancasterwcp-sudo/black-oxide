@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    loop {
+        match std::thread::sleep(std::time::Duration::from_secs(1)) {
+            Ok(_) => match std::thread::sleep(std::time::Duration::from_secs(1)) {
+                Ok(_) => {
+                    println!("green");
+                    break;
+                }
+                Err(_) => println!("yellow"),
+            },
+            Err(_) => println!("red"),
+        }
+    }
+}
+```

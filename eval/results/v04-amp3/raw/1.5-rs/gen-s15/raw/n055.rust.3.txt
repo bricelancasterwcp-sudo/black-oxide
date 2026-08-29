@@ -1,0 +1,10 @@
+fn main() {
+    let a = "8"; // 1st entry
+    let b = "oak"; // 2nd entry
+    let c = "15"; // 3rd entry
+
+    match (a.parse::<u32>(), b.parse::<&str>(), c.parse::<u32>()) {
+        (Ok(val_a), Ok(val_b), Ok(val_c)) => println!("{} {} {}", val_a, val_b, val_c),
+        _ => println!("bad"),
+    }
+}

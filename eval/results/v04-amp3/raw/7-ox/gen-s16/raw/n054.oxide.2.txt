@@ -1,0 +1,16 @@
+fn main() {
+    let vowels = "aeiou";
+    let mut vowel_count = 0;
+    let mut non_vowel_count = 0;
+
+    for letter in "abcdefghijklmnopqrstuvwxyz".chars() {
+        if vowels.contains(letter) {
+            vowel_count += 1;
+        } else {
+            non_vowel_count += 1;
+        }
+    }
+
+    print(vowel_count);
+    print(non_vowel_count);
+}

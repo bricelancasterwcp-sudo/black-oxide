@@ -1,0 +1,3 @@
+fn main() {
+    println!("The area of a square of side 4 is {}", 4.0 * 4.0);
+}

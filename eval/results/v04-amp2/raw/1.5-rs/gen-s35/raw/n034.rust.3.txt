@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let result = second_entry(vec![7, 8, 9]);
+    println!("{:?}", result);
+}
+
+fn second_entry(numbers: Vec<i32>) -> Option<&i32> {
+    numbers.get(1)
+}
+```

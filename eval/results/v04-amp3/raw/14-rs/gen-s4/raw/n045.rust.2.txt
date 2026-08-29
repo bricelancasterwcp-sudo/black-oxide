@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let log = vec![6, 7, 8, 9];
+    if let Some(&first_entry) = log.first() {
+        println!("Starts with: {}", first_entry);
+    }
+    if let Some(&last_entry) = log.last() {
+        println!("Ends with: {}", last_entry);
+    }
+}
+```

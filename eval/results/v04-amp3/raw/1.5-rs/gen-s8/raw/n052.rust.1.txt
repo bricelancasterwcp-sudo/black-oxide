@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let mut banana = "banana".chars().collect::<Vec<char>>();
+    for (i, &c) in banana.iter().enumerate() {
+        if c == 'n' {
+            println!("{}", i);
+        }
+    }
+}
+```

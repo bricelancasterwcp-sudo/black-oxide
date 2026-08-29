@@ -1,0 +1,2 @@
+print(concat((range(str_len("drum") - 1, 0).map(|i| char_at("drum", i)).collect::<Vec<Str>>().join(""), ""))
+print_str("drum")

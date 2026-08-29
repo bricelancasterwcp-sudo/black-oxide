@@ -1,0 +1,26 @@
+struct Log { entries: Vec<Int> }
+
+fn first_entry(log: Log) -> Option<Int> {
+    get(log.entries, 0)?
+}
+
+fn last_entry(log: Log) -> Option<Int> {
+    let len = len(log.entries)
+    if len == 0 {
+        None
+    } else {
+        get(log.entries, len - 1)?
+    }
+}
+
+fn main() {
+    let log = Log { entries: vec().push(6).push(7).push(8).push(9) }
+    match first_entry(log.clone()) {
+        Some(first) => print(first),
+        None => print_str("no entries"),
+    }
+    match last_entry(log) {
+        Some(last) => print(last),
+        None => print_str("no entries"),
+    }
+}

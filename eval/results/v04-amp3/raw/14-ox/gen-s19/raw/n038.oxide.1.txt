@@ -1,0 +1,9 @@
+```text
+struct Sensor { reading: Int }
+
+fn main() {
+    let device = Sensor { reading: 0 }
+    let device = Sensor { reading: 7, ..device }
+    print(device.reading)
+}
+```

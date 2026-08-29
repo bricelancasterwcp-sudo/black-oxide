@@ -1,0 +1,24 @@
+```rust
+fn deposit(amount: Int) -> Option<Int> {
+    let mut acc = 0;
+    for _ in 1..=amount {
+        acc += 1;
+    }
+    Some(acc)
+}
+
+fn main() {
+    let deposits = vec![3, 1, 4, 1, 5];
+    let mut balance = 0;
+    for deposit in deposits {
+        balance += match deposit(deposit) {
+            Some(amount) => amount,
+            None => {
+                println!("Deposit failed");
+                continue;
+            }
+        };
+        println!("Balance after {}: {}", deposit, balance);
+    }
+}
+```

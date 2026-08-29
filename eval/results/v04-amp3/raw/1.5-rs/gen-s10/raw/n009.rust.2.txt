@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let mut num: i64 = 1234;
+    while num > 0 {
+        print!("{} ", num % 10);
+        num /= 10;
+    }
+    println!(); // Add a newline at the end to move the cursor to the next line
+}
+```

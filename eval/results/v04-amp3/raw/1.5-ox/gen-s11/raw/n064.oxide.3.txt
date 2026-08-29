@@ -1,0 +1,35 @@
+```rust
+struct List { elements: Vec<i32> }
+
+impl List {
+    fn new() -> Self {
+        List { elements: vec![] }
+    }
+
+    fn push(&mut self, element: i32) -> &mut Self {
+        self.elements.push(element);
+        self
+    }
+
+    fn get(&self, index: usize) -> Option<&i32> {
+        self.elements.get(index)
+    }
+}
+
+fn main() {
+    let mut list = List::new();
+    list.push(10).push(20);
+
+    if let Some(pos1) = list.get(1) {
+        println!("{}", pos1);
+    } else {
+        println!("Position 1 is empty");
+    }
+
+    if let Some(pos4) = list.get(3) {
+        println!("{}", pos4);
+    } else {
+        println!("Position 4 is empty");
+    }
+}
+```

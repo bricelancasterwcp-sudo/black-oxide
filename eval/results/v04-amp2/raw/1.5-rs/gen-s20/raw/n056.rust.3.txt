@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let mut sum = 0;
+    let mut count = 0;
+
+    // Example text values
+    let texts = vec![7, 12, 9, '?', 5];
+
+    for &text in &texts {
+        if let Ok(number) = text.parse::<i32>() {
+            sum += number;
+            count += 1;
+        }
+    }
+
+    println!("Sum of numbers: {}", sum);
+    println!("Count of numbers: {}", count);
+}
+```

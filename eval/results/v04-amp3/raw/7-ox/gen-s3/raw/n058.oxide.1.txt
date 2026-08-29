@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let word = "coffee";
+    let mut chars = word.chars();
+    let mut seen = vec![];
+    while let Some(c) = chars.next() {
+        if !seen.contains(&c) && word.matches(c).count() > 1 {
+            print_str(&c.to_string());
+            seen.push(c);
+        }
+    }
+}
+```

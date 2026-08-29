@@ -1,0 +1,6 @@
+fn main() {
+    let word = "drum";
+    let reversed_word = chars(word).sort().concat();
+    print_str(reversed_word);
+    print_str(word);
+}

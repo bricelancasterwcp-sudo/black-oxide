@@ -1,0 +1,22 @@
+```ox
+struct Reading { label: Str, values: Vec<Str> }
+
+fn total_and_missing(vec: Vec<Str>) -> (Int, Int) {
+    let mut total = 0
+    let mut missing = 0
+    for x in vec {
+        match parse_int(x) {
+            Some(n) => total += n,
+            None => missing += 1,
+        }
+    }
+    (total, missing)
+}
+
+fn main() {
+    let r = Reading { label: "numbers", values: vec("7", "x", "9", "?") }
+    let (total, missing) = total_and_missing(r.values)
+    print(total)
+    print(missing)
+}
+```

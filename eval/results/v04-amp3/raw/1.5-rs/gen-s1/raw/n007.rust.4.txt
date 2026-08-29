@@ -1,0 +1,15 @@
+Here's the fixed version of your Rust code:
+
+```rust
+fn main() {
+    let number = 9875;
+    println!("Sum of digits: {}", digit_sum(number));
+}
+
+fn digit_sum(n: u32) -> u32 {
+    n.to_string()
+        .chars()
+        .map(|d| d.to_digit(10).unwrap_or(0))
+        .sum()
+}
+```

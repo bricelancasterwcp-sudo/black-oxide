@@ -1,0 +1,11 @@
+```oxide
+fn main() {
+    let nums = vec(5, 12, 3, 18, 9);
+    let below_cutoff = count(nums.clone(), |x| x < 10);
+    let at_or_over_cutoff = count(nums, |x| x >= 10);
+
+    print(below_cutoff);
+    print_str(" ");
+    print(at_or_over_cutoff);
+}
+```

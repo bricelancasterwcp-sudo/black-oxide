@@ -1,0 +1,19 @@
+```rust
+struct Fig { size: Int }
+struct Gap { first: Int, second: Int }
+
+fn main() {
+    let figs = vec![Fig{size: 8}, Fig{size: 3}, Fig{size: 11}, Fig{size: 6}];
+    let mut smallest = figs[0].size;
+    for i in 1..figs.len() {
+        if figs[i].size < smallest {
+            smallest = figs[i].size;
+        }
+    }
+    let largest = figs.iter().max_by_key(|&f| f.size).unwrap().size;
+
+    print(smallest);
+    print_str(" ");
+    print(largest - smallest);
+}
+```

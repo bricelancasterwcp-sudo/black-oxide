@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let vec1 = vec![7];
+    let vec2 = vec![7, 8];
+    let vec3 = vec![7, 8, 9];
+
+    println!("{:?}", get_second(&vec1));
+    println!("{:?}", get_second(&vec2));
+    println!("{:?}", get_second(&vec3));
+}
+
+fn get_second<T>(v: &[T]) -> Option<&T> {
+    v.get(1)
+}
+```

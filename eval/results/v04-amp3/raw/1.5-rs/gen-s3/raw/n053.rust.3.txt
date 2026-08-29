@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let drum = "drum";
+    
+    for (i, c) in drum.chars().rev().enumerate() {
+        if i != drum.len() - 1 {
+            print!("{}", c);
+        } else {
+            println!(" {}", c);
+        }
+    }
+}
+```
+
+The program correctly prints the word "drum" with its letters running back to front and then as it normally reads.

@@ -1,0 +1,9 @@
+fn main() {
+    let word = "banana";
+    let chars = chars(word);
+    for (i, c) in enumerate(chars) {
+        if c == "n" {
+            print(i);
+        }
+    }
+}

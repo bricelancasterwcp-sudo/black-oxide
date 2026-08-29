@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let mut width = 2;
+    let height = 3;
+
+    // Change the width
+    width = 5;
+
+    // Calculate and print the area
+    println!("The area of the rectangle is: {}", width * height);
+}
+```
+
+This Rust program changes the width of a rectangle from two to five, calculates its new area, and prints it. It uses only standard library features available in edition 2021 and no external crates.

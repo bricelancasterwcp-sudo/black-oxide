@@ -1,0 +1,20 @@
+```rust
+fn count_and_sum_digits(s: Str) -> (Int, Int) {
+    let sum = 0
+    let count = 0
+    for ch in chars(s) {
+        if parse_int(ch).is_some() {
+            let parsed = parse_int(ch).unwrap()
+            sum = sum + to_float(parsed).trunc()
+            count = count + 1
+        }
+    }
+    (sum, count)
+}
+
+fn main() {
+    let (sum, count) = count_and_sum_digits("a1b22")
+    print(sum)
+    print(count)
+}
+```

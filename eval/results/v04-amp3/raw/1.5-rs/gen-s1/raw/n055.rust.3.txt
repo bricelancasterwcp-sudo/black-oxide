@@ -1,0 +1,26 @@
+Sure. Here's the corrected version of your program:
+
+```rust
+fn main() {
+    let a: i32 = "8".parse().unwrap_or(-1);
+    if a == 8 {
+        println!("good");
+    } else {
+        println!("bad");
+    }
+
+    let b: i32 = "oak".parse().unwrap_or(-1);
+    if b == 9 {
+        println!("good");
+    } else {
+        println!("bad");
+    }
+
+    let c: i32 = "15".parse().unwrap_or(-1);
+    if c == 16 {
+        println!("good");
+    } else {
+        println!("bad");
+    }
+}
+```

@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let a = "8";
+    let b = "oak";
+    let c = "15";
+
+    match (a.parse::<Int>(), b.parse::<Str>(), c.parse::<Int>()) {
+        (Ok(a), Ok(b), Ok(c)) => println!("{} {} {}", a, b, c),
+        _ => println!("bad"),
+    }
+}
+```

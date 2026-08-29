@@ -1,0 +1,24 @@
+```rust
+fn main() {
+    let mut sum = 0;
+    let count = 0;
+
+    if let Some(n) = parse_int(&x) {
+        sum += n;
+        count += 1;
+    }
+
+    if let Some(n) = parse_int(&y) {
+        sum += n;
+        count += 1;
+    }
+
+    if let Some(n) = parse_int(&z) {
+        sum += n;
+        count += 1;
+    }
+
+    print(sum); // Print the total of the ones that do
+    print(count); // Print how many do not
+}
+```

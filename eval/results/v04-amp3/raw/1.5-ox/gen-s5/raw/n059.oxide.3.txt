@@ -1,0 +1,24 @@
+```rust
+use std::io;
+
+fn count_words_and_chars(input: &str) -> (Int, Int) {
+    let mut word_count = 0;
+    let mut char_count = 0;
+    for c in input.chars() {
+        if c.is_whitespace() {
+            word_count += 1;
+        }
+        char_count += c.len_utf8();
+    }
+    (word_count, char_count)
+}
+
+fn main() {
+    println!("Enter a phrase: ");
+    let mut input = String::new();
+    io::stdin().read_line(&mut input).expect("Failed to read line");
+    let (word_count, char_count) = count_words_and_chars(&input.trim());
+    println!("Number of words: {}", word_count);
+    println!("Number of characters: {}", char_count);
+}
+```

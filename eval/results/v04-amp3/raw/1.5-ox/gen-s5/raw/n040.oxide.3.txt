@@ -1,0 +1,16 @@
+```rust
+use std::f64;
+
+enum Shape {
+    Square { side: Int },
+    Circle { radius: Float },
+}
+
+fn main() {
+    let shape = Shape::Square { side: 4 };
+    match shape {
+        Shape::Square { side } => print(int_to_str(side * side as f64)),
+        Shape::Circle { radius } => print(int_to_str((radius * radius) * f64::consts::PI)),
+    }
+}
+```

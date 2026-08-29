@@ -1,0 +1,9 @@
+fn main() {
+    let samples = push(push(push(push(vec(), 5), 12), 3), 18);
+    let cutoff = 10;
+    let under = count(samples.clone(), |x| x < cutoff);
+    let over_or_equal = count(samples, |x| x >= cutoff);
+    print(under);
+    print_str(" ");
+    print(over_or_equal);
+}

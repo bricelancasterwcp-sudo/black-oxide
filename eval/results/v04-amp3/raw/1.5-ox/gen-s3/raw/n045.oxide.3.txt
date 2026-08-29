@@ -1,0 +1,13 @@
+```rust
+struct Log { entries: Vec<Int> }
+
+fn main() {
+    let log = Log { entries: vec![6, 7, 8, 9] };
+    println!("{:?}", log.entries[0]);
+    println!("{:?}", log.entries.last().unwrap());
+}
+```
+
+Explanation of corrections:
+- Fixed the syntax errors in the code by correcting the use of square brackets and semicolons.
+- Corrected the call to `push` to create a vector with the correct initialization syntax.

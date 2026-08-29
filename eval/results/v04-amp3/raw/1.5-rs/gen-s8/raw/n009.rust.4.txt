@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let digits = [4, 3, 2, 1];
+    for &d in digits.iter().rev() {
+        print!("{}", d);
+    }
+}
+```

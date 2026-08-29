@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let side = 4;
+    let radius = 3.0;
+
+    println!("Area of square: {}", area(side));
+    println!("Area of circle: {:.2}", area(radius));
+}
+
+fn area(side: u32) -> f64 {
+    side as f64 * side as f64
+}
+```

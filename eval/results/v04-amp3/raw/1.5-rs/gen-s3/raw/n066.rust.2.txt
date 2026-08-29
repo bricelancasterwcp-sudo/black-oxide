@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let numbers = [9, 2, 12, 5, 16];
+    let mut count = 0;
+
+    for &num in numbers.iter() {
+        if num < 10 {
+            println!("{}", num);
+            count += 1;
+        }
+    }
+
+    println!("Kept: {}", count);
+}
+```
+
+Explanation:
+The original program was correct. It iterates over the `numbers` array, checks if each number is less than 10, and if so, prints it and increments a counter. The final `println!()` statement prints the total number of kept elements after the loop finishes.

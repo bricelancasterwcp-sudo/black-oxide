@@ -1,0 +1,17 @@
+```rust
+fn divide(a: i32, b: i32) -> Result<f64, &'static str> {
+    if b == 0 {
+        Err("Divide by zero")
+    } else {
+        Ok(a as f64 / b as f64)
+    }
+}
+
+fn main() {
+    match divide(20, 4) {
+        Ok(result) => println!("{} / {} = {}", 20, 4, result),
+        Err(msg) => println!("{}", msg),
+    }
+}
+```
+The error in the original program was that when `b` is zero, it attempts to divide by zero and returns an `Err` with the message "Divide by zero". However, the expected behavior is to return a `Result<f64, &'static str>` where the error is not a string but a statically allocated constant. In this case, the correct way to handle division by zero is to return `Err("Divide by zero")`.

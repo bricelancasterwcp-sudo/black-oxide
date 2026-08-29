@@ -1,0 +1,23 @@
+```
+fn longest_name(names: Vec<Str>) -> (Str, Int) {
+    let mut longest = ""
+    let mut max_length = 0
+    for name in names {
+        let length = str_len(name)
+        if length > max_length {
+            longest = clone(name)
+            max_length = length
+        }
+    }
+    (longest, max_length)
+}
+
+fn main() {
+    let names = vec("fig", "banana", "kiwi")
+    let (longest, max_length) = longest_name(names)
+    print(longest)
+    print_str(" has ")
+    print(max_length)
+    print_str(" letters")
+}
+```

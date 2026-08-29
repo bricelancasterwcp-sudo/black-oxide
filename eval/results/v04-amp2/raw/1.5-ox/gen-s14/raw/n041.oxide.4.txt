@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let mut v = vec![3, 42];
+    v.sort();
+    for x in v.iter() {
+        print_str(&x.to_string());
+        println!();
+    }
+}
+```

@@ -1,0 +1,12 @@
+fn main() {
+    let word = "drum";
+    let mut reversed_word: String = "".to_string();
+    
+    // Reverse the word by iterating through each character from back to front
+    for (i, c) in word.chars().rev().enumerate() {
+        reversed_word.push(c);
+    }
+    
+    println!("Reversed word: {}", reversed_word);  // Output: murd
+    println!("Original word: {}", word);            // Output: drum
+}

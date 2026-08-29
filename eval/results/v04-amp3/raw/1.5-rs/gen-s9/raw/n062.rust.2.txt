@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let signals = vec![("green", "go"), ("red", "stop"), ("yellow", "wait")];
+
+    for (signal, meaning) in signals.iter().cloned() {
+        println!("Signal: {}, Meaning: {}", signal, meaning);
+    }
+}
+```
+
+The corrected program is the same as the original, but it is now complete and compiles without errors. The output is exactly what was expected: Signal: green, Meaning: go, Signal: red, Meaning: stop, Signal: yellow, Meaning: wait.

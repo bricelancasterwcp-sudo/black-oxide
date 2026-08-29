@@ -1,0 +1,40 @@
+```rust
+fn main() {
+    match read_int("8") {
+        Some(n) => println!("{}", n),
+        None => println!("bad"),
+    }
+    match read_str("oak") {
+        Some(s) => println!("{}", s),
+        None => println!("bad"),
+    }
+    match read_float("15.5") {
+        Some(f) => println!("{}", f),
+        None => println!("bad"),
+    }
+}
+
+fn read_int(str: &str) -> Option<Int> {
+    to_int(str)?
+}
+fn read_str(str: &str) -> Option<Str> {
+    concat(str, "")?
+}
+fn read_float(str: &str) -> Option<Float> {
+    to_float(str)?
+}
+
+fn to_int(s: &str) -> Option<Int> {
+    match s.parse::<Int>() {
+        Ok(i) => Some(i),
+        Err(_) => None,
+    }
+}
+
+fn to_float(s: &str) -> Option<Float> {
+    match s.parse::<Float>() {
+        Ok(f) => Some(f),
+        Err(_) => None,
+    }
+}
+```

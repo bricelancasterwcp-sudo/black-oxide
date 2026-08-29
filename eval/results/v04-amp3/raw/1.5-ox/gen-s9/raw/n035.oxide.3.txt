@@ -1,0 +1,15 @@
+```rust
+fn divide(numerator: Int, denominator: Int) -> Option<Int> {
+    if denominator == 0 {
+        return None;
+    }
+    Some(numerator / denominator)
+}
+
+fn main() {
+    match divide(20, 4) {
+        Some(result) => println!("{}", result),
+        None => print_str("bad"),
+    }
+}
+```

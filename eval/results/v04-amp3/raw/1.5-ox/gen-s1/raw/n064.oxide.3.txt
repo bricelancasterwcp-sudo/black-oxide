@@ -1,0 +1,16 @@
+```
+struct Position { index: Int }
+
+fn main() {
+    let positions = vec![
+        Position { index: 1 },
+        Position { index: 4 }
+    ];
+    for pos in positions {
+        match get(positions, pos.index) {
+            Some(v) => print(v),
+            None => print_str("empty"),
+        }
+    }
+}
+```

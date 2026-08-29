@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let values = vec![Some(7), None, Some(9), Some(x)];
+    let mut sum = 0;
+    let mut count_non_numbers = 0;
+
+    for value in values {
+        match value {
+            Some(n) if n.is_number() => sum += n,
+            _ => count_non_numbers += 1,
+        }
+    }
+
+    print(sum);
+    print(count_non_numbers);
+}
+```

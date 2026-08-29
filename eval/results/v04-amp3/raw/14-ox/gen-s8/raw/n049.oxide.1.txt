@@ -1,0 +1,9 @@
+```text
+fn main() {
+    let numbers = push(push(push(push(vec(), 8), 3), 11), 6)
+    let min_num = min(numbers)?
+    print(min_num)
+    let max_num = max(numbers)?
+    print(max_num - min_num)
+}
+```

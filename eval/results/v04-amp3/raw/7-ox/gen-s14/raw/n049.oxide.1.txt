@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let figures = vec![8, 3, 11, 6];
+    let min_figure = match figures.iter().cloned().min_by(|a, b| a.cmp(b)) {
+        Some(min) => min,
+        None => return,
+    };
+    print(min_figure);
+    let max_figure = match figures.iter().cloned().max_by(|a, b| a.cmp(b)) {
+        Some(max) => max,
+        None => return,
+    };
+    let gap = max_figure - min_figure;
+    print(gap);
+}
+```

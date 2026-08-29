@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let point1 = (1, 5); // The first point is at (1, 5)
+    let point2 = (point1.0 + 10, point1.1); // The second point is at (11, 5)
+
+    println!("The sum of the two numbers in the second point is {}", point2.0 + point2.1);
+}
+```
+
+Explanation:
+The output was correct because `point1` and `point2` are both tuples of integers representing the coordinates of a point. When we add their respective x-coordinates (1 + 10) and y-coordinates (5 + 5), we get 11 and 10, respectively. The sum of these numbers is 16, which matches the expected output.

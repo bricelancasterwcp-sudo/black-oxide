@@ -1,0 +1,5 @@
+```oxide
+let phrase = "when in doubt go home";
+print(count(split(phrase, ' '), 0));
+print(str_len(concat(phrase, "\n")));
+```

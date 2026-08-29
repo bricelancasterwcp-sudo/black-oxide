@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let input = [8, "oak", "15"];
+    
+    for &item in input.iter() {
+        match item {
+            8 => println!("good"),
+            _ if item.to_string().starts_with("o") => println!("good"),
+            _ => println!("bad")
+        }
+    }
+}
+```

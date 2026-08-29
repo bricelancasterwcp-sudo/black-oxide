@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let mut drum = "drum";
+    for (i, c) in drum.chars().enumerate() {
+        drum.replace_range(i..(i + 1), &c.to_string()[::-1]);
+    }
+    println!("{}", drum);
+    print!("{}", drum);
+}
+```

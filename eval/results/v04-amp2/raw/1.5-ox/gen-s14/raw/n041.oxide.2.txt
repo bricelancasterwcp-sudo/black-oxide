@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let v = push(push(vec(), 3), 42);
+    let mut sorted_v = v.clone(); // clone to avoid moving
+    sorted_v.sort();
+    for x in sorted_v.iter() {
+        print_str(&x.to_string());
+        println!();
+    }
+}
+```

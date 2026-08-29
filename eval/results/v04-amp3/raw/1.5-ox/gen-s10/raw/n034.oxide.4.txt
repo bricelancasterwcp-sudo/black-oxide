@@ -1,0 +1,19 @@
+```rust
+fn second(v: Vec<Int>) -> Option<Int> {
+    if v.len() < 2 {
+        None
+    } else {
+        Some(v[1])
+    }
+}
+
+fn main() {
+    for i in 7..=9 {
+        let result = second(vec![i]);
+        match result {
+            Some(n) => println!("Second entry: {}", n),
+            None => println!("No second entry"),
+        }
+    }
+}
+```

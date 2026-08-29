@@ -1,0 +1,9 @@
+fn main() {
+    let price_line_1 = 4 * 3;
+    let price_line_2 = 5 * 2;
+
+    println!("Line 1: {}", price_line_1);
+    println!("Line 2: {}", price_line_2);
+
+    println!("Total value: {}", price_line_1 + price_line_2);
+}

@@ -1,0 +1,4 @@
+fn main() {
+    let count = (1..=50).filter(|&num| num % 3 == 0 || num % 5 == 0).count();
+    println!("The numbers from 1 to 50 that divide evenly by three or five are: {}", count);
+}

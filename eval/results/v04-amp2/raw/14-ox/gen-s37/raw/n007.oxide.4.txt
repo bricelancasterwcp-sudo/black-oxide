@@ -1,0 +1,13 @@
+fn digit_sum(n: Int) -> Int {
+    let sum = 0
+    while n > 0 {
+        sum += n % 10
+        n = trunc(to_float(n) / 10)
+    }
+    sum
+}
+
+fn main() {
+    let number = 9875
+    print(digit_sum(number))
+}

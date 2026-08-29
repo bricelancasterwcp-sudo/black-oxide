@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let point1 = Point { x: 1, y: 5 };
+    let point2 = Point { x: 10, y: 5 };
+
+    let sum_of_coordinates = point1.x + point2.x + point1.y + point2.y;
+
+    println!("{}", sum_of_coordinates);
+}
+
+// Define a struct for a point with two coordinates (x, y)
+struct Point {
+    x: isize,
+    y: isize,
+}
+```

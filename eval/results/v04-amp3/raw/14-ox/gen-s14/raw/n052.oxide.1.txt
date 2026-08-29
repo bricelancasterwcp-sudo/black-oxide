@@ -1,0 +1,20 @@
+```
+fn main() {
+    let word = "banana";
+    let chars = chars(word);
+    for (i, c) in enumerate(chars) {
+        if c == "n" {
+            print(i);
+        }
+    }
+}
+
+fn enumerate(v: Vec<Str>) -> Vec<(Int, Str)> {
+    let mut result = vec();
+    for i in range(0, len(v)) {
+        let c = get(v, i).unwrap_or("".to_str());
+        result = push(result, (i, c));
+    }
+    result
+}
+```

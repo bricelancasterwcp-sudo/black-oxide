@@ -1,0 +1,30 @@
+```oxide
+struct Queue { items: Vec<Int> }
+
+fn enqueue(q: Queue, x: Int) -> Queue {
+    Queue { items: push(q.items, x) }
+}
+
+fn dequeue(q: Queue) -> (Int, Queue) {
+    let x = get(q.items, 0)?;
+    (x, Queue { items: drop_first(q.items) })
+}
+
+fn drop_first(v: Vec<Int>) -> Vec<Int> {
+    v[1..].to_vec()
+}
+
+fn main() {
+    let mut q = Queue { items: vec(1, 2, 3, 4, 5) };
+    let (first, q) = dequeue(q);
+    let (last, _) = dequeue(drop_last(q));
+    q = enqueue(enqueue(Queue { items: vec() }, first), last);
+    for x in q.items {
+        print(x)
+    }
+}
+
+fn drop_last(v: Vec<Int>) -> Vec<Int> {
+    v[..v.len()-1].to_vec()
+}
+```

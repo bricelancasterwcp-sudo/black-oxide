@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let scores = vec![5, 9, 2];
+    scores.sort_unstable_by(|a, b| b.cmp(a));
+    for &score in scores.iter() {
+        println!("{}", score);
+    }
+}
+```
+
+This Rust program sorts the given vector of integers from highest to lowest and prints each score on a line.

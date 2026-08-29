@@ -1,0 +1,20 @@
+```oxide
+fn is_prime(n: Int) -> Bool {
+    if n < 2 { return false }
+    for i in range(2, trunc(to_float(n).sqrt()) + 1) {
+        if get(range(0, n), i)? == 0 {
+            return false
+        }
+    }
+    true
+}
+
+fn main() {
+    let result = is_prime(91)
+    if result {
+        print_str("yes")
+    } else {
+        print_str("no")
+    }
+}
+```

@@ -1,0 +1,11 @@
+```rust
+struct Queue { items: Vec<Int> }
+
+fn main() {
+    let mut q = Queue { items: vec![1, 2, 3, 4, 5] };
+    q.items.swap(0, 4);
+    for x in &q.items {
+        print(x)
+    }
+}
+```

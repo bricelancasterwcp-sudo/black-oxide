@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    for num in range(1, 1000) {
+        let mut sum = 0;
+        for i in range(1, num) {
+            if num % i == 0 {
+                sum += i;
+            }
+        }
+        if sum == num {
+            print(num);
+            print_str("\n");
+        }
+    }
+}
+```

@@ -1,0 +1,9 @@
+```oxide
+struct Reading { value: Int }
+
+fn main() {
+    let r = Reading { value: 0 };
+    let r2 = Reading { value: 7 };
+    print(r2.value);
+}
+```

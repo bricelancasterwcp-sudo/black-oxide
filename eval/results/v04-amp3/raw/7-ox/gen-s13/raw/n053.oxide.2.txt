@@ -1,0 +1,11 @@
+fn reverse(s: Str) -> Str {
+    let chars = s.chars().collect::<Vec<Str>>();
+    let reversed_chars = chars.into_iter().rev().collect::<Vec<Str>>();
+    concat(reversed_chars)
+}
+
+fn main() {
+    let word = "drum";
+    print(reverse(word));
+    print_str(word);
+}

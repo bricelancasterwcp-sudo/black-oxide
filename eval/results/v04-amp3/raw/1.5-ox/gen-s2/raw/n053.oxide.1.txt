@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let mut w = String::from("drum");
+    
+    for c in w.chars().rev() {
+        print!("{}", c);
+    }
+    println!();
+    
+    for c in w.chars() {
+        print!("{}", c);
+    }
+    println!();
+}
+```

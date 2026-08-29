@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut lst = vec![10, 20];
+    match lst.get(0) {
+        Some(x) => println!("{}", x),
+        None => (),
+    }
+    match lst.get(3) {
+        Some(x) => println!("{}", x),
+        None => (),
+    }
+}
+```

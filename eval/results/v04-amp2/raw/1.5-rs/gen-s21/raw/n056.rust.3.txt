@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let mut count = 0;
+    let mut sum = 0;
+
+    // Assuming the texts are stored in an array or vector
+    let texts = vec![7, 10, 9, '?'];
+
+    for &text in &texts {
+        if text != '?' {
+            sum += text as i32; // Convert char to integer before adding
+            count += 1;
+        }
+    }
+
+    println!("Total of numbers: {}", sum);
+    println!("Number of non-number texts: {}", texts.len() - count);
+}
+```

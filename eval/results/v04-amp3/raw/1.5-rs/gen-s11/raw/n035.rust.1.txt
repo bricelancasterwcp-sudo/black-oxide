@@ -1,0 +1,15 @@
+```rust
+fn divide(a: isize, b: isize) -> isize {
+    if b == 0 {
+        panic!("Error: Division by zero");
+    }
+    a / b
+}
+
+fn main() {
+    println!("{}", divide(20, 4));
+    println!("{}", divide(20, 0)); // This will cause a panic
+}
+```
+
+This program defines a function `divide` that performs integer division. It checks if the divisor is zero and panics with an error message if it is. In the `main` function, we call `divide` twice: once for division by four which succeeds, and once for division by zero which will cause a panic.

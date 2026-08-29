@@ -1,0 +1,28 @@
+Sure. Here's the corrected version of your program:
+
+```rust
+fn main() {
+    let data = [5, 12, 3, 18, 9];
+    let cutoff = 10;
+
+    let mut count_under_cutoff = 0;
+    let mut count_over_or_equal_cutoff = 0;
+
+    for &number in &data {
+        if number < cutoff {
+            count_under_cutoff += 1;
+        } else {
+            count_over_or_equal_cutoff += 1;
+        }
+    }
+
+    println!("Numbers under the cutoff: {}", count_under_cutoff);
+    println!("Numbers over or equal to the cutoff: {}", count_over_or_equal_cutoff);
+}
+```
+
+Explanation of corrections:
+- The `for` loop iterates over the elements of the array `data`, which is a reference to an array.
+- The `count_under_cutoff` and `count_over_or_equal_cutoff` variables are initialized to 0.
+- Inside the loop, the program checks if the current number (`number`) is less than the cutoff (`cutoff`). If it is, it increments `count_under_cutoff`; otherwise, it increments `count_over_or_equal_cutoff`.
+- After the loop finishes, the program prints out the values of `count_under_cutoff` and `count_over_or_equal_cutoff`.

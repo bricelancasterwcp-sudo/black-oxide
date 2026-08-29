@@ -1,0 +1,16 @@
+```text
+struct Square { side: Int }
+struct Circle { radius: Float }
+
+let pi = 3.0
+
+fn area(shape: Shape) -> Float {
+    match shape {
+        Square(side) => side * side as Float,
+        Circle(radius) => pi * radius * radius,
+    }
+}
+
+let square = Square { side: 4 }
+print(area(square))
+```

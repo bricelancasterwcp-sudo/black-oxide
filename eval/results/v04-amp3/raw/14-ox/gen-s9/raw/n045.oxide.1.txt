@@ -1,0 +1,24 @@
+```text
+struct Log { entries: Vec<Int> }
+
+fn start_entry(log: Log) -> Int {
+    let first = get(log.entries, 0)
+    unwrap_or(first, -1)
+}
+
+fn end_entry(log: Log) -> Int {
+    let len = len(log.entries)
+    if len == 0 {
+        return -1
+    }
+    let last_index = len - 1
+    let last = get(log.entries, last_index)
+    unwrap_or(last, -1)
+}
+
+fn main() {
+    let log = Log { entries: vec(6, 7, 8, 9) }
+    print(start_entry(log))
+    print(end_entry(log))
+}
+```

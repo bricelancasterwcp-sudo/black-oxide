@@ -1,0 +1,24 @@
+```rust
+fn main() {
+    let mut green = true;
+    let mut red = false;
+    let mut yellow = false;
+
+    loop {
+        if green {
+            println!("go for green");
+            green = false;
+            yellow = false;
+        } else if red {
+            println!("stop for red");
+            red = false;
+            yellow = false;
+        } else if yellow {
+            println!("wait for yellow");
+            yellow = false;
+        }
+
+        std::thread::sleep(std::time::Duration::from_secs(1));
+    }
+}
+```

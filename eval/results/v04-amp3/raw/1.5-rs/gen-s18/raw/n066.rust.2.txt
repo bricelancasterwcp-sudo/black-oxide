@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let nums = [9, 2, 12, 5, 16];
+    let mut count = 0;
+    for &num in nums.iter().filter(|&&n| n < 10) {
+        println!("{}", num);
+        count += 1;
+    }
+    println!("Kept {} numbers under ten.", count);
+}
+```
+
+Explanation:
+The original program compiled and ran successfully, but it printed the numbers and counted them incorrectly. The problem was with how the `filter` method was used to create a new iterator from the input array. It should be using `&num` instead of `n`, as the closure expects `&&i32`. This change ensures that each element in the input array is passed by reference, which is necessary when working with slices in Rust. The corrected program now prints the numbers and correctly counts them under ten.

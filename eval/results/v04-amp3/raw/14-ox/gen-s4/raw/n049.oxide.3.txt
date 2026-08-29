@@ -1,0 +1,1 @@
+fn main() { let numbers = vec(8, 3, 11, 6); let min_number = unwrap_or(min(numbers), -1); let max_number = unwrap_or(max(vec(8, 3, 11, 6)), -1); let gap = max_number - min_number; print(min_number); print(gap); }

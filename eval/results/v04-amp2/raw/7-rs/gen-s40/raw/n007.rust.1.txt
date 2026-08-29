@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let number = 9875;
+    let sum = (number / 1000) + ((number % 1000) / 100) + ((number % 100) / 10) + (number % 10);
+    println!("{}", sum);
+}
+```

@@ -1,0 +1,38 @@
+```rust
+fn main() {
+    let a = read_int("8");
+    if a.is_some() {
+        println!("{}", a.unwrap());
+    } else {
+        println!("bad");
+    }
+
+    let b = read_str("oak");
+    if b.is_some() {
+        println!("{}", b.unwrap());
+    } else {
+        println!("bad");
+    }
+
+    let c = read_int("15");
+    if c.is_some() {
+        println!("{}", c.unwrap());
+    } else {
+        println!("bad");
+    }
+}
+
+fn read_int(s: &str) -> Option<Int> {
+    match s.parse::<Int>() {
+        Ok(n) => Some(n),
+        Err(_) => None,
+    }
+}
+
+fn read_str(s: &str) -> Option<Str> {
+    match s.parse::<Str>() {
+        Ok(n) => Some(n),
+        Err(_) => None,
+    }
+}
+```

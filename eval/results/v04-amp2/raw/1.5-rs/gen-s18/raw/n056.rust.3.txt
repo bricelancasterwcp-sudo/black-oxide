@@ -1,0 +1,23 @@
+```rust
+fn main() {
+    let text1 = "7";
+    let text2 = "x";
+    let text3 = "9";
+    let text4 = "?";
+
+    let numbers: Vec<&str> = vec![text1, text2, text3, text4];
+    let mut total = 0;
+    let mut count_not_numbers = 0;
+
+    for &text in &numbers {
+        if text.chars().all(|c| c.is_digit(10)) {
+            total += text.parse::<i32>().unwrap();
+        } else {
+            count_not_numbers += 1;
+        }
+    }
+
+    println!("Total of numbers: {}", total);
+    println!("Number of non-number texts: {}", count_not_numbers);
+}
+```

@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let n = 1234;
+    let mut digits = Vec::new();
+    while n > 0 {
+        digits.push(n % 10);
+        n /= 10;
+    }
+    for i in (0..digits.len()).rev() {
+        print!("{}", digits[i]);
+    }
+}
+```

@@ -1,0 +1,13 @@
+Here is the completed program:
+
+```rust
+fn main() {
+    let mut sum = 0;
+    
+    for n in 1..=5 {
+        sum += (n as i32).pow(3);
+    }
+    
+    println!("The sum of cubes from 1 to 5 is {}", sum);
+}
+```

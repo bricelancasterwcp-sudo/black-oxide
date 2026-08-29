@@ -1,0 +1,10 @@
+```
+fn main() {
+    let text = "banana";
+    for (i, c) in text.chars().enumerate() {
+        if c == 'n' {
+            print!("{}", i);
+        }
+    }
+}
+```

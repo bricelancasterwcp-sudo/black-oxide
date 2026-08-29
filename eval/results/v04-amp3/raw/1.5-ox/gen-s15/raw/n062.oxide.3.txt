@@ -1,0 +1,20 @@
+```
+enum TrafficLight { Green, Red, Yellow }
+
+fn main() {
+    let mut current = TrafficLight::Green;
+    loop {
+        match current {
+            TrafficLight::Green => println!("go for green\n"),
+            TrafficLight::Red => {
+                println!("stop for red\n");
+                current = TrafficLight::Yellow;
+            },
+            TrafficLight::Yellow => {
+                println!("wait for yellow\n");
+                current = TrafficLight::Red;
+            }
+        }
+    }
+}
+```

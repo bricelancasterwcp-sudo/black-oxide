@@ -1,0 +1,11 @@
+```rust
+struct Point { x: Int, y: Int }
+
+fn main() {
+    let p = Point { x: 1, y: 5 };
+    let q = Point { x: 10, y: p.y };
+    print(p.x + q.x);
+}
+```
+
+The program was rejected because of the semicolons in lines 4 and 5. These semicolons were incorrectly placed at the end of statements instead of inside them, which is not allowed. The semicolon should be removed to make the code syntactically correct.

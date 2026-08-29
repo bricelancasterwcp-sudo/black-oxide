@@ -1,0 +1,5 @@
+fn main() {
+    let drum = "drum";
+    println!("Backwards: {}", drum.chars().rev().collect::<String>());
+    println!("Normal: {}", drum);
+}

@@ -1,0 +1,5 @@
+```rust
+fn main() {
+    println!("The area of a square is: {}", 4.0 * 4.0);
+}
+```

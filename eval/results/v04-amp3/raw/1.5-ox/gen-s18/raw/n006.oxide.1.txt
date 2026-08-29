@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let n = 100;
+    let mut power = 0;
+    while power * 2 <= n {
+        power *= 2;
+    }
+    println!("The biggest power of two that does not exceed {} is {}", n, power);
+}
+```

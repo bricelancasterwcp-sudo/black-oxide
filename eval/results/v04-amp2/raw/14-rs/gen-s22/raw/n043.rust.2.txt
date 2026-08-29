@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let mut queue = vec![1, 2, 3, 4, 5];
+    
+    if let Some(first) = queue.first().cloned() {
+        if let Some(last) = queue.last().cloned() {
+            let len = queue.len();
+            queue[0] = last;
+            queue[len - 1] = first;
+        }
+    }
+    
+    for entry in queue {
+        println!("{}", entry);
+    }
+}
+```

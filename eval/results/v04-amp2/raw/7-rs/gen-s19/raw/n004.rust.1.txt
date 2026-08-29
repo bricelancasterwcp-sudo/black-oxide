@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut terms = [1, 1];
+    for _ in 2..10 {
+        let next = terms[0] + terms[1];
+        terms[0] = terms[1];
+        terms[1] = next;
+    }
+    println!("{}", terms[1]);
+}
+```

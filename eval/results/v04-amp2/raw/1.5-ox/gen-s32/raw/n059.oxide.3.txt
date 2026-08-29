@@ -1,0 +1,6 @@
+```rust
+fn main() {
+    let phrase = "when in doubt go home";
+    print(format!("Words: {}, Characters: {}", phrase.split_whitespace().count(), phrase.len()));
+}
+```

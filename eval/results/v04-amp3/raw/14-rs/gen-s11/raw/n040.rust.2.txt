@@ -1,0 +1,8 @@
+fn main() {
+    let side = 4;
+    let area_square = side * side;
+    let pi = 3.0;
+    let radius = 3;
+    let area_circle = pi * (radius as f64) * (radius as f64);
+    println!("The area of the square is {}", area_square);
+}

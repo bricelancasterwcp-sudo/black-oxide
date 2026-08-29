@@ -1,0 +1,13 @@
+```rust
+struct Digit {
+    value: Int,
+}
+
+fn main() {
+    let mut digits = vec![Digit { value: 4 }, Digit { value: 3 }, Digit { value: 2 }, Digit { value: 1 }];
+    digits.reverse();
+    for digit in digits {
+        print!("{}", digit.value);
+    }
+}
+```

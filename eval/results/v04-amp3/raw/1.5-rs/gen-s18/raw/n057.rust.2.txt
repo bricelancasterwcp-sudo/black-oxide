@@ -1,0 +1,21 @@
+```rust
+fn main() {
+    let words = ["fig", "banana", "kiwi"];
+    let mut max_length_word = "";
+    let mut max_length = 0;
+
+    for word in words.iter() {
+        if word.len() > max_length {
+            max_length_word = *word;
+            max_length = word.len();
+        }
+    }
+
+    println!("The word with the most letters is '{}'", max_length_word);
+    println!("It has {} letters.", max_length);
+}
+```
+
+Explanation:
+- `for word in words.iter()` iterates over each word in the list `words`, and dereferences it to get a reference to the word.
+- The `*word` part inside `if` condition ensures that we're comparing the length of the actual string, not its reference.

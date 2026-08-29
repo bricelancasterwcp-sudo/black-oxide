@@ -1,0 +1,13 @@
+```rust
+fn divide(a: Int, b: Int) -> Option<Int> {
+    if b == 0 {
+        None
+    } else {
+        Some(a / b)
+    }
+}
+
+fn main() {
+    println(divide(20, 4)?);            // division by zero error will be handled here
+}
+```

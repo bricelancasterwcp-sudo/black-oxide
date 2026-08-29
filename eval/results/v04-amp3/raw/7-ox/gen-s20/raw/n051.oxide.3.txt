@@ -1,0 +1,5 @@
+```
+let word = "granite"
+print_str(word.chars().next().unwrap())
+print_str(word.chars().last().unwrap())
+```

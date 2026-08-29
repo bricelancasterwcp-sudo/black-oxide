@@ -1,0 +1,7 @@
+struct Rect { w: Int, h: Int }
+
+fn main() {
+    let mut r = Rect { w: 2, h: 3 };
+    r.w = 5;
+    print(r.w * r.h);
+}

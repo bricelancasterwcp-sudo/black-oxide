@@ -1,0 +1,50 @@
+```plaintext
+struct LetterInfo {
+    count: Int,
+    printed: Bool,
+}
+
+fn main() {
+    let word = "coffee";
+    let mut letter_counts = Vec::new();
+
+    for c in chars(word) {
+        let mut found = false;
+        let mut index = 0;
+
+        for (i, info) in enumerate(letter_counts) {
+            if info.count == 0 {
+                index = i;
+                break;
+            }
+
+            if info.count == c {
+                found = true;
+                break;
+            }
+        }
+
+        if !found {
+            letter_counts = push(letter_counts, LetterInfo { count: c, printed: false });
+        } else {
+            let info = get(letter_counts, index)?;
+            if !info.printed {
+                print_char(c);
+                letter_counts = push(letter_counts, LetterInfo { count: c, printed: true });
+            }
+        }
+    }
+}
+
+fn enumerate(v: Vec<LetterInfo>) -> Vec<(Int, LetterInfo)> {
+    let mut result = Vec::new();
+    let mut i = 0;
+
+    for item in v {
+        result = push(result, (i, item));
+        i += 1;
+    }
+
+    result
+}
+```

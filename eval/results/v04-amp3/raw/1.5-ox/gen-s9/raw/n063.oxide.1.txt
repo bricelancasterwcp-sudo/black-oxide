@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let mut total = 0;
+    let x = (4 * 3) + (5 * 2);
+    println!("The first line's value is: {}", total + 10);  // field access copies: r stays usable
+    let y = total + 8;  // use of moved value 'total' — fix by cloning at the earlier site or reordering.
+    println!("The second line's value is: {}", y);
+    print_str("The combined value is: {}", total + x + y);  // field access copies: r stays usable
+}
+```

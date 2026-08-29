@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let mut sensor_reading = 0;
+    sensor_reading = 7;
+    println!("Reading: {}", sensor_reading);
+}
+```

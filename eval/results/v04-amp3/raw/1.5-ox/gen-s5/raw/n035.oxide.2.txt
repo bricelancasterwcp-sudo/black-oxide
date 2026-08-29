@@ -1,0 +1,45 @@
+```rust
+struct Reading { label: String, values: Vec<Int> }
+
+fn first_big(v: Vec<Int>) -> Int {
+    let found = -1;
+    for x in v {
+        if x > 10 {
+            found = x;
+            break;
+        }
+    }
+    found
+}
+
+fn second(v: Vec<Int>) -> Option<Int> {
+    let x = get(v, 1)?;
+    Some(x + 1)
+}
+
+fn main() {
+    let mut a = read_int("a: ");
+    let b = read_int("b: ");
+    
+    if b == 0 {
+        println!("Error: Division by zero");
+    } else {
+        println!("Result of division: {}", a / b);
+    }
+}
+
+fn read_int(prompt: &str) -> Int {
+    loop {
+        print!("{}", prompt);
+        io::stdout().flush().expect("Failed to flush stdout");
+        
+        let mut input = String::new();
+        io::stdin().read_line(&mut input).expect("Failed to read line");
+        
+        match input.trim().parse() {
+            Ok(num) => return num,
+            Err(_) => println!("Error: Invalid input, please enter an integer."),
+        }
+    }
+}
+```

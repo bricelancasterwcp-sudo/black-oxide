@@ -1,0 +1,19 @@
+```
+struct Figure { value: Int }
+
+fn main() {
+    let figs: Vec<Figure> = vec![
+        Figure { value: 8 },
+        Figure { value: 3 },
+        Figure { value: 11 },
+        Figure { value: 6 }
+    ];
+
+    let min_value = figs.iter().min_by_key(|f| f.value).unwrap().value;
+    let max_value = figs.iter().max_by_key(|f| f.value).unwrap().value;
+
+    print(min_value);
+    print_str(" ");
+    print(max_value - min_value);
+}
+```

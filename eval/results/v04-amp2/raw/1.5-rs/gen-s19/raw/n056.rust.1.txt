@@ -1,0 +1,27 @@
+```rust
+fn main() {
+    let mut sum = 0;
+    let mut count = 0;
+
+    // Replace '7', 'x', '9' and '?' with actual values or expressions
+    let numbers: [Option<i32>; 4] = [
+        Some(7),
+        None,
+        Some(9),
+        Some(?)
+    ];
+
+    for number in numbers {
+        match number {
+            Some(n) => {
+                sum += n;
+                count += 1;
+            }
+            None => {}
+        }
+    }
+
+    println!("Sum of the ones that do: {}", sum);
+    println!("Number of ones that do not: {}", 4 - count);
+}
+```

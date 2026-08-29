@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let num = 9875;
+    let mut sum = 0;
+
+    while num > 0 {
+        sum += num % 10;
+        num /= 10;
+    }
+
+    print(sum);
+}
+```
+
+This program first declares the number `num` and initializes a variable `sum` to zero. It then enters a loop that continues as long as `num` is greater than 0. Inside the loop, it calculates the least significant digit of `num` using the modulus operator (`num % 10`) and adds it to `sum`. After updating `sum`, it removes the least significant digit from `num` by performing integer division (`num /= 10`). The loop ends when there are no more digits left. Finally, it prints the sum of the individual digits of the original number.

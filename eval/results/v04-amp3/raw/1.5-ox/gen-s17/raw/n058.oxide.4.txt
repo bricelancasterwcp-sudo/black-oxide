@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let coffee = "coffee";
+    let mut seen = Vec::new();
+    for c in coffee.chars() {
+        if !seen.contains(&c) {
+            println!("{}", c);
+            seen.push(c.clone());
+        }
+    }
+}
+```
+
+Explanation of corrections:
+- Changed `;` to `}` after the last loop iteration to close the loop properly.
+- Added braces `{}` around the `if`, `println!`, and `push` statements for better readability and adherence to Rust syntax rules.

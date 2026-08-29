@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let phrase = "when in doubt go home.";
+    let mut count_words = 0;
+    let mut count_chars = 0;
+
+    for char in phrase.chars() {
+        if char == ' ' {
+            count_words += 1;
+        }
+        count_chars += 1;
+    }
+
+    println!("Words: {}", count_words);
+    println!("Characters: {}", count_chars);
+}
+```

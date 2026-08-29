@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let keyboard = "keyboard";
+    let mut vowels_count = 0;
+    let mut consonants_count = 0;
+
+    for c in keyboard.chars() {
+        match c.to_ascii_lowercase() {
+            'a' | 'e' | 'i' | 'o' | 'u' => vowels_count += 1,
+            _ => consonants_count += 1,
+        }
+    }
+
+    println!("Vowels: {}", vowels_count);
+    println!("Consonants: {}", consonants_count);
+}
+```

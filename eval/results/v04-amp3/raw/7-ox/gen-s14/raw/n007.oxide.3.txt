@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let num = 9875;
+    let mut sum = 0;
+    for digit in num.to_str().chars() {
+        let digit_str = format!("{}", digit);
+        sum += parse_int(&digit_str).unwrap_or(0);
+    }
+    print(sum);
+}
+```

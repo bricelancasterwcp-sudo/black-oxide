@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut count = 0;
+    let sum = |num: i32| num != 0;
+
+    println!("7 is {}", sum(7));
+    println!("x is {}", sum(x as i32));
+    println!("9 is {}", sum(9));
+
+    let total = 7 + x + 9 + if x.is_some() { ? } else { 0 };
+    println!("Total: {}", total);
+}
+```

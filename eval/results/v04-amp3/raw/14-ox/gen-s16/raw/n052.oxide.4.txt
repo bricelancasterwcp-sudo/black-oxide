@@ -1,0 +1,9 @@
+fn main() {
+    let s = "banana"
+    let len = str_len(s)
+    for i in range(0, len) {
+        if get(chars(s), i).unwrap_or(' ') == 'n' {
+            print(i)
+        }
+    }
+}

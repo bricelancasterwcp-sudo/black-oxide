@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let mut i = 2;
+    while i <= 100 {
+        if (i & (i - 1)) == 0 {
+            break;
+        }
+        i *= 2;
+    }
+    print(i);
+}
+```
+
+This program finds the largest power of two that does not exceed 100, and prints it. It uses a while loop to check each number starting from 2 until it finds one that is a power of two (i.e., it has only one bit set in its binary representation). The `&` operator checks if `i` is a power of two by performing a bitwise AND between `i` and `i-1`. If the result is zero, then `i` must be a power of two.

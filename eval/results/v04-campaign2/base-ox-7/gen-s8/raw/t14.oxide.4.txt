@@ -1,0 +1,9 @@
+fn main() {
+    let s = "mississippi";
+    let count_s = s.chars().filter(|c| *c == 's').count();
+    let unique_chars: Vec<char> = s.chars().collect();
+    let count_unique_chars = unique_chars.into_iter().collect::<std::collections::HashSet<_>>().len();
+    print(count_s);
+    print_str(" ");
+    print(count_unique_chars);
+}

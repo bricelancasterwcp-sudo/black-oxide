@@ -1,0 +1,6 @@
+fn main() {
+    let s = "granite"
+    let chars_s = chars(s)
+    print_str(get(chars_s, 0)?)
+    print_str(get(chars_s, str_len(s) - 1)?)
+}

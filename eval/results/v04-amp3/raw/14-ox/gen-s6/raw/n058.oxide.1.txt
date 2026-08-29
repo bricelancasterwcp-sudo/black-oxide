@@ -1,0 +1,29 @@
+```
+struct LetterFrequency { letter: Str, count: Int }
+
+fn print_repeated_letters(s: Str) {
+    let mut freqs = vec()
+    for ch in chars(s) {
+        let found = false
+        for f in freqs {
+            if f.letter == ch {
+                found = true
+                f.count += 1
+                break
+            }
+        }
+        if !found {
+            freqs = push(freqs, LetterFrequency { letter: ch, count: 1 })
+        }
+    }
+    for f in freqs {
+        if f.count > 1 {
+            print(f.letter)
+        }
+    }
+}
+
+fn main() {
+    print_repeated_letters("coffee")
+}
+```

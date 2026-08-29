@@ -1,0 +1,9 @@
+```oxide
+fn main() {
+    let word = "drum";
+    let reversed: Str = chars(word).rev().map(|c| concat(c, "")).join("");
+    print(reversed);
+    print_str(" ");
+    print(word);
+}
+```

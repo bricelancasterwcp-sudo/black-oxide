@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let mut input = String::new();
+    io::stdin().read_line(&mut input).unwrap();
+
+    let (start_char, end_char) = input.chars().fold((None, None), |(start, end), c| {
+        if start.is_none() && c == '{' {
+            (Some(c), None)
+        } else if end.is_none() && c == '}' {
+            (start, Some(c))
+        } else {
+            (start, end)
+        }
+    });
+
+    println!("{}", start_char.unwrap());
+    println!("{}", end_char.unwrap());
+}
+```

@@ -1,0 +1,9 @@
+```ox
+fn main() {
+    let mut max_pow = 1
+    while (max_pow * 2) <= 100 {
+        max_pow = max_pow * 2
+    }
+    print(max_pow)
+}
+```

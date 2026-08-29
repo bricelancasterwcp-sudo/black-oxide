@@ -1,0 +1,4 @@
+fn main() {
+    let s = "drum";
+    print(concat(s.chars().rev().collect::<Vec<Str>>(), int_to_str(str_len(s))));
+}

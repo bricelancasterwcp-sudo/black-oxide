@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let r = Rectangle { width: 2, height: 3 };
+    println("initial area:", r.area());
+
+    r.width = 5;
+    println("new area:", r.area());
+}
+```
+
+**Explanation of the generated code**:
+The program defines a `Rectangle` struct with two fields: `width` and `height`. The `main` function creates an instance of `Rectangle` with dimensions 2 wide and 3 tall, prints its initial area using the `area` method. It then changes the width to 5, reprints the area to show the change. The `area` method calculates the area of a rectangle by multiplying the width by the height.

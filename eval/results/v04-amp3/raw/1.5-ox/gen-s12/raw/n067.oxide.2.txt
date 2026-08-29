@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let mut numbers = vec![7, 4, 9, 10];
+    let mut total_evens = 0;
+
+    // Walk the list
+    for num in &numbers.iter_mut() {  // Use a reference to avoid moving 'num'
+        if *num % 2 == 0 {
+            total_evens += *num;  // Dereference 'num' to get its value
+        } else {
+            print!("{}\n", num * 2);
+        }
+    }
+
+    println!("Total of even entries: {}", total_evens);
+}
+```

@@ -1,0 +1,13 @@
+```
+fn open_close_granite(c: Str) {
+    let start = c.get(0)?;
+    let end = c.get(4)?;
+    println!("{}", start);
+    println!("{}", end);
+}
+
+fn main() {
+    let granite = "Granite";
+    open_close_granite(granite);
+}
+```

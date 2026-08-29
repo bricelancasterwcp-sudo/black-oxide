@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let numbers = vec![10, 20];
+    
+    match numbers.get(1) {
+        Some(&value) => println!("Position 1: {}", value),
+        None => println!("Position 1: none"),
+    }
+    
+    match numbers.get(4) {
+        Some(&value) => println!("Position 4: {}", value),
+        None => println!("Position 4: none"),
+    }
+}
+```

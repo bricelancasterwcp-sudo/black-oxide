@@ -1,0 +1,17 @@
+```text
+fn safe_divide(a: Int, b: Int) -> Option<Int> {
+    if b == 0 {
+        None
+    } else {
+        Some(a / b)
+    }
+}
+
+fn main() {
+    let result = match safe_divide(20, 4) {
+        Some(value) => value,
+        None => -1, // or any other indication of failure
+    };
+    print(result)
+}
+```

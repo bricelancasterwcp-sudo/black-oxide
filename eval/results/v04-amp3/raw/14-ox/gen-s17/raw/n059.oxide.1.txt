@@ -1,0 +1,9 @@
+```ox
+fn main() {
+    let phrase = "when in doubt go home"
+    let word_count = len(split(phrase, ' '))
+    let char_count = str_len(phrase)
+    print(word_count)
+    print(char_count)
+}
+```

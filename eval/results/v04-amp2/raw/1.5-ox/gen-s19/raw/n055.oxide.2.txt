@@ -1,0 +1,21 @@
+```rust
+fn main() {
+    let a = parse_int("8")?;
+    match a {
+        Some(n) => print(n),
+        None => print_str("bad"),
+    }
+
+    let b = parse_int("oak")?;
+    match b {
+        Some(n) => print(n),
+        None => print_str("bad"),
+    }
+
+    let c = parse_int("15")?;
+    match c {
+        Some(n) => print(n),
+        None => print_str("bad"),
+    }
+}
+```

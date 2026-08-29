@@ -1,0 +1,16 @@
+```rust
+fn second(v: Vec<Int>) -> Option<Int> {
+    match v.get(1) {
+        Some(n) => Some(n + 1),
+        None => None,
+    }
+}
+
+fn main() {
+    let v = vec![7, 8, 9];
+    match second(v) {
+        Some(n) => print_str(&format!("Second is {}", n)),
+        None => print_str("None"),
+    }
+}
+```

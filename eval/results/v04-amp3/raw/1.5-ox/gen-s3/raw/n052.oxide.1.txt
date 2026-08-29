@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let bananas = "banana";
+    for (i, c) in bananas.chars().enumerate() {
+        if c == 'n' {
+            println!("{}", i);
+        }
+    }
+}
+```
+
+This program prints the indices of all occurrences of the letter 'n' in the string "banana".

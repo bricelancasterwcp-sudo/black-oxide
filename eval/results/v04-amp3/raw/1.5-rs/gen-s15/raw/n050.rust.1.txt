@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let scores = [2, 9, 5];
+    for &score in scores.iter().rev() {
+        println!("{}", score);
+    }
+}
+```
+
+Explanation:
+- The `let scores = [2, 9, 5];` line declares a vector with the elements 2, 9, and 5.
+- The `for &score in scores.iter().rev()` loop iterates over each element in the vector in reverse order (`iter().rev()`).
+- The `println!("{}", score);` statement prints each score to the console.

@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let product = (1..=6).product::<Int>();
+    println(product);
+}
+```
+
+The issue was that Rust uses semicolons at the end of statements and blocks by default. The code provided had two semi-colons at the end of lines 2 and 3, which were not allowed. I removed them to correct the syntax.

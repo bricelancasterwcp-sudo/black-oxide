@@ -1,0 +1,10 @@
+fn main() {
+    let names = ["fig", "banana", "kiwi"];
+    if let Some((name, &len)) = names.iter().enumerate()
+        .max_by_key(|(_, len)| len)
+    {
+        println!("The longest name is {} with {} letters.", name, len);
+    } else {
+        println!("No valid names provided.");
+    }
+}

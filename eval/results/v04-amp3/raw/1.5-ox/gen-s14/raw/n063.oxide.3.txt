@@ -1,0 +1,11 @@
+```
+fn main() {
+    let a = 3 * 4;
+    let b = 2 * 5;
+
+    print(a + b);
+    print(a + b);
+
+    println!();
+}
+```

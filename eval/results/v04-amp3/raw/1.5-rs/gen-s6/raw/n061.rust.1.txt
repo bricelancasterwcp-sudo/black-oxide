@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let length = 9;
+    let width = 3;
+
+    // Calculate area
+    let area = length * width;
+
+    // Calculate perimeter
+    let perimeter = 2 * (length + width);
+
+    println!("Area: {}", area);
+    println!("Perimeter: {}", perimeter);
+}
+```

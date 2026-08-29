@@ -1,0 +1,19 @@
+```rust
+struct Line { items: Vec<Int>, price_per_item: Int }
+
+fn total_value(line: Line) -> Int {
+    let count = len(line.items)
+    count * line.price_per_item
+}
+
+fn main() {
+    let line1 = Line { items: push(push(vec(), 4), 4), price_per_item: 3 }
+    let line2 = Line { items: push(push(push(vec(), 5), 5), 5), price_per_item: 2 }
+
+    print(total_value(line1))
+    print(total_value(line2))
+
+    let total = total_value(line1.clone()) + total_value(line2.clone())
+    print(total)
+}
+```

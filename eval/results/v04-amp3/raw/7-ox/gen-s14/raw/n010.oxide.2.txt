@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let num = 91;
+    let is_prime = (2..num).all(|i| num % i != 0);
+    print_str(if is_prime { "yes" } else { "no" });
+}
+```

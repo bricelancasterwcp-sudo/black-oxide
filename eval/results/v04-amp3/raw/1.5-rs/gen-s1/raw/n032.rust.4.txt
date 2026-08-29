@@ -1,0 +1,13 @@
+Here's the fixed version of your Rust code:
+
+```rust
+fn main() {
+    let mut p1 = (1, 5); // p1 is at x=1, y=5
+    let mut p2 = (p1.0 + 10, p1.1); // p2 is at x=p1.x+10, y=p1.y
+
+    println!("The sum of the two numbers: {}", p1.0 + p2.1);
+}
+```
+
+Explanation:
+The issue in your original code was that you were trying to add `p1.0` with `p2.0`, but `p2.0` is actually `p1.1`. You should have added `p1.1` instead of `p1.0` in the second line of the code.

@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let mut num = 1234;
+    while num > 0 {
+        print_str(&num.to_string()[..=0]);
+        num /= 10;
+    }
+}
+```

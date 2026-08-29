@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let numbers = [7, 4, 9, 10];
+    let mut odd_sum = 0;
+
+    for &number in numbers.iter() {
+        if number % 2 != 0 {
+            println!("{}", number * 2);
+            odd_sum += number;
+        }
+    }
+
+    println!("Total of even entries: {}", odd_sum);
+}
+```
+
+This program initializes a list with the given values, iterates through each element, checks if it is odd, prints its double on a new line if it's odd, and adds it to `odd_sum`. Finally, it prints the total of all even numbers found.

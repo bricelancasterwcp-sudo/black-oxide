@@ -1,0 +1,7 @@
+fn main() {
+    let num = 1234;
+    
+    for digit in format!("{:05}", num).chars().rev() {
+        print!("{}", digit);
+    }
+}

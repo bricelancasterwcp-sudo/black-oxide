@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let a1b22 = "a1b22";
+    let mut sum_digits: Int = 0;
+    let mut count_digits: Int = 0;
+
+    for c in a1b22.chars() {
+        if c.is_digit(10) {
+            sum_digits += to_int(c.to_string());
+            count_digits += 1;
+        }
+    }
+
+    println!("Sum of digits: {}", sum_digits);
+    println!("Number of digits: {}", count_digits);
+}
+```

@@ -1,0 +1,42 @@
+```text
+struct Reading { label: Str, values: Vec<Int> }
+
+fn smallest(v: Vec<Int>) -> Option<Int> {
+    let min_value = get(v, 0)?
+    for x in v {
+        if x < min_value {
+            min_value = x
+        }
+    }
+    Some(min_value)
+}
+
+fn largest(v: Vec<Int>) -> Option<Int> {
+    let max_value = get(v, 0)?
+    for x in v {
+        if x > max_value {
+            max_value = x
+        }
+    }
+    Some(max_value)
+}
+
+fn gap(v: Vec<Int>) -> Option<Int> {
+    let min_value = smallest(v)?
+    let max_value = largest(v)?
+    Some(max_value - min_value)
+}
+
+fn main() {
+    let values = push(push(push(push(vec(), 8), 3), 11), 6)
+    match smallest(values) {
+        Some(value) => print(value),
+        None => print_str("No minimum value"),
+    }
+    let values2 = push(push(push(push(vec(), 8), 3), 11), 6)
+    match gap(values2) {
+        Some(value) => print(value),
+        None => print_str("No gap"),
+    }
+}
+```

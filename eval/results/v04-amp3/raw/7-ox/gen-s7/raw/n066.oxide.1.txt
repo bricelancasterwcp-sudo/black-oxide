@@ -1,0 +1,10 @@
+```oxide
+fn main() {
+    let batch = vec(9, 2, 12, 5, 16);
+    let filtered: Vec<Int> = filter(batch, |x| x < 10);
+    for n in filtered {
+        print(n);
+    }
+    print(len(filtered));
+}
+```

@@ -1,0 +1,16 @@
+```rust
+struct Sensor { reading: Int }
+
+fn set_reading(sensor: &mut Sensor, value: Int) {
+    sensor.reading = value;
+}
+
+fn main() {
+    let mut sensor = Sensor { reading: 0 };
+    set_reading(&mut sensor, 7);
+    println!("{}", sensor.reading);
+}
+```
+
+Explanation:
+The error was due to incorrect usage of the `&` operator when passing a mutable reference to the function. The correct syntax is `set_reading(&mut sensor, 7);`. This ensures that the sensor's reading field is properly modified and not moved elsewhere in the function.

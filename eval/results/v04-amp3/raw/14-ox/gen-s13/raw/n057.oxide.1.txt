@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let fig = "fig";
+    let banana = "banana";
+    let kiwi = "kiwi";
+
+    let max_name = if fig.len() > banana.len() && fig.len() > kiwi.len() {
+        fig
+    } else if banana.len() > fig.len() && banana.len() > kiwi.len() {
+        banana
+    } else {
+        kiwi
+    };
+
+    print_str(max_name);
+    print(max_name.len());
+}
+```

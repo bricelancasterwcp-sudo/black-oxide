@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let product = (1..=6).product::<Int>();
+    print(product);
+}
+```
+
+Note: This program is incomplete because `Int` is not defined. You would need to define or import a type for multiplication if you intend to compile this.

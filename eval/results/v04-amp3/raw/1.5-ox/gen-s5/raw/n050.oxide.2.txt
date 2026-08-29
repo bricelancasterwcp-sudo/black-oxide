@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let scores = vec![2, 9, 5];
+    scores.sort_by(|a, b| b.cmp(a));
+    for &score in scores.iter() {
+        println!("{}", score);
+    }
+}
+```
+
+Explanation:
+The original code had several issues:
+1. The `sort` method should not be called on a reference to a vector (`scores`). It should be called directly on the vector itself.
+2. There was an extra semicolon after `&score in scores.iter()` which caused the compiler error `OX0001: unexpected character ';'`.
+3. The `cmp` function is used with two arguments, so we need to reverse the order of arguments in the comparison. Also, a comma is needed between `b.cmp(a)` and the closing parenthesis.
+4. There was an extra semicolon after `for &score in scores.iter()` which caused the compiler error `OX0101: expected end of statement, found BANG`.
+5. The opening brace of the `main` function should not be inside the vector initialization. It should be outside the block.
+6. The closing brace for the vector declaration should be on a new line and before any other code.
+7. A semicolon was used after `for &score in scores.iter()` which caused the compiler error `OX0102: expected item at module level, found RBRACE`.

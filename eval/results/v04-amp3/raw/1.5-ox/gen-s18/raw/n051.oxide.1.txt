@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    print('g');
+    print('\n');
+    print('e');
+    print('\n');
+}
+```

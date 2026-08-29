@@ -1,0 +1,14 @@
+```rust
+fn reverse_digits(n: Int) -> Vec<Int> {
+    let mut result = vec![];
+    while n > 0 {
+        result.push(n % 10);
+        n /= 10;
+    }
+    result
+}
+
+fn main() {
+    print(reverse_digits(1234)); // Print the number 1234 with its digits in the opposite order.
+}
+```

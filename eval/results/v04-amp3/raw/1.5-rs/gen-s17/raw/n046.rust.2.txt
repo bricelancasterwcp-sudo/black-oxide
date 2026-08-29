@@ -1,0 +1,20 @@
+```rust
+fn main() {
+    let samples = [5, 12, 3, 18, 9];
+    let cutoff = 10;
+
+    let (count_under_cutoff, count_over_cutoff) = samples.into_iter().fold(
+        (0, 0),
+        |(under_count, over_count), sample| {
+            if sample < cutoff {
+                (under_count + 1, over_count)
+            } else {
+                (under_count, over_count + 1)
+            }
+        },
+    );
+
+    println!("There are {} samples under the cutoff of {}", count_under_cutoff, cutoff);
+    println!("There are {} samples over or equal to the cutoff of {}", count_over_cutoff, cutoff);
+}
+```

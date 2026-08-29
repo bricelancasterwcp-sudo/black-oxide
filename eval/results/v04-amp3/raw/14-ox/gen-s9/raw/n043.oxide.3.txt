@@ -1,0 +1,19 @@
+```text
+struct Queue { items: Vec<Int> }
+
+fn main() {
+    let q = Queue { items: vec!(1, 2, 3, 4, 5) }
+    let len = len(q.items)
+    if len > 1 {
+        let first = get(q.items, 0).unwrap()
+        let last = get(q.items, len - 1).unwrap()
+        let new_items = vec!(last, ..q.items[1..len-1], first)
+        let q2 = Queue { items: new_items }
+        for item in q2.items {
+            print(item)
+        }
+    } else {
+        print_str("Queue is too short to exchange elements")
+    }
+}
+```

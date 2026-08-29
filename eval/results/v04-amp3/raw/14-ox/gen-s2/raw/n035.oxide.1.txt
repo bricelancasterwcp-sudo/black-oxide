@@ -1,0 +1,14 @@
+```ox
+fn safe_div(a: Int, b: Int) -> Option<Int> {
+    if b == 0 {
+        None
+    } else {
+        Some(a / b)
+    }
+}
+
+fn main() {
+    let result = safe_div(20, 4)?
+    print(result)
+}
+```

@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let word = "granite";
+    print_char(word[0]);
+    println_char(word[word.len() - 1]);
+}
+
+fn print_char(c: char) {
+    print!("{c}\n");
+}
+```

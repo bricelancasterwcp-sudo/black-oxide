@@ -1,0 +1,23 @@
+```rust
+struct LetterCount { vowels: Int, consonants: Int }
+
+fn count_letters(word: Str) -> LetterCount {
+    let vowels = "aeiouAEIOU"
+    let mut count = LetterCount { vowels: 0, consonants: 0 }
+    for c in chars(word) {
+        if contains(vowels, c) {
+            count.vowels += 1
+        } else if c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z' {
+            count.consonants += 1
+        }
+    }
+    count
+}
+
+fn main() {
+    let word = "keyboard"
+    let letter_count = count_letters(word)
+    print(letter_count.vowels)
+    print(letter_count.consonants)
+}
+```

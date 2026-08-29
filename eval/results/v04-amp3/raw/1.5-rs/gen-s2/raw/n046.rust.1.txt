@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let sample_values = [5, 12, 3, 18, 9];
+    let cutoff = 10;
+    let below_cutoff_count: usize = sample_values.iter().filter(|&x| x < &cutoff).count();
+    let above_or_equal_cutoff_count: usize = sample_values.iter().filter(|&x| x >= &cutoff).count();
+
+    println!("Count of values under cutoff ({}): {}", cutoff, below_cutoff_count);
+    println!("Count of values over or equal to cutoff ({}): {}", cutoff, above_or_equal_cutoff_count);
+}
+```

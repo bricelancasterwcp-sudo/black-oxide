@@ -1,0 +1,6 @@
+fn main() {
+    let side = 4;
+    let pi: f64 = 3.0;
+    let area = (side * side) as f64 * pi / 2.0; // Corrected by dividing by 2.0
+    println!("Area of square: {}", area);
+}

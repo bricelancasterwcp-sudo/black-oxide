@@ -1,0 +1,13 @@
+fn main() {
+    let num = 91;
+    let mut is_prime = true;
+
+    for i in 2..=(num / 2) {
+        if num % i == 0 {
+            is_prime = false;
+            break;
+        }
+    }
+
+    println!("{}", if is_prime { "yes" } else { "no" });
+}

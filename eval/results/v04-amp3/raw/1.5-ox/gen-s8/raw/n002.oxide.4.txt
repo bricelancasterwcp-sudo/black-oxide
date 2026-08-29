@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let product = (1..=6).product::<Int>();
+    println(product);
+}
+```
+
+The issue was due to incorrect syntax. The correct way to use `product` in Rust is by calling it as a method of the iterator, not directly as an expression.

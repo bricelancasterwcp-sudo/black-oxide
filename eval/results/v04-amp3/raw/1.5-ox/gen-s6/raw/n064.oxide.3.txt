@@ -1,0 +1,15 @@
+```
+struct List(Vec<Int>);
+
+fn lookup(lst: &List, idx: Int) -> Option<&Int> {
+    lst.0.get(idx)
+}
+
+fn main() {
+    let list = List(vec![10, 20]);
+    match (lookup(&list, 1), lookup(&list, 4)) {
+        (Some(&x), Some(&y)) => println!("{}, {}", x, y),
+        _ => print_str("not found"),
+    }
+}
+```

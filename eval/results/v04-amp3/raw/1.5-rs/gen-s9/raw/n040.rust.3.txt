@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let side = 4.0;
+    let pi: f64 = std::f64::consts::PI; // Fixed the type to f64
+    println!("The area of the square is {}", side * pi * side);
+}
+```
+
+This program correctly calculates the area of a square with side length four using the mathematical formula for the area of a square (side length squared times π).

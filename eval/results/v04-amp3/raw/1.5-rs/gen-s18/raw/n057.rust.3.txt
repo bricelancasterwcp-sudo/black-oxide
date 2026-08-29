@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let words = ["fig", "banana", "kiwi"];
+    let mut max_length_word = "";
+    let mut max_length = 0;
+
+    for word in words.iter() {
+        if word.len() > max_length {
+            max_length_word = *word;
+            max_length = word.len();
+        }
+    }
+
+    println!("The word with the most letters is '{}'", max_length_word);
+    println!("It has {} letters.", max_length);
+}
+```
+
+Explanation: The code iterates over each word in the `words` array and checks if its length is greater than the current maximum length. If it is, the `max_length_word` is updated to hold the value of the current word and `max_length` is updated to hold the length of the current word. After the loop, the program prints out the word with the most letters and its letter count.

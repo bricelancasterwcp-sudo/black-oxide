@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let text1 = String::from("7"); // assuming "7" holds a number
+    let text2 = String::from("x"); // assuming "x" does not hold a number
+    let text3 = String::from("9"); // assuming "9" holds a number
+    let unknown_text = String::from("?"); // assuming "?" does not hold a number
+
+    let sum = text1.parse::<i32>() + text3.parse::<i32>(); // parse strings to i32 and add them
+    let count = 2; // there are two numbers (7 and 9) that hold numbers
+
+    println!("Total: {}", sum);
+    println!("Count: {}", count);
+}
+```

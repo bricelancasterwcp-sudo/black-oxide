@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let nums = vec![2, 9, 5, 10, 3];
+    let mut count = 0;
+
+    for &n in &nums {
+        if n < 10 {
+            println!("{}", n);
+            count += 1;
+        }
+    }
+
+    println!("Total kept: {}", count);
+}
+```

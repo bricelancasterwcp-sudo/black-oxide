@@ -1,0 +1,8 @@
+```oxide
+fn main() {
+    let s = "granite";
+    print(s.chars().nth(0).unwrap());
+    print_str("\n");
+    print(s.chars().last().unwrap());
+}
+```

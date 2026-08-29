@@ -1,0 +1,25 @@
+```rust
+struct List { first: Int, second: Int }
+
+fn get_position(list: List, pos: Int) -> Option<Int> {
+    if pos == 1 {
+        Some(list.first)
+    } else if pos == 4 {
+        Some(list.second)
+    } else {
+        None
+    }
+}
+
+fn main() {
+    let list = List { first: 10, second: 20 };
+    match get_position(list.clone(), 1) {
+        Some(n) => print(n),
+        None => print_str("none"),
+    }
+    match get_position(list.clone(), 4) {
+        Some(n) => print(n),
+        None => print_str("none"),
+    }
+}
+```

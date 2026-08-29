@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let mut signal = "green";
+    
+    match signal {
+        "green" => println!("Go"),
+        "red" => println!("Stop"),
+        "yellow" => println!("Wait"),
+        _ => panic!("Unknown signal: {}", signal),
+    }
+}
+```

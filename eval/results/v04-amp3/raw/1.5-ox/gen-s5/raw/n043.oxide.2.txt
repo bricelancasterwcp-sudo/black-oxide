@@ -1,0 +1,52 @@
+```rust
+struct Queue<T> {
+    values: VecDeque<T>,
+}
+
+impl<T> Queue<T> {
+    fn new() -> Self {
+        Queue { values: VecDeque::new() }
+    }
+
+    fn push(&mut self, item: T) {
+        self.values.push_back(item);
+    }
+
+    fn pop(&mut self) -> Option<T> {
+        self.values.pop_front()
+    }
+
+    fn first(&self) -> Option<&T> {
+        self.values.front()
+    }
+
+    fn last(&self) -> Option<&T> {
+        self.values.back()
+    }
+}
+
+fn main() {
+    let mut q = Queue::new();
+    for i in 1..6 {
+        q.push(i);
+    }
+
+    if let Some(first) = q.first() {
+        println!("{}", first);
+
+        if let Some(last) = q.last() {
+            println!("{}", last);
+
+            let mut temp = first.clone(); // Move the first element to a temporary variable
+            q.pop();
+            q.push(temp); // Replace the popped first element with the temporary
+
+            while let Some(value) = q.pop() {
+                println!("{}", value);
+            }
+        }
+    } else {
+        println!("The queue is empty");
+    }
+}
+```

@@ -1,0 +1,19 @@
+```text
+fn main() {
+    let keyboard = "qwertyuiopasdfghjklzxcvbnm"
+    let vowels = "aeiou"
+    let mut vowel_count = 0
+    let mut consonant_count = 0
+
+    for c in chars(keyboard) {
+        if contains(vowels, c) {
+            vowel_count += 1
+        } else {
+            consonant_count += 1
+        }
+    }
+
+    print(vowel_count)
+    print(consonant_count)
+}
+```

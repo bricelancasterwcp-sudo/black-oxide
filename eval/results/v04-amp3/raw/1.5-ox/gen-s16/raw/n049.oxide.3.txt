@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let mut figs = vec![3, 8, 11, 6];
+    let min_fig = *figs.iter().min().unwrap();
+    println_str(format!("Smallest figure: {}", min_fig));
+
+    let max_fig = *figs.iter().max().unwrap();
+    println_str(format!("Gap between largest and smallest: {}", max_fig - min_fig));
+}
+```

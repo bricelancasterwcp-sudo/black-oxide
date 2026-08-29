@@ -1,0 +1,18 @@
+fn sort(v: Vec<Int>) -> Vec<Int> {
+    let mut result = vec();
+    result.push(v[0]);
+    result.push(v[1]);
+    result.push(v[2]);
+    result.push(v[3]);
+    result.sort();
+    result
+}
+
+fn main() {
+    let measurements = vec(9, 2, 7, 4);
+    let sorted = sort(measurements.clone());
+    for x in sorted {
+        print(x);
+        print_str("\n");
+    }
+}

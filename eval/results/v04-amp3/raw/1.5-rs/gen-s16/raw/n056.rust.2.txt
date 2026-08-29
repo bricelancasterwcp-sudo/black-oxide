@@ -1,0 +1,23 @@
+```rust
+fn main() {
+    let text1 = "7";
+    let text2 = "x";
+    let text3 = "9";
+    let text4 = "?";
+
+    let numbers: Vec<&str> = vec![text1, text2, text3, text4];
+
+    let mut sum = 0;
+    let mut count = 0;
+
+    for &text in numbers.iter() {
+        if let Ok(number) = text.parse::<i64>() {
+            sum += number;
+            count += 1;
+        }
+    }
+
+    println!("Total: {}", sum);
+    println!("Count: {}", count);
+}
+```

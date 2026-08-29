@@ -1,0 +1,20 @@
+```rust
+struct Sensor {
+    reading: Int,
+}
+
+fn set_reading(sensor: &mut Sensor, value: Int) -> Result<(), OX0437> {
+    if sensor.reading > 7 || sensor.reading < 0 {
+        return Err(OX0406);
+    }
+    sensor.reading = value;
+    Ok(())
+}
+
+fn main() -> Result<(), OX0445> {
+    let mut sensor = Sensor { reading: 0 };
+    set_reading(&mut sensor, 7)?;
+    println!("{}", sensor.reading);
+    Ok(())
+}
+```

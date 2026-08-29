@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let word = "drum";
+    println!("{}", word.chars().rev().collect::<String>());
+    println!("{}", word);
+}
+```
+
+This Rust program takes the word "drum" and prints it with its letters running back to front by using `chars()` method, which returns an iterator over the characters of the string. The `rev()` method reverses the order of elements in the iterator. The `collect::<String>()` method then collects these characters into a new string. Finally, it prints both versions of the word: one with the letters in reverse and another normally.

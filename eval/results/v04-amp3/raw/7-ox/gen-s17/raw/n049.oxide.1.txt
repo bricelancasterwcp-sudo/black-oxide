@@ -1,0 +1,10 @@
+```oxide
+fn main() {
+    let figs = vec!(8, 3, 11, 6);
+    let min_fig = min(figs.clone())?;
+    let max_fig = max(figs)?;
+    print(min_fig);
+    print_str(" ");
+    print(max_fig - min_fig);
+}
+```

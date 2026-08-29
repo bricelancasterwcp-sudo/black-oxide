@@ -1,0 +1,15 @@
+```rust
+fn reverse_number(n: Int) -> Str {
+    let s = int_to_str(n);
+    let chars = chars(s);
+    let reversed_chars = concat(chars, vec());
+    let reversed_s = concat(vec(), reversed_chars);
+    reversed_s
+}
+
+fn main() {
+    let number = 1234;
+    let reversed = reverse_number(number);
+    print(reversed);
+}
+```

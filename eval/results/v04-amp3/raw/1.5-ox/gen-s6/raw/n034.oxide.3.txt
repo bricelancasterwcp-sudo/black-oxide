@@ -1,0 +1,13 @@
+```
+fn helper(v: Vec<Int>) -> Option<Int> {
+    for x in v {
+        return Some(x);
+    }
+    None
+}
+
+fn main() {
+    println!("{:?}", helper(vec![7, 8])); // Output: Some(8)
+    println!("{:?}", helper(vec![9]));   // Output: None
+}
+```

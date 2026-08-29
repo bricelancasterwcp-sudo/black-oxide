@@ -1,0 +1,28 @@
+```rust
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+impl Rectangle {
+    fn new(width: Int, height: Int) -> Self {
+        Rectangle { width, height }
+    }
+
+    fn area(&self) -> Int {
+        self.width * self.height
+    }
+
+    fn change_width(&mut self, new_width: Int) {
+        self.width = new_width;
+    }
+}
+
+fn main() {
+    let mut rect = Rectangle::new(2, 3);
+    println!("Original area: {}", rect.area()); // Output: Original area: 6
+
+    rect.change_width(5);
+    println!("New area: {}", rect.area());
+}
+```

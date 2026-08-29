@@ -1,0 +1,16 @@
+fn main() {
+    let texts = ["7", "x", "9", "?"];
+    let mut sum = 0;
+    let mut count_non_numbers = 0;
+
+    for text in texts.iter() {
+        if let Ok(num) = text.parse::<i32>() {
+            sum += num;
+        } else {
+            count_non_numbers += 1;
+        }
+    }
+
+    println!("Sum: {}", sum);
+    println!("Count of non-numbers: {}", count_non_numbers);
+}

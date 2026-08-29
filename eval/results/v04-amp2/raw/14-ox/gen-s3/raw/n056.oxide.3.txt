@@ -1,0 +1,34 @@
+```text
+struct NumberHolder { value: Option<Int> }
+
+fn sum_valid_numbers(holders: Vec<NumberHolder>) -> Int {
+    let mut sum = 0
+    for holder in holders {
+        if let Some(n) = holder.value {
+            sum += n
+        }
+    }
+    sum
+}
+
+fn count_invalid_numbers(holders: Vec<NumberHolder>) -> Int {
+    let mut count = 0
+    for holder in holders {
+        if holder.value.is_none() {
+            count += 1
+        }
+    }
+    count
+}
+
+fn main() {
+    let holders = vec![
+        NumberHolder { value: Some(7) },
+        NumberHolder { value: None },
+        NumberHolder { value: Some(9) },
+        NumberHolder { value: None },
+    ]
+    print(sum_valid_numbers(holders.clone()))
+    print(count_invalid_numbers(holders))
+}
+```

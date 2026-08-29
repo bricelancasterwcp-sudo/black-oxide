@@ -1,0 +1,21 @@
+```rust
+struct Line { items: Vec<(Int, Int)> }
+
+fn total(line: Line) -> Int {
+    let mut sum = 0;
+    for (price, count) in line.items {
+        sum += price * count;
+    }
+    sum
+}
+
+fn main() {
+    let line1 = Line { items: vec![(3, 4)] };
+    let line2 = Line { items: vec![(2, 5)] };
+    print(total(line1)); // 12
+    print_str("\n");
+    print(total(line2)); // 10
+    print_str("\n");
+    print(total(Line { items: vec![(3, 4), (2, 5)] })); // 22
+}
+```

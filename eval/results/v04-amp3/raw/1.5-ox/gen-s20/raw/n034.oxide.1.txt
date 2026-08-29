@@ -1,0 +1,14 @@
+```rust
+fn second(vec: Vec<Int>) -> Option<Int> {
+    let mut iter = vec.iter().skip(1);
+    match iter.next() {
+        Some(x) => Some(*x),
+        None => None,
+    }
+}
+
+fn main() {
+    let v = vec![7, 8, 9];
+    println!("{:?}", second(v));
+}
+```

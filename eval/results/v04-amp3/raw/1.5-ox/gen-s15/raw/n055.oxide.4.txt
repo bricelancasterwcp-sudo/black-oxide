@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let e = read_int().unwrap();
+    print(e);
+    let o = read_str().unwrap();
+    print(o);
+    let f = read_float().unwrap();
+    print(f);
+}
+```

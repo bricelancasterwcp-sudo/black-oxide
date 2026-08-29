@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let count = (1..=36).filter(|&i| i % 36 == 0).count();
+    println!("There are {} whole numbers from 1 to 36 that divide 36 exactly.", count);
+}
+```
+
+Explanation:
+The original program was attempting to check if all numbers from 1 to 36 evenly divide 36. However, the condition `i % 36 == 0` always evaluates to true because 36 is a multiple of every number within its range (from 1 to 36). Therefore, the filter operation effectively counts all numbers in the range, which is incorrect.
+
+To fix this, we should only check for divisors up to 36, not all numbers. The corrected program iterates through each number from 1 to 36 and checks if it divides 36 exactly using `i % 36 == 0`.

@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let mut seq = vec![1, 1];
+    for _ in 2..=10 {
+        seq.push(seq.last().unwrap() + seq[seq.len() - 2]);
+    }
+    println!("{}", seq[9]);
+}
+```

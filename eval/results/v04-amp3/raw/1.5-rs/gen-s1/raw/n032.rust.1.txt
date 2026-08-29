@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let mut p1 = (1, 5); // p1 is at x=1, y=5
+    let mut p2 = (p1.0 + 10, p1.1); // p2 is at x=p1.x+10, y=p1.y
+
+    println!("The sum of the two numbers: {}", p1.0 + p2.0);
+}
+```

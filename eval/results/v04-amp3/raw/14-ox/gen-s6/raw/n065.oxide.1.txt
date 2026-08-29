@@ -1,0 +1,33 @@
+```
+struct Reading { label: Str, values: Vec<Int> }
+
+fn count_big(v: Vec<Int>) -> Int {
+    let mut count = 0
+    for x in v {
+        if x > 5 {
+            count += 1
+        }
+    }
+    count
+}
+
+fn highest(v: Vec<Int>) -> Option<Int> {
+    let mut max_val = None
+    for x in v {
+        if max_val? <= x {
+            max_val = Some(x)
+        }
+    }
+    max_val
+}
+
+fn main() {
+    let readings = push(push(push(push(push(vec(), 6), 11), 3), 14), 9)
+    print(count_big(readings))
+    let readings_copy = push(push(push(push(push(vec(), 6), 11), 3), 14), 9)
+    match highest(readings_copy) {
+        Some(n) => print(n),
+        None => print_str("no readings"),
+    }
+}
+```

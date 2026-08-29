@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let numbers = [8, 3, 11, 6];
+    let min_number = *numbers.iter().min().unwrap();
+    let max_number = *numbers.iter().max().unwrap();
+
+    println!("Smallest figure: {}", min_number);
+    println!("Gap between the largest and smallest: {}", max_number - min_number);
+}
+```
+
+This program calculates the minimum and maximum values in a slice of integers, then prints them along with the gap between them. The `unwrap()` method is used to handle any potential panic that might occur if the slice is empty or does not contain at least two elements.

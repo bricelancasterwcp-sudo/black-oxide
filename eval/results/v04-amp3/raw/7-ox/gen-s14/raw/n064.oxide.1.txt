@@ -1,0 +1,26 @@
+```oxide
+struct List { value: Int, next: Option<Box<List>> }
+
+fn find(list: &Option<Box<List>>, pos: Int) -> Option<Int> {
+    let mut current = list;
+    for _ in 0..pos {
+        match current {
+            Some(node) => current = &node.next,
+            None => return None
+        }
+    }
+    current.as_ref().map(|node| node.value)
+}
+
+fn main() {
+    let list = Some(Box::new(List { value: 10, next: Some(Box::new(List { value: 20, next: None })) }));
+    match find(&list, 1) {
+        Some(n) => print(n),
+        None => print_str("none")
+    }
+    match find(&list, 4) {
+        Some(n) => print(n),
+        None => print_str("none")
+    }
+}
+```

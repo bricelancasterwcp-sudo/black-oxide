@@ -1,0 +1,24 @@
+```text
+struct Line { units: Int, price: Int }
+
+fn line_value(line: Line) -> Int {
+    line.units * line.price
+}
+
+fn total_value(lines: Vec<Line>) -> Int {
+    let mut total = 0
+    for line in lines {
+        total = total + line_value(line)
+    }
+    total
+}
+
+fn main() {
+    let line1 = Line { units: 4, price: 3 }
+    let line2 = Line { units: 5, price: 2 }
+    print(line_value(line1))
+    print(line_value(line2))
+    let lines = push(push(vec(), line1), line2)
+    print(total_value(lines))
+}
+```

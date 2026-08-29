@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let vec = vec![7, 8, 9];
+    match vec.get(1) {
+        Some(&second) => println!("{}", second),
+        None => println!("None"),
+    }
+}
+```

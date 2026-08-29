@@ -1,0 +1,13 @@
+```oxide
+fn cube(x: Int) -> Int {
+    x * x * x
+}
+
+fn main() {
+    let mut sum = 0;
+    for i in range(1, 6) {
+        sum += cube(i);
+    }
+    print(sum);
+}
+```

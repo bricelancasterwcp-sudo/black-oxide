@@ -1,0 +1,32 @@
+```rust
+fn main() {
+    let mut numbers = Vec::new();
+    match read_numbers(&mut numbers) {
+        Ok(_) => {
+            println!("Total: {}", calculate_total(numbers));
+            println!("Not found: {:?}", count_not_found(numbers));
+        }
+        Err(e) => eprintln!("{}", e),
+    }
+}
+
+fn read_numbers(numbers: &mut Vec<Int>) -> Result<(), OX04xx> {
+    let mut input = String::new();
+    io::stdin().read_line(&mut input)?;
+    for word in input.split_whitespace() {
+        match word.parse::<Int>() {
+            Ok(n) => numbers.push(n),
+            Err(e) => return Err(OX03xx(e.to_string())),
+        }
+    }
+    Ok(())
+}
+
+fn calculate_total(numbers: Vec<Int>) -> Int {
+    numbers.iter().filter(|&x| x > 0).sum()
+}
+
+fn count_not_found(numbers: Vec<Int>) -> Int {
+    numbers.iter().filter(|&&x| x <= 0).count()
+}
+```

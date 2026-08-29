@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    println!("Second element: {:?}", second_element(vec![7, 8, 9]));
+    println!("Second element: {:?}", second_element(vec![10, 11, 12]));
+    println!("Second element: {:?}", second_element(vec![]));
+}
+
+fn second_element(nums: Vec<i32>) -> Option<i32> {
+    nums.get(1).copied()
+}
+```

@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let input = "8 oak 15".split_whitespace().collect::<Vec<&str>>();
+    
+    for item in input.iter() {
+        match item.parse::<i32>() {
+            Ok(number) => println!("{}", number),
+            Err(_) => println!("bad"),
+        }
+    }
+}
+```

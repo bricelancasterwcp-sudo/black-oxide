@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let mut a = 1;
+    let mut b = 1;
+    for _ in 2..10 {
+        let c = a + b;
+        a = b;
+        b = c;
+    }
+    print(a);
+}
+```
+
+This program calculates the tenth term of the Fibonacci sequence by iteratively updating two variables, `a` and `b`, to store the last two numbers in the sequence.

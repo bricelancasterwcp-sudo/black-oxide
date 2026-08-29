@@ -1,0 +1,4 @@
+fn main() {
+    let num = 1234;
+    print_str(concat(int_to_str(num), "\n"));
+}

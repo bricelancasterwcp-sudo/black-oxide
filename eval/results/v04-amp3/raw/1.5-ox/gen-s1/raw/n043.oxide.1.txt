@@ -1,0 +1,28 @@
+```
+struct Queue { front: Int, rear: Int }
+
+fn exchange(v: &mut Queue) {
+    let f = v.front;
+    v.front = v.rear;
+    v.rear = f;
+}
+
+fn print(q: &Queue) {
+    for i in 0..q.rear + 1 {
+        print(&q.values[i]);
+        if i < q.rear {
+            print_str(" ");
+        }
+    }
+    println();
+}
+
+fn main() {
+    let mut q = Queue { front: 0, rear: 4 };
+    exchange(&mut q);
+    print(&q);
+
+    // Check that the queue has been modified correctly
+    assert_eq!(q.values, vec![5, 2, 3, 4, 1]);
+}
+```

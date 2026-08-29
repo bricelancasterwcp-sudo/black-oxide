@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let numbers = [7, 4, 9, 10];
+    let mut total_even = 0;
+
+    for &number in numbers.iter().filter(|&&n| n % 2 == 1) {
+        println!("{}", number * 2);
+        total_even += number;
+    }
+
+    println!("Total of even entries: {}", total_even);
+}
+```

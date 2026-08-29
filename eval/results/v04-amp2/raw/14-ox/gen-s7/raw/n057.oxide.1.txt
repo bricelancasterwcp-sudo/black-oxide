@@ -1,0 +1,22 @@
+```text
+fn main() {
+    let fig = "fig"
+    let banana = "banana"
+    let kiwi = "kiwi"
+
+    let names = vec(fig, banana, kiwi)
+    let mut longest = ""
+    let mut max_len = 0
+
+    for name in names {
+        let len = str_len(name)
+        if len > max_len {
+            longest = name
+            max_len = len
+        }
+    }
+
+    print(longest)
+    print(max_len)
+}
+```

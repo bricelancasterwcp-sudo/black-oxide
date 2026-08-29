@@ -1,0 +1,28 @@
+```text
+fn is_vowel(c: Str) -> Bool {
+    match c {
+        "a" | "e" | "i" | "o" | "u" => true,
+        _ => false,
+    }
+}
+
+fn count_vowels_and_consonants(s: Str) -> (Int, Int) {
+    let mut vowels = 0
+    let mut consonants = 0
+    for c in chars(s) {
+        if is_vowel(c) {
+            vowels += 1
+        } else if str_len(c) > 0 { // Ensure c is a valid character
+            consonants += 1
+        }
+    }
+    (vowels, consonants)
+}
+
+fn main() {
+    let letters = "qwertyuiopasdfghjklzxcvbnm"
+    let (vowels, consonants) = count_vowels_and_consonants(letters)
+    print(vowels)
+    print(consonants)
+}
+```

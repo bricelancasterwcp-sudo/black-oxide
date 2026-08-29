@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let mut numbers: Vec<i32> = vec![7, 0, 9, 0];
+    let mut count_of_numbers = 0;
+    let mut sum_of_numbers = 0;
+
+    for &number in &numbers {
+        if number != 0 {
+            count_of_numbers += 1;
+            sum_of_numbers += number;
+        }
+    }
+
+    println!("The total of the ones that do is {}", sum_of_numbers);
+    println!("There are {} numbers that do not", numbers.len() - count_of_numbers);
+}
+```
+This Rust program initializes a vector `numbers` with four elements, then iterates through it to calculate the total of the non-zero elements and the count of zero elements. Finally, it prints the sum and count of numbers in each category.

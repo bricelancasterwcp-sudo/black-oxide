@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let mut signal = "green";
+    while true {
+        match signal {
+            "green" => println!("go"),
+            "red" => println!("stop"),
+            "yellow" => println!("wait"),
+            _ => panic!("invalid signal"),
+        }
+        // Simulate receiving a new signal
+        if signal == "green" { signal = "yellow"; }
+        else if signal == "yellow" { signal = "red"; }
+    }
+}
+```

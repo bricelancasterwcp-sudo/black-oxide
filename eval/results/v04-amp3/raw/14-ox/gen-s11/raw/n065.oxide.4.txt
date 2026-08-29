@@ -1,0 +1,34 @@
+fn count_exceed_five(v: Vec<Int>) -> Int {
+    let mut count = 0
+    for x in v {
+        if x > 5 {
+            count += 1
+        }
+    }
+    count
+}
+
+fn max_reading(v: Vec<Int>) -> Option<Int> {
+    max(v)
+}
+
+fn main() {
+    let readings = vec()
+    readings = push(readings, 6)
+    readings = push(readings, 11)
+    readings = push(readings, 3)
+    readings = push(readings, 14)
+    readings = push(readings, 9)
+
+    let count = count_exceed_five(clone(readings))
+    print(count)
+
+    let r = max_reading(clone(readings))
+    match r {
+        Some(n) => {
+            print_str("\n")
+            print(n)
+        },
+        None => print_str("\nno readings"),
+    }
+}

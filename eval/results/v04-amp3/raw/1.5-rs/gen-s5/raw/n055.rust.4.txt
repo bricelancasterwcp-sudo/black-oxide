@@ -1,0 +1,29 @@
+```rust
+fn main() {
+    let text = b"8 oak 15";
+    let mut parts = text.split_whitespace();
+
+    if let Some(first) = parts.next() {
+        match std::str::from_utf8(&first.as_ref()) {
+            Ok(number) => println!("{}", number),
+            Err(_) => println!("bad"),
+        }
+    }
+
+    if let Some(second) = parts.next() {
+        match std::str::from_utf8(&second.as_ref()) {
+            Ok(tree) => println!("{}", tree),
+            Err(_) => println!("bad"),
+        }
+    }
+
+    if let Some(third) = parts.next() {
+        match std::str::from_utf8(&third.as_ref()) {
+            Ok(number) => println!("{}", number),
+            Err(_) => println!("bad"),
+        }
+    } else {
+        println!("bad");
+    }
+}
+```

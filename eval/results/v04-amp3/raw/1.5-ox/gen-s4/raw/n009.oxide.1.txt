@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let num = 1234;
+    let mut digits = String::new();
+    while num > 0 {
+        digits.insert(0, (num % 10).to_string());
+        num /= 10;
+    }
+    print_str(digits);
+}
+```

@@ -1,0 +1,20 @@
+```rust
+fn main() {
+    let text = "7x9?"; // Example string
+
+    let mut count = 0;
+    let mut sum = 0;
+
+    for ch in text.chars() {
+        if ch.is_digit(10) {
+            count += 1;
+            sum += ch.to_digit(10).unwrap();
+        } else {
+            count += 1; // If the character is not a digit, count it as a non-digit
+        }
+    }
+
+    println!("The total of the numbers is: {}", sum);
+    println!("The number of non-digit characters is: {}", text.len() - count);
+}
+```

@@ -1,0 +1,22 @@
+```rust
+struct BankAccount { balance: Int }
+
+fn deposit(account: BankAccount, amount: Int) -> BankAccount {
+    let new_balance = account.balance + amount;
+    print(new_balance);
+    BankAccount { balance: new_balance }
+}
+
+fn main() {
+    let mut account = BankAccount { balance: 0 };
+    account = deposit(account, 3);
+    print("\n");
+    account = deposit(account, 1);
+    print("\n");
+    account = deposit(account, 4);
+    print("\n");
+    account = deposit(account, 1);
+    print("\n");
+    account = deposit(account, 5);
+}
+```

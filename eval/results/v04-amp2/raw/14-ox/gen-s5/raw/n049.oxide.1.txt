@@ -1,0 +1,21 @@
+```text
+fn main() {
+    let figures = push(push(push(vec(), 8), 3), 11)
+    let figures = push(figures, 6)
+    
+    let min_figure = match min(figures) {
+        Some(n) => n,
+        None => -1, // should not happen with non-empty vec
+    }
+    
+    let max_figure = match max(figures) {
+        Some(n) => n,
+        None => -1, // should not happen with non-empty vec
+    }
+    
+    let gap = max_figure - min_figure
+    
+    print(min_figure)
+    print(gap)
+}
+```

@@ -1,0 +1,8 @@
+```
+fn main() {
+    let measurements = vec!(9, 2, 7, 4);
+    for x in measurements.iter().sorted_unstable() { // Fix: Use sort_unstable instead of iter().sorted()
+        print_str(x)
+    }
+}
+```

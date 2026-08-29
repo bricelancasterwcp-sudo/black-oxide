@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let word = "banana";
+    let letter = 'n';
+
+    for (i, c) in word.chars().enumerate() {
+        if c == letter {
+            println!("{}", i);
+        }
+    }
+}
+```

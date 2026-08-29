@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let log = vec![6, 7, 8, 9];
+    println!("First entry: {}", log[0]);
+    println!("Last entry: {}", log[log.len() - 1]);
+}
+```
+
+This program defines a vector `log` containing the integers 6, 7, 8, and 9. It then prints the first element (index 0) and the last element (index `log.len() - 1`) of the vector using the `println!` macro.

@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let mut numbers = vec![9, 2, 12, 5, 16];
+    let count = numbers.retain(|&x| x < 10);
+    for &n in &numbers {
+        println!("{}", n);
+    }
+    println!("Kept: {}", count);
+}
+```

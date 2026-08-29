@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let numbers = [10, 20];
+    println!("{:?}", numbers.get(0));
+    println!("{:?}", numbers.get(3));
+}
+```
+
+The original code was missing a semicolon at the end of the `println!` macro call for the second position. This caused Rust to interpret it as an expression rather than a statement, which led to the `None` output. The corrected program now correctly prints `Some(10)` and `None`.

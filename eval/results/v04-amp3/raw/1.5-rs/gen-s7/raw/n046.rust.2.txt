@@ -1,0 +1,13 @@
+```rust
+
+fn main() {
+    let numbers = vec![5, 12, 3, 18, 9];
+    let cutoff: i32 = 10;
+
+    let count_below_cutoff = numbers.iter().filter(|&&x| x < cutoff).count();
+    let count_at_or_above_cutoff = numbers.iter().filter(|&&x| x >= cutoff).count();
+
+    println!("Numbers below the cutoff ({}): {}", cutoff, count_below_cutoff);
+    println!("Numbers at or above the cutoff ({}): {}", cutoff, count_at_or_above_cutoff);
+}
+```

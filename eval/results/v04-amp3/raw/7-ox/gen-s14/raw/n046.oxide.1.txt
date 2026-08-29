@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let samples = vec!(5, 12, 3, 18, 9);
+    let cutoff = 10;
+    
+    let (under, over_or_equal) = samples.iter().fold((0, 0), |(acc_under, acc_over), &x| {
+        if x < cutoff { (acc_under + 1, acc_over) } else { (acc_under, acc_over + 1) }
+    });
+    
+    print(under);
+    print_str(" ");
+    print(over_or_equal);
+}
+```

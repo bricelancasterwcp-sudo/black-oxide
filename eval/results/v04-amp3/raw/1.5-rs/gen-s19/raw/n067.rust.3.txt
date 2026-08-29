@@ -1,0 +1,23 @@
+```rust
+fn main() {
+    let mut numbers = vec![7, 4, 9, 10];
+
+    // Walk the list in order and print each odd entry doubled on its own line
+    for &number in &numbers {
+        if number % 2 != 0 {
+            println!("{}", number * 2);
+        }
+    }
+
+    // Calculate the total of the even entries
+    let mut total = 0;
+    for &number in &numbers {
+        if number % 2 == 0 {
+            total += number;
+        }
+    }
+
+    // Print the total of the even entries
+    println!("Total of the even entries: {}", total);
+}
+```

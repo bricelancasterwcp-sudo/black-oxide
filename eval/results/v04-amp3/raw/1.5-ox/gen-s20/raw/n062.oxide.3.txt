@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let signals = vec![1, 2, 3];
+    
+    for signal in signals.iter() {
+        match signal {
+            1 => print_str("go"),
+            2 => print_str("stop"),
+            _ => println!("wait"),
+        }
+    }
+}
+```

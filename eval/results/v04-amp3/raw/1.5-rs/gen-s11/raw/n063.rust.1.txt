@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut price_four_units = 3.0;
+    let mut price_five_units = 2.0;
+
+    println!("The value of the first line is: {}", 4.0 * price_four_units);
+    println!("The value of the second line is: {}", 5.0 * price_five_units);
+
+    println!("The total value of both lines is: {}", (4.0 * price_four_units) + (5.0 * price_five_units));
+}
+```

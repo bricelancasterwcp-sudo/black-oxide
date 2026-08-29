@@ -1,0 +1,38 @@
+```rust
+struct Queue<T> {
+    items: Vec<T>,
+}
+
+impl<T> Queue<T> {
+    fn new() -> Self {
+        Queue { items: vec![] }
+    }
+
+    fn push(&mut self, item: T) {
+        self.items.push(item);
+    }
+
+    fn pop(&mut self) -> Option<T> {
+        self.items.pop()
+    }
+}
+
+fn main() {
+    let mut queue = Queue::new();
+    queue.push(1);
+    queue.push(2);
+    queue.push(3);
+    queue.push(4);
+    queue.push(5);
+
+    let first = queue.pop().unwrap();
+    let last = queue.pop().unwrap();
+
+    queue.push(first);
+    queue.push(last);
+
+    for item in queue.items {
+        println!("{}", item);
+    }
+}
+```

@@ -1,0 +1,14 @@
+```rust
+struct Sensor { reading: Int }
+
+fn set_reading(sensor: &mut Sensor, value: Int) {
+    let old_value = sensor.reading;
+    sensor.reading = value;
+}
+
+fn main() {
+    let mut sensor = Sensor { reading: 0 };
+    set_reading(&mut sensor, 7);
+    print(sensor.reading);            // field access copies: sensor stays usable
+}
+```

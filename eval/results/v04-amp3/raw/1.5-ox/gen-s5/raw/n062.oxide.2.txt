@@ -1,0 +1,14 @@
+```rust
+struct Signal { color: Str }
+
+fn main() {
+    let mut s = Signal { color: "green" };
+
+    match s.color.as_str() {
+        "green" => println!("go for green"),
+        "red" => println!("stop for red"),
+        "yellow" => println!("wait for yellow"),
+        _ => println!("unknown signal"),
+    }
+}
+```

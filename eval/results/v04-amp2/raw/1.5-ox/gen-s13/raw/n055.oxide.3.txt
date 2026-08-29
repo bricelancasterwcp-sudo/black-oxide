@@ -1,0 +1,34 @@
+```rust
+fn main() {
+    let a = match read_str("Enter first number: ") {
+        Some(s) => s.parse().unwrap(),
+        None => "bad".to_string(),
+    };
+    print!("{}", a);
+
+    let b = match read_str("Enter second number: ") {
+        Some(s) => s.parse().unwrap(),
+        None => "bad".to_string(),
+    };
+    print!("{}", b);
+
+    let c = match read_str("Enter third number: ") {
+        Some(s) => s.parse().unwrap(),
+        None => "bad".to_string(),
+    };
+    print!("{}", c);
+}
+
+fn read_str(prompt: &str) -> Option<String> {
+    use std::io::{self, BufRead};
+    let stdin = io::stdin();
+    let mut reader = stdin.lock();
+    println!("{}", prompt);
+    let mut line = String::new();
+    if reader.read_line(&mut line).is_err() {
+        None
+    } else {
+        Some(line.trim().to_string())
+    }
+}
+```

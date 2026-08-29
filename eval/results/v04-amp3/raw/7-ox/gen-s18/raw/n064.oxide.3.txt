@@ -1,0 +1,15 @@
+```rust
+struct List { values: Vec<Option<Int>> }
+
+fn main() {
+    let list = List { values: vec![None, Some(10), None, None, Some(20)] };
+
+    for i in [1, 4] {
+        match get(list.values.clone(), i) {
+            Some(x) => print(x),
+            None => print_str("none")
+        }
+        print_str(", ")
+    }
+}
+```

@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    match std::env::args().nth(1).as_deref() {
+        Some("green") => println!("go for green"),
+        Some("red") => println!("stop for red"),
+        Some("yellow") => println!("wait for yellow"),
+        _ => println!("invalid signal"),
+    }
+}
+```

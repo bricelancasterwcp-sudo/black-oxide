@@ -1,0 +1,16 @@
+```rust
+fn reverse_digits(n: Int) -> Str {
+    let mut num = n;
+    let mut reversed = "";
+    while num > 0 {
+        let digit = num % 10;
+        reversed = concat(int_to_str(digit), reversed);
+        num = trunc(num / 10);
+    }
+    reversed
+}
+
+fn main() {
+    print_str(reverse_digits(1234));
+}
+```

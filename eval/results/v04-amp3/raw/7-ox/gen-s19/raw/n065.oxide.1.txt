@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let readings = vec![6, 11, 3, 14, 9];
+    let count = readings.iter().filter(|&&x| x > 5).count();
+    print(count);
+    let max_reading = match readings.into_iter().max() {
+        Some(x) => x,
+        None => 0
+    };
+    print_str("\n");
+    print(max_reading);
+}
+```

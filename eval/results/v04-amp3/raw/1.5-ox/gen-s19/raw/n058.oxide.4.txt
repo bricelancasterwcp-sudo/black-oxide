@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let mut freq = [0; 26];
+    for c in "coffee".chars() {
+        if 'a' <= c && c <= 'z' {
+            let idx = (c as u8 - b'a') as usize;
+            freq[idx] += 1;
+        }
+    }
+
+    for i in 0..26 {
+        if freq[i] > 1 {
+            print!("{}", (i + b'a') as char);
+        }
+    }
+}
+```

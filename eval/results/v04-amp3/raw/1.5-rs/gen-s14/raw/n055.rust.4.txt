@@ -1,0 +1,11 @@
+fn main() {
+    let mut input = vec!["8", "oak", "15"];
+    
+    for i in &input {
+        if i.len() == 0 {
+            println!("bad");
+        } else {
+            println!("{}", i);
+        }
+    }
+}

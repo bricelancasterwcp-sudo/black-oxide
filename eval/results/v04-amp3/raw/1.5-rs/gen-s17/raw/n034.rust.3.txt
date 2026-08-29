@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    assert_eq!(second_entry(vec![1, 2, 3]), Some(2));
+    assert_eq!(second_entry(vec![]), None);
+    assert_eq!(second_entry(vec![4]), None);
+    println!("All tests passed!");
+}
+
+fn second_entry<T: Clone>(mut list: Vec<T>) -> Option<T> {
+    if let Some(&(first_item, _)) = list.split_first() {
+        Some(first_item.clone())
+    } else {
+        None
+    }
+}
+```

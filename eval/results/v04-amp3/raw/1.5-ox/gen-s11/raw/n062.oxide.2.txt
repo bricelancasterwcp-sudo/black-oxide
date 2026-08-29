@@ -1,0 +1,26 @@
+```rust
+struct Signal { color: Str }
+
+impl fmt::Display for Signal {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        match self.color.as_str() {
+            "green" => write!(f, "go"),
+            "red" => write!(f, "stop"),
+            "yellow" => write!(f, "wait"),
+            _ => unreachable!(),
+        }
+    }
+}
+
+fn main() {
+    let mut signals = vec![
+        Signal { color: "green".to_string() },
+        Signal { color: "red".to_string() },
+        Signal { color: "yellow".to_string() },
+    ];
+
+    for signal in &mut signals {
+        println!("{}", signal);
+    }
+}
+```

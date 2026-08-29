@@ -1,0 +1,9 @@
+```rust
+struct Square { side: Int }
+struct Circle { radius: Float }
+
+fn main() {
+    let s = Square { side: 4 };
+    print(to_float(s.side) * to_float(s.side));
+}
+```

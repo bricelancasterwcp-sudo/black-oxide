@@ -1,0 +1,9 @@
+fn main() {
+    let mut scores = vec!(2, 9, 5);
+    scores.sort();
+    scores.reverse();
+    for score in scores {
+        print(score);
+        print_str("\n");
+    }
+}

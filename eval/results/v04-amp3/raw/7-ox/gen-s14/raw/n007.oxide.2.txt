@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let num = 9875;
+    let mut sum = 0;
+    for digit in num.to_str().chars().map(|c| c.to_string()) {
+        sum += parse_int(digit).unwrap_or(0);
+    }
+    print(sum);
+}
+```

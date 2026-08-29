@@ -1,0 +1,16 @@
+fn main() {
+    let input = "a1b22";
+    let total = sum_digits(input);
+    println!("Total of digits: {}", total);
+    println!("Number of digits: {}", count_digits(input));
+}
+
+fn sum_digits(s: Str) -> Int {
+    let mut result = 0;
+    for c in s.chars() {
+        if c.is_digit(10) {
+            result += c.to_digit(10).unwrap();
+        }
+    }
+    result
+}

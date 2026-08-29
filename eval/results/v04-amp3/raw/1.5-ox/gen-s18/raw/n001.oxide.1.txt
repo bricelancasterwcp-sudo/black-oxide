@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let result = (1..=5).map(|x| x.pow(3)).sum::<Int>();
+    print(result);
+}
+```
+The cube of 1 is `1`, the cube of 2 is `8`, the cube of 3 is `27`, the cube of 4 is `64`, and the cube of 5 is `125`. Adding these up gives a total of `225`.

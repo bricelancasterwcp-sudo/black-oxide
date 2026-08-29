@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let mut count = 0;
+    let sum = |num: i32| num != 0;
+
+    println!("7 is {}", sum(7));
+    println!("x is {}", sum(x as i32));
+    println!("9 is {}", sum(9));
+    println!("? is {}", sum(?));
+
+    let total = 7 + x + 9 + if ? { ? } else { 0 };
+    println!("Total: {}", total);
+}
+```
+
+This program checks each variable to see if it contains a number (not zero). If a variable does contain a number, its value is added to the sum; if not, an additional zero is added. Finally, the total sum and the count of numbers are printed.

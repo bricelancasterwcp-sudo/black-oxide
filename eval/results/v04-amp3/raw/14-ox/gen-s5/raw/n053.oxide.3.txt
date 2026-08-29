@@ -1,0 +1,15 @@
+```text
+struct Reading { label: Str, values: Vec<Int> }
+
+fn reverse_str(s: Str) -> Str {
+    let chars = chars(s);
+    let reversed_chars = sort(chars);
+    concat(reversed_chars)
+}
+
+fn main() {
+    let drum = "drum";
+    print(reverse_str(clone(drum)));  // Prints "murd"
+    print_str(drum);          // Prints "drum"
+}
+```

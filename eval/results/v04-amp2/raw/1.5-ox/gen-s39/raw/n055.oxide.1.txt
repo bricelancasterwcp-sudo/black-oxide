@@ -1,0 +1,24 @@
+```rust
+fn main() {
+    let mut a = None;
+    let mut b = None;
+    let mut c = None;
+
+    if let Some(x) = parse_int("8") {
+        a = Some(x);
+    }
+
+    if let Some(y) = parse_int("oak") {
+        b = Some(y);
+    }
+
+    if let Some(z) = parse_int("15") {
+        c = Some(z);
+    }
+
+    match (a, b, c) {
+        (Some(a), Some(b), Some(c)) => println!("{} {} {}", a, b, c),
+        _ => println!("bad"),
+    }
+}
+```

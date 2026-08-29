@@ -1,0 +1,33 @@
+```rust
+struct Reading { label: Str, values: Vec<Str> }
+
+fn sum_of_numbers(v: Vec<Str>) -> Option<Int> {
+    let mut sum = 0
+    for s in v {
+        if parse_int(s)?.is_some() {
+            sum += to_float(parse_int(s).unwrap())
+        }
+    }
+    Some(sum)
+}
+
+fn count_non_numbers(v: Vec<Str>) -> Int {
+    let mut count = 0
+    for s in v {
+        if parse_int(s)?.is_none() {
+            count += 1
+        }
+    }
+    count
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: vec("7", "x", "9", "?") }
+    if let Some(sum) = sum_of_numbers(r.values) {
+        print(sum)
+    } else {
+        print(0)
+    }
+    print(count_non_numbers(r.values))
+}
+```

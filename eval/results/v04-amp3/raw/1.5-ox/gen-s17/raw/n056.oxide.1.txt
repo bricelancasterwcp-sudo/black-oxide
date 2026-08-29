@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let mut total = 0;
+    let mut count = 0;
+
+    for &item in &[7, 9, 10, '?'] {
+        if item.is_digit(10) {
+            total += item.parse::<i32>().unwrap();
+            count += 1;
+        }
+    }
+
+    println!("Total: {}", total);
+    println!("Count: {}", count);
+}
+```

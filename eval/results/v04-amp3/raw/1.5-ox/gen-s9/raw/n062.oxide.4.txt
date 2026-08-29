@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let mut signal = "yellow";
+
+    while signal != "stop" {
+        match signal {
+            "green" => println!("go"),
+            "red" => println!("stop"),
+            "yellow" => println!("wait"),
+            _ => {}
+        }
+    }
+
+    println!("stopped");
+}
+```

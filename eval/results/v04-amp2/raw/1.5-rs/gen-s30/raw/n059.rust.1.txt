@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let phrase = "when in doubt go home";
+    let mut word_count = 0;
+    let mut char_count = 0;
+
+    for c in phrase.chars() {
+        if c == ' ' {
+            word_count += 1;
+        }
+        char_count += 1;
+    }
+
+    println!("Word count: {}", word_count);
+    println!("Character count including spaces: {}", char_count);
+}
+```

@@ -1,0 +1,23 @@
+```ox
+fn main() {
+    let values = vec(5, 12, 3, 18, 9);
+    let cutoff = 10;
+
+    let under = count_under_cutoff(values, cutoff);
+    let over_or_equal = len(values) - under;
+
+    print(under);
+    print_str(" ");
+    print(over_or_equal);
+}
+
+fn count_under_cutoff(v: Vec<Int>, cutoff: Int) -> Int {
+    let mut count = 0;
+    for x in v {
+        if x < cutoff {
+            count = count + 1;
+        }
+    }
+    count
+}
+```

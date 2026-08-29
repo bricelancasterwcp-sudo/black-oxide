@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let mut arr = [10, 20];
+
+    match &arr[0] {   // Match on the first element of the array
+        Some(value) => println!("Position 1 value: {}", value),
+        None => println!("Position 1 is empty"),
+    }
+
+    if let Some(value) = arr.get(3) {   // Use .get() method to safely access the fourth element
+        println!("Position 4 value: {}", value);
+    } else {
+        println!("Position 4 is empty");
+    }
+}
+```

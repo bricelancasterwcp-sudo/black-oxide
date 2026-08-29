@@ -1,0 +1,16 @@
+```text
+fn main() {
+    let scores = vec();
+    scores = push(scores, 2);
+    scores = push(scores, 9);
+    scores = push(scores, 5);
+    
+    let sorted_scores = sort(scores);
+    
+    while len(sorted_scores) > 0 {
+        let score = get(sorted_scores, 0)?;
+        print(score);
+        sorted_scores = vec() + sorted_scores;
+    }
+}
+```

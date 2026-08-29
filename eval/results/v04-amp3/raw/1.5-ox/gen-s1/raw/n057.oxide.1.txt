@@ -1,0 +1,20 @@
+```
+fn main() {
+    let s1 = "fig";
+    let s2 = "banana";
+    let s3 = "kiwi";
+
+    let mut max_len = 0;
+    let mut max_name = "";
+
+    for &s in &[s1, s2, s3] {
+        if s.len() > max_len {
+            max_len = s.len();
+            max_name = s;
+        }
+    }
+
+    print_str(max_name);
+    print_int(max_len);
+}
+```

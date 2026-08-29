@@ -1,0 +1,12 @@
+fn str_rev(s: Str) -> Str {
+    let mut reversed = vec![]
+    for i in range(str_len(s) - 1, -1, -1) {
+        let ch = get(chars(s), i)?
+        push(reversed, int_to_str(trunc(to_float(ch))))
+    }
+    concat("", reversed)
+}
+
+fn main() {
+    print(concat("drum", str_rev("drum")))
+}

@@ -1,0 +1,31 @@
+```rust
+fn count_vowels(s: Str) -> Int {
+    let vowels = "aeiouAEIOU";
+    let mut count = 0;
+    for c in chars(s) {
+        if contains(vowels, c) {
+            count += 1;
+        }
+    }
+    count
+}
+
+fn count_consonants(s: Str) -> Int {
+    let vowels = "aeiouAEIOU";
+    let mut count = 0;
+    for c in chars(s) {
+        if !contains(vowels, c) && c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z' {
+            count += 1;
+        }
+    }
+    count
+}
+
+fn main() {
+    let keyboard = "qwertyuiopasdfghjklzxcvbnm";
+    let vowel_count = count_vowels(keyboard);
+    let consonant_count = count_consonants(keyboard);
+    print(vowel_count);
+    print(consonant_count);
+}
+```

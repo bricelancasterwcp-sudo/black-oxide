@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let numbers = [10, 20];
+    println!("{}", numbers.get(0)); // Output: Some(10)
+    println!("{}", numbers.get(3)); // Output: None
+}
+```

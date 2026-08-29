@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let text = "when in doubt go home";
+    let words_count = text.split_whitespace().count();
+    let char_count = text.chars().count();
+    println!("Words: {}", words_count);
+    println!("Characters: {}", char_count);
+}
+```
+
+The program was corrected to properly count the number of words and characters in the given sentence. The split_whitespace method was used to separate the string into words, and then .count() was applied to each resulting word to determine their quantity. Similarly, the chars() method is utilized to iterate over each character of the string, and .count() counts these characters.

@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let s = "coffee";
+    for c in s.chars() {
+        if s.matches(c).count() > 1 {
+            println!("{}", c);
+        }
+    }
+}
+```

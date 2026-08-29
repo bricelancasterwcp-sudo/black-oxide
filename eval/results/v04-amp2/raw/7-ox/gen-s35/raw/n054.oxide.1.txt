@@ -1,0 +1,19 @@
+```oxide
+fn main() {
+    let vowels = "aeiouAEIOU";
+    let mut count_vowels = 0;
+    let mut count_consonants = 0;
+
+    for letter in "keyboard" {
+        if vowels.contains(letter) {
+            count_vowels += 1;
+        } else {
+            count_consonants += 1;
+        }
+    }
+
+    print(count_vowels);
+    print_str(" ");
+    print(count_consonants);
+}
+```

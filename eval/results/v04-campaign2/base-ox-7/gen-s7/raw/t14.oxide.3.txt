@@ -1,0 +1,7 @@
+fn main() {
+    let s = "mississippi";
+    print(count(s.chars().map(|c| c == 's').collect::<Vec<Bool>>(), true));
+    let unique_chars: Vec<Str> = s.chars().collect();
+    let distinct_count = count(unique_chars, "_");
+    print(distinct_count);
+}

@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let mut a = 0;
+    let mut b = 1;
+
+    for _ in 2..=10 {
+        let sum = a + b;
+        a = b;
+        b = sum;
+    }
+
+    println!("The tenth term is: {}", b);
+}
+```

@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let s = "a1b22";
+    let mut sum = 0;
+    let mut count = 0;
+    for c in s.chars() {
+        if let Some(digit) = c.to_digit(10) {
+            sum += digit as u32;
+            count += 1;
+        }
+    }
+    print(sum);
+    println(" ");
+    print(count);
+}
+```

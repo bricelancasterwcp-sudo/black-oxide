@@ -1,0 +1,12 @@
+```rust
+struct Rectangle { width: Int, height: Int }
+
+fn main() {
+    let mut r = Rectangle { width: 2, height: 3 };
+    r.width += 3;
+    print(int_to_str(r.area()));
+}
+```
+
+**Explanation**:
+The original program had several issues including incorrect semicolon placement and a misplaced closing parenthesis. The corrected version ensures that each statement is properly closed with a semicolon, the struct initialization is correct, and the final `print` statement is correctly placed at the end of the main function.

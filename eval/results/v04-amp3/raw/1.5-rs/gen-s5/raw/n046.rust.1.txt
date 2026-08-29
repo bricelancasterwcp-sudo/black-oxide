@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let data = vec![5, 12, 3, 18, 9];
+    let cutoff: isize = 10;
+    let below_cutoff_count = data.iter().filter(|&&x| x < cutoff).count();
+    let above_or_equal_cutoff_count = data.iter().filter(|&&x| x >= cutoff).count();
+
+    println!("Below the cutoff: {}", below_cutoff_count);
+    println!("Above or equal to the cutoff: {}", above_or_equal_cutoff_count);
+}
+```

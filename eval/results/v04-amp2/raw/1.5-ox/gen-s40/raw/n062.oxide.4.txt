@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let mut signal = "green";
+    loop {
+        match signal {
+            "green" => println!("go"),
+            "red" => println!("stop"),
+            "yellow" => println!("wait"),
+            _ => panic!("unknown signal"),
+        }
+        // Simulate receiving a new signal
+        if rand::random::<bool>() {
+            signal = if rand::random::<bool>() { "green" } else { "yellow" };
+        } else {
+            signal = "red";
+        }
+    }
+}
+```

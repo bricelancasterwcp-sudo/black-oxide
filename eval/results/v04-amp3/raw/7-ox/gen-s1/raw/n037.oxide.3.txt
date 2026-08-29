@@ -1,0 +1,9 @@
+struct Point { x: Int, y: Int }
+
+fn area(p1: Point, p2: Point) -> Int {
+    (p2.x - p1.x) * (p2.y - p1.y)
+}
+
+let mut rect = Point { x: 2, y: 3 };
+rect.x = 5;
+print(area(rect.clone(), Point { x: 0, y: 0 }));

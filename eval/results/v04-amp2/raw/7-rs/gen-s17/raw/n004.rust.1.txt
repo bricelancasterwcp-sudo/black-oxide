@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let mut terms = [1, 1];
+    for _ in 2..10 {
+        terms.push(terms.iter().rev().take(2).sum());
+        terms.remove(0);
+    }
+    println!("{}", terms[0]);
+}
+```

@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let mut lst = vec![10, 20];
+    
+    println!("Position 1: {:?}", lst.get(0));
+    if let Some(&item) = lst.get(3) {
+        println!("Position 4: {}", item);
+    }
+}
+```

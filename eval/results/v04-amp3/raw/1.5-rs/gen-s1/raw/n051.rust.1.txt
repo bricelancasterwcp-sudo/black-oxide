@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    println!("G");
+    println!("A");
+}
+```
+
+When run, this will print:
+
+```
+G
+A
+```

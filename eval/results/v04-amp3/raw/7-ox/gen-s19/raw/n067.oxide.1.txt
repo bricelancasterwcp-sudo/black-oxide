@@ -1,0 +1,17 @@
+```oxide
+fn main() {
+    let v = vec(7, 4, 9, 10)
+    let mut sum = 0
+
+    for x in v {
+        if x % 2 == 1 {
+            print(x * 2)
+            println()
+        } else {
+            sum += x
+        }
+    }
+
+    print(sum)
+}
+```

@@ -1,0 +1,8 @@
+```rust
+
+fn main() {
+    let drum = "drum";
+    println!("{:?}", drum.chars().rev()); // Run backwards
+    println!("{}", drum); // Normal order
+}
+```

@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let mut s = String::from("coffee");
+    while let Some(c) = s.chars().next() {
+        let count = s.matches(c).count();
+        if count > 1 {
+            s.remove(s.find(c).unwrap());
+            println!("{}", c);
+        }
+    }
+}
+```

@@ -1,0 +1,5 @@
+fn main() {
+    let log = push(push(push(push(vec(), 6), 7), 8), 9);
+    print(unwrap_or(get(log, 0)?, -1)); // print the first entry
+    print(unwrap_or(get(log, len(log) - 1)?, -1)); // print the last entry
+}

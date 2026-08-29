@@ -1,0 +1,13 @@
+```oxide
+fn find_biggest_power_of_two(n: Int) -> Int {
+    let mut power = 1;
+    while power * 2 <= n {
+        power *= 2;
+    }
+    power
+}
+
+fn main() {
+    print(find_biggest_power_of_two(100));
+}
+```

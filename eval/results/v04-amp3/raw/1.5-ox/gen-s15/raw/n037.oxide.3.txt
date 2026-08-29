@@ -1,0 +1,13 @@
+```
+struct Rectangle { width: Int, height: Int }
+
+fn change_width(rect: &mut Rectangle, new_width: Int) {
+    rect.width = new_width;
+}
+
+fn main() {
+    let mut r = Rectangle { width: 2, height: 3 };
+    change_width(&mut r, 5);
+    print(r.area());
+}
+```

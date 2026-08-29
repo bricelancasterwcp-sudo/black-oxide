@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let numbers = [10, 20];
+    println!("{:?}", numbers.get(0));
+    println!("{:?}", numbers.get(3)); // This will print None as there is no element at position 3
+}
+```

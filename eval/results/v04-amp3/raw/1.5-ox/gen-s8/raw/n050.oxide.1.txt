@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let scores = vec![2, 9, 5];
+    scores.sort_unstable(); // Sorts in ascending order by default
+    for &score in &scores {
+        println!("{}", score);
+    }
+}
+```
+
+**Explanation**: The program sorts the vector of scores in ascending order using the `sort_unstable` method and then iterates over each score to print it. This solution uses Rust's built-in sort function, which is efficient and does not modify the original data structure unless you pass a mutable reference.

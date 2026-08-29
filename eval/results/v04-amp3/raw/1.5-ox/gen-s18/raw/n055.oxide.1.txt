@@ -1,0 +1,48 @@
+```rust
+use std::io;
+
+fn main() {
+    let mut numbers = vec![];
+    
+    println!("Enter the first number: ");
+    io::stdin().read_line(&mut String::new()).expect("Failed to read line");
+    if let Ok(num_str) = num_str.trim() {
+        if num_str.chars().all(|c| c.is_digit(10)) {
+            numbers.push(num_str.parse::<i32>().unwrap());
+        } else {
+            println!("Bad entry: not a number.");
+            return;
+        }
+    }
+
+    println!("Enter the second number: ");
+    io::stdin().read_line(&mut String::new()).expect("Failed to read line");
+    if let Ok(num_str) = num_str.trim() {
+        if num_str.chars().all(|c| c.is_digit(10)) {
+            numbers.push(num_str.parse::<i32>().unwrap());
+        } else {
+            println!("Bad entry: not a number.");
+            return;
+        }
+    }
+
+    println!("Enter the third number: ");
+    io::stdin().read_line(&mut String::new()).expect("Failed to read line");
+    if let Ok(num_str) = num_str.trim() {
+        if num_str.chars().all(|c| c.is_digit(10)) {
+            numbers.push(num_str.parse::<i32>().unwrap());
+        } else {
+            println!("Bad entry: not a number.");
+            return;
+        }
+    }
+
+    for &number in numbers.iter() {
+        match number {
+            8 => print!("The first number is 8.\n"),
+            15 => print!("The third number is 15.\n"),
+            _ => print!("Unknown entry: {}\n", number),
+        }
+    }
+}
+```

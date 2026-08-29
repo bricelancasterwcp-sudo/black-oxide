@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let word = "granite";
+    println!("{}", word.chars().next().unwrap());
+    println!("{}", word.chars().last().unwrap());
+}
+```
+
+This Rust program defines a string `word` and uses the `chars()` method to iterate over its characters. The first character is obtained with `next().unwrap()`, which returns an unwrapped `char` if there are more characters, otherwise it panics. Similarly, the last character is obtained with `last().unwrap()`. These values are then printed to the console on separate lines using `println!`.

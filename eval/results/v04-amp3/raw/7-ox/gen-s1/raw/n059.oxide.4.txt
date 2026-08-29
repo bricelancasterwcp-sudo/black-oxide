@@ -1,0 +1,9 @@
+```rust
+fn word_count(s: Str) -> Int {
+    let words = s.split_whitespace().count();
+    let chars = str_len(s);
+    print(words);
+    print(chars);
+    words + chars
+}
+```

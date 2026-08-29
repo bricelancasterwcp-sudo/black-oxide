@@ -1,0 +1,8 @@
+fn main() {
+    let s = "stack"
+    let reversed = ""
+    for c in chars(s) {
+        reversed = concat(c, reversed)
+    }
+    print_str(reversed)
+}

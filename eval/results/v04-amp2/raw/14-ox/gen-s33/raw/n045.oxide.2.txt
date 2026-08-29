@@ -1,0 +1,20 @@
+```text
+struct Log { entries: Vec<Int> }
+
+fn first_entry(log: Log) -> Option<Int> {
+    let first = get(log.entries, 0)?
+    Some(first)
+}
+
+fn last_entry(log: Log) -> Option<Int> {
+    let last = get(log.entries, len(log.entries) - 1)?
+    Some(last)
+}
+
+fn main() {
+    let log = Log { entries: push(push(push(push(vec(), 6), 7), 8), 9) }
+    print(first_entry(log).unwrap_or(-1))
+    let log2 = Log { entries: push(push(push(push(vec(), 6), 7), 8), 9) }
+    print(last_entry(log2).unwrap_or(-1))
+}
+```

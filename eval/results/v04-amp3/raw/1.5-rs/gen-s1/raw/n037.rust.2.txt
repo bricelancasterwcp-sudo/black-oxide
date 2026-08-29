@@ -1,0 +1,19 @@
+Here is the fully corrected Rust program:
+
+```rust
+fn main() {
+    let mut width = 2;
+    let height = 3;
+
+    // Change width
+    width = 5;
+
+    // Calculate area
+    let area = width * height;
+
+    println!("The area is: {}", area);
+}
+```
+
+When you run this program, it will correctly output:
+The area is: 15

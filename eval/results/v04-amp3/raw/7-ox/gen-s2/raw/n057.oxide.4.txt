@@ -1,0 +1,14 @@
+fn main() {
+    let mut longest = "";
+    let mut max_len = 0;
+
+    for fruit in vec!["fig", "banana", "kiwi"] {
+        if fruit.len() > max_len {
+            longest = fruit;
+            max_len = fruit.len();
+        }
+    }
+
+    print_str(longest);
+    print(max_len);
+}

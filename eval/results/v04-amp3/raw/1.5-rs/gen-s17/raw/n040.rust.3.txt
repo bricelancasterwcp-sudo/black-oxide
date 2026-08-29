@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let side = 4.0;
+    let radius = 3.141592653589793 as f64;
+    println!("{}", (side * side).round());
+}
+```

@@ -1,0 +1,12 @@
+fn sum_digits(n: Int) -> Int {
+    let mut s = 0;
+    while n > 0 {
+        s += n % 10;
+        n /= 10;
+    }
+    s
+}
+
+fn main() {
+    print(sum_digits(9875));
+}

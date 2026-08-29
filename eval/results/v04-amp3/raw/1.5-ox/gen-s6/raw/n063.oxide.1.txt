@@ -1,0 +1,16 @@
+```
+struct Line {
+    name: Str,
+    price: Int,
+}
+
+fn main() {
+    let line1 = Line { name: "four units", price: 3 };
+    let line2 = Line { name: "five units", price: 2 };
+
+    println!("Line 1: {}", line1.name * 4);
+    println!("Line 2: {}", line2.name * 5);
+
+    println!("Total value of both lines: {}", (line1.price * 4) + (line2.price * 5));
+}
+```

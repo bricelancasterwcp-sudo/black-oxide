@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let mut digits = Vec::new();
+    for _ in 0..4 {
+        digits.push(1);
+        digits.push(2);
+        digits.push(3);
+        digits.push(4);
+    }
+    for i in (0..digits.len() / 2).rev() {
+        let temp = digits[i];
+        digits[i] = digits[digits.len() - 1 - i];
+        digits[digits.len() - 1 - i] = temp;
+    }
+    println!("{:?}", digits);
+}
+```

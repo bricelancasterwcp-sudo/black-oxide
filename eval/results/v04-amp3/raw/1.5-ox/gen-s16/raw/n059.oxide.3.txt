@@ -1,0 +1,14 @@
+```rust
+fn count_words(text: &str) -> usize {
+    text.split_whitespace().count()
+}
+
+fn count_characters(text: &str) -> usize {
+    text.chars().count()
+}
+
+fn main() {
+    let phrase = "when in doubt go home";
+    print(format!("There are {} words and {} characters.", count_words(phrase), count_characters(phrase)));
+}
+```

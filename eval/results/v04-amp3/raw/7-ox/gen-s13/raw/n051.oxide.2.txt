@@ -1,0 +1,7 @@
+fn main() {
+    let s = "granite";
+    let first_char = &s[0..1];
+    let last_char = &s[s.len()-1..];
+    print_str(first_char);
+    print_str(last_char);
+}

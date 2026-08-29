@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let numbers = [9, 2, 7, 4];
+    for i in 0..numbers.len() {
+        for j in (i + 1)..numbers.len() {
+            if numbers[i] > numbers[j] {
+                // Swap numbers[i] and numbers[j]
+                let temp = numbers[i];
+                numbers[i] = numbers[j];
+                numbers[j] = temp;
+            }
+        }
+    }
+
+    for number in &numbers {
+        println!("{}", number);
+    }
+}
+```

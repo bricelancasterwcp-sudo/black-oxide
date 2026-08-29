@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let samples = vec![5, 12, 3, 18, 9];
+    let below_cutoff = count(samples.iter().filter(|&&x| x < 10), true);
+    let above_or_equal_cutoff = count(samples.iter().filter(|&&x| x >= 10), true);
+    print(below_cutoff);
+    print_str(" ");
+    print(above_or_equal_cutoff);
+}
+```

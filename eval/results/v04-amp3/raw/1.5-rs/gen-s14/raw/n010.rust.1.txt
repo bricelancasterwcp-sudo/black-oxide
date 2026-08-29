@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let num = 91;
+    let is_prime = (2..(num as f64).sqrt().ceil() as usize).all(|i| num % i != 0);
+    println!("{}", if is_prime { "yes" } else { "no" });
+}
+```

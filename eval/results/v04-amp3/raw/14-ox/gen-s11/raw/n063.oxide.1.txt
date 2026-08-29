@@ -1,0 +1,15 @@
+```rust
+struct Line { count: Int, price: Int }
+
+fn total_price(line: Line) -> Int {
+    line.count * line.price
+}
+
+fn main() {
+    let line1 = Line { count: 4, price: 3 }
+    let line2 = Line { count: 5, price: 2 }
+    print(total_price(line1))
+    print(total_price(line2))
+    print(total_price(line1) + total_price(line2))
+}
+```

@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    println!("{}", if let Some(8) = std::env::args().nth(1).unwrap().parse::<i32>() { 8 } else { "bad" });
+    println!("{}", if let Some(oak) = std::env::args().nth(2).unwrap().parse::<i32>() { oak } else { "bad" });
+    println!("{}", if let Some(15) = std::env::args().nth(3).unwrap().parse::<i32>() { 15 } else { "bad" });
+}
+```

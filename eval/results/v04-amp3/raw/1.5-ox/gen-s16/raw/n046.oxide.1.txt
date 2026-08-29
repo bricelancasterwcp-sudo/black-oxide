@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let values = vec![5, 12, 3, 18, 9];
+    let mut count_under_cutoff = 0;
+    let mut count_over_or_equal_cutoff = 0;
+
+    for &value in &values {
+        if value < 10 {
+            count_under_cutoff += 1;
+        } else {
+            count_over_or_equal_cutoff += 1;
+        }
+    }
+
+    println!("Values under cutoff: {}", count_under_cutoff);
+    println!("Values over or equal to cutoff: {}", count_over_or_equal_cutoff);
+}
+```

@@ -1,0 +1,9 @@
+```rust
+struct Point { x: Int, y: Int }
+
+fn main() {
+    let p = Point { x: 1, y: 5 };
+    let new_p = Point { x: 10, y: p.y }; // same height, ten across
+    print(p.x + new_p.x);
+}
+```

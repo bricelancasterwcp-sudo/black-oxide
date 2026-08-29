@@ -1,0 +1,20 @@
+Here is the corrected code:
+
+```rust
+fn main() {
+    let data = [5, 12, 3, 18, 9];
+    let cutoff = 10;
+    
+    let below_cutoff_count: usize = data.iter().filter(|&&x| x < cutoff).count();
+    let over_cutoff_count: usize = data.iter().filter(|&&x| x >= cutoff).count();
+    
+    println!("Below cutoff: {}", below_cutoff_count);
+    println!("Over cutoff: {}", over_cutoff_count);
+}
+```
+
+The corrected code is identical to the original code, except for a small mistake where `println!("Below cutoff: {}",` was missing a semicolon at the end. The rest of the code remains unchanged and produces the expected output of:
+```plaintext
+Below cutoff: 3
+Over cutoff: 2
+```

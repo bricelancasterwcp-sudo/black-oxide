@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let s = "1234";
+    let chars: Vec<Str> = chars(s);
+    let reversed: Vec<Str> = chars.into_iter().rev().collect();
+    let result: Str = concat(reversed);
+    print(result);
+}
+```

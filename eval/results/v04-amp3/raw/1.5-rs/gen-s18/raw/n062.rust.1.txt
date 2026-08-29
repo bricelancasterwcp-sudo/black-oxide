@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    loop {
+        let signal = rand::random::<u8>(); // Generate a random number
+        match signal {
+            0 => println!("go"),         // Go for green
+            1 => println!("stop"),       // Stop for red
+            2 => println!("wait"),       // Wait for yellow
+            _ => println!("unknown"),   // For unexpected values
+        }
+    }
+}
+```

@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let line1 = 4 * 3; // 4 units at $3 each
+    let line2 = 5 * 2; // 5 units at $2 each
+
+    println!("Line 1: {}", line1); // Print the value of line1
+    println!("Line 2: {}", line2); // Print the value of line2
+
+    println!("Total value: {}", line1 + line2); // Print the sum of both values
+}
+```

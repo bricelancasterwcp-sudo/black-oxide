@@ -1,0 +1,10 @@
+fn main() {
+    let fig = "fig";
+    let banana = "banana";
+    let kiwi = "kiwi";
+
+    let longest = if fig.len() >= banana.len() && fig.len() >= kiwi.len() { fig } else if banana.len() >= kiwi.len() { banana } else { kiwi };
+    
+    print_str(longest);
+    print_int(longest.len());
+}

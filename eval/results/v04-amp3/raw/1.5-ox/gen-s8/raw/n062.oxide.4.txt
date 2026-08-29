@@ -1,0 +1,17 @@
+```rust
+enum Signal {
+    Green,
+    Red,
+    Yellow,
+}
+
+fn main() {
+    loop {
+        match read_signal() {
+            Signal::Green => println!("go"),
+            Signal::Red => println!("stop"),
+            Signal::Yellow => println!("wait"),
+        }
+    }
+}
+```

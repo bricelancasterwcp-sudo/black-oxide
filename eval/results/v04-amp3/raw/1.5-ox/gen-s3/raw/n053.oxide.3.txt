@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let mut drum = "drum".to_string();
+    reverse(&mut drum);
+    println!("{}", drum); // runs back to front
+    println!("{}", drum); // normal read
+}
+
+fn reverse(s: &mut String) {
+    s.chars().rev().for_each(|c| s.insert(0, c));
+}
+```

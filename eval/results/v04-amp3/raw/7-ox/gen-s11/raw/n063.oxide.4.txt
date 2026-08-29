@@ -1,0 +1,16 @@
+```rust
+struct Line { items: Int, price: Int }
+
+fn calculate(line: Line) -> Int {
+    line.items * line.price
+}
+
+fn main() {
+    let line1 = Line { items: 4, price: 3 };
+    print(calculate(line1));
+    let line2 = Line { items: 5, price: 2 };
+    print(calculate(line2));
+    let combined = Line { items: line1.items + line2.items, price: calculate(line2) / line2.items };
+    print(calculate(combined));
+}
+```

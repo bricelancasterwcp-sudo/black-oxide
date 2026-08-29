@@ -1,0 +1,17 @@
+```rust
+fn divide_by_zero(a: Int, b: Int) -> Option<Int> {
+    if b == 0 {
+        None
+    } else {
+        Some(a / b)
+    }
+}
+
+fn main() {
+    let result = divide_by_zero(20, 4);
+    match result {
+        Some(n) => print_str(&format!("20 divided by 4 is {}", n)),
+        None => print_str("Cannot divide by zero"),
+    }
+}
+```

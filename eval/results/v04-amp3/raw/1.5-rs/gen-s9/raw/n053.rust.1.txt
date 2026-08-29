@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let drum = "drum";
+    println!("{:?}", drum.chars().rev());
+    println!("{}", drum);
+}
+```
+When you run this program, it will print:
+```
+['m', 'r', 'u', 'n', 'd']
+drum
+```

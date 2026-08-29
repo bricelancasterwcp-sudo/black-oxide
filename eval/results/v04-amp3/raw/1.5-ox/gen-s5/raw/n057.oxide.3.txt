@@ -1,0 +1,22 @@
+```rust
+struct Fruit {
+    name: Str,
+    len: Int,
+}
+
+fn main() {
+    let fruits = vec![
+        Fruit { name: "fig".to_string(), len: 3 },
+        Fruit { name: "banana".to_string(), len: 6 },
+        Fruit { name: "kiwi".to_string(), len: 4 },
+    ];
+
+    let fruit_with_max_length = fruits
+        .iter()
+        .max_by_key(|&f| f.len)
+        .unwrap();
+
+    println!("The fruit with the most letters is {}", fruit_with_max_length.name);
+    println!("It has {} letters", fruit_with_max_length.len);
+}
+```

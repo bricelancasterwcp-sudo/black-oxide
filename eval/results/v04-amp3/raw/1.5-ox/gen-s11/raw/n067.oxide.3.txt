@@ -1,0 +1,36 @@
+```rust
+struct Reading { label: Str, values: Vec<Int> }
+
+fn first_big(v: Vec<Int>) -> Int {
+    let mut found = -1;
+    for &x in v {
+        if x > 10 {
+            found = x;
+            break;
+        }
+    }
+    found
+}
+
+fn second(v: Vec<Int>) -> Option<Int> {
+    let x = get(v, 1)?;
+    Some(x + 1)
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: vec![3, 42] };
+    
+    // Walk the list and print doubled odd entries
+    let mut total_even = 0;
+    for &x in &r.values {
+        if x % 2 != 0 {
+            println!("{}", x * 2);
+        } else {
+            total_even += x;
+        }
+    }
+    
+    // Print the total of even entries
+    println!("Total of even entries: {}", total_even);
+}
+```

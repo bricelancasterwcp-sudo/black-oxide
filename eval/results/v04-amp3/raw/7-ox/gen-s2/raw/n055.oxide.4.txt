@@ -1,0 +1,16 @@
+fn main() {
+    let input1 = "8";
+    let input2 = "oak";
+    let input3 = "15";
+
+    print_num_or_bad(input1);
+    print_num_or_bad(input2);
+    print_num_or_bad(input3);
+}
+
+fn print_num_or_bad(input: Str) {
+    match parse_int(input) {
+        Some(num) => print(num),
+        None => print_str("bad"),
+    }
+}

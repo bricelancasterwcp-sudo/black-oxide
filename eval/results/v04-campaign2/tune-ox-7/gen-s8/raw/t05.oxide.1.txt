@@ -1,0 +1,13 @@
+fn fib(n: Int) -> Int {
+    let a = 1
+    let b = 1
+    for _ in range(0, n - 2) {
+        let temp = a + b
+        a = b
+        b = temp
+    }
+    b
+}
+fn main() {
+    print(fib(20))
+}

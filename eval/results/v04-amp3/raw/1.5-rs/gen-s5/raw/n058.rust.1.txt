@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let mut freq_map = [0; 26];
+    let word = "coffee";
+    for ch in word.chars() {
+        let idx = (ch as u8 - b'a') as usize;
+        freq_map[idx] += 1;
+    }
+
+    for &freq in freq_map.iter() {
+        if freq > 1 {
+            print!("{}\n", char::from(b'a' + (freq - 1) as u8));
+        }
+    }
+}
+```

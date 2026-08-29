@@ -1,0 +1,17 @@
+```oxide
+fn main() {
+    let s = "a1b22";
+    let mut sum = 0;
+    let mut count = 0;
+
+    for c in chars(s) {
+        if '0' <= c && c <= '9' {
+            sum += parse_int(concat(str_len(&sum.to_string()), &c)).unwrap();
+            count += 1;
+        }
+    }
+
+    print(sum);
+    print(count);
+}
+```

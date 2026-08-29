@@ -1,0 +1,18 @@
+```rust
+struct LogEntry { value: Int }
+
+fn first_entry(entries: Vec<LogEntry>) -> LogEntry {
+    get(entries, 0)?
+}
+
+fn last_entry(entries: Vec<LogEntry>) -> LogEntry {
+    let len = len(entries);
+    get(entries, len - 1)?
+}
+
+fn main() {
+    let log = vec!(LogEntry { value: 6 }, LogEntry { value: 7 }, LogEntry { value: 8 }, LogEntry { value: 9 });
+    print(first_entry(log).value);
+    print(last_entry(log).value);
+}
+```

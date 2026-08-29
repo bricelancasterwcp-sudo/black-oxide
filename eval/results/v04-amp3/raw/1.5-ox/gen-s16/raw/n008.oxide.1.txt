@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut count = 0;
+    for i in 1..=50 {
+        if i % 3 == 0 || i % 5 == 0 {
+            count += 1;
+        }
+    }
+    print(count);
+}
+```
+
+The program initializes a counter `count` to zero and then iterates over the numbers from 1 to 50. For each number, it checks if it is divisible by 3 or 5 using the modulo operator (`%`). If true, it increments the counter. Finally, it prints the value of the counter, which is the count of numbers that divide evenly by three or by five.

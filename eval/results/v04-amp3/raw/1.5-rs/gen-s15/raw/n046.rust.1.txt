@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let arr = [5, 12, 3, 18, 9];
+    let cutoff = 10;
+    let mut under_cutoff_count = 0;
+    let mut over_cutoff_count = 0;
+
+    for &num in arr.iter() {
+        if num < cutoff {
+            under_cutoff_count += 1;
+        } else if num >= cutoff {
+            over_cutoff_count += 1;
+        }
+    }
+
+    println!("Under cutoff count: {}", under_cutoff_count);
+    println!("Over cutoff count: {}", over_cutoff_count);
+}
+```

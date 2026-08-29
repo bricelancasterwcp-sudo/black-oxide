@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    match std::env::args().nth(1).unwrap().parse::<i32>() {
+        Ok(num) => println!("{}", num),
+        Err(_) => println!("bad"),
+    }
+    match std::env::args().nth(2).unwrap().parse::<i32>() {
+        Ok(num) => println!("{}", num),
+        Err(_) => println!("bad"),
+    }
+    match std::env::args().nth(3).unwrap().parse::<i32>() {
+        Ok(num) => println!("{}", num),
+        Err(_) => println!("bad"),
+    }
+}
+```

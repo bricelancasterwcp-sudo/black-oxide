@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut prod = 1;
+    for i in 1..7 {
+        prod *= i;
+    }
+    print(prod);
+}
+```
+
+Explanation of corrections:
+1. Removed extra semicolons after each statement in the `for` loop to ensure correct syntax.
+2. Fixed a minor error where `print` was missing an opening parenthesis at the end.

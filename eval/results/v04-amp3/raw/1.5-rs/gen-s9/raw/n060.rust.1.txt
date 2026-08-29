@@ -1,0 +1,24 @@
+```rust
+fn main() {
+    let text = "a1b22";
+
+    // Initialize variables to count digits
+    let mut digit_count: i32 = 0;
+    let mut total_digits_sum: i32 = 0;
+
+    // Iterate through each character in the string
+    for c in text.chars() {
+        if c.is_digit(10) { // Check if the character is a digit (base 10)
+            digit_count += 1;
+            // Add the integer value of the digit to the total sum
+            total_digits_sum += c.to_digit(10).unwrap();
+        }
+    }
+
+    // Print the number of digits
+    println!("Number of digits: {}", digit_count);
+
+    // Print the sum of all digit characters
+    println!("Sum of all digit characters: {}", total_digits_sum);
+}
+```

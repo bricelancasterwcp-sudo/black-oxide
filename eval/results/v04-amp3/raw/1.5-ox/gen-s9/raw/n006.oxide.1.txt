@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let mut max_power = Int::zero();
+    for n in 0.. {
+        if (2i32.pow(n) as Int) > 100 {
+            max_power = n as Int;
+            break;
+        }
+    }
+    print(max_power);
+}
+```

@@ -1,0 +1,35 @@
+```text
+struct Reading { label: Str, values: Vec<Int> }
+
+fn first_big(v: Vec<Int>) -> Int {
+    let found = -1
+    for x in v {
+        if x > 10 {
+            found = x
+            break
+        }
+    }
+    found
+}
+
+fn second(v: Vec<Int>) -> Option<Int> {
+    let x = get(v, 1)?
+    Some(x + 1)
+}
+
+fn main() {
+    let readings = vec()
+    readings.push(Reading { label: "8", values: push(vec(), 8) })
+    readings.push(Reading { label: "oak", values: push(vec(), -1) })
+    readings.push(Reading { label: "15", values: push(vec(), 15) })
+
+    for reading in readings {
+        let value = first_big(reading.values)
+        if value > 0 {
+            print(value)
+        } else {
+            print_str("bad")
+        }
+    }
+}
+```

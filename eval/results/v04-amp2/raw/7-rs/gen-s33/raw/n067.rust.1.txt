@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let list = vec![7, 4, 9, 10];
+    let mut sum_even = 0;
+
+    for &num in &list {
+        if num % 2 == 0 {
+            sum_even += num;
+        } else {
+            println!("{}", num * 2);
+        }
+    }
+
+    println!("Total of even entries: {}", sum_even);
+}
+```

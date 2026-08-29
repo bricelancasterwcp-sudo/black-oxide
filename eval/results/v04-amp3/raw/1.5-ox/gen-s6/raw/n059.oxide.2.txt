@@ -1,0 +1,7 @@
+```
+fn main() {
+    let s = "when in doubt go home";
+    let n_words = s.split_whitespace().count();
+    println!("words: {}, chars: {}", n_words, s.len());
+}
+```

@@ -1,0 +1,15 @@
+Here is the corrected code:
+
+```rust
+fn main() {
+    let mut signals = vec!["green", "red", "yellow"];
+    for signal in signals.iter_mut() {
+        match *signal {
+            "green" => println!("Go"),
+            "red" => println!("Stop"),
+            "yellow" => println!("Wait"),
+            _ => (),
+        }
+    }
+}
+```

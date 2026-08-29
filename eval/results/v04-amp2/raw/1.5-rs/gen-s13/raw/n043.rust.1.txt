@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut q = vec![1, 2, 3, 4, 5];
+    q.swap(0, q.len() - 1);
+    for &x in &q {
+        println!("{}", x);
+    }
+}
+```
+
+This program creates a vector `q` with the elements 1 through 5. It then swaps the first and last elements of the vector using the `swap` method. Finally, it iterates over the vector and prints each element on a new line using a for loop.

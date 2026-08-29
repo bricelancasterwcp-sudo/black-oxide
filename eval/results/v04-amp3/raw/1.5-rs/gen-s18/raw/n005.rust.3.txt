@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let total: i32 = (1..=20).filter(|&x| x % 2 == 0).sum();
+    println!("Total of even numbers between 1 and 20 inclusive: {}", total);
+}
+```
+
+The issue with the original code is that `sum()` returns an `i64`, but the expected output is of type `i32`. Rust's integer addition is done in such a way that overflow is possible, which results in incorrect sums for large numbers. By explicitly casting `total` to `i32` before printing it, we ensure that the sum is handled correctly and the output matches the expected value.

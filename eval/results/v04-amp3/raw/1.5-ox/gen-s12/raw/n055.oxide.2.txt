@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let oak = read_int()?;
+    println!("oak: {}", oak);
+
+    let eight = read_int()?;
+    println!("eight: {}", eight);
+
+    let fifteen = read_int()?;
+    println!("fifteen: {}", fifteen);
+}
+
+fn read_int() -> Result<Int, &'static str> {
+    match std::io::stdin().read_line()? {
+        Ok(line) => line.trim().parse().map_err(|_| "invalid integer"),
+        Err(e) => Err(format!("IO error: {}", e)),
+    }
+}
+```

@@ -1,0 +1,19 @@
+fn main() {
+    let s1 = match parse_int("8") {
+        Ok(s) => s,
+        Err(_) => 0,
+    };
+    print_str(&s1.to_string());
+
+    let s2 = match parse_int("oak") {
+        Ok(s) => s,
+        Err(_) => 0,
+    };
+    print_str(&s2.to_string());
+
+    let s3 = match parse_int("15") {
+        Ok(s) => s,
+        Err(_) => 0,
+    };
+    print_str(&s3.to_string());
+}

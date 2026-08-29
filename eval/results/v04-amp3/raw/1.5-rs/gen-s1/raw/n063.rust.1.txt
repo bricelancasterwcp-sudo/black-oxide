@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    // Value calculation for the first line (four units priced three each)
+    let total_line_1 = 4 * 3;
+
+    // Value calculation for the second line (five units priced two each)
+    let total_line_2 = 5 * 2;
+
+    // Total value of both lines
+    let total_value = total_line_1 + total_line_2;
+
+    // Printing the values
+    println!("Line 1 value: {}", total_line_1);
+    println!("Line 2 value: {}", total_line_2);
+    println!("Total value: {}", total_value);
+}
+```

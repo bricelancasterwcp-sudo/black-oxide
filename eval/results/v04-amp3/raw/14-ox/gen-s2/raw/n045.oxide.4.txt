@@ -1,0 +1,18 @@
+```rust
+struct Log { entries: Vec<Int> }
+
+fn main() {
+    let log = Log { entries: vec() }
+    push(log.entries, 6)
+    push(log.entries, 7)
+    push(log.entries, 8)
+    push(log.entries, 9)
+
+    let first_entry = get(log.entries, 0).unwrap_or(-1)
+    print(first_entry)  // print the first entry
+
+    let last_index = len(log.entries) - 1
+    let last_entry = get(log.entries, last_index).unwrap_or(-1)
+    print(last_entry)  // print the last entry
+}
+```

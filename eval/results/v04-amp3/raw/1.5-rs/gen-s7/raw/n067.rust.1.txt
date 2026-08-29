@@ -1,0 +1,11 @@
+```rust
+
+fn main() {
+    let mut sum = 0;
+    for n in vec![7, 4, 9, 10].iter().filter(|&&x| x % 2 == 0) {
+        println!("{}", n * 2);
+        sum += n;
+    }
+    println!("Total of even entries: {}", sum);
+}
+```

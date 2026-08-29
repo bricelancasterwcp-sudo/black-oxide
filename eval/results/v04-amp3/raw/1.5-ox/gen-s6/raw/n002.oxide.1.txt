@@ -1,0 +1,13 @@
+```rust
+fn multiply_numbers() -> Int {
+    let mut product = 1;
+    for i in 1..7 {
+        product *= i;
+    }
+    product
+}
+
+fn main() {
+    print_int(multiply_numbers());
+}
+```

@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let readings = [6, 11, 3, 14, 9];
+    let mut count_exceeding_five = 0;
+    let mut highest_reading = readings[0];
+
+    for &reading in readings.iter() {
+        if reading > 5 {
+            count_exceeding_five += 1;
+        }
+        if reading > highest_reading {
+            highest_reading = reading;
+        }
+    }
+
+    println!("{}", count_exceeding_five);
+    println!("{}", highest_reading);
+}
+```

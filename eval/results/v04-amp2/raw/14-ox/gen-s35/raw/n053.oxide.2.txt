@@ -1,0 +1,6 @@
+fn main() {
+    let drum = "drum"
+    let reversed = concat(concat(concat(chars(drum)[3], chars(drum)[2]), chars(drum)[1]), chars(drum)[0])
+    print_str(reversed)
+    print_str(drum)
+}

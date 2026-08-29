@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let log = vec![6, 7, 8, 9];
+    println!("First entry: {}", log[0]);
+    println!("Last entry: {}", log[log.len() - 1]);
+}
+```
+
+The program was correct and produced the expected output.

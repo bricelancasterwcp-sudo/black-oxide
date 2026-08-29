@@ -1,0 +1,11 @@
+```
+fn main() {
+    let input = "when in doubt go home";
+    let words: Vec<&str> = input.split_whitespace().collect();
+    let word_count = words.len();
+    let char_count = input.chars().count();
+
+    println!("Word count: {}", word_count);
+    println!("Character count including spaces: {}", char_count);
+}
+```

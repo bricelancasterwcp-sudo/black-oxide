@@ -1,0 +1,18 @@
+```text
+struct Queue { values: Vec<Int> }
+
+fn main() {
+    let q = Queue { values: vec().push(1).push(2).push(3).push(4).push(5) }
+    if len(q.values) >= 2 {
+        let first = get(q.values, 0).unwrap()
+        let last = get(q.values, len(q.values) - 1).unwrap()
+        let q = Queue { values: push(push(vec(), last), first) }
+        for i in range(0, len(q.values)) {
+            print(get(q.values, i).unwrap())
+            print_str("\n")
+        }
+    } else {
+        print_str("Queue too short\n")
+    }
+}
+```

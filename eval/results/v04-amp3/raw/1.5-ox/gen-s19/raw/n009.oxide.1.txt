@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut v = vec![4, 3, 2, 1];
+    for _ in 0..v.len() / 2 {
+        let temp = v[0];
+        v[0] = v[v.len() - 1];
+        v[v.len() - 1] = temp;
+    }
+    print(v.join(""));
+}
+```

@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let entries = vec!["8", "oak", "15"];
+    
+    for entry in entries {
+        match entry.parse::<i32>() {
+            Ok(number) => println!("{}", number),
+            Err(_) => println!("bad"),
+        }
+    }
+}
+```

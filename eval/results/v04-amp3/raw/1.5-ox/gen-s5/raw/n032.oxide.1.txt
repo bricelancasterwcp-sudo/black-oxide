@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let p = Point { x: 1, y: 5 };
+    let p2 = Point { x: p.x + 10, y: p.y };
+    print(p.x + p2.x); // field access copies: p stays usable
+}
+struct Point { x: Int, y: Int }
+```

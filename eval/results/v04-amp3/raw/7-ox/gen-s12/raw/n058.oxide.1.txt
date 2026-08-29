@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let s = "coffee";
+    let mut seen = Vec::new();
+
+    for c in s.chars() {
+        if !seen.contains(&c) && s.matches(c).count() > 1 {
+            println!("{}", c);
+            seen.push(c);
+        }
+    }
+}
+```

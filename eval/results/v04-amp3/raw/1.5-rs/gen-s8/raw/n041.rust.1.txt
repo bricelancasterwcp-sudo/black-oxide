@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let arr = [9, 2, 7, 4];
+    arr.sort();
+    for &num in arr.iter() {
+        println!("{}", num);
+    }
+}
+```
+
+When you run this program, it will output:
+
+```
+2
+4
+7
+9
+```

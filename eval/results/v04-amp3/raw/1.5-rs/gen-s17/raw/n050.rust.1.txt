@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let mut scores = vec![2, 9, 5];
+    scores.sort_by(|a, b| b.cmp(a));
+    
+    for &score in &scores {
+        println!("{}", score);
+    }
+}
+```
+
+This solution defines a function `main` where an array `scores` is created and filled with the numbers 2, 9, and 5. It then sorts this array in descending order using the `sort_by` method with a custom comparison function that returns the result of comparing two scores (`b.cmp(a)`). Finally, it prints each sorted score on a new line using a for loop and an iterator.

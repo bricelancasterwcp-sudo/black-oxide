@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let numbers = vec![7, 42, 9, None];
+    let sum: i32 = numbers.into_iter()
+                          .filter(|&n| n.is_some())
+                          .map(|&n| n.unwrap())
+                          .sum();
+    println!("Sum: {}", sum);
+    println!("Count: {}", numbers.iter().filter(|&n| !n.is_some()).count());
+}
+```

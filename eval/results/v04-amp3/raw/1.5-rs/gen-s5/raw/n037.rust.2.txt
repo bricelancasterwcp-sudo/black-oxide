@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let mut width = 2;
+    let height = 3;
+
+    // Change width to 5
+    width = 5;
+
+    // Calculate and print the area of the rectangle
+    println!("Area: {}", width * height);
+}
+```
+
+The problem was in initializing the `height` variable before assigning a value to it inside the block, which would change its scope and affect the calculation. The corrected code initializes both variables correctly and prints the area as expected.

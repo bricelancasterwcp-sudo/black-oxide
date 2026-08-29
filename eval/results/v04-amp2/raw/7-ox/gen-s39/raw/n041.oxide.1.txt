@@ -1,0 +1,9 @@
+```oxide
+fn main() {
+    let v = vec(9, 2, 7, 4);
+    let sorted = sort(v);
+    for x in sorted {
+        print(x);
+    }
+}
+```

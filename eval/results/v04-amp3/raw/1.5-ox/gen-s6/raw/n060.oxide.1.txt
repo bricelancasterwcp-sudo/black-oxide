@@ -1,0 +1,21 @@
+```rust
+fn sum_digits(s: Str) -> Int {
+    s.chars()
+        .filter(|c| c.is_digit(10))
+        .map(|c| to_int(c))
+        .sum()
+}
+
+fn count_digits(s: Str) -> Int {
+    s.chars()
+        .filter(|c| c.is_digit(10))
+        .count()
+}
+
+fn main() {
+    let text = "a1b22";
+    let total = sum_digits(text);
+    println!("Total digits: {}", total);
+    println!("Number of digits: {}", count_digits(text));
+}
+```

@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let nums = vec![7, None, Some(3), 9, ?, None];
+    let mut sum = 0;
+    let mut count = 0;
+
+    for n in nums {
+        match n {
+            Some(x) => { sum += x; count += 1 }
+            _ => ()
+        }
+    }
+
+    print!("Total: {}, Count: {}", sum, count);
+}
+```

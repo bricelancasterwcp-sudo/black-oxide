@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let n = 91;
+    if n == 2 || (n > 2 && n % 2 != 0) {
+        for i in 3..=((n as f64).sqrt() as u32) {
+            if n % i == 0 {
+                println!("No");
+                return;
+            }
+        }
+    } else {
+        println!("No");
+        return;
+    }
+    println!("Yes");
+}
+```

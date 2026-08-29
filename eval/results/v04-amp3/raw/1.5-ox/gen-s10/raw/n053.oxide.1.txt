@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let drum = "drum";
+    let reversed = drum.chars().rev().collect::<String>();
+    println!("reversed: {}", reversed);
+    println!("normal: {}", drum);
+}
+```
+This code snippet takes the word "drum", reverses its letters, and then prints both the reversed and normal versions of the word.

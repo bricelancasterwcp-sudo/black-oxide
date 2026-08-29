@@ -1,0 +1,17 @@
+```rust
+
+fn divide(a: i32, b: i32) -> Result<f64, String> {
+    if b == 0 {
+        Err("Divide by zero error".to_string())
+    } else {
+        Ok(a as f64 / b as f64)
+    }
+}
+
+fn main() {
+    match divide(20, 4) {
+        Ok(result) => println!("Result: {}", result),
+        Err(error) => println!("Error: {}", error),
+    }
+}
+```

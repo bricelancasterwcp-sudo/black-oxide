@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let inputs = vec![8, "oak", 15];
+    for input in inputs {
+        match input {
+            i if i.is_integer() => println!("{}", i),
+            _ => println!("bad"),
+        }
+    }
+}
+```
+
+This program takes a vector of mixed types (integers and strings) as input. It iterates over each element, checks if it is an integer using the `is_integer` method, and prints the number if true, or "bad" otherwise.

@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let mut a = 1;
+    let mut b = 1;
+
+    for _ in 1..9 {
+        let temp = a + b;
+        a = b;
+        b = temp;
+    }
+
+    print(a);
+}
+```
+
+Explanation of the corrections:
+- Fixed the syntax errors by removing unnecessary semicolons.
+- Corrected variable initialization to be mutable (`let mut a = 1;`) and used `let mut` for variables in loops.
+- Added missing items in the loop header to match the expected format.

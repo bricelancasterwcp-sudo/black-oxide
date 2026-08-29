@@ -1,0 +1,28 @@
+fn second(v: Vec<Int>) -> Option<Int> {
+    let x = get(v, 1)?
+    Some(x + 1)
+}
+
+fn main() {
+    let v7 = vec(7);
+    let v8 = vec(7, 8);
+    let v9 = vec(7, 8, 9);
+    
+    match second(v7) {
+        Some(n) => print(n),
+        None => print_str("none"),
+    }
+    print_str("\n")
+    
+    match second(v8) {
+        Some(n) => print(n),
+        None => print_str("none"),
+    }
+    print_str("\n")
+    
+    match second(v9) {
+        Some(n) => print(n),
+        None => print_str("none"),
+    }
+    print_str("\n")
+}

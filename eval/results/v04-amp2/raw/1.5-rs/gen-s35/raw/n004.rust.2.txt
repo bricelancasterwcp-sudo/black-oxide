@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let mut a = 1;
+    let mut b = 1;
+
+    for _ in 0..9 {
+        let c = a + b;
+        a = b;
+        b = c;
+    }
+
+    println!("The tenth term is {}", b);
+}
+```
+
+Explanation:
+The program was rejected because the loop condition `for _ in 0..9` would run 10 times, but the loop body only updates the values of `a` and `b` once per iteration. Therefore, after 9 iterations, `a` and `b` will still be equal to 1, which is not the tenth term of the Fibonacci sequence.
+
+The corrected program uses a different approach by initializing `c` with the sum of `a` and `b`, then updating `a` and `b` accordingly. This way, after each iteration, `a` and `b` will be updated to the next two terms in the Fibonacci sequence.

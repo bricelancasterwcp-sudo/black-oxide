@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let n = 1234;
+    let mut reversed_digits = vec![0, 0, 0, 0];
+    
+    for i in 0..4 {
+        reversed_digits[i] = n % 10;
+        n /= 10;
+    }
+    
+    println!("{:?}", reversed_digits);
+}
+```

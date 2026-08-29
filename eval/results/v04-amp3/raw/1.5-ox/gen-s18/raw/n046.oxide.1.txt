@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let input = vec![5, 12, 3, 18, 9];
+    let cutoff = 10;
+    let count_below_cutoff = count(input.iter(), |&x| x < cutoff);
+    let count_at_or_over_cutoff = count(input.iter(), |&x| x >= cutoff);
+
+    println!("Count of values below {}", cutoff);
+    println!("{}", count_below_cutoff);
+
+    println!("Count of values at or over {}", cutoff);
+    println!("{}", count_at_or_over_cutoff);
+}
+
+fn count<T>(iter: impl Iterator<Item = T>, pred: impl Fn(&T) -> bool) -> usize {
+    iter.filter(pred).count()
+}
+```

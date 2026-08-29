@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let arr = ["8", "oak", "15"];
+    for &entry in arr.iter() {
+        match entry.parse::<i32>() {
+            Ok(num) => println!("{}", num),
+            Err(_) => println!("bad"),
+        }
+    }
+}
+```

@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut count = 0;
+    for i in 1..51 {
+        if i % 3 == 0 || i % 5 == 0 {
+            count += 1;
+        }
+    }
+    print(count);
+}
+```
+
+This program counts the numbers from 1 to 50 that are divisible by 3 or 5, and prints how many there are. The loop iterates through each number in this range, checks if it is divisible by 3 or 5 using the modulus operator `%`, and increments a counter if it is. Finally, it prints the value of `count`.

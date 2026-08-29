@@ -1,0 +1,33 @@
+```rust
+fn min(v: Vec<Int>) -> Option<Int> {
+    let mut min = None;
+    for x in v {
+        match min {
+            None => min = Some(x),
+            Some(m) if x < m => min = Some(x),
+            _ => {}
+        }
+    }
+    min
+}
+
+fn max(v: Vec<Int>) -> Option<Int> {
+    let mut max = None;
+    for x in v {
+        match max {
+            None => max = Some(x),
+            Some(m) if x > m => max = Some(x),
+            _ => {}
+        }
+    }
+    max
+}
+
+fn main() {
+    let figures = vec![8, 3, 11, 6];
+    let min_figure = min(figures.clone()).unwrap_or(0);
+    let max_figure = max(figures).unwrap_or(0);
+    print(min_figure); // smallest figure
+    print(max_figure - min_figure); // gap between the largest and the smallest
+}
+```

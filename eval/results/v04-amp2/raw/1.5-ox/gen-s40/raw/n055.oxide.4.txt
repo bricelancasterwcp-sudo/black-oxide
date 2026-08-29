@@ -1,0 +1,24 @@
+```rust
+fn main() {
+    let a = read_str("Enter first number: ");
+    if !a.is_empty() {
+        print!("{}", a);
+    } else {
+        println!("bad");
+    }
+
+    let b = read_str("Enter second number: ");
+    if !b.is_empty() {
+        print!("{}", b);
+    } else {
+        println!("bad");
+    }
+
+    let c = read_str("Enter third number: ");
+    if !c.is_empty() {
+        print!("{}", c);
+    } else {
+        println!("bad");
+    }
+}
+```

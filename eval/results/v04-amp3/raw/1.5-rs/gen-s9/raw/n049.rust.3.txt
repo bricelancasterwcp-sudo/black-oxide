@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let figures = [8, 3, 11, 6];
+    figures.sort_unstable();
+    let smallest = figures[0];
+    let gap = figures.iter().skip(1).map(|x| *x - smallest).sum::<i32>();
+    println!("Smallest figure: {}", smallest);
+    println!("Gap between largest and smallest: {}", gap);
+}
+```

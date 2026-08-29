@@ -1,0 +1,18 @@
+fn count_and_sum_digits(s: Str) -> (Int, Int) {
+    let sum = 0
+    let count = 0
+    for ch in chars(s) {
+        if parse_int(ch).is_some() {
+            let digit = parse_int(ch).unwrap()
+            sum += digit
+            count += 1
+        }
+    }
+    (sum, count)
+}
+
+fn main() {
+    let (sum, count) = count_and_sum_digits("a1b22")
+    print(sum)
+    print(count)
+}

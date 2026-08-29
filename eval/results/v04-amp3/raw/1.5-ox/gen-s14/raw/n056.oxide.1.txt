@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let nums = vec!(7, 0x1F, 9, ?, 42);
+    let mut sum: Int = 0;
+    let mut count: Int = 0;
+
+    for &num in &nums {
+        if num.is_integer() {
+            sum += num.to_int();
+            count += 1;
+        }
+    }
+
+    println!("Sum of numbers: {}", sum);
+    println!("Count of numbers that do not hold a number: {}", nums.len() - count);
+}
+```

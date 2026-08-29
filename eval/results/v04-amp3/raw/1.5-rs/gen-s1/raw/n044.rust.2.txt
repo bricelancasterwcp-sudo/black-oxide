@@ -1,0 +1,14 @@
+Sure. Here's the corrected version of your program:
+
+```rust
+fn main() {
+    let mut balance = 0;
+
+    for amount in vec![3, 1, 4, 1, 5] {
+        balance += amount;
+        println!("Balance: {}", balance);
+    }
+}
+```
+
+This program should now print the correct balances after each deposit.

@@ -1,0 +1,25 @@
+```rust
+use rand::Rng;
+
+fn main() {
+    loop {
+        let signal = get_signal();
+        match signal {
+            "green" => println!("go for green"),
+            "red" => println!("stop for red"),
+            "yellow" => println!("wait for yellow"),
+            _ => panic!("Unknown signal"),
+        }
+    }
+}
+
+fn get_signal() -> &'static str {
+    let signals = vec!["green", "red", "yellow"];
+    signals[get_random_index()]
+}
+
+fn get_random_index() -> usize {
+    use rand::Rng;
+    rand::thread_rng().gen_range(0..signals.len())
+}
+```

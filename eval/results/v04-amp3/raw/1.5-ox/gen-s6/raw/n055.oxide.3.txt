@@ -1,0 +1,36 @@
+```
+fn main() {
+    let mut num1 = None;
+    if let Ok(n) = parse_int("8") {
+        num1 = Some(n);
+    }
+
+    let mut num2 = None;
+    if let Ok(n) = parse_int("oak") {
+        num2 = Some(n);
+    }
+
+    let mut num3 = None;
+    if let Ok(n) = parse_int("15") {
+        num3 = Some(n);
+    }
+
+    if let Some(n) = num1 {
+        print(n);
+    } else {
+        print_str("bad");
+    }
+
+    if let Some(n) = num2 {
+        print(n);
+    } else {
+        print_str("bad");
+    }
+
+    if let Some(n) = num3 {
+        print(n);
+    } else {
+        print_str("bad");
+    }
+}
+```

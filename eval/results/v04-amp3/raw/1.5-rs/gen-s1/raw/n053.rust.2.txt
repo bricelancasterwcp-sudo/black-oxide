@@ -1,0 +1,11 @@
+Here's the fixed version of your Rust code:
+
+```rust
+fn main() {
+    let word = "drum";
+    println!("Reverse: {}", word.chars().rev().collect::<String>());
+    println!("Normal: {}", word);
+}
+```
+
+When you run this program, it will correctly print "Reverse: murd" and "Normal: drum".

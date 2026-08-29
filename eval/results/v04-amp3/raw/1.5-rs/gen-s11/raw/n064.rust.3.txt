@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let a = [10, 20];
+    if let Some(&b) = a.get(1) {
+        println!("{}", b);
+    }
+    if let Some(&c) = a.get(3) {
+        println!("{}", c);
+    }
+}
+```

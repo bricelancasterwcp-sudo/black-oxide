@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let product = (1..=6).product::<Int>();
+    println(product);
+}
+```
+
+The issue was that Rust's syntax requires a semicolon after the `for` loop and after the `println!`. However, since the `main` function is a top-level statement, it does not require a newline. The `for` loop and `println!` were being interpreted as separate statements, leading to the compiler errors. After adding semicolons at the appropriate places, the code ran correctly.

@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let s = "banana";
+    for (i, c) in s.chars().enumerate() {
+        if c == 'n' {
+            print!("{}", i);
+        }
+    }
+}
+```
+
+The error was due to the use of semicolons at the wrong places. In Rust, each statement should be ended with a semicolon. The `print_str` function does not require parentheses around its arguments.

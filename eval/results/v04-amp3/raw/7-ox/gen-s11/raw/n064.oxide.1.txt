@@ -1,0 +1,15 @@
+```oxide
+struct List { a: Int, b: Int }
+
+fn main() {
+    let l = List { a: 10, b: 20 };
+    match get(vec(l.a, l.b), 0) {
+        Some(v) => print(v),
+        None => print_str("none"),
+    }
+    match get(vec(l.a, l.b), 3) {
+        Some(v) => print(v),
+        None => print_str("none"),
+    }
+}
+```

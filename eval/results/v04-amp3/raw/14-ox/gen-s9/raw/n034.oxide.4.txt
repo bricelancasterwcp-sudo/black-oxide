@@ -1,0 +1,17 @@
+```text
+fn second_entry(v: Vec<Int>) -> Option<Int> {
+    get(v, 1)
+}
+
+fn main() {
+    let list1 = vec();
+    list1 = push(list1, 7);
+    list1 = push(list1, 8);
+    list1 = push(list1, 9);
+
+    match second_entry(list1) {
+        Some(n) => print(n),
+        None => print_str("none"),
+    }
+}
+```

@@ -1,0 +1,18 @@
+fn main() {
+    let mut input = String::new();
+    std::io::stdin().read_line(&mut input).expect("Failed to read line");
+    let input = input.trim();
+
+    let mut sum = 0;
+    let mut count = 0;
+
+    for c in input.chars() {
+        if c.is_digit(10) {
+            sum += c.to_digit(10).unwrap();
+            count += 1;
+        }
+    }
+
+    println!("{}", sum);
+    println!("{}", count);
+}

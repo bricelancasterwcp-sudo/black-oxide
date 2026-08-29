@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let numbers = [8, 3, 11, 6];
+    numbers.sort_unstable();
+    println!("The smallest figure is {}", numbers[0]);
+    println!("The gap between the largest and the smallest is {}", numbers[numbers.len() - 1] - numbers[0]);
+}
+```

@@ -1,0 +1,13 @@
+fn main() {
+    let entries = vec!(str_to_int("8"), str_to_int("oak"), str_to_int("15"));
+    for entry in entries {
+        match entry {
+            Some(n) => print(n),
+            None => print_str("bad"),
+        }
+    }
+}
+
+fn str_to_int(s: Str) -> Option<Int> {
+    parse_int(s)
+}

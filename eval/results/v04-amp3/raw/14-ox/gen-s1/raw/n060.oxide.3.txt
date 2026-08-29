@@ -1,0 +1,27 @@
+```
+fn sum_digits(s: Str) -> Int {
+    let sum = 0
+    for c in chars(s) {
+        if parse_int(c).is_some() {
+            sum += unwrap_or(parse_int(c), 0)
+        }
+    }
+    sum
+}
+
+fn count_digits(s: Str) -> Int {
+    let count = 0
+    for c in chars(s) {
+        if parse_int(c).is_some() {
+            count += 1
+        }
+    }
+    count
+}
+
+fn main() {
+    let input = "a1b22"
+    print(sum_digits(input.clone()))
+    print(count_digits(input))
+}
+```

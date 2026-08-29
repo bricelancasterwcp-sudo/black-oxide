@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let mut power = 1;
+    while (power << 1) <= 100 {
+        power <<= 1;
+    }
+    println!("{}", power);
+}
+```

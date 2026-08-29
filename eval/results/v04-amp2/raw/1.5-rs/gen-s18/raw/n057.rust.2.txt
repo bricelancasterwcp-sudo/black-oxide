@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let names = ["fig", "banana", "kiwi"];
+    let mut max_name = "";
+    let mut max_length = 0;
+
+    for name in names {
+        if name.len() > max_length {
+            max_length = name.len();
+            max_name = name;
+        }
+    }
+
+    println!("The name with the most letters is {} and it has {} letters.", max_name, max_length);
+}
+```

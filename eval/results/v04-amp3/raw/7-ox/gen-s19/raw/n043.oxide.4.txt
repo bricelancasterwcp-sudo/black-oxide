@@ -1,0 +1,21 @@
+```rust
+struct Queue { items: Vec<Int> }
+
+fn exchange_first_last(mut q: Queue) -> Queue {
+    if q.items.len() > 1 {
+        let first = q.items[0];
+        let last = q.items.pop().unwrap();
+        q.items.insert(0, last);
+        q.items.push(first);
+    }
+    q
+}
+
+fn main() {
+    let q = Queue { items: vec![1, 2, 3, 4, 5] };
+    let q_exchanged = exchange_first_last(q);
+    for i in q_exchanged.items {
+        print(i)
+    }
+}
+```

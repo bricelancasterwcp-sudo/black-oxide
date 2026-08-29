@@ -1,0 +1,20 @@
+```rust
+fn main() {
+    let c = "coffee";
+    let mut counts = [0; 26];
+    
+    for ch in c.chars() {
+        if ch.is_ascii_lowercase() {
+            let idx = (ch as u8 - b'a') as usize;
+            counts[idx] += 1;
+        }
+    }
+
+    for i in 0..26 {
+        if counts[i] > 0 {
+            print!("{}", (i as u8 + b'a' as u8) as char);
+            counts[i] = 0;
+        }
+    }
+}
+```

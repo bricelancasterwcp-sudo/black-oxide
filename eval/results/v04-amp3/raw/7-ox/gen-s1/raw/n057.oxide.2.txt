@@ -1,0 +1,46 @@
+```rust
+struct Reading { label: Str, values: Vec<Int> }
+
+fn first_big(v: Vec<Int>) -> Int {
+    let found = -1
+    for x in v {
+        if x > 10 {
+            found = x
+            break
+        }
+    }
+    found
+}
+
+fn second(v: Vec<Int>) -> Option<Int> {
+    let x = get(v, 1)?
+    Some(x + 1)
+}
+
+fn max_len(fruit: Str) -> Int {
+    let len = str_len(fruit)
+    if len > 3 {
+        len
+    } else {
+        3
+    }
+}
+
+fn main() {
+    let fruits = vec("fig", "banana", "kiwi")
+    let mut max_fruit = ""
+    let mut max_count = 0
+
+    for fruit in fruits {
+        let count = max_len(fruit)
+        if count > max_count {
+            max_fruit = clone(fruit) // Clone the string to avoid borrowing issues
+            max_count = count
+        }
+    }
+
+    print(max_fruit)
+    print_str(" ")
+    print(max_count)
+}
+```

@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let scores = [2, 9, 5];
+    let mut sorted_scores = scores.to_vec();
+    sorted_scores.sort_by(|a, b| b.cmp(a));
+    
+    for score in sorted_scores {
+        println!("{}", score);
+    }
+}
+```

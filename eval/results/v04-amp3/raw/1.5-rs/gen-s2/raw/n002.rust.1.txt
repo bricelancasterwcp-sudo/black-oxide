@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let mut result = 1;
+    for i in 1..=6 {
+        result *= i;
+    }
+    println!("The product of numbers from 1 to 6 is: {}", result);
+}
+```
+This program defines a mutable variable `result` initialized to 1, and then iterates over the range 1 to 6 (inclusive) using a for loop. During each iteration, it multiplies the current value of `i` with `result`. After the loop completes, it prints out the final product of all numbers from 1 to 6.

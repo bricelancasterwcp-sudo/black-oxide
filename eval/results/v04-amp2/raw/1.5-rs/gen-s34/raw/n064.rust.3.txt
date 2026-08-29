@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let numbers = vec![10, 20];
+    if let Some(&number) = numbers.get(0) {
+        println!("Position one: {}", number);
+    }
+    if let Some(&number) = numbers.get(3) {
+        println!("Position four: {}", number);
+    } else {
+        println!("Position four is empty.");
+    }
+}
+```

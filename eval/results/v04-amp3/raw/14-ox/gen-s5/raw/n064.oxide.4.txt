@@ -1,0 +1,21 @@
+```text
+struct Reading { label: Str, values: Vec<Int> }
+
+fn get_value(v: Vec<Int>, index: Int) -> Option<Int> {
+    get(v, index)?
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(vec(), 10), 20) }
+    let value1 = get_value(r.values.clone(), 1)
+    match value1 {
+        Some(n) => print(n),
+        None => print_str("Index 1 out of bounds"),
+    }
+    let value4 = get_value(r.values.clone(), 4)
+    match value4 {
+        Some(n) => print(n),
+        None => print_str("Index 4 out of bounds"),
+    }
+}
+```

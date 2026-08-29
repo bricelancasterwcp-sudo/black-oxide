@@ -1,0 +1,13 @@
+```
+fn product(v: Vec<Int>) -> Int {
+    let mut p = 1
+    for x in v {
+        p *= x
+    }
+    p
+}
+
+fn main() {
+    print(product(range(1, 7)))
+}
+```

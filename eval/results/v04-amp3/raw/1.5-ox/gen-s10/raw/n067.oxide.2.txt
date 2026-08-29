@@ -1,0 +1,32 @@
+```rust
+struct Walk {
+    items: Vec<Int>,
+}
+
+impl Walk {
+    fn new(items: Vec<Int>) -> Self {
+        Walk { items }
+    }
+
+    fn walk(&self) -> (Int, Int) {
+        let mut odd_sum = 0;
+        let mut even_sum = 0;
+
+        for &item in self.items.iter() {
+            if item % 2 == 1 {
+                odd_sum += item * 2;
+            } else {
+                even_sum += item;
+            }
+        }
+
+        (odd_sum, even_sum)
+    }
+}
+
+fn main() {
+    let items = vec![7, 4, 9, 10];
+    let (odd_sum, even_sum) = Walk::new(items).walk();
+    println!("Total of even entries: {}", even_sum);
+}
+```

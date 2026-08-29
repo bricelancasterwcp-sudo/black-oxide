@@ -1,0 +1,11 @@
+fn main() {
+    let values = vec!(9, 2, 12, 5, 16);
+    let mut count = 0;
+    for v in values {
+        if v < 10 {
+            print(v);
+            count = count + 1;
+        }
+    }
+    print(count);
+}

@@ -1,0 +1,12 @@
+```
+fn main() {
+    let vals = vec![Some(7), Some('x'.into()), Some(9), None];
+    let (total, count) = vals.into_iter().fold((0, 0), |(acc, cnt), v| match v {
+        Some(n @ 0..=9) => (acc + n, cnt),
+        _ => (acc, cnt + 1)
+    });
+    print(total);
+    print_str(", ");
+    print(count);
+}
+```

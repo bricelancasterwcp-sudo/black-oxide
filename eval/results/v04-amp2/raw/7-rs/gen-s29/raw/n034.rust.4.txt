@@ -1,0 +1,13 @@
+fn main() {
+    let list1 = vec![7];
+    let list2 = vec![7, 8];
+    let list3 = vec![7, 8, 9];
+
+    println!("{:?}", second_entry(&list1));
+    println!("{:?}", second_entry(&list2));
+    println!("{:?}", second_entry(&list3));
+}
+
+fn second_entry<T>(lst: &[T]) -> Option<&T> {
+    lst.get(1)
+}

@@ -1,0 +1,32 @@
+```rust
+struct Square {
+    side: Int,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+trait Area {
+    fn area(&self) -> Float;
+}
+
+impl Area for Square {
+    fn area(&self) -> Float {
+        self.side * self.side
+    }
+}
+
+impl Area for Circle {
+    fn area(&self) -> Float {
+        std::f64::consts::PI * self.radius * self.radius
+    }
+}
+
+fn main() {
+    let square = Square { side: 4 };
+    println!("Area of the square is {}", square.area());
+    let circle = Circle { radius: 3.0 }; // Corrected type from 'as Float' to 'Float'
+    println!("Area of the circle is {}", circle.area());
+}
+```

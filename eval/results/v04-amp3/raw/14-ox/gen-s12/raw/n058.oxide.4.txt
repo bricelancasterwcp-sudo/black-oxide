@@ -1,0 +1,11 @@
+fn main() {
+    let word = "coffee";
+    let seen = vec();
+    for char in chars(word) {
+        if contains(seen, char) {
+            continue;
+        }
+        print_str(char);
+        seen = push(seen, clone(char));
+    }
+}

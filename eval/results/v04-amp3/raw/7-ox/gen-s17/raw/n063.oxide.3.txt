@@ -1,0 +1,23 @@
+```rust
+struct Line { items: Vec<Unit>, price_per_item: Int }
+
+fn total_value(line: Line) -> Int {
+    let mut sum = 0
+    for _ in range(0, line.items.len()) {
+        sum += line.price_per_item
+    }
+    sum
+}
+
+fn main() {
+    let line1 = Line { items: push(push(vec(), Unit), Unit), price_per_item: 3 }
+    let line2 = Line { items: push(push(push(vec(), Unit), Unit), Unit), price_per_item: 2 }
+    print(total_value(line1))            // field access copies: line1 remains usable
+    print(total_value(line2))
+    print(add(total_value(line1), total_value(line2)))
+}
+
+fn add(a: Int, b: Int) -> Int {
+    a + b
+}
+```

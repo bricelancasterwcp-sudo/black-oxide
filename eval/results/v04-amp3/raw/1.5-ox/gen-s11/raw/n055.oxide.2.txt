@@ -1,0 +1,11 @@
+```rust
+use std::fmt::{self};
+
+fn main() {
+    let num_a = parse_int("8")?;
+    let num_b = parse_int("oak")?; // bad
+    let num_c = parse_int("15")?;
+
+    print!("{} {}", num_a, num_c);
+}
+```

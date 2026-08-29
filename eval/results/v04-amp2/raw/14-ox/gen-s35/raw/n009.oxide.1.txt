@@ -1,0 +1,22 @@
+```text
+fn reverse_digits(n: Int) -> Vec<Int> {
+    let mut v = vec()
+    let mut num = n
+    while num > 0 {
+        let digit = num % 10
+        v = push(v, digit)
+        num = num / 10
+    }
+    v
+}
+
+fn main() {
+    let number = 1234
+    let reversed_digits = reverse_digits(number)
+    let mut result_str = ""
+    for digit in reversed_digits {
+        result_str = concat(result_str, int_to_str(digit))
+    }
+    print_str(result_str)
+}
+```

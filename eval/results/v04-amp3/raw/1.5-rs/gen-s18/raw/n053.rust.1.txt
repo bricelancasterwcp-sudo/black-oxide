@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let input = "drum";
+    println!("{}", input.chars().rev().collect::<String>()); // Reverse and collect to string
+    println!("{}", input); // Print normally
+}
+```
+
+This Rust program defines a function `main` that takes the word "drum" as an argument. It first reverses the order of the characters in the input using `chars().rev()`, which returns a view over the characters of the string in reverse order, and collects these characters back into a String with `collect::<String>()`. This reversed string is then printed out using `println!()`.
+
+After reversing the string, the original string "drum" is printed out again to show the normal reading.

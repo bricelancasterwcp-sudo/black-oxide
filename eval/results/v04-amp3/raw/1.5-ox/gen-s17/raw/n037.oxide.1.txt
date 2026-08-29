@@ -1,0 +1,13 @@
+```rust
+struct Rectangle { width: Int, height: Int }
+
+fn main() {
+    let mut r = Rectangle { width: 2, height: 3 };
+    r.width += 3;
+    print(int_to_str(r.area()));
+}
+```
+
+## Explanation
+
+The program starts with a `Rectangle` struct initialized at 2 wide and 3 tall. It then adds 3 to the width field using the `+=` operator. After modifying the width, it calculates the area of the rectangle by multiplying its width by height (`r.width * r.height`) and converts the result to a string for output with `int_to_str`.

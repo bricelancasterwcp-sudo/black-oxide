@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut max_power = 1
+    let mut current_power = 2
+
+    while current_power <= 100 {
+        max_power = current_power
+        current_power *= 2
+    }
+
+    print(max_power)
+}
+```

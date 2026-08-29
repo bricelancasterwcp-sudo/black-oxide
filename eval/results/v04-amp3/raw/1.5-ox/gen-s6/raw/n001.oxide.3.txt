@@ -1,0 +1,10 @@
+```
+fn cube(n: Int) -> Int {
+    n * n * n
+}
+
+fn main() {
+    let sum = (1..=5).map(|i| cube(i)).sum();
+    println!("{}", sum);
+}
+```

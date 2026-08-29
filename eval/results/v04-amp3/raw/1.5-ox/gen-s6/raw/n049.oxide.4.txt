@@ -1,0 +1,20 @@
+```
+struct Figure {
+    size: Int,
+}
+
+fn main() {
+    let figs = vec![
+        Figure { size: 10 },
+        Figure { size: 3 },
+        Figure { size: 8 },
+        Figure { size: 6 },
+    ];
+
+    let min_size = *figs.iter().min().unwrap();
+    let max_size = *figs.iter().max().unwrap();
+
+    print(min_size);
+    println(max_size - min_size);
+}
+```

@@ -1,0 +1,22 @@
+```rust
+fn main() {
+    let mut state = "green";
+    loop {
+        match state {
+            "green" => println!("go"),
+            "red" => println!("stop"),
+            "yellow" => println!("wait"),
+            _ => panic!("unexpected state: {:?}", state),
+        }
+        receive_signal(&mut state);
+    }
+}
+
+fn receive_signal(state: &str) {
+    if *state == "green" {
+        *state = "yellow";
+    } else if *state == "red" {
+        *state = "stop";
+    }
+}
+```

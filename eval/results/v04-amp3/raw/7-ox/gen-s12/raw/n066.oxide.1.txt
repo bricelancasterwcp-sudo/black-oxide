@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let batch = vec![9, 2, 12, 5, 16];
+    let filtered: Vec<i32> = batch.into_iter().filter(|&x| x < 10).collect();
+    for value in &filtered {
+        print(value);
+        print_str("\n");
+    }
+    print(filtered.len());
+}
+```

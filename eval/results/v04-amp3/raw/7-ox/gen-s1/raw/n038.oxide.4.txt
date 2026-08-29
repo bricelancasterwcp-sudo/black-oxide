@@ -1,0 +1,7 @@
+struct Sensor { reading: Int }
+
+fn main() {
+    let mut s = Sensor { reading: 0 };
+    s.reading = 7;
+    print(s.reading);
+}

@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let word = "coffee";
+    let mut chars = word.chars().peekable();
+    while let Some(c) = chars.next() {
+        if !chars.as_str().contains(c) {
+            println!("{}", c);
+        }
+    }
+}
+```

@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let mut batch = vec![9, 2, 12, 5, 16];
+    for i in 0..batch.len() {
+        if batch[i] < 10 {
+            println!("{}", batch[i]);
+            // Remove the item by shifting all subsequent elements to the left
+            batch.remove(i);
+            // Decrement i to account for the removed element
+            i -= 1;
+        }
+    }
+    println!("Kept {} entries", batch.len());
+}
+```

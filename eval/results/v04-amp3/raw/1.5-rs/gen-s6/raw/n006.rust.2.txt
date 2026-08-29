@@ -1,0 +1,12 @@
+fn find_biggest_power_of_two(max_value: u32) -> u32 {
+    let mut result = 1;
+    while (result * 2 <= max_value) {
+        result *= 2;
+    }
+    result / 2 // divide by 2 to get the largest power of two that does not exceed max_value
+}
+
+fn main() {
+    let biggest_power_of_two = find_biggest_power_of_two(100);
+    println!("The biggest power of two that does not exceed 100 is: {}", biggest_power_of_two);
+}

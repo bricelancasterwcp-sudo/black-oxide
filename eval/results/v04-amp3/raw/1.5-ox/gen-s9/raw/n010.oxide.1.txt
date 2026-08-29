@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let n = 91;
+    let mut factors: Vec<Int> = vec![];
+
+    for i in 2..=n {
+        if n % i == 0 {
+            factors.push(i);
+        }
+    }
+
+    if factors.len() == 2 && factors[0] != 1 && factors[1] != n {
+        print_str("yes");
+    } else {
+        print_str("no");
+    }
+}
+```

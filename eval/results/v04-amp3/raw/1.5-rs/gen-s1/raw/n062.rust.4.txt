@@ -1,0 +1,12 @@
+Here's the fixed version of your Rust code:
+
+```rust
+fn main() {
+    println!("green");
+    println!("red");
+    println!("yellow");
+}
+```
+
+Explanation:
+The original program had the order of signals reversed. It printed "go for green", then "stop for red", and finally "wait for yellow". This is because the `println!` macro in Rust is executed sequentially, so it prints the values in the order they are written in the code. The corrected version reverses this order, printing "green", "red", and "yellow" in that exact sequence.

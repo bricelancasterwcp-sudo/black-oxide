@@ -1,0 +1,24 @@
+```oxide
+fn main() {
+    let num = 9875
+    let digits = vec_to_chars(int_to_str(num))
+    let sum = fold(digits, 0, |acc, d| acc + (str_to_int(d) as Int))
+    print(sum)
+}
+
+fn vec_to_chars(s: Str) -> Vec<Str> {
+    chars(s)
+}
+
+fn fold(v: Vec<Str>, init: Int, f: fn(Int, Str) -> Int) -> Int {
+    let mut acc = init
+    for d in v {
+        acc = f(acc, d)
+    }
+    acc
+}
+
+fn str_to_int(s: Str) -> Int {
+    parse_int(s).unwrap_or(0)
+}
+```

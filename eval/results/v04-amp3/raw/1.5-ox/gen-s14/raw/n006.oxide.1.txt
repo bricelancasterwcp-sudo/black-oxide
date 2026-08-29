@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let mut power = 1;
+    while 2 * power <= 100 {
+        power *= 2;
+    }
+    print(power);
+}
+```

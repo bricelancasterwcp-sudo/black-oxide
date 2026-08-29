@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut balance = 0;
+    for deposit in vec![3, 1, 4, 1, 5] {
+        balance += deposit;
+        println!("{}", balance);
+    }
+}
+```
+
+In this example, the balance is initialized to zero and then added to each element of the vector `vec!`. The new balance is printed after each deposit. Each deposit is added to the current balance using the assignment operator `+=`, which consumes the value on the right-hand side but does not create a new copy if it is an immutable type like `Int`. After all deposits have been processed, the final balance is printed.

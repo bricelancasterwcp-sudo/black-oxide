@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    println!("The area of a square of side 4 is {}", 4 * 4);
+}
+```
+When compiled and run, this program will output:
+```
+The area of a square of side 4 is 16
+```

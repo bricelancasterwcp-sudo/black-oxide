@@ -1,0 +1,4 @@
+fn main() {
+    let word = "drum";
+    print(concat(word.chars().rev().join(""), word));
+}

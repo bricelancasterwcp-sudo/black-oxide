@@ -1,0 +1,16 @@
+```
+fn signal(s: Str) {
+    match s {
+        "green" => println("go"),
+        "red" => println("stop"),
+        "yellow" => println("wait"),
+        _ => println("unknown"),
+    }
+}
+
+fn main() {
+    signal("green")
+    signal("red")
+    signal("yellow")
+}
+```

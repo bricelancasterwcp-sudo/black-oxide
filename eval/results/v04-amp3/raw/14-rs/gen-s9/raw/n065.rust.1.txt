@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let readings = [6, 11, 3, 14, 9];
+    let count = readings.iter().filter(|&&x| x > 5).count();
+    let highest = readings.iter().max().unwrap();
+
+    println!("{}", count);
+    println!("{}", highest);
+}
+```

@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let words = ["fig", "banana", "kiwi"];
+    let mut max_len = 0;
+    let mut longest_word = "";
+
+    for word in words.iter() {
+        if word.len() > max_len {
+            max_len = word.len();
+            longest_word = word;
+        }
+    }
+
+    println!("{} {}", longest_word, max_len);
+}
+```

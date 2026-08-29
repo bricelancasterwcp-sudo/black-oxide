@@ -1,0 +1,22 @@
+```text
+fn parse_int(s: Str) -> Option<Int> {
+    // Dummy implementation for demonstration purposes
+    if s == "8" {
+        Some(8)
+    } else if s == "15" {
+        Some(15)
+    } else {
+        None
+    }
+}
+
+fn main() {
+    let inputs = vec("8", "oak", "15")
+    for input in inputs {
+        match parse_int(input) {
+            Some(n) => print(n),
+            None => print_str("bad"),
+        }
+    }
+}
+```

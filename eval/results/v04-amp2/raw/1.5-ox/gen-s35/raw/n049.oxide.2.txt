@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let figs = vec![8, 3, 11, 6];
+    println!("{}", min(figs)); // prints 3
+    println!("{}", max(figs) - min(figs)); // prints 7
+}
+```

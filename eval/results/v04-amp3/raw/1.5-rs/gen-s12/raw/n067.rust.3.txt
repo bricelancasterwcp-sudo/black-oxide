@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let numbers = [7, 4, 9, 10];
+    let mut odd_sum = 0;
+
+    // Walk through the list in order and print each odd entry doubled
+    for &number in &numbers {
+        if number % 2 != 0 {
+            println!("{}", number * 2);
+        } else {
+            odd_sum += number;
+        }
+    }
+
+    // Print the total of the even entries
+    println!("Total of even entries: {}", odd_sum);
+}
+```

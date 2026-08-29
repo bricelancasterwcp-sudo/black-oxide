@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let banana = "banana";
+    for (i, c) in banana.chars().enumerate() {
+        if c == 'n' {
+            print!("{} ", i);
+        }
+    }
+}
+```
+The problem was a syntax error with the semicolon and quotes. It should be a single `print!` statement without any trailing semicolons.

@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let list = vec![10, 20];
+    match get(list.clone(), 1) {
+        Some(x) => print(x), // field access copies: r stays usable
+        None => print_str("position one is empty"),
+    }
+
+    match get(list.clone(), 3) {
+        Some(x) => print(x), // field access copies: r stays usable
+        None => print_str("position four is empty"),
+    }
+}
+```

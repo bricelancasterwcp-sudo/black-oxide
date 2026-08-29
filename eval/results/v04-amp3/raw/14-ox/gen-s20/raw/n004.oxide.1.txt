@@ -1,0 +1,19 @@
+```
+fn fibonacci(n: Int) -> Int {
+    let a = 1
+    let b = 1
+    if n == 1 || n == 2 {
+        return 1
+    }
+    for _ in range(3, n + 1) {
+        let next = a + b
+        a = b
+        b = next
+    }
+    b
+}
+
+fn main() {
+    print(fibonacci(10))
+}
+```

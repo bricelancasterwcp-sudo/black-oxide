@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let nums = [7, 10, 9, 2.5]; // Assuming '?' is a placeholder for a float value
+    let mut sum: i32 = 0;
+    let mut count: u32 = 0;
+
+    for &num in &nums {
+        if num.is_integer() {
+            sum += num as i32;
+            count += 1;
+        }
+    }
+
+    println!("Sum of integers: {}", sum);
+    println!("Count of non-integer values: {}", nums.len() - count);
+}
+```

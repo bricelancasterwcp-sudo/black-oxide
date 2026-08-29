@@ -1,0 +1,13 @@
+fn sum_even(start: Int, end: Int) -> Int {
+    let mut total = 0;
+    for i in range(start, end + 1) {
+        if i % 2 == 0 {
+            total += i;
+        }
+    }
+    total
+}
+
+fn main() {
+    print(sum_even(1, 20));
+}

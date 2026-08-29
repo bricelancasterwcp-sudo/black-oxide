@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let figures = [8, 3, 11, 6];
+    let min_value = *figures.iter().min().unwrap();
+    let max_value = *figures.iter().max().unwrap();
+
+    println!("The smallest figure is: {}", min_value);
+    println!("The gap between the largest and smallest is: {}", max_value - min_value);
+}
+```

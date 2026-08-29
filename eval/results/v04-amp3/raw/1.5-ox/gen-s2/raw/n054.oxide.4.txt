@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let mut vowels = 0;
+    let mut consonants = 0;
+
+    for c in "abcdefghijklmnopqrstuvwxyz".chars() {
+        if ["a", "e", "i", "o", "u"].contains(&c) {
+            vowels += 1;
+        } else {
+            consonants += 1;
+        }
+    }
+
+    println!("Vowels: {}", vowels);
+    println!("Consonants: {}", consonants);
+}
+```

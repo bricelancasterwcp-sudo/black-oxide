@@ -1,0 +1,26 @@
+```text
+struct Reading { label: Str, values: Vec<Str> }
+
+fn find_duplicates(s: Str) -> Vec<Str> {
+    let mut seen = Vec()
+    let mut duplicates = Vec()
+    for c in chars(s) {
+        if contains(seen, c) {
+            if !contains(duplicates, c) {
+                push(duplicates, c)
+            }
+        } else {
+            push(seen, c)
+        }
+    }
+    duplicates
+}
+
+fn main() {
+    let word = "coffee"
+    let duplicates = find_duplicates(word)
+    for d in duplicates {
+        print_str(d)
+    }
+}
+```

@@ -1,0 +1,22 @@
+```rust
+use std::f64;
+
+enum Shape {
+    Square(f64),
+    Circle(f64),
+}
+
+impl Shape {
+    fn area(&self) -> f64 {
+        match self {
+            Shape::Square(side) => side * side,
+            Shape::Circle(radius) => radius * radius * 3.0,
+        }
+    }
+}
+
+fn main() {
+    let square = Shape::Square(4.0);
+    println!("The area of the square is: {}", square.area());
+}
+```

@@ -1,0 +1,27 @@
+```rust
+fn main() {
+    let mut signal = "green";
+    while true {
+        match signal {
+            "green" => println!("go"),
+            "red" => println!("stop"),
+            "yellow" => println!("wait"),
+            _ => panic!("unexpected signal: {}", signal),
+        }
+        // Simulate receiving a new signal
+        if let Some(new_signal) = receive_signal() {
+            signal = new_signal;
+        }
+    }
+}
+
+fn receive_signal() -> Option<&'static str> {
+    // Simulated function to receive a signal
+    match rand::random::<u8>() % 3 {
+        0 => Some("green"),
+        1 => Some("red"),
+        2 => Some("yellow"),
+        _ => None,
+    }
+}
+```

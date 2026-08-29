@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let mut list = vec![7, 4, 9, 10];
+    let mut total_even = 0;
+
+    // Walk the list in order
+    for &num in list.iter().rev() {
+        if num % 2 != 0 {
+            println!("{}", num * 2); // Print each odd entry doubled on its own line
+        } else {
+            total_even += num; // Add even entries to total
+        }
+    }
+
+    println!("Total of even entries: {}", total_even);
+}
+```

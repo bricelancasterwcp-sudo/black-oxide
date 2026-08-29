@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let numbers = [8, 3, 11, 6];
+    let smallest = numbers.iter().cloned().min().unwrap();
+    let largest = numbers.iter().cloned().max().unwrap();
+    let gap = largest - smallest;
+    println!("{} {}", smallest, gap);
+}
+```

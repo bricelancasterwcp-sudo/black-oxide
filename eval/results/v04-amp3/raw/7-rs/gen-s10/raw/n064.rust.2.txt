@@ -1,0 +1,5 @@
+fn main() {
+    let list = vec![10, 20];
+    println!("{:?}", list.get(0));
+    println!("{:?}", list.get(3).or(Some(&0)));
+}

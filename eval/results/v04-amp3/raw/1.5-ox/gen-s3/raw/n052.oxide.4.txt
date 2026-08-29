@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let bananas = "banana";
+    for (i, c) in bananas.chars().enumerate() {
+        if c == 'n' {
+            println!("{}", i);
+        }
+    }
+}
+```
+
+Explanation:
+The original code had several issues that prevented it from compiling. The semicolons were missing after the `for` loop and a misplaced quote mark in the string literal. Additionally, the closing brace was missing before the end of the function definition. These errors were resolved by removing the semicolon after the loop, fixing the quote marks, and adding the missing closing brace.

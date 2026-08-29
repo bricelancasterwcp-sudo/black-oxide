@@ -1,0 +1,17 @@
+```ox
+fn main() {
+    let batch = vec(9, 2, 12, 5, 16)
+    let kept = vec()
+    let count = 0
+
+    for x in batch {
+        if x < 10 {
+            print(x)
+            kept = push(kept, x)
+            count += 1
+        }
+    }
+
+    print(count)
+}
+```

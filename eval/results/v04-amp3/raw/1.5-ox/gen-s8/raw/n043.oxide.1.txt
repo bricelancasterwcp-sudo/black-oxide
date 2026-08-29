@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let mut q = vec![1, 2, 3, 4, 5];
+    let temp = q[0]; // Move the first element to a temporary variable
+    q[0] = q[q.len() - 1]; // Move the last element to the first position
+    q[q.len() - 1] = temp; // Place the original first element in its new position
+
+    for &i in &q {
+        println!("{}", i); // Print each entry of the queue
+    }
+}
+```

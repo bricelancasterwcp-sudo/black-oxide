@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let product = (1..=6).product();
+    print(product);
+}
+```
+Note: The use of `product()` method on a range produces an `Int` which is then printed.

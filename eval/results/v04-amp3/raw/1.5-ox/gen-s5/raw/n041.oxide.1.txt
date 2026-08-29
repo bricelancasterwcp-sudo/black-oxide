@@ -1,0 +1,14 @@
+```rust
+use std::cmp;
+
+fn main() {
+    let mut v = push(push(vec(), 9), 2);
+    push(&mut v, 7);
+    push(&mut v, 4);
+
+    for &x in &v.sort() {
+        print_str(format!("{}", x));
+        print_newline();
+    }
+}
+```

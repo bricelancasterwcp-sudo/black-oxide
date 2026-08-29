@@ -1,0 +1,22 @@
+```rust
+struct Item { units: Int, price: Int }
+
+fn total_value(items: Vec<Item>) -> Int {
+    let mut total = 0
+    for item in items {
+        total += item.units * item.price
+    }
+    total
+}
+
+fn main() {
+    let line1 = vec(Item { units: 4, price: 3 })
+    let line2 = vec(Item { units: 5, price: 2 })
+    
+    print(total_value(line1))
+    print(total_value(line2))
+    
+    let combined = push(push(vec(), Item { units: 4, price: 3 }), Item { units: 5, price: 2 })
+    print(total_value(combined))
+}
+```

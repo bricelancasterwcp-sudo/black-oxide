@@ -1,0 +1,22 @@
+```text
+enum Signal {
+    Green,
+    Red,
+    Yellow,
+}
+
+fn handle_signal(s: Signal) {
+    match s {
+        Green => print_str("go"),
+        Red => print_str("stop"),
+        Yellow => print_str("wait"),
+    }
+}
+
+fn main() {
+    let signals = vec!(Green, Red, Yellow);
+    for signal in signals {
+        handle_signal(signal);
+    }
+}
+```

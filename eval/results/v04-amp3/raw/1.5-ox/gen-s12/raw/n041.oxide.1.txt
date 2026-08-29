@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let mut measurements: Vec<Int> = push(push(push(vec(), 2), 7), 9);
+    println!("{}", min(&measurements)?); // sort before printing
+    println!("{}", get(&measurements, 0)?);
+    println!("{}", get(&measurements, 1)?);
+    println!("{}", get(&measurements, 2)?);
+}
+```

@@ -1,0 +1,12 @@
+fn main() {
+    let numbers = vec![10, 20, 30];
+    println!("{}", get_element(&numbers, 1));
+    println!("{}", get_element(&numbers, 5));
+}
+fn get_element(numbers: &[i32], index: usize) -> i32 {
+    if index < numbers.len() {
+        numbers[index]
+    } else {
+        -1
+    }
+}

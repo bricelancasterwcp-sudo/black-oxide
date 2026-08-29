@@ -1,0 +1,27 @@
+```rust
+use std::cmp;
+
+fn count_within_cutoff(values: Vec<Int>, cutoff: Int) -> (Int, Int) {
+    let mut below = 0;
+    let mut above_or_equal = 0;
+
+    for &value in values.iter() {
+        if value <= cutoff {
+            below += 1;
+        } else {
+            above_or_equal += 1;
+        }
+    }
+
+    (below, above_or_equal)
+}
+
+fn main() {
+    let values = vec![5, 12, 3, 18, 9];
+    let cutoff = 10;
+
+    let (below, above_or_equal) = count_within_cutoff(values, cutoff);
+    println!("Below the cutoff: {}", below);
+    println!("Above or equal to the cutoff: {}", above_or_equal);
+}
+```

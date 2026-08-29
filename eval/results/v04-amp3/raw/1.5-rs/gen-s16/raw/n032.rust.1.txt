@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let x = 1;
+    let y = 5;
+
+    let z = 10;
+    let w = y + z; // Adding the height of both points
+
+    println!("{}", w);
+}
+```

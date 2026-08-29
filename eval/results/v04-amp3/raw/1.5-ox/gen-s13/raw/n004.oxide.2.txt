@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let mut a = 1;
+    let mut b = 1;
+
+    for _ in 0..9 {
+        let c = a + b;
+        a = b;
+        b = c;
+    }
+
+    print(a);
+}
+```
+
+The issue was due to the semicolons at the end of each line. In Rust, you need to separate statements with newlines or spaces. The corrected program now uses spaces instead of semicolons between the statements, and it correctly prints the tenth term of the sequence.

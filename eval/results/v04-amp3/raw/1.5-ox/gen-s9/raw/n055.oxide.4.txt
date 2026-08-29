@@ -1,0 +1,23 @@
+```rust
+fn main() {
+    let oak = Some(3);
+    match oak {
+        Some(n) => println!("{} is an oak", n),
+        None => println!("bad"),
+    }
+
+    let nine: i32 = 9;
+    if nine > 10 {
+        println!("{} is bad", nine);
+    } else {
+        println!("{}", nine);
+    }
+
+    let fifteen: Option<i32> = Some(15);
+    if fifteen % 3 == 0 {
+        println!("{} is divisible by 3", fifteen.unwrap());
+    } else {
+        println!("bad");
+    }
+}
+```

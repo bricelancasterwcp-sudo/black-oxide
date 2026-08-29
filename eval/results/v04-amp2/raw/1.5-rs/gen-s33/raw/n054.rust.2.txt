@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let mut count_vowels = 0;
+    let mut count_not_vowels = 0;
+
+    for c in "keyboard".chars() {
+        match c.to_ascii_lowercase() {
+            'a' | 'e' | 'i' | 'o' | 'u' => count_vowels += 1,
+            _ => count_not_vowels += 1,
+        }
+    }
+
+    println!("Vowels: {}", count_vowels);
+    println!("Not Vowels: {}", count_not_vowels);
+}
+```

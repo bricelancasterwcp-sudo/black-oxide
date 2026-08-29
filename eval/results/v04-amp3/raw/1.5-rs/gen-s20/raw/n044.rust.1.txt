@@ -1,0 +1,21 @@
+```rust
+fn main() {
+    let mut balance = 0;
+    
+    balance += 3; // Deposit 3
+    println!("Balance: {}", balance);
+    
+    balance -= 1; // Withdrawal 1
+    println!("Balance: {}", balance);
+    
+    balance += 4; // Deposit 4
+    println!("Balance: {}", balance);
+    
+    balance -= 1; // Withdrawal 1
+    println!("Balance: {}", balance);
+    
+    balance += 5; // Deposit 5
+    println!("Balance: {}", balance);
+}
+```
+This Rust program initializes a variable `balance` to zero and then iterates through the deposits (3, 4, 5) followed by withdrawals (1, 1) in the specified order. It updates the balance after each deposit or withdrawal and prints the current balance.

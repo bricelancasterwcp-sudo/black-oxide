@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let mut a = 1;
+    let mut b = 1;
+    for _ in 0..9 {
+        let c = a + b;
+        a = b;
+        b = c;
+    }
+    println!("The tenth term is {}", a);
+}
+```
+
+Explanation: The original program had an issue where it was printing the last term instead of the tenth term after iterating 9 times. This is because `a` is being updated inside the loop but its value isn't being printed outside the loop until the loop finishes. By updating `b` first in each iteration, we ensure that `a` gets the correct values after each addition operation, which corresponds to the tenth term of the sequence.

@@ -1,0 +1,23 @@
+```text
+fn is_vowel(c: Str) -> Bool {
+    c == "a" || c == "e" || c == "i" || c == "o" || c == "u"
+}
+
+fn count_vowels(s: Str) -> Int {
+    let mut vowels = 0
+    for c in chars(s) {
+        if is_vowel(c) {
+            vowels += 1
+        }
+    }
+    vowels
+}
+
+fn main() {
+    let keyboard = "qwertyuiopasdfghjklzxcvbnm"
+    let vowels = count_vowels(keyboard)
+    print(vowels)
+    let consonants = str_len(keyboard) - vowels
+    print(consonants)
+}
+```

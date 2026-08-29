@@ -1,0 +1,6 @@
+fn main() {
+    let g = 'G';
+    let r = 'R';
+    println!("{}", g);
+    println!("{}", r);
+}

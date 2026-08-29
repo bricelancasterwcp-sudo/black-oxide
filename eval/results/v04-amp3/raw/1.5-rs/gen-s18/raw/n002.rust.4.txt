@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let mut product: i32 = 1;
+    for i in 1..=6 {
+        product *= i;
+    }
+    println!("Product: {}", product);
+}
+```
+
+Explanation:
+The original program was incorrect because the `product` variable was initialized to 0 instead of 1. The multiplication operation was performed before initializing `product`. Additionally, since the range is from 1 to 6, we need to start the loop from 1 to include all numbers in the sequence.

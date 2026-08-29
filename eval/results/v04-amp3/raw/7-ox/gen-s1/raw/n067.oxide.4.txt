@@ -1,0 +1,26 @@
+fn double_if_odd(x: Int) -> Option<Int> {
+    if x % 2 == 1 { Some(x * 2) } else { None }
+}
+
+fn sum_evens(v: Vec<Int>) -> Int {
+    let mut sum = 0;
+    for x in v {
+        match double_if_odd(x) {
+            Some(n) => (),
+            None => sum += x,
+        }
+    }
+    sum
+}
+
+fn main() {
+    let nums = push(push(push(vec(), 7), 4), push(9, 10));
+    for n in nums.clone() {
+        if let Some(d) = double_if_odd(n) {
+            print(d);
+        } else {
+            print(n * 2);
+        }
+    }
+    print(sum_evens(nums));
+}

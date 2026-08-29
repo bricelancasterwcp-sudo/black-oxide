@@ -1,0 +1,19 @@
+```rust
+struct List { values: Vec<Int> }
+
+fn get_value(l: List, pos: Int) -> Option<Int> {
+    get(l.values, pos)
+}
+
+fn main() {
+    let l = List { values: push(push(vec(), 10), 20) };
+    match get_value(l, 1) {
+        Some(n) => print(n),
+        None => print_str("none"),
+    }
+    match get_value(l, 4) {
+        Some(n) => print(n),
+        None => print_str("none"),
+    }
+}
+```

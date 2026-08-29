@@ -1,0 +1,18 @@
+```rust
+struct Entry { num: i32, name: String }
+
+fn main() {
+    let entries = vec![
+        Entry { num: 8, name: "oak".to_string() }, 
+        Entry { num: 15, name: "pine".to_string() },
+        Entry { num: None, name: "".to_string() }
+    ];
+
+    for entry in entries.iter_mut() {
+        match entry.num {
+            Some(num) => println!("{}", num),
+            None => println!("bad"),
+        }
+    }
+}
+```

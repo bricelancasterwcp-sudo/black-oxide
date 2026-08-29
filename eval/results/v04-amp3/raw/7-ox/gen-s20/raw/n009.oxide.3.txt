@@ -1,0 +1,12 @@
+```rust
+fn reverse_int(n: Int) -> Str {
+    let chars = chars(int_to_str(n));
+    let reversed_chars: Vec<Str> = chars.iter().rev().map(|c| c.to_string()).collect();
+    concat(reversed_chars)
+}
+
+fn main() {
+    let num = 1234;
+    print(reverse_int(num));
+}
+```

@@ -1,0 +1,24 @@
+```ox
+struct Log { entries: Vec<Int> }
+
+fn first_entry(log: Log) -> Int {
+    let first = get(log.entries, 0)?
+    first
+}
+
+fn last_entry(log: Log) -> Int {
+    let len = len(log.entries)
+    if len == 0 {
+        return -1
+    }
+    let last = get(log.entries, len - 1)?
+    last
+}
+
+fn main() {
+    let log = Log { entries: vec!(6, 7, 8, 9) }
+    print(first_entry(log))
+    let log2 = Log { entries: vec!(6, 7, 8, 9) }
+    print(last_entry(log2))
+}
+```

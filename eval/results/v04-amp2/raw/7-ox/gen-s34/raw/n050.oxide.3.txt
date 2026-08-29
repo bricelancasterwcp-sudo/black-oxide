@@ -1,0 +1,4 @@
+fn main() {
+    let mut scores = vec!(2, 9, 5);
+    sort(&mut scores).iter().for_each(|score| print_str(&int_to_str(*score)));
+}

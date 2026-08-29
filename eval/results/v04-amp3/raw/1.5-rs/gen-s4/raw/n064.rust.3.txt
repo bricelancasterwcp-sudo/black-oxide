@@ -1,0 +1,10 @@
+fn main() {
+    let mut numbers = vec![10, 20];
+    let pos1 = numbers.get(1);
+    let pos4 = numbers.get(3);
+
+    match (pos1, pos4) {
+        (Some(&n), Some(&n)) => println!("Position 1: {}, Position 4: {}", n, n),
+        _ => (),
+    }
+}

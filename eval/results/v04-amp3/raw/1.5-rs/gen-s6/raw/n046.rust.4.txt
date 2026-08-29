@@ -1,0 +1,31 @@
+Here is the corrected code:
+
+```rust
+fn main() {
+    let data = [5, 12, 3, 18, 9];
+    let cutoff = 10;
+    
+    let below_cutoff_count: usize = data.iter().filter(|&&x| x < cutoff).count();
+    let over_cutoff_count: usize = data.iter().filter(|&&x| x >= cutoff).count();
+    
+    println!("Below cutoff: {}", below_cutoff_count);
+    println!("Over cutoff: {}", over_cutoff_count);
+}
+```
+
+The previous program had a slight mistake where the `iter()` method was not followed by a call to `map()` before filtering. The correct code is to first map the data into integers and then filter them based on their values being less than or equal to the cutoff value.
+
+Also, it's worth mentioning that in Rust, arrays are passed by reference (immutable by default), so we can't modify the original array directly from the function. We need to pass a mutable slice (&mut [T]) instead:
+
+```rust
+fn main() {
+    let data = [5, 12, 3, 18, 9];
+    let cutoff = 10;
+    
+    let below_cutoff_count: usize = data.iter().filter(|&&x| x < cutoff).count();
+    let over_cutoff_count: usize = data.iter().filter(|&&x| x >= cutoff).count();
+    
+    println!("Below cutoff: {}", below_cutoff_count);
+    println!("Over cutoff: {}", over_cutoff_count);
+}
+```

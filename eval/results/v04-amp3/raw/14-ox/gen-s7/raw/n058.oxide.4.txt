@@ -1,0 +1,29 @@
+```text
+struct LetterCount { letter: Str, count: Int }
+
+fn main() {
+    let word = "coffee"
+    let mut counts = vec()
+    for c in chars(word) {
+        let mut found = false
+        for i in range(0, len(counts)) {
+            let item = get(counts, i)?
+            let LetterCount { letter: l, count: cnt } = unwrap_or(item, LetterCount { letter: "", count: 0 })
+            if l == c {
+                counts = push(counts, LetterCount { letter: l, count: cnt + 1 })
+                found = true
+                break
+            }
+        }
+        if !found {
+            counts = push(counts, LetterCount { letter: c, count: 1 })
+        }
+    }
+    for item in counts {
+        let LetterCount { letter: l, count: cnt } = item
+        if cnt > 1 {
+            print_str(l)
+        }
+    }
+}
+```

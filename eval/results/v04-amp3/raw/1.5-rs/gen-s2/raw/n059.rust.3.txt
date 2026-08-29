@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let phrase = "when in doubt go home";
+    let words_count = phrase.split_whitespace().count();
+    let char_count = phrase.len();
+
+    println!("The phrase contains {} words and spans {} characters.", words_count, char_count);
+}
+```
+Explanation: The original code had a minor syntax error where it was missing a `;` at the end of the line for counting the number of words. It also contained a typo in the character count calculation (using `len()` instead of `count()`, which returns an iterator).

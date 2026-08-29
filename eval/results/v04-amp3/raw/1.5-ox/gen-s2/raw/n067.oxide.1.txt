@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let mut acc = 0;
+    for x in [7, 4, 9, 10].iter() {
+        match x % 2 {
+            0 => acc += *x,
+            _ => println!("{} doubled", x * 2),
+        }
+    }
+    println!("Total of even entries: {}", acc);
+}
+```

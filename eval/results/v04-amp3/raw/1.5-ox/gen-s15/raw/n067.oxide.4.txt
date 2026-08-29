@@ -1,0 +1,18 @@
+```rust
+fn walk(v: Vec<Int>) -> Int {
+    let mut total = 0;
+    for &x in v.iter() { // Use &x to avoid copying
+        if x % 2 != 0 && x % 2 != 0 {
+            println!("{}", x * 2);
+            total += x; // Update total before printing
+        }
+    }
+    return total;
+}
+
+fn main() {
+    let v = vec![7, 4, 9, 10];
+    let result = walk(v);
+    println!("Total of even entries: {}", result);
+}
+```

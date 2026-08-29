@@ -1,0 +1,32 @@
+```rust
+struct Queue { items: Vec<Int> }
+
+fn enqueue(q: Queue, x: Int) -> Queue {
+    Queue { items: push(q.items, x) }
+}
+
+fn dequeue(q: Queue) -> (Option<Int>, Queue) {
+    match get(q.items, 0)? {
+        Some(x) => (Some(x), Queue { items: vec().concat(vec().concat(vec().concat(vec().concat(vec(), q.items).clone()).clone()).clone()) }),
+        None => (None, q)
+    }
+}
+
+fn main() {
+    let mut q = Queue { items: vec() };
+    q = enqueue(q, 1);
+    q = enqueue(q, 2);
+    q = enqueue(q, 3);
+    q = enqueue(q, 4);
+    q = enqueue(q, 5);
+
+    let (first, q) = dequeue(q);
+    let (_, q) = dequeue(q);
+    let (_, q) = dequeue(q);
+    let (_, q) = dequeue(q);
+    let (last, _) = dequeue(q);
+
+    print(first.unwrap());
+    print(last.unwrap());
+}
+```

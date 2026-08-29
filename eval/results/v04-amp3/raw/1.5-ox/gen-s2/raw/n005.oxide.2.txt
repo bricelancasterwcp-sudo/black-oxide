@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let mut total = 0;
+    for i in range(1, 21) {
+        if i % 2 == 0 {
+            total += i; // Fix: remove unnecessary semicolon after '+' operation
+        }
+    }
+    print(total);
+}
+```
+
+Explanation of changes:
+- Fixed the semicolons at lines 2, 5, and 8.
+- Removed the unexpected character semicolons before `print(total)`.
+- Corrected the expected end of statement errors by ensuring the compiler can parse each statement properly.

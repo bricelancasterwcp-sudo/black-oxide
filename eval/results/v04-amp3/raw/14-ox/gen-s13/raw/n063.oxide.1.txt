@@ -1,0 +1,23 @@
+```ox
+struct Item { price: Int, quantity: Int }
+
+fn calculate_value(items: Vec<Item>) -> Int {
+    let mut total = 0
+    for item in items {
+        total += item.price * item.quantity
+    }
+    total
+}
+
+fn main() {
+    let line1 = vec(Item { price: 3, quantity: 4 }, Item { price: 2, quantity: 5 })
+    let line2 = vec(Item { price: 4, quantity: 3 }, Item { price: 1, quantity: 6 })
+    
+    let value_line1 = calculate_value(line1)
+    let value_line2 = calculate_value(line2)
+    
+    print(value_line1)
+    print(value_line2)
+    print(value_line1 + value_line2)
+}
+```

@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let mut width = 2;
+    let height = 3;
+
+    // Change width to 5
+    width = 5;
+
+    // Calculate and print the area of the rectangle
+    println!("Area: {}", width * height);
+}
+```
+
+The problem was in assigning a new value to `width` after it had been borrowed as `let width`. Since `width` is mutable, you can change its value. After changing the value, Rust does not consider it an error if the value is then used in any context that requires the immutable version of `width`, like in `println!`.

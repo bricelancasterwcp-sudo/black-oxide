@@ -1,0 +1,13 @@
+```ox
+struct Rectangle { width: Int, height: Int }
+
+fn area(rect: Rectangle) -> Int {
+    rect.width * rect.height
+}
+
+fn main() {
+    let rect = Rectangle { width: 2, height: 3 }
+    let rect = Rectangle { width: 5, ..rect }
+    print(area(rect))
+}
+```

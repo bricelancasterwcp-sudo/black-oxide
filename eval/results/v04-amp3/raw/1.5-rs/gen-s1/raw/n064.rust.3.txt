@@ -1,0 +1,20 @@
+Here's the completed program:
+
+```rust
+fn main() {
+    let nums = [10, 20]; // Declare an array of numbers
+
+    if let Some(num) = nums.get(1) { // Get the element at position 1 and handle it
+        println!("{}", num); // Print the number
+    }
+
+    if let Some(num) = nums.get(3) { // Get the element at position 4 (out of bounds) and handle it
+        println!("{}", num);
+    }
+}
+```
+
+The output should now be:
+```
+20
+```

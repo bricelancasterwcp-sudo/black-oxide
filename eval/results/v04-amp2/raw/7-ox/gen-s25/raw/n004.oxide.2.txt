@@ -1,0 +1,10 @@
+fn main() {
+    let a = 1;
+    let b = 1;
+    for _ in 0..8 {
+        let temp = a + b;
+        a = b;
+        b = temp;
+    }
+    print(b);
+}

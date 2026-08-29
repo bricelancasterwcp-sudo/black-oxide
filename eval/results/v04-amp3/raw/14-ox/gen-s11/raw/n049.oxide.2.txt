@@ -1,0 +1,33 @@
+```text
+struct Reading { label: Str, values: Vec<Int> }
+
+fn smallest(v: Vec<Int>) -> Option<Int> {
+    min(v)
+}
+
+fn largest(v: Vec<Int>) -> Option<Int> {
+    max(v)
+}
+
+fn gap(v: Vec<Int>) -> Option<Int> {
+    let min_val = min(v)?;
+    let max_val = max(v)?;
+    Some(max_val - min_val)
+}
+
+fn main() {
+    let values = vec(8, 3, 11, 6);
+    let smallest_value = smallest(values.clone());
+    let gap_value = gap(values);
+    
+    match smallest_value {
+        Some(n) => print(n),
+        None => print_str("No values")
+    }
+    
+    match gap_value {
+        Some(n) => print(n),
+        None => print_str("No gap")
+    }
+}
+```

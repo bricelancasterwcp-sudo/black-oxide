@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let nums = vec![7, None, Some(3), 9, ?, None];
+    let mut sum = 0;
+    let mut count = 0;
+    for n in nums {
+        if let Some(x) = n {
+            sum += x;
+            count += 1;
+        }
+    }
+    print!("Total: {}, Count: {}", sum, count);
+}
+```

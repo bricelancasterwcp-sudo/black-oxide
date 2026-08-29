@@ -1,0 +1,22 @@
+```oxide
+fn count_under_cutoff(v: Vec<Int>, cutoff: Int) -> (Int, Int) {
+    let mut under = 0
+    let mut over_or_equal = 0
+    for x in v {
+        if x < cutoff {
+            under += 1
+        } else {
+            over_or_equal += 1
+        }
+    }
+    (under, over_or_equal)
+}
+
+fn main() {
+    let samples = push(push(push(push(vec(), 5), 12), 3), 18)
+    let (under, over_or_equal) = count_under_cutoff(samples, 10)
+    print(under)
+    print_str(" ")
+    print(over_or_equal)
+}
+```

@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let a = 1;
+    let b = 1;
+    for _ in 1..9 {
+        let c = a + b;
+        a = b;
+        b = c;
+    }
+    print(a);
+}
+```

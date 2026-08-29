@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let a = 3 * 4;
+    let b = 2 * 5;
+
+    print(a + b);
+    print(a + b);
+
+    println!();
+}
+```
+
+**Explanation**:
+- The program defines two variables `a` and `b`.
+- It calculates the value of each line (four units at $3 each and five units at $2 each) by multiplying the quantity with their respective prices.
+- It then prints each line's value using `print()`.
+- After printing both lines, it adds them together and prints the result using `println!()` for better readability.

@@ -1,0 +1,34 @@
+```rust
+struct Fruit { name: Str, length: Int }
+
+fn longest_name(fruits: Vec<Fruit>) -> Option<(Str, Int)> {
+    let mut longest = None
+    for fruit in fruits {
+        match longest {
+            None => longest = Some((fruit.name, fruit.length)),
+            Some((_, current_length)) => {
+                if fruit.length > current_length {
+                    longest = Some((fruit.name, fruit.length))
+                }
+            },
+        }
+    }
+    longest
+}
+
+fn main() {
+    let fruits = vec!(
+        Fruit { name: "fig", length: 3 },
+        Fruit { name: "banana", length: 6 },
+        Fruit { name: "kiwi", length: 4 },
+    )
+    
+    match longest_name(fruits) {
+        Some((name, length)) => {
+            print(name)
+            print(length)
+        },
+        None => print_str("No fruits"),
+    }
+}
+```

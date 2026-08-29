@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let mut walk_order = vec![7, 4, 9, 10];
+    let mut total_even = 0;
+
+    for i in walk_order.iter_mut() {
+        if *i % 2 == 1 {
+            println!("{}", 2 * *i);
+        } else {
+            total_even += *i;
+        }
+    }
+
+    println!("Total even: {}", total_even);
+}
+```

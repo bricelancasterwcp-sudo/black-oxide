@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let input = "8 oak 15".split_whitespace();
+    for entry in input {
+        match entry.parse::<i32>() {
+            Ok(number) => println!("{}", number),
+            Err(_) => println!("bad"),
+        }
+    }
+}
+```

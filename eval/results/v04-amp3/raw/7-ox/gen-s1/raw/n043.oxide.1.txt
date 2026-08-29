@@ -1,0 +1,30 @@
+```
+struct Queue { items: Vec<Int> }
+
+fn enqueue(q: &mut Queue, x: Int) {
+    q.items.push(x)
+}
+
+fn dequeue(q: &mut Queue) -> Option<Int> {
+    q.items.pop()
+}
+
+fn exchange_first_last(q: &mut Queue) {
+    if let Some(first) = dequeue(q) {
+        if let Some(last) = q.items.last() {
+            enqueue(q, *last);
+            enqueue(q, first);
+        } else {
+            enqueue(q, first);
+        }
+    }
+}
+
+fn main() {
+    let mut q = Queue { items: vec!(1, 2, 3, 4, 5) };
+    exchange_first_last(&mut q);
+    while let Some(x) = dequeue(&mut q) {
+        print(x);
+    }
+}
+```

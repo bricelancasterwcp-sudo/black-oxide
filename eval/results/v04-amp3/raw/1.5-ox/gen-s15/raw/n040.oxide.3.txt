@@ -1,0 +1,24 @@
+```
+struct Shape {
+    kind: Kind,
+}
+
+enum Kind {
+    Square { side: Int },
+    Circle { radius: Float },
+}
+
+fn area(shape: Shape) -> Float {
+    match shape.kind {
+        Kind::Square { side } => side * side,
+        Kind::Circle { radius } => 3.14159265358979323846 * radius * radius,
+    }
+}
+
+fn main() {
+    let square = Shape {
+        kind: Kind::Square { side: 4 },
+    };
+    println!("{}", area(square));
+}
+```

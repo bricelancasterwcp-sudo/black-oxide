@@ -1,0 +1,1 @@
+fn main() { let samples = vec(5, 12, 3, 18, 9) let cutoff = 10 let under = count(samples, cutoff - 1) let over = len(samples) - under print_str("Under cutoff: ") print(under) print_str(", Over cutoff: ") print(over) }

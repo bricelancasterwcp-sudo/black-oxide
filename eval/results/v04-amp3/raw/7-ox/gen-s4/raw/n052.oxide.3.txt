@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let s = "banana";
+    for i in range(0, str_len(s)) {
+        if get(Some(vec().push(chars(s).nth(i)).pop()), 0) == Some('n') {
+            print(i);
+            print_str("\n");
+        }
+    }
+}
+```

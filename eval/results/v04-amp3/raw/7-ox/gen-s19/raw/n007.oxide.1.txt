@@ -1,0 +1,13 @@
+```oxide
+fn main() {
+    let n = 9875;
+    let s = int_to_str(n);
+    let chars = chars(s);
+    let mut sum = 0;
+    for c in chars {
+        let digit = parse_int(c)?;
+        sum += digit;
+    }
+    print(sum);
+}
+```

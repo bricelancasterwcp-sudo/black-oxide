@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let total_units = 9;
+    let unit_price_1 = 3;
+    let unit_price_2 = 2;
+
+    let total_value_line_1 = (total_units / unit_price_1) * unit_price_1;
+    let remaining_units = total_units % unit_price_1;
+    let total_value_line_2 = (remaining_units / unit_price_2) * unit_price_2;
+    let remaining_units = remaining_units % unit_price_2;
+
+    print!("Line 1: ${}", total_value_line_1);
+    print!("Line 2: ${}", total_value_line_2);
+
+    print!("Total value of both lines: ${}", (total_value_line_1 + total_value_line_2));
+}
+```

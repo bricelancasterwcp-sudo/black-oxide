@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let (name, count) = match ("fig", "banana", "kiwi").iter().map(|&s| (s, s.len())).max_by_key(|&(_, len)| len) {
+        Some((name, count)) => (name.to_string(), count),
+        None => ("", 0)
+    };
+    print_str(name);
+    print(count);
+}
+```

@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let num = 91;
+    let mut divisors = Vec::new();
+    for i in 2..num {
+        if num % i == 0 {
+            divisors.push(i);
+        }
+    }
+
+    if divisors.len() == 2 {
+        println!("yes");
+    } else {
+        println!("no");
+    }
+}
+```

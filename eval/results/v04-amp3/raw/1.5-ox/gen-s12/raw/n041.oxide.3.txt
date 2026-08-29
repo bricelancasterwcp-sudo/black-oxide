@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let mut measurements = push(push(vec![], 9), 7);
+    sort(&mut measurements); // sort before printing
+    println!("{}", measurements[0]);
+    println!("{}", measurements[1]);
+    println!("{}", measurements[2]);
+}
+```

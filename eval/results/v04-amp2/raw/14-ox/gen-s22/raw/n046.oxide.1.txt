@@ -1,0 +1,20 @@
+```rust
+fn main() {
+    let values = vec(5, 12, 3, 18, 9);
+    let cutoff = 10;
+    let below = count(values, |x| x < cutoff);
+    let above_or_equal = count(values, |x| x >= cutoff);
+    print(below);
+    print(above_or_equal);
+}
+
+fn count<T>(v: Vec<T>, pred: fn(T) -> Bool) -> Int {
+    let mut acc = 0;
+    for x in v {
+        if pred(x) {
+            acc += 1;
+        }
+    }
+    acc
+}
+```

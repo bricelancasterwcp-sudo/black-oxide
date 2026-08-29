@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    println!("{:?}", [4, 3, 2, 1]);
+}
+```
+
+Note: This code uses a literal array to represent the number 1234. The `{:?}` format specifier is used to print the elements of the array in reverse order.

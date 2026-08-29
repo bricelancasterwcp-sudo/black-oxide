@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let mut sensor = Reading { label: "sensor", values: vec![] };
+    while sensor.values.len() < 7 {
+        push(&mut sensor.values, 1);
+    }
+    print(sensor.values[6]);
+}
+```
+
+Explanation:
+- The `Reading` struct holds a `label` and a `values` vector.
+- In the `main` function, we create an instance of `Reading` with an empty `values` vector.
+- We enter a loop that continues until the length of the `values` vector is 7.
+- Inside the loop, we append the integer `1` to the end of the `values` vector using a mutable borrow (`&mut sensor.values`).
+- After the loop completes, we print the last element of the `values` vector, which should be `7`.

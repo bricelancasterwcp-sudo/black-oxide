@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut scores = vec![9, 2, 5];
+    scores.sort_unstable_by(|a, b| b.cmp(a));
+    for score in scores {
+        println!("{}", score);
+    }
+}
+```
+
+This program sorts the scores from highest to lowest and then prints each score on a line. The `sort_unstable_by` function is used because it does not guarantee that the order of equal elements will be preserved, which is important if the original order needs to be maintained.

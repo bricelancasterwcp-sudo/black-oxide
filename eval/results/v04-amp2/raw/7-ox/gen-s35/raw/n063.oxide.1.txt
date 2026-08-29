@@ -1,0 +1,18 @@
+```rust
+struct Line { items: Vec<LineItem> }
+
+struct LineItem { price: Int, quantity: Int }
+
+fn main() {
+    let line1 = Line { items: vec![LineItem { price: 3, quantity: 4 }] };
+    let line2 = Line { items: vec![LineItem { price: 2, quantity: 5 }] };
+
+    print(line_value(&line1));
+    print(line_value(&line2));
+    print(line_value(&Line { items: concat(line1.items, line2.items) }));
+}
+
+fn line_value(line: &Line) -> Int {
+    sum(map(&line.items, |item| item.price * item.quantity))
+}
+```

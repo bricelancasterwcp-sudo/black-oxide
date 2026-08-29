@@ -1,0 +1,24 @@
+```
+struct NumberOption { value: Option<Int> }
+
+fn sum_valid(numbers: Vec<NumberOption>) -> Int {
+    let mut sum = 0
+    let mut invalid_count = 0
+    for n in numbers {
+        match n.value {
+            Some(x) => sum += x,
+            None => invalid_count += 1,
+        }
+    }
+    print(sum)
+    print(invalid_count)
+}
+
+fn main() {
+    let num7 = NumberOption { value: Some(7) }
+    let numx = NumberOption { value: None }
+    let num9 = NumberOption { value: Some(9) }
+    let numq = NumberOption { value: None }
+    sum_valid(push(push(push(push(vec(), num7), numx), num9), numq))
+}
+```

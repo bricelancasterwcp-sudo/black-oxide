@@ -1,0 +1,14 @@
+```text
+fn main() {
+    let word = "banana"
+    let positions = vec()
+    for i in range(0, str_len(word)) {
+        if chars(word)[i] == "n" {
+            positions = push(positions, i)
+        }
+    }
+    for pos in positions {
+        print(pos)
+    }
+}
+```

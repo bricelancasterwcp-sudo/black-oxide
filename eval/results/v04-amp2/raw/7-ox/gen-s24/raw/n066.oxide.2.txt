@@ -1,0 +1,14 @@
+fn main() {
+    let batch = vec(9, 2, 12, 5, 16);
+    let mut kept = vec();
+    for x in batch {
+        if x < 10 {
+            kept = push(kept, x);
+        }
+    }
+    for k in kept {
+        print(k);
+        println(); // Add a newline after each printed entry
+    }
+    print(len(kept));
+}

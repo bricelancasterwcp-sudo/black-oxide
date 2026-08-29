@@ -1,0 +1,7 @@
+fn main() {
+    let texts = vec![7, None, 9, None];
+    let sum = texts.iter().filter_map(|&x| x.map(|n| n)).sum::<i32>();
+    let count = texts.iter().filter(|&&x| x.is_none()).count();
+    println!("Total: {}", sum);
+    println!("Count of non-numbers: {}", count);
+}

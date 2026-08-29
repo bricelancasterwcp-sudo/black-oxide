@@ -1,0 +1,11 @@
+fn main() {
+    let v = vec!(10, 20);
+    match get(v.clone(), 0) {
+        Some(x) => print_str(int_to_str(x)),
+        None => print_str("none")
+    }
+    match get(v.clone(), 3) {
+        Some(x) => print_str(int_to_str(x)),
+        None => print_str("none")
+    }
+}

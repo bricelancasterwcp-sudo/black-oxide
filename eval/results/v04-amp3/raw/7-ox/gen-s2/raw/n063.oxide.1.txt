@@ -1,0 +1,18 @@
+```oxide
+struct Line { items: Vec<Item> }
+
+struct Item { price: Int }
+
+fn main() {
+    let line1 = Line { items: push(push(vec(), Item { price: 3 }), Item { price: 3 }) };
+    let line2 = Line { items: push(push(push(vec(), Item { price: 2 }), Item { price: 2 }), Item { price: 2 }) };
+
+    print(line_value(line1))
+    print(line_value(line2))
+    print(line_value(concat(line1.items, line2.items)))
+}
+
+fn line_value(l: Line) -> Int {
+    sum(map(l.items, |i| i.price))
+}
+```

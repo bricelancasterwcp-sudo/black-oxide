@@ -1,0 +1,23 @@
+```text
+struct Square { side: Int }
+struct Circle { radius: Float }
+
+enum Shape {
+    Square(Square),
+    Circle(Circle),
+}
+
+let pi: Float = 3.0
+
+fn area(shape: Shape) -> Float {
+    match shape {
+        Shape::Square(square) => (square.side * square.side).to_float(),
+        Shape::Circle(circle) => pi * circle.radius * circle.radius,
+    }
+}
+
+fn main() {
+    let square = Square { side: 4 }
+    print(area(Shape::Square(square)))
+}
+```

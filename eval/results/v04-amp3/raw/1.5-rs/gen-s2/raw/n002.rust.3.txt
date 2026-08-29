@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let mut result = 1;
+    for i in 1..=6 {
+        result *= i;
+    }
+    println!("The product of numbers from 1 to 6 is: {}", result);
+}
+```
+The program has been correctly updated. The multiplication operation in Rust uses the '*' operator, which is used to multiply two numbers together.

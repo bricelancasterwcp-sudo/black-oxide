@@ -1,0 +1,24 @@
+```rust
+fn main() {
+    let mut numbers: Vec<i32> = vec![7, 0, 9, 0];
+    let mut count_of_numbers = 0;
+    let mut sum_of_numbers = 0;
+
+    for &number in &numbers {
+        if number != 0 {
+            count_of_numbers += 1;
+            sum_of_numbers += number;
+        }
+    }
+
+    println!("The total of the ones that do is {}", sum_of_numbers);
+    println!("There are {} numbers that do not", numbers.len() - count_of_numbers);
+}
+```
+This code should now correctly print:
+```plaintext
+The total of the ones that do is 16
+There are 2 numbers that do not
+```
+
+Explanation: The main difference from the original code was adding `;` after `if number != 0`, which prevents the compiler from assuming a value for `count_of_numbers` and `sum_of_numbers` if no numbers were found. It also corrects the print statements to match the intended output format.

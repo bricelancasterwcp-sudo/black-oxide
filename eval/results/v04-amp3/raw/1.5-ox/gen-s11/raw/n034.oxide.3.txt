@@ -1,0 +1,8 @@
+```rust
+fn second(v: Vec<Int>) -> Option<Int> {
+    match &v[1] {
+        Some(x) => Some(*x),
+        None => None,
+    }
+}
+```

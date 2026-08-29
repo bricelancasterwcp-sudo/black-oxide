@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let word = "granite";
+    let first_char = word.chars().next().unwrap();
+    let last_char = word.chars().last().unwrap();
+
+    println!("{}", first_char);
+    println!("{}", last_char);
+}
+```
+
+This Rust program starts by defining a variable `word` with the value "granite". It then extracts the first and last characters from this string using the `.chars()` method, converts each to a character (`.unwrap()` ensures there's no error), and prints them out.

@@ -1,0 +1,15 @@
+fn main() {
+    let samples = vec![5, 12, 3, 18, 9];
+    let cutoff = 10;
+    
+    let under_count = count(samples.iter().filter(|&&x| x < cutoff).count());
+    let over_or_equal_count = count(samples.iter().filter(|&&x| x >= cutoff).count());
+
+    print(under_count);
+    print_str(" ");
+    print(over_or_equal_count);
+}
+
+fn count(v: usize) -> i32 {
+    v as i32
+}

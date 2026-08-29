@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let mut s = String::from("banana");
+    for i in 0..s.len() {
+        if s[i] == 'n' {
+            print!("{}", i);
+        }
+    }
+}
+```

@@ -1,0 +1,17 @@
+```text
+fn safe_divide(numerator: Int, denominator: Int) -> Option<Float> {
+    if denominator == 0 {
+        None
+    } else {
+        Some(to_float(numerator) / to_float(denominator))
+    }
+}
+
+fn main() {
+    let result = safe_divide(20, 4)
+    match result {
+        Some(value) => print_str(concat("Result: ", int_to_str(trunc(value)))),
+        None => print_str("bad"),
+    }
+}
+```

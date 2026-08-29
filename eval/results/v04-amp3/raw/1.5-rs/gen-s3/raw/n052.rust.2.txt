@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let banana = "banana";
+    for (index, character) in banana.chars().enumerate() {
+        if character == 'n' {
+            println!("{}", index);
+        }
+    }
+}
+```
+The error message indicates that the pattern `(index, &character)` is expected a `char`, but it received a reference to one. This can be resolved by removing the `&` from the pattern.
+
+This change changes the iterator from `(&usize, char)` to simply `(usize, char)`. The loop will now correctly iterate over each character in the string without referencing the characters individually.

@@ -1,0 +1,11 @@
+```text
+fn main() {
+    let word = "drum";
+    let reversed = chars(word).sort().unwrap_or(vec());
+    for c in reversed {
+        print_str(c);
+    }
+    print_str("\n");
+    print_str(word);
+}
+```

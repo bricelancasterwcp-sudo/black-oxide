@@ -1,0 +1,15 @@
+```
+fn main() {
+    let s = "a1b22"
+    let total = 0
+    let count = 0
+    for c in chars(s) {
+        if parse_int(c).is_some() {
+            total += to_float(parse_int(c).unwrap()).trunc()
+            count += 1
+        }
+    }
+    print(total)
+    print(count)
+}
+```

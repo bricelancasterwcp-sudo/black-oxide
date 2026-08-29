@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let nums = [8, 3, 11, 6];
+
+    // Sort the array to easily find min and max values
+    nums.sort_unstable();
+
+    // Print the smallest figure
+    println!("Smallest figure: {}", nums[0]);
+
+    // Calculate the gap between the largest and the smallest
+    let gap = nums[nums.len() - 1] - nums[0];
+
+    // Print the gap
+    println!("Gap between largest and smallest: {}", gap);
+}
+```

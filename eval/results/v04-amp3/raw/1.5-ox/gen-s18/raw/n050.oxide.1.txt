@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let scores = vec![9, 2, 5];
+    let mut sorted_scores: Vec<Int> = Vec::new();
+    
+    while !scores.is_empty() {
+        let max_score = *scores.iter().max().unwrap();
+        sorted_scores.push(max_score);
+        scores.retain(|&x| x != max_score);
+    }
+    
+    for &score in sorted_scores.iter().rev() {
+        print!("{}", score);
+        println!("");
+    }
+}
+```

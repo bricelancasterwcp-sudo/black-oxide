@@ -1,0 +1,12 @@
+fn main() {
+    let word = "coffee";
+    let mut seen = [false; 26];
+    for c in word.chars() {
+        if let Some(index) = (c.to_ascii_lowercase() as u8).wrapping_sub(b'a') as usize {
+            if !seen[index] {
+                seen[index] = true;
+                println!("{}", c);
+            }
+        }
+    }
+}

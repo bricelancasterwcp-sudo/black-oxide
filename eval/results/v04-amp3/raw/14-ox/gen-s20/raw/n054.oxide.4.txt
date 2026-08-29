@@ -1,0 +1,20 @@
+```rust
+fn count_vowels_and_consonants(s: Str) -> (Int, Int) {
+    let vowels = 0
+    let consonants = 0
+    for c in chars(s) {
+        match c {
+            "a" | "e" | "i" | "o" | "u" => vowels = vowels + 1,
+            _ => consonants = consonants + 1,
+        }
+    }
+    (vowels, consonants)
+}
+
+fn main() {
+    let keyboard = "qwertyuiopasdfghjklzxcvbnm"
+    let (vowels, consonants) = count_vowels_and_consonants(keyboard)
+    print(vowels)
+    print(consonants)
+}
+```

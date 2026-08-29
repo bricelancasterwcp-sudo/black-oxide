@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let result: i32 = (1..=6).product();
+    println!("Product: {}", result);
+}
+```
+
+This fixed program now compiles and correctly calculates and prints the product of all whole numbers from 1 to 6.

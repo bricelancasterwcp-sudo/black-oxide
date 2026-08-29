@@ -1,0 +1,15 @@
+```rust
+fn second_entry<T>(list: &[T]) -> Option<&T> {
+    list.get(1)
+}
+
+fn main() {
+    let list7 = [1, 2];
+    let list8 = [3, 4, 5];
+    let list9: [i32; 0] = [];
+
+    println!("{:?}", second_entry(&list7)); // Some(&2)
+    println!("{:?}", second_entry(&list8)); // Some(&4)
+    println!("{:?}", second_entry(&list9)); // None
+}
+```

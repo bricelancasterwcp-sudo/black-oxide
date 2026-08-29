@@ -1,0 +1,15 @@
+```text
+fn main() {
+    let s = "a1b22";
+    let mut sum = 0;
+    let mut count = 0;
+    for c in chars(s) {
+        if str_len(c) == 1 && get(range('0', '9'), c) != None {
+            sum += parse_int(c).unwrap_or(0);
+            count += 1;
+        }
+    }
+    print(sum);
+    print(count);
+}
+```

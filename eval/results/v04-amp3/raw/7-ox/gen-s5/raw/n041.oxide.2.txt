@@ -1,0 +1,6 @@
+fn main() {
+    let measurements = vec!(9, 2, 7, 4);
+    for x in sort(measurements) {
+        print(x);
+    }
+}

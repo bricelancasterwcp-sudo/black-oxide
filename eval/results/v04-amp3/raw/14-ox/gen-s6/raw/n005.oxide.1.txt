@@ -1,0 +1,12 @@
+```
+fn main() {
+    let sum = range(1, 21).fold(0, |acc, x| {
+        if x % 2 == 0 {
+            acc + x
+        } else {
+            acc
+        }
+    });
+    print(sum);
+}
+```

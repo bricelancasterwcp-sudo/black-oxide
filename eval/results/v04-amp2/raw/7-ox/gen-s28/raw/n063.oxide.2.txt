@@ -1,0 +1,23 @@
+```rust
+struct Line { items: Vec<Int>, price_per_item: Int }
+
+fn total_value(line: Line) -> Int {
+    let mut total = 0;
+    for _ in range(0, line.items.len()) {
+        total += line.price_per_item;
+    }
+    total
+}
+
+fn main() {
+    let line1 = Line { items: push(push(vec(), 4), 4), price_per_item: 3 };
+    let line2 = Line { items: push(push(vec(), 5), 5), price_per_item: 2 };
+    print(total_value(line1))
+    print_str("\n")
+    print(total_value(line2))
+    print_str("\n")
+    let combined_items = concat(line1.items, line2.items);
+    let combined_line = Line { items: combined_items, price_per_item: 0 };
+    print(total_value(combined_line))
+}
+```

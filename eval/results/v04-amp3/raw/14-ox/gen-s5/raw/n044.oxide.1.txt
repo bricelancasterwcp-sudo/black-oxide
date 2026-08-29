@@ -1,0 +1,18 @@
+```ox
+struct Account { balance: Int }
+
+fn deposit(acc: Account, amount: Int) -> Account {
+    let new_balance = acc.balance + amount
+    Account { balance: new_balance }
+}
+
+fn main() {
+    let mut acc = Account { balance: 0 }
+    let deposits = vec(3, 1, 4, 1, 5)
+    
+    for d in deposits {
+        acc = deposit(acc, d)
+        print(acc.balance)
+    }
+}
+```

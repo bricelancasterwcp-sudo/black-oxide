@@ -1,0 +1,21 @@
+```oxide
+struct Sensor {
+    reading: Int,
+}
+
+impl Sensor {
+    fn new() -> Sensor {
+        Sensor { reading: 0 }
+    }
+
+    fn set_reading(&mut self, value: Int) {
+        self.reading = value;
+    }
+}
+
+fn main() {
+    let mut sensor = Sensor::new();
+    sensor.set_reading(7);
+    print(sensor.reading);
+}
+```

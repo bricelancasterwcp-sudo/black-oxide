@@ -1,0 +1,11 @@
+fn multiply_numbers() -> i32 {
+    let mut result = 1;
+    for i in 1..=6 {
+        result *= i;
+    }
+    result
+}
+
+fn main() {
+    println!("The product of numbers from 1 to 6 is: {}", multiply_numbers());
+}

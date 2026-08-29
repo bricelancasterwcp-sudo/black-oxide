@@ -1,0 +1,10 @@
+```
+fn main() {
+    let s = "banana";
+    for (i, ch) in s.char_indices() {
+        if ch == 'n' {
+            println!("{}", i);
+        }
+    }
+}
+```

@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut batch = vec![9, 2, 12, 5, 16];
+    for i in 0..batch.len() {
+        if batch[i] < 10 {
+            println!("{}", batch[i]);
+            batch.remove(i);
+            //i -= 1; // remove this line to fix the loop-carried move error
+        }
+    }
+    println!("Kept {} entries", batch.len());
+}
+```

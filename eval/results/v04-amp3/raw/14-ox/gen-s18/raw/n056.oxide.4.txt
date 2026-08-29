@@ -1,0 +1,16 @@
+```text
+fn main() {
+    let mut total = 0;
+    let mut count_non_numbers = 0;
+    for s in vec("7", "x", "9", "?") {
+        let parsed = parse_int(s);
+        if parsed.is_some() {
+            total += unwrap_or(parsed, 0);
+        } else {
+            count_non_numbers += 1;
+        }
+    }
+    print(total);
+    print(count_non_numbers);
+}
+```

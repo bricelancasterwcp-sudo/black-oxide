@@ -1,0 +1,30 @@
+```rust
+fn main() {
+    let mut scores = [2, 9, 5];
+    scores.sort_by(|a, b| b.cmp(a));
+    for i in (0..scores.len()).rev() {
+        println!("{}", scores[i]);
+    }
+}
+```
+
+The issue with the original code is that it was sorting the array in ascending order instead of descending order by default. Rust's `sort_by` method sorts elements based on a provided comparison function, which by default compares their values. In this case, we want to sort in descending order, so we should use a lambda expression to reverse the comparison.
+
+Here's the corrected code:
+
+```rust
+fn main() {
+    let mut scores = [2, 9, 5];
+    scores.sort_by(|a, b| b.cmp(a));
+    for i in (0..scores.len()).rev() {
+        println!("{}", scores[i]);
+    }
+}
+```
+
+This will output the scores in descending order:
+```
+9
+5
+2
+```

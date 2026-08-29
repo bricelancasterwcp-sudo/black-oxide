@@ -1,0 +1,7 @@
+fn main() {
+    let mut largest_power = 1;
+    while largest_power <= 100 / 2 {
+        largest_power *= 2;
+    }
+    println!("The biggest power of two not exceeding 100 is: {}", largest_power);
+}

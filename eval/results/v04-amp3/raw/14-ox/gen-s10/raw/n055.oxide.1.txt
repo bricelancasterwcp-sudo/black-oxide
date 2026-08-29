@@ -1,0 +1,21 @@
+```text
+struct Entry { label: Str, value: Option<Int> }
+
+fn process_entries(entries: Vec<Entry>) {
+    for entry in entries {
+        match entry.value {
+            Some(n) => print(n),
+            None => print_str("bad"),
+        }
+    }
+}
+
+fn main() {
+    let entries = vec(
+        Entry { label: "entry1", value: Some(8) },
+        Entry { label: "entry2", value: None },
+        Entry { label: "entry3", value: Some(15) },
+    )
+    process_entries(entries)
+}
+```

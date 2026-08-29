@@ -1,0 +1,12 @@
+```text
+struct Log { entries: Vec<Int> }
+
+fn main() {
+    let log = Log { entries: push(push(push(push(vec(), 6), 7), 8), 9) }
+    let first_entry = get(log.entries, 0)?
+    print(first_entry)
+    let last_index = len(log.entries) - 1
+    let last_entry = get(log.entries, last_index)?
+    print(last_entry)
+}
+```

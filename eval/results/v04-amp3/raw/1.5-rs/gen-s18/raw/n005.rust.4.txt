@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let total: i32 = (1..=20).filter(|&x| x % 2 == 0).sum();
+    println!("Total of even numbers between 1 and 20 inclusive: {}", total);
+}
+```
+
+The issue in the original code is that it does not include a semicolon at the end of the statement `println!("Total of even numbers between 1 and 20 inclusive: {}", total);`. Without a semicolon, the compiler treats it as an expression and returns its value instead of printing the string to the console.

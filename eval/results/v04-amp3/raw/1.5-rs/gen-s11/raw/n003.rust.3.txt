@@ -1,0 +1,6 @@
+```rust
+fn main() {
+    let count = (1..=36).filter(|&x| x != 0 && x % 36 == 0).count();
+    println!("The number of whole numbers from 1 to 36 that divide 36 exactly is: {}", count);
+}
+```

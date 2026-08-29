@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let input = "coffee";
+    let mut occurrences: std::collections::HashMap<char, u32> = std::collections::HashMap::new();
+
+    for c in input.chars() {
+        *occurrences.entry(c).or_insert(0) += 1;
+    }
+
+    for (c, count) in occurrences.into_iter().filter(|&(c, count)| count > 1) {
+        println!("{}", c);
+    }
+}
+```

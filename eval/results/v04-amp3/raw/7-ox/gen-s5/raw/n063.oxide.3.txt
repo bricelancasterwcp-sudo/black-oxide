@@ -1,0 +1,12 @@
+```rust
+struct Line { items: Vec<Uint>, price_per_item: Uint }
+
+fn main() {
+    let first_line = Line { items: vec![3, 3, 3, 3], price_per_item: 2 };
+    let second_line = Line { items: vec![2, 2, 2, 2, 2], price_per_item: 1 };
+
+    print(first_line.items.len() * first_line.price_per_item);
+    print(second_line.items.len() * second_line.price_per_item);
+    print((first_line.items.len() as Uint) * first_line.price_per_item + (second_line.items.len() as Uint) * second_line.price_per_item);
+}
+```

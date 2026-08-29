@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let n = 91;
+    let mut factors = Vec::new();
+    for i in 2..=((n as f64).sqrt()) as usize + 1 {
+        if n % i == 0 {
+            factors.push(i);
+            if i * i != n {
+                factors.push(n / i);
+            }
+        }
+    }
+    if factors.len() > 2 {
+        print_str("no");
+    } else {
+        print_str("yes");
+    }
+}
+```

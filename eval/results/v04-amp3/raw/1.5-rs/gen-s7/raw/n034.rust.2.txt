@@ -1,0 +1,14 @@
+```rust
+
+fn main() {
+    let result = second_entry(vec![7, 8, 9]);
+    match result {
+        Some(value) => println!("The second element is: {}", value),
+        None => println!("There are not enough elements in the list."),
+    }
+}
+
+fn second_entry<T>(list: Vec<T>) -> Option<&T> {
+    list.get(1)
+}
+```

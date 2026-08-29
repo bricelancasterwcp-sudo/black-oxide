@@ -1,0 +1,35 @@
+```rust
+struct Square {
+    side: Int,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+trait Area {
+    fn area(&self) -> Float;
+}
+
+impl Area for Square {
+    fn area(&self) -> Float {
+        self.side * self.side
+    }
+}
+
+impl Area for Circle {
+    fn area(&self) -> Float {
+        std::f64::consts::PI * self.radius * self.radius
+    }
+}
+
+fn main() {
+    let square = Square { side: 4 };
+    println!("Area of the square is {}", square.area()); // Output: Area of the square is 16.0
+
+    let circle = Circle { radius: 3 as Float };
+    println!("Area of the circle is {}", circle.area());
+}
+```
+
+This program defines a `Square` and `Circle` struct, implements the `Area` trait for each with an area calculation method. In the `main` function, it creates instances of these shapes, prints their areas using the `area` method, and demonstrates how to use the trait in a loop.

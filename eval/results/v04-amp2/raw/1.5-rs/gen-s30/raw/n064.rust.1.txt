@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let numbers = [10, 20];
+    match numbers.get(0) {
+        Some(&value) => println!("{}", value),
+        None => (),
+    }
+    match numbers.get(3) {
+        Some(&value) => println!("{}", value),
+        None => (),
+    }
+}
+```

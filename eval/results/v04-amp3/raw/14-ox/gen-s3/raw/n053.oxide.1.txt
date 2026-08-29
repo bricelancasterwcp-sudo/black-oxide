@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let s = "drum";
+    let reversed: Vec<Str> = chars(s).rev().collect();
+    print_str(concat(reversed));
+    print_str("\n");
+    print_str(s);
+}
+```

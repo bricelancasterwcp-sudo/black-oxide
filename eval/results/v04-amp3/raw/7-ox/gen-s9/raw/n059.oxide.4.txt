@@ -1,0 +1,17 @@
+fn count_words(s: Str) -> Int {
+    let words = s.split(' ')
+    words.len()
+}
+
+fn count_chars(s: Str) -> Int {
+    str_len(s)
+}
+
+fn main() {
+    let phrase = "when in doubt go home"
+    let word_count = count_words(phrase.clone())
+    let char_count = count_chars(phrase)
+    print(word_count)
+    print(' ')
+    print(char_count)
+}

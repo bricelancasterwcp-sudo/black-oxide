@@ -1,0 +1,28 @@
+```rust
+fn main() {
+    let mut state = "green";
+
+    loop {
+        match std::thread::sleep(std::time::Duration::from_secs(1)) {
+            Ok(_) => match std::thread::sleep(std::time::Duration::from_secs(1)) {
+                Ok(_) => match state {
+                    "green" => {
+                        println!("go for green");
+                        state = "yellow";
+                    }
+                    "red" => {
+                        println!("stop for red");
+                        state = "yellow";
+                    }
+                    "yellow" => {
+                        println!("wait for yellow");
+                    }
+                    _ => unreachable!(),
+                },
+                Err(_) => println!("yellow"),
+            },
+            Err(_) => println!("red"),
+        };
+    }
+}
+```

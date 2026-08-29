@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    match "8".parse::<Int>() {
+        Ok(n) => println!("{}", n),
+        Err(_) => println!("bad"),
+    }
+
+    match "oak".parse::<Str>() {
+        Ok(s) => println!("{}", s),
+        Err(_) => println!("bad"),
+    }
+
+    match "15".parse::<Int>() {
+        Ok(n) => println!("{}", n),
+        Err(_) => println!("bad"),
+    }
+}
+```

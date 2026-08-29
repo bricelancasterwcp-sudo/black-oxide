@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let mut r = "drum".chars().rev();
+    while let Some(c) = r.next() {
+        print!("{}", c);
+    }
+    println!(" {}", r.as_str());
+}
+```
+
+Explanation:
+The error messages indicate several issues with the code:
+1. The `while` loop and `print!` calls should be on the same line.
+2. The `print!` statement is missing a space before it, causing an unexpected character error.
+3. The `print!` statement is not properly formatted, with incorrect syntax.
+4. The `as_str()` method call is misplaced, it should come after the `println!(" {}", ...);`.
+5. The `while` loop and `print!` statements need to be separated by a semicolon.
+
+The corrected program ensures that both print statements are on the same line and properly formatted.

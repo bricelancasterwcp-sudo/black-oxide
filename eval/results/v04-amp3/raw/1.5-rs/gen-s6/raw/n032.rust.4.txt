@@ -1,0 +1,8 @@
+fn main() {
+    let x1: isize = 1;
+    let y1: isize = 5;
+
+    let x2: isize = x1 + 10; // Fixed the syntax error
+
+    println!("{}", x1 + x2); // Corrected the output to be the sum of x1 and x2
+}

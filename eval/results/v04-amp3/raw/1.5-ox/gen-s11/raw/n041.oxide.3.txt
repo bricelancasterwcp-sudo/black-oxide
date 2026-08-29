@@ -1,0 +1,19 @@
+```rust
+struct Measurement { value: Int }
+
+fn main() {
+    let readings = vec![
+        Measurement { value: 9 },
+        Measurement { value: 2 },
+        Measurement { value: 7 },
+        Measurement { value: 4 }
+    ];
+
+    let mut sorted_readings = readings.clone();
+    sorted_readings.sort_by_key(|m| m.value);
+
+    for reading in sorted_readings {
+        println!("{}", reading.value);
+    }
+}
+```

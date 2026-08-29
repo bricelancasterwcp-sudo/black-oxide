@@ -1,0 +1,18 @@
+```
+fn first_letter(s: Str) -> Str {
+    let chars = chars(s)
+    get(chars, 0)?.unwrap_or("")
+}
+
+fn last_letter(s: Str) -> Str {
+    let chars = chars(s)
+    let len = str_len(s)
+    get(chars, len - 1)?.unwrap_or("")
+}
+
+fn main() {
+    let word = "granite"
+    print(first_letter(word))
+    print(last_letter(word))
+}
+```

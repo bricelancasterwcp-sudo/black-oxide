@@ -1,0 +1,12 @@
+```
+fn main() {
+    let values = push(push(vec(), 2), 3);
+    push(values, 4);
+    push(values, 9);
+
+    for &x in values.iter().sorted() {
+        print!("{}", x);
+        print_str("\n");
+    }
+}
+```

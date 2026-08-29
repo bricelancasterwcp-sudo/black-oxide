@@ -1,0 +1,39 @@
+```rust
+fn main() {
+    let x = match read_int() {
+        Some(n) => n,
+        None => 0,
+    };
+    println!("{}", x);
+
+    let y = match read_string() {
+        Some(s) => s,
+        None => "bad",
+    };
+    println!("{}", y);
+
+    let z = match read_float() {
+        Some(f) => f,
+        None => 0.0,
+    };
+    println!("{}", z);
+}
+
+fn read_int() -> Option<Int> {
+    // Read and parse integer
+    // Assume valid input
+    Some(8)
+}
+
+fn read_string() -> Option<Str> {
+    // Read and parse string
+    // Assume valid input
+    Some("oak".to_string())
+}
+
+fn read_float() -> Option<Float> {
+    // Read and parse float
+    // Assume valid input
+    Some(15.0)
+}
+```

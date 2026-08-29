@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut x = 1;
+    while x * x <= 100 {
+        x *= 2;
+    }
+    println(x);
+}
+```
+
+This Rust program defines a function `main` that initializes a mutable variable `x` to 1. It enters a loop that continues as long as `x * x` is less than or equal to 100. Inside the loop, `x` is doubled (`x *= 2`). Once the loop exits (which happens when `x * x` exceeds 100), the program prints `x`. This ensures that `x` becomes the biggest power of two less than or equal to 100, which is then printed.

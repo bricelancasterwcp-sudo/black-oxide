@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let vec = vec![10, 20];
+    match get(vec, 1) {
+        Some(n) => print(n),
+        None => println_str("position one is empty"),
+    }
+    match get(vec, 3) {
+        Some(n) => print(n),
+        None => println_str("position four is empty"),
+    }
+}
+```

@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let word = "granite";
+    let open_char = word.chars().next().unwrap();
+    let close_char = word.chars().last().unwrap();
+
+    println!("{}", open_char);
+    println!("{}", close_char);
+}
+```
+
+This program defines a `main` function that initializes a string variable `word` with the value `"granite"`. It then uses the `chars()` method to iterate over each character in the string. The `next()` and `last()` methods are used to get the first and last characters, respectively. These characters are printed on separate lines using `println!()`.

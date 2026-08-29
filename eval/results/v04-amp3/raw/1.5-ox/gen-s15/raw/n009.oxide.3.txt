@@ -1,0 +1,12 @@
+```
+fn main() {
+    let n = 1234;
+    let mut reversed = String::new();
+    while n > 0 {
+        let digit = n % 10;
+        reversed.insert(0, digit.to_string());
+        n /= 10;
+    }
+    println!("{}", reversed);
+}
+```

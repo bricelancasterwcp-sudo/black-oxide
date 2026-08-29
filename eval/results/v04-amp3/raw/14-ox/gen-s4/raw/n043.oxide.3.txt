@@ -1,0 +1,30 @@
+struct Queue { items: Vec<Int> }
+
+fn exchange_first_last(q: Queue) -> Option<Queue> {
+    let len = len(q.items)
+    if len < 2 {
+        return Some(q)
+    }
+    let first = get(q.items, 0)?
+    let last = get(q.items, len - 1)?
+    let middle = vec()
+    for i in range(1, len - 1) {
+        middle = push(middle, get(q.items, i)?)
+    }
+    Some(Queue { items: push(push(middle, last), first) })
+}
+
+fn print_queue(q: Queue) {
+    for x in q.items {
+        print(x)
+        print_str("\n")
+    }
+}
+
+fn main() {
+    let q = Queue { items: range(1, 6) }
+    match exchange_first_last(clone(q)) {
+        Some(exchanged_q) => print_queue(exchanged_q),
+        None => print_str("Queue is too short to exchange"),
+    }
+}

@@ -1,0 +1,15 @@
+Here's the completed program:
+
+```rust
+fn main() {
+    let mut log = vec![6, 7, 8, 9];
+    
+    println!("First entry: {}", log[0]);
+    println!("Last entry: {}", log.log().last().unwrap());
+}
+```
+
+Explanation of changes:
+1. `log.len()` returns the number of elements in the vector.
+2. `.last()` returns a reference to the last element in the vector.
+3. `.unwrap()` is used to safely unwrap the reference and get the value. If the vector is empty, it will panic.

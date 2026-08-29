@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let mut count = 0;
+    for n in 1..=36 {
+        if 36 % n == 0 {
+            count += 1;
+        }
+    }
+    print(count);
+}
+```
+
+Explanation:
+The original program had a syntax error because the semicolons were placed incorrectly. In Rust, they should be at the end of statements or before blocks. The `print` function is called in the correct way, using parentheses to invoke it with an argument.

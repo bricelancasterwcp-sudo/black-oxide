@@ -1,0 +1,24 @@
+```rust
+struct Entry { value: Str }
+
+fn process_entry(e: Entry) -> Option<Int> {
+    let n = parse_int(e.value)?
+    Some(n)
+}
+
+fn main() {
+    let entries = vec![
+        Entry { value: "8" },
+        Entry { value: "oak" },
+        Entry { value: "15" }
+    ];
+    
+    for e in entries {
+        match process_entry(e) {
+            Some(n) => print(n),
+            None => print_str("bad"),
+        }
+        print_str(", ")
+    }
+}
+```

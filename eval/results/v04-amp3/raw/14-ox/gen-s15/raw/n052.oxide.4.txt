@@ -1,0 +1,1 @@
+fn find_n_positions(s: Str) -> Option<Vec<Int>> { let positions = vec() let i = 0 while i < str_len(s) { if get(s, i)? == 'n' { positions = push(positions, i) } i = i + 1 } Some(positions) } fn main() { let word = "banana" match find_n_positions(word.to_str()) { Some(positions) => { for pos in positions { print(pos) } }, None => {} } }

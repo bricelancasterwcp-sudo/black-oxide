@@ -1,0 +1,11 @@
+```
+fn main() {
+    let mut max_power = -1
+    let mut power = 1
+    while power <= 100 {
+        max_power = power
+        power *= 2
+    }
+    print(max_power)
+}
+```

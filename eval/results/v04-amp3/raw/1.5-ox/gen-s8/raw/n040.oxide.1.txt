@@ -1,0 +1,26 @@
+```rust
+fn main() {
+    let square = Square(4);
+    println(square.area());
+}
+
+struct Shape {
+    kind: String,
+    data: Vec<f64>,
+}
+
+impl Shape {
+    fn area(&self) -> f64 {
+        match self {
+            Square(side) => side * side,
+            Circle(radius) => 3.14 * radius * radius,
+        }
+    }
+}
+
+#[derive(Debug)]
+struct Square(f64);
+
+#[derive(Debug)]
+struct Circle(f64);
+```

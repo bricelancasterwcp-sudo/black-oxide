@@ -1,0 +1,25 @@
+```
+fn main() {
+    let mut max_len = 0;
+    let mut fruit = "";
+    
+    if str_len(fig) > max_len {
+        max_len = str_len(fig);
+        fruit = "fig";
+    }
+    
+    if str_len(banana) > max_len {
+        max_len = str_len(banana);
+        fruit = "banana";
+    }
+    
+    if str_len(kiwi) > max_len {
+        max_len = str_len(kiwi);
+        fruit = "kiwi";
+    }
+    
+    print(fruit);
+    print_str(" ");
+    print(max_len);
+}
+```

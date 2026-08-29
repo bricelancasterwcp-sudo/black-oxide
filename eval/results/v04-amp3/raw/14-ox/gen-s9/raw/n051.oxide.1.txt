@@ -1,0 +1,7 @@
+```text
+fn main() {
+    let s = "granite"
+    print_str(chars(s)[0])
+    print_str(chars(s)[str_len(s)-1])
+}
+```

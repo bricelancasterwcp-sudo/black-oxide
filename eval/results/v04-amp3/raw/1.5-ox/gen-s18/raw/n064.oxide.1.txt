@@ -1,0 +1,23 @@
+```rust
+struct List { values: Vec<Int> }
+
+fn main() {
+    let l = List { values: vec![10, 20] };
+    print(first(l));           // first position, or none when empty
+    print(second(l));          // second position, or none when empty
+}
+
+fn first(list: List) -> Option<Int> {
+    match list.values.get(1) {
+        Some(n) => Some(*n),
+        None => None,
+    }
+}
+
+fn second(list: List) -> Option<Int> {
+    match list.values.get(3) {
+        Some(n) => Some(*n),
+        None => None,
+    }
+}
+```

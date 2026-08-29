@@ -1,0 +1,5 @@
+fn main() {
+    let mut sensor = 0;
+    sensor += 7; // Update the sensor's value to 7
+    println!("The sensor reading is: {}", sensor);
+}

@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let radius: f64 = 3.0; // Using the value 3 as the radius for a circle
+    let area_of_circle = std::f64::consts::PI * (radius.powi(2)); // Circle area calculation: πr²
+    println!("Area of a circle: {:.2}", area_of_circle); // Printing the area with two decimal places
+}
+```

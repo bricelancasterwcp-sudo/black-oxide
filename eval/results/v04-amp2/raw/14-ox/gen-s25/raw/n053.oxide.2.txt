@@ -1,0 +1,19 @@
+fn reverse(s: Str) -> Option<Str> {
+    let chars = chars(s)
+    let len = len(chars)
+    let mut result = vec()
+    for i in range(0, len) {
+        let c = get(chars, len - 1 - i)?
+        result = push(result, c)
+    }
+    Some(concat(result))
+}
+
+fn main() {
+    let word = "drum"
+    match reverse(word) {
+        Some(reversed) => print_str(reversed),
+        None => print_str("error"),
+    }
+    print_str(word)
+}

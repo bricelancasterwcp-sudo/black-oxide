@@ -1,0 +1,12 @@
+```rust
+struct Sensor { value: Int }
+struct Reading { label: Str, values: Vec<Int> }
+
+fn main() {
+    let mut sensor = Sensor { value: 0 };
+    sensor.value += 7;
+    print(sensor.value);
+}
+```
+
+In this solution, the `Sensor` struct holds a single integer, which is used by the `Reading` struct to store readings. The `main` function initializes a `Sensor` with an initial value of zero, increments its value by seven using the assignment operator, and then prints the new value of the sensor.

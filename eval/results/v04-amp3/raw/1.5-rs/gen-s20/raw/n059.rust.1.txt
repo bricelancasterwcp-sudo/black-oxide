@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let text = "when in doubt go home";
+    let word_count = text.split_whitespace().count();
+    let char_count = text.chars().count();
+
+    println!("Words: {}", word_count);
+    println!("Characters (including spaces): {}", char_count);
+}
+```
+
+When you run this program, it will output:
+
+```
+Words: 4
+Characters (including spaces): 13
+```

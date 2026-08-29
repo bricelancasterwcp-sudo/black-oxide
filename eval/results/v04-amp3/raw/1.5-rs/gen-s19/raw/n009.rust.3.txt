@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let numbers = [4, 3, 2, 1];
+    for &num in numbers.iter().rev() {
+        println!("{}", num);
+    }
+}
+```

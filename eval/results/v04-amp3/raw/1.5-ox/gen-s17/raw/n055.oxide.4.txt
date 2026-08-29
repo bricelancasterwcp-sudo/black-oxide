@@ -1,0 +1,40 @@
+```rust
+fn main() {
+    match read_int("8") {
+        Some(n) => println!("{}", n),
+        None => println!("bad"),
+    }
+    match read_str("oak") {
+        Some(s) => println!("{}", s),
+        None => println!("bad"),
+    }
+    match read_float("15.5") {
+        Some(f) => println!("{}", f),
+        None => println!("bad"),
+    }
+}
+
+fn read_int(str: &str) -> Option<Int> {
+    str.parse::<Int>().ok()
+}
+fn read_str(str: &str) -> Option<Str> {
+    let s = String::from(str);
+    Some(s)
+}
+fn read_float(str: &str) -> Option<Float> {
+    let f = str.parse::<Float>().ok();
+    if let Ok(f) = f {
+        Some(f)
+    } else {
+        None
+    }
+}
+
+fn to_int(s: &str) -> Result<Int, ParseIntError> {
+    s.parse::<Int>()
+}
+
+fn to_float(s: &str) -> Result<Float, ParseFloatError> {
+    s.parse::<Float>()
+}
+```

@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let mut width = 2;
+    let height = 3;
+
+    println!("Original area: {}", width * height);
+
+    width = 5;
+
+    println!("New area: {}", width * height);
+}
+```
+
+The original program had a small mistake. The variable `width` was not properly initialized before being used in the first `println!`. The corrected version initializes `width` to 2 and then updates it to 5, printing both the original and new areas correctly.

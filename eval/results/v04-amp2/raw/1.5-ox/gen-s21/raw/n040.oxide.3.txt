@@ -1,0 +1,17 @@
+```rust
+struct Square { side: Int }
+struct Circle { radius: Float }
+
+fn main() {
+    let shape = if true {
+        Square { side: 4 }
+    } else {
+        Circle { radius: 3.0 }
+    };
+
+    match shape {
+        Square { side } => print(int_to_str(side * side)),
+        Circle { radius } => print(int_to_str(trunc(radius * radius * 3.141592653589793))),
+    }
+}
+```

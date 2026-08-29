@@ -1,0 +1,20 @@
+```
+fn main() {
+    let eight = parse_int("8")?;
+    let oak = parse_int("oak")?;
+    let fifteen = parse_int("15")?;
+
+    match (eight, oak, fifteen) {
+        (Some(e), Some(o), Some(f)) => {
+            println!("{}", e);
+            println!(" {}", o);
+            println!(" {}", f);
+        }
+        _ => {
+            println!("bad");
+            println!("bad");
+            println!("bad");
+        }
+    }
+}
+```

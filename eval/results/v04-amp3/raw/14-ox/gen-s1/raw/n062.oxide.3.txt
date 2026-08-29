@@ -1,0 +1,17 @@
+```
+fn process_signal(signal: Str) -> Str {
+    match signal {
+        "green" => "go",
+        "red" => "stop",
+        "yellow" => "wait",
+        _ => "unknown",
+    }
+}
+
+fn main() {
+    let signals = push(push(push(vec(), "green"), "red"), "yellow");
+    for s in signals {
+        print(process_signal(s))
+    }
+}
+```

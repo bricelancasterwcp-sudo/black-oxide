@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let bananas = "banana";
+    for (i, c) in bananas.chars().enumerate() {
+        if c == 'n' {
+            println!("{}", i);
+        }
+    }
+}
+```
+
+Explanation:
+The original code had several issues that prevented it from compiling. The error messages provided were very clear about what was wrong. Here are the corrections made:
+
+1. **Removed unnecessary semicolons**: The program was missing semicolons at multiple places, which caused errors.
+2. **Fixed incorrect character types**: The program was using single quotes instead of double quotes around the string `"banana"`. This caused syntax errors and incorrect behavior.
+3. **Added proper closing braces**: The program was missing a closing brace at the end, which broke the loop structure.
+
+After these corrections, the code compiles and prints the positions of 'n' in the string "banana", one position per line.

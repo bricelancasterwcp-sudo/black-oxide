@@ -1,0 +1,1 @@
+fn main() { let values = vec("7", "x", "9", "?"); let mut sum = 0; let mut non_numbers = 0; for v in values { match parse_int(v) { Some(n) => sum += n, None => non_numbers += 1, } } print(sum); print(non_numbers); }

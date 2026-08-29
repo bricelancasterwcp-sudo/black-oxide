@@ -1,0 +1,20 @@
+```oxide
+fn sum_and_count_digits(s: Str) -> (Int, Int) {
+    let mut sum = 0;
+    let mut count = 0;
+    for c in chars(s) {
+        if '0' <= c && c <= '9' {
+            sum += parse_int(concat(c, ""))?;
+            count += 1;
+        }
+    }
+    (sum, count)
+}
+
+fn main() {
+    let result = sum_and_count_digits("a1b22");
+    print(result.0);
+    print_str(" ");
+    print(result.1);
+}
+```

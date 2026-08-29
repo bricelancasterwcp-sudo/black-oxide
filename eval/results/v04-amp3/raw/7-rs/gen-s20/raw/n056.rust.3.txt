@@ -1,0 +1,14 @@
+fn main() {
+    let mut sum = 0;
+    let mut count_non_numbers = 0;
+
+    for &item in &[7, 'x', 9, '?'] {
+        match item {
+            num @ 0..=9 => sum += num as u8,
+            _ => count_non_numbers += 1,
+        }
+    }
+
+    println!("Total of numbers: {}", sum);
+    println!("Count of non-numbers: {}", count_non_numbers);
+}

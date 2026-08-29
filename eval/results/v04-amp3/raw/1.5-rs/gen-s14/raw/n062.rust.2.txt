@@ -1,0 +1,19 @@
+fn main() {
+    let mut signal = 0;
+
+    loop {
+        println!("Signal received");
+
+        match signal {
+            1 => println!("Go for green"),
+            2 => println!("Stop for red"),
+            3 => println!("Wait for yellow"),
+            _ => (),
+        }
+
+        signal += 1;
+        if signal > 3 {
+            break;
+        }
+    }
+}

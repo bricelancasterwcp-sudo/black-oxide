@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let n = 9875;
+    let mut sum = 0;
+
+    while n > 0 {
+        sum += n % 10; // Fix: remove semicolon after the expression
+        n /= 10; // Fix: remove semicolon after the expression
+    }
+
+    print(sum); // Fix: remove semicolon after the expression
+}
+```

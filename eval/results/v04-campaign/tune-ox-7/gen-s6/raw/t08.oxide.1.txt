@@ -1,0 +1,27 @@
+fn main() {
+    let nums = vec(3, 8, -2, 12, 7)
+    let mut pos_count = 0
+    let mut max_val = None
+    for n in nums {
+        if n > 0 {
+            pos_count = pos_count + 1
+        }
+        match max_val {
+            Some(m) => {
+                if n > m {
+                    max_val = Some(n)
+                } else {
+                    max_val = Some(m)
+                }
+            },
+            None => {
+                max_val = Some(n)
+            },
+        }
+    }
+    print(pos_count)
+    match max_val {
+        Some(v) => print(v),
+        None => print_str("No values"),
+    }
+}

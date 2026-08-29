@@ -1,0 +1,21 @@
+```rust
+fn main() {
+    let samples = vec![5, 12, 3, 18, 9];
+    let cutoff = 10;
+
+    let mut under_cutoff = 0;
+    let mut over_cutoff = 0;
+
+    for x in samples {
+        if x < cutoff {
+            under_cutoff += 1;
+        } else {
+            over_cutoff += 1;
+        }
+    }
+
+    print(under_cutoff);
+    print_str(" ");
+    print(over_cutoff);
+}
+```

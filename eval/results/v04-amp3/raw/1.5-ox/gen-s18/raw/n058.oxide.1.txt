@@ -1,0 +1,16 @@
+```rust
+use std::collections::HashMap;
+use std::io;
+
+fn main() {
+    let mut counter = HashMap::new();
+    for c in "coffee".chars().filter(|&c| c != ' ') {
+        *counter.entry(c).or_insert(0) += 1;
+    }
+    for (char, count) in counter {
+        if count > 1 {
+            print!("{}", char);
+        }
+    }
+}
+```

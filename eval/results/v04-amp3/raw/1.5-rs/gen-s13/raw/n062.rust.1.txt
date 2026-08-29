@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let signals = ["green", "red", "yellow"];
+    
+    for signal in signals.iter() {
+        match signal {
+            "green" => println!("Go"),
+            "red" => println!("Stop"),
+            "yellow" => println!("Wait"),
+            _ => panic!("Invalid signal received"),
+        }
+    }
+}
+```

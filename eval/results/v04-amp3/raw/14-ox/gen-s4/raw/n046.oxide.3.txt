@@ -1,0 +1,20 @@
+```text
+fn main() {
+    let values = vec(5, 12, 3, 18, 9)
+    let cutoff = 10
+    let below = count(values, cutoff)
+    let above_or_equal = len(values) - below
+    print(below)
+    print(above_or_equal)
+}
+
+fn count(v: Vec<Int>, cutoff: Int) -> Int {
+    let mut acc = 0
+    for x in v {
+        if x < cutoff {
+            acc = acc + 1
+        }
+    }
+    acc
+}
+```

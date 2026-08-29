@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut freq = [0; 26];
+    for c in "coffee".chars().map(|c| (c as u8 - b'a') as usize) {
+        freq[c] += 1;
+    }
+    for (i, &f) in freq.iter().enumerate() {
+        if f > 1 {
+            print!("{}", (b'a' + i as u8) as char);
+        }
+    }
+}
+```

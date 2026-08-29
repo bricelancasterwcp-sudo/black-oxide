@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut q = vec![1, 2, 3, 4, 5];
+    let temp = q.remove(0); // remove first element and store it in temp
+    q.push(temp);          // push the removed element to the end of the vector
+    for i in &q {
+        print!("{}", i);
+        println!();         // print each element on a new line
+    }
+}
+```

@@ -1,0 +1,25 @@
+```
+fn main() {
+    let mut total = 0;
+    let mut carry = false;
+
+    for x in [7, 4, 9, 10].iter().rev() {
+        if x % 2 == 1 {
+            println!("{}\n", 2 * x);
+            carry = true;
+        } else {
+            if carry {
+                total += x + 1;
+                carry = false;
+            }
+        }
+    }
+
+    while carry {
+        total += 1;
+        carry = false;
+    }
+
+    println!("Total of even entries: {}", total);
+}
+```

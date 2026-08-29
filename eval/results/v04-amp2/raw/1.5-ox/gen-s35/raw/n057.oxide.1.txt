@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut fruit_counts = HashMap::new();
+
+    for &fruit in ["fig", "banana", "kiwi"].iter() {
+        *fruit_counts.entry(fruit).or_insert(0) += 1;
+    }
+
+    let (most_frequent, count) = fruit_counts.iter().max_by(|a, b| a.1.cmp(b.1)).unwrap();
+
+    println!("The fruit with the most letters is {} with {} letters.", most_frequent, count);
+}
+```

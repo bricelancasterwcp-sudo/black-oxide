@@ -1,0 +1,11 @@
+```text
+struct Log { entries: Vec<Int> }
+
+fn main() {
+    let log = Log { entries: vec().push(6).push(7).push(8).push(9) }
+    let start = get(log.entries, 0)?.unwrap_or(-1)
+    let end = get(log.entries, len(log.entries) - 1)?.unwrap_or(-1)
+    print(start)
+    print(end)
+}
+```

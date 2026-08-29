@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let str = "drum";
+    for c in str.chars().rev() {
+        print!("{}", c);
+    }
+    println!("{}", str.to_uppercase());
+}
+```
+
+### Explanation of Changes:
+1. **Removed Semicolons**: Rust uses semicolons to end statements, not newlines.
+2. **Fixed Typos and Errors**:
+   - Line 4: Changed `str.char()` to `str.chars()`.
+   - Line 5: Added `.to_uppercase()` to print the string in uppercase.
+3. **Removed Unnecessary Semicolons**: Lines 2, 6, and 7 were missing semicolons.
+
+With these corrections, the program will correctly print the word "drum" with its letters running back to front and then in uppercase.

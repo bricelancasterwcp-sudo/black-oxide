@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let p1 = (1, 5);
+    let p2 = (10, 5);
+
+    println!("{}", p1.0 + p2.1); // Corrected to access the second element of the tuple
+}
+```
+
+Explanation:
+The original program used `p2[1]` instead of `p2.1`, which is incorrect because `p2` is a tuple, not an array. The correct way to access elements in a tuple in Rust is with dot notation (`.0`, `.1`, etc.).

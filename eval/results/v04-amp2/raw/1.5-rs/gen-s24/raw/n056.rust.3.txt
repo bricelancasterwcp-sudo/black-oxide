@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let numbers = [7, 10, 9, 42]; // Assuming 42 is a valid number
+    let mut count_with_numbers = 0;
+    let mut count_without_numbers = 0;
+
+    for &num in &numbers {
+        if num.is_integer() {
+            count_with_numbers += 1;
+        } else {
+            count_without_numbers += 1;
+        }
+    }
+
+    println!("Total with numbers: {}", count_with_numbers);
+    println!("Total without numbers: {}", count_without_numbers);
+}
+```

@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let mut numbers = vec![9, 2, 12, 5, 16];
+    for &mut x in &mut numbers {
+        if x < 10 {
+            *x *= 2; // Use * to mutate a mutable reference
+        }
+    }
+    for n in numbers {
+        println!("{}", n);
+    }
+    println!("Kept: {}", numbers.len());
+}
+```

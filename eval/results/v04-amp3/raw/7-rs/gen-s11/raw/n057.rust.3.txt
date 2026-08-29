@@ -1,0 +1,15 @@
+fn main() {
+    let words = ["fig", "banana", "kiwi"];
+    let mut max_word = "";
+    let mut max_count = 0;
+
+    for word in words.iter() {
+        if word.len() > max_count {
+            max_word = *word;
+            max_count = word.len();
+        }
+    }
+
+    println!("The word with the most letters is: {}", max_word);
+    println!("It has {} letters.", max_count);
+}

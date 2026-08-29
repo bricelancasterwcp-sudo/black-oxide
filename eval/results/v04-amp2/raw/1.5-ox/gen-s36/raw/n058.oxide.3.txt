@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut s = "coffee".to_string();
+    for c in s.chars() {
+        if s.matches(c).count() > 1 {
+            println!("{}", c);
+            s.remove(s.find(c).unwrap());
+        }
+    }
+}
+```

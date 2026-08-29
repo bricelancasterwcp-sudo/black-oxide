@@ -1,0 +1,14 @@
+struct Measurement { values: Vec<Int> }
+
+fn sort_and_print(m: Measurement) {
+    let sorted_values = sort(m.values)
+    for v in sorted_values {
+        print(v)
+    }
+}
+
+fn main() {
+    let measurements = Measurement { values: vec() }
+    measurements.values = push(push(push(push(measurements.values, 9), 2), 7), 4)
+    sort_and_print(measurements)
+}

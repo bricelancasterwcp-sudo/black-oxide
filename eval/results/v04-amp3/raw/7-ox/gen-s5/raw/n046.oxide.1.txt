@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let samples = vec![5, 12, 3, 18, 9];
+    let below = count(samples.clone(), |x| x < 10);
+    let above_or_equal = samples.len() - below;
+    
+    print(below);
+    print_str(" ");
+    print(above_or_equal);
+}
+```

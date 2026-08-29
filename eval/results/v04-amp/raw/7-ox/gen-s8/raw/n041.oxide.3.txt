@@ -1,0 +1,7 @@
+fn main() {
+    let mut values = vec![9, 2, 7, 4];
+    sort(&mut values);
+    for x in values {
+        print(x);
+    }
+}

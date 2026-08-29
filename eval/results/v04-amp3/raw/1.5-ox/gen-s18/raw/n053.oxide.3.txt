@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let str = "drum";
+    for c in str.chars().rev() {
+        print!("{}", c);
+    }
+    println!("{}!", str.to_uppercase());
+}
+```
+
+The error was due to the semicolons at the end of each line. These were causing unexpected tokens and invalid syntax. The corrected program removes these semicolons, resulting in a correctly formatted Rust program that prints "drum" in reverse order followed by its uppercase version.

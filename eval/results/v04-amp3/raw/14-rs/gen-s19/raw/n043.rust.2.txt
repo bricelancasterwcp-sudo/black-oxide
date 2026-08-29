@@ -1,0 +1,16 @@
+fn main() {
+    let mut queue = vec![1, 2, 3, 4, 5];
+    
+    if let Some(first) = queue.get(0).cloned() {
+        if let Some(last_index) = queue.len().checked_sub(1) {
+            if let Some(last) = queue.get(last_index).cloned() {
+                queue[last_index] = first;
+                queue[0] = last;
+            }
+        }
+    }
+    
+    for entry in &queue {
+        println!("{}", entry);
+    }
+}

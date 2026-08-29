@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let numbers = [10, 20];
+    
+    if let Some(&value) = &numbers.get(0) {
+        println!("Position one: {}", value);
+    }
+    
+    if let Some(&value) = &numbers.get(3) {
+        println!("Position four: {}", value);
+    } else {
+        println!("Position four is empty.");
+    }
+}
+```

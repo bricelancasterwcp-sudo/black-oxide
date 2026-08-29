@@ -1,0 +1,27 @@
+```rust
+fn second(v: Vec<Int>) -> Option<Int> {
+    let x = get(v, 1)?
+    Some(x + 1)
+}
+
+fn main() {
+    let v1 = push(push(vec(), 7), 8)
+    let v2 = push(push(vec(), 8), 9)
+    let v3 = push(vec(), 9)
+
+    match second(v1) {
+        Some(n) => print(n),
+        None => print_str("too short"),
+    }
+
+    match second(v2) {
+        Some(n) => print(n),
+        None => print_str("too short"),
+    }
+
+    match second(v3) {
+        Some(n) => print(n),
+        None => print_str("too short"),
+    }
+}
+```

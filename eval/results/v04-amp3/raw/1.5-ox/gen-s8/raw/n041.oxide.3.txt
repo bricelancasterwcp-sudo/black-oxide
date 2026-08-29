@@ -1,0 +1,11 @@
+```rust
+struct Measurement { value: Int }
+
+fn main() {
+    let measurements = vec![Measurement { value: 9 }, Measurement { value: 2 }, Measurement { value: 7 }, Measurement { value: 4 }];
+    for m in measurements.iter().sorted_by(|a, b| a.value.cmp(&b.value)) {
+        print(m.value);
+        println!();
+    }
+}
+```

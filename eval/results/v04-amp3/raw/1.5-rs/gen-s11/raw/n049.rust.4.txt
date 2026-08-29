@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let nums = [8, 3, 11, 6];
+    let mut min_val = i32::MAX;
+    let mut max_val = i32::MIN;
+
+    for &num in nums.iter() {
+        if num < min_val {
+            min_val = num;
+        }
+        if num > max_val {
+            max_val = num;
+        }
+    }
+
+    println!("Smallest figure: {}", min_val);
+    println!("Gap between largest and smallest: {}", max_val - min_val);
+}
+```

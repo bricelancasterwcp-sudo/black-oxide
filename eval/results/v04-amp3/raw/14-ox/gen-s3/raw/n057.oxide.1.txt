@@ -1,0 +1,21 @@
+```rust
+fn main() {
+    let fig = "fig";
+    let banana = "banana";
+    let kiwi = "kiwi";
+
+    let names = vec![fig, banana, kiwi];
+    let mut max_name = "";
+    let mut max_length = 0;
+
+    for name in names {
+        if name.len() > max_length {
+            max_name = name;
+            max_length = name.len();
+        }
+    }
+
+    print_str(max_name);
+    print(max_length);
+}
+```

@@ -1,0 +1,19 @@
+```
+fn main() {
+    let batch = vec![9, 2, 12, 5, 16];
+    let mut kept: Vec<Int> = vec![];
+
+    for x in batch {
+        if x < 10 {
+            kept = push(kept, x);
+        }
+    }
+
+    for k in kept {
+        print(k);
+        print_str("\n");
+    }
+
+    print(count(kept, -1));
+}
+```

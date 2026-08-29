@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let phrase = "when in doubt go home";
+    println!("Words: {}", phrase.split_whitespace().count());
+    println!("Characters (including spaces): {}", phrase.len());
+}
+```
+In the original code, `phrase.len()` is used to count the total number of characters in the string without considering spaces. To include spaces in the character count, we should use `phrase.chars().count()`.

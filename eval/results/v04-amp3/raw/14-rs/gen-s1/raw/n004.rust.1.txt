@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let mut a = 1;
+    let mut b = 1;
+    let mut n = 2;
+
+    while n < 10 {
+        let next = a + b;
+        a = b;
+        b = next;
+        n += 1;
+    }
+
+    println!("{}", b);
+}
+```

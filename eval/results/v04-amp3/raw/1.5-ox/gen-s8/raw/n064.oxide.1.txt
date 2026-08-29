@@ -1,0 +1,23 @@
+```rust
+struct List { elements: Vec<Int> }
+
+fn get_position(list: &List, pos: Int) -> Option<Str> {
+    if pos < 0 || pos >= list.elements.len() {
+        None
+    } else {
+        let s = format!("Position {}: {}", pos + 1, list.elements[pos]);
+        Some(s)
+    }
+}
+
+fn main() {
+    let mut list = List { elements: vec![10, 20] };
+    let pos_1 = get_position(&list, 0);
+    let pos_4 = get_position(&list, 3);
+
+    match (pos_1, pos_4) {
+        (Some(s), Some(t)) => println!("Position 1: {}", s); println!("Position 4: {}", t),
+        _ => print_str("Either position is invalid or the list is empty"),
+    }
+}
+```

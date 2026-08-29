@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let names = vec!["fig", "banana", "kiwi"];
+    let longest_name = names.iter().fold((0, String::new()), |(len, acc)| if len > acc.chars().count() { (len, acc) } else { (len + 1, acc) });
+    println!("The name with the most letters is: {}", longest_name.1);
+    println!("Its letter count is: {}", longest_name.0);
+}
+```

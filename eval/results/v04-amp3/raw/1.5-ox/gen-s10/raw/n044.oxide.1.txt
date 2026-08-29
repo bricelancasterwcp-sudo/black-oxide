@@ -1,0 +1,21 @@
+```rust
+fn main() {
+    let mut balance = 0;
+    println!("Initial balance: {}", balance);
+
+    balance += 3;
+    println!("Balance after deposit 3: {}", balance);
+
+    balance -= 1;
+    println!("Balance after withdrawal 1: {}", balance);
+
+    balance += 4;
+    println!("Balance after deposit 4: {}", balance);
+
+    balance -= 1;
+    println!("Balance after withdrawal 1: {}", balance);
+
+    balance += 5;
+    println!("Final balance: {}", balance);
+}
+```

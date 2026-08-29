@@ -1,0 +1,14 @@
+```text
+fn main() {
+    let nums = vec(7, 4, 9, 10)
+    let mut even_total = 0
+    for x in nums {
+        if x % 2 == 1 {
+            print(x * 2)
+        } else {
+            even_total = even_total + x
+        }
+    }
+    print(even_total)
+}
+```

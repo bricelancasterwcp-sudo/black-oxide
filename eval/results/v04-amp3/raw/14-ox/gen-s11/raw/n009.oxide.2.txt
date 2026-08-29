@@ -1,0 +1,16 @@
+fn reverse_digits(n: Int) -> Vec<Int> {
+    let mut digits = vec()
+    let mut num = n
+    while num > 0 {
+        digits = push(digits, num % 10)
+        num = num / 10
+    }
+    sort(digits)  // Sort the digits to reverse their order
+}
+
+fn main() {
+    let reversed = reverse_digits(1234)
+    for d in reversed {
+        print(d)
+    }
+}

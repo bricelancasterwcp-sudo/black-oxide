@@ -1,0 +1,13 @@
+```text
+fn reverse(s: Str) -> Str {
+    let chars = chars(s)
+    let reversed_chars = sort(chars, |a, b| b < a)
+    concat(reversed_chars)
+}
+
+fn main() {
+    let word = "drum"
+    print_str(reverse(word))
+    print_str(word)
+}
+```

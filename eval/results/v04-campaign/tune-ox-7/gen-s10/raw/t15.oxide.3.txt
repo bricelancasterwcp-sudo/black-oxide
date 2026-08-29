@@ -1,0 +1,15 @@
+fn main() {
+    let a = parse_int("12")
+    let b = parse_int("x")
+    let c = parse_int("30")
+    match (a, b, c) {
+        (Some(x), Some(y), Some(z)) => {
+            print(x + y + z)
+            print(0)
+        },
+        _ => {
+            print(0)
+            print(1)
+        }
+    }
+}

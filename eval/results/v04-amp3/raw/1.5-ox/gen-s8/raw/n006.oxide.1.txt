@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let max_power = (1 << 6).trunc();
+    println!("{}", max_power);
+}
+```
+
+This program finds the biggest power of two that does not exceed 100 and prints it. The `<<` operator is used to shift 1 left by 6 bits, effectively doubling its value, which gives us a number close to 64. Then, `trunc()` is called to truncate this number to the nearest integer, effectively rounding it down to 64. This is the biggest power of two that does not exceed 100.

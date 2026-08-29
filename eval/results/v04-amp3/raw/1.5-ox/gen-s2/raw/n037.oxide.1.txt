@@ -1,0 +1,10 @@
+```rust
+struct Rectangle { width: Int, height: Int }
+
+fn main() {
+    let mut r = Rectangle { width: 2, height: 3 };
+    let new_width = 5;
+    r.width = new_width; // update width without moving it
+    println("Area is {}", (r.width * r.height)); // use the updated value
+}
+```

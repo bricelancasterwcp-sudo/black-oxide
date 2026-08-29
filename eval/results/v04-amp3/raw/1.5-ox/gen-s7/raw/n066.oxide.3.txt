@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let batch_9 = [2, 5];
+    let batch_10 = [12, 5, 16];
+
+    for &entry in batch_9.iter().chain(batch_10.iter()) {
+        if entry < 10 {
+            println!("{}", entry);
+            count += 1;
+        }
+    }
+
+    println!("Number of kept entries: {}", count);
+}
+```

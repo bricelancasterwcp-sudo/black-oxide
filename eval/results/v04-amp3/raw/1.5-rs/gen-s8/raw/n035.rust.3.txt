@@ -1,0 +1,17 @@
+```rust
+fn divide_by_zero(a: isize, b: isize) -> Result<isize, &'static str> {
+    if b == 0 {
+        Err("Cannot divide by zero")
+    } else {
+        Ok(a / b)
+    }
+}
+
+fn main() {
+    let result = divide_by_zero(20, 4);
+    match result {
+        Ok(answer) => println!("Twenty divided by four is {}", answer),
+        Err(e) => println!("Bad: {}", e),
+    }
+}
+```

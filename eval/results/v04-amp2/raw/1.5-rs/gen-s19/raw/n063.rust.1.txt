@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let price_per_four = 3;
+    let quantity_four = 4;
+    let price_per_five = 2;
+    let quantity_five = 5;
+
+    let total_value_four = price_per_four * quantity_four;
+    let total_value_five = price_per_five * quantity_five;
+
+    println!("Line 1: {}", total_value_four);
+    println!("Line 2: {}", total_value_five);
+
+    let combined_total_value = total_value_four + total_value_five;
+    println!("Combined value of both lines: {}", combined_total_value);
+}
+```

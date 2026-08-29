@@ -1,0 +1,1 @@
+print(sum(vec(int_to_str(9875).chars().map(|c| parse_int(c)).unwrap_or(0))))

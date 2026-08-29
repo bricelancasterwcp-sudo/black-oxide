@@ -1,0 +1,27 @@
+```rust
+fn main() {
+    let a = match read_str("Enter first entry: ") {
+        Some(s) => s,
+        None => "bad".to_string(),
+    };
+    println!("{}", a);
+
+    let b = match read_str("Enter second entry: ") {
+        Some(s) => s,
+        None => "bad".to_string(),
+    };
+    println!("{}", b);
+
+    let c = match read_str("Enter third entry: ") {
+        Some(s) => s,
+        None => "bad".to_string(),
+    };
+    println!("{}", c);
+}
+
+fn read_str(prompt: &str) -> Option<String> {
+    print!("{} ", prompt);
+    std::io::stdin().read_line()
+        .map(|_| String::from_utf8_lossy(&std::io::stdin().bytes()).trim().to_string())
+}
+```

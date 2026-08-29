@@ -1,0 +1,35 @@
+```rust
+fn main() {
+    let names = ["fig", "banana", "kiwi"];
+    let mut longest_name = &names[0];
+    let mut max_len = names[0].len();
+
+    for name in names.iter().skip(1) {
+        if name.len() > max_len {
+            longest_name = name;
+            max_len = name.len();
+        }
+    }
+
+    println!("The name with the most letters is '{}' with {} letters.", longest_name, max_len);
+}
+```
+Your program was almost correct. However, the issue arises because `max_len` and `longest_name` were not being updated correctly in each iteration of the loop.
+
+Here's a corrected version:
+```rust
+fn main() {
+    let names = ["fig", "banana", "kiwi"];
+    let mut longest_name = &names[0];
+    let mut max_len = names[0].len();
+
+    for name in names.iter().skip(1) {
+        if name.len() > max_len {
+            longest_name = name;
+            max_len = name.len();
+        }
+    }
+
+    println!("The name with the most letters is '{}' with {} letters.", longest_name, max_len);
+}
+```

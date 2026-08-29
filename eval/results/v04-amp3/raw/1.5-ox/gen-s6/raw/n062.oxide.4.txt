@@ -1,0 +1,13 @@
+```
+fn main() {
+    let mut signals = vec!["green", "red", "yellow"];
+    for signal in signals.iter_mut() {
+        match *signal {
+            "green" => println!("go for green"),
+            "red" => println!("stop for red"),
+            "yellow" => println!("wait for yellow"),
+            _ => panic!("unknown signal: {}", signal),
+        }
+    }
+}
+```

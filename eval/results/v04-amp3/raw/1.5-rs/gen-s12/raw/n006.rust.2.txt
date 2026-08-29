@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut largest: u32 = 0; // Change `usize` to `u32` for compatibility with Rust version 2021 and 100 limit
+    for i in 0..=10 { // Start from 0 because the smallest power of two is 1 (2^0)
+        let power_of_two = 1 << i;
+        if power_of_two > 100 {
+            break;
+        }
+        largest = power_of_two;
+    }
+    println!("{}", largest);
+}
+```

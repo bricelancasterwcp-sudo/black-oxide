@@ -1,0 +1,14 @@
+```ox
+fn main() {
+    let numbers = push(push(push(push(vec(), 7), 4), 9), 10)
+    let mut sum = 0
+    for x in numbers {
+        if x % 2 == 0 {
+            sum = sum + x
+        } else {
+            print(x * 2)
+        }
+    }
+    print(sum)
+}
+```

@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut rect = (2, 3);
+    rect.0 = 5;
+    println!("The area of the rectangle is {}", rect.0 * rect.1);
+}
+```
+
+In the original code, `rect` was a tuple where both elements were immutable, so `rect.0` could not be changed. This led to incorrect output because the width of the rectangle remained at 2 and the calculation used this fixed value instead of the new width of 5.
+
+To fix this issue, we need to change the type of `rect` to a mutable tuple or use the `ref mut` keyword to modify the elements of a reference. Here, I've converted `rect` to a mutable tuple by removing the parentheses and replacing `isize, isize` with `(isize, isize)`.

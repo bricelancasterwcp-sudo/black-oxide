@@ -1,0 +1,9 @@
+struct Device { sensor: Sensor }
+struct Sensor { reading: Int }
+
+fn main() {
+    let device = Device { sensor: Sensor { reading: 0 } };
+    let mut sensor = device.sensor;
+    sensor.reading = 7;
+    print(sensor.reading)
+}

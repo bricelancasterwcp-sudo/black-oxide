@@ -1,0 +1,12 @@
+Here is the corrected code:
+
+```rust
+fn main() {
+    let mut figures = vec![8, 3, 11, 6];
+    figures.sort();
+    println!("Smallest figure: {}", figures[0]);
+    println!("Gap between largest and smallest: {}", figures.last().unwrap() - figures.first().unwrap());
+}
+```
+
+This program sorts the vector in ascending order using the `sort` method. It then prints the smallest and largest values in the sorted vector, which should give you the correct output for these figures.

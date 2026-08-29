@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let a = read_str("Enter first entry: ");
+    if a == "8" {
+        println!("The number is 8");
+    } else if a == "oak" {
+        println!("The number is oak");
+    } else if a == "15" {
+        println!("The number is 15");
+    } else {
+        println!("bad");
+    }
+}
+```

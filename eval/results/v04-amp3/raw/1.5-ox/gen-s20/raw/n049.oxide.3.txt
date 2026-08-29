@@ -1,0 +1,9 @@
+```
+fn main() {
+    let figures = vec![20, 15, 5, 30, 45];
+    let smallest_figure = *figures.iter().min().unwrap();
+    println!("{}", smallest_figure);
+    let largest_figure = *figures.iter().max().unwrap();
+    println!("{}", largest_figure - smallest_figure);
+}
+```

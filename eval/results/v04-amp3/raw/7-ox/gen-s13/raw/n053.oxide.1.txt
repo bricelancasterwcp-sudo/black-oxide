@@ -1,0 +1,13 @@
+```rust
+fn reverse(s: Str) -> Str {
+    let mut chars = s.chars().collect::<Vec<Str>>();
+    chars.reverse();
+    concat(chars)
+}
+
+fn main() {
+    let word = "drum";
+    print(reverse(word));
+    print_str(word);
+}
+```

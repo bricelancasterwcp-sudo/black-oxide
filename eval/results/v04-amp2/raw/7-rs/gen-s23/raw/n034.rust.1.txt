@@ -1,0 +1,25 @@
+```rust
+fn main() {
+    let numbers = vec![1, 2, 3];
+    match get_second(&numbers) {
+        Some(second) => println!("Second element: {}", second),
+        None => println!("No second element"),
+    }
+
+    let numbers = vec![4, 5];
+    match get_second(&numbers) {
+        Some(second) => println!("Second element: {}", second),
+        None => println!("No second element"),
+    }
+
+    let numbers = vec![6];
+    match get_second(&numbers) {
+        Some(second) => println!("Second element: {}", second),
+        None => println!("No second element"),
+    }
+}
+
+fn get_second<T>(list: &[T]) -> Option<&T> {
+    list.get(1)
+}
+```

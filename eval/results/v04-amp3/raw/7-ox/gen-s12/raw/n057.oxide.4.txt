@@ -1,0 +1,16 @@
+fn main() {
+    let mut max = 0;
+    let mut max_name = "";
+
+    for name in &[fig, banana, kiwi] {
+        let len = str_len(name);
+        if len > max {
+            max = len;
+            max_name = name;
+        }
+    }
+
+    print(max_name);
+    print_str(" ");
+    print(max);
+}

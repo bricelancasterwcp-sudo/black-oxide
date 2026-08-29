@@ -1,0 +1,6 @@
+```rust
+fn main() {
+    let sum = (1..=5).fold(0, |acc, x| acc + x.pow(3));
+    println!("The sum of cubes from 1 to 5 is: {}", sum);
+}
+```

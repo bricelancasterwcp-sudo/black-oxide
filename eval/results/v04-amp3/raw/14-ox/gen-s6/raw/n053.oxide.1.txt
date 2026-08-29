@@ -1,0 +1,9 @@
+```
+fn main() {
+    let s = "drum";
+    let reversed: Str = chars(s).rev().collect();
+    print(reversed);
+    print_str("\n");
+    print_str(s);
+}
+```

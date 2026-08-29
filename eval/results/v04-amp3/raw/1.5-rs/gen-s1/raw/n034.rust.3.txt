@@ -1,0 +1,11 @@
+fn main() {
+    // Define a function that takes a list of integers as input and returns the second element of the list
+    fn get_second_entry(numbers: Vec<i32>) -> Option<&i32> {
+        numbers.get(1)
+    }
+
+    // Test the function with different lists
+    println!("{:?}", get_second_entry(vec![7, 8, 9])); // Should print Some(&8)
+    println!("{:?}", get_second_entry(vec![42]));       // Should print None
+    println!("{:?}", get_second_entry(vec![]));        // Should print None
+}

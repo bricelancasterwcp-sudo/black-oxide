@@ -1,0 +1,19 @@
+```rust
+
+fn main() {
+    let mut vec = vec![5, 12, 3, 18, 9];
+    let under_cutoff_count = count(vec.clone(), |x| x < 10);
+    let over_cutoff_count = count(vec, |x| x >= 10);
+
+    println!("Number of values under the cutoff: {}", under_cutoff_count);
+    println!("Number of values at or over the cutoff: {}", over_cutoff_count);
+}
+
+fn count<T, F>(vec: Vec<T>, predicate: F) -> Int
+where
+    T: PartialOrd,
+    F: Fn(&T) -> Bool,
+{
+    vec.iter().filter(predicate).count()
+}
+```

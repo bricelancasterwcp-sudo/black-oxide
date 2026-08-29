@@ -1,0 +1,16 @@
+```text
+struct Square { side: Int }
+struct Circle { radius: Float }
+
+let pi: Float = 3.0
+
+fn area(shape: Variant<Square, Circle>) -> Float {
+    match shape {
+        Square(side) => (side * side).to_float(),
+        Circle(radius) => pi * radius * radius,
+    }
+}
+
+let square = Square { side: 4 }
+print(area(square))
+```

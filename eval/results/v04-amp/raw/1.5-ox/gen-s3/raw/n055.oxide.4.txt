@@ -1,0 +1,28 @@
+```rust
+fn main() {
+    let a = match read_str("Enter first number: ") {
+        Some(s) => s.parse::<Int>().unwrap_or(0),
+        None => 0,
+    };
+    print(a);
+
+    let b = match read_str("Enter second number: ") {
+        Some(s) => s.parse::<Int>().unwrap_or(0),
+        None => 0,
+    };
+    print(b);
+
+    let c = match read_str("Enter third number: ") {
+        Some(s) => s.parse::<Int>().unwrap_or(0),
+        None => 0,
+    };
+    print(c);
+}
+
+fn read_str(prompt: &str) -> Option<Str> {
+    print!("{}", prompt);
+    let mut input = String::new();
+    std::io::stdin().read_line(&mut input).expect("Failed to read line");
+    Some(input.trim().to_string())
+}
+```

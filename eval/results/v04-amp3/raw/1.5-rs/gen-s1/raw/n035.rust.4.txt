@@ -1,0 +1,6 @@
+fn main() {
+    match divide(20, 4) {
+        Some(result) => println!("{} divided by {} is {}", 20, 4, result),
+        None => println!("Bad! Cannot divide by zero."),
+    }
+}

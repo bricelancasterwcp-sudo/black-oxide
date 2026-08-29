@@ -1,0 +1,16 @@
+```text
+fn main() {
+    let numbers = vec(7, 4, 9, 10);
+    let mut even_total = 0;
+
+    for x in numbers {
+        if x % 2 == 1 {
+            print(x * 2)
+        } else {
+            even_total += x
+        }
+    }
+
+    print(even_total)
+}
+```

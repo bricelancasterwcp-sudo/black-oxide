@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut max_power_of_two = 0;
+    for i in 0..=9 { // Changed from <= to < to avoid infinite loop
+        if (2i as u64).pow(i) <= 100 {
+            max_power_of_two = (2i as u64).pow(i);
+        }
+    }
+    print(max_power_of_two);
+}
+```

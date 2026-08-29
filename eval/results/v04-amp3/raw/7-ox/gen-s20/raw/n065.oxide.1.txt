@@ -1,0 +1,34 @@
+```oxide
+struct Reading { label: Str, values: Vec<Int> }
+
+fn count_above_five(v: Vec<Int>) -> Int {
+    let mut count = 0
+    for x in v {
+        if x > 5 {
+            count += 1
+        }
+    }
+    count
+}
+
+fn max_reading(v: Vec<Int>) -> Option<Int> {
+    let mut max_val = None
+    for &x in &v {
+        max_val = match max_val {
+            None => Some(x),
+            Some(m) if x > m => Some(x),
+            _ => max_val,
+        }
+    }
+    max_val
+}
+
+fn main() {
+    let readings = vec![6, 11, 3, 14, 9]
+    print(count_above_five(readings.clone())) // Use clone to avoid moving readings
+    match max_reading(readings) {
+        Some(max_val) => print_str("\n"), // Print newline before the highest reading
+        None => print_str("No readings\n"),
+    }
+}
+```

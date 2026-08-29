@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let mut total = 0;
+    let mut count = 0;
+
+    match (7, x, 9, ?) {
+        (Some(n), Some(_), Some(_), _) => {
+            total += n;
+            count += 1;
+        }
+        _ => {}
+    }
+
+    println!("Total: {}", total);
+    println!("Count: {}", count);
+}
+```

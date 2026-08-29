@@ -1,0 +1,29 @@
+```rust
+struct Shape {
+    kind: String,
+    data: f64,
+}
+
+impl Shape {
+    fn new_square(side: f64) -> Self {
+        Shape { kind: "square".to_string(), data: side }
+    }
+
+    fn new_circle(radius: f64) -> Self {
+        Shape { kind: "circle".to_string(), data: radius }
+    }
+
+    fn area(&self) -> f64 {
+        match self.kind.as_str() {
+            "square" => self.data.powi(2),
+            "circle" => std::f64::consts::PI * self.data.powi(2),
+            _ => panic!("Unknown shape"),
+        }
+    }
+}
+
+fn main() {
+    let square = Shape::new_square(4.0);
+    print!("{}", square.area());
+}
+```

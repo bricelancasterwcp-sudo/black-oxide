@@ -1,0 +1,17 @@
+```rust
+fn digit_sum(n: Int) -> Int {
+    let s = int_to_str(n)
+    let mut sum = 0
+    for ch in chars(s) {
+        let digit = parse_int(ch)?
+        sum += digit
+    }
+    Some(sum)
+}
+
+fn main() {
+    let number = 9875
+    let sum = digit_sum(number)?
+    print(sum)
+}
+```

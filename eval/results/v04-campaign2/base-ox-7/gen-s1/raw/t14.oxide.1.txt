@@ -1,0 +1,11 @@
+```oxide
+fn main() {
+    let s = "mississippi"
+    let count_s = count(s.chars(), "s")
+    let unique_chars: Vec<Str> = s.chars().collect()
+    let count_unique = len(unique_chars)
+    print(count_s)
+    print_str("\n")
+    print(count_unique)
+}
+```

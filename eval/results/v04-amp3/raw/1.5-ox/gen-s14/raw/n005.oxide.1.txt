@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let sum = (2..=20)
+        .filter(|&x| x % 2 == 0)
+        .sum::<Int>()
+    ;
+    print(sum);
+}
+```

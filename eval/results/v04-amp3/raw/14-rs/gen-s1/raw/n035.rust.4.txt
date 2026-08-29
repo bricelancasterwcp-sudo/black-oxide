@@ -1,0 +1,19 @@
+use std::io;
+
+fn safe_divide(dividend: f64, divisor: f64) -> Option<f64> {
+    if divisor == 0.0 {
+        None
+    } else {
+        Some(dividend / divisor)
+    }
+}
+
+fn main() {
+    let dividend = 20.0;
+    let divisor = 0.0;
+
+    match safe_divide(dividend, divisor) {
+        Some(result) => println!("The result is {}", result),
+        None => println!("bad"),
+    }
+}

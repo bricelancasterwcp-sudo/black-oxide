@@ -1,0 +1,8 @@
+fn main() {
+    let figures = vec![8, 3, 11, 6];
+    let min_val = *figures.iter().min().unwrap_or(&i32::MAX);
+    let max_min_gap = *figures.iter().max().unwrap_or(&0) - min_val;
+    print(min_val);
+    print_str(" ");
+    print(max_min_gap);
+}

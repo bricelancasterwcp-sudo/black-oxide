@@ -1,0 +1,10 @@
+Here is the fully corrected version of your program:
+
+```rust
+fn main() {
+    let sum: i32 = (1..=20).filter(|&x| x % 2 == 0).sum();
+    println!("The total of all even numbers between 1 and 20 inclusive is {}", sum);
+}
+```
+
+This should print the correct output `The total of all even numbers between 1 and 20 inclusive is 110`.

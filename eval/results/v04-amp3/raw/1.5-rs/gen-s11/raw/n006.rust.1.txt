@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let mut n = 1;
+    while (n * n) <= 100 {
+        n *= 2;
+    }
+    println!("{}", n / 2);
+}
+```
+
+To run the program, save it to a file with a `.rs` extension and compile it using Rust's compiler:
+
+```sh
+cargo run
+```
+
+This will output `8`, which is the biggest power of two that does not exceed 100.

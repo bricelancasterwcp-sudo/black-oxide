@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut largest_power = 1;
+    while largest_power * 2 <= 100 {
+        largest_power *= 2;
+    }
+    println!("The biggest power of two not exceeding 100 is: {}", largest_power);
+}
+```
+
+In this Rust program, we start by initializing a mutable variable `largest_power` to 1. We then enter a while loop that continues until the product of `largest_power` and 2 exceeds 100. Inside the loop, we update `largest_power` by multiplying it by 2 using the `*=` operator. Once the condition is no longer met (i.e., `largest_power * 2 > 100`), we break out of the loop. Finally, we print the value of `largest_power`, which will be the biggest power of two that does not exceed 100.

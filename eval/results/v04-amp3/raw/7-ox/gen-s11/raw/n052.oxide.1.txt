@@ -1,0 +1,12 @@
+```oxide
+fn main() {
+    let s = "banana";
+    let chars: Vec<Str> = chars(s);
+    for (i, c) in chars.iter().enumerate() {
+        if c == "n" {
+            print(i);
+            print_str("\n");
+        }
+    }
+}
+```

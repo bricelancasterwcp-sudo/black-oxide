@@ -1,0 +1,28 @@
+```text
+struct MaybeInt { value: Option<Int> }
+
+fn sum_and_count_unknowns(maybe_ints: Vec<MaybeInt>) -> (Int, Int) {
+    let mut sum = 0
+    let mut unknown_count = 0
+    for mi in maybe_ints {
+        match mi.value {
+            Some(n) => sum += n,
+            None => unknown_count += 1,
+        }
+    }
+    (sum, unknown_count)
+}
+
+fn main() {
+    let values = [
+        MaybeInt { value: Some(7) },
+        MaybeInt { value: None },
+        MaybeInt { value: Some(9) },
+        MaybeInt { value: None },
+    ]
+    let vec_values = push(push(push(vec(), values[0]), values[1]), push(push(vec(), values[2]), values[3]))
+    let (total, unknowns) = sum_and_count_unknowns(vec_values)
+    print(total)
+    print(unknowns)
+}
+```

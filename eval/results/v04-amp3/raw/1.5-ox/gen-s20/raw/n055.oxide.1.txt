@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    match (read(8), read("oak"), read(15)) {
+        (Ok(n), Ok(_), Ok(m)) => println!("{} {}", n, m),
+        _ => println!("bad"),
+    }
+}
+
+fn read(x: &str) -> Result<Int, ()> {
+    if x == "8" { Ok(Int::from(8)) } else { Err(()) }
+}
+```
+
+**Explanation**:
+- The `main` function reads three values from the user.
+- Each value is passed to a custom function `read` that attempts to convert the input string to an integer.
+- If all conversions succeed, it prints both values.
+- If any conversion fails (i.e., the string does not match any of the expected patterns), it prints "bad".

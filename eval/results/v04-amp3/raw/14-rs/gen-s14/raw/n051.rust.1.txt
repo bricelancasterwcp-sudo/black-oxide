@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let word = "granite";
+    let first_letter = word.chars().next().unwrap();
+    let last_letter = word.chars().last().unwrap();
+    println!("{}", first_letter);
+    println!("{}", last_letter);
+}
+```

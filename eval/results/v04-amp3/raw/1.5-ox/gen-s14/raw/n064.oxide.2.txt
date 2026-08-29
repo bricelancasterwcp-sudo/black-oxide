@@ -1,0 +1,15 @@
+```
+fn main() {
+    let vec = vec![10, 20];
+
+    match get(vec.clone(), 1) {
+        Some(n) => println!("{}", n),
+        None => println!("Position not found"),
+    }
+
+    match get(vec.clone(), 3) {
+        Some(n) => println!("{}", n),
+        None => println!("Position not found"),
+    }
+}
+```

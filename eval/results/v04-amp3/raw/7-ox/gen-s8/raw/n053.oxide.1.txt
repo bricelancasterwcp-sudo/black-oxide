@@ -1,0 +1,12 @@
+```oxide
+fn reverse_and_print(s: Str) {
+    let reversed = concat(chars(s).rev(), "")
+    print(reversed)
+    print_str(" ")
+    print(s)
+}
+
+fn main() {
+    reverse_and_print("drum")
+}
+```

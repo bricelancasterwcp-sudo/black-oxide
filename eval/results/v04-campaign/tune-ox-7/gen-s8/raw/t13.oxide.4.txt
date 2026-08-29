@@ -1,0 +1,7 @@
+fn main() {
+    for s in vec("level", "stereo", "rotor") {
+        let chars = chars(s)
+        let reversed_chars = chars.iter().rev()
+        print(eql_str(chars, reversed_chars))
+    }
+}

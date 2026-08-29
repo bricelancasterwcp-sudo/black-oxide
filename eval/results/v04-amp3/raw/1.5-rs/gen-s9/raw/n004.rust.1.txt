@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let mut a = 0;
+    let mut b = 1;
+    for _ in 0..9 {
+        let c = a + b;
+        a = b;
+        b = c;
+    }
+    println!("The tenth term is {}", b);
+}
+```
+
+This Rust program calculates the tenth term of the Fibonacci sequence using an iterative approach. It initializes two variables, `a` and `b`, to 0 and 1 respectively. It then uses a loop that runs 9 times (to calculate up to the tenth term), updating the values of `a` and `b` in each iteration. Finally, it prints the value of `b`, which is the tenth term of the Fibonacci sequence.

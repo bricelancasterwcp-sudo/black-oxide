@@ -1,0 +1,26 @@
+fn main() {
+    let fig = "fig";
+    let banana = "banana";
+    let kiwi = "kiwi";
+
+    let mut max_name = "";
+    let mut max_len = 0;
+
+    if fig.len() > max_len {
+        max_name = fig;
+        max_len = fig.len();
+    }
+
+    if banana.len() > max_len {
+        max_name = banana;
+        max_len = banana.len();
+    }
+
+    if kiwi.len() > max_len {
+        max_name = kiwi;
+        max_len = kiwi.len();
+    }
+
+    print_str(max_name);
+    print(max_len);
+}

@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let scores = push(push(vec(), 5), 9);
+    scores = push(scores, 2);
+
+    for x in sort(scores).rev() {
+        print(x);
+    }
+}
+```

@@ -1,0 +1,18 @@
+fn main() {
+    let texts = vec![7, None, 9, None];
+    let mut sum = 0;
+    let mut count = 0;
+
+    for &text in &texts {
+        match text {
+            Some(value) => {
+                sum += value;
+                count += 1;
+            }
+            _ => {}
+        }
+    }
+
+    println!("Sum of numbers: {}", sum);
+    println!("Count of non-number texts: {}", count);
+}

@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut total = 1;
+    for i in 1..=6 { // Fixed the range to include 7
+        total *= i;
+    }
+    print(total);
+}
+```
+
+Explanation:
+- The range `1..7` was fixed to include 7.
+- The semicolons at line 2, 5, and 7 were removed.

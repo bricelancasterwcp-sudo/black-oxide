@@ -1,0 +1,14 @@
+```text
+fn main() {
+    let q = vec(1, 2, 3, 4, 5)
+    let len = len(q)
+    if len > 1 {
+        let first = get(q, 0)?
+        let last = get(q, len - 1)?
+        q = push(push(vec(), last), range(1, len - 1).map(|i| get(q, i)).collect(), first)
+    }
+    for x in q {
+        print(x)
+    }
+}
+```

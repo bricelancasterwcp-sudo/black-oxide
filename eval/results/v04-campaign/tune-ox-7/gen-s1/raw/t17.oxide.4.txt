@@ -1,0 +1,14 @@
+struct List {
+    values: Vec<Int>
+}
+fn get(list: &List, pos: Int) -> Int {
+    match vec_get(&list.values, pos) {
+        Some(val) => val,
+        None => -1
+    }
+}
+fn main() {
+    let list = List { values: vec(10, 20, 30) }
+    print(get(list, 1))
+    print(get(list, 5))
+}

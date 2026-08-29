@@ -1,0 +1,7 @@
+fn main() {
+    let x = 1;
+    let y = 5;
+    let new_x = 10;
+    let sum = new_x + y;
+    println!("{}", sum);
+}

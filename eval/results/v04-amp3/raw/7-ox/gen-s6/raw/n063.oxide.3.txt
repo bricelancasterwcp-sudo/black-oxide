@@ -1,0 +1,15 @@
+```rust
+struct Stock { units: Int, price: Int }
+
+fn total_value(s1: Stock, s2: Stock) -> Int {
+    (s1.units * s1.price) + (s2.units * s2.price)
+}
+
+fn main() {
+    let line1 = Stock { units: 4, price: 3 };
+    let line2 = Stock { units: 5, price: 2 };
+    print(total_value(line1, line2));
+    print_str("\n");
+    print(total_value(line1, line2));
+}
+```

@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let mut a = 1;
+    let mut b = 1;
+    for _ in 0..9 {
+        let c = a + b;
+        a = b;
+        b = c;
+    }
+    println!("The tenth term is {}", a);
+}
+```
+
+Explanation: The program was correctly written and compiled, but it printed the wrong output. The issue was due to the order of operations in the loop body. Instead of printing `c` after `b`, the code should have been `print!("The tenth term is {}", b);`. This change will ensure that the correct value for the tenth term is printed.

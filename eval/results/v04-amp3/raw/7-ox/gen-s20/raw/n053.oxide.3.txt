@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let word = "drum";
+    let reversed = reverse(word);
+    print(reversed);
+    print_str(" ");
+    print(word);
+}
+
+fn reverse(s: Str) -> Str {
+    let chars: Vec<Str> = chars(s).collect();
+    let mut result = vec();
+    for i in range(0, len(chars)) {
+        push(result, chars[len(chars) - 1 - i]);
+    }
+    concat(result)
+}
+```

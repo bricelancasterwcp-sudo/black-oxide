@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let mut max_power_of_two = 0;
+
+    for i in 0..=100 {
+        if (2i as f64).pow(i as f64) <= 100.0 {
+            max_power_of_two = i;
+        } else {
+            break;
+        }
+    }
+
+    println!("The biggest power of two that does not exceed 100 is {}", max_power_of_two);
+}
+```

@@ -1,0 +1,11 @@
+fn main() {
+    let area = if true {
+        // Square case
+        4.0 * 4.0
+    } else {
+        // Circle case
+        3.14 * 3.14 * 4.0
+    };
+    
+    println!("The area is {}", area);
+}

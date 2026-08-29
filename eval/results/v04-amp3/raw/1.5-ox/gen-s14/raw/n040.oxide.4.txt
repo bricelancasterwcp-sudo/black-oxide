@@ -1,0 +1,15 @@
+```rust
+struct Square { side: Int }
+struct Circle { radius: Float }
+
+impl Square {
+    fn area(&self) -> Float {
+        self.side * self.side
+    }
+}
+
+fn main() {
+    let s = Square { side: 4 };
+    println(s.area());
+}
+```

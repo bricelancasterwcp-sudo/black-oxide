@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let banana = "banana";
+    for (i, c) in banana.chars().enumerate() {
+        if c == 'n' {
+            print!("{:?}", i);
+        }
+    }
+}
+```
+
+This program iterates over each character in the string `banana` and prints its position (`i`) if it matches the letter 'n'. The position is printed as an integer.

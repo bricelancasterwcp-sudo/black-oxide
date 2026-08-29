@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut word = "coffee".chars().collect::<Vec<char>>();
+    word.sort_unstable();
+    for &c in word.iter() {
+        if c != word[0] && c != word[word.len() - 1] {
+            println!("{}", c);
+        }
+    }
+}
+```

@@ -1,0 +1,36 @@
+```rust
+struct Figure {
+    label: Str,
+    values: Vec<Int>,
+}
+
+fn first_big(v: Vec<Int>) -> Int {
+    let mut found = -1;
+    for x in v {
+        if x > 10 {
+            found = x;
+            break;
+        }
+    }
+    found
+}
+
+fn second(v: Vec<Int>) -> Option<Int> {
+    let x = get(v, 1)?;
+    Some(x + 1)
+}
+
+fn main() {
+    let fig8 = Figure { label: "fig8", values: push(push(vec(), 3), 42) };
+    let fig3 = Figure { label: "fig3", values: push(push(vec(), 5), 6, 7) };
+    let fig11 = Figure { label: "fig11", values: push(push(vec(), 9), 8, 7, 6, 5, 4, 3, 2, 1) };
+    let fig6 = Figure { label: "fig6", values: vec![10] };
+
+    let smallest = first_big(fig8.values);
+    let largest = max(fig11.values)?;
+    let gap = largest - smallest;
+
+    print(smallest);            // field access copies: r stays usable
+    println(gap);               // print the gap between the largest and the smallest
+}
+```

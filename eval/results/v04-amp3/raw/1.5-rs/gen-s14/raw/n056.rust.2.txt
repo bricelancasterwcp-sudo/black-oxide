@@ -1,0 +1,18 @@
+fn main() {
+    let text1 = String::from("7"); // assuming "7" holds a number
+    let text2 = String::from("x"); // assuming "x" does not hold a number
+    let text3 = String::from("9"); // assuming "9" holds a number
+    let unknown_text = String::from("?"); // assuming "?" does not hold a number
+
+    match text1.parse::<i32>() {
+        Ok(num1) => sum += num1,
+        Err(_) => count += 0, // treat non-numeric values as zero
+    }
+    match text3.parse::<i32>() {
+        Ok(num2) => sum += num2,
+        Err(_) => count += 0, // treat non-numeric values as zero
+    }
+
+    println!("Total: {}", sum);
+    println!("Count: {}", count);
+}

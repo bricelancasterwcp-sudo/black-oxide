@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let numbers = [7, 10, 9, 2]; // Example: Replace '?' with a valid number
+    let mut count = 0;
+    let mut sum = 0;
+
+    for &num in numbers.iter() {
+        if num.is_integer() {
+            sum += num as i32;
+            count += 1;
+        }
+    }
+
+    println!("Total of the ones that do: {}", sum);
+    println!("Number of ones that do not: {}", numbers.len() - count);
+}
+```

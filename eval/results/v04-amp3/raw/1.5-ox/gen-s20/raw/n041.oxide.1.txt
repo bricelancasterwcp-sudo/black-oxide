@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let measurements = push(push(vec(), 4), 9);
+    push(measurements, 2);
+    push(measurements, 7);
+
+    for m in measurements.iter().sorted() {
+        print_str(m)
+    }
+}
+```

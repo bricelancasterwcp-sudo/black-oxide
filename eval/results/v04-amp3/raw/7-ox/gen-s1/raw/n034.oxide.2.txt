@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let values = vec![7, 8, 9];
+    match get(values.clone(), 1) {
+        Some(x) => print(x),
+        None => print_str("none"),
+    }
+}
+```

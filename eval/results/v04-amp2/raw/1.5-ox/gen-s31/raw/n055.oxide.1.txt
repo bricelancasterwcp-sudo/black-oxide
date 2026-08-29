@@ -1,0 +1,25 @@
+```rust
+fn main() {
+    let a = parse_int("8")?;
+    let b = parse_int("oak")?;
+    let c = parse_int("15")?;
+
+    if a.is_some() {
+        print(a.unwrap());
+    } else {
+        print_str("bad");
+    }
+
+    if b.is_some() {
+        print(b.unwrap());
+    } else {
+        print_str("bad");
+    }
+
+    if c.is_some() {
+        print(c.unwrap());
+    } else {
+        print_str("bad");
+    }
+}
+```

@@ -1,0 +1,7 @@
+fn main() {
+    let scores = vec(9, 5, 2)
+    let sorted_scores = sort(scores)
+    for score in sorted_scores {
+        print(score)
+    }
+}

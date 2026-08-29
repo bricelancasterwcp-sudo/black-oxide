@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let n = 91;
+    if is_prime(n) {
+        println!("yes");
+    } else {
+        println!("no");
+    }
+}
+
+fn is_prime(num: Int) -> bool {
+    for i in 2..num {
+        if num % i == 0 {
+            return false;
+        }
+    }
+    true
+}
+```

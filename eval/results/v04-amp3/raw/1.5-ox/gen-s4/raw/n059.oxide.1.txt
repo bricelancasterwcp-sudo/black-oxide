@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let text = "When in doubt go home.";
+    let words = text.split_whitespace().count();
+    let len_with_spaces = text.len();
+    println!("Words: {}", words);
+    println!("Characters including spaces: {}", len_with_spaces);
+}
+```
+
+This Rust program first splits the input string into words using `split_whitespace`, counts them, and then calculates the total number of characters in the string. The result is printed to stdout.

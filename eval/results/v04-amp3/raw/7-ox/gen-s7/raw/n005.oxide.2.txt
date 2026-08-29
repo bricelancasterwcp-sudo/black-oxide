@@ -1,0 +1,4 @@
+fn main() {
+    let sum = (1..=20).filter(|&x| x % 2 == 0).fold(0, |acc, x| acc + x);
+    print(sum);
+}

@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let s = "coffee";
+    let mut chars = s.chars().collect::<Vec<char>>();
+    let mut seen = vec![];
+    for c in chars.drain(..) {
+        if !seen.contains(&c) && chars.contains(&c) {
+            print_str(c.to_string());
+            seen.push(c);
+        }
+    }
+}
+```

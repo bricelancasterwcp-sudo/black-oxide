@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let signals = ["Green", "Red", "Yellow"];
+
+    for signal in signals.iter() {
+        match signal.as_str() {
+            "Green" => println!("Go for green"),
+            "Red" => println!("Stop for red"),
+            "Yellow" => println!("Wait for yellow"),
+            _ => println!("Unknown signal"),
+        }
+    }
+}
+```

@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let mut sum = 0;
+    let mut count = 0;
+
+    for x in vec![7, 10, 9, ?] {
+        if let Some(n) = x {
+            sum += n;
+            count += 1;
+        }
+    }
+
+    println!("Sum: {}", sum);
+    println!("Count: {}", count);
+}
+```

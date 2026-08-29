@@ -1,0 +1,19 @@
+```
+struct Signal { name: Str }
+
+fn print_signal_meaning(s: Signal) {
+    match s.name {
+        "green" => print_str("go"),
+        "red" => print_str("stop"),
+        "yellow" => print_str("wait"),
+        _ => print_str("unknown"),
+    }
+}
+
+fn main() {
+    let signals = vec(Signal { name: "green" }, Signal { name: "red" }, Signal { name: "yellow" })
+    for signal in signals {
+        print_signal_meaning(signal)
+    }
+}
+```

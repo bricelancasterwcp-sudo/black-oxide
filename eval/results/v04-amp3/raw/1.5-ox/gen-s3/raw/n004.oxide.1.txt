@@ -1,0 +1,22 @@
+```rust
+fn main() {
+    let mut a = 1;
+    let b = 1;
+
+    for _ in 2..=9 {
+        let c = a + b;
+        a = b;
+        b = c;
+    }
+
+    println!("{}", b);
+}
+```
+
+### Explanation:
+1. **Initialization**: We initialize `a` to 1 and `b` to 1, which are the first two terms of the sequence.
+2. **Loop**: We use a for loop that runs from 2 to 9 (inclusive). This loop index is not used in any calculations.
+3. **Update**: In each iteration:
+   - We calculate the next term `c` as the sum of `a` and `b`.
+   - We update `a` to the value of `b` and `b` to the value of `c`.
+4. **Print**: After the loop, we print the tenth term (`b`, which is now the 10th term in the sequence).

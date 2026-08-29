@@ -1,0 +1,13 @@
+fn main() {
+    let word = "coffee";
+    let seen = vec();
+    for c in chars(word) {
+        if contains(seen, c) {
+            continue;
+        }
+        if count(word, c) > 1 {
+            print_str(c);
+            seen = push(seen, c);
+        }
+    }
+}

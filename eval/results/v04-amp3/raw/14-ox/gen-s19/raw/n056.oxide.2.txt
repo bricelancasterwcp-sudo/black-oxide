@@ -1,0 +1,21 @@
+```text
+struct Reading { label: Str, values: Vec<Str> }
+
+fn sum_numbers(v: Vec<Str>) -> Unit {
+    let mut sum = 0
+    let mut count_non_numbers = 0
+    for s in v {
+        match parse_int(s) {
+            Some(n) => sum = sum + n,
+            None => count_non_numbers = count_non_numbers + 1,
+        }
+    }
+    print(sum)
+    print(count_non_numbers)
+}
+
+fn main() {
+    let readings = Reading { label: "data", values: vec("7", "x", "9", "?") }
+    sum_numbers(readings.values)
+}
+```

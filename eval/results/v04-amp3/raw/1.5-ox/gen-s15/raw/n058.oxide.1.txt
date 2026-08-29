@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let word = "coffee".chars().collect::<Vec<char>>();
+    let mut seen = vec![false; 26];
+
+    for &c in &word {
+        if !seen[(c as u8 - 'a' as u8) as usize] {
+            seen[(c as u8 - 'a' as u8) as usize] = true;
+            print!("{}", c);
+        }
+    }
+
+    println!();
+}
+```

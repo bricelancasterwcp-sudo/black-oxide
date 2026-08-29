@@ -1,0 +1,17 @@
+```rust
+use std::io;
+
+fn main() {
+    let mut input = String::new();
+    io::stdin().read_line(&mut input).unwrap();
+
+    for ch in input.chars() {
+        match ch {
+            'g' => print_str("go for green\n"),
+            'r' => print_str("stop for red\n"),
+            'y' => print_str("wait for yellow\n"),
+            _ => println!("invalid signal code: {}", ch),
+        }
+    }
+}
+```

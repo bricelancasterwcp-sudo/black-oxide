@@ -1,0 +1,23 @@
+fn main() {
+    let mut scores = vec![2, 9, 5];
+    sort(&mut scores);
+    for &score in &scores {
+        print(score);
+    }
+}
+
+fn sort(v: &mut Vec<Int>) -> Vec<Int> {
+    let len = v.len();
+    for i in 0..len {
+        for j in (i + 1)..len {
+            if v[i] < v[j] {
+                v.swap(i, j);
+            }
+        }
+    }
+    v.clone()
+}
+
+fn print(x: Int) {
+    println!("{}", x);
+}

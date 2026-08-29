@@ -1,0 +1,23 @@
+```rust
+fn main() {
+    let mut numbers = vec![8, 15];
+    let leaves = vec!["oak"];
+
+    for (i, &number) in numbers.iter().enumerate() {
+        if i < leaves.len() && number == leaves[i] {
+            println!("{} good", number);
+        } else {
+            println!("{} bad", number);
+        }
+    }
+
+    // Optionally print remaining numbers and leaves
+    for &remainder_number in numbers.iter().skip(leaves.len()) {
+        println!("{} bad", remainder_number);
+    }
+
+    for &leaf in leaves.iter().skip(numbers.len()) {
+        println!("{} good", leaf);
+    }
+}
+```

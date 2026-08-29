@@ -1,0 +1,16 @@
+```rust
+use rand::Rng; // Import the Rng trait from the rand crate
+
+fn main() {
+    loop {
+        let mut rng = rand::thread_rng(); // Create a thread-local random number generator
+        let signal = rng.gen_range(0..=2); // Generate a random number between 0 and 2 (inclusive)
+        match signal {
+            0 => println!("go"),         // Go for green
+            1 => println!("stop"),       // Stop for red
+            2 => println!("wait"),       // Wait for yellow
+            _ => println!("unknown"),   // For unexpected values
+        }
+    }
+}
+```

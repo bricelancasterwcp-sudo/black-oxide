@@ -1,0 +1,16 @@
+```rust
+use std::io;
+
+fn main() {
+    let number = 9875;
+    let mut sum = 0;
+    let mut n = number;
+
+    while n > 0 {
+        sum += n % 10;
+        n /= 10;
+    }
+
+    println!("The sum of the digits is: {}", sum);
+}
+```

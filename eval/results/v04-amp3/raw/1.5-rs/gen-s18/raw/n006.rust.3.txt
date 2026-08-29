@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let max_power_of_two = 1 << ((32 - 1).leading_zeros()) as u32;
+    println!("{}", max_power_of_two);
+}
+```
+
+In the original code, `leading_zeros()` is called on a numeric type `{integer}`, which is ambiguous because it could refer to either an integer or a floating-point number. The compiler requires that it be explicitly cast to `u32` (unsigned 32-bit integer) in this context.

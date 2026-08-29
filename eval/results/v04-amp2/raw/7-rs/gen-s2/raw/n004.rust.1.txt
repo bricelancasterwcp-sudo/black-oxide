@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let mut terms = [1, 1];
+    for _ in 2..10 {
+        terms.push(terms[terms.len() - 1] + terms[terms.len() - 2]);
+    }
+    println!("{}", terms[9]);
+}
+```

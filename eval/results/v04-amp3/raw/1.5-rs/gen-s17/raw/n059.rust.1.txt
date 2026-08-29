@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let phrase = "when in doubt go home";
+    let words_count = phrase.split_whitespace().count();
+    let characters_count = phrase.len();
+
+    println!("Words: {}", words_count);
+    println!("Characters (including spaces): {}", characters_count);
+}
+```
+
+This program will output:
+```plaintext
+Words: 3
+Characters (including spaces): 26
+```
+The `split_whitespace()` function splits the string into a vector of substrings based on whitespace, then the `count()` method counts the number of elements in that vector. The `len()` method simply returns the total length of the string, which includes all characters including spaces.

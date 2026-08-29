@@ -1,0 +1,32 @@
+```rust
+fn main() {
+    let mut s = String::from("banana");
+
+    for i in 0..s.len() {
+        if s[i] == 'n' {
+            print!("{}", i);
+        }
+    }
+
+    println!();
+}
+```
+
+### Explanation:
+
+1. **Initialization**: We start by creating a mutable `String` from the literal "banana".
+
+2. **Loop through characters**: Using a `for` loop, we iterate over each character in the string.
+
+3. **Check for 'n'**: Inside the loop, we check if the current character (`s[i]`) is equal to 'n'.
+
+4. **Print position**: If the condition is true, we print the current index (`i`).
+
+5. **End of loop**: After the loop finishes, we use `println!()` to move to a new line.
+
+This program will output:
+```
+0
+2
+4
+```

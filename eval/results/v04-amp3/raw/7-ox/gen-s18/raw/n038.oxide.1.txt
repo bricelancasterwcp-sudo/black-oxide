@@ -1,0 +1,21 @@
+```rust
+fn main() {
+    let sensor = Sensor { reading: 0 };
+    sensor.set_reading(7);
+    sensor.print_reading();
+}
+
+struct Sensor {
+    reading: Int,
+}
+
+impl Sensor {
+    fn set_reading(&mut self, new_reading: Int) {
+        self.reading = new_reading;
+    }
+
+    fn print_reading(&self) {
+        print(self.reading);
+    }
+}
+```

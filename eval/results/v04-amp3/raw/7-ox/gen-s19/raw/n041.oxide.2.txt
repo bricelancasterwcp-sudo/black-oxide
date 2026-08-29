@@ -1,0 +1,8 @@
+fn main() {
+    let mut readings = vec![9, 2, 7, 4];
+    sort(&mut readings);
+    for x in readings {
+        print(x);
+        print_str("\n");
+    }
+}

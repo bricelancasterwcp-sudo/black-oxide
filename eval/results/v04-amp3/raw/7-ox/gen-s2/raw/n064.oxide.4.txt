@@ -1,0 +1,17 @@
+```rust
+struct List { value: Int }
+
+fn get_value(lst: Vec<List>, idx: Int) -> Option<Int> {
+    let item = get(lst, idx)?;
+    Some(item.value)
+}
+
+fn main() {
+    let lst = vec(List { value: 10 }, List { value: 20 });
+    match (get_value(lst.clone(), 1), get_value(lst.clone(), 4)) {
+        (Some(a), Some(b)) => print(concat(int_to_str(a), " ", int_to_str(b))),
+        (None, None) => print_str("none none"),
+        (Some(a), None) | (None, Some(a)) => print(concat(int_to_str(a), " none")),
+    }
+}
+```

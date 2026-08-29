@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut product: Int = 1;
+    for i in range(1, 7) {
+        product *= i;
+    }
+    print(product);
+}
+```
+
+This Rust code snippet follows the guidelines by providing a complete program source without any comments or additional context. The problem is solved by initializing a variable `product` to 1 and then iterating from 1 to 6, multiplying each number with `product`. Finally, it prints the resulting product.

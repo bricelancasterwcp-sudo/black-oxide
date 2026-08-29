@@ -1,0 +1,22 @@
+```rust
+fn reverse_digits(n: Int) -> Option<Int> {
+    if n <= 0 {
+        return None;
+    }
+    let mut result = 0;
+    while n > 0 {
+        let digit = n % 10;
+        result = result * 10 + digit;
+        n /= 10;
+    }
+    Some(result)
+}
+
+fn main() {
+    let num = 1234;
+    match reverse_digits(num) {
+        Some(reversed) => print(reversed),
+        None => print_str("Input is negative"),
+    }
+}
+```

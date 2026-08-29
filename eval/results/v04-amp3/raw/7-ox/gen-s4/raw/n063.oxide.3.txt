@@ -1,0 +1,15 @@
+```rust
+struct Line { items: Vec<(Int, Int)> }
+
+fn total(line: Line) -> Int {
+    sum(map(line.items, |(price, count)| price * count))
+}
+
+fn main() {
+    let line1 = Line { items: vec![(3, 4), (2, 5)] };
+    print(total(line1.clone()))  // first line's value
+    print(total(Line { items: vec![] }))  // second line's value
+    let line2 = Line { items: vec![(3, 4), (2, 5)] };
+    print(total(line1.clone() + line2))  // both lines' values together
+}
+```

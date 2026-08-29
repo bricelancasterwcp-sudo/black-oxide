@@ -1,0 +1,37 @@
+```oxide
+struct Queue { items: Vec<Int> }
+
+fn enqueue(q: Queue, x: Int) -> Queue {
+    let mut new_items = q.items;
+    push(new_items, x);
+    Queue { items: new_items }
+}
+
+fn dequeue(q: Queue) -> (Int, Queue) {
+    let first = get(q.items, 0)?;
+    (first, enqueue(Queue { items: vec() }, first))
+}
+
+fn swap_first_last(mut q: Queue) -> Queue {
+    if len(q.items) > 1 {
+        let last_index = len(q.items) - 1;
+        let last = get(q.items, last_index)?;
+        let (first, mut q) = dequeue(q);
+        q.items[0] = last;
+        q.items[last_index] = first;
+    }
+    q
+}
+
+fn print_queue(q: Queue) {
+    for x in q.items {
+        print(x);
+    }
+}
+
+fn main() {
+    let q = enqueue(enqueue(enqueue(enqueue(enqueue(Queue { items: vec() }, 1), 2), 3), 4), 5);
+    let q = swap_first_last(q);
+    print_queue(q);
+}
+```

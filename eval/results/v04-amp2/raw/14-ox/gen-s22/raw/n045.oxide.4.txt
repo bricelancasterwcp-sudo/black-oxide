@@ -1,0 +1,1 @@
+fn main() { let log = vec(6, 7, 8, 9); print(get(log.clone(), 0)? as Int); print(get(log, len(log) - 1)? as Int); }

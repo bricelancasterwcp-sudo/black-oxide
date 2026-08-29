@@ -1,0 +1,21 @@
+```rust
+fn main() {
+    let oak = Some(3);
+    match oak {
+        Some(n) => println!("{} is an oak", n),
+        None => println!("bad"),
+    }
+
+    let nine = 9;
+    match nine {
+        n if n > 10 => println!("{} is bad", n),
+        _ => println!("{}", n),
+    }
+
+    let fifteen = Some(15);
+    match fifteen {
+        Some(n) if n % 3 == 0 => println!("{} is divisible by 3", n),
+        None => println!("bad"),
+    }
+}
+```

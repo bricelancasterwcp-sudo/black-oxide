@@ -1,0 +1,10 @@
+```rust
+struct Sensor { value: Int }
+struct Reading { label: Str, values: Vec<Int> }
+
+fn main() {
+    let mut sensor = Sensor { value: 0 };
+    sensor.value += 7;
+    print(sensor.value);
+}
+```

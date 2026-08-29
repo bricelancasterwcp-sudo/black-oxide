@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let result = second_entry(&[7, 8, 9]);
+    println!("{:?}", result);
+}
+
+fn second_entry(lst: &[i32]) -> Option<i32> {
+    lst.get(1).copied()
+}
+```
+
+The problem was in the return type of `second_entry`. It should return a `Option<&i32>`, not an `Option<i32>`, because the function might return `None` if there is no second entry.

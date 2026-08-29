@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let number = 91;
+    let is_prime = if number <= 1 {
+        false
+    } else {
+        for i in 2..=((number as f64).sqrt() as i32 + 1) {
+            if number % i == 0 {
+                return false;
+            }
+        }
+        true
+    };
+    println!("{}", if is_prime { "yes" } else { "no" });
+}
+```

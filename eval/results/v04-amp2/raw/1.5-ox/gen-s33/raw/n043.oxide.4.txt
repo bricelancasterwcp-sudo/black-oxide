@@ -1,0 +1,32 @@
+```rust
+struct Queue {
+    values: Vec<Int>,
+}
+
+impl Queue {
+    fn new() -> Self {
+        Queue { values: vec![1, 2, 3, 4, 5] }
+    }
+
+    fn exchange_first_last(&mut self) {
+        if let Some(first) = self.values.pop_front() {
+            if let Some(last) = self.values.pop_back() {
+                self.values.insert(0, last);
+                self.values.push_back(first);
+            }
+        }
+    }
+
+    fn print_queue(&self) {
+        for &value in &self.values {
+            println!("{}", value);
+        }
+    }
+}
+
+fn main() {
+    let mut q = Queue::new();
+    q.exchange_first_last();
+    q.print_queue();
+}
+```

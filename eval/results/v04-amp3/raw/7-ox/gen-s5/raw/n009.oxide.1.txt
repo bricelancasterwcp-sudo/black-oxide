@@ -1,0 +1,3 @@
+```rust
+print_str(concat(int_to_str(trunc(to_float(1234) / to_float(10)))), int_to_str(to_int(modulo(to_float(1234), to_float(10)))))
+```

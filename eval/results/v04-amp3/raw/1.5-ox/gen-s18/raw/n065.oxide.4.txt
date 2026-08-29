@@ -1,0 +1,27 @@
+```rust
+struct Reading { label: String, values: Vec<Int> }
+
+fn first_big(v: Vec<Int>) -> Int {
+    let mut found = -1;
+    for x in v {
+        if x > 5 {
+            found = x;
+            break;
+        }
+    }
+    found
+}
+
+fn second(v: Vec<Int>) -> Option<Int> {
+    let x = get(&v, 1)?;
+    Some(x + 1)
+}
+
+fn main() {
+    let readings = vec![6, 11, 3, 14, 9];
+    println!("{} readings exceed five", first_big(readings));
+    println!("{}", max(&readings));
+}
+```
+
+After fixing the syntax errors and ensuring the program structure is correct according to the Rust language rules, it should compile and run as expected.

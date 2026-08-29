@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let point1 = (1, 5); // The first point is at (1, 5)
+    let point2 = (point1.0 + 10, point1.1); // The second point is at (11, 5)
+
+    println!("The sum of the two numbers in the second point is {}", point2.0 + point2.1);
+}
+```
+
+This Rust program creates a point at (1, 5) and then constructs another point with ten across but the same height. It then prints the sum of the two numbers in the second point, which is 16.

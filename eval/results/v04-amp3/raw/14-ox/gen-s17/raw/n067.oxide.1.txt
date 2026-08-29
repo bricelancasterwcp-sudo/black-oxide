@@ -1,0 +1,17 @@
+```ox
+fn main() {
+    let numbers = vec(7, 4, 9, 10)
+    let mut sum_even = 0
+
+    for n in numbers {
+        if n % 2 == 0 {
+            sum_even = sum_even + n
+        } else {
+            print(n * 2)
+            print('\n')
+        }
+    }
+
+    print(sum_even)
+}
+```

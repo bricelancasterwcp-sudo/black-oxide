@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let my_list = [10, 20];
+    
+    println!("Position 1: {}", my_list.get(0));
+    println!("Position 4: {}", my_list.get(3)); // Note that position 4 is out of bounds for this list
+}
+```
+This program creates a vector `my_list` with the elements 10 and 20. It then prints the value at index 0 (position 1), which is `10`, and attempts to print the value at index 3, which is `None`.

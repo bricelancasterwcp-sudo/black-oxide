@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let result = second_entry(&[7, 8, 9]);
+    match result {
+        Some(value) => println!("The second entry is: {}", value),
+        None => println!("There are not enough elements to get the second entry."),
+    }
+}
+
+fn second_entry(list: &[i32]) -> Option<&i32> {
+    if list.len() < 2 {
+        return None;
+    } else {
+        Some(&list[1])
+    }
+}
+```

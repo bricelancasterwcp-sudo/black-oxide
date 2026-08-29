@@ -1,0 +1,20 @@
+```rust
+fn main() {
+    let nums = [9, 2, 12, 5, 16];
+    let mut count = 0;
+    for &num in nums.iter().filter(|&&n| n < 10) {
+        println!("{}", num);
+        count += 1;
+    }
+    println!("Kept {} numbers under ten.", count);
+}
+```
+
+When you run this program, it will print:
+
+```
+2
+5
+3
+Kept 3 numbers under ten.
+```

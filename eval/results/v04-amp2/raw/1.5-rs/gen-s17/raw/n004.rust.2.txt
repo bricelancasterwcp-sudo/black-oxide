@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let mut a = 1;
+    let mut b = 1;
+
+    for _ in 0..9 {
+        let temp = a + b;
+        a = b;
+        b = temp;
+    }
+
+    println!("The tenth term is {}", b);
+}
+```
+
+Explanation:
+The original program had an error because it was trying to access the variable `b` before it was initialized. The correct way to fix this is to initialize `b` with 1 before the loop, and then update `a` and `b` inside the loop.

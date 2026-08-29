@@ -1,0 +1,22 @@
+```text
+fn count_below_and_above_cutoff(values: Vec<Int>, cutoff: Int) -> (Int, Int) {
+    let mut below = 0;
+    let mut above = 0;
+    for x in values {
+        if x < cutoff {
+            below += 1;
+        } else {
+            above += 1;
+        }
+    }
+    (below, above)
+}
+
+fn main() {
+    let values = vec(5, 12, 3, 18, 9);
+    let cutoff = 10;
+    let (below, above) = count_below_and_above_cutoff(values, cutoff);
+    print(below);
+    print(above);
+}
+```

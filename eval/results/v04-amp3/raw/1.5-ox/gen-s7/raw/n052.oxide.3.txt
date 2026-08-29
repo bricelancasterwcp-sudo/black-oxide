@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let s = "banana";
+    for (i, c) in s.chars().enumerate() {
+        if c == 'n' {
+            print!("{}", i);
+        }
+    }
+}
+```
+
+Explanation:
+The error messages indicate that there were syntax errors due to missing semicolons at the end of statements and unexpected characters. The corrected program adds semicolons where they are needed, ensuring that each statement ends with a `;`. Additionally, it removes the unnecessary `&` before `c` in line 13, as the character is not a reference.

@@ -1,0 +1,14 @@
+```
+fn helper(v: Vec<Int>) -> Option<Int> {
+    match v.get(1) {
+        Some(&x) => Some(x),
+        None => None,
+    }
+}
+
+fn main() {
+    let v = vec![3, 42];
+    print(helper(v)); // prints 8
+    println(helper(vec![])); // prints none
+}
+```

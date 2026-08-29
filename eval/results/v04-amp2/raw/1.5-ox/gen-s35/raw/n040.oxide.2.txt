@@ -1,0 +1,14 @@
+```rust
+struct Square { side: Int }
+struct Circle { radius: Float }
+
+fn main() {
+    let s = Square { side: 4 };
+    let r = Circle { radius: 3.0 };
+
+    match s {
+        Square { side } => print(int_to_str(side * side)),
+        Circle { radius } => print(int_to_str(radius * radius * 3.14))
+    }
+}
+```

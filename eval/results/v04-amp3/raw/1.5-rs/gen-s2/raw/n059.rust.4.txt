@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let phrase = "when in doubt go home";
+    let words_count = phrase.split_whitespace().count();
+    let char_count = phrase.len();
+
+    println!("The phrase contains {} words and spans {} characters.", words_count, char_count);
+}
+```
+Explanation: The original code was correct in printing the number of words and the length of the string. However, it did not take into account that spaces are part of the length of a string when counting the number of characters. Therefore, the actual character count included both letters and spaces, resulting in 21 characters for "when in doubt go home". The code was correctly calculating the number of words using `split_whitespace()`, which splits the string at whitespace.

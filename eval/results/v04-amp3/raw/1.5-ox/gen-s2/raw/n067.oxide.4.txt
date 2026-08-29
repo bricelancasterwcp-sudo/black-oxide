@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut acc = 0;
+    for x in vec![7, 4, 9, 10] {
+        if x % 2 == 1 {
+            println!("{} doubled", x * 2);
+        } else {
+            acc += x;
+        }
+    }
+    println!("Total of even entries: {}", acc);
+}
+```

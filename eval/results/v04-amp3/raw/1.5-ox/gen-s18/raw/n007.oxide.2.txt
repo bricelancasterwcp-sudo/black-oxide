@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let n = 9875;
+    let s = int_to_str(n);
+    let sum = str_len(s) as i32;
+    for c in chars(s) {
+        if c >= '0' && c <= '9' {
+            sum += (c - '0') as i32;
+        }
+    }
+    println!("{}", sum);  // Output: 24
+}
+```

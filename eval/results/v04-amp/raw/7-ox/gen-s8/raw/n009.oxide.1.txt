@@ -1,0 +1,14 @@
+```oxide
+fn reverse_digits(n: Int) -> Str {
+    let mut chars = chars(int_to_str(n))
+    let mut reversed_chars = vec()
+    while len(chars) > 0 {
+        push(reversed_chars, pop(chars))
+    }
+    concat(reversed_chars)
+}
+
+fn main() {
+    print(reverse_digits(1234))
+}
+```

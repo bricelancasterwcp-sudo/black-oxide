@@ -1,0 +1,14 @@
+```oxide
+fn main() {
+    let batch = vec!(9, 2, 12, 5, 16);
+    for &x in batch.iter() {
+        if x < 10 {
+            print(x);
+            print_str("\n");
+        }
+    }
+    let kept_count = count(batch, |&x| x < 10);
+    print(kept_count);
+    print_str("\n");
+}
+```

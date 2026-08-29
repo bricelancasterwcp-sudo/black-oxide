@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let s = "a1b22";
+    let mut sum = 0;
+    let mut count = 0;
+
+    for c in s.chars() {
+        if '0' <= c && c <= '9' {
+            sum += c as u32 - '0' as u32;
+            count += 1;
+        }
+    }
+
+    println!("Total of digits: {}", sum);
+    println!("Number of digits: {}", count);
+}
+```

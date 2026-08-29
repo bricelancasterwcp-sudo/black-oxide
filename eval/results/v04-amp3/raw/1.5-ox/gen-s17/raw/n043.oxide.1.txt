@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut q = vec![1, 2, 3, 4, 5];
+    let first = q.remove(0); // moves the first element and returns it
+    let last = q.pop();      // removes and returns the last element
+    if let Some(_) = first { // checks for None before accessing value
+        println!("{}", first);
+    }
+    if let Some(_) = last {  // checks for None before accessing value
+        println!("{}", last);
+    }
+}
+```

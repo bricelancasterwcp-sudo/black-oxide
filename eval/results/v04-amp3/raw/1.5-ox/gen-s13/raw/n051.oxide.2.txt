@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let granite = "granite";
+    print_line(granite[0]);
+    print_line(granite[6]);
+}
+fn print_line(c: char) {
+    println!("{}", c);
+}
+```

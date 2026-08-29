@@ -1,0 +1,13 @@
+```
+fn main() {
+    let v = vec();
+    let v = push(v, 10);
+    let v = push(v, 20);
+
+    let first = get(v, 1)?;
+    print(first);
+
+    let fourth = get(v, 4)?;
+    print(fourth);
+}
+```

@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let mut arr = [10, 20]; // Initialize an array with elements 10 and 20
+
+    match &arr[0] {   // Match on the first element of the array
+        Some(value) => println!("Position 1 value: {}", value),
+        None => println!("Position 1 is empty"),
+    }
+
+    match &arr[3] {   // Match on the fourth element of the array, which does not exist
+        Some(value) => println!("Position 4 value: {}", value),
+        None => println!("Position 4 is empty"),
+    }
+}
+```

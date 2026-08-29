@@ -1,0 +1,9 @@
+```rust
+
+fn main() {
+    let mut lst = vec![10, 20];
+    
+    println!("Position 1: {}", lst.get(0));
+    println!("Position 4: {}", lst.get(3));
+}
+```

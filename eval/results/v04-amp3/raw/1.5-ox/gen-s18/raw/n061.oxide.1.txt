@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let w = 9;
+    let h = 3;
+    let area = w * h;
+    print("The area is {}", area);
+    
+    let perimeter = (w + h) * 2;
+    print("The perimeter is {}", perimeter);
+}
+```

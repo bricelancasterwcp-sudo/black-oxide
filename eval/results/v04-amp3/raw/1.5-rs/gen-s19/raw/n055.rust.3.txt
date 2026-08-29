@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    for arg in std::env::args().skip(1) {
+        match arg.parse::<i32>() {
+            Ok(num) => println!("{}", num),
+            Err(_) => println!("bad"),
+        }
+    }
+}
+```

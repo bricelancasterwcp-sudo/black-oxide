@@ -1,0 +1,21 @@
+```rust
+struct Measurement { value: Int }
+
+fn main() {
+    let readings = vec![
+        Measurement { value: 9 },
+        Measurement { value: 2 },
+        Measurement { value: 7 },
+        Measurement { value: 4 }
+    ];
+
+    // Clone the vector and sort it
+    let mut sorted_readings = readings.clone();
+    sorted_readings.sort_by_key(|m| m.value);
+
+    // Print each measurement from smallest to largest
+    for reading in sorted_readings {
+        println!("{}", reading.value);
+    }
+}
+```

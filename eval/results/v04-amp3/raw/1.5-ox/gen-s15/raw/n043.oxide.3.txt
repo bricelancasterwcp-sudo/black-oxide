@@ -1,0 +1,18 @@
+```rust
+fn exchange_first_last(q: Vec<Int>) -> Vec<Int> {
+    let mut q = q.clone(); // Clone to avoid moving the original vector
+    if q.len() < 2 {
+        return q; // Return the queue as is if there are less than 2 elements
+    }
+    let first = q.remove(0); // Move the first element
+    let last = q.pop().unwrap(); // Pop the last element
+    q.insert(0, last); // Insert the last element at the beginning
+    q.push(first); // Push the first element at the end
+    q
+}
+
+fn main() {
+    let mut q = vec![1, 2, 3, 4, 5];
+    println!("{:?}", exchange_first_last(q)); // Output: [5, 2, 3, 4, 1]
+}
+```

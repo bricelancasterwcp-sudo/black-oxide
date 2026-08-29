@@ -145,6 +145,81 @@ def _ratio_or_none(a_mean: float | None, b_mean: float | None) -> float | None:
     return round(a_mean / b_mean, 3)
 
 
+def load_cells_keyed(arm_dir: Path) -> dict[tuple[str, str], dict]:
+    """Every cell of one arm keyed by `(seed_dir_name, task)`.
+
+    `load_cells` flattens seeds away, which is right for whole-arm rates
+    and wrong for anything paired: two arms' cells can only be matched
+    if the seed survives. The key is the seed DIRECTORY name (`gen-s7`),
+    not a parsed integer, so a layout that ever names seeds differently
+    still pairs correctly or not at all -- never approximately.
+    """
+    keyed: dict[tuple[str, str], dict] = {}
+    for path in sorted(Path(arm_dir).glob("gen-s*/cells.jsonl")):
+        seed = path.parent.name
+        for line in path.read_text(encoding="utf-8").splitlines():
+            if line.strip():
+                cell = json.loads(line)
+                keyed[(seed, cell["task"])] = cell
+    return keyed
+
+
+def green_pair_keys(
+    a_keyed: dict[tuple[str, str], dict],
+    b_keyed: dict[tuple[str, str], dict],
+) -> set[tuple[str, str]]:
+    """The `(seed, task)` keys present in BOTH arms and green in both."""
+    return {
+        key
+        for key in a_keyed.keys() & b_keyed.keys()
+        if a_keyed[key]["final_passed"] and b_keyed[key]["final_passed"]
+    }
+
+
+def paired_tokens_to_green(
+    a_keyed: dict[tuple[str, str], dict],
+    b_keyed: dict[tuple[str, str], dict],
+    *,
+    restrict_to: set[tuple[str, str]] | None = None,
+) -> dict:
+    """Composition-controlled token ratio between two arms (SPEC 59.7).
+
+    `gen_metrics`'s `tokens_to_green_mean` averages over each arm's OWN
+    green sessions, so the two means describe different task sets and a
+    pass-rate change moves the ratio for a reason that is not token
+    efficiency. This construction averages both arms over the SAME
+    cells: paired by `(seed, task)`, green in both, optionally further
+    restricted to `restrict_to` (the cross-wave common set).
+
+    Returns means and ratio as None -- never 0.0 -- when no pair
+    qualifies, and always reports `n_pairs` so a ratio can never be read
+    without the sample it rests on.
+    """
+    keys = green_pair_keys(a_keyed, b_keyed)
+    if restrict_to is not None:
+        keys &= restrict_to
+    n = len(keys)
+    if n == 0:
+        return {
+            "n_pairs": 0,
+            "n_shared": len(a_keyed.keys() & b_keyed.keys()),
+            "n_tasks": 0,
+            "a_mean": None,
+            "b_mean": None,
+            "ratio": None,
+        }
+    a_mean = sum(a_keyed[k]["tokens_out"] for k in keys) / n
+    b_mean = sum(b_keyed[k]["tokens_out"] for k in keys) / n
+    return {
+        "n_pairs": n,
+        "n_shared": len(a_keyed.keys() & b_keyed.keys()),
+        "n_tasks": len({task for _, task in keys}),
+        "a_mean": round(a_mean, 1),
+        "b_mean": round(b_mean, 1),
+        "ratio": _ratio_or_none(a_mean, b_mean),
+    }
+
+
 def _load_probe_rows(probes_root: Path) -> list[dict]:
     """Every already-scored `eval.probe.score()` result row persisted
     under `probes_root`: one probe_campaign.py cell per (language-arm,

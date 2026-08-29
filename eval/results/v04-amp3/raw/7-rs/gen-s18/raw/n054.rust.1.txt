@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let mut vowels = 0;
+    let mut consonants = 0;
+
+    for letter in "keyboard".chars().map(|c| c.to_ascii_lowercase()) {
+        if matches!(letter, 'a' | 'e' | 'i' | 'o' | 'u') {
+            vowels += 1;
+        } else if letter.is_alphabetic() {
+            consonants += 1;
+        }
+    }
+
+    println!("Vowels: {}", vowels);
+    println!("Consonants: {}", consonants);
+}
+```

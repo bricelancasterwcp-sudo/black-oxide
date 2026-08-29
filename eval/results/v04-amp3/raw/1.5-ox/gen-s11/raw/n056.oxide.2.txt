@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let (x, y, z, u) = (Some(7), None, Some(9), Some(?));
+
+    let total = x.map(|n| n).unwrap_or(0)
+                  + y.map(|n| n).unwrap_or(0)
+                  + z.map(|n| n).unwrap_or(0)
+                  + u.map(|n| n).unwrap_or(0);
+
+    println!("Total: {}", total);
+    println!("Number of ones: {}", x.is_some() as i32
+                    + y.is_some() as i32
+                    + z.is_some() as i32
+                    + u.is_some() as i32);
+}
+```

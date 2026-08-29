@@ -1,0 +1,28 @@
+```rust
+fn first_big(v: Vec<Int>) -> Int {
+    let mut found = -1;
+    for x in v {
+        if x > 5 {
+            found = x;
+            break;
+        }
+    }
+    found
+}
+
+fn second(v: Vec<Int>) -> Option<Int> {
+    match get(v, 1)? {
+        x => Some(x + 1),
+    }
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(vec(), 3), 42) };
+    println!("{}", first_big(r.values));
+    let r2 = Reading { label: "lab2", ..r };
+    match second(r2.values) {
+        Some(n) => println!("{} is big and {}", n, if n > 5 { n } else { 0 }),
+        None => println!("too short"),
+    }
+}
+```

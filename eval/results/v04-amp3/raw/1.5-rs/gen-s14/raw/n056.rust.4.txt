@@ -1,0 +1,25 @@
+fn main() {
+    let text1 = String::from("7"); // assuming "7" holds a number
+    let text2 = String::from("x"); // assuming "x" does not hold a number
+    let text3 = String::from("9"); // assuming "9" holds a number
+    let unknown_text = String::from("?"); // assuming "?" does not hold a number
+
+    let mut sum: i32 = 0;
+    let mut count: i32 = 0;
+
+    match text1.parse::<i32>() {
+        Ok(num1) => sum += num1,
+        Err(_) => count += 1, // treat non-numeric values as one
+    }
+    match text2.parse::<i32>() {
+        Ok(num2) => sum += num2,
+        Err(_) => count += 1, // treat non-numeric values as one
+    }
+    match text3.parse::<i32>() {
+        Ok(num3) => sum += num3,
+        Err(_) => count += 1, // treat non-numeric values as one
+    }
+
+    println!("Total: {}", sum);
+    println!("Count: {}", count);
+}

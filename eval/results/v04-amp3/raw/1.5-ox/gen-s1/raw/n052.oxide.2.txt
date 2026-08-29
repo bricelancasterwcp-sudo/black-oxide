@@ -1,0 +1,6 @@
+fn main() {
+    let mut bananas = "banana".chars();
+    while bananas.next().unwrap() != 'n' {}
+    let pos = bananas.position(|c| c == 'n').unwrap();
+    println!("{}", pos);
+}

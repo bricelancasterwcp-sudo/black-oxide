@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    use std::thread;
+    use std::time;
+
+    thread::sleep(time::Duration::from_secs(1));
+    println!("go");
+
+    thread::sleep(time::Duration::from_secs(2));
+    println!("stop");
+
+    thread::sleep(time::Duration::from_secs(3));
+    println!("wait");
+}
+```

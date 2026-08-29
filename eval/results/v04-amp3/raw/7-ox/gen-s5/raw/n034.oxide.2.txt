@@ -1,0 +1,19 @@
+```rust
+struct Reading { label: Str, values: Vec<Int> }
+
+fn second(v: Vec<Int>) -> Option<Int> {
+    if v.len() > 1 {
+        Some(v[1])
+    } else {
+        None
+    }
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(vec(), 3), 42) };
+    match second(r.values) {
+        Some(n) => print(n),
+        None => print_str("too short"),
+    }
+}
+```

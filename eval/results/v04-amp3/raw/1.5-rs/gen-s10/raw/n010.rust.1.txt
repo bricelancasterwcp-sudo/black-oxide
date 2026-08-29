@@ -1,0 +1,22 @@
+```rust
+fn main() {
+    let number = 91;
+    if is_prime(number) {
+        println!("yes");
+    } else {
+        println!("no");
+    }
+}
+
+fn is_prime(num: isize) -> bool {
+    if num <= 1 {
+        return false;
+    }
+    for i in 2..=((num as f64).sqrt() as isize) {
+        if num % i == 0 {
+            return false;
+        }
+    }
+    true
+}
+```

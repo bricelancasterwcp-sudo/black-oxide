@@ -1,0 +1,21 @@
+```rust
+fn main() {
+    let numbers: [Option<i32>; 4] = [
+        Some(7),
+        None,
+        Some(9),
+        None, // This is a placeholder for an unknown number
+    ];
+
+    let (sum, count) = numbers.iter().fold(
+        (0, 0),
+        |(total, count), &value| match value {
+            Some(number) => (total + number, count + 1),
+            None => (total, count + 2), // Increment count for each element that does not hold a number
+        },
+    );
+
+    println!("The total is: {}", sum);
+    println!("Numbers that do not hold a number: {}", count);
+}
+```

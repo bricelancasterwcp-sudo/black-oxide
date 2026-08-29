@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let text = "coffee";
+    for ch in text.chars().collect::<std::collections::HashSet<_>>() {
+        println!("{}", ch);
+    }
+}
+```

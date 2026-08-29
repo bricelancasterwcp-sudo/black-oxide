@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let v = vec();
+    let v = push(v, 10);
+    let v = push(v, 20);
+
+    if let Some(first) = get(v, 1) {
+        print(first);
+    }
+
+    let v = vec();
+    let v = push(v, 10);
+    let v = push(v, 20);
+
+    if let Some(fourth) = get(v, 4) {
+        print(fourth);
+    }
+}
+```

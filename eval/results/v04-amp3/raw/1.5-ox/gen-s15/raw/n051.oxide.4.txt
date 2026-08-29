@@ -1,0 +1,8 @@
+```
+fn main() {
+    let r = "granite";
+    print(r.chars().next().unwrap());  // first letter: g
+    println!();                     // newline
+    print(r.chars().last().unwrap());   // last letter: e
+}
+```

@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut values = vec![8, String::from("oak"), 15];
+    for value in &values {
+        match value {
+            8 => println!("8"),
+            "oak" => println!("Oak"),
+            15 => println!("15"),
+            _ => println!("bad"),
+        }
+    }
+}
+```

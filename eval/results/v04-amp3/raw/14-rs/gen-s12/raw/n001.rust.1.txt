@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let mut sum_of_cubes = 0;
+    for i in 1..=5 {
+        sum_of_cubes += i.pow(3);
+    }
+    println!("{}", sum_of_cubes);
+}
+```

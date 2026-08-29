@@ -1,0 +1,22 @@
+```rust
+struct Queue(Vec<Int>);
+
+impl Queue {
+    fn new(v: Vec<Int>) -> Queue { Queue(v) }
+
+    fn exchange(&mut self) {
+        let len = self.0.len();
+        if len > 1 {
+            let tmp = std::mem::replace(self.0.first_mut().unwrap(), self.0.last_mut().unwrap());
+        }
+    }
+}
+
+fn main() {
+    let mut q = Queue(vec![1, 2, 3, 4, 5]);
+    q.exchange();
+    for &x in q.0.iter() {
+        print!("{}", x);
+    }
+}
+```

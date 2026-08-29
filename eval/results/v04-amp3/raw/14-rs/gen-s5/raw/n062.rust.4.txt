@@ -1,0 +1,8 @@
+fn main() {
+    let signals = ["green", "red", "yellow"];
+    let meanings = ["go", "stop", "wait"];
+
+    for (signal, meaning) in signals.iter().zip(meanings.iter()) {
+        println!("{}: {}", signal, meaning);
+    }
+}

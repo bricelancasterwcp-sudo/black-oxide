@@ -1,0 +1,19 @@
+fn filter(v: Vec<Int>) -> Vec<Int> {
+    let mut result = vec();
+    for x in v {
+        if x < 10 {
+            push(result, x);
+        }
+    }
+    result
+}
+
+fn main() {
+    let batch = push(push(push(push(vec(), 9), 2), 12), 5);
+    let filtered = filter(batch);
+    for x in filtered {
+        print(x);
+        print_str("\n");
+    }
+    print(len(filtered));
+}

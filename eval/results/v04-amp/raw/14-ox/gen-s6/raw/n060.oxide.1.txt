@@ -1,0 +1,20 @@
+```text
+fn count_digits(s: Str) -> (Int, Int) {
+    let sum = 0
+    let count = 0
+    for c in chars(s) {
+        if parse_int(c).is_some() {
+            sum = sum + to_int(parse_int(c).unwrap())
+            count = count + 1
+        }
+    }
+    (sum, count)
+}
+
+fn main() {
+    let input = "a1b22"
+    let (total, num_digits) = count_digits(input)
+    print(total)
+    print(num_digits)
+}
+```

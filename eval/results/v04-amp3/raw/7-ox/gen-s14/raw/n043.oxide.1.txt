@@ -1,0 +1,20 @@
+```oxide
+struct Queue { items: Vec<Int> }
+
+fn enqueue(q: &mut Queue, x: Int) {
+    push(q.items, x)
+}
+
+fn dequeue(q: &mut Queue) -> Option<Int> {
+    get(q.items, 0)?
+}
+
+fn main() {
+    let mut q = Queue { items: vec(1, 2, 3, 4, 5) };
+    print(dequeue(&mut q).unwrap()) // Remove and print the first item
+    enqueue(&mut q, 1)               // Re-add it to the end
+    while let Some(x) = dequeue(&mut q) {
+        print(x)                   // Print the remaining items
+    }
+}
+```

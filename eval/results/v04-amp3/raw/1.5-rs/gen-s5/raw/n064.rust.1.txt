@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let arr = [10, 20];
+    if let Some(value) = arr.get(1) {
+        println!("{}", value);
+    }
+
+    if let Some(value) = arr.get(3) {
+        println!("{}", value);
+    } else {
+        println!("Position four is empty");
+    }
+}
+```

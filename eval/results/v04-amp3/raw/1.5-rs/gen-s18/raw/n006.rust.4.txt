@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let max_power_of_two = 1 << ((32 - 1).leading_zeros() as u32);
+    println!("{}", max_power_of_two);
+}
+```
+
+Note: The error message indicates that the compiler is unable to determine which method `leading_zeros` should be called. This happens because Rust does not have a built-in function for finding the number of trailing zeros in an integer. Instead, you can use the `count_ones` method which counts the number of 1's in the binary representation of the integer. To find the largest power of two that does not exceed a given number, you can subtract one from the number and then find its leading zeros using `leading_zeros`.

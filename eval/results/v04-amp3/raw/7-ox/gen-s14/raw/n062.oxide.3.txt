@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let signals = vec![vec_str("green"), vec_str("red"), vec_str("yellow")];
+    for signal in signals {
+        match signal.as_slice() {
+            "green" => print_str("go"),
+            "red" => print_str("stop"),
+            "yellow" => print_str("wait"),
+            _ => print_str("unknown"),
+        }
+    }
+}
+```

@@ -1,0 +1,15 @@
+```
+fn main() {
+    let mut s = String::from("drum");
+    
+    // Reverse the string
+    for i in (0..s.len()).rev() {
+        print!("{}", s.chars().nth(i).unwrap());
+    }
+    
+    println!();  // Print a newline
+    
+    // Original string
+    println!("Drum\n");
+}
+```

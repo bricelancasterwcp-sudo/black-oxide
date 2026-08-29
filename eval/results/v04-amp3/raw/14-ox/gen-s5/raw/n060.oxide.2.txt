@@ -1,0 +1,20 @@
+```rust
+fn count_digits(s: Str) -> Option<(Int, Int)> {
+    let mut total = 0
+    let mut count = 0
+    for c in chars(s) {
+        if c >= "0" && c <= "9" {
+            total += parse_int(c)?
+            count += 1
+        }
+    }
+    Some((total, count))
+}
+
+fn main() {
+    let s = "a1b22"
+    let (digits, count) = count_digits(s)?
+    print(digits)
+    print(count)
+}
+```

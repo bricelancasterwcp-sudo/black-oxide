@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let phrase = "when in doubt go home";
+    println!("Words: {}", phrase.split_whitespace().count());
+    println!("Characters (including spaces): {}", phrase.len());
+}
+```
+The program starts by declaring a string variable `phrase` with the value "when in doubt go home". It then prints the number of words in the phrase using `split_whitespace()` method, which splits the string into substrings based on whitespace and returns an iterator over those substrings. The count function is used to determine how many elements (words) are in this iterator. Finally, it prints the total length of the phrase, including spaces, using the `len` method.

@@ -1,0 +1,6 @@
+fn main() {
+    for s in vec("level", "stereo", "rotor") {
+        let reversed = String::from_str(s).chars().rev().collect::<String>()
+        print(reversed == s)
+    }
+}

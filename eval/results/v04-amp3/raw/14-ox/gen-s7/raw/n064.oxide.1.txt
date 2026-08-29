@@ -1,0 +1,13 @@
+```text
+fn main() {
+    let v = push(push(vec(), 10), 20)
+    match get(v, 1) {
+        Some(n) => print(n),
+        None => print_str("too short"),
+    }
+    match get(v, 4) {
+        Some(n) => print(n),
+        None => print_str("too short"),
+    }
+}
+```

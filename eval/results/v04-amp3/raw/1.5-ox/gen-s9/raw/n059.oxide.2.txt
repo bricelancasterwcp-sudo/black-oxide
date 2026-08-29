@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let s = "when in doubt go home".to_string();
+    print("words: {}\ncharacters: {}", words_in(s), char_count(s));
+}
+
+fn words_in(s: String) -> Int {
+    s.split_whitespace().count()
+}
+
+fn char_count(s: String) -> Int {
+    s.chars().count() + 1
+}
+```

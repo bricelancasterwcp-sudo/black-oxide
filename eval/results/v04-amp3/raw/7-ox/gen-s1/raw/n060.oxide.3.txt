@@ -1,0 +1,17 @@
+fn sum_and_count(s: Str) -> (Int, Int) {
+    let mut total = 0;
+    let mut count = 0;
+    for c in chars(s) {
+        if '0' <= c && c <= '9' {
+            total += parse_int(concat("0", concat(c, ""))).unwrap();
+            count += 1;
+        }
+    }
+    (total, count)
+}
+
+fn main() {
+    let s = "a1b22";
+    let (sum, count) = sum_and_count(s);
+    print(sum); print_str("\n"); print(count);
+}

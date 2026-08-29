@@ -15,6 +15,10 @@ optional everywhere.
 - Statements: `let x = expr` · `x = expr` (reassignment) · `return expr` ·
   `while cond { }` · `for x in vec_expr { }` · `break` · `continue` ·
   expression statements.
+- Compound assignment: `x += e` / `x -= e` / `x *= e` are sugar for
+  `x = x + e` / `x = x - e` / `x = x * e`, identifier targets only.
+  Int/Float only — `+` isn't defined for Str (concat is `concat(a, b)`),
+  so `s += t` errors exactly like `s = s + t`.
 - Expressions: `if c { a } else { b }` and `match e { Pat => expr, _ => expr }`
   are expressions. Match arms: `Variant(binders)`, `Nullary`, or `_`.
 - `expr?` unwraps an `Option`/`Result`; on `None`/`Err` it returns early from
@@ -77,6 +81,13 @@ push(v, x) -> Vec<T>          # consumes v, returns it with x appended
 len(v) -> Int                 # length of a Vec
 get(v, i) -> Option<T>        # element copy at index i
 range(a, b) -> Vec<Int>       # integers a..b-1
+sort(v) -> Vec<T>             # consumes v, returns it sorted
+min(v) -> Option<T>           # smallest element, or None if empty
+max(v) -> Option<T>           # largest element, or None if empty
+sum(v) -> Int                 # sum of an Int vec, 0 if empty
+contains(v, x) -> Bool        # true if v has an element equal to x
+count(v, x) -> Int            # occurrences of x in v
+unwrap_or(o, d) -> T          # consumes o and d; Some(x) -> x, None -> d
 clone(x) -> T                 # fresh copy of any value
 str_len(s) -> Int             # characters in a Str
 concat(a, b) -> Str           # consumes both, returns a+b
@@ -86,6 +97,9 @@ parse_int(s) -> Option<Int>
 to_float(n) -> Float          # Int to Float
 trunc(x) -> Int               # Float to Int, toward zero
 ```
+
+A `fn` you define with a builtin's name shadows it for the whole program —
+the builtin, method form included, becomes unreachable there.
 
 ## Example
 

@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let line1 = vec![3; 4];
+    let line2 = vec![2; 5];
+    
+    let value_line1 = sum(line1);
+    let value_line2 = sum(line2);
+    
+    print(value_line1);
+    print_str(" ");
+    print(value_line2);
+    print_str(" ");
+    print(value_line1 + value_line2);
+}
+```

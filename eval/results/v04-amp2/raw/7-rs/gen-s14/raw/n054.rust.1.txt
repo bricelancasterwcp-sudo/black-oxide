@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let keyboard = "qwertyuiopasdfghjklzxcvbnm";
+    let mut vowels_count = 0;
+    let mut non_vowels_count = 0;
+
+    for letter in keyboard.chars() {
+        match letter.to_lowercase().next() {
+            Some('a' | 'e' | 'i' | 'o' | 'u') => vowels_count += 1,
+            _ => non_vowels_count += 1,
+        }
+    }
+
+    println!("Vowels: {}", vowels_count);
+    println!("Non-vowels: {}", non_vowels_count);
+}
+```

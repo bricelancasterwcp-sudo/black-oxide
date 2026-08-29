@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let s = "drum";
+    let rev: Str = s.chars().map(|c| c).collect();
+    print_str(&rev);
+    print_str(s);
+}
+```

@@ -1,0 +1,28 @@
+```
+struct LogEntry { timestamp: Int, message: Str }
+
+fn log_entry_from_index(log: Vec<LogEntry>, index: Int) -> Option<&LogEntry> {
+    log.get(index)
+}
+
+fn print_log_entries(log: Vec<LogEntry>) {
+    match log_entry_from_index(log, 0) {
+        Some(entry) => println!("Starting with entry: {}", entry.message),
+        None => println!("No entries in the log."),
+    }
+    match log_entry_from_index(log, log.len() - 1) {
+        Some(entry) => println!("Ending with entry: {}", entry.message),
+        None => println!("No entries in the log."),
+    }
+}
+
+fn main() {
+    let logs = vec![
+        LogEntry { timestamp: 1, message: "Start of session".to_string() },
+        LogEntry { timestamp: 2, message: "Activity A".to_string() },
+        LogEntry { timestamp: 3, message: "Activity B".to_string() },
+        LogEntry { timestamp: 4, message: "End of session".to_string() },
+    ];
+    print_log_entries(logs);
+}
+```

@@ -1,0 +1,19 @@
+```text
+fn reverse_digits(n: Int) -> Vec<Int> {
+    let mut result = vec()
+    let mut remaining = n
+    while remaining > 0 {
+        let digit = remaining % 10
+        result = push(result, digit)
+        remaining = remaining / 10
+    }
+    result
+}
+
+fn main() {
+    let number = 1234
+    let digits = reverse_digits(number)
+    let reversed_number = sum(digits.map(|d| d.to_float()).unwrap_or(0.0).trunc())
+    print(reversed_number)
+}
+```

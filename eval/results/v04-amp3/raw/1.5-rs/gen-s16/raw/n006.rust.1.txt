@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut max_power_of_two = 1;
+    while max_power_of_two <= 100 {
+        max_power_of_two *= 2;
+    }
+    println!("{}", max_power_of_two);
+}
+```
+
+In this solution, we initialize a mutable variable `max_power_of_two` to 1. Then, we enter a loop that continues as long as `max_power_of_two` is less than or equal to 100. Inside the loop, we double `max_power_of_two` using the multiplication assignment operator `*=`. Once the condition `max_power_of_two > 100` is no longer true, we print the value of `max_power_of_two`.

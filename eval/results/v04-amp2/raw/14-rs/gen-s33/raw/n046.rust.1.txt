@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let samples = vec![5, 12, 3, 18, 9];
+    let cutoff = 10;
+    let under = samples.iter().filter(|&&x| x < cutoff).count();
+    let over_or_equal = samples.iter().filter(|&&x| x >= cutoff).count();
+    println!("Under {}: {}", cutoff, under);
+    println!("Over or equal to {}: {}", cutoff, over_or_equal);
+}
+```

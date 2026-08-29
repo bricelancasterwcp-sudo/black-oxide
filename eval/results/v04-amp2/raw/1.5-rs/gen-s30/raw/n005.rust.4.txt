@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut sum = 0;
+    for i in 2..=20 { // Changed from 1 to 2 to start from even numbers
+        if i % 2 == 0 {
+            sum += i;
+        }
+    }
+    println!("The total of all even numbers between 1 and 20 inclusive is: {}", sum);
+}
+```

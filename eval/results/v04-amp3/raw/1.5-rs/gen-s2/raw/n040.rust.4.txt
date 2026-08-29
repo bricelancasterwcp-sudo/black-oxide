@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let side_length = 4.0;
+    let radius = 3.0; // Fixed the typo from 'pi' to 'radius'
+
+    let square_area = side_length * side_length;
+    let circle_area = std::f64::consts::PI * (radius * radius);
+
+    println!("The area of the square is: {}", square_area);
+    println!("The area of the circle is: {:.2}", circle_area); // Using .2 for precision up to two decimal places
+}
+```

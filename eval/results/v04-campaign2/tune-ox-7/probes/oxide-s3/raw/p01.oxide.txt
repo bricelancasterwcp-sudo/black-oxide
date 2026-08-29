@@ -1,0 +1,6 @@
+fn main() {
+    let a = push(push(vec(), 1), 2)
+    let b = clone(a)  // Clone 'a' to keep it available for use later
+    print(len(a))
+    print(len(b))
+}

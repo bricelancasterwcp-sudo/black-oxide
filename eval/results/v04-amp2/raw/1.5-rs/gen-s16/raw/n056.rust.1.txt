@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let mut count = 0;
+    let mut sum = 0;
+
+    for &value in [7, 10, 9, ?] {
+        if value.is_digit(10) {
+            sum += value;
+            count += 1;
+        }
+    }
+
+    println!("Total: {}", sum);
+    println!("Count: {}", count);
+}
+```

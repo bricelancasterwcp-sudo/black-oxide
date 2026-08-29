@@ -1,0 +1,38 @@
+```
+struct Entry { value: Int, is_odd: Bool }
+
+fn double_if_odd(entry: Entry) -> Option<Int> {
+    if entry.is_odd {
+        Some(2 * entry.value)
+    } else {
+        None
+    }
+}
+
+fn sum_even_entries(entries: Vec<Entry>) -> Option<Int> {
+    let mut total = 0;
+    for entry in entries {
+        match double_if_odd(entry) {
+            Some(doubled) => total += doubled,
+            None => (),
+        }
+    }
+    Some(total)
+}
+
+fn main() {
+    let list = vec![
+        Entry { value: 7, is_odd: true },
+        Entry { value: 4, is_odd: false },
+        Entry { value: 9, is_odd: true },
+        Entry { value: 10, is_odd: false },
+    ];
+    for entry in list {
+        if entry.is_odd {
+            print!("{}", entry.value * 2);
+        }
+    }
+    let sum = sum_even_entries(list).unwrap();
+    println!("Total of even entries: {}", sum);
+}
+```

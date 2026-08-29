@@ -1,0 +1,16 @@
+fn main() {
+    let input = "qwertyuiopasdfghjklzxcvbnm";
+    let mut vowel_count = 0;
+    let mut non_vowel_count = 0;
+
+    for c in input.chars() {
+        if c.is_lowercase() && ("aeiou".contains(c) || !c.is_alphabetic()) {
+            vowel_count += 1;
+        } else {
+            non_vowel_count += 1;
+        }
+    }
+
+    println!("Vowels: {}", vowel_count);
+    println!("Non-vowels: {}", non_vowel_count);
+}

@@ -1,0 +1,28 @@
+```rust
+use std::fmt;
+
+struct WordCount {
+    word_count: usize,
+    char_count: usize,
+}
+
+impl fmt::Display for WordCount {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        writeln!(f, "Words: {}, Characters: {}", self.word_count, self.char_count)
+    }
+}
+
+fn main() {
+    let phrase = String::from("The phrase is: when in doubt go home");
+    let mut count = WordCount { word_count: 0, char_count: 0 };
+
+    for c in phrase.chars() {
+        if !c.is_whitespace() {
+            count.word_count += 1;
+            count.char_count += 1;
+        }
+    }
+
+    println!("{}", count);
+}
+```

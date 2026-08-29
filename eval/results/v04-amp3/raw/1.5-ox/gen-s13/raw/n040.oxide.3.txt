@@ -1,0 +1,44 @@
+```rust
+struct Shape {
+    kind: String,
+}
+
+impl Shape {
+    fn is_square(&self) -> bool {
+        self.kind == "square"
+    }
+
+    fn area(&self) -> f64 {
+        if self.is_square() {
+            4.0 * self.side()
+        } else {
+            std::f64::consts::PI * self.radius() * self.radius()
+        }
+    }
+}
+
+struct Square {
+    side: f64,
+}
+
+impl Square {
+    fn side(&self) -> f64 {
+        self.side
+    }
+}
+
+struct Circle {
+    radius: f64,
+}
+
+impl Circle {
+    fn radius(&self) -> f64 {
+        self.radius
+    }
+}
+
+fn main() {
+    let shape = Shape { kind: String::from("square") };
+    print(shape.area());
+}
+```

@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let p1 = (1, 5);
+    let p2 = (10, 5);
+
+    println!("{}", p1.0 + p2.1); // Corrected to access the second element of the tuple
+}
+```
+
+The original program was incorrect because it was using `p1[0]` and `p2[1]`, which are not valid ways to access elements in a tuple in Rust. The correct way is to use `.0` and `.1` for accessing the first and second elements respectively.

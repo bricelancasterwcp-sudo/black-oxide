@@ -1,0 +1,4 @@
+let s = "granite";
+print(s.chars().next().unwrap());
+print_str("\n");
+print(s.chars().last().unwrap());

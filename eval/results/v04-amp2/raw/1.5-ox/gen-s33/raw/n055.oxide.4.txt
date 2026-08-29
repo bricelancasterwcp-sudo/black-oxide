@@ -1,0 +1,28 @@
+```rust
+fn main() {
+    let a = read_str("Enter first entry: ");
+    match a {
+        Some(s) => println!("{}", s),
+        None => println!("bad"),
+    }
+
+    let b = read_str("Enter second entry: ");
+    match b {
+        Some(s) => println!("{}", s),
+        None => println!("bad"),
+    }
+
+    let c = read_str("Enter third entry: ");
+    match c {
+        Some(s) => println!("{}", s),
+        None => println!("bad"),
+    }
+}
+
+fn read_str(prompt: &str) -> Option<&str> {
+    // Implement reading a string from the user
+    // For simplicity, assume this function reads a line of text and returns it as an Option<String>
+    // This is a placeholder for actual implementation
+    Some("oak")
+}
+```

@@ -1,0 +1,13 @@
+```rust
+struct Line { name: Str, price: Int }
+
+fn main() {
+    let four_units = Line { name: "four units", price: 3 };
+    let five_units = Line { name: "five units", price: 2 };
+
+    println!("The value of the first line is {}", four_units.price * 4);
+    println!("The value of the second line is {}", five_units.price * 5);
+
+    println!("The total value of both lines is {} + {}", four_units.price * 4, five_units.price * 5);
+}
+```

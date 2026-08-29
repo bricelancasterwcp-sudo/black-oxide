@@ -1,0 +1,11 @@
+```rust
+struct Point { x: Int, y: Int }
+
+fn main() {
+    let p = Point { x: 1, y: 5 };
+    let p2 = Point { x: 10, ..p };
+    print(p.x + p2.x);
+}
+```
+
+Note: The `Int` type is assumed to be a built-in type that handles integer values.

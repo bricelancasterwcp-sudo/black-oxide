@@ -1,0 +1,29 @@
+```rust
+struct List { first: Int, second: Int }
+
+fn get_value(l: List, pos: Int) -> Option<Int> {
+    if pos == 0 {
+        Some(l.first)
+    } else if pos == 1 {
+        Some(l.second)
+    } else {
+        None
+    }
+}
+
+fn main() {
+    let l = List { first: 10, second: 20 };
+    match get_value(l, 0) {
+        Some(n) => print(n),
+        None => print_str("none"),
+    }
+    match get_value(l.clone(), 1) {
+        Some(n) => print(n),
+        None => print_str("none"),
+    }
+    match get_value(l.clone(), 2) {
+        Some(n) => print(n),
+        None => print_str("none"),
+    }
+}
+```

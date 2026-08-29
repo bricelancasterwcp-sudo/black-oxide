@@ -1,0 +1,7 @@
+fn main() {
+    let phrase = "when in doubt go home";
+    let words: Vec<Str> = phrase.split_whitespace().collect();
+    print(words.len());
+    print_str(" ");
+    print(str_len(phrase));
+}

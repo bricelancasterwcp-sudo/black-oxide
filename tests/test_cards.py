@@ -8,7 +8,9 @@ blocks by prepending NOTHING (blocks are validated verbatim; codegen's
 synthesized ``fn main() {}`` covers non-main modules), and blocks fenced
 as ```text are exempt. The two cards' word counts must be within 10% of
 each other (SPEC section 42 baselines the explicit card against the core
-card), and the core card stays under 900 words.
+card), and the core card stays under 1100 words (raised from 900 -> 1000
+by the v0.4 wave-1 card amendment, then 1000 -> 1100 by wave-2's — see
+SPEC.md's dated amendment sections, §58 and §59).
 
 Blind TDD: written against SPEC.md only; not executed by its author.
 """
@@ -24,7 +26,19 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 CORE_CARD = REPO_ROOT / "LANGUAGE_CARD.md"
 EXPLICIT_CARD = REPO_ROOT / "LANGUAGE_CARD_EXPLICIT.md"
 
-CORE_WORD_LIMIT = 900
+# v0.4 wave 1 (2026-08-28): SPEC §0 card freeze lifted; the card gained
+# six builtins (sort, min, max, sum, contains, unwrap_or) plus a
+# shadowing sentence, moving the core card from 895 to 988 words. Limit
+# raised 900 -> 1000 non-silently (see SPEC.md's v0.4 amendment) to keep
+# working headroom without loosening the pin to the point of not pinning.
+#
+# v0.4 wave 2 (2026-08-28): the card gained a `count` builtin line and a
+# compound-assignment (`+=`/`-=`/`*=`) sentence in Syntax essentials,
+# moving the core card from 988 to 1059 words (988 tripped nothing; 1059
+# exceeds the old 1000 pin). Limit raised 1000 -> 1100 non-silently (see
+# SPEC.md's §59 amendment) for the same reason as wave 1: headroom
+# without loosening the pin past the point of pinning anything.
+CORE_WORD_LIMIT = 1100
 WORD_COUNT_TOLERANCE = 0.10
 
 
@@ -176,5 +190,5 @@ def test_card_word_counts_within_ten_percent() -> None:
     )
 
 
-def test_core_card_under_900_words() -> None:
+def test_core_card_under_1100_words() -> None:
     assert word_count(CORE_CARD) < CORE_WORD_LIMIT

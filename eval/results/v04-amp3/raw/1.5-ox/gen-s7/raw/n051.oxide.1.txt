@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let mut stone = "granite";
+    let first_char = stone.chars().nth(0).unwrap();
+    let second_char = stone.chars().nth(stone.len() - 1).unwrap();
+    println!("{}", first_char);
+    println!("{}", second_char);
+}
+```

@@ -1,0 +1,22 @@
+```text
+struct Reading { label: Str, values: Vec<Int> }
+
+fn parse_int(s: Str) -> Option<Int> {
+    match s {
+        "8" => Some(8),
+        "15" => Some(15),
+        _ => None,
+    }
+}
+
+fn main() {
+    let readings = vec("8", "oak", "15");
+
+    for r in readings {
+        match parse_int(r) {
+            Some(n) => print(n),
+            None => print_str("bad"),
+        }
+    }
+}
+```

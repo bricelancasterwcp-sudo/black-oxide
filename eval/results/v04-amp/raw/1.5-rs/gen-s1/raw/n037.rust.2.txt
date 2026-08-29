@@ -1,0 +1,10 @@
+fn main() {
+    let mut width = 2;
+    let height = 3;
+
+    println!("Initial area: {}", width * height);
+
+    width = 5;
+
+    println!("New area: {}", width * height);
+}

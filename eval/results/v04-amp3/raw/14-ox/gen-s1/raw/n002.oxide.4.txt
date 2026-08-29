@@ -1,0 +1,14 @@
+```
+fn multiply_to_n(n: Int) -> Int {
+    let mut product = 1;
+    for i in range(1, n + 1) {
+        product *= i;
+    }
+    product
+}
+
+fn main() {
+    let result = multiply_to_n(6);
+    print(result);
+}
+```

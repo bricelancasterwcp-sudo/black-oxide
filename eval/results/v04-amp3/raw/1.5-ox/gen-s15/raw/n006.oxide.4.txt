@@ -1,0 +1,22 @@
+```
+struct Reading { label: Str, values: Vec<Int> }
+
+fn first_big(v: Vec<Int>) -> Int {
+    let mut found = -1;
+    for x in v {
+        if x > 10 {
+            found = x;
+            break;
+        }
+    }
+    found
+}
+
+fn main() {
+    let mut largest_power_of_two = 1;
+    while largest_power_of_two * 2 <= 100 {
+        largest_power_of_two *= 2;
+    }
+    print(largest_power_of_two);
+}
+```

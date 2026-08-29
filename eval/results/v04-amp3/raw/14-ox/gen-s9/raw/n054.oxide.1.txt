@@ -1,0 +1,27 @@
+```text
+fn count_vowels(s: Str) -> Int {
+    let mut vowels = 0
+    for c in chars(s) {
+        if c == "a" || c == "e" || c == "i" || c == "o" || c == "u" {
+            vowels += 1
+        }
+    }
+    vowels
+}
+
+fn count_consonants(s: Str) -> Int {
+    let mut consonants = 0
+    for c in chars(s) {
+        if !(c == "a" || c == "e" || c == "i" || c == "o" || c == "u") && str_len(c) > 0 {
+            consonants += 1
+        }
+    }
+    consonants
+}
+
+fn main() {
+    let keyboard = "qwertyuiopasdfghjklzxcvbnm"
+    print(count_vowels(keyboard))
+    print(count_consonants(keyboard))
+}
+```

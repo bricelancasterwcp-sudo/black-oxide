@@ -1,0 +1,9 @@
+fn main() {
+    let s = "drum"
+    let reversed = chars(s).sort().unwrap_or(vec())
+    for c in reversed {
+        print_str(c)
+    }
+    print_str("\n")
+    print_str(s)
+}

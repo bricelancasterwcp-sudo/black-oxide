@@ -1,0 +1,16 @@
+fn is\_prime(n: Int) -> Bool {
+    if n <= 1 { return false }
+    for i in range(2, n) {
+        if n % i == 0 { return false }
+    }
+    true
+}
+
+fn main() {
+    let num = 91
+    if is\_prime(num) {
+        print\_str("yes")
+    } else {
+        print\_str("no")
+    }
+}

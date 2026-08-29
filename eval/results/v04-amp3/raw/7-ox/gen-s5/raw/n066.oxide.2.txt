@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let nums = vec!(9, 2, 12, 5, 16);
+    for num in nums.clone() {
+        if num < 10 {
+            println!("{}", num);
+        }
+    }
+    let kept_count = count(nums, |x| x < 10);
+    println!("Kept {} numbers", kept_count);
+}
+
+fn count<T>(v: Vec<T>, f: fn(T) -> bool) -> usize {
+    v.into_iter().filter(|&x| f(x)).count()
+}
+```

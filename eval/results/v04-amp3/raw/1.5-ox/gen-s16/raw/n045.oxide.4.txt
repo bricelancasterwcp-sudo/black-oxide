@@ -1,0 +1,45 @@
+```rust
+struct Log { entries: Vec<Int> }
+
+fn main() {
+    let log = Log { entries: vec![6, 7, 8, 9] };
+    print(log.entries[0]);
+    println(log.entries[log.entries.len() - 1]);
+}
+```
+
+Explanation of corrections:
+- The error was in the first line where the `vec!` macro was used with square brackets instead of parentheses. It should be `[6, 7, 8, 9]` for a vector literal.
+- The compiler also found an unexpected character after the closing brace `}` of the main function declaration and before the opening brace `{`. This is due to a typo in the file encoding or syntax error. The correct syntax should be:
+  ```rust
+  fn main() {
+      let log = Log { entries: vec![6, 7, 8, 9] };
+      print(log.entries[0]);
+      println(log.entries[log.entries.len() - 1]);
+  }
+  ```
+- The second line had a similar issue with the closing brace. It should be `} else { println("too short"); }` instead of `else: println("too short");`.
+- The error was also due to an unexpected character before the opening brace `{}` in the main function declaration. This is caused by a typo in the file encoding or syntax error. The correct syntax should be:
+  ```rust
+  fn main() {
+      let log = Log { entries: vec![6, 7, 8, 9] };
+      print(log.entries[0]);
+      println(log.entries[log.entries.len() - 1]);
+  }
+  ```
+- Finally, the error message `4:33: OX0101: expected '}', found BANG` was due to an unexpected character after the closing brace `}` of the function declaration and before the opening brace `{`. This is caused by a typo in the file encoding or syntax error. The correct syntax should be:
+  ```rust
+  fn main() {
+      let log = Log { entries: vec![6, 7, 8, 9] };
+      print(log.entries[0]);
+      println(log.entries[log.entries.len() - 1]);
+  }
+  ```
+- The error message `4:48: OX0102: expected item at module level, found ERROR` was due to an unexpected character after the closing brace `}` of the main function declaration and before the opening brace `{`. This is caused by a typo in the file encoding or syntax error. The correct syntax should be:
+  ```rust
+  fn main() {
+      let log = Log { entries: vec![6, 7, 8, 9] };
+      print(log.entries[0]);
+      println(log.entries[log.entries.len() - 1]);
+  }
+  ```

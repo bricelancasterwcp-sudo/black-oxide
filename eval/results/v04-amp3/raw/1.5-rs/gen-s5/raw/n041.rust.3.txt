@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut numbers = vec![9, 2, 7, 4];
+    
+    for &number in numbers.iter_mut() {
+        *number.sort_unstable();
+    }
+    
+    for &number in numbers.iter() {
+        println!("{}", number);
+    }
+}
+```

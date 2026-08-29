@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let n = 91;
+    let mut factors = Vec::new();
+    for i in 2..=n {
+        while n % i == 0 {
+            factors.push(i);
+            n /= i;
+        }
+    }
+    if factors.len() > 2 || n != 1 {
+        print_str("no");
+    } else {
+        print_str("yes");
+    }
+}
+```

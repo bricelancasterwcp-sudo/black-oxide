@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let mut q = [1, 2, 3, 4, 5];
+    q.swap(0, q.len() - 1);
+    for &x in &q {
+        println!("{}", x);
+    }
+}
+```

@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut q = vec![1, 2, 3, 4, 5];
+    let temp = q.remove(0);
+    q.push(temp);
+    for i in &q {
+        print!("{}", i);
+        println!();
+    }
+}
+```

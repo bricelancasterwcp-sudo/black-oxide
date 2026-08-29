@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let num = 91;
+    if num > 1 && (num % 2 != 0 || num % 3 != 0) {
+        println!("yes");
+    } else {
+        println!("no");
+    }
+}
+```
+
+The corrected program checks whether the number is prime by ensuring it is greater than 1 and is not divisible by 2 or 3. If it passes this check, it prints "yes"; otherwise, it prints "no".

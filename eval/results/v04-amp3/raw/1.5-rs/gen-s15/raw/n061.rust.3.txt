@@ -1,0 +1,14 @@
+fn main() {
+    let length = 9; // The length of the rectangle in units
+    let width = 3;  // The width of the rectangle in units
+
+    // Calculate the area
+    let area = length * width;
+
+    // Calculate the perimeter
+    let perimeter = 2 * (length + width);
+
+    // Print the results
+    println!("The rectangle covers an area of {} square units.", area);
+    println!("The total distance around its edge is {} units.", perimeter);
+}

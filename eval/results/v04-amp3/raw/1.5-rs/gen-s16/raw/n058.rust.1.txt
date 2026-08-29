@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let text = "coffee";
+    let mut seen = std::collections::HashSet<char>::new();
+    
+    for c in text.chars() {
+        if !seen.contains(&c) {
+            seen.insert(c);
+            println!("{}", c);
+        }
+    }
+}
+```

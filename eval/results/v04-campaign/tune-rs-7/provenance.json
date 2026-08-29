@@ -1,0 +1,31 @@
+{
+  "arm": "rust",
+  "families": [
+    "gen",
+    "probes"
+  ],
+  "gguf": "tune-rs-7.q8_0.gguf",
+  "gguf_sha256": "913c94cef8e4eecf5be5fc6690ddbba92eb716e6d790175acac141f335e5cbbc",
+  "identity": {
+    "model_path": "/workspace/gguf/tune-rs-7.q8_0.gguf"
+  },
+  "include_lead": false,
+  "llamacpp_commit": "90c26fcd4b2114b4aa39d09d69318cb8f438d27a",
+  "name": "tune-rs-7",
+  "num_ctx": 8192,
+  "num_predict": 2048,
+  "seeds": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "temperature": 0.2,
+  "top_p": 0.95
+}

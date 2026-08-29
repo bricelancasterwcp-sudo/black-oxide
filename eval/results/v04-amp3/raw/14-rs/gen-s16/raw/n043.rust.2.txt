@@ -1,0 +1,14 @@
+fn main() {
+    let mut queue = vec![1, 2, 3, 4, 5];
+    
+    if let Some(first) = queue.first().cloned() {
+        if let Some(last) = queue.last().cloned() {
+            let (front, back) = queue.split_at_mut(1);
+            std::mem::swap(&mut front[0], &mut back[back.len() - 1]);
+        }
+    }
+    
+    for item in &queue {
+        println!("{}", item);
+    }
+}

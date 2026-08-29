@@ -1,0 +1,49 @@
+```rust
+struct Queue {
+    data: Vec<Int>,
+}
+
+impl Queue {
+    fn new() -> Self {
+        Queue { data: vec![] }
+    }
+
+    fn enqueue(&mut self, value: Int) {
+        self.data.push(value);
+    }
+
+    fn dequeue(&mut self) -> Option<Int> {
+        self.data.pop()
+    }
+
+    fn first(&self) -> Option<&Int> {
+        self.data.get(0)
+    }
+
+    fn last(&self) -> Option<&Int> {
+        self.data.last()
+    }
+}
+
+fn main() {
+    let mut q = Queue::new();
+    for i in 1..=5 {
+        q.enqueue(i);
+    }
+
+    // Exchange the first and last entries
+    if let Some(first) = q.first() {
+        if let Some(last) = q.last() {
+            // Exchange values without moving them
+            let temp = *first;
+            *first = *last;
+            *last = temp;
+        }
+    }
+
+    // Print each entry in order
+    while let Some(value) = q.dequeue() {
+        print!("{}", value);
+    }
+}
+```

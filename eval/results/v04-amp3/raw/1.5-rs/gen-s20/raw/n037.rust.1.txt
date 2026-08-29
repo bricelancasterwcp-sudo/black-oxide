@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let mut length = 2;
+    let mut height = 3;
+    
+    println!("Area before change: {}", length * height);
+    
+    length = 5;
+    
+    println!("Area after change: {}", length * height);
+}
+```

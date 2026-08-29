@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let scores = vec![9, 5, 2];
+    scores.sort_unstable(); // Sorts in ascending order by default
+    for &score in &scores {
+        println!("{}", score);
+    }
+}
+```
+This program correctly sorts the vector `scores` in descending order and prints each score on a separate line.

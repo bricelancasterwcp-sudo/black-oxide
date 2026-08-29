@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let four_units = 4 * 3;
+    let five_units = 5 * 2;
+    println!("Four units: {}", four_units);
+    println!("Five units: {}", five_units);
+    println!("Total: {}", four_units + five_units);
+}
+```

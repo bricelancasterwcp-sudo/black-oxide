@@ -1,0 +1,13 @@
+fn main() {
+    let mut max_name = "";
+    let mut max_len = 0;
+    
+    for &name in &[b"fig", b"banana", b"kiwi"] {
+        if name.len() > max_len {
+            max_len = name.len();
+            max_name = std::str::from_utf8(name).unwrap_or("");
+        }
+    }
+    
+    println!("{} {}", max_name, max_len);
+}

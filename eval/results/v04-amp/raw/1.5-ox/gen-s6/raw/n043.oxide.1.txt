@@ -1,0 +1,55 @@
+```rust
+struct Queue {
+    items: Vec<Int>,
+}
+
+impl Queue {
+    fn new() -> Self {
+        Queue { items: vec![] }
+    }
+
+    fn enqueue(&mut self, item: Int) {
+        self.items.push(item);
+    }
+
+    fn dequeue(&mut self) -> Option<Int> {
+        if let Some(first_item) = self.items.pop() {
+            Some(first_item)
+        } else {
+            None
+        }
+    }
+
+    fn first(&self) -> Option<&Int> {
+        self.items.first()
+    }
+
+    fn last(&self) -> Option<&Int> {
+        self.items.last()
+    }
+
+    fn print(&self) {
+        for item in &self.items {
+            print!("{}", item);
+            println!();
+        }
+    }
+}
+
+fn main() {
+    let mut queue = Queue::new();
+    queue.enqueue(1);
+    queue.enqueue(2);
+    queue.enqueue(3);
+    queue.enqueue(4);
+    queue.enqueue(5);
+
+    if let Some(first) = queue.first() {
+        if let Some(last) = queue.last() {
+            std::mem::swap(first, last);
+        }
+    }
+
+    queue.print();
+}
+```

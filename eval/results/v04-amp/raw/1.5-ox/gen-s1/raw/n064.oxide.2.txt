@@ -1,0 +1,9 @@
+```rust
+struct List { values: Vec<Int> }
+
+fn main() {
+    let mut l = List { values: vec![10, 20] };
+    print(l.values.get(0)); // prints "Some(10)"
+    print(l.values.get(3)); // prints "None"
+}
+```

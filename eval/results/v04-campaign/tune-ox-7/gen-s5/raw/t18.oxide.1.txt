@@ -1,0 +1,19 @@
+struct Rectangle { w: Int, h: Int }
+struct Triangle { a: Int, b: Int, c: Int }
+
+fn perimeter_rectangle(r: Rectangle) -> Int {
+    2 * (r.w + r.h)
+}
+
+fn perimeter_triangle(t: Triangle) -> Int {
+    t.a + t.b + t.c
+}
+
+fn main() {
+    let rect1 = Rectangle { w: 3, h: 4 }
+    print(perimeter_rectangle(rect1))
+    let tri = Triangle { a: 3, b: 4, c: 5 }
+    print(perimeter_triangle(tri))
+    let rect2 = Rectangle { w: 2, h: 5 }
+    print(perimeter_rectangle(rect2))
+}

@@ -1,0 +1,11 @@
+```
+fn main() {
+    let s = "coffee";
+    for (i, &c) in s.chars().enumerate() {
+        if !s.contains(&c) {
+            print!("{}", c);
+            break;
+        }
+    }
+}
+```

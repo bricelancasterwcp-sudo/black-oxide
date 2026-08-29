@@ -1,0 +1,24 @@
+```rust
+fn main() {
+    let mut s = String::from("banana");
+    for i in 0..s.len() {
+        if s[i] == 'n' {
+            print!("{}", i);
+        }
+    }
+
+    println!();
+}
+```
+
+Diagnostics:
+2:39: OX0001: unexpected character ';'
+5:13: OX0001: unexpected character '['
+5:15: OX0001: unexpected character ']'
+5:20: OX0001: unexpected character "'"
+5:22: OX0001: unexpected character "'"
+6:28: OX0001: unexpected character ';'
+10:15: OX0001: unexpected character ';'
+2:23: OX0101: expected end of statement, found PATH_SEP
+5:13: OX0101: expected '{', found ERROR
+8:5: OX0102: expected item at module level, found RBRACE

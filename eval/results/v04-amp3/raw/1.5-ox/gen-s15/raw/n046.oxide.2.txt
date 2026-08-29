@@ -1,0 +1,18 @@
+```rust
+fn count_under_cutoff(numbers: &[Int], cutoff: Int) -> Int {
+    let mut count = 0;
+    for &num in numbers {
+        if num <= cutoff {
+            count += 1;
+        }
+    }
+    count
+}
+
+fn main() {
+    let numbers = vec![5, 12, 3, 18, 9];
+    let cutoff = 10;
+
+    println!("Numbers less than or equal to {}: {}", cutoff, count_under_cutoff(&numbers, cutoff));
+}
+```

@@ -1,0 +1,3 @@
+let phrase = "when in doubt go home";
+print(len(split(phrase, ' ')));
+print(str_len(phrase));

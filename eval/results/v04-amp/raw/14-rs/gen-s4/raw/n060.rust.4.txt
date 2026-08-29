@@ -1,0 +1,15 @@
+fn main() {
+    let text = "a1b22";
+    let mut sum = 0;
+    let mut count = 0;
+
+    for c in text.chars() {
+        if let Some(digit) = c.to_digit(10) {
+            sum += digit;
+            count += 1;
+        }
+    }
+
+    println!("Total of all digit characters: {}", sum);
+    println!("Number of digit characters: {}", count);
+}

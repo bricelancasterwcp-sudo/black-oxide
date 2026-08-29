@@ -1,0 +1,10 @@
+fn reverse_digits(n: Int) -> Str {
+    let s = int_to_str(n);
+    let chars = chars(s);
+    let reversed_chars = vec![chars[3], chars[2], chars[1], chars[0]];
+    concat(concat(concat(vec(), reversed_chars[0]), reversed_chars[1]), concat(reversed_chars[2], reversed_chars[3]))
+}
+
+fn main() {
+    print(reverse_digits(1234));
+}

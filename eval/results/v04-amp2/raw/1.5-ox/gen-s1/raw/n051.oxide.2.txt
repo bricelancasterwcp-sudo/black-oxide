@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let c = 'g';
+    print(c);
+    println();
+    print(c as u8 + 32); // ASCII code for 'G'
+}
+```

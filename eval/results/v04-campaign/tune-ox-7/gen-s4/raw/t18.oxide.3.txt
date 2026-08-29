@@ -1,0 +1,22 @@
+fn main() {
+    let shapes = vec(Rectangle { width: 3, height: 4 }, Triangle { sides: vec(3, 4, 5) }, Rectangle { width: 2, height: 5 })
+    for shape in shapes {
+        match shape {
+            Rectangle { width, height } => print(perimeter_rectangle(width, height)),
+            Triangle { sides } => print(perimeter_triangle(sides)),
+        }
+    }
+}
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+struct Triangle {
+    sides: Vec<Int>,
+}
+fn perimeter_rectangle(w: Int, h: Int) -> Int {
+    2 * (w + h)
+}
+fn perimeter_triangle(sides: Vec<Int>) -> Int {
+    sum(sides)
+}

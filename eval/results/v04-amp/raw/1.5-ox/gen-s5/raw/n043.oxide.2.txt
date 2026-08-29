@@ -1,0 +1,22 @@
+```rust
+fn main() {
+    let mut q = vec![1, 2, 3, 4, 5];
+    exchange(&mut q);
+    for i in q {
+        print!("{}", i);
+        println!();
+    }
+}
+
+fn exchange(q: &mut Vec<i32>) {
+    if q.len() < 2 {
+        return;
+    }
+
+    let first = q.remove(0);
+    let last = q.pop().unwrap();
+
+    q.insert(0, last);
+    q.push(first);
+}
+```

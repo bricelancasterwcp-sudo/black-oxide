@@ -1,0 +1,8 @@
+fn print_digits(n: Int) {
+    let mut n = n;
+    while n > 0 {
+        let d = n % 10;
+        print!("{}", d);
+        n /= 10;
+    }
+}

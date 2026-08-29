@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let mut queue = vec![1, 2, 3, 4, 5];
+    let last_index = queue.len() - 1;
+    std::mem::swap(&mut queue[0], &mut queue[last_index]);
+    for item in queue.iter() {
+        println!("{}", item);
+    }
+}
+```

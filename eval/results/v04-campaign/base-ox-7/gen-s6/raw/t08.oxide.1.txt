@@ -1,0 +1,24 @@
+```rust
+fn main() {
+    let nums = vec!(3, 8, -2, 12, 7);
+    let mut pos_count = 0;
+    let mut max_val = None;
+
+    for &num in &nums {
+        if num > 0 {
+            pos_count += 1;
+        }
+        max_val = match max_val {
+            Some(m) => Some(if m < num { num } else { m }),
+            None => Some(num),
+        };
+    }
+
+    print(pos_count);
+    print_str(" ");
+    match max_val {
+        Some(val) => print(val),
+        None => print_str("no positive values"),
+    }
+}
+```

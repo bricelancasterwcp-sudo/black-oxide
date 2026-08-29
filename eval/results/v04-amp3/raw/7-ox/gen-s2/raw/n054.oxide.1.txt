@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let s = "abcdefghijklmnopqrstuvwxyz";
+    let mut vowels = 0;
+    let mut consonants = 0;
+
+    for c in s.chars() {
+        match c {
+            'a' | 'e' | 'i' | 'o' | 'u' | 'A' | 'E' | 'I' | 'O' | 'U' => vowels += 1,
+            _ => consonants += 1,
+        }
+    }
+
+    print(vowels);
+    print(consonants);
+}
+```

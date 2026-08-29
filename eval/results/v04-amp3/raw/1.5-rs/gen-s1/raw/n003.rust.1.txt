@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let mut count = 0;
+    
+    for num in 1..=36 {
+        if 36 % num == 0 {
+            count += 1;
+        }
+    }
+
+    println!("Count: {}", count);
+}
+```
+
+This program counts how many numbers from 1 to 36 divide 36 exactly by iterating through each number and checking if it divides 36 with no remainder using the modulo operator `%`. If a number divides 36, the counter `count` is incremented. Finally, the count is printed out.

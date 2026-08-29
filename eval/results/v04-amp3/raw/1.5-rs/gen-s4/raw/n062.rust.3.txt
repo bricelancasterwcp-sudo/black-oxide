@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    loop {
+        let signal = get_signal(); // Replace with actual logic to get the signal
+        match signal {
+            "green" => println!("Go for green"),
+            "red" => println!("Stop for red"),
+            "yellow" => println!("Wait for yellow"),
+            _ => println!("Unknown signal: {}", signal),
+        }
+    }
+}
+
+fn get_signal() -> String {
+    // Placeholder logic to simulate getting the signal
+    let signals = vec!["green", "red", "yellow"];
+    signals.iter().cloned().nth(rand::random::<usize>() % signals.len()).unwrap()
+}
+```

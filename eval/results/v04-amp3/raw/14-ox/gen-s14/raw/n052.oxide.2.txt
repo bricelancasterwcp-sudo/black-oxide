@@ -1,0 +1,1 @@
+fn main() { let word = "banana"; let chars = chars(word); for i in range(0, str_len(word)) { let c = get(chars, i).unwrap_or(""); if c == "n" { print(i); } } } fn enumerate(v: Vec<Str>) -> Vec<(Int, Str)> { let mut result = vec(); for i in range(0, len(v)) { let c = get(v, i).unwrap_or(""); result = push(result, (i, c)); } result }

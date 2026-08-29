@@ -1,0 +1,18 @@
+```rust
+struct Square { side: Int }
+struct Circle { radius: Float }
+
+fn main() {
+    let s = Square { side: 4 };
+    print_int(s.area());
+}
+
+impl Shape {
+    fn area(&self) -> Int {
+        match self {
+            Square { side } => side * side,
+            Circle { radius } => pi * radius * radius,
+        }
+    }
+}
+```

@@ -1,0 +1,7 @@
+fn main() {
+    let s = "drum";
+    let reversed: Str = concat(vec![chars(s).reverse().collect::<Vec<Str>>()], "");
+    print(reversed);
+    print_str(" ");
+    print(s);
+}

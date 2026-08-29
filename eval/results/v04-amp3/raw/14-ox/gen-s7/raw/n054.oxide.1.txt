@@ -1,0 +1,31 @@
+```text
+fn count_vowels(s: Str) -> Int {
+    let mut count = 0
+    for c in chars(s) {
+        match c {
+            "a" | "e" | "i" | "o" | "u" => count += 1,
+            _ => (),
+        }
+    }
+    count
+}
+
+fn count_consonants(s: Str) -> Int {
+    let mut count = 0
+    for c in chars(s) {
+        match c {
+            "a" | "e" | "i" | "o" | "u" => (),
+            _ => count += 1,
+        }
+    }
+    count
+}
+
+fn main() {
+    let letters = "qwertyuiopasdfghjklzxcvbnm"
+    let vowel_count = count_vowels(letters)
+    let consonant_count = count_consonants(letters)
+    print(vowel_count)
+    print(consonant_count)
+}
+```

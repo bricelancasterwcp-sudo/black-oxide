@@ -1,0 +1,11 @@
+```rust
+fn count_words(s: &str) -> Int {
+    s.split_whitespace().count()
+}
+
+fn main() {
+    let phrase = "When in doubt go home.";
+    print(count_words(phrase));             // prints: 10
+    println_str(phrase);          // prints: 58
+}
+```

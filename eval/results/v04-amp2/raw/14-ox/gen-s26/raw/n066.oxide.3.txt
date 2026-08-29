@@ -1,0 +1,1 @@
+fn main() { let numbers = vec(); for x in push(push(push(push(numbers, 9), 2), 12), 5) { if x < 10 { print(x); } } let count = 3; print(count); }

@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let mut product = 1;
+    for i in 1..7 {
+        product *= i;
+    }
+    println!("The product of numbers from 1 to 6 is: {}", product);
+}
+```
+
+Explanation:
+- We initialize a variable `product` to 1 because multiplying any number by 1 does not change the number.
+- We use a `for` loop to iterate through all whole numbers from 1 to 6 (inclusive).
+- Inside the loop, we multiply `product` by the current number `i`.
+- After the loop completes, we print the value of `product`.

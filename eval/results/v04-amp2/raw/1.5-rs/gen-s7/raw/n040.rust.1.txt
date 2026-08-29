@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let side = 4;
+    let radius = 3.0;
+
+    if side > 0 {
+        println!("Area of square: {}", side * side);
+    } else {
+        println!("Invalid side length");
+    }
+
+    if radius > 0 {
+        println!("Area of circle: {}", std::f64::consts::PI * radius * radius);
+    } else {
+        println!("Invalid radius");
+    }
+}
+```

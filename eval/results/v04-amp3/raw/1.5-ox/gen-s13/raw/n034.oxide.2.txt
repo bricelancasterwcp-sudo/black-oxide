@@ -1,0 +1,19 @@
+```rust
+fn second_entry(values: Vec<Int>) -> Option<Int> {
+    if values.len() < 2 {
+        return None;
+    }
+    Some(values[1])
+}
+
+fn main() {
+    let result1 = second_entry(vec![7, 8, 9]);
+    print!("{:?}", result1); // Output: Some(8)
+
+    let result2 = second_entry(vec![3, 5, 7]);
+    print!("{:?}", result2); // Output: Some(7)
+
+    let result3 = second_entry(vec![]);
+    print!("{:?}", result3); // Output: None
+}
+```

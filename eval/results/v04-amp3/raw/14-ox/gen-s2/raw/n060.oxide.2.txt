@@ -1,0 +1,14 @@
+fn main() {
+    let s = "a1b22"
+    let mut sum = 0
+    let mut count = 0
+    for c in chars(s) {
+        if parse_int(c).is_some() {
+            let value = parse_int(c).unwrap()
+            sum += value
+            count += 1
+        }
+    }
+    print(sum)
+    print(count)
+}

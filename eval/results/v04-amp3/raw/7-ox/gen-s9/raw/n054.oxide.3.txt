@@ -1,0 +1,21 @@
+fn count_vowels(s: Str) -> (Int, Int) {
+    let mut vowels = 0;
+    let mut non_vowels = 0;
+    for c in s.chars() {
+        if matches(c, 'a') || matches(c, 'e') || matches(c, 'i') || matches(c, 'o') || matches(c, 'u') ||
+           matches(c, 'A') || matches(c, 'E') || matches(c, 'I') || matches(c, 'O') || matches(c, 'U') {
+            vowels += 1;
+        } else {
+            non_vowels += 1;
+        }
+    }
+    (vowels, non_vowels)
+}
+
+fn main() {
+    let keyboard = "qwertyuiopasdfghjklzxcvbnm";
+    let (vowels, non_vowels) = count_vowels(keyboard);
+    print(vowels);
+    print_str(" ");
+    print(non_vowels);
+}

@@ -1,0 +1,25 @@
+fn count_values(v: Vec<Int>, cutoff: Int) -> (Int, Int) {
+    let mut below = 0
+    let mut above_or_equal = 0
+    for x in v {
+        if x < cutoff {
+            below = below + 1
+        } else {
+            above_or_equal = above_or_equal + 1
+        }
+    }
+    (below, above_or_equal)
+}
+
+fn main() {
+    let values = vec()
+    push(values, 5)
+    push(values, 12)
+    push(values, 3)
+    push(values, 18)
+    push(values, 9)
+    let cutoff = 10
+    let (below, above_or_equal) = count_values(values, cutoff)
+    print(below)
+    print(above_or_equal)
+}

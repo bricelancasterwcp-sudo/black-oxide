@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let mut sum = 0;
+    let mut count = 0;
+
+    // Example text inputs
+    let texts = ["7", "x", "9", "?"];
+
+    for &text in texts.iter() {
+        if let Ok(num) = text.parse::<i32>() {
+            sum += num;
+            count += 1;
+        }
+    }
+
+    println!("Total of the ones that do: {}", sum);
+    println!("Number of ones that do not: {}", texts.len() - count);
+}
+```

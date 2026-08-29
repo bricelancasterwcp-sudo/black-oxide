@@ -1,0 +1,18 @@
+```oxide
+fn reverse(s: Str) -> Str {
+    let mut chars = chars(s)
+    let mut reversed = ""
+    while let Some(c) = get(chars, 0)? {
+        reversed += concat("", c)
+        chars = push(vec(), drop(get(chars, 1)?))
+    }
+    reversed
+}
+
+fn main() {
+    let drum = "drum"
+    print(reverse(drum))
+    print_str("")
+    print(drum)
+}
+```

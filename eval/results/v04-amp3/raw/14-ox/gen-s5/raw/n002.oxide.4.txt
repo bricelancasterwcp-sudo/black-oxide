@@ -1,0 +1,4 @@
+fn main() {
+    let product = range(1, 7).fold(1, fn(acc, x) acc * x);
+    print(product);
+}

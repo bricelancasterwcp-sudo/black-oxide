@@ -1,0 +1,9 @@
+```oxide
+fn main() {
+    let phrase = "when in doubt go home";
+    let words = vec().push("when").push("in").push("doubt").push("go").push("home");
+    print(words.len());
+    print_str(" ");
+    print(str_len(phrase));
+}
+```

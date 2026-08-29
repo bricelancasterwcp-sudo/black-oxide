@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let log = [6, 7, 8, 9];
+    println!("First entry: {}", log[0]);
+    println!("Last entry: {}", log[log.len() - 1]);
+}
+```
+
+**Explanation**:
+- The `main` function is the entry point of the program.
+- We define an array `log` that holds the entries `6`, `7`, `8`, and `9`.
+- `println!` is used to print the first and last elements of the array. We access elements using indexing: `log[0]` gives the first element, and `log[log.len() - 1]` gives the last element (note that Rust uses zero-based indexing).

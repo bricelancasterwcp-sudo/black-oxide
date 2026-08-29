@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let mut a = 1;
+    let mut b = 1;
+    for i in 2..=9 { // Changed from 2..10 to 2..=9 for the tenth term
+        let c = a + b;
+        a = b;
+        b = c;
+    }
+    println(b); // Modified from println(a) to println(b)
+}
+```

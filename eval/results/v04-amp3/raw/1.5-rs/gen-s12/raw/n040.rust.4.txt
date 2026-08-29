@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let side = 4.0;
+    let pi = 3.14159;
+
+    let area_square = side * side;
+    let area_circle = pi * radius * radius;
+
+    println!("The area of a square with side {} is {}", side, area_square);
+    println!("The area of a circle with radius {} is {}", radius, area_circle);
+}
+```

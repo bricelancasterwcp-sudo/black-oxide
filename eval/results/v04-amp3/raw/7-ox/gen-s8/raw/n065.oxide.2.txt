@@ -1,0 +1,23 @@
+```rust
+struct Reading { label: Str, values: Vec<Int> }
+
+fn main() {
+    let readings = push(push(push(push(vec(), 6), 11), 3), 14);
+    let readings = push(readings, 9);
+
+    let mut count = 0;
+    let mut max_reading = -1;
+    for x in readings {
+        if x > 5 {
+            count += 1;
+        }
+        if x > max_reading {
+            max_reading = x;
+        }
+    }
+
+    print(count);
+    print_str("\n");
+    print(max_reading);
+}
+```

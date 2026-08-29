@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let mut s = "granite".chars().collect::<Vec<char>>();
+    print!("{}", s[0]);
+    print!("{}", s.pop());
+}
+```

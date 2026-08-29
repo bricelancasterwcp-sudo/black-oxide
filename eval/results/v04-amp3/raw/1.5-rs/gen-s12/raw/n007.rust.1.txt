@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let num = 9875;
+    println!("{}", sum_digits(num));
+}
+
+fn sum_digits(n: u32) -> u32 {
+    if n == 0 {
+        0
+    } else {
+        n % 10 + sum_digits(n / 10)
+    }
+}
+```

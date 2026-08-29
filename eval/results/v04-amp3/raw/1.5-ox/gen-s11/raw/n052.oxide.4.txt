@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let mut s = String::from("banana");
+    for i in 0..s.len() {
+        if s.chars().nth(i) == Some('n') {
+            print!("{}", i);
+        }
+    }
+}
+```
+
+**Explanation**:
+- The program was rejected because it contained several syntax errors. Here's the corrected version:
+  - Added a missing semicolon at line 2.
+  - Fixed the array declaration at line 4, which should have been a vector.
+  - Corrected the string initialization and usage at line 7 to use `chars()` for character access.
+  - Corrected the loop condition and variable name at line 5.

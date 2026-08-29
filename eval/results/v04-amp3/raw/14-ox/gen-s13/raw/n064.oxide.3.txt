@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let v = vec()
+    push(v, 10)
+    push(v, 20)
+    let pos1 = get(v, 1)?
+    print(pos1)
+    let v = vec()
+    push(v, 10)
+    push(v, 20)
+    let pos4 = get(v, 4)?
+    print(pos4)
+}
+```

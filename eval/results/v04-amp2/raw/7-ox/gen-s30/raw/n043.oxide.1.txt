@@ -1,0 +1,27 @@
+```rust
+struct Queue { items: Vec<Int> }
+
+fn enqueue(q: Queue, x: Int) -> Queue {
+    let mut q = q;
+    q.items.push(x);
+    q
+}
+
+fn dequeue(q: Queue) -> (Int, Queue) {
+    let (x, rest) = q.items.split_first().unwrap();
+    (x.to_int(), Queue { items: rest.to_vec() })
+}
+
+fn main() {
+    let mut q = enqueue(enqueue(enqueue(enqueue(Queue { items: vec![] }, 1), 2), 3), 4);
+    q = enqueue(q, 5);
+    let (first, q) = dequeue(q);
+    let (last, _) = dequeue(dequeue(dequeue(dequeue(q))));
+    q = enqueue(enqueue(enqueue(Queue { items: vec![] }, last), first), 2);
+    q = enqueue(enqueue(Queue { items: vec![] }, 3));
+    q = enqueue(Queue { items: vec![] }, 4);
+    while let (x, q) = dequeue(q) {
+        print(x);
+    }
+}
+```

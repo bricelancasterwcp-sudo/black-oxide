@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let first_line_units = 4;
+    let first_line_price_per_unit = 3;
+    let second_line_units = 5;
+    let second_line_price_per_unit = 2;
+
+    let first_line_value = first_line_units * first_line_price_per_unit;
+    let second_line_value = second_line_units * second_line_price_per_unit;
+    let total_value = first_line_value + second_line_value;
+
+    println!("First line value: {}", first_line_value);
+    println!("Second line value: {}", second_line_value);
+    println!("Total value: {}", total_value);
+}
+```

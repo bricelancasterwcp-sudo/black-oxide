@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let n = 9875;
+    let sum = get(n, 0)? + get(n, 1)? + get(n, 2)? + get(n, 3)?;
+    print(sum);
+}
+```

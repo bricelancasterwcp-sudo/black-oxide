@@ -1,0 +1,21 @@
+```rust
+struct Line {
+    name: Str,
+    price: Int,
+    quantity: Int,
+}
+
+fn total_value(line1: Line, line2: Line) -> (Int, Int) {
+    let value1 = line1.price * line1.quantity;
+    let value2 = line2.price * line2.quantity;
+    (value1 + value2, value1 + value2)
+}
+
+fn main() {
+    let line1 = Line { name: "four units", price: 3, quantity: 4 };
+    let line2 = Line { name: "five units", price: 2, quantity: 5 };
+    let total = total_value(line1, line2);
+    print(str_to_str(total.0));
+    print(str_to_str(total.1));
+}
+```

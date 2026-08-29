@@ -1,0 +1,22 @@
+Sure. Here's the corrected version of your program:
+
+```rust
+fn main() {
+    let mut count = 0;
+    
+    for num in 1..=36 {
+        if num % 36 == 0 {
+            count += 1;
+        }
+    }
+
+    println!("Count: {}", count);
+}
+```
+
+This program works by iterating over all numbers from 1 to 36. It checks if each number is a divisor of 36 (i.e., `num % 36 == 0`). If it is, the counter `count` is incremented. After the loop completes, the final count is printed out.
+
+The output will be:
+```
+Count: 1
+```

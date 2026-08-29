@@ -1,0 +1,13 @@
+```
+fn main() {
+    let mut measurements = vec![];
+    push(&mut measurements, 4);
+    push(&mut measurements, 9);
+    push(&mut measurements, 2);
+    push(&mut measurements, 7);
+
+    for m in measurements.sort() {
+        print_str(m)
+    }
+}
+```

@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let mut count = 0;
+    let mut sum = 0;
+
+    for &value in [7, 'x', 9, '?'].iter() {
+        if let Some(number) = value.to_digit(10) {
+            sum += number;
+            count += 1;
+        }
+    }
+
+    println!("Sum of numbers: {}", sum);
+    println!("Count of numbers: {}", count);
+}
+```

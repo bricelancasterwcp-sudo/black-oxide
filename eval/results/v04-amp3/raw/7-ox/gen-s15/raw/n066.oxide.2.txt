@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let batch = vec!(9, 2, 12, 5, 16);
+    let mut kept = Vec::new();
+    for x in batch {
+        if x < 10 {
+            kept.push(x);
+        }
+    }
+    for k in kept {
+        print(k);
+        print_str("\n");
+    }
+    print(concat("Kept ", int_to_str(kept.len()), " entries\n"));
+}
+```

@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let v = push(push(vec(), 3), 42);
+    println!("{}", min(v)?);
+    println!("{}", (get(v, 1)? + 1));
+    println!("{}", max(v)?);
+}
+```

@@ -1,0 +1,15 @@
+```
+fn main() {
+    let a = 9;
+    if a < 10 { println!("{}", a); }
+
+    let b = 2;
+    if b < 10 { println!("{}", b); }
+
+    let c = 12; if c < 10 { println!("{}", c); }
+
+    let d = 5; if d < 10 { println!("{}", d); }
+
+    let e = 16; // if e < 10 { println!("{}", e); }
+}
+```

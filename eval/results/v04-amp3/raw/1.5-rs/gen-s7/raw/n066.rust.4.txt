@@ -1,0 +1,16 @@
+```rust
+
+fn main() {
+    let numbers = [9, 2, 12, 5, 16];
+    let mut count: usize = 0;
+
+    for &num in numbers.iter() {
+        if num < 10 {
+            println!("{}", num);
+            count += 1;
+        }
+    }
+
+    println!("Kept {} entries.", count);
+}
+```

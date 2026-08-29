@@ -1,0 +1,9 @@
+fn main() {
+    let s = vec("12", "x", "30")
+    let (sum, fail) = fold(s, 0, |a, x| match parse_int(x) {
+        Some(n) => (a + n, 0),
+        None => (a, 1)
+    })
+    print(sum)
+    print(fail)
+}

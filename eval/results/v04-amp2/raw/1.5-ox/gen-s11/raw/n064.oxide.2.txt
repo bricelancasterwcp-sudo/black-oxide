@@ -1,0 +1,15 @@
+```rust
+struct List { elements: Vec<Int> }
+
+fn main() {
+    let list = List { elements: vec![10, 20] };
+    match get(list.elements, 1) {
+        Some(x) => print(x),
+        None => println_str("position one is empty"),
+    }
+    match get(list.elements, 3) {
+        Some(x) => print(x),
+        None => println_str("position four is empty"),
+    }
+}
+```

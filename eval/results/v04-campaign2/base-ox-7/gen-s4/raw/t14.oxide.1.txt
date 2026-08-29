@@ -1,0 +1,10 @@
+```oxide
+fn main() {
+    let s = "mississippi"
+    let count_s = count(s.chars(), "s")
+    let distinct_chars = len(set(s.chars()))
+    print(count_s)
+    print_str(" ")
+    print(distinct_chars)
+}
+```

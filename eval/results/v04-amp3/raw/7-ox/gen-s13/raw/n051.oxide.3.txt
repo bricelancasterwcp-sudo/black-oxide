@@ -1,0 +1,12 @@
+fn main() {
+    let s = "granite";
+    let first_char = s.chars().next();
+    let last_char = s.chars().last();
+    match (first_char, last_char) {
+        (Some(f), Some(l)) => {
+            print_str(f);
+            print_str(l);
+        },
+        _ => (),
+    }
+}

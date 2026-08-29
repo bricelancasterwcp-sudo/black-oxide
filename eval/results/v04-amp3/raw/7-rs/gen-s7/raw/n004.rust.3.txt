@@ -1,0 +1,14 @@
+fn main() {
+    let mut terms = [1, 1];
+    for _ in 2..10 {
+        let next_term = terms.iter().rev().take(2).sum();
+        let len = terms.len();
+        if len < 2 {
+            terms.push(next_term);
+        } else {
+            terms[0] = terms[1];
+            terms[1] = next_term;
+        }
+    }
+    println!("{}", terms[9]);
+}

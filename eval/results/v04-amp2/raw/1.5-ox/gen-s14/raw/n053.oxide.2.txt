@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let drum = "drum";
+    for i in (0..drum.len()).rev() {
+        print!("{}", drum.chars().nth(i).unwrap());
+    }
+    println!();
+    println!("{}", drum);
+}
+```

@@ -1,0 +1,15 @@
+```rust
+struct Sensor { reading: Int }
+
+fn set_reading(sensor: &mut Sensor, value: Int) {
+    sensor.reading = value;
+}
+
+fn main() {
+    let mut sensor = Sensor { reading: 0 };
+    set_reading(&mut sensor, 7);
+    println!("{}", sensor.reading);
+}
+```
+
+The issue in the program was that `&mut` before `sensor` meant borrowing the reference to `sensor`, not moving it. The correct syntax is `let mut sensor = Sensor { reading: 0 };`.

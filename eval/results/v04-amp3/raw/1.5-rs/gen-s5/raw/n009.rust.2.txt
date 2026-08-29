@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let arr = [4, 3, 2, 1];
+    println!("{:?}", arr.reverse());
+}
+```
+
+This program creates a slice of integers and uses the `reverse` method to reverse its order, then prints it. The result will be `[1, 2, 3, 4]`.

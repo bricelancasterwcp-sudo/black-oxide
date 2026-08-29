@@ -1,0 +1,13 @@
+fn main() {
+    let s = "abcdefghijklmnopqrstuvwxyz";
+    let (mut vowel_count, mut consonant_count) = (0, 0);
+    for c in chars(s) {
+        match c {
+            'a' | 'e' | 'i' | 'o' | 'u' => vowel_count += 1,
+            _ => consonant_count += 1,
+        }
+    }
+    print(vowel_count);
+    print_str(" ");
+    print(consonant_count);
+}

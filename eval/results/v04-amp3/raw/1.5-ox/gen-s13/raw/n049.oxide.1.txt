@@ -1,0 +1,22 @@
+```rust
+fn min_max(vec: Vec<Int>) -> (Int, Int) {
+    let mut smallest = vec[0];
+    let mut largest = vec[0];
+    for &x in &vec {
+        if x < smallest {
+            smallest = x;
+        }
+        if x > largest {
+            largest = x;
+        }
+    }
+    (smallest, largest - smallest)
+}
+
+fn main() {
+    let figures: Vec<Int> = vec![42, 31, 7, 56];
+    let (min, gap) = min_max(figures);
+    println!("Smallest figure: {}", min);
+    println!("Gap between largest and smallest: {}", gap);
+}
+```

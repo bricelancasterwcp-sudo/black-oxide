@@ -1,0 +1,10 @@
+fn main() {
+    let fruits = vec!["fig", "banana", "kiwi"];
+    let mut longest = "";
+    for fruit in &fruits {
+        if fruit.len() > longest.len() {
+            longest = fruit;
+        }
+    }
+    println!("{} {}", longest, longest.len());
+}

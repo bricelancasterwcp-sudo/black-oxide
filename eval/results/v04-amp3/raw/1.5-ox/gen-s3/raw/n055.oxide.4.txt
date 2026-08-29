@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let eight = Some(8);
+    let oak = None;
+    let fifteen = Some(15);
+
+    match (eight, oak, fifteen) {
+        (Some(n), _, _) => print(n),
+        (_, Some(n), _) => print(n),
+        (_, _, Some(n)) => print(n),
+        _ => print!("bad"),
+    }
+}
+```

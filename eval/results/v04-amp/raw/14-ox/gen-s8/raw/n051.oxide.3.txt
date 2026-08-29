@@ -1,0 +1,5 @@
+fn main() {
+    let s = "granite"
+    print(chars(s).next().unwrap())
+    print(chars(s).last().unwrap())
+}

@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let r = (2, 3);
+    let r2 = (5, r.1);
+    let area = r2.0 * r2.1;
+    print(area);
+}
+```

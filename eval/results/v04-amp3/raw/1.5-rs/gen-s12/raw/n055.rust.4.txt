@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let input = vec!["8", "oak", "15"];
+
+    for &item in input.iter() {
+        if item.parse::<i32>().is_ok() {
+            println!("good");
+        } else {
+            println!("bad");
+        }
+    }
+}
+```

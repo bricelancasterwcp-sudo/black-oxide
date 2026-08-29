@@ -1,0 +1,16 @@
+enum Signal { Green, Red, Yellow }
+
+fn interpret_signal(s: Signal) -> Str {
+    match s {
+        Green => "go",
+        Red => "stop",
+        Yellow => "wait",
+    }
+}
+
+fn main() {
+    let signals = vec(Signal::Green, Signal::Red, Signal::Yellow)
+    for s in signals {
+        print(interpret_signal(s))
+    }
+}

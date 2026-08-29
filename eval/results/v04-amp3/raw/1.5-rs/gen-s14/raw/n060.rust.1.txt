@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let text = "a1b22";
+
+    // Count the total of all digit characters
+    let sum_of_digits = text.chars().filter_map(|c| c.to_digit(10)).sum::<u32>();
+
+    // Count the number of digit characters
+    let count_of_digits = text.chars().filter(|&c| c.is_digit(10)).count();
+
+    println!("Sum of digits: {}", sum_of_digits);
+    println!("Number of digits: {}", count_of_digits);
+}
+```

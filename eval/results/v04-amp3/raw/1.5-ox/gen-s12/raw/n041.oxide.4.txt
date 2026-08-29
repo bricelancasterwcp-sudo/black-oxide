@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let mut measurements = push(vec![], 9); // Fix by cloning at the earlier site or reordering
+    sort(&mut measurements);
+    println!("{}", get(measurements, 0)); // Use get instead of indexing directly
+    println!("{}", get(measurements, 1));
+    println!("{}", get(measurements, 2));
+}
+```

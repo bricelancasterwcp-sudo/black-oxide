@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut total = 0;
+    for i in range(1, 21) {
+        if i % 2 == 0 {
+            total += i;
+        }
+    }
+    print(total);
+}
+```
+
+This program calculates the total of all even numbers between 1 and 20 inclusive by iterating through each number from 1 to 20. For each number, it checks if it is even using the condition `i % 2 == 0`. If the number is even, it adds it to the variable `total`. Finally, it prints the total value of all even numbers.

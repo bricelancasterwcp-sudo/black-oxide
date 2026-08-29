@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let drum = "drum";
+    let reversed = drum.chars().rev().collect::<String>();
+    println!("reversed: {}", reversed);
+    println!("normal: {}", drum);
+}
+```
+The diagnostics indicate that there are unexpected characters and missing semicolons at the end of each line. The corrected program simply removes these characters, ensuring proper syntax and formatting.

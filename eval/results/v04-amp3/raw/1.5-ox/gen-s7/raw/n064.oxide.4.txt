@@ -1,0 +1,17 @@
+```rust
+struct List { values: Vec<Int> }
+
+fn lookup_pos(pos: Int) -> Option<Str> {
+    let list = List { values: vec![10, 20] };
+    match pos {
+        1 => Some("Position one found".to_string()),
+        4 => Some("Position four found".to_string()),
+        _ => None,
+    }
+}
+
+fn main() {
+    print(lookup_pos(1)); // Position one found
+    print(lookup_pos(4)); // Position four found
+}
+```

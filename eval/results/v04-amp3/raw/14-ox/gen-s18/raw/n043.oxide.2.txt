@@ -1,0 +1,1 @@
+fn main() { let q = push(push(push(push(push(vec(), 1), 2), 3), 4), 5) let first = get(q, 0).unwrap_or(-1) let last = get(q, len(q) - 1).unwrap_or(-1) let q2 = push(push(vec(), last), get(q, 1).unwrap_or(-1)) for i in range(2, len(q) - 1) { q2 = push(q2, get(q, i).unwrap_or(-1)) } q2 = push(q2, first) for x in q2 { print(x) } }

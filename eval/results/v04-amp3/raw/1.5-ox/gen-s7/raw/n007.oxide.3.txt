@@ -1,0 +1,22 @@
+```rust
+fn main() {
+    let num = 9875;
+    let sum = first_digit(num) + second_digit(num);
+    println!("Sum of digits is: {}", sum);
+}
+
+fn first_digit(mut number: Int) -> Int {
+    while number >= 10 {
+        number /= 10;
+    }
+    number
+}
+
+fn second_digit(mut number: Int) -> Int {
+    if number < 10 {
+        return 0;
+    }
+    number %= 10;
+    number
+}
+```

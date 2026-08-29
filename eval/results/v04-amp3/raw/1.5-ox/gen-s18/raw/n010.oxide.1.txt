@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let number = 91;
+    let mut factors = vec![];
+    
+    for i in 2..=((number as f64).sqrt()) as isize {
+        if number % i == 0 {
+            factors.push(i);
+            factors.push(number / i);
+        }
+    }
+
+    if factors.len() <= 2 {
+        println!("yes");
+    } else {
+        println!("no");
+    }
+}
+```

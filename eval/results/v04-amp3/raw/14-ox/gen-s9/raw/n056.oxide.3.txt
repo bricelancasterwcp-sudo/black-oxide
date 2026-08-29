@@ -1,0 +1,17 @@
+```text
+fn main() {
+    let inputs = vec(Str("7"), Str("x"), Str("9"), Str("?"));
+    let mut total = 0;
+    let mut non_numbers = 0;
+
+    for input in inputs {
+        match parse_int(input) {
+            Some(n) => total += n,
+            None => non_numbers += 1,
+        }
+    }
+
+    print(total);
+    print(non_numbers);
+}
+```

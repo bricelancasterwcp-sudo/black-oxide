@@ -1,0 +1,31 @@
+```rust
+struct Queue { front: Vec<Int>, back: Vec<Int> }
+
+fn enqueue(q: Queue, x: Int) -> Queue {
+    if q.front.len() == 0 {
+        Queue { front: vec(x), back: q.back }
+    } else {
+        let mut new_front = q.front.clone();
+        new_front.push(x);
+        Queue { front: new_front, back: q.back }
+    }
+}
+
+fn dequeue(q: Queue) -> (Queue, Option<Int>) {
+    if q.front.len() > 0 {
+        let x = get(q.front, q.front.len() - 1).unwrap();
+        (Queue { front: vec(), back: push(pop(q.back), x) }, Some(x))
+    } else {
+        (q, None)
+    }
+}
+
+fn main() {
+    let mut q = Queue { front: vec(1, 2, 3, 4, 5), back: vec() };
+    q = enqueue(dequeue(enqueue(q, 6)).0, 5);
+    while let Some(x) = dequeue(q).1 {
+        print_str("\n");
+        print(x);
+    }
+}
+```

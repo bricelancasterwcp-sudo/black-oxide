@@ -1,0 +1,7 @@
+fn main() {
+    let mut power = 1;
+    while power * 2 <= 100 {
+        power *= 2;
+    }
+    print(power);
+}

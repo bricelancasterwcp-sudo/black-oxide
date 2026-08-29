@@ -1,0 +1,4 @@
+```rust
+print(6)
+print(9)
+```

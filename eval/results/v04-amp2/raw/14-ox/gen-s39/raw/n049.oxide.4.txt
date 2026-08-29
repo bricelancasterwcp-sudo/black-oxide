@@ -1,0 +1,11 @@
+```text
+fn main() {
+    let figures = vec(8, 3, 11, 6);
+    let min_figure = unwrap_or(min(figures), -1);
+    print(min_figure);
+    let figures = vec(8, 3, 11, 6); // Reinitialize figures
+    let max_figure = unwrap_or(max(figures), -1);
+    let gap = max_figure - min_figure;
+    print(gap);
+}
+```

@@ -1,0 +1,21 @@
+fn max_len(a: Str, b: Str, c: Str) -> (Str, Int) {
+    let mut max = a;
+    let len_a = str_len(max);
+    
+    let len_b = str_len(b);
+    if len_b > len_a {
+        max = b.clone();
+    }
+    
+    let len_c = str_len(c);
+    if len_c > str_len(max) {
+        max = c.clone();
+    }
+    
+    (max, str_len(max))
+}
+
+fn main() {
+    let result = max_len("fig", "banana", "kiwi");
+    print(concat(result.0, " ", int_to_str(result.1)));
+}

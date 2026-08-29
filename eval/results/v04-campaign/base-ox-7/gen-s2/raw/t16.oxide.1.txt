@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let divisors = vec![5, 0, 4];
+    for &d in &divisors {
+        match d {
+            0 => print_str("undefined\n"),
+            _ => print(trunc(100 / d), "\n")
+        }
+    }
+}
+```

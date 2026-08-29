@@ -1,0 +1,8 @@
+fn main() {
+    let batch = vec![9, 2, 12, 5, 16];
+    let mut kept: Vec<_> = batch.into_iter().filter(|&x| x < 10).collect();
+    for entry in &kept {
+        println!("{}", entry);
+    }
+    println!("Kept: {}", kept.len());
+}

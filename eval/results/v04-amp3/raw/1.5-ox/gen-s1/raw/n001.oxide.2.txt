@@ -1,0 +1,9 @@
+```
+fn main() {
+    let mut total = 0;
+    for i in 1..=5 {
+        total += cube(i);
+    }
+    print(total);
+}
+```

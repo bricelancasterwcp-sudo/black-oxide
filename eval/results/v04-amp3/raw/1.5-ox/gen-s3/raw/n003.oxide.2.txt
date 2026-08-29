@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let mut count = 0;
+    for n in 1..=36 {
+        if 36 % n == 0 {
+            count += 1;
+        }
+    }
+    print(count);
+}
+```
+
+Explanation:
+The original program had a syntax error because the semicolons were placed incorrectly. The semicolon after `let` was moved to the end of the loop, and another one after `count` was added for a different purpose. However, the last semicolon was misplaced again. Correcting these errors ensures the program compiles without syntax errors.

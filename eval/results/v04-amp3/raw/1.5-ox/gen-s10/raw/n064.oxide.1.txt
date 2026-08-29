@@ -1,0 +1,19 @@
+```rust
+struct List { elements: Vec<Int> }
+
+fn get_position(list: &List, pos: Int) -> Option<Int> {
+    list.elements.get(pos).cloned()
+}
+
+fn main() {
+    let mut list = List { elements: push(push(vec(), 10), 20) };
+    match get_position(&list, 1) {
+        Some(n) => print(n),
+        None => print_str("position 1 empty"),
+    }
+    match get_position(&list, 3) {
+        Some(n) => print(n),
+        None => print_str("position 4 empty"),
+    }
+}
+```

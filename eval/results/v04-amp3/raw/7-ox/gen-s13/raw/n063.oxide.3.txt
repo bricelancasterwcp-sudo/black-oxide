@@ -1,0 +1,21 @@
+fn main() {
+    let units3 = vec();
+    push(units3, 3);
+    push(units3, 3);
+    push(units3, 3);
+
+    let units2 = vec();
+    push(units2, 2);
+    push(units2, 2);
+    push(units2, 2);
+    push(units2, 2);
+    push(units2, 2);
+
+    fn value(v: Vec<Int>) -> Int {
+        sum(v)
+    }
+
+    print(value(clone(units3)));
+    print(value(clone(units2)));
+    print(value(concat(clone(units3), clone(units2))));
+}

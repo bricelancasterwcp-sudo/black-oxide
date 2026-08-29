@@ -1,0 +1,13 @@
+fn max_len(s1: Str, s2: Str) -> Str {
+    if str_len(s1) > str_len(s2) { s1 } else { s2 }
+}
+
+fn main() {
+    let fig = "fig";
+    let banana = "banana";
+    let kiwi = "kiwi";
+    let max_str = max_len(max_len(fig, banana), kiwi);
+    print(max_str);
+    print(" ");
+    print(str_len(max_str));
+}

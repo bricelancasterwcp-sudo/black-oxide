@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let mut vowel_count = 0;
+    let mut consonant_count = 0;
+
+    for c in "keyboard".chars() {
+        if ["a", "e", "i", "o", "u"].contains(&c.to_ascii_lowercase()) {
+            vowel_count += 1;
+        } else {
+            consonant_count += 1;
+        }
+    }
+
+    println!("Vowels: {}", vowel_count);
+    println!("Consonants: {}", consonant_count);
+}
+```

@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let text = "when in doubt go home".to_string();
+    let word_count: Int = text.split_whitespace().count();
+    let char_count: Int = text.len();
+    println!("word count: {}", word_count);
+    println!("char count: {}", char_count);
+}
+```

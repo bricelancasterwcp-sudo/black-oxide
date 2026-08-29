@@ -1,0 +1,23 @@
+```rust
+use std::io;
+
+fn main() {
+    let mut sum = 0;
+    let mut count = 0;
+    println!("Enter a number (or 'exit' to stop):");
+    loop {
+        let mut input = String::new();
+        io::stdin().read_line(&mut input).expect("Failed to read line");
+        if input.trim() == "exit" {
+            break;
+        }
+        match input.trim().parse::<isize>() {
+            Ok(num) if num > 0 => sum += num,
+            Ok(_) => count += 1,
+            Err(_) => continue, // Skip non-numeric inputs
+        }
+    }
+    println!("Sum: {}", sum);
+    println!("Count: {}", count);
+}
+```

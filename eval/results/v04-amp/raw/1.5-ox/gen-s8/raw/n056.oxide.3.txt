@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let mut sum = 0;
+    let mut count = 0;
+
+    for &value in [7, x, 9, ?].iter() {
+        if value.is_some() {
+            sum += value.unwrap();
+            count += 1;
+        }
+    }
+
+    println!("Sum of numbers: {}", sum);
+    println!("Count of numbers: {}", count);
+}
+```

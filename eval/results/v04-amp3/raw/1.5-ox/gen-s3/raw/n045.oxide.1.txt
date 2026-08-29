@@ -1,0 +1,9 @@
+```rust
+struct Log { entries: Vec<Int> }
+
+fn main() {
+    let log = Log { entries: push(push(vec(), 6), 7) };
+    println!("{:?}", log.entries[0]);
+    println!("{:?}", log.entries.last().unwrap());
+}
+```

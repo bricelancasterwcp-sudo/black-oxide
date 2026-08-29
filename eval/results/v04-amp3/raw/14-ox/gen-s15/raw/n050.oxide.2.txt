@@ -1,0 +1,40 @@
+```
+fn sort_descending(v: Vec<Int>) -> Vec<Int> {
+    let mut sorted = v;
+    for i in range(0, len(sorted)) {
+        for j in range(i + 1, len(sorted)) {
+            if get(sorted, i)? < get(sorted, j)? {
+                let temp = get(sorted, i)?;
+                sorted = set(sorted, i, get(sorted, j)?)?;
+                sorted = set(sorted, j, temp)?;
+            }
+        }
+    }
+    sorted
+}
+
+fn set(v: Vec<Int>, index: Int, value: Int) -> Option<Vec<Int>> {
+    let mut new_v = vec();
+    for i in range(0, len(v)) {
+        if i == index {
+            new_v = push(new_v, value);
+        } else {
+            new_v = push(new_v, get(v, i)?);
+        }
+    }
+    Some(new_v)
+}
+
+fn main() {
+    let scores = vec();
+    scores = push(scores, 2);
+    scores = push(scores, 9);
+    scores = push(scores, 5);
+    
+    let sorted_scores = sort_descending(scores)?;
+    
+    for score in sorted_scores {
+        print(score);
+    }
+}
+```

@@ -1,0 +1,12 @@
+#[derive(Clone)]
+struct Point {
+    x: i32,
+    tag: String,
+}
+
+fn main() {
+    let p = Point { x: 11, tag: String::from("hello") };
+    let q = p.clone(); // Clone the entire struct to avoid moving `p`
+    println!("{}", p.tag.len());
+    println!("{}", q.x);
+}

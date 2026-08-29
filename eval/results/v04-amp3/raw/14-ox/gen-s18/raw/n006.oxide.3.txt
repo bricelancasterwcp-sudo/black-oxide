@@ -1,0 +1,1 @@
+fn main() { let max_power = -1 for i in range(0, 7) { let power = 2 ** i if power > 100 { break } max_power = power } print(max_power) }

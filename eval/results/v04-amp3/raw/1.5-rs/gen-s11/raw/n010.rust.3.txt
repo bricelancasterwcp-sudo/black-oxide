@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let n = 91;
+    println!("{}", is_prime(n));
+}
+
+fn is_prime(num: isize) -> bool {
+    if num <= 1 { return false; }
+    for i in 2..=((num as f64).sqrt() as isize) {
+        if num % i == 0 {
+            return false;
+        }
+    }
+    true
+}
+```

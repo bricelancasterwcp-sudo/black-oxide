@@ -1,0 +1,7 @@
+fn main() {
+    let mut queue = vec![1, 2, 3, 4, 5];
+    queue.swap(0, queue.len() - 1);
+    for item in &queue {
+        println!("{}", item);
+    }
+}

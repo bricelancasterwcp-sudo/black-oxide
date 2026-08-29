@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let drum = "drum".chars().rev(); // Use .rev() to get characters in reverse order
+    while let Some(c) = drum.next_back() {
+        println!("{}", c);
+    }
+    println!("drum");
+}
+```

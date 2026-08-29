@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let list = vec![None, Some(10), None, Some(20)];
+    for i in [1, 4] {
+        match get(list.clone(), i) {
+            Some(x) => print(x),
+            None => print_str("none"),
+        }
+    }
+}
+```

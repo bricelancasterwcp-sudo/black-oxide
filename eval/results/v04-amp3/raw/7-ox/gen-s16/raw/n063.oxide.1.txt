@@ -1,0 +1,24 @@
+```rust
+struct Line { items: Vec<Item> }
+
+struct Item { price: Int, quantity: Int }
+
+fn main() {
+    let line1 = Line { items: push(push(vec(), Item { price: 3, quantity: 4 }), Item { price: 3, quantity: 4 }) };
+    let line2 = Line { items: push(push(vec(), Item { price: 2, quantity: 5 }), Item { price: 2, quantity: 5 }) };
+
+    fn line_value(line: &Line) -> Int {
+        let mut total = 0;
+        for item in line.items {
+            total += item.price * item.quantity;
+        }
+        total
+    }
+
+    print(line_value(&line1));
+    print_str(" ");
+    print(line_value(&line2));
+    print_str(" ");
+    print(line_value(&line1) + line_value(&line2));
+}
+```

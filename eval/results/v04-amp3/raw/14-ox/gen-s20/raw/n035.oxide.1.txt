@@ -1,0 +1,16 @@
+```
+fn safe_div(x: Int, y: Int) -> Option<Float> {
+    if y == 0 {
+        None
+    } else {
+        Some(to_float(x) / to_float(y))
+    }
+}
+
+fn main() {
+    match safe_div(20, 4) {
+        Some(result) => print(result),
+        None => print_str("bad"),
+    }
+}
+```

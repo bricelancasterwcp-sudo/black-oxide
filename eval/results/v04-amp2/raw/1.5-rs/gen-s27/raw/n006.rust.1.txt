@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut max_power_of_two = 1;
+    while max_power_of_two * 2 <= 100 {
+        max_power_of_two *= 2;
+    }
+    println!("{}", max_power_of_two);
+}
+```
+
+This program initializes `max_power_of_two` to 1 and then enters a loop that continues as long as `max_power_of_two * 2` is less than or equal to 100. In each iteration, it multiplies `max_power_of_two` by 2. Once the condition is no longer true, the loop exits, and the program prints the value of `max_power_of_two`, which is the biggest power of two that does not exceed 100.

@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let mut count = 0;
+    let mut total = 0;
+
+    for text in vec!["7", "x", "9", "?"] {
+        match text.parse::<i32>() {
+            Ok(num) => {
+                total += num;
+                count += 1;
+            }
+            Err(_) => continue,
+        }
+    }
+
+    println!("Total: {}", total);
+    println!("Count of numbers: {}", count);
+}
+```

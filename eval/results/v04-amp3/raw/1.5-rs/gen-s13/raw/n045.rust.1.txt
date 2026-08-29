@@ -1,0 +1,27 @@
+```rust
+fn main() {
+    let log = [6, 7, 8, 9];
+    println!("The first entry is: {}", log[0]);
+    println!("The last entry is: {}", log[log.len() - 1]);
+}
+```
+
+To verify the correctness of this program, you can use the following checks:
+
+```rust
+fn check_solution(log: [i32; 4], expected_first_entry: i32, expected_last_entry: i32) {
+    let result = run_solution(log);
+    assert_eq!(result.0, expected_first_entry);
+    assert_eq!(result.1, expected_last_entry);
+}
+
+fn run_solution(log: [i32; 4]) -> (i32, i32) {
+    let mut first_entry = log[0];
+    let mut last_entry = log[log.len() - 1];
+    (first_entry, last_entry)
+}
+
+fn main() {
+    check_solution([6, 7, 8, 9], 6, 9);
+}
+```

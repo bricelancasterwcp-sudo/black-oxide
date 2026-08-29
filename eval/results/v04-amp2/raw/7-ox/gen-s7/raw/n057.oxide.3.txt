@@ -1,0 +1,26 @@
+fn main() {
+    let fig = "fig";
+    let banana = "banana";
+    let kiwi = "kiwi";
+
+    let mut max_len = 0;
+    let mut longest_word = "";
+
+    if str_len(fig) > max_len {
+        max_len = str_len(fig);
+        longest_word = fig;
+    }
+
+    if str_len(banana) > max_len {
+        max_len = str_len(banana);
+        longest_word = banana;
+    }
+
+    if str_len(kiwi) > max_len {
+        max_len = str_len(kiwi);
+        longest_word = kiwi;
+    }
+
+    print_str(longest_word);
+    print(max_len);
+}

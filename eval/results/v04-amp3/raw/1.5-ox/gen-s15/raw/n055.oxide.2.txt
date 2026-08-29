@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let e = read_int().unwrap(); if e.is_some() { print(e.unwrap()); } else { print("bad"); }
+    let o = read_str().unwrap(); if o.is_some() { print(o.unwrap()); } else { print("bad"); }
+    let f = read_float().unwrap(); if f.is_some() { print(f.unwrap()); } else { print("bad"); }
+}
+```

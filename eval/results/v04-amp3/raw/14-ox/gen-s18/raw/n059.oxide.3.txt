@@ -1,0 +1,10 @@
+fn main() {
+    let phrase = "when in doubt go home"
+    let words = len(split(phrase, ' '))
+    let chars = str_len(phrase)
+    print(words)
+    print(chars)
+}
+
+// Note: Added a split function to count words correctly.
+// The original program counted characters instead of words.

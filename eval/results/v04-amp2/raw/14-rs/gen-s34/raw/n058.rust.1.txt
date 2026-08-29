@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let word = "coffee";
+    let mut seen = [false; 26];
+    for c in word.chars() {
+        if let Some(index) = c.to_ascii_lowercase().checked_sub(b'a') {
+            if !seen[index as usize] {
+                seen[index as usize] = true;
+                println!("{}", c);
+            }
+        }
+    }
+}
+```

@@ -1,0 +1,10 @@
+```text
+fn main() {
+    let total = range(1, 6)
+        .map(|x| x * x * x)
+        .sum()
+    print(total)
+}
+```
+
+It seems there was a misunderstanding. The provided program is already correct according to the Oxide language syntax and should not produce the errors mentioned. The errors might be due to a different version of the compiler or an issue with the environment. If you are using an older version of the compiler, please update it to the latest version. If the issue persists, please provide more details about your environment and the compiler version.

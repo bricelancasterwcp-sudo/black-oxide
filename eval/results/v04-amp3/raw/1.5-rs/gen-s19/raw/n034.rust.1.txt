@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    match get_second_entry(vec![7, 8, 9]) {
+        Some(val) => println!("Second entry: {}", val),
+        None => println!("No second entry."),
+    }
+}
+
+fn get_second_entry(nums: Vec<isize>) -> Option<isize> {
+    nums.get(1)
+}
+```

@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let mut sum = 0;
+    let mut count = 0;
+
+    for &value in [7, 10, 9, ?] {
+        if value.is_digit(10) {
+            sum += value;
+            count += 1;
+        }
+    }
+
+    println!("Sum of the ones that do: {}", sum);
+    println!("Number of ones that do not: {}", 4 - count);
+}
+```

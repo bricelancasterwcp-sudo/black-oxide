@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let mut numbers = [7, 0, 9, 123]; // Assuming '?' is a placeholder for a number
+    let mut count = 0;
+
+    for &num in &numbers {
+        if num != 0 {
+            println!("{}", num);
+            count += 1;
+        }
+    }
+
+    println!("Total of the ones: {}", count);
+    println!("Number of zeros: {}", numbers.len() - count);
+}
+```

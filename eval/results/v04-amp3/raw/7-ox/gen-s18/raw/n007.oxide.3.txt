@@ -1,0 +1,7 @@
+fn main() {
+    let num = 9875;
+    let str_num = int_to_str(num);
+    let chars = chars(str_num);
+    let sum = chars.map(|c| parse_int(c).unwrap()).sum();
+    print(sum);
+}

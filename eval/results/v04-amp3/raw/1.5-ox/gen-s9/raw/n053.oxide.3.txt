@@ -1,0 +1,21 @@
+```rust
+fn main() {
+    let drum = "drum";
+    println!("{:?}", drum.chars().rev());
+    println!("{}", drum);
+}
+```
+The error occurred because Rust requires semicolons at the end of each statement. However, in this case, the `println!` macros are not statements but expressions. The correct way to print with a loop is to use a `for` loop and `continue` to skip iteration when necessary. Here's the corrected program:
+
+```rust
+fn main() {
+    let drum = "drum";
+    for (i, ch) in drum.chars().enumerate().rev() {
+        if i > 0 {
+            println!("{}", ch);
+        }
+    }
+}
+```
+
+This version uses a `for` loop to iterate over the characters of `drum` in reverse order, and prints each character except the first one.

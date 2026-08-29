@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let list = vec![7, 8, 9];
+    match second(list) {
+        Some(n) => println!("Second entry: {}", n),
+        None => println!("No second entry"),
+    }
+}
+
+fn second(lst: Vec<Int>) -> Option<Int> {
+    lst.get(1)
+}
+```

@@ -1,0 +1,13 @@
+```text
+struct Log { entries: Vec<Int> }
+
+fn main() {
+    let log = Log { entries: vec() }
+    push(log.entries, 6)
+    push(log.entries, 7)
+    push(log.entries, 8)
+    push(log.entries, 9)
+    print(unwrap_or(get(log.entries, 0), -1))  // prints the first entry
+    print(unwrap_or(get(log.entries, len(log.entries) - 1), -1))  // prints the last entry
+}
+```

@@ -1,0 +1,17 @@
+```rust
+use std::collections::HashSet;
+
+fn main() {
+    let mut lst = HashSet::<Int>::from([10, 20]);
+    
+    match lst.get(&1) {
+        Some(n) => print(n),
+        None => println!("position one is empty"),
+    }
+    
+    match lst.get(&4) {
+        Some(n) => print(n),
+        None => println!("position four is empty"),
+    }
+}
+```

@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let s = match ["fig", "banana", "kiwi"].iter().max_by(|a, b| a.len().cmp(&b.len())) {
+        Some(s) => *s,
+        None => panic!("No names found"),
+    };
+    print_str(format!("{} - {}", s, s.chars().count()));
+}
+```

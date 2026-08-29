@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let v = push(push(vec(), 3), 42);
+    print(min(v)?);            // field access copies: r stays usable
+    print(second(v)?);
+}
+```

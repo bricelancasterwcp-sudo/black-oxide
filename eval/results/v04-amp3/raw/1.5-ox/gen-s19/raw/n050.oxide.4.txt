@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let mut scores = vec![9, 2, 5];
+    scores.sort_unstable(); // sort without changing the original vector
+    for &score in &scores {
+        println!("{}", score);
+    }
+}
+```

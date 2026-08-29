@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let mut numbers = vec![8, "oak", 15];
+    for &num in &numbers {
+        match num {
+            i if i.is_digit(10) => println!("{}", i),
+            s if s == "oak" => println!("oak"),
+            _ => println!("bad"),
+        }
+    }
+}
+```
+
+Explanation:
+- We start by declaring a mutable vector `numbers` containing three elements: 8, "oak", and 15.
+- Using a for loop to iterate over the elements of the vector, we use the `match` statement to check the value at each index.
+- If the element is a digit (checked using `i.is_digit(10)`), we print it as an integer.
+- If the element is the string "oak", we print it as "oak".
+- For any other type of value, we print "bad".

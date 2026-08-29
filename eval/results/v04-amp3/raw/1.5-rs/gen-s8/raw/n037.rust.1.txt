@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let width = 2;
+    let height = 3;
+
+    println!("The original rectangle has an area of: {}", width * height);
+
+    width = 5;
+
+    println!("After changing the width to 5, the new area is: {}", width * height);
+}
+```

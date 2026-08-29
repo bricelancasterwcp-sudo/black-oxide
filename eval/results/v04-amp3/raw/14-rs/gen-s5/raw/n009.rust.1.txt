@@ -1,0 +1,9 @@
+```rust
+use std::io;
+
+fn main() {
+    let number = 1234;
+    let reversed_number: String = number.to_string().chars().rev().collect();
+    println!("{}", reversed_number);
+}
+```

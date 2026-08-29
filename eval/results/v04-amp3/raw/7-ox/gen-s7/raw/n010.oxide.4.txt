@@ -1,0 +1,19 @@
+fn is_prime(n: Int) -> Bool {
+    if n < 2 { return false }
+    let sqrt_n = trunc(to_float(n).sqrt()) + 1;
+    for i in range(2, sqrt_n as Int) {
+        if get(range(0, n), i)? != 0 {
+            return true
+        }
+    }
+    false
+}
+
+fn main() {
+    let result = is_prime(91)
+    if result {
+        print_str("yes")
+    } else {
+        print_str("no")
+    }
+}

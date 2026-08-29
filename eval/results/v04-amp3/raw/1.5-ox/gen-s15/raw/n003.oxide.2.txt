@@ -1,0 +1,15 @@
+```rust
+fn divisors_count(n: Int) -> Int {
+    let mut count = 0;
+    for i in 1..=n {
+        if n % i == 0 {
+            count += 1;
+        }
+    }
+    return count
+}
+
+fn main() {
+    print(divisors_count(36));
+}
+```

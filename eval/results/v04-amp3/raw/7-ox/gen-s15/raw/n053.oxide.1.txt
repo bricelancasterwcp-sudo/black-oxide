@@ -1,0 +1,4 @@
+```rust
+print(concat("drum", concat(str_len("drum") - 1 ..= 0 { char_at("drum", i) }.collect::<Vec<Str>>().join(""), "")))
+print_str("drum")
+```

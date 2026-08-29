@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let result = get_second_entry(&[7, 8, 9]);
+    println!("{:?}", result);
+}
+
+fn get_second_entry<'a>(input: &'a [i32]) -> Option<&'a i32> {
+    input.get(1)
+}
+```

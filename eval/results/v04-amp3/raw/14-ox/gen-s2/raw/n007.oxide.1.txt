@@ -1,0 +1,15 @@
+```ox
+fn digit_sum(n: Int) -> Int {
+    let sum = 0
+    let mut remaining = n
+    while remaining > 0 {
+        sum += remaining % 10
+        remaining = remaining / 10
+    }
+    sum
+}
+
+fn main() {
+    print(digit_sum(9875))
+}
+```

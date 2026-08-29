@@ -1,0 +1,24 @@
+```
+fn first_letter(s: Str) -> Option<Str> {
+    let chars = chars(s)
+    get(chars, 0)?
+}
+
+fn last_letter(s: Str) -> Option<Str> {
+    let chars = chars(s)
+    let len = str_len(s)
+    get(chars, len - 1)?
+}
+
+fn main() {
+    let word = "granite"
+    match first_letter(word) {
+        Some(first) => print(first),
+        None => print_str(""),
+    }
+    match last_letter(word) {
+        Some(last) => print(last),
+        None => print_str(""),
+    }
+}
+```

@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let measurements = [9, 2, 7, 4];
+    let mut sorted_measurements = measurements;
+    sorted_measurements.sort();
+    for measurement in sorted_measurements {
+        println!("{}", measurement);
+    }
+}
+```

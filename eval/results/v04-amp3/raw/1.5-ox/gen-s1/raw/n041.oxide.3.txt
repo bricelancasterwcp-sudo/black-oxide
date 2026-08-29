@@ -1,0 +1,12 @@
+```
+fn main() {
+    let mut values = vec![2, 3];
+    push(&mut values, 4);
+    push(&mut values, 9);
+
+    for &x in values.iter().sorted() {
+        print!("{}", x);
+        println!();
+    }
+}
+```

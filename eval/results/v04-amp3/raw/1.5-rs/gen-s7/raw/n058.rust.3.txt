@@ -1,0 +1,17 @@
+```rust
+
+fn main() {
+    let mut occurrences = [0; 26];
+    let word = "coffee";
+
+    for c in word.chars().map(|c| (c as u8 - 'a' as u8) as usize) {
+        occurrences[c] += 1;
+    }
+
+    for i in 0..26 {
+        if occurrences[i] > 1 {
+            print!("{}", (i + 'a') as char);
+        }
+    }
+}
+```

@@ -1,0 +1,20 @@
+```rust
+fn main() {
+    let samples = [5, 12, 3, 18, 9];
+    let cutoff = 10;
+
+    let mut below_cutoff_count = 0;
+    let mut over_or_equal_cutoff_count = 0;
+
+    for &sample in &samples {
+        if sample < cutoff {
+            below_cutoff_count += 1;
+        } else {
+            over_or_equal_cutoff_count += 1;
+        }
+    }
+
+    println!("Below cutoff: {}", below_cutoff_count);
+    println!("Over or equal cutoff: {}", over_or_equal_cutoff_count);
+}
+```

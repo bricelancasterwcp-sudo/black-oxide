@@ -1,0 +1,6 @@
+fn main() {
+    let total_price = (4 * 3) + (5 * 2);
+    println!("Line 1: ${}", 4 * 3.00); // Fixed line 1 price to a float value
+    println!("Line 2: ${}", 5 * 2.00); // Fixed line 2 price to a float value
+    println!("Total price: ${}", total_price);
+}

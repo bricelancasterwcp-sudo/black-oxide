@@ -1,0 +1,13 @@
+fn main() {
+    let test_cases = vec![vec![7], vec![7, 8], vec![7, 8, 9]];
+    for case in test_cases {
+        match get_second(&case) {
+            Some(value) => println!("{}", value),
+            None => println!("None"),
+        }
+    }
+}
+
+fn get_second<T>(list: &[T]) -> Option<&T> {
+    list.get(1)
+}

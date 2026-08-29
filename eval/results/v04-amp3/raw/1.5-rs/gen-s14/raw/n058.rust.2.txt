@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let text = "coffee";
+    let mut chars: HashSet<char> = HashSet::new();
+    for &char in text.chars().rev() {
+        if !chars.contains(&char) {
+            println!("{}", char);
+            chars.insert(char);
+        }
+    }
+}
+```

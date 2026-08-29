@@ -1,0 +1,5 @@
+```oxide
+let s = "granite"
+print(s chars().0)
+print(s chars() last())
+```

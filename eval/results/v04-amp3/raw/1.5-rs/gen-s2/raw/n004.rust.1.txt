@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let mut sequence = vec![1, 1];
+    
+    for _ in 2..10 {
+        let next_term = sequence.last().unwrap() + sequence.get(sequence.len() - 2).unwrap();
+        sequence.push(next_term);
+    }
+    
+    println!("{}", sequence[9]); // The tenth term
+}
+```

@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let batch = vec![9, 2, 12, 5, 16];
+    let mut kept: Vec<i32> = Vec::new();
+
+    for &num in &batch {
+        if num < 10 {
+            kept.push(num);
+        }
+    }
+
+    for &num in &kept {
+        println!("{}", num);
+    }
+
+    println!("Kept count: {}", kept.len());
+}
+```

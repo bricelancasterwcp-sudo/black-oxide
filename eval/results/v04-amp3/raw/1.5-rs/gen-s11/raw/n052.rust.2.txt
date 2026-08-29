@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut index = 0;
+    for c in "banana".chars() {
+        if c == 'n' {
+            println!("{}", index);
+            index += 1; // Increment index by 1 to go to the next character
+        } else {
+            index += 1; // Move to the next character without incrementing index
+        }
+    }
+}
+```

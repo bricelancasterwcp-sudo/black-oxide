@@ -1,0 +1,21 @@
+```rust
+struct Rectangle { width: Int, height: Int }
+
+fn main() {
+    let mut rect = Rectangle { width: 2, height: 3 };
+
+    rect.width = 5; // Move to update width
+
+    print(rect.area()); // Access area without reassignment
+}
+```
+
+### Explanation:
+
+1. **Struct Definition**: The `Rectangle` struct has two fields: `width` and `height`.
+2. **Main Function**: In the `main` function:
+   - A mutable reference to a `Rectangle` named `rect` is declared.
+   - The width of the rectangle is updated from 2 to 5 using the assignment operator (`=`).
+   - Finally, the area of the rectangle is printed without reassignment by calling the `area()` method.
+
+The ownership rules ensure that the rectangle object remains valid throughout the program, even though its fields are modified after the first use.

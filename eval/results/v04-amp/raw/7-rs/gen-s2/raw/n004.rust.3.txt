@@ -1,0 +1,13 @@
+fn main() {
+    let mut terms = [1, 1];
+    for _ in 2..10 {
+        let next_term = terms[terms.len() - 1] + terms[terms.len() - 2];
+        if terms.len() < 10 {
+            let mut new_terms = [0; 10];
+            new_terms[..terms.len()].copy_from_slice(&terms);
+            new_terms[terms.len()] = next_term;
+            terms = new_terms;
+        }
+    }
+    println!("{}", terms[9]);
+}

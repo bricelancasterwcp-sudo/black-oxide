@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let mut biggest = 0;
+    for i in 0..=9 {
+        if 2i.pow(i) > 100 {
+            break;
+        }
+        biggest = i;
+    }
+    print(biggest);
+}
+```
+
+Explanation:
+- We initialize `biggest` to 0.
+- We use a `for` loop to iterate through the powers of 2 from 0 to 9 (inclusive).
+- If `2i.pow(i)` exceeds 100, we break out of the loop because there's no need to continue checking higher powers.
+- Otherwise, we update `biggest` to be the current power of 2.
+- Finally, we print the value of `biggest`, which is the biggest power of two that does not exceed 100.

@@ -1,0 +1,17 @@
+```rust
+fn second_entry<T>(list: &[T]) -> Option<&T> {
+    if list.len() > 1 {
+        Some(&list[1])
+    } else {
+        None
+    }
+}
+
+fn main() {
+    let numbers = vec![7, 8, 9];
+    match second_entry(&numbers) {
+        Some(value) => println!("The second entry is: {}", value),
+        None => println!("There is no second entry."),
+    }
+}
+```

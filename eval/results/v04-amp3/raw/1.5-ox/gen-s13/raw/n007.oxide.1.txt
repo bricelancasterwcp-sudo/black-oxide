@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let n = 9875;
+    let mut sum = 0;
+
+    while n > 0 {
+        sum += n % 10;
+        n /= 10;
+    }
+
+    print(sum);
+}
+```
+
+## Reading compiler errors
+
+Errors carry codes: `OX03xx` are type errors, `OX04xx` ownership errors.
+No notes provided for the errors.

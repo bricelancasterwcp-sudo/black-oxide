@@ -1,0 +1,21 @@
+```rust
+fn main() {
+    let oak = Some(8);
+    match oak {
+        Some(n) => println!("{}", n),
+        None => println!("bad"),
+    }
+
+    let fifteen = Some(15);
+    match fifteen {
+        Some(n) => println!("{}", n),
+        None => println!("bad"),
+    }
+
+    let none: Option<i32> = None;
+    match none {
+        Some(n) => println!("{}", n),
+        None => println!("bad"),
+    }
+}
+```

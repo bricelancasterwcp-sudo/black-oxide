@@ -1,0 +1,9 @@
+```oxide
+fn main() {
+    let mut product = 1;
+    for i in range(1, 7) {
+        product *= i;
+    }
+    print(product);
+}
+```

@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let num = 9875;
+    let sum = get(num / 10, 0) + get(num % 10, 0);
+    print(sum);
+}
+```
+
+This program calculates the sum of the digits of the number 9875 by first extracting each digit and then summing them up. The `get` function is used to safely access elements at specific indices in a vector.

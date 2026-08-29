@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let mut scores = vec![9, 2, 5];
+    scores.sort_unstable(); // sort without changing the original vector
+    for &score in &scores {
+        println!("{}", score);
+    }
+}
+```
+
+Explanation of corrections:
+- `vec!` was used instead of `vec[]`.
+- `sort()` was changed to `sort_unstable()` because sorting can be unstable (order not guaranteed).
+- `println!("{}!", score)` was used instead of `print!("{}!", score)`.

@@ -1,0 +1,16 @@
+```text
+struct Line { quantity: Int, price: Int }
+
+fn line_value(line: Line) -> Int {
+    line.quantity * line.price
+}
+
+fn main() {
+    let line1 = Line { quantity: 4, price: 3 }
+    let line2 = Line { quantity: 5, price: 2 }
+    print(line_value(line1))
+    print(line_value(line2))
+    let total = line_value(Line { quantity: 4, price: 3 }) + line_value(Line { quantity: 5, price: 2 })
+    print(total)
+}
+```

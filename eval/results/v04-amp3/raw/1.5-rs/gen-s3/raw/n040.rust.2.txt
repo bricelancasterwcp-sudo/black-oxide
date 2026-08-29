@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let square_side = 4;
+    let radius = 3.0; // Note: Use floating-point for pi in Rust
+    let area_square = square_side * square_side;
+    println!("The area of a square with side {} is {}", square_side, area_square);
+}
+```

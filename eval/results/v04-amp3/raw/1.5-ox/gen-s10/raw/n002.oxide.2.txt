@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut product = 1;
+    for i in 1..=6 {
+        product *= i;
+    }
+    println(product);
+}
+```
+
+Explanation of corrections:
+- The `println(product);` statement was missing a semicolon at the end.
+- The loop body was missing a semicolon after the last expression (`product *= i;`).

@@ -1,0 +1,12 @@
+```rust
+struct Square { side: Int }
+struct Circle { radius: Float }
+
+fn main() {
+    let s = Square { side: 4 };
+    print(s.area());
+}
+```
+
+Explanation:
+The original program had two issues that prevented it from compiling correctly. The semicolons in lines 5 and 6 were unnecessary, and the closing braces `}` for the struct definitions should be placed at the end of each block instead of on a new line. After fixing these issues, the program compiles and prints the area of the square with side length four.

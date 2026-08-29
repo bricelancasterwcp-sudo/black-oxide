@@ -1,0 +1,17 @@
+```
+fn sort_descending(v: Vec<Int>) -> Vec<Int> {
+    let sorted = sort(v)
+    vec!()
+    for i in range(0, len(sorted)) {
+        push(vec!(), get(sorted, len(sorted) - i - 1))
+    }
+}
+
+fn main() {
+    let scores = vec!(2, 9, 5)
+    let sorted_scores = sort_descending(scores)
+    for score in sorted_scores {
+        print(score)
+    }
+}
+```

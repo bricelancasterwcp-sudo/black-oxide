@@ -1,0 +1,10 @@
+```oxide
+fn main() {
+    let s = "banana";
+    for i in range(0, str_len(s)) {
+        if get(s, i) == Some("n") {
+            print(i);
+        }
+    }
+}
+```

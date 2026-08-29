@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    for &x in [8, "oak", 15].iter().filter_map(|&x| match x {
+        i if i.is_integer() => Some(i as i32),
+        s if s.eq_ignore_ascii_case("oak") => Some(9),
+        _ => None,
+    }) {
+        print!("{n}");
+    }
+}
+```

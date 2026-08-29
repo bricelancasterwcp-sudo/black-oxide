@@ -1,0 +1,16 @@
+```rust
+fn cube(n: Int) -> Int {
+    n * n * n
+}
+
+fn main() {
+    let sum = (1..=5).map(|i| cube(i)).sum();
+    println!("{}", sum);
+}
+```
+
+Explanation:
+- The `cube` function computes the cube of a given integer `n`.
+- In the `main` function, we use the `map` method to apply the `cube` function to each number from 1 to 5. This creates a vector of cubes.
+- We then use the `sum` method on the resulting vector to compute their total sum.
+- Finally, we print the total using `println!`.

@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let mut numbers = vec![8, 15];
+    let entries = vec![" oak", "bad"];
+
+    for i in (0..numbers.len()) {
+        if numbers[i] == 15 {
+            println!("{} is not valid.", entries[i]);
+        } else {
+            println!("{}", entries[i]);
+        }
+    }
+}
+```

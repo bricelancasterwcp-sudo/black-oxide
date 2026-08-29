@@ -1,0 +1,9 @@
+```oxide
+fn main() {
+    let phrase = "when in doubt go home";
+    let words = phrase.split(' ').count();
+    let chars = str_len(phrase);
+    print(words);
+    print(chars);
+}
+```

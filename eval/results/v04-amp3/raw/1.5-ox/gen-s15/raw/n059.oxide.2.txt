@@ -1,0 +1,17 @@
+```rust
+fn word_count(s: Str) -> Int {
+    s.chars().filter(|c| c.is_whitespace()).count() + 1
+}
+
+fn char_count(s: Str) -> Int {
+    s.len()
+}
+
+fn main() {
+    let phrase = "when in doubt go home";
+    let words = word_count(phrase);
+    let chars = char_count(phrase);
+    println!("Words: {}", words);
+    println!("Chars including spaces: {}", chars);
+}
+```

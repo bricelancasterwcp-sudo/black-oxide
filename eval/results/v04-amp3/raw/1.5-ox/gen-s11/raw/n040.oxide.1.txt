@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let r = Reading { label: "lab", values: vec![4, 3] }
+    print(first_big(r.values))            // field access copies: r stays usable
+}
+```
+The `main` function demonstrates the creation of a `Reading` struct and accessing its value. The `first_big` function is not defined in the given source code, but it should return an integer representing the area of a square with side four.

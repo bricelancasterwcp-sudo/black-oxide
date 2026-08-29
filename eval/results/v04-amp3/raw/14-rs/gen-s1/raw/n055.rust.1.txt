@@ -1,0 +1,13 @@
+```rust
+use std::str::FromStr;
+
+fn main() {
+    let entries = vec!["8", "oak", "15"];
+    for entry in entries {
+        match i32::from_str(entry) {
+            Ok(number) => println!("{}", number),
+            Err(_) => println!("bad"),
+        }
+    }
+}
+```

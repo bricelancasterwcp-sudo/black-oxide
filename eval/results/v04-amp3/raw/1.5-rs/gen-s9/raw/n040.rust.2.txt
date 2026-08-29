@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let side = 4.0;
+    let pi: f64 = std::f64::consts::PI; // Fixed the type to f64
+    println!("The area of the square is {}", side * pi * side);
+}
+```
+
+Explanation:
+- The program now correctly calculates the area of a square by multiplying its side length by `pi` and the side length squared, as per the formula for the area of a square: A =side².
+- The variable `pi` was previously declared but not initialized. I added a line to declare it as an `f64` type (double precision float).
+- This fixes the incorrect output "The area of the square is 16" and produces the correct area, which should be approximately 50.27.

@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let mut a = 1;
+    let mut b = 1;
+
+    for _ in 2..=10 {
+        let temp = a + b;
+        a = b;
+        b = temp;
+    }
+
+    print(a);
+}
+```
+
+This program generates the tenth term of the Fibonacci sequence. The variables `a` and `b` are initialized with the first two terms of the sequence, 1 and 1 respectively. In each iteration of the loop, the values of `a` and `b` are swapped, and the sum of their old values (`temp`) is stored in `a`. This effectively calculates the next term in the sequence. Finally, the program prints the value of `a`, which is now the tenth term of the Fibonacci sequence.

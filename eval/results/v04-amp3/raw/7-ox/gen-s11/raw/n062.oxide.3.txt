@@ -1,0 +1,10 @@
+fn main() {
+    for signal in vec!["green", "red", "yellow"] {
+        match signal {
+            "green" => print_str("go"),
+            "red" => print_str("stop"),
+            "yellow" => print_str("wait"),
+            _ => print_str("unknown"),
+        }
+    }
+}

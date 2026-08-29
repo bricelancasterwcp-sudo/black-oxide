@@ -1,0 +1,20 @@
+```rust
+fn main() {
+    let samples = vec![5, 12, 3, 18, 9];
+    let cutoff = 10;
+
+    let mut below_cutoff = 0;
+    let mut above_or_equal_cutoff = 0;
+
+    for &sample in &samples {
+        if sample < cutoff {
+            below_cutoff += 1;
+        } else {
+            above_or_equal_cutoff += 1;
+        }
+    }
+
+    println!("Below the cutoff: {}", below_cutoff);
+    println!("Above or equal to the cutoff: {}", above_or_equal_cutoff);
+}
+```

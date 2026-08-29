@@ -1,0 +1,8 @@
+fn main() {
+    let list = vec![Some(10), Some(20)];
+    println!("{:?}", list.get(0).unwrap_or(&None));
+    match list.get(3) {
+        Some(x) => println!("{:?}", x),
+        None => println!("{:?}", None),
+    }
+}

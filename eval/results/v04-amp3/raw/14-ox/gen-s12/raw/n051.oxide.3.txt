@@ -1,0 +1,1 @@
+fn main() { let word = "granite"; let first_letter = get(word.chars(), 0)?; print(first_letter); let last_letter = get(word.chars(), str_len(word) - 1)?; print(last_letter); }

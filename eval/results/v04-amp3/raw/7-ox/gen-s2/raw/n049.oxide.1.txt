@@ -1,0 +1,9 @@
+```oxide
+fn main() {
+    let figs = vec!(8, 3, 11, 6);
+    let min_figs = min(figs)?.unwrap_or(0);
+    let max_figs = max(figs)?.unwrap_or(0);
+    print(min_figs);
+    print(max_figs - min_figs);
+}
+```

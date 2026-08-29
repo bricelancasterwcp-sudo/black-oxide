@@ -1,0 +1,5 @@
+```rust
+fn main() {
+    println!("The area of the square is: {:.2}", 4.0 * std::f64::consts::PI);
+}
+```

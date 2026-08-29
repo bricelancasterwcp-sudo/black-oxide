@@ -199,7 +199,10 @@ spanning from the opening quote to end of line, then resume lexing at the
 next line. `value` = the unescaped string.
 
 ### 3.6 Operators & delimiters — maximal munch
-Two-char first: `-> => == != <= >= && || ::`, then one-char:
+Two-char first: ~~`-> => == != <= >= && || ::`~~ → `-> => == != <= >=
+&& || :: += -= *=` (`+=`/`-=`/`*=` added by v0.4 wave 2's compound
+assignment, checked before the one-char table exactly like every other
+two-char operator — see §59.2), then one-char:
 `= < > + - * / % ! . ( ) { } , :`. A lone `&` or `|` or any other unknown
 char → **OX0001** "unexpected character", ERROR token of length 1, continue.
 
@@ -661,7 +664,7 @@ diagnostic contributes NO DropPoints (its drops are suppressed).
 | OX0200 | resolve | unknown identifier |
 | OX0201 | resolve | function/builtin name used as a value (non-callee) |
 | OX0202 | resolve/infer | unknown type or struct name, or wrong type arity |
-| OX0203 | resolve | duplicate top-level name (incl. clash with a builtin) |
+| OX0203 | resolve | duplicate top-level name (~~incl. clash with a builtin~~ — a `fn` clash is superseded by v0.4 shadowing; struct/enum names still hard-clash — see §58.2) |
 | OX0204 | resolve | duplicate binder (params or one pattern) |
 | OX0300 | infer | type mismatch (unification failure) |
 | OX0301 | infer | infinite type (occurs check) |
@@ -789,7 +792,7 @@ with §18).
 7. Annotations: good `Vec<Int>`; `let x: Int = 1.5` OX0300; unknown name OX0202; `Vec<Int, Int>` OX0202; `Int<Int>` OX0202.
 8. `let v = vec()` alone → OX0302.
 9. `len()` and calling an Int local → OX0303.
-10. Resolution: OX0200; OX0201; duplicate fn OX0203; fn named `print` OX0203; dup param OX0204; dup destructure binder OX0204; shadowing legal with independent types (`['Int','Bool']`).
+10. Resolution: OX0200; OX0201; duplicate fn OX0203; ~~fn named `print` OX0203~~ — superseded by v0.4 builtin shadowing (a `fn` named `print` now shadows the builtin instead of erroring; the still-true half of the case — `struct print { x: Int }` OX0203 — is pinned as `struct-clashes-with-builtin` in `tests/test_sema_types.py`; see §58.2); dup param OX0204; dup destructure binder OX0204; shadowing legal with independent types (`['Int','Bool']`).
 11. Modes: S3/S4/S8 goldens; returned copy param stays `read`; pure recursion stays `read` (`fn r(v: Vec<Int>) { r(v) }` → `('read',)`); destructured param `own` (S7).
 12. Gates: resolve error suppresses infer codes; parse error yields only lex/parse codes; analyze never raises on Part II garbage inputs.
 
@@ -2513,9 +2516,17 @@ by one or more field selectors.
 
 ```ebnf
 stmt              := let_stmt | assign_stmt | field_assign_stmt
+                   | compound_assign_stmt          # v0.4 wave 2, §59.2
                    | return_stmt | while_stmt | for_stmt | expr_stmt
 field_assign_stmt := IDENT ("." IDENT)+ "=" expr TERM
+compound_assign_stmt := IDENT ("+=" | "-=" | "*=") expr TERM   # §59.2
 ```
+
+`compound_assign_stmt` was added after this section shipped, by v0.4
+wave 2 (§59.2) — noted here in place, non-silently, so this section
+stays a complete snapshot of the current statement grammar; its
+normative definition (desugar rule, identifier-only scope, Str
+behavior) lives in §59.2, not here.
 
 The base is a bare name, not an arbitrary expression: `f().x = e` and
 `v[0] = e` remain `OX0101`. Index assignment awaits an indexing decision
@@ -2656,6 +2667,18 @@ it. Measured on the closing-baseline corpus, `duplicate top-level name
 both pre-change corpora, `g0c` and `g1c`), and in 5 attempts across 2
 sessions counting all four repair attempts.
 
+> **Superseded by v0.4 shadowing (see §58.2).** A user program that
+> writes `fn to_str(...)` no longer hits `OX0203` — it now shadows the
+> builtin program-wide (free calls and recursion resolve to the user
+> function; the builtin's receiver-first method form becomes
+> unreachable in that program). Shadowing was motivated independently
+> (the v0.4 `contains` builtin colliding with `eval/solutions/t14.ox`'s
+> own hand-rolled helper, not by this paragraph's `to_str` cost), but
+> generalizes to every builtin including this one. The paragraph above
+> is retained unedited as the historical record of why the alias was
+> added and the OX0203-clash cost it carried before v0.4 — not a
+> currently-accurate description of `fn to_str`'s behavior today.
+
 **Why this exists.** In the v0.3 taxonomy (dossier 3) models were said to
 "call conversions that don't exist". Measured over the 600 constrained
 oxide first attempts of the G0 baseline, that is not what the corpus
@@ -2705,3 +2728,401 @@ is `12/52` = **23.1%**, and `parse_int` already covers it.
 
 Either way `to_int` is the deferred `2.to(n)` range demand wearing a
 conversion's name, not parsing — and `parse_int` already covers parsing.
+
+## 58. v0.4 wave 1 — 2026-08-28 amendment
+
+Normative. Ships per
+`docs/superpowers/specs/2026-08-28-v04-efficiency-wave1-design.md` (design
+authority) and the census-gate ruling recorded in
+`.superpowers/sdd/2026-08-28-v04-efficiency-wave1/progress.md`. Amends
+§0 item 1, §16, §20, §57 as cross-referenced below; nothing else changes.
+
+### 58.1 New builtins
+
+All six take receiver-first method syntax per §53 (`v.sort()` means
+`sort(v)`, `v.contains(x)` means `contains(v, x)`, etc.):
+
+| builtin | signature | modes | Rust transpile |
+|---|---|---|---|
+| `sort(v)` | `Vec<T> -> Vec<T>` (generic, `T: Ord`) | `("own",)` | `{ let mut t = v; t.sort(); t }` |
+| `min(v)` | `Vec<T> -> Option<T>` (generic, `T: Ord + Clone`; empty → `None`) | `("read",)` | `v.iter().min().cloned()` |
+| `max(v)` | `Vec<T> -> Option<T>` (generic, `T: Ord + Clone`; empty → `None`) | `("read",)` | `v.iter().max().cloned()` |
+| `sum(v)` | `Vec<Int> -> Int` (NOT generic; empty → `0`) | `("read",)` | `v.iter().sum()` |
+| `contains(v, x)` | `(Vec<T>, T) -> Bool` (generic, `T: PartialEq`) | `("read","read")` | `v.contains(x)` — prelude sig `contains<T: PartialEq>(v: &Vec<T>, x: &T)` |
+| `unwrap_or(o, d)` | `(Option<T>, T) -> T` (generic) | `("own","own")` | `match o { Some(x) => x, None => d }` |
+
+`BUILTIN_REF` (`src/codegen/support.py`): `sort (False,)`, `min (True,)`,
+`max (True,)`, `sum (True,)`, `contains (True, True)`, `unwrap_or
+(False, False)`. `min`/`max` use `.cloned()`, not `.copied()` — matching
+`get`'s `T: Clone` convention rather than requiring `T: Copy` (which
+would reject e.g. a future `Vec<Str>`). `unwrap_or`'s `o` mode ("own")
+mirrors the language's two existing MOVE-use precedents for reaching
+inside an `Option` — `match`'s scrutinee (§28) and `?`'s operand (§36)
+— not `get`'s "read" mode, which governs a *Vec* input producing an
+`Option`, not an already-existing `Option`'s payload. `d`'s "own" mode
+mirrors `push`'s inserted-value convention: `d` may become the returned
+value verbatim on the `None` path.
+
+Commits: `c68ad27` (sort/min/max/sum/contains), `c37d268` (unwrap_or).
+
+### 58.2 Builtin shadowing (supersedes §16's OX0203 row, §20 item 10, §57's reserved-name paragraph)
+
+A top-level `fn` whose name matches a builtin now **shadows** it for the
+whole program: the user definition wins everywhere (free calls,
+recursion), and the builtin — including its receiver-first method form
+— becomes entirely unreachable in that program. A shadowed name used as
+a method (e.g. `v.contains(x)` where `contains` is user-defined) is
+refused as an unknown identifier (`OX0200`), not silently retargeted; no
+new diagnostic code was added. Struct/enum names and `BUILTIN_VARIANTS`
+(`Some`/`None`/`Ok`/`Err`) are **not** covered — they still hard-clash
+with a builtin exactly as before (`OX0203`); the rule is scoped to `fn`
+only. An earlier *definition* of the same name still hard-clashes too
+(`OX0203`) — shadowing permits exactly one builtin-clashing `fn`, not
+duplicate suppression.
+
+Four cooperating seams, not one: the naming collision itself
+(`src/sema/resolve.py::_declare_name`, `allow_builtin_shadow`); free-call
+precedence (`src/sema/infer.py::_call`, already correct — `fn_sigs` was
+already checked before `BUILTINS`); method-form refusal (a new
+`ast.Call.via_method_sugar` marker plus `resolve.py::_callee`, since
+`recv.name(args)` desugars to a plain `Call` node structurally identical
+to a hand-written free call — §53); and codegen non-collision
+(`src/codegen/support.py`'s prelude restructured into `prelude_for(shadowed)`,
+omitting a builtin's prelude copy when a user `fn` of the same name
+exists, since two same-named free `fn`s in one Rust module is `rustc`
+error E0428 — plus a `BUILTIN_REF` gate in `rust.py::_ref_required` so a
+shadowing fn's own read/own modes govern its call sites' ref-form,
+not the builtin's fixed table).
+
+Grounds: dossier-4 demand (deferred-demand ledger), measured directly by
+the frozen `eval/solutions/{oxide,explicit}/t14.ox` corpus's own
+hand-rolled `fn contains` helper colliding with the new `contains`
+builtin above; §54's admit-what-they-write law. Commit: `6e52a73`.
+
+**Recorded seam: shadowing × the §55 vec-literal desugar.** §55's
+`vec(...)` sugar synthesizes `push` (and, for the empty case, `vec`)
+calls *by name* at parse time. A user program that defines `fn push`
+therefore has every `vec(...)` literal's desugared push-chain resolve to
+that user function instead of the builtin — typically surfacing as a
+type error at the first mismatched call, i.e. fail-closed, not a silent
+miscompile. A user `fn vec` with arity greater than 0 shadows the
+0-arg literal form the same way (the literal itself, `vec()`, still
+requires a same-name `fn vec` of arity 0 to collide, per the shadowing
+rule above). Measured demand for either name is near-zero in the
+census corpus. This is recorded as a known interaction between the two
+wave-1 features, not fixed.
+
+This supersedes, in place — old text struck through, not deleted — at
+three sites: §16's `OX0203` table row ("duplicate top-level name (incl.
+clash with a builtin)"), §20 item 10 ("fn named `print` OX0203"), and
+§57's "`to_str` is now a reserved top-level name" paragraph.
+
+### 58.3 Census-gate deferrals (recorded, not shipped this wave)
+
+Measured by `eval/demand_census.py` over the wave-0 corpus (4,800 raw
+replies + 80 reference solutions + 582 amplified programs), deferred to
+wave 2 with counts recorded per the gate ruling: dotdot ranges (`a..b`
+syntax, 292 — a 1.5B-only dialect quirk, and superseded as the range
+*spelling* by the builtin `range(a, b)` below regardless); `if let` (35
+— grammar-sized work, sub-threshold against `contains`'s 44); index
+assignment (bracket-form `v[i] = x`, 28; `.set` method-form, 0 — zero
+measured model demand for the method spelling); strings vocabulary (4 —
+wave 2 per the design spec's out-of-scope list).
+
+`range(a, b) -> Vec<Int>` (half-open `[a, b)`, empty when `a >= b`) is
+**not new** — it shipped as a working v0.2 builtin since the
+repository's first commit and is already on the card (line 79). The
+census measured call-spelling *presence* across the
+corpus, not *rejection*: `range_call` (773 occurrences) simply outranked
+the unshipped `a..b` dotdot spelling (292) as the dominant surface form
+already in active use, dominant in every arm ≥7B. Commit `b84f423` pins
+the pre-existing construct with tests; no `src/` change was required.
+
+### 58.4 Card freeze lift (§0 item 1)
+
+§0 item 1 froze `LANGUAGE_CARD.md`/`LANGUAGE_CARD_EXPLICIT.md`'s exact
+strings against retokenization until "the fine-tune track (§32.4), where
+the corpus is regenerated and comparability resets anyway" — the
+occasion §0 itself named in advance. Wave 1 regenerates the training
+corpus (re-amplification with card-v0.4, per the design spec's dynamic
+loop) — that is this occasion. The freeze lifts here, non-silently:
+both cards gained the six §58.1 builtins and one shadowing sentence
+(§58.2), in each card's own voice.
+
+Word counts (`wc -w`), recorded per the design spec's "the card is a
+measured instrument" instruction:
+
+| card | before | after |
+|---|---|---|
+| `LANGUAGE_CARD.md` | 895 | 988 |
+| `LANGUAGE_CARD_EXPLICIT.md` | 980 | 1082 |
+
+`tests/test_cards.py`'s `CORE_WORD_LIMIT` pin is raised 900 → 1000 in
+the same commit, non-silently (988 exceeded the old pin); the 10%
+cross-card tolerance (`WORD_COUNT_TOLERANCE`) is unchanged and still
+holds (94-word gap against a 98.8-word allowance at core=988).
+
+## 59. v0.4 wave 2 — 2026-08-28 amendment
+
+Normative. Ships per
+`docs/superpowers/specs/2026-08-28-v04-efficiency-wave2-design.md` (design
+authority) and the census-gate v2 ruling recorded in
+`.superpowers/sdd/2026-08-28-v04-efficiency-wave2/progress.md` (Task 2
+GATE v2), itself grounded in the census v2 instrument built by Task 1
+(`eval/demand_census.py`'s rejection-crossed join and hand-rolled-pattern
+census; see `.superpowers/sdd/2026-08-28-v04-efficiency-wave2/task-1-report.md`).
+Amends §3.6 and §56 as cross-referenced there and repeated below; nothing
+else changes.
+
+### 59.1 New builtin: `count(v, x) -> Int`
+
+Takes receiver-first method syntax per §53 (`v.count(x)` means
+`count(v, x)`):
+
+| builtin | signature | modes | Rust transpile |
+|---|---|---|---|
+| `count(v, x)` | `(Vec<T>, T) -> Int` (generic, `T: PartialEq`) | `("read","read")` | `v.iter().filter(\|e\| *e == x).count() as i64` — prelude sig `count<T: PartialEq>(v: &Vec<T>, x: &T) -> i64` |
+
+`BUILTIN_REF` (`src/codegen/support.py`): `count (True, True)` — mirrors
+`contains` exactly (same generic-`T` shape, same reading modes, same
+rationale: counting, like equality comparison, never consumes its
+operands). The `as i64` cast mirrors `len`/`str_len`'s existing
+usize-to-`Int` cast idiom. The prelude's exact deref shape (`*e == x`,
+not the illustrative `**e == x`) was verified against `rustc` directly:
+`v.iter()` on `&Vec<T>` yields `&T`, so the filter closure's item is
+`&&T`, and matching `x`'s ref-form (`&T`) requires exactly one deref to
+line up via the stdlib's `&A: PartialEq<&B>` blanket impl — `**e == x`
+would compare `T` against `&T`, which does not typecheck generically.
+
+Grounds: the census v2 vectors-residual slate's `occurrence_count`
+hand-rolled pattern (11 reference-corpus refs, 12 amplified) — `count`'s
+sibling relationship to `contains` (a filtered count vs. a membership
+test) was itself part of the original wave-1 `contains` demand signal
+(§58.3's superseded paragraph references the same `eval/solutions/t14.ox`
+corpus). Commit: `7c953681`.
+
+### 59.2 Compound assignment `+=` `-=` `*=` (amends §3.6, §56)
+
+Statement-level parser sugar only: `x += e` / `x -= e` / `x *= e`
+desugars **at parse time** to the existing `Assign` node wrapping a
+synthesized `BinOp` — exactly the same tree a hand-written `x = x + e`
+(etc.) would produce. No new AST node, no sema changes, no codegen
+changes: every later phase (resolve/infer/modes/linear/codegen) sees the
+hand-written twin's tree byte-for-byte, so diagnostics, Rust output, and
+linearity treatment of `x` and of `e`'s operands are all inherited, not
+reimplemented.
+
+**Lexer (amends §3.6).** Three new two-char tokens — `PLUSEQ` (`+=`),
+`MINUSEQ` (`-=`), `STAREQ` (`*=`) — lexed via the same maximal-munch
+`_TWO_CHAR_OPERATORS` table as `EQEQ`/`NEQ`/`LEQ`/`GEQ`/`ANDAND`/`OROR`/
+`PATH_SEP`, checked before the one-char table exactly like every other
+two-char operator, so `+=` always wins over `+` immediately followed by
+`=` (and `a + = 1`, with a space between them, still lexes as separate
+`PLUS`/`EQ` tokens — maximal munch is adjacency-based, not
+whitespace-based).
+
+**Grammar (amends §56).** New alternative and production, stated in full
+in §56's `stmt :=` block:
+```ebnf
+compound_assign_stmt := IDENT ("+=" | "-=" | "*=") expr TERM
+```
+Dispatch: at statement start, `IDENT` immediately followed by
+`PLUSEQ`/`MINUSEQ`/`STAREQ` (tried only after the field-assign and
+plain-assign branches, so `x = e` and `p.f = e` are unaffected) builds
+`Assign(name, BinOp(op, Var(name), rhs))`, where `op` is the compound
+operator's arithmetic half (`+=` → `+`, etc.) and the synthesized `Var`
+reads the target with the assignment statement's own span.
+
+**Scope: identifier targets only, this wave.** Field and index targets
+are out of scope (deferred; would need the §56 `FieldAssign` path, or an
+indexing decision this document still has not made — see §56's own "awaits
+an indexing decision" note). Neither needs special-casing to stay out:
+`p.x += 1`'s lookahead after `p` is `DOT`, not a compound-assign kind, so
+the field-assign scan (§56) claims it first and — finding no `EQ` at the
+end of the `(DOT IDENT)+` run — restores the cursor and falls through to
+`_expr_stmt`, whose `_expect_term` reports the same `OX0101` "expected
+end of statement" a malformed plain-assign target already gets.
+
+**Str behavior — `OX0305`, same as the hand-written twin.** `+` is
+defined only for `Int`/`Float` (`src/sema/infer.py`'s `_NUMERIC_NAMES`,
+checked post-solve at `OX0305`, §7's error table). Oxide spells string
+concatenation `concat(a, b)`, not `+`. Because the desugar is purely
+syntactic, `s += "x"` becomes the equally-invalid `s = s + "x"` and
+reports **exactly** `OX0305` — the same code (and the same diagnostic
+text) the hand-written form already produces, byte-for-byte, verified
+directly (`tests/test_v04_wave2.py::test_plus_eq_on_str_reports_the_same_diagnostic_as_the_hand_written_plus`).
+No bespoke "no `+=` for `Str`" diagnostic exists or was needed — this
+is the general shape of the whole feature: no new diagnostic path,
+because the sugar has no semantics of its own that the hand-written
+twin didn't already have.
+
+Commit: `eb7e0099`.
+
+### 59.3 Census-gate v2 ruling (slate of 2 shipped; five deferrals recorded with counts)
+
+**Shipped:** compound assignment (§59.2) and `count(v, x)` (§59.1) — a
+slate of 2 against the design spec's cap of 8.
+
+**Deferred, with counts:**
+- **`if let Some(x) = e { }`** — amplified presence 68, below the design
+  spec's pre-registered ≥ 89 bar (demand had risen 35 → 89 under card
+  v0.4 per §58.3; the bar was followed as written despite the near-miss,
+  not lowered to fit). Re-gate at wave 3.
+- **Bracket index assignment (`v[i] = x`)** — 0 rejection-crossed
+  campaign presence, despite 18/18 mechanical presence in the amp pool;
+  this is exactly the case the census v2 rejection-cross discipline
+  (§59 intro; Task 1's instrument) exists to catch — amp-only presence
+  without a campaign-side rejection signal did not clear the gate.
+- **`remove_at(v, i)`** — the `removal_rebuild` hand-rolled pattern, 2
+  reference-corpus refs, 0 amplified (the amp pool's own `n043`/`n050`
+  programs use a different strategy, Rust's `sort_by`/index-swap, not a
+  pattern-detection miss). Flagged as under-sampled, lower-confidence
+  than `count`'s grounding signal.
+- **Strings vocabulary** (`split`, `join`, `char_at`, `substr`,
+  `str_contains`, etc.) — the `string_build` hand-rolled pattern reads
+  1 reference / 1 amplified. The strings residual is judged **not
+  hand-rolled-pattern-shaped** the way `occurrence_count`/`sum_scan` are
+  for vectors — deferred with a named wave-3 instrument change instead
+  of another structural-pattern regex: pairwise token-diff attribution
+  over the 10 strings reference pairs. Task 5 (strings builtins) is
+  SKIPPED this wave as a direct consequence.
+- **`minmax_scan`** (hand-rolled min/max scan loops) — 0/0 in both the
+  reference and amplified pools. Recorded explicitly as an
+  **absence-of-demand finding, not an instrument gap**: wave-1's `min`/
+  `max` builtins (§58.1) already absorbed this demand, so nothing in the
+  current corpus hand-rolls the scan anymore. This is categorically
+  different from the four deferrals above (under-bar or under-sampled
+  *presence*) — here there is nothing left to be present.
+- (`first(v)`/`last(v) -> Option<T>`, named as a possible slate member in
+  the design spec's provisional list, carried no measured signal at all
+  and was cut alongside `remove_at` at the same gate.)
+
+**The 100%-rejection headline — the shipping rationale for `+=`.** In
+`base-ox-7` (v04-campaign, all 10 seeds, first attempts only), the
+`compound_assign` family's `plus_eq` spelling: **64 present, 64
+rejected** — every single first-attempt reply that reaches for `+=`
+fails to compile, because Oxide has never had it before this section.
+100% mechanical rejection at presence — the cleanest measured demand
+recorded in this project's census history to date. Contrast `base-rs-7`
+on the identical spelling: 71 present, 0 rejected (Rust has `+=`
+natively) — a validity check on the instrument itself, not just a
+number to report. Amp pool (all 6 arms): 660 present, 308
+rejection-crossed. The 64/64 figure was verified three independent
+ways — the census module, a `grep`-based recount, and a from-scratch
+Python join against `cells.jsonl`'s `first_compiled` — none sharing code
+with either of the others (task-1-report.md's "Acceptance pin" section).
+
+**Target amendment** (slate-dependent, pre-read via the design spec's own
+conditional-target pattern, non-silent): overall ≤ **1.09** (was ≤ 1.05,
+assuming the full 8-construct slate); vectors ≤ **1.25** (was ≤ 1.15);
+arithmetic ≤ **1.02** (unlocked because `+=` shipped; would have held at
+1.038 ± 0.02 otherwise); strings hold **1.159 ± 0.03** (no strings
+vocabulary this wave); structs hold ≤ **1.00** (unchanged). Consistency
+check at exactly-on-target class values: overall computes to ≈ **1.083**.
+
+### 59.4 Corpus-scale gate (recorded; gates wave 2's dynamic read, not yet evaluated)
+
+Per the design spec's wave-1 G1 lesson (the tuned floor was read at only
+7.4k training tokens and the miss was diagnosed as corpus-size, not a
+real capability gap): the tuned dynamic read for wave 2 runs **only**
+once the wave-2 matched corpus reaches **≥ 15,000 supervised tokens per
+arm** (wave-0 scale). Under-scale, the dynamic read is postponed to a
+pooled later run rather than read against the floor at mismatched scale
+again — never repeating the G1 mistake. Amplification plan: pool the
+already-committed v04-amp verified programs with a fresh
+card-v0.4.1 amplification at 3 sizes × 20 seeds, raising seeds further if
+the pool still falls short. This is a pre-registered gate condition, not
+a result: Tasks 7-9 (reference re-authoring and static endpoints, corpus
+rebuild, dynamic loop) run after this task and will record the actual
+per-arm token counts and the gate's pass/fail against this threshold.
+
+### 59.5 Card update (continues §58.4's freeze-lift record)
+
+Both cards gained one `count` builtin line (Builtins block, placed
+immediately after `contains` — its census-sibling, §59.1) and one
+compound-assignment sentence (Syntax essentials' statements bullet,
+§59.2), in each card's own voice.
+
+Word counts (`wc -w`), recorded per the design spec's "the card is a
+measured instrument" instruction:
+
+| card | before (post-wave-1) | after |
+|---|---|---|
+| `LANGUAGE_CARD.md` | 988 | 1059 |
+| `LANGUAGE_CARD_EXPLICIT.md` | 1082 | 1156 |
+
+`tests/test_cards.py`'s `CORE_WORD_LIMIT` pin is raised 1000 → 1100 in
+the same commit, non-silently (1059 exceeded the 1000 pin wave 1 left);
+the 10% cross-card tolerance (`WORD_COUNT_TOLERANCE`, unchanged) still
+holds (97-word gap against a 105.9-word allowance at core=1059).
+
+### 59.6 Stale-text sweep
+
+Two normative sites predated compound assignment's lexer/grammar surface
+and are amended in place here — old text kept visible (struck through or
+noted superseded, never deleted), per the same convention §58.2 used for
+the three OX0203 sites:
+
+- **§3.6**'s "Two-char first" operator list did not include `+=`/`-=`/
+  `*=`, because they did not exist before this section; amended in place
+  (struck-through old list → new list) with a pointer back here.
+- **§56**'s `stmt :=` grammar production did not include
+  `compound_assign_stmt`; amended in place (the same treatment §56 gave
+  §26's earlier `stmt :=` when it added `field_assign_stmt`) with a
+  pointer back here.
+
+No other normative claim of the shape "Oxide has no augmented/compound
+assignment" was found by grepping for `+=`, `compound.assign`, and
+`augmented` across `SPEC.md` and
+`docs/superpowers/specs/2026-08-09-v03-taxonomy.md` — neither file
+returns a pre-existing hit, so no third site needed amendment. The
+census v2 `REPORT.md`'s `compound_assign` rows
+(`eval/results/v04-census2/REPORT.md`) need **no** erratum: they measured
+the pre-shipping *absence* of `+=` correctly, over the wave-1-era corpus,
+before this section's construct existed — the same "measured then, true
+then" reading §58.2 gives the superseded `to_str` paragraph in §57.
+
+### 59.7 Dynamic-estimand defect and its correction (recorded 2026-08-29)
+
+Wave 2's dynamic reading exposed a defect in an instrument the project
+had been quoting since wave 0, and this section records it so the
+correction is normative rather than a report footnote.
+
+**The defect.** The dynamic token-efficiency endpoint was
+`tokens_to_green_mean(oxide) / tokens_to_green_mean(rust)`, where each
+arm's mean is taken over *that arm's own* green sessions. Those sets are
+not the same set, and they change size and difficulty whenever pass@1
+moves. A tuned-arm pass@1 improvement therefore *raises* the arm's mean
+by admitting harder tasks — the number moves for a reason that has
+nothing to do with how many tokens the language costs. This is the
+project's standing bug class: a value that looks like a measurement of
+the subject but is partly a measurement of the instrument's inputs.
+
+**What it cost.** Wave 1's report claimed the dynamic ratio improved
+1.24 → 1.13 and that this "moved the same direction as the static one."
+Applying a single composition-controlled construction to all three
+waves' committed cells shows wave 1 was in fact *worse* than wave 0
+(1.293 vs 1.217). The wave-1 report carries a dated erratum; the
+published values are left visible.
+
+**The correction (binding on wave 3 and after).** The primary dynamic
+endpoint is the **composition-controlled paired ratio**:
+
+1. Pair campaign cells by `(seed, task)` — never by position.
+2. Keep only pairs where *both* arms reached green.
+3. When comparing across waves, restrict to the set of pairs green in
+   *every* wave being compared, and report that set's size and task
+   count alongside the ratio.
+
+The unconditional mean remains reported as a secondary, so the
+historical series stays readable, but it is no longer an endpoint any
+decision may rest on. Any future endpoint whose denominator is a
+model-dependent subset must state, at pre-registration, what keeps the
+compared populations comparable.
+
+**Corollary for the repair loop.** Wave 2 measured `tune-ox-7`'s final
+greens exactly equal to its first-attempt greens (151 = 151): at this
+capability level the repair loop recovers nothing, so `tokens_to_green`
+is almost entirely first-attempt generation length. A future wave that
+sees the repair loop start recovering sessions must re-check whether the
+two constructions have diverged.

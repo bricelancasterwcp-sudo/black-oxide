@@ -1,0 +1,27 @@
+```text
+struct Queue { items: Vec<Int> }
+
+fn exchange_first_last(q: Queue) -> Queue {
+    let first = get(q.items, 0)?
+    let last = get(q.items, len(q.items) - 1)?
+    let new_items = vec()
+    for (i, x) in enumerate(q.items) {
+        if i == 0 {
+            push(new_items, last)
+        } else if i == len(q.items) - 1 {
+            push(new_items, first)
+        } else {
+            push(new_items, x)
+        }
+    }
+    Queue { items: new_items }
+}
+
+fn main() {
+    let q = Queue { items: vec(1, 2, 3, 4, 5) }
+    let exchanged_q = exchange_first_last(q)?
+    for item in exchanged_q.items {
+        print(item)
+    }
+}
+```

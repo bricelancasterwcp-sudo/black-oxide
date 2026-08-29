@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let mut inputs = vec![8, "oak", 15];
+    
+    for item in inputs.iter_mut() {
+        match item {
+            &mut i if i.is_integer() => println!("{}", i),
+            _ => println!("bad"),
+        }
+    }
+}
+```

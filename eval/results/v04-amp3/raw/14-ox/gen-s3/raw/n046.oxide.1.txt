@@ -1,0 +1,10 @@
+```ox
+fn main() {
+    let numbers = vec(5, 12, 3, 18, 9);
+    let cutoff = 10;
+    let below = count(numbers, |x| x < cutoff);
+    let above_or_equal = count(numbers, |x| x >= cutoff);
+    print(below);
+    print(above_or_equal);
+}
+```

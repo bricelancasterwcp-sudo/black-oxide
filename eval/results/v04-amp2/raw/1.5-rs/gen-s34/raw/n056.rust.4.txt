@@ -1,0 +1,22 @@
+```rust
+fn main() {
+    let mut count = 0;
+    let mut sum = 0;
+
+    // Define the texts as a vector of Option<i32>
+    let texts: Vec<Option<i32>> = vec![Some(7), None, Some(9), None];
+
+    for text in &texts {
+        match text {
+            Some(number) => {
+                count += 1;
+                sum += number;
+            }
+            None => {}
+        }
+    }
+
+    println!("Total of the ones that do: {}", sum);
+    println!("Number of ones that do not: {}", texts.len() - count);
+}
+```

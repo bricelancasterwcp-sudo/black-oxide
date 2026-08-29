@@ -1,0 +1,6 @@
+fn main() {
+    let s = "drum";
+    print(concat(int_to_str(str_len(s)), chars(s).reverse()));
+    print_str(" ");
+    print(s);
+}

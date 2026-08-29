@@ -1,0 +1,18 @@
+Here is the fixed version of your Rust code:
+
+```rust
+fn main() {
+    let mut width = 2;
+    let height = 3;
+
+    // Change width to five
+    width = 5;
+
+    // Calculate area
+    let area = width * height;
+
+    println!("The area is: {}", area);
+}
+```
+
+This version of the program correctly changes the width of the rectangle from 2 to 5 and then calculates the area. The expected output for this input should be `The area is: 10`.

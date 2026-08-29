@@ -1,0 +1,12 @@
+```rust
+
+fn main() {
+    let mut cnt = 0;
+    for n in 1..=36 {
+        if 36 % n == 0 && n != 36 {
+            cnt += 1;
+        }
+    }
+    print(cnt);
+}
+```

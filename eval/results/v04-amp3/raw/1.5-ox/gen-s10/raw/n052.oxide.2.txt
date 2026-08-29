@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let banana = "banana";
+    for i in 0..banana.len() {
+        if banana.chars().nth(i) == Some('n') {
+            println!("{}", i);
+        }
+    }
+}
+```
+
+The problem was that the `main` function had a semicolon at the end, which caused the compiler to interpret it as an expression and reject it. The corrected program removes this semicolon.

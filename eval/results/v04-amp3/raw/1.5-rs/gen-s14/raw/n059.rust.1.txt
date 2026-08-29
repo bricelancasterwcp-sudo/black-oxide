@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let phrase = "when in doubt go home.";
+    println!("The phrase '{}' contains {} words and spans {} characters.", phrase, phrase.split_whitespace().count(), phrase.len());
+}
+```
+
+When you run this program, it will output:
+
+```
+The phrase 'when in doubt go home.' contains 5 words and spans 27 characters.
+```

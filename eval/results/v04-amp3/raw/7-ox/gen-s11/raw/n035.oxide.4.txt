@@ -1,0 +1,14 @@
+fn divide(x: Int, y: Int) -> Result<Float> {
+    if y == 0 {
+        Err("bad".to_string())
+    } else {
+        Ok(to_float(x) / to_float(y))
+    }
+}
+
+fn main() {
+    match divide(20, 4) {
+        Ok(result) => print(result),
+        Err(error) => print_str(&error),
+    }
+}

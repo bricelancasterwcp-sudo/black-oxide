@@ -1,0 +1,10 @@
+fn main() {
+    let width = 9;
+    let height = 3;
+
+    let area = width * height;
+    print(area);
+
+    let perimeter = (width + height) * 2;
+    print(perimeter);
+}

@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let mut count = 0;
+    let mut sum = 0;
+
+    // Assuming these are input values
+    let x = 12; // Replace with actual value
+
+    if x > 0 {
+        sum += x;
+        count += 1;
+    }
+
+    println!("Total of ones: {}", sum);
+    println!("Number of ones: {}", count);
+}
+```

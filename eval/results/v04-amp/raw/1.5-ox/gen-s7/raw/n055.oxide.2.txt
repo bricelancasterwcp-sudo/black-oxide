@@ -1,0 +1,22 @@
+```rust
+fn main() {
+    let a = match read_input() {
+        Some(8) => "good",
+        Some(oak) => "bad",
+        Some(15) => "good",
+        None => "bad"
+    };
+    println!("{}", a);
+}
+
+fn read_input() -> Option<Int> {
+    // This is a placeholder for reading input from the user
+    // For demonstration, we'll just return some values
+    match 8 {
+        8 => Some(8),
+        oak => Some(oak),
+        15 => Some(15),
+        _ => None
+    }
+}
+```

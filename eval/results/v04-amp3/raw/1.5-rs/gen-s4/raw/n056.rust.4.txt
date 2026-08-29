@@ -1,0 +1,36 @@
+fn main() {
+    let text1 = "7";
+    let text2 = "x"; // Could be any non-digit string or None
+    let text3 = "9";
+    let text4 = "?"; // Could be any non-digit string or None
+
+    let mut count_digits = 0;
+    let mut count_not_digits = 0;
+
+    if let Some(digit) = text1.chars().find(|c| c.is_digit(10)) {
+        count_digits += digit.to_digit(10).unwrap();
+    } else {
+        count_not_digits += 1;
+    }
+
+    if let Some(digit) = text2.chars().find(|c| c.is_digit(10)) {
+        count_digits += digit.to_digit(10).unwrap();
+    } else {
+        count_not_digits += 1;
+    }
+
+    if let Some(digit) = text3.chars().find(|c| c.is_digit(10)) {
+        count_digits += digit.to_digit(10).unwrap();
+    } else {
+        count_not_digits += 1;
+    }
+
+    if let Some(digit) = text4.chars().find(|c| c.is_digit(10)) {
+        count_digits += digit.to_digit(10).unwrap();
+    } else {
+        count_not_digits += 1;
+    }
+
+    println!("Total: {}", count_digits);
+    println!("Not digits: {}", count_not_digits);
+}

@@ -1,0 +1,14 @@
+```rust
+fn product(v: Vec<Int>) -> Int {
+    let mut acc = 1;
+    for x in v {
+        acc *= x;
+    }
+    acc
+}
+
+fn main() {
+    let range_vec = range(1, 7);
+    print(product(range_vec));
+}
+```

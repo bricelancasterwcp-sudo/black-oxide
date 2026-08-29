@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let mut scores = [2, 9, 5];
+    scores.sort_by(|a, b| b.cmp(a));
+    for i in (0..scores.len()).rev() {
+        println!("{}", scores[i]);
+    }
+}
+```
+
+Explanation:
+The original program attempted to sort the array in descending order using a reverse iterator, but it also modified the input array while iterating over it. This is not allowed in Rust due to borrowing rules. By moving `scores` into a mutable variable and sorting it with `sort_by`, we can correctly print each score in descending order without modifying the original array.

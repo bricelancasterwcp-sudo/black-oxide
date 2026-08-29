@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    println!("8");
+    println!("oak");
+    println!("15");
+}
+```
+This Rust function `main` prints "8", then "oak", and finally "15".

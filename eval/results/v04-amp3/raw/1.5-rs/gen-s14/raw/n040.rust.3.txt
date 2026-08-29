@@ -1,0 +1,10 @@
+fn main() {
+    let square_side: i32 = 4;
+    let shape_area = if square_side == 0 {
+        0.0
+    } else {
+        std::f64::consts::PI * square_side.pow(2)
+    };
+
+    println!("The area of the square is: {:.2}", shape_area);
+}

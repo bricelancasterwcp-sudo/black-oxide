@@ -1,0 +1,9 @@
+```
+struct Point { x: Int, y: Int }
+
+fn main() {
+    let r = Point { x: 9, y: 3 }
+    print(r.x * r.y);            // field access copies: r stays usable
+    println(2 * (r.x + r.y));     // distance around the edge: 2(x+y)
+}
+```

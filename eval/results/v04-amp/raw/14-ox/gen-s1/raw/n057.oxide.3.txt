@@ -1,0 +1,14 @@
+fn main() {
+    let fig = "fig";
+    let banana = "banana";
+    let kiwi = "kiwi";
+    let longest = if str_len(fig) > str_len(banana) && str_len(fig) > str_len(kiwi) {
+        fig
+    } else if str_len(banana) > str_len(kiwi) {
+        banana
+    } else {
+        kiwi
+    };
+    print_str(longest);
+    print(str_len(longest));
+}

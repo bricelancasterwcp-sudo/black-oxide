@@ -1,0 +1,20 @@
+```rust
+struct Line {
+    units_1: Int,
+    price_1: Float,
+    units_2: Int,
+    price_2: Float,
+}
+
+fn main() {
+    let line1 = Line { units_1: 4, price_1: 3.0, units_2: 0, price_2: 0.0 };
+    let line2 = Line { units_1: 0, price_1: 0.0, units_2: 5, price_2: 2.0 };
+
+    println!("{:?}", line1);
+    println!("{:?}", line2);
+
+    let total_value = line1.price_1 * line1.units_1 + line2.price_1 * line2.units_1 +
+                     line1.price_2 * line1.units_2 + line2.price_2 * line2.units_2;
+    println!("Total value: {}", total_value);
+}
+```

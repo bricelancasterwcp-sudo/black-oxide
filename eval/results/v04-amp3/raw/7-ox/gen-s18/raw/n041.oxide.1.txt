@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let numbers = vec![9, 2, 7, 4];
+    let sorted_numbers = sort(numbers);
+    for number in sorted_numbers {
+        print(number);
+        print_str("\n");
+    }
+}
+```

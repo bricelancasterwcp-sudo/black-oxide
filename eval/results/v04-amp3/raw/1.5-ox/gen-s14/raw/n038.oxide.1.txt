@@ -1,0 +1,11 @@
+```rust
+struct Sensor { reading: Int }
+
+fn main() {
+    let mut sensor = Sensor { reading: 0 };
+    sensor.reading += 7;
+    print(sensor.reading);
+}
+```
+
+This source program demonstrates setting a `Sensor`'s reading to seven and printing it. It includes the necessary Rust syntax for defining a struct, initializing a variable, performing arithmetic operations, and calling a function to print the value.

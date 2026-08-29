@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let mut count = 0;
+    loop {
+        match count {
+            1 => println!("stop"),
+            2 => println!("wait"),
+            _ => println!("go for green")
+        }
+        count += 1;
+        if count > 3 { break; }
+    }
+}
+```

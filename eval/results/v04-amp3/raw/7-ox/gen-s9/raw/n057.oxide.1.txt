@@ -1,0 +1,25 @@
+```oxide
+fn max_len(a: Str, b: Str, c: Str) -> (Str, Int) {
+    let mut max = a;
+    let mut len_max = str_len(max);
+    
+    let len_b = str_len(b);
+    if len_b > len_max {
+        max = b;
+        len_max = len_b;
+    }
+    
+    let len_c = str_len(c);
+    if len_c > len_max {
+        max = c;
+        len_max = len_c;
+    }
+    
+    (max, len_max)
+}
+
+fn main() {
+    let result = max_len("fig", "banana", "kiwi");
+    print(concat(result.0, " ", int_to_str(result.1)));
+}
+```

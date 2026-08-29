@@ -1,0 +1,8 @@
+fn main() {
+    let v = vec(4, 1, 7, 3, 9, 2)
+    let kept = filter(v, |x| x > 3)
+    for x in kept {
+        print(x)
+    }
+    print(len(kept))
+}

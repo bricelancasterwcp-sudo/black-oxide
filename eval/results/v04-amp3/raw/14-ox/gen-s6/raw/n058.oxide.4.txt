@@ -1,0 +1,30 @@
+struct LetterFrequency { letter: Str, count: Int }
+
+fn print_repeated_letters(s: Str) {
+    let mut freqs = vec()
+    let mut acc = vec()
+    for ch in chars(s) {
+        let found = false
+        for f in freqs {
+            if f.letter == ch {
+                found = true
+                // Since the value is not mutable, we need to create a new vector with the updated count
+                acc = push(acc, LetterFrequency { letter: f.letter, count: f.count + 1 })
+                break
+            }
+        }
+        if !found {
+            acc = push(acc, LetterFrequency { letter: ch, count: 1 })
+        }
+    }
+    freqs = acc
+    for f in freqs {
+        if f.count > 1 {
+            print(f.letter)
+        }
+    }
+}
+
+fn main() {
+    print_repeated_letters("coffee")
+}

@@ -1,0 +1,50 @@
+```rust
+struct Queue<T> {
+    items: Vec<T>,
+}
+
+impl<T> Queue<T> {
+    fn new() -> Self {
+        Queue { items: vec![] }
+    }
+
+    fn push(&mut self, item: T) {
+        self.items.push(item);
+    }
+
+    fn pop(&mut self) -> Option<T> {
+        self.items.pop()
+    }
+
+    fn exchange_first_last(&mut self) {
+        if let Some(first) = self.pop() {
+            if let Some(last) = self.pop() {
+                self.push(first);
+                self.push(last);
+            } else {
+                panic!("Not enough items in the queue");
+            }
+        } else {
+            panic!("The queue is empty");
+        }
+    }
+
+    fn print_queue(&self) {
+        for item in &self.items {
+            println!("{}", item);
+        }
+    }
+}
+
+fn main() {
+    let mut queue = Queue::new();
+    queue.push(1);
+    queue.push(2);
+    queue.push(3);
+    queue.push(4);
+    queue.push(5);
+
+    queue.exchange_first_last();
+    queue.print_queue();
+}
+```

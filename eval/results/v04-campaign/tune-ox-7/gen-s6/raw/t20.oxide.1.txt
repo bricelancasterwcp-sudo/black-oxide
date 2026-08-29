@@ -1,0 +1,32 @@
+fn main() {
+    let pen = Item { unit_price: 3, quantity: 4 }
+    let pad = Item { unit_price: 9, quantity: 2 }
+    let ink = Item { unit_price: 5, quantity: 3 }
+    let items = vec(pen, pad, ink)
+    let total_cost = sum(items.map(|item| item.unit_price * item.quantity))
+    print(total_cost)
+    let max_item = argmax(items, |item| item.unit_price * item.quantity)
+    match max_item {
+        Some(item) => print_str(item.name),
+        None => print_str("No items"),
+    }
+}
+struct Item {
+    unit_price: Int,
+    quantity: Int,
+    name: Str,
+}
+fn sum(xs: Vec<Int>) -> Int {
+    foldl(|acc, x| acc + x, 0, xs)
+}
+fn argmax<T>(xs: Vec<T>, f: fn(T) -> Int) -> Option<T> {
+    let mut max_val = None
+    for x in xs {
+        let val = f(x)
+        match max_val {
+            Some(mv) => if val > mv { max_val = Some(val) },
+            None => max_val = Some(val),
+        }
+    }
+    max_val.map(|_| xs[0])
+}

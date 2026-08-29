@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut r = "drum".chars().rev();
+    while let Some(c) = r.next() {
+        print!("{}", c);
+    }
+    println!(" {}", r.as_str());
+}
+```
+
+This program first reverses the string by using `chars()` to get an iterator over its characters, then it uses a while loop with `r.next()` to print each character in reverse order. After printing all characters, it prints the original string using `r.as_str()`.

@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let num = 1234;
+    
+    // Convert the number to a string and reverse it
+    let reversed_str = num.to_string().chars().rev().collect::<String>();
+    
+    // Print the reversed number
+    println!("{}", reversed_str);
+}
+```

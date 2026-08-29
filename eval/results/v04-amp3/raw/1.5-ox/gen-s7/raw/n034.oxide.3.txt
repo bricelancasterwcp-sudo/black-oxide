@@ -1,0 +1,17 @@
+```rust
+fn second(v: Vec<Int>) -> Option<Int> {
+    let mut found = None;
+    for i in 0..v.len() - 1 {
+        if v[i] > 6 {
+            found = Some(v[i + 1]);
+            break;
+        }
+    }
+    found
+}
+
+fn main() {
+    println!("{}", second(vec![7, 8, 9]));  // prints 8
+    println!("{}", second(vec![3, 4, 5]));  // prints None
+}
+```

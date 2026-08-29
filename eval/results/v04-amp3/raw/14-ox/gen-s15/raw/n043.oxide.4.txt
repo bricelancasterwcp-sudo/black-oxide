@@ -1,0 +1,27 @@
+struct Queue { elements: Vec<Int> }
+
+fn swap_first_last(q: Queue) -> Option<Queue> {
+    let len = len(q.elements)
+    if len < 2 {
+        return Some(q)
+    }
+    let first = get(q.elements, 0)?
+    let last = get(q.elements, len - 1)?
+    let middle = range(1, len - 1)
+    let new_elements = push(push(push(vec(), first), middle), last)
+    Some(Queue { elements: new_elements })
+}
+
+fn print_queue(q: Queue) {
+    for x in q.elements {
+        print(x)
+    }
+}
+
+fn main() {
+    let q = Queue { elements: range(1, 6) }
+    match swap_first_last(q) {
+        Some(swapped_q) => print_queue(swapped_q),
+        None => print_str("Queue is too short"),
+    }
+}

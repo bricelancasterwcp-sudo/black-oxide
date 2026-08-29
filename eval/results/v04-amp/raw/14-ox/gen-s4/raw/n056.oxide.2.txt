@@ -1,0 +1,34 @@
+```text
+struct Number { value: Option<Int> }
+
+fn sum_valid(numbers: Vec<Number>) -> Int {
+    let mut sum = 0
+    for n in numbers {
+        if let Some(v) = n.value {
+            sum = sum + v
+        }
+    }
+    sum
+}
+
+fn count_invalid(numbers: Vec<Number>) -> Int {
+    let mut count = 0
+    for n in numbers {
+        if n.value == None {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn main() {
+    let nums = vec![
+        Number { value: Some(7) },
+        Number { value: None },
+        Number { value: Some(9) },
+        Number { value: None },
+    ]
+    print(sum_valid(nums.clone()))
+    print(count_invalid(nums))
+}
+```

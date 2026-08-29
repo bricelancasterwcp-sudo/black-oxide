@@ -1,0 +1,5 @@
+fn main() {
+    let numbers = [10, 20];
+    println!("{:?}", numbers.get(0)); // prints "Some(10)"
+    println!("{:?}", numbers.get(3)); // prints "None"
+}

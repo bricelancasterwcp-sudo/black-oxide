@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let mut balance = 0;
+    for deposit in vec![3, 1, 4, 1, 5] {
+        balance += deposit;
+        println!("Balance: {}", balance);
+    }
+}
+```

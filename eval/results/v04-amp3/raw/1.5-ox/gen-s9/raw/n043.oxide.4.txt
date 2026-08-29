@@ -1,0 +1,32 @@
+```rust
+struct Queue {
+    items: Vec<Int>,
+}
+
+impl Queue {
+    fn push(&mut self, item: Int) {
+        self.items.push(item)
+    }
+
+    fn pop(&mut self) -> Option<Int> {
+        self.items.pop()
+    }
+}
+
+fn main() {
+    let mut q = Queue { items: vec![1, 2, 3, 4, 5] };
+
+    // Exchange first and last entries
+    let last_item = q.pop().unwrap(); // Corrected: remove 'let'
+    let first_item = q.pop().unwrap(); // Corrected: remove 'let'
+    if last_item.is_some() && first_item.is_some() {
+        q.push(last_item);             // Corrected: remove 'let'
+        q.push(first_item);
+    }
+
+    // Print the queue one entry per line
+    for item in q.items.iter() {           // Corrected: use iter(), not .items()
+        println!("{}", item);
+    }
+}
+```

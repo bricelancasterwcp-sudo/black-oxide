@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let mut max_len = 0;
+    let mut result_name = "";
+
+    for name in ["fig", "banana", "kiwi"] {
+        if name.len() > max_len {
+            max_len = name.len();
+            result_name = name;
+        }
+    }
+
+    println!("{} {}", result_name, max_len);
+}
+```

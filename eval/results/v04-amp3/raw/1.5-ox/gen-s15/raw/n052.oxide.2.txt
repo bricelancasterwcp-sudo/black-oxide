@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let mut banana = "banana".chars();
+    while let Some(c) = banana.next() {
+        if c == 'n' {
+            print!("{}", (c as u32 - 'a' as u32) * 10);
+        }
+    }
+}
+```

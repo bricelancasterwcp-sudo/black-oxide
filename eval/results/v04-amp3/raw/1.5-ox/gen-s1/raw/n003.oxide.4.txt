@@ -1,0 +1,11 @@
+```
+fn main() {
+    let count = 0;
+    for i in 1..=36 {
+        if i % 36 == 0 {
+            count += 1;
+        }
+    }
+    print(count);
+}
+```

@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let numbers = [10, 20];
+    println!("{:?}", numbers.get(0));
+    println!("{:?}", numbers.get(3));
+}
+```
+
+This Rust program defines a `main` function that initializes an array of integers `[10, 20]`. It then uses the `get` method to retrieve the elements at positions 0 and 3 from the array. The `{:?}` format specifier is used to print the results in a debug-friendly format. If the position is out of bounds (i.e., greater than or equal to the length of the array), `None` will be printed instead.

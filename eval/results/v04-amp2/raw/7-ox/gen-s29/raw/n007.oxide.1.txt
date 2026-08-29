@@ -1,0 +1,10 @@
+```oxide
+fn main() {
+    let num = 9875;
+    let mut sum = 0;
+    for digit in str_len(int_to_str(num)).to_int() {
+        sum += parse_int(substring(int_to_str(num), digit - 1, 1)).unwrap_or(0);
+    }
+    print(sum);
+}
+```

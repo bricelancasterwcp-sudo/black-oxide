@@ -1,0 +1,9 @@
+fn main() {
+    let nums = vec(4, 1, 7, 3, 9, 2)
+    for n in nums {
+        if n > 3 {
+            print(n)
+        }
+    }
+    print(len(nums))
+}

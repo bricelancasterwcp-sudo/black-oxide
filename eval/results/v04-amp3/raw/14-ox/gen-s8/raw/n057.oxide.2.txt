@@ -1,0 +1,13 @@
+```text
+fn main() {
+    let names = vec("fig", "banana", "kiwi");
+    let mut longest = "";
+    for name in names {
+        if str_len(name) > str_len(longest) {
+            longest = name;
+        }
+    }
+    print_str(longest);
+    print(str_len(longest));
+}
+```

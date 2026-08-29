@@ -1,0 +1,24 @@
+fn get_second_entry<T>(list: &[T]) -> Option<&T> {
+    list.get(1)
+}
+
+fn main() {
+    let list1 = vec![7, 8, 9];
+    let list2 = vec![7, 8];
+    let list3 = vec![7];
+
+    match get_second_entry(&list1) {
+        Some(&value) => println!("Second entry of list1: {}", value),
+        None => println!("No second entry in list1"),
+    }
+
+    match get_second_entry(&list2) {
+        Some(&value) => println!("Second entry of list2: {}", value),
+        None => println!("No second entry in list2"),
+    }
+
+    match get_second_entry(&list3) {
+        Some(&value) => println!("Second entry of list3: {}", value),
+        None => println!("No second entry in list3"),
+    }
+}

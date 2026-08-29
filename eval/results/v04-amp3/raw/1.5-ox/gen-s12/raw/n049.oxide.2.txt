@@ -1,0 +1,27 @@
+```rust
+struct Figure {
+    name: Str,
+}
+
+fn find_smallest(vec: Vec<Figure>) -> Option<&Figure> {
+    vec.iter().min_by_key(|f| f.name.len())
+}
+
+fn main() {
+    let figures = vec![
+        Figure { name: "circle".to_string() },
+        Figure { name: "triangle".to_string() },
+        Figure { name: "square".to_string() },
+        Figure { name: "rectangle".to_string() },
+    ];
+
+    if let Some(smallest) = find_smallest(figures) {
+        print_str(&smallest.name);
+    }
+
+    let largest = figures.iter().max_by_key(|f| f.name.len()).unwrap();
+    let gap = largest.name.len() - smallest.name.len();
+
+    println!("Gap: {}", gap);
+}
+```

@@ -1,0 +1,9 @@
+```
+fn main() {
+    let s = "granite"
+    let first_letter = chars(s)[0]
+    let last_letter = chars(s)[str_len(s) - 1]
+    print(first_letter)
+    print(last_letter)
+}
+```

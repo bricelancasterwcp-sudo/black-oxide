@@ -1,0 +1,20 @@
+```rust
+fn second(v: Vec<Int>) -> Option<Int> {
+    let mut found = None;
+    for x in v {
+        if let Some(n) = found {
+            if n > x {
+                found = Some(x);
+            }
+        } else {
+            found = Some(x);
+        }
+    }
+    found
+}
+
+fn main() {
+    println!("{:?}", second(vec![7, 8, 9])); // Should print Some(8)
+    println!("{:?}", second(vec![10]));   // Should print None
+}
+```

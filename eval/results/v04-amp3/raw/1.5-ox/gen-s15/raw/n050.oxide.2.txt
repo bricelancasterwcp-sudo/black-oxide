@@ -1,0 +1,21 @@
+```rust
+fn main() {
+    let scores = vec![5, 9, 2];
+    scores.sort_unstable_by(|a, b| b.cmp(a));
+    for &score in scores.iter() {
+        println!("{}", score);
+    }
+}
+```
+
+The corrected program source is:
+
+```rust
+fn main() {
+    let scores = vec![5, 9, 2];
+    scores.sort_unstable_by(|a, b| b.cmp(a));
+    for &score in scores.iter() {
+        println!("{}", score);
+    }
+}
+```

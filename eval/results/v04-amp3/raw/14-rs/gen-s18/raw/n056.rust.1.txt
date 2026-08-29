@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let mut sum = 0;
+    let mut count_non_numeric = 0;
+
+    let texts = ["7", "x", "9", "?"];
+
+    for text in texts.iter() {
+        if let Ok(number) = text.parse::<i32>() {
+            sum += number;
+        } else {
+            count_non_numeric += 1;
+        }
+    }
+
+    println!("Total of numeric values: {}", sum);
+    println!("Number of non-numeric values: {}", count_non_numeric);
+}
+```

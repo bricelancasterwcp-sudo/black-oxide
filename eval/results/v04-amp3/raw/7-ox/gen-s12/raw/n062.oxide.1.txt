@@ -1,0 +1,13 @@
+```oxide
+fn main() {
+    let signals = vec!("green", "red", "yellow");
+    for signal in signals {
+        match signal {
+            "green" => print_str("go"),
+            "red" => print_str("stop"),
+            "yellow" => print_str("wait"),
+            _ => (),
+        }
+    }
+}
+```

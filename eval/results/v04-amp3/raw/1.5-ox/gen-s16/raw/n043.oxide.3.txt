@@ -1,0 +1,13 @@
+```rust
+struct Queue {
+    front: Int,
+    back: Int,
+}
+
+fn main() {
+    let mut q = Queue { front: 1, back: 5 };
+    swap(&mut q.front, &mut q.back);
+    println!("{}", q.front);
+    println!("{}", q.back);
+}
+```

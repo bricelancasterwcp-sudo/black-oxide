@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut sum = 0;
+    for &n in &[7, 4, 9, 10] {
+        if n % 2 != 0 {
+            println!("{} doubled is {}", n, n * 2);
+        } else {
+            sum += n;
+        }
+    }
+    println!("Total of even entries: {}", sum);
+}
+```

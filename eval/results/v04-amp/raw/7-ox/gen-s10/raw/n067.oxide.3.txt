@@ -1,0 +1,14 @@
+fn main() {
+    let numbers = vec(7, 4, 9, 10);
+    let mut sum_even = 0;
+    
+    for num in numbers {
+        if num % 2 == 1 {
+            print(num * 2);
+        } else {
+            sum_even += num;
+        }
+    }
+    
+    println(sum_even);
+}

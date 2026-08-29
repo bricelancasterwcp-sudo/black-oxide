@@ -1,0 +1,34 @@
+```rust
+struct Point { x: Int, y: Int }
+
+fn min(v: Vec<Int>) -> Option<Int> {
+    let mut min = v[0];
+    for &x in v.iter() {
+        if x < min {
+            min = x;
+        }
+    }
+    Some(min)
+}
+
+fn max(v: Vec<Int>) -> Option<Int> {
+    let mut max = v[0];
+    for &x in v.iter() {
+        if x > max {
+            max = x;
+        }
+    }
+    Some(max)
+}
+
+fn main() {
+    let figs = vec![8, 3, 11, 6];
+
+    if let Some(min_fig) = min(figs.clone()) {
+        let max_fig = max(figs.clone());
+        println!("smallest: {}, gap: {}", min_fig, max_fig - min_fig);
+    } else {
+        println!("not enough figures");
+    }
+}
+```

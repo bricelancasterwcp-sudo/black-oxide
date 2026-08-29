@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let mut count = 0;
+    let mut sum = 0;
+
+    // Replace 'x' with a number to test different cases
+    let numbers: [i32; 4] = [7, 10, 9, 5];
+
+    for &num in numbers.iter() {
+        if num > 0 {
+            count += 1;
+            sum += num;
+        }
+    }
+
+    println!("Total of the ones that do: {}", sum);
+    println!("Number of ones that do not: {}", numbers.len() - count);
+}
+```

@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    println!("{}", second_entry(vec![7, 8, 9]));
+    println!("{}", second_entry(vec![]));
+}
+
+fn second_entry<T>(list: Vec<T>) -> Option<&T> {
+    list.get(1)
+}
+```

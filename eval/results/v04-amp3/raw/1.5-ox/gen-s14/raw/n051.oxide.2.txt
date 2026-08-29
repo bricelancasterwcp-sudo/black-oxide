@@ -1,0 +1,11 @@
+```
+fn main() {
+    let word = "granite";
+    print_char(word.chars().next().unwrap());
+    print_char(word.chars().nth(word.len()-1).unwrap());
+}
+
+fn print_char(c: char) {
+    print!("{c}\n");
+}
+```

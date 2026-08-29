@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let samples = [5, 12, 3, 18, 9];
+    let cutoff = 10;
+    
+    let under_count = samples.iter().filter(|&&x| x < cutoff).count();
+    let over_count = samples.iter().filter(|&&x| x >= cutoff).count();
+    
+    println!("Under {}: {}", cutoff, under_count);
+    println!("At or over {}: {}", cutoff, over_count);
+}
+```

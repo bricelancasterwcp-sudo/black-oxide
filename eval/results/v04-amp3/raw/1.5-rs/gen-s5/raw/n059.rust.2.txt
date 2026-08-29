@@ -1,0 +1,22 @@
+```rust
+fn main() {
+    let text = "when in doubt go home";
+    let words_count = text.split_whitespace().count();
+    let char_count = text.chars().count();
+    println!("Words: {}", words_count);
+    println!("Characters: {}", char_count);
+}
+```
+
+The original program was using `split_whitespace()` which counts only the whitespace-separated words and does not account for spaces at the beginning or end of the string. The `chars().count()` function correctly counts all characters in a string, including spaces.
+
+Here's a breakdown of how it works:
+- The `split_whitespace()` method splits the input string into an iterator of substrings that are separated by one or more whitespace characters.
+- The `.count()` method counts the number of items in this iterator.
+- The `chars().count()` method counts all characters in the input string, including spaces.
+
+This corrected program will now correctly output:
+```
+Words: 5
+Characters: 21
+```

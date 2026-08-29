@@ -1,0 +1,15 @@
+```oxide
+fn sum_of_digits(n: Int) -> Int {
+    let s = int_to_str(n)
+    let mut sum = 0
+    for c in chars(s) {
+        let digit = parse_int(c)?
+        sum += digit
+    }
+    sum
+}
+
+fn main() {
+    print(sum_of_digits(9875))
+}
+```

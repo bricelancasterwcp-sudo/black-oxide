@@ -1,0 +1,13 @@
+fn main() {
+    let s = "granite";
+    if str_len(s) > 0 { 
+        print(s[0]);
+    } else {
+        print('?');
+    }
+    if str_len(s) > 0 { 
+        print(s[str_len(s) - 1]);
+    } else {
+        print('?');
+    }
+}

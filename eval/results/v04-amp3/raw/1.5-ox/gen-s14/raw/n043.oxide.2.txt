@@ -1,0 +1,35 @@
+```
+struct Queue {
+    elements: Vec<Int>,
+}
+
+impl Queue {
+    fn new(elements: Vec<Int>) -> Self {
+        Queue { elements }
+    }
+
+    fn exchange_first_and_last(&mut self) {
+        if self.elements.len() < 2 {
+            return;
+        }
+
+        let first = self.elements.remove(0);
+        let last = self.elements.pop().unwrap();
+        self.elements.insert(0, last);
+        self.elements.push(first);
+    }
+}
+
+fn print_queue(queue: &Queue) {
+    for value in queue.elements.iter() {
+        print!("{}", value);
+    }
+    println!();
+}
+
+fn main() {
+    let mut q = Queue::new(vec![1, 2, 3, 4, 5]);
+    q.exchange_first_and_last();
+    print_queue(&q);
+}
+```

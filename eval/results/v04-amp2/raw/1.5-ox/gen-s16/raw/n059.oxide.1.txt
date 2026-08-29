@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let phrase = "when in doubt go home";
+    let word_count = phrase.split_whitespace().count();
+    let char_count = phrase.chars().count();
+    println!("Words: {}", word_count);
+    println!("Characters: {}", char_count);
+}
+```
+
+This program calculates the number of words and characters in a given phrase. It uses `split_whitespace` to count words and `chars` to count characters, then prints both counts.

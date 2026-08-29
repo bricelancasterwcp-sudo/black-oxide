@@ -1,0 +1,11 @@
+```
+fn main() {
+    let mut count = 0;
+    for i in 1..=50 {
+        if count_divisible_by_three_or_five(i) {
+            count += 1;
+        }
+    }
+    print(count);
+}
+```

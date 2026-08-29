@@ -1,0 +1,318 @@
+{
+  "classes": [
+    {
+      "budget": 2145,
+      "class": "arithmetic/loops",
+      "gap": 9,
+      "kept_examples": {
+        "oxide": 33,
+        "rust": 39
+      },
+      "kept_tokens": {
+        "oxide": 2136,
+        "rust": 2145
+      },
+      "quantization_step": 116
+    },
+    {
+      "budget": 1278,
+      "class": "strings",
+      "gap": 42,
+      "kept_examples": {
+        "oxide": 17,
+        "rust": 22
+      },
+      "kept_tokens": {
+        "oxide": 1278,
+        "rust": 1236
+      },
+      "quantization_step": 83
+    },
+    {
+      "budget": 1826,
+      "class": "structs/option",
+      "gap": 84,
+      "kept_examples": {
+        "oxide": 23,
+        "rust": 30
+      },
+      "kept_tokens": {
+        "oxide": 1742,
+        "rust": 1826
+      },
+      "quantization_step": 124
+    },
+    {
+      "budget": 2125,
+      "class": "vectors",
+      "gap": 15,
+      "kept_examples": {
+        "oxide": 20,
+        "rust": 36
+      },
+      "kept_tokens": {
+        "oxide": 2110,
+        "rust": 2125
+      },
+      "quantization_step": 254
+    }
+  ],
+  "contamination": {
+    "hits": 0,
+    "programs_checked": 218
+  },
+  "counts_source": {
+    "commit": "v04-wave1",
+    "roots": [
+      "/workspace/v04-amp"
+    ]
+  },
+  "dropped": [
+    {
+      "arm": "oxide",
+      "class": "arithmetic/loops",
+      "sha256": "014b263fc47c0efbe59234a48de2cac25314752ada2323d808055760e72a0441",
+      "sup_tokens": 60,
+      "task": "n008"
+    },
+    {
+      "arm": "oxide",
+      "class": "arithmetic/loops",
+      "sha256": "2a34ad614531b7e2147c8ea96ad28cdd4ec965c69e3790ee8e8f17d50799acc3",
+      "sup_tokens": 90,
+      "task": "n009"
+    },
+    {
+      "arm": "oxide",
+      "class": "arithmetic/loops",
+      "sha256": "30eaf7b8997b8e1c08e61a12dfc0314d56789c722eb9b4c498da747cb99625ac",
+      "sup_tokens": 74,
+      "task": "n007"
+    },
+    {
+      "arm": "oxide",
+      "class": "arithmetic/loops",
+      "sha256": "3d314dd8efbb029beb40d9bcce1d2e7be5ae68babefaab8038f29dd23b66bc47",
+      "sup_tokens": 75,
+      "task": "n004"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "0aebe420d334c75d36288c7970055e8f839550d55dc0dc9def3044df39e3c78f",
+      "sup_tokens": 31,
+      "task": "n053"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "1466b73fb759015a0455f3c08d938158657a0a61cd630aa1b35438ce50e5a3cc",
+      "sup_tokens": 39,
+      "task": "n051"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "3645484bb14976c29c28f7fa2a98023769575aae3d69514479b548e015dc999e",
+      "sup_tokens": 61,
+      "task": "n055"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "4429ae9cd62cf2e2713f5a475c112d6c3b95bf7661bc56605d9d0d343e0a32db",
+      "sup_tokens": 37,
+      "task": "n051"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "4b3119130fa764c1a02acaab684f0681d4f2654f8e6476c8b66788f04663f5fb",
+      "sup_tokens": 83,
+      "task": "n060"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "4d77f6c8d12c1065a9eea56f6345b7143486ce64d2348394b090f484c9fab783",
+      "sup_tokens": 44,
+      "task": "n052"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "5f6a37642efcc5d6cd321c7e0cf22e52642ddacb3626c9240ffc3e139882358e",
+      "sup_tokens": 60,
+      "task": "n055"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "6acd0a1123ff4a5da094f640b72b5e417b4c0eb362ed58d99ab1ed238abab9ac",
+      "sup_tokens": 60,
+      "task": "n055"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "6d1aa459f00cbbed780ea0ae0e92e3fba52e93d40e4ca9fc7c9ab06490f1864b",
+      "sup_tokens": 50,
+      "task": "n051"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "8c954f0a4093860ec3f69db65beafc0e0053172b1db5ddc234a969ac798ac0ee",
+      "sup_tokens": 60,
+      "task": "n055"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "9003297d89875521d516f166b405b94a695dba4cb10bfd53393a5d20ab82d176",
+      "sup_tokens": 53,
+      "task": "n058"
+    },
+    {
+      "arm": "oxide",
+      "class": "structs/option",
+      "sha256": "028af8c2966a0a3284d4762adaf22462d71766570561374ef2c67cbd5d7d6af2",
+      "sup_tokens": 124,
+      "task": "n063"
+    },
+    {
+      "arm": "oxide",
+      "class": "structs/option",
+      "sha256": "0ac528b5d68ea42ce17b5e625188ab9b1130de510f90d31e84c6b27146aecea3",
+      "sup_tokens": 63,
+      "task": "n037"
+    },
+    {
+      "arm": "oxide",
+      "class": "structs/option",
+      "sha256": "240446331649342748d371e4dd5b32d518335c0ef56b639b33a87e3264297e19",
+      "sup_tokens": 78,
+      "task": "n035"
+    },
+    {
+      "arm": "oxide",
+      "class": "structs/option",
+      "sha256": "2b87559a01d42359d6f20ed7b45dd667567d3cd64de58a3b6a41a76d11fadec6",
+      "sup_tokens": 106,
+      "task": "n063"
+    },
+    {
+      "arm": "oxide",
+      "class": "vectors",
+      "sha256": "02bb8eaa217d89558225415a011928cd61223d66e06d787aa6439347a8b4bd17",
+      "sup_tokens": 84,
+      "task": "n049"
+    },
+    {
+      "arm": "oxide",
+      "class": "vectors",
+      "sha256": "0f6456565e9bdd9eb5ba7b40121cb9b495469e9bfcf02c625a8564c6b06c8d0f",
+      "sup_tokens": 70,
+      "task": "n066"
+    },
+    {
+      "arm": "oxide",
+      "class": "vectors",
+      "sha256": "0f850d9867f2a19b2847223f1384b2738403993d43cb3107f5cfcfaa7ada7681",
+      "sup_tokens": 70,
+      "task": "n066"
+    },
+    {
+      "arm": "oxide",
+      "class": "vectors",
+      "sha256": "1382444411d49d41a62b69e76b7f90aca9cde0db59bfdf46691f948e6b9569a3",
+      "sup_tokens": 58,
+      "task": "n045"
+    },
+    {
+      "arm": "oxide",
+      "class": "vectors",
+      "sha256": "1aadf12dab449755835bcd7e5b87c6d345639b641b2b2bd9c1131e5489430862",
+      "sup_tokens": 202,
+      "task": "n045"
+    },
+    {
+      "arm": "oxide",
+      "class": "vectors",
+      "sha256": "1dc012031ead80ad2091b1d0e4fc6bc31660601b97efb5288426c2ad98756601",
+      "sup_tokens": 130,
+      "task": "n049"
+    },
+    {
+      "arm": "oxide",
+      "class": "vectors",
+      "sha256": "22850ca88158f3a432fe7722caa49d3e280266cce4a12d2df02876cbdde248ca",
+      "sup_tokens": 145,
+      "task": "n044"
+    },
+    {
+      "arm": "oxide",
+      "class": "vectors",
+      "sha256": "24f2ffadda8c7f248be82921310ddf1d1ef49aaa25768705577b1baa28df37d9",
+      "sup_tokens": 178,
+      "task": "n065"
+    },
+    {
+      "arm": "oxide",
+      "class": "vectors",
+      "sha256": "24f9c0f6925c3e4a1f8b2599e80cae2c39a1d76f7cf819d3564734653edefb62",
+      "sup_tokens": 70,
+      "task": "n066"
+    },
+    {
+      "arm": "oxide",
+      "class": "vectors",
+      "sha256": "2e7a28eeb7caf3d1c1d078494d917fd803b020989403ce9ba02358533ea2da33",
+      "sup_tokens": 181,
+      "task": "n045"
+    },
+    {
+      "arm": "oxide",
+      "class": "vectors",
+      "sha256": "49eadde7b2379df34af7ab5200b0f5e61eb190a1cd20d31cb20bef3820ca476f",
+      "sup_tokens": 202,
+      "task": "n045"
+    },
+    {
+      "arm": "oxide",
+      "class": "vectors",
+      "sha256": "522e2a444c910c5616dae2fe4fef09e2143cb99b425ef656b489bf6ab8cf37bb",
+      "sup_tokens": 53,
+      "task": "n044"
+    },
+    {
+      "arm": "oxide",
+      "class": "vectors",
+      "sha256": "711b40e0175c1dadb3fe0492576f6b24f623810fe4dd85d1023edab9269a02ef",
+      "sup_tokens": 78,
+      "task": "n067"
+    }
+  ],
+  "prompt_tokens": {
+    "oxide": 2662,
+    "rust": 3642
+  },
+  "token_efficiency": {
+    "amplified": {},
+    "references": {}
+  },
+  "tokenizer": {
+    "id": "Qwen/Qwen2.5-Coder (shared)",
+    "sha256": "v04-loop"
+  },
+  "totals": {
+    "kept_examples": {
+      "oxide": 93,
+      "rust": 127
+    },
+    "kept_tokens": {
+      "oxide": 7266,
+      "rust": 7332
+    }
+  }
+}

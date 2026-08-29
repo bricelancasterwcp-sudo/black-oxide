@@ -1,0 +1,20 @@
+```
+fn second(v: Vec<Int>) -> Option<Int> {
+    let x = get(v, 1)?
+    Some(x + 1)
+}
+
+fn main() {
+    let result1 = second(push(push(vec(), 7), 8))
+    match result1 {
+        Some(n) => print(n),
+        None => print_str("none"),
+    }
+    
+    let result2 = second(push(push(vec(), 7), 9))
+    match result2 {
+        Some(n) => print(n),
+        None => print_str("none"),
+    }
+}
+```

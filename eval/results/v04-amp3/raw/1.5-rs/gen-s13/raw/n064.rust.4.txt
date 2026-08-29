@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let numbers = vec![10, 20];
+    
+    if let Some(pos1) = numbers.get(0) {
+        println!("Position 1: {}", pos1);
+    }
+    
+    if let Some(pos4) = numbers.get(3) {
+        println!("Position 4: {}", pos4);
+    } else {
+        println!("Position 4 is not found");
+    }
+}
+```

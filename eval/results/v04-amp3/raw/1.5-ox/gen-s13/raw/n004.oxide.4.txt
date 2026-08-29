@@ -1,0 +1,38 @@
+```rust
+fn main() {
+    let mut a = 1;
+    let mut b = 1;
+
+    for _ in 0..9 {
+        let c = a + b;
+        a = b;
+        b = c;
+    }
+
+    print(a);
+}
+```
+
+The original program had several issues:
+- It was missing curly braces `{}` around the loop body, which is required in Rust.
+- The `;` at the end of each line were not necessary and caused syntax errors.
+- The `print(a)` statement was placed after the loop, which is incorrect. The function should call itself recursively to get the tenth term.
+- The loop condition was set to `0..9`, but it should be `0..10` because we want to iterate up to the tenth term.
+
+Fixed program:
+
+```rust
+fn main() {
+    fn fibonacci(n: Int) -> Int {
+        if n == 0 || n == 1 {
+            n
+        } else {
+            fibonacci(n - 1) + fibonacci(n - 2)
+        }
+    }
+
+    print(fibonacci(9)); // print the tenth term of the Fibonacci sequence
+}
+```
+
+In this corrected program, we define a recursive function `fibonacci` that calculates the nth term of the Fibonacci sequence. We then call this function with n=9 to get the tenth term and print it.

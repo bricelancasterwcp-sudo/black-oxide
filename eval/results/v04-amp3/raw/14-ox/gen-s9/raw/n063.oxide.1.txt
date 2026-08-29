@@ -1,0 +1,16 @@
+```text
+struct Line { units: Int, price: Int }
+
+fn calculate_value(line: Line) -> Int {
+    line.units * line.price
+}
+
+fn main() {
+    let line1 = Line { units: 4, price: 3 }
+    let line2 = Line { units: 5, price: 2 }
+    print(calculate_value(line1))
+    print(calculate_value(line2))
+    let total_value = calculate_value(line1) + calculate_value(line2)
+    print(total_value)
+}
+```

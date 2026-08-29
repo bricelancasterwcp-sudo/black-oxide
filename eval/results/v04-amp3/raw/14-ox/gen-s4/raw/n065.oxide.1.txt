@@ -1,0 +1,28 @@
+```text
+struct Reading { label: Str, values: Vec<Int> }
+
+fn count_big(v: Vec<Int>) -> Int {
+    let mut count = 0
+    for x in v {
+        if x > 5 {
+            count += 1
+        }
+    }
+    count
+}
+
+fn max_reading(v: Vec<Int>) -> Option<Int> {
+    max(v)
+}
+
+fn main() {
+    let readings = vec![6, 11, 3, 14, 9]
+    let r = Reading { label: "readings", values: readings }
+    print(count_big(r.values))
+    let max_val = match max_reading(clone(r.values)) {
+        Some(n) => n,
+        None => -1
+    }
+    print(max_val)
+}
+```

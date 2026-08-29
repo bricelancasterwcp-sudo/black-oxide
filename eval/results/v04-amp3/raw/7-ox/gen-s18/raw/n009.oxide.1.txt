@@ -1,0 +1,12 @@
+```oxide
+fn reverse_number(n: Int) -> Str {
+    let s = int_to_str(n)
+    let chars_vec = chars(s)
+    let reversed_chars = concat(concat(chars_vec[chars_vec.len() - 1], chars_vec[chars_vec.len() - 2]), concat(chars_vec[chars_vec.len() - 3], chars_vec[0]))
+    reversed_chars
+}
+
+fn main() {
+    print(reverse_number(1234))
+}
+```

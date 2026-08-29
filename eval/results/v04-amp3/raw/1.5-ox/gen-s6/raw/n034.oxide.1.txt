@@ -1,0 +1,24 @@
+```rust
+fn helper(v: Vec<Int>) -> Option<Int> {
+    let mut second = None;
+    for x in v {
+        second = Some(x);
+        break; // Only return the first element found
+    }
+    second
+}
+
+fn main() {
+    println!("{:?}", helper(vec![7, 8])); // Output: Some(8)
+    println!("{:?}", helper(vec![9]));   // Output: None
+}
+```
+
+**Explanation**:
+- The `helper` function takes a vector of integers as input.
+- It initializes a mutable variable `second` to `None`.
+- It iterates through each element in the vector and updates `second` with the current element if it hasn't been set yet.
+- After finding the first element, it breaks out of the loop.
+- Finally, it returns `second`, which is either `Some(x)` (if an element was found) or `None`.
+
+The `main` function calls `helper` with two example vectors and prints the results.

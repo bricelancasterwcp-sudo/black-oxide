@@ -1,0 +1,30 @@
+```rust
+fn main() {
+    let mut v = Vec::new();
+    read(v);
+    if let Some(n) = pop(v) {
+        println!("{}", n);
+    } else {
+        println!("bad");
+    }
+    read(v);
+    if let Some(n) = pop(v) {
+        println!("{}", n);
+    } else {
+        println!("bad");
+    }
+}
+
+fn read(mut v: Vec<String>) {
+    for line in std::io::stdin().lines() {
+        let s = line.unwrap();
+        if s == "8" { push(&mut v, s.to_string()) }
+        else if s == "oak" { push(&mut v, s.to_string()) }
+        else if s == "15" { push(&mut v, s.to_string()) }
+    }
+}
+
+fn pop(v: &mut Vec<String>) -> Option<String> {
+    v.pop()
+}
+```

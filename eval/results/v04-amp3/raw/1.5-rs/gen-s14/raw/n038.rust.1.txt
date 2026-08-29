@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let mut sensor = 0;
+    sensor += 7;
+    println!("The sensor reading is: {}", sensor);
+}
+```
+This program starts by declaring a mutable variable `sensor` and initializing it to zero. It then adds seven to the sensor's value using the `+=` operator, effectively setting the sensor's reading to seven. Finally, it prints the current value of the sensor, which should display as "The sensor reading is: 7".

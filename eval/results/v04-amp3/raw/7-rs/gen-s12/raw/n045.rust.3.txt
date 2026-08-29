@@ -1,0 +1,5 @@
+fn main() {
+    let log = [6, 7, 8, 9];
+    println!("Starts with: {}", log[0]);
+    println!("Ends with: {}", log[3]);
+}

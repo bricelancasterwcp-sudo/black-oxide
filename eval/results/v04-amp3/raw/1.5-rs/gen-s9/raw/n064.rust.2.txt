@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let mut numbers = vec![10, 20];
+    
+    // Access and print the element at position one
+    if numbers.len() > 0 && numbers.get(0).is_some() {
+        println!("Position one: {}", numbers[0]);
+    } else {
+        println!("Position one is empty");
+    }
+    
+    // Access and print the element at position four
+    if numbers.len() > 3 && numbers.get(3).is_some() {
+        println!("Position four: {}", numbers[3]);
+    } else {
+        println!("Position four is empty");
+    }
+}
+```

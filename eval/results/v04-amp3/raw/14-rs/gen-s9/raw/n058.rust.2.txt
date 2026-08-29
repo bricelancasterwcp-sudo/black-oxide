@@ -1,0 +1,16 @@
+fn main() {
+    let word = "coffee";
+    let mut seen = Vec::new();
+    
+    for c in word.chars() {
+        if !seen.contains(&c) {
+            seen.push(c);
+            println!("{}", c);
+        } else {
+            if let Some(pos) = seen.iter().position(|&x| x == c) {
+                seen.remove(pos);
+                seen.push(c);
+            }
+        }
+    }
+}

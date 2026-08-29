@@ -1,0 +1,12 @@
+fn main() {
+    let mut m = 252;
+    let mut n = 105;
+    while m != n {
+        if m > n {
+            m -= n;
+        } else {
+            n -= m;
+        }
+    }
+    println!("{}", m);
+}

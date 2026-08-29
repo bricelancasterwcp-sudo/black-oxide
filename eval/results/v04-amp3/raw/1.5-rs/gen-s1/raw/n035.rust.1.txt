@@ -1,0 +1,16 @@
+```rust
+fn divide(dividend: isize, divisor: isize) -> Option<isize> {
+    if divisor == 0 {
+        None
+    } else {
+        Some(dividend / divisor)
+    }
+}
+
+fn main() {
+    match divide(20, 4) {
+        Some(result) => println!("{} divided by {} is {}", dividend, divisor, result),
+        None => println!("Bad! Cannot divide by zero."),
+    }
+}
+```

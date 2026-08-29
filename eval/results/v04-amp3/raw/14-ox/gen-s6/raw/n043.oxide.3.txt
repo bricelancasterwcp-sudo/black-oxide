@@ -1,0 +1,26 @@
+```
+struct Queue { items: Vec<Int> }
+
+fn exchange_first_last(q: Queue) -> Queue {
+    let len = len(q.items)
+    if len < 2 {
+        return q
+    }
+    let first = get(q.items, 0).unwrap()
+    let last = get(q.items, len - 1).unwrap()
+    let middle = range(1, len - 1).map(|i| get(q.items, i).unwrap()).collect()
+    Queue { items: push(push(middle, last), first) }
+}
+
+fn print_queue(q: Queue) {
+    for x in q.items {
+        print(x)
+    }
+}
+
+fn main() {
+    let q = Queue { items: vec(1, 2, 3, 4, 5) }
+    let q_exchanged = exchange_first_last(q)
+    print_queue(q_exchanged)
+}
+```

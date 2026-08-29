@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    assert_eq!(second_entry(&[1, 2]), Some(&2));
+    assert_eq!(second_entry(&[]), None);
+    println!("All tests passed!");
+}
+
+fn second_entry<T>(list: &[T]) -> Option<&T> {
+    list.get(1)
+}
+```

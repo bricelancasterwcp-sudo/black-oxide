@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let num = 9875;
+    let sum = get_digits(num).iter().fold(0, |acc, &d| acc + d);
+    print(sum);
+}
+
+fn get_digits(n: Int) -> Vec<Int> {
+    let mut digits = Vec::new();
+    while n > 0 {
+        let digit = (n % 10) as Int;
+        digits.push(digit);
+        n /= 10;
+    }
+    digits.reverse();
+    digits
+}
+```

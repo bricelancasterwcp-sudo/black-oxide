@@ -1,0 +1,1 @@
+fn is_number(s: Str) -> Bool { parse_int(s).is_some() } fn parse_or_zero(s: Str) -> Int { unwrap_or(parse_int(s), 0) } fn main() { let texts = vec("7", "x", "9", "?"); let mut sum = 0; let mut non_numbers = 0; for text in texts.clone() { if is_number(text.clone()) { sum += parse_or_zero(text.clone()); } else { non_numbers += 1; } } print(sum); print(non_numbers); }

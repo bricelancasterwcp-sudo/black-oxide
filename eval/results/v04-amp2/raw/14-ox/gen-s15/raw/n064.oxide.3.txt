@@ -1,0 +1,11 @@
+```text
+fn main() {
+    let v = push(push(vec(), 10), 20);
+    if let Some(pos1) = get(v.clone(), 1) {
+        print(pos1);
+    }
+    if let Some(pos4) = get(v.clone(), 4) {
+        print(pos4);
+    }
+}
+```

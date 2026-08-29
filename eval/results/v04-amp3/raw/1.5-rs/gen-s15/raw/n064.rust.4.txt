@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let v = vec![10, 20];
+    
+    if v.len() > 3 && !v.is_empty() {
+        println!("{}", v[0]);
+        println!("{}", v[3]);
+    }
+}
+```

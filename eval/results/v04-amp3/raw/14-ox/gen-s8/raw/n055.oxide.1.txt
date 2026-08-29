@@ -1,0 +1,17 @@
+```text
+struct Entry { label: Str, value: Option<Int> }
+
+fn main() {
+    let entries = vec(
+        Entry { label: "one", value: Some(8) },
+        Entry { label: "two", value: None },
+        Entry { label: "three", value: Some(15) },
+    )
+    for e in entries {
+        match e.value {
+            Some(n) => print(n),
+            None => print_str("bad"),
+        }
+    }
+}
+```

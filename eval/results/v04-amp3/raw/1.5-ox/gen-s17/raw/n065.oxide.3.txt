@@ -1,0 +1,29 @@
+```rust
+struct Reading { label: String, values: Vec<Int> }
+
+fn first_big(v: Vec<Int>) -> Int {
+    let mut found = -1;
+    for x in v {
+        if x > 5 {
+            found = x;
+            break;
+        }
+    }
+    found
+}
+
+fn second(v: Vec<Int>) -> Option<Int> {
+    let x = get(v, 1)?;
+    Some(x + 1)
+}
+
+fn main() {
+    let r = Reading { label: "lab".to_string(), values: vec![3, 42] };
+    println!("{}", first_big(r.values));            // field access copies: r stays usable
+    let r2 = Reading { label: "lab2".clone(), ..r }; // clone is needed to avoid moving 'r'
+    match second(r2.values) {
+        Some(n) => println!("{}", n),
+        None => println!("too short"),
+    }
+}
+```

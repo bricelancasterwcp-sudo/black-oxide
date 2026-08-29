@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let str = "drum";
+    for c in str.chars().rev() {
+        print!("{}", c);
+    }
+    println!("{}!", str.to_uppercase());
+}
+```
+
+The error messages indicate that the program contains unexpected semicolons (`;`) at line 2, line 4, and line 6. These semicolons are unnecessary because Rust syntax requires newlines to end statements or blocks. Therefore, the corrected version of the code is simply removing these semicolons.
+
+Also, the error messages indicate that there were unexpected characters (e.g., `ERROR` instead of a semicolon) at lines 2 and 6. This is due to the missing newline between `print!("{}", c)` and `println!("{}!", str.to_uppercase());`. The corrected version of the code has a newline between these two statements.
+
+Finally, the error message indicates that there were unexpected characters (e.g., `IDENT` instead of a semicolon) at line 6. This is due to the missing newline before `str.to_uppercase();`. The corrected version of the code has a newline before this statement.

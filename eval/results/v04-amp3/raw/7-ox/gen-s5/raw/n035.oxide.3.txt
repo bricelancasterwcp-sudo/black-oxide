@@ -1,0 +1,14 @@
+```rust
+struct Result(Str);
+
+fn div(a: Int, b: Int) -> Result {
+    if b == 0 { return Result("bad".into()); }
+    Result((a / b).to_string().into())
+}
+
+fn main() {
+    match div(20, 4) {
+        Result(s) => print_str(&s),
+    }
+}
+```

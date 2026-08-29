@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let v = vec!(7, "x".parse::<Int>().unwrap_or(0), 9, "?".parse::<Int>().unwrap_or(0));
+    let sum: Int = v.iter().filter_map(|x| match x {
+        Str(s) => s.parse::<Int>().ok(),
+        _ => None
+    }).sum();
+    let count: Int = v.len() - v.iter().filter(|x| matches!(x, Str(_))).count();
+    print(sum);
+    print(count);
+}
+```

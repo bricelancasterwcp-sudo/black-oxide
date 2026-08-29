@@ -1,0 +1,4 @@
+fn main() {
+    println!("g");  // Changed 'a' to 'g', as 'a' is not part of the word granite
+    println!("e");
+}

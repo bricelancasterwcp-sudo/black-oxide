@@ -1,0 +1,22 @@
+```rust
+use rand::Rng; // Import necessary Rust standard library
+
+fn main() {
+    loop {
+        let signal = read_signal();
+        match signal {
+            "green" => println!("go for green"),
+            "red" => println!("stop for red"),
+            "yellow" => println!("wait for yellow"),
+            _ => println!("invalid signal"),
+        }
+    }
+}
+
+fn read_signal() -> &'static str {
+    // Simulate reading the signal (replace with actual input logic)
+    let signals = ["green", "red", "yellow"];
+    let index = rand::thread_rng().gen_range(0..signals.len()); // Randomly select a signal
+    signals[index]
+}
+```

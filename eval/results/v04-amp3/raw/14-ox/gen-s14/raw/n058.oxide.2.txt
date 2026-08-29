@@ -1,0 +1,36 @@
+struct LetterCount { letter: Str, count: Int }
+
+fn main() {
+    let word = "coffee"
+    let mut counts = Vec()
+    let mut seen = Vec()
+
+    for ch in chars(word) {
+        let existing = find(seen, ch)
+        if existing.is_none() {
+            let new_count = LetterCount { letter: ch, count: 1 }
+            counts = push(counts, new_count)
+            seen = push(seen, ch)
+        } else {
+            let idx = unwrap_or(existing, -1)
+            let old_count = get(counts, idx).unwrap()
+            let updated_count = LetterCount { letter: old_count.letter, count: old_count.count + 1 }
+            counts[idx] = updated_count
+        }
+    }
+
+    for entry in counts {
+        if entry.count > 1 {
+            print_str(entry.letter)
+        }
+    }
+}
+
+fn find(v: Vec<Str>, target: Str) -> Option<Int> {
+    for i in range(0, len(v)) {
+        if get(v, i).unwrap() == target {
+            return Some(i)
+        }
+    }
+    None
+}

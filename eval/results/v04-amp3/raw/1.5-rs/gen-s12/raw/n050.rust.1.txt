@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let mut scores: [i32; 3] = [2, 9, 5];
+    for &score in scores.iter().rev() {
+        println!("{}", score);
+    }
+}
+```

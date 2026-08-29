@@ -1,0 +1,27 @@
+```text
+struct Reading { label: Str, values: Vec<Int> }
+
+fn count_exceeding_five(v: Vec<Int>) -> Int {
+    let mut count = 0
+    for x in v {
+        if x > 5 {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn highest_reading(v: Vec<Int>) -> Option<Int> {
+    max(v)
+}
+
+fn main() {
+    let readings = push(push(push(push(push(vec(), 6), 11), 3), 14), 9)
+    let r = Reading { label: "lab", values: readings }
+    print(count_exceeding_five(r.values))            // field access copies: r stays usable
+    match highest_reading(r.values) {
+        Some(n) => print(n),
+        None => print_str("no readings"),
+    }
+}
+```

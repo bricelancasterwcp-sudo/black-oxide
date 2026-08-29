@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let mut readings = vec![4, 2, 9, 7];
+    readings.sort();
+    for reading in readings.iter() {
+        println!("{}", reading);
+    }
+}
+```

@@ -1,0 +1,9 @@
+fn main() {
+    let names = ["fig", "banana", "kiwi"];
+    match names.iter().enumerate()
+        .max_by_key(|(_, len)| len)
+    {
+        Some((name, &len)) => println!("The longest name is {} with {} letters.", name, len),
+        None => println!("No valid names provided."),
+    }
+}

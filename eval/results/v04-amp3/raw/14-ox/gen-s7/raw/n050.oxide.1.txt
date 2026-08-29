@@ -1,0 +1,17 @@
+```text
+fn main() {
+    let scores = vec();
+    let scores = push(scores, 2);
+    let scores = push(scores, 9);
+    let scores = push(scores, 5);
+    
+    let mut sorted_scores = sort(scores);
+    
+    while len(sorted_scores) > 0 {
+        let score = get(sorted_scores, 0)?;
+        print(score);
+        let sorted_scores = get(sorted_scores, 1)?;
+        sorted_scores = push(vec(), sorted_scores);
+    }
+}
+```

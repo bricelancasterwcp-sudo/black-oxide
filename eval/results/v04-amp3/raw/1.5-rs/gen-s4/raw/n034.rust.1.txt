@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    assert_eq!(second_entry(vec![7]), Some(8));
+    assert_eq!(second_entry(vec![]), None);
+    assert_eq!(second_entry(vec![10, 20, 30]), Some(20));
+
+    println!("All tests passed successfully!");
+}
+```

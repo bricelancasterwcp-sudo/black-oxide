@@ -1,0 +1,19 @@
+Here's the fully corrected Rust program:
+
+```rust
+fn main() {
+    let numbers = [9, 2, 12, 5, 16];
+    let mut count = 0;
+
+    for &number in &numbers {
+        if number < 10 {
+            println!("{}", number);
+            count += 1;
+        }
+    }
+
+    println!("Total kept: {}", count);
+}
+```
+
+This program correctly keeps every entry under ten and prints each one on its own line. The `println!` macro is used to print the numbers, and the `count` variable is incremented for every number that meets the condition.

@@ -1,0 +1,18 @@
+```text
+struct Reading { label: Str, values: Vec<Int> }
+
+fn main() {
+    let v = push(push(vec(), 10), 20)
+    let r = Reading { label: "lab", values: v }
+    
+    match get(r.values, 1) {
+        Some(n) => print(n),
+        None => print_str("Position 1 empty"),
+    }
+
+    match get(r.values, 4) {
+        Some(n) => print(n),
+        None => print_str("Position 4 empty"),
+    }
+}
+```

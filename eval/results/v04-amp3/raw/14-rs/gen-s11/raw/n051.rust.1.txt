@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let word = "granite";
+    if let Some(first_letter) = word.chars().next() {
+        println!("{}", first_letter);
+    }
+    if let Some(last_letter) = word.chars().last() {
+        println!("{}", last_letter);
+    }
+}
+```

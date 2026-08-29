@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let numbers = [10, 20];
+    println!("{}", numbers.get(0).unwrap_or(&None));
+    println!("{}", numbers.get(3).unwrap_or(&None));
+}
+```
+
+This Rust program defines a `main` function that initializes an array of integers `[10, 20]`. It then uses the `get` method to retrieve elements at positions 0 and 3 from the array. The `unwrap_or` method is used to handle cases where the position might be out of bounds by returning `None` instead of panicking. Finally, it prints each retrieved element or "None" if the position is empty.

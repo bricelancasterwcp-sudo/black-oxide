@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let mut largest = 1;
+    while largest * 2 <= 100 {
+        largest *= 2;
+    }
+    println!("{}", largest);
+}
+```

@@ -1,0 +1,10 @@
+```rust
+struct Rectangle { width: Int, height: Int }
+
+fn main() {
+    let mut r = Rectangle { width: 2, height: 3 };
+    let old_width = r.width; // Save the original width
+    r.width = 5;            // Change the width to 5
+    print(to_float(trunc(min(r.width + old_width, 10) as Float))); // Calculate and print the area
+}
+```

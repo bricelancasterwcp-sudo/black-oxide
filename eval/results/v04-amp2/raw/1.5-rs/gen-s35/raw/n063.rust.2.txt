@@ -1,0 +1,13 @@
+fn main() {
+    let four_units = 4;
+    let price_four_units = 3;
+
+    let five_units = 5;
+    let price_five_units = 2;
+
+    println!("Value of line 1: {}", four_units * price_four_units);
+    println!("Value of line 2: {}", five_units * price_five_units);
+
+    let total_value = (four_units as f64) * price_four_units + (five_units as f64) * price_five_units;
+    println!("Total value of both lines: {:.2}", total_value);
+}

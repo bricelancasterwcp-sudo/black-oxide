@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let v = push(push(vec(), 4), 9);
+    let v = push(v, 2);
+    let v = push(v, 7);
+
+    for x in sort(v) {
+        print_str(x.to_string());
+        println!();
+    }
+}
+```

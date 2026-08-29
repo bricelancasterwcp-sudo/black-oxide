@@ -1,0 +1,14 @@
+fn main() {
+    let numbers = vec![7, 4, 9, 10];
+    let mut sum_even = 0;
+
+    for number in &numbers {
+        if *number % 2 == 0 {
+            sum_even += number;
+        } else {
+            println!("{}", number * 2);
+        }
+    }
+
+    println!("Sum of even numbers: {}", sum_even);
+}

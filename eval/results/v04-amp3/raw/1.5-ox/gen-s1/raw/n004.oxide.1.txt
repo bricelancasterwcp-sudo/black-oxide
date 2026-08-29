@@ -1,0 +1,18 @@
+```
+fn fib(n: Int) -> Option<Int> {
+    if n == 0 || n == 1 { return Some(1); }
+    let mut a = 1;
+    let mut b = 1;
+    for _ in 2..n {
+        let temp = a + b;
+        a = b;
+        b = temp;
+    }
+    Some(b)
+}
+
+fn main() {
+    let tenth_term = fib(10)?;
+    print(tenth_term);
+}
+```

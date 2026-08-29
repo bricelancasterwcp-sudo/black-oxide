@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let v = vec![10, 20];
+    if let Some(pos1) = get(v, 0) {
+        print(pos1);
+    }
+    if let Some(pos4) = get(v, 3) {
+        print(pos4);
+    } else {
+        println_str("position is empty");
+    }
+}
+```

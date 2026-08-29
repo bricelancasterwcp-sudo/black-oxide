@@ -1,0 +1,12 @@
+```rust
+
+fn main() {
+    let mut num = 1;
+    while (num << 1) <= 100 {
+        num <<= 1;
+    }
+    println!("{}", num);
+}
+```
+
+This code defines a function `main` that initializes a variable `num` to 1. It then enters a loop where it shifts `num` left by one bit using the bitwise left shift operator (`<<`). The loop continues as long as `num << 1` is less than or equal to 100. Once this condition is no longer true, the loop exits, and the value of `num` is printed, which represents the biggest power of two that does not exceed 100.

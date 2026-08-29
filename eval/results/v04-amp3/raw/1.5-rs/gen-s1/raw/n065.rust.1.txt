@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let readings = [6, 11, 3, 14, 9];
+    let count_over_five = readings.iter().filter(|&&r| r > 5).count();
+    println!("{}", count_over_five);
+
+    let max_reading = readings.iter().max().unwrap();
+    println!("{}", max_reading);
+}
+```

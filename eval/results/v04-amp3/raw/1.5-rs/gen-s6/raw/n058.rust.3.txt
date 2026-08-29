@@ -1,0 +1,9 @@
+fn main() {
+    let mut chars = "coffee".chars().collect::<Vec<char>>();
+    chars.sort_unstable();
+    for &c in chars.windows(2) {
+        if c[0] != c[1] {
+            println!("{}", c[0]);
+        }
+    }
+}

@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let mut r = Rectangle { width: 2, height: 3 };
+    println!("initial area:", r.area());
+
+    r.width = 5;
+    println("new area:", r.area());
+}
+```

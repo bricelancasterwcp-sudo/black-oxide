@@ -1,0 +1,15 @@
+fn main() {
+    let text = "mississippi";
+    let mut count_s = 0;
+    let mut chars_set = std::collections::HashSet::new();
+
+    for c in text.chars() {
+        if c == 's' {
+            count_s += 1;
+        }
+        chars_set.insert(c);
+    }
+
+    println!("The character 's' occurs {} times.", count_s);
+    println!("The distinct characters are: {}", chars_set.len());
+}

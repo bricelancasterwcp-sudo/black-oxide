@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let v = push(push(vec(), 10), 20);
+    if let Some(pos) = get(v, 1) {
+        println!("{}", pos);
+    }
+    if let Some(pos) = get(v, 4) {
+        println!("{}", pos);
+    } else {
+        println!("empty");
+    }
+}
+```

@@ -1,0 +1,35 @@
+```text
+fn count_below_cutoff(v: Vec<Int>, cutoff: Int) -> Int {
+    let mut below = 0
+    for x in v {
+        if x < cutoff {
+            below += 1
+        }
+    }
+    below
+}
+
+fn count_at_or_above_cutoff(v: Vec<Int>, cutoff: Int) -> Int {
+    let mut at_or_above = 0
+    for x in v {
+        if x >= cutoff {
+            at_or_above += 1
+        }
+    }
+    at_or_above
+}
+
+fn main() {
+    let values = vec()
+    push(values, 5)
+    push(values, 12)
+    push(values, 3)
+    push(values, 18)
+    push(values, 9)
+    let cutoff = 10
+    let below = count_below_cutoff(clone(values), cutoff)
+    let at_or_above = count_at_or_above_cutoff(values, cutoff)
+    print(below)
+    print(at_or_above)
+}
+```

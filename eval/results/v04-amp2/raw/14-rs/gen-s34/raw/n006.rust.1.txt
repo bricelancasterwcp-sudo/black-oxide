@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let mut power_of_two = 1;
+    while power_of_two * 2 <= 100 {
+        power_of_two *= 2;
+    }
+    println!("{}", power_of_two);
+}
+```

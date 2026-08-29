@@ -1,0 +1,36 @@
+```rust
+fn count_above_five(v: Vec<Int>) -> Int {
+    let mut count = 0;
+    for x in v {
+        if x > 5 {
+            count += 1;
+        }
+    }
+    count
+}
+
+fn max_reading(v: Vec<Int>) -> Option<Int> {
+    let mut max_val = None;
+    for &x in v.iter() {
+        match max_val {
+            Some(m) if x > m => max_val = Some(x),
+            _ => {}
+        }
+    }
+    max_val
+}
+
+fn main() {
+    let readings = push(push(push(push(vec(), 6), 11), 3), 14);
+    readings.push(9);
+    
+    let count = count_above_five(readings.clone());
+    print(count);
+    
+    match max_reading(readings) {
+        Some(max_val) => print_str("\n");
+        None => print_str("no readings\n"),
+    }
+    print(max_val.unwrap_or(-1));
+}
+```

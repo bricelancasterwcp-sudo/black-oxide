@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let mut q = vec![1, 2, 3, 4, 5];
+    q.swap(0, q.len() - 1);
+    for &i in q.iter() {
+        println!("{}", i);
+    }
+}
+```
+
+When you run this program, it will output:
+
+```
+5
+2
+3
+4
+1
+```

@@ -1,0 +1,22 @@
+```text
+fn safe_divide(numerator: Int, denominator: Int) -> Option<Int> {
+    if denominator == 0 {
+        None
+    } else {
+        Some(numerator / denominator)
+    }
+}
+
+fn main() {
+    let result = safe_divide(20, 4);
+    match result {
+        Some(value) => print(value),
+        None => print_str("bad"),
+    }
+    let result = safe_divide(20, 0);
+    match result {
+        Some(_) => (),
+        None => print_str("bad"),
+    }
+}
+```

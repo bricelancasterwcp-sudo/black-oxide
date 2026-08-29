@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let mut width = 2;
+    let height = 3;
+
+    // Change width
+    width = 5;
+
+    // Calculate area
+    let area = width * height;
+
+    println!("The area is: {}", area);
+}
+```
+
+This program changes the width of a rectangle to five, calculates its area, and prints it.

@@ -1,0 +1,14 @@
+```rust
+fn reverse_digits(n: Int) -> Str {
+    let mut s = Str::new();
+    while n > 0 {
+        s.push_str(&to_str(n % 10));
+        n /= 10;
+    }
+    s
+}
+
+fn main() {
+    print(reverse_digits(1234)); // prints "4321"
+}
+```

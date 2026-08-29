@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let drum = "drum";
+    println!("{:?}", drum.chars().rev());
+    println!("{}", drum);
+}
+```
+The code defines a function `main` that takes a word "drum" and prints it with its letters running back to front using `chars().rev()` method, followed by printing the word as it normally reads.

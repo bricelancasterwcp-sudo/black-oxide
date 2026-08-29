@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let nums = [9, 2, 12, 5, 16];
+    let mut count = 0;
+    for &num in nums.iter().filter(|&&n| n < 10) {
+        println!("{}", num);
+        count += 1;
+    }
+    println!("Kept {} numbers under ten.", count);
+}
+```
+
+Explanation:
+The original program compiled and ran as expected, but produced incorrect output because it did not correctly print the numbers. It printed "9", "2", and "5" on their own lines, which was correct, but then it printed "Kept 3 numbers under ten." after finishing the iteration over `nums`. The problem lies in the line where `println!("Kept {} numbers under ten.", count);` is executed. It should be placed outside of the loop to print the final count only once.

@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let n = 91;
+    let mut is_prime = true;
+
+    for i in 2..=(n as f64).sqrt() as u32 {
+        if n % i == 0 {
+            is_prime = false;
+            break;
+        }
+    }
+
+    if is_prime {
+        println!("yes");
+    } else {
+        println!("no");
+    }
+}
+```

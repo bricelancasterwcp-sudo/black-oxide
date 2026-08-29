@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut numbers: [i32; 4] = [9, 2, 7, 4];
+    let mut sorted_numbers = numbers.to_vec();
+    sorted_numbers.sort();
+
+    for number in sorted_numbers {
+        println!("{}", number);
+    }
+}
+```
+
+In this solution, we first declare a mutable array `numbers` and initialize it with the given values. We then convert this array into a vector `sorted_numbers` using `to_vec()`. After sorting the vector, we iterate over each element and print it.

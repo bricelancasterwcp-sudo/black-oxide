@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let mut state = "green";
+    while true {
+        match state {
+            "green" => println!("go"),
+            "red" => println!("stop"),
+            "yellow" => println!("wait"),
+            _ => unreachable!(), // unreachable states are not allowed
+        }
+        state = match state {
+            "green" => "yellow",
+            "red" => "green",
+            "yellow" => "red",
+            _ => unreachable!(), // unreachable states are not allowed
+        };
+    }
+}
+```

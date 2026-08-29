@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let data = [7, 4, 9, 10];
+    let mut sum_even = 0;
+    
+    for &x in &data {
+        if x % 2 != 0 {
+            println!("{}", 2 * x);
+        } else {
+            sum_even += x;
+        }
+    }
+
+    println!("Total of the even entries: {}", sum_even);
+}
+```

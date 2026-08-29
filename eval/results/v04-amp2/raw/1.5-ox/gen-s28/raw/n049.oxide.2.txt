@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let figs = vec![8, 3, 11, 6];
+    println!("{}", *figs.iter().min().unwrap());
+    println!("{}", figs.iter().max().unwrap() - *figs.iter().min().unwrap());
+}
+```

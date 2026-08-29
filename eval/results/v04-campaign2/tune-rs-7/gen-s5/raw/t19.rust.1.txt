@@ -1,0 +1,6 @@
+fn main() {
+    let w = 7;
+    let h = 4;
+    println!("{}", w * h);
+    println!("{}", 2 * (w + h));
+}

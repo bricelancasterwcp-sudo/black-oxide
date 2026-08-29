@@ -1,0 +1,11 @@
+```rust
+fn count_vowels(s: Str) -> Int {
+    s.chars().filter(|c| matches!(c, 'a' | 'e' | 'i' | 'o' | 'u')).count()
+}
+
+fn main() {
+    let word = "programming";
+    print(count_vowels(word));  // Output: 3 (count of vowels)
+    print(count_word_chars(word) - count_vowels(word));  // Output: 7 (count of non-vowel characters)
+}
+```

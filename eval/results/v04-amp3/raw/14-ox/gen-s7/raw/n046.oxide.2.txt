@@ -1,0 +1,32 @@
+```text
+fn count_under_cutoff(v: Vec<Int>, cutoff: Int) -> Int {
+    let mut count = 0
+    for x in v {
+        if x < cutoff {
+            count += 1
+        }
+    }
+    count
+}
+
+fn count_over_or_equal_cutoff(v: Vec<Int>, cutoff: Int) -> Int {
+    let mut count = 0
+    for x in v {
+        if x >= cutoff {
+            count += 1
+        }
+    }
+    count
+}
+
+fn main() {
+    let samples = vec(5, 12, 3, 18, 9)
+    let cutoff = 10
+
+    let under_count = count_under_cutoff(samples.clone(), cutoff)
+    let over_count = count_over_or_equal_cutoff(samples, cutoff)
+
+    print(under_count)
+    print(over_count)
+}
+```

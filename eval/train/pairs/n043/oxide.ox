@@ -5,16 +5,10 @@ fn main() {
     let i = 0
     for x in v {
         if i == 0 {
-            match get(v, last) {
-                Some(e) => { out = push(out, e) },
-                None => { out = push(out, x) },
-            }
+            out = push(out, unwrap_or(get(v, last), x))
         } else {
             if i == last {
-                match get(v, 0) {
-                    Some(f) => { out = push(out, f) },
-                    None => { out = push(out, x) },
-                }
+                out = push(out, unwrap_or(get(v, 0), x))
             } else {
                 out = push(out, x)
             }

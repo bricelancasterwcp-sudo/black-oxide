@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let c = 'g';
+    print(c);
+    print('\n');
+    print(c);
+}
+```

@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let r = Reading { label: "lab", values: vec![4, 3] }
+    print(first_big(r.values))            // field access copies: r stays usable
+}
+```
+The problem was in the input data initialization. The `push` function is used to add elements to a vector, but it expects the first argument to be the vector itself, not an integer. The correct usage should be `vec![4, 3]`.

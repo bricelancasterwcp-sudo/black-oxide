@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let drum = "drum";
+    println!("Backwards: {}", drum.chars().rev().collect::<String>());
+    println!("Normal: {}", drum);
+}
+```
+
+The original code was incorrect because it was trying to reverse the string using `chars().rev()` and then printing it as is, which would not produce the desired output. The correct approach is to first print the reversed string and then print the normal string.

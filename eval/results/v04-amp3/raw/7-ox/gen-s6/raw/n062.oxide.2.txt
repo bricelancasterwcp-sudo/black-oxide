@@ -1,0 +1,18 @@
+struct Signal { name: Str }
+
+fn main() {
+    let signals = [
+        Signal { name: "green" },
+        Signal { name: "red" },
+        Signal { name: "yellow" }
+    ];
+
+    for signal in signals.iter() {
+        match signal.name {
+            "green" => print("go\n"),
+            "red" => print("stop\n"),
+            "yellow" => print("wait\n"),
+            _ => (),
+        }
+    }
+}

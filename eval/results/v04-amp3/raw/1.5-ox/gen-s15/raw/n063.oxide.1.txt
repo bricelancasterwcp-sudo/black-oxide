@@ -1,0 +1,14 @@
+```rust
+struct Unit { quantity: Int }
+
+fn main() {
+    let first_line = Unit { quantity: 4 };
+    let second_line = Unit { quantity: 5 };
+
+    print(first_line.quantity * 3);
+    print(second_line.quantity * 2);
+
+    let total_value = (first_line.quantity * 3) + (second_line.quantity * 2);
+    print(total_value);
+}
+```

@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let side: f64 = 4.0; // Using the value 4 as the side for a square
+    let area_of_square = side.powi(2); // Square area calculation: s²
+    println!("Area of a square: {:.2}", area_of_square); // Printing the area with two decimal places
+}
+```

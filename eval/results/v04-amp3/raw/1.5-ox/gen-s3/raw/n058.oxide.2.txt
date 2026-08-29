@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let s = "coffee";
+    for (ch, count) in s.chars().fold(std::collections::HashMap::new(), |mut acc, c| {
+        *acc.entry(c).or_insert(0) += 1;
+        acc
+    }) {
+        if count > 1 {
+            print!("{}", ch);
+        }
+    }
+}
+```

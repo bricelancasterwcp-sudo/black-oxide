@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let figures = vec![20, 15, 5, 30, 45];
+    let smallest_figure = *figures.iter().min().unwrap();
+    let largest_figure = *figures.iter().max().unwrap();
+    print_smallest(smallest_figure);
+    print_gap(largest_figure - smallest_figure);
+}
+
+fn print_smallest(value: Int) {
+    println!("{}", value);
+}
+
+fn print_gap(gap: Int) {
+    println!("{}", gap);
+}
+```

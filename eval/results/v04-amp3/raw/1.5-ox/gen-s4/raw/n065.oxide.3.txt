@@ -1,0 +1,31 @@
+```
+struct Reading { label: Str, values: Vec<Int> }
+
+fn first_big(v: Vec<Int>) -> Int {
+    let mut found = -1;
+    for x in v {
+        if x > 5 {
+            found = x;
+            break;
+        }
+    }
+    found
+}
+
+fn second(v: Vec<Int>) -> Option<Int> {
+    match get(v, 0) {
+        Some(n) => Some(n + 1),
+        None => None,
+    }
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(vec(), 3), 42) };
+    print(first_big(r.values));
+    let r2 = Reading { label: "lab2", ..r };
+    match second(r2.values) {
+        Some(n) => println!("{}", n),
+        None => println("too short"),
+    }
+}
+```

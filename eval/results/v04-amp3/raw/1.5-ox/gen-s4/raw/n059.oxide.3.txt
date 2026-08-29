@@ -1,0 +1,9 @@
+```
+fn main() {
+    let text = "When in doubt go home.";
+    let words = text.split_whitespace().count();
+    let len_with_spaces = text.len();
+    println!("Words: {}", words);
+    println!("Characters including spaces: {}", len_with_spaces);
+}
+```

@@ -1,0 +1,9 @@
+fn main() {
+    let numbers = vec![4, 1, 7, 3, 9, 2];
+    for &num in &numbers {
+        if num > 3 {
+            println!("{}", num);
+        }
+    }
+    println!("{}", numbers.iter().filter(|&&x| x > 3).count());
+}

@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let mut count = 0;
+    let mut sum = 0;
+
+    // Assuming the texts are stored in a vector or array
+    let texts = vec![7, 12, 9, '?'];
+
+    for &text in texts.iter() {
+        if text != '?' {
+            sum += text;
+            count += 1;
+        }
+    }
+
+    println!("Total of the ones that do: {}", sum);
+    println!("Number of ones that do not: {}", texts.len() - count);
+}
+```

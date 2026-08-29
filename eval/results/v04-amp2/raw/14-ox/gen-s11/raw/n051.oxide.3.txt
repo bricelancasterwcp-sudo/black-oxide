@@ -1,0 +1,5 @@
+fn main() {
+    let word = "granite"
+    print(chars(word).get(0))
+    print(chars(word).get(str_len(word) - 1))
+}

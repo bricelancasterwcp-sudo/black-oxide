@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let width = 9;
+    let height = 3;
+    print(width * height);
+    print(2 * (width + height));
+}
+```

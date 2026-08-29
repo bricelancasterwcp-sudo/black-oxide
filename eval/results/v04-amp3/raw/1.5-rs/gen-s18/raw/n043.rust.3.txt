@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let mut q = vec![1, 2, 3, 4, 5];
+    std::mem::swap(&mut q[0], &mut q[q.len() - 1]);
+    for i in q.iter_mut().skip(1).take(q.len()-1) {
+        println!("{}", i);
+    }
+}
+```

@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let drum = String::from("drum");
+    
+    // Reverse printing
+    for c in drum.chars().rev() {
+        print!("{}", c);
+    }
+    
+    println!("  {}", drum); // Normal printing
+}
+```

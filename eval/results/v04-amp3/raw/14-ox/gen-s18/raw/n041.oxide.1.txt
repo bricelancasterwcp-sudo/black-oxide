@@ -1,0 +1,13 @@
+```text
+fn main() {
+    let v = vec()
+    let v = push(v, 9)
+    let v = push(v, 2)
+    let v = push(v, 7)
+    let v = push(v, 4)
+    let v = sort(v)
+    for x in v {
+        print(x)
+    }
+}
+```

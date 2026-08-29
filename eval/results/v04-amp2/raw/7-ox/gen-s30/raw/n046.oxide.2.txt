@@ -1,0 +1,9 @@
+fn main() {
+    let samples = push(push(push(push(vec(), 5), 12), 3), 18);
+    let samples_over = filter(samples, |x| x >= 10);
+    let count_over = len(samples_over);
+    print(count_over);
+    let samples_under = filter(samples, |x| x < 10);
+    let count_under = len(samples_under);
+    print(count_under);
+}

@@ -18,8 +18,23 @@ owns the usage/arity checks.
 
 Diagnostics: OX0200 unknown identifier (including unknown assignment
 targets), OX0201 function/builtin used as a value, OX0203 duplicate
-top-level name (including builtin and reserved-variant clashes), OX0204
+top-level name (struct/enum vs. builtin or reserved-variant clashes; a
+duplicate fn/struct/enum name; a duplicate enum variant), OX0204
 duplicate binder within one fn's params or one pattern.
+
+Fix round (2026-08-28, dossier-4 "builtin-shadowing" ruling): a
+top-level `fn` whose name matches a builtin now SHADOWS it program-wide
+instead of clashing (OX0203 no longer fires for that one case --
+`_declare_name`'s ``allow_builtin_shadow``, set only from the FnDecl
+branch of `_declare_item`). The builtin is not merely low-priority: it
+becomes entirely unreachable in that program -- free calls resolve to
+the user fn (`_callee`; unchanged from before, since `infer.py::_call`
+already checks ``fn_sigs`` before ``BUILTINS``), and the builtins-only
+receiver-first method form (SPEC.md §53) is refused outright rather
+than silently retargeted (`_callee`'s ``method_shadowed`` guard reuses
+the existing OX0200 "unknown identifier" diagnostic -- no new code).
+Struct/enum names and BUILTIN_VARIANTS are NOT covered by this
+exception and still clash with a builtin the same as before.
 """
 
 from __future__ import annotations
@@ -143,7 +158,9 @@ class _Resolver:
                 item.span,
             )
             return
-        if not self._declare_name(name, item.span):
+        if not self._declare_name(
+            name, item.span, allow_builtin_shadow=isinstance(item, ast.FnDecl)
+        ):
             return
         if isinstance(item, ast.FnDecl):
             self.result.fns[name] = item
@@ -156,14 +173,26 @@ class _Resolver:
                     self.result.variants[vname] = name
                     self._variant_spans[vname] = item.span
 
-    def _declare_name(self, name: str, span: Span) -> bool:
+    def _declare_name(
+        self, name: str, span: Span, *, allow_builtin_shadow: bool = False
+    ) -> bool:
         """Enforce the single top-level namespace (sections 15, 28).
 
         Returns True when ``name`` is free; otherwise reports OX0203
         (builtin fn, reserved builtin variant, or an earlier definition).
+
+        ``allow_builtin_shadow`` (fix round, dossier-4 ruling): when True,
+        a ``name in BUILTINS`` clash is not an error -- the caller is
+        declaring a top-level ``fn`` that SHADOWS the builtin program-wide
+        rather than colliding with it. Only ``_declare_item``'s FnDecl
+        branch passes True; struct/enum names and BUILTIN_VARIANTS still
+        hard-clash unconditionally, as does an earlier definition of the
+        same name (``prior_span``) -- shadowing permits exactly one
+        builtin-clashing definition, not silently ignoring duplicates.
         """
         prior_span = self._prior_span(name)
-        if name in BUILTINS or name in BUILTIN_VARIANTS or prior_span is not None:
+        builtin_clash = name in BUILTINS and not allow_builtin_shadow
+        if builtin_clash or name in BUILTIN_VARIANTS or prior_span is not None:
             notes: tuple[tuple[str, Span], ...] = ()
             if prior_span is not None:
                 notes = (("previous definition here", prior_span),)
@@ -361,9 +390,25 @@ class _Resolver:
         if var_id is not None:
             # Local bindings shadow global fn names.
             self.result.use_of[callee.node_id] = var_id
-        elif callee.name in self.result.fns or callee.name in BUILTINS:
+            return
+        # Fix round (dossier-4 builtin shadowing): SPEC.md §53 method
+        # syntax is builtins-only. A user fn that shadows a builtin wins
+        # the free-call form everywhere (unconditionally below, same as
+        # before this fix), but must stay UNREACHABLE through the
+        # receiver-first sugar -- from the method-name namespace's own
+        # perspective a shadowed name is exactly as absent as one that was
+        # never a builtin, so this forces the same fallthrough a genuinely
+        # non-builtin method name would take (no new diagnostic code).
+        method_shadowed = (
+            call.via_method_sugar and callee.name in self.result.fns
+        )
+        if not method_shadowed and (
+            callee.name in self.result.fns or callee.name in BUILTINS
+        ):
             self.result.callee_of[call.node_id] = callee.name
-        elif callee.name in self.result.variants or callee.name in BUILTIN_VARIANTS:
+        elif not method_shadowed and (
+            callee.name in self.result.variants or callee.name in BUILTIN_VARIANTS
+        ):
             # Variant constructor call; infer checks payload arity (OX0303).
             self.result.variant_refs[call.node_id] = callee.name
         else:

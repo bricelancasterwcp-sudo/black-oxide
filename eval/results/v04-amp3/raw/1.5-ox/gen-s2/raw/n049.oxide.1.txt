@@ -1,0 +1,27 @@
+```rust
+struct Figure {
+    name: Str,
+    value: Int,
+}
+
+fn main() {
+    let figures = vec![
+        Figure { name: "square", value: 4 },
+        Figure { name: "triangle", value: 7 },
+        Figure { name: "circle", value: 3.14 },
+        Figure { name: "rectangle", value: 12 },
+    ];
+
+    let smallest = figures.into_iter()
+        .min_by_key(|&f| f.value)
+        .expect("No figures!");
+
+    let largest = figures.into_iter()
+        .max_by_key(|&f| f.value)
+        .expect("No figures!");
+
+    print(smallest.name);
+    print(" ");
+    print((largest.value - smallest.value).to_string());
+}
+```

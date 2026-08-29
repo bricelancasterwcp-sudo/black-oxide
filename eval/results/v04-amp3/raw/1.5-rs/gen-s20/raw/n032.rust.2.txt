@@ -1,0 +1,7 @@
+fn main() {
+    let x1 = 1;
+    let y1 = 5;
+    let x2 = 10; // same height
+
+    println!("{}", x1 + y2);
+}

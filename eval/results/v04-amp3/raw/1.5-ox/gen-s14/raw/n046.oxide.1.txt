@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let arr = [5, 12, 3, 18, 9];
+    let (count_under, count_over) = (0, 0);
+
+    for &value in &arr {
+        if value < 10 {
+            count_under += 1;
+        } else {
+            count_over += 1;
+        }
+    }
+
+    println!("Under cutoff: {}", count_under);
+    println!("Over or equal to cutoff: {}", count_over);
+}
+```

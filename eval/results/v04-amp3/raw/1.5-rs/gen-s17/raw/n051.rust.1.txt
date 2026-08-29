@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let word = "granite";
+    println!("{}", word.chars().nth(0).unwrap());
+    println!("{}", word.chars().last().unwrap());
+}
+```
+
+This Rust program defines a function `main` that prints the first and last characters of the string "granite" by iterating over it with the `chars()` method, which returns an iterator over Unicode scalar values. It then uses the `nth(0)` and `last()` methods to get the first and last characters respectively, unwrap the result (since `nth` is zero-based), and print them on separate lines using `println!`.

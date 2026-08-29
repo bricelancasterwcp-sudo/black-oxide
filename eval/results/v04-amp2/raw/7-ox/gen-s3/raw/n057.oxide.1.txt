@@ -1,0 +1,29 @@
+```rust
+fn main() {
+    let fig = "fig";
+    let banana = "banana";
+    let kiwi = "kiwi";
+
+    let mut max_len = 0;
+    let mut max_word = "";
+
+    if str_len(fig) > max_len {
+        max_len = str_len(fig);
+        max_word = fig;
+    }
+
+    if str_len(banana) > max_len {
+        max_len = str_len(banana);
+        max_word = banana;
+    }
+
+    if str_len(kiwi) > max_len {
+        max_len = str_len(kiwi);
+        max_word = kiwi;
+    }
+
+    print(max_word);
+    print_str(" ");
+    print(max_len);
+}
+```

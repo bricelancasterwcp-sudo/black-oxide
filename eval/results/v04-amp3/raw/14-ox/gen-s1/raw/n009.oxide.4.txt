@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let n = 1234
+    let str_n = int_to_str(n)
+    let chars_n = chars(str_n)
+    let reversed_chars_n = sort(chars_n)
+    let reversed_str_n = concat(reversed_chars_n, vec())
+    print_str(reversed_str_n)
+}
+```

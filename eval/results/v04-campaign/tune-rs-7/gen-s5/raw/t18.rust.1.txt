@@ -1,0 +1,22 @@
+fn main() {
+    let shapes = [
+        Rectangle { width: 3, height: 4 },
+        Triangle { sides: [3, 4, 5] },
+        Rectangle { width: 2, height: 5 },
+    ];
+    for shape in &shapes {
+        match shape {
+            Rectangle { width, height } => println!("{}", 2 * (width + height)),
+            Triangle { sides } => println!("{}", sides.iter().sum::<i32>()),
+        }
+    }
+}
+
+struct Rectangle {
+    width: i32,
+    height: i32,
+}
+
+struct Triangle {
+    sides: [i32; 3],
+}

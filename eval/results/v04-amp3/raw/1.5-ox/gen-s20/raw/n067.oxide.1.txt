@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let mut acc = 0;
+    for i in vec![7, 4, 9, 10] {
+        if i % 2 == 0 {
+            print!("{}", i * 2);
+            acc += i;
+        }
+    }
+    println!("Total of even entries: {}", acc);
+}
+```

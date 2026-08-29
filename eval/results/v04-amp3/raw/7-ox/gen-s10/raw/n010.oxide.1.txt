@@ -1,0 +1,15 @@
+```oxide
+fn is_prime(n: Int) -> Bool {
+    for i in range(2, n) {
+        if n % i == 0 {
+            return false;
+        }
+    }
+    true
+}
+
+fn main() {
+    let prime = is_prime(91);
+    print_str(if prime { "yes" } else { "no" });
+}
+```

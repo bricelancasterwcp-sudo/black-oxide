@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let readings = [6, 11, 3, 14, 9];
+    let mut count_above_five = 0;
+    let mut max_reading = std::i32::MIN;
+
+    for &reading in &readings {
+        if reading > 5 {
+            count_above_five += 1;
+        }
+        if reading > max_reading {
+            max_reading = reading;
+        }
+    }
+
+    println!("{}", count_above_five);
+    println!("{}", max_reading);
+}
+```

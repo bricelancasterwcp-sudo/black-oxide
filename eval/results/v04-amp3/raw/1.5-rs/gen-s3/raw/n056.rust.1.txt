@@ -1,0 +1,33 @@
+```rust
+fn main() {
+    let text1 = "7";
+    let text2 = "x";
+    let text3 = "9";
+    let text4 = "?";
+
+    let mut sum: i32 = 0;
+    let mut count: i32 = 0;
+
+    if text1.chars().all(|c| c.is_digit(10)) {
+        sum += text1.parse::<i32>().unwrap();
+        count += 1;
+    }
+
+    if text2.chars().all(|c| c.is_digit(10)) {
+        sum += text2.parse::<i32>().unwrap();
+        count += 1;
+    }
+
+    if text3.chars().all(|c| c.is_digit(10)) {
+        sum += text3.parse::<i32>().unwrap();
+        count += 1;
+    }
+
+    if text4.chars().all(|c| c.is_digit(10)) {
+        sum += text4.parse::<i32>().unwrap();
+        count += 1;
+    }
+
+    println!("Total: {}, Count: {}", sum, count);
+}
+```

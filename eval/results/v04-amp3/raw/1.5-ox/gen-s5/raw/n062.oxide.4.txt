@@ -1,0 +1,15 @@
+```rust
+struct Signal { color: Str }
+
+fn main() {
+    let mut s = Signal { color: "green" };
+
+    if s.color.as_str() == "green" {
+        println!("go for green");
+    } else if s.color.as_str() == "red" {
+        println!("stop for red");
+    } else if s.color.as_str() == "yellow" {
+        println!("wait for yellow");
+    }
+}
+```

@@ -138,6 +138,74 @@ BUILTINS: dict[str, BuiltinSig] = {
     # and 6 programs defined `fn to_str` themselves rather than use the
     # longer name. Int only: the language has no overloading.
     "to_str": BuiltinSig(params=(INT,), ret=STR, modes=("read",), generics=()),
+    # ---- v0.4 builtins (Task 3 gate ruling), modes pinned ----
+    # sort/set-style consuming vs min/max/sum/contains-style reading, mirroring
+    # push and get/len respectively. `set` is CUT by the gate ruling (the
+    # provisional slate listed it; the ruling struck it) and is not present.
+    "sort": BuiltinSig(
+        params=(TCon("Vec", (_A,)),),
+        ret=TCon("Vec", (_A,)),
+        modes=("own",),
+        generics=(_A,),
+    ),
+    "min": BuiltinSig(
+        params=(TCon("Vec", (_A,)),),
+        ret=TCon("Option", (_A,)),
+        modes=("read",),
+        generics=(_A,),
+    ),
+    "max": BuiltinSig(
+        params=(TCon("Vec", (_A,)),),
+        ret=TCon("Option", (_A,)),
+        modes=("read",),
+        generics=(_A,),
+    ),
+    "sum": BuiltinSig(
+        params=(TCon("Vec", (INT,)),), ret=INT, modes=("read",), generics=()
+    ),
+    # x's mode mirrors ==/!= (SPEC.md §14 EQ_OPS / eq_derive_types): equality
+    # comparison never consumes its operands (BUILTIN_REF/`_binop_text` emit
+    # ref-form for non-Copy operands on both sides), so `contains`'s searched
+    # value is read, not moved -- consistent with `push`'s VALUE slot being
+    # "own" only because it is being inserted (consumed), not compared.
+    "contains": BuiltinSig(
+        params=(TCon("Vec", (_A,)), _A),
+        ret=BOOL,
+        modes=("read", "read"),
+        generics=(_A,),
+    ),
+    # ---- v0.4 wave-2 builtins (Task 3 census gate v2 ruling: slate of 2,
+    # count(v, x) -> Int shipped; remove_at/first/last cut), modes pinned ----
+    # count(v, x) -> Int: occurrences of x in v. Same reading modes as
+    # contains -- it is contains's sibling (a filtered count instead of a
+    # membership test), so both slots are "read" for the identical reason
+    # given on BUILTINS["contains"] above: counting, like equality
+    # comparison, never consumes its operands.
+    "count": BuiltinSig(
+        params=(TCon("Vec", (_A,)), _A),
+        ret=INT,
+        modes=("read", "read"),
+        generics=(_A,),
+    ),
+    # ---- v0.4 builtins (Task 5 gate ruling), modes pinned ----
+    # Both slots are "own": mirrors the language's two EXISTING ways of
+    # reaching inside an Option -- match's scrutinee is a MOVE use (section
+    # 28, cfg.py::_match) and '?''s operand is a MOVE use (section 36,
+    # cfg.py::_expr's ast.Try case) -- neither treats "reading" an Option's
+    # payload as a non-consuming borrow. unwrap_or's `o` mirrors that
+    # established convention rather than get/min/max's read-mode Vec
+    # param (those READ a Vec to PRODUCE an Option; there is no existing
+    # precedent for reading an Option's payload without consuming it).
+    # `d` is "own" because it may become the returned value verbatim on
+    # the None path (T, potentially a non-Copy Vec<_>) -- mirroring why
+    # push's inserted value is "own" (genuinely transferred), not read's
+    # borrow-and-clone shape.
+    "unwrap_or": BuiltinSig(
+        params=(TCon("Option", (_A,)), _A),
+        ret=_A,
+        modes=("own", "own"),
+        generics=(_A,),
+    ),
 }
 
 

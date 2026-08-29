@@ -1,0 +1,21 @@
+```text
+fn main() {
+    let values = vec(5, 12, 3, 18, 9);
+    let cutoff = 10;
+    let below = count(values, |x| x < cutoff);
+    print(below);
+    let values = vec(5, 12, 3, 18, 9); // Reinitialize values
+    let above_or_equal = count(values, |x| x >= cutoff);
+    print(above_or_equal);
+}
+
+fn count<T>(v: Vec<T>, pred: fn(T) -> Bool) -> Int {
+    let mut acc = 0;
+    for x in v {
+        if pred(x) {
+            acc += 1;
+        }
+    }
+    acc
+}
+```

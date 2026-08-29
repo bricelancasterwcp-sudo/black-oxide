@@ -1,0 +1,18 @@
+```text
+fn safe_divide(a: Int, b: Int) -> Option<Float> {
+    if b == 0 {
+        None
+    } else {
+        Some(to_float(a) / to_float(b))
+    }
+}
+
+fn main() {
+    let result = safe_divide(20, 4)?;
+    print(result)
+    let bad_result = safe_divide(20, 0);
+    if bad_result == None {
+        print_str("bad")
+    }
+}
+```

@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let ch1 = 'g';
+    println!("{}", ch1);
+    
+    let ch2 = 'n';
+    println!("{}", ch2);
+}
+```

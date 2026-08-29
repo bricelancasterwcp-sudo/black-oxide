@@ -1,0 +1,7 @@
+fn main() {
+    let mut sum: i32 = 0;
+    for i in 1..=5 {
+        sum += i32::from(i).pow(3);
+    }
+    println!("{}", sum);
+}

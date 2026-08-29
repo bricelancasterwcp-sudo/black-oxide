@@ -1,0 +1,9 @@
+fn sum_even_numbers() -> Int {
+    let mut total = 0;
+    for i in range(1, 21) {
+        if i % 2 == 0 {
+            total += i;
+        }
+    } // Fix the missing return statement
+    total; // Add a final return statement to complete the function
+}

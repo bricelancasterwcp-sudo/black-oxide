@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let s = "When in doubt go home.";
+    println!("Words: {}", s.split_whitespace().count());
+    println!("Characters (including spaces): {}", s.len());
+}
+```

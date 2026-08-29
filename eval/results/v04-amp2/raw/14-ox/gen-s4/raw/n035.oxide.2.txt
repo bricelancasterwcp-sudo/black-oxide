@@ -1,0 +1,14 @@
+fn safe_divide(numerator: Int, denominator: Int) -> Option<Float> {
+    if denominator == 0 {
+        None
+    } else {
+        Some(to_float(numerator) / to_float(denominator))
+    }
+}
+
+fn main() {
+    let result = safe_divide(20, 4)?;
+    print(result)
+    let bad_result = safe_divide(20, 0)?;
+    print_str("bad")
+}

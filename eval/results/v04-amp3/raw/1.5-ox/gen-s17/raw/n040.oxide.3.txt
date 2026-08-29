@@ -1,0 +1,12 @@
+```rust
+struct Square { side: Int }
+struct Circle { radius: Float }
+
+fn main() {
+    let s = Square { side: 4 };
+    print(s.area());
+}
+```
+
+Explanation:
+The original program had two issues: missing semicolons (`;`) after the `print` statement and the `area` method call. The corrected program adds the necessary semicolons at the end of both statements, ensuring they are properly terminated.

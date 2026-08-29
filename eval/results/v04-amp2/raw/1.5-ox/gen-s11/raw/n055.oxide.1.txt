@@ -1,0 +1,22 @@
+```rust
+fn main() {
+    let a = parse_int("8")?;
+    let b = parse_int("oak")?;
+    let c = parse_int("15")?;
+
+    match a {
+        Some(x) => print(x),
+        None => print_str("bad"),
+    }
+
+    match b {
+        Some(x) => print(x),
+        None => print_str("bad"),
+    }
+
+    match c {
+        Some(x) => print(x),
+        None => print_str("bad"),
+    }
+}
+```

@@ -1,0 +1,7 @@
+```oxide
+fn main() {
+    print_str("go")
+    print_str("stop")
+    print_str("wait")
+}
+```

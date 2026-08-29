@@ -1,0 +1,28 @@
+```rust
+fn main() {
+    let fig = "fig";
+    let banana = "banana";
+    let kiwi = "kiwi";
+
+    let mut max_name = "";
+    let mut max_length = 0;
+
+    if fig.len() > max_length {
+        max_name = fig;
+        max_length = fig.len();
+    }
+
+    if banana.len() > max_length {
+        max_name = banana;
+        max_length = banana.len();
+    }
+
+    if kiwi.len() > max_length {
+        max_name = kiwi;
+        max_length = kiwi.len();
+    }
+
+    println!("The name with the most letters is: {}", max_name);
+    println!("It has {} letters.", max_length);
+}
+```

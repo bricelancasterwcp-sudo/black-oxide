@@ -1,0 +1,11 @@
+```rust
+use std::str;
+
+fn main() {
+    struct Reading { label: String, values: Vec<i32> }
+
+    let mut r = Reading { label: "lab".to_string(), values: vec![0] };
+    *r.values.first_mut().unwrap() = 7;
+    print!("{}", r.values[0]);
+}
+```

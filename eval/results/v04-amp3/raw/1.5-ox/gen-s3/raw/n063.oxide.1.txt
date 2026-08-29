@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let unit_price = 3;
+    let amount_4_units = 4;
+    let amount_5_units = 5;
+
+    // Calculate the total value of each line
+    let value_line1 = amount_4_units * unit_price;
+    let value_line2 = amount_5_units * unit_price;
+
+    // Print the values
+    print(value_line1);
+    println(value_line2);
+
+    // Print the total value of both lines combined
+    print(value_line1 + value_line2);
+}
+```

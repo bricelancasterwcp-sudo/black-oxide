@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let values = vec!(9, 2, 12, 5, 16);
+    let mut count = 0;
+
+    for x in values {
+        if x < 10 {
+            print_str(int_to_str(x));
+            count += 1;
+        }
+    }
+
+    print_str("\nCount: ");
+    print(count);
+}
+```

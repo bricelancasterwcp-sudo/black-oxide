@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let mut drum = "drum".chars();
+    while let Some(c) = drum.next_back() {
+        println!("{}", c);
+    }
+    println!("drum");
+}
+```
+
+When you run this program, it will print:
+
+```
+mru
+rumd
+drum
+```

@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut count = 0;
+    for i in 1..=36 {
+        if i * i == 36 {
+            count += 1;
+        }
+    }
+    print(count);
+}
+```

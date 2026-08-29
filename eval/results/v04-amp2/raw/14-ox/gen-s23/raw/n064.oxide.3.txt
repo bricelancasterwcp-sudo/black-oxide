@@ -1,0 +1,17 @@
+```text
+fn main() {
+    let v = vec()
+    let v = push(v, 10)
+    let v = push(v, 20)
+
+    let pos1 = get(v, 1)?
+    print(unwrap_or(pos1, -1))
+
+    let v = vec()
+    let v = push(v, 10)
+    let v = push(v, 20)
+
+    let pos4 = get(v, 4)?
+    print(unwrap_or(pos4, -1))
+}
+```

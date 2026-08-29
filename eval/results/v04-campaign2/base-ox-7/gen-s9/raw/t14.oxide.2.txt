@@ -1,0 +1,11 @@
+fn main() {
+    let s = "mississippi"
+    print(count(s.chars(), 's'))
+    let unique_chars: Vec<Str> = vec()
+    for c in s.chars() {
+        if !contains(unique_chars, c) {
+            push(unique_chars, c)
+        }
+    }
+    print(len(unique_chars))
+}

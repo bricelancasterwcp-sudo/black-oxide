@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let a = parse_int("8")?;
+    let b = parse_int("oak")?;
+    let c = parse_int("15")?;
+
+    match (a, b, c) {
+        (Some(a), Some(b), Some(c)) => println!("{} {} {}", a, b, c),
+        _ => println!("bad"),
+    }
+}
+```

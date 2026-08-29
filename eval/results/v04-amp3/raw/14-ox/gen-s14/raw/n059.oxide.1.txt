@@ -1,0 +1,22 @@
+```
+fn main() {
+    let phrase = "when in doubt go home"
+    let words = split(phrase, ' ')
+    print(len(words))
+    print(str_len(phrase))
+}
+
+fn split(s: Str, delimiter: Char) -> Vec<Str> {
+    let mut result = vec()
+    let mut current = ""
+    for c in chars(s) {
+        if c == delimiter {
+            result = push(result, current)
+            current = ""
+        } else {
+            current = concat(current, c)
+        }
+    }
+    push(result, current)
+}
+```

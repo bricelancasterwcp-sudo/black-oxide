@@ -1,0 +1,24 @@
+```rust
+fn main() {
+    let mut signal = "green";
+    while true {
+        match signal {
+            "green" => println!("go for green"),
+            "red" => println!("stop for red"),
+            "yellow" => println!("wait for yellow"),
+            _ => panic!("unexpected signal: {}", signal),
+        }
+        // Simulate receiving a signal
+        if rand::random::<bool>() {
+            signal = match rand::random::<u8>() % 3 {
+                0 => "green",
+                1 => "red",
+                2 => "yellow",
+                _ => unreachable!(),
+            };
+        } else {
+            break;
+        }
+    }
+}
+```

@@ -1,0 +1,18 @@
+```rust
+struct Measurement { value: Int }
+
+fn main() {
+    let measurements = vec![Measurement { value: 9 }, Measurement { value: 2 }, Measurement { value: 7 }, Measurement { value: 4 }];
+    
+    for i in 0..measurements.len() - 1 {
+        let mut smallest = &measurements[i];
+        for j in (i + 1)..measurements.len() {
+            if measurements[j].value < smallest.value {
+                smallest = &measurements[j];
+            }
+        }
+        print(smallest.value);
+    }
+
+}
+```

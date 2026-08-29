@@ -1,0 +1,22 @@
+```rust
+struct Figure {
+    name: Str,
+    value: Int,
+}
+
+fn main() {
+    let figures = vec![
+        Figure { name: "circle".to_string(), value: 3 },
+        Figure { name: "square".to_string(), value: 4 },
+        Figure { name: "triangle".to_string(), value: 5 },
+        Figure { name: "rectangle".to_string(), value: 6 },
+    ];
+
+    let smallest = figures.iter().min_by(|a, b| a.value.cmp(&b.value)).unwrap().value;
+    let largest = figures.iter().max_by(|a, b| a.value.cmp(&b.value)).unwrap().value;
+
+    print(smallest);
+    print_str("\n");
+    print(largest - smallest);
+}
+```

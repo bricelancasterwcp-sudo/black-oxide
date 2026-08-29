@@ -1,0 +1,16 @@
+struct List { values: Vec<Int> }
+fn get_value(list: List, pos: Int) -> Option<Int> {
+    let v = get(list.values, pos)?
+    Some(v)
+}
+fn main() {
+    let list = List { values: vec(10, 20, 30) }
+    match get_value(list, 1) {
+        Some(n) => print(n),
+        None => print(-1),
+    }
+    match get_value(list, 5) {
+        Some(n) => print(n),
+        None => print(-1),
+    }
+}

@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let phrase = String::from("when in doubt go home");
+    println!("Number of words: {}", phrase.split_whitespace().count());
+    println!("Total number of characters (including spaces): {}", phrase.len());
+}
+```
+
+This program first converts the input string into a `String` object. It then prints the number of words in the string using `split_whitespace()`, which splits the string at whitespace and returns an iterator over the resulting substrings. The count of these substrings is then printed.
+
+Finally, it prints the total number of characters in the string using `len()`, which gives the length of the string including any trailing whitespace.

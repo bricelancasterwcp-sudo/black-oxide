@@ -1,0 +1,8 @@
+```text
+fn main() {
+    let word = "drum"
+    let reversed = chars(word).sort().concat()
+    print_str(reversed)
+    print_str(word)
+}
+```

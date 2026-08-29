@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let vec = vec![5, 12, 3, 18, 9];
+    let count_under_cutoff = vec.iter().filter(|&&x| x < 10).count();
+    let count_over_cutoff = vec.iter().filter(|&&x| x >= 10).count();
+
+    print!("Under cutoff: {}", count_under_cutoff);
+    print!("\nOver cutoff: {}", count_over_cutoff);
+}
+```

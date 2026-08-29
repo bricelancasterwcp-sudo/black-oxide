@@ -1,0 +1,14 @@
+```text
+fn main() {
+    let total = range(1, 21) |v| {
+        let mut sum = 0
+        for x in v {
+            if x % 2 == 0 {
+                sum += x
+            }
+        }
+        sum
+    }
+    print(total)
+}
+```

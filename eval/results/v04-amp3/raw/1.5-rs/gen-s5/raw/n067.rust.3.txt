@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let list = vec![7, 4, 9, 10];
+    
+    // Walk and print each odd entry doubled on its own line
+    for &value in &list {
+        if value % 2 != 0 {
+            println!("{}", value * 2);
+        }
+    }
+    
+    // Calculate the total of the even entries
+    let sum_of_evens = list.iter().filter(|&&x| x % 2 == 0).sum::<i32>();
+    
+    // Print the total of the even entries
+    println!("Total of even entries: {}", sum_of_evens);
+}
+```

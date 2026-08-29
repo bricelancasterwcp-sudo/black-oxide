@@ -1,0 +1,6 @@
+```ox
+fn main() {
+    let scores = vec!(2, 9, 5)
+    sort(scores).each(print)
+}
+```

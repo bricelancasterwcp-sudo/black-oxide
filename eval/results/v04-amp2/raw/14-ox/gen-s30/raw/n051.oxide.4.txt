@@ -1,0 +1,6 @@
+fn main() {
+    let s = "granite"
+    print(s.chars().get(0).unwrap_or(""))
+    print("\n")
+    print(s.chars().get(str_len(s) - 1).unwrap_or(""))
+}

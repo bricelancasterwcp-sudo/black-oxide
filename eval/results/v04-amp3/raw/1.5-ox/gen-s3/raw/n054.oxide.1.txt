@@ -1,0 +1,24 @@
+```rust
+fn main() {
+    let mut count_vowels = 0;
+    let mut count_not_vowels = 0;
+
+    for letter in "keyboard".chars() {
+        if is_vowel(letter) {
+            count_vowels += 1;
+        } else {
+            count_not_vowels += 1;
+        }
+    }
+
+    println!("Number of vowels: {}", count_vowels);
+    println!("Number of non-vowels: {}", count_not_vowels);
+}
+
+fn is_vowel(letter: char) -> bool {
+    match letter.to_ascii_lowercase() {
+        'a' | 'e' | 'i' | 'o' | 'u' => true,
+        _ => false,
+    }
+}
+```

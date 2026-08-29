@@ -1,0 +1,14 @@
+```
+fn word_count(s: Str) -> Int {
+    s.split_whitespace().count()
+}
+
+fn char_count(s: Str) -> Int {
+    s.len()
+}
+
+fn main() {
+    let phrase = "when in doubt go home";
+    println!("The phrase contains {} words, spanning {} characters.", word_count(phrase), char_count(phrase));
+}
+```

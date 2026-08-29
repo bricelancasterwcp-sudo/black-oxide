@@ -1,0 +1,25 @@
+```rust
+fn main() {
+    loop {
+        let signal = get_signal();
+        match signal {
+            "green" => println!("go for green"),
+            "red" => println!("stop for red"),
+            "yellow" => println!("wait for yellow"),
+            _ => panic!("unexpected signal: {}", signal),
+        }
+    }
+}
+
+fn get_signal() -> &'static str {
+    use rand::random;
+
+    if random::<bool>() {
+        return "green";
+    } else if random::<bool>() {
+        return "red";
+    } else {
+        return "yellow";
+    }
+}
+```

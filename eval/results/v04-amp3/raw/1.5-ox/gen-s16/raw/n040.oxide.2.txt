@@ -1,0 +1,32 @@
+```rust
+struct Shape {
+    kind: Str,
+    params: Vec<Float>,
+}
+
+impl Shape {
+    fn new_square(side: Float) -> Self {
+        Shape { kind: "square".to_string(), params: vec![side] }
+    }
+
+    fn new_circle(radius: Float) -> Self {
+        Shape { kind: "circle".to_string(), params: vec![radius] }
+    }
+
+    fn area(&self) -> Option<Float> {
+        match self.kind.as_str() {
+            "square" => Some(self.params[0] * self.params[0]),
+            "circle" => Some(std::f64::consts::PI * self.params[0] * self.params[0]),
+            _ => None,
+        }
+    }
+}
+
+fn main() {
+    let shape = Shape::new_square(4.0);
+    match shape.area() {
+        Some(area) => print(area),
+        None => println!("Invalid shape"),
+    }
+}
+```

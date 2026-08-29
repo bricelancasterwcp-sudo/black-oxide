@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let total_price = 4 * (3 * 2) + 5 * 2;
+    println!("Line 1: $7.00");
+    println!("Line 2: $6.00");
+    println!("Total price: ${}", total_price);
+}
+```

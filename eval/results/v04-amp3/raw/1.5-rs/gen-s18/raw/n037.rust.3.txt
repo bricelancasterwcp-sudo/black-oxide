@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let mut rect = (2, 3);
+    println!("The initial area of the rectangle is: {}", rect.0 * rect.1);
+
+    rect.0 = 5;
+
+    println!("After changing the width to 5, the new area is: {}", rect.0 * rect.1);
+}
+```

@@ -1,0 +1,50 @@
+```rust
+struct Queue {
+    data: Vec<Int>,
+}
+
+impl Queue {
+    fn new() -> Self {
+        Queue { data: vec![] }
+    }
+
+    fn push(&mut self, value: Int) {
+        self.data.push(value);
+    }
+
+    fn pop(&mut self) -> Option<Int> {
+        match self.data.pop() {
+            Some(value) => Some(value),
+            None => None,
+        }
+    }
+
+    fn print(&self) {
+        for &value in &self.data {
+            print!("{} ", value);
+        }
+        println!();
+    }
+
+    fn exchange_first_last(&mut self) -> Option<Int> {
+        let first = self.pop()?;
+        let last = self.pop()?;
+        self.push(first);
+        self.push(last);
+        Some(first)
+    }
+}
+
+fn main() {
+    let mut q = Queue::new();
+    q.push(1);
+    q.push(2);
+    q.push(3);
+    q.push(4);
+    q.push(5);
+
+    q.exchange_first_last();
+
+    q.print(); // Should print: 5 2 3 4 1
+}
+```

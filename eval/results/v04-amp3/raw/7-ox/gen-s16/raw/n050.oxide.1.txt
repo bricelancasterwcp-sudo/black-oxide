@@ -1,0 +1,27 @@
+```rust
+fn main() {
+    let mut scores = vec![2, 9, 5];
+    sort(&mut scores);
+    for &score in &scores {
+        print(score);
+    }
+}
+
+fn sort(v: &mut Vec<Int>) -> Vec<Int> {
+    let len = len(v);
+    for i in range(0, len) {
+        for j in range(i + 1, len) {
+            if v[i] < v[j] {
+                let temp = v[i];
+                v[i] = v[j];
+                v[j] = temp;
+            }
+        }
+    }
+    v
+}
+
+fn print(x: Int) {
+    println(x);
+}
+```

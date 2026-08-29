@@ -1,0 +1,17 @@
+fn min(v: Vec<Int>) -> Option<Int> {
+    v.iter().min().cloned()
+}
+
+fn max(v: Vec<Int>) -> Option<Int> {
+    v.iter().max().cloned()
+}
+
+fn main() {
+    let figures = vec![8, 3, 11, 6];
+    if let Some(min_val) = min(figures.clone()) {
+        if let (Some(max_val), _) = max(figures).map(|x| (x, true)) {
+            print(min_val);
+            print(max_val - min_val);
+        }
+    }
+}

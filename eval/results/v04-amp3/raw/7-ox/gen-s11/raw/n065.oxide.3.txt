@@ -1,0 +1,28 @@
+```rust
+fn count_exceeding(v: Vec<Int>) -> Int {
+    let mut count = 0;
+    for x in v {
+        if x > 5 {
+            count += 1;
+        }
+    }
+    count
+}
+
+fn highest_reading(v: Vec<Int>) -> Option<Int> {
+    sort(v).last()
+}
+
+fn main() {
+    let readings = push(push(push(push(vec(), 6), 11), 3), 14);
+    print(count_exceeding(readings));
+    match highest_reading(readings) {
+        Some(n) => print_str("\n"),
+        None => (),
+    }
+    match highest_reading(readings) {
+        Some(n) => print(n),
+        None => print_str("None"),
+    }
+}
+```

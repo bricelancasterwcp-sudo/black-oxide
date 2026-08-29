@@ -1,0 +1,16 @@
+fn main() {
+    let list = [7, 4, 9, 10];
+
+    let mut odd_sum = 0;
+
+    for &item in list.iter() {
+        if item % 2 != 0 {
+            println!("{} doubled: {}", item, item * 2);
+            odd_sum += item;
+        }
+    }
+
+    // Total of even entries
+    let sum_of_evens: u32 = list.into_iter().filter(|&x| x % 2 == 0).sum();
+    println!("Total of even entries: {}", sum_of_evens);
+}

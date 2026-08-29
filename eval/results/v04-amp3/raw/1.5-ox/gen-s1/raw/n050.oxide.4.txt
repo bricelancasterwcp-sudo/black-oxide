@@ -1,0 +1,8 @@
+```
+fn main() {
+    let scores = vec![9, 5, 2];
+    for &score in scores.sort().rev() {
+        println!("{}", score);
+    }
+}
+```

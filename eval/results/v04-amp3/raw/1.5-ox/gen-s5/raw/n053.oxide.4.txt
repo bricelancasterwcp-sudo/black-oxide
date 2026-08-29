@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let s = "drum";
+    for i in (0..s.len()).rev() {
+        println!("{}", s.chars().nth(i).unwrap());
+    }
+    println!("{} normally reads", s);
+}
+```

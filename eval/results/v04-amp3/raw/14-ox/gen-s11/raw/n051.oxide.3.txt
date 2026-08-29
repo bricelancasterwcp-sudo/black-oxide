@@ -1,0 +1,8 @@
+fn main() {  
+    let s = "granite"  
+    let chars_s = chars(s)  
+    let first = get(chars_s.clone(), 0)?  
+    let last = get(chars_s, str_len(s) - 1)?  
+    print_str(first)  
+    print_str(last)  
+}

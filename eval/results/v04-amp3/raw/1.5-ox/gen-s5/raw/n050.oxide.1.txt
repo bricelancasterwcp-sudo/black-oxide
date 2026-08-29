@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let scores = vec![2, 9, 5];
+    scores.sort_by(|a, b| b.cmp(a));
+    for &score in scores.iter() {
+        println!("{}", score);
+    }
+}
+```
+
+This program sorts the scores from highest to lowest using `sort_by` and then iterates through the sorted vector printing each score.

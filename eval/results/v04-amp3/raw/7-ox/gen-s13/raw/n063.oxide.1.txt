@@ -1,0 +1,23 @@
+```oxide
+fn main() {
+    let units3 = vec();
+    push(units3, 4);
+    push(units3, 4);
+    push(units3, 4);
+
+    let units2 = vec();
+    push(units2, 5);
+    push(units2, 5);
+    push(units2, 5);
+    push(units2, 5);
+    push(units2, 5);
+
+    fn value(v: Vec<Int>) -> Int {
+        sum(v)
+    }
+
+    print(value(units3));
+    print(value(units2));
+    print(value(concat(units3, units2)));
+}
+```

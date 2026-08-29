@@ -21,6 +21,12 @@ _TWO_CHAR_OPERATORS: dict[str, TokenKind] = {
     "&&": TokenKind.ANDAND,
     "||": TokenKind.OROR,
     "::": TokenKind.PATH_SEP,
+    # v0.4 wave-2 (Task 4): compound assignment `x += e` / `x -= e` /
+    # `x *= e`. Checked before the one-char table exactly like every other
+    # two-char operator, so `+=` always wins over `+` followed by `=`.
+    "+=": TokenKind.PLUSEQ,
+    "-=": TokenKind.MINUSEQ,
+    "*=": TokenKind.STAREQ,
 }
 
 _ONE_CHAR_OPERATORS: dict[str, TokenKind] = {

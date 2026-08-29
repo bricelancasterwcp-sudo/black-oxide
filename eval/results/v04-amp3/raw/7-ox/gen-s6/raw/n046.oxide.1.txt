@@ -1,0 +1,19 @@
+```oxide
+fn main() {
+    let samples = vec(5, 12, 3, 18, 9);
+    let mut under_cutoff = 0;
+    let mut at_or_over_cutoff = 0;
+
+    for sample in samples {
+        if sample < 10 {
+            under_cutoff += 1;
+        } else {
+            at_or_over_cutoff += 1;
+        }
+    }
+
+    print(under_cutoff);
+    print_str(" ");
+    print(at_or_over_cutoff);
+}
+```

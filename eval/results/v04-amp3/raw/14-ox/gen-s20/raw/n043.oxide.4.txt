@@ -1,0 +1,1 @@
+fn main() { let q = vec(); let q = push(push(push(push(push(q, 1), 2), 3), 4), 5); let first = get(q, 0)?; let last = get(q, 4)?; let q = push(push(push(push(vec(), last), get(q, 1)?), get(q, 2)?), get(q, 3)?); let q = push(q, first); for x in q { print(x); } }

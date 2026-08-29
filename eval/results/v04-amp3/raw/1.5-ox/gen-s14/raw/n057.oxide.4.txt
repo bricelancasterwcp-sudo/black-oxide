@@ -1,0 +1,16 @@
+fn main() {
+    let fig = "fig";
+    let banana = "banana";
+    let kiwi = "kiwi";
+
+    if fig.len() > banana.len() && fig.len() > kiwi.len() {
+        println!("Longest: {}", fig);
+        println!("Length: {}", fig.len());
+    } else if banana.len() > kiwi.len() {
+        println!("Longest: {}", banana);
+        println!("Length: {}", banana.len());
+    } else {
+        println!("Longest: {}", kiwi);
+        println!("Length: {}", kiwi.len());
+    }
+}

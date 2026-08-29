@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut signal = "green";
+    
+    if signal == "green" {
+        println!("Go");
+    } else if signal == "red" {
+        println!("Stop");
+    } else if signal == "yellow" {
+        println!("Wait");
+    }
+}
+```

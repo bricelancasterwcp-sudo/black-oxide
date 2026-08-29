@@ -1,0 +1,15 @@
+```
+fn main() {
+    let num = 1234;
+    let mut digits: Vec<Int> = vec![];
+
+    while num > 0 {
+        digits.push(num % 10);
+        num /= 10;
+    }
+
+    for i in (0..digits.len()).rev() {
+        print!("{}", digits[i]);
+    }
+}
+```

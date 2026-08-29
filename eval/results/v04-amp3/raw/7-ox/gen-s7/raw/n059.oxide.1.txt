@@ -1,0 +1,10 @@
+```oxide
+fn main() {
+    let s = "when in doubt go home";
+    let words = split(s, ' ').len();
+    let chars = str_len(s);
+    print(words);
+    print_str(" ");
+    print(chars);
+}
+```

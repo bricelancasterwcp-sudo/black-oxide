@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let num = 91;
+    if !((2..=num.sqrt()).any(|i| num % i == 0)) {
+        print_str("yes");
+    } else {
+        print_str("no");
+    }
+}
+```

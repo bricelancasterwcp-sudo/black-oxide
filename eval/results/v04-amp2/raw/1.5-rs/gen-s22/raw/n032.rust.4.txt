@@ -1,0 +1,6 @@
+fn main() {
+    let p1 = (1, 5);
+    let p2 = (p1.0 + 10, p1.1);
+
+    println!("The sum of {} and {} is {}", p2.0, p2.1, p2.0 + p2.1);
+}

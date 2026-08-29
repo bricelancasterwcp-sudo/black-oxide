@@ -1,0 +1,27 @@
+```rust
+fn sum_of_numbers(numbers: Vec<Str>) -> (Int, Int) {
+    let mut found = 0;
+    let mut not_found = 0;
+
+    for n in numbers {
+        match n.parse::<Int>() {
+            Ok(num) => {
+                found += num;
+            },
+            Err(_) => {
+                not_found += 1;
+            }
+        }
+    }
+
+    (found, not_found)
+}
+
+fn main() {
+    let mut numbers: Vec<Str> = vec!["7", "x", "9", "?"];
+    let (total, count) = sum_of_numbers(numbers);
+
+    println!("Total of the ones that do: {}", total);
+    println!("Number of ones that do not: {}", count);
+}
+```

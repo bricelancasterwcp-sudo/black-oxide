@@ -1,0 +1,11 @@
+```rust
+struct Point { x: Int, y: Int }
+
+fn main() {
+    let p = Point { x: 1, y: 5 };
+    let q = Point { x: 10, y: p.y };
+    print(p.x + q.x);
+}
+```
+
+This program creates two points, `p` and `q`, where `p` is at (1, 5) and `q` is at (10, 5). It then adds the x-coordinates of `p` and `q` together using a field access.

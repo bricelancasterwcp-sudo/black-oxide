@@ -1,0 +1,16 @@
+fn count_digits(s: Str) -> Unit {
+    let mut count = 0
+    let mut sum = 0
+    for ch in chars(s) {
+        if parse_int(ch).is_some() {
+            count += 1
+            sum += unwrap_or(parse_int(ch), 0)
+        }
+    }
+    print(sum)
+    print(count)
+}
+
+fn main() -> Unit {
+    count_digits("a1b22")
+}

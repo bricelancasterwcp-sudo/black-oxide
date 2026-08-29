@@ -1,0 +1,22 @@
+```rust
+fn main() {
+    let numbers: Vec<&str> = vec!["7", "x", "9", "?"];
+    let mut sum = 0;
+    let mut count = 0;
+
+    for &num in numbers.iter() {
+        match num.parse::<i32>() {
+            Ok(n) => {
+                sum += n;
+                count += 1;
+            }
+            Err(_) => {}
+        }
+    }
+
+    println!("The total of the ones that do: {}", sum);
+    println!("How many do not: {}", numbers.len() - count);
+}
+```
+
+This is a corrected version of the given program. The `parse::<i32>()` function now correctly attempts to parse each string in the vector into an integer. If parsing is successful, it adds the integer to `sum` and increments `count`. If parsing fails (which would happen if the string is not a valid number), `Err(_)` is caught and ignored with an empty block. This ensures that only valid numbers are added to `sum`, and all other values in the vector are ignored.

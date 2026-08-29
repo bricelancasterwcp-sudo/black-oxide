@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let product: i32 = (1..=6).product();
+    println!("Product: {}", product);
+}
+```
+
+Explanation of Changes:
+The issue in the original program was that it was trying to multiply a range of numbers starting from 1 to 6, but it wasn't handling the multiplication correctly. The `product()` method on a `Range` will only return the product of the range's elements, not the cumulative product.
+
+In the corrected program:
+- We use `(1..=6)` to create a range of numbers from 1 to 6.
+- We call `.product()` on this range to compute the product of all the numbers in it.
+- The result is stored in the `result` variable.
+- Finally, we print the result using `println!("Product: {}", result);`.

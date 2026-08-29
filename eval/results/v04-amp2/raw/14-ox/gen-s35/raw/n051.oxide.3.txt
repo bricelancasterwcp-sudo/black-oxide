@@ -1,0 +1,6 @@
+fn main() {
+    let word = "granite"
+    let chars_vec = chars(word)
+    print(chars_vec[0])
+    print(chars_vec[str_len(word) - 1])
+}

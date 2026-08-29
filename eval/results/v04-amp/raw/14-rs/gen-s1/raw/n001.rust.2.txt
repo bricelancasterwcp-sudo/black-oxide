@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let mut total = 0;
+    for i in 1..=5 {
+        total += i32::pow(i, 3);
+    }
+    println!("{}", total);
+}
+```

@@ -1,0 +1,10 @@
+```ox
+fn main() {
+    let v = vec()
+    let v = push(push(v, 10), 20)
+    let pos1 = get(v, 1)?
+    let pos4 = get(v, 4)?
+    print(pos1)
+    print(pos4)
+}
+```

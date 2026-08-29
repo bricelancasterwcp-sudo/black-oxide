@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let batch = vec![9, 2, 12, 5, 16];
+    let mut count = 0;
+    for &item in &batch {
+        if item < 10 {
+            println!("{}", item);
+            count += 1;
+        }
+    }
+    println!("Number of kept entries: {}", count);
+}
+```

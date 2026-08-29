@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let a = read_str("Enter first entry: ");
+    match a {
+        "8" => println!("The number is 8"),
+        "oak" => println!("The number is oak"),
+        "15" => println!("The number is 15"),
+        _ => println!("bad")
+    }
+}
+```

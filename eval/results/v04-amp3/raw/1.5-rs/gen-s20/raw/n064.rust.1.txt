@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let nums = vec![10, 20];
+    for &num in [1, 4].iter() {
+        if num < nums.len() {
+            println!("{}", nums[num - 1]);
+        }
+    }
+}
+```

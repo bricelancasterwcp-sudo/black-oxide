@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let (fig, banana, kiwi) = ("fig", "banana", "kiwi");
+    let longest_name = if fig.len() > banana.len() && fig.len() > kiwi.len() {
+        fig
+    } else if banana.len() > kiwi.len() {
+        banana
+    } else {
+        kiwi
+    };
+    println!("Longest name: {}", longest_name);
+    println!("Length of {}: {}", longest_name, longest_name.len());
+}
+```

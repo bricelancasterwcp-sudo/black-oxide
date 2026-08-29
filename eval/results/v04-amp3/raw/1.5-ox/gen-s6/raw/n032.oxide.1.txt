@@ -1,0 +1,12 @@
+```rust
+struct Point { x: Int, y: Int }
+
+fn main() {
+    let p = Point { x: 1, y: 5 };
+    let p2 = Point { x: 10, y: 5 };
+    print(p.x + p2.x);
+}
+```
+
+Explanation:
+The given Rust program defines a `Point` struct with two fields: `x` and `y`. In the `main` function, it creates two points, `p` and `p2`, both positioned at (1, 5) and (10, 5) respectively. It then adds the x-coordinates of the two points together using the addition operator (`+`) and prints the result.

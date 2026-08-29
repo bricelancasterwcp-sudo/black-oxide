@@ -1,0 +1,26 @@
+```rust
+fn second(v: Vec<Int>) -> Option<Int> {
+    get(v, 1)?
+}
+
+fn main() {
+    let v7 = vec();
+    let v8 = push(vec(), 5);
+    let v9 = push(push(vec(), 3), 42);
+
+    match second(v7) {
+        Some(n) => print_str(&n.to_string()),
+        None => print_str("none"),
+    }
+
+    match second(v8) {
+        Some(n) => print_str(&n.to_string()),
+        None => print_str("none"),
+    }
+
+    match second(v9) {
+        Some(n) => print_str(&n.to_string()),
+        None => print_str("none"),
+    }
+}
+```

@@ -1,0 +1,31 @@
+```rust
+fn main() {
+    let a = read_str("Enter first entry: ");
+    if a.is_empty() {
+        println!("bad");
+    } else {
+        print!("{}", a);
+    }
+
+    let b = read_str("Enter second entry: ");
+    if b.is_empty() {
+        println!("bad");
+    } else {
+        print!("{}", b);
+    }
+
+    let c = read_str("Enter third entry: ");
+    if c.is_empty() {
+        println!("bad");
+    } else {
+        print!("{}", c);
+    }
+}
+
+fn read_str(prompt: &str) -> String {
+    let mut input = String::new();
+    print!("{}", prompt);
+    std::io::stdin().read_line(&mut input).expect("Failed to read line");
+    input.trim_end().to_string()
+}
+```

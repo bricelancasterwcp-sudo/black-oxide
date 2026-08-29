@@ -1,0 +1,16 @@
+fn main() {
+    let numbers = vec![7, 8, 9];
+    if let Some(second) = get_second(&numbers) {
+        println!("The second element is: {}", second);
+    } else {
+        println!("There is no second element.");
+    }
+}
+
+fn get_second<T>(list: &[T]) -> Option<&T> {
+    if list.len() > 1 {
+        Some(&list[1])
+    } else {
+        None
+    }
+}

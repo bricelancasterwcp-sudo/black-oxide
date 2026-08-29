@@ -1,0 +1,13 @@
+fn main() {
+    let s = "drum";
+    print(concat(chars(s), reverse_chars(s)));
+}
+
+fn reverse_chars(s: Str) -> Str {
+    let chars = chars(s);
+    let mut reversed = vec();
+    for c in chars {
+        reversed = push(reversed, c);
+    }
+    concat(reversed)
+}

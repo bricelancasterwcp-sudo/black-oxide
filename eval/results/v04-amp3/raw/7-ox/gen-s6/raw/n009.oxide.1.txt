@@ -1,0 +1,14 @@
+```
+fn reverse(x: Int) -> Int {
+    let mut acc = 0;
+    while x > 0 {
+        acc = acc * 10 + (x % 10);
+        x /= 10;
+    }
+    acc
+}
+
+fn main() {
+    print(reverse(1234))
+}
+```

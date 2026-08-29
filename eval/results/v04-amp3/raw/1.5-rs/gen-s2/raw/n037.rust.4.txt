@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut length = 2;
+    let height = 3;
+
+    println!("Initial area: {}", length * height);
+
+    length = 5;
+
+    println!("Modified area: {}", length * height);
+}
+```
+The program now correctly updates the width and prints the updated area.

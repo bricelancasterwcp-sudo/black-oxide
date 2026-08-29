@@ -1,0 +1,20 @@
+```rust
+struct Figure {
+    value: Int,
+}
+
+fn main() {
+    let figures = vec![
+        Figure { value: 8 },
+        Figure { value: 3 },
+        Figure { value: 11 },
+        Figure { value: 6 },
+    ];
+
+    let smallest = figures.iter().min_by(|a, b| a.value.cmp(&b.value)).unwrap().value;
+    let largest = figures.iter().max_by(|a, b| a.value.cmp(&b.value)).unwrap().value;
+
+    print(smallest);
+    println(largest - smallest);
+}
+```

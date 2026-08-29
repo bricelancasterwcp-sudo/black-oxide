@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let line1_value = 4 * 3 + 5 * 2;
+    let line2_value = 4 * 3 + 5 * 2;
+
+    print(line1_value); // prints the value of line1
+    print(line2_value); // prints the value of line2
+
+    println("Total Value: {}", line1_value + line2_value); // prints the total value of both lines
+}
+```

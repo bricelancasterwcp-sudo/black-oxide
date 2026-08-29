@@ -1,0 +1,5 @@
+```rust
+let phrase = "when in doubt go home";
+print(count(phrase.split(' '), 0));
+print(str_len(concat(phrase, "\n")));
+```

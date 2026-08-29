@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let texts = ["8", "oak", "15"];
+    
+    for text in texts.iter() {
+        if let Ok(number) = text.parse::<u32>() {
+            println!("{}", number);
+        } else {
+            println!("bad");
+        }
+    }
+}
+```

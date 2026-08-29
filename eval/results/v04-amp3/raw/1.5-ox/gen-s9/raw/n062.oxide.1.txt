@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let mut signal = "yellow";
+
+    while signal != "stop" {
+        match signal {
+            "green" => print_str("go"),
+            "red" => print_str("stop"),
+            "yellow" => print_str("wait"),
+            _ => {}
+        }
+        signal = if signal == "green" { "red" } else if signal == "red" { "yellow" } else { "green" };
+    }
+
+    println!("stopped");
+}
+```
+
+This program uses a loop to simulate traffic lights. The `signal` variable is used to control the flow of the traffic, changing its value based on the current time step. The match statement checks the current signal and prints the appropriate message. If the signal changes from "green" to "red", it waits for "yellow" before changing to "green". The program ends when the signal reaches "stop", at which point it prints a final message.

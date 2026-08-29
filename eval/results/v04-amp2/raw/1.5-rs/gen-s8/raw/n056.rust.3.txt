@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let mut count = 0;
+    let mut sum = 0;
+
+    // Assuming these are input values from user or some other source
+    let x = 12; // Example value for x
+
+    if x > 0 {
+        sum += x;
+        count += 1;
+    }
+
+    println!("Sum of numbers: {}", sum);
+    println!("Count of numbers: {}", count);
+}
+```

@@ -1,0 +1,18 @@
+```
+struct Point { x: Int, y: Int }
+struct Circle { r: Float }
+
+impl Shape {
+    fn area(&self) -> Float {
+        match self {
+            Square(s) => s * s,
+            Circle(c) => c * c * std::f32::consts::PI,
+        }
+    }
+}
+
+fn main() {
+    let p = Point { x: 4, y: 0 };
+    println!("{}", p.area());
+}
+```

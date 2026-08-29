@@ -1,0 +1,14 @@
+```
+struct Price { unit: Str, price: Int }
+
+fn main() {
+    let a = Price { unit: "four", price: 3 };
+    let b = Price { unit: "five", price: 2 };
+
+    println!("Price of line A is: {}", a.price);
+    println!("Price of line B is: {}", b.price);
+
+    let total_price = a.price + b.price;
+    println!("Total price of both lines is: {}", total_price);
+}
+```

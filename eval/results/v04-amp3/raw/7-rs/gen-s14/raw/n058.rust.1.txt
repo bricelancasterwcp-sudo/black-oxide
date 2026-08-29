@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let word = "coffee";
+    let mut chars = word.chars();
+    while let Some(c) = chars.next() {
+        if !chars.any(|&x| x == c) {
+            println!("{}", c);
+        }
+    }
+}
+```

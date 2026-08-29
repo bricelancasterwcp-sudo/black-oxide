@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let s = "when in doubt go home";
+    print_str(s);
+    print_int(s.len());
+}
+```

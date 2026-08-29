@@ -15,7 +15,10 @@ from eval.experiment_report import (
     ReportError,
     build_report,
     gen_metrics,
+    green_pair_keys,
     load_cells,
+    load_cells_keyed,
+    paired_tokens_to_green,
     paired_pass1,
     paired_strict_repair,
     require_complete,
@@ -386,3 +389,89 @@ def test_acceptance_v03_closing_baseline_qwen():
     rust = [c for c in cells if c["arm"] == "rust"]
     assert gen_metrics(oxide)["pass1"] == pytest.approx(0.305, abs=1e-9)
     assert gen_metrics(rust)["pass1"] == pytest.approx(0.565, abs=1e-9)
+
+
+# --- SPEC 59.7: composition-controlled paired token ratio ----------------
+
+def _write_arm(root: Path, arm: str, seeds: dict[str, list[dict]]) -> Path:
+    arm_dir = root / arm
+    for seed, cells in seeds.items():
+        seed_dir = arm_dir / seed
+        seed_dir.mkdir(parents=True)
+        (seed_dir / "cells.jsonl").write_text(
+            "".join(json.dumps(c) + "\n" for c in cells), encoding="utf-8")
+    return arm_dir
+
+
+def test_load_cells_keyed_keys_by_seed_dir_and_task(tmp_path):
+    arm = _write_arm(tmp_path, "a", {
+        "gen-s1": [_cell("t01", True, True, 1, 10)],
+        "gen-s2": [_cell("t01", True, True, 1, 20)],
+    })
+    keyed = load_cells_keyed(arm)
+    assert set(keyed) == {("gen-s1", "t01"), ("gen-s2", "t01")}
+    # Same task in two seeds must NOT collapse into one entry.
+    assert keyed[("gen-s1", "t01")]["tokens_out"] == 10
+    assert keyed[("gen-s2", "t01")]["tokens_out"] == 20
+
+
+def test_paired_tokens_to_green_averages_both_arms_over_the_same_cells(tmp_path):
+    a = _write_arm(tmp_path / "A", "a", {"gen-s1": [
+        _cell("t01", True, True, 1, 100),
+        _cell("t02", True, True, 1, 200),   # green in a, red in b -> excluded
+    ]})
+    b = _write_arm(tmp_path / "B", "b", {"gen-s1": [
+        _cell("t01", True, True, 1, 80),
+        _cell("t02", False, False, 5, 999),
+    ]})
+    out = paired_tokens_to_green(load_cells_keyed(a), load_cells_keyed(b))
+    assert out["n_pairs"] == 1 and out["n_shared"] == 2 and out["n_tasks"] == 1
+    # t02 excluded from BOTH means: 100/80, not (100+200)/(80+999).
+    assert out["a_mean"] == 100.0 and out["b_mean"] == 80.0
+    assert out["ratio"] == 1.25
+
+
+def test_paired_tokens_to_green_censors_rather_than_reporting_zero(tmp_path):
+    a = _write_arm(tmp_path / "A", "a", {"gen-s1": [_cell("t01", False, False, 5, 100)]})
+    b = _write_arm(tmp_path / "B", "b", {"gen-s1": [_cell("t01", True, True, 1, 80)]})
+    out = paired_tokens_to_green(load_cells_keyed(a), load_cells_keyed(b))
+    assert out["n_pairs"] == 0
+    assert out["a_mean"] is None and out["b_mean"] is None and out["ratio"] is None
+
+
+def test_paired_tokens_to_green_restrict_to_narrows_the_common_set(tmp_path):
+    a = _write_arm(tmp_path / "A", "a", {"gen-s1": [
+        _cell("t01", True, True, 1, 100), _cell("t02", True, True, 1, 300)]})
+    b = _write_arm(tmp_path / "B", "b", {"gen-s1": [
+        _cell("t01", True, True, 1, 80), _cell("t02", True, True, 1, 100)]})
+    ka, kb = load_cells_keyed(a), load_cells_keyed(b)
+    assert paired_tokens_to_green(ka, kb)["n_pairs"] == 2
+    narrowed = paired_tokens_to_green(ka, kb, restrict_to={("gen-s1", "t01")})
+    assert narrowed["n_pairs"] == 1 and narrowed["ratio"] == 1.25
+
+
+def test_green_pair_keys_requires_green_in_both_arms(tmp_path):
+    a = _write_arm(tmp_path / "A", "a", {"gen-s1": [
+        _cell("t01", True, True), _cell("t02", False, False, 5)]})
+    b = _write_arm(tmp_path / "B", "b", {"gen-s1": [
+        _cell("t01", True, True), _cell("t02", True, True)]})
+    assert green_pair_keys(load_cells_keyed(a), load_cells_keyed(b)) == {("gen-s1", "t01")}
+
+
+def test_paired_tokens_acceptance_against_committed_wave1_and_wave2():
+    """Pins SPEC 59.7's published three-wave arithmetic against the
+    committed campaign cells: wave-1 1.218, wave-2 1.188 over their own
+    paired sets, and 1.293 / 1.067 on the 67-cell cross-wave common set.
+    """
+    w1 = Path("eval/results/v04-campaign")
+    w2 = Path("eval/results/v04-campaign2")
+    w0 = Path("eval/results/runpod-exp")
+    arms = {w: (load_cells_keyed(w / "tune-ox-7"), load_cells_keyed(w / "tune-rs-7"))
+            for w in (w0, w1, w2)}
+    assert paired_tokens_to_green(*arms[w1])["ratio"] == 1.218
+    assert paired_tokens_to_green(*arms[w2])["ratio"] == 1.188
+    common = set.intersection(*(green_pair_keys(a, b) for a, b in arms.values()))
+    assert len(common) == 67
+    assert paired_tokens_to_green(*arms[w0], restrict_to=common)["ratio"] == 1.217
+    assert paired_tokens_to_green(*arms[w1], restrict_to=common)["ratio"] == 1.293
+    assert paired_tokens_to_green(*arms[w2], restrict_to=common)["ratio"] == 1.067

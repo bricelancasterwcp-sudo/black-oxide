@@ -1,0 +1,14 @@
+fn main() {
+    let mut n = 91;
+    loop {
+        if n <= 1 {
+            break;
+        }
+        if n % 2 == 0 || n % 7 == 0 {
+            print_str("no");
+            break;
+        } else {
+            n -= 1;
+        }
+    }
+}

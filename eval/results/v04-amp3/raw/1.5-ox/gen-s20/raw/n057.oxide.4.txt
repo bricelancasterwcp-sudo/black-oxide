@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let fruits = vec![String::from("fig"), String::from("banana"), String::from("kiwi")];
+
+    let mut max_len = 0;
+    let mut max_name = "";
+
+    for fruit in &fruits {
+        if fruit.len() > max_len {
+            max_len = fruit.len();
+            max_name = fruit.clone();
+        }
+    }
+
+    println!("{}", max_name);
+    println!("{} letters", max_len);
+}
+```

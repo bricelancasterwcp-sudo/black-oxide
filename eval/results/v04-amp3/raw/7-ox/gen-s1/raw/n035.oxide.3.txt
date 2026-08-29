@@ -1,0 +1,16 @@
+```oxide
+fn div(a: Int, b: Int) -> Result<Int, Str> {
+    if b == 0 {
+        Err("bad".to_string())
+    } else {
+        Ok(a / b)
+    }
+}
+
+fn main() {
+    match div(20, 4) {
+        Ok(n) => print(n),
+        Err(msg) => print_str(msg),
+    }
+}
+```

@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let v = push(push(vec(), 3), 42);
+    println!("{}", min(v)?); // print the smallest element
+    println!("{}", max(v)?); // print the largest element
+}
+```

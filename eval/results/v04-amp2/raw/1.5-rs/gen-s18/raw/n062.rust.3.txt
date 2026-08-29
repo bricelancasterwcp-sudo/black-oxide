@@ -1,0 +1,24 @@
+```rust
+fn main() {
+    let mut signal = "green";
+
+    loop {
+        match signal {
+            "green" => println!("go for green"),
+            "red" => println!("stop for red"),
+            "yellow" => println!("wait for yellow"),
+            _ => panic!("Invalid signal"),
+        }
+
+        // Simulate a delay
+        std::thread::sleep(std::time::Duration::from_secs(1));
+
+        match signal {
+            "green" => signal = "red",
+            "red" => signal = "yellow",
+            "yellow" => signal = "green",
+            _ => panic!("Invalid signal"),
+        }
+    }
+}
+```

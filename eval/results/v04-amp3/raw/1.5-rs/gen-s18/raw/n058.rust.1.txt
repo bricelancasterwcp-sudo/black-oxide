@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let words = vec!["coffee", "hello", "world"];
+    
+    for word in words {
+        for (index, letter) in word.chars().enumerate() {
+            if index == word.chars().position(|c| c == letter).unwrap() {
+                println!("{}", letter);
+                break;
+            }
+        }
+    }
+}
+```

@@ -1,0 +1,14 @@
+fn main() {
+    let v = range(0, 10)
+    print(len(v))
+    let total = 0
+    let w = vec()
+    for x in v {
+        if x > 4 {
+            push(w, x)
+            break
+        }
+    }
+    total = len(w)
+    print(total)
+}

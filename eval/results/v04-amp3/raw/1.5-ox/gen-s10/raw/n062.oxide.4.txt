@@ -1,0 +1,22 @@
+```rust
+enum Signal {
+    Green,
+    Red,
+    Yellow,
+}
+
+fn main() {
+    let mut signal = Signal::Green;
+    while true {
+        match signal {
+            Signal::Green => print_str("go for green\n"),
+            Signal::Red => print_str("stop for red\n"),
+            Signal::Yellow => print_str("wait for yellow\n"),
+        }
+        signal = match signal {
+            Signal::Green => Signal::Yellow,
+            Signal::Red => Signal::Red,
+        };
+    }
+}
+```

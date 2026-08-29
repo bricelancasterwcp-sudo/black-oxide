@@ -1,0 +1,29 @@
+```rust
+struct Square {
+    side: f64,
+}
+
+struct Circle {
+    radius: f64,
+}
+
+impl Square {
+    fn area(&self) -> f64 {
+        self.side * self.side
+    }
+}
+
+impl Circle {
+    fn area(&self) -> f64 {
+        std::f64::consts::PI * self.radius * self.radius
+    }
+}
+
+fn main() {
+    let square = Square { side: 4.0 };
+    println!("Area of the square: {}", square.area());
+
+    let circle = Circle { radius: 3.0 };
+    println!("Area of the circle: {}", circle.area());
+}
+```

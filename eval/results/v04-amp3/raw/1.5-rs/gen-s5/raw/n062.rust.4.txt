@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let mut signal = String::new();
+    loop {
+        stdin().read_line(&mut signal).expect("Failed to read input");
+        match signal.trim() {
+            "green" => println!("go for green"),
+            "red" => println!("stop for red"),
+            "yellow" => println!("wait for yellow"),
+            _ => println!("unknown signal"),
+        }
+    }
+}
+```

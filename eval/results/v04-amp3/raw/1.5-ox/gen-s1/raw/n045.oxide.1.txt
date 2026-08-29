@@ -1,0 +1,10 @@
+```
+struct Entry { value: Int }
+
+fn main() {
+    let mut log = [Entry { value: 6 }, Entry { value: 7 }, Entry { value: 8 }, Entry { value: 9 }];
+    
+    print(log[0].value);          // prints the first element
+    print(log[3].value);          // prints the last element
+}
+```

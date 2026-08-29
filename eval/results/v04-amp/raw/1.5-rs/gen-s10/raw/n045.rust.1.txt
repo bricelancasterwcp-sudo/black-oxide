@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let log = [6, 7, 8, 9];
+    println!("The first entry is: {}", log[0]);
+    println!("The last entry is: {}", log[3]);
+}
+```

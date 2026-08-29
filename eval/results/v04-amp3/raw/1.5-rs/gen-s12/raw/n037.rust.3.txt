@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let mut rect: (usize, usize) = (2, 3);
+    rect.0 = 5;
+    println!("The area of the rectangle is {}", rect.0 * rect.1);
+}
+```
+
+Explanation:
+The issue in the original program was that Rust requires explicit type annotations for tuples when they are declared as mutable variables. This is because tuples are not automatically converted to a specific type when assigned. By adding `mut` before the variable declaration, we make it mutable, and by specifying `(usize, usize)` as the type annotation, we ensure that `rect` will be treated as a tuple of two `usize` values.

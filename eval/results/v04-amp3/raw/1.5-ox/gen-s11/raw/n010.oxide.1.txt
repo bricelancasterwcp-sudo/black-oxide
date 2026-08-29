@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let num = 91;
+    if !(2..=num.sqrt()).any(|i| num % i == 0) {
+        print_str("yes");
+    } else {
+        print_str("no");
+    }
+}
+```
+
+**Explanation:**
+- We define a function `main` that takes no arguments.
+- Inside the function, we declare a variable `num` and assign it the value 91.
+- We use a range expression `2..=num.sqrt()` to iterate from 2 to the square root of `num`. The square root is calculated using the `sqrt` method on the `f64` type.
+- The `any` method checks if any number in the range divides `num` evenly. If it finds a divisor (i.e., `num % i == 0`), it returns `true`; otherwise, it returns `false`.
+- We print "yes" if `num` is prime (i.e., no divisors other than 1 and itself) by using the `print_str` function. Otherwise, we print "no".

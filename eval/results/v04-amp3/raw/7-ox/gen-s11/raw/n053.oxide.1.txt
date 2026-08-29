@@ -1,0 +1,17 @@
+```rust
+print_str(concat(drum, " ", reverse(str_chars(drum)) as Str))
+fn reverse(v: Vec<Str>) -> Vec<Str> {
+    let mut result = vec()
+    for x in v {
+        result = push(result, chars(x))
+    }
+    result
+}
+fn str_chars(s: Str) -> Vec<Str> {
+    let mut result = vec()
+    for c in chars(s) {
+        push(result, concat(c, ""))
+    }
+    result
+}
+```

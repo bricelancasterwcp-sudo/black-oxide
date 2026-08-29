@@ -1,0 +1,10 @@
+fn main() {
+    let mut width = 2;
+    let height = 3;
+
+    // Change the width
+    width = 5;
+
+    // Calculate and print the area
+    println!("The area of the rectangle is: {}", (width as f64) * (height as f64));
+}

@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let mut count = 0;
+
+    for number in vec![9, 2, 12, 5, 16] {
+        if number < 10 {
+            println!("{}", number);
+            count += 1;
+        }
+    }
+
+    println!("You kept {} entries.", count);
+}
+```

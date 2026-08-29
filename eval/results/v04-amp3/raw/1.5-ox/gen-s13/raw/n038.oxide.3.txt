@@ -1,0 +1,13 @@
+```rust
+struct Reading { label: Str, values: Vec<Int> }
+
+fn set_reading(r: &mut Reading, value: Int) {
+    r.values = vec![value];
+}
+
+fn main() {
+    let mut r = Reading { label: "lab", values: Vec::new() };
+    set_reading(&mut r, 7);
+    print(r.values[0]);
+}
+```

@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let s = "banana";
+    for (i, &c) in s.chars().enumerate() {
+        if c == 'n' {
+            println!("{}", i);
+        }
+    }
+}
+```
+
+This Rust program takes a string literal `s` and iterates over its characters using the `.chars()` method. For each character, it checks if it is equal to `'n'` using the `==` operator. If the condition is true, it prints the index `i` (which represents the position of the character in the string) using `println!`.

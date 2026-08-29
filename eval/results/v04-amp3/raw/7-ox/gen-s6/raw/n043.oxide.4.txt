@@ -1,0 +1,12 @@
+struct Queue { values: Vec<Int> }
+
+fn main() {
+    let mut q = Queue { values: vec![1, 2, 3, 4, 5] };
+    let first = q.values[0];
+    let last = q.values[q.values.len() - 1];
+    q.values[0] = last;
+    q.values[q.values.len() - 1] = first;
+    for x in &q.values {
+        print(x);
+    }
+}

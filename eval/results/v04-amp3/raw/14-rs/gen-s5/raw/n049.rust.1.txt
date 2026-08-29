@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let numbers = [8, 3, 11, 6];
+    let smallest = *numbers.iter().min().unwrap();
+    let largest = *numbers.iter().max().unwrap();
+    let gap = largest - smallest;
+    println!("{}", smallest);
+    println!("{}", gap);
+}
+```

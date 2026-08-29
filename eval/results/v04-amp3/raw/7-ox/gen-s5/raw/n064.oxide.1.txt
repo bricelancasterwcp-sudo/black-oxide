@@ -1,0 +1,19 @@
+```oxide
+struct List { first: Int, second: Int }
+
+fn get_pos(l: List, pos: Int) -> Option<Int> {
+    match pos {
+        1 => Some(l.first),
+        4 => Some(l.second),
+        _ => None,
+    }
+}
+
+fn main() {
+    let l = List { first: 10, second: 20 };
+    let v1 = get_pos(l, 1)?;
+    print(v1);
+    let v4 = get_pos(l, 4)?;
+    print(v4);
+}
+```

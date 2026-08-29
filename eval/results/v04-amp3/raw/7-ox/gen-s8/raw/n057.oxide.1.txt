@@ -1,0 +1,13 @@
+```oxide
+fn main() {
+    let fig = "fig";
+    let banana = "banana";
+    let kiwi = "kiwi";
+
+    let longest = if str_len(fig) > str_len(banana) { fig } else { banana };
+    if str_len(longest) > str_len(kiwi) { longest } else { kiwi };
+
+    print_str(longest);
+    print(str_len(longest));
+}
+```

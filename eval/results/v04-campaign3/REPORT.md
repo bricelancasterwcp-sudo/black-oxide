@@ -10,8 +10,11 @@ hand-off, not a verdict.
 
 **Black Oxide crossed below token parity with Rust on the static
 estimand (1.0875 → 0.9863) while the dynamic estimand moved the other
-way (1.0799 → 1.1315).** The language got shorter. The model did not
-follow.
+way (1.0799 → 1.1315).** The language got shorter and the model did not
+follow — because, per §6.1, the pipeline taught it the new vocabulary in
+as few as 2 of 294 training examples. The gap between what the language
+*can* express and what a model *does* express is now this project's
+subject.
 
 ## 1. What the wave found before it built anything
 
@@ -177,7 +180,17 @@ measurement.
 **The two estimands moved in opposite directions this wave** — static
 1.0875 → 0.9863, dynamic 1.0799 → 1.1315. §6 explains why.
 
-## 6. G2 uptake — the model declined most of the vocabulary
+## 6. G2 uptake — the corpus barely taught most of the vocabulary
+
+> **AMENDED 2026-08-30, same day.** This section was first published under
+> the heading "the model declined most of the vocabulary", and that
+> framing was an overclaim. §6.1 below measures how often each construct
+> appears in the training corpus itself, which the original section never
+> checked: `swap` appears in **2 of 294** training examples. A construct
+> seen twice was not declined — it was never taught. The counts in the
+> table below are unchanged and correct; the interpretation around them
+> is corrected here, and §8's feed-forward is rewritten accordingly. The
+> original heading is left visible in this note rather than deleted.
 
 Per reply file, counted at most once each.
 
@@ -204,9 +217,49 @@ all 43 tuned-arm matches — **0 were OR-chains**; the samples are
 unambiguous Rust closures.
 
 **`swap` got zero tuned uptake** despite being the corpus's single
-largest token gap. It shipped on cost evidence alone, and the model never
-used it — the mirror image of §2's finding, and the reason neither census
-is sufficient by itself.
+largest token gap. It shipped on cost evidence alone — but see §6.1
+before reading that as a verdict on the construct.
+
+### 6.1 Uptake tracks exposure × familiarity, and nothing shipped this wave got a fair test
+
+How often each construct appears in the 294 oxide training examples the
+tuned arm actually learned from, against the uptake it then showed:
+
+| construct | % of training corpus | tuned uptake |
+|---|---:|---:|
+| `+=` | 24.1% | 194 |
+| `range` | 24.1% | 150 |
+| `unwrap_or` | 10.2% | 58 |
+| `sort` | 5.1% | 10 |
+| `count_if` | 2.4% | **0** |
+| `x -> expr` | 2.4% | 4 |
+| `reverse` | 1.7% | **50** |
+| `set` | 1.7% | 8 |
+| `swap` | 0.7% | **0** |
+| `count` | 0.7% | 14 |
+
+Uptake rises with corpus exposure, and the two anomalies separate a
+second force. **`reverse` drew 50 uses from 1.7% exposure while
+`count_if` drew 0 from more exposure (2.4%).** The difference is prior
+familiarity: `reverse` is a name the model already knows from Rust and
+Python; `count_if` is not Rust idiom. So **uptake ≈ exposure ×
+familiarity** — `swap` failed on exposure (0.7%, a name the model does
+know), `count_if` failed on familiarity.
+
+Why exposure is so low is structural, not accidental. A new construct
+reaches the training corpus by only two routes: the one to three
+reference programs whose task shape needs it, and whatever the base model
+happens to emit from the card and the oracle happens to pass. Both are
+thin for anything new. **The pipeline systematically under-teaches its
+own new vocabulary**, and this wave's adoption numbers are measurements
+of that pipeline at least as much as of the constructs.
+
+The honest status of every construct shipped this wave is therefore
+*untested for adoption*, not *rejected*. The falsification of the
+spelling ruling in the table above still stands on its own terms —
+`x -> expr` and `|x|` were available to the model on equal footing, and
+it chose `|x|` 10:1 — because that comparison is between two spellings
+at the same exposure, not between a taught and an untaught construct.
 
 **The most valuable result is the shape of what the model writes
 instead.** The recurring form is:
@@ -258,15 +311,36 @@ measured.
    `filter`, `max_by`/`argmax`, `any`/`all` over a predicate. This is
    measured demand, in the model's own spelling, and it subsumes
    `count_if`.
-4. **`swap`'s zero uptake is the sharpest open question.** It closed the
-   largest gap in the corpus and the model ignored it. Candidate causes
-   to separate: card placement, absence from the training corpus's own
-   programs, or a shape models simply do not reach for. Do not ship more
-   cost-only constructs until this is understood.
-5. **Corpus scale vs vocabulary density.** The fresh-only choice cost
+4. **Fix the exposure hole before judging any construct.** Per §6.1 the
+   pipeline under-teaches its own new vocabulary: `swap` reached the
+   tuned model in 2 of 294 examples. Two levers, and wave 4 should
+   pre-register which it pulls: author reference tasks whose shapes
+   *need* the new constructs, and/or oversample training examples
+   containing them. Then re-read uptake. The prediction is explicit and
+   falsifiable — **if uptake tracks exposure, `swap` at ~10% of the
+   corpus should move off zero; if it stays at zero, the construct
+   really is one models do not reach for**, and that is worth knowing
+   about `swap` specifically rather than about the pipeline.
+5. **Prefer familiar names and spellings.** `reverse` outdrew `count_if`
+   at lower exposure purely on prior familiarity. Where a Rust or Python
+   name exists for an operation, use it; where it does not, expect to pay
+   for the novelty in exposure. This is the same lesson the spelling
+   ruling learned the hard way.
+6. **Corpus scale vs vocabulary density.** The fresh-only choice cost
    pass@1 (0.755 → 0.595) and bought undiluted uptake measurement. Wave 4
    can have both: amplify fresh at more seeds, or pool and weight. Decide
    deliberately and pre-register it.
+
+**A design principle this wave earned, worth stating above the item
+list:** every win across three waves came from *removing* ceremony —
+implicit linear ownership (structs 0.920, the only class that beats Rust
+without any added vocabulary), no borrow annotations, no lifetimes —
+while every *added* novel construct fought the model's priors. Wave 3
+shipped four constructs, and the two that landed (`reverse`, `set`) are
+the two with existing Rust namesakes. **Subtractive design wins;
+additive design pays for novelty.** If that holds through wave 4, it
+bounds how novel this language can usefully be, and that is a finding
+about the premise rather than about any construct.
 6. **Card-quality returns are diminishing:** 0.025 → 0.060 → 0.070 across
    v0.4 → v0.4.1 → v0.6. Scope any card cycle against +0.010, not +0.035.
 7. **Standing debt:** `/=` (two concrete sites, n007 and n009); fold

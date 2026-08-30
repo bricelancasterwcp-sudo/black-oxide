@@ -187,6 +187,38 @@ BUILTINS: dict[str, BuiltinSig] = {
         modes=("read", "read"),
         generics=(_A,),
     ),
+    # ---- v0.4 wave-3 builtins (Task 2 TWO-EYED gate ruling: swap/reverse
+    # ranked 1-2 by the COST census with zero reply demand; set on 18/18
+    # mechanical rejection AND measured not to substitute for swap), modes
+    # pinned ----
+    # All three consume and return the vector, mirroring `sort`: they wrap
+    # in-place Rust operations in this project's owned-in/owned-out
+    # convention. The INT index slots are "read" for the same reason
+    # `get`'s and `range`'s are -- an index is inspected, never consumed.
+    # `set`'s VALUE slot is "own": like `push`'s inserted value, it is
+    # genuinely transferred into the vector.
+    # Out-of-range indices PANIC, matching the Rust control exactly (see
+    # SPEC 60.2). This joins a pre-existing partial-operation category --
+    # integer division already panics on a computed zero divisor -- it does
+    # not open a new one.
+    "swap": BuiltinSig(
+        params=(TCon("Vec", (_A,)), INT, INT),
+        ret=TCon("Vec", (_A,)),
+        modes=("own", "read", "read"),
+        generics=(_A,),
+    ),
+    "reverse": BuiltinSig(
+        params=(TCon("Vec", (_A,)),),
+        ret=TCon("Vec", (_A,)),
+        modes=("own",),
+        generics=(_A,),
+    ),
+    "set": BuiltinSig(
+        params=(TCon("Vec", (_A,)), INT, _A),
+        ret=TCon("Vec", (_A,)),
+        modes=("own", "read", "own"),
+        generics=(_A,),
+    ),
     # ---- v0.4 builtins (Task 5 gate ruling), modes pinned ----
     # Both slots are "own": mirrors the language's two EXISTING ways of
     # reaching inside an Option -- match's scrutinee is a MOVE use (section

@@ -1,0 +1,10 @@
+```ox
+fn main() {
+    let figures = vec(8, 3, 11, 6);
+    let min_figure = min(figures)?;
+    print(min_figure);
+    let max_figure = max(figures)?;
+    let gap = max_figure - min_figure;
+    print(gap);
+}
+```

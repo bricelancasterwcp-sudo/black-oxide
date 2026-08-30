@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let values = vec();
+    let values = push(values, 9);
+    let values = push(values, 2);
+    let values = push(values, 7);
+    let values = push(values, 4);
+
+    let sorted_values = sort(values);
+
+    for value in sorted_values {
+        print(value);
+        print_str("\n");
+    }
+}
+```

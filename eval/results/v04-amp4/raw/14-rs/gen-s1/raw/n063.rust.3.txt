@@ -1,0 +1,11 @@
+use std::io::{self, Write};
+
+fn main() {
+    let value_line1 = 4 * 3;
+    let value_line2 = 5 * 2;
+    let total_value = value_line1 + value_line2;
+
+    println!("Value of line 1: {}", value_line1);
+    println!("Value of line 2: {}", value_line2);
+    println!("Total value: {}", total_value);
+}

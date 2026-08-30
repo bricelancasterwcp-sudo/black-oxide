@@ -1,0 +1,26 @@
+```rust
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+impl Rectangle {
+    fn new(width: Int, height: Int) -> Self {
+        Rectangle { width, height }
+    }
+
+    fn area(&self) -> Int {
+        self.width * self.height
+    }
+
+    fn perimeter(&self) -> Int {
+        2 * (self.width + self.height)
+    }
+}
+
+fn main() {
+    let rect = Rectangle::new(9, 3);
+    println!("Area: {}", rect.area()); // prints "Area: 27"
+    println!("Perimeter: {}", rect.perimeter()); // prints "Perimeter: 30"
+}
+```

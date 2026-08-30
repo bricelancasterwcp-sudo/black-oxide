@@ -1,0 +1,9 @@
+```
+fn main() {
+    let mut drum = "drum";
+    for i in (0..drum.len()).rev() {
+        print!("{}", drum.chars().nth(i).unwrap());
+    }
+    println!("{}", drum);
+}
+```

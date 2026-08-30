@@ -1,0 +1,22 @@
+```rust
+fn main() {
+    let fig = "fig";
+    let banana = "banana";
+    let kiwi = "kiwi";
+
+    let fig_len = str_len(fig);
+    let banana_len = str_len(banana);
+    let kiwi_len = str_len(kiwi);
+
+    let longest_name = if fig_len > banana_len && fig_len > kiwi_len {
+        fig
+    } else if banana_len > kiwi_len {
+        banana
+    } else {
+        kiwi
+    };
+
+    print(longest_name);
+    print(fig_len);
+}
+```

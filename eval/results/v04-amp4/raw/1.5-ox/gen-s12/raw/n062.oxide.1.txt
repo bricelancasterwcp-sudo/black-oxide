@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let mut signals = vec![0; 3];
+
+    for (i, signal) in signals.iter_mut().enumerate() {
+        match signal {
+            0 => println!("go"),
+            1 => println!("stop"),
+            2 => println!("wait"),
+            _ => panic!("invalid signal"),
+        }
+    }
+}
+```

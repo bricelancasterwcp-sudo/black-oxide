@@ -1,0 +1,21 @@
+```
+fn sum_numbers(texts: Vec<&str>) -> (Int, Int) {
+    let mut total = 0;
+    let mut count = 0;
+
+    for text in texts {
+        if let Some(n) = parse_int(text) {
+            total += n;
+            count += 1;
+        }
+    }
+
+    return (total, count);
+}
+
+fn main() {
+    let texts: Vec<&str> = vec!["7", "x", "9", "?"];
+    let result = sum_numbers(texts);
+    print_str(format!("Total: {}, Count: {}", result.0, result.1));
+}
+```

@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let num = 9875;
+    let digits: Vec<char> = num.to_string().chars();
+    let mut total = 0;
+    for digit in digits.iter() {
+        total += digit.to_digit(10).unwrap_or(0);
+    }
+    println!("{}", total);
+}
+```

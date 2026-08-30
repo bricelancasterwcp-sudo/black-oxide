@@ -1,0 +1,24 @@
+```text
+struct Reading { label: Str, values: Vec<Int> }
+
+fn print_sorted(v: Vec<Int>) {
+    let sorted = sort(v);
+    for x in sorted {
+        print(x)
+    }
+}
+
+fn main() {
+    let readings = vec(
+        Reading { label: "lab1", values: vec() },
+        Reading { label: "lab2", values: vec(9) },
+        Reading { label: "lab3", values: vec(2) },
+        Reading { label: "lab4", values: vec(7) },
+        Reading { label: "lab5", values: vec(4) }
+    )
+    for reading in readings {
+        print_str(reading.label)
+        print_sorted(reading.values)
+    }
+}
+```

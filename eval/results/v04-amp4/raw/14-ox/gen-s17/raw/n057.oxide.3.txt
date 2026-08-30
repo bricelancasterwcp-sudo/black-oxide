@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let fig = "fig";
+    let banana = "banana";
+    let kiwi = "kiwi";
+
+    let mut longest = fig;
+    if banana.len() > longest.len() {
+        longest = banana;
+    }
+    if kiwi.len() > longest.len() {
+        longest = kiwi;
+    }
+
+    print_str(longest);
+    print(longest.len());
+}
+```

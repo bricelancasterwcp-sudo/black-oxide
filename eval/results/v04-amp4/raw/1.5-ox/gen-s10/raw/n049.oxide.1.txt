@@ -1,0 +1,21 @@
+```rust
+struct Figure {
+    name: Str,
+    size: Int,
+}
+
+fn main() {
+    let figures = vec![
+        Figure { name: "circle", size: 5 },
+        Figure { name: "triangle", size: 10 },
+        Figure { name: "square", size: 20 },
+        Figure { name: "pentagon", size: 7 },
+    ];
+
+    let smallest = figures.iter().min_by_key(|f| f.size).unwrap().size;
+    let largest = figures.iter().max_by_key(|f| f.size).unwrap().size;
+
+    println!("Smallest figure size: {}", smallest);
+    println!("Gap between largest and smallest figure size: {}", largest - smallest);
+}
+```

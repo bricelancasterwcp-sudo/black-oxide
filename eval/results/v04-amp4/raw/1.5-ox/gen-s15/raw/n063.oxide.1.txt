@@ -1,0 +1,31 @@
+```rust
+struct Unit { value: Int }
+struct FourUnits {
+    units: Vec<Unit>,
+}
+struct FiveUnits {
+    units: Vec<Unit>,
+}
+
+fn unit_value(u: &Unit) -> Int {
+    u.value
+}
+
+fn four_units_value(fu: &FourUnits) -> Int {
+    fu.units.iter().map(unit_value).sum()
+}
+
+fn five_units_value(fu: &FiveUnits) -> Int {
+    fu.units.iter().map(unit_value).sum()
+}
+
+fn main() {
+    let four_units = FourUnits { units: vec![Unit { value: 3 }, Unit { value: 3 } ] };
+    let five_units = FiveUnits { units: vec![Unit { value: 2 }, Unit { value: 2 }, Unit { value: 2 }, Unit { value: 2 } ] };
+
+    println!("{}", four_units_value(&four_units));
+    println!("{}", five_units_value(&five_units));
+
+    println!("Total: {}", four_units_value(&four_units) + five_units_value(&five_units));
+}
+```

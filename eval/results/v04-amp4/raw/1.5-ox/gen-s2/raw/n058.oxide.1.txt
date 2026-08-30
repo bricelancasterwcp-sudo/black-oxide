@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let mut freq = [0; 26];
+    for c in "coffee".chars() {
+        if 'a' <= c && c <= 'z' {
+            freq[c as usize - 'a' as usize] += 1;
+        }
+    }
+
+    for i in 0..26 {
+        if freq[i] > 0 {
+            print!("{}", char::from_u8(b'a' + i) as char);
+            freq[i] = 0; // Consume the letter once
+        }
+    }
+}
+```

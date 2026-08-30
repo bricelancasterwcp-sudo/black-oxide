@@ -1,0 +1,28 @@
+```text
+fn second_entry(v: Vec<Int>) -> Option<Int> {
+    if len(v) > 1 {
+        Some(get(v, 1)?)  // Wrap the result in Some
+    } else {
+        None
+    }
+}
+
+fn main() {
+    let nums1 = vec(7, 8, 9)
+    let nums2 = vec(7, 9)
+    let nums3 = vec(7)
+
+    match second_entry(nums1) {
+        Some(n) => print(n),
+        None => print_str("none"),
+    }
+    match second_entry(nums2) {
+        Some(n) => print(n),
+        None => print_str("none"),
+    }
+    match second_entry(nums3) {
+        Some(n) => print(n),
+        None => print_str("none"),
+    }
+}
+```

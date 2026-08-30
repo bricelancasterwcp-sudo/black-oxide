@@ -1,0 +1,9 @@
+fn main() {
+    let list = vec![10, 20];
+    for &position in &[1, 4] {
+        match list.get(position) {
+            Some(&value) => println!("{}", value),
+            None => println!("None"),
+        }
+    }
+}

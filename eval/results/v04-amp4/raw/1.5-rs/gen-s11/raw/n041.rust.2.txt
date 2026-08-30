@@ -1,0 +1,22 @@
+```rust
+fn main() {
+    let mut arr = [9, 2, 7, 4];
+
+    // Bubble sort algorithm to sort the array in ascending order
+    for i in 0..arr.len() {
+        for j in (i + 1)..arr.len() {
+            if arr[i] > arr[j] {
+                // Swap elements at indices i and j
+                let temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+
+    // Print the sorted array
+    for &num in &arr {
+        println!("{}", num);
+    }
+}
+```

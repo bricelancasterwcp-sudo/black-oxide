@@ -1,0 +1,18 @@
+```rust
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+impl Rectangle {
+    fn area(&self) -> Int {
+        self.width * self.height
+    }
+}
+
+fn main() {
+    let rect = Rectangle { width: 2, height: 3 };
+    let rect2 = Rectangle { width: 5, height: 3 }; // fix the move error by cloning or reassigning
+    println!("{}", rect.area());
+}
+```

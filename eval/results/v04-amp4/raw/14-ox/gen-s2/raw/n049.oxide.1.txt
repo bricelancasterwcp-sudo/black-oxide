@@ -1,0 +1,10 @@
+```ox
+fn main() {
+    let figures = push(push(push(push(vec(), 8), 3), 11), 6)
+    let min_val = unwrap_or(min(figures), -1)
+    let max_val = unwrap_or(max(figures), -1)
+    let gap = max_val - min_val
+    print(min_val)
+    print(gap)
+}
+```

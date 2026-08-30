@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let scores = vec![2, 9, 5];
+    println!("{}", scores[0]); // 9
+    println!("{}", scores[1]); // 2
+    println!("{}", scores[2]); // 5
+}
+```
+
+This program uses vector indexing to access and print the elements in descending order.

@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let arr = [9, 2, 7, 4];
+
+    for i in 0..arr.len() - 1 {
+        for j in (i + 1)..arr.len() {
+            if arr[i] > arr[j] {
+                arr.swap(i, j);
+            }
+        }
+    }
+
+    for &v in arr.iter() { // Changed to borrow from the iterator
+        println!("{}", v); // Print each element
+    }
+}
+```

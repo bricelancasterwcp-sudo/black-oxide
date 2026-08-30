@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let phrase = "when in doubt go home"
+    let words: Vec<Str> = vec()
+    for char in chars(phrase) {
+        if char != ' ' {
+            words = push(words, concat(char))
+        } else {
+            words = push(words, "")
+        }
+    }
+    let word_count = len(words)
+    let char_count = str_len(phrase)
+    print(word_count)
+    print(char_count)
+}
+```

@@ -1,0 +1,9 @@
+```
+fn main() {
+    let mut x = 2;
+    while x * x <= 100 {
+        x *= 2;
+    }
+    println!("{}", x - 1);
+}
+```

@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let a = 4 * 3;
+    let b = 5 * 2;
+    println!("Line 1: {}", a);
+    println!("Line 2: {}", b);
+    println!("Total: {}", a + b);
+}
+```
+
+The output will be:
+```
+Line 1: 12
+Line 2: 10
+Total: 22
+```

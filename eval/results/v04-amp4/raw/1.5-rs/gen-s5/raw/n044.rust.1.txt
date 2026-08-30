@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut balance = 0;
+    let deposits = vec![3, 1, 4, 1, 5];
+
+    for &deposit in &deposits {
+        balance += deposit;
+        println!("{}", balance);
+    }
+}
+```
+
+This program initializes a variable `balance` to zero. It then iterates over the vector `deposits` using a `for` loop. For each element (`&deposit`) in the vector, it adds that value to `balance`, prints the current balance, and moves on to the next element. The final balance is printed at the end of the program.

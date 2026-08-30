@@ -1,0 +1,18 @@
+```
+struct StockLine { quantity: Int, price: Int }
+
+fn total_value(line: StockLine) -> Int {
+    line.quantity * line.price
+}
+
+fn main() {
+    let line1 = StockLine { quantity: 4, price: 3 }
+    let line2 = StockLine { quantity: 5, price: 2 }
+    
+    print(total_value(line1))
+    print(total_value(line2))
+    
+    let total = total_value(StockLine { quantity: 4, price: 3 }) + total_value(StockLine { quantity: 5, price: 2 })
+    print(total)
+}
+```

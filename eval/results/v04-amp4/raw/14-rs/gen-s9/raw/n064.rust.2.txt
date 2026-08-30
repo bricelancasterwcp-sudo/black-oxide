@@ -1,0 +1,15 @@
+fn main() {
+    let list = vec![10, 20];
+    
+    if let Some(value) = list.get(1) {
+        println!("{}", value);
+    } else {
+        println!("none");
+    }
+    
+    if let Some(value) = list.get(3) {
+        println!("{}", value);
+    } else {
+        println!("none");
+    }
+}

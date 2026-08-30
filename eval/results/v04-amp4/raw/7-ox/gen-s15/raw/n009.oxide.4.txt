@@ -1,0 +1,7 @@
+fn main() {
+    let num = 1234;
+    let digits: Vec<Str> = chars(int_to_str(num));
+    let reversed_digits: Vec<Str> = reverse(digits);
+    let reversed_num = concat(reversed_digits);
+    print(parse_int(reversed_num));
+}

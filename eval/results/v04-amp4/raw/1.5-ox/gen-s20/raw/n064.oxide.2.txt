@@ -1,0 +1,15 @@
+```
+struct List(Vec<Int>);
+
+impl List {
+    fn get(&self, pos: Int) -> Option<&Int> {
+        self.0.get(pos as usize)
+    }
+}
+
+fn main() {
+    let list = List(vec![10, 20]);
+    print(list.get(0));  // prints: Some(10)
+    print(list.get(3));  // prints: None
+}
+```

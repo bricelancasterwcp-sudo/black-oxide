@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let nums = vec!(9, 2, 12, 5, 16);
+    for num in nums {
+        if num < 10 {
+            println!("{}", num);
+        }
+    }
+    let kept_count = count_if(nums.clone(), |x| x < 10);
+    println!("Kept {} numbers", kept_count);
+}
+```

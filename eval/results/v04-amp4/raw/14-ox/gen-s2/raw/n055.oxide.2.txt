@@ -1,0 +1,3 @@
+fn parse\_int\_or\_bad(s: Str) -> Str { match parse\_int(s) { Some(n) => int\_to\_str(n), None => "bad".clone(), } }
+
+fn main() { let entries = vec("8", "oak", "15") for entry in entries { print(parse\_int\_or\_bad(entry)) } }

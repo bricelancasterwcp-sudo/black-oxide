@@ -1,0 +1,15 @@
+Here's the fully corrected Rust program:
+
+```rust
+fn main() {
+    let input = "when in doubt go home";
+
+    let words_count = input.split_whitespace().count();
+    let chars_count = input.len();
+
+    println!("Words: {}", words_count);
+    println!("Chars including spaces: {}", chars_count);
+}
+```
+
+This version of the code correctly counts the number of words and characters, including spaces. The `split_whitespace()` function splits the input string into an iterator of words based on whitespace, then uses the `count()` method to count these words. The `len()` method is used to get the length of the entire string, which includes all characters including spaces.

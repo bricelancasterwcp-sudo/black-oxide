@@ -1,0 +1,16 @@
+fn count_above_five(v: Vec<Int>) -> Int {
+    count_if(v, |x| x > 5)
+}
+
+fn max_reading(v: Vec<Int>) -> Int {
+    let max = max(v).unwrap_or(-1);
+    max
+}
+
+fn main() {
+    let readings = push(push(push(push(vec(), 6), 11), 3), 14);
+    readings.push(9);
+    print(count_above_five(readings.clone()));
+    println();
+    print(max_reading(&readings));
+}

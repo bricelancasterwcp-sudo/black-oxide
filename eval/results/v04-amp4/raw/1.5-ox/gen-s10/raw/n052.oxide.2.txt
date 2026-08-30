@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let banana = "banana";
+    for i in 0..banana.len() {
+        if banana.chars().nth(i) == Some('n') {
+            println!("{}", i);
+        }
+    }
+}
+```
+
+The problem was that the `main` function did not have a closing brace at the end. The corrected program has the missing brace added, ensuring that the code is syntactically correct and will compile without errors.

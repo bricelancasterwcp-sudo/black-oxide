@@ -1,0 +1,14 @@
+```
+fn main() {
+    let vec = push(push(vec(), 10), 20);
+    match get(vec, 1) {
+        Some(n) => print(n),
+        None => print_str("Position 1 is empty"),
+    }
+    let vec = push(push(vec(), 10), 20); // Reinitialize the vector
+    match get(vec, 4) {
+        Some(n) => print(n),
+        None => print_str("Position 4 is empty"),
+    }
+}
+```

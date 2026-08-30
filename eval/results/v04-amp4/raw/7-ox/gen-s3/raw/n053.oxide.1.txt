@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let s = "drum";
+    print_str(concat(s, str_rev(s)))
+}
+
+fn str_rev(s: Str) -> Str {
+    let mut chars = chars(s);
+    let len = str_len(s);
+    let mut result = vec![0; len];
+    for i in 0..len {
+        result[i] = chars.pop().unwrap();
+    }
+    concat(result, vec![])
+}
+```

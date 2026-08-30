@@ -1,0 +1,22 @@
+```
+fn filter_and_count_under_ten(vec: Vec<Int>) -> (Vec<Int>, Int) {
+    let mut result = vec()
+    let mut count = 0
+    for x in vec {
+        if x < 10 {
+            result = push(result, x)
+            count += 1
+        }
+    }
+    (result, count)
+}
+
+fn main() {
+    let numbers = vec(9, 2, 12, 5, 16)
+    let (kept_numbers, count) = filter_and_count_under_ten(numbers)
+    for num in kept_numbers {
+        print(num)
+    }
+    print(count)
+}
+```

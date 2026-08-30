@@ -1,0 +1,10 @@
+fn main() {
+    let numbers = vec![9, 2, 12, 5, 16];
+    let count = numbers.iter().filter(|&x| *x < 10).count();
+    for &n in numbers {
+        if n < 10 {
+            println!("{}", n);
+        }
+    }
+    println!("Kept: {}", count);
+}

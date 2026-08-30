@@ -1,0 +1,26 @@
+```rust
+fn main() {
+    let num = 91;
+    let mut is_prime = true;
+
+    for i in 2..num {
+        if num % i == 0 {
+            println!("No");
+            is_prime = false;
+            break;
+        }
+    }
+
+    // Check if the number is greater than 2
+    if num > 2 && !is_prime {
+        println!("No");
+    } else {
+        println!("Yes");
+    }
+}
+```
+
+Explanation:
+The original program had an error in checking whether a prime number was odd. The condition `num % i == 0` checks if any number between 2 and `num-1` divides `num`. If it finds such a divisor, it immediately prints "No" and sets `is_prime` to false. This is incorrect because the program should only print "No" if no divisors are found other than 1 and itself.
+
+To fix this, we first check if `num` is greater than 2. If it is, we then proceed to check for divisors from 2 to `num-1`. Once a divisor is found, we set `is_prime` to false and break out of the loop. After checking all possible divisors, we print "No" if `is_prime` is still true (meaning no divisors were found), and "Yes" otherwise.

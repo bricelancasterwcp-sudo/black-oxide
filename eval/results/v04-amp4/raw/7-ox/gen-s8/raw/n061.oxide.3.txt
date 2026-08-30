@@ -1,0 +1,6 @@
+fn main() {
+    let length = 9;
+    let width = 3;
+    print(length * width); // Area
+    print(length + length + width + width); // Perimeter
+}

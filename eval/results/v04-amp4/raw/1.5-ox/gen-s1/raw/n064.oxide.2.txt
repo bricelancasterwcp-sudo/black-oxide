@@ -1,0 +1,19 @@
+```
+struct Position { index: Int }
+
+fn main() {
+    let vec = vec![10, 20];
+    
+    if let Some(pos1) = get(vec, 1) {
+        print(pos1.index);
+    } else {
+        print_str("Position 1 is empty");
+    }
+    
+    if let Some(pos4) = get(vec, 3) {
+        print(pos4.index);
+    } else {
+        print_str("Position 4 is empty");
+    }
+}
+```

@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let a = [10, 20];
+
+    // Look up position one and four
+    if let Some(val) = a.get(0) {
+        println!("{}", val); // Position one is 10
+
+        if let Some(val) = a.get(3) {
+            println!("{}", val); // Position four is 20
+        } else {
+            println!("Position four does not exist.");
+        }
+    } else {
+        println!("Position one does not exist.");
+    }
+}
+```

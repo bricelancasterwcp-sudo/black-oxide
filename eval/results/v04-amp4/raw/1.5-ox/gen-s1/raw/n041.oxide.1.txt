@@ -1,0 +1,11 @@
+```
+struct Reading { label: Str, values: Vec<Int> }
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(vec(), 3), 42) }
+    println!("{}", r.values[0]);           // print the smallest
+    println!("{}", r.values[1]);           // print the second smallest
+    println!("{}", r.values[2]);           // print the third smallest
+    println!("{}", r.values[3]);           // print the largest
+}
+```

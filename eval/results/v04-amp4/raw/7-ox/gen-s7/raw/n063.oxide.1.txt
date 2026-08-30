@@ -1,0 +1,12 @@
+```oxide
+struct Line { items: Vec<Unit>, price_per_unit: Int }
+
+fn main() {
+    let first_line = Line { items: push(push(vec(), Unit), Unit), price_per_unit: 3 }
+    let second_line = Line { items: push(push(push(vec(), Unit), Unit), Unit), price_per_unit: 2 }
+    
+    print(len(first_line.items) * first_line.price_per_unit)
+    print(len(second_line.items) * second_line.price_per_unit)
+    print((len(first_line.items) * first_line.price_per_unit + len(second_line.items) * second_line.price_per_unit))
+}
+```

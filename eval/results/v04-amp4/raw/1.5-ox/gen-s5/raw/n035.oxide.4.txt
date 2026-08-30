@@ -1,0 +1,25 @@
+```rust
+fn main() {
+    let mut a = read_int("a")?;
+    let b = read_int("b")?;
+
+    if b == 0 {
+        println!("Error: Division by zero");
+    } else {
+        println!("Result: {}", a / b);
+    }
+}
+
+fn read_int(prompt: &str) -> Result<i32, &'static str> {
+    print!("{}", prompt);
+    io::stdout().flush()?;
+
+    let mut input = String::new();
+    io::stdin().read_line(&mut input)?;
+
+    match input.trim().parse::<i32>() {
+        Ok(num) => Ok(num),
+        Err(_) => Err("Invalid input, please enter an integer"),
+    }
+}
+```

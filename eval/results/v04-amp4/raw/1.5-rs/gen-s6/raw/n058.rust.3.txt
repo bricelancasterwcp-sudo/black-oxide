@@ -1,0 +1,15 @@
+Here is the corrected code:
+
+```rust
+fn main() {
+    let text = "coffee";
+    for (char, count) in text.chars().fold(std::collections::HashMap::new(), |mut map, c| {
+        *map.entry(c).or_insert(0) += 1;
+        map
+    }) {
+        if count > 1 {
+            println!("{}", char);
+        }
+    }
+}
+```

@@ -1,0 +1,16 @@
+fn signal_meaning(s: Str) -> Str {
+    match s {
+        "green" => "go",
+        "red" => "stop",
+        "yellow" => "wait",
+        _ => "unknown",
+    }
+}
+
+fn main() {
+    print(signal_meaning("green"));  // go
+    print_str("\n");
+    print(signal_meaning("red"));    // stop
+    print_str("\n");
+    print(signal_meaning("yellow")); // wait
+}

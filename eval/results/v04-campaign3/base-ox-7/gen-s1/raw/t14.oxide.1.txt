@@ -1,0 +1,7 @@
+```oxide
+fn main() {
+    let s = "mississippi"
+    print(count(s.chars(), "s"))
+    print(len(set(s.chars())))
+}
+```

@@ -1,0 +1,7 @@
+fn main() {
+    let mut sum = 0;
+    for n in 1..=5 {
+        sum += (n as i32).pow(3);
+    }
+    println!("Sum of cubes: {}", sum);
+}

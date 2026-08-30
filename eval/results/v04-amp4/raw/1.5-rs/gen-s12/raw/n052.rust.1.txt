@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let text = "banana";
+    for i in 0..text.len() {
+        if text.chars().nth(i) == Some('n') {
+            println!("{}", i);
+        }
+    }
+}
+```

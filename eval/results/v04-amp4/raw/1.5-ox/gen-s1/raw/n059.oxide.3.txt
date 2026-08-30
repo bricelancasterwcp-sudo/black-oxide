@@ -1,0 +1,15 @@
+```
+fn word_count(s: Str) -> Int {
+    s.chars().filter(|&c| c != ' ').count()
+}
+
+fn char_count(s: Str) -> Int {
+    s.len()
+}
+
+fn main() {
+    let phrase = "When in doubt go home";
+    print(word_count(phrase));
+    println(char_count(phrase));
+}
+```

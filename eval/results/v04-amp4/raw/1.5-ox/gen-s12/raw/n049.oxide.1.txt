@@ -1,0 +1,36 @@
+```rust
+struct Figure {
+    name: Str,
+}
+
+fn smallest_figure(figures: &[Figure]) -> Int {
+    figures.iter().map(|f| f.name).min().unwrap_or("No figures")
+}
+
+fn largest_gap(figures: &[Figure]) -> Int {
+    let mut max_gap = 0;
+    for i in 1..figures.len() {
+        let gap = figures[i].name.chars().count() - figures[i-1].name.chars().count();
+        if gap > max_gap {
+            max_gap = gap;
+        }
+    }
+    max_gap
+}
+
+fn main() {
+    let figs = vec![
+        Figure { name: "Triangle".to_string() },
+        Figure { name: "Square".to_string() },
+        Figure { name: "Hexagon".to_string() },
+    ];
+
+    print(smallest_figure(&figs));
+    println(largest_gap(&figs));
+}
+```
+
+**Explanation**:
+- The `smallest_figure` function finds the smallest figure's name from a list of figures.
+- The `largest_gap` function calculates the largest gap between consecutive figure names by iterating through the list and calculating the difference in character counts.
+- In the main function, we create a vector of `Figure` instances and call both functions to print their results.

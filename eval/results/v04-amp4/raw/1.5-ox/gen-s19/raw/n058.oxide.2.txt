@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let mut counts = [0; 26];
+    for c in "coffee".chars() {
+        if let Some(d) = c.to_digit(10) {
+            counts[d as usize] += 1;
+        }
+    }
+    for (i, count) in counts.iter().enumerate() {
+        if *count > 1 {
+            print!("{}", (i as u8 + b'a') as char);
+        }
+    }
+}
+```

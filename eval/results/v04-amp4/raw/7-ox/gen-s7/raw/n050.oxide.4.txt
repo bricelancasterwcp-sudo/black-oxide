@@ -1,0 +1,7 @@
+fn main() {
+    let mut scores = vec![2, 9, 5];
+    scores = sort(scores);
+    for score in scores {
+        println!("{}", score);
+    }
+}

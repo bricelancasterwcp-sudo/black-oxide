@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let (a, b) = (1, 1);
+    for _ in 1..9 {
+        a = a + b;
+        b = a - b; // Using subtraction to reverse the order of terms
+    }
+    println!("The tenth term is {}", b); // Printing the last term after reversing it
+}
+```

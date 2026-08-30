@@ -1,0 +1,24 @@
+```rust
+struct List { value: Int }
+
+fn get(lists: Vec<List>, pos: Int) -> Option<Int> {
+    for list in lists {
+        if list.value == pos {
+            return Some(pos);
+        }
+    }
+    None
+}
+
+fn main() {
+    let lists = vec![List { value: 10 }, List { value: 20 }];
+    match get(lists.clone(), 1) {
+        Some(val) => print(val),
+        None => print_str("none"),
+    };
+    match get(lists.clone(), 4) {
+        Some(val) => print(val),
+        None => print_str("none"),
+    };
+}
+```

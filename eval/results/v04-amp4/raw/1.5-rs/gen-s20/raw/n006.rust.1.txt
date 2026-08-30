@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let mut power = 0;
+    while (2usize.pow(power)) <= 100 {
+        power += 1;
+    }
+    println!("The biggest power of two not exceeding 100 is: {}", 2usize.pow(power - 1));
+}
+```

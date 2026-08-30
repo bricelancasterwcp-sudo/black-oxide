@@ -1,0 +1,6 @@
+```
+main() {
+    print_str("G")
+    print_str("A")
+}
+```

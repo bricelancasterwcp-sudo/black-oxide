@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut scores = vec![9, 2, 5];
+    scores.sort_unstable_by(|a, b| b.cmp(a));
+    for score in scores {
+        println!("{}", score);
+    }
+}
+```
+
+This program now compiles and prints the scores in descending order.

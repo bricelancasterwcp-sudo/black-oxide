@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let (total, count) = texts.fold((0, 0), |(t, c), s| match parse_int(s) {
+        Some(n) => (t + n, c),
+        None => (t, c + 1)
+    });
+    print(total);
+    print(count);
+}
+```

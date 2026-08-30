@@ -1,0 +1,7 @@
+fn main() {
+    let s = "mississippi"
+    let count_s = count(s.chars(), "s")
+    let distinct_chars = chars(s).iter().unique().count()
+    print(count_s)
+    print(distinct_chars)
+}

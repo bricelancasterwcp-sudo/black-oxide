@@ -1,0 +1,22 @@
+```rust
+fn main() {
+    let eight = match "8" {
+        "8" => Some(8),
+        _ => None,
+    };
+
+    let oak = match "oak" {
+        "oak" => Some(String::from("oak")),
+        _ => None,
+    };
+
+    let fifteen = match "fifteen" {
+        "fifteen" => Some(15),
+        _ => None,
+    };
+
+    println!("{:?}", eight);
+    println!("{:?}", oak);
+    println!("{:?}", fifteen);
+}
+```

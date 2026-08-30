@@ -1,0 +1,10 @@
+```ox
+fn cube(n: Int) -> Int {
+    n * n * n
+}
+
+fn main() {
+    let total = sum(map(range(1, 6), cube))
+    print(total)
+}
+```

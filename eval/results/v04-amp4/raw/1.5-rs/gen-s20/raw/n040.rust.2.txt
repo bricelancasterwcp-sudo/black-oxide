@@ -1,0 +1,4 @@
+fn main() {
+    let area = (4 * std::f64::consts::PI) as isize; // Area of a square with side 4 and π = 3.14
+    println!("Area of the square: {}", area);
+}

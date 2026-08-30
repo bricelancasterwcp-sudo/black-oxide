@@ -1,0 +1,26 @@
+```rust
+fn count_under_cutoff(numbers: Vec<Int>, cutoff: Int) -> Int {
+    let mut count = 0;
+    for &num in numbers.iter() {
+        if num < cutoff {
+            count += 1;
+        }
+    }
+    count
+}
+
+fn main() {
+    let numbers = vec![5, 12, 3, 18, 9];
+    let cutoff = 10;
+
+    let count_under = count_under_cutoff(numbers.clone(), cutoff);
+    let count_over_or_equal = numbers.len() - count_under;
+
+    print(count_under);
+    print_str(" fall under the cutoff");
+    print(count_over_or_equal);
+    println_str(", and ");
+    print(count_over_or_equal);
+    print_str(" sit at or over it.");
+}
+```

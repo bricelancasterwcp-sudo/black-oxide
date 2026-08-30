@@ -1,0 +1,24 @@
+fn max_len(fruit: Str) -> Int {
+    let len = str_len(fruit)
+    if len > 0 {
+        len
+    } else {
+        0
+    }
+}
+
+fn main() {
+    let fig = "fig"
+    let banana = "banana"
+    let kiwi = "kiwi"
+
+    let max_fruit = match (max_len(fig), max_len(banana), max_len(kiwi)) {
+        (f, b, k) if f >= b && f >= k => fig,
+        (b, _, _) if b >= k => banana,
+        _ => kiwi,
+    };
+
+    print(max_fruit)
+    print_str(" ")
+    print(max_len(max_fruit))
+}

@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let length = 9;
+    let width = 3;
+    print_area(length, width);
+    print_edge_length(length, width);
+}
+
+fn print_area(length: Int, width: Int) {
+    let area = length * width;
+    println!("Area: {}", area);
+}
+
+fn print_edge_length(length: Int, width: Int) {
+    let perimeter = 2 * (length + width);
+    println!("Perimeter: {}", perimeter);
+}
+```

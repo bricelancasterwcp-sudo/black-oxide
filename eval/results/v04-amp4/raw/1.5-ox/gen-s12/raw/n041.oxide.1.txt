@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let v = sort(vec(9, 2, 7, 4));
+    for x in v {
+        print_str(int_to_str(x));
+        println!();
+    }
+}
+```

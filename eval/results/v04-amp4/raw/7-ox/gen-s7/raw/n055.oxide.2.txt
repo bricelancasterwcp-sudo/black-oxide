@@ -1,0 +1,16 @@
+fn main() {
+    let entry1 = "8";
+    let entry2 = "oak";
+    let entry3 = "15";
+
+    print(handle_entry(entry1));
+    print(handle_entry(entry2));
+    print(handle_entry(entry3));
+
+    fn handle_entry(e: Str) -> Str {
+        match parse_int(e) {
+            Some(n) => int_to_str(n),
+            None => "bad",
+        }
+    }
+}

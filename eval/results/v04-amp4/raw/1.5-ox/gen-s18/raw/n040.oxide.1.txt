@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let sq = Shape::Square(4);
+    print(sq.area());
+}
+```
+
+This Rust program defines a `Shape` enum that can represent either a square or a circle. It then creates a `Square` instance with side length 4 and prints its area using the `area` method, which is defined for both `Square` and `Circle` types. The area of a square is calculated by squaring the side length, and the area of a circle is calculated by multiplying the radius by itself and then multiplying by pi (3.14).

@@ -1,0 +1,22 @@
+```
+fn first_letter(s: Str) -> Str {
+    let chars = chars(s)
+    let first = get(chars, 0)?
+    Some(first)
+}
+
+fn last_letter(s: Str) -> Str {
+    let chars = chars(s)
+    let len = len(chars)
+    let last = get(chars, len - 1)?
+    Some(last)
+}
+
+fn main() {
+    let word = "granite"
+    let first = first_letter(word)?
+    let last = last_letter(word)?
+    print(first)
+    print(last)
+}
+```

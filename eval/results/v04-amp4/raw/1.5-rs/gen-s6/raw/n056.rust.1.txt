@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let nums: [i32; 4] = [7, 10, 9, ?];
+    let mut sum: i32 = 0;
+    let mut count: u32 = 0;
+
+    for &num in nums.iter() {
+        if num != ? {
+            sum += num;
+            count += 1;
+        }
+    }
+
+    println!("Sum of valid numbers: {}", sum);
+    println!("Count of invalid numbers: {}", count);
+}
+```

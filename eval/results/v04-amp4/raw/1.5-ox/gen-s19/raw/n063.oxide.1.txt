@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let a = 4 * 3 + 5 * 2;
+    println!("Line A: {}", a);
+    let b = 4 * 3 + 5 * 2;
+    println!("Line B: {}", b);
+    println!("Both lines together: {}", a + b);
+}
+```

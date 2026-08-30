@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    print('g');
+    println!();
+    print('e');
+    println!();
+}
+```
+
+Explanation:
+The error was due to missing parentheses around `println!()`. Rust requires explicit parentheses for macro invocations. The corrected program prints the characters 'g' and 'e', each on a new line.

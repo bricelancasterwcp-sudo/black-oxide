@@ -1,0 +1,25 @@
+```rust
+struct Shape {
+    kind: String,
+    params: Vec<f64>,
+}
+
+impl Shape {
+    fn new(kind: String, params: Vec<f64>) -> Self {
+        Shape { kind, params }
+    }
+
+    fn area(&self) -> f64 {
+        match &self.kind {
+            "square" => self.params[0] * self.params[0],
+            "circle" => self.params[0] * self.params[0] * std::f64::consts::PI,
+            _ => panic!("Invalid shape"),
+        }
+    }
+}
+
+fn main() {
+    let shape = Shape::new("square".to_string(), vec![4.0]);
+    print(format!("Area: {}", shape.area()));
+}
+```

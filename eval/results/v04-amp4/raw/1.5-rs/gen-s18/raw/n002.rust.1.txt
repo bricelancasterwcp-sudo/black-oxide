@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let result = (1..=6).product();
+    println!("Product of numbers from 1 to 6: {}", result);
+}
+```
+
+In this solution:
+- `(1..=6)` generates a range from 1 to 6 inclusive.
+- `.product()` calculates the product of all elements in the range.
+- The result is then printed.

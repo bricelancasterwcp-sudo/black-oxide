@@ -1,0 +1,5 @@
+fn main() {
+    let list = vec![Some(10), Some(20)];
+    println!("{:?}", list.get(0).and_then(|&x| Some(x)));
+    println!("{:?}", list.get(3).map_or(None, |&x| Some(x)));
+}

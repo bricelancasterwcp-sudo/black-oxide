@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let nums = [9, 2, 12, 5, 16];
+    let mut count = 0;
+    for &num in nums.iter().filter(|&&n| n < 10) {
+        println!("{}", num);
+        count += 1;
+    }
+    println!("Kept {} numbers under ten.", count);
+}
+```
+
+In this solution, we declare an array of integers `nums`. We initialize a variable `count` to zero. Then we iterate over each element in the array using `iter()` and apply the filter closure `|&&n| n < 10`, which checks if the number is less than ten. If true, we print the number and increment the count by one. Finally, we print how many numbers were kept under ten by printing the value of `count`.

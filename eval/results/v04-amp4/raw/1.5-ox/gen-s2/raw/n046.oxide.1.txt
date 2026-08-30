@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let arr = [5, 12, 3, 18, 9];
+    let mut count_under_cutoff = 0;
+    let mut count_at_or_over_cutoff = 0;
+
+    for &value in &arr {
+        if value < 10 {
+            count_under_cutoff += 1;
+        } else {
+            count_at_or_over_cutoff += 1;
+        }
+    }
+
+    print!("Values under cutoff: {}, values at or over cutoff: {}\n", count_under_cutoff, count_at_or_over_cutoff);
+}
+```

@@ -1,0 +1,13 @@
+fn get_second_entry<T>(list: &[T]) -> Option<&T> {
+    list.get(1)
+}
+
+fn main() {
+    let list7 = [7];
+    let list8 = [8, 9];
+    let list9: [&dyn std::fmt::Debug; 0] = [];
+
+    println!("{:?}", get_second_entry(&list7)); // None
+    println!("{:?}", get_second_entry(&list8)); // Some(9)
+    println!("{:?}", get_second_entry(&list9)); // None
+}

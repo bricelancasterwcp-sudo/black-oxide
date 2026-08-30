@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let max_power_of_two = 1 << ((32 - 1).leading_zeros() as u32);
+    println!("{}", max_power_of_two);
+}
+```
+
+Note: The error message indicates that the compiler is unable to determine which type `32` refers to in `((32 - 1).leading_zeros())`. In Rust, when using unsigned integers (like `u32`), we need to specify their size explicitly. So, changing `32` to `(32 as u32)` will resolve the issue.

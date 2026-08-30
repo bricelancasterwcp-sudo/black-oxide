@@ -1,0 +1,21 @@
+```
+fn main() {
+    let v = vec();
+    let v = push(v, 10);
+    let v = push(v, 20);
+
+    match get(v, 1) {
+        Some(x) => print(x),
+        None => print_str("None"),
+    }
+
+    let v = vec();  // Reinitialize v
+    let v = push(v, 10);
+    let v = push(v, 20);
+
+    match get(v, 4) {
+        Some(x) => print(x),
+        None => print_str("None"),
+    }
+}
+```

@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let signal = read_signal(); // Read the next signal
+
+    match signal {
+        "green" => println!("go for green"),
+        "red" => println!("stop for red"),
+        "yellow" => println!("wait for yellow"),
+        _ => println!("unknown signal"),
+    }
+}
+
+fn read_signal() -> String {
+    let mut signals = vec!["green", "red", "yellow"];
+    return signals.pop().unwrap(); // Randomly pick a signal
+}
+```

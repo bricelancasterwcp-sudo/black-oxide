@@ -1,0 +1,9 @@
+```
+struct Point { x: Int, y: Int }
+
+fn main() {
+    let r = Point { x: 9, y: 3 };
+    print(r.x * r.y);            // area of rectangle
+    print(2 * (r.x + r.y));     // total distance around edge
+}
+```

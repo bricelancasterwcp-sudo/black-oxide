@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let v = vec![None, Some(10), None, None, Some(20)];
+    for i in 1..=4 {
+        match get(v, i) {
+            Some(x) => print(x),
+            None => print_str("none"),
+        }
+    }
+}
+```

@@ -1,0 +1,14 @@
+fn count_vowels(s: Str) -> Int {
+    s.chars().filter(|&c| "aeiou".contains(c)).count()
+}
+
+fn main() {
+    let s = "hello world";
+    print(count_vowels(s));
+    println(" - ");
+    print(count_not_vowels(s));
+}
+
+fn count_not_vowels(s: Str) -> Int {
+    s.chars().filter(|&c| !"aeiou".contains(c)).count()
+}

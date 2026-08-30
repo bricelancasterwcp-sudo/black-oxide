@@ -1,0 +1,20 @@
+```oxide
+fn divide(a: Int, b: Int) -> Result<Int, Str> {
+    if b == 0 {
+        Err("bad")
+    } else {
+        Ok(a / b)
+    }
+}
+
+fn main() {
+    match divide(20, 4)? {
+        result => print(result),
+    }
+
+    match divide(20, 0)? {
+        result => print(result),
+        err => print_str(err),
+    }
+}
+```

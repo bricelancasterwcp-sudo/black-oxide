@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut n = 100;
+    while n > 1 {
+        if n % 2 == 0 {
+            println!("{}", n);
+            return;
+        }
+        n -= 1;
+    }
+    println!("1");
+}
+```

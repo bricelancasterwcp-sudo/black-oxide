@@ -1,0 +1,9 @@
+```ox
+fn main() {
+    let product = Int(1)
+    for i in range(Int(1), Int(7)) {
+        product = product * i
+    }
+    print(product)
+}
+```

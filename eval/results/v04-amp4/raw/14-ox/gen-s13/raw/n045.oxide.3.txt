@@ -1,0 +1,7 @@
+struct Log { entries: Vec<Int> }
+
+fn main() {
+    let log = Log { entries: push(push(push(push(vec(), 6), 7), 8), 9) }
+    print(unwrap_or(get(log.entries, 0), -1))  // Print the first entry
+    print(unwrap_or(get(log.entries, len(log.entries) - 1), -1))  // Print the last entry
+}

@@ -1,0 +1,38 @@
+```rust
+fn main() {
+    let mut balance = 0;
+    
+    if let Ok(new_balance) = deposits(3) {
+        balance += new_balance;
+    }
+    println!("{}", balance);
+    
+    if let Ok(new_balance) = deposits(1) {
+        balance += new_balance;
+    }
+    println!("{}", balance);
+    
+    if let Ok(new_balance) = deposits(4) {
+        balance += new_balance;
+    }
+    println!("{}", balance);
+    
+    if let Ok(new_balance) = deposits(1) {
+        balance += new_balance;
+    }
+    println!("{}", balance);
+    
+    if let Ok(new_balance) = deposits(5) {
+        balance += new_balance;
+    }
+    println!("{}", balance);
+}
+
+fn deposits(amount: Int) -> Result<Int, String> {
+    if amount > 0 {
+        Ok(amount)
+    } else {
+        Err("Amount must be positive".to_string())
+    }
+}
+```

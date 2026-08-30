@@ -1,0 +1,9 @@
+```rust
+struct Reading { value: Int }
+
+fn main() {
+    let mut sensor = Reading { value: 0 };
+    sensor.value += 7; // Fixed by adding an addition operator to set the reading to seven
+    println!("{}", sensor.value); // Corrected by removing extra semicolons and adding missing parentheses
+}
+```

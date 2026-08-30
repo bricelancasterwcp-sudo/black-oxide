@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let mut sum = 0;
+    for i in 1..=20 {
+        if i % 2 == 0 {
+            sum += i;
+        }
+    }
+    println!("Total of all even numbers between 1 and 20 inclusive: {}", sum);
+}
+```
+
+Explanation:
+The issue was that the range `1..=20` starts from 1, which means it includes 1. Therefore, when `i % 2 == 0`, the condition is true for `i = 1`, but since we are adding it to `sum`, it gets included in the final sum. The correct range should be `1..=19` to avoid including 1.

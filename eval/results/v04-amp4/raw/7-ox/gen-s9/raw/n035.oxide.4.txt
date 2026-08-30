@@ -1,0 +1,11 @@
+fn main() {
+    let result = divide(20, 4) ? "bad";
+    print(result);
+}
+
+fn divide(x: Int, y: Int) -> Str {
+    if y == 0 {
+        return "bad"
+    }
+    to_float(x / y).to_str()
+}

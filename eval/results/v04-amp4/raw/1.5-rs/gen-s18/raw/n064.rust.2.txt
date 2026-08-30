@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let my_list = [10, 20];
+    
+    match my_list.get(0) {
+        Some(x) => println!("Position 1: {}", x),
+        None => println!("Position 1 is empty"),
+    }
+    
+    match my_list.get(3) {
+        Some(x) => println!("Position 4: {}", x),
+        None => println!("Position 4 is empty"),
+    }
+}
+```

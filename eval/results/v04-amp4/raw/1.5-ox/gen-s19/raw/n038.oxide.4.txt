@@ -1,0 +1,13 @@
+```rust
+struct Reading { label: Str, values: Vec<Int> }
+
+fn main() {
+    let mut r = Reading { label: "lab", values: vec![0] };
+    r.values[0] = 7;
+    print(r.values[0]);
+}
+```
+
+Explanation of the corrections:
+1. Fixed the missing closing brackets and semicolons.
+2. Replaced `vec[0]` with `r.values[0]` to avoid referencing a borrowed value (`r`).

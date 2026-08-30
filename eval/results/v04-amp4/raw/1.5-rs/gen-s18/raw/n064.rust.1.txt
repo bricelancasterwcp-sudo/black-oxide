@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let my_list = [10, 20];
+    
+    println!("Position 1: {}", my_list.get(0));
+    println!("Position 4: {}", my_list.get(3)); // Position 4 is out of bounds for the list, so it will print none.
+}
+```

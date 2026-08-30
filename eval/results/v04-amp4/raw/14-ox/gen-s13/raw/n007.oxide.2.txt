@@ -1,0 +1,19 @@
+```rust
+fn sum_of_digits(n: Int) -> Int {
+    let mut sum = 0
+    let remaining = n
+
+    while remaining > 0 {
+        sum += remaining % 10
+        let new_remaining = remaining / 10
+        remaining = new_remaining
+    }
+
+    sum
+}
+
+fn main() {
+    let number = 9875
+    print(sum_of_digits(number))
+}
+```

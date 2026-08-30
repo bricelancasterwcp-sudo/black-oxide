@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let a = 1;
+    let mut b = 1;
+
+    for _ in 0..9 {
+        let c = a + b;
+        a = b;
+        b = c;
+    }
+
+    print(int_to_str(b));
+}
+```
+
+The program was rejected because the semicolons were missing after each variable declaration and assignment. Additionally, there were issues with line continuation and incorrect usage of `print` function. The corrected program ensures that all lines end with a semicolon, uses `print` for output, and fixes the incorrect method call.

@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut total = 0;
+    for i in [4,5] {
+        if i == 4 { total += 3 * 4 }
+        else { total += 2 * 5 }
+    }
+    print(total); // four units priced three each, five units priced two each
+    println(total); // value of both together
+}
+```

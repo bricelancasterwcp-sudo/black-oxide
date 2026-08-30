@@ -1,0 +1,20 @@
+```rust
+fn main() {
+    let args: Vec<String> = std::env::args().collect();
+    
+    match (args.get(1), args.get(2)) {
+        (Some(oak_str), Some(num_str)) => {
+            if oak_str == "oak" {
+                println!("good");
+            } else {
+                println!("bad");
+            }
+            match num_str.parse::<u32>() {
+                Ok(num) => println!("{}", num),
+                Err(_) => println!("bad")
+            }
+        },
+        _ => println!("bad"),
+    }
+}
+```

@@ -1,0 +1,46 @@
+```ox
+struct LetterCount {
+    letter: Str,
+    count: Int,
+}
+
+fn count_letters(s: Str) -> Vec<LetterCount> {
+    let mut counts = vec()
+    for c in chars(s) {
+        let found = false
+        for i in range(0, len(counts)) {
+            match get(counts, i) {
+                Some(count) => {
+                    if count.letter == c {
+                        let new_count = LetterCount { letter: c, count: count.count + 1 }
+                        counts = set(counts, i, new_count)
+                        found = true
+                        break
+                    }
+                },
+                None => {}
+            }
+        }
+        if !found {
+            let new_count = LetterCount { letter: c, count: 1 }
+            counts = push(counts, new_count)
+        }
+    }
+    counts
+}
+
+fn print_duplicates(counts: Vec<LetterCount>) {
+    for count in counts {
+        if count.count > 1 {
+            print_str(count.letter)
+            print_str("\n")
+        }
+    }
+}
+
+fn main() {
+    let word = "coffee"
+    let counts = count_letters(word)
+    print_duplicates(counts)
+}
+```

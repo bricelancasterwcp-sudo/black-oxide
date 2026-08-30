@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let mut occurrences = [0; 26];
+    
+    for c in "coffee".chars() {
+        occurrences[c as usize - 'a' as usize] += 1;
+    }
+    
+    for i in 0..26 {
+        if occurrences[i] > 1 {
+            print!("{}", i as u8 + b'a');
+        }
+    }
+}
+```

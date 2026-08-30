@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let count = range(1, 51)
+        .count_if(|x| x % 3 == 0 || x % 5 == 0)
+    print(count)
+}
+```

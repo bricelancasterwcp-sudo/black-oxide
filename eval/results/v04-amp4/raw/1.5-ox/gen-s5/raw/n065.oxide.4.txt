@@ -1,0 +1,29 @@
+```rust
+struct Reading { label: String, values: Vec<i32> }
+
+fn first_big(v: &Vec<i32>) -> usize {
+    let mut found = 0;
+    for &x in v.iter() {
+        if x > 5 {
+            found += 1;
+            break;
+        }
+    }
+    found
+}
+
+fn second(v: &Vec<i32>) -> Option<i32> {
+    let x = *v.get(1)?;
+    Some(x + 1)
+}
+
+fn main() {
+    let readings = vec![6, 11, 3, 14, 9];
+    
+    let count_over_five = first_big(&readings);
+    println!("{}", count_over_five);
+    
+    let max_reading = *readings.iter().max().unwrap();
+    println!("{}", max_reading);
+}
+```

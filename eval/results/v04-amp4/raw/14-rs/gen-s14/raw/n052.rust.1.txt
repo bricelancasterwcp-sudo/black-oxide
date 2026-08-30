@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let word = "banana";
+    for (index, letter) in word.chars().enumerate() {
+        if letter == 'n' {
+            println!("{}", index);
+        }
+    }
+}
+```

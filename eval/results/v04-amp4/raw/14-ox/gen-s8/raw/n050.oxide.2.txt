@@ -1,0 +1,1 @@
+fn main() { let scores = vec(9, 2, 5) let sorted_scores = sort(scores) for score in reverse(sorted_scores) { print(score) } }

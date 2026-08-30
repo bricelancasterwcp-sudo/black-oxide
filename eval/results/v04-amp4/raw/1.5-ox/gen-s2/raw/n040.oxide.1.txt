@@ -1,0 +1,21 @@
+```rust
+struct Square { side: Int }
+struct Circle { radius: Float }
+
+fn main() {
+    let s = Square { side: 4 };
+    println(to_float(circumference(s)) / 4.0);
+}
+
+fn area(sq: Square) -> Float {
+    sq.side * sq.side
+}
+
+fn circumference(sq: Square) -> Float {
+    4.0 * sq.side
+}
+
+fn area(circle: Circle) -> Float {
+    3.14159 * circle.radius * circle.radius
+}
+```

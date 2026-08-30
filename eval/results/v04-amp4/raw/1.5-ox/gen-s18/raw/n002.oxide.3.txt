@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let prod = (1..=6).map(|x| x as Int).product::<Int>();
+    println!("{}", prod);
+}
+```
+The original program had issues with using `map` and `product` in the wrong order, which is why it was rejected. The corrected program uses `map` to apply a function to each element of the range and then multiplies all the results together using the `product::<Int>()` method.

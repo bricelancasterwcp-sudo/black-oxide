@@ -1,0 +1,9 @@
+```text
+fn main() {
+    let readings = vec!(9, 2, 7, 4);
+    let sorted_readings = sort(readings);
+    for x in sorted_readings {
+        print(x);
+    }
+}
+```

@@ -1,0 +1,5 @@
+fn main() {
+    let num = 1234;
+    let reversed = format!("{}", num).chars().rev().collect::<String>();
+    println!("{}", reversed);
+}

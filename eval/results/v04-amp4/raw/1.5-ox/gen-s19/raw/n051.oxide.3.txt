@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    match "granite".chars().next() {
+        Some(c) => print_str(format!("{}\n{}", c, c)),
+        None => println_str("not granite"),
+    }
+}
+```

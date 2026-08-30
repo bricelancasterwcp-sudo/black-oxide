@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let a = 4 * 3;
+    let b = 5 * 2;
+    println!("Line 1: {}", a);
+    println!("Line 2: {}", b);
+    println!("Total: {}", a + b);
+}
+```
+
+Explanation:
+The diagnostics indicate that there are multiple semicolons in the source code, which is not allowed. The correct corrected program removes all unnecessary semicolons from the lines before the `println` statements.

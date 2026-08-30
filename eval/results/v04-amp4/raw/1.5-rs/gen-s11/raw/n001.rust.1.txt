@@ -1,0 +1,23 @@
+```rust
+fn main() {
+    let mut sum = 0;
+    for num in 1..=5 {
+        sum += num.pow(3);
+    }
+    println!("The sum of cubes from 1 to 5 is {}", sum);
+}
+```
+
+To run the program:
+- Save it as a file with a `.rs` extension, e.g., `main.rs`.
+- Open your terminal or command prompt.
+- Navigate to the directory where you saved the file.
+- Run the program by executing the following command:
+```sh
+rustc main.rs && ./main
+```
+
+You should see the output:
+```
+The sum of cubes from 1 to 5 is 225
+```

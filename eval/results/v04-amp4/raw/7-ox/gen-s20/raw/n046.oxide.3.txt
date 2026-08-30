@@ -1,0 +1,21 @@
+```oxide
+fn count_above_cutoff(v: Vec<Int>, cutoff: Int) -> (Int, Int) {
+    let mut below = 0;
+    let mut above = 0;
+    for x in v {
+        if x < cutoff {
+            below += 1;
+        } else {
+            above += 1;
+        }
+    }
+    (below, above)
+}
+
+fn main() {
+    let samples = vec!(5, 12, 3, 18);
+    let cutoff = 10;
+    let (below, above) = count_above_cutoff(samples.clone(), cutoff);
+    print(below); print_str(", "); print(above);
+}
+```

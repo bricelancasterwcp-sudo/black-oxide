@@ -1,0 +1,19 @@
+```text
+struct Signal { color: Str }
+
+fn process_signal(s: Signal) {
+    match s.color {
+        "green" => print_str("go"),
+        "red" => print_str("stop"),
+        "yellow" => print_str("wait"),
+        _ => print_str("unknown signal"),
+    }
+}
+
+fn main() {
+    let signals = vec(Signal { color: "green" }, Signal { color: "red" }, Signal { color: "yellow" })
+    for sig in signals {
+        process_signal(sig)
+    }
+}
+```

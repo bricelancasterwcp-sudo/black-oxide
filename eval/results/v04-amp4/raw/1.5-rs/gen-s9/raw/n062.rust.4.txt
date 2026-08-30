@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let signals = vec![("green", "go"), ("red", "stop"), ("yellow", "wait")];
+
+    for (signal, meaning) in signals.iter().cloned() {
+        println!("Signal: {}, Meaning: {}", signal, meaning);
+    }
+}
+```
+
+The corrected program is the same as the original, but it is now a complete Rust program with a function `main`. This function contains a vector of tuples representing the signals and their meanings. It then iterates over this vector using a for loop and prints each signal and its corresponding meaning. The output will be:
+
+```
+Signal: green, Meaning: go
+Signal: red, Meaning: stop
+Signal: yellow, Meaning: wait
+```

@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let arr = ["fig", "banana", "kiwi"];
+    let mut max_name: &str = arr[0];
+    let mut max_len = 0;
+
+    for name in arr.iter() {
+        if name.len() > max_len {
+            max_name = name;
+            max_len = name.len();
+        }
+    }
+
+    println!("The longest string is {} with length {}", max_name, max_len);
+}
+```

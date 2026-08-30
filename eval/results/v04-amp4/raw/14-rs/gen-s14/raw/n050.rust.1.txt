@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let scores = [9, 5, 2];
+    for &score in scores.iter().rev() {
+        println!("{}", score);
+    }
+}
+```

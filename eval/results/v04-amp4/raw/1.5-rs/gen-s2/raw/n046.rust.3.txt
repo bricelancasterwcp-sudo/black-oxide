@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let sample_data = vec![5, 12, 3, 18, 9];
+    let cutoff = 10;
+
+    let below_cutoff: usize = sample_data.iter().filter(|&&x| x < cutoff).count();
+    let above_or_equal_cutoff: usize = sample_data.iter().filter(|&&x| x >= cutoff).count();
+
+    println!("Below the cutoff: {}", below_cutoff);
+    println!("Above or equal to the cutoff: {}", above_or_equal_cutoff);
+}
+```
+The corrected program iterates over each element of `sample_data` and uses the filter method to count how many elements are less than the cutoff, then counts how many are greater than or equal to it.

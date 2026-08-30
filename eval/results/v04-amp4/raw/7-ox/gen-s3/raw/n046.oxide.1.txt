@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let samples = vec![5, 12, 3, 18, 9];
+    let cutoff = 10;
+    
+    let under_count = count_if(samples, |x| x < cutoff);
+    let over_count = count_if(samples, |x| x >= cutoff);
+    
+    print(under_count);
+    print_str(", ");
+    print(over_count);
+}
+```

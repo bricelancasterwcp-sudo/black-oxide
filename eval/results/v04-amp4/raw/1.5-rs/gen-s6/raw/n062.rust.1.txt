@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let signal = "green";
+    match signal {
+        "green" => println!("go for green"),
+        "red" => println!("stop for red"),
+        "yellow" => println!("wait for yellow"),
+        _ => println!("unknown signal"),
+    }
+}
+```
+
+This program declares the `main` function, which is the entry point of a Rust program. Inside the `main` function, it uses the `match` statement to check the value of the variable `signal`. Depending on the value, it prints a message indicating the action to take for that signal. If the value is not recognized, it prints "unknown signal".

@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let mut rect_wide = 2;
+    let mut rect_high = 3;
+
+    println!("Initial area: {}", rect_wide * rect_high);
+
+    rect_wide = 5;
+
+    println!("Updated area: {}", rect_wide * rect_high);
+}
+```

@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let arr = [8, 15];
+    for (i, &item) in arr.iter().enumerate() {
+        match item {
+            8 => println!("{} is a number", i),
+            "oak" => println!("{} is a tree", i),
+            15 => println!("{} is a number", i),
+            _ => print!("bad"),
+        }
+    }
+}
+```

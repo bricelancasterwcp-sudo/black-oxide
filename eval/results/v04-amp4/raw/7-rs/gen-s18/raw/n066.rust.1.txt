@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let numbers = vec![9, 2, 12, 5, 16];
+    let mut kept: Vec<_> = numbers.into_iter().filter(|&x| x < 10).collect();
+    
+    for num in &kept {
+        println!("{}", num);
+    }
+    
+    println!("Kept count: {}", kept.len());
+}
+```

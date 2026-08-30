@@ -1,0 +1,35 @@
+```rust
+use std::io::{self, BufRead};
+
+fn main() {
+    let stdin = io::stdin();
+    let mut lines = stdin.lock().lines();
+
+    let mut min_val: Option<Int> = None;
+    let mut max_val: Option<Int> = None;
+
+    for line in lines.flatten() {
+        if line.is_empty() {
+            continue;
+        }
+        match str::parse::<Int>(line.trim()) {
+            Ok(val) => {
+                if min_val.is_none() || val < min_val.unwrap() {
+                    min_val = Some(val);
+                }
+                if max_val.is_none() || val > max_val.unwrap() {
+                    max_val = Some(val);
+                }
+            }
+            Err(e) => println!("Error parsing line: {}", e),
+        }
+    }
+
+    let (Some(min), Some(max)) = (min_val, max_val) else {
+        println!("No figures found");
+        return;
+    };
+
+    println!("Smallest value: {}, Gap between largest and smallest: {}", min, max - min);
+}
+```

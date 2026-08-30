@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let figs = vec![3, 9, 42, 5, 11];
+    println!("Smallest figure: {}", min(&figs));
+    println!("Gap between largest and smallest: {}", max(&figs) - *min(&figs));
+}
+```

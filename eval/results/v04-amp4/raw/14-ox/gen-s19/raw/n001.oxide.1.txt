@@ -1,0 +1,17 @@
+```text
+fn cube(n: Int) -> Int {
+    n * n * n
+}
+
+fn sum_of_cubes(a: Int, b: Int) -> Int {
+    let mut total = 0
+    for i in range(a, b + 1) {
+        total = total + cube(i)
+    }
+    total
+}
+
+fn main() {
+    print(sum_of_cubes(1, 5))
+}
+```

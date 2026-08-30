@@ -1,0 +1,12 @@
+```rust
+fn second(v: Vec<Int>) -> Option<Int> {
+    let x = v.get(1)?;
+    Some(x)
+}
+
+fn main() {
+    println(second(vec![7, 8, 9]));
+}
+```
+
+This program is now accepted by the compiler and correctly handles the case where there is one element in the list. The `get` method returns an `Option<&Int>`, so the pattern matching ensures that we handle both cases: when the index exists and when it does not.

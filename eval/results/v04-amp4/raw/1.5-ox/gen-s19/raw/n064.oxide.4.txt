@@ -1,0 +1,29 @@
+```rust
+fn main() {
+    let mut lst = vec![10, 20];
+    println!("{}", get(&mut lst, 1)); // 20
+    println!("{}", get(&mut lst, 3)); // None
+}
+```
+
+Explanation of the error and how to fix it:
+The original code had several issues that prevented it from compiling. The errors indicated unexpected characters in places where they weren't expected (like missing closing brackets or semicolons), a use of `!` instead of `&`, and incorrect usage of `get`. 
+
+Here's what each part of the error message means:
+- `OX03xx` are type errors.
+  - The first two errors (`2:23: OX0001` and `2:30: OX0001`) indicate that there were unexpected characters (`[` and `]`) in places where they weren't expected. In this case, it was trying to define a list with square brackets instead of parentheses.
+  - The third error (`2:24: OX0101: expected end of statement, found BANG`) indicates that the use of the bang operator `!` is not allowed at the beginning of a line. The bang operator should be used for conditional expressions (like `if x > 10 { ... }`, but it doesn't work here because there's no condition).
+- `OX04xx` ownership errors.
+  - The second and third errors (`3:24: OX0001` and `4:24: OX0001`) indicate that the use of `&mut lst, 1)` and `&mut lst, 3)` is incorrect because they are attempting to move the vector into a function that takes it by value (i.e., moves ownership). The solution is to clone the vector before passing it to the function (`let mut lst = vec![10, 20]; let cloned_lst = lst.clone(); println!("{}", get(&mut cloned_lst, 1));`).
+- `OX0403` means a loop-carried move.
+  - The second error (`3:37: OX0403`) indicates that the use of `get(&mut lst, 3)` is incorrect because it attempts to move the vector into a function that takes it by value. The solution is to clone the vector before passing it to the function (`let mut lst = vec![10, 20]; let cloned_lst = lst.clone(); println!("{}", get(&mut cloned_lst, 3));`).
+- `OX0307` means a `match` is missing variants.
+  - The second error (`4:37: OX0307`) indicates that the use of `?` is incorrect because it was applied to a function that returns an `Option<T>`. The solution is to add an arm for the `None` case (e.g., `match second(lst) {
+        Some(n) => print(n),
+        None => print_str("too short"),
+    }`).
+- `OX0308` means `?` was applied where the function's return type is not the matching wrapper.
+  - The second error (`4:37: OX0308`) indicates that the use of `?` is incorrect because it was applied to a function that returns an `Option<T>`. The solution is to add an arm for the `None` case (e.g., `match second(lst) {
+        Some(n) => print(n),
+        None => print_str("too short"),
+    }`).

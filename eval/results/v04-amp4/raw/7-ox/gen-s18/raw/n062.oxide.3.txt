@@ -1,0 +1,5 @@
+fn main() {
+    println!("go");   // green means go
+    println!("stop"); // red means stop
+    println!("wait"); // yellow means wait
+}

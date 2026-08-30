@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let mut scores = vec![9, 2, 5];
+    scores.sort_unstable();
+    for &score in scores.iter().rev() {
+        print!("{}", score);
+    }
+}
+```
+
+The original code had several issues:
+1. The `scores` variable was not properly initialized.
+2. The `sort_unstable` method is called on a mutable vector, which is correct.
+3. The loop did not correctly handle the reversed order.
+4. There were missing semicolons and characters that were unexpected.
+5. The assignment of `&score` to `score` inside the loop was incorrect.

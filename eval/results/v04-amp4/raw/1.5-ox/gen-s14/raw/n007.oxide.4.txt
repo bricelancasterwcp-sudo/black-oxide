@@ -1,0 +1,11 @@
+fn main() {
+    let num = 9875;
+    let digits_str = format!("{}", num); // Use format! macro for string concatenation
+    let mut total = 0;
+
+    for digit in digits_str.chars() { // Use chars method to iterate over characters
+        total += digit.to_digit(10).unwrap_or(0);
+    }
+
+    println!("{}", total);
+}

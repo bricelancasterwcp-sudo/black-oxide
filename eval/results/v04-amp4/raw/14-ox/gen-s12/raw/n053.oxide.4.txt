@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let s = "drum";
+    let reversed_s = reverse(chars(s));
+    for c in reversed_s {
+        print_str(c);
+    }
+    print_str("\n");
+    print_str(s);
+}
+```

@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let (name, count) = ["fig", "banana", "kiwi"]
+        .iter()
+        .map(|&s| (s, s.len()))
+        .max_by_key(|&(_, len)| len)
+        .unwrap();
+    println!("{} {}", name, count);
+}
+```

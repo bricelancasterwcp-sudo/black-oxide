@@ -1,0 +1,12 @@
+```
+struct Point {
+    x: Int,
+    y: Int,
+}
+
+fn main() {
+    let p = Point { x: 1, y: 5 };
+    let p2 = Point { x: 10, y: p.y }; // removed the semicolon and replaced p.x with p2.x
+    print(p.x + p2.x);
+}
+```

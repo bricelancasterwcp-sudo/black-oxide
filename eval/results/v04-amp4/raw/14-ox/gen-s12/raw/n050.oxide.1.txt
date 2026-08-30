@@ -1,0 +1,9 @@
+```ox
+fn main() {
+    let scores = push(push(vec(), 2), push(vec(), 9))
+    let sorted_scores = sort(scores)
+    for s in sorted_scores {
+        print(s)
+    }
+}
+```

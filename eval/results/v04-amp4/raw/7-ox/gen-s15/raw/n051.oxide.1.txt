@@ -1,0 +1,5 @@
+```rust
+let g = "granite";
+print(g.chars().next());
+print(g.chars().last());
+```

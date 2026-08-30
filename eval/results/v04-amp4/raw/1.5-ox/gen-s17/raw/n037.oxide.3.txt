@@ -1,0 +1,16 @@
+```rust
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn main() {
+    let mut r = Rectangle { width: 2, height: 3 };
+    
+    // Change the width to five
+    r.width = 5;
+    
+    // Print the area of the rectangle now covered
+    print(int_to_str(r.height * r.width));
+}
+```

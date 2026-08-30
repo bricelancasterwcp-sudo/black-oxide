@@ -1,0 +1,5 @@
+fn main() {
+    let first_line = (4 * 3) + (5 * 2);
+    println(first_line);
+    println(second_line);
+}

@@ -1,0 +1,34 @@
+```rust
+struct Queue {
+    elements: Vec<Int>,
+}
+
+impl Queue {
+    fn new() -> Queue {
+        Queue { elements: vec![1, 2, 3, 4, 5] }
+    }
+
+    fn exchange_first_last(&mut self) {
+        if !self.elements.is_empty() {
+            let first = self.elements.remove(0);
+            let last = self.elements.pop().unwrap();
+            self.elements.insert(0, last);
+            self.elements.push(first);
+        } else {
+            panic!("Queue is empty");
+        }
+    }
+
+    fn print(&self) {
+        for &x in &self.elements {
+            println!("{}", x);
+        }
+    }
+}
+
+fn main() {
+    let mut q = Queue::new();
+    q.exchange_first_last();
+    q.print();
+}
+```

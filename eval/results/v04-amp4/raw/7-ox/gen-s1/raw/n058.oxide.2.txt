@@ -1,0 +1,11 @@
+```oxide
+fn main() {
+    let mut seen = Vec::new();
+    for c in "coffee" {
+        if !seen.contains(&c) && "coffee".matches(c).count() > 1 {
+            print_str(c);
+            push(seen, c.clone());
+        }
+    }
+}
+```

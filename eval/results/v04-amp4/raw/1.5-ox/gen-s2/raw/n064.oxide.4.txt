@@ -1,0 +1,21 @@
+```rust
+fn main() {
+    let list = vec![10, 20];
+
+    if let Some(pos1) = get(&list, 0) {
+        println!("{}", pos1);
+    }
+
+    if let Some(pos4) = get(&list, 3) {
+        println!("{}", pos4);
+    }
+}
+
+fn get<T>(&v: &Vec<T>, i: Int) -> Option<&T> {
+    if v.len() < i as usize {
+        None
+    } else {
+        Some(&v[i as usize])
+    }
+}
+```

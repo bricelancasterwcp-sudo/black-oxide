@@ -1,0 +1,25 @@
+fn sort(v: Vec<Int>) -> Vec<Int> {
+    for i in range(0, len(v)) {
+        let min_idx = i + argmin(&v[i..])
+        swap(v, i, min_idx)
+    }
+    v
+}
+
+fn argmin(v: &[Int]) -> Int {
+    let mut min_idx = 0
+    for (j, &x) in v.iter().enumerate() {
+        if x < v[min_idx] {
+            min_idx = j
+        }
+    }
+    min_idx
+}
+
+fn main() {
+    let measurements = push(push(push(vec(), 9), 2), 7); push(measurements, 4);
+    let sorted_measurements = sort(measurements);
+    for m in sorted_measurements {
+        print(m)
+    }
+}

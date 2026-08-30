@@ -1,0 +1,21 @@
+```
+fn filter(v: Vec<Int>) -> Vec<Int> {
+    let mut result = vec()
+    for x in v {
+        if x < 10 {
+            result = push(result, x)
+        }
+    }
+    result
+}
+
+fn main() {
+    let nums = push(push(push(push(vec(), 9), 2), 12), 5)
+    let kept = filter(nums)
+    for n in kept {
+        print(n)
+        print_str("\n")
+    }
+    print(len(kept))
+}
+```

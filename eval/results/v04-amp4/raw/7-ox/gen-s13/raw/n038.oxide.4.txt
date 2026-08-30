@@ -1,0 +1,13 @@
+```rust
+struct Reading { value: Int }
+
+fn set_to_seven(r: Reading) -> Reading {
+    Reading { value: 7 }
+}
+
+fn main() {
+    let r = Reading { value: 0 };
+    let r2 = set_to_seven(Reading { value: 0 });
+    print(r2.value);
+}
+```

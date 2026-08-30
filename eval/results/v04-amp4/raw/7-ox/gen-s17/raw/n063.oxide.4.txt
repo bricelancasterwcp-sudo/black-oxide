@@ -1,0 +1,8 @@
+fn main() {
+    let line1 = push(push(vec(), 3), 3);
+    let line2 = push(push(vec(), 2), 2);
+    let total = sum(line1) + sum(line2);
+    print(concat("Line 1 value: ", int_to_str(total)));
+    println();
+    print(concat("Both lines total: ", int_to_str(total)));
+}

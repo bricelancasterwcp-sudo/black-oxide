@@ -1,0 +1,22 @@
+fn main() {
+    let eight = parse_int("8").unwrap();
+    if eight.is_some() {
+        println!("{}", eight);
+    } else {
+        print_str("bad");
+    }
+
+    let oak = parse_int("oak").unwrap();
+    if oak.is_some() {
+        println!("{}", oak);
+    } else {
+        print_str("bad");
+    }
+
+    let fifteen = parse_int("15").unwrap();
+    if fifteen.is_some() {
+        println!("{}", fifteen);
+    } else {
+        print_str("bad");
+    }
+}

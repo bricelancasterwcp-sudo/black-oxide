@@ -1,0 +1,13 @@
+```rust
+struct Line { quantity: Int, price: Float }
+
+fn main() {
+    let four_units = Line { quantity: 4, price: 3.0 };
+    let five_units = Line { quantity: 5, price: 2.0 };
+
+    print(four_units.quantity * four_units.price);        // value of line one
+    print(five_units.quantity * five_units.price);        // value of line two
+
+    println((four_units.quantity * four_units.price) + (five_units.quantity * five_units.price)); // sum of both lines
+}
+```

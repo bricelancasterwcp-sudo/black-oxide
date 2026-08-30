@@ -1,0 +1,16 @@
+```
+fn safe_divide(numerator: Int, denominator: Int) -> Option<Int> {
+    if denominator == 0 {
+        None
+    } else {
+        Some(numerator / denominator)
+    }
+}
+
+fn main() {
+    match safe_divide(20, 4) {
+        Some(result) => print(result),
+        None => print_str("bad"),
+    }
+}
+```

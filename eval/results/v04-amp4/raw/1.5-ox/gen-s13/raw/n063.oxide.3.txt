@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let line1 = 4 * 3; // Fixing unexpected character ';'
+    let line2 = 5 * 2; // Fixing unexpected character ';'
+
+    println!("Line 1 value: {}", line1); // Correctly printing the value of line1
+    println!("Line 2 value: {}", line2); // Correctly printing the value of line2
+
+    println!("Both lines combined value: {}", line1 + line2); // Calculating and printing the combined value of both lines
+}
+```

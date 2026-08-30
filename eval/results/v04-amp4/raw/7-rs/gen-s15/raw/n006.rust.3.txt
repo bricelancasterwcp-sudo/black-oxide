@@ -1,0 +1,11 @@
+fn main() {
+    let mut n = 100;
+    while n > 1 {
+        if n % 2 == 0 {
+            n /= 2;
+        } else {
+            break;
+        }
+    }
+    println!("{}", n);
+}

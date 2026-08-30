@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let figs = vec![8, 3, 11, 6];
+    println!("Smallest figure: {}", min(figs));
+    println!("Gap between largest and smallest: {}", max(figs) - min(figs));
+}
+```
+In this program, the `min` and `max` functions are used to find the smallest and largest elements in the vector `figs`, respectively. The difference between these two values is then printed out.

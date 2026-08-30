@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let line1_cost = 4 * 3; // 4 units at $3 each
+    let line2_cost = 5 * 2; // 5 units at $2 each
+
+    println!("Line 1 cost: {}", line1_cost);
+    println!("Line 2 cost: {}", line2_cost);
+
+    let total_cost = line1_cost + line2_cost;
+    println!("Total cost: {}", total_cost);
+}
+```

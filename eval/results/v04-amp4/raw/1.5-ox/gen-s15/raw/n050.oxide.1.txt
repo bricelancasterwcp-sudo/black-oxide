@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let scores = vec![5, 9, 2];
+    scores.sort_unstable_by(|a, b| b.cmp(a));
+    for &score in &scores {
+        print!("{}", score);
+        println!();
+    }
+}
+```
+
+This program sorts the scores in descending order and prints each score on a new line.

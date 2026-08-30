@@ -1,0 +1,43 @@
+```rust
+fn main() {
+    let mut balance = 0;
+    
+    match deposits(3) {
+        Ok(new_balance) => balance += new_balance,
+        Err(_) => println!("Deposit failed"),
+    }
+    print!("{}", balance);
+    
+    match deposits(1) {
+        Ok(new_balance) => balance += new_balance,
+        Err(_) => println!("Deposit failed"),
+    }
+    print!("{}", balance);
+    
+    match deposits(4) {
+        Ok(new_balance) => balance += new_balance,
+        Err(_) => println!("Deposit failed"),
+    }
+    print!("{}", balance);
+    
+    match deposits(1) {
+        Ok(new_balance) => balance += new_balance,
+        Err(_) => println!("Deposit failed"),
+    }
+    print!("{}", balance);
+    
+    match deposits(5) {
+        Ok(new_balance) => balance += new_balance,
+        Err(_) => println!("Deposit failed"),
+    }
+    print!("{}", balance);
+}
+
+fn deposits(amount: Int) -> Result<Int, String> {
+    if amount > 0 {
+        Ok(amount)
+    } else {
+        Err("Amount must be positive".to_string())
+    }
+}
+```

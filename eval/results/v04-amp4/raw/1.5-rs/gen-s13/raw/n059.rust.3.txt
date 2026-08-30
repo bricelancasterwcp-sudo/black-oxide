@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let phrase = "when in doubt go home.";
+    let words: Vec<&str> = phrase.split_whitespace().collect();
+    println!("The phrase contains {} words.", words.len());
+    println!("The phrase spans {} characters including spaces.", phrase.chars().count()); // Corrected to use chars()
+}
+```

@@ -1,0 +1,21 @@
+struct List { value: Int, next: Option<Box<List>> }
+
+fn main() {
+    let list = Box::new(List {
+        value: 10,
+        next: Some(Box::new(List {
+            value: 20,
+            next: None,
+        })),
+    });
+
+    match get(list.next, 0) {
+        Some(x) => print(x),
+        None => print_str("None"),
+    }
+
+    match get(get(list.next, 0).unwrap_or(Some(Box::new(List { value: 0, next: None }))).next, 1) {
+        Some(x) => print(x),
+        None => print_str("None"),
+    }
+}

@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let numbers: [i32; 3] = [7, 8, 9];
+    match second(&numbers) {
+        Some(second_number) => println!("The second element is {}", second_number),
+        None => println!("There are no elements to return."),
+    }
+}
+
+fn second(slice: &[i32]) -> Option<i32> {
+    slice.get(1).copied()
+}
+```

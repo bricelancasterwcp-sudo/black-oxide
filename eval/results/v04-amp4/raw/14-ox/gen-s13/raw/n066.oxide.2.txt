@@ -1,0 +1,1 @@
+fn main() { let numbers = vec(9, 2, 12, 5, 16) let mut count = 0 for n in numbers { if n < 10 { print(n) count += 1 } } print(count) }

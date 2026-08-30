@@ -1,0 +1,1 @@
+sort(vec(9, 2, 7, 4)) each(x -> print(x), _)

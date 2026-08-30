@@ -1,0 +1,9 @@
+```rust
+fn second(v: Vec<Int>) -> Option<Int> {
+    if let Some(y) = v.get(1) {
+        Some(*y)
+    } else {
+        None
+    }
+}
+```

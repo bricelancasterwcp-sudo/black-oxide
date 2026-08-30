@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let mut total: Int = 0;
+    let mut count: Int = 0;
+
+    for c in ['7', 'x', '9', '?'] {
+        match c {
+            '7' => total += 7,
+            'x' => total += 10,
+            '9' => total += 9,
+            '?' => total += to_float(c)?,
+            _ => count += 1
+        }
+    }
+
+    println!("Total: {}", total);
+    println!("Count: {}", count);
+}
+```

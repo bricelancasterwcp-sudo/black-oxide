@@ -1,0 +1,47 @@
+```rust
+struct Figure {
+    name: Str,
+    size: Int,
+}
+
+impl Figure {
+    fn new(name: Str, size: Int) -> Self {
+        Figure { name, size }
+    }
+
+    fn get_name(&self) -> &Str {
+        &self.name
+    }
+
+    fn get_size(&self) -> Int {
+        self.size
+    }
+}
+
+fn main() {
+    let figures = vec![
+        Figure::new("Circle", 5),
+        Figure::new("Square", 10),
+        Figure::new("Triangle", 2),
+        Figure::new("Rectangle", 7),
+    ];
+
+    // Task 8: Print the smallest figure
+    let mut min_fig = &figures[0];
+    for fig in figures {
+        if fig.get_size() < min_fig.get_size() {
+            min_fig = fig;
+        }
+    }
+    print_str(min_fig.get_name());
+
+    // Task 3: Print the gap between the largest and smallest figures
+    let mut max_fig = &figures[0];
+    for fig in figures {
+        if fig.get_size() > max_fig.get_size() {
+            max_fig = fig;
+        }
+    }
+    print_str(concat(int_to_str(max_fig.get_size()), " - ", int_to_str(min_fig.get_size())));
+}
+```

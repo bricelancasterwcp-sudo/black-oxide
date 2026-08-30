@@ -1,0 +1,1 @@
+fn main() { let s = "coffee" let mut seen = vec() for ch in chars(s) { if contains(seen, ch) { continue } if count(s, ch) > 1 { print_str(ch) seen = push(seen, clone(ch)) } } }

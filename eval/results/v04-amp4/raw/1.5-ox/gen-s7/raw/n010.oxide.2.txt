@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let n = 91;
+    let mut divisors = Vec::new();
+
+    for i in 2..=n as f64.sqrt().ceil() as isize {
+        if n % i == 0 {
+            divisors.push(i);
+        }
+    }
+
+    if divisors.is_empty() || (divisors.len() == 1 && divisors[0] == n) {
+        println!("yes");
+    } else {
+        println!("no");
+    }
+}
+```

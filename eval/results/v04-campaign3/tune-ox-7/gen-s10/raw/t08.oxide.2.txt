@@ -1,0 +1,17 @@
+fn main() {
+    let v = vec(3, 8, -2, 12, 7)
+    let mut count = 0
+    let mut max_val = None
+    for x in v {
+        if x > 0 {
+            count += 1
+        }
+        let new_max = Some(x) if unwrap_or(max_val, -999) < x else { max_val }
+        max_val = new_max
+    }
+    print(count)
+    match max_val {
+        Some(n) => print(n),
+        None => print_str("No positive values"),
+    }
+}

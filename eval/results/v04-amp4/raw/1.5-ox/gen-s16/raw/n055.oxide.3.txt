@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    match [8, "oak", 15] {
+        [a, b, c] => println!("{} {} {}", a, b, c),
+        _ => println!("bad"),
+    }
+}
+```

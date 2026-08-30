@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut queue = vec![1, 2, 3, 4, 5];
+    if let Some((&first, &last)) = queue.first().zip(queue.last()) {
+        let pos_first = queue.iter().position(|&x| x == first).unwrap();
+        let pos_last = queue.iter().position(|&x| x == last).unwrap();
+        queue.swap(pos_first, pos_last);
+    }
+    for entry in queue {
+        println!("{}", entry);
+    }
+}
+```

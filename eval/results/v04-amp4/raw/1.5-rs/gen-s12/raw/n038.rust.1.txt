@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let mut sensor: i32 = 0; // Initialize the sensor reading to zero
+    sensor = 7; // Set the sensor reading to seven
+    println!("{}", sensor); // Print the current sensor reading
+}
+```

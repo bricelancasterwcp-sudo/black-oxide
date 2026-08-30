@@ -1,0 +1,31 @@
+```
+struct ListEntry { value: Int }
+
+fn walk_list(list: &Vec<ListEntry>, index: Int) {
+    if index >= list.len() {
+        return;
+    }
+    let entry = &list[index];
+    if entry.value % 2 == 0 {
+        print_str(&entry.value.to_string());
+        println!();
+    } else {
+        print_str(&(entry.value * 2).to_string());
+        println!();
+    }
+    walk_list(list, index + 1);
+}
+
+fn main() {
+    let list = vec![
+        ListEntry { value: 7 },
+        ListEntry { value: 4 },
+        ListEntry { value: 9 },
+        ListEntry { value: 10 },
+    ];
+    walk_list(&list, 0);
+
+    let sum_of_evens = list.iter().filter(|entry| entry.value % 2 == 0).fold(0, |acc, entry| acc + entry.value);
+    println!("Sum of even entries: {}", sum_of_evens);
+}
+```

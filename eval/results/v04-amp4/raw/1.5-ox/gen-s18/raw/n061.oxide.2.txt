@@ -1,0 +1,21 @@
+```rust
+struct Rectangle {
+    length: Int,
+    width: Int,
+}
+
+fn main() {
+    let length = 9;
+    let width = 3;
+    println!("Area: {}", area(length, width));
+    println!("Perimeter: {}", perimeter(length, width));
+}
+
+fn area(length: Int, width: Int) -> Int {
+    length * width
+}
+
+fn perimeter(length: Int, width: Int) -> Int {
+    2 * (length + width)
+}
+```

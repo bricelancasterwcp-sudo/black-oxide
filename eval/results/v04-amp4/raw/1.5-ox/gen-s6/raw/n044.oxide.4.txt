@@ -1,0 +1,16 @@
+fn deposit(balance: Int, amount: Int) -> Int {
+    balance + amount;
+}
+
+fn main() {
+    let mut balance = 0;
+    println!("{}", balance);
+    balance = deposit(balance, 3);
+    println!("{}", balance);
+    balance = deposit(balance, 1);
+    println!("{}", balance);
+    balance = deposit(balance, 4);
+    println!("{}", balance);
+    balance = deposit(balance, 1);
+    println!("{}", balance);
+}

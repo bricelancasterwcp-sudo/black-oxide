@@ -1,0 +1,42 @@
+```rust
+struct Queue { items: Vec<Int> }
+
+fn enqueue(q: Queue, x: Int) -> Queue {
+    Queue { items: push(q.items, x) }
+}
+
+fn dequeue(q: Queue) -> (Queue, Option<Int>) {
+    let len = len(q.items);
+    if len == 0 {
+        (q, None)
+    } else {
+        (Queue { items: q.items[1..len] }, Some(q.items[0]))
+    }
+}
+
+fn main() {
+    let mut q = Queue { items: vec(1, 2, 3, 4, 5) };
+    print_str("Original queue:")
+    for i in range(0, len(q.items)) {
+        print(get(q.items, i))
+        print_str("\n")
+    }
+    (q, _) = dequeue(q);
+    let x = get(q.items, 0)?;
+    let y = get(q.items, len(q.items) - 1)?;
+    q = enqueue(Queue { items: vec() }, y);
+    for _ in range(0, len(q.items) - 2) {
+        (q, _) = dequeue(q);
+        q = enqueue(q, x);
+        x = y;
+        (q, _) = dequeue(q);
+        y = get(q.items, len(q.items) - 1)?;
+        q = enqueue(Queue { items: vec() }, x);
+    }
+    print_str("Modified queue:")
+    for i in range(0, len(q.items)) {
+        print(get(q.items, i))
+        print_str("\n")
+    }
+}
+```

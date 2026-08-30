@@ -1,0 +1,13 @@
+```rust
+struct Measurement { value: Int }
+
+fn main() {
+    let mut readings = vec![4, 7];
+    
+    readings.sort();
+    
+    for reading in readings {
+        print_str(int_to_str(reading.value));
+    }
+}
+```

@@ -1,0 +1,10 @@
+```text
+fn main() {
+    let n = 1234
+    let s = int_to_str(n)
+    let chars_vec = chars(s)
+    let reversed_chars_vec = reverse(chars_vec)
+    let reversed_str = concat(reversed_chars_vec)  // removed the extra DOT
+    print(reversed_str)
+}
+```

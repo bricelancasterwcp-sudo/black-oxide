@@ -1,0 +1,25 @@
+```rust
+fn main() {
+    let a = "8"; // text of the first entry
+    let b = "oak"; // text of the second entry
+    let c = "15"; // text of the third entry
+
+    if a.trim().parse::<u32>().is_ok() {
+        println!("{}", a);
+    } else {
+        println!("bad");
+    }
+
+    if b.trim().parse::<u32>().is_ok() {
+        println!("{}", b);
+    } else {
+        println!("bad");
+    }
+
+    if c.trim().parse::<u32>().is_ok() {
+        println!("{}", c);
+    } else {
+        println!("bad");
+    }
+}
+```

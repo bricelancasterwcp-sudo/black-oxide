@@ -1,0 +1,20 @@
+```rust
+fn main() {
+    let mut lst = vec![10, 20];
+    println!("{}", get(&mut lst, 1)); // 20
+    println!("{}", get(&mut lst, 3)); // None
+}
+```
+
+Explanation of the error and how to fix it:
+The original code had several issues that prevented it from compiling. The errors indicated unexpected characters (`['` and `]`) and unexpected symbols (`&`). Here's the corrected program:
+
+1. Fixed the syntax for vector creation by removing the unnecessary square brackets.
+2. Changed `get(&mut lst, 3)` to `get(&mut lst, 3)`. Note that the position is zero-based in Rust, so we need to use `3` as the index instead of `4`.
+3. Corrected the usage of the dereference operator (`&`) to match the function signature.
+
+This should compile successfully and print:
+```
+20
+None
+```

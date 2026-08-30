@@ -1,0 +1,6 @@
+fn main() {
+    let c = 'g';
+    print_str(c.to_string());
+    println!();
+    print_str('r');
+}

@@ -1,0 +1,9 @@
+fn main() {
+    let input = vec!["8", "oak", "15"];
+    for item in input {
+        match item.parse::<Int>() {
+            Ok(num) => print(num),
+            Err(_) => print_str("bad"),
+        }
+    }
+}

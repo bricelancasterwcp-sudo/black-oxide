@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let nums = [8, 3, 11, 6];
+    let mut smallest = nums[0]; // Initialize smallest to the first element of the array
+    let mut largest = nums[0]; // Initialize largest to the first element of the array
+
+    for &num in &nums[1..] { // Iterate over the elements starting from index 1
+        if num < smallest {
+            smallest = num; // Update smallest if the current number is smaller
+        } else if num > largest {
+            largest = num; // Update largest if the current number is larger
+        }
+    }
+
+    println!("Smallest: {}", smallest);
+    println!("Gap between largest and smallest: {}", largest - smallest);
+}
+```

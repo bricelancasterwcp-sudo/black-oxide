@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let sum = (1..=5).map(|x| x * x * x).sum::<Int>();
+    println!("{}", sum);
+}
+```
+
+Explanation of corrections:
+- The `+` operator is used for addition in Rust, not a pipe (`|`) or semicolon (`;`). In this case, it's being used to concatenate the elements of the vector.
+- The `map(|x| x * x * x)` function creates a new iterator that applies the cube operation to each element in the range from 1 to 5. The `sum::<Int>()` method then adds up these values and returns them as an integer.
+- The `println!("{}", sum);` statement prints the result of the summation.

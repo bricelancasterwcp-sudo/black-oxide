@@ -1,0 +1,31 @@
+```ox
+struct Reading { label: Str, values: Vec<Int> }
+
+fn sum_of_numbers(v: Vec<Str>) -> Int {
+    let mut sum = 0
+    for s in v {
+        if parse_int(s)?.is_some() {
+            sum += unwrap_or(parse_int(s)?, -1)
+        }
+    }
+    sum
+}
+
+fn count_non_numbers(v: Vec<Str>) -> Int {
+    let mut count = 0
+    for s in v {
+        if parse_int(s)?.is_none() {
+            count += 1
+        }
+    }
+    count
+}
+
+fn main() {
+    let readings = push(push(push(vec(), "7"), "x"), "9")
+    let total = sum_of_numbers(readings)
+    let non_numbers = count_non_numbers(readings)
+    print(total)
+    print(non_numbers)
+}
+```

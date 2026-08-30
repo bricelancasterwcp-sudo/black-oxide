@@ -1,0 +1,6 @@
+struct Rectangle { w: Int, h: Int }
+fn main() {
+    let rect = Rectangle { w: 7, h: 4 }
+    print(rect.w * rect.h)
+    print(2 * (rect.w + rect.h))
+}

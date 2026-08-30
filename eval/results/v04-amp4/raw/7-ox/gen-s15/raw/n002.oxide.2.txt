@@ -1,0 +1,14 @@
+```rust
+fn multiply(v: Vec<Int>) -> Int {
+    let mut result = 1;
+    for x in v {
+        result *= x;
+    }
+    result
+}
+
+fn main() {
+    let numbers = vec![1, 2, 3, 4, 5, 6];
+    print(multiply(numbers))
+}
+```

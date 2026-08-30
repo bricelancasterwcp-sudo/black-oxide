@@ -1,0 +1,48 @@
+```
+fn min(v: Vec<Int>) -> Option<Int> {
+    let mut min_val = None;
+    for &x in v.iter() {
+        if let Some(mv) = min_val {
+            if x < mv {
+                min_val = Some(x);
+            }
+        } else {
+            min_val = Some(x);
+        }
+    }
+    min_val
+}
+
+fn max(v: Vec<Int>) -> Option<Int> {
+    let mut max_val = None;
+    for &x in v.iter() {
+        if let Some(mv) = max_val {
+            if x > mv {
+                max_val = Some(x);
+            }
+        } else {
+            max_val = Some(x);
+        }
+    }
+    max_val
+}
+
+fn gap(v: Vec<Int>) -> Option<Int> {
+    match (max(v), min(v)) {
+        (Some(max_val), Some(min_val)) => Some(max_val - min_val),
+        _ => None,
+    }
+}
+
+fn main() {
+    let figures = vec![8, 3, 11, 6];
+    if let Some(smallest) = min(figures.clone()) {
+        print(smallest);
+        if let Some(gap_value) = gap(figures) {
+            print(gap_value);
+        }
+    } else {
+        print_str("No figures provided");
+    }
+}
+```

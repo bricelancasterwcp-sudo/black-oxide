@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let max_power_of_two = 1 << ((32 - 1).leading_zeros());
+    println!("{}", max_power_of_two);
+}
+```
+
+This is a straightforward Rust function that calculates the largest power of two less than or equal to 100. The `leading_zeros()` method returns the number of leading zeros in the binary representation of the given integer. Subtracting 1 from this value and then left-shifting it by the result gives us the highest set bit position. By left-shifting 1 by this position, we get the largest power of two less than or equal to 100.

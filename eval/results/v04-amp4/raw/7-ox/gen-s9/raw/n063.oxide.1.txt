@@ -1,0 +1,15 @@
+```oxide
+struct Line { items: Vec<Int>, price: Int }
+
+fn value(line: Line) -> Int {
+    line.items.len() * line.price
+}
+
+fn main() {
+    let line1 = Line { items: push(push(vec(), 4), 4), price: 3 }
+    let line2 = Line { items: push(push(vec(), 5), 5), price: 2 }
+    print(value(line1))
+    print(value(line2))
+    print(value(Line { items: push(line1.items, line2.items), price: 0 }))
+}
+```

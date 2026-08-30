@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let batch = vec![9, 2, 12, 5, 16];
+    let count: Int = batch.iter().filter(|&&x| x < 10).count();
+    for &value in batch.iter().filter(|&&x| x < 10) {
+        println!("{}", value);
+    }
+    println!("Kept {} entries under ten", count as Int);
+}
+```

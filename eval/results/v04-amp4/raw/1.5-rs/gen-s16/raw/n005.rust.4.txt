@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let sum = (1..=20).filter(|&x| x % 2 == 0).sum::<u32>();
+    println!("The total of all even numbers between 1 and 20 inclusive is: {}", sum);
+}
+```
+
+The issue in the original code was with the data type used for the loop variable `x`. The compiler expected a `u32` (unsigned 32-bit integer), but it received an `i32` (signed 32-bit integer) due to the range `(1..=20)`. By specifying that `x` should be of type `&i32`, we can correctly handle both positive and negative numbers within the range, making it compatible with the `filter` method.

@@ -1,0 +1,13 @@
+```
+fn max_power_of_two(limit: Int) -> Int {
+    let mut x = 1;
+    while x * 2 <= limit {
+        x *= 2;
+    }
+    return x - 1
+}
+
+fn main() {
+    print(max_power_of_two(100));
+}
+```

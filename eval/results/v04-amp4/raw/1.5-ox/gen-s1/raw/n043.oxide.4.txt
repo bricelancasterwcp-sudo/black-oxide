@@ -1,0 +1,20 @@
+```
+struct Queue { values: Vec<Int> }
+
+fn exchange_first_last(v: &mut Vec<Int>) {
+    if v.len() < 2 {
+        return;
+    }
+    let last = v.pop().unwrap();
+    v.insert(0, last);
+}
+
+fn main() {
+    let mut q = Queue { values: vec![1, 2, 3, 4, 5] };
+    exchange_first_last(&mut q.values);
+    for x in &q.values {
+        print!("{}", x);
+        println!();
+    }
+}
+```

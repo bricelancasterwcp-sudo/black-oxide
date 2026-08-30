@@ -1,0 +1,7 @@
+```oxide
+fn main() {
+    let reading = 0;
+    let new_reading = reading + 7;
+    print(new_reading);
+}
+```

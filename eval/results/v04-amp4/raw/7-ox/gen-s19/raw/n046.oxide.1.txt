@@ -1,0 +1,10 @@
+```oxide
+fn main() {
+    let nums = vec(5, 12, 3, 18, 9);
+    let below_cut = count_if(nums, x -> x < 10);
+    let at_or_over_cut = count_if(nums, x -> x >= 10);
+    print(below_cut);
+    print_str(" ");
+    print(at_or_over_cut);
+}
+```

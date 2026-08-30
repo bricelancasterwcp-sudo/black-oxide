@@ -1,0 +1,14 @@
+```rust
+
+fn main() {
+    let mut total = 0;
+    for number in [7, 4, 9, 10] {
+        if number % 2 != 0 {
+            println!("{}", 2 * number);
+        } else {
+            total += number;
+        }
+    }
+    println!("Total of even entries: {}", total);
+}
+```

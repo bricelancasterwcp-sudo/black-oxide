@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let mut counts = HashSet::new();
+    let chars = "abcdefghijklmnopqrstuvwxyz";
+
+    for c in chars.chars() {
+        if c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' {
+            counts.insert(c);
+        }
+    }
+
+    println!("Vowels: {}", counts.len());
+    println!("Consonants: {}", chars.len() - counts.len());
+}
+```

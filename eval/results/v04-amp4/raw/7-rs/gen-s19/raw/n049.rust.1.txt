@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let figures = [8, 3, 11, 6];
+    let min = figures.iter().min().unwrap();
+    let max = figures.iter().max().unwrap();
+    println!("{}", min);
+    println!("{}", max - min);
+}
+```

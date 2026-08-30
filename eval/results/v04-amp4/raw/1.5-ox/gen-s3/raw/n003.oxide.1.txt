@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut count = 0;
+    for n in 1..=36 {
+        if 36 % n == 0 {
+            count += 1;
+        }
+    }
+    print(count);
+}
+```
+
+This program uses a `for` loop to iterate from 1 to 36, checking each number if it divides 36 exactly using the modulus operator `%`. If it does, the count is incremented. After the loop completes, it prints the final count of whole numbers that divide 36 exactly.

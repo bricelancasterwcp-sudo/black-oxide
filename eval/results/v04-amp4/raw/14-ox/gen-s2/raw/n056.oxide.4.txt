@@ -1,0 +1,27 @@
+```rust
+struct NumberHolder { value: Option<Int> }
+
+fn sum_and_count_non_numbers(numbers: Vec<NumberHolder>) -> (Int, Int) {
+    let mut total = 0
+    let mut non_numbers = 0
+    for holder in numbers {
+        match holder.value {
+            Some(num) => total += num,
+            None => non_numbers += 1,
+        }
+    }
+    (total, non_numbers)
+}
+
+fn main() {
+    let holders = vec![
+        NumberHolder { value: Some(7) },
+        NumberHolder { value: None },
+        NumberHolder { value: Some(9) },
+        NumberHolder { value: None },
+    ]
+    let (total, count) = sum_and_count_non_numbers(holders)
+    print(total)
+    print(count)
+}
+```

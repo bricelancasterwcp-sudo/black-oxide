@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let nums = vec(7, None, 9, None);
+    let mut sum = 0;
+    let mut count_non_nums = 0;
+
+    for x in nums {
+        match x {
+            Some(num) => sum += num,
+            None => count_non_nums += 1,
+        }
+    }
+
+    print(sum);
+    print(count_non_nums);
+}
+```

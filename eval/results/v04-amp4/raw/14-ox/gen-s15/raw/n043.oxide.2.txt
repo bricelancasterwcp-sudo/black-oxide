@@ -1,0 +1,14 @@
+```text
+fn main() {
+    let mut queue = vec(1, 2, 3, 4, 5)
+    if len(queue) > 1 {
+        let first = get(queue, 0)?
+        let last = get(queue, len(queue) - 1)?
+        queue = set(queue, 0, last)
+        queue = set(queue, len(queue) - 1, first)
+    }
+    for x in queue {
+        print(x)
+    }
+}
+```

@@ -1,0 +1,7 @@
+```text
+fn main() {
+    let word = "granite"
+    print_str(word.chars().get(0).unwrap_or("g"))
+    print_str(word.chars().get(word.str_len() - 1).unwrap_or("e"))
+}
+```

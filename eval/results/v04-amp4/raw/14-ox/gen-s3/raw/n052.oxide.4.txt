@@ -1,0 +1,9 @@
+fn main() {
+    let s = "banana";
+    let v: Vec<Int> = range(0, str_len(s));
+    for i in v {
+        if get(s, i) == Some("n") {
+            print(i);
+        }
+    }
+}

@@ -1,0 +1,13 @@
+```
+fn main() {
+    let signals = vec!["green", "red", "yellow"];
+    for signal in signals {
+        match signal {
+            "green" => println!("go for green"),
+            "red" => println!("stop for red"),
+            "yellow" => println!("wait for yellow"),
+            _ => unreachable!(), // should not happen
+        }
+    }
+}
+```

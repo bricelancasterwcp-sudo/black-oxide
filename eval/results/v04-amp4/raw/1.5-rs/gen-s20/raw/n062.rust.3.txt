@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    loop {
+        match std::thread::sleep(std::time::Duration::from_secs(1)) {
+            Ok(_) => break,
+            Err(_e) => continue, // Error occurred while sleeping
+        }
+        match std::thread::sleep(std::time::Duration::from_secs(1)) {
+            Ok(_) => println!("green"),
+            Err(_e) => continue, // Error occurred while sleeping
+        }
+        match std::thread::sleep(std::time::Duration::from_secs(1)) {
+            Ok(_) => println!("yellow"),
+            Err(_e) => break, // Error occurred while sleeping
+        }
+    }
+}
+```

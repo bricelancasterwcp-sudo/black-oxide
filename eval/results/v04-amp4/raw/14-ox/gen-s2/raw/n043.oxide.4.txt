@@ -1,0 +1,25 @@
+```rust
+struct Queue { values: Vec<Int> }
+
+fn main() {
+    let q = Queue { values: vec(1, 2, 3, 4, 5) }
+    if len(q.values) > 1 {
+        let first = unwrap_or(get(q.values, 0), -1)
+        let last = unwrap_or(get(q.values, len(q.values) - 1), -1)
+        let mut new_values = vec()
+        for i in range(0, len(q.values)) {
+            if i == 0 {
+                new_values = push(new_values, last)
+            } else if i == len(q.values) - 1 {
+                new_values = push(new_values, first)
+            } else {
+                new_values = push(new_values, unwrap_or(get(q.values, i), -1))
+            }
+        }
+        let q2 = Queue { values: new_values }
+        for x in q2.values {
+            print(x)
+        }
+    }
+}
+```

@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let fig8 = vec![4, 1, 2, 3, 5];
+    let fig3 = vec![7, 6, 5, 4, 3];
+    let fig11 = vec![9, 8, 7, 6, 5];
+    let fig6 = vec![1, 2, 3, 4, 5];
+
+    let smallest = *fig8.iter().min().unwrap();
+    let largest = *fig8.iter().max().unwrap();
+
+    println(smallest);
+    println(largest - smallest);
+}
+```

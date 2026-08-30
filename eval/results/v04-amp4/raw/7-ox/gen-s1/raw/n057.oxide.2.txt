@@ -1,0 +1,23 @@
+```rust
+fn max_len(fruit: Str) -> Int {
+    str_len(fruit)
+}
+
+fn main() {
+    let fig = "fig"
+    let banana = "banana"
+    let kiwi = "kiwi"
+
+    let max_fruit = if max_len(fig) >= max_len(banana) && max_len(fig) >= max_len(kiwi) {
+        fig
+    } else if max_len(banana) >= max_len(kiwi) {
+        banana
+    } else {
+        kiwi
+    };
+
+    print(max_fruit)
+    print_str(" ")
+    print(max_len(max_fruit))
+}
+```

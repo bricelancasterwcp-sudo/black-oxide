@@ -1,0 +1,10 @@
+```rust
+struct Log { entries: Vec<Int> }
+
+fn main() {
+    let log = Log { entries: vec![6, 7, 8, 9] };
+    println!("{}", log.entries[0]);
+    println!("{}", *log.entries.last().unwrap());
+}
+```
+The problem was that `entries` was defined as a field in the struct `Log`, but it was accessed using indexing `log.entries[0]`. Since `last()` returns an iterator and we want to get the last element, we need to dereference `entries.last().unwrap()`.

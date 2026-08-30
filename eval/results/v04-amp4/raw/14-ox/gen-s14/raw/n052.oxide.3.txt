@@ -1,0 +1,12 @@
+```text
+fn main() {
+    let word = "banana";
+    let chars = chars(word);
+    for i in range(0, len(chars)) {
+        let c = get(chars, i).unwrap_or("".clone());
+        if c == "n" {
+            print(i);
+        }
+    }
+}
+```

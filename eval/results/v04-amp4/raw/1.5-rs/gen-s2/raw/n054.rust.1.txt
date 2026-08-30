@@ -1,0 +1,23 @@
+```rust
+fn main() {
+    let word = "keyboard";
+    let mut vowel_count: u32 = 0;
+    let mut consonant_count: u32 = 0;
+
+    for c in word.chars() {
+        if is_vowel(c) {
+            vowel_count += 1;
+        } else {
+            consonant_count += 1;
+        }
+    }
+
+    println!("Vowels: {}", vowel_count);
+    println!("Consonants: {}", consonant_count);
+}
+
+fn is_vowel(ch: char) -> bool {
+    let vowels = "aeiouAEIOU";
+    vowels.contains(&ch)
+}
+```

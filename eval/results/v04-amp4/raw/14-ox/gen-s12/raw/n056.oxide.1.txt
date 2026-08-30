@@ -1,0 +1,19 @@
+```ox
+struct Reading { label: Str, values: Vec<Str> }
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(push(vec(), "7"), "x"), "9") }
+    let mut total = 0
+    let mut count_non_numbers = 0
+
+    for value in r.values {
+        match parse_int(value) {
+            Some(n) => total += n,
+            None => count_non_numbers += 1
+        }
+    }
+
+    print(total)
+    print(count_non_numbers)
+}
+```

@@ -1,0 +1,9 @@
+```rust
+struct Reading { label: Str, values: Vec<Int> }
+
+fn main() {
+    let mut sensor = Reading { label: "sensor", values: vec![0] };
+    sensor.values = set_to(sensor.values, 0, 7);
+    print_str(&(sensor.values[0]).to_str());
+}
+```

@@ -1,0 +1,30 @@
+```ox
+struct Reading { label: Str, values: Vec<Int> }
+
+fn smallest(v: Vec<Int>) -> Option<Int> {
+    min(v)
+}
+
+fn largest(v: Vec<Int>) -> Option<Int> {
+    max(v)
+}
+
+fn gap_between_largest_and_smallest(v: Vec<Int>) -> Int {
+    let l = largest(v)?
+    let s = smallest(v)?
+    l - s
+}
+
+fn main() {
+    let figures = vec![8, 3, 11, 6]
+    match smallest(figures.clone()) {
+        Some(s) => print(s),
+        None => print_str("empty list"),
+    }
+    let gap = gap_between_largest_and_smallest(figures)
+    match gap {
+        Some(g) => print(g),
+        None => print_str("gap calculation failed"),
+    }
+}
+```

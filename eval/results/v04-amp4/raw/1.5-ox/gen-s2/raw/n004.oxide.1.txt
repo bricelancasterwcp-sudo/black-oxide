@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let mut a = 1;
+    let mut b = 1;
+
+    for _ in 0..9 {
+        let temp = a + b;
+        a = b;
+        b = temp;
+    }
+
+    print(a);
+}
+```
+This program uses a `for` loop to generate the Fibonacci sequence, starting from 1 and 1. It iterates through 9 times (since it wants to get the tenth term), updating two variables (`a` and `b`) in each iteration so they always hold the two preceding terms of the sequence. Finally, it prints the value of `a`, which is now the tenth term of the Fibonacci sequence.

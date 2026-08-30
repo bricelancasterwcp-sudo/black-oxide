@@ -1,0 +1,904 @@
+{
+  "classes": [
+    {
+      "budget": 7580,
+      "class": "arithmetic/loops",
+      "gap": 68,
+      "kept_examples": {
+        "oxide": 107,
+        "rust": 131
+      },
+      "kept_tokens": {
+        "oxide": 7580,
+        "rust": 7512
+      },
+      "quantization_step": 106
+    },
+    {
+      "budget": 2186,
+      "class": "strings",
+      "gap": 20,
+      "kept_examples": {
+        "oxide": 28,
+        "rust": 38
+      },
+      "kept_tokens": {
+        "oxide": 2186,
+        "rust": 2166
+      },
+      "quantization_step": 143
+    },
+    {
+      "budget": 5622,
+      "class": "structs/option",
+      "gap": 75,
+      "kept_examples": {
+        "oxide": 66,
+        "rust": 84
+      },
+      "kept_tokens": {
+        "oxide": 5547,
+        "rust": 5622
+      },
+      "quantization_step": 146
+    },
+    {
+      "budget": 9489,
+      "class": "vectors",
+      "gap": 43,
+      "kept_examples": {
+        "oxide": 93,
+        "rust": 137
+      },
+      "kept_tokens": {
+        "oxide": 9489,
+        "rust": 9446
+      },
+      "quantization_step": 131
+    }
+  ],
+  "contamination": {
+    "hits": 0,
+    "programs_checked": 682
+  },
+  "counts_source": {
+    "commit": "v04-wave3",
+    "roots": "amp4-only"
+  },
+  "dropped": [
+    {
+      "arm": "rust",
+      "class": "arithmetic/loops",
+      "sha256": "0090e3ba145b8972d5276375aaa263f3101e6b312f7cdbd7ddae7bcbb30001b9",
+      "sup_tokens": 89,
+      "task": "n009"
+    },
+    {
+      "arm": "rust",
+      "class": "arithmetic/loops",
+      "sha256": "00abf2d23149c092f39543b6c5e3d35ba794c9a79b8372a56b1a28f3958c72f8",
+      "sup_tokens": 41,
+      "task": "n006"
+    },
+    {
+      "arm": "rust",
+      "class": "arithmetic/loops",
+      "sha256": "02dd820994b143dae796c73f81855e4e3017c63e94b131748a8eb0898194e76e",
+      "sup_tokens": 89,
+      "task": "n009"
+    },
+    {
+      "arm": "rust",
+      "class": "arithmetic/loops",
+      "sha256": "06b752d0cf60a6895170c3574aa07fae7f4e4aa1aab9c2de24af7e81a91f72d2",
+      "sup_tokens": 69,
+      "task": "n009"
+    },
+    {
+      "arm": "rust",
+      "class": "arithmetic/loops",
+      "sha256": "075f85aafa746ab58f7d8dd0fed83ec9dfbe2d3e0e721ba670c1a3ff87914daf",
+      "sup_tokens": 92,
+      "task": "n010"
+    },
+    {
+      "arm": "rust",
+      "class": "arithmetic/loops",
+      "sha256": "0c2494b38f9ae857c0edc4c2f4578756183693f652bc9c4fe03c89595ceb907b",
+      "sup_tokens": 48,
+      "task": "n001"
+    },
+    {
+      "arm": "rust",
+      "class": "arithmetic/loops",
+      "sha256": "0d7bad51178797c890e12ca85acf0a6803166e6df83cd5946b0cbe24c10ffb0a",
+      "sup_tokens": 106,
+      "task": "n010"
+    },
+    {
+      "arm": "rust",
+      "class": "arithmetic/loops",
+      "sha256": "0e4272753c226ce04d3eff16c6a18cf4cf17bab572c5b2c2f966186881e45a43",
+      "sup_tokens": 65,
+      "task": "n009"
+    },
+    {
+      "arm": "rust",
+      "class": "arithmetic/loops",
+      "sha256": "0ec24a66f3186b280d3dd709aaa74dbd5b2375a797695da9d6b13f7b5510ba0e",
+      "sup_tokens": 47,
+      "task": "n006"
+    },
+    {
+      "arm": "rust",
+      "class": "arithmetic/loops",
+      "sha256": "113c848824289cd7ca8b0887d5658bb6c69d174aa24168b3632a1fd5a71ff58d",
+      "sup_tokens": 57,
+      "task": "n004"
+    },
+    {
+      "arm": "rust",
+      "class": "arithmetic/loops",
+      "sha256": "134cd4b573a0ad3573487516795dab37ef02290eb570b2a0a380c627d1865c9f",
+      "sup_tokens": 47,
+      "task": "n009"
+    },
+    {
+      "arm": "rust",
+      "class": "arithmetic/loops",
+      "sha256": "16892d868941cb83bb6287acec45a9187793c75a4e45b3ed26eb6deff6f3b373",
+      "sup_tokens": 39,
+      "task": "n006"
+    },
+    {
+      "arm": "rust",
+      "class": "arithmetic/loops",
+      "sha256": "174c587e96d44eedba2eae4101bf3db45f243573868d407200c66506c41cc17c",
+      "sup_tokens": 89,
+      "task": "n009"
+    },
+    {
+      "arm": "rust",
+      "class": "arithmetic/loops",
+      "sha256": "17b99a5e7ab3aefe9ac6211d3bfe08c3eff42c8b28c9791ece2f470bc4517095",
+      "sup_tokens": 51,
+      "task": "n003"
+    },
+    {
+      "arm": "rust",
+      "class": "arithmetic/loops",
+      "sha256": "194cf9b62beb18bb0a38f86a19fc9b9096da0d66c74b3e726089ed26f53e4fd0",
+      "sup_tokens": 58,
+      "task": "n008"
+    },
+    {
+      "arm": "rust",
+      "class": "arithmetic/loops",
+      "sha256": "1a038451c91558d5ae65702a19d2fe8d1af0e0440f5abbab238d2b5b2e0bda1d",
+      "sup_tokens": 57,
+      "task": "n001"
+    },
+    {
+      "arm": "rust",
+      "class": "arithmetic/loops",
+      "sha256": "1c7058bf6467ca890cf78485f53d7f7d8d8951666c0e4197594ccdac17ed1c75",
+      "sup_tokens": 48,
+      "task": "n001"
+    },
+    {
+      "arm": "rust",
+      "class": "arithmetic/loops",
+      "sha256": "24eddff4d840c107ba9c4fb86655a7df310c48a2c33313bef707385d0536435d",
+      "sup_tokens": 62,
+      "task": "n010"
+    },
+    {
+      "arm": "rust",
+      "class": "arithmetic/loops",
+      "sha256": "25c881965753b00898f60b16de0bfe289ff7503e38dd816685f7afd138246f39",
+      "sup_tokens": 44,
+      "task": "n001"
+    },
+    {
+      "arm": "rust",
+      "class": "arithmetic/loops",
+      "sha256": "25cc3c2a3f7b5e495acdd2d873fa15933f4e3295e20938e0f0eb46a3d809937f",
+      "sup_tokens": 37,
+      "task": "n001"
+    },
+    {
+      "arm": "rust",
+      "class": "arithmetic/loops",
+      "sha256": "26e1b87450ff84aa829341c3477815153879270f8a1edb51ce3d1cb0ed9ad6c4",
+      "sup_tokens": 75,
+      "task": "n010"
+    },
+    {
+      "arm": "rust",
+      "class": "arithmetic/loops",
+      "sha256": "2a597df9392c91cb8f2caa661e66726bc9c24ffbf3083499fe1ba67efee42fa0",
+      "sup_tokens": 85,
+      "task": "n007"
+    },
+    {
+      "arm": "rust",
+      "class": "arithmetic/loops",
+      "sha256": "2c4142e12dc89e798579df5f07a4f212f1c0f6f19b36fd8d42695899bcf12df2",
+      "sup_tokens": 60,
+      "task": "n004"
+    },
+    {
+      "arm": "rust",
+      "class": "arithmetic/loops",
+      "sha256": "2c4d69f21782ae231fb5a927ac278c0da41c7937328aed120b195b63bdb92b35",
+      "sup_tokens": 36,
+      "task": "n002"
+    },
+    {
+      "arm": "rust",
+      "class": "arithmetic/loops",
+      "sha256": "2fda69d5835d6d0681734bc9f5ea7435d7c98222d2a0a31d00a93149a83f5eaf",
+      "sup_tokens": 69,
+      "task": "n004"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "02f8df8a41c8a552b20a9b00356fe24a3b138c82ad43cb9177ff8dffd2097e64",
+      "sup_tokens": 60,
+      "task": "n055"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "030e0e2a876a483a9a8cb4b5ee0867f496f1d29eb91df9d8cdc9a5a201667e34",
+      "sup_tokens": 44,
+      "task": "n053"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "048f0ac7448073571cde2d96860755696efbdd04449c45b7788ec2a38b213c85",
+      "sup_tokens": 51,
+      "task": "n058"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "054bcecf6e258601f594ea7c436c06c1459e99fc170de4af7a3a4a25d4f27bc6",
+      "sup_tokens": 58,
+      "task": "n055"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "084f3cc9ee26e615d5e5f17b44259b5ac5b6b6c83b1d870ae010dfa5eee53280",
+      "sup_tokens": 60,
+      "task": "n055"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "0a9600d64be3b219b7e8731f859ae99d8c74724c98327402ef941209948e9ba7",
+      "sup_tokens": 60,
+      "task": "n055"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "0d0bd8f24e84c9624535b33fc538e93959beca3624897c27d763c7e39b95e0f0",
+      "sup_tokens": 47,
+      "task": "n052"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "0da2f6ffcbeaffcc3a90f02b25d8a7e8d2ab69749922d435004b3a03f91d85b8",
+      "sup_tokens": 53,
+      "task": "n055"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "0e026db9a1fbf3489f311f478503572976241bd843a1083d184f01599c88dda3",
+      "sup_tokens": 44,
+      "task": "n052"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "0e1346256d48fb52f04b05f264f4fd15f684644421f79367c4190c584d5f53e9",
+      "sup_tokens": 31,
+      "task": "n053"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "134f3fdaf21d2995bae86006b9a6b9242a6e3048e2a169f934653bb597b7b2fb",
+      "sup_tokens": 42,
+      "task": "n051"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "1466b73fb759015a0455f3c08d938158657a0a61cd630aa1b35438ce50e5a3cc",
+      "sup_tokens": 39,
+      "task": "n051"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "146b13d737d292bea6b012a66574e79509808ef0dfe4a7fc4f219e17c797ef82",
+      "sup_tokens": 41,
+      "task": "n051"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "1c3056c466c972d1c1338d3ee3e9fac6d71ce2136907811fae1470b28488820d",
+      "sup_tokens": 40,
+      "task": "n051"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "1ca809c732221f5254d0e48d0244d03469e2d97df00185fbf243f53df60787a6",
+      "sup_tokens": 62,
+      "task": "n055"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "22ea011ebc01f41e24383808b59835ee53ac6bdf80916bbf8f75c2881d55000b",
+      "sup_tokens": 67,
+      "task": "n055"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "25e737db2d1bc7773e612c7d879228ffac14c7a051b019ba32452d760fea4d2b",
+      "sup_tokens": 59,
+      "task": "n055"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "2987e3530288482f6b6ecf23a5d78856dc910a50e3b327dc810f03a2ed9aaba8",
+      "sup_tokens": 32,
+      "task": "n051"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "29d8a5e4cc231d0524f04ee07bced75d83eafb37f58fced45b03b28c5d22c7f3",
+      "sup_tokens": 43,
+      "task": "n052"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "2a0718a19a2bb0d737a44adab2e75ec9fb24aaba05ff074728a903339135ee8f",
+      "sup_tokens": 54,
+      "task": "n052"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "2a1bac1cdb3161bd3acee441c68f87ab74d4b1f30c1e5d9cbd2947a41b0dadb7",
+      "sup_tokens": 80,
+      "task": "n058"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "332a503166dcdffc942817aa4659ad2489eb8a4f783290813a4cf695e88c8937",
+      "sup_tokens": 37,
+      "task": "n051"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "339f12189e559fbf2a461874c3df03daa575911cb7740d71a505d2e4f0f6cbb4",
+      "sup_tokens": 64,
+      "task": "n058"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "3476a3ab647dabb523ade96e5bdf7b43da17eea01ea5de51e59a8adeea7369ec",
+      "sup_tokens": 58,
+      "task": "n055"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "353f2b2a8dcd8c7be0a49985dac68ebbecaec92254606bc424d679d6eb7a9f93",
+      "sup_tokens": 48,
+      "task": "n052"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "36dba53cde83bfa85f151850ef9f15116d240af2c60c573d3b64a526a529749d",
+      "sup_tokens": 60,
+      "task": "n055"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "386c424f7b047b34e7744cbdc261bdd0beda491aa6edeea853ec3b33703cfca1",
+      "sup_tokens": 44,
+      "task": "n052"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "39ac728bba3a7975b3c7d72ec0607b4aeb5e170bd25059631551d8c02d111056",
+      "sup_tokens": 57,
+      "task": "n055"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "3aa3ad701ecc3342aef8d4e2c43feaea2a3dc0923a43c34596fe7c0950ae67e9",
+      "sup_tokens": 36,
+      "task": "n051"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "3db4c3e658a8be4c64304fd7887b480528419f0720173d4fce68482990a5481d",
+      "sup_tokens": 96,
+      "task": "n058"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "415405f8eff2e7fa9efe0a95efc0043cff773c893ea0ba9180cd0f4ccfe6909c",
+      "sup_tokens": 62,
+      "task": "n051"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "4429ae9cd62cf2e2713f5a475c112d6c3b95bf7661bc56605d9d0d343e0a32db",
+      "sup_tokens": 37,
+      "task": "n051"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "45c774996e6b1d2438b334350fe8963232557c86c1233a5bdbf53ec4d450a185",
+      "sup_tokens": 44,
+      "task": "n052"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "49cbb2bbb95c2eef405798d2210b016f1e442dfe571e011e9f4e26aea9a06b01",
+      "sup_tokens": 44,
+      "task": "n052"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "4a4fce6018177dd11f55b5d374595b9a22e48ba28240a0ae8bd786199a8ad0c5",
+      "sup_tokens": 48,
+      "task": "n052"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "4b3119130fa764c1a02acaab684f0681d4f2654f8e6476c8b66788f04663f5fb",
+      "sup_tokens": 83,
+      "task": "n060"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "4d77f6c8d12c1065a9eea56f6345b7143486ce64d2348394b090f484c9fab783",
+      "sup_tokens": 44,
+      "task": "n052"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "52a071bbf3fcf7fee753e83aa2696414e312cf2b05fd96dc5e1a0f56834874e3",
+      "sup_tokens": 49,
+      "task": "n052"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "5594406a25a91d294f4f7a279c88940f7b7cf5605ec3fa668b7377080a024413",
+      "sup_tokens": 77,
+      "task": "n058"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "5a27a06efdf7aa5e69e528f83a5c6e0ad880301187e7588b47bbb1bfbd27aa92",
+      "sup_tokens": 44,
+      "task": "n052"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "5ed9deba9c6be0815a14e086e0f0c4321451421e460a5bd319ea17d1cdb9e539",
+      "sup_tokens": 36,
+      "task": "n051"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "5f3531d7831d925aab5d1b322661b22a2f9b6b41df3aa44fc95a123f438c9962",
+      "sup_tokens": 44,
+      "task": "n052"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "5f6a37642efcc5d6cd321c7e0cf22e52642ddacb3626c9240ffc3e139882358e",
+      "sup_tokens": 60,
+      "task": "n055"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "60df81847de10f00553052515f20d6862b15dd6272c131be9eced50dfa4e6f67",
+      "sup_tokens": 46,
+      "task": "n058"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "64129ed289e6af630325a0ad0bf2ea3175d72f30daa8a367f2a2e45e620125a5",
+      "sup_tokens": 49,
+      "task": "n052"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "6acd0a1123ff4a5da094f640b72b5e417b4c0eb362ed58d99ab1ed238abab9ac",
+      "sup_tokens": 60,
+      "task": "n055"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "6c5d0201fa3eae6a052033fd14c35aa634856b241c9fa8a1f3bc5b6beee49baf",
+      "sup_tokens": 51,
+      "task": "n058"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "6d1aa459f00cbbed780ea0ae0e92e3fba52e93d40e4ca9fc7c9ab06490f1864b",
+      "sup_tokens": 50,
+      "task": "n051"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "78500f675b6a80db3d461aecc889924f7640842ebc2fed219868f66e51a3bdc9",
+      "sup_tokens": 43,
+      "task": "n052"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "858b9ed552dc2cbb5343347d78a14613801f01087a528759bc47f5b9b08f2c67",
+      "sup_tokens": 62,
+      "task": "n058"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "8c954f0a4093860ec3f69db65beafc0e0053172b1db5ddc234a969ac798ac0ee",
+      "sup_tokens": 60,
+      "task": "n055"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "8d72a82331a9be34fbdeff233d5892ee38ba03325407c75b2c15c6d3b4f90741",
+      "sup_tokens": 58,
+      "task": "n051"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "9003297d89875521d516f166b405b94a695dba4cb10bfd53393a5d20ab82d176",
+      "sup_tokens": 53,
+      "task": "n058"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "93f8375307e152f632fe20c2ebc5185c270a8b3200fb1e7d9cf2f1086a1693dc",
+      "sup_tokens": 36,
+      "task": "n051"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "973d1c6778235b04783c6320f5d1707d0c08b7ec50e85bf977cce47fc0285966",
+      "sup_tokens": 93,
+      "task": "n060"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "97de6dcedd12ec6e759e8a3c793f09eeed83abc6f75f8d1c6d894914ef288922",
+      "sup_tokens": 143,
+      "task": "n055"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "98a536037438e6b1d377d418cf78d18236f5f81f3edd6a539e03adfc1963c45d",
+      "sup_tokens": 43,
+      "task": "n052"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "9de5278ddd449d1a3c4944285a83da6f3f4d4d926c0a3cb5fc95d1ad3b755f36",
+      "sup_tokens": 60,
+      "task": "n055"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "9e9ce77fa273d376471d0785be9e50fe2a7fea09fb59d68d75e8527806b09e79",
+      "sup_tokens": 44,
+      "task": "n052"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "a0272c73d2e2769fdaee64b1da977652e6ed219d4bb54f930646a6da1854a60b",
+      "sup_tokens": 51,
+      "task": "n058"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "a3c7fcfd766fa86570d6d05054a3567e72fb9cfbcdcdc1295223f131669fd050",
+      "sup_tokens": 60,
+      "task": "n055"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "a3ea83d7d08af6edae9963172532f376b9c05e43928d5a115de7278d0cd62038",
+      "sup_tokens": 56,
+      "task": "n058"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "a5a55f4620f6da64b95af477d14a3ac9cd19ad76090c83501c6e5b3a6e9a7cfc",
+      "sup_tokens": 69,
+      "task": "n058"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "ae4676251c236cf5fbf5e43cc4c1bb6b1430d3853ba64df5a32c3477de7bb7d9",
+      "sup_tokens": 44,
+      "task": "n052"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "af276bf7f2c7745c267d0360cd1a83d63d8796c3b97f258ab43d84f0b176c1e4",
+      "sup_tokens": 67,
+      "task": "n055"
+    },
+    {
+      "arm": "rust",
+      "class": "strings",
+      "sha256": "b19e14f26c1092e965ab70e61a7e672c70913e12a2171b749250040e184de9bb",
+      "sup_tokens": 77,
+      "task": "n058"
+    },
+    {
+      "arm": "oxide",
+      "class": "structs/option",
+      "sha256": "08b2d96b2482ff7462bce52849c15bafc388ba3afc5549abfe5d32a07500bacb",
+      "sup_tokens": 128,
+      "task": "n035"
+    },
+    {
+      "arm": "oxide",
+      "class": "structs/option",
+      "sha256": "0ac528b5d68ea42ce17b5e625188ab9b1130de510f90d31e84c6b27146aecea3",
+      "sup_tokens": 63,
+      "task": "n037"
+    },
+    {
+      "arm": "oxide",
+      "class": "structs/option",
+      "sha256": "0d5a5d7c7edf23ec723047240b5703089e8092478aa6b0cb55e0cab852947bed",
+      "sup_tokens": 85,
+      "task": "n035"
+    },
+    {
+      "arm": "oxide",
+      "class": "structs/option",
+      "sha256": "16899634d485a031ed617a8abcc34dca2cc6cd83fe902f43c7f42052966a757b",
+      "sup_tokens": 104,
+      "task": "n063"
+    },
+    {
+      "arm": "oxide",
+      "class": "structs/option",
+      "sha256": "1944a4bdff1ccb528352587a8e4b57c8eddfc60786b1bc41a554b5437766602e",
+      "sup_tokens": 52,
+      "task": "n038"
+    },
+    {
+      "arm": "oxide",
+      "class": "structs/option",
+      "sha256": "19c6d919bf20c2813f36660494a86c5ae57bd8f5de275acae8b54a5c353be63f",
+      "sup_tokens": 146,
+      "task": "n063"
+    },
+    {
+      "arm": "oxide",
+      "class": "structs/option",
+      "sha256": "1d54308e17778b59caf320cd85b15c019420339759227ed1b733dfbf65d1f057",
+      "sup_tokens": 109,
+      "task": "n064"
+    },
+    {
+      "arm": "oxide",
+      "class": "structs/option",
+      "sha256": "240446331649342748d371e4dd5b32d518335c0ef56b639b33a87e3264297e19",
+      "sup_tokens": 78,
+      "task": "n035"
+    },
+    {
+      "arm": "oxide",
+      "class": "structs/option",
+      "sha256": "25cf53d640cb4d5b74c63ebfbc89789d4b68399837bc6cfac9f01c3cbcaf9b6e",
+      "sup_tokens": 107,
+      "task": "n063"
+    },
+    {
+      "arm": "oxide",
+      "class": "structs/option",
+      "sha256": "25efae7808c31d273950edc8c5b0ba8ac062c75fb065ae1cd82687a9c930b224",
+      "sup_tokens": 69,
+      "task": "n037"
+    },
+    {
+      "arm": "oxide",
+      "class": "structs/option",
+      "sha256": "29f110358fe6087969ffa15d0e1f39971d727a6ff65f4717a7da9242a3908ded",
+      "sup_tokens": 58,
+      "task": "n037"
+    },
+    {
+      "arm": "oxide",
+      "class": "structs/option",
+      "sha256": "2b87559a01d42359d6f20ed7b45dd667567d3cd64de58a3b6a41a76d11fadec6",
+      "sup_tokens": 106,
+      "task": "n063"
+    },
+    {
+      "arm": "oxide",
+      "class": "structs/option",
+      "sha256": "2eff1c3f81440326a3d526ec33ecab21234f72018ce054d175ce3f5b0554bbfa",
+      "sup_tokens": 79,
+      "task": "n062"
+    },
+    {
+      "arm": "oxide",
+      "class": "structs/option",
+      "sha256": "3167cffbd6b4dee15e5b1a6bbe9aeaf26849e25e6e9ea4374d975cdced69a3b1",
+      "sup_tokens": 92,
+      "task": "n038"
+    },
+    {
+      "arm": "rust",
+      "class": "vectors",
+      "sha256": "04dc772dfd1341f95cb9ed2aa62450436e2462c657a103af6924b284016ac430",
+      "sup_tokens": 56,
+      "task": "n041"
+    },
+    {
+      "arm": "rust",
+      "class": "vectors",
+      "sha256": "05db7a857f5655cfdc46db716ff53b583277b552124e6e0909427cda1eaa8348",
+      "sup_tokens": 83,
+      "task": "n043"
+    },
+    {
+      "arm": "rust",
+      "class": "vectors",
+      "sha256": "06503044f62a73bfedbf998c27ee14e68649eeef36db3c158c689ddb8e425447",
+      "sup_tokens": 44,
+      "task": "n041"
+    },
+    {
+      "arm": "rust",
+      "class": "vectors",
+      "sha256": "0a5b0432faa40e466481cc0ee2df8aed063a7d3bb7d2d1de9215fa7f86a5f680",
+      "sup_tokens": 52,
+      "task": "n044"
+    },
+    {
+      "arm": "rust",
+      "class": "vectors",
+      "sha256": "0c17b9fbbce6488d2f22df3a7cfda71749beb8093ac78208c58d28899869e15d",
+      "sup_tokens": 93,
+      "task": "n065"
+    },
+    {
+      "arm": "rust",
+      "class": "vectors",
+      "sha256": "0e8c06e79f647f3c62d64b1a8d6d21341f21ca3c6d077ade4e00e00c111f4499",
+      "sup_tokens": 50,
+      "task": "n050"
+    },
+    {
+      "arm": "rust",
+      "class": "vectors",
+      "sha256": "0ec0c8b0eb3cb3df295a678aea39501ff890e8fd8b0e4a9e1c95155015c0f521",
+      "sup_tokens": 74,
+      "task": "n043"
+    },
+    {
+      "arm": "rust",
+      "class": "vectors",
+      "sha256": "0ef31db7712b226a904d8c7d99c4242e738301e99e13120b5eb62cce35e31a61",
+      "sup_tokens": 42,
+      "task": "n050"
+    },
+    {
+      "arm": "rust",
+      "class": "vectors",
+      "sha256": "0f5a70c72ef0f81bff3e4095d11b59f21e263c1a3a369d0958357f1c73f08f96",
+      "sup_tokens": 69,
+      "task": "n065"
+    },
+    {
+      "arm": "rust",
+      "class": "vectors",
+      "sha256": "1059eff2ff017c27c509db462d7d2a941d4133df33724edad5c78cf27531596b",
+      "sup_tokens": 56,
+      "task": "n050"
+    },
+    {
+      "arm": "rust",
+      "class": "vectors",
+      "sha256": "115217576270781513b9d585ccba24b5755da189c93afe72af34fef3ecaa233d",
+      "sup_tokens": 69,
+      "task": "n050"
+    }
+  ],
+  "prompt_tokens": {
+    "oxide": 8532,
+    "rust": 11341
+  },
+  "token_efficiency": {
+    "amplified": {},
+    "references": {}
+  },
+  "tokenizer": {
+    "id": "Qwen/Qwen2.5-Coder (shared)",
+    "sha256": "v04-wave3-tempmix"
+  },
+  "totals": {
+    "kept_examples": {
+      "oxide": 294,
+      "rust": 390
+    },
+    "kept_tokens": {
+      "oxide": 24802,
+      "rust": 24746
+    }
+  }
+}

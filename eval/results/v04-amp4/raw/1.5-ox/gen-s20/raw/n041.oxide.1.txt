@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let measurements = push(push(vec(), 4), 9);
+    print(min(measurements));
+    print(min(second(measurements)));
+}
+```

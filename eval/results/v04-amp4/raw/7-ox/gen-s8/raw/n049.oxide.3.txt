@@ -1,0 +1,7 @@
+fn main() {
+    let nums = vec![8, 3, 11, 6];
+    let min_num = *nums.iter().min().unwrap_or(&0);
+    let max_min_gap = *nums.iter().max().unwrap_or(&0) - min_num;
+    print(min_num);
+    print(max_min_gap);
+}

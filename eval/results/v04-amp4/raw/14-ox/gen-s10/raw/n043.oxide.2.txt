@@ -1,0 +1,1 @@
+fn main() { let queue = push(push(push(push(push(vec(), 1), 2), 3), 4), 5) if let Some(first) = get(queue, 0) { if let Some(last) = get(queue, len(queue) - 1) { let queue = set(set(queue, 0, last), len(queue) - 1, first) for x in queue { print(x) } } } }

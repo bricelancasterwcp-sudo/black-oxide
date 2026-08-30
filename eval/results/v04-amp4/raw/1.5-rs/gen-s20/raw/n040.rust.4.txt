@@ -1,0 +1,8 @@
+fn main() {
+    let side = 4.0;
+    let radius = 3.14 as f64;
+    let area_square = side * side;
+    let area_circle = std::f64::consts::PI * radius * radius;
+    println!("Area of the square: {}", area_square);
+    println!("Area of the circle: {:.2}", area_circle); // Display two decimal places for floating point
+}

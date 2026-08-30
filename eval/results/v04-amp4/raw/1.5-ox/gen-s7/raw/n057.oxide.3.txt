@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let fig = "fig";
+    let banana = "banana";
+    let kiwi = "kiwi";
+
+    if banana.len() > kiwi.len() && banana.len() > fig.len() {
+        println!("The name with the most letters is banana, it has {} letters", banana.len());
+    } else if kiwi.len() > banana.len() && kiwi.len() > fig.len() {
+        println!("The name with the most letters is kiwi, it has {} letters", kiwi.len());
+    } else {
+        println!("The name with the most letters is fig, it has {} letters", fig.len());
+    }
+}
+```

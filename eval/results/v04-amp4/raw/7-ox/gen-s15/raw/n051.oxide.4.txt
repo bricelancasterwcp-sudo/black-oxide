@@ -1,0 +1,3 @@
+let g = "granite";
+print(g.chars().next());
+println(g.chars().last());

@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let product = (1..=6).product();
+    print(product);
+}
+```
+Note: The `.product()` method on a range is defined to multiply all numbers in the range together.

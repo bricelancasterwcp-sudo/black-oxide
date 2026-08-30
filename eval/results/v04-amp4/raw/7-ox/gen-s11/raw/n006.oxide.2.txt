@@ -1,0 +1,7 @@
+fn main() {
+    let mut n = 100;
+    while n % 2 == 0 {
+        n /= 2;
+    }
+    print(n);
+}

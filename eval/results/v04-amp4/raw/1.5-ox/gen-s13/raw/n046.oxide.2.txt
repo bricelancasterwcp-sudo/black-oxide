@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let nums = vec![5, 12, 3, 18, 9];
+    let mut count_below_cutoff = 0;
+    let mut count_above_or_equal_cutoff = 0;
+
+    for &num in nums.iter().filter(|&&n| n < 10) {
+        count_below_cutoff += 1;
+    }
+
+    for &num in nums.iter().filter(|&&n| n >= 10) {
+        count_above_or_equal_cutoff += 1;
+    }
+
+    println!("Count below cutoff: {}", count_below_cutoff);
+    println!("Count above or equal cutoff: {}", count_above_or_equal_cutoff);
+}
+```

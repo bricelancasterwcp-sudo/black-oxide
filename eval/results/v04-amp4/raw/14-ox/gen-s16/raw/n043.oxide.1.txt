@@ -1,0 +1,21 @@
+```text
+struct Queue { entries: Vec<Int> }
+
+fn main() {
+    let q = Queue { entries: vec(1, 2, 3, 4, 5) }
+    let len = len(q.entries)
+    if len > 1 {
+        let first = get(q.entries, 0)?
+        let last = get(q.entries, len - 1)?
+        let mid = range(1, len - 1)?
+        let new_entries = push(push(mid, last), first)
+        for x in new_entries {
+            print(x)
+        }
+    } else {
+        for x in q.entries {
+            print(x)
+        }
+    }
+}
+```

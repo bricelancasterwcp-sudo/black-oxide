@@ -1,0 +1,4 @@
+```oxide
+let s = "drum"
+print(concat(reverse(chars(s)), chars(s)))
+```

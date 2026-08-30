@@ -1,0 +1,8 @@
+fn main() {
+    let mut scores = vec(2, 9, 5);
+    sort(&mut scores);
+    for s in &scores {
+        print_str(s.to_string());
+        print_str("\n");
+    }
+}

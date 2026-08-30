@@ -1,0 +1,28 @@
+```
+fn main() {
+    let oak = match read_str("oak") {
+        Some(o) => o,
+        None => "bad",
+    };
+    let 8 = match read_int("8") {
+        Some(e) => e,
+        None => "bad",
+    };
+    let 15 = match read_int("15") {
+        Some(e) => e,
+        None => "bad",
+    };
+
+    println!("The oak holds: {}", oak);
+    println!("The integer '8' holds: {}", 8);
+    println!("The integer '15' holds: {}", 15);
+}
+
+fn read_str(s: Str) -> Option<Str> {
+    Some(s)
+}
+
+fn read_int(s: Str) -> Option<Int> {
+    Some(42)
+}
+```

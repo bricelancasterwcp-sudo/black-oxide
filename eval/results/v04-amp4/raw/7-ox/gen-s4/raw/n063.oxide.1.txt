@@ -1,0 +1,16 @@
+```oxide
+struct Line { items: Vec<Int>, price_per_item: Int }
+
+fn calculate_total(line: Line) -> Int {
+    len(line.items) * line.price_per_item
+}
+
+fn main() {
+    let line1 = Line { items: push(push(vec(), 1), 1), price_per_item: 3 }
+    let line2 = Line { items: push(push(push(vec(), 1), 1), 1), price_per_item: 2 }
+    print(calculate_total(line1))
+    print(calculate_total(line2))
+    let total = calculate_total(line1) + calculate_total(line2)
+    print(total)
+}
+```

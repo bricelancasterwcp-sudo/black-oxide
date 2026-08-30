@@ -1,0 +1,15 @@
+```rust
+fn reverse_digits(mut num: Int) -> Int {
+    let mut rev_num = 0;
+    while num > 0 {
+        rev_num = rev_num * 10 + num % 10;
+        num /= 10;
+    }
+    rev_num
+}
+
+fn main() {
+    let num = 1234;
+    print(reverse_digits(num));
+}
+```

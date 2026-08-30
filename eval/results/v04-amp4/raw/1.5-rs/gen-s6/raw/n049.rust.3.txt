@@ -1,0 +1,6 @@
+fn main() {
+    let mut figures = vec![8, 3, 11, 6];
+    figures.sort();
+    println!("Smallest figure: {}", figures[0]);
+    println!("Gap between largest and smallest: {}", figures.last().unwrap() - figures.first().unwrap());
+}

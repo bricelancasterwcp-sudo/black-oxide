@@ -1,0 +1,17 @@
+Here's the fully corrected Rust program:
+
+```rust
+fn main() {
+    let input = "when in doubt go home";
+
+    let words_count = input.split_whitespace().count();
+    let chars_count = input.len();
+
+    println!("Words: {}", words_count);
+    println!("Chars including spaces: {}", chars_count);
+}
+```
+
+This should print:
+Words: 5
+Chars including spaces: 21

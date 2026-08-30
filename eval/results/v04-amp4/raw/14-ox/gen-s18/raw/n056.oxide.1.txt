@@ -1,0 +1,18 @@
+```text
+fn main() {
+    let mut sum = 0;
+    let mut count_non_numeric = 0;
+
+    let texts = vec!("7", "x", "9", "?");
+
+    for text in texts {
+        match parse_int(text) {
+            Some(n) => sum += n,
+            None => count_non_numeric += 1,
+        }
+    }
+
+    print(sum);
+    print(count_non_numeric);
+}
+```

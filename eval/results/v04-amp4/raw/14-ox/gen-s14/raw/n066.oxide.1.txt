@@ -1,0 +1,18 @@
+```
+fn main() {
+    let batch = vec(9, 2, 12, 5, 16)
+    let filtered = vec()
+    let mut count = 0
+
+    for x in batch {
+        if x < 10 {
+            print(x)
+            print_str("\n")
+            filtered = push(filtered, x)
+            count += 1
+        }
+    }
+
+    print(count)
+}
+```

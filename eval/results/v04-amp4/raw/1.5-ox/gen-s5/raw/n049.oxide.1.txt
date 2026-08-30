@@ -1,0 +1,30 @@
+```rust
+use std::cmp;
+
+struct Figure {
+    name: Str,
+    area: Float,
+}
+
+fn main() {
+    let figures = vec![
+        Figure { name: "triangle".to_string(), area: 10.5 },
+        Figure { name: "circle".to_string(), area: 3.14 },
+        Figure { name: "square".to_string(), area: 16.0 },
+        Figure { name: "hexagon".to_string(), area: 9.42 },
+    ];
+
+    let min_area = figures.iter().fold(None, |min, fig| match min {
+        None => Some(fig.area),
+        Some(curr) => if fig.area < *curr { Some(fig.area) } else { curr },
+    }).unwrap();
+
+    let max_area = figures.iter().fold(None, |max, fig| match max {
+        None => Some(fig.area),
+        Some(curr) => if fig.area > *curr { Some(fig.area) } else { curr },
+    }).unwrap();
+
+    print(format!("Smallest figure: {}", min_area));
+    print(format!("Gap between largest and smallest: {}", max_area - min_area));
+}
+```

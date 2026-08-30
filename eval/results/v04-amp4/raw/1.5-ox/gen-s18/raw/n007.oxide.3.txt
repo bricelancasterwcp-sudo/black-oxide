@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut n = 9875;
+    let s = int_to_str(n);
+    let mut sum = 0;
+    for c in s.chars() {
+        if let Some(d) = parse_int(c.to_string()) {
+            sum += d;
+        }
+    }
+    print(sum);
+}
+```

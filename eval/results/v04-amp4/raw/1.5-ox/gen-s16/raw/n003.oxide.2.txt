@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut count = 0;
+    for i in 1..=36 {
+        if i % 36 == 0 { // Fix: remove extra semicolon after 'if'
+            count += 1; // Fix: remove extra semicolon after 'if'
+        }
+    }
+    print(count); // Fix: remove extra semicolon before 'print'
+}
+```

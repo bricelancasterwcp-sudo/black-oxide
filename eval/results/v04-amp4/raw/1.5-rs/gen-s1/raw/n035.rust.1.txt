@@ -1,0 +1,17 @@
+```rust
+fn divide_by_zero(x: f64, y: f64) -> Result<f64, String> {
+    if y == 0.0 {
+        Err("Error: Division by zero".to_string())
+    } else {
+        Ok(x / y)
+    }
+}
+
+fn main() {
+    let result = divide_by_zero(20.0, 4.0);
+    match result {
+        Ok(value) => println!("Result of division: {}", value),
+        Err(err) => println!("{}", err),
+    }
+}
+```

@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let drum = "drum";
+    println!("{:?}", drum.chars().rev());
+    println!("{}", drum);
+}
+```
+The word `drum` is printed first in reverse order by using `chars()` to get an iterator of characters, then calling `.rev()` to get the reversed order. The original string is then printed at the end.

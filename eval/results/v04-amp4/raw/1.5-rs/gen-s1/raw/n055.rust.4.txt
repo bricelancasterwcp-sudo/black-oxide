@@ -1,0 +1,21 @@
+Here's the fixed version of your Rust code:
+
+```rust
+fn main() {
+    let a: i32 = "8".parse().unwrap_or(-1);
+    println!("{}", a);
+
+    let b: i32 = "oak".parse().unwrap_or(-1);
+    println!("{}", b);
+
+    let c: i32 = "15".parse().unwrap_or(-1);
+    println!("{}", c);
+}
+```
+
+Explanation:
+In the original code, the string `"oak"` is being parsed into an `i32` using `parse()`. However, this will fail because `"oak"` cannot be converted to an integer. The `unwrap_or(-1)` ensures that if parsing fails (which it does in this case), it returns `-1`, which means the output for "oak" is `-1`.
+
+The rest of the code works as expected: it prints the number 8, -1, and 15 respectively.
+
+Note that Rust's standard library provides a `Result` type to handle errors when parsing strings or other types. This example demonstrates how to use `unwrap_or()` to handle this specific case, but in production code you would typically want to handle errors more gracefully, for example by printing an error message instead of crashing the program.

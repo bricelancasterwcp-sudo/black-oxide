@@ -1,0 +1,13 @@
+fn main() {
+    let nums = [10, 20];
+
+    match nums.get(0) {
+        Some(x) => println!("{}", x),
+        None => {}
+    }
+
+    match nums.get(3) {
+        Some(x) => println!("{}", x),
+        None => {}
+    }
+}

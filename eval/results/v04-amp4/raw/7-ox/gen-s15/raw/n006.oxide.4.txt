@@ -1,0 +1,13 @@
+```rust
+fn find_max_power_of_two() -> Int {
+    let mut max_pow = 1;
+    for i in range(1, 7) {
+        max_pow *= 2;
+    }
+    max_pow
+}
+
+fn main() {
+    print(find_max_power_of_two())
+}
+```

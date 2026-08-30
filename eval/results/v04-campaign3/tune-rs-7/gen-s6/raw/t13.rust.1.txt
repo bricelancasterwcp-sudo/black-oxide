@@ -1,0 +1,9 @@
+fn main() {
+    let words = ["level", "stereo", "rotor"];
+    for word in words.iter() {
+        println!("{}", is_palindrome(word));
+    }
+}
+fn is_palindrome(s: &str) -> bool {
+    s.chars().eq(s.chars().rev())
+}

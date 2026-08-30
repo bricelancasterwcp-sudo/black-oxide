@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let mut a = 1;
+    let b = 1;
+    for _ in 2..=9 {
+        let c = a + b;
+        a = b;
+        b = c;
+    }
+    println!("{}", b);
+}
+```
+
+### Explanation:
+The program initializes two variables `a` and `b` with the first two terms of the sequence, which are both 1. It then enters a loop that runs from the third term to the tenth term. In each iteration, it calculates the next term by adding the previous two terms (`a` and `b`). The values of `a`, `b`, and `c` are updated accordingly. After the loop completes, the tenth term is printed.

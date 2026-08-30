@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let mut figures = [8, 3, 11, 6];
+    figures.sort();
+    println!("The smallest figure is: {}", figures[0]);
+    println!("The gap between the largest and the smallest is: {}", figures[figures.len() - 1] - figures[0]);
+}
+```

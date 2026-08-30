@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let (x, y, z, t) = (7, 10, 9, ?);
+    if x.is_integer() || y.is_integer() || z.is_integer() || t.is_integer() {
+        println!("{} + {} + {} + {}", x, y, z, t);
+    } else {
+        println!("{} + {} + {} - {}", x, y, z, t - x); // sum of invalid numbers
+    }
+}
+```

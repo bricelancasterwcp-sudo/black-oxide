@@ -1,0 +1,24 @@
+```rust
+struct Line {
+    units_priced_three: Int,
+    units_priced_two: Int,
+}
+
+fn calculate_value(line: Line) -> Int {
+    line.units_priced_three * 3 + line.units_priced_two * 2
+}
+
+fn main() {
+    let four_units_three = Line { units_priced_three: 4, units_priced_two: 0 };
+    let five_units_two = Line { units_priced_three: 0, units_priced_two: 5 };
+
+    let total_value_four = calculate_value(four_units_three);
+    println!("Value of the first line: {}", total_value_four);
+
+    let total_value_five = calculate_value(five_units_two);
+    println!("Value of the second line: {}", total_value_five);
+
+    let combined_total_value = total_value_four + total_value_five;
+    println!("Combined value of both lines: {}", combined_total_value);
+}
+```

@@ -1,0 +1,12 @@
+struct Reading { label: Str, values: Vec<Str> }
+
+fn main() {
+    let word = "coffee"
+    let mut seen = vec()
+    for c in chars(word) {
+        if !contains(seen, c) {
+            print_str(c)
+            seen = push(seen, clone(c))
+        }
+    }
+}

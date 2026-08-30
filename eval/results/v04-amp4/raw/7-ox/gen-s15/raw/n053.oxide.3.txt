@@ -1,0 +1,5 @@
+```oxide
+let s = "drum";
+print(concat(s, reverse(if str_len(s) > 3 { substring(s, 1, 3) } else { "" })));
+print(s);
+```

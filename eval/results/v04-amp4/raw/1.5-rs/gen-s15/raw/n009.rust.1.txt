@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let num = 1234;
+    let mut str_num = String::new();
+    
+    while num > 0 {
+        str_num.push((num % 10) as u8 + b'0');
+        num /= 10;
+    }
+    
+    println!("{}", str_num.chars().rev().collect::<String>());
+}
+```

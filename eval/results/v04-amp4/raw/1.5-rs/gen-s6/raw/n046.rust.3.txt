@@ -1,0 +1,16 @@
+Here is the corrected code:
+
+```rust
+fn main() {
+    let data = [5, 12, 3, 18, 9];
+    let cutoff = 10;
+    
+    let below_cutoff_count: usize = data.iter().filter(|&&x| x < cutoff).count();
+    let over_cutoff_count: usize = data.iter().filter(|&&x| x >= cutoff).count();
+    
+    println!("Below cutoff: {}", below_cutoff_count);
+    println!("Over cutoff: {}", over_cutoff_count);
+}
+```
+
+The previous program had a slight mistake where the `data` array was accessed in a non-idiomatic way. We should use `&x` to take a reference to each element of the array when filtering. The rest of the logic remains the same.

@@ -1,0 +1,14 @@
+```
+fn main() {
+    let words = vec!["coffee", "latte", "espresso"];
+    let mut letters = Vec::new();
+    for word in &words {
+        for c in word.chars() {
+            if !letters.contains(&c) {
+                println!("{}", c);
+                letters.push(c);
+            }
+        }
+    }
+}
+```

@@ -1,0 +1,6 @@
+```
+fn main() {
+    print_str("G");
+    println!("e");
+}
+```

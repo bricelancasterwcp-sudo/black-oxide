@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let drum = "drum".chars().rev(); // Use rev() to reverse iterator
+    while let Some(c) = drum.next_back() {
+        println!("{}", c);
+    }
+    println!("drum");
+}
+```
+
+Explanation:
+The original code was incorrect because `drum.next_back()` returns a mutable reference to the last element of the iterator. However, `println!` does not take a mutable reference to the last character. It takes an immutable reference. Therefore, the code printed out the reversed string and then the original string.
+
+To fix this, we use `drum.next_back()` which returns an immutable reference to the last character of the iterator, and then print it using `println!`. After printing the last character, we print the original string again using `println!("drum");`

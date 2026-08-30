@@ -1,0 +1,33 @@
+```rust
+struct Fruit {
+    name: Str,
+    letter_count: Int,
+}
+
+fn main() -> Int {
+    let fruits = vec![
+        Fruit { name: "fig", letter_count: 3 },
+        Fruit { name: "banana", letter_count: 6 },
+        Fruit { name: "kiwi", letter_count: 5 },
+    ];
+
+    // Find the fruit with the most letters
+    let &fruit_with_most_letters = fruits.iter().max_by(|a, b| {
+        if a.letter_count > b.letter_count {
+            cmp::Ordering::Greater
+        } else if a.letter_count < b.letter_count {
+            cmp::Ordering::Less
+        } else {
+            // In case of equal letter counts, return the first fruit
+            cmp::Ordering::Equal
+        }
+    }).unwrap();
+
+    // Print the name and letter count of the fruit with the most letters
+    print(fruit_with_most_letters.name);
+    println(&fruit_with_most_letters.letter_count);
+
+    // Return the letter count for verification (although it is not used in this context)
+    fruit_with_most_letters.letter_count
+}
+```

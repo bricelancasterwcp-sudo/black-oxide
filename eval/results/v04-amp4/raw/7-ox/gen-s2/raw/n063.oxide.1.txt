@@ -1,0 +1,18 @@
+```rust
+struct Line { items: Vec<(Int, Int)> }
+
+fn total(line: &Line) -> Int {
+    sum(map(line.items, |(p, q)| p * q))
+}
+
+fn main() {
+    let line1 = Line { items: vec![(4, 3), (5, 2)] };
+    let line2 = Line { items: vec![(3, 2), (4, 3), (5, 2)] };
+
+    print(total(&line1));
+    print_str(" ");
+    print(total(&line2));
+    print_str("\n");
+    print(total(&Line { items: concat(line1.items, line2.items) }));
+}
+```

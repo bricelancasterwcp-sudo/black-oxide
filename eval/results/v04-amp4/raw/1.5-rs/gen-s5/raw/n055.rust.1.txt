@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    println!("{} (oak)", 8);
+    println!("{} (bad)", "");
+    println!("{} (15)", 15);
+}
+```

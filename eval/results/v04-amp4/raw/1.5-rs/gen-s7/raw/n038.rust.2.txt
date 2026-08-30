@@ -1,0 +1,8 @@
+```rust
+
+fn main() {
+    let mut reading = 0;
+    reading += 7;
+    println!("Current reading: {}", reading);
+}
+```

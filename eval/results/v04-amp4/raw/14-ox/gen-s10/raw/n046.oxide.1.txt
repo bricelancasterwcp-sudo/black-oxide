@@ -1,0 +1,32 @@
+```rust
+struct Reading { label: Str, values: Vec<Int> }
+
+fn count_below_cutoff(v: Vec<Int>, cutoff: Int) -> Int {
+    let mut count = 0
+    for x in v {
+        if x < cutoff {
+            count += 1
+        }
+    }
+    count
+}
+
+fn count_at_or_above_cutoff(v: Vec<Int>, cutoff: Int) -> Int {
+    let mut count = 0
+    for x in v {
+        if x >= cutoff {
+            count += 1
+        }
+    }
+    count
+}
+
+fn main() {
+    let values = push(push(push(push(push(vec(), 5), 12), 3), 18), 9)
+    let cutoff = 10
+    let below_count = count_below_cutoff(values, cutoff)
+    let at_or_above_count = count_at_or_above_cutoff(values, cutoff)
+    print(below_count)
+    print(at_or_above_count)
+}
+```

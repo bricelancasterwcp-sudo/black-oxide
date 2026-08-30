@@ -1,0 +1,23 @@
+```rust
+struct Queue {
+    values: Vec<Int>,
+}
+
+fn main() {
+    let mut q = Queue { values: vec![1, 2, 3, 4, 5] };
+    exchange(&mut q);
+    for &x in &q.values {
+        println!("{}", x);
+    }
+}
+
+fn exchange(q: &mut Queue) {
+    let first = q.values.remove(0);
+    let last = q.values.pop();
+    if let Some(last) = last {
+        q.values.insert(0, last);
+    } else {
+        panic!("Queue is empty");
+    }
+}
+```

@@ -1,0 +1,12 @@
+fn main() {
+    let s = "mississippi"
+    let count_s = 0
+    for ch in chars(s) {
+        if ch == "s" {
+            count_s += 1
+        }
+    }
+    print(count_s)
+    let distinct_chars = set(chars(s))
+    print(len(distinct_chars))
+}

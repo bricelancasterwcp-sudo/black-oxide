@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let signal = read_signal();
+
+    match signal {
+        "green" => println!("go for green"),
+        "red" => println!("stop for red"),
+        "yellow" => println!("wait for yellow"),
+        _ => panic!("unknown signal"),
+    }
+}
+
+fn read_signal() -> String {
+    // Implementation here
+    return "green".to_string();
+}
+```

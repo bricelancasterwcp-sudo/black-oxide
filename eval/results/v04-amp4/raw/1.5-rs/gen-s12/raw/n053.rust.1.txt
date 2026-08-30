@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let drum = String::from("drum");
+    
+    // Reverse the string using slicing
+    let reversed_drum = drum.chars().rev().collect::<String>();
+    
+    // Print the normally read version of drum
+    println!("Normally read: {}", drum);
+    
+    // Print the reversed version of drum
+    println!("Reversed: {}", reversed_drum);
+}
+```

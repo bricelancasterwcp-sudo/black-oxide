@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let mut signal = String::new();
+    loop {
+        if signal == "green" {
+            println!("Go for green");
+            signal.clear(); // Clear the signal for reusage
+        } else if signal == "red" {
+            println!("Stop for red");
+            signal.clear(); // Clear the signal for reusage
+        } else if signal == "yellow" {
+            println!("Wait for yellow");
+            signal.clear(); // Clear the signal for reusage
+        }
+    }
+}
+```

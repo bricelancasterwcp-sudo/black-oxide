@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let fruit_names = vec![String::from("fig"), String::from("banana"), String::from("kiwi")];
+
+    let mut max_name = "";
+    let mut max_count = 0;
+
+    for name in fruit_names {
+        let count = name.len();
+        if count > max_count {
+            max_name = name;
+            max_count = count;
+        }
+    }
+
+    println!("The fruit with the most letters is: {}", max_name);
+    println!("It has {} letters.", max_count);
+}
+```

@@ -1,0 +1,21 @@
+```
+fn fib(n: Int) -> Option<Int> {
+    let mut a = 0;
+    let mut b = 1;
+
+    for _ in 0..=n { // Fixed: replaced '2' with 'n'
+        let temp = a + b;
+        a = b;
+        b = temp;
+    }
+
+    Some(b)
+}
+
+fn main() {
+    match fib(10) {
+        Some(n) => print(n),
+        None => println_str("fib failed"),
+    }
+}
+```

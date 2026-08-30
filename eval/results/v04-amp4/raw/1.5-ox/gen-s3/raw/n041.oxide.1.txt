@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let mut v = vec![9, 2, 7, 4];
+    sort(v);
+    for x in v {
+        print!("{}", x);
+        println!();
+    }
+}
+```
+
+This code snippet initializes a vector with the measurements `9`, `2`, `7`, and `4`. It then sorts the vector in ascending order using the `sort` function. Finally, it iterates over the sorted vector and prints each measurement on its own line.

@@ -1,0 +1,3 @@
+fn parse\_int\_or\_bad(s: Str) -> Str { match parse\_int(s) { Some(n) => int\_to\_str(n), None => "bad".clone(), } }
+
+fn main() { print(parse\_int\_or\_bad("8")) print(parse\_int\_or\_bad("oak")) print(parse\_int\_or\_bad("15")) }

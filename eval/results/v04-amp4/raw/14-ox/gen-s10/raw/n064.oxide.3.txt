@@ -1,0 +1,14 @@
+```text
+fn main() {
+    let v = vec()
+    let v = push(v, 10)
+    let v = push(v, 20)
+    let x = get(v, 1)?
+    print(x)
+    let v = vec()
+    let v = push(v, 10)
+    let v = push(v, 20)
+    let y = get(v, 4)?
+    print(y)
+}
+```

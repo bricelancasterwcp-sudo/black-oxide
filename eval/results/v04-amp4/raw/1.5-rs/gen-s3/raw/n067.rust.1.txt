@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let mut sum = 0;
+    
+    let numbers = [7, 4, 9, 10];
+    
+    for &number in numbers.iter().filter(|&&num| num % 2 != 0) {
+        println!("{}", number * 2);
+        sum += number;
+    }
+    
+    println!("Sum of even numbers: {}", sum);
+}
+```

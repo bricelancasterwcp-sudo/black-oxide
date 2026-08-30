@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let first_line = (4 * 3) + (5 * 2);
+    let second_line = first_line;
+    print(first_line);
+    print(second_line);
+}
+```
+
+**Explanation**:
+- The program calculates the value of each line using multiplication and addition.
+- It then prints the values of both lines.
+- Since `second_line` is assigned the same value as `first_line`, both will have the same printed value.

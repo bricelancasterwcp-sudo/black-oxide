@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let drum = String::from("drum");
+    
+    // Print drums in reverse order
+    for (i, c) in drum.chars().rev().enumerate() {
+        print!("{} ", c);
+    }
+    println!();
+    
+    // Print drums normally read
+    for c in drum.chars() {
+        print!("{}", c);
+    }
+    println!();
+}
+```

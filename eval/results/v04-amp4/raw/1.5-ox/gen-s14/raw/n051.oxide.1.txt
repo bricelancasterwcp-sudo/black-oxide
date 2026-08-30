@@ -1,0 +1,7 @@
+```
+fn main() {
+    let g = "granite";
+    print(g[0] as char);
+    print(g[g.len() - 1] as char);
+}
+```

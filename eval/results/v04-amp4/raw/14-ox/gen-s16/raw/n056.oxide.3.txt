@@ -1,0 +1,27 @@
+```text
+struct MaybeInt { value: Option<Int> }
+
+fn sum_valid(mis: Vec<MaybeInt>) -> Int {
+    let mut sum = 0
+    let mut count_invalid = 0
+    for mi in mis {
+        match mi.value {
+            Some(n) => sum += n,
+            None => count_invalid += 1,
+        }
+    }
+    print(sum)
+    print(count_invalid)
+    0
+}
+
+fn main() {
+    let mis = vec![
+        MaybeInt { value: Some(7) },
+        MaybeInt { value: None },
+        MaybeInt { value: Some(9) },
+        MaybeInt { value: None },
+    ]
+    sum_valid(mis)
+}
+```

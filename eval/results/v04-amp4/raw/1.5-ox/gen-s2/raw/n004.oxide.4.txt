@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let mut a = 1;
+    let mut b = 1;
+
+    for _ in 0..9 {
+        let temp = a + b;
+        a = b;
+        b = temp;
+    }
+
+    print(a);
+}
+```
+The original program had trailing semicolons (`;`) and multiple statements on one line, which caused the errors. The corrected program ensures that each statement is terminated with a newline or end of the block `}`.

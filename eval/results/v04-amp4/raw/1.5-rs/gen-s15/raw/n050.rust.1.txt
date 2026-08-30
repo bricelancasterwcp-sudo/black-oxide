@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let scores = [2, 9, 5];
+    for &score in scores.iter().rev() {
+        println!("{}", score);
+    }
+}
+```
+
+In this solution, we declare a vector `scores` containing the three integers 2, 9, and 5. We then use a `for` loop combined with `iter()` to iterate over each element of the vector in reverse order (`rev()`) using `&score` to reference each element without moving it from the vector. Finally, we print each score on a new line using `println!()`.

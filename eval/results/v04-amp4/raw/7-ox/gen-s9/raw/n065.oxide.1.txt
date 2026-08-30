@@ -1,0 +1,31 @@
+```rust
+fn count_exceeding_five(v: Vec<Int>) -> Int {
+    let mut count = 0;
+    for x in v {
+        if x > 5 {
+            count += 1;
+        }
+    }
+    count
+}
+
+fn max_reading(v: Vec<Int>) -> Option<Int> {
+    match sort(v) {
+        Some(mut s) => {
+            s.pop()
+        },
+        None => None,
+    }
+}
+
+fn main() {
+    let readings = push(push(push(push(vec(), 6), 11), 3), 14);
+    let readings = push(readings, 9);
+
+    print(count_exceeding_five(readings.clone())); // Cloning to reuse the vector
+    match max_reading(readings) {
+        Some(m) => print(m),
+        None => print_str("empty"),
+    }
+}
+```

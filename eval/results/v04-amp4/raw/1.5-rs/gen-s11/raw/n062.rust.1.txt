@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let signal = "green"; // or change it to "red" or "yellow"
+    
+    match signal {
+        "green" => println!("Go for green"),
+        "red" => println!("Stop for red"),
+        "yellow" => println!("Wait for yellow"),
+        _ => println!("Unknown signal")
+    }
+}
+```

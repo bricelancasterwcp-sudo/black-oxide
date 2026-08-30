@@ -1,0 +1,17 @@
+```
+fn helper(v: Vec<Int>) -> Option<Int> {
+    for x in v {
+        if let Some(second) = second {
+            break;
+        } else {
+            second = Some(x);
+        }
+    }
+    second
+}
+
+fn main() {
+    println!("{:?}", helper(vec![7, 8, 9])); // prints Some(8)
+    println!("{:?}", helper(vec![]));       // prints None
+}
+```

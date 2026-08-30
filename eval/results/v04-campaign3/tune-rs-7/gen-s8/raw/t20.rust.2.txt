@@ -1,0 +1,24 @@
+fn main() {
+    let mut total_cost = 0;
+    let items = vec![
+        ("pen", 3, 4),
+        ("pad", 9, 2),
+        ("ink", 5, 3),
+    ];
+    for (name, unit_price, quantity) in &items {
+        let cost = unit_price * quantity;
+        total_cost += cost;
+        println!("{}: {}", name, cost);
+    }
+    println!("Total: {}", total_cost);
+    let mut max_cost_item = "";
+    let mut max_cost = 0;
+    for (name, unit_price, quantity) in &items {
+        let cost = unit_price * quantity;
+        if cost > max_cost {
+            max_cost = cost;
+            max_cost_item = name;
+        }
+    }
+    println!("Highest cost item: {}", max_cost_item);
+}

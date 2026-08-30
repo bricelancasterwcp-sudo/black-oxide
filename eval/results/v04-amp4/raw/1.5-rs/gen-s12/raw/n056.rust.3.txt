@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut numbers = [7, 0, 9, 0];
+
+    let valid_count = numbers.iter().filter(|&&num| num != 0).count();
+    let invalid_count = numbers.len() - valid_count;
+
+    println!("Total of valid numbers: {}", valid_count);
+    println!("Number of invalid numbers: {}", invalid_count);
+}
+```

@@ -1,0 +1,22 @@
+```rust
+fn main() {
+    for (index, arg) in std::env::args().enumerate() {
+        let value: u32;
+        if index == 0 {
+            value = arg.parse().unwrap_or(0);
+        } else if index == 1 {
+            match arg.as_ref() {
+                "oak" => println!("good"),
+                _ => println!("bad")
+            }
+        } else if index == 2 {
+            match arg.parse::<u32>() {
+                Ok(num) => println!("{}", num),
+                Err(_) => println!("bad")
+            }
+        } else {
+            println!("bad");
+        }
+    }
+}
+```

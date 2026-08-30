@@ -1,0 +1,21 @@
+```rust
+fn fibonacci(n: Int) -> Int {
+    if n <= 1 {
+        return 1;
+    }
+    let mut a = 1;
+    let mut b = 1;
+    let mut i = 2;
+    while i < n {
+        let next = a + b;
+        a = b;
+        b = next;
+        i += 1;
+    }
+    b
+}
+
+fn main() {
+    print(fibonacci(9));
+}
+```

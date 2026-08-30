@@ -1,0 +1,9 @@
+fn main() {
+    let mut a = vec![1, 1];
+    for _ in 0..9 {
+        let b = push(a, a[a.len() - 2] + a[a.len() - 1]);
+        a.pop();
+        a.push(b);
+    }
+    print(a.last().unwrap());
+}

@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let readings = vec![6, 11, 3, 14, 9];
+    let count = count_if(readings.clone(), |&x| x > 5);
+    print(count);
+    print_str("\n");
+    let max_reading = max(readings).unwrap_or(0);
+    print(max_reading);
+}
+```

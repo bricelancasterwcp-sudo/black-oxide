@@ -1,0 +1,28 @@
+struct Reading { values: Vec<Int> }
+
+fn count_above_five(v: Vec<Int>) -> Int {
+    let mut count = 0
+    for x in v {
+        if x > 5 {
+            count += 1
+        }
+    }
+    count
+}
+
+fn max_reading(v: Vec<Int>) -> Option<Int> {
+    if v.is_empty() {
+        None
+    } else {
+        Some(max(v)?)?
+    }
+}
+
+fn main() {
+    let readings = push(push(push(push(vec(), 6), 11), 3), 14)
+    print(count_above_five(readings))
+    match max_reading(readings) {
+        Some(n) => print(n),
+        None => print_str("no readings"),
+    }
+}

@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let n = 9875;
+    let s = to_str(n);
+    let mut sum = 0;
+
+    for c in s.chars() {
+        sum += from_float(c.to_string()) as Int;
+    }
+
+    print(sum);
+}
+```

@@ -1,0 +1,9 @@
+fn sum_even_numbers() -> Int {
+    let mut sum = 0;
+    for i in 1..=20 {
+        if i % 2 == 0 {
+            sum += i;
+        }
+    }
+    return sum; // Corrected missing semicolon
+}

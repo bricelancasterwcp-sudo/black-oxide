@@ -1,0 +1,17 @@
+fn vec_to_ints(n: Int) -> Vec<Int> {
+    let mut result = vec();
+    while n > 0 {
+        result.push(n % 10);
+        n /= 10;
+    }
+    reverse(result)
+}
+
+fn sum(v: Vec<Int>) -> Int {
+    v.iter().fold(0, |a, &b| a + b)
+}
+
+fn main() {
+    let digits = vec_to_ints(9875);
+    print(sum(digits));
+}

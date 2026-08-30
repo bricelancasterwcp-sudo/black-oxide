@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let s = "coffee";
+    let mut chars = s.chars().collect::<Vec<char>>();
+    chars.sort();
+    chars.dedup();
+    for c in chars {
+        print_str(&c.to_string());
+    }
+}
+```

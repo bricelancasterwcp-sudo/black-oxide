@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    match input() {
+        "8" => print("good"),
+        "oak" => print("bad"),
+        "15" => print("good"),
+        _ => println!("bad")
+    }
+}
+
+fn input() -> String {
+    let mut s = String::new();
+    std::io::stdin().read_line(&mut s).unwrap();
+    s.trim().to_string()
+}
+```

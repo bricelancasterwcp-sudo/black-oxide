@@ -1,0 +1,13 @@
+fn main() {
+    let list = vec![None, Some(10), None, Some(20)];
+    
+    match &list[0] {
+        Some(value) => println!("{}", value),
+        None => println!("None"),
+    }
+    
+    match &list[3] {
+        Some(value) => println!("{}", value),
+        None => println!("None"),
+    }
+}

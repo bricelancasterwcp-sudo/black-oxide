@@ -1,0 +1,8 @@
+```
+fn main() {
+    match (8, "oak", 15) {
+        (_, "oak", x) => print(x),
+        _ => println!("bad"),
+    }
+}
+```

@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let mut a = 1;
+    let mut b = 1;
+
+    for _ in 0..9 {
+        let temp = a;
+        a = b + a;
+        b = temp;
+    }
+
+    println!("The tenth term is: {}", a);
+}
+```

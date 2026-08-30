@@ -1,0 +1,29 @@
+```rust
+fn exchange_first_last(v: Vec<Int>) -> Option<Vec<Int>> {
+    if v.len() < 2 {
+        return None;
+    }
+
+    let first = v.remove(0);
+    let last = v.pop().unwrap();
+
+    let mut result = vec![last];
+    for &i in v.iter() {
+        result.push(i);
+    }
+    result.push(first);
+
+    Some(result)
+}
+
+fn main() {
+    let initial_queue: Vec<Int> = vec![1, 2, 3, 4, 5];
+    if let Some(q) = exchange_first_last(initial_queue) {
+        for &x in q.iter() {
+            print!("{}", x);
+        }
+    } else {
+        print_str("Queue is empty or only contains one element");
+    }
+}
+```

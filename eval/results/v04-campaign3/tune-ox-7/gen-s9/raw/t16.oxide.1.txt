@@ -1,0 +1,9 @@
+fn main() {
+    let a = 100
+    for x in vec(5, 0, 4) {
+        match div(a, x) {
+            Some(q) => print(q),
+            None => print_str("undefined"),
+        }
+    }
+}

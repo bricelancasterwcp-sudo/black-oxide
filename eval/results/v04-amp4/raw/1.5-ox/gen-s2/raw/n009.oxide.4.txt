@@ -1,0 +1,15 @@
+```rust
+fn reverse_digits(mut n: Int) -> Int {
+    let mut reversed = Int::zero();
+    while n > Int::zero() {
+        let digit = n % 10;
+        reversed = push(reversed, digit);
+        n /= 10; // Corrected: remove trailing semicolon and reassign
+    }
+    reversed
+}
+
+fn main() {
+    print(reverse_digits(Int::from(1234)));
+}
+```

@@ -1,0 +1,13 @@
+```
+fn main() {
+    let mut state = "stop";
+    loop {
+        match input() {
+            Ok("green") => { state = "go"; print_str("go for green"); break; },
+            Ok("red")  => { state = "stop"; print_str("stop for red"); break; },
+            Ok("yellow") => { state = "wait"; print_str("wait for yellow"); },
+            Err(e)    => panic!("Input error: {}", e),
+        }
+    }
+}
+```

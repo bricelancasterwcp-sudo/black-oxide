@@ -1,0 +1,14 @@
+```rust
+fn helper(v: Vec<Int>) -> Option<Int> {
+    match v.get(1) {
+        Some(x) => Some(*x),
+        None => None,
+    }
+}
+
+fn main() {
+    println!("{:?}", helper(vec![7, 8])); // Output: Some(8)
+    println!("{:?}", helper(vec![7, 8, 9])); // Output: Some(9)
+    println!("{:?}", helper(vec![10])); // Output: None
+}
+```

@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let first_line = push(push(vec(), 4), 4);
+    let second_line = push(push(vec(), 5), 5);
+
+    print(sum(first_line));
+    print(sum(second_line));
+
+    let total_line = concat(first_line, second_line);
+    print(sum(total_line));
+}
+```

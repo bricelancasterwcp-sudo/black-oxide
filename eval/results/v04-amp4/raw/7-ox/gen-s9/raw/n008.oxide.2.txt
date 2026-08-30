@@ -1,0 +1,13 @@
+fn count_divisible_by_three_or_five(n: Int) -> Int {
+    let mut count = 0;
+    for i in range(1, n + 1) {
+        if i % 3 == 0 || i % 5 == 0 {
+            count += 1;
+        }
+    }
+    return count;
+}
+
+fn main() {
+    print(count_divisible_by_three_or_five(50));
+}

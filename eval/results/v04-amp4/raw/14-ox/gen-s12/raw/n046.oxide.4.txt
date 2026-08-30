@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let values = push(push(push(push(vec(), 5), 12), 3), 18)
+    let cutoff = 10
+    let under = count_if(values, |x| x < cutoff)
+    let over_or_equal = len(values) - under
+    print(under)
+    print(over_or_equal)
+}
+```

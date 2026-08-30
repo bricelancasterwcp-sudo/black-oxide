@@ -1,0 +1,24 @@
+```
+fn count_under_or_over(cutoff: Int, vec: Vec<Int>) -> (Int, Int) {
+    let mut below = 0;
+    let mut above = 0;
+    for &x in vec.iter() {
+        if x <= cutoff {
+            below += 1;
+        } else {
+            above += 1;
+        }
+    }
+    (below, above)
+}
+
+fn main() {
+    let nums = push(push(vec(), 5), 12);
+    let nums2 = push(nums, 3);
+    let nums3 = push(nums2, 18);
+    let nums4 = push(nums3, 9);
+
+    let (below, above) = count_under_or_over(10, nums4);
+    print(format!("Below cutoff: {}\nAbove cutoff: {}", below, above));
+}
+```

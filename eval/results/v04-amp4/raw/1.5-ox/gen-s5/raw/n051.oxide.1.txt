@@ -1,0 +1,17 @@
+```rust
+use std::io;
+
+fn main() {
+    let mut input = String::new();
+    io::stdin().read_line(&mut input).unwrap();
+
+    let word: &[u8] = input.as_bytes();
+    if word.len() != 7 || word[0] != b'g' || word[6] != b'n' {
+        eprintln!("Not a valid word");
+        return;
+    }
+
+    print!("{}", (word[2] as char));
+    print!("{}", (word[5] as char));
+}
+```

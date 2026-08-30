@@ -1,0 +1,9 @@
+```text
+fn main() {
+    let sum_of_cubes = range(1, 6)
+        |> sort
+        |> map(|x| x * x * x)
+        |> sum
+    print(sum_of_cubes)
+}
+```

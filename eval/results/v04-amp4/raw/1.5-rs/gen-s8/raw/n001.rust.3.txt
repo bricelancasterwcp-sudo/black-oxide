@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let mut sum = 0;
+    for i in 1..=5 {
+        sum += i.pow(3) as u32; // Specify a type for this binding
+    }
+    println!("The sum of cubes from 1 to 5 is: {}", sum);
+}
+```

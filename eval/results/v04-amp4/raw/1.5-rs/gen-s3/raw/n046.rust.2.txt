@@ -1,0 +1,22 @@
+```rust
+fn main() {
+    let sample = [5, 12, 3, 18, 9];
+    let cutoff = 10;
+
+    let mut below_cutoff_count = 0;
+    let mut above_or_equal_cutoff_count = 0;
+
+    for &value in sample.iter() {
+        if value < cutoff {
+            below_cutoff_count += 1;
+        } else {
+            above_or_equal_cutoff_count += 1;
+        }
+    }
+
+    println!("Count of values below the cutoff: {}", below_cutoff_count);
+    println!("Count of values at or above the cutoff: {}", above_or_equal_cutoff_count);
+}
+```
+
+The corrected program has a `let` statement for initializing `below_cutoff_count` and `above_or_equal_cutoff_count` to zero. The `if` and `else` blocks correctly increment these variables based on whether each value in `sample` is below or at the cutoff, respectively.

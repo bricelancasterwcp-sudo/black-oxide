@@ -1,0 +1,32 @@
+```oxide
+fn count_above_five(readings: Vec<Int>) -> Int {
+    let mut count = 0;
+    for r in readings {
+        if r > 5 {
+            count += 1;
+        }
+    }
+    count
+}
+
+fn max_reading(readings: Vec<Int>) -> Option<Int> {
+    let mut max = None;
+    for r in readings {
+        match max? {
+            Some(m) => if r > m { max = Some(r); },
+            None => max = Some(r),
+        }
+    }
+    max
+}
+
+fn main() {
+    let readings = push(push(push(push(vec(), 6), 11), 3), 14);
+    readings.push(9);
+    print(count_above_five(readings))
+    match max_reading(readings) {
+        Some(m) => print(m),
+        None => print_str("no readings"),
+    }
+}
+```

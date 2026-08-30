@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    use std::thread;
+    use std::time;
+
+    thread::sleep(time::Duration::from_secs(1)).unwrap(); // Sleep for 1 second to simulate signal arrival
+    println!("go"); // Go when green arrives
+
+    thread::sleep(time::Duration::from_secs(2)).unwrap(); // Sleep for another second to simulate red arriving
+    println!("stop"); // Stop when red arrives
+
+    thread::sleep(time::Duration::from_secs(3)).unwrap(); // Sleep for yet another second to simulate yellow arriving
+    println!("wait"); // Wait when yellow arrives
+}
+```

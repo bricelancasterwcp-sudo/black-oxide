@@ -1,0 +1,9 @@
+```oxide
+fn main() {
+    let a = vec![3; 4];
+    let b = vec![2; 5];
+    print(sum(a) * 3);
+    print(sum(b) * 2);
+    print((sum(a) * 3) + (sum(b) * 2));
+}
+```

@@ -1,0 +1,11 @@
+```oxide
+fn reverse_num(n: Int) -> Str {
+    let digits = chars(int_to_str(n));
+    let reversed_digits = reverse(digits);
+    concat(reversed_digits)
+}
+
+fn main() {
+    print(reverse_num(1234))
+}
+```

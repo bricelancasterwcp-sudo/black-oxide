@@ -1,0 +1,11 @@
+```
+fn main() {
+    let s = "a1b22";
+    let (total, count) = s.chars().fold((0, 0), |(acc, cnt), c| match c.to_digit(10) {
+        Some(digit) => (acc + digit as usize, cnt + 1),
+        None => (acc, cnt)
+    });
+    print(total);
+    print(count);
+}
+```

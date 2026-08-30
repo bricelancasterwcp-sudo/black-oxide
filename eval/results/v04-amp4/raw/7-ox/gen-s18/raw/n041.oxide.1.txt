@@ -1,0 +1,6 @@
+```oxide
+fn main() {
+    let v = vec(9, 2, 7, 4);
+    sort(v).each(|x| print(x));
+}
+```

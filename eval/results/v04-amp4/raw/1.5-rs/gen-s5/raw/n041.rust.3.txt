@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let mut numbers = vec![9, 2, 7, 4];
+    
+    for &number in numbers.iter_mut() {
+        *number = number.min();
+    }
+    
+    for &number in numbers.iter() {
+        println!("{}", number);
+    }
+}
+```
+The problem was that the `sort_unstable` method was sorting references to integers instead of the actual values. The solution is to dereference the reference `&mut number` before calling `sort_unstable`.

@@ -1,0 +1,5 @@
+```rust
+let s = "drum";
+print(concat(s, reverse(str_len(s) > 3 ? substring(s, 1, 3) : "")));
+print(s);
+```

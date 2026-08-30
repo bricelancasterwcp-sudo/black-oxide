@@ -1,0 +1,15 @@
+```rust
+struct List { values: Vec<Int> }
+
+fn main() {
+    let list = List { values: vec![10, 20] };
+    if let Some(&x) = list.values.get(0) {
+        print(x);
+    }
+    if let Some(&y) = list.values.get(3) {
+        print(y);
+    } else {
+        println_str("position 4 is empty");
+    }
+}
+```

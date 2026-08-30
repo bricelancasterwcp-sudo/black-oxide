@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let mut signals = vec![0; 3];
+
+    for i in 0..signals.len() {
+        match signals[i] {
+            0 => println!("go"),
+            1 => println!("stop"),
+            2 => println!("wait"),
+            _ => panic!("invalid signal"),
+        }
+    }
+}
+```

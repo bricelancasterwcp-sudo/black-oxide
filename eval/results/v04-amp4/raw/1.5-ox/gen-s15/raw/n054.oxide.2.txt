@@ -1,0 +1,18 @@
+```rust
+fn count_vowels(s: &str) -> Int {
+    s.chars().filter(|c| "aeiouAEIOU".contains(c)).count() as Int
+}
+
+fn count_consonants(s: &str) -> Int {
+    s.chars().filter(|c| !"aeiouAEIOU".contains(c)).count() as Int
+}
+
+fn main() {
+    let word = "programming";
+    let vowels_count = count_vowels(word);
+    let consonants_count = count_consonants(word);
+
+    println!("Vowels: {}", vowels_count);
+    println!("Consonants: {}", consonants_count);
+}
+```

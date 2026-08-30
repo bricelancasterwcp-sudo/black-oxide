@@ -1,0 +1,9 @@
+fn main() {
+    let mut terms = [1, 1];
+    for _ in 2..10 {
+        let next_term = terms.iter().rev().take(2).sum();
+        let temp = [next_term];
+        terms = [terms, temp].concat();
+    }
+    println!("{}", terms[9]);
+}

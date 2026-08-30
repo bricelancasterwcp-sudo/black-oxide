@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let word = "drum";
+    println!("{}", word.chars().rev().collect::<String>());
+    println!("{}", word);
+}
+```
+
+Explanation:
+- The `main` function is defined to handle the execution of the program.
+- `let word = "drum";` declares a variable `word` and assigns it the value "drum".
+- `println!("{}", word.chars().rev().collect::<String>());` prints the reversed version of `word` by iterating over each character using `.chars()`, reversing the order with `.rev()`, and then collecting the characters into a new string.
+- `println!("{}", word);` prints the original, non-reversed version of `word`.
+
+This program outputs:
+```
+umdr
+drum
+```

@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let count = (1..=50).filter(|x| x % 3 == 0 || x % 5 == 0).count();
+    print(count);
+}
+```
+
+To explain the code:
+- `1..=50` creates a range from 1 to 50.
+- `.filter()` applies a closure to each element in the range, checking if it is divisible by 3 or 5.
+- `.count()` counts the number of elements that satisfy the condition.
+- The result is printed.

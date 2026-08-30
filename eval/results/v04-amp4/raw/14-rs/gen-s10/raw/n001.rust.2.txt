@@ -1,0 +1,7 @@
+fn main() {
+    let mut sum = 0i32;
+    for i in 1..=5 {
+        sum += i.pow(3);
+    }
+    println!("{}", sum);
+}

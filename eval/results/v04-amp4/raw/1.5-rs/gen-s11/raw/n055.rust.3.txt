@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let (num1, fruit1, num2) = (8, "oak", 15);
+    
+    match (num1, fruit1, num2) {
+        (n, Some(f), None) => println!("{} {}", n, f),
+        (_, _, None) => println!("bad"),
+    }
+}
+```

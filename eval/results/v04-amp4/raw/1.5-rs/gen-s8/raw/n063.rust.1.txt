@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let val1 = 4 * 3;
+    let val2 = 5 * 2;
+
+    println!("The first line is worth {}.", val1);
+    println!("The second line is worth {}.", val2);
+
+    println!("The total value of both lines is {}", val1 + val2);
+}
+```

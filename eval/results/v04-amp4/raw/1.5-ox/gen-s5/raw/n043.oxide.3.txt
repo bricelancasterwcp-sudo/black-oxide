@@ -1,0 +1,58 @@
+```rust
+use std::collections::VecDeque;
+
+struct Queue<T> {
+    values: VecDeque<T>,
+}
+
+impl<T> Queue<T> {
+    fn new() -> Self {
+        Queue { values: VecDeque::new() }
+    }
+
+    fn push(&mut self, x: T) {
+        self.values.push_back(x);
+    }
+
+    fn pop(&mut self) -> Option<T> {
+        self.values.pop_front()
+    }
+
+    fn first(&self) -> Option<&T> {
+        self.values.front()
+    }
+
+    fn last(&self) -> Option<&T> {
+        self.values.back()
+    }
+}
+
+fn main() {
+    let mut q = Queue::new();
+    for i in 1..=5 {
+        q.push(i);
+    }
+
+    if let Some(first) = q.first() {
+        println!("{}", first);
+
+        if let Some(last) = q.last() {
+            println!("{}", last);
+
+            // Fix: unwrap the popped values
+            let mut last = q.pop().unwrap();
+            let mut first = q.pop().unwrap();
+
+            // Fix: push the swapped values back into the queue
+            q.push(first);
+            q.push(last);
+
+            while let Some(value) = q.pop() {
+                println!("{}", value);
+            }
+        }
+    } else {
+        println!("The queue is empty");
+    }
+}
+```

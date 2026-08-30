@@ -1,0 +1,23 @@
+```rust
+fn main() {
+    let n = 9875;
+    let mut sum = 0;
+
+    while n > 0 {
+        sum += n % 10;
+        n /= 10;
+    }
+
+    print(sum);
+}
+```
+
+Diagnostics:
+2:17: OX0003: expected expression, found ';'
+3:20: OX0003: expected expression, found ';'
+6:22: OX0003: expected expression, found ';'
+10:15: OX0003: expected expression, found ';'
+2:17: OX0103: expected end of statement, found ERROR
+3:20: OX0103: expected end of statement, found ERROR
+6:22: OX0103: expected end of statement, found ERROR
+10:15: OX0103: expected end of statement, found ERROR

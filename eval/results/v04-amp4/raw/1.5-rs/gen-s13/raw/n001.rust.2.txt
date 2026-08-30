@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let sum = (1..=5).fold(0, |acc, x| acc + i32::pow(x, 3));
+    println!("The sum of cubes from 1 to 5 is: {}", sum);
+}
+```
+
+Explanation:
+In the original program, `x.pow(3)` was ambiguous because Rust cannot determine the type of `x` in this context. By adding `i32::pow`, we explicitly specify that we want to raise `x` to the power of 3 as an integer.

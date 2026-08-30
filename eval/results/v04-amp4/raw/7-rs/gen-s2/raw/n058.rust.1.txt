@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let word = "coffee";
+    let mut seen = [false; 256];
+    for c in word.chars() {
+        let idx = c as usize;
+        if !seen[idx] {
+            seen[idx] = true;
+        } else {
+            println!("{}", c);
+        }
+    }
+}
+```

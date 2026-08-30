@@ -1,0 +1,27 @@
+```rust
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn set_width(r: &mut Rectangle, new_width: Int) -> Result<(), String> {
+    if new_width <= 0 {
+        return Err("Width must be positive".to_string());
+    }
+    r.width = new_width;
+    Ok(())
+}
+
+fn area(r: &Rectangle) -> Int {
+    r.width * r.height
+}
+
+fn main() {
+    let mut r = Rectangle { width: 2, height: 3 };
+    if let Err(e) = set_width(&mut r, 5) {
+        print_str(e.as_str());
+    } else {
+        println(area(&r));
+    }
+}
+```

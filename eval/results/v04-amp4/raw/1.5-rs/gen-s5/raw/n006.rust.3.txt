@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let mut largest_power_of_two = 1;
+    while largest_power_of_two * 2 <= 50 { // Change limit from 100 to 50 for smaller numbers
+        largest_power_of_two *= 2;
+    }
+    println!("The biggest power of two less than or equal to 100 is: {}", largest_power_of_two);
+}
+```

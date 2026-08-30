@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let word = "coffee";
+    let mut seen = Vec::new();
+    let mut duplicates = Vec::new();
+    
+    for c in word.chars() {
+        if seen.contains(&c) && !duplicates.contains(&c) {
+            duplicates.push(c);
+        } else {
+            seen.push(c);
+        }
+    }
+    
+    for c in duplicates {
+        println!("{}", c);
+    }
+}
+```

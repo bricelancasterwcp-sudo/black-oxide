@@ -1,0 +1,28 @@
+```rust
+fn main() {
+    match process_entry("8") {
+        Ok(n) => print(n),
+        Err(e) => println!("bad"),
+    }
+    match process_entry("oak") {
+        Ok(n) => print(n),
+        Err(e) => println!("bad"),
+    }
+    match process_entry("15") {
+        Ok(n) => print(n),
+        Err(e) => println!("bad"),
+    }
+}
+
+fn process_entry(entry: &str) -> Result<Int, &'static str> {
+    let n = match entry.parse::<Int>() {
+        Ok(n) => n,
+        Err(_) => return Err("not a number"),
+    };
+    if n == 8 || n == 15 {
+        Ok(n);
+    } else {
+        Err("unknown")
+    }
+}
+```

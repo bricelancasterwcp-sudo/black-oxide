@@ -1,0 +1,5 @@
+fn main() {
+    let s = "drum";
+    let reversed = str_len(s) == 4 ? chars(s).reverse().concat() : s;
+    print(concat(reversed, "\n", s));
+}

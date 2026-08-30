@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let e = read();
+    match e {
+        Some(8) => print("good"),
+        Some(oak) => print("bad"),
+        Some(15) => print("good"),
+        None => print("bad"),
+    }
+}
+
+fn read() -> Option<i32> {
+    // Simulate reading input (not actually implemented in Rust)
+    None
+}
+```

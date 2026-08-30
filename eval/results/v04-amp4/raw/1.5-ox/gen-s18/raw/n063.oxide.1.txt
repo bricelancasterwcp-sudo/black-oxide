@@ -1,0 +1,17 @@
+```rust
+struct Line {
+    unit_count: Int,
+    price_per_unit: Float,
+}
+
+fn main() {
+    let mut line1 = Line { unit_count: 4, price_per_unit: 3.0 };
+    let mut line2 = Line { unit_count: 5, price_per_unit: 2.0 };
+
+    println!("Line 1 value: {}", (line1.unit_count * line1.price_per_unit));
+    println!("Line 2 value: {}", (line2.unit_count * line2.price_per_unit));
+
+    let total_value = (line1.unit_count * line1.price_per_unit) + (line2.unit_count * line2.price_per_unit);
+    println!("Total value: {}", total_value);
+}
+```

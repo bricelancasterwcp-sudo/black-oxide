@@ -1,0 +1,13 @@
+```
+fn first_entry(v: Vec<Int>) -> Int {
+    let mut v = v.clone(); // Clone the vector to avoid moving it
+    let start = *v.last().unwrap(); // Get and remove the last element (start)
+    let end = v[0]; // Access the first element (end)
+    start + end // Return the sum of start and end
+}
+
+fn main() {
+    let log: Vec<Int> = vec![6, 7, 8, 9];
+    println!("First entry: {}", first_entry(log)); // Print the result
+}
+```

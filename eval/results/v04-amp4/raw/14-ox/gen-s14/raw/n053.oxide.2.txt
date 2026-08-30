@@ -1,0 +1,7 @@
+fn main() {
+    let word = "drum";
+    let reversed_chars: Vec<Str> = reverse(chars(word));
+    let reversed_word = concat(reversed_chars);
+    print_str(reversed_word);
+    print_str(word);
+}

@@ -1,0 +1,23 @@
+```rust
+fn main() {
+    let input = "a1b22";
+
+    // Initialize variables to keep track of the sum and count
+    let mut sum = 0;
+    let mut count = 0;
+
+    // Iterate through each character in the input string
+    for c in input.chars() {
+        if c.is_digit(10) {
+            // Convert the digit character to an integer and add it to the total
+            sum += c.to_digit(10).unwrap();
+            // Increment the count of digit characters
+            count += 1;
+        }
+    }
+
+    // Print the total sum of digits and the count of digit characters
+    print!("Sum of digits: {}", sum);
+    println!("Count of digits: {}", count);
+}
+```

@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let numbers = [8, 3, 11, 6];
+    let min = numbers.iter().min().unwrap();
+    let max = numbers.iter().max().unwrap();
+    println!("Smallest figure: {}", min);
+    println!("Gap between largest and smallest: {}", (max - min) as usize);
+}
+```

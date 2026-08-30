@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut x = 1;
+    while x * x <= 100 {
+        x *= 2;
+    }
+    println(x);
+}
+```
+
+This Rust program initializes `x` to 1 and multiplies it by itself until its square exceeds 100. When the loop exits, `x` is the biggest power of two that does not exceed 100.

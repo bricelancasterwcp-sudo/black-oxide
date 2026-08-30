@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let num = 9875;
+    let digits: Vec<Int> = num.to_string().chars().map(|c| c as Int).collect();
+    println!("{}", sum(digits));
+}
+```

@@ -1,0 +1,10 @@
+fn main() {
+    let list = vec![10, 20];
+    for &position in &[1, 4] {
+        match position {
+            0 => println!("{}", list[0]),
+            _ if position < list.len() => println!("{}", list[position]),
+            _ => println!("None"),
+        }
+    }
+}

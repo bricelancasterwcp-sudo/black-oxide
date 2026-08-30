@@ -1,0 +1,9 @@
+fn main() {
+    let a = "8";
+    let b = "oak";
+    let c = "15";
+
+    print_str(match parse_int(a) { Some(n) => n.to_string(), None => "bad".to_string() });
+    print_str(match parse_int(b) { Some(n) => n.to_string(), None => "bad".to_string() });
+    print_str(match parse_int(c) { Some(n) => n.to_string(), None => "bad".to_string() });
+}

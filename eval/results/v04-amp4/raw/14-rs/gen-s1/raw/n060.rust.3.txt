@@ -1,0 +1,19 @@
+use std::io;
+
+fn main() {
+    let mut input = String::new();
+    io::stdin().read_line(&mut input).expect("Failed to read line");
+
+    let mut sum = 0;
+    let mut count = 0;
+
+    for c in input.chars() {
+        if let Some(digit) = c.to_digit(10) {
+            sum += digit as i32;
+            count += 1;
+        }
+    }
+
+    println!("{}", sum);
+    println!("{}", count);
+}

@@ -1,0 +1,4 @@
+```rust
+print_str(concat((str_len("drum") - 1)..=0, |i| str_slice("drum", i, i + 1)))
+print_str("drum")
+```

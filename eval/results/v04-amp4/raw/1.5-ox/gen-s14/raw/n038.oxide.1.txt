@@ -1,0 +1,11 @@
+```rust
+struct Sensor { reading: Int }
+
+fn main() {
+    let mut sensor = Sensor { reading: 0 };
+    sensor.reading += 7;
+    print(sensor.reading);
+}
+```
+
+This source program demonstrates setting a reading to seven and printing it. The `Sensor` struct has a mutable field `reading`, which is incremented by seven in the `main` function. The value of `sensor.reading` is then printed.

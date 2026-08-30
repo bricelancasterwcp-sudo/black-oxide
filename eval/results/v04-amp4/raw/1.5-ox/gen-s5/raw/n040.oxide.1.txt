@@ -1,0 +1,20 @@
+```rust
+enum Shape {
+    Square(4.0),
+    Circle(f64),
+}
+
+fn main() {
+    let shape = Shape::Square(4.0);
+    print_area(shape);
+}
+
+fn print_area(s: Shape) {
+    match s {
+        Shape::Square(side) => println!("Area of square: {}", side * side),
+        Shape::Circle(radius) => println!("Area of circle: {}", radius * radius * std::f64::consts::PI),
+    }
+}
+```
+
+In this solution, the `Shape` enum represents either a square or a circle. The `print_area` function takes a `Shape` as input and uses pattern matching to print the area accordingly. This approach is different from the Rust-style code where type annotations are mandatory everywhere, but it adheres closely to the language's principles of simplicity and clarity in its design.

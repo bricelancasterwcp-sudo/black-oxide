@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let mut sensor = Reading { label: "sensor", values: vec![] };
+    sensor.values[0] = 7;
+    print(sensor.values[0]);
+}
+```
+
+This solution fixes the issues in the original program by:
+
+1. Correcting the syntax for initializing and updating the vector.
+2. Removing unnecessary semicolons.
+3. Handling the move issue correctly by directly accessing the vector without cloning it, as `values` is a mutable field.
+4. Ensuring that all parts of the code are syntactically correct according to Oxide's rules.

@@ -1,0 +1,17 @@
+```oxide
+struct List { value: Int, next: Option<Box<List>> }
+
+fn nth(list: Option<Box<List>>, n: Int) -> Option<Int> {
+    match list {
+        Some(boxed) if n == 0 => Some(boxed.value),
+        Some(boxed) => nth(boxed.next, n - 1),
+        None => None,
+    }
+}
+
+fn main() {
+    let l = Some(Box::new(List { value: 10, next: Some(Box::new(List { value: 20, next: None })) }));
+    print(nth(l, 1).unwrap_or(-1));
+    print(nth(l, 4).unwrap_or(-1));
+}
+```

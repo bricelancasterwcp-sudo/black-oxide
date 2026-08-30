@@ -1,0 +1,24 @@
+```rust
+fn main() {
+    let n = 91;
+    if !is_prime(n) {
+        println!("no");
+    } else {
+        println!("yes");
+    }
+}
+
+impl Integer for i32 {
+    fn is_prime(&self) -> bool {
+        if *self <= 1 {
+            return false;
+        }
+        for i in 2..=(n as f64).sqrt() as i32 {
+            if self % i == 0 {
+                return false;
+            }
+        }
+        true
+    }
+}
+```

@@ -1,0 +1,22 @@
+```oxide
+struct Queue { values: Vec<Int> }
+
+fn exchange_first_last(q: Queue) -> Queue {
+    let len = q.values.len();
+    if len > 1 {
+        let first = q.values[0];
+        let last = q.values[len - 1];
+        q.values[0] = last;
+        q.values[len - 1] = first;
+    }
+    q
+}
+
+fn main() {
+    let q = Queue { values: vec(1, 2, 3, 4, 5) };
+    let q_exchanged = exchange_first_last(q);
+    for x in q_exchanged.values {
+        print(x);
+    }
+}
+```

@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let mut arr = [10, 20];
+
+    match arr.get(0) { // Access position one (index 0)
+        Some(value) => println!("Position one: {}", value), // Print the value
+        None => (), // If index is empty, do nothing
+    }
+
+    match arr.get(3) { // Access position four (index 3, out of bounds for this array)
+        Some(value) => println!("Position four: {}", value), // Print the value if it exists
+        None => (), // If index is out of bounds, do nothing
+    }
+}
+```

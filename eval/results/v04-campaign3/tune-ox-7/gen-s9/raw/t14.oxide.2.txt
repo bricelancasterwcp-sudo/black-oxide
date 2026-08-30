@@ -1,0 +1,6 @@
+fn main() {
+    let s = "mississippi"
+    print(count(s, "s"))
+    let chars = unique_chars(s)
+    print(len(chars))
+}

@@ -1,0 +1,13 @@
+```
+fn find_biggest_power_of_two(n: Int) -> Int {
+    let mut result = 1;
+    while (result << 1) <= n {
+        result <<= 1;
+    }
+    result
+}
+
+fn main() {
+    println(find_biggest_power_of_two(100));
+}
+```

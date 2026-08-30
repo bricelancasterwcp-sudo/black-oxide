@@ -1,0 +1,21 @@
+```oxide
+struct Entry { value: Option<Int>, label: Str }
+
+fn process_entries(entries: Vec<Entry>) {
+    for entry in entries {
+        match entry.value {
+            Some(n) => print(n),
+            None => print_str("bad"),
+        }
+    }
+}
+
+fn main() {
+    let entries = vec![
+        Entry { value: Some(8), label: "eight" },
+        Entry { value: None, label: "oak" },
+        Entry { value: Some(15), label: "fifteen" },
+    ];
+    process_entries(entries);
+}
+```

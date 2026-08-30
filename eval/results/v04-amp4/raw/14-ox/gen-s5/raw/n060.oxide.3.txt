@@ -1,0 +1,38 @@
+```rust
+struct DigitCount { sum: Int, count: Int }
+
+fn parse_int(c: Str) -> Option<Int> {
+    match c {
+        "0" => Some(0),
+        "1" => Some(1),
+        "2" => Some(2),
+        "3" => Some(3),
+        "4" => Some(4),
+        "5" => Some(5),
+        "6" => Some(6),
+        "7" => Some(7),
+        "8" => Some(8),
+        "9" => Some(9),
+        _ => None,
+    }
+}
+
+fn count_digits(s: Str) -> DigitCount {
+    let mut sum = 0
+    let mut count = 0
+    for c in chars(s) {
+        if let Some(digit) = parse_int(c) {
+            sum += digit
+            count += 1
+        }
+    }
+    DigitCount { sum, count }
+}
+
+fn main() {
+    let input = "a1b22"
+    let result = count_digits(input)
+    print(result.sum)
+    print(result.count)
+}
+```

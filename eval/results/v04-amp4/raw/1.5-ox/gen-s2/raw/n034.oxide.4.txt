@@ -1,0 +1,15 @@
+```rust
+fn second(v: Vec<Int>) -> Option<Int> {
+    let x = v[1];
+    Some(x)
+}
+
+fn main() {
+    for i in vec![7, 8, 9] {
+        match second(vec![i - 1, i, i + 1]) {
+            Some(n) => print_str(&n.to_string()),
+            None => print_str("none"),
+        }
+    }
+}
+```

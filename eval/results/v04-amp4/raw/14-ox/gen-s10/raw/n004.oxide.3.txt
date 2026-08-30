@@ -1,0 +1,23 @@
+```text
+fn fibonacci(n: Int) -> Int {
+    if n <= 0 {
+        return 0;
+    } else if n == 1 || n == 2 {
+        return 1;
+    }
+    let mut a = 1;
+    let mut b = 1;
+    let mut i = 3;
+    while i <= n {
+        let temp = a + b;
+        a = b;
+        b = temp;
+        i += 1;
+    }
+    b
+}
+
+fn main() {
+    print(fibonacci(10));
+}
+```

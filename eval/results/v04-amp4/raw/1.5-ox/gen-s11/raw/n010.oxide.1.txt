@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let num = 91;
+    if contains(vec![1, 2, 3, 4, 5, 6, 7, 8, 9], num) && num != 1 {
+        print_str("yes");
+    } else {
+        print_str("no");
+    }
+}
+```

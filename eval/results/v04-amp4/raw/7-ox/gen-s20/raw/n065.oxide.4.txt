@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let readings = vec(6, 11, 3, 14, 9);
+    let count = count_if(readings, |x| x > 5);
+    print(count);
+    let highest = max(clone(readings))?; // Clone readings to avoid move
+    print(highest);
+}
+```

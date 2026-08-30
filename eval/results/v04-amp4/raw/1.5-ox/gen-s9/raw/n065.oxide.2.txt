@@ -1,0 +1,30 @@
+```rust
+struct Reading { label: Str, values: Vec<Int> }
+
+fn first_big(v: Vec<Int>) -> Int {
+    let mut found = -1;
+    for x in v {
+        if x > 10 {
+            found = x;
+            break;
+        }
+    }
+    found
+}
+
+fn second(v: Vec<Int>) -> Option<Int> {
+    let x = get(v, 1)?;
+    Some(x + 1)
+}
+
+fn main() {
+    let readings: Vec<Int> = vec![6, 11, 3, 14, 9];
+    println(first_big(readings.clone())); // clone to avoid moving values
+
+    if let Some(max_reading) = readings.iter().max() {
+        println(max_reading);
+    } else {
+        println_str("too short");
+    }
+}
+```

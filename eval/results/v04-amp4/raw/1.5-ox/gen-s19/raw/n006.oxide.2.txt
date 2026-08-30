@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let mut biggest = 0;
+    for i in 0..=9 {
+        if 2i.pow(i) > 100 {
+            break;
+        }
+        biggest = i;
+    }
+    print(biggest);
+}
+```
+
+The problem was due to the use of semicolons and incorrect indentation in the loop. The `break` statement needs to be inside a loop, and the loop itself should have its own block to ensure it is closed properly.

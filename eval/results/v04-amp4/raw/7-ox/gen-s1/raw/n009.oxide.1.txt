@@ -1,0 +1,7 @@
+```
+fn main() {
+    let n = 1234;
+    let reversed = reverse(concat(int_to_str(n), str_len(&int_to_str(n))));
+    print(reversed);
+}
+```

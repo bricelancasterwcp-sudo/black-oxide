@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let mut a = 1;
+    let mut b = 1;
+
+    for _ in 0..9 { // Change from 2..=10 to 0..9 to start at the first term (1)
+        let next_term = a + b;
+        a = b;
+        b = next_term;
+    }
+
+    println!("{}", a);
+}
+```

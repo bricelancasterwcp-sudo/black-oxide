@@ -1,0 +1,18 @@
+```rust
+fn deposit(amount: Int) -> Option<Int> {
+    let mut balance = 0;
+    for a in amount {
+        balance += a;
+        println!("Balance after {} deposit(s): {}", a, balance);
+    }
+    Some(balance)
+}
+
+fn main() {
+    deposit(3); 
+    deposit(1); 
+    deposit(4);
+    deposit(1);
+    deposit(5);
+}
+```

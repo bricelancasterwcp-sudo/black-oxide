@@ -1,0 +1,12 @@
+```text
+fn main() {
+    let values = vec(5, 12, 3, 18, 9);
+    let cutoff = 10;
+
+    let below_count = count_if(values, v -> v < cutoff);
+    let above_count = count_if(values, v -> v >= cutoff);
+
+    print(below_count);
+    print(above_count);
+}
+```

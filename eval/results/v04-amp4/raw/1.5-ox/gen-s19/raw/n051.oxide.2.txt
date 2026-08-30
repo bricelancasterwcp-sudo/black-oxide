@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    if let Some(c) = "granite".chars().next() {
+        match c {
+            'g' => print_str("\n" + &"r"),
+            'a' => print_str("\n" + &"n"),
+            'r' => print_str("\n" + &"e"),
+            't' => print_str("\n" + &"m"),
+            'h' => print_str("\n" + &"i"),
+            'n' => print_str("\n" + &"e"),
+            _ => unreachable!(),
+        }
+    } else {
+        println_str("not granite");
+    }
+}
+```

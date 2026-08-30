@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let mut v = vec![10, 20];
+    println!("{:?}", get(&v, 0)); // use '&' to borrow the vector
+    println!("{:?}", get(&v, 3)); // use '&' to borrow the vector
+}
+fn get(v: &Vec<i32>, i: usize) -> Option<&i32> {
+    v.get(i)
+} 
+```

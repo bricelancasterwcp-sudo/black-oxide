@@ -1,0 +1,9 @@
+fn main() {
+    // Calculate the area of a square
+    let side_length = 4.0;
+    let pi_value = std::f64::consts::PI;
+    let square_area = side_length * side_length * pi_value;
+
+    // Print the area of the square
+    println!("The area of the square is: {:.2}", square_area);
+}

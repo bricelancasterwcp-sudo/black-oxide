@@ -1,0 +1,17 @@
+```rust
+struct Measurement { value: Int }
+
+fn main() {
+    let readings = push(push(vec(), 4), 7);
+    let mut sorted_readings = vec![];
+    for reading in readings.iter().rev() {
+        if !sorted_readings.contains(&reading) {
+            sorted_readings.push(reading.clone());
+        }
+    }
+
+    for reading in sorted_readings {
+        print_str(int_to_str(reading.value));
+    }
+}
+```

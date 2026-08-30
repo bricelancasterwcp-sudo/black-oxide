@@ -1,0 +1,18 @@
+fn safe_divide(n: Int, d: Int) -> Option<Float> {
+    if d == 0 {
+        None
+    } else {
+        Some(to_float(n) / to_float(d))
+    }
+}
+
+fn main() {
+    let result = match safe_divide(20, 4) {
+        Some(value) => value,
+        None => {
+            print_str("bad");
+            return;
+        }
+    };
+    print(result);
+}

@@ -1,0 +1,8 @@
+fn main() {
+    let readings = vec![6, 11, 3, 14, 9];
+    let count = readings.iter().filter(|&x| x > 5).count();
+    print(count);
+    let max_reading = *readings.iter().max().unwrap_or(&0);
+    print_str("\n");
+    print(max_reading);
+}

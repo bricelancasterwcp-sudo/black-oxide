@@ -1,0 +1,8 @@
+fn main() {
+    let num: u32 = 1234;
+    
+    // Convert the number to a string, then reverse it and convert back to an integer
+    let reversed_num: u32 = i32::from_str_radix(&(num.to_string().chars().rev()).collect::<String>(), 10).unwrap();
+    
+    println!("Reversed number: {}", reversed_num);
+}

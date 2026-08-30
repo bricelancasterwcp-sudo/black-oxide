@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let log = vec![6, 7, 8, 9];
+    println!("Entry starting with: {}", log[0]);
+    println!("Entry ending with: {}", log.last().unwrap()); // Corrected to use the last element index
+}
+```
+
+The error in the original code was that `log.len() - 1` gave an incorrect index because it counted from zero, which is why `log[len()]` would cause a runtime error. In Rust, we use `.last()` instead of `log[len()]` for accessing the last element in a vector.
+
+This corrected program will correctly print "Entry starting with: 6" and "Entry ending with: 9".

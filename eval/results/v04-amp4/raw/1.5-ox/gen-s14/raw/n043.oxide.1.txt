@@ -1,0 +1,37 @@
+```rust
+struct Queue {
+    data: Vec<Int>,
+}
+
+impl Queue {
+    fn new(data: Vec<Int>) -> Self {
+        Queue { data }
+    }
+
+    fn exchange_first_and_last(&mut self) {
+        if self.data.len() >= 2 {
+            let first = self.data.remove(0);
+            let last = self.data.pop().unwrap();
+            self.data.insert(0, last);
+            self.data.push(first);
+        } else {
+            eprintln!("Queue length is less than 2");
+        }
+    }
+
+    fn print(&self) {
+        for &item in &self.data {
+            print!("{}", item);
+            println!();
+        }
+    }
+}
+
+fn main() {
+    let mut q = Queue::new(vec![1, 2, 3, 4, 5]);
+    q.exchange_first_and_last();
+    q.print();
+}
+```
+
+This Rust program defines a `Queue` struct that holds integers. It includes methods to exchange the first and last elements of the queue and to print its contents. The `main` function initializes a queue with values from 1 to 5, calls the `exchange_first_and_last` method to swap the first and last elements, and then prints the updated queue one element per line.

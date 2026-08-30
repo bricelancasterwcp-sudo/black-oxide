@@ -1,0 +1,19 @@
+```
+fn find_n_positions(s: Str) -> Vec<Int> {
+    let mut positions = Vec::new();
+    for (i, c) in s.chars().enumerate() {
+        if c == 'n' {
+            positions.push(i);
+        }
+    }
+    positions
+}
+
+fn main() {
+    let banana_str = "banana";
+    let n_positions = find_n_positions(banana_str);
+    for pos in n_positions {
+        println!("{}", pos);
+    }
+}
+```

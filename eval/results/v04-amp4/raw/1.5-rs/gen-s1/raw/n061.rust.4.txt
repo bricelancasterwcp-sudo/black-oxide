@@ -1,0 +1,19 @@
+Here's the fixed version of your Rust code:
+
+```rust
+fn main() {
+    // Calculate the area of the rectangle
+    let length = 9;
+    let width = 3;
+    let area = length * width;
+
+    // Calculate the perimeter of the rectangle
+    let perimeter = 2 * (length + width);
+
+    // Print the results
+    println!("Area: {}", area);
+    println!("Perimeter: {}", perimeter);
+}
+```
+
+The corrected program will now correctly calculate and print the area and perimeter of a rectangle that measures nine across and three down.

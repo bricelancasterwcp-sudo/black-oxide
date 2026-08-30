@@ -1,0 +1,14 @@
+```text
+fn parse_int_or_bad(s: Str) -> Str {
+    match parse_int(s) {
+        Some(n) => int_to_str(n),
+        None => "bad",
+    }
+}
+
+fn main() {
+    print(parse_int_or_bad("8"))
+    print(parse_int_or_bad("oak"))
+    print(parse_int_or_bad("15"))
+}
+```

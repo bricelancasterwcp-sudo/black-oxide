@@ -1,0 +1,11 @@
+fn main() {
+    let n = 91;
+    let mut is_prime = true;
+    for i in range(2, n) {
+        if (n % i) == 0 {
+            is_prime = false;
+            break;
+        }
+    }
+    print(if is_prime { "yes" } else { "no" });
+}

@@ -1,0 +1,19 @@
+```rust
+fn count_and_sum_digits(s: Str) -> (Int, Int) {
+    let mut sum = 0
+    let mut count = 0
+    for c in chars(s) {
+        if parse_int(c).is_some() {
+            sum = sum + parse_int(c).unwrap()
+            count = count + 1
+        }
+    }
+    (sum, count)
+}
+
+fn main() {
+    let (total, num_digits) = count_and_sum_digits("a1b22")
+    print(total)
+    print(num_digits)
+}
+```

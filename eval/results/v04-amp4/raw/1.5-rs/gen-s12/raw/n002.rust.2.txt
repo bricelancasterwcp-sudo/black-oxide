@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut product: i32 = 1;
+
+    for i in 1..=6 {
+        product *= i;
+    }
+
+    println!("The product is {}", product);
+}
+```

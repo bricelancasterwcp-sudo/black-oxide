@@ -1,0 +1,17 @@
+```rust
+struct Rectangle { width: Int, height: Int }
+
+fn main() {
+    let r = Rectangle { width: 9, height: 3 };
+    print("Area is {}", area(r));            // field access copies: r stays usable
+    print("\nCircumference is {}", circumference(r));
+}
+
+fn area(rect: Rectangle) -> Int {
+    rect.width * rect.height
+}
+
+fn circumference(rect: Rectangle) -> Int {
+    2 * (rect.width + rect.height)
+}
+```

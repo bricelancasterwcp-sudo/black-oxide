@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let line1 = push(push(vec(), 3), 3);
+    let line2 = push(push(vec(), 2), 2);
+    print(sum(line1) * 4 + sum(line2) * 5);
+}
+```

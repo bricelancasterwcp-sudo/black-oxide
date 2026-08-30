@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let mut sensor = Reading { label: "sensor", values: vec![] };
+    set(&mut sensor.values, 0, 7);
+    print(sensor.values[0]);
+}
+```

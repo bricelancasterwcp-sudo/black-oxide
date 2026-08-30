@@ -1,0 +1,18 @@
+struct Queue { values: Vec<Int> }
+
+fn swap_first_last(q: Queue) -> Queue {
+    let len = len(q.values);
+    if len > 0 {
+        q.values = set(set(q.values.clone(), 0, get(q.values, len - 1)), len - 1, get(q.values, 0));
+    }
+    q
+}
+
+fn main() {
+    let mut q = Queue { values: push(push(push(push(vec(), 1), 2), 3), 4) };
+    q = swap_first_last(q);
+    for x in q.values {
+        print(x);
+        print_str("\n");
+    }
+}

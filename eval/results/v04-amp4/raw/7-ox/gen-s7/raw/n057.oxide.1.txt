@@ -1,0 +1,10 @@
+```oxide
+fn main() {
+    let (name, length) = match vec("fig", "banana", "kiwi").map(|s| (s, str_len(s))).max_by_key(|&(_, len)| len) {
+        Some((name, length)) => (name, length),
+        None => ("", 0),
+    };
+    print_str(name);
+    print(length);
+}
+```

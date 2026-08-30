@@ -1,0 +1,15 @@
+```text
+fn main() {
+    let v = vec();
+    let mut count = 0;
+
+    for x in range(9, 17) {
+        if x < 10 {
+            print(x);
+            count = count + 1;
+        }
+    }
+
+    print(count);
+}
+```

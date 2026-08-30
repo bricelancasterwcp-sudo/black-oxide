@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let samples = push(push(push(push(vec(), 5), 12), 3), 18);
+    let cutoff = 10;
+    let (under, over) = (count_if(samples, x -> x < cutoff), count_if(samples, x -> x >= cutoff));
+    print(under); print_str(", "); print(over);
+}
+```

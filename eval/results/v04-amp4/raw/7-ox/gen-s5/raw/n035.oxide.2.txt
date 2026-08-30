@@ -1,0 +1,19 @@
+```rust
+struct Result { value: Option<Int> }
+
+fn divide(a: Int, b: Int) -> Result {
+    if b == 0 {
+        Result { value: None }
+    } else {
+        Result { value: Some(a / b) }
+    }
+}
+
+fn main() {
+    let result = divide(20, 4);
+    match result.value {
+        Some(n) => print(n),
+        None => print_str("bad"),
+    }
+}
+```

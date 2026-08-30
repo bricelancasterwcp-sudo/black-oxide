@@ -1,0 +1,9 @@
+```
+struct Log { entries: Vec<Int> }
+
+fn main() {
+    let log = Log { entries: vec![6, 7, 8, 9] };
+    print(log.entries[0]);            // field access copies: log stays usable
+    println(&log.entries.last().unwrap());       // & to avoid borrowing error
+}
+```

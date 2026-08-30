@@ -1,0 +1,20 @@
+```rust
+fn main() {
+    let numbers = vec![9, 2, 12, 5, 16];
+    
+    let count: usize = numbers.iter()
+        .filter(|&x| x < 10)
+        .count();
+    
+    println!("Kept entries:");
+    
+    for &num in &numbers {
+        if num < 10 {
+            print!("{}", num);
+            println!();
+        }
+    }
+    
+    println!("Total kept: {}", count);
+}
+```

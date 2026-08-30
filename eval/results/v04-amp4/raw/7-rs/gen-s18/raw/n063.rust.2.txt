@@ -1,0 +1,7 @@
+fn main() {
+    let price1 = 4 * 3;
+    let price2 = 5 * 2;
+    println!("Line 1: {}", price1);
+    println!("Line 2: {}", price2);
+    println!("Total: {}", price1 + price2);
+}

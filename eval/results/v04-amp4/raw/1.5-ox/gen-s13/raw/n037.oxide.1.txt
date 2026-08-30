@@ -1,0 +1,28 @@
+```rust
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+impl Rectangle {
+    fn new(width: Int, height: Int) -> Self {
+        Rectangle { width, height }
+    }
+
+    fn set_width(&mut self, width: Int) {
+        // Reassigning the variable inside a loop is not allowed
+        self.width = width;
+    }
+
+    fn area(&self) -> Int {
+        self.width * self.height
+    }
+}
+
+fn main() {
+    let mut rect = Rectangle::new(2, 3);
+    rect.set_width(5);
+
+    print(rect.area());
+}
+```

@@ -1,0 +1,11 @@
+fn main() {
+    let (name, len) = if "fig".len() > "banana".len() { ("fig", "fig".len()) }
+                      else { ("banana", "banana".len()) };
+    if "banana".len() > "kiwi".len() && "banana".len() > len {
+        print(name); print_str(" "); print(len)
+    } else if "kiwi".len() > len {
+        let name = "kiwi";
+        let len = "kiwi".len();
+        print(name); print_str(" "); print(len)
+    }
+}

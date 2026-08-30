@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let banana = "banana";
+    for i in 0..banana.len() {
+        if banana.chars().nth(i) == Some('n') {
+            println!("{}", i);
+        }
+    }
+}
+```
+
+This program defines a `main` function that takes the string `"banana"` as input. It then iterates over each character in the string using a for loop, starting from index 0 and ending at the length of the string minus one (`banana.len() - 1`). For each character, it checks if the character is equal to 'n' (converted to `char` with `.chars().nth(i)`). If it is, it prints the current index `i`.

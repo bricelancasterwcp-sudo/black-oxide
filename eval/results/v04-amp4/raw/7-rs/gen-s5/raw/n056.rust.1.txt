@@ -1,0 +1,24 @@
+```rust
+fn main() {
+    let mut sum = 0;
+    let mut count_non_numbers = 0;
+
+    macro_rules! try_parse_and_add {
+        ($text:expr) => {{
+            if let Ok(num) = $text.parse::<i32>() {
+                sum += num;
+            } else {
+                count_non_numbers += 1;
+            }
+        }};
+    }
+
+    try_parse_and_add!("7");
+    try_parse_and_add!("x");
+    try_parse_and_add!("9");
+    try_parse_and_add!("?");
+
+    println!("Total of numbers: {}", sum);
+    println!("Count of non-numbers: {}", count_non_numbers);
+}
+```

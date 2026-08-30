@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let mut sum = 0;
+    for x in 1..=5 {
+        sum += x.pow(3); // Corrected to use .pow() method instead of *x * x * x
+    }
+    print(sum);
+}
+```
+
+Explanation:
+- The initial code had a syntax error because `let cube = x * x * x;` is not a valid statement in Rust. It should be replaced with `sum += x.pow(3);`.

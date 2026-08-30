@@ -1,0 +1,17 @@
+Sure. Here's the corrected version of your program:
+
+```rust
+fn main() {
+    let mut count = 0;
+    
+    for num in 1..=35 { // Adjusted range to exclude 36
+        if 36 % num == 0 {
+            count += 1;
+        }
+    }
+
+    println!("Number of whole numbers from 1 to 36 that divide 36 exactly: {}", count);
+}
+```
+
+This program now correctly counts the number of divisors of 36, excluding 36 itself. The range `1..=35` ensures that we only consider numbers up to but not including 36.

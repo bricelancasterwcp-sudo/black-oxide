@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let point_a = (1, 5); // A is at one across and five up
+    let point_b = (10, 5); // B is at ten across and the same height as A
+
+    // Calculate the sum of the x-coordinates of points A and B
+    let sum_x = point_a.0 + point_b.0;
+
+    // Print the sum of the x-coordinates of points A and B
+    println!("The sum of the x-coordinates is: {}", sum_x);
+}
+```

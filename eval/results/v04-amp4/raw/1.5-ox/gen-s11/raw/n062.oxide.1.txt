@@ -1,0 +1,14 @@
+```rust
+use std::collections::VecDeque;
+
+fn main() {
+    let signals = VecDeque::from(vec!["green", "red", "yellow"]);
+    while !signals.is_empty() {
+        match signals.pop_front().unwrap() {
+            "green" => println!("go"),
+            "red" => println!("stop"),
+            "yellow" => println!("wait"),
+        }
+    }
+}
+```

@@ -1,0 +1,38 @@
+```rust
+use std::collections::HashSet;
+
+struct Figure {
+    type_: String,
+    size: Int,
+}
+
+impl Figure {
+    fn new(type_: &str, size: Int) -> Self {
+        Figure { type_, size }
+    }
+
+    fn print(&self) {
+        println!("{} {}", self.type_, self.size);
+    }
+}
+
+fn main() {
+    let figures = vec![
+        Figure::new("circle", 5),
+        Figure::new("square", 10),
+        Figure::new("triangle", 3),
+    ];
+
+    // Sort the figures by size in ascending order
+    figures.sort_unstable_by_key(|f| f.size);
+
+    // Find the smallest figure
+    let min_figure = figures[0].clone();
+    min_figure.print();
+
+    // Calculate and print the gap between the largest and the smallest
+    let max_figure = figures.last().unwrap().clone();
+    let gap = max_figure.size - min_figure.size;
+    println!("Gap: {}", gap);
+}
+```

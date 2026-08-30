@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut a = 1;
+    let mut b = 1;
+
+    for _ in 0..9 { // Changed range from 1..9 to 0..9 as we start counting from the first term
+        let temp = b; // Temporary variable to hold b's value before it is updated
+        b = a + b;
+        a = temp; // Reverse the order of terms by assigning the previous b back to a
+    }
+    println!("The tenth term is {}", b);
+}
+```

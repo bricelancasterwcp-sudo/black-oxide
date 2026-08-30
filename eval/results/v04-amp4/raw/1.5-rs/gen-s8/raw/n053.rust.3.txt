@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let mut drum = "drum".chars().rev(); // Use rev() to reverse iterator
+    while let Some(c) = drum.next_back() {
+        println!("{}", c);
+    }
+    println!("drum");
+}
+```

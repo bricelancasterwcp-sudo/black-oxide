@@ -1,0 +1,15 @@
+Here's the completed program:
+
+```rust
+fn main() {
+    let mut log = vec![6, 7, 8, 9];
+    
+    println!("First entry: {}", log[0]);
+    println!("Last entry: {}", log.last().unwrap());
+}
+```
+This program now produces the correct output:
+```
+First entry: 6
+Last entry: 9
+```

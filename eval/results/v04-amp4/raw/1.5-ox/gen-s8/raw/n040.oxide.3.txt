@@ -1,0 +1,20 @@
+```rust
+fn main() {
+    let r = Shape::Square(4);
+    print(r.area());
+}
+
+enum Shape {
+    Square(Int),
+    Circle(Float),
+}
+
+impl Shape {
+    fn area(&self) -> Float {
+        match self {
+            Shape::Square(side) => side * side,
+            Shape::Circle(radius) => radius * radius * std::f64::consts::PI,
+        }
+    }
+}
+```

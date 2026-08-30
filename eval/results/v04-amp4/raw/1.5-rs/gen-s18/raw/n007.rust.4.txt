@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let mut n = 9875;
+    let mut total_sum: i32 = 0;
+
+    while n > 0 {
+        let digit = n % 10;
+        total_sum += digit;
+        n /= 10;
+    }
+
+    println!("Sum of digits: {}", total_sum);
+}
+```

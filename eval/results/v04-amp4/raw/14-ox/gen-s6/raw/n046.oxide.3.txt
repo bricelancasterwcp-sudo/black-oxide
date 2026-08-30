@@ -1,0 +1,14 @@
+```text
+fn main() {  
+    let values = vec(5, 12, 3, 18, 9);  
+    let cutoff = 10;  
+  
+    let under = count_if(values, x -> x < cutoff);  
+    let over_or_equal = len(values) - under;  
+  
+    print_str("Under cutoff: ");  
+    print(under);  
+    print_str("\nAt or over cutoff: ");  
+    print(over_or_equal);  
+}
+```

@@ -1,0 +1,25 @@
+```ox
+fn fib(n: Int) -> Int {
+    let a = 1
+    let b = 1
+    if n == 1 {
+        return a
+    }
+    if n == 2 {
+        return b
+    }
+    let mut i = 3
+    let mut next = a + b
+    while i <= n {
+        a = b
+        b = next
+        next = a + b
+        i += 1
+    }
+    next
+}
+
+fn main() {
+    print(fib(10))
+}
+```

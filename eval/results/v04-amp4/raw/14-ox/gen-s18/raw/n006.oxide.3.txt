@@ -1,0 +1,1 @@
+fn main() { let max_power = -1 for i in range(0, 7) { let power = powf(to_float(2), to_float(i)).trunc() if power > 100 { break } max_power = power } print(max_power) }

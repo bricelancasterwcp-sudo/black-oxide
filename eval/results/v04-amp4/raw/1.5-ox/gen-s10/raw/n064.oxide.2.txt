@@ -1,0 +1,19 @@
+```rust
+struct List { elements: Vec<Int> }
+
+fn lookup_position(list: &List, pos: Int) -> Option<Int> {
+    list.elements.get(pos)
+}
+
+fn main() {
+    let list = List { elements: vec![10, 20] };
+    match lookup_position(&list, 1) {
+        Some(value) => print(value),
+        None => println_str("Position one is empty"),
+    }
+    match lookup_position(&list, 4) {
+        Some(value) => print(value),
+        None => println_str("Position four is empty"),
+    }
+}
+```

@@ -1,0 +1,14 @@
+fn main() {
+    let v = vec!(4, 1, 7, 3, 9, 2);
+    let mut kept = Vec::new();
+    for x in v {
+        if x > 3 {
+            kept.push(x);
+        }
+    }
+    for x in kept {
+        print(x);
+        print_str("\n");
+    }
+    print(count(kept));
+}

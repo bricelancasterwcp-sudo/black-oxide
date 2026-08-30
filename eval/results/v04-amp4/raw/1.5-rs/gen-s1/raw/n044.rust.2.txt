@@ -1,0 +1,14 @@
+Here's the fixed version of your Rust code:
+
+```rust
+fn main() {
+    let mut balance = 0;
+
+    for amount in vec![3, 1, 4, 1, 5] {
+        balance += amount;
+        println!("Balance: {}", balance);
+    }
+}
+```
+
+The issue with the original code was that you were printing the balance before adding it to `balance`, which led to incorrect results. In Rust, order of operations is important, and expressions are evaluated from left to right in most contexts. When you printed `balance` before updating it, it showed the previous value at that point, not the updated balance after each deposit.

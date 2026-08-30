@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let nums: Vec<Option<Int>> = vec![Some(7), None, Some(x), Some(9)];
+    let total: Int = nums.iter().filter_map(|x| x.as_ref()).sum();
+    let count: Int = nums.iter().filter(|&x| x.is_some()).count();
+    print(format!("Total of numbers: {}, Number of non-numbers: {}", total, count));
+}
+```

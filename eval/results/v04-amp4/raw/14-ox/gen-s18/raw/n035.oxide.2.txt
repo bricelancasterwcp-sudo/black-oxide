@@ -1,0 +1,14 @@
+fn safe_divide(n: Int, d: Int) -> Option<Int> {
+    if d == 0 {
+        None
+    } else {
+        Some(n / d)
+    }
+}
+
+fn main() {
+    match safe_divide(20, 4) {
+        Some(result) => print(result),
+        None => print_str("bad"),
+    }
+}

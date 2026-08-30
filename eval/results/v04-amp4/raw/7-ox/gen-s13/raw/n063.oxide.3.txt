@@ -1,0 +1,19 @@
+```oxide
+struct Line { items: Vec<Int>, price_per_item: Int }
+
+fn total_value(line: Line) -> Int {
+    sum(map(line.items, |x| x * line.price_per_item))
+}
+
+fn main() {
+    let line1 = Line { items: vec(4), price_per_item: 3 };
+    let line2 = Line { items: vec(5), price_per_item: 2 };
+
+    print(total_value(line1));
+    print_str("\n");
+    print(total_value(line2));
+    print_str("\n");
+    let combined_items = push(line1.items.clone(), line2.items);
+    print(total_value(Line { items: combined_items, price_per_item: 0 }));
+}
+```

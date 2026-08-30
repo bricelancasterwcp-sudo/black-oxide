@@ -1,0 +1,9 @@
+```
+fn main() {
+    let f = |x| x;
+    println!("{}", f(8));
+    println!("{}", f(3));
+    println!("{}", f(11));
+    println!("{}", f(6));
+}
+```

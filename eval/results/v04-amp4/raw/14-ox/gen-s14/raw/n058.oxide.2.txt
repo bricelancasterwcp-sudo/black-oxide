@@ -1,0 +1,38 @@
+struct LetterCount { letter: Str, count: Int }
+
+fn main() {
+    let word = "coffee";
+    let mut counts = vec();
+    let mut seen = vec();
+
+    for ch in chars(word) {
+        let existing = None;
+        for count in counts {
+            if count.letter == ch {
+                existing = Some(count);
+                break;
+            }
+        }
+
+        match existing {
+            Some(mut c) => {
+                c.count += 1;
+                c
+            },
+            None => {
+                let new_count = LetterCount { letter: ch, count: 1 };
+                push(seen, ch);
+                new_count
+            }
+        };
+    }
+
+    for s in seen {
+        for c in counts {
+            if c.letter == s && c.count > 1 {
+                print(s);
+                break;
+            }
+        }
+    }
+}

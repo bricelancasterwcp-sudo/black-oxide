@@ -1,0 +1,13 @@
+fn main() {
+    let divisors = vec!(5, 0, 4);
+    for d in divisors {
+        match d {
+            0 => print_str("undefined"),
+            _ => print(div(100, d)),
+        }
+    }
+}
+
+fn div(a: Int, b: Int) -> Int {
+    a / b
+}

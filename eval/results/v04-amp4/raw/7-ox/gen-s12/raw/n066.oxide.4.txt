@@ -1,0 +1,9 @@
+fn main() {
+    let batch = vec![9, 2, 12, 5, 16];
+    let filtered: Vec<i32> = batch.into_iter().filter(|&x| x < 10).collect();
+    for &x in &filtered {
+        print(x);
+        print_str("\n");
+    }
+    print(count(filtered, 1));
+}

@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let arr = [5, 12, 3, 18, 9];
+    let mut count_under_cutoff = 0;
+    let mut count_over_cutoff = 0;
+
+    for &x in &arr {
+        if x < 10 {
+            count_under_cutoff += 1;
+        } else if x >= 10 {
+            count_over_cutoff += 1;
+        }
+    }
+
+    print!("{} numbers fall under the cutoff of ten.\n", count_under_cutoff);
+    print!("{} numbers sit at or over it.\n", count_over_cutoff);
+}
+```

@@ -1,0 +1,15 @@
+```text
+fn parse_int_or_bad(s: Str) -> Str {
+    match parse_int(s) {
+        Some(n) => int_to_str(n),
+        None => "bad".clone(),
+    }
+}
+
+fn main() {
+    let entries = vec("8", "oak", "15")
+    for entry in entries {
+        print(parse_int_or_bad(entry))
+    }
+}
+```

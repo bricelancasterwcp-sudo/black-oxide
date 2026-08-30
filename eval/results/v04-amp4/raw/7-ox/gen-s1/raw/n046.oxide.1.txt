@@ -1,0 +1,17 @@
+```
+fn count_under_cutoff(v: Vec<Int>, cutoff: Int) -> Int {
+    count_if(v, x -> x < cutoff)
+}
+
+fn count_over_or_equal_cutoff(v: Vec<Int>, cutoff: Int) -> Int {
+    count_if(v, x -> x >= cutoff)
+}
+
+fn main() {
+    let samples = push(push(push(push(vec(), 5), 12), 3), 18);
+    let cutoff = 10;
+    print(count_under_cutoff(samples, cutoff)); // prints: 2
+    print_str(" ");
+    print(count_over_or_equal_cutoff(samples, cutoff)); // prints: 3
+}
+```

@@ -1,0 +1,26 @@
+```
+struct Account { balance: Int }
+
+fn deposit(acc: Account, amount: Int) -> Account {
+    let new_balance = acc.balance + amount
+    Account { balance: new_balance }
+}
+
+fn print_balance(acc: Account) {
+    print(acc.balance)
+}
+
+fn main() {
+    let initial = Account { balance: 0 }
+    let after_first = deposit(initial, 3)
+    print_balance(after_first)
+    let after_second = deposit(after_first, 1)
+    print_balance(after_second)
+    let after_third = deposit(after_second, 4)
+    print_balance(after_third)
+    let after_fourth = deposit(after_third, 1)
+    print_balance(after_fourth)
+    let final_balance = deposit(after_fourth, 5)
+    print_balance(final_balance)
+}
+```

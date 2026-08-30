@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let mut n = 100;
+    let mut power = 2;
+
+    while n >= power * power {
+        power <<= 1; // Multiply by 2 (power doubles)
+    }
+
+    print(power - 1); // Print the largest power of two less than or equal to n
+}
+```

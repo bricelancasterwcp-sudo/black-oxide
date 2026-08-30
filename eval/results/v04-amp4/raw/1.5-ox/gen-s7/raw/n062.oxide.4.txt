@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let mut status = "green";
+
+    while status != "stop" {
+        println!("{}", status);
+        match status {
+            "green" => status = "yellow",
+            "red"  => status = "stop",
+            _      => {}
+        }
+    }
+}
+```

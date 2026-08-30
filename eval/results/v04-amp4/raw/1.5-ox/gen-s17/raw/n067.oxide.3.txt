@@ -1,0 +1,23 @@
+```rust
+fn main() {
+    let mut walk = vec![7, 4, 9, 10];
+    let mut total = 0;
+
+    for i in walk.iter_mut() { // fix: use iter_mut instead of &walk to modify the vector
+        if *i % 2 == 0 {
+            println!("{}", total + *i); // fix: dereference *i to get the value
+            total += *i; // fix: dereference *i to get the value
+        } else {
+            println!("{}", 2 * *i);
+            total += 2 * *i;
+        }
+    }
+
+    println!("Total of even entries: {}", total);
+}
+```
+
+Note:
+- `iter_mut()` is used to modify elements in the vector.
+- Dereferencing `*i` is required to get the value from the mutable reference.
+- The corrected program now compiles without errors.

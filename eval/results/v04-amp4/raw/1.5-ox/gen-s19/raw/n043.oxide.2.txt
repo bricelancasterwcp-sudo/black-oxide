@@ -1,0 +1,32 @@
+```rust
+struct Queue {
+    items: Vec<Int>,
+}
+
+impl Queue {
+    fn new() -> Self {
+        Queue { items: vec![1, 2, 3, 4, 5] }
+    }
+
+    fn exchange_first_last(&mut self) {
+        if self.items.len() < 2 {
+            panic!("Queue must have at least two elements");
+        }
+        let temp = self.items.remove(0);
+        self.items.push(temp);
+    }
+
+    fn print(&self) {
+        for &item in &self.items {
+            print!("{}", item);
+        }
+        println!();
+    }
+}
+
+fn main() {
+    let mut q = Queue::new();
+    q.exchange_first_last();
+    q.print();
+}
+```

@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let mut a = 1;
+    let mut b = 1;
+    for _ in 2..10 {
+        let c = a + b;
+        a = b;
+        b = c;
+    }
+    print(a); // 55
+}
+```
+
+**Explanation**:
+- We initialize `a` and `b` to 1, as the first two terms of the sequence are both 1.
+- In each iteration of the loop (from the third term to the tenth), we calculate the next term (`c`) as the sum of `a` and `b`.
+- We then update `a` to be the previous value of `b`, and `b` to be the new calculated `c`.
+- After the loop completes, `a` will hold the tenth term of the sequence (which is 55).

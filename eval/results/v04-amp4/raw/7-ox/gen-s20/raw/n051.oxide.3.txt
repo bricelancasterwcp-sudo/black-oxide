@@ -1,0 +1,5 @@
+main() { 
+    let word = "granite"; 
+    print_str(&word[0..=5]); 
+    print_str(&word[5..6]); 
+}

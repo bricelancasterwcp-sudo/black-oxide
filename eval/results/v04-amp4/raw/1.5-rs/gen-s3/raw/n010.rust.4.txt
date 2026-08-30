@@ -1,0 +1,23 @@
+```rust
+fn main() {
+    let num = 91;
+    
+    // Check if the number is less than or equal to 1
+    if num <= 1 {
+        println!("No divisor other than 1 and itself.");
+        return;
+    }
+    
+    // Check for factors from 2 up to the square root of the number
+    let sqrt = (num as f64).sqrt() as u32;
+    for i in 2..=sqrt {
+        if num % i == 0 {
+            println!("No divisor other than 1 and itself.");
+            return;
+        }
+    }
+    
+    // If no divisors were found, the number is prime
+    println!("Yes, 91 has a divisor other than 1 and itself.");
+}
+```

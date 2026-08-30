@@ -1,0 +1,21 @@
+struct Stats { below: Int, above: Int }
+
+fn categorize(values: Vec<Int>, cutoff: Int) -> Stats {
+    let mut stats = Stats { below: 0, above: 0 }
+    for x in values {
+        if x < cutoff {
+            stats.below += 1
+        } else {
+            stats.above += 1
+        }
+    }
+    stats
+}
+
+fn main() {
+    let values = vec(5, 12, 3, 18, 9)
+    let cutoff = 10
+    let stats = categorize(values, cutoff)
+    print(stats.below)
+    print(stats.above)
+}

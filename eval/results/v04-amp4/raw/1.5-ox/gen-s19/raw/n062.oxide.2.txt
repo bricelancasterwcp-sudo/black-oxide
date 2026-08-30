@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    loop {
+        let signal = read_signal(); // Read the current signal
+
+        match signal {
+            "green" => println!("Go!"),
+            "red" => println!("Stop!"),
+            "yellow" => println!("Wait!"),
+            _ => println!("Unknown signal: {}", signal),
+        }
+    }
+}
+
+fn read_signal() -> String {
+    // Simulate reading the signal (this is an example and should be replaced with actual signal reading code)
+    if rand::random::<f64>() < 0.5 { "green" } else { "yellow" }
+}
+```

@@ -1,0 +1,19 @@
+```rust
+struct Phrase { text: Str }
+
+fn count_words(text: Str) -> Int {
+    let words = split(text, " ")
+    len(words)
+}
+
+fn count_chars(text: Str) -> Int {
+    str_len(text)
+}
+
+fn main() {
+    let p = Phrase { text: "when in doubt go home" }
+    print(count_words(p.text))  // Words
+    println()
+    print(count_chars(p.text))  // Characters including spaces
+}
+```

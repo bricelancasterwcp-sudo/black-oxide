@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let prod = (1..=6).map(|x| x as Int).product::<Int>();
+    println!("{}", prod);
+}
+```
+The above program calculates the product of all integers from 1 to 6 using a range expression, applies the `map` function to convert each integer to an `Int`, and then uses the `product` method to calculate their product. The result is printed as a string using the `println!` macro.

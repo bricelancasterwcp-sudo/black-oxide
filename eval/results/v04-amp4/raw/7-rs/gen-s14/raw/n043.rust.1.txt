@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let mut queue = vec![1, 2, 3, 4, 5];
+    if let Some((first, last)) = (queue.first(), queue.last()) {
+        queue[0] = *last;
+        queue[queue.len() - 1] = *first;
+    }
+    for item in queue {
+        println!("{}", item);
+    }
+}
+```

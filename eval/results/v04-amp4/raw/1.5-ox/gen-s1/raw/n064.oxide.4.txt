@@ -1,0 +1,15 @@
+```
+struct Position { index: Int }
+
+fn main() {
+    let vec = vec![10, 20];
+    
+    if let Some(pos1) = get(vec, 1) {
+        print(pos1.index);
+    }
+    
+    if let Some(pos4) = get(vec, 3) {
+        print(pos4.index);
+    }
+}
+```

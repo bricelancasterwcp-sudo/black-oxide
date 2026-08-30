@@ -1,0 +1,15 @@
+```rust
+struct Log { entries: Vec<Int> }
+
+fn start_and_end(log: Log) {
+    let start = log.entries[0];
+    let end = *log.entries.last().unwrap_or(&-1);
+    print(start);
+    print(end);
+}
+
+fn main() {
+    let log = Log { entries: vec![6, 7, 8, 9] };
+    start_and_end(log);
+}
+```

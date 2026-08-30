@@ -1,0 +1,5 @@
+fn main() {
+    let fruits = vec!["fig", "banana", "kiwi"];
+    let longest_fruit = fruits.iter().max_by_key(|&fruit| fruit.len()).unwrap();
+    println!("The longest fruit is: {} with {} letters.", longest_fruit, longest_fruit.len());
+}

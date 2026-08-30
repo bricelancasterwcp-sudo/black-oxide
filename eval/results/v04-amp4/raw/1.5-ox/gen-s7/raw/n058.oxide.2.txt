@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let mut counts = [0; 26];
+    for ch in "coffee".chars() {
+        if 'A' <= ch && ch <= 'Z' {
+            counts[ch as usize - 'A'] += 1;
+        }
+    }
+
+    for (i, count) in counts.iter().enumerate() {
+        if *count > 1 {
+            print!("{}", (char)(i + 'A'));
+        }
+    }
+}
+```

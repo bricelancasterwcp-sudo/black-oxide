@@ -1,0 +1,6 @@
+fn main() {
+    let mut seen = HashSet::new();
+    "coffee".chars().for_each(|c| if !seen.insert(c) {
+        println!("{}", c);
+    });
+}

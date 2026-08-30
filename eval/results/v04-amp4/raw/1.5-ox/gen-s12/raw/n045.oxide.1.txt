@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let log = push(push(vec(), 3), 42);
+    print(get(log, 0));            // field access copies: r stays usable
+    print(get(log, get(log, 1)));    // match uses value of second entry
+}
+```

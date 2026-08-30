@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let numbers: Vec<&str> = vec!["7", "x", "9", "?"];
+    let mut sum = 0;
+    let mut count = 0;
+
+    for num in numbers.iter() {
+        if let Ok(n) = num.parse::<i32>() {
+            sum += n;
+            count += 1;
+        }
+    }
+
+    println!("Sum of numbers: {}", sum);
+    println!("Count of non-number values: {}", numbers.len() - count);
+}
+```

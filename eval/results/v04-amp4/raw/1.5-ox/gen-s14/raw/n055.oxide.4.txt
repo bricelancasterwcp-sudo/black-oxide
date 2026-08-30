@@ -1,0 +1,24 @@
+```
+fn main() {
+    let eight = parse_int("8").unwrap();
+    if some(e) {  // Fix: use `some` instead of `if let Some(e) = eight { ... }`
+        println!("{}", e);
+    } else {
+        print_str("bad");
+    }
+
+    let oak = parse_int("oak").unwrap();
+    if some(e) {  // Fix: use `some` instead of `if let Some(e) = oak { ... }`
+        println!("{}", e);
+    } else {
+        print_str("bad");
+    }
+
+    let fifteen = parse_int("15").unwrap();
+    if some(e) {  // Fix: use `some` instead of `if let Some(e) = fifteen { ... }`
+        println!("{}", e);
+    } else {
+        print_str("bad");
+    }
+}
+```

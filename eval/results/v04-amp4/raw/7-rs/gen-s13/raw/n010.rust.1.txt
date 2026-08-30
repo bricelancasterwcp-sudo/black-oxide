@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let number = 91;
+    let mut is_prime = true;
+
+    for i in 2..number {
+        if number % i == 0 {
+            is_prime = false;
+            break;
+        }
+    }
+
+    println!("{}", if is_prime { "no" } else { "yes" });
+}
+```

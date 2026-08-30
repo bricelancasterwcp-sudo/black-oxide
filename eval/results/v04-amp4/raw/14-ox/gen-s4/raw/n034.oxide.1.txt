@@ -1,0 +1,27 @@
+```
+fn second_entry(v: Vec<Int>) -> Option<Int> {
+    let x = get(v, 1)?
+    Some(x)
+}
+
+fn main() {
+    let list1 = push(push(vec(), 7), 8)
+    let list2 = push(push(vec(), 7), 9)
+    let list3 = vec()
+
+    match second_entry(list1) {
+        Some(n) => print(n),
+        None => print_str("none"),
+    }
+
+    match second_entry(list2) {
+        Some(n) => print(n),
+        None => print_str("none"),
+    }
+
+    match second_entry(list3) {
+        Some(n) => print(n),
+        None => print_str("none"),
+    }
+}
+```

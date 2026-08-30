@@ -1,0 +1,11 @@
+Here's the fixed version of your Rust code:
+
+```rust
+fn main() {
+    println!("go for green");
+    println!("stop for red");
+    println!("wait for yellow");
+}
+```
+
+This program will now correctly print the meanings of each traffic signal in the specified order.

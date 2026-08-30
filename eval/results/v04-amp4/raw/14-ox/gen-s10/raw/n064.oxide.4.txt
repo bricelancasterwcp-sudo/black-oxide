@@ -1,0 +1,1 @@
+fn main() { let v = vec() let v = push(v, 10) let v = push(v, 20) let x = get(v, 1) match x { Some(n) => print(n), None => print_str("None"), } let v = vec() let v = push(v, 10) let v = push(v, 20) let y = get(v, 4) match y { Some(n) => print(n), None => print_str("None"), } }

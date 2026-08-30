@@ -1,0 +1,20 @@
+```rust
+struct Entry {
+    num: Option<Int>,
+}
+
+fn main() {
+    let entries = vec![
+        Entry { num: Some(8) },
+        Entry { num: Some("oak") },
+        Entry { num: Some(15) },
+    ];
+
+    for entry in entries {
+        match entry.num {
+            Some(num) => print(num),
+            None => println!("bad"),
+        }
+    }
+}
+```

@@ -1,0 +1,22 @@
+```rust
+fn main() {
+    let eight = match "eight" {
+        "8" => Some(8),
+        _ => None,
+    };
+
+    let oak = match "oak" {
+        "oak" => Some(oak),
+        _ => None,
+    };
+
+    let fifteen = match "fifteen" {
+        "fifteen" => Some(fifteen),
+        _ => None,
+    };
+
+    println!("{:?}", eight);
+    println!("{:?}", oak);
+    println!("{:?}", fifteen);
+}
+```

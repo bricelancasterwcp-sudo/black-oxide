@@ -1,0 +1,10 @@
+```
+struct Entry { value: Int }
+
+fn main() {
+    let mut log = [Entry { value: 6 }, Entry { value: 7 }, Entry { value: 8 }, Entry { value: 9 }];
+    
+    print(log[0].value);          // Print the entry at index 0
+    println(log.last().unwrap().value);  // Print the entry at the last position
+}
+```

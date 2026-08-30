@@ -1,0 +1,9 @@
+```
+fn main() {
+    match get(vec![0, 1], 0) {
+        Ok(green) => print_str("go for green"),
+        Err(red) => print_str("stop for red"),
+        _ => print_str("wait for yellow"),
+    }
+}
+```

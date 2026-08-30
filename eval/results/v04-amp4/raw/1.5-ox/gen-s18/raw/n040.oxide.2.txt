@@ -1,0 +1,15 @@
+```rust
+struct Shape {
+    kind: SquareKind,
+}
+
+enum SquareKind {
+    Square(Int),
+    Circle(Float),
+}
+
+fn main() {
+    let sq = Shape::Square(4);
+    println(sq.area());
+}
+```

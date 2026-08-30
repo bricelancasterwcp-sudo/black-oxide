@@ -1,0 +1,15 @@
+```
+fn reverse_str(s: Str) -> Str {
+    let chars_vec = chars(s)
+    let reversed_chars = reverse(chars_vec)
+    let reversed_str = concat(reversed_chars)
+    reversed_str
+}
+
+fn main() {
+    let word = "drum"
+    let reversed_word = reverse_str(word)
+    print(reversed_word)
+    print_str(word)
+}
+```

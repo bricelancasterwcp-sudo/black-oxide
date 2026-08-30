@@ -1,0 +1,12 @@
+```rust
+
+fn main() {
+    let mut acc = 0;
+    for &x in &[7, 4, 9, 10].iter().rev() {
+        if x % 2 == 0 {
+            print!("{}", acc);
+            acc += x * 2;
+        }
+    }
+}
+```

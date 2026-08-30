@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let mut queue: [i32; 5] = [1, 2, 3, 4, 5];
+    // exchange first and last entries
+    let temp = queue[0];
+    queue[0] = queue[queue.len() - 1];
+    queue[queue.len() - 1] = temp;
+
+    for i in &queue {
+        println!("{}", i);
+    }
+}
+```
+
+This program initializes an array `queue` with the values `[1, 2, 3, 4, 5]`. It then swaps the first and last elements of the array. Finally, it prints each element of the array on a new line.

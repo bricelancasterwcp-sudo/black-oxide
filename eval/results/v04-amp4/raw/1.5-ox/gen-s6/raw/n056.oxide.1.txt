@@ -1,0 +1,30 @@
+```rust
+fn count_numbers(vec: Vec<Option<i32>>) -> (i32, i32) {
+    let mut sum = 0;
+    let mut non_sum = 0;
+
+    for number in vec {
+        if let Some(n) = number {
+            sum += n;
+        } else {
+            non_sum += 1;
+        }
+    }
+
+    (sum, non_sum)
+}
+
+fn main() {
+    let text7 = Some(7);
+    let textx = None;
+    let text9 = Some(9);
+    let text_questionmark = Some(?);
+
+    let numbers = vec![text7, textx, text9, text_questionmark];
+
+    let (total_sum, non_sum) = count_numbers(numbers);
+
+    println!("Total sum: {}", total_sum);
+    println!("Non-sum values: {}", non_sum);
+}
+```

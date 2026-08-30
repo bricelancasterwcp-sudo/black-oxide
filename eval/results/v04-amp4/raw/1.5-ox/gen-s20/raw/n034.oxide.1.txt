@@ -1,0 +1,10 @@
+```rust
+fn second<T>(v: Vec<T>) -> Option<&T> {
+    v.get(1)
+}
+
+fn main() {
+    println!("{}", second(vec![7, 8, 9]).unwrap()); // prints "8"
+    println!("{}", second(vec![]).unwrap_or(None)); // prints "None"
+}
+```

@@ -125,8 +125,20 @@ averaged 11.8 min; both 7B trainings plus merges and converts took ~0.4h.
 
 Note for the runbook: the community 3090 is not a budget compromise for
 this pipeline. Same amplification work measured 4.27h on a 4090 and 4.48h
-on a 3090 — **5% slower at 30% of the price**, because every session
-carries a rustc compile and the workload is CPU-bound.
+on a 3090 — **5% slower at 30% of the price**.
+
+~~because every session carries a rustc compile and the workload is
+CPU-bound.~~ **Amended 2026-08-30, before this wave's numbers were
+read.** That mechanism was asserted without measurement and is wrong:
+rustc is ~5% of amplification (15,247 compiles at ~18 ms check + ~33 ms
+build ≈ 14 min of 269). The plain explanation is memory bandwidth — the
+two cards are 936 vs 1008 GB/s, **7% apart**, and decode is
+bandwidth-bound, which fits the observed 5% directly. The conclusion
+stands on the corrected basis, and the corrected basis also predicts
+what a faster card would buy: very little, because bandwidth scales
+slowly across the tiers we can afford. See
+`eval/results/v04-campaign3/REPORT.md` §7's amendment for the full
+arithmetic.
 
 Execution stops and asks when:
 

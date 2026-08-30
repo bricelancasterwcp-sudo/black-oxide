@@ -4,9 +4,9 @@ fn main() {
     let over = 0
     for x in v {
         if x < 10 {
-            under = under + 1
+            under += 1
         } else {
-            over = over + 1
+            over += 1
         }
     }
     print(under)

@@ -67,25 +67,34 @@ def test_pair_costs_names_unreadable_pairs_instead_of_scoring_them_zero(monkeypa
 
 
 def test_acceptance_pins_the_committed_corpus_numbers():
-    """The 2026-08-29 figures the wave-3 spec argues from."""
+    """A DRIFT ALARM, not a constant.
+
+    These are the post-wave-3-re-authoring figures. The pre-re-authoring
+    values this instrument was born against were vectors 789/573,
+    strings 615/578, overall 2536/2332 (ratio 1.0875), with the ranked
+    top three n043 +82, n050 +60, n045 +40 -- the three surpluses that
+    swap/reverse/unwrap_or were shipped to close. Both sets are recorded
+    so a future reader can see what the wave moved, and so a corpus
+    change that nobody intended fails loudly here.
+    """
     costs, dropped = pair_costs(qwen_counter())
     assert dropped == []
     subs = class_subtotals(costs)
-    assert (subs["vectors"]["oxide"], subs["vectors"]["rust"]) == (789, 573)
-    assert (subs["strings"]["oxide"], subs["strings"]["rust"]) == (615, 578)
+    assert (subs["vectors"]["oxide"], subs["vectors"]["rust"]) == (611, 573)
+    assert (subs["strings"]["oxide"], subs["strings"]["rust"]) == (613, 578)
     assert (subs["structs/option"]["oxide"], subs["structs/option"]["rust"]) == (623, 677)
     assert (subs["arithmetic/loops"]["oxide"], subs["arithmetic/loops"]["rust"]) == (
         509,
         504,
     )
     top = rank_by_surplus(costs)[:3]
-    assert [c.task for c in top] == ["n043", "n050", "n045"]
-    assert [c.surplus for c in top] == [82, 60, 40]
+    assert [c.task for c in top] == ["n065", "n054", "n046"]
+    assert [c.surplus for c in top] == [23, 20, 18]
 
 
 def test_census_payload_carries_its_lens():
     census = build_cost_census()
     assert census["tokenizer"]["sha256"]
     assert census["dropped"] == []
-    assert census["overall"]["oxide"] == 2536
+    assert census["overall"]["oxide"] == 2356  # was 2536 pre-re-authoring
     assert census["overall"]["rust"] == 2332

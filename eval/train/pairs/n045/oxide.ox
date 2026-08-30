@@ -1,11 +1,5 @@
 fn main() {
     let v = vec(6, 7, 8, 9)
-    match get(v, 0) {
-        Some(a) => print(a),
-        None => print_str("none"),
-    }
-    match get(v, len(v) - 1) {
-        Some(b) => print(b),
-        None => print_str("none"),
-    }
+    print(unwrap_or(get(v, 0), 0))
+    print(unwrap_or(get(v, len(v) - 1), 0))
 }

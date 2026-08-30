@@ -4,7 +4,7 @@ fn main() {
     let best = unwrap_or(max(v), 0)
     for x in v {
         if x > 5 {
-            above = above + 1
+            above += 1
         }
     }
     print(above)

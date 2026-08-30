@@ -355,7 +355,7 @@ Expected: 7 passed.
 
 For each mutation: apply it, purge `__pycache__`, run the tests, confirm a FAILURE, restore, purge again, confirm green. A mutation that survives is a defect in the test, not a pass.
 
-1. In `PairCost.surplus`, change `self.oxide_tokens - self.rust_tokens` to `max(0, self.oxide_tokens - self.rust_tokens)` → `test_surplus_is_signed_never_clipped` and the acceptance test must FAIL.
+1. In `PairCost.surplus`, change `self.oxide_tokens - self.rust_tokens` to `max(0, self.oxide_tokens - self.rust_tokens)` → `test_surplus_is_signed_never_clipped` must FAIL (exactly one failure). The acceptance test survives this mutation and that is correct, not a gap: `class_subtotals` derives its surplus by subtracting summed arm totals rather than by summing `PairCost.surplus`, so the two paths share no arithmetic and the real corpus's top-three surpluses are all positive anyway.
 2. In `rank_by_surplus`, change `-c.surplus` to `c.surplus` → `test_rank_by_surplus_orders_most_expensive_first` and the acceptance test must FAIL.
 3. In `pair_costs`, replace the `except OSError: dropped.append(tid); continue` block with `except OSError: costs.append(PairCost(tid, tasks[tid]["class"], 0, 0)); continue` → `test_pair_costs_names_unreadable_pairs_instead_of_scoring_them_zero` must FAIL.
 

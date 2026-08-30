@@ -179,6 +179,10 @@ fn count_if<T>(v: &Vec<T>, p: impl Fn(&T) -> bool) -> i64 {
     v.iter().filter(|e| p(e)).count() as i64
 }
 
+fn filter<T: Clone>(v: &Vec<T>, p: impl Fn(&T) -> bool) -> Vec<T> {
+    v.iter().filter(|e| p(e)).cloned().collect()
+}
+
 fn swap<T>(mut v: Vec<T>, i: i64, j: i64) -> Vec<T> {
     v.swap(i as usize, j as usize);
     v

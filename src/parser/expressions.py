@@ -45,6 +45,7 @@ BUILTIN_METHOD_NAMES: frozenset[str] = frozenset(
         "contains",
         "count",
         "count_if",
+        "filter",
         "get",
         "int_to_str",
         "len",

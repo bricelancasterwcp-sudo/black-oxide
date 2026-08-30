@@ -411,7 +411,13 @@ If the regenerated cost census ranks differently, the gate follows the census, n
 - Consumes: `BuiltinSig(params, ret, modes, generics)` from `src/sema/types.py`; type constructors `TCon("Vec", (_A,))`, `INT`, `_A` already in scope in that module.
 - Produces: three callable builtins usable as `swap(v, i, j)`, `reverse(v)`, `set(v, i, x)`, each consuming and returning the vector (`v = swap(v, 0, last)`), matching `sort`'s existing convention.
 
-**Design ruling to record in SPEC §60 before writing code — out-of-range behaviour:** `set` and `swap` transpile to Rust's own panicking operations (`v[i] = x`, `v.swap(i, j)`), so an out-of-range index panics exactly as the Rust control does. Rationale: returning `Option<Vec<T>>` would cost tokens at every in-range call site to serve a case the type system cannot check, defeating the construct's purpose; a silent no-op is rejected outright as a value that looks like a successful operation and is not. This makes `set`/`swap` the first Oxide constructs that can panic, and the identical-stdout law is preserved because both arms panic identically.
+**Design ruling to record in SPEC §60 before writing code — out-of-range behaviour:** `set` and `swap` transpile to Rust's own panicking operations (`v[i] = x`, `v.swap(i, j)`), so an out-of-range index panics exactly as the Rust control does.
+
+Rationale, in order of weight. (a) Every total alternative is a quiet wrong answer: an out-of-range write has no natural result, so a no-op looks like success, a clamp silently corrupts, and an `Option` that call sites `unwrap_or` away turns a bug into a plausible value — the exact failure class this project bans elsewhere. (b) Totality taxes the objective function: `v = unwrap_or(set(v, i, x), v)` is roughly double `v = set(v, i, x)`, paid at every in-range call site to serve a case that never occurs in a correct program. (c) The identical-stdout law is preserved because both arms panic identically.
+
+**These are NOT the first Oxide constructs that can panic** — verified 2026-08-29 before this ruling was written: integer division already panics at runtime on a computed zero divisor (`a / b` transpiles to Rust's `a / b`; exit 101, `attempt to divide by zero`). SPEC §60.2 must document the partial-operation category as **pre-existing and previously undocumented**, naming division by zero, rather than claiming these constructs introduce it. Whether that category is the design or an accident is a live question and belongs in the wave's feed-forward, not in this ruling.
+
+A compile-time bounds check for the literal-index-into-literal-`vec()` case was considered and deferred: sema does not track vector lengths, and rustc's `unconditional_panic` lint already rejects the analogous literal case for free.
 
 - [ ] **Step 1: Write the failing tests**
 
@@ -678,7 +684,7 @@ indices panic exactly as the Rust control does -- see SPEC 60."
 
 Write these subsections:
 - **60.1 `swap`, `reverse`, `set`** — signatures, linearity modes with the reasoning (mirroring how §59.1 documents `count`), and the owned-in/owned-out convention.
-- **60.2 Out-of-range behaviour** — the panic ruling and its rationale verbatim from Task 3's design ruling above; note explicitly that these are the first Oxide constructs that can panic, and that the identical-stdout law survives because both arms panic identically.
+- **60.2 Out-of-range behaviour** — the panic ruling and its rationale verbatim from Task 3's design ruling above. Document the partial-operation category as **pre-existing and previously undocumented**, naming integer division by zero as the prior member (verified: exit 101 at runtime on a computed zero divisor). Note that the identical-stdout law survives because both arms panic identically.
 - **60.3 Cost-census record** — what the census is, the ranked top three, and the method finding: demand and cost are different quantities, and wave 2's gate read only demand while deferring the corpus's most expensive gap.
 - **60.4 Bias-rule amendment** — the amended rule from spec §4, verbatim, with the withdrawn per-statement Rust gate marked as superseded (never deleted), following §58.2's convention for amending in place.
 - **60.5 Card update** — what changed in both cards.
@@ -827,7 +833,7 @@ Runs only when the capacity poll signals community GPU availability. Sequence, u
 
 - [ ] Land `eval/results/v04-campaign3/` (four arms + matched corpus) and the amplification pool.
 - [ ] Write `eval/results/v04-campaign3/REPORT.md`: what shipped and why (both censuses' counts), static endpoint table with HIT/MISS per class, the corpus-scale gate outcome, the dynamic table, G1 and G2 reads, the composition-controlled ratio against wave 2's 1.067, spend, and a feed-forward section ending the report.
-- [ ] Feed-forward must carry at minimum: whether below-1.00 is now within reach and what it would cost (the predicate-count shapes in n046/n065, ~41 tokens); the `-=`/`*=` uptake re-read; whatever the cost census ranks next; and the census debt (fold `count`/`swap`/`reverse`/`set` into the demand census families, brace-masking fix, `/=` unmatched, split the 954-line `demand_census.py`).
+- [ ] Feed-forward must carry at minimum: whether below-1.00 is now within reach and what it would cost (the predicate-count shapes in n046/n065, ~41 tokens); the `-=`/`*=` uptake re-read; whatever the cost census ranks next; the census debt (fold `count`/`swap`/`reverse`/`set` into the demand census families, brace-masking fix, `/=` unmatched, split the 954-line `demand_census.py`); and **the undocumented partial-operation question** — division by zero and now `set`/`swap` can panic, and nobody has decided whether that category is the design or an accident.
 - [ ] Full suite green; commit; push; verify `origin` in sync.
 - [ ] Close the ledger, delete the SDD workspace, update memory, and report to the owner with every `Ruling:` line collected.
 

@@ -3464,3 +3464,106 @@ distinguishes them.
 - Learnability (uptake ÷ exposure) is pre-registered alongside the token
   ratio, so a construct can be judged on all three objectives rather than
   on efficiency alone.
+
+## 63. v0.4 wave-4 — familiarity, and the first trade between objectives
+
+### 63.1 The predicate literal re-spells to `|x| expr`
+
+```
+count_if(v, |x| x < 10)
+filter(v, |x| x < 10)
+```
+
+**This reverses §61.1's ruling on measured evidence.** That section
+shipped `x -> expr` and argued the unfamiliar spelling would make the
+no-capture restriction legible, explicitly accepting a possible uptake
+cost. Wave 3 measured the cost: at equal corpus exposure the tuned arm
+wrote the Rust bar form 43 times and the arrow 4 — roughly **10:1
+against the shipped spelling** (`eval/results/v04-campaign3/REPORT.md`
+§6). The wave-3 text is left standing there as published; this section
+supersedes its conclusion.
+
+Per §62.1, familiarity is a **win on the third objective**, not a
+concession. The no-capture restriction is unchanged and is now taught by
+the diagnostic (`OX0205`) rather than by unfamiliar syntax:
+
+- body may reference only its own parameter;
+- type is still `Pred<T>`; the same Rust closure is emitted;
+- `||` is matched by the two-char operator table **before** a bare `|`,
+  so a disjunction can never be read as an empty predicate. This is the
+  one way the change could have done silent damage — every `a || b` in
+  the corpus becoming a predicate literal — and it carries a dedicated
+  mutation test.
+
+A lone `|` was previously a lexer error (`OX0001`). It is now a token.
+`tests/test_lexer.py` is amended non-silently: the pipe case moved to its
+own test pinning the new rule, and the `&` case keeps its original
+assertion, since Oxide still has no reference-taking or bitwise-and
+operator.
+
+**The first explicit trade between objectives.** The bar form costs one
+token *more* per use than the arrow (17 vs 16), about 2 tokens across the
+corpus. The wave spends static efficiency to buy learnability, with both
+sides measured. §62's ordering says that is the right trade; wave 4's
+uptake read is the test of whether it pays.
+
+### 63.2 `filter(v, |x| ...)` ships alongside `count_if`
+
+Both remain, deliberately, because they disagree about which objective to
+serve:
+
+| | tokens | familiarity |
+|---|---|---|
+| `count_if(v, p)` | fewer | C++ idiom; the tuned arm used it **0** times in wave 3 |
+| `len(filter(v, p))` | more | `filter` is near-universal, and the model writes it unprompted |
+
+Efficiency points at one, learnability at the other, both are offered at
+equal exposure, and the model picks. That is better evidence than
+choosing now by argument, and the result tells the next wave how to weigh
+the two. `filter` also generalises where `count_if` cannot — it is the
+surface implied by the `argmax(items, |item| ...)` the model invented
+unprompted in wave 3.
+
+`filter` reads its vector and returns a fresh one, so the source stays
+usable: `len(filter(v, p))` followed by `len(v)` is legal.
+
+### 63.3 Learnability is now measured, not inferred
+
+`eval/learnability.py` implements §62.1's estimand: **uptake ÷ corpus
+exposure**, per construct, with both terms carried in every row.
+
+Wave 3's `reverse` (50 uses at 1.7%) and `count_if` (0 at 2.4%) rank the
+same on raw uptake as on learnability, but `+=` does not: it has four
+times `reverse`'s uptake and needed fourteen times the exposure, so it is
+the *less* learnable construct. Only the ratio shows that.
+
+Honesty rules the module enforces:
+
+- **Zero exposure yields `None`**, never infinity and never 0.0, and the
+  construct is named in an `unmeasured` list. A construct the corpus
+  never taught has no learnability reading; infinity would flatter it and
+  zero would convict it.
+- **Zero uptake at real exposure yields a measured `0.0`** — that one is
+  a genuine reading.
+- Every quoted ratio carries its uptake and exposure, so no construct can
+  be called "rejected" on a count whose exposure nobody checked. That is
+  exactly the error the wave-3 report had to amend the same day it
+  published.
+
+### 63.4 Stale-text sweep
+
+`grep` across `SPEC.md`, both cards, and `docs/superpowers/specs/` for
+arrow-spelled predicates. §61.1's normative text is the main site and is
+superseded in place by §63.1 above, with its original reasoning left
+visible — the reasoning is what the measurement indicts, so deleting it
+would erase the evidence. Card text is updated in §63.5 rather than
+struck, since cards are current-state documents, not a normative history.
+
+### 63.5 Card v0.7
+
+Both cards move the predicate to `|x| b` and gain `filter(v, |x| b) ->
+Vec<T>` beside `count_if`. No arrow-spelled predicate remains in either
+card. Counts: core **1117**, explicit **1221**, gap 104 against a 10%
+tolerance of 122.1; `CORE_WORD_LIMIT` stays at 1150 with 33 words of
+headroom. §60.5's standing instruction — raise it non-silently, never
+meet it by trimming — is unused this wave and still applies to the next.

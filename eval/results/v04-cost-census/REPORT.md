@@ -37,11 +37,11 @@ Dropped (unmeasured, named not zeroed): none
 | n044 | vectors | 50 | 53 | -3 | 0.943 |
 | n055 | strings | 50 | 53 | -3 | 0.943 |
 | n060 | strings | 76 | 79 | -3 | 0.962 |
+| n065 | vectors | 53 | 56 | -3 | 0.946 |
 | n034 | structs/option | 65 | 69 | -4 | 0.942 |
 | n038 | structs/option | 52 | 56 | -4 | 0.929 |
 | n041 | vectors | 38 | 42 | -4 | 0.905 |
 | n050 | vectors | 39 | 43 | -4 | 0.907 |
-| n065 | vectors | 52 | 56 | -4 | 0.929 |
 | n032 | structs/option | 56 | 61 | -5 | 0.918 |
 | n037 | structs/option | 48 | 54 | -6 | 0.889 |
 | n061 | structs/option | 54 | 60 | -6 | 0.900 |
@@ -49,7 +49,7 @@ Dropped (unmeasured, named not zeroed): none
 | n062 | structs/option | 60 | 68 | -8 | 0.882 |
 | n066 | vectors | 63 | 72 | -9 | 0.875 |
 | n035 | structs/option | 75 | 85 | -10 | 0.882 |
-| n046 | vectors | 57 | 68 | -11 | 0.838 |
+| n046 | vectors | 58 | 68 | -10 | 0.853 |
 | n040 | structs/option | 61 | 74 | -13 | 0.824 |
 | n063 | structs/option | 79 | 92 | -13 | 0.859 |
 | n058 | strings | 74 | 88 | -14 | 0.841 |
@@ -61,5 +61,5 @@ Dropped (unmeasured, named not zeroed): none
 | arithmetic/loops | 509 | 504 | +5 | 1.0099 |
 | strings | 613 | 578 | +35 | 1.0606 |
 | structs/option | 623 | 677 | -54 | 0.9202 |
-| vectors | 555 | 573 | -18 | 0.9686 |
-| **overall** | **2300** | **2332** | **-32** | **0.9863** |
+| vectors | 557 | 573 | -16 | 0.9721 |
+| **overall** | **2302** | **2332** | **-30** | **0.9871** |

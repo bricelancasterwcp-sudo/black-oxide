@@ -87,7 +87,8 @@ max(v) -> Option<T>           # largest element, or None if empty
 sum(v) -> Int                 # sum of an Int vec, 0 if empty
 contains(v, x) -> Bool        # true if v has an element equal to x
 count(v, x) -> Int            # occurrences of x in v
-count_if(v, x -> b) -> Int    # how many elements satisfy x -> b
+count_if(v, |x| b) -> Int     # how many elements satisfy the test
+filter(v, |x| b) -> Vec<T>    # the elements that satisfy it
 reverse(v) -> Vec<T>          # consumes v, returns it reversed
 swap(v, i, j) -> Vec<T>       # consumes v, exchanges positions i and j
 set(v, i, x) -> Vec<T>        # consumes v, replaces element i with x

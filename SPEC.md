@@ -3397,3 +3397,70 @@ re-verified to bite — temporarily setting it back to 1100 fails the
 test, as it must. The limit was not met by trimming card content.
 
 Headroom is now 42 words. The same instruction applies next time.
+
+## 62. The objectives, and what they imply about adding vocabulary
+
+Recorded 2026-08-30, after wave 3 spent its budget in the wrong quadrant
+of the space this section describes.
+
+### 62.1 Three preferred outcomes; novelty is not among them
+
+Black Oxide is optimised for three things, stated by the owner:
+
+1. **Usefulness** — the language can express real tasks, and a model
+   using it succeeds at them.
+2. **Efficiency** — tokens per solved task, against Rust as the control.
+3. **Ease of use and learning, for an LLM** — how readily a model picks
+   a construct up.
+
+**Novelty is not a goal.** A construct that looks like something the
+model already knows is not a compromise or a failure of imagination; on
+objective 3 it is a *win*. Wave 3's report initially framed the pull
+toward Rust-like spellings as a bound on how novel the language could
+be. That framing was wrong and is corrected in
+`eval/results/v04-campaign3/REPORT.md`.
+
+Each objective already has an instrument:
+
+| objective | estimand |
+|---|---|
+| usefulness | pass@1 / pass@10-with-verifier (G1) |
+| efficiency | token ratio, static (§4) and composition-controlled dynamic (§59.7) |
+| ease of learning | **uptake per unit corpus exposure** (§60.3's G2 counts divided by the corpus frequency measured in the wave-3 report §6.1) |
+
+The third has been read informally since wave 1 and is promoted here to a
+first-class estimand. It is a *ratio*: `reverse` drew 50 uses from 1.7%
+corpus exposure and `count_if` drew 0 from 2.4%, and only the ratio
+distinguishes them.
+
+### 62.2 The four quadrants, ordered by what they cost a model to learn
+
+- **Ceremony removed entirely.** Implicit linear ownership is the
+  exemplar: the model writes no annotations *and never has to learn not
+  to*, and structs/option sits at 0.920 — the only class that beats Rust
+  with no added vocabulary at all. Wins on all three objectives at once.
+  This is the shape to replicate: look for ceremony to delete before
+  looking for vocabulary to add.
+- **Familiar spelling for a familiar concept.** `reverse`, `+=`,
+  `range`, `unwrap_or`, `sort`. Near-zero learning cost, real efficiency
+  gain. Prefer the Rust or Python name wherever one exists.
+- **Novel spelling for a familiar concept.** `x -> expr` and `count_if`.
+  The model pays to learn a new way to say something it could already
+  say — pure cost against objective 3, and wave 3 measured the result
+  (arrow lost to `|x|` about 10:1 at equal exposure). **Avoid this
+  quadrant.** It is where wave 3 spent its budget.
+- **Novel concept requiring novel spelling.** Justified only by an
+  efficiency win that no familiar spelling can deliver, and then only
+  with the exposure to teach it (§6.1: the pipeline under-teaches new
+  vocabulary, reaching as few as 2 of 294 training examples).
+
+### 62.3 Consequences carried into wave 4
+
+- The predicate literal should be re-spelled `|x|`. Not a concession to
+  model habits — the correct call on objective 3, with the no-capture
+  restriction taught by `OX0205` rather than by unfamiliar syntax.
+- `count_if` should be renamed to what models already write, or replaced
+  by the `filter`/`max_by`/`argmax` surface they demonstrably reach for.
+- Learnability (uptake ÷ exposure) is pre-registered alongside the token
+  ratio, so a construct can be judged on all three objectives rather than
+  on efficiency alone.

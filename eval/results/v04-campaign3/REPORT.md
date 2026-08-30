@@ -338,9 +338,19 @@ without any added vocabulary), no borrow annotations, no lifetimes —
 while every *added* novel construct fought the model's priors. Wave 3
 shipped four constructs, and the two that landed (`reverse`, `set`) are
 the two with existing Rust namesakes. **Subtractive design wins;
-additive design pays for novelty.** If that holds through wave 4, it
-bounds how novel this language can usefully be, and that is a finding
-about the premise rather than about any construct.
+additive design pays for novelty.**
+
+Stated correctly (this line originally read that the result "bounds how
+novel this language can usefully be", which framed novelty as a target
+being denied): **novelty is not an objective.** The objectives are
+usefulness, efficiency, and ease of learning for an LLM — see SPEC §62.
+Against those, a construct the model already recognises is a *win* on the
+third, not a compromise on anything. Implicit linear ownership is the
+ideal case precisely because there is nothing to learn: the ceremony is
+absent, and structs/option beats Rust at 0.920 with no added vocabulary
+at all. The lesson is to look for ceremony to delete before looking for
+vocabulary to add, and to spell whatever must be added the way models
+already write it.
 6. **Card-quality returns are diminishing:** 0.025 → 0.060 → 0.070 across
    v0.4 → v0.4.1 → v0.6. Scope any card cycle against +0.010, not +0.035.
 7. **Standing debt:** `/=` (two concrete sites, n007 and n009); fold

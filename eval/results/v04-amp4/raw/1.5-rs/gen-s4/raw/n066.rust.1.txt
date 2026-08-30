@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let numbers = [9, 2, 12, 5, 16];
+    let count: usize = numbers.iter().filter(|&&num| num < 10).count();
+    
+    for &num in &numbers {
+        if num < 10 {
+            println!("{}", num);
+        }
+    }
+    
+    println!("Number of kept entries: {}", count);
+}
+```

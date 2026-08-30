@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut a = vec![1, 1];
+    for _ in 2..=9 {
+        let b = push(&a, a.back().unwrap() + a[1]);
+        a.pop();
+        a.push(b);
+    }
+    print(a.back().unwrap());
+}
+```

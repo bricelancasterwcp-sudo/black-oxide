@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let result = (1..=5).map(|x| x.pow(3)).sum::<Int>();
+    print(result);
+}
+```
+The cube of 1 is \(1^3 = 1\), the cube of 2 is \(2^3 = 8\), the cube of 3 is \(3^3 = 27\), the cube of 4 is \(4^3 = 64\), and the cube of 5 is \(5^3 = 125\).
+Adding these values together, we get \(1 + 8 + 27 + 64 + 125 = 240\).

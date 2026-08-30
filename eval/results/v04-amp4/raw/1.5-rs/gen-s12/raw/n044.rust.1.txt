@@ -1,0 +1,20 @@
+```rust
+fn main() {
+    let mut balance: i64 = 0;
+
+    balance += 3;
+    println!("Balance after deposit of 3 is {}", balance);
+
+    balance -= 1;
+    println!("Balance after withdrawal of 1 is {}", balance);
+
+    balance += 4;
+    println!("Balance after deposit of 4 is {}", balance);
+
+    balance += 1;
+    println!("Balance after deposit of 1 is {}", balance);
+
+    balance += 5;
+    println!("Balance after deposit of 5 is {}", balance);
+}
+```

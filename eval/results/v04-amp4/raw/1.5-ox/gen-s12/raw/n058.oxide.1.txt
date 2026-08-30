@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let coffee = String::from("coffee");
+    for c in coffee.chars().collect::<Vec<char>>() {
+        if coffee.matches(&c).count() > 1 {
+            println!("{}", c);
+        }
+    }
+}
+```

@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let mut width = 2;
+    let mut height = 3;
+
+    // Change the width of the rectangle
+    width = 5;
+
+    // Calculate and print the area of the rectangle
+    println!("Area: {}", width * height);
+}
+```
+
+Explanation:
+The program was correctly written in Rust. The variables `width` and `height` were initialized with values 2 and 3, respectively. The variable `width` was then updated to have a value of 5. Finally, the area of the rectangle (width times height) was printed to the console.

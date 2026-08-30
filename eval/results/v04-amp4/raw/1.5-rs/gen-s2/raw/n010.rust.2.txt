@@ -1,0 +1,20 @@
+```rust
+fn main() {
+    let num = 91;
+    let mut is_prime = true;
+
+    for i in 2..num {
+        if num % i == 0 {
+            println!("No");
+            is_prime = false;
+            break;
+        }
+    }
+
+    if is_prime && num != 2 { // Add this check to prevent printing "Yes" for non-prime numbers that are not 2
+        println!("No");
+    } else {
+        println!("Yes");
+    }
+}
+```

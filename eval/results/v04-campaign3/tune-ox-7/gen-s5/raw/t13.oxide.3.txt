@@ -1,0 +1,22 @@
+fn is_palindrome(s: Str) -> Bool {
+    let len = str_len(s)
+    for i in range(0, len / 2) {
+        if get(s, i).unwrap_or("") != get(reverse_str(s), i).unwrap_or("") {
+            return false
+        }
+    }
+    true
+}
+fn reverse_str(s: Str) -> Str {
+    let chars = chars(s)
+    let mut reversed_chars = vec()
+    for c in chars {
+        reversed_chars = push(reversed_chars, c)
+    }
+    reversed_chars
+}
+fn main() {
+    print(is_palindrome("level"))
+    print(is_palindrome("stereo"))
+    print(is_palindrome("rotor"))
+}

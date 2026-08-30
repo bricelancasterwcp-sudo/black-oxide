@@ -1,0 +1,1 @@
+fn main() { let word = "coffee" let mut seen = vec() let mut printed = vec() for c in chars(word) { let c_clone = clone(c) if contains(seen, c_clone) && !contains(printed, c_clone) { print_str(c_clone) printed = push(printed, c_clone) } seen = push(seen, c) } }

@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let word = "drum";
+    for (i, c) in word.chars().rev().enumerate() {
+        print!("{}", c);
+        if i < word.len() - 1 {
+            print!(" ");
+        }
+    }
+    println!();
+
+    let word2: String = word.chars().rev().collect();
+    print!("{}", word2);
+}
+```

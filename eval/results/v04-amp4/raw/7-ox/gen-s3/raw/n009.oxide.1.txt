@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let s = "1234";
+    let reversed: Str = reverse(chars(s).map(int_to_str).collect());
+    print(reversed);
+}
+```

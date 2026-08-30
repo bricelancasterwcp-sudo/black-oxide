@@ -1,0 +1,17 @@
+Here's the complete corrected program:
+
+```rust
+fn main() {
+    let a = 8;
+    println!("{}", a);
+
+    let b = "oak";
+    println!("{}", b.parse::<i32>().unwrap_or(-1));
+
+    let c = 15;
+    println!("{}", c);
+}
+```
+
+Explanation:
+The original program was trying to parse strings as integers, but it didn't handle the case when parsing failed. The `parse` function returns an `Option<i32>`, which can be either Some(value) or None. By using `.unwrap_or(-1)`, we ensure that if `b.parse::<i32>().unwrap_or(-1)` fails (which would happen for the string "oak"), it will return -1 instead of panicking.

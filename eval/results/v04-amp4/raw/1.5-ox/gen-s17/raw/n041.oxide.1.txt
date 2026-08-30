@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let v = push(push(vec(), 3), 42);
+    print(min(v)?);        // first small value
+    print(second(v)?);       // second small value
+}
+```

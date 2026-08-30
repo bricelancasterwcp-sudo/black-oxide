@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let sum = (1..=5).map(|n| n.pow(3)).sum::<Int>();
+    print(sum);
+}
+```
+
+The `main` function calculates the cubes of each whole number from 1 to 5 using the `map` function to apply the cube operation and then uses the `sum` method to calculate the total. The result is printed using the `print` function.

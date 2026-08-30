@@ -1,0 +1,19 @@
+```rust
+
+fn main() {
+    let mut vec = vec![5, 12, 3, 18, 9];
+    let under_cutoff_count = count(vec.iter(), |&x| x < 10);
+    let over_or_equal_cutoff_count = count(vec.iter(), |&x| x >= 10);
+
+    println!("Under cutoff: {}", under_cutoff_count);
+    println!("Over or equal cutoff: {}", over_or_equal_cutoff_count);
+}
+
+fn count<I, T>(iter: I, predicate: fn(&T) -> bool) -> usize
+where
+    I: Iterator<Item = T>,
+    T: Clone + Ord,
+{
+    iter.filter(predicate).count()
+}
+```

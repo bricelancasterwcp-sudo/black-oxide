@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let mut count = 0;
+    for num in [9, 2, 12, 5, 16] {
+        if num < 10 {
+            println!("{}", num);
+            count += 1;
+        }
+    }
+    println!("Total kept entries: {}", count);
+}
+```

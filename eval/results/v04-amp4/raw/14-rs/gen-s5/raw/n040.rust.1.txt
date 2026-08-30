@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    enum Shape {
+        Square { side: f64 },
+        Circle { radius: f64 },
+    }
+
+    fn area(shape: &Shape) -> f64 {
+        match shape {
+            Shape::Square { side } => side * side,
+            Shape::Circle { radius } => 3.0 * radius * radius, // Using 3 as the value of pi
+        }
+    }
+
+    let square = Shape::Square { side: 4.0 };
+    println!("The area of the square is {}", area(&square));
+}
+```

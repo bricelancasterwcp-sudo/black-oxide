@@ -1,0 +1,14 @@
+```text
+struct Queue { items: Vec<Int> }
+
+fn main() {
+    let q = Queue { items: push(push(push(push(push(vec(), 1), 2), 3), 4), 5) }
+    let first = get(q.items, 0).unwrap_or(-1)
+    let last_index = len(q.items) - 1
+    let last = get(q.items, last_index).unwrap_or(-1)
+    let q = set(set(q.items, 0, last), last_index, first)
+    for item in q.items {
+        print(item)
+    }
+}
+```

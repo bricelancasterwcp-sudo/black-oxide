@@ -1,0 +1,19 @@
+fn main() {
+    let v = vec(3, 8, -2, 12, 7)
+    let mut count = 0
+    let mut max_val = None
+    for x in v {
+        if x > 0 {
+            count += 1
+        }
+        match max_val {
+            Some(m) => { if x > m { max_val = Some(x) } },
+            None => { max_val = Some(x) },
+        }
+    }
+    print(count)
+    match max_val {
+        Some(n) => print(n),
+        None => print_str("No positive values"),
+    }
+}

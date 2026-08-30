@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let x = parse_int("8")?;
+    println!("{}", x);
+
+    let oak = parse_int("oak")?;
+    println!("{}", oak);
+
+    let f = parse_int("15")?;
+    println!("{}", f);
+}
+```

@@ -1,0 +1,12 @@
+```oxide
+fn main() {
+    let n = 91;
+    for i in range(2, n) {
+        if n % i == 0 {
+            print_str("no");
+            return;
+        }
+    }
+    print_str("yes");
+}
+```

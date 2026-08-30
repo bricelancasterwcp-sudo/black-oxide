@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let mut rect = 2 * 3;
+    println!("Initial area: {}", rect);
+
+    rect = 5 * 3;
+    println!("Updated area: {}", rect);
+}
+```

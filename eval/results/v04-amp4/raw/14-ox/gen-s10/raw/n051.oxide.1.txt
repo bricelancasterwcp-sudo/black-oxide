@@ -1,0 +1,9 @@
+```text
+fn main() {
+    let s = "granite"
+    let first = get(s.chars(), 0)?
+    let last = get(s.chars(), str_len(s) - 1)?
+    print(first)
+    print(last)
+}
+```

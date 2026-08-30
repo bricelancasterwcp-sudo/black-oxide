@@ -1,0 +1,4 @@
+fn main() {
+    let total = range(1, 21).sum();
+    print(total);
+}

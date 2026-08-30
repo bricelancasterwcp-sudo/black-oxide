@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let cost_first_line = 4 * 3;
+    let cost_second_line = 5 * 2;
+
+    println!("First line value: {}", cost_first_line);
+    println!("Second line value: {}", cost_second_line);
+
+    let total_value = cost_first_line + cost_second_line;
+
+    println!("Total value of both lines: {}", total_value);
+}
+```

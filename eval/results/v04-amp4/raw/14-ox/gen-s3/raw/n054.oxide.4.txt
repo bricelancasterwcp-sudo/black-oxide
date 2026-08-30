@@ -1,0 +1,15 @@
+struct LetterCount { vowels: Int, consonants: Int }
+
+fn main() {
+    let keyboard = "qwertyuiopasdfghjklzxcvbnm"
+    let mut count = LetterCount { vowels: 0, consonants: 0 }
+    for ch in chars(keyboard) {
+        if ch == "a" || ch == "e" || ch == "i" || ch == "o" || ch == "u" {
+            count.vowels = count.vowels + 1
+        } else {
+            count.consonants = count.consonants + 1
+        }
+    }
+    print(count.vowels)
+    print(count.consonants)
+}

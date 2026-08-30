@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let mut digits = vec![4, 3, 2, 1];
+    print(&digits);
+}
+```
+
+This program creates a mutable `Vec` of digits and then prints them in reverse order.

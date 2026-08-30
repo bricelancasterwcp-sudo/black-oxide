@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let text = "7, x, 9 and ?".split(',');
+    let mut sum: Int = 0;
+    let mut count: Int = 0;
+
+    for part in text {
+        match str_to_int(part.trim()) {
+            Ok(num) => {
+                sum += num;
+                count += 1;
+            }
+            Err(_) => {}
+        }
+    }
+
+    println!("Total: {}, Count: {}", sum, count);
+}
+```

@@ -1,0 +1,14 @@
+```
+fn positions(s: Str) {
+    let mut i = 0;
+    while i < str_len(s) {
+        if s[i] == 'n' {
+            print(i);
+            print_str("\n");
+        }
+        i += 1;
+    }
+}
+
+positions("banana")
+```

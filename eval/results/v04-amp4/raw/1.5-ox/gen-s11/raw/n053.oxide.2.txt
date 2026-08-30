@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let s = "drum";
+    print_rev(&s);
+    println!("{}", &s);
+}
+
+fn print_rev(s: &str) {
+    for c in s.chars().rev() {
+        print!("{} ", c);
+    }
+}
+```

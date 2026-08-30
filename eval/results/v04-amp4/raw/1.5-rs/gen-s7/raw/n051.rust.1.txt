@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let word = "granite";
+    let opening_letter = word.chars().nth(0).unwrap();
+    let closing_letter = word.chars().rev().nth(0).unwrap();
+
+    println!("{}", opening_letter);
+    println!("{}", closing_letter);
+}
+```

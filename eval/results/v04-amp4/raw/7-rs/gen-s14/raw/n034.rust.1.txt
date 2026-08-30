@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let list = vec![7, 8, 9];
+    match second_entry(&list) {
+        Some(value) => println!("{}", value),
+        None => println!("None"),
+    }
+}
+
+fn second_entry<T>(lst: &[T]) -> Option<&T> {
+    lst.get(1)
+}
+```

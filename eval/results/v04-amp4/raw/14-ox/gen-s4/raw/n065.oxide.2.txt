@@ -1,0 +1,18 @@
+```
+fn count_exceeding_five(readings: Vec<Int>) -> Int {
+    count_if(readings, x -> x > 5)
+}
+
+fn max_reading(readings: Vec<Int>) -> Option<Int> {
+    max(readings)
+}
+
+fn main() {
+    let readings = vec!(6, 11, 3, 14, 9)
+    print(count_exceeding_five(clone(readings)))
+    match max_reading(readings) {
+        Some(max) => print(max),
+        None => print_str("No readings"),
+    }
+}
+```

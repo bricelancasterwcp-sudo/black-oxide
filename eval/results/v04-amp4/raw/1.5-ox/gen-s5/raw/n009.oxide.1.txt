@@ -1,0 +1,9 @@
+```rust
+struct Number { digits: Vec<Int> }
+
+fn main() {
+    let num = Number { digits: push(push(push(vec(), 1), 2), 3) }
+    let reversed_digits: Vec<Int> = num.digits.iter().rev().cloned().collect();
+    print_str(concat(reversed_digits.iter().map(|d| int_to_str(*d)).collect::<Vec<_>>()));
+}
+```

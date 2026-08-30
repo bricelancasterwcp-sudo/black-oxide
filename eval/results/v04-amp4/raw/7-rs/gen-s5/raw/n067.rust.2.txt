@@ -1,0 +1,14 @@
+fn main() {
+    let list = vec![7, 4, 9, 10];
+    let mut sum = 0;
+
+    for &item in list.iter() {
+        if item % 2 != 0 {
+            println!("{}", item * 2);
+        } else {
+            sum += item;
+        }
+    }
+
+    println!("Sum of even entries: {}", sum);
+}

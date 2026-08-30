@@ -1,0 +1,14 @@
+```rust
+fn sum_digits(n: Int) -> Int {
+    let mut result = 0;
+    while n > 0 {
+        result += n % 10;
+        n /= 10;
+    }
+    result
+}
+
+fn main() {
+    print(sum_digits(9875));
+}
+```

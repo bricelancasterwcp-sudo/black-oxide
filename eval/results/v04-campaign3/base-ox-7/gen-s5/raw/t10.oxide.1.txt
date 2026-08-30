@@ -1,0 +1,18 @@
+```oxide
+fn main() {
+    let list = vec(4, 1, 7, 3, 9, 2);
+    let mut filtered = Vec<Int>();
+
+    for x in list {
+        if x > 3 {
+            push(filtered, x);
+        }
+    }
+
+    for x in filtered {
+        print(x);
+    }
+
+    print(len(filtered));
+}
+```

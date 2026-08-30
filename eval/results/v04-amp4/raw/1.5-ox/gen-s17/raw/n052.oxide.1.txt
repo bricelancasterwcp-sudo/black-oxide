@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let banana = "banana";
+    for (i, c) in banana.chars().enumerate() {
+        if c == 'n' {
+            print!("{:?}", i);
+        }
+    }
+}
+```
+
+This program iterates over each character in the string `banana` and prints its position (starting from 0). The `enumerate()` function is used to get both the index and the character at that index.

@@ -1,0 +1,1 @@
+fn main() { let values = vec(); let values = push(push(push(push(values, 9), 2), 7), 4); let sorted_values = sort(values); for v in sorted_values { print(v); } }

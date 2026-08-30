@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let text = "banana";
+    for (index, char) in text.chars().enumerate() {
+        if char == 'n' {
+            println!("{}", index);
+        }
+    }
+}
+```
+
+The error messages indicate several issues:
+1. The program ends with a semicolon (`;`), which is not allowed at the end of a statement in Rust.
+2. The `text` variable was declared after its usage, and Rust requires all variables to be declared at the beginning of the scope they are used in.
+3. The loop control structure should be written inside braces `{}`, but it was missing a closing brace after `for`.
+
+Fixed program: 
+- Moved the declaration of `text` before the loop.
+- Added a closing brace for the loop.

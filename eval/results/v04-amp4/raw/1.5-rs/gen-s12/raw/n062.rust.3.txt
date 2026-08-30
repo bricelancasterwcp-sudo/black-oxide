@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let signal = [1, 2, 3];
+
+    for (index, &value) in signal.iter().enumerate() {
+        match value {
+            1 => println!("Go for green"),
+            2 => println!("Stop for red"),
+            3 => println!("Wait for yellow"),
+            _ => panic!("Invalid signal: {}", value),
+        }
+    }
+}
+```

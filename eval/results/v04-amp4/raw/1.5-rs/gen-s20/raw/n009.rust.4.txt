@@ -1,0 +1,12 @@
+fn main() {
+    let num: u32 = 1234;
+    
+    // Reverse the digits of the number using a loop
+    let mut reversed_num = 0;
+    while num > 0 {
+        reversed_num = reversed_num * 10 + num % 10;
+        num /= 10;
+    }
+    
+    println!("Reversed number: {}", reversed_num);
+}

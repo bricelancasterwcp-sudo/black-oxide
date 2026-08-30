@@ -173,6 +173,25 @@ fn unwrap_or<T>(o: Option<T>, d: T) -> T {
         Some(x) => x,
         None => d,
     }
+}
+
+fn count_if<T>(v: &Vec<T>, p: impl Fn(&T) -> bool) -> i64 {
+    v.iter().filter(|e| p(e)).count() as i64
+}
+
+fn swap<T>(mut v: Vec<T>, i: i64, j: i64) -> Vec<T> {
+    v.swap(i as usize, j as usize);
+    v
+}
+
+fn reverse<T>(mut v: Vec<T>) -> Vec<T> {
+    v.reverse();
+    v
+}
+
+fn set<T>(mut v: Vec<T>, i: i64, x: T) -> Vec<T> {
+    v[i as usize] = x;
+    v
 }"""
 
 R1_MAIN = """fn main() {

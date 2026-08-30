@@ -1,0 +1,15 @@
+```rust
+struct List { one: Option<Int>, four: Option<Int> }
+
+fn main() {
+    let list = List { one: Some(10), four: Some(20) };
+    match get(list.one?, 0) {
+        Some(value) => print_str("one: "), print(value),
+        None => print_str("none at one\n"),
+    }
+    match get(list.four?, 0) {
+        Some(value) => print_str("four: "), print(value),
+        None => print_str("none at four\n"),
+    }
+}
+```

@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let text = "When in doubt go home";
+    println!("The phrase contains {} words and {} characters including spaces", num_words(text), len(text));
+}
+
+fn num_words(text: &str) -> usize {
+    text.split_whitespace().count()
+}
+
+fn len(text: &str) -> usize {
+    text.chars().count()
+}
+```

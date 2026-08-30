@@ -1,0 +1,23 @@
+```rust
+struct Queue { values: Vec<Int> }
+
+fn exchange_first_last(mut q: Queue) -> Queue {
+    let len = len(q.values);
+    if len > 0 {
+        let first = get(q.values, 0)?;
+        let last_index = len - 1;
+        let last = get(q.values, last_index)?;
+        q.values[0] = last;
+        q.values[last_index] = first;
+    }
+    q
+}
+
+fn main() {
+    let queue = Queue { values: vec(1, 2, 3, 4, 5) };
+    let queue = exchange_first_last(queue);
+    for value in queue.values {
+        print(value);
+    }
+}
+```

@@ -1,0 +1,16 @@
+```
+struct Log { entries: Vec<Int> }
+
+fn print_first_last(log: Log) -> (Int, Int) {
+    let first = *log.entries.get(0).unwrap_or(&0);
+    let last = *log.entries.get(log.entries.len() - 1).unwrap_or(&0);
+    (first, last)
+}
+
+fn main() {
+    let log = Log { entries: vec![6, 7, 8, 9] };
+    let (f, l) = print_first_last(log);
+    println!("First entry: {}", f); // field access copies: log stays usable
+    println!("Last entry: {}", l);
+}
+```

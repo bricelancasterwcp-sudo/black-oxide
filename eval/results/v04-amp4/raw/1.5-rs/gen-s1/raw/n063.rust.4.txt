@@ -1,0 +1,19 @@
+Sure. Here is the corrected version of your Rust program:
+
+```rust
+fn main() {
+    // Value calculation for the first line of stock
+    let first_line_value = (4 * 3) + (5 * 2);
+
+    // Value calculation for the second line of stock
+    let second_line_value = (6 * 4) + (7 * 1);
+
+    // Displaying values of both lines
+    println!("The value of the first line is: {}", first_line_value);
+    println!("The value of the second line is: {}", second_line_value);
+
+    // Calculating and displaying the total value of both lines
+    let total_value = first_line_value + second_line_value;
+    println!("The total value of both lines is: {}", total_value);
+}
+```

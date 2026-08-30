@@ -1,0 +1,11 @@
+```rust
+use std::cmp::Ordering;
+
+fn main() {
+    let mut numbers = [9, 2, 7, 4];
+    numbers.sort_unstable();
+    for &number in &numbers {
+        println!("{}", number);
+    }
+}
+```

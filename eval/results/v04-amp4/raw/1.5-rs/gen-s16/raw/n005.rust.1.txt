@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let sum = (1..=20).filter(|&x| x % 2 == 0).sum::<u32>();
+    println!("The total of all even numbers between 1 and 20 inclusive is: {}", sum);
+}
+```
+
+Explanation:
+- `(1..=20)` creates an iterator from 1 to 20.
+- `filter(|&x| x % 2 == 0)` filters out the odd numbers, keeping only the even ones.
+- `.sum::<u32>()` calculates the sum of all even numbers in the iterator.
+- `println!()` prints the result.

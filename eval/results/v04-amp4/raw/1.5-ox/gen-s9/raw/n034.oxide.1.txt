@@ -1,0 +1,11 @@
+```rust
+fn second(vec: Vec<Int>) -> Option<Int> {
+    let (a, b) = vec.split_first()?;
+    Some(b)
+}
+
+fn main() {
+    print(second(vec![7, 8, 9]));     // prints 8
+    print(second(vec![5]));          // prints None
+}
+```

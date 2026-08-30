@@ -1,0 +1,19 @@
+```rust
+use std::str::FromStr;
+
+fn main() {
+    let texts = vec!["7", "x", "9", "?"];
+    let mut sum = 0;
+    let mut count_non_numbers = 0;
+
+    for text in texts {
+        match i32::from_str(text) {
+            Ok(number) => sum += number,
+            Err(_) => count_non_numbers += 1,
+        }
+    }
+
+    println!("Total: {}", sum);
+    println!("Count of non-numbers: {}", count_non_numbers);
+}
+```

@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let fruit_names = ["fig", "banana", "kiwi"];
+    let longest_fruit = fruit_names.iter().max_by_key(|&&name| name.len()).unwrap();
+    println!("Longest fruit: {} with letter count {}", longest_fruit, longest_fruit.len());
+}
+```

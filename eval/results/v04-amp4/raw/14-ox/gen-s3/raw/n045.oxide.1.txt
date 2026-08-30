@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let log = vec!(6, 7, 8, 9);
+    print(get(log, 0)?);  // Print the first entry
+    let last_index = len(log) - 1;
+    print(get(log, last_index)?);  // Print the last entry
+}
+```

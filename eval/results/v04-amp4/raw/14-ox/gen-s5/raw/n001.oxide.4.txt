@@ -1,0 +1,1 @@
+fn main() { let total = range(1, 6).map(|x| x * x * x).sum(); print(total); }

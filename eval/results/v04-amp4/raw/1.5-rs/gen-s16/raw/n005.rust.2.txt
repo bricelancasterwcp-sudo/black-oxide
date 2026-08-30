@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let sum = (1..=20).filter(|&x| x % 2 == 0).sum::<u32>();
+    println!("The total of all even numbers between 1 and 20 inclusive is: {}", sum);
+}
+```
+
+The issue in the original code was with the data type used for the filter condition. The correct data type should be `i32` or `i64`, not `u32`. Since we're only adding up numbers, it doesn't matter if they are positive or negative.

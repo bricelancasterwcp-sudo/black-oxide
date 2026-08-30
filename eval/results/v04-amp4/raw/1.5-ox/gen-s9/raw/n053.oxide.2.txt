@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let drum = "drum";
+    println!("{:?}", drum.chars().rev());
+    println!("{}", drum);
+}
+```
+The error message indicates that there are unexpected semicolons (`;`) in the code. The corrected program removes these semicolons and properly ends each statement with a newline, which is necessary for Rust syntax rules.

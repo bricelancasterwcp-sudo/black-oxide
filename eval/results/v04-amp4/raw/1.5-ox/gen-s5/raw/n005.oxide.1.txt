@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let sum = (1..=20).filter(|&x| x % 2 == 0).sum();
+    print(sum);
+}
+```
+
+Explanation:
+- The `range(1..=20)` generates a range from 1 to 20 inclusive.
+- The `filter(|&x| x % 2 == 0)` filters the range to include only even numbers.
+- The `sum()` function calculates the sum of the filtered even numbers.

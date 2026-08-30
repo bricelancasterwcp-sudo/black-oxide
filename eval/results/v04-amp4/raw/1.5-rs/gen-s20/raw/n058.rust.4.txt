@@ -1,0 +1,8 @@
+fn main() {
+    let text = "coffee";
+    for (c, count) in text.chars().filter(|&c| text.matches(c).count() > 1).enumerate() {
+        if count == 0 {
+            println!("{}", c);
+        }
+    }
+}

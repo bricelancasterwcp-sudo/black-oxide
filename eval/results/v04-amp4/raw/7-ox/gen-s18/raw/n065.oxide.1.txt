@@ -1,0 +1,33 @@
+```rust
+struct Reading { label: Str, values: Vec<Int> }
+
+fn count_above_five(v: Vec<Int>) -> Int {
+    let mut count = 0
+    for x in v {
+        if x > 5 {
+            count += 1
+        }
+    }
+    count
+}
+
+fn max_reading(v: Vec<Int>) -> Option<Int> {
+    let mut m = None
+    for x in v {
+        match m {
+            Some(y) => m = Some(max(x, y)?),
+            None => m = Some(x)
+        }
+    }
+    m
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(push(vec(), 6), 11), vec(3, 14, 9)) }
+    print(count_above_five(r.values))
+    match max_reading(r.values) {
+        Some(n) => print(n),
+        None => print_str("empty"),
+    }
+}
+```

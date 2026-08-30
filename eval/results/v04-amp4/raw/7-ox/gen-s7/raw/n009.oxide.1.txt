@@ -1,0 +1,12 @@
+```oxide
+fn main() {
+    let s = int_to_str(1234)
+    let chars: Vec<Str> = chars(s)
+    let reversed: Vec<Str> = reverse(chars)
+    let result: Str = concat(reversed)
+    print(str_len(result))
+    for c in chars {
+        print(c)
+    }
+}
+```

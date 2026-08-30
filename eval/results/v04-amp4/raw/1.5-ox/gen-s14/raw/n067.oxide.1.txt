@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let mut numbers = Vec::new();
+    let mut even_sum = 0;
+
+    for &n in vec![7, 4, 9, 10].iter().rev() {
+        if n % 2 != 0 {
+            println!("{}", 2 * n);
+        } else {
+            even_sum += n;
+        }
+    }
+
+    println!("Total of even entries: {}", even_sum);
+}
+```

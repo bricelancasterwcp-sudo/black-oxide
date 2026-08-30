@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let mut sum_even = 0;
+    let mut walk_list: Vec<Int> = vec![7, 4, 9, 10];
+
+    for i in 0..walk_list.len() {
+        if walk_list[i] % 2 != 0 {
+            println!("{}", 2 * walk_list[i]);
+        } else {
+            sum_even += walk_list[i];
+        }
+    }
+
+    println!("Total of even entries: {}", sum_even);
+}
+```

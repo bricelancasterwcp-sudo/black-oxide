@@ -1,0 +1,24 @@
+```oxide
+fn count_exceeding(v: Vec<Int>) -> Int {
+    let mut count = 0
+    for x in v {
+        if x > 5 {
+            count += 1
+        }
+    }
+    count
+}
+
+fn highest(v: Vec<Int>) -> Option<Int> {
+    max(v)
+}
+
+fn main() {
+    let readings = push(push(push(push(vec(), 6), 11), 3), 14)
+    print(count_exceeding(readings))
+    match highest(readings) {
+        Some(n) => print(n),
+        None => print_str("empty"),
+    }
+}
+```

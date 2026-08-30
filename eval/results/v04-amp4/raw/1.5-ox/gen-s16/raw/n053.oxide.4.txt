@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let word = "drum";
+    for (i, c) in word.chars().rev().enumerate() {
+        print!("{}", c);
+        if i < word.len() - 1 {
+            print!(" ");
+        }
+    }
+    println!();
+    println!("{}", String::from(word).chars().collect::<String>());
+}
+```

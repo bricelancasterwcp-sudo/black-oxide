@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    print('g');
+    println!();
+    print('e');
+    println!();
+}
+```
+
+The error message indicates that there were syntax issues in the `print` statements. The `println!()` macro is used to print a formatted string and move the cursor to the next line automatically, whereas `print!()` does not do this.
+
+To fix it, we simply add the `println!()` function call after each `print!()` statement to ensure the cursor moves to the next line before moving on.

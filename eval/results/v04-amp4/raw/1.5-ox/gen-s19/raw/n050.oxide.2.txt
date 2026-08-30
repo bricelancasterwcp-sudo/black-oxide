@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut scores = vec![9, 2, 5];
+    scores.sort_unstable(); // Sort in ascending order, then reverse it
+    for &score in &mut scores {
+        println!("{}", score);
+    }
+}
+```
+
+Note: The `sort_unstable` function is used to sort the vector in descending order.

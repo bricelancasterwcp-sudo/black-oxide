@@ -1,0 +1,9 @@
+```
+struct Reading { label: Str, values: Vec<Int> }
+
+fn main() {
+    let mut r = Reading { label: "lab", values: vec![0] };
+    *r.values.last_mut().unwrap() = 7;
+    println!("{}", r.values[0]);
+}
+```

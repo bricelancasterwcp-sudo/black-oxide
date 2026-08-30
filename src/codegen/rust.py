@@ -182,6 +182,10 @@ class _FnEmitter:
             "std::mem::drop" if "drop" in res.resolve.fns else "drop"
         )
         self.rename = self._build_renames()
+        #: var_ids of predicate-literal parameters currently in scope.
+        #: The emitted Rust closure receives `&T`, so uses of the
+        #: parameter deref -- see `_var_name`.
+        self._pred_params: set[int] = set()
         self.ref_bound = self._build_ref_bound()
         # DropPoint indexes by anchor span, each list descending var_id.
         self.after_stmt: dict[tuple[int, int], list[DropPoint]] = {}
@@ -589,6 +593,8 @@ class _FnEmitter:
         match expr:
             case ast.Lit(value=value, kind=kind):
                 return self._lit_text(value, kind)
+            case ast.PredLit():
+                return self._pred_lit_text(expr, indent)
             case ast.Var():
                 return self._var_name(expr)
             case ast.Call():
@@ -664,7 +670,27 @@ class _FnEmitter:
         var_id = self.use_of.get(expr.node_id)
         if var_id is None:
             return escape(expr.name)
+        if var_id in self._pred_params:
+            # The closure's parameter is `&T`; every use derefs. Wrapped
+            # in parens so it composes inside any surrounding operator.
+            return f"(*{self.rename[var_id]})"
         return self.rename[var_id]
+
+    def _pred_lit_text(self, expr: ast.PredLit, indent: int) -> str:
+        """`x -> body` emits as the Rust closure `|x| body`.
+
+        The parameter is registered while the body is emitted so its uses
+        deref (the prelude's `count_if` calls `p(e)` with `e: &T`)."""
+        bound = self.binds_of.get(expr.node_id, ())
+        if not bound:
+            return "|_| false"
+        var_id = bound[0]
+        self._pred_params.add(var_id)
+        try:
+            body = self._expr(expr.body, indent)
+        finally:
+            self._pred_params.discard(var_id)
+        return f"|{self.rename[var_id]}| {body}"
 
     # ----------------------------------------------------------------- calls
 

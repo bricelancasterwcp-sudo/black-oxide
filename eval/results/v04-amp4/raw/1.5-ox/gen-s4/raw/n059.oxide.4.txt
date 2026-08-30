@@ -1,0 +1,9 @@
+```
+fn main() {
+    let s = "when in doubt go home";
+    let words = s.split_whitespace().count();
+    println!("The phrase contains {} words", words);
+    let chars = s.chars().count();
+    println!("It spans {} characters including spaces", chars);
+}
+```

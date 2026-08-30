@@ -1,0 +1,11 @@
+```ox
+fn main() {
+    let figures = push(push(push(vec(), 8), 3), 11)
+    let figures = push(figures, 6)
+    let min_val = min(figures)?
+    print(min_val)
+    let max_val = max(figures)?
+    let gap = max_val - min_val
+    print(gap)
+}
+```

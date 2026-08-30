@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let word = "granite".chars().collect::<Vec<char>>();
+    println!("{}", word.first().unwrap());
+    println!("{}", word.last().unwrap());
+}
+```

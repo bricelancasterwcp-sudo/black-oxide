@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let mut v = push(push(vec(), 3), 42);
+    let mut i = 0;
+    while i < v.len() - 1 {
+        if v[i] > v[i + 1] {
+            swap(v, i, i + 1);
+        }
+        i += 1;
+    }
+    for x in v {
+        print_str(&x.to_string());
+        println!();
+    }
+}
+```

@@ -1,0 +1,20 @@
+```rust
+fn main() {
+    let mut digits = vec![1, 2, 3, 4];
+
+    let reversed_digits = vec!();
+    for digit in digits.iter().rev() {
+        reversed_digits = push(reversed_digits, *digit);
+    }
+
+    print(str_from_vec(reversed_digits));
+}
+
+fn str_from_vec(vec: Vec<Int>) -> Str {
+    let mut result = Str::new();
+    for &digit in vec.into_iter() {
+        result = push(result, int_to_str(digit));
+    }
+    result
+}
+```

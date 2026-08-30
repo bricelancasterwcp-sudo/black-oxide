@@ -1,0 +1,25 @@
+```text
+struct Log { entries: Vec<Int> }
+
+fn first_entry(log: Log) -> Option<Int> {
+    let v = log.entries;
+    get(v, 0)
+}
+
+fn last_entry(log: Log) -> Option<Int> {
+    let v = log.entries;
+    let len = len(v);
+    if len == 0 {
+        None
+    } else {
+        Some(get(v, len - 1))
+    }
+}
+
+fn main() {
+    let log = Log { entries: vec().push(6).push(7).push(8).push(9) };
+    print(first_entry(log)?);
+    let log2 = Log { entries: vec().push(6).push(7).push(8).push(9) };
+    print(last_entry(log2)?);
+}
+```

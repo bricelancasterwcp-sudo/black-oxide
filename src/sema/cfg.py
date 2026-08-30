@@ -488,6 +488,18 @@ class _Lowerer:
         match expr:
             case ast.Var():
                 return self._var(expr, ctx)
+            case ast.PredLit():
+                # A predicate body cannot capture (SPEC 61), so it has no
+                # ownership relationship to anything in the enclosing
+                # flow: nothing outside can be read, moved, or consumed
+                # by it. It is therefore a leaf here, like a literal.
+                # KNOWN LIMITATION, documented in SPEC 61: a body that
+                # misuses its OWN parameter (e.g. consuming a Str param
+                # twice) is not caught by this analysis. It still fails
+                # closed -- the emitted Rust closure takes `&T`, so rustc
+                # rejects it -- but the reader gets a rustc error rather
+                # than a clean Oxide diagnostic.
+                return []
             case ast.Lit() | ast.ErrorExpr():
                 return []
             case ast.Call():

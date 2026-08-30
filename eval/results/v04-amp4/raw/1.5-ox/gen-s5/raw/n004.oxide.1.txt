@@ -1,0 +1,37 @@
+```rust
+struct Sequence {
+    first: Int,
+    second: Int,
+}
+
+impl Sequence {
+    fn new(first: Int) -> Self {
+        Sequence { first, second }
+    }
+
+    fn next(&mut self) -> Int {
+        let next = self.first + self.second;
+        self.first = self.second;
+        self.second = next;
+        next
+    }
+
+    fn nth(&self, n: Int) -> Option<Int> {
+        if n <= 0 {
+            return None;
+        }
+        let mut sequence = Sequence::new(1);
+        for _ in 1..n {
+            sequence.next();
+        }
+        Some(sequence.first)
+    }
+}
+
+fn main() {
+    match Sequence::nth(10) {
+        Some(term) => print_int(term),
+        None => println_str("Sequence not defined"),
+    }
+}
+```

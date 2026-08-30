@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let samples = vec![5, 12, 3, 18, 9];
+    let mut count_under_cutoff = 0;
+    let mut count_over_or_equal_cutoff = 0;
+
+    for sample in samples {
+        if sample < 10 {
+            count_under_cutoff += 1;
+        } else {
+            count_over_or_equal_cutoff += 1;
+        }
+    }
+
+    print_str(&format!("Under cutoff: {}, Over or equal cutoff: {}", count_under_cutoff, count_over_or_equal_cutoff));
+}
+```

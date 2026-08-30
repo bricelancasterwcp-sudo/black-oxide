@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let list = [10, 20];
+    match list.get(0) {
+        Some(&value) => println!("{}", value),
+        None => println!("None"),
+    }
+    match list.get(3) {
+        Some(&value) => println!("{}", value),
+        None => println!("None"),
+    }
+}
+```

@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let count = (1..=36).filter(|&i| i % 36 == 0).count();
+    println!("There are {} whole numbers from 1 to 36 that divide 36 exactly.", count);
+}
+```
+
+Explanation:
+The original program was close but had a mistake. The condition in the filter function should check if `i` is divisible by 36, not vice versa. Since we want to find how many numbers from 1 to 36 divide 36 exactly, we need to check if 36 is divisible by `i`.

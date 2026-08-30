@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let drum = "drum";
+    println!("{:?}", drum.chars().rev());
+    println!("{}", drum);
+}
+```
+The error message indicates that there are unexpected semicolons (`;`) in the code. The corrected program source removes these semicolons to ensure proper syntax.

@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let num = 91;
+    let is_prime = is_divisible_by(num);
+    println!("{}", if is_prime {"yes"} else {"no"});
+}
+
+fn is_divisible_by(num: isize) -> bool {
+    for i in 2..num {
+        if num % i == 0 {
+            return false;
+        }
+    }
+    true
+}
+```

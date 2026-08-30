@@ -1,0 +1,12 @@
+```rust
+struct Log { entries: Vec<Int> }
+
+fn main() {
+    let log = Log { entries: vec![6, 7, 8, 9] };
+    let first_entry = log.entries[0];
+    let last_entry = log.entries[log.entries.len() - 1];
+
+    print(first_entry);
+    println(last_entry);
+}
+```

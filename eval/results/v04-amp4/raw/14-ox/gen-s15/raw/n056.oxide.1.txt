@@ -1,0 +1,28 @@
+```rust
+struct Entry { has_number: Bool, value: Int }
+
+fn sum_and_count(entries: Vec<Entry>) -> (Int, Int) {
+    let mut sum = 0
+    let mut count_missing = 0
+    for entry in entries {
+        if entry.has_number {
+            sum += entry.value
+        } else {
+            count_missing += 1
+        }
+    }
+    (sum, count_missing)
+}
+
+fn main() {
+    let entries = vec(
+        Entry { has_number: true, value: 7 },
+        Entry { has_number: false, value: 0 },
+        Entry { has_number: true, value: 9 },
+        Entry { has_number: false, value: 0 },
+    )
+    let (total, missing_count) = sum_and_count(entries)
+    print(total)
+    print(missing_count)
+}
+```

@@ -1,0 +1,16 @@
+```rust
+fn divide(x: Int, y: Int) -> Option<Int> {
+    if y == 0 {
+        None
+    } else {
+        Some(x / y)
+    }
+}
+
+fn main() {
+    match divide(20, 4) {
+        Some(result) => print_str(&format!("The result is {}", result)),
+        None => print_str("Error: Division by zero"),
+    }
+}
+```

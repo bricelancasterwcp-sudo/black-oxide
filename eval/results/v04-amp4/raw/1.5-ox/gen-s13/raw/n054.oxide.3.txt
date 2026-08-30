@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let mut vowel_count = 0;
+    let mut consonant_count = 0;
+
+    for ch in "abcdefghijklmnopqrstuvwxyz".chars() {
+        match ch {
+            'a' | 'e' | 'i' | 'o' | 'u' => vowel_count += 1,
+            _ => consonant_count += 1,
+        }
+    }
+
+    println!("Vowel count: {}", vowel_count);
+    println!("Consonant count: {}", consonant_count);
+}
+```

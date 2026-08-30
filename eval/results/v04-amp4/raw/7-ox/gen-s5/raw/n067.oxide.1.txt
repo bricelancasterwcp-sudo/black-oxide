@@ -1,0 +1,24 @@
+```rust
+struct List { head: Int, tail: Option<Box<List>> }
+
+fn walk(l: List) -> (Int, Int) {
+    let mut sum_even = 0;
+    let mut current = Some(Box::new(l));
+    while let Some(mut node) = current.take() {
+        if node.head % 2 != 0 {
+            print(node.head * 2);
+        }
+        if node.head % 2 == 0 {
+            sum_even += node.head;
+        }
+        current = node.tail;
+    }
+    (sum_even, 0)
+}
+
+fn main() {
+    let list = List { head: 7, tail: Some(Box::new(List { head: 4, tail: Some(Box::new(List { head: 9, tail: Some(Box::new(List { head: 10, tail: None })) })) })) });
+    let (sum_even, _) = walk(list);
+    print(sum_even);
+}
+```

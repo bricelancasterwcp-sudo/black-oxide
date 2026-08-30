@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let c = 'g';
+    print_str(c.to_uppercase().to_string());
+    print_str(c.to_lowercase().to_string());
+}
+```
+
+Explanation of corrections:
+1. The word "granite" has multiple letters that need to be printed.
+2. In Rust, string literals must start with a single quote (`'`), not double quotes (`"`).
+3. `to_uppercase()` and `to_lowercase()` methods are used correctly on strings.
+4. The print statements should have their own line endings so that each letter prints separately.
+5. The comments were unnecessary and removed to keep the code clean.

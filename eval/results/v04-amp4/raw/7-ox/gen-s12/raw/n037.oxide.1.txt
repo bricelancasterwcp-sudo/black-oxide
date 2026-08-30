@@ -1,0 +1,9 @@
+```oxide
+struct Rectangle { width: Int, height: Int }
+
+fn main() {
+    let r = Rectangle { width: 2, height: 3 }
+    let r2 = Rectangle { width: 5, ..r }
+    print(r2.width * r2.height)
+}
+```

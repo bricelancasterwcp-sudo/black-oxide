@@ -1,0 +1,8 @@
+```
+fn main() {
+    let s = "when in doubt go home";
+    let word_count = s.split_whitespace().count();
+    let char_count = s.len();
+    print(format!("Words: {}, Characters including spaces: {}", word_count, char_count));
+}
+```

@@ -1,0 +1,6 @@
+```
+fn main() {
+    let product = (1..=6).fold(1, |acc, x| acc * x);
+    print(product);
+}
+```

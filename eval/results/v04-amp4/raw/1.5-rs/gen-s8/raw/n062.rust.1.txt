@@ -1,0 +1,30 @@
+```rust
+fn main() {
+    loop {
+        match std::thread::sleep(Duration::from_secs(1)) {
+            Ok(_) => {
+                println!("green");
+            }
+            Err(e) => {
+                println!("Error: {}", e);
+            }
+        }
+        match std::thread::sleep(Duration::from_secs(1)) {
+            Ok(_) => {
+                println!("red");
+            }
+            Err(e) => {
+                println!("Error: {}", e);
+            }
+        }
+        match std::thread::sleep(Duration::from_secs(2)) {
+            Ok(_) => {
+                println!("yellow");
+            }
+            Err(e) => {
+                println!("Error: {}", e);
+            }
+        }
+    }
+}
+```

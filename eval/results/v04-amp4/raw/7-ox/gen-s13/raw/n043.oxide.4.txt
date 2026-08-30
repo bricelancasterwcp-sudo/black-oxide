@@ -1,0 +1,21 @@
+```rust
+struct Queue { values: Vec<Int> }
+
+fn swap_first_last(q: Queue) -> Queue {
+    let len = len(q.values);
+    if len > 0 {
+        let last = get(q.values, len - 1)?;
+        q.values = set(swap(q.values, 0, len - 1), len - 1, last)
+    }
+    q
+}
+
+fn main() {
+    let mut q = Queue { values: range(1, 6) };
+    q = swap_first_last(q);
+    for x in q.values {
+        print(x);
+        print_str("\n");
+    }
+}
+```

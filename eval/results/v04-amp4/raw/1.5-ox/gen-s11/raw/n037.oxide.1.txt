@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let r = Rectangle { width: 2, height: 3 };
+    r.width = 5;
+    println(r.area());
+}
+```
+
+This program creates a `Rectangle` with an initial width of 2 and a height of 3. It then changes the width to 5 using the assignment operator (`=`). The area of the rectangle is calculated by calling the `area` method on the `r` variable, which returns the product of its width and height. Finally, the area is printed to the console using the `println!` macro.

@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let mut max_power = Int::from(0);
+    
+    for i in 1..=100 {
+        if is_power_of_two(i) && i > max_power.value() {
+            max_power = Int::from(i);
+        }
+    }
+
+    print(max_power);
+}
+
+fn is_power_of_two(n: Int) -> Bool {
+    n.is_positive() && n.is_even() && (n as f64).log2().floor() == (n as f64).log2()
+}
+```

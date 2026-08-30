@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let c = 'g';
+    print_str(c.to_uppercase().to_string());
+    print_str(c.to_lowercase().to_string());
+}
+```
+
+This code snippet defines a function `main` that prints the uppercase and lowercase versions of the letter 'g'. It uses the standard library functions `to_uppercase`, `to_lowercase`, and `to_string` to convert the character into its uppercase and lowercase forms.

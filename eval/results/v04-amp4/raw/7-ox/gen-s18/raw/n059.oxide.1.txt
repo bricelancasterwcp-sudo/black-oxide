@@ -1,0 +1,8 @@
+```oxide
+fn main() {
+    let phrase = "when in doubt go home";
+    print(count_if(phrase.split(), |s| s.len() > 0)); // count words
+    print_str(" "); // space between numbers
+    print(str_len(phrase)); // count characters including spaces
+}
+```

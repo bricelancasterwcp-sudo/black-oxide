@@ -1,0 +1,26 @@
+```
+fn parse(s: Str) -> Option<Int> {
+    match parse_int(s) {
+        Some(n) => Some(n),
+        None => None,
+    }
+}
+
+fn process_entries(entries: Vec<Str>) {
+    for entry in entries {
+        let num = parse(entry)
+        match num {
+            Some(n) => print(n),
+            None => print_str("bad"),
+        }
+    }
+}
+
+fn main() {
+    let entries = vec()
+    entries.push("8")
+    entries.push("oak")
+    entries.push("15")
+    process_entries(entries)
+}
+```

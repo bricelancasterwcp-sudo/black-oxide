@@ -1,0 +1,26 @@
+```rust
+struct DivisionResult {
+    label: Str,
+    result: Option<Float>
+}
+
+fn divide(a: Int, b: Int) -> DivisionResult {
+    if b == 0 {
+        DivisionResult { label: "Error", result: None }
+    } else {
+        let res = to_float(a) / to_float(b)
+        DivisionResult { label: "Success", result: Some(res) }
+    }
+}
+
+fn main() {
+    let twenty = 20
+    let four = 4
+    let res = divide(twenty, four)
+    if let Some(n) = res.result {
+        print(n)
+    } else {
+        print_str("bad")
+    }
+}
+```

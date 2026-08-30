@@ -1,0 +1,15 @@
+fn is_palindrome(s: Str) -> Bool {
+    let len = str_len(s)
+    for i in range(0, len / 2) {
+        if get(chars(s), i).unwrap_or("") != get(chars(s), len - i - 1).unwrap_or("") {
+            return false
+        }
+    }
+    true
+}
+fn main() {
+    let words = vec("level", "stereo", "rotor")
+    for word in words {
+        print(is_palindrome(word))
+    }
+}

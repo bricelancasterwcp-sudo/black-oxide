@@ -1,0 +1,3 @@
+fn safe_div(x: Int, y: Int) -> Option<Float> { if y == 0 { None } else { Some(to_float(x) / to_float(y)) } }
+
+fn main() { let result = safe_div(20, 4)?; print(result); print_str(" bad") }

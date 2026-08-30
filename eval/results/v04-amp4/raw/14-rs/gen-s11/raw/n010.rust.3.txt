@@ -1,0 +1,14 @@
+fn main() {
+    let number = 91;
+    if number <= 1 {
+        println!("no");
+        return;
+    }
+    for i in 2..=((number as f64).sqrt() as usize) {
+        if number % i == 0 {
+            println!("no");
+            return;
+        }
+    }
+    println!("yes");
+}

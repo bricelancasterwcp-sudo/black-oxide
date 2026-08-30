@@ -1,0 +1,10 @@
+fn main() {
+    let first_line = push(push(vec(), 4), 3);
+    let second_line = push(push(vec(), 5), 2);
+
+    print(sum(first_line));
+    print(sum(second_line));
+
+    let total_line = concat(map(first_line, |x| x * 3), map(second_line, |x| x * 2));
+    print(sum(total_line));
+}

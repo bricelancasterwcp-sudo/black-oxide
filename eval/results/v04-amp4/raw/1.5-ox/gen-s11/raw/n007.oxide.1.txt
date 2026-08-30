@@ -1,0 +1,20 @@
+```rust
+fn main() {
+    let mut num = 9875;
+    let sum = 0;
+    while num > 0 {
+        sum += num % 10;
+        num /= 10;
+    }
+    print(sum);
+}
+```
+
+**Explanation:**
+- The program starts by initializing `num` to the number 9875.
+- It then initializes `sum` to 0.
+- The `while` loop continues as long as `num` is greater than 0.
+- Inside the loop:
+  - `sum += num % 10` adds the last digit of `num` (obtained using modulo 10) to `sum`.
+  - `num /= 10` removes the last digit from `num` by performing integer division by 10.
+- After the loop finishes, the sum of the digits is printed.

@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    match read_signal() {
+        "green" => println!("go for green"),
+        "red" => println!("stop for red"),
+        "yellow" => println!("wait for yellow"),
+        _ => unreachable!(), // if the signal is not one of the expected values, it's a bug
+    }
+}
+
+fn read_signal() -> &'static str {
+    // placeholder for actual signal reading logic
+    "green"
+}
+```

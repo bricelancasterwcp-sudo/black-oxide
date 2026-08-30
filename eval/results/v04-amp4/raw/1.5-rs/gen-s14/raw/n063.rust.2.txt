@@ -1,0 +1,11 @@
+fn main() {
+    let value_1 = 4 * 3;
+    println!("The value of the first line is {}", value_1);
+    
+    let value_2 = 5 * 2;
+    println!("The value of the second line is {}", value_2);
+
+    let total_value = value_1 + value_2;
+
+    println!("The total value of both lines is {}", total_value);
+}

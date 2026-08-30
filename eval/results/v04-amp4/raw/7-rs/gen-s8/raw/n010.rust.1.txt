@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let n = 91;
+    for i in 2..=(n as f64).sqrt() as u32 {
+        if n % i == 0 {
+            println!("no");
+            return;
+        }
+    }
+    println!("yes");
+}
+```

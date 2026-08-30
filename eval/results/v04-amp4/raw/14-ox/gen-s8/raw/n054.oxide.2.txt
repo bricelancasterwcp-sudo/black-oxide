@@ -1,0 +1,50 @@
+```text
+struct Letter { character: Str, is_vowel: Bool }
+
+fn count_vowels_and_consonants(letters: Vec<Letter>) -> (Int, Int) {
+    let vowels = 0
+    let consonants = 0
+    for letter in letters {
+        if letter.is_vowel {
+            vowels += 1
+        } else {
+            consonants += 1
+        }
+    }
+    (vowels, consonants)
+}
+
+fn main() {
+    let letters = vec(
+        Letter { character: "a", is_vowel: true },
+        Letter { character: "b", is_vowel: false },
+        Letter { character: "c", is_vowel: false },
+        Letter { character: "d", is_vowel: false },
+        Letter { character: "e", is_vowel: true },
+        Letter { character: "f", is_vowel: false },
+        Letter { character: "g", is_vowel: false },
+        Letter { character: "h", is_vowel: false },
+        Letter { character: "i", is_vowel: true },
+        Letter { character: "j", is_vowel: false },
+        Letter { character: "k", is_vowel: false },
+        Letter { character: "l", is_vowel: false },
+        Letter { character: "m", is_vowel: false },
+        Letter { character: "n", is_vowel: false },
+        Letter { character: "o", is_vowel: true },
+        Letter { character: "p", is_vowel: false },
+        Letter { character: "q", is_vowel: false },
+        Letter { character: "r", is_vowel: false },
+        Letter { character: "s", is_vowel: false },
+        Letter { character: "t", is_vowel: false },
+        Letter { character: "u", is_vowel: true },
+        Letter { character: "v", is_vowel: false },
+        Letter { character: "w", is_vowel: false },
+        Letter { character: "x", is_vowel: false },
+        Letter { character: "y", is_vowel: false },
+        Letter { character: "z", is_vowel: false },
+    )
+    let (vowels, consonants) = count_vowels_and_consonants(letters)
+    print(vowels)
+    print(consonants)
+}
+```

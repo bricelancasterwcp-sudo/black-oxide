@@ -1,0 +1,22 @@
+```
+fn main() {
+    let word = "coffee"
+    let seen = vec()
+    let repeated = vec()
+
+    for char in chars(word) {
+        if contains(seen, char) {
+            if !contains(repeated, char) {
+                push(repeated, char)
+            }
+        } else {
+            push(seen, char)
+        }
+    }
+
+    for char in repeated {
+        print_str(char)
+        print_str("\n")
+    }
+}
+```

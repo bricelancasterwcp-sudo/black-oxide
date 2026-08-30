@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let s = "drum";
+    print_rev(s);
+    println!("{}", s);
+}
+
+fn print_rev(s: &str) {
+    for c in s.chars().rev() {
+        print!("{} ", c);
+    }
+}
+```
+
+Explanation:
+The program starts by defining a `main` function that calls the `print_rev` function with the word "drum" as an argument. The `print_rev` function takes a reference to a string (`&str`) and prints each character in reverse order using the `chars().rev()` method. After printing, it prints the original string again without any change.

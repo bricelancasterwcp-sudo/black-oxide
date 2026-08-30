@@ -1,0 +1,6 @@
+fn main() {
+    let word = "drum";
+    let reversed: Str = concat(word.chars().rev().collect::<Str>(), "");
+    print_str(reversed);
+    print_str(word);
+}

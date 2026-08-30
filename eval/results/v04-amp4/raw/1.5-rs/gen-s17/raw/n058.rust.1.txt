@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let word = "coffee";
+    let mut seen = std::collections::HashSet::new();
+
+    for c in word.chars() {
+        if !seen.contains(&c) {
+            println!("{}", c);
+            seen.insert(c);
+        }
+    }
+}
+```
+
+This program declares a string constant `word` containing the input text. It then creates an empty `HashSet` to keep track of letters that have been encountered. The program iterates over each character in the word, and if the letter is not already in the set (`!seen.contains(&c)`), it prints the letter and adds it to the set (`seen.insert(c)`). This ensures that each letter appears only once in the output, in the order they first appear in the input.

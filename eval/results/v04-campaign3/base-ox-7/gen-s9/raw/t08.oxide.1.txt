@@ -1,0 +1,23 @@
+```oxide
+fn main() {
+    let nums = vec(3, 8, -2, 12, 7);
+    let mut count = 0;
+    let mut max_val = None;
+
+    for num in nums {
+        if num > 0 {
+            count += 1;
+        }
+        max_val = match max_val {
+            Some(m) => Some(if m < num { num } else { m }),
+            None => Some(num),
+        };
+    }
+
+    print(count);
+    match max_val {
+        Some(val) => print(val),
+        None => print_str("no positive values"),
+    }
+}
+```

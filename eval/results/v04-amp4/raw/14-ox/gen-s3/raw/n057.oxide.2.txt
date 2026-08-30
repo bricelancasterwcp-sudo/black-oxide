@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let fruits = vec("fig", "banana", "kiwi");
+    let mut longest = "";
+    for fruit in fruits {
+        if fruit.len() > longest.len() {
+            longest = fruit;
+        }
+    }
+    print_str(longest);
+    print(longest.len());
+}
+```

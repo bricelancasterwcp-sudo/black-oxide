@@ -1,0 +1,20 @@
+```rust
+fn main() {
+    let numbers: Vec<Option<i32>> = vec![Some(7), None, Some(9), Some(?)];
+    let mut total = 0;
+    let mut count = 0;
+
+    for number in &numbers {
+        match number {
+            Some(n) => {
+                total += n;
+                count += 1;
+            }
+            _ => continue,
+        }
+    }
+
+    println!("Total of the numbers: {}", total);
+    println!("Count of non-number values: {}", count);
+}
+```

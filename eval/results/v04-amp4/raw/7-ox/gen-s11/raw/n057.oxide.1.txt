@@ -1,0 +1,17 @@
+```oxide
+fn main() {
+    let words = vec("fig", "banana", "kiwi");
+    let mut longest_word = "";
+    let mut max_length = 0;
+
+    for word in words {
+        if str_len(word) > max_length {
+            longest_word = word;
+            max_length = str_len(word);
+        }
+    }
+
+    print_str(longest_word);
+    print(max_length);
+}
+```

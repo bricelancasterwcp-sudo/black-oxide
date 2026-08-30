@@ -1,0 +1,36 @@
+```rust
+struct Coffee {
+    c: Char,
+    f: Char,
+}
+
+fn main() {
+    let mut coffee = Coffee { c: 'c', f: 'f' };
+
+    match coffee.c {
+        'c' => println!("C"),
+        _ => (),
+    }
+
+    coffee = Coffee { c: 'o', f: 'o' };
+    
+    match coffee.c {
+        'o' => println!("O"),
+        _ => (),
+    }
+
+    coffee = Coffee { c: 'e', f: 'e' };
+
+    match coffee.c {
+        'e' => println!("E"),
+        _ => (),
+    }
+
+    coffee = Coffee { c: 'y', f: 'y' };
+
+    match coffee.c {
+        'y' => println!("Y"),
+        _ => (),
+    }
+}
+```

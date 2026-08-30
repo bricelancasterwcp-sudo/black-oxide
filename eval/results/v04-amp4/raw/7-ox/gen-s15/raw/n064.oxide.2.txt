@@ -1,0 +1,25 @@
+```rust
+struct List { first: Int, second: Int }
+
+fn lookup(l: List, pos: Int) -> Option<Int> {
+    if pos == 1 {
+        Some(l.first)
+    } else if pos == 4 {
+        Some(l.second)
+    } else {
+        None
+    }
+}
+
+fn main() {
+    let l = List { first: 10, second: 20 };
+    match lookup(l, 1) {
+        Some(n) => print(n),
+        None => print_str("none"),
+    }
+    match lookup(l, 4) {
+        Some(n) => print(n),
+        None => print_str("none"),
+    }
+}
+```

@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let n = 91;
+    let mut divs = Vec::new();
+    for i in 2..=n {
+        if n % i == 0 {
+            divs.push(i);
+        }
+    }
+    println!("{}", match divs.len() {
+        2 => "yes",
+        _ => "no",
+    });
+}
+```

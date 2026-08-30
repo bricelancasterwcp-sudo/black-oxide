@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let arr = [5, 12, 3, 18, 9];
+    let below_cutoff = 0;
+    let at_or_over_cutoff = 0;
+
+    for &value in arr.iter() {
+        if value < 10 {
+            below_cutoff += 1;
+        } else {
+            at_or_over_cutoff += 1;
+        }
+    }
+
+    println!("Number of values below cutoff (10): {}", below_cutoff);
+    println!("Number of values at or over cutoff (10): {}", at_or_over_cutoff);
+}
+```

@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let mut sum = 0;
+    for digit in "9875".chars() {
+        sum += digit.to_digit(10).unwrap();
+    }
+    println!("The sum of the individual digits is: {}", sum);
+}
+```
+The problem with the initial code was that the `to_digit` method returns `Option<u32>`, and we were expecting to unwrap it without checking for an error. The `unwrap` method in Rust panics if the value is `None`, so when trying to add `None` to a number, Rust would crash.
+
+To fix this, we use the `unwrap_or(0)` method which returns the wrapped value or 0 if the wrapped value is None. This way, we ensure that the sum always works correctly even with invalid inputs like "9875".

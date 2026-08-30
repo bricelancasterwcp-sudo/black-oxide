@@ -1,0 +1,22 @@
+```rust
+struct Entry { value: Option<Int>, name: Str }
+
+fn parse_entry(s: Str) -> Entry {
+    match parse_int(s) {
+        Some(n) => Entry { value: Some(n), name: "num".into() },
+        None => Entry { value: None, name: "bad".into() }
+    }
+}
+
+fn main() {
+    let entries = vec![concat("8", ""), "oak", concat("15", "")]
+                    .map(parse_entry);
+
+    for e in entries {
+        match e.value {
+            Some(n) => print(n),
+            None => print_str(e.name),
+        }
+    }
+}
+```

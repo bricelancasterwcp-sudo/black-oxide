@@ -1,0 +1,6 @@
+fn main() {
+    let s = "1234";
+    let reversed = chars(s).map(int_to_str).collect();
+    let reversed = reverse(reversed);
+    print(concat(reversed));
+}

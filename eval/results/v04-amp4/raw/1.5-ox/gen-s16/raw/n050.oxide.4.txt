@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let scores = vec![2, 9, 5];
+    scores.sort_by(|a, b| b.cmp(a)); // sort in descending order
+    for score in scores {
+        println!("{}", score);
+    }
+}
+```

@@ -1,0 +1,6 @@
+fn main() {
+    let scores = vec![9, 2, 5];
+    println!("{}", scores[0]); // 2
+    println!("{}", scores[1]); // 9
+    println!("{}", scores[2]); // 5
+}

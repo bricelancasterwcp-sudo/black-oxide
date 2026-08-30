@@ -1,0 +1,24 @@
+```rust
+fn is_prime(n: Int) -> Bool {
+    if n <= 1 {
+        false
+    } else {
+        let limit = trunc(to_float(n) ** 0.5) + 1;
+        for i in range(2, limit) {
+            if n % i == 0 {
+                return false;
+            }
+        }
+        true
+    }
+}
+
+fn main() {
+    let num = 91;
+    if is_prime(num) {
+        print_str("yes");
+    } else {
+        print_str("no");
+    }
+}
+```

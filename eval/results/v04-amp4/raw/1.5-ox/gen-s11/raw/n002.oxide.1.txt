@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let product = (1..=6).product::<Int>();
+    println(product);
+}
+```
+
+Note: This program is incomplete because `Int` is not defined. In a real-world Rust application, you would define `Int`, or use another type for the multiplication.

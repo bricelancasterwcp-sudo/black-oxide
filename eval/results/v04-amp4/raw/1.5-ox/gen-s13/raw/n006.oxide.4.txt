@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let mut i = 1;
+    while pow(2, i) <= 100 {
+        i += 1;
+    }
+    print(i - 1);
+}
+```

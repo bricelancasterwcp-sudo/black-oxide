@@ -1,0 +1,19 @@
+fn reverse_int(n: Int) -> Int {
+    let mut digits = Vec::new();
+    while n > 0 {
+        let last_digit = n % 10;
+        digits.push(last_digit);
+        n /= 10; // Fixed the operator for division
+    }
+    let mut result = 0;
+    for digit in digits {
+        result = result * 10 + digit;
+    }
+    result
+}
+
+fn main() {
+    let number = 1234;
+    let reversed_number = reverse_int(number);
+    print(reversed_number);
+}

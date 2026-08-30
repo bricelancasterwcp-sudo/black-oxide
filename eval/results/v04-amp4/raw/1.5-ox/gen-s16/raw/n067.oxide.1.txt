@@ -1,0 +1,25 @@
+```rust
+fn main() {
+    let mut list = vec![7, 4, 9, 10];
+    let mut sum = 0;
+    
+    while let Some(&x) = list.first() {
+        if x % 2 == 1 {
+            print!("{} {}", x * 2, x);
+            sum += x;
+        }
+        
+        list.remove(0); // Remove the first element
+    }
+    
+    println!("Total of even entries: {}", sum);
+}
+```
+
+In this program:
+- We define a `main` function.
+- We initialize a mutable vector with the numbers [7, 4, 9, 10].
+- We use a `while let Some(&x) = list.first()` loop to iterate through the vector.
+- Inside the loop, we check if the current number is odd. If it is, we print it doubled and add it to `sum`.
+- After printing each odd number, we remove the first element from the vector using `list.remove(0)` to ensure that each element is processed only once.
+- Finally, after all elements have been processed, we print the total of the even entries in `sum`.

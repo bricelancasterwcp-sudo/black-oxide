@@ -1,0 +1,24 @@
+```rust
+struct List { values: Vec<Int> }
+
+fn find_position(v: &Vec<Int>, target: Int) -> Option<Index> {
+    for (index, value) in v.iter().enumerate() {
+        if value == target {
+            return Some(index);
+        }
+    }
+    None
+}
+
+fn main() {
+    let list = List { values: vec![10, 20] };
+    match find_position(&list.values, 10) {
+        Some(position) => print!("Position of 10 is: {}", position),
+        None => print_str("10 not found"),
+    }
+    match find_position(&list.values, 40) {
+        Some(position) => print!("Position of 40 is: {}", position),
+        None => print_str("40 not found"),
+    }
+}
+```

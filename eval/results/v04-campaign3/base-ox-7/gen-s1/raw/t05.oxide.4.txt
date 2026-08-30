@@ -1,0 +1,16 @@
+```rust
+fn fib(n: Int) -> Int {
+    if n <= 1 { return n }
+    let (mut a, mut b) = (1, 1);
+    for _ in 2..n {
+        let temp = a + b;
+        a = b;
+        b = temp;
+    }
+    b
+}
+
+fn main() {
+    print(fib(20))
+}
+```

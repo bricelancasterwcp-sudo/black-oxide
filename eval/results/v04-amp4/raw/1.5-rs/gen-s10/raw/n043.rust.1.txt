@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let mut queue: [i32; 5] = [1, 2, 3, 4, 5];
+    // Exchange the first and last entries
+    let temp = queue[0];
+    queue[0] = queue[queue.len() - 1];
+    queue[queue.len() - 1] = temp;
+
+    // Print each entry in the queue
+    for &entry in &queue {
+        println!("{}", entry);
+    }
+}
+```

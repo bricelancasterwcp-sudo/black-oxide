@@ -1,0 +1,18 @@
+```rust
+struct Rectangle { width: Int, height: Int }
+
+fn main() {
+    let rect = Rectangle { width: 9, height: 3 };
+    println!("Area: {}", rect.width * rect.height); // Area: 27
+
+    let perimeter = 2 * (rect.width + rect.height); // Perimeter: 18
+    println!("Perimeter: {}", perimeter);
+}
+```
+
+In this code:
+- We define a `Rectangle` struct with `width` and `height`.
+- In the `main` function, we create an instance of `Rectangle`.
+- We print the area by multiplying width and height.
+- We calculate the perimeter by adding together the sum of width and height and then doubling it.
+- The program outputs both the area and the perimeter of the rectangle.

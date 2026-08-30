@@ -1,0 +1,6 @@
+fn main() {
+    let s = "drum";
+    let rev_s: Str = reverse(chars(s).map(|c| concat(c, ""))).join("");
+    print_str(rev_s);
+    print_str(s);
+}

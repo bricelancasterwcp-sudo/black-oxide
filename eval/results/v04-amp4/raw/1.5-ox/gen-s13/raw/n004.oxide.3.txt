@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let mut a = 1;
+    let mut b = 1;
+    for _ in 0..9 {
+        let c = a + b;
+        a = b;
+        b = c;
+    }
+    print(a);
+}
+```
+
+The original program had several issues:
+- It was missing braces `{}` around the loop body.
+- The semicolons were not required at the end of each statement.
+- The `println!` macro should be used to format and print values, rather than just `print`.
+- The loop variable `_` does not need an identifier in Rust.

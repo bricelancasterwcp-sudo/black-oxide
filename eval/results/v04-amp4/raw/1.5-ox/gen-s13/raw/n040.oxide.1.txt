@@ -1,0 +1,27 @@
+```rust
+struct Shape {
+    kind: String,
+}
+
+impl Shape {
+    fn square(side: Int) -> Self {
+        Shape { kind: "square".to_string() }
+    }
+
+    fn circle(radius: Float) -> Self {
+        Shape { kind: "circle".to_string() }
+    }
+}
+
+fn area(shape: Shape) -> Float {
+    match shape {
+        Shape::Square(side) => side.pow(2),
+        Shape::Circle(radius) => (radius * radius).trunc(),
+    }
+}
+
+fn main() {
+    let square = Shape::square(4);
+    println!("area of square: {}", area(square));
+}
+```

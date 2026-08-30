@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let mut signal = "green";
+
+    while let Some(&s) = signal.chars().next() {
+        match s {
+            'g' => println!("go"),
+            'r' => println!("stop"),
+            'y' => println!("wait"),
+            _ => println!("unknown signal: {}", s),
+        }
+        signal = &signal[1..];
+    }
+}
+```

@@ -1,0 +1,24 @@
+Sure. Here's the corrected version of your program:
+
+```rust
+fn main() {
+    let data = [5, 12, 3, 18, 9];
+    let cutoff = 10;
+
+    let mut count_under_cutoff = 0;
+    let mut count_over_or_equal_cutoff = 0;
+
+    for &x in &data {
+        if x < cutoff {
+            count_under_cutoff += 1;
+        } else {
+            count_over_or_equal_cutoff += 1;
+        }
+    }
+
+    println!("Under cutoff: {}", count_under_cutoff);
+    println!("Over or equal cutoff: {}", count_over_or_equal_cutoff);
+}
+```
+
+The output should now be correct, with `Under cutoff: 3` and `Over or equal cutoff: 2` as expected.

@@ -1,0 +1,18 @@
+```rust
+struct Line {
+    name: Str,
+    price: Int,
+    quantity: Int,
+}
+
+fn main() {
+    let first_line = Line { name: "Four units at $3 each", price: 3, quantity: 4 };
+    let second_line = Line { name: "Five units at $2 each", price: 2, quantity: 5 };
+
+    println!("Line 1: {}", first_line.name);
+    println!("Line 2: {}", second_line.name);
+
+    let total_price = (first_line.price * first_line.quantity) + (second_line.price * second_line.quantity);
+    println!("Total value: {}", total_price);
+}
+```

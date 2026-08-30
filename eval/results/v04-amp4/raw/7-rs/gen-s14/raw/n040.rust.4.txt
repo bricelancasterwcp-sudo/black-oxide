@@ -1,0 +1,6 @@
+fn main() {
+    let side = 4;
+    let pi: f64 = 3.0;
+    let area = (side as f64) * (side as f64);
+    println!("Area of square: {}", area);
+}

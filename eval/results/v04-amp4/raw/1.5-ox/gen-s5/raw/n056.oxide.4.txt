@@ -1,0 +1,21 @@
+```rust
+fn main() {
+    let mut sum = 0;
+    let mut count = 0;
+    println!("Enter a number (or 'exit' to quit):");
+    loop {
+        let mut input = String::new();
+        io::stdin().read_line(&mut input).expect("Failed to read line");
+        if input.trim() == "exit" {
+            break;
+        }
+        match input.trim().parse::<isize>() {
+            Ok(num) => sum += num,
+            Err(_) if count == 0 => count += 1, // Fix: check for zero count before incrementing
+            Ok(_) => count += 1,             // Fix: remove duplicate count increment
+            _ => println!("Invalid number"),
+        }
+    }
+    println!("Total: {}, Not present: {}", sum, count);
+}
+```

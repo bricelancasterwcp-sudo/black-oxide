@@ -1,0 +1,30 @@
+```rust
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+impl Rectangle {
+    fn new(width: Int, height: Int) -> Self {
+        Rectangle { width, height }
+    }
+
+    fn set_width(&mut self, width: Int) {
+        // Fix the error here by moving the assignment inside the loop
+        for _ in 0..width - self.width {
+            self.width += 1;
+        }
+    }
+
+    fn area(&self) -> Int {
+        self.width * self.height
+    }
+}
+
+fn main() {
+    let mut rect = Rectangle::new(2, 3);
+    rect.set_width(5);
+
+    println(rect.area());
+}
+```

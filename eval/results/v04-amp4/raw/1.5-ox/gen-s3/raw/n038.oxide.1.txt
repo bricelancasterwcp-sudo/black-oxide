@@ -1,0 +1,11 @@
+```rust
+struct Sensor { reading: Int }
+
+fn main() {
+    let mut sensor = Sensor { reading: 0 };
+    sensor.reading = 7;
+    print(sensor.reading);
+}
+```
+
+This code initializes a `Sensor` with a default reading of zero, sets its reading to seven using the assignment operator, and then prints the new value.

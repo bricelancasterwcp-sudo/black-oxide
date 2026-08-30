@@ -1,0 +1,25 @@
+```oxide
+fn max_len_name(a: Str, b: Str, c: Str) -> (Str, Int) {
+    let mut max_len = 0;
+    let mut max_name = "";
+    
+    fn update_max(name: Str, len: Int) {
+        if len > max_len {
+            max_len = len;
+            max_name = name;
+        }
+    }
+    
+    update_max(a, str_len(a));
+    update_max(b, str_len(b));
+    update_max(c, str_len(c));
+    
+    (max_name, max_len)
+}
+
+fn main() {
+    let names = ("fig", "banana", "kiwi");
+    let result = max_len_name(names.0, names.1, names.2);
+    print(result.0); print_str("\n"); print(result.1.to_string());
+}
+```

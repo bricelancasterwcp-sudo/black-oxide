@@ -1,0 +1,8 @@
+let longest = |a: Str, b: Str| if a.len() > b.len() { a } else { b };
+let fig = "fig";
+let banana = "banana";
+let kiwi = "kiwi";
+
+let longest_name = longest(longest(fig.clone(), banana.clone()), kiwi.clone());
+print_str(longest_name);
+print(int_to_str(str_len(longest_name)));

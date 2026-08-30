@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let s = "1234";
+    let chars_s = chars(s);
+    let rev_chars_s = reverse(chars_s);
+    let rev_str_s = concat("", rev_chars_s);
+    print(rev_str_s);
+}
+```

@@ -1,0 +1,10 @@
+fn main() {
+    let v = vec![8, "oak", 15];
+    for item in &v {
+        match item {
+            Int(n) => print(n),
+            Str(s) => print_str(s),
+            _ => println_str("bad")
+        }
+    }
+}

@@ -1,0 +1,15 @@
+fn main() {
+    let mut max_length = 0;
+    let mut fruit_name = "";
+
+    for fruit in ["fig", "banana", "kiwi"] {
+        let len = str_len(fruit);
+        if len > max_length {
+            max_length = len;
+            fruit_name = fruit;
+        }
+    }
+
+    print_str(fruit_name);
+    print(max_length);
+}

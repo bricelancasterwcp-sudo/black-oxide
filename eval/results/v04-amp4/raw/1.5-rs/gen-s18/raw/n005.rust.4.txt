@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let total: i32 = (1..=20).filter(|&x| x % 2 == 0).sum();
+    println!("Total of even numbers between 1 and 20 inclusive: {}", total);
+}
+```
+
+The issue with the original code is that `sum()` returns an `i64`, but the elements in the iterator are `i32`. The sum operation may overflow if the total exceeds the maximum value for a 32-bit integer.
+
+To fix this, we can use `iter().fold` which will accumulate the sum safely using `i64`.
+
+```rust
+fn main() {
+    let total: i32 = (1..=20).filter(|&x| x % 2 == 0).fold(0 as i64, |acc, x| acc + x);
+    println!("Total of even numbers between 1 and 20 inclusive: {}", total);
+}
+```

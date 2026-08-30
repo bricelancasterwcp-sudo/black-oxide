@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    println!("{}", get_second_entry(&[7, 8, 9])); // Output: 8
+    println!("{}", get_second_entry(&[]));      // Output:
+}
+fn get_second_entry(lst: &[i32]) -> Option<i32> {
+    lst.get(1)
+}
+```

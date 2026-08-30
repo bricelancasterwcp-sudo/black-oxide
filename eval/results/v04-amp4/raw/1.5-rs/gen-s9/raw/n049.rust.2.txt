@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let mut figures = [8, 3, 11, 6];
+    figures.sort_unstable();
+    let smallest = figures[0];
+    let gap = figures.iter().skip(1).take(figures.len() - 1).fold(i32::MAX, |max, &x| max.min(x));
+    println!("Smallest figure: {}", smallest);
+    println!("Gap between largest and smallest: {}", gap);
+}
+```

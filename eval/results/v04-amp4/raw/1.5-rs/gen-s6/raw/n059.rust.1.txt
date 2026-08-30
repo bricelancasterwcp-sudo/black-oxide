@@ -1,0 +1,13 @@
+```rust
+fn count_words_and_chars(phrase: &str) -> (usize, usize) {
+    let words = phrase.split_whitespace().count();
+    let chars = phrase.len();
+    (words, chars)
+}
+
+fn main() {
+    let phrase = "when in doubt go home";
+    let (words, chars) = count_words_and_chars(phrase);
+    println!("The phrase contains {} words and spans {} characters including spaces.", words, chars);
+}
+```

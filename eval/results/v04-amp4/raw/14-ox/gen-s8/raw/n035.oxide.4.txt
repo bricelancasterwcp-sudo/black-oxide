@@ -1,0 +1,19 @@
+```text
+fn safe_div(a: Int, b: Int) -> Option<Int> {
+    if b == 0 {
+        None
+    } else {
+        Some(a / b)
+    }
+}
+
+fn main() {
+    let result = safe_div(20, 4)?;
+    print(result);
+    let bad_result = safe_div(20, 0);
+    match bad_result {
+        Some(_) => (),
+        None => print_str("bad"),
+    };
+}
+```

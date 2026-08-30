@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let total: i32 = (1..=5).map(|n| n.pow(3)).sum();
+    println!("The sum of cubes is: {}", total);
+}
+```
+
+Explanation:
+In the original program, `pow` is used instead of `* n * n * n`, which was intended to compute the cube. The corrected line uses `n.pow(3)` to correctly compute the cube of each number from 1 to 5 and accumulate them in the variable `total`.

@@ -1,0 +1,19 @@
+fn filter(v: Vec<Int>, f: Int -> Bool) -> Vec<Int> {
+    let mut result = vec();
+    for x in v {
+        if f(x) {
+            push(result, x);
+        }
+    }
+    result
+}
+
+fn main() {
+    let batch = vec(9, 2, 12, 5, 16);
+    let filtered: Vec<Int> = filter(batch.clone(), |x| x < 10);
+    for x in filtered {
+        print(x);
+        println();
+    }
+    print(len(filtered));
+}

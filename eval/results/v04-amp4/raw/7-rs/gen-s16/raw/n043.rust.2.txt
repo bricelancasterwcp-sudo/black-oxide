@@ -1,0 +1,10 @@
+fn main() {
+    let mut queue = vec![1, 2, 3, 4, 5];
+    if !queue.is_empty() {
+        let len = queue.len();
+        queue.swap(0, len - 1);
+    }
+    for item in queue.iter_mut() {
+        println!("{}", item);
+    }
+}

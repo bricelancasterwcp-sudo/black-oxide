@@ -1,0 +1,16 @@
+```rust
+fn divide(numerator: f64, denominator: f64) -> Result<f64, &'static str> {
+    if denominator == 0.0 {
+        Err("bad")
+    } else {
+        Ok(numerator / denominator)
+    }
+}
+
+fn main() {
+    match divide(20.0, 4.0) {
+        Ok(result) => println!("{}", result),
+        Err(msg) => println!("{}", msg),
+    }
+}
+```

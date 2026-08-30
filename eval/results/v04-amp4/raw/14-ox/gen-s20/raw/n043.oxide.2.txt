@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let q = push(push(push(push(push(vec(), 1), 2), 3), 4), 5)
+    let len_q = len(q)
+    if len_q > 1 {
+        let first = unwrap_or(get(q, 0), -1)
+        let last = unwrap_or(get(q, len_q - 1), -1)
+        let q = swap(q, 0, len_q - 1)
+        for x in q {
+            print(x)
+        }
+    } else {
+        print_str("Queue too short")
+    }
+}
+```

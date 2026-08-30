@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut sum = 0;
+    for i in 1..=5 {
+        sum += i.pow(3);
+    }
+    println!("The sum of cubes from 1 to 5 is: {}", sum);
+}
+```
+
+This Rust program calculates the sum of cubes of each whole number from 1 to 5 by initializing a variable `sum` to 0. It then iterates over this range with a loop, raising each integer to the power of 3 and adding it to `sum`. Finally, it prints the total sum using `println!`.

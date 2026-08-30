@@ -1,0 +1,9 @@
+fn main() {
+    let numbers = [5, 0, 4];
+    for &num in &numbers {
+        match num {
+            0 => println!("undefined"),
+            _ => println!("{}", 100 / num),
+        }
+    }
+}

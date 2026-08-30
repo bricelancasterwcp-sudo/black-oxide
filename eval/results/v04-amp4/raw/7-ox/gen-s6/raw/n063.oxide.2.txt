@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let units_3 = 4;
+    let price_3 = 3;
+    let units_2 = 5;
+    let price_2 = 2;
+
+    let value_line1 = units_3 * price_3;
+    let value_line2 = units_2 * price_2;
+    let total_value = value_line1 + value_line2;
+
+    print(value_line1);
+    print_str(" ");
+    print(value_line2);
+    print_str(" ");
+    print(total_value);
+}
+```

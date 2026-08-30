@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let mut found = -1;
+    for x in [1, 2, 4, 8, 16, 32, 64] {
+        if x > 100 {
+            found = x;
+            break;
+        }
+    }
+    println(found);
+}
+```

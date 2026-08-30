@@ -1,0 +1,18 @@
+Here is the fully corrected Rust program:
+
+```rust
+fn main() {
+    let mut a = 1;
+    let mut b = 1;
+
+    for _ in 0..9 {
+        let temp = a + b;
+        a = b;
+        b = temp;
+    }
+
+    println!("The tenth term is {}", b);
+}
+```
+
+This program initializes two variables `a` and `b` to the first two terms of the sequence. It then iterates through the sequence 9 times, updating `a` and `b` in each iteration to be the sum of the previous two terms. Finally, it prints out the tenth term, which is stored in `b`.

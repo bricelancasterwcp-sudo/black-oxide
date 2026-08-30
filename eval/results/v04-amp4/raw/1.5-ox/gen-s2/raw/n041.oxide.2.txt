@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let mut arr = [9, 2, 7, 4];
+    arr.sort_unstable();
+    for i in &arr {
+        print_str(i.to_string());
+        print_str("\n");
+    }
+}
+```

@@ -1,0 +1,7 @@
+```
+fn main() {
+    let measurements = push(push(vec(), 9), 4);
+    println!("{}", min(measurements));
+    println!("{}", min(second(measurements)));
+}
+```

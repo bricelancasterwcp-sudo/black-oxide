@@ -1,0 +1,27 @@
+```text
+fn get_second(v: Vec<Int>) -> Option<Int> {
+    let x = get(v, 1)?
+    Some(x)
+}
+
+fn main() {
+    let list1 = push(push(push(vec(), 7), 8), 9)
+    let list2 = push(push(vec(), 7), 9)
+    let list3 = push(vec(), 7)
+
+    match get_second(list1) {
+        Some(n) => print(n),
+        None => print_str("none"),
+    }
+
+    match get_second(list2) {
+        Some(n) => print(n),
+        None => print_str("none"),
+    }
+
+    match get_second(list3) {
+        Some(n) => print(n),
+        None => print_str("none"),
+    }
+}
+```

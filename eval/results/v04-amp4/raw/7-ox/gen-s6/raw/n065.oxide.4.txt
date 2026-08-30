@@ -1,0 +1,20 @@
+```rust
+fn count_above(v: Vec<Int>) -> Int {
+    count_if(v, x -> x > 5)
+}
+
+fn max_reading(v: Vec<Int>) -> Option<Int> {
+    max(v)
+}
+
+fn main() {
+    let readings = push(push(push(push(vec(), 6), 11), 3), 14);
+    print(count_above(readings))
+    if let Some(max_val) = max_reading(readings.clone()) {
+        print_str("\n")
+        print(max_val)
+    } else {
+        print_str("\nNo readings available.")
+    }
+}
+```

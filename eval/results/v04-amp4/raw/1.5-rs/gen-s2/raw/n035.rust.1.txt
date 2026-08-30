@@ -1,0 +1,15 @@
+```rust
+fn divide(a: i32, b: i32) -> Result<f64, &'static str> {
+    if b == 0 {
+        return Err("Divide by zero");
+    }
+    Ok(a as f64 / b as f64)
+}
+
+fn main() {
+    match divide(20, 4) {
+        Ok(result) => println!("{} / {} = {}", 20, 4, result),
+        Err(msg) => println!("{}", msg),
+    }
+}
+```

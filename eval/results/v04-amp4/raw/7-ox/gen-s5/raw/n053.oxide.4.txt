@@ -1,0 +1,1 @@
+print_str(concat("drum", reverse(vec('d', 'r', 'u', 'm'))))

@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let x = 5;
+    let y = 10;
+
+    println!("{}", x + y);
+}
+```
+
+This simple Rust program initializes two integers `x` and `y`, assigns them the values 5 and 10 respectively, then prints their sum.

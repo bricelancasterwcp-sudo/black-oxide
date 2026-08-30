@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let drum = "drum";
+    println!("{:?}", drum.chars().rev()); // print letters running back to front
+    
+    for (i, c) in drum.chars().enumerate() {
+        if i != drum.len() - 1 {
+            print!("{}", c);
+        } else {
+            print!("{}", c);
+        }
+    }
+}
+```

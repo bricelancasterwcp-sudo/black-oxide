@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    loop {
+        std::thread::sleep(std::time::Duration::from_secs(1));
+        match std::io::stdout().flush() {
+            Ok(_) => break,
+            Err(_e) => continue, // Error occurred while flushing stdout
+        }
+        println!("green");
+        std::thread::sleep(std::time::Duration::from_secs(1));
+        match std::io::stdout().flush() {
+            Ok(_) => break,
+            Err(_e) => continue, // Error occurred while flushing stdout
+        }
+        println!("yellow");
+    }
+}
+```

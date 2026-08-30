@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let c = 'g';
+    print_str(c.to_uppercase().to_string());
+    print_str(c.to_lowercase().to_string());
+}
+```
+
+The problem was that a semicolon (`;`) was mistakenly added between `print_str` calls and `print_str`, which ended the first statement and caused an error. The corrected version removes these extra semicolons.

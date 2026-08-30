@@ -1,0 +1,5 @@
+fn main() {
+    let s = "stack";
+    let reversed = concat("", chars(s).rev().collect::<Vec<Str>>());
+    print_str(reversed);
+}

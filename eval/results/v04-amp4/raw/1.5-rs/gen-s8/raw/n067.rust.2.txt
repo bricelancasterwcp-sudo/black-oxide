@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let nums = vec![7, 4, 9, 10];
+    let mut odd_sum = 0;
+
+    for &num in &nums {
+        if num % 2 != 0 {
+            println!("{}", num * 2);
+            odd_sum += num;
+        }
+    }
+
+    let even_sum: isize = nums.iter().filter(|&&n| n % 2 == 0).sum();
+    println!("Total of even entries: {}", even_sum);
+}
+```

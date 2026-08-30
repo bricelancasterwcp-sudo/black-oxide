@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let mut count = 0;
+    let sum = |num: i32| num != 0;
+
+    // Use `unwrap` to handle potential errors in accessing 'x'
+    let x_val = match x {
+        Some(x) => x,
+        None => 0,
+    };
+
+    println!("7?9?: {}", sum(7) as isize + sum(x_val) + sum(9) + sum(?));
+
+    println!("There are {} numbers that do not have a value.", 4 - (sum(7) as usize));
+}
+```

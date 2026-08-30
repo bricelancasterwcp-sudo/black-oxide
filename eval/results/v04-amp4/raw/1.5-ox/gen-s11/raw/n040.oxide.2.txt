@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let square = Shape::Square(4.0);
+    match square {
+        Shape::Square(side) => println!("The area of the square is {}", side * side),
+        Shape::Circle(radius) => println!("The area of the circle is {}", std::f64::consts::PI * radius * radius),
+    }
+}
+```

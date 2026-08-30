@@ -1,0 +1,22 @@
+```
+struct List { values: Vec<Int> }
+
+fn find_position(v: &List, pos: Int) -> Option<Int> {
+    v.values.get(pos).cloned()
+}
+
+fn main() {
+    let list = List { values: vec![10, 20] };
+    if let Some(x) = find_position(&list, 1) {
+        print(x);
+    } else {
+        print_str("position 1 empty");
+    }
+
+    if let Some(y) = find_position(&list, 3) {
+        print(y);
+    } else {
+        print_str("position 4 empty");
+    }
+}
+```

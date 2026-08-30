@@ -1,0 +1,22 @@
+```plaintext
+fn main() {
+    let word = "coffee"
+    let seen = vec()
+    let repeated = vec()
+
+    for char in chars(word) {
+        if contains(seen, clone(char)) {
+            if !contains(repeated, clone(char)) {
+                push(repeated, clone(char))
+            }
+        } else {
+            push(seen, clone(char))
+        }
+    }
+
+    for char in repeated {
+        print_str(char)
+        print_str("\n")
+    }
+}
+```

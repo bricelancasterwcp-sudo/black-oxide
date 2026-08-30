@@ -1,0 +1,17 @@
+fn main() {
+    let v = vec()
+    v = push(v, 10)
+    v = push(v, 20)
+
+    let pos_one = get(v, 0)
+    match pos_one {
+        Some(x) => print(x),
+        None => print_str("Position one is empty"),
+    }
+
+    let pos_four = get(v, 3)
+    match pos_four {
+        Some(x) => print(x),
+        None => print_str("Position four is empty"),
+    }
+}

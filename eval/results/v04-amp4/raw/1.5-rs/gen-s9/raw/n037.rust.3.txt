@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let mut width = 2;
+    let height = 3;
+
+    width = 5; // Change width to five
+
+    println!("The area of the rectangle is {}", width * height);
+}
+```
+
+Explanation:
+The issue with the original program was that the variable `width` was shadowing the mutable variable in the same scope. In Rust, when you declare a variable as `let`, its value cannot be changed. However, if you declare it without `let` (e.g., `mut width`), then it can be changed. The shadowing happened because the `let` keyword shadows the outer variable with the same name.
+
+To fix the issue, we simply removed the `let` keyword from the declaration of `width`, making it a mutable variable again.

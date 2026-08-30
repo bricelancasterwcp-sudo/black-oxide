@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let arr = [9, 2, 7, 4];
+    
+    // Sort the array in ascending order using quicksort
+    arr.sort();
+    
+    // Print each element on a new line
+    for &item in &arr {
+        println!("{}", item);
+    }
+}
+```

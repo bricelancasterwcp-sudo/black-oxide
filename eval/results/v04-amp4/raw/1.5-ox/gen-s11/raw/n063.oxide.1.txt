@@ -1,0 +1,30 @@
+```rust
+struct Line {
+    items: Vec<LineItem>,
+}
+
+struct LineItem {
+    count: Int,
+    price: Float,
+}
+
+fn main() {
+    let four_units = LineItem { count: 4, price: 3.0 };
+    let five_units = LineItem { count: 5, price: 2.0 };
+
+    let line1 = Line { items: vec![four_units] };
+    let line2 = Line { items: vec![five_units] };
+
+    for item in &line1.items {
+        println!("Line 1 value: {}", item.price * item.count);
+    }
+    for item in &line2.items {
+        println!("Line 2 value: {}", item.price * item.count);
+    }
+
+    let total_value = line1.items.iter().map(|item| item.price * item.count).sum::<Float>() +
+                      line2.items.iter().map(|item| item.price * item.count).sum::<Float>();
+
+    println!("Total value of both lines: {}", total_value);
+}
+```

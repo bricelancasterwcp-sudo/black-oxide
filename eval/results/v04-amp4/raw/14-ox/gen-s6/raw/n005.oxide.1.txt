@@ -1,0 +1,6 @@
+```
+fn main() {
+    let sum = range(1, 21).sum()
+    print(sum)
+}
+```

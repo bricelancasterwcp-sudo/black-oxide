@@ -1,0 +1,361 @@
+{
+  "tokenizer": {
+    "path": "eval/train/tokenizer/tokenizer.json",
+    "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539"
+  },
+  "dropped": [],
+  "pairs": [
+    {
+      "task": "n054",
+      "class": "strings",
+      "oxide": 92,
+      "rust": 72,
+      "surplus": 20,
+      "ratio": 1.2777777777777777
+    },
+    {
+      "task": "n064",
+      "class": "structs/option",
+      "oxide": 73,
+      "rust": 58,
+      "surplus": 15,
+      "ratio": 1.2586206896551724
+    },
+    {
+      "task": "n045",
+      "class": "vectors",
+      "oxide": 55,
+      "rust": 41,
+      "surplus": 14,
+      "ratio": 1.3414634146341464
+    },
+    {
+      "task": "n053",
+      "class": "strings",
+      "oxide": 48,
+      "rust": 34,
+      "surplus": 14,
+      "ratio": 1.411764705882353
+    },
+    {
+      "task": "n051",
+      "class": "strings",
+      "oxide": 49,
+      "rust": 41,
+      "surplus": 8,
+      "ratio": 1.1951219512195121
+    },
+    {
+      "task": "n057",
+      "class": "strings",
+      "oxide": 65,
+      "rust": 57,
+      "surplus": 8,
+      "ratio": 1.1403508771929824
+    },
+    {
+      "task": "n059",
+      "class": "strings",
+      "oxide": 39,
+      "rust": 32,
+      "surplus": 7,
+      "ratio": 1.21875
+    },
+    {
+      "task": "n049",
+      "class": "vectors",
+      "oxide": 65,
+      "rust": 60,
+      "surplus": 5,
+      "ratio": 1.0833333333333333
+    },
+    {
+      "task": "n052",
+      "class": "strings",
+      "oxide": 44,
+      "rust": 39,
+      "surplus": 5,
+      "ratio": 1.1282051282051282
+    },
+    {
+      "task": "n010",
+      "class": "arithmetic/loops",
+      "oxide": 67,
+      "rust": 63,
+      "surplus": 4,
+      "ratio": 1.0634920634920635
+    },
+    {
+      "task": "n001",
+      "class": "arithmetic/loops",
+      "oxide": 40,
+      "rust": 39,
+      "surplus": 1,
+      "ratio": 1.0256410256410255
+    },
+    {
+      "task": "n002",
+      "class": "arithmetic/loops",
+      "oxide": 36,
+      "rust": 35,
+      "surplus": 1,
+      "ratio": 1.0285714285714285
+    },
+    {
+      "task": "n003",
+      "class": "arithmetic/loops",
+      "oxide": 51,
+      "rust": 50,
+      "surplus": 1,
+      "ratio": 1.02
+    },
+    {
+      "task": "n005",
+      "class": "arithmetic/loops",
+      "oxide": 49,
+      "rust": 48,
+      "surplus": 1,
+      "ratio": 1.0208333333333333
+    },
+    {
+      "task": "n008",
+      "class": "arithmetic/loops",
+      "oxide": 58,
+      "rust": 57,
+      "surplus": 1,
+      "ratio": 1.0175438596491229
+    },
+    {
+      "task": "n004",
+      "class": "arithmetic/loops",
+      "oxide": 57,
+      "rust": 57,
+      "surplus": 0,
+      "ratio": 1.0
+    },
+    {
+      "task": "n043",
+      "class": "vectors",
+      "oxide": 60,
+      "rust": 60,
+      "surplus": 0,
+      "ratio": 1.0
+    },
+    {
+      "task": "n007",
+      "class": "arithmetic/loops",
+      "oxide": 54,
+      "rust": 55,
+      "surplus": -1,
+      "ratio": 0.9818181818181818
+    },
+    {
+      "task": "n009",
+      "class": "arithmetic/loops",
+      "oxide": 60,
+      "rust": 61,
+      "surplus": -1,
+      "ratio": 0.9836065573770492
+    },
+    {
+      "task": "n006",
+      "class": "arithmetic/loops",
+      "oxide": 37,
+      "rust": 39,
+      "surplus": -2,
+      "ratio": 0.9487179487179487
+    },
+    {
+      "task": "n067",
+      "class": "vectors",
+      "oxide": 76,
+      "rust": 78,
+      "surplus": -2,
+      "ratio": 0.9743589743589743
+    },
+    {
+      "task": "n044",
+      "class": "vectors",
+      "oxide": 50,
+      "rust": 53,
+      "surplus": -3,
+      "ratio": 0.9433962264150944
+    },
+    {
+      "task": "n055",
+      "class": "strings",
+      "oxide": 50,
+      "rust": 53,
+      "surplus": -3,
+      "ratio": 0.9433962264150944
+    },
+    {
+      "task": "n060",
+      "class": "strings",
+      "oxide": 76,
+      "rust": 79,
+      "surplus": -3,
+      "ratio": 0.9620253164556962
+    },
+    {
+      "task": "n034",
+      "class": "structs/option",
+      "oxide": 65,
+      "rust": 69,
+      "surplus": -4,
+      "ratio": 0.9420289855072463
+    },
+    {
+      "task": "n038",
+      "class": "structs/option",
+      "oxide": 52,
+      "rust": 56,
+      "surplus": -4,
+      "ratio": 0.9285714285714286
+    },
+    {
+      "task": "n041",
+      "class": "vectors",
+      "oxide": 38,
+      "rust": 42,
+      "surplus": -4,
+      "ratio": 0.9047619047619048
+    },
+    {
+      "task": "n050",
+      "class": "vectors",
+      "oxide": 39,
+      "rust": 43,
+      "surplus": -4,
+      "ratio": 0.9069767441860465
+    },
+    {
+      "task": "n065",
+      "class": "vectors",
+      "oxide": 52,
+      "rust": 56,
+      "surplus": -4,
+      "ratio": 0.9285714285714286
+    },
+    {
+      "task": "n032",
+      "class": "structs/option",
+      "oxide": 56,
+      "rust": 61,
+      "surplus": -5,
+      "ratio": 0.9180327868852459
+    },
+    {
+      "task": "n037",
+      "class": "structs/option",
+      "oxide": 48,
+      "rust": 54,
+      "surplus": -6,
+      "ratio": 0.8888888888888888
+    },
+    {
+      "task": "n061",
+      "class": "structs/option",
+      "oxide": 54,
+      "rust": 60,
+      "surplus": -6,
+      "ratio": 0.9
+    },
+    {
+      "task": "n056",
+      "class": "strings",
+      "oxide": 76,
+      "rust": 83,
+      "surplus": -7,
+      "ratio": 0.9156626506024096
+    },
+    {
+      "task": "n062",
+      "class": "structs/option",
+      "oxide": 60,
+      "rust": 68,
+      "surplus": -8,
+      "ratio": 0.8823529411764706
+    },
+    {
+      "task": "n066",
+      "class": "vectors",
+      "oxide": 63,
+      "rust": 72,
+      "surplus": -9,
+      "ratio": 0.875
+    },
+    {
+      "task": "n035",
+      "class": "structs/option",
+      "oxide": 75,
+      "rust": 85,
+      "surplus": -10,
+      "ratio": 0.8823529411764706
+    },
+    {
+      "task": "n046",
+      "class": "vectors",
+      "oxide": 57,
+      "rust": 68,
+      "surplus": -11,
+      "ratio": 0.8382352941176471
+    },
+    {
+      "task": "n040",
+      "class": "structs/option",
+      "oxide": 61,
+      "rust": 74,
+      "surplus": -13,
+      "ratio": 0.8243243243243243
+    },
+    {
+      "task": "n063",
+      "class": "structs/option",
+      "oxide": 79,
+      "rust": 92,
+      "surplus": -13,
+      "ratio": 0.8586956521739131
+    },
+    {
+      "task": "n058",
+      "class": "strings",
+      "oxide": 74,
+      "rust": 88,
+      "surplus": -14,
+      "ratio": 0.8409090909090909
+    }
+  ],
+  "classes": {
+    "arithmetic/loops": {
+      "oxide": 509,
+      "rust": 504,
+      "surplus": 5,
+      "ratio": 1.0099206349206349
+    },
+    "structs/option": {
+      "oxide": 623,
+      "rust": 677,
+      "surplus": -54,
+      "ratio": 0.9202363367799113
+    },
+    "vectors": {
+      "oxide": 555,
+      "rust": 573,
+      "surplus": -18,
+      "ratio": 0.9685863874345549
+    },
+    "strings": {
+      "oxide": 613,
+      "rust": 578,
+      "surplus": 35,
+      "ratio": 1.060553633217993
+    }
+  },
+  "overall": {
+    "oxide": 2300,
+    "rust": 2332,
+    "surplus": -32,
+    "ratio": 0.9862778730703259
+  }
+}

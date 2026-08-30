@@ -1,0 +1,4 @@
+let s = "drum"  
+let chars_s = chars(s)  
+let reversed_chars_s = reverse(chars_s)  
+print(concat(reversed_chars_s, chars_s))

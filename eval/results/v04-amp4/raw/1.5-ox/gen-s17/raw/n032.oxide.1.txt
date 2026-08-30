@@ -1,0 +1,16 @@
+```rust
+struct Point { x: Int, y: Int }
+
+fn main() {
+    let p = Point { x: 1, y: 5 };
+    let p2 = Point { x: 10, y: 5 };
+
+    let sum = add(p.x, p2.x);
+
+    print_int(sum);
+}
+
+fn add(x: Int, y: Int) -> Int {
+    x + y
+}
+```

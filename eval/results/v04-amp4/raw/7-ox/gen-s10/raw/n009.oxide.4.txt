@@ -1,0 +1,7 @@
+fn main() {
+    let s = "1234";
+    let chars: Vec<Str> = chars(s);
+    let reversed_chars: Vec<Str> = reverse(chars);
+    let reversed_str: Str = concat(reversed_chars, "");
+    print_str(&reversed_str);
+}

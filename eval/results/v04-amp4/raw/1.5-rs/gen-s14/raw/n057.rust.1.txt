@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let names = ["fig", "banana", "kiwi"];
+    let longest_name = names.iter().max_by_key(|&&name| name.len());
+
+    match longest_name {
+        Some(name) => println!("The longest name is {} with {} letters.", name, name.len()),
+        None => println!("No valid names provided."),
+    }
+}
+```

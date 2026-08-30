@@ -1,0 +1,21 @@
+```text
+struct Fruit { name: Str, length: Int }
+
+fn main() {
+    let fruits = vec(
+        Fruit { name: "fig", length: 3 },
+        Fruit { name: "banana", length: 6 },
+        Fruit { name: "kiwi", length: 4 }
+    )
+    
+    let mut longest = Fruit { name: "", length: 0 }
+    for fruit in fruits {
+        if fruit.length > longest.length {
+            longest = fruit
+        }
+    }
+    
+    print(longest.name)
+    print(longest.length)
+}
+```

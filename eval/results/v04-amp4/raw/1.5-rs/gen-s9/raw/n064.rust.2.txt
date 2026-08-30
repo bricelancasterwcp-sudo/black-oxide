@@ -1,0 +1,20 @@
+```rust
+fn main() {
+    let mut numbers = vec![10, 20];
+    
+    // Look up position one and position four (or None if they don't exist)
+    let pos1: Option<&i32> = numbers.get(0);
+    let pos4: Option<&i32> = numbers.get(3);
+    
+    // Print each result
+    match pos1 {
+        Some(n) => println!("Position 1: {}", n),
+        None => println!("Position 1: Not found"),
+    }
+    
+    match pos4 {
+        Some(n) => println!("Position 4: {}", n),
+        None => println!("Position 4: Not found"),
+    }
+}
+```

@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let mut arr = [9, 2, 7, 4];
+    arr.sort();
+    for &num in arr.iter() {
+        println!("{}", num);
+    }
+}
+```

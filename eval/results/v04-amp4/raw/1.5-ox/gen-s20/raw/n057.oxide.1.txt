@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let mut counts = [0; 3];
+    for &fruit in ["fig", "banana", "kiwi"].iter() {
+        counts[fruit.len() - 1] += 1;
+    }
+    let max_length = *counts.iter().max().unwrap();
+    println!("{}: {}", 
+             &["fig", "banana", "kiwi"][counts.iter().position(|&n| n == max_length).unwrap()],
+             max_length);
+}
+```

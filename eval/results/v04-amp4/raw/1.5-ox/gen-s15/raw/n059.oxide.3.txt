@@ -1,0 +1,27 @@
+```rust
+fn count_words_and_chars(s: Str) -> (Int, Int) {
+    let mut word_count = 0;
+    let mut char_count = 0;
+
+    for c in s.chars() {
+        if c == ' ' {
+            word_count += 1;
+        }
+        char_count += 1;
+    }
+
+    // Handle the final word
+    if !s.is_empty() && s.chars().last().unwrap() != ' ' {
+        word_count += 1;
+    }
+
+    (word_count, char_count)
+}
+
+fn main() {
+    let text = "The phrase is: when in doubt go home.";
+    let (words, chars) = count_words_and_chars(text);
+    println!("Number of words: {}", words);
+    println!("Total characters including spaces: {}", chars);
+}
+```

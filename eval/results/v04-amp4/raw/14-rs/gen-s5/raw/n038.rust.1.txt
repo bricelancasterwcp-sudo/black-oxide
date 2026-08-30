@@ -1,0 +1,47 @@
+```rust
+use std::io;
+
+struct Sensor {
+    reading: i32,
+}
+
+impl Sensor {
+    fn new() -> Self {
+        Sensor { reading: 0 }
+    }
+
+    fn set_reading(&mut self, value: i32) {
+        self.reading = value;
+    }
+
+    fn get_reading(&self) -> i32 {
+        self.reading
+    }
+}
+
+struct Device {
+    sensor: Sensor,
+}
+
+impl Device {
+    fn new() -> Self {
+        Device {
+            sensor: Sensor::new(),
+        }
+    }
+
+    fn set_sensor_reading(&mut self, value: i32) {
+        self.sensor.set_reading(value);
+    }
+
+    fn get_sensor_reading(&self) -> i32 {
+        self.sensor.get_reading()
+    }
+}
+
+fn main() {
+    let mut device = Device::new();
+    device.set_sensor_reading(7);
+    println!("Sensor reading: {}", device.get_sensor_reading());
+}
+```

@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let drum = "drum";
+    let reversed_drum = drum.chars().rev().collect::<String>();
+    println!("Running back to front: {}", reversed_drum);
+    println!("Normal reading: {}", drum);
+}
+```

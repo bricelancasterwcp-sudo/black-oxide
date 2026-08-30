@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let mut queue = vec![1, 2, 3, 4, 5];
+    
+    if let Some((first, rest)) = queue.split_first_mut() {
+        if let Some(last) = rest.last_mut() {
+            std::mem::swap(first, last);
+        }
+    }
+    
+    for item in &queue {
+        println!("{}", item);
+    }
+}
+```

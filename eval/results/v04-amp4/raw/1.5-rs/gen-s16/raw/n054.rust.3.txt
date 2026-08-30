@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let input = "keyboard";
+    let mut vowel_count = 0;
+    let mut consonant_count = 0;
+
+    for c in input.chars() {
+        if c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' {
+            vowel_count += 1;
+        } else {
+            consonant_count += 1;
+        }
+    }
+
+    println!("Vowels: {}", vowel_count);
+    println!("Consonants: {}", consonant_count);
+}
+```

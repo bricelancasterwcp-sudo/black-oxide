@@ -1,0 +1,7 @@
+```oxide
+fn main() {
+    print("go")   // green means go
+    print("stop") // red means stop
+    print("wait") // yellow means wait
+}
+```

@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut n = 1;
+    while (n * n) <= 100 {
+        n *= 2;
+    }
+    println!("{}", n / 2);
+}
+```
+
+When the initial code was executed with `main`, it would keep multiplying `n` by 2 until `n * n` exceeded or equal to 100. The result of `n * n` at that point is 64, so `n` must have been 8. However, when we divide this result by 2, we get 32, which is the correct largest power of two that does not exceed 100.

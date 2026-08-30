@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let word = "drum";
+    for (i, c) in word.chars().rev().enumerate() {
+        print!("{}", c);
+        if i < word.len() - 1 {
+            print!(" ");
+        }
+    }
+    println!();
+
+    let word2 = word.chars().collect::<Vec<_>>().iter().rev().collect::<String>();
+    print!("{}", word2);
+}
+```

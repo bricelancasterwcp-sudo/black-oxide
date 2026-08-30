@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let n = 91;
+    let mut flag = true;
+
+    for i in 2..n {
+        if n % i == 0 {
+            flag = false;
+            break;
+        }
+    }
+
+    if flag {
+        println!("yes");
+    } else {
+        println!("no");
+    }
+}
+```

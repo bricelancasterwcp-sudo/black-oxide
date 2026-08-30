@@ -1,0 +1,8 @@
+```
+fn main() {
+    let n = 1234;
+    for i in (0..=3).rev() {
+        print(format!("{}", n / (10 as u64.pow(i))));
+    }
+}
+```

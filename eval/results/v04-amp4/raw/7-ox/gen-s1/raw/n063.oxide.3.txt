@@ -1,0 +1,16 @@
+struct Stock { items: Vec<单价> }
+
+enum 单价 { 三元(Int), 二元(Int) }
+
+fn main() {
+    let line1 = Stock { items: vec![单价::三元(4), 单价::三元(3), 单价::三元(3)] };
+    let line2 = Stock { items: vec![单价::二元(5), 单价::二元(2), 单价::二元(2), 单价::二元(2), 单价::二元(2)] };
+
+    print(line_value(&line1));
+    print(line_value(&line2));
+    print(line_value(&Stock { items: [line1.items, line2.items].concat() }));
+}
+
+fn line_value(s: &Stock) -> Int {
+    s.items.iter().map(|&i| match i { 单价::三元(n) => 3 * n, 单价::二元(n) => 2 * n }).sum()
+}

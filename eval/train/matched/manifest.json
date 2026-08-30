@@ -15,15 +15,15 @@
       "quantization_step": 104
     },
     {
-      "budget": 1456,
+      "budget": 1454,
       "class": "strings",
-      "gap": 19,
+      "gap": 17,
       "kept_examples": {
         "oxide": 20,
         "rust": 24
       },
       "kept_tokens": {
-        "oxide": 1456,
+        "oxide": 1454,
         "rust": 1437
       },
       "quantization_step": 162
@@ -43,26 +43,26 @@
       "quantization_step": 145
     },
     {
-      "budget": 3617,
+      "budget": 3383,
       "class": "vectors",
-      "gap": 36,
+      "gap": 12,
       "kept_examples": {
         "oxide": 40,
-        "rust": 56
+        "rust": 53
       },
       "kept_tokens": {
-        "oxide": 3617,
-        "rust": 3581
+        "oxide": 3383,
+        "rust": 3371
       },
       "quantization_step": 202
     }
   ],
   "contamination": {
     "hits": 0,
-    "programs_checked": 516
+    "programs_checked": 513
   },
   "counts_source": {
-    "commit": "5e9c17eea9f69871e6dc0d7addcba5684daeba81",
+    "commit": "da744db2af0de27f7b44a3defe8fb6cc5ef62d71",
     "roots": [
       "eval/results/train-amp2",
       "eval/results/train-amp2-slice"
@@ -1090,11 +1090,32 @@
       "sha256": "770e45587b6c8cd0e1d65e0db4040d7f6aeb72abed8f82bac0ad7e0f53c41067",
       "sup_tokens": 48,
       "task": "n049"
+    },
+    {
+      "arm": "rust",
+      "class": "vectors",
+      "sha256": "771f897d730700279420bd9bba00db89745456d49a747e3512696584820f9fa2",
+      "sup_tokens": 64,
+      "task": "n043"
+    },
+    {
+      "arm": "rust",
+      "class": "vectors",
+      "sha256": "7d8a8ad49199801a1fa5c1f80db000499c448ba33830a0cef3842a68a79bfad0",
+      "sup_tokens": 90,
+      "task": "n065"
+    },
+    {
+      "arm": "rust",
+      "class": "vectors",
+      "sha256": "7dcc29723e24baa35d93378118d0943b0449fa77fa11876bd0ae2b5f2f00fc94",
+      "sup_tokens": 56,
+      "task": "n050"
     }
   ],
   "prompt_tokens": {
     "oxide": 6249,
-    "rust": 7705
+    "rust": 7601
   },
   "token_efficiency": {
     "amplified": {
@@ -1162,7 +1183,7 @@
       },
       "overall": {
         "oxide": {
-          "mean_sup_tokens": 63.4,
+          "mean_sup_tokens": 57.5,
           "n": 40
         },
         "rust": {
@@ -1172,7 +1193,7 @@
       },
       "strings": {
         "oxide": {
-          "mean_sup_tokens": 61.5,
+          "mean_sup_tokens": 61.3,
           "n": 10
         },
         "rust": {
@@ -1192,7 +1213,7 @@
       },
       "vectors": {
         "oxide": {
-          "mean_sup_tokens": 78.9,
+          "mean_sup_tokens": 55.5,
           "n": 10
         },
         "rust": {
@@ -1209,11 +1230,11 @@
   "totals": {
     "kept_examples": {
       "oxide": 229,
-      "rust": 287
+      "rust": 284
     },
     "kept_tokens": {
-      "oxide": 16914,
-      "rust": 16865
+      "oxide": 16678,
+      "rust": 16655
     }
   }
 }

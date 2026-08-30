@@ -1,0 +1,7 @@
+fn multiply_numbers() -> Int {
+    let mut product = 1;
+    for i in 1..=6 {
+        product *= i; // Fixed the missing semicolon and return statement
+    }
+    product // Corrected the missing return statement
+}

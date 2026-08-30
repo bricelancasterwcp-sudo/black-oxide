@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let values = vec!(8, 3, 11, 6);
+    let min_val = unwrap_or(min(values), -1);
+    let max_val = unwrap_or(max(values), -1);
+    print(min_val);
+    print(max_val - min_val);
+}
+```

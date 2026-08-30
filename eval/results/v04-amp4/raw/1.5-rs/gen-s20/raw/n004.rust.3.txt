@@ -1,0 +1,7 @@
+fn main() {
+    let mut terms = vec![1, 1];
+    for i in 2..10 {
+        terms.push(terms[i - 1] + terms[i - 2]);
+    }
+    println!("The tenth term is: {}", terms[9]);
+}

@@ -1,0 +1,20 @@
+```rust
+struct Queue {
+    values: Vec<Int>,
+}
+
+fn main() {
+    let mut q = Queue { values: vec![1, 2, 3, 4, 5] };
+    
+    // Exchange the first and last entries
+    let temp = q.values[0];
+    q.values[0] = q.values[q.values.len() - 1];
+    q.values[q.values.len() - 1] = temp;
+    
+    // Print the queue one entry per line
+    for val in q.values {
+        print!("{}", val);
+        print!("\n");
+    }
+}
+```

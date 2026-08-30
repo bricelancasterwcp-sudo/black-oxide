@@ -1,0 +1,27 @@
+```rust
+struct Reading { label: Str, values: Vec<Int> }
+
+fn reverse_str(s: Str) -> Str {
+    let chars: Vec<Str> = chars(s);
+    let reversed_chars: Vec<Str> = reverse(chars);
+    let reversed_str: Str = join(reversed_chars, "");
+    reversed_str
+}
+
+fn join(v: Vec<Str>, sep: Str) -> Str {
+    let mut result = "";
+    for s in v {
+        if result != "" {
+            result = concat(result, sep);
+        }
+        result = concat(result, s);
+    }
+    result
+}
+
+fn main() {
+    let word = "drum";
+    print_str(reverse_str(clone(word)));
+    print_str(word);
+}
+```

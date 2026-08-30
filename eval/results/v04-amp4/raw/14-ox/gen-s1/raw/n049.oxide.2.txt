@@ -1,0 +1,9 @@
+```
+fn main() {
+    let numbers = vec(8, 3, 11, 6);
+    let min_num = unwrap_or(min(numbers), -1);
+    let max_num = unwrap_or(max(numbers), -1);
+    print(min_num);
+    print(max_num - min_num);
+}
+```

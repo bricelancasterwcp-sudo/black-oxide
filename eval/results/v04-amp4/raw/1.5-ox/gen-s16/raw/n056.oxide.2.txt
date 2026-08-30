@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let nums: Vec<Option<Int>> = vec![Some(7), None, Some(x), None];
+    let mut sum = 0;
+    let mut count = 0;
+
+    for n in &nums {
+        if let Some(num) = n {
+            sum += num;
+            count += 1;
+        }
+    }
+
+    println!("Sum of numbers: {}", sum);
+    println!("Number of non-numbers: {}", nums.len() - count);
+}
+```

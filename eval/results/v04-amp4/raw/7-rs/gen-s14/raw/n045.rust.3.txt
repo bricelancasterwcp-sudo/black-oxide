@@ -1,0 +1,5 @@
+fn main() {
+    let log = vec![6, 7, 8, 9];
+    println!("Start: {}", log[0]);
+    println!("End: {}", log[log.len() - 1]);
+}

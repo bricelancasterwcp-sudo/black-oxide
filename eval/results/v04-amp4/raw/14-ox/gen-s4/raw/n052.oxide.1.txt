@@ -1,0 +1,10 @@
+```
+fn main() {
+    let word = "banana"
+    for i in range(0, str_len(word)) {
+        if get(word.chars(), i)? == "n" {
+            print(i)
+        }
+    }
+}
+```

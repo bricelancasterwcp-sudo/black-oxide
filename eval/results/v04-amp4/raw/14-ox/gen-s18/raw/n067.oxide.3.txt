@@ -1,0 +1,21 @@
+```text
+fn main() {
+    let values = vec();
+    let values = push(values, 7);
+    let values = push(values, 4);
+    let values = push(values, 9);
+    let values = push(values, 10);
+
+    let mut total_even = 0;
+    for x in values {
+        if x % 2 == 0 {
+            total_even += x;
+        } else {
+            print(x * 2);
+            print_str("\n");
+        }
+    }
+
+    print(total_even);
+}
+```

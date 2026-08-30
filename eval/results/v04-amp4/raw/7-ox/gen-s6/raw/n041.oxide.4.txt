@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let mut readings = vec!(9, 2, 7, 4);
+    readings = sort(readings);
+    for r in readings {
+        print(r);
+        print_str("\n");
+    }
+}
+```

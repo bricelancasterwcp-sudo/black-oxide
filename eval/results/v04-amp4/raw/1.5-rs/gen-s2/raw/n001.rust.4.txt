@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let mut total = 0;
+    for i in 1..=5 {
+        total += i.pow(3) as u32; // Ensure the result fits into a u32
+    }
+    println!("The sum of cubes is: {}", total);
+}
+```

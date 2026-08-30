@@ -1,0 +1,9 @@
+```
+fn main() {
+    let mut q = vec![1, 2, 3, 4, 5];
+    swap(&mut q, 0, q.len() - 1);
+    for x in &q {
+        println!("{}", x);
+    }
+}
+```

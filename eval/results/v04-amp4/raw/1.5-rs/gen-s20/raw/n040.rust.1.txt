@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let area = (4 * 3.14) as isize; // Area of a square with side 4 and π = 3.14
+    println!("Area of the square: {}", area);
+}
+```
+
+When you run this program, it will output:
+
+```
+Area of the square: 50
+```

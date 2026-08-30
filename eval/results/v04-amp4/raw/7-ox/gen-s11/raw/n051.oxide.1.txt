@@ -1,0 +1,10 @@
+```rust
+struct Granite { first: Str, last: Str }
+
+fn main() {
+    let g = Granite { first: "gran", last: "ite" };
+    print(g.first.chars().next().unwrap());
+    print('\n');
+    print(g.last.chars().last().unwrap());
+}
+```

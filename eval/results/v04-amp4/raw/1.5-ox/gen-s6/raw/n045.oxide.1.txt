@@ -1,0 +1,9 @@
+```
+struct LogEntry { id: Int }
+
+fn main() {
+    let log = [LogEntry { id: 6 }, LogEntry { id: 7 }, LogEntry { id: 8 }, LogEntry { id: 9 }];
+    print(get(log, 0).unwrap());
+    print(get(log, last(&log)).unwrap());
+}
+```

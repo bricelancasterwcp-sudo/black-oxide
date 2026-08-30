@@ -1,0 +1,21 @@
+```
+fn safe_divide(a: Int, b: Int) -> Option<Int> {
+    if b == 0 {
+        None
+    } else {
+        Some(a / b)
+    }
+}
+
+fn main() {
+    match safe_divide(20, 4) {
+        Some(result) => print(result),
+        None => print_str("bad"),
+    }
+    // Uncomment the following lines to see the error handling
+    // match safe_divide(20, 0) {
+    //     Some(error_result) => print(error_result),
+    //     None => print_str("bad"),
+    // }
+}
+```

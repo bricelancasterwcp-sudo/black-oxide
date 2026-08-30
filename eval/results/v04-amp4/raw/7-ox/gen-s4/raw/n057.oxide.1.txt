@@ -1,0 +1,18 @@
+```
+fn main() {
+    let fruits = vec!["fig", "banana", "kiwi"];
+    let mut max_len = 0;
+    let mut fruit_name = "";
+
+    for &fruit in &fruits {
+        let len = str_len(fruit);
+        if len > max_len {
+            max_len = len;
+            fruit_name = fruit;
+        }
+    }
+
+    print_str(fruit_name);
+    print(max_len);
+}
+```

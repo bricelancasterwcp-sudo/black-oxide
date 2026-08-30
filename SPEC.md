@@ -2529,8 +2529,12 @@ normative definition (desugar rule, identifier-only scope, Str
 behavior) lives in §59.2, not here.
 
 The base is a bare name, not an arbitrary expression: `f().x = e` and
-`v[0] = e` remain `OX0101`. Index assignment awaits an indexing decision
-this document has not made.
+`v[0] = e` remain `OX0101`. ~~Index assignment awaits an indexing
+decision this document has not made.~~ **Amended 2026-08-29 (§60.1):**
+the decision is made, and it is that index assignment arrives as a
+*function*, `set(v, i, x) -> Vec<T>`, not as bracket-assignment syntax.
+The sentence above still holds for the bracket form — `v[0] = e` remains
+`OX0101` — but the language no longer lacks the capability.
 
 **Parsing.** At statement start, an `IDENT` followed by `DOT` begins a
 scan of `(DOT IDENT)+`; the statement is a field assignment only if that
@@ -2973,6 +2977,13 @@ slate of 2 against the design spec's cap of 8.
   this is exactly the case the census v2 rejection-cross discipline
   (§59 intro; Task 1's instrument) exists to catch — amp-only presence
   without a campaign-side rejection signal did not clear the gate.
+  **Superseded 2026-08-29 (§60.1, §60.3).** This deferral was wrong, and
+  wrong in an instructive way: the capability shipped one wave later as
+  `set(v, i, x)` once a *cost* census existed to see it. Demand was not
+  the relevant evidence — the absence of index assignment was silently
+  the largest single token gap in the corpus. The reasoning above is
+  left standing as published, because the reasoning is exactly what
+  §60.3 indicts.
 - **`remove_at(v, i)`** — the `removal_rebuild` hand-rolled pattern, 2
   reference-corpus refs, 0 amplified (the amp pool's own `n043`/`n050`
   programs use a different strategy, Rust's `sort_by`/index-swap, not a
@@ -3126,3 +3137,263 @@ capability level the repair loop recovers nothing, so `tokens_to_green`
 is almost entirely first-attempt generation length. A future wave that
 sees the repair loop start recovering sessions must re-check whether the
 two constructions have diverged.
+
+## 60. v0.4 wave-3 — the cost census and the vectors gap
+
+### 60.1 New builtins: `swap`, `reverse`, `set`
+
+Three Vec operations, all following `sort`'s owned-in/owned-out
+convention — each consumes the vector and returns it, so the caller
+writes `v = swap(v, 0, last)`:
+
+```
+swap(v: Vec<T>, i: Int, j: Int) -> Vec<T>     # exchange two positions
+reverse(v: Vec<T>) -> Vec<T>                  # reverse in place
+set(v: Vec<T>, i: Int, x: T) -> Vec<T>        # replace one element
+```
+
+Linearity modes, and why each is what it is:
+
+- The **vector** slot is `own` in all three. They wrap Rust's in-place
+  `Vec` methods, so the vector is genuinely consumed and handed back —
+  the same reason `sort`'s slot is `own`, and the reason a use of the
+  old binding after the call reports `OX0400`.
+- The **index** slots are `read`. An index is inspected, never
+  consumed — matching `get` and `range`, whose `Int` slots read for the
+  identical reason.
+- `set`'s **value** slot is `own`. The element is genuinely transferred
+  into the vector, mirroring `push`'s inserted value rather than
+  `contains`'s compared one.
+
+Each is also available in method form (`v.reverse()`), as every builtin
+is; `BUILTIN_METHOD_NAMES` is asserted equal to `set(BUILTINS)` by
+`tests/test_parser.py`.
+
+### 60.2 Out-of-range indices panic — and this category already existed
+
+`set` and `swap` transpile to Rust's own panicking operations (`v[i] =
+x`, `v.swap(i, j)`), so an out-of-range index panics exactly as the Rust
+control does.
+
+**This is not a new category.** Verified 2026-08-29, before this section
+was written: Oxide integer division already panics at runtime on a
+computed zero divisor — `a / b` transpiles to Rust's `a / b` and dies
+with `attempt to divide by zero`, exit 101. The language has had a
+partial-operation category since division existed; it was simply never
+documented. This section documents it and adds two members to it.
+
+The ruling's rationale, in order of weight:
+
+1. **Every total alternative is a quiet wrong answer.** An out-of-range
+   write has no natural result. A no-op looks like success; a clamp
+   silently corrupts; an `Option` that call sites `unwrap_or` away turns
+   a bug into a plausible value. That is the failure class this project
+   rejects everywhere else.
+2. **Totality taxes the objective function.** `v = unwrap_or(set(v, i,
+   x), v)` costs roughly double `v = set(v, i, x)`, paid at every
+   in-range call site to serve a case correct programs never reach.
+   Tokens per solved task is the objective, so that cost is real and the
+   benefit is not.
+3. **The identical-stdout law survives** because both arms panic
+   identically.
+
+A transpile-time bounds check for the literal-index-into-literal-`vec()`
+case was considered and deferred: sema does not track vector lengths,
+and rustc's own `unconditional_panic` lint already rejects the
+analogous literal division case for free.
+
+**Open question, recorded rather than settled:** whether a partial
+operation category belongs in this language at all is a design decision
+nobody has consciously made. It arrived with division and is being
+extended here on cost grounds. It deserves a deliberate ruling.
+
+### 60.3 The cost census, and why the gate grew a second eye
+
+`eval/cost_census.py` ranks every reference pair by oxide−rust token
+surplus. It exists because wave 3 found the demand census answering a
+question adjacent to the objective:
+
+| | measures | blind to |
+|---|---|---|
+| demand census | what models attempt to write | anything models were never taught |
+| cost census | what correct programs cost | nothing in the corpus |
+
+The two disagree at the top of this wave's slate. `swap` and `reverse`
+have **zero** demand signal — the census has no family for them, because
+a model cannot reach for a spelling it has never seen — and they rank
+**1 and 2** by cost (n043 +82, n050 +60). Wave 2's gate, reading demand
+alone, deferred index assignment on the ground that campaign presence
+was 0, while its absence was silently the largest token gap in the
+corpus.
+
+The wave-3 gate reads both: a construct ships if it scores on either
+axis, and candidates scoring on both are ordered first. The general
+lesson is recorded because it will recur: **an instrument that answers a
+question adjacent to your objective will be read as though it answered
+the objective, until something forces the comparison.**
+
+Corpus state when the census was built (tokenizer `c0382117…`):
+arithmetic 509/504 = 1.010, strings 615/578 = 1.064, structs 623/677 =
+0.920, vectors 789/573 = 1.377, overall 2536/2332 = 1.0875. Vectors
+carries +216 of a +204 net surplus — over 100%, because structs/option
+runs negative, which is why the census keeps surplus signed and never
+clips it at zero.
+
+### 60.4 Re-authoring bias rule, amended (supersedes the wave-2 gate)
+
+Wave 2's rule permitted a substitution in an oxide reference only where
+the Rust control used the analogous construct.
+
+~~A compound-assignment substitution is admissible only where the
+matching Rust control also uses `+=`/`-=`/`*=`.~~ **Superseded
+2026-08-29.** The gate was written against a real failure (wave 1's n041
+tightening, caught by review and reverted), but it made Oxide
+systematically pessimistic wherever the two languages diverge
+idiomatically — which is the subject under study. In n046 the Rust
+control writes `v.iter().filter(|&&x| x < 10).count()`, so the gate
+forbade Oxide's hand-rolled loop from using the `+=` this project had
+already shipped.
+
+**Amended rule.** Each arm is written as well as its own language
+allows. A substitution is admissible when it uses only shipped
+vocabulary and does not restructure the program beyond what that
+construct replaces. Every admissible substitution **must** be applied —
+a missed one is a defect, not a conservative choice. Every changed pair
+is verified by the rustc/stdout oracle (byte-identical
+`expected_stdout`, `validate_pair` green, contamination clean) and
+diffed in the wave report with its token delta.
+
+The anti-restructuring core of the wave-2 rule is unchanged and remains
+in force: no inlined bindings, no reshaping beyond what the construct
+replaces.
+
+### 60.5 Card update (continues §59.5's record)
+
+Both cards gain the three builtins beside their Vec siblings, each in
+its own voice — the core card states the consumption plainly
+(`swap(v, i, j) -> Vec<T>  # consumes v, exchanges positions i and j`),
+the explicit card names the mode of every slot as it does throughout
+(`# consumes v and x — replaces element i`). The owned-in/owned-out
+spelling is shown because that is the shape models must reproduce.
+
+Word counts after the update: core **1094**, explicit **1193**, gap 99
+against a 10% tolerance of 119.3. Both pass.
+
+**Recorded because it will bite:** the core card now sits **six words**
+under its 1100-word `CORE_WORD_LIMIT`. The next wave that adds any
+vocabulary will cross it. When that happens the limit is to be raised
+*non-silently* — changed in `tests/test_cards.py`, stated in SPEC with
+its reason, and the pin re-verified to bite — exactly as §59.5 raised it
+from 1000 to 1100. It is not to be met by trimming card content without
+saying so.
+
+### 60.6 Stale-text sweep
+
+Two normative sites predated this section and are amended in place, old
+text struck through and kept visible, per §58.2's convention:
+
+- **§56**'s field-assignment paragraph said index assignment "awaits an
+  indexing decision this document has not made." The decision is now
+  made and recorded in §60.1: index assignment arrives as the function
+  `set(v, i, x)`, not as bracket-assignment syntax. The paragraph's
+  claim about the bracket form still holds — `v[0] = e` remains
+  `OX0101` — and is left standing.
+- **§59.3**'s deferral of bracket index assignment is marked superseded.
+  The deferral was wrong, and instructively so: the capability shipped
+  one wave later once a cost census could see it. The original
+  reasoning is left visible precisely because §60.3 indicts it.
+
+A grep across `SPEC.md`, `docs/superpowers/specs/2026-08-09-v03-taxonomy.md`
+and both cards for claims of the shape "no index assignment", "no swap",
+"never panics", or "total operation" returned no further hits.
+
+## 61. v0.4 wave-3 addendum — the predicate literal, and crossing parity
+
+Shipped on the owner's direction after §60 landed, overriding the
+wave-3 spec's §8 ("closures out of scope"). The scope decision was made
+against the cost of a *closure* surface; what shipped is narrower and
+cheaper, and it crosses the threshold the project has aimed at since the
+efficiency loop began.
+
+### 61.1 `x -> expr` is a predicate literal, not a closure
+
+```
+count_if(v, x -> x < 10)      # 3, for v = vec(5, 12, 3, 18, 9)
+```
+
+**A predicate literal cannot capture.** Its body may reference its own
+parameter and nothing else; referencing an enclosing binding is
+`OX0205`. That single restriction is the entire design:
+
+- **With no captures there is no ownership question.** The construct
+  never interacts with implicit linear ownership — the collision that
+  made a general closure surface expensive to reason about and kept it
+  out of the wave-3 spec. A predicate owns nothing, so it can move
+  nothing.
+- **The `->` spelling is deliberate.** Rust's `|x|` was measured one
+  token cheaper to reject (17 vs 16 for the arrow) and was rejected
+  anyway on design grounds: `|x|` would promise capture semantics this
+  language does not implement, and the first model to write
+  `|x| x < threshold` over an outer local would get a confusing error
+  from a construct that *looked* like the Rust it knows. A distinct
+  spelling makes the restriction legible.
+
+Typing: `x -> body` has type `Pred<T>` where `x: T` and `body: Bool`.
+The parameter type is a fresh variable, so it unifies with the element
+type of the vector it is passed beside — `count_if: (Vec<A>, Pred<A>)
+-> Int`, arguments inferred left to right.
+
+Codegen: the literal emits as a Rust closure `|x| body`, and parameter
+uses deref, because the prelude's `count_if` calls `p(e)` with `e: &T`.
+
+**Known limitation, stated rather than discovered later.** A predicate
+body that misuses its *own* parameter — consuming a `Str` parameter
+twice, say — is not caught by the ownership analysis, which treats the
+literal as a leaf (correctly, for the enclosing flow: nothing outside is
+reachable). It still fails closed: the emitted closure takes `&T`, so
+rustc rejects it. The cost is a rustc error where an Oxide diagnostic
+would read better. Worth fixing when a predicate surface grows past
+`count_if`.
+
+### 61.2 The corpus crossed below parity
+
+| class | wave-3 start | after §60 | after §61 |
+|---|---:|---:|---:|
+| arithmetic/loops | 1.010 | 1.010 | 1.010 |
+| strings | 1.064 | 1.061 | 1.061 |
+| structs/option | 0.920 | 0.920 | 0.920 |
+| vectors | 1.377 | 1.066 | **0.969** |
+| **overall** | **1.0875** | 1.0103 | **0.9863** |
+
+Oxide now writes 2300 supervised tokens across the 40 reference programs
+where Rust writes 2332 — a surplus of **−32**. The vectors class, which
+opened this wave at 1.377 and carried 106% of the corpus's net surplus,
+now writes *shorter* programs than Rust does.
+
+This is the static estimand only, on hand-authored reference pairs. It
+says the language can express these tasks in fewer tokens than Rust; it
+does **not** say a model will. That is the dynamic question, and it is
+unmeasured until the wave's campaign runs. The two have disagreed
+before — SPEC §59.7 exists because a dynamic reading was confounded for
+two waves — so the parity claim is scoped to what was measured.
+
+Remaining surplus is now strings-led (n054 +20, n053 +14, n051 +8) with
+n064 +15 in structs; vectors contributes nothing above +14. The next
+cost census reads a different language than the one wave 3 opened on.
+
+### 61.3 Card v0.6 and a non-silent word-limit raise
+
+Both cards gain `count_if(v, x -> b) -> Int` beside `count`. Counts:
+core **1108**, explicit **1208**, gap 100 against a 10% tolerance of
+120.8.
+
+The core card crossed the 1100-word `CORE_WORD_LIMIT` that §60.5 flagged
+as having six words of headroom. Per that section's own instruction the
+limit is raised **non-silently**: `CORE_WORD_LIMIT` 1100 → **1150** in
+`tests/test_cards.py`, stated here with its reason (the predicate
+literal is new syntax, not just another builtin name, so it costs the
+card a line of explanation as well as a signature), and the pin was
+re-verified to bite — temporarily setting it back to 1100 fails the
+test, as it must. The limit was not met by trimming card content.
+
+Headroom is now 42 words. The same instruction applies next time.

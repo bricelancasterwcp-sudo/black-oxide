@@ -1,0 +1,21 @@
+```rust
+struct Queue { items: Vec<Int> }
+
+fn enqueue(q: Queue, x: Int) -> Queue {
+    Queue { items: push(q.items, x) }
+}
+
+fn dequeue(q: Queue) -> (Int, Queue) {
+    let first = get(q.items, 0)?;
+    let rest = reverse(set(q.items, 0, -1));
+    (first, Queue { items: rest })
+}
+
+fn main() {
+    let q = enqueue(enqueue(enqueue(enqueue(enqueue(Queue { items: vec() }, 1), 2), 3), 4), 5);
+    let (first, q1) = dequeue(q);
+    let (last, _) = dequeue(reverse(q1));
+    print(first);
+    print(last);
+}
+```

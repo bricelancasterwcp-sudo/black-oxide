@@ -1,0 +1,20 @@
+```
+fn main() {
+    let arr = [9, 2, 7, 4];
+    
+    for i in 0..arr.len() - 1 {
+        for j in (i + 1)..arr.len() {
+            if arr[i] > arr[j] {
+                arr.swap(i, j);
+            }
+        }
+    }
+
+    let mut val;
+    for &v in arr.iter() {
+        val = v; // copy each element
+        print!("{}", val);
+        println!();
+    }
+}
+```

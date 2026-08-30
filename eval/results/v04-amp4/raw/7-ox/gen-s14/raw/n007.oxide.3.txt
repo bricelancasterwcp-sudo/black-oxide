@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let num = 9875;
+    let digits: Vec<Int> = vec![num % 10, (num / 10) % 10, (num / 100) % 10, (num / 1000) % 10];
+    let sum: Int = digits.iter().sum();
+    print(sum);
+}
+```

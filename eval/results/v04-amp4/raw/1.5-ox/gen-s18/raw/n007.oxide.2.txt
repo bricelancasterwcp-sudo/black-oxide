@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut n = 9875;
+    let s = Int_to_str(n); // fix: missing closing bracket
+    let mut sum = 0;
+    for c in s.chars() { // fix: missing opening parenthesis
+        if let Some(d) = parse_int(c.to_string()) {
+            sum += d; // fix: missing closing brace
+        }
+    }
+    print(sum);
+}
+```

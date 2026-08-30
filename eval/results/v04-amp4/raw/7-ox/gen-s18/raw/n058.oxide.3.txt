@@ -1,0 +1,10 @@
+fn main() {
+    let s = "coffee";
+    let mut seen = Vec::new();
+    for ch in chars(s) {
+        if !contains(seen, ch) && contains(chars(s), ch) {
+            print_str(ch);
+            push(seen, ch);
+        }
+    }
+}

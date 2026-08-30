@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let sum = (1..=5).map(|x| x.pow(3)).sum();
+    println!("The sum of cubes from 1 to 5 is {}", sum);
+}
+```
+This code snippet defines a function `main` that calculates the sum of the cubes of numbers from 1 to 5 using the `map` method to cube each number and the `sum` method to add them up. Finally, it prints the result.

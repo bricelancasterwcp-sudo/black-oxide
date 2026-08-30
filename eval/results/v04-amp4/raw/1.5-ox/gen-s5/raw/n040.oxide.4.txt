@@ -1,0 +1,18 @@
+```rust
+enum Shape {
+    Square(4.0),
+    Circle(f64),
+}
+
+fn main() {
+    let shape = Shape::Square(4.0);
+    print_area(shape);
+}
+
+fn print_area(s: Shape) {
+    match s {
+        Shape::Square(side) => println!("Area of square: {}", side * side),
+        Shape::Circle(radius) => println!("Area of circle: {}", radius * radius * std::f64::consts::PI),
+    }
+}
+```

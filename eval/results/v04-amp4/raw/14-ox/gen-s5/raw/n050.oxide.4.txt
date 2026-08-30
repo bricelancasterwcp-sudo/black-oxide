@@ -1,0 +1,19 @@
+```rust
+struct Score { value: Int }
+
+fn sort_scores(scores: Vec<Int>) -> Vec<Int> {
+    sort(scores)
+}
+
+fn print_scores(scores: Vec<Int>) {
+    for score in scores {
+        print(score)
+    }
+}
+
+fn main() {
+    let scores = push(push(push(vec(), 2), 9), 5)
+    let sorted_scores = sort_scores(scores)
+    print_scores(sorted_scores)
+}
+```

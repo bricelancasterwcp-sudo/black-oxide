@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut count = 0;
+    for i in 1..=36 {
+        if 36 % i == 0 {
+            count += 1;
+        }
+    }
+    println!("{}", count);
+}
+```
+
+This Rust program iterates through all numbers from 1 to 36, checking each number to see if it divides 36 exactly with no remainder. If a number meets this condition, the `count` variable is incremented. After the loop completes, it prints out the total count of numbers that satisfy the condition.

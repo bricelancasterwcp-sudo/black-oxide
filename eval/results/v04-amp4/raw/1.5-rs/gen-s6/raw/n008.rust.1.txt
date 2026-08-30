@@ -1,0 +1,10 @@
+```rust
+fn count_divisible_by_three_or_five() -> usize {
+    (1..=50).filter(|&x| x % 3 == 0 || x % 5 == 0).count()
+}
+
+fn main() {
+    let result = count_divisible_by_three_or_five();
+    println!("Count: {}", result);
+}
+```

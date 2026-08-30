@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let mut a = 0;
+    let mut b = 1;
+
+    for _ in 2..=10 {
+        let next_term = a + b;
+        a = b;
+        b = next_term;
+    }
+
+    println!("{}", a);
+}
+```
+
+In this program, we first initialize the variables `a` and `b` to 1. Then, using a loop that runs from 2 to 10 (inclusive), we calculate the sum of the two previous terms (`a` and `b`) and assign it to `next_term`. After that, we update `a` and `b` to be equal to each other and `next_term`, respectively. Finally, we print the tenth term of the sequence, which is stored in `a`.

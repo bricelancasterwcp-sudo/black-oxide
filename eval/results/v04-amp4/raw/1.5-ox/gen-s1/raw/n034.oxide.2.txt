@@ -1,0 +1,13 @@
+fn find_second_entry(vec: Vec<Int>) -> Option<Int> {
+    let mut second_entry = None;
+    for (i, &x) in vec.iter().enumerate() {
+        if i == 1 {
+            second_entry = Some(x);
+        }
+    }
+    second_entry
+}
+
+fn main() {
+    println!("{:?}", find_second_entry(vec![7, 8, 9])); // prints Some(8)
+}

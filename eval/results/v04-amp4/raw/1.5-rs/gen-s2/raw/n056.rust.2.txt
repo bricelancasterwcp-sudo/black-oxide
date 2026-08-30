@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let text = "7x9?"; // Example string
+
+    let mut count = 0;
+    let mut sum = 0;
+
+    for ch in text.chars() {
+        if ch.is_digit(10) {
+            count += 1;
+            sum += ch.to_digit(10).unwrap();
+        }
+    }
+
+    println!("The total of the numbers is: {}", sum);
+    println!("Number of numbers: {}", count);
+}
+```

@@ -1,0 +1,3 @@
+let s = "granite"
+print(s.chars().nth(0).unwrap())
+print(s.chars().last().unwrap())

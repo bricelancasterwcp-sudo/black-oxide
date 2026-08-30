@@ -1,0 +1,16 @@
+```rust
+fn divide(a: Int, b: Int) -> Result<Int, Str> {
+    if b == 0 {
+        Err("bad".into())
+    } else {
+        Ok(a / b)
+    }
+}
+
+fn main() {
+    match divide(20, 4)? {
+        x => print(x),
+        _ => print_str("bad"),
+    }
+}
+```

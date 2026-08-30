@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let price_four = 3;
+    let price_five = 2;
+
+    // Calculate the total value of the four units at $3 each
+    let value_four = price_four * 4;
+
+    // Calculate the total value of the five units at $2 each
+    let value_five = price_five * 5;
+
+    // Print the value of each line
+    println!("Value of the first line: {}", value_four);
+    println!("Value of the second line: {}", value_five);
+
+    // Print the combined value of both lines
+    println!("Combined value: {}", value_four + value_five);
+}
+```

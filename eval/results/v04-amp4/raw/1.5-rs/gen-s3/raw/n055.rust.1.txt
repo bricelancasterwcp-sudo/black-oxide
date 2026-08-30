@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let mut numbers = vec![8, "oak", 15];
+    for &num in &numbers {
+        match num {
+            i if i.is_digit(10) => println!("{}", i),
+            s if s == "oak" => println!("bad"),
+            _ => println!("bad"),
+        }
+    }
+}
+```

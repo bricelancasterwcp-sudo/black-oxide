@@ -1,0 +1,24 @@
+```rust
+use std::ops::Add;
+
+#[derive(Debug, Copy, Clone)]
+struct Point {
+    x: i32,
+    y: i32,
+}
+
+impl Add for Point {
+    type Output = i32;
+
+    fn add(self, other: Self) -> Self::Output {
+        self.x + self.y + other.x + other.y
+    }
+}
+
+fn main() {
+    let point1 = Point { x: 1, y: 5 };
+    let point2 = Point { x: 10, y: 5 };
+    let sum = point1 + point2;
+    println!("{}", sum);
+}
+```

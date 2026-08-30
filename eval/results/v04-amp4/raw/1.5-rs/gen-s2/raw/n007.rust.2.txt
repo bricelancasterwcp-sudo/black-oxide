@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut sum = 0;
+    for digit in "9875".chars() {
+        sum += digit.to_digit(10).unwrap();
+    }
+    println!("The sum of the individual digits is: {}", sum);
+}
+```
+Explanation:
+- The problem was with how to iterate over the characters of the number string. In Rust, you need to convert a `String` to an array of its characters using `chars()`. It's important to note that the `format!("{}", 9875)` is used for demonstration purposes and should be replaced by the actual number you want to sum up.
+- The `to_digit(10)` method converts each character in the string to an integer, where '0' corresponds to 0, '1' to 1, and so on. The `unwrap()` function is used here to handle the case where the conversion might fail (which should not happen for numbers like "9875").
+- Finally, the sum of all digits is printed out.

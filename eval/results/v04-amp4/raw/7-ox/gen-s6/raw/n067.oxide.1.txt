@@ -1,0 +1,39 @@
+```oxide
+struct List { head: Option<Int>, tail: Vec<List> }
+
+fn is_odd(n: Int) -> Bool {
+    n % 2 != 0
+}
+
+fn double_if_odd(x: Int) -> Int {
+    if is_odd(x) { x * 2 } else { x }
+}
+
+fn total_evens(list: List) -> Int {
+    let mut sum = 0;
+    for sublist in list.tail {
+        sum += total_evens(sublist);
+    }
+    sum
+}
+
+fn main() {
+    let list = List { head: Some(7), tail: vec![
+        List { head: Some(4), tail: vec![] },
+        List { head: Some(9), tail: vec![] },
+        List { head: Some(10), tail: vec![] }
+    ]};
+
+    let mut total = 0;
+    for sublist in list.tail {
+        if let Some(x) = sublist.head {
+            print(double_if_odd(x));
+            if x % 2 == 0 {
+                total += x;
+            }
+        }
+    }
+
+    print(total);
+}
+```

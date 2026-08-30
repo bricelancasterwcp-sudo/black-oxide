@@ -1,0 +1,16 @@
+```oxide
+fn main() {
+    let words = vec("fig", "banana", "kiwi");
+    let mut max_word = "";
+    let mut max_len = 0;
+    for word in words {
+        if word.len() > max_len {
+            max_word = word;
+            max_len = word.len();
+        }
+    }
+    print(max_word);
+    print_str(" ");
+    print(max_len);
+}
+```

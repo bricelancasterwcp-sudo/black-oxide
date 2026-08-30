@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut counts = [0; 26];
+    for c in "coffee".chars().map(|c| (c as u8 - b'a') as usize) {
+        counts[c] += 1;
+    }
+    for (i, count) in counts.iter().enumerate() {
+        if *count > 1 {
+            print!("{}", (i as u8 + b'a') as char);
+        }
+    }
+}
+```

@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let num = 1234;
+    let reversed_num = reverse(digits(num));
+    print(reversed_num);
+}
+
+fn digits(n: Int) -> Vec<Int> {
+    let mut result = vec();
+    while n > 0 {
+        push(result, n % 10);
+        n /= 10;
+    }
+    result
+}
+```

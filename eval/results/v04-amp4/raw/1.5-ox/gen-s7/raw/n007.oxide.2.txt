@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let num = 9875;
+    let mut sum = 0;
+    
+    while num > 0 {
+        let digit = num % 10;
+        sum += digit;
+        num /= 10;
+    }
+    
+    print(sum);
+}
+```

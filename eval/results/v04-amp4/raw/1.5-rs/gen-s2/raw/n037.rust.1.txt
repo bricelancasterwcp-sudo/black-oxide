@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let mut length = 2;
+    let height = 3;
+
+    println!("Initial area: {}", length * height);
+
+    length = 5;
+
+    println!("Modified area: {}", length * height);
+}
+```
+
+When you run this program, it will output:
+
+```
+Initial area: 6
+Modified area: 15
+```

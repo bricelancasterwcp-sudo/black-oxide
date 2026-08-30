@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let fig = "fig";
+    let banana = "banana";
+    let kiwi = "kiwi";
+
+    if fig.len() > banana.len() && fig.len() > kiwi.len() {
+        print_str(fig);
+        println!("\t{} letters", fig.len());
+    } else if banana.len() > fig.len() && banana.len() > kiwi.len() {
+        print_str(banana);
+        println!("\t{} letters", banana.len());
+    } else {
+        print_str(kiwi);
+        println!("\t{} letters", kiwi.len());
+    }
+}
+```

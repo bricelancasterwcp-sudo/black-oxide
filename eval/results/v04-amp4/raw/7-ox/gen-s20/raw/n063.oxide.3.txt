@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let a = vec![3; 4];
+    let b = vec![2; 5];
+    print(sum(a.clone()) * 3);
+    print(sum(b.clone()) * 2);
+    print((sum(a.clone()) * 3) + (sum(b.clone()) * 2));
+}
+```

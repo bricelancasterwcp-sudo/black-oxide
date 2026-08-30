@@ -1,0 +1,24 @@
+Here's the corrected code:
+
+```rust
+fn is_prime(n: u32) -> bool {
+    if n <= 1 {
+        return false;
+    }
+    for i in 2..=((n as f64).sqrt() as u32) { // Increment by 1 to include the square root itself
+        if n % i == 0 {
+            return false;
+        }
+    }
+    true
+}
+
+fn main() {
+    let number = 91;
+    if is_prime(number) {
+        println!("Yes");
+    } else {
+        println!("No");
+    }
+}
+```

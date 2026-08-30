@@ -1,0 +1,12 @@
+```rust
+struct Reading { label: Str, values: Vec<Int> }
+
+fn main() {
+    let mut v = push(vec![9], 2);
+    v.push(7);
+
+    println!("{}", get(v.as_mut(), 0)?); // smallest
+    println!("{}", get(v.as_mut(), 1)?); // second smallest
+    println!("{}", get(v.as_mut(), 2)?); // largest
+}
+```

@@ -1,0 +1,10 @@
+```
+fn main() {
+    let drum = "drum";
+    for (i, ch) in drum.chars().rev().enumerate() {
+        print!("{}", ch);
+    }
+    print!("\n");
+    print(drum);
+}
+```

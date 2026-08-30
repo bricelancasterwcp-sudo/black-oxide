@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let str = "keyboard";
+    let mut vowel_count = 0;
+    let mut non_vowel_count = 0;
+
+    for char in str.chars() {
+        if matches!(char, 'a' | 'e' | 'i' | 'o' | 'u') {
+            vowel_count += 1;
+        } else {
+            non_vowel_count += 1;
+        }
+    }
+
+    println!("Vowels: {}", vowel_count);
+    println!("Non-vowels: {}", non_vowel_count);
+}
+```

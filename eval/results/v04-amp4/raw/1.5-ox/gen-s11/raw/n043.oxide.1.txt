@@ -1,0 +1,52 @@
+```rust
+use std::fmt::{self};
+
+struct Queue<T> {
+    vec: Vec<T>,
+}
+
+impl<T> Queue<T> {
+    fn new() -> Self {
+        Queue { vec: Vec::new() }
+    }
+
+    fn push(&mut self, elem: T) {
+        self.vec.push(elem);
+    }
+
+    fn pop(&mut self) -> Option<T> {
+        self.vec.pop()
+    }
+
+    fn swap_first_last(&mut self) {
+        if let Some(first) = self.pop() {
+            if let Some(last) = self.pop() {
+                self.push(last);
+                self.push(first);
+            }
+        }
+    }
+
+    fn print_all(&self) -> fmt::Result {
+        for &elem in &self.vec {
+            write!(fmt::stdout(), "{}\n", elem)?;
+        }
+        Ok(())
+    }
+}
+
+fn main() {
+    let mut q = Queue::new();
+    q.push(1);
+    q.push(2);
+    q.push(3);
+    q.push(4);
+    q.push(5);
+
+    q.swap_first_last();
+
+    if q.print_all().is_err() {
+        eprintln!("Error printing the queue");
+    }
+}
+```

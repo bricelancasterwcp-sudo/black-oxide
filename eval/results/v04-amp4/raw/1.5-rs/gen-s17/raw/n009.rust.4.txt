@@ -1,0 +1,23 @@
+```rust
+fn main() {
+    let mut num = 1234;
+    while num > 0 {
+        println!("{}", num % 10);
+        num /= 10;
+    }
+}
+```
+
+The original program did not print the numbers in the correct order because it was printing each digit separately and not reversing them. The `num % 10` operation is used to get the last digit of the number, but it does not reverse the digits. To reverse the digits, we would need to do something like this:
+
+```rust
+fn main() {
+    let mut num = 1234;
+    while num > 0 {
+        println!("{}", num % 10); // print each digit separately
+        num /= 10; // remove the last digit from the number
+    }
+}
+```
+
+This will correctly print the digits of the number in reverse order: `4, 3, 2, 1`.

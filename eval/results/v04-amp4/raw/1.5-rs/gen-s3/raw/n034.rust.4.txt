@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let result = get_second_entry(vec![7, 8, 9]);
+    match result {
+        Some(second) => println!("The second entry is: {}", second),
+        None => println!("No second entry found."),
+    }
+}
+
+fn get_second_entry<T>(list: Vec<T>) -> Option<&T> {
+    list.get(1)
+}
+```

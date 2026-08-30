@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let log = vec![6, 7, 8, 9];
+    println!("The first entry is {}", *log.first().unwrap());
+    println!("The last entry is {}", log.last().unwrap());
+}
+```

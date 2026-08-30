@@ -1,0 +1,7 @@
+```
+fn main() {
+    let g = "granite";
+    print(g.as_bytes()[0] as char);
+    print(g.as_bytes().last().unwrap() as char);
+}
+```

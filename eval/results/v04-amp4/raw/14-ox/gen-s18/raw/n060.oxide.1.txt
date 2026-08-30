@@ -1,0 +1,29 @@
+```text
+struct Reading { label: Str, values: Vec<Int> }
+
+fn sum_digits(s: Str) -> Int {
+    let sum = 0
+    for ch in chars(s) {
+        if ch >= "0" && ch <= "9" {
+            sum += parse_int(ch).unwrap_or(0)
+        }
+    }
+    sum
+}
+
+fn count_digits(s: Str) -> Int {
+    let count = 0
+    for ch in chars(s) {
+        if ch >= "0" && ch <= "9" {
+            count += 1
+        }
+    }
+    count
+}
+
+fn main() {
+    let input = "a1b22"
+    print(sum_digits(input))
+    print(count_digits(input))
+}
+```

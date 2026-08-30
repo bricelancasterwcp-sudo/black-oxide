@@ -1,0 +1,19 @@
+```rust
+struct Reading { label: Str, values: Vec<Int> }
+
+fn lookup(v: Vec<Int>, i: Int) -> Option<Int> {
+    get(v, i)
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(vec(), 10), 20) }
+    match lookup(r.values.clone(), 0) {
+        Some(n) => print(n),
+        None => print_str("position 1 is empty"),
+    }
+    match lookup(r.values.clone(), 3) {
+        Some(n) => print(n),
+        None => print_str("position 4 is empty"),
+    }
+}
+```

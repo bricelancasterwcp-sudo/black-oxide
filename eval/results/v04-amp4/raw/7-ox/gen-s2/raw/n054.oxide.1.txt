@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let s = "keyboard";
+    let mut vowels = 0;
+    let mut consonants = 0;
+
+    for c in s.chars() {
+        match c {
+            'a' | 'e' | 'i' | 'o' | 'u' |
+            'A' | 'E' | 'I' | 'O' | 'U' => vowels += 1,
+            _ if c.is_alphabetic() => consonants += 1,
+            _ => (),
+        }
+    }
+
+    print(vowels);
+    print(consonants);
+}
+```

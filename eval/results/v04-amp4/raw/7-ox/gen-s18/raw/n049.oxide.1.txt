@@ -1,0 +1,29 @@
+```rust
+struct Figure { id: Int }
+
+fn min_id(figs: Vec<Figure>) -> Option<Int> {
+    match figs.first() {
+        Some(f) => Some(figs.iter().map(|f| f.id).min()?),
+        None => None,
+    }
+}
+
+fn max_min_gap(figs: Vec<Figure>) -> Option<Int> {
+    let min = min_id(figs.clone())?;
+    let max = match figs.last() {
+        Some(f) => Some(figs.iter().map(|f| f.id).max()?),
+        None => None,
+    };
+    max.map(|m| m - min)
+}
+
+fn main() {
+    let figures = vec![Figure { id: 8 }, Figure { id: 3 }, Figure { id: 11 }, Figure { id: 6 }];
+    if let Some(min) = min_id(figures.clone()) {
+        print(min);
+    }
+    if let Some(gap) = max_min_gap(figures) {
+        print(gap);
+    }
+}
+```

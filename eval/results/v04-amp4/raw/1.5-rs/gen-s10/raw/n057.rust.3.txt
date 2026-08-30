@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let fruits = vec!["fig", "banana", "kiwi"];
+    let mut longest_fruit = "";
+    let mut max_length = 0;
+
+    for &fruit in &fruits {
+        if fruit.len() > max_length {
+            longest_fruit = fruit;
+            max_length = fruit.len();
+        }
+    }
+
+    println!("The name with the most letters is: {}", longest_fruit);
+    println!("Its letter count is: {}", max_length);
+}
+```

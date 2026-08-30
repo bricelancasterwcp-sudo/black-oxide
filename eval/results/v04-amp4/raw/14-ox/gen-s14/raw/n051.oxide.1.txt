@@ -1,0 +1,7 @@
+```
+fn main() {
+    let s = "granite"
+    print(s[0])  // first letter
+    print(s[s.len()-1])  // last letter
+}
+```

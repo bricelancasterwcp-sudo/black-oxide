@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let mut sequence = vec![1, 1];
+    for i in 2..10 {
+        let next_term = sequence[i - 1] + sequence[i - 2];
+        sequence.push(next_term);
+    }
+    println!("{}", sequence[9]);
+}
+```

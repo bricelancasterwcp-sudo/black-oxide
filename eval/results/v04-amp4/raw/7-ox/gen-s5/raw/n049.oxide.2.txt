@@ -1,0 +1,16 @@
+fn main() {
+    let figures = vec!(8, 3, 11, 6);
+    
+    let min_figure = match min(figures.clone()) {
+        Some(x) => x,
+        None => panic!("No figures provided"),
+    };
+    
+    let max_figure = match max(figures.clone()) {
+        Some(x) => x,
+        None => panic!("No figures provided"),
+    };
+    
+    print(min_figure);
+    println(max_figure - min_figure);
+}

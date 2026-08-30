@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let s = "coffee";
+    let mut seen = Vec::new();
+    for c in chars(s) {
+        if contains(seen, c.clone()) {
+            continue;
+        } else if contains(s, concat(c.clone(), c.clone())) {
+            print_str(&c);
+            push(&mut seen, c.clone());
+        }
+    }
+}
+```

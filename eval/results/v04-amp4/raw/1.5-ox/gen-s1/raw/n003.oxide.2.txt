@@ -1,0 +1,11 @@
+```
+fn main() {
+    let count = 0;
+    for i in range(1, 37) { // Fixed the range to include 36
+        if i % 36 == 0 {
+            count += 1; // Fixed the indentation
+        }
+    }
+    print(count);
+}
+```

@@ -1,0 +1,13 @@
+```oxide
+fn main() {
+    let mut q = vec(1, 2, 3, 4, 5);
+    let len = len(q);
+    if len > 0 {
+        let first = get(q, 0)?;
+        set(q, len - 1, first)?;
+    }
+    for x in q {
+        print(x)
+    }
+}
+```

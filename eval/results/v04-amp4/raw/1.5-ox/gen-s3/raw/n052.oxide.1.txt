@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let text = "banana";
+    for (index, char) in text.chars().enumerate() {
+        if char == 'n' {
+            println!("{}", index);
+        }
+    }
+}
+```
+
+This Rust program iterates over each character in the string "banana" and checks if it is an 'n'. If it is, the program prints out the position of that character (counting from zero).

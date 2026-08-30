@@ -1,0 +1,26 @@
+```
+struct Circle {
+    radius: Float
+}
+
+struct Square {
+    side: Int
+}
+
+impl Shape {
+    fn area(&self) -> Float {
+        match self {
+            Square { side } => side * side,
+            Circle { radius } => std::f64::consts::PI * radius * radius,
+        }
+    }
+}
+
+fn main() {
+    let r1 = Square { side: 4 };
+    let r2 = Circle { radius: 3.0 };
+
+    println(format!("The area of the square is {:.2}", r1.area()));
+    println!("{}", r2.area());
+}
+```

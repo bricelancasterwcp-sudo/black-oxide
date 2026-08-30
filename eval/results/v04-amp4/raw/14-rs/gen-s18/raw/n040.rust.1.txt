@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let square_side = 4;
+    let circle_radius = 3;
+    let pi = 3.0;
+
+    let square_area = square_side * square_side;
+    let circle_area = pi * circle_radius * circle_radius;
+
+    println!("Area of the square: {}", square_area);
+}
+```

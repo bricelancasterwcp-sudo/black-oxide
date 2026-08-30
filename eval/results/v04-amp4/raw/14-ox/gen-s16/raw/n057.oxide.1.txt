@@ -1,0 +1,30 @@
+```text
+fn main() {
+    let fig = "fig"
+    let banana = "banana"
+    let kiwi = "kiwi"
+
+    let max_len = max_len(fig, banana, kiwi)
+    print(max_len.name)
+    print(max_len.len)
+}
+
+struct Word {
+    name: Str,
+    len: Int,
+}
+
+fn max_len(a: Str, b: Str, c: Str) -> Word {
+    let a_len = str_len(a)
+    let b_len = str_len(b)
+    let c_len = str_len(c)
+
+    if a_len >= b_len && a_len >= c_len {
+        Word { name: a, len: a_len }
+    } else if b_len >= a_len && b_len >= c_len {
+        Word { name: b, len: b_len }
+    } else {
+        Word { name: c, len: c_len }
+    }
+}
+```

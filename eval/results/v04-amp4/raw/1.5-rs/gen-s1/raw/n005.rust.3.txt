@@ -1,0 +1,28 @@
+Here is the fully corrected Rust program:
+
+```rust
+fn main() {
+    let sum: i32 = (1..=20).filter(|&x| x % 2 == 0).sum();
+    println!("The total of all even numbers between 1 and 20 inclusive is {}", sum);
+}
+```
+
+The output should be:
+The total of all even numbers between 1 and 20 inclusive is 100
+
+Explanation:
+In the original program, the `filter` method was called on the range `(1..=20)`, which generates a stream of numbers from 1 to 20. However, this does not mean that the filter will only keep even numbers. The `filter` method takes a closure that returns a boolean value, so the closure passed to it needs to be able to determine whether an element should be included in the resulting iterator.
+
+In this case, the closure `(|&x| x % 2 == 0)` checks if a number is even by using the modulus operator `%`. This operator returns the remainder when one number is divided by another. If the remainder is zero, the number is even.
+
+However, there was an issue with the original program that caused it to produce incorrect output. The `filter` method does not return an iterator of integers, but rather an iterator of references to integers (`&i32`). When we call `.sum()`, Rust tries to sum up these references instead of the actual integer values they point to.
+
+To fix this, we need to use the `map` method before calling `.sum()`. The `map` method takes a closure that transforms each element in the iterator. In this case, we want to transform each reference to an integer into the value it points to (i.e., just the integer itself).
+
+So, we modify the code to:
+```rust
+let sum: i32 = (1..=20).filter(|&x| x % 2 == 0).map(|x| *x).sum();
+```
+
+Now, when we run the program again, it should produce the correct output of:
+The total of all even numbers between 1 and 20 inclusive is 100

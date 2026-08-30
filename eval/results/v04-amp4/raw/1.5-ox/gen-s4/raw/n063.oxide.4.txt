@@ -1,0 +1,10 @@
+```
+fn main() {
+    let mut total = 0;
+    for i in [4,5] {
+        if i == 4 { total += 3 * 4 }
+        else { total += 2 * 5 }
+    }
+    println(total);
+}
+```

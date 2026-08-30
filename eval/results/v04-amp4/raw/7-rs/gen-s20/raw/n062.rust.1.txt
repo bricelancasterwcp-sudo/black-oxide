@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let signals = ["green", "red", "yellow"];
+    for &signal in signals.iter() {
+        match signal {
+            "green" => println!("go"),
+            "red" => println!("stop"),
+            "yellow" => println!("wait"),
+            _ => {}
+        }
+    }
+}
+```

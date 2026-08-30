@@ -1,0 +1,17 @@
+```oxide
+struct Result(Str);
+
+fn divide(a: Int, b: Int) -> Result {
+    if b == 0 {
+        return Result("bad");
+    }
+    let result = a / b;
+    Result(to_string(result))
+}
+
+fn main() {
+    match divide(20, 4) {
+        Result(s) => print_str(s),
+    }
+}
+```

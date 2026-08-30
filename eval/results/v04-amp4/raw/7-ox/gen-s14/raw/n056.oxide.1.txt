@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let mut sum = 0;
+    let mut count_missing = 0;
+    for text in vec!["7", "x", "9", "?"] {
+        match text.parse::<Int>() {
+            Ok(num) => sum += num,
+            Err(_) => count_missing += 1,
+        }
+    }
+    print(sum);
+    print(count_missing);
+}
+```

@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut signals = vec![0; 3];
+    for signal in signals.iter_mut() {
+        match signal {
+            0 => print_str("go for green\n"),
+            1 => print_str("stop for red\n"),
+            2 => print_str("wait for yellow\n"),
+            _ => panic!("unexpected signal value: {}", signal),
+        }
+    }
+}
+```

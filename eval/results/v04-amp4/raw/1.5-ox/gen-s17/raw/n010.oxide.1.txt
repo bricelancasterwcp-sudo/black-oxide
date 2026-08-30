@@ -1,0 +1,21 @@
+```rust
+fn main() {
+    let n = 91;
+    let mut factors = Vec::new();
+    for i in 2..=((n as f64).sqrt()) as i32 + 1 {
+        if n % i == 0 {
+            factors.push(i);
+            // Check if we have already found the factor, which would mean it's not a prime number
+            if factors.contains(&n / i) {
+                print!("no");
+                return;
+            }
+        }
+    }
+    if factors.is_empty() {
+        print!("yes");
+    } else {
+        println!("no");
+    }
+}
+```

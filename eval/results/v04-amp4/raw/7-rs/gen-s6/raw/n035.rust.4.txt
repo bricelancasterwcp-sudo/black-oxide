@@ -1,0 +1,21 @@
+```rust
+fn safe_divide(a: i32, b: i32) -> Result<i32, &'static str> {
+    if b == 0 {
+        Err("bad")
+    } else {
+        Ok(a / b)
+    }
+}
+
+fn main() {
+    match safe_divide(20, 4) {
+        Ok(result) => println!("{}", result),
+        Err(e) => println!("{}", e),
+    }
+
+    match safe_divide(20, 0) {
+        Ok(_) => println!("bad"),
+        Err(e) => println!("{}", e),
+    }
+}
+```

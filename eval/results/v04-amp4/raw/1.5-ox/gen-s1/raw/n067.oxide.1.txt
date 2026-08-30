@@ -1,0 +1,19 @@
+```
+fn walk(numbers: Vec<Int>) {
+    let mut total = Int::zero();
+    for number in numbers.iter() {
+        if number % 2 == 1 {
+            print!("{} ", number * 2);
+            total += number * 2;
+        } else {
+            total += number;
+        }
+    }
+    println!("\nTotal of even entries: {}", total);
+}
+
+fn main() {
+    let numbers = vec![7, 4, 9, 10];
+    walk(numbers);
+}
+```

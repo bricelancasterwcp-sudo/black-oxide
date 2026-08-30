@@ -1,0 +1,21 @@
+```rust
+fn main() {
+    let n = 9875;
+    let mut sum = 0;
+
+    while n > 0 {
+        sum += n % 10;
+        n /= 10;
+    }
+
+    print(sum);
+}
+```
+
+To compile and run this program, save it to a file named `main.rs`, then use the following command in your terminal:
+
+```sh
+rustc main.rs && ./main
+```
+
+When you run this program, it will output `25`.

@@ -1,0 +1,17 @@
+```rust
+use std::io::{stdin, stdout};
+use std::str;
+
+fn main() {
+    let mut input = String::new();
+    stdin().read_line(&mut input).expect("Failed to read line");
+
+    let words: Vec<&str> = input.split_whitespace().collect();
+    let word_count = words.len();
+
+    let total_chars = input.chars().count();  // fix to use `chars` instead of `str`
+
+    println!("Word count: {}", word_count);
+    println!("Total characters: {}", total_chars);  // add a semicolon at the end
+}
+```

@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    println!("{}{}", 4, 3);
+    println!("{}{}", 3, 2);
+    println!("{}{}", 2, 1);
+    println!("{}{}", 1, 0);
+}
+```
+In this program, we print the digits of the number 1234 in opposite order by using `println!` twice, once for each digit. The first call prints the last digit (4), the second call prints the second-to-last digit (3), and so on.

@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let num = 91;
+    if num > 1 && (num % 2 != 0 || num % 3 != 0) {
+        println!("yes");
+    } else {
+        println!("no");
+    }
+}
+```
+
+The corrected program checks for divisors of 91 by checking if `num` is not divisible by 2 and 3. If it's not divisible by either, it's a prime number.

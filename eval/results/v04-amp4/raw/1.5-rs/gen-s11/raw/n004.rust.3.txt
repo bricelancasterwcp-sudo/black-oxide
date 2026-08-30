@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let mut terms = vec![1, 1];
+    for _ in 0..9 {
+        terms.push(terms[terms.len() - 2] + terms[terms.len() - 1]);
+    }
+    println!("{:?}", terms[9]);
+}
+```

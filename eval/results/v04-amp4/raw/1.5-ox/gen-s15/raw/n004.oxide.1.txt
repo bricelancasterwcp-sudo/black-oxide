@@ -1,0 +1,16 @@
+```rust
+fn fibonacci(n: Int) -> Int {
+    let mut a = 0;
+    let mut b = 1;
+    for _ in 0..n - 2 {
+        let temp = a + b;
+        a = b;
+        b = temp;
+    }
+    b
+}
+
+fn main() {
+    print(fibonacci(9)); // tenth term of the Fibonacci sequence
+}
+```

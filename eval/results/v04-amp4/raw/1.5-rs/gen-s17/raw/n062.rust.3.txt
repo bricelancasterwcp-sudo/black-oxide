@@ -1,0 +1,27 @@
+```rust
+fn main() {
+    loop {
+        let signal = read_signal();
+        match signal {
+            "green" => println!("go"),
+            "red" => println!("stop"),
+            "yellow" => println!("wait"),
+            _ => panic!("Invalid signal"),
+        }
+    }
+}
+
+fn read_signal() -> &'static str {
+    // Simulate reading the signal from a source
+    let mut input = String::new();
+    std::io::stdin().read_line(&mut input).expect("Failed to read line");
+    input.trim_end(); // Trim newline character
+
+    if input == "green" || input == "red" || input == "yellow" {
+        return input;
+    } else {
+        // Handle invalid signals here
+        panic!("Invalid signal");
+    }
+}
+```

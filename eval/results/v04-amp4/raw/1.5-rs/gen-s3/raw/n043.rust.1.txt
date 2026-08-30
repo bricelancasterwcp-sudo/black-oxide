@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut q = vec![1, 2, 3, 4, 5];
+    q.swap(0, q.len() - 1);
+    for &i in q.iter() {
+        println!("{}", i);
+    }
+}
+```
+
+The provided Rust program initializes a vector with the numbers 1 through 5, swaps the first and last elements of the vector using the `swap` method, and then prints each element in the queue one entry per line.

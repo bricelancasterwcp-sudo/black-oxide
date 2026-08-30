@@ -1,0 +1,32 @@
+```ox
+struct Reading { label: Str, values: Vec<Int> }
+
+fn count_exceeding(v: Vec<Int>, threshold: Int) -> Int {
+    let count = 0
+    for x in v {
+        if x > threshold {
+            count += 1
+        }
+    }
+    count
+}
+
+fn max_reading(v: Vec<Int>) -> Option<Int> {
+    let mut max_value = None
+    for x in v {
+        if max_value == None || x > unwrap_or(max_value, 0) {
+            max_value = Some(x)
+        }
+    }
+    max_value
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: vec(6, 11, 3, 14, 9) }
+    print(count_exceeding(r.values, 5))
+    match max_reading(r.values) {
+        Some(n) => print(n),
+        None => print_str("no readings"),
+    }
+}
+```

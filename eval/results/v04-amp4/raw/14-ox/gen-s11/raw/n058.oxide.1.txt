@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let word = "coffee";
+    let mut seen = Vec::new();
+    for c in chars(word) {
+        if contains(seen, c) {
+            continue;
+        }
+        seen = push(seen, c);
+        print(c);
+    }
+}
+```

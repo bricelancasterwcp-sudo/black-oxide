@@ -1,0 +1,10 @@
+fn main() {
+    let mut queue = vec![1, 2, 3, 4, 5];
+    std::mem::swap(&mut queue[0], &mut queue[queue.len() - 1]);
+    for num in &mut queue[..queue.len()/2] { // Split the vector into two mutable halves
+        println!("{}", num);
+    }
+    for num in &mut queue[queue.len()/2 + 1..] { // Print the second half
+        println!("{}", num);
+    }
+}

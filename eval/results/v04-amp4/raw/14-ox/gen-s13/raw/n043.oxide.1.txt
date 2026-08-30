@@ -1,0 +1,17 @@
+```rust
+struct Queue { items: Vec<Int> }
+
+fn main() {
+    let q = Queue { items: vec(1, 2, 3, 4, 5) }
+    if len(q.items) > 1 {
+        let first = get(q.items, 0)?
+        let last = get(q.items, len(q.items) - 1)?
+        let q = set(set(q.items, 0, last), len(q.items) - 1, first)
+        for x in q {
+            print(x)
+        }
+    } else {
+        print_str("Queue too short to exchange")
+    }
+}
+```

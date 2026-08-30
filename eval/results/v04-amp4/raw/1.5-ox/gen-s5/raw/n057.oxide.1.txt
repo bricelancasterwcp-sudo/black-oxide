@@ -1,0 +1,22 @@
+```rust
+use std::cmp;
+
+struct Fruit {
+    name: Str,
+    letter_count: Int,
+}
+
+fn main() -> Int {
+    let fruits = vec![
+        Fruit { name: "fig", letter_count: 3 },
+        Fruit { name: "banana", letter_count: 6 },
+        Fruit { name: "kiwi", letter_count: 5 },
+    ];
+
+    let &fruit_with_most_letters = fruits.iter().max_by(|a, b| cmp::Reverse(a.letter_count)).unwrap();
+    print(fruit_with_most_letters.name);
+    println(&fruit_with_most_letters.letter_count);
+
+    fruit_with_most_letters.letter_count
+}
+```

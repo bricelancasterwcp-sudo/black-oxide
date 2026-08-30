@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut num = 1234;
+    let mut reversed_num = 0;
+
+    while num > 0 {
+        reversed_num = reversed_num * 10 + num % 10;
+        num /= 10;
+    }
+
+    println!("{}", reversed_num);
+}
+```

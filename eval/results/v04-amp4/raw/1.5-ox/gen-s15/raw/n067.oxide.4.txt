@@ -1,0 +1,18 @@
+```rust
+fn walk(v: Vec<Int>) -> Int {
+    let mut total = 0;
+    for i in 0..v.len() {
+        if v[i] % 2 != 0 {
+            print!("{} ", v[i] * 2);
+            total += v[i];
+        }
+    }
+    println!();
+    total
+}
+
+fn main() {
+    let mut v = vec![7, 4, 9, 10];
+    print(walk(v));            // field access copies: r stays usable
+}
+```

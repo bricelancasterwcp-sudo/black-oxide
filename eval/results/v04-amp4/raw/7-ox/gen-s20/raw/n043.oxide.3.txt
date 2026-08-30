@@ -1,0 +1,18 @@
+struct Queue { values: Vec<Int> }
+
+fn exchange_first_last(mut q: Queue) -> Queue {
+    if let Some(len) = q.values.len().checked_sub(1) {
+        if len > 0 {
+            q.values.swap(0, len);
+        }
+    }
+    q
+}
+
+fn main() {
+    let q = Queue { values: vec!(1, 2, 3, 4, 5) };
+    let q_exchanged = exchange_first_last(q);
+    for x in q_exchanged.values {
+        print(x);
+    }
+}

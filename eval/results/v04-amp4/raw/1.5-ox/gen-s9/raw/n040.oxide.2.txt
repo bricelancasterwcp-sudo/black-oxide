@@ -1,0 +1,18 @@
+```rust
+struct Square {
+    side: Int,
+}
+
+struct Circle {
+    radius: Float,
+}
+
+fn area_of_square(side: Int) -> Float {
+    side * side
+}
+
+fn main() {
+    let s = Square { side };
+    print(area_of_square(s.side)); // field access copies: s stays usable
+}
+```

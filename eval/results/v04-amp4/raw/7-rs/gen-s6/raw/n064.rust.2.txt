@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let list = vec![Some(10), None, Some(20)];
+    if let Some(value) = list.get(0) {
+        println!("{:?}", value);
+    }
+    if let Some(value) = list.get(3) {
+        println!("{:?}", value);
+    } else {
+        println!("None");
+    }
+}
+```

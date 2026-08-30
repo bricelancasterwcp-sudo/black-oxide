@@ -1,0 +1,9 @@
+```ox
+fn main() {
+    let values = vec!(8, 3, 11, 6)
+    let min_val = min(values)?
+    let max_val = max(values)?
+    print(min_val)
+    print(max_val - min_val)
+}
+```

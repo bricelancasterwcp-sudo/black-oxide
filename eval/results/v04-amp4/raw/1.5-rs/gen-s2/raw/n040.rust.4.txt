@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let side_length = 4.0;
+    let radius = 3.14159; // Corrected to use a variable for pi
+
+    let square_area = side_length * side_length;
+    println!("The area of the square is: {}", square_area);
+
+    let circle_area = pi * radius * radius;
+    println!("The area of the circle is: {:.2}", circle_area); // Using .2f to print with two decimal places
+}
+```

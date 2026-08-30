@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let fruits = [("fig", 3), ("banana", 6), ("kiwi", 4)];
+    let mut max_count = 0;
+    let mut max_name = String::new();
+
+    for &(name, count) in &fruits {
+        if count > max_count {
+            max_count = count;
+            max_name = name.to_string();
+        }
+    }
+
+    println!("The fruit with the most letters is: {}", max_name);
+    println!("It has {} letters.", max_count);
+}
+```

@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let mut sum = 0;
+    let mut count_not_num = 0;
+    
+    for item in vec![7, "x", 9, "?"] {
+        match item.parse::<Int>() {
+            Ok(num) => sum += num,
+            Err(_) => count_not_num += 1,
+        }
+    }
+    
+    print(sum);
+    print(count_not_num);
+}
+```

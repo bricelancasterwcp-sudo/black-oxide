@@ -1,0 +1,16 @@
+```rust
+fn second(v: Vec<Int>) -> Option<Int> {
+    match v.len() {
+        0 => None,
+        1 => None,
+        _ => Some(v[1]),
+    }
+}
+
+fn main() {
+    for i in [7, 8, 9] {
+        let r = second(vec![i]);
+        println!("{:?}", r);
+    }
+}
+```

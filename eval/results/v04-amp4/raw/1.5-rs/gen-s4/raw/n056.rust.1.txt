@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let text1 = "7";
+    let text2 = "x"; // Could be any text, number or string
+    let text3 = "9";
+    let text4 = "?";
+
+    let count_numbers: usize = [text1.parse::<i64>(), text2.parse::<i64>(), text3.parse::<i64>(), text4.parse::<i64>()].iter().filter(|&x| x.is_ok()).count();
+
+    println!("The total of the ones that do is {}", count_numbers);
+    println!("The number of ones that do not is {}", 4 - count_numbers);
+}
+```

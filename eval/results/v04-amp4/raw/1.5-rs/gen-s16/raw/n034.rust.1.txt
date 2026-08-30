@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    println!("{:?}", get_second_entry(&[7, 8, 9]));
+    println!("{:?}", get_second_entry(&[123]));
+    println!("{:?}", get_second_entry(&[]));
+}
+
+fn get_second_entry(list: &[isize]) -> Option<isize> {
+    if list.len() > 1 {
+        Some(list[1])
+    } else {
+        None
+    }
+}
+```

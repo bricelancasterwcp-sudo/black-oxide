@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    for entry in ["8", "oak", "15"] {
+        if let Some(num) = entry.parse::<i32>().ok() {
+            println!("{}", num);
+        } else {
+            println!("bad");
+        }
+    }
+}
+```

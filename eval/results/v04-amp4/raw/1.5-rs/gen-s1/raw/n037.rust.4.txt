@@ -1,0 +1,24 @@
+Here's the fixed version of your Rust code:
+
+```rust
+fn main() {
+    // The initial dimensions of the rectangle are 2 wide by 3 tall
+    let mut width = 2;
+    let height = 3;
+
+    // Calculate the area of the rectangle
+    let area = width * height;
+
+    // Print the original area of the rectangle
+    println!("Original Area: {}", area);
+
+    // Change the width to 5
+    width = 5;
+
+    // Recalculate and print the new area
+    let new_area = width * height;
+    println!("New Area: {}", new_area);
+}
+```
+
+This code correctly prints both the original and new areas of the rectangle.

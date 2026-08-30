@@ -1,0 +1,15 @@
+```text
+fn main() {
+    let word = "banana"
+    let char_to_find = "n"
+    let positions = vec()
+    for i in range(0, str_len(word)) {
+        if get(chars(word), i) == Some(char_to_find) {
+            positions = push(positions, i)
+        }
+    }
+    for pos in positions {
+        print(pos)
+    }
+}
+```

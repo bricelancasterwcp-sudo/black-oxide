@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let nums: Vec<&str> = vec!["7", "x", "9", "?"];
+    
+    let mut sum = 0;
+    let mut count = 0;
+
+    for num in &nums {
+        if num.chars().any(|c| c.is_numeric()) {
+            sum += num.parse::<i32>().unwrap_or(0);
+        } else {
+            count += 1;
+        }
+    }
+
+    println!("Sum: {}", sum);
+    println!("Count: {}", count);
+}
+```

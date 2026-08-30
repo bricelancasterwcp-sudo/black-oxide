@@ -1,0 +1,33 @@
+```rust
+struct Queue { items: Vec<Int> }
+
+fn push_back(q: Queue, x: Int) -> Queue {
+    let mut q = q;
+    q.items.push(x);
+    q
+}
+
+fn swap_first_last(q: Queue) -> Queue {
+    if q.items.len() > 1 {
+        let n = q.items.len();
+        let first = q.items[0];
+        let last = q.items[n - 1];
+        q.items[0] = last;
+        q.items[n - 1] = first;
+    }
+    q
+}
+
+fn print_queue(q: Queue) {
+    for item in q.items.iter() {
+        print(item);
+    }
+    print_str("\n");
+}
+
+fn main() {
+    let mut q = Queue { items: vec![1, 2, 3, 4, 5] };
+    q = swap_first_last(q);
+    print_queue(q);
+}
+```

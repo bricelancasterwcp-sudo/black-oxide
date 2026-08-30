@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut log = vec![6, 7, 8, 9];
+    print(log[0]); // First entry
+    print(log.pop().unwrap()); // Last entry
+}
+```
+
+In this program:
+1. The `main` function initializes a vector `log` with the values `[6, 7, 8, 9]`.
+2. It uses `print(log[0])` to output the first element of the vector, which is `6`.
+3. It then calls `pop()` on the vector, which removes and returns the last element. The `unwrap()` function is used to handle the case where the vector might be empty (which would cause an error if not handled).
+4. Finally, it prints the last element of the updated vector, which is `9`.

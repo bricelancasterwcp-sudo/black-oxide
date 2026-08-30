@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let result = get_second_entry(&[7, 8, 9]);
+    println!("{:?}", result);
+}
+
+fn get_second_entry(xs: &[i32]) -> Option<&i32> {
+    if xs.len() > 1 {
+        Some(&xs[1])
+    } else {
+        None
+    }
+}
+```

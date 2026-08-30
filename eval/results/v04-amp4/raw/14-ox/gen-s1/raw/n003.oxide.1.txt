@@ -1,0 +1,15 @@
+```
+fn divides(n: Int, x: Int) -> Bool {
+    n % x == 0
+}
+
+fn main() {
+    let count = 0
+    for i in range(1, 37) {
+        if divides(36, i) {
+            count = count + 1
+        }
+    }
+    print(count)
+}
+```

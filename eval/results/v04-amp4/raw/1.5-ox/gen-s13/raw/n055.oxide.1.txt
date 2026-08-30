@@ -1,0 +1,24 @@
+```rust
+fn main() {
+    let oak = None;
+    let eight = 8;
+    let fifteen = Some(15);
+
+    match oak {
+        Some(n) => println!("bad"),
+        None => println!("{}", eight),
+    }
+
+    match eight {
+        Some(n) => println!("{}", n),
+        None => println!("bad"),
+    }
+
+    match fifteen {
+        Some(n) => println!("{}", n),
+        None => println!("bad"),
+    }
+}
+```
+
+This program reads three entries from text, prints the number if it holds a value, and "bad" otherwise. Each `match` statement checks for the presence of a value and prints the corresponding message.

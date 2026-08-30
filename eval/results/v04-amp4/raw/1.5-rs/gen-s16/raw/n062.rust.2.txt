@@ -1,0 +1,29 @@
+```rust
+fn main() {
+    loop {
+        let signal = match rand::random::<u8>() % 3 {
+            0 => "green",
+            1 => "red",
+            2 => "yellow",
+            _ => unreachable!(),
+        };
+
+        println!("{}", signal);
+
+        if signal == "green" {
+            break;
+        }
+
+        // Wait for the next signal
+        while signal != "green" {
+            std::thread::sleep(std::time::Duration::from_secs(1));
+            signal = match rand::random::<u8>() % 3 {
+                0 => "green",
+                1 => "red",
+                2 => "yellow",
+                _ => unreachable!(),
+            };
+        }
+    }
+}
+```

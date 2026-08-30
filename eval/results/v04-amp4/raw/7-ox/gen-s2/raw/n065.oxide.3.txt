@@ -1,0 +1,11 @@
+fn main() {
+    let readings = vec(6, 11, 3, 14, 9);
+    let count = count_if(readings, |x| x > 5);
+    print(count);
+
+    let max_reading = match max(readings) {
+        Some(max) => max,
+        None => 0
+    };
+    print(max_reading);
+}

@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    assert_eq!(second_entry(&[7]), Some(8));
+    assert_eq!(second_entry(&[]), None);
+    assert_eq!(second_entry(&[9, 10]), Some(10));
+}
+```

@@ -1,0 +1,20 @@
+```rust
+
+fn main() {
+    let text = "a1b22";
+
+    // Count all digit characters and their sum
+    let mut sum_of_digits: u32 = 0;
+    let mut count_digits: usize = 0;
+
+    for c in text.chars() {
+        if c.is_digit(10) {
+            sum_of_digits += c.to_digit(10).unwrap();
+            count_digits += 1;
+        }
+    }
+
+    println!("Sum of digits: {}", sum_of_digits);
+    println!("Number of digit characters: {}", count_digits);
+}
+```

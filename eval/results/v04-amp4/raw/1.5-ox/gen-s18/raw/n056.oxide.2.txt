@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let s = "7x9?".chars().filter_map(|c| c.is_digit(10)).collect::<String>();
+    let digits: Vec<Int> = s.split_whitespace()
+                             .map(|s| s.parse::<Int>().unwrap())
+                             .collect();
+    let sum = digits.iter().sum();
+    let count = digits.len();
+
+    print!("[{:?}, {}]\n", sum, count);
+}
+```

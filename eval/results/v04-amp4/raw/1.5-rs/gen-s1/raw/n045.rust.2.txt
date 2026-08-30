@@ -1,0 +1,15 @@
+Here's the fixed version of your Rust code:
+
+```rust
+fn main() {
+    let mut log = vec![6, 7, 8, 9];
+    
+    println!("First entry: {}", log[0]);
+    println!("Last entry: {}", log.last().unwrap());
+}
+```
+The last() method returns a reference to the last element of the vector. In order to use this method we need to enable the `std::option` feature in the crate attributes:
+
+```rust
+#![feature(std_option)]
+```

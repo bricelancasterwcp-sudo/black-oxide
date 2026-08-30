@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let arr = [5, 12, 3, 18, 9];
+    let count_under_cutoff = arr.iter().filter(|&&x| x < 10).count();
+    let count_over_cutoff = arr.iter().filter(|&&x| x >= 10).count();
+
+    println!("Count under cutoff: {}", count_under_cutoff);
+    println!("Count over cutoff: {}", count_over_cutoff);
+}
+```

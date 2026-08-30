@@ -1,0 +1,20 @@
+```
+fn main() {
+    let mut measurements = vec![9, 2, 7, 4];
+    for i in 0..measurements.len() {
+        let min_index = i;
+        for j in i+1..measurements.len() {
+            if measurements[j] < measurements[min_index] {
+                min_index = j;
+            }
+        }
+        let temp = measurements[i];
+        measurements[i] = measurements[min_index];
+        measurements[min_index] = temp;
+    }
+    println!("{}", measurements[0]);
+    println!("{}", measurements[1]);
+    println!("{}", measurements[2]);
+    println!("{}", measurements[3]);
+}
+```

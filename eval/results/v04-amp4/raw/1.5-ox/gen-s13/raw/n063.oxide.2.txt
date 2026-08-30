@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let line1 = 4 * 3;
+    let line2 = 5 * 2;
+
+    println!("Line 1 value: {}", line1);
+    println!("Line 2 value: {}", line2);
+
+    println!("Both lines combined value: {}", line1 + line2);
+}
+```

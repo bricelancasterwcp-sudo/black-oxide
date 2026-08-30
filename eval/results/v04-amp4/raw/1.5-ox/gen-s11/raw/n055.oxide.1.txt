@@ -1,0 +1,19 @@
+```rust
+use std::fmt::{self};
+
+fn main() {
+    let inputs: [i32; 3] = [8, 15, 0];
+
+    for &input in inputs.iter() {
+        print_number(input);
+    }
+}
+
+fn print_number(value: i32) {
+    match value {
+        8 => println!("The number is 8"),
+        15 => println!("The number is 15"),
+        _ => println!("Bad"),
+    }
+}
+```

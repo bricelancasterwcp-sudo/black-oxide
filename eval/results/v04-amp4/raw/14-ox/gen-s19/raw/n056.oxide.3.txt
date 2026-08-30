@@ -1,0 +1,1 @@
+fn main() { let numbers = vec(Some(7), None, Some(9), None); let mut total = 0; let mut count_missing = 0; for num in numbers { match num { Some(n) => total = total + n, None => count_missing = count_missing + 1, } } print(total); print(count_missing); }

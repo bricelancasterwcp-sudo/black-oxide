@@ -1,0 +1,22 @@
+```
+struct Log { entries: Vec<Int> }
+
+fn first_entry(log: Log) -> Int {
+    get(log.entries, 0)?
+}
+
+fn last_entry(log: Log) -> Int {
+    let len = len(log.entries)
+    if len == 0 {
+        -1 // or handle empty log appropriately
+    } else {
+        get(log.entries, len - 1)?
+    }
+}
+
+fn main() {
+    let log = Log { entries: vec(6, 7, 8, 9) }
+    print(first_entry(log))
+    print(last_entry(log))
+}
+```

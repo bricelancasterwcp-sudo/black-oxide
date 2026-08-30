@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let a = 4 * 3;
+    let b = 5 * 2;
+    println!("Line 1: {}", a);
+    println!("Line 2: {}", b);
+    println!("Total: {}", a + b);
+}
+```
+
+Explanation:
+The diagnostics indicate that there are multiple unexpected characters (`;`) and missing end of statements. These issues were fixed by removing the unnecessary semicolons from lines 2 through 6, and ensuring each statement ends with a semicolon in line 7 to close the function.

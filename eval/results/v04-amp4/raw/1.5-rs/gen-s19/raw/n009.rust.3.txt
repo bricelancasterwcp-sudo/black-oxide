@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let numbers = [4, 3, 2, 1];
+    println!("{:?}", numbers);
+}
+```
+
+The original code was trying to print an array of integers `[1, 2, 3, 4]` with its digits in the opposite order. However, it did not actually reverse the elements of the array. The corrected program does exactly that by defining a new array `numbers` containing the same values in reverse order and then printing that array using `println!("{:?}", numbers)`.

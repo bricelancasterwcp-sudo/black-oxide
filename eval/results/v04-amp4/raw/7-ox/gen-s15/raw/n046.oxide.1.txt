@@ -1,0 +1,25 @@
+```rust
+fn count_under_over(v: Vec<Int>, cutoff: Int) -> (Int, Int) {
+    let mut under = 0;
+    let mut over = 0;
+    for x in v {
+        if x < cutoff {
+            under += 1;
+        } else {
+            over += 1;
+        }
+    }
+    (under, over)
+}
+
+fn main() {
+    let nums = push(push(push(push(vec(), 5), 12), 3), 18);
+    let nums = push(nums, 9);
+    let cutoff = 10;
+    let (under, over) = count_under_over(nums, cutoff);
+    print_str("Under cutoff: ");
+    print(under);
+    print_str("\nOver cutoff: ");
+    print(over);
+}
+```

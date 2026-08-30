@@ -1,0 +1,21 @@
+```rust
+fn main() {
+    loop {
+        let signal = get_signal(); // Replace with actual logic to get the signal
+        match signal {
+            "green" => println!("Go"),
+            "red" => println!("Stop"),
+            "yellow" => println!("Wait"),
+            _ => break, // Break the loop if an unexpected signal is received
+        }
+    }
+
+    fn get_signal() -> &'static str {
+        use rand::random;  // Importing random function from rand crate
+
+        rand::random::<bool>()  // Use a random number generator to simulate getting signals
+            .then(|| if rand::random::<bool>() { "green" } else { "yellow" })
+            .unwrap_or("red")   // Ensure the signal is always valid
+    }
+}
+```

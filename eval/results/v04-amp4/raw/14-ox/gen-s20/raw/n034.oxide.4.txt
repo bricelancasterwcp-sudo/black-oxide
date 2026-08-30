@@ -1,0 +1,16 @@
+fn second_entry(v: Vec<Int>) -> Option<Int> {
+    let x = get(v, 1)?
+    Some(x)
+}
+
+fn main() {
+    let list1 = vec()
+    push(list1, 7)
+    push(list1, 8)
+    push(list1, 9)
+
+    match second_entry(clone(list1)) {
+        Some(n) => print(n),
+        None => print_str("none"),
+    }
+}

@@ -1,0 +1,11 @@
+```
+struct Reading { label: Str, values: Vec<Int> }
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(vec(), 3), 42) }
+    println!("{}", r.values.first().unwrap());
+    println!("{}", r.values.get(1).unwrap());
+    println!("{}", r.values.get(2).unwrap());
+    println!("{}", r.values.last().unwrap());
+}
+```

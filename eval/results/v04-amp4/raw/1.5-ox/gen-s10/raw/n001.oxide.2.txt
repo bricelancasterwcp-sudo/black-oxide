@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let sum = (1..=5).map(|x| x * x * x).sum::<Int>();
+    println!("{}", sum);
+}
+```
+
+Explanation of corrections:
+- The pipe characters were not correctly placed in the `map` function. They should be after the lambda expression.
+- The semicolons at the end of lines were incorrect. There are no semicolons needed between statements or expressions in Rust.
+- A semicolon was incorrectly placed before the `sum` variable declaration, which is correct for defining a variable with an initializer.

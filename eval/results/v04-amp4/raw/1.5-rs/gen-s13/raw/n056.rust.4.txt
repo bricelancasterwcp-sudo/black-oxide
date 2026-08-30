@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut numbers: Vec<Option<i32>> = vec![Some(7), None, Some(9), Some(1)];
+
+    let total_sum: i32 = numbers.iter().filter_map(|&num| num).sum();
+    println!("Sum of the ones that do: {}", total_sum);
+
+    let non_zero_count: usize = numbers.iter().filter(|&num| num.is_some() && *num != 0).count();
+    println!("Number of non-zero elements: {}", non_zero_count);
+}
+```

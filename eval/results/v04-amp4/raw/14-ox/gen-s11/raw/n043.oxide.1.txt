@@ -1,0 +1,13 @@
+```text
+fn main() {
+    let mut q = push(push(push(push(push(vec(), 1), 2), 3), 4), 5)
+    let first = get(q, 0)?
+    let last_index = len(q) - 1
+    let last = get(q, last_index)?
+    q = set(q, 0, last)
+    q = set(q, last_index, first)
+    for x in q {
+        print(x)
+    }
+}
+```

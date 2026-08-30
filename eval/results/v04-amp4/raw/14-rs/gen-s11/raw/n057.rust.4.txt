@@ -1,0 +1,10 @@
+fn main() {
+    let fruits = ["fig", "banana", "kiwi"];
+    let mut longest_name = &fruits[0];
+    for fruit in fruits.iter() {
+        if fruit.len() > longest_name.len() {
+            longest_name = fruit;
+        }
+    }
+    println!("{} has the most letters: {}", longest_name, longest_name.len());
+}

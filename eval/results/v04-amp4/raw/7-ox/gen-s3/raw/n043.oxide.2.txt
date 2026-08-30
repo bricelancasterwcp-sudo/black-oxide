@@ -1,0 +1,21 @@
+```rust
+struct Queue { items: Vec<Int> }
+
+fn enqueue(q: &mut Queue, x: Int) -> () {
+    push(q.items, x)
+}
+
+fn dequeue(q: &mut Queue) -> Option<Int> {
+    get(q.items, 0)?
+}
+
+fn main() {
+    let mut q = Queue { items: vec(1, 2, 3, 4, 5) };
+    if let Some(first) = dequeue(&mut q) {
+        enqueue(&mut q, first);
+        for x in q.items {
+            print(x)
+        }
+    }
+}
+```

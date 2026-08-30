@@ -1,0 +1,18 @@
+```oxide
+fn main() {
+    let s = "a1b22";
+    let mut total = 0;
+    let mut count = 0;
+    for c in chars(s) {
+        if is_digit(c) {
+            total += parse_int(concat(str_len(&c.to_str().to_string()), ""))?;
+            count += 1;
+        }
+    }
+    print(total);
+    print(count);
+}
+fn is_digit(c: Str) -> Bool {
+    '0' <= c && c <= '9'
+}
+```

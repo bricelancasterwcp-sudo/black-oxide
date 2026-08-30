@@ -1,0 +1,20 @@
+```rust
+struct Reading { label: Str, values: Vec<Int> }
+
+fn find_n_positions(s: Str) -> Vec<Int> {
+    let mut positions = vec()
+    for (i, c) in chars(s).enumerate() {
+        if c == "n" {
+            positions = push(positions, i)
+        }
+    }
+    positions
+}
+
+fn main() {
+    let banana_positions = find_n_positions("banana")
+    for pos in banana_positions {
+        print(pos)
+    }
+}
+```

@@ -1,0 +1,10 @@
+```rust
+struct Granite { open: Str, close: Str }
+
+fn main() {
+    let g = Granite { open: "G", close: "A" };
+    print(g.open);
+    print_str("\n");
+    print(g.close);
+}
+```

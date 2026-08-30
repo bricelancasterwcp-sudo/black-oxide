@@ -1,0 +1,13 @@
+```text
+fn calculate_line(units: Int, price: Int) -> Int {
+    units * price
+}
+
+fn main() {
+    let line1 = calculate_line(4, 3)
+    let line2 = calculate_line(5, 2)
+    print(line1)
+    print(line2)
+    print(line1 + line2)
+}
+```

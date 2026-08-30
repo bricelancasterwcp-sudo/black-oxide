@@ -1,0 +1,5 @@
+```rust
+fn second(v: Vec<Int>) -> Option<Int> {
+    v[1]
+}
+```

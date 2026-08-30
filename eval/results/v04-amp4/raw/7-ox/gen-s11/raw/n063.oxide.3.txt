@@ -1,0 +1,8 @@
+fn main() {
+    let (line1_value, line2_value) = (4 * 3, 5 * 2);
+    print(line1_value);
+    print_str("\n");
+    print(line2_value);
+    print_str("\n");
+    print(line1_value + line2_value);
+}

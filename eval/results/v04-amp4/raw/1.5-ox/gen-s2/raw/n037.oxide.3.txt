@@ -1,0 +1,11 @@
+```rust
+struct Rectangle { width: Int, height: Int }
+
+fn main() {
+    let mut r = Rectangle { width: 2, height: 3 };
+    // Use `let` to consume `r`, reassigning
+    r.width = 5;
+    // Print the area
+    print(int_to_str(r.area())); 
+}
+```

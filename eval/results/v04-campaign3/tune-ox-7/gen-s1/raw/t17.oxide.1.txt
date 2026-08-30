@@ -1,0 +1,22 @@
+struct Vec<Int> { items: Vec<Int> }
+fn get(v: Vec<Int>, pos: Int) -> Option<Int> {
+    if pos < 0 || pos >= len(v.items) {
+        None
+    } else {
+        Some(get(v.items, pos).unwrap_or(-1))
+    }
+}
+fn main() {
+    let v = vec()
+    let v = push(v, 10)
+    let v = push(v, 20)
+    let v = push(v, 30)
+    match get(v, 1) {
+        Some(x) => print(x),
+        None => print(-1),
+    }
+    match get(v, 5) {
+        Some(x) => print(x),
+        None => print(-1),
+    }
+}

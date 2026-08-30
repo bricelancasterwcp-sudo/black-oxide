@@ -1,0 +1,19 @@
+```
+fn reverse_digits(n: Int) -> Str {
+    let mut s = int_to_str(n)
+    let mut result = ""
+    while len(s) > 0 {
+        let last_char = get(s, len(s) - 1)?
+        result = concat(last_char, result)
+        s = set(s, len(s) - 1, "0")
+    }
+    Some(result)
+}
+
+fn main() {
+    match reverse_digits(1234) {
+        Some(reversed) => print_str(reversed),
+        None => print_str("error"),
+    }
+}
+```

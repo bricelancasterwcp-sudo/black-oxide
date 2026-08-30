@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let word = "coffee";
+    let mut chars = word.chars();
+    let mut prev_char = None;
+    while let Some(c) = chars.next() {
+        if !prev_char.contains(&c) {
+            print_str(c);
+            prev_char.push(c);
+        }
+    }
+}
+```

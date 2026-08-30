@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let mut rect = Rectangle { width: 2, height: 3 };
+    rect.width = 5;
+    print_int(rect.area());
+}
+```

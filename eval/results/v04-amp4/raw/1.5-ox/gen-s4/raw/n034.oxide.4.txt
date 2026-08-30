@@ -1,0 +1,13 @@
+```rust
+fn second(v: Vec<Int>) -> Option<Int> {
+    match v.into_iter().nth(1) {
+        Some(x) => Some(x),
+        None => None,
+    }
+}
+
+fn main() {
+    println!("{:?}", second(vec![7, 8])); // prints Ok(8)
+    println!("{:?}", second(vec![9]));   // prints None
+}
+```

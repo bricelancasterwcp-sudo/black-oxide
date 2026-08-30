@@ -1,0 +1,22 @@
+```
+fn is_vowel(c: Str) -> Bool {
+    match c {
+        "a" | "e" | "i" | "o" | "u" => true,
+        _ => false,
+    }
+}
+
+fn main() {
+    let keyboard = "abcdefghijklmnopqrstuvwxyz";
+    let (mut vowels, mut consonants) = (0, 0);
+    for c in keyboard.chars() {
+        if is_vowel(c.to_str()) {
+            vowels += 1;
+        } else {
+            consonants += 1;
+        }
+    }
+    print(vowels);
+    print(consonants);
+}
+```

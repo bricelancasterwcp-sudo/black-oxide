@@ -1,0 +1,15 @@
+```
+fn reverse(s: Str) -> Str {
+    let mut result = String::new();
+    for char in s.chars().rev() {
+        result.push(char);
+    }
+    result
+}
+
+fn main() {
+    let drum = "drum";
+    println!("Running back to front: {}", reverse(drum));
+    println!("Normal read: {}", drum);
+}
+```

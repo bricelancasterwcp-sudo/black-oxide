@@ -1,0 +1,7 @@
+fn main() {
+    let s = "mississippi"
+    let count_s = chars(s).filter(|c| *c == 's').len()
+    let unique_chars = chars(s).collect::<Vec<_>>().into_iter().unique().count()
+    print(count_s)
+    print(unique_chars)
+}

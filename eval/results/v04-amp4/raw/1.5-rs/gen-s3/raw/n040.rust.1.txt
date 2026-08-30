@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let square_side = 4;
+    let area_square = square_side * square_side;
+    println!("The area of a square with side {} is {}", square_side, area_square);
+}
+```
+This Rust program defines the dimensions of a square and calculates its area using the formula `side * side`. The result is then printed to the console.

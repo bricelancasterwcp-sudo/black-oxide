@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let mut total: Int = 0;
+    let mut count = 0;
+
+    for c in ["7", "x", "9", "?"] {
+        match c.parse::<Int>() {
+            Ok(n) => {
+                total += n;
+                count += 1;
+            }
+            Err(_) => {}
+        }
+    }
+
+    print(total);
+    println(count);
+}
+```

@@ -1,0 +1,7 @@
+fn main() {
+    let s = "granite"
+    let start = chars(s)[0]
+    print_str(start)
+    let end = get(chars(s), str_len(s) - 1)?
+    print_str(end)
+}

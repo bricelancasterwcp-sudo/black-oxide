@@ -1,0 +1,15 @@
+fn main() {
+    let texts = vec("7", "x", "9", "?");
+    let mut sum = 0;
+    let mut count_non_numbers = 0;
+
+    for t in texts {
+        match parse_int(t) {
+            Some(n) => sum += n,
+            None => count_non_numbers += 1,
+        }
+    }
+
+    print(sum);
+    print(count_non_numbers);
+}

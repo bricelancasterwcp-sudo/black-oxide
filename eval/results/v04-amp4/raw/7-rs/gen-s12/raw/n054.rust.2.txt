@@ -1,0 +1,16 @@
+fn main() {
+    let keyboard = "qwertyuiopasdfghjklzxcvbnm";
+    let mut vowels = 0;
+    let mut consonants = 0;
+
+    for c in keyboard.chars() {
+        if "aeiou".contains(c.to_ascii_lowercase()) {
+            vowels += 1;
+        } else {
+            consonants += 1;
+        }
+    }
+
+    println!("Vowels: {}", vowels);
+    println!("Consonants: {}", consonants);
+}

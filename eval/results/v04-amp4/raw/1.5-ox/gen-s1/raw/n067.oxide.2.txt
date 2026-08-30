@@ -1,0 +1,12 @@
+fn walk(numbers: Vec<Int>) {
+    let mut total = Int::zero();
+    for number in numbers.iter() {  // Fix: added a missing semicolon at the end of the loop header
+        if number % 2 == 1 {    // Fix: corrected comparison operator to match C++ style
+            print!("{} ", number * 2);
+            total += number * 2;   // Fix: added a missing semicolon at the end of the addition statement
+        } else {
+            total += number;
+        }
+    }
+    println!("\nTotal of even entries: {}", total); // Fix: corrected syntax for printing total
+}

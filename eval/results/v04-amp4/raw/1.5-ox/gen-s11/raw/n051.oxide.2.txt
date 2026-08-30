@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let stone = "granite";
+    let mut chars = Vec::new();
+    
+    for c in stone.chars() {
+        if c.is_uppercase() {
+            chars.push(c.to_string());
+        }
+    }
+    
+    print!("{:?}", chars[0]);
+    print!("{:?}", chars.last().unwrap());
+}
+```

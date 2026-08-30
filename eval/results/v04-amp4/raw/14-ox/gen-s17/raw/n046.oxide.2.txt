@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let values = vec(5, 12, 3, 18, 9)
+    let cutoff = 10
+    let under = count_if(values, x -> x < cutoff)
+    let over = len(values) - under
+    print_str("Under ")
+    print(under)
+    print_str(": ")
+    print_str("Over ")
+    print(over)
+}
+```

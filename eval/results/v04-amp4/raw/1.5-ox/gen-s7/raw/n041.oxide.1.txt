@@ -1,0 +1,41 @@
+```rust
+
+fn main() {
+    let mut vec = push(push(vec(), 9), 2);
+    let mut vec2 = push(vec2, 7);
+    let mut vec3 = push(vec3, 4);
+
+    while !vec.is_empty() {
+        let smallest = get(vec, 0).unwrap();
+        for i in 1..vec.len() {
+            if vec[i] < smallest {
+                smallest = vec[i];
+            }
+        }
+        println!("{}", smallest);
+        swap(vec, 0, vec.iter().position(|&x| x == smallest).unwrap());
+    }
+
+    while !vec2.is_empty() {
+        let smallest = get(vec2, 0).unwrap();
+        for i in 1..vec2.len() {
+            if vec2[i] < smallest {
+                smallest = vec2[i];
+            }
+        }
+        println!("{}", smallest);
+        swap(vec2, 0, vec2.iter().position(|&x| x == smallest).unwrap());
+    }
+
+    while !vec3.is_empty() {
+        let smallest = get(vec3, 0).unwrap();
+        for i in 1..vec3.len() {
+            if vec3[i] < smallest {
+                smallest = vec3[i];
+            }
+        }
+        println!("{}", smallest);
+        swap(vec3, 0, vec3.iter().position(|&x| x == smallest).unwrap());
+    }
+}
+```

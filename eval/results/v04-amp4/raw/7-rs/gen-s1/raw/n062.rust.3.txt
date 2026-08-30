@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let args: Vec<String> = std::env::args().collect();
+    if let Some(signal) = args.get(1) {
+        match signal.as_str() {
+            "green" => println!("go for green"),
+            "red" => println!("stop for red"),
+            "yellow" => println!("wait for yellow"),
+            _ => println!("unknown signal"),
+        }
+    } else {
+        println!("missing signal");
+    }
+}
+```

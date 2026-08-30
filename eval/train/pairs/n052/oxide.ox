@@ -4,6 +4,6 @@ fn main() {
         if c == "n" {
             print(i)
         }
-        i = i + 1
+        i += 1
     }
 }

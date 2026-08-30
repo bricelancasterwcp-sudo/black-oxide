@@ -1,0 +1,17 @@
+```
+fn print_signal_meaning(signal: Str) {
+    match signal {
+        "green" => print_str("go"),
+        "red" => print_str("stop"),
+        "yellow" => print_str("wait"),
+        _ => print_str("unknown signal"),
+    }
+}
+
+fn main() {
+    let signals = vec("green", "red", "yellow");
+    for signal in signals {
+        print_signal_meaning(signal);
+    }
+}
+```

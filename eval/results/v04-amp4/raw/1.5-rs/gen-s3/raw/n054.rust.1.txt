@@ -1,0 +1,20 @@
+```rust
+fn main() {
+    let input = "keyboard";
+    let mut vowels_count = 0;
+    let mut consonants_count = 0;
+
+    for c in input.chars() {
+        if matches!(c.to_ascii_lowercase(), 'a' | 'e' | 'i' | 'o' | 'u') {
+            vowels_count += 1;
+        } else {
+            consonants_count += 1;
+        }
+    }
+
+    println!("Vowels: {}", vowels_count);
+    println!("Consonants: {}", consonants_count);
+}
+```
+
+This program takes the word "keyboard" as input, counts the number of vowel characters (a, e, i, o, u), and the number of consonant characters, then prints the results.

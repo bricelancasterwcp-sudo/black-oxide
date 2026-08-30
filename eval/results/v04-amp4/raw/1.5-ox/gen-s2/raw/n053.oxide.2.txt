@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let word = "drum";
+    for (i, c) in word.chars().rev().enumerate() {
+        println!("{}", c);
+    }
+    for (i, c) in word.chars().enumerate() {
+        if i + 1 != word.len() {
+            print!(" ");
+        }
+    }
+    println!("drum");
+}
+```

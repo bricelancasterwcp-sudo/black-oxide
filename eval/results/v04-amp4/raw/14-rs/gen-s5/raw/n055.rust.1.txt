@@ -1,0 +1,14 @@
+```rust
+use std::str::FromStr;
+
+fn main() {
+    let entries = ["8", "oak", "15"];
+
+    for entry in entries {
+        match i32::from_str(entry) {
+            Ok(num) => println!("{}", num),
+            Err(_) => println!("bad"),
+        }
+    }
+}
+```

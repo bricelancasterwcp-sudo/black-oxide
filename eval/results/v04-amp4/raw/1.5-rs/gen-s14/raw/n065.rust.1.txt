@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let readings = [6, 11, 3, 14, 9];
+    let exceeds_five_count: i32 = readings.iter().filter(|&&read| read > 5).count();
+    println!("Exceeds five count: {}", exceeds_five_count);
+
+    let highest_reading: i32 = readings.into_iter().max().unwrap_or(0);
+    println!("Highest reading: {}", highest_reading);
+}
+```

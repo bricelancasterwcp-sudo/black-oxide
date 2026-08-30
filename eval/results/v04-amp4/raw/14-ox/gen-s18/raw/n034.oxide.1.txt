@@ -1,0 +1,12 @@
+```text
+fn second(v: Vec<Int>) -> Option<Int> {
+    let x = get(v, 1)?
+    Some(x + 1)
+}
+
+fn main() {
+    print(second(push(push(vec(), 7), 8)))  // Should print 9
+    print(second(push(push(vec(), 7), 9)))  // Should print None
+    print(second(vec()))                  // Should print None
+}
+```

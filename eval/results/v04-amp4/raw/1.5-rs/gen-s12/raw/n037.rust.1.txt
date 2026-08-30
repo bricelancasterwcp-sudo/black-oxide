@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let mut rect: (isize, isize) = (2, 3);
+    rect.0 = 5;
+    println!("The area of the rectangle is {}", rect.0 * rect.1);
+}
+```

@@ -1,0 +1,13 @@
+```
+fn main() {
+    let first_line = (4 * 3) + (5 * 2);
+    println(first_line);
+    print(second_line());
+}
+
+fn second_line() -> Int {
+    let s1: Str = "four units priced three each".to_string();
+    let s2: Str = "five units priced two each".to_string();
+    return first_line + second_line();
+}
+```

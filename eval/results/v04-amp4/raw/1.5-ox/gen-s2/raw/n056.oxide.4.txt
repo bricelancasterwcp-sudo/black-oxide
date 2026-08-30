@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let nums = vec![7, 0, 9, ?];
+    let mut sum: Int = 0;
+    let mut count: Int = 0;
+
+    for &num in &nums {
+        if num.is_some() {
+            sum += num.unwrap_or(0);
+            count += 1;
+        }
+    }
+
+    print(sum); // Print the total of the ones that do
+    println(count); // Print how many do not
+}
+```

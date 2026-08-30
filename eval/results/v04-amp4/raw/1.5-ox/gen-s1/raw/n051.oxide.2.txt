@@ -1,0 +1,9 @@
+fn open_close_granite(c: Str) -> (Str, Str) {
+    let first = c.chars().next().unwrap();
+    let last = c.chars().last().unwrap();
+    (first.to_string(), last.to_string())
+}
+
+fn main() {
+    println!("{}", open_close_granite("granite"));
+}

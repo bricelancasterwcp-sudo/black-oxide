@@ -1,0 +1,13 @@
+Here's the fixed version of your Rust code:
+
+```rust
+fn main() {
+    let mut letters = "granite".chars();
+    println!("{}", letters.next().unwrap());  // Open letter
+    println!("{}", letters.next().unwrap());  // Close letter
+}
+```
+
+In this corrected program:
+- We use `chars()` method on the string "granite" to create an iterator over its characters.
+- `letters.next().unwrap()` is used twice: once for opening and once for closing the letter, ensuring that the correct letters are printed.

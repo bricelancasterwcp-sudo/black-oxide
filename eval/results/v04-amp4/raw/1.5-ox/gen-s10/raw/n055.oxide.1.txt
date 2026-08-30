@@ -1,0 +1,22 @@
+```rust
+fn main() {
+    let a = 8;
+    let b = "oak";
+    let c = 15;
+
+    match (a, b, c) {
+        (x, y, z) => print(x),
+        _ => print("bad"),
+    }
+
+    match (a, b, c) {
+        (x, y, z) => println(y),
+        _ => println("bad"),
+    }
+
+    match (a, b, c) {
+        (x, y, z) => println(z),
+        _ => println("bad"),
+    }
+}
+```

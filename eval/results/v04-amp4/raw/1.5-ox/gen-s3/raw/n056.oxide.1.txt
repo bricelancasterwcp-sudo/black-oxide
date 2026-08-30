@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let text = "7, x, 9, ?";
+    let mut sum: Int = 0;
+    let mut count: Int = 0;
+
+    for c in text.chars() {
+        if let Some(num) = parse_int(c.to_string()) {
+            sum += num;
+            count += 1;
+        }
+    }
+
+    print(format!("Total: {}, Count: {}", sum, count));
+}
+```

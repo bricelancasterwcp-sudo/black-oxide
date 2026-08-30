@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let mut granite: Str = "granite".to_string();
+    let first_char = granite.chars().next().unwrap();
+    print_str(first_char);
+    print_str(granite.chars().rev().next().unwrap());
+}
+```

@@ -1,0 +1,10 @@
+```rust
+struct Rectangle { width: Int, height: Int }
+
+fn main() {
+    let mut r = Rectangle { width: 2, height: 3 };
+    let old_width = r.width;
+    r.width = 5;
+    print(to_float(old_width as Float * r.height));
+}
+```

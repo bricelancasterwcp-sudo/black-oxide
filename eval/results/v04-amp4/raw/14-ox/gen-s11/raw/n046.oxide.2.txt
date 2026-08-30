@@ -1,0 +1,24 @@
+```text
+struct Reading { label: Str, values: Vec<Int> }
+
+fn count_if(v: Vec<Int>, f: fn(Int) -> Bool) -> Int {
+    let mut count = 0
+    for x in v {
+        if f(x) {
+            count = count + 1
+        }
+    }
+    count
+}
+
+fn main() {
+    let values = vec!(5, 12, 3, 18, 9)
+    let cutoff = 10
+
+    let below = count_if(values, |x| x < cutoff)
+    let above_or_equal = len(values) - below
+
+    print(below)
+    print(above_or_equal)
+}
+```

@@ -1,0 +1,4 @@
+fn main() {
+    let total = range(1, 21).filter(v -> v % 2 == 0).sum();
+    print(total);
+}

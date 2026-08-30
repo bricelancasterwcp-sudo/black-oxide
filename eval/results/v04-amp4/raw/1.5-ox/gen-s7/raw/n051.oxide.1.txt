@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let c = 'g';
+    print(c); // first letter of granite: g
+    print('\n'); // new line
+    print(c + 32); // second letter: A
+}
+```

@@ -1,0 +1,8 @@
+fn main() {
+    let s = "granite";
+    let first_letter = s.chars().next().unwrap_or(' ');
+    print(first_letter);
+    print_str("\n");
+    let last_letter = s.chars().last().unwrap_or(' ');
+    print(last_letter);
+}

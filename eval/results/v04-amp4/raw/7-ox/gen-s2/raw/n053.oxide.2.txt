@@ -1,0 +1,7 @@
+fn main() {
+    let s = "drum";
+    let reversed: Vec<Str> = chars(s).map(|c| c.to_string()).collect();
+    let reversed_str: Str = concat(reversed.as_slice());
+    print_str(&reversed_str);
+    print_str(s);
+}

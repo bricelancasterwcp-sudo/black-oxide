@@ -1,0 +1,11 @@
+fn main() {
+    let v = vec![9, 2, 5, 16, 4];
+    let mut count = 0;
+    for &x in &v {
+        if x < 10 {
+            println!("{}", x);
+            count += 1;
+        }
+    }
+    println!("Kept {} entries.", count);
+}

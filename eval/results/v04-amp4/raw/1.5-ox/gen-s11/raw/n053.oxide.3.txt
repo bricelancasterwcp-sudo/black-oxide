@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let s = "drum";
+    print_rev(s);
+    println!("{}", s);
+}
+
+fn print_rev(s: &str) {
+    for c in s.chars().rev() {
+        print!("{} ", c);
+    }
+}
+```
+
+This program source is the correct version of the given code, with all syntax errors fixed and the expected behavior implemented.

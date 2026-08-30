@@ -1,0 +1,18 @@
+```oxide
+struct Result(Str);
+
+fn divide(n: Int, d: Int) -> Result {
+    if d == 0 {
+        Result("bad".to_string())
+    } else {
+        Result((n / d).to_string())
+    }
+}
+
+fn main() {
+    match divide(20, 4) {
+        Result(answer) => print_str(answer),
+        _ => print_str("bad"),
+    }
+}
+```

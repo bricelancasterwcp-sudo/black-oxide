@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let mut queue = vec![1, 2, 3, 4, 5];
+    queue.swap(0, queue.len() - 1);
+    println!("{:?}", queue);
+}
+```
+The above code snippet declares a mutable vector `queue` containing integers from 1 to 5. It then swaps the first and last elements of this vector using the `swap` method. Finally, it prints the modified queue.

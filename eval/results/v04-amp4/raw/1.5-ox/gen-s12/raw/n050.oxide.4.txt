@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let mut scores = vec![9, 2, 5];
+    scores.sort_unstable();
+    for &score in scores.iter().rev() {
+        print!("{}", score);
+    }
+}
+```
+
+The original code had several issues:
+1. The `scores` variable was not properly initialized.
+2. The `sort_unstable` method is called on a mutable vector, which is correct.
+3. The loop did not correctly iterate over the reversed sorted vector.
+4. The error message "unexpected character '['" and "unexpected character ']'" were due to incorrect syntax for initializing the `scores` vector.
+
+The corrected program initializes the `scores` vector with `vec![9, 2, 5]`, calls `sort_unstable` on it to sort it in ascending order, reverses the sorted vector using `iter().rev()`, and iterates over the reversed vector to print each score.

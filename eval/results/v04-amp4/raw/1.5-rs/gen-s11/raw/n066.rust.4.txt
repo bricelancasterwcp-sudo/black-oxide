@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let batch = [9, 2, 12, 5, 16];
+    let mut count = 0;
+
+    for &item in &batch {
+        if item < 10 {
+            print!("{}\n", item);
+            count += 1;
+        }
+    }
+
+    println!("Kept {} entries.", count);
+}
+```

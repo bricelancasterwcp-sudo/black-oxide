@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let mut count = 0;
+    for n in 1..=36 {
+        if 36 % n == 0 {
+            count += 1;
+        }
+    }
+    print(count);
+}
+```
+
+Explanation:
+The original program had a syntax error because the semicolons were placed incorrectly. The semicolon after `let` and `for` declarations is not allowed in Rust, which causes the errors indicated in the diagnostics. These errors are resolved by removing the semicolons from lines 2, 5, and 8.

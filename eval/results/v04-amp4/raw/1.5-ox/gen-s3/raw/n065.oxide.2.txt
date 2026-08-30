@@ -1,0 +1,29 @@
+```rust
+struct Reading { label: Str, values: Vec<Int> }
+
+fn first_big(v: Vec<Int>) -> Int {
+    let mut found = -1;
+    for x in v {
+        if x > 5 {
+            found = x;
+            break;
+        }
+    }
+    found
+}
+
+fn second(v: Vec<Int>) -> Option<Int> {
+    let mut x = get(v, 1)?;
+    x += 1;
+    Some(x)
+}
+
+fn main() {
+    let readings = vec![6, 11, 3, 14, 9];
+    let found = first_big(readings.clone());            // field access copies: readings stays usable
+    match highest {
+        Some(h) => println_str(concat("Highest reading is ", h)),
+        None => println_str("No readings"),
+    }
+}
+```

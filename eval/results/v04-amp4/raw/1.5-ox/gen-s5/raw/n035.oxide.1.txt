@@ -1,0 +1,30 @@
+```rust
+use std::io;
+
+fn main() {
+    let mut a = read_int("a")?;
+    let b = read_int("b")?;
+
+    if b == 0 {
+        println!("Error: Division by zero");
+    } else {
+        println!("Result: {}", a / b);
+    }
+}
+
+fn read_int(prompt: &str) -> Result<int, &'static str> {
+    print!("{}", prompt);
+    io::stdout().flush()?;
+
+    let mut input = String::new();
+    io::stdin().read_line(&mut input)?;
+
+    match input.trim().parse::<int>() {
+        Ok(num) => Ok(num),
+        Err(_) => Err("Invalid input, please enter an integer"),
+    }
+}
+```
+In the provided solution:
+- A helper function `read_int` is defined to read integers from the user and validate the input.
+- The main function reads two numbers, performs a division if the second number is not zero, and prints the result or an error message accordingly.

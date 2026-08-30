@@ -1,0 +1,30 @@
+```rust
+fn main() {
+    match std::env::args().nth(1).as_ref() {
+        Some(arg) => if let Ok(num) = arg.parse::<u32>() {
+            println!("{}", num);
+        } else {
+            println!("bad");
+        },
+        None => println!("bad"),
+    }
+
+    match std::env::args().nth(2).as_ref() {
+        Some(arg) => if let Ok(tree) = arg.as_ref() {
+            println!("good");
+        } else {
+            println!("bad");
+        },
+        None => println!("bad"),
+    }
+
+    match std::env::args().nth(3).as_ref() {
+        Some(arg) => if let Ok(value) = arg.parse::<u32>() {
+            println!("{}", value);
+        } else {
+            println!("bad");
+        },
+        None => println!("bad"),
+    }
+}
+```

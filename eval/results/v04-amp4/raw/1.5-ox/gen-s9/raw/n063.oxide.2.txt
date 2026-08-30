@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let unit_price = 4;
+    let price_per_unit = 2;
+
+    // Calculate the total cost for four units priced three each
+    let total_cost_1 = unit_price * 3 + unit_price * 3;
+    println!("Line 1: {}", total_cost_1);
+
+    // Calculate the total cost for five units priced two each
+    let total_cost_2 = price_per_unit * 5 + price_per_unit * 5;
+    println!("Line 2: {}", total_cost_2);
+
+    // Calculate the combined value of both lines
+    let combined_value = total_cost_1 + total_cost_2;
+    println!("Combined Value: {}", combined_value);
+}
+```

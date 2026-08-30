@@ -1,0 +1,22 @@
+```rust
+struct Reading { label: String, values: Vec<i32> }
+
+fn main() -> io::Result<()> {
+    let r = Reading {
+        label: "lab".to_string(),
+        values: vec![10, 20]
+    };
+
+    match r.values.get(1) {
+        Some(n) => println!("Position 1: {}", n),
+        None => println!("Position 1 is empty"),
+    }
+
+    match r.values.get(4) {
+        Some(n) => println!("Position 4: {}", n),
+        None => println!("Position 4 is empty"),
+    }
+
+    Ok(())
+}
+```

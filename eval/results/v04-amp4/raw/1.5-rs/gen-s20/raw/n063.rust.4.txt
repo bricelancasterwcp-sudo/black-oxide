@@ -1,0 +1,4 @@
+fn main() {
+    let total = (4 * 3) + (5 * 2);
+    println!("First line: {}", total);
+}

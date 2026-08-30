@@ -1,0 +1,8 @@
+fn main() {
+    let phrase = "when in doubt go home";
+    let words = phrase.split_whitespace().count();
+    let chars = phrase.chars().count();
+    print(words);
+    print_str(" ");
+    print(chars);
+}

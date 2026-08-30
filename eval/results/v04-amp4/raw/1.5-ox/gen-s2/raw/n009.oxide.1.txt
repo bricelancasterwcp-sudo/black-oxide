@@ -1,0 +1,13 @@
+```rust
+fn reverse_digits(mut n: Int) -> Int {
+    let mut reversed = Int::zero();
+    while n > Int::zero() {
+        reversed = push(reversed, pop(n));
+    }
+    reversed
+}
+
+fn main() {
+    print(reverse_digits(Int::from(1234)));
+}
+```

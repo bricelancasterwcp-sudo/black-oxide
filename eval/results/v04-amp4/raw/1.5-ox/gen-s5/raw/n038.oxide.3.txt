@@ -1,0 +1,13 @@
+```rust
+use std::io;
+
+fn main() {
+    struct Reading { value: Int }
+
+    let mut sensor = Reading { value: 0 };
+
+    sensor.value = 7;
+    
+    println!("{}", sensor.value);
+}
+```

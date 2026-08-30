@@ -1,0 +1,7 @@
+fn main() {
+    let word = "granite";
+    let first_letter = word.chars().nth(0).unwrap_or(' ');
+    let last_letter = word.chars().last().unwrap_or(' ');
+    print_str(&first_letter.to_string());
+    print_str(&last_letter.to_string());
+}

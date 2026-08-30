@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let mut rect = (2, 3);
+    rect.0 = 5;
+    println!("{}", rect.0 * rect.1);
+}
+```

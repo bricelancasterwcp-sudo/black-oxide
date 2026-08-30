@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let banana = "banana";
+    for (i, c) in banana.chars().enumerate() {
+        if c == 'n' {
+            print!("{} ", i);
+        }
+    }
+}
+```
+The problem was a syntax error where the `println!` macro used an incorrect syntax. It should have been `print!("{} ", i);`, not `print!("{} ERROR");`.

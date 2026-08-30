@@ -283,6 +283,24 @@ class Lit:
 
 
 @dataclass(frozen=True, slots=True)
+class PredLit:
+    """A predicate literal, ``x -> expr`` (v0.4 wave-3, SPEC 61).
+
+    NOT a closure: the body may reference the parameter and nothing else.
+    That restriction is the whole design -- with no captures there is no
+    ownership question, so the construct never interacts with implicit
+    linear ownership. The `->` spelling is deliberate for the same
+    reason: it must not read as Rust's `|x|`, which would promise
+    capture semantics this language does not implement.
+    """
+
+    node_id: int
+    span: Span
+    param: str
+    body: Expr
+
+
+@dataclass(frozen=True, slots=True)
 class ErrorExpr:
     node_id: int
     span: Span
@@ -295,7 +313,8 @@ class ErrorStmt:
 
 
 type Expr = (
-    If
+    PredLit
+    | If
     | Match
     | While
     | For

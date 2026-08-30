@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let num = 1234;
+    let rev_num = reverse(int_to_str(num).chars().map(|c| parse_int(concat("0", c)).unwrap()).collect());
+    print(parse_int(rev_num));
+}
+```

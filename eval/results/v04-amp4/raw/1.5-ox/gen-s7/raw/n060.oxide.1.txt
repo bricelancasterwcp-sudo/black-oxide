@@ -1,0 +1,20 @@
+```rust
+fn main() {
+    let s = "a1b22";
+    let mut total = 0;
+    let mut count = 0;
+
+    for c in s.chars() {
+        match c.to_digit(10) {
+            Some(digit) => {
+                total += digit;
+                count += 1;
+            }
+            None => {}
+        }
+    }
+
+    println!("Total: {}", total);
+    println!("Count: {}", count);
+}
+```

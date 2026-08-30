@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let n = 1234;
+    println!("{:?}", (n % 10, (n / 10) % 10, (n / 100) % 10, (n / 1000)));
+}
+```
+This program takes an integer `n`, and prints each digit of the number in its opposite order. The `%` operator is used for modulo division to extract the last digit of a number, and integer division (`/`) is used to remove the last digit from the original number. The result is then printed in reverse order using tuple destructuring.

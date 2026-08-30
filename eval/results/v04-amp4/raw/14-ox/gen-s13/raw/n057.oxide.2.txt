@@ -1,0 +1,23 @@
+```rust
+fn main() {
+    let fig = "fig";
+    let banana = "banana";
+    let kiwi = "kiwi";
+
+    let mut longest_name = fig;
+    let mut max_length = str_len(fig);
+
+    if str_len(banana) > max_length {
+        longest_name = banana;
+        max_length = str_len(banana);
+    }
+
+    if str_len(kiwi) > max_length {
+        longest_name = kiwi;
+        max_length = str_len(kiwi);
+    }
+
+    print_str(longest_name);
+    print(max_length);
+}
+```

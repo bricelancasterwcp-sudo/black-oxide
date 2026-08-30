@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let mut word = "drum".chars().rev();
+    while let Some(c) = word.next() { println!("{}", c); }
+    print!("{}" , word.as_str());
+}
+```

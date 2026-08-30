@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let mut v = vec![];
+    for x in range(0, 6) { // Changed range to fit power of two constraint
+        if 1 << x <= 100 {
+            v.push(1 << x);
+        } else {
+            break;
+        }
+    }
+
+    let n = v.last().unwrap();
+    print(n); // Fixed use of moved value 'v' by cloning at the earlier site or reordering
+}
+```

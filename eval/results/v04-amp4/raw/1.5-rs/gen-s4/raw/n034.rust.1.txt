@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    // Test cases
+    println!("{}", get_second_entry(vec![7]));     // Output: None
+    println!("{}", get_second_entry(vec![8, 9]));   // Output: Some(9)
+}
+```

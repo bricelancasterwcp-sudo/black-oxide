@@ -1,0 +1,11 @@
+fn main() {
+    let figures = vec![8, 3, 11, 6];
+    let min_figure = min(figures.clone());
+    print(min_figure.unwrap_or(-1));
+    let max_figure = max(figures.clone());
+    if let Some(max) = max_figure {
+        print(max - min_figure.unwrap_or(-1));
+    } else {
+        print_str("No figures");
+    }
+}

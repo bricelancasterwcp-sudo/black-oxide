@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let mut sum_of_evens = 0;
+    
+    for x in vec![7, 4, 9, 10] {
+        if x % 2 == 1 { // Check if the number is odd
+            print!("{}", x * 2);
+            sum_of_evens += x; // Add the odd number to the total of even numbers
+        }
+    }
+    
+    println!("Sum of even entries: {}", sum_of_evens);
+}
+```

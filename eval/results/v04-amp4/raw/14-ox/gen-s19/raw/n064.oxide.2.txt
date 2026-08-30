@@ -1,0 +1,11 @@
+fn main() {
+    let v = push(push(vec(), 10), 20)
+    match get(v.clone(), 1) {
+        Some(n) => print(n),
+        None => print_str("none at position 1"),
+    }
+    match get(v.clone(), 4) {
+        Some(n) => print(n),
+        None => print_str("none at position 4"),
+    }
+}

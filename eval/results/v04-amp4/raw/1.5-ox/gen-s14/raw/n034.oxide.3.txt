@@ -1,0 +1,18 @@
+```rust
+fn second(v: Vec<Int>) -> Option<Int> {
+    match v.first() {
+        Some(x) => x,
+        None => return None,
+    }
+
+    match v.get(1) {
+        Some(&second) if second != x => Some(second),
+        _ => None,
+    }
+}
+
+fn main() {
+    println!("{:?}", second(vec![7, 8, 9])); // Prints 8
+    println!("{:?}", second(vec![10, 11, 12])); // Prints None
+}
+```

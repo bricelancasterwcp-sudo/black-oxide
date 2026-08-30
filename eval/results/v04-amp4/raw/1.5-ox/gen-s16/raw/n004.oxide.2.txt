@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let mut a = 1;
+    let mut b = 1;
+
+    for _ in 1..=9 {
+        let temp = a + b;
+        a = b;
+        b = temp;
+    }
+
+    println!("{}", b);
+}
+```
+
+The problem was that the loop did not start from the second term, but from the third. This caused an infinite loop because `i` started at 2 and incremented by 1 in each iteration. The corrected loop starts from 1 and increments by 1 in each iteration.

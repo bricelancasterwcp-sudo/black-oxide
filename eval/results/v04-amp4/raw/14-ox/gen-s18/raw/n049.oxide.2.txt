@@ -1,0 +1,32 @@
+```text
+struct Reading { label: Str, values: Vec<Int> }
+
+fn find_min(v: Vec<Int>) -> Int {
+    let mut min = Int::MAX
+    for x in v {
+        if x < min {
+            min = x
+        }
+    }
+    min
+}
+
+fn find_max(v: Vec<Int>) -> Int {
+    let mut max = Int::MIN
+    for x in v {
+        if x > max {
+            max = x
+        }
+    }
+    max
+}
+
+fn main() {
+    let values = vec!(8, 3, 11, 6)
+    let min_value = find_min(values.clone())
+    let max_value = find_max(values)
+    let gap = max_value - min_value
+    print(min_value)
+    print(gap)
+}
+```

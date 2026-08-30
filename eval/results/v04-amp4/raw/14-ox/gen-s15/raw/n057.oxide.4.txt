@@ -1,0 +1,23 @@
+fn longest_name(names: Vec<Str>) -> Option<(Str, Int)> {
+    let mut max_len = 0;
+    let mut longest = None;
+    for name in names {
+        let len = str_len(name);
+        if len > max_len {
+            max_len = len;
+            longest = Some((name, len));
+        }
+    }
+    longest
+}
+
+fn main() {
+    let names = vec("fig", "banana", "kiwi");
+    match longest_name(names) {
+        Some((name, len)) => {
+            print(name);
+            print(len);
+        }
+        None => print_str("No names provided"),
+    }
+}

@@ -1,0 +1,10 @@
+```text
+fn main() {
+    let fruit = "banana"
+    for i in range(0, str_len(fruit)) {
+        if get(fruit, i) == Some('n') {
+            print(i)
+        }
+    }
+}
+```

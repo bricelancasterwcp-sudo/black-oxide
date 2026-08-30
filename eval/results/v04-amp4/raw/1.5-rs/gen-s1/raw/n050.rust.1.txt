@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let scores = [2, 9, 5];
+    scores.sort_unstable_by(|a, b| b.cmp(a));
+    for &score in &scores {
+        println!("{}", score);
+    }
+}
+```
+
+When you run this program, it will output:
+
+```
+9
+5
+2
+```

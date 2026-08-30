@@ -1,0 +1,4 @@
+fn main() {
+    let total = range(1, 21).into_iter().filter(|&x| x % 2 == 0).sum()
+    print(total)
+}

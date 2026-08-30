@@ -1,0 +1,28 @@
+```oxide
+fn second(v: Vec<Int>) -> Option<Int> {
+    let x = get(v, 1)?
+    Some(x + 1)
+}
+
+fn main() {
+    let v7 = vec()
+    push(push(v7, 3), 42)
+    match second(v7) {
+        Some(n) => print(n),
+        None => print_str("too short"),
+    }
+    
+    let v8 = vec()
+    push(push(push(v8, 3), 42), 100)
+    match second(v8) {
+        Some(n) => print(n),
+        None => print_str("too short"),
+    }
+    
+    let v9 = vec()
+    match second(v9) {
+        Some(n) => print(n),
+        None => print_str("too short"),
+    }
+}
+```

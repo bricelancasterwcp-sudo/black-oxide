@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let mut total: Int = 0;
+    let mut count: Int = 0;
+
+    for c in a1b22.chars() {
+        if c.is_digit(10) {
+            total += to_int(c);
+            count += 1;
+        }
+    }
+
+    print(total);
+    print_str(" ");
+    print(count);
+}
+```

@@ -1,0 +1,9 @@
+fn main() {
+    let log = vec(6, 7, 8, 9)
+    if len(log) > 0 {
+        print(get(log, 0).unwrap_or(-1))
+        print(get(log, len(log) - 1).unwrap_or(-1))
+    } else {
+        print_str("Log is empty")
+    }
+}

@@ -1,0 +1,19 @@
+```rust
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn main() {
+    let rect = Rectangle { width: 9, height: 3 };
+
+    // Calculate area of rectangle
+    let area = rect.width * rect.height;
+    print_int(area);
+
+    // Calculate perimeter of rectangle (2*(width + height))
+    let perimeter = 2 * (rect.width + rect.height);
+    print_str("Perimeter: ");
+    print_int(perimeter);
+}
+```

@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let mut width = 2;
+    let mut height = 3;
+    width = 5;
+    let area = width * height;
+    println!("The area of the rectangle is now {}", area);
+}
+```

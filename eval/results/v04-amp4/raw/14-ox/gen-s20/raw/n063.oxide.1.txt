@@ -1,0 +1,13 @@
+```
+fn calculate_line(price: Int, quantity: Int) -> Int {
+    price * quantity
+}
+
+fn main() {
+    let line1 = calculate_line(3, 4)
+    let line2 = calculate_line(2, 5)
+    print(line1)
+    print(line2)
+    print(line1 + line2)
+}
+```

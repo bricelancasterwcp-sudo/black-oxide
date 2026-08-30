@@ -1,0 +1,17 @@
+```rust
+struct Reading { label: Str, values: Vec<Int> }
+
+fn sum_of_digits(n: Int) -> Int {
+    let sum = 0
+    let s = int_to_str(n)
+    for ch in chars(s) {
+        let digit = parse_int(ch).unwrap_or(0)
+        sum = sum + digit
+    }
+    sum
+}
+
+fn main() {
+    print(sum_of_digits(9875))
+}
+```

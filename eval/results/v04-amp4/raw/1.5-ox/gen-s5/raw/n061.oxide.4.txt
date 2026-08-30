@@ -1,0 +1,28 @@
+```rust
+fn main() {
+    let rectangle = Rectangle { width: 9, height: 3 };
+
+    // Calculate the area of the rectangle
+    let area = calculate_area(rectangle);
+    print_str(format!("The area of the rectangle is {}", area));
+
+    // Calculate the perimeter of the rectangle
+    let perimeter = calculate_perimeter(rectangle);
+    print_str(format!("The perimeter of the rectangle is {}", perimeter));
+}
+
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+// Function to calculate the area of a rectangle
+fn calculate_area(rectangle: Rectangle) -> Int {
+    rectangle.width * rectangle.height
+}
+
+// Function to calculate the perimeter of a rectangle
+fn calculate_perimeter(rectangle: Rectangle) -> Int {
+    2 * (rectangle.width + rectangle.height)
+}
+```

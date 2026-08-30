@@ -1,0 +1,27 @@
+```rust
+struct Figure {
+    value: Int,
+}
+
+fn min_figure(figures: Vec<Figure>) -> Option<Int> {
+    figures.into_iter().min_by(|a, b| a.value.cmp(&b.value))
+}
+
+fn gap_between_largest_and_smallest(figures: Vec<Figure>) -> Option<Int> {
+    let min_value = min_figure(figures)?;
+    let max_value = *figures.iter().max_by(|a, b| a.value.cmp(&b.value)).unwrap();
+    Some(max_value - min_value)
+}
+
+fn main() {
+    let figures = vec![
+        Figure { value: 10 },
+        Figure { value: 20 },
+        Figure { value: 5 },
+        Figure { value: 30 },
+    ];
+
+    print(min_figure(figures).unwrap());
+    println(gap_between_largest_and_smallest(figures).unwrap());
+}
+```

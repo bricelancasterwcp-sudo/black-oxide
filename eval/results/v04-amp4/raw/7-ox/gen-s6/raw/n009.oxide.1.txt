@@ -1,0 +1,13 @@
+```
+fn reverse_string(s: Str) -> Str {
+    let chars = chars(s)
+    let reversed_chars = reverse(chars)
+    concat(reversed_chars, "")
+}
+
+fn main() {
+    let num_str = "1234"
+    let reversed_num_str = reverse_string(num_str)
+    print_str(reversed_num_str)
+}
+```

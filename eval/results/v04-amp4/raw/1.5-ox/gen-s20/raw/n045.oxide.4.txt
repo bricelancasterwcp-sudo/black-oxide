@@ -1,0 +1,19 @@
+```
+struct Log(Vec<Int>);
+
+impl Log {
+    fn start(&self) -> Int {
+        self.0[0]
+    }
+
+    fn end(&self) -> Int {
+        self.0[self.0.len() - 1]
+    }
+}
+
+fn main() {
+    let log = Log(vec![6, 7, 8, 9]);
+    print(log.start());
+    print(log.end());
+}
+```

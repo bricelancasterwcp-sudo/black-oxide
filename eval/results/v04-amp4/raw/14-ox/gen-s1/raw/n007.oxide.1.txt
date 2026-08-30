@@ -1,0 +1,7 @@
+```
+fn main() {
+    let n = 9875
+    let sum = to_int(int_to_str(n).chars().map(parse_int).unwrap_or(0))
+    print(sum)
+}
+```

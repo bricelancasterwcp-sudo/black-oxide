@@ -1,0 +1,18 @@
+struct Word { content: Str }
+
+fn first_letter(w: Word) -> Str {
+    let s = chars(w.content)[0]
+    s
+}
+
+fn last_letter(w: Word) -> Str {
+    let s = w.content
+    let len_s = str_len(s)
+    chars(s)[len_s - 1]
+}
+
+fn main() {
+    let g = Word { content: "granite" }
+    print(first_letter(g))
+    print(last_letter(g))
+}

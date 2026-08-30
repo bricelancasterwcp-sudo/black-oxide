@@ -1,0 +1,9 @@
+fn main() {
+    let mut count = 0;
+    for c in "a1b22".chars() {
+        if c.is_digit(10) {
+            count += 1;
+        }
+    }
+    println!("Total digits: {}", count);
+}

@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut balance = 0;
+    for amount in vec![3, 1, 4, 1, 5] {
+        balance += amount;
+        println!("Current balance: {}", balance);
+    }
+}
+```
+
+This program initializes a variable `balance` to zero and then iterates over the list of deposits. In each iteration, it adds the current deposit amount to `balance`, prints the updated balance, and continues this process until all deposits have been processed.

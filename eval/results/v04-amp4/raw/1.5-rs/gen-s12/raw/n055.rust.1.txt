@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let input = [8, "oak", "15"];
+    
+    for &item in input.iter() {
+        match item {
+            8 => println!("good"),
+            _ if item.to_string().contains("oak") => println!("good"),
+            15 => println!("good"),
+            _ => println!("bad")
+        }
+    }
+}
+```

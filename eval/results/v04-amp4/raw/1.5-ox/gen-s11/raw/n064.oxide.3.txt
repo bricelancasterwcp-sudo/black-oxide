@@ -1,0 +1,15 @@
+```rust
+struct List { items: Vec<Int> }
+
+fn main() {
+    let l = List { items: push(push(vec(), 10), 20) };
+    match get(l.items, 1) {
+        Some(x) => print_int(x),
+        None => (),
+    }
+    match get(l.items, 3) {
+        Some(y) => print_int(y),
+        None => (),
+    }
+}
+```

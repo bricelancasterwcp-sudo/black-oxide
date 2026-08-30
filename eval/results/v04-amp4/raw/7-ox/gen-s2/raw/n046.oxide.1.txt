@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let samples = vec![5, 12, 3, 18, 9];
+    let cutoff = 10;
+
+    let (under, at_over) = samples.iter().fold((0, 0), |(a, b), &x| {
+        if x < cutoff {
+            (a + 1, b)
+        } else {
+            (a, b + 1)
+        }
+    });
+
+    print_str("Under cutoff: ");
+    print(under);
+    print_str(", At or over cutoff: ");
+    print(at_over);
+}
+```

@@ -1,0 +1,7 @@
+```oxide
+fn main() {
+    let word = "drum";
+    print(concat(reverse(chars(word)), str_len(word)));
+    print_str(word);
+}
+```

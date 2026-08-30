@@ -1,0 +1,19 @@
+```
+fn fib(n: Int) -> Int {
+    let a = 1
+    let b = 1
+    if n == 1 || n == 2 {
+        return 1
+    }
+    for _ in range(3, n + 1) {
+        let temp = a + b
+        a = b
+        b = temp
+    }
+    b
+}
+
+fn main() {
+    print(fib(10))
+}
+```

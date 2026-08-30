@@ -1,0 +1,10 @@
+```oxide
+fn main() {
+    let samples = vec(5, 12, 3, 18, 9);
+    let below = count_if(samples, x -> x < 10);
+    let above_or_equal = count_if(samples, x -> x >= 10);
+    print(below);
+    print_str(" ");
+    print(above_or_equal);
+}
+```

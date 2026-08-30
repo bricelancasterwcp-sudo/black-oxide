@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let phrase = "when in doubt go home";
+    println!("Words: {}", phrase.split_whitespace().count());
+    println!("Characters (including spaces): {}", phrase.len());
+}
+```
+In the original code, `phrase.len()` counted only the number of characters between words, which is why the output was incorrect. The `split_whitespace()` method splits the string into a vector of substrings separated by whitespace. By counting this vector's length using `.count()`, we get the total number of words in the phrase.

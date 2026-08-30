@@ -1,0 +1,6 @@
+```
+fn main() {
+    let sum = (2..=20).filter(|x| x % 2 == 0).map(|x| x as Int).sum();
+    print(sum);
+}
+```

@@ -1,0 +1,6 @@
+fn main() {
+    let area_square = 4.0 * 4.0;
+    let area_circle = 3.14 * (3.14 / 4.0);
+    println!("Area of square: {}", area_square);
+    println!("Area of circle: {:.2}", area_circle); // Fixed the precision to two decimal places
+}

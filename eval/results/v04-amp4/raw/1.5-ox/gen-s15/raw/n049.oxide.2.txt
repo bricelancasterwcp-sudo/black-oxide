@@ -1,0 +1,44 @@
+```rust
+struct Fig {
+    size: Int,
+}
+
+fn smallest(figs: Vec<Fig>) -> Int {
+    let mut min = None;
+    for f in &figs {
+        if min.is_none() || f.size < min.unwrap() {
+            min = Some(f.size);
+        }
+    }
+    min.unwrap()
+}
+
+fn gap_between_largest_smallest(figs: Vec<Fig>) -> Option<Int> {
+    let max = biggest(figs)?;
+    let smallest = smallest(figs)?;
+    Some(max - smallest)
+}
+
+fn biggest(figs: Vec<Fig>) -> Option<Int> {
+    let mut max = None;
+    for f in &figs {
+        if max.is_none() || f.size > max.unwrap() {
+            max = Some(f.size);
+        }
+    }
+    max
+}
+
+fn main() {
+    let fig1 = Fig { size: 5 };
+    let fig2 = Fig { size: 8 };
+    let fig3 = Fig { size: 3 };
+    let fig4 = Fig { size: 6 };
+
+    println!("{}", smallest(vec![fig1, fig2, fig3, fig4]));            // field access copies: r stays usable
+    match gap_between_largest_smallest(vec![fig1, fig2, fig3, fig4]) {
+        Some(n) => print(n),
+        None => print_str("no figures"),
+    }
+}
+```

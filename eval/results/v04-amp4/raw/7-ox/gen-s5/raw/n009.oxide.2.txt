@@ -1,0 +1,1 @@
+print(concat(int_to_str(trunc(to_float(4321.0))), int_to_str(trunc(to_float(0.0))))))

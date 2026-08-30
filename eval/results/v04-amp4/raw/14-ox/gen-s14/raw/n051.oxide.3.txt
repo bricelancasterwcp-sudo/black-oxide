@@ -1,0 +1,7 @@
+```text
+fn main() {
+    let s = "granite"
+    print_str(s.substring(0, 1))  // first letter
+    print_str(s.substring(s.len()-1, s.len()))  // last letter
+}
+```

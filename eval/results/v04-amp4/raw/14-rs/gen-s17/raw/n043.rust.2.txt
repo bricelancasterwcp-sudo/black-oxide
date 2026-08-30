@@ -1,0 +1,14 @@
+fn main() {
+    let mut queue = vec![1, 2, 3, 4, 5];
+    
+    if let Some(first) = queue.first_mut() {
+        let len = queue.len();
+        if let Some(last) = queue.get_mut(len - 1) {
+            std::mem::swap(first, last);
+        }
+    }
+
+    for entry in &queue {
+        println!("{}", entry);
+    }
+}

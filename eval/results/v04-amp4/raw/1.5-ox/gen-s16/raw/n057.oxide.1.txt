@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let fig = "fig";
+    let banana = "banana";
+    let kiwi = "kiwi";
+
+    let longest_name = if len(fig) > len(banana) && len(fig) > len(kiwi) {
+        fig.to_string()
+    } else if len(banana) > len(fig) && len(banana) > len(kiwi) {
+        banana.to_string()
+    } else {
+        kiwi.to_string()
+    };
+
+    print!("{}", longest_name);
+    print!(" ({} letters)", len(longest_name));
+}
+```

@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let scores = vec![2, 9, 5];
+    scores.sort_unstable(); // Sorts in ascending order by default
+    for &score in &scores {
+        println!("{}", score);
+    }
+}
+```
+
+**Explanation**:
+- The `sort_unstable` method is used to sort the `scores` vector. It sorts the elements in ascending order, which is the opposite of what we want (decreasing order).
+- To get scores in decreasing order, you need to reverse the sorted vector using slicing: `&scores[..].reverse()`.
+- The loop then iterates over each score and prints it on a new line.

@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut product = 1;
+    
+    for i in 1..=6 {
+        product *= i;
+    }
+    
+    println!("The product of numbers from 1 to 6 is: {}", product);
+}
+```

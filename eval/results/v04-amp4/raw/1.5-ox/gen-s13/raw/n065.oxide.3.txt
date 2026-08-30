@@ -1,0 +1,30 @@
+```rust
+struct Reading { label: Str, values: Vec<Int> }
+
+fn first_big(v: Vec<Int>) -> Int {
+    let mut found = -1;
+    for x in v {
+        if x > 5 {
+            found = x;
+            break;
+        }
+    }
+    found
+}
+
+fn second(v: Vec<Int>) -> Option<Int> {
+    let mut x = get(v, 0)?;
+    x += 1;
+    Some(x)
+}
+
+fn main() {
+    let readings = vec![6, 11, 3, 14, 9];
+    println!("{} of the readings exceed five", first_big(readings));
+
+    match second(readings) {
+        Some(highest_reading) => print_str(&highest_reading.to_string()),
+        None => print_str("too short"),
+    }
+}
+```

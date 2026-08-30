@@ -1,0 +1,26 @@
+```rust
+fn main() {
+    let oak = read_int()?;
+    println!("oak: {}", oak);
+
+    let eight = read_int()?;
+    println!("eight: {}", eight);
+
+    let fifteen = read_int()?;
+    println!("fifteen: {}", fifteen);
+}
+
+fn read_int() -> Result<Int, &'static str> {
+    match std::io::stdin().read_line() {
+        Ok(s) => {
+            let s trimmed = s.trim();
+            if let Ok(n) = s_trimmed.parse::<Int>() {
+                Ok(n)
+            } else {
+                Err("not an integer")
+            }
+        },
+        Err(e) => Err(format!("input error: {}", e)),
+    }
+}
+```

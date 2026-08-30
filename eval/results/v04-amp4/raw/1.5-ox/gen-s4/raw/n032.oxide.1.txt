@@ -1,0 +1,10 @@
+```rust
+struct Point { x: Int, y: Int }
+
+fn main() {
+    let p = Point { x: 1, y: 5 };
+    let q = Point { x: 10, y: p.y }; // copy of p.y
+
+    println!("{}", p.x + q.x);
+}
+```

@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let measurements = vec![9, 2, 7, 4];
+    let mut sorted_measurements = measurements.clone();
+    sorted_measurements.sort();
+    for measurement in sorted_measurements {
+        println!("{}", measurement);
+    }
+}
+```

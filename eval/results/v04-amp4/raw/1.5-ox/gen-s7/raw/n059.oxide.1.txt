@@ -1,0 +1,15 @@
+```rust
+
+fn main() {
+    let s = "when in doubt go home".to_string();
+    print!("There are {} words and {} characters", words(&s), len(&s));
+}
+
+fn words(s: &Str) -> Int {
+    s.split_whitespace().count()
+}
+
+fn len(s: &Str) -> Int {
+    s.chars().count() + 1
+}
+```

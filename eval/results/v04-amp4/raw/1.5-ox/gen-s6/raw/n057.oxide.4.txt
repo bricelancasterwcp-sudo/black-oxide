@@ -1,0 +1,15 @@
+fn longest_name(names: Vec<Str>) -> (Str, Int) {
+    let mut longest = names[0].clone();
+    for &name in &names {
+        if name.len() > longest.len() {
+            longest = name.clone();
+        }
+    }
+    return (longest, longest.len());
+}
+
+fn main() {
+    let names = vec!["fig", "banana", "kiwi"];
+    let (longest_name, longest_length) = longest_name(names);
+    print_str(format!("The longest name is {} with length {}", longest_name, longest_length));
+}

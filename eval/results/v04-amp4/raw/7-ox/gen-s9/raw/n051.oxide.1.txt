@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let s = "granite";
+    print(str_len(s) > 0 ? chars(s)[0] : '?');
+    print(str_len(s) > 1 ? chars(s)[str_len(s)-1] : '?');
+}
+```

@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let mut list = vec![7, 4, 9, 10];
+    let mut sum = 0;
+    
+    while let Some(&x) = list.first() {
+        if x % 2 == 1 {
+            print!("{} {}", x * 2, x);
+            sum += x; // Add the even entry to the sum
+        }
+        
+        list.remove(0); // Remove the first element
+    }
+    
+    println!("Total of even entries: {}", sum);
+}
+```

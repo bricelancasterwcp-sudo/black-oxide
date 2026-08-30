@@ -1,0 +1,5 @@
+let scores = vec!(2, 9, 5);
+let sorted_scores = sort(scores);
+for score in sorted_scores {
+    print_str(concat(score.to_string(), "\n"));
+}

@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let coffee = "coffee";
+    let mut char_counts: [u8; 26] = [0; 26];
+    for &c in coffee.chars() {
+        char_counts[(c as u8 - b'a') as usize] += 1;
+    }
+    for (i, count) in char_counts.iter().enumerate() {
+        if *count > 1 {
+            print!("{}", (b'a' + i as u8));
+        }
+    }
+}
+```

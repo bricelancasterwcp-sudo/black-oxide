@@ -1,0 +1,8 @@
+```
+fn main() {
+    let c = 'g';
+    print_str(c.to_string());
+    print_str('\n');
+    print_str('r');
+}
+```

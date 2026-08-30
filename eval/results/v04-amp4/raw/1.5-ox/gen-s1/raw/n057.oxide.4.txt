@@ -1,0 +1,15 @@
+```
+fn main() {
+    let arr = ["fig", "banana", "kiwi"];
+    let mut max_length = 0;
+    let mut max_name = "";
+    for name in arr.iter() {
+        if name.len() > max_length {
+            max_length = name.len();
+            max_name = &name; // Use the dereference operator to get the value
+        }
+    }
+    print_str(max_name);
+    print_int(max_length);
+}
+```

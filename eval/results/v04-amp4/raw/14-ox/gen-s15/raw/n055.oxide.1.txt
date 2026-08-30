@@ -1,0 +1,19 @@
+```text
+struct Reading { label: Str, values: Vec<Str> }
+
+fn parse_and_print(v: Vec<Str>) {
+    for s in v {
+        let x = parse_int(s)?
+        print(x)
+    }
+    None
+}
+
+fn main() {
+    let r = Reading { label: "data", values: push(push(push(vec(), "8"), "oak"), "15") }
+    match parse_and_print(r.values) {
+        Some(_) => (),
+        None => print_str("bad"),
+    }
+}
+```

@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let input = "coffee";
+    let mut char_count: [usize; 26] = [0; 26];
+    
+    for c in input.chars() {
+        if 'a' <= c && c <= 'z' {
+            char_count[c as usize - 'a'] += 1;
+        }
+    }
+
+    for i in 0..26 {
+        if char_count[i] > 0 {
+            print!("{} {}", (i + b'a') as char, char_count[i]);
+        }
+    }
+}
+```

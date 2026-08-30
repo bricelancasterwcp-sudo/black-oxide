@@ -1,0 +1,11 @@
+```text
+fn main() {
+    let q = vec(1, 2, 3, 4, 5)
+    let first = unwrap_or(get(q, 0), -1)
+    let last = unwrap_or(get(q, len(q) - 1), -1)
+    let q = set(set(clone(q), 0, last), len(q) - 1, first)
+    for x in q {
+        print(x)
+    }
+}
+```

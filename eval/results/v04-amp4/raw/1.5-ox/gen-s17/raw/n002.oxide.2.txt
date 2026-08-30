@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let mut result = 1;
+    for i in 1..7 {
+        result *= i;
+    }
+    println(result);
+}
+```

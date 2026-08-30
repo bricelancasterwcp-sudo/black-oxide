@@ -1,0 +1,24 @@
+```
+struct Line {
+    units: Int,
+    price_per_unit: Int,
+}
+
+fn calculate_value(line: Line) -> Int {
+    line.units * line.price_per_unit
+}
+
+fn main() {
+    let line1 = Line { units: 4, price_per_unit: 3 }
+    let line2 = Line { units: 5, price_per_unit: 2 }
+    
+    let value1 = calculate_value(line1)
+    print(value1)
+    
+    let value2 = calculate_value(line2)
+    print(value2)
+    
+    let total_value = value1 + value2
+    print(total_value)
+}
+```

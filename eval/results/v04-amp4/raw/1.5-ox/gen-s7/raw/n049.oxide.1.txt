@@ -1,0 +1,22 @@
+```rust
+
+fn main() {
+    let fig8 = vec![4, 1, 2, 3, 5];
+    let fig3 = vec![7, 6, 5, 4, 3];
+    let fig11 = vec![9, 8, 7, 6, 5];
+    let fig6 = vec![1, 2, 3, 4, 5];
+
+    let smallest = *fig8.iter().min().unwrap();
+    let largest = *fig8.iter().max().unwrap();
+
+    print(smallest);
+    println(largest - smallest);
+}
+```
+
+**Explanation of the program:**
+- We define five vectors `fig8`, `fig3`, `fig11`, and `fig6` with various integer values.
+- We use the `iter()` method to create an iterator over each vector.
+- The `min()` and `max()` methods are used to find the smallest and largest elements in each vector, respectively.
+- We print the smallest element using `print(smallest)`.
+- We calculate the gap between the largest and smallest elements by subtracting the smallest from the largest (`largest - smallest`) and print it using `println(largest - smallest)`.

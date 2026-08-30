@@ -1,0 +1,25 @@
+struct Log { entries: Vec<Int> }
+
+fn start_entry(log: Log) -> Option<Int> {
+    get(log.entries, 0)?
+}
+
+fn end_entry(log: Log) -> Option<Int> {
+    let len = len(log.entries)
+    if len == 0 {
+        return None
+    }
+    get(log.entries, len - 1)?
+}
+
+fn main() {
+    let log = Log { entries: vec(6, 7, 8, 9) }
+    match start_entry(clone(log)) {
+        Some(start) => print(start),
+        None => print_str("empty log"),
+    }
+    match end_entry(log) {
+        Some(end) => print(end),
+        None => print_str("empty log"),
+    }
+}

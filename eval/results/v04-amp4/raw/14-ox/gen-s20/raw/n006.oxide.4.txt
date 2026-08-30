@@ -1,0 +1,9 @@
+```plaintext
+fn main() {
+    let mut n = 100
+    while n > 1 && n % 2 == 0 {
+        n = n / 2
+    }
+    print(n * 2)
+}
+```

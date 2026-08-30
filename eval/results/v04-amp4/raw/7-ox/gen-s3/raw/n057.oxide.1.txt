@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let (name, count) = ["fig", "banana", "kiwi"].iter().max_by_key(|&&s| s.len()).unwrap();
+    print_str(name);
+    print(count);
+}
+```

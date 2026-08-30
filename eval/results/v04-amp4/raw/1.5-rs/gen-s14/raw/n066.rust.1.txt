@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let numbers = [9, 2, 12, 5, 16];
+    let filtered_numbers: Vec<i32> = numbers.into_iter().filter(|&x| x < 10).collect();
+    println!("Filtered numbers:");
+    for number in &filtered_numbers {
+        println!("{}", number);
+    }
+    println!("Number of kept entries: {}", filtered_numbers.len());
+}
+```

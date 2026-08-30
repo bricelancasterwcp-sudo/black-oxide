@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let p1 = (1, 5); // Point at 1 across and 5 up
+    let p2 = (p1.0 + 10, p1.1); // Second point with same height but ten across
+
+    println!("{}", p1.0 + p2.1); // Print the sum of the x-coordinates
+}
+```

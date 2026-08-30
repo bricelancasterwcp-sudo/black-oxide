@@ -1,0 +1,15 @@
+```rust
+fn is_prime(n: Int) -> Bool {
+    for x in range(2, n) {
+        if n % x == 0 {
+            return False;
+        }
+    }
+    True
+}
+
+fn main() {
+    let num = Int::from_str("91")?;
+    print(if is_prime(num) { "yes" } else { "no" });
+}
+```

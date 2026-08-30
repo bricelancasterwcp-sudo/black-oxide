@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let word = "granite";
+    println!("{:?}", word.chars().nth(0).unwrap());
+    println!("{:?}", word.chars().rev().nth(1).unwrap());
+}
+```
+The original program was not correct because it did not use the correct indexing for accessing characters in a string. The `chars()` method returns an iterator over each character in the string, and `nth(0)` retrieves the first character. Similarly, `rev()` reverses the order of the characters, so `nth(1)` retrieves the second to last character.

@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let (x1, y1) = (1, 5);
+    let (x2, y2) = (x1 + 10, y1);
+
+    println!("The sum of the two points is {}", x2 + y2);
+}
+```

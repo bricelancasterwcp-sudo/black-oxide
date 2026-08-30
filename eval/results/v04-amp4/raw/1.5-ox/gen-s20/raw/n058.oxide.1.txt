@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let word = "coffee";
+    let mut seen = Vec::new();
+
+    for c in word.chars() {
+        if !seen.contains(&c) {
+            println!("{}", c);
+            seen.push(c);
+        }
+    }
+}
+```
+
+This program uses Rust's built-in `chars` method to iterate over each character in the given string, `word`. It then checks if the character is already in a vector `seen`. If not, it prints the character and adds it to `seen`, ensuring that each letter appears only once.

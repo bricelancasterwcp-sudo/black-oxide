@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let text = "7, x, 9 and ?".split(',');
+    let mut sum: Int = 0;
+    let mut count: Int = 0;
+
+    for part in text {
+        if let Ok(num) = str_to_int(part.trim()) {
+            sum += num;
+            count += 1;
+        }
+    }
+
+    println!("Total: {}, Count: {}", sum, count);
+}
+```

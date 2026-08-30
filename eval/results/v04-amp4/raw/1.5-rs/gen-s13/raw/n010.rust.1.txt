@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let number = 91;
+    let is_prime = {
+        for i in 2..number {
+            if number % i == 0 {
+                return false;
+            }
+        }
+        true
+    };
+
+    println!("{}", if is_prime { "yes" } else { "no" });
+}
+```
+
+This program checks if the given integer `91` has any divisor other than 1 and itself. It iterates through numbers from 2 up to the square root of `91`, checking for divisibility. If it finds a divisor, it returns false, indicating that `91` is not prime. Otherwise, after completing the loop without finding a divisor, it prints "yes" if `91` is prime.

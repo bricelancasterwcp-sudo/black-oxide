@@ -1,0 +1,7 @@
+fn main() {
+    let s = "mississippi";
+    let count_s = count(s.chars().filter(|&c| c == 's'), 0);
+    let unique_chars = len(set(s.chars()));
+    print(count_s);
+    print(unique_chars);
+}

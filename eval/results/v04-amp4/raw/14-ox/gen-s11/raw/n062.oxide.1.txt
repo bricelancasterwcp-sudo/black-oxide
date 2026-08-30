@@ -1,0 +1,24 @@
+```text
+struct Signal { color: Str }
+
+fn interpret(signal: Signal) {
+    match signal.color {
+        "green" => print_str("go"),
+        "red" => print_str("stop"),
+        "yellow" => print_str("wait"),
+        _ => print_str("unknown signal"),
+    }
+}
+
+fn main() {
+    let signals = vec(
+        Signal { color: "green" },
+        Signal { color: "red" },
+        Signal { color: "yellow" },
+    )
+
+    for s in signals {
+        interpret(s)
+    }
+}
+```

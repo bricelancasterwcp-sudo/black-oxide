@@ -1,0 +1,7 @@
+fn main() {
+    let s = "mississippi"
+    print(count(s.chars().map(|c| c.to_string()).collect::<Vec<Str>>(), &"s".to_string()))
+    let chars: Vec<Str> = s.chars().map(|c| c.to_string()).collect();
+    let distinct_chars: Vec<Str> = chars.into_iter().filter(|&c| !chars.contains(&c)).collect();
+    print(distinct_chars.len())
+}

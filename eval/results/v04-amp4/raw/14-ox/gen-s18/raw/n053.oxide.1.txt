@@ -1,0 +1,11 @@
+```text
+fn main() {
+    let drum = "drum"
+    let reversed = reverse(chars(drum))
+    for ch in reversed {
+        print(ch)
+    }
+    print_str("\n")
+    print_str(drum)
+}
+```

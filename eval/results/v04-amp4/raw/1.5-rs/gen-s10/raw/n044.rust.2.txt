@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut balance = 0;
+    println!("Initial balance: {}", balance);
+
+    for deposit in vec![3, 1, 4, 1, 5] {
+        balance += deposit;
+        println!("Balance after deposit {}: {}", deposit, balance);
+    }
+}
+```

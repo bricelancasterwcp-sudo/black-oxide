@@ -95,6 +95,9 @@ max(v) -> Option<T>           # reads v — largest element, or None if empty
 sum(v) -> Int                 # reads v — sum of an Int vec, 0 if empty
 contains(v, x) -> Bool        # reads v and x — true if v has x
 count(v, x) -> Int            # reads v and x — occurrences of x in v
+reverse(v) -> Vec<T>          # consumes v, returns it reversed
+swap(v, i, j) -> Vec<T>       # consumes v — exchanges positions i and j
+set(v, i, x) -> Vec<T>        # consumes v and x — replaces element i
 unwrap_or(o, d) -> T          # consumes both — Some(x) -> x, None -> d
 clone(x) -> T                 # reads x — fresh copy
 str_len(s) -> Int             # reads s

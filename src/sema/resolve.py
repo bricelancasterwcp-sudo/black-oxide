@@ -94,6 +94,10 @@ class _Resolver:
         self.result = ResolveResult()
         self._next_var_id = 0
         self._scopes: list[dict[str, int]] = []
+        #: Scope stacks set aside while resolving a predicate literal
+        #: body. Non-empty means "we are inside a predicate", and holds
+        #: what the body may NOT see -- see the PredLit case in _expr.
+        self._captured_scopes: list[list[dict[str, int]]] = []
         self._fn_name = ""
         # variant name -> span of the declaring enum (for OX0203 notes)
         self._variant_spans: dict[str, Span] = {}
@@ -341,6 +345,21 @@ class _Resolver:
             case ast.While(cond=cond, body=body):
                 self._expr(cond)
                 self._block(body)
+            case ast.PredLit(param=param_name, body=pred_body):
+                # SPEC 61: a predicate literal CANNOT capture. The body is
+                # resolved against a scope stack containing only the
+                # parameter, so an outer name simply is not visible. The
+                # outer scopes are kept aside (not discarded) purely so
+                # the diagnostic can say "cannot capture" rather than the
+                # misleading "unknown name" -- the name does exist, it is
+                # just not reachable from here.
+                var_id = self._new_var(param_name, expr.span)
+                self.result.binds_of[expr.node_id] = (var_id,)
+                outer, self._scopes = self._scopes, [{param_name: var_id}]
+                self._captured_scopes.append(outer)
+                self._expr(pred_body)
+                self._captured_scopes.pop()
+                self._scopes = outer
             case ast.For(var=var_name, iterable=iterable, body=body):
                 # The loop variable's binding site precedes the iterable in
                 # source order, but is NOT in scope for the iterable.
@@ -429,6 +448,19 @@ class _Resolver:
             self._diag(
                 "OX0201",
                 f"function '{var.name}' may only be used as a call target",
+                var.span,
+            )
+            return
+        if self._captured_scopes and any(
+            var.name in scope for scope in self._captured_scopes[-1]
+        ):
+            # The name exists outside; it is simply not reachable from a
+            # predicate body. Say that, rather than "unknown identifier",
+            # which would send the reader looking for a typo.
+            self._diag(
+                "OX0205",
+                f"predicate cannot capture '{var.name}': a predicate body may "
+                f"reference only its own parameter",
                 var.span,
             )
             return

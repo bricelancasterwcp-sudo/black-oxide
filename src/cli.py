@@ -38,6 +38,12 @@ SUGGESTIONS: dict[str, str] = {
         "Unknown name. Check spelling; variables must be defined by let "
         "or as parameters before use."
     ),
+    "OX0205": (
+        "A predicate literal (x -> expr) cannot capture. Its body may "
+        "reference only its own parameter -- that restriction is what "
+        "keeps predicates clear of ownership. Inline the value, or use a "
+        "loop if the predicate genuinely needs outer state."
+    ),
     "OX0300": (
         "The two sides have incompatible types. Check operand/annotation "
         "types; Int and Float never mix implicitly (use to_float / trunc)."

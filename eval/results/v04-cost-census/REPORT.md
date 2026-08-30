@@ -13,9 +13,7 @@ Dropped (unmeasured, named not zeroed): none
 
 | task | class | oxide | rust | surplus | ratio |
 |---|---|---:|---:|---:|---:|
-| n065 | vectors | 79 | 56 | +23 | 1.411 |
 | n054 | strings | 92 | 72 | +20 | 1.278 |
-| n046 | vectors | 86 | 68 | +18 | 1.265 |
 | n064 | structs/option | 73 | 58 | +15 | 1.259 |
 | n045 | vectors | 55 | 41 | +14 | 1.341 |
 | n053 | strings | 48 | 34 | +14 | 1.412 |
@@ -43,6 +41,7 @@ Dropped (unmeasured, named not zeroed): none
 | n038 | structs/option | 52 | 56 | -4 | 0.929 |
 | n041 | vectors | 38 | 42 | -4 | 0.905 |
 | n050 | vectors | 39 | 43 | -4 | 0.907 |
+| n065 | vectors | 52 | 56 | -4 | 0.929 |
 | n032 | structs/option | 56 | 61 | -5 | 0.918 |
 | n037 | structs/option | 48 | 54 | -6 | 0.889 |
 | n061 | structs/option | 54 | 60 | -6 | 0.900 |
@@ -50,6 +49,7 @@ Dropped (unmeasured, named not zeroed): none
 | n062 | structs/option | 60 | 68 | -8 | 0.882 |
 | n066 | vectors | 63 | 72 | -9 | 0.875 |
 | n035 | structs/option | 75 | 85 | -10 | 0.882 |
+| n046 | vectors | 57 | 68 | -11 | 0.838 |
 | n040 | structs/option | 61 | 74 | -13 | 0.824 |
 | n063 | structs/option | 79 | 92 | -13 | 0.859 |
 | n058 | strings | 74 | 88 | -14 | 0.841 |
@@ -61,5 +61,5 @@ Dropped (unmeasured, named not zeroed): none
 | arithmetic/loops | 509 | 504 | +5 | 1.0099 |
 | strings | 613 | 578 | +35 | 1.0606 |
 | structs/option | 623 | 677 | -54 | 0.9202 |
-| vectors | 611 | 573 | +38 | 1.0663 |
-| **overall** | **2356** | **2332** | **+24** | **1.0103** |
+| vectors | 555 | 573 | -18 | 0.9686 |
+| **overall** | **2300** | **2332** | **-32** | **0.9863** |

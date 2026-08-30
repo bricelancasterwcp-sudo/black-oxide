@@ -138,6 +138,12 @@ _PRELUDE_FNS: tuple[tuple[str, str], ...] = (
         "    }\n"
         "}",
     ),
+    (
+        "count_if",
+        "fn count_if<T>(v: &Vec<T>, p: impl Fn(&T) -> bool) -> i64 {\n"
+        "    v.iter().filter(|e| p(e)).count() as i64\n"
+        "}",
+    ),
     # v0.4 wave-3: swap/reverse/set. Each takes the vector by value and
     # returns it, wrapping the in-place std method -- the owned-in/
     # owned-out convention `sort` established. Out-of-range indices panic
@@ -275,6 +281,10 @@ BUILTIN_REF: dict[str, tuple[bool, ...]] = {
     # v0.4 wave-3 (Task 3): every slot by value -- the vector is consumed
     # (like `sort`), the indices are Copy i64, and `set`'s value is moved
     # in (like `push`'s inserted value). No slot takes ref-form.
+    # count_if reads its vector (&Vec<T>, like contains) and takes the
+    # predicate by value -- a predicate literal is not a place, it is
+    # emitted inline as a Rust closure.
+    "count_if": (True, False),
     "swap": (False, False, False),
     "reverse": (False,),
     "set": (False, False, False),

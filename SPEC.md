@@ -3306,3 +3306,94 @@ text struck through and kept visible, per §58.2's convention:
 A grep across `SPEC.md`, `docs/superpowers/specs/2026-08-09-v03-taxonomy.md`
 and both cards for claims of the shape "no index assignment", "no swap",
 "never panics", or "total operation" returned no further hits.
+
+## 61. v0.4 wave-3 addendum — the predicate literal, and crossing parity
+
+Shipped on the owner's direction after §60 landed, overriding the
+wave-3 spec's §8 ("closures out of scope"). The scope decision was made
+against the cost of a *closure* surface; what shipped is narrower and
+cheaper, and it crosses the threshold the project has aimed at since the
+efficiency loop began.
+
+### 61.1 `x -> expr` is a predicate literal, not a closure
+
+```
+count_if(v, x -> x < 10)      # 3, for v = vec(5, 12, 3, 18, 9)
+```
+
+**A predicate literal cannot capture.** Its body may reference its own
+parameter and nothing else; referencing an enclosing binding is
+`OX0205`. That single restriction is the entire design:
+
+- **With no captures there is no ownership question.** The construct
+  never interacts with implicit linear ownership — the collision that
+  made a general closure surface expensive to reason about and kept it
+  out of the wave-3 spec. A predicate owns nothing, so it can move
+  nothing.
+- **The `->` spelling is deliberate.** Rust's `|x|` was measured one
+  token cheaper to reject (17 vs 16 for the arrow) and was rejected
+  anyway on design grounds: `|x|` would promise capture semantics this
+  language does not implement, and the first model to write
+  `|x| x < threshold` over an outer local would get a confusing error
+  from a construct that *looked* like the Rust it knows. A distinct
+  spelling makes the restriction legible.
+
+Typing: `x -> body` has type `Pred<T>` where `x: T` and `body: Bool`.
+The parameter type is a fresh variable, so it unifies with the element
+type of the vector it is passed beside — `count_if: (Vec<A>, Pred<A>)
+-> Int`, arguments inferred left to right.
+
+Codegen: the literal emits as a Rust closure `|x| body`, and parameter
+uses deref, because the prelude's `count_if` calls `p(e)` with `e: &T`.
+
+**Known limitation, stated rather than discovered later.** A predicate
+body that misuses its *own* parameter — consuming a `Str` parameter
+twice, say — is not caught by the ownership analysis, which treats the
+literal as a leaf (correctly, for the enclosing flow: nothing outside is
+reachable). It still fails closed: the emitted closure takes `&T`, so
+rustc rejects it. The cost is a rustc error where an Oxide diagnostic
+would read better. Worth fixing when a predicate surface grows past
+`count_if`.
+
+### 61.2 The corpus crossed below parity
+
+| class | wave-3 start | after §60 | after §61 |
+|---|---:|---:|---:|
+| arithmetic/loops | 1.010 | 1.010 | 1.010 |
+| strings | 1.064 | 1.061 | 1.061 |
+| structs/option | 0.920 | 0.920 | 0.920 |
+| vectors | 1.377 | 1.066 | **0.969** |
+| **overall** | **1.0875** | 1.0103 | **0.9863** |
+
+Oxide now writes 2300 supervised tokens across the 40 reference programs
+where Rust writes 2332 — a surplus of **−32**. The vectors class, which
+opened this wave at 1.377 and carried 106% of the corpus's net surplus,
+now writes *shorter* programs than Rust does.
+
+This is the static estimand only, on hand-authored reference pairs. It
+says the language can express these tasks in fewer tokens than Rust; it
+does **not** say a model will. That is the dynamic question, and it is
+unmeasured until the wave's campaign runs. The two have disagreed
+before — SPEC §59.7 exists because a dynamic reading was confounded for
+two waves — so the parity claim is scoped to what was measured.
+
+Remaining surplus is now strings-led (n054 +20, n053 +14, n051 +8) with
+n064 +15 in structs; vectors contributes nothing above +14. The next
+cost census reads a different language than the one wave 3 opened on.
+
+### 61.3 Card v0.6 and a non-silent word-limit raise
+
+Both cards gain `count_if(v, x -> b) -> Int` beside `count`. Counts:
+core **1108**, explicit **1208**, gap 100 against a 10% tolerance of
+120.8.
+
+The core card crossed the 1100-word `CORE_WORD_LIMIT` that §60.5 flagged
+as having six words of headroom. Per that section's own instruction the
+limit is raised **non-silently**: `CORE_WORD_LIMIT` 1100 → **1150** in
+`tests/test_cards.py`, stated here with its reason (the predicate
+literal is new syntax, not just another builtin name, so it costs the
+card a line of explanation as well as a signature), and the pin was
+re-verified to bite — temporarily setting it back to 1100 fails the
+test, as it must. The limit was not met by trimming card content.
+
+Headroom is now 42 words. The same instruction applies next time.

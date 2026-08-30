@@ -445,6 +445,8 @@ class _Infer(_EnumOps, _DestructOps):
                         if vname is not None
                         else ERROR_TYPE
                     )
+            case ast.PredLit():
+                ty = self._pred_lit(expr)
             case ast.Call():
                 ty = self._call(expr)
             case ast.BinOp():
@@ -494,6 +496,21 @@ class _Infer(_EnumOps, _DestructOps):
         if expr.body.tail is not None:
             self.unify(body_ty, UNIT, expr.body.tail.span)
         return UNIT
+
+    def _pred_lit(self, expr: ast.PredLit) -> Type:
+        """`x -> body` has type `Pred<T>` where `x: T` and `body: Bool`.
+
+        The parameter type is a fresh variable, so it unifies with the
+        element type of whatever vector the predicate is passed
+        alongside -- `count_if`'s signature is `(Vec<A>, Pred<A>) -> Int`,
+        and the arguments are inferred left to right, so `A` is already
+        pinned to the element type by the time the predicate is seen.
+        """
+        bound = self.resolved.binds_of.get(expr.node_id, ())
+        param_ty: Type = self.var_tv[bound[0]] if bound else self._fresh()
+        body_ty = self._expr(expr.body)
+        self.unify(body_ty, BOOL, expr.body.span)
+        return TCon("Pred", (param_ty,))
 
     def _call(self, call: ast.Call) -> Type:
         vname = self.resolved.variant_refs.get(call.node_id)

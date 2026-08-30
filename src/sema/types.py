@@ -201,6 +201,16 @@ BUILTINS: dict[str, BuiltinSig] = {
     # SPEC 60.2). This joins a pre-existing partial-operation category --
     # integer division already panics on a computed zero divisor -- it does
     # not open a new one.
+    # count_if(v, pred) -> Int: occurrences satisfying a predicate. The
+    # predicate slot is "read" for the same reason contains's compared
+    # value is -- a predicate inspects elements, it never consumes them,
+    # and (SPEC 61) it cannot capture, so it owns nothing to move.
+    "count_if": BuiltinSig(
+        params=(TCon("Vec", (_A,)), TCon("Pred", (_A,))),
+        ret=INT,
+        modes=("read", "read"),
+        generics=(_A,),
+    ),
     "swap": BuiltinSig(
         params=(TCon("Vec", (_A,)), INT, INT),
         ret=TCon("Vec", (_A,)),

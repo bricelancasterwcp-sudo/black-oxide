@@ -69,18 +69,19 @@ def test_pair_costs_names_unreadable_pairs_instead_of_scoring_them_zero(monkeypa
 def test_acceptance_pins_the_committed_corpus_numbers():
     """A DRIFT ALARM, not a constant.
 
-    These are the post-wave-3-re-authoring figures. The pre-re-authoring
-    values this instrument was born against were vectors 789/573,
+    These are the figures after wave 3 closed. The values this
+    instrument was born against, one wave earlier, were vectors 789/573,
     strings 615/578, overall 2536/2332 (ratio 1.0875), with the ranked
-    top three n043 +82, n050 +60, n045 +40 -- the three surpluses that
-    swap/reverse/unwrap_or were shipped to close. Both sets are recorded
+    top three n043 +82, n050 +60, n045 +40 -- the surpluses that
+    swap/reverse/unwrap_or/count_if were shipped to close. The corpus
+    now sits BELOW parity at 2300/2332 = 0.9863. Both sets are recorded
     so a future reader can see what the wave moved, and so a corpus
-    change that nobody intended fails loudly here.
+    change nobody intended fails loudly here.
     """
     costs, dropped = pair_costs(qwen_counter())
     assert dropped == []
     subs = class_subtotals(costs)
-    assert (subs["vectors"]["oxide"], subs["vectors"]["rust"]) == (611, 573)
+    assert (subs["vectors"]["oxide"], subs["vectors"]["rust"]) == (555, 573)
     assert (subs["strings"]["oxide"], subs["strings"]["rust"]) == (613, 578)
     assert (subs["structs/option"]["oxide"], subs["structs/option"]["rust"]) == (623, 677)
     assert (subs["arithmetic/loops"]["oxide"], subs["arithmetic/loops"]["rust"]) == (
@@ -88,13 +89,13 @@ def test_acceptance_pins_the_committed_corpus_numbers():
         504,
     )
     top = rank_by_surplus(costs)[:3]
-    assert [c.task for c in top] == ["n065", "n054", "n046"]
-    assert [c.surplus for c in top] == [23, 20, 18]
+    assert [c.task for c in top] == ["n054", "n064", "n045"]
+    assert [c.surplus for c in top] == [20, 15, 14]
 
 
 def test_census_payload_carries_its_lens():
     census = build_cost_census()
     assert census["tokenizer"]["sha256"]
     assert census["dropped"] == []
-    assert census["overall"]["oxide"] == 2356  # was 2536 pre-re-authoring
+    assert census["overall"]["oxide"] == 2300  # was 2536 at wave-3 start
     assert census["overall"]["rust"] == 2332

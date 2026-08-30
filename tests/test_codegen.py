@@ -175,6 +175,10 @@ fn unwrap_or<T>(o: Option<T>, d: T) -> T {
     }
 }
 
+fn count_if<T>(v: &Vec<T>, p: impl Fn(&T) -> bool) -> i64 {
+    v.iter().filter(|e| p(e)).count() as i64
+}
+
 fn swap<T>(mut v: Vec<T>, i: i64, j: i64) -> Vec<T> {
     v.swap(i as usize, j as usize);
     v

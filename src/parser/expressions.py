@@ -25,6 +25,7 @@ from src.parser.ast import (
     Lit,
     Match,
     MatchArm,
+    PredLit,
     StructLit,
     Try,
     UnOp,
@@ -43,6 +44,7 @@ BUILTIN_METHOD_NAMES: frozenset[str] = frozenset(
         "concat",
         "contains",
         "count",
+        "count_if",
         "get",
         "int_to_str",
         "len",
@@ -169,6 +171,11 @@ class _ExprParserMixin:
             return Lit(self._new_id(), tok.span, kind is TokenKind.KW_TRUE, "bool")
         if kind is TokenKind.IDENT:
             self._advance()
+            # `x -> expr` is a predicate literal (SPEC 61). Unambiguous
+            # against the other ARROW site: a return-type arrow always
+            # follows `)`, never an IDENT in expression position.
+            if self._check(TokenKind.ARROW):
+                return self._pred_lit(tok)
             if self._check(TokenKind.LBRACE) and not self._no_struct_lit:
                 return self._struct_lit(tok)
             return Var(self._new_id(), tok.span, tok.lexeme)
@@ -189,6 +196,17 @@ class _ExprParserMixin:
             return ErrorExpr(self._new_id(), tok.span)
         self._diag("OX0100", f"expected expression, found {kind.name}", tok.span)
         return ErrorExpr(self._new_id(), Span(tok.span.start, tok.span.start))
+
+    def _pred_lit(self, param_tok) -> Expr:
+        """`x -> expr`. The body is parsed at binding power 0 so the whole
+        trailing expression belongs to the predicate: in
+        `count_if(v, x -> x < 10)` the body is `x < 10`, and the argument
+        list's comma still terminates it because COMMA has no infix
+        binding power."""
+        self._advance()  # ->
+        body = self._parse_expr(0)
+        span = Span(param_tok.span.start, body.span.end)
+        return PredLit(self._new_id(), span, param_tok.lexeme, body)
 
     def _paren_group(self) -> Expr:
         lparen = self._advance()  # (

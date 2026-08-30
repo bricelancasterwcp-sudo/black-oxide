@@ -289,10 +289,37 @@ minutes after an 8-hour poll expired empty (48/48 checks `Low`, zero
 errors). Program total across four waves ≈ **$13.8** of the $23 tranche.
 
 Amplification timings, measured: 1.5B 48 min, 7B 77 min, 14B 136 min.
-Scaling is strongly sub-linear in model size because every session
-carries a rustc compile — constant CPU work at 1,600 sessions per size,
-dominating GPU time. Two wall-clock estimates were wrong before this was
-measured.
+Scaling is sub-linear at the small end (1.6× wall-clock for 4.7× the
+parameters, 1.5B→7B) and near-linear at the large end (1.77× for 2×,
+7B→14B). Two wall-clock estimates were wrong before this was measured.
+
+> **AMENDED 2026-08-30.** This paragraph originally attributed the
+> sub-linearity to rustc: *"because every session carries a rustc
+> compile — constant CPU work at 1,600 sessions per size, dominating GPU
+> time."* **That mechanism is wrong and was never measured before being
+> asserted.** Measuring it: a transpiled program costs ~18 ms to check
+> and ~33 ms to build, and wave-3 amplification ran 15,247 compiles —
+> **≈14 minutes of 269, about 5%.** rustc does not dominate anything.
+> The campaign agrees independently: `base-ox-7` ran 200 sessions in
+> 15.8 min (4.7 s/session) of which rustc is ~220 ms, 4.7%.
+>
+> The real cause of the sub-linearity is **fixed per-session overhead in
+> general** — HTTP round-trips, prompt prefill, harness Python, process
+> spawns, with rustc as one ~5% component. At 1.5B the model is fast
+> enough that fixed costs dominate; by 14B the model dominates and
+> scaling goes near-linear, which is exactly the shape measured.
+>
+> The same error inflated §7's next claim. The 3090-vs-4090 result
+> (4.48h vs 4.27h) has a plainer explanation than a CPU bound: their
+> memory bandwidths are 936 vs 1008 GB/s, **7% apart**, and decode is
+> bandwidth-bound. The measured 5% fits that directly. The *conclusion*
+> — that the community 3090 is the right card for this pipeline — still
+> holds; only the reason changes.
+>
+> Recorded rather than quietly fixed because the wrong mechanism was
+> load-bearing: it was used to argue that a faster GPU buys nothing and
+> that local hardware could not help, and both arguments needed a
+> different basis.
 
 ## 8. Feed-forward to wave 4
 

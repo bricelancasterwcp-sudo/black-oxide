@@ -37,6 +37,7 @@ class TokenKind(Enum):
     GEQ = auto()
     ANDAND = auto()
     OROR = auto()
+    PIPE = auto()  # | — predicate literal delimiter (SPEC 63.1)
     # v0.4 wave-2 (Task 4): compound-assignment two-char operators. Lexed
     # exactly like EQEQ/NEQ/LEQ/GEQ -- maximal munch via _TWO_CHAR_OPERATORS
     # -- so `+=`/`-=`/`*=` are single tokens and never confusable with a

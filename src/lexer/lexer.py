@@ -38,6 +38,7 @@ _ONE_CHAR_OPERATORS: dict[str, TokenKind] = {
     "*": TokenKind.STAR,
     "/": TokenKind.SLASH,
     "%": TokenKind.PERCENT,
+    "|": TokenKind.PIPE,
     "!": TokenKind.BANG,
     ".": TokenKind.DOT,
     "?": TokenKind.QUESTION,

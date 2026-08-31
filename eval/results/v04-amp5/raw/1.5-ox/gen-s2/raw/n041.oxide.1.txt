@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut vec = push(push(vec(), 4), 9);
+    sort(&mut vec);
+
+    for &x in &vec {
+        print_str(&to_str(x));
+        print_str("\n");
+    }
+}
+```

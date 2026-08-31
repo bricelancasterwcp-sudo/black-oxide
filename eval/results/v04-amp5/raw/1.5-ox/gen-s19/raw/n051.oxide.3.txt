@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    match "granite".chars().next() {
+        Some(c) => {
+            println!("{}", c);
+            if c == 'g' {
+                println!("A");
+            } else {
+                println!("No match found");
+            }
+        },
+        None => println!("No character found"),
+    }
+}
+```

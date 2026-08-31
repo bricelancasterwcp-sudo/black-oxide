@@ -1,0 +1,17 @@
+```
+struct Rectangle { width: Int, height: Int }
+
+fn main() {
+    let r = Rectangle { width: 9, height: 3 };
+    print("Area is {}", area(r));            // field access copies: r stays usable
+    println!("Perimeter is {}", perimeter(r));
+}
+
+fn area(rectangle: Rectangle) -> Int {
+    rectangle.width * rectangle.height
+}
+
+fn perimeter(rectangle: Rectangle) -> Int {
+    2 * (rectangle.width + rectangle.height)
+}
+```

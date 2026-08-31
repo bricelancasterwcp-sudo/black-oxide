@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let line1 = push(push(vec(), 3), 3);
+    let line2 = push(push(vec(), 2), 2);
+    
+    print(sum(line1)); // 9
+    print(sum(line2)); // 7
+    
+    let total = concat(concat(int_to_str(sum(line1)), " + "), int_to_str(sum(line2)));
+    print(concat(total, " = ", int_to_str(sum(push(line1, sum(line2)))))); // 9 + 7 = 16
+}
+```

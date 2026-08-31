@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let mut p1 = (1, 5);
+    let mut p2 = (p1.0 + 10, p1.1);
+
+    println!("The sum of {} and {} is {}", p1.0, p2.0, p1.0 + p2.0);
+}
+```

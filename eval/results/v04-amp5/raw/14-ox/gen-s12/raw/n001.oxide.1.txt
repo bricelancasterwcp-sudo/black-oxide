@@ -1,0 +1,6 @@
+```ox
+fn main() {
+    let total = sum(range(1, 6).map(|x| x * x * x))
+    print(total)
+}
+```

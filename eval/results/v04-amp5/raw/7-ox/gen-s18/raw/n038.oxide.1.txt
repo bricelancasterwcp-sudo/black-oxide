@@ -1,0 +1,9 @@
+```oxide
+struct Sensor { reading: Int }
+
+fn main() {
+    let s = Sensor { reading: 0 };
+    let s2 = Sensor { reading: set(s.reading, 7) };
+    print(s2.reading);
+}
+```

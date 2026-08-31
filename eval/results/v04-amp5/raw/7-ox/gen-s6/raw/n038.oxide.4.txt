@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let r = Reading { label: "sensor", values: vec(0) };
+    let new_r = Reading { label: "sensor", values: push(r.values.clone(), 7) };
+    print(new_r.values[0]);
+}
+```

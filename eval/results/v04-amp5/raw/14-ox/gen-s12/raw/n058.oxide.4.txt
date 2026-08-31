@@ -1,0 +1,32 @@
+```rust
+struct LetterCount {
+    letter: Str,
+    count: Int
+}
+
+fn main() {
+    let word = "coffee"
+    let mut counts = Vec()
+    for c in chars(word) {
+        let found = false
+        for l in counts.clone() {
+            if l.letter == c {
+                let mut new_l = l
+                new_l.count += 1
+                counts = filter(counts, |x| x.letter != c)
+                counts = push(counts, new_l)
+                found = true
+                break
+            }
+        }
+        if !found {
+            counts = push(counts, LetterCount { letter: clone(c), count: 1 })
+        }
+    }
+    for l in counts {
+        if l.count > 1 {
+            print_str(l.letter)
+        }
+    }
+}
+```

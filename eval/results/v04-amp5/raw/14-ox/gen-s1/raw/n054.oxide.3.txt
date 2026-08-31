@@ -1,0 +1,29 @@
+```
+fn is_vowel(c: Str) -> Bool {
+    match c {
+        "a" => true,
+        "e" => true,
+        "i" => true,
+        "o" => true,
+        "u" => true,
+        _ => false,
+    }
+}
+
+fn main() {
+    let keyboard = "qwertyuiopasdfghjklzxcvbnm";
+    let mut vowels_count = 0;
+    let mut consonants_count = 0;
+
+    for c in chars(keyboard) {
+        if is_vowel(c) {
+            vowels_count += 1;
+        } else {
+            consonants_count += 1;
+        }
+    }
+
+    print(vowels_count);
+    print(consonants_count);
+}
+```

@@ -1,0 +1,21 @@
+```rust
+fn main() {
+    let coffee = "coffee";
+    let mut seen = Vec::new();
+    for c in coffee.chars() {
+        if !seen.contains(&c) {
+            println!("{}", c);
+            seen.push(c.clone());
+        }
+    }
+}
+```
+
+Explanation of the corrections:
+- The `let` statement at line 3 was missing a semicolon.
+- The `for` loop at line 5 was missing a semicolon.
+- The `if` condition at line 12 was using an assignment operator (`=`), which is invalid in Rust. It should be used only for assignment (like `a = b + c`).
+- The `println!` macro at line 6 used an incorrect syntax. The correct way to print a string with double quotes is `println!("{}", c)`.
+- The loop body at line 12 was missing a semicolon.
+- The `seen` vector was not initialized properly within the loop. It should be initialized before the loop starts.
+- The `seen.push(c.clone());` statement was correct and did not need to be modified.

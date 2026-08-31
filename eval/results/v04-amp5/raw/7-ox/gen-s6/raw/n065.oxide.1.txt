@@ -1,0 +1,16 @@
+```rust
+fn count_above_five(v: Vec<Int>) -> Int {
+    count_if(v, |x| x > 5)
+}
+
+fn max_reading(v: Vec<Int>) -> Option<Int> {
+    max(v)
+}
+
+fn main() {
+    let readings = push(push(push(push(vec(), 6), 11), 3), 14);
+    print(count_above_five(readings)) // field access copies: readings stays usable
+    let max_val = max_reading(readings)?;
+    print(max_val)
+}
+```

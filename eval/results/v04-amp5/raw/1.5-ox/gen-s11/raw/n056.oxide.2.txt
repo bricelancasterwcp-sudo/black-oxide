@@ -1,0 +1,24 @@
+```rust
+fn main() {
+    let inputs: Vec<String> = vec!["7", "x", "9", "?"];
+
+    let mut total = 0;
+    let mut count = 0;
+
+    for input in &inputs {
+        if input.starts_with('0') || input == "x" || input == "?" {
+            continue;
+        }
+        match input.parse::<i32>() {
+            Ok(n) => {
+                total += n;
+                count += 1;
+            }
+            Err(_) => {}
+        }
+    }
+
+    println!("Total: {}", total);
+    println!("Count: {}", count);
+}
+```

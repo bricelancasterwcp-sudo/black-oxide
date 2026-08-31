@@ -1,0 +1,10 @@
+```oxide
+fn main() {
+    let readings = vec!(6, 11, 3, 14, 9);
+    let count = filter(readings.clone(), |x| x > 5).len();
+    print(count);
+    print_str("\n");
+    let max = sort(readings).last().unwrap_or(0);
+    print(max);
+}
+```

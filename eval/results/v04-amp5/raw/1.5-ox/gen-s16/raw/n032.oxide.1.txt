@@ -1,0 +1,9 @@
+```rust
+struct Point { x: Int, y: Int }
+
+fn main() {
+    let p = Point { x: 1, y: 5 };
+    let r = Point { x: p.x + 10, y: p.y };
+    print(p.x + p.y);
+}
+```

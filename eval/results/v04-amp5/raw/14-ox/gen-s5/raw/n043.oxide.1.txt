@@ -1,0 +1,11 @@
+```ox
+fn main() {
+    let q = vec(1, 2, 3, 4, 5)
+    let first = get(q, 0)?
+    let last = get(q, len(q) - 1)?
+    let q = set(set(q, 0, last), len(q) - 1, first)
+    for x in q {
+        print(x)
+    }
+}
+```

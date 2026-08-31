@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let phrase = "when in doubt go home";
+    let words_count = phrase.split_whitespace().count();
+    let chars_count = phrase.chars().count();
+    print!("words: {}, characters including spaces: {}", words_count, chars_count);
+}
+```

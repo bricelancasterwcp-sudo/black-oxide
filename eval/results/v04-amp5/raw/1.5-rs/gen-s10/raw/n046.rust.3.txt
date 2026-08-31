@@ -1,0 +1,27 @@
+```rust
+fn main() {
+    let samples = [5, 12, 3, 18, 9];
+    let cutoff = 10;
+
+    let mut below_cutoff = 0;
+    let mut above_or_equal_cutoff = 0;
+
+    for &sample in &samples {
+        if sample < cutoff {
+            below_cutoff += 1;
+        } else {
+            above_or_equal_cutoff += 1;
+        }
+    }
+
+    println!("Below the cutoff: {}", below_cutoff);
+    println!("Above or equal to the cutoff: {}", above_or_equal_cutoff);
+}
+```
+
+Explanation of the correction:
+The code provided did not correctly count the number of samples that fall under and sit at or over the cutoff. The original logic was inverted, leading to incorrect counts.
+
+The corrected program uses a for loop to iterate through each sample in the array `samples`. For each sample, it checks if the sample is less than the cutoff (`sample < cutoff`). If so, it increments the count of samples below the cutoff (`below_cutoff`). If not, it increments the count of samples above or equal to the cutoff (`above_or_equal_cutoff`).
+
+This ensures that both counts are correctly calculated and printed.

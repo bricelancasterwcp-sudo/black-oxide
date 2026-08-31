@@ -1,0 +1,29 @@
+struct Reading { label: Str, values: Vec<Option<Int>> }
+
+fn sum_valid(v: Vec<Option<Int>>) -> Int {
+    let mut sum = 0
+    for x in v {
+        if let Some(n) = x {
+            sum += n
+        }
+    }
+    sum
+}
+
+fn count_invalid(v: Vec<Option<Int>>) -> Int {
+    let mut count = 0
+    for x in v {
+        if x.is_none() {
+            count += 1
+        }
+    }
+    count
+}
+
+fn main() {
+    let values = vec(Some(7), None, Some(9), None)
+    let total = sum_valid(values.clone())
+    let invalid_count = count_invalid(values)
+    print(total)
+    print(invalid_count)
+}

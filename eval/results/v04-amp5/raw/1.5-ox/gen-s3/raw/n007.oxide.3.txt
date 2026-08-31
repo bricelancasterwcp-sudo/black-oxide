@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let num = 9875;
+    let sum = sum_digits(num);
+    println!("Sum of digits: {}", sum);
+}
+
+fn sum_digits(n: Int) -> Int {
+    if n == 0 {
+        0
+    } else {
+        sum_digits(n / 10) + (n % 10)
+    }
+}
+```

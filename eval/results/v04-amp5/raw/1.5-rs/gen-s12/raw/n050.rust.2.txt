@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let mut scores: [i32; 3] = [2, 9, 5];
+    scores.sort_unstable_by(|a, b| b.cmp(a)); // Corrected to sort in descending order
+    for &score in scores.iter() {
+        println!("{}", score);
+    }
+}
+```

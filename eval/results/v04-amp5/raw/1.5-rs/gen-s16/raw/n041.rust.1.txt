@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let numbers = [9, 2, 7, 4];
+    let mut sorted_numbers: Vec<_> = numbers.clone();
+    
+    // Sort the vector using the standard library's sort function
+    sorted_numbers.sort_unstable();
+    
+    for number in sorted_numbers {
+        println!("{}", number);
+    }
+}
+```

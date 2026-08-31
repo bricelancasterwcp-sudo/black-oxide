@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let s = String::from("granite");
+    print_str(s.chars().nth(0).unwrap());
+    println!("{}", s.chars().last().unwrap());
+}
+```
+
+The original program had trailing semicolons which caused syntax errors. The corrected version removes these semicolons and prints the first and last characters of the string as required.

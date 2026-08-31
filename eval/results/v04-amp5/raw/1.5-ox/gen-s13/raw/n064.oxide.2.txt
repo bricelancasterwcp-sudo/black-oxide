@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let v = [10, 20];
+    if !v.is_empty() {
+        println!("{}", v[0]);
+        if !v.len() < 4 {
+            println!("{}", v[3]);
+        }
+    } else {
+        println!("Position is empty");
+    }
+}
+```

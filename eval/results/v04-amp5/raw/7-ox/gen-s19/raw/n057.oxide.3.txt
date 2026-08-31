@@ -1,0 +1,11 @@
+fn main() {
+    let fruits = vec("fig", "banana", "kiwi");
+    let longest = if str_len(fruits[0]) > str_len(fruits[1]) { fruits[0] } else { fruits[1] };
+    if str_len(longest) > str_len(fruits[2]) {
+        print_str(longest);
+        print(str_len(longest));
+    } else {
+        print_str(&fruits[2]);
+        print(str_len(&fruits[2]));
+    }
+}

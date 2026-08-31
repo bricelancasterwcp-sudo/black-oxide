@@ -1,0 +1,15 @@
+```text
+fn main() {
+    let batch = vec(9, 2, 12, 5, 16);
+    let mut count = 0;
+
+    for x in batch {
+        if x < 10 {
+            print(x);
+            count += 1;
+        }
+    }
+
+    print(count);
+}
+```

@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let fruit_names = ["fig", "banana", "kiwi"];
+    let longest_fruit = fruit_names.iter().fold(
+        ("", 0),
+        |(current_longest, current_length), &name| {
+            if name.len() > current_length {
+                (name, name.len())
+            } else {
+                (current_longest, current_length)
+            }
+        },
+    );
+    println!("The fruit with the most letters is {} ({})", longest_fruit.0, longest_fruit.1);
+}
+```

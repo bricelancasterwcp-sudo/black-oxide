@@ -1,0 +1,7 @@
+```
+fn main() {
+    let c = 'granite';
+    print(c.first().unwrap());
+    print(c.last().unwrap());
+}
+```

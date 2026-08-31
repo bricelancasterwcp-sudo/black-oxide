@@ -1,0 +1,8 @@
+fn area_square(side: Float) -> Float {
+    side * side
+}
+
+fn main() {
+    let square_side = 4.0;
+    print(area_square(square_side))
+}

@@ -1,0 +1,10 @@
+```oxide
+fn area_square(side: Int) -> Float {
+    side * side * 3.0
+}
+
+fn main() {
+    let s = area_square(4);
+    print(s);
+}
+```

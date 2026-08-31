@@ -1,0 +1,13 @@
+struct Rectangle { width: Int, height: Int }
+fn area(r: Rectangle) -> Int {
+    r.width * r.height
+}
+fn perimeter(r: Rectangle) -> Int {
+    2 * (r.width + r.height)
+}
+fn main() {
+    let rect = Rectangle { width: 7, height: 4 }
+    print(area(rect))
+    let rect_copy = Rectangle { width: 7, height: 4 } // Reuse the struct for perimeter
+    print(perimeter(rect_copy))
+}

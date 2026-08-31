@@ -1,0 +1,11 @@
+```oxide
+struct Queue { values: Vec<Int> }
+
+fn main() {
+    let q = Queue { values: push(push(push(push(vec(), 1), 2), 3), 4) }
+    swap(q.values, 0, 4)
+    for x in q.values {
+        print(x)
+    }
+}
+```

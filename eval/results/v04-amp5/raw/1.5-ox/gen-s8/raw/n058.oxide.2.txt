@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let c = "coffee".chars().collect::<Vec<char>>();
+    for &ch in c.iter() {
+        if !c.contains(&ch) {
+            println!("{}", ch);
+            c.retain(|&x| x != ch);
+        }
+    }
+}
+```

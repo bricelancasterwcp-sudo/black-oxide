@@ -1,0 +1,31 @@
+```rust
+struct Line {
+    items: Vec<Item>,
+}
+
+enum Item {
+    Single(Unit),
+    Double(Unit),
+}
+
+fn main() {
+    let line1 = Line { items: vec![Item::Single(Unit), Item::Single(Unit), Item::Double(Unit)] };
+    let line2 = Line { items: vec![Item::Single(Unit), Item::Double(Unit), Item::Single(Unit), Item::Single(Unit)] };
+
+    println!("Line 1 value: {}", sum_items(line1.items));
+    println!("Line 2 value: {}", sum_items(line2.items));
+    println!("Total value: {}", sum_items(line1.items) + sum_items(line2.items));
+}
+
+fn sum_items(items: Vec<Item>) -> Unit {
+    let mut total = 0;
+    for item in items {
+        if let Item::Single(price) = item {
+            total += price;
+        } else if let Item::Double(price) = item {
+            total += price * 2;
+        }
+    }
+    total
+}
+```

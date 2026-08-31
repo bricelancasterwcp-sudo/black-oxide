@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let mut n = 1;
+    while true {
+        if (n & (n - 1)) == 0 {
+            break;
+        }
+        n <<= 1;
+    }
+    print(n);
+}
+```
+
+This program finds the biggest power of two that does not exceed 100 by continuously doubling `n` until it becomes a power of two.

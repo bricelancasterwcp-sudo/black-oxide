@@ -1,0 +1,15 @@
+fn main() {
+    let texts = ["7", "x", "9", "?"];
+    let mut sum = 0;
+    let mut count_missing = 0;
+
+    for text in texts.iter() {
+        match text.parse::<i32>() {
+            Ok(num) => sum += num,
+            Err(_) => count_missing += 1,
+        }
+    }
+
+    println!("Total of numbers: {}", sum);
+    println!("Count of missing numbers: {}", count_missing);
+}

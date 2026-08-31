@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let unit_price_4 = 3;
+    let unit_price_5 = 2;
+
+    // Line 1: Four units at $3 each
+    let line1_value = 4 * unit_price_4; // consumed in this iteration
+    print_str(format!("Line 1 value: {}", line1_value));
+
+    // Line 2: Five units at $2 each
+    let line2_value = 5 * unit_price_5; // consumed in this iteration
+    print_str(format!("Line 2 value: {}", line2_value));
+
+    // Total value of both lines
+    let total_value = line1_value + line2_value;
+    print_str(format!("Total value: {}", total_value));
+}
+```

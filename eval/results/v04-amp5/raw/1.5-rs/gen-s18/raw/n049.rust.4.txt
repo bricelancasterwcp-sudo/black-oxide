@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let arr = [8, 3, 11, 6];
+    let mut smallest = arr[0]; // Initialize smallest with the first element of the array
+    let mut largest = arr[0]; // Initialize largest with the first element of the array
+
+    for &value in &arr {
+        if value < smallest {
+            smallest = value; // Update smallest if a smaller number is found
+        }
+        if value > largest {
+            largest = value; // Update largest if a larger number is found
+        }
+    }
+
+    println!("Smallest figure: {}", smallest);
+    println!("Gap between the largest and the smallest: {}", largest - smallest); // Correctly output the gap
+}
+```

@@ -1,0 +1,13 @@
+```rust
+fn divide(numerator: i32, denominator: i32) -> f64 {
+    if denominator == 0 {
+        panic!("Error: Division by zero");
+    }
+    numerator as f64 / denominator as f64
+}
+
+fn main() {
+    let result = divide(20, 4);
+    println!("{}", result);
+}
+```

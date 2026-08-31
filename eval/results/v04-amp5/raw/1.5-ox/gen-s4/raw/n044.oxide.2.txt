@@ -1,0 +1,20 @@
+```
+fn main() {
+    let mut balance = 0;
+    balance += deposit(3);
+    println!("Balance: {}", balance);
+    balance += deposit(1);
+    println!("Balance: {}", balance);
+    balance += deposit(4);
+    println!("Balance: {}", balance);
+    balance += deposit(1);
+    println!("Balance: {}", balance);
+    balance += deposit(5);
+    println!("Final Balance: {}", balance);
+}
+
+fn deposit(amount: Int) -> Int {
+    balance += amount;
+    return balance
+}
+```

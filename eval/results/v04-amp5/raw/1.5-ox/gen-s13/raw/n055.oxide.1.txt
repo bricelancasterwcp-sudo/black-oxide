@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let oak = None;
+    let _ = print(oak);            // bad
+    let oak = Some(8);
+    let _ = print(oak);            // 8
+    let oak = Some(15);
+    let _ = print(oak);            // 15
+}
+```

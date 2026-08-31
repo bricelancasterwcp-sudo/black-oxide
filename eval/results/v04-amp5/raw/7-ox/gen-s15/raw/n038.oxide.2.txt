@@ -1,0 +1,6 @@
+struct Reading { value: Int }
+
+fn main() {
+    let r = Reading { value: 0 };
+    print(r.value);
+}

@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let mut drums = "drum".chars().collect::<Vec<_>>();
+    for i in (0..drums.len()).rev() {
+        print!("{}", drums[i]);
+    }
+    println!(" {}", drums.iter().cloned().collect::<String>());
+}
+```

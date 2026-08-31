@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let log = vec![6, 7, 8, 9];
+    println!("Entry starting: {}", log[0]);
+    println!("Entry ending: {}", log[3]);
+}
+```
+
+The original program had an error in the way it was trying to access elements of the vector. The index for accessing the end of the vector is 3 (since the index starts at 0), not 4.

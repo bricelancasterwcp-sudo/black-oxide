@@ -1,0 +1,7 @@
+```oxide
+fn main() {
+    let rect = (9, 3);
+    print(rect.0 * rect.1);
+    print(2 * (rect.0 + rect.1));
+}
+```

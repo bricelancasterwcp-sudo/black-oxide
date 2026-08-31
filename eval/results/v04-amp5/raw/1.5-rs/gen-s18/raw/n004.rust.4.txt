@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let mut a = 1;
+    let mut b = 1;
+
+    for _ in 0..9 { // Loop from 0 to 8 (since we start counting at 0)
+        let temp = b; // Temporary variable to hold b's value before it is reassigned
+        b = a + b; // Assign the sum of a and b to b
+        a = temp; // Reassign a's old value back to a
+    }
+
+    println!("The tenth term is {}", b); // Print the tenth term after reversing the order of terms
+}
+```

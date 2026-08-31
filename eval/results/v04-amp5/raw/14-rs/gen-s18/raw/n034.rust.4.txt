@@ -1,0 +1,17 @@
+fn main() {
+    let list1 = vec![7, 8, 9];
+    let list2: Vec<i32> = vec![];
+    let list3 = vec![5];
+
+    println!("{:?}", second_entry(&list1));
+    println!("{:?}", second_entry(&list2));
+    println!("{:?}", second_entry(&list3));
+}
+
+fn second_entry(list: &[i32]) -> Option<&i32> {
+    if list.len() > 1 {
+        Some(&list[1])
+    } else {
+        None
+    }
+}

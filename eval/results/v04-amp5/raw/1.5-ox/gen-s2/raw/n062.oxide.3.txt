@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let signals = vec!["green", "red", "yellow"];
+    for signal in signals {
+        match signal {
+            "green" => println!("Go for green."),
+            "red" => println!("Stop."),
+            "yellow" => println!("Wait for yellow."),
+        }
+    }
+}
+```

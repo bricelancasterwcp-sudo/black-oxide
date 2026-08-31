@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let first_line = 4 * 3 + 5 * 2;
+    let second_line = 4 * 2 + 5 * 3;
+    print(first_line);
+    print(second_line);
+}
+```
+
+This program calculates the value of each line and then prints them along with the total.

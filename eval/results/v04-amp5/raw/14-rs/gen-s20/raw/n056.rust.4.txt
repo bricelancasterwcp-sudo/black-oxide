@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let texts = ["7", "x", "9", "?"];
+    let mut sum = 0;
+    let mut non_numbers = 0;
+
+    for text in texts {
+        match text.parse::<i32>() {
+            Ok(number) => sum += number,
+            Err(_) => non_numbers += 1,
+        }
+    }
+
+    println!("Total of numbers: {}", sum);
+    println!("Count of non-numbers: {}", non_numbers);
+}
+```

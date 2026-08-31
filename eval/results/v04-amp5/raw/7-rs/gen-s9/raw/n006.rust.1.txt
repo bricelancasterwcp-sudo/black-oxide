@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let mut n = 100;
+    while (n & (n - 1)) != 0 {
+        n &= n - 1;
+    }
+    println!("{}", n);
+}
+```

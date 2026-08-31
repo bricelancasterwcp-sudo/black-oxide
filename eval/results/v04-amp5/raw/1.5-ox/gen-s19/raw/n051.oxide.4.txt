@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    if let Some(c) = "granite".chars().next() {
+        println!("{}", c);
+        match c {
+            'g' => println!("A"),
+            _ => println!("No match found"),
+        }
+    } else {
+        println!("No character found");
+    }
+}
+```

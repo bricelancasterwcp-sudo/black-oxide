@@ -1,0 +1,23 @@
+```
+fn reverse_str(s: Str) -> Str {
+    let chars_vec = chars(s)
+    let reversed_chars_vec = reverse(chars_vec)
+    let reversed_str = concat_all(reversed_chars_vec)
+    reversed_str
+}
+
+fn concat_all(v: Vec<Str>) -> Str {
+    let acc = ""
+    for s in v {
+        acc = concat(acc, s)
+    }
+    acc
+}
+
+fn main() {
+    let word = "drum"
+    let reversed_word = reverse_str(word)
+    print_str(reversed_word)  // prints "murd"
+    print_str(word)           // prints "drum"
+}
+```

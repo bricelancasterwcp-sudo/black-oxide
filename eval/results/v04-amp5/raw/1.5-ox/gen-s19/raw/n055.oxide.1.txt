@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    for i in vec![8, "oak", 15] {
+        if let Int(x) = i {
+            print(x);
+        } else {
+            print_str("bad");
+        }
+    }
+}
+```
+
+This program iterates over the list of entries. For each entry, it checks if it is a valid integer using pattern matching with `Int(i)`. If it is an integer, it prints the integer; otherwise, it prints "bad".

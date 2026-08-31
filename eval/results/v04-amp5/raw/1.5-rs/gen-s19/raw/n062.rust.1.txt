@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    match std::thread::sleep(std::time::Duration::from_secs(1)) { // Sleep for 1 second to simulate signal arrival
+        Ok(_) => println!("go"), // Go when green arrives
+        Err(e) => eprintln!("Error sleeping: {}", e), // Error handling
+    }
+    match std::thread::sleep(std::time::Duration::from_secs(2)) { // Sleep for another second to simulate red arriving
+        Ok(_) => println!("stop"), // Stop when red arrives
+        Err(e) => eprintln!("Error sleeping: {}", e), // Error handling
+    }
+    match std::thread::sleep(std::time::Duration::from_secs(3)) { // Sleep for yet another second to simulate yellow arriving
+        Ok(_) => println!("wait"), // Wait when yellow arrives
+        Err(e) => eprintln!("Error sleeping: {}", e), // Error handling
+    }
+}
+```

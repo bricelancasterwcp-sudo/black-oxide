@@ -1,0 +1,16 @@
+```rust
+struct Fibonacci { a: Int, b: Int }
+
+fn next(fib: Fibonacci) -> Fibonacci {
+    let Fibonacci { a, b } = fib;
+    Fibonacci { a: b, b: a + b }
+}
+
+fn main() {
+    let mut fib = Fibonacci { a: 1, b: 1 };
+    for _ in range(0, 8) {
+        fib = next(fib);
+    }
+    print(fib.b)
+}
+```

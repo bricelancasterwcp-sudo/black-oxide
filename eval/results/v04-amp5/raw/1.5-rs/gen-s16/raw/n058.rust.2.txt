@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let mut counts = [0; 26];
+    let word = "coffee";
+    for &c in word.chars().filter(|&c| c.is_alphabetic()) {
+        counts[c as usize - 'a' as usize] += 1;
+    }
+
+    for (i, &count) in counts.iter().enumerate() {
+        if count > 0 {
+            print!("{} ", i + 'a');
+        }
+    }
+}
+```

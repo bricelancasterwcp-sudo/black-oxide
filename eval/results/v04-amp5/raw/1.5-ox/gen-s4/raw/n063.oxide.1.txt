@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let first_line = 4 * 3 + 5 * 2;
+    let second_line = (first_line as f64) / 10.0;
+    println!("First line: {}", first_line);
+    println!("Second line: {}", second_line);
+    println!("Total value: {}", first_line + (second_line * 10.0));
+}
+```

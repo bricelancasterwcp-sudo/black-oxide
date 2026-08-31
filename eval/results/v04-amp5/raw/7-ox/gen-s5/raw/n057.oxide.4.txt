@@ -1,0 +1,41 @@
+```rust
+struct Reading { label: Str, values: Vec<Int> }
+
+fn first_big(v: Vec<Int>) -> Int {
+    let mut found = -1;
+    for x in v {
+        if x > 10 {
+            found = x;
+            break;
+        }
+    }
+    found
+}
+
+fn second(v: Vec<Int>) -> Option<Int> {
+    match get(v, 1) {
+        Some(x) => Some(x + 1),
+        None => None,
+    }
+}
+
+fn main() {
+    let mut max_len = 0;
+    let mut longest_name = "";
+
+    fn check_name(name: Str) {
+        let len = str_len(name);
+        if len > max_len {
+            max_len = len;
+            longest_name = clone(name); // Clone the string to avoid moving it
+        }
+    }
+
+    check_name("fig");
+    check_name("banana");
+    check_name("kiwi");
+
+    print_str(longest_name);
+    print(max_len);
+}
+```

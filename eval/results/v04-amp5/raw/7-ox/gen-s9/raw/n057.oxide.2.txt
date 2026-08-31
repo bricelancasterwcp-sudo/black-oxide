@@ -1,0 +1,25 @@
+```rust
+fn max_len_name(a: Str, b: Str, c: Str) -> (Str, Int) {
+    let mut max_len = 0;
+    let mut max_name = "";
+
+    fn update_max(name: Str, len: Int) {
+        if len > max_len {
+            max_len = len;
+            max_name = name;
+        }
+    }
+
+    update_max(a.clone(), str_len(a));
+    update_max(b.clone(), str_len(b));
+    update_max(c.clone(), str_len(c));
+
+    (max_name.clone(), max_len)
+}
+
+fn main() {
+    let names = ("fig", "banana", "kiwi");
+    let result = max_len_name(names.0.to_string(), names.1.to_string(), names.2.to_string());
+    print(result.0); print_str("\n"); print(to_float(result.1).to_string());
+}
+```

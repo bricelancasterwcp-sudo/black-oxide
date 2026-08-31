@@ -1,0 +1,35 @@
+```text
+struct Reading { label: Str, values: Vec<Int> }
+
+fn count_positives(v: Vec<Int>) -> Int {
+    let mut count = 0
+    for x in v {
+        if x > 0 {
+            count += 1
+        }
+    }
+    count
+}
+
+fn find_max(v: Vec<Int>) -> Option<Int> {
+    max(v)
+}
+
+fn main() {
+    let values = vec()
+    let values = push(values, 3)
+    let values = push(values, 8)
+    let values = push(values, -2)
+    let values = push(values, 12)
+    let values = push(values, 7)
+
+    let positives_count = count_positives(values)
+    print(positives_count)
+
+    let max_value = find_max(values)
+    match max_value {
+        Some(n) => print(n),
+        None => print_str("No values"),
+    }
+}
+```

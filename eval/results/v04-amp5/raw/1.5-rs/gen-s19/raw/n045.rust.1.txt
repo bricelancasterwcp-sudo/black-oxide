@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let log = vec![6, 7, 8, 9];
+    println!("Entry starting: {}", log[0]);
+    println!("Entry ending: {}", log[3]);
+}
+```
+
+This Rust program initializes a vector with the integers 6, 7, 8, and 9. It then uses `println!` to print the first and last elements of the vector, which correspond to the entries at index 0 (starting) and index 3 (ending), respectively.

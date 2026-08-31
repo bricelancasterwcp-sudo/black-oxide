@@ -1,0 +1,15 @@
+```rust
+struct Signal { color: Str }
+
+fn main() {
+    let signals = vec![Signal { color: "green" }, Signal { color: "red" }, Signal { color: "yellow" }];
+    for signal in signals {
+        match signal.color {
+            "green" => print("go"),
+            "red" => print("stop"),
+            "yellow" => print("wait"),
+            _ => print_str("unknown"),
+        }
+    }
+}
+```

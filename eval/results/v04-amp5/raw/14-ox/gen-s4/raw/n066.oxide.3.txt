@@ -1,0 +1,10 @@
+```text
+fn main() {
+    let nums = vec!(9, 2, 12, 5, 16)
+    let kept = filter(nums, |x| x < 10)
+    for x in kept {
+        print(x)
+    }
+    print(len(kept))
+}
+```

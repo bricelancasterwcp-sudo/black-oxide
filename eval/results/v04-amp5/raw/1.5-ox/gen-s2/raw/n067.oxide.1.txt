@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let mut values = vec![7, 4, 9, 10];
+    let mut total = 0;
+    for (i, &value) in values.iter_mut().enumerate() {
+        if value % 2 != 0 {
+            println!("{}", 2 * value);
+            total += value;
+        } else if i > 0 && values[i-1] % 2 != 0 {
+            break; // Avoid reassigning a moved value
+        }
+    }
+    print!("{}", total);
+}
+```

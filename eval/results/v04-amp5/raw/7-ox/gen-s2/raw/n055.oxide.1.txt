@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let input1 = "8";
+    let input2 = "oak";
+    let input3 = "15";
+
+    print_value(input1);
+    print_value(input2);
+    print_value(input3);
+}
+
+fn print_value(value: &str) {
+    match value.parse::<Int>() {
+        Ok(num) => print(num),
+        Err(_) => print_str("bad"),
+    }
+}
+```

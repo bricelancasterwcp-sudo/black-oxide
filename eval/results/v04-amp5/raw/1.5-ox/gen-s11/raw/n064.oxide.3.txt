@@ -1,0 +1,23 @@
+```rust
+struct List { elements: Vec<i32> }
+
+impl fmt::Debug for List {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "List {{ {} }}", self.elements.join(", "))
+    }
+}
+
+fn main() {
+    let l = List { elements: vec![10, 20] };
+
+    if let Some(pos1) = l.elements.get(1) {
+        println!("Position 1: {}", pos1);
+    }
+
+    if let Some(pos4) = l.elements.get(3) {
+        println!("Position 4: {}", pos4);
+    } else {
+        println!("Position 4 is empty");
+    }
+}
+```

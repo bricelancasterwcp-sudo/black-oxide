@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let keyboard = "qwertyuiopasdfghjklzxcvbnm";
+    let mut vowel_count = 0;
+    let mut non_vowel_count = 0;
+
+    for char in keyboard.chars() {
+        if char.is_ascii_lowercase() && ["aeiou"].iter().any(|&vowel| vowel == char) {
+            vowel_count += 1;
+        } else {
+            non_vowel_count += 1;
+        }
+    }
+
+    println!("Vowels: {}", vowel_count);
+    println!("Non-vowels: {}", non_vowel_count);
+}
+```

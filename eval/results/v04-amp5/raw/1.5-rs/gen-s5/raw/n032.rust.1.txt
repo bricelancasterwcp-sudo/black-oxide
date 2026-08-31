@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    // Create a first point (1, 5)
+    let point1 = (1, 5);
+    
+    // Create a second point with the same height but ten across (10, 5)
+    let point2 = (10, 5);
+    
+    // Calculate the sum of the two points
+    let result = point1.0 + point2.0;
+    
+    // Print the result
+    println!("{}", result);
+}
+```

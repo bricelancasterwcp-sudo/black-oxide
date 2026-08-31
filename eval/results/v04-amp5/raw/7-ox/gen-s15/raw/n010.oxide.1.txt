@@ -1,0 +1,21 @@
+```oxide
+fn is_prime(n: Int) -> Bool {
+    if n <= 1 {
+        return False
+    }
+    for i in range(2, n) {
+        if n % i == 0 {
+            return False
+        }
+    }
+    True
+}
+
+fn main() {
+    let result = is_prime(91)
+    match result {
+        True => print_str("no"),
+        False => print_str("yes")
+    }
+}
+```

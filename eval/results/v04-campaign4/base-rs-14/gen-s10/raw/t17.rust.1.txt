@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let list = vec![10, 20, 30];
+
+    fn lookup_element(list: &Vec<i32>, index: usize) -> i32 {
+        if index < list.len() {
+            list[index]
+        } else {
+            -1
+        }
+    }
+
+    let element_at_1 = lookup_element(&list, 1);
+    println!("{}", element_at_1);
+
+    let element_at_5 = lookup_element(&list, 5);
+    println!("{}", element_at_5);
+}
+```

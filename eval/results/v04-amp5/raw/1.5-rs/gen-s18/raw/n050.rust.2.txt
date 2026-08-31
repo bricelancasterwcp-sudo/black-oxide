@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let mut scores = [2, 9, 5];
+    // Reverse the array so that highest score is first
+    scores.reverse();
+    for &score in scores.iter() {
+        println!("{}", score);
+    }
+}
+```

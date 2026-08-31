@@ -1,0 +1,9 @@
+fn main() {
+    let nums = vec(5, 12, 3, 18, 9);
+    let cutoff = 10;
+    let (under, over) = (count_if(nums.iter().cloned(), |x| x < cutoff), count_if(nums.iter().cloned(), |x| x >= cutoff));
+    print_str("Under cutoff: ");
+    print(under);
+    print_str(", Over or at cutoff: ");
+    print(over);
+}

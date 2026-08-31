@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let c = 'g';
+    println!("{}", char::from(c - 32)); // print 'a'
+    println!("{}", char::from(c + 32)); // print 'G'
+}
+```

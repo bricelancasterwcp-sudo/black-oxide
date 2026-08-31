@@ -1,0 +1,15 @@
+```rust
+use std::cmp;
+
+fn main() {
+    let names = vec!["fig", "banana", "kiwi"];
+    let longest_name = names.iter().fold(("", 0), |(longest, max_length), name| {
+        if name.len() > max_length {
+            (name, name.len())
+        } else {
+            (longest, max_length)
+        }
+    });
+    print!("The longest name is {} with {} letters.", longest_name.0, longest_name.1);
+}
+```

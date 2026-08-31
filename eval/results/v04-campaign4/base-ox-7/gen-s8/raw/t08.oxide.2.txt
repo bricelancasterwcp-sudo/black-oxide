@@ -1,0 +1,16 @@
+fn count_pos(v: Vec<Int>) -> Int {
+    count_if(v, |x| x > 0)
+}
+
+fn max_val(v: Vec<Int>) -> Option<Int> {
+    max(v)
+}
+
+fn main() {
+    let v = vec(3, 8, -2, 12, 7);
+    print(count_pos(v.clone()))
+    match max_val(v) {
+        Some(n) => print(n),
+        None => print_str("empty"),
+    }
+}

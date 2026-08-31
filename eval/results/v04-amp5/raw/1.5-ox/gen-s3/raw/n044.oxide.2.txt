@@ -1,0 +1,53 @@
+```rust
+fn main() {
+    let mut balance = 0;
+
+    match deposit(3) {
+        Some(b) => {
+            balance += b;
+            println!("After depositing 3: {}", balance);
+        },
+        None => println!("Deposit failed"),
+    }
+
+    match deposit(1) {
+        Some(b) => {
+            balance += b;
+            println!("After depositing 1: {}", balance);
+        },
+        None => println!("Deposit failed"),
+    }
+
+    match deposit(4) {
+        Some(b) => {
+            balance += b;
+            println!("After depositing 4: {}", balance);
+        },
+        None => println!("Deposit failed"),
+    }
+
+    match deposit(1) {
+        Some(b) => {
+            balance += b;
+            println!("After depositing 1: {}", balance);
+        },
+        None => println!("Deposit failed"),
+    }
+
+    match deposit(5) {
+        Some(b) => {
+            balance += b;
+            println!("After depositing 5: {}", balance);
+        },
+        None => println!("Deposit failed"),
+    }
+}
+
+fn deposit(amount: Int) -> Option<Int> {
+    if amount < 0 {
+        None
+    } else {
+        Some(amount)
+    }
+}
+```

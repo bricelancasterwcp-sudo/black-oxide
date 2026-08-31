@@ -1,0 +1,20 @@
+```rust
+struct Reading { label: Str, values: Vec<Int> }
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(vec(), 3), 42) }
+    
+    // Walk the list and print doubled odd entries
+    let mut total_even = 0;
+    for &x in &r.values {
+        if x % 2 != 0 {
+            println!("{}", x * 2);
+        } else {
+            total_even += x;
+        }
+    }
+    
+    // Print the total of even entries
+    println!("Total of even entries: {}", total_even);
+}
+```

@@ -1,0 +1,6 @@
+fn main() {
+    let mut v = vec![4, 3, 2, 1];
+    for i in (v.len() - 1..=0) {
+        print(v[i]);
+    }
+}

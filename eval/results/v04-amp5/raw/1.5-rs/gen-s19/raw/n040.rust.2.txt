@@ -1,0 +1,26 @@
+```rust
+fn main() {
+    // Define a function to calculate the area of a square
+    fn area_square(side_length: i32) -> f64 {
+        side_length as f64 * side_length as f64
+    }
+
+    // Define a function to calculate the area of a circle
+    fn area_circle(radius: f64) -> f64 {
+        std::f64::consts::PI * radius * radius
+    }
+
+    // Main function where we determine which shape to use and calculate its area
+    let side_length = 4;
+    let radius = 3.0;
+
+    if side_length != 0 && radius != 0 {  // Check for valid inputs
+        match side_length {
+            0 => println!("Area of the circle: {}", area_circle(radius)),
+            _ => println!("Area of the square: {}", area_square(side_length))
+        }
+    } else {
+        println!("Invalid input. Side length and radius must be non-zero.");
+    }
+}
+```

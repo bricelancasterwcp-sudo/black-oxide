@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let input = "a1b22";
+    let mut sum = 0;
+    let mut count = 0;
+
+    for ch in input.chars() {
+        if let Some(digit) = ch.to_digit(10) {
+            sum += digit as i32;
+            count += 1;
+        }
+    }
+
+    println!("Sum of digits: {}", sum);
+    println!("Number of digits: {}", count);
+}
+```

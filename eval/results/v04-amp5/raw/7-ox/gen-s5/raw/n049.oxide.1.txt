@@ -1,0 +1,18 @@
+```oxide
+fn main() {
+    let figures = vec!(8, 3, 11, 6);
+    
+    let min_figure = match min(figures.clone()) {
+        Some(m) => m,
+        None => return print_str("empty list"),
+    };
+    print(min_figure);
+    
+    let max_figure = match max(figures.clone()) {
+        Some(m) => m,
+        None => return print_str("empty list"),
+    };
+    let gap = max_figure - min_figure;
+    print(gap);
+}
+```

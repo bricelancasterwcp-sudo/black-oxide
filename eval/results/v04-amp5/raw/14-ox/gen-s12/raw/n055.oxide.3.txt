@@ -1,0 +1,21 @@
+```rust
+fn parse_int(s: Str) -> Option<Int> {
+    if s == "8" { Some(8) }
+    else if s == "oak" { None }
+    else if s == "15" { Some(15) }
+    else { None }
+}
+
+fn print_number_or_bad(s: Str) {
+    match parse_int(s) {
+        Some(n) => print(n),
+        None => print_str("bad"),
+    }
+}
+
+fn main() {
+    print_number_or_bad("8");
+    print_number_or_bad("oak");
+    print_number_or_bad("15");
+}
+```

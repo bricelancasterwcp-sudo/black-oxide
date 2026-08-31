@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let word = "granite";
+    for c in word.chars().skip(1) {
+        if !c.is_alphabetic() {
+            continue;
+        }
+        print!("{} {}\n", c, word.chars().nth(word.len() - 1).unwrap());
+        break;
+    }
+}
+```

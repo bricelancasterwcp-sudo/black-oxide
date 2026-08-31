@@ -1,0 +1,17 @@
+```rust
+fn reverse_number(n: Int) -> Int {
+    let mut reversed = 0;
+    let mut num = n;
+    while num > 0 {
+        let digit = num % 10;
+        reversed = reversed * 10 + digit;
+        num /= 10;
+    }
+    reversed
+}
+
+fn main() {
+    let number = 1234;
+    print(reverse_number(number));
+}
+```

@@ -1,0 +1,29 @@
+```rust
+struct Reading { label: Str, values: Vec<Int> }
+
+fn first_big(v: Vec<Int>) -> Int {
+    let found = -1
+    for x in v {
+        if x > 10 {
+            found = x
+            break
+        }
+    }
+    found
+}
+
+fn second(v: Vec<Int>) -> Option<Int> {
+    let x = get(v, 1)?
+    Some(x + 1)
+}
+
+fn main() {
+    let entries = vec("8", "oak", "15")
+    for entry in entries {
+        match parse_int(entry) {
+            Some(n) => print(n),
+            None => print_str("bad"),
+        }
+    }
+}
+```

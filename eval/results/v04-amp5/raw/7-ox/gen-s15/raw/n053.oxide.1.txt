@@ -1,0 +1,4 @@
+```rust
+let s = "drum";
+print(concat(reverse(str_chars(s)), str_chars(s)))
+```

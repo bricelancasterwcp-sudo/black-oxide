@@ -1,0 +1,25 @@
+```
+fn count_occurrences(s: Str) -> Vec<(Str, Int)> {
+    let mut result = vec()
+    let mut seen = vec()
+    for c in chars(s) {
+        if contains(seen, c) {
+            continue
+        }
+        let count = count(s, c)
+        if count > 1 {
+            result = push(result, (c, count))
+        }
+        seen = push(seen, c)
+    }
+    result
+}
+
+fn main() {
+    let word = "coffee"
+    let occurrences = count_occurrences(word)
+    for (letter, _) in occurrences {
+        print(letter)
+    }
+}
+```

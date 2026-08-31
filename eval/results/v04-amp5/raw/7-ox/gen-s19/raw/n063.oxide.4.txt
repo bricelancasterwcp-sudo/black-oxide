@@ -1,0 +1,16 @@
+```rust
+struct Line { items: Int, price_per_item: Int }
+
+fn total_value(line: Line) -> Int {
+    line.items * line.price_per_item
+}
+
+fn main() {
+    let line1 = Line { items: 4, price_per_item: 3 };
+    let line2 = Line { items: 5, price_per_item: 2 };
+
+    print(total_value(line1));
+    print(total_value(line2));
+    print(total_value(Line { items: line1.items + line2.items, price_per_item: (line1.price_per_item * line1.items + line2.price_per_item * line2.items) / (line1.items + line2.items) }));
+}
+```

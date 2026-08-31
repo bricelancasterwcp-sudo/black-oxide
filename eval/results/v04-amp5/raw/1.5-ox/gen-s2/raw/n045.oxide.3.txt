@@ -1,0 +1,10 @@
+```rust
+struct Log { entries: Vec<Int> }
+
+fn main() {
+    let log = Log { entries: vec![6, 7, 8, 9] };
+    println!("{}", log.entries[0]);
+    println!("{}", log.entries[len(&log.entries)]);
+}
+```
+The problem was due to the incorrect usage of square brackets for indexing and the misuse of the `len` function. The correct use should be `log.len()`, not `log.entries.log.len()`.

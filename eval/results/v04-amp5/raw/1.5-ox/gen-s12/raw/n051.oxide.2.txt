@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let s = String::from("granite");
+    print_str(s.chars().nth(0).unwrap());
+    println!("{}", s.chars().last().unwrap());
+}
+```
+
+Explanation of the corrections made:
+1. Added missing semicolons at lines 2, 3, and 4.
+2. Corrected the last line to use `println!` for better formatting.
+3. Removed the unnecessary semicolon before `println!`.

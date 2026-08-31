@@ -1,0 +1,4 @@
+fn main() {
+    let count = (1..=36).filter(|x| 36 % x == 0).count();
+    print(count);
+}

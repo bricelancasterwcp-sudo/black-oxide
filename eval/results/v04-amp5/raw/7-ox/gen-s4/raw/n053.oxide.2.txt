@@ -1,0 +1,5 @@
+fn main() {
+    let s = "drum"
+    print(concat(chars(s), str_len(s).to_string()))
+    print_str(s)
+}

@@ -1,0 +1,20 @@
+```oxide
+struct Signal { name: Str }
+
+fn main() {
+    let signals = vec![
+        Signal { name: "green" },
+        Signal { name: "red" },
+        Signal { name: "yellow" }
+    ];
+
+    for signal in signals {
+        match signal.name {
+            "green" => print("go"),
+            "red" => print("stop"),
+            "yellow" => print("wait"),
+            _ => ()
+        }
+    }
+}
+```

@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let mut numbers = vec![8, 15, 0];
+    for &number in numbers.iter() {
+        match number {
+            8 => println!("oak"),
+            15 => println!("apple"),
+            _ => println!("bad")
+        }
+    }
+}
+```

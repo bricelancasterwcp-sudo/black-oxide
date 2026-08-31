@@ -1,0 +1,19 @@
+```
+fn sum_of_digits(n: Int) -> Int {
+    let sum = 0
+    let str_n = int_to_str(n)
+    for c in chars(str_n) {
+        let digit = parse_int(c)?
+        sum = sum + digit
+    }
+    Some(sum)
+}
+
+fn main() {
+    let number = 9875
+    match sum_of_digits(number) {
+        Some(sum) => print(sum),
+        None => print_str("Invalid number"),
+    }
+}
+```

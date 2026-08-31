@@ -1,0 +1,21 @@
+```rust
+fn main() {
+    let dividend = 20;
+    let divisor = 4;
+
+    let result = divide(dividend, divisor);
+
+    match result {
+        Ok(quotient) => println!("{}", quotient),
+        Err(_) => println!("bad"),
+    }
+}
+
+fn divide(dividend: i32, divisor: i32) -> Result<i32, ()> {
+    if divisor == 0 {
+        Err(())
+    } else {
+        Ok(dividend / divisor)
+    }
+}
+```

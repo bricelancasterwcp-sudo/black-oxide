@@ -1,0 +1,15 @@
+```
+fn safe_divide(numerator: Int, denominator: Int) -> Option<Int> {
+    if denominator == 0 {
+        None
+    } else {
+        Some(numerator / denominator)
+    }
+}
+
+fn main() {
+    let result = safe_divide(20, 4)?;
+    print(result);
+    Some(0)  // To satisfy the return type of the function, as '?' is used
+}
+```

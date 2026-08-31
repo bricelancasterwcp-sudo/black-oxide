@@ -1,0 +1,11 @@
+```
+fn main() {
+    let a = 5;
+    let b = 7;
+    let c = 3;
+    let d = 9;
+
+    println!("Smallest figure: {}", min(min(a, b), min(c, d)));
+    println!("Gap between largest and smallest: {}", max(max(a, b), max(c, d)) - min(min(a, b), min(c, d)));
+}
+```

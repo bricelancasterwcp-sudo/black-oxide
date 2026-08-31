@@ -1,0 +1,15 @@
+```oxide
+fn main() {
+    let s = "abcdefghijklmnopqrstuvwxyz";
+    let mut vowels = 0;
+    for c in chars(s) {
+        if c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' ||
+           c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U' {
+            vowels += 1;
+        }
+    }
+    print(vowels);
+    print_str(" ");
+    print(len(s) - vowels);
+}
+```

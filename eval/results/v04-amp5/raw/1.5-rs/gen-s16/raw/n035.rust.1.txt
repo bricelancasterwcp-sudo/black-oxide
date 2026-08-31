@@ -1,0 +1,16 @@
+```rust
+fn divide(a: isize, b: isize) -> Result<isize, &'static str> {
+    if b == 0 {
+        Err("Divide by zero")
+    } else {
+        Ok(a / b)
+    }
+}
+
+fn main() {
+    match divide(20, 4) {
+        Ok(answer) => println!("The answer is {}", answer),
+        Err(e) => println!("{}", e),
+    }
+}
+```

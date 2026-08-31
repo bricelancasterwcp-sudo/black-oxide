@@ -1,0 +1,24 @@
+```rust
+fn main() {
+    let v: Vec<Int> = vec![7, 8, 9];
+    match second(v) {
+        Some(n) => println!("{}", n),
+        None => println!("None"),
+    }
+}
+
+fn second(mut v: Vec<Int>) -> Option<Int> {
+    match v.pop() {
+        Some(first) => {
+            let mut iter = v.into_iter();
+            for &x in iter {
+                if x > first {
+                    return Some(x);
+                }
+            }
+            None
+        },
+        _ => None,
+    }
+}
+```

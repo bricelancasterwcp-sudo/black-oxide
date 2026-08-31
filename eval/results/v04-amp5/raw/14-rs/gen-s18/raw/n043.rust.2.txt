@@ -1,0 +1,9 @@
+fn main() {
+    let mut queue = vec![1, 2, 3, 4, 5];
+    if let Some((mut first, last)) = queue.split_first_mut().and_then(|(f, rest)| rest.split_last_mut().map(|(l, _)| (*f, *l))) {
+        std::mem::swap(&mut first, &mut last);
+    }
+    for entry in queue {
+        println!("{}", entry);
+    }
+}

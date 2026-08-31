@@ -1,0 +1,5 @@
+fn main() {
+    let fruit = "kiwi";
+    let max_length = fruit.chars().count();
+    println!("The fruit with the most letters is {} and it has {} letters.", fruit, max_length);
+}

@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut a = Vec::new();
+    push(a.clone(), 1);
+    push(a.clone(), 1);
+
+    for _ in 2..10 {
+        push(&mut a, get(a.clone(), a.len() - 1) + get(a.clone(), a.len() - 2));
+    }
+
+    print(get(a.clone(), 9));
+}
+```

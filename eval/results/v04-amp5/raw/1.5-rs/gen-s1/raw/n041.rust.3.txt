@@ -1,0 +1,6 @@
+fn main() {
+    let numbers = [9, 2, 7, 4];
+    for num in numbers.iter().sorted_by(|a, b| a.cmp(b)) {
+        println!("{}", num);
+    }
+}

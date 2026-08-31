@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let s = String::from("granite");
+    print_str(s.chars().nth(0).unwrap());
+    print_str(s.chars().last().unwrap());
+}
+```
+
+This Rust code snippet starts by defining a `main` function. Inside the `main` function, a string literal `"granite"` is converted into a `String` type. The `chars()` method is then called on this string to get an iterator over its characters. The first character is accessed using `nth(0)` and printed with `print_str()`. The last character is accessed using `last()` and also printed with `print_str()`.

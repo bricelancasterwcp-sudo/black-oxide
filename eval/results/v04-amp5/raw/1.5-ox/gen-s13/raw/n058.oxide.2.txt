@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let coffee = "coffe";
+    let mut seen = vec![false; 26];
+    
+    for c in coffee.chars() {
+        let idx = (c as u8 - b'a') as usize;
+        if !seen[idx] {
+            println!("{}", c);
+            seen[idx] = true;
+        }
+    }
+}
+```

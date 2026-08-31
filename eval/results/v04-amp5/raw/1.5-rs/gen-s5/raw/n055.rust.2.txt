@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    println!("{} (oak)", 8);
+    println!("{} (good)", ""); // Fixed: Missing closing parenthesis for "good"
+    println!("{} (15)", 15);
+}
+```
+
+Explanation of the corrections:
+- The print statement for "bad" needed a closing parenthesis to properly format it.
+- The print statements for oak and 15 were correct as they are already formatted.

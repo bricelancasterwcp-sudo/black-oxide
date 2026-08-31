@@ -1,0 +1,21 @@
+```rust
+fn main() {
+    let mut input = vec!["8", "oak", "15"];
+    
+    for i in &input {
+        if i.is_empty() {
+            println!("bad");
+        } else {
+            println!("{}", i);
+        }
+    }
+}
+```
+
+Explanation:
+- The program starts by defining a vector `input` containing the three strings: "8", "oak", and "15".
+- It then iterates over each element of the vector using a for loop.
+- For each element, it checks if it is empty using the `is_empty()` method.
+- If the element is empty, it prints "bad".
+- If the element is not empty, it prints the value of the element.
+- The program ends after processing all elements.

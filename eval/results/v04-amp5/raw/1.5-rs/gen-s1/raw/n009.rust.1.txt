@@ -1,0 +1,6 @@
+```rust
+fn main() {
+    println!("{}", 1234.reverse());
+}
+```
+Note: The `reverse` method is not a standard Rust feature. It's just an example to show how you might reverse a number manually in Rust. To print the digits of a number in reverse order, you would need to convert it to a string and then iterate over it in reverse order.

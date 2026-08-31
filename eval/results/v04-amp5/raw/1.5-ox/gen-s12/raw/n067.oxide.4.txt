@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let mut numbers = vec![7, 4, 9, 10];
+    let mut total_evens = 0;
+
+    // Walk the list in order
+    for i in 0..numbers.len() {
+        if numbers[i] % 2 != 0 {
+            println!("{}", numbers[i] * 2);
+        } else {
+            total_evens += numbers[i];
+        }
+    }
+
+    // Print the total of even entries
+    println!("Total of even entries: {}", total_evens);
+}
+```

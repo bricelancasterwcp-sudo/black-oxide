@@ -1,0 +1,12 @@
+fn main() {
+    let mut number = 9875;
+    let mut sum_of_digits = 0;
+
+    while number > 0 {
+        let digit = number % 10;
+        sum_of_digits += digit;
+        number /= 10;
+    }
+
+    println!("The sum of the digits of {} is {}", number, sum_of_digits);
+}

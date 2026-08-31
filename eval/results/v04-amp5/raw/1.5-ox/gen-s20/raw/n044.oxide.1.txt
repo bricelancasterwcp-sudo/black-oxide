@@ -1,0 +1,25 @@
+```rust
+fn main() {
+    let mut balance = 0;
+    
+    // Deposit 3 units of money
+    balance += 3;
+    println!("After depositing 3 units: {}", balance);
+    
+    // Deposit 1 unit of money
+    balance += 1;
+    println!("After depositing 1 unit: {}", balance);
+    
+    // Deposit 4 units of money
+    balance += 4;
+    println!("After depositing 4 units: {}", balance);
+    
+    // Deposit 1 unit of money
+    balance += 1;
+    println!("After depositing 1 unit: {}", balance);
+    
+    // Deposit 5 units of money
+    balance += 5;
+    println!("After depositing 5 units: {}", balance);
+}
+```

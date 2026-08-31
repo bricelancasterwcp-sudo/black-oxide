@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let mut signal = String::new();
+    loop {
+        std::io::stdin().read_line(&mut signal)
+            .expect("Failed to read line");
+        if &signal == "green" { println!("go for green"); }
+        else if &signal == "red" { println!("stop for red"); }
+        else if &signal == "yellow" { println!("wait for yellow"); }
+    }
+}
+```

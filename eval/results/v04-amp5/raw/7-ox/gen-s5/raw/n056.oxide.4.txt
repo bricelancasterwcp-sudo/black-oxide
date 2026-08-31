@@ -1,0 +1,7 @@
+fn main() {
+    let nums = vec![Some(7), None, Some(9), Some('?'.parse::<Int>().unwrap_or(0))];
+    let sum = nums.iter().filter_map(|n| n.as_ref()).sum::<Int>();
+    let count_none = nums.len() - sum.to_string().chars().filter(|c| c.is_numeric()).count();
+    print(sum);
+    print(count_none);
+}

@@ -1,0 +1,21 @@
+```text
+struct Count { vowels: Int, consonants: Int }
+
+fn count_letters(s: Str) -> Count {
+    let mut count = Count { vowels: 0, consonants: 0 }
+    for c in chars(s) {
+        match c {
+            "a" | "e" | "i" | "o" | "u" => count.vowels += 1,
+            _ => count.consonants += 1,
+        }
+    }
+    count
+}
+
+fn main() {
+    let keyboard = "qwertyuiopasdfghjklzxcvbnm"
+    let result = count_letters(keyboard)
+    print(result.vowels)
+    print(result.consonants)
+}
+```

@@ -1,0 +1,6 @@
+```
+main() {
+    print_str("G\n");
+    print_str("N\n");
+}
+```

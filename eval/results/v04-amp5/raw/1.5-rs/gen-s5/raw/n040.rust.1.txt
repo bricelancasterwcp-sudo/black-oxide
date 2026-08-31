@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    // Calculate the area of a square with side length 4 and pi = 3.14
+    let side_length = 4;
+    let radius = 3.14;
+    let area_square = side_length * side_length;
+    let area_circle = radius * radius * std::f64::consts::PI;
+
+    println!("Area of a square: {}", area_square);
+    println!("Area of a circle: {:.2}", area_circle);
+}
+```

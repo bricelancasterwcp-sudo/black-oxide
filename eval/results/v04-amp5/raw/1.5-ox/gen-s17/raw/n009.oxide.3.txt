@@ -1,0 +1,13 @@
+```rust
+fn reverse(v: Vec<Int>) -> Vec<Int> {
+    let mut result = vec![];
+    for i in (v.len() - 1)..=0 {
+        result.push(v[i]);
+    }
+    result
+}
+
+fn main() {
+    println(reverse(vec![1, 2, 3, 4]));
+}
+```

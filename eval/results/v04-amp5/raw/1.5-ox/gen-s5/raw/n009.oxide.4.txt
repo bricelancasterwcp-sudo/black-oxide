@@ -1,0 +1,12 @@
+```rust
+struct Number { digits: Vec<Int> }
+
+fn main() {
+    let num = Number { digits: vec![4, 3, 2, 1] };
+    let mut reversed_digits = vec![];
+    for digit in num.digits.iter().rev() {
+        reversed_digits.push(*digit);
+    }
+    print(sum(reversed_digits));
+}
+```

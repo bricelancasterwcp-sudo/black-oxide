@@ -1,0 +1,12 @@
+```text
+fn main() {
+    let word = "coffee"
+    let seen = vec()
+    for c in chars(word) {
+        if !contains(seen, c) && count(word, c) > 1 {
+            print_str(c)
+            seen = push(seen, clone(c))
+        }
+    }
+}
+```

@@ -1,0 +1,13 @@
+fn main() {
+    let numbers = vec![10, 20, 30];
+    if let Some(&value) = numbers.get(1) {
+        println!("{}", value);
+    } else {
+        println!("-1");
+    }
+    if let Some(&value) = numbers.get(5) {
+        println!("{}", value);
+    } else {
+        println!("-1");
+    }
+}

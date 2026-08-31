@@ -1,0 +1,21 @@
+```rust
+fn main() {
+    let a = read_int("a: ");
+    let b = read_int("b: ");
+
+    if b == 0 {
+        println!("Error: Division by zero");
+    } else {
+        println!("Result of division: {}", a / b);
+    }
+}
+
+fn read_int(prompt: &str) -> Int {
+    println!("{}", prompt);
+    io::stdin().read_line(&mut String::new())
+        .expect("Failed to read line")
+        .trim()
+        .parse()
+        .expect("Input not an integer")
+}
+```

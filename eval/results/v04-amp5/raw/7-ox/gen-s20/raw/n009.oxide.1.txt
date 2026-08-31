@@ -1,0 +1,14 @@
+```oxide
+fn reverse_num(n: Int) -> Str {
+    let digits = vec()
+    while n > 0 {
+        digits = push(digits, n % 10)
+        n = trunc(n / 10)
+    }
+    concat(map(digits, |d| int_to_str(d)))
+}
+
+fn main() {
+    print(reverse_num(1234))
+}
+```

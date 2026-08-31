@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let a = "a1b22";
+
+    let digits_sum: u32 = a.chars()
+                            .filter_map(|c| c.to_digit(10))
+                            .sum();
+
+    let count_digits: i32 = a.chars()
+                              .filter_map(|c| c.to_digit(10))
+                              .count() as i32;
+
+    println!("Sum of digit characters: {}", digits_sum);
+    println!("Number of digit characters: {}", count_digits);
+}
+```

@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let names = ["fig", "banana", "kiwi"];
+    let mut longest_name = String::new();
+    let mut max_length = 0;
+
+    for &name in names.iter() {
+        if name.len() > max_length {
+            longest_name = name.to_string();
+            max_length = name.len();
+        }
+    }
+
+    println!("The longest name is: {}", longest_name);
+    println!("It has {} letters.", max_length);
+}
+```

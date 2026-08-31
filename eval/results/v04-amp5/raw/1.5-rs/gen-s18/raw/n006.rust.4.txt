@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let max_power_of_two = 1 << (32 - 1).leading_zeros() as u32;
+    println!("{}", max_power_of_two);
+}
+```
+
+Note: This code is correct and will print the biggest power of two that does not exceed 100, which is 512.

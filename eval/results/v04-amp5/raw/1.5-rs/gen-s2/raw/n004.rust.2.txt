@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let mut current = 1;
+    let mut next = 1;
+
+    for _ in 0..9 {
+        println!("{}", current);
+        
+        // Corrected code: Use addition instead of multiplication for summing up the two numbers
+        current += next;
+        // Update the next value to be the previous one plus the new sum
+        next = current - next;
+    }
+}
+```

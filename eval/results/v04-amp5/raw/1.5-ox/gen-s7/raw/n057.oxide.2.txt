@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut longest = String::new();
+    for &name in ["fig", "banana", "kiwi"] {
+        if name.len() > longest.len() {
+            longest = name;
+        }
+    }
+    println!("Longest: {} ({})", longest, longest.len());
+}
+```

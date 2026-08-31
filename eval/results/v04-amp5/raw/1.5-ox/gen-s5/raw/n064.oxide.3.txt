@@ -1,0 +1,12 @@
+```rust
+use std::collections::HashSet;
+
+fn main() {
+    let mut lst = HashSet::<i32>::from_iter(vec![10, 20]);
+    println!("First element: {:?}", lst.get(0));
+    match lst.get(3) {
+        Some(n) => println!("Fourth element: {:?}", n),
+        None => println!("None"),
+    }
+}
+```

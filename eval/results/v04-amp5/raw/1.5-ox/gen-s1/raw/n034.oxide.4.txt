@@ -1,0 +1,12 @@
+fn helper(v: Vec<Int>) -> Option<Int> {
+    if v.len() != 1 {
+        None
+    } else {
+        Some(v[1])
+    }
+}
+
+fn main() {
+    println!("{:?}", helper(vec![7, 8])); // Some(8)
+    println!("{:?}", helper(vec![9]));   // None
+}

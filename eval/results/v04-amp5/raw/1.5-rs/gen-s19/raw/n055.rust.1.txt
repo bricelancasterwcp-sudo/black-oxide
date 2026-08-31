@@ -1,0 +1,21 @@
+```rust
+fn main() {
+    println!("{}", if let Some(8) = std::env::args().nth(1).parse::<u32>() {
+        8
+    } else {
+        "bad".to_string()
+    });
+
+    println!("{}", if let Some("oak") = std::env::args().nth(2).as_ref() {
+        "good"
+    } else {
+        "bad".to_string()
+    });
+
+    println!("{}", if let Some(15) = std::env::args().nth(3).parse::<u32>() {
+        15
+    } else {
+        "bad".to_string()
+    });
+}
+```

@@ -1,0 +1,15 @@
+```rust
+use std::collections::HashSet;
+
+fn main() {
+    let input = "coffee";
+    let mut seen = HashSet::new();
+
+    for ch in input.chars() {
+        if !seen.contains(&ch) {
+            println!("{}", ch);
+            seen.insert(ch);
+        }
+    }
+}
+```

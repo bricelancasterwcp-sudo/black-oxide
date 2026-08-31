@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let unit_price = 3;
+    let quantity1 = 4;
+    let price1 = unit_price * quantity1;
+
+    let unit_price2 = 2;
+    let quantity2 = 5;
+    let price2 = unit_price2 * quantity2;
+
+    println!("First line value: {}", price1);
+    println!("Second line value: {}", price2);
+
+    let total_value = price1 + price2;
+    println!("Total value of both lines: {}", total_value);
+}
+```

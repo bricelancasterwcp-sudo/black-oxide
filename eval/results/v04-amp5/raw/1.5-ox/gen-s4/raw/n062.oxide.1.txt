@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    loop {
+        let signal = read_signal(); // Assume read_signal returns an enum Signal
+
+        match signal {
+            Signal::Green => println!("Go for green"),
+            Signal::Red => println!("Stop"),
+            Signal::Yellow => println!("Wait"),
+        }
+    }
+}
+```
+
+The `read_signal` function is assumed to be defined elsewhere and returns a value of the `Signal` enum. This program reads a signal, then prints its meaning based on the signal type.

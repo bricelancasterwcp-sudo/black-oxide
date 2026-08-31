@@ -1,0 +1,16 @@
+fn reverse_digits(n: Int) -> Option<Str> {
+    let digits = str_len(int_to_str(n))
+    let mut result = ""
+    for i in range(0, digits) {
+        let d = get(chars(int_to_str(n)), digits - 1 - i)?
+        result = concat(result, d)
+    }
+    Some(result)
+}
+
+fn main() {
+    match reverse_digits(1234) {
+        Some(reversed) => print_str(reversed),
+        None => print_str("Error"),
+    }
+}

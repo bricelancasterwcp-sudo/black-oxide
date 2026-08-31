@@ -1,0 +1,31 @@
+```rust
+struct Line {
+    name: String,
+    price: Int,
+    quantity: Int,
+}
+
+impl Line {
+    fn value(&self) -> Int {
+        self.quantity * self.price
+    }
+}
+
+fn main() {
+    let four_units = Line {
+        name: "four_units".to_string(),
+        price: 3,
+        quantity: 4,
+    };
+
+    let five_units = Line {
+        name: "five_units".to_string(),
+        price: 2,
+        quantity: 5,
+    };
+
+    print(four_units.value());
+    print(five_units.value());
+    println((four_units + five_units).value());
+}
+```

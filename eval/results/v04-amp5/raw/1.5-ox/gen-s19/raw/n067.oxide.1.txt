@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let mut walk = vec![7, 4, 9, 10];
+
+    // Walk through the list and print each odd entry doubled on its own line
+    for i in (0..walk.len()).filter(|&i| walk[i] % 2 != 0) {
+        println!("{}", walk[i] * 2);
+    }
+
+    // Print the total of the even entries
+    let sum = walk.into_iter().filter(|&i| i % 2 == 0).sum::<Int>();
+    print_str(format!("Total of even entries: {}", sum));
+}
+```

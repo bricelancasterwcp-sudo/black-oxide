@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let num = 91;
+    let mut divisors = Vec::new();
+
+    for i in 2..num {
+        if num % i == 0 {
+            divisors.push(i);
+        }
+    }
+
+    if divisors.len() < 3 { // We need at least three factors (divisors) to be prime
+        println!("yes");
+    } else {
+        println!("no");
+    }
+}
+```

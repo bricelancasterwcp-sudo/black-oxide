@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let word = "banana";
+    for (index, byte) in word.as_bytes().iter().enumerate() {
+        if *byte == b'n' {
+            println!("{}", index);
+        }
+    }
+}
+```

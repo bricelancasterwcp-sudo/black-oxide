@@ -1,0 +1,13 @@
+```
+fn largest_power_of_two(max_val: Int) -> Int {
+    let mut pow = 0;
+    while (1 << pow) <= max_val {
+        pow += 1;
+    }
+    return (1 << pow - 1);
+}
+
+fn main() {
+    print(largest_power_of_two(100));
+}
+```

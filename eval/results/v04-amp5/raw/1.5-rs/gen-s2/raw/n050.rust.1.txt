@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut scores = vec![2, 9, 5];
+    scores.sort_unstable_by(|a, b| b.cmp(a));
+    for score in scores {
+        println!("{}", score);
+    }
+}
+```
+
+This Rust program takes an array of three integers and sorts it in descending order using the `sort_unstable_by` method. It then iterates over each sorted score and prints it out on a new line using the `println!` macro.

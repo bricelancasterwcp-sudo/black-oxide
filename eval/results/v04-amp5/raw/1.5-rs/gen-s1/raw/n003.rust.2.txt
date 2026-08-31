@@ -1,0 +1,15 @@
+Here's the fixed version of your Rust code:
+
+```rust
+fn main() {
+    let mut count = 0;
+    
+    for num in 1..=36 {
+        if 36 % num == 0 && num != 36 { // Exclude 36 itself from being counted as a divisor
+            count += 1;
+        }
+    }
+
+    println!("Number of whole numbers from 1 to 36 that divide 36 exactly: {}", count);
+}
+```

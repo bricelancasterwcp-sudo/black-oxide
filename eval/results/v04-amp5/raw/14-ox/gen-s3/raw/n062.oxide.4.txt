@@ -1,0 +1,22 @@
+```rust
+enum Signal {
+    Green,
+    Red,
+    Yellow,
+}
+
+fn meaning(signal: Signal) -> Str {
+    match signal {
+        Green => "go",
+        Red => "stop",
+        Yellow => "wait",
+    }
+}
+
+fn main() {
+    let signals = vec(Green, Red, Yellow);
+    for signal in signals {
+        print(concat("Signal: ", meaning(signal)));
+    }
+}
+```

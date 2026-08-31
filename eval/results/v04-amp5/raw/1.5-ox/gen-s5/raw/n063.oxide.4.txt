@@ -1,0 +1,33 @@
+```rust
+struct Item {
+    price: Int,
+    count: Int,
+}
+
+fn total_price(line1: Vec<Item>, line2: Vec<Item>) -> (Int, Int) {
+    let mut total = 0;
+    for item in &line1 {
+        total += item.price * item.count;
+    }
+    for item in &line2 {
+        total += item.price * item.count;
+    }
+    (total, total + total)
+}
+
+fn main() {
+    let line1 = vec![
+        Item { price: 3, count: 4 },
+        Item { price: 2, count: 5 },
+    ];
+    let line2 = vec![
+        Item { price: 2, count: 6 },
+        Item { price: 3, count: 7 },
+    ];
+
+    let (total1, total2) = total_price(line1, line2);
+    println!("Line 1 value: {}", total1);
+    println!("Line 2 value: {}", total2);
+    println!("Combined value: {}", total1 + total2);
+}
+```

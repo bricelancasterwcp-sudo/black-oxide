@@ -1,0 +1,20 @@
+```
+fn divisors(n: Int) -> Vec<Int> {
+    let mut v = Vec::new();
+    for i in 1..=n {
+        if n % i == 0 {
+            v.push(i);
+        }
+    }
+    return v;
+}
+
+fn count_divisors(n: Int) -> Int {
+    let divs = divisors(n);
+    return divs.len() as Int;
+}
+
+fn main() {
+    print(count_divisors(36));
+}
+```

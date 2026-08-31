@@ -1,0 +1,28 @@
+```
+fn sort(v: Vec<Int>) -> Vec<Int> {
+    for i in range(0, len(v)) {
+        let min_idx = i + argmin(&v[i..]);
+        swap(v, i, min_idx);
+    }
+    v
+}
+
+fn argmin(v: &Vec<Int>) -> Int {
+    let mut idx = 0;
+    for i in range(1, len(v)) {
+        if v[i] < v[idx] {
+            idx = i;
+        }
+    }
+    idx
+}
+
+fn main() {
+    let measurements = push(push(push(vec(), 9), 2), 7);
+    measurements = push(measurements, 4);
+    measurements = sort(measurements);
+    for m in measurements {
+        print(m);
+    }
+}
+```

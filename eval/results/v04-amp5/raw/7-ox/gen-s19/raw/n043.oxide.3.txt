@@ -1,0 +1,29 @@
+```rust
+struct Queue { items: Vec<Int> }
+
+fn enqueue(q: Queue, x: Int) -> Queue {
+    push(q, x)
+}
+
+fn dequeue(q: Queue) -> (Int, Queue) {
+    let (x, rest) = get(q.items, 0)?;
+    (x, Queue { items: rest })
+}
+
+fn front(q: Queue) -> Int {
+    match get(q.items, 0) {
+        Some(x) => x,
+        None => panic("queue is empty")
+    }
+}
+
+fn main() {
+    let q1 = enqueue(enqueue(enqueue(enqueue(Queue { items: vec() }, 2), 3), 4), 5);
+    let (first, q2) = dequeue(q1);
+    let q3 = enqueue(q2, first);
+    while let Some(x) = front(q3) {
+        print(x);
+        q3 = dequeue(q3).1;
+    }
+}
+```

@@ -1,0 +1,5 @@
+fn main() {
+    let s = "granite";
+    print(str_len(s) - 1);
+    print_str(&s[(str_len(s) - 2)..(str_len(s))]);
+}

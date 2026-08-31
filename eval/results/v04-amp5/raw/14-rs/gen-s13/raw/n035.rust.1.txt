@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let numerator = 20;
+    let denominator = 4;
+
+    match divide(numerator, denominator) {
+        Ok(result) => println!("{}", result),
+        Err(_) => println!("bad"),
+    }
+}
+
+fn divide(numerator: i32, denominator: i32) -> Result<i32, ()> {
+    if denominator == 0 {
+        Err(())
+    } else {
+        Ok(numerator / denominator)
+    }
+}
+```

@@ -1,0 +1,14 @@
+```oxide
+struct Square { side: Float }
+struct Circle { radius: Float }
+
+fn area_of_square(sq: Square) -> Float {
+    let pi = 3.0;
+    pi * sq.side * sq.side
+}
+
+fn main() {
+    let square = Square { side: 4.0 };
+    print(area_of_square(square));
+}
+```

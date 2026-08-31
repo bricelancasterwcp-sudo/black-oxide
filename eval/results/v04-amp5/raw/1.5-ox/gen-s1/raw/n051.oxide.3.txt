@@ -1,0 +1,14 @@
+fn open_close_granite(ch: Str) -> (Str, Str) {
+    let ch = ch.chars().nth(0).unwrap();
+    match ch {
+        'g' => ('a', 't'),
+        _ => panic!("Expected 'g' in Granite"),
+    }
+}
+
+fn main() {
+    let granite = "granite";
+    let (opening, closing) = open_close_granite(granite);
+    println!("{}", opening);
+    println!("{}", closing);
+}

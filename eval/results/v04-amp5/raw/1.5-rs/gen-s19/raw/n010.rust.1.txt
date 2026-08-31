@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let num = 91;
+    if num > 1 && (num % 2 == 0 || num % 3 == 0) {
+        println!("no");
+    } else {
+        println!("yes");
+    }
+}
+```
+
+In this Rust program, we first define the variable `num` with the value 91. Then, we check if `num` is greater than 1 and if it is divisible by 2 or 3. If either condition is true, we print "no", indicating that `91` is not prime. Otherwise, we print "yes", indicating that `91` is prime.

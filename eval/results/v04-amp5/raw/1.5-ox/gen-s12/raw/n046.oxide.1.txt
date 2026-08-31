@@ -1,0 +1,20 @@
+```rust
+fn main() {
+    let nums = [5, 12, 3, 18, 9];
+    let cutoff = 10;
+
+    let mut count_under = 0;
+    let mut count_over_or_equal = 0;
+
+    for &num in &nums {
+        if num < cutoff {
+            count_under += 1;
+        } else {
+            count_over_or_equal += 1;
+        }
+    }
+
+    println!("Numbers under cutoff: {}", count_under);
+    println!("Numbers over or equal to cutoff: {}", count_over_or_equal);
+}
+```

@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut numbers = vec![9, 2, 7, 4];
+    numbers.sort_unstable();
+    for &num in &numbers {
+        println!("{}", num);
+    }
+}
+```
+
+The `sort_unstable` method is used to sort the vector in ascending order. The `println!` macro is then used to print each number on its own line.

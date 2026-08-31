@@ -1,0 +1,10 @@
+```
+fn print_reverse_digits(n: Int) {
+    let mut s = Str::from_str(&to_string(n)[..].chars().rev().collect::<String>())?;
+    println!("{}", s);
+}
+
+fn main() {
+    print_reverse_digits(1234);
+}
+```

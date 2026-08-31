@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    match ["8", "oak", "15"] {
+        ["8", _, _] => println!("The number is 8."),
+        ["oak", _, _] => println!("The number is oak."),
+        ["15", _, _] => println!("The number is 15."),
+        _ => println!("Bad"),
+    }
+}
+```

@@ -1,0 +1,8 @@
+fn main() {
+    let (num_str, tree_type_str, value) = ("8", "oak".to_ascii_lowercase(), 15);
+
+    match (num_str.parse::<i32>(), tree_type_str.as_str()) {
+        (Ok(n), "oak") => println!("{} - oak, value: {}", n, value),
+        _ => println!("bad"),
+    }
+}

@@ -1,0 +1,14 @@
+Here's the fixed version of your Rust code:
+
+```rust
+fn main() {
+    println!("green");
+    println!("red");
+    println!("yellow");
+}
+```
+
+Explanation:
+The original program had a syntax error because it was trying to print strings as literals directly inside the `println!` macro, which is incorrect. In Rust, we need to use string literals with double quotes or escape characters.
+
+By changing `"go for green"` to `green`, we correctly reference the string "go for green". Similarly, we change `"stop for red"` to `red` and `"wait for yellow"` to `yellow`. The corrected program now prints the correct meanings of the signals in the order they arrive.

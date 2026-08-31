@@ -1,0 +1,13 @@
+```
+fn count_words(s: Str) -> Int {
+    let words = split(s, ' ')
+    len(words)
+}
+
+fn main() {
+    let phrase = "when in doubt go home"
+    print(count_words(phrase))
+    print_str("\n")
+    print(str_len(phrase))
+}
+```

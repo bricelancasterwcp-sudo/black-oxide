@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let reading = 0;
+    let updated_reading = reading + 7;
+    print(updated_reading);
+}
+```

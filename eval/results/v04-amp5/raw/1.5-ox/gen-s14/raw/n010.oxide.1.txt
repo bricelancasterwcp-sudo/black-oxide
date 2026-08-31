@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let num = 91;
+    let is_prime = match first_divisor(num) {
+        Some(_) => false,
+        None => true,
+    };
+    println!("{}", if is_prime { "yes" } else { "no" });
+}
+
+fn first_divisor(n: Int) -> Option<Int> {
+    for i in range(2, n) {
+        if n % i == 0 {
+            return Some(i);
+        }
+    }
+    None
+}
+```

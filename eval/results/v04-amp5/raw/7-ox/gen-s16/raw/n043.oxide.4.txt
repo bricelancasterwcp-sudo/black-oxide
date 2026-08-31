@@ -1,0 +1,43 @@
+```rust
+struct Queue { front: Vec<Int>, back: Vec<Int> }
+
+fn enqueue(q: Queue, x: Int) -> Queue {
+    let mut q = clone(q);
+    push(q.back, x);
+    q
+}
+
+fn dequeue(q: Queue) -> (Queue, Option<Int>) {
+    let mut q = clone(q);
+    if len(q.front) == 0 {
+        while len(q.back) > 0 {
+            push(q.front, pop(q.back));
+        }
+    }
+    let x = get(q.front, 0)?;
+    set(q.front, 0, -1);
+    q.front = vec();
+    (q, Some(x))
+}
+
+fn swap_first_last(q: Queue) -> Queue {
+    let mut q = clone(q);
+    if len(q.back) > 0 && len(q.front) == 0 {
+        push(q.front, pop(q.back));
+    }
+    if len(q.front) > 1 {
+        let x = get(q.front, 0)?;
+        set(q.front, 0, get(q.front, len(q.front) - 1)?);
+        set(q.front, len(q.front) - 1, x);
+    }
+    q
+}
+
+fn main() {
+    let mut q = Queue { front: vec(), back: vec(1, 2, 3, 4, 5) };
+    q = swap_first_last(q);
+    while let Some(x) = dequeue(q).1? {
+        print(x);
+    }
+}
+```

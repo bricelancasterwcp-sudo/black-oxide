@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let num = 1234;
+    
+    // Convert the number to a string, reverse it, and then parse it back to an integer
+    let reversed_num: i32 = format!("{num}").chars().rev().collect::<String>().parse().unwrap();
+    
+    println!("{}", reversed_num);
+}
+```

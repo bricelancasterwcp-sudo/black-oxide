@@ -1,0 +1,24 @@
+```rust
+struct Line { items: Vec<Item> }
+
+struct Item { price: Int, quantity: Int }
+
+fn total(line: Line) -> Int {
+    let mut sum = 0;
+    for item in line.items {
+        sum += item.price * item.quantity;
+    }
+    sum
+}
+
+fn main() {
+    let line1 = Line { items: vec![Item { price: 3, quantity: 4 }] };
+    print(total(line1)); // 12
+
+    let line2 = Line { items: vec![Item { price: 2, quantity: 5 }] };
+    print(total(line2)); // 10
+
+    let both = Line { items: vec![Item { price: 3, quantity: 4 }, Item { price: 2, quantity: 5 }] };
+    print(total(both)); // 22
+}
+```

@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let scores = vec![9, 2, 5];
+    for i in (0..scores.len()).rev() {
+        println!("{}", scores[i]);
+    }
+}
+```

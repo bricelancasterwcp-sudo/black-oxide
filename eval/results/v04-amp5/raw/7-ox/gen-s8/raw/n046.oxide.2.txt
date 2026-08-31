@@ -1,0 +1,9 @@
+fn main() {
+    let samples = vec(5, 12, 3, 18, 9);
+    let cutoff = 10;
+    let below = count_if(samples, |x| x < cutoff);
+    let above_or_equal = count_if(samples, |x| x >= cutoff);
+    print(below);
+    print_str(" ");
+    print(above_or_equal);
+}

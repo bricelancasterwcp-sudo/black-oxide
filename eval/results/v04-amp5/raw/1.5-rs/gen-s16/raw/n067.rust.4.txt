@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut sum = 0;
+    for &num in &[7, 4, 9, 10] {
+        if num % 2 != 0 {
+            println!("{}", num * 2);
+        } else {
+            sum += num;
+        }
+    }
+    println!("Sum of even numbers: {}", sum);
+}
+```

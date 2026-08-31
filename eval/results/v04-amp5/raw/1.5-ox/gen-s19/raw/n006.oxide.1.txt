@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut biggest = 0;
+    for i in 0..101 {
+        if (2 as Int).pow(i) <= 100 {
+            biggest = i;
+        } else {
+            break;
+        }
+    }
+    print(biggest);
+}
+```

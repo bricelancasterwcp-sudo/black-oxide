@@ -1,0 +1,10 @@
+```rust
+fn second_entry(lst: &[i32]) -> Option<i32> {
+    lst.get(1).copied()
+}
+
+fn main() {
+    let result = second_entry(&[7, 8, 9]);
+    println!("{:?}", result);
+}
+```

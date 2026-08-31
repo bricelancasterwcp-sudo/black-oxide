@@ -1,0 +1,12 @@
+```oxide
+fn main() {
+    let word = "coffee";
+    let mut seen = Vec::new();
+    for c in chars(word) {
+        if !contains(seen, c) {
+            print(c);
+            seen = push(seen, c);
+        }
+    }
+}
+```

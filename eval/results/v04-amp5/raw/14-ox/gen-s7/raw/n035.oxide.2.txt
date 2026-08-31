@@ -1,0 +1,12 @@
+fn safe_divide(a: Int, b: Int) -> Option<Int> {
+    if b == 0 {
+        None
+    } else {
+        Some(a / b)
+    }
+}
+
+fn main() {
+    let result = safe_divide(20, 4)?;
+    print(result)
+}

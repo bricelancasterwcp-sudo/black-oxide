@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let mut scores: Vec<Int> = vec![5, 9, 2];
+    scores.sort_by(|a, b| b.cmp(a));
+    for score in scores.iter() {
+        print!("{}", score);
+        println!();
+    }
+}
+```

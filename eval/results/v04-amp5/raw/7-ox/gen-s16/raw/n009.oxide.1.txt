@@ -1,0 +1,11 @@
+```oxide
+fn main() {
+    let num = 1234;
+    let str_num = int_to_str(num);
+    let chars_num = chars(str_num);
+    let reversed_chars_num = reverse(chars_num);
+    let reversed_str_num = concat(reversed_chars_num);
+    let reversed_num = parse_int(reversed_str_num)?;
+    print(reversed_num);
+}
+```

@@ -1,0 +1,9 @@
+```oxide
+fn main() {
+    let scores = vec!(2, 9, 5);
+    let sorted_scores = sort(scores);
+    for s in sorted_scores {
+        print(s);
+    }
+}
+```

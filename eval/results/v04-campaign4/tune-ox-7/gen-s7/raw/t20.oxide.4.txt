@@ -1,0 +1,19 @@
+struct Item { name: Str, unit_price: Int, quantity: Int }
+fn total_cost(items: Vec<Item>) -> Int {
+    let mut sum = 0
+    for item in items {
+        sum += item.unit_price * item.quantity
+    }
+    sum
+}
+fn main() {
+    let items = push(push(vec(), Item { name: "pen", unit_price: 3, quantity: 4 }), Item { name: "pad", unit_price: 9, quantity: 2 })
+    let items = push(items, Item { name: "ink", unit_price: 5, quantity: 3 })
+    let total = total_cost(items)
+    print(total)
+    let max_item = match argmax(items, |item| item.unit_price * item.quantity) {
+        Some(item) => item,
+        None => Item { name: "", unit_price: -1, quantity: -1 },
+    }
+    print(max_item.name)
+}

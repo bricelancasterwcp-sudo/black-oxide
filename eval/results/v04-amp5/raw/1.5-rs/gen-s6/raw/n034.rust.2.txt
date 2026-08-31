@@ -1,0 +1,14 @@
+fn get_second_entry(numbers: &Vec<i32>) -> Option<i32> {
+    numbers.get(1)
+}
+
+fn main() {
+    let list1 = vec![7, 8];
+    println!("{:?}", get_second_entry(&list1)); // prints Some(&8)
+
+    let list2 = vec![9];
+    println!("{:?}", get_second_entry(&list2)); // prints None
+
+    let list3 = vec![5, 6, 7, 8];
+    println!("{:?}", get_second_entry(&list3)); // prints Some(&6)
+}

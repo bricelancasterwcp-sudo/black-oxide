@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut values = vec![8, String::from("oak"), 15];
+    for &value in values.iter_mut() {
+        match value {
+            i if i.is_integer() => println!("Good: {}", i),
+            _ => println!("Bad"),
+        }
+    }
+}
+```

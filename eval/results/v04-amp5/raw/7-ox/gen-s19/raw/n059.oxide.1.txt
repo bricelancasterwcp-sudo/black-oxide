@@ -1,0 +1,8 @@
+```oxide
+fn main() {
+    let s = "when in doubt go home";
+    print(count(s.split(' ').to_vec(), "_"))
+    print_str(" ")
+    print(str_len(s))
+}
+```

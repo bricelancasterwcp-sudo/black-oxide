@@ -1,0 +1,31 @@
+```text
+struct Letter { vowel: Bool }
+
+fn count_vowels_and_consonants(letters: Vec<Letter>) -> (Int, Int) {
+    let mut vowels = 0
+    let mut consonants = 0
+    for l in letters {
+        if l.vowel {
+            vowels += 1
+        } else {
+            consonants += 1
+        }
+    }
+    (vowels, consonants)
+}
+
+fn main() {
+    let letters = vec![
+        Letter { vowel: false },
+        Letter { vowel: true },
+        Letter { vowel: false },
+        Letter { vowel: true },
+        Letter { vowel: false },
+        Letter { vowel: false },
+        Letter { vowel: true },
+    ]
+    let (vowels, consonants) = count_vowels_and_consonants(letters)
+    print(vowels)
+    print(consonants)
+}
+```

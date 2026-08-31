@@ -1,0 +1,10 @@
+```oxide
+fn main() {
+    let readings = vec(6, 11, 3, 14, 9);
+    let count = count_if(readings, |x| x > 5);
+    print(count);
+
+    let max_reading = max(readings)?;
+    print(max_reading);
+}
+```

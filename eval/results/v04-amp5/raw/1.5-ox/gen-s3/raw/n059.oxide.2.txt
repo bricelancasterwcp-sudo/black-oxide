@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let text = "when in doubt go home";
+    let mut count_words: Int = 0; // initialize word counter
+    let mut char_count: Int = 0; // initialize character counter
+
+    for c in text.chars() { // iterate over each character in the string
+        if c == ' ' { // check if the character is a space
+            count_words += 1; // increment word count
+            char_count += 1; // increment character count to account for space
+        } else {
+            char_count += 1; // increment character count
+        }
+    }
+
+    println!("Number of words: {}", count_words); // print the number of words
+    println!("Total number of characters including spaces: {}", char_count); // print the total number of characters
+}
+```

@@ -1,0 +1,9 @@
+fn main() {
+    for entry in vec!["8", "oak", "15"] {
+        match parse_int(entry) {
+            Some(n) => print(n),
+            None => print_str("bad"),
+        }
+        print_str(", ")
+    }
+}

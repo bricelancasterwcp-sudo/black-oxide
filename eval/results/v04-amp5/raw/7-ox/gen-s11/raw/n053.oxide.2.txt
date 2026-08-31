@@ -1,0 +1,6 @@
+```rust
+let len = str_len("drum") - 1;
+let rev_drums: Str = concat(len..=0, |i| str_slice("drum", i, i + 1));
+print_str(rev_drums);
+print_str("drum");
+```

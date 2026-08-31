@@ -1,0 +1,18 @@
+```
+struct List(Vec<Int>);
+
+impl List {
+    fn get(&self, pos: Int) -> Option<&Int> {
+        self.0.get(pos as usize)
+    }
+}
+
+fn main() {
+    let list = List(vec![10, 20]);
+    print(list.get(1));            // prints: Some(20)
+    match list.get(4) {
+        Some(x) => println(&x),      // remove the reference to get the value
+        None => print_str("not found"),
+    }
+}
+```

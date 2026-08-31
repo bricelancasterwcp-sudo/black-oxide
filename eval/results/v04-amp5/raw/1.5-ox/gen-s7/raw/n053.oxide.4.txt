@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let drum = "drum";
+    println!("{}", drum.chars().rev()); // print letters running back to front
+    println!("{:?}", drum); // print the original string as it normally reads
+}
+```

@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let mut balance = 0;
+    for deposit in vec![3, 1, 4, 1, 5] {
+        balance += deposit;
+        println!("{}", balance);
+    }
+}
+```
+
+In this code:
+- The `main` function initializes a variable `balance` to 0.
+- A loop iterates over the vector `vec![3, 1, 4, 1, 5]`.
+- In each iteration, it adds the current deposit value to `balance`.
+- It prints the current balance after each addition.
+- This code demonstrates basic banking operations in Rust, including account creation and deposits.

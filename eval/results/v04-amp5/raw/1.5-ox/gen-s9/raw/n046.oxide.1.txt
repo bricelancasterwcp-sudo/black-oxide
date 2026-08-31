@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let mut count_below = 0;
+    let mut count_above_or_equal = 0;
+
+    for &value in vec![5, 12, 3, 18, 9].iter() {
+        if value < 10 {
+            count_below += 1;
+        } else {
+            count_above_or_equal += 1;
+        }
+    }
+
+    print!("Number below cutoff: {}\n", count_below);
+    print!("Number above or equal to cutoff: {}\n", count_above_or_equal);
+}
+```

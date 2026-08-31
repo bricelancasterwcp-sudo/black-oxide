@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let numbers = [7, 4, 9, 10];
+    let mut odd_sum = 0;
+
+    for &number in numbers.iter() {
+        if number % 2 != 0 {
+            println!("{}", number * 2);
+            odd_sum += number;
+        }
+    }
+
+    println!("Total of even entries: {}", odd_sum);
+}
+```
+
+The problem was that the print statement inside the loop was printing twice for each odd number. The solution is to print only once per odd number by using a simple if-else condition inside the loop without adding it outside the loop again.

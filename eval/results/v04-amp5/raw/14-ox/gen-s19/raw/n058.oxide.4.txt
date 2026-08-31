@@ -1,0 +1,33 @@
+```rust
+struct LetterCount { letter: Str, count: Int }
+
+fn print_repeated_letters(s: Str) {
+    let mut counts = vec()
+    for c in chars(s) {
+        let found = false
+        let c_clone = clone(c)
+        for i in range(0, len(counts)) {
+            let count = get(counts, i).unwrap_or(LetterCount { letter: "", count: 0 })
+            if count.letter == c_clone {
+                let new_count = LetterCount { letter: c_clone, count: count.count + 1 }
+                counts = set(counts, i, new_count)
+                found = true
+                break
+            }
+        }
+        if !found {
+            let new_count = LetterCount { letter: c_clone, count: 1 }
+            counts = push(counts, new_count)
+        }
+    }
+    for count in counts {
+        if count.count > 1 {
+            print(count.letter)
+        }
+    }
+}
+
+fn main() {
+    print_repeated_letters("coffee")
+}
+```

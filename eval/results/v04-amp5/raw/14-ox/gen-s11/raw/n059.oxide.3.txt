@@ -1,0 +1,28 @@
+```rust
+fn main() {
+    let phrase = "when in doubt go home";
+    let words = split(phrase, " ");
+    print(len(words));
+    print_str(" ");
+    print(str_len(phrase));
+}
+
+fn split(s: Str, delimiter: Str) -> Vec<Str> {
+    let mut result = vec();
+    let mut current = "";
+    for c in chars(s) {
+        if c == delimiter {
+            if str_len(current) > 0 { // Ensure current is not empty before pushing
+                result = push(result, current);
+            }
+            current = "";
+        } else {
+            current = concat(current, c);
+        }
+    }
+    if str_len(current) > 0 { // Ensure the last word is pushed
+        result = push(result, current);
+    }
+    result
+}
+```

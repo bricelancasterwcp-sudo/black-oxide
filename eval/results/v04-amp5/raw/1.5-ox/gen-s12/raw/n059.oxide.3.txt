@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let phrase = String::from("when in doubt go home");
+    println!("Number of words: {}", phrase.split_whitespace().count());
+    println!("Total number of characters (including spaces): {}", phrase.len());
+}
+```

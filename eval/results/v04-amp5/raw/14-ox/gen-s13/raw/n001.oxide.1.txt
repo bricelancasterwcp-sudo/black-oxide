@@ -1,0 +1,13 @@
+```rust
+fn cube(n: Int) -> Int {
+    n * n * n
+}
+
+fn main() {
+    let mut total = 0
+    for i in range(1, 6) {
+        total += cube(i)
+    }
+    print(total)
+}
+```

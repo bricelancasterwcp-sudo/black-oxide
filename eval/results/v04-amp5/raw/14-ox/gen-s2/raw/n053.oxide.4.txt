@@ -1,0 +1,11 @@
+```ox
+fn main() {
+    let word = "drum";
+    let reversed = reverse(chars(word));
+    for c in reversed {
+        print_str(c);
+    }
+    print_str("\n");
+    print_str(word);
+}
+```

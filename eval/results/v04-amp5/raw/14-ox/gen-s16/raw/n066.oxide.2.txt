@@ -1,0 +1,1 @@
+fn main() { let batch = vec(); for x in range(9, 17) { if x < 10 { batch = push(batch, x); } } let mut count = 0; for x in batch { print(x); count += 1; } print(count); }

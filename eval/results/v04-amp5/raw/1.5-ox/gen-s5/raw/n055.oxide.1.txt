@@ -1,0 +1,23 @@
+```rust
+struct Entry {
+    num: Option<Int>,
+    label: Str,
+}
+
+fn main() {
+    let mut entries: Vec<Entry> = vec![
+        Entry { num: Some(8), label: "Oak" },
+        Entry { num: None, label: "Unknown" },
+        Entry { num: Some(15), label: "Maple" },
+    ];
+
+    for i in 0..entries.len() {
+        match entries[i].num {
+            Some(num) => println!("{}", num),
+            None => println!("bad"),
+        }
+    }
+}
+```
+
+This program reads three entries, prints the number if it's present (None means bad), or "bad" otherwise.

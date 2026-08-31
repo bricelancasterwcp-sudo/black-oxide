@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let banana = "banana";
+    for (index, ch) in banana.chars().enumerate() {
+        if ch == 'n' {
+            println!("Position: {}", index);
+        }
+    }
+}
+```

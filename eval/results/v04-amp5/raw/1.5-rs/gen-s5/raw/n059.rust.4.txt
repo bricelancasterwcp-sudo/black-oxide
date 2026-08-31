@@ -1,0 +1,26 @@
+```rust
+fn main() {
+    let text = "when in doubt go home";
+    let words_count = text.split_whitespace().count();
+    let char_count = text.chars().count();
+    println!("Words: {}", words_count);
+    println!("Characters: {}", char_count);
+}
+```
+
+The original program was close, but it did not handle punctuation correctly. The `split_whitespace` function splits the text into words based on whitespace characters (spaces, tabs, newlines), and the `chars` function counts all characters in the string including spaces.
+
+To fix this, we can use regular expressions to split the text into words by any sequence of non-word characters (including punctuation). We will also ensure that each word is counted as a separate entity regardless of punctuation.
+
+```rust
+use regex::Regex;
+
+fn main() {
+    let text = "when in doubt go home";
+    let re = Regex::new(r"\W+").unwrap();
+    let words_count = re.split(text).count();
+    let char_count = text.chars().count();
+    println!("Words: {}", words_count);
+    println!("Characters: {}", char_count);
+}
+```

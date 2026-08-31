@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let signal = read_signal();
+
+    match signal {
+        "green" => println!("go"),
+        "red" => println!("stop"),
+        "yellow" => println!("wait"),
+        _ => println!("unknown signal"),
+    }
+}
+
+fn read_signal() -> &'static str {
+    // Simulate reading the signal (replace with actual input)
+    return "yellow";
+}
+```

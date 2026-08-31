@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    loop {
+        let signal = read_signal(); // Assume read_signal returns an enum Signal
+
+        match signal {
+            Signal::Green => println!("Go for green"),
+            Signal::Red => println!("Stop"),
+            Signal::Yellow => println!("Wait"),
+        }
+    }
+}
+```
+
+Explanation:
+The original program had several issues: it used `;` instead of a statement terminator (`{}`), there was no proper use of indentation, and the loop body was not properly closed with `}`. The corrected version fixes these issues and properly formats the code.

@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let s = "banana";
+    for (i, c) in s.char_indices() {
+        if c == 'n' {
+            println!("{}", i);
+        }
+    }
+}
+```

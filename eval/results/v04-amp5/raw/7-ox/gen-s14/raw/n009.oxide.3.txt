@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let num = 1234;
+    let chars: Vec<Str> = chars(int_to_str(num));
+    let reversed_chars: Vec<Str> = reverse(chars);
+    let reversed_num: Int = parse_int(concat(reversed_chars))?;
+    print(reversed_num);
+}
+```

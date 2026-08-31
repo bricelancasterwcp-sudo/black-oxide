@@ -1,0 +1,17 @@
+```
+fn walk(numbers: Vec<Int>) {
+    let mut sum = Int::zero();
+    for number in numbers.iter() {
+        if number % 2 == 1 {
+            println!("{}", number * 2);
+        } else {
+            sum += number;
+        }
+    }
+}
+
+fn main() {
+    let numbers = vec![7, 4, 9, 10];
+    walk(numbers);
+}
+```

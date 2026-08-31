@@ -1,0 +1,17 @@
+fn main() {
+    let text = "a1b22";
+
+    // Count the number of digit characters
+    let mut digits_count = 0;
+    for char in text.chars() {
+        if char.is_digit(10) {
+            digits_count += 1;
+        }
+    }
+
+    // Print the total count of digit characters
+    println!("Total digit characters: {}", digits_count);
+
+    // Print how many digit characters there are
+    println!("Digit characters: {}", digits_count);
+}

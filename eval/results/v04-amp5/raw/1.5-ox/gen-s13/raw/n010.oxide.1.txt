@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let n = 91;
+    let is_prime = {
+        for i in 2..=((n as f64).sqrt() as u32) + 1 {
+            if n % i == 0 {
+                return false;
+            }
+        }
+        true
+    };
+    print_str(if is_prime { "yes" } else { "no" });
+}
+```

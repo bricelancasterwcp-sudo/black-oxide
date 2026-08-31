@@ -1,0 +1,7 @@
+fn main() {
+    let text = "mississippi";
+    let s_count = text.matches('s').count();
+    let distinct_chars: usize = text.chars().collect::<std::collections::HashSet<_>>().len();
+    println!("{}", s_count);
+    println!("{}", distinct_chars);
+}

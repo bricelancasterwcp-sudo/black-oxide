@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let number = 1234;
+    let reversed_number = reverse_digits(number);
+    println!("{}", reversed_number);
+}
+
+fn reverse_digits(mut num: i32) -> i32 {
+    let mut reversed = 0;
+    while num != 0 {
+        reversed = reversed * 10 + num % 10;
+        num /= 10;
+    }
+    reversed
+}
+```

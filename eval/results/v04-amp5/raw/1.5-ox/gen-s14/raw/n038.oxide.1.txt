@@ -1,0 +1,11 @@
+```rust
+struct Sensor { reading: Int }
+
+fn main() {
+    let mut sensor = Sensor { reading: 0 };
+    sensor.reading += 7;
+    print(sensor.reading);
+}
+```
+
+This source initializes a `Sensor` with a reading of zero, then increments it by seven, and finally prints the new value.

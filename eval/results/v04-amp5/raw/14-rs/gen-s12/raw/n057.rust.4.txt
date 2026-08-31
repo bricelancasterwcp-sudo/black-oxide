@@ -1,0 +1,10 @@
+fn main() {
+    let names = vec!["fig", "banana", "kiwi"];
+    let mut longest_name = "";
+    for name in names {
+        if name.len() > longest_name.len() {
+            longest_name = name;
+        }
+    }
+    println!("{} has the most letters with a count of {}", longest_name, longest_name.len());
+}

@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let mut max_name = "";
+    let mut max_count = 0;
+
+    for (name, count) in [("fig", 3), ("banana", 6), ("kiwi", 4)] {
+        if count > max_count {
+            max_name = name;
+            max_count = count;
+        }
+    }
+
+    println!("{} {}", max_name, max_count);
+}
+```

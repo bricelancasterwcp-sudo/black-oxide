@@ -1,0 +1,11 @@
+```oxide
+fn main() {
+    let s = "banana"
+    let n_count = s.len()
+    for i in range(0, n_count) {
+        if s[i] == 'n' {
+            print(i)
+        }
+    }
+}
+```

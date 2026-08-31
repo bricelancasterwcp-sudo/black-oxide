@@ -1,0 +1,27 @@
+```text
+struct Deposit { amount: Int }
+
+fn process_deposits(deposits: Vec<Deposit>) -> Vec<Int> {
+    let mut balances = vec()
+    let mut balance = 0
+    for d in deposits {
+        balance += d.amount
+        balances = push(balances, balance)
+    }
+    balances
+}
+
+fn main() {
+    let deposits = vec(
+        Deposit { amount: 3 },
+        Deposit { amount: 1 },
+        Deposit { amount: 4 },
+        Deposit { amount: 1 },
+        Deposit { amount: 5 }
+    )
+    let balances = process_deposits(deposits)
+    for b in balances {
+        print(b)
+    }
+}
+```

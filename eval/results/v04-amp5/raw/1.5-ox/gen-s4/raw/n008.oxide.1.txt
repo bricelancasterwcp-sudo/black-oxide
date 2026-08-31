@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut count = 0;
+    for i in 1..51 {
+        if i % 3 == 0 || i % 5 == 0 {
+            count += 1;
+        }
+    }
+    print(count);
+}
+```
+
+This Rust program calculates the numbers from 1 to 50 that divide evenly by 3 or 5 and counts them, printing the total number of such numbers.

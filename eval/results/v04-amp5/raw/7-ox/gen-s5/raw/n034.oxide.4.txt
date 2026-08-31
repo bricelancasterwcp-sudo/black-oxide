@@ -1,0 +1,19 @@
+```rust
+struct Reading { label: String, values: Vec<i32> }
+
+fn second(v: &Vec<i32>) -> Option<&i32> {
+    if v.len() > 1 {
+        Some(&v[1])
+    } else {
+        None
+    }
+}
+
+fn main() {
+    let r = Reading { label: "lab".to_string(), values: vec![3, 42] };
+    match second(&r.values) {
+        Some(n) => println!("{}", n),
+        None => println!("too short"),
+    }
+}
+```

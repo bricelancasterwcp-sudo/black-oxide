@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let word = "granite";
+    print(word.chars().get(0).unwrap_or("")); // first letter
+    print(word.chars().get(word.chars().len() - 1).unwrap_or("")); // last letter
+}
+```

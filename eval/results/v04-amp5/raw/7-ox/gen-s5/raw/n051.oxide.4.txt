@@ -1,0 +1,4 @@
+```rust
+print_str("a")
+print_str("n")
+```

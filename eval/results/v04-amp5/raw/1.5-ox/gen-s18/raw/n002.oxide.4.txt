@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let prod = (1..=6).map(|x| x as Int).product();
+    println(prod);
+}
+```
+
+Explanation of the corrections:
+- The missing semicolon after `let prod` was added at line 2: `;`.
+- The missing semicolon before the closing brace `}` was added at line 3: `;`.

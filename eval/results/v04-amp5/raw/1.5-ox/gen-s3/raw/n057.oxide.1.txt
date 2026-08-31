@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let fig = "fig";
+    let banana = "banana";
+    let kiwi = "kiwi";
+
+    let max_length = |s: &str| s.len();
+    let result = fig.chars().count() > banana.chars().count()
+        ? fig
+        : (fig.chars().count() == banana.chars().count())
+            ? "Equal"
+            : kiwi;
+
+    print_str(format!("The name with the most letters is '{}', and its length is {}.", result, max_length(result)));
+}
+```

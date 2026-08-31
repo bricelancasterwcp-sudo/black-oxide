@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let v = vec![8, 3, 11, 6];
+    print(min(v.clone()).unwrap_or(0));
+    print_str(" ");
+    print(max(v).unwrap_or(0) - min(v.clone()).unwrap_or(0));
+}
+```

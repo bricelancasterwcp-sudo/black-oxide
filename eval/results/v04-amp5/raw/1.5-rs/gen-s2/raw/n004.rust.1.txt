@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let mut current = 1;
+    let mut next = 1;
+
+    for _ in 0..9 {
+        println!("{}", current);
+
+        let sum = current + next;
+        current = next;
+        next = sum;
+    }
+}
+```
+
+In this solution:
+- We start with the first two terms of the Fibonacci sequence, which are both `1`.
+- Inside a loop that runs 9 times (from `0` to `9`), we print the current term.
+- For each iteration of the loop, we calculate the next term by summing up the current and previous terms. Then, we update `current` to be the value of `next` for the next iteration, and `next` to be the new calculated sum.

@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let input = "keyboard";
+    let vowels_count: Int = input.chars().filter(|&c| c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u').count();
+    let consonants_count: Int = input.chars().filter(|&c| !vowels(c)).count();
+    println!("Vowels: {}", vowels_count);
+    println!("Consonants: {}", consonants_count);
+}
+```

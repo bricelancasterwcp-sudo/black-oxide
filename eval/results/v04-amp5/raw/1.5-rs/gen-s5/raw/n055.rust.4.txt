@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    println!("{} (oak)", 8);
+    println!("{} (good)", 15);
+    println!("{} (good)", "");
+}
+```
+
+This fixed version correctly prints:
+```
+8 (oak)
+15 (good)
+(oak) (good)
+```

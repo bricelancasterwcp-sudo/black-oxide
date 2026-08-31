@@ -1,0 +1,17 @@
+```rust
+struct Reading { label: Str, values: Vec<Int> }
+
+fn main() {
+    let r = Reading { 
+        label: "lab", 
+        values: push(vec![], 9) // moved in a previous iteration
+            .push(2) 
+            .push(7) 
+            .push(4)
+    };
+
+    for &x in r.values.iter().sorted() {
+        print!("{}", x);
+    }
+}
+```

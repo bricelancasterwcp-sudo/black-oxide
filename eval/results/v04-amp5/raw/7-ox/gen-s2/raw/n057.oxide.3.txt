@@ -1,0 +1,10 @@
+fn main() {
+    let (name, len) = match ("fig", "banana", "kiwi") {
+        ("fig", _, _) if "fig".len() > "banana".len() && "fig".len() > "kiwi".len() => ("fig", "fig".len()),
+        (_, "banana", _) if "banana".len() > "fig".len() && "banana".len() > "kiwi".len() => ("banana", "banana".len()),
+        (_, _, kiwi) if "kiwi".len() > "fig".len() && "kiwi".len() > "banana".len() => ("kiwi", "kiwi".len()),
+        _ => unreachable!(),
+    };
+    print_str(name);
+    println(len);
+}

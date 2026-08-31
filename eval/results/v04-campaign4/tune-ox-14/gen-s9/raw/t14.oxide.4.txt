@@ -1,0 +1,7 @@
+fn main() {
+    let s = "mississippi"
+    let count_s = str_count(s, "s")
+    print(count_s)
+    let distinct_chars = str_len(str_unique_chars(s))
+    print(distinct_chars)
+}

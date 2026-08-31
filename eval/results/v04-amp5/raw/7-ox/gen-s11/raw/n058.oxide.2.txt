@@ -1,0 +1,9 @@
+fn main() {
+    let word = "coffee";
+    for ch in chars(word) {
+        if count(word, ch) > 1 {
+            print_str(ch);
+            break;
+        }
+    }
+}

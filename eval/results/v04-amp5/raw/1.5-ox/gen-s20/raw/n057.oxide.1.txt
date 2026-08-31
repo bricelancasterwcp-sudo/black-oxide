@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut counts = [0; 3];
+    for &s in ["fig", "banana", "kiwi"].iter() {
+        counts[s.len() - 1] += 1;
+    }
+    let name = if counts[0] == max(counts) { "fig" } else if counts[1] == max(counts) { "banana" } else { "kiwi" };
+    println!("The name with the most letters is: {}", name);
+    println!("It has {} letters.", name.len());
+}
+```

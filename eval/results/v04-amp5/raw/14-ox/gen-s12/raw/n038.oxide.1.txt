@@ -1,0 +1,11 @@
+```rust
+struct Sensor { reading: Int }
+
+struct Device { sensor: Sensor }
+
+fn main() {
+    let device = Device { sensor: Sensor { reading: 0 } };
+    let new_device = Device { sensor: Sensor { reading: 7 } };
+    print(new_device.sensor.reading);
+}
+```

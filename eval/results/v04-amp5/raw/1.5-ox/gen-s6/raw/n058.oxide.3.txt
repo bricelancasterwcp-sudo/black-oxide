@@ -1,0 +1,10 @@
+```
+fn main() {
+    let word = "coffee";
+    for (i, c) in word.chars().enumerate() {
+        if word.matches(c).count() > 1 && !word.contains(&c.to_string())) {
+            println!("{}", c);
+        }
+    }
+}
+```

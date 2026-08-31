@@ -1,0 +1,13 @@
+fn main() {
+    let values = vec();
+    values = push(values, 9);
+    values = push(values, 2);
+    values = push(values, 7);
+    values = push(values, 4);
+
+    let sorted_values = sort(values);
+
+    for x in sorted_values {
+        print(x)
+    }
+}

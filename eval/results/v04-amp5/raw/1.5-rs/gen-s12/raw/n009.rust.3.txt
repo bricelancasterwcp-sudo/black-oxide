@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut num_str = String::new();
+    num_str.push_str("1");
+    num_str.push_str("2");
+    num_str.push_str("3");
+    num_str.push_str("4");
+
+    for c in num_str.chars().rev() {
+        print!("{}", c);
+    }
+}
+```

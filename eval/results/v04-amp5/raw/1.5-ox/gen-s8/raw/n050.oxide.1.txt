@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let scores = vec![2, 9, 5];
+    scores.sort_unstable(); // Sorts in ascending order by default
+    for &score in &scores {
+        println!("{}", score);
+    }
+}
+```
+
+**Explanation**: The program sorts the vector of scores in ascending order using the `sort_unstable` method and then iterates over each element to print it. This solution demonstrates how to sort a collection in Rust using the standard library, which provides efficient sorting algorithms suitable for many real-world scenarios.

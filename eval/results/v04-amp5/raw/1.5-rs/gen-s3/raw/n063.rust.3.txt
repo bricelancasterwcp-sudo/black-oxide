@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let value_four_units = 4 * 3;
+    let value_five_units = 5 * 2;
+
+    println!("Value of line 1: {}", value_four_units);
+    println!("Value of line 2: {}", value_five_units);
+
+    println!("Total value: {}", value_four_units + value_five_units);
+}
+```

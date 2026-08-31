@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let mut log = vec![6, 7, 8, 9];
+    println!("{:?}", log[0]); // Prints the first element (6)
+    println!("{:?}", log[3]); // Prints the last element (9)
+}
+```
+This program initializes a vector `log` with elements 6, 7, 8, and 9. It then uses `println!` to print both the first element (`log[0]`) and the last element (`log[3]`).

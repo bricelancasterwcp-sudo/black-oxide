@@ -1,0 +1,26 @@
+```rust
+struct List { first: Int, second: Int }
+
+fn get_pos(l: List, pos: Int) -> Option<Int> {
+    match pos {
+        1 => Some(l.first),
+        4 => Some(l.second),
+        _ => None,
+    }
+}
+
+fn main() {
+    let l = List { first: 10, second: 20 };
+    if let Some(v1) = get_pos(l, 1) {
+        print(v1);
+    } else {
+        print_str("None");
+    }
+    let l2 = List { first: 10, second: 20 }; // Clone the list to reuse it
+    if let Some(v4) = get_pos(l2.clone(), 4) { // Add .clone() here
+        print(v4);
+    } else {
+        print_str("None");
+    }
+}
+```

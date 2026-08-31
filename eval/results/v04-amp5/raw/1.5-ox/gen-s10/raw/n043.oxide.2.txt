@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut q = vec![1, 2, 3, 4, 5];
+    let temp = q[0]; // move first element to a temporary variable
+    q.swap(0, q.len() - 1); // exchange the first and last elements
+    for i in &q {
+        print!("{}", i);
+        println!(); // print each element on a new line
+    }
+}
+```

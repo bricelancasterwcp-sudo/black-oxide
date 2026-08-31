@@ -1,0 +1,16 @@
+fn main() {
+    let keyboard = "qwertyuiopasdfghjklzxcvbnm";
+    let mut vowels_count = 0;
+    let mut non_vowels_count = 0;
+
+    for c in keyboard.chars() {
+        if "aeiouAEIOU".contains(c) {
+            vowels_count += 1;
+        } else {
+            non_vowels_count += 1;
+        }
+    }
+
+    println!("Vowels: {}", vowels_count);
+    println!("Non-vowels: {}", non_vowels_count);
+}

@@ -1,0 +1,7 @@
+struct Point { x: Int, tag: Str }
+fn main() {
+    let p = Point { x: 11, tag: "hello" }
+    let q = Point { x: 55, ..clone(p) }
+    print(str_len(q.tag))
+    print(q.x)
+}

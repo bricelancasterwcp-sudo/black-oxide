@@ -1,0 +1,16 @@
+```rust
+
+fn main() {
+    let mut char_count = [0; 26]; // Assuming only lowercase English letters are used
+
+    for c in "coffee".chars() {
+        char_count[c as usize - b'a'] += 1;
+    }
+
+    for i in 0..26 {
+        if char_count[i] > 1 {
+            print!("{}", (i + b'a') as char);
+        }
+    }
+}
+```

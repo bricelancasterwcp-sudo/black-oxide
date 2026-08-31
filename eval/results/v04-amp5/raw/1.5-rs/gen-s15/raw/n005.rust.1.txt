@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let sum = (1..=20).filter(|&x| x % 2 == 0).sum();
+    println!("{}", sum);
+}
+```
+
+Explanation:
+- The `range` function generates a sequence of numbers from 1 to 20.
+- `filter` is used to keep only the even numbers, identified by the condition `x % 2 == 0`.
+- `sum` is then used to add up all the filtered numbers.
+- Finally, the sum is printed using `println!`.

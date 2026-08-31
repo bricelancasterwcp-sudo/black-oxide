@@ -1,0 +1,24 @@
+```rust
+fn main() {
+    let entry1 = "8";
+    if !entry1.is_empty() {
+        print(entry1);
+    } else {
+        print("bad");
+    }
+
+    let entry2 = "oak";
+    if !entry2.is_empty() {
+        print(entry2);
+    } else {
+        print("bad");
+    }
+
+    let entry3 = "15";
+    if !entry3.is_empty() {
+        print(entry3);
+    } else {
+        print("bad");
+    }
+}
+```

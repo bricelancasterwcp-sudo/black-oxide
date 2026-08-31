@@ -1,0 +1,9 @@
+```
+fn main() {
+    let phrase = "when in doubt go home"
+    let words = split(phrase, ' ')
+    print(len(words))
+    print_str("\n")
+    print(str_len(phrase))
+}
+```

@@ -1,0 +1,18 @@
+fn min(a: Int, b: Int) -> Int {
+    if a < b { a } else { b }
+}
+
+fn max(a: Int, b: Int) -> Int {
+    if a > b { a } else { b }
+}
+
+fn gap(v: Vec<Int>) -> Int {
+    let max_val = max(max(v[0], v[1]), v[2]);
+    let min_val = min(min(v[0], v[1]), v[2]);
+    max_val - min_val
+}
+
+fn main() {
+    print(min(8, 3))          // smallest figure
+    print(gap(vec![11, 6, 5])) // gap between the largest and the smallest
+}

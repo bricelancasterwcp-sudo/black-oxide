@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let mut vec = push(push(vec(), 4), 9);
+    sort(&mut vec);
+
+    for &x in vec.iter() {
+        print_str(to_str(x));
+        println!(); // Use println! instead of print_str for better formatting
+    }
+}
+```
+
+Explanation:
+- The original code had several syntax errors, including unexpected characters and incorrect use of semicolons.
+- The corrected code removes all these issues. It correctly declares the vector, sorts it, and iterates over its elements, printing them in ascending order with each on a new line.

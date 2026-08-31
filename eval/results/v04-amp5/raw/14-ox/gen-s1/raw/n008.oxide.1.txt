@@ -1,0 +1,19 @@
+```
+fn divisible_by_three_or_five(x: Int) -> Bool {
+    x % 3 == 0 || x % 5 == 0
+}
+
+fn count_divisible_by_three_or_five() -> Int {
+    let mut count = 0
+    for i in range(1, 51) {
+        if divisible_by_three_or_five(i) {
+            count += 1
+        }
+    }
+    count
+}
+
+fn main() {
+    print(count_divisible_by_three_or_five())
+}
+```

@@ -1,0 +1,11 @@
+fn push_back(v: &mut Vec<i32>, x: i32) {
+    v.push(x);
+}
+fn main() {
+    let mut acc: Vec<i32> = (0..10).collect();
+    println!("{}", acc.len());
+    for i in 0..3 {
+        push_back(&mut acc, i);
+    }
+    println!("{}", acc.len());
+}

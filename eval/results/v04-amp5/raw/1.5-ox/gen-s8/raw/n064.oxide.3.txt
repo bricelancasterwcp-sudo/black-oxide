@@ -1,0 +1,23 @@
+```rust
+struct List { elements: Vec<Int> }
+
+fn lookup_position(list: &List, pos: Int) -> Option<bool> {
+    if pos < 0 || pos >= list.elements.len() {
+        None
+    } else {
+        Some(true)
+    }
+}
+
+fn main() {
+    let mut list = List { elements: push(vec![], 10), push(vec![], 20) };
+    match lookup_position(&list, 1) {
+        Some(b) => print_str("Found position 1"),
+        _ => print_str("Not found"),
+    }
+    match lookup_position(&list, 4) {
+        Some(b) => print_str("Found position 4"),
+        _ => print_str("Not found"),
+    }
+}
+```

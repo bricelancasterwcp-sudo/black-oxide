@@ -1,0 +1,32 @@
+```
+struct LogEntry { timestamp: Int, message: Str }
+
+fn first_entry(log: Vec<LogEntry>) -> Option<Str> {
+    match log.first() {
+        Some(entry) => Some(entry.message),
+        None => None,
+    }
+}
+
+fn last_entry(log: Vec<LogEntry>) -> Option<Str> {
+    match log.last() {
+        Some(entry) => Some(entry.message),
+        None => None,
+    }
+}
+
+fn main() {
+    let log = vec![
+        LogEntry { timestamp: 1, message: "Error" },
+        LogEntry { timestamp: 2, message: "Warning" },
+        LogEntry { timestamp: 3, message: "Info" },
+        LogEntry { timestamp: 4, message: "Debug" },
+    ];
+    match (first_entry(log), last_entry(log)) {
+        (Some(first_message), Some(last_message)) => println!("First entry: {}", first_message),
+        (Some(_), None) => println!("Log ends with an entry"),
+        (None, Some(_)) => println!("Log starts with an entry"),
+        (None, None) => println!("Log is empty"),
+    }
+}
+```

@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let sum = (1..=5).map(|n| n.pow(3)).sum::<Int>();
+    print(sum);
+}
+```
+
+Explanation:
+- The `map` method transforms each number from the range 1 to 5 into its cube.
+- The `sum` method calculates the total of these cubes.
+- Finally, `print` is used to display the result.

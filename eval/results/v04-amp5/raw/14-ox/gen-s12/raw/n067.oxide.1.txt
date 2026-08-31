@@ -1,0 +1,16 @@
+```ox
+fn main() {
+    let numbers = push(push(push(push(vec(), 7), 4), 9), 10)
+    let mut sum_of_evens = 0
+
+    for x in numbers {
+        if x % 2 == 0 {
+            sum_of_evens += x
+        } else {
+            print(x * 2)
+        }
+    }
+
+    print(sum_of_evens)
+}
+```

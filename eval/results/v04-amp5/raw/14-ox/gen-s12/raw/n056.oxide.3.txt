@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let texts = vec("7", "x", "9", "?");
+    let sum = 0;
+    let count_non_numbers = 0;
+    for t in texts {
+        if parse_int(t).is_some() {
+            sum += unwrap_or(parse_int(t), 0);
+        } else {
+            count_non_numbers += 1;
+        }
+    }
+    print(sum);
+    print(count_non_numbers);
+}
+```

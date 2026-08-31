@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let num = 9875;
+    let sum = get(num / 10, 0) + get(num % 10, 0);
+    print(sum);
+}
+```
+
+This program calculates the sum of the digits of the number 9875 by first dividing it by 10 and getting the remainder to find the last digit, then adding this to the result of getting the second last digit (found by modulo 10 of the quotient). Finally, it prints the sum.

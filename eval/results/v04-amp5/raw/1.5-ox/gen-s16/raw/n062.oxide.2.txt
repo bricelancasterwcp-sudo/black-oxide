@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let signals = vec![String::from("green"), String::from("red"), String::from("yellow")];
+    for s in signals {
+        match &s as &str {
+            "green" => println!("go"),
+            "red" => println!("stop"),
+            "yellow" => println!("wait"),
+            _ => unreachable!(),
+        }
+    }
+}
+```

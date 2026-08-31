@@ -1,0 +1,23 @@
+```rust
+fn min(v: Vec<Int>) -> Option<Int> {
+    v.iter().cloned().min()
+}
+
+fn max(v: Vec<Int>) -> Option<Int> {
+    v.iter().cloned().max()
+}
+
+fn gap(largest: Int, smallest: Int) -> Int {
+    largest - smallest
+}
+
+fn main() {
+    let figures = vec![8, 3, 11, 6];
+    if let (Some(smallest), Some(largest)) = (min(figures.clone()), max(figures)) {
+        print(smallest);
+        print(gap(largest, smallest));
+    } else {
+        print_str("no figures");
+    }
+}
+```

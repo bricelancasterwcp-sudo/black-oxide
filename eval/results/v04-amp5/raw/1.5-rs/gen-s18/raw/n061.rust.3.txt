@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    // The dimensions of the rectangle are 9 units wide and 3 units high.
+    let width = 9;
+    let height = 3;
+
+    // Calculate the area of the rectangle.
+    let area = width * height;
+
+    // Calculate the perimeter of the rectangle.
+    let perimeter = 2 * (width + height);
+
+    // Print the results.
+    println!("The area is {}", area);
+    println!("The perimeter is {}", perimeter);
+}
+```
+
+This program correctly calculates the area and perimeter of a rectangle with dimensions 9 units wide and 3 units high, as required.

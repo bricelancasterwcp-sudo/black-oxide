@@ -1,0 +1,13 @@
+```rust
+struct Rectangle { width: Int, height: Int }
+
+fn area(r: Rectangle) -> Int {
+    r.width * r.height
+}
+
+fn main() {
+    let r = Rectangle { width: 2, height: 3 };
+    let mut r2 = Rectangle { width: 5, ..r }; // Use 'mut' to allow reassignment
+    print(area(r2));
+}
+```

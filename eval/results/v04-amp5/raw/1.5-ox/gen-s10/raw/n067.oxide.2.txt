@@ -1,0 +1,20 @@
+```rust
+struct Walk {
+    current: Int,
+    total: Int,
+}
+
+fn main() {
+    let mut walk = Walk { current: 7, total: 0 };
+
+    while walk.current <= 10 {
+        if walk.current % 2 != 0 {
+            println!("{}", 2 * walk.current);
+        }
+        walk.total += walk.current;
+        walk.current += 3;
+    }
+
+    println!("Total of even entries: {}", walk.total);
+}
+```

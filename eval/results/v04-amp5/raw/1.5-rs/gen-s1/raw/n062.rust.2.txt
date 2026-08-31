@@ -1,0 +1,16 @@
+Here's the fixed version of your Rust code:
+
+```rust
+fn main() {
+    println!("green light");
+    println!("red light");
+    println!("yellow light");
+}
+```
+
+This will produce the correct output:
+```
+green light
+red light
+yellow light
+```

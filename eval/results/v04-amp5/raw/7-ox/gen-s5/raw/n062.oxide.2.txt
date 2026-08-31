@@ -1,0 +1,23 @@
+```rust
+struct Signal { color: Str }
+
+fn meaning(s: Signal) -> Str {
+    match s.color {
+        "green" => concat("go", "\n"),
+        "red" => concat("stop", "\n"),
+        "yellow" => concat("wait", "\n"),
+        _ => "",
+    }
+}
+
+fn main() {
+    let signals = vec![
+        Signal { color: "green" },
+        Signal { color: "red" },
+        Signal { color: "yellow" }
+    ];
+    for signal in signals {
+        print(meaning(signal));
+    }
+}
+```

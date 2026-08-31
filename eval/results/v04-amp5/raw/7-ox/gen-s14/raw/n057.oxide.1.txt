@@ -1,0 +1,18 @@
+```
+fn main() {
+    let fig = "fig"
+    let banana = "banana"
+    let kiwi = "kiwi"
+
+    if str_len(fig) >= str_len(banana) && str_len(fig) >= str_len(kiwi) {
+        print_str(fig)
+        print(str_len(fig))
+    } else if str_len(banana) >= str_len(fig) && str_len(banana) >= str_len(kiwi) {
+        print_str(banana)
+        print(str_len(banana))
+    } else {
+        print_str(kiwi)
+        print(str_len(kiwi))
+    }
+}
+```

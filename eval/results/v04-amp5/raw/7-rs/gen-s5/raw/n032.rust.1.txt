@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let first_point = (1, 5);
+    let second_point = (10, 5);
+
+    let sum = first_point.1 + second_point.1;
+    println!("{}", sum);
+}
+```

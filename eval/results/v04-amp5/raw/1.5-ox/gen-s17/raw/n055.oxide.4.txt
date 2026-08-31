@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    match read_line().unwrap_or("none") {
+        "8" => println!("8"),
+        "oak" => println!("bad"),
+        "15" => println!("15"),
+        _ => println!("bad")
+    }
+}
+```

@@ -1,0 +1,23 @@
+```rust
+struct Fruit {
+    name: Str,
+    letter_count: Int,
+}
+
+fn main() -> Int {
+    let fruits = vec![
+        Fruit { name: "fig".to_string(), letter_count: 3 },
+        Fruit { name: "banana".to_string(), letter_count: 6 },
+        Fruit { name: "kiwi".to_string(), letter_count: 5 },
+    ];
+
+    let mut max_fruit = &fruits[0];
+    for fruit in &fruits {
+        if fruit.letter_count > max_fruit.letter_count {
+            max_fruit = fruit;
+        }
+    }
+
+    println!("The name with the most letters is {} ({} letters)", max_fruit.name, max_fruit.letter_count);
+}
+```

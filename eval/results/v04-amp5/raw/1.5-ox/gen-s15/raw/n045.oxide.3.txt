@@ -1,0 +1,17 @@
+```
+fn first_entry(v: Vec<Int>) -> Int {
+    let mut iter = v.iter();
+    *iter.next().unwrap()
+}
+
+fn last_entry(v: Vec<Int>) -> Int {
+    let mut iter = v.iter().rev();
+    *iter.next().unwrap()
+}
+
+fn main() {
+    let log = vec![6, 7, 8, 9];
+    print(first_entry(log));
+    print(last_entry(log));
+}
+```

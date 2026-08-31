@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let readings = vec![6, 11, 3, 14, 9];
+    let exceeding_five_count: usize = readings.iter().filter(|&&x| x > 5).count();
+    println!("Exceeds five count: {}", exceeding_five_count);
+    println!("Highest reading: {}", readings.iter().max().unwrap());
+}
+```

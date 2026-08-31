@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut x1 = 1; // One across
+    let mut y1 = 5; // Five up
+
+    let mut x2 = x1 + 10; // Ten across
+    let mut y2 = y1;
+
+    println!("{}", x1 + y2);
+}
+```

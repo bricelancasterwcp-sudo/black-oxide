@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let mut numbers = vec![8, 3, 11, 6];
+
+    // Sort the vector in ascending order
+    numbers.sort_unstable();
+
+    // Print the smallest figure
+    println!("The smallest figure is: {}", numbers[0]);
+
+    // Calculate and print the gap between the largest and smallest figures
+    let largest = numbers[numbers.len() - 1];
+    let smallest = numbers[0];
+    let gap = largest - smallest;
+    println!("The gap between the largest and smallest is: {}", gap);
+}
+```

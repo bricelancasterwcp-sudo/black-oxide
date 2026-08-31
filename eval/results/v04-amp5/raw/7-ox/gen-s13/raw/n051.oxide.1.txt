@@ -1,0 +1,10 @@
+```oxide
+fn main() {
+    let s = "granite";
+    print(concat(chars(s)[0], chars(s)[last_index_of(s)]));
+}
+
+fn last_index_of(s: Str) -> Int {
+    len(chars(s)) - 1
+}
+```

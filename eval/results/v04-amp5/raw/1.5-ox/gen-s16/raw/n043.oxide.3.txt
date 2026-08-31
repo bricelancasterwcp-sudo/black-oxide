@@ -1,0 +1,29 @@
+```rust
+struct Queue {
+    elements: Vec<Int>,
+}
+
+impl Queue {
+    fn new() -> Self {
+        Queue { elements: vec![1, 2, 3, 4, 5] }
+    }
+
+    fn exchange_first_last(&mut self) {
+        let last_element = self.elements.pop().unwrap(); // Clone the last element to keep it in a valid location
+        self.elements.swap(0, self.elements.len() - 1); // Swap the first and last elements
+        self.elements.push(last_element); // Push the last element back into its original position
+    }
+
+    fn print_elements(&self) {
+        for &x in &self.elements {
+            println!("{}", x);
+        }
+    }
+}
+
+fn main() {
+    let mut q = Queue::new();
+    q.exchange_first_last();
+    q.print_elements();
+}
+```

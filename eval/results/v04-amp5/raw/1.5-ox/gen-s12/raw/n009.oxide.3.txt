@@ -1,0 +1,16 @@
+```rust
+fn reverse(v: Vec<Int>) -> Vec<Int> {
+    let mut a = v.clone();
+    let mut b = vec![];
+    while !a.is_empty() {
+        b.push(a.pop().unwrap());
+    }
+    b
+}
+
+fn main() {
+    let n = 1234;
+    let digits = reverse(int_to_str(n).chars().map(|c| c.to_digit(10).unwrap()).collect::<Vec<_>>());
+    println!("The number {} with digits in the opposite order is: {}", n, digits);
+}
+```

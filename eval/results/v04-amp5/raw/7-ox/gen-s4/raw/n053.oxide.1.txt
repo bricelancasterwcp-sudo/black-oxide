@@ -1,0 +1,7 @@
+```oxide
+fn main() {
+    let s = "drum"
+    print(concat(chars(s), range(0, str_len(s)-1)))
+    print_str(s)
+}
+```

@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut total = 1;
+    for i in 1..7 {
+        if i % 2 != 0 {
+            total *= i;
+        }
+    }
+    println(total);
+}
+```

@@ -1,0 +1,23 @@
+fn main() {
+    let s = "a1b22";
+    let mut sum = 0;
+    let mut count = 0;
+
+    for c in chars(s) {
+        if is_digit(c) {
+            sum += to_int(c);
+            count += 1;
+        }
+    }
+
+    print(sum);
+    print(count);
+}
+
+fn is_digit(c: Str) -> Bool {
+    '0' <= c && c <= '9'
+}
+
+fn to_int(c: Str) -> Int {
+    (c.to_float() * 10).to_int()
+}

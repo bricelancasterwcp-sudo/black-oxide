@@ -1,0 +1,31 @@
+```rust
+struct Reading { label: Str, values: Vec<Int> }
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(vec(), 3), 42) };
+    println(first_big(r.values));            // field access copies: r stays usable
+    match second(r.values) {
+        Some(n) => print(n),
+        None => print_str("too short"),
+    }
+
+    let v = vec![6, 11, 3, 14, 9];
+    println(count_if(&v, |&x| x > 5));    // count how many values exceed five
+
+    for &x in &v {
+        if x > 5 {
+            println!("{}", x);
+        }
+    }
+
+    let v2 = vec![6, 11, 3, 14, 9];
+    
+    for &x in &v2 {
+        if x > 5 {
+            println!("{}", x);
+        }
+    }
+    
+    println!("Highest reading: {}", max(&v2).unwrap_or(0));
+}
+```

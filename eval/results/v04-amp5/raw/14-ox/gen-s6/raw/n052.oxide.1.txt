@@ -1,0 +1,19 @@
+```
+fn main() {
+    let word = "banana"
+    let chars = chars(word)
+    for (i, c) in enumerate(chars) {
+        if c == "n" {
+            print(i)
+        }
+    }
+}
+
+fn enumerate(v: Vec<Str>) -> Vec<(Int, Str)> {
+    let result = vec()
+    for i in range(0, len(v)) {
+        result = push(result, (i, get(v, i).unwrap_or("")))
+    }
+    result
+}
+```

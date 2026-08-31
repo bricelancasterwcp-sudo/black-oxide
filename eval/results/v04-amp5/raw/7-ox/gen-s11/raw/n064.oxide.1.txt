@@ -1,0 +1,29 @@
+```rust
+struct List { data: Vec<Option<Int>> }
+
+fn new_list() -> List {
+    List { data: vec![None; 10] }
+}
+
+fn set(list: &mut List, pos: Int, val: Int) {
+    list.data[pos as usize] = Some(val);
+}
+
+fn get(list: &List, pos: Int) -> Option<Int> {
+    list.data[pos as usize]
+}
+
+fn main() {
+    let mut list = new_list();
+    set(&mut list, 1, 20);
+    match get(&list, 1) {
+        Some(n) => print(n),
+        None => print_str("none"),
+    }
+    print_str("\n");
+    match get(&list, 4) {
+        Some(n) => print(n),
+        None => print_str("none"),
+    }
+}
+```

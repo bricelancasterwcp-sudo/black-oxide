@@ -1,0 +1,26 @@
+struct Reading { label: Str, values: Vec<Int> }
+
+fn second(v: Vec<Int>) -> Option<Int> {
+    let x = get(v, 1)?
+    Some(x + 1)
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(vec(), 7), 8) }
+    match second(r.values.clone()) {
+        Some(n) => print(n),
+        None => print_str("too short"),
+    }
+
+    let r2 = Reading { label: "lab2", ..r }
+    match second(r2.values.clone()) {
+        Some(n) => print(n),
+        None => print_str("too short"),
+    }
+
+    let r3 = Reading { label: "lab3", values: push(push(vec(), 9), 10) }
+    match second(r3.values.clone()) {
+        Some(n) => print(n),
+        None => print_str("too short"),
+    }
+}

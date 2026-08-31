@@ -1,0 +1,12 @@
+```rust
+struct Reading { label: Str, values: Vec<Int> }
+
+fn main() {
+    let readings = vec![6, 11, 3, 14, 9];
+    let count_exceeding_five = readings.iter().filter(|x| **x > 5).count();
+    print(count_exceeding_five);
+
+    let max_reading = *readings.iter().max().expect("Expected a non-empty vector");
+    print_str(max_reading.to_string());
+}
+```

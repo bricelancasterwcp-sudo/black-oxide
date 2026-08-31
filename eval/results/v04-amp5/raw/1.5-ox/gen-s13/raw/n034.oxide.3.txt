@@ -1,0 +1,5 @@
+```rust
+fn second_entry(values: Vec<Int>) -> Option<Int> {
+    values.get(1)
+}
+```

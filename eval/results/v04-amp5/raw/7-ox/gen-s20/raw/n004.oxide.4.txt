@@ -1,0 +1,15 @@
+```oxide
+fn fib(n: Int) -> Int {
+    let (mut a, mut b) = (1, 1);
+    for _ in range(0, n - 2) {
+        let temp = a + b;
+        a = b;
+        b = temp;
+    }
+    b
+}
+
+fn main() {
+    print(fib(10));
+}
+```

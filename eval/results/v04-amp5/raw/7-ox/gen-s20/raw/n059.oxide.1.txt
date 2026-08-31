@@ -1,0 +1,8 @@
+```oxide
+fn main() {
+    let s = "when in doubt go home";
+    let words: Vec<Str> = split(s, ' ');
+    print(count(words));
+    print(str_len(s));
+}
+```

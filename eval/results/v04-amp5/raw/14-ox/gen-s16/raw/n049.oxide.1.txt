@@ -1,0 +1,9 @@
+```text
+fn main() {
+    let figures = vec(8, 3, 11, 6);
+    let min_val = min(figures)?;
+    let max_val = max(figures)?;
+    print(min_val);
+    print(max_val - min_val);
+}
+```

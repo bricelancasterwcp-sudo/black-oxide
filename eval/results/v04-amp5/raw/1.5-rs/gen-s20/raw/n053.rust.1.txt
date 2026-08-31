@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let word = "drum";
+    println!("{}", word.chars().rev().collect::<String>());
+    println!("{}", word);
+}
+```
+
+This Rust program takes the input string "drum", reverses its characters using `chars()` method which returns an iterator of unicode code points, and then collects them into a new string with `collect::<String>()`. The first `println!` statement prints this reversed string, and the second one prints the original string.

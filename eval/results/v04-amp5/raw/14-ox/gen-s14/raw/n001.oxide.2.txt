@@ -1,0 +1,6 @@
+```text
+fn main() {
+    let total = range(1, 6).iter().map(|x| x * x * x).sum()
+    print(total)
+}
+```

@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let mut q = [1, 2, 3, 4, 5];
+    swap(&mut q[0], &mut q[q.len() - 1]);
+    for x in &q {
+        println!("{}", x);
+    }
+}
+fn swap(a: &mut Int, b: &mut Int) {
+    let tmp = *a;
+    *a = *b;
+    *b = tmp;
+}
+```

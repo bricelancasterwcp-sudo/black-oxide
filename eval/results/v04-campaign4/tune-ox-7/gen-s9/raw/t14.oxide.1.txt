@@ -1,0 +1,13 @@
+fn main() {
+    let s = "mississippi"
+    let count_s = count(s, "s")
+    print(count_s)
+    let chars = collect(chars(s))
+    let unique_chars = vec()
+    for c in chars {
+        if !contains(unique_chars, c) {
+            unique_chars = push(unique_chars, c)
+        }
+    }
+    print(len(unique_chars))
+}

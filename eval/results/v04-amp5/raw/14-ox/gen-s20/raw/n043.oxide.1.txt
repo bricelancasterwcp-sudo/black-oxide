@@ -1,0 +1,17 @@
+```
+fn main() {
+    let q = vec!(1, 2, 3, 4, 5)
+    let len = len(q)
+    if len > 1 {
+        let first = get(q, 0)?
+        let last = get(q, len - 1)?
+        let q = set(set(q, 0, last), len - 1, first)
+        for x in q {
+            print(x)
+            print_str("\n")
+        }
+    } else {
+        print_str("Queue is too short\n")
+    }
+}
+```

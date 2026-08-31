@@ -1,0 +1,11 @@
+fn main() {
+    let mut i = 2;
+    while i < 91 {
+        if 91 % i == 0 {
+            print_str("no")
+            return
+        }
+        i += 1
+    }
+    print_str("yes")
+}

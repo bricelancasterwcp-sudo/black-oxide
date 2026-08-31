@@ -1,0 +1,19 @@
+```rust
+
+fn main() {
+    let side = 4;
+    let radius: f64 = 3.0;
+
+    // Calculate the area of a square
+    let square_area = side * side;
+
+    // Print the area of the square
+    println!("The area of the square is: {}", square_area);
+
+    // Calculate the area of a circle
+    let circle_area = std::f64::consts::PI * radius.powi(2);
+
+    // Print the area of the circle
+    println!("The area of the circle is: {:.2}", circle_area);
+}
+```

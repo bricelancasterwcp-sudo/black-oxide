@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut count = 0;
+    for i in 1..=50 {
+        if i % 3 == 0 || i % 5 == 0 {
+            count += 1;
+        }
+    }
+    println!("Count: {}", count);
+}
+```
+
+This Rust program defines a `main` function where it iterates through numbers from 1 to 50. For each number, it checks if it is divisible by three or five using the modulo operator (`%`). If it is divisible by either number (or both), it increments a counter variable. After the loop completes, it prints out the total count of numbers that meet the condition.

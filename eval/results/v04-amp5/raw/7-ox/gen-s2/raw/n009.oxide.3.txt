@@ -1,0 +1,10 @@
+fn main() {
+    let num = 1234;
+    let chars: Vec<Str> = chars(int_to_str(num));
+    let reversed_chars = reverse(chars);
+    let result = concat(reversed_chars);
+    print(str_len(&result));
+    for ch in &chars {
+        print(ch);
+    }
+}

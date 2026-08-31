@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let word = "granite";
+    println!("{:?}", word.chars().nth(0).unwrap());
+    println!("{:?}", word.chars().last().unwrap());
+}
+```
+
+The original code was trying to print the first and last character of the string, but it was not correctly formatted. The `{:?}` format specifier is used for debugging, which prints the value in a pretty-printed way.

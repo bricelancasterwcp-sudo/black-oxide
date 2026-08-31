@@ -1,0 +1,18 @@
+```text
+fn safe_div(x: Int, y: Int) -> Option<Float> {
+    if y == 0 {
+        None
+    } else {
+        Some(to_float(x) / to_float(y))
+    }
+}
+
+fn main() {
+    let x = 20
+    let y = 4
+    match safe_div(x, y) {
+        Some(result) => print(result),
+        None => print_str("bad"),
+    }
+}
+```

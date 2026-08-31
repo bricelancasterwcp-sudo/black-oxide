@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let mut s = "banana".chars();
+    while let Some(c) = s.next() {
+        if c == 'n' {
+            print!("{}", s.position(|&x| x == 'n'));
+        }
+    }
+}
+```

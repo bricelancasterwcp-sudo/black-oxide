@@ -1,0 +1,26 @@
+```rust
+fn main() {
+    let nums: Vec<Str> = vec![
+        String::from("7"),
+        String::from("?"),
+        String::from("x"),
+        String::from("9")
+    ];
+
+    let mut total: Int = 0;
+    let mut count: Int = 0;
+
+    for num in nums.iter() {
+        match parse_int(num.as_str()) {
+            Some(n) => {
+                total += n;
+                count += 1;
+            }
+            None => {}
+        }
+    }
+
+    println!("Total: {}", total);
+    println!("Count: {}", count);
+}
+```

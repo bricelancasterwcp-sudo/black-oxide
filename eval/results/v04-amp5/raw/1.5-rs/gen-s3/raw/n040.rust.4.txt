@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let square_side = 4;
+    let area_square = square_side * square_side;
+
+    println!("The area of a square with side {} is {}", square_side, area_square);
+
+    let radius: f64 = 3.0; // use f64 for floating-point number
+    let area_circle = std::f64::consts::PI * radius.powi(2);
+    println!("The area of a circle with radius {:.2}", area_circle);
+}
+```

@@ -1,0 +1,17 @@
+```oxide
+fn main() {
+    let fruit = ["fig", "banana", "kiwi"];
+    let mut longest = 0;
+    let mut name = "";
+
+    for f in fruit {
+        if f.len() > longest {
+            longest = f.len();
+            name = f;
+        }
+    }
+
+    print(name);
+    print(longest);
+}
+```

@@ -1,0 +1,21 @@
+```rust
+struct Figure {
+    id: Int,
+    value: Float,
+}
+
+fn main() {
+    let figures = vec![
+        Figure { id: 1, value: 5.0 },
+        Figure { id: 2, value: 3.0 },
+        Figure { id: 3, value: 8.0 },
+        Figure { id: 4, value: 7.0 },
+    ];
+
+    let smallest_figure = figures.iter().min_by(|a, b| a.value.partial_cmp(&b.value).unwrap()).unwrap();
+    let largest_figure = figures.iter().max_by(|a, b| a.value.partial_cmp(&b.value).unwrap()).unwrap();
+
+    println!("{}", smallest_figure.id);
+    println!("{}", largest_figure.value - smallest_figure.value);
+}
+```

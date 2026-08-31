@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut num = 1234;
+    while num > 0 {
+        println!("{}", num % 10);
+        num /= 10;
+    }
+}
+```
+
+The original program did not print the numbers in the correct order because it was printing each digit separately and not reversing them. The `num % 10` operation takes the remainder of division by 10, which is the last digit of the number. By repeatedly dividing the number by 10 using `num /= 10`, we get rid of the last digit, moving the remaining digits one position to the left until only the first digit remains. Since Rust's integer division truncates towards zero, we don't need to worry about the sign of the number.

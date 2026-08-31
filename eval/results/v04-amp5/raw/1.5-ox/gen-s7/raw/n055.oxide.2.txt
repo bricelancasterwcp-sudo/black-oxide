@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let arr = [8, 15];
+    
+    for (i, &item) in arr.iter().enumerate() {
+        match item {
+            8 => print!("{}", i), // prints the index of the number 8
+            "oak" => print!("bad"), // prints bad because oak is not an integer
+            15 => print!("{}", i), // prints the index of the number 15
+            _ => print!("bad") // prints bad for any other value
+        }
+    }
+}
+```

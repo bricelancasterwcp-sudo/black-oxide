@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    println!("{}", 4.0 * 4.0 * std::f64::consts::PI);
+}
+```
+
+This Rust program defines a function `main` that calculates and prints the area of a square with side length four, using the mathematical constant π from the `std::f64::consts` module. The result is then printed to the console.

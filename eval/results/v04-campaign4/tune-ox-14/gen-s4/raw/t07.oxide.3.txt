@@ -1,0 +1,5 @@
+fn main() {
+    let multiples = range(1, 9).map(|x| x * 3)
+    let sum = multiples.reduce(0, |acc, x| acc + x)
+    print(sum)
+}

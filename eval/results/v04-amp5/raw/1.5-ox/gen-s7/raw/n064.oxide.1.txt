@@ -1,0 +1,20 @@
+```rust
+
+struct List { values: Vec<Int> }
+
+fn main() {
+    let list = List { values: push(push(vec(), 10), 20) };
+
+    if let Some(pos1) = get(list.values, 0) {
+        print(pos1);
+    } else {
+        print_str("position 1 is empty");
+    }
+
+    if let Some(pos4) = get(list.values, 3) {
+        print(pos4);
+    } else {
+        print_str("position 4 is empty");
+    }
+}
+```

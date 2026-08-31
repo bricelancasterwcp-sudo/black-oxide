@@ -1,0 +1,33 @@
+```rust
+fn reverse(v: Vec<Int>) -> Vec<Int> {
+    let mut result = vec![];
+    for i in (v.len() - 1..=0).rev() {
+        result.push(v[i]);
+    }
+    result
+}
+
+fn main() {
+    let num_str = "1234";
+    let digits: Vec<Int> = str_to_ints(num_str);
+    let reversed_digits: Vec<Int> = reverse(digits);
+    print(first_big(reversed_digits));
+}
+
+fn first_big(v: Vec<Int>) -> Int {
+    let mut found = -1;
+    for x in v {
+        if x > 10 {
+            found = x;
+            break;
+        }
+    }
+    found
+}
+
+fn str_to_ints(s: &str) -> Vec<Int> {
+    s.chars()
+        .map(|c| c.to_digit(10).unwrap() as Int)
+        .collect()
+}
+```

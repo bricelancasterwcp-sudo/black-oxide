@@ -1,0 +1,26 @@
+```rust
+use std::fmt::{self};
+
+struct Signal { color: Str }
+
+enum Light {
+    Green,
+    Red,
+    Yellow,
+}
+
+fn main() {
+    let mut light = Light::Green;
+    loop {
+        print!("{}, ", light.color);
+
+        if light == Light::Red {
+            break;
+        }
+        light = match light {
+            Light::Yellow => Light::Green,
+            _ => light,
+        };
+    }
+}
+```

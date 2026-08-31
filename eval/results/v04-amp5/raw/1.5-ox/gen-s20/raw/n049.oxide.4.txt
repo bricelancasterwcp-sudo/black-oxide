@@ -1,0 +1,18 @@
+```rust
+struct Figure {
+    size: Int,
+}
+
+fn main() {
+    let figs = vec![
+        Figure { size: 3 },
+        Figure { size: 8 },
+        Figure { size: 11 },
+        Figure { size: 6 },
+    ];
+    let min_fig = *figs.iter().min_by(|a, b| a.size.cmp(&b.size)).unwrap();
+    println!("{}", min_fig.size);
+    let max_fig = *figs.iter().max_by(|a, b| a.size.cmp(&b.size)).unwrap();
+    println!("Gap between largest and smallest: {}", max_fig.size - min_fig.size); // print the gap between the largest and the smallest
+}
+```

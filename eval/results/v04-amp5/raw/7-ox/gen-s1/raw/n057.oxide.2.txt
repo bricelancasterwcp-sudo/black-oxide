@@ -1,0 +1,3 @@
+fig 3  
+banana 6  
+kiwi 4

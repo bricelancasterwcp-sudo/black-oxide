@@ -1,0 +1,26 @@
+```rust
+fn main() {
+    let sq = Square(4);
+    print(sq.area());
+}
+
+struct Circle {
+    r: Float,
+}
+
+impl Circle {
+    fn area(&self) -> Float {
+        std::f64::consts::PI * self.r * self.r
+    }
+}
+
+struct Square {
+    side: Int,
+}
+
+impl Square {
+    fn area(&self) -> Float {
+        self.side as Float * self.side as Float
+    }
+}
+```

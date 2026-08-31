@@ -1,0 +1,29 @@
+```rust
+struct Step { val: Int, is_odd: bool }
+
+fn main() {
+    let mut steps = vec![
+        Step { val: 7, is_odd: true },
+        Step { val: 4, is_odd: false },
+        Step { val: 9, is_odd: true },
+        Step { val: 10, is_odd: false }
+    ];
+
+    // Walk the list in order
+    for step in steps {
+        if step.is_odd {
+            println!("{}", 2 * step.val);
+        }
+    }
+
+    // Print the total of the even entries
+    let mut sum = 0;
+    for step in steps {
+        if !step.is_odd {
+            sum += step.val;
+        }
+    }
+
+    println!("Total of even entries: {}", sum);
+}
+```

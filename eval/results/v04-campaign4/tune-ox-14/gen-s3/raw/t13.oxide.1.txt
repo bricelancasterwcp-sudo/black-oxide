@@ -1,0 +1,12 @@
+fn is_palindrome(s: Str) -> Bool {
+    let chars = chars(s)
+    let reversed_chars = reverse(chars)
+    let reversed_str = concat(reversed_chars)
+    s == reversed_str
+}
+fn main() {
+    let words = vec("level", "stereo", "rotor")
+    for word in words {
+        print(is_palindrome(word))
+    }
+}

@@ -1,0 +1,8 @@
+fn main() {
+    let nums = vec!(9, 2, 7, 4);
+    let sorted_nums = sort(nums);
+    for num in sorted_nums {
+        print(num);
+        print_str("\n");
+    }
+}

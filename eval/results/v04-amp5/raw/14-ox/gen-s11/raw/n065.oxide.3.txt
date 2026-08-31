@@ -1,0 +1,19 @@
+```text
+fn count_exceed_five(v: Vec<Int>) -> Int {
+    count_if(v, |x| x > 5)
+}
+
+fn max_reading(v: Vec<Int>) -> Option<Int> {
+    max(v)
+}
+
+fn main() {
+    let readings = vec(6, 11, 3, 14, 9);
+    print(count_exceed_five(readings));
+    let max_read = max_reading(vec(6, 11, 3, 14, 9));
+    match max_read {
+        Some(n) => print(n),
+        None => print_str("No readings"),
+    }
+}
+```

@@ -1,0 +1,16 @@
+```text
+fn safe_divide(n: Int, d: Int) -> Result<Int, Str> {
+    if d == 0 {
+        Err("division by zero")
+    } else {
+        Ok(n / d)
+    }
+}
+
+fn main() {
+    match safe_divide(20, 4) {
+        Ok(result) => print(result),
+        Err(msg) => print_str(msg),
+    }
+}
+```

@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let fig = "fig";
+    let banana = "banana";
+    let kiwi = "kiwi";
+
+    let longest = if fig.len() >= banana.len() && fig.len() >= kiwi.len() {
+        (fig, fig.len())
+    } else if banana.len() >= fig.len() && banana.len() >= kiwi.len() {
+        (banana, banana.len())
+    } else {
+        (kiwi, kiwi.len())
+    };
+
+    print(longest.0);
+    print_str(" ");
+    print(longest.1);
+}
+```

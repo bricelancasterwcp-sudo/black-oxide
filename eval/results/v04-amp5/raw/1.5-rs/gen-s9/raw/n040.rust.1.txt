@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let side = 4.0;
+    println!("The area of the square is {}", side * side);
+}
+```
+In this Rust program, we define a function `main()` which is the entry point of the program. Inside `main()`, we declare a variable `side` of type `f64` and initialize it with 4.0. We then use `println!` macro to print the area of the square by multiplying the side by itself and using the value of pi (represented as `3.141592653589793`) for the calculation.

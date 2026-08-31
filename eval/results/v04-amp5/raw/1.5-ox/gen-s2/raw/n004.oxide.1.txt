@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let mut a = 1;
+    let mut b = 1;
+
+    for _ in 0..9 {
+        let temp = a + b;
+        a = b;
+        b = temp;
+    }
+
+    println!("{}", b);
+}
+```
+
+Explanation:
+- `let mut a = 1;` and `let mut b = 1;` initialize the sequence with the first two terms.
+- The loop runs 9 times, computing each term as the sum of the previous two (`temp` holds `a + b`, then `a` takes on `b`, and `b` becomes `temp`).
+- After the loop, `b` contains the tenth term of the sequence, which is printed.

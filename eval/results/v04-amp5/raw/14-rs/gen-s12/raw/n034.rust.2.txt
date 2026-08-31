@@ -1,0 +1,12 @@
+fn main() {
+    let numbers = vec![7];
+    if let Some(second) = get_second(&numbers) {
+        println!("The second number is: {}", second);
+    } else {
+        println!("There is no second number.");
+    }
+}
+
+fn get_second(numbers: &[i32]) -> Option<i32> {
+    numbers.get(1).copied()
+}

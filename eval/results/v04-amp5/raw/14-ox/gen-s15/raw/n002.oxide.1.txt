@@ -1,0 +1,13 @@
+```text
+fn multiply_to_six() -> Int {
+    let mut product = 1
+    for i in range(1, 7) {
+        product *= i
+    }
+    product
+}
+
+fn main() {
+    print(multiply_to_six())
+}
+```

@@ -1,0 +1,4 @@
+fn main() {
+    let total = vec![1, 2, 3, 4, 5].iter().map(|x| x * x * x).collect::<Vec<Int>>().sum()
+    print(total)
+}

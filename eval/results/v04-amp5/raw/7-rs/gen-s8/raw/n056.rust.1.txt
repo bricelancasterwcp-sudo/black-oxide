@@ -1,0 +1,38 @@
+```rust
+fn main() {
+    let text1 = "7";
+    let text2 = "x";
+    let text3 = "9";
+    let text4 = "?";
+
+    let mut total = 0;
+    let mut count_non_numbers = 0;
+
+    if let Ok(num) = text1.parse::<i32>() {
+        total += num;
+    } else {
+        count_non_numbers += 1;
+    }
+
+    if let Ok(num) = text2.parse::<i32>() {
+        total += num;
+    } else {
+        count_non_numbers += 1;
+    }
+
+    if let Ok(num) = text3.parse::<i32>() {
+        total += num;
+    } else {
+        count_non_numbers += 1;
+    }
+
+    if let Ok(num) = text4.parse::<i32>() {
+        total += num;
+    } else {
+        count_non_numbers += 1;
+    }
+
+    println!("Total of numbers: {}", total);
+    println!("Count of non-numbers: {}", count_non_numbers);
+}
+```

@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let names = vec!["fig", "banana", "kiwi"];
+    let mut max_len = 0;
+    let mut max_name = "";
+
+    for name in names.iter() {
+        if name.len() > max_len {
+            max_len = name.len();
+            max_name = name;
+        }
+    }
+
+    println!("{} {}", max_name, max_len);
+}
+```

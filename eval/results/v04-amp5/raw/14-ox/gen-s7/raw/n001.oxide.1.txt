@@ -1,0 +1,10 @@
+```text
+fn cube(n: Int) -> Int {
+    n * n * n
+}
+
+fn main() {
+    let total = range(1, 6).map(|x| cube(x)).sum()
+    print(total)
+}
+```

@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let line1_value = (4 * 3) + (5 * 2);
+    let line2_value = (4 * 3) + (5 * 2);
+    
+    print(line1_value);
+    print("\n");
+    print(line2_value);
+    
+    println("\n");
+    print(line1_value + line2_value);
+}
+```

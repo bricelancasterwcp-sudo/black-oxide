@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let mut arr = [10, 20];
+    
+    match arr.get(0) {
+        Some(x) => println!("{}", x),
+        None => (),
+    }
+    
+    match arr.get(3) {
+        Some(x) => println!("{}", x),
+        None => (),
+    }
+}
+```

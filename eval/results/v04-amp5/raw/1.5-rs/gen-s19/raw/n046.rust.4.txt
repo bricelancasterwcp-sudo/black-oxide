@@ -1,0 +1,23 @@
+```rust
+fn main() {
+    let sample_values = vec![5, 12, 3, 18, 9];
+    let cutoff: i32 = 10;
+
+    let (count_under_cutoff, count_over_cutoff) = sample_values.iter()
+        .filter(|&&value| value < cutoff)
+        .map(|&value| value)
+        .fold((0, 0), |(under_count, over_count), value| {
+            if value >= cutoff {
+                (under_count + 1, over_count + 1) // Increase over_count by 1 when value is >= cutoff
+            } else {
+                (under_count + 1, over_count)
+            }
+        });
+
+    println!("Numbers below cutoff: {}", count_under_cutoff);
+    println!("Numbers above or equal to cutoff: {}", count_over_cutoff);
+}
+```
+
+Explanation:
+The original program was almost correct but had a small error in the fold function. It was only increasing `over_count` when `value` was less than `cutoff`, but it should also increase `over_count` when `value` is greater than or equal to `cutoff`. The corrected part of the fold function increases both `under_count` and `over_count` whenever `value` is not less than `cutoff`.

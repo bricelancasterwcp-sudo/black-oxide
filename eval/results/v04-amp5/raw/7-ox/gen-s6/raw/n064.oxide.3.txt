@@ -1,0 +1,17 @@
+```rust
+fn get_value(v: Vec<Int>, i: Int) -> Option<Int> {
+    get(v, i)
+}
+
+fn main() {
+    let v = vec(10, 20);
+    match get_value(v.clone(), 0) {
+        Some(n) => print(n),
+        None => print_str("none"),
+    }
+    match get_value(vec(30), 3) {
+        Some(n) => print(n),
+        None => print_str("none"),
+    }
+}
+```

@@ -1,0 +1,13 @@
+```
+struct Rect { width: Int, height: Int }
+
+fn change_width(r: &mut Rect, new_width: Int) {
+    r.width = new_width;
+}
+
+fn main() {
+    let mut r = Rect { width: 2, height: 3 };
+    change_width(&mut r, 5);
+    print_int(r.area());
+}
+```

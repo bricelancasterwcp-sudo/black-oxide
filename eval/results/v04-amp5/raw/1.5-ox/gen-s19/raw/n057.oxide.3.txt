@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let fig = "fig";
+    let banana = "banana";
+    let kiwi = "kiwi";
+
+    if fig.len() > banana.len() && fig.len() > kiwi.len() {
+        println!("{} with {} letters", fig, fig.len());
+    } else if banana.len() > kiwi.len() {
+        println!("{} with {} letters", banana, banana.len());
+    } else {
+        println!("{} with {} letters", kiwi, kiwi.len());
+    }
+}
+```

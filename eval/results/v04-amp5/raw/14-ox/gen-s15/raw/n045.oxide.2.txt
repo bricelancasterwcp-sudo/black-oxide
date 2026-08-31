@@ -1,0 +1,22 @@
+struct Log { entries: Vec<Int> }
+
+fn start_entry(log: Log) -> Int {
+    match get(log.entries, 0) {
+        Some(n) => n,
+        None => -1,
+    }
+}
+
+fn end_entry(log: Log) -> Int {
+    match get(log.entries, len(log.entries) - 1) {
+        Some(n) => n,
+        None => -1,
+    }
+}
+
+fn main() {
+    let log = Log { entries: vec().push(6).push(7).push(8).push(9) }
+    print(start_entry(log))
+    let log2 = Log { entries: clone(log.entries) }
+    print(end_entry(log2))
+}

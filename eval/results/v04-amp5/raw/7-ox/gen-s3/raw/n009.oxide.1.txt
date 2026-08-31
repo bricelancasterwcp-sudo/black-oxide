@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let num = 1234;
+    let digits: Vec<Int> = reverse(vec![]);
+    for d in digits {
+        print(d);
+    }
+}
+```

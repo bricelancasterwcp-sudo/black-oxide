@@ -1,0 +1,37 @@
+```rust
+struct Reading { label: Str, values: Vec<Int> }
+
+fn first_big(v: Vec<Int>) -> Int {
+    let mut found = -1;
+    for x in v {
+        if x > 10 {
+            found = x;
+            break;
+        }
+    }
+    found
+}
+
+fn second(v: Vec<Int>) -> Option<Int> {
+    let mut x = get(v, 1)?;
+    x += 1;
+    Some(x)
+}
+
+fn main() {
+    let length = 9;
+    let width = 3;
+    print_area(length, width);
+    print_edge_length(length, width);
+}
+
+fn print_area(length: Int, width: Int) {
+    let area = length * width;
+    print_str("The area of the rectangle is " + int_to_str(area));
+}
+
+fn print_edge_length(length: Int, width: Int) {
+    let perimeter = 2 * (length + width);
+    print_str("The total distance around its edge is " + int_to_str(perimeter));
+}
+```

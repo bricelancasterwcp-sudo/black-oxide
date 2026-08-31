@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let mut num = 9875;
+    let mut sum = 0;
+
+    while num > 0 {
+        let digit = num % 10;
+        sum += digit;
+        num /= 10;
+    }
+
+    println!("The sum of the digits of 9875 is: {}", sum);
+}
+```

@@ -1,0 +1,1 @@
+print(concat(int_to_str(trunc(to_float(1234))), int_to_str(trunc((to_float(1234) - trunc(to_float(1234) / 10)) * 10))))

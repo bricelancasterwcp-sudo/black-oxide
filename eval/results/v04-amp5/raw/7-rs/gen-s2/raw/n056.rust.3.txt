@@ -1,0 +1,16 @@
+fn main() {
+    let texts = ["7", "x", "9", "?"];
+    let mut sum = 0;
+    let mut count_non_numbers = 0;
+
+    for &text in texts.iter() {
+        if text.chars().all(|c| c.is_digit(10)) {
+            sum += text.parse::<u32>().unwrap();
+        } else {
+            count_non_numbers += 1;
+        }
+    }
+
+    println!("Total of the numbers: {}", sum);
+    println!("Count of non-number items: {}", count_non_numbers);
+}

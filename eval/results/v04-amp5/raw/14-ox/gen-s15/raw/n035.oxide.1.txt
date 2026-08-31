@@ -1,0 +1,15 @@
+```text
+fn divide(a: Int, b: Int) -> Result<Int, Str> {
+    if b == 0 {
+        Err("division by zero")
+    } else {
+        Ok(a / b)
+    }
+}
+
+fn main() {
+    let result = divide(20, 4)?;
+    print(result);
+    Ok(())
+}
+```

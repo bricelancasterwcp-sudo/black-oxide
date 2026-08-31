@@ -1,0 +1,27 @@
+```rust
+fn reverse(v: Vec<Int>) -> Vec<Int> {
+    let mut result = vec![];
+    for i in (0..v.len()).rev() {
+        result.push(v[i]);
+    }
+    result
+}
+
+fn main() {
+    let num_str = "1234";
+    let digits = vec![];
+    for c in num_str.chars() {
+        if c.is_digit(10) {
+            digits.push(c.to_digit(10).unwrap());
+        } else {
+            panic!("Invalid input");
+        }
+    }
+    let reversed_digits = reverse(digits);
+    print_str(&reversed_digits[2].to_string()); // first digit
+    for i in 3..reversed_digits.len() {
+        print_str(" + "); // separator
+        print_str(&reversed_digits[i].to_string());
+    }
+}
+```

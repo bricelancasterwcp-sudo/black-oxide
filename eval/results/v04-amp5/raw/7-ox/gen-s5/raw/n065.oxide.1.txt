@@ -1,0 +1,13 @@
+```oxide
+fn main() {
+    let readings = vec(6, 11, 3, 14, 9);
+    let count = count_if(readings.clone(), |x| x > 5);
+    print(count);
+    
+    let max_reading = match max(readings) {
+        Some(x) => x,
+        None => 0,
+    };
+    print(max_reading);
+}
+```

@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let xs = vec![Some(7), None, Some(x), None, Some(9), None, None, None];
+    let mut sum = 0;
+    let mut count = 0;
+
+    for x in &xs {
+        match x {
+            Some(n) => {
+                sum += n;
+                count += 1;
+            }
+            _ => continue,
+        }
+    }
+
+    println!("Sum: {}, Count: {}", sum, count);
+}
+```

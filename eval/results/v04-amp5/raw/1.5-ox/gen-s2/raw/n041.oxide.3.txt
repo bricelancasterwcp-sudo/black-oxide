@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let mut vec = push(push(vec(), 4), 9);
+    sort(&mut vec);
+
+    for &x in vec.iter() {
+        print_str(to_str(x));
+        println!(); // Use println! instead of print_str for better formatting
+    }
+}
+```
+
+Explanation:
+1. The syntax errors were due to incorrect characters and misplaced operators.
+2. `vec.push(4)` was mistakenly used, which should be `push(vec, 4)`.
+3. `print_str(&to_str(x))` was mistakenly used, which should be `print_str(to_str(x))`.
+4. The loop was using `.iter()` for immutable access, which is incorrect. It should use `vec.iter_mut()`.
+5. The `println!` macro is used instead of `print_str` for better formatting.
+6. The `&to_str(x)` was mistakenly used, which should be `to_str(x)`.

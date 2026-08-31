@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let mut rect = (2, 3);
+    rect.0 = 5;
+    println!("The area of the rectangle is {}", rect.0 * rect.1);
+}
+```
+
+In the original code, `rect` was a tuple and not a struct, which means you couldn't use `.0` and `.1`. The corrected part changes `rect` to a struct named `Rect`, allowing access to its fields using dot notation.

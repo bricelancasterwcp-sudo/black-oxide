@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let fig8 = 5;
+    let fig3 = 2;
+    let fig11 = 7;
+    let fig6 = 4;
+
+    let smallest = min(vec![fig8, fig3, fig11, fig6]);
+    print(smallest);
+
+    let gap = max(vec![fig8, fig3, fig11, fig6]) - smallest;
+    print_str(format!("gap: {}", gap));
+}
+```

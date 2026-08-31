@@ -1,0 +1,9 @@
+fn main() {
+    let x1: isize = 1; // One across
+    let y1: isize = 5; // Five up
+
+    let mut x2: isize = x1 + 10; // Ten across
+    let y2: isize = y1;
+
+    println!("{}", (x2 + y2));
+}

@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let numbers = [9, 2, 7, 4];
+    let mut sorted_numbers = numbers.clone();
+    
+    // Sort the vector in ascending order
+    sorted_numbers.sort_unstable();
+    
+    // Print each number on a new line
+    for &num in &sorted_numbers {
+        println!("{}", num);
+    }
+}
+```

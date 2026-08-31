@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut biggest = 0;
+    for i in 0..101 {
+        if (2 as Int).pow(i) <= 100 {
+            biggest = i;
+        }
+    }
+    print(biggest);
+}
+```
+
+The problem was due to the semicolon at the end of each line in the loop. It should not be there after the `if` statement, and the closing brace for the `for` loop should be on the same line as `break`.

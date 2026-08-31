@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let n = 1234;
+    let mut str_n = int_to_str(n);
+    for _ in (0..str_n.len()).rev() {
+        print(str_n.chars().nth(_).unwrap());
+    }
+}
+```

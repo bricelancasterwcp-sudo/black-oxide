@@ -1,0 +1,15 @@
+Here is the fully corrected Rust program:
+
+```rust
+fn main() {
+    let mut max_power_of_two = 1;
+
+    while max_power_of_two * 2 <= 100 {
+        max_power_of_two *= 2;
+    }
+    
+    println!("The biggest power of two that does not exceed 100 is: {}", max_power_of_two);
+}
+```
+
+When you run this program, it will correctly print `The biggest power of two that does not exceed 100 is: 64`.

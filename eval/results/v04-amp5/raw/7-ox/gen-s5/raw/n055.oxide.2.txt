@@ -1,0 +1,21 @@
+```rust
+struct Entry { value: Option<Int> }
+
+fn parse_entry(s: Str) -> Entry {
+    match parse_int(s) {
+        Some(n) => Entry { value: Some(n) },
+        None => Entry { value: None }
+    }
+}
+
+fn main() {
+    let entries = vec!["8", "oak", "15"];
+    for entry_str in entries {
+        let entry = parse_entry(entry_str);
+        match entry.value {
+            Some(n) => print(n),
+            None => print_str("bad"),
+        }
+    }
+}
+```

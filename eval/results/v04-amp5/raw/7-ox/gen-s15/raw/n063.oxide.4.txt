@@ -1,0 +1,9 @@
+fn main() {
+    let mut line1 = 4 * 3;
+    let mut line2 = 5 * 2;
+    print(line1);
+    print_str(" ");
+    print(line2);
+    print_str(" ");
+    print(line1 + line2);
+}

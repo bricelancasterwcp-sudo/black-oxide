@@ -1,0 +1,1 @@
+fn main() { let values = vec(5, 12, 3, 18, 9) let cutoff = 10 let below_count = count_if(values, |x| x < cutoff) let above_or_equal_count = len(values) - below_count print(below_count) print(above_or_equal_count) }

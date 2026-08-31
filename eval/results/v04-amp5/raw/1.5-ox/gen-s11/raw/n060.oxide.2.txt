@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let a = "a1b22".chars().filter_map(|c| c.to_digit(10)).sum::<u32>();
+    println!("Sum of digit characters: {}", a);
+    
+    let count = "a1b22".chars().filter_map(|c| c.to_digit(10)).count();
+    println!("Number of digit characters: {}", count);
+}
+```

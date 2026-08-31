@@ -1,0 +1,18 @@
+fn count_vowels(s: Str) -> Int {
+    let mut count = 0;
+    for c in chars(s) {
+        match c {
+            "a" | "e" | "i" | "o" | "u" => count += 1,
+            _ => (),
+        }
+    }
+    count
+}
+
+fn main() {
+    let keyboard = "qwertyuiopasdfghjklzxcvbnm";
+    let vowels = count_vowels(keyboard);
+    let consonants = str_len(keyboard) - vowels;
+    print(vowels);
+    print(consonants);
+}

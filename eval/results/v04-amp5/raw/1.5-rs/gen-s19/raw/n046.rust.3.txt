@@ -1,0 +1,20 @@
+```rust
+fn main() {
+    let sample_values = vec![5, 12, 3, 18, 9];
+    let cutoff: i32 = 10;
+
+    let (count_under_cutoff, count_over_cutoff) = sample_values.iter()
+        .filter(|&&value| value < cutoff)
+        .map(|&value| value)
+        .fold((0, 0), |(under_count, over_count), value| {
+            if value >= cutoff {
+                (under_count + 1, over_count)
+            } else {
+                (under_count + 1, over_count)
+            }
+        });
+
+    println!("Numbers below cutoff: {}", count_under_cutoff);
+    println!("Numbers above or equal to cutoff: {}", count_over_cutoff);
+}
+```

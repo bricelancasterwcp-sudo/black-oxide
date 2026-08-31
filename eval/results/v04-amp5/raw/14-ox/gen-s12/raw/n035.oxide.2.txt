@@ -1,0 +1,1 @@
+fn safe_divide(a: Int, b: Int) -> Result<Int, Str> { if b == 0 { Err("Division by zero".to_str()) } else { Ok(a / b) } } fn main() { match safe_divide(20, 4) { Ok(result) => print(result), Err(msg) => print_str(msg), } }

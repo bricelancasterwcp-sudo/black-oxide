@@ -1,0 +1,16 @@
+```
+fn factorial(n: Int) -> Int {
+    let acc = 1
+    let i = 1
+    while i <= n {
+        acc = acc * i
+        i = i + 1
+    }
+    acc
+}
+
+fn main() {
+    let product = factorial(6)
+    print(product)
+}
+```

@@ -1,0 +1,19 @@
+struct Stats { vowels: Int, consonants: Int }
+
+fn count_letters(s: Str) -> Stats {
+    let mut stats = Stats { vowels: 0, consonants: 0 }
+    for c in chars(s) {
+        match c {
+            "a" | "e" | "i" | "o" | "u" | "A" | "E" | "I" | "O" | "U" => stats.vowels = stats.vowels + 1,
+            _ => stats.consonants = stats.consonants + 1,
+        }
+    }
+    stats
+}
+
+fn main() {
+    let letters = "qwertyuiopasdfghjklzxcvbnm"
+    let result = count_letters(letters)
+    print(result.vowels)
+    print(result.consonants)
+}

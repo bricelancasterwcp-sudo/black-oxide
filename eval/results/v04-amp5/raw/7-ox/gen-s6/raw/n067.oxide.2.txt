@@ -1,0 +1,25 @@
+struct List { head: Option<Int>, tail: Option<Box<List>> }
+
+fn push(l: Option<Box<List>>, x: Int) -> Option<Box<List>> {
+    Some(Box::new(List { head: l.map(|v| v.head), tail: l }))
+}
+
+fn walk_and_process(l: Option<Box<List>>, mut total_even: Int) -> (Int, Int) {
+    match l {
+        None => (total_even, 0),
+        Some(v) => {
+            let new_total_even = if v.head % 2 == 0 { total_even + v.head } else { total_even };
+            match v.head % 2 {
+                1 => print(v.head * 2),
+                _ => (),
+            }
+            walk_and_process(v.tail, new_total_even)
+        },
+    }
+}
+
+fn main() {
+    let l = push(push(push(push(None, 7), 4), 9), 10);
+    let (total_even, total_odd) = walk_and_process(l, 0);
+    print(total_even);
+}

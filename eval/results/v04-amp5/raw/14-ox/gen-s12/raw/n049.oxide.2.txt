@@ -1,0 +1,16 @@
+fn main() {
+    let figures = push(push(push(vec(), 8), 3), 11)
+    let min_figure = match min(figures) {
+        Some(n) => n,
+        None => -1, // should not happen since we know the vector is non-empty
+    }
+    print(min_figure)
+    
+    let figures2 = push(push(push(vec(), 8), 3), 11) // Reconstruct the figures vector
+    let max_figure = match max(figures2) {
+        Some(n) => n,
+        None => -1, // should not happen since we know the vector is non-empty
+    }
+    let gap = max_figure - min_figure
+    print(gap)
+}

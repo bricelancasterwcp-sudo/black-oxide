@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let word = "coffee";
+    let mut seen = Vec::new();
+
+    for c in word.chars() {
+        if !seen.contains(&c) {
+            println!("{}", c);
+            seen.push(c);
+        }
+    }
+}
+```
+
+This program uses a loop to iterate over each character in the input string. It maintains a list of seen characters using a `Vec`. For each character, it checks if it's already in the list. If not, it prints the character and adds it to the list. This ensures that each letter appears exactly once, one per line, as required.

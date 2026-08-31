@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let numbers = vec![8, 3, 11, 6];
+    let min_number = *numbers.iter().min().unwrap();
+    let max_number = *numbers.iter().max().unwrap();
+    println!("Smallest figure: {}", min_number);
+    println!("Gap between largest and smallest: {}", max_number - min_number);
+}
+```

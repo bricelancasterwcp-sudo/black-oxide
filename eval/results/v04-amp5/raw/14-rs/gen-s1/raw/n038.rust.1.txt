@@ -1,0 +1,9 @@
+```rust
+use std::io;
+
+fn main() {
+    let mut sensor_reading = 0;
+    sensor_reading = 7;
+    println!("The sensor reading is: {}", sensor_reading);
+}
+```

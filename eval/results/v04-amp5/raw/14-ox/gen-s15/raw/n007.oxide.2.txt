@@ -1,0 +1,9 @@
+```text
+fn main() {
+    let number = 9875
+    let digits_str = int_to_str(number)
+    let digits_vec: Vec<Int> = chars(digits_str).map(|c| parse_int(c).unwrap()).collect()
+    let sum_of_digits = sum(digits_vec)
+    print(sum_of_digits)
+}
+```

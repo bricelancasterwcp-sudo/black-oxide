@@ -1,0 +1,13 @@
+fn reverse_int(n: Int) -> Int {
+    let mut rev = 0;
+    let mut num = n;
+    while num > 0 {
+        rev = (rev * 10) + (num % 10);
+        num /= 10;
+    }
+    rev
+}
+
+fn main() {
+    print(reverse_int(1234));
+}

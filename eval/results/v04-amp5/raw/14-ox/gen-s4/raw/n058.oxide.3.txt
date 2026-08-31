@@ -1,0 +1,44 @@
+struct Letter {
+    char: Str,
+    count: Int,
+}
+
+fn main() {
+    let word = "coffee";
+    let mut seen = vec();
+    let mut result = vec();
+
+    for c in chars(word) {
+        let mut found = false;
+        for s in seen.clone() {
+            if s.char == c {
+                found = true;
+                break;
+            }
+        }
+
+        if !found {
+            let count = 1;
+            let new_letter = Letter { char: c, count: count };
+            seen = push(seen, new_letter);
+        } else {
+            for i in range(0, len(seen)) {
+                if seen[i].char == c {
+                    seen[i].count += 1;
+                    break;
+                }
+            }
+        }
+    }
+
+    for s in seen {
+        if s.count > 1 {
+            result = push(result, s.char);
+        }
+    }
+
+    for r in result {
+        print_str(r);
+        print_str("\n");
+    }
+}

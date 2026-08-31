@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let mut a = 1;
+    let mut b = 1;
+
+    for _ in 1..9 {
+        let temp = b; // Temporary variable to hold b's value before it is reassigned
+        b = a + b; // Assign the sum of a and b to b
+        a = temp; // Reassign a's old value back to a
+    }
+
+    println!("The tenth term is {}", b); // Print the tenth term after reversing the order of terms
+}
+```

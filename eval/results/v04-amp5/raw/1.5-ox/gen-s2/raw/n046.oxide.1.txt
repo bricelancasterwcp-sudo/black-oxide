@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let values = vec![5, 12, 3, 18, 9];
+    let count_under_cutoff = values.into_iter().filter(|&x| x < 10).count();
+    let count_at_or_over_cutoff = values.into_iter().filter(|&x| x >= 10).count();
+
+    println!("Number of values under the cutoff: {}", count_under_cutoff);
+    println!("Number of values at or over the cutoff: {}", count_at_or_over_cutoff);
+}
+```
+This program iterates through the given vector `values`, filters out those that are below 10, counts them, and then does the same for those above or equal to 10. The results are printed to the console.

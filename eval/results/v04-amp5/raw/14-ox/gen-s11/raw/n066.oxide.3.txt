@@ -1,0 +1,19 @@
+fn main() {
+    let nums = vec()
+    push(nums, 9)
+    push(nums, 2)
+    push(nums, 12)
+    push(nums, 5)
+    push(nums, 16)
+
+    let mut count = 0
+
+    for x in nums {
+        if x < 10 {
+            print(x)
+            count += 1
+        }
+    }
+
+    print(count)
+}

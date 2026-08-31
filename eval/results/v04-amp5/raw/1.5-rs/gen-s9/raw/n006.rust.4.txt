@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut max_power_of_two = 1;
+
+    while 2 * max_power_of_two <= 100 {
+        max_power_of_two *= 2;
+    }
+
+    println!("The biggest power of two that does not exceed 100 is: {}", max_power_of_two);
+}
+```

@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let num = 91;
+    for i in 2..num {
+        if num % i == 0 {
+            println!("no");
+            return;
+        }
+    }
+    println!("yes");
+}
+```

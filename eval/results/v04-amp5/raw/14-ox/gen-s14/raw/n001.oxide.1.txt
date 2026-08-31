@@ -1,0 +1,6 @@
+```
+fn main() {
+    let total = range(1, 6).iter().sum()
+    print(total)
+}
+```

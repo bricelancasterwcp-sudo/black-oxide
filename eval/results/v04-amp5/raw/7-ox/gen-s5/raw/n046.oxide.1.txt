@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let nums = vec!(5, 12, 3, 18, 9);
+    let (under, over) = nums.iter().fold((0, 0), |(u, o), &x| if x < 10 { (u + 1, o) } else { (u, o + 1) });
+    print_str("Under cutoff: ");
+    print(under);
+    print_str(", Over or at cutoff: ");
+    print(over);
+}
+```

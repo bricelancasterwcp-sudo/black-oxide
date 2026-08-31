@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let list = vec![10, 20, 30];
+    
+    let pos1 = 1;
+    let element1 = if pos1 < list.len() { list[pos1] } else { -1 };
+    println!("{}", element1);
+    
+    let pos2 = 5;
+    let element2 = if pos2 < list.len() { list[pos2] } else { -1 };
+    println!("{}", element2);
+}
+```

@@ -1,0 +1,7 @@
+```oxide
+fn main() {
+    let phrase = "when in doubt go home";
+    print(count_if(phrase.split(), |w| w != ""))
+    print(str_len(concat(" ", phrase)))
+}
+```

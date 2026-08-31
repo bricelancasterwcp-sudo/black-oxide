@@ -1,0 +1,13 @@
+```
+struct SensorReading { value: Int }
+
+fn set_reading(sensor: &mut SensorReading, new_value: Int) {
+    sensor.value = new_value;
+}
+
+fn main() {
+    let mut sensor = SensorReading { value: 0 };
+    set_reading(&mut sensor, 7);
+    println!("{}", sensor.value);  // fixed the missing semicolons and the incorrect usage of '&' before 'sensor'
+}
+```

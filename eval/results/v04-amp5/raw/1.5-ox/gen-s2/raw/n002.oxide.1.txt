@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut result = 1;
+    for i in 1..7 {
+        result *= i;
+    }
+    println(result);
+}
+```
+
+This code snippet defines a `main` function that initializes a mutable variable `result` to 1 and then iterates from 1 to 6, multiplying the current value of `result` by each number in the range. The final product is then printed out.

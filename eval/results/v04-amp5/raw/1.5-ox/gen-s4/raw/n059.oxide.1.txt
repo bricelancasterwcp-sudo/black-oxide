@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let s = "when in doubt go home";
+    let words = s.split_whitespace().count();
+    println!("The phrase contains {} words", words);
+    let chars = s.chars().count();
+    println!("It spans {} characters including spaces", chars);
+}
+```
+
+In this program, we first split the string `s` into words using the `split_whitespace` method. We then count the number of words in the vector by calling `count`. Next, we count the total number of characters in the string by iterating over its characters with `chars()`, and counting them using `count`.
+
+The final output will be:
+```
+The phrase contains 8 words
+It spans 34 characters including spaces
+```

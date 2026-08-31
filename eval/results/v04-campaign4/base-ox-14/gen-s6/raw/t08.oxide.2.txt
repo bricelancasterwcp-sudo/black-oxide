@@ -1,0 +1,10 @@
+```text
+fn main() {
+    let values = vec(3, 8, -2, 12, 7)
+    let positive_count = count_if(values.clone(), |x| x > 0)
+    print(positive_count)
+
+    let max_value = unwrap_or(max(values), -1)
+    print(max_value)
+}
+```

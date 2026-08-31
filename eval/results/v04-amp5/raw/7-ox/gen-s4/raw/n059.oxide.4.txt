@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let phrase = "when in doubt go home";
+    let words_count = count(phrase.split_whitespace().collect(), "");
+    let chars_count = str_len(phrase);
+    print(words_count);
+    print_str(" ");
+    print(chars_count);
+}
+```

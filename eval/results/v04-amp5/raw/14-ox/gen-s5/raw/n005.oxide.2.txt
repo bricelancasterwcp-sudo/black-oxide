@@ -1,0 +1,4 @@
+fn main() {
+    let total = sum(filter(range(1, 21), |x| x % 2 == 0));
+    print(total);
+}

@@ -1,0 +1,17 @@
+```rust
+struct Rect { length: Int, width: Int }
+
+fn area(r: Rect) -> Int {
+    r.length * r.width
+}
+
+fn perimeter(r: Rect) -> Int {
+    2 * (r.length + r.width)
+}
+
+fn main() {
+    let rect = Rect { length: 9, width: 3 };
+    print_int(area(rect));           // area of rectangle
+    print_int(perimeter(rect));        // perimeter of rectangle
+}
+```

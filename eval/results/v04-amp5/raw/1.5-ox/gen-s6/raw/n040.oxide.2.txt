@@ -1,0 +1,18 @@
+```rust
+struct Circle { radius: Float }
+struct Square { side: Int }
+
+impl Shape {
+    fn area(&self) -> Float {
+        match self {
+            Square { side } => side * side,
+            Circle { radius } => std::f64::consts::PI * radius * radius,
+        }
+    }
+}
+
+fn main() {
+    let r = Shape::Square { side: 4 };
+    print(r.area()); // field access copies: r stays usable
+}
+```

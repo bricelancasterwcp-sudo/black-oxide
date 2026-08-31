@@ -1,0 +1,12 @@
+fn main() {
+    let mut queue = vec![1, 2, 3, 4, 5];
+    if let Some(first) = queue.remove(0) {
+        if let Some(last) = queue.pop() {
+            queue.insert(0, last);
+            queue.push(first);
+        }
+    }
+    for item in queue {
+        println!("{}", item);
+    }
+}

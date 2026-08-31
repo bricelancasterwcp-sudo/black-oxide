@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let fruits = ["fig", "banana", "kiwi"];
+    let mut max_length = 0;
+    let mut max_name = "";
+
+    for fruit in fruits.iter() {
+        if fruit.len() > max_length {
+            max_length = fruit.len();
+            max_name = fruit;
+        }
+    }
+
+    println!("{} {}", max_name, max_length);
+}
+```

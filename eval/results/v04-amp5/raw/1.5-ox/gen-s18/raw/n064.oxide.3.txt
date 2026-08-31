@@ -1,0 +1,23 @@
+```rust
+struct List { values: Vec<Int> }
+
+fn main() {
+    let list = List { values: vec![10, 20] };
+    match get(&list.values, 0) {
+        Some(n) => print(n),
+        None => print_str("Position one is empty"),
+    }
+    match get(&list.values, 3) {
+        Some(n) => print(n),
+        None => print_str("Position four is empty"),
+    }
+}
+
+fn get(l: &Vec<Int>, i: Int) -> Option<Int> {
+    if i >= l.len() || i < 0 {
+        return None;
+    }
+    let n = l[i];
+    Some(n)
+}
+```

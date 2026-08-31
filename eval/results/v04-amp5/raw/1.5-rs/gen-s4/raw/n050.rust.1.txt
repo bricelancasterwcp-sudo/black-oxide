@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut scores = vec![2, 9, 5];
+    
+    // Sort the vector in descending order
+    scores.sort_by(|a, b| b.cmp(a));
+    
+    // Print each score on a new line
+    for &score in &scores {
+        println!("{}", score);
+    }
+}
+```

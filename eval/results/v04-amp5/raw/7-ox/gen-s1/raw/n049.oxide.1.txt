@@ -1,0 +1,17 @@
+```
+fn smallest(v: Vec<Int>) -> Int {
+    min(v)?
+}
+
+fn gap(v: Vec<Int>) -> Int {
+    let max_val = max(v)?
+    let min_val = min(v)?
+    max_val - min_val
+}
+
+fn main() {
+    let figures = push(push(vec(), 8), push(push(vec(), 3), push(push(vec(), 11), 6)))
+    print(smallest(figures))
+    print(gap(figures))
+}
+```

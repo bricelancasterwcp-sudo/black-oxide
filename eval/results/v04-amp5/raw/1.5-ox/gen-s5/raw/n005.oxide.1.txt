@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let sum = (1..=20).filter(|&x| x % 2 == 0).sum();
+    print(sum);
+}
+```
+
+**Explanation**:
+- We use `range(1, 21)` to create an iterator from 1 to 20.
+- The `filter` method is used with a closure to keep only the even numbers.
+- The `sum` method then calculates the sum of these even numbers.

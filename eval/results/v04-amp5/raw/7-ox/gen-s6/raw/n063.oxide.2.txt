@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let (units1, price1) = (4, 3);
+    let (units2, price2) = (5, 2);
+    print(units1 * price1);
+    print_str(" ");
+    print(units2 * price2);
+    print_str(" ");
+    print((units1 * price1) + (units2 * price2));
+}
+```

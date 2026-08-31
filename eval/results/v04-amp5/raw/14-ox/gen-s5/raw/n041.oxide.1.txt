@@ -1,0 +1,19 @@
+```rust
+struct Reading { label: Str, values: Vec<Int> }
+
+fn sort_and_print(v: Vec<Int>) {
+    let sorted_values = sort(v)
+    for x in sorted_values {
+        print(x)
+    }
+}
+
+fn main() {
+    let r = Reading { label: "measurements", values: vec() }
+    r.values = push(r.values, 9)
+    r.values = push(r.values, 2)
+    r.values = push(r.values, 7)
+    r.values = push(r.values, 4)
+    sort_and_print(r.values)
+}
+```

@@ -1,0 +1,14 @@
+fn reverse_digits(n: Int) -> Str {
+    let digits = str_len(int_to_str(n))
+    let mut result = ""
+    for i in range(0, digits) {
+        let d = get(chars(int_to_str(n)), digits - 1 - i)?
+        result = concat(result, d)
+    }
+    result
+}
+
+fn main() {
+    let reversed = reverse_digits(1234)?
+    print_str(reversed)
+}

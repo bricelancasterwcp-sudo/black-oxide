@@ -1,0 +1,6 @@
+fn main() {
+    let words = ["level", "stereo", "rotor"];
+    for word in words.iter() {
+        println!("{}", word == &word.chars().rev().collect::<String>());
+    }
+}

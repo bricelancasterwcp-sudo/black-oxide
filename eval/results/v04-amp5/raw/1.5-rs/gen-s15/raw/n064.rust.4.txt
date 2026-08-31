@@ -1,0 +1,7 @@
+fn main() {
+    let v = vec![10, 20];
+    
+    if let Some(&x) = &v.get(1) {
+        println!("{}", x);
+    }
+}

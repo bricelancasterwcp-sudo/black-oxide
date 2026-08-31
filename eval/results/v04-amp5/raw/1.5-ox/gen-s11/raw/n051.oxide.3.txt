@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let r = "granite";
+    println_str(&r[0..1]);
+    println_str(&r[2..3]);
+}
+```

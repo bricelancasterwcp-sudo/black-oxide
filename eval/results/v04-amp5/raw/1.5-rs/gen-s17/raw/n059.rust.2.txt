@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let phrase = "when in doubt go home";
+    let words_count = phrase.split_whitespace().count();
+    let characters_count = phrase.len();
+
+    println!("Words: {}", words_count);
+    println!("Characters (including spaces): {}", characters_count);
+}
+```
+
+The program above is already corrected and works as expected.

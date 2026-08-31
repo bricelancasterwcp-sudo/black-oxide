@@ -1,0 +1,24 @@
+```
+struct Price { unit: Unit, quantity: Int }
+
+fn main() {
+    let mut line1 = Price { unit: Unit::Four, quantity: 4 };
+    let mut line2 = Price { unit: Unit::Five, quantity: 5 };
+
+    print_price(line1);
+    print_price(line2);
+
+    println!("Total value of both lines: {}", total_value());
+}
+
+fn print_price(price: Price) {
+    println!("Line with {} units at $3 each: ${}", price.quantity, price.unit * 3);
+}
+
+fn total_value() -> Int {
+    let mut total = 0;
+    total += line1.unit * line1.quantity;
+    total += line2.unit * line2.quantity;
+    total
+}
+```

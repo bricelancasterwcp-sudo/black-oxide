@@ -1,0 +1,13 @@
+```rust
+fn biggest_power_of_two(n: Int) -> Int {
+    let mut power = 2;
+    while power * power <= n {
+        power *= 2;
+    }
+    power - 1
+}
+
+fn main() {
+    print(biggest_power_of_two(100));
+}
+```

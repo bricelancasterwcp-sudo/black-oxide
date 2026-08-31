@@ -1,0 +1,25 @@
+```text
+struct Letter { ch: Str, count: Int }
+
+fn main() {
+    let word = "coffee"
+    let mut seen = vec()
+    
+    for ch in chars(word) {
+        let mut found = false
+        for Letter { ch: s_ch, .. } in seen.clone() {
+            if s_ch == ch {
+                found = true
+                break
+            }
+        }
+        if !found {
+            seen = push(seen, Letter { ch: clone(ch), count: 1 })
+        }
+    }
+    
+    for Letter { ch, .. } in seen {
+        print(ch)
+    }
+}
+```

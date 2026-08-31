@@ -1,0 +1,22 @@
+```rust
+struct Figure { x: Int, y: Int }
+
+fn main() {
+    let fig8 = Figure { x: 3, y: 5 };
+    let fig3 = Figure { x: 1, y: 2 };
+    let fig6 = Figure { x: 4, y: 9 };
+
+    // Corrected line to initialize the vector of figures
+    let mut figures = vec![fig8, fig3, fig6];
+
+    // Corrected line to find the minimum x value
+    let min_x = *min(figures.iter().map(|f| &f.x)).expect("No figure with x value");
+    println(min_x);
+
+    // Corrected line to find the maximum x value and calculate the gap
+    let max_x = *max(figures.iter().map(|f| &f.x)).expect("No figure with x value");
+
+    // Corrected line to print the gap between the largest and smallest figures
+    println(max_x - min_x);
+}
+```

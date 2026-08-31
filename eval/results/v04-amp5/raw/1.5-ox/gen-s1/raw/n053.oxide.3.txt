@@ -1,0 +1,13 @@
+fn reverse(s: Str) -> Str {
+    let mut result = String::with_capacity(s.len());
+    for c in s.chars().rev() {
+        result.push(c);
+    }
+    result
+}
+
+fn main() {
+    let drum = "drum";
+    println!("Backwards: {}", reverse(drum));
+    println!("Normal: {}", drum);
+}

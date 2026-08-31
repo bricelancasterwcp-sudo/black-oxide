@@ -1,0 +1,1 @@
+fn main() { let s = "granite" let first = get(s.chars(), 0)?.unwrap_or("") let last = get(s.chars(), str_len(s) - 1)?.unwrap_or("") print(first) print(last) }

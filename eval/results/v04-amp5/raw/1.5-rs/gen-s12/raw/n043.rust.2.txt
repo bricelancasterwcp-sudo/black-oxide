@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let mut queue: [i32; 5] = [1, 2, 3, 4, 5];
+    queue.swap(4, 0);
+    for &value in &queue {
+        println!("{}", value);
+    }
+}
+```

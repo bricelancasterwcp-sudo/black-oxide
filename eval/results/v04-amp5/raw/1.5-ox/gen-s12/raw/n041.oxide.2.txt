@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let v = push(push(vec(9, 2), 7), 4);
+    for x in v {
+        print_int(x);
+        println!();
+    }
+}
+```

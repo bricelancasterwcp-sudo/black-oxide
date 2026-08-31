@@ -1,0 +1,21 @@
+```
+fn divide(a: Int, b: Int) -> Result<Int, Str> {
+    if b == 0 {
+        Err("Division by zero")
+    } else {
+        Ok(a / b)
+    }
+}
+
+fn main() {
+    match divide(20, 4) {
+        Ok(result) => print(result),
+        Err(_) => print_str("bad"),
+    }
+
+    match divide(20, 0) {
+        Ok(result) => print(result),
+        Err(_) => print_str("bad"),
+    }
+}
+```

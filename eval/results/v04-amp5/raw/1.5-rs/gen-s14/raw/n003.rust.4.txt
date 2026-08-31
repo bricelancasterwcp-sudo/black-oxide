@@ -1,0 +1,9 @@
+fn main() {
+    let mut count = 0;
+    for n in 2..=36 {
+        if 36 % n == 0 {
+            count += 1;
+        }
+    }
+    println!("The number of whole numbers from 1 to 36 that divide 36 exactly is: {}", count);
+}

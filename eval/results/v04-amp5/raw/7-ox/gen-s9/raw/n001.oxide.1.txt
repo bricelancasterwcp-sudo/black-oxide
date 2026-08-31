@@ -1,0 +1,17 @@
+```oxide
+fn cube(x: Int) -> Int {
+    x * x * x
+}
+
+fn sum_cubes(start: Int, end: Int) -> Int {
+    let mut total = 0
+    for i in range(start, end + 1) {
+        total += cube(i)
+    }
+    total
+}
+
+fn main() {
+    print(sum_cubes(1, 5))
+}
+```

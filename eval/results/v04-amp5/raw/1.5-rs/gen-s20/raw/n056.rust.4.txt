@@ -1,0 +1,13 @@
+fn main() {
+    let nums: [Option<u32>; 4] = [
+        Some(7),
+        None,
+        Some(9),
+        None,
+    ];
+
+    let total: u32 = nums.iter().filter_map(|x| x.as_ref()).sum();
+    let count: usize = nums.iter().filter(|&x| x.is_some()).count();
+
+    println!("Total: {}, Count: {}", total, count);
+}

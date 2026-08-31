@@ -1,0 +1,15 @@
+```rust
+fn count_words(text: Str) -> Int {
+    text.split_whitespace().count()
+}
+
+fn count_chars(text: Str) -> Int {
+    text.len()
+}
+
+fn main() {
+    let text = "When in doubt go home.";
+    print(count_words(text));   // prints the number of words
+    print(count_chars(text));   // prints the number of characters including spaces
+}
+```

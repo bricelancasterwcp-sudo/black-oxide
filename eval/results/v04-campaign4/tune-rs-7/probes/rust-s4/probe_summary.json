@@ -1,0 +1,14 @@
+{
+  "arms": {
+    "rust": {
+      "diagnostic_histogram": {
+        "E0422": 5,
+        "E0502": 1
+      },
+      "lenient": 0.95,
+      "probes": 20,
+      "strict": 0.8
+    }
+  },
+  "probes": 20
+}

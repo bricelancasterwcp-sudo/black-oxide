@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut count = 0;
+    let sum = |num: i32| num != 0;
+
+    if let Some(x) = 7 { count += x as usize; }
+    if let Some(x) = 9 { count += x as usize; }
+
+    println!("There are {} numbers that do not have a value.", 4 - count);
+}
+```

@@ -1,0 +1,22 @@
+```rust
+fn second(v: Vec<Int>) -> Option<Int> {
+    let first = match v.first() {
+        Some(x) => x,
+        None => return None,
+    };
+
+    match v.get(1) {
+        Some(x) if *x == first + 1 => Some(*x),
+        _ => None,
+    }
+}
+
+fn main() {
+    for i in 7..=9 {
+        match second(vec![i, i + 1]) {
+            Some(n) => println!("second entry: {}", n),
+            None => println!("No second entry"),
+        }
+    }
+}
+```

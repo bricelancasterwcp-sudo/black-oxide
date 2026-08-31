@@ -1,0 +1,23 @@
+fn main() {
+    let mut green = false;
+    let mut red = false;
+    let mut yellow = false;
+
+    loop {
+        if !green && std::thread::sleep(std::time::Duration::from_secs(1)).is_ok() {
+            green = true;
+            continue;
+        }
+
+        if !red && green && std::thread::sleep(std::time::Duration::from_secs(1)).is_ok() {
+            red = true;
+            continue;
+        }
+
+        if !yellow && red && std::thread::sleep(std::time::Duration::from_secs(1)).is_ok() {
+            yellow = true;
+            println!("green");
+            break;
+        }
+    }
+}

@@ -1,0 +1,17 @@
+fn main() {
+    let mut total = 0;
+    
+    // Calculate the cost for the four units at $3 each
+    let four_units_cost = 4 * 3;
+    println!("Value of the first line: {}", four_units_cost);
+    
+    // Calculate the cost for the five units at $2 each
+    let five_units_cost = 5 * 2;
+    println!("Value of the second line: {}", five_units_cost);
+    
+    // Sum up the costs from both lines to get the total value
+    total += four_units_cost;
+    total += five_units_cost;
+    
+    println!("Total value of both lines: {}", total);
+}

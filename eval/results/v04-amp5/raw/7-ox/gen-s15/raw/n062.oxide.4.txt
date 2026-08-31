@@ -1,0 +1,14 @@
+```rust
+enum TrafficLight { Green, Red, Yellow }
+
+fn main() {
+    let lights = vec![TrafficLight::Green, TrafficLight::Red, TrafficLight::Yellow];
+    for light in lights {
+        match light {
+            TrafficLight::Green => print_str("go"),
+            TrafficLight::Red => print_str("stop"),
+            TrafficLight::Yellow => print_str("wait"),
+        }
+    }
+}
+```

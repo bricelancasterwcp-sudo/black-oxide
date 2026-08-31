@@ -1,0 +1,13 @@
+fn main() {
+    let v = push(push(vec(), 10), 20)
+    let pos1 = get(v.clone(), 0)
+    match pos1 {
+        Some(x) => print(x),
+        None => print_str("Position 1 is empty"),
+    }
+    let pos4 = get(v.clone(), 3)
+    match pos4 {
+        Some(x) => print(x),
+        None => print_str("Position 4 is empty"),
+    }
+}

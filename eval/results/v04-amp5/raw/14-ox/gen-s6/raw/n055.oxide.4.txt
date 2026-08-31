@@ -1,0 +1,14 @@
+```
+fn parse_or_bad(s: Str) -> Str {
+    match parse_int(s) {
+        Some(n) => int_to_str(n),
+        None => "bad".to_owned(),
+    }
+}
+
+fn main() {
+    print(parse_or_bad("8"))
+    print(parse_or_bad("oak"))
+    print(parse_or_bad("15"))
+}
+```

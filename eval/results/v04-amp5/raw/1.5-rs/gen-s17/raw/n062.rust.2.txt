@@ -1,0 +1,28 @@
+```rust
+fn main() {
+    loop {
+        let signal = read_signal();
+        match signal {
+            "green" => println!("go"),
+            "red" => println!("stop"),
+            "yellow" => println!("wait"),
+            _ => panic!("Invalid signal"),
+        }
+    }
+}
+
+fn read_signal() -> &'static str {
+    // Simulate reading the signal from a source
+    let input = String::new();
+    if input == "green" {
+        return "green";
+    } else if input == "red" {
+        return "red";
+    } else if input == "yellow" {
+        return "yellow";
+    } else {
+        // Handle invalid signals here
+        panic!("Invalid signal");
+    }
+}
+```

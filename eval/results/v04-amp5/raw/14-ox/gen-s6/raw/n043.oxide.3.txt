@@ -1,0 +1,22 @@
+struct Queue {
+    elements: Vec<Int>
+}
+
+fn swap_first_last(q: Queue) -> Queue {
+    let len = len(q.elements)
+    if len < 2 {
+        return q
+    }
+    let first = unwrap_or(get(q.elements, 0), -1)
+    let last = unwrap_or(get(q.elements, len - 1), -1)
+    let elements = set(set(q.elements, 0, last), len - 1, first)
+    Queue { elements: elements }
+}
+
+fn main() {
+    let q = Queue { elements: vec(1, 2, 3, 4, 5) }
+    let swapped_q = swap_first_last(q)
+    for x in swapped_q.elements {
+        print(x)
+    }
+}

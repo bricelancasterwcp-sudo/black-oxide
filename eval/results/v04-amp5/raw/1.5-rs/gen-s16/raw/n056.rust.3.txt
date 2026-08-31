@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let text1 = "7";
+    let text2 = "x";
+    let text3 = "9";
+    let text4 = "?";
+
+    let numbers: Vec<&str> = vec![text1, text2, text3, text4];
+
+    let mut sum = 0;
+    let count = numbers.iter().filter(|&s| s.parse::<i32>().is_ok()).count();
+
+    println!("Sum of the ones that do: {}", sum);
+    println!("Number of ones that do not: {}", numbers.len() - count);
+}
+```

@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let oak = None;
+    if let Some(_oak) = oak {
+        print(oak);
+    }
+    let oak = Some(8);
+    if let Some(_oak) = oak {
+        print(oak);
+    }
+    let oak = Some(15);
+    if let Some(_oak) = oak {
+        print(oak);
+    }
+}
+```

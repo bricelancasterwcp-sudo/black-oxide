@@ -1,0 +1,15 @@
+```text
+struct Device { sensor: Sensor }
+struct Sensor { reading: Int }
+
+fn set_reading(dev: Device, value: Int) -> Device {
+    let s = Sensor { reading: value }
+    Device { sensor: s }
+}
+
+fn main() {
+    let dev = Device { sensor: Sensor { reading: 0 } }
+    let dev2 = set_reading(dev, 7)
+    print(dev2.sensor.reading)
+}
+```

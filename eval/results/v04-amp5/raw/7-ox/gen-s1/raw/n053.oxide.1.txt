@@ -1,0 +1,17 @@
+```
+fn reverse(s: Str) -> Str {
+    let mut chars = chars(s);
+    let mut reversed = concat(vec(), "");
+    while let Some(c) = chars.pop() {
+        reversed = concat(reversed, c);
+    }
+    reversed
+}
+
+fn main() {
+    let word = "drum";
+    print(reverse(word));
+    print_str(" ");
+    print(word);
+}
+```

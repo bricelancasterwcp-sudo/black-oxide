@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let num = 91;
+    if num > 1 && (num % 2 != 0 || num % 3 != 0) {
+        println!("yes");
+    } else {
+        println!("no");
+    }
+}
+```
+
+Explanation:
+The original program was almost correct, but it missed a condition check for numbers greater than 3. The statement `(num % 2 != 0 || num % 3 != 0)` checks if `num` is not divisible by 2 or 3. However, since 91 is not divisible by 2 (it's odd), this condition ensures that the number must be less than 6 to have any divisors other than 1 and itself.
+
+When run with `cargo run`, it correctly outputs "no" for the provided example.

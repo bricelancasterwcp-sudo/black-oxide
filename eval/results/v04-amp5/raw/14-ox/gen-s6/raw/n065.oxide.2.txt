@@ -1,0 +1,30 @@
+struct Reading { label: Str, values: Vec<Int> }
+
+fn count_big(v: Vec<Int>) -> Int {
+    let mut count = 0
+    for x in v {
+        if x > 5 {
+            count += 1
+        }
+    }
+    count
+}
+
+fn max_reading(v: Vec<Int>) -> Option<Int> {
+    let mut max_val = None
+    for x in v {
+        if max_val == None || unwrap_or(max_val, -1) < x {
+            max_val = Some(x)
+        }
+    }
+    max_val
+}
+
+fn main() {
+    let readings = push(push(push(push(push(vec(), 6), 11), 3), 14), 9)
+    print(count_big(readings.clone()))
+    match max_reading(clone(readings)) {
+        Some(n) => print(n),
+        None => print_str("no readings"),
+    }
+}

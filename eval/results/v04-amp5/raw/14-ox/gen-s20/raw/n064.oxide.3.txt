@@ -1,0 +1,17 @@
+struct Reading { label: Str, values: Vec<Int> }
+
+fn lookup(v: Vec<Int>, pos: Int) -> Option<Int> {
+    get(v, pos)
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(vec(), 10), 20) }
+    match lookup(r.values.clone(), 1) {
+        Some(n) => print(n),
+        None => print_str("not found"),
+    }
+    match lookup(r.values.clone(), 3) {
+        Some(n) => print(n),
+        None => print_str("not found"),
+    }
+}

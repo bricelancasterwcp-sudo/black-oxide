@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let point1 = (1, 5); // Coordinates of the first point
+    let point2 = (10, 5); // Coordinates of the second point, height and width are the same
+
+    println!("{}", point1.0 + point2.0);
+}
+```

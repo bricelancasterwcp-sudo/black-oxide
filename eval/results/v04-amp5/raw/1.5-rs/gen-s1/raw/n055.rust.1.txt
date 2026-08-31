@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let a = "8".parse::<i32>().unwrap_or(-1);
+    println!("{}", a);
+
+    let b = "oak".parse::<i32>().unwrap_or(-1);
+    println!("{}", b);
+
+    let c = "15".parse::<i32>().unwrap_or(-1);
+    println!("{}", c);
+}
+```

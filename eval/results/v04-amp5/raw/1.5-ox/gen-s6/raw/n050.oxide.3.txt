@@ -1,0 +1,9 @@
+```
+fn main() {
+    let scores = vec![9, 2, 5];
+    scores.sort_unstable_by(|a, b| b.cmp(a));
+    for &score in scores.iter().rev() {
+        println!("{}", score);
+    }
+}
+```

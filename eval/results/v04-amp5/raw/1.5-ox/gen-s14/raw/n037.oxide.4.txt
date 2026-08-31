@@ -1,0 +1,9 @@
+```
+struct Rectangle { width: Int, height: Int }
+
+fn main() {
+    let mut r = Rectangle { width: 2, height: 3 };
+    r.width += 3; // move here to fix use of moved value 'r'
+    print(to_float(r.width as Float * r.height as Float)); // method form
+}
+```

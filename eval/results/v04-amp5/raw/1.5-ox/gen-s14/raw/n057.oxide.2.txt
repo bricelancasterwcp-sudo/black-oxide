@@ -1,0 +1,12 @@
+fn main() {
+    let fig = "fig";
+    let banana = "banana";
+    let kiwi = "kiwi";
+
+    let longest = match (fig.len(), banana.len(), kiwi.len()) {
+        (len1, len2, len3) => if len1 > len2 && len1 > len3 { fig } else if len2 > len1 && len2 > len3 { banana } else { kiwi }
+    };
+
+    println!("Longest: {}", longest);
+    println!("Length: {}", longest.len());
+}

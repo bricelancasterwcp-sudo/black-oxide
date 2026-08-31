@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let v = push(push(vec(), 10), 20);
+    match get(v, 1) {
+        Some(n) => print(n),
+        None => print_str("Position 1 is empty"),
+    }
+    let v2 = push(push(vec(), 10), 20); // Reinitialize v since it was consumed
+    match get(v2, 4) {
+        Some(n) => print(n),
+        None => print_str("Position 4 is empty"),
+    }
+}
+```

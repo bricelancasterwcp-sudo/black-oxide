@@ -1,0 +1,20 @@
+```rust
+struct Signal { color: Str }
+
+fn main() {
+    let mut signals = vec![
+        Signal { color: "green" },
+        Signal { color: "red" },
+        Signal { color: "yellow" }
+    ];
+
+    for s in signals.iter_mut() {
+        match s.color.as_str() {
+            "green" => print("go for green"),
+            "red" => print("stop for red"),
+            "yellow" => print("wait for yellow"),
+            _ => unreachable!(), // Added an unreachable case
+        }
+    }
+}
+```

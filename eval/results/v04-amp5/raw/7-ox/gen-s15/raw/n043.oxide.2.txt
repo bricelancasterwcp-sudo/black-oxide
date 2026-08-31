@@ -1,0 +1,20 @@
+```rust
+fn swap_first_last(v: Vec<Int>) -> Vec<Int> {
+    let len = len(v);
+    if len > 1 {
+        let last = get(v, len - 1)?;
+        set(v.clone(), 0, last)
+    } else {
+        v
+    }
+}
+
+fn main() {
+    let queue = push(push(push(push(vec(), 1), 2), 3), 4);
+    let queue = push(queue, 5);
+    let queue = swap_first_last(queue.clone());
+    for x in queue {
+        print(x);
+    }
+}
+```

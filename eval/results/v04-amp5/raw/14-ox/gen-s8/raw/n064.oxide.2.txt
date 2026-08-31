@@ -1,0 +1,12 @@
+fn main() {  
+    let v = push(push(vec(), 10), 20)  
+    match get(v, 1) {  
+        Some(n) => print(n),  
+        None => print_str("position one is empty"),  
+    }  
+    let v = push(push(vec(), 10), 20); // Reinitialize v  
+    match get(v, 4) {  
+        Some(n) => print(n),  
+        None => print_str("position four is empty"),  
+    }  
+}

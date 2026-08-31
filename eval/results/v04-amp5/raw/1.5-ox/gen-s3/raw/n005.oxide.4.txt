@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let sum = (1..=20)
+        .filter(|&x| x % 2 == 0) // fix: use & to take a reference
+        .sum();
+    print(sum);
+}
+```
+
+Explanation:
+The original code had several issues:
+
+1. The `filter` method was called without an argument list, which was causing syntax errors.
+2. The `&x` syntax was used for field access, which is not correct in Rust.
+3. The `print` function was called without a parameter list.
+
+These were corrected by removing the unnecessary argument lists and using the correct syntax for referencing in Rust.

@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let product = (1..=6).product::<Int>();
+    println(product);
+}
+```
+
+Note: This program is incomplete because Rust's `product` method requires that all elements are of type `Copy`, which means that `Int` can be used. If you need to use non-copyable types, you will need to implement the `Product` trait for them.

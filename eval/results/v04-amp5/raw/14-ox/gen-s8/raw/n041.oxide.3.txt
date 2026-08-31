@@ -1,0 +1,16 @@
+```text
+fn main() {
+    let measurements = vec();
+    measurements = push(measurements, 9);
+    measurements = push(measurements, 2);
+    measurements = push(measurements, 7);
+    measurements = push(measurements, 4);
+
+    let sorted_measurements = sort(measurements);
+
+    for x in sorted_measurements {
+        print(x);
+        print_str("\n");
+    }
+}
+```

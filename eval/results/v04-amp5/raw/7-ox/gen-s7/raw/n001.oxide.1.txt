@@ -1,0 +1,6 @@
+```oxide
+fn main() {
+    let sum = (1..=5).map(|x| x * x * x).sum();
+    print(sum);
+}
+```

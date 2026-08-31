@@ -1,0 +1,15 @@
+fn main() {
+    let s = "mississippi";
+    print(count(s.chars(), |c| c == 's'));
+    print(count(distinct_chars(s), |c| true));
+}
+
+fn distinct_chars(s: Str) -> Vec<Str> {
+    let mut chars = vec();
+    for c in s.chars() {
+        if !contains(chars, c) {
+            push(chars, c);
+        }
+    }
+    chars
+}

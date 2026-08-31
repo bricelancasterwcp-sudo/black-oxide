@@ -1,0 +1,9 @@
+fn main() {
+    let numbers = vec![10, 20, 30];
+    for &index in &[1, 5] {
+        match numbers.get(index) {
+            Some(&value) => println!("{}", value),
+            None => println!("-1"),
+        }
+    }
+}

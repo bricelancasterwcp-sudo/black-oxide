@@ -1,0 +1,33 @@
+```
+struct Queue {
+    elements: Vec<Int>,
+}
+
+impl Queue {
+    fn new() -> Self {
+        Queue { elements: vec![] }
+    }
+
+    fn exchange(&mut self) {
+        if !self.elements.is_empty() {
+            let first = self.elements.remove(0);
+            let last = self.elements.remove(self.elements.len() - 1);
+            self.elements.insert(0, last);
+            self.elements.push(first);
+        }
+    }
+}
+
+fn main() {
+    let mut queue = Queue::new();
+    for i in 1..=5 {
+        queue.elements.push(i);
+    }
+
+    println!("Initial queue: {:?}", queue.elements);
+
+    queue.exchange();
+
+    println!("Queue after exchange: {:?}", queue.elements);
+}
+```

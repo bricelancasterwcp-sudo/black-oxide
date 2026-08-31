@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let a = 1;
+    let mut b = 1;
+
+    for _ in 0..9 {
+        let c = a + b;
+        a = b;
+        b = c;
+    }
+
+    print_str(&str_to_str(b)); // Convert the last term to string and print
+}
+```

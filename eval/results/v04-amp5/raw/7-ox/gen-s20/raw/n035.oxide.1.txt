@@ -1,0 +1,14 @@
+```oxide
+fn divide(n: Int, d: Int) -> Result<Int, Str> {
+    if d == 0 {
+        Err("bad".to_str())
+    } else {
+        Ok(n / d)
+    }
+}
+
+fn main() {
+    let result = divide(20, 4)?;
+    print(result);
+}
+```

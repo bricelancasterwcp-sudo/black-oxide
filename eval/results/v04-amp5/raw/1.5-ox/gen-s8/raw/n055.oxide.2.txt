@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    match 8 {
+        8 => println!("good"),
+        _ => println!("bad"),
+    }
+    match "oak" {
+        "oak" => println!("good"),
+        _ => println!("bad"),
+    }
+    match 15 {
+        15 => println!("good"),
+        _ => println!("bad"),
+    }
+}
+```

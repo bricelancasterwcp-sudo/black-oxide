@@ -1,0 +1,22 @@
+```text
+fn fibonacci(n: Int) -> Int {
+    if n <= 0 {
+        0
+    } else if n == 1 {
+        1
+    } else {
+        let mut a = 0;
+        let mut b = 1;
+        for _ in range(2, n + 1) {
+            let temp = a + b;
+            a = b;
+            b = temp;
+        }
+        b
+    }
+}
+
+fn main() {
+    print(fibonacci(9));
+}
+```

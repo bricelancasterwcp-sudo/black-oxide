@@ -1,0 +1,4 @@
+fn main() {
+    let total = sum(map(range(1, 6), |x| x * x * x))
+    print(total)
+}

@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let num = 1234;
+    let mut str_num = to_str(num);
+    
+    while !str_num.is_empty() {
+        let c = str_num.pop().unwrap();
+        temp.push(c);
+    }
+    
+    print_str(temp);
+}
+```

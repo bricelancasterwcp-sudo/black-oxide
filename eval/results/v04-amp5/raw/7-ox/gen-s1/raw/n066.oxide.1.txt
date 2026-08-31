@@ -1,0 +1,17 @@
+```
+fn filter(v: Vec<Int>) -> Vec<Int> {
+    filter(v, |x| x < 10)
+}
+
+fn main() {
+    let batch = push(push(push(push(vec(), 9), 2), 12), 5);
+    let kept = filter(batch);
+
+    for k in kept {
+        print(k);
+        print_str("\n");
+    }
+
+    print(count(kept, 0));
+}
+```

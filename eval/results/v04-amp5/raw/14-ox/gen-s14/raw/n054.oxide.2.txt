@@ -1,0 +1,20 @@
+```rust
+fn count_vowels(s: Str) -> Int {
+    let vowels = "aeiouAEIOU"
+    let mut count = 0
+    for c in chars(s) {
+        if contains(vowels, c) {
+            count += 1
+        }
+    }
+    count
+}
+
+fn main() {
+    let letters = "qwertyuiopasdfghjklzxcvbnm"
+    let vowel_count = count_vowels(letters)
+    let consonant_count = len(letters) - vowel_count
+    print(vowel_count)
+    print(consonant_count)
+}
+```

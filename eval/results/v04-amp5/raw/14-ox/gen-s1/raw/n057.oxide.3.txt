@@ -1,0 +1,18 @@
+```
+fn longest_name(names: Vec<Str>) -> Str {
+    let mut longest = Str::from("")
+    for name in names {
+        if str_len(name) > str_len(longest) {
+            longest = name
+        }
+    }
+    longest
+}
+
+fn main() {
+    let fruits = vec(Str::from("fig"), Str::from("banana"), Str::from("kiwi"))
+    let longest = longest_name(fruits)
+    print(longest)
+    print(str_len(longest))
+}
+```

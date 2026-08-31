@@ -1,0 +1,21 @@
+```rust
+fn reverse_number(n: Int) -> Int {
+    let mut reversed = 0;
+    let mut num = n;
+
+    while num != 0 {
+        let digit = num % 10;
+        reversed = reversed * 10 + digit;
+        num /= 10;
+    }
+
+    reversed
+}
+
+fn main() {
+    print(int_to_str(reverse_number(1234)));
+}
+```
+
+**Explanation**:
+The function `reverse_number` takes an integer, reverses its digits, and returns the result. It initializes a variable `reversed` to 0 and a variable `num` to the input number. It then enters a loop that continues until `num` becomes 0. Inside the loop, it computes the last digit of `num`, multiplies `reversed` by 10, adds the digit to `reversed`, and removes the last digit from `num`. After the loop, it prints the reversed number as a string using `int_to_str`.

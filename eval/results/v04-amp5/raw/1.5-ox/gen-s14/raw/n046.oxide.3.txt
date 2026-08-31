@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let arr = [5, 12, 3, 18, 9];
+    let mut count_under = 0;
+    let mut count_over = 0;
+
+    for &num in &arr {
+        if num < 10 {
+            count_under += 1;
+        } else {
+            count_over += 1;
+        }
+    }
+
+    println!("Under cutoff: {}", count_under);
+    println!("Over or equal to cutoff: {}", count_over);
+}
+```

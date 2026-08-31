@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let mut count = [0; 26];
+    let coffee = "coffee";
+
+    for c in coffee.chars() {
+        if 'a' <= c && c <= 'z' {
+            count[(c as u8 - b'a') as usize] += 1;
+        }
+    }
+
+    for (i, &c) in count.iter().enumerate() {
+        if c > 0 {
+            print!("{}", char::from_u32((i + 97).try_into().unwrap()).unwrap());
+        }
+    }
+}
+```

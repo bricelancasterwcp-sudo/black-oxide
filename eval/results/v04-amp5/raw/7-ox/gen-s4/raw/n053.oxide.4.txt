@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let s = "drum";
+    print(concat(reverse(chars(s)), to_float(str_len(s)).to_string()));
+    print_str(s);
+}
+```

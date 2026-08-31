@@ -1,0 +1,13 @@
+```rust
+struct Reading { label: Str, values: Vec<Int> }
+
+fn set_reading(r: &mut Reading, value: Int) {
+    r.values[0] = value;
+}
+
+fn main() {
+    let mut r = Reading { label: "sensor", values: vec![0] };
+    set_reading(&mut r, 7);
+    println!("{:?}", r.values[0]); // Fix: print the content of r.values
+}
+```

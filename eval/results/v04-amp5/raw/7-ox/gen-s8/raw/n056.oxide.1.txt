@@ -1,0 +1,13 @@
+```oxide
+fn main() {
+    let texts = vec!("7", "x", "9", "?");
+    let (total, count) = texts.iter().fold((0, 0), |(acc, cnt), &text| {
+        match parse_int(text) {
+            Some(num) => (acc + num, cnt),
+            None => (acc, cnt + 1)
+        }
+    });
+    print(total);
+    print(count);
+}
+```

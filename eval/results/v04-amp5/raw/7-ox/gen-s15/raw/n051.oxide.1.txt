@@ -1,0 +1,5 @@
+```oxide
+let s = "granite"
+print(s.get(0)?)
+print(s.get(str_len(s) - 1)?)
+```

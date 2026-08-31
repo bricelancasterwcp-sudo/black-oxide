@@ -1,0 +1,13 @@
+struct Reading { label: Str, values: Vec<Int> }
+
+fn sort_scores(scores: Vec<Int>) -> Vec<Int> {
+    sort(scores)
+}
+
+fn main() {
+    let scores = push(push(vec(), 2), 9);
+    let sorted_scores = sort_scores(scores.clone());
+    for score in sorted_scores {
+        print(score);
+    }
+}

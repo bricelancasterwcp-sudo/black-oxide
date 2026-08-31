@@ -1,0 +1,22 @@
+```rust
+struct Line { items: Vec<Item> }
+
+struct Item { price: Int, quantity: Int }
+
+fn total(line: Line) -> Int {
+    sum(map(line.items, |Item { price, quantity }| price * quantity))
+}
+
+fn main() {
+    let line1 = Line { items: vec![Item { price: 3, quantity: 4 }, Item { price: 2, quantity: 5 }] };
+    let value1 = total(line1.clone());
+    print(value1);
+
+    let line2 = Line { items: vec![Item { price: 3, quantity: 4 }, Item { price: 2, quantity: 5 }] };
+    let value2 = total(line2.clone());
+    print(value2);
+
+    let combined_value = value1 + value2;
+    print(combined_value);
+}
+```

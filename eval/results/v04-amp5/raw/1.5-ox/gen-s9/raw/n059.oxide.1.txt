@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let text = "When in doubt go home";
+    println!("Words: {}", text.split_whitespace().count());
+    println!("Characters (including spaces): {}", text.len());
+}
+```
+**Explanation**: The solution defines a `main` function that takes a string literal as input. It uses the `split_whitespace` method to split the string into words, counts them using `count`, and prints both the count of words and the total number of characters including spaces in the string using the `len` method.

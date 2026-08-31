@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let mut a = 1;
+    let mut b = 1;
+    for _ in 0..9 {
+        let temp = a + b;
+        a = b;
+        b = temp;
+    }
+    println!("{}", b);
+}
+```
+
+This Rust program defines a loop that iterates from 0 to 9, calculating each term of the Fibonacci sequence as the sum of the two preceding ones. Starting with `a` set to 1 and `b` set to 1, it updates these values in each iteration and prints the tenth term (`b`) after the loop completes.

@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let mut figures = vec![8, 3, 11, 6];
+    figures.sort_unstable();
+
+    let min_figure = figures[0];
+    let max_figure = figures[figures.len() - 1];
+
+    println!("The smallest figure is: {}", min_figure);
+    println!("The gap between the largest and the smallest is: {}", max_figure - min_figure);
+}
+```

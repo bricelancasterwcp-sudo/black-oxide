@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut vec = push(push(vec(), 4), 9);
+    sort(&mut vec);
+
+    for &x in vec.iter() { // Use .iter() for immutable access to elements
+        print_str(&to_str(x));
+        println!(); // Use println! instead of print_str for better formatting
+    }
+}
+```

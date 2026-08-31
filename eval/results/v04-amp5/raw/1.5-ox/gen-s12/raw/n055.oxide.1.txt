@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let oak = parse_int("oak").unwrap_or(0);
+    let eight = parse_int("8").unwrap_or(0);
+    let fifteen = parse_int("15").unwrap_or(0);
+
+    print(oak); // prints 0 if oak is "none"
+    print(eight); // prints 8
+    print(fifteen); // prints 15
+}
+```

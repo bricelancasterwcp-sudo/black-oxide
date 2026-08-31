@@ -1,0 +1,12 @@
+```
+fn main() {
+    let mut vec = push(vec(), 9);
+    vec.push(7);
+    vec.push(4);
+
+    for i in 0..vec.len() {
+        print(to_float(vec[i]));
+        println!();
+    }
+}
+```

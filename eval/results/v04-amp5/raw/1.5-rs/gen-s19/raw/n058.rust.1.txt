@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut letters = vec![false; 26];
+    for c in "coffee".chars() {
+        if !letters[c as usize - 'a' as usize] {
+            println!("{}", c);
+            letters[c as usize - 'a' as usize] = true;
+        }
+    }
+}
+```

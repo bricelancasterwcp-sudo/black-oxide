@@ -1,0 +1,28 @@
+```rust
+struct Reading { label: Str, values: Vec<Int> }
+
+fn count_exceeding_five(v: Vec<Int>) -> Int {
+    count_if(v, |x| x > 5)
+}
+
+fn highest_reading(v: Vec<Int>) -> Option<Int> {
+    max(v)
+}
+
+fn main() {
+    let readings = vec();
+    readings = push(readings, 6);
+    readings = push(readings, 11);
+    readings = push(readings, 3);
+    readings = push(readings, 14);
+    readings = push(readings, 9);
+
+    let r = Reading { label: "Readings", values: readings };
+
+    print(count_exceeding_five(r.values)); // prints the count of readings exceeding five
+    match highest_reading(r.values) {
+        Some(n) => print(n), // prints the highest reading
+        None => print_str("No readings available"), // this case should not occur with given inputs
+    }
+}
+```

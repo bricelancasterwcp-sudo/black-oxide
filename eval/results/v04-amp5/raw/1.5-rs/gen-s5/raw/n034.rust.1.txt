@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    match get_second(vec![7, 8, 9]) {
+        Some(x) => println!("Second entry is: {}", x),
+        None => println!("No second entry found."),
+    }
+}
+
+fn get_second(nums: Vec<i32>) -> Option<i32> {
+    nums.get(1).cloned()
+}
+```

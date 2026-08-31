@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let drum = "drum";
+    for (i, c) in drum.chars().rev().enumerate() {
+        println!("{}", c);
+    }
+    println!("{}", drum); // fix: print drum before loop ends
+}
+```
+
+The errors were due to the semicolons at the end of each line and the premature closing of the `for` loop. The corrected version removes these unnecessary characters and prints "drum" after the loop, as required.

@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let mut rect_width = 2;
+    let rect_height = 3;
+
+    println!("Initial rectangle dimensions: ({}, {})", rect_width, rect_height);
+
+    // Change the width to five
+    rect_width = 5;
+
+    println!("Rectangle dimensions after changing width: ({}, {})", rect_width, rect_height);
+
+    // Calculate and print the area of the rectangle
+    let area = rect_width * rect_height;
+    println!("Area of the rectangle: {}", area);
+}
+```

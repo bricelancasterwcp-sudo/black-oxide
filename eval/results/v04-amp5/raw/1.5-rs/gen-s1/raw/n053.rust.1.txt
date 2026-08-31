@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let word = "drum";
+    println!("Reverse: {}", word.chars().rev().collect::<String>());
+    println!("Normal: {}", word);
+}
+```

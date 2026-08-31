@@ -1,0 +1,14 @@
+```text
+fn filter_under_ten(v: Vec<Int>) -> Vec<Int> {
+    filter(v, |x| x < 10)
+}
+
+fn main() {
+    let numbers = vec(9, 2, 12, 5, 16)
+    let filtered = filter_under_ten(numbers)
+    for n in filtered {
+        print(n)
+    }
+    print(len(filtered))
+}
+```

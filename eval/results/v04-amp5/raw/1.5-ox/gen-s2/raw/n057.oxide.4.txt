@@ -1,0 +1,22 @@
+```rust
+fn main() {
+    let fig = "fig";
+    let banana = "banana";
+    let kiwi = "kiwi";
+
+    let mut longest_name = banana.clone();
+    let mut longest_count = banana.len();
+
+    if fig.len() > longest_count {
+        longest_name = fig;
+        longest_count = fig.len();
+    }
+
+    if kiwi.len() > longest_count {
+        longest_name = kiwi;
+        longest_count = kiwi.len();
+    }
+
+    println!("The name with the most letters is '{}' ({} characters)", longest_name, longest_count);
+}
+```

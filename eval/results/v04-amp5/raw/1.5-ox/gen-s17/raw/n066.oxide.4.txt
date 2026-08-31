@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let numbers = vec![9, 2, 12, 5, 16];
+    let mut count = 0;
+
+    for &number in &numbers { // Fix: use references to avoid ownership issues
+        if number < 10 {
+            println!("{}", number);
+            count += 1;
+        }
+    }
+
+    println!("Number of kept entries: {}", count);
+}
+```

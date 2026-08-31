@@ -1,0 +1,29 @@
+```rust
+struct Square { side: Float }
+struct Circle { radius: Float }
+
+fn main() {
+    let shape = match get_shape("square") {
+        Ok(Square { side }) => Square { side },
+        Ok(Circle { radius }) => Circle { radius },
+        Err(e) => panic!("Invalid shape: {}", e),
+    };
+
+    print(f"Area of a square with side 4 is: {area(shape)}");
+}
+
+fn get_shape(kind: &str) -> Result<Shape, &'static str> {
+    match kind {
+        "square" => Ok(Square { side: 4.0 }),
+        "circle" => Ok(Circle { radius: 3.14 }),
+        _ => Err("Unknown shape"),
+    }
+}
+
+fn area(shape: Shape) -> Float {
+    match shape {
+        Square { side } => side * side,
+        Circle { radius } => radius * radius * std::f64::consts::PI,
+    }
+}
+```

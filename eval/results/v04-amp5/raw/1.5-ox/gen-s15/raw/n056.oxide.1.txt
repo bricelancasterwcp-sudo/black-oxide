@@ -1,0 +1,26 @@
+```rust
+fn sum_of_numbers(numbers: Vec<Str>) -> (Int, Int) {
+    let mut found = 0;
+    let mut count = 0;
+    for number in numbers {
+        match parse_int(&number) {
+            Some(n) => {
+                if n > 10 {
+                    found += n;
+                }
+                count += 1;
+            }
+            None => (),
+        }
+    }
+    (found, count)
+}
+
+fn main() {
+    let mut numbers = vec![String::from("7"), String::from("x"), String::from("9"), String::from("?")];
+    
+    let (sum, count) = sum_of_numbers(numbers);
+    println!("Total sum: {}", sum);
+    println!("Numbers greater than 10: {}", count);
+}
+```

@@ -1,0 +1,13 @@
+fn main() {
+    let batch = vec![9, 2, 12, 5, 16];
+    let mut kept = Vec::new();
+
+    for &num in &batch {
+        if num < 10 {
+            println!("{}", num);
+            kept.push(num);
+        }
+    }
+
+    println!("Kept: {}", kept.len());
+}

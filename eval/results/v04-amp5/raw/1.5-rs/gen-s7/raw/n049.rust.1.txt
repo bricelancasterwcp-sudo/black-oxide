@@ -1,0 +1,19 @@
+```rust
+
+fn main() {
+    let figures = [8, 3, 11, 6];
+    
+    // Sort the array in ascending order
+    figures.sort_unstable();
+    
+    // Find the smallest figure
+    let smallest_figure = figures[0];
+    
+    // Find the largest figure
+    let largest_figure = figures[figures.len() - 1];
+    
+    // Calculate and print the gap between the largest and the smallest
+    println!("The smallest figure is: {}", smallest_figure);
+    println!("The gap between the largest and the smallest is: {}", largest_figure - smallest_figure);
+}
+```

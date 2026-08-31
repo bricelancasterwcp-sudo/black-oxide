@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let mut largest_power = 1;
+    while largest_power * 2 <= 100 {
+        largest_power *= 2;
+    }
+    println!("The biggest power of two not exceeding 100 is: {}", largest_power);
+}
+```
+
+Explanation:
+- We initialize `largest_power` to 1.
+- We enter a loop that continues as long as `largest_power * 2` is less than or equal to 100.
+- Inside the loop, we multiply `largest_power` by 2.
+- After the loop finishes, `largest_power` will be the biggest power of two that does not exceed 100.
+- We then print this value.

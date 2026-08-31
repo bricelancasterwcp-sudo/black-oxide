@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut numbers = vec![9, 2, 7, 4];
+
+    // Sort the vector in ascending order using sort_unstable()
+    numbers.sort_unstable();
+
+    // Iterate over the sorted vector and print each number on a new line
+    for &number in numbers.iter() {
+        println!("{}", number);
+    }
+}
+```

@@ -1,0 +1,7 @@
+```oxide
+fn main() {
+    let s = "1234"
+    let reversed_str = concat("", s.chars().rev().concat(""))
+    print(reversed_str)
+}
+```

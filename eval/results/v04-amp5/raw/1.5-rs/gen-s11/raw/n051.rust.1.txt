@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut text = String::from("granite");
+    if let Some(first) = text.chars().next() {
+        println!("{}", first);
+    }
+    if let Some(last) = text.chars().rev().next() {
+        println!("{}", last);
+    }
+}
+```

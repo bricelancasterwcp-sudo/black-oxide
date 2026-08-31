@@ -1,0 +1,15 @@
+```
+fn main() {
+    let numbers = vec!(8, 3, 11, 6);
+    let min_number = match min(numbers) {
+        Some(n) => n,
+        None => -1, // This case should not happen with non-empty vec
+    };
+    let max_number = match max(numbers) {
+        Some(n) => n,
+        None => -1, // This case should not happen with non-empty vec
+    };
+    print(min_number);
+    print(max_number - min_number);
+}
+```

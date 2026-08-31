@@ -1,0 +1,20 @@
+```rust
+fn sum_digits(s: Str) -> Int {
+    s.chars()
+        .filter(|c| c.is_digit(10))
+        .map(|c| c.to_digit(10).unwrap())
+        .sum()
+}
+
+fn count_digits(s: Str) -> Int {
+    s.chars()
+        .filter(|c| c.is_digit(10))
+        .count()
+}
+
+fn main() {
+    let a1b22 = "a1b22";
+    print(sum_digits(a1b22)); // prints 5
+    print(count_digits(a1b22)); // prints 3
+}
+```

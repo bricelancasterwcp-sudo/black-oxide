@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let readings = vec![6, 11, 3, 14, 9];
+    
+    // Count how many readings exceed five
+    let count_exceeding_five = readings.iter().filter(|&x| x > &5).count();
+    
+    println!("{} of the readings exceed five", count_exceeding_five);
+    
+    // Find the highest reading
+    let max_reading = *readings.iter().max().unwrap_or(&0);  // unwrap_or is used to handle empty vectors
+    
+    println!("The highest reading is {}", max_reading);
+}
+```

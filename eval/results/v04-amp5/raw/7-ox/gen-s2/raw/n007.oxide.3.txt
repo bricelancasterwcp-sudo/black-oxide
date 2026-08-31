@@ -1,0 +1,8 @@
+fn main() {
+    let num = 9875;
+    let digits: Vec<Int> = int_to_str(num)
+        .chars()
+        .map(|c| parse_int(c.to_string()))
+        .collect();
+    print(sum(digits));
+}

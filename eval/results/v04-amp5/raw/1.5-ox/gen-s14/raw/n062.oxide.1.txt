@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let signals = vec!("green", "red", "yellow");
+    for s in signals {
+        match s.as_str() {
+            "green" => print("go for green\n"),
+            "red" => print("stop for red\n"),
+            "yellow" => print("wait for yellow\n"),
+            _ => panic!("Unknown signal: {}", s),
+        }
+    }
+}
+```

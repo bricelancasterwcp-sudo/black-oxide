@@ -1,0 +1,17 @@
+```rust
+fn second_entry(v: Vec<Int>) -> Option<Int> {
+    if len(v) < 2 {
+        None
+    } else {
+        Some(get(v, 1)?)
+    }
+}
+
+fn main() {
+    let numbers = vec(7, 8, 9);
+    match second_entry(numbers) {
+        Some(n) => print(n),
+        None => print_str("none"),
+    }
+}
+```

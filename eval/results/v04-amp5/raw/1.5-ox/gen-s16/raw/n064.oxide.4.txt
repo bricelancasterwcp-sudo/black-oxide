@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let list = vec![10, 20];
+    match get(list, 1) {
+        Some(x) => print(x), // field access copies: r stays usable
+        None => print_str("position one is empty"),
+    }
+}
+```

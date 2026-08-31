@@ -1,0 +1,9 @@
+```
+struct Point { x: Int, y: Int }
+
+fn main() {
+    let r = Point { x: 9, y: 3 };
+    print(r.x * r.y);            // area
+    print((r.x + 1) * (r.y + 2)); // perimeter
+}
+```

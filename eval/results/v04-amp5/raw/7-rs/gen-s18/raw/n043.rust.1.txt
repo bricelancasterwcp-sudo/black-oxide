@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let mut queue = vec![1, 2, 3, 4, 5];
+    if let Some(first) = queue.pop_front() {
+        if let Some(last) = queue.pop_back() {
+            queue.push_front(last);
+            queue.push_back(first);
+        }
+    }
+    for item in queue {
+        println!("{}", item);
+    }
+}
+```

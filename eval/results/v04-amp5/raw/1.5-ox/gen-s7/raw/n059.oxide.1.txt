@@ -1,0 +1,11 @@
+```rust
+
+fn main() {
+    let s = "when in doubt go home".to_string();
+    print("the phrase is: {} words, {} chars including spaces", split(s).len(), s.len());
+}
+
+fn split(str: String) -> Vec<&str> {
+    str.split_whitespace().collect()
+}
+```

@@ -1,0 +1,8 @@
+```
+fn main() {
+    let total_value = 2 * 4 + 5 * 2;
+    println!("The value of the first line is {}", 4);
+    println!("The value of the second line is {}", 5);
+    println!("Total value: {}", total_value);
+}
+```

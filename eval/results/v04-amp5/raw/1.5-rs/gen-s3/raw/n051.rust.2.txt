@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let word = "granite";
+    println!("{:?}", word.chars().nth(0).unwrap());
+    println!("{:?}", word.chars().rev().nth(1).unwrap());
+}
+```
+Explanation:
+The original code had a small mistake. In Rust, `chars()` returns an iterator that yields the characters of the string as Unicode scalar values (`char`). The `nth` method is used to get the n-th item in the iterator, starting from 0.
+The first line uses `word.chars().nth(0).unwrap()`. This will return the character at index 0 (which is 'g'), which should be printed on its own line.
+The second line uses `word.chars().rev().nth(1).unwrap()`. This will return the character at index 1 (which is 'n'), but it is reversed. To print it correctly, we need to use `println!("{:?}", word.chars().rev().nth(1).unwrap())`. The `:?` format specifier prints the value in a debug-friendly way.

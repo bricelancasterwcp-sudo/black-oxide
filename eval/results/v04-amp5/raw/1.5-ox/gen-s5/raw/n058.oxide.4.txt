@@ -1,0 +1,29 @@
+```rust
+struct Coffee {
+    c: Int,
+    o: Int,
+    f: Int,
+    e: Int,
+    r: Int,
+}
+
+fn main() {
+    let mut coffee = Coffee { c: 0, o: 0, f: 0, e: 0, r: 0 };
+    for letter in "coffee".chars().map(|x| x.to_ascii_lowercase()) {
+        match letter {
+            'c' => coffee.c += 1,
+            'o' => coffee.o += 1,
+            'f' => coffee.f += 1,
+            'e' => coffee.e += 1,
+            'r' => coffee.r += 1,
+            _ => (),
+        }
+    }
+
+    for (letter, count) in [('c', coffee.c), ('o', coffee.o), ('f', coffee.f), ('e', coffee.e), ('r', coffee.r)] {
+        if count > 0 {
+            print_str(&format!("{}: {}", letter, count));
+        }
+    }
+}
+```

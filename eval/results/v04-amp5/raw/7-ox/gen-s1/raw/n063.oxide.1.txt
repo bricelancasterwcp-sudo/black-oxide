@@ -1,0 +1,21 @@
+```
+struct Unit { price: Int }
+struct Line { units: Vec<Unit> }
+
+fn value(line: Line) -> Int {
+    let mut total = 0;
+    for unit in line.units {
+        total += unit.price * 3;
+    }
+    total
+}
+
+fn main() {
+    let line1 = Line { units: vec![Unit { price: 4 }, Unit { price: 2 }, Unit { price: 1 }] };
+    let line2 = Line { units: vec![Unit { price: 5 }] };
+    print(value(line1));
+    print(value(line2));
+    let total = value(line1) + value(line2);
+    print(total);
+}
+```

@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut reading = 0;
+    reading = 7;
+    println!("{}", reading);
+}
+```
+
+When run, this code will output:
+
+```
+7
+```

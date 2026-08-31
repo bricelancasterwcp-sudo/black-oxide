@@ -1,0 +1,31 @@
+```rust
+struct Figure {
+    shape: HashSet<&str>,
+    size: Int,
+}
+
+fn main() {
+    let mut figures = vec![
+        Figure { shape: HashSet::from(["triangle", "square"]), size: 2 },
+        Figure { shape: HashSet::from(&["circle"]), size: 3 },
+        Figure { shape: HashSet::from(&["rectangle", "triangle"]), size: 1 },
+        Figure { shape: HashSet::new(), size: 4 },
+    ];
+
+    let mut smallest = None;
+    for figure in &mut figures {
+        if let Some(current_smallest) = smallest {
+            if current_smallest > figure.size {
+                smallest = Some(figure.size);
+            }
+        } else {
+            smallest = Some(figure.size);
+        }
+    }
+
+    let largest = *smallest.unwrap();
+
+    println(smallest.unwrap());
+    println(largest - smallest.unwrap());
+}
+```

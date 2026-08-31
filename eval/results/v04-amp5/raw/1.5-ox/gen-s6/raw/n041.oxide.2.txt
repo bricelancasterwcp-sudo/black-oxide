@@ -1,0 +1,26 @@
+```
+struct Measurement {
+    value: Int,
+}
+
+fn main() {
+    let measurements = vec![
+        Measurement { value: 9 },
+        Measurement { value: 2 },
+        Measurement { value: 7 },
+        Measurement { value: 4 },
+    ];
+
+    let mut sorted_measurements = vec![];
+    while !measurements.is_empty() {
+        let min_measurement = *measurements.iter().min_by(|a, b| a.value.cmp(&b.value)).unwrap();
+        sorted_measurements.push(min_measurement);
+        measurements.retain(|m| m.value != min_measurement.value);
+    }
+
+    for measurement in sorted_measurements {
+        print_int(measurement.value);
+        println!();
+    }
+}
+```

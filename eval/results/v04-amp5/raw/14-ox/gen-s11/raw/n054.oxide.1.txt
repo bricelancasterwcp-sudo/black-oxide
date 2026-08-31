@@ -1,0 +1,26 @@
+```rust
+struct LetterCount { vowels: Int, consonants: Int }
+
+fn main() {
+    let keyboard = "qwertyuiopasdfghjklzxcvbnm"
+    let mut count = LetterCount { vowels: 0, consonants: 0 }
+    
+    for c in chars(keyboard) {
+        if is_vowel(c) {
+            count.vowels += 1
+        } else {
+            count.consonants += 1
+        }
+    }
+    
+    print(count.vowels)
+    print(count.consonants)
+}
+
+fn is_vowel(c: Str) -> Bool {
+    match c {
+        "a" | "e" | "i" | "o" | "u" => true,
+        _ => false
+    }
+}
+```

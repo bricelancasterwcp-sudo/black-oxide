@@ -1,0 +1,43 @@
+```
+struct Letter {
+    ch: Str,
+    count: Int,
+}
+
+fn find_duplicates(s: Str) -> Vec<Letter> {
+    let mut letters = vec()
+    for ch in chars(s) {
+        let found = false
+        for l in &letters {
+            if l.ch == ch {
+                found = true
+                break
+            }
+        }
+        if !found {
+            let mut new_letter = Letter { ch: ch, count: 0 }
+            for c in chars(s) {
+                if c == ch {
+                    new_letter.count += 1
+                }
+            }
+            letters = push(letters, new_letter)
+        }
+    }
+    let mut duplicates = vec()
+    for l in letters {
+        if l.count > 1 {
+            duplicates = push(duplicates, l)
+        }
+    }
+    duplicates
+}
+
+fn main() {
+    let s = "coffee"
+    let duplicates = find_duplicates(s)
+    for d in duplicates {
+        print(d.ch)
+    }
+}
+```

@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let input = "when in doubt go home";
+    
+    let words_count = input.split_whitespace().count();
+    let chars_count = input.len();
+    
+    println!("Words: {}", words_count);
+    println!("Chars including spaces: {}", chars_count);
+}
+```

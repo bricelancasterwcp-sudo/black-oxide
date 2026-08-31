@@ -1,0 +1,20 @@
+```
+struct Line {
+    unit_price: Float,
+    quantity: Int
+}
+
+fn calculate_value(line: Line) -> Float {
+    line.unit_price * line.quantity
+}
+
+fn main() {
+    let line1 = Line { unit_price: 3.0, quantity: 4 };
+    let line2 = Line { unit_price: 2.0, quantity: 5 };
+
+    print(calculate_value(line1));
+    print(calculate_value(line2));
+
+    println(calculate_value(line1 + line2));
+}
+```

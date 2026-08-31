@@ -1,0 +1,14 @@
+```text
+struct Queue { items: Vec<Int> }
+
+fn main() {
+    let q = Queue { items: vec() }
+    let q = push(push(push(push(push(q.items, 1), 2), 3), 4), 5)
+    let first = get(q, 0)?
+    let last = get(q, len(q) - 1)?
+    let q = swap(q, 0, len(q) - 1)
+    for x in q {
+        print(x)
+    }
+}
+```

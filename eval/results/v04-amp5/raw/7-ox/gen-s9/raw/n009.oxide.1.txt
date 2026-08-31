@@ -1,0 +1,14 @@
+```oxide
+fn reverse_int(n: Int) -> Int {
+    let mut rev = 0;
+    while n > 0 {
+        rev = (rev * 10) + (n % 10);
+        n /= 10;
+    }
+    rev
+}
+
+fn main() {
+    print(reverse_int(1234));
+}
+```

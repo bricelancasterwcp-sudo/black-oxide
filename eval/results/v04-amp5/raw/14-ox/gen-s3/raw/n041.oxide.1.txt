@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let measurements = vec!(9, 2, 7, 4);
+    let sorted = sort(measurements);
+    for x in sorted {
+        print(x);
+    }
+}
+```

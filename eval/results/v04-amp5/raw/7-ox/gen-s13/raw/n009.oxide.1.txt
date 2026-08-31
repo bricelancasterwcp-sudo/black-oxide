@@ -1,0 +1,15 @@
+```rust
+fn reverse_number(n: Int) -> Int {
+    let mut num = n;
+    let mut reversed = 0;
+    while num > 0 {
+        reversed = reversed * 10 + num % 10;
+        num /= 10;
+    }
+    reversed
+}
+
+fn main() {
+    print(reverse_number(1234));
+}
+```

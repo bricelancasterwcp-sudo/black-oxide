@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let mut reading = 0;
+    reading += 7;
+    println!("{}", reading);
+}
+```
+
+This program defines a mutable variable `reading` initialized to zero. It then adds seven to this variable and prints the result, demonstrating simple arithmetic operations in Rust within a function.

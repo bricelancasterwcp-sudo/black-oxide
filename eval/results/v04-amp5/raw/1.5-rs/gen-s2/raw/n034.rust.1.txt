@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let result = get_second_entry(&[7, 8, 9]);
+    println!("{:?}", result);
+}
+
+fn get_second_entry(xs: &[i32]) -> Option<&i32> {
+    xs.get(1)
+}
+```
+
+This Rust program defines a function `get_second_entry` that takes a slice of integers and returns an optional reference to the second element. The `main` function then calls this function with the list `[7, 8, 9]`, prints the result (or `None` if the list is empty or has fewer than two elements), and outputs the result.

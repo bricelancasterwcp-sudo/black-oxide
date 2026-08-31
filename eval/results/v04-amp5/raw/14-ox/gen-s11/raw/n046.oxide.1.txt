@@ -1,0 +1,12 @@
+```rust
+struct Reading { label: Str, values: Vec<Int> }
+
+fn main() {
+    let values = push(push(push(push(vec(), 5), 12), 3), 18)
+    let cutoff = 10
+    let below_cutoff = count_if(values, |x| x < cutoff)
+    let above_or_equal_cutoff = count_if(values, |x| x >= cutoff)
+    print(below_cutoff)
+    print(above_or_equal_cutoff)
+}
+```

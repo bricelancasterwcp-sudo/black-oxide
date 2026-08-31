@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let mut scores = vec!(2, 9, 5);
+    scores.sort();
+    for s in scores.iter() {
+        println!("{}", s);
+    }
+}
+```

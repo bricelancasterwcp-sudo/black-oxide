@@ -1,0 +1,13 @@
+fn main() {
+    let figs = vec!(8, 3, 11, 6);
+    let min_figs = min(figs.clone());
+    let max_figs = max(figs);
+    match (min_figs, max_figs) {
+        (Some(min), Some(max)) => {
+            print(min);
+            print_str(" ");
+            print(max - min);
+        },
+        _ => print_str("error"),
+    }
+}

@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let mut arr = [5, 12, 3, 18, 9];
+    let cutoff: Int = 10;
+
+    let count_under_cutoff = filter(&mut arr, |x| *x < cutoff);
+    println!("count under cutoff: {}", count_under_cutoff);
+
+    let count_at_or_over_cutoff = count(&arr, |x| *x >= cutoff);
+    println!("count at or over cutoff: {}", count_at_or_over_cutoff);
+}
+```

@@ -1,0 +1,15 @@
+```rust
+fn sum_even(a: Int, b: Int) -> Int {
+    let mut sum = 0;
+    for x in range(a, b + 1) {
+        if x % 2 == 0 {
+            sum += x;
+        }
+    }
+    sum
+}
+
+fn main() {
+    print(sum_even(1, 20));
+}
+```

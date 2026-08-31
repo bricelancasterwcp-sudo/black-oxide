@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let mut total = 0;
+    for n in 1..=5 {
+        total += n.pow(3) as i32; // Explicitly cast to i32 because pow returns a u32 by default
+    }
+    println!("The sum of cubes from 1 to 5 is: {}", total);
+}
+```

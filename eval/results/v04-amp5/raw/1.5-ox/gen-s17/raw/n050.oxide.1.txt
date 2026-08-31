@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut scores = vec![2, 9, 5];
+    scores.sort_unstable_by(|a, b| b.cmp(a));
+    for score in &scores {
+        println!("{}", score);
+    }
+}
+```
+
+The solution sorts the vector `scores` from highest to lowest using `sort_unstable_by`, which doesn't guarantee stability, but it's faster than `sort`. The loop then prints each score on a new line.

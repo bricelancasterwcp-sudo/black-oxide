@@ -1,0 +1,15 @@
+```text
+fn safe_divide(a: Int, b: Int) -> Result<Int, Str> {
+    if b == 0 {
+        Err("Division by zero")
+    } else {
+        Ok(a / b)
+    }
+}
+
+fn main() {
+    let result = safe_divide(20, 4)?;
+    print(result);
+    Ok(())
+}
+```

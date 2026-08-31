@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let num = 9875;
+    let digits: Vec<Int> = concat(int_to_str(num), "")?
+        .chars()
+        .map(|c| parse_int(concat(c, ""))?)
+        .collect();
+    print(sum(digits));
+}
+```

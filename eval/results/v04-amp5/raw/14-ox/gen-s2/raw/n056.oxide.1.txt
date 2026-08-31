@@ -1,0 +1,17 @@
+```ox
+fn main() {
+    let nums = vec(7, None, 9, None);
+    let mut sum = 0;
+    let mut missing = 0;
+
+    for num in nums {
+        match num {
+            Some(n) => sum += n,
+            None => missing += 1,
+        }
+    }
+
+    print(sum);
+    print(missing);
+}
+```

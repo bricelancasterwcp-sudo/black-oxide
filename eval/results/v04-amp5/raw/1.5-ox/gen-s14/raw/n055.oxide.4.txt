@@ -1,0 +1,11 @@
+```
+fn main() {
+    let entry1 = 8;
+    let entry2 = "oak";
+    let entry3 = 15;
+
+    print(entry1);
+    println(entry2);
+    println(entry3);
+}
+```

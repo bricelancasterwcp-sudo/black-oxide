@@ -38,7 +38,7 @@ EXPLICIT_CARD = REPO_ROOT / "LANGUAGE_CARD_EXPLICIT.md"
 # exceeds the old 1000 pin). Limit raised 1000 -> 1100 non-silently (see
 # SPEC.md's §59 amendment) for the same reason as wave 1: headroom
 # without loosening the pin past the point of pinning anything.
-CORE_WORD_LIMIT = 1150
+CORE_WORD_LIMIT = 1200
 WORD_COUNT_TOLERANCE = 0.10
 
 

@@ -1,0 +1,18 @@
+```
+fn get_value(v: Vec<Int>, i: Int) -> Option<Int> {
+    let x = get(v, i)?
+    Some(x)
+}
+
+fn main() {
+    let list = push(push(vec(), 10), 20)
+    match get_value(list, 1) {
+        Some(n) => print(n),
+        None => print_str("none"),
+    }
+    match get_value(list, 4) {
+        Some(n) => print(n),
+        None => print_str("none"),
+    }
+}
+```

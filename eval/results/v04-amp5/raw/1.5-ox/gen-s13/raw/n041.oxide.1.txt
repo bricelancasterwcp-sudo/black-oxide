@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let v = [4, 7, 9, 2];
+    for x in v.iter().sorted() {
+        print!("{}", x);
+        println!();
+    }
+}
+```

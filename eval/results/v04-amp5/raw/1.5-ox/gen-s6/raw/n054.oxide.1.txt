@@ -1,0 +1,22 @@
+```rust
+fn is_vowel(c: Str) -> Bool {
+    let vowels = vec!['a', 'e', 'i', 'o', 'u'];
+    vowels.contains(&c)
+}
+
+fn main() {
+    let mut vowel_count = 0;
+    let mut consonant_count = 0;
+
+    for ch in "keyboard".chars() {
+        if is_vowel(ch) {
+            vowel_count += 1;
+        } else {
+            consonant_count += 1;
+        }
+    }
+
+    print_str(format!("Vowels: {}", vowel_count));
+    print_str(format!("\nConsonants: {}", consonant_count));
+}
+```

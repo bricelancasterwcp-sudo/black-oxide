@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let list = vec![10, 20];
+    if let Some(position) = get(&list, 0) {
+        println!("{}", position);
+    } else {
+        println!("Position 0 is empty");
+    }
+
+    if let Some(position) = get(&list, 3) {
+        println!("{}", position);
+    } else {
+        println!("Position 3 is empty");
+    }
+}
+```

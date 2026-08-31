@@ -1,0 +1,17 @@
+fn is_prime(n: Int) -> Bool {
+    for i in 2..=n / 2 {
+        if n % i == 0 {
+            return false;
+        }
+    }
+    true;
+}
+
+fn main() {
+    let number = 91;
+    if is_prime(number) {
+        println!("yes");
+    } else {
+        println!("no");
+    }
+}

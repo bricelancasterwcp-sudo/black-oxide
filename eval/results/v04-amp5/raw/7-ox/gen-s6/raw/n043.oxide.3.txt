@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let mut q = vec(1, 2, 3, 4, 5);
+    let len = len(q);
+    swap(&mut q, 0, len - 1);
+    for x in q.iter() {
+        print(x);
+    }
+}
+```

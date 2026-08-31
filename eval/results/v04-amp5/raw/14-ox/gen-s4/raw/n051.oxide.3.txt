@@ -1,0 +1,9 @@
+```text
+fn main() {
+    let s = "granite"
+    let first_letter = chars(s).get(0).unwrap_or(" ").clone()
+    let last_letter = chars(s).get(str_len(s) - 1).unwrap_or(" ").clone()
+    print_str(first_letter)
+    print_str(last_letter)
+}
+```

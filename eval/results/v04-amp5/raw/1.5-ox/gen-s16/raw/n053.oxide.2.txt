@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let mut drum = "drum";
+    for (i, c) in drum.chars().enumerate() {
+        drum.insert(0, c);
+    }
+    println!("{} {}", drum, drum.chars().rev().collect::<String>());
+}
+```

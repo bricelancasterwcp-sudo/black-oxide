@@ -1,0 +1,9 @@
+```oxide
+fn main() {
+    let s = "granite";
+    let first_letter = s.chars().next();
+    let last_letter = s.chars().last();
+    print_str(first_letter.unwrap());
+    print_str(last_letter.unwrap());
+}
+```

@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    match get(arr, 0) {
+        Some("green") => println!("go"),
+        Some("red") => println!("stop"),
+        Some("yellow") => println!("wait"),
+        None => println!("unknown color"),
+    }
+}
+```
+
+The provided Rust program simulates a simple traffic light system that processes signals from an array in the order green, red, yellow. The `get` function is used to retrieve values from an array. Depending on the returned value, the corresponding message is printed: "go" for green, "stop" for red, or "wait" for yellow. If any unexpected color is encountered, a generic error message "unknown color" is printed.

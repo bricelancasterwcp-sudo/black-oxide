@@ -1,0 +1,6 @@
+fn main() {
+    let samples = vec![5, 12, 3, 18, 9];
+    let below_cutoff = count_if(&samples, |x| x < 10);
+    let above_cutoff = count_if(&samples, |x| x >= 10);
+    print(below_cutoff); print_str(" "); print(above_cutoff);
+}

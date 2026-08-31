@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    match "granite".chars().next().unwrap() {
+        'g' => print_str("\nA\n"),
+        _ => print_str("No match found\n"),
+    }
+}
+```

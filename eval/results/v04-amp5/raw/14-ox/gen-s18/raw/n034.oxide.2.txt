@@ -1,0 +1,10 @@
+fn second(v: Vec<Int>) -> Option<Int> {
+    let x = get(v, 1)?
+    Some(x + 1)
+}
+
+fn main() {
+    print_str(if let Some(n) = second(push(push(vec(), 7), 8)) { int_to_str(n) } else { "None".to_str() })
+    print_str(if let Some(n) = second(push(push(vec(), 7), 9)) { int_to_str(n) } else { "None".to_str() })
+    print_str(if let Some(n) = second(vec()) { int_to_str(n) } else { "None".to_str() })
+}

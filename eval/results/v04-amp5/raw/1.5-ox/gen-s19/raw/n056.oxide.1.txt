@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let nums: Vec<Opt> = vec![7, None, 9, None];
+    let sum = nums.iter().filter_map(|&n| n).sum::<i32>();
+    println!("Sum of numbers: {}", sum);
+    println!("Number of non-number values: {}", nums.len() - sum as usize);
+}
+```

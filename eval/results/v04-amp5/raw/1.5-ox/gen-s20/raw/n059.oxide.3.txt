@@ -1,0 +1,21 @@
+```rust
+fn count_words(text: &str) -> Int {
+    let mut count = 0;
+    for c in text.chars() {
+        if c.is_whitespace() {
+            count += 1;
+        }
+    }
+    count + 1 // adding one because the last word won't end with a space
+}
+
+fn char_count(text: &str) -> Int {
+    text.len()
+}
+
+fn main() {
+    let text = "Hello world!";
+    println!("Words: {}", count_words(text));
+    println!("Characters: {}", char_count(text));
+}
+```

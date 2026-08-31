@@ -1,0 +1,9 @@
+fn main() {
+    println!("{:?}", get_second_entry(&[7, 8, 9]));
+    println!("{:?}", get_second_entry(&[10, 20]));
+    println!("{:?}", get_second_entry::<i32>(&[]));
+}
+
+fn get_second_entry<T>(nums: &[T]) -> Option<&T> {
+    nums.get(1)
+}

@@ -1,0 +1,29 @@
+```rust
+struct LetterCount {
+    letter: Str,
+    count: Int
+}
+
+fn main() {
+    let word = "coffee"
+    let mut counts = Vec()
+    for c in chars(word) {
+        let found = false
+        for l in counts {
+            if l.letter == c {
+                l.count += 1
+                found = true
+                break
+            }
+        }
+        if !found {
+            counts = push(counts, LetterCount { letter: c, count: 1 })
+        }
+    }
+    for l in counts {
+        if l.count > 1 {
+            print_str(l.letter)
+        }
+    }
+}
+```

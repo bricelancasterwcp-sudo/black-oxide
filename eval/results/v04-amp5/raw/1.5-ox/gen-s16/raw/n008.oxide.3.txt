@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut count = 0;
+    for i in 1..=50 {
+        if i % 3 == 0 || i % 5 == 0 {
+            count += 1;
+        }
+    }
+    print(count);
+}
+```
+
+The problem was that the `main` function did not have a semicolon at the end, and there were multiple semicolons in the code. The diagnostics indicated that the compiler expected an end of statement but found syntax errors. The corrected program removes these unnecessary semicolons and ensures that the `main` function has only one semicolon.

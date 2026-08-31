@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let mut width = 2;
+    let height = 3;
+
+    width = 5; // Change width to five
+
+    println!("The area of the rectangle is {}", width * height);
+}
+```
+
+This program initializes a rectangle with dimensions 2 wide and 3 tall. It then changes the width to 5. Finally, it prints the area of the rectangle, which is calculated by multiplying the new width by the original height.

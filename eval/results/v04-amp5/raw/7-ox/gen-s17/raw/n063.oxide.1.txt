@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let line1 = push(push(vec(), 3), 3);
+    let line2 = push(push(vec(), 2), 2);
+    let total = concat(concat(int_to_str(sum(line1)), " units at $3 each"), concat(" and ", concat(int_to_str(sum(line2)), " units at $2 each")));
+    print(total)
+}
+```

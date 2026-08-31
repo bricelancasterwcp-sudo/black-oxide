@@ -1,0 +1,16 @@
+```rust
+fn divide(a: isize, b: isize) -> isize {
+    if b == 0 {
+        panic!("Division by zero");
+    }
+    a / b
+}
+
+fn main() {
+    let result = divide(20, 4);
+    println!("{}", result); // Output: 5
+
+    let error_result = divide(20, 0);
+    println!("{}", error_result); // Panic message: Division by zero
+}
+```

@@ -1,0 +1,25 @@
+struct Result {
+    total: Int,
+    count_not_numbers: Int
+}
+
+fn process(values: Vec<Str>) -> Result {
+    let mut total = 0;
+    let mut count_not_numbers = 0;
+
+    for v in values {
+        match parse_int(v) {
+            Some(n) => total = total + n,
+            None => count_not_numbers = count_not_numbers + 1
+        }
+    }
+
+    Result { total, count_not_numbers }
+}
+
+fn main() {
+    let inputs = vec("7", "x", "9", "?");
+    let result = process(inputs);
+    print(result.total);
+    print(result.count_not_numbers);
+}

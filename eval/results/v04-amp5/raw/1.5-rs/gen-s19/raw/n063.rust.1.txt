@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    // Define prices for each type of line
+    let price_four_units = 3.0;
+    let price_five_units = 2.0;
+
+    // Calculate total value of each line
+    let total_value_four_units = 4.0 * price_four_units;
+    let total_value_five_units = 5.0 * price_five_units;
+
+    // Print the values of each line
+    println!("Value of first line: {}", total_value_four_units);
+    println!("Value of second line: {}", total_value_five_units);
+
+    // Calculate and print the total value of both lines
+    let combined_value = total_value_four_units + total_value_five_units;
+    println!("Total value of both lines: {}", combined_value);
+}
+```

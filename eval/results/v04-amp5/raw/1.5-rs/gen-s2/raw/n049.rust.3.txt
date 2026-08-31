@@ -1,0 +1,25 @@
+```rust
+fn main() {
+    let figures = vec![8, 3, 11, 6];
+    let mut min = figures[0];
+    let mut max = figures[0];
+
+    for &figure in &figures {
+        if figure < min {
+            min = figure;
+        } else if figure > max {
+            max = figure;
+        }
+    }
+
+    println!("Smallest: {}", min);
+    println!("Gap: {}", max - min);
+}
+```
+
+Explanation:
+The program correctly finds the smallest and largest values in the vector, and then prints them. The correct output for the given input is:
+```plaintext
+Smallest: 3
+Gap: 8
+```

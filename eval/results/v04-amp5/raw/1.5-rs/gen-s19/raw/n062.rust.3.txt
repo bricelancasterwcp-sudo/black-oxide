@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    for signal in vec!["green", "red", "yellow"] {
+        match std::thread::sleep(std::time::Duration::from_secs(1)) { // Sleep for 1 second to simulate signal arrival
+            Ok(_) => println!("Go"), // Go when green arrives
+            Err(e) => eprintln!("Error sleeping: {}", e), // Error handling
+        }
+    }
+}
+```

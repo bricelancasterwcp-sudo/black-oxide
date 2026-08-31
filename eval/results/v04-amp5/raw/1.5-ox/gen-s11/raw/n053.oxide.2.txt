@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let drums = "drum";
+    println!("{}", str_rev(drums));
+    println!("{}", drums);
+}
+
+fn str_rev(s: &str) -> String {
+    s.chars().rev().collect::<String>()
+}
+```

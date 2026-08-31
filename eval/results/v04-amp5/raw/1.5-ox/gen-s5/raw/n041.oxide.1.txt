@@ -1,0 +1,27 @@
+```rust
+use std::cmp;
+
+struct Measurement { value: Int }
+
+fn main() {
+    let measurements = vec![
+        Measurement { value: 9 },
+        Measurement { value: 2 },
+        Measurement { value: 7 },
+        Measurement { value: 4 }
+    ];
+
+    measurements.sort_by(|a, b| a.value.cmp(&b.value));
+
+    for m in measurements {
+        print!("{}", m.value);
+        println!();
+    }
+}
+```
+
+Explanation:
+- The `Measurement` struct is defined to hold the values of the measurements.
+- In the `main` function, we create a vector of `Measurement` instances from the given values.
+- We use `sort_by` to sort the vector in ascending order based on the values. The lambda expression `(a, b) => a.value.cmp(&b.value)` defines how elements are compared.
+- Finally, we iterate over the sorted vector and print each measurement's value.

@@ -1,0 +1,13 @@
+```rust
+fn min(v: Vec<Int>) -> Option<Int> {
+    v.iter().min()
+}
+
+fn main() {
+    let figs = vec![10, 20, 30, 40, 50];
+    let largest = *min(figs.clone())?;
+    let smallest = *min(figs)?;
+    println!("{}", smallest);
+    println!("{}", largest - smallest);
+}
+```

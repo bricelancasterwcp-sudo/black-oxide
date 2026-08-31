@@ -1,0 +1,9 @@
+```oxide
+fn main() {
+    let s = "mississippi"
+    print(count(s.chars(), |c| c == 's'))
+    let chars: Vec<Str> = s.chars().collect()
+    let distinct_chars: Vec<Str> = chars.into_iter().filter(|&c| !chars.contains(&c)).collect()
+    print(distinct_chars.len())
+}
+```

@@ -1,0 +1,9 @@
+fn main() {
+    let s = "granite"
+    print_str(s)
+    let chars_s = chars(s)
+    let end = len(chars_s) - 1
+    let last_char = get(chars_s, end)?
+    let last_char_str = unwrap_or(last_char, "")
+    print_str(last_char_str)
+}

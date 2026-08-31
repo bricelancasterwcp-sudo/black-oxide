@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let coffee = String::from("coffee");
+    for (i, &c) in coffee.chars().enumerate() {
+        if !coffee.contains(&c) && coffee[i + 1..].contains(&c) {
+            println!("{}", c);
+        }
+    }
+}
+```
+
+Explanation:
+- We create a `String` from the word "coffee".
+- We iterate over each character in the string using `chars()`.
+- For each character, we check if it has already been printed (i.e., not contained in the remaining part of the string).
+- If it hasn't been printed and there is another occurrence of the character later in the string, we print it.

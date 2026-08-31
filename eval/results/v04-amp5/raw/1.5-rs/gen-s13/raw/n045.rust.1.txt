@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let log = [6, 7, 8, 9];
+    println!("The first entry is: {}", log[0]);
+    println!("The last entry is: {}", log[log.len() - 1]);
+}
+```
+
+To verify the correctness of this program, you can compile and run it using Rust's standard library. Here is how you would do it:
+
+```sh
+rustc main.rs
+./main
+```

@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut count = 0;
+    for i in 1..=36 {
+        if i != 36 && 36 % i == 0 {
+            count += 1;
+        }
+    }
+    print(count);
+}
+```
+
+The error was caused by the `;` characters being used after each iteration of the loop. These characters were not necessary as the loop is already terminated by the semicolon at the end of the main function.

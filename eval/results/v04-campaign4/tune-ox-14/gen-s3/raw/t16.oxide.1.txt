@@ -1,0 +1,10 @@
+fn main() {
+    let numbers = vec(5, 0, 4)
+    for n in numbers {
+        if n == 0 {
+            print_str("undefined")
+        } else {
+            print(div(100, n))
+        }
+    }
+}

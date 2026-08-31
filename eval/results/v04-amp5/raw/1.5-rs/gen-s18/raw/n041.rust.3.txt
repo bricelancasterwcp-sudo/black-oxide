@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    // Define an array of measurements in ascending order
+    let mut measurements = [2, 4, 7, 9];
+
+    // Sort the array in ascending order
+    measurements.sort();
+
+    // Print each measurement
+    for &measurement in &measurements {
+        println!("{}", measurement);
+    }
+}
+```

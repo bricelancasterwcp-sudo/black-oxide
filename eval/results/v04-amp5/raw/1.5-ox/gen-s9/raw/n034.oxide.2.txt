@@ -1,0 +1,10 @@
+```rust
+fn second_entry(v: Vec<Int>) -> Option<&Int> {
+    v.get(1)
+}
+
+fn main() {
+    let vecs = vec![7, 8, 9];
+    println!("{:?}", second_entry(vecs)); // prints Some(&8)
+}
+```

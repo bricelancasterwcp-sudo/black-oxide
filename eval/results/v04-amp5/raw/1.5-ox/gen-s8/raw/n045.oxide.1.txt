@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let mut log = vec![6, 7, 8, 9];
+    println!("{}", log[0]); // print the first element of the vector
+    println!("{}", log.pop().unwrap()); // print the last element of the vector
+}
+```

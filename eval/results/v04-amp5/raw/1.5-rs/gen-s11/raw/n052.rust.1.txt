@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let mut text = "banana";
+    let positions: Vec<isize> = text.chars()
+                                .enumerate()
+                                .filter(|&(i, c)| c == 'n')
+                                .map(|(_, i)| i as isize)
+                                .collect();
+
+    for &pos in &positions {
+        println!("{}", pos);
+    }
+}
+```

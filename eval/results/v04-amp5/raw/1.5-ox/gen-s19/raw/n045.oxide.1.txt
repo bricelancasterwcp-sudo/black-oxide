@@ -1,0 +1,19 @@
+```rust
+struct Log { entries: [Int; 4] }
+
+fn first_entry(log: &Log) -> Int {
+    log.entries[0]
+}
+
+fn last_entry(log: &Log) -> Int {
+    log.entries[3]
+}
+
+fn main() {
+    let mut log = Log { entries: [6, 7, 8, 9] };
+    print(first_entry(&log));            // field access copies: log stays usable
+    print(last_entry(&log));
+}
+```
+
+This program prints the first and last entries of a `Log` structure.

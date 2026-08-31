@@ -1,0 +1,21 @@
+```oxide
+struct Square { side: Int }
+struct Circle { radius: Float }
+
+fn area(s: Shape) -> Float {
+    match s {
+        Square(side) => 3.0 * side as Float * side as Float,
+        Circle(radius) => 3.0 * radius * radius,
+    }
+}
+
+enum Shape {
+    Square(Int),
+    Circle(Float),
+}
+
+fn main() {
+    let square = Square { side: 4 };
+    print(area(Shape::Square(square.side)))
+}
+```

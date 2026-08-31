@@ -1,0 +1,27 @@
+```ox
+struct Reading { label: Str, values: Vec<Int> }
+
+fn process_values(v: Vec<Int>) -> Int {
+    let odd_total = 0
+    let even_total = 0
+    for x in v {
+        if x % 2 == 1 {
+            print(x * 2)
+        } else {
+            even_total = even_total + x
+        }
+    }
+    even_total
+}
+
+fn main() {
+    let values = vec()
+    values = push(values, 7)
+    values = push(values, 4)
+    values = push(values, 9)
+    values = push(values, 10)
+    
+    let total = process_values(values)
+    print(total)
+}
+```

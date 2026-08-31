@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let figs = vec![8, 3, 11, 6];
+    println!("{}", min(figs)); // first_big(r.values))            // field access copies: r stays usable
+    println!("{}", max(figs) - min(figs)); // match second(r2.values) {
+}
+```

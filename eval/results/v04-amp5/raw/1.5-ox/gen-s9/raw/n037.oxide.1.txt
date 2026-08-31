@@ -1,0 +1,22 @@
+```rust
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+impl Rectangle {
+    fn new(width: Int, height: Int) -> Rectangle {
+        Rectangle { width, height }
+    }
+
+    fn area(&self) -> Int {
+        self.width * self.height
+    }
+}
+
+fn main() {
+    let mut r = Rectangle::new(2, 3);
+    r.width = 5;
+    print(r.area());
+}
+```

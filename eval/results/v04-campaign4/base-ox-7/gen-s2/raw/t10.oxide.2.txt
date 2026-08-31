@@ -1,0 +1,8 @@
+fn main() {
+    let v = vec!(4, 1, 7, 3, 9, 2);
+    let filtered: Vec<Int> = filter(v, |x| x > 3);
+    for &x in &filtered {
+        print(x);
+    }
+    println!("{}", count_if(&filtered, |&x| x > 3));
+}

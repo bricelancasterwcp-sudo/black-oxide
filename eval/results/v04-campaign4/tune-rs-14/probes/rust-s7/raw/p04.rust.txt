@@ -1,0 +1,9 @@
+fn main() {
+    let mut v = vec![1, 2];
+    println!("{}", v.len());
+    let mut iter = v.iter();
+    while let Some(&x) = iter.next() {
+        v.push(x);
+    }
+    println!("{}", v.len());
+}

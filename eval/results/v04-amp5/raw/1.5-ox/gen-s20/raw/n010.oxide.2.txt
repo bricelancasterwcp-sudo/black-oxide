@@ -1,0 +1,10 @@
+fn main() {
+    let mut n = 91;
+    for i in 2..n-1 { // Fix: use `n-1` to avoid division by zero
+        if n % i == 0 {
+            print!("no");
+            return;
+        }
+    }
+    print!("yes");
+}

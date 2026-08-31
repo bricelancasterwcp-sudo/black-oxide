@@ -1,0 +1,32 @@
+```rust
+struct Reading { label: Str, values: Vec<Option<Int>> }
+
+fn sum_valid_values(v: Vec<Option<Int>>) -> Int {
+    let mut sum = 0
+    for x in v {
+        match x {
+            Some(n) => sum += n,
+            None => (),
+        }
+    }
+    sum
+}
+
+fn count_invalid_values(v: Vec<Option<Int>>) -> Int {
+    let mut count = 0
+    for x in v {
+        if x.is_none() {
+            count += 1
+        }
+    }
+    count
+}
+
+fn main() {
+    let values = vec![Some(7), None, Some(9), None]
+    let sum = sum_valid_values(values)
+    print(sum)
+    let count = count_invalid_values(values)
+    print(count)
+}
+```

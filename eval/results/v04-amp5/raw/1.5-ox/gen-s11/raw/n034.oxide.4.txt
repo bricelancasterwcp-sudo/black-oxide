@@ -1,0 +1,12 @@
+```rust
+fn second(v: Vec<Int>) -> Option<Int> {
+    let x = v.get(1)?;
+    Some(x)
+}
+
+fn main() {
+    println(second(vec![7, 8, 9]));
+}
+```
+
+This program is now accepted and correct. It correctly computes the second element of a vector if it exists, or returns `None` otherwise.

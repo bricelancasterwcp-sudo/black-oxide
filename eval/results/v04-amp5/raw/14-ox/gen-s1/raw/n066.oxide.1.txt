@@ -1,0 +1,14 @@
+```
+fn filter_under_ten(v: Vec<Int>) -> Vec<Int> {
+    filter(v, |x| x < 10)
+}
+
+fn main() {
+    let batch = vec![9, 2, 12, 5, 16]
+    let kept = filter_under_ten(batch)
+    for x in kept {
+        print(x)
+    }
+    print(len(kept))
+}
+```

@@ -1,0 +1,39 @@
+```rust
+fn main() {
+    let mut vec = push(push(vec(), 4), 9);
+    let mut min = &vec[0];
+    for i in 1..vec.len() {
+        if vec[i] < *min {
+            min = &vec[i];
+        }
+    }
+    print_str(min);
+
+    vec.remove(vec.iter().position(|&x| x == *min).unwrap());
+    let mut second_min = &vec[0];
+    for i in 1..vec.len() {
+        if vec[i] < *second_min && vec[i] != *min {
+            second_min = &vec[i];
+        }
+    }
+    print_str(second_min);
+
+    vec.remove(vec.iter().position(|&x| x == *second_min).unwrap());
+    let mut third_min = &vec[0];
+    for i in 1..vec.len() {
+        if vec[i] < *third_min && vec[i] != *min && vec[i] != *second_min {
+            third_min = &vec[i];
+        }
+    }
+    print_str(third_min);
+
+    vec.remove(vec.iter().position(|&x| x == *third_min).unwrap());
+    let mut fourth_min = &vec[0];
+    for i in 1..vec.len() {
+        if vec[i] < *fourth_min && vec[i] != *min && vec[i] != *second_min && vec[i] != *third_min {
+            fourth_min = &vec[i];
+        }
+    }
+    print_str(fourth_min);
+}
+```

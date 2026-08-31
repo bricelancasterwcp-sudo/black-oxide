@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let sample_numbers = [5, 12, 3, 18, 9];
+    let cutoff = 10;
+
+    // Count numbers below the cutoff and those at or over it
+    let count_below_cutoff: usize = sample_numbers.iter().filter(|&x| x < &cutoff).count();
+    let count_at_or_over_cutoff: usize = sample_numbers.iter().filter(|&x| x >= &cutoff).count();
+
+    // Print results
+    println!("Numbers below cutoff: {}", count_below_cutoff);
+    println!("Numbers at or over cutoff: {}", count_at_or_over_cutoff);
+}
+```

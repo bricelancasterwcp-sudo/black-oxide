@@ -1,0 +1,14 @@
+```rust
+struct Line { items: Int, price_per_item: Int }
+
+fn main() {
+    let line1 = Line { items: 4, price_per_item: 3 };
+    let line2 = Line { items: 5, price_per_item: 2 };
+
+    print(line1.items * line1.price_per_item);
+    print(line2.items * line2.price_per_item);
+
+    let total_value = (line1.items * line1.price_per_item) + (line2.items * line2.price_per_item);
+    print(total_value);
+}
+```

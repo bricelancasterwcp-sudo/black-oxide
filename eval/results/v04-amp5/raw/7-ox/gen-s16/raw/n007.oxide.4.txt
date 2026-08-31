@@ -1,0 +1,10 @@
+fn main() {
+    let num = 9875;
+    let mut sum = 0;
+    let chars = concat(int_to_str(num), "");
+    for c in chars.chars() {
+        let digit = parse_int(c).unwrap();
+        sum += digit;
+    }
+    print(sum);
+}

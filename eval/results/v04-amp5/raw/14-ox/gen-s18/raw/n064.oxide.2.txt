@@ -1,0 +1,8 @@
+fn main() {
+    let numbers = push(push(vec(), 10), 20);
+    let pos_one = get(numbers, 1)?;
+    print(pos_one);
+    let numbers = push(push(vec(), 10), 20); // Reassign numbers to create a fresh vector
+    let pos_four = get(numbers, 4)?;
+    print(pos_four);
+}

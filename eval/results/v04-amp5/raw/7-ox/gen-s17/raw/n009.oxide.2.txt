@@ -1,0 +1,5 @@
+fn main() {
+    let num = 1234;
+    let reversed_num = reverse(int_to_str(num).chars().map(|c| parse_int(c.to_string()).unwrap_or(0)).collect());
+    print(reversed_num);
+}

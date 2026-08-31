@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let sum = range(1, 21)
+        .filter(|x| x % 2 == 0)
+        .sum()
+    print(sum)
+}
+```

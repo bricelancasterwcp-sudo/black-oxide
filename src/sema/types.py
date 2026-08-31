@@ -187,6 +187,18 @@ BUILTINS: dict[str, BuiltinSig] = {
         modes=("read", "read"),
         generics=(_A,),
     ),
+    # filter(v, pred) -> Vec<T>: the elements satisfying the predicate.
+    # Reads its vector (like count_if) and returns a fresh one, so the
+    # source stays usable -- `len(filter(v, p))` then `len(v)` is legal.
+    # Ships ALONGSIDE count_if deliberately (SPEC 63.2): the two spell the
+    # same intent at different token costs and different familiarity, and
+    # the wave measures which one the model actually reaches for.
+    "filter": BuiltinSig(
+        params=(TCon("Vec", (_A,)), TCon("Pred", (_A,))),
+        ret=TCon("Vec", (_A,)),
+        modes=("read", "read"),
+        generics=(_A,),
+    ),
     # ---- v0.4 wave-3 builtins (Task 2 TWO-EYED gate ruling: swap/reverse
     # ranked 1-2 by the COST census with zero reply demand; set on 18/18
     # mechanical rejection AND measured not to substitute for swap), modes

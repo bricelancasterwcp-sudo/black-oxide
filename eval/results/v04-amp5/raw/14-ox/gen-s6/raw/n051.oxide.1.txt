@@ -1,0 +1,7 @@
+```
+fn main() {
+    let word = "granite"
+    print(word.chars()[0])
+    print(word.chars()[word.chars().len() - 1])
+}
+```

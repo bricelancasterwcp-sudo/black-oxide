@@ -1,0 +1,11 @@
+fn main() {
+    let readings = push(push(push(push(vec(), 6), 11), 3), 14);
+    readings.push(9);
+
+    let count = count_if(readings.clone(), |x| x > 5);
+    print(count);
+    println!(); // Add a newline for separation
+
+    let max_reading = max(&readings)?;
+    print(max_reading);
+}

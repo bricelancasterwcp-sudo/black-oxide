@@ -1,0 +1,8 @@
+```oxide
+fn main() {
+    let s = "mississippi"
+    print(count(s.chars(), |c| c == 's'))
+    let unique_chars: Vec<Str> = s.chars().filter(|&c| !unique_chars.contains(c)).collect()
+    print(unique_chars.len())
+}
+```

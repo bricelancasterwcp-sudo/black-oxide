@@ -1,0 +1,21 @@
+```rust
+struct Figure { x: Int, y: Int }
+
+fn main() {
+    let fig8 = Figure { x: 3, y: 5 };
+    let fig3 = Figure { x: 1, y: 2 };
+    let fig6 = Figure { x: 4, y: 9 };
+
+    // Corrected line to initialize the vector of figures
+    let mut figures: Vec<Figure> = vec![fig8, fig3, fig6];
+
+    let min_x = *min(figures.iter().map(|f| &f.x)).expect("No figure with x value");
+    println(min_x);
+
+    let max_x = *max(figures.iter().map(|f| &f.x)).expect("No figure with x value");
+
+    // Corrected line to calculate the gap
+    let gap = max_x - min_x;
+    println(gap);
+}
+```

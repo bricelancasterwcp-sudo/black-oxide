@@ -1,0 +1,9 @@
+fn main() {
+    let entries = vec!(Str::from("8"), Str::from("oak"), Str::from("15"));
+    for entry in entries {
+        match parse_int(entry) {
+            Some(num) => print_str(&num.to_string()),
+            None => print_str("bad"),
+        }
+    }
+}

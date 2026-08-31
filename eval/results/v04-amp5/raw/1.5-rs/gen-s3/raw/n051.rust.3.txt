@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let word = "granite";
+    println!("{:?}", word.chars().nth(0).unwrap());
+    println!("{:?}", word.chars().rev().nth(1).unwrap());
+}
+```
+The original program was not printing the correct output because `word.chars().rev().nth(1).unwrap()` returns a reference to the character at the index of one less than the length of the string (since it is counting from the end), and `unwrap()` is called on this reference, which means that the program will panic if the index does not exist. The correct approach would be to use `word.chars().rev().nth(0).unwrap()`, which returns a reference to the character at the index of one less than the length of the string (since it is counting from the end), and `unwrap()` is called on this reference, which means that the program will panic if the index does not exist.

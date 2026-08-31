@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let s = 4.0;
+    let r = 3.0;
+
+    // Calculate the area of a square
+    let square_area = s * s;
+
+    // Calculate the area of a circle
+    let circle_area = 3.14159 * r * r;
+
+    println!("The area of a square with side {} is {:.2}", s, square_area);
+    println!("The area of a circle with radius {} is {:.2}", r, circle_area);
+}
+```

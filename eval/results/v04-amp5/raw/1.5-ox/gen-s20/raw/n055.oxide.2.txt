@@ -1,0 +1,10 @@
+fn main() {
+    match &[8, "oak", 15] {
+        [x, y, z] => {
+            println!("{}", x);
+            println!("{}", y);
+            println!("{}", z);
+        }
+        _ => println!("bad")
+    }
+}

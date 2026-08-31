@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let n = 9875;
+    let mut sum = 0;
+
+    while n > 0 {
+        sum += n % 10;
+        n /= 10;
+    }
+
+    print(sum);
+}
+```
+
+In the original program, there were multiple semicolons at different lines, which caused syntax errors. The semicolons were being interpreted as ending statements but were actually part of the expressions. They had to be removed to correct the program and make it syntactically valid.

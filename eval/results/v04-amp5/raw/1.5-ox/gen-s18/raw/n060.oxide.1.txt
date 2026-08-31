@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let total = 0;
+    let count = 0;
+    for c in a1b22.chars() {
+        if c.is_digit(10) {
+            total += c.to_digit(10).unwrap();
+            count += 1;
+        }
+    }
+    println!("Total: {}", total);
+    println!("Count: {}", count);
+}
+```
+
+The program iterates over each character in the string `a1b22`. It checks if a character is a digit using `c.is_digit(10)`, converts it to an integer with `to_digit(10).unwrap()`, and adds it to the total. If a digit is found, it also increments the count. Finally, it prints out the total and the count of digit characters.

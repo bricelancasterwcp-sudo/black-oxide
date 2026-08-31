@@ -1,0 +1,17 @@
+Here is the completed program:
+
+```rust
+fn main() {
+    let nums = [10, 20]; // Declare an array of size 2
+
+    match nums.get(0) { // Get the value at index 0
+        Some(n) => println!("{}", n), // Print if there is a value, otherwise do nothing
+        None => {} // Do nothing if there is no value
+    }
+
+    match nums.get(3) { // Get the value at index 3
+        Some(n) => println!("{}", n), // Print if there is a value, otherwise do nothing
+        None => {} // Do nothing if there is no value
+    }
+}
+```

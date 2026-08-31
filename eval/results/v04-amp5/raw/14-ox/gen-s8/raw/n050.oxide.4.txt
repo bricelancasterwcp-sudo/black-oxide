@@ -1,0 +1,12 @@
+```text
+fn main() {
+    let scores = vec();
+    push(scores, 9);
+    push(scores, 2);
+    push(scores, 5);
+    let sorted_scores = sort(scores);
+    for score in reverse(sorted_scores) {
+        print(score)
+    }
+}
+```

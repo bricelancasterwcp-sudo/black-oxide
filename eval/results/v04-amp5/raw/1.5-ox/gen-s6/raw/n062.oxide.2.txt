@@ -1,0 +1,22 @@
+```
+fn main() {
+    let mut green = true;
+    let mut red = false;
+    let mut yellow = false;
+
+    loop {
+        if green {
+            print_str("go");
+            green = false;
+            red = true;
+        } else if red {
+            print_str("stop");
+            red = false;
+            yellow = true;
+        } else if yellow {
+            print_str("wait");
+            yellow = false;
+        }
+    }
+}
+```

@@ -1,0 +1,37 @@
+```rust
+use std::str;
+
+// Define a struct to store labels and vectors of integers
+struct Reading { label: String, values: Vec<Int> }
+
+fn main() {
+    // Example data for the reading
+    let r1 = Reading { label: "lab".to_string(), values: push(push(vec![3], 42)) };
+    let r2 = Reading { label: "lab2".to_string(), ..r1 };
+    let r3 = Reading { label: "lab3".to_string(), values: push(push(vec![8], 9, 7)) };
+
+    // Initialize variables to store the minimum and maximum values
+    let mut min_val = Int::MAX;
+    let mut max_val = Int::MIN;
+
+    // Iterate over each reading's value vector to find the minimum and maximum
+    for r in vec![r1, r2, r3] {
+        for &val in &r.values {
+            if val < min_val {
+                min_val = val;
+            }
+            if val > max_val {
+                max_val = val;
+            }
+        }
+    }
+
+    // Calculate the gap between the maximum and minimum values
+    let gap = max_val - min_val;
+
+    // Print the smallest figure and the gap between them
+    println!("{}", min_val);  // Field access copies: r1 stays usable
+    print_str(", ");  // Print a comma for readability
+    println!("{}", gap);  // Integer to String conversion: gap becomes a Str
+}
+```

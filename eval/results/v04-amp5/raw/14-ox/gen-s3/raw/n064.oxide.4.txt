@@ -1,0 +1,21 @@
+```rust
+fn main() {
+    let v = vec();
+    let v = push(v, 10);
+    let v = push(v, 20);
+
+    match get(v, 1) {
+        Some(n) => print(n),
+        None => print_str("None"),
+    }
+
+    let v = vec();  // Reinitialize v to avoid moving it
+    let v = push(v, 10);
+    let v = push(v, 20);
+
+    match get(v, 4) {
+        Some(n) => print(n),
+        None => print_str("None"),
+    }
+}
+```

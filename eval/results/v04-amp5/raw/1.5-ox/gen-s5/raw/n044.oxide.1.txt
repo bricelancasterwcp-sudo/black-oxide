@@ -1,0 +1,19 @@
+```rust
+use std::io;
+
+fn deposit(balance: Int) -> Int {
+    println!("Deposit {}", balance);
+    return balance + 1;
+}
+
+fn main() {
+    let mut balance = 0;
+    balance = deposit(3);
+    balance = deposit(1);
+    balance = deposit(4);
+    balance = deposit(1);
+    balance = deposit(5);
+
+    println!("Total balance: {}", balance);
+}
+```

@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let nums = [5, 12, 3, 18, 9];
+    let cutoff = 10;
+    let under_cutoff = nums.iter().filter(|&x| x < cutoff).count();
+    let at_or_over_cutoff = nums.iter().filter(|&x| x >= cutoff).count();
+
+    println!("Under cutoff: {}", under_cutoff);
+    println!("At or over cutoff: {}", at_or_over_cutoff);
+}
+```

@@ -1,0 +1,27 @@
+```rust
+struct Number { value: Option<Int> }
+
+fn sum_and_count_unknowns(numbers: Vec<Number>) -> (Int, Int) {
+    let mut sum = 0;
+    let mut unknown_count = 0;
+    for n in numbers {
+        match n.value {
+            Some(v) => sum += v,
+            None => unknown_count += 1,
+        }
+    }
+    (sum, unknown_count)
+}
+
+fn main() {
+    let numbers = vec![
+        Number { value: Some(7) },
+        Number { value: None },
+        Number { value: Some(9) },
+        Number { value: None },
+    ];
+    let (total, count) = sum_and_count_unknowns(numbers);
+    print(total);
+    print(count);
+}
+```

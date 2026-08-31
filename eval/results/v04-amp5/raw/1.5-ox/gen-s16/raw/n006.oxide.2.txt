@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let mut n = 1;
+    while n * n <= 100 {
+        n *= 2;
+    }
+    println!("{} is the biggest power of two less than or equal to 100", n);
+}
+```

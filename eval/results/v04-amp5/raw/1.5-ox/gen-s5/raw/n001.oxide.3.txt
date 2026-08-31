@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let mut sum = 0;
+    for x in 1..=5 {
+        sum += x * x * x;
+    }
+    print(sum);
+}
+```

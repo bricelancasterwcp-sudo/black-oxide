@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut queue = vec![1, 2, 3, 4, 5];
+
+    // Exchange the first and last entries
+    queue.swap(0, queue.len() - 1);
+
+    // Print each entry on a new line
+    for &item in &queue {
+        println!("{}", item);
+    }
+}
+```

@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let arr = [9, 2, 12, 5, 16];
+    let mut count = 0;
+    for &x in arr.iter() {
+        if x < 10 {
+            print!("{}", x);
+            count += 1;
+        }
+    }
+    println!();
+    println!("Number of kept entries: {}", count);
+}
+```

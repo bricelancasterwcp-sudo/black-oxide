@@ -1,0 +1,16 @@
+```rust
+fn digit_sum(n: Int) -> Int {
+    let mut sum = 0;
+    let mut num = n;
+    while num > 0 {
+        sum += num % 10;
+        num /= 10;
+    }
+    sum
+}
+
+fn main() {
+    let number = 9875;
+    print(digit_sum(number));
+}
+```

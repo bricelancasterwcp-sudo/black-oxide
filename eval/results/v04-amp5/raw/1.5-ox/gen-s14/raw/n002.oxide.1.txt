@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let mut product = 1;
+    for x in 1..=6 {
+        product *= x;
+    }
+    print(product);
+}
+```

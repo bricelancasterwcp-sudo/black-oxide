@@ -1,0 +1,24 @@
+```rust
+fn main() {
+    let mut vowel_count = 0;
+    let mut consonant_count = 0;
+
+    for c in "abcdefghijklmnopqrstuvwxyz".chars() {
+        if is_vowel(c) {
+            vowel_count += 1;
+        } else {
+            consonant_count += 1;
+        }
+    }
+
+    println!("Vowels: {}", vowel_count);
+    println!("Consonants: {}", consonant_count);
+}
+
+fn is_vowel(c: char) -> bool {
+    match c.to_ascii_lowercase() {
+        'a' | 'e' | 'i' | 'o' | 'u' => true,
+        _ => false,
+    }
+}
+```

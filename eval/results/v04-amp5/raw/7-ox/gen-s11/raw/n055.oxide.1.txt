@@ -1,0 +1,10 @@
+```oxide
+fn main() {
+    for line in ["8", "oak", "15"] {
+        match parse_int(line) {
+            Some(n) => print(n),
+            None => print_str("bad"),
+        }
+    }
+}
+```

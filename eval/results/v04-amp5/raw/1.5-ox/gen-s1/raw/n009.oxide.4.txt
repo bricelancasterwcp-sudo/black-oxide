@@ -1,0 +1,11 @@
+```
+fn main() {
+    let mut n = 1234;
+    print_reverse_digits(n);
+}
+
+fn print_reverse_digits(mut n: Int) {
+    let digits = to_string(n).chars().rev().collect::<String>();
+    println!("{}", digits);
+}
+```

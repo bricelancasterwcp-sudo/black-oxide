@@ -1,0 +1,15 @@
+```rust
+fn reverse(v: Vec<Int>) -> Vec<Int> {
+    let mut result = Vec::with_capacity(v.len());
+    for i in (0..v.len()).rev() {
+        result.push(v[i]);
+    }
+    result
+}
+
+fn main() {
+    let v = push(push(vec(), 4), 3);
+    let reversed_v = reverse(v);
+    println!("{}", int_to_str(reversed_v[0])); // Print the first digit
+}
+```

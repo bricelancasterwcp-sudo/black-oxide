@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let batch = vec![9, 2, 12, 5, 16];
+    let filtered: Vec<Int> = filter(batch, |&x| x < 10);
+    for &item in &filtered {
+        print(item);
+    }
+    print_str("\n");
+    print(len(filtered));
+}
+```

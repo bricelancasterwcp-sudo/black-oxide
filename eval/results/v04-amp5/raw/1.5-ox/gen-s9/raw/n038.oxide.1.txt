@@ -1,0 +1,24 @@
+```rust
+struct Sensor {
+    reading: Int,
+}
+
+impl Sensor {
+    fn read(&self) -> Int {
+        self.reading
+    }
+
+    fn set_reading(&mut self, value: Int) {
+        if value < 0 || value > 7 {
+            panic!("Reading out of bounds");
+        }
+        self.reading = value;
+    }
+}
+
+fn main() {
+    let mut sensor = Sensor { reading: 0 };
+    sensor.set_reading(7);
+    println(sensor.read()); // Output: 7
+}
+```

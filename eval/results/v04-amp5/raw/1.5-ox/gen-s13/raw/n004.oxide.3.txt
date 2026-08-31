@@ -1,0 +1,32 @@
+```rust
+fn main() {
+    let mut a = 1;
+    let mut b = 1;
+    for _ in 0..9 {
+        let c = a + b;
+        a = b;
+        b = c;
+    }
+    print(a);
+}
+```
+
+The original program had several issues:
+- It was missing braces around the loop body.
+- The last line of the loop ended with `;`.
+- There were multiple semicolons in other places, which caused errors.
+
+Here is the corrected version:
+
+```rust
+fn main() {
+    let mut a = 1;
+    let mut b = 1;
+    for _ in 0..9 {
+        let c = a + b;
+        a = b;
+        b = c;
+    }
+    print(a);
+}
+```

@@ -1,0 +1,26 @@
+```rust
+fn exchange_first_last(v: Vec<Int>) -> Option<Vec<Int>> {
+    if v.len() < 2 {
+        return None;
+    }
+
+    let first = v.remove(0);
+    let last = v.pop().unwrap();
+
+    let mut result = vec![last];
+    for &i in v.iter().rev() {
+        result.push(i);
+    }
+    result.push(first);
+
+    Some(result)
+}
+
+fn main() {
+    let v = push(push(push(vec(), 3), 42), 5);
+    match exchange_first_last(v) {
+        Some(q) => println!("{:?}", q),
+        None => println!("Queue is too short"),
+    }
+}
+```

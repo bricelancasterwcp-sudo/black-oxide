@@ -1,0 +1,14 @@
+```ox
+fn count_vowels(s: Str) -> Int {
+    let vowels = vec("a", "e", "i", "o", "u")
+    count_if(chars(s), |c| contains(vowels, c))
+}
+
+fn main() {
+    let input = "keyboard"
+    let vowel_count = count_vowels(input)
+    let consonant_count = str_len(input) - vowel_count
+    print(vowel_count)
+    print(consonant_count)
+}
+```

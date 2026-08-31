@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let batch = vec(9, 2, 12, 5, 16);
+    let mut kept: Vec<Int> = vec();
+    
+    for item in batch {
+        if item < 10 {
+            kept = push(kept, item);
+        }
+    }
+    
+    for item in kept {
+        print(item);
+        print_str("\n");
+    }
+    
+    print(len(kept));
+}
+```

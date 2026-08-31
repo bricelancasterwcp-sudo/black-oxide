@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let mut count = [0; 26];
+    let word: &str = "coffee";
+
+    for ch in word.chars() {
+        if ch.is_alphabetic() {
+            count[ch as usize - 'a' as usize] += 1;
+        }
+    }
+
+    for (i, &c) in count.iter().enumerate() {
+        if c > 1 {
+            println!("{}", (b'a' + i as u8) as char);
+        }
+    }
+}
+```

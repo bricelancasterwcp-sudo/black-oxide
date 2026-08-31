@@ -1,0 +1,19 @@
+```
+fn calculate_line_value(units: Int, price: Int) -> Int {
+    units * price
+}
+
+fn main() {
+    let line1_units = 4
+    let line1_price = 3
+    let line2_units = 5
+    let line2_price = 2
+
+    let line1_value = calculate_line_value(line1_units, line1_price)
+    let line2_value = calculate_line_value(line2_units, line2_price)
+
+    print(line1_value)
+    print(line2_value)
+    print(line1_value + line2_value)
+}
+```

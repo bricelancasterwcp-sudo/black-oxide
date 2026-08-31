@@ -1,0 +1,21 @@
+```text
+struct Reading { label: Str, values: Vec<Int> }
+
+fn count_exceeding_five(v: Vec<Int>) -> Int {
+    count_if(v, |x| x > 5)
+}
+
+fn max_reading(v: Vec<Int>) -> Option<Int> {
+    max(v)
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: vec![6, 11, 3, 14, 9] }
+    print(count_exceeding_five(r.values))
+    let max_value = match max_reading(r.values) {
+        Some(n) => n,
+        None => -1
+    }
+    print(max_value)
+}
+```

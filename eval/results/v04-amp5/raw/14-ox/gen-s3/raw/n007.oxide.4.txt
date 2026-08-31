@@ -1,0 +1,8 @@
+fn digit_sum(n: Int) -> Int {
+    let digits = n.to_str().chars().map(|c| parse_int(c).unwrap_or(0));
+    sum(digits)
+}
+
+fn main() {
+    print(digit_sum(9875))
+}

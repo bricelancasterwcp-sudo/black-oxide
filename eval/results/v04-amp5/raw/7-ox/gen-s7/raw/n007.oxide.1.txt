@@ -1,0 +1,11 @@
+```oxide
+fn main() {
+    let n = 9875
+    let s = to_string(n)
+    let mut sum = 0
+    for ch in chars(s) {
+        sum += parse_int(ch)?
+    }
+    print(sum)
+}
+```

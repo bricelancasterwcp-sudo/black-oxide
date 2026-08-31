@@ -1,0 +1,12 @@
+fn main() {
+    let result = second_of_list(vec![7, 8, 9]);
+    println!("{:?}", result); // Output will be Some(8)
+}
+
+fn second_of_list(lst: Vec<i32>) -> Option<i32> {
+    if lst.len() > 1 {
+        return Some(lst[1]);
+    } else {
+        return None;
+    }
+}

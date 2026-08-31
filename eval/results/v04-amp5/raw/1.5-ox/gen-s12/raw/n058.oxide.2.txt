@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let coffee = String::from("coffee");
+    for (i, c) in coffee.chars().enumerate() {
+        if !coffee.contains(&c) && coffee[i + 1..].contains(&c) {
+            println!("{}", c);
+        }
+    }
+}
+```

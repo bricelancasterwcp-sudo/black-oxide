@@ -1,0 +1,18 @@
+```rust
+
+fn main() {
+    let numbers: [Option<i32>; 4] = [Some(7), None, Some(9), None];
+    let mut total = 0;
+    let mut none_count = 0;
+
+    for &num in numbers.iter() {
+        match num {
+            Some(n) => total += n,
+            None => none_count += 1,
+        }
+    }
+
+    println!("Total of the ones that do: {}", total);
+    println!("Number of ones that do not: {}", none_count);
+}
+```

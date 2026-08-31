@@ -1,0 +1,22 @@
+```rust
+fn main() {
+    let mut count = 0;
+    let mut sum = 0;
+    for text in vec!["7", "x", "9", "?"] {
+        if is_number(text) {
+            sum += parse_int(&text).unwrap_or(0);
+            count += 1;
+        }
+    }
+    print!("Total: {}", sum);
+    println!("Count: {}", count);
+}
+
+fn is_number(s: &str) -> bool {
+    s.chars().all(|c| c.is_digit(10))
+}
+
+fn parse_int(s: &str) -> Result<i32, std::num::ParseIntError> {
+    s.parse()
+}
+```

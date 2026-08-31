@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let v = vec![10, 20];
+    if !v.is_empty() {
+        println!("{}", v[0]);
+        if !v.len() < 4 {
+            println!("{}", v[3]);
+        }
+    }
+}
+```
+
+The program was rejected because it had several syntax errors:
+1. The list `vec!` declaration was missing a closing bracket.
+2. There were unexpected characters (`BANG`) at various locations, likely due to typos or incorrect indentation.
+3. The loop condition and the access to the vector elements were incomplete.

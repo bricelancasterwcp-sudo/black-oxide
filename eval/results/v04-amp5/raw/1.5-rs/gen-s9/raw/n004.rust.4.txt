@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let mut a = 1;
+    let mut b = 1;
+    for _ in 0..9 {
+        let c = a + b;
+        a = b;
+        b = c;
+    }
+    println!("The tenth term is {}", a);
+}
+```
+
+Explanation: The program was correctly written and compiled, but the output was incorrect. The issue was that in the loop condition `_ in 0..9`, it should be `in 0..10` to correctly calculate the tenth term of the sequence.

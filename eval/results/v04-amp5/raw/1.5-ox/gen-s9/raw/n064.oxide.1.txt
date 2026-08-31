@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let mut v = vec!(10, 20);
+    println!("{:?}", get(v, 0));
+    println!("{:?}", get(v, 3));
+}
+```
+This program uses a `Vec` to store the numbers 10 and 20. It retrieves elements at positions 0 and 3 using the `get` function and prints them.

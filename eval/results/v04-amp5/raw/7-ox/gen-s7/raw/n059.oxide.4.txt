@@ -1,0 +1,6 @@
+fn main() {
+    let s = "when in doubt go home";
+    let words = s.split(' ').count();
+    let chars = str_len(s);
+    print(words); print(chars);
+}

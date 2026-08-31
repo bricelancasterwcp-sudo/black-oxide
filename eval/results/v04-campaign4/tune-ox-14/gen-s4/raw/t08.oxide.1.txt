@@ -1,0 +1,10 @@
+fn main() {
+    let numbers = vec(3, 8, -2, 12, 7)
+    let count_positive = count_if(numbers, |x| x > 0)
+    print(count_positive)
+    let max_value = match max(numbers) {
+        Some(n) => n,
+        None => -1,
+    }
+    print(max_value)
+}

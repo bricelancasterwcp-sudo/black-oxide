@@ -1,0 +1,33 @@
+```rust
+fn count_exceeding(vec: Vec<Int>, threshold: Int) -> Int {
+    let mut count = 0
+    for x in vec {
+        if x > threshold {
+            count += 1
+        }
+    }
+    count
+}
+
+fn max_reading(vec: Vec<Int>) -> Option<Int> {
+    let mut max_val = None
+    for x in vec {
+        max_val = match max_val {
+            Some(current_max) => if x > current_max { Some(x) } else { Some(current_max) },
+            None => Some(x),
+        }
+    }
+    max_val
+}
+
+fn main() {
+    let readings = push(push(push(push(push(vec(), 6), 11), 3), 14), 9)
+    let count = count_exceeding(readings, 5)
+    print(count)
+    let readings = push(push(push(push(push(vec(), 6), 11), 3), 14), 9) // Reassign to use again
+    match max_reading(readings) {
+        Some(max_val) => print(max_val),
+        None => print_str("No readings"),
+    }
+}
+```

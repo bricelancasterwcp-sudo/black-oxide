@@ -144,6 +144,12 @@ _PRELUDE_FNS: tuple[tuple[str, str], ...] = (
         "    v.iter().filter(|e| p(e)).count() as i64\n"
         "}",
     ),
+    (
+        "filter",
+        "fn filter<T: Clone>(v: &Vec<T>, p: impl Fn(&T) -> bool) -> Vec<T> {\n"
+        "    v.iter().filter(|e| p(e)).cloned().collect()\n"
+        "}",
+    ),
     # v0.4 wave-3: swap/reverse/set. Each takes the vector by value and
     # returns it, wrapping the in-place std method -- the owned-in/
     # owned-out convention `sort` established. Out-of-range indices panic
@@ -285,6 +291,9 @@ BUILTIN_REF: dict[str, tuple[bool, ...]] = {
     # predicate by value -- a predicate literal is not a place, it is
     # emitted inline as a Rust closure.
     "count_if": (True, False),
+    # v0.4 wave-4: filter mirrors count_if -- reads the vector, takes the
+    # predicate by value (a predicate literal is not a place).
+    "filter": (True, False),
     "swap": (False, False, False),
     "reverse": (False,),
     "set": (False, False, False),

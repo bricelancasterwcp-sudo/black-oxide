@@ -1,0 +1,36 @@
+```text
+struct Reading { label: Str, values: Vec<Int> }
+
+fn count_exceeding_five(v: Vec<Int>) -> Int {
+    let count = 0
+    for x in v {
+        if x > 5 {
+            count += 1
+        }
+    }
+    count
+}
+
+fn max_reading(v: Vec<Int>) -> Option<Int> {
+    let mut max = None
+    for x in v {
+        if max.is_none() || x > unwrap_or(max, x) {
+            max = Some(x)
+        }
+    }
+    max
+}
+
+fn main() {
+    let readings = push(push(push(push(vec(), 6), 11), 3), 14)
+    let count = count_exceeding_five(readings)
+    print(count)
+
+    let readings2 = push(push(push(push(vec(), 6), 11), 3), 14)
+    let max_reading_value = max_reading(readings2)
+    match max_reading_value {
+        Some(n) => print(n),
+        None => print_str("No readings"),
+    }
+}
+```

@@ -1,0 +1,27 @@
+```
+struct Queue { data: Vec<Int> }
+
+fn swap_first_last(q: Queue) -> Queue {
+    let len = len(q.data)
+    if len < 2 {
+        return q
+    }
+    let first = get(q.data, 0).unwrap()
+    let last = get(q.data, len - 1).unwrap()
+    let middle = range(1, len - 1)
+    let new_data = push(push(push(vec(), last), middle...), first)
+    Queue { data: new_data }
+}
+
+fn print_queue(q: Queue) {
+    for x in q.data {
+        print(x)
+    }
+}
+
+fn main() {
+    let q = Queue { data: vec!(1, 2, 3, 4, 5) }
+    let swapped = swap_first_last(q)
+    print_queue(swapped)
+}
+```

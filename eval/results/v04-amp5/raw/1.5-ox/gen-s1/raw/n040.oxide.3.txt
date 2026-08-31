@@ -1,0 +1,14 @@
+```
+struct Shape {
+    side: Float,
+}
+
+fn area(c: Circle) -> Float {
+    c.radius * c.radius * std::f64::consts::PI
+}
+
+fn main() {
+    let s = Square { side: 4.0 };
+    print(area(s));
+}
+```

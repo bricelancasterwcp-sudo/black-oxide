@@ -1,0 +1,12 @@
+```
+fn main() {
+    let mut n = 100
+    while n > 0 {
+        if (n & (n - 1)) == 0 {
+            print(n)
+            break
+        }
+        n -= 1
+    }
+}
+```

@@ -1,0 +1,40 @@
+```rust
+struct Figure {
+    value: Int,
+}
+
+fn find_smallest(v: Vec<Figure>) -> Int {
+    let mut min_value = v[0].value;
+    for figure in &v {
+        if figure.value < min_value {
+            min_value = figure.value;
+        }
+    }
+    min_value
+}
+
+fn find_largest(v: Vec<Figure>) -> Int {
+    let mut max_value = v[0].value;
+    for figure in &v {
+        if figure.value > max_value {
+            max_value = figure.value;
+        }
+    }
+    max_value
+}
+
+fn main() {
+    let figures = vec![
+        Figure { value: 8 },
+        Figure { value: 3 },
+        Figure { value: 11 },
+        Figure { value: 6 },
+    ];
+
+    let smallest = find_smallest(figures);
+    println(smallest);
+
+    let largest = find_largest(figures);
+    println(largest - smallest); // Print the gap
+}
+```

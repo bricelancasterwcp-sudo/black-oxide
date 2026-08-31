@@ -1,0 +1,1 @@
+fn main() { let fruit = "banana"; for i in range(0, str_len(fruit)) { if chars(fruit)[i] == "n" { print(i); } } }

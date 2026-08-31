@@ -1,0 +1,16 @@
+```rust
+struct Figure { x: Int, y: Int }
+
+fn main() {
+    let fig8 = Figure { x: 3, y: 5 };
+    let fig3 = Figure { x: 1, y: 2 };
+    let fig6 = Figure { x: 4, y: 9 };
+
+    let min_x = min(vec![fig8.x, fig3.x, fig6.x]);
+    println(min_x);
+
+    let max_x = max(vec![fig8.x, fig3.x, fig6.x]);
+    let gap = max_x - min_x;
+    println(gap);
+}
+```

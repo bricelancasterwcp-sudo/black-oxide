@@ -1,0 +1,19 @@
+```rust
+struct Measurement { value: Int }
+
+fn main() {
+    let mut measurements = vec![
+        Measurement { value: 9 },
+        Measurement { value: 2 },
+        Measurement { value: 7 },
+        Measurement { value: 4 }
+    ];
+
+    measurements.sort_by(|a, b| a.value.cmp(&b.value));
+
+    for m in measurements {
+        print_int(m.value);
+        println!();
+    }
+}
+```

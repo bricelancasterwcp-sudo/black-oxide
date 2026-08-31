@@ -1,0 +1,21 @@
+fn main() {
+    let text1 = String::from("7, x, 9");
+    let text2 = String::from("x");
+
+    let mut num_count = 0;
+    
+    for c in text1.chars() {
+        if "0..=9".contains(c) {
+            num_count += 1;
+        }
+    }
+
+    for c in text2.chars() {
+        if "0..=9".contains(c) {
+            num_count += 1;
+        }
+    }
+    
+    println!("Total: {}", num_count);
+    println!("Count of non-number characters: {}", (text1.len() + text2.len()) - num_count);
+}

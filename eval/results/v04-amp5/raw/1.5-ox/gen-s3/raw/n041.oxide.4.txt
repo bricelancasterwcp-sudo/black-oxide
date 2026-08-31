@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let readings = vec![9, 2, 7, 4];
+    for &r in readings.iter().sorted() {
+        print_str(&format!("{}", r));
+        println!();
+    }
+}
+```

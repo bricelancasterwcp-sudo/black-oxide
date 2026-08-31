@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let nums = [8, 3, 11, 6];
+
+    // Sort the array in ascending order
+    nums.sort_unstable();
+
+    // Get the smallest and largest elements
+    let min = *nums.first().unwrap();
+    let max = *nums.last().unwrap();
+
+    // Print the smallest figure and gap between the largest and the smallest
+    println!("Smallest figure: {}", min);
+    println!("Gap between the largest and the smallest: {}", max - min);
+}
+```

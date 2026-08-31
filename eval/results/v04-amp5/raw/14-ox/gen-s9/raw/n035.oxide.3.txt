@@ -1,0 +1,20 @@
+```text
+fn safe_divide(numerator: Int, denominator: Int) -> Result<Int, Str> {
+    if denominator == 0 {
+        Err("Cannot divide by zero")
+    } else {
+        Ok(numerator / denominator)
+    }
+}
+
+fn main() {
+    let result = match safe_divide(20, 4) {
+        Ok(x) => x,
+        Err(_) => {
+            print_str("bad");
+            return
+        }
+    };
+    print(result);
+}
+```

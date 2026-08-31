@@ -1,0 +1,30 @@
+```rust
+use std::io;
+
+struct List { elements: Vec<Int> }
+
+impl List {
+    fn new(elements: Vec<Int>) -> List {
+        List { elements }
+    }
+
+    fn walk(self) -> Int {
+        let mut total = 0;
+        for &x in self.elements.iter() {
+            if x % 2 != 0 {
+                println!("{} * 2", 2 * x);
+            } else {
+                total += x;
+            }
+        }
+        total
+    }
+}
+
+fn main() -> io::Result<()> {
+    let list = List::new(vec![7, 4, 9, 10]);
+    let result = list.walk();
+    println!("Total of even entries: {}", result);
+    Ok(())
+}
+```

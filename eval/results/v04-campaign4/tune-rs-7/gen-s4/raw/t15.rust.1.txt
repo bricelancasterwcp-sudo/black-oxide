@@ -1,0 +1,12 @@
+fn main() {
+    let mut sum = 0;
+    let mut fail_count = 0;
+    for s in ["12", "x", "30"] {
+        match s.parse::<i64>() {
+            Ok(n) => sum += n,
+            Err(_) => fail_count += 1,
+        }
+    }
+    println!("{}", sum);
+    println!("{}", fail_count);
+}

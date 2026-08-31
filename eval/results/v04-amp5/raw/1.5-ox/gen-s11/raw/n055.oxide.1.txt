@@ -1,0 +1,14 @@
+```rust
+use std::fmt::{self};
+
+fn main() {
+    let input: [String; 3] = ["8", "oak", "15"].map(|s| s.to_string());
+    
+    for (i, item) in input.iter().enumerate() {
+        match item.parse::<u32>() {
+            Ok(n) => print!("{} is {}", n, if i == 0 { "the first" } else if i == 1 { "the second" } else { "the third" }),
+            Err(_) => println!("bad"),
+        }
+    }
+}
+```

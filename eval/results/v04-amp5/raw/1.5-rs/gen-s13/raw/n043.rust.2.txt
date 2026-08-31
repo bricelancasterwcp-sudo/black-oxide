@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut queue: Vec<i32> = vec![1, 2, 3, 4, 5];
+    
+    // Splitting the vector into two mutable sub-slices
+    let (mut first_half, second_half) = queue.split_at_mut(queue.len() / 2);
+    std::mem::swap(first_half, second_half);
+
+    for item in queue {
+        println!("{}", item);
+    }
+}
+```

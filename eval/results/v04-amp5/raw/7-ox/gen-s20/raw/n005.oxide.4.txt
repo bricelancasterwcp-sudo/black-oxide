@@ -1,0 +1,6 @@
+```oxide
+fn main() {
+    let sum = (1..=20).filter(|x| x % 2 == 0).sum();
+    print(sum);
+}
+```

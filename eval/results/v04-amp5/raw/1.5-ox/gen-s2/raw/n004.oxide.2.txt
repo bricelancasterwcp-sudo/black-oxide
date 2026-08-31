@@ -1,0 +1,21 @@
+```rust
+fn main() {
+    let mut a = 1;
+    let mut b = 1;
+
+    for _ in 0..9 {
+        let temp = a + b;
+        a = b;
+        b = temp;
+    }
+
+    println!("{}", b);
+}
+```
+
+Explanation of the errors and how they were fixed:
+The original program had two issues:
+1. The use of semicolons instead of newline characters at various places in the code.
+2. Missing item declarations for `let` statements.
+
+Fixed program: Added a new line after each `println!()` statement to correct the syntax error, and added missing `{}` around the loop and `println!()` calls to properly define items and statements.

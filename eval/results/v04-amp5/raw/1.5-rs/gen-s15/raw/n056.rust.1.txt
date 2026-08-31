@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let nums = [7, 5, 9, ?];
+    let mut sum = 0;
+    let mut count = 0;
+
+    for &num in nums.iter() {
+        if num.is_integer() {
+            sum += num as i32;
+            count += 1;
+        }
+    }
+
+    println!("Sum: {}", sum);
+    println!("Count: {}", count);
+}
+```

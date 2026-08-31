@@ -1,0 +1,11 @@
+```text
+fn main() {
+    let scores = vec()  // Corrected syntax for an empty vector
+    let scores = push(push(scores, 2), 9)  // Adding elements to the vector
+    let scores = push(scores, 5)
+    let sorted_scores = sort(scores)
+    for s in sorted_scores {
+        print(s)
+    }
+}
+```

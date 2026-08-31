@@ -1,0 +1,22 @@
+```
+fn fib(n: Int) -> Int {
+    if n <= 2 {
+        1
+    } else {
+        let mut a = 1
+        let mut b = 1
+        let mut i = 3
+        while i <= n {
+            let next = a + b
+            a = b
+            b = next
+            i += 1
+        }
+        b
+    }
+}
+
+fn main() {
+    print(fib(10))
+}
+```

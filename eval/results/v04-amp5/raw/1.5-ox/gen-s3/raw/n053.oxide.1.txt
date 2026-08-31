@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let mut drum = "drum";
+    reverse(drum);
+    println!("{}", drum);
+
+    println!("{}", drum.chars().collect::<String>());
+}
+```
+
+Explanation:
+1. We declare a mutable variable `drum` with the value `"drum"`.
+2. We call the `reverse` function to reverse the characters in `drum`. In Rust, reversing a string is done by using the `chars` method which yields each character of the string as an iterator. The `collect` method then gathers these characters back into a new vector.
+3. Finally, we print the reversed string and the normal reading of `drum` (which remains unchanged due to immutability of strings in Rust).

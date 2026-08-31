@@ -1,0 +1,1 @@
+fn main() { let word = "granite" let chars_vec = chars(word) print(chars_vec.get(0)) print(chars_vec.get(chars_vec.len() - 1)) }

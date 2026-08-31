@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut count = 0;
+    for i in 1..=36 { // Fix: remove extra semicolons and add missing colon
+        if i % 36 == 0 { // Fix: missing semi-colon
+            count += 1; // Fix: missing semi-colon
+        }
+    }
+    println!(); // Fix: add a newline at the end of the function body
+}
+```

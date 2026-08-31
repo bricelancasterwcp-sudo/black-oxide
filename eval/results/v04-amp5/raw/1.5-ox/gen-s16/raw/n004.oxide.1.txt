@@ -1,0 +1,21 @@
+```rust
+fn main() {
+    let mut a = 1;
+    let mut b = 1;
+
+    for _ in 2..=9 {
+        let temp = a + b;
+        a = b;
+        b = temp;
+    }
+
+    println!("{}", b);
+}
+```
+
+Explanation of the code:
+- We start by initializing `a` and `b` to 1, as per the sequence's definition.
+- We then enter a loop that runs from 2 to 9 (inclusive), incrementing a counter each time through the loop.
+- Inside the loop, we calculate the next term by adding the two previous terms (`temp = a + b`).
+- We then update `a` and `b` to be the last two terms calculated in the loop (`a = b`, `b = temp`).
+- After the loop ends, `b` will hold the tenth term of the sequence (since we incremented the counter by 9 before breaking out of the loop).

@@ -1,0 +1,29 @@
+```rust
+struct Queue(Vec<Int>);
+
+impl Queue {
+    fn exchange(&mut self) -> (Int, Int) {
+        let len = self.0.len();
+        if len < 2 {
+            panic!("Queue must have at least two elements");
+        }
+        let first = self.0.remove(0);
+        let last = self.0.pop().unwrap();
+        (first, last)
+    }
+
+    fn print(&self) {
+        for &x in &self.0 {
+            print!("{x}");
+        }
+        println!("");
+    }
+}
+
+fn main() {
+    let mut queue = Queue(vec![1, 2, 3, 4, 5]);
+    let (first, last) = queue.exchange();
+    queue.print(); // prints: 5
+                    //         1
+}
+```

@@ -1,0 +1,32 @@
+```rust
+fn main() {
+    // Create a new Rectangle instance
+    let rect = Rectangle { width: 9, height: 3 };
+
+    // Calculate and print the area of the rectangle
+    let area = rect.area();
+    println!("The area of the rectangle is: {}", area);
+
+    // Calculate and print the perimeter of the rectangle
+    let perimeter = rect.perimeter();
+    println!("The perimeter of the rectangle is: {}", perimeter);
+}
+
+// Define a Rectangle struct with width and height fields
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+impl Rectangle {
+    // Method to calculate the area of the rectangle
+    fn area(&self) -> Int {
+        self.width * self.height
+    }
+
+    // Method to calculate the perimeter of the rectangle
+    fn perimeter(&self) -> Int {
+        2 * (self.width + self.height)
+    }
+}
+```

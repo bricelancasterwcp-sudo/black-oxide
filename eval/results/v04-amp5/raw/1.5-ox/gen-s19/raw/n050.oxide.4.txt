@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut scores = vec![9, 2, 5];
+    scores.sort_unstable();
+    for &score in &scores {
+        println!("{}", score);
+    }
+}
+```
+
+The errors were due to incorrect usage of square brackets and the `&` operator. The correct syntax is to use `sort_unstable`, not `sort` (which sorts in-place) and `for &score in &scores` to iterate over each element.

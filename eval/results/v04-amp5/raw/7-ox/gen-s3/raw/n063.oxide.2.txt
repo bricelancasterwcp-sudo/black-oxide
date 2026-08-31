@@ -1,0 +1,19 @@
+```rust
+struct Line { items: Vec<Int>, price_per_item: Int }
+
+fn main() {
+    let line1 = Line { items: push(push(vec(), 4), 4), price_per_item: 3 }
+    let line2 = Line { items: push(push(vec(), 5), 5), price_per_item: 2 }
+
+    let value_line1 = line1.items.len() * line1.price_per_item
+    let value_line2 = line2.items.len() * line2.price_per_item
+
+    print(value_line1)
+    print_str("\n")
+    print(value_line2)
+
+    let total_value = (value_line1) + (value_line2)
+    print_str("\n")
+    print(total_value)
+}
+```

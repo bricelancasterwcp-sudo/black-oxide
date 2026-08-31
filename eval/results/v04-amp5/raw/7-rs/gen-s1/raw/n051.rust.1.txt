@@ -1,0 +1,5 @@
+fn main() {
+    let word = "granite";
+    println!("{}", &word[0..1]);
+    println!("{}", &word[word.len()-1..word.len()]);
+}

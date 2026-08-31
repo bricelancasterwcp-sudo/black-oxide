@@ -1,0 +1,22 @@
+```rust
+fn main() {
+    // Rectangle 3 by 4
+    let rect1_width = 3;
+    let rect1_height = 4;
+    let rect1_perimeter = 2 * (rect1_width + rect1_height);
+    println!("{}", rect1_perimeter);
+
+    // Triangle with sides 3, 4, 5
+    let tri_side1 = 3;
+    let tri_side2 = 4;
+    let tri_side3 = 5;
+    let tri_perimeter = tri_side1 + tri_side2 + tri_side3;
+    println!("{}", tri_perimeter);
+
+    // Rectangle 2 by 5
+    let rect2_width = 2;
+    let rect2_height = 5;
+    let rect2_perimeter = 2 * (rect2_width + rect2_height);
+    println!("{}", rect2_perimeter);
+}
+```

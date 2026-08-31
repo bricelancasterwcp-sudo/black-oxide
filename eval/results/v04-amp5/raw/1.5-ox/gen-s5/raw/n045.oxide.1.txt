@@ -1,0 +1,25 @@
+```rust
+use std::io;
+
+struct Log { entries: Vec<Int> }
+
+impl Log {
+    fn new() -> Self {
+        Log { entries: vec![6, 7, 8, 9] }
+    }
+
+    fn start(&self) -> Int {
+        self.entries[0]
+    }
+
+    fn end(&self) -> Int {
+        self.entries[self.entries.len() - 1]
+    }
+}
+
+fn main() {
+    let log = Log::new();
+    println!("{}", log.start());
+    println!("{}", log.end());
+}
+```

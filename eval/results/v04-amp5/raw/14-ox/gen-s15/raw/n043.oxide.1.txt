@@ -1,0 +1,12 @@
+```text
+fn main() {
+    let mut queue = push(push(push(push(push(vec(), 1), 2), 3), 4), 5)
+    let first = get(queue, 0)?
+    let last = get(queue, len(queue) - 1)?
+    queue = set(queue, 0, last)
+    queue = set(queue, len(queue) - 1, first)
+    for x in queue {
+        print(x)
+    }
+}
+```

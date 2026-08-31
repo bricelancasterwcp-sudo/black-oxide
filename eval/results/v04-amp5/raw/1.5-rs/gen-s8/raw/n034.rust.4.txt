@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    assert_eq!(second_entry(&[7]), Some(8));
+    assert_eq!(second_entry(&[]), None);
+    assert_eq!(second_entry(&[9, 10]), Some(10));
+}
+
+fn second_entry<T>(xs: &[T]) -> Option<&T> {
+    xs.get(1)
+}
+```

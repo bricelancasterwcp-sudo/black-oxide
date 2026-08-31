@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let s = "drum";
+    let reversed = concat(s.chars().rev().collect::<String>().as_str(), "");
+    print(reversed);
+    print_str(s);
+}
+```

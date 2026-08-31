@@ -1,0 +1,23 @@
+```oxide
+struct Queue { values: Vec<Int> }
+
+fn swap_first_last(q: Queue) -> Queue {
+    let mut q = q;
+    let len = len(q.values);
+    if len > 0 {
+        let first = get(q.values, 0)?;
+        let last = get(q.values, len - 1)?;
+        set(q.values, 0, last)?;
+        set(q.values, len - 1, first)?;
+    }
+    q
+}
+
+fn main() {
+    let mut queue = Queue { values: push(push(push(push(vec(), 1), 2), 3), 4) };
+    queue = swap_first_last(queue);
+    for x in queue.values {
+        print(x);
+    }
+}
+```

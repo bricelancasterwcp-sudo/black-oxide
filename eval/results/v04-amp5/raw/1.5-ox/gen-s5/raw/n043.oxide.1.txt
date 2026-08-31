@@ -1,0 +1,49 @@
+```rust
+use std::collections::VecDeque;
+
+struct Queue<T> {
+    queue: VecDeque<T>,
+}
+
+impl<T> Queue<T> {
+    fn new() -> Self {
+        Queue { queue: VecDeque::new() }
+    }
+
+    fn push(&mut self, x: T) {
+        self.queue.push_back(x);
+    }
+
+    fn pop(&mut self) -> Option<T> {
+        self.queue.pop_front()
+    }
+
+    fn front(&self) -> Option<&T> {
+        self.queue.front()
+    }
+
+    fn back(&self) -> Option<&T> {
+        self.queue.back()
+    }
+}
+
+fn main() {
+    let mut q = Queue::new();
+    for i in 1..6 {
+        q.push(i);
+    }
+
+    if let Some(front) = q.front() {
+        if let Some(back) = q.back() {
+            q.pop_front();
+            q.pop_back();
+            q.push(*back);
+            q.push(*front);
+        }
+    }
+
+    while let Some(value) = q.pop() {
+        println!("{}", value);
+    }
+}
+```

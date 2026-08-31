@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let v = push(push(vec(), 7), 4);
+    v = push(v, 9);
+    v = push(v, 10);
+
+    let mut total = 0;
+
+    for x in v {
+        if x % 2 == 0 {
+            total += x;
+        } else {
+            print(x * 2);
+        }
+    }
+
+    print(total);
+}
+```

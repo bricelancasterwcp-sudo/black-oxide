@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let (x, y) = (13, 8);
+    let texts: Vec<&str> = vec!["7", "x", "9", "?"];
+    let mut numbers_count = 0;
+    
+    for &text in &texts {
+        if text.chars().all(|c| c.is_digit(10)) {
+            numbers_count += 1;
+        }
+    }
+
+    println!("Total of the ones that do: {}", numbers_count);
+    println!("How many do not: {}", texts.len() - numbers_count);
+}
+```

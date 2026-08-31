@@ -1,0 +1,12 @@
+```
+fn walk(numbers: Vec<Int>) {
+    let mut sum = 0;
+    for number in numbers.iter() {
+        if number % 2 == 1 {
+            println!("{}", number * 2);
+        } else {
+            sum += number;
+        }
+    }
+}
+```

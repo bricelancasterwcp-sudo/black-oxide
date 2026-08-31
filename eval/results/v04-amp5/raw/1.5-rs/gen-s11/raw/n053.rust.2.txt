@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let word = "drum";
+    for (i, ch) in word.chars().rev().enumerate() {
+        print!("{}", if i == 0 { ch } else { ' ' });
+    }
+    println!(" {}", word);
+}
+```

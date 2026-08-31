@@ -1,0 +1,8 @@
+fn main() {
+    let mut width = 2;
+    let height = 3;
+
+    width = 5;
+
+    println!("The area of the rectangle is: {}", width * height);
+}

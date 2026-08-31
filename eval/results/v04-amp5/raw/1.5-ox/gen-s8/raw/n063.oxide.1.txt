@@ -1,0 +1,12 @@
+```rust
+struct Line { unit_price: Int, quantity: Int }
+
+fn main() {
+    let line1 = Line { unit_price: 3, quantity: 4 };
+    let line2 = Line { unit_price: 2, quantity: 5 };
+
+    println!("Line 1 value: {}", line1.value());
+    println!("Line 2 value: {}", line2.value());
+    println!("Total value: {}", (line1 + line2).value());
+}
+```

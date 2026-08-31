@@ -1,0 +1,9 @@
+```
+fn main() {
+    let v = push(push(vec(), 10), 20)
+    let first = get(v, 0)?
+    print(first)
+    let second = get(v, 3)?
+    print(second)
+}
+```

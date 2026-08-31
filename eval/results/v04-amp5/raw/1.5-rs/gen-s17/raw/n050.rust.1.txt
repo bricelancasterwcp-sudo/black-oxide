@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let mut scores = vec![2, 9, 5];
+    scores.sort_by(|a, b| b.cmp(a));
+    
+    for &score in &scores {
+        println!("{}", score);
+    }
+}
+```
+
+This solution defines a function `main` where an array `scores` is created and filled with the numbers 2, 9, and 5. The `sort_by` method is used to sort the array in descending order (from highest to lowest). A loop then iterates over each score in the sorted array and prints it on a separate line.

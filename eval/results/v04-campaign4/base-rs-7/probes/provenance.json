@@ -1,0 +1,31 @@
+{
+  "arm": "rust",
+  "families": [
+    "gen",
+    "probes"
+  ],
+  "gguf": "base-7.q8_0.gguf",
+  "gguf_sha256": "2f2b0f712f60f5f0b01e4869724914858184005fba303b4b0928138ffb47f9ce",
+  "identity": {
+    "model_path": "/workspace/gguf/base-7.q8_0.gguf"
+  },
+  "include_lead": true,
+  "llamacpp_commit": "9723942adc518b43c4b95dc4dce6906903eb5e09",
+  "name": "base-rs-7",
+  "num_ctx": 8192,
+  "num_predict": 2048,
+  "seeds": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "temperature": 0.2,
+  "top_p": 0.95
+}

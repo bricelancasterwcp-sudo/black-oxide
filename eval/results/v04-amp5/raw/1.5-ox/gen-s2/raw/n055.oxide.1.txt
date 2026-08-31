@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let eight = 8;
+    let oak = "oak";
+    let fifteen = 15;
+
+    println!("{}", eight); // should print 8
+    match oak {
+        Some(o) => println!("bad"), // should print bad because oak is not None and does not hold any value
+        None => println!("bad"), // should print bad because oak is not None and does not hold any value
+    }
+    println!("{}", fifteen); // should print 15
+}
+```

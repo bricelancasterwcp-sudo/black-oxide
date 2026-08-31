@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let fruits = vec!["fig", "banana", "kiwi"];
+    let mut max_length = 0;
+    let mut max_fruit = "";
+
+    for fruit in &fruits { // use & to avoid cloning
+        let len = fruit.len();
+        if len > max_length {
+            max_length = len;
+            max_fruit = *fruit; // dereference to get the value, not the pointer
+        }
+    }
+
+    println!("The fruit with the most letters is: {}", max_fruit);
+    println!("It has {} letters.", max_length);
+}
+```

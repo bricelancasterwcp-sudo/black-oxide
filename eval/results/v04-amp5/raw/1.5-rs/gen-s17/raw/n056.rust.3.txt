@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let numbers: [Option<i32>; 4] = [
+        Some(7),
+        None,
+        Some(9),
+        Some(0), // Replace ? with a real number if needed
+    ];
+
+    let total: i32 = numbers.iter().filter_map(|num| num).sum();
+
+    println!("The total of the ones that do: {}", total);
+    println!("Number of elements that do not have a value: {:?}", numbers.iter().filter(|&&n| n.is_none()).count());
+}
+```

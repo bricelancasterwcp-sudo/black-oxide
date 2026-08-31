@@ -1,0 +1,13 @@
+Here's the completed program:
+
+```rust
+fn main() {
+    let fruit_names = ["fig", "banana", "kiwi"];
+    let longest_fruit = fruit_names.iter().max_by_key(|&&name| name.len()).unwrap();
+    println!("Longest fruit: {} with letter count {}", longest_fruit, longest_fruit.len());
+}
+```
+
+The original program was trying to compare the length of each fruit by comparing references to `&str`. However, when using `.len()`, it's not necessary to take a reference. This is because `len()` returns an integer and can be directly compared with integers.
+
+Also, `.unwrap()` was used on the result of `max_by_key`. It should only be used if you are sure that there will be at least one element in the vector, which is not guaranteed by this code. If you were to add a check for the length of the vector, you would need to handle cases where it's empty.

@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let multiples_of_3 = [3, 6, 9, 12, 15, 18, 21, 24];
+    let sum: i32 = multiples_of_3.iter().sum();
+    println!("{}", sum);
+}
+```

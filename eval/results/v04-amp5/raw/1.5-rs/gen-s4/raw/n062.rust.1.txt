@@ -1,0 +1,25 @@
+```rust
+fn main() {
+    loop {
+        let signal = get_signal(); // Replace with actual logic to get the signal
+        match signal {
+            "green" => println!("Go"),
+            "red" => println!("Stop"),
+            "yellow" => println!("Wait"),
+            _ => break, // Break the loop if an unexpected signal is received
+        }
+    }
+}
+
+fn get_signal() -> &'static str {
+    // Replace with actual logic to retrieve the current signal
+    // For example, this can be simulated by a timer or user input
+    if rand::random::<bool>() {
+        "green"
+    } else if rand::random::<bool>() {
+        "red"
+    } else {
+        "yellow"
+    }
+}
+```

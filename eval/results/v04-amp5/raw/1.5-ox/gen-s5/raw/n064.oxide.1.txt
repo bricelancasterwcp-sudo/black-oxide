@@ -1,0 +1,9 @@
+```rust
+use std::collections::HashSet;
+
+fn main() {
+    let mut lst = HashSet::<i32>::from_iter(vec![10, 20]);
+    print!("\nFirst element: {:?}", lst.get(0));
+    print!("\nFourth element: {:?}", lst.get(3)); // This will panic if the position is out of bounds
+}
+```

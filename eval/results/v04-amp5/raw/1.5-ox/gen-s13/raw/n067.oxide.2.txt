@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let mut sum_even = 0;
+    let mut i = 7;
+
+    while i <= 10 {
+        if i % 2 == 1 {
+            println!("{}", i * 2);
+        } else {
+            sum_even += i;
+        }
+        i += 3;
+    }
+
+    println!("Total of even entries: {}", sum_even);
+}
+```

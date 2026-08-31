@@ -1,0 +1,14 @@
+```
+fn main() {
+    let num = 1234;
+    let mut digits = String::new();
+    
+    while num > 0 {
+        let digit = (num % 10).to_string();
+        digits.push(digit);
+        num /= 10;
+    }
+    
+    print(digits.chars().rev().collect::<String>());
+}
+```

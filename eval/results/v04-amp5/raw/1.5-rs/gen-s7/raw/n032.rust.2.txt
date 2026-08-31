@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let point1 = (1, 5);
+    let point2 = (point1.0 + 10, point1.1);
+
+    println!("The sum of the two coordinates is: {}", point2.0 + point2.1);
+}
+```
+
+This program should now correctly compute and print the sum of the two coordinates.

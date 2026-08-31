@@ -1,0 +1,8 @@
+```text
+fn main() {
+    let word = "granite"
+    let chars_vec = chars(word)
+    print(chars_vec.get(0).unwrap_or(" "))
+    print(chars_vec.get(str_len(word) - 1).unwrap_or(" "))
+}
+```

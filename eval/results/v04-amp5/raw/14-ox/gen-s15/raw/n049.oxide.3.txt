@@ -1,0 +1,20 @@
+fn main() {  
+    let values = vec();  
+    let values = push(values, 8);  
+    let values = push(values, 3);  
+    let values = push(values, 11);  
+    let values = push(values, 6);  
+
+    let min_val = unwrap_or(min(values), -1);  
+    print(min_val);  
+
+    let values = vec();  
+    let values = push(values, 8);  
+    let values = push(values, 3);  
+    let values = push(values, 11);  
+    let values = push(values, 6);  
+
+    let max_val = unwrap_or(max(values), -1);  
+    let gap = max_val - min_val;  
+    print(gap);  
+}

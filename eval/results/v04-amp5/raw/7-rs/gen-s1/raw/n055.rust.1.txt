@@ -1,0 +1,11 @@
+fn main() {
+    let entries = ["8", "oak", "15"];
+
+    for entry in entries {
+        if let Ok(num) = entry.parse::<i32>() {
+            println!("{}", num);
+        } else {
+            println!("bad");
+        }
+    }
+}

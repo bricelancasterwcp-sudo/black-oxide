@@ -1,0 +1,16 @@
+```rust
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn main() {
+    let rect = Rectangle { width: 9, height: 3 };
+
+    // Print the area of the rectangle
+    print(int_to_str(rect.width * rect.height));
+
+    // Calculate the total distance around the edge and print it
+    println(concat(str_to_str("left"), int_to_str(2 * (rect.width + rect.height))));
+}
+```

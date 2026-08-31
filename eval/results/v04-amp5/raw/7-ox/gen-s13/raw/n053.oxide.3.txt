@@ -1,0 +1,6 @@
+fn main() {
+    let s = "drum";
+    let rev_s: Str = concat(s.chars().rev().collect::<Vec<Str>>());
+    print_str(&rev_s);
+    print_str(s);
+}

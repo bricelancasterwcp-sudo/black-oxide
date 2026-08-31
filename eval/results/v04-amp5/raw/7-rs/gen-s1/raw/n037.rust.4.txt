@@ -1,0 +1,5 @@
+fn main() {
+    let mut rect = (2, 3);
+    rect.0 = 5;
+    println!("The area is {}", rect.0 * rect.1);
+}

@@ -1,0 +1,12 @@
+```rust
+
+fn main() {
+    let mut total = 1;
+    for i in 1..7 {
+        total *= i;
+    }
+    print(total);
+}
+```
+
+This program multiplies every whole number from 1 to 6 together and prints the result.

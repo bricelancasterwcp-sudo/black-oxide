@@ -1,0 +1,13 @@
+```oxide
+fn is_prime(n: Int) -> Bool {
+    if n <= 1 { return False }
+    for i in range(2, to_float(trunc(to_float(n).sqrt())).to_int() + 1) {
+        if n % i == 0 { return False }
+    }
+    True
+}
+
+fn main() {
+    print(is_prime(91))
+}
+```

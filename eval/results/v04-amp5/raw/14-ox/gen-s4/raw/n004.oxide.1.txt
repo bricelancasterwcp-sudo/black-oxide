@@ -1,0 +1,22 @@
+```
+fn fibonacci(n: Int) -> Int {
+    let a = 1
+    let b = 1
+    if n <= 2 {
+        return 1
+    }
+    let mut i = 3
+    let mut next = a + b
+    while i < n {
+        a = b
+        b = next
+        next = a + b
+        i += 1
+    }
+    next
+}
+
+fn main() {
+    print(fibonacci(10))
+}
+```

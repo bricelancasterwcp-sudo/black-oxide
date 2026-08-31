@@ -1,0 +1,11 @@
+```rust
+struct Rectangle { width: Int, height: Int }
+
+fn main() {
+    let mut r = Rectangle { width: 2, height: 3 };
+    // Move new_width before assignment
+    let new_width = 5;
+    r.width = new_width;
+    println(r.area()); // Consumption happens here when calculating the area
+}
+```

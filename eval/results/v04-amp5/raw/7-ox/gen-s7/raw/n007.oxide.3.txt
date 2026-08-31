@@ -1,0 +1,9 @@
+fn main() {
+    let n = 9875;
+    let s = int_to_str(n);
+    let mut sum = 0;
+    for ch in chars(s) {
+        sum += parse_int(ch).unwrap_or(0);
+    }
+    print(sum);
+}

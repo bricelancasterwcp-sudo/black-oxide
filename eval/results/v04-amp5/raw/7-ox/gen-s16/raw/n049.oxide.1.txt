@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let figures = vec![8, 3, 11, 6];
+    let min_figure = *figures.iter().min().unwrap_or(&0);
+    let max_figure = *figures.iter().max().unwrap_or(&0);
+    let gap = max_figure - min_figure;
+    print(min_figure); print_str(" "); print(gap);
+}
+```

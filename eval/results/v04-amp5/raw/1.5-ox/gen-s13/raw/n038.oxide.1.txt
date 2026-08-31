@@ -1,0 +1,15 @@
+```rust
+struct Reading { label: Str, values: Vec<Int> }
+
+fn set_to(v: Vec<Int>, x: Int) -> Vec<Int> {
+    let mut v = v;
+    v[0] = x;
+    v
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: push(vec(), 0) };
+    r.values = set_to(r.values, 7);
+    print(r.values[0]);
+}
+```

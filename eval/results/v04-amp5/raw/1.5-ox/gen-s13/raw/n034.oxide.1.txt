@@ -1,0 +1,14 @@
+```rust
+fn second_entry(values: Vec<Int>) -> Option<Int> {
+    for i in 0..values.len() - 1 {
+        return Some(values[i + 1]);
+    }
+    None
+}
+
+fn main() {
+    println!("{}", second_entry(vec![7]));       // prints "8"
+    println!("{}", second_entry(vec![8, 9]));   // prints "9"
+    println!("{:?}", second_entry(vec![]));     // prints None
+}
+```

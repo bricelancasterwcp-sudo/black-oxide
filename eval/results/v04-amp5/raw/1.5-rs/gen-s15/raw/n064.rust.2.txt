@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let v = vec![10, 20];
+    
+    if v.len() > 3 && v[0] == 10 {
+        println!("{}", v[0]);
+    }
+}
+```

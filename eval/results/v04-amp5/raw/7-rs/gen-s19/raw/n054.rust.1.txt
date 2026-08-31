@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let keyboard = "qwertyuiopasdfghjklzxcvbnm";
+    let mut vowel_count = 0;
+    let mut consonant_count = 0;
+
+    for &c in keyboard.as_bytes() {
+        match c {
+            b'a' | b'e' | b'i' | b'o' | b'u' |
+            b'A' | b'E' | b'I' | b'O' | b'U' => vowel_count += 1,
+            _ if c.is_ascii_alphabetic() => consonant_count += 1,
+            _ => {}
+        }
+    }
+
+    println!("Vowels: {}", vowel_count);
+    println!("Consonants: {}", consonant_count);
+}
+```

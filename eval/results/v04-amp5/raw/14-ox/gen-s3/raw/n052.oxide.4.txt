@@ -1,0 +1,1 @@
+fn main() { let s = "banana"; let len = str_len(s); for i in range(0, len) { if get(s, i)? == "n" { print(i) } } }

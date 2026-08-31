@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let (x1, y1) = (1, 5);
+    let x2 = x1 + 10;
+    println!("The sum of {} and {} is {}", x1, x2, x1 + x2);
+}
+```

@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let max_power_of_two = 1 << ((32 - 1).leading_zeros());
+    println!("{}", max_power_of_two);
+}
+```
+
+This is a straightforward Rust function that calculates the largest power of two less than or equal to 100 and prints it.

@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let scores = [2, 9, 5];
+    for score in scores.iter().rev() {
+        println!("{}", score);
+    }
+}
+```
+
+This solution uses the `iter()` method to create an iterator over the elements of the array, and the `rev()` method to reverse the order of the elements. The loop then prints each element.

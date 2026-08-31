@@ -1,0 +1,9 @@
+fn main() {
+    let w = 9;
+    let h = 3;
+    let area = w * h;
+    let perimeter = 2 * (w + h);
+    print(area);
+    print_str("\n");
+    print(perimeter);
+}

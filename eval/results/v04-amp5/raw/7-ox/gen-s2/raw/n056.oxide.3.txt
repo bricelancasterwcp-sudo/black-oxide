@@ -1,0 +1,14 @@
+fn main() {
+    let mut total = 0;
+    let mut count_missing = 0;
+
+    for item in vec![7, "x", 9, "?"] {
+        match item {
+            Int(n) => total += n,
+            Str(_) | Unit => count_missing += 1,
+        }
+    }
+
+    print(total);
+    print(count_missing);
+}

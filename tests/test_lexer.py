@@ -287,8 +287,16 @@ def test_unknown_character_reports_ox0001_and_lexing_continues():
     assert [d.code for d in found] == ["OX0001"]
 
 
-@pytest.mark.parametrize("op", ["&", "|"])
-def test_lone_ampersand_or_pipe_reports_ox0001(op):
+@pytest.mark.parametrize("op", ["&"])
+def test_lone_ampersand_reports_ox0001(op):
+    """A lone `&` is still not a token.
+
+    AMENDED by v0.4 wave 4 (SPEC 63.1): this test used to cover `|` as
+    well, because a bare pipe was a lexer error. `|` is now a real token
+    -- the predicate literal is spelled `|x| expr` -- so the pipe case
+    moved to `test_lone_pipe_is_now_a_token` below. `&` is unchanged:
+    Oxide has no reference-taking operator and no bitwise and.
+    """
     # Arrange
     src = f"a {op} b"
 
@@ -300,6 +308,20 @@ def test_lone_ampersand_or_pipe_reports_ox0001(op):
     assert [t.kind for t in tokens] == [K.IDENT, K.ERROR, K.IDENT, K.NEWLINE, K.EOF]
     assert tokens[1].lexeme == op
     assert [d.code for d in found] == ["OX0001"]
+
+
+def test_lone_pipe_is_now_a_token():
+    """`|` lexes as PIPE (SPEC 63.1) rather than erroring, and `||`
+    still wins over it via the two-char table -- the guard that keeps
+    every disjunction in the corpus from becoming a predicate literal."""
+    # Arrange / Act
+    single = toks("a | b")
+    double = toks("a || b")
+
+    # Assert
+    assert [t.kind for t in single] == [K.IDENT, K.PIPE, K.IDENT, K.NEWLINE, K.EOF]
+    assert diags("a | b") == []
+    assert [t.kind for t in double] == [K.IDENT, K.OROR, K.IDENT, K.NEWLINE, K.EOF]
 
 
 # §5.14 — maximal munch (SPEC §3.6)

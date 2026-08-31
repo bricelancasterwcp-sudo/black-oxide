@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let mut total: Int = 0;
+    let mut count: Int = 0;
+
+    for c in a1b22.chars() {
+        if c.is_digit(10) {
+            total += c.to_digit(10).unwrap();
+            count += 1;
+        }
+    }
+
+    println!("Total of all digit characters: {}", total);
+    println!("Number of digit characters: {}", count);
+}
+```

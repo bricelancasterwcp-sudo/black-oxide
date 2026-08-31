@@ -1,0 +1,16 @@
+```rust
+fn divide(dividend: Int, divisor: Int) -> Option<Int> {
+    if divisor == 0 {
+        return None;
+    }
+    Some(dividend / divisor)
+}
+
+fn main() {
+    let result = divide(20, 4);
+    match result {
+        Some(answer) => print_int(answer),
+        None => print_str("bad"),
+    }
+}
+```

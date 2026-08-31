@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let list = vec![10, 20];
+    if let Some(position) = get(&list, 0) {
+        println!("{}", position);
+    }
+
+    if let Some(position) = get(&list, 3) {
+        println!("{}", position);
+    }
+}
+
+fn get<'a>(v: &'a Vec<Int>, i: Int) -> Option<&'a Int> {
+    v.get(i)
+}
+```

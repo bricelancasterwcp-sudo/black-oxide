@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let n = 91;
+    let mut factors = Vec::new();
+    for i in 2..=((n as f64).sqrt()) as i32 + 1 {
+        if n % i == 0 {
+            factors.push(i);
+            if i != (n / i) {
+                factors.push(n / i);
+            }
+        }
+    }
+
+    match factors.len() {
+        2 => println!("yes"),
+        _ => println!("no"),
+    }
+}
+```

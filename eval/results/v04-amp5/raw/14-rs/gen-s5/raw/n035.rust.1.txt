@@ -1,0 +1,21 @@
+```rust
+use std::io;
+
+fn safe_divide(dividend: i32, divisor: i32) -> Option<i32> {
+    if divisor == 0 {
+        None
+    } else {
+        Some(dividend / divisor)
+    }
+}
+
+fn main() {
+    let dividend = 20;
+    let divisor = 4;
+
+    match safe_divide(dividend, divisor) {
+        Some(result) => println!("{}", result),
+        None => println!("bad"),
+    }
+}
+```

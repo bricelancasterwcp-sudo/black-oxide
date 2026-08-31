@@ -1,0 +1,34 @@
+```rust
+struct LetterCount {
+    letter: Str,
+    count: Int,
+}
+
+fn main() {
+    let word = "coffee";
+    let mut counts = vec();
+    
+    // Count occurrences of each letter
+    for c in chars(word) {
+        let found = false;
+        for i in range(0, len(counts)) {
+            if get(counts, i)?.letter == c {
+                let count = get(counts, i)?.count + 1;
+                counts = set(counts, i, LetterCount { letter: c, count });
+                found = true;
+                break
+            }
+        }
+        if !found {
+            counts = push(counts, LetterCount { letter: c, count: 1 });
+        }
+    }
+    
+    // Print letters that appear more than once
+    for lc in counts {
+        if lc.count > 1 {
+            print_str(lc.letter);
+        }
+    }
+}
+```

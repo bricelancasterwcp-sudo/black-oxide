@@ -1,0 +1,13 @@
+fn main() {
+    let list1 = vec![7];
+    let list2 = vec![7, 8];
+    let list3 = vec![7, 8, 9];
+
+    println!("{:?}", get_second(&list1)); // None
+    println!("{:?}", get_second(&list2)); // Some(8)
+    println!("{:?}", get_second(&list3)); // Some(8)
+}
+
+fn get_second<T>(list: &[T]) -> Option<&T> {
+    list.get(1)
+}

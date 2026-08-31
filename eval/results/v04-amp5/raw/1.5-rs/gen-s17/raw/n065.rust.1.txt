@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let readings = [6, 11, 3, 14, 9];
+    let count_above_five = readings.iter().filter(|&x| x > 5).count();
+    println!("{} exceeds five", count_above_five);
+    println!("The highest reading of all is {}", readings.into_iter().max().unwrap());
+}
+```

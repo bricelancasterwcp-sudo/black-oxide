@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let word = "drum";
+    for (i, ch) in word.chars().rev().enumerate() {
+        if i == 0 { print!("{}", ch); } else { println!(" {}", ch); }
+    }
+    println!("{}", word);
+}
+```
+
+Explanation:
+The original program was almost correct. The only issue was with the formatting of the output. Instead of printing each letter on a new line, it was printing them on the same line separated by spaces.
+
+By adding `println!(" {}", word);` at the end of the loop, we ensure that after all letters have been printed in reverse order, the original word is printed on its own line. This way, the output will correctly display the letters running back to front followed by the original word.

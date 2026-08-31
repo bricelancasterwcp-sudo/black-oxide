@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let values = vec![7, 9, 2, 4];
+    values.sort();
+    for &value in values.iter() {
+        print!("{}", value);
+        println!();
+    }
+}
+```

@@ -1,0 +1,8 @@
+fn main() {
+    let s = "mississippi"
+    let count_s = count(s, "s")
+    print(count_s)
+    let chars = collect(chars(s))
+    let unique_chars = filter(chars, |c| count(chars, c) == 1)
+    print(len(unique_chars))
+}

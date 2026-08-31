@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let w = "granite";
+    print_str(w.chars().nth(0).unwrap());
+    print_str(w.chars().rev().next().unwrap());
+}
+```

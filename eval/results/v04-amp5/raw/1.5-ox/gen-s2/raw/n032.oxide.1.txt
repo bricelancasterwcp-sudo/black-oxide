@@ -1,0 +1,11 @@
+```rust
+struct Point { x: Int, y: Int }
+
+fn main() {
+    let p = Point { x: 1, y: 5 };
+    let r = Point { x: p.x + 10, y: p.y };
+    print(p.x + r.x);
+}
+```
+
+This program first creates a point `p` with coordinates (1, 5). It then constructs another point `r` where the `x` coordinate is incremented by ten. Finally, it prints the sum of the `x` and `y` coordinates of points `p` and `r`.

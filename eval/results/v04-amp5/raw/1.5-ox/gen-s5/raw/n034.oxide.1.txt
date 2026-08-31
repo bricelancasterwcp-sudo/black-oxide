@@ -1,0 +1,25 @@
+```rust
+use std::option::Option;
+
+fn main() {
+    let v: Vec<Int> = vec![7, 8, 9];
+    match second(v) {
+        Some(n) => println!("{}", n),
+        None => println!("None"),
+    }
+}
+
+fn second(v: Vec<Int>) -> Option<Int> {
+    let mut iter = v.into_iter();
+    let first = match iter.next() {
+        Some(x) => x,
+        _ => return None,
+    };
+    for &x in iter {
+        if x > first {
+            return Some(x);
+        }
+    }
+    None
+}
+```

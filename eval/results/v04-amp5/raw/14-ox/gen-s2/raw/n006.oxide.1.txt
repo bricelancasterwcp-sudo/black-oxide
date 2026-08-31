@@ -1,0 +1,9 @@
+```ox
+fn main() {
+    let mut n = 1
+    while n * 2 <= 100 {
+        n *= 2
+    }
+    print(n)
+}
+```

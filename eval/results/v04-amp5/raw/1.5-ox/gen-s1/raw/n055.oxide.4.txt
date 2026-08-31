@@ -1,0 +1,10 @@
+fn main() {
+    let num8 = parse_int("8").unwrap();
+    println(num8);
+
+    let oak = parse_int("oak").unwrap_or(-1);
+    println(oak);
+
+    let num15 = parse_int("15").unwrap();
+    println(num15);
+}

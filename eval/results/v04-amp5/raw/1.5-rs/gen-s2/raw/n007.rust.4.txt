@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let mut sum = 0;
+    for digit in "9875".chars() {
+        sum += digit.to_digit(10).unwrap();
+    }
+    println!("The sum of the individual digits is: {}", sum);
+}
+```
+The problem with the initial code was that the `to_digit` method returns `Option<u32>`, and we were calling `unwrap()` on it without checking if it's `Some`. We needed to use a match statement or an `if let Some(value)` condition to safely add each digit to the sum.

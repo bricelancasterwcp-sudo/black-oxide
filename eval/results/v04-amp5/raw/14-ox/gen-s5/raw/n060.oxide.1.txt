@@ -1,0 +1,23 @@
+```rust
+struct Reading { label: Str, values: Vec<Int> }
+
+fn count_digits(s: Str) -> Int {
+    let mut total = 0
+    let mut count = 0
+    for c in chars(s) {
+        if c >= "0" && c <= "9" {
+            total += parse_int(c)?
+            count += 1
+        }
+    }
+    Some(total)
+}
+
+fn main() {
+    let s = "a1b22"
+    let total = count_digits(s)?
+    print(total)
+    let count = count_if(chars(s), |c| c >= "0" && c <= "9")
+    print(count)
+}
+```

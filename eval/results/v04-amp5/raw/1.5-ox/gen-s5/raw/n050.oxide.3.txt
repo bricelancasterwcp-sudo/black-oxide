@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let scores = vec![2, 9, 5];
+    scores.sort_by(|a, b| b.cmp(a));
+    for &score in scores.iter() {
+        println!("{}", score);
+    }
+}
+```
+
+Explanation:
+The original code had several issues:
+1. The `scores` vector was defined as a list (`[]`) instead of a tuple, which caused syntax errors.
+2. The `sort_by` function expects two arguments: a closure and another closure to compare the elements. The `cmp` method is used for comparing Integers.
+3. The loop was missing braces around the `println!` statements.
+4. There was a missing closing brace at the end of the main function body.

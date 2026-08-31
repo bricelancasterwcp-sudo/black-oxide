@@ -1,0 +1,26 @@
+```rust
+use std::io;
+
+fn main() {
+    let mut sum = 0;
+    let mut count = 0;
+
+    if io::stdin().read_line(&mut sum).is_ok() {
+        sum = sum.trim_end_matches('\n').parse::<i32>().unwrap();
+    }
+    if io::stdin().read_line(&mut count).is_ok() {
+        count = count.trim_end_matches('\n').parse::<i32>().unwrap();
+    }
+
+    let numbers: Vec<&str> = sum.split_whitespace().collect();
+    for &s in numbers.iter() {
+        if s.parse::<i32>().is_ok() {
+            sum += s.parse::<i32>().unwrap();
+            count += 1;
+        }
+    }
+
+    println!("Total: {}", sum);
+    println!("Count: {}", count);
+}
+```

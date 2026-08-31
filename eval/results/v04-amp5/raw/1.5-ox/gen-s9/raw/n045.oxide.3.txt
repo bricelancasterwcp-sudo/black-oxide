@@ -1,0 +1,10 @@
+```rust
+struct Log(Vec<Int>);
+
+fn main() {
+    let log = Log(vec![6, 7, 8, 9]);
+    
+    println!("{:?}", log.0[0]); // first element of the vector, which is 6
+    println!("{:?}", log.0.last()); // last element of the vector, which is 9
+}
+```

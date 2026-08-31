@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let batch = vec![9, 2, 12, 5, 16];
+    let count: usize = batch.iter().filter(|&&x| x < 10).count();
+    for &item in batch.iter().filter(|&&x| x < 10) {
+        println!("{}", item);
+    }
+    println!("Kept {} entries under ten", count);
+}
+```

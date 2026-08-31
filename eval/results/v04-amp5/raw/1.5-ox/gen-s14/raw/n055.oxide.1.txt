@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let entry1 = 8;
+    let entry2 = "oak";
+    let entry3 = 15;
+
+    print(entry1);      // prints 8
+    println(entry2);     // prints oak
+    println(entry3);      // prints 15
+}
+```

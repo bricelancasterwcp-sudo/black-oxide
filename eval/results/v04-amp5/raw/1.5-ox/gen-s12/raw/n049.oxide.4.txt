@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let figs = vec![8, 3, 11, 6];
+    println!("{}", min(figs)); // field access copies: r stays usable
+    println!("{}", max(figs) - min(figs)); // match second(r2.values) {
+}
+```
+
+Explanation:
+The error was due to incorrect syntax. The array literal in Rust should be enclosed in square brackets `[]` instead of curly braces `{}`. The semicolons after each line were also misplaced. The program has been corrected to use the correct syntax for defining an array and performing operations on it as required.

@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let first_line = 4 * 3;
+    let second_line = 5 * 2;
+
+    println!("Line 1: {}", first_line);
+    println!("Line 2: {}", second_line);
+
+    let total_value = first_line + second_line;
+    println!("Total value of both lines: {}", total_value);
+}
+```

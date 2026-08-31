@@ -1,0 +1,30 @@
+```oxide
+struct Reading { label: Str, values: Vec<Int> }
+
+fn count_above(v: Vec<Int>, threshold: Int) -> Int {
+    let mut count = 0
+    for x in v {
+        if x > threshold {
+            count += 1
+        }
+    }
+    count
+}
+
+fn max_reading(v: Vec<Int>) -> Option<Int> {
+    let mut m = None
+    for x in v {
+        match m {
+            Some(current_max) => if x > current_max { m = Some(x) } else {},
+            None => m = Some(x),
+        }
+    }
+    m
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(push(push(vec(), 6), 11), 3), 14), 9) };
+    print(count_above(r.values, 5))
+    print(max_reading(r.values).unwrap_or(0))
+}
+```

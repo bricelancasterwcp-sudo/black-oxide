@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let samples = [5, 12, 3, 18, 9];
+    let cutoff = 10;
+
+    let (count_under_cutoff, count_at_or_over) = samples.iter()
+        .fold((0, 0), |(mut count_under_cutoff, mut count_at_or_over), &value| {
+            if value < cutoff {
+                count_under_cutoff += 1;
+            } else {
+                count_at_or_over += 1;
+            }
+            (count_under_cutoff, count_at_or_over)
+        });
+
+    println!("{} falls under the cutoff", count_under_cutoff);
+    println!("{} sit at or over it", count_at_or_over);
+}
+```

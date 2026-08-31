@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut num = 1234;
+    while num > 0 {
+        println!("{}", num % 10);
+        num /= 10;
+    }
+}
+```
+
+This Rust code snippet defines a function `main` that prints the digits of the number `1234` in reverse order. It uses a loop to repeatedly take the remainder when the number is divided by 10 (which gives the last digit) and print it, then divides the number by 10 to remove the last digit. The process continues until the number becomes 0.

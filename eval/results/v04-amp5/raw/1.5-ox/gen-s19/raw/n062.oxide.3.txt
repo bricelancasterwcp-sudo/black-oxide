@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let arr = vec!["green", "red", "yellow"];
+    match get(&arr, 0) {
+        Some("green") => println!("go"),
+        Some("red") => println!("stop"),
+        Some("yellow") => println!("wait"),
+        None => println!("unknown color"),
+    }
+}
+```

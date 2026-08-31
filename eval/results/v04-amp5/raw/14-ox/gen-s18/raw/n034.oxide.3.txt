@@ -1,0 +1,26 @@
+```text
+fn second(v: Vec<Int>) -> Option<Int> {
+    let x = get(v, 1)?
+    Some(x + 1)
+}
+
+fn main() {
+    if let Some(n) = second(push(push(vec(), 7), 8)) {
+        print_str(int_to_str(n))
+    } else {
+        print_str("None".to_str())
+    }
+    
+    if let Some(n) = second(push(push(vec(), 7), 9)) {
+        print_str(int_to_str(n))
+    } else {
+        print_str("None".to_str())
+    }
+    
+    if let Some(n) = second(vec()) {
+        print_str(int_to_str(n))
+    } else {
+        print_str("None".to_str())
+    }
+}
+```

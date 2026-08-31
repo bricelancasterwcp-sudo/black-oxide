@@ -1,0 +1,11 @@
+```rust
+struct Point { x: Int, y: Int }
+
+fn main() {
+    let p = Point { x: 1, y: 5 };
+    let r = Point { x: p.x + 10, y: p.y };
+    print(p.x + r.x);
+}
+```
+
+The program source was already correctly formatted and did not require any changes.

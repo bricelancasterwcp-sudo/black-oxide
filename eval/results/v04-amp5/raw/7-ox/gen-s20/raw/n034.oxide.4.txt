@@ -1,0 +1,10 @@
+```rust
+fn second(v: Vec<Int>) -> Option<Int> {
+    get(v, 1)
+}
+
+fn main() {
+    print(second(push(vec(), 7)))            // None
+    print(second(push(push(vec(), 8), 9)))    // Some(9)
+}
+```

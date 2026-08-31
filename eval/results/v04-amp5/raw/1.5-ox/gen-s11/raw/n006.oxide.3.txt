@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let mut x = 1;
+    while true {
+        if (x * 2) < 100 { // Fix: replaced '>' with '<' to ensure it does not exceed
+            break;
+        }
+        x *= 2;
+    }
+    println!("{}", x);
+}
+```

@@ -1,0 +1,10 @@
+```text
+fn main() {
+    let word = "granite"
+    print(word.chars().get(0).unwrap_or(""))
+    print("\n")
+    let chars = word.chars()
+    let len = chars.len()
+    print(chars.get(len - 1).unwrap_or(""))
+}
+```

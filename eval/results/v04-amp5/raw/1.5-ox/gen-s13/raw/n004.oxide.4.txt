@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let mut a = 1;
+    let mut b = 1;
+    for _ in 0..9 {
+        let c = a + b;
+        a = b;
+        b = c;
+    }
+    print(a);
+}
+```
+
+The original program had multiple issues:
+- Missing semicolons at the end of each line.
+- The `for` loop was using `..` instead of `..=` to iterate through numbers, which is not valid syntax for a range in Rust. It should be `for i in 0..9` and `print(b);` to correctly compute the tenth term of the sequence.

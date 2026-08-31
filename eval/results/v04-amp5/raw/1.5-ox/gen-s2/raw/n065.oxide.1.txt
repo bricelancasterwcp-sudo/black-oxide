@@ -1,0 +1,34 @@
+```rust
+struct Reading { label: Str, values: Vec<Int> }
+
+fn first_big(v: Vec<Int>) -> Int {
+    let mut found = -1;
+    for x in v {
+        if x > 5 {
+            found = x;
+            break;
+        }
+    }
+    found
+}
+
+fn second(v: Vec<Int>) -> Option<Int> {
+    let x = match get(v, 1)? {
+        n @ 3..=42 => n,
+        _ => return None,
+    };
+    Some(x + 1)
+}
+
+fn main() {
+    let readings = vec![6, 11, 3, 14, 9];
+    let count = first_big(readings);
+    print!("{}", count);
+
+    let highest = match second(readings) {
+        Some(n) => n,
+        None => -1,
+    };
+    println!("{}", highest);
+}
+```

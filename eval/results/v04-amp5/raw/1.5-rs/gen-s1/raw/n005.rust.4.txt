@@ -1,0 +1,13 @@
+Here is the fully corrected Rust program:
+
+```rust
+fn main() {
+    let sum: i32 = (1..=20).filter(|&x| x % 2 == 0).sum();
+    println!("The total of all even numbers between 1 and 20 inclusive is {}", sum);
+}
+```
+
+When you run this program, it will print:
+```
+The total of all even numbers between 1 and 20 inclusive is 110
+```

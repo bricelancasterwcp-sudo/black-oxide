@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let number = 1234;
+    let reversed_number = i32::from_str_radix(&number.to_string().chars().rev().collect::<String>(), 10).unwrap();
+    println!("{}", reversed_number);
+}
+```

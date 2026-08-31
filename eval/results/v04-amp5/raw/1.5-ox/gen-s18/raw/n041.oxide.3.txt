@@ -1,0 +1,11 @@
+```rust
+struct Reading { label: Str, values: Vec<Int> }
+
+fn main() {
+    let mut v = push(vec![9], 2);
+    v.push(7);
+    for x in sort(&mut v) {
+        print_str(int_to_str(x));
+    }
+}
+```

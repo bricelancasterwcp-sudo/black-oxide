@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let text = "when in doubt go home";
+    let words_count = text.split_whitespace().count();
+    let char_count = text.chars().count();
+    println!("Words: {}", words_count);
+    println!("Characters: {}", char_count);
+}
+```
+
+The original program was close, but it did not handle punctuation correctly. The `split_whitespace` function splits the text into words based on whitespace characters (spaces, tabs, newlines), which is what we want in this case. However, the `chars` method counts only the visible characters in a string, including spaces and punctuation. If you want to count all characters, including those that are invisible like tabulation characters or newlines, you should use `chars().count()` instead of `split_whitespace().count()`.

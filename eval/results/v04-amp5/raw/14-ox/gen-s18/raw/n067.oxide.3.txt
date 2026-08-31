@@ -1,0 +1,19 @@
+```text
+fn main() {
+    let values = vec();
+    push(values, 7);
+    push(values, 4);
+    push(values, 9);
+    push(values, 10);
+
+    let mut sum_even = 0;
+    for x in values {
+        if x % 2 == 0 {
+            sum_even += x;
+        } else {
+            print(x * 2);
+        }
+    }
+    print(sum_even);
+}
+```

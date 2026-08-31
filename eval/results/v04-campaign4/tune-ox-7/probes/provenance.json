@@ -1,0 +1,31 @@
+{
+  "arm": "oxide",
+  "families": [
+    "gen",
+    "probes"
+  ],
+  "gguf": "tune-ox-7.q8_0.gguf",
+  "gguf_sha256": "8c128f3b6b5ab90335b7a1d93dbfbc22938bcb047ee31236dcbbd0c2d1dc065a",
+  "identity": {
+    "model_path": "/workspace/gguf/tune-ox-7.q8_0.gguf"
+  },
+  "include_lead": false,
+  "llamacpp_commit": "9723942adc518b43c4b95dc4dce6906903eb5e09",
+  "name": "tune-ox-7",
+  "num_ctx": 8192,
+  "num_predict": 2048,
+  "seeds": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "temperature": 0.2,
+  "top_p": 0.95
+}

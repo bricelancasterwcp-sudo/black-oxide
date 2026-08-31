@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let mut drum = "drum";
+    drum.chars().rev().collect::<String>().chars().collect::<String>();
+    println!("{}", drum);
+
+    println!("{}", drum.chars().collect::<String>());
+}
+```

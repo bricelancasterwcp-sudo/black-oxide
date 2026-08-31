@@ -1,0 +1,5 @@
+fn main() {
+    let phrase = "when in doubt go home";
+    print(count(phrase.split(' '), |x| true));
+    print(str_len(concat(phrase, "")));
+}

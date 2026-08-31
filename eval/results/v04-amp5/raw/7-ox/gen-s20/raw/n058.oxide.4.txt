@@ -1,0 +1,13 @@
+```oxide
+fn main() {
+    let word = "coffee";
+    let mut seen = vec![];
+
+    for c in word.chars() {
+        if !seen.contains(&c) && word.matches(c).count() > 1 {
+            print_str(&c.to_string());
+            push(seen, c);
+        }
+    }
+}
+```

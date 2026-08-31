@@ -1,0 +1,1 @@
+fn main() { let nums = vec(); for x in push(push(push(nums, 7), 4), 9) { if x % 2 == 0 { total_even += x } else { print(x * 2); print_str("\n") } } print(total_even) }

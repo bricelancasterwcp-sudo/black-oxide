@@ -1,0 +1,13 @@
+Here's the fixed version of your Rust code:
+
+```rust
+fn main() {
+    let x = 10;
+    let y = 5;
+    println!("{} + {} = {}", x, y, x + y);
+}
+```
+
+Your initial program was almost correct but there were a small issue with how you were concatenating the numbers. Rust requires that when printing multiple variables, they must be separated by commas.
+
+The corrected version first prints `x` and `y`, then adds them together and finally prints the result.

@@ -1,0 +1,22 @@
+```rust
+fn parse_int(s: Str) -> Option<Int> {
+    match s {
+        "8" => Some(8),
+        "15" => Some(15),
+        _ => None,
+    }
+}
+
+fn print_number_or_bad(s: Str) {
+    match parse_int(s) {
+        Some(n) => print(n),
+        None => print_str("bad"),
+    }
+}
+
+fn main() {
+    print_number_or_bad("8")
+    print_number_or_bad("oak")
+    print_number_or_bad("15")
+}
+```

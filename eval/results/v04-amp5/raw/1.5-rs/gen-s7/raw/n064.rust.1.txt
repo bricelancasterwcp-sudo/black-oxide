@@ -1,0 +1,8 @@
+```rust
+
+fn main() {
+    let mut vec = vec![10, 20];
+    println!("{:?}", vec.get(0)); // Should print Some(10)
+    println!("{:?}", vec.get(3)); // Should print None
+}
+```

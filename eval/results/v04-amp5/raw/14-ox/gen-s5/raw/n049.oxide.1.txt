@@ -1,0 +1,11 @@
+```rust
+struct Reading { label: Str, values: Vec<Int> }
+
+fn main() {
+    let values = push(push(push(push(vec(), 8), 3), 11), 6)
+    let min_value = min(values)?
+    let max_value = max(values)?
+    print(min_value)
+    print(max_value - min_value)
+}
+```

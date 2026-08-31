@@ -1,0 +1,14 @@
+```rust
+fn count_vowels(s: &str) -> usize {
+    s.chars().filter(|c| "aeiouAEIOU".contains(c)).count()
+}
+
+fn main() {
+    let word = "example";
+    let vowels_count = count_vowels(word);
+    let consonants_count = word.len() - vowels_count;
+
+    println!("Number of vowels: {}", vowels_count);
+    println!("Number of consonants: {}", consonants_count);
+}
+```

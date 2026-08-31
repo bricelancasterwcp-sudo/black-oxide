@@ -1,0 +1,13 @@
+```rust
+struct Sensor { reading: Int }
+
+fn set_reading(s: &mut Sensor, value: Int) {
+    s.reading = value;
+}
+
+fn main() {
+    let mut sensor = Sensor { reading: 0 };
+    set_reading(&mut sensor, 7);
+    print(sensor.reading); // correct usage of '&'
+}
+```

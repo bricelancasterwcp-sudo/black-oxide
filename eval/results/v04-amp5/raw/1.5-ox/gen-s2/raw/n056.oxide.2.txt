@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let nums: Vec<Option<Int>> = vec![Some(7), None, Some(x), None];
+    let mut total: Int = 0;
+    let mut non_numbers: usize = 0;
+
+    for n in &nums {
+        match n {
+            Some(num) => total += num,
+            None => non_numbers += 1,
+        }
+    }
+
+    println!("Total sum of numbers: {}", total);
+    println!("Number of non-numbers: {}", non_numbers);
+}
+```

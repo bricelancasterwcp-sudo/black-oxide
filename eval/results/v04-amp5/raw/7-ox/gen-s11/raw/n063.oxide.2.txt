@@ -1,0 +1,9 @@
+fn main() {
+    let four_units = 4 * 3;
+    let five_units = 5 * 2;
+    print(four_units);
+    print_str("\n");
+    print(five_units);
+    print_str("\n");
+    print(four_units + five_units);
+}

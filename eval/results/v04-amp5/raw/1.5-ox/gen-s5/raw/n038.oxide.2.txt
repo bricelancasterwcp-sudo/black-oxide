@@ -1,0 +1,15 @@
+```rust
+use std::vec;
+
+fn main() {
+    struct Reading { label: String, values: Vec<Int> }
+
+    let mut r = Reading { label: "lab".to_string(), values: vec![] };
+
+    for _ in 0..7 {
+        push(&mut r.values, 1);
+    }
+
+    print(r.values); // field access copies: r stays usable
+}
+```

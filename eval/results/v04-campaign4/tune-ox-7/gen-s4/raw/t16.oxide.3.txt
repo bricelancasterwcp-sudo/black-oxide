@@ -1,0 +1,16 @@
+fn main() {
+    let divisors = vec(5, 0, 4)
+    for d in divisors {
+        match divide(100, d) {
+            Some(q) => print(q),
+            None => print_str("undefined"),
+        }
+    }
+}
+fn divide(a: Int, b: Int) -> Option<Int> {
+    if b == 0 {
+        None
+    } else {
+        Some(a / b)
+    }
+}

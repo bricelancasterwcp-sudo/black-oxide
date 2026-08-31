@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let number = 9875;
+    let sum = number.to_string().chars().map(|d| d.to_digit(10).unwrap()).sum::<u32>();
+    println!("{}", sum);
+}
+```

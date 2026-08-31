@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let mut total = 1;
+    for i in 1..=6 { // Fixed the range to include 7
+        total *= i;
+    }
+    print(total);
+}
+```
+
+Explanation:
+The program was rejected because of several syntax errors and incorrect indentation. The corrected program includes a `print` statement at the end, which is necessary in Rust to display output. The `for` loop has been adjusted to include the number 6, as it should run from 1 to 6 (inclusive).

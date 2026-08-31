@@ -1,0 +1,17 @@
+```oxide
+fn main() {
+    let values = vec(7, 'x', 9, '?');
+    let mut sum = 0;
+    let mut count_non_numbers = 0;
+
+    for value in values {
+        match value {
+            Int(n) => sum += n,
+            _ => count_non_numbers += 1
+        }
+    }
+
+    print(sum);
+    print(count_non_numbers);
+}
+```

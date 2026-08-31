@@ -1,0 +1,16 @@
+```oxide
+fn main() {
+    let s = "coffee";
+    let mut seen = vec![];
+    for c in chars(s) {
+        if !seen.contains(&c) && count_chars(s, c) > 1 {
+            print_str(c);
+            seen.push(c);
+        }
+    }
+}
+
+fn count_chars(s: Str, c: Str) -> Int {
+    count(chars(s), |x| x == c)
+}
+```

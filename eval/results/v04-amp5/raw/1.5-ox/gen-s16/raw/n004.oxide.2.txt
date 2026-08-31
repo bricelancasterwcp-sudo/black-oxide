@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let mut a = 1;
+    let mut b = 1;
+
+    for _ in 1..=9 {
+        let temp = a + b;
+        a = b;
+        b = temp;
+    }
+
+    println!("{}", b);
+}
+```
+
+The problem was that the loop did not have a loop variable, so it could not be used in the expression `let temp = a + b;`. Additionally, the semicolons were unnecessary after each line of the loop body. The corrected program initializes two variables `a` and `b` to 1 and then uses a loop with a range from 1 to 9 (inclusive) to calculate the tenth term of the sequence.

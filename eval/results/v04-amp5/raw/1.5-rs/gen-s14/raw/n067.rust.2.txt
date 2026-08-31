@@ -1,0 +1,13 @@
+fn main() {
+    let mut list = [7, 4, 9, 10];
+    let mut odd_sum: i32 = 0;
+
+    for &x in list.iter() {
+        if x % 2 != 0 {
+            println!("{}", x * 2);
+            odd_sum += x;
+        }
+    }
+
+    println!("Total of even entries: {}", odd_sum);
+}

@@ -1,0 +1,19 @@
+struct Item { name: Str, unit_price: Int, quantity: Int }
+fn total_cost(item: Item) -> Int {
+    item.unit_price * item.quantity
+}
+fn main() {
+    let pen = Item { name: "pen", unit_price: 3, quantity: 4 }
+    let pad = Item { name: "pad", unit_price: 9, quantity: 2 }
+    let ink = Item { name: "ink", unit_price: 5, quantity: 3 }
+    let total_pen_cost = total_cost(pen)
+    let total_pad_cost = total_cost(pad)
+    let total_ink_cost = total_cost(ink)
+    print(total_pen_cost + total_pad_cost + total_ink_cost)
+    let max_cost_item = if total_pen_cost > total_pad_cost {
+        if total_pen_cost > total_ink_cost { "pen" } else { "ink" }
+    } else {
+        if total_pad_cost > total_ink_cost { "pad" } else { "ink" }
+    }
+    print_str(max_cost_item)
+}

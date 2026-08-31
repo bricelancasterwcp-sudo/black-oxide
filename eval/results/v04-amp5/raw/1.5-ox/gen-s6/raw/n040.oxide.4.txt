@@ -1,0 +1,24 @@
+```
+struct Shape {
+    shape_type: Str,
+    value: Option<Float>,
+}
+
+impl Shape {
+    fn area(&self) -> Float {
+        match self.shape_type.as_str() {
+            "Square" => self.value.unwrap() * self.value.unwrap(),
+            "Circle" => std::f64::consts::PI * self.value.unwrap() * self.value.unwrap(),
+            _ => panic!("Invalid shape type"),
+        }
+    }
+}
+
+fn main() {
+    let r = Shape { 
+        shape_type: "Square".to_string(),
+        value: Some(4.0),
+    };
+    print(r.area());
+}
+```

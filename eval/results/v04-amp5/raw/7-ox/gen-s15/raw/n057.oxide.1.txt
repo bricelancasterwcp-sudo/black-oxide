@@ -1,0 +1,20 @@
+```oxide
+fn main() {
+    let fig = "fig";
+    let banana = "banana";
+    let kiwi = "kiwi";
+
+    let max_len_name = if str_len(fig) >= str_len(banana) && str_len(fig) >= str_len(kiwi) {
+        fig
+    } else if str_len(banana) >= str_len(fig) && str_len(banana) >= str_len(kiwi) {
+        banana
+    } else {
+        kiwi
+    };
+
+    let max_len = str_len(max_len_name);
+    
+    print_str(max_len_name);
+    print_int(max_len);
+}
+```

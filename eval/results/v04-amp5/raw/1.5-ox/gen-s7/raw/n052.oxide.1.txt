@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let s = "banana";
+    for (i, &c) in s.char_indices() {
+        if c == 'n' {
+            print!("{}", i);
+        }
+    }
+}
+```
+
+This program uses `char_indices` to iterate over each character and index of the string `"banana"`. It checks if the character is 'n', and if so, prints the index. The use of a for loop with an iterator allows us to directly access both the index (which we print) and the value at that index (`&c`).

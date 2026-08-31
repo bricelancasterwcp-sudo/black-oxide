@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let mut list = vec![7, 4, 9, 10];
+    let mut total_even_sum: u32 = 0;
+
+    for x in list.iter_mut() { // Use iter_mut to modify the vector
+        if *x % 2 != 0 {
+            println!("{} doubled is {}", *x, *x * 2);
+        } else {
+            total_even_sum += *x;
+        }
+    }
+
+    println!("Total of even entries: {}", total_even_sum);
+}
+```

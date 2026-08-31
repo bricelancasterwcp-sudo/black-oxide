@@ -1,0 +1,22 @@
+```rust
+fn main() {
+    let mut signals = vec![0; 3];
+
+    for (i, &signal) in signals.iter_mut().enumerate() {
+        match signal {
+            1 => println!("Stop"),
+            2 => println!("Go"),
+            3 => println!("Wait"),
+            _ => panic!("Invalid signal: {}", signal),
+        }
+
+        if i == 0 {
+            *signal = 1; // Start with red
+        } else if i > 0 && signals[i - 1] == 1 { // Red followed by green
+            *signal = 2;
+        } else if i > 0 && signals[i - 1] == 3 { // Yellow followed by red
+            *signal = 2; // Stop as a signal change
+        }
+    }
+}
+```

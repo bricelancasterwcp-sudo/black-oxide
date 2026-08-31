@@ -1,0 +1,10 @@
+fn main() {
+    let mut queue = vec(1, 2, 3, 4, 5)
+    let first = unwrap_or(get(queue, 0), -1)
+    let last = unwrap_or(get(queue, len(queue) - 1), -1)
+    queue = set(queue, 0, last)
+    queue = set(queue, len(queue) - 1, first)
+    for x in queue {
+        print(x)
+    }
+}

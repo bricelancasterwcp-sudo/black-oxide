@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let scores = [2, 9, 5];
+    for &score in &scores {
+        println!("{}", score);
+    }
+}
+```
+
+The issue was that `println!` did not include the spaces between numbers. To fix this, I added a space before `{}` inside the print statement.

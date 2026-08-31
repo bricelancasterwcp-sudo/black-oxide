@@ -1,0 +1,20 @@
+```rust
+struct Circle { radius: Float }
+struct Square { side: Int }
+
+impl Shape {
+    fn area(&self) -> Float {
+        match self {
+            Square { side } => side * side,
+            Circle { radius } => pi * radius * radius,
+        }
+    }
+}
+
+fn main() {
+    let r = Shape::Square { side: 4 };
+    print(r.area()); // field access copies: r stays usable
+}
+```
+
+The program defines a `Shape` trait with an `area` method, which is implemented for both `Square` and `Circle`. The `main` function creates a square of side four and prints its area.

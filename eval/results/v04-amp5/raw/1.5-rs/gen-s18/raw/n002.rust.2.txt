@@ -1,0 +1,6 @@
+```rust
+fn main() {
+    let result: i32 = (1..=6).product();
+    println!("Product of numbers from 1 to 6: {}", result);
+}
+```

@@ -1,0 +1,9 @@
+```
+struct Log { entries: Vec<Int> }
+
+fn main() {
+    let log = Log { entries: vec![6, 7, 8, 9] }
+    print(get(log.entries, 0)?)
+    print(get(log.entries, len(log.entries) - 1)?)
+}
+```

@@ -1,0 +1,11 @@
+```oxide
+fn main() {
+    let r = Reading { label: "sensor", value: 7 };
+    print(r.value);
+}
+
+struct Reading {
+    label: Str,
+    value: Int,
+}
+```

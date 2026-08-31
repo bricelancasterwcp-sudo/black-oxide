@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let side = 4.0;
+    let pi: f64 = std::f64::consts::PI; // Fixed the type to f64 for high-precision calculations
+    println!("The area of the square is {}", side * side * pi);
+}
+```

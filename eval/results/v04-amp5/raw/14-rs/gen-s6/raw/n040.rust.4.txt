@@ -1,0 +1,20 @@
+use std::f64::consts::PI;
+
+enum Shape {
+    Square(f64),
+    Circle(f64),
+}
+
+impl Shape {
+    fn area(&self) -> f64 {
+        match self {
+            Shape::Square(side) => side * side,
+            Shape::Circle(radius) => 3.0 * radius * radius,
+        }
+    }
+}
+
+fn main() {
+    let square = Shape::Square(4.0);
+    println!("Area of the square: {}", square.area());
+}

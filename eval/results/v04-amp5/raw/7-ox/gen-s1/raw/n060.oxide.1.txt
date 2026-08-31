@@ -1,0 +1,1 @@
+fn main() { let s = "a1b22"; let (sum, count) = s.chars().filter_map(|c| c.to_digit(10)).fold((0, 0), |(acc, cnt), d| (acc + d as u64, cnt + 1)); print(sum); print_str(" "); print(count); }

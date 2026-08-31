@@ -1,0 +1,1 @@
+fn main() { let signals = vec(); push(signals, "green"); push(signals, "red"); push(signals, "yellow"); for signal in signals { match signal { "green" => print_str("go"), "red" => print_str("stop"), "yellow" => print_str("wait"), _ => print_str("unknown"), } } }

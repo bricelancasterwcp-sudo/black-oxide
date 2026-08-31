@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let prod = (1..=6).map(|x| x as Int).product();
+    println(prod);
+}
+```
+
+Explanation of the corrections:
+- The first `let` declaration was missing a semicolon at the end.
+- The second `let` declaration also had a misplaced semicolon.
+- The correct syntax for creating a vector from 1 to 6 is `(1..=6).collect::<Vec<Int>>()`.
+- The multiplication operator (`*`) should be applied directly between two values, not within parentheses.

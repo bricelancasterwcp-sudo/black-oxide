@@ -1,0 +1,20 @@
+```rust
+fn main() {
+    let figures = vec![8, 3, 11, 6];
+    let mut min = figures[0];
+    let mut max = figures[0];
+
+    for &figure in &figures {
+        if figure < min {
+            min = figure;
+        } else if figure > max {
+            max = figure;
+        }
+    }
+
+    println!("Smallest: {}", min);
+    println!("Gap: {}", max - min);
+}
+```
+
+The original program had a small issue with the loop variable declaration in the for statement. It should be `for &figure in figures.iter()` instead of just `for &figure in figures`. This change ensures that we are iterating over the references to each element in the vector, not the elements themselves.

@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let text = "Hello world!";
+    let mut vowel_count = 0;
+    let mut non_vowel_count = 0;
+
+    for c in text.chars() {
+        if ["a", "e", "i", "o", "u"].contains(&c.to_ascii_lowercase().as_str()) {
+            vowel_count += 1;
+        } else {
+            non_vowel_count += 1;
+        }
+    }
+
+    println!("Vowels: {}", vowel_count);
+    println!("Non-vowels: {}", non_vowel_count);
+}
+```

@@ -1,0 +1,19 @@
+```text
+fn digit_sum(n: Int) -> Int {
+    let sum = 0
+    let digits = int_to_str(n)
+    for c in chars(digits) {
+        let d = parse_int(c)?
+        sum = sum + d
+    }
+    Some(sum)
+}
+
+fn main() {
+    let n = 9875
+    match digit_sum(n) {
+        Some(sum) => print(sum),
+        None => print_str("Error parsing digits"),
+    }
+}
+```

@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let vowels = "aeiouAEIOU";
+    let mut count_vowels = 0;
+    let mut count_not_vowels = 0;
+
+    for letter in "keyboard".chars() {
+        if vowels.contains(letter) {
+            count_vowels += 1;
+        } else {
+            count_not_vowels += 1;
+        }
+    }
+
+    print(count_vowels);
+    print_str(", ");
+    print(count_not_vowels);
+}
+```

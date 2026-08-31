@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut count = 0;
+    for i in 1..=50 {
+        if i % 3 == 0 || i % 5 == 0 {
+            count += 1;
+        }
+    }
+    print(count);
+}
+```
+
+The problem was that the `for` loop was ending prematurely due to a missing semicolon. Each line should end with a semicolon, and there were no semicolons at the end of each statement or block in the original code.

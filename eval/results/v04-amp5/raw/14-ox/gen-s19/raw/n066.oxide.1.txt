@@ -1,0 +1,13 @@
+```text
+fn main() {
+    let batch = vec(9, 2, 12, 5, 16)
+    let kept = Vec<Int>()
+    for x in batch {
+        if x < 10 {
+            print(x)
+            kept = push(kept, x)
+        }
+    }
+    print(len(kept))
+}
+```

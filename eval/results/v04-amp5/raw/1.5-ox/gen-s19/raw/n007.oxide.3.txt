@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let num = 9875;
+    let sum = get(num / 10, 0) + get(num % 10, 0);
+    print(sum);
+}
+```
+
+Explanation:
+The error messages indicate that the code contains unexpected characters and missing semicolons. The corrected program ensures that all lines end with a semicolon to comply with Rust syntax rules.

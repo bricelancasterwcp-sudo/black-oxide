@@ -1,0 +1,18 @@
+```text
+fn parse_num(s: Str) -> Option<Int> {
+    match parse_int(s) {
+        Some(n) => Some(n),
+        None => None,
+    }
+}
+
+fn main() {
+    let inputs = vec("8", "oak", "15");
+    for s in inputs {
+        match parse_num(s) {
+            Some(n) => print(n),
+            None => print_str("bad"),
+        }
+    }
+}
+```

@@ -1,0 +1,23 @@
+```oxide
+fn is_vowel(c: Str) -> Bool {
+    c == "a" || c == "e" || c == "i" || c == "o" || c == "u"
+}
+
+fn main() {
+    let keyboard = "qwertyuiopasdfghjklzxcvbnm";
+    let mut vowels = 0;
+    let mut consonants = 0;
+
+    for letter in keyboard.chars() {
+        if is_vowel(letter) {
+            vowels += 1;
+        } else {
+            consonants += 1;
+        }
+    }
+
+    print(vowels);
+    print_str(" ");
+    print(consonants);
+}
+```

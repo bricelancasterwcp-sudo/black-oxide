@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let sample_numbers = vec![5, 12, 3, 18, 9];
+    let cutoff = 10;
+
+    let below_cutoff_count = sample_numbers.iter()
+        .filter(|&num| num < cutoff)
+        .count();
+
+    let over_or_equal_cutoff_count = sample_numbers.iter()
+        .filter(|&num| num >= cutoff)
+        .count();
+
+    println!("Numbers below the cutoff: {}", below_cutoff_count);
+    println!("Numbers at or over the cutoff: {}", over_or_equal_cutoff_count);
+}
+```

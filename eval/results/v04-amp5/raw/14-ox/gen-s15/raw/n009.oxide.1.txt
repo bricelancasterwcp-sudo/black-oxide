@@ -1,0 +1,10 @@
+```text
+fn main() {
+    let n = 1234
+    let s = int_to_str(n)
+    let chars = chars(s)
+    let reversed_chars = reverse(chars)
+    let reversed_str = concat(reversed_chars)
+    print_str(reversed_str)
+}
+```

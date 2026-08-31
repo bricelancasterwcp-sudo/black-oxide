@@ -1,0 +1,14 @@
+fn main() {
+    let mut vowels = 0;
+    let mut consonants = 0;
+
+    for ch in "keyboard".chars().filter(|c| c.is_alphabetic()) {
+        match ch.to_lowercase().next().unwrap() {
+            'a' | 'e' | 'i' | 'o' | 'u' => vowels += 1,
+            _ => consonants += 1,
+        }
+    }
+
+    println!("Vowels: {}", vowels);
+    println!("Consonants: {}", consonants);
+}

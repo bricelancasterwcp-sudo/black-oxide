@@ -1,0 +1,23 @@
+```rust
+fn count_below_cutoff(v: Vec<Int>, cutoff: Int) -> (Int, Int) {
+    let mut below = 0;
+    let mut above_or_equal = 0;
+    for x in v {
+        if x < cutoff {
+            below += 1;
+        } else {
+            above_or_equal += 1;
+        }
+    }
+    (below, above_or_equal)
+}
+
+fn main() {
+    let samples = push(push(push(push(vec(), 5), 12), 3), 18);
+    let cutoff = 10;
+    let result = count_below_cutoff(samples, cutoff);
+    print(result.0); // number below cutoff
+    print_str(" ");
+    print(result.1); // number at or over cutoff
+}
+```

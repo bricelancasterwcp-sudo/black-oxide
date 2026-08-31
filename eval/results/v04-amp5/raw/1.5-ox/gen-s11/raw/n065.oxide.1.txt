@@ -1,0 +1,31 @@
+```rust
+struct Reading { label: Str, values: Vec<Int> }
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(vec(), 3), 42) }
+    print(first_big(r.values))            // field access copies: r stays usable
+    let r2 = Reading { label: "lab2", ..r }
+    match second(r2.values) {
+        Some(n) => print(n),
+        None => print_str("too short"),
+    }
+}
+
+fn first_big(v: Vec<Int>) -> Int {
+    let mut count = 0;
+    for x in v {
+        if x > 5 {
+            count += 1;
+        }
+    }
+    count
+}
+
+fn second(v: Vec<Int>) -> Option<Int> {
+    if v.len() < 2 {
+        return None;
+    }
+    let max = *v.iter().max()?;
+    Some(max + 1)
+}
+```

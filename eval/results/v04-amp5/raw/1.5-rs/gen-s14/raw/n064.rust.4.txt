@@ -1,0 +1,11 @@
+fn main() {
+    let list = [10, 20];
+    
+    if let Some(&value) = list.get(0) {
+        println!("{}", value); // Output: 10
+    }
+
+    if let Some(&value) = list.get(3) {
+        println!("{}", value); // Output: None
+    }
+}

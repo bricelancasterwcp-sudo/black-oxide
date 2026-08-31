@@ -1,0 +1,7 @@
+```oxide
+fn main() {
+    let log = vec!(6, 7, 8, 9);
+    print(log[0]);
+    print(log[len(log) - 1]);
+}
+```

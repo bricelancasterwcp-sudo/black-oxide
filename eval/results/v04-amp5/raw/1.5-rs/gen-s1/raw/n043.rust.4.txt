@@ -1,0 +1,8 @@
+fn main() {
+    let mut q = vec![1, 2, 3, 4, 5];
+    let (first_half, last_half) = q.split_at_mut(q.len() / 2);
+    std::mem::swap(&mut first_half[0], &mut last_half[last_half.len() - 1]);
+    for num in q.iter().rev() {
+        println!("{}", num);
+    }
+}

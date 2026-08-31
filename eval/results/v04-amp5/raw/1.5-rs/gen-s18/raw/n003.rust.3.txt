@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut count = 0;
+    for i in 1..=36 {
+        if i % 36 == 0 && i != 36 { // Corrected condition to avoid counting 36 itself
+            count += 1;
+        }
+    }
+    println!("{}", count);
+}
+```

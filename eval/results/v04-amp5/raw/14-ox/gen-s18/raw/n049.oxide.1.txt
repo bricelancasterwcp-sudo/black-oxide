@@ -1,0 +1,17 @@
+```text
+fn main() {
+    let v = vec()
+    v = push(v, 8)
+    v = push(v, 3)
+    v = push(v, 11)
+    v = push(v, 6)
+
+    let min_val = min(v)?
+    print(min_val)
+
+    let v = sort(v)
+    let max_val = get(v, len(v) - 1)?
+    let gap = max_val - min_val
+    print(gap)
+}
+```

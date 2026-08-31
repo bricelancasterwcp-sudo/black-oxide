@@ -1,0 +1,14 @@
+```rust
+fn main() {
+    let numbers = vec![7, 8, 9];
+    println!("{}", get_second_entry(&numbers));
+}
+
+fn get_second_entry(numbers: &Vec<i32>) -> Option<&i32> {
+    if numbers.len() > 1 {
+        Some(&numbers[1])
+    } else {
+        None
+    }
+}
+```

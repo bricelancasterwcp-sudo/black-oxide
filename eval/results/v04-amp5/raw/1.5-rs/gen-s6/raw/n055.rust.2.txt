@@ -1,0 +1,12 @@
+fn main() {
+    let a = "8".to_string();
+    let b = "oak".to_string();
+    let c = "15".to_string();
+
+    match (a.parse::<u32>(), b.parse::<String>(), c.parse::<i32>()) {
+        (Ok(a), Ok(b), Ok(c)) => println!("{} {}", a, c),
+        (_, Ok(b), _) => println!("{} {}", a, b),
+        (_, _, Ok(c)) => println!("{} {}", b, c),
+        (_, _, _) => println!("bad")
+    }
+}

@@ -1,0 +1,11 @@
+fn parse_entry(entry: Str) -> Option<Int> { parse_int(entry) }
+
+fn main() {
+    let entries = vec("8", "oak", "15");
+    for entry in entries {
+        match parse_entry(entry) {
+            Some(n) => print(n),
+            None => print_str("bad"),
+        }
+    }
+}

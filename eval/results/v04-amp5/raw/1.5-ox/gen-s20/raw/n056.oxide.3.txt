@@ -1,0 +1,21 @@
+```rust
+fn main() {
+    let text1 = "7";
+    let text2 = "x";
+    let text3 = "9";
+    let text4 = "?";
+
+    let mut total: Int = 0;
+    let mut count: Int = 0;
+
+    for t in [text1, text2, text3, text4] {
+        if let Some(n) = parse_int(t) {
+            total += n;
+            count += 1;
+        }
+    }
+
+    println!("Total: {}", total);
+    println!("Count: {}", count);
+}
+```

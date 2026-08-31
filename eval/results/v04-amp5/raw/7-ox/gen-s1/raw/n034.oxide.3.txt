@@ -1,0 +1,14 @@
+```
+struct Reading { label: Str, values: Vec<Int> }
+
+fn second(v: Vec<Int>) -> Option<Int> {
+    let x = get(v, 1)?
+    Some(x + 1)
+}
+
+fn main() {
+    print(second(push(vec(), 7)))            // Output: None
+    print(second(push(push(vec(), 8), 9)))    // Output: Some(10)
+    print(second(push(push(vec(), 10), 11)))   // Output: Some(12)
+}
+```

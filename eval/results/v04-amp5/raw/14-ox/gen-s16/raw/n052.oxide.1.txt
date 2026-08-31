@@ -1,0 +1,12 @@
+```text
+fn main() {
+    let word = "banana"
+    let len = str_len(word)
+    for i in range(0, len) {
+        let char = get(word, i)?
+        if char == "n" {
+            print(i)
+        }
+    }
+}
+```

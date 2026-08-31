@@ -1,0 +1,22 @@
+```rust
+fn main() {
+    let numbers = [9, 2, 12, 5, 16];
+    let mut count = 0;
+
+    for &num in numbers.iter() {
+        if num < 10 {
+            println!("{}", num);
+            count += 1;
+        }
+    }
+
+    println!("Kept: {}", count);
+}
+```
+
+In this solution:
+- We define an array `numbers` containing the specified integers.
+- We initialize a counter variable `count` to zero.
+- We iterate over each element in the `numbers` array using `for &num in numbers.iter()`.
+- Inside the loop, we check if the current number `num` is less than 10. If it is, we print the number and increment the count.
+- After the loop finishes, we print the total count of numbers that were kept.

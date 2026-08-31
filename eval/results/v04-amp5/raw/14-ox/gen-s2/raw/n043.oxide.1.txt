@@ -1,0 +1,15 @@
+```oxide
+struct Queue { items: Vec<Int> }
+
+fn main() {
+    let mut q = Queue { items: vec![1, 2, 3, 4, 5] }
+    if len(q.items) > 1 {
+        let first = get(q.items, 0).unwrap()
+        let last = get(q.items, len(q.items) - 1).unwrap()
+        q.items = set(set(q.items, 0, last), len(q.items) - 1, first)
+    }
+    for item in q.items {
+        print(item)
+    }
+}
+```

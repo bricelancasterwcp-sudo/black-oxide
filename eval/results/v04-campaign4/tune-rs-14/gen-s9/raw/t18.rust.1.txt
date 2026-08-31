@@ -1,0 +1,11 @@
+fn main() {
+    // Rectangle 3 by 4
+    let (width1, height1) = (3, 4);
+    println!("{}", 2 * (width1 + height1));
+    // Triangle with sides 3, 4, 5
+    let (side1, side2, side3) = (3, 4, 5);
+    println!("{}", side1 + side2 + side3);
+    // Rectangle 2 by 5
+    let (width2, height2) = (2, 5);
+    println!("{}", 2 * (width2 + height2));
+}

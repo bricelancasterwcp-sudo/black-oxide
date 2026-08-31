@@ -1,0 +1,11 @@
+Here's the fixed version of your Rust code:
+
+```rust
+fn main() {
+    let mut letters = "granite".chars();
+    println!("{}", letters.next().unwrap());  // Open letter
+    println!("{}", letters.next().unwrap());  // Close letter
+}
+```
+
+In the original program, `letters` is a `std::str::Chars` iterator, which doesn't have the `.next()` method to directly get the next character. The code should use `.nth(0)` instead to get the first character.

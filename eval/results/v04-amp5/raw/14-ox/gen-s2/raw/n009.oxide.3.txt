@@ -1,0 +1,21 @@
+```ox
+fn reverse_digits(n: Int) -> Str {
+    let mut result = ""
+    let mut num = n
+    while num > 0 {
+        let digit = num % 10
+        result = concat(int_to_str(digit), result)
+        num = num / 10
+    }
+    if n == 0 {
+        "0"
+    } else {
+        result
+    }
+}
+
+fn main() {
+    let reversed = reverse_digits(1234)
+    print(reversed)
+}
+```

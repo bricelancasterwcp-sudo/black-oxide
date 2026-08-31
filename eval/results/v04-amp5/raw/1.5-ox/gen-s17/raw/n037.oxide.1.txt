@@ -1,0 +1,18 @@
+```rust
+struct Rectangle { width: Int, height: Int }
+
+fn main() {
+    let mut r = Rectangle { width: 2, height: 3 };
+    r.width += 3;
+    print(int_to_str(r.area()));
+}
+```
+
+## Explanation
+
+In the given solution:
+- A `Rectangle` struct is defined with `width` and `height` fields.
+- The main function starts by creating a `Rectangle` instance with dimensions 2 wide and 3 tall.
+- It then changes the width to 5 using the `+=` operator on the `width` field.
+- The area of the rectangle is calculated using the formula `width * height`.
+- Finally, the area is converted to a string and printed.

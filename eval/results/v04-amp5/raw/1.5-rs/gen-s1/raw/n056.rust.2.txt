@@ -1,0 +1,12 @@
+fn main() {
+    let texts = vec![7, None, 9, None];
+    let (total_sum, count_not) = texts.iter().fold((0, 0), |(sum, count), &text| {
+        match text {
+            Some(num) => (sum + num, count),
+            None => (sum, count + 1)
+        }
+    });
+
+    println!("Total sum: {}", total_sum);
+    println!("Number of elements not holding a number: {}", count_not);
+}

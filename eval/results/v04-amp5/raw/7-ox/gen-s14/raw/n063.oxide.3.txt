@@ -1,0 +1,35 @@
+```rust
+struct Line { items: Vec<Item> }
+
+enum Item { Unit(Int) }
+
+impl Line {
+    fn new() -> Self {
+        Self { items: vec![Item::Unit(3); 4] }
+    }
+
+    fn add(&mut self, item: Item) {
+        self.items.push(item);
+    }
+
+    fn value(&self) -> Int {
+        self.items.iter().map(|i| match i { Item::Unit(n) => *n }).sum()
+    }
+}
+
+fn main() {
+    let mut line1 = Line::new();
+    for _ in 0..5 {
+        line1.add(Item::Unit(2));
+    }
+
+    let mut line2 = Line::new();
+    line2.add(Item::Unit(3));
+
+    print(line1.value());
+    print_str("\n");
+    print(line2.value());
+    print_str("\n");
+    print(line1.value() + line2.value());
+}
+```

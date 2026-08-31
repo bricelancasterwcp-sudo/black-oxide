@@ -1,0 +1,25 @@
+struct Queue { items: Vec<Int> }
+
+fn enqueue(q: &mut Queue, x: Int) {
+    push(&mut q.items, x)
+}
+
+fn dequeue(q: &mut Queue) -> Option<Int> {
+    get(&mut q.items, 0)?
+}
+
+fn pop(q: &mut Queue) -> Option<Int> {
+    let last = q.items.pop()?;
+    Some(last)
+}
+
+fn main() {
+    let mut q = Queue { items: vec!(1, 2, 3, 4, 5) };
+    let first = dequeue(&mut q)?;
+    let last = pop(&mut q)?;
+    enqueue(&mut q, last);
+    enqueue(&mut q, first);
+    for x in q.items {
+        print(x)
+    }
+}

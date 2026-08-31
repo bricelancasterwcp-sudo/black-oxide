@@ -1,0 +1,16 @@
+fn main() {
+    let word = "coffee";
+    let mut seen = vec![];
+    for c in chars(word) {
+        if contains(seen, c) {
+            continue;
+        }
+        for cc in chars(word) {
+            if cc == c && !contains(seen, cc) {
+                print_str(cc);
+                push(seen, cc);
+                break;
+            }
+        }
+    }
+}

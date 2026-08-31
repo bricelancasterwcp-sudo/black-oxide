@@ -1,0 +1,22 @@
+```oxide
+fn main() {
+    let input1 = "8";
+    let input2 = "oak";
+    let input3 = "15";
+
+    print(match parse_int(input1) {
+        Some(n) => n,
+        None => "bad",
+    });
+
+    print(match parse_int(input2) {
+        Some(n) => n,
+        None => "bad",
+    });
+
+    print(match parse_int(input3) {
+        Some(n) => n,
+        None => "bad",
+    });
+}
+```

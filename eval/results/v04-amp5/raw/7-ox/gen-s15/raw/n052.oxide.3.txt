@@ -1,0 +1,9 @@
+fn main() {
+    let s = "banana";
+    for (i, c) in s.chars().enumerate() {
+        if c == 'n' {
+            print(i);
+            print_str("\n");
+        }
+    }
+}

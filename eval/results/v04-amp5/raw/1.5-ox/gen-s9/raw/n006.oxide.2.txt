@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let mut max_power = 0;
+
+    for i in 1..=100 {
+        if is_power_of_two(i) && i > max_power {
+            max_power = i;
+        }
+    }
+
+    print(max_power);
+}
+
+fn is_power_of_two(n: Int) -> bool {
+    n.is_positive() && n.trailing_zeros() == 0
+}
+```

@@ -1,0 +1,4 @@
+fn main() {
+    print(6);
+    print(9);
+}

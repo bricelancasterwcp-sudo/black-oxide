@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let mut counts = [0; 2]; // [under_cutoff, over_cutoff]
+    
+    for &num in &[5, 12, 3, 18, 9] {
+        if num < 10 {
+            counts[0] += 1;
+        } else {
+            counts[1] += 1;
+        }
+    }
+    
+    println!("Under cutoff: {}", counts[0]);
+    println!("Over cutoff: {}", counts[1]);
+}
+```

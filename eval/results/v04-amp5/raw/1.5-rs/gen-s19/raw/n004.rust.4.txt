@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut current = 1;
+    let mut next = 1;
+
+    for _ in 0..9 {
+        println!("{}", current);
+        let temp = current;
+        current = next;
+        next += temp;
+    }
+}
+```

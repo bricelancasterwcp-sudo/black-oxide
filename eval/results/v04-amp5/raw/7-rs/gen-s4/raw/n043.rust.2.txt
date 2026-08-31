@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut queue = vec![1, 2, 3, 4, 5];
+    if let [first, .., last] = &mut *queue {
+        std::mem::swap(first, last);
+    }
+    for item in queue.iter() {
+        println!("{}", item);
+    }
+}
+```

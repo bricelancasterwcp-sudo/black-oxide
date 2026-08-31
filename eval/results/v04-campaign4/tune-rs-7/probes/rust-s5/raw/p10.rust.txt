@@ -1,0 +1,6 @@
+fn main() {
+    let p = Point { x: 11, tag: String::from("hello") };
+    let q = Point { x: 55, ..p.clone() }; // Clone p to avoid moving ownership of p.tag
+    println!("{}", p.tag.len());
+    println!("{}", q.x);
+}

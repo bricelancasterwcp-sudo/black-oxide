@@ -1,0 +1,21 @@
+```
+fn main() {
+    let numbers: Vec<Option<i32>> = vec![Some(7), Some(8), Some(9), None, 1];
+    let mut sum_of_numbers = 0;
+    let mut count_of_numbers_without_number = 0;
+
+    for num in numbers.into_iter() {
+        match num {
+            Some(n) => {
+                sum_of_numbers += n;
+            }
+            None => {
+                count_of_numbers_without_number += 1;
+            }
+        }
+    }
+
+    println!("Sum of numbers that do hold a number: {}", sum_of_numbers);
+    println!("Number of numbers that do not hold a number: {}", count_of_numbers_without_number);
+}
+```

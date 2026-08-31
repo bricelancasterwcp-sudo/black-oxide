@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    match std::env::args().nth(1).unwrap_or_default() {
+        "green" => println!("go"),
+        "red" => println!("stop"),
+        "yellow" => println!("wait"),
+        _ => println!("unknown signal")
+    }
+}
+```

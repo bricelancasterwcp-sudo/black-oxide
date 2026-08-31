@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let mut values = vec![7, 4, 9, 10];
+    let mut total = 0;
+    for idx in 0..values.len() {
+        if values[idx] % 2 != 0 {
+            println!("{}", 2 * values[idx]);
+            total += values[idx];
+        }
+    }
+    for &value in values.iter().enumerate() {
+        if value.1 % 2 == 0 {
+            total += value.1;
+        }
+    }
+    print!("{} {}", total, 2 * total);
+}
+```

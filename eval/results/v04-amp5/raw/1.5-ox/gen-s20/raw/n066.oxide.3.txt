@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let mut nums = vec![9, 2, 12, 5, 16];
+    for num in &mut nums {
+        if *num < 10 {
+            println!("{}", num);
+            break;
+        }
+    }
+    println!("\nNumber of kept entries: {}", nums.len());
+}
+```

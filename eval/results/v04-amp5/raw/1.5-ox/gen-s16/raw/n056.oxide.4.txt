@@ -1,0 +1,20 @@
+```rust
+fn main() {
+    let numbers = vec![Some(7), None, Some(x), Some(9), None, None];
+    let mut total: Int = 0;
+    let mut count = 0;
+
+    for number in numbers {
+        match number {
+            Some(n) => {
+                total += n;
+                count += 1;
+            }
+            _ => (),
+        }
+    }
+
+    print!("Total: {}", total);
+    println!("Count: {}", count);
+}
+```

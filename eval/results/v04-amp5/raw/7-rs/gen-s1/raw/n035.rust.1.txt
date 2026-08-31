@@ -1,0 +1,14 @@
+fn main() {
+    match divide(20, 4) {
+        Some(result) => println!("{}", result),
+        None => println!("bad"),
+    }
+}
+
+fn divide(dividend: i32, divisor: i32) -> Option<i32> {
+    if divisor == 0 {
+        None
+    } else {
+        Some(dividend / divisor)
+    }
+}

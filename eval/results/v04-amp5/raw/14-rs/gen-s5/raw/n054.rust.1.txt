@@ -1,0 +1,27 @@
+```rust
+use std::collections::HashMap;
+
+fn main() {
+    let word = "keyboard";
+    let mut vowel_count = 0;
+    let mut consonant_count = 0;
+
+    for letter in word.chars() {
+        if is_vowel(letter) {
+            vowel_count += 1;
+        } else {
+            consonant_count += 1;
+        }
+    }
+
+    println!("{} vowels", vowel_count);
+    println!("{} consonants", consonant_count);
+}
+
+fn is_vowel(c: char) -> bool {
+    match c {
+        'a' | 'e' | 'i' | 'o' | 'u' | 'A' | 'E' | 'I' | 'O' | 'U' => true,
+        _ => false,
+    }
+}
+```

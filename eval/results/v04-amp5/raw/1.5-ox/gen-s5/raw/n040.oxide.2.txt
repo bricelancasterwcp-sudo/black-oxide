@@ -1,0 +1,14 @@
+```rust
+enum Shape {
+    Square { side: f64 },
+    Circle { radius: f64 },
+}
+
+fn main() {
+    let shape = Shape::Square { side: 4.0 };
+    match shape {
+        Shape::Square{ side } => println!("Area of square: {}", side * side),
+        Shape::Circle{ radius } => println!("Area of circle: {}", radius * radius * 3.14159),
+    }
+}
+```

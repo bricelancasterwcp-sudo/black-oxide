@@ -1,0 +1,8 @@
+```
+fn main() {
+    let numbers: Vec<Option<i32>> = vec![Some(7), Some(8), Some(9), None, 1];
+    let sum_of_numbers = numbers.into_iter().filter_map(|num| num).sum();
+    println!("Sum of numbers that do hold a number: {}", sum_of_numbers);
+    println!("Number of numbers that do not hold a number: {}", numbers.len() - sum_of_numbers as usize);
+}
+```

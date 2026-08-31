@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let num = 91;
+    if num > 1 && (num % 2 != 0 && num % 3 != 0) {
+        println!("yes");
+    } else {
+        println!("no");
+    }
+}
+```
+
+The problem was that the condition `num % 2 == 0 || num % 3 == 0` allowed the number 91 to be printed as prime, because it is divisible by both 2 and 3. To fix this, we need to add an additional check that the number is not divisible by any other numbers besides 1 and itself (i.e., not even if it is divisible by 2 or 3). We can do this by checking divisibility starting from 5 up to the square root of `num`, but in our case, we only need to check divisibility by 2 and 3.

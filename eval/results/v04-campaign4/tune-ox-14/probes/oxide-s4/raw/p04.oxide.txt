@@ -1,0 +1,9 @@
+fn main() {
+    let v = push(push(vec(), 1), 2)
+    print(len(v))
+    let mut new_v = vec()
+    for x in v {
+        new_v = push(new_v, x)
+    }
+    print(len(new_v))
+}

@@ -1,0 +1,18 @@
+```rust
+struct Item { units: Int, price: Int }
+
+fn total_value(item: Item) -> Int {
+    item.units * item.price
+}
+
+fn main() {
+    let line1 = Item { units: 4, price: 3 }
+    let line2 = Item { units: 5, price: 2 }
+    
+    print(total_value(line1))
+    print(total_value(line2))
+    
+    let total = total_value(line1) + total_value(line2)
+    print(total)
+}
+```

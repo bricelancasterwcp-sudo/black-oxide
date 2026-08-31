@@ -1,0 +1,1 @@
+fn main() { let scores = vec(); push(scores, 2); push(scores, 9); push(scores, 5); let sorted_scores = sort(scores); for score in sorted_scores { print(score); } }

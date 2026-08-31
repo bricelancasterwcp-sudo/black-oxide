@@ -1,0 +1,22 @@
+```rust
+struct Reading { label: Str, values: Vec<Int> }
+
+fn sum_of_digits(n: Int) -> Int {
+    let str_n = int_to_str(n)
+    let chars_n = chars(str_n)
+    let mut sum = 0
+    for c in chars_n {
+        let digit = parse_int(c)?
+        sum += digit
+    }
+    Some(sum)
+}
+
+fn main() {
+    let number = 9875
+    match sum_of_digits(number) {
+        Some(sum) => print(sum),
+        None => print_str("Invalid number"),
+    }
+}
+```

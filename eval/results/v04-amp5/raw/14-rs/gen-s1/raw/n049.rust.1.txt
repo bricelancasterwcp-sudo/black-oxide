@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let numbers = [8, 3, 11, 6];
+    let mut min = numbers[0];
+    let mut max = numbers[0];
+
+    for &num in numbers.iter() {
+        if num < min {
+            min = num;
+        }
+        if num > max {
+            max = num;
+        }
+    }
+
+    println!("{}", min);
+    println!("{}", max - min);
+}
+```

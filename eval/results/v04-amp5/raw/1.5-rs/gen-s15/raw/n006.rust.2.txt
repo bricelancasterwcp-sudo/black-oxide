@@ -1,0 +1,11 @@
+fn main() {
+    let mut max_power_of_two = 0;
+
+    for i in 1..=32 { // Since 2^31 is the largest power of two less than or equal to 100
+        if 2i <= 100 {
+            max_power_of_two = 2i;
+        }
+    }
+
+    println!("The biggest power of two that does not exceed 100 is {}", max_power_of_two);
+}

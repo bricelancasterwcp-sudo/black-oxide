@@ -1,0 +1,17 @@
+```rust
+fn area_of_square(side: isize) -> f64 {
+    (side * side) as f64
+}
+
+fn area_of_circle(radius: f64) -> f64 {
+    3.141592653589793238463 * radius * radius
+}
+
+fn main() {
+    let square_area = area_of_square(4);
+    println!("The area of the square is: {}", square_area);
+
+    let circle_area = area_of_circle(3.0);
+    println!("The area of the circle is: {:.2}", circle_area);
+}
+```

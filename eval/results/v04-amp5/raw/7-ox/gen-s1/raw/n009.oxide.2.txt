@@ -1,0 +1,12 @@
+```rust
+fn reverse_int(n: Int) -> Str {
+    let s = int_to_str(n)
+    let chars: Vec<Str> = chars(s)
+    let reversed_chars: Vec<Str> = reverse(chars)
+    concat(reversed_chars.join(""))
+}
+
+fn main() {
+    print(reverse_int(1234))
+}
+```

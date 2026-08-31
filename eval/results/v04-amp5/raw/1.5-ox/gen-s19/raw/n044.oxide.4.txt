@@ -1,0 +1,10 @@
+```rust
+fn deposit(balance: Int) -> Int {
+    balance + 1
+}
+
+fn main() {
+    let mut balance = 0;
+    balance = deposit(deposit(deposit(deposit(deposit(balance)))); // Added a semicolon here to fix the syntax error.
+}
+```

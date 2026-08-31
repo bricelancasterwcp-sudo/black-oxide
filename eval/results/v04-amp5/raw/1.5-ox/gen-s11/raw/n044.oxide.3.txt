@@ -1,0 +1,24 @@
+```rust
+fn main() {
+    let mut balance = 0;
+
+    let _d3 = deposit(balance, 3);
+    println!("balance: {}", balance);
+
+    let _d1 = deposit(balance, 1);
+    println!("balance: {}", balance);
+
+    let _d4 = deposit(balance, 4);
+    println!("balance: {}", balance);
+
+    let _d1 = deposit(balance, 1);
+    println!("balance: {}", balance);
+
+    let _d5 = deposit(balance, 5);
+    println!("balance: {}", balance);
+}
+
+fn deposit(balance: Int, amount: Int) -> Int {
+    balance + amount
+}
+```

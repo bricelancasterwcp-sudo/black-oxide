@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let r = "drum";
+    for c in r.chars().rev() {
+        println!("{}", c);
+    }
+    println!("{}", r);
+}
+```

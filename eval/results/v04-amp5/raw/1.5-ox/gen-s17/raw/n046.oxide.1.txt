@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let numbers = vec![5, 12, 3, 18, 9];
+    let cutoff = 10;
+    println!("Numbers below {}:", cutoff);
+    for n in &numbers {
+        if *n < cutoff {
+            print!("{}\t", n);
+        }
+    }
+    println!("\nNumbers above or equal to {}:", cutoff);
+    for n in &numbers {
+        if *n >= cutoff {
+            print!("{}\t", n);
+        }
+    }
+}
+```

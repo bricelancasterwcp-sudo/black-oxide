@@ -1,0 +1,7 @@
+fn main() {
+    let s = "drum";
+    let reversed = chars(s).reverse().concat("");
+    print(reversed);
+    print_str(" ");
+    print(s);
+}

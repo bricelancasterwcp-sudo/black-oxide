@@ -1,0 +1,8 @@
+```rust
+
+fn main() {
+    let drum = "drum";
+    println!("{:?}", drum.chars().rev()); // reverse the string
+    println!("{:?}", drum);             // print the original string as it normally reads
+}
+```

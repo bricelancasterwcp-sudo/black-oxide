@@ -1,0 +1,14 @@
+```
+fn main() {
+    let n = 1234
+    let digits = Vec<Int>()
+    while n > 0 {
+        let digit = n % 10
+        digits = push(digits, digit)
+        n = n / 10
+    }
+    for d in digits {
+        print(d)
+    }
+}
+```

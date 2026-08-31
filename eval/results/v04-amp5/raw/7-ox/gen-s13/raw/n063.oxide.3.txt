@@ -1,0 +1,17 @@
+```rust
+struct Line { items: Vec<(Int, Int)> }
+
+fn total_cost(line: &Line) -> Int {
+    line.items.iter().map(|&(price, count)| price * count).sum()
+}
+
+fn main() {
+    let line1 = Line { items: vec![(3, 4), (2, 5)] };
+    print(total_cost(&line1));
+    let line2 = Line { items: vec![(3, 2), (2, 3)] };
+    print(total_cost(&line2));
+    let combined_items = [&line1.items, &line2.items].concat();
+    let combined_line = Line { items: combined_items };
+    print(total_cost(&combined_line));
+}
+```

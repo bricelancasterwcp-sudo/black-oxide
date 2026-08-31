@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let fig = String::from("fig");
+    let banana = String::from("banana");
+    let kiwi = String::from("kiwi");
+
+    let s = match (fig, banana, kiwi) {
+        (_, _, _) => String::new(),
+        (a, b, c) if a.len() >= b.len() && a.len() >= c.len() => a,
+        (b, _, c) if b.len() >= a.len() && b.len() >= c.len() => b,
+        _ => c
+    };
+
+    let n = s.chars().count();
+    println!("The name with the most letters is {} ({})", s, n);
+}
+```

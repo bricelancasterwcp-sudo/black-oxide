@@ -1,0 +1,21 @@
+```oxide
+struct Bank { balance: Int }
+
+fn deposit(bank: &mut Bank, amount: Int) {
+    bank.balance += amount;
+}
+
+fn main() {
+    let mut bank = Bank { balance: 0 };
+    deposit(&mut bank, 3);
+    print(bank.balance);
+    deposit(&mut bank, 1);
+    print(bank.balance);
+    deposit(&mut bank, 4);
+    print(bank.balance);
+    deposit(&mut bank, 1);
+    print(bank.balance);
+    deposit(&mut bank, 5);
+    print(bank.balance);
+}
+```

@@ -1,0 +1,12 @@
+```
+fn main() {
+    let mut nums = vec![8, oak, 15];
+    for n in nums.iter_mut() {
+        match n {
+            &mut Oak => println!("Oak"),
+            &mut Int(i) if i > 10 => println!("{}", i),
+            _ => println!("bad")
+        }
+    }
+}
+```

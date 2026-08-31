@@ -1,0 +1,9 @@
+fn main() {
+    let s = "banana";
+    for i in range(0, str_len(s)) {
+        let c = chars(get(s, i))?;
+        if c == "n" {
+            print(i);
+        }
+    }
+}

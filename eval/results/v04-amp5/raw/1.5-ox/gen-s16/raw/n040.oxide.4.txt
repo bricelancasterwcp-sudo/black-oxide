@@ -1,0 +1,27 @@
+```rust
+struct Shape {
+    kind: Kind,
+}
+
+enum Kind {
+    Square(Side),
+    Circle(Radius),
+}
+
+struct Side(Int);
+struct Radius(Float);
+
+impl Shape {
+    fn area(&self) -> Float {
+        match self.kind {
+            Kind::Square(side) => side.0 * side.0,
+            Kind::Circle(radius) => radius.0 * radius.0 * std::f64::consts::PI,
+        }
+    }
+}
+
+fn main() {
+    let s = Shape::Square(Side(4));
+    print(s.area());
+}
+```

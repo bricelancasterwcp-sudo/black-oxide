@@ -1,0 +1,10 @@
+Here's the completed program:
+
+```rust
+fn main() {
+    let mut log = vec![6, 7, 8, 9];
+    
+    println!("First entry: {}", log[0]);
+    println!("Last entry: {}", log[3]); // Note: indexing starts at 0 in Rust, so last index is len - 1
+}
+```

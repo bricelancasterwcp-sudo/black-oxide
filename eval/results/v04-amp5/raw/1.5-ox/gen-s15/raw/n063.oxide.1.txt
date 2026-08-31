@@ -1,0 +1,15 @@
+```rust
+struct Item { unit_price: Int, quantity: Int }
+
+fn total_value(item: &Item) -> Int {
+    item.unit_price * item.quantity
+}
+
+fn main() {
+    let item1 = Item { unit_price: 3, quantity: 4 };
+    let item2 = Item { unit_price: 2, quantity: 5 };
+    println!("First line value: {}", total_value(&item1));
+    println!("Second line value: {}", total_value(&item2));
+    println!("Total value of both lines: {}", total_value(&item1) + total_value(&item2));
+}
+```

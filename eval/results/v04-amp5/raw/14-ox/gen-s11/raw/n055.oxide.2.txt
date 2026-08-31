@@ -1,0 +1,17 @@
+```text
+struct Reading { label: Str, values: Vec<Str> }
+
+fn print_number_or_bad(v: Vec<Str>) -> Unit {
+    for x in v {
+        match parse_int(x) {
+            Some(n) => print(n),
+            None => print_str("bad"),
+        }
+    }
+}
+
+fn main() {
+    let entries = push(push(push(vec(), "8"), "oak"), "15")
+    print_number_or_bad(entries)
+}
+```

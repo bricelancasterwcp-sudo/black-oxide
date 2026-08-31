@@ -1,0 +1,19 @@
+fn main() {
+    let numbers = vec(3, 8, -2, 12, 7)
+    let mut positive_count = 0
+    let mut max_value = Option::None
+    for x in numbers {
+        if x > 0 {
+            positive_count += 1
+        }
+        max_value = match max_value {
+            Some(current_max) => if x > current_max { Some(x) } else { Some(current_max) },
+            None => Some(x),
+        }
+    }
+    print(positive_count)
+    match max_value {
+        Some(value) => print(value),
+        None => print_str("No values"),
+    }
+}

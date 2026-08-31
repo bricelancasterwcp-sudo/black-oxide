@@ -1,0 +1,16 @@
+```rust
+fn main() {
+    let mut walk = vec![7, 4, 9, 10];
+    let mut total = 0;
+
+    for i in walk.iter() { // Use .iter() to get an iterator
+        if *i % 2 == 1 {
+            println!("{}: {}\n", *i, *i * 2); // Use dereferencing operator *
+        } else {
+            total += *i;
+        }
+    }
+
+    println!("Sum of even entries: {}", total);
+}
+```

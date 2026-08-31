@@ -1,0 +1,25 @@
+```rust
+fn main() {
+    loop {
+        let signal = get_signal(); // Replace with actual logic to get the signal
+        match signal {
+            "green" => println!("Go"),
+            "red" => println!("Stop"),
+            "yellow" => println!("Wait"),
+            _ => break, // Break the loop if an unexpected signal is received
+        }
+    }
+}
+
+fn get_signal() -> &'static str {
+    let mut rng = rand::thread_rng();
+    let random_value: f64 = rng.gen();
+    if random_value < 0.5 {
+        "green"
+    } else if random_value < 1.0 {
+        "yellow"
+    } else {
+        "red"
+    }
+}
+```

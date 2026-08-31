@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let word = "banana";
+    for i in 0..word.len() {
+        if word.chars().nth(i) == Some('n') {
+            println!("{}", i);
+        }
+    }
+}
+```
+
+This Rust program iterates over each character in the string "banana" using a `for` loop. It checks if the current character is 'n' using the `chars().nth(i)` method, which returns the nth character of the string as an Option. If the character is 'n', it prints its index (`i`).

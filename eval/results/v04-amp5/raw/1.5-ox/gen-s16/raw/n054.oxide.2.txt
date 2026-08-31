@@ -1,0 +1,21 @@
+```rust
+fn main() {
+    let mut count_vowels = 0;
+    let mut count_not_vowels = 0;
+
+    for c in "keyboard".chars() {
+        if is_vowel(c) {
+            count_vowels += 1;
+        } else {
+            count_not_vowels += 1;
+        }
+    }
+
+    println!("Vowels: {}", count_vowels);
+    println!("Not Vowels: {}", count_not_vowels);
+}
+
+fn is_vowel(c: char) -> bool {
+    c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u'
+}
+```

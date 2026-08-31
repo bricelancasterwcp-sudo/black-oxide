@@ -1,0 +1,17 @@
+fn main() {
+    let texts = vec!["7", "x", "9", "?"];
+    
+    let mut sum = 0;
+    let mut count_non_numbers = 0;
+
+    for text in texts {
+        if let Ok(num) = text.parse::<i32>() {
+            sum += num;
+        } else {
+            count_non_numbers += 1;
+        }
+    }
+
+    println!("Total of numbers: {}", sum);
+    println!("Count of non-numbers: {}", count_non_numbers);
+}

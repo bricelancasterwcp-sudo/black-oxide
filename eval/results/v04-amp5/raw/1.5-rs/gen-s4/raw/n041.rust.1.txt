@@ -1,0 +1,19 @@
+```rust
+fn main() {
+    let numbers = [9, 2, 7, 4];
+
+    // Sort the numbers in ascending order using a simple bubble sort algorithm
+    for i in 0..numbers.len() - 1 {
+        for j in 0..numbers.len() - 1 - i {
+            if numbers[j] > numbers[j + 1] {
+                numbers[j].swap_with(&mut numbers[j + 1]);
+            }
+        }
+    }
+
+    // Print each number in the sorted list
+    for &num in &numbers {
+        println!("{}", num);
+    }
+}
+```

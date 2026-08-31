@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let drum = "drum";
+    for (i, c) in drum.chars().rev().enumerate() {
+        println!("{}", c);
+    }
+}
+```
+
+The error was due to the semicolon after each line. This is a common mistake when working with Rust. Correcting this error resolves the compilation issues and outputs the drum letters running back to front followed by the normally read drum.

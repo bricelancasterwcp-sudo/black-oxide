@@ -198,6 +198,14 @@
       "ratio": 0.9620253164556962
     },
     {
+      "task": "n065",
+      "class": "vectors",
+      "oxide": 53,
+      "rust": 56,
+      "surplus": -3,
+      "ratio": 0.9464285714285714
+    },
+    {
       "task": "n034",
       "class": "structs/option",
       "oxide": 65,
@@ -228,14 +236,6 @@
       "rust": 43,
       "surplus": -4,
       "ratio": 0.9069767441860465
-    },
-    {
-      "task": "n065",
-      "class": "vectors",
-      "oxide": 52,
-      "rust": 56,
-      "surplus": -4,
-      "ratio": 0.9285714285714286
     },
     {
       "task": "n032",
@@ -296,10 +296,10 @@
     {
       "task": "n046",
       "class": "vectors",
-      "oxide": 57,
+      "oxide": 58,
       "rust": 68,
-      "surplus": -11,
-      "ratio": 0.8382352941176471
+      "surplus": -10,
+      "ratio": 0.8529411764705882
     },
     {
       "task": "n040",
@@ -340,10 +340,10 @@
       "ratio": 0.9202363367799113
     },
     "vectors": {
-      "oxide": 555,
+      "oxide": 557,
       "rust": 573,
-      "surplus": -18,
-      "ratio": 0.9685863874345549
+      "surplus": -16,
+      "ratio": 0.9720767888307156
     },
     "strings": {
       "oxide": 613,
@@ -353,9 +353,9 @@
     }
   },
   "overall": {
-    "oxide": 2300,
+    "oxide": 2302,
     "rust": 2332,
-    "surplus": -32,
-    "ratio": 0.9862778730703259
+    "surplus": -30,
+    "ratio": 0.9871355060034306
   }
 }

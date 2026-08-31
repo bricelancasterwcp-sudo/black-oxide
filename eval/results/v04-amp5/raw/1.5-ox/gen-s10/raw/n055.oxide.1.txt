@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let a = 8;
+    let b = "oak";
+    let c = 15;
+
+    match (a, b, c) {
+        (x, y, z) => print(x),
+        _ => print("bad"),
+    }
+
+    match (a, b, c) {
+        (x, y, z) if x > 0 && y == "oak" && z % 3 == 1 => print(y),
+        _ => print("bad"),
+    }
+}
+```

@@ -1,0 +1,9 @@
+```rust
+let nums = vec!(9, 2, 12, 5, 16);
+for num in nums {
+    if num < 10 {
+        println!("{}", num);
+    }
+}
+println!("Kept {} numbers", count(nums, |x| x < 10));
+```

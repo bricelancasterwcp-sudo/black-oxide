@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let mut max_str = "fig";
+    let mut max_len = 3;
+    
+    for fruit in ["banana", "kiwi"] {
+        if fruit.len() > max_len {
+            max_str = fruit;
+            max_len = fruit.len();
+        }
+    }
+
+    print(max_str);
+    print_str(" ");
+    print(max_len.to_string());
+}
+```

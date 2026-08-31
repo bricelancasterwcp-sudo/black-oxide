@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let entries = vec![6, 7, 8, 9];
+    print(entries[0]);
+    print(entries[entries.len() - 1]);
+}
+```

@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut queue = [1, 2, 3, 4, 5];
+    let temp = queue[0];
+    queue[0] = queue[queue.len() - 1];
+    queue[queue.len() - 1] = temp;
+    for &item in &queue {
+        println!("{}", item);
+    }
+}
+```

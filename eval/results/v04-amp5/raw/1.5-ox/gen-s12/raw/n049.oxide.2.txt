@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let figs = vec![8, 3, 11, 6];
+    println!("{}", min(figs)); // field access copies: r stays usable
+    println!("{}", max(figs) - min(figs)); // match second(r2.values) {
+}
+```
+
+The program was rejected because it had several syntax errors:
+- The list of figures is not enclosed in square brackets.
+- There are missing semicolons after each line.
+- A closing brace `}` was expected but not found at the end of the file.
+- A closing brace `}` was expected but not found at the end of the function body.

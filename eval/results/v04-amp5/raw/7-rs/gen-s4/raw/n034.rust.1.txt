@@ -1,0 +1,13 @@
+```rust
+fn get_second<T>(list: &[T]) -> Option<&T> {
+    list.get(1)
+}
+
+fn main() {
+    let numbers = vec![7, 8, 9];
+    match get_second(&numbers) {
+        Some(&second_number) => println!("The second number is: {}", second_number),
+        None => println!("There is no second number."),
+    }
+}
+```

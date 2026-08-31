@@ -1,0 +1,13 @@
+```
+fn main() {
+    let mut sum = 0;
+    for number in vec![7, 4, 9, 10] {
+        if number % 2 == 1 {
+            println!("{}", number * 2);
+        } else {
+            sum += number;
+        }
+    }
+    println!("Total: {}", sum);
+}
+```

@@ -1,0 +1,6 @@
+fn main() {
+    let mut point1 = (1, 5);
+    let point2 = (point1.0 + 10, point1.1);
+
+    println!("{}", point1.0 + point2.0);
+}

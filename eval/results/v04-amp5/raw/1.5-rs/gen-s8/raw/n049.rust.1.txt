@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let nums = [8, 3, 11, 6];
+    let smallest = *nums.iter().min().unwrap();
+    let largest = *nums.iter().max().unwrap();
+    println!("Smallest: {}", smallest);
+    println!("Gap between largest and smallest: {}", largest - smallest);
+}
+```

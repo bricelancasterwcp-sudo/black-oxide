@@ -1,0 +1,9 @@
+```
+fn main() {
+    let log = push(push(push(push(vec(), 6), 7), 8), 9);
+    let first_entry = get(log, 0)?;
+    let last_entry = get(log, len(log) - 1)?;
+    print(first_entry);
+    print(last_entry);
+}
+```

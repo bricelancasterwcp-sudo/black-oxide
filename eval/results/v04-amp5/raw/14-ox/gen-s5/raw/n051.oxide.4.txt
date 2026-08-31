@@ -1,0 +1,1 @@
+fn main() let s = "granite" print chars(s)[0] print chars(s)[chars(s).len() - 1]

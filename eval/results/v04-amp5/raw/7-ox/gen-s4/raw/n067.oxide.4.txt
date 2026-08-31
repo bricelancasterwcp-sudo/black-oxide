@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let list = vec(7, 4, 9, 10);
+    let mut total = 0;
+    for x in list {
+        if x % 2 == 1 {
+            print(x * 2);
+            println(); // Add a newline to separate the odd entries
+        } else {
+            total += x;
+        }
+    }
+    println!("{}", total); // Print the total of even entries on its own line
+}
+```

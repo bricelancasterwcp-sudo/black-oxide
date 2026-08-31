@@ -43,15 +43,15 @@
       "quantization_step": 145
     },
     {
-      "budget": 3383,
+      "budget": 3385,
       "class": "vectors",
-      "gap": 12,
+      "gap": 14,
       "kept_examples": {
         "oxide": 40,
         "rust": 53
       },
       "kept_tokens": {
-        "oxide": 3383,
+        "oxide": 3385,
         "rust": 3371
       },
       "quantization_step": 202
@@ -62,7 +62,7 @@
     "programs_checked": 513
   },
   "counts_source": {
-    "commit": "da744db2af0de27f7b44a3defe8fb6cc5ef62d71",
+    "commit": "26fd33a1490179836967929823a8afd4fadde6c0",
     "roots": [
       "eval/results/train-amp2",
       "eval/results/train-amp2-slice"
@@ -1183,7 +1183,7 @@
       },
       "overall": {
         "oxide": {
-          "mean_sup_tokens": 57.5,
+          "mean_sup_tokens": 57.55,
           "n": 40
         },
         "rust": {
@@ -1213,7 +1213,7 @@
       },
       "vectors": {
         "oxide": {
-          "mean_sup_tokens": 55.5,
+          "mean_sup_tokens": 55.7,
           "n": 10
         },
         "rust": {
@@ -1233,7 +1233,7 @@
       "rust": 284
     },
     "kept_tokens": {
-      "oxide": 16678,
+      "oxide": 16680,
       "rust": 16655
     }
   }

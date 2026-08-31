@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let mut s = String::from("granite");
+    print!("{}", s.chars().next().unwrap());
+    print!("\n{}", s.chars().last().unwrap());
+}
+```
+When you run this code, it will output:
+
+```
+g
+e
+```

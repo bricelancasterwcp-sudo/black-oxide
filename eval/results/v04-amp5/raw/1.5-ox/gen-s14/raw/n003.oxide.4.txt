@@ -1,0 +1,11 @@
+```
+fn main() {
+    let mut count = 0;
+    for n in range(1, 37) {
+        if (36 % n) == 0 { // Corrected: remove the semicolon at the end of the loop body
+            count += 1; 
+        }
+    }
+    print(count);
+}
+```

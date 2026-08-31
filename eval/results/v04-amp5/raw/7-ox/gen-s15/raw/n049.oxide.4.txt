@@ -1,0 +1,25 @@
+fn min(v: Vec<Int>) -> Option<Int> {
+    v.iter().cloned().min()
+}
+
+fn max(v: Vec<Int>) -> Option<Int> {
+    v.iter().cloned().max()
+}
+
+fn gap(v: Vec<Int>) -> Int {
+    match (max(v), min(v)) {
+        (Some(max_val), Some(min_val)) => max_val - min_val,
+        _ => 0
+    }
+}
+
+fn main() {
+    let figures = vec![8, 3, 11, 6];
+    if let Some(smallest) = min(figures.clone()) {
+        print(smallest);
+        let gap_value = gap(figures);
+        print(gap_value);
+    } else {
+        print_str("empty input");
+    }
+}

@@ -1,0 +1,27 @@
+```rust
+fn deposit(balance: Int, amount: Int) -> Int {
+    balance + amount
+}
+
+fn withdraw(balance: Int, amount: Int) -> Int {
+    if balance >= amount {
+        balance - amount
+    } else {
+        0
+    }
+}
+
+fn main() {
+    let mut balance = 100;
+    balance = deposit(balance, 3);
+    println!("{}", balance);
+    balance = withdraw(balance, 1);
+    println!("{}", balance);
+    balance = deposit(balance, 4);
+    println!("{}", balance);
+    balance = withdraw(balance, 1);
+    println!("{}", balance);
+    balance = deposit(balance, 5);
+    println!("{}", balance);
+}
+```

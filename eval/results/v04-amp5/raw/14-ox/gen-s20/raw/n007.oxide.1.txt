@@ -1,0 +1,21 @@
+```
+struct Digit { value: Int }
+
+fn digit_sum(n: Int) -> Int {
+    let v = int_to_str(n)
+    let sum = 0
+    for c in chars(v) {
+        let d = parse_int(c)?
+        sum += d
+    }
+    Some(sum)
+}
+
+fn main() {
+    let number = 9875
+    match digit_sum(number) {
+        Some(s) => print(s),
+        None => print_str("Invalid number"),
+    }
+}
+```

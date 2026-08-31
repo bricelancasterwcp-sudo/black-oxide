@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let values = vec![7, 10, 9, None];
+
+    let total: i32 = values.iter().filter(|&&v| v.is_some()).map(|&v| v.unwrap_or(0)).sum();
+    let count: usize = values.iter().filter(|&&v| v.is_none()).count();
+
+    println!("Total of ones that do: {}", total);
+    println!("Count of ones that do not: {}", count);
+}
+```

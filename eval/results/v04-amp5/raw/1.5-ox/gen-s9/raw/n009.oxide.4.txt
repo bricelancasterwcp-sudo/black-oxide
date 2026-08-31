@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let mut num = 1234;
+    for i in (0..5).rev() {
+        let d = num / 10_i32.pow(i) % 10;
+        print!("{}", d);
+    }
+}
+```

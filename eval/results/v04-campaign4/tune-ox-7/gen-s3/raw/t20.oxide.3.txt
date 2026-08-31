@@ -1,0 +1,23 @@
+struct Item { name: Str, unit_price: Int, quantity: Int }
+fn total_cost(items: Vec<Item>) -> Int {
+    let mut sum = 0
+    for item in items {
+        sum += item.unit_price * item.quantity
+    }
+    sum
+}
+fn main() {
+    let items = push(push(vec(), Item { name: "pen", unit_price: 3, quantity: 4 }), Item { name: "pad", unit_price: 9, quantity: 2 })
+    let items = push(items, Item { name: "ink", unit_price: 5, quantity: 3 })
+    print(total_cost(items))
+    let mut max_item = None
+    for item in clone(items) {
+        if max_item == None || item.unit_price * item.quantity > unwrap_or(max_item, Item { name: "", unit_price: -1, quantity: -1 }).unit_price * unwrap_or(max_item, Item { name: "", unit_price: -1, quantity: -1 }).quantity {
+            max_item = Some(clone(item))
+        }
+    }
+    match max_item {
+        Some(item) => print_str(item.name),
+        None => print_str("no items"),
+    }
+}

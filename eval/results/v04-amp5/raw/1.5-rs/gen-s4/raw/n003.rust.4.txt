@@ -1,0 +1,9 @@
+fn main() {
+    let mut count = 0;
+    for i in 1..=36 {
+        if i % 4 == 0 { // Changed condition to check divisibility by 4 instead of 36
+            count += 1;
+        }
+    }
+    println!("Number of whole numbers from 1 to 36 that divide 36 exactly: {}", count);
+}

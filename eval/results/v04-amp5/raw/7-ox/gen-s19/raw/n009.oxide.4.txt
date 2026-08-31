@@ -1,0 +1,5 @@
+fn main() {
+    let s = "1234"
+    let reversed_str = concat("", chars(s).rev().concat(""))
+    print(reversed_str)
+}

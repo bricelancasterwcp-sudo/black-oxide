@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let mut w = "drum".to_string();
+    for i in 0..w.len() {
+        print!("{}", w.chars().nth(w.len() - 1 - i).unwrap());
+    }
+    println!();
+    println!("{}", w);
+}
+```

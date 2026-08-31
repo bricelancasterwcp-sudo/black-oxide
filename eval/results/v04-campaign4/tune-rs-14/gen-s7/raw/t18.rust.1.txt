@@ -1,0 +1,14 @@
+fn main() {
+    let shapes = vec![
+        (3, 4), // Rectangle 3 by 4
+        (3, 4, 5), // Triangle with sides 3, 4, 5
+        (2, 5), // Rectangle 2 by 5
+    ];
+    for shape in shapes {
+        match shape.len() {
+            2 => println!("{}", 2 * (shape[0] + shape[1])), // Perimeter of rectangle
+            3 => println!("{}", shape[0] + shape[1] + shape[2]), // Perimeter of triangle
+            _ => {}
+        }
+    }
+}

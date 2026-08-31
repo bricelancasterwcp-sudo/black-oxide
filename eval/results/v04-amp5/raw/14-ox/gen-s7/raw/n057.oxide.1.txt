@@ -1,0 +1,24 @@
+```text
+fn main() {
+    let fig = "fig"
+    let banana = "banana"
+    let kiwi = "kiwi"
+
+    let lengths = vec()
+    push(lengths, str_len(fig))
+    push(lengths, str_len(banana))
+    push(lengths, str_len(kiwi))
+
+    let max_len = max(lengths)?
+    let name = if max_len == str_len(fig) {
+        fig
+    } else if max_len == str_len(banana) {
+        banana
+    } else {
+        kiwi
+    }
+
+    print(name)
+    print(max_len)
+}
+```

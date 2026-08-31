@@ -1,0 +1,16 @@
+struct Square { side: Int }
+struct Circle { radius: Float }
+
+fn area(s: Shape) -> Float {
+    match s {
+        Shape::Square(Square{ side }) => 3.0 * side as Float * side as Float,
+        Shape::Circle(Circle{ radius }) => 3.14 * radius * radius,
+    }
+}
+
+enum Shape { Square(Square), Circle(Circle) }
+
+fn main() {
+    let square = Square { side: 4 };
+    print(area(Shape::Square(square)))
+}

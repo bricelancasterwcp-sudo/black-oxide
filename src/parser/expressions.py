@@ -45,6 +45,7 @@ BUILTIN_METHOD_NAMES: frozenset[str] = frozenset(
         "contains",
         "count",
         "count_if",
+        "filter",
         "get",
         "int_to_str",
         "len",
@@ -171,14 +172,11 @@ class _ExprParserMixin:
             return Lit(self._new_id(), tok.span, kind is TokenKind.KW_TRUE, "bool")
         if kind is TokenKind.IDENT:
             self._advance()
-            # `x -> expr` is a predicate literal (SPEC 61). Unambiguous
-            # against the other ARROW site: a return-type arrow always
-            # follows `)`, never an IDENT in expression position.
-            if self._check(TokenKind.ARROW):
-                return self._pred_lit(tok)
             if self._check(TokenKind.LBRACE) and not self._no_struct_lit:
                 return self._struct_lit(tok)
             return Var(self._new_id(), tok.span, tok.lexeme)
+        if kind is TokenKind.PIPE:
+            return self._pred_lit()
         if kind is TokenKind.MINUS or kind is TokenKind.BANG:
             op_tok = self._advance()
             operand = self._parse_expr(_PREFIX_RBP)
@@ -197,16 +195,24 @@ class _ExprParserMixin:
         self._diag("OX0100", f"expected expression, found {kind.name}", tok.span)
         return ErrorExpr(self._new_id(), Span(tok.span.start, tok.span.start))
 
-    def _pred_lit(self, param_tok) -> Expr:
-        """`x -> expr`. The body is parsed at binding power 0 so the whole
-        trailing expression belongs to the predicate: in
-        `count_if(v, x -> x < 10)` the body is `x < 10`, and the argument
-        list's comma still terminates it because COMMA has no infix
-        binding power."""
-        self._advance()  # ->
+    def _pred_lit(self) -> Expr:
+        """`|x| expr` (SPEC 63.1).
+
+        Re-spelled from wave 3's `x -> expr` on measured evidence: at
+        equal corpus exposure the tuned model chose the bar form over the
+        arrow about 10:1. Semantics are unchanged -- the body still may
+        reference only the parameter (OX0205), the type is still
+        `Pred<T>`, and the same Rust closure is emitted.
+
+        `||` is matched by the two-char table before this point, so a
+        disjunction can never be read as an empty predicate.
+        """
+        bar = self._advance()  # |
+        param = self._expect(TokenKind.IDENT, "predicate parameter")
+        self._expect(TokenKind.PIPE, "'|' closing the predicate parameter")
         body = self._parse_expr(0)
-        span = Span(param_tok.span.start, body.span.end)
-        return PredLit(self._new_id(), span, param_tok.lexeme, body)
+        span = Span(bar.span.start, body.span.end)
+        return PredLit(self._new_id(), span, param.lexeme, body)
 
     def _paren_group(self) -> Expr:
         lparen = self._advance()  # (

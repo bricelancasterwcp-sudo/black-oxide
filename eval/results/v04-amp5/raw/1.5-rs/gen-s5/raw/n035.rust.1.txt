@@ -1,0 +1,16 @@
+```rust
+fn divide(dividend: u32, divisor: u32) -> Result<f64, String> {
+    if divisor == 0 {
+        Err("Error: Division by zero".to_string())
+    } else {
+        Ok(dividend as f64 / divisor as f64)
+    }
+}
+
+fn main() {
+    match divide(20, 4) {
+        Ok(result) => println!("Result: {}", result),
+        Err(error) => println!("{}", error),
+    }
+}
+```

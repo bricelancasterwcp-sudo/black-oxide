@@ -1,0 +1,37 @@
+```rust
+struct Queue { items: Vec<Int> }
+
+fn new_queue() -> Queue {
+    Queue { items: vec![] }
+}
+
+fn enqueue(q: Queue, x: Int) -> Queue {
+    Queue { items: push(q.items, x) }
+}
+
+fn dequeue(q: Queue) -> (Option<Int>, Queue) {
+    let len = len(q.items);
+    if len == 0 {
+        (None, q)
+    } else {
+        let first = get(q.items, 0)?;
+        let last = get(q.items, len - 1)?;
+        (Some(first), Queue { items: set(q.items, 0, last) })
+    }
+}
+
+fn main() {
+    let mut q = new_queue();
+    q = enqueue(q, 1);
+    q = enqueue(q, 2);
+    q = enqueue(q, 3);
+    q = enqueue(q, 4);
+    q = enqueue(q, 5);
+
+    swap(q.items, 0, len(q.items) - 1);
+
+    for x in q.items {
+        print(x);
+    }
+}
+```

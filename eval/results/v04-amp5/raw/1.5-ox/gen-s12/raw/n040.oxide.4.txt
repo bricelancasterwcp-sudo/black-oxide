@@ -1,0 +1,16 @@
+```rust
+struct Square { side: Int }
+struct Circle { radius: Float }
+
+fn get_area(shape: Shape) -> Float {
+    match shape {
+        Square { side } => side * side,
+        Circle { radius } => std::f64::consts::PI * radius * radius,
+    }
+}
+
+fn main() {
+    let square = Square { side: 4 };
+    print(get_area(square));
+}
+```

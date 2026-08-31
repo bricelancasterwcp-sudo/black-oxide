@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let mut s = String::from("coffee");
+    while let Some(c) = s.chars().next() {
+        let c = c.to_lowercase();
+        if !s.contains(&c) {
+            println!("{}", c);
+        }
+        s.remove(0);
+    }
+}
+```

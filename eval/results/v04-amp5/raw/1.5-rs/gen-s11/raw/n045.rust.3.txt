@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let mut log = [6, 7, 8, 9];
+    
+    println!("First entry: {}", log[0]);
+    println!("Last entry: {}", log[3]); // Correct index for last element is 3
+}
+```

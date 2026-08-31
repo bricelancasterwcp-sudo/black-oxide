@@ -1,0 +1,19 @@
+fn smallest(v: Vec<Int>) -> Int {
+    min(v).unwrap_or(0)
+}
+
+fn gap(v: Vec<Int>) -> Int {
+    let max_val = max(v).unwrap_or(0);
+    let min_val = min(v).unwrap_or(0);
+    if max_val == 0 || min_val == 0 {
+        0
+    } else {
+        max_val - min_val
+    }
+}
+
+fn main() {
+    let figures = push(push(vec(), 8), push(push(push(vec(), 3), push(push(vec(), 11), 6)), vec()));
+    print(smallest(figures));
+    print(gap(figures));
+}

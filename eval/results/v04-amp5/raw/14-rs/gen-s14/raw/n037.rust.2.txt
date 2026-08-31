@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let mut width = 2;
+    let mut height = 3; // Change height to mutable
+    width = 5;
+    height = 4; // Correct height to match the new area calculation
+    let area = width * height;
+    println!("The area of the rectangle is {}", area);
+}
+```

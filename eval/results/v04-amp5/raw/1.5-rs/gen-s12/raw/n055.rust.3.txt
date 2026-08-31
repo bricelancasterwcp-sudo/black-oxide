@@ -1,0 +1,18 @@
+```rust
+fn main() {
+    let input = vec!["8", "oak", "15"];
+
+    for &item in input.iter() {
+        if item.to_string().parse::<i32>().is_ok() {
+            match item.to_string().to_lowercase() {
+                "8" => println!("good"),
+                "oak" => println!("good"),
+                "15" => println!("good"),
+                _ => println!("bad")
+            }
+        } else {
+            println!("bad");
+        }
+    }
+}
+```

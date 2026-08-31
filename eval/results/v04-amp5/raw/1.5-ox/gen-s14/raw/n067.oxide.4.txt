@@ -1,0 +1,20 @@
+```
+fn main() {
+    let mut total = Int::zero();
+    let mut carry = false;
+
+    for &x in [7, 4, 9, 10].iter().rev() {
+        if x % 2 == 1 {
+            println!("{}\n", 2 * x);
+            carry = true;
+        } else {
+            if carry {
+                total += x;
+                carry = false;
+            }
+        }
+    }
+
+    println!("Even entries sum: {}", total);
+}
+```

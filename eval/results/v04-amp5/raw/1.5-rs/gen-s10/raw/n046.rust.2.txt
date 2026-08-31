@@ -1,0 +1,26 @@
+```rust
+fn main() {
+    let samples = [5, 12, 3, 18, 9];
+    let cutoff = 10;
+
+    let mut below_cutoff = 0;
+    let mut above_or_equal_cutoff = 0;
+
+    for &sample in &samples {
+        if sample < cutoff {
+            below_cutoff += 1;
+        } else {
+            above_or_equal_cutoff += 1;
+        }
+    }
+
+    println!("Below the cutoff: {}", below_cutoff);
+    println!("Above or equal to the cutoff: {}", above_or_equal_cutoff);
+}
+```
+
+Explanation of the corrections:
+- The function signature was changed from `fn main()` to `fn main()`, as required by Rust.
+- The array `samples` and the variable `cutoff` were declared with the `let` keyword, which is more standard in Rust.
+- The `for` loop iterates over each element of the array using `&samples`, ensuring that no mutable references are used.
+- The condition for counting elements below or equal to the cutoff was corrected from `sample <= cutoff` to `sample < cutoff`.

@@ -1,0 +1,19 @@
+```
+fn main() {
+    let s = "when in doubt go home";
+    let mut word_count = 0;
+    let mut char_count = 0;
+
+    for c in s.chars() {
+        if c == ' ' || c == '\n' {
+            word_count += 1;
+            char_count -= c == ' ';
+        } else {
+            char_count += 1;
+        }
+    }
+
+    println!("Words: {}", word_count);
+    println!("Characters (including spaces): {}", char_count);
+}
+```

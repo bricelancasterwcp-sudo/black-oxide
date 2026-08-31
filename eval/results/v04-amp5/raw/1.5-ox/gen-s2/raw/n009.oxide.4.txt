@@ -1,0 +1,14 @@
+```rust
+fn reverse(v: Vec<Int>) -> Vec<Int> {
+    let mut result = vec![];
+    for i in (0..v.len()).rev() {
+        result.push(v[i]);
+    }
+    result
+}
+
+fn main() {
+    let digits = vec![1, 2, 3, 4];
+    print(reverse(digits));
+}
+```

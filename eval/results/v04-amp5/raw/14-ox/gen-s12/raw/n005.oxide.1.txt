@@ -1,0 +1,11 @@
+```ox
+fn main() {
+    let sum = Int(0)
+    for x in range(Int(1), Int(21)) {
+        if x % Int(2) == Int(0) {
+            sum = sum + x
+        }
+    }
+    print(sum)
+}
+```

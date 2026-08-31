@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let banana = "banana";
+    for (index, &character) in banana.chars().enumerate() {
+        if character == 'n' {
+            println!("{}", index);
+        }
+    }
+}
+```
+
+This program defines a function `main` that iterates over each character of the string `"banana"` using the `chars()` method, which returns an iterator yielding characters. The `enumerate()` method adds an index to each element, making it easier to access both the character and its position in the string. The if statement checks if the current character is 'n', and if so, prints the index.

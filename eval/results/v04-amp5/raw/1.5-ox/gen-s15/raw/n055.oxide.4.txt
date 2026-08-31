@@ -1,0 +1,33 @@
+```rust
+fn main() {
+    let n = match read_integer() {
+        Ok(n) => n,
+        Err(_) => 0,
+    };
+    if n > 8 {
+        println!("{}", n);
+    } else {
+        println!("bad");
+    }
+
+    let t = match read_string() {
+        Ok(t) => t,
+        Err(_) => String::new(),
+    };
+    if t == "oak" {
+        println!("good");
+    } else {
+        println!("bad");
+    }
+
+    let m = match read_integer() {
+        Ok(m) => m,
+        Err(_) => 0,
+    };
+    if m > 15 {
+        println!("{}", m);
+    } else {
+        println!("bad");
+    }
+}
+```

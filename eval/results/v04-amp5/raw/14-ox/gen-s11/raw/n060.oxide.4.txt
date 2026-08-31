@@ -1,0 +1,23 @@
+```text
+struct Reading { label: Str, values: Vec<Int> }
+
+fn digit_total_and_count(s: Str) -> (Int, Int) {
+    let mut total = 0
+    let mut count = 0
+    for c in chars(s) {
+        if parse_int(c).is_some() {
+            let num = unwrap_or(parse_int(c), 0)
+            total += num
+            count += 1
+        }
+    }
+    (total, count)
+}
+
+fn main() {
+    let s = "a1b22"
+    let (total, count) = digit_total_and_count(s)
+    print(total)
+    print(count)
+}
+```

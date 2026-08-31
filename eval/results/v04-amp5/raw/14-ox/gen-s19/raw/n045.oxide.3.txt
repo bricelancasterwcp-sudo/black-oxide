@@ -1,0 +1,9 @@
+```text
+fn main() {
+    let log = push(push(push(push(vec(), 6), 7), 8), 9)
+    let first_entry = unwrap_or(get(log, 0), -1)
+    let last_entry = unwrap_or(get(log, len(log) - 1), -1)
+    print(first_entry)
+    print(last_entry)
+}
+```

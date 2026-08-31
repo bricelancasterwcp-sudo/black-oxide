@@ -1,0 +1,22 @@
+```rust
+struct Signal { color: Str }
+
+enum Light {
+    Green,
+    Red,
+    Yellow,
+}
+
+fn main() {
+    let mut light = Light::Green;
+    loop {
+        print!("{}, ", light.color);
+
+        if light == Light::Red {
+            break;
+        } else if light == Light::Yellow {
+            light = Light::Green;
+        }
+    }
+}
+```

@@ -15,6 +15,11 @@ optional everywhere.
 - Statements: `let x = expr` · `x = expr` (reassignment) · `return expr` ·
   `while cond { }` · `for x in vec_expr { }` · `break` · `continue` ·
   expression statements.
+- Operators, by binding power (loosest first). Binary: `||` · `&&` ·
+  `== != < <= > >=` · `+ -` · `* / %`. Unary prefix: `!` (Bool) and
+  `-` (numeric). `%` is Int-only; `/` on Int truncates. Comparison and
+  equality yield Bool. There is no bitwise, shift, or ternary operator,
+  and no `++`/`--`.
 - Compound assignment: `x += e` / `x -= e` / `x *= e` are sugar for
   `x = x + e` / `x = x - e` / `x = x * e`, identifier targets only.
   Int/Float only — `+` isn't defined for Str (concat is `concat(a, b)`),
@@ -87,7 +92,8 @@ max(v) -> Option<T>           # largest element, or None if empty
 sum(v) -> Int                 # sum of an Int vec, 0 if empty
 contains(v, x) -> Bool        # true if v has an element equal to x
 count(v, x) -> Int            # occurrences of x in v
-count_if(v, x -> b) -> Int    # how many elements satisfy x -> b
+count_if(v, |x| b) -> Int     # how many elements satisfy the test
+filter(v, |x| b) -> Vec<T>    # the elements that satisfy it
 reverse(v) -> Vec<T>          # consumes v, returns it reversed
 swap(v, i, j) -> Vec<T>       # consumes v, exchanges positions i and j
 set(v, i, x) -> Vec<T>        # consumes v, replaces element i with x

@@ -1,0 +1,36 @@
+```rust
+struct Shape {
+    shape_type: Str,
+    value: Option<Float>,
+}
+
+impl Shape {
+    fn area(&self) -> Float {
+        match self.shape_type.as_str() {
+            "Square" => {
+                if let Some(side) = &self.value {
+                    side * side
+                } else {
+                    0.0
+                }
+            },
+            "Circle" => {
+                if let Some(radius) = &self.value {
+                    std::f64::consts::PI * radius * radius
+                } else {
+                    0.0
+                }
+            },
+            _ => panic!("Invalid shape type"),
+        }
+    }
+}
+
+fn main() {
+    let r = Shape { 
+        shape_type: "Square".to_string(),
+        value: Some(4.0),
+    };
+    print(r.area()); // field access copies: r stays usable
+}
+```

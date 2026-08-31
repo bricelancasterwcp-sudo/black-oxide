@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let signals = vec![("green", "go"), ("red", "stop"), ("yellow", "wait")];
+    
+    for (signal, meaning) in signals.iter().cloned() {
+        println!("Signal: {}, Meaning: {}", signal, meaning);
+    }
+}
+```

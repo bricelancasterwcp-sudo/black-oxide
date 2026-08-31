@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let text = "coffee";
+    for (i, &c) in text.chars().enumerate() {
+        if text.matches(c).count() > 1 && !text.chars().take(i).any(|&ch| ch == c) {
+            println!("{}", c);
+        }
+    }
+}
+```

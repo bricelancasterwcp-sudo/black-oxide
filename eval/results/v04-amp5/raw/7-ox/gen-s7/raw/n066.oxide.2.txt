@@ -1,0 +1,9 @@
+fn main() {
+    let batch = vec(9, 2, 12, 5, 16);
+    let kept: Vec<Int> = filter(batch, |x| x < 10);
+    for k in kept {
+        print(k);
+        println();
+    }
+    print(count_if(&kept, |_| true));
+}

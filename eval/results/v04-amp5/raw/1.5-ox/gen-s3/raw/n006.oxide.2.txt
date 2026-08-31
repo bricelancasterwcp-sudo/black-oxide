@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let mut n = 1;
+    while n <= 100 {
+        if (n & (n - 1)) == 0 {
+            break;
+        }
+        n <<= 1;
+    }
+    print(n);
+}
+```

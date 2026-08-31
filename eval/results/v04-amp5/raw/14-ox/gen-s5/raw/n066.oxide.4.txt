@@ -1,0 +1,1 @@
+fn main() { let batch = vec() push(batch, 9) push(batch, 2) push(batch, 12) push(batch, 5) push(batch, 16) let mut count = 0 for x in batch { if x < 10 { print(x) count += 1 } } print(count) }

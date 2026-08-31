@@ -1,0 +1,13 @@
+```rust
+fn main() {
+    let my_list = [10, 20];
+    
+    if let Some(x) = my_list.get(0) {
+        println!("Position 1: {}", x);
+    }
+    
+    if let Some(x) = my_list.get(3) {
+        println!("Position 4: {}", x);
+    }
+}
+```

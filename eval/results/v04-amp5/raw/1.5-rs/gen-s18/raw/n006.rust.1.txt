@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let max_power_of_two = (1 << ((32 - 1).leading_zeros()));
+    println!("{}", max_power_of_two);
+}
+```
+
+In this solution:
+- The `<<` operator is used to shift the bits of the number `1` to the left by `(32 - 1)` positions, effectively calculating \(2^{31}\), which is the largest power of two less than or equal to 100.
+- `leading_zeros()` returns the number of leading zeros in the binary representation of the integer. By subtracting `1`, we get the number of bits needed to represent the integer plus one, which is \(2^n\) where \(n\) is the position of the most significant bit (the power of two).

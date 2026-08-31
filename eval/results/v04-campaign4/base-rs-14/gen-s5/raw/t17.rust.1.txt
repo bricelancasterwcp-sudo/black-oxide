@@ -1,0 +1,17 @@
+```rust
+fn main() {
+    let list = vec![10, 20, 30];
+    
+    if let Some(&value) = list.get(1) {
+        println!("{}", value);
+    } else {
+        println!("-1");
+    }
+    
+    if let Some(&value) = list.get(5) {
+        println!("{}", value);
+    } else {
+        println!("-1");
+    }
+}
+```

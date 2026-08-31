@@ -1,0 +1,1 @@
+fn main() { let s = "drum"; let reversed: Vec<Str> = reverse(chars(s)); let reversed_str = reversed.concat(); print(reversed_str); print(s); }

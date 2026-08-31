@@ -1,0 +1,13 @@
+fn main() {
+    let s = "8 oak 15";
+    for w in words(s) {
+        match parse_int(w)? {
+            Some(n) => print(n),
+            None => print_str("bad"),
+        }
+    }
+}
+
+fn words(s: Str) -> Vec<Str> {
+    split(s, ' ')
+}

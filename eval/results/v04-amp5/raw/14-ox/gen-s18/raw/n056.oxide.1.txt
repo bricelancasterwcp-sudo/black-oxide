@@ -1,0 +1,27 @@
+```text
+struct NumberHolder { value: Option<Int> }
+
+fn sum_and_count_unknowns(numbers: Vec<NumberHolder>) -> (Int, Int) {
+    let mut total = 0
+    let mut unknowns = 0
+    for holder in numbers {
+        match holder.value {
+            Some(n) => total += n,
+            None => unknowns += 1,
+        }
+    }
+    (total, unknowns)
+}
+
+fn main() {
+    let numbers = [
+        NumberHolder { value: Some(7) },
+        NumberHolder { value: None },
+        NumberHolder { value: Some(9) },
+        NumberHolder { value: None },
+    ]
+    let (sum, unknowns) = sum_and_count_unknowns(numbers)
+    print(sum)
+    print(unknowns)
+}
+```

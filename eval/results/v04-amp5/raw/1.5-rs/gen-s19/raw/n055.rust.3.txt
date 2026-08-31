@@ -1,0 +1,20 @@
+```rust
+fn main() {
+    match std::env::args().nth(1).unwrap_or("bad").parse::<u32>() {
+        Ok(value) => println!("{}", value),
+        Err(_) => println!("bad"),
+    }
+
+    match std::env::args().nth(2).unwrap_or("bad").as_str() {
+        "oak" => println!("good"),
+        _ => println!("bad"),
+    }
+
+    match std::env::args().nth(3).unwrap_or("bad").parse::<u32>() {
+        Ok(value) => println!("{}", value),
+        Err(_) => println!("bad"),
+    }
+}
+```
+
+This corrected version of the program uses `match` instead of `if let` for parsing and printing. This ensures that the correct type is used in each case, eliminating the mismatches reported by the compiler.

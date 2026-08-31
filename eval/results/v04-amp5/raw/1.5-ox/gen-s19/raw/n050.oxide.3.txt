@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    let mut scores = vec![9, 2, 5];
+    scores.sort_unstable();
+    for &score in &scores {
+        println!("{}", score);
+    }
+}
+```
+
+The correct version of the program uses `sort_unstable()` instead of `sort` to sort the vector. It also includes a loop and prints each score on a separate line. The syntax errors were due to incorrect use of brackets, semicolons, and operators.

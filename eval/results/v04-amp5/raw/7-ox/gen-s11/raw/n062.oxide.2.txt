@@ -1,0 +1,15 @@
+```rust
+enum Signal { Green, Red, Yellow }
+
+fn main() {
+    let signals = vec![Signal::Green, Signal::Red, Signal::Yellow];
+    for s in signals {
+        match s {
+            Signal::Green => print("go for green"),
+            Signal::Red => print("stop for red"),
+            Signal::Yellow => print("wait for yellow"),
+        }
+        print_str("\n")
+    }
+}
+```

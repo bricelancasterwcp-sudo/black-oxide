@@ -1,0 +1,28 @@
+```rust
+struct Item {
+    label: Str,
+    price: Float,
+    quantity: Int,
+}
+
+fn main() {
+    let pen = Item { label: "pen", price: 3.0, quantity: 4 };
+    let pad = Item { label: "pad", price: 9.0, quantity: 2 };
+    let ink = Item { label: "ink", price: 5.0, quantity: 3 };
+
+    // Calculate the combined cost of all items
+    let total_cost = pen.price * pen.quantity + pad.price * pad.quantity + ink.price * ink.quantity;
+    println!("Combined cost: {}", total_cost);
+
+    // Find the item with the highest cost
+    let mut max_item = &pen;
+    for item in [pad, ink] {
+        if item.price > max_item.price {
+            max_item = &item;
+        }
+    }
+
+    // Print the name of the item with the highest cost
+    println!("Item with the highest cost: {}", max_item.label);
+}
+```

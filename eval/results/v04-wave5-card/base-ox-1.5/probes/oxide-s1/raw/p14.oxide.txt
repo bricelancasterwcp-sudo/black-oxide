@@ -1,0 +1,15 @@
+```
+fn total(v: Vec<Int>, flag: Bool) -> Int {
+    let w = v.clone(); // clone at the first consuming use if both are needed
+    if flag {
+        return len(w) * 10;
+    }
+    let u = push(v, 3);
+    len(u) * 20
+}
+
+fn main() {
+    print(total(push(push(vec(), 1), 2), true));
+    print(total(push(push(vec(), 1), 2), false));
+}
+```

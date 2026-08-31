@@ -1,0 +1,28 @@
+```rust
+struct Item {
+    label: Str,
+    price: Float,
+    quantity: Int,
+}
+
+fn main() {
+    let pen = Item { label: "pen", price: 3.0, quantity: 4 };
+    let pad = Item { label: "pad", price: 9.0, quantity: 2 };
+    let ink = Item { label: "ink", price: 5.0, quantity: 3 };
+
+    let total_cost = pen.price * pen.quantity + pad.price * pad.quantity + ink.price * ink.quantity;
+
+    let mut highest_cost_item = None;
+    for item in vec![pen, pad, ink] {
+        if highest_cost_item.is_none() || item.price * item.quantity > highest_cost_item.unwrap().price * highest_cost_item.unwrap().quantity {
+            highest_cost_item = Some(item);
+        }
+    }
+
+    println!("Total cost: {}", total_cost);
+    match highest_cost_item {
+        Some(item) => print_str(format!("Highest cost item: {}", item.label)),
+        None => print_str("No items found"),
+    }
+}
+```

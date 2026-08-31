@@ -1,0 +1,18 @@
+```rust
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn main() {
+    let rect = Rectangle { width: 7, height: 4 };
+    print_int(rect.area());
+    print_int(rect.perimeter());
+}
+```
+
+Explanation:
+- The `Rectangle` struct is defined with two fields: `width` and `height`.
+- In the `main` function, a `Rectangle` instance `rect` is created with width 7 and height 4.
+- The `area` method of the `Rectangle` struct is called on `rect`, which calculates the area by multiplying the width and height. The result is printed using `print_int`.
+- Similarly, the `perimeter` method is called on `rect`, which calculates the perimeter by adding twice the sum of width and height. The result is also printed using `print_int`.

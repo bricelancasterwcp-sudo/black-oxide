@@ -1,0 +1,20 @@
+fn count_positive(v: Vec<Int>) -> Int {
+    count_if(v, |x| x > 0)
+}
+
+fn max_value(v: Vec<Int>) -> Option<Int> {
+    max(v)
+}
+
+fn main() {
+    let values = push(push(push(push(vec(), 3), 8), -2), 12);
+    values.push(7);
+
+    let positive_count = count_positive(values.clone());
+    print(positive_count);
+
+    match max_value(values) {
+        Some(max) => print(max),
+        None => print_str("no values"),
+    }
+}

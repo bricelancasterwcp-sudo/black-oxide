@@ -1,0 +1,12 @@
+```rust
+struct Rectangle {
+    width: Int,
+    height: Int,
+}
+
+fn main() {
+    let r = Rectangle { width: 7, height: 4 };
+    print(r.area());
+    print(r.perimeter());
+}
+```

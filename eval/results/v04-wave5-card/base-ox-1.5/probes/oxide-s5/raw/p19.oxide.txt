@@ -1,0 +1,11 @@
+```
+fn main() {
+    let s = "hello world"
+    let n = 42;
+    let t = clone(s); // Clone the string to avoid ownership issues
+    print(str_len(t));
+    if n > 3 {
+        print(str_len(s)); // Reuse the original string without moving it
+    }
+}
+```

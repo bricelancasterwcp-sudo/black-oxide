@@ -1,0 +1,10 @@
+```
+struct Point { x: Int, tag: Str }
+
+fn main() {
+    let p = Point { x: 11, tag: "hello" }
+    let q = Point { x: 55, ..clone(p) } // Clone at the move site to keep 'p' available
+    print(str_len(p.tag))
+    print(q.x)
+}
+```

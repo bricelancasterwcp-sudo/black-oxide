@@ -1,0 +1,15 @@
+```rust
+fn main() {
+    let v = range(0, 10);
+    print(len(v));
+    let total = 0;
+    for x in v {
+        if x > 4 {
+            let w = push(v.clone(), x); // Clone the vector to avoid moving it inside the loop
+            total = len(w);
+            break;
+        }
+    }
+    print(total);
+}
+```

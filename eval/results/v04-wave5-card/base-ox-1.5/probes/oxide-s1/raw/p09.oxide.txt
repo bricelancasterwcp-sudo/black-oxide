@@ -1,0 +1,26 @@
+```rust
+struct Reading { label: Str, values: Vec<Int> }
+
+fn first_big(v: Vec<Int>) -> Int {
+    let found = -1;
+    for x in v {
+        if x > 10 {
+            found = x;
+            break;
+        }
+    }
+    found
+}
+
+fn second(v: Vec<Int>) -> Option<Int> {
+    let x = get(v, 1)?;
+    Some(x + 1)
+}
+
+fn main() {
+    let s = "hello";
+    let v = push(push(vec(), "world"), clone(s)); // Clone 's' before moving it
+    print(len(v));
+    print(str_len(clone(s))); // Clone 's' again to avoid reusing the moved value
+}
+```

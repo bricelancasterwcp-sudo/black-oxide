@@ -3605,6 +3605,24 @@ right, using `==` six times, `%` four, `/` twice, `<=` and `!` once.
    which would make four waves of card-only readings measurements of the
    card's incompleteness.
 
+> **AMENDED 2026-08-31 by wave 5 — the instrument concern above is
+> FALSIFIED.** Card v0.8 was measured against v0.7 as a single-variable
+> experiment with predictions registered in advance
+> (`eval/results/v04-wave5-card/REPORT.md`). Every prediction failed:
+> base-ox-1.5 0.000 → 0.000, base-ox-7 0.075 → 0.060, base-ox-14
+> 0.525 → 0.500, all movements inside noise, with the base-rs-7 drift
+> guard clean at 0.565 so the null stands on a valid run. The mechanism
+> check says why: `base-ox-7` already used `==` 160 times, `!` 190, `%`
+> 136 and `/` 120 across 764 replies **under v0.7** — there was no
+> behavioural gap for the table to fill. The claim in point 2 above,
+> that untuned arms "may have been depressed by a documentation gap",
+> is **wrong**; those readings were real. The Sonnet result is
+> re-framed too: it was not gap-filling, it is simply a far more capable
+> model. Point 1 (the §62 familiarity thesis) is untouched — wave 4
+> tested that directly and it held. Card v0.8 is kept: it made
+> `base-ox-14` 12% more concise (tok→green 134.7 → 118.0), and a spec
+> should document its own language.
+
 **Fixed here.** Both cards gain an operator table, transcribed from the
 implementation rather than from assumption (`src/lexer/lexer.py`'s two-
 and one-char tables and `src/parser/expressions.py::_BINARY_BP`):

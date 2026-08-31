@@ -1,0 +1,8 @@
+fn main() {
+    let mut multiples = Vec::new();
+    for i in range(1, 9) {
+        multiples.push(i * 3);
+    }
+    let sum: Int = sum(multiples);
+    print(sum);
+}

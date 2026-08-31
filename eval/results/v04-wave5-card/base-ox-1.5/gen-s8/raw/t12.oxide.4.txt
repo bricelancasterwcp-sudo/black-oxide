@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let mut s = String::from("stack");
+    for c in s.chars().rev() {
+        print!("{}", c);
+    }
+}
+```

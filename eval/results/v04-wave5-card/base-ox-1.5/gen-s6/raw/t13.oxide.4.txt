@@ -1,0 +1,12 @@
+```rust
+fn is_palindrome(text: &str) -> bool {
+    let reversed = text.chars().rev().collect::<String>();
+    text == reversed
+}
+
+fn main() {
+    println!("{}", is_palindrome("level"));  // true
+    println!("{}", is_palindrome("stereo")); // false
+    println!("{}", is_palindrome("rotor")); // true
+}
+```

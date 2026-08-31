@@ -1,0 +1,7 @@
+fn main() {
+    let a = push(push(vec(), 1), 2);
+    let b = a.clone();
+    let c = a;
+    print(len(b));
+    print(len(c));
+}

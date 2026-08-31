@@ -1,0 +1,16 @@
+fn main() {
+    let s = "mississippi";
+    print(count(s.chars(), |c| c == 's'));
+    print(len(unique_chars(s)));
+}
+
+fn unique_chars(s: Str) -> Vec<Str> {
+    let mut chars = s.chars();
+    let mut result = vec![];
+    while let Some(c) = chars.next() {
+        if !contains(result, c) {
+            push(result, c);
+        }
+    }
+    result
+}

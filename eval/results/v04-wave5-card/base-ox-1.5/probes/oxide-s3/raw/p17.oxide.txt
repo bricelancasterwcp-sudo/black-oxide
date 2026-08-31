@@ -1,0 +1,10 @@
+```rust
+fn main() {
+    let mut acc = range(0, 10);
+    print(len(acc));
+    for i in 0..3 {
+        let grown = push(&mut acc, i); // Reassign the variable inside the loop
+    }
+    print(len(acc));
+}
+```

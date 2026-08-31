@@ -1,0 +1,9 @@
+```
+fn main() {
+    let a = push(push(vec(), 1), 2);
+    let b = clone(a); // Fix: clone 'a' before using it again
+    let c = clone(a); // Fix: clone 'a' before using it again
+    print(len(b));
+    print(len(c));
+}
+```

@@ -1,0 +1,11 @@
+```rust
+fn main() {
+    println!("{}", is_palindrome("level")); // true
+    println!("{}", is_palindrome("stereo")); // false
+    println!("{}", is_palindrome("rotor")); // true
+}
+
+fn is_palindrome(s: &str) -> bool {
+    s.chars().eq(s.chars().rev())
+}
+```

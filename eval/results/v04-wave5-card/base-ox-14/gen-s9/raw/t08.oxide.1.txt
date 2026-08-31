@@ -1,0 +1,25 @@
+```text
+fn count_positive(v: Vec<Int>) -> Int {
+    let mut count = 0
+    for x in v {
+        if x > 0 {
+            count += 1
+        }
+    }
+    count
+}
+
+fn find_max(v: Vec<Int>) -> Option<Int> {
+    max(v)
+}
+
+fn main() {
+    let values = vec!([3, 8, -2, 12, 7])
+    let positive_count = count_positive(clone(values))
+    print(positive_count)
+    match find_max(values) {
+        Some(max_value) => print(max_value),
+        None => print_str("No values"),
+    }
+}
+```

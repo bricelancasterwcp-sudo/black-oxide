@@ -3627,3 +3627,44 @@ freedom to revise within its own turn — against arms that run one attempt
 at temperature 0.2 through a fixed template. It generates a hypothesis
 about the tier curve (1.5B 0.000 · 7B 0.075 · 14B 0.525 · frontier
 20/20), it does not extend it.
+
+## 64. Arm selection by tier (owner ruling, 2026-08-31)
+
+The 1.5B tier fails in one role and earns its place in two others, so it
+is retained selectively rather than dropped or kept wholesale.
+
+**Dropped from card-only arms.** `base-ox-1.5` has read **0.000 in every
+card-only measurement ever taken** — wave 0 under card v0.3-era, and
+wave 5 under card v0.8 with the operator table §63.6 added. Strict
+repair 0.110: it is not producing near-misses, it is failing
+comprehensively. An arm that can only ever report zero cannot
+discriminate between hypotheses, and wave 5 demonstrated this at cost:
+its pre-registered prediction (any movement above 0.000) could not have
+been informative either way.
+
+**Retained in amplification.** Measured contribution, waves 3 and 4:
+
+| size | unique verified programs | tasks covered |
+|---|---:|---:|
+| 1.5B | 138 | 26 |
+| 7B | 211 | 33 |
+| 14B | 410 | 39 |
+
+The 1.5B supplies **~18% of the verified corpus for ~40 min (~$0.15)**
+of a wave, and supplies it *differently* — a weak model's passing
+programs are the short, direct ones, which is diversity the 14B does not
+generate. Corpus scale is a demonstrated sensitivity (wave 1: 7.4k
+tokens → pass@1 0.420; 29.8k → 0.755), so shrinking the corpus by a
+fifth to save $0.15 is a bad trade.
+
+**Retained in tuned arms.** Wave 0's `tune-ox-1.5` reached **0.485**
+against `tune-ox-7`'s 0.555 and `tune-ox-14`'s 0.545 in the same wave —
+within 0.07 of models ten times its size. The 1.5B cannot learn this
+language from a card and *can* learn it from a corpus, which is a
+finding about cards rather than about the tier. It is also the only tier
+that speaks to consumer-hardware deployment.
+
+**The general rule this instances:** drop an arm when it cannot
+discriminate, not when it scores badly. A tier that reads 0.000 under
+every treatment carries no information; a tier that reads 0.485 when
+trained carries a great deal.

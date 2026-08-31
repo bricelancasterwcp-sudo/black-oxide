@@ -1,0 +1,9 @@
+```text
+fn main() {
+    let s = "mississippi"
+    let count_s = count(s.chars(), "s")
+    print(count_s)
+    let distinct_chars = filter(s.chars(), |c| true).len()
+    print(distinct_chars)
+}
+```

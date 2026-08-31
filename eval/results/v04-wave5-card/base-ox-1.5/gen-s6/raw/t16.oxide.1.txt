@@ -1,0 +1,12 @@
+```rust
+fn main() {
+    let result1 = 100 / 5;
+    println!("{}", result1);
+
+    let result2 = 100 / 0; // undefined
+    println!("undefined");
+
+    let result3 = 100 / 4;
+    println!("{}", result3);
+}
+```

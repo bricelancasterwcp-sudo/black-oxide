@@ -1,0 +1,22 @@
+```rust
+use std::str::FromStr;
+
+fn main() {
+    let mut total = 0;
+    let mut failures = 0;
+
+    for s in ["12", "x", "30"] {
+        match i32::from_str(s) {
+            Ok(n) => {
+                total += n;
+            }
+            Err(_) => {
+                failures += 1;
+            }
+        }
+    }
+
+    println!("Sum: {}", total);
+    println!("Failures: {}", failures);
+}
+```

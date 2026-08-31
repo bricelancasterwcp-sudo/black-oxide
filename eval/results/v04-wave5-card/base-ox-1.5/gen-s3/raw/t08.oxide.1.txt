@@ -1,0 +1,32 @@
+```rust
+fn main() {
+    let v = vec![3, 8, -2, 12, 7];
+    print(first_positive(v));            // field access copies: r stays usable
+    print(largest_value(v));
+}
+
+fn first_positive(v: Vec<Int>) -> Int {
+    let mut count = 0;
+    for x in v {
+        if x > 0 {
+            count += 1;
+            break;
+        }
+    }
+    count
+}
+
+fn largest_value(v: Vec<Int>) -> Option<Int> {
+    let mut largest = None;
+    for x in v {
+        if let Some(l) = largest {
+            if x > l {
+                largest = Some(x);
+            }
+        } else {
+            largest = Some(x);
+        }
+    }
+    largest
+}
+```

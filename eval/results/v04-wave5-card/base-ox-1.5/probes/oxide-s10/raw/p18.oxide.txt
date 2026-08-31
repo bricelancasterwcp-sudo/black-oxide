@@ -1,0 +1,8 @@
+```rust
+fn main() {
+    let s = "abcdefghij";
+    print(str_len(s.clone())); // clone at the first consuming use if both are needed
+    let t = concat(s.clone(), s);
+    print(str_len(t));
+}
+```

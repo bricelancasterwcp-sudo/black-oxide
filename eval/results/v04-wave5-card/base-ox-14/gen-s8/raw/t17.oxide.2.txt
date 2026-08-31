@@ -1,0 +1,11 @@
+fn main() {
+    let v = push(push(push(vec(), 10), 20), 30)
+    match get(v, 1) {
+        Some(pos1) => print(pos1),
+        None => print(-1),
+    }
+    match get(v, 5) {
+        Some(pos5) => print(pos5),
+        None => print(-1),
+    }
+}

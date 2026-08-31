@@ -1,0 +1,12 @@
+```
+struct Pair { a: Vec<Int>, b: Str }
+
+fn main() {
+    let s = Pair { a: push(push(vec(), 1), 2), b: "hello" }
+    let s_clone = clone(s); // Clone the struct to avoid ownership issues
+    let Pair { a, b } = s_clone;
+    print(len(a));
+    print(str_len(b));
+    print(str_len(s.b)); // Use the cloned struct to access the fields
+}
+```

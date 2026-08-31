@@ -1,0 +1,20 @@
+```rust
+fn main() {
+    let pen = Reading { label: "pen", values: vec![3, 4] };
+    let pad = Reading { label: "pad", values: vec![9, 2] };
+    let ink = Reading { label: "ink", values: vec![5, 3] };
+
+    let combined_cost = pen.values.iter().sum::<Int>() + pad.values.iter().sum::<Int>() + ink.values.iter().sum::<Int>();
+    print(combined_cost);
+
+    let mut highest_cost_item = Reading { label: "", values: vec![] };
+    for item in [pen, pad, ink] {
+        let cost = item.values.iter().sum::<Int>() * item.values[0];
+        if cost > highest_cost_item.values.iter().sum::<Int>() * highest_cost_item.values[0] {
+            highest_cost_item = item;
+        }
+    }
+
+    print_str(highest_cost_item.label);
+}
+```

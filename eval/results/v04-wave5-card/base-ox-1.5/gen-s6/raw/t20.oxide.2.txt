@@ -1,0 +1,22 @@
+```rust
+struct Pen { price: Int, quantity: Int }
+struct Pad { price: Int, quantity: Int }
+struct Ink { price: Int, quantity: Int }
+
+fn main() {
+    let pen = Pen { price: 3, quantity: 4 };
+    let pad = Pad { price: 9, quantity: 2 };
+    let ink = Ink { price: 5, quantity: 3 };
+
+    let total_cost = (pen.price * pen.quantity) + (pad.price * pad.quantity) + (ink.price * ink.quantity);
+    print(total_cost);
+
+    let mut highest_cost_item = Pen { price: 0, quantity: 0 };
+    for item in vec![pen, pad, ink] {
+        if item.price * item.quantity > highest_cost_item.price * highest_cost_item.quantity {
+            highest_cost_item = item;
+        }
+    }
+    print_str(highest_cost_item.label);
+}
+```

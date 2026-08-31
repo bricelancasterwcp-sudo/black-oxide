@@ -1,0 +1,13 @@
+```rust
+fn reverse(s: Str) -> Str {
+    let mut result = String::new();
+    for c in s.chars().rev() {
+        result.push(c);
+    }
+    result
+}
+
+fn main() {
+    print(reverse("stack"));
+}
+```

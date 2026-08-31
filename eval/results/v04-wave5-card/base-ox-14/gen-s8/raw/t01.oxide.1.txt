@@ -1,0 +1,6 @@
+```text
+fn main() {
+    let sum_of_squares = range(0, 10).map(|x| x * x).sum()
+    print(sum_of_squares)
+}
+```

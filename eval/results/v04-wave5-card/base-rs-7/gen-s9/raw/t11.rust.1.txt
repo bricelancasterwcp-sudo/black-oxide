@@ -1,0 +1,9 @@
+```rust
+fn main() {
+    let mut nums = [5, 3, 8, 1, 9, 2];
+    nums.sort();
+    for num in nums.iter() {
+        println!("{}", num);
+    }
+}
+```

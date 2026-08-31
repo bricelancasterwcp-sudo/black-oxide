@@ -1,0 +1,14 @@
+fn fib(n: Int) -> Int {
+    if n <= 1 { return n; }
+    let (mut a, mut b) = (1, 1);
+    for _ in 2..n {
+        let next = a + b;
+        a = b;
+        b = next;
+    }
+    b
+}
+
+fn main() {
+    print(fib(20));
+}

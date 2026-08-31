@@ -1,0 +1,9 @@
+```rust
+struct List { elements: Vec<Int> }
+
+fn main() {
+    let mut l = List { elements: vec![10, 20, 30] };
+    print(l.elements[1]); // prints 20
+    print(l.elements[4]); // prints -1 (position out of bounds)
+}
+```

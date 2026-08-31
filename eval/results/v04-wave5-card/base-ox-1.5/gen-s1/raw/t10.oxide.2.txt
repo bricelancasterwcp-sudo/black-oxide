@@ -1,0 +1,34 @@
+```rust
+struct Reading { label: Str, values: Vec<Int> }
+
+fn first_big(v: Vec<Int>) -> Int {
+    let mut found = -1;
+    for x in v {
+        if x > 3 {
+            found = x;
+            break;
+        }
+    }
+    found
+}
+
+fn second(v: Vec<Int>) -> Option<Int> {
+    let x = get(v, 1)?;
+    Some(x + 1)
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(vec(), 3), 42) };
+    print(first_big(r.values));            // field access copies: r stays usable
+    let mut kept_values = Vec::new();
+    for x in &r.values {
+        if x > 3 {
+            kept_values.push(x.clone());
+        }
+    }
+    for &x in &kept_values {
+        println!("{}", x);
+    }
+    print_str(&format!("Number of values kept: {}", kept_values.len()));
+}
+```

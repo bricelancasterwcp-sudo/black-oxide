@@ -1,0 +1,11 @@
+fn main() {
+    let v = vec![10, 20, 30];
+    match get(v.clone(), 1) {
+        Some(x) => print(x),
+        None => print(-1),
+    }
+    match get(v.clone(), 5) {
+        Some(x) => print(x),
+        None => print(-1),
+    }
+}

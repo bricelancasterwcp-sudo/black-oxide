@@ -1,0 +1,27 @@
+fn count_occurrences(s: Str, c: Str) -> Int {
+    let mut count = 0
+    for ch in chars(s) {
+        if ch == c {
+            count += 1
+        }
+    }
+    count
+}
+
+fn count_distinct_chars(s: Str) -> Int {
+    let mut seen = Vec<Str>()
+    for ch in chars(s) {
+        if !contains(seen, ch) {
+            seen = push(seen, ch)
+        }
+    }
+    len(seen)
+}
+
+fn main() {
+    let text = "mississippi"
+    let s_count = count_occurrences(text, "s")
+    let distinct_count = count_distinct_chars(text)
+    print(s_count)
+    print(distinct_count)
+}

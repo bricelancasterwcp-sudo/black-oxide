@@ -1,0 +1,29 @@
+```
+struct Reading { label: Str, values: Vec<Int> }
+
+fn first_positive(v: Vec<Int>) -> Int {
+    let mut count = 0;
+    for x in v {
+        if x > 0 {
+            count += 1;
+        }
+    }
+    count
+}
+
+fn largest_value(v: Vec<Int>) -> Option<Int> {
+    match v.iter().max() {
+        Some(&x) => Some(x),
+        None => None,
+    }
+}
+
+fn main() {
+    let r = Reading { label: "lab", values: push(push(vec(), 3), 8) };
+    print(first_positive(r.values));            // field access copies: r stays usable
+    match largest_value(r.values) {
+        Some(n) => print(n),
+        None => print_str("no positive values"),
+    }
+}
+```

@@ -1,0 +1,7 @@
+```rust
+fn main() {
+    let s = "stack";
+    let reversed: Str = concat("", chars(s).reverse());
+    print_str(reversed);
+}
+```

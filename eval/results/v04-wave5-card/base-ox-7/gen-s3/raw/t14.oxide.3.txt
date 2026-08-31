@@ -1,0 +1,5 @@
+fn main() {
+    let s = "mississippi";
+    print(count(s.chars().filter(|c| *c == 's'), |x| x));
+    print(len(set(s.chars().map(|c| c))));
+}

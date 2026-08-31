@@ -1,0 +1,13 @@
+fn main() {
+    let v = push(push(push(vec(), 10), 20), 30);
+    if let Some(pos1) = get(v.clone(), 1) {
+        print(pos1);
+    } else {
+        print(-1);
+    }
+    if let Some(pos5) = get(v, 5) {
+        print(pos5);
+    } else {
+        print(-1);
+    }
+}

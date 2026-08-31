@@ -1,0 +1,3 @@
+```oxide
+print_str(concat(reverse(vec("s", "t", "a", "c", "k"))))
+```

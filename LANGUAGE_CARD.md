@@ -15,6 +15,11 @@ optional everywhere.
 - Statements: `let x = expr` · `x = expr` (reassignment) · `return expr` ·
   `while cond { }` · `for x in vec_expr { }` · `break` · `continue` ·
   expression statements.
+- Operators, by binding power (loosest first). Binary: `||` · `&&` ·
+  `== != < <= > >=` · `+ -` · `* / %`. Unary prefix: `!` (Bool) and
+  `-` (numeric). `%` is Int-only; `/` on Int truncates. Comparison and
+  equality yield Bool. There is no bitwise, shift, or ternary operator,
+  and no `++`/`--`.
 - Compound assignment: `x += e` / `x -= e` / `x *= e` are sugar for
   `x = x + e` / `x = x - e` / `x = x * e`, identifier targets only.
   Int/Float only — `+` isn't defined for Str (concat is `concat(a, b)`),

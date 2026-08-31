@@ -15,6 +15,12 @@ verifies every annotation. Types are fully inferred; annotations optional.
 - Statements: `let x = expr` · `x = expr` (reassignment) · `return expr` ·
   `while cond { }` · `for x in vec_expr { }` · `break` · `continue` ·
   `drop name` · expression statements.
+- Operators, by binding power (loosest first). Binary: `||` · `&&` ·
+  `== != < <= > >=` · `+ -` · `* / %`. Unary prefix: `!` (Bool only) and
+  `-` (Int or Float). `%` is Int-only; `/` on Int truncates toward zero.
+  Comparison and equality yield Bool; equality reads both operands
+  rather than consuming them. No bitwise, shift, or ternary operator,
+  and no `++`/`--`.
 - Compound assignment: `x += e` / `x -= e` / `x *= e` desugar to
   `x = x + e` / `x = x - e` / `x = x * e`, identifier targets only.
   Int/Float only — `+` isn't defined for Str (concat is `concat(a, b)`),

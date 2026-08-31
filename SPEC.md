@@ -3567,3 +3567,63 @@ card. Counts: core **1117**, explicit **1221**, gap 104 against a 10%
 tolerance of 122.1; `CORE_WORD_LIMIT` stays at 1150 with 33 words of
 headroom. §60.5's standing instruction — raise it non-silently, never
 meet it by trimming — is unused this wave and still applies to the next.
+
+### 63.6 The card never documented its operators (found 2026-08-30)
+
+A frontier-model probe run during wave 4's campaign exposed a defect
+that had been present in every card the project has ever measured.
+
+**The probe.** Claude Sonnet was given `LANGUAGE_CARD.md` v0.7 and the 20
+eval task prompts, in a scratch directory, explicitly barred from reading
+this repository (which holds the compiler, the suite, and worked
+solutions), with no compiler available to it and `expected_stdout`
+withheld. It wrote 20 programs in one pass. Verified afterwards through
+the real oracle — transpile, rustc, execute, byte-compare — **all 20
+passed.**
+
+**What it reported, and what the card confirms.** It flagged that the
+card documents no operator set. Checked: `==`, `!=`, `%`, `<=`, `>=`,
+`&&`, `||`, and `!` appear **zero times** in the card, and every `/` in
+it is prose punctuation. The same holds at wave 2's, wave 3's and wave
+4's committed cards — the gap is not a regression, it is original.
+
+The model solved the tasks by assuming Rust's operator set and being
+right, using `==` six times, `%` four, `/` twice, `<=` and `!` once.
+
+**Two consequences, pointing opposite ways.**
+
+1. *For §62's thesis:* this is the ease-of-learning objective validated
+   at the largest scale available. The card did not need to be complete,
+   because a strong Rust prior filled the hole correctly. Oxide's
+   Rust-likeness is load-bearing, not incidental — and this is the
+   clearest evidence yet that §62.2's ordering (familiar spelling beats
+   novel spelling) is right.
+2. *For the instrument:* smaller models have weaker priors and cannot
+   reliably fill that hole. `base-ox-7` reads 0.075 and `base-ox-1.5`
+   read 0.000. **Every untuned Oxide arm in project history may have
+   been depressed by a documentation gap rather than by the language**,
+   which would make four waves of card-only readings measurements of the
+   card's incompleteness.
+
+**Fixed here.** Both cards gain an operator table, transcribed from the
+implementation rather than from assumption (`src/lexer/lexer.py`'s two-
+and one-char tables and `src/parser/expressions.py::_BINARY_BP`):
+binding power loosest-first `||` · `&&` · `== != < <= > >=` · `+ -` ·
+`* / %`, unary prefix `!` and `-`, `%` Int-only, Int `/` truncating, no
+bitwise/shift/ternary and no `++`/`--`. Card v0.8. `CORE_WORD_LIMIT`
+raised 1150 → 1200 non-silently per §60.5, pin re-verified to bite.
+
+**This card is NOT what wave 4 measured.** Wave 4's campaign ran against
+v0.7 from a pod clone pinned at `7769c2f0`; v0.8 lands after those
+numbers were generated and changes none of them. The re-measurement is a
+wave-5 item, and it is the cheapest high-value experiment now on the
+board: re-run `base-ox-7` and `base-ox-14` against v0.8 and see whether
+the untuned arms move. If they do, the card-only regime has been
+mismeasured since wave 0.
+
+**Lens note.** The Sonnet probe is not a comparable pass@1. It ran under
+a different harness — agentic scaffolding, a different sampler, and the
+freedom to revise within its own turn — against arms that run one attempt
+at temperature 0.2 through a fixed template. It generates a hypothesis
+about the tier curve (1.5B 0.000 · 7B 0.075 · 14B 0.525 · frontier
+20/20), it does not extend it.

@@ -1,0 +1,223 @@
+{
+  "source": "eval",
+  "tokenizer": {
+    "path": "eval/train/tokenizer/tokenizer.json",
+    "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539"
+  },
+  "dropped": [],
+  "pairs": [
+    {
+      "task": "t13",
+      "class": "strings",
+      "stratum": null,
+      "oxide": 83,
+      "rust": 61,
+      "surplus": 22,
+      "ratio": 1.360655737704918
+    },
+    {
+      "task": "t16",
+      "class": "structs/option",
+      "stratum": null,
+      "oxide": 122,
+      "rust": 106,
+      "surplus": 16,
+      "ratio": 1.150943396226415
+    },
+    {
+      "task": "t12",
+      "class": "strings",
+      "stratum": null,
+      "oxide": 42,
+      "rust": 31,
+      "surplus": 11,
+      "ratio": 1.3548387096774193
+    },
+    {
+      "task": "t06",
+      "class": "arithmetic/loops",
+      "stratum": null,
+      "oxide": 73,
+      "rust": 68,
+      "surplus": 5,
+      "ratio": 1.0735294117647058
+    },
+    {
+      "task": "t01",
+      "class": "arithmetic/loops",
+      "stratum": null,
+      "oxide": 41,
+      "rust": 38,
+      "surplus": 3,
+      "ratio": 1.0789473684210527
+    },
+    {
+      "task": "t04",
+      "class": "arithmetic/loops",
+      "stratum": null,
+      "oxide": 97,
+      "rust": 94,
+      "surplus": 3,
+      "ratio": 1.0319148936170213
+    },
+    {
+      "task": "t05",
+      "class": "arithmetic/loops",
+      "stratum": null,
+      "oxide": 67,
+      "rust": 65,
+      "surplus": 2,
+      "ratio": 1.0307692307692307
+    },
+    {
+      "task": "t17",
+      "class": "structs/option",
+      "stratum": null,
+      "oxide": 51,
+      "rust": 53,
+      "surplus": -2,
+      "ratio": 0.9622641509433962
+    },
+    {
+      "task": "t02",
+      "class": "arithmetic/loops",
+      "stratum": null,
+      "oxide": 77,
+      "rust": 80,
+      "surplus": -3,
+      "ratio": 0.9625
+    },
+    {
+      "task": "t03",
+      "class": "arithmetic/loops",
+      "stratum": null,
+      "oxide": 55,
+      "rust": 58,
+      "surplus": -3,
+      "ratio": 0.9482758620689655
+    },
+    {
+      "task": "t15",
+      "class": "strings",
+      "stratum": null,
+      "oxide": 81,
+      "rust": 85,
+      "surplus": -4,
+      "ratio": 0.9529411764705882
+    },
+    {
+      "task": "t07",
+      "class": "arithmetic/loops",
+      "stratum": null,
+      "oxide": 42,
+      "rust": 50,
+      "surplus": -8,
+      "ratio": 0.84
+    },
+    {
+      "task": "t09",
+      "class": "vectors",
+      "stratum": null,
+      "oxide": 34,
+      "rust": 43,
+      "surplus": -9,
+      "ratio": 0.7906976744186046
+    },
+    {
+      "task": "t19",
+      "class": "structs/option",
+      "stratum": null,
+      "oxide": 53,
+      "rust": 62,
+      "surplus": -9,
+      "ratio": 0.8548387096774194
+    },
+    {
+      "task": "t14",
+      "class": "strings",
+      "stratum": null,
+      "oxide": 73,
+      "rust": 83,
+      "surplus": -10,
+      "ratio": 0.8795180722891566
+    },
+    {
+      "task": "t11",
+      "class": "vectors",
+      "stratum": null,
+      "oxide": 37,
+      "rust": 48,
+      "surplus": -11,
+      "ratio": 0.7708333333333334
+    },
+    {
+      "task": "t08",
+      "class": "vectors",
+      "stratum": null,
+      "oxide": 52,
+      "rust": 67,
+      "surplus": -15,
+      "ratio": 0.7761194029850746
+    },
+    {
+      "task": "t10",
+      "class": "vectors",
+      "stratum": null,
+      "oxide": 56,
+      "rust": 75,
+      "surplus": -19,
+      "ratio": 0.7466666666666667
+    },
+    {
+      "task": "t18",
+      "class": "structs/option",
+      "stratum": null,
+      "oxide": 115,
+      "rust": 138,
+      "surplus": -23,
+      "ratio": 0.8333333333333334
+    },
+    {
+      "task": "t20",
+      "class": "structs/option",
+      "stratum": null,
+      "oxide": 156,
+      "rust": 182,
+      "surplus": -26,
+      "ratio": 0.8571428571428571
+    }
+  ],
+  "classes": {
+    "arithmetic/loops": {
+      "oxide": 452,
+      "rust": 453,
+      "surplus": -1,
+      "ratio": 0.9977924944812362
+    },
+    "vectors": {
+      "oxide": 179,
+      "rust": 233,
+      "surplus": -54,
+      "ratio": 0.7682403433476395
+    },
+    "strings": {
+      "oxide": 279,
+      "rust": 260,
+      "surplus": 19,
+      "ratio": 1.073076923076923
+    },
+    "structs/option": {
+      "oxide": 497,
+      "rust": 541,
+      "surplus": -44,
+      "ratio": 0.9186691312384473
+    }
+  },
+  "strata": {},
+  "overall": {
+    "oxide": 1407,
+    "rust": 1487,
+    "surplus": -80,
+    "ratio": 0.9462004034969738
+  }
+}

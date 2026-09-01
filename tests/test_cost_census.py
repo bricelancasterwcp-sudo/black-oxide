@@ -53,19 +53,6 @@ def test_class_subtotals_sum_both_arms_and_ratio_the_totals():
     assert subs["strings"]["surplus"] == 0
 
 
-def test_pair_costs_names_unreadable_pairs_instead_of_scoring_them_zero(monkeypatch):
-    import eval.cost_census as cc
-
-    monkeypatch.setattr(
-        cc,
-        "load_train_tasks",
-        lambda: {"nXX": {"class": "vectors"}, "n001": {"class": "arithmetic/loops"}},
-    )
-    costs, dropped = cc.pair_costs(lambda s: len(s.split()))
-    assert "nXX" in dropped
-    assert all(c.task != "nXX" for c in costs)
-
-
 def test_acceptance_pins_the_committed_corpus_numbers():
     """A DRIFT ALARM, not a constant.
 
@@ -102,3 +89,119 @@ def test_census_payload_carries_its_lens():
     assert census["dropped"] == []
     assert census["overall"]["oxide"] == 2302  # 2536 at wave-3 start; 2300 at its close
     assert census["overall"]["rust"] == 2332
+
+
+# ------------------------------------------------------- wave 8: sources
+
+def _tmp_source(tmp_path, tasks, pairs):
+    """A by-arm source on disk. Real files rather than a monkeypatched
+    loader: the layout IS the thing under test."""
+    import json as _json
+
+    from eval.cost_census import PairSource
+
+    tasks_path = tmp_path / "tasks.jsonl"
+    tasks_path.write_text(
+        "".join(_json.dumps(t) + "\n" for t in tasks), encoding="utf-8"
+    )
+    root = tmp_path / "refs"
+    for arm in ("oxide", "rust"):
+        (root / arm).mkdir(parents=True)
+    for tid, (ox, rs) in pairs.items():
+        (root / "oxide" / f"{tid}.ox").write_text(ox, encoding="utf-8")
+        (root / "rust" / f"{tid}.rs").write_text(rs, encoding="utf-8")
+    return PairSource(
+        "tmp", tasks_path, root, "oxide/{task}.ox", "rust/{task}.rs"
+    )
+
+
+def test_pair_source_resolves_both_repo_layouts():
+    """The train corpus nests arms under the task; the eval sets key by
+    arm first. One reader must serve both or the census stays bound to
+    whichever layout it was born against."""
+    from eval.cost_census import EVAL_SOURCE, LARGE_SOURCE, TRAIN_SOURCE
+
+    assert TRAIN_SOURCE.oxide_path("n001").as_posix().endswith("n001/oxide.ox")
+    assert TRAIN_SOURCE.rust_path("n001").as_posix().endswith("n001/rust.rs")
+    assert EVAL_SOURCE.oxide_path("t01").as_posix().endswith("references-v04/oxide/t01.ox")
+    assert LARGE_SOURCE.rust_path("g01").as_posix().endswith("references-large/rust/g01.rs")
+
+
+def test_pair_costs_reads_the_source_it_is_given(tmp_path):
+    source = _tmp_source(
+        tmp_path,
+        [{"id": "x1", "class": "vectors", "stratum": "linear"}],
+        {"x1": ("a b c", "a b")},
+    )
+    costs, dropped = pair_costs(lambda s: len(s.split()), source)
+    assert dropped == []
+    assert (costs[0].oxide_tokens, costs[0].rust_tokens) == (3, 2)
+    assert costs[0].stratum == "linear"
+
+
+def test_pair_costs_names_unreadable_pairs_in_a_given_source(tmp_path):
+    """The wave-2 rule, re-pinned at the new seam: a pair that cannot be
+    read is named, never scored zero -- zero reads as 'costs nothing'."""
+    source = _tmp_source(
+        tmp_path,
+        [
+            {"id": "x1", "class": "vectors"},
+            {"id": "gone", "class": "strings"},
+        ],
+        {"x1": ("a b c", "a b")},
+    )
+    costs, dropped = pair_costs(lambda s: len(s.split()), source)
+    assert dropped == ["gone"]
+    assert [c.task for c in costs] == ["x1"]
+
+
+def test_stratum_subtotals_split_the_two_strata():
+    from eval.cost_census import stratum_subtotals
+
+    costs = [
+        PairCost("a", "vectors", 100, 50, "compositional"),
+        PairCost("b", "strings", 50, 50, "compositional"),
+        PairCost("c", "vectors", 30, 60, "linear"),
+    ]
+    strata = stratum_subtotals(costs)
+    assert strata["compositional"]["ratio"] == 1.5
+    assert strata["linear"]["ratio"] == 0.5
+
+
+def test_stratum_subtotals_omit_unstratified_pairs_rather_than_labelling_them():
+    """The train and eval sets carry no stratum. Bucketing them under
+    'unknown' would invent a group that was never authored."""
+    from eval.cost_census import stratum_subtotals
+
+    assert stratum_subtotals([PairCost("a", "vectors", 10, 10)]) == {}
+
+
+def test_census_names_its_source_so_a_number_cannot_be_quoted_rootless():
+    from eval.cost_census import LARGE_SOURCE
+
+    census = build_cost_census(LARGE_SOURCE)
+    assert census["source"] == "large"
+    assert census["dropped"] == []
+    assert set(census["strata"]) == {"compositional", "linear"}
+
+
+def test_acceptance_pins_the_large_tier():
+    """Wave 8's drift alarm. Authored 2026-09-01: 20 tasks, both arms
+    oracle-verified, every program inside the 200-600 token band.
+
+    5823/5482 = 1.0622 AFTER the symmetric re-review, which converted six
+    Oxide `while i < len(v)` loops to `range` where the Rust arm already
+    had a counted loop and moved the ratio 1.0766 -> 1.0622 in Oxide's
+    favour. The small tiers read 0.9462 (eval) and 0.9871 (train), so
+    this tier crossing parity is the wave's finding, not a defect. If
+    this fails, either the tier moved or the tokenizer did."""
+    from eval.cost_census import LARGE_SOURCE
+
+    costs, dropped = pair_costs(qwen_counter(), LARGE_SOURCE)
+    assert dropped == []
+    assert len(costs) == 20
+    assert all(200 <= c.oxide_tokens <= 600 for c in costs)
+    assert all(200 <= c.rust_tokens <= 600 for c in costs)
+    overall_ox = sum(c.oxide_tokens for c in costs)
+    overall_rs = sum(c.rust_tokens for c in costs)
+    assert (overall_ox, overall_rs) == (5823, 5482)

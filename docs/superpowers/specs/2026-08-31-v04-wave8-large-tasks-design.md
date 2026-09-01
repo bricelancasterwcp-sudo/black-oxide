@@ -47,6 +47,17 @@ single-campaign comparison. The small-tier re-run inside the same
 campaign (§8) uses the full §59.7 form unchanged, since its history
 exists.
 
+**AMENDED 2026-09-01, after Phase A and before any Phase B run.** The
+bands below are stated on the raw large-tier ratio, and were calibrated
+when the reference ratio was assumed to sit near 0.94. Phase A measured
+it at **1.0622**, so a model matching the references exactly would score
+1.0622 and fall in state 2 while its true surplus is zero. **The endpoint
+is therefore the SURPLUS — the model's oxide/rust ratio divided by the
+references' ratio over the same green cells — and the three bands below
+are read on that surplus scale.** This restores the estimand wave 6
+actually used (1.1982 ÷ 0.9393 = 1.276) rather than inventing a new one.
+The raw bands are left visible rather than rewritten, per house practice.
+
 Three states, committed before the tier is authored, each changing what
 gets built next:
 

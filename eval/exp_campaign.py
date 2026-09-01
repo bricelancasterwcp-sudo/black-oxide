@@ -158,11 +158,29 @@ def main(argv: list[str] | None = None) -> int:
         help="comma-separated families to run. Wave 8's token-efficiency "
              "endpoint needs only 'gen'.",
     )
+    parser.add_argument(
+        "--seeds", default=None,
+        help="comma-separated seeds (default: all ten). A SUBSET run is "
+             "not comparable with a published ten-seed figure -- anchor it "
+             "on the same seeds, restricted from committed cells.",
+    )
     args = parser.parse_args(argv)
     families = tuple(f for f in args.families.split(",") if f)
     unknown = set(families) - {"gen", "probes"}
     if unknown:
         parser.error(f"unknown families: {sorted(unknown)}")
+    if args.seeds is None:
+        seeds = SEEDS
+    else:
+        try:
+            seeds = tuple(int(s) for s in args.seeds.split(",") if s)
+        except ValueError:
+            parser.error(f"seeds must be integers: {args.seeds!r}")
+        if not seeds:
+            parser.error("--seeds given but empty")
+        stray = sorted(set(seeds) - set(SEEDS))
+        if stray:
+            parser.error(f"seeds outside the campaign set {SEEDS}: {stray}")
     spec = next(s for s in ARM_SPECS if s.name == args.arm)
     extra_provenance: dict = {}
     if args.gguf_sha is not None:
@@ -171,8 +189,10 @@ def main(argv: list[str] | None = None) -> int:
         extra_provenance["llamacpp_commit"] = args.llamacpp_commit
     if args.tasks is not None:
         extra_provenance["tasks_path"] = str(args.tasks)
+    if seeds != SEEDS:
+        extra_provenance["seeds_subset"] = list(seeds)
     run_arm(spec, host=args.host, results_root=args.root,
-            tasks_path=args.tasks, families=families,
+            tasks_path=args.tasks, families=families, seeds=seeds,
             extra_provenance=extra_provenance or None)
     print(f"{spec.name}: DONE")
     return 0

@@ -220,3 +220,43 @@ def test_cli_rejects_an_unknown_family_instead_of_silently_running_none():
 
     with _pytest.raises(SystemExit):
         ec.main(["--arm", "base-rs-7", "--root", "/tmp/x", "--families", "genn"])
+
+
+def test_cli_accepts_a_seed_subset_and_records_it(monkeypatch, tmp_path):
+    """A subset run is NOT comparable with a published ten-seed figure --
+    wave 4's tune-ox-14 reads 0.745 over ten seeds and 0.800 over seeds
+    1-3. The subset must therefore be recorded in provenance, so no later
+    reader can mistake one for the other."""
+    import eval.exp_campaign as ec
+
+    seen = {}
+    monkeypatch.setattr(ec, "run_arm", lambda spec, **kw: seen.update(kw))
+    ec.main(["--arm", "tune-ox-14", "--root", str(tmp_path), "--seeds", "1,2,3"])
+    assert seen["seeds"] == (1, 2, 3)
+    assert seen["extra_provenance"]["seeds_subset"] == [1, 2, 3]
+
+
+def test_cli_default_seeds_are_the_full_set_and_unrecorded(monkeypatch, tmp_path):
+    import eval.exp_campaign as ec
+
+    seen = {}
+    monkeypatch.setattr(ec, "run_arm", lambda spec, **kw: seen.update(kw))
+    ec.main(["--arm", "tune-ox-14", "--root", str(tmp_path)])
+    assert seen["seeds"] == ec.SEEDS
+    assert "seeds_subset" not in (seen["extra_provenance"] or {})
+
+
+def test_cli_rejects_a_seed_outside_the_campaign_set():
+    import eval.exp_campaign as ec
+    import pytest as _pytest
+
+    with _pytest.raises(SystemExit):
+        ec.main(["--arm", "tune-ox-14", "--root", "/tmp/x", "--seeds", "1,99"])
+
+
+def test_cli_rejects_non_integer_seeds():
+    import eval.exp_campaign as ec
+    import pytest as _pytest
+
+    with _pytest.raises(SystemExit):
+        ec.main(["--arm", "tune-ox-14", "--root", "/tmp/x", "--seeds", "a,b"])

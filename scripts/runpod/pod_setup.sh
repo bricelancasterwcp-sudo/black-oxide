@@ -5,6 +5,14 @@ cd /workspace
 if [ ! -d oxide ]; then
   git clone https://github.com/bricelancasterwcp-sudo/black-oxide.git oxide
 fi
+# Conversion deps FIRST: llama.cpp's requirements file moves torch, and on
+# the pytorch images that leaves a torchvision built for the OLD torch --
+# which transformers imports, so every `from peft import ...` dies with a
+# misleading "Could not import BloomPreTrainedModel". Nothing here needs
+# vision. Order matters: pin transformers/peft AFTER the requirements file
+# has had its way with them.
+pip install --break-system-packages -q -r llama.cpp/requirements/requirements-convert_hf_to_gguf.txt || true
+pip uninstall -y -q torchvision || true
 pip install --break-system-packages -q transformers==5.5.0 accelerate==1.14.0 peft==0.20.0 bitsandbytes
 # rustc is the harness oracle — the eval side of this pod needs it:
 if ! command -v rustc >/dev/null; then

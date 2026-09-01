@@ -5,6 +5,18 @@ cd /workspace
 if [ ! -d oxide ]; then
   git clone https://github.com/bricelancasterwcp-sudo/black-oxide.git oxide
 fi
+# The eval harness uses PEP 695 `type` syntax and needs python >= 3.12,
+# but the pytorch images ship 3.11 with torch. Install 3.12 for the
+# (stdlib-only) eval path and leave torch where it is.
+if ! command -v python3.12 >/dev/null; then
+  DEBIAN_FRONTEND=noninteractive apt-get update -qq || true
+  DEBIAN_FRONTEND=noninteractive apt-get install -y -qq python3.12 || true
+fi
+# cmake and a compiler are not on every image either.
+if ! command -v cmake >/dev/null; then
+  DEBIAN_FRONTEND=noninteractive apt-get install -y -qq cmake build-essential || true
+fi
+
 # Conversion deps FIRST: llama.cpp's requirements file moves torch, and on
 # the pytorch images that leaves a torchvision built for the OLD torch --
 # which transformers imports, so every `from peft import ...` dies with a

@@ -98,6 +98,25 @@ scaled 2× for the model size. Balance ≈$6.4.
 
 Both are configuration, not budget.
 
+### AMENDED 2026-09-01, before the run: the API's RAM figure is wrong
+
+The create response for `zu4fvi3iulzl9y` reported **`memoryInGb: 41`**,
+below the ≥100 GB required above. On the machine itself, `free -g`
+reports **251 GB total, 207 GB available**.
+
+**The API field does not describe the machine.** Checking it would have
+sent this run to a needless re-provision, or to a `device_map` change it
+does not need.
+
+This is the `runtime`-field lesson generalised: a RunPod status field is
+not the thing it names. The rule already in force for liveness — SSH to
+the thing, never the status field — applies to **capacity** too. The
+verification order that caught this (create → SSH → `free`/`df`/
+`torch.cuda`, before committing hours) is the reason it cost nothing.
+
+Requirement met: 251 GB against ≥100 GB, 160 GB volume against ≥150 GB,
+RTX 3090 24 GB, `torch.cuda` True, driver 580.65.06.
+
 ## Carried ops rules
 
 Community 3090 with a single `gpuTypeIds` pin and `PUBLIC_KEY` in env;

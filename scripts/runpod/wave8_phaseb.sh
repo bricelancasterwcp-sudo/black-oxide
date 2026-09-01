@@ -13,6 +13,13 @@ cd /workspace/oxide
 
 step () { echo "=== $(date -u +%H:%M:%S) $* ==="; }
 
+# The eval harness needs python >= 3.12 (PEP 695). The image ships 3.11
+# with torch, so merge/convert stay on `python` and only the campaign
+# moves -- the eval path has no third-party dependencies.
+export PY="${PY:-python3.12}"
+"$PY" -c "import sys; assert sys.version_info >= (3, 12), sys.version" \
+  || { echo "NEED-PY312"; exit 1; }
+
 # ---------------------------------------------------------------- weights
 # The base is fetched ONCE to a local dir and used both for its own GGUF
 # and as merge_lora's --base. Passing the HF id to merge_lora instead

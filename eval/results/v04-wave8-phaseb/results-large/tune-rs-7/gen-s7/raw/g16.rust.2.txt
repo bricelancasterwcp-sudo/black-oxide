@@ -1,0 +1,27 @@
+fn main() {
+    let mut n = 44;
+    let mut max_val = n;
+    let mut min_val = n;
+    let mut sum_vals = n;
+    let mut even_rounds = 0;
+    let mut digit_sum = 0;
+    for _ in 1..=50 {
+        if n == 1 {
+            break;
+        }
+        let next_n = n.to_string().chars().map(|d| (d as u32 - '0' as u32).pow(2)).sum();
+        sum_vals += next_n;
+        digit_sum += n.to_string().chars().map(|d| d as u32 - '0' as u32).sum::<u32>();
+        if next_n > max_val {
+            max_val = next_n;
+        }
+        if next_n < min_val {
+            min_val = next_n;
+        }
+        if next_n % 2 == 0 {
+            even_rounds += 1;
+        }
+        n = next_n;
+    }
+    println!("{}", n);
+}

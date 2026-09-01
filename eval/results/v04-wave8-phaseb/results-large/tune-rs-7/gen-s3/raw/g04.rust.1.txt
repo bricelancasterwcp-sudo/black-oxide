@@ -1,0 +1,44 @@
+fn main() {
+    let numbers = [360, 97, 1024, 561, 143, 2003];
+    let mut primes_count = 0;
+    for &num in &numbers {
+        println!("{}", num);
+        let (distinct_primes, sum, max_prime) = find_distinct_primes(num);
+        println!("{}", distinct_primes);
+        println!("{}", sum);
+        println!("{}", max_prime);
+        if is_prime(num) {
+            primes_count += 1;
+        }
+    }
+    println!("{}", primes_count);
+}
+fn find_distinct_primes(mut num: usize) -> (usize, usize, usize) {
+    let mut distinct_primes = 0;
+    let mut sum = 0;
+    let mut max_prime = 0;
+    for i in 2..=num {
+        while num % i == 0 {
+            if distinct_primes == 0 || i != distinct_primes - 1 {
+                distinct_primes += 1;
+                sum += i;
+                if i > max_prime {
+                    max_prime = i;
+                }
+            }
+            num /= i;
+        }
+    }
+    (distinct_primes, sum, max_prime)
+}
+fn is_prime(num: usize) -> bool {
+    if num <= 1 {
+        return false;
+    }
+    for i in 2..=((num as f64).sqrt() as usize) {
+        if num % i == 0 {
+            return false;
+        }
+    }
+    true
+}

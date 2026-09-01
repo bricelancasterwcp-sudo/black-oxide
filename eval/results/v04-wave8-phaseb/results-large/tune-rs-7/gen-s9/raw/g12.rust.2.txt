@@ -1,0 +1,59 @@
+fn main() {
+    let figures = vec![
+        (7, 4),
+        (5, 0),
+        (3, 0),
+        (2, 9),
+    ];
+    let mut total_area = 0;
+    for figure in &figures {
+        match figure {
+            (w, h) if *h == 0 => {
+                let area = w * w;
+                println!("square\n{}", area);
+                total_area += area;
+            }
+            (w, h) if *w == 0 => {
+                let area = 3 * (*h as f64).powi(2) as i64;
+                println!("circle\n{}", area);
+                total_area += area;
+            }
+            (w, h) => {
+                let area = w * h;
+                println!("rect\n{}", area);
+                total_area += area;
+            }
+        }
+    }
+    println!("{}", total_area);
+    let mut largest_figure = 0;
+    for figure in &figures {
+        match figure {
+            (w, h) if *h == 0 => {
+                let area = w * w;
+                if area > largest_figure {
+                    largest_figure = area;
+                }
+            }
+            (w, h) if *w == 0 => {
+                let area = 3 * (*h as f64).powi(2) as i64;
+                if area > largest_figure {
+                    largest_figure = area;
+                }
+            }
+            (w, h) => {
+                let area = w * h;
+                if area > largest_figure {
+                    largest_figure = area;
+                }
+            }
+        }
+    }
+    match largest_figure {
+        _ if largest_figure == figures[0].0 * figures[0].1 => println!("rect"),
+        _ if largest_figure == figures[1].0 * figures[1].0 => println!("square"),
+        _ if largest_figure == 3 * (figures[2].0 as f64).powi(2) as i64 => println!("circle"),
+        _ if largest_figure == figures[3].0 * figures[3].1 => println!("rect"),
+        _ => unreachable!(),
+    }
+}

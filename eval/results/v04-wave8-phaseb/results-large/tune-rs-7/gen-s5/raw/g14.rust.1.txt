@@ -1,0 +1,43 @@
+fn main() {
+    let readings = [4, 4, 4, 7, 7, 2, 9, 9, 9, 9, 1, 1, 5];
+    let mut longest_stretch = 0;
+    let mut current_stretch = 1;
+    let mut last_seen_value = readings[0];
+    let mut first_repeat_position = None;
+    let mut values_seen = std::collections::HashSet::new();
+    for (i, &reading) in readings.iter().enumerate() {
+        if reading == last_seen_value {
+            current_stretch += 1;
+            if current_stretch > longest_stretch {
+                longest_stretch = current_stretch;
+            }
+        } else {
+            current_stretch = 1;
+            last_seen_value = reading;
+            if first_repeat_position.is_none() && values_seen.contains(&reading) {
+                first_repeat_position = Some(i);
+            }
+        }
+        values_seen.insert(reading);
+    }
+    println!("{}", readings.len());
+    println!("{}", longest_stretch);
+    println!("{}", last_seen_value);
+    println!("{}", values_seen.len());
+    match first_repeat_position {
+        Some(pos) => println!("{}", pos),
+        None => println!("none"),
+    }
+    let mut decreasing = false;
+    for i in 1..readings.len() {
+        if readings[i] < readings[i - 1] {
+            decreasing = true;
+            break;
+        }
+    }
+    if decreasing {
+        println!("false");
+    } else {
+        println!("true");
+    }
+}

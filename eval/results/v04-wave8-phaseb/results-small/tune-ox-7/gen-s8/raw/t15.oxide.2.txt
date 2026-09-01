@@ -1,0 +1,13 @@
+fn main() {
+    let v = vec("12", "x", "30")
+    let mut sum = 0
+    let mut fail_count = 0
+    for s in v {
+        match parse_int(s) {
+            Some(n) => sum += n,
+            None => fail_count += 1,
+        }
+    }
+    print(sum)
+    print(fail_count)
+}

@@ -1,0 +1,39 @@
+fn main() {
+    let north = vec![("bolt", 40, 3), ("hinge", 8, 25), ("plate", 15, 12)];
+    let south = vec![
+        ("clamp", 6, 45),
+        ("rod", 22, 9),
+        ("washer", 100, 1),
+        ("gasket", 4, 30),
+    ];
+    fn process(wh: &str, parts: &[(&str, i32, i32)]) {
+        let mut total = 0;
+        let mut below_ten = 0;
+        let mut max_value = 0;
+        let mut max_part = "";
+        for &(name, quantity, price) in parts {
+            let value = quantity * price;
+            total += value;
+            if quantity < 10 {
+                below_ten += 1;
+            }
+            if value > max_value {
+                max_value = value;
+                max_part = name;
+            }
+        }
+        println!("{}", wh);
+        println!("{}", total);
+        println!("{}", below_ten);
+        println!("{}", max_part);
+    }
+    process("North", &north);
+    process("South", &south);
+    let north_total: i32 = north.iter().map(|&(_, q, p)| q * p).sum();
+    let south_total: i32 = south.iter().map(|&(_, q, p)| q * p).sum();
+    if north_total > south_total {
+        println!("North");
+    } else {
+        println!("South");
+    }
+}

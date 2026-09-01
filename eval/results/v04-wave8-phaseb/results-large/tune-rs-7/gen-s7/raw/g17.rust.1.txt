@@ -1,0 +1,52 @@
+fn main() {
+    let mut list1 = vec![2, 5, 9, 14, 21, 30];
+    let mut list2 = vec![1, 5, 8, 15, 22];
+    let mut merged_list: Vec<i32> = Vec::new();
+    while !list1.is_empty() || !list2.is_empty() {
+        if let Some(&first) = list1.first() {
+            if let Some(&second) = list2.first() {
+                if first <= second {
+                    merged_list.push(first);
+                    list1.remove(0);
+                } else {
+                    merged_list.push(second);
+                    list2.remove(0);
+                }
+            } else {
+                merged_list.push(first);
+                list1.remove(0);
+            }
+        } else if let Some(&second) = list2.first() {
+            merged_list.push(second);
+            list2.remove(0);
+        }
+    }
+    println!("{}", merged_list.len());
+    if let Some(&first) = merged_list.first() {
+        println!("{}", first);
+    } else {
+        println!("0");
+    }
+    if let Some(&last) = merged_list.last() {
+        println!("{}", last);
+    } else {
+        println!("0");
+    }
+    let sum: i32 = merged_list.iter().sum();
+    println!("{}", sum);
+    let mut in_non_decreasing_order = true;
+    for i in 1..merged_list.len() {
+        if merged_list[i] < merged_list[i - 1] {
+            in_non_decreasing_order = false;
+            break;
+        }
+    }
+    println!("{}", if in_non_decreasing_order { "true" } else { "false" });
+    let mut consecutive_equal_count = 0;
+    for i in 1..merged_list.len() {
+        if merged_list[i] == merged_list[i - 1] {
+            consecutive_equal_count += 1;
+        }
+    }
+    println!("{}", consecutive_equal_count);
+}

@@ -1,0 +1,18 @@
+fn main() {
+    let north = [("bolt", 3, 40), ("hinge", 25, 8), ("plate", 12, 15)];
+    let south = [("clamp", 45, 6), ("rod", 9, 22), ("washer", 1, 100), ("gasket", 30, 4)];
+    let mut total_north = 0;
+    let mut total_south = 0;
+    for (part, price, quantity) in north.iter().chain(south.iter()) {
+        let value = price * quantity;
+        if quantity < &10 {
+            println!("{}", part);
+        }
+        if value > total_north && north.contains(&(*part, *price, *quantity)) {
+            total_north = value;
+        } else if value > total_south && south.contains(&(*part, *price, *quantity)) {
+            total_south = value;
+        }
+    }
+    println!("{}", if total_north > total_south { "North" } else { "South" });
+}

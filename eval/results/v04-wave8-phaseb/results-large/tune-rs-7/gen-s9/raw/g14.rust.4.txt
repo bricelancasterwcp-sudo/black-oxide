@@ -1,0 +1,41 @@
+fn main() {
+    let readings = vec![4, 4, 4, 7, 7, 2, 9, 9, 9, 9, 1, 1, 5];
+    let mut longest_stretch = 0;
+    let mut current_stretch = 1;
+    let mut value_of_longest_stretch = readings[0];
+    let mut seen_values = std::collections::HashSet::new();
+    let mut first_repeating_position = None;
+    let mut is_non_decreasing = true;
+
+    for i in 1..readings.len() {
+        if readings[i] == readings[i - 1] {
+            current_stretch += 1;
+            if current_stretch > longest_stretch {
+                longest_stretch = current_stretch;
+                value_of_longest_stretch = readings[i];
+            }
+        } else {
+            current_stretch = 1;
+        }
+
+        if seen_values.contains(&readings[i]) {
+            first_repeating_position = Some(i);
+        } else {
+            seen_values.insert(readings[i]);
+        }
+
+        if i > 0 && readings[i] < readings[i - 1] {
+            is_non_decreasing = false;
+        }
+    }
+
+    println!("{}", readings.len());
+    println!("{}", longest_stretch);
+    println!("{}", value_of_longest_stretch);
+    println!("{}", seen_values.len());
+    match first_repeating_position {
+        Some(pos) => println!("{}", pos),
+        None => println!("None"),
+    }
+    println!("{}", if is_non_decreasing { "Yes" } else { "No" });
+}

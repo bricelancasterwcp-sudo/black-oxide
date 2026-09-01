@@ -1,0 +1,33 @@
+struct Rectangle { width: Int, height: Int }
+struct Square { side: Int }
+struct Circle { radius: Int }
+fn main() {
+    let rect1 = Rectangle { width: 7, height: 4 }
+    let square1 = Square { side: 5 }
+    let circle1 = Circle { radius: 3 }
+    let rect2 = Rectangle { width: 2, height: 9 }
+    print_str("rect")
+    print(rect_area(rect1))
+    print_str("square")
+    print(square_area(square1))
+    print_str("circle")
+    print(circle_area(circle1))
+    print_str("rect")
+    print(rect_area(rect2))
+    let total_area = rect_area(rect1) + square_area(square1) + circle_area(circle1) + rect_area(rect2)
+    print(total_area)
+    if rect_area(rect1) > rect_area(rect2) {
+        print_str("rect")
+    } else {
+        print_str("rect")
+    }
+}
+fn rect_area(r: Rectangle) -> Int {
+    r.width * r.height
+}
+fn square_area(s: Square) -> Int {
+    s.side * s.side
+}
+fn circle_area(c: Circle) -> Int {
+    3 * c.radius * c.radius
+}

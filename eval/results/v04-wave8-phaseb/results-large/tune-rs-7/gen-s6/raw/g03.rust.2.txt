@@ -1,0 +1,42 @@
+fn main() {
+    let north = [("bolt", 40, 3), ("hinge", 8, 25), ("plate", 15, 12)];
+    let south = [
+        ("clamp", 6, 45),
+        ("rod", 22, 9),
+        ("washer", 100, 1),
+        ("gasket", 4, 30),
+    ];
+    fn summarize<'a>(parts: &'a [(&'a str, i32, i32)]) -> (i32, i32, &'a str) {
+        let mut total = 0;
+        let mut below_ten = 0;
+        let mut max_value = 0;
+        let mut max_name = "";
+        for &(name, quantity, price) in parts {
+            let value = quantity * price;
+            total += value;
+            if quantity < 10 {
+                below_ten += 1;
+            }
+            if value > max_value {
+                max_value = value;
+                max_name = name;
+            }
+        }
+        (total, below_ten, max_name)
+    }
+    let north_summary = summarize(&north);
+    let south_summary = summarize(&south);
+    println!("North");
+    println!("{}", north_summary.0);
+    println!("{}", north_summary.1);
+    println!("{}", north_summary.2);
+    println!("South");
+    println!("{}", south_summary.0);
+    println!("{}", south_summary.1);
+    println!("{}", south_summary.2);
+    if north_summary.0 > south_summary.0 {
+        println!("North");
+    } else {
+        println!("South");
+    }
+}

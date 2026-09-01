@@ -1,0 +1,29 @@
+fn main() {
+    let temps_alpha = [-5, 12, 30, 22, 0, 35, 18];
+    let temps_beta = [8, -12, 5, 41, 27];
+    fn to_fahrenheit(c: i32) -> i32 {
+        (c * 9 / 5 + 32)
+    }
+    fn analyze(temps: &[i32]) {
+        let mut below_zero = 0;
+        let mut above_thirty = 0;
+        let mut max_f = i32::MIN;
+        let mut min_f = i32::MAX;
+        let sum_c: i32 = temps.iter().sum();
+        for &c in temps {
+            let f = to_fahrenheit(c);
+            if c <= 0 { below_zero += 1; }
+            if c >= 30 { above_thirty += 1; }
+            if f > max_f { max_f = f; }
+            if f < min_f { min_f = f; }
+        }
+        println!("Station alpha");
+        println!("{}", below_zero);
+        println!("{}", above_thirty);
+        println!("{}", max_f);
+        println!("{}", min_f);
+        println!("{}", sum_c / temps.len() as i32);
+    }
+    analyze(&temps_alpha);
+    analyze(&temps_beta);
+}

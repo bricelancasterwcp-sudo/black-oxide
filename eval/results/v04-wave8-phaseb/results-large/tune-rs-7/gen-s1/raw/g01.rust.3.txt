@@ -1,0 +1,24 @@
+fn main() {
+    let a = [120, 95, 143, 87, 210, 156, 99];
+    let b = [175, 132, 88, 240, 119, 167];
+    fn summarize(g: &[i32], label: &str) {
+        println!("{}", label);
+        println!("{}", g.len());
+        let sum: i32 = g.iter().sum();
+        let avg = sum / g.len() as i32;
+        println!("{}", avg);
+        let above_avg = g.iter().filter(|&&x| x > avg).count();
+        println!("{}", above_avg);
+        let range = g.iter().max().unwrap() - g.iter().min().unwrap();
+        println!("{}", range);
+    }
+    summarize(&a, "Group A");
+    summarize(&b, "Group B");
+    let sum_a: i32 = a.iter().sum();
+    let sum_b: i32 = b.iter().sum();
+    if sum_a > sum_b {
+        println!("Group A");
+    } else {
+        println!("Group B");
+    }
+}

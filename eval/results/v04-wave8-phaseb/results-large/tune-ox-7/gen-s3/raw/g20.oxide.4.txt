@@ -1,0 +1,17 @@
+fn main() {
+    let mut is_prime = vec(true, 101)
+    for i in range(2, 101) {
+        if get(is_prime, i) {
+            for j in range(i * i, 101, i) {
+                set(is_prime, j, false)
+            }
+        }
+    }
+    let primes = filter(range(2, 101), |x| get(is_prime, x))
+    print(len(primes)) // number of primes
+    print(get(primes, len(primes) - 1).unwrap_or(-1)) // largest prime
+    print(sum(primes)) // sum of all primes
+    let twin_count = count_if(zip(primes, drop(primes, 1)), |(x, y)| x + 2 == y)
+    print(twin_count) // number of pairs differing by exactly two
+    print(get(primes, 9).unwrap_or(-1)) // tenth prime
+}

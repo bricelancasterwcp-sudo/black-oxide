@@ -1,0 +1,44 @@
+fn main() {
+    let v1 = vec(2, 5, 9, 14, 21, 30)
+    let v2 = vec(1, 5, 8, 15, 22)
+    let mut merged = vec()
+    let mut i = 0
+    let mut j = 0
+    while i < len(v1) && j < len(v2) {
+        if get(v1, i) <= get(v2, j) {
+            merged = push(merged, get(v1, i))
+            i += 1
+        } else {
+            merged = push(merged, get(v2, j))
+            j += 1
+        }
+    }
+    while i < len(v1) {
+        merged = push(merged, get(v1, i))
+        i += 1
+    }
+    while j < len(v2) {
+        merged = push(merged, get(v2, j))
+        j += 1
+    }
+    print(len(merged))
+    print(get(merged, 0))
+    print(get(merged, len(merged) - 1))
+    let sum = fold(merged, 0, |acc, x| acc + x)
+    print(sum)
+    let mut in_order = true
+    for k in range(1, len(merged)) {
+        if get(merged, k) < get(merged, k - 1) {
+            in_order = false
+            break
+        }
+    }
+    print(in_order)
+    let mut consecutive_equal = 0
+    for l in range(1, len(merged)) {
+        if get(merged, l) == get(merged, l - 1) {
+            consecutive_equal += 1
+        }
+    }
+    print(consecutive_equal)
+}

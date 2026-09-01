@@ -1,0 +1,36 @@
+fn main() {
+    let mut n = 44
+    let mut seen = vec()
+    let mut max_val = -1
+    let mut min_val = -1
+    let mut sum_vals = 0
+    let mut even_count = 0
+    let mut digit_sum_total = 0
+    let mut rounds = 0
+    while n != 1 && rounds < 50 {
+        seen = push(seen, n)
+        max_val = if max_val == -1 || n > max_val { n } else { max_val }
+        min_val = if min_val == -1 || n < min_val { n } else { min_val }
+        sum_vals += n
+        let mut next_n = 0
+        for d in digits(n) {
+            next_n += d * d
+            digit_sum_total += d
+        }
+        n = next_n
+        if n % 2 == 0 {
+            even_count += 1
+        }
+        rounds += 1
+    }
+    print(rounds)
+    print(n)
+    let last_seen = seen[rounds - 1]
+    print(last_seen)
+    print(max_val)
+    print(min_val)
+    print(sum_vals)
+    print(even_count)
+    print(digit_sum_total)
+    print(n == 1)
+}

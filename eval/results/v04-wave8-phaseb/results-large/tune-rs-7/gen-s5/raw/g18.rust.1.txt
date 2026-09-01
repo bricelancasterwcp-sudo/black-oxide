@@ -1,0 +1,30 @@
+fn main() {
+    let mut settings = (4, 2, 30, "base");
+    for _ in 0..5 {
+        match settings {
+            (workers, retries, timeout, label) => {
+                println!("{}", label);
+                println!("{}", workers);
+                println!("{}", retries);
+                println!("{}", timeout);
+                println!("{}", workers * timeout);
+                if let Some((new_workers, new_retries, new_timeout)) = get_next_settings(label) {
+                    settings = (new_workers, new_retries, new_timeout, label);
+                }
+            }
+        }
+    }
+    let (workers, retries, timeout, _) = settings;
+    println!("{}", workers + retries + timeout);
+}
+fn get_next_settings(label: &str) -> Option<(i32, i32, i32)> {
+    match label {
+        "base" => Some((8, 2, 30)),
+        "tuned" => Some((8, 2, 90)),
+        "patient" => Some((8, 5, 90)),
+        "settled" => Some((16, 5, 90)),
+        "wide" => Some((16, 5, 120)),
+        "last" => Some((16, 5, 120)),
+        _ => None,
+    }
+}

@@ -1,0 +1,18 @@
+fn main() {
+    let mut settings = (4, 2, 30, "base");
+    for revision in vec![(8, None, None, Some("tuned")), (None, Some(90), None, Some("patient")), (None, None, Some(5), Some("settled")), (16, None, None, Some("wide")), (None, None, Some(120), Some("last"))] {
+        settings = (
+            revision.0.unwrap_or(settings.0),
+            revision.1.unwrap_or(settings.1),
+            revision.2.unwrap_or(settings.2),
+            revision.3.unwrap_or(settings.3)
+        );
+        println!("{}", settings.3);
+        println!("{}", settings.0);
+        println!("{}", settings.1);
+        println!("{}", settings.2);
+        println!("{}", settings.0 * settings.2);
+    }
+    let sum = settings.0 + settings.1 + settings.2;
+    println!("{}", sum);
+}

@@ -1,0 +1,47 @@
+struct Ledger { name: Str, balance: Int, max_positive: Option<Int>, negative_count: Int, went_negative: Bool }
+fn process_ledger(ledger: Ledger) -> Ledger {
+    let mut current_balance = ledger.balance
+    let mut max_positive = None
+    let mut negative_count = 0
+    let mut went_negative = false
+    for adjustment in vec(200, -750, 130, -60, 400) {
+        current_balance += adjustment
+        if adjustment > 0 {
+            max_positive = match max_positive {
+                Some(max) => Some(if adjustment > max { adjustment } else { max }),
+                None => Some(adjustment),
+            }
+        } else if adjustment < 0 {
+            negative_count += 1
+        }
+        went_negative |= current_balance < 0
+    }
+    Ledger { name: ledger.name, balance: current_balance, max_positive, negative_count, went_negative }
+}
+fn main() {
+    let ledger_one = Ledger { name: "ledger-one", balance: 500, max_positive: None, negative_count: 0, went_negative: false }
+    let ledger_two = Ledger { name: "ledger-two", balance: 300, max_positive: None, negative_count: 0, went_negative: false }
+    let processed_one = process_ledger(ledger_one)
+    let processed_two = process_ledger(ledger_two)
+    print(processed_one.name)
+    print(processed_one.balance)
+    match processed_one.max_positive {
+        Some(max) => print(max),
+        None => print_str("None"),
+    }
+    print(processed_one.negative_count)
+    print(processed_one.went_negative)
+    print(processed_two.name)
+    print(processed_two.balance)
+    match processed_two.max_positive {
+        Some(max) => print(max),
+        None => print_str("None"),
+    }
+    print(processed_two.negative_count)
+    print(processed_two.went_negative)
+    if processed_one.balance > processed_two.balance {
+        print_str("ledger-one")
+    } else {
+        print_str("ledger-two")
+    }
+}

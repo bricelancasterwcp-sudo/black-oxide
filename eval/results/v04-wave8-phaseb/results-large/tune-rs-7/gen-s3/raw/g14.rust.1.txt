@@ -1,0 +1,43 @@
+fn main() {
+    let readings = vec![4, 4, 4, 7, 7, 2, 9, 9, 9, 9, 1, 1, 5];
+    println!("{}", readings.len());
+    let mut longest_stretch = 0;
+    let mut current_stretch = 1;
+    let mut value_of_longest_stretch = readings[0];
+    for i in 1..readings.len() {
+        if readings[i] == readings[i - 1] {
+            current_stretch += 1;
+        } else {
+            if current_stretch > longest_stretch {
+                longest_stretch = current_stretch;
+                value_of_longest_stretch = readings[i - 1];
+            }
+            current_stretch = 1;
+        }
+    }
+    println!("{}", longest_stretch);
+    println!("{}", value_of_longest_stretch);
+    let mut unique_values = std::collections::HashSet::new();
+    for &reading in &readings {
+        unique_values.insert(reading);
+    }
+    println!("{}", unique_values.len());
+    let mut first_repetition = None;
+    for (i, &reading) in readings.iter().enumerate() {
+        if unique_values.contains(&reading) {
+            unique_values.remove(&reading);
+        } else {
+            first_repetition = Some(i);
+            break;
+        }
+    }
+    println!("{:?}", first_repetition);
+    let mut never_decrease = true;
+    for i in 1..readings.len() {
+        if readings[i] < readings[i - 1] {
+            never_decrease = false;
+            break;
+        }
+    }
+    println!("{}", never_decrease);
+}

@@ -1,0 +1,35 @@
+fn main() {
+    let nums = vec(360, 97, 1024, 561, 143, 2003)
+    let mut num_primes = 0
+    for n in nums {
+        print(n)
+        let (divs, sum_divs, max_div) = prime_factors(n)
+        print(divs)
+        print(sum_divs)
+        print(max_div)
+        if is_prime(n) {
+            num_primes += 1
+        }
+    }
+    print(num_primes)
+}
+fn prime_factors(n: Int) -> (Int, Int, Option<Int>) {
+    let mut divisors = vec()
+    let mut sum_divs = 0
+    let mut max_div = None
+    for i in range(2, n + 1) {
+        if n % i == 0 {
+            push(divisors, i)
+            sum_divs += i
+            max_div = Some(i)
+        }
+    }
+    (len(divisors), sum_divs, max_div)
+}
+fn is_prime(n: Int) -> Bool {
+    if n <= 1 { return false }
+    for i in range(2, n + 1) {
+        if n % i == 0 && i != n { return false }
+    }
+    true
+}

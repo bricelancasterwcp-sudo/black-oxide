@@ -1,0 +1,33 @@
+fn main() {
+    let text = "order 47 shipped on 2026-03-15, invoice 1290 paid."
+    let chars = str_len(text)
+    let letters = count_if(str_chars(text), |c| is_letter(c))
+    let digits = count_if(str_chars(text), |c| is_digit(c))
+    let spaces = count_if(str_chars(text), |c| c == ' ')
+    let others = chars - (letters + digits + spaces)
+    let max_streak = max_streak_digits(text)
+    let all_digits = concat_all(filter_strs(split_str(text, " "), |s| contains(s, "1234567890")))
+    print(chars)
+    print(letters)
+    print(digits)
+    print(spaces)
+    print(others)
+    print(max_streak)
+    print(all_digits)
+}
+fn max_streak_digits(s: Str) -> Int {
+    let chars = str_chars(s)
+    let mut max_streak = 0
+    let mut current_streak = 0
+    for c in chars {
+        if is_digit(c) {
+            current_streak += 1
+            if current_streak > max_streak {
+                max_streak = current_streak
+            }
+        } else {
+            current_streak = 0
+        }
+    }
+    max_streak
+}

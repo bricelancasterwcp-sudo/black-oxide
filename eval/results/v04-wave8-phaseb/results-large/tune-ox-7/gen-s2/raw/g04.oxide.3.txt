@@ -1,0 +1,30 @@
+fn main() {
+    let nums = vec(360, 97, 1024, 561, 143, 2003)
+    let mut primes_count = 0
+    for n in nums {
+        print(n)
+        let factors = prime_factors(n)
+        let count = len(factors)
+        print(count)
+        let sum = sum(factors)
+        print(sum)
+        if count == 1 && factors[0] == n {
+            print_str("yes")
+            primes_count += 1
+        } else {
+            print_str("no")
+        }
+    }
+    print(primes_count)
+}
+fn prime_factors(n: Int) -> Vec<Int> {
+    let mut factors = vec()
+    let mut x = n
+    for i in range(2, n + 1) {
+        while x % i == 0 {
+            push(factors, i)
+            x /= i
+        }
+    }
+    factors
+}

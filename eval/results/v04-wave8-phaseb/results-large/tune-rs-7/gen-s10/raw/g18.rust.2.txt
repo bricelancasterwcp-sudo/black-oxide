@@ -1,0 +1,40 @@
+fn main() {
+    let mut settings = (4, 2, 30, "base");
+    for _ in 0..5 {
+        if let Some(workers) = get_next_value(settings.0) {
+            settings.0 = workers;
+        }
+        if let Some(retries) = get_next_value(settings.1) {
+            settings.1 = retries;
+        }
+        if let Some(timeout) = get_next_value(settings.2) {
+            settings.2 = timeout;
+        }
+        if let Some(label) = get_next_label(settings.3) {
+            settings.3 = label;
+        }
+        println!("{}", settings.3);
+        println!("{}", settings.0);
+        println!("{}", settings.1);
+        println!("{}", settings.2);
+        println!("{}", settings.0 * settings.2);
+    }
+    println!("{}", settings.0 + settings.1 + settings.2);
+}
+fn get_next_value(current: i32) -> Option<i32> {
+    match current {
+        4 => Some(8),
+        8 => Some(16),
+        _ => None,
+    }
+}
+fn get_next_label(current: &str) -> Option<&str> {
+    match current {
+        "base" => Some("tuned"),
+        "tuned" => Some("patient"),
+        "patient" => Some("settled"),
+        "settled" => Some("wide"),
+        "wide" => Some("last"),
+        _ => None,
+    }
+}

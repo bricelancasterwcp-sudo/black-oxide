@@ -1,0 +1,40 @@
+fn sieve(n: Int) -> Vec<Int> {
+    let mut primes = vec()
+    for i in range(2, n + 1) {
+        primes = push(primes, i)
+    }
+    let mut i = 0
+    while i < len(primes) {
+        let p = primes[i]
+        let j = i + 1
+        while j < len(primes) {
+            if primes[j] % p == 0 {
+                primes = remove(primes, j)
+            } else {
+                j += 1
+            }
+        }
+        i += 1
+    }
+    primes
+}
+fn main() {
+    let primes = sieve(100)
+    print(len(primes))
+    match max(primes) {
+        Some(max_value) => print(max_value),
+        None => print(-1),
+    }
+    print(sum(primes))
+    let count = 0
+    for i in range(0, len(primes) - 1) {
+        if primes[i + 1] - primes[i] == 2 {
+            count += 1
+        }
+    }
+    print(count)
+    match get(primes, 9) {
+        Some(tenth_prime) => print(tenth_prime),
+        None => print(-1),
+    }
+}

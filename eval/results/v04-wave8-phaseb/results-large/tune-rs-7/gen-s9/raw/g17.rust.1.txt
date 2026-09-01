@@ -1,0 +1,49 @@
+fn main() {
+    let mut list1 = vec![2, 5, 9, 14, 21, 30];
+    let mut list2 = vec![1, 5, 8, 15, 22];
+    let mut merged = Vec::new();
+    while !list1.is_empty() || !list2.is_empty() {
+        if let Some(&x) = list1.first() {
+            if let Some(&y) = list2.first() {
+                if x <= y {
+                    merged.push(x);
+                    list1.remove(0);
+                } else {
+                    merged.push(y);
+                    list2.remove(0);
+                }
+            } else {
+                merged.push(x);
+                list1.remove(0);
+            }
+        } else if let Some(&y) = list2.first() {
+            merged.push(y);
+            list2.remove(0);
+        }
+    }
+    println!("{}", merged.len());
+    if let Some(&first) = merged.first() {
+        println!("{}", first);
+    } else {
+        println!("0");
+    }
+    if let Some(&last) = merged.last() {
+        println!("{}", last);
+    } else {
+        println!("0");
+    }
+    let sum: i32 = merged.iter().sum();
+    println!("{}", sum);
+    let mut in_order = true;
+    let mut consecutive_equal = 0;
+    for i in 1..merged.len() {
+        if merged[i] < merged[i - 1] {
+            in_order = false;
+        }
+        if merged[i] == merged[i - 1] {
+            consecutive_equal += 1;
+        }
+    }
+    println!("{}", if in_order { "true" } else { "false" });
+    println!("{}", consecutive_equal);
+}

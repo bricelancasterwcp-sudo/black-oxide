@@ -1,0 +1,13 @@
+fn main() {
+    let shapes = vec![
+        (3, 4),
+        (3, 4, 5),
+        (2, 5),
+    ];
+    for shape in shapes {
+        match shape {
+            (a, b) => println!("{}", 2 * (a + b)),
+            (a, b, c) => println!("{}", a + b + c),
+        }
+    }
+}

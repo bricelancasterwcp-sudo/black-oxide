@@ -1,0 +1,31 @@
+fn main() {
+    let figures = [
+        (7, 4),
+        (5, 0),
+        (3, 0),
+        (2, 9),
+    ];
+    let mut total_area = 0;
+    for figure in &figures {
+        match figure {
+            (width, height) if *height == 0 => {
+                let area = width * width;
+                println!("square\n{}", area);
+                total_area += area;
+            }
+            (width, height) => {
+                let area = width * height;
+                println!("rect\n{}", area);
+                total_area += area;
+            }
+        }
+    }
+    println!("{}", total_area);
+    if figures[0].1 == 0 {
+        println!("square");
+    } else if figures[2].1 == 0 {
+        println!("circle");
+    } else if figures[3].1 == 0 {
+        println!("rect");
+    }
+}

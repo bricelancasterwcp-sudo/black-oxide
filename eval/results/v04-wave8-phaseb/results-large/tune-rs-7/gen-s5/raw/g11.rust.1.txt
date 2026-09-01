@@ -1,0 +1,29 @@
+fn main() {
+    let grid = [4, 9, 2, 3, 5, 7, 8, 1, 6];
+    let mut sums = [0; 8];
+    for i in 0..3 {
+        sums[i] += grid[i * 3 + 0];
+        sums[i] += grid[i * 3 + 1];
+        sums[i] += grid[i * 3 + 2];
+        sums[i + 3] += grid[0 + i];
+        sums[i + 3] += grid[3 + i];
+        sums[i + 3] += grid[6 + i];
+    }
+    sums[6] += grid[0];
+    sums[6] += grid[4];
+    sums[6] += grid[8];
+    sums[7] += grid[2];
+    sums[7] += grid[4];
+    sums[7] += grid[6];
+    for i in 0..8 {
+        println!("{}", sums[i]);
+    }
+    let mut all_equal = true;
+    for i in 1..8 {
+        if sums[i] != sums[0] {
+            all_equal = false;
+            break;
+        }
+    }
+    println!("{}", if all_equal { "true" } else { "false" });
+}

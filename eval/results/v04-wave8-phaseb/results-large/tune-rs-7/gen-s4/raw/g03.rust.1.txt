@@ -1,0 +1,50 @@
+fn main() {
+    let north = vec![("bolt", 40, 3), ("hinge", 8, 25), ("plate", 15, 12)];
+    let south = vec![
+        ("clamp", 6, 45),
+        ("rod", 22, 9),
+        ("washer", 100, 1),
+        ("gasket", 4, 30),
+    ];
+    let mut total_north = 0;
+    let mut total_south = 0;
+    let mut below_ten_north = 0;
+    let mut below_ten_south = 0;
+    let mut max_value_north = 0;
+    let mut max_value_south = 0;
+    let mut max_part_north = "";
+    let mut max_part_south = "";
+    for (part, quantity, price) in &north {
+        total_north += quantity * price;
+        if quantity < 10 {
+            below_ten_north += 1;
+        }
+        if quantity * price > max_value_north {
+            max_value_north = quantity * price;
+            max_part_north = part;
+        }
+    }
+    for (part, quantity, price) in &south {
+        total_south += quantity * price;
+        if quantity < 10 {
+            below_ten_south += 1;
+        }
+        if quantity * price > max_value_south {
+            max_value_south = quantity * price;
+            max_part_south = part;
+        }
+    }
+    println!("North");
+    println!("{}", total_north);
+    println!("{}", below_ten_north);
+    println!("{}", max_part_north);
+    println!("South");
+    println!("{}", total_south);
+    println!("{}", below_ten_south);
+    println!("{}", max_part_south);
+    if total_north > total_south {
+        println!("North");
+    } else {
+        println!("South");
+    }
+}

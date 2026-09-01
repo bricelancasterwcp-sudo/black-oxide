@@ -1,0 +1,61 @@
+struct Part { name: Str, price: Int, quantity: Int }
+fn calculate_value(parts: Vec<Part>) -> Int {
+    let mut total = 0
+    for p in parts {
+        total += p.price * p.quantity
+    }
+    total
+}
+fn count_below_ten(parts: Vec<Part>) -> Int {
+    let mut count = 0
+    for p in parts {
+        if p.quantity < 10 {
+            count += 1
+        }
+    }
+    count
+}
+fn find_highest_value_part(parts: Vec<Part>) -> Option<Str> {
+    let mut max_value = -1
+    let mut part_name = ""
+    for p in parts {
+        let value = p.price * p.quantity
+        if value > max_value {
+            max_value = value
+            part_name = p.name
+        }
+    }
+    Some(part_name)
+}
+fn main() {
+    let north_parts = vec(
+        Part { name: "bolt", price: 3, quantity: 40 },
+        Part { name: "hinge", price: 25, quantity: 8 },
+        Part { name: "plate", price: 12, quantity: 15 },
+    )
+    let south_parts = vec(
+        Part { name: "clamp", price: 45, quantity: 6 },
+        Part { name: "rod", price: 9, quantity: 22 },
+        Part { name: "washer", price: 1, quantity: 100 },
+        Part { name: "gasket", price: 30, quantity: 4 },
+    )
+    let north_value = calculate_value(north_parts)
+    let south_value = calculate_value(south_parts)
+    let north_below_ten = count_below_ten(north_parts)
+    let south_below_ten = count_below_ten(south_parts)
+    let north_highest_value_part = find_highest_value_part(north_parts).unwrap_or("none")
+    let south_highest_value_part = find_highest_value_part(south_parts).unwrap_or("none")
+    print_str("North")
+    print(north_value)
+    print(north_below_ten)
+    print_str(north_highest_value_part)
+    print_str("South")
+    print(south_value)
+    print(south_below_ten)
+    print_str(south_highest_value_part)
+    if north_value > south_value {
+        print_str("North")
+    } else {
+        print_str("South")
+    }
+}

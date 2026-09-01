@@ -1,0 +1,60 @@
+fn main() {
+    let numbers = [360, 97, 1024, 561, 143, 2003];
+    let mut primes_count = 0;
+    for &num in &numbers {
+        println!("{}", num);
+        let (divisors, sum, max) = prime_divisors(num);
+        println!("{}", divisors.len());
+        println!("{}", sum);
+        println!("{}", max);
+        if is_prime(num) {
+            println!("true");
+            primes_count += 1;
+        } else {
+            println!("false");
+        }
+    }
+    println!("{}", primes_count);
+}
+fn prime_divisors(mut n: u64) -> (Vec<u64>, u64, u64) {
+    let mut divisors = Vec::new();
+    let mut sum = 0;
+    let mut max = 0;
+    while n % 2 == 0 {
+        if divisors.is_empty() || divisors[divisors.len() - 1] != 2 {
+            divisors.push(2);
+            sum += 2;
+            max = 2;
+        }
+        n /= 2;
+    }
+    let mut i = 3;
+    while i * i <= n {
+        while n % i == 0 {
+            if divisors.is_empty() || divisors[divisors.len() - 1] != i {
+                divisors.push(i);
+                sum += i;
+                max = i;
+            }
+            n /= i;
+        }
+        i += 2;
+    }
+    if n > 2 {
+        divisors.push(n);
+        sum += n;
+        max = n;
+    }
+    (divisors, sum, max)
+}
+fn is_prime(num: u64) -> bool {
+    if num <= 1 {
+        return false;
+    }
+    for i in 2..=((num as f64).sqrt() as u64) {
+        if num % i == 0 {
+            return false;
+        }
+    }
+    true
+}

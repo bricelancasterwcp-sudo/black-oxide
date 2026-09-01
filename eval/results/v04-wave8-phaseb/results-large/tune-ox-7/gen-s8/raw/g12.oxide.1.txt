@@ -1,0 +1,50 @@
+struct Rect { w: Int, h: Int }
+struct Square { s: Int }
+struct Circle { r: Int }
+fn area_rect(r: Rect) -> Int {
+    r.w * r.h
+}
+fn area_square(s: Square) -> Int {
+    s.s * s.s
+}
+fn area_circle(c: Circle) -> Int {
+    3 * c.r * c.r
+}
+fn main() {
+    let figures = vec(
+        Rect { w: 7, h: 4 },
+        Square { s: 5 },
+        Circle { r: 3 },
+        Rect { w: 2, h: 9 }
+    )
+    let mut total_area = 0
+    for fig in figures {
+        match fig {
+            Rect(r) => {
+                let a = area_rect(r)
+                print_str("rect")
+                print(a)
+                total_area += a
+            },
+            Square(s) => {
+                let a = area_square(s)
+                print_str("square")
+                print(a)
+                total_area += a
+            },
+            Circle(c) => {
+                let a = area_circle(c)
+                print_str("circle")
+                print(a)
+                total_area += a
+            }
+        }
+    }
+    print(total_area)
+    match max(figures) {
+        Some(Rect(r)) => print_str("rect"),
+        Some(Square(s)) => print_str("square"),
+        Some(Circle(c)) => print_str("circle"),
+        None => print_str("no figures")
+    }
+}

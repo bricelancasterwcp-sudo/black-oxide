@@ -1,0 +1,31 @@
+fn main() {
+    let mut n = 44;
+    let mut max_val = n;
+    let mut min_val = n;
+    let mut sum_vals = n as u64;
+    let mut even_rounds = 0;
+    let mut digit_sum = 0;
+    for _ in 0..50 {
+        if n == 1 {
+            break;
+        }
+        let next_n = n.to_string().chars().map(|d| d.to_digit(10).unwrap()).fold(0, |acc, x| acc + x * x);
+        max_val = max_val.max(next_n);
+        min_val = min_val.min(next_n);
+        sum_vals += next_n as u64;
+        if next_n % 2 == 0 {
+            even_rounds += 1;
+        }
+        digit_sum += n.to_string().chars().map(|d| d.to_digit(10).unwrap()).sum::<u32>();
+        n = next_n;
+    }
+    println!("{}", 50);
+    println!("{}", n);
+    println!("{}", if n == 1 { n } else { n });
+    println!("{}", max_val);
+    println!("{}", min_val);
+    println!("{}", sum_vals);
+    println!("{}", even_rounds);
+    println!("{}", digit_sum);
+    println!("{}", if n == 1 { "true" } else { "false" });
+}

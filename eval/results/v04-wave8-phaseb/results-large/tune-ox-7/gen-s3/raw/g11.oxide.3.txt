@@ -1,0 +1,29 @@
+fn main() {
+    let grid = vec(4, 9, 2, 3, 5, 7, 8, 1, 6)
+    for i in range(0, 3) {
+        print(sum(slice(grid, i * 3, (i + 1) * 3)))
+    }
+    for j in range(0, 3) {
+        let col_sum = 0
+        for i in range(0, 3) {
+            col_sum += get(grid, i * 3 + j)
+        }
+        print(col_sum)
+    }
+    let diag1_sum = 0
+    let diag2_sum = 0
+    for i in range(0, 3) {
+        diag1_sum += get(grid, i * 4)
+        diag2_sum += get(grid, (i + 1) * 2 - 1)
+    }
+    print(diag1_sum)
+    print(diag2_sum)
+    let all_equal = true
+    for i in range(0, 8) {
+        if get(grid, i) != get(grid, 0) {
+            all_equal = false
+            break
+        }
+    }
+    print(all_equal)
+}

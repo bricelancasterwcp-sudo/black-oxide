@@ -1,0 +1,26 @@
+struct Ledger { name: Str, opening_balance: Int, adjustments: Vec<Int> }
+fn main() {
+    let mut ledger_one = Ledger { name: "ledger-one", opening_balance: 500, adjustments: vec(200, -750, 130, -60, 400) }
+    let mut ledger_two = Ledger { name: "ledger-two", opening_balance: 300, adjustments: vec(-100, 250, -50, 75) }
+    for l in vec(ledger_one, ledger_two) {
+        print_str(l.name)
+        let final_balance = l.opening_balance + sum(l.adjustments)
+        print(final_balance)
+        let max_positive = match max(filter(l.adjustments, |x| x > 0)) { Some(n) => n, None => -1 }
+        print(max_positive)
+        let negative_count = len(filter(l.adjustments, |x| x < 0))
+        print(negative_count)
+        let mut balance = l.opening_balance
+        for a in l.adjustments {
+            balance += a
+            if balance < 0 { print_str("yes") } else { print_str("no") }
+        }
+    }
+    let ledger_one_final = get(ledger_one, "closing_balance")
+    let ledger_two_final = get(ledger_two, "closing_balance")
+    if ledger_one_final > ledger_two_final {
+        print_str(get(ledger_one, "name"))
+    } else {
+        print_str(get(ledger_two, "name"))
+    }
+}

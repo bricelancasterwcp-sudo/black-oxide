@@ -1,0 +1,23 @@
+fn main() {
+    let mut settings = (4, 2, 30, "base");
+    for revision in [
+        ("workers", 8),
+        ("timeout", 90),
+        ("retries", 5),
+        ("workers", 16),
+        ("timeout", 120),
+    ] {
+        match revision {
+            ("workers", count) => settings.0 = *count,
+            ("timeout", timeout) => settings.2 = *timeout,
+            ("retries", retries) => settings.1 = *retries,
+            _ => {}
+        }
+        println!("{}", settings.3);
+        println!("{}", settings.0);
+        println!("{}", settings.1);
+        println!("{}", settings.2);
+        println!("{}", settings.0 * settings.2);
+    }
+    println!("{}", settings.0 + settings.1 + settings.2);
+}

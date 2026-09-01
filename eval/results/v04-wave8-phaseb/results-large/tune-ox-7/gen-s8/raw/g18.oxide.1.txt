@@ -1,0 +1,28 @@
+struct Settings { workers: Int, retries: Int, timeout: Int, label: Str }
+fn main() {
+    let mut settings = Settings { workers: 4, retries: 2, timeout: 30, label: "base" }
+    print_str(settings.label)
+    print(settings.workers)
+    print(settings.retries)
+    print(settings.timeout)
+    print(settings.workers * settings.timeout)
+    for i in range(1, 6) {
+        let mut new_settings = clone(settings)
+        match i {
+            1 => { new_settings.workers = 8, new_settings.label = "tuned" },
+            2 => { new_settings.timeout = 90, new_settings.label = "patient" },
+            3 => { new_settings.retries = 5, new_settings.label = "settled" },
+            4 => { new_settings.workers = 16, new_settings.label = "wide" },
+            5 => { new_settings.timeout = 120, new_settings.label = "last" },
+            _ => {},
+        }
+        settings = clone(new_settings)
+        print_str(settings.label)
+        print(settings.workers)
+        print(settings.retries)
+        print(settings.timeout)
+        print(settings.workers * settings.timeout)
+    }
+    let sum = settings.workers + settings.retries + settings.timeout
+    print(sum)
+}

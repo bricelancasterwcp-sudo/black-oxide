@@ -1,0 +1,41 @@
+fn main() {
+    let mut ledger_one = 500;
+    let mut ledger_two = 300;
+    let mut largest_positive = i64::MIN;
+    let mut negative_count = 0;
+    let mut below_zero = false;
+    for adjustment in [200, -750, 130, -60, 400] {
+        ledger_one += adjustment;
+        if adjustment > largest_positive {
+            largest_positive = adjustment;
+        }
+        if adjustment < 0 {
+            negative_count += 1;
+        }
+        if ledger_one < 0 {
+            below_zero = true;
+        }
+    }
+    println!("ledger-one\n{}\n{}\n{}\n{}", ledger_one, largest_positive, negative_count, below_zero);
+    let mut largest_positive = i64::MIN;
+    let mut negative_count = 0;
+    let mut below_zero = false;
+    for adjustment in [-100, 250, -50, 75] {
+        ledger_two += adjustment;
+        if adjustment > largest_positive {
+            largest_positive = adjustment;
+        }
+        if adjustment < 0 {
+            negative_count += 1;
+        }
+        if ledger_two < 0 {
+            below_zero = true;
+        }
+    }
+    println!("ledger-two\n{}\n{}\n{}\n{}", ledger_two, largest_positive, negative_count, below_zero);
+    if ledger_one > ledger_two {
+        println!("ledger-one");
+    } else {
+        println!("ledger-two");
+    }
+}

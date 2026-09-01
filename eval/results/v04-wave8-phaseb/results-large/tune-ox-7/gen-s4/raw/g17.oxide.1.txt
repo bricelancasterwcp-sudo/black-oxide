@@ -1,0 +1,38 @@
+struct Reading { label: Str, values: Vec<Int> }
+fn merge(v1: Vec<Int>, v2: Vec<Int>) -> Vec<Int> {
+    let mut result = vec()
+    let mut i = 0
+    let mut j = 0
+    while i < len(v1) && j < len(v2) {
+        if get(v1, i) <= get(v2, j) {
+            result = push(result, get(v1, i))
+            i += 1
+        } else {
+            result = push(result, get(v2, j))
+            j += 1
+        }
+    }
+    while i < len(v1) {
+        result = push(result, get(v1, i))
+        i += 1
+    }
+    while j < len(v2) {
+        result = push(result, get(v2, j))
+        j += 1
+    }
+    result
+}
+fn main() {
+    let v1 = vec(2, 5, 9, 14, 21, 30)
+    let v2 = vec(1, 5, 8, 15, 22)
+    let merged = merge(v1, v2)
+    print(len(merged))
+    print(get(merged, 0))
+    print(get(merged, len(merged) - 1))
+    let sum = sum(merged)
+    print(sum)
+    let is_sorted = all(range(1, len(merged)), |i| get(merged, i) >= get(merged, i - 1))
+    print(is_sorted)
+    let count_equal = count(range(0, len(merged) - 1), |i| get(merged, i) == get(merged, i + 1))
+    print(count_equal)
+}

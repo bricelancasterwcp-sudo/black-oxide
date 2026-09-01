@@ -1,0 +1,41 @@
+fn main() {
+    let temps_alpha = [-5, 12, 30, 22, 0, 35, 18];
+    let temps_beta = [8, -12, 5, 41, 27];
+    fn to_fahrenheit(celsius: i32) -> i32 {
+        (celsius * 9 / 5 + 32)
+    }
+    fn analyze(temps: &[i32]) -> (String, i32, i32, i32, i32, f64) {
+        let mut below_zero = 0;
+        let mut above_thirty = 0;
+        let mut max_fahrenheit = i32::MIN;
+        let mut min_fahrenheit = i32::MAX;
+        let sum_celsius: i32 = temps.iter().sum();
+        for &temp in temps {
+            let fahrenheit = to_fahrenheit(temp);
+            if temp <= 0 { below_zero += 1; }
+            if temp >= 30 { above_thirty += 1; }
+            if fahrenheit > max_fahrenheit { max_fahrenheit = fahrenheit; }
+            if fahrenheit < min_fahrenheit { min_fahrenheit = fahrenheit; }
+        }
+        (format!("Station alpha"), below_zero, above_thirty, max_fahrenheit, min_fahrenheit, sum_celsius as f64 / temps.len() as f64)
+    }
+    let (name_alpha, below_zero_alpha, above_thirty_alpha, max_fahrenheit_alpha, min_fahrenheit_alpha, mean_celsius_alpha) = analyze(&temps_alpha);
+    println!("{}", name_alpha);
+    println!("{}", below_zero_alpha);
+    println!("{}", above_thirty_alpha);
+    println!("{}", max_fahrenheit_alpha);
+    println!("{}", min_fahrenheit_alpha);
+    println!("{:.0}", mean_celsius_alpha);
+    let (name_beta, below_zero_beta, above_thirty_beta, max_fahrenheit_beta, min_fahrenheit_beta, mean_celsius_beta) = analyze(&temps_beta);
+    println!("{}", name_beta);
+    println!("{}", below_zero_beta);
+    println!("{}", above_thirty_beta);
+    println!("{}", max_fahrenheit_beta);
+    println!("{}", min_fahrenheit_beta);
+    println!("{:.0}", mean_celsius_beta);
+    if mean_celsius_alpha > mean_celsius_beta {
+        println!("Station alpha");
+    } else {
+        println!("Station beta");
+    }
+}

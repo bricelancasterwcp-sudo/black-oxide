@@ -1,0 +1,60 @@
+struct Rect { w: Int, h: Int }
+struct Square { s: Int }
+struct Circle { r: Int }
+fn rect_area(r: Rect) -> Int {
+    r.w * r.h
+}
+fn square_area(s: Square) -> Int {
+    s.s * s.s
+}
+fn circle_area(c: Circle) -> Int {
+    3 * c.r * c.r
+}
+fn main() {
+    let figures = vec(
+        Rect { w: 7, h: 4 },
+        Square { s: 5 },
+        Circle { r: 3 },
+        Rect { w: 2, h: 9 }
+    )
+    let mut total_area = 0
+    for fig in figures {
+        match fig {
+            Rect(r) => {
+                let area = rect_area(r)
+                print_str("rect")
+                print(area)
+                total_area += area
+            },
+            Square(s) => {
+                let area = square_area(s)
+                print_str("square")
+                print(area)
+                total_area += area
+            },
+            Circle(c) => {
+                let area = circle_area(c)
+                print_str("circle")
+                print(area)
+                total_area += area
+            }
+        }
+    }
+    print(total_area)
+    match figures {
+        vec(Rect(r), Square(s), Circle(c), Rect(r2)) => {
+            let areas = vec(rect_area(r), square_area(s), circle_area(c), rect_area(r2))
+            let max_area = unwrap_or(max(areas), -1)
+            if max_area == rect_area(r) {
+                print_str("rect")
+            } else if max_area == square_area(s) {
+                print_str("square")
+            } else if max_area == circle_area(c) {
+                print_str("circle")
+            } else {
+                print_str("rect")
+            }
+        },
+        _ => print_str("error"),
+    }
+}

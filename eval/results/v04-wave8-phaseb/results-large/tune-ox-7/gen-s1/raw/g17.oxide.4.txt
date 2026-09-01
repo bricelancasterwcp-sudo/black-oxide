@@ -1,0 +1,41 @@
+struct Pair { head: Int, tail: Vec<Int> }
+fn merge(a: Pair, b: Pair) -> Vec<Int> {
+    let mut result = vec()
+    let mut a = a
+    let mut b = b
+    while len(a.tail) > 0 && len(b.tail) > 0 {
+        if get(a.tail, 0) < get(b.tail, 0) {
+            result = push(result, get(a.tail, 0))
+            a = Pair { head: get(a.tail, 0), tail: slice(a.tail, 1, len(a.tail)) }
+        } else {
+            result = push(result, get(b.tail, 0))
+            b = Pair { head: get(b.tail, 0), tail: slice(b.tail, 1, len(b.tail)) }
+        }
+    }
+    result = concat(concat(result, a.tail), b.tail)
+    result
+}
+fn main() {
+    let a = Pair { head: 2, tail: vec(5, 9, 14, 21, 30) }
+    let b = Pair { head: 1, tail: vec(5, 8, 15, 22) }
+    let merged = merge(a, b)
+    print(len(merged))
+    print(get(merged, 0))
+    print(get(merged, len(merged) - 1))
+    print(sum(merged))
+    let mut is_sorted = true
+    for i in range(0, len(merged) - 1) {
+        if get(merged, i) > get(merged, i + 1) {
+            is_sorted = false
+            break
+        }
+    }
+    print(is_sorted)
+    let mut count = 0
+    for i in range(0, len(merged) - 1) {
+        if get(merged, i) == get(merged, i + 1) {
+            count += 1
+        }
+    }
+    print(count)
+}

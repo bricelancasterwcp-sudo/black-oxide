@@ -1,0 +1,51 @@
+struct Ledger { name: Str, balance: Int, max_positive: Option<Int>, negative_count: Int, went_negative: Bool }
+fn apply_adjustments(ledger: Ledger, adjustments: Vec<Int>) -> Ledger {
+    let mut current_balance = ledger.balance
+    let mut max_positive = None
+    let mut negative_count = 0
+    let mut went_negative = false
+    for adjustment in adjustments {
+        current_balance += adjustment
+        if adjustment > 0 {
+            match max_positive {
+                Some(max) => max_positive = Some(if adjustment > max { adjustment } else { max }),
+                None => max_positive = Some(adjustment),
+            }
+        } else if adjustment < 0 {
+            negative_count += 1
+        }
+        if current_balance < 0 {
+            went_negative = true
+        }
+    }
+    Ledger { name: ledger.name, balance: current_balance, max_positive, negative_count, went_negative }
+}
+fn main() {
+    let mut ledger_one = Ledger { name: "ledger-one", balance: 500, max_positive: None, negative_count: 0, went_negative: false }
+    let mut ledger_two = Ledger { name: "ledger-two", balance: 300, max_positive: None, negative_count: 0, went_negative: false }
+    let adjustments_one = vec(200, -750, 130, -60, 400)
+    let adjustments_two = vec(-100, 250, -50, 75)
+    ledger_one = apply_adjustments(ledger_one, adjustments_one)
+    ledger_two = apply_adjustments(ledger_two, adjustments_two)
+    print_str(ledger_one.name)
+    print_int(ledger_one.balance)
+    match ledger_one.max_positive {
+        Some(max) => print_int(max),
+        None => print_str("None"),
+    }
+    print_int(ledger_one.negative_count)
+    print_bool(ledger_one.went_negative)
+    print_str(ledger_two.name)
+    print_int(ledger_two.balance)
+    match ledger_two.max_positive {
+        Some(max) => print_int(max),
+        None => print_str("None"),
+    }
+    print_int(ledger_two.negative_count)
+    print_bool(ledger_two.went_negative)
+    if ledger_one.balance > ledger_two.balance {
+        print_str(ledger_one.name)
+    } else {
+        print_str(ledger_two.name)
+    }
+}

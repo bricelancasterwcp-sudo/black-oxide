@@ -1,0 +1,59 @@
+struct Reading { label: Str, values: Vec<Int> }
+fn main() {
+    let v = vec(4, 4, 4, 7, 7, 2, 9, 9, 9, 9, 1, 1, 5)
+    print(len(v))
+    let longest_streak = max_streak(v)
+    print(longest_streak.len)
+    print(longest_streak.value)
+    print(count_distinct(v))
+    let first_repeat_pos = find_first_repetition(v)
+    print(first_repeat_pos)
+    print(is_non_decreasing(v))
+}
+fn max_streak(values: Vec<Int>) -> Reading {
+    let mut current_value = -1
+    let mut current_len = 0
+    let mut longest_value = -1
+    let mut longest_len = 0
+    for x in values {
+        if x == current_value {
+            current_len += 1
+        } else {
+            if current_len > longest_len {
+                longest_len = current_len
+                longest_value = current_value
+            }
+            current_value = x
+            current_len = 1
+        }
+    }
+    Reading { label: "Longest streak", values: vec(longest_len, longest_value) }
+}
+fn count_distinct(values: Vec<Int>) -> Int {
+    let mut seen = set()
+    for x in values {
+        insert(seen, x)
+    }
+    len(seen)
+}
+fn find_first_repetition(values: Vec<Int>) -> Option<Int> {
+    let mut seen = set()
+    for i in range(0, len(values)) {
+        let x = get(values, i).unwrap_or(-1)
+        if contains(seen, x) {
+            return Some(i)
+        }
+        insert(seen, x)
+    }
+    None
+}
+fn is_non_decreasing(values: Vec<Int>) -> Bool {
+    for i in range(0, len(values) - 1) {
+        let x = get(values, i).unwrap_or(-1)
+        let y = get(values, i + 1).unwrap_or(-1)
+        if x > y {
+            return false
+        }
+    }
+    true
+}

@@ -1,0 +1,29 @@
+fn main() {
+    let north = vec![12, 15, 19, 14, 14, 20, 31, 30];
+    let south = vec![40, 38, 41, 45, 50, 44];
+    fn analyze(sensor: &Vec<i32>, name: &str) {
+        let mut increased = 0;
+        let mut decreased = 0;
+        let mut max_increase = 0;
+        let mut current_stretch = 0;
+        let mut longest_stretch = 0;
+        for i in 1..sensor.len() {
+            if sensor[i] > sensor[i - 1] {
+                increased += 1;
+                current_stretch += 1;
+                max_increase = max_increase.max(sensor[i] - sensor[i - 1]);
+            } else if sensor[i] < sensor[i - 1] {
+                decreased += 1;
+                current_stretch = 0;
+            }
+            longest_stretch = longest_stretch.max(current_stretch);
+        }
+        println!("{}", name);
+        println!("{}", increased);
+        println!("{}", decreased);
+        println!("{}", max_increase);
+        println!("{}", longest_stretch);
+    }
+    analyze(&north, "north");
+    analyze(&south, "south");
+}

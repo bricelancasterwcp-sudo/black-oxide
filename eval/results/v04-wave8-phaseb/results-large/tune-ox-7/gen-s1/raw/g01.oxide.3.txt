@@ -1,0 +1,23 @@
+fn main() {
+    let group_a = vec(120, 95, 143, 87, 210, 156, 99)
+    let group_b = vec(175, 132, 88, 240, 119, 167)
+    print_str("Group A")
+    print(len(group_a))
+    let avg_a = sum(group_a) / len(group_a)
+    print(floor(avg_a))
+    print(count_if(group_a, |x| x > floor(avg_a)))
+    print(max(group_a) - min(group_a))
+    print_str("Group B")
+    print(len(group_b))
+    let avg_b = sum(group_b) / len(group_b)
+    print(floor(avg_b))
+    print(count_if(group_b, |x| x > floor(avg_b)))
+    print(max(group_b) - min(group_b))
+    let sum_a = sum(group_a)
+    let sum_b = sum(group_b)
+    if sum_a > sum_b {
+        print_str("Group A")
+    } else {
+        print_str("Group B")
+    }
+}

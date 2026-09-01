@@ -1,0 +1,22 @@
+fn main() {
+    let words = ["rotor", "banana", "level", "quiet", "deified", "system", "civic"];
+    let mut palindromes = 0;
+    for &word in words.iter() {
+        println!("{}", word);
+        println!("{}", word.len());
+        let reversed: String = word.chars().rev().collect();
+        println!("{}", reversed);
+        if word == reversed {
+            println!("true");
+            palindromes += 1;
+        } else {
+            println!("false");
+        }
+        let vowels = "aeiou";
+        let vowel_count = word.chars().filter(|&c| vowels.contains(c)).count();
+        println!("{}", vowel_count);
+        let unique_chars: std::collections::HashSet<char> = word.chars().collect();
+        println!("{}", unique_chars.len());
+    }
+    println!("{}", palindromes);
+}

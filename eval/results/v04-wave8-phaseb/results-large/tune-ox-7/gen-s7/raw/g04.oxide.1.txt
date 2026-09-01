@@ -1,0 +1,37 @@
+fn main() {
+    let numbers = vec(360, 97, 1024, 561, 143, 2003)
+    let mut prime_count = 0
+    for n in numbers {
+        print(n)
+        let primes = get_primes(n)
+        let distinct_primes = count(primes)
+        print(distinct_primes)
+        let sum_of_primes = sum(primes)
+        print(sum_of_primes)
+        let max_prime = match max(primes) {
+            Some(x) => x,
+            None => -1
+        }
+        print(max_prime)
+        if is_prime(n) {
+            prime_count += 1
+        }
+    }
+    print(prime_count)
+}
+fn get_primes(n: Int) -> Vec<Int> {
+    let mut primes = vec()
+    for i in range(2, n + 1) {
+        if n % i == 0 && is_prime(i) {
+            primes = push(primes, i)
+        }
+    }
+    primes
+}
+fn is_prime(n: Int) -> Bool {
+    if n <= 1 { return false }
+    for i in range(2, n) {
+        if n % i == 0 { return false }
+    }
+    true
+}

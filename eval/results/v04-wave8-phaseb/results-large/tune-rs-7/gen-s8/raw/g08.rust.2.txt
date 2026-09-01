@@ -1,0 +1,40 @@
+fn main() {
+    let north = [12, 15, 19, 14, 14, 20, 31, 30];
+    let south = [40, 38, 41, 45, 50, 44];
+    fn analyze(sensor: &[i32]) -> (String, i32, i32, i32, i32) {
+        let mut increased = 0;
+        let mut decreased = 0;
+        let mut max_increase = 0;
+        let mut longest_streak = 0;
+        let mut current_streak = 0;
+        for i in 1..sensor.len() {
+            if sensor[i] > sensor[i - 1] {
+                increased += 1;
+                max_increase = max_increase.max(sensor[i] - sensor[i - 1]);
+                current_streak += 1;
+                longest_streak = longest_streak.max(current_streak);
+            } else if sensor[i] < sensor[i - 1] {
+                decreased += 1;
+                current_streak = 0;
+            }
+        }
+        (format!("Sensor {}", if sensor == &north { "north" } else { "south" }), increased, decreased, max_increase, longest_streak)
+    }
+    let north_stats = analyze(&north);
+    let south_stats = analyze(&south);
+    println!("{}", north_stats.0);
+    println!("{}", north_stats.1);
+    println!("{}", north_stats.2);
+    println!("{}", north_stats.3);
+    println!("{}", north_stats.4);
+    println!("{}", south_stats.0);
+    println!("{}", south_stats.1);
+    println!("{}", south_stats.2);
+    println!("{}", south_stats.3);
+    println!("{}", south_stats.4);
+    if north_stats.4 > south_stats.4 {
+        println!("north");
+    } else {
+        println!("south");
+    }
+}

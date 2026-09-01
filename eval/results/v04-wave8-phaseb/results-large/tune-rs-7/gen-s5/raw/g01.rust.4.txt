@@ -1,0 +1,23 @@
+fn main() {
+    let a = vec![120, 95, 143, 87, 210, 156, 99];
+    let b = vec![175, 132, 88, 240, 119, 167];
+    fn summarize(v: &[i64], label: &str) {
+        println!("{}", label);
+        println!("{}", v.len());
+        let avg = (v.iter().sum::<i64>() / v.len() as i64);
+        println!("{}", avg);
+        let count = v.iter().filter(|&&x| x > avg).count();
+        println!("{}", count);
+        let diff = v.iter().max().unwrap() - v.iter().min().unwrap();
+        println!("{}", diff);
+    }
+    summarize(&a, "Group A");
+    summarize(&b, "Group B");
+    let sum_a: i64 = a.iter().sum();
+    let sum_b: i64 = b.iter().sum();
+    if sum_a > sum_b {
+        println!("Group A");
+    } else {
+        println!("Group B");
+    }
+}

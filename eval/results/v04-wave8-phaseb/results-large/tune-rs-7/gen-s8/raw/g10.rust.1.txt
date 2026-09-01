@@ -1,0 +1,30 @@
+fn main() {
+    let first = "the harbour lights flickered";
+    let second = "a small boat drifted past silently";
+    let mut max_words = 0;
+    for phrase in &[first, second] {
+        let words: Vec<&str> = phrase.split_whitespace().collect();
+        println!("{}", phrase);
+        println!("{}", words.len());
+        if let Some(&longest) = words.iter().max_by_key(|w| w.len()) {
+            println!("{}", longest);
+        } else {
+            println!("0");
+        }
+        if let Some(&shortest) = words.iter().min_by_key(|w| w.len()) {
+            println!("{}", shortest.len());
+        } else {
+            println!("0");
+        }
+        let long_count = words.iter().filter(|w| w.len() > 4).count();
+        println!("{}", long_count);
+        if words.len() > max_words {
+            max_words = words.len();
+        }
+    }
+    if max_words == first.split_whitespace().count() {
+        println!("first");
+    } else {
+        println!("second");
+    }
+}

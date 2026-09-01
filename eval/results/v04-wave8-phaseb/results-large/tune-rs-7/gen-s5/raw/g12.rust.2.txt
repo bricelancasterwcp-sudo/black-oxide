@@ -1,0 +1,28 @@
+fn main() {
+    let figures = [
+        (7, 4),
+        (5, 0),
+        (3, 0),
+        (2, 9),
+    ];
+    let mut total_area = 0;
+    for figure in &figures {
+        match figure {
+            (w, h) if *h == 0 => {
+                let area = w * w;
+                println!("square\n{}", area);
+                total_area += area;
+            }
+            (w, h) => {
+                let area = w * h;
+                println!("rect\n{}", area);
+                total_area += area;
+            }
+        }
+    }
+    println!("{}", total_area);
+    match figures.iter().max_by_key(|f| f.0 * f.1).unwrap() {
+        (w, h) if *h == 0 => println!("square"),
+        _ => println!("rect"),
+    }
+}

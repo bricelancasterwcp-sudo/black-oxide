@@ -1,0 +1,49 @@
+struct Word { label: Str, chars: Vec<Char> }
+fn reverse(s: Str) -> Str {
+    let chars = chars(s)
+    let len = len(chars)
+    let mut reversed_chars = vec()
+    for i in range(0, len) {
+        let j = len - 1 - i
+        reversed_chars = push(reversed_chars, chars[j])
+    }
+    concat(reversed_chars)
+}
+fn is_palindrome(word: Str) -> Bool {
+    word == reverse(word)
+}
+fn count_vowels(chars: Vec<Char>) -> Int {
+    let vowels = vec('a', 'e', 'i', 'o', 'u')
+    let mut count = 0
+    for c in chars {
+        if contains(vowels, c) {
+            count += 1
+        }
+    }
+    count
+}
+fn count_unique_chars(chars: Vec<Char>) -> Int {
+    let unique_chars = dedup(chars)
+    len(unique_chars)
+}
+fn main() {
+    let words = vec("rotor", "banana", "level", "quiet", "deified", "system", "civic")
+    let mut palindrome_count = 0
+    for word in words {
+        let chars = chars(word)
+        print_str(word)
+        print(len(chars))
+        let reversed_word = reverse(word)
+        print_str(reversed_word)
+        let is_pal = is_palindrome(word)
+        print(is_pal)
+        if is_pal {
+            palindrome_count += 1
+        }
+        let vowel_count = count_vowels(chars)
+        print(vowel_count)
+        let unique_char_count = count_unique_chars(chars)
+        print(unique_char_count)
+    }
+    print(palindrome_count)
+}

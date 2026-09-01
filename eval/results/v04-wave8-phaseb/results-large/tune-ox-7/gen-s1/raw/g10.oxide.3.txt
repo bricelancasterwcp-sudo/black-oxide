@@ -1,0 +1,57 @@
+fn main() {
+    let first = "the harbour lights flickered"
+    let second = "a small boat drifted past silently"
+    let count_first = count_words(first)
+    let count_second = count_words(second)
+    print_str("first")
+    print(count_first)
+    print_str(longest_word(first))
+    print(shortest_word_length(first))
+    print(word_count_over_four(first))
+    print_str("second")
+    print(count_second)
+    print_str(longest_word(second))
+    print(shortest_word_length(second))
+    print(word_count_over_four(second))
+    if count_first > count_second {
+        print_str("first")
+    } else {
+        print_str("second")
+    }
+}
+fn count_words(s: Str) -> Int {
+    let words = split(s, " ")
+    len(words)
+}
+fn longest_word(s: Str) -> Str {
+    let words = split(s, " ")
+    let mut max_len = 0
+    let mut max_word = ""
+    for word in words {
+        if str_len(word) > max_len {
+            max_len = str_len(word)
+            max_word = word
+        }
+    }
+    max_word
+}
+fn shortest_word_length(s: Str) -> Int {
+    let words = split(s, " ")
+    let mut min_len = 1000000 // Arbitrary large number
+    for word in words {
+        if str_len(word) < min_len {
+            min_len = str_len(word)
+        }
+    }
+    min_len
+}
+fn word_count_over_four(s: Str) -> Int {
+    let words = split(s, " ")
+    let mut count = 0
+    for word in words {
+        if str_len(word) > 4 {
+            count += 1
+        }
+    }
+    count
+}

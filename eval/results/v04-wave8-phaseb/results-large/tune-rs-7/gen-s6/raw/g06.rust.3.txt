@@ -1,0 +1,25 @@
+fn main() {
+    let morning = [94, 71, 88, 65, 92, 79, 83];
+    let evening = [55, 90, 77, 84, 68, 99];
+    fn analyze(sitting: &[i32]) {
+        let (mut above_90, mut between_80_and_89, mut between_70_and_79, mut below_70) = (0, 0, 0, 0);
+        let mut highest = i32::MIN;
+        let sum: i32 = sitting.iter().cloned().fold(0, |acc, x| acc + x);
+        for &mark in sitting {
+            if mark >= 90 { above_90 += 1; }
+            else if mark >= 80 { between_80_and_89 += 1; }
+            else if mark >= 70 { between_70_and_79 += 1; }
+            else { below_70 += 1; }
+            highest = i32::max(highest, mark);
+        }
+        println!("{}", sitting[0]);
+        println!("{}", above_90);
+        println!("{}", between_80_and_89);
+        println!("{}", between_70_and_79);
+        println!("{}", below_70);
+        println!("{}", highest);
+        println!("{}", sum / sitting.len() as i32);
+    }
+    analyze(&morning);
+    analyze(&evening);
+}

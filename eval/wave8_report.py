@@ -46,11 +46,35 @@ def drift_guard(arm_dir: Path) -> dict:
     }
 
 
+def paired_attempts(ox_keyed, rs_keyed, keys) -> dict:
+    """Mean attempts-to-pass per arm over the SAME paired cells.
+
+    `tokens_out` accumulates across repair attempts, so an arm that needs
+    more repair spends more tokens for a reason that is not expression.
+    The ratio-of-ratios largely cancels this, but not if the asymmetry is
+    itself lopsided -- so it is reported beside the surplus rather than
+    left for a reader to wonder about.
+    """
+    if not keys:
+        return {"oxide": None, "rust": None}
+    return {
+        "oxide": round(
+            sum(ox_keyed[k]["attempts_to_pass"] for k in keys) / len(keys), 2
+        ),
+        "rust": round(
+            sum(rs_keyed[k]["attempts_to_pass"] for k in keys) / len(keys), 2
+        ),
+    }
+
+
 def tier_surplus(results_root: Path, source, count) -> dict:
     """The surplus on one task set, with the sample it rests on."""
+    from eval.experiment_report import green_pair_keys
+
     ox = load_cells_keyed(Path(results_root) / "tune-ox-7")
     rs = load_cells_keyed(Path(results_root) / "tune-rs-7")
     out = model_surplus(ox, rs, source=source, count=count)
+    out["attempts"] = paired_attempts(ox, rs, green_pair_keys(ox, rs))
     n_pairs = out["model"]["n_pairs"]
     out["tier"] = source.name
     out["sufficient"] = n_pairs >= MIN_PAIRS
@@ -82,15 +106,18 @@ def render(report: dict) -> str:
         f"(expected {g['expected']}, n={g['n']}): "
         f"**{'REPRODUCED' if g['reproduced'] else 'MISSED'}**",
         "",
-        "| tier | model ox/rs | reference ox/rs | surplus | n_pairs | n_tasks |",
-        "|---|---:|---:|---:|---:|---:|",
+        "| tier | model ox/rs | reference ox/rs | surplus | n_pairs | "
+        "n_tasks | attempts ox/rs |",
+        "|---|---:|---:|---:|---:|---:|---:|",
     ]
     for key in ("small", "large"):
         r = report[key]
         m, ref = r["model"], r["reference"]
+        a = r["attempts"]
         lines.append(
             f"| {r['tier']} | {m['ratio']} | {ref['ratio']} | "
-            f"**{r['surplus']}** | {m['n_pairs']} | {m['n_tasks']} |"
+            f"**{r['surplus']}** | {m['n_pairs']} | {m['n_tasks']} "
+            f"| {a['oxide']} / {a['rust']} |"
         )
     lines.append("")
     for key in ("small", "large"):

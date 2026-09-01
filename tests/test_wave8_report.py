@@ -96,3 +96,33 @@ def test_build_refuses_when_the_control_arm_is_missing(tmp_path):
 
     with pytest.raises(ReportError):
         build(tmp_path, tmp_path)
+
+
+def test_attempts_are_reported_beside_the_surplus(tmp_path):
+    """tokens_out accumulates across repair attempts, so a lopsided
+    repair burden would inflate one arm for a reason that is not
+    expression. It must be visible, not inferred."""
+    from eval.cost_census import LARGE_SOURCE
+    from eval.token_match import qwen_counter
+
+    for (seed, task), (tok, att) in {
+        ("gen-s1", "g01"): (272, 3), ("gen-s2", "g01"): (272, 1),
+    }.items():
+        d = tmp_path / "tune-ox-7" / seed
+        d.mkdir(parents=True, exist_ok=True)
+        (d / "cells.jsonl").write_text(json.dumps({
+            "task": task, "tokens_out": tok, "first_passed": True,
+            "final_passed": True, "attempts_to_pass": att}) + "\n")
+        d = tmp_path / "tune-rs-7" / seed
+        d.mkdir(parents=True, exist_ok=True)
+        (d / "cells.jsonl").write_text(json.dumps({
+            "task": task, "tokens_out": 265, "first_passed": True,
+            "final_passed": True, "attempts_to_pass": 1}) + "\n")
+
+    out = tier_surplus(tmp_path, LARGE_SOURCE, qwen_counter())
+    assert out["attempts"] == {"oxide": 2.0, "rust": 1.0}
+    assert "attempts ox/rs" in render(
+        {"drift_guard": {"pass1": 0.565, "expected": 0.565, "reproduced": True,
+                         "n": 10, "arm_dir": "x"},
+         "small": out, "large": out}
+    )

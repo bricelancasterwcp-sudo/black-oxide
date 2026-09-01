@@ -148,14 +148,31 @@ def main(argv: list[str] | None = None) -> int:
         help="llama.cpp commit the server was built from; recorded in "
              "provenance.json",
     )
+    parser.add_argument(
+        "--tasks", type=Path, default=None,
+        help="tasks file to generate against (default: the eval corpus). "
+             "Wave 8 runs the large tier through the same arms.",
+    )
+    parser.add_argument(
+        "--families", default="gen,probes",
+        help="comma-separated families to run. Wave 8's token-efficiency "
+             "endpoint needs only 'gen'.",
+    )
     args = parser.parse_args(argv)
+    families = tuple(f for f in args.families.split(",") if f)
+    unknown = set(families) - {"gen", "probes"}
+    if unknown:
+        parser.error(f"unknown families: {sorted(unknown)}")
     spec = next(s for s in ARM_SPECS if s.name == args.arm)
     extra_provenance: dict = {}
     if args.gguf_sha is not None:
         extra_provenance["gguf_sha256"] = args.gguf_sha
     if args.llamacpp_commit is not None:
         extra_provenance["llamacpp_commit"] = args.llamacpp_commit
+    if args.tasks is not None:
+        extra_provenance["tasks_path"] = str(args.tasks)
     run_arm(spec, host=args.host, results_root=args.root,
+            tasks_path=args.tasks, families=families,
             extra_provenance=extra_provenance or None)
     print(f"{spec.name}: DONE")
     return 0

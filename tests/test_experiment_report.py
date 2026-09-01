@@ -475,3 +475,98 @@ def test_paired_tokens_acceptance_against_committed_wave1_and_wave2():
     assert paired_tokens_to_green(*arms[w0], restrict_to=common)["ratio"] == 1.217
     assert paired_tokens_to_green(*arms[w1], restrict_to=common)["ratio"] == 1.293
     assert paired_tokens_to_green(*arms[w2], restrict_to=common)["ratio"] == 1.067
+
+
+# ------------------------------------------- wave 8: the surplus estimand
+
+def _cells(rows):
+    """rows: {(seed, task): (tokens_out, passed)}"""
+    return {
+        k: {"task": k[1], "tokens_out": t, "final_passed": p}
+        for k, (t, p) in rows.items()
+    }
+
+
+def test_reference_ratio_covers_exactly_the_tasks_it_is_given():
+    """The denominator of the surplus must describe the same tasks as the
+    numerator. Measuring it over a whole tier when only some tasks paired
+    is the wave-6 defect: two halves on different footings."""
+    from eval.cost_census import LARGE_SOURCE
+    from eval.experiment_report import reference_ratio
+    from eval.token_match import qwen_counter
+
+    ref = reference_ratio(["g01", "g02"], LARGE_SOURCE, qwen_counter())
+    assert ref["n_tasks"] == 2
+    assert ref["missing"] == []
+    # g01 272/265 and g02 284/202, as pinned by the census acceptance test
+    assert (ref["oxide"], ref["rust"]) == (556, 467)
+    assert ref["ratio"] == round(556 / 467, 3)
+
+
+def test_reference_ratio_names_tasks_it_could_not_find():
+    from eval.cost_census import LARGE_SOURCE
+    from eval.experiment_report import reference_ratio
+    from eval.token_match import qwen_counter
+
+    ref = reference_ratio(["g01", "nope"], LARGE_SOURCE, qwen_counter())
+    assert ref["missing"] == ["nope"]
+    assert ref["n_tasks"] == 1
+
+
+def test_surplus_divides_the_model_ratio_by_the_reference_ratio():
+    """A model that spends exactly what the references do has surplus
+    1.0, even where the references themselves sit above parity -- which
+    is the whole reason the raw-ratio endpoint was a defect."""
+    from eval.cost_census import LARGE_SOURCE
+    from eval.experiment_report import model_surplus
+    from eval.token_match import qwen_counter
+
+    # g01/g02 references are 556 oxide vs 467 rust. A model spending in
+    # that same proportion should read surplus 1.0, not 1.19.
+    ox = _cells({("gen-s1", "g01"): (272, True), ("gen-s1", "g02"): (284, True)})
+    rs = _cells({("gen-s1", "g01"): (265, True), ("gen-s1", "g02"): (202, True)})
+    out = model_surplus(ox, rs, source=LARGE_SOURCE, count=qwen_counter())
+    assert out["model"]["n_pairs"] == 2
+    assert out["reference"]["n_tasks"] == 2
+    assert out["surplus"] == 1.0
+
+
+def test_surplus_denominator_follows_the_cells_that_actually_paired():
+    """Only g01 is green in both arms, so the reference ratio must be
+    g01's alone -- not both tasks'."""
+    from eval.cost_census import LARGE_SOURCE
+    from eval.experiment_report import model_surplus
+    from eval.token_match import qwen_counter
+
+    ox = _cells({("gen-s1", "g01"): (272, True), ("gen-s1", "g02"): (284, True)})
+    rs = _cells({("gen-s1", "g01"): (265, True), ("gen-s1", "g02"): (202, False)})
+    out = model_surplus(ox, rs, source=LARGE_SOURCE, count=qwen_counter())
+    assert out["model"]["n_pairs"] == 1
+    assert out["reference"]["n_tasks"] == 1
+    assert (out["reference"]["oxide"], out["reference"]["rust"]) == (272, 265)
+
+
+def test_surplus_is_none_rather_than_fabricated_when_nothing_paired():
+    from eval.cost_census import LARGE_SOURCE
+    from eval.experiment_report import model_surplus
+    from eval.token_match import qwen_counter
+
+    ox = _cells({("gen-s1", "g01"): (272, False)})
+    rs = _cells({("gen-s1", "g01"): (265, True)})
+    out = model_surplus(ox, rs, source=LARGE_SOURCE, count=qwen_counter())
+    assert out["model"]["n_pairs"] == 0
+    assert out["surplus"] is None
+
+
+def test_reference_ratio_of_no_tasks_is_none_not_zero():
+    """Pinned directly rather than through the surplus: with no tasks the
+    surplus is already None because the MODEL ratio is None, so a
+    fabricated 0.0 here would survive undetected until something divided
+    by it."""
+    from eval.cost_census import LARGE_SOURCE
+    from eval.experiment_report import reference_ratio
+    from eval.token_match import qwen_counter
+
+    ref = reference_ratio([], LARGE_SOURCE, qwen_counter())
+    assert (ref["n_tasks"], ref["oxide"], ref["rust"]) == (0, 0, 0)
+    assert ref["ratio"] is None

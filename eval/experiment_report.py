@@ -407,3 +407,67 @@ def main(argv: list[str] | None = None) -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
+
+# --------------------------------------------- wave 8: the surplus estimand
+
+def reference_ratio(tasks, source, count) -> dict:
+    """The references' oxide/rust token ratio over EXACTLY these tasks.
+
+    Restricted to a task list rather than computed over a whole tier: the
+    surplus divides a model ratio by this one, and a denominator measured
+    over tasks the numerator never covered is the wave-6 defect again --
+    two halves of a comparison on different footings.
+    """
+    from eval.cost_census import pair_costs
+
+    wanted = set(tasks)
+    costs, dropped = pair_costs(count, source)
+    kept = [c for c in costs if c.task in wanted]
+    missing = sorted(wanted - {c.task for c in kept})
+    oxide = sum(c.oxide_tokens for c in kept)
+    rust = sum(c.rust_tokens for c in kept)
+    return {
+        "n_tasks": len(kept),
+        "missing": missing,
+        "dropped": dropped,
+        "oxide": oxide,
+        "rust": rust,
+        # None, never a fabricated number, when no task qualified -- the
+        # same rule PairCost.ratio applies to an empty rust arm.
+        "ratio": None if rust == 0 else _ratio_or_none(oxide, rust),
+    }
+
+
+def model_surplus(
+    ox_keyed: dict[tuple[str, str], dict],
+    rs_keyed: dict[tuple[str, str], dict],
+    *,
+    source,
+    count,
+    restrict_to: set[tuple[str, str]] | None = None,
+) -> dict:
+    """Wave 8's pre-registered endpoint: how much more the MODEL spends
+    than the language requires, on the same tasks.
+
+    surplus = (model oxide/rust, paired per SPEC 59.7)
+              / (reference oxide/rust over the tasks that paired)
+
+    Stating it as a raw ratio was a defect the wave-8 spec was amended to
+    fix: the large tier's references sit at 1.0622, so a model matching
+    them exactly would score 1.0622 and read as a real surplus when its
+    surplus is zero. Dividing restores the estimand wave 6 actually used
+    (1.1982 / 0.9393 = 1.276).
+    """
+    paired = paired_tokens_to_green(ox_keyed, rs_keyed, restrict_to=restrict_to)
+    keys = green_pair_keys(ox_keyed, rs_keyed)
+    if restrict_to is not None:
+        keys &= restrict_to
+    reference = reference_ratio(sorted({task for _, task in keys}), source, count)
+    return {
+        "model": paired,
+        "reference": reference,
+        "surplus": _ratio_or_none(paired["ratio"], reference["ratio"])
+        if paired["ratio"] is not None and reference["ratio"] is not None
+        else None,
+    }

@@ -1,12 +1,13 @@
 # Black Oxide
 
-**A language built for verifier-in-the-loop repair.**
+**A findings-and-benchmark record: what happened when a language was
+designed, wave by wave, for small LLMs to use more efficiently than Rust.**
 
-A Rust-like language with **implicit linear types**: ownership works like
-Rust's, but there is no borrow syntax. The compiler infers moves, borrows, and
-destruction points; types are fully inferred. Black Oxide transpiles to Rust, and
-`rustc` is the oracle — any program Black Oxide accepts that `rustc` rejects is a
-compiler bug.
+Black Oxide is a Rust-like language with **implicit linear types**:
+ownership works like Rust's, but there is no borrow syntax. The compiler
+infers moves, borrows, and destruction points; types are fully inferred.
+It transpiles to Rust, and `rustc` is the oracle — any program Black
+Oxide accepts that `rustc` rejects is a compiler bug.
 
 ```oxide
 struct Reading { label: Str, values: Vec<Int> }
@@ -30,334 +31,157 @@ fn main() {
 }
 ```
 
-No semicolons, no `&`, no lifetimes, no `mut`, no manual `drop`. The value in
-`r.values` is passed, used, and destroyed without any of it being written down.
+It was a **design project**: design a language small models can use
+more efficiently than Rust (SPEC §62 states the three objectives —
+usefulness, efficiency, ease of learning for an LLM — and novelty is not
+among them), and run a measure → redesign loop where every wave's
+measurement feeds the next wave's design. The loop ran nine waves between
+2026-08-27 and 2026-09-02, on top of the v0.2–v0.3 repair-probe work
+before it, at a total GPU cost of about $19 (including a $2.00 idle-pod loss the
+last wave's plan records). It reached convergence, and
+**the design loop is closed as of 2026-09-02.** The repository is now a
+findings-and-benchmark record, the status its sibling
+[robigo](https://github.com/bricelancasterwcp-sudo/robigo) took: the
+language, the instruments, every raw model output, every pre-registration
+and every withdrawn claim stay public and reproducible.
 
-## Why it exists
+## The finding
 
-Models **repair** implicit linearity far better than they repair explicit
-linearity. Hand one a correct program carrying a single ownership defect
-plus the compiler's diagnostic, and ask for a fix: **+59.0pp** on
-qwen2.5-coder-7b, **+35.0pp** on codegemma-7b, **+9.5pp** on
-granite-code-8b — three families, 600 repairs each, pooled p < 10⁻⁹. Both
-arms are languages the model has never seen, taught by cards of matched
-length, differing in exactly one thing: whether ownership is implicit.
+A language designed for LLMs converges to the language they already know,
+minus the ceremony they cannot handle. Every gain the loop found came from
+one of two moves: deleting ceremony (implicit ownership, the one durable
+win, worth about 8% fewer tokens on struct-heavy code at every program
+size measured) or spelling a construct the way Rust or Python already
+spells it. Every construct that fought the pretraining prior lost, and
+the model's prior grows with its capability: a 14B model reaches for
+indexing syntax in 29% of its attempts where a 7B does so in 17%, so
+**being better at programming makes a model worse at a novel notation.**
+At the program sizes where any of this matters, the model could not
+produce compiling Black Oxide at all, and doubling model size did not
+change that.
 
-That advantage has a ceiling, and the ceiling is part of the claim. Claude
-Opus 5 repairs both arms identically (11/12 each, **0.0pp**) — a model that
-already reasons about ownership correctly gains nothing. This is a
-small-model result, and the decomposition below shows only about **+10pp**
-of it is ownership rather than surface ergonomics.
+## The ledger
 
-Models do **not** write Black Oxide better than they write Rust. Asked to
-generate whole programs from a card under grammar-constrained decoding,
-they pass on the first attempt 57/45/42% of the time in Rust against
-26/14.5/9% in Black Oxide. That gap is pretraining exposure, not language
-design, and the v0.3 ergonomics work barely moved it.
+Every number carries the program-size tier it was measured on and the
+instrument that produced it. Small tiers are 40–150 token programs (the
+20 eval tasks, `eval/tasks.jsonl`, and the 40 train references); the
+large tier is 200–600 tokens (`eval/tasks-large.jsonl`). Static ratios
+are oxide ÷ rust supervised tokens over hand-authored, oracle-verified
+reference pairs under a pinned tokenizer; dynamic ratios are
+composition-controlled per SPEC §59.7. Sources are under `eval/results/`
+unless stated.
 
-So the claim this repository is built to test is narrower, and more useful,
-than "models write it better":
-
-> **Implicit linearity pays in the repair loop** — a model proposes, a
-> fail-closed compiler objects with a specific diagnostic, the model fixes.
-> That is the loop real tooling runs, and it is where the evidence is.
-
-Whether the advantage survives once pretraining exposure is equalised is
-the next experiment: a token-matched fine-tune of Black Oxide against Rust
-(SPEC §32.4). Everything needed to falsify any of this is in the
-repository — including the results that went against the thesis, and a log
-of three headline claims withdrawn when they failed to replicate.
-
-## Standalone write-ups
-
-Two findings from this project are written up as self-contained
-documents, each with its numbers, method, controls, and limits:
-
-- **[Constrained decoding deforms rather than
-  rejects](docs/findings/2026-08-12-constrained-decoding-deforms.md)** —
-  a grammar can only steer generation to the nearest legal string, so it
-  manufactures programs the model did not write: one artifact accounted
-  for 44% of the largest error class, another appeared 18 times in 600
-  constrained programs and zero in 600 unconstrained. Independently
-  corroborated by two sibling projects
-  ([robigo](https://github.com/bricelancasterwcp-sudo/robigo),
-  [assay](https://github.com/bricelancasterwcp-sudo/assay)).
-- **[Most of the win was ergonomics, not
-  ownership](docs/findings/2026-08-12-ergonomics-beat-ownership.md)** —
-  the +59pp headline decomposes to ≈+10pp ownership and up-to-+42pp
-  surface ergonomics under a matched-novelty control, vanishing at
-  frontier capability; with the design guidance that follows.
-
-## Where the evidence stands
-
-**Partially supported, with a capability window.** Ordered by how well each
-subject performs the task at all:
-
-The three local families are at 10 seeds, 600 repairs each, on matched code.
-The frontier row is a **different instrument** — see the note under the table.
-
-| Subject | Black Oxide | explicit Black Oxide | paired delta | 2-SE |
-|---|---|---|---|---|
-| Claude Opus 5 † | 92% | 92% | **0.0pp** | ceiling, arms identical |
-| qwen2.5-coder-7b | 73.0% | 14.0% | **+59.0pp** | `[+42.8, +75.2]` |
-| codegemma-7b | 46.5% | 11.5% | **+35.0pp** | `[+19.7, +50.3]` |
-| granite-code-8b | 20.5% | 11.0% | **+9.5pp** | `[+3.8, +15.2]` |
-
-† **The frontier row is not the same measurement as the three below it, and
-its rates are not comparable to theirs.** It ran **12 defect classes × 3
-arms × 1 seed = 36 repairs**, not 600, and was **unconstrained on every
-arm** — where the local families' Oxide and explicit arms were
-grammar-constrained. Its `92%` figures are 11/12 and 11/12. The 12 classes
-were chosen as the *hardest* at 7B: the first eight scored 23/23, so the
-remaining four were picked as hardest-for-Rust and the other eight were
-never run, on the grounds that confirming a ceiling with easier classes
-carries near-zero information. What this row establishes is that **the
-delta vanishes at frontier capability** — 0.0pp, arms identical class for
-class. It is not a like-for-like rate comparison. Source and full method:
-[`eval/results/ownership-probe-frontier/`](eval/results/ownership-probe-frontier/).
-
-All three local families are post-`mut` (SPEC §54), on matched code.
-
-**Every family clears 2 SE. Pooled: 41 of 43 non-tied comparisons,
-p < 10⁻⁹. Combined over all 60 (family × class) pairs: +34.5pp,
-2-SE `[+25.3, +43.7]`.** But see the decomposition below — most of that is
-*ergonomic*, not about ownership reasoning.
-
-The comparison that matters is **Black Oxide vs explicit Black Oxide** — a control dialect
-with identical grammar, builtins, and diagnostics, where ownership is written
-out by hand (`&` reads, declared parameter modes, mandatory `drop`). Both are
-languages the model has never seen, taught only by a card of comparable
-length. They differ in exactly one thing: whether ownership is implicit.
-
-### The effect splits in two, and only one half is about ownership
-
-Adding builtin method syntax (SPEC §53) moved these numbers enormously —
-and the way it moved them is the finding:
-
-| Model | `OX0304` before → after | oxide strict change |
-|---|---|---|
-| qwen | 94 → **0** | **+42.0** |
-| codegemma | 72 → **0** | **+31.0** |
-| granite | 9 → 12 | **−1.5** |
-
-The change helped exactly the families that had the `.clone()` problem and did
-nothing for the one that didn't. A dose-response across independent families
-is strong causal evidence — and the opposite of the pattern that sank three
-earlier headlines here.
-
-But it means the large deltas are substantially **ergonomic**. Method syntax
-composes with implicit ownership (`v.len()`) and awkwardly with explicit
-(`(&v).len()`, since the receiver still needs its marker), so it lifts one arm
-and not the other.
-
-**granite is the clean estimate.** It never used method syntax, so its
-**+10.0pp** isolates ownership from ergonomics — and it is unchanged from
-before the change.
-
-- **ownership effect alone: ≈ +10pp** — granite, which benefited from neither
-  ergonomic fix, sits at +9.5pp
-- **ergonomic effect: larger, family-dependent**, up to +42pp
-- the combined **+34.5pp `[+25.3, +43.7]`** mixes the two and should not be
-  quoted as an ownership result
-
-### Ergonomic fixes, and what each was worth
-
-Every one came from reading failing submissions rather than theorising, and
-each shows the same dose-response — it helped exactly the models that had the
-problem.
-
-The two groups below are **measured on different instruments** and their
-numbers must not be read across: repair deltas come from the ownership probe,
-generation deltas from the constrained grid.
-
-**Measured on repair (v0.2.2).** Oxide strict change on the probe corpus:
-
-| Fix | mechanism removed | effect |
-|---|---|---|
-| **Method syntax** (§53) | `.clone()` → `OX0304`, 94→0 and 72→0 | **+42pp** (qwen), **+31pp** (codegemma), **−1.5pp** (granite, which never used it) |
-| **`mut` accepted** (§54) | `let mut acc` glued into `let mutacc`, `OX0200` 81→10 (qwen) and 42→**0** (codegemma) | **+5.5pp** (qwen), **+3.0pp** (codegemma), **0** (granite) |
-
-**Measured on generation (v0.3).** Three constrained campaigns, oxide arm,
-200 first attempts per family per arm — qwen / codegemma / granite:
-
-| Fix | mechanism removed | first-compile | first-pass |
+| What the instruments established | Measurement | Tier · instrument | Source |
 |---|---|---|---|
-| **`vec(...)` literal** (§55) | push-chain boilerplate; targeted counter 91→21, 69→13, 27→6 | **+4.5 / +3.5 / +2.0** | **+3.0 / +2.0 / +0.5** |
-| **field assignment + `to_str`** (§56, §57 — landed together, inseparable) | the constrained decoder's `f.x == e` substitution, 18→0; a naming gap | +1.5 / 0 / 0 | +1.5 / 0 / 0 |
+| **Implicit ownership is the one durable win** | structs/option 0.920 on the 40 train refs, 0.9187 on the 20 held-out eval refs, **0.9312 on the large tier** — a per-declaration saving that holds across a 4× size change while every other class inverts | small + large · static | `v04-campaign4/`, `v04-wave7-attribution/`, `v04-wave8-large/` |
+| Ownership is ≈+10pp of the repair advantage | implicit vs explicit ownership: **+59.0 / +35.0 / +9.5pp** on qwen2.5-coder-7b / codegemma-7b / granite-code-8b, 600 repairs each; granite, untouched by every ergonomic fix, isolates ownership at +9.5pp; **0.0pp** at frontier (11/12 vs 11/12) | one seeded defect + diagnostic · ownership probe | [docs/HISTORY.md](docs/HISTORY.md), `ownership-probe-*/` |
+| **Familiarity is the lever** | with both spellings available, the tuned 7B chose Rust's `\|x\|` over the shipped `x ->` **43 : 4**; after re-spelling, uptake went 4 → **19** (7B) / **24** (14B) at 3.9% exposure vs the arrow's 2.4%; `filter` beat `count_if` **11–0** — the familiar *and more expensive* spelling won | small · G2 uptake per reply file, learnability = uptake ÷ exposure | `v04-campaign3/` §6, `v04-campaign4/` §5 |
+| Uptake ≈ exposure × familiarity | `reverse` drew 50 tuned uses from 1.7% corpus exposure; `count_if` drew 0 from 2.4%; `swap` reached the model in 2 of 294 training examples and drew 0 — the pipeline under-teaches its own vocabulary | small · corpus census vs uptake | `v04-campaign3/` §6.1 |
+| **Documentation is not capability** | card-only base-ox-7 pass@1 **0.025 / 0.060 / 0.070 / 0.075 / 0.060** across five card versions; adding the never-documented operator table moved nothing at any tier (1.5B 0.000→0.000, 7B 0.075→0.060, 14B 0.525→0.500) because the model already used `==` in 160, `!` in 190, `%` in 136 reply files under the old card; Claude Sonnet scored 20/20 from that card by assuming Rust's operators | small · single-variable card swap, drift guard clean | `v04-wave5-card/`, SPEC §63.6 |
+| On small tasks the *language* is below parity and the *model* is not | eval-set static **0.9462** with both arms reviewed, against a model surplus over the references of **1.242–1.276** on the same 20 tasks; **89%** of the surplus is helper-function definitions, **76%** of them called exactly once — a teaching problem, not a language gap | small · static + composition-controlled surplus | `eval/references-v04/`, `v04-wave7-attribution/`, `v04-wave8-phaseb/` |
+| **The static advantage inverts at scale** | 40 train refs **0.9871** (median 57 tokens) → 20 eval refs **0.9462** (73) → 20 large refs **1.0622** (292.5); the strata split bought nothing (compositional 1.0718 vs linear 1.0482); indexing `v[i]` (wave 9) takes the large tier to **1.0259** | large · static | `v04-wave8-large/`, `v04-wave9-index/` |
+| **Usefulness fails first at scale** | the same tuned 7B produces *compiling* Oxide **5.5%** of the time on large tasks vs **81.5%** for the symmetrically-trained Rust arm; pass@1 **0.645 → 0.035** on one adapter across the two tiers; 0 truncated generations; the top failure is `unexpected character '['` | large · first-attempt compile rate, symmetric control | `v04-wave8-phaseb/` |
+| Scale does not rescue it | 14B: **5.0% vs 76.7%**, compile-rate ratio **0.067 → 0.0652** across a doubling of model size (pre-registered ≤0.20 = language property); `[` appears in **16.8%** of 7B attempts and **29.0%** of 14B attempts, and is a lexer error | large · 3-seed screen, 8/8 seed-matched guards reproduced | `v04-wave8-14b-screen/` |
+| The fine-tune, waves 0–4 | `tune-ox-7` **0.555** at 17k supervised tokens (wave 0) → **0.755** at 29.8k (wave 2), above the untuned Rust control's 0.565; corpus 7.4k → 0.420 (wave 1) shows the sensitivity; untuned Oxide beat Rust at 14B with a verifier, pass@10v **0.75 vs 0.55**; the tuned ox↔rs gap narrowed 0.225@7B → 0.175@14B where wave 0 had it widening 0.330 → 0.445 | small · pass@1, pass@10-with-verifier, 200 sessions/arm | `runpod-exp/`, `v04-campaign2/`, `v04-campaign4/` |
+| The drift guard | untuned `base-rs-7` pass@1 = **0.565** in eight environments across three GPU architectures; pass@1 is invariant across architectures, secondary metrics invariant within one | small · same 20 tasks, same sampler | `v04-wave8-phaseb/` provenance |
+| The instruments' own defects, caught | own-green-set means (wave 2 → SPEC §59.7); static on train refs vs dynamic on frozen eval refs (wave 6); raw-ratio bands vs surplus (wave 8A, before Phase B); seed-matched anchors, 0.745 over ten seeds reads 0.800 over three (wave 8 screen); count-verified transfer with a wrong hash; a baseline denominator summed from a report table instead of computed from the cells (wave 9 plan, caught before the run) | — | [check the estimand](docs/findings/2026-09-02-check-the-estimand-before-naming-a-finding.md) |
 
-**One of the three did the work.** §55 took **10.0 of the 11.5 first-compile
-points** and 5.5 of the 7.0 first-pass points, and its per-family effect
-orders exactly as its measured demand did — 91 > 69 > 27 `vec` calls giving
-+4.5 > +3.5 > +2.0. What is left is one family's 3 sessions of 200, and it is
-probably not §56 either: the family with the *most* deformation to remove
-(codegemma, 10 occurrences) moved 0.0, while the one that moved had the
-fewest (qwen, 2).
+### The wave-9 re-screen
 
-Both were still worth shipping, for reasons that are not rate. §56 eliminated
-a *measurement* artifact — the grammar-constrained decoder substituting `=`
-for `==` in statement position, 18 occurrences to 0 — and its implementation
-surfaced the one defect class found in this project that **rustc accepts**,
-so the oracle never sees it. §57 provably could not have moved rates: of the
-programs reaching for `to_str`, none compiled either before or after the alias
-existed, so its largest possible effect on first-compile was 0.0pp. The wall
-those programs hit is the parser, and a builtin alias acts downstream of it.
+Wave 9 shipped indexing (`v[i]`, SPEC §65), the top-ranked gap from wave
+8, and measured its static effect above. Whether the model can now
+*compile* programs at scale is the pre-registered re-screen
+(`docs/superpowers/plans/2026-09-02-v04-wave9-rescreen-plan.md`): same
+four 14B arms, same seeds, primary endpoint the large-tier compile-rate
+ratio against 0.0652, secondary the `OX0001` lexer share against **0.338**
+(73 of 216 under the instrument's own lens; the plan first quoted 73 of
+191, a denominator summed from a report table and corrected before the
+run — see the estimand write-up, §7).
 
-That is what a loop at diminishing returns looks like, and it is why the next
-step is a fine-tune track rather than a fourth ergonomic fix. Full accounting:
-[`eval/results/v03-synthesis/`](eval/results/v03-synthesis/).
+**Re-screen result (2026-09-02):** the tuned-Oxide small-tier guard
+missed its seed-matched anchor by one cell (0.7833 vs 0.8000), because
+`pod_setup.sh` cloned llama.cpp at HEAD and the commit had moved since
+wave 8 — weights, sampler and seeds were identical. Per the plan no
+ratio is published against wave 8. Within the run, Oxide compiled
+**3 of 60** large-tier attempts, the same count as wave 8, while the
+`OX0001` lexer share fell **0.338 → 0.019** and two byte-identical
+programs that died at `[` in wave 8 compile and pass. Clearing the
+lexer moved the attempts to the next fatal layers: **tuples** (types,
+`for (i, x)` patterns, destructuring) and the string stdlib (`split`,
+`str_from_chars`, `insert`). Under the plan's own consequence table
+that is the "removing one barrier exposes the next" row. Full report:
+`eval/results/v04-wave9-rescreen/REPORT.md`.
 
-The `mut` fix is the more instructive of the repair pair. Chasing `OX0200` — the largest remaining
-error class — found that its largest single cause was **the measuring
-instrument deforming model output**. A grammar-constrained decoder cannot
-reject a token; it steers to the nearest valid string, so `mut acc` became
-the identifier `mutacc` and every later use of `acc` was an unknown name.
-That accounted for 44% of `OX0200`-carrying submissions.
+## Design principles earned
 
-Every error count this project collected under grammar constraint carried
-that artifact. SPEC §54 records the general hazard.
+Each is a measured result in this repository, not taste. SPEC §62 states
+the objectives and the four-quadrant ordering they imply.
 
-It also showed the "wall" was two different things: qwen's `OX0200` was 88%
-grammar artifact and vanished; codegemma's was *entirely* artifact (42 → 0),
-though clearing it bought only +3pp — gluing co-occurred with other defects;
-granite's is genuinely undeclared variables —
-Python-style implicit binding — and did not move at all. That residue is a
-model-competence limit, not an ergonomics or instrument problem, and should
-be expected to yield far less than the two fixes above.
+1. **Subtractive beats additive.** The only class that beat Rust with no
+   vocabulary added is the one where ceremony was deleted (structs/option
+   0.92–0.93 at every size). Every added construct that landed had a Rust
+   or Python namesake; every novel spelling lost.
+2. **Spell it the way the model already writes it.** `|x|` over `x ->`
+   by 10:1 at equal footing; `filter` over `count_if` 11–0. Novelty is a
+   cost on the ease-of-learning objective, never a goal.
+3. **Gate on demand × cost, and trust neither eye alone.** Demand read
+   off model failures (`+=`: 64 of 64 first-attempt uses rejected before
+   it existed) finds what models reach for; cost read off references
+   finds what they were never taught (`swap`, `reverse`). Cost alone
+   shipped `swap`, which drew zero uptake.
+4. **Measure at the size you will deploy.** Every small-task claim
+   inverted or collapsed at 200–600 tokens. A lexer-level gap is fatal;
+   a stdlib gap is merely verbose.
+5. **Documentation is not capability.** Document what the model does
+   not already know; the card saturated after one revision.
+6. **The verifier-in-the-loop repair step is where a notation's
+   advantage shows**, not free generation — and it vanishes at frontier
+   capability. State the capability window in every claim.
 
-### Why earlier estimates were lower, and three were withdrawn
+## The write-ups
 
-Before method syntax, *both* primary arms were partly blocked by the same
-`.clone()` barrier — incidental to the question. That floored oxide and
-suppressed the measured difference: the pooled figure was 23 of 34, p = 0.058.
-An ergonomic wart unrelated to ownership was making the eval underestimate its
-own effect.
+Self-contained documents, each with its numbers, method, controls and
+limits, verifiable from the committed artifacts they name:
 
-Three earlier headlines were withdrawn along the way, each a single-subject
-result that dissolved under replication: a 3-seed "+18.3pp, resolved" that
-became +10.0pp spanning zero at 10 seeds; the pooled significance that
-followed it; and a "degenerate-fix rate" whose metric never required the
-program to compile. The trajectory is recorded in
-[`eval/results/ownership-probe-10seed/`](eval/results/ownership-probe-10seed/)
-and [`eval/results/method-syntax/`](eval/results/method-syntax/).
+- **[Usefulness fails first at scale](docs/findings/2026-09-02-usefulness-fails-first-at-scale.md)**
+  — the static advantage inverts on 200–600 token programs, the tuned
+  model compiles 5% of its attempts there against 77–82% for Rust, and
+  doubling model size does not move the ratio.
+- **[Familiarity is the lever](docs/findings/2026-09-02-familiarity-is-the-lever.md)**
+  — uptake tracks exposure × prior familiarity, a falsified spelling
+  ruling, the card saturating, and the four quadrants.
+- **[Check the estimand before naming a finding](docs/findings/2026-09-02-check-the-estimand-before-naming-a-finding.md)**
+  — seven instrument defects, each caught by asking whether two numbers
+  were measured on the same thing; one of them cost four waves.
+- **[Most of the win was ergonomics, not ownership](docs/findings/2026-08-12-ergonomics-beat-ownership.md)**
+  — the +59pp repair headline decomposes to ≈+10pp ownership and up to
+  +42pp surface ergonomics under a matched-novelty control.
+- **[Constrained decoding deforms rather than rejects](docs/findings/2026-08-12-constrained-decoding-deforms.md)**
+  — a grammar steers generation to the nearest legal string and
+  manufactures programs the model did not write; corroborated by
+  [robigo](https://github.com/bricelancasterwcp-sudo/robigo) and
+  [assay](https://github.com/bricelancasterwcp-sudo/assay).
 
-**Supported:** implicit linearity is repaired more reliably than explicit
-linearity in all three families, and the effect resolves. The ownership
-component is around +10pp; the rest is ergonomic.
+## The v0.2–v0.3 record
 
-**Not supported:**
-
-- *"Makes LLMs more reliable"* without qualification. At frontier the delta is
-  exactly zero — a model that already reasons about ownership correctly gains
-  nothing.
-- A single magnitude. The per-family deltas span +10 to +53 and track how
-  much the ergonomic change helped each model, not how well it reasons about
-  ownership.
-- Anything about **writing** Black Oxide. These models cannot. Under
-  constrained decoding at v0.3, first-attempt pass rates are
-  **30.5 / 16.5 / 9.5%** for Black Oxide against **56.5 / 45 / 42%** for Rust
-  (qwen2.5-coder-7b / codegemma-7b / granite-code-8b, 200 first attempts per
-  family per arm; at v0.2.2 the Black Oxide side was 26 / 14.5 / 9%). That gap
-  is pretraining exposure, not language design — and at frontier it closes
-  entirely: on whole-program authorship a frontier model scored **20/20 in all
-  three arms**, Rust and both Black Oxide dialects alike.
-
-  *Superseding an earlier figure:* this README previously cited the 6a
-  pilot's **2/20 against 20/20**. The Black Oxide side replicates — G0's
-  unconstrained qwen first-compile is 10.0% — but the Rust side does not.
-  20/20 was a 20-sample high against 56.5% measured over 200. The gap is
-  real and large; it is not 10× wide.
-
-  *Two corrections to how this bullet read before v0.3:* its denominator said
-  600 first attempts per family per arm, which is **200** — 600 is per family,
-  across the three arms. And it cited "a frontier model prefers Rust 100 to
-  92", which is 12/12 against 11/12 from the **repair** probe rather than
-  generation, and whose single failure that probe's own report records as a
-  corpus defect, not a model failure. Neither figure supported a claim about
-  writing; the 20/20 generation result above is what the frontier data
-  actually says.
-
-## How it was measured
-
-Whole-program generation could not test the ownership claim at all. Across ~530
-attempts in five configurations, **not one linearity diagnostic ever fired** —
-semantic analysis is strictly staged, so ownership sits behind lexing,
-parsing, name resolution, and type checking. Small models never cleared the
-first two. Frontier models cleared all four and scored 20/20. The feature the
-language exists for was reached by nobody.
-
-So the instrument changed. The **ownership probe** hands the model a program
-that is complete and correct except for **one ownership defect**, together
-with the compiler's diagnostic, and scores the repair. Syntax, names, and
-types are all supplied; the only thing wrong is the thing under test.
-
-- 20 defect classes × 3 arms, every record mechanically verified: the broken
-  form must fail with its intended ownership code **and nothing else**, and
-  the reference fix must compile and reproduce the expected output.
-- Scored **strict** (compiles *and* output matches) and **lenient** (parses and
-  the ownership diagnostic is gone). The gap between them is the
-  gap between them is *not* a degenerate-fix rate, though it was reported as
-  one here until it was checked directly — see the correction below.
-  On lenient alone the three arms are indistinguishable; strict separates them
-  completely. Reporting lenient without strict inverts the conclusion.
-
-## A correction
-
-This README previously reported a "degenerate-fix rate" — repairs that
-compile, silence the ownership error, and silently do the wrong thing —
-at **38–68% in the Black Oxide arms against 3–7% for Rust**, and called it the most
-solid result the instrument had produced. **That was wrong.**
-
-It was computed as `lenient AND NOT strict`. But `lenient` requires only that
-a submission *parses* and carries no ownership code — it does not require the
-program to **compile**. Most of those repairs traded an ownership error for a
-*type* error and never ran at all. Checking directly:
-
-| Model | oxide | explicit | rust |
-|---|---|---|---|
-| qwen2.5-coder-7b | **0%** | **0%** | 3% |
-| codegemma-7b | 2.5% | 2.5% | 5% |
-| granite-code-8b | **34%** | 25.5% | 2% |
-
-Two families put Rust *highest*; one puts Black Oxide highest. There is no
-consistent direction and no order-of-magnitude gap. The claim is withdrawn.
-
-What the mislabelled repairs actually were is more interesting: in the qwen
-Black Oxide arms the dominant failures are `OX0304` (94) and `OX0200` (86) — method
-syntax like `v.clone()`, which Black Oxide does not have, and undefined names. Even
-in a *repair* task, with syntax, names, and types all supplied and only the
-ownership decision missing, these models reach for Rust idioms the language
-does not provide. That matches the whole-program result and is the more
-durable observation.
-
-`score()` now emits an explicit `degenerate` field requiring compilation, with
-tests pinning that a type error can never be counted as one.
-
-## It found a real bug
-
-`OX0403` (loop-carried move) named only the move site. In a loop the move and
-the conflicting use are the same syntax, so the diagnostic pointed at one
-location twice and never mentioned the use *after* the loop — the thing that
-makes the move fatal. `rustc` names both ends.
-
-A frontier model, given the old diagnostic, cloned inside the loop — which
-`OX0403`'s own suggestion recommended — producing a program that compiles,
-silences the error, and never accumulates. It repaired the Rust version
-correctly. Fixing the diagnostic flipped that probe from fail to pass in both
-Black Oxide dialects.
-
-At 7B the same fix changes nothing — oxide strict is 25.5% before and after,
-across 600 repairs each way. Causal at frontier, inert at 7B; both are
-measured, and the fix stands on its own merits either way, since the old
-diagnostic named one location twice and omitted the use that makes the move
-fatal.
+Before the design loop, the project measured **repair**: hand a model a
+correct program with one seeded ownership defect and the compiler's
+diagnostic, and score the fix. Implicit ownership was repaired far better
+than explicit ownership by three 7–8B families, most of the effect turned
+out to be surface ergonomics, and the whole effect was 0.0pp for a
+frontier model. Three headline claims from that era were withdrawn when
+they failed to replicate; the arithmetic that killed each is preserved.
+The README as it stood at the end of that era is kept verbatim in
+[docs/HISTORY.md](docs/HISTORY.md).
 
 ## Quick start
 
-Requires Python 3.14 and a Rust toolchain. No third-party Python dependencies.
+Requires Python 3.14 and a Rust toolchain. No third-party Python
+dependencies.
 
 ```bash
 python3 -m venv .venv && .venv/bin/pip install pytest pytest-cov
-.venv/bin/pytest tests/ -q                 # 1408 tests
+.venv/bin/pytest tests/ -q                 # 1741 tests (3 live-only, deselected by default)
 ```
 
 ```bash
@@ -374,45 +198,56 @@ python3 -m eval.harness prompt --arm oxide --task t01
 python3 -m eval.harness run --arm oxide --file solution.ox --task t01
 python3 -m eval.probe --help               # the ownership probe
 
+# static cost census over a reference set (train / eval / large)
+python3 -m eval.cost_census --help
+# the wave-8/9 screen: compile-rate ratio, seed-matched guards, diagnostic mix
+python3 -m eval.wave8_screen --help
 # the §56 deformation signature over a run root's oxide arm, per family
 python3 -m eval.deformation eval/results/g0-generation-baseline/constrained
 ```
 
-`eval/deformation.py` carries the pinned counting definition for that
-signature; its numbers are a pre-registered endpoint and are reproduced
-over the committed corpus by `tests/test_g0_report.py`. The count is a
-lower bound on deformation, for the reason the module's docstring and
-SPEC §56 both give.
-
 Live-model tests are marked and deselected by default; run them with
-`-m live`.
+`-m live`. The RunPod pipeline that produced every tuned arm is under
+`scripts/runpod/`, and every campaign directory carries a
+`provenance.json` with the served GGUF's sha256, the llama.cpp commit,
+the sampler and the seeds.
 
 ## Layout
 
 | Path | |
 |---|---|
-| `SPEC.md` | the binding contract — every phase is a numbered normative Part |
+| `SPEC.md` | the binding contract — every phase a numbered normative Part; §58–§65 are the design record of waves 1–9 |
 | `src/` | lexer, parser, semantic analysis, Rust codegen, CLI |
 | `src/explicit/` | the explicit-ownership control dialect |
-| `eval/` | harness, task corpus, ownership probe, grammars, model clients |
-| `eval/results/` | every run, with raw model outputs verbatim |
+| `eval/` | harness, task corpora, ownership probe, grammars, model clients, censuses, estimands |
+| `eval/tasks.jsonl` · `eval/tasks-large.jsonl` | the 20 small (40–150 token) and 20 large (200–600 token) eval tasks |
+| `eval/solutions/` | the frozen contamination reference — deliberately never modernised |
+| `eval/references-v04/` | the measurement references for the eval set, both arms reviewed |
+| `eval/results/` | every run, with raw model outputs verbatim and a `REPORT.md` per wave |
+| `scripts/runpod/` | pod setup, LoRA training and merge, arm serving, the wave-8/9 screen drivers |
 | `LANGUAGE_CARD.md` | what a model is given — compiler-validated |
-| `docs/superpowers/specs/` | design documents |
+| `docs/findings/` | the standalone write-ups |
+| `docs/HISTORY.md` | the v0.2–v0.3 README, verbatim |
+| `docs/superpowers/specs/` · `plans/` | design documents and pre-registrations, one per wave |
 
 ## Status and honest limits
 
-Black Oxide is a research vehicle, not a usable language. It has no generics,
-traits, closures, modules, tuples, indexing syntax, or sized integer types.
-It is a strict subset of what it compiles to.
+Black Oxide is a research vehicle, not a usable language. It has
+indexing (`v[i]`, since wave 9) but no generics, traits, closures that
+capture, modules, tuples, character literals, string `split`, or sized
+integer types. It is a strict subset of what it compiles to.
 
-Every result here is one shot condition on a 20-class corpus, with all three
-local subjects at 10 seeds. The frontier subject is at one seed — it ceilinged,
-so more would not discriminate, but the 0.0pp figure rests on 12 classes. The reports in `eval/results/` state their own limits,
-including which conclusions the data does *not* support and which numbers
-sit at a floor or ceiling where the design has no resolution.
+The design loop is closed. Nothing here says the next construct would
+not help; what the record says is that each one re-derives a piece of
+Rust the model already knows, and that the binding constraint at the
+sizes that matter is the model's pretraining prior, not the language.
 
-`eval/results/*/REPORT.md` is the place to start if you want the full picture
-rather than the summary.
+Every tuned-arm result is one model family (Qwen2.5-Coder 1.5B/7B/14B)
+at q8_0, one QLoRA recipe, and corpora of 17k–30k supervised tokens per
+arm. The large tier is 20 tasks authored by one person for both arms,
+with the guards stated in its report. The 14B screen is three seeds.
+Every `REPORT.md` under `eval/results/` states its own limits, including
+which conclusions its data does *not* support.
 
 ## License
 

@@ -1,0 +1,67 @@
+# sha256 ledger for the fine-tune artifacts every v0.4 wave's numbers rest on.
+#
+# WHY THIS FILE IS IN THE REPO. The artifacts themselves live outside it, in
+# ~/workspace/oxide-runpod-artifacts/, which is not version-controlled and
+# not backed up. The hashes are small, so they can live with the record they
+# authenticate. Copied verbatim from that directory's SHAS.txt; the hash
+# lines below are byte-identical to it so `sha256sum -c` accepts them.
+#
+# EACH NON-COMMENT LINE is `<sha256>  <path>` in sha256sum's own text format
+# (two spaces). Two kinds of line, and they are not preserved the same way:
+#
+#   /workspace/gguf/*.gguf   POD-BUILT merged + q8_0-quantised models, hashed
+#                            on the pod at /workspace/gguf/. NOT preserved
+#                            locally: each is 8-16 GB and each is a pure
+#                            function of a base checkpoint and an adapter, so
+#                            every wave rebuilds the ones it needs from the
+#                            adapters (scripts/runpod/merge_lora.py, then
+#                            convert_quant.sh). These lines exist to prove a
+#                            rebuild reproduced the model a wave actually
+#                            served -- wave 8's Phase B confirmed the base
+#                            7B GGUF byte-identical across pods this way.
+#
+#   adapters-v*/...          THE LoRA ADAPTERS, which ARE preserved locally.
+#                            A few MB each, and not reproducible: retraining
+#                            costs GPU time and would not land byte-identical
+#                            anyway. If these are lost, every v0.4 dynamic
+#                            number becomes unreproducible.
+#
+# LOCAL PATH CONVENTION. The adapter paths are relative to the wave directory
+# that produced them, not to the artifacts root:
+#
+#   ~/workspace/oxide-runpod-artifacts/wave2/adapters-v3/<arm>/adapter_model.safetensors
+#   ~/workspace/oxide-runpod-artifacts/wave3/adapters-v4/<arm>/adapter_model.safetensors
+#   ~/workspace/oxide-runpod-artifacts/wave4/adapters-v5/<arm>/adapter_model.safetensors
+#
+# So a check runs from the wave directory, over that wave's lines only:
+#
+#   cd ~/workspace/oxide-runpod-artifacts/wave4 \
+#     && grep -E '^[0-9a-f]{64}  adapters-v5/' <this file> | sha256sum -c
+#
+# All four v5 adapters (7B and 14B, both arms) verified this way 2026-09-02,
+# along with the v3 and v4 pairs: 8 of 8 OK. The /workspace/gguf/ lines
+# cannot be checked locally -- those files were never transferred.
+#
+# VERIFY TRANSFERS BY CONTENT HASH, NEVER BY FILE COUNT. Wave 8's 14B screen
+# transferred a truncated `tune-rs-14-v5` that PASSED the file-count check
+# and read 1bf2b8b7... against the expected 57b32260... below. Caught only
+# because the hashes were checked. Had it gone unnoticed the control arm
+# would have run on corrupt weights and the ratio would have looked
+# plausible and meant nothing -- see eval/results/v04-wave8-14b-screen/REPORT.md.
+2f2b0f712f60f5f0b01e4869724914858184005fba303b4b0928138ffb47f9ce  /workspace/gguf/base-7.q8_0.gguf
+9980aa25689282619afb2b4f30595094aa4243e69e6124008cb55def12d56284  /workspace/gguf/base-1.5.q8_0.gguf
+662ea1ebdac56ba4abf1969e82625d83fbd8b8806ff25ea96ee6f9eb11e31dc6  /workspace/gguf/base-14.q8_0.gguf
+96428436709698bc2f22bc5712d1f9e7d26d0ddd23d6ac5874f0e3bfb886e49e  /workspace/gguf/tune-ox-1.5.q8_0.gguf
+03ee9c713427f0cc1bf7317f47f3a48a9b07a54c9e227a67c75a2d866f988149  /workspace/gguf/tune-rs-1.5.q8_0.gguf
+ddeaaca39e1041f36508beea934504ae325359dee849779b7d426fb7c11064b5  /workspace/gguf/tune-ox-7.q8_0.gguf
+a8c82702c0067bccec7b43aab0b88f63b947b9b5455974de039ee1aa6fca38c8  /workspace/gguf/tune-rs-7.q8_0.gguf
+515a30a10e3523ef8f8bb1fd4e4e3d514cbe181836dea35a902877b8102e71f1  /workspace/gguf/tune-ox-14.q8_0.gguf
+1c917fadda9d3aabfa9fb12241a22298301054ab7527dfc91a3f3d491200c25f  /workspace/gguf/tune-rs-14.q8_0.gguf
+1ac7bafc8d944771666a0f038e0d57a0cb22635cf0f1016ad667aad5b6d04d9e  adapters-v3/tune-ox-7-v3/adapter_model.safetensors
+728944b0293c8c42cf336b222fb6ba23598697f04b719622d7072f12450a043b  adapters-v3/tune-rs-7-v3/adapter_model.safetensors
+db32b3dfd6ab566b7902358d28da61438775f2f1d196b87e23e2f181e93256bf  adapters-v4/tune-ox-7-v4/adapter_model.safetensors
+230bb702772e86bfaaa41275f319cc5895ed759165b15f4c76f714f8d8818ac6  adapters-v4/tune-rs-7-v4/adapter_model.safetensors
+f4b5b9fe7158638e488e5587aaa2a217a8565a4dd14edb75fdefa1a20ceec4b2  adapters-v5/tune-ox-14-v5/adapter_model.safetensors
+57cc76a9e08daad6b147e3b1050ba7e3b1f780f08e4d195be6f5314b141fa5fd  adapters-v5/tune-ox-7-v5/adapter_model.safetensors
+57b322601a4c296224742855a3ab90c7ca9081114fd8f043a5057f60f1e72d29  adapters-v5/tune-rs-14-v5/adapter_model.safetensors
+a1b17df7964b2b5fe37d29728bef005b20fa97ec6aa494684b5896f4ac5a8842  adapters-v5/tune-rs-7-v5/adapter_model.safetensors

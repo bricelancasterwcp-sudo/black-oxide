@@ -162,6 +162,26 @@ limits, verifiable from the committed artifacts they name:
   [robigo](https://github.com/bricelancasterwcp-sudo/robigo) and
   [assay](https://github.com/bricelancasterwcp-sudo/assay).
 
+## What was built from it
+
+Three things carry the lessons forward, none of them another construct:
+
+- **[flux](https://github.com/bricelancasterwcp-sudo/flux)** — a
+  pre-registered experiment on this repository's Rust arms: apply rustc's
+  machine-applicable suggestions in a loop *before* a small model sees a
+  diagnostic, and measure what is left of the deficit. Its $0 census over
+  the committed cells already bounds the lever; the spec says so first.
+- **[caliper](https://github.com/bricelancasterwcp-sudo/caliper)** — an
+  inventory and extraction brief for the measurement bench under `eval/`
+  (paired arms, oracle-verified references, symmetric controls,
+  composition-controlled ratios, learnability, censuses, drift guards),
+  so the next "how do models use notation X vs Y" question does not start
+  from zero.
+- A notation-design playbook, the design-side sibling of the measurement
+  discipline, kept as a local skill: subtractive first, familiar spelling,
+  demand × cost, measure at deployment size, documentation ≠ capability,
+  and a collision check for familiar spellings with house meanings.
+
 ## The v0.2–v0.3 record
 
 Before the design loop, the project measured **repair**: hand a model a

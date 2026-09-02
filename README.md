@@ -181,7 +181,7 @@ dependencies.
 
 ```bash
 python3 -m venv .venv && .venv/bin/pip install pytest pytest-cov
-.venv/bin/pytest tests/ -q                 # 1741 tests (3 live-only, deselected by default)
+.venv/bin/pytest tests/ -q                 # 1767 tests (3 live-only, deselected by default)
 ```
 
 ```bash

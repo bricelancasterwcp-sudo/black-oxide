@@ -128,3 +128,52 @@ def test_render_names_the_arms_correctly(tmp_path):
     assert "tune-rs-14" in text
     assert "tune-ru-14" not in text
     assert "tune-ox-14" in text
+
+
+def _triples(root, arm, rows):
+    """rows: list of first-diagnostic code or None for a clean attempt."""
+    import json as _json
+    d = root / arm / f"{arm}-gen-s1"
+    d.mkdir(parents=True, exist_ok=True)
+    with open(d / "triples.jsonl", "w", encoding="utf-8") as fh:
+        for code in rows:
+            diags = [] if code is None else [{"code": code, "message": "m"}]
+            fh.write(_json.dumps({"task": "g01", "attempt": 1, "code": "x",
+                                  "diagnostics": diags}) + "\n")
+
+
+def test_diagnostic_mix_counts_only_the_first_diagnostic(tmp_path):
+    """Later diagnostics on one attempt are usually consequences of the
+    first, so counting them all would overstate whichever code cascades."""
+    import json as _json
+    from eval.wave8_screen import diagnostic_mix
+
+    d = tmp_path / "tune-ox-14" / "tune-ox-14-gen-s1"
+    d.mkdir(parents=True)
+    (d / "triples.jsonl").write_text(_json.dumps({
+        "task": "g01", "attempt": 1, "code": "x",
+        "diagnostics": [{"code": "OX0001"}, {"code": "OX0200"},
+                        {"code": "OX0200"}]}) + "\n", encoding="utf-8")
+    mix = diagnostic_mix(tmp_path / "tune-ox-14")
+    assert mix["codes"] == {"OX0001": 1}
+    assert mix["lexer_share"] == 1.0
+
+
+def test_lexer_share_is_the_mechanism_check(tmp_path):
+    """SPEC 65's claim is that '[' was the dominant lexer cause. If
+    OX0001 stays high once '[' is legal, that attribution was wrong."""
+    from eval.wave8_screen import diagnostic_mix
+
+    _triples(tmp_path, "tune-ox-14",
+             ["OX0001"] * 2 + ["OX0200"] * 6 + [None] * 2)
+    mix = diagnostic_mix(tmp_path / "tune-ox-14")
+    assert mix["attempts"] == 10
+    assert mix["failed"] == 8
+    assert mix["lexer_share"] == 0.25
+
+
+def test_lexer_share_is_none_rather_than_zero_when_nothing_failed(tmp_path):
+    from eval.wave8_screen import diagnostic_mix
+
+    _triples(tmp_path, "tune-ox-14", [None, None])
+    assert diagnostic_mix(tmp_path / "tune-ox-14")["lexer_share"] is None

@@ -67,9 +67,16 @@ def guard(arm_dir: Path, arm: str) -> dict:
     }
 
 
-#: Wave 8's 14B large-tier baseline: 73 of 191 first diagnostics were
-#: OX0001 (lexer), overwhelmingly `unexpected character '['`.
-LEXER_SHARE_BASELINE = 73 / 191
+#: Wave 8's 14B large-tier baseline under `diagnostic_mix`'s own lens:
+#: 73 of the 216 attempts (first and repair alike) that carried any
+#: diagnostic had `OX0001` (lexer) first, overwhelmingly `unexpected
+#: character '['`. An earlier value here read 73/191 -- the 191 was the
+#: sum of the four largest codes in the wave-8 report's table, not the
+#: instrument's denominator; it was never computed from the cells. A
+#: real-data test now pins this constant to the committed wave-8 cells
+#: (tests/test_wave9_rescreen.py), recorded in the wave-9 plan's
+#: 2026-09-02 11:55 UTC amendment.
+LEXER_SHARE_BASELINE = 73 / 216
 
 
 def diagnostic_mix(arm_dir: Path) -> dict:

@@ -101,3 +101,28 @@ Request ≥150 GB disk. Terminate then verify zero pods twice.
   (b) A pod must never outlive the session that provisioned it without
   a detached run already on it: provision, verify, launch, *then* do
   anything else. This one was provisioned last.
+
+### AMENDED 2026-09-02 11:55 UTC, before any number exists: the secondary endpoint's baseline was mis-transcribed
+
+The plan above quotes wave 8's `OX0001` share as **73 of 191 ≈ 38%**.
+Running the instrument that will read the re-screen
+(`eval.wave8_screen.diagnostic_mix`) over the committed wave-8 cells
+(`eval/results/v04-wave8-14b-screen/results-large/tune-ox-14/`) gives
+**73 of 216 = 0.338**. The 191 is the sum of the four largest codes in
+the wave-8 report's table (73 + 51 + 43 + 24) and omits the five smaller
+ones (`OX0100` 20, `OX0400` 2, `OX0308` 1, `OX0205` 1, `OX0403` 1 — 25
+attempts). All 216 first diagnostics are compiler codes; nothing was
+excluded on purpose.
+
+**Lens, stated exactly:** the denominator is every attempt of the arm —
+first attempts and repair attempts alike, 238 in wave 8 — that carries
+at least one diagnostic (216); the numerator is those whose *first*
+diagnostic is `OX0001`. The baseline is **0.338**, and
+`LEXER_SHARE_BASELINE` is now pinned to the committed cells by a
+real-data test rather than typed in from a report.
+
+The **15% threshold stands** as written. It was a chosen number, not one
+derived from the baseline, and it is marked as chosen here; a share
+below 0.15 against a baseline of 0.338 still says what the plan meant
+it to say. Recorded before the pod has produced a cell, so the baseline
+is not adjusted with the result in view.

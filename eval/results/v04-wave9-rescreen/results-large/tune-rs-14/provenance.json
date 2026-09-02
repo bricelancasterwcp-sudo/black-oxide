@@ -1,0 +1,29 @@
+{
+  "arm": "rust",
+  "families": [
+    "gen"
+  ],
+  "gguf": "tune-rs-14.q8_0.gguf",
+  "gguf_sha256": "88ca86075d499b22c945e334ea9a0546ddaa77982e2c43725a092af68ebbde66",
+  "identity": {
+    "model_path": "/workspace/gguf/tune-rs-14.q8_0.gguf"
+  },
+  "include_lead": false,
+  "llamacpp_commit": "0f3a71be15af836d277c9f918adfafb45732677e",
+  "name": "tune-rs-14",
+  "num_ctx": 8192,
+  "num_predict": 2048,
+  "seeds": [
+    1,
+    2,
+    3
+  ],
+  "seeds_subset": [
+    1,
+    2,
+    3
+  ],
+  "tasks_path": "eval/tasks-large.jsonl",
+  "temperature": 0.2,
+  "top_p": 0.95
+}

@@ -1,0 +1,43 @@
+fn main() {
+    let readings = [4, 4, 4, 7, 7, 2, 9, 9, 9, 9, 1, 1, 5];
+    println!("{}", readings.len());
+    let mut max_stretch = 0;
+    let mut current_stretch = 1;
+    let mut max_value = readings[0];
+    for i in 1..readings.len() {
+        if readings[i] == readings[i - 1] {
+            current_stretch += 1;
+        } else {
+            if current_stretch > max_stretch {
+                max_stretch = current_stretch;
+                max_value = readings[i - 1];
+            }
+            current_stretch = 1;
+        }
+    }
+    if current_stretch > max_stretch {
+        max_stretch = current_stretch;
+        max_value = readings[readings.len() - 1];
+    }
+    println!("{}", max_stretch);
+    println!("{}", max_value);
+    let mut unique_values = std::collections::HashSet::new();
+    for &reading in &readings {
+        unique_values.insert(reading);
+    }
+    println!("{}", unique_values.len());
+    for i in 1..readings.len() {
+        if unique_values.contains(&readings[i]) {
+            println!("{}", i);
+            break;
+        }
+    }
+    let mut never_decreases = true;
+    for i in 1..readings.len() {
+        if readings[i] < readings[i - 1] {
+            never_decreases = false;
+            break;
+        }
+    }
+    println!("{}", never_decreases);
+}

@@ -1,0 +1,19 @@
+fn main() {
+    let mut settings = (4, 2, 30, "base");
+    let revisions = vec![
+        (Some(8), None, None, Some("tuned")),
+        (None, None, Some(90), Some("patient")),
+        (None, Some(5), None, Some("settled")),
+        (Some(16), None, None, Some("wide")),
+        (None, None, Some(120), Some("last")),
+    ];
+    for revision in revisions.iter().chain(std::iter::once(&(settings.0, settings.1, settings.2, settings.3))) {
+        let (workers, retries, timeout, label) = *revision;
+        println!("{}", label.unwrap_or(settings.3));
+        println!("{}", workers.unwrap_or(settings.0));
+        println!("{}", retries.unwrap_or(settings.1));
+        println!("{}", timeout.unwrap_or(settings.2));
+        println!("{}", (workers.unwrap_or(settings.0)) * (timeout.unwrap_or(settings.2)));
+    }
+    println!("{}", settings.0 + settings.1 + settings.2);
+}

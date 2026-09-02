@@ -1,0 +1,20 @@
+fn main() {
+    let grid = [4, 9, 2, 3, 5, 7, 8, 1, 6];
+    for i in 0..3 {
+        println!("{}", grid[i * 3] + grid[i * 3 + 1] + grid[i * 3 + 2]);
+    }
+    for i in 0..3 {
+        println!("{}", grid[i] + grid[i + 3] + grid[i + 6]);
+    }
+    println!("{}", grid[0] + grid[4] + grid[8]);
+    println!("{}", grid[2] + grid[4] + grid[6]);
+    let row_sums = [15, 15, 15];
+    let col_sums = [15, 15, 15];
+    let diag1_sum = 15;
+    let diag2_sum = 15;
+    let all_equal = row_sums.iter().all(|&x| x == row_sums[0])
+        && col_sums.iter().all(|&x| x == col_sums[0])
+        && diag1_sum == row_sums[0]
+        && diag2_sum == row_sums[0];
+    println!("{}", all_equal);
+}

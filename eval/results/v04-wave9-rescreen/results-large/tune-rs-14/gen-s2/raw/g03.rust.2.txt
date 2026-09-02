@@ -1,0 +1,29 @@
+fn main() {
+    let north = vec![
+        ("bolt", 40, 3),
+        ("hinge", 8, 25),
+        ("plate", 15, 12),
+    ];
+    let south = vec![
+        ("clamp", 6, 45),
+        ("rod", 22, 9),
+        ("washer", 100, 1),
+        ("gasket", 4, 30),
+    ];
+    for (warehouse, parts) in [("North", &north), ("South", &south)] {
+        let total_value: i32 = parts.iter().map(|(_, q, p)| q * p).sum();
+        let below_ten_count = parts.iter().filter(|&(q, _, _)| q < 10).count();
+        let (max_part, _, _) = parts.iter().max_by_key(|&(_, q, p)| q * p).unwrap();
+        println!("{}", warehouse);
+        println!("{}", total_value);
+        println!("{}", below_ten_count);
+        println!("{}", max_part);
+    }
+    let north_value: i32 = north.iter().map(|(_, q, p)| q * p).sum();
+    let south_value: i32 = south.iter().map(|(_, q, p)| q * p).sum();
+    if north_value > south_value {
+        println!("North");
+    } else {
+        println!("South");
+    }
+}

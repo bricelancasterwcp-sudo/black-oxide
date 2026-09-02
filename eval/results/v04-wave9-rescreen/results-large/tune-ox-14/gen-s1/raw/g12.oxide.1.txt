@@ -1,0 +1,59 @@
+struct Rectangle { width: Int, height: Int }
+struct Square { side: Int }
+struct Circle { radius: Int }
+fn area(r: Rectangle) -> Int {
+    r.width * r.height
+}
+fn area(s: Square) -> Int {
+    s.side * s.side
+}
+fn area(c: Circle) -> Int {
+    3 * c.radius * c.radius
+}
+fn main() {
+    let figures = vec(
+        Rectangle { width: 7, height: 4 },
+        Square { side: 5 },
+        Circle { radius: 3 },
+        Rectangle { width: 2, height: 9 }
+    )
+    let mut total_area = 0
+    let mut max_area = 0
+    let mut max_kind = ""
+    for f in figures {
+        match f {
+            Rectangle { width, height } => {
+                print_str("rect")
+                let a = area(Rectangle { width, height })
+                print(a)
+                total_area += a
+                if a > max_area {
+                    max_area = a
+                    max_kind = "rect"
+                }
+            }
+            Square { side } => {
+                print_str("square")
+                let a = area(Square { side })
+                print(a)
+                total_area += a
+                if a > max_area {
+                    max_area = a
+                    max_kind = "square"
+                }
+            }
+            Circle { radius } => {
+                print_str("circle")
+                let a = area(Circle { radius })
+                print(a)
+                total_area += a
+                if a > max_area {
+                    max_area = a
+                    max_kind = "circle"
+                }
+            }
+        }
+    }
+    print(total_area)
+    print_str(max_kind)
+}

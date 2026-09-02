@@ -1,0 +1,60 @@
+fn main() {
+    let text = "order 47 shipped on 2026-03-15, invoice 1290 paid."
+    let char_count = str_len(text)
+    let letter_count = count_if(text.chars(), |c| is_alpha(c))
+    let digit_count = count_if(text.chars(), |c| is_digit(c))
+    let space_count = count_if(text.chars(), |c| c == " ")
+    let other_count = char_count - (letter_count + digit_count + space_count)
+    let max_digit_streak = max_digit_streak_length(text)
+    let digits_str = collect_str(filter_chars(text, |c| is_digit(c)))
+    print(char_count)
+    print(letter_count)
+    print(digit_count)
+    print(space_count)
+    print(other_count)
+    print(max_digit_streak)
+    print(digits_str)
+}
+fn count_if(v: Vec<Char>, f: Fn(Char) -> Bool) -> Int {
+    let mut count = 0
+    for c in v {
+        if f(c) {
+            count += 1
+        }
+    }
+    count
+}
+fn max_digit_streak_length(s: Str) -> Int {
+    let mut max_streak = 0
+    let mut current_streak = 0
+    for c in chars(s) {
+        if is_digit(c) {
+            current_streak += 1
+        } else {
+            if current_streak > max_streak {
+                max_streak = current_streak
+            }
+            current_streak = 0
+        }
+    }
+    if current_streak > max_streak {
+        max_streak = current_streak
+    }
+    max_streak
+}
+fn filter_chars(s: Str, f: Fn(Char) -> Bool) -> Vec<Char> {
+    let mut result = vec()
+    for c in chars(s) {
+        if f(c) {
+            result = push(result, c)
+        }
+    }
+    result
+}
+fn collect_str(v: Vec<Char>) -> Str {
+    let mut result = ""
+    for c in v {
+        result = concat(result, c)
+    }
+    result
+}

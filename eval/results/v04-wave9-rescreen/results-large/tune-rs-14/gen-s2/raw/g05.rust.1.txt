@@ -1,0 +1,63 @@
+fn main() {
+    let mut ledger_one = Ledger::new("ledger-one", 500);
+    ledger_one.apply(200);
+    ledger_one.apply(-750);
+    ledger_one.apply(130);
+    ledger_one.apply(-60);
+    ledger_one.apply(400);
+    ledger_one.print();
+    let mut ledger_two = Ledger::new("ledger-two", 300);
+    ledger_two.apply(-100);
+    ledger_two.apply(250);
+    ledger_two.apply(-50);
+    ledger_two.apply(75);
+    ledger_two.print();
+    if ledger_one.closing_balance > ledger_two.closing_balance {
+        println!("{}", ledger_one.name);
+    } else {
+        println!("{}", ledger_two.name);
+    }
+}
+struct Ledger {
+    name: &'static str,
+    opening_balance: i32,
+    adjustments: Vec<i32>,
+    largest_positive_adjustment: i32,
+    negative_adjustments_count: usize,
+    balance_below_zero: bool,
+}
+impl Ledger {
+    fn new(name: &'static str, opening_balance: i32) -> Self {
+        Ledger {
+            name,
+            opening_balance,
+            adjustments: Vec::new(),
+            largest_positive_adjustment: 0,
+            negative_adjustments_count: 0,
+            balance_below_zero: false,
+        }
+    }
+    fn apply(&mut self, adjustment: i32) {
+        self.adjustments.push(adjustment);
+        if adjustment > 0 && adjustment > self.largest_positive_adjustment {
+            self.largest_positive_adjustment = adjustment;
+        }
+        if adjustment < 0 {
+            self.negative_adjustments_count += 1;
+        }
+        let new_balance = self.opening_balance + self.adjustments.iter().sum::<i32>();
+        if new_balance < 0 {
+            self.balance_below_zero = true;
+        }
+    }
+    fn print(&self) {
+        println!("{}", self.name);
+        println!("{}", self.closing_balance());
+        println!("{}", self.largest_positive_adjustment);
+        println!("{}", self.negative_adjustments_count);
+        println!("{}", self.balance_below_zero);
+    }
+    fn closing_balance(&self) -> i32 {
+        self.opening_balance + self.adjustments.iter().sum::<i32>()
+    }
+}

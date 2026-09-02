@@ -1,0 +1,17 @@
+fn main() {
+    let input = "name=widget;qty=17;price=245;tag=blue"
+    let pairs = str_split(input, ";")
+    print(len(pairs))
+    for pair in pairs {
+        let parts = str_split(pair, "=")
+        if len(parts) == 2 {
+            print(get(parts, 0).unwrap_or(""))
+            print(get(parts, 1).unwrap_or(""))
+        }
+    }
+    let qty_str = get(find_str(input, "qty").unwrap_or(""), 4).unwrap_or("")
+    let price_str = get(find_str(input, "price").unwrap_or(""), 6).unwrap_or("")
+    let qty = parse_int(qty_str).unwrap_or(0)
+    let price = parse_int(price_str).unwrap_or(0)
+    print(qty * price)
+}

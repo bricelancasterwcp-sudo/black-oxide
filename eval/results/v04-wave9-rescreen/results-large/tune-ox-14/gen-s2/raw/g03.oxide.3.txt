@@ -1,0 +1,56 @@
+struct Part { name: Str, quantity: Int, price: Int }
+fn calculate_value(part: Part) -> Int {
+    part.quantity * part.price
+}
+fn count_low_stock(parts: Vec<Part>) -> Int {
+    let mut count = 0
+    for p in parts {
+        if p.quantity < 10 {
+            count += 1
+        }
+    }
+    count
+}
+fn find_most_valuable_part(parts: Vec<Part>) -> Str {
+    let mut max_value = -1
+    let mut max_name = ""
+    for p in parts {
+        let value = calculate_value(p)
+        if value > max_value {
+            max_value = value
+            max_name = p.name
+        }
+    }
+    max_name
+}
+fn main() {
+    let north_parts = vec(
+        Part { name: "bolt", quantity: 40, price: 3 },
+        Part { name: "hinge", quantity: 8, price: 25 },
+        Part { name: "plate", quantity: 15, price: 12 },
+    )
+    let south_parts = vec(
+        Part { name: "clamp", quantity: 6, price: 45 },
+        Part { name: "rod", quantity: 22, price: 9 },
+        Part { name: "washer", quantity: 100, price: 1 },
+        Part { name: "gasket", quantity: 4, price: 30 },
+    )
+    let warehouses = vec("North", "South")
+    let parts_vecs = vec(north_parts, south_parts)
+    let mut total_values = vec(0, 0)
+    for i in range(0, len(parts_vecs)) {
+        print_str(warehouses[i])
+        let total_value = sum(map(parts_vecs[i], calculate_value))
+        total_values[i] = total_value
+        print(total_value)
+        print(count_low_stock(parts_vecs[i]))
+        print_str(find_most_valuable_part(parts_vecs[i]))
+    }
+    let north_value = total_values[0]
+    let south_value = total_values[1]
+    if north_value > south_value {
+        print_str("North")
+    } else {
+        print_str("South")
+    }
+}

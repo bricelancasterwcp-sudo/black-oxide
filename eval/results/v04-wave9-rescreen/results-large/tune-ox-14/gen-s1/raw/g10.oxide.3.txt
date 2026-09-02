@@ -1,0 +1,40 @@
+struct Phrase { label: Str, words: Vec<Str> }
+fn split(s: Str, delimiter: Str) -> Vec<Str> {
+    let mut result = vec()
+    let mut current = ""
+    for c in chars(s) {
+        if c == delimiter {
+            result = push(result, current)
+            current = ""
+        } else {
+            current = concat(current, c)
+        }
+    }
+    result = push(result, current)
+    result
+}
+fn main() {
+    let first = Phrase { label: "first", words: split("the harbour lights flickered", " ") }
+    let second = Phrase { label: "second", words: split("a small boat drifted past silently", " ") }
+    for p in vec(clone(first), clone(second)) {
+        print_str(p.label)
+        print(len(p.words))
+        let mut max_len = 0
+        let mut min_len = 1000000
+        let mut long_count = 0
+        for word in p.words {
+            let len = str_len(word)
+            if len > max_len { max_len = len }
+            if len < min_len { min_len = len }
+            if len > 4 { long_count += 1 }
+        }
+        print(max_len)
+        print(min_len)
+        print(long_count)
+    }
+    if len(first.words) > len(second.words) {
+        print_str("first")
+    } else {
+        print_str("second")
+    }
+}

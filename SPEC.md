@@ -3757,3 +3757,24 @@ parenthesised** because Rust binds `as` tighter than arithmetic, and
 to compile. A non-copy element appends `.clone()` under section 36's
 type-conditional rule, without which rustc reports E0507, cannot move
 out of index.
+
+### 65.5 What the re-screen measured (recorded 2026-09-02)
+
+The pre-registered re-screen
+(`docs/superpowers/plans/2026-09-02-v04-wave9-rescreen-plan.md`,
+`eval/results/v04-wave9-rescreen/REPORT.md`) ran the wave-8 14B screen
+unchanged against this construct. Stop 1 fired — the tuned-Oxide small
+guard read 0.7833 against its 0.8000 anchor — and the cause is an
+unpinned llama.cpp commit, not the merge or the language; no ratio is
+published against wave 8. Within the run, Oxide compiled **3 of 60**
+large-tier attempts, the same count as wave 8. The lexer share of first
+diagnostics fell **0.338 → 0.019**: `[` was the lexer barrier, and two
+byte-identical programs that died at `[` in wave 8 compile and pass
+here. The attempts moved to the next fatal layers — **tuples** (types,
+`for (i, x)` patterns, destructuring; ≥53 first diagnostics) and the
+string stdlib (`OX0200` 54). Under the plan's consequence table that is
+the `< 0.12` row: one construct at a time does not close the gap at this
+size. The design loop is closed on this record (owner, 2026-09-02);
+§65's construct stands as shipped. Instrument changes: llama.cpp pinned
+in `pod_setup.sh`; `eval/wave9_rescreen.py`; the lexer-share baseline
+corrected from 73/191 to 73/216 before the run.

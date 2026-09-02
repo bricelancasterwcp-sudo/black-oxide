@@ -23,9 +23,16 @@ if ! command -v rustc >/dev/null; then
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --profile minimal
   source "$HOME/.cargo/env"
 fi
+# PINNED. The wave-9 re-screen's tuned-Oxide guard missed its seed-matched
+# anchor by one cell because this clone tracked HEAD: the commit moved from
+# b96806d (wave 8) to 0f3a71b (wave 9) and one generation on seed 3 came
+# out differently with byte-identical weights, sampler and seed. A guard
+# that tests the environment must not have the environment moving under it.
+LLAMACPP_COMMIT="${LLAMACPP_COMMIT:-b96806d96061049a5b574269b049bf6241d63d46}"
 if [ ! -d llama.cpp ]; then
   git clone https://github.com/ggml-org/llama.cpp.git
 fi
+git -C llama.cpp checkout -q "$LLAMACPP_COMMIT"
 if [ ! -x llama.cpp/build/bin/llama-server ]; then
   # the runpod/pytorch image ships nvcc off PATH (learned on pod g41ma10i0c35kv)
   export CUDACXX=/usr/local/cuda/bin/nvcc

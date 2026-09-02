@@ -1,0 +1,39 @@
+fn main() {
+    let north = vec![12, 15, 19, 14, 14, 20, 31, 30];
+    let south = vec![40, 38, 41, 45, 50, 44];
+    let sensors = vec![("north", &north), ("south", &south)];
+    for (name, readings) in sensors {
+        let mut increased = 0;
+        let mut decreased = 0;
+        let mut max_increase = 0;
+        let mut current_stretch = 0;
+        let mut longest_stretch = 0;
+        for window in readings.windows(2) {
+            match window[1].cmp(&window[0]) {
+                std::cmp::Ordering::Greater => {
+                    increased += 1;
+                    current_stretch += 1;
+                    max_increase = max_increase.max(window[1] - window[0]);
+                }
+                std::cmp::Ordering::Less => {
+                    decreased += 1;
+                    current_stretch = 0;
+                }
+                std::cmp::Ordering::Equal => {
+                    current_stretch = 0;
+                }
+            }
+            longest_stretch = longest_stretch.max(current_stretch);
+        }
+        println!("{}", name);
+        println!("{}", increased);
+        println!("{}", decreased);
+        println!("{}", max_increase);
+        println!("{}", longest_stretch);
+    }
+    if north.len() > south.len() {
+        println!("north");
+    } else {
+        println!("south");
+    }
+}

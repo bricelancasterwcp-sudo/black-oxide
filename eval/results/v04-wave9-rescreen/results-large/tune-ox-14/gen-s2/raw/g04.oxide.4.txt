@@ -1,0 +1,52 @@
+fn is_prime(n: Int) -> Bool {
+    if n <= 1 { return false }
+    for i in range(2, n) {
+        if n % i == 0 {
+            return false
+        }
+    }
+    true
+}
+fn prime_factors(n: Int) -> Vec<Int> {
+    let mut factors = vec()
+    let mut nn = n
+    for i in range(2, n + 1) {
+        while nn % i == 0 {
+            factors = push(factors, i)
+            nn /= i
+        }
+    }
+    factors
+}
+fn distinct_prime_factors(n: Int) -> Vec<Int> {
+    let mut factors = prime_factors(n)
+    let mut unique_factors = vec()
+    for factor in factors {
+        if !contains(unique_factors, factor) {
+            unique_factors = push(unique_factors, factor)
+        }
+    }
+    unique_factors
+}
+fn main() {
+    let numbers = vec(360, 97, 1024, 561, 143, 2003)
+    let mut prime_count = 0
+    for number in numbers {
+        print(number)
+        let factors = distinct_prime_factors(number)
+        print(len(factors))
+        print(sum(factors))
+        if len(factors) > 0 {
+            print(unwrap_or(get(factors, len(factors) - 1), -1))
+        } else {
+            print(-1)
+        }
+        if is_prime(number) {
+            prime_count += 1
+            print_str("true")
+        } else {
+            print_str("false")
+        }
+    }
+    print(prime_count)
+}

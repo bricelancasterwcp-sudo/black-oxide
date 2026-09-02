@@ -1,0 +1,5 @@
+d5473be2016e06666aa850bbb63eb04e2851c9f4407d0b37028c0ec49fc96486  /workspace/gguf/base-14.q8_0.gguf
+fb7c0bde8bb6f6968657afd7410650683ec5365f848a51a842f04ade36c65485  /workspace/gguf/tune-ox-14.q8_0.gguf
+88ca86075d499b22c945e334ea9a0546ddaa77982e2c43725a092af68ebbde66  /workspace/gguf/tune-rs-14.q8_0.gguf
+
+0f3a71be15af836d277c9f918adfafb45732677e

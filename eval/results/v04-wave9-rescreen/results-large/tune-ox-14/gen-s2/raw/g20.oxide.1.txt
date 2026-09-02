@@ -1,0 +1,34 @@
+fn main() {
+    let mut primes = vec()
+    for i in range(2, 101) {
+        primes = push(primes, i)
+    }
+    let mut i = 0
+    while i < len(primes) {
+        let p = primes[i]
+        let mut j = i + 1
+        while j < len(primes) {
+            if primes[j] % p == 0 {
+                primes = remove(primes, j)
+            } else {
+                j += 1
+            }
+        }
+        i += 1
+    }
+    print(len(primes))
+    print(unwrap_or(get(primes, len(primes) - 1), -1))
+    let sum = 0
+    for p in primes {
+        sum += p
+    }
+    print(sum)
+    let mut count = 0
+    for i in range(0, len(primes) - 1) {
+        if primes[i + 1] - primes[i] == 2 {
+            count += 1
+        }
+    }
+    print(count)
+    print(unwrap_or(get(primes, 9), -1))
+}

@@ -1,0 +1,42 @@
+fn main() {
+    let mut value = 44;
+    let mut rounds = 0;
+    let mut max_value = 44;
+    let mut min_value = 44;
+    let mut sum_values = 0;
+    let mut even_rounds = 0;
+    let mut sum_digits = 0;
+    let mut reached_one = false;
+    let mut previous_value = 44;
+    while rounds < 50 && !reached_one {
+        let mut new_value = 0;
+        let mut temp_value = value;
+        while temp_value > 0 {
+            let digit = temp_value % 10;
+            new_value += digit * digit;
+            sum_digits += digit;
+            temp_value /= 10;
+        }
+        if new_value == 1 {
+            reached_one = true;
+        }
+        if new_value % 2 == 0 {
+            even_rounds += 1;
+        }
+        max_value = max_value.max(new_value);
+        min_value = min_value.min(new_value);
+        sum_values += new_value;
+        previous_value = value;
+        value = new_value;
+        rounds += 1;
+    }
+    println!("{}", rounds);
+    println!("{}", value);
+    println!("{}", previous_value);
+    println!("{}", max_value);
+    println!("{}", min_value);
+    println!("{}", sum_values);
+    println!("{}", even_rounds);
+    println!("{}", sum_digits);
+    println!("{}", reached_one);
+}

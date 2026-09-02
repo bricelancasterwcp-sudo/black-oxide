@@ -1,0 +1,42 @@
+```rust
+use std::fmt;
+
+trait Shape {
+    fn perimeter(&self) -> f64;
+}
+
+struct Rectangle {
+    width: f64,
+    height: f64,
+}
+
+impl Shape for Rectangle {
+    fn perimeter(&self) -> f64 {
+        2.0 * (self.width + self.height)
+    }
+}
+
+struct Triangle {
+    side1: f64,
+    side2: f64,
+    side3: f64,
+}
+
+impl Shape for Triangle {
+    fn perimeter(&self) -> f64 {
+        self.side1 + self.side2 + self.side3
+    }
+}
+
+fn main() {
+    let shapes: Vec<Box<dyn Shape>> = vec![
+        Box::new(Rectangle { width: 3.0, height: 4.0 }),
+        Box::new(Triangle { side1: 3.0, side2: 4.0, side3: 5.0 }),
+        Box::new(Rectangle { width: 2.0, height: 5.0 }),
+    ];
+
+    for shape in shapes {
+        println!("{}", shape.perimeter());
+    }
+}
+```

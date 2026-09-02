@@ -1,0 +1,46 @@
+fn main() {
+    let numbers = vec(360, 97, 1024, 561, 143, 2003)
+    let mut prime_count = 0
+    for n in numbers {
+        let primes = distinct_primes(n)
+        print(n)
+        print(len(primes))
+        print(sum(primes))
+        if len(primes) > 0 {
+            print(primes[len(primes) - 1])
+        } else {
+            print(-1)
+        }
+        if is_prime(n) {
+            prime_count += 1
+            print(1)
+        } else {
+            print(0)
+        }
+    }
+    print(prime_count)
+}
+fn distinct_primes(n: Int) -> Vec<Int> {
+    let mut primes = vec()
+    let mut x = n
+    for i in range(2, n + 1) {
+        if x % i == 0 && is_prime(i) {
+            primes = push(primes, i)
+            while x % i == 0 {
+                x /= i
+            }
+        }
+    }
+    primes
+}
+fn is_prime(n: Int) -> Bool {
+    if n <= 1 {
+        return false
+    }
+    for i in range(2, n) {
+        if n % i == 0 {
+            return false
+        }
+    }
+    true
+}

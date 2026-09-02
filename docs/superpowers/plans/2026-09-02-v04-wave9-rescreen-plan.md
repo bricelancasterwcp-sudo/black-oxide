@@ -75,3 +75,29 @@ read 41 GB against an actual 251 GB last run). Verify transfers by
 CONTENT HASH against `SHAS.txt`, not file count — a truncated tar passed
 the count check last run and would have corrupted the control arm.
 Request ≥150 GB disk. Terminate then verify zero pods twice.
+
+### AMENDED 2026-09-02 11:30 UTC, before any number exists: two pods, no measurement yet
+
+- Pod `bf1mt4qibzo9tw` was provisioned at 02:15 UTC by the session that
+  wrote this plan, and that session ended before running anything on it.
+  Found at 11:21 UTC with an empty `/workspace`: **9.1 h idle, ≈$2.00 at
+  $0.22/h, zero steps executed.**
+- On that pod `nvidia-smi` listed the RTX 3090, and `cuInit` returned
+  **999 (CUDA_ERROR_UNKNOWN)**; `torch.cuda.is_available()` was False.
+  Stop 3 fires: terminated at 11:24 UTC before any hours were committed.
+  Zero pods verified.
+- Replacement `dv2nyotmwhyksp` created 11:24 UTC from the same spec.
+- **How this reads against the stops, decided now.** No measurement was
+  started, so nothing here is a re-roll: an infrastructure loss with no
+  numbers read may be rerun from zero. The $1.00 spend stop bounds *the
+  run*; its clock starts at the replacement pod's creation. The ≈$2.00
+  idle loss is recorded in the report and in the program total as an
+  ops loss, not netted against the stop. If the owner reads it
+  otherwise the run is void. The reading is committed here so it is not
+  chosen after seeing the number.
+- Two carried ops rules gain a clause. (a) `nvidia-smi` succeeding is
+  not evidence the GPU is usable; ask the driver (`cuInit`) before any
+  other step, which `scripts/runpod/wave9_rescreen.sh` now does first.
+  (b) A pod must never outlive the session that provisioned it without
+  a detached run already on it: provision, verify, launch, *then* do
+  anything else. This one was provisioned last.

@@ -17,14 +17,6 @@ if ! command -v cmake >/dev/null; then
   DEBIAN_FRONTEND=noninteractive apt-get install -y -qq cmake build-essential || true
 fi
 
-# Conversion deps FIRST: llama.cpp's requirements file moves torch, and on
-# the pytorch images that leaves a torchvision built for the OLD torch --
-# which transformers imports, so every `from peft import ...` dies with a
-# misleading "Could not import BloomPreTrainedModel". Nothing here needs
-# vision. Order matters: pin transformers/peft AFTER the requirements file
-# has had its way with them.
-pip install --break-system-packages -q -r llama.cpp/requirements/requirements-convert_hf_to_gguf.txt || true
-pip uninstall -y -q torchvision || true
 pip install --break-system-packages -q transformers==5.5.0 accelerate==1.14.0 peft==0.20.0 bitsandbytes
 # rustc is the harness oracle — the eval side of this pod needs it:
 if ! command -v rustc >/dev/null; then
@@ -41,6 +33,18 @@ if [ ! -x llama.cpp/build/bin/llama-server ]; then
   cmake -S llama.cpp -B llama.cpp/build -DGGML_CUDA=ON -DCMAKE_BUILD_TYPE=Release
   cmake --build llama.cpp/build -j "$(nproc)" --target llama-server llama-quantize
 fi
+# Conversion deps, AFTER the llama.cpp clone -- an earlier version of this
+# installed them first, when llama.cpp/ did not exist yet, and `|| true`
+# swallowed the failure until convert_hf_to_gguf.py died mid-campaign.
+#
+# Install sentencepiece and llama.cpp's OWN gguf-py rather than its
+# requirements file: that file moves torch, which strands a torchvision
+# built for the old one, and transformers imports torchvision -- surfacing
+# as a misleading "Could not import BloomPreTrainedModel". Installing only
+# what is missing leaves the CUDA torch untouched.
+pip install --break-system-packages -q sentencepiece
+pip install --break-system-packages -q ./llama.cpp/gguf-py
+
 git -C llama.cpp rev-parse HEAD > /workspace/llamacpp.commit
 python -c "import torch; print(torch.__version__, torch.cuda.get_device_name(0))"
 echo SETUP-OK

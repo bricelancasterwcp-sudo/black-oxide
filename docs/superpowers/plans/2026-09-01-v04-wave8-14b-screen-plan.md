@@ -121,6 +121,25 @@ RTX 3090 24 GB, `torch.cuda` True, driver 580.65.06.
 
 Community 3090 with a single `gpuTypeIds` pin and `PUBLIC_KEY` in env;
 verify `torch.cuda` before committing hours; liveness = SSH, never the
-`runtime` field; count-verify transfers by FILE COUNT; terminate then
-verify zero pods twice. `pod_setup.sh` now installs the conversion
-requirements and drops `torchvision` — Phase B lost ~20 minutes to that.
+`runtime` field; terminate then verify zero pods twice. `pod_setup.sh`
+now installs python3.12, cmake, the conversion requirements, and drops
+`torchvision` — Phase B lost time to each of those.
+
+### AMENDED 2026-09-01: count-verify is necessary but NOT sufficient
+
+The rule carried since wave 0 is "count-verify every rsync by FILE
+COUNT, never `du`", bought when a timeout-truncated transfer lost the
+rust adapters with a pod.
+
+**This run truncated a transfer that PASSED the file-count check.** The
+adapter tar hit a 10-minute timeout mid-stream; `tune-rs-14-v5` still
+had its correct **4 files**, and its `adapter_model.safetensors` hashed
+`1bf2b8b7…` against the expected `57b32260…`.
+
+**The rule is upgraded: verify transfers by CONTENT HASH against
+`SHAS.txt`, not by file count.** A count check cannot see a truncated
+final file, and this is exactly the arm — the rust control — whose
+corruption would have left the compile-rate ratio meaningless while
+looking entirely plausible.
+
+Both adapters re-verified after re-transfer: `f4b5b9fe…` / `57b32260…`.

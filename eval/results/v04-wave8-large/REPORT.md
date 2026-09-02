@@ -153,6 +153,16 @@ amended accordingly, before any Phase B run. **This is the same class of
 error that cost waves 2 through 6: a comparison whose two halves were
 not on the same footing.**
 
+## Provenance
+
+- **2026-09-02.** The training-corpus direction (feed-forward item 6) is
+  now in the instrument rather than run by hand: `python -m
+  eval.train_corpus --source large --train-corpus
+  eval/results/v04-campaign4/matched-v5 --train-tasks
+  eval/train/tasks.jsonl` reproduces both zeros — 40 subject programs and
+  20 prompts against the v5 corpus's 661 programs and 40 prompts — and
+  exits non-zero on any hit.
+
 ## Feed-forward
 
 1. **Quote the static claim with its scale.** "Below parity" is true of

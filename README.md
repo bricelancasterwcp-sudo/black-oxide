@@ -170,7 +170,10 @@ Three things carry the lessons forward, none of them another construct:
   pre-registered experiment on this repository's Rust arms: apply rustc's
   machine-applicable suggestions in a loop *before* a small model sees a
   diagnostic, and measure what is left of the deficit. Its $0 census over
-  the committed cells already bounds the lever; the spec says so first.
+  the committed cells ran on 2026-09-02 and read k = 15 against a derived
+  floor of 16: the live phase is not funded, and thirteen of the fifteen
+  suggestion-fixed programs compile and print the wrong answer. The
+  deficit is wrong programs, not ceremony.
 - **[caliper](https://github.com/bricelancasterwcp-sudo/caliper)** — an
   inventory and extraction brief for the measurement bench under `eval/`
   (paired arms, oracle-verified references, symmetric controls,

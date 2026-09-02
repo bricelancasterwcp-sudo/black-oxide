@@ -143,3 +143,28 @@ corruption would have left the compile-rate ratio meaningless while
 looking entirely plausible.
 
 Both adapters re-verified after re-transfer: `f4b5b9fe…` / `57b32260…`.
+
+### AMENDED 2026-09-01, before the guards run: I changed the conversion path
+
+Phase B's 7B base GGUF reproduced the preserved artifact **byte-exact**
+(`2f2b0f71…`), because it used the same bf16 → quantise path.
+
+This run converts **direct to q8_0** to bound peak disk, and its base
+GGUF is `d5473be2…` against the wave-0 artifact's `662ea1eb…`. **The
+bytes differ because I changed the pipeline, not because anything is
+wrong.** In hindsight the 160 GB volume would have fitted the bf16 path;
+the direct conversion was chosen when a smaller volume was assumed.
+
+**So `base-rs-14` is now testing two things at once**: that the
+environment is comparable, and that my conversion-path change is
+behaviourally inert. Pre-committing to how that reads:
+
+- **Guard reproduces 0.5500** → both hold. The paths are behaviourally
+  equivalent despite differing bytes, which is a useful side result and
+  costs the screen nothing.
+- **Guard misses** → the cause is ambiguous between environment and
+  conversion path, and **the screen cannot be published as-is**. The
+  remedy is to rebuild the base through bf16 → quantise and re-run the
+  guard, isolating the two, *before* interpreting any large-tier number.
+
+Recorded now so the reading is not chosen after seeing the result.

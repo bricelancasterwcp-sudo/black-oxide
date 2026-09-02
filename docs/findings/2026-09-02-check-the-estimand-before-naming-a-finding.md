@@ -12,9 +12,9 @@ follow" — without anyone asking whether the two ratios were measured on
 the same tasks. They were not. The check took one command, and running
 it changed the size of the problem rather than dissolving it. The same
 shape of error — two numbers put side by side that were not measured on
-the same footing — recurred six times in nine waves, each time in a
+the same footing — recurred seven times in nine waves, each time in a
 different disguise, and each time the fix was the same question. This
-document records the six so the question gets asked earlier next time.
+document records the seven so the question gets asked earlier next time.
 It is the project's standing bug class, named in the first wave and
 never retired: **a value that looks like a measurement of the subject
 but is partly a measurement of the instrument's inputs.**
@@ -156,6 +156,31 @@ inside a guard: converting straight to q8_0 rather than via bf16 gave a
 base GGUF with a different hash (`d5473be2…` vs `662ea1eb…`), so the
 drift guard was pre-committed to test two things at once, and it read
 byte-identical behaviour across all four metrics.
+
+## 7. A denominator summed from a table (the wave-9 plan, caught before the run)
+
+The wave-9 re-screen plan quoted wave 8's `OX0001` share as **73 of
+191**, about 38%, and the reader module carried
+`LEXER_SHARE_BASELINE = 73 / 191`, typed in from the report. Running the
+instrument that would read the re-screen —
+`eval.wave8_screen.diagnostic_mix` — over the committed wave-8 cells
+gives **73 of 216**. The 191 is the sum of the four largest codes in the
+wave-8 report's table (73 + 51 + 43 + 24) and omits the five smaller
+ones, 25 attempts. Nothing had been excluded on purpose; a denominator
+had been read off a table instead of computed.
+
+The baseline is **0.338** under the instrument's stated lens (every
+attempt, first or repair, that carries at least one diagnostic; the
+numerator is those whose *first* diagnostic is `OX0001`). The constant
+is now pinned to the committed cells by a real-data test, and the plan
+was amended at 11:55 UTC on 2026-09-02, before the pod had produced a
+cell. Found afterwards, a measured share of 0.20 would have read as a
+fall from 0.382 rather than from 0.338, and the chosen 15% threshold
+would have been judged against the wrong distance.
+
+Sources: `docs/superpowers/plans/2026-09-02-v04-wave9-rescreen-plan.md`
+(the 11:55 UTC amendment), `eval/wave8_screen.py`,
+`tests/test_wave9_rescreen.py`.
 
 ## The question, and a checklist
 

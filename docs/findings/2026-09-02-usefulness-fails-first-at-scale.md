@@ -211,12 +211,13 @@ index mid-line, and three large-tier references caught it at once.
 moves the compile rate is the pre-registered re-screen — same four 14B
 arms, same seeds, primary endpoint the large-tier compile-rate ratio
 against 0.0652, secondary the `OX0001` share of first diagnostics against
-0.382 (73 of 191). The plan states in advance that the rate will not jump
+0.338 (73 of 216 — the plan first quoted 73 of 191, a
+denominator summed from a report table; corrected before the run). The plan states in advance that the rate will not jump
 to 29%: clearing the lexer moves an attempt to its *next* error, and
-unknown identifiers were already 43 of 191.
+unknown identifiers were already 43 of 216.
 
 **Re-screen result pending.**
-<!-- RESCREEN-PENDING: fill from eval/results/v04-wave9-rescreen/screen.json (compile ratio vs 0.0652; OX0001 share vs 0.382) -->
+<!-- RESCREEN-PENDING: fill from eval/results/v04-wave9-rescreen/screen.json (compile ratio vs 0.0652; OX0001 share vs 0.338) -->
 
 ## What this does to the project's framing
 

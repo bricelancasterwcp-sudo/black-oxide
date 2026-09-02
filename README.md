@@ -83,7 +83,7 @@ unless stated.
 | Scale does not rescue it | 14B: **5.0% vs 76.7%**, compile-rate ratio **0.067 → 0.0652** across a doubling of model size (pre-registered ≤0.20 = language property); `[` appears in **16.8%** of 7B attempts and **29.0%** of 14B attempts, and is a lexer error | large · 3-seed screen, 8/8 seed-matched guards reproduced | `v04-wave8-14b-screen/` |
 | The fine-tune, waves 0–4 | `tune-ox-7` **0.555** at 17k supervised tokens (wave 0) → **0.755** at 29.8k (wave 2), above the untuned Rust control's 0.565; corpus 7.4k → 0.420 (wave 1) shows the sensitivity; untuned Oxide beat Rust at 14B with a verifier, pass@10v **0.75 vs 0.55**; the tuned ox↔rs gap narrowed 0.225@7B → 0.175@14B where wave 0 had it widening 0.330 → 0.445 | small · pass@1, pass@10-with-verifier, 200 sessions/arm | `runpod-exp/`, `v04-campaign2/`, `v04-campaign4/` |
 | The drift guard | untuned `base-rs-7` pass@1 = **0.565** in eight environments across three GPU architectures; pass@1 is invariant across architectures, secondary metrics invariant within one | small · same 20 tasks, same sampler | `v04-wave8-phaseb/` provenance |
-| The instruments' own defects, caught | own-green-set means (wave 2 → SPEC §59.7); static on train refs vs dynamic on frozen eval refs (wave 6); raw-ratio bands vs surplus (wave 8A, before Phase B); seed-matched anchors, 0.745 over ten seeds reads 0.800 over three (wave 8 screen); count-verified transfer with a wrong hash | — | [check the estimand](docs/findings/2026-09-02-check-the-estimand-before-naming-a-finding.md) |
+| The instruments' own defects, caught | own-green-set means (wave 2 → SPEC §59.7); static on train refs vs dynamic on frozen eval refs (wave 6); raw-ratio bands vs surplus (wave 8A, before Phase B); seed-matched anchors, 0.745 over ten seeds reads 0.800 over three (wave 8 screen); count-verified transfer with a wrong hash; a baseline denominator summed from a report table instead of computed from the cells (wave 9 plan, caught before the run) | — | [check the estimand](docs/findings/2026-09-02-check-the-estimand-before-naming-a-finding.md) |
 
 ### The wave-9 re-screen
 
@@ -92,10 +92,13 @@ Wave 9 shipped indexing (`v[i]`, SPEC §65), the top-ranked gap from wave
 *compile* programs at scale is the pre-registered re-screen
 (`docs/superpowers/plans/2026-09-02-v04-wave9-rescreen-plan.md`): same
 four 14B arms, same seeds, primary endpoint the large-tier compile-rate
-ratio against 0.0652, secondary the `OX0001` lexer share against 0.382.
+ratio against 0.0652, secondary the `OX0001` lexer share against **0.338**
+(73 of 216 under the instrument's own lens; the plan first quoted 73 of
+191, a denominator summed from a report table and corrected before the
+run — see the estimand write-up, §7).
 
 **Re-screen result pending.**
-<!-- RESCREEN-PENDING: fill from eval/results/v04-wave9-rescreen/screen.json (compile ratio vs 0.0652; OX0001 share vs 0.382) -->
+<!-- RESCREEN-PENDING: fill from eval/results/v04-wave9-rescreen/screen.json (compile ratio vs 0.0652; OX0001 share vs 0.338) -->
 
 ## Design principles earned
 
@@ -136,7 +139,7 @@ limits, verifiable from the committed artifacts they name:
   — uptake tracks exposure × prior familiarity, a falsified spelling
   ruling, the card saturating, and the four quadrants.
 - **[Check the estimand before naming a finding](docs/findings/2026-09-02-check-the-estimand-before-naming-a-finding.md)**
-  — six instrument defects, each caught by asking whether two numbers
+  — seven instrument defects, each caught by asking whether two numbers
   were measured on the same thing; one of them cost four waves.
 - **[Most of the win was ergonomics, not ownership](docs/findings/2026-08-12-ergonomics-beat-ownership.md)**
   — the +59pp repair headline decomposes to ≈+10pp ownership and up to

@@ -1,0 +1,11 @@
+fn main() {
+    let list = [10, 20, 30];
+    let positions = [1, 5];
+
+    for &pos in &positions {
+        match pos {
+            0..=list.len() - 1 => println!("{}", list[pos]),
+            _ => println!("-1"),
+        }
+    }
+}

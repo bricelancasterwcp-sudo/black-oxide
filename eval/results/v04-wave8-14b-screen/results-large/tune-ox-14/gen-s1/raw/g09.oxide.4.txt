@@ -1,0 +1,35 @@
+fn celsius_to_fahrenheit(c: Int) -> Int {
+    (c * 9 / 5 + 32)
+}
+fn analyze_station(name: Str, temps: Vec<Int>) -> (Str, Int, Int, Int, Int, Int) {
+    let below_zero = count_if(temps, |x| x <= 0)
+    let above_thirty = count_if(temps, |x| x >= 30)
+    let f_temps = map(temps, celsius_to_fahrenheit)
+    let max_f = unwrap_or(max(f_temps), -1000)
+    let min_f = unwrap_or(min(f_temps), 1000)
+    let mean_c = sum(temps) / len(temps)
+    (name, below_zero, above_thirty, max_f, min_f, mean_c)
+}
+fn main() {
+    let alpha_temps = vec(-5, 12, 30, 22, 0, 35, 18)
+    let beta_temps = vec(8, -12, 5, 41, 27)
+    let (alpha_name, alpha_below_zero, alpha_above_thirty, alpha_max_f, alpha_min_f, alpha_mean_c) = analyze_station("alpha", alpha_temps)
+    let (beta_name, beta_below_zero, beta_above_thirty, beta_max_f, beta_min_f, beta_mean_c) = analyze_station("beta", beta_temps)
+    print_str(alpha_name)
+    print(alpha_below_zero)
+    print(alpha_above_thirty)
+    print(alpha_max_f)
+    print(alpha_min_f)
+    print(alpha_mean_c)
+    print_str(beta_name)
+    print(beta_below_zero)
+    print(beta_above_thirty)
+    print(beta_max_f)
+    print(beta_min_f)
+    print(beta_mean_c)
+    if alpha_mean_c > beta_mean_c {
+        print_str("alpha")
+    } else {
+        print_str("beta")
+    }
+}

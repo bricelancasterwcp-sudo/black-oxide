@@ -1,0 +1,23 @@
+struct Settings { workers: Int, retries: Int, timeout: Int, label: Str }
+fn main() {
+    let mut settings = Settings { workers: 4, retries: 2, timeout: 30, label: "base" }
+    print_settings(settings)
+    settings = Settings { workers: 8, ..settings, label: "tuned" }
+    print_settings(settings)
+    settings = Settings { timeout: 90, ..settings, label: "patient" }
+    print_settings(settings)
+    settings = Settings { retries: 5, ..settings, label: "settled" }
+    print_settings(settings)
+    settings = Settings { workers: 16, ..settings, label: "wide" }
+    print_settings(settings)
+    settings = Settings { timeout: 120, ..settings, label: "last" }
+    print_settings(settings)
+    print(settings.workers + settings.retries + settings.timeout)
+}
+fn print_settings(s: Settings) {
+    print(s.label)
+    print(s.workers)
+    print(s.retries)
+    print(s.timeout)
+    print(s.workers * s.timeout)
+}

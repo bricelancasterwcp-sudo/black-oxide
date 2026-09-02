@@ -1,0 +1,17 @@
+fn main() {
+    let mut primes = vec![true; 101];
+    for i in 2..=100 {
+        if primes[i] {
+            for j in (i * i..=100).step_by(i) {
+                primes[j] = false;
+            }
+        }
+    }
+    let mut prime_numbers: Vec<_> = (2..=100).filter(|&x| primes[x]).collect();
+    println!("{}", prime_numbers.len());
+    println!("{}", prime_numbers.last().unwrap());
+    println!("{}", prime_numbers.iter().sum::<usize>());
+    let count_two_apart = prime_numbers.windows(2).filter(|w| w[1] - w[0] == 2).count();
+    println!("{}", count_two_apart);
+    println!("{}", prime_numbers[9]);
+}

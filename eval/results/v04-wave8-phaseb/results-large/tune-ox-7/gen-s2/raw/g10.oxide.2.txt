@@ -1,0 +1,21 @@
+struct Phrase { name: Str, words: Vec<Str> }
+fn main() {
+    let first = "the harbour lights flickered"
+    let second = "a small boat drifted past silently"
+    for phrase in vec(first, second) {
+        print_str(phrase.name)
+        let word_count = len(words(phrase))
+        print_int(word_count)
+        let longest_word = max_by(words(phrase), |a, b| len(a) - len(b)).unwrap_or("")
+        print_str(longest_word)
+        let shortest_word_length = min_by(map(words(phrase), |w| len(w)), |a, b| a - b).unwrap_or(-1)
+        print_int(shortest_word_length)
+        let long_words_count = count_if(words(phrase), |w| len(w) > 4)
+        print_int(long_words_count)
+    }
+    if word_count(first) > word_count(second) {
+        print_str("first")
+    } else {
+        print_str("second")
+    }
+}

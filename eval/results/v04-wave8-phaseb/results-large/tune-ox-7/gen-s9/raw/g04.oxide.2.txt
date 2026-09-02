@@ -1,0 +1,35 @@
+fn main() {
+    let numbers = vec(360, 97, 1024, 561, 143, 2003)
+    let mut prime_count = 0
+    for n in numbers {
+        print(n)
+        let (divisors, sum, max) = distinct_prime_divisors(n)
+        print(divisors)
+        print(sum)
+        print(max)
+        if is_prime(n) {
+            prime_count += 1
+        }
+    }
+    print(prime_count)
+}
+fn distinct_prime_divisors(n: Int) -> Tuple<Int, Int, Option<Int>> {
+    let mut divisors = vec()
+    let mut sum = 0
+    let mut max = None
+    for i in range(2, n + 1) {
+        if n % i == 0 && is_prime(i) {
+            push(divisors, i)
+            sum += i
+            max = Some(i)
+        }
+    }
+    (len(divisors), sum, max)
+}
+fn is_prime(n: Int) -> Bool {
+    if n <= 1 { return false }
+    for i in range(2, n) {
+        if n % i == 0 { return false }
+    }
+    true
+}

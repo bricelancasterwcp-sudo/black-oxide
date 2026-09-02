@@ -175,3 +175,88 @@ def test_run_arm_cardfree_probes_end_to_end(tmp_path):
     assert client.prompts  # sanity: something was actually recorded
     for prompt in client.prompts:
         assert card[:80] not in prompt
+
+
+# ------------------------------------------- wave 8: task set and families
+
+def test_cli_passes_the_tasks_file_and_families_through(monkeypatch, tmp_path):
+    """Wave 8 runs the large tier through the same arms, and needs only
+    the gen family. Both were reachable in run_arm and unreachable from
+    the CLI, which is why wave 7A's numbers were computed by hand."""
+    import eval.exp_campaign as ec
+
+    seen = {}
+
+    def fake_run_arm(spec, **kwargs):
+        seen["spec"] = spec.name
+        seen.update(kwargs)
+
+    monkeypatch.setattr(ec, "run_arm", fake_run_arm)
+    ec.main([
+        "--arm", "tune-ox-7", "--root", str(tmp_path),
+        "--tasks", "eval/tasks-large.jsonl", "--families", "gen",
+    ])
+    assert seen["spec"] == "tune-ox-7"
+    assert str(seen["tasks_path"]) == "eval/tasks-large.jsonl"
+    assert seen["families"] == ("gen",)
+    assert seen["extra_provenance"]["tasks_path"] == "eval/tasks-large.jsonl"
+
+
+def test_cli_defaults_keep_the_previous_behaviour(monkeypatch, tmp_path):
+    """Every earlier wave ran without these flags; their meaning must not
+    move underneath a re-run."""
+    import eval.exp_campaign as ec
+
+    seen = {}
+    monkeypatch.setattr(ec, "run_arm", lambda spec, **kw: seen.update(kw))
+    ec.main(["--arm", "base-rs-7", "--root", str(tmp_path)])
+    assert seen["tasks_path"] is None
+    assert seen["families"] == ("gen", "probes")
+
+
+def test_cli_rejects_an_unknown_family_instead_of_silently_running_none():
+    import eval.exp_campaign as ec
+    import pytest as _pytest
+
+    with _pytest.raises(SystemExit):
+        ec.main(["--arm", "base-rs-7", "--root", "/tmp/x", "--families", "genn"])
+
+
+def test_cli_accepts_a_seed_subset_and_records_it(monkeypatch, tmp_path):
+    """A subset run is NOT comparable with a published ten-seed figure --
+    wave 4's tune-ox-14 reads 0.745 over ten seeds and 0.800 over seeds
+    1-3. The subset must therefore be recorded in provenance, so no later
+    reader can mistake one for the other."""
+    import eval.exp_campaign as ec
+
+    seen = {}
+    monkeypatch.setattr(ec, "run_arm", lambda spec, **kw: seen.update(kw))
+    ec.main(["--arm", "tune-ox-14", "--root", str(tmp_path), "--seeds", "1,2,3"])
+    assert seen["seeds"] == (1, 2, 3)
+    assert seen["extra_provenance"]["seeds_subset"] == [1, 2, 3]
+
+
+def test_cli_default_seeds_are_the_full_set_and_unrecorded(monkeypatch, tmp_path):
+    import eval.exp_campaign as ec
+
+    seen = {}
+    monkeypatch.setattr(ec, "run_arm", lambda spec, **kw: seen.update(kw))
+    ec.main(["--arm", "tune-ox-14", "--root", str(tmp_path)])
+    assert seen["seeds"] == ec.SEEDS
+    assert "seeds_subset" not in (seen["extra_provenance"] or {})
+
+
+def test_cli_rejects_a_seed_outside_the_campaign_set():
+    import eval.exp_campaign as ec
+    import pytest as _pytest
+
+    with _pytest.raises(SystemExit):
+        ec.main(["--arm", "tune-ox-14", "--root", "/tmp/x", "--seeds", "1,99"])
+
+
+def test_cli_rejects_non_integer_seeds():
+    import eval.exp_campaign as ec
+    import pytest as _pytest
+
+    with _pytest.raises(SystemExit):
+        ec.main(["--arm", "tune-ox-14", "--root", "/tmp/x", "--seeds", "a,b"])

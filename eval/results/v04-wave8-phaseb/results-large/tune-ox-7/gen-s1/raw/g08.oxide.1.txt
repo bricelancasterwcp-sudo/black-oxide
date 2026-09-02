@@ -1,0 +1,61 @@
+fn main() {
+    let north = vec(12, 15, 19, 14, 14, 20, 31, 30)
+    let south = vec(40, 38, 41, 45, 50, 44)
+    let mut north_increase_count = 0
+    let mut north_decrease_count = 0
+    let mut north_max_increase = 0
+    let mut north_longest_streak = 0
+    let mut current_streak = 0
+    for i in range(1, len(north)) {
+        let diff = get(north, i) - get(north, i - 1)
+        if diff > 0 {
+            north_increase_count += 1
+            current_streak += 1
+            if diff > north_max_increase {
+                north_max_increase = diff
+            }
+        } else if diff < 0 {
+            north_decrease_count += 1
+            current_streak = 0
+        }
+    }
+    if current_streak > north_longest_streak {
+        north_longest_streak = current_streak
+    }
+    print_str("north")
+    print(north_increase_count)
+    print(north_decrease_count)
+    print(north_max_increase)
+    print(north_longest_streak)
+    let mut south_increase_count = 0
+    let mut south_decrease_count = 0
+    let mut south_max_increase = 0
+    let mut south_longest_streak = 0
+    current_streak = 0
+    for i in range(1, len(south)) {
+        let diff = get(south, i) - get(south, i - 1)
+        if diff > 0 {
+            south_increase_count += 1
+            current_streak += 1
+            if diff > south_max_increase {
+                south_max_increase = diff
+            }
+        } else if diff < 0 {
+            south_decrease_count += 1
+            current_streak = 0
+        }
+    }
+    if current_streak > south_longest_streak {
+        south_longest_streak = current_streak
+    }
+    print_str("south")
+    print(south_increase_count)
+    print(south_decrease_count)
+    print(south_max_increase)
+    print(south_longest_streak)
+    if north_longest_streak > south_longest_streak {
+        print_str("north")
+    } else {
+        print_str("south")
+    }
+}

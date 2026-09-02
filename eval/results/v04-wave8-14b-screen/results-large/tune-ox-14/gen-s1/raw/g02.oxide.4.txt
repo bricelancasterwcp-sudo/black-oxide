@@ -1,0 +1,20 @@
+fn main() {
+    let words = vec("rotor", "banana", "level", "quiet", "deified", "system", "civic")
+    let mut palindromes = 0
+    for word in words {
+        print_str(word)
+        print(len(word))
+        let reversed = reverse_str(word)
+        print_str(reversed)
+        let is_palindrome = word == reversed
+        if is_palindrome {
+            palindromes += 1
+        }
+        print(is_palindrome)
+        let vowel_count = count_if(word, |c| c == "a" || c == "e" || c == "i" || c == "o" || c == "u")
+        print(vowel_count)
+        let unique_chars = len(unique_chars(word))
+        print(unique_chars)
+    }
+    print(palindromes)
+}

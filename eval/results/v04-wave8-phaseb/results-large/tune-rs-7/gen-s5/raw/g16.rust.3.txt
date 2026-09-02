@@ -1,0 +1,49 @@
+fn main() {
+    let mut n = 44;
+    let mut max_val = n;
+    let mut min_val = n;
+    let mut sum_vals = n;
+    let mut even_count = if n % 2 == 0 { 1 } else { 0 };
+    let mut digit_sum = 0;
+    let mut rounds = 0;
+    while n != 1 && rounds < 50 {
+        let mut new_n = 0;
+        let mut temp_n = n;
+        while temp_n > 0 {
+            let d = temp_n % 10;
+            new_n += d * d;
+            digit_sum += d;
+            temp_n /= 10;
+        }
+        rounds += 1;
+        if new_n == 1 {
+            break;
+        }
+        if new_n > max_val {
+            max_val = new_n;
+        }
+        if new_n < min_val {
+            min_val = new_n;
+        }
+        sum_vals += new_n;
+        even_count += if new_n % 2 == 0 { 1 } else { 0 };
+        n = new_n;
+    }
+    println!("{}", rounds);
+    println!("{}", n);
+    if rounds > 0 {
+        println!("{}", max_val);
+    } else {
+        println!("{}", min_val);
+    }
+    println!("{}", max_val);
+    println!("{}", min_val);
+    println!("{}", sum_vals);
+    println!("{}", even_count);
+    println!("{}", digit_sum);
+    if n == 1 {
+        println!("true");
+    } else {
+        println!("false");
+    }
+}

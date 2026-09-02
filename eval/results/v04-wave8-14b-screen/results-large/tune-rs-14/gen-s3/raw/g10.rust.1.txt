@@ -1,0 +1,24 @@
+fn main() {
+    let phrases = vec![
+        ("first", "the harbour lights flickered"),
+        ("second", "a small boat drifted past silently"),
+    ];
+    for (name, phrase) in phrases {
+        let words: Vec<&str> = phrase.split_whitespace().collect();
+        let longest_word = words.iter().max_by_key(|&&word| word.len()).unwrap();
+        let shortest_word = words.iter().min_by_key(|&&word| word.len()).unwrap();
+        let long_words_count = words.iter().filter(|&&word| word.len() > 4).count();
+        println!("{}", name);
+        println!("{}", words.len());
+        println!("{}", longest_word);
+        println!("{}", shortest_word.len());
+        println!("{}", long_words_count);
+    }
+    let first_phrase = phrases[0].1.split_whitespace().count();
+    let second_phrase = phrases[1].1.split_whitespace().count();
+    if first_phrase > second_phrase {
+        println!("first");
+    } else {
+        println!("second");
+    }
+}

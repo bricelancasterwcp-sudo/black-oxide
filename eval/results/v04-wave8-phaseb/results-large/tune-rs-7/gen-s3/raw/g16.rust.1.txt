@@ -1,0 +1,30 @@
+fn main() {
+    let mut n = 44;
+    let mut max_val = n;
+    let mut min_val = n;
+    let mut sum_vals = n;
+    let mut even_count = if n % 2 == 0 { 1 } else { 0 };
+    let mut digit_sum = 0;
+    for _ in 0..50 {
+        let digits: Vec<_> = n.to_string().chars().map(|d| d.to_digit(10).unwrap()).collect();
+        let new_n: u32 = digits.iter().map(|&d| d * d).sum();
+        if new_n == 1 {
+            break;
+        }
+        max_val = max_val.max(new_n);
+        min_val = min_val.min(new_n);
+        sum_vals += new_n;
+        even_count += if new_n % 2 == 0 { 1 } else { 0 };
+        digit_sum += digits.iter().sum::<u32>();
+        n = new_n;
+    }
+    println!("{}", 50);
+    println!("{}", n);
+    println!("{}", n);
+    println!("{}", max_val);
+    println!("{}", min_val);
+    println!("{}", sum_vals);
+    println!("{}", even_count);
+    println!("{}", digit_sum);
+    println!("{}", if n == 1 { "true" } else { "false" });
+}

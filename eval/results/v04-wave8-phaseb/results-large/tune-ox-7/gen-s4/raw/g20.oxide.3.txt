@@ -1,0 +1,27 @@
+fn main() {
+    let mut primes = vec(true; 101)
+    let mut count = 0
+    for i in range(2, 101) {
+        if primes[i] {
+            count += 1
+            for j in range(i * i, 101, i) {
+                primes[j] = false
+            }
+        }
+    }
+    let sum = sum(filter(range(2, 101), |x| primes[x]))
+    let max_prime = match max(filter(range(2, 101), |x| primes[x])) {
+        Some(n) => n,
+        None => -1,
+    }
+    let twin_count = count(filter(zip(range(2, 98), range(4, 100)), |(a, b)| primes[a] && primes[b]))
+    let tenth_prime = match nth(filter(range(2, 101), |x| primes[x]), 9) {
+        Some(n) => n,
+        None => -1,
+    }
+    print(count)
+    print(max_prime)
+    print(sum)
+    print(twin_count)
+    print(tenth_prime)
+}

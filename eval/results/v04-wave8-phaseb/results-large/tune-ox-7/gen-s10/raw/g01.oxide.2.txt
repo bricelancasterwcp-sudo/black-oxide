@@ -1,0 +1,25 @@
+struct Reading { label: Str, values: Vec<Int> }
+fn main() {
+    let group_a = Reading { label: "A", values: vec(120, 95, 143, 87, 210, 156, 99) }
+    let group_b = Reading { label: "B", values: vec(175, 132, 88, 240, 119, 167) }
+    print_group(group_a)
+    print_group(group_b)
+    let total_a = sum(group_a.values)
+    let total_b = sum(group_b.values)
+    if total_a > total_b {
+        print_str("A")
+    } else {
+        print_str("B")
+    }
+}
+fn print_group(r: Reading) {
+    print_str(r.label)
+    print(len(r.values))
+    let avg = floor(average(r.values))
+    print(avg)
+    let count_above_avg = count_if(r.values, |x| x > avg)
+    print(count_above_avg)
+    let max_reading = unwrap_or(max(r.values), -1)
+    let min_reading = unwrap_or(min(r.values), -1)
+    print(max_reading - min_reading)
+}

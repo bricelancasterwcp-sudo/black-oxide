@@ -1,0 +1,25 @@
+fn main() {
+    let mut is_prime = vec(true, 101)
+    for i in range(2, len(is_prime)) {
+        if get(is_prime, i) {
+            for j in range(i * i, 101, i) {
+                set(is_prime, j, false)
+            }
+        }
+    }
+    let primes = filter(range(2, 101), |x| get(is_prime, x))
+    print(len(primes))
+    print(get(primes, len(primes) - 1).unwrap_or(-1))
+    print(sum(primes))
+    let count = 0
+    for i in range(0, len(primes)) {
+        for j in range(i + 1, len(primes)) {
+            if get(primes, j).unwrap_or(0) - get(primes, i).unwrap_or(0) == 2 {
+                count += 1
+            }
+        }
+    }
+    print(count)
+    let tenth_prime = get(get(primes, 9), 0).unwrap_or(-1)
+    print(tenth_prime)
+}

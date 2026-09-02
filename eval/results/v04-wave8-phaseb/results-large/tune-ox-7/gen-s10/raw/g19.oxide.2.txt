@@ -1,0 +1,17 @@
+fn main() {
+    let text = "order 47 shipped on 2026-03-15, invoice 1290 paid."
+    let chars = str_len(text)
+    let letters = count_if(text, |c| is_ascii_alpha(c))
+    let digits = count_if(text, |c| is_ascii_digit(c))
+    let spaces = count_if(text, |c| c == ' ')
+    let others = chars - (letters + digits + spaces)
+    let max_streak = max_streak_digits(text)
+    let all_digits = concat_all(filter_chars(text, |c| is_ascii_digit(c)))
+    print(chars)
+    print(letters)
+    print(digits)
+    print(spaces)
+    print(others)
+    print(max_streak)
+    print_str(all_digits)
+}

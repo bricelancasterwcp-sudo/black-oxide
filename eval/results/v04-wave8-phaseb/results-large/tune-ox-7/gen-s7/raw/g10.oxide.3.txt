@@ -1,0 +1,37 @@
+struct Phrase { name: Str, words: Vec<Str> }
+fn main() {
+    let first = "the harbour lights flickered"
+    let second = "a small boat drifted past silently"
+    let p1 = parse_phrase(first)
+    let p2 = parse_phrase(second)
+    print_phrase(p1)
+    print_phrase(p2)
+    if len(words(p1)) > len(words(p2)) {
+        print_str("first")
+    } else {
+        print_str("second")
+    }
+}
+fn parse_phrase(s: Str) -> Phrase {
+    let words = split(s, " ")
+    let name = concat("phrase ", s)
+    Phrase { name, words }
+}
+fn print_phrase(p: Phrase) {
+    print_str(p.name)
+    print(len(p.words))
+    if len(p.words) > 0 {
+        let longest = max_by(p.words, |a, b| str_len(a).cmp(str_len(b)))
+        print_str(longest)
+    } else {
+        print_str("")
+    }
+    if len(p.words) > 0 {
+        let shortest = min_by(p.words, |a, b| str_len(a).cmp(str_len(b)))
+        print(str_len(shortest))
+    } else {
+        print(-1)
+    }
+    let count = count_if(p.words, |w| str_len(w) > 4)
+    print(count)
+}

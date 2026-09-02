@@ -1,0 +1,31 @@
+struct Reading { label: Str, temps: Vec<Int> }
+fn main() {
+    let alpha = Reading { label: "alpha", temps: vec(-5, 12, 30, 22, 0, 35, 18) }
+    let beta = Reading { label: "beta", temps: vec(8, -12, 5, 41, 27) }
+    for r in vec(alpha, beta) {
+        print_str(r.label)
+        let below_zero = count_if(r.temps, |t| t <= 0)
+        let above_thirty = count_if(r.temps, |t| t >= 30)
+        let max_fahrenheit = match max(map(r.temps, |c| c * 9 / 5 + 32)) {
+            Some(n) => n,
+            None => -1,
+        }
+        let min_fahrenheit = match min(map(r.temps, |c| c * 9 / 5 + 32)) {
+            Some(n) => n,
+            None => -1,
+        }
+        let mean_celsius = floor(average(r.temps))
+        print(below_zero)
+        print(above_thirty)
+        print(max_fahrenheit)
+        print(min_fahrenheit)
+        print(mean_celsius)
+    }
+    let alpha_mean = floor(average(alpha.temps))
+    let beta_mean = floor(average(beta.temps))
+    if alpha_mean > beta_mean {
+        print_str("alpha")
+    } else {
+        print_str("beta")
+    }
+}

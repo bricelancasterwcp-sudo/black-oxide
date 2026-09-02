@@ -1,0 +1,31 @@
+fn main() {
+    let figures = vec![(7, 4), (5, 0), (3, 0), (2, 9)];
+    let mut total_area = 0;
+    for figure in &figures {
+        match figure {
+            (w, 0) if *w > 0 => {
+                let area = w * w;
+                println!("rect {}", area);
+                total_area += area;
+            }
+            (s, 0) if *s > 0 => {
+                let area = s * s;
+                println!("square {}", area);
+                total_area += area;
+            }
+            (r, 0) if *r > 0 => {
+                let area = r * r * 3;
+                println!("circle {}", area);
+                total_area += area;
+            }
+            _ => {}
+        }
+    }
+    println!("{}", total_area);
+    match figures.iter().max_by_key(|fig| fig.0 * fig.1) {
+        Some((w, h)) if *h > 0 => println!("rect"),
+        Some((s, 0)) if *s > 0 => println!("square"),
+        Some((r, 0)) if *r > 0 => println!("circle"),
+        _ => {}
+    }
+}

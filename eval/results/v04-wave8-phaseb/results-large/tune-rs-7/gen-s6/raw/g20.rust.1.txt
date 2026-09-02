@@ -1,0 +1,30 @@
+fn main() {
+    let mut primes = vec![true; 101];
+    for i in 2..=100 {
+        if primes[i] {
+            for j in (i * i..=100).step_by(i) {
+                primes[j] = false;
+            }
+        }
+    }
+    let mut count = 0;
+    let mut max_prime = 0;
+    let mut sum = 0;
+    let mut pairs = 0;
+    for &p in &primes[2..=100] {
+        if p {
+            count += 1;
+            max_prime = std::cmp::max(max_prime, i);
+            sum += i;
+            if primes[i + 2] {
+                pairs += 1;
+            }
+        }
+    }
+    let tenth_prime = primes.iter().enumerate().skip(2).filter(|&(_, &p)| p).nth(9).map_or(0, |(i, _)| i);
+    println!("{}", count);
+    println!("{}", max_prime);
+    println!("{}", sum);
+    println!("{}", pairs);
+    println!("{}", tenth_prime);
+}

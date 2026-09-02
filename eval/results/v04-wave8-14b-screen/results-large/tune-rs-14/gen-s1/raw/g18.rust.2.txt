@@ -1,0 +1,27 @@
+fn main() {
+    let mut settings = (4, 2, 30, "base");
+    let revisions = vec![
+        (Some(8), None, None, Some("tuned")),
+        (None, None, Some(90), Some("patient")),
+        (None, Some(5), None, Some("settled")),
+        (Some(16), None, None, Some("wide")),
+        (None, None, Some(120), Some("last")),
+    ];
+    for (i, rev) in revisions.iter().enumerate() {
+        if i > 0 {
+            println!();
+        }
+        settings = (
+            rev.0.unwrap_or(settings.0),
+            rev.1.unwrap_or(settings.1),
+            rev.2.unwrap_or(settings.2),
+            rev.3.unwrap_or(settings.3),
+        );
+        println!("{}", settings.3);
+        println!("{}", settings.0);
+        println!("{}", settings.1);
+        println!("{}", settings.2);
+        println!("{}", settings.0 * settings.2);
+    }
+    println!("{}", settings.0 + settings.1 + settings.2);
+}

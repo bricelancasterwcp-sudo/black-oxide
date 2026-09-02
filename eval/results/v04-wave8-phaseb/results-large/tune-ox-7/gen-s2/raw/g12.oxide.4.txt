@@ -1,0 +1,51 @@
+struct Rectangle { width: Int, height: Int }
+struct Square { side: Int }
+struct Circle { radius: Int }
+fn area_rect(r: Rectangle) -> Int {
+    r.width * r.height
+}
+fn area_square(s: Square) -> Int {
+    s.side * s.side
+}
+fn area_circle(c: Circle) -> Int {
+    3 * c.radius * c.radius
+}
+fn main() {
+    let figures = push(push(push(vec(), Rectangle { width: 7, height: 4 }), Square { side: 5 })
+        , Circle { radius: 3 })
+    let figures = push(figures, Rectangle { width: 2, height: 9 })
+    let mut total_area = 0
+    for fig in figures {
+        match fig {
+            Rectangle { width, height } => {
+                let area = area_rect(Rectangle { width, height })
+                print_str("rect")
+                print(area)
+                total_area += area
+            },
+            Square { side } => {
+                let area = area_square(Square { side })
+                print_str("square")
+                print(area)
+                total_area += area
+            },
+            Circle { radius } => {
+                let area = area_circle(Circle { radius })
+                print_str("circle")
+                print(area)
+                total_area += area
+            }
+        }
+    }
+    print(total_area)
+    match max_by(figures, |fig| match fig {
+        Rectangle { width, height } => area_rect(Rectangle { width, height }),
+        Square { side } => area_square(Square { side }),
+        Circle { radius } => area_circle(Circle { radius })
+    }) {
+        Some(rect) => print_str("rect"),
+        Some(square) => print_str("square"),
+        Some(circle) => print_str("circle"),
+        None => print_str("none")
+    }
+}

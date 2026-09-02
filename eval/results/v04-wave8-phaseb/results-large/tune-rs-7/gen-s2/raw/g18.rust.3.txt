@@ -1,0 +1,29 @@
+fn main() {
+    let mut settings = (4, 2, 30, "base");
+    for revision in [
+        ("workers", &8),
+        ("label", "tuned"),
+        ("timeout", &90),
+        ("label", "patient"),
+        ("retries", &5),
+        ("label", "settled"),
+        ("workers", &16),
+        ("label", "wide"),
+        ("timeout", &120),
+        ("label", "last"),
+    ] {
+        match revision {
+            ("workers", w) => settings.0 = *w,
+            ("retries", r) => settings.1 = *r,
+            ("timeout", t) => settings.2 = *t,
+            ("label", l) => settings.3 = l,
+            _ => {}
+        }
+        println!("{}", settings.3);
+        println!("{}", settings.0);
+        println!("{}", settings.1);
+        println!("{}", settings.2);
+        println!("{}", settings.0 * settings.2);
+    }
+    println!("{}", settings.0 + settings.1 + settings.2);
+}

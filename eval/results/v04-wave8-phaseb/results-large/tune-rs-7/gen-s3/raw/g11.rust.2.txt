@@ -1,0 +1,25 @@
+fn main() {
+    let grid = [4, 9, 2, 3, 5, 7, 8, 1, 6];
+    let mut row_sums = [0; 3];
+    let mut col_sums = [0; 3];
+    let mut diag1_sum = 0;
+    let mut diag2_sum = 0;
+    for i in 0..9 {
+        row_sums[i / 3] += grid[i];
+        col_sums[i % 3] += grid[i];
+        if i == (i / 3) * 3 + i % 3 { diag1_sum += grid[i]; }
+        if i == (i / 3) * 3 + (2 - i % 3) { diag2_sum += grid[i]; }
+    }
+    for &sum in row_sums.iter() {
+        println!("{}", sum);
+    }
+    for &sum in col_sums.iter() {
+        println!("{}", sum);
+    }
+    println!("{}", diag1_sum);
+    println!("{}", diag2_sum);
+    let all_equal = row_sums[0] == row_sums[1] && row_sums[1] == row_sums[2]
+        && col_sums[0] == col_sums[1] && col_sums[1] == col_sums[2]
+        && diag1_sum == diag2_sum;
+    println!("{}", if all_equal { "true" } else { "false" });
+}

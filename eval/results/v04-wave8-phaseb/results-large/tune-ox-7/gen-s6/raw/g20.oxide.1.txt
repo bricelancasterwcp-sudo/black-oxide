@@ -1,0 +1,31 @@
+fn main() {
+    let mut is_prime = vec(true, 101)
+    for i in range(2, 101) {
+        if get(is_prime, i) {
+            for j in range(i * i, 101, i) {
+                set(is_prime, j, false)
+            }
+        }
+    }
+    let mut primes = vec()
+    for i in range(2, 101) {
+        if get(is_prime, i) {
+            push(primes, i)
+        }
+    }
+    print(len(primes))
+    print(get(primes, len(primes) - 1).unwrap_or(-1))
+    let sum = fold(primes, 0, |acc, x| acc + x)
+    print(sum)
+    let mut pairs = 0
+    for i in range(0, len(primes)) {
+        for j in range(i + 1, len(primes)) {
+            if get(primes, j).unwrap_or(-1) - get(primes, i).unwrap_or(-1) == 2 {
+                pairs += 1
+            }
+        }
+    }
+    print(pairs)
+    let tenth_prime = get(primes, 9).unwrap_or(-1)
+    print(tenth_prime)
+}

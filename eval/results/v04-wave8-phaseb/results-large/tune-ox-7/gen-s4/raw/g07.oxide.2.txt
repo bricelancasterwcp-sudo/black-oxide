@@ -1,0 +1,26 @@
+fn main() {
+    let words = vec("ferry", "oxide", "cargo")
+    for word in words {
+        print_str(word)
+        let shifted_forward = shift_letters(word, 3)
+        print_str(shifted_forward)
+        let shifted_backward = shift_letters(shifted_forward, -3)
+        print_str(shifted_backward)
+        print_bool(eq_str(word, shifted_backward))
+        let shifted_twelve_forward = shift_letters(word, 13)
+        print_str(shifted_twelve_forward)
+        let restored = shift_letters(shifted_twelve_forward, 13)
+        print_str(restored)
+        print_bool(eq_str(word, restored))
+    }
+}
+fn shift_letters(s: Str, n: Int) -> Str {
+    let chars = chars(s)
+    let shifted_chars = map(chars, |c| {
+        let ascii_offset = ord('a')
+        let c_int = ord(c) - ascii_offset
+        let new_c_int = (c_int + n + 26) % 26
+        chr(new_c_int + ascii_offset)
+    })
+    concat(shifted_chars)
+}

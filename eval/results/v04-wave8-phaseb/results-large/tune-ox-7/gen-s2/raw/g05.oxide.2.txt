@@ -1,0 +1,38 @@
+struct Ledger { name: Str, opening_balance: Int, adjustments: Vec<Int> }
+fn main() {
+    let mut ledger_one = Ledger { name: "ledger-one", opening_balance: 500, adjustments: vec(200, -750, 130, -60, 400) }
+    let mut ledger_two = Ledger { name: "ledger-two", opening_balance: 300, adjustments: vec(-100, 250, -50, 75) }
+    let mut max_positive_one = -1
+    let mut negative_count_one = 0
+    let mut below_zero_one = false
+    for adj in ledger_one.adjustments {
+        if adj > 0 && adj > max_positive_one { max_positive_one = adj }
+        if adj < 0 { negative_count_one += 1 }
+        if ledger_one.opening_balance + adj < 0 { below_zero_one = true }
+        ledger_one.opening_balance += adj
+    }
+    print_str(ledger_one.name)
+    print(ledger_one.opening_balance)
+    print(max_positive_one)
+    print(negative_count_one)
+    print(below_zero_one)
+    let mut max_positive_two = -1
+    let mut negative_count_two = 0
+    let mut below_zero_two = false
+    for adj in ledger_two.adjustments {
+        if adj > 0 && adj > max_positive_two { max_positive_two = adj }
+        if adj < 0 { negative_count_two += 1 }
+        if ledger_two.opening_balance + adj < 0 { below_zero_two = true }
+        ledger_two.opening_balance += adj
+    }
+    print_str(ledger_two.name)
+    print(ledger_two.opening_balance)
+    print(max_positive_two)
+    print(negative_count_two)
+    print(below_zero_two)
+    if ledger_one.opening_balance > ledger_two.opening_balance {
+        print_str("ledger-one")
+    } else {
+        print_str("ledger-two")
+    }
+}

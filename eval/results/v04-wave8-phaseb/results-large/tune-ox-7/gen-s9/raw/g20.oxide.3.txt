@@ -1,0 +1,26 @@
+fn main() {
+    let mut is_prime = vec(true, 101)
+    let mut primes = vec()
+    for i in range(2, 101) {
+        if get(is_prime, i).unwrap_or(false) {
+            push(primes, i)
+            for j in range(i * i, 101, i) {
+                set(is_prime, j, false)
+            }
+        }
+    }
+    let count = len(primes)
+    let max_prime = match primes.get(count - 1) { Some(n) => *n, None => -1 }
+    let sum_primes = sum(primes)
+    let twin_count = count_if(primes, |x| {
+        let next = x + 2
+        let idx = find(primes, next).unwrap_or(-1)
+        idx >= 0 && primes[idx] == next
+    })
+    let tenth_prime = match get(primes, 9) { Some(n) => *n, None => -1 }
+    print(count)
+    print(max_prime)
+    print(sum_primes)
+    print(twin_count)
+    print(tenth_prime)
+}

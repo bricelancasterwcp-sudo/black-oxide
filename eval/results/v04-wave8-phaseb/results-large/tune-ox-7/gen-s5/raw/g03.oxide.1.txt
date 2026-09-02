@@ -1,0 +1,61 @@
+struct Warehouse { name: Str, parts: Vec<Part> }
+struct Part { name: Str, quantity: Int, price: Int }
+fn total_value(parts: Vec<Part>) -> Int {
+    let mut sum = 0
+    for p in parts {
+        sum += p.quantity * p.price
+    }
+    sum
+}
+fn count_below_ten(parts: Vec<Part>) -> Int {
+    let mut count = 0
+    for p in parts {
+        if p.quantity < 10 {
+            count += 1
+        }
+    }
+    count
+}
+fn max_value_part(parts: Vec<Part>) -> Option<Str> {
+    let mut max_val = -1
+    let mut max_name = ""
+    for p in parts {
+        let value = p.quantity * p.price
+        if value > max_val {
+            max_val = value
+            max_name = p.name
+        }
+    }
+    Some(max_name)
+}
+fn main() {
+    let north_parts = vec(
+        Part { name: "bolt", quantity: 40, price: 3 },
+        Part { name: "hinge", quantity: 8, price: 25 },
+        Part { name: "plate", quantity: 15, price: 12 },
+    )
+    let south_parts = vec(
+        Part { name: "clamp", quantity: 6, price: 45 },
+        Part { name: "rod", quantity: 22, price: 9 },
+        Part { name: "washer", quantity: 100, price: 1 },
+        Part { name: "gasket", quantity: 4, price: 30 },
+    )
+    let north = Warehouse { name: "North", parts: north_parts }
+    let south = Warehouse { name: "South", parts: south_parts }
+    for w in vec(north, south) {
+        print_str(w.name)
+        print(total_value(w.parts))
+        print(count_below_ten(w.parts))
+        match max_value_part(w.parts) {
+            Some(name) => print_str(name),
+            None => print_str("none"),
+        }
+    }
+    let north_total = total_value(north_parts)
+    let south_total = total_value(south_parts)
+    if north_total > south_total {
+        print_str("North")
+    } else {
+        print_str("South")
+    }
+}

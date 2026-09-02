@@ -1,0 +1,60 @@
+{
+  "drift_guard": {
+    "arm_dir": "eval/results/v04-wave8-phaseb/results-small/base-rs-7",
+    "expected": 0.565,
+    "n": 200,
+    "pass1": 0.565,
+    "reproduced": true
+  },
+  "large": {
+    "attempts": {
+      "oxide": 1.0,
+      "rust": 1.67
+    },
+    "model": {
+      "a_mean": 516.3,
+      "b_mean": 614.3,
+      "n_pairs": 3,
+      "n_shared": 200,
+      "n_tasks": 1,
+      "ratio": 0.84
+    },
+    "note": "only 3 paired green cells (< 5); the surplus is reported but must not be quoted as an endpoint",
+    "reference": {
+      "dropped": [],
+      "missing": [],
+      "n_tasks": 1,
+      "oxide": 364,
+      "ratio": 1.052,
+      "rust": 346
+    },
+    "sufficient": false,
+    "surplus": 0.798,
+    "tier": "large"
+  },
+  "small": {
+    "attempts": {
+      "oxide": 1.02,
+      "rust": 1.0
+    },
+    "model": {
+      "a_mean": 75.9,
+      "b_mean": 62.3,
+      "n_pairs": 120,
+      "n_shared": 200,
+      "n_tasks": 13,
+      "ratio": 1.217
+    },
+    "reference": {
+      "dropped": [],
+      "missing": [],
+      "n_tasks": 13,
+      "oxide": 821,
+      "ratio": 0.98,
+      "rust": 838
+    },
+    "sufficient": true,
+    "surplus": 1.242,
+    "tier": "eval"
+  }
+}

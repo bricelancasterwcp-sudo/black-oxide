@@ -1,0 +1,15 @@
+fn main() {
+    let record = "name=widget;qty=17;price=245;tag=blue";
+    let pairs: Vec<&str> = record.split(';').collect();
+    println!("{}", pairs.len());
+    for pair in &pairs {
+        let parts: Vec<&str> = pair.split('=').collect();
+        if parts.len() == 2 {
+            println!("{}", parts[0]);
+            println!("{}", parts[1]);
+        }
+    }
+    let qty: i32 = pairs.iter().find(|&&p| p.starts_with("qty=")).unwrap().split('=').nth(1).unwrap().parse().unwrap();
+    let price: i32 = pairs.iter().find(|&&p| p.starts_with("price=")).unwrap().split('=').nth(1).unwrap().parse().unwrap();
+    println!("{}", qty * price);
+}

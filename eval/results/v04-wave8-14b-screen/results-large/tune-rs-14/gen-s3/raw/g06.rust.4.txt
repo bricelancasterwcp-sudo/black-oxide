@@ -1,0 +1,27 @@
+fn main() {
+    let morning = vec![94, 71, 88, 65, 92, 79, 83];
+    let evening = vec![55, 90, 77, 84, 68, 99];
+    let mut sittings = vec![(morning.clone(), "Morning"), (evening.clone(), "Evening")];
+    for (marks, name) in &sittings {
+        let count_90_plus = marks.iter().filter(|&&x| x >= 90).count();
+        let count_80_to_89 = marks.iter().filter(|&&x| x >= 80 && x < 90).count();
+        let count_70_to_79 = marks.iter().filter(|&&x| x >= 70 && x < 80).count();
+        let count_below_70 = marks.iter().filter(|&&x| x < 70).count();
+        let highest_mark = *marks.iter().max().unwrap();
+        let mean_mark = (marks.iter().sum::<u32>() as f64 / marks.len() as f64).floor() as u32;
+        println!("{}", name);
+        println!("{}", count_90_plus);
+        println!("{}", count_80_to_89);
+        println!("{}", count_70_to_79);
+        println!("{}", count_below_70);
+        println!("{}", highest_mark);
+        println!("{}", mean_mark);
+    }
+    let morning_mean = (morning.iter().sum::<u32>() as f64 / morning.len() as f64).floor() as u32;
+    let evening_mean = (evening.iter().sum::<u32>() as f64 / evening.len() as f64).floor() as u32;
+    if morning_mean > evening_mean {
+        println!("Morning");
+    } else {
+        println!("Evening");
+    }
+}

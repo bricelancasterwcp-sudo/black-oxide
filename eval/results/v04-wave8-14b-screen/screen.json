@@ -1,0 +1,32 @@
+{
+  "guards": [
+    {
+      "anchor": 0.55,
+      "arm": "base-rs-14",
+      "pass1": 0.55,
+      "reproduced": true
+    },
+    {
+      "anchor": 0.8,
+      "arm": "tune-ox-14",
+      "pass1": 0.8,
+      "reproduced": true
+    }
+  ],
+  "guards_all_reproduced": true,
+  "large": {
+    "compile_ratio": 0.0652,
+    "oxide": {
+      "compiled": 3,
+      "n": 60,
+      "rate": 0.05
+    },
+    "rust": {
+      "compiled": 46,
+      "n": 60,
+      "rate": 0.7666666666666667
+    }
+  },
+  "seven_b_ratio": 0.067,
+  "verdict": "language-property"
+}

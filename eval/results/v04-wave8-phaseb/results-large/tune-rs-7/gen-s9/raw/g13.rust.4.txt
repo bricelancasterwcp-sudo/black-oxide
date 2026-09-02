@@ -1,0 +1,39 @@
+fn main() {
+    let mut c = 9;
+    let mut t = 0;
+    let mut h = 0;
+    let mut a = 0;
+    let mut r = 0;
+    let mut l = c;
+    let mut n = 1;
+    let mut s = c;
+    for _ in 0..30 {
+        if c % 2 == 0 {
+            c /= 2;
+            h += 1;
+        } else if c % 3 == 0 {
+            c += 5;
+            a += 1;
+        } else {
+            c = (c * 3 + 1) % 1000;
+            r += 1;
+        }
+        t += c;
+        if c > l {
+            l = c;
+            n = r + 1;
+        }
+        if c < s {
+            s = c;
+        }
+    }
+    println!("{}", c);
+    println!("{}", h);
+    println!("{}", a);
+    println!("{}", r);
+    println!("{}", l);
+    println!("{}", n);
+    println!("{}", s);
+    println!("{}", t);
+    println!("{}", if c >= 100 { "high" } else { "low" });
+}

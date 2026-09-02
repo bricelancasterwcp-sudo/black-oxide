@@ -1,0 +1,24 @@
+fn main() {
+    let words = vec("ferry", "oxide", "cargo")
+    for word in words {
+        print_str(word)
+        let shifted_forward = shift_letters(word, 3)
+        print_str(shifted_forward)
+        let shifted_backward = shift_letters(shifted_forward, -3)
+        print_str(shifted_backward)
+        print_bool(eq_str(word, shifted_backward))
+        let shifted_twelve_forward = shift_letters(word, 12)
+        print_str(shifted_twelve_forward)
+        let restored = shift_letters(shifted_twelve_forward, 12)
+        print_str(restored)
+        print_bool(eq_str(word, restored))
+    }
+}
+fn shift_letters(s: Str, n: Int) -> Str {
+    let chars = chars(s)
+    let shifted_chars = map(chars, |c| {
+        let code = unwrap_or(unwrap_or(char_code(c), -1) + n, -1)
+        if code < 97 || code > 122 { c } else { int_to_char(code) }
+    })
+    concat(shifted_chars)
+}

@@ -1,0 +1,21 @@
+struct Reading { label: Str, temps: Vec<Int> }
+fn main() {
+    let alpha = Reading { label: "alpha", temps: vec(-5, 12, 30, 22, 0, 35, 18) }
+    let beta = Reading { label: "beta", temps: vec(8, -12, 5, 41, 27) }
+    for r in vec(alpha, beta) {
+        print(r.label)
+        let below_zero = count_if(r.temps, |t| t <= 0)
+        let above_thirty = count_if(r.temps, |t| t >= 30)
+        let max_f = match max(map(r.temps, to_fahrenheit)) { Some(n) => n, None => -999 }
+        let min_f = match min(map(r.temps, to_fahrenheit)) { Some(n) => n, None => 999 }
+        let mean_c = floor(mean(r.temps))
+        print(below_zero)
+        print(above_thirty)
+        print(max_f)
+        print(min_f)
+        print(mean_c)
+    }
+}
+fn to_fahrenheit(t: Int) -> Int {
+    (t * 9 / 5 + 32).floor()
+}

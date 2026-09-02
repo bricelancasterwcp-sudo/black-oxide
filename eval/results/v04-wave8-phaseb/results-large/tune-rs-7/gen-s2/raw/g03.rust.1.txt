@@ -1,0 +1,30 @@
+fn main() {
+    let north = [("bolt", 40, 3), ("hinge", 8, 25), ("plate", 15, 12)];
+    let south = [
+        ("clamp", 6, 45),
+        ("rod", 22, 9),
+        ("washer", 100, 1),
+        ("gasket", 4, 30),
+    ];
+    fn print_warehouse(name: &str, parts: &[(&str, i32, i32)]) {
+        let total_value = parts.iter().map(|(_, q, p)| q * p).sum::<i32>();
+        let below_ten_count = parts.iter().filter(|(_, q, _)| *q < 10).count();
+        let max_value_part = parts
+            .iter()
+            .max_by_key(|(_, _, p)| p)
+            .map_or("", |(name, _, _)| name);
+        println!("{}", name);
+        println!("{}", total_value);
+        println!("{}", below_ten_count);
+        println!("{}", max_value_part);
+    }
+    print_warehouse("North", &north);
+    print_warehouse("South", &south);
+    let north_total = north.iter().map(|(_, q, p)| q * p).sum::<i32>();
+    let south_total = south.iter().map(|(_, q, p)| q * p).sum::<i32>();
+    if north_total > south_total {
+        println!("North");
+    } else {
+        println!("South");
+    }
+}

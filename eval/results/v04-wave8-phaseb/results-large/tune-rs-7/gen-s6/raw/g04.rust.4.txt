@@ -1,0 +1,44 @@
+fn main() {
+    let numbers = [360, 97, 1024, 561, 143, 2003];
+    let mut primes_count = 0;
+    for &num in &numbers {
+        println!("{}", num);
+        let (distinct_primes, sum, max_prime) = find_distinct_primes(num);
+        println!("{}", distinct_primes);
+        println!("{}", sum);
+        println!("{}", max_prime);
+        if is_prime(num) {
+            primes_count += 1;
+        }
+    }
+    println!("{}", primes_count);
+}
+fn find_distinct_primes(mut num: u32) -> (usize, u32, u32) {
+    let mut distinct_primes = Vec::new();
+    let mut sum = 0;
+    let mut max_prime = 0;
+    for i in 2..=num {
+        while num % i == 0 {
+            if !distinct_primes.contains(&i) {
+                distinct_primes.push(i);
+                sum += i;
+                if i > max_prime {
+                    max_prime = i;
+                }
+            }
+            num /= i;
+        }
+    }
+    (distinct_primes.len(), sum, max_prime)
+}
+fn is_prime(num: u32) -> bool {
+    if num <= 1 {
+        return false;
+    }
+    for i in 2..=((num as f64).sqrt() as u32) {
+        if num % i == 0 {
+            return false;
+        }
+    }
+    true
+}

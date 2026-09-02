@@ -1,0 +1,22 @@
+fn main() {
+    let figures = vec![
+        ("rect", 7 * 4),
+        ("square", 5 * 5),
+        ("circle", 3 * 3 * 3),
+        ("rect", 2 * 9),
+    ];
+    let mut total_area = 0;
+    let mut max_area = 0;
+    let mut max_figure = "";
+    for (kind, area) in figures.iter() {
+        println!("{}", kind);
+        println!("{}", area);
+        total_area += area;
+        if *area > max_area {
+            max_area = *area;
+            max_figure = kind;
+        }
+    }
+    println!("{}", total_area);
+    println!("{}", max_figure);
+}

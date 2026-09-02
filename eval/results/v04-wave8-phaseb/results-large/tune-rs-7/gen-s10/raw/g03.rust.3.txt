@@ -1,0 +1,37 @@
+fn main() {
+    let north = [("bolt", 40, 3), ("hinge", 8, 25), ("plate", 15, 12)];
+    let south = [
+        ("clamp", 6, 45),
+        ("rod", 22, 9),
+        ("washer", 100, 1),
+        ("gasket", 4, 30),
+    ];
+    for (name, parts) in [("North", north), ("South", south)] {
+        let mut total_value = 0;
+        let mut below_ten_count = 0;
+        let mut max_value_part = "";
+        let mut max_value = 0;
+        for &(part_name, quantity, price) in parts.iter() {
+            let value = quantity * price;
+            total_value += value;
+            if quantity < 10 {
+                below_ten_count += 1;
+            }
+            if value > max_value {
+                max_value_part = part_name;
+                max_value = value;
+            }
+        }
+        println!("{}", name);
+        println!("{}", total_value);
+        println!("{}", below_ten_count);
+        println!("{}", max_value_part);
+    }
+    let north_total: i32 = north.iter().map(|&(_, q, p)| q * p).sum();
+    let south_total: i32 = south.iter().map(|&(_, q, p)| q * p).sum();
+    if north_total > south_total {
+        println!("North");
+    } else {
+        println!("South");
+    }
+}

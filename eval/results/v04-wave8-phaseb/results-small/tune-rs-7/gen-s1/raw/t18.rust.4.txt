@@ -1,0 +1,14 @@
+fn main() {
+    let shapes = vec![
+        (3, 4),
+        (3, 4, 5),
+        (2, 5),
+    ];
+    for shape in &shapes {
+        match *shape {
+            (a, b) => println!("{}", a + b + a + b), // Rectangle
+            (a, b, c) if a*a + b*b == c*c => println!("{}", a + b + c), // Triangle
+            _ => unreachable!(),
+        }
+    }
+}

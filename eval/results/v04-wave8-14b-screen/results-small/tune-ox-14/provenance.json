@@ -1,0 +1,28 @@
+{
+  "arm": "oxide",
+  "families": [
+    "gen"
+  ],
+  "gguf": "tune-ox-14.q8_0.gguf",
+  "gguf_sha256": "fb7c0bde8bb6f6968657afd7410650683ec5365f848a51a842f04ade36c65485",
+  "identity": {
+    "model_path": "/workspace/gguf/tune-ox-14.q8_0.gguf"
+  },
+  "include_lead": false,
+  "llamacpp_commit": "b96806d96061049a5b574269b049bf6241d63d46",
+  "name": "tune-ox-14",
+  "num_ctx": 8192,
+  "num_predict": 2048,
+  "seeds": [
+    1,
+    2,
+    3
+  ],
+  "seeds_subset": [
+    1,
+    2,
+    3
+  ],
+  "temperature": 0.2,
+  "top_p": 0.95
+}

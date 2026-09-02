@@ -1,0 +1,30 @@
+struct Sitting { name: Str, scores: Vec<Int> }
+fn count_if(v: Vec<Int>, pred: Fn(Int) -> Bool) -> Int {
+    let mut count = 0
+    for x in v {
+        if pred(x) {
+            count += 1
+        }
+    }
+    count
+}
+fn main() {
+    let morning = Sitting { name: "Morning", scores: vec(94, 71, 88, 65, 92, 79, 83) }
+    let evening = Sitting { name: "Evening", scores: vec(55, 90, 77, 84, 68, 99) }
+    for s in vec(morning, evening) {
+        print_str(s.name)
+        print(count_if(s.scores.clone(), |x| x >= 90))
+        print(count_if(s.scores.clone(), |x| x >= 80 && x < 90))
+        print(count_if(s.scores.clone(), |x| x >= 70 && x < 80))
+        print(count_if(s.scores.clone(), |x| x < 70))
+        print(unwrap_or(max(s.scores.clone()), -1))
+        print(sum(s.scores.clone()) / len(s.scores))
+    }
+    let morning_mean = sum(morning.scores) / len(morning.scores)
+    let evening_mean = sum(evening.scores) / len(evening.scores)
+    if morning_mean > evening_mean {
+        print_str("Morning")
+    } else {
+        print_str("Evening")
+    }
+}

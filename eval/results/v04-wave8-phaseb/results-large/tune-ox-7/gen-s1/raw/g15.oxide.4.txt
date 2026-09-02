@@ -1,0 +1,30 @@
+struct Record { fields: Vec<(Str, Str)> }
+fn parse_record(s: Str) -> Option<Record> {
+    let mut fields = vec()
+    for part in split(s, ";") {
+        let (key, value) = match split(part, "=").collect().as_slice() {
+            [k, v] => (clone(k), clone(v)),
+            _ => return None,
+        }
+        fields = push(fields, (key, value))
+    }
+    Some(Record { fields })
+}
+fn main() {
+    let record_str = "name=widget;qty=17;price=245;tag=blue"
+    match parse_record(record_str) {
+        Some(record) => {
+            print(len(record.fields))
+            for (key, value) in record.fields {
+                print(key)
+                print(value)
+            }
+            let qty = parse_int(get(get(record.fields, 1), 1)).unwrap_or(-1)
+            let price = parse_int(get(get(record.fields, 2), 1)).unwrap_or(-1)
+            if qty != -1 && price != -1 {
+                print(qty * price)
+            }
+        },
+        None => print_str("Invalid record"),
+    }
+}

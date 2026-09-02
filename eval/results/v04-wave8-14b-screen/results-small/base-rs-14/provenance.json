@@ -1,0 +1,28 @@
+{
+  "arm": "rust",
+  "families": [
+    "gen"
+  ],
+  "gguf": "base-14.q8_0.gguf",
+  "gguf_sha256": "d5473be2016e06666aa850bbb63eb04e2851c9f4407d0b37028c0ec49fc96486",
+  "identity": {
+    "model_path": "/workspace/gguf/base-14.q8_0.gguf"
+  },
+  "include_lead": true,
+  "llamacpp_commit": "b96806d96061049a5b574269b049bf6241d63d46",
+  "name": "base-rs-14",
+  "num_ctx": 8192,
+  "num_predict": 2048,
+  "seeds": [
+    1,
+    2,
+    3
+  ],
+  "seeds_subset": [
+    1,
+    2,
+    3
+  ],
+  "temperature": 0.2,
+  "top_p": 0.95
+}

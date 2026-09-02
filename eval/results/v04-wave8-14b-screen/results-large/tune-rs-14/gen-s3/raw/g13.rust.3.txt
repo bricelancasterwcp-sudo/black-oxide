@@ -1,0 +1,48 @@
+fn main() {
+    let mut counter = 9;
+    let mut halved = 0;
+    let mut added_five = 0;
+    let mut tripled = 0;
+    let mut max_value = 9;
+    let mut max_round = 1;
+    let mut min_value = 9;
+    let mut running_total = 9;
+    let mut below_ten_count = 0;
+    for round in 1..=30 {
+        if counter % 2 == 0 {
+            counter /= 2;
+            halved += 1;
+        } else if counter % 3 == 0 {
+            counter += 5;
+            added_five += 1;
+        } else {
+            counter = (counter * 3 + 1) % 1000;
+            tripled += 1;
+        }
+        running_total += counter;
+        if counter > max_value {
+            max_value = counter;
+            max_round = round;
+        }
+        if counter < min_value {
+            min_value = counter;
+        }
+        if counter < 10 {
+            below_ten_count += 1;
+        }
+    }
+    println!("{}", counter);
+    println!("{}", halved);
+    println!("{}", added_five);
+    println!("{}", tripled);
+    println!("{}", max_value);
+    println!("{}", max_round);
+    println!("{}", min_value);
+    println!("{}", running_total);
+    println!("{}", below_ten_count);
+    if counter > 100 {
+        println!("high");
+    } else {
+        println!("low");
+    }
+}

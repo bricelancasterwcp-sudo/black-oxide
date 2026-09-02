@@ -1,0 +1,43 @@
+fn main() {
+    let mut primes = vec![true; 101];
+    for i in 2..=100 {
+        if primes[i] {
+            for j in (i * i..=100).step_by(i) {
+                primes[j] = false;
+            }
+        }
+    }
+    let mut count = 0;
+    let mut largest = 0;
+    let mut sum = 0;
+    let mut pairs = 0;
+    let mut tenth_prime = None;
+    for i in 2..=100 {
+        if primes[i] {
+            count += 1;
+            largest = i;
+            sum += i;
+            if let Some(tenth) = tenth_prime.as_mut() {
+                if *tenth < i {
+                    *tenth = i;
+                }
+            } else {
+                tenth_prime = Some(i);
+            }
+        }
+    }
+    println!("{}", count);
+    println!("{}", largest);
+    println!("{}", sum);
+    for i in 2..=98 {
+        if primes[i] && primes[i + 2] {
+            pairs += 1;
+        }
+    }
+    println!("{}", pairs);
+    if let Some(tenth) = tenth_prime {
+        println!("{}", tenth);
+    } else {
+        println!("0");
+    }
+}

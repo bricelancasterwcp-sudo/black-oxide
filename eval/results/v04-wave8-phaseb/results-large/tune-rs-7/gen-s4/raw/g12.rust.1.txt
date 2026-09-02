@@ -1,0 +1,28 @@
+fn main() {
+    let figures = [
+        (7, 4),
+        (5, 0),
+        (3, 0),
+        (2, 9),
+    ];
+    let mut total_area = 0;
+    for &fig in &figures {
+        match fig {
+            (w, h) if w == 0 => println!("square\n{}", w * w),
+            (r, _) => println!("circle\n{}", 3 * r * r),
+            (w, h) => println!("rect\n{}", w * h),
+        }
+        total_area += match fig {
+            (w, h) if w == 0 => w * w,
+            (r, _) => 3 * r * r,
+            (w, h) => w * h,
+        };
+    }
+    println!("{}", total_area);
+    let max_figure = figures.iter().map(|&fig| match fig {
+        (w, h) if w == 0 => w * w,
+        (r, _) => 3 * r * r,
+        (w, h) => w * h,
+    }).max().unwrap();
+    println!("{}", if max_figure == figures[0].1 { "rect" } else if max_figure == figures[2].1 { "circle" } else { "square" });
+}

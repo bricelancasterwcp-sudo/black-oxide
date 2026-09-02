@@ -1,0 +1,25 @@
+fn main() {
+    let mut primes = vec![true; 101];
+    for i in 2..=100 {
+        if primes[i] {
+            for j in (i * i..=100).step_by(i) {
+                primes[j] = false;
+            }
+        }
+    }
+    let count = primes.iter().filter(|&&x| x).count();
+    let largest = 2 + primes.iter().enumerate().skip(2).find_map(|(i, &x)| if x { Some(i) } else { None }).unwrap_or(0);
+    let sum: usize = (2..=100).filter(|&x| primes[x]).sum();
+    let mut pairs = 0;
+    for i in 3..=98 {
+        if primes[i] && primes[i + 2] {
+            pairs += 1;
+        }
+    }
+    let tenth_prime = (2..=100).filter(|&x| primes[x]).nth(9).unwrap_or(0);
+    println!("{}", count);
+    println!("{}", largest);
+    println!("{}", sum);
+    println!("{}", pairs);
+    println!("{}", tenth_prime);
+}

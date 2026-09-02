@@ -1,0 +1,14 @@
+struct Item { name: Str, unit_price: Int, quantity: Int }
+fn main() {
+    let pen = Item { name: "pen", unit_price: 3, quantity: 4 }
+    let pad = Item { name: "pad", unit_price: 9, quantity: 2 }
+    let ink = Item { name: "ink", unit_price: 5, quantity: 3 }
+    let total_cost = pen.unit_price * pen.quantity + pad.unit_price * pad.quantity + ink.unit_price * ink.quantity
+    print(total_cost)
+    let items = vec(pen, pad, ink)
+    let max_item = match max_by(items, |a, b| a.unit_price * a.quantity - b.unit_price * b.quantity) {
+        Some(item) => item,
+        None => Item { name: "", unit_price: 0, quantity: 0 },
+    }
+    print(max_item.name)
+}

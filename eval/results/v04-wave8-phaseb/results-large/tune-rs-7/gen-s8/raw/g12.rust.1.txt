@@ -1,0 +1,57 @@
+fn main() {
+    let figures = [
+        (7, 4),
+        (5, 0),
+        (3, 0),
+        (2, 9),
+    ];
+    let mut total_area = 0;
+    for figure in &figures {
+        match figure {
+            (w, h) if *h == 0 => {
+                let area = w * w;
+                println!("square\n{}", area);
+                total_area += area;
+            }
+            (w, h) if *w == 0 => {
+                let area = 3 * h * h;
+                println!("circle\n{}", area);
+                total_area += area;
+            }
+            (w, h) => {
+                let area = w * h;
+                println!("rect\n{}", area);
+                total_area += area;
+            }
+        }
+    }
+    println!("{}", total_area);
+    let mut max_area = 0;
+    let mut max_type = "";
+    for figure in &figures {
+        match figure {
+            (w, h) if *h == 0 => {
+                let area = w * w;
+                if area > max_area {
+                    max_area = area;
+                    max_type = "square";
+                }
+            }
+            (w, h) if *w == 0 => {
+                let area = 3 * h * h;
+                if area > max_area {
+                    max_area = area;
+                    max_type = "circle";
+                }
+            }
+            (w, h) => {
+                let area = w * h;
+                if area > max_area {
+                    max_area = area;
+                    max_type = "rect";
+                }
+            }
+        }
+    }
+    println!("{}", max_type);
+}

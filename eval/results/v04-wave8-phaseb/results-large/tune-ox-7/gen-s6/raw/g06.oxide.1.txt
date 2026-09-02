@@ -1,0 +1,39 @@
+struct Sitting { label: Str, scores: Vec<Int> }
+fn count_range(v: Vec<Int>, min: Int, max: Int) -> Int {
+    let mut count = 0
+    for x in v {
+        if x >= min && x <= max {
+            count += 1
+        }
+    }
+    count
+}
+fn main() {
+    let morning = Sitting { label: "Morning", scores: vec(94, 71, 88, 65, 92, 79, 83) }
+    let evening = Sitting { label: "Evening", scores: vec(55, 90, 77, 84, 68, 99) }
+    for s in vec(morning, evening) {
+        print_str(s.label)
+        let above_90 = count_range(s.scores, 90, 100)
+        let between_80_and_89 = count_range(s.scores, 80, 89)
+        let between_70_and_79 = count_range(s.scores, 70, 79)
+        let below_70 = count_range(s.scores, 0, 69)
+        print(above_90)
+        print(between_80_and_89)
+        print(between_70_and_79)
+        print(below_70)
+        let max_score = match max(s.scores) {
+            Some(n) => n,
+            None => -1,
+        }
+        print(max_score)
+        let mean_score = sum(s.scores) / len(s.scores)
+        print(mean_score)
+    }
+    let morning_mean = sum(morning.scores) / len(morning.scores)
+    let evening_mean = sum(evening.scores) / len(evening.scores)
+    if morning_mean > evening_mean {
+        print_str("Morning")
+    } else {
+        print_str("Evening")
+    }
+}

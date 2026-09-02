@@ -1,0 +1,8 @@
+fn main() {
+    let mut sum = 0;
+    for i in (3..=24).step_by(3) {
+        println!("{}", i);
+        sum += i;
+    }
+    println!("Sum: {}", sum);
+}

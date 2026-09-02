@@ -1,0 +1,37 @@
+struct Reading { label: Str, values: Vec<Int> }
+fn analyze(r: Reading) -> Option<Str> {
+    let mut increase_count = 0
+    let mut decrease_count = 0
+    let mut max_increase = -1
+    let mut longest_streak = 0
+    let mut current_streak = 0
+    for i in range(1, len(r.values)) {
+        let prev = get(r.values, i - 1)?
+        let curr = get(r.values, i)?
+        if curr > prev {
+            increase_count += 1
+            max_increase = max(max_increase, curr - prev)
+            current_streak += 1
+            longest_streak = max(longest_streak, current_streak)
+        } else if curr < prev {
+            decrease_count += 1
+            current_streak = 0
+        }
+    }
+    print_str(r.label)
+    print_int(increase_count)
+    print_int(decrease_count)
+    print_int(max_increase)
+    print_int(longest_streak)
+    Some(r.label)
+}
+fn main() {
+    let north = Reading { label: "north", values: vec(12, 15, 19, 14, 14, 20, 31, 30) }
+    let south = Reading { label: "south", values: vec(40, 38, 41, 45, 50, 44) }
+    let north_result = analyze(north)
+    let south_result = analyze(south)
+    match (north_result, south_result) {
+        (Some(n), Some(s)) => if n > s { print_str(n) } else { print_str(s) },
+        _ => print_str("no readings"),
+    }
+}

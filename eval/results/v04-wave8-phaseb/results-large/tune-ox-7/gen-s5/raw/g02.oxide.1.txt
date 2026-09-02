@@ -1,0 +1,37 @@
+fn main() {
+    let words = vec("rotor", "banana", "level", "quiet", "deified", "system", "civic")
+    let mut palindromes_count = 0
+    for word in words {
+        print_str(word)
+        let len = str_len(word)
+        print(len)
+        let reversed = reverse_str(word)
+        print_str(reversed)
+        if word == reversed {
+            print_str("yes")
+            palindromes_count += 1
+        } else {
+            print_str("no")
+        }
+        let vowels_count = count_vowels(word)
+        print(vowels_count)
+        let unique_chars_count = count_unique_chars(word)
+        print(unique_chars_count)
+    }
+    print(palindromes_count)
+}
+fn reverse_str(s: Str) -> Str {
+    let chars = chars(s)
+    let reversed_chars = reverse(chars)
+    join(reversed_chars, "")
+}
+fn count_vowels(s: Str) -> Int {
+    let vowels = "aeiou"
+    let chars = chars(s)
+    filter(chars, |c| contains(vowels, c)).len()
+}
+fn count_unique_chars(s: Str) -> Int {
+    let chars = chars(s)
+    let unique_chars = dedup(chars)
+    unique_chars.len()
+}

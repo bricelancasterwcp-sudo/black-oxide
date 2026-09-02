@@ -1,0 +1,27 @@
+fn main() {
+    let mut n = 44;
+    let mut max_val = n;
+    let mut min_val = n;
+    let mut sum_vals = n as u64;
+    let mut even_rounds = 0;
+    let mut digit_sum = 0;
+    for _ in 0..50 {
+        if n == 1 {
+            break;
+        }
+        max_val = max_val.max(n);
+        min_val = min_val.min(n);
+        sum_vals += n as u64;
+        even_rounds += if n % 2 == 0 { 1 } else { 0 };
+        let mut next_n = 0;
+        let mut temp_n = n;
+        while temp_n > 0 {
+            let d = temp_n % 10;
+            digit_sum += d;
+            next_n += d * d;
+            temp_n /= 10;
+        }
+        n = next_n;
+    }
+    println!("{}", even_rounds);
+}

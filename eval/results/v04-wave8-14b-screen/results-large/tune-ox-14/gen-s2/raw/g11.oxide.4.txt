@@ -1,0 +1,29 @@
+fn main() {
+    let grid = vec(4, 9, 2, 3, 5, 7, 8, 1, 6)
+    for i in range(0, 3) {
+        print(sum(subvec(grid, i * 3, (i + 1) * 3)))
+    }
+    for i in range(0, 3) {
+        let mut sum = 0
+        for j in range(0, 3) {
+            sum += grid[j * 3 + i]
+        }
+        print(sum)
+    }
+    let mut diag1_sum = 0
+    let mut diag2_sum = 0
+    for i in range(0, 3) {
+        diag1_sum += grid[i * 3 + i]
+        diag2_sum += grid[i * 3 + (2 - i)]
+    }
+    print(diag1_sum)
+    print(diag2_sum)
+    let mut all_equal = true
+    for i in range(0, 3) {
+        all_equal = all_equal && sum(subvec(grid, i * 3, (i + 1) * 3)) == diag1_sum
+    }
+    for i in range(0, 3) {
+        all_equal = all_equal && grid[i * 3 + i] == diag1_sum
+    }
+    print(all_equal)
+}

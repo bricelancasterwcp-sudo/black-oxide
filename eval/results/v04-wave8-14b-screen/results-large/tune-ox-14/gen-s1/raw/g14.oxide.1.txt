@@ -1,0 +1,56 @@
+struct Reading { label: Str, values: Vec<Int> }
+fn count_repeats(v: Vec<Int>) -> Int {
+    let mut max_count = 0
+    let mut current_count = 1
+    for i in range(1, len(v)) {
+        if v[i] == v[i - 1] {
+            current_count += 1
+        } else {
+            max_count = max(max_count, current_count)
+            current_count = 1
+        }
+    }
+    max(max_count, current_count)
+}
+fn first_repeat(v: Vec<Int>) -> Option<Int> {
+    let seen = vec()
+    for (i, x) in enumerate(v) {
+        if contains(seen, x) {
+            return Some(i)
+        }
+        seen = push(seen, x)
+    }
+    None
+}
+fn main() {
+    let readings = push(push(push(push(push(push(push(push(push(push(push(push(vec(), 4), 4), 4), 7), 7), 2), 9), 9), 9), 9), 1), 1), 5)
+    print(len(readings)) // how many readings there are
+    let max_repeats = count_repeats(readings)
+    print(max_repeats) // the length of the longest stretch of consecutive equal readings
+    let value = -1
+    for i in range(0, len(readings) - 1) {
+        if readings[i] == readings[i + 1] {
+            value = readings[i]
+            break
+        }
+    }
+    print(value) // the value making up that stretch
+    let unique_values = len(unique(readings))
+    print(unique_values) // how many different values appear anywhere
+    match first_repeat(readings) {
+        Some(pos) => print(pos), // the position of the first reading that repeats a value already seen
+        None => print(-1),
+    }
+    let mut never_decreases = true
+    for i in range(0, len(readings) - 1) {
+        if readings[i] > readings[i + 1] {
+            never_decreases = false
+            break
+        }
+    }
+    if never_decreases {
+        print_str("true") // whether the readings never decrease from one to the next
+    } else {
+        print_str("false")
+    }
+}

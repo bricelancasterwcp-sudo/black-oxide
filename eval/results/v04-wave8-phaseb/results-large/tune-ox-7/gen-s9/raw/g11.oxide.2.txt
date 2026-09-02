@@ -1,0 +1,16 @@
+fn main() {
+    let grid = vec(4, 9, 2, 3, 5, 7, 8, 1, 6)
+    for i in range(0, 3) {
+        print(sum(slice(grid, i * 3, (i + 1) * 3)))
+    }
+    for j in range(0, 3) {
+        let column_sum = sum(vec(get(grid, j), get(get(grid, j + 3), j), get(get(grid, j + 6), j)))
+        print(column_sum)
+    }
+    let diagonal1 = sum(vec(get(grid, 0), get(grid, 4), get(grid, 8)))
+    let diagonal2 = sum(vec(get(grid, 2), get(grid, 4), get(grid, 6)))
+    print(diagonal1)
+    print(diagonal2)
+    let all_equal = diagonal1 == diagonal2 && diagonal1 == get(slice(grid, 0, 3), 0) + get(slice(grid, 1, 3), 1) + get(slice(grid, 2, 3), 2) && diagonal1 == get(slice(grid, 0, 3), 2) + get(slice(grid, 1, 3), 1) + get(slice(grid, 2, 3), 0)
+    print(all_equal)
+}

@@ -1,0 +1,35 @@
+struct PrimeInfo { count: Int, sum: Int, max_prime: Option<Int>, is_prime: Bool }
+fn main() {
+    let numbers = vec(360, 97, 1024, 561, 143, 2003)
+    let mut prime_count = 0
+    for n in numbers {
+        let info = get_prime_info(n)
+        print(n)
+        print(info.count)
+        print(info.sum)
+        match info.max_prime {
+            Some(max) => print(max),
+            None => print_str("None"),
+        }
+        print(info.is_prime)
+        if info.is_prime {
+            prime_count += 1
+        }
+    }
+    print(prime_count)
+}
+fn get_prime_info(n: Int) -> PrimeInfo {
+    let mut count = 0
+    let mut sum = 0
+    let mut max_prime = None
+    let mut is_prime = true
+    for i in range(2, n + 1) {
+        if n % i == 0 {
+            count += 1
+            sum += i
+            max_prime = Some(i)
+            is_prime = false
+        }
+    }
+    PrimeInfo { count, sum, max_prime, is_prime }
+}

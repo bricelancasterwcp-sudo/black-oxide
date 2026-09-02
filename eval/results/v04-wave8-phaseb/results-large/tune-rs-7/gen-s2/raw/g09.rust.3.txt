@@ -1,0 +1,50 @@
+fn main() {
+    let temps_alpha = [-5, 12, 30, 22, 0, 35, 18];
+    let temps_beta = [8, -12, 5, 41, 27];
+    fn convert_to_fahrenheit(celsius: i32) -> i32 {
+        (celsius * 9 / 5 + 32)
+    }
+    fn process_temps(temps: &[i32]) -> (String, i32, i32, i32, i32, f64) {
+        let mut below_zero = 0;
+        let mut above_thirty = 0;
+        let mut max_fahrenheit = i32::MIN;
+        let mut min_fahrenheit = i32::MAX;
+        let sum_celsius: i32 = temps.iter().sum();
+        for &temp in temps {
+            let fahrenheit = convert_to_fahrenheit(temp);
+            if temp <= 0 {
+                below_zero += 1;
+            }
+            if temp >= 30 {
+                above_thirty += 1;
+            }
+            if fahrenheit > max_fahrenheit {
+                max_fahrenheit = fahrenheit;
+            }
+            if fahrenheit < min_fahrenheit {
+                min_fahrenheit = fahrenheit;
+            }
+        }
+        let mean_celsius = sum_celsius as f64 / temps.len() as f64;
+        (format!("Station alpha"), below_zero, above_thirty, max_fahrenheit, min_fahrenheit, mean_celsius.floor())
+    }
+    let (alpha_name, alpha_below_zero, alpha_above_thirty, alpha_max_fahrenheit, alpha_min_fahrenheit, alpha_mean_celsius) = process_temps(&temps_alpha);
+    println!("{}", alpha_name);
+    println!("{}", alpha_below_zero);
+    println!("{}", alpha_above_thirty);
+    println!("{}", alpha_max_fahrenheit);
+    println!("{}", alpha_min_fahrenheit);
+    println!("{:.0}", alpha_mean_celsius);
+    let (beta_name, beta_below_zero, beta_above_thirty, beta_max_fahrenheit, beta_min_fahrenheit, beta_mean_celsius) = process_temps(&temps_beta);
+    println!("{}", beta_name);
+    println!("{}", beta_below_zero);
+    println!("{}", beta_above_thirty);
+    println!("{}", beta_max_fahrenheit);
+    println!("{}", beta_min_fahrenheit);
+    println!("{:.0}", beta_mean_celsius);
+    if alpha_mean_celsius > beta_mean_celsius {
+        println!("Station alpha");
+    } else {
+        println!("Station beta");
+    }
+}

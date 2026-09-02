@@ -1,0 +1,49 @@
+fn main() {
+    let mut ledger_one = 500;
+    let mut ledger_two = 300;
+    let mut largest_positive_one = 0;
+    let mut negative_count_one = 0;
+    let mut below_zero_one = false;
+    let mut largest_positive_two = 0;
+    let mut negative_count_two = 0;
+    let mut below_zero_two = false;
+    for adjustment in [200, -750, 130, -60, 400] {
+        ledger_one += adjustment;
+        if adjustment > largest_positive_one {
+            largest_positive_one = adjustment;
+        }
+        if adjustment < 0 {
+            negative_count_one += 1;
+        }
+        if ledger_one < 0 {
+            below_zero_one = true;
+        }
+    }
+    for adjustment in [-100, 250, -50, 75] {
+        ledger_two += adjustment;
+        if adjustment > largest_positive_two {
+            largest_positive_two = adjustment;
+        }
+        if adjustment < 0 {
+            negative_count_two += 1;
+        }
+        if ledger_two < 0 {
+            below_zero_two = true;
+        }
+    }
+    println!("ledger-one");
+    println!("{}", ledger_one);
+    println!("{}", largest_positive_one);
+    println!("{}", negative_count_one);
+    println!("{}", below_zero_one);
+    println!("ledger-two");
+    println!("{}", ledger_two);
+    println!("{}", largest_positive_two);
+    println!("{}", negative_count_two);
+    println!("{}", below_zero_two);
+    if ledger_one > ledger_two {
+        println!("ledger-one");
+    } else {
+        println!("ledger-two");
+    }
+}

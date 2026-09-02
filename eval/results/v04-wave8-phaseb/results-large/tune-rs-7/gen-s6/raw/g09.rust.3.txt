@@ -1,0 +1,41 @@
+fn main() {
+    let temps_alpha = [-5, 12, 30, 22, 0, 35, 18];
+    let temps_beta = [8, -12, 5, 41, 27];
+    fn to_fahrenheit(c: i32) -> i32 {
+        (c * 9 / 5 + 32)
+    }
+    fn stats(temps: &[i32]) -> (i32, i32, i32, i32, f64) {
+        let mut below_zero = 0;
+        let mut above_thirty = 0;
+        let mut max_f = i32::MIN;
+        let mut min_f = i32::MAX;
+        let sum_c: i32 = temps.iter().sum();
+        for &temp in temps {
+            let fahrenheit = to_fahrenheit(temp);
+            if temp <= 0 { below_zero += 1; }
+            if temp >= 30 { above_thirty += 1; }
+            if fahrenheit > max_f { max_f = fahrenheit; }
+            if fahrenheit < min_f { min_f = fahrenheit; }
+        }
+        (below_zero, above_thirty, max_f, min_f, sum_c as f64 / temps.len() as f64)
+    }
+    let (alpha_below_zero, alpha_above_thirty, alpha_max_f, alpha_min_f, alpha_mean) = stats(&temps_alpha);
+    let (beta_below_zero, beta_above_thirty, beta_max_f, beta_min_f, beta_mean) = stats(&temps_beta);
+    println!("Station Alpha");
+    println!("{}", alpha_below_zero);
+    println!("{}", alpha_above_thirty);
+    println!("{}", alpha_max_f);
+    println!("{}", alpha_min_f);
+    println!("{:.0}", alpha_mean);
+    println!("Station Beta");
+    println!("{}", beta_below_zero);
+    println!("{}", beta_above_thirty);
+    println!("{}", beta_max_f);
+    println!("{}", beta_min_f);
+    println!("{:.0}", beta_mean);
+    if alpha_mean > beta_mean {
+        println!("Station Alpha has the higher mean temperature.");
+    } else {
+        println!("Station Beta has the higher mean temperature.");
+    }
+}

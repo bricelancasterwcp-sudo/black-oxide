@@ -1,0 +1,40 @@
+struct Reading { label: Str, values: Vec<Int> }
+fn analyze(reading: Reading) -> Option<Str> {
+    let mut increases = 0
+    let mut decreases = 0
+    let mut max_increase = 0
+    let mut longest_streak = 0
+    let mut current_streak = 0
+    for i in range(1, len(reading.values)) {
+        let prev = reading.values[i - 1]
+        let curr = reading.values[i]
+        if curr > prev {
+            increases += 1
+            current_streak += 1
+            max_increase = max(max_increase, curr - prev)
+        } else if curr < prev {
+            decreases += 1
+            current_streak = 0
+        }
+        longest_streak = max(longest_streak, current_streak)
+    }
+    print(reading.label)
+    print(increases)
+    print(decreases)
+    print(max_increase)
+    print(longest_streak)
+    None
+}
+fn main() {
+    let north = Reading { label: "north", values: vec(12, 15, 19, 14, 14, 20, 31, 30) }
+    let south = Reading { label: "south", values: vec(40, 38, 41, 45, 50, 44) }
+    analyze(north)
+    analyze(south)
+    let longest_streak_north = get(longest_streaks, 0).unwrap_or(-1)
+    let longest_streak_south = get(longest_streaks, 1).unwrap_or(-1)
+    if longest_streak_north > longest_streak_south {
+        print_str("north")
+    } else {
+        print_str("south")
+    }
+}

@@ -1,0 +1,38 @@
+fn main() {
+    let mut n = 44
+    let mut seen = vec()
+    let mut max_val = -1
+    let mut min_val = -1
+    let mut sum_vals = 0
+    let mut even_count = 0
+    let mut digit_sum_total = 0
+    let mut reached_one = false
+    for i in range(0, 50) {
+        seen = push(seen, n)
+        if max_val == -1 || n > max_val { max_val = n }
+        if min_val == -1 || n < min_val { min_val = n }
+        sum_vals += n
+        let mut even_round = false
+        let digits_sum = 0
+        for c in chars(int_to_str(n)) {
+            let d = parse_int(c).unwrap_or(-1)
+            digits_sum += d
+            if d % 2 == 0 { even_count += 1; even_round = true }
+            n = d * d
+        }
+        digit_sum_total += digits_sum
+        if n == 1 {
+            reached_one = true
+            break
+        }
+    }
+    print(len(seen))
+    print(n)
+    print(get(seen, len(seen) - 2).unwrap_or(-1))
+    print(max_val)
+    print(min_val)
+    print(sum_vals)
+    if even_count > 0 { print(even_count) } else { print_str("none") }
+    print(digit_sum_total)
+    if reached_one { print_str("yes") } else { print_str("no") }
+}

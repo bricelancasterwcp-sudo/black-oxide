@@ -1,0 +1,15 @@
+fn main() {
+    let v = vec(3, 8, -2, 12, 7)
+    let mut count_pos = 0
+    let mut max_val = Int::min_value()
+    for x in v {
+        if x > 0 {
+            count_pos += 1
+        }
+        if x > max_val {
+            max_val = x
+        }
+    }
+    print(count_pos)
+    print(max_val)
+}

@@ -1,0 +1,46 @@
+struct Grid { values: Vec<Int> }
+fn row_sum(g: Grid, i: Int) -> Option<Int> {
+    let start = i * 3
+    let end = start + 3
+    if start < len(g.values) && end <= len(g.values) {
+        Some(sum(slice(g.values, start, end)))
+    } else {
+        None
+    }
+}
+fn col_sum(g: Grid, j: Int) -> Option<Int> {
+    let mut sum = 0
+    for i in range(0, 3) {
+        let index = i * 3 + j
+        if index < len(g.values) {
+            sum += g.values[index]
+        }
+    }
+    Some(sum)
+}
+fn main() {
+    let grid_values = vec().push(4).push(9).push(2).push(3).push(5).push(7).push(8).push(1).push(6)
+    let g = Grid { values: grid_values }
+    for i in range(0, 3) {
+        match row_sum(g.clone(), i) {
+            Some(sum) => print(sum),
+            None => print_str("Invalid row index"),
+        }
+    }
+    for j in range(0, 3) {
+        match col_sum(g.clone(), j) {
+            Some(sum) => print(sum),
+            None => print_str("Invalid column index"),
+        }
+    }
+    let diag1 = g.values[0] + g.values[4] + g.values[8]
+    let diag2 = g.values[2] + g.values[4] + g.values[6]
+    print(diag1)
+    print(diag2)
+    let all_equal = row_sum(g.clone(), 0) == Some(15) && col_sum(g.clone(), 0) == Some(15) && diag1 == 15 && diag2 == 15
+    if all_equal {
+        print_str("All sums are equal")
+    } else {
+        print_str("Sums are not equal")
+    }
+}

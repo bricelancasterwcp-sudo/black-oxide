@@ -1,0 +1,46 @@
+fn main() {
+    let north = [("bolt", 40, 3), ("hinge", 8, 25), ("plate", 15, 12)];
+    let south = [
+        ("clamp", 6, 45),
+        ("rod", 22, 9),
+        ("washer", 100, 1),
+        ("gasket", 4, 30),
+    ];
+    let mut total_north = 0;
+    let mut total_south = 0;
+    let mut below_ten_north = 0;
+    let mut below_ten_south = 0;
+    let mut max_value_north = 0;
+    let mut max_value_south = 0;
+    let mut max_part_north = "";
+    let mut max_part_south = "";
+    for (part, quantity, price) in north {
+        let value = quantity * price;
+        total_north += value;
+        if quantity < 10 {
+            below_ten_north += 1;
+        }
+        if value > max_value_north {
+            max_value_north = value;
+            max_part_north = part;
+        }
+    }
+    for (part, quantity, price) in south {
+        let value = quantity * price;
+        total_south += value;
+        if quantity < 10 {
+            below_ten_south += 1;
+        }
+        if value > max_value_south {
+            max_value_south = value;
+            max_part_south = part;
+        }
+    }
+    println!("North\n{}\n{}\n{}", total_north, below_ten_north, max_part_north);
+    println!("South\n{}\n{}\n{}", total_south, below_ten_south, max_part_south);
+    if total_north > total_south {
+        println!("North");
+    } else {
+        println!("South");
+    }
+}

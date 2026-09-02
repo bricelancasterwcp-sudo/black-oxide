@@ -1,0 +1,64 @@
+struct Part { name: Str, price: Int }
+struct Warehouse { name: Str, parts: Vec<Part> }
+fn calculate_value(parts: Vec<Part>) -> Int {
+    let mut total = 0
+    for part in parts {
+        total += part.price * get(part, "quantity")?
+    }
+    total
+}
+fn count_below_ten(parts: Vec<Part>) -> Int {
+    let mut count = 0
+    for part in parts {
+        if get(part, "quantity")? < 10 {
+            count += 1
+        }
+    }
+    count
+}
+fn find_most_valuable_part(parts: Vec<Part>) -> Option<Str> {
+    let mut max_value = -1
+    let mut most_valuable_part = None
+    for part in parts {
+        let value = part.price * get(part, "quantity")?
+        if value > max_value {
+            max_value = value
+            most_valuable_part = Some(part.name)
+        }
+    }
+    most_valuable_part
+}
+fn main() {
+    let north_parts = vec(
+        Part { name: "bolt", price: 3 },
+        Part { name: "hinge", price: 25 },
+        Part { name: "plate", price: 12 },
+    )
+    let south_parts = vec(
+        Part { name: "clamp", price: 45 },
+        Part { name: "rod", price: 9 },
+        Part { name: "washer", price: 1 },
+        Part { name: "gasket", price: 30 },
+    )
+    let north = Warehouse { name: "North", parts: north_parts }
+    let south = Warehouse { name: "South", parts: south_parts }
+    for w in vec(north, south) {
+        print(w.name)
+        let value = calculate_value(w.parts)
+        print(value)
+        let count = count_below_ten(w.parts)
+        print(count)
+        let most_valuable_part = find_most_valuable_part(w.parts)
+        match most_valuable_part {
+            Some(part_name) => print_str(part_name),
+            None => print_str("No parts"),
+        }
+    }
+    let north_value = calculate_value(north_parts)
+    let south_value = calculate_value(south_parts)
+    if north_value > south_value {
+        print_str("North")
+    } else {
+        print_str("South")
+    }
+}

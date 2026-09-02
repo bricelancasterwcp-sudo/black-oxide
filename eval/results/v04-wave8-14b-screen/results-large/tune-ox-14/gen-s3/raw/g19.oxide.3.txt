@@ -1,0 +1,52 @@
+fn main() {
+    let text = "order 47 shipped on 2026-03-15, invoice 1290 paid."
+    print(str_len(text))
+    let letters = count_if(text, |c| is_alpha(c))
+    print(letters)
+    let digits = count_if(text, |c| is_digit(c))
+    print(digits)
+    let spaces = count_if(text, |c| c == " ")
+    print(spaces)
+    let others = str_len(text) - letters - digits - spaces
+    print(others)
+    let max_digit_stretch = max_digit_stretch(text)
+    print(max_digit_stretch)
+    let digit_str = collect_chars(text, |c| is_digit(c))
+    print(digit_str)
+}
+fn count_if(s: Str, f: Fn(Char) -> Bool) -> Int {
+    let mut count = 0
+    for c in chars(s) {
+        if f(c) {
+            count += 1
+        }
+    }
+    count
+}
+fn max_digit_stretch(s: Str) -> Int {
+    let mut max_stretch = 0
+    let mut current_stretch = 0
+    for c in chars(s) {
+        if is_digit(c) {
+            current_stretch += 1
+        } else {
+            if current_stretch > max_stretch {
+                max_stretch = current_stretch
+            }
+            current_stretch = 0
+        }
+    }
+    if current_stretch > max_stretch {
+        max_stretch = current_stretch
+    }
+    max_stretch
+}
+fn collect_chars(s: Str, f: Fn(Char) -> Bool) -> Str {
+    let mut result = ""
+    for c in chars(s) {
+        if f(c) {
+            result = concat(result, c)
+        }
+    }
+    result
+}

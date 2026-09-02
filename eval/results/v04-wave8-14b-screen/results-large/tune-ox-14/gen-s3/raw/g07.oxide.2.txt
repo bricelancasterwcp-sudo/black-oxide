@@ -1,0 +1,29 @@
+fn shift(s: Str, n: Int) -> Str {
+    let mut result = ""
+    for c in chars(s) {
+        let shifted = if c >= "a" && c <= "z" {
+            let offset = (c - "a") as Int + n
+            let wrapped = offset % 26
+            char(wrapped + "a".code)
+        } else {
+            c
+        }
+        result = concat(result, shifted)
+    }
+    result
+}
+fn main() {
+    let words = vec("ferry", "oxide", "cargo")
+    for word in words {
+        print(word)
+        let shifted3 = shift(word, 3)
+        print(shifted3)
+        let unshifted3 = shift(shifted3, -3)
+        print(unshifted3)
+        print(if unshifted3 == word { "true" } else { "false" })
+        let shifted13 = shift(word, 13)
+        print(shifted13)
+        let unshifted26 = shift(shifted13, 13)
+        print(if unshifted26 == word { "true" } else { "false" })
+    }
+}

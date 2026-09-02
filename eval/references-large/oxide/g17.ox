@@ -5,27 +5,27 @@ fn main() {
     let i = 0
     let j = 0
     while i < len(left) && j < len(right) {
-        if unwrap_or(get(left, i), 0) <= unwrap_or(get(right, j), 0) {
-            merged = push(merged, unwrap_or(get(left, i), 0))
+        if left[i] <= right[j] {
+            merged = push(merged, left[i])
             i += 1
         } else {
-            merged = push(merged, unwrap_or(get(right, j), 0))
+            merged = push(merged, right[j])
             j += 1
         }
     }
     while i < len(left) {
-        merged = push(merged, unwrap_or(get(left, i), 0))
+        merged = push(merged, left[i])
         i += 1
     }
     while j < len(right) {
-        merged = push(merged, unwrap_or(get(right, j), 0))
+        merged = push(merged, right[j])
         j += 1
     }
     let sorted = true
     let duplicates = 0
     for k in range(1, len(merged)) {
-        let current = unwrap_or(get(merged, k), 0)
-        let previous = unwrap_or(get(merged, k - 1), 0)
+        let current = merged[k]
+        let previous = merged[k - 1]
         if current < previous {
             sorted = false
         }
@@ -34,8 +34,8 @@ fn main() {
         }
     }
     print(len(merged))
-    print(unwrap_or(get(merged, 0), 0))
-    print(unwrap_or(get(merged, len(merged) - 1), 0))
+    print(merged[0])
+    print(merged[len(merged) - 1])
     print(sum(merged))
     print(sorted)
     print(duplicates)

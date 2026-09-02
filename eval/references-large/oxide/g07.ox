@@ -17,7 +17,7 @@ fn shift_word(word: Str, by: Int) -> Str {
     for c in chars(word) {
         let idx = index_of(letters, c)
         let moved = (idx + by + 26) % 26
-        out = concat(out, unwrap_or(get(letters, moved), ""))
+        out = concat(out, letters[moved])
     }
     out
 }

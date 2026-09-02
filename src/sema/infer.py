@@ -455,6 +455,8 @@ class _Infer(_EnumOps, _DestructOps):
                 ty = self._unop(expr)
             case ast.FieldAccess():
                 ty = self._field_access(expr)
+            case ast.Index():
+                ty = self._index_expr(expr)
             case ast.Try():
                 ty = self._try_expr(expr)
             case ast.StructLit():
@@ -647,6 +649,20 @@ class _Infer(_EnumOps, _DestructOps):
                 expr.span,
             )
         return TCon(expr.name)
+
+    def _index_expr(self, expr: ast.Index) -> Type:
+        """`v[i]` : Vec<T>, Int -> T (SPEC 65).
+
+        Yields the element type, not `Option<T>`: SPEC 60.2 already ruled
+        that an Option a call site unwraps away turns a bug into a
+        plausible value, and pays for totality at every in-range use.
+        """
+        obj_ty = self._expr(expr.obj)
+        index_ty = self._expr(expr.index)
+        self.unify(index_ty, INT, expr.index.span)
+        elem = self._fresh()
+        self.unify(obj_ty, TCon("Vec", (elem,)), expr.obj.span)
+        return elem
 
     def _field_access(self, expr: ast.FieldAccess) -> Type:
         obj_ty = self._expr(expr.obj)

@@ -3686,3 +3686,74 @@ that speaks to consumer-hardware deployment.
 discriminate, not when it scores badly. A tier that reads 0.000 under
 every treatment carries no information; a tier that reads 0.485 when
 trained carries a great deal.
+
+## 65. v0.4 wave-9 — indexing, and what wave 8 measured
+
+`v[i]` reads the element at index `i` of a `Vec<T>` and yields `T`. It
+is a postfix expression at the call tier (lbp 13), so `v[0] + 1` is
+`(v[0]) + 1` and `r.values[1]` indexes the field, not the struct.
+
+### 65.1 Why this and not more
+
+Wave 8 built a tier of 20 tasks at 200-600 tokens and found that the
+tuned 7B produced *compiling* Oxide 5.5% of the time against 81.5% for
+the symmetrically-trained Rust control. The 14B screen put the ratio at
+0.0652 against 7B's 0.067: **scale does not move it**, so the cause is
+the language.
+
+The mechanism was read off the model's own output. **75.5% of the Rust
+arm's large-tier attempts index.** At this program size indexing is the
+dominant idiom, not an occasional convenience, and Oxide had no `[` in
+its lexer at all — those attempts died at `OX0001` before type checking
+ever ran. The pressure grows with capability: the `[` rate in Oxide
+attempts rose 16.8% (7B) to 29.0% (14B), because a more capable model
+writes more sophisticated code and sophisticated code indexes.
+
+Scope was set by measured demand across 1014 attempts, not by taste:
+
+| form | occurrences | shipped |
+|---|---:|---|
+| index read `v[i]` | **951** | yes |
+| index assign `v[i] = x` | 12 | no — `set(v, i, x)` covers it |
+| slice `v[a..b]` | 4 | no |
+
+Index assignment is deferred rather than rejected: at 1.3% of demand it
+does not clear the gate, and it would be the first mutating *statement*
+form in a language whose vector convention is owned-in/owned-out. It can
+be revisited on its own evidence.
+
+### 65.2 It yields `T`, not `Option<T>`
+
+Section 60.2 already ruled this, for `set` and `swap`, before this
+construct existed:
+
+> An `Option` that call sites `unwrap_or` away turns a bug into a
+> plausible value... Totality taxes the objective function.
+
+An out-of-range index panics from Rust's own indexing operation, exactly
+as `set` and `swap` do, and the identical-stdout law survives because
+both arms panic identically. **This adds a member to an existing
+category rather than creating one.**
+
+`get(v, i) -> Option<T>` is unchanged and remains the total accessor for
+code that must handle absence. What `v[i]` removes is the ceremony of
+`unwrap_or(get(v, i), 0)` at the overwhelming majority of sites, where
+the index is known to be in range because a `len` bound produced it.
+
+### 65.3 Ownership
+
+Indexing is a **read** of the base, and the element arrives as a fresh
+owned value — section 36's rule for field access, for the same reason.
+Were indexing to move the vector, `for i in range(0, len(v)) { v[i] }`
+would fail on its second iteration, which is the commonest loop the
+construct exists to serve.
+
+### 65.4 Codegen
+
+`v[i]` emits `v[(i) as usize]`. Rust indexes by `usize` while Oxide's
+`Int` is `i64`, so the cast is mandatory; the index is **always
+parenthesised** because Rust binds `as` tighter than arithmetic, and
+`v[len(v) - 1]` would otherwise emit `v[len(v) - (1 as usize)]` and fail
+to compile. A non-copy element appends `.clone()` under section 36's
+type-conditional rule, without which rustc reports E0507, cannot move
+out of index.

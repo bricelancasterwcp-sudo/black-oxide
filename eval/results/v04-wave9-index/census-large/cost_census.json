@@ -1,0 +1,236 @@
+{
+  "source": "large",
+  "tokenizer": {
+    "path": "eval/train/tokenizer/tokenizer.json",
+    "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539"
+  },
+  "dropped": [],
+  "pairs": [
+    {
+      "task": "g02",
+      "class": "strings",
+      "stratum": "compositional",
+      "oxide": 284,
+      "rust": 202,
+      "surplus": 82,
+      "ratio": 1.4059405940594059
+    },
+    {
+      "task": "g10",
+      "class": "strings",
+      "stratum": "compositional",
+      "oxide": 293,
+      "rust": 228,
+      "surplus": 65,
+      "ratio": 1.2850877192982457
+    },
+    {
+      "task": "g07",
+      "class": "strings",
+      "stratum": "compositional",
+      "oxide": 259,
+      "rust": 201,
+      "surplus": 58,
+      "ratio": 1.2885572139303483
+    },
+    {
+      "task": "g19",
+      "class": "strings",
+      "stratum": "linear",
+      "oxide": 272,
+      "rust": 251,
+      "surplus": 21,
+      "ratio": 1.0836653386454183
+    },
+    {
+      "task": "g03",
+      "class": "structs/option",
+      "stratum": "compositional",
+      "oxide": 364,
+      "rust": 346,
+      "surplus": 18,
+      "ratio": 1.0520231213872833
+    },
+    {
+      "task": "g17",
+      "class": "vectors",
+      "stratum": "linear",
+      "oxide": 315,
+      "rust": 299,
+      "surplus": 16,
+      "ratio": 1.0535117056856187
+    },
+    {
+      "task": "g11",
+      "class": "vectors",
+      "stratum": "compositional",
+      "oxide": 288,
+      "rust": 275,
+      "surplus": 13,
+      "ratio": 1.0472727272727274
+    },
+    {
+      "task": "g20",
+      "class": "arithmetic/loops",
+      "stratum": "linear",
+      "oxide": 261,
+      "rust": 248,
+      "surplus": 13,
+      "ratio": 1.0524193548387097
+    },
+    {
+      "task": "g08",
+      "class": "vectors",
+      "stratum": "compositional",
+      "oxide": 317,
+      "rust": 308,
+      "surplus": 9,
+      "ratio": 1.0292207792207793
+    },
+    {
+      "task": "g01",
+      "class": "vectors",
+      "stratum": "compositional",
+      "oxide": 272,
+      "rust": 265,
+      "surplus": 7,
+      "ratio": 1.0264150943396226
+    },
+    {
+      "task": "g04",
+      "class": "arithmetic/loops",
+      "stratum": "compositional",
+      "oxide": 241,
+      "rust": 237,
+      "surplus": 4,
+      "ratio": 1.0168776371308017
+    },
+    {
+      "task": "g14",
+      "class": "vectors",
+      "stratum": "linear",
+      "oxide": 283,
+      "rust": 283,
+      "surplus": 0,
+      "ratio": 1.0
+    },
+    {
+      "task": "g09",
+      "class": "arithmetic/loops",
+      "stratum": "compositional",
+      "oxide": 308,
+      "rust": 316,
+      "surplus": -8,
+      "ratio": 0.9746835443037974
+    },
+    {
+      "task": "g15",
+      "class": "strings",
+      "stratum": "linear",
+      "oxide": 232,
+      "rust": 241,
+      "surplus": -9,
+      "ratio": 0.9626556016597511
+    },
+    {
+      "task": "g13",
+      "class": "arithmetic/loops",
+      "stratum": "linear",
+      "oxide": 303,
+      "rust": 315,
+      "surplus": -12,
+      "ratio": 0.9619047619047619
+    },
+    {
+      "task": "g12",
+      "class": "structs/option",
+      "stratum": "compositional",
+      "oxide": 231,
+      "rust": 244,
+      "surplus": -13,
+      "ratio": 0.9467213114754098
+    },
+    {
+      "task": "g06",
+      "class": "vectors",
+      "stratum": "compositional",
+      "oxide": 312,
+      "rust": 328,
+      "surplus": -16,
+      "ratio": 0.9512195121951219
+    },
+    {
+      "task": "g16",
+      "class": "arithmetic/loops",
+      "stratum": "linear",
+      "oxide": 260,
+      "rust": 278,
+      "surplus": -18,
+      "ratio": 0.935251798561151
+    },
+    {
+      "task": "g05",
+      "class": "structs/option",
+      "stratum": "compositional",
+      "oxide": 292,
+      "rust": 311,
+      "surplus": -19,
+      "ratio": 0.9389067524115756
+    },
+    {
+      "task": "g18",
+      "class": "structs/option",
+      "stratum": "linear",
+      "oxide": 237,
+      "rust": 306,
+      "surplus": -69,
+      "ratio": 0.7745098039215687
+    }
+  ],
+  "classes": {
+    "vectors": {
+      "oxide": 1787,
+      "rust": 1758,
+      "surplus": 29,
+      "ratio": 1.016496018202503
+    },
+    "strings": {
+      "oxide": 1340,
+      "rust": 1123,
+      "surplus": 217,
+      "ratio": 1.1932324131789849
+    },
+    "structs/option": {
+      "oxide": 1124,
+      "rust": 1207,
+      "surplus": -83,
+      "ratio": 0.9312344656172328
+    },
+    "arithmetic/loops": {
+      "oxide": 1373,
+      "rust": 1394,
+      "surplus": -21,
+      "ratio": 0.9849354375896701
+    }
+  },
+  "strata": {
+    "compositional": {
+      "oxide": 3461,
+      "rust": 3261,
+      "surplus": 200,
+      "ratio": 1.0613308800981294
+    },
+    "linear": {
+      "oxide": 2163,
+      "rust": 2221,
+      "surplus": -58,
+      "ratio": 0.9738856371004052
+    }
+  },
+  "overall": {
+    "oxide": 5624,
+    "rust": 5482,
+    "surplus": 142,
+    "ratio": 1.0259029551258665
+  }
+}

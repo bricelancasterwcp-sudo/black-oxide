@@ -61,6 +61,8 @@ class TokenKind(Enum):
     RPAREN = auto()
     LBRACE = auto()
     RBRACE = auto()
+    LBRACKET = auto()  # [ — indexing (SPEC 65)
+    RBRACKET = auto()  # ]
     COMMA = auto()
     COLON = auto()
     PATH_SEP = auto()  # ::
@@ -114,5 +116,12 @@ TERMINATOR_SET: frozenset[TokenKind] = frozenset(
         # golden (SPEC.md section 36) `let x = get(v, 1)?\n...` cannot emit
         # the NEWLINE its `let` statement's TERM requires.
         TokenKind.QUESTION,
+        # SPEC 65: `]` ends an expression like RPAREN. Exactly the trap the
+        # QUESTION entry above documents -- without it `let a = v[0]\n...`
+        # emits no NEWLINE and the `let` statement's TERM swallows the next
+        # line. Every index in the first test pass sat mid-line or inside a
+        # call, so all of them missed it; three large-tier references caught
+        # it at once.
+        TokenKind.RBRACKET,
     }
 )

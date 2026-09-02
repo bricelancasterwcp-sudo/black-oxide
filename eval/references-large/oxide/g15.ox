@@ -24,10 +24,10 @@ fn main() {
     values = push(values, value)
     print(len(keys))
     for i in range(0, len(keys)) {
-        print_str(unwrap_or(get(keys, i), ""))
-        print_str(unwrap_or(get(values, i), ""))
+        print_str(keys[i])
+        print_str(values[i])
     }
-    let qty = unwrap_or(parse_int(unwrap_or(get(values, 1), "")), 0)
-    let price = unwrap_or(parse_int(unwrap_or(get(values, 2), "")), 0)
+    let qty = unwrap_or(parse_int(values[1]), 0)
+    let price = unwrap_or(parse_int(values[2]), 0)
     print(qty * price)
 }

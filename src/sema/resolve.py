@@ -328,6 +328,9 @@ class _Resolver:
                 self._expr(operand)
             case ast.FieldAccess(obj=obj):
                 self._expr(obj)
+            case ast.Index(obj=obj, index=index):
+                self._expr(obj)
+                self._expr(index)
             case ast.Try(operand=operand):
                 self._expr(operand)
             case ast.StructLit(fields=fields, rest=rest):

@@ -40,6 +40,8 @@ verifies every annotation. Types are fully inferred; annotations optional.
   call is `v.push(x)`, matching `push(v, x)`. Writing `v.len()` is an error
   (`EX0002`): the read marker is still required. Only builtins; there are no
   user-defined methods, so `p.area()` is an error.
+- `v[i]` reads a `Vec` element: the value, not an `Option`; `v` stays
+  usable; out-of-range panics.
 - Variant names are global — write `Circle(1.5)`, not `Shape::Circle(1.5)`.
 - Comparison chains like `a < b < c` are not allowed; parenthesize.
 

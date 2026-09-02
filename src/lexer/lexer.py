@@ -46,6 +46,8 @@ _ONE_CHAR_OPERATORS: dict[str, TokenKind] = {
     ")": TokenKind.RPAREN,
     "{": TokenKind.LBRACE,
     "}": TokenKind.RBRACE,
+    "[": TokenKind.LBRACKET,
+    "]": TokenKind.RBRACKET,
     ",": TokenKind.COMMA,
     ":": TokenKind.COLON,
 }

@@ -1,0 +1,44 @@
+fn main() {
+    let mut n = 44
+    let mut rounds = 0
+    let mut final_value = n
+    let mut largest = n
+    let mut smallest = n
+    let mut total_sum = n
+    let mut even_count = 0
+    let mut digit_sum = 0
+    let mut reached_one = false
+    for _ in range(0, 50) {
+        if n == 1 {
+            reached_one = true
+            break
+        }
+        let sum_of_squares = sum(map(to_chars(n), |c| {
+            let d = parse_int(c).unwrap_or(0)
+            d * d
+        }))
+        digit_sum += sum(map(to_chars(n), |c| parse_int(c).unwrap_or(0)))
+        if sum_of_squares % 2 == 0 {
+            even_count += 1
+        }
+        total_sum += sum_of_squares
+        final_value = n
+        n = sum_of_squares
+        if n > largest {
+            largest = n
+        }
+        if n < smallest {
+            smallest = n
+        }
+        rounds += 1
+    }
+    print(rounds)
+    print(final_value)
+    print(n)
+    print(largest)
+    print(smallest)
+    print(total_sum)
+    print(even_count)
+    print(digit_sum)
+    print(if reached_one { 1 } else { 0 })
+}

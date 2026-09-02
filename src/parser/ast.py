@@ -249,6 +249,23 @@ class FieldAccess:
 
 
 @dataclass(frozen=True, slots=True)
+class Index:
+    """`v[i]` — element read (SPEC 65).
+
+    A construct rather than sugar over `get`: it yields `T`, not
+    `Option<T>`, and an out-of-range index panics exactly as `set` and
+    `swap` already do (SPEC 60.2). Wave 8 measured 951 uses of this form
+    against 12 of index-assign, in programs the model could not compile
+    because the lexer had no `[`.
+    """
+
+    node_id: int
+    span: Span
+    obj: Expr
+    index: Expr
+
+
+@dataclass(frozen=True, slots=True)
 class StructLit:
     node_id: int
     span: Span
@@ -322,6 +339,7 @@ type Expr = (
     | BinOp
     | UnOp
     | FieldAccess
+    | Index
     | StructLit
     | Try
     | Var

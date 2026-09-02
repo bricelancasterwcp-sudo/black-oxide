@@ -1,0 +1,50 @@
+fn main() {
+    let mut n = 44
+    let mut rounds = 0
+    let mut final_value = n
+    let mut max_value = n
+    let mut min_value = n
+    let mut sum_values = n
+    let mut even_rounds = 0
+    let mut sum_digits = 0
+    let mut reached_one = false
+    for _ in range(0, 50) {
+        if n == 1 {
+            reached_one = true
+            break
+        }
+        let digits = vec()
+        let mut m = n
+        while m > 0 {
+            digits = push(digits, m % 10)
+            m = m / 10
+        }
+        let mut next_n = 0
+        for d in digits {
+            next_n += d * d
+            sum_digits += d
+        }
+        if next_n % 2 == 0 {
+            even_rounds += 1
+        }
+        n = next_n
+        rounds += 1
+        final_value = n
+        max_value = if max_value < n { n } else { max_value }
+        min_value = if min_value > n { n } else { min_value }
+        sum_values += n
+    }
+    print(rounds)
+    print(final_value)
+    print(final_value)
+    print(max_value)
+    print(min_value)
+    print(sum_values)
+    print(even_rounds)
+    print(sum_digits)
+    if reached_one {
+        print_str("true")
+    } else {
+        print_str("false")
+    }
+}

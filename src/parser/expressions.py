@@ -21,6 +21,7 @@ from src.parser.ast import (
     ErrorExpr,
     Expr,
     FieldAccess,
+    Index,
     If,
     Lit,
     Match,
@@ -104,6 +105,7 @@ _POSTFIX_STARTERS: tuple[TokenKind, ...] = (
     TokenKind.DOT,
     TokenKind.LPAREN,
     TokenKind.QUESTION,
+    TokenKind.LBRACKET,
 )
 
 _LIT_KINDS: dict[TokenKind, str] = {
@@ -412,7 +414,19 @@ class _ExprParserMixin:
         return result
 
     def _postfix(self, lhs: Expr) -> Expr:
-        tok = self._advance()  # DOT, LPAREN, or QUESTION
+        tok = self._advance()  # DOT, LPAREN, QUESTION, or LBRACKET
+        if tok.kind is TokenKind.LBRACKET:
+            # `v[i]` (SPEC 65). Newlines are skipped inside the brackets
+            # for the same reason they are inside a call's parentheses:
+            # the delimiter, not the line, ends the subexpression.
+            saved = (self._skip_nl, self._no_struct_lit)
+            self._skip_nl = True
+            self._no_struct_lit = False
+            index = self._parse_expr(0)
+            rbracket = self._expect(TokenKind.RBRACKET, "']'")
+            self._skip_nl, self._no_struct_lit = saved
+            span = Span(lhs.span.start, rbracket.span.end)
+            return Index(self._new_id(), span, lhs, index)
         if tok.kind is TokenKind.QUESTION:
             # Postfix `?` (SPEC.md §§34-35): Try at the postfix tier (lbp 13).
             return Try(self._new_id(), Span(lhs.span.start, tok.span.end), lhs)

@@ -35,6 +35,8 @@ optional everywhere.
   `v.push(x)` means `push(v, x)`, and calls chain — `vec().push(1).push(2)`.
   Both forms are identical in meaning and ownership. Only builtins: there are
   no user-defined methods, so `p.area()` is an error.
+- `v[i]` reads a `Vec` element: the value, not an `Option`; `v` stays
+  usable; out-of-range panics.
 - Variant names are global — write `Circle(1.5)`, not `Shape::Circle(1.5)`.
 - Comparison chains like `a < b < c` are not allowed; parenthesize.
 

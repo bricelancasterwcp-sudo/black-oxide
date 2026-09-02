@@ -1,0 +1,30 @@
+fn main() {
+    let group_a = vec(120, 95, 143, 87, 210, 156, 99)
+    let group_b = vec(175, 132, 88, 240, 119, 167)
+    for group in vec("A", "B") {
+        let readings = if group == "A" { clone(group_a) } else { clone(group_b) }
+        let count = len(readings)
+        let sum = sum(readings)
+        let avg = sum / count
+        let above_avg_count = 0
+        for x in readings {
+            if x > avg {
+                above_avg_count += 1
+            }
+        }
+        let min_reading = min(clone(group_a)).unwrap_or(-1)
+        let max_reading = max(clone(group_a)).unwrap_or(-1)
+        print_str(group)
+        print(count)
+        print(avg)
+        print(above_avg_count)
+        print(max_reading - min_reading)
+    }
+    let sum_a = sum(clone(group_a))
+    let sum_b = sum(clone(group_b))
+    if sum_a > sum_b {
+        print_str("A")
+    } else {
+        print_str("B")
+    }
+}

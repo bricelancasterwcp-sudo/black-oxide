@@ -1,0 +1,48 @@
+struct Ledger { name: Str, opening_balance: Int, adjustments: Vec<Int> }
+fn apply_adjustments(l: Ledger) -> (Int, Option<Int>, Int, Bool) {
+    let mut balance = l.opening_balance
+    let mut largest_positive = None
+    let mut negative_count = 0
+    let mut went_below_zero = false
+    for a in l.adjustments {
+        balance += a
+        if a > 0 {
+            largest_positive = match largest_positive {
+                Some(current_max) => if a > current_max { Some(a) } else { Some(current_max) },
+                None => Some(a),
+            }
+        } else if a < 0 {
+            negative_count += 1
+        }
+        if balance < 0 {
+            went_below_zero = true
+        }
+    }
+    (balance, largest_positive, negative_count, went_below_zero)
+}
+fn main() {
+    let ledger_one = Ledger { name: "ledger-one", opening_balance: 500, adjustments: vec(200, -750, 130, -60, 400) }
+    let ledger_two = Ledger { name: "ledger-two", opening_balance: 300, adjustments: vec(-100, 250, -50, 75) }
+    for ledger in vec(ledger_one, ledger_two) {
+        let (closing_balance, largest_positive, negative_count, went_below_zero) = apply_adjustments(ledger)
+        print_str(ledger.name)
+        print(closing_balance)
+        match largest_positive {
+            Some(value) => print(value),
+            None => print_str("None"),
+        }
+        print(negative_count)
+        if went_below_zero {
+            print_str("true")
+        } else {
+            print_str("false")
+        }
+    }
+    let (closing_one, _, _, _) = apply_adjustments(ledger_one)
+    let (closing_two, _, _, _) = apply_adjustments(ledger_two)
+    if closing_one > closing_two {
+        print_str("ledger-one")
+    } else {
+        print_str("ledger-two")
+    }
+}

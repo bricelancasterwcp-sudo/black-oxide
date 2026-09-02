@@ -1,0 +1,33 @@
+fn main() {
+    let numbers = [360, 97, 1024, 561, 143, 2003];
+    let mut prime_count = 0;
+    for &num in &numbers {
+        let factors = prime_factors(num);
+        println!("{}", num);
+        println!("{}", factors.len());
+        println!("{}", factors.iter().sum::<u32>());
+        if let Some(&max) = factors.last() {
+            println!("{}", max);
+        } else {
+            println!("0");
+        }
+        if factors.len() == 1 && factors[0] == num {
+            prime_count += 1;
+        }
+    }
+    println!("{}", prime_count);
+}
+fn prime_factors(mut n: u32) -> Vec<u32> {
+    let mut factors = Vec::new();
+    let mut divisor = 2;
+    while n > 1 {
+        while n % divisor == 0 {
+            if !factors.contains(&divisor) {
+                factors.push(divisor);
+            }
+            n /= divisor;
+        }
+        divisor += 1;
+    }
+    factors
+}

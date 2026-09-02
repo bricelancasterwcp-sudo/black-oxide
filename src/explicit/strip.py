@@ -225,6 +225,8 @@ class _Stripper:
                 return replace(expr, operand=self._expr(operand))
             case ast.FieldAccess(obj=obj):
                 return replace(expr, obj=self._expr(obj))
+            case ast.Index(obj=obj, index=index):
+                return replace(expr, obj=self._expr(obj), index=self._expr(index))
             case ast.Try(operand=operand):
                 return replace(expr, operand=self._expr(operand))
             case ast.StructLit(fields=fields, rest=rest):

@@ -1,0 +1,43 @@
+struct Grid { cells: Vec<Int> }
+fn row_sums(g: Grid) -> Vec<Int> {
+    let mut sums = vec()
+    for i in range(0, 3) {
+        let sum = g.cells[i * 3] + g.cells[i * 3 + 1] + g.cells[i * 3 + 2]
+        sums = push(sums, sum)
+    }
+    sums
+}
+fn col_sums(g: Grid) -> Vec<Int> {
+    let mut sums = vec()
+    for i in range(0, 3) {
+        let sum = g.cells[i] + g.cells[i + 3] + g.cells[i + 6]
+        sums = push(sums, sum)
+    }
+    sums
+}
+fn diag_sums(g: Grid) -> Vec<Int> {
+    let mut sums = vec()
+    let sum1 = g.cells[0] + g.cells[4] + g.cells[8]
+    let sum2 = g.cells[2] + g.cells[4] + g.cells[6]
+    sums = push(sums, sum1)
+    sums = push(sums, sum2)
+    sums
+}
+fn all_sums(g: Grid) -> Vec<Int> {
+    let mut sums = row_sums(g)
+    let col = col_sums(g)
+    let diag = diag_sums(g)
+    sums = concat(sums, col)
+    sums = concat(sums, diag)
+    sums
+}
+fn main() {
+    let grid = Grid { cells: vec(4, 9, 2, 3, 5, 7, 8, 1, 6) }
+    let sums = all_sums(grid)
+    for sum in sums {
+        print(sum)
+    }
+    let first_sum = get(sums, 0).unwrap_or(-1)
+    let all_equal = all(sums, |x| x == first_sum)
+    print(all_equal)
+}

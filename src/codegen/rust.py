@@ -606,6 +606,27 @@ class _FnEmitter:
                 if isinstance(operand, (ast.BinOp, ast.If, ast.Match)):
                     inner = f"({inner})"
                 return op + inner
+            case ast.Index(obj=obj, index=index):
+                # SPEC 65: `v[i]` -> `v[i as usize]`. Rust indexes by
+                # usize and Oxide's Int is i64, so the cast is mandatory
+                # rather than cosmetic. An out-of-range index panics from
+                # Rust's own operation, which is the SPEC 60.2 category
+                # `set` and `swap` already belong to.
+                base = self._expr(obj, indent)
+                if isinstance(obj, (ast.BinOp, ast.UnOp, ast.If, ast.Match)):
+                    base = f"({base})"
+                # The index is ALWAYS parenthesised before the cast: Rust
+                # binds `as` tighter than arithmetic, so `v[len(v) - 1]`
+                # would otherwise emit `v[len(v) - (1 as usize)]` and fail
+                # to compile. Caught by `v[len(v) - 1]`, which is the
+                # commonest index expression after a bare variable.
+                text = f"{base}[({self._expr(index, indent)}) as usize]"
+                # Section 36's rule for fields applies for the same reason:
+                # a non-copy element is read out as a fresh owned value, so
+                # indexing never moves out of the vector.
+                if not is_copy(self.types.get(expr.node_id, UNIT)):
+                    text += ".clone()"
+                return text
             case ast.FieldAccess(obj=obj, field=field):
                 base = self._expr(obj, indent)
                 if isinstance(obj, (ast.BinOp, ast.UnOp, ast.If, ast.Match)):

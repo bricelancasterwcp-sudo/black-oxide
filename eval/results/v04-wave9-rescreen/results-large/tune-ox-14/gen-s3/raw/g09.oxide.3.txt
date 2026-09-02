@@ -1,0 +1,39 @@
+struct Reading { label: Str, values: Vec<Int> }
+fn to_fahrenheit(celsius: Int) -> Int {
+    let f = celsius * 9 / 5 + 32
+    f
+}
+fn analyze_station(r: Reading) -> (Str, Int, Int, Int, Int, Int) {
+    let label = r.label
+    let values = r.values
+    let below_zero_count = count_if(values, |x| x <= 0)
+    let above_thirty_count = count_if(values, |x| x >= 30)
+    let fahrenheit_values = map(values, to_fahrenheit)
+    let max_f = unwrap_or(max(fahrenheit_values), -1000)
+    let min_f = unwrap_or(min(fahrenheit_values), 1000)
+    let mean_c = sum(values) / len(values)
+    (label, below_zero_count, above_thirty_count, max_f, min_f, mean_c)
+}
+fn main() {
+    let alpha_readings = push(push(push(push(push(push(vec(), -5), 12), 30), 22), 0), 35), 18)
+    let beta_readings = push(push(push(push(vec(), 8), -12), 5), 41), 27)
+    let alpha = analyze_station(Reading { label: "alpha", values: alpha_readings })
+    let beta = analyze_station(Reading { label: "beta", values: beta_readings })
+    print_str(alpha.0)
+    print(alpha.1)
+    print(alpha.2)
+    print(alpha.3)
+    print(alpha.4)
+    print(alpha.5)
+    print_str(beta.0)
+    print(beta.1)
+    print(beta.2)
+    print(beta.3)
+    print(beta.4)
+    print(beta.5)
+    if alpha.5 > beta.5 {
+        print_str("alpha")
+    } else {
+        print_str("beta")
+    }
+}

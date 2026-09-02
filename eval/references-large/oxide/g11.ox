@@ -1,7 +1,7 @@
 fn strided_sum(grid: Vec<Int>, start: Int, step: Int, count: Int) -> Int {
     let total = 0
     for k in range(0, count) {
-        total += unwrap_or(get(grid, start + k * step), 0)
+        total += grid[start + k * step]
     }
     total
 }

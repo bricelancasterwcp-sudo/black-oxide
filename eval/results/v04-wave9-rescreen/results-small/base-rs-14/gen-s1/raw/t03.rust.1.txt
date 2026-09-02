@@ -1,0 +1,18 @@
+```rust
+use std::io;
+
+fn gcd(mut m: u32, mut n: u32) -> u32 {
+    while m != 0 {
+        let temp = m;
+        m = n % m;
+        n = temp;
+    }
+    n
+}
+
+fn main() {
+    let a = 252;
+    let b = 105;
+    println!("The greatest common divisor of {} and {} is {}", a, b, gcd(a, b));
+}
+```

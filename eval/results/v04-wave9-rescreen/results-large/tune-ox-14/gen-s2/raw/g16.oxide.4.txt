@@ -1,0 +1,40 @@
+fn main() {
+    let mut n = 44
+    let mut rounds = 0
+    let mut values = vec()
+    let mut sum_of_values = 0
+    let mut even_count = 0
+    let mut digit_sum = 0
+    let mut reached_one = false
+    while n != 1 && rounds < 50 {
+        values = push(values, n)
+        let digits = chars(int_to_str(n))
+        let sum_of_squares = 0
+        for d in digits {
+            let digit_value = parse_int(d).unwrap_or(0)
+            sum_of_squares += digit_value * digit_value
+            digit_sum += digit_value
+        }
+        if sum_of_squares % 2 == 0 {
+            even_count += 1
+        }
+        n = sum_of_squares
+        sum_of_values += n
+        rounds += 1
+    }
+    values = push(values, n)
+    let max_value = max(values).unwrap_or(0)
+    let min_value = min(values).unwrap_or(44) // Corrected to include the starting value
+    if n == 1 {
+        reached_one = true
+    }
+    print(rounds)
+    print(n)
+    print(get(values, len(values) - 2).unwrap_or(0))
+    print(max_value)
+    print(min_value)
+    print(sum_of_values)
+    print(even_count)
+    print(digit_sum)
+    print(if reached_one { 1 } else { 0 })
+}

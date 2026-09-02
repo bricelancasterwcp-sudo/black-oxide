@@ -14,7 +14,7 @@ fn factor_report(n: Int) -> Bool {
     if remaining > 1 {
         factors = push(factors, remaining)
     }
-    let prime = len(factors) == 1 && unwrap_or(get(factors, 0), 0) == n
+    let prime = len(factors) == 1 && factors[0] == n
     print(n)
     print(len(factors))
     print(sum(factors))

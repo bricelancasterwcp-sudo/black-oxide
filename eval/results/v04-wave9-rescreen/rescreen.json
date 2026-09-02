@@ -1,0 +1,65 @@
+{
+  "diagnostics": {
+    "attempts": 229,
+    "codes": {
+      "OX0001": 4,
+      "OX0100": 29,
+      "OX0101": 77,
+      "OX0103": 32,
+      "OX0200": 54,
+      "OX0205": 1,
+      "OX0300": 6,
+      "OX0303": 1,
+      "OX0308": 1,
+      "OX0400": 7,
+      "OX0403": 1
+    },
+    "failed": 213,
+    "lexer_share": 0.018779342723004695
+  },
+  "guards": [
+    {
+      "anchor": 0.55,
+      "arm": "base-rs-14",
+      "pass1": 0.55,
+      "reproduced": true
+    },
+    {
+      "anchor": 0.8,
+      "arm": "tune-ox-14",
+      "pass1": 0.7833333333333333,
+      "reproduced": false
+    }
+  ],
+  "guards_all_reproduced": false,
+  "large": {
+    "compile_ratio": 0.0698,
+    "oxide": {
+      "compiled": 3,
+      "n": 60,
+      "rate": 0.05
+    },
+    "rust": {
+      "compiled": 43,
+      "n": 60,
+      "rate": 0.7166666666666667
+    }
+  },
+  "lexer_share_baseline": 0.338,
+  "seven_b_ratio": 0.067,
+  "wave8_band_verdict": "language-property",
+  "wave9": {
+    "bands": {
+      "lexer_confirmed_below": 0.15,
+      "partial": 0.12,
+      "real": 0.2
+    },
+    "baseline_ratio": 0.0652,
+    "delta": null,
+    "lexer_share": 0.018779342723004695,
+    "lexer_share_baseline": 0.338,
+    "mechanism": "attribution-confirmed",
+    "ratio": 0.0698,
+    "reading": "guards-missed"
+  }
+}

@@ -1,0 +1,27 @@
+fn main() {
+    let words = ["ferry", "oxide", "cargo"];
+    for &word in words.iter() {
+        println!("{}", word);
+        let shifted_forward = shift(word, 3);
+        println!("{}", shifted_forward);
+        let shifted_backward = shift(shifted_forward, -3);
+        println!("{}", shifted_backward);
+        println!("{}", shifted_backward == word);
+        let shifted_thirteen_forward = shift(word, 13);
+        println!("{}", shifted_thirteen_forward);
+        let shifted_twenty_six_forward = shift(shifted_thirteen_forward, 13);
+        println!("{}", shifted_twenty_six_forward == word);
+    }
+}
+fn shift(word: &str, amount: isize) -> String {
+    word.chars()
+        .map(|c| {
+            if c.is_ascii_lowercase() {
+                let shifted = ((c as u8 - b'a' + amount as u8) % 26) + b'a';
+                shifted as char
+            } else {
+                c
+            }
+        })
+        .collect()
+}

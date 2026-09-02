@@ -1,0 +1,45 @@
+fn count_marks(v: Vec<Int>, lo: Int, hi: Int) -> Int {
+    let mut count = 0
+    for x in v {
+        if x >= lo && x <= hi {
+            count += 1
+        }
+    }
+    count
+}
+fn main() {
+    let morning = vec(94, 71, 88, 65, 92, 79, 83)
+    let evening = vec(55, 90, 77, 84, 68, 99)
+    for (name, marks) in vec(("Morning", morning), ("Evening", evening)) {
+        print_str(name)
+        print(count_marks(marks.clone(), 90, 100))
+        print(count_marks(marks.clone(), 80, 89))
+        print(count_marks(marks.clone(), 70, 79))
+        print(count_marks(marks.clone(), 0, 69))
+        print(unwrap_or(max(marks.clone()), -1))
+        let sum = 0
+        for x in marks {
+            sum += x
+        }
+        print(sum / len(marks))
+    }
+    let morning_mean = {
+        let sum = 0
+        for x in morning {
+            sum += x
+        }
+        sum / len(morning)
+    }
+    let evening_mean = {
+        let sum = 0
+        for x in evening {
+            sum += x
+        }
+        sum / len(evening)
+    }
+    if morning_mean > evening_mean {
+        print_str("Morning")
+    } else {
+        print_str("Evening")
+    }
+}

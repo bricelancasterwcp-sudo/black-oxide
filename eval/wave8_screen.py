@@ -67,6 +67,45 @@ def guard(arm_dir: Path, arm: str) -> dict:
     }
 
 
+#: Wave 8's 14B large-tier baseline under `diagnostic_mix`'s own lens:
+#: 73 of the 216 attempts (first and repair alike) that carried any
+#: diagnostic had `OX0001` (lexer) first, overwhelmingly `unexpected
+#: character '['`. An earlier value here read 73/191 -- the 191 was the
+#: sum of the four largest codes in the wave-8 report's table, not the
+#: instrument's denominator; it was never computed from the cells. A
+#: real-data test now pins this constant to the committed wave-8 cells
+#: (tests/test_wave9_rescreen.py), recorded in the wave-9 plan's
+#: 2026-09-02 11:55 UTC amendment.
+LEXER_SHARE_BASELINE = 73 / 216
+
+
+def diagnostic_mix(arm_dir: Path) -> dict:
+    """First diagnostic per failing attempt, counted by code.
+
+    The FIRST one only: it is the cause, and later diagnostics on the
+    same attempt are usually consequences of it. The lexer share is the
+    mechanism check for SPEC 65 -- if `OX0001` stays high after `[`
+    became legal, the wave-8 attribution was wrong.
+    """
+    counts: dict[str, int] = {}
+    attempts = 0
+    for path in sorted(Path(arm_dir).glob("*-gen-s*/triples.jsonl")):
+        for line in path.read_text(encoding="utf-8").splitlines():
+            if not line.strip():
+                continue
+            attempts += 1
+            for diag in (json.loads(line).get("diagnostics") or [])[:1]:
+                code = diag.get("code", "?")
+                counts[code] = counts.get(code, 0) + 1
+    total = sum(counts.values())
+    return {
+        "attempts": attempts,
+        "failed": total,
+        "codes": dict(sorted(counts.items(), key=lambda kv: -kv[1])),
+        "lexer_share": (counts.get("OX0001", 0) / total) if total else None,
+    }
+
+
 def verdict(ratio: float | None) -> str:
     """The plan's three states. 'escalate' is a real outcome, not a
     failure: the screen is allowed to decline to conclude."""
@@ -92,6 +131,8 @@ def screen(large_root: Path, small_root: Path) -> dict:
         "guards": guards,
         "guards_all_reproduced": all(g["reproduced"] for g in guards),
         "large": {"oxide": ox, "rust": rs, "compile_ratio": ratio},
+        "diagnostics": diagnostic_mix(Path(large_root) / "tune-ox-14"),
+        "lexer_share_baseline": round(LEXER_SHARE_BASELINE, 4),
         "seven_b_ratio": SEVEN_B_RATIO,
         "verdict": verdict(ratio),
     }
@@ -117,6 +158,17 @@ def render(report: dict) -> str:
         f"(7B: {report['seven_b_ratio']}) → **{report['verdict'].upper()}**",
         "",
     ]
+    dm = report["diagnostics"]
+    if dm["failed"]:
+        share = dm["lexer_share"]
+        lines += [
+            f"Oxide first-diagnostic mix over {dm['failed']} failing "
+            f"attempts: `{dm['codes']}`",
+            "",
+            f"**OX0001 (lexer) share {share:.3f}** "
+            f"(wave 8: {report['lexer_share_baseline']:.3f})",
+            "",
+        ]
     if report["verdict"] == "escalate":
         lines.append(
             "Between the pre-registered bands. **Escalate to ten seeds "

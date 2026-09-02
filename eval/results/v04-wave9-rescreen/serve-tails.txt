@@ -1,0 +1,12 @@
+## serve-base-rs-14.log
+4.54.753.651 I slot print_timing: id  3 | task 13486 |       total time =    3808.16 ms /   191 tokens
+4.54.753.652 I slot print_timing: id  3 | task 13486 |    graphs reused =      13306
+4.54.753.679 I slot      release: id  3 | task 13486 | stop processing: n_tokens = 564, truncated = 0
+## serve-tune-ox-14.log
+26.29.248.319 I slot print_timing: id  3 | task 77123 |       total time =    4686.64 ms /   235 tokens
+26.29.248.319 I slot print_timing: id  3 | task 77123 |    graphs reused =      76506
+26.29.248.347 I slot      release: id  3 | task 77123 | stop processing: n_tokens = 756, truncated = 0
+## serve-tune-rs-14.log
+14.42.654.352 I slot print_timing: id  3 | task 41950 |       total time =    4032.72 ms /   202 tokens
+14.42.654.353 I slot print_timing: id  3 | task 41950 |    graphs reused =      41612
+14.42.654.380 I slot      release: id  3 | task 41950 | stop processing: n_tokens = 323, truncated = 0

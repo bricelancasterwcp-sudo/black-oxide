@@ -189,10 +189,9 @@ def test_acceptance_pins_the_large_tier():
     """Wave 8's drift alarm. Authored 2026-09-01: 20 tasks, both arms
     oracle-verified, every program inside the 200-600 token band.
 
-    5823/5482 = 1.0622 AFTER the symmetric re-review, which converted six
-    Oxide `while i < len(v)` loops to `range` where the Rust arm already
-    had a counted loop and moved the ratio 1.0766 -> 1.0622 in Oxide's
-    favour. The small tiers read 0.9462 (eval) and 0.9871 (train), so
+    5624/5482 = 1.0259 after wave 9 shipped `v[i]` (SPEC 65) and 28
+    hand-rolled `unwrap_or(get(v, i), d)` sites collapsed to it. The
+    pre-indexing figure was 5823/5482 = 1.0622. The small tiers read 0.9462 (eval) and 0.9871 (train), so
     this tier crossing parity is the wave's finding, not a defect. If
     this fails, either the tier moved or the tokenizer did."""
     from eval.cost_census import LARGE_SOURCE
@@ -204,4 +203,4 @@ def test_acceptance_pins_the_large_tier():
     assert all(200 <= c.rust_tokens <= 600 for c in costs)
     overall_ox = sum(c.oxide_tokens for c in costs)
     overall_rs = sum(c.rust_tokens for c in costs)
-    assert (overall_ox, overall_rs) == (5823, 5482)
+    assert (overall_ox, overall_rs) == (5624, 5482)

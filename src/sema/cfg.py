@@ -508,6 +508,14 @@ class _Lowerer:
                 return self._expr(lhs, _READ) + self._expr(rhs, _READ)
             case ast.UnOp(operand=operand):
                 return self._expr(operand, _READ)
+            case ast.Index(obj=obj, index=index):
+                # SPEC 65: the base stays a READ and the element arrives as
+                # a fresh owned value, exactly as section 36 rules for a
+                # field. Indexing a vector must not consume it, or the
+                # commonest loop in the language (`v[i]` under `len(v)`)
+                # would fail on its second iteration.
+                self._expr(index, _READ)
+                return self._expr(obj, _READ)
             case ast.FieldAccess(obj=obj):
                 # Section 36 (supersedes OX0405): the base stays a READ and
                 # a non-copy field value is an implicit clone — a fresh

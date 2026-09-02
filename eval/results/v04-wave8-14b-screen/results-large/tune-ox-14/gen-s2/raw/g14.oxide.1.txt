@@ -1,0 +1,47 @@
+fn main() {
+    let readings = vec(4, 4, 4, 7, 7, 2, 9, 9, 9, 9, 1, 1, 5)
+    print(len(readings))
+    let mut max_stretch = 0
+    let mut current_stretch = 1
+    let mut max_value = -1
+    for i in range(1, len(readings)) {
+        if readings[i] == readings[i - 1] {
+            current_stretch += 1
+        } else {
+            if current_stretch > max_stretch {
+                max_stretch = current_stretch
+                max_value = readings[i - 1]
+            }
+            current_stretch = 1
+        }
+    }
+    if current_stretch > max_stretch {
+        max_stretch = current_stretch
+        max_value = readings[len(readings) - 1]
+    }
+    print(max_stretch)
+    print(max_value)
+    let unique_values = set()
+    for r in readings {
+        unique_values = insert(unique_values, r)
+    }
+    print(len(unique_values))
+    let mut seen = set()
+    let mut first_repeat = -1
+    for i in range(0, len(readings)) {
+        if contains(seen, readings[i]) {
+            first_repeat = i
+            break
+        }
+        seen = insert(seen, readings[i])
+    }
+    print(first_repeat)
+    let mut never_decreases = true
+    for i in range(1, len(readings)) {
+        if readings[i] < readings[i - 1] {
+            never_decreases = false
+            break
+        }
+    }
+    print(if never_decreases { 1 } else { 0 })
+}

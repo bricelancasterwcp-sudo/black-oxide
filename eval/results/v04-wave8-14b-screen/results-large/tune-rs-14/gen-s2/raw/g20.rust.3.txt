@@ -1,0 +1,20 @@
+fn main() {
+    let mut primes = vec![true; 101];
+    for i in 2..=100 {
+        if primes[i] {
+            for j in (i * i..=100).step_by(i) {
+                primes[j] = false;
+            }
+        }
+    }
+    let prime_numbers: Vec<u32> = primes.iter().enumerate()
+        .filter(|&(_, &is_prime)| is_prime)
+        .map(|(num, _)| num as u32)
+        .collect();
+    println!("{}", prime_numbers.len());
+    println!("{}", *prime_numbers.last().unwrap());
+    println!("{}", prime_numbers.iter().sum::<u32>());
+    let twin_primes = prime_numbers.windows(2).filter(|w| w[1] - w[0] == 2).count();
+    println!("{}", twin_primes);
+    println!("{}", prime_numbers[9]);
+}

@@ -106,10 +106,10 @@ def render(report: dict) -> str:
             f"(anchor {g['anchor']}, seeds 1-3): **{mark}**"
         )
     lines += ["", "| large tier | compiled | n | rate |", "|---|---:|---:|---:|"]
-    for name in ("oxide", "rust"):
+    for name, short in (("oxide", "ox"), ("rust", "rs")):
         c = report["large"][name]
         rate = "n/a" if c["rate"] is None else f"{c['rate']:.3f}"
-        lines.append(f"| tune-{name[:2]}-14 | {c['compiled']} | {c['n']} | {rate} |")
+        lines.append(f"| tune-{short}-14 | {c['compiled']} | {c['n']} | {rate} |")
     ratio = report["large"]["compile_ratio"]
     lines += [
         "",

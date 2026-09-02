@@ -1,0 +1,46 @@
+fn main() {
+    let mut value = 44;
+    let mut rounds = 0;
+    let mut largest = 44;
+    let mut smallest = 44;
+    let mut sum = 44;
+    let mut even_rounds = 0;
+    let mut digit_sum = 0;
+    let mut reached_one = false;
+    let mut previous_value = 44;
+    while rounds < 50 && !reached_one {
+        let mut next_value = 0;
+        let mut temp = value;
+        while temp > 0 {
+            let digit = temp % 10;
+            next_value += digit * digit;
+            digit_sum += digit;
+            temp /= 10;
+        }
+        if next_value == 1 {
+            reached_one = true;
+        }
+        if next_value > largest {
+            largest = next_value;
+        }
+        if next_value < smallest {
+            smallest = next_value;
+        }
+        sum += next_value;
+        if next_value % 2 == 0 {
+            even_rounds += 1;
+        }
+        previous_value = value;
+        value = next_value;
+        rounds += 1;
+    }
+    println!("{}", rounds);
+    println!("{}", value);
+    println!("{}", previous_value);
+    println!("{}", largest);
+    println!("{}", smallest);
+    println!("{}", sum);
+    println!("{}", even_rounds);
+    println!("{}", digit_sum);
+    println!("{}", reached_one);
+}

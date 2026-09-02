@@ -1,0 +1,43 @@
+fn main() {
+    let list1 = vec![2, 5, 9, 14, 21, 30];
+    let list2 = vec![1, 5, 8, 15, 22];
+    let mut merged_list = Vec::new();
+    let mut i = 0;
+    let mut j = 0;
+    while i < list1.len() && j < list2.len() {
+        if list1[i] <= list2[j] {
+            merged_list.push(list1[i]);
+            i += 1;
+        } else {
+            merged_list.push(list2[j]);
+            j += 1;
+        }
+    }
+    while i < list1.len() {
+        merged_list.push(list1[i]);
+        i += 1;
+    }
+    while j < list2.len() {
+        merged_list.push(list2[j]);
+        j += 1;
+    }
+    println!("{}", merged_list.len());
+    println!("{}", merged_list[0]);
+    println!("{}", merged_list[merged_list.len() - 1]);
+    println!("{}", merged_list.iter().sum::<i32>());
+    let mut is_non_decreasing = true;
+    for k in 1..merged_list.len() {
+        if merged_list[k] < merged_list[k - 1] {
+            is_non_decreasing = false;
+            break;
+        }
+    }
+    println!("{}", is_non_decreasing);
+    let mut consecutive_duplicates = 0;
+    for k in 1..merged_list.len() {
+        if merged_list[k] == merged_list[k - 1] {
+            consecutive_duplicates += 1;
+        }
+    }
+    println!("{}", consecutive_duplicates);
+}

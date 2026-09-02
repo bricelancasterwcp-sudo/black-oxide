@@ -1,0 +1,32 @@
+fn main() {
+    let grid = [4, 9, 2, 3, 5, 7, 8, 1, 6];
+    let mut row_sums = [0; 3];
+    let mut col_sums = [0; 3];
+    let mut diag1_sum = 0;
+    let mut diag2_sum = 0;
+    for i in 0..3 {
+        for j in 0..3 {
+            row_sums[i] += grid[i * 3 + j];
+            col_sums[j] += grid[i * 3 + j];
+            if i == j {
+                diag1_sum += grid[i * 3 + j];
+            }
+            if i + j == 2 {
+                diag2_sum += grid[i * 3 + j];
+            }
+        }
+    }
+    for &sum in row_sums.iter() {
+        println!("{}", sum);
+    }
+    for &sum in col_sums.iter() {
+        println!("{}", sum);
+    }
+    println!("{}", diag1_sum);
+    println!("{}", diag2_sum);
+    let all_equal = row_sums.iter().all(|&x| x == row_sums[0])
+        && col_sums.iter().all(|&x| x == col_sums[0])
+        && diag1_sum == row_sums[0]
+        && diag2_sum == row_sums[0];
+    println!("{}", all_equal);
+}

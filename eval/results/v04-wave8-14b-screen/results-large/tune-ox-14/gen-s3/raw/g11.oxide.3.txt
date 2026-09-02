@@ -1,0 +1,32 @@
+fn main() {
+    let grid = vec(4, 9, 2, 3, 5, 7, 8, 1, 6)
+    let row_sums = vec(
+        sum(slice(grid, 0, 3)),
+        sum(slice(grid, 3, 6)),
+        sum(slice(grid, 6, 9))
+    )
+    for s in row_sums {
+        print(s)
+    }
+    let col_sums = vec(
+        sum(vec(get(grid, 0), get(grid, 3), get(grid, 6))),
+        sum(vec(get(grid, 1), get(grid, 4), get(grid, 7))),
+        sum(vec(get(grid, 2), get(grid, 5), get(grid, 8)))
+    )
+    for s in col_sums {
+        print(s)
+    }
+    let diag1_sum = sum(vec(get(grid, 0), get(grid, 4), get(grid, 8)))
+    let diag2_sum = sum(vec(get(grid, 2), get(grid, 4), get(grid, 6)))
+    print(diag1_sum)
+    print(diag2_sum)
+    let all_sums = concat(row_sums, concat(col_sums, vec(diag1_sum, diag2_sum)))
+    let first_sum = get(all_sums, 0)
+    let all_equal = true
+    for s in all_sums {
+        if s != first_sum {
+            all_equal = false
+        }
+    }
+    print(all_equal)
+}

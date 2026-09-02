@@ -1,0 +1,19 @@
+fn main() {
+    let mut settings = vec![
+        (4, 2, 30, "base"),
+        (8, 2, 30, "tuned"),
+        (8, 2, 90, "patient"),
+        (8, 5, 90, "settled"),
+        (16, 5, 90, "wide"),
+        (16, 5, 120, "last"),
+    ];
+    for &(workers, retries, timeout, label) in &settings {
+        println!("{}", label);
+        println!("{}", workers);
+        println!("{}", retries);
+        println!("{}", timeout);
+        println!("{}", workers * timeout);
+    }
+    let last = settings.last().unwrap();
+    println!("{}", last.0 + last.1 + last.2);
+}

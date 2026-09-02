@@ -1,0 +1,23 @@
+fn main() {
+    let group_a = vec![120, 95, 143, 87, 210, 156, 99];
+    let group_b = vec![175, 132, 88, 240, 119, 167];
+    let groups = vec![("Group A", &group_a), ("Group B", &group_b)];
+    for (label, readings) in groups {
+        let count = readings.len();
+        let sum: i32 = readings.iter().sum();
+        let average = sum / count as i32;
+        let above_average = readings.iter().filter(|&&x| x > average).count();
+        let min_reading = *readings.iter().min().unwrap();
+        let max_reading = *readings.iter().max().unwrap();
+        println!("{}", label);
+        println!("{}", count);
+        println!("{}", average);
+        println!("{}", above_average);
+        println!("{}", max_reading - min_reading);
+    }
+    if group_a.iter().sum::<i32>() > group_b.iter().sum::<i32>() {
+        println!("Group A");
+    } else {
+        println!("Group B");
+    }
+}

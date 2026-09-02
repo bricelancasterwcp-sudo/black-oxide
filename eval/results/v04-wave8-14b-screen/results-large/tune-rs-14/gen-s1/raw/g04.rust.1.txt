@@ -1,0 +1,39 @@
+fn main() {
+    let numbers = vec![360, 97, 1024, 561, 143, 2003];
+    let mut prime_count = 0;
+    for &num in &numbers {
+        let primes = distinct_primes(num);
+        println!("{}", num);
+        println!("{}", primes.len());
+        println!("{}", primes.iter().sum::<u64>());
+        if let Some(&max_prime) = primes.last() {
+            println!("{}", max_prime);
+        } else {
+            println!("0");
+        }
+        if primes.len() == 1 && primes[0] == num {
+            prime_count += 1;
+            println!("true");
+        } else {
+            println!("false");
+        }
+    }
+    println!("{}", prime_count);
+}
+fn distinct_primes(mut n: u64) -> Vec<u64> {
+    let mut primes = Vec::new();
+    let mut d = 2;
+    while d * d <= n {
+        if n % d == 0 {
+            primes.push(d);
+            while n % d == 0 {
+                n /= d;
+            }
+        }
+        d += 1;
+    }
+    if n > 1 {
+        primes.push(n);
+    }
+    primes
+}

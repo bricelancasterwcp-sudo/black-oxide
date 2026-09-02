@@ -1,0 +1,20 @@
+fn main() {
+    let words = vec!["rotor", "banana", "level", "quiet", "deified", "system", "civic"];
+    let mut palindromes = 0;
+    for word in words.iter() {
+        let reversed: String = word.chars().rev().collect();
+        let is_palindrome = word == &reversed;
+        if is_palindrome {
+            palindromes += 1;
+        }
+        let vowel_count = word.chars().filter(|&c| "aeiou".contains(c)).count();
+        let unique_count = word.chars().collect::<std::collections::HashSet<_>>().len();
+        println!("{}", word);
+        println!("{}", word.len());
+        println!("{}", reversed);
+        println!("{}", is_palindrome);
+        println!("{}", vowel_count);
+        println!("{}", unique_count);
+    }
+    println!("{}", palindromes);
+}

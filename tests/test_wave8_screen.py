@@ -115,3 +115,16 @@ def test_zero_rust_compiles_yields_no_ratio_rather_than_a_division(tmp_path):
     r = screen(tmp_path, tmp_path)
     assert r["large"]["compile_ratio"] is None
     assert r["verdict"] == "unmeasured"
+
+
+def test_render_names_the_arms_correctly(tmp_path):
+    """`name[:2]` on "rust" yields "ru" -- the table named a nonexistent
+    arm. A report is an artifact people quote from; its labels have to be
+    the real arm names."""
+    _arm(tmp_path, "base-rs-14", [(True, True)] * 33 + [(True, False)] * 27)
+    _arm(tmp_path, "tune-ox-14", [(True, True)] * 48 + [(True, False)] * 12)
+    _arm(tmp_path, "tune-rs-14", [(True, True)] * 46 + [(False, False)] * 14)
+    text = render(screen(tmp_path, tmp_path))
+    assert "tune-rs-14" in text
+    assert "tune-ru-14" not in text
+    assert "tune-ox-14" in text

@@ -1,0 +1,38 @@
+fn main() {
+    let alpha = vec![-5, 12, 30, 22, 0, 35, 18];
+    let beta = vec![8, -12, 5, 41, 27];
+    for (name, temps) in vec![("alpha", &alpha), ("beta", &beta)] {
+        let mut below_zero = 0;
+        let mut above_thirty = 0;
+        let mut max_f = i32::MIN;
+        let mut min_f = i32::MAX;
+        let mut sum_c = 0;
+        for &temp in temps {
+            if temp <= 0 {
+                below_zero += 1;
+            }
+            if temp >= 30 {
+                above_thirty += 1;
+            }
+            let f = (temp * 9 / 5) + 32;
+            if f > max_f {
+                max_f = f;
+            }
+            if f < min_f {
+                min_f = f;
+            }
+            sum_c += temp;
+        }
+        println!("{}", name);
+        println!("{}", below_zero);
+        println!("{}", above_thirty);
+        println!("{}", max_f);
+        println!("{}", min_f);
+        println!("{}", sum_c / temps.len() as i32);
+    }
+    if alpha.iter().sum::<i32>() / alpha.len() as i32 > beta.iter().sum::<i32>() / beta.len() as i32 {
+        println!("alpha");
+    } else {
+        println!("beta");
+    }
+}

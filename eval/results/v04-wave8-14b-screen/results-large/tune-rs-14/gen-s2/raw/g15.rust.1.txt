@@ -1,0 +1,17 @@
+fn main() {
+    let input = "name=widget;qty=17;price=245;tag=blue";
+    let pairs: Vec<&str> = input.split(';').collect();
+    println!("{}", pairs.len());
+    for pair in &pairs {
+        let mut parts = pair.split('=');
+        if let Some(key) = parts.next() {
+            println!("{}", key);
+        }
+        if let Some(value) = parts.next() {
+            println!("{}", value);
+        }
+    }
+    let qty: i32 = pairs.iter().find(|&&p| p.starts_with("qty=")).unwrap().split('=').nth(1).unwrap().parse().unwrap();
+    let price: i32 = pairs.iter().find(|&&p| p.starts_with("price=")).unwrap().split('=').nth(1).unwrap().parse().unwrap();
+    println!("{}", qty * price);
+}

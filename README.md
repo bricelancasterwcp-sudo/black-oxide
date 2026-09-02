@@ -37,7 +37,8 @@ usefulness, efficiency, ease of learning for an LLM — and novelty is not
 among them), and run a measure → redesign loop where every wave's
 measurement feeds the next wave's design. The loop ran nine waves between
 2026-08-27 and 2026-09-02, on top of the v0.2–v0.3 repair-probe work
-before it, at a total GPU cost of about $17. It reached convergence, and
+before it, at a total GPU cost of about $19 (including a $2.00 idle-pod loss the
+last wave's plan records). It reached convergence, and
 **the design loop is closed as of 2026-09-02.** The repository is now a
 findings-and-benchmark record, the status its sibling
 [robigo](https://github.com/bricelancasterwcp-sudo/robigo) took: the
@@ -97,8 +98,19 @@ ratio against 0.0652, secondary the `OX0001` lexer share against **0.338**
 191, a denominator summed from a report table and corrected before the
 run — see the estimand write-up, §7).
 
-**Re-screen result pending.**
-<!-- RESCREEN-PENDING: fill from eval/results/v04-wave9-rescreen/screen.json (compile ratio vs 0.0652; OX0001 share vs 0.338) -->
+**Re-screen result (2026-09-02):** the tuned-Oxide small-tier guard
+missed its seed-matched anchor by one cell (0.7833 vs 0.8000), because
+`pod_setup.sh` cloned llama.cpp at HEAD and the commit had moved since
+wave 8 — weights, sampler and seeds were identical. Per the plan no
+ratio is published against wave 8. Within the run, Oxide compiled
+**3 of 60** large-tier attempts, the same count as wave 8, while the
+`OX0001` lexer share fell **0.338 → 0.019** and two byte-identical
+programs that died at `[` in wave 8 compile and pass. Clearing the
+lexer moved the attempts to the next fatal layers: **tuples** (types,
+`for (i, x)` patterns, destructuring) and the string stdlib (`split`,
+`str_from_chars`, `insert`). Under the plan's own consequence table
+that is the "removing one barrier exposes the next" row. Full report:
+`eval/results/v04-wave9-rescreen/REPORT.md`.
 
 ## Design principles earned
 

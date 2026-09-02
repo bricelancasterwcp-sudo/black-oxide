@@ -216,8 +216,23 @@ denominator summed from a report table; corrected before the run). The plan stat
 to 29%: clearing the lexer moves an attempt to its *next* error, and
 unknown identifiers were already 43 of 216.
 
-**Re-screen result pending.**
-<!-- RESCREEN-PENDING: fill from eval/results/v04-wave9-rescreen/screen.json (compile ratio vs 0.0652; OX0001 share vs 0.338) -->
+**Re-screen result (2026-09-02).** Stop 1 of the plan fired: the
+tuned-Oxide small-tier guard read 0.7833 against its seed-matched 0.8000
+anchor. The missed cell is a different generation on seed 3 with
+hash-identical weights, sampler and seed — `pod_setup.sh` cloned
+llama.cpp at HEAD, which had moved from `b96806d` to `0f3a71b` since
+wave 8. So no ratio is published against wave 8, and the pipeline now
+pins the commit. What the run measured within its own environment:
+Oxide compiled **3 of 60** large-tier attempts (wave 8: 3 of 60); the
+`OX0001` share of first diagnostics fell **0.338 → 0.019** (4 of 213);
+two byte-identical programs that died at `[` in wave 8 compile and pass.
+The attempts that got past the lexer failed at **tuples** (types,
+`for (i, x)` patterns, destructuring — at least 53 first diagnostics)
+and the string stdlib (`OX0200` 54: `str_from_chars`, `insert`,
+`split`, `str_split`, `slice`). The construct worked as specified and
+the total did not move: clearing the largest measured gap exposed two
+more fatal-at-this-size layers behind it. Report:
+`eval/results/v04-wave9-rescreen/REPORT.md`; SPEC §65.5.
 
 ## What this does to the project's framing
 

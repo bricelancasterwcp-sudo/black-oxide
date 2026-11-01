@@ -408,7 +408,7 @@ at the end of the "New components" section:
 
 ```markdown
 > **Amended 2026-08-27 (implementation):** the K=4 repair loop already
-> exists: `harness.Session`/`driver.run_session` implement exactly the
+> exists — `harness.Session`/`driver.run_session` implement exactly the
 > spec's loop (MAX_ATTEMPTS=4, diagnostics fed back, per-session token
 > accounting). The `eval/repair_loop.py` row is withdrawn; the metric
 > extraction lands in `eval/experiment_report.py` instead. Also
@@ -1609,7 +1609,7 @@ to the experiment spec in the same commit (non-silent amendment):
 > results rsync home after each tranche; the S3 store (and its fresh
 > key) is not used. If the pod must terminate at the budget pause,
 > adapters + ggufs are preserved by rsync before teardown or the
-> conversions re-run from committed inputs. Both paths are reproducible.
+> conversions re-run from committed inputs — both paths reproducible.
 ```
 
 ---

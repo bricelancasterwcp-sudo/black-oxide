@@ -298,7 +298,7 @@ CASES = [
   the matching stdout test must FAIL; restore each. Break one
   ownership flag (make `sort` non-consuming): the use-after-move
   diagnostic test must FAIL.
-- [ ] **Step 6: Commit** `feat: v0.4 vec builtins: <gated list>`
+- [ ] **Step 6: Commit** `feat: v0.4 vec builtins — <gated list>`
 
 ---
 
@@ -340,7 +340,7 @@ Diagnostics: a range outside a for-header (e.g. `let r = 0..4`) must
 produce the new fail-closed diagnostic; a non-Int bound must produce a
 type diagnostic. Mutation checks: off-by-one the emitted upper bound →
 `range_for` FAILS; drop the outside-for-header guard → its diagnostic
-test FAILS. Commit `feat: v0.4 ranges: <spelling> in for headers`.
+test FAILS. Commit `feat: v0.4 ranges — <spelling> in for headers`.
 
 ---
 
@@ -377,7 +377,7 @@ the pins in the same commit, non-silently).
 
 Steps: edit → `wc -w` before/after recorded in the SPEC amendment →
 full suite green (card-dependent tests updated) → commit
-`docs: card v0.4: wave-1 vocabulary; SPEC freeze lift recorded`.
+`docs: card v0.4 — wave-1 vocabulary; SPEC freeze lift recorded`.
 
 ---
 
@@ -412,7 +412,7 @@ change because programs change. State old→new in the commit body).
   bias rules. STOP only if a guard-rail broke (stdout drift,
   contamination hit, validate_pair failure).
 - [ ] Full suite green; commit
-  `feat: v0.4 re-authored references + rebuilt matched corpus: static endpoints read`
+  `feat: v0.4 re-authored references + rebuilt matched corpus — static endpoints read`
   with the per-class before→after table in the commit body.
 
 ---

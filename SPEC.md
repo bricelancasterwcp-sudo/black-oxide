@@ -1572,7 +1572,7 @@ becomes a thin wrapper); JSON via `json.dumps(..., sort_keys=True)`.
 | OX0308 | `? requires the function to return the same wrapper: Option-returning fns for Option values, Result-returning fns (matching error type) for Result values.` |
 | OX0400 | `This value was moved at the noted location. Keep it available by cloning at the move site (clone(x)), or reorder so reads happen before the move.` |
 | OX0401 | `This value was already consumed at the noted location. Clone at the first consuming use if both are needed.` |
-| OX0403 | `This value is consumed by a previous loop iteration. Reassign it inside the loop (x = ...) before the iteration ends. If the value is read after the loop (see the later-use note), cloning inside the loop will not help. The original never grows.` |
+| OX0403 | `This value is consumed by a previous loop iteration. Reassign it inside the loop (x = ...) before the iteration ends. If the value is read after the loop (see the later-use note), cloning inside the loop will not help — the original never grows.` |
 | OX0406 | `The loop is iterating this vector; assigning to it inside the body is not allowed. Accumulate into a separate variable and reassign after the loop.` |
 | other | `` (empty string) |
 
@@ -3273,7 +3273,7 @@ Both cards gain the three builtins beside their Vec siblings, each in
 its own voice: the core card states the consumption plainly
 (`swap(v, i, j) -> Vec<T>  # consumes v, exchanges positions i and j`),
 the explicit card names the mode of every slot as it does throughout
-(`# consumes v and x: replaces element i`). The owned-in/owned-out
+(`# consumes v and x — replaces element i`). The owned-in/owned-out
 spelling is shown because that is the shape models must reproduce.
 
 Word counts after the update: core **1094**, explicit **1193**, gap 99

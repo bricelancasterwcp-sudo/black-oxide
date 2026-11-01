@@ -1877,7 +1877,7 @@ Project convention: contracts become binding only as numbered SPEC parts. The de
 
 - [ ] **Step 1: Transcribe the design into SPEC.md as Part X**
 
-Append to `SPEC.md`, following the existing Part heading style (`# Part X: Phase 6a Contract (small-model capability ladder)`) and continuing section numbering from §46, so the design's sections 3–9 become **§47 Pre-registered analysis plan**, **§48 Pinned run parameters**, **§49 Run identity and layout**, **§50 Module contracts**, **§51 Error handling and failure classification**, **§52 Test plan**.
+Append to `SPEC.md`, following the existing Part heading style (`# Part X — Phase 6a Contract (small-model capability ladder)`) and continuing section numbering from §46, so the design's sections 3–9 become **§47 Pre-registered analysis plan**, **§48 Pinned run parameters**, **§49 Run identity and layout**, **§50 Module contracts**, **§51 Error handling and failure classification**, **§52 Test plan**.
 
 Copy the content from `docs/superpowers/specs/2026-08-07-phase-6a-small-model-ladder-design.md` verbatim where it is already normative (the parameter table, the ±5pp partition table, the failure-classification table, the extraction rule, the repair-prompt template). Drop the design-doc-only framing (§1 Motivation, §10 Deliverables).
 

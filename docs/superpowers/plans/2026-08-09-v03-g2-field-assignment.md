@@ -77,7 +77,7 @@ this document has not made.
 **Parsing.** At statement start, an `IDENT` followed by `DOT` begins a
 scan of `(DOT IDENT)+`; the statement is a field assignment only if that
 run is followed by `EQ`. `EQEQ` is a distinct token kind, so `p.x == y`
-remains a comparison, the same guarantee §26's `IDENT EQ` lookahead
+remains a comparison — the same guarantee §26's `IDENT EQ` lookahead
 rests on. A failed scan restores the cursor and the statement is parsed
 as an expression statement. The scan does not see through a `NEWLINE`,
 for the reason §26 gives: an identifier at end of line is an expression
@@ -86,7 +86,7 @@ statement, never the start of an assignment.
 **Resolution.** The base must be an existing local or parameter;
 otherwise `OX0200`, with the same wording §28 uses for assignment. The
 base's `var_id` is recorded in `assign_of` under the `FieldAssign` node's
-own id, the same map whole-variable assignment uses, so §28's rule "a
+own id — the same map whole-variable assignment uses, so §28's rule "a
 param that is ever assigned gets mode `own`" applies to a field-assigned
 param unchanged. That is a **soundness requirement**, not a convenience:
 a read-mode non-copy param emits `p: &Point`, and `p.x = 5` through a
@@ -104,10 +104,10 @@ the right-hand side (`OX0300` on mismatch). The statement itself is
 - The base is a **READ** use and emits **no `ReInit`**. §36 already fixes
   `p.x` as a read of the base; writing into an owned struct is that
   rule's completion. A field write into a moved base is therefore
-  `OX0400`, and it does **not** re-establish ownership, unlike `p = e`,
+  `OX0400`, and it does **not** re-establish ownership — unlike `p = e`,
   which does.
 - The overwritten field value is **consumed implicitly, with no
-  `DropPoint`**: §28's rule for the old value of an assigned variable.
+  `DropPoint`** — §28's rule for the old value of an assigned variable.
   Rust's assignment drops the old field; synthesizing a drop would
   double-free.
 
@@ -121,7 +121,7 @@ write is local and discarded at iteration end.
 **Codegen.** `base.f1.f2 = value;`, built from the recorded base rename
 and the path. It is **not** routed through the field-access emitter: that
 appends `.clone()` to a non-copy field value (§36), and a place is not a
-value. Cloning the target would write into a temporary and lose the
+value — cloning the target would write into a temporary and lose the
 assignment.
 
 ```
@@ -139,7 +139,7 @@ form. Under constrained decoding the want does not fail loudly: `=` is
 inadmissible after a field path, so the decoder settles on `==` and emits
 a **discarded comparison**. Measured over the committed G0 first attempts
 (oxide arm), that signature appears 18 times in 9 of 600 constrained
-programs and **exactly 0 of 600 unconstrained**. The §54 lesson in its
+programs and **exactly 0 of 600 unconstrained** — the §54 lesson in its
 third demonstrated instance, with a clean control. The demand is real but
 small (~1.5%), so no aggregate pass-rate change is predicted from this
 section alone; see

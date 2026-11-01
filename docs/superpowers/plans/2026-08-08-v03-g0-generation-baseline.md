@@ -698,11 +698,11 @@ print(hist.most_common())
 ```markdown
 ### <candidate-name>
 - **Friction:** <what models do / want, with counts: N occurrences, M sessions, families>
-- **Evidence:** <unconstrained demand | constrained deformation | both: cite samples>
+- **Evidence:** <unconstrained demand | constrained deformation | both — cite samples>
 - **Class:** sugar | card | diagnostic | SPEC-named feature
 - **Fix:** <one sentence>
 - **Prediction:** <which code falls, in which families, and which should NOT move>
-- **Design fit:** <why this serves Black Oxide's design, not imitation: the semicolon test>
+- **Design fit:** <why this serves Black Oxide's design, not imitation — the semicolon test>
 ```
 
 - [ ] **Step 4: Rank** by (sessions affected × families affected), gate-relevance first (a resolve-stage fix that unblocks reaching linearity outranks a cosmetic parser one at equal counts). State the ranking rule in the doc.

@@ -90,29 +90,29 @@ to the caller: never drop it.
 ## Builtins
 
 ```text
-print(x)                      # reads x: debug-print
-print_str(s)                  # reads s: print without quotes
+print(x)                      # reads x — debug-print
+print_str(s)                  # reads s — print without quotes
 vec() -> Vec<T>               # empty vector (context infers T)
 push(v, x) -> Vec<T>          # consumes v, returns it with x appended
 len(v) -> Int                 # reads v
-get(v, i) -> Option<T>        # reads v: element copy at i
+get(v, i) -> Option<T>        # reads v — element copy at i
 range(a, b) -> Vec<Int>       # integers a..b-1
 sort(v) -> Vec<T>             # consumes v, returns it sorted
-min(v) -> Option<T>           # reads v: smallest element, or None if empty
-max(v) -> Option<T>           # reads v: largest element, or None if empty
-sum(v) -> Int                 # reads v: sum of an Int vec, 0 if empty
-contains(v, x) -> Bool        # reads v and x: true if v has x
-count(v, x) -> Int            # reads v and x: occurrences of x in v
-count_if(v, |x| b) -> Int     # reads v: how many satisfy the test
-filter(v, |x| b) -> Vec<T>    # reads v: the elements that satisfy it
+min(v) -> Option<T>           # reads v — smallest element, or None if empty
+max(v) -> Option<T>           # reads v — largest element, or None if empty
+sum(v) -> Int                 # reads v — sum of an Int vec, 0 if empty
+contains(v, x) -> Bool        # reads v and x — true if v has x
+count(v, x) -> Int            # reads v and x — occurrences of x in v
+count_if(v, |x| b) -> Int     # reads v — how many satisfy the test
+filter(v, |x| b) -> Vec<T>    # reads v — the elements that satisfy it
 reverse(v) -> Vec<T>          # consumes v, returns it reversed
-swap(v, i, j) -> Vec<T>       # consumes v: exchanges positions i and j
-set(v, i, x) -> Vec<T>        # consumes v and x: replaces element i
-unwrap_or(o, d) -> T          # consumes both: Some(x) -> x, None -> d
-clone(x) -> T                 # reads x: fresh copy
+swap(v, i, j) -> Vec<T>       # consumes v — exchanges positions i and j
+set(v, i, x) -> Vec<T>        # consumes v and x — replaces element i
+unwrap_or(o, d) -> T          # consumes both — Some(x) -> x, None -> d
+clone(x) -> T                 # reads x — fresh copy
 str_len(s) -> Int             # reads s
 concat(a, b) -> Str           # consumes both, returns a+b
-chars(s) -> Vec<Str>          # reads s: one-char strings
+chars(s) -> Vec<Str>          # reads s — one-char strings
 int_to_str(n) -> Str
 parse_int(s) -> Option<Int>   # reads s
 to_float(n) -> Float

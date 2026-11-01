@@ -175,8 +175,8 @@ exposure at least as well.
 
 No normative change. Two edits plus their cross-references.
 
-**A. Part XI header.** `# Part XI: Builtin Method Syntax (v0.2.2)`
-(line 2379) becomes `# Part XI: Generation Ergonomics (v0.3)`. The part
+**A. Part XI header.** `# Part XI — Builtin Method Syntax (v0.2.2)`
+(line 2379) becomes `# Part XI — Generation Ergonomics (v0.3)`. The part
 now spans §53–§57 (method syntax, `mut`, vec literals, field
 assignment, a builtin alias), and every one of them was added because a
 measured generation friction demanded it, which is what the new title

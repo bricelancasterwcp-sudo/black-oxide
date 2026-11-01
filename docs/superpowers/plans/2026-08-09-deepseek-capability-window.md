@@ -137,20 +137,20 @@ Two edits inside §48. In the parameter table, change the Quantization row from:
 to:
 
 ```
-| Quantization | `q8_0`, **per-family**: see below (`q5_K_M` for `deepseek-coder-v2:16b-lite`) |
+| Quantization | `q8_0`, **per-family** — see below (`q5_K_M` for `deepseek-coder-v2:16b-lite`) |
 ```
 
 And extend the paragraph that currently reads "Quantization is held constant so the capability curve is not confounded" with:
 
 ```markdown
-**The quantization pin is per-family, not universal, for the same reason
+**The quantization pin is per-family, not universal — for the same reason
 `num_ctx` is.** `deepseek-coder-v2:16b-lite` is served at `q5_K_M`
 (`eval.driver.QUANT`; every other slug takes `DEFAULT_QUANT = q8_0`). MoE
 activates 2.4B of ~16B parameters per token, but every expert must be
 VRAM-resident, so the full weight set is what must fit: its `q8_0` GGUF is
 **16.70 GB** against a **16.30 GB** card. It does not fit the card even
 with nothing else running, so this is physically forced, not a policy
-choice: exactly the shape of granite's 4096 window. The pin is applied
+choice — exactly the shape of granite's 4096 window. The pin is applied
 uniformly across all three arms of that slug, so it stays arm-fair
 *within* the model, and it is recorded per run and read as a per-family
 covariate. Quantization is a capability reduction, so on a non-monotonic

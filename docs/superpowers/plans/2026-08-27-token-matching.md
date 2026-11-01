@@ -1167,7 +1167,7 @@ git commit -m "feat: build the matched corpus — pinned tokenizer, contaminatio
 Structure (fill every number from `manifest.json`; no placeholders):
 
 ```markdown
-# Matched training corpus: build record
+# Matched training corpus — build record
 
 2026-08-XX (build date). Spec:
 docs/superpowers/specs/2026-08-27-token-matching-design.md. Built by
@@ -1179,7 +1179,7 @@ docs/superpowers/specs/2026-08-27-token-matching-design.md. Built by
 |---|---|---|---|---|---|
 <one row per manifest class, plus a totals row>
 
-Dropped: <N> examples (<N_oxide> oxide, <N_rust> rust). Full list in
+Dropped: <N> examples (<N_oxide> oxide, <N_rust> rust) — full list in
 manifest.json, named not deleted.
 
 ## Token efficiency (pre-trim estimand, pinned Qwen tokenizer)

@@ -79,7 +79,7 @@ with triples under `runs-<size>/amp-<short>-s<seed>/`; read
   match the module's existing CLI convention); mutation checks
   (per-occurrence flip, join-ignores-cells mutation → rejection ==
   presence, pin off-by-one); full suite green; commit
-  `feat: census v2: rejection-crossed demand + hand-rolled patterns`.
+  `feat: census v2 — rejection-crossed demand + hand-rolled patterns`.
 
 **STOP condition:** if the reply↔cells join cannot be made reliable
 (e.g. cells lack the linkage), report BLOCKED with the evidence. Do

@@ -1,13 +1,13 @@
 # Constrained decoding deforms rather than rejects
 
-*Black Oxide findings series — 2026-08-12. All numbers are reproducible
+*Black Oxide findings series: 2026-08-12. All numbers are reproducible
 from this repository; sources are linked inline.*
 
 ## The claim
 
 A grammar-constrained decoder cannot reject a token the model wants to
 emit. It can only steer generation to the nearest string the grammar
-admits. The result is not an error — it is a program that **parses and
+admits. The result is not an error. It is a program that **parses and
 means something the model did not write**. Any error count, pass rate,
 or failure taxonomy collected under grammar constraint therefore
 contains artifacts manufactured by the grammar's own gaps, and cannot be
@@ -22,19 +22,19 @@ ones**.
 
 ## Instance 1: `let mut acc` → `let mutacc` (SPEC §54)
 
-Models write `let mut x` reflexively — Rust's most common binding form.
+Models write `let mut x` reflexively (Rust's most common binding form).
 Black Oxide (pre-§54) had no `mut`, so the GBNF grammar did not admit it.
 The decoder could not reject the token; it glued the fragment into the
 nearest admissible string: `let mut acc` became **`let mutacc`**, a
-legal binding of a variable named `mutacc` — and every later use of
+legal binding of a variable named `mutacc`, and every later use of
 `acc` became an undefined-name error (`OX0200`).
 
 Measured across qwen2.5-coder-7b, codegemma-7b, and granite-code-8b:
-that one artifact accounted for **44% of OX0200-carrying submissions**
-— the largest cause of the largest remaining error class. The fix was
+that one artifact accounted for **44% of OX0200-carrying submissions**,
+the largest cause of the largest remaining error class. The fix was
 to accept and discard `mut` at the parser ([SPEC §54](../../SPEC.md)),
 which removed the mechanism outright: `OX0200` counts fell 81→10 (qwen)
-and 42→0 (codegemma), worth +5.5pp and +3.0pp strict repair — and 0 on
+and 42→0 (codegemma), worth +5.5pp and +3.0pp strict repair, and 0 on
 granite, which never wrote `mut` in the first place. The fix helped
 exactly the families that had the problem: the dose-response form this
 project uses as its causal evidence standard.
@@ -44,7 +44,7 @@ project uses as its causal evidence standard.
 Pre-§56, Black Oxide had no field assignment; `=` was inadmissible after a
 field path. Models want to assign fields in place, and under constraint
 that want does not fail loudly: the decoder settles on the nearest legal
-token, `==`, and emits a **discarded comparison** — a well-formed
+token, `==`, and emits a **discarded comparison**, a well-formed
 program that silently does nothing where the model intended a write.
 
 The control makes this instance decisive. Counted over the committed G0
@@ -52,13 +52,13 @@ first attempts by [`eval/deformation.py`](../../eval/deformation.py):
 the signature appears **18 times in 9 of 600 constrained programs, and
 exactly 0 times in 600 unconstrained programs** from the same families
 on the same tasks. The artifact is manufactured entirely by the
-constraint. (18 is a lower bound by the tool's pinned definition —
+constraint. (18 is a lower bound by the tool's pinned definition:
 statement position only; tail position is ambiguous in both directions
 and deliberately not pooled. See SPEC §56.) After the fix, the
 statement and tail signatures (18 and 17 occurrences) both went to 0.
 
-SPEC §56 calls this "the §54 lesson in its third demonstrated instance"
-— by the time the project closed v0.3, the same shape had recurred
+SPEC §56 calls this "the §54 lesson in its third demonstrated instance".
+By the time the project closed v0.3, the same shape had recurred
 often enough to be treated as a standing hazard class rather than a
 curiosity.
 
@@ -78,7 +78,7 @@ curiosity.
    sibling projects arrived at the same law independently and encoded
    it as design rules: [robigo](https://github.com/bricelancasterwcp-sudo/robigo)
    (a VRAM-budgeted repair agent) constrains the **envelope, never the
-   payload** — a grammar-forced code payload corrupts silently, so its
+   payload**: a grammar-forced code payload corrupts silently, so its
    levels are "no grammar", "two-step: header constrained, payload
    free", or "refuse";
    [assay](https://github.com/bricelancasterwcp-sudo/assay) (a
@@ -86,8 +86,8 @@ curiosity.
    forced probe measures the constraint, not the model.
 3. **The mitigation is language/schema design, not decoder repair.**
    Both instances above were fixed by admitting the token the models
-   insist on writing (accept-and-discard `mut`; add field assignment)
-   — meeting the pretraining prior instead of fighting it. Where you
+   insist on writing (accept-and-discard `mut`; add field assignment),
+   meeting the pretraining prior instead of fighting it. Where you
    cannot change the format, the mitigation is to leave the payload
    unconstrained and validate after, so failure is loud.
 
@@ -99,7 +99,7 @@ curiosity.
   percentage.
 - Removing deformation is not the same as improving pass rates: §56
   eliminated its artifact outright while moving aggregate rates within
-  noise (the family with the most deformation to remove moved least —
+  noise (the family with the most deformation to remove moved least:
   SPEC §33's v0.3 close). Deformation corrupts *measurement* more
   reliably than it suppresses *scores*.
 - This repository records three withdrawn headline claims (README,

@@ -1,18 +1,18 @@
 # Check the estimand before naming a finding
 
-*Black Oxide findings series — 2026-09-02. All numbers are reproducible
+*Black Oxide findings series: 2026-09-02. All numbers are reproducible
 from this repository; sources are linked inline. Paths are relative to
 `eval/results/` unless stated.*
 
 ## The claim
 
 Five waves of this project compared two ratios and named their
-difference a finding — "the language got shorter and the model did not
-follow" — without anyone asking whether the two ratios were measured on
+difference a finding ("the language got shorter and the model did not
+follow") without anyone asking whether the two ratios were measured on
 the same tasks. They were not. The check took one command, and running
 it changed the size of the problem rather than dissolving it. The same
-shape of error — two numbers put side by side that were not measured on
-the same footing — recurred seven times in nine waves, each time in a
+shape of error (two numbers put side by side that were not measured on
+the same footing) recurred seven times in nine waves, each time in a
 different disguise, and each time the fix was the same question. This
 document records the seven so the question gets asked earlier next time.
 It is the project's standing bug class, named in the first wave and
@@ -46,7 +46,7 @@ the ratio.
 
 The set matters as much as the rule. Wave 2 reads 1.067 on the three-wave
 common set of 67 cells, 1.0799 on the four-wave set of 61, and 1.0858 on
-the five-wave set of 59 — all correct on their own set. **A ratio without
+the five-wave set of 59, all correct on their own set. **A ratio without
 its set is not a measurement.**
 
 ## 2. Two task sets (wave 6, and it cost four waves)
@@ -64,7 +64,7 @@ were checked for comparability
 | dynamic (1.1982) | the 20 **eval** tasks | frozen since the first commit, 2026-08-07 |
 
 `eval/solutions/` contained zero uses of `sort`, `unwrap_or`, `+=`,
-`swap`, `set`, `count_if` or `filter` — every construct waves 1–4
+`swap`, `set`, `count_if` or `filter`: every construct waves 1–4
 shipped. Four waves of static improvement were measured only on the
 tasks that had been re-authored; the dynamic campaign ran on tasks never
 touched.
@@ -73,7 +73,7 @@ Correcting it made the problem bigger. The eval-set static ratio under
 the frozen references is 1.1796 (the wave-0 state); under current
 vocabulary it is 0.9393; after the symmetric Rust review of wave 7
 (one hit in twenty, `t17` 64 → 53 tokens) it is **0.9462**. Against the
-model's 1.1982 on the same 20 tasks, the surplus is 27.6% — the central
+model's 1.1982 on the same 20 tasks, the surplus is 27.6%: the central
 problem stated without a confound for the first time. The frozen
 references were deliberately left frozen: they are the contamination
 reference, and modernising them would move that baseline in the
@@ -82,19 +82,19 @@ direction that masks leakage.
 ## 3. Bands on the raw ratio instead of the surplus (wave 8A)
 
 Wave 8's spec stated its three dynamic outcomes as bands on the raw
-large-tier ratio — ≤1.05, 1.05–1.30, >1.30 — calibrated when the
+large-tier ratio (≤1.05, 1.05–1.30, >1.30), calibrated when the
 reference ratio was assumed to sit near 0.94. The reference ratio came
 in at **1.0622**. A model matching the references exactly would then
 have scored 1.0622 and landed in "real, size-independent model surplus"
 while its true surplus was zero
 ([`v04-wave8-large/REPORT.md`](../../eval/results/v04-wave8-large/REPORT.md)).
 
-The endpoint was amended to the **surplus** — the model's oxide/rust
-ratio divided by the references' ratio over the same green cells — which
+The endpoint was amended to the **surplus** (the model's oxide/rust
+ratio divided by the references' ratio over the same green cells), which
 is how wave 6's 28% had actually been computed (1.1982 ÷ 0.9393 = 1.276).
 Amended before Phase B ran, not after. Phase B then reported the small
 tier at surplus 1.242 on 120 pairs across 13 tasks, and the large tier
-at 0.798 on **3 pairs across 1 task** — below the floor of 5 fixed in the
+at 0.798 on **3 pairs across 1 task**, below the floor of 5 fixed in the
 plan, so printed for the record and not an endpoint
 ([`v04-wave8-phaseb/REPORT.md`](../../eval/results/v04-wave8-phaseb/REPORT.md)).
 
@@ -108,7 +108,7 @@ was pure sampling
 ([`v04-wave8-14b-screen/REPORT.md`](../../eval/results/v04-wave8-14b-screen/REPORT.md)).
 The anchors were computed from wave 4's committed cells restricted to
 seeds 1–3, `--seeds` shipped as tested code recording `seeds_subset` in
-provenance, and both guards then reproduced on all four metrics each —
+provenance, and both guards then reproduced on all four metrics each:
 eight of eight, exactly.
 
 The drift guard's own published claim had already been narrowed once by
@@ -143,8 +143,8 @@ designed one of them. Two rules came out of that:
 
 ## 6. Count-verified is not content-verified (the 14B screen)
 
-The rule since wave 0 — verify every transfer by file count, never by
-`du` — was bought when a timeout-truncated backup lost the rust adapters
+The rule since wave 0 (verify every transfer by file count, never by
+`du`) was bought when a timeout-truncated backup lost the rust adapters
 with a pod. The 14B screen truncated a transfer that **passed the file
 count**: `tune-rs-14-v5` had its correct four files, and its
 `adapter_model.safetensors` hashed `1bf2b8b7…` against the expected
@@ -162,8 +162,8 @@ byte-identical behaviour across all four metrics.
 The wave-9 re-screen plan quoted wave 8's `OX0001` share as **73 of
 191**, about 38%, and the reader module carried
 `LEXER_SHARE_BASELINE = 73 / 191`, typed in from the report. Running the
-instrument that would read the re-screen —
-`eval.wave8_screen.diagnostic_mix` — over the committed wave-8 cells
+instrument that would read the re-screen
+(`eval.wave8_screen.diagnostic_mix`) over the committed wave-8 cells
 gives **73 of 216**. The 191 is the sum of the four largest codes in the
 wave-8 report's table (73 + 51 + 43 + 24) and omits the five smaller
 ones, 25 attempts. Nothing had been excluded on purpose; a denominator
@@ -197,7 +197,7 @@ Before quoting `A − B` or `A ÷ B`:
 2. Name the task set, and check the references on both sides carry the
    same vocabulary.
 3. If one number is a reference and the other a model, report the
-   *surplus* — model ÷ reference on identical cells — not the raw ratio.
+   *surplus* (model ÷ reference on identical cells), not the raw ratio.
 4. If seed counts differ, recompute the anchor on the seed subset.
 5. If one arm's authorship could favour the other, run the symmetric
    pass, and run it *especially* when the result comes out the way you

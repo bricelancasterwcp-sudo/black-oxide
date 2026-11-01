@@ -1,4 +1,4 @@
-# Wave 8 Phase B — run plan
+# Wave 8 Phase B: run plan
 
 **Date:** 2026-09-01. Branch `v04-wave8-phaseb`, off `main` @ `12f07a1c`.
 **Written and committed BEFORE the pod is provisioned.**
@@ -66,13 +66,13 @@ Phase B asks whether the *model's* surplus over the language moves too.
 Wave 6 measured that surplus at 1.276 on small tasks. Under the amended
 endpoint:
 
-- **surplus ≈ 1.0** — the model spends what the language requires; the
+- **surplus ≈ 1.0**: the model spends what the language requires; the
   28% was a small-task artifact, and the remaining problem is entirely
   the language's scale behaviour that Phase A found.
-- **surplus ≈ 1.28** — the model's overhead is size-independent and
+- **surplus ≈ 1.28**: the model's overhead is size-independent and
   stacks on top of the language's inversion. Worst case for the project,
   and the most useful to know.
-- **surplus > 1.28** — the model degrades faster than the language does.
+- **surplus > 1.28**: the model degrades faster than the language does.
 
 ## Ops rules carried forward
 

@@ -1,4 +1,4 @@
-# Wave 8 — 14B screen: the cliff is a property of the language
+# Wave 8: 14B screen: the cliff is a property of the language
 
 2026-09-02. Plan:
 `docs/superpowers/plans/2026-09-01-v04-wave8-14b-screen-plan.md`.
@@ -56,7 +56,7 @@ behaviourally equivalent; the hash difference is a pipeline artifact.
 | `tune-ox-14` | 29.0% | 5.0% |
 
 **Three quarters of the Rust arm's attempts index.** At 200–600 tokens
-indexing is not an occasional convenience — it is the dominant idiom for
+indexing is not an occasional convenience. It is the dominant idiom for
 this kind of work. Oxide has no syntax for it, and `[` is a lexer error.
 
 The Oxide arm's failures are dominated by `OX0001` (lexer, 73) and
@@ -72,7 +72,7 @@ better at programming makes a model worse at this language.*
 ## The cliff, stated cleanly
 
 `tune-ox-14` writes compiling Oxide **83.3%** of the time on 40–150
-token tasks and **5.0%** of the time on 200–600 token tasks — a 16.7×
+token tasks and **5.0%** of the time on 200–600 token tasks, a 16.7×
 collapse in the same model, same session, same weights, zero truncated
 generations. Its first-attempt pass rate on the large tier is **0.000**.
 
@@ -101,7 +101,7 @@ generations. Its first-attempt pass rate on the large tier is **0.000**.
 - `seeds_subset: [1,2,3]` recorded in every `provenance.json`, so no
   reader can mistake this for a ten-seed run.
 - GGUF sha256 per arm: base `d5473be2…`, ox `fb7c0bde…`, rs `88ca8607…`
-  — all three distinct, so both merges demonstrably applied.
+  (all three distinct, so both merges demonstrably applied).
 - Adapters content-hash verified against `SHAS.txt` **after** a
   truncated transfer passed the file-count check (`tune-rs-14-v5` read
   `1bf2b8b7…` against the expected `57b32260…`). Had that gone

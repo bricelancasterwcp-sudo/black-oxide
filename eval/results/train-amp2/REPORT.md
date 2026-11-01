@@ -1,4 +1,4 @@
-# train-amp2: amplification on the re-authored corpus — endpoints 3/3, band 29/30
+# train-amp2: amplification on the re-authored corpus, endpoints 3/3, band 29/30
 
 2026-08-13. The first campaign run behind the full guard stack the pilot's
 post-mortem called for: the corpus passed the pre-flight shape gate before
@@ -13,7 +13,7 @@ result. 3 families × 10 seeds × 40 tasks × 3 arms; 3,600 sessions,
 | reference-pair yield | ≥ 90% both arms passing | 40/40 (24 new pairs validated at authoring, 2026-08-12) | **PASS** |
 | amplification yield | mean ≥ 4.0 unique verified oxide programs/task | **5.05** | **PASS** |
 | zero-yield tasks | ≤ 30% | **10/40 = 25%** | **PASS** |
-| difficulty band (two-arm, per-class — first live use) | all checks in band | **29/30** | **DRIFTED** (one cell) |
+| difficulty band (two-arm, per-class, first live use) | all checks in band | **29/30** | **DRIFTED** (one cell) |
 
 Contamination guard over every verified program including this campaign's:
 **0 hits** (`tests/test_train_corpus.py` 23 green).
@@ -21,11 +21,11 @@ Contamination guard over every verified program including this campaign's:
 ## What the re-authoring fixed, measured
 
 The pilot's drift is gone. Oxide first-pass sits inside its band in
-**every family at every granularity** — the classes that drifted +22.0
+**every family at every granularity**: the classes that drifted +22.0
 and +24.0pp on the pilot corpus are now at −3.0pp (qwen vectors, 0.020
 vs reference 0.050) and +3.0pp (codegemma strings). Oxide overall:
 qwen 24.2% (ref 30.5), codegemma 19.0% (ref 16.5), granite 11.3%
-(ref 9.5) — the new corpus is difficulty-comparable to the eval on the
+(ref 9.5): the new corpus is difficulty-comparable to the eval on the
 arm that matters most, leaning slightly *harder*, never easier.
 
 Yield reflects the same honesty: 5.05 unique oxide programs/task
@@ -37,7 +37,7 @@ n062). Harder-but-in-band is exactly what recommendation 2 asked for.
 ## The one failing cell, stated plainly
 
 **granite/rust/class:vectors: 0.660 against band [0.225, 0.625]**
-(reference 0.425, +23.5pp) — granite finds the new vector tasks
+(reference 0.425, +23.5pp): granite finds the new vector tasks
 substantially easier *in Rust* than the eval's vector tasks. The other
 two families' rust-vectors sit in band (+15.0pp qwen, +3.0pp
 codegemma); every other granite check passes. The pilot could not have
@@ -45,10 +45,10 @@ seen this at all: its band covered one arm at one granularity, and this
 cell needed both amendments (rust arm + per-class) to be visible.
 
 Per the amended pre-registration, an out-of-band cell is **a
-re-authoring trigger for that class, not a result to report** — the
+re-authoring trigger for that class, not a result to report**: the
 protocol does not distinguish drifted-easy from drifted-hard, and this
 report does not relitigate that. **Resolved same day: the owner ruled re-balance-and-rerun.** See
-[`../train-amp2-slice/REPORT.md`](../train-amp2-slice/REPORT.md) — the
+[`../train-amp2-slice/REPORT.md`](../train-amp2-slice/REPORT.md): the
 merged band is PASS 30/30 (granite/rust/vectors 0.430 against reference
 0.425), both yield endpoints improved, and the corpus is now cleared
 for training-data use by its own gate.

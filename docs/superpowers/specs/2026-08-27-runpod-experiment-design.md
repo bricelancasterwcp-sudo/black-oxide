@@ -1,7 +1,7 @@
-# The fine-tune experiment — token-matched Black Oxide vs Rust on RunPod
+# The fine-tune experiment: token-matched Black Oxide vs Rust on RunPod
 
 **Date:** 2026-08-27
-**Track:** fine-tune (SPEC §32.4 item 4), **final sub-project** — the
+**Track:** fine-tune (SPEC §32.4 item 4), **final sub-project**: the
 experiment itself, with training infrastructure folded in per the
 2026-08-27 "approach B" ruling (the infrastructure is a runbook
 adaptation, not a design problem).
@@ -13,7 +13,7 @@ adaptation, not a design problem).
 supervised tokens, 40 references per arm, contamination 0). Binding
 invariants inherited: epoch parity (identical hyperparameters and epoch
 counts in both arms), card-free symmetric training examples, the
-pinned tokenizer (sha `c0382117…`), and the interpretation limit — a
+pinned tokenizer (sha `c0382117…`), and the interpretation limit: a
 null at this corpus scale kills "language + *small* fine-tune", not the
 thesis.
 
@@ -26,7 +26,7 @@ plus a top-up at 16:30 on 2026-08-28; pilot-scale corpus as-is.
 
 Whether the repair-and-generation advantage of a purpose-built language
 survives when pretraining exposure is equalised by a token-matched
-fine-tune — the open question the ergonomics write-up names — and, via
+fine-tune (the open question the ergonomics write-up names), and, via
 the added 14B row, whether fine-tuning extends the capability window
 upward. It is also the pre-registered gate for the general-purpose
 LLM-language idea (decision mapping below).
@@ -65,13 +65,13 @@ oxide baseline keeps the card because that is its measured condition.
   the recipe itself. Recorded as chosen, not derived.
 - **Training example** = the matched corpus record rendered as the
   checkpoint's chat template with the task prompt as the user turn and
-  the program as the assistant turn — the same rendering the eval
+  the program as the assistant turn: the same rendering the eval
   harness uses, so train and eval agree on format.
 - **Tokenizer attestation extension (preflight gate, fail-closed):**
   the token-matching pin was attested from the BASE repos. Before any
   training, fetch the three **-Instruct** repos' `tokenizer.json` and
   assert they hash to the same pinned `c0382117…`. A mismatch stops
-  the experiment — the matching was computed under that tokenizer —
+  the experiment (the matching was computed under that tokenizer),
   and escalates to the owner rather than being worked around.
 - **Artifact pipeline:** adapter → merge into bf16 base → GGUF
   convert → **q8_0** quantize (the serving condition inherited from
@@ -85,7 +85,7 @@ oxide baseline keeps the card because that is its measured condition.
 - One pod class for the whole campaign: 4090-class 24GB CUDA (fits
   14B q8_0 with headroom). Pod image, llama.cpp commit, GGUF sha,
   and sampler are recorded in every run's provenance.
-- **Sampler pinned: temperature 0.2**, 10 fixed seeds (1–10) — the
+- **Sampler pinned: temperature 0.2**, 10 fixed seeds (1–10): the
   house standard the committed campaigns used.
 - **Identity guards** (the oxide-amp2 lessons, verbatim): the wrapper
   asserts the served model path/sha equals the intended one before any
@@ -99,7 +99,7 @@ oxide baseline keeps the card because that is its measured condition.
 ## Evaluation protocol
 
 All decoding is **unconstrained**, validated after the fact by the
-compiler/verifier so failure is loud — per this project's own
+compiler/verifier so failure is loud: per this project's own
 constrained-decoding-deforms finding. No grammar touches the payload.
 
 **Generation** (per arm: 20 tasks × 10 seeds = 200 sessions):
@@ -109,21 +109,21 @@ constrained-decoding-deforms finding. No grammar touches the payload.
   primary resolution (2 SE ≈ 7pp at mid rates).
 - `pass@10-with-verifier`: fraction of the 20 tasks where ≥1 of the
   10 seeded attempts passes the verifier. Task-level, honest width
-  reported (n=20 is coarse; 2 SE up to ≈ 22pp) — descriptive, never
+  reported (n=20 is coarse; 2 SE up to ≈ 22pp): descriptive, never
   primary.
 - `tokens-to-green` (generation): per task, attempts in seed order;
   the sum of completion tokens up to and including the first passing
   attempt. Tasks that never pass are **censored, named, and excluded
-  from the mean** — a censored task is not a number (None-vs-zero).
+  from the mean**: a censored task is not a number (None-vs-zero).
   Prompt tokens reported separately.
 
 **Repair** (per arm: the 20 seeded-defect classes × 10 seeds = 200
 sessions, the committed studies' machinery):
 
 - `strict repair rate`: single-proposal repair given program +
-  diagnostic, verifier-judged — directly comparable in *form* to the
+  diagnostic, verifier-judged: directly comparable in *form* to the
   published +59pp/+35pp/+9.5pp rows.
-- `iterations-to-green`: a NEW loop driver — up to **K=4** rounds,
+- `iterations-to-green`: a NEW loop driver, up to **K=4** rounds,
   each feeding back the current compiler diagnostic; metric is rounds
   until green, censored at 4 and named. K=4 is chosen (one initial
   attempt + three corrections), recorded as chosen.
@@ -143,17 +143,17 @@ stated direction, on the pre-registered comparison, computed once.
 1. **Primary, per size s:** paired per-task delta
    `Δ_s = pass@1(tune-ox_s) − pass@1(tune-rs_s)`, 2-SE via the
    paired machinery the ownership studies used (n=200 per side).
-   Same construction for strict repair rate as co-primary — the two
+   Same construction for strict repair rate as co-primary: the two
    families answer different halves of the question (authorship vs
    the loop) and are reported side by side, never pooled.
-2. **Headline:** `pass@1(tune-ox-7) vs pass@1(base-rs-14)` — small
+2. **Headline:** `pass@1(tune-ox-7) vs pass@1(base-rs-14)`: small
    model + purpose-built language against raw scale on the prior's
    home language. Unpaired Welch-style 2-SE. Same comparison on
    strict repair.
 3. **Capability window:** the trend of Δ_s across 1.5B → 7B → 14B,
    both families. Monotone shrinking toward 14B = the window closing
    from above (frontier-0.0pp shape); growing = fine-tuning extends
-   the window. Descriptive trend over three points — stated as such,
+   the window. Descriptive trend over three points, stated as such,
    no trend test.
 4. **Token efficiency:** ratio of mean tokens-to-green,
    tune-ox vs tune-rs per size, both families, censoring counts
@@ -163,7 +163,7 @@ stated direction, on the pre-registered comparison, computed once.
    not endpoints): base-rs-7 pass@1 in [0.30, 0.80]; base-ox-7
    (card) pass@1 in [0.05, 0.60]; every session's server identity
    check green. A breach halts the campaign for infrastructure
-   diagnosis before any further arm runs — it is never a result.
+   diagnosis before any further arm runs. It is never a result.
 
 **No extension, no re-run, no corpus change after a number is read.**
 An infrastructure kill (identity mismatch, missing stats, pod death)
@@ -189,7 +189,7 @@ spliced.
 
 - **Tuned-oxide wins on generation** (primary 1, any size, and the
   headline direction holds): the general-purpose-language idea earns
-  its next gate — corpus scale-up as its own brainstorm→spec cycle.
+  its next gate: corpus scale-up as its own brainstorm→spec cycle.
 - **Wins on repair only:** the language-for-repair niche stands;
   GP ambition stays parked; findings published as the repair-niche
   result.
@@ -216,7 +216,7 @@ Every new instrument follows the house test discipline (mutation-tested
 tests, real-data acceptance pins where committed data exists).
 
 > **Amended 2026-08-27 (implementation):** the K=4 repair loop already
-> exists — `harness.Session`/`driver.run_session` implement exactly the
+> exists: `harness.Session`/`driver.run_session` implement exactly the
 > spec's loop (MAX_ATTEMPTS=4, diagnostics fed back, per-session token
 > accounting). The `eval/repair_loop.py` row is withdrawn; the metric
 > extraction lands in `eval/experiment_report.py` instead. Also
@@ -226,14 +226,14 @@ tests, real-data acceptance pins where committed data exists).
 ## Honest limits
 
 - Pilot-scale corpus: ~17k supervised tokens per arm. The
-  interpretation limit is inherited and binding — a null kills
+  interpretation limit is inherited and binding: a null kills
   "language + small fine-tune" only.
 - One eval corpus (t01–t20), single-author; one defect distribution;
   one environment, one pod class, one quantization (q8_0).
 - Task-level pass@10 on 20 tasks is coarse and is never a primary.
 - The QLoRA recipe and K=4 are chosen values, recorded as such; the
   design controls arm identity, not recipe optimality.
-- Instruct checkpoints assumed tokenizer-identical to base — asserted
+- Instruct checkpoints assumed tokenizer-identical to base: asserted
   by a fail-closed preflight, not assumed silently.
 - The strings class is thin in the training corpus (both arms, by
   matching); per-class eval reads on strings are low-precision.
@@ -255,7 +255,7 @@ the robigo 14B benchmark run (separate instrument); VTT wiring.
 > historical rate (30.5%); the unconstrained-chat condition measures
 > 0.045 with healthy infrastructure (base-rs-7 reproduced the local
 > 0.565 exactly; identity green; zero truncation; replies are
-> well-formed pseudo-oxide in fences — the card-only generation gap,
+> well-formed pseudo-oxide in fences: the card-only generation gap,
 > i.e. this project's own founding finding, amplified by removing the
 > grammar that had steered outputs legal). Floor amended to 0.02
 > (still catches infra zeros). Diagnosis record in the dry-run

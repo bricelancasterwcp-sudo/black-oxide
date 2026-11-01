@@ -1,4 +1,4 @@
-# 10-seed A/B — the 3-seed result does not survive
+# 10-seed A/B: the 3-seed result does not survive
 
 **Date:** 2026-08-07
 **Design:** 20 classes × 3 arms × **10 seeds** = 600 repairs, run twice. The
@@ -20,8 +20,8 @@ The point estimate nearly halved and the interval now includes zero.
 was an artifact of three seeds.** It is withdrawn. At 10 seeds, this subject
 alone does not resolve the Oxide-vs-explicit difference.
 
-The direction is unchanged — 10 of 14 non-tied classes still favour implicit
-linearity — but the magnitude was overstated and the significance was not
+The direction is unchanged (10 of 14 non-tied classes still favour implicit
+linearity), but the magnitude was overstated and the significance was not
 real.
 
 ## What survives
@@ -36,7 +36,7 @@ family (qwen now at 10 seeds, the other two still at 3):
 | granite-code-8b (3 seeds) | +6.7 | 5 / 1 |
 
 **20 of 26 non-tied comparisons favour implicit linearity, two-sided exact
-p = 0.0094.** Previously reported as 18 of 21, p = 0.0015 — weaker with better
+p = 0.0094.** Previously reported as 18 of 21, p = 0.0015, weaker with better
 data, still significant.
 
 The honest position: *the direction replicates across families; no single
@@ -48,8 +48,8 @@ are relied on.
 
 | | oxide strict |
 |---|---|
-| pre-fix | 51/200 — **25.5%** |
-| post-fix | 51/200 — **25.5%** |
+| pre-fix | 51/200 (**25.5%**) |
+| post-fix | 51/200 (**25.5%**) |
 
 Identical. Two of twenty classes moved and they cancel exactly:
 
@@ -60,13 +60,13 @@ Identical. Two of twenty classes moved and they cancel exactly:
 | *18 other classes* | | | 0.0 |
 
 Two programs each way at 10 seeds. Rust is byte-identical at 178/200 in both
-runs, as expected — its diagnostic did not change.
+runs, as expected: its diagnostic did not change.
 
 So the fix is **causal at frontier** (fail → pass in both Oxide dialects, on a
 prompt differing only in that text, with the pre-fix behaviour observed across
 two independent prior runs) and **inert at 7B**. Both are true. The plausible
 reading is that a 7B model does not extract enough from a note position to
-change its repair strategy, while a frontier model does — but this run cannot
+change its repair strategy, while a frontier model does, but this run cannot
 distinguish that from the fix simply not mattering.
 
 The fix stands on its own merits regardless: the old diagnostic named one
@@ -87,7 +87,7 @@ Raw: `post-fix.json`, `pre-fix.json`.
 
 ---
 
-## Addendum — all three families at 10 seeds, matched code
+## Addendum: all three families at 10 seeds, matched code
 
 The two replication families were re-run at 10 seeds on current HEAD, so all
 three are now on **matched code at matched seed count**: 600 repairs each,
@@ -99,7 +99,7 @@ three are now on **matched code at matched seed count**: 600 repairs each,
 | codegemma-7b | 12.5% | 8.5% | 84.5% | **+4.0** | 4.7 | `[−5.3, +13.3]` | no | **+4/−6** | +13.3 |
 | granite-code-8b | 23.5% | 13.5% | 73.0% | **+10.0** | 5.0 | `[−0.1, +20.1]` | no | +9/−1 | +6.7 |
 
-**No family individually resolves.** Every interval includes zero — granite's
+**No family individually resolves.** Every interval includes zero: granite's
 only barely (`−0.1`). codegemma's class-level signs now lean the *other* way:
 4 classes favour implicit, 6 favour explicit, despite a positive mean.
 
@@ -113,13 +113,13 @@ only barely (`−0.1`). codegemma's class-level signs now lean the *other* way:
 
 Three rounds, each adding data, each weakening the result. That trajectory is
 the signature of an effect that is smaller than the first measurement
-suggested — possibly much smaller. **The pooled test no longer clears
+suggested, possibly much smaller. **The pooled test no longer clears
 p = 0.05.**
 
 ### What can honestly be said
 
 The combined estimate over all 60 (family × class) paired differences is
-**+8.0pp, SE 3.0, 2-SE `[+2.0, +14.0]`** — this does exclude zero, and it is
+**+8.0pp, SE 3.0, 2-SE `[+2.0, +14.0]`**: this does exclude zero, and it is
 the strongest defensible statement available. But it pools across three
 subjects of differing capability and treats 60 correlated cells as
 independent, so it should be read as a summary, not a significance test. The
@@ -133,10 +133,10 @@ project's earlier claims.**
 
 Also corrected: granite was previously reported as `no-signal-at-floor`
 because both arms sat at or below 10% at 3 seeds. At 10 seeds it is 23.5% /
-13.5% — well clear of the floor, and the family with the cleanest sign split
+13.5%, well clear of the floor, and the family with the cleanest sign split
 (+9/−1). **That floor verdict was itself a 3-seed artifact.**
 
-### ~~The finding that did not weaken~~ — WITHDRAWN
+### ~~The finding that did not weaken~~: WITHDRAWN
 
 **The table below is wrong.** It was computed as `lenient AND NOT strict`,
 which does not require the program to COMPILE. Most of those repairs traded
@@ -155,7 +155,7 @@ direction, no order-of-magnitude gap. `score()` now emits an explicit
 error cannot be counted as one.
 
 What the mislabelled repairs actually were: in the qwen Oxide arms the
-dominant codes are `OX0304` (94) and `OX0200` (86) — `.clone()` method
+dominant codes are `OX0304` (94) and `OX0200` (86): `.clone()` method
 syntax, which Oxide does not have, and undefined names. Even in a repair
 task with syntax, names and types supplied, these models reach for Rust
 idioms the language lacks. That is consistent with the whole-program result

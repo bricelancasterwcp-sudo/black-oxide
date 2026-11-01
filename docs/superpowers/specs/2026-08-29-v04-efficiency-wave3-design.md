@@ -1,4 +1,4 @@
-# v0.4 — the efficiency cycle, wave 3 (cost census + the vectors gap)
+# v0.4: the efficiency cycle, wave 3 (cost census + the vectors gap)
 
 **Date:** 2026-08-29
 **Purpose:** third turn of the efficiency design loop. The binding
@@ -40,9 +40,9 @@ the +216:
 
 | task | ratio | surplus | what Rust expresses that Oxide cannot |
 |---|---:|---:|---|
-| n043 | 2.367 | +82 | `v.swap(0, last)` — Oxide rebuilds the vector in a 14-line loop |
-| n050 | 2.395 | +60 | `v.sort(); v.reverse();` — Oxide does max-extract-and-rebuild |
-| n045 | 1.976 | +40 | direct indexing — but see §4: Oxide's own `unwrap_or` was never applied here |
+| n043 | 2.367 | +82 | `v.swap(0, last)`: Oxide rebuilds the vector in a 14-line loop |
+| n050 | 2.395 | +60 | `v.sort(); v.reverse();`: Oxide does max-extract-and-rebuild |
+| n045 | 1.976 | +40 | direct indexing, but see §4: Oxide's own `unwrap_or` was never applied here |
 
 **Both missing constructs have near-zero reply demand.** Wave 2's gate
 deferred index assignment on exactly that ground (campaign presence 0),
@@ -59,12 +59,12 @@ answered the objective, until something forces the comparison.
 
 A second census, sitting beside the demand census, keyed to cost rather
 than attempts. It is also the "pairwise token-diff attribution"
-instrument wave 2 queued for strings — one instrument serves both.
+instrument wave 2 queued for strings. One instrument serves both.
 
 **Construction.** For every one of the 40 reference pairs: tokenize both
 arms with the pinned tokenizer, record `(task, class, oxide_tokens,
 rust_tokens, surplus, ratio)`, and rank by absolute surplus. Report
-per-class subtotals and the whole-corpus total. Surplus is signed —
+per-class subtotals and the whole-corpus total. Surplus is signed:
 tasks where Oxide wins are counted, never clipped at zero, because the
 structs class's −54 is load-bearing for the overall number.
 
@@ -88,7 +88,7 @@ bindings, no change beyond what the shipped construct replaces.
 
 Its per-statement Rust gate is **withdrawn**. In n046 the Rust control
 writes `v.iter().filter(|&&x| x < 10).count()`, so the gate forbade
-Oxide's hand-rolled loop from using the `+=` this project shipped —
+Oxide's hand-rolled loop from using the `+=` this project shipped,
 making Oxide pessimistic precisely where the two languages diverge
 idiomatically, which is the subject under study.
 
@@ -97,8 +97,8 @@ allows. A substitution is admissible when it uses only shipped
 vocabulary and does not restructure the program beyond what that
 construct replaces. Every admissible substitution must be applied
 (a missed one is a defect, not a conservative choice), and every changed
-pair is verified by the rustc/stdout oracle — byte-identical
-`expected_stdout`, `validate_pair` green, contamination guard clean —
+pair is verified by the rustc/stdout oracle (byte-identical
+`expected_stdout`, `validate_pair` green, contamination guard clean)
 and diffed in the wave report with its token delta.
 
 **Known authoring debt this exposes** (already measured, to be applied
@@ -127,7 +127,7 @@ SPEC before code:** out-of-range behaviour for `set` and `swap`. `get`
 returns `Option`; these return a vector. The candidates are a
 diagnostic error at transpile time where indices are constant, a
 runtime panic matching Rust's, or a silent no-op. A silent no-op is
-rejected in advance — it would be a value that looks like a
+rejected in advance. It would be a value that looks like a
 successful operation and is not.
 
 **Projected corpus effect** of the slate plus the §4 authoring debt:
@@ -140,7 +140,7 @@ overall **1.0875 → 1.0137**, vectors **1.377 → ~1.08**.
   **≤ 0.93**.
   *Consistency, stated rather than papered over:* at their individual
   ceilings the class targets compute to an overall of 1.026, which
-  exceeds the overall target. This is deliberate — the overall target
+  exceeds the overall target. This is deliberate: the overall target
   binds, the class targets are diagnostic, and the measured projection
   (1.014) clears the overall bar with 0.006 of room. If class values
   land at their ceilings and the overall misses, that miss is the
@@ -150,14 +150,14 @@ overall **1.0875 → 1.0137**, vectors **1.377 → ~1.08**.
   parity, and those tokens are concentrated in the predicate-count
   shapes of n046 and n065.
 - **Dynamic (primary, per SPEC §59.7):** the composition-controlled
-  paired ratio — pair by `(seed, task)`, require green in both arms,
+  paired ratio: pair by `(seed, task)`, require green in both arms,
   restrict to the cells green in every wave compared, report set size
   and task count beside the ratio. Target direction only: **< 1.067**.
   The unconditional mean is reported as a secondary and binds nothing.
 - **Corpus-scale gate:** unchanged at **≥ 15k supervised tokens per
   arm**. Amplification at 3 sizes × 20 seeds, temperature 0.8 for
   corpus generation only (wave-2's owner ruling, which produced
-  29.8k/30.0k — no escalation is expected).
+  29.8k/30.0k: no escalation is expected).
 - **G1:** control base-rs-7 within ±0.10 of 0.565; tune-ox-7 floor
   **0.455 met, not re-derived**. Both tuned arms retrain symmetrically.
 - **G2:** per-construct uptake in card-arm and tuned-arm outputs,
@@ -179,8 +179,8 @@ and count-verified. Committed artifacts land under
 named this as the vectors residual's likely requirement. The cost census
 contradicts that: the predicate-count shapes (n046, n065) are worth ~41
 tokens combined, against ~146 for two trivial builtins. A closure
-surface also collides directly with implicit linear ownership — closures
-capturing owned values is the hardest open question in the language —
+surface also collides directly with implicit linear ownership (closures
+capturing owned values is the hardest open question in the language),
 and buying 41 tokens is not a reason to open it. Revisit in wave 4 with
 the post-slate number in hand.
 

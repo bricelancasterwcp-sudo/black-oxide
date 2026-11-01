@@ -1,8 +1,8 @@
-# Builtin method syntax — three-family effect
+# Builtin method syntax: three-family effect
 
 **Date:** 2026-08-07
 **Change under test:** SPEC Part XI §53. `recv.name(args)` parses as
-`name(recv, args)` for builtins. Sugar only — the parser emits an ordinary
+`name(recv, args)` for builtins. Sugar only: the parser emits an ordinary
 `Call`, so resolution, use-context classification, linearity and codegen are
 untouched.
 **Design:** 20 classes × 3 arms × 10 seeds = 600 repairs per family, 1800
@@ -46,8 +46,8 @@ a read is `v.len()` in Oxide but `(&v).len()` in explicit-Oxide, because the
 receiver still needs its marker. The sugar therefore lifts one arm and not
 the other.
 
-That is a real language-design finding — *implicit ownership composes with
-receiver-first syntax; explicit ownership does not* — but it is a different
+That is a real language-design finding (*implicit ownership composes with
+receiver-first syntax; explicit ownership does not*), but it is a different
 claim from "models reason better about implicit ownership."
 
 **granite is the clean estimate.** It never used method syntax, so its
@@ -65,7 +65,7 @@ So the honest decomposition:
 ## Why the earlier estimates were low
 
 Before this change, both primary arms were partly blocked by the same
-`.clone()` barrier — incidental to the question being asked. That floored
+`.clone()` barrier, incidental to the question being asked. That floored
 oxide and suppressed the measured difference. The pre-change pooled figure
 was 23 of 34, p = 0.058.
 

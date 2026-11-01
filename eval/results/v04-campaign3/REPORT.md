@@ -1,4 +1,4 @@
-# v0.4 efficiency cycle, wave 3 — full-loop report
+# v0.4 efficiency cycle, wave 3: full-loop report
 
 2026-08-30. Spec: `docs/superpowers/specs/2026-08-29-v04-efficiency-wave3-design.md`.
 Committed home of this wave's endpoint readings, guard reads, uptake
@@ -11,7 +11,7 @@ hand-off, not a verdict.
 **Black Oxide crossed below token parity with Rust on the static
 estimand (1.0875 → 0.9863) while the dynamic estimand moved the other
 way (1.0799 → 1.1315).** The language got shorter and the model did not
-follow — because, per §6.1, the pipeline taught it the new vocabulary in
+follow, because, per §6.1, the pipeline taught it the new vocabulary in
 as few as 2 of 294 training examples. The gap between what the language
 *can* express and what a model *does* express is now this project's
 subject.
@@ -25,11 +25,11 @@ builtins.
 
 | task | ratio | surplus | what Rust had that Oxide lacked |
 |---|---:|---:|---|
-| n043 | 2.367 | +82 | `v.swap(0, last)` — Oxide rebuilt the vector in a 14-line loop |
-| n050 | 2.395 | +60 | `v.sort(); v.reverse();` — Oxide did max-extract-and-rebuild |
-| n045 | 1.976 | +40 | direct indexing — and Oxide's own `unwrap_or` was never applied here |
+| n043 | 2.367 | +82 | `v.swap(0, last)`: Oxide rebuilt the vector in a 14-line loop |
+| n050 | 2.395 | +60 | `v.sort(); v.reverse();`: Oxide did max-extract-and-rebuild |
+| n045 | 1.976 | +40 | direct indexing, and Oxide's own `unwrap_or` was never applied here |
 
-Vectors carried **+216 of a +204 net corpus surplus** — over 100%,
+Vectors carried **+216 of a +204 net corpus surplus**, over 100%,
 because structs/option runs negative. Any wave that did not move vectors
 would not move the objective.
 
@@ -40,7 +40,7 @@ no family for them, because a model cannot reach for a spelling it has
 never seen. They ranked **1 and 2** by token cost.
 
 Wave 2's gate, reading demand alone, had deferred index assignment
-because campaign presence was 0 — while its absence was silently the
+because campaign presence was 0, while its absence was silently the
 largest token gap in the corpus. That deferral is marked superseded in
 SPEC §59.3 and deliberately left visible, because §60.3 indicts exactly
 its reasoning.
@@ -60,19 +60,19 @@ is sufficient.
 
 ## 3. What shipped
 
-- **`swap(v, i, j)`** — cost rank 1. n043: 142 → 60 tokens, parity with Rust.
-- **`reverse(v)`** — cost rank 2. n050: 103 → 39.
-- **`set(v, i, x)`** — demand 18/18 mechanical rejection; measured *not* to substitute for `swap` (n043 costs 99 with `set` alone).
-- **Predicate literal `x -> expr` + `count_if`** — owner-directed, overriding the spec's "closures out of scope".
+- **`swap(v, i, j)`:** cost rank 1. n043: 142 → 60 tokens, parity with Rust.
+- **`reverse(v)`:** cost rank 2. n050: 103 → 39.
+- **`set(v, i, x)`:** demand 18/18 mechanical rejection; measured *not* to substitute for `swap` (n043 costs 99 with `set` alone).
+- **Predicate literal `x -> expr` + `count_if`:** owner-directed, overriding the spec's "closures out of scope".
 
 Out-of-range indices panic, matching the Rust control. Checked before
-the claim reached SPEC: this is **not** a new category — integer
+the claim reached SPEC: this is **not** a new category. Integer
 division already panicked on a computed zero divisor, undocumented,
 since division existed (§60.2).
 
 The predicate literal **cannot capture**; its body may reference only its
 own parameter (`OX0205`). With no captures there is no ownership
-question, so the construct never touches implicit linear ownership — the
+question, so the construct never touches implicit linear ownership: the
 collision that had put closures out of scope. That restriction is what
 made the override cheap.
 
@@ -80,7 +80,7 @@ Comparison builtins (`count_lt`/`count_gt`) were measured first and
 rejected despite saving 8 *more* tokens (0.9828 vs 0.9863): a
 combinatorial family that generalises to nothing.
 
-## 4. Static endpoints (reference pairs, pinned tokenizer) — all five HIT
+## 4. Static endpoints (reference pairs, pinned tokenizer): all five HIT
 
 | class | wave-3 start | after §60 | after §61 | target | verdict |
 |---|---:|---:|---:|---|---|
@@ -91,19 +91,19 @@ combinatorial family that generalises to nothing.
 | **overall** | **1.0875** | 1.0103 | **0.9863** | ≤1.02 | **HIT** |
 
 Oxide writes **2300** supervised tokens across the 40 reference programs
-where Rust writes **2332** — surplus **−32**.
+where Rust writes **2332**: surplus **−32**.
 
 ### Re-authoring, under the amended bias rule
 
 The owner amended wave 2's rule, which had permitted a substitution only
-where the Rust control used the analogous construct — making Oxide
+where the Rust control used the analogous construct, making Oxide
 pessimistic exactly where the languages diverge idiomatically. Each arm
 is now written as well as its own language allows.
 
 The sweep's **negatives** are recorded, because under the amended rule a
 missed substitution is a defect: n007 and n009 want `/=`, never shipped;
 n009's `out = out * 10 + n % 10` has an RHS larger than the construct
-replaces; and **n064's `match get` is not admissible** — its `None`
+replaces; and **n064's `match get` is not admissible:** its `None`
 branch is genuinely reachable (`get(v, 4)` on a 2-element vector) and
 prints a different string, so `unwrap_or` would have changed stdout.
 
@@ -112,7 +112,7 @@ byte-identical.
 
 ## 5. Dynamic loop (community RTX 3090, $0.22/h; 4 arms × [200 gen + 200 repair])
 
-Corpus: the **fresh pool alone cleared the gate** — 24,802 / 24,746
+Corpus: the **fresh pool alone cleared the gate:** 24,802 / 24,746
 supervised tokens per arm against a 15k floor, no pooling needed. This
 was pre-registered before any number existed, on the reasoning that
 every committed pool predates this wave's vocabulary and would dilute
@@ -121,7 +121,7 @@ exactly the constructs G2 must measure. The manifest records
 
 A stale-verdict re-validation was also pre-registered (`collect_verified`
 trusts the `passed` verdict recorded at generation time and never
-re-checks against the current transpiler). It reported 0 drops — but it
+re-checks against the current transpiler). It reported 0 drops, but it
 never got to test an old program, because fresh-only passed. **It did not
 fire; it was not exercised.** It stays armed for any wave that must pool.
 
@@ -144,7 +144,7 @@ robust across five environments and three GPU architectures; the harness
 is not bit-identical across them.** Wave 2's stronger phrasing held only
 because both runs were on 4090s.
 
-**G1 floor: MET** at 0.595 against 0.455 — but **down from wave 2's
+**G1 floor: MET** at 0.595 against 0.455, but **down from wave 2's
 0.755**, and the first candidate cause is a decision made in this report's
 own protocol: fresh-only gave 24.8k tokens from one amplification run,
 where wave 2 pooled 29.8k across four runs at two temperatures. Less
@@ -154,7 +154,7 @@ vocabulary undiluted. Corpus-size sensitivity is established (wave 1:
 (0.575 → 0.645), which cuts against a simple undertraining story. Not
 re-run: the point estimate stands.
 
-### Token efficiency — the objective, and it went backwards
+### Token efficiency: the objective, and it went backwards
 
 Primary estimand per SPEC §59.7: pair cells by `(seed, task)`, require
 green in both arms, restrict to cells green in **every** wave compared,
@@ -177,17 +177,17 @@ changes the common set to 61 cells, on which wave 2 reads 1.0799. Both
 are correct on their own set. A ratio without its set is not a
 measurement.
 
-**The two estimands moved in opposite directions this wave** — static
+**The two estimands moved in opposite directions this wave:** static
 1.0875 → 0.9863, dynamic 1.0799 → 1.1315. §6 explains why.
 
-## 6. G2 uptake — the corpus barely taught most of the vocabulary
+## 6. G2 uptake: the corpus barely taught most of the vocabulary
 
 > **AMENDED 2026-08-30, same day.** This section was first published under
 > the heading "the model declined most of the vocabulary", and that
 > framing was an overclaim. §6.1 below measures how often each construct
 > appears in the training corpus itself, which the original section never
 > checked: `swap` appears in **2 of 294** training examples. A construct
-> seen twice was not declined — it was never taught. The counts in the
+> seen twice was not declined: it was never taught. The counts in the
 > table below are unchanged and correct; the interpretation around them
 > is corrected here, and §8's feed-forward is rewritten accordingly. The
 > original heading is left visible in this note rather than deleted.
@@ -213,11 +213,11 @@ be convicted, and it was.
 
 Guarded before the finding was trusted: the `\|\s*\w+\s*\|` pattern also
 matches a chained boolean OR (`a || b || c` contains `| b |`). Classified
-all 43 tuned-arm matches — **0 were OR-chains**; the samples are
+all 43 tuned-arm matches: **0 were OR-chains**; the samples are
 unambiguous Rust closures.
 
 **`swap` got zero tuned uptake** despite being the corpus's single
-largest token gap. It shipped on cost evidence alone — but see §6.1
+largest token gap. It shipped on cost evidence alone, but see §6.1
 before reading that as a verdict on the construct.
 
 ### 6.1 Uptake tracks exposure × familiarity, and nothing shipped this wave got a fair test
@@ -243,7 +243,7 @@ second force. **`reverse` drew 50 uses from 1.7% exposure while
 `count_if` drew 0 from more exposure (2.4%).** The difference is prior
 familiarity: `reverse` is a name the model already knows from Rust and
 Python; `count_if` is not Rust idiom. So **uptake ≈ exposure ×
-familiarity** — `swap` failed on exposure (0.7%, a name the model does
+familiarity:** `swap` failed on exposure (0.7%, a name the model does
 know), `count_if` failed on familiarity.
 
 Why exposure is so low is structural, not accidental. A new construct
@@ -256,9 +256,9 @@ of that pipeline at least as much as of the constructs.
 
 The honest status of every construct shipped this wave is therefore
 *untested for adoption*, not *rejected*. The falsification of the
-spelling ruling in the table above still stands on its own terms —
+spelling ruling in the table above still stands on its own terms:
 `x -> expr` and `|x|` were available to the model on equal footing, and
-it chose `|x|` 10:1 — because that comparison is between two spellings
+it chose `|x|` 10:1, because that comparison is between two spellings
 at the same exposure, not between a taught and an untaught construct.
 
 **The most valuable result is the shape of what the model writes
@@ -270,7 +270,7 @@ argmax(items, |item| calculate_cos...)
 
 The model is not reaching for a narrow counting builtin. It is inventing
 **higher-order functions with Rust closure syntax**. The measured demand
-is for a general `filter`/`max_by`/`argmax` surface spelled `|x|` — not
+is for a general `filter`/`max_by`/`argmax` surface spelled `|x|`, not
 for `count_if` spelled `x ->`.
 
 Wave-1 vocabulary remains live in the tuned arm: `range(a,b)` 150,
@@ -283,7 +283,7 @@ closure spelling; compound-assign from `demand_census.V2_FAMILIES`.
 
 ## 7. Spend
 
-Wave-3 loop: **6.2 h × $0.22 = $1.36** on a community RTX 3090 — taken
+Wave-3 loop: **6.2 h × $0.22 = $1.36** on a community RTX 3090, taken
 over the authorised $0.74 secure 4090 when community capacity reappeared
 minutes after an 8-hour poll expired empty (48/48 checks `Low`, zero
 errors). Program total across four waves ≈ **$13.8** of the $23 tranche.
@@ -295,16 +295,16 @@ parameters, 1.5B→7B) and near-linear at the large end (1.77× for 2×,
 
 > **AMENDED 2026-08-30.** This paragraph originally attributed the
 > sub-linearity to rustc: *"because every session carries a rustc
-> compile — constant CPU work at 1,600 sessions per size, dominating GPU
+> compile: constant CPU work at 1,600 sessions per size, dominating GPU
 > time."* **That mechanism is wrong and was never measured before being
 > asserted.** Measuring it: a transpiled program costs ~18 ms to check
-> and ~33 ms to build, and wave-3 amplification ran 15,247 compiles —
+> and ~33 ms to build, and wave-3 amplification ran 15,247 compiles:
 > **≈14 minutes of 269, about 5%.** rustc does not dominate anything.
 > The campaign agrees independently: `base-ox-7` ran 200 sessions in
 > 15.8 min (4.7 s/session) of which rustc is ~220 ms, 4.7%.
 >
 > The real cause of the sub-linearity is **fixed per-session overhead in
-> general** — HTTP round-trips, prompt prefill, harness Python, process
+> general:** HTTP round-trips, prompt prefill, harness Python, process
 > spawns, with rustc as one ~5% component. At 1.5B the model is fast
 > enough that fixed costs dominate; by 14B the model dominates and
 > scaling goes near-linear, which is exactly the shape measured.
@@ -313,7 +313,7 @@ parameters, 1.5B→7B) and near-linear at the large end (1.77× for 2×,
 > (4.48h vs 4.27h) has a plainer explanation than a CPU bound: their
 > memory bandwidths are 936 vs 1008 GB/s, **7% apart**, and decode is
 > bandwidth-bound. The measured 5% fits that directly. The *conclusion*
-> — that the community 3090 is the right card for this pipeline — still
+> (that the community 3090 is the right card for this pipeline) still
 > holds; only the reason changes.
 >
 > Recorded rather than quietly fixed because the wrong mechanism was
@@ -326,7 +326,7 @@ parameters, 1.5B→7B) and near-linear at the large end (1.77× for 2×,
 1. **The gap between the estimands is now the subject.** Static says the
    language can express these tasks in fewer tokens than Rust; dynamic
    says the model does not. Wave 4's question is not "can we shorten the
-   language further" — it is **"what makes a model actually use a
+   language further": it is **"what makes a model actually use a
    construct?"** Every remaining item below is a probe of that.
 2. **Ship `|x|` as the predicate spelling.** Measured 10:1 demand against
    the arrow. The no-capture restriction can be kept and taught by the
@@ -344,7 +344,7 @@ parameters, 1.5B→7B) and near-linear at the large end (1.77× for 2×,
    pre-register which it pulls: author reference tasks whose shapes
    *need* the new constructs, and/or oversample training examples
    containing them. Then re-read uptake. The prediction is explicit and
-   falsifiable — **if uptake tracks exposure, `swap` at ~10% of the
+   falsifiable: **if uptake tracks exposure, `swap` at ~10% of the
    corpus should move off zero; if it stays at zero, the construct
    really is one models do not reach for**, and that is worth knowing
    about `swap` specifically rather than about the pipeline.
@@ -359,9 +359,9 @@ parameters, 1.5B→7B) and near-linear at the large end (1.77× for 2×,
    deliberately and pre-register it.
 
 **A design principle this wave earned, worth stating above the item
-list:** every win across three waves came from *removing* ceremony —
+list:** every win across three waves came from *removing* ceremony:
 implicit linear ownership (structs 0.920, the only class that beats Rust
-without any added vocabulary), no borrow annotations, no lifetimes —
+without any added vocabulary), no borrow annotations, no lifetimes,
 while every *added* novel construct fought the model's priors. Wave 3
 shipped four constructs, and the two that landed (`reverse`, `set`) are
 the two with existing Rust namesakes. **Subtractive design wins;
@@ -370,7 +370,7 @@ additive design pays for novelty.**
 Stated correctly (this line originally read that the result "bounds how
 novel this language can usefully be", which framed novelty as a target
 being denied): **novelty is not an objective.** The objectives are
-usefulness, efficiency, and ease of learning for an LLM — see SPEC §62.
+usefulness, efficiency, and ease of learning for an LLM (see SPEC §62).
 Against those, a construct the model already recognises is a *win* on the
 third, not a compromise on anything. Implicit linear ownership is the
 ideal case precisely because there is nothing to learn: the ceremony is

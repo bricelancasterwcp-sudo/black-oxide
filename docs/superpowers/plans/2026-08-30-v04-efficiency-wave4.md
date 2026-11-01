@@ -1,4 +1,4 @@
-# v0.4 Efficiency Cycle, Wave 4 — Implementation Plan
+# v0.4 Efficiency Cycle, Wave 4: Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
@@ -15,9 +15,9 @@
 - Branch: `v04-efficiency-wave4` (created off `main` @ `ec34528c`).
 - Venv for everything: `.venv/bin/python -m pytest`.
 - **pyc discipline:** `PYTHONDONTWRITEBYTECODE=1` and purge `__pycache__` before EVERY run, mutated and restored alike.
-- **Commit messages via `git commit -F <file>`** with a quoted heredoc. Never `-m "…"` with backticks — that mangled `79e8b42c`.
+- **Commit messages via `git commit -F <file>`** with a quoted heredoc. Never `-m "…"` with backticks. That mangled `79e8b42c`.
 - **Protected, read-only:** `eval/tasks.jsonl`, `eval/solutions/`, `eval/train/tasks.jsonl`, `eval/train/pairs/*/rust.rs`, `eval/probes.jsonl`, and every committed `eval/results/*` except the new dirs this plan creates.
-- **The 40-pair reference corpus stays frozen.** No new tasks — spec §2: adding them breaks comparability with waves 1–3.
+- **The 40-pair reference corpus stays frozen.** No new tasks. Spec §2: adding them breaks comparability with waves 1–3.
 - **Identical-stdout law:** every re-authored oxide reference byte-identical stdout, `validate_pair` green on all 40, contamination 0.
 - Suite baseline entering the wave: **1666 passed, 3 deselected**.
 - Static baseline: overall 2300/2332 = **0.9863**; vectors 555/573 = 0.969; strings 613/578; structs 623/677; arithmetic 509/504.
@@ -49,7 +49,7 @@
 **Files:** Modify `src/lexer/tokens.py`, `src/lexer/lexer.py`, `src/parser/expressions.py`, `src/parser/ast.py`; Create `tests/test_v04_wave4.py`
 
 **Interfaces:**
-- Consumes: `PredLit(node_id, span, param, body)` from `src/parser/ast.py` — unchanged; only its surface syntax moves.
+- Consumes: `PredLit(node_id, span, param, body)` from `src/parser/ast.py`: unchanged; only its surface syntax moves.
 - Produces: `|x| expr` parses to the same `PredLit`; `x -> expr` no longer parses as a predicate.
 
 - [ ] **Step 1: Write the failing tests** in `tests/test_v04_wave4.py`, mirroring `tests/test_v04_predicate.py`'s helpers (`codes`, `run_oxide`, `requires_rustc`):
@@ -125,7 +125,7 @@ Rewrite `_pred_lit` to consume `PIPE IDENT PIPE` then parse the body at binding 
         return PredLit(self._new_id(), span, param.lexeme, body)
 ```
 
-- [ ] **Step 5: Run tests and the full suite.** Expect the wave-4 tests green and `tests/test_v04_predicate.py` to fail on its arrow sources — update those sources to the bar form in the same commit (the tests' *behaviour* is unchanged, only the surface syntax).
+- [ ] **Step 5: Run tests and the full suite.** Expect the wave-4 tests green and `tests/test_v04_predicate.py` to fail on its arrow sources. Update those sources to the bar form in the same commit (the tests' *behaviour* is unchanged, only the surface syntax).
 
 - [ ] **Step 6: Mutation-check the two-char-first rule.** Remove `"||"` from the two-char table so `a || b` would lex as two `PIPE`s; `test_boolean_or_still_lexes_as_oror` must FAIL. Restore, purge, confirm green. This is the one change that could silently corrupt every disjunction in the corpus.
 
@@ -208,7 +208,7 @@ def test_filter_is_in_all_three_seams():
 
 and `"filter": (True, False),` in `BUILTIN_REF`. Add `"filter"` to `BUILTIN_METHOD_NAMES` (alphabetical; `tests/test_parser.py:551` asserts set equality with `BUILTINS`).
 
-- [ ] **Step 5: Update the independent prelude pin** in `tests/test_codegen.py` — it deliberately does not import `PRELUDE`, so adding a prelude fn must be a visible edit.
+- [ ] **Step 5: Update the independent prelude pin** in `tests/test_codegen.py`. It deliberately does not import `PRELUDE`, so adding a prelude fn must be a visible edit.
 
 - [ ] **Step 6: Run the full suite.** Expect 1666 + new tests.
 
@@ -221,7 +221,7 @@ and `"filter": (True, False),` in `BUILTIN_REF`. Add `"filter"` to `BUILTIN_METH
 **Files:** Create `eval/learnability.py`, `tests/test_learnability.py`
 
 **Interfaces:**
-- Consumes: G2 uptake counts (per construct, per arm) and corpus-exposure fractions (share of training examples containing the construct) — both plain dicts supplied by the caller, so the module has no I/O and is trivially testable.
+- Consumes: G2 uptake counts (per construct, per arm) and corpus-exposure fractions (share of training examples containing the construct), both plain dicts supplied by the caller, so the module has no I/O and is trivially testable.
 - Produces: `learnability(uptake, exposure) -> dict` with `ratio`, `uptake`, `exposure` per construct; `rank(rows)`.
 
 - [ ] **Step 1: Write failing tests:**
@@ -271,7 +271,7 @@ def test_wave3_acceptance():
 
 - [ ] **Step 3: Implement `eval/learnability.py`.** Ratio is `uptake / exposure`; exposure of 0 yields `ratio: None` and the construct is named in an `unmeasured` list; both terms are always carried in the row. `rank` sorts by ratio descending with `None` last, ties broken on name.
 
-- [ ] **Step 4: Run tests; then mutation-check three behaviours** — (a) `None` on zero exposure changed to `0.0` must fail `test_zero_exposure_is_none_not_infinity`; (b) dropping `uptake`/`exposure` from the row must fail the carry test; (c) `rank` sorting ascending must fail the ordering test. Restore and confirm green after each.
+- [ ] **Step 4: Run tests; then mutation-check three behaviours**: (a) `None` on zero exposure changed to `0.0` must fail `test_zero_exposure_is_none_not_infinity`; (b) dropping `uptake`/`exposure` from the row must fail the carry test; (c) `rank` sorting ascending must fail the ordering test. Restore and confirm green after each.
 
 - [ ] **Step 5: Commit.**
 
@@ -279,7 +279,7 @@ def test_wave3_acceptance():
 
 ## Task 4: SPEC §63 and card v0.7
 
-- [ ] **Step 1: Append SPEC §63** with: **63.1** the re-spelling, stating plainly that it reverses wave 3's ruling on measured evidence and that the ~2-token static cost is deliberately spent to buy learnability (§62's first explicit trade between objectives); **63.2** `filter` beside `count_if` as the efficiency-vs-learnability experiment; **63.3** the learnability estimand promoted from §62.1 into a measured instrument; **63.4** stale-text sweep — grep `SPEC.md` and both cards for `->`-spelled predicates and amend every hit in place, old text struck through, never deleted (§61.1 is the main site).
+- [ ] **Step 1: Append SPEC §63** with: **63.1** the re-spelling, stating plainly that it reverses wave 3's ruling on measured evidence and that the ~2-token static cost is deliberately spent to buy learnability (§62's first explicit trade between objectives); **63.2** `filter` beside `count_if` as the efficiency-vs-learnability experiment; **63.3** the learnability estimand promoted from §62.1 into a measured instrument; **63.4** stale-text sweep: grep `SPEC.md` and both cards for `->`-spelled predicates and amend every hit in place, old text struck through, never deleted (§61.1 is the main site).
 
 - [ ] **Step 2: Update both cards** to the bar spelling and add `filter`. Core card headroom is 42 words (limit 1150 after §61.3); if it crosses, raise `CORE_WORD_LIMIT` **non-silently** per §60.5's standing instruction and re-verify the pin bites.
 
@@ -289,7 +289,7 @@ def test_wave3_acceptance():
 
 ## Task 5: Re-author references and read the static endpoints
 
-- [ ] **Step 1:** Re-spell the two predicate sites — `eval/train/pairs/n046/oxide.ox` and `n065/oxide.ox` — from `x -> …` to `|x| …`. No other change.
+- [ ] **Step 1:** Re-spell the two predicate sites (`eval/train/pairs/n046/oxide.ox` and `n065/oxide.ox`) from `x -> …` to `|x| …`. No other change.
 
 - [ ] **Step 2:** Sweep all 40 pairs for any `filter`-admissible substitution under the amended bias rule (each arm written as well as its own language allows). Record the negatives too: a missed substitution is a defect, not caution.
 
@@ -304,11 +304,11 @@ def test_wave3_acceptance():
 ## Task 6: Dynamic loop, eight arms (controller, inline)
 
 1. Boot a community RTX 3090 at $0.22/h; **verify `torch.cuda` before committing hours**; pin `allowedCudaVersions`. Liveness is tested by SSH, never by the `runtime` field (wave-3 runbook correction).
-2. **Verify 14B QLoRA fits 24 GB before the long legs run.** If it OOMs: do NOT move to a 48 GB card — drop to the 7B quartet, report the 14B arms as not-run with the reason, and tell the owner.
+2. **Verify 14B QLoRA fits 24 GB before the long legs run.** If it OOMs: do NOT move to a 48 GB card. Drop to the 7B quartet, report the 14B arms as not-run with the reason, and tell the owner.
 3. Setup, downloads, base converts for 1.5B / 7B / 14B.
 4. Amplify at card v0.7, 3 sizes × 20 seeds, temperature 0.8 (corpus generation only).
 5. Fresh-first rematch with the ≥15k gate and the stale-verdict re-validation, both as in wave 3.
-6. Retrain symmetrically at **7B and 14B** — four adapters.
+6. Retrain symmetrically at **7B and 14B**: four adapters.
 7. Campaign, eight arms: `base-{ox,rs}-7`, `tune-{ox,rs}-7`, `base-{ox,rs}-14`, `tune-{ox,rs}-14`.
 8. Read G1, G2, learnability (§62.1 ratio, both terms shown), and the composition-controlled ratio via `paired_tokens_to_green`.
 9. **Count-verified rsync home including all four adapters**; terminate; verify zero pods twice; record spend against the $3.00 cap.
@@ -318,13 +318,13 @@ def test_wave3_acceptance():
 ## Task 7: Report and close (controller, inline)
 
 - [ ] Land `eval/results/v04-campaign4/` and `eval/results/v04-amp5/`.
-- [ ] Write `eval/results/v04-campaign4/REPORT.md`: what shipped and why; static table with HIT/MISS; the corpus gate; the 8-arm dynamic table; G1; **the wave's central test — `|x|` uptake against wave 3's arrow at equal exposure, stated as confirmed or falsified**; the `filter`-vs-`count_if` result; the 14B block as its own section with no cross-size claim pre-registered; learnability ratios with both terms; spend; feed-forward.
+- [ ] Write `eval/results/v04-campaign4/REPORT.md`: what shipped and why; static table with HIT/MISS; the corpus gate; the 8-arm dynamic table; G1; **the wave's central test: `|x|` uptake against wave 3's arrow at equal exposure, stated as confirmed or falsified**; the `filter`-vs-`count_if` result; the 14B block as its own section with no cross-size claim pre-registered; learnability ratios with both terms; spend; feed-forward.
 - [ ] Full suite green; commit; push; verify `origin` in sync; update memory; close the ledger.
 
 ## Self-Review
 
 **Spec coverage.** §3.1 re-spelling → Task 1. §3.2 `filter` → Task 2. §3.3 14B quartet → Task 6. §4 learnability estimand → Task 3, read in Task 6, reported in Task 7. §4 static/dynamic/G1/corpus-gate → Tasks 5 and 6. §5 budget and the four stops → Task 6. §6 out-of-scope items appear in no task. No gaps.
 
-**Placeholder scan.** The `filter` prelude text is given verbatim but carries an explicit instruction to rustc-verify before it is written in — the wave-2 lesson that implementers transcribe plan code faithfully, bugs included. No TBDs.
+**Placeholder scan.** The `filter` prelude text is given verbatim but carries an explicit instruction to rustc-verify before it is written in. The wave-2 lesson that implementers transcribe plan code faithfully, bugs included. No TBDs.
 
 **Type consistency.** `PredLit(node_id, span, param, body)` is unchanged from wave 3 and constructed identically in Task 1. `filter` and `count_if` share the `(Vec<A>, Pred<A>)` parameter shape, differing only in return type, so Task 2's signature cannot drift from Task 1's typing. `learnability(uptake, exposure)` returns rows keyed by construct with `ratio`/`uptake`/`exposure` in both the tests and the implementation.

@@ -1,4 +1,4 @@
-# v0.4 — the efficiency cycle, wave 4 (familiarity, and the 7B question)
+# v0.4: the efficiency cycle, wave 4 (familiarity, and the 7B question)
 
 **Date:** 2026-08-30
 **Purpose:** fourth turn of the efficiency design loop. The binding
@@ -30,7 +30,7 @@ cheaply available:
 - **Oversampling** training examples containing a construct breaks the
   token-matching between arms. Rust has no `swap`-equivalent to
   oversample symmetrically, so Oxide would gain tokens Rust does not and
-  the matched corpus stops being matched — which is the control the whole
+  the matched corpus stops being matched, which is the control the whole
   dynamic estimand depends on.
 
 Exposure therefore needs a wave designed around it (a second reference
@@ -59,7 +59,7 @@ diagnostic instead of by the syntax.
 
 Static cost: `|x|` measured 1 token *more* per use than the arrow
 (17 vs 16), so the re-spelling costs ~2 tokens corpus-wide. **The wave
-deliberately spends static efficiency to buy learnability** — the first
+deliberately spends static efficiency to buy learnability**. This is the first
 time the project has traded one objective against another with both
 measured, and exactly the trade §62 says to make.
 
@@ -75,7 +75,7 @@ Both remain available, and the wave measures which the model reaches for:
 This is a **direct §62 experiment**: efficiency and learnability point at
 different constructs, both are offered at equal exposure, and the model
 decides. Whichever wins informs how the next wave weighs the two
-objectives. `filter` also generalises where `count_if` does not — it is
+objectives. `filter` also generalises where `count_if` does not. It is
 the surface `argmax(items, |item| ...)` implies.
 
 ### 3.3 The 14B quartet
@@ -105,7 +105,7 @@ whether the project has been optimising against the wrong-sized subject.
   cells green in every wave compared, set size reported with the ratio.
   Target direction only: **< 1.1315**.
 - **Scale:** the 14B arms are reported as their own G1/G2/efficiency
-  block. **No cross-size claim is pre-registered** — this is the first
+  block. **No cross-size claim is pre-registered.** This is the first
   14B read since wave 0 and its job is to generate a hypothesis, not
   settle one.
 - **G1:** control `base-rs-7` within ±0.10 of 0.565; `tune-ox-7` floor
@@ -125,13 +125,13 @@ averaged 11.8 min; both 7B trainings plus merges and converts took ~0.4h.
 
 Note for the runbook: the community 3090 is not a budget compromise for
 this pipeline. Same amplification work measured 4.27h on a 4090 and 4.48h
-on a 3090 — **5% slower at 30% of the price**.
+on a 3090: **5% slower at 30% of the price**.
 
 ~~because every session carries a rustc compile and the workload is
 CPU-bound.~~ **Amended 2026-08-30, before this wave's numbers were
 read.** That mechanism was asserted without measurement and is wrong:
 rustc is ~5% of amplification (15,247 compiles at ~18 ms check + ~33 ms
-build ≈ 14 min of 269). The plain explanation is memory bandwidth — the
+build ≈ 14 min of 269). The plain explanation is memory bandwidth. The
 two cards are 936 vs 1008 GB/s, **7% apart**, and decode is
 bandwidth-bound, which fits the observed 5% directly. The conclusion
 stands on the corrected basis, and the corrected basis also predicts
@@ -152,11 +152,11 @@ Execution stops and asks when:
 
 ## 6. Out of scope
 
-- **Exposure raising** — deferred with the reason in §2; needs its own
+- **Exposure raising**: deferred with the reason in §2; needs its own
   design.
-- **`swap`'s zero uptake** — cannot be honestly diagnosed without the
+- **`swap`'s zero uptake**: cannot be honestly diagnosed without the
   exposure lever. It stays shipped and unjudged.
-- **`argmax`/`max_by`** — `filter` first; adding two higher-order
+- **`argmax`/`max_by`**: `filter` first; adding two higher-order
   builtins at once would confound §3.2's comparison.
 - **`/=`**, the census-family debt, and the 954-line `demand_census.py`
-  split — standing items, unrelated to this wave's question.
+  split: standing items, unrelated to this wave's question.

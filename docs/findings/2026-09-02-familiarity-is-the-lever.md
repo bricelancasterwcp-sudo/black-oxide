@@ -1,6 +1,6 @@
 # Familiarity is the lever
 
-*Black Oxide findings series — 2026-09-02. All numbers are reproducible
+*Black Oxide findings series: 2026-09-02. All numbers are reproducible
 from this repository; sources are linked inline. Paths are relative to
 `eval/results/` unless stated.*
 
@@ -34,7 +34,7 @@ file, at most once each
 The tuned arm reached for Rust's spelling over the shipped one by about
 **10:1**; the card arm by 4:1. Guarded before it was trusted: the bar
 pattern also matches a chained boolean OR, so all 43 tuned-arm matches
-were classified — 0 were OR-chains. **Familiarity beat legibility**, and
+were classified: 0 were OR-chains. **Familiarity beat legibility**, and
 the comparison is clean because both spellings sat at the same exposure.
 
 Wave 4 re-spelled the construct to `|x|` (SPEC §63.1) and pre-registered
@@ -79,8 +79,8 @@ learned from. Over the 294 oxide training examples
 Uptake rises with exposure, and the two anomalies separate a second
 force. **`reverse` drew 50 uses from 1.7% exposure while `count_if` drew
 0 from 2.4%.** `reverse` is a name the model knows from Rust and Python;
-`count_if` is not Rust idiom. `swap` — the corpus's single largest token
-gap, shipped on cost evidence — reached the model in **2 of 294**
+`count_if` is not Rust idiom. `swap` (the corpus's single largest token
+gap, shipped on cost evidence) reached the model in **2 of 294**
 examples and drew 0: it failed on exposure, `count_if` on familiarity.
 
 Why exposure is so low is structural. A new construct reaches training
@@ -88,8 +88,8 @@ only through the one to three reference programs whose shape needs it,
 plus whatever the base model emits from the card that the oracle passes.
 **The pipeline systematically under-teaches its own new vocabulary**, so
 the honest status of a construct at 0.7% exposure is *untested for
-adoption*, not *rejected*. That lever — a second reference corpus, or a
-matching scheme that survives oversampling — was never pulled; `swap`
+adoption*, not *rejected*. That lever (a second reference corpus, or a
+matching scheme that survives oversampling) was never pulled; `swap`
 and `set` remain untested.
 
 SPEC §63.3 promoted the ratio to an estimand: **learnability = uptake ÷
@@ -111,15 +111,15 @@ yielding `None` rather than a flattering infinity or a convicting zero
 | `swap` | 0 | 0.7% | 0 |
 
 Raw uptake calls `+=` dominant at 174 uses; it needed 13× the exposure
-of `reverse` to get there. `count` and `reverse` — names the model
-already knows — are the genuinely learnable constructs, and only the
+of `reverse` to get there. `count` and `reverse` (names the model
+already knows) are the genuinely learnable constructs, and only the
 ratio shows it.
 
 ### `filter` vs `count_if`: the familiar, more expensive spelling won
 
 Wave 4 shipped `filter(v, |x| ...)` alongside `count_if` deliberately, so
 efficiency and learnability pointed at different constructs and the
-model broke the tie. At 7B it chose `filter` **11 to 0** — the more
+model broke the tie. At 7B it chose `filter` **11 to 0**, the more
 verbose form, because it is the one Rust has. (At 14B the counts invert
 weakly, 2 to 0 for `count_if`, which at those magnitudes is noise and is
 reported as such.)
@@ -134,17 +134,17 @@ The card-only untuned 7B, pass@1 across five card versions
 | base-ox-7 pass@1 | 0.025 | 0.060 | 0.070 | 0.075 | 0.060 |
 
 The first revision was worth 2.4×; everything after it is flat. Card
-v0.8 was the sharpest test. During wave 4 a frontier probe — Claude
+v0.8 was the sharpest test. During wave 4 a frontier probe (Claude
 Sonnet given card v0.7 and the 20 eval prompts, barred from the
-repository, no compiler, `expected_stdout` withheld — wrote 20 programs
+repository, no compiler, `expected_stdout` withheld) wrote 20 programs
 in one pass and **all 20 passed the real oracle**, then reported that the
 card documents no operator set. Confirmed: `==`, `!=`, `%`, `<=`, `>=`,
 `&&`, `||`, `!` appear zero times in every card the project had ever
 measured (SPEC §63.6). It scored 20/20 by assuming Rust's operators and
 being right.
 
-The worry that followed — that every untuned Oxide arm in project history
-had been measuring a documentation gap — was tested as a single-variable
+The worry that followed (that every untuned Oxide arm in project history
+had been measuring a documentation gap) was tested as a single-variable
 experiment with predictions registered in advance. Every prediction was
 falsified:
 
@@ -159,7 +159,7 @@ The mechanism check explains the null: across `base-ox-7`'s 764 reply
 files under the *old* card, `==` appeared in 160, `!` in 190, `%` in 136
 and `/` in 120 (SPEC §63.6, amendment). **The model was already using
 the operators.** The card lacked the documentation; the model never
-lacked the knowledge, because its Rust prior supplied it — exactly as it
+lacked the knowledge, because its Rust prior supplied it, exactly as it
 did for Sonnet, whose 20/20 is therefore a capability datum, not
 evidence about the card. The one real effect was conciseness: the table
 made `base-ox-14` 12% shorter (tokens-to-green 134.7 → 118.0) without
@@ -168,7 +168,7 @@ its own language; as a *lever* it is measured-saturated.
 
 Related: the 1.5B reads 0.000 under every card ever measured and 0.485
 when fine-tuned (wave 0). It cannot learn the language from a card and
-can learn it from a corpus — which is a finding about cards. SPEC §64
+can learn it from a corpus, which is a finding about cards. SPEC §64
 drops it from card-only arms because an arm that can only report zero
 cannot discriminate, and keeps it in tuned arms and in amplification.
 
@@ -179,7 +179,7 @@ learn, and the record above fills each cell:
 
 1. **Ceremony removed entirely.** Implicit ownership: the model writes no
    annotations and never has to learn not to. structs/option is the only
-   class that beats Rust with no vocabulary added — 0.920 on the train
+   class that beats Rust with no vocabulary added: 0.920 on the train
    references, 0.9187 on the held-out eval set, 0.9312 on the large tier.
    Wins on all three objectives; look here first.
 2. **Familiar spelling for a familiar concept.** `reverse`, `+=`,
@@ -192,11 +192,11 @@ learn, and the record above fills each cell:
    against. Avoid.
 4. **Novel concept requiring novel spelling.** Justified only by an
    efficiency win no familiar spelling can deliver, and then only with
-   the exposure to teach it — which the pipeline does not supply.
+   the exposure to teach it, which the pipeline does not supply.
 
 The principle wave 3 earned and the later waves confirmed: **subtractive
 design wins; additive design pays for novelty.** And the most useful
-thing the uptake counters produced was not a number but a shape — the
+thing the uptake counters produced was not a number but a shape: the
 recurring `argmax(items, |item| ...)` the model wrote instead of anything
 it was offered. The model invents higher-order functions in Rust's
 closure syntax. That output is the specification of what it wants; the
@@ -219,5 +219,5 @@ demand census exists to read it.
   reported as noise.
 - These are small-task results. Whether familiarity behaves the same at
   200–600 tokens is not measured here; what the large tier showed is
-  that the model reaches for Rust syntax the language lacks — the same
+  that the model reaches for Rust syntax the language lacks: the same
   force, binding earlier.

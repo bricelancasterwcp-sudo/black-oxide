@@ -1,4 +1,4 @@
-# v0.4 wave 8 (Phase B) — the model cannot write the language at scale
+# v0.4 wave 8 (Phase B): the model cannot write the language at scale
 
 2026-09-01. Plan: `docs/superpowers/plans/2026-09-01-v04-wave8-phaseb-plan.md`.
 Five arms, no training, no amplification. Community RTX 3090, 3h40m,
@@ -19,7 +19,7 @@ and has not been moved to accommodate the number.
 **The small tier did measure, and it reproduces the project's prior
 result inside this environment: surplus 1.242** against wave 6's 1.276,
 on 120 pairs across 13 tasks. Repair attempts are 1.02 vs 1.00, so that
-surplus is about expression, not about one arm needing more repair —
+surplus is about expression, not about one arm needing more repair,
 which is why that column exists.
 
 ## Why it did not measure
@@ -33,7 +33,7 @@ which is why that column exists.
 | large | tune-rs-7 | 81.5% | 0.200 | 0.450 | 9 |
 
 **The tuned 7B produces compiling Oxide 5.5% of the time on 200–600 token
-tasks, against 81.5% for Rust.** Not correct — *compiling*. Pass@1 falls
+tasks, against 81.5% for Rust.** Not correct: *compiling*. Pass@1 falls
 0.645 → 0.035, an 18× drop, where the Rust arm falls 0.870 → 0.200, a
 4.4× drop.
 
@@ -42,7 +42,7 @@ Three alternative explanations were checked and none survives:
 - **Truncation:** 0 truncated generations in either arm on either tier.
   Median output 1165 tokens against a 2048 cap.
 - **A broken adapter or merge:** `tune-ox-7` reads **0.645** pass@1 on the
-  small tier — wave 4's published figure for this adapter on this task
+  small tier: wave 4's published figure for this adapter on this task
   set, to the digit. The weights are healthy.
 - **Distribution shift:** the pre-registered confound. Both arms were
   trained identically on small-task corpora and are equally
@@ -88,11 +88,11 @@ are the same list, discovered independently:
 
 | Phase A (my authoring) | Phase B (model failures) |
 |---|---|
-| indexing is `unwrap_or(get(v, i), 0)` vs `v[i]` | `unexpected character '['` — 126, the top failure |
-| no string `split` (g10 hand-rolls 12 lines) | `unknown identifier 'split'` — 44 |
-| no `map` / `max_by_key` | `unknown identifier 'map'` — 32 |
-| no string `reverse` (g02 hand-rolls `rev_str`) | `unknown identifier 'reverse_str'` — 9 |
-| predicates cannot capture a computed threshold | `|x| x > floor(avg(v))` — OX0205 |
+| indexing is `unwrap_or(get(v, i), 0)` vs `v[i]` | `unexpected character '['`: 126, the top failure |
+| no string `split` (g10 hand-rolls 12 lines) | `unknown identifier 'split'`: 44 |
+| no `map` / `max_by_key` | `unknown identifier 'map'`: 32 |
+| no string `reverse` (g02 hand-rolls `rev_str`) | `unknown identifier 'reverse_str'`: 9 |
+| predicates cannot capture a computed threshold | `|x| x > floor(avg(v))`: OX0205 |
 
 Two independent instruments, one design agenda. That convergence is the
 most useful thing this wave produced.
@@ -117,7 +117,7 @@ previous wave measured only the size where it holds.
 ## Provenance
 
 - Drift guard `base-rs-7` **reproduced exactly**: pass@1 0.565, pass@10v
-  0.600, tokens-to-green 66.8, censored 87, n=200 — an eighth
+  0.600, tokens-to-green 66.8, censored 87, n=200, an eighth
   environment, every companion figure to the digit. Also reconfirms the
   documented architecture split (wave 2 on a 4090 read 0.650/65.7; every
   3090 reads 0.600/66.8).
@@ -136,7 +136,7 @@ previous wave measured only the size where it holds.
 ## Feed-forward
 
 1. **Indexing syntax is now the top-ranked item on the design agenda**,
-   evidenced from two directions. It is not a stdlib gap — it is a lexer
+   evidenced from two directions. It is not a stdlib gap: it is a lexer
    gap, and it is fatal rather than merely verbose.
 2. **`split`, `slice`, `map`, `floor`** are the stdlib the model asks for
    by name, ranked by its own demand at the size where it matters.
@@ -144,7 +144,7 @@ previous wave measured only the size where it holds.
    permanent instrument: it is where the language's problems become
    visible, and small-task measurement demonstrably cannot substitute.
 4. **Do not quote the large-tier surplus.** 3 pairs on one task.
-5. **A 14B arm on the large tier is the obvious next question** — wave 4
+5. **A 14B arm on the large tier is the obvious next question**: wave 4
    found untuned Oxide beats Rust at 14B with a verifier on small tasks.
    Whether the cliff is a 7B property or a language property is
    unanswered and cheap to answer.

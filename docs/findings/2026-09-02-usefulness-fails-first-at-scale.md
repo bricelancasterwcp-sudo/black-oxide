@@ -1,14 +1,14 @@
 # Usefulness fails first at scale
 
-*Black Oxide findings series — 2026-09-02. All numbers are reproducible
+*Black Oxide findings series: 2026-09-02. All numbers are reproducible
 from this repository; sources are linked inline. Paths are relative to
 `eval/results/` unless stated.*
 
 ## The claim
 
-Everything this project measured on 40–150 token programs — a language
+Everything this project measured on 40–150 token programs (a language
 below token parity with Rust, a fine-tuned 7B that beats the untuned
-Rust control, a 14B at parity with no training — **inverts or collapses
+Rust control, a 14B at parity with no training) **inverts or collapses
 on 200–600 token programs.** On that tier the language needs more tokens
 than Rust, not fewer; the same tuned model that compiles 83% of its
 small programs compiles 5% of its large ones; and doubling model size
@@ -23,7 +23,7 @@ correct programs are 5% of attempts.
 
 ## The instrument: a second tier
 
-Wave 8 authored a large tier — 20 tasks at 200–600 tokens, both arms
+Wave 8 authored a large tier: 20 tasks at 200–600 tokens, both arms
 written to the same discipline by one author, all oracle-verified
 against a committed `expected_stdout`, sizes measured with the pinned
 tokenizer ([`v04-wave8-large/REPORT.md`](../../eval/results/v04-wave8-large/REPORT.md)):
@@ -33,7 +33,7 @@ tokenizer ([`v04-wave8-large/REPORT.md`](../../eval/results/v04-wave8-large/REPO
 | oxide | 231 | 292.5 | 389 |
 | rust | 201 | 276.5 | 346 |
 
-Contamination is zero in both directions — against the held-out eval set
+Contamination is zero in both directions: against the held-out eval set
 and against the training corpus the v5 adapters were trained on. The
 guards against single-author bias were: author Rust first from the prompt
 alone, then Oxide; then re-review under a criterion fixed before looking.
@@ -64,8 +64,8 @@ dilute; it inverts. By class:
 **Only structs/option survives the size change, and it survives almost
 exactly.** That is the implicit-ownership win, and it is a
 *per-declaration* saving: larger programs declare more, so it does not
-decay. Vectors — the project's proudest number, 1.377 at wave 3's open
-and 0.7682 on held-out small tasks — reads 1.0825 here. Four waves of
+decay. Vectors (the project's proudest number, 1.377 at wave 3's open
+and 0.7682 on held-out small tasks) reads 1.0825 here. Four waves of
 vector vocabulary transferred to held-out *small* tasks and not to large
 ones.
 
@@ -76,7 +76,7 @@ large linear programs with no helpers at all are also above parity.
 
 The drivers, read off the pairs rather than posited: predicates cannot
 capture (`OX0205`), so a *computed* threshold costs a five-line loop
-where a literal one is free — a cost the small tiers structurally could
+where a literal one is free, a cost the small tiers structurally could
 not see; no `map` / `max_by_key` / `any` / `all`; indexed access as
 `unwrap_or(get(v, i), 0)` against `v[i]`; no string `split` or
 `reverse`; push chains against `vec![...]`.
@@ -109,13 +109,13 @@ alternative explanations were checked and none survives:
 - **Truncation:** 0 truncated generations in either arm on either tier;
   median output 1165 tokens against a 2048 cap.
 - **A broken adapter or merge:** `tune-ox-7` reads 0.645 on the small
-  tier — wave 4's published figure for this adapter, to the digit.
+  tier: wave 4's published figure for this adapter, to the digit.
 - **Distribution shift:** both arms were trained identically on
   small-task corpora and are equally out of distribution. That cannot
   explain a 15× compile gap. This is what the symmetric control was for.
 
-The pre-registered efficiency endpoint on the large tier — the model's
-surplus over the references — **did not measure**: it rests on 3 paired
+The pre-registered efficiency endpoint on the large tier (the model's
+surplus over the references) **did not measure**: it rests on 3 paired
 green cells on one task, below the plan's floor of 5 fixed before the
 run, so the 0.798 it prints is recorded and is not an endpoint. The
 small tier did measure and reproduced the prior result in a fresh
@@ -133,7 +133,7 @@ First diagnostic per failing attempt:
 The large tier's top two messages are `unexpected character '['` (126)
 and `unexpected character "'"` (56). Oxide had no indexing syntax and
 no character literals. First attempts containing `[`: **0.5%** on the
-small tier, **17.0%** on the large tier — a 34× increase in reaching for
+small tier, **17.0%** on the large tier: a 34× increase in reaching for
 a construct the lexer cannot tokenise. Short programs iterate; long ones
 index. The identifiers the model asked for by name, ranked: `split` 44,
 `slice` 39, `map` 32, `floor` 27.
@@ -145,11 +145,11 @@ Phase B recorded what the model hit over 776 attempts at the same tasks:
 
 | Phase A (authoring) | Phase B (model failures) |
 |---|---|
-| indexing is `unwrap_or(get(v, i), 0)` vs `v[i]` | `unexpected character '['` — 126, the top failure |
-| no string `split` (g10 hand-rolls 12 lines) | `unknown identifier 'split'` — 44 |
-| no `map` / `max_by_key` | `unknown identifier 'map'` — 32 |
-| no string `reverse` (g02 hand-rolls `rev_str`) | `unknown identifier 'reverse_str'` — 9 |
-| predicates cannot capture a computed threshold | `\|x\| x > floor(avg(v))` — OX0205 |
+| indexing is `unwrap_or(get(v, i), 0)` vs `v[i]` | `unexpected character '['`: 126, the top failure |
+| no string `split` (g10 hand-rolls 12 lines) | `unknown identifier 'split'`: 44 |
+| no `map` / `max_by_key` | `unknown identifier 'map'`: 32 |
+| no string `reverse` (g02 hand-rolls `rev_str`) | `unknown identifier 'reverse_str'`: 9 |
+| predicates cannot capture a computed threshold | `\|x\| x > floor(avg(v))`: OX0205 |
 
 ## The 14B screen: scale does not rescue it
 
@@ -166,8 +166,8 @@ The pre-registered bands: ≥0.50 a 7B property, ≤0.20 a language
 property, between them escalate. **The ratio moved by 0.002 across a
 doubling of model size.** The two guards (`base-rs-14` at small, anchor
 0.5500; `tune-ox-14` at small, anchor 0.8000) reproduced their
-seed-matched anchors on all four metrics each — pass@1, pass@10v,
-tokens-to-green, censored — eight of eight, exactly. The anchors had to
+seed-matched anchors on all four metrics each (pass@1, pass@10v,
+tokens-to-green, censored): eight of eight, exactly. The anchors had to
 be seed-matched: `tune-ox-14` publishes 0.745 over ten seeds and reads
 0.800 over seeds 1–3, and screening against the published figure would
 have manufactured a 5.5-point anomaly out of sampling.
@@ -177,7 +177,7 @@ index**, so at this size indexing is the dominant idiom. The `[` rate in
 Oxide attempts rose from **16.8%** (7B) to **29.0%** (14B). A more
 capable model writes more sophisticated code, and sophisticated code
 indexes. `tune-ox-14` writes compiling Oxide 83.3% of the time on the
-small tier and 5.0% on the large one — the same weights, same session,
+small tier and 5.0% on the large one: the same weights, same session,
 zero truncations; its large-tier pass@1 is 0.000.
 
 ## Wave 9: what indexing bought, statically
@@ -204,14 +204,14 @@ the oracle (the task is specifically an out-of-range lookup; under
 stays; the `as usize` cast had to be parenthesised (`v[len(v) - 1]`
 otherwise emits `v[len(v) - (1 as usize)]`); and `]` was missing from
 the lexer's statement-terminator set, so `let a = v[0]` on its own line
-swallowed the next statement — every one of 15 unit tests had put the
+swallowed the next statement: every one of 15 unit tests had put the
 index mid-line, and three large-tier references caught it at once.
 
 **Nothing dynamic is claimed for wave 9 here.** Whether shipping `[`
-moves the compile rate is the pre-registered re-screen — same four 14B
+moves the compile rate is the pre-registered re-screen: same four 14B
 arms, same seeds, primary endpoint the large-tier compile-rate ratio
 against 0.0652, secondary the `OX0001` share of first diagnostics against
-0.338 (73 of 216 — the plan first quoted 73 of 191, a
+0.338 (73 of 216: the plan first quoted 73 of 191, a
 denominator summed from a report table; corrected before the run). The plan states in advance that the rate will not jump
 to 29%: clearing the lexer moves an attempt to its *next* error, and
 unknown identifiers were already 43 of 216.
@@ -219,7 +219,7 @@ unknown identifiers were already 43 of 216.
 **Re-screen result (2026-09-02).** Stop 1 of the plan fired: the
 tuned-Oxide small-tier guard read 0.7833 against its seed-matched 0.8000
 anchor. The missed cell is a different generation on seed 3 with
-hash-identical weights, sampler and seed — `pod_setup.sh` cloned
+hash-identical weights, sampler and seed: `pod_setup.sh` cloned
 llama.cpp at HEAD, which had moved from `b96806d` to `0f3a71b` since
 wave 8. So no ratio is published against wave 8, and the pipeline now
 pins the commit. What the run measured within its own environment:
@@ -227,7 +227,7 @@ Oxide compiled **3 of 60** large-tier attempts (wave 8: 3 of 60); the
 `OX0001` share of first diagnostics fell **0.338 → 0.019** (4 of 213);
 two byte-identical programs that died at `[` in wave 8 compile and pass.
 The attempts that got past the lexer failed at **tuples** (types,
-`for (i, x)` patterns, destructuring — at least 53 first diagnostics)
+`for (i, x)` patterns, destructuring: at least 53 first diagnostics)
 and the string stdlib (`OX0200` 54: `str_from_chars`, `insert`,
 `split`, `str_split`, `slice`). The construct worked as specified and
 the total did not move: clearing the largest measured gap exposed two
@@ -259,7 +259,7 @@ more fatal-at-this-size layers behind it. Report:
   eight waves designing one of them, with the guards stated above.
 - One model family at scale (Qwen2.5-Coder 7B and 14B), q8_0, one QLoRA
   recipe, adapters trained on small-task corpora. The 14B screen is three
-  seeds — enough to separate 5% from 77% with large margin, not enough
+  seeds: enough to separate 5% from 77% with large margin, not enough
   for anything finer, and it said so in advance.
 - For the 8 large-linear tasks the oracle is two-arm agreement plus
   independently computed values for four of them, not hand-tracing of

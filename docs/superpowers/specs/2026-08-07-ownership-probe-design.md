@@ -1,4 +1,4 @@
-# Ownership Probe — design
+# Ownership Probe: design
 
 **Date:** 2026-08-07
 **Status:** design. Supersedes whole-program generation as the instrument for
@@ -7,8 +7,8 @@ the v0.3 gate.
 ## 1. Why the existing instrument cannot answer the question
 
 Phase 6a measured whole-program generation across three arms. Across ~530
-Black Oxide-arm attempts in five configurations — 0.5B and 7B, 0-shot and 3-shot,
-unconstrained and grammar-constrained — **not one `OX04xx` linearity
+Black Oxide-arm attempts in five configurations (0.5B and 7B, 0-shot and 3-shot,
+unconstrained and grammar-constrained), **not one `OX04xx` linearity
 diagnostic has ever been observed** (`eval/results/6a-pilot/REPORT.md`).
 
 `src/sema/analyze.py` is strictly staged. Generation must clear lexing,
@@ -32,7 +32,7 @@ all supplied and correct. The only thing wrong is the thing under test.
 
 ### Matched triples
 
-Each probe is one ownership mistake expressed in all three arms — the same
+Each probe is one ownership mistake expressed in all three arms, the same
 underlying defect, the same program behaviour, the same expected output. A
 verified example (mechanically checked, all three arms):
 
@@ -52,12 +52,12 @@ println!("{}", b.len());           println!("{}", b.len());
 
 explicit Black Oxide carries the same defect plus its own annotation burden: `&`
 reads and `drop` statements placed at exactly the checker's computed points
-(`drop a` immediately after `a`'s last use, not at scope end — misplacement is
+(`drop a` immediately after `a`'s last use, not at scope end: misplacement is
 `EX0004`, omission is `EX0003`).
 
 Expected stdout for all three: `2\n2\n`.
 
-## 3. Corpus contract — `eval/probes.jsonl`
+## 3. Corpus contract: `eval/probes.jsonl`
 
 One record per (defect, arm):
 
@@ -73,11 +73,11 @@ claim to validity:**
 1. `broken` must FAIL to compile, and its diagnostics must contain
    `expected_code`. A probe whose broken form fails for an unrelated reason
    is measuring the wrong thing.
-2. `broken` must fail for the ownership reason ONLY — no `OX0001`, no
+2. `broken` must fail for the ownership reason ONLY: no `OX0001`, no
    `OX01xx`, no `OX02xx`, no `OX03xx`. A probe carrying an incidental syntax
    or type error reintroduces the confound this instrument exists to remove.
 3. `fix` must compile AND produce `expected_stdout` exactly.
-4. Across arms, a given defect id must share `expected_stdout` — the three
+4. Across arms, a given defect id must share `expected_stdout`: the three
    programs must do the same observable thing.
 
 These are enforced by tests, in the same spirit as the existing 60 reference
@@ -105,18 +105,18 @@ rendered exactly as `eval/repair.py` renders it, then the fix instruction.
 The card is included deliberately: this probe isolates ownership, so card
 recall must not be a second variable.
 
-`expected_stdout` is never disclosed — the same integrity requirement as the
+`expected_stdout` is never disclosed. That is the same integrity requirement as the
 repair prompt. A model told the expected output could pass by printing it.
 
 ## 5. Scoring
 
 Two scores, both reported:
 
-- **Strict** — the repaired program compiles and its stdout matches
+- **Strict**: the repaired program compiles and its stdout matches
   `expected_stdout`. This is the headline. Requiring the output prevents the
   degenerate fix: deleting the offending use compiles cleanly and would score
   as a repair while silently changing what the program does.
-- **Lenient** — the ownership diagnostic class is gone, regardless of any
+- **Lenient**: the ownership diagnostic class is gone, regardless of any
   other error introduced. This separates "understood the ownership fix" from
   "could also still write valid code", which matters at small scale.
 
@@ -126,12 +126,12 @@ programs.
 ## 6. What this can and cannot show
 
 **Can:** whether a model, handed a correct program with one ownership defect
-and the compiler's explanation, repairs it — and whether implicit linearity
+and the compiler's explanation, repairs it, and whether implicit linearity
 (Black Oxide) is repaired more reliably than explicit linearity (explicit Black Oxide) at
 matched novelty. That is the thesis, tested directly.
 
 **Cannot:** whether a model can write Black Oxide from scratch. Phase 6a already
-answered that — at ≤7B, no. This instrument deliberately supplies everything
+answered that: at ≤7B, no. This instrument deliberately supplies everything
 except the ownership decision, so it measures comprehension and repair of
 ownership, not production of programs.
 

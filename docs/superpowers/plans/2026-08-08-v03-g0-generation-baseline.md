@@ -2,7 +2,7 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Land the v0.3 G0 baseline — whole-program generation measured at HEAD across 3 families × 3 arms × 20 tasks × 10 seeds under constrained and unconstrained decoding — plus the taxonomy that ranks what to fix first.
+**Goal:** Land the v0.3 G0 baseline (whole-program generation measured at HEAD across 3 families × 3 arms × 20 tasks × 10 seeds under constrained and unconstrained decoding), plus the taxonomy that ranks what to fix first.
 
 **Architecture:** Everything reuses the Part X session machinery (`eval/driver.py` grid → `eval/harness.py` sessions → cells/triples/manifest). New work: a grammar *admission* test (the completeness half of parity), two model-roster slugs, a llamacpp backend with per-arm grammar clients in the driver, a self-validating G0 profiler, and the taxonomy document. The change loop that follows G0 is a repeating protocol, not pre-planned tasks (Appendix A).
 
@@ -10,7 +10,7 @@
 
 ## Global Constraints
 
-- Spec: `docs/superpowers/specs/2026-08-08-v03-generation-ergonomics-design.md`. SPEC.md is the binding contract — features need a SPEC extension before implementation.
+- Spec: `docs/superpowers/specs/2026-08-08-v03-generation-ergonomics-design.md`. SPEC.md is the binding contract. Features need a SPEC extension before implementation.
 - 10 seeds minimum for any headline number; all three families before believing anything (project method lesson: 3 seeds false-positived twice).
 - 0-shot only; grid shape 3 arms × 20 tasks (`SESSIONS_PER_RUN = 60` per run_id holds).
 - Primary comparison: oxide vs explicit paired by task; rust is the capability control and is NEVER grammar-constrained.
@@ -32,11 +32,11 @@ The soundness direction of grammar parity is already enforced (`test_committed_g
 
 **Interfaces:**
 - Consumes: `eval/grammar/oxide.gbnf`, `eval/grammar/explicit.gbnf`, `LANGUAGE_CARD.md`, `LANGUAGE_CARD_EXPLICIT.md`, `eval.probe.diagnose(arm, source)` (existing; returns diagnostics for a source string).
-- Produces: `load_gbnf(path) -> dict[str, Node]`, `admits(rules: dict, start: str, text: str) -> bool` — used only by this test file.
+- Produces: `load_gbnf(path) -> dict[str, Node]`, `admits(rules: dict, start: str, text: str) -> bool`: used only by this test file.
 
 - [ ] **Step 1: Write the recognizer helper**
 
-A packrat CFG recognizer over the *generated* GBNF subset (rules one per line, literals with `\n \t \" \\` escapes, positive char classes with ranges, groups, `| * + ?`). It raises on any GBNF syntax outside that subset — silent mis-parsing must not fake admission. The generated grammar is deliberately non-left-recursive (that is what its `flat-N` leveling is for), and the in-progress guard turns accidental left recursion into a test failure, not a hang.
+A packrat CFG recognizer over the *generated* GBNF subset (rules one per line, literals with `\n \t \" \\` escapes, positive char classes with ranges, groups, `| * + ?`). It raises on any GBNF syntax outside that subset. Silent mis-parsing must not fake admission. The generated grammar is deliberately non-left-recursive (that is what its `flat-N` leveling is for), and the in-progress guard turns accidental left recursion into a test failure, not a hang.
 
 ```python
 """Recognizer for the generated GBNF subset. Test helper only.
@@ -291,12 +291,12 @@ def test_exemplar_is_admitted_by_the_grammar(name, program):
 
 Run: `.venv/bin/pytest tests/test_grammar_admission.py -x -q`
 
-Expected: `test_exemplar_parses_in_the_real_pipeline` must pass for every exemplar (if one fails, the exemplar is wrong Black Oxide — fix the exemplar, e.g. enum variant construction syntax, match-arm commas, against `SPEC.md` and `tests/test_parser.py` fixtures). Admission tests may fail in two distinct ways: (a) the exemplar's *formatting* is off canon (fix the exemplar — the grammar pins exact spacing like `" -> "`, `"\n    "` field indent); (b) a construct that parses in the pipeline is NOT admitted by the grammar — that is a genuine completeness gap: record it (it becomes a taxonomy candidate), and if it is a card-taught construct, fix `eval/grammar/build.py` and regenerate in this task.
+Expected: `test_exemplar_parses_in_the_real_pipeline` must pass for every exemplar (if one fails, the exemplar is wrong Black Oxide: fix the exemplar, e.g. enum variant construction syntax, match-arm commas, against `SPEC.md` and `tests/test_parser.py` fixtures). Admission tests may fail in two distinct ways: (a) the exemplar's *formatting* is off canon (fix the exemplar: the grammar pins exact spacing like `" -> "`, `"\n    "` field indent); (b) a construct that parses in the pipeline is NOT admitted by the grammar. That is a genuine completeness gap: record it (it becomes a taxonomy candidate), and if it is a card-taught construct, fix `eval/grammar/build.py` and regenerate in this task.
 
 - [ ] **Step 4: Reconcile until green, then run the full suite**
 
 Run: `.venv/bin/pytest tests/test_grammar_admission.py tests/test_6a.py -q` then `.venv/bin/pytest tests/ -q`
-Expected: all green, incl. the existing `test_committed_grammar_matches_the_generator` (if build.py changed, regenerate both .gbnf files via `.venv/bin/python -m eval.grammar.build` — check its `__main__` for the exact invocation — and commit them together).
+Expected: all green, incl. the existing `test_committed_grammar_matches_the_generator` (if build.py changed, regenerate both .gbnf files via `.venv/bin/python -m eval.grammar.build`, check its `__main__` for the exact invocation, and commit them together).
 
 - [ ] **Step 5: Commit**
 
@@ -335,11 +335,11 @@ def test_g0_model_slugs_are_pinned():
     assert driver.MODELS["granite8b"] == "granite-code:8b-instruct-q8_0"
 ```
 
-- [ ] **Step 2: Run to verify failure** — `.venv/bin/pytest tests/test_6a.py -q -k "run_id or slugs"` → FAIL (missing kwarg / missing keys)
+- [ ] **Step 2: Run to verify failure**: `.venv/bin/pytest tests/test_6a.py -q -k "run_id or slugs"` → FAIL (missing kwarg / missing keys)
 
-- [ ] **Step 3: Implement** — MODELS entries as above; `build_run_id` gains `prefix="6a"`; driver and rollup CLIs gain `--run-prefix` (default `"6a"`) passed to every `build_run_id` call site (driver: grid loop; rollup: lines 298 and 339).
+- [ ] **Step 3: Implement**: MODELS entries as above; `build_run_id` gains `prefix="6a"`; driver and rollup CLIs gain `--run-prefix` (default `"6a"`) passed to every `build_run_id` call site (driver: grid loop; rollup: lines 298 and 339).
 
-- [ ] **Step 4: Full suite** — `.venv/bin/pytest tests/ -q` → green (default prefix keeps every existing run-id byte-identical).
+- [ ] **Step 4: Full suite**: `.venv/bin/pytest tests/ -q` → green (default prefix keeps every existing run-id byte-identical).
 
 - [ ] **Step 5: Commit**
 
@@ -350,7 +350,7 @@ git commit -m "feat(eval): G0 roster and run-id prefixes — codegemma/granite s
 
 ---
 
-### Task 3: llamacpp backend in the driver — per-arm clients, constrained mode, stale-server guard
+### Task 3: llamacpp backend in the driver: per-arm clients, constrained mode, stale-server guard
 
 **Files:**
 - Modify: `eval/driver.py` (`make_arm_clients` new; `run_grid`/`_run_grid_cell` take per-arm clients; argparse `--backend`, `--constrained`, `--host`, `--expect-model-path`; preflight path)
@@ -358,7 +358,7 @@ git commit -m "feat(eval): G0 roster and run-id prefixes — codegemma/granite s
 
 **Interfaces:**
 - Consumes: `eval.llamacpp.LlamaCppClient(model, *, grammar, host)`, `eval.llamacpp.load_grammar(arm)` (raises ValueError for "rust"), `LlamaCppClient.preflight() -> {"model_path": ..., "grammar_sha256": ...}`.
-- Produces: `make_arm_clients(backend, slug, *, constrained, host) -> dict[arm, ModelClient]`; `run_grid(..., clients: dict[str, ModelClient], ...)` — Task 4's command line depends on the new flags.
+- Produces: `make_arm_clients(backend, slug, *, constrained, host) -> dict[arm, ModelClient]`; `run_grid(..., clients: dict[str, ModelClient], ...)`: Task 4's command line depends on the new flags.
 
 - [ ] **Step 1: Write the failing tests**
 
@@ -414,9 +414,9 @@ def test_grid_cell_routes_the_arm_to_its_client(tmp_path):
     assert len(clients["explicit"].prompts) >= 1
 ```
 
-(Adjust `run_one`'s exact keyword list to its real signature at `eval/driver.py:105` when writing the test — the assertion structure is the point: three distinct stubs, each seeing only its own arm's prompts.)
+(Adjust `run_one`'s exact keyword list to its real signature at `eval/driver.py:105` when writing the test. The assertion structure is the point: three distinct stubs, each seeing only its own arm's prompts.)
 
-- [ ] **Step 2: Run to verify failure** — `.venv/bin/pytest tests/test_6a.py -q -k "arm_client or routes or shares"` → FAIL (`make_arm_clients` undefined)
+- [ ] **Step 2: Run to verify failure**: `.venv/bin/pytest tests/test_6a.py -q -k "arm_client or routes or shares"` → FAIL (`make_arm_clients` undefined)
 
 - [ ] **Step 3: Implement**
 
@@ -447,9 +447,9 @@ def make_arm_clients(
     return clients
 ```
 
-Threading: `run_grid` and `run_one` accept `clients: dict[str, ModelClient]` instead of one client; `_run_grid_cell` looks up `clients[arm]`. Preflight in `main`: for llamacpp, call `clients["rust"].preflight()` once per slug (one server, one model — preflighting one client covers all three); when `--expect-model-path` is given and not a substring of the returned `model_path`, print the mismatch and exit 2 — this is the stale-server guard. Manifest (`_manifest_fields`): record `backend`, the preflight dict, and per-arm `grammar_sha256` (via `eval.llamacpp.grammar_digest(clients[arm].grammar)`).
+Threading: `run_grid` and `run_one` accept `clients: dict[str, ModelClient]` instead of one client; `_run_grid_cell` looks up `clients[arm]`. Preflight in `main`: for llamacpp, call `clients["rust"].preflight()` once per slug (one server, one model: preflighting one client covers all three); when `--expect-model-path` is given and not a substring of the returned `model_path`, print the mismatch and exit 2. This is the stale-server guard. Manifest (`_manifest_fields`): record `backend`, the preflight dict, and per-arm `grammar_sha256` (via `eval.llamacpp.grammar_digest(clients[arm].grammar)`).
 
-- [ ] **Step 4: Full suite** — `.venv/bin/pytest tests/ -q` → green.
+- [ ] **Step 4: Full suite**: `.venv/bin/pytest tests/ -q` → green.
 
 - [ ] **Step 5: Commit**
 
@@ -460,9 +460,9 @@ git commit -m "feat(eval): llamacpp grid backend — per-arm grammar clients and
 
 ---
 
-### Task 4: G0 constrained baseline — run it
+### Task 4: G0 constrained baseline: run it
 
-Operational task; no product code. One family at a time (16GB VRAM), the driver's own `is_complete`/`reset_run` machinery provides resume across server crashes (`vk::DeviceLostError` is expected under sustained load — just restart the server and rerun the same command).
+Operational task; no product code. One family at a time (16GB VRAM), the driver's own `is_complete`/`reset_run` machinery provides resume across server crashes (`vk::DeviceLostError` is expected under sustained load: just restart the server and rerun the same command).
 
 - [ ] **Step 1: Resolve blob paths** (per family; codegemma shown, qwen tag `7b-instruct-q8_0`, granite tag `8b-instruct-q8_0`)
 
@@ -478,7 +478,7 @@ for name, tag in [("qwen2.5-coder", "7b-instruct-q8_0"),
 EOF
 ```
 
-- [ ] **Step 2: Per family — start the server, verify ownership, run, tear down**
+- [ ] **Step 2: Per family: start the server, verify ownership, run, tear down**
 
 ```bash
 # start (repeat per family with its blob path)
@@ -497,11 +497,11 @@ ss -tlnp | grep 8081   # MUST show the llama-server PID just started
 kill <SERVER_PID> && sleep 2 && ! (ss -tln | grep -q 8081)
 ```
 
-Expected: 10 run dirs per family (`g0c-<slug>-0shot-s1..10`), each `is_complete` (60 cells). On a crash mid-run: restart server, rerun the identical command — completed run_ids are skipped, the incomplete one is reset and redone.
+Expected: 10 run dirs per family (`g0c-<slug>-0shot-s1..10`), each `is_complete` (60 cells). On a crash mid-run: restart server, rerun the identical command: completed run_ids are skipped, the incomplete one is reset and redone.
 
-Note on resume granularity: the driver resumes per *run* (`reset_run` drops an incomplete run wholesale — SPEC §6.4's pinned behavior), not per session as the design doc loosely words it. A worst-case device-lost crash redoes one run of 60 sessions, ~10–20 min at observed generation speeds. That bounded cost does not justify new checkpointing machinery; do not build any.
+Note on resume granularity: the driver resumes per *run* (`reset_run` drops an incomplete run wholesale: SPEC §6.4's pinned behavior), not per session as the design doc loosely words it. A worst-case device-lost crash redoes one run of 60 sessions, ~10–20 min at observed generation speeds. That bounded cost does not justify new checkpointing machinery; do not build any.
 
-- [ ] **Step 3: Timing gate** — after the first family, project the total. If constrained+unconstrained projects past ~8h GPU, stop and surface to Brice with the projection (the design's trim lever is dropping the unconstrained condition to one family; that is Brice's call, not the implementer's).
+- [ ] **Step 3: Timing gate**: after the first family, project the total. If constrained+unconstrained projects past ~8h GPU, stop and surface to Brice with the projection (the design's trim lever is dropping the unconstrained condition to one family; that is Brice's call, not the implementer's).
 
 - [ ] **Step 4: Commit the constrained baseline**
 
@@ -515,9 +515,9 @@ git commit -m "data(eval): G0 constrained generation baseline — 3 families x 1
 
 ---
 
-### Task 5: G0 unconstrained baseline — run it
+### Task 5: G0 unconstrained baseline: run it
 
-Same operational shape as Task 4, same servers, same seeds — only the flags change: drop `--constrained`, prefix `g0u`, results root `.../unconstrained`. Same backend (llamacpp) for both conditions, deliberately: the pilot's unconstrained numbers came through Ollama, and re-basing both conditions on one backend removes the backend as a confound in the constrained-vs-unconstrained comparison.
+Same operational shape as Task 4, same servers, same seeds. Only the flags change: drop `--constrained`, prefix `g0u`, results root `.../unconstrained`. Same backend (llamacpp) for both conditions, deliberately: the pilot's unconstrained numbers came through Ollama, and re-basing both conditions on one backend removes the backend as a confound in the constrained-vs-unconstrained comparison.
 
 - [ ] **Step 1: Run all three families** (server lifecycle identical to Task 4 Step 2)
 
@@ -548,9 +548,9 @@ git commit -m "data(eval): G0 unconstrained generation baseline — the demand c
 - Consumes: run dirs (`cells.jsonl` rows with `task/arm/first_compiled/first_passed/final_passed/attempts_to_pass`; `triples.jsonl` rows with `task/arm/attempt/diagnostics`), `eval.rollup.paired_delta`, `eval.rollup.paired_se` (operate on cells with `task` + `first_passed`).
 - Produces: `python -m eval.g0_report --root DIR --models a,b --seeds 1-10 --run-prefix g0c [--samples N] [--validate-pilot]` printing per-family/arm rates, the stage histogram, the `OX04xx` gate count, and paired deltas; `--samples N` dumps N failing first-attempt sources per (family, top-5 code) into `<root>/samples/` for Task 7.
 
-**Stage buckets** (first attempts only, oxide+explicit arms): `lexer` = `OX0001`; `parser` = `OX01xx`; `resolve` = `OX02xx`; `types` = `OX03xx`; `linearity` = `OX04xx` — plus, separately, the same histogram over ALL attempts. The gate metric is the pooled first-attempt `OX04xx` occurrence count and the count of distinct sessions whose first attempt carries one.
+**Stage buckets** (first attempts only, oxide+explicit arms): `lexer` = `OX0001`; `parser` = `OX01xx`; `resolve` = `OX02xx`; `types` = `OX03xx`; `linearity` = `OX04xx`, plus, separately, the same histogram over ALL attempts. The gate metric is the pooled first-attempt `OX04xx` occurrence count and the count of distinct sessions whose first attempt carries one.
 
-- [ ] **Step 1: Write the failing validation test** — the discipline: the profiler must reproduce published pilot numbers before it may read new data.
+- [ ] **Step 1: Write the failing validation test**: the discipline: the profiler must reproduce published pilot numbers before it may read new data.
 
 ```python
 def test_profiler_reproduces_the_pilot_7b_row():
@@ -569,9 +569,9 @@ def test_profiler_reproduces_the_pilot_7b_row():
 
 Plus two synthetic-dir tests (tmp_path fixtures writing 2-3 hand-built cells/triples rows): one asserting stage bucketing (`OX0203` → resolve, `OX0400` → linearity), one asserting the gate counter counts occurrences AND sessions separately.
 
-- [ ] **Step 2: Run to verify failure** — `.venv/bin/pytest tests/test_g0_report.py -q` → FAIL (module missing)
+- [ ] **Step 2: Run to verify failure**: `.venv/bin/pytest tests/test_g0_report.py -q` → FAIL (module missing)
 
-- [ ] **Step 3: Implement `eval/g0_report.py`** — core shape (fill in argparse and printing around it; stdlib only, matching the repo's eval modules):
+- [ ] **Step 3: Implement `eval/g0_report.py`**: core shape (fill in argparse and printing around it; stdlib only, matching the repo's eval modules):
 
 ```python
 STAGES = (
@@ -652,7 +652,7 @@ def profile(*, root: Path, models: list[str], seeds: list[int], prefix: str) -> 
   --models qwen7b,codegemma7b,granite8b --seeds 1-10 --run-prefix g0u
 ```
 
-- [ ] **Step 5: Write `eval/results/g0-generation-baseline/REPORT.md`** — the numbers from Step 4, plus: comparison against the stale pre-§53/§54 constrained probes (77 `OX02xx` at 7B, compile-clean 3/24, zero `OX04xx`); the gate-metric statement (`OX04xx` count, per family); §47 no-signal annotations where floors apply; an explicit limits section (0-shot only, q8_0 quants, one grammar, backend switched from the pilot's Ollama — pilot numbers are directional context, not a matched before/after).
+- [ ] **Step 5: Write `eval/results/g0-generation-baseline/REPORT.md`**: the numbers from Step 4, plus: comparison against the stale pre-§53/§54 constrained probes (77 `OX02xx` at 7B, compile-clean 3/24, zero `OX04xx`); the gate-metric statement (`OX04xx` count, per family); §47 no-signal annotations where floors apply; an explicit limits section (0-shot only, q8_0 quants, one grammar, backend switched from the pilot's Ollama: pilot numbers are directional context, not a matched before/after).
 
 - [ ] **Step 6: Commit**
 
@@ -672,8 +672,8 @@ git commit -m "feat(eval): G0 profiler and baseline report — the generation ga
 - Consumes: Task 6's profiler output and `--samples` dumps.
 - Produces: the ranked candidate list the change loop (Appendix A) executes against.
 
-- [ ] **Step 1: Generate samples** — `--samples 5` on both conditions.
-- [ ] **Step 2: Read them.** For each (family, top code): read the 5 samples, name the concrete friction (not the code — the *behavior*: what did the model write, what did it want). For the unconstrained condition also collect the reached-for-syntax histogram (the pilot's `;`/`[`/`|` table, recomputed at HEAD). The snippet, kept in the taxonomy doc as a fenced block; per the validated-analysis discipline, first point it at `eval/results/6a-pilot` and confirm it reproduces the pilot's published `;` count (1575) before trusting its HEAD numbers:
+- [ ] **Step 1: Generate samples**: `--samples 5` on both conditions.
+- [ ] **Step 2: Read them.** For each (family, top code): read the 5 samples, name the concrete friction (not the code, the *behavior*: what did the model write, what did it want). For the unconstrained condition also collect the reached-for-syntax histogram (the pilot's `;`/`[`/`|` table, recomputed at HEAD). The snippet, kept in the taxonomy doc as a fenced block; per the validated-analysis discipline, first point it at `eval/results/6a-pilot` and confirm it reproduces the pilot's published `;` count (1575) before trusting its HEAD numbers:
 
 ```python
 from collections import Counter
@@ -692,17 +692,17 @@ for txt in Path(ROOT).glob("g0u-*/raw/*.explicit.1.txt"):
 print(hist.most_common())
 ```
 
-(For the pilot-validation pass, the glob prefix is `6a-*` and the counts cover all attempts across both Black Oxide arms — match the pilot REPORT's stated denominator before comparing.)
+(For the pilot-validation pass, the glob prefix is `6a-*` and the counts cover all attempts across both Black Oxide arms. Match the pilot REPORT's stated denominator before comparing.)
 - [ ] **Step 3: Write the dossiers.** For every candidate, one paragraph in the template:
 
 ```markdown
 ### <candidate-name>
 - **Friction:** <what models do / want, with counts: N occurrences, M sessions, families>
-- **Evidence:** <unconstrained demand | constrained deformation | both — cite samples>
+- **Evidence:** <unconstrained demand | constrained deformation | both: cite samples>
 - **Class:** sugar | card | diagnostic | SPEC-named feature
 - **Fix:** <one sentence>
 - **Prediction:** <which code falls, in which families, and which should NOT move>
-- **Design fit:** <why this serves Black Oxide's design, not imitation — the semicolon test>
+- **Design fit:** <why this serves Black Oxide's design, not imitation: the semicolon test>
 ```
 
 - [ ] **Step 4: Rank** by (sessions affected × families affected), gate-relevance first (a resolve-stage fix that unblocks reaching linearity outranks a cosmetic parser one at equal counts). State the ranking rule in the doc.
@@ -715,7 +715,7 @@ git commit -m "docs: v0.3 taxonomy — ranked generation-friction dossiers from 
 
 ---
 
-## Appendix A — the change loop (repeating protocol, not pre-planned tasks)
+## Appendix A: the change loop (repeating protocol, not pre-planned tasks)
 
 Each loop iteration is planned as its own miniature task set at execution time (the change is data-dependent), but every iteration follows this fixed shape, per the design doc:
 

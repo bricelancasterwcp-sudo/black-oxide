@@ -4,7 +4,7 @@
 **Scope:** the review record for SPEC §56 (field assignment), executed as
 seven tasks with a per-task review gate and a final whole-branch review.
 **Why this file exists:** the same reason the withdrawn-claims log exists.
-The failures below are not embarrassing footnotes — they are the most
+The failures below are not embarrassing footnotes. They are the most
 transferable result of the run, and they were all invisible to a green
 test suite.
 
@@ -13,7 +13,7 @@ test suite.
 Eight times, a test that looked like it pinned a behaviour **passed against
 a deliberately broken implementation**. In every single case the
 implementation was correct and the test was not. Every one was caught only
-by mutating the source and re-running — never by reading the test.
+by mutating the source and re-running, never by reading the test.
 
 | # | The test | The mutation it survived |
 |---|---|---|
@@ -24,10 +24,10 @@ by mutating the source and re-running — never by reading the test.
 | 5 | place-write emits no clone | append `.clone()` to the assignment target |
 | 6 | keyword-field escaping | drop `escape()` from the emitted path |
 | 7 | walker sees the RHS | delete `support.py`'s `ast.FieldAssign` case |
-| 8 | place write, *nested* path | clone the intermediate segment (see below — rustc **accepts** this one) |
+| 8 | place write, *nested* path | clone the intermediate segment (see below: rustc **accepts** this one) |
 
 Findings 5–7 all emit Rust that `rustc` **rejects** (E0070, a keyword
-error, E0369) — i.e. the project's central accepted-implies-compiles
+error, E0369), i.e. the project's central accepted-implies-compiles
 invariant had three unguarded holes that a full green suite could not see.
 
 ## The recurring cause: a fixture too simple to reach the branch it names
@@ -35,20 +35,20 @@ invariant had three unguarded holes that a full green suite could not see.
 Every instance has the same shape. The test's *assertion* was fine; its
 *fixture* could not reach the code path under test.
 
-- **`o.i.nope`** — `nope` is absent from *both* the outer and inner struct,
+- **`o.i.nope`**: `nope` is absent from *both* the outer and inner struct,
   so a base-only walk still emits `OX0304`: the right code for the wrong
   reason. Fixed with `o.i.i`, where `i` exists on the outer struct but not
   the inner one, so a correct walk gives `OX0304` and a broken one `OX0300`.
-- **`p.x = 5` with `x: Int`** — §36's implicit `.clone()` is
+- **`p.x = 5` with `x: Int`**: §36's implicit `.clone()` is
   **type-conditional**, so on a Copy field the correct emitter and the
   clone-appending one produce byte-identical output. The test asserted
   `"p.x.clone() = " not in rust`, a string the real defect never emits.
   Fixed with a non-copy (`Str`) field.
-- **A strip fixture whose RHS is a bare literal** — stripping a literal is
+- **A strip fixture whose RHS is a bare literal**: stripping a literal is
   a no-op, so the correct path and the missing-case fall-through returned
   structurally identical nodes. Fixed with an RHS carrying a `drop` inside
   a nested block.
-- **Poisoning masking state corruption** — the no-re-own rule could not be
+- **Poisoning masking state corruption**: the no-re-own rule could not be
   observed *at all* through diagnostics: the base's `Use(_READ)` fires
   `OX0400` and poisons the variable before the spurious `ReInit` runs, and
   `check_linear` discards every `DropPoint` for a function with
@@ -82,13 +82,13 @@ because a reviewer or implementer refused to "fix" the code to match:
    The genuine move is `let q = p`.
 2. **Bare core source is correctly *rejected* by the explicit dialect**
    (`EX0003` + `EX0002`). The parity fixture needs the annotations written
-   in — that rejection is the dialect working, not a bug.
+   in. That rejection is the dialect working, not a bug.
 3. **A lone comparison in a block tail-converts**, so it is never an
    `ExprStmt`. Tail conversion here is syntactic and unconditional.
 
 Verify fixtures against the real pipeline before writing them into a plan.
 
-## The eighth instance — CLOSED (`2c22c02`)
+## The eighth instance: CLOSED (`2c22c02`)
 
 **The place-write guard was pinned only for single-segment paths.** Mutating
 the emitter to clone an *intermediate* segment yields `o.i.clone().n = 5;`,
@@ -99,12 +99,12 @@ other seven. The two clone failures are *not* equivalent:
 
 | target | emitted | rustc |
 |---|---|---|
-| single segment | `p.name.clone() = s;` | **REJECTS** — E0070, not a place |
-| intermediate | `o.i.clone().n = 5;` | **ACCEPTS** — it *is* a place |
+| single segment | `p.name.clone() = s;` | **REJECTS**: E0070, not a place |
+| intermediate | `o.i.clone().n = 5;` | **ACCEPTS**: it *is* a place |
 
 A cloned intermediate compiles with only an `unused_mut` warning and the
 write vanishes into the temporary. So this is the one §56 defect class that
-**escapes the `rustc` oracle entirely** — accepted-implies-compiles is no
+**escapes the `rustc` oracle entirely**. Accepted-implies-compiles is no
 defence, because the emitted Rust is valid and merely wrong. Every prior
 codegen guard here could lean on rustc rejecting the mutant; this one
 cannot.
@@ -114,7 +114,7 @@ fixture with a non-copy intermediate (every user struct is non-copy, so
 `o.i` is exactly the shape §36 clones on a read) plus a **runtime stdout
 assertion**. Mutation-verified: under the clone-the-intermediate mutant,
 `rustc` exits 0, the program prints `1` instead of `5`, and **the other
-1399 tests all pass** — these two are the sole killers, which is the
+1399 tests all pass**: these two are the sole killers, which is the
 measurement of how much coverage there was before.
 
 The transferable rule: **when the oracle cannot see the defect, the test
@@ -127,6 +127,6 @@ insufficient here by construction.
   over the project's 800-line convention. Ruled out of scope for g2: it is
   a generated-grammar table whose output is byte-pinned by
   `tests/test_6a.py`, so splitting it churns a frozen artifact for no gain.
-  Either scope the convention to exempt it or open a dedicated refactor —
-  what must not happen is the next plan restating the constraint while
+  Either scope the convention to exempt it or open a dedicated refactor.
+  What must not happen is the next plan restating the constraint while
   editing this file, which is how a constraint stops meaning anything.

@@ -1,8 +1,8 @@
-# v0.4 — the efficiency cycle, wave 1 (vectors + Option)
+# v0.4: the efficiency cycle, wave 1 (vectors + Option)
 
 **Date:** 2026-08-28
 **Purpose (binding, per the owner's 2026-08-28 direction):** Black Oxide
-is a design project — the point is a language LLMs can *use more
+is a design project. The point is a language LLMs can *use more
 efficiently*, measured in tokens per solved task. Measurement feeds the
 design loop; no cycle ends in a terminal verdict. This spec is wave 1
 of that loop: the objective function is token efficiency, with pass
@@ -53,27 +53,27 @@ wave-1 work and may only be amended non-silently.
   waves remains overall ≤ 1.00.
 - **Guard G1 (pass rates, dynamic):** on the wave-1 campaign (same
   serving stack, fresh pod): `base-rs-7` pass@1 within **±0.10** of
-  0.565 (instrument control — last cross-pod reproduction was exact);
+  0.565 (instrument control: last cross-pod reproduction was exact);
   re-tuned `tune-ox-7(v2)` pass@1 **≥ 0.455** (no-collapse floor: 10pp
   below the wave-0 tuned value; improvement is expected, the guard is
   against regression); `tune-rs-7` re-run on the same pod for the
   paired comparison.
 - **Guard G2 (uptake):** every shipped construct is demand-counted in
   model outputs (card arm and tuned arm separately). A construct with
-  zero uptake in the tuned arm's outputs is a **failed candidate** —
+  zero uptake in the tuned arm's outputs is a **failed candidate**:
   recorded as a finding and ruled on next wave (fix the card, fix the
   surface, or withdraw); never silently kept as dead vocabulary.
 - **Wave discipline:** the cycle's closing section feeds wave 2
   (strings, plus wave-1 failures). There is no "done".
 
-## Task 1 — the demand census (precedes candidate finalization)
+## Task 1: the demand census (precedes candidate finalization)
 
 Candidates are finalized from measured demand, not from the provisional
 slate below. Two censuses, one committed report:
 
 1. **What models try to write:** mine the 4,800 raw replies in
    `eval/results/runpod-exp/*/gen-s*/raw/` (oxide arms) for
-   constructs oxide rejects — range forms (`0..n`, `range(a,b)`,
+   constructs oxide rejects: range forms (`0..n`, `range(a,b)`,
    `.to(n)`), sort/min/max/sum spellings (method vs free), index
    assignment (`v[i] = x`, `.set`), Option idioms (`if let`,
    `unwrap_or`, `?`), string methods. Instrument: a new
@@ -81,10 +81,10 @@ slate below. Two censuses, one committed report:
    counts per (family, arm, construct-spelling), cross-checked against
    the diagnostics the same replies produced. This is §54's method at
    corpus scale: the census tells us not just *what* to add but *which
-   surface spelling the prior reaches for* — and that spelling is the
+   surface spelling the prior reaches for*, and that spelling is the
    one we admit.
 2. **What humans hand-roll:** the same pattern census over the 80
-   reference solutions and 582 amplified programs — hand-rolled
+   reference solutions and 582 amplified programs: hand-rolled
    min/max/sum/sort/membership/index-set loops, counted per class.
 
 Cap (chosen): wave 1 ships **at most 8 constructs**. The census ranks;
@@ -100,17 +100,17 @@ and return; all get receiver-first method syntax per the §53 law):
 | `sort(v)` | `Vec<T> -> Vec<T>` | `{ let mut t = v; t.sort(); t }` |
 | `min(v)` / `max(v)` | `Vec<T> -> Option<T>` (empty → None) | `v.iter().min().copied()` etc. |
 | `sum(v)` | `Vec<Int> -> Int` | `v.iter().sum()` |
-| `set(v, i, x)` | `Vec<T>, Int, T -> Vec<T>` (OOB = runtime panic, matching `get`'s contract — check `get`'s actual contract during implementation and mirror it) | `{ let mut t = v; t[i] = x; t }` |
+| `set(v, i, x)` | `Vec<T>, Int, T -> Vec<T>` (OOB = runtime panic, matching `get`'s contract: check `get`'s actual contract during implementation and mirror it) | `{ let mut t = v; t[i] = x; t }` |
 | `contains(v, x)` | `Vec<T>, T -> Bool` | `v.contains(&x)` |
 
-**Ranges** (syntax, not builtin): surface form decided by census —
+**Ranges** (syntax, not builtin): surface form decided by census:
 expected `a..b` (the Rust prior) usable in `for` headers; grammar and
 AST addition, desugared to an iterable. If the census shows a
 different dominant spelling, the census wins.
 
 **Option ergonomics** (extending the 0.92× mechanism):
 `unwrap_or(o, d) -> T` (builtin; taxonomy dossier 5 already classed it
-"small"); `if let Some(x) = e { }` (grammar) — ships wave 1 only if
+"small"); `if let Some(x) = e { }` (grammar): ships wave 1 only if
 the census shows material demand, else deferred with its count
 recorded.
 
@@ -121,18 +121,18 @@ warning-clean under the existing pipeline.
 ## Card amendment
 
 SPEC §0 froze the model-facing card strings until "the corpus
-regenerates" — wave 1 regenerates it, so the freeze lifts here,
+regenerates". Wave 1 regenerates it, so the freeze lifts here,
 non-silently: the card gains the new builtins/syntax section, versioned
 (card-v0.4), with the old card retained in git history and the
 change called out in SPEC. Card length stays within its current order
 (the card is a measured instrument; a bloated card is its own
-regression — record old/new word counts).
+regression: record old/new word counts).
 
 ## Re-authoring rules (bias control)
 
 - **Rust references are untouched.** Only oxide references change, and
   only by substituting a shipped construct for the hand-rolled pattern
-  it replaces — no other tightening, no golfing. Every edit is
+  it replaces: no other tightening, no golfing. Every edit is
   reviewable as exactly that substitution.
 - Both references stay `validate_pair`-green with identical stdout;
   contamination guard re-runs; the matched corpus is REBUILT by the
@@ -145,7 +145,7 @@ regression — record old/new word counts).
 
 1. **Re-amplify** the training corpus with card-v0.4 (K=30, the
    committed amplification machinery): doubles as the card-arm G2
-   uptake read — do carded models use the new vocabulary unprompted?
+   uptake read: do carded models use the new vocabulary unprompted?
 2. Re-match (committed builder), **re-tune `tune-ox-7` only** (the
    rust corpus is unchanged; the existing rust adapter re-serves).
 3. Campaign, 4 arms on one fresh pod: `base-rs-7` (control),
@@ -163,7 +163,7 @@ environment; wave-1 comparisons are within the wave-1 pod.
 - The ratio is measured on this project's reference style and task
   distribution; a different task mix weights the classes differently.
 - Re-authoring is done by the same agent lineage that designs the
-  constructs — the bias-control rules above and the untouched Rust arm
+  constructs. The bias-control rules above and the untouched Rust arm
   are the mitigation, and diffs are part of review.
 - `tune-rs-7` is not retrained (unchanged corpus), so its wave-1
   re-run isolates pod drift for the paired read; if pod drift exceeds

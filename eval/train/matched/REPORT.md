@@ -1,4 +1,4 @@
-# Matched training corpus — build record
+# Matched training corpus: build record
 
 2026-08-27 (build date). Spec:
 docs/superpowers/specs/2026-08-27-token-matching-design.md. Built by
@@ -10,7 +10,7 @@ in `build_matched` removed rows by `(task, sha256)` membership in the
 dropped-amplified set without checking `source`, so whenever an
 amplified program was byte-identical to its own task's reference
 (same normalized text, hence same sha256), the filter struck the
-reference too — silently, in violation of spec decision 5
+reference too, silently, in violation of spec decision 5
 ("references never trimmed"). This had happened twice in the prior
 committed corpus: oxide task n032 (structs/option) and rust task n052
 (strings) each carried 39 reference rows instead of 40. The filter now
@@ -29,7 +29,7 @@ restored below.
 
 The totals row omits a single "gap" cell on purpose. The four
 per-class gaps sum to 168 tokens (41+29+31+67), but that sum is not a
-corpus-level measurement — it adds four independent per-class
+corpus-level measurement: it adds four independent per-class
 quantization artifacts as if they pointed the same way. They don't:
 rust is the short arm in three classes (arithmetic/loops, strings,
 vectors) and oxide is the short arm in the fourth (structs/option), so
@@ -41,7 +41,7 @@ different questions (worst-case per-class quantization loss added up,
 versus the net token count the two arms actually differ by), and only
 the second is a real aggregate.
 
-Dropped: 141 examples (22 oxide, 119 rust) — full list in
+Dropped: 141 examples (22 oxide, 119 rust). Full list in
 manifest.json, named not deleted. By class: arithmetic/loops 14 (all
 rust), strings 51 (all rust), structs/option 22 (all oxide), vectors
 54 (all rust).
@@ -62,8 +62,8 @@ programs on average in both sets (71.17 vs 58.3 references, 75.53 vs
 58.51 amplified), so the character-count-derived hint that they might
 point opposite ways (spec decision 10) did not hold at the token
 level. The gap is somewhat wider under amplification than in the
-hand-authored references — oxide runs about 22% larger than rust in
-references versus about 29% larger in amplified — concentrated in
+hand-authored references (oxide runs about 22% larger than rust in
+references versus about 29% larger in amplified), concentrated in
 vectors and strings, where oxide's amplified mean rises while rust's
 falls relative to their own references. One class inverts the overall
 pattern: structs/option has oxide smaller than rust in references
@@ -77,7 +77,7 @@ Tokenizer pin: c0382117ea32, attested from 3 checkpoints
 (eval/train/tokenizer/provenance.json).
 
 `counts_source.commit` in manifest.json records the git HEAD at build
-time — the code state that produced this corpus — not the commit that
+time (the code state that produced this corpus), not the commit that
 ships this corpus. It cannot record the latter: that commit does not
 exist yet when the build runs, so the field structurally always trails
 by one commit for a build-then-commit workflow (F3, noted rather than

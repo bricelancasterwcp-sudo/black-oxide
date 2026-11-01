@@ -1,4 +1,4 @@
-# RunPod fine-tune experiment — 12 arms, pre-registered endpoints
+# RunPod fine-tune experiment: 12 arms, pre-registered endpoints
 
 2026-08-28. Spec: `docs/superpowers/specs/2026-08-27-runpod-experiment-design.md`
 (as amended). Endpoints computed ONCE by `python -m eval.experiment_report`
@@ -16,7 +16,7 @@ sampler temp 0.2 / top_p 0.95, seeds 1–10, num_ctx 8192, num_predict
 Tokenizer pin c0382117… attested across base AND instruct checkpoints.
 GGUF shas: `~/workspace/oxide-runpod-artifacts/SHAS.txt` (9 models).
 QLoRA recipe (chosen, identical all six runs): r16/α32, lr 1e-4
-cosine, 3 epochs, seq 1024, seed 17; final train losses — oxide arms
+cosine, 3 epochs, seq 1024, seed 17; final train losses: oxide arms
 0.217/0.199/0.199, rust arms 0.162/0.151/0.155 (1.5/7/14B).
 
 ## The twelve arms
@@ -62,21 +62,21 @@ Strict repair (200 seeded-defect sessions/arm, single proposal):
 | 14B | **−44.5pp ± 21.4 (rust-tuned wins)** | +0.5pp ± 24.7 (not decided) |
 
 **Headline (tune-ox-7 vs base-rs-14, unpaired 2-SE):** generation
-+0.5pp ± 9.9 — **statistical parity**: the oxide-tuned 7B (0.555)
-matches the untuned 14B on Rust (0.550). Strict repair −49.5pp ± 7.7 —
++0.5pp ± 9.9, **statistical parity**: the oxide-tuned 7B (0.555)
+matches the untuned 14B on Rust (0.550). Strict repair −49.5pp ± 7.7:
 the untuned 14B on Rust is decisively better at repair.
 
 **Capability-window trend (gen Δ across 1.5→7→14B):** −26.5 → −33.0 →
-−44.5pp — monotone AGAINST the purpose-built language as scale grows;
+−44.5pp: monotone AGAINST the purpose-built language as scale grows;
 larger models extract more from rust fine-tuning (tune-rs-14 reaches
 0.990), not less.
 
 **Token efficiency (gen tokens-to-green ratio, tune-ox/tune-rs):**
-1.29 / 1.24 / 1.40 (1.5/7/14B) — the oxide arms also spend more tokens
+1.29 / 1.24 / 1.40 (1.5/7/14B): the oxide arms also spend more tokens
 per solved task. (The repair-family ratio was registered but is not
 computed by the analysis and is therefore not claimed.)
 
-**Sanity tripwires:** base-rs-7 0.565 in [0.30, 0.80] — and byte-exact
+**Sanity tripwires:** base-rs-7 0.565 in [0.30, 0.80], and byte-exact
 to the committed local v03c rust rate; base-ox-7 0.045 against the
 amended floor [0.02, 0.60] (original chosen floor 0.05 was calibrated
 on the grammar-CONSTRAINED historical 30.5%; the breach, diagnosis,
@@ -98,25 +98,25 @@ as observations, not endpoint claims:
 1. **The fine-tune crushes the card**: tune-ox-7 card-free 0.555 vs
    base-ox-7 with-card 0.045 (+51pp from ~17k supervised tokens), and
    the headline parity means purpose-built-language-plus-tiny-tune
-   matched 2× scale on the prior's home language for *generation* —
+   matched 2× scale on the prior's home language for *generation*,
    while losing repair by 49.5pp, consistent with generation-only
    training (the recorded limitation).
 2. **The constrained-era baseline was grammar-assisted**: removing the
    grammar dropped the card-only oxide baseline from the historical
-   constrained 30.5% to 4.5% under otherwise-healthy serving — the
+   constrained 30.5% to 4.5% under otherwise-healthy serving: the
    constrained-decoding-deforms thesis measured on our own baseline.
 
 ## Honest limits (inherited + measured)
 
 - Pilot-scale corpus (~17k supervised tokens/arm): this null kills
-  "language + SMALL fine-tune" only — the pre-registered
+  "language + SMALL fine-tune" only: the pre-registered
   interpretation limit.
 - Seed replicates partially collapse at temp 0.2: mean distinct
   first-attempt outputs per task ranges 2.35 (base-rs-14) to 5.55
   (base-ox-1.5) of 10 seeds; effective replicate n sits between 20
   tasks and 200 sessions. The paired-per-task/per-class constructions
   are the honest primaries for exactly this reason.
-- tune-rs-14 sits at 0.990 pass@1 — near-ceiling; its comparisons are
+- tune-rs-14 sits at 0.990 pass@1, near-ceiling; its comparisons are
   ceiling-compressed.
 - One environment, one GPU class (3090), one quantization (q8_0),
   single eval corpus t01–t20.

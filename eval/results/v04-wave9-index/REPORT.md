@@ -1,7 +1,7 @@
-# v0.4 wave 9 — indexing (`v[i]`), and what it bought statically
+# v0.4 wave 9: indexing (`v[i]`), and what it bought statically
 
 2026-09-02. SPEC 65. Built against wave 8's measurement, which ranked
-this as the top design item. **GPU cost: $0** — this report covers the
+this as the top design item. **GPU cost: $0**. This report covers the
 static half only; the dynamic half needs a pod and is not claimed here.
 
 ## What shipped
@@ -16,7 +16,7 @@ Scope came from measured demand across 1014 model attempts, not taste:
 | form | occurrences | shipped |
 |---|---:|---|
 | index read `v[i]` | **951** | yes |
-| index assign `v[i] = x` | 12 | no — `set(v, i, x)` covers it |
+| index assign `v[i] = x` | 12 | no: `set(v, i, x)` covers it |
 | slice `v[a..b]` | 4 | no |
 
 ## The static result
@@ -37,7 +37,7 @@ Scope came from measured demand across 1014 model attempts, not taste:
 | **large-linear** | **0.9739** |
 
 Arithmetic/loops and the whole large-linear stratum now sit **below
-parity**. structs/option is unchanged because it never indexed — the
+parity**. structs/option is unchanged because it never indexed: the
 construct moved exactly what it should and nothing it shouldn't.
 
 **The small eval tier is untouched at 0.9462.** No published endpoint
@@ -53,8 +53,8 @@ and panicked.
 
 Three things follow, and they outrank the token count:
 
-1. **`v[i]` is not a universal replacement for `unwrap_or(get(v, i), d)`**
-   — only where the index is known in range, which is the overwhelming
+1. **`v[i]` is not a universal replacement for `unwrap_or(get(v, i), d)`**,
+   only where the index is known in range, which is the overwhelming
    but not universal case.
 2. **`get` remains necessary**, which retroactively validates keeping it
    rather than replacing it. A language with only `v[i]` could not
@@ -77,7 +77,7 @@ followed by another line produced no NEWLINE and the statement swallowed
 the next one. Every index in the first test pass sat mid-line or inside
 a call, so all 15 tests missed it; three large-tier references caught it
 at once. The `QUESTION` entry directly above it in the same set carries a
-comment describing the identical trap — the rule was documented and I
+comment describing the identical trap. The rule was documented and I
 still walked into it.
 
 Both are pinned by regression tests. Seven mutations run against the
@@ -97,7 +97,7 @@ the comparison is like-for-like.
 
 The static result is necessary but not sufficient evidence. A construct
 that shortens references while the model still cannot use it would be
-the wave-3 `swap` outcome — shipped on cost evidence, zero uptake.
+the wave-3 `swap` outcome (shipped on cost evidence, zero uptake).
 
 ## Feed-forward
 

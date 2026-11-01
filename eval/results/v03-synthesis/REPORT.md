@@ -1,8 +1,8 @@
-# v0.3 synthesis — what three ergonomic changes bought
+# v0.3 synthesis: what three ergonomic changes bought
 
 **Date:** 2026-08-11
 **Type:** synthesis. **This directory holds no `cells.jsonl`, no run
-dirs, and no raw model output of its own** — it is the first
+dirs, and no raw model output of its own.** It is the first
 non-campaign entry under `eval/results/`, and a reader should not go
 looking for data here that is not there. Every figure below is derived
 from three committed campaign roots:
@@ -22,9 +22,9 @@ from them for this document rather than copied from a prior REPORT.
 
 Three changes shipped under the version number:
 
-- **§55** — `vec(a, b, c)` variadic list literal
-- **§56** — field assignment, `s.f = e`
-- **§57** — `to_str`, a second name for `int_to_str`
+- **§55:** `vec(a, b, c)` variadic list literal
+- **§56:** field assignment, `s.f = e`
+- **§57:** `to_str`, a second name for `int_to_str`
 
 Each was selected from a measured friction in the G0 corpus rather than
 proposed from taste. None of them is the change the version number was
@@ -47,14 +47,14 @@ competence. Oxide arm, percentage points:
 | codegemma | 20.0 | 23.5 | 23.5 | **+3.5** | +0.0 | +3.5 | 69 |
 | granite | 31.0 | 33.0 | 33.0 | **+2.0** | +0.0 | +2.0 | 27 |
 
-**§55 accounts for 10.0 of the 11.5 points — 87%.** And its per-family
+**§55 accounts for 10.0 of the 11.5 points (87%).** And its per-family
 effect is **dose-ordered in its own measured demand**: 91 > 69 > 27
 pre-change `vec` calls giving +4.5 > +3.5 > +2.0. The change helped each
 family in proportion to how much that family had been asking for it.
 
 A dose-response across independent families is the same evidentiary form
 that carried §53's method-syntax result, and it is the opposite of the
-pattern that sank three earlier headlines in this project — each of
+pattern that sank three earlier headlines in this project: each of
 which was a single-subject effect that dissolved under replication.
 Demand counts are the pre-change figures from
 `eval/results/g1-vec-literal/REPORT.md` (91 → 21, 69 → 13, 27 → 6).
@@ -67,12 +67,12 @@ Demand counts are the pre-change figures from
 | codegemma | 14.5 | 16.5 | 16.5 | **+2.0** | +0.0 | +2.0 |
 | granite | 9.0 | 9.5 | 9.5 | **+0.5** | +0.0 | +0.5 |
 
-§55 accounts for 5.5 of the 7.0 points — 79%. Mean per family: §55
+§55 accounts for 5.5 of the 7.0 points (79%). Mean per family: §55
 bought **+1.83pp**, §56 and §57 together bought **+0.5pp**.
 
 ### The residual is one family, and the wrong one
 
-The entire non-§55 movement in v0.3 is qwen's +1.5pp — **3 sessions of
+The entire non-§55 movement in v0.3 is qwen's +1.5pp: **3 sessions of
 200**, against SPEC §47's ±5pp resolution floor for this design.
 
 There is a specific reason not to attribute even that to §56. If the
@@ -88,7 +88,7 @@ deformation to remove should gain the most. The opposite holds:
 The family that moved is the one with the least artifact to remove, and
 the family with five times its artifact did not move at all. That is the
 signature of noise, not of a dose-response. The honest reading of the
-+1.5 is run-to-run variation — the same ±1–3 session wobble the closing
++1.5 is run-to-run variation: the same ±1–3 session wobble the closing
 baseline documents across 27 cells at temperature 0.8.
 
 ## Controls
@@ -106,8 +106,8 @@ is *identical* in all three families across all three campaigns
 (98.0 / 84.5 / 80.0 throughout).
 
 **The explicit arm is the more informative control.** It receives §55,
-§56 and §57 identically — these are core front-end changes and both
-dialects inherit them — so if the gains were generic "the language got
+§56 and §57 identically (these are core front-end changes and both
+dialects inherit them), so if the gains were generic "the language got
 easier" effects, explicit should track oxide. It does not. On
 first-compile, summed across families, oxide gains **+11.5pp** against
 explicit's **+1.5pp**, a factor of roughly eight. Explicit is not
@@ -126,8 +126,8 @@ Neither is written off, and neither is promoted into a rate claim it did
 not earn.
 
 **§56 eliminated a measurement artifact.** Under grammar-constrained
-decoding a model cannot be rejected — it is steered to the nearest legal
-string — and with no field-assignment production available, `f.x = e`
+decoding a model cannot be rejected (it is steered to the nearest legal
+string), and with no field-assignment production available, `f.x = e`
 was being deformed into the comparison `f.x == e`. That signature is
 gone outright:
 
@@ -136,7 +136,7 @@ gone outright:
 | `g0c` | **18** (cg 10, gr 6, qw 2) | 17 (cg 1, gr 12, qw 4) | 9 |
 | `v03c` | **0** | **0** | **0** |
 
-Not reduced — eliminated, in both positions, across all 600 oxide-arm
+Not reduced: eliminated, in both positions, across all 600 oxide-arm
 first attempts. Its implementation also surfaced the intermediate-segment
 defect class (`o.i.clone().n = 5`), the only class this project has
 found that **rustc accepts** while executing the wrong program, and
@@ -147,7 +147,7 @@ for `to_str`, **0 of 9 compiled before the alias existed and 0 of 11
 after**. Five of the nine die in the parser; the rest fail on unrelated
 top-level name clashes; no diagnostic in any of them ever reported
 `to_str` as an unresolved name. The largest possible effect on
-first-compile was **0.0pp** — a mechanical bound, not a statistical one.
+first-compile was **0.0pp**, a mechanical bound, not a statistical one.
 The wall these programs hit is the lexer and the parser, and
 resolution-stage ergonomics sit downstream of it.
 
@@ -156,8 +156,8 @@ resolution-stage ergonomics sit downstream of it.
 §55 bought a mean +1.83pp first-pass and a dose-ordered +3.33pp mean
 first-compile. §56 and §57 together bought +0.5pp, which the section
 above argues is not theirs, for more implementation and review work than
-§55 required. Add §57's mechanical null — an entire class of fix aimed
-below where these models actually fail — and the reading is that **the
+§55 required. Add §57's mechanical null (an entire class of fix aimed
+below where these models actually fail), and the reading is that **the
 ergonomics loop has reached diminishing returns**.
 
 Two consequences follow, and both are decisions rather than
@@ -183,9 +183,9 @@ explicit, are:
 | codegemma | +4.5pp | 3.7 | no |
 | granite | +1.0pp | 4.6 | no |
 
-**None of the three clears 2 SE.** The project's headline result —
-implicit linearity repaired more reliably than explicit, in all three
-families, with the effect resolving — is a **repair** result, measured
+**None of the three clears 2 SE.** The project's headline result
+(implicit linearity repaired more reliably than explicit, in all three
+families, with the effect resolving) is a **repair** result, measured
 on a different instrument with a different corpus. On *generation*,
 which is what this document reports, the same comparison does not
 resolve at this sample size.
@@ -205,7 +205,7 @@ meet.
   Every g1c→v03c figure is joint. The argument above that the residual
   is not §56 is an inference from the wrong-family pattern, not a
   measurement of §56 alone.
-- **granite carries its 4096-window covariate throughout** (SPEC §48 —
+- **granite carries its 4096-window covariate throughout** (SPEC §48:
   8192 exceeds its own training context), with a ~16.5% context-
   exhaustion rate, inherited unchanged across all three campaigns.
 - **No new data was collected for this document.** It is arithmetic and
@@ -219,7 +219,7 @@ meet.
 ## Sources
 
 The three campaign REPORTs are authoritative for their own runs, and
-this document defers to them rather than restating them — in particular
+this document defers to them rather than restating them, in particular
 `eval/results/v03-closing-baseline/REPORT.md`, which owns the
 pre-registered endpoint scorecard (including two endpoints recorded as
 **vacuous**), the comparability statement, the provenance table, and the

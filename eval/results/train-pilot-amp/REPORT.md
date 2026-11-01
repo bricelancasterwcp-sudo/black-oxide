@@ -1,9 +1,9 @@
-# Data-factory pilot — 40 tasks, and why passing every endpoint was not enough
+# Data-factory pilot: 40 tasks, and why passing every endpoint was not enough
 
 **Date:** 2026-08-12
 **Code state:** `finetune-data-factory` at the commit adding this file.
 **Design:** the 40-task training corpus (`eval/train/tasks.jsonl`, ids
-`n001`–`n040`) run through the constrained grid at K=30 — 3 families × 10
+`n001`–`n040`) run through the constrained grid at K=30: 3 families × 10
 seeds × 40 tasks × 3 arms = **3,600 sessions**, prefixes `ampq`/`ampc`/
 `ampg`. Wall clock 14h 26m, 19:11:17 (08-11) to 09:37:08 (08-12), no
 stalls and no aborted cells.
@@ -13,7 +13,7 @@ stalls and no aborted cells.
 
 **All four pre-registered endpoints are CONFIRMED, and the corpus should
 not be scaled to 400 tasks as authored.** The endpoints could not have
-told you that — the defect they miss is the subject of this report.
+told you that. The defect they miss is the subject of this report.
 
 ## Endpoint scorecard
 
@@ -37,8 +37,8 @@ and the rust arm yields more still (mean 9.62, zeros 7.5%), which is the
 comfortable direction: token matching will need to discard rust programs,
 not find more.
 
-Completeness was verified at the corpus-derived run length — 120 cells
-per run, not the pinned 60 — with zero missing or short runs in all three
+Completeness was verified at the corpus-derived run length (120 cells
+per run, not the pinned 60) with zero missing or short runs in all three
 families. Contamination guard over the **amplified** corpus: 663 programs
 scanned, **0 findings**.
 
@@ -71,7 +71,7 @@ Oxide first-compile against each family's `v03c` figure:
 | granite | 33.0% | 48.0% | **+15.0** |
 
 Three independent families, same direction, spread of 2.3pp. Rust over
-the same comparison moves −2.2 / +5.0 / +5.2 — no consistent direction.
+the same comparison moves −2.2 / +5.0 / +5.2: no consistent direction.
 This is the evidentiary form this project treats as real (it is what
 carried §53 and §55) and it is pointing at a defect in my own corpus.
 
@@ -86,7 +86,7 @@ Oxide first-pass by task class, eval corpus → new corpus:
 | **strings** | 7.5 → 29.0 (**+21.5**) | 0.0 → 24.0 (**+24.0**) | 0.0 → 14.0 (**+14.0**) |
 | structs/Option | 50.0 → 42.0 (−8.0) | 14.0 → 17.0 (+3.0) | 18.0 → 31.0 (+13.0) |
 
-Arithmetic is matched to within ±3.6pp in every family — the authoring
+Arithmetic is matched to within ±3.6pp in every family: the authoring
 was not uniformly easy. Vectors and strings are where it drifted, in all
 three families.
 
@@ -117,7 +117,7 @@ A token-matched LoRA trained on this distribution learns from tasks that
 are ~13pp easier for Black Oxide at the compile stage than the eval's
 are, while Rust is unchanged. The resulting Black-Oxide-vs-Rust
 comparison would carry a corpus-induced advantage that has nothing to do
-with the language, and the eval would not reveal it — the eval is held
+with the language, and the eval would not reveal it. The eval is held
 out and *harder*, so the fine-tune would simply underperform its training
 distribution in a way that looks like ordinary generalisation.
 
@@ -126,8 +126,8 @@ distribution in a way that looks like ordinary generalisation.
 **Every one of these signatures was computable in seconds, with no GPU.**
 Multi-line-output share, mean output lines, and prompt length are
 statistics over two `tasks.jsonl` files. The difficulty check as I
-designed it was post-hoc — author 40 tasks, spend 14 hours of GPU,
-compare pass rates — when a structural comparison would have caught the
+designed it was post-hoc (author 40 tasks, spend 14 hours of GPU,
+compare pass rates) when a structural comparison would have caught the
 drift before a token was generated.
 
 The design should gain a **pre-flight corpus-shape gate**: compare
@@ -137,8 +137,8 @@ touched. The 3,600-session run stays as confirmation; it stops being the
 first line of defence.
 
 **The deeper lesson is about the endpoints themselves.** All four passed.
-They were falsifiable — that was checked before the run, and it was the
-right check — but falsifiable is not the same as sufficient. Every
+They were falsifiable (that was checked before the run, and it was the
+right check), but falsifiable is not the same as sufficient. Every
 endpoint asked "did the factory produce enough usable programs?" and none
 asked "are these the right programs?". A pre-registration can be honest,
 specific, and complete on its own terms while still measuring the wrong
@@ -157,9 +157,9 @@ Over 1,200 oxide-arm first attempts, counting **distinct programs**:
 | `.set(i, v)` | 0 | 0 | 0.0% |
 | type-based overloading | — | — | **not counted, by design** |
 
-Overloading has no surface form to match — a program wanting it calls an
+Overloading has no surface form to match (a program wanting it calls an
 existing name with the wrong argument type and fails in the type checker
-like any other error — so a count would be an invented signal.
+like any other error), so a count would be an invented signal.
 
 `if let` and `.set` reading exactly zero is itself a consequence of the
 drift above: these tasks never ask for indexing or pattern-matched
@@ -196,13 +196,13 @@ a conversion's name.
 round:
 
 1. Add the pre-flight corpus-shape gate and require the new tasks to
-   match the eval's structural profile — multi-line-output share near
+   match the eval's structural profile: multi-line-output share near
    65%, mean output lines near 2.3.
 2. Author the vector and string classes against t08–t15's *demands*:
    sorting, reversing, indexing, in-place mutation, multi-pass string
    work, and aggregate Option handling.
 3. Band the **rust** arm as well as the oxide arm, and add a per-class
-   band rather than a whole-corpus one — the whole-corpus band passed in
+   band rather than a whole-corpus one: the whole-corpus band passed in
    all three families while two classes drifted more than 20pp.
 4. Re-run the 40 existing tasks through the shape gate; those that fail
    it are re-authorable without discarding their verified pairs.

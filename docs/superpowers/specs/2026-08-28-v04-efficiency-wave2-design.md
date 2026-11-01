@@ -1,4 +1,4 @@
-# v0.4 — the efficiency cycle, wave 2 (vectors residual + strings + census v2)
+# v0.4: the efficiency cycle, wave 2 (vectors residual + strings + census v2)
 
 **Date:** 2026-08-28 (evening)
 **Purpose:** second turn of the efficiency design loop; the binding
@@ -25,12 +25,12 @@ rs 50.4/57.8/67.7/57.3). Dynamic tokens-to-green ratio 1.13. G1 floor
   **≤ 1.15** (retry at second vocabulary rung), strings **≤ 1.08**,
   arithmetic **≤ 1.02** *if* `+=` ships (else hold 1.038 ± 0.02),
   structs/option **≤ 1.00** (hold). Consistency: at exactly-on-target
-  class values the overall computes to ≈ 1.04 — the pair is
+  class values the overall computes to ≈ 1.04. The pair is
   arithmetic-consistent with slack. Cross-wave goal stays ≤ 1.00.
 - **Corpus-scale gate (new, from the wave-1 G1 lesson):** the tuned
   dynamic read runs ONLY once the wave-2 matched corpus reaches
   **≥ 15k supervised tokens per arm** (wave-0 scale). Under-scale, the
-  dynamic read is postponed to a pooled later run — never again read
+  dynamic read is postponed to a pooled later run, never again read
   against the floor at mismatched scale. Amplification plan: pool the
   committed v04-amp verified programs with a fresh card-v0.4.1
   amplification at 3 sizes × 20 seeds; raise seeds further if the
@@ -58,7 +58,7 @@ Wave-1's instrument gaps, closed before any gate ruling:
 3. **Hand-rolled-pattern census over programs** (the wave-1 gap): pinned
    structural patterns for occurrence-counting loops, removal/rebuild
    loops, string-build char loops, min/max/sum scans (now expected ~0
-   in re-authored references — the census proves the re-author), per
+   in re-authored references: the census proves the re-author), per
    class, over references and the v04-amp verified pool.
 4. Fresh reply data: the committed wave-1 campaign + v04-amp raw
    replies (both in `eval/results/`), so the census reads
@@ -68,7 +68,7 @@ Wave-1's instrument gaps, closed before any gate ruling:
 
 - **Vectors residual:** `count(v, x) -> Int`; `remove_at(v, i) ->
   Vec<T>` (consuming, like push/sort; OOB mirrors get's contract) OR
-  bracket index assignment `v[i] = x` as syntax — the census's
+  bracket index assignment `v[i] = x` as syntax: the census's
   rejection-crossed bracket count decides which surface ships;
   possibly `first(v)`/`last(v) -> Option<T>` if hand-rolled counts
   demand them.
@@ -77,11 +77,11 @@ Wave-1's instrument gaps, closed before any gate ruling:
   Str`, `char_at(s, i) -> Str`, `substr(s, a, b) -> Str`,
   `str_contains(s, sub) -> Bool`); ship the top hand-rolled patterns
   only, cap-limited.
-- **`if let Some(x) = e { }`** — demand rose 35→89 with card v0.4;
+- **`if let Some(x) = e { }`**: demand rose 35→89 with card v0.4;
   ships if census v2 confirms ≥ that level, as parser sugar desugaring
   to single-arm match (byte-identity test against the hand-written
   equivalent).
-- **`+=` and friends** — statement-level sugar (`x += e` desugars to
+- **`+=` and friends**: statement-level sugar (`x += e` desugars to
   `x = x + e`) if rejection-crossed demand confirms; arithmetic's
   target moves only if this ships.
 
@@ -109,7 +109,7 @@ this wave's report will produce.
 > `count(v, x)` (occurrence_count hand-rolled 11 refs / 12 amp).
 > Deferred with counts: `if let` (68 amp presence < the pre-registered
 > 89 bar), bracket index-assign (0 campaign presence), `remove_at`
-> (2 hand-rolled refs), strings vocabulary (string_build 1/1 — the
+> (2 hand-rolled refs), strings vocabulary (string_build 1/1: the
 > strings residual is not hand-rolled-pattern-shaped; wave 3 gets a
 > pairwise token-diff attribution instrument instead). Slate-dependent
 > targets re-set per the spec's own conditional-target pattern:
@@ -121,7 +121,7 @@ this wave's report will produce.
 > scale gate held twice (8.8k → 11.0k/arm after the pre-registered
 > +20-seed escalation; single-family seed-scaling flattens: 74→143→188
 > uniques). Owner ruled option (a): amplification re-runs at
-> **temperature 0.8 for corpus generation only** — the sampler pin
+> **temperature 0.8 for corpus generation only**: the sampler pin
 > (0.2) binds measurement arms, not corpus generation, whose quality
 > is oracle-guarded (only compiler-verified programs enter the pool).
 > The final pool = v04-amp (0.2) + amp2 (0.2) + amp3 (0.8), each

@@ -1,4 +1,4 @@
-# Black Oxide Transpiler — Phase 1 Contract (Scaffolding + Lexer)
+# Black Oxide Transpiler: Phase 1 Contract (Scaffolding + Lexer)
 
 This file is the **binding contract** for Phase 1. Implementation and tests are
 written independently against this document; any deviation is a bug in the
@@ -21,7 +21,7 @@ break something:
    conditioned on these exact strings; editing them retokenizes the
    prompt, so a renamed card is no longer comparable to the baseline the
    v0.3 dossiers are measured against. `OX0306`'s text is additionally
-   the endpoint g3 measures — renaming it in the run that measures it
+   the endpoint g3 measures. Renaming it in the run that measures it
    would confound the result outright.
 2. **Arm data keys.** `ARMS = ("oxide", "explicit", "rust")`, the `arm`
    field in every `cells.jsonl` / `triples.jsonl`, raw filenames
@@ -33,7 +33,7 @@ break something:
    generated Rust.
 4. **Filenames and literals.** The `.ox` source extension,
    `eval/grammar/oxide.gbnf`, and the corpus-validation check that
-   prompts contain no occurrence of `"oxide"`/`"rust"` — which still
+   prompts contain no occurrence of `"oxide"`/`"rust"`, which still
    does the right thing, since "black oxide" contains "oxide".
 
 The natural moment to revisit (1) is the fine-tune track (§32.4), where
@@ -79,7 +79,7 @@ black-oxide/                # repo root (local checkout dir may differ)
 Style: `@dataclass(frozen=True, slots=True)` for all value types, full type
 hints, no prints, no file over 800 lines. Python 3.14.
 
-## 2. Public API (exact names — tests import these)
+## 2. Public API (exact names: tests import these)
 
 ```python
 # src/diagnostics.py
@@ -198,11 +198,11 @@ before the closing quote → **OX0006** "unterminated string", ERROR token
 spanning from the opening quote to end of line, then resume lexing at the
 next line. `value` = the unescaped string.
 
-### 3.6 Operators & delimiters — maximal munch
+### 3.6 Operators & delimiters: maximal munch
 Two-char first: ~~`-> => == != <= >= && || ::`~~ → `-> => == != <= >=
 && || :: += -= *=` (`+=`/`-=`/`*=` added by v0.4 wave 2's compound
 assignment, checked before the one-char table exactly like every other
-two-char operator — see §59.2), then one-char:
+two-char operator; see §59.2), then one-char:
 `= < > + - * / % ! . ( ) { } , :`. A lone `&` or `|` or any other unknown
 char → **OX0001** "unexpected character", ERROR token of length 1, continue.
 
@@ -216,9 +216,9 @@ char → **OX0001** "unexpected character", ERROR token of length 1, continue.
 | OX0005 | invalid escape sequence |
 | OX0006 | unterminated string literal |
 
-## 4. Golden examples (normative — tests assert these exactly)
+## 4. Golden examples (normative: tests assert these exactly)
 
-### G1 — canonical program
+### G1: canonical program
 Source (trailing newline present):
 ```
 fn main() {
@@ -233,9 +233,9 @@ KW_LET IDENT EQ INT NEWLINE
 IDENT LPAREN IDENT RPAREN NEWLINE
 RBRACE NEWLINE EOF
 ```
-(no NEWLINE after `{` — LBRACE is not a terminator). INT value == 42.
+(no NEWLINE after `{`: LBRACE is not a terminator). INT value == 42.
 
-### G2 — operators & literals
+### G2: operators & literals
 Source: `let y = 1.5 * (2 + x) >= 0x1F && a != b` (no trailing newline)
 ```
 KW_LET IDENT EQ FLOAT STAR LPAREN INT PLUS IDENT RPAREN
@@ -244,10 +244,10 @@ GEQ INT ANDAND IDENT NEQ IDENT NEWLINE EOF
 FLOAT value == 1.5; the two INT values == 2 and 31. The final NEWLINE is the
 EOF-injection rule (prev IDENT is a terminator).
 
-### G3 — path separator
+### G3: path separator
 `Vec::new()` → `IDENT PATH_SEP IDENT LPAREN RPAREN NEWLINE EOF`
 
-## 5. Test plan (tests/test_lexer.py — pytest)
+## 5. Test plan (tests/test_lexer.py: pytest)
 
 Import as `from src.lexer.lexer import Lexer`,
 `from src.lexer.tokens import TokenKind`, run from repo root.
@@ -278,12 +278,12 @@ Required tests:
 16. Spans: for `let x = 1`, token spans are (0,3) (4,5) (6,7) (8,9) and the
     EOF span is (len,len).
 17. Never raises: tokenize a handful of garbage inputs
-    (`'"\\u{'`, `'/*/*/*'`, `'\x00\xff@#$'`, `'0x 0b2 9e'`) — assert only
+    (`'"\\u{'`, `'/*/*/*'`, `'\x00\xff@#$'`, `'0x 0b2 9e'`), assert only
     that tokenize() returns and last token is EOF.
 
 ---
 
-# Part II — Phase 2 Contract (Parser + AST)
+# Part II: Phase 2 Contract (Parser + AST)
 
 Phase 1 rules above remain binding. Part II governs `src/parser/ast.py`,
 `src/parser/parser.py`, and `tests/test_parser.py`.
@@ -328,7 +328,7 @@ after non-terminator tokens).
 literal at the top level of an `if`/`while` condition (the `{` starts the
 body). Inside any parenthesized subexpression the restriction lifts.
 
-## 7. AST (src/parser/ast.py — exact names)
+## 7. AST (src/parser/ast.py: exact names)
 
 All nodes are `@dataclass(frozen=True, slots=True)` with fields
 `node_id: int` and `span: Span` FIRST, then their own fields. Sequences are
@@ -356,7 +356,7 @@ operator lexemes ("+", "==", "&&", "-", "!", …). `node_id` is assigned by the
 Parser from a per-instance counter starting at 0; all ids in one parse are
 unique. Optional fields are `None` when absent.
 
-## 8. Canonical dump (ast.py: `def dump(node) -> str`) — golden-test format
+## 8. Canonical dump (ast.py: `def dump(node) -> str`): golden-test format
 
 Space-separated S-expressions; `node_id`/`span` excluded. Exact productions:
 
@@ -400,7 +400,7 @@ def parse_source(source: str) -> tuple[Module, list[Diagnostic]]:
 
 The parser NEVER raises on any token stream and always returns a Module.
 
-## 10. Expressions — Pratt binding powers
+## 10. Expressions: Pratt binding powers
 
 | Operator | lbp | rbp | Assoc |
 |---|---|---|---|
@@ -425,7 +425,7 @@ next is `{` and struct-literals allowed here, else Var; `-`/`!` → UnOp;
 `(` expr `)`; KW_IF → if-expr. Anything else → **OX0100** "expected
 expression" + ErrorExpr. **Exception:** an ERROR token in nud position is
 consumed into ErrorExpr with NO new diagnostic (the lexer already reported
-it — no cascades).
+it: no cascades).
 
 ## 11. Errors & recovery
 
@@ -436,21 +436,21 @@ at module level · **OX0103** expected type · **OX0104** expected pattern ·
 
 Panic-mode recovery on any failure:
 `sync = {NEWLINE, RBRACE, KW_LET, KW_RETURN, KW_WHILE, KW_IF, KW_FN,
-KW_STRUCT, EOF}` — skip tokens until a sync kind; consume it if NEWLINE. The
+KW_STRUCT, EOF}`: skip tokens until a sync kind; consume it if NEWLINE. The
 failed production yields ErrorExpr/ErrorStmt (real node_id + span). One
 diagnostic per error region; later items/statements must still parse.
 
 ## 12. Golden examples (normative)
 
-**P1** — source of Phase 1 G1 (fn main / let x = 42 / print(x)):
+**P1**: source of Phase 1 G1 (fn main / let x = 42 / print(x)):
 ```
 (module (fn main (params) (block (let (bind x) (lit int 42)) (tail (call (var print) (var x))))))
 ```
 
-**P2** — `fn f() { let y = 1 + 2 * 3 == 7 && !flag }`:
+**P2**: `fn f() { let y = 1 + 2 * 3 == 7 && !flag }`:
 body block = `(block (let (bind y) (bin && (bin == (bin + (lit int 1) (bin * (lit int 2) (lit int 3))) (lit int 7)) (un ! (var flag)))))`
 
-**P3** —
+**P3**:
 ```
 struct Point { x: Int, y: Int }
 
@@ -463,7 +463,7 @@ fn add(p: Point) -> Int {
 (module (struct Point (field x (type Int)) (field y (type Int))) (fn add (params (param p (type Point))) (ret (type Int)) (block (let (destruct Point x y) (var p)) (tail (bin + (var x) (var y))))))
 ```
 
-**P4** —
+**P4**:
 ```
 fn f(a: Int) -> Int {
     while a < 10 {
@@ -483,7 +483,7 @@ body block =
 (block (exprstmt (while (bin < (var a) (lit int 10)) (block (tail (call (var step)))))) (tail (if (bin > (var a) (lit int 0)) (block (tail (var a))) (if (bin == (var a) (lit int 0)) (block (tail (field (call (var make) (structlit Point (x (lit int 1)) (y (lit int 2)))) x))) (block (tail (un - (var a))))))))
 ```
 
-## 13. Test plan (tests/test_parser.py — pytest)
+## 13. Test plan (tests/test_parser.py: pytest)
 
 Import `from src.parser.parser import parse_source` and
 `from src.parser.ast import dump` (plus node classes as needed). Helper
@@ -514,16 +514,16 @@ Import `from src.parser.parser import parse_source` and
     and NO parser OX0100 for that ERROR token.
 13. parse_source diagnostic ordering: lexer codes precede parser codes.
 14. node_id uniqueness: collect all node_ids from a P4 parse (walk
-    dataclass fields) — all distinct.
+    dataclass fields). All distinct.
 15. Spans: for `let x = 1 + 2`, the Let span covers the whole statement and
     the BinOp span covers `1 + 2` exactly.
 16. Never raises: parse_source on the Phase 1 garbage inputs plus
-    `'fn'`, `'fn f('`, `'{'`, `'}}}'`, `'fn f() -> {'` — returns a Module,
+    `'fn'`, `'fn f('`, `'{'`, `'}}}'`, `'fn f() -> {'`, returns a Module,
     last-resort ErrorStmt/ErrorExpr nodes allowed, no exception.
 
 ---
 
-# Part III — Phase 3 Contract (Semantic Analysis)
+# Part III: Phase 3 Contract (Semantic Analysis)
 
 Parts I–II remain binding. Part III governs `src/sema/*` and the two Phase 3
 test files. Pipeline: resolve → infer → modes → linear (cfg/liveness are
@@ -551,7 +551,7 @@ the §1 layout, but only the APIs below are contractual).
   then-block must be Unit). `while`: cond Bool, value Unit; a while is never
   a value. `return e` unifies e (Unit if absent) with the fn return.
 - Operators: `+ - * /` operands unify with each other, then must solve to
-  Int or Float (`%` Int only) — result same type; `< <= > >=` likewise
+  Int or Float (`%` Int only): result same type; `< <= > >=` likewise
   Int/Float, result Bool; `== !=` operands unify, any type, result Bool;
   `&& || !` Bool; unary `-` Int/Float.
 - Struct literal: every declared field exactly once. Destructuring must name
@@ -561,7 +561,7 @@ the §1 layout, but only the APIs below are contractual).
 
 ## 15. Public APIs (exact)
 
-`src/diagnostics.py` — ADD field `notes: tuple[tuple[str, Span], ...] = ()`
+`src/diagnostics.py`: ADD field `notes: tuple[tuple[str, Span], ...] = ()`
 to `Diagnostic` (additive; Phase 1/2 construction sites unchanged and all
 existing tests must stay green).
 
@@ -664,7 +664,7 @@ diagnostic contributes NO DropPoints (its drops are suppressed).
 | OX0200 | resolve | unknown identifier |
 | OX0201 | resolve | function/builtin name used as a value (non-callee) |
 | OX0202 | resolve/infer | unknown type or struct name, or wrong type arity |
-| OX0203 | resolve | duplicate top-level name (~~incl. clash with a builtin~~ — a `fn` clash is superseded by v0.4 shadowing; struct/enum names still hard-clash — see §58.2) |
+| OX0203 | resolve | duplicate top-level name (~~incl. clash with a builtin~~: a `fn` clash is superseded by v0.4 shadowing; struct/enum names still hard-clash (see §58.2)) |
 | OX0204 | resolve | duplicate binder (params or one pattern) |
 | OX0300 | infer | type mismatch (unification failure) |
 | OX0301 | infer | infinite type (occurs check) |
@@ -707,32 +707,32 @@ happened in a previous iteration reports OX0403 (once, then poison).
 ## 18. Drop insertion (automatic destruction)
 
 For error-free functions, every non-copy value is consumed exactly once per
-path — by program code or a synthesized DropPoint.
+path: by program code or a synthesized DropPoint.
 
 **Read-mode non-copy params are caller-owned borrows** (amended for Phase 4):
-the callee synthesizes NO DropPoints for them — the caller's own analysis
+the callee synthesizes NO DropPoints for them. The caller's own analysis
 drops the value after the call. Exactly-once therefore holds program-wide:
 each value is destroyed once, by its owner. Placement kinds:
 
-- **after-stmt** — var whose FINAL use is a read: dropped after the
+- **after-stmt**: var whose FINAL use is a read: dropped after the
   outermost statement (in its defining scope) at which liveness ends. The
   fn-body tail expression counts as a statement position. A var last read
   inside a `while` body (live around the back edge) is dropped after the
   while statement itself.
-- **block-end** — var never used after its definition: dropped at its
+- **block-end**: var never used after its definition: dropped at its
   defining block's end. Also: at an if/else merge where one REAL arm moved
   the var, the still-owning arm drops it at that arm's block end (only when
   the var is dead after the merge; if it is live after the merge, the next
   use is OX0400 instead).
-- **branch-end** — same hoisting when the non-moving edge is an ABSENT else:
+- **branch-end**: same hoisting when the non-moving edge is an ABSENT else:
   anchor_span = the If node's span.
-- **before-return** — every still-owned in-scope var (except the returned
+- **before-return**: every still-owned in-scope var (except the returned
   value) drops immediately before an early `return`.
-- **`<temp>`** — an expression-statement (non-tail) whose value is non-copy
+- **`<temp>`**: an expression-statement (non-tail) whose value is non-copy
   discards a temporary: DropPoint(var_id=-1, var_name='<temp>',
   kind='after-stmt'). Other temporaries are out of scope for v0.1.
 
-## 19. Golden examples (normative — `analyze` helper outputs)
+## 19. Golden examples (normative: `analyze` helper outputs)
 
 **S1** `fn main() { let v = vec()\n let v2 = push(v, 1)\n print(len(v2)) }`
 → codes `[]`; `var_types_by_name(main,'v')==['Vec<Int>']`, same for v2;
@@ -780,7 +780,7 @@ with §18).
 **S12** `fn t(v: Vec<Int>) { push(v, 1)\n print(0) }`
 → codes `[]`; `drop_list==[('t','<temp>','after-stmt')]`.
 
-## 20. Test plan — two files
+## 20. Test plan: two files
 
 **tests/test_sema_types.py** (resolve + infer + modes):
 1. Goldens S7–S10 (codes, types, modes as stated).
@@ -792,7 +792,7 @@ with §18).
 7. Annotations: good `Vec<Int>`; `let x: Int = 1.5` OX0300; unknown name OX0202; `Vec<Int, Int>` OX0202; `Int<Int>` OX0202.
 8. `let v = vec()` alone → OX0302.
 9. `len()` and calling an Int local → OX0303.
-10. Resolution: OX0200; OX0201; duplicate fn OX0203; ~~fn named `print` OX0203~~ — superseded by v0.4 builtin shadowing (a `fn` named `print` now shadows the builtin instead of erroring; the still-true half of the case — `struct print { x: Int }` OX0203 — is pinned as `struct-clashes-with-builtin` in `tests/test_sema_types.py`; see §58.2); dup param OX0204; dup destructure binder OX0204; shadowing legal with independent types (`['Int','Bool']`).
+10. Resolution: OX0200; OX0201; duplicate fn OX0203; ~~fn named `print` OX0203~~: superseded by v0.4 builtin shadowing (a `fn` named `print` now shadows the builtin instead of erroring; the still-true half of the case (`struct print { x: Int }` OX0203) is pinned as `struct-clashes-with-builtin` in `tests/test_sema_types.py`; see §58.2); dup param OX0204; dup destructure binder OX0204; shadowing legal with independent types (`['Int','Bool']`).
 11. Modes: S3/S4/S8 goldens; returned copy param stays `read`; pure recursion stays `read` (`fn r(v: Vec<Int>) { r(v) }` → `('read',)`); destructured param `own` (S7).
 12. Gates: resolve error suppresses infer codes; parse error yields only lex/parse codes; analyze never raises on Part II garbage inputs.
 
@@ -812,12 +812,12 @@ with §18).
 12. Suppression: type-error source ⇒ `drop_list==[]` and no OX04xx codes.
 
 Test authors: import ONLY `src.sema.analyze` helpers (plus pytest); do not
-import other sema modules; do NOT run the tests (blind TDD — implementation
+import other sema modules; do NOT run the tests (blind TDD: implementation
 lands concurrently).
 
 ---
 
-# Part IV — Phase 4 Contract (Rust Codegen)
+# Part IV: Phase 4 Contract (Rust Codegen)
 
 Parts I–III (as amended) remain binding. Part IV governs `src/codegen/rust.py`,
 `main.py`, and `tests/test_codegen.py`. rustc 1.96.0 is at
@@ -845,7 +845,7 @@ message to stderr, exit 2.
 **Types:** Int→`i64`, Float→`f64`, Bool→`bool`, Str→`String`, Unit→`()`,
 `Vec<T>`→`Vec<T'>`, struct→its name.
 
-**Items:** structs emit `#[derive(Debug)]` ONLY (never Clone/Copy —
+**Items:** structs emit `#[derive(Debug)]` ONLY (never Clone/Copy:
 linearity is preserved in the target); fields one per line with trailing
 comma. Functions: own param → `name: T`; read non-copy param → `name: &T`
 (the var is *ref-bound*); read copy param → `name: T`. Unit return → no
@@ -911,7 +911,7 @@ fn vec<T>() -> Vec<T> {
 
 ## 24. Golden emissions (normative)
 
-**R1** — source S1 (`fn main` / vec / push / print(len)). Full output =
+**R1**: source S1 (`fn main` / vec / push / print(len)). Full output =
 header + prelude + one blank line +
 ```rust
 fn main() {
@@ -923,7 +923,7 @@ fn main() {
 ```
 Compiled and run: stdout `1`.
 
-**R2** — source S4. Emitted item exactly:
+**R2**: source S4. Emitted item exactly:
 ```rust
 fn g(c: bool, v: Vec<i64>) {
     if c {
@@ -935,7 +935,7 @@ fn g(c: bool, v: Vec<i64>) {
 }
 ```
 
-**R3** — source
+**R3**: source
 `fn m(c: Bool, v: Vec<Int>) -> Int { let w = push(v, 1)\n if c { return 0 }\n len(w) }`.
 Emitted item exactly:
 ```rust
@@ -951,7 +951,7 @@ fn m(c: bool, v: Vec<i64>) -> i64 {
 }
 ```
 
-**R4** — source: struct Point{x,y:Int} + `fn area(p: Point) -> Int` via
+**R4**: source: struct Point{x,y:Int} + `fn area(p: Point) -> Int` via
 destructure `x * y` + `fn main` with `Point { x: 6, y: 7 }` and
 `print(area(p))`. Emitted struct/area exactly:
 ```rust
@@ -968,7 +968,7 @@ fn area(p: Point) -> i64 {
 ```
 Compiled and run: stdout `42`.
 
-## 25. Test plan (tests/test_codegen.py — pytest)
+## 25. Test plan (tests/test_codegen.py: pytest)
 
 `RUSTC = shutil.which('rustc') or '~/.cargo/bin/rustc' (expanded) if it
 exists`; rustc-dependent tests use
@@ -1004,7 +1004,7 @@ tests (blind TDD).
 
 ---
 
-# Part V — Phase 5a Contract (Language v0.2: enums/match, for, assignment)
+# Part V: Phase 5a Contract (Language v0.2: enums/match, for, assignment)
 
 Parts I–IV (as amended) remain binding except where this part explicitly
 amends them. Motivation: make standard benchmark tasks expressible so the
@@ -1012,7 +1012,7 @@ AI-writability thesis becomes testable.
 
 ## 26. Surface amendments
 
-**Lexer (amends §3.3):** three new keywords — `for` → KW_FOR, `in` → KW_IN,
+**Lexer (amends §3.3):** three new keywords: `for` → KW_FOR, `in` → KW_IN,
 `enum` → KW_ENUM. TERMINATOR_SET unchanged. (Phase 1 keyword tests must be
 extended, not weakened.)
 
@@ -1073,8 +1073,8 @@ the match's type.
 
 **Assignment:** target must be an existing local/param (OX0200 otherwise);
 value unifies with the variable's type (OX0300). Linear semantics: the
-previous value is consumed implicitly by the assignment (NO DropPoint) —
-assigning to a var in Moved state is LEGAL re-initialization; after the
+previous value is consumed implicitly by the assignment (NO DropPoint).
+Assigning to a var in Moved state is LEGAL re-initialization; after the
 assignment the var is Owned. `acc = push(acc, 1)` is the accumulation
 idiom (RHS move happens first, then re-own). A param that is ever assigned
 gets mode `own`. In loops, an assignment before the back edge
@@ -1092,7 +1092,7 @@ after-stmt anchored at the for statement).
 owned locals scoped to their arm; unconsumed binders → block-end drops
 anchored at the arm body. Unbound payloads (wildcard/nullary arms over
 payload variants) are consumed by the match itself (no DropPoints). Arms
-are an N-way branch merge: the §18 if/else join rules generalize — a var
+are an N-way branch merge: the §18 if/else join rules generalize. A var
 moved in ≥1 arm and dead after the match is dropped (block-end) in each
 still-owned arm; if live after, the next use is OX0400.
 
@@ -1159,7 +1159,7 @@ amends automatically; the emitted `fn main` part is unchanged. Phase 4
 tests asserting the old prelude/derives must be updated, not weakened.)
 
 **Emission:** enums → Rust enums, variants qualified `Shape::Circle(x)`;
-`Option`/`Result` variants emit BARE (`Some`, `None`, `Ok`, `Err` — std
+`Option`/`Result` variants emit BARE (`Some`, `None`, `Ok`, `Err`: std
 prelude). Match: expr-body arms `PAT => EXPR,`; block-body arms
 `PAT => { … }`; wildcard `_ => …`. For: `ITER.iter().cloned()` where ITER
 emits bare for Var and Call expressions, parenthesized otherwise;
@@ -1170,7 +1170,7 @@ assigned makes its binding `let mut name: T = …;` (assigned params:
 
 ## 30. Golden examples
 
-**R5** — source:
+**R5**: source:
 ```
 enum Shape {
     Circle(Float),
@@ -1209,7 +1209,7 @@ fn describe(s: Shape) -> f64 {
 ```
 Compiled and run: stdout `12.0`.
 
-**R6** — source:
+**R6**: source:
 ```
 fn sum_squares(n: Int) -> Int {
     let total = 0
@@ -1235,7 +1235,7 @@ fn sum_squares(n: i64) -> i64 {
 ```
 Compiled and run: stdout `30`.
 
-**R7** (runtime golden only) — source:
+**R7** (runtime golden only): source:
 ```
 fn main() {
     let v = push(push(vec(), 10), 20)
@@ -1267,7 +1267,7 @@ after-stmt drop for `v`.
 - **V7** assignment re-init: `fn f() { let v = push(vec(), 1)\n let w = v\n
   v = push(vec(), 2)\n print(len(v))\n print(len(w)) }` → codes `[]`.
 
-## 31. Test plan — two files
+## 31. Test plan: two files
 
 **tests/test_v02_front.py** (lexer/parser/sema/linear; import
 src.sema.analyze helpers + src.parser for dumps):
@@ -1315,7 +1315,7 @@ updating existing keyword/prelude/derive assertions.
 
 ---
 
-# Part VI — Adopted Direction & Spec Debts (recorded 2026-08-07)
+# Part VI: Adopted Direction & Spec Debts (recorded 2026-08-07)
 
 Decisions adopted from the design-review fork. Sections 32–33 are DIRECTION
 and DEBT RECORDS, not yet normative contracts; each becomes normative only
@@ -1325,7 +1325,7 @@ when pinned as a numbered contract part.
 
 1. **Three-way eval.** Alongside Black Oxide and Rust, a matched-novelty control
    language ("explicit Black Oxide"): same grammar/builtins/diagnostics, but
-   ownership EXPLICIT — borrow/move annotations and visible drops the
+   ownership EXPLICIT: borrow/move annotations and visible drops the
    checker VERIFIES rather than infers (reusing the existing checker's
    computed moves/drops). Equal-sized language cards. Black Oxide vs explicit
    isolates the implicit-vs-explicit axis familiarity-free; Black Oxide vs Rust
@@ -1333,15 +1333,15 @@ when pinned as a numbered contract part.
    --error-format=json`). Measure learning curves (0/few/many-shot) and
    per-OX-code error distributions, plus tokens-to-green; persist repair
    loops as (broken program → diagnostic → verified fix) triples.
-2. **v0.2.1 "eval-readiness" ergonomics** — to land as a pinned contract
-   (Part VII) BEFORE the eval: (a) lift OX0405 — non-copy field access
+2. **v0.2.1 "eval-readiness" ergonomics**: to land as a pinned contract
+   (Part VII) BEFORE the eval: (a) lift OX0405: non-copy field access
    becomes an implicit clone (destructuring stays the move form); (b) a
    `?`-style propagation operator for Option/Result; (c) functional struct
    update `Point { x: 5, ..p }` (consumes p); (d) `to_float(Int) -> Float`
    and `trunc(Float) -> Int`; (e) `break`/`continue` (multi-exit loop
-   merges in the linear checker — largest item, first); (f) allow a
+   merges in the linear checker (largest item, first)); (f) allow a
    newline before `{` and before `else` where unambiguous.
-3. **v0.3 direction — GATE RESOLVED 2026-08-07: REJECTED.** The proposal
+3. **v0.3 direction: GATE RESOLVED 2026-08-07: REJECTED.** The proposal
    below was to invert the ownership default. The eval's OX-code
    distribution was collected (163 OX04xx of 464 diagnostics, 35.1%)
    and the inversion is **not adopted**: the supporting evidence that
@@ -1354,24 +1354,24 @@ when pinned as a numbered contract part.
    Full reasoning: docs/superpowers/specs/2026-08-07-v03-gate-decision.md.
    The original proposal is retained below for the record:
    ~~invert the
-   ownership default — value semantics for plain data (implicit clone at
+   ownership default: value semantics for plain data (implicit clone at
    would-be use-after-move), linearity OPT-IN per type (`resource struct`)
    with OX04xx machinery applied only there. The eval's OX-code error
    distribution confirms or kills this. Also v0.3-track: restricted
    closures, enum-scoped variants (leading-dot), module system with
    required signatures at module boundaries.~~
 
-   **What actually shipped as v0.3 — CLOSED 2026-08-11.** With the
+   **What actually shipped as v0.3: CLOSED 2026-08-11.** With the
    inversion rejected, the version number went to the ergonomics track
    instead: §55 `vec(...)`, §56 field assignment, §57 the `to_str`
-   alias — each selected from a measured friction in the G0 corpus
+   alias, each selected from a measured friction in the G0 corpus
    rather than proposed from taste, and bracketed by three constrained
    campaigns (`g0c`, `g1c`, `v03c`). Outcome: §55 accounts for **87% of
    the first-compile gain** and 79% of the first-pass gain, and its
    per-family effect is dose-ordered in its own demand counts (91/69/27
    `vec` calls → +4.5/+3.5/+2.0). §56 and §57 landed together and
    jointly moved one family by 3 sessions of 200 and the other two not
-   at all — a residual the synthesis argues is noise rather than §56,
+   at all, a residual the synthesis argues is noise rather than §56,
    since the family with the most deformation to remove moved least.
    §56 nevertheless eliminated a decoder-deformation artifact outright
    (18 statement and 17 tail occurrences → 0), and §57 provably could
@@ -1388,10 +1388,10 @@ when pinned as a numbered contract part.
    small scale.
 5. **Backend:** the Rust transpiler stays. Any future native compiler is a
    Cranelift/LLVM backend behind the existing front end, differentially
-   tested against the transpiler as reference oracle — never a rewrite,
+   tested against the transpiler as reference oracle, never a rewrite,
    and only after the eval validates the thesis AND §33 is frozen.
 
-## 33. Spec debts (semantics currently inherited silently from Rust — MUST
+## 33. Spec debts (semantics currently inherited silently from Rust: MUST
 be pinned before any custom-compiler work)
 
 Integer overflow behavior · division-by-zero (currently
@@ -1400,7 +1400,7 @@ Integer overflow behavior · division-by-zero (currently
 
 ---
 
-# Part VII — Phase 5a.1 Contract (v0.2.1 eval-readiness ergonomics)
+# Part VII: Phase 5a.1 Contract (v0.2.1 eval-readiness ergonomics)
 
 Normative. Amends Parts I–V where stated. v0.2 (Part V) is complete: 438
 tests green including OX0406 (assignment to an iterated variable is an
@@ -1437,7 +1437,7 @@ skipped between a fn/if/while/for/match header and its `{`, and between
 ## 36. Semantics
 
 **break/continue:** CFG edges to the loop exit / the next-iteration point.
-Loop-BODY-scoped vars still Owned at the jump are dropped there —
+Loop-BODY-scoped vars still Owned at the jump are dropped there:
 DropPoint kind **`before-jump`** (new, fifth kind), anchor_span = the
 break/continue statement. For OUTER vars, break edges join the loop-exit
 merge under the §18 rules (dead-after → hoisted drops on still-owned
@@ -1446,7 +1446,7 @@ edge and interact with OX0403/OX0406 unchanged.
 
 **Field access (SUPERSEDES OX0405, which is retired):** `s.f` is legal for
 every field type. The base use stays `read`; a non-copy field value is an
-IMPLICIT CLONE — a fresh owned value (consistent with clone-on-iterate).
+IMPLICIT CLONE: a fresh owned value (consistent with clone-on-iterate).
 Destructuring remains the consuming form.
 
 **`?` (Try):** operand must solve to `Option<T>` with the enclosing fn
@@ -1456,7 +1456,7 @@ returning `Option<U>`, or `Result<T, E1>` with the fn returning
 path's cleanup is delegated to Rust semantics (no DropPoints), like match
 unbound payloads.
 
-**Functional update:** `S { f: e1, ..rest }` — rest must solve to the same
+**Functional update:** `S { f: e1, ..rest }`: rest must solve to the same
 struct type and is a MOVE use; listed fields must be a subset with no
 duplicates (OX0304, but missing fields are of course allowed); result is a
 full S.
@@ -1529,7 +1529,7 @@ any §20 item updates this part supersedes.
 
 ---
 
-# Part VIII — Phase 5b Contract (AI interface + explicit Black Oxide control)
+# Part VIII: Phase 5b Contract (AI interface + explicit Black Oxide control)
 
 Normative. v0.2.1 (Part VII) is complete: 541 tests green.
 
@@ -1572,7 +1572,7 @@ becomes a thin wrapper); JSON via `json.dumps(..., sort_keys=True)`.
 | OX0308 | `? requires the function to return the same wrapper: Option-returning fns for Option values, Result-returning fns (matching error type) for Result values.` |
 | OX0400 | `This value was moved at the noted location. Keep it available by cloning at the move site (clone(x)), or reorder so reads happen before the move.` |
 | OX0401 | `This value was already consumed at the noted location. Clone at the first consuming use if both are needed.` |
-| OX0403 | `This value is consumed by a previous loop iteration. Reassign it inside the loop (x = ...) before the iteration ends. If the value is read after the loop (see the later-use note), cloning inside the loop will not help — the original never grows.` |
+| OX0403 | `This value is consumed by a previous loop iteration. Reassign it inside the loop (x = ...) before the iteration ends. If the value is read after the loop (see the later-use note), cloning inside the loop will not help. The original never grows.` |
 | OX0406 | `The loop is iterating this vector; assigning to it inside the body is not allowed. Accumulate into a separate variable and reassign after the loop.` |
 | other | `` (empty string) |
 
@@ -1585,9 +1585,9 @@ A dialect where the model must WRITE what core Black Oxide infers. New package
   written `&name`; a move MUST be bare. (Copy-typed uses are always bare.)
 - Read-mode non-copy params MUST be declared `name: &Type`; own-mode
   params bare `name: Type`. (`&` in types is dialect syntax, not a Rust
-  reference — semantics identical to core.)
+  reference: semantics identical to core.)
 - `drop name` statement: REQUIRED exactly where core synthesizes a
-  DropPoint for a named var — same variable, same anchor (after the
+  DropPoint for a named var: same variable, same anchor (after the
   anchor statement / at block end / in the still-owned arm / before the
   return or jump). `<temp>` drops and delegated cleanup (match payloads,
   `?` paths) need NO drop statement.
@@ -1598,11 +1598,11 @@ where they were) → run the UNCHANGED core analysis → diff written
 annotations against analysis truth → dialect diagnostics; on success,
 codegen runs on the stripped AST (byte-identical Rust to the core
 program). Diagnostic codes (same JSON shape; suggestions pinned here):
-- **EX0001** `&` on a consuming use — `This use consumes the value; remove the &.`
-- **EX0002** bare read of a non-copy value — `This use only reads the value; write &name.`
-- **EX0003** missing drop — `This value's last use is here; add 'drop name' at the required point.`
-- **EX0004** wrong/extra drop — `No drop belongs here: the value is not owned/dead at this point. Remove or move this drop.`
-- **EX0005** param mode mismatch — `Parameter mode is wrong: read-only parameters are declared name: &Type, consumed parameters name: Type.`
+- **EX0001** `&` on a consuming use: `This use consumes the value; remove the &.`
+- **EX0002** bare read of a non-copy value: `This use only reads the value; write &name.`
+- **EX0003** missing drop: `This value's last use is here; add 'drop name' at the required point.`
+- **EX0004** wrong/extra drop: `No drop belongs here: the value is not owned/dead at this point. Remove or move this drop.`
+- **EX0005** param mode mismatch: `Parameter mode is wrong: read-only parameters are declared name: &Type, consumed parameters name: Type.`
 
 Golden **E1**: W1's program hand-annotated correctly (reads `&v`… per the
 core analysis of W1) is accepted and emits byte-identical Rust to core W1.
@@ -1623,7 +1623,7 @@ EX0005.
   for the explicit card); the cards may not contain uncheckable fragments
   (illustrative snippets must be full programs or omitted).
 
-## 43. Test plan — three files
+## 43. Test plan: three files
 
 **tests/test_cli_json.py**: JSON schema exactness on a clean program
 (ok/rust/diagnostics shapes, sorted keys), an OX0400 program (notes +
@@ -1650,11 +1650,11 @@ validation loop) but may not alter test files.
 
 ---
 
-# Part IX — Phase 5c Contract (Evaluation harness + task corpus)
+# Part IX: Phase 5c Contract (Evaluation harness + task corpus)
 
 Normative. Phase 5b is complete: 616 tests green.
 
-## 44. Task corpus — `eval/tasks.jsonl`
+## 44. Task corpus: `eval/tasks.jsonl`
 
 20 tasks, one JSON object per line:
 `{"id": "t01", "title": "...", "prompt": "...", "expected_stdout": "...",
@@ -1679,20 +1679,20 @@ solutions live at `eval/solutions/{oxide,explicit,rust}/<id>.{ox,rs}` and
 are mechanically verified (compile + run + exact stdout) by the test
 suite. Rust references: std only, no crates, `--edition 2021`.
 
-## 45. Harness — `eval/harness.py` (importable module + CLI)
+## 45. Harness: `eval/harness.py` (importable module + CLI)
 
 CLI subcommands (all support `--json`):
-- `check --arm oxide|explicit|rust --file F` — structured diagnostics:
+- `check --arm oxide|explicit|rust --file F`: structured diagnostics:
   oxide/explicit via the Part VIII pipeline; rust via `rustc --edition
   2021 --error-format=json --emit=metadata` adapted to the same shape
   (`code` = rustc code or "E????", message = rendered message INCLUDING
   rustc's help/children text verbatim, 1-based positions, suggestion "").
-- `run --arm A --file F --task ID` — full verdict: compile (oxide arms:
+- `run --arm A --file F --task ID`: full verdict: compile (oxide arms:
   transpile then rustc; rust: rustc) then execute with `timeout 10`
   (nontermination = fail) and diff stdout against the task's
   expected_stdout → `{"compiled": bool, "passed": bool, "stdout": "...",
   "diagnostics": [...]}`.
-- `prompt --arm A --task ID [--shots N]` — emits the complete solver
+- `prompt --arm A --task ID [--shots N]`: emits the complete solver
   prompt: the arm's language card (oxide/explicit) or the pinned Rust
   preamble (`You are writing Rust (edition 2021), std only, no external
   crates. Provide a complete program with fn main.`), the task prompt,
@@ -1700,7 +1700,7 @@ CLI subcommands (all support `--json`):
   fences, no commentary.`), and, with `--shots N`, N solved examples
   from `eval/shots/<arm>/` (task+solution pairs disjoint from the
   corpus; 5 authored per arm).
-- `report --results DIR` — aggregates: per-arm first-attempt compile
+- `report --results DIR`: aggregates: per-arm first-attempt compile
   rate, first-attempt pass rate, mean attempts-to-compile and -to-pass
   (failures count as cap+1), per-code diagnostic histogram, and totals.
 
@@ -1708,17 +1708,17 @@ Importable session API (the driver loop): `new_session(task_id, arm,
 run_id)` → `session.submit(source) -> verdict` (max 4 submissions;
 each attempt appended to `eval/results/<run_id>/triples.jsonl`:
 `{"task", "arm", "attempt", "code", "diagnostics", "compiled",
-"passed"}`) — this file is the verified-repair-triple dataset.
+"passed"}`). This file is the verified-repair-triple dataset.
 
 **Context-budget exhaustion is gated on EVIDENCE, not on which check
 caught it** (§51): with at least one attempt already submitted this
-session, an overflow — from either the client's own pre-request estimate
-or the server's real tokenizer — is a session RESULT: it ends there with
+session, an overflow (from either the client's own pre-request estimate
+or the server's real tokenizer) is a session RESULT: it ends there with
 attempts-so-far recorded and the cell marked `context_exhausted`, and the
 grid proceeds to the next session, not a run abort. With ZERO attempts
 submitted this session, it still aborts the run id exactly as before,
 because there is nothing to lose by aborting a session that produced no
-evidence — and at a small per-family window (§48) an oversized initial
+evidence, and at a small per-family window (§48) an oversized initial
 prompt would otherwise repeat identically across every seed, fabricating
 a whole grid of zero-attempt "results" with no abort and no manifest
 cause.
@@ -1727,13 +1727,13 @@ Fairness pins: identical task text across arms; caps on attempts (4) and
 exec time identical; the Rust arm receives rustc's own full diagnostic
 text (its help output is part of the null hypothesis).
 
-## 46. Test plan — `tests/test_eval.py`
+## 46. Test plan: `tests/test_eval.py`
 
 1. Corpus well-formed: 20 unique ids, pinned difficulty mix, nonempty
    exact expected_stdout, t01/t08/t15 exactly as §44, prompts contain no
    occurrence of "oxide"/"rust" (case-insensitive).
 2. ALL 60 reference solutions verified: `run` on each → compiled, passed
-   (this is the three-arm solvability proof; rustc-heavy — keep timeouts).
+   (this is the three-arm solvability proof; rustc-heavy: keep timeouts).
 3. `check` JSON shapes per arm incl. the rustc adapter on a known-bad
    Rust file (E0382 program) and a known-bad Black Oxide file.
 4. Session API: cap enforced, triples.jsonl schema, verdict correctness
@@ -1747,7 +1747,7 @@ The corpus/solutions agents are NOT blind (their work is mechanically
 oracle-checked); the harness test author IS blind to the harness
 implementation but may read this contract and the corpus schema.
 
-# Part X — Phase 6a Contract (small-model capability ladder)
+# Part X: Phase 6a Contract (small-model capability ladder)
 
 Normative. Phase 5c (Part IX) is complete: 774 tests green.
 
@@ -1758,9 +1758,9 @@ author's own.
 
 **Primary comparison.** Black Oxide vs explicit Black Oxide first-attempt pass
 (pass@1) at each capability point, read as the **paired-by-task delta**
-defined under *Statistics* below. These two arms are matched on novelty —
+defined under *Statistics* below. These two arms are matched on novelty:
 both are languages the subject saw zero times in pretraining, both taught
-only by a card of comparable length — and differ only in whether
+only by a card of comparable length, and differ only in whether
 ownership is implicit or written out. This isolates the thesis claim.
 
 **Secondary.** Repair lift (final pass rate − first-attempt pass rate)
@@ -1786,23 +1786,23 @@ difference of marginal arm rates. Pairing does **not** change the point
 estimate. What it changes is the **interval**: the paired standard error
 is `SD(per-task differences) / √20`, which shrinks in proportion to how
 strongly the two arms' per-task performance correlates. That correlation
-will be high — a task hard in Black Oxide is hard in explicit Black Oxide — so the
+will be high (a task hard in Black Oxide is hard in explicit Black Oxide), so the
 paired SE is expected to be roughly half the unpaired one. The delta is
 therefore reported with its **paired SE**, and quoting the delta without
 it is prohibited. (The point estimates diverge only when a task is
 missing from one arm, which should not occur in a complete grid.)
 
 Pooling all 100 task×seed trials into a single binomial CI is likewise
-**prohibited** — it treats fixed tasks as random draws and understates
+**prohibited**. It treats fixed tasks as random draws and understates
 the interval. Reported alongside: per-task pass counts (so task-level
 effects stay visible) and the across-seed SE (n=5) as a sampling-noise
 check.
 
-**Power — a pre-registered limit, not a finding.** With 20 tasks and 5
+**Power: a pre-registered limit, not a finding.** With 20 tasks and 5
 seeds, a per-seed pass rate moves in 5-point steps. At p≈0.5 (worst case
 for variance) the per-seed SD is ≈11pp and the across-seed SE of the
-mean is ≈5pp, so an *unpaired* comparison needs a ~10pp delta — two
-whole tasks — to clear two SE. Pairing by task roughly halves that, to
+mean is ≈5pp, so an *unpaired* comparison needs a ~10pp delta (two
+whole tasks) to clear two SE. Pairing by task roughly halves that, to
 ~5pp. **This design cannot detect a true effect smaller than about 5
 percentage points.** That is a property of a 20-task corpus, not
 evidence of absence, and every report from this phase must say so.
@@ -1818,8 +1818,8 @@ non-overlapping partition:
 | **≤ −5pp** | Disconfirming: implicit linearity *costs* accuracy at small scale. Part VI's ownership-default inversion should be revisited on that basis. |
 
 Mixed signs across capability points (e.g. positive at 0.5B, negative at
-7B) are reported as such and read as **no coherent directional effect**
-— not as selective support from whichever rung agrees.
+7B) are reported as such and read as **no coherent directional effect**,
+not as selective support from whichever rung agrees.
 
 The ±5pp band is a floor imposed by 20 tasks, chosen from the power
 calculation above rather than from taste. It is not a claim that 4pp
@@ -1831,13 +1831,13 @@ not be renegotiated after seeing results.
 
 | Parameter | Value |
 |---|---|
-| Models | Phase 6a rungs: `qwen2.5-coder` **instruct**, 0.5B / 1.5B / 7B (slugs `qwen0_5b` / `qwen1_5b` / `qwen7b`). G0 adds two more **instruct** families at `q8_0`: `codegemma:7b` (slug `codegemma7b`) and `granite-code:8b` (slug `granite8b`). The capability-window probe adds a sixth **instruct** family, `deepseek-coder-v2:16b-lite` (slug `deepseek16b_lite`), at `q5_K_M` rather than `q8_0` — see the Quantization row. Six slugs total; `eval.driver.MODELS` is the authority on the pinned tags and is the roster this row must agree with. |
-| Quantization | `q8_0`, **per-family** — see below (`q5_K_M` for `deepseek-coder-v2:16b-lite`) |
-| Backend | Phase 6a: Ollama HTTP (`http://localhost:11434`), version recorded. G0 (`qwen7b`, `codegemma7b`, `granite8b`) runs on llama.cpp (`llama-server`, `http://localhost:8081`) for both the constrained and unconstrained conditions instead — Ollama accepts a GBNF `grammar` option and silently ignores it, so constrained decoding requires llama.cpp (§50.4/`eval.llamacpp`). `deepseek16b_lite` also runs on llama.cpp (its capability-window probe was unconstrained on every arm). Both backends remain available to every slug; preflight asserts the slug's pinned quantization either way (§49). |
+| Models | Phase 6a rungs: `qwen2.5-coder` **instruct**, 0.5B / 1.5B / 7B (slugs `qwen0_5b` / `qwen1_5b` / `qwen7b`). G0 adds two more **instruct** families at `q8_0`: `codegemma:7b` (slug `codegemma7b`) and `granite-code:8b` (slug `granite8b`). The capability-window probe adds a sixth **instruct** family, `deepseek-coder-v2:16b-lite` (slug `deepseek16b_lite`), at `q5_K_M` rather than `q8_0` (see the Quantization row). Six slugs total; `eval.driver.MODELS` is the authority on the pinned tags and is the roster this row must agree with. |
+| Quantization | `q8_0`, **per-family**: see below (`q5_K_M` for `deepseek-coder-v2:16b-lite`) |
+| Backend | Phase 6a: Ollama HTTP (`http://localhost:11434`), version recorded. G0 (`qwen7b`, `codegemma7b`, `granite8b`) runs on llama.cpp (`llama-server`, `http://localhost:8081`) for both the constrained and unconstrained conditions instead: Ollama accepts a GBNF `grammar` option and silently ignores it, so constrained decoding requires llama.cpp (§50.4/`eval.llamacpp`). `deepseek16b_lite` also runs on llama.cpp (its capability-window probe was unconstrained on every arm). Both backends remain available to every slug; preflight asserts the slug's pinned quantization either way (§49). |
 | Temperature | 0.8 |
 | top_p | 0.95 |
 | `num_predict` (max gen tokens) | 2048 |
-| `num_ctx` (context window) | 8192, **per-family** — see below (4096 for `granite-code:8b`) |
+| `num_ctx` (context window) | 8192, **per-family**: see below (4096 for `granite-code:8b`) |
 | Seeds | 1, 2, 3, 4, 5 |
 | Shot conditions | 0 and 3 |
 | Attempt cap | 4 (existing `MAX_ATTEMPTS`) |
@@ -1848,21 +1848,21 @@ output contract, and the resulting failures would measure format
 compliance rather than language competence.
 
 Quantization is held constant **within each family** so the capability
-curve is not confounded with precision inside a subject's own runs — see
+curve is not confounded with precision inside a subject's own runs: see
 below for the one family where the pinned value differs from the rest of
 the ladder. Exact tags **and digests** are recorded in the run manifest
 at preflight.
 
-**The quantization pin is per-family, not universal — for the same reason
+**The quantization pin is per-family, not universal: for the same reason
 `num_ctx` is.** `deepseek-coder-v2:16b-lite` is served at `q5_K_M`
 (`eval.driver.QUANT`; every other slug takes `DEFAULT_QUANT = q8_0`). MoE
 activates 2.4B of ~16B parameters per token, but every expert must be
-VRAM-resident, so the full weight set is what must fit — **and the weights
+VRAM-resident, so the full weight set is what must fit, **and the weights
 are not the whole bill.** Serving a model also costs a KV cache and
 compute buffers, which this project measured rather than estimated: on
 this **16303 MiB** card, with ~**1760 MiB** held by the desktop session
 (~**14544 MiB** actually free), `llama-server` needed **13459 MiB** to
-serve the **11302 MiB** `q5_K_M` weight set at `num_ctx` 8192 — about
+serve the **11302 MiB** `q5_K_M` weight set at `num_ctx` 8192, about
 **2160 MiB** of runtime overhead on top of the weights, leaving 1085 MiB
 free.
 
@@ -1870,7 +1870,7 @@ Against that measured overhead, `q8_0` is out of reach: its **15926 MiB**
 of weights already exceed the ~14544 MiB free, and **~18090 MiB** of
 weights-plus-overhead exceeds the **entire** card. `q6_K` (**13418 MiB**)
 fails the same way once overhead is counted (~15580 MiB against ~14544
-MiB free). So `q5_K_M` is physically forced, not a policy choice —
+MiB free). So `q5_K_M` is physically forced, not a policy choice:
 exactly the shape of granite's 4096 window.
 
 **Quote VRAM in MiB (or GiB) throughout, never in the registry's decimal
@@ -1896,7 +1896,7 @@ produce identical output and the variance estimate is vacuous.
 `num_predict` is **load-bearing, not a nicety.** Degenerate repetition
 loops are the most characteristic small-model failure mode. Without a
 token cap, a looping 0.5B generation runs until the HTTP timeout and gets
-classified as a *transport* error — so the run would abort on precisely
+classified as a *transport* error, so the run would abort on precisely
 the behavior the phase exists to measure, and the grid would end up
 systematically missing its worst-performing cells. With the cap, runaway
 generation terminates as a **model** result: the truncated output fails
@@ -1909,44 +1909,44 @@ pinned explicitly. Ollama does *not* default it to the model's
 advertised capability: with `OLLAMA_CONTEXT_LENGTH` unset the daemon
 serves qwen2.5-coder at **4096** tokens, not its 32768 maximum
 (confirmed against `/api/ps` after load). Repair prompts carry each
-arm's full initial context — language card, few-shot examples, task
-statement (§50.3) — so the Black Oxide arms' carried context runs
+arm's full initial context (language card, few-shot examples, task
+statement (§50.3)), so the Black Oxide arms' carried context runs
 ~1400–1660 tokens against the Rust arm's ~110–300. A repair prompt also
 carries the rejected program, so the binding quantity is
 context + program + `num_predict`. Measured: for a rejected program
-anywhere in the ~1.6k–7k character band — the realistic range for a
-small model's failing output — the `oxide` and `explicit` arms exceed
+anywhere in the ~1.6k–7k character band (the realistic range for a
+small model's failing output), the `oxide` and `explicit` arms exceed
 4096 and `rust` does not. The carried card is exactly what pushes them
 over. On overflow llama.cpp truncates the prompt **from the front**,
-dropping that card — the only place Black Oxide syntax ever appears — from
+dropping that card (the only place Black Oxide syntax ever appears) from
 those two arms specifically. That is a silent, non-random bias against
 exactly the pair §47 names as the primary comparison, and nothing
 in the artifacts would reveal it: wrong-but-plausible numbers, the worst
 failure mode this project recognises.
 
-8192 clears the true worst case this grid can produce — the largest
+8192 clears the true worst case this grid can produce: the largest
 carried context (~1670 tok) wrapped around a `num_predict`-truncated
-2048-token program, plus 2048 reserved for the fix, ≈5740 tokens — with
+2048-token program, plus 2048 reserved for the fix, ≈5740 tokens, with
 ~30% headroom still free. It is deliberately **not** raised to 32768,
 which would inflate the KV cache for no benefit and risk OOM on the 7B
 rung, §51's memory-pressure case. The pinned value is recorded in
 every manifest as `num_ctx`, kept lexically distinct from
 `model_context_length` (the capability read off `/api/tags`) so the two
 cannot be confused, and `OllamaClient.generate` **refuses** any prompt
-whose estimated tokens plus `num_predict` exceed it — and separately
-forbids the daemon from truncating one that slips past that estimate —
+whose estimated tokens plus `num_predict` exceed it, and separately
+forbids the daemon from truncating one that slips past that estimate,
 rather than letting the daemon truncate silently (§51).
 
 **The window pin is per-family, not universal.** `num_ctx` is
 `min(8192, that model's OWN advertised training context)`, applied
 uniformly across all three arms of one slug (`eval.driver.NUM_CTX`) so
 the pin stays arm-fair *within* a model. Every model in this ladder gets
-8192 except `granite-code:8b`, whose training context is 4096 —
+8192 except `granite-code:8b`, whose training context is 4096:
 llama-server refuses (caps) a slot requesting a window larger than the
 model was actually trained on, so 8192 is physically unsatisfiable for
 that one model, not a policy choice, and rope-scaling past it to force
 parity is explicitly rejected. The pin's PURPOSE from the two paragraphs
-above — no front-truncation, the full card always carried — is preserved
+above (no front-truncation, the full card always carried) is preserved
 per family at whatever window that family can actually serve. It is NOT
 a claim that granite is otherwise on equal footing with the 8192-pinned
 models: a smaller window is a real capability constraint, granite's
@@ -2013,8 +2013,8 @@ per arm and per model. `tokens_in`/`tokens_out`/`ms` are summed across
 the session's attempts.
 
 An optional `context_exhausted: true` field is present when the session
-ended on §45/§51's evidence-gated overflow rule — attempts-so-far
-recorded, no further attempt made — rather than a normal pass or an
+ended on §45/§51's evidence-gated overflow rule (attempts-so-far
+recorded, no further attempt made) rather than a normal pass or an
 attempt-cap exhaustion; absent (not `false`) on every other session.
 
 ## 50. Module contracts
@@ -2045,7 +2045,7 @@ class OllamaClient:
 ```
 
 Protocol-first so a future API-backed client drops in without touching
-the driver. Uses `urllib` from the stdlib — the eval venv stays
+the driver. Uses `urllib` from the stdlib. The eval venv stays
 dependency-free (Python 3.14 has no clean PyTorch story, and none is
 needed for inference through Ollama).
 
@@ -2065,8 +2065,8 @@ Pinned, arm-identical, deliberately **not** syntax-aware:
 1. Normalize line endings to `\n`.
 2. If the text contains a ``` fence, take the content of the **first**
    fenced block, dropping the fence lines and any language tag.
-3. If that fence is never closed — the characteristic shape of a
-   generation cut off at `num_predict` — take everything after the
+3. If that fence is never closed (the characteristic shape of a
+   generation cut off at `num_predict`), take everything after the
    opener. Salvaging it is arm-neutral, and the truncated source then
    fails to compile on its own merits rather than being discarded.
 4. Otherwise use the text with leading/trailing blank lines stripped.
@@ -2114,18 +2114,18 @@ Reply with ONLY the complete corrected program source, no fences, no commentary.
 
 The carried-over lead is therefore the language card (oxide /
 explicit) or the pinned Rust preamble, plus any few-shot examples, plus
-the task statement — exactly what the arm was given on attempt 1.
+the task statement: exactly what the arm was given on attempt 1.
 Reusing the frozen harness rather than reconstructing a lead here is
 what makes the property structural: no arm can drift out of step with
 its own initial prompt. Stripping a *known constant suffix* is
 deterministic and testable, and its absence raises
-`repair.RepairPromptError` — a change to the frozen harness must fail
+`repair.RepairPromptError`. A change to the frozen harness must fail
 loudly rather than silently emit a prompt carrying a stale contract.
 
 *Why the lead is carried.* Every generation is a standalone HTTP call
 with no conversation history, so whatever the repair prompt omits is
-simply gone. The earlier template — program, diagnostics, and the fix
-instruction only — retained this much of each arm's initial context:
+simply gone. The earlier template (program, diagnostics, and the fix
+instruction only) retained this much of each arm's initial context:
 
 | Arm | Initial | Repair | Retained |
 |---|---|---|---|
@@ -2138,7 +2138,7 @@ weights and its preamble is one line; the Black Oxide arms lost 95% of
 theirs, and the language card is the only place Black Oxide syntax ever
 appears. The task statement appeared in **no** repair prompt at all, so
 on a runtime failure the model was told its output was wrong without
-being told what it should have been — it could not repair except by
+being told what it should have been. It could not repair except by
 guessing. That would have made §47's repair-lift secondary metric
 ("whether an arm's diagnostics teach") measure card recall for the
 Black Oxide arms instead of diagnostic quality. §47's primary pass@1 metric
@@ -2166,7 +2166,7 @@ The task's `expected_stdout` is **never** disclosed. Disclosing it would
 let a weak model pass by hard-coding a print of the expected string,
 which would silently corrupt the headline metric. It is not a parameter
 of `build_repair_prompt`, and `harness.build_prompt` does not include it
-either — the carried-over task statement says what the program must
+either: the carried-over task statement says what the program must
 produce without ever quoting the answer.
 
 No transcript accumulation: a repair prompt carries the arm's fixed
@@ -2183,8 +2183,8 @@ every arm at 3-shot. Fail fast, listing everything missing.
 
 Preflight reads `/api/tags` and records each model's `digest`,
 `details.quantization_level`, and `details.context_length` into the
-manifest. The last is recorded as **`model_context_length`** — the
-model's *capability* — and is not to be confused with **`num_ctx`**, the
+manifest. The last is recorded as **`model_context_length`** (the
+model's *capability*) and is not to be confused with **`num_ctx`**, the
 window the run actually used, which is recorded separately from the
 client. Both appear in every manifest. It **asserts that
 `quantization_level` matches the quantization pinned for that slug**
@@ -2194,8 +2194,8 @@ reports `Q5_K_M` where the pin reads `q5_K_M`. This is what actually
 enforces §48's **per-family** quantization pin, rather than trusting
 that the right tag was pulled. It is deliberately not a hard-coded
 `Q8_0`: §48's control is constancy *within* a family, so a universal
-literal would reject `deepseek16b_lite` — a subject §48 itself registers
-— and would assert an invariant §48 no longer has. Every slug on the
+literal would reject `deepseek16b_lite` (a subject §48 itself registers)
+and would assert an invariant §48 no longer has. Every slug on the
 q8_0 ladder still gets exactly the check it always got. (The
 `qwen2.5-coder:1.5b` currently on this machine is Q4_K_M, is pinned at
 `q8_0` like the rest of the ladder, and must therefore still be
@@ -2260,7 +2260,7 @@ comparison, in opposite directions.
 |---|---|---|
 | Ollama down / tag missing at start | infrastructure | preflight abort, before any generation |
 | Transport error or HTTP timeout | infrastructure | 3 retries with backoff, then **abort this `run_id`** (below) |
-| Prompt + `num_predict` exceeds `num_ctx` (`ContextOverflowError`, from either the client's pre-request estimate or its `ServerContextOverflowError` subclass), with **ZERO** attempts submitted this session | infrastructure | **abort this `run_id`**, cause in its manifest — no evidence to lose |
+| Prompt + `num_predict` exceeds `num_ctx` (`ContextOverflowError`, from either the client's pre-request estimate or its `ServerContextOverflowError` subclass), with **ZERO** attempts submitted this session | infrastructure | **abort this `run_id`**, cause in its manifest: no evidence to lose |
 | Same overflow, with **≥1** attempt already submitted this session | **model** | session ends; attempts-so-far recorded; cell marked `context_exhausted` (§45) |
 | Generation hits `num_predict` | **model** | truncated source submitted; real failed attempt; `truncated: true` logged |
 | Empty or malformed generation | **model** | real failure, consumes an attempt |
@@ -2272,7 +2272,7 @@ estimates the prompt at ~4 chars/token and refuses when that estimate plus
 `num_predict` exceeds `num_ctx`. The estimate is deliberately crude: it
 exists to catch a 2x overrun, not to shave a token, and a real tokenizer
 is a dependency the eval venv does not have. Classifying overflow as
-infrastructure is the whole point — a silently front-truncated prompt
+infrastructure is the whole point: a silently front-truncated prompt
 loses the language card from the `oxide` and `explicit` arms only, and
 would be recorded as an ordinary model failure in exactly the two arms
 the primary comparison rests on. Refusing before the request means the
@@ -2283,12 +2283,12 @@ consecutive-abort backstop below still fires if it is systematic.
 volunteers.** llama-server rejects an oversized prompt on its own with a
 400 (`exceed_context_size_error`). Ollama's default is the opposite: it
 accepts the prompt, silently discards the **front** of it, and returns a
-normal 200. Reproduced on :11434 — a 3160-token prompt into a 256-token
+normal 200. Reproduced on :11434, a 3160-token prompt into a 256-token
 window answered with `prompt_eval_count: 130`, the tail canary present
 and the head canary gone. Under that default the crude estimate above is
 the *only* guard on the Ollama path, and any prompt it under-counts
 becomes a plausible answer built on a card-less prompt, recorded as an
-ordinary model failure in exactly the two arms §47 rests on — the same
+ordinary model failure in exactly the two arms §47 rests on: the same
 silent, non-random bias §48 pins `num_ctx` against, arriving through a
 different door and leaving the same absence of evidence.
 
@@ -2297,36 +2297,36 @@ different door and leaving the same absence of evidence.
 and front-truncates anyway (also reproduced on :11434), so the flag would
 read as present in the payload while doing nothing at all. With it set,
 Ollama returns the same `exceed_context_size_error` 400 llama-server
-does — wrapped one level deeper, as a JSON *string* under `error`, which
+does, wrapped one level deeper, as a JSON *string* under `error`, which
 `eval.models._parse_http_error_body` unwraps. Classification then runs
 through one shared `raise_if_context_overflow`, so an identical 400
 cannot be classified two different ways depending on which daemon served
 the run, and the guarantee above holds for the whole harness rather than
 per backend.
 
-**The evidence gate decides session-result vs. abort — not which check
+**The evidence gate decides session-result vs. abort, not which check
 raised the exception.** A repair prompt can grow across attempts and
 overflow either check well after real evidence already exists: the
-client's own estimate on a later attempt, or — since that estimate is
-deliberately crude — the server's real tokenizer via
+client's own estimate on a later attempt, or (since that estimate is
+deliberately crude) the server's real tokenizer via
 `ServerContextOverflowError`, a DISTINCT subclass `_call` raises so the
 failure is never retried (it is deterministic once the server has
 rejected it) and so manifests/logs can tell which check caught it.
 `run_session` gates on `session.attempts`, not on exception type: with
 **≥1** attempt already submitted, EITHER exception is a session result;
 with **zero** attempts submitted, EITHER exception still aborts the run
-exactly as above. Gating on exception type alone — an earlier iteration
-of this rule — fabricated a full grid of zero-attempt "results" whenever
+exactly as above. Gating on exception type alone (an earlier iteration
+of this rule) fabricated a full grid of zero-attempt "results" whenever
 the CLIENT's own check fired on a repair prompt at a small per-family
 window (§48): `granite-code:8b`'s native 4096 hit this in practice,
 mid-session, on attempts that already had real evidence the type-based
 rule discarded. Gating on evidence instead closes that gap while still
 refusing to fabricate a result for a prompt that never had a chance to
-produce one — e.g. a 3-shot condition whose card and shots alone exceed
+produce one, e.g. a 3-shot condition whose card and shots alone exceed
 `num_ctx` on attempt 1 is still a loud, manifest-recorded abort.
 
 **Run-id-scoped abort.** A persistent transport failure aborts only the
-current `run_id` — at most 60 sessions, ~20–30 min — records the cause
+current `run_id` (at most 60 sessions, ~20–30 min) records the cause
 in that run's `manifest.json`, and the driver proceeds to the next run
 id. Resume later redoes the aborted run dir whole. The grid degrades in
 throughput instead of dying overnight, and no partial-state surgery is
@@ -2354,38 +2354,38 @@ remaining run id and leave a grid that looks complete but is not.
 New `tests/test_6a.py`, plus the existing suite staying green (nothing
 in `harness.py` or `src/` is touched).
 
-1. **Extraction** — fenced, fenced-with-language-tag, multiple fences
+1. **Extraction**: fenced, fenced-with-language-tag, multiple fences
    (first wins), unfenced, empty, whitespace-only, CRLF; and
    `contract_compliant` correct in each.
-2. **Repair prompt** — compile-failure shape; runtime-failure shape;
+2. **Repair prompt**: compile-failure shape; runtime-failure shape;
    the arm's full initial prompt (lead, shots, task statement) is
    carried and its output contract dropped; a moved harness tail raises;
-   **asserts `expected_stdout` never appears in any repair prompt** —
+   **asserts `expected_stdout` never appears in any repair prompt**:
    structurally (not a parameter of `build_repair_prompt` nor of
    `harness.build_prompt`) and empirically, over every real corpus task
    x arm x shot count, where neither the whole expected output nor any
    single line of it may appear as a line of the prompt; arm-identical
    attempt-block structure across all three arms; rustc help text
    preserved verbatim.
-3. **Model client** — protocol conformance against a stub; retry-then-
+3. **Model client**: protocol conformance against a stub; retry-then-
    abort on transport error; preflight raises on a missing tag;
    `num_predict` passed through; `done_reason == "length"` surfaced as
    `truncated`; `truncate: false` sent **top-level** and asserted absent
    from `options` (where the daemon ignores it); an
    `exceed_context_size_error` 400 classified as
    `ServerContextOverflowError` without retry, and a non-overflow 400
-   retried with the daemon's own message surfaced — both asserted on
+   retried with the daemon's own message surfaced, both asserted on
    **each** backend against that backend's own error wrapping (§51).
-4. **Failure classification** (§51's governing rule, both directions) —
+4. **Failure classification** (§51's governing rule, both directions):
    a generation truncated at `num_predict` is submitted as a **model**
    failure and does **not** abort; an HTTP timeout **does** abort the
    run id and is **never** written to `cells.jsonl` as a failed attempt.
-5. **Driver** — stub-model end-to-end over a 2-task subset; attempt cap
+5. **Driver**: stub-model end-to-end over a 2-task subset; attempt cap
    respected; resume deletes and redoes a short run dir; raw outputs
    persisted per attempt; run-id abort continues to the next run id;
    three consecutive aborts stop the grid non-zero; health-check waits
    then proceeds when Ollama returns.
-6. **Rollup** — paired-by-task delta computed per §47 on synthetic run
+6. **Rollup**: paired-by-task delta computed per §47 on synthetic run
    dirs; **paired SE** = `SD(per-task differences)/√n`, asserted smaller
    than the unpaired SE on a positively-correlated fixture (this, not a
    point-estimate difference, is what pairing actually buys); the two
@@ -2393,13 +2393,13 @@ in `harness.py` or `src/` is touched).
    only when a task is missing from one arm; partition classification
    correct at the ±5pp boundaries; pooled-binomial CI absent; incomplete
    grid refused without `--partial`.
-7. **Live smoke** — one task, 0.5B. Carries `@pytest.mark.live`, which
+7. **Live smoke**: one task, 0.5B. Carries `@pytest.mark.live`, which
    `pytest.ini` deselects by default (`addopts = -m "not live"`), so a
    full-suite run never burns a real generation; run it with
    `pytest -m live`. It still skips cleanly when the daemon is down or
    the model is not pulled.
 
-# Part XI — Generation Ergonomics (v0.3)
+# Part XI: Generation Ergonomics (v0.3)
 
 ## 53. Receiver-first calls to builtins
 
@@ -2417,7 +2417,7 @@ vec().push(1).push(2)  ==  push(push(vec(), 1), 2)
 
 Restrictions:
 - Only the names in `src.sema.types.BUILTINS`. `p.area()` is not a method
-  call — Black Oxide has no user-defined methods and no callable fields, so it
+  call. Black Oxide has no user-defined methods and no callable fields, so it
   remains a field access followed by a call, i.e. an error.
 - Only the call form. `p.clone` without parentheses stays a field access.
 - The parser mirrors the builtin name set rather than importing sema (which
@@ -2426,7 +2426,7 @@ Restrictions:
 
 **Why this exists.** Measured on the ownership probe (Part X): 82% of failing
 Black Oxide repairs contained `.clone()` method syntax, producing `OX0304 field
-access on non-struct type` — the single largest failure mode. The other Rust
+access on non-struct type`, the single largest failure mode. The other Rust
 idioms appeared **zero** times across 120 failures (`let mut`, `;`, `vec![]`,
 indexing), so the language card successfully taught everything except this.
 Receiver-first calls are near-universal across languages, not specific to
@@ -2436,7 +2436,7 @@ expressiveness gain.
 ## 54. `mut` accepted and ignored on `let`
 
 `let mut x = e` parses identically to `let x = e`. Black Oxide has no mutability
-distinction — every binding is reassignable — so `mut` carries no meaning
+distinction (every binding is reassignable), so `mut` carries no meaning
 and is discarded at the parser.
 
 `mut` is a **contextual** keyword, not a reserved word: it is consumed only
@@ -2448,7 +2448,7 @@ grammar-constrained decoding this was worse than a plain error: GBNF cannot
 reject a token, only steer generation to the nearest valid string, so
 `let mut acc` was silently glued into `let mutacc` and every later use of
 `acc` became `OX0200`. Measured across three model families, that single
-artifact accounted for **44% of OX0200-carrying submissions** — the largest
+artifact accounted for **44% of OX0200-carrying submissions**: the largest
 cause of the largest remaining error class.
 
 Note the general hazard this exposes, which is not specific to `mut`: a
@@ -2461,13 +2461,13 @@ be read with that in mind.
 ## 55. `vec(...)` variadic list literal
 
 `vec(a, b, c)` parses as `push(push(push(vec(), a), b), c)`. This is
-**sugar only**: the parser emits ordinary `Call` nodes — one per synthesized
-`push`, wrapping the original 0-arg `vec()` call — so name resolution, type
+**sugar only**: the parser emits ordinary `Call` nodes: one per synthesized
+`push`, wrapping the original 0-arg `vec()` call, so name resolution, type
 inference, linear checking, and codegen see exactly what they would have
 seen for the hand-written push-chain. No semantics change, and the grammar
 is unamended: calls were already generic (`IDENT "(" args ")"`), so
-`vec(1, 2, 3)` was already admitted syntactically before this section —
-only what the front end does with it is new.
+`vec(1, 2, 3)` was already admitted syntactically before this section.
+Only what the front end does with it is new.
 
 ```
 vec(3, 8, -2)  ==  push(push(push(vec(), 3), 8), -2)
@@ -2484,10 +2484,10 @@ Restrictions:
   inside `_postfix`'s call-building branch, keyed on the parsed callee being
   a bare `Var("vec")`. The receiver-form `x.vec(...)` (§53; `vec` is in the
   parser's builtin-method name set, which is hand-maintained in parallel
-  with `src.sema.types.BUILTINS` — `tests/test_parser.py` asserts the two
+  with `src.sema.types.BUILTINS`: `tests/test_parser.py` asserts the two
   stay in sync) builds its flat `vec(x, ...)` Call directly inside §53's
   own method-desugar path and is never re-entered by this section's
-  rewrite — the two Part XI rewrites are parse-time rewrites of different
+  rewrite: the two Part XI rewrites are parse-time rewrites of different
   surface spellings and deliberately do not compose. `x.vec(...)`
   therefore keeps its pre-§55 `OX0303` arity failure.
 - Synthesized nodes carry the *original* `vec(...)` call's span (mirroring
@@ -2500,13 +2500,13 @@ Restrictions:
 
 **Why this exists.** In the v0.3 generation-friction taxonomy (dossier 1),
 `vec(...)` called with arguments is the dominant `OX0303` sub-class in ALL
-THREE model families under constrained decoding — qwen 69/91, codegemma
-59/69, granite 20/27 of first-attempt `OX0303` — with the call's arity
+THREE model families under constrained decoding (qwen 69/91, codegemma
+59/69, granite 20/27 of first-attempt `OX0303`), with the call's arity
 always matching the task's list length. The intent is unambiguous: models
 treat `vec(...)` as a list literal, and the language's 0-arity constructor
 was the friction, not the model. Each element push is a linear
 consume-and-return exactly like a hand-written push-chain, so the sugar
-composes with linearity for free — the same design-fit reasoning §53
+composes with linearity for free: the same design-fit reasoning §53
 already established for receiver-first calls.
 
 ## 56. Field assignment (`s.f = e`)
@@ -2523,7 +2523,7 @@ compound_assign_stmt := IDENT ("+=" | "-=" | "*=") expr TERM   # §59.2
 ```
 
 `compound_assign_stmt` was added after this section shipped, by v0.4
-wave 2 (§59.2) — noted here in place, non-silently, so this section
+wave 2 (§59.2), noted here in place, non-silently, so this section
 stays a complete snapshot of the current statement grammar; its
 normative definition (desugar rule, identifier-only scope, Str
 behavior) lives in §59.2, not here.
@@ -2533,13 +2533,13 @@ The base is a bare name, not an arbitrary expression: `f().x = e` and
 decision this document has not made.~~ **Amended 2026-08-29 (§60.1):**
 the decision is made, and it is that index assignment arrives as a
 *function*, `set(v, i, x) -> Vec<T>`, not as bracket-assignment syntax.
-The sentence above still holds for the bracket form — `v[0] = e` remains
-`OX0101` — but the language no longer lacks the capability.
+The sentence above still holds for the bracket form (`v[0] = e` remains
+`OX0101`), but the language no longer lacks the capability.
 
 **Parsing.** At statement start, an `IDENT` followed by `DOT` begins a
 scan of `(DOT IDENT)+`; the statement is a field assignment only if that
 run is followed by `EQ`. `EQEQ` is a distinct token kind, so `p.x == y`
-remains a comparison — the same guarantee §26's `IDENT EQ` lookahead
+remains a comparison: the same guarantee §26's `IDENT EQ` lookahead
 rests on. A failed scan restores the cursor and the statement is parsed
 as an expression statement. The scan does not see through a `NEWLINE`,
 for the reason §26 gives: an identifier at end of line is an expression
@@ -2559,7 +2559,7 @@ FieldAssign  (field-assign PATH EXPR)   # PATH = BASE "." F1 ["." F2 …]
 **Resolution.** The base must be an existing local or parameter;
 otherwise `OX0200`, with the same wording §28 uses for assignment. The
 base's `var_id` is recorded in `assign_of` under the `FieldAssign` node's
-own id — the same map whole-variable assignment uses, so §28's rule "a
+own id: the same map whole-variable assignment uses, so §28's rule "a
 param that is ever assigned gets mode `own`" applies to a field-assigned
 param unchanged. That is a **soundness requirement**, not a convenience:
 a read-mode non-copy param emits `p: &Point`, and `p.x = 5` through a
@@ -2577,10 +2577,10 @@ the right-hand side (`OX0300` on mismatch). The statement itself is
 - The base is a **READ** use and emits **no `ReInit`**. §36 already fixes
   `p.x` as a read of the base; writing into an owned struct is that
   rule's completion. A field write into a moved base is therefore
-  `OX0400`, and it does **not** re-establish ownership — unlike `p = e`,
+  `OX0400`, and it does **not** re-establish ownership, unlike `p = e`,
   which does.
 - The overwritten field value is **consumed implicitly, with no
-  `DropPoint`** — §28's rule for the old value of an assigned variable.
+  `DropPoint`**: §28's rule for the old value of an assigned variable.
   Rust's assignment drops the old field; synthesizing a drop would
   double-free.
 
@@ -2594,7 +2594,7 @@ write is local and discarded at iteration end.
 **Codegen.** `base.f1.f2 = value;`, built from the recorded base rename
 and the path. It is **not** routed through the field-access emitter: that
 appends `.clone()` to a non-copy field value (§36), and a place is not a
-value — cloning the target would write into a temporary and lose the
+value. Cloning the target would write into a temporary and lose the
 assignment.
 
 ```
@@ -2612,7 +2612,7 @@ form. Under constrained decoding the want does not fail loudly: `=` is
 inadmissible after a field path, so the decoder settles on `==` and emits
 a **discarded comparison**. Measured over the committed G0 first attempts
 (oxide arm), that signature appears 18 times in 9 of 600 constrained
-programs and **exactly 0 of 600 unconstrained** — the §54 lesson in its
+programs and **exactly 0 of 600 unconstrained**: the §54 lesson in its
 third demonstrated instance, with a clean control.
 
 **18 is a LOWER BOUND, not an exact count.** The signature is counted in
@@ -2620,8 +2620,8 @@ statement position only. Tail conversion is syntactic and unconditional,
 and an un-braced match-arm body is a bare expression rather than a block,
 so a deformed assignment falling last in either position is not an
 `ExprStmt` and is never counted. The tail column is therefore ambiguous
-in **both** directions — a tail `f.x == e` may be a legitimate `Bool`
-return, or a deformation that happened to land last — so pooling the two
+in **both** directions (a tail `f.x == e` may be a legitimate `Bool`
+return, or a deformation that happened to land last), so pooling the two
 columns would overcount and the statement count alone undercounts. The
 counting tool and its pinned definition are `eval/deformation.py`.
 
@@ -2629,7 +2629,7 @@ The demand is real but small (~1.5%), so no aggregate pass-rate change is
 predicted from this section alone; see
 `docs/superpowers/specs/2026-08-09-v03-g2-field-assignment-design.md`.
 
-## 57. `to_str` — a second name for `int_to_str`
+## 57. `to_str`: a second name for `int_to_str`
 
 `to_str: fn(Int) -> Str` (read). Identical in signature, semantics, modes
 and emitted Rust to `int_to_str` (§29), which is unchanged and remains the
@@ -2655,7 +2655,7 @@ fn to_str(x: i64) -> String {
 ```
 
 The prelude is emitted whole and unconditionally, so no per-builtin
-machinery changes. `BUILTIN_REF["to_str"] = (False,)` — it takes its
+machinery changes. `BUILTIN_REF["to_str"] = (False,)`: it takes its
 argument by value, exactly as `int_to_str` does.
 
 **`to_str` is now a reserved top-level name.** Like every other entry in
@@ -2672,7 +2672,7 @@ both pre-change corpora, `g0c` and `g1c`), and in 5 attempts across 2
 sessions counting all four repair attempts.
 
 > **Superseded by v0.4 shadowing (see §58.2).** A user program that
-> writes `fn to_str(...)` no longer hits `OX0203` — it now shadows the
+> writes `fn to_str(...)` no longer hits `OX0203`. It now shadows the
 > builtin program-wide (free calls and recursion resolve to the user
 > function; the builtin's receiver-first method form becomes
 > unreachable in that program). Shadowing was motivated independently
@@ -2680,7 +2680,7 @@ sessions counting all four repair attempts.
 > own hand-rolled helper, not by this paragraph's `to_str` cost), but
 > generalizes to every builtin including this one. The paragraph above
 > is retained unedited as the historical record of why the alias was
-> added and the OX0203-clash cost it carried before v0.4 — not a
+> added and the OX0203-clash cost it carried before v0.4, not a
 > currently-accurate description of `fn to_str`'s behavior today.
 
 **Why this exists.** In the v0.3 taxonomy (dossier 3) models were said to
@@ -2697,7 +2697,7 @@ here because none of them is reconstructable from the figure alone.
 `x.to_str()`. The **85.7%** is `36/42`: the numerator is the 21 plain
 calls **together with** the 15 definitions, and the denominator is all 46
 occurrences less the 4 string-literal receivers. The definitions are
-therefore *inside* that 85.7% and must not be added on top of it — the
+therefore *inside* that 85.7% and must not be added on top of it: the
 share of `to_str` sites that are plain calls and nothing else is
 `21/46` = **45.7%**. It is the definitions that carry the argument in any
 case: the model writes `fn to_str` **itself 15 times across 6 programs**,
@@ -2705,18 +2705,18 @@ which is a language telling you it lacks a name its users want.
 
 The other two names in that dossier were dropped on the same evidence and
 are deliberately NOT added. `to_string` is **63.9%** string-literal
-receiver (`"lit".to_string()`) — `46/72`, over receiver occurrences only,
+receiver (`"lit".to_string()`): `46/72`, over receiver occurrences only,
 with its 4 plain calls and 5 definitions outside the denominator
-entirely — which is Rust's `&str -> String` and an identity function here
+entirely, which is Rust's `&str -> String` and an identity function here
 because `Str` is already owned. `to_int` is **69.2%** *numeric-literal*
-receiver inside malformed `for` headers (`for i in 2.to_int().range(x)`)
-— `36/52`, again over receiver occurrences only, and after dropping the
+receiver inside malformed `for` headers (`for i in 2.to_int().range(x)`):
+`36/52`, again over receiver occurrences only, and after dropping the
 single degenerate 291-occurrence program that raw occurrence counting
 would otherwise let dominate. The 52 is 343 raw receiver occurrences less
 the 291 contributed by that one program (`g0c-qwen7b-0shot-s4` t01), and
 its classification sums exactly: **32 integer-literal + 4 float-literal +
 12 variable/field + 4 call-result = 52**. The derived variable-receiver
-slice — the part a real `to_int(Str) -> Option<Int>` could have served —
+slice (the part a real `to_int(Str) -> Option<Int>` could have served)
 is `12/52` = **23.1%**, and `parse_int` already covers it.
 
 > **Superseded figure.** This share was originally published as **70.6%
@@ -2725,15 +2725,15 @@ is `12/52` = **23.1%**, and `parse_int` already covers it.
 > corpus gives 52, as the classification above shows. The numerator was
 > also described as *integer*-literal, but the 36 is 32 integer-literal
 > receivers **plus** 4 float-literal ones (`0.0.to_int()`,
-> `1.0.to_int()`) — *numeric*-literal is the label the arithmetic
+> `1.0.to_int()`): *numeric*-literal is the label the arithmetic
 > supports; strictly integer-literal would be 32. Neither correction
 > changes the decision: `to_int` was not added, and would not be on
 > either set of figures.
 
 Either way `to_int` is the deferred `2.to(n)` range demand wearing a
-conversion's name, not parsing — and `parse_int` already covers parsing.
+conversion's name, not parsing, and `parse_int` already covers parsing.
 
-## 58. v0.4 wave 1 — 2026-08-28 amendment
+## 58. v0.4 wave 1: 2026-08-28 amendment
 
 Normative. Ships per
 `docs/superpowers/specs/2026-08-28-v04-efficiency-wave1-design.md` (design
@@ -2752,17 +2752,17 @@ All six take receiver-first method syntax per §53 (`v.sort()` means
 | `min(v)` | `Vec<T> -> Option<T>` (generic, `T: Ord + Clone`; empty → `None`) | `("read",)` | `v.iter().min().cloned()` |
 | `max(v)` | `Vec<T> -> Option<T>` (generic, `T: Ord + Clone`; empty → `None`) | `("read",)` | `v.iter().max().cloned()` |
 | `sum(v)` | `Vec<Int> -> Int` (NOT generic; empty → `0`) | `("read",)` | `v.iter().sum()` |
-| `contains(v, x)` | `(Vec<T>, T) -> Bool` (generic, `T: PartialEq`) | `("read","read")` | `v.contains(x)` — prelude sig `contains<T: PartialEq>(v: &Vec<T>, x: &T)` |
+| `contains(v, x)` | `(Vec<T>, T) -> Bool` (generic, `T: PartialEq`) | `("read","read")` | `v.contains(x)`: prelude sig `contains<T: PartialEq>(v: &Vec<T>, x: &T)` |
 | `unwrap_or(o, d)` | `(Option<T>, T) -> T` (generic) | `("own","own")` | `match o { Some(x) => x, None => d }` |
 
 `BUILTIN_REF` (`src/codegen/support.py`): `sort (False,)`, `min (True,)`,
 `max (True,)`, `sum (True,)`, `contains (True, True)`, `unwrap_or
-(False, False)`. `min`/`max` use `.cloned()`, not `.copied()` — matching
+(False, False)`. `min`/`max` use `.cloned()`, not `.copied()`: matching
 `get`'s `T: Clone` convention rather than requiring `T: Copy` (which
 would reject e.g. a future `Vec<Str>`). `unwrap_or`'s `o` mode ("own")
 mirrors the language's two existing MOVE-use precedents for reaching
-inside an `Option` — `match`'s scrutinee (§28) and `?`'s operand (§36)
-— not `get`'s "read" mode, which governs a *Vec* input producing an
+inside an `Option`: `match`'s scrutinee (§28) and `?`'s operand (§36),
+not `get`'s "read" mode, which governs a *Vec* input producing an
 `Option`, not an already-existing `Option`'s payload. `d`'s "own" mode
 mirrors `push`'s inserted-value convention: `d` may become the returned
 value verbatim on the `None` path.
@@ -2773,28 +2773,28 @@ Commits: `c68ad27` (sort/min/max/sum/contains), `c37d268` (unwrap_or).
 
 A top-level `fn` whose name matches a builtin now **shadows** it for the
 whole program: the user definition wins everywhere (free calls,
-recursion), and the builtin — including its receiver-first method form
-— becomes entirely unreachable in that program. A shadowed name used as
+recursion), and the builtin (including its receiver-first method form)
+becomes entirely unreachable in that program. A shadowed name used as
 a method (e.g. `v.contains(x)` where `contains` is user-defined) is
 refused as an unknown identifier (`OX0200`), not silently retargeted; no
 new diagnostic code was added. Struct/enum names and `BUILTIN_VARIANTS`
-(`Some`/`None`/`Ok`/`Err`) are **not** covered — they still hard-clash
+(`Some`/`None`/`Ok`/`Err`) are **not** covered. They still hard-clash
 with a builtin exactly as before (`OX0203`); the rule is scoped to `fn`
 only. An earlier *definition* of the same name still hard-clashes too
-(`OX0203`) — shadowing permits exactly one builtin-clashing `fn`, not
+(`OX0203`): shadowing permits exactly one builtin-clashing `fn`, not
 duplicate suppression.
 
 Four cooperating seams, not one: the naming collision itself
 (`src/sema/resolve.py::_declare_name`, `allow_builtin_shadow`); free-call
-precedence (`src/sema/infer.py::_call`, already correct — `fn_sigs` was
+precedence (`src/sema/infer.py::_call`, already correct: `fn_sigs` was
 already checked before `BUILTINS`); method-form refusal (a new
 `ast.Call.via_method_sugar` marker plus `resolve.py::_callee`, since
 `recv.name(args)` desugars to a plain `Call` node structurally identical
-to a hand-written free call — §53); and codegen non-collision
+to a hand-written free call: §53); and codegen non-collision
 (`src/codegen/support.py`'s prelude restructured into `prelude_for(shadowed)`,
 omitting a builtin's prelude copy when a user `fn` of the same name
 exists, since two same-named free `fn`s in one Rust module is `rustc`
-error E0428 — plus a `BUILTIN_REF` gate in `rust.py::_ref_required` so a
+error E0428, plus a `BUILTIN_REF` gate in `rust.py::_ref_required` so a
 shadowing fn's own read/own modes govern its call sites' ref-form,
 not the builtin's fixed table).
 
@@ -2807,7 +2807,7 @@ builtin above; §54's admit-what-they-write law. Commit: `6e52a73`.
 `vec(...)` sugar synthesizes `push` (and, for the empty case, `vec`)
 calls *by name* at parse time. A user program that defines `fn push`
 therefore has every `vec(...)` literal's desugared push-chain resolve to
-that user function instead of the builtin — typically surfacing as a
+that user function instead of the builtin, typically surfacing as a
 type error at the first mismatched call, i.e. fail-closed, not a silent
 miscompile. A user `fn vec` with arity greater than 0 shadows the
 0-arg literal form the same way (the literal itself, `vec()`, still
@@ -2816,7 +2816,7 @@ rule above). Measured demand for either name is near-zero in the
 census corpus. This is recorded as a known interaction between the two
 wave-1 features, not fixed.
 
-This supersedes, in place — old text struck through, not deleted — at
+This supersedes, in place (old text struck through, not deleted), at
 three sites: §16's `OX0203` table row ("duplicate top-level name (incl.
 clash with a builtin)"), §20 item 10 ("fn named `print` OX0203"), and
 §57's "`to_str` is now a reserved top-level name" paragraph.
@@ -2826,15 +2826,15 @@ clash with a builtin)"), §20 item 10 ("fn named `print` OX0203"), and
 Measured by `eval/demand_census.py` over the wave-0 corpus (4,800 raw
 replies + 80 reference solutions + 582 amplified programs), deferred to
 wave 2 with counts recorded per the gate ruling: dotdot ranges (`a..b`
-syntax, 292 — a 1.5B-only dialect quirk, and superseded as the range
-*spelling* by the builtin `range(a, b)` below regardless); `if let` (35
-— grammar-sized work, sub-threshold against `contains`'s 44); index
-assignment (bracket-form `v[i] = x`, 28; `.set` method-form, 0 — zero
-measured model demand for the method spelling); strings vocabulary (4 —
+syntax, 292: a 1.5B-only dialect quirk, and superseded as the range
+*spelling* by the builtin `range(a, b)` below regardless); `if let` (35:
+grammar-sized work, sub-threshold against `contains`'s 44); index
+assignment (bracket-form `v[i] = x`, 28; `.set` method-form, 0: zero
+measured model demand for the method spelling); strings vocabulary (4:
 wave 2 per the design spec's out-of-scope list).
 
 `range(a, b) -> Vec<Int>` (half-open `[a, b)`, empty when `a >= b`) is
-**not new** — it shipped as a working v0.2 builtin since the
+**not new**: it shipped as a working v0.2 builtin since the
 repository's first commit and is already on the card (line 79). The
 census measured call-spelling *presence* across the
 corpus, not *rejection*: `range_call` (773 occurrences) simply outranked
@@ -2846,10 +2846,10 @@ the pre-existing construct with tests; no `src/` change was required.
 
 §0 item 1 froze `LANGUAGE_CARD.md`/`LANGUAGE_CARD_EXPLICIT.md`'s exact
 strings against retokenization until "the fine-tune track (§32.4), where
-the corpus is regenerated and comparability resets anyway" — the
+the corpus is regenerated and comparability resets anyway": the
 occasion §0 itself named in advance. Wave 1 regenerates the training
 corpus (re-amplification with card-v0.4, per the design spec's dynamic
-loop) — that is this occasion. The freeze lifts here, non-silently:
+loop). That is this occasion. The freeze lifts here, non-silently:
 both cards gained the six §58.1 builtins and one shadowing sentence
 (§58.2), in each card's own voice.
 
@@ -2866,7 +2866,7 @@ the same commit, non-silently (988 exceeded the old pin); the 10%
 cross-card tolerance (`WORD_COUNT_TOLERANCE`) is unchanged and still
 holds (94-word gap against a 98.8-word allowance at core=988).
 
-## 59. v0.4 wave 2 — 2026-08-28 amendment
+## 59. v0.4 wave 2: 2026-08-28 amendment
 
 Normative. Ships per
 `docs/superpowers/specs/2026-08-28-v04-efficiency-wave2-design.md` (design
@@ -2885,9 +2885,9 @@ Takes receiver-first method syntax per §53 (`v.count(x)` means
 
 | builtin | signature | modes | Rust transpile |
 |---|---|---|---|
-| `count(v, x)` | `(Vec<T>, T) -> Int` (generic, `T: PartialEq`) | `("read","read")` | `v.iter().filter(\|e\| *e == x).count() as i64` — prelude sig `count<T: PartialEq>(v: &Vec<T>, x: &T) -> i64` |
+| `count(v, x)` | `(Vec<T>, T) -> Int` (generic, `T: PartialEq`) | `("read","read")` | `v.iter().filter(\|e\| *e == x).count() as i64`: prelude sig `count<T: PartialEq>(v: &Vec<T>, x: &T) -> i64` |
 
-`BUILTIN_REF` (`src/codegen/support.py`): `count (True, True)` — mirrors
+`BUILTIN_REF` (`src/codegen/support.py`): `count (True, True)`, mirrors
 `contains` exactly (same generic-`T` shape, same reading modes, same
 rationale: counting, like equality comparison, never consumes its
 operands). The `as i64` cast mirrors `len`/`str_len`'s existing
@@ -2895,11 +2895,11 @@ usize-to-`Int` cast idiom. The prelude's exact deref shape (`*e == x`,
 not the illustrative `**e == x`) was verified against `rustc` directly:
 `v.iter()` on `&Vec<T>` yields `&T`, so the filter closure's item is
 `&&T`, and matching `x`'s ref-form (`&T`) requires exactly one deref to
-line up via the stdlib's `&A: PartialEq<&B>` blanket impl — `**e == x`
+line up via the stdlib's `&A: PartialEq<&B>` blanket impl: `**e == x`
 would compare `T` against `&T`, which does not typecheck generically.
 
 Grounds: the census v2 vectors-residual slate's `occurrence_count`
-hand-rolled pattern (11 reference-corpus refs, 12 amplified) — `count`'s
+hand-rolled pattern (11 reference-corpus refs, 12 amplified): `count`'s
 sibling relationship to `contains` (a filtered count vs. a membership
 test) was itself part of the original wave-1 `contains` demand signal
 (§58.3's superseded paragraph references the same `eval/solutions/t14.ox`
@@ -2909,20 +2909,20 @@ corpus). Commit: `7c953681`.
 
 Statement-level parser sugar only: `x += e` / `x -= e` / `x *= e`
 desugars **at parse time** to the existing `Assign` node wrapping a
-synthesized `BinOp` — exactly the same tree a hand-written `x = x + e`
+synthesized `BinOp`: exactly the same tree a hand-written `x = x + e`
 (etc.) would produce. No new AST node, no sema changes, no codegen
 changes: every later phase (resolve/infer/modes/linear/codegen) sees the
 hand-written twin's tree byte-for-byte, so diagnostics, Rust output, and
 linearity treatment of `x` and of `e`'s operands are all inherited, not
 reimplemented.
 
-**Lexer (amends §3.6).** Three new two-char tokens — `PLUSEQ` (`+=`),
-`MINUSEQ` (`-=`), `STAREQ` (`*=`) — lexed via the same maximal-munch
+**Lexer (amends §3.6).** Three new two-char tokens: `PLUSEQ` (`+=`),
+`MINUSEQ` (`-=`), `STAREQ` (`*=`), lexed via the same maximal-munch
 `_TWO_CHAR_OPERATORS` table as `EQEQ`/`NEQ`/`LEQ`/`GEQ`/`ANDAND`/`OROR`/
 `PATH_SEP`, checked before the one-char table exactly like every other
 two-char operator, so `+=` always wins over `+` immediately followed by
 `=` (and `a + = 1`, with a space between them, still lexes as separate
-`PLUS`/`EQ` tokens — maximal munch is adjacency-based, not
+`PLUS`/`EQ` tokens: maximal munch is adjacency-based, not
 whitespace-based).
 
 **Grammar (amends §56).** New alternative and production, stated in full
@@ -2939,23 +2939,23 @@ reads the target with the assignment statement's own span.
 
 **Scope: identifier targets only, this wave.** Field and index targets
 are out of scope (deferred; would need the §56 `FieldAssign` path, or an
-indexing decision this document still has not made — see §56's own "awaits
+indexing decision this document still has not made: see §56's own "awaits
 an indexing decision" note). Neither needs special-casing to stay out:
 `p.x += 1`'s lookahead after `p` is `DOT`, not a compound-assign kind, so
-the field-assign scan (§56) claims it first and — finding no `EQ` at the
-end of the `(DOT IDENT)+` run — restores the cursor and falls through to
+the field-assign scan (§56) claims it first and, finding no `EQ` at the
+end of the `(DOT IDENT)+` run, restores the cursor and falls through to
 `_expr_stmt`, whose `_expect_term` reports the same `OX0101` "expected
 end of statement" a malformed plain-assign target already gets.
 
-**Str behavior — `OX0305`, same as the hand-written twin.** `+` is
+**Str behavior: `OX0305`, same as the hand-written twin.** `+` is
 defined only for `Int`/`Float` (`src/sema/infer.py`'s `_NUMERIC_NAMES`,
 checked post-solve at `OX0305`, §7's error table). Oxide spells string
 concatenation `concat(a, b)`, not `+`. Because the desugar is purely
 syntactic, `s += "x"` becomes the equally-invalid `s = s + "x"` and
-reports **exactly** `OX0305` — the same code (and the same diagnostic
+reports **exactly** `OX0305`: the same code (and the same diagnostic
 text) the hand-written form already produces, byte-for-byte, verified
 directly (`tests/test_v04_wave2.py::test_plus_eq_on_str_reports_the_same_diagnostic_as_the_hand_written_plus`).
-No bespoke "no `+=` for `Str`" diagnostic exists or was needed — this
+No bespoke "no `+=` for `Str`" diagnostic exists or was needed. This
 is the general shape of the whole feature: no new diagnostic path,
 because the sugar has no semantics of its own that the hand-written
 twin didn't already have.
@@ -2964,63 +2964,63 @@ Commit: `eb7e0099`.
 
 ### 59.3 Census-gate v2 ruling (slate of 2 shipped; five deferrals recorded with counts)
 
-**Shipped:** compound assignment (§59.2) and `count(v, x)` (§59.1) — a
+**Shipped:** compound assignment (§59.2) and `count(v, x)` (§59.1): a
 slate of 2 against the design spec's cap of 8.
 
 **Deferred, with counts:**
-- **`if let Some(x) = e { }`** — amplified presence 68, below the design
+- **`if let Some(x) = e { }`**: amplified presence 68, below the design
   spec's pre-registered ≥ 89 bar (demand had risen 35 → 89 under card
   v0.4 per §58.3; the bar was followed as written despite the near-miss,
   not lowered to fit). Re-gate at wave 3.
-- **Bracket index assignment (`v[i] = x`)** — 0 rejection-crossed
+- **Bracket index assignment (`v[i] = x`)**: 0 rejection-crossed
   campaign presence, despite 18/18 mechanical presence in the amp pool;
   this is exactly the case the census v2 rejection-cross discipline
-  (§59 intro; Task 1's instrument) exists to catch — amp-only presence
+  (§59 intro; Task 1's instrument) exists to catch: amp-only presence
   without a campaign-side rejection signal did not clear the gate.
   **Superseded 2026-08-29 (§60.1, §60.3).** This deferral was wrong, and
   wrong in an instructive way: the capability shipped one wave later as
   `set(v, i, x)` once a *cost* census existed to see it. Demand was not
-  the relevant evidence — the absence of index assignment was silently
+  the relevant evidence: the absence of index assignment was silently
   the largest single token gap in the corpus. The reasoning above is
   left standing as published, because the reasoning is exactly what
   §60.3 indicts.
-- **`remove_at(v, i)`** — the `removal_rebuild` hand-rolled pattern, 2
+- **`remove_at(v, i)`**: the `removal_rebuild` hand-rolled pattern, 2
   reference-corpus refs, 0 amplified (the amp pool's own `n043`/`n050`
   programs use a different strategy, Rust's `sort_by`/index-swap, not a
   pattern-detection miss). Flagged as under-sampled, lower-confidence
   than `count`'s grounding signal.
 - **Strings vocabulary** (`split`, `join`, `char_at`, `substr`,
-  `str_contains`, etc.) — the `string_build` hand-rolled pattern reads
+  `str_contains`, etc.): the `string_build` hand-rolled pattern reads
   1 reference / 1 amplified. The strings residual is judged **not
   hand-rolled-pattern-shaped** the way `occurrence_count`/`sum_scan` are
-  for vectors — deferred with a named wave-3 instrument change instead
+  for vectors: deferred with a named wave-3 instrument change instead
   of another structural-pattern regex: pairwise token-diff attribution
   over the 10 strings reference pairs. Task 5 (strings builtins) is
   SKIPPED this wave as a direct consequence.
-- **`minmax_scan`** (hand-rolled min/max scan loops) — 0/0 in both the
+- **`minmax_scan`** (hand-rolled min/max scan loops): 0/0 in both the
   reference and amplified pools. Recorded explicitly as an
   **absence-of-demand finding, not an instrument gap**: wave-1's `min`/
   `max` builtins (§58.1) already absorbed this demand, so nothing in the
   current corpus hand-rolls the scan anymore. This is categorically
   different from the four deferrals above (under-bar or under-sampled
-  *presence*) — here there is nothing left to be present.
+  *presence*): here there is nothing left to be present.
 - (`first(v)`/`last(v) -> Option<T>`, named as a possible slate member in
   the design spec's provisional list, carried no measured signal at all
   and was cut alongside `remove_at` at the same gate.)
 
-**The 100%-rejection headline — the shipping rationale for `+=`.** In
+**The 100%-rejection headline: the shipping rationale for `+=`.** In
 `base-ox-7` (v04-campaign, all 10 seeds, first attempts only), the
 `compound_assign` family's `plus_eq` spelling: **64 present, 64
-rejected** — every single first-attempt reply that reaches for `+=`
+rejected**: every single first-attempt reply that reaches for `+=`
 fails to compile, because Oxide has never had it before this section.
-100% mechanical rejection at presence — the cleanest measured demand
+100% mechanical rejection at presence: the cleanest measured demand
 recorded in this project's census history to date. Contrast `base-rs-7`
 on the identical spelling: 71 present, 0 rejected (Rust has `+=`
-natively) — a validity check on the instrument itself, not just a
+natively): a validity check on the instrument itself, not just a
 number to report. Amp pool (all 6 arms): 660 present, 308
 rejection-crossed. The 64/64 figure was verified three independent
-ways — the census module, a `grep`-based recount, and a from-scratch
-Python join against `cells.jsonl`'s `first_compiled` — none sharing code
+ways: the census module, a `grep`-based recount, and a from-scratch
+Python join against `cells.jsonl`'s `first_compiled`: none sharing code
 with either of the others (task-1-report.md's "Acceptance pin" section).
 
 **Target amendment** (slate-dependent, pre-read via the design spec's own
@@ -3039,7 +3039,7 @@ real capability gap): the tuned dynamic read for wave 2 runs **only**
 once the wave-2 matched corpus reaches **≥ 15,000 supervised tokens per
 arm** (wave-0 scale). Under-scale, the dynamic read is postponed to a
 pooled later run rather than read against the floor at mismatched scale
-again — never repeating the G1 mistake. Amplification plan: pool the
+again, never repeating the G1 mistake. Amplification plan: pool the
 already-committed v04-amp verified programs with a fresh
 card-v0.4.1 amplification at 3 sizes × 20 seeds, raising seeds further if
 the pool still falls short. This is a pre-registered gate condition, not
@@ -3050,7 +3050,7 @@ per-arm token counts and the gate's pass/fail against this threshold.
 ### 59.5 Card update (continues §58.4's freeze-lift record)
 
 Both cards gained one `count` builtin line (Builtins block, placed
-immediately after `contains` — its census-sibling, §59.1) and one
+immediately after `contains`: its census-sibling, §59.1) and one
 compound-assignment sentence (Syntax essentials' statements bullet,
 §59.2), in each card's own voice.
 
@@ -3070,7 +3070,7 @@ holds (97-word gap against a 105.9-word allowance at core=1059).
 ### 59.6 Stale-text sweep
 
 Two normative sites predated compound assignment's lexer/grammar surface
-and are amended in place here — old text kept visible (struck through or
+and are amended in place here: old text kept visible (struck through or
 noted superseded, never deleted), per the same convention §58.2 used for
 the three OX0203 sites:
 
@@ -3085,12 +3085,12 @@ the three OX0203 sites:
 No other normative claim of the shape "Oxide has no augmented/compound
 assignment" was found by grepping for `+=`, `compound.assign`, and
 `augmented` across `SPEC.md` and
-`docs/superpowers/specs/2026-08-09-v03-taxonomy.md` — neither file
+`docs/superpowers/specs/2026-08-09-v03-taxonomy.md`: neither file
 returns a pre-existing hit, so no third site needed amendment. The
 census v2 `REPORT.md`'s `compound_assign` rows
 (`eval/results/v04-census2/REPORT.md`) need **no** erratum: they measured
 the pre-shipping *absence* of `+=` correctly, over the wave-1-era corpus,
-before this section's construct existed — the same "measured then, true
+before this section's construct existed: the same "measured then, true
 then" reading §58.2 gives the superseded `to_str` paragraph in §57.
 
 ### 59.7 Dynamic-estimand defect and its correction (recorded 2026-08-29)
@@ -3104,7 +3104,7 @@ correction is normative rather than a report footnote.
 arm's mean is taken over *that arm's own* green sessions. Those sets are
 not the same set, and they change size and difficulty whenever pass@1
 moves. A tuned-arm pass@1 improvement therefore *raises* the arm's mean
-by admitting harder tasks — the number moves for a reason that has
+by admitting harder tasks: the number moves for a reason that has
 nothing to do with how many tokens the language costs. This is the
 project's standing bug class: a value that looks like a measurement of
 the subject but is partly a measurement of the instrument's inputs.
@@ -3119,7 +3119,7 @@ published values are left visible.
 **The correction (binding on wave 3 and after).** The primary dynamic
 endpoint is the **composition-controlled paired ratio**:
 
-1. Pair campaign cells by `(seed, task)` — never by position.
+1. Pair campaign cells by `(seed, task)`: never by position.
 2. Keep only pairs where *both* arms reached green.
 3. When comparing across waves, restrict to the set of pairs green in
    *every* wave being compared, and report that set's size and task
@@ -3138,12 +3138,12 @@ is almost entirely first-attempt generation length. A future wave that
 sees the repair loop start recovering sessions must re-check whether the
 two constructions have diverged.
 
-## 60. v0.4 wave-3 — the cost census and the vectors gap
+## 60. v0.4 wave-3: the cost census and the vectors gap
 
 ### 60.1 New builtins: `swap`, `reverse`, `set`
 
 Three Vec operations, all following `sort`'s owned-in/owned-out
-convention — each consumes the vector and returns it, so the caller
+convention: each consumes the vector and returns it, so the caller
 writes `v = swap(v, 0, last)`:
 
 ```
@@ -3155,11 +3155,11 @@ set(v: Vec<T>, i: Int, x: T) -> Vec<T>        # replace one element
 Linearity modes, and why each is what it is:
 
 - The **vector** slot is `own` in all three. They wrap Rust's in-place
-  `Vec` methods, so the vector is genuinely consumed and handed back —
+  `Vec` methods, so the vector is genuinely consumed and handed back:
   the same reason `sort`'s slot is `own`, and the reason a use of the
   old binding after the call reports `OX0400`.
 - The **index** slots are `read`. An index is inspected, never
-  consumed — matching `get` and `range`, whose `Int` slots read for the
+  consumed: matching `get` and `range`, whose `Int` slots read for the
   identical reason.
 - `set`'s **value** slot is `own`. The element is genuinely transferred
   into the vector, mirroring `push`'s inserted value rather than
@@ -3169,7 +3169,7 @@ Each is also available in method form (`v.reverse()`), as every builtin
 is; `BUILTIN_METHOD_NAMES` is asserted equal to `set(BUILTINS)` by
 `tests/test_parser.py`.
 
-### 60.2 Out-of-range indices panic — and this category already existed
+### 60.2 Out-of-range indices panic, and this category already existed
 
 `set` and `swap` transpile to Rust's own panicking operations (`v[i] =
 x`, `v.swap(i, j)`), so an out-of-range index panics exactly as the Rust
@@ -3177,7 +3177,7 @@ control does.
 
 **This is not a new category.** Verified 2026-08-29, before this section
 was written: Oxide integer division already panics at runtime on a
-computed zero divisor — `a / b` transpiles to Rust's `a / b` and dies
+computed zero divisor: `a / b` transpiles to Rust's `a / b` and dies
 with `attempt to divide by zero`, exit 101. The language has had a
 partial-operation category since division existed; it was simply never
 documented. This section documents it and adds two members to it.
@@ -3219,8 +3219,8 @@ question adjacent to the objective:
 | cost census | what correct programs cost | nothing in the corpus |
 
 The two disagree at the top of this wave's slate. `swap` and `reverse`
-have **zero** demand signal — the census has no family for them, because
-a model cannot reach for a spelling it has never seen — and they rank
+have **zero** demand signal (the census has no family for them, because
+a model cannot reach for a spelling it has never seen), and they rank
 **1 and 2** by cost (n043 +82, n050 +60). Wave 2's gate, reading demand
 alone, deferred index assignment on the ground that campaign presence
 was 0, while its absence was silently the largest token gap in the
@@ -3235,7 +3235,7 @@ the objective, until something forces the comparison.**
 Corpus state when the census was built (tokenizer `c0382117…`):
 arithmetic 509/504 = 1.010, strings 615/578 = 1.064, structs 623/677 =
 0.920, vectors 789/573 = 1.377, overall 2536/2332 = 1.0875. Vectors
-carries +216 of a +204 net surplus — over 100%, because structs/option
+carries +216 of a +204 net surplus, over 100%, because structs/option
 runs negative, which is why the census keeps surplus signed and never
 clips it at zero.
 
@@ -3249,7 +3249,7 @@ matching Rust control also uses `+=`/`-=`/`*=`.~~ **Superseded
 2026-08-29.** The gate was written against a real failure (wave 1's n041
 tightening, caught by review and reverted), but it made Oxide
 systematically pessimistic wherever the two languages diverge
-idiomatically — which is the subject under study. In n046 the Rust
+idiomatically, which is the subject under study. In n046 the Rust
 control writes `v.iter().filter(|&&x| x < 10).count()`, so the gate
 forbade Oxide's hand-rolled loop from using the `+=` this project had
 already shipped.
@@ -3257,8 +3257,8 @@ already shipped.
 **Amended rule.** Each arm is written as well as its own language
 allows. A substitution is admissible when it uses only shipped
 vocabulary and does not restructure the program beyond what that
-construct replaces. Every admissible substitution **must** be applied —
-a missed one is a defect, not a conservative choice. Every changed pair
+construct replaces. Every admissible substitution **must** be applied.
+A missed one is a defect, not a conservative choice. Every changed pair
 is verified by the rustc/stdout oracle (byte-identical
 `expected_stdout`, `validate_pair` green, contamination clean) and
 diffed in the wave report with its token delta.
@@ -3270,10 +3270,10 @@ replaces.
 ### 60.5 Card update (continues §59.5's record)
 
 Both cards gain the three builtins beside their Vec siblings, each in
-its own voice — the core card states the consumption plainly
+its own voice: the core card states the consumption plainly
 (`swap(v, i, j) -> Vec<T>  # consumes v, exchanges positions i and j`),
 the explicit card names the mode of every slot as it does throughout
-(`# consumes v and x — replaces element i`). The owned-in/owned-out
+(`# consumes v and x: replaces element i`). The owned-in/owned-out
 spelling is shown because that is the shape models must reproduce.
 
 Word counts after the update: core **1094**, explicit **1193**, gap 99
@@ -3282,8 +3282,8 @@ against a 10% tolerance of 119.3. Both pass.
 **Recorded because it will bite:** the core card now sits **six words**
 under its 1100-word `CORE_WORD_LIMIT`. The next wave that adds any
 vocabulary will cross it. When that happens the limit is to be raised
-*non-silently* — changed in `tests/test_cards.py`, stated in SPEC with
-its reason, and the pin re-verified to bite — exactly as §59.5 raised it
+*non-silently* (changed in `tests/test_cards.py`, stated in SPEC with
+its reason, and the pin re-verified to bite), exactly as §59.5 raised it
 from 1000 to 1100. It is not to be met by trimming card content without
 saying so.
 
@@ -3296,8 +3296,8 @@ text struck through and kept visible, per §58.2's convention:
   indexing decision this document has not made." The decision is now
   made and recorded in §60.1: index assignment arrives as the function
   `set(v, i, x)`, not as bracket-assignment syntax. The paragraph's
-  claim about the bracket form still holds — `v[0] = e` remains
-  `OX0101` — and is left standing.
+  claim about the bracket form still holds (`v[0] = e` remains
+  `OX0101`) and is left standing.
 - **§59.3**'s deferral of bracket index assignment is marked superseded.
   The deferral was wrong, and instructively so: the capability shipped
   one wave later once a cost census could see it. The original
@@ -3307,7 +3307,7 @@ A grep across `SPEC.md`, `docs/superpowers/specs/2026-08-09-v03-taxonomy.md`
 and both cards for claims of the shape "no index assignment", "no swap",
 "never panics", or "total operation" returned no further hits.
 
-## 61. v0.4 wave-3 addendum — the predicate literal, and crossing parity
+## 61. v0.4 wave-3 addendum: the predicate literal, and crossing parity
 
 Shipped on the owner's direction after §60 landed, overriding the
 wave-3 spec's §8 ("closures out of scope"). The scope decision was made
@@ -3326,7 +3326,7 @@ parameter and nothing else; referencing an enclosing binding is
 `OX0205`. That single restriction is the entire design:
 
 - **With no captures there is no ownership question.** The construct
-  never interacts with implicit linear ownership — the collision that
+  never interacts with implicit linear ownership: the collision that
   made a general closure surface expensive to reason about and kept it
   out of the wave-3 spec. A predicate owns nothing, so it can move
   nothing.
@@ -3340,15 +3340,15 @@ parameter and nothing else; referencing an enclosing binding is
 
 Typing: `x -> body` has type `Pred<T>` where `x: T` and `body: Bool`.
 The parameter type is a fresh variable, so it unifies with the element
-type of the vector it is passed beside — `count_if: (Vec<A>, Pred<A>)
+type of the vector it is passed beside: `count_if: (Vec<A>, Pred<A>)
 -> Int`, arguments inferred left to right.
 
 Codegen: the literal emits as a Rust closure `|x| body`, and parameter
 uses deref, because the prelude's `count_if` calls `p(e)` with `e: &T`.
 
 **Known limitation, stated rather than discovered later.** A predicate
-body that misuses its *own* parameter — consuming a `Str` parameter
-twice, say — is not caught by the ownership analysis, which treats the
+body that misuses its *own* parameter (consuming a `Str` parameter
+twice, say) is not caught by the ownership analysis, which treats the
 literal as a leaf (correctly, for the enclosing flow: nothing outside is
 reachable). It still fails closed: the emitted closure takes `&T`, so
 rustc rejects it. The cost is a rustc error where an Oxide diagnostic
@@ -3366,7 +3366,7 @@ would read better. Worth fixing when a predicate surface grows past
 | **overall** | **1.0875** | 1.0103 | **0.9863** |
 
 Oxide now writes 2300 supervised tokens across the 40 reference programs
-where Rust writes 2332 — a surplus of **−32**. The vectors class, which
+where Rust writes 2332: a surplus of **−32**. The vectors class, which
 opened this wave at 1.377 and carried 106% of the corpus's net surplus,
 now writes *shorter* programs than Rust does.
 
@@ -3374,8 +3374,8 @@ This is the static estimand only, on hand-authored reference pairs. It
 says the language can express these tasks in fewer tokens than Rust; it
 does **not** say a model will. That is the dynamic question, and it is
 unmeasured until the wave's campaign runs. The two have disagreed
-before — SPEC §59.7 exists because a dynamic reading was confounded for
-two waves — so the parity claim is scoped to what was measured.
+before (SPEC §59.7 exists because a dynamic reading was confounded for
+two waves), so the parity claim is scoped to what was measured.
 
 Remaining surplus is now strings-led (n054 +20, n053 +14, n051 +8) with
 n064 +15 in structs; vectors contributes nothing above +14. The next
@@ -3393,7 +3393,7 @@ limit is raised **non-silently**: `CORE_WORD_LIMIT` 1100 → **1150** in
 `tests/test_cards.py`, stated here with its reason (the predicate
 literal is new syntax, not just another builtin name, so it costs the
 card a line of explanation as well as a signature), and the pin was
-re-verified to bite — temporarily setting it back to 1100 fails the
+re-verified to bite: temporarily setting it back to 1100 fails the
 test, as it must. The limit was not met by trimming card content.
 
 Headroom is now 42 words. The same instruction applies next time.
@@ -3407,10 +3407,10 @@ of the space this section describes.
 
 Black Oxide is optimised for three things, stated by the owner:
 
-1. **Usefulness** — the language can express real tasks, and a model
+1. **Usefulness**: the language can express real tasks, and a model
    using it succeeds at them.
-2. **Efficiency** — tokens per solved task, against Rust as the control.
-3. **Ease of use and learning, for an LLM** — how readily a model picks
+2. **Efficiency**: tokens per solved task, against Rust as the control.
+3. **Ease of use and learning, for an LLM**: how readily a model picks
    a construct up.
 
 **Novelty is not a goal.** A construct that looks like something the
@@ -3437,7 +3437,7 @@ distinguishes them.
 
 - **Ceremony removed entirely.** Implicit linear ownership is the
   exemplar: the model writes no annotations *and never has to learn not
-  to*, and structs/option sits at 0.920 — the only class that beats Rust
+  to*, and structs/option sits at 0.920: the only class that beats Rust
   with no added vocabulary at all. Wins on all three objectives at once.
   This is the shape to replicate: look for ceremony to delete before
   looking for vocabulary to add.
@@ -3446,7 +3446,7 @@ distinguishes them.
   gain. Prefer the Rust or Python name wherever one exists.
 - **Novel spelling for a familiar concept.** `x -> expr` and `count_if`.
   The model pays to learn a new way to say something it could already
-  say — pure cost against objective 3, and wave 3 measured the result
+  say: pure cost against objective 3, and wave 3 measured the result
   (arrow lost to `|x|` about 10:1 at equal exposure). **Avoid this
   quadrant.** It is where wave 3 spent its budget.
 - **Novel concept requiring novel spelling.** Justified only by an
@@ -3457,7 +3457,7 @@ distinguishes them.
 ### 62.3 Consequences carried into wave 4
 
 - The predicate literal should be re-spelled `|x|`. Not a concession to
-  model habits — the correct call on objective 3, with the no-capture
+  model habits: the correct call on objective 3, with the no-capture
   restriction taught by `OX0205` rather than by unfamiliar syntax.
 - `count_if` should be renamed to what models already write, or replaced
   by the `filter`/`max_by`/`argmax` surface they demonstrably reach for.
@@ -3465,7 +3465,7 @@ distinguishes them.
   ratio, so a construct can be judged on all three objectives rather than
   on efficiency alone.
 
-## 63. v0.4 wave-4 — familiarity, and the first trade between objectives
+## 63. v0.4 wave-4: familiarity, and the first trade between objectives
 
 ### 63.1 The predicate literal re-spells to `|x| expr`
 
@@ -3478,7 +3478,7 @@ filter(v, |x| x < 10)
 shipped `x -> expr` and argued the unfamiliar spelling would make the
 no-capture restriction legible, explicitly accepting a possible uptake
 cost. Wave 3 measured the cost: at equal corpus exposure the tuned arm
-wrote the Rust bar form 43 times and the arrow 4 — roughly **10:1
+wrote the Rust bar form 43 times and the arrow 4: roughly **10:1
 against the shipped spelling** (`eval/results/v04-campaign3/REPORT.md`
 §6). The wave-3 text is left standing there as published; this section
 supersedes its conclusion.
@@ -3491,8 +3491,8 @@ the diagnostic (`OX0205`) rather than by unfamiliar syntax:
 - type is still `Pred<T>`; the same Rust closure is emitted;
 - `||` is matched by the two-char operator table **before** a bare `|`,
   so a disjunction can never be read as an empty predicate. This is the
-  one way the change could have done silent damage — every `a || b` in
-  the corpus becoming a predicate literal — and it carries a dedicated
+  one way the change could have done silent damage (every `a || b` in
+  the corpus becoming a predicate literal), and it carries a dedicated
   mutation test.
 
 A lone `|` was previously a lexer error (`OX0001`). It is now a token.
@@ -3520,7 +3520,7 @@ serve:
 Efficiency points at one, learnability at the other, both are offered at
 equal exposure, and the model picks. That is better evidence than
 choosing now by argument, and the result tells the next wave how to weigh
-the two. `filter` also generalises where `count_if` cannot — it is the
+the two. `filter` also generalises where `count_if` cannot: it is the
 surface implied by the `argmax(items, |item| ...)` the model invented
 unprompted in wave 3.
 
@@ -3543,7 +3543,7 @@ Honesty rules the module enforces:
   construct is named in an `unmeasured` list. A construct the corpus
   never taught has no learnability reading; infinity would flatter it and
   zero would convict it.
-- **Zero uptake at real exposure yields a measured `0.0`** — that one is
+- **Zero uptake at real exposure yields a measured `0.0`**: that one is
   a genuine reading.
 - Every quoted ratio carries its uptake and exposure, so no construct can
   be called "rejected" on a count whose exposure nobody checked. That is
@@ -3555,7 +3555,7 @@ Honesty rules the module enforces:
 `grep` across `SPEC.md`, both cards, and `docs/superpowers/specs/` for
 arrow-spelled predicates. §61.1's normative text is the main site and is
 superseded in place by §63.1 above, with its original reasoning left
-visible — the reasoning is what the measurement indicts, so deleting it
+visible: the reasoning is what the measurement indicts, so deleting it
 would erase the evidence. Card text is updated in §63.5 rather than
 struck, since cards are current-state documents, not a normative history.
 
@@ -3565,8 +3565,8 @@ Both cards move the predicate to `|x| b` and gain `filter(v, |x| b) ->
 Vec<T>` beside `count_if`. No arrow-spelled predicate remains in either
 card. Counts: core **1117**, explicit **1221**, gap 104 against a 10%
 tolerance of 122.1; `CORE_WORD_LIMIT` stays at 1150 with 33 words of
-headroom. §60.5's standing instruction — raise it non-silently, never
-meet it by trimming — is unused this wave and still applies to the next.
+headroom. §60.5's standing instruction (raise it non-silently, never
+meet it by trimming) is unused this wave and still applies to the next.
 
 ### 63.6 The card never documented its operators (found 2026-08-30)
 
@@ -3578,14 +3578,14 @@ eval task prompts, in a scratch directory, explicitly barred from reading
 this repository (which holds the compiler, the suite, and worked
 solutions), with no compiler available to it and `expected_stdout`
 withheld. It wrote 20 programs in one pass. Verified afterwards through
-the real oracle — transpile, rustc, execute, byte-compare — **all 20
+the real oracle (transpile, rustc, execute, byte-compare): **all 20
 passed.**
 
 **What it reported, and what the card confirms.** It flagged that the
 card documents no operator set. Checked: `==`, `!=`, `%`, `<=`, `>=`,
 `&&`, `||`, and `!` appear **zero times** in the card, and every `/` in
 it is prose punctuation. The same holds at wave 2's, wave 3's and wave
-4's committed cards — the gap is not a regression, it is original.
+4's committed cards: the gap is not a regression, it is original.
 
 The model solved the tasks by assuming Rust's operator set and being
 right, using `==` six times, `%` four, `/` twice, `<=` and `!` once.
@@ -3595,7 +3595,7 @@ right, using `==` six times, `%` four, `/` twice, `<=` and `!` once.
 1. *For §62's thesis:* this is the ease-of-learning objective validated
    at the largest scale available. The card did not need to be complete,
    because a strong Rust prior filled the hole correctly. Oxide's
-   Rust-likeness is load-bearing, not incidental — and this is the
+   Rust-likeness is load-bearing, not incidental, and this is the
    clearest evidence yet that §62.2's ordering (familiar spelling beats
    novel spelling) is right.
 2. *For the instrument:* smaller models have weaker priors and cannot
@@ -3605,7 +3605,7 @@ right, using `==` six times, `%` four, `/` twice, `<=` and `!` once.
    which would make four waves of card-only readings measurements of the
    card's incompleteness.
 
-> **AMENDED 2026-08-31 by wave 5 — the instrument concern above is
+> **AMENDED 2026-08-31 by wave 5: the instrument concern above is
 > FALSIFIED.** Card v0.8 was measured against v0.7 as a single-variable
 > experiment with predictions registered in advance
 > (`eval/results/v04-wave5-card/REPORT.md`). Every prediction failed:
@@ -3613,12 +3613,12 @@ right, using `==` six times, `%` four, `/` twice, `<=` and `!` once.
 > 0.525 → 0.500, all movements inside noise, with the base-rs-7 drift
 > guard clean at 0.565 so the null stands on a valid run. The mechanism
 > check says why: `base-ox-7` already used `==` 160 times, `!` 190, `%`
-> 136 and `/` 120 across 764 replies **under v0.7** — there was no
+> 136 and `/` 120 across 764 replies **under v0.7**. There was no
 > behavioural gap for the table to fill. The claim in point 2 above,
 > that untuned arms "may have been depressed by a documentation gap",
 > is **wrong**; those readings were real. The Sonnet result is
 > re-framed too: it was not gap-filling, it is simply a far more capable
-> model. Point 1 (the §62 familiarity thesis) is untouched — wave 4
+> model. Point 1 (the §62 familiarity thesis) is untouched. Wave 4
 > tested that directly and it held. Card v0.8 is kept: it made
 > `base-ox-14` 12% more concise (tok→green 134.7 → 118.0), and a spec
 > should document its own language.
@@ -3640,8 +3640,8 @@ the untuned arms move. If they do, the card-only regime has been
 mismeasured since wave 0.
 
 **Lens note.** The Sonnet probe is not a comparable pass@1. It ran under
-a different harness — agentic scaffolding, a different sampler, and the
-freedom to revise within its own turn — against arms that run one attempt
+a different harness (agentic scaffolding, a different sampler, and the
+freedom to revise within its own turn) against arms that run one attempt
 at temperature 0.2 through a fixed template. It generates a hypothesis
 about the tier curve (1.5B 0.000 · 7B 0.075 · 14B 0.525 · frontier
 20/20), it does not extend it.
@@ -3652,7 +3652,7 @@ The 1.5B tier fails in one role and earns its place in two others, so it
 is retained selectively rather than dropped or kept wholesale.
 
 **Dropped from card-only arms.** `base-ox-1.5` has read **0.000 in every
-card-only measurement ever taken** — wave 0 under card v0.3-era, and
+card-only measurement ever taken**: wave 0 under card v0.3-era, and
 wave 5 under card v0.8 with the operator table §63.6 added. Strict
 repair 0.110: it is not producing near-misses, it is failing
 comprehensively. An arm that can only ever report zero cannot
@@ -3669,14 +3669,14 @@ been informative either way.
 | 14B | 410 | 39 |
 
 The 1.5B supplies **~18% of the verified corpus for ~40 min (~$0.15)**
-of a wave, and supplies it *differently* — a weak model's passing
+of a wave, and supplies it *differently*: a weak model's passing
 programs are the short, direct ones, which is diversity the 14B does not
 generate. Corpus scale is a demonstrated sensitivity (wave 1: 7.4k
 tokens → pass@1 0.420; 29.8k → 0.755), so shrinking the corpus by a
 fifth to save $0.15 is a bad trade.
 
 **Retained in tuned arms.** Wave 0's `tune-ox-1.5` reached **0.485**
-against `tune-ox-7`'s 0.555 and `tune-ox-14`'s 0.545 in the same wave —
+against `tune-ox-7`'s 0.555 and `tune-ox-14`'s 0.545 in the same wave,
 within 0.07 of models ten times its size. The 1.5B cannot learn this
 language from a card and *can* learn it from a corpus, which is a
 finding about cards rather than about the tier. It is also the only tier
@@ -3687,7 +3687,7 @@ discriminate, not when it scores badly. A tier that reads 0.000 under
 every treatment carries no information; a tier that reads 0.485 when
 trained carries a great deal.
 
-## 65. v0.4 wave-9 — indexing, and what wave 8 measured
+## 65. v0.4 wave-9: indexing, and what wave 8 measured
 
 `v[i]` reads the element at index `i` of a `Vec<T>` and yields `T`. It
 is a postfix expression at the call tier (lbp 13), so `v[0] + 1` is
@@ -3704,7 +3704,7 @@ the language.
 The mechanism was read off the model's own output. **75.5% of the Rust
 arm's large-tier attempts index.** At this program size indexing is the
 dominant idiom, not an occasional convenience, and Oxide had no `[` in
-its lexer at all — those attempts died at `OX0001` before type checking
+its lexer at all. Those attempts died at `OX0001` before type checking
 ever ran. The pressure grows with capability: the `[` rate in Oxide
 attempts rose 16.8% (7B) to 29.0% (14B), because a more capable model
 writes more sophisticated code and sophisticated code indexes.
@@ -3714,7 +3714,7 @@ Scope was set by measured demand across 1014 attempts, not by taste:
 | form | occurrences | shipped |
 |---|---:|---|
 | index read `v[i]` | **951** | yes |
-| index assign `v[i] = x` | 12 | no — `set(v, i, x)` covers it |
+| index assign `v[i] = x` | 12 | no: `set(v, i, x)` covers it |
 | slice `v[a..b]` | 4 | no |
 
 Index assignment is deferred rather than rejected: at 1.3% of demand it
@@ -3743,7 +3743,7 @@ the index is known to be in range because a `len` bound produced it.
 ### 65.3 Ownership
 
 Indexing is a **read** of the base, and the element arrives as a fresh
-owned value — section 36's rule for field access, for the same reason.
+owned value: section 36's rule for field access, for the same reason.
 Were indexing to move the vector, `for i in range(0, len(v)) { v[i] }`
 would fail on its second iteration, which is the commonest loop the
 construct exists to serve.
@@ -3763,14 +3763,14 @@ out of index.
 The pre-registered re-screen
 (`docs/superpowers/plans/2026-09-02-v04-wave9-rescreen-plan.md`,
 `eval/results/v04-wave9-rescreen/REPORT.md`) ran the wave-8 14B screen
-unchanged against this construct. Stop 1 fired — the tuned-Oxide small
-guard read 0.7833 against its 0.8000 anchor — and the cause is an
+unchanged against this construct. Stop 1 fired. The tuned-Oxide small
+guard read 0.7833 against its 0.8000 anchor, and the cause is an
 unpinned llama.cpp commit, not the merge or the language; no ratio is
 published against wave 8. Within the run, Oxide compiled **3 of 60**
 large-tier attempts, the same count as wave 8. The lexer share of first
 diagnostics fell **0.338 → 0.019**: `[` was the lexer barrier, and two
 byte-identical programs that died at `[` in wave 8 compile and pass
-here. The attempts moved to the next fatal layers — **tuples** (types,
+here. The attempts moved to the next fatal layers: **tuples** (types,
 `for (i, x)` patterns, destructuring; ≥53 first diagnostics) and the
 string stdlib (`OX0200` 54). Under the plan's consequence table that is
 the `< 0.12` row: one construct at a time does not close the gap at this

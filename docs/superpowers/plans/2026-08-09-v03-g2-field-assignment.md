@@ -4,7 +4,7 @@
 
 **Goal:** Add `s.f = e` (arbitrary field depth, bare-name base) to Black Oxide, closing a real language hole and removing a demonstrated grammar-deformation artifact.
 
-**Architecture:** A new `FieldAssign` statement node — deliberately NOT a widened `Assign`, because `cfg._stmt`'s existing `case ast.Assign(value=value)` emits a `ReInit` that re-establishes ownership, which is exactly wrong for a field write and would keep matching silently. The RHS moves; the base is a READ per §36; the overwritten field is consumed with no `DropPoint`. Routing the base var through the existing `resolve.assign_of` map makes parameter modes, `let mut`, and `for mut` correct from one entry.
+**Architecture:** A new `FieldAssign` statement node, deliberately NOT a widened `Assign`, because `cfg._stmt`'s existing `case ast.Assign(value=value)` emits a `ReInit` that re-establishes ownership, which is exactly wrong for a field write and would keep matching silently. The RHS moves; the base is a READ per §36; the overwritten field is consumed with no `DropPoint`. Routing the base var through the existing `resolve.assign_of` map makes parameter modes, `let mut`, and `for mut` correct from one entry.
 
 **Tech Stack:** Python 3.14, pytest, GBNF (llama.cpp) for the constrained-decoding grammar. No new dependencies.
 
@@ -12,12 +12,12 @@
 
 - **SPEC.md is the binding contract.** It is amended in Task 1, before any implementation. Any deviation between SPEC and code is a bug in the deviating side.
 - Run tests with `.venv/bin/pytest tests/ -q` from the repo root. `pytest.ini` sets `addopts=-m "not live"`.
-- **Every stage's `match` statement has NO catch-all.** An unhandled `FieldAssign` is silently dropped — codegen would emit nothing for the statement and produce wrong Rust with no error. This is why Task 2 is a full vertical slice rather than one stage per task: no intermediate commit may leave the compiler silently wrong.
+- **Every stage's `match` statement has NO catch-all.** An unhandled `FieldAssign` is silently dropped. Codegen would emit nothing for the statement and produce wrong Rust with no error. This is why Task 2 is a full vertical slice rather than one stage per task: no intermediate commit may leave the compiler silently wrong.
 - **Accepted-implies-compiles.** Any program the front end accepts must produce Rust that `rustc` accepts. Task 4 covers the one place this is at risk (parameter modes / E0594).
-- **Do not rename these surfaces** (SPEC §0): both `LANGUAGE_CARD*.md`, the `OX0306` suggestion string, `ARMS`/`arm` data keys, the `__oxide_` codegen prefix, `.ox`, and `eval/grammar/oxide.gbnf`. The generated GBNF header's `"core Oxide"` / `"explicit-Oxide"` text is part of that frozen grammar file — **leave it as-is**; do not "fix" it while editing `build.py`.
+- **Do not rename these surfaces** (SPEC §0): both `LANGUAGE_CARD*.md`, the `OX0306` suggestion string, `ARMS`/`arm` data keys, the `__oxide_` codegen prefix, `.ox`, and `eval/grammar/oxide.gbnf`. The generated GBNF header's `"core Oxide"` / `"explicit-Oxide"` text is part of that frozen grammar file. **Leave it as-is**; do not "fix" it while editing `build.py`.
 - **Cards stay unchanged.** This change measures pure acceptance (design §7).
 - Commit messages omit Claude attribution.
-- Files stay under 800 lines. **`src/sema/infer.py` is at exactly 799**, and Task 2 Step 9 adds ~18 lines to it — it WILL cross. Task 2 must therefore land the §56 typing walk as a helper method (`_field_assign_place(self, stmt: ast.FieldAssign) -> None`) called from a one-line `_stmt` case, and extract enough to stay under the cap. Do not raise the cap. Re-check with `wc -l src/sema/infer.py` before committing Task 2 and Task 3.
+- Files stay under 800 lines. **`src/sema/infer.py` is at exactly 799**, and Task 2 Step 9 adds ~18 lines to it. It WILL cross. Task 2 must therefore land the §56 typing walk as a helper method (`_field_assign_place(self, stmt: ast.FieldAssign) -> None`) called from a one-line `_stmt` case, and extract enough to stay under the cap. Do not raise the cap. Re-check with `wc -l src/sema/infer.py` before committing Task 2 and Task 3.
 
 ## File Structure
 
@@ -39,7 +39,7 @@
 
 ---
 
-### Task 1: SPEC §56 — the contract
+### Task 1: SPEC §56: the contract
 
 **Files:**
 - Modify: `SPEC.md` (append a new section after §55, which ends just before EOF)
@@ -77,7 +77,7 @@ this document has not made.
 **Parsing.** At statement start, an `IDENT` followed by `DOT` begins a
 scan of `(DOT IDENT)+`; the statement is a field assignment only if that
 run is followed by `EQ`. `EQEQ` is a distinct token kind, so `p.x == y`
-remains a comparison — the same guarantee §26's `IDENT EQ` lookahead
+remains a comparison, the same guarantee §26's `IDENT EQ` lookahead
 rests on. A failed scan restores the cursor and the statement is parsed
 as an expression statement. The scan does not see through a `NEWLINE`,
 for the reason §26 gives: an identifier at end of line is an expression
@@ -86,7 +86,7 @@ statement, never the start of an assignment.
 **Resolution.** The base must be an existing local or parameter;
 otherwise `OX0200`, with the same wording §28 uses for assignment. The
 base's `var_id` is recorded in `assign_of` under the `FieldAssign` node's
-own id — the same map whole-variable assignment uses, so §28's rule "a
+own id, the same map whole-variable assignment uses, so §28's rule "a
 param that is ever assigned gets mode `own`" applies to a field-assigned
 param unchanged. That is a **soundness requirement**, not a convenience:
 a read-mode non-copy param emits `p: &Point`, and `p.x = 5` through a
@@ -104,10 +104,10 @@ the right-hand side (`OX0300` on mismatch). The statement itself is
 - The base is a **READ** use and emits **no `ReInit`**. §36 already fixes
   `p.x` as a read of the base; writing into an owned struct is that
   rule's completion. A field write into a moved base is therefore
-  `OX0400`, and it does **not** re-establish ownership — unlike `p = e`,
+  `OX0400`, and it does **not** re-establish ownership, unlike `p = e`,
   which does.
 - The overwritten field value is **consumed implicitly, with no
-  `DropPoint`** — §28's rule for the old value of an assigned variable.
+  `DropPoint`**: §28's rule for the old value of an assigned variable.
   Rust's assignment drops the old field; synthesizing a drop would
   double-free.
 
@@ -121,7 +121,7 @@ write is local and discarded at iteration end.
 **Codegen.** `base.f1.f2 = value;`, built from the recorded base rename
 and the path. It is **not** routed through the field-access emitter: that
 appends `.clone()` to a non-copy field value (§36), and a place is not a
-value — cloning the target would write into a temporary and lose the
+value. Cloning the target would write into a temporary and lose the
 assignment.
 
 ```
@@ -139,7 +139,7 @@ form. Under constrained decoding the want does not fail loudly: `=` is
 inadmissible after a field path, so the decoder settles on `==` and emits
 a **discarded comparison**. Measured over the committed G0 first attempts
 (oxide arm), that signature appears 18 times in 9 of 600 constrained
-programs and **exactly 0 of 600 unconstrained** — the §54 lesson in its
+programs and **exactly 0 of 600 unconstrained**. The §54 lesson in its
 third demonstrated instance, with a clean control. The demand is real but
 small (~1.5%), so no aggregate pass-rate change is predicted from this
 section alone; see
@@ -175,7 +175,7 @@ constrained first attempts, exactly 0 of 600 unconstrained."
 
 ---
 
-### Task 2: The vertical slice — `p.x = 5` end to end
+### Task 2: The vertical slice: `p.x = 5` end to end
 
 **Files:**
 - Modify: `src/parser/ast.py` (add node after `Assign` at ~line 108; `Stmt` union at ~line 285; dump at ~line 367)
@@ -191,10 +191,10 @@ constrained first attempts, exactly 0 of 600 unconstrained."
 **Interfaces:**
 - Consumes: SPEC §56 from Task 1.
 - Produces:
-  - `ast.FieldAssign(node_id: int, span: Span, base: str, path: tuple[str, ...], value: Expr)` — a frozen slotted dataclass in the `Stmt` union.
-  - Dump form: `(field-assign p.x <value>)` — the path joined with dots as a single token.
+  - `ast.FieldAssign(node_id: int, span: Span, base: str, path: tuple[str, ...], value: Expr)`: a frozen slotted dataclass in the `Stmt` union.
+  - Dump form: `(field-assign p.x <value>)`: the path joined with dots as a single token.
   - `resolve.assign_of[field_assign.node_id] -> base var_id` (same map as `Assign`).
-  - `Parser._try_field_assign() -> FieldAssign | None` — returns `None` with `self.pos` restored when the scan fails.
+  - `Parser._try_field_assign() -> FieldAssign | None`: returns `None` with `self.pos` restored when the scan fails.
 
 **Why one task:** no stage's `match` has a catch-all, so an unhandled `FieldAssign` is silently dropped and codegen emits nothing. Splitting this by pipeline stage would leave intermediate commits that compile programs to wrong Rust with no diagnostic.
 
@@ -245,7 +245,7 @@ class TestFieldAssignment:
 - [ ] **Step 2: Run it to confirm it fails**
 
 Run: `.venv/bin/pytest tests/test_parser.py::TestFieldAssignment -q`
-Expected: FAIL — the first test errors because `p.x = 5` currently yields `OX0101` and no `field-assign` node exists.
+Expected: FAIL. The first test errors because `p.x = 5` currently yields `OX0101` and no `field-assign` node exists.
 
 - [ ] **Step 3: Add the AST node**
 
@@ -400,7 +400,7 @@ def test_field_assignment_compiles_under_rustc(tmp_path):
 - [ ] **Step 7: Run it to confirm it fails**
 
 Run: `.venv/bin/pytest tests/test_codegen.py -q -k field_assign`
-Expected: FAIL — the statement is parsed but every downstream stage silently ignores it, so `p.x = 5;` never appears in the emitted Rust. (This failure IS the silent-drop hazard the Global Constraints describe.)
+Expected: FAIL. The statement is parsed but every downstream stage silently ignores it, so `p.x = 5;` never appears in the emitted Rust. (This failure IS the silent-drop hazard the Global Constraints describe.)
 
 - [ ] **Step 8: Handle the node in resolve**
 
@@ -532,7 +532,7 @@ Expected: PASS (3 passed, or 2 passed + 1 skipped if rustc is unavailable)
 Run: `.venv/bin/pytest tests/ -q 2>&1 | tail -3`
 Expected: all green, count = 1354 + 9 new = 1363 passed
 
-If anything else fails, it is a real interaction — fix it before committing rather than adjusting the new tests.
+If anything else fails, it is a real interaction. Fix it before committing rather than adjusting the new tests.
 
 - [ ] **Step 15: Commit**
 
@@ -566,7 +566,7 @@ emitter, whose 36 .clone() would write to a temporary and lose the write."
 
 **Interfaces:**
 - Consumes: `ast.FieldAssign` and the typing walk from Task 2.
-- Produces: nothing new — this task pins behaviour that Task 2's code already produces, and fixes it where it does not.
+- Produces: nothing new. This task pins behaviour that Task 2's code already produces, and fixes it where it does not.
 
 - [ ] **Step 1: Write the failing diagnostics tests**
 
@@ -624,18 +624,18 @@ def test_nested_path_accepts_a_valid_walk() -> None:
 - [ ] **Step 2: Run them**
 
 Run: `.venv/bin/pytest tests/test_sema_types.py -q -k "field_assign or nested_path"`
-Expected: most PASS from Task 2's implementation. Any FAIL is a real gap — most likely the deferral branch or an intermediate non-struct step.
+Expected: most PASS from Task 2's implementation. Any FAIL is a real gap, most likely the deferral branch or an intermediate non-struct step.
 
 - [ ] **Step 3: Fix whatever failed**
 
-If `test_nested_path_walks_every_step` fails, the loop is re-checking against the base type instead of threading `ty` through each step — confirm the `ty = checked` reassignment at the end of the loop body in `src/sema/infer.py`.
+If `test_nested_path_walks_every_step` fails, the loop is re-checking against the base type instead of threading `ty` through each step. Confirm the `ty = checked` reassignment at the end of the loop body in `src/sema/infer.py`.
 
 If a test that should be clean reports a spurious code, check that `_field_check`'s `None` return (type not yet known) is deferred via `_pending_fields` rather than treated as an error.
 
 - [ ] **Step 4: Check the file-length constraint**
 
 Run: `wc -l src/sema/infer.py`
-Expected: under 800. If it crossed, extract the path walk into a `_field_assign_place(self, stmt) -> Type | None` helper method in the same file — that keeps the change local and drops `_stmt` back to a single call.
+Expected: under 800. If it crossed, extract the path walk into a `_field_assign_place(self, stmt) -> Type | None` helper method in the same file. That keeps the change local and drops `_stmt` back to a single call.
 
 - [ ] **Step 5: Run the full suite**
 
@@ -663,7 +663,7 @@ call would have."
 
 **Interfaces:**
 - Consumes: the CFG handling from Task 2.
-- Produces: nothing new — pins the three §56 linearity rules and the E0594 soundness case.
+- Produces: nothing new. It pins the three §56 linearity rules and the E0594 soundness case.
 
 - [ ] **Step 1: Write the failing linearity tests**
 
@@ -757,7 +757,7 @@ Expected: most PASS from Task 2. `test_field_write_adds_no_drop_for_the_overwrit
 
 - [ ] **Step 3: Fix whatever failed**
 
-If a spurious drop appears, confirm the CFG case appends only the RHS `_MOVE` nodes plus one `Use(..., _READ)` — no `ReInit`, no `TempMark`.
+If a spurious drop appears, confirm the CFG case appends only the RHS `_MOVE` nodes plus one `Use(..., _READ)`: no `ReInit`, no `TempMark`.
 
 If `param_modes` reports `read` for `bump`, the base is not reaching `assign_of`; re-check the resolve case from Task 2 Step 8, since `modes.py` seeds `assigned_vars` from `resolve.assign_of.values()`.
 
@@ -777,7 +777,7 @@ print(rust)
 " > /tmp/e0594_check.rs.txt; grep -n "fn bump" /tmp/e0594_check.rs.txt
 ```
 
-Expected: the signature is `fn bump(mut p: P)` — by value with `mut`, **not** `p: &P`. If it shows `&P`, the mode fix in Step 3 is incomplete and the emitted Rust will fail rustc with E0594.
+Expected: the signature is `fn bump(mut p: P)`: by value with `mut`, **not** `p: &P`. If it shows `&P`, the mode fix in Step 3 is incomplete and the emitted Rust will fail rustc with E0594.
 
 - [ ] **Step 5: Run the full suite**
 
@@ -845,7 +845,7 @@ def test_grammar_still_admits_plain_assignment():
 - [ ] **Step 2: Run it to confirm it fails**
 
 Run: `.venv/bin/pytest tests/test_grammar_admission.py -q -k field_assignment`
-Expected: FAIL — the current alternative is `lname " = " value`, which cannot produce a dot.
+Expected: FAIL. The current alternative is `lname " = " value`, which cannot produce a dot.
 
 - [ ] **Step 3: Widen the grammar rule**
 
@@ -874,7 +874,7 @@ with:
 
 Confirm `star` is already imported in the module (it is defined at `eval/grammar/build.py:147` and used elsewhere in the file).
 
-**Do not touch** the `_HEADER` dialect strings (`"core Oxide"` / `"explicit-Oxide"`) — SPEC §0 freezes the grammar file's naming.
+**Do not touch** the `_HEADER` dialect strings (`"core Oxide"` / `"explicit-Oxide"`). SPEC §0 freezes the grammar file's naming.
 
 - [ ] **Step 4: Regenerate both grammar files**
 
@@ -883,12 +883,12 @@ Run: `.venv/bin/python -m eval.grammar.build`
 - [ ] **Step 5: Verify the checked-in files match the builder**
 
 Run: `.venv/bin/pytest tests/test_6a.py -q -k grammar`
-Expected: PASS — `tests/test_6a.py:2318` asserts the checked-in `.gbnf` equals `render()`, so a stale file fails here.
+Expected: PASS. `tests/test_6a.py:2318` asserts the checked-in `.gbnf` equals `render()`, so a stale file fails here.
 
 - [ ] **Step 6: Run the admission and soundness tests**
 
 Run: `.venv/bin/pytest tests/test_grammar_admission.py tests/test_6a.py -q`
-Expected: all green. The soundness direction (every string the grammar emits parses) is enforced in `test_6a.py` and must stay green — if it fails, the new alternative admits something the parser rejects.
+Expected: all green. The soundness direction (every string the grammar emits parses) is enforced in `test_6a.py` and must stay green. If it fails, the new alternative admits something the parser rejects.
 
 - [ ] **Step 7: Run the full suite**
 
@@ -921,7 +921,7 @@ constrained first attempts and 0 of 600 unconstrained."
 
 **Interfaces:**
 - Consumes: `strip.py` handling from Task 2 Step 12.
-- Produces: nothing new — pins that both dialects agree.
+- Produces: nothing new. It pins that both dialects agree.
 
 - [ ] **Step 1: Write the failing parity test**
 
@@ -977,7 +977,7 @@ def test_bare_core_source_is_rejected_by_the_dialect() -> None:
 - [ ] **Step 2: Run it**
 
 Run: `.venv/bin/pytest tests/test_explicit.py -q -k field_assignment`
-Expected: PASS from Task 2's strip case. A FAIL here means `strip._stmt` is dropping the node — its match has no catch-all either, so an unhandled `FieldAssign` would fall through and return the statement unstripped.
+Expected: PASS from Task 2's strip case. A FAIL here means `strip._stmt` is dropping the node. Its match has no catch-all either, so an unhandled `FieldAssign` would fall through and return the statement unstripped.
 
 - [ ] **Step 3: Verify the helper signature before relying on it**
 
@@ -1224,7 +1224,7 @@ Expected: PASS (6 passed)
 
 Run: `.venv/bin/python -m eval.deformation eval/results/g0-generation-baseline/constrained`
 
-Expected, exactly — this is the pre-registered "before" number:
+Expected, exactly: this is the pre-registered "before" number:
 
 ```
 family         progs   stmt   tail  stmt progs
@@ -1271,9 +1271,9 @@ constrained oxide first attempts, 0 of 600 unconstrained."
 
 The measurement is **not** a task here. Per the design, g2 gets no dedicated campaign: its endpoint folds into the g3 (conversion builtins) run, where the pre-registered predictions are
 
-- statement-position signature, constrained: **18 → 0**, cited as a **lower bound**. Tail conversion is syntactic and unconditional, so a deformed field assignment that happens to fall last in a function lands in tail position instead. Tail hits are therefore ambiguous in *both* directions — a legitimate `Bool` return, or a deformation that happened to be last — so some share of the 17 tail occurrences are almost certainly deformations. Pooling the columns overcounts; treating the signature as complete undercounts. This is recorded in `eval/deformation.py`'s docstring.
+- statement-position signature, constrained: **18 → 0**, cited as a **lower bound**. Tail conversion is syntactic and unconditional, so a deformed field assignment that happens to fall last in a function lands in tail position instead. Tail hits are therefore ambiguous in *both* directions (a legitimate `Bool` return, or a deformation that happened to be last), so some share of the 17 tail occurrences are almost certainly deformations. Pooling the columns overcounts; treating the signature as complete undercounts. This is recorded in `eval/deformation.py`'s docstring.
 - the same signature, unconstrained: **0 → 0**
-- aggregate first-attempt pass rate from g2 alone: **no detectable change** — 1.5% prevalence cannot move it, and apparent movement is noise
+- aggregate first-attempt pass rate from g2 alone: **no detectable change.** 1.5% prevalence cannot move it, and apparent movement is noise
 - rust arm: flat at the first-attempt **rate** level, never the byte level
 
 g3 (dossier 3, conversion builtins) is the next design, and it carries the combined campaign.

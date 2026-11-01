@@ -1,4 +1,4 @@
-# Wave 8 — 14B screen: is the cliff a 7B property or a language property?
+# Wave 8: 14B screen: is the cliff a 7B property or a language property?
 
 **Date:** 2026-09-01. Branch `v04-wave8-phaseb`.
 **Written and committed BEFORE the pod is provisioned.**
@@ -8,7 +8,7 @@ Phase B report: `eval/results/v04-wave8-phaseb/REPORT.md`.
 
 Phase B measured a capability cliff: `tune-ox-7` produces **compiling**
 Oxide 5.5% of the time on 200–600 token tasks against **81.5%** for the
-symmetrically-trained Rust arm — a compile-rate ratio of **0.067**.
+symmetrically-trained Rust arm, a compile-rate ratio of **0.067**.
 
 Wave 4 found the opposite direction at 14B on *small* tasks: untuned
 Oxide beat Rust with a verifier (pass@10v 0.75 vs 0.55), and tuned Oxide
@@ -109,8 +109,8 @@ sent this run to a needless re-provision, or to a `device_map` change it
 does not need.
 
 This is the `runtime`-field lesson generalised: a RunPod status field is
-not the thing it names. The rule already in force for liveness — SSH to
-the thing, never the status field — applies to **capacity** too. The
+not the thing it names. The rule already in force for liveness (SSH to
+the thing, never the status field) applies to **capacity** too. The
 verification order that caught this (create → SSH → `free`/`df`/
 `torch.cuda`, before committing hours) is the reason it cost nothing.
 
@@ -123,7 +123,7 @@ Community 3090 with a single `gpuTypeIds` pin and `PUBLIC_KEY` in env;
 verify `torch.cuda` before committing hours; liveness = SSH, never the
 `runtime` field; terminate then verify zero pods twice. `pod_setup.sh`
 now installs python3.12, cmake, the conversion requirements, and drops
-`torchvision` — Phase B lost time to each of those.
+`torchvision`. Phase B lost time to each of those.
 
 ### AMENDED 2026-09-01: count-verify is necessary but NOT sufficient
 
@@ -138,7 +138,7 @@ had its correct **4 files**, and its `adapter_model.safetensors` hashed
 
 **The rule is upgraded: verify transfers by CONTENT HASH against
 `SHAS.txt`, not by file count.** A count check cannot see a truncated
-final file, and this is exactly the arm — the rust control — whose
+final file, and this is exactly the arm (the rust control) whose
 corruption would have left the compile-rate ratio meaningless while
 looking entirely plausible.
 

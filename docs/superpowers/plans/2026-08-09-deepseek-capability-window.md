@@ -1,8 +1,8 @@
-# DeepSeek Capability-Window Run — Implementation Plan
+# DeepSeek Capability-Window Run: Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Run DeepSeek-Coder-V2-Lite through the existing ownership probe to test — falsifiably — whether the oxide−explicit repair advantage decays as subject capability rises.
+**Goal:** Run DeepSeek-Coder-V2-Lite through the existing ownership probe to test (falsifiably) whether the oxide−explicit repair advantage decays as subject capability rises.
 
 **Architecture:** Three tasks. Register the subject and amend SPEC §48's uniform-quantization invariant into a per-family pin; ship a committed campaign runner whose resume is tested before it is needed; then run 600 repairs and write a REPORT that evaluates a pre-registration written before the data existed.
 
@@ -14,7 +14,7 @@
 - Run tests with `.venv/bin/pytest tests/ -q` from `/home/brice/workspace/oxide`. Baseline at plan time: **1410 passed, 3 deselected**.
 - **Nothing under `eval/results/` may be modified.** It is the committed experimental record. Task 3 *adds* a new directory; it changes nothing existing.
 - **Do not edit** `LANGUAGE_CARD.md`, `LANGUAGE_CARD_EXPLICIT.md`, the `OX0306` suggestion string, the `ARMS`/`arm` data keys, the `__oxide_` codegen prefix, `.ox`, or `eval/grammar/oxide.gbnf` (SPEC §0 frozen surfaces).
-- **Source modules under `src/` and `eval/` stay under 800 lines. Test modules are exempt** — golden corpora and pinned fixtures make them legitimately long. Two pre-existing breaches are **out of scope for this plan**: `tests/test_6a.py` (2,860 lines, exempt as a test module) and `eval/grammar/build.py` (857 lines — do not touch it, do not "fix" it). This wording is deliberate: the g2 review ruled that restating a flat 800-line rule while editing a file that already breaches it is "how a constraint stops meaning anything", so the rule now says what it actually governs.
+- **Source modules under `src/` and `eval/` stay under 800 lines. Test modules are exempt.** Golden corpora and pinned fixtures make them legitimately long. Two pre-existing breaches are **out of scope for this plan**: `tests/test_6a.py` (2,860 lines, exempt as a test module) and `eval/grammar/build.py` (857 lines: do not touch it, do not "fix" it). This wording is deliberate: the g2 review ruled that restating a flat 800-line rule while editing a file that already breaches it is "how a constraint stops meaning anything", so the rule now says what it actually governs.
 - Commit messages omit any Claude/AI attribution.
 - **The pinned subject:** `deepseek-coder-v2:16b-lite-instruct-q5_K_M`, ollama digest `6065d4880bf9`, GGUF blob `sha256-bc286970a24072cf23a4c905f28adb9f6a28c71743b07790185275a86dc72406` under `/mnt/extra/ollama-models/blobs/`. Already pulled; do not re-pull.
 - **The pre-registration is binding and was written before any data existed.** It is reproduced in Task 3 and must not be softened after seeing results.
@@ -45,7 +45,7 @@
 
 - [ ] **Step 1: Write the failing tests**
 
-In `tests/test_6a.py`, **replace** `test_model_slugs_map_to_pinned_q8_tags` entirely. Its name encodes the invariant being amended — a test called `..._q8_tags` that admits a `q5_K_M` entry is a lie the next reader will believe.
+In `tests/test_6a.py`, **replace** `test_model_slugs_map_to_pinned_q8_tags` entirely. Its name encodes the invariant being amended. A test called `..._q8_tags` that admits a `q5_K_M` entry is a lie the next reader will believe.
 
 ```python
 def test_model_slugs_map_to_pinned_tags():
@@ -81,7 +81,7 @@ def test_deepseek_takes_the_default_context_window():
 - [ ] **Step 2: Run them to confirm they fail**
 
 Run: `.venv/bin/pytest tests/test_6a.py -q -k "pinned_tags or quantization_is_q8 or default_context_window"`
-Expected: FAIL — `MODELS` has no `deepseek16b_lite`, and `driver.QUANT` / `driver.DEFAULT_QUANT` / `driver.quant_for` do not exist.
+Expected: FAIL. `MODELS` has no `deepseek16b_lite`, and `driver.QUANT` / `driver.DEFAULT_QUANT` / `driver.quant_for` do not exist.
 
 - [ ] **Step 3: Add the roster entry and the QUANT pin**
 
@@ -117,14 +117,14 @@ def quant_for(slug: str) -> str:
 
 - [ ] **Step 4: Correct the two stale "FIVE slugs" comments**
 
-There are six slugs now. In `eval/driver.py` (~line 627) and `tests/test_6a.py` (~line 1226), change "ALL FIVE slugs" to "ALL SIX slugs". The driver comment documents a real guard — llama-server serves one model, so multi-slug llamacpp runs are refused — and that guard's test must still pass.
+There are six slugs now. In `eval/driver.py` (~line 627) and `tests/test_6a.py` (~line 1226), change "ALL FIVE slugs" to "ALL SIX slugs". The driver comment documents a real guard (llama-server serves one model, so multi-slug llamacpp runs are refused), and that guard's test must still pass.
 
 - [ ] **Step 5: Run the full suite**
 
 Run: `.venv/bin/pytest tests/ -q 2>&1 | tail -3`
 Expected: green. Baseline 1410 + 2 net new (one test replaced, two added) = **1412 passed**.
 
-If `test_main_refuses_llamacpp_with_more_than_one_slug` fails, the new slug changed the default `--models` list — read the guard, do not weaken the test.
+If `test_main_refuses_llamacpp_with_more_than_one_slug` fails, the new slug changed the default `--models` list. Read the guard, do not weaken the test.
 
 - [ ] **Step 6: Amend SPEC §48**
 
@@ -137,20 +137,20 @@ Two edits inside §48. In the parameter table, change the Quantization row from:
 to:
 
 ```
-| Quantization | `q8_0`, **per-family** — see below (`q5_K_M` for `deepseek-coder-v2:16b-lite`) |
+| Quantization | `q8_0`, **per-family**: see below (`q5_K_M` for `deepseek-coder-v2:16b-lite`) |
 ```
 
 And extend the paragraph that currently reads "Quantization is held constant so the capability curve is not confounded" with:
 
 ```markdown
-**The quantization pin is per-family, not universal — for the same reason
+**The quantization pin is per-family, not universal, for the same reason
 `num_ctx` is.** `deepseek-coder-v2:16b-lite` is served at `q5_K_M`
 (`eval.driver.QUANT`; every other slug takes `DEFAULT_QUANT = q8_0`). MoE
 activates 2.4B of ~16B parameters per token, but every expert must be
 VRAM-resident, so the full weight set is what must fit: its `q8_0` GGUF is
 **16.70 GB** against a **16.30 GB** card. It does not fit the card even
 with nothing else running, so this is physically forced, not a policy
-choice — exactly the shape of granite's 4096 window. The pin is applied
+choice: exactly the shape of granite's 4096 window. The pin is applied
 uniformly across all three arms of that slug, so it stays arm-fair
 *within* the model, and it is recorded per run and read as a per-family
 covariate. Quantization is a capability reduction, so on a non-monotonic
@@ -196,17 +196,17 @@ under-use notice, the opposite of granite's capping line."
 - Consumes: `eval.probe.run_corpus`, `eval.probe.load_probes`, `eval.probe._select`, `eval.llamacpp.LlamaCppClient`, `eval.harness.ARMS`.
 - Produces:
   - `cell_dir(root: Path, arm: str, seed: int) -> Path` → `root / f"{arm}-s{seed}"`
-  - `is_complete(cell: Path) -> bool` — true iff `probe_summary.json` exists
+  - `is_complete(cell: Path) -> bool`: true iff `probe_summary.json` exists
   - `pending_cells(root: Path, arms: tuple[str, ...], seeds: tuple[int, ...]) -> list[tuple[str, int]]`
-  - `reset_partial(cell: Path) -> bool` — removes a started-but-unfinished cell, returns whether it removed anything
+  - `reset_partial(cell: Path) -> bool`: removes a started-but-unfinished cell, returns whether it removed anything
 
-**Why a runner at all:** `eval/probe.py run` takes ONE seed per invocation and runs every probe for one arm, so a 3-arm × 10-seed campaign is 30 invocations. Measured headroom is **0.51 GB** after one repair, on a build that throws intermittent `vk::DeviceLostError` under sustained load — a failure that has already killed a 600-repair run on this machine. And a scratch script that dies with the session is how the 6a pilot's demand table became permanently irreproducible.
+**Why a runner at all:** `eval/probe.py run` takes ONE seed per invocation and runs every probe for one arm, so a 3-arm × 10-seed campaign is 30 invocations. Measured headroom is **0.51 GB** after one repair, on a build that throws intermittent `vk::DeviceLostError` under sustained load, a failure that has already killed a 600-repair run on this machine. And a scratch script that dies with the session is how the 6a pilot's demand table became permanently irreproducible.
 
 **The resume design, and why it is shaped this way:** `run_corpus` already appends one line per probe to `probe_results.jsonl`, and it deliberately **raises** if that file exists, to stop two runs interleaving in one file. Work with that guard, not around it:
 
 - `probe_summary.json` is written only after every probe in a cell finishes, so **its presence is the completion marker**.
 - A cell with `probe_results.jsonl` but no summary died mid-cell; delete the cell directory and redo it.
-- Worst case loses one cell — 20 repairs, a minute or two — never the campaign.
+- Worst case loses one cell (20 repairs, a minute or two), never the campaign.
 
 - [ ] **Step 1: Write the failing tests**
 
@@ -310,7 +310,7 @@ def test_provenance_is_written_once_per_campaign(tmp_path):
 - [ ] **Step 2: Run them to confirm they fail**
 
 Run: `.venv/bin/pytest tests/test_probe_campaign.py -q`
-Expected: FAIL — `ModuleNotFoundError: No module named 'eval.probe_campaign'`
+Expected: FAIL. `ModuleNotFoundError: No module named 'eval.probe_campaign'`
 
 - [ ] **Step 3: Write the runner**
 
@@ -497,13 +497,13 @@ this a probe run records nothing about which weights produced it."
 - Consumes: `eval.probe_campaign.run_campaign`, `eval.llamacpp.LlamaCppClient`.
 - Produces: the run record and the REPORT. Nothing downstream consumes these programmatically.
 
-**THE PRE-REGISTRATION — written before any data existed. Do not soften it.**
+**THE PRE-REGISTRATION: written before any data existed. Do not soften it.**
 
 > **If** DeepSeek's `rust` arm scores **above qwen's 89.0**, **then** its
 > `oxide − explicit` delta scores **below qwen's +59.0**.
 >
 > **If** the `rust` arm scores **at or below 89.0**, this run does not test
-> the window and is reported **INCONCLUSIVE** — not reinterpreted.
+> the window and is reported **INCONCLUSIVE**, not reinterpreted.
 
 Reference points, from `eval/results/ownership-probe-10seed/`:
 
@@ -521,9 +521,9 @@ pgrep -af "bin/llama-server" || echo "no server"
 ss -lntp | grep ":8081 " || echo "port free"
 ```
 
-`pgrep -f llama-server` **self-matches** (the pgrep's own command line contains the string) — always match `bin/llama-server` or check the port. A stale server holds the port and answers the health check from the WRONG weights; that has silently killed a 600-repair run here before.
+`pgrep -f llama-server` **self-matches** (the pgrep's own command line contains the string). Always match `bin/llama-server` or check the port. A stale server holds the port and answers the health check from the WRONG weights; that has silently killed a 600-repair run here before.
 
-**Then clear ollama out of VRAM, and check free memory — not total.** This is not hypothetical: the first launch attempt of this very campaign died with `ErrorOutOfDeviceMemory` because ollama had silently loaded `qwen2.5-coder:7b-instruct-q8_0` and was holding **9,590 MiB**. llama-server reported `16303 MiB, 4947 MiB free` and aborted. With 0.51 GB of headroom, **any** concurrent ollama load is fatal — during the run as well as before it, since ollama's default keepalive will happily reload a model if anything touches it.
+**Then clear ollama out of VRAM, and check free memory, not total.** This is not hypothetical: the first launch attempt of this very campaign died with `ErrorOutOfDeviceMemory` because ollama had silently loaded `qwen2.5-coder:7b-instruct-q8_0` and was holding **9,590 MiB**. llama-server reported `16303 MiB, 4947 MiB free` and aborted. With 0.51 GB of headroom, **any** concurrent ollama load is fatal during the run as well as before it, since ollama's default keepalive will happily reload a model if anything touches it.
 
 ```bash
 ollama ps                      # must list no models
@@ -531,7 +531,7 @@ ollama stop <model>            # for each one listed
 nvidia-smi --query-gpu=memory.free --format=csv,noheader
 ```
 
-Require **≥ 13500 MiB free** before launching. Do not start the campaign against a server that loaded under a tighter budget — it will have silently placed layers differently or failed outright.
+Require **≥ 13500 MiB free** before launching. Do not start the campaign against a server that loaded under a tighter budget. It will have silently placed layers differently or failed outright.
 
 Then start it in the background (never with a foreground `sleep`, which the harness kills):
 
@@ -540,7 +540,7 @@ GGUF=/mnt/extra/ollama-models/blobs/sha256-bc286970a24072cf23a4c905f28adb9f6a28c
 ~/llama.cpp/build-vk/bin/llama-server -m "$GGUF" --port 8081 -ngl 99 -c 8192
 ```
 
-**Measured headroom is 0.51 GB after one repair** (15.33 GB used of 16.30 GB). It has loaded and generated correctly at these settings, so expect it to work — but if the server fails to load, OOMs, or throws `vk::DeviceLostError` repeatedly:
+**Measured headroom is 0.51 GB after one repair** (15.33 GB used of 16.30 GB). It has loaded and generated correctly at these settings, so expect it to work, but if the server fails to load, OOMs, or throws `vk::DeviceLostError` repeatedly:
 
 > **Fall back on QUANTIZATION, never on `num_ctx`.** Re-pull at `q4_K_M`
 > (`ollama pull deepseek-coder-v2:16b-lite-instruct-q4_K_M`, 10.36 GB,
@@ -548,8 +548,8 @@ GGUF=/mnt/extra/ollama-models/blobs/sha256-bc286970a24072cf23a4c905f28adb9f6a28c
 > `"q4_K_M"`, update the SPEC §48 sentence and the Task 1 test, and record
 > the change in the REPORT.
 >
-> Reducing `num_ctx` instead would deviate on a **second** axis — stacking
-> two confounds where this design budgeted for one — and would break
+> Reducing `num_ctx` instead would deviate on a **second** axis, stacking
+> two confounds where this design budgeted for one, and would break
 > comparability with the 8192 the other three families ran at. `num_ctx`
 > stays 8192 whatever happens.
 
@@ -574,7 +574,7 @@ print(p)
 "
 ```
 
-`preflight()` raises if the server's `n_ctx` is below the pinned 8192 — the one place a wrong `-c` is caught before the run is built on it. If it raises, restart the server with `-c 8192`; do not lower the pin.
+`preflight()` raises if the server's `n_ctx` is below the pinned 8192, the one place a wrong `-c` is caught before the run is built on it. If it raises, restart the server with `-c 8192`; do not lower the pin.
 
 - [ ] **Step 3: Run the campaign**
 
@@ -590,9 +590,9 @@ print(f'ran {len(ran)} cells')
 "
 ```
 
-30 cells × 20 probes = **600 repairs**, roughly 20–25 minutes. **No grammar constraint** — the probe supplies a syntactically correct program and only the ownership defect is wrong, so a grammar would test nothing here (`--grammar` is not passed).
+30 cells × 20 probes = **600 repairs**, roughly 20–25 minutes. **No grammar constraint.** The probe supplies a syntactically correct program and only the ownership defect is wrong, so a grammar would test nothing here (`--grammar` is not passed).
 
-> **Do not describe this as "matching how the other three families were run."** It does not, and that sentence is how a false claim about another run's configuration reached a commit message once already (retracted in `b42c324`). The truth, in the terms the REPORT must use: the `rust` arm is unconstrained everywhere, in every run, by design. The `oxide` and `explicit` arms ran **unconstrained here** and **grammar-constrained** for the three local reference families (`qwen2.5-coder-7b`, `codegemma-7b`, `granite-code-8b`). The fourth reference row, Claude Opus 5, was unconstrained on **all three** arms — verify that against `eval/results/ownership-probe-frontier/REPORT.md` rather than against any downstream prose. So the `oxide`/`explicit` figures here are **not** comparable to the three local families, and the REPORT must say so.
+> **Do not describe this as "matching how the other three families were run."** It does not, and that sentence is how a false claim about another run's configuration reached a commit message once already (retracted in `b42c324`). The truth, in the terms the REPORT must use: the `rust` arm is unconstrained everywhere, in every run, by design. The `oxide` and `explicit` arms ran **unconstrained here** and **grammar-constrained** for the three local reference families (`qwen2.5-coder-7b`, `codegemma-7b`, `granite-code-8b`). The fourth reference row, Claude Opus 5, was unconstrained on **all three** arms. Verify that against `eval/results/ownership-probe-frontier/REPORT.md` rather than against any downstream prose. So the `oxide`/`explicit` figures here are **not** comparable to the three local families, and the REPORT must say so.
 
 If it dies mid-run, re-run the identical command. Finished cells are skipped; the half-finished one is redone.
 
@@ -615,21 +615,21 @@ for arm in ('oxide', 'explicit', 'rust'):
 
 - [ ] **Step 5: Apply the pre-registration, in this order**
 
-1. **Read the `rust` arm first.** If it is **≤ 89.0**, the verdict is **INCONCLUSIVE** — write that, and stop. Do not compute a delta and narrate it. The subject was not established as stronger than qwen, so the window was not tested.
+1. **Read the `rust` arm first.** If it is **≤ 89.0**, the verdict is **INCONCLUSIVE**. Write that, and stop. Do not compute a delta and narrate it. The subject was not established as stronger than qwen, so the window was not tested.
 2. If the `rust` arm is **> 89.0**, compute `oxide − explicit`. **Below +59.0** confirms; **at or above +59.0** falsifies the window and that must be stated as plainly as a confirmation would be.
 
 - [ ] **Step 6: Write the REPORT**
 
-Create `eval/results/ownership-probe-deepseek/REPORT.md` following the house style of `eval/results/ownership-probe-10seed/REPORT.md` — a report that states its own limits. It must contain:
+Create `eval/results/ownership-probe-deepseek/REPORT.md` following the house style of `eval/results/ownership-probe-10seed/REPORT.md`, a report that states its own limits. It must contain:
 
 - The pre-registration **quoted verbatim from this plan**, before the results.
 - The three arm rates and the delta, with the four reference subjects for context.
 - The verdict: CONFIRMED / FALSIFIED / INCONCLUSIVE, by Step 5's rule.
-- **The quantization caveat, in these terms:** this subject ran at `q5_K_M` against the other three families' `q8_0`, because its `q8_0` GGUF is 16.70 GB against a 16.30 GB card. Quantization is a capability reduction, and on a non-monotonic curve the direction of bias depends on which side of the peak the subject sits — if DeepSeek is above the peak, quantizing moves it *toward* qwen's position and therefore *against* the prediction, making a confirmation conservative. **State plainly that this is an argument, not a measurement**, and that the clean settlement (running two quantizations) was scoped out.
+- **The quantization caveat, in these terms:** this subject ran at `q5_K_M` against the other three families' `q8_0`, because its `q8_0` GGUF is 16.70 GB against a 16.30 GB card. Quantization is a capability reduction, and on a non-monotonic curve the direction of bias depends on which side of the peak the subject sits. If DeepSeek is above the peak, quantizing moves it *toward* qwen's position and therefore *against* the prediction, making a confirmation conservative. **State plainly that this is an argument, not a measurement**, and that the clean settlement (running two quantizations) was scoped out.
 - **What this does not show:** one MoE subject cannot separate "MoE" from "stronger" from "different pretraining mix"; the window remains descriptive over five points, not causal; and the three-family results are untouched by this run.
 - The provenance: tag, digest, quantization, `num_ctx`, llama.cpp build.
 
-> **Correction — do not copy this plan's "16.70 GB against a 16.30 GB card" justification.** It is a unit error, repeated throughout this document: 16.70 GB is a **decimal** GGUF size from the ollama registry, while the "16.30 GB" card is `llama-server`'s **16303 MiB** with the decimal point moved. In consistent units the `q8_0` weights (15926 MiB) *fit* a 16303 MiB card by ~380 MiB, so "it does not fit the card even with nothing else running" is false. The pin is still physically forced, for the correct reason: **weights plus the measured runtime overhead** (~2160 MiB of KV cache and compute buffers at `num_ctx` 8192) come to ~18090 MiB, which overruns the whole card, and `q6_K` OOMs the same way. Quote VRAM in MiB or GiB, never mixed with decimal GB. The corrected wording lives in `SPEC.md` §48 and `eval/results/ownership-probe-deepseek/REPORT.md`; those are authoritative over the snapshots embedded in this plan.
+> **Correction: do not copy this plan's "16.70 GB against a 16.30 GB card" justification.** It is a unit error, repeated throughout this document: 16.70 GB is a **decimal** GGUF size from the ollama registry, while the "16.30 GB" card is `llama-server`'s **16303 MiB** with the decimal point moved. In consistent units the `q8_0` weights (15926 MiB) *fit* a 16303 MiB card by ~380 MiB, so "it does not fit the card even with nothing else running" is false. The pin is still physically forced, for the correct reason: **weights plus the measured runtime overhead** (~2160 MiB of KV cache and compute buffers at `num_ctx` 8192) come to ~18090 MiB, which overruns the whole card, and `q6_K` OOMs the same way. Quote VRAM in MiB or GiB, never mixed with decimal GB. The corrected wording lives in `SPEC.md` §48 and `eval/results/ownership-probe-deepseek/REPORT.md`; those are authoritative over the snapshots embedded in this plan.
 
 - [ ] **Step 7: Commit**
 

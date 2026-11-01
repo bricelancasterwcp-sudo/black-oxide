@@ -1,8 +1,8 @@
-# Ownership Probe — first run (qwen2.5-coder 7B-instruct-q8_0)
+# Ownership Probe: first run (qwen2.5-coder 7B-instruct-q8_0)
 
 **Date:** 2026-08-07
 **Instrument:** `docs/superpowers/specs/2026-08-07-ownership-probe-design.md`
-**Corpus:** `eval/probes.jsonl` — 6 defect classes × 3 arms, every record
+**Corpus:** `eval/probes.jsonl`: 6 defect classes × 3 arms, every record
 mechanically verified (broken fails with the intended ownership code and
 nothing else; fix compiles and reproduces the expected output).
 **Design:** 18 probes × 3 seeds = 54 repairs per configuration.
@@ -11,8 +11,8 @@ nothing else; fix compiles and reproduces the expected output).
 
 **This is the first time in the project's history that a model has been
 observed engaging the linearity checker.** `OX0400` appears in the repaired
-programs. Across the whole of Phase 6a — ~530 whole-program attempts in five
-configurations — no `OX04xx` had ever fired.
+programs. Across the whole of Phase 6a (~530 whole-program attempts in five
+configurations), no `OX04xx` had ever fired.
 
 ## Results
 
@@ -27,7 +27,7 @@ Rust is not; that asymmetry is justified below.
 | explicit | 2/18 | 7/18 | **7/18** |
 | rust | **15/18** | 15/18 | **18/18** |
 
-Oxide-arm diagnostics were `OX0001`×69, `OX0101`×36 — asked to *repair* a
+Oxide-arm diagnostics were `OX0001`×69, `OX0101`×36: asked to *repair* a
 program, the model emits unparseable Oxide. The syntax barrier follows into
 the repair task, because a repair still requires emitting a whole program.
 
@@ -43,7 +43,7 @@ the repair task, because a repair still requires emitting a whole program.
 18/18 unaided. The grammar removes a confound the Rust arm does not carry
 rather than granting the Oxide arms an advantage. This is a narrower claim
 than "constrained-vs-unconstrained is fair in general", and it holds only
-because the unconstrained Rust parse rate is 100% — check it again before
+because the unconstrained Rust parse rate is 100%: check it again before
 reusing this justification at another capability point.
 
 ## The primary comparison
@@ -65,7 +65,7 @@ Paired by defect class, strict score, Oxide − explicit-Oxide:
 Clears the pre-registered ±5pp band. **Does not clear 2 SE.** The point
 estimate favours implicit linearity by a wide margin and one class runs the
 other way, but six defect classes cannot resolve it. This is *suggestive and
-unresolved*, and it must not be reported as support — the band was calibrated
+unresolved*, and it must not be reported as support: the band was calibrated
 for a 20-task corpus, and this corpus has six.
 
 The obvious next step is more defect classes, not more seeds: the interval is
@@ -81,7 +81,7 @@ driven by between-class variance, so seeds 4–10 would barely move it.
 | explicit | 17/18 | 3/18 | **14/18** |
 | rust | 15/18 | 15/18 | **0/18** |
 
-Both Oxide arms clear the ownership diagnostic on 17 of 18 repairs — and more
+Both Oxide arms clear the ownership diagnostic on 17 of 18 repairs, and more
 than half of those "repairs" change what the program does. Rust does this
 **zero** times.
 
@@ -90,7 +90,7 @@ program was for. They delete the second use, or drop the value early, or
 restructure until the checker is quiet.
 
 This vindicates the strict-scoring decision completely. On the lenient score
-alone the ranking reads **oxide 17 ≈ explicit 17 > rust 15** — Oxide arms
+alone the ranking reads **oxide 17 ≈ explicit 17 > rust 15**: Oxide arms
 beating Rust. The strict score reverses it to **rust 15 > oxide 7 > explicit
 3**. Anyone reporting lenient without strict would have drawn exactly the
 wrong conclusion, and the lenient metric as originally specified was also
@@ -98,7 +98,7 @@ gameable by empty output (fixed in `bc569d6`).
 
 ## Secondary observations
 
-- `assign-to-iterated-vec` is 0/3 in **all three arms** — universally the
+- `assign-to-iterated-vec` is 0/3 in **all three arms**: universally the
   hardest defect, and the only one Rust fails.
 - `double-consume` is 3/3 in Rust and 0/3 in both Oxide arms.
 - Rust's only failures are `E0502`, the same class.

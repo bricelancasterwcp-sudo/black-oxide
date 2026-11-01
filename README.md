@@ -6,7 +6,7 @@ designed, wave by wave, for small LLMs to use more efficiently than Rust.**
 Black Oxide is a Rust-like language with **implicit linear types**:
 ownership works like Rust's, but there is no borrow syntax. The compiler
 infers moves, borrows, and destruction points; types are fully inferred.
-It transpiles to Rust, and `rustc` is the oracle — any program Black
+It transpiles to Rust, and `rustc` is the oracle: any program Black
 Oxide accepts that `rustc` rejects is a compiler bug.
 
 ```oxide
@@ -32,8 +32,8 @@ fn main() {
 ```
 
 It was a **design project**: design a language small models can use
-more efficiently than Rust (SPEC §62 states the three objectives —
-usefulness, efficiency, ease of learning for an LLM — and novelty is not
+more efficiently than Rust (SPEC §62 states the three objectives:
+usefulness, efficiency, and ease of learning for an LLM. Novelty is not
 among them), and run a measure → redesign loop where every wave's
 measurement feeds the next wave's design. The loop ran nine waves between
 2026-08-27 and 2026-09-02, on top of the v0.2–v0.3 repair-probe work
@@ -73,12 +73,12 @@ unless stated.
 
 | What the instruments established | Measurement | Tier · instrument | Source |
 |---|---|---|---|
-| **Implicit ownership is the one durable win** | structs/option 0.920 on the 40 train refs, 0.9187 on the 20 held-out eval refs, **0.9312 on the large tier** — a per-declaration saving that holds across a 4× size change while every other class inverts | small + large · static | `v04-campaign4/`, `v04-wave7-attribution/`, `v04-wave8-large/` |
+| **Implicit ownership is the one durable win** | structs/option 0.920 on the 40 train refs, 0.9187 on the 20 held-out eval refs, **0.9312 on the large tier**, a per-declaration saving that holds across a 4× size change while every other class inverts | small + large · static | `v04-campaign4/`, `v04-wave7-attribution/`, `v04-wave8-large/` |
 | Ownership is ≈+10pp of the repair advantage | implicit vs explicit ownership: **+59.0 / +35.0 / +9.5pp** on qwen2.5-coder-7b / codegemma-7b / granite-code-8b, 600 repairs each; granite, untouched by every ergonomic fix, isolates ownership at +9.5pp; **0.0pp** at frontier (11/12 vs 11/12) | one seeded defect + diagnostic · ownership probe | [docs/HISTORY.md](docs/HISTORY.md), `ownership-probe-*/` |
-| **Familiarity is the lever** | with both spellings available, the tuned 7B chose Rust's `\|x\|` over the shipped `x ->` **43 : 4**; after re-spelling, uptake went 4 → **19** (7B) / **24** (14B) at 3.9% exposure vs the arrow's 2.4%; `filter` beat `count_if` **11–0** — the familiar *and more expensive* spelling won | small · G2 uptake per reply file, learnability = uptake ÷ exposure | `v04-campaign3/` §6, `v04-campaign4/` §5 |
-| Uptake ≈ exposure × familiarity | `reverse` drew 50 tuned uses from 1.7% corpus exposure; `count_if` drew 0 from 2.4%; `swap` reached the model in 2 of 294 training examples and drew 0 — the pipeline under-teaches its own vocabulary | small · corpus census vs uptake | `v04-campaign3/` §6.1 |
+| **Familiarity is the lever** | with both spellings available, the tuned 7B chose Rust's `\|x\|` over the shipped `x ->` **43 : 4**; after re-spelling, uptake went 4 → **19** (7B) / **24** (14B) at 3.9% exposure vs the arrow's 2.4%; `filter` beat `count_if` **11–0**: the familiar *and more expensive* spelling won | small · G2 uptake per reply file, learnability = uptake ÷ exposure | `v04-campaign3/` §6, `v04-campaign4/` §5 |
+| Uptake ≈ exposure × familiarity | `reverse` drew 50 tuned uses from 1.7% corpus exposure; `count_if` drew 0 from 2.4%; `swap` reached the model in 2 of 294 training examples and drew 0. The pipeline under-teaches its own vocabulary | small · corpus census vs uptake | `v04-campaign3/` §6.1 |
 | **Documentation is not capability** | card-only base-ox-7 pass@1 **0.025 / 0.060 / 0.070 / 0.075 / 0.060** across five card versions; adding the never-documented operator table moved nothing at any tier (1.5B 0.000→0.000, 7B 0.075→0.060, 14B 0.525→0.500) because the model already used `==` in 160, `!` in 190, `%` in 136 reply files under the old card; Claude Sonnet scored 20/20 from that card by assuming Rust's operators | small · single-variable card swap, drift guard clean | `v04-wave5-card/`, SPEC §63.6 |
-| On small tasks the *language* is below parity and the *model* is not | eval-set static **0.9462** with both arms reviewed, against a model surplus over the references of **1.242–1.276** on the same 20 tasks; **89%** of the surplus is helper-function definitions, **76%** of them called exactly once — a teaching problem, not a language gap | small · static + composition-controlled surplus | `eval/references-v04/`, `v04-wave7-attribution/`, `v04-wave8-phaseb/` |
+| On small tasks the *language* is below parity and the *model* is not | eval-set static **0.9462** with both arms reviewed, against a model surplus over the references of **1.242–1.276** on the same 20 tasks; **89%** of the surplus is helper-function definitions, **76%** of them called exactly once: a teaching problem, not a language gap | small · static + composition-controlled surplus | `eval/references-v04/`, `v04-wave7-attribution/`, `v04-wave8-phaseb/` |
 | **The static advantage inverts at scale** | 40 train refs **0.9871** (median 57 tokens) → 20 eval refs **0.9462** (73) → 20 large refs **1.0622** (292.5); the strata split bought nothing (compositional 1.0718 vs linear 1.0482); indexing `v[i]` (wave 9) takes the large tier to **1.0259** | large · static | `v04-wave8-large/`, `v04-wave9-index/` |
 | **Usefulness fails first at scale** | the same tuned 7B produces *compiling* Oxide **5.5%** of the time on large tasks vs **81.5%** for the symmetrically-trained Rust arm; pass@1 **0.645 → 0.035** on one adapter across the two tiers; 0 truncated generations; the top failure is `unexpected character '['` | large · first-attempt compile rate, symmetric control | `v04-wave8-phaseb/` |
 | Scale does not rescue it | 14B: **5.0% vs 76.7%**, compile-rate ratio **0.067 → 0.0652** across a doubling of model size (pre-registered ≤0.20 = language property); `[` appears in **16.8%** of 7B attempts and **29.0%** of 14B attempts, and is a lexer error | large · 3-seed screen, 8/8 seed-matched guards reproduced | `v04-wave8-14b-screen/` |
@@ -96,12 +96,12 @@ four 14B arms, same seeds, primary endpoint the large-tier compile-rate
 ratio against 0.0652, secondary the `OX0001` lexer share against **0.338**
 (73 of 216 under the instrument's own lens; the plan first quoted 73 of
 191, a denominator summed from a report table and corrected before the
-run — see the estimand write-up, §7).
+run; see the estimand write-up, §7).
 
 **Re-screen result (2026-09-02):** the tuned-Oxide small-tier guard
 missed its seed-matched anchor by one cell (0.7833 vs 0.8000), because
 `pod_setup.sh` cloned llama.cpp at HEAD and the commit had moved since
-wave 8 — weights, sampler and seeds were identical. Per the plan no
+wave 8. Weights, sampler and seeds were identical. Per the plan no
 ratio is published against wave 8. Within the run, Oxide compiled
 **3 of 60** large-tier attempts, the same count as wave 8, while the
 `OX0001` lexer share fell **0.338 → 0.019** and two byte-identical
@@ -135,7 +135,7 @@ the objectives and the four-quadrant ordering they imply.
 5. **Documentation is not capability.** Document what the model does
    not already know; the card saturated after one revision.
 6. **The verifier-in-the-loop repair step is where a notation's
-   advantage shows**, not free generation — and it vanishes at frontier
+   advantage shows**, not free generation, and it vanishes at frontier
    capability. State the capability window in every claim.
 
 ## The write-ups
@@ -143,21 +143,21 @@ the objectives and the four-quadrant ordering they imply.
 Self-contained documents, each with its numbers, method, controls and
 limits, verifiable from the committed artifacts they name:
 
-- **[Usefulness fails first at scale](docs/findings/2026-09-02-usefulness-fails-first-at-scale.md)**
-  — the static advantage inverts on 200–600 token programs, the tuned
+- **[Usefulness fails first at scale](docs/findings/2026-09-02-usefulness-fails-first-at-scale.md):**
+  the static advantage inverts on 200–600 token programs, the tuned
   model compiles 5% of its attempts there against 77–82% for Rust, and
   doubling model size does not move the ratio.
-- **[Familiarity is the lever](docs/findings/2026-09-02-familiarity-is-the-lever.md)**
-  — uptake tracks exposure × prior familiarity, a falsified spelling
+- **[Familiarity is the lever](docs/findings/2026-09-02-familiarity-is-the-lever.md):**
+  uptake tracks exposure × prior familiarity, a falsified spelling
   ruling, the card saturating, and the four quadrants.
-- **[Check the estimand before naming a finding](docs/findings/2026-09-02-check-the-estimand-before-naming-a-finding.md)**
-  — seven instrument defects, each caught by asking whether two numbers
+- **[Check the estimand before naming a finding](docs/findings/2026-09-02-check-the-estimand-before-naming-a-finding.md):**
+  seven instrument defects, each caught by asking whether two numbers
   were measured on the same thing; one of them cost four waves.
-- **[Most of the win was ergonomics, not ownership](docs/findings/2026-08-12-ergonomics-beat-ownership.md)**
-  — the +59pp repair headline decomposes to ≈+10pp ownership and up to
+- **[Most of the win was ergonomics, not ownership](docs/findings/2026-08-12-ergonomics-beat-ownership.md):**
+  the +59pp repair headline decomposes to ≈+10pp ownership and up to
   +42pp surface ergonomics under a matched-novelty control.
-- **[Constrained decoding deforms rather than rejects](docs/findings/2026-08-12-constrained-decoding-deforms.md)**
-  — a grammar steers generation to the nearest legal string and
+- **[Constrained decoding deforms rather than rejects](docs/findings/2026-08-12-constrained-decoding-deforms.md):**
+  a grammar steers generation to the nearest legal string and
   manufactures programs the model did not write; corroborated by
   [robigo](https://github.com/bricelancasterwcp-sudo/robigo) and
   [assay](https://github.com/bricelancasterwcp-sudo/assay).
@@ -166,7 +166,7 @@ limits, verifiable from the committed artifacts they name:
 
 Three things carry the lessons forward, none of them another construct:
 
-- **[flux](https://github.com/bricelancasterwcp-sudo/flux)** — a
+- **[flux](https://github.com/bricelancasterwcp-sudo/flux):** a
   pre-registered experiment on this repository's Rust arms: apply rustc's
   machine-applicable suggestions in a loop *before* a small model sees a
   diagnostic, and measure what is left of the deficit. Its $0 census over
@@ -174,7 +174,7 @@ Three things carry the lessons forward, none of them another construct:
   floor of 16: the live phase is not funded, and thirteen of the fifteen
   suggestion-fixed programs compile and print the wrong answer. The
   deficit is wrong programs, not ceremony.
-- **[caliper](https://github.com/bricelancasterwcp-sudo/caliper)** — an
+- **[caliper](https://github.com/bricelancasterwcp-sudo/caliper):** an
   inventory and extraction brief for the measurement bench under `eval/`
   (paired arms, oracle-verified references, symmetric controls,
   composition-controlled ratios, learnability, censuses, drift guards),
@@ -239,16 +239,16 @@ the sampler and the seeds.
 
 | Path | |
 |---|---|
-| `SPEC.md` | the binding contract — every phase a numbered normative Part; §58–§65 are the design record of waves 1–9 |
+| `SPEC.md` | the binding contract: every phase a numbered normative Part; §58–§65 are the design record of waves 1–9 |
 | `src/` | lexer, parser, semantic analysis, Rust codegen, CLI |
 | `src/explicit/` | the explicit-ownership control dialect |
 | `eval/` | harness, task corpora, ownership probe, grammars, model clients, censuses, estimands |
 | `eval/tasks.jsonl` · `eval/tasks-large.jsonl` | the 20 small (40–150 token) and 20 large (200–600 token) eval tasks |
-| `eval/solutions/` | the frozen contamination reference — deliberately never modernised |
+| `eval/solutions/` | the frozen contamination reference, deliberately never modernised |
 | `eval/references-v04/` | the measurement references for the eval set, both arms reviewed |
 | `eval/results/` | every run, with raw model outputs verbatim and a `REPORT.md` per wave |
 | `scripts/runpod/` | pod setup, LoRA training and merge, arm serving, the wave-8/9 screen drivers |
-| `LANGUAGE_CARD.md` | what a model is given — compiler-validated |
+| `LANGUAGE_CARD.md` | what a model is given, compiler-validated |
 | `docs/findings/` | the standalone write-ups |
 | `docs/HISTORY.md` | the v0.2–v0.3 README, verbatim |
 | `docs/superpowers/specs/` · `plans/` | design documents and pre-registrations, one per wave |
@@ -274,4 +274,4 @@ which conclusions its data does *not* support.
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT. See [LICENSE](LICENSE).

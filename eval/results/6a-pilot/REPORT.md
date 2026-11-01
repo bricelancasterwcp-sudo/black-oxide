@@ -1,4 +1,4 @@
-# Phase 6a Pilot — the ladder sits below the phenomenon
+# Phase 6a Pilot: the ladder sits below the phenomenon
 
 **Date:** 2026-08-07
 **Status:** pilot, not a reported grid result. Written to `eval/results/6a-pilot/`
@@ -9,7 +9,7 @@ from a scratch run root, deliberately outside the grid namespace.
 The Phase 6a design (SPEC Part X) specifies a 1800-session grid: 3 models ×
 3 arms × 20 tasks × 5 seeds × 2 shot conditions, ~2–4h. Before committing to
 it, three single-`run_id` probes were run as a pipeline rehearsal. They were
-never intended to be analysed — but the diagnostics they produced answer the
+never intended to be analysed, but the diagnostics they produced answer the
 question the grid was meant to answer, and answer it against running the grid
 as specified.
 
@@ -37,7 +37,7 @@ linearity codes.** Not one.
 
 Every Oxide failure is lexical or syntactic. The models never reach the
 semantic layer, so the eval at these capability points measures **syntax
-acquisition, not ownership reasoning** — and the ladder's top rung is no
+acquisition, not ownership reasoning**, and the ladder's top rung is no
 exception. 7B compiles Rust 20/20 and Oxide 2/20.
 
 ### What the models actually emit
@@ -66,7 +66,7 @@ fn sum_of_squares() -> Int {
 ```
 
 These are not confused outputs. They are competent Rust/Python habits leaking
-into a language whose grammar is narrower — a pretraining-exposure artifact,
+into a language whose grammar is narrower, a pretraining-exposure artifact,
 exactly the confound SPEC §47 says must not be read as evidence about language
 design.
 
@@ -74,7 +74,7 @@ design.
 
 Semicolons are the most *frequent* rejection, so the obvious intervention is to
 tolerate or strip them. Tested by re-running every stored first-attempt output
-with trailing semicolons removed — no new generations required:
+with trailing semicolons removed (no new generations required):
 
 | Probe | arm | as-is | semicolons stripped |
 |---|---|---|---|
@@ -96,14 +96,14 @@ SPEC §47's `≥ +5pp` band. The report printed:
 | qwen7b | 0 | +10.0 | 6.9 | supports | 10% | 0% | 60% |
 ```
 
-"supports" — off two programs, with a paired SE of 6.9pp that does not
+"supports": off two programs, with a paired SE of 6.9pp that does not
 distinguish the delta from zero. The ±5pp band was derived from a power
 calculation at p≈0.5; at p≈0.05 that derivation does not hold.
 
 Fixed in `cb250ab`: a point where both primary arms sit within 10pp of 0% or of
 100% now reports `no-signal-at-floor` / `no-signal-at-ceiling` and carries no
 pre-registered reading. The delta and SE are still printed. Neither the band nor
-either direction changed — this honours §47's stated limits rather than
+either direction changed. This honours §47's stated limits rather than
 renegotiating its conclusions, and it was derived from pilot data written
 outside `eval/results/` before any grid run.
 
@@ -111,41 +111,41 @@ outside `eval/results/` before any grid run.
 
 - **Runtime is far below budget.** 60 sessions in 1m49s at 0.5B; 220
   generations, 1 truncation, mean 178 output tokens. Model time was 104s of
-  109s wall — rustc is nearly free because the Oxide arms fail in the
+  109s wall: rustc is nearly free because the Oxide arms fail in the
   transpiler and never reach it. The full grid would be ~2–4h, not 8–14h.
 - **`contract_compliant` is 0/60 across every arm.** Instruct models wrap output
   in markdown fences without exception. Extraction handles it correctly and the
   metric is formatting-only by design, but that column will read 0% throughout.
-- **The pipeline works end to end on real data** — sessions, triples, cells,
+- **The pipeline works end to end on real data:** sessions, triples, cells,
   manifest, rollup.
 
 ## Recommendation
 
 **Do not run the grid as specified.** It would spend 2–4h to produce three rungs
-of near-zero Oxide performance and an empty `OX04xx` histogram — run 1's
+of near-zero Oxide performance and an empty `OX04xx` histogram: run 1's
 empty-gate failure, arriving from the floor instead of the ceiling.
 
 The binding constraint is syntax, and the way to remove it is
 **grammar-constrained decoding**: with a GBNF grammar the model can only emit
 parseable Oxide, every remaining failure is semantic, and the gate deliverable
-finally populates. This isolates the actual question — *given valid syntax, does
-implicit linearity help?* — which is what the language exists to answer.
+finally populates. This isolates the actual question (*given valid syntax, does
+implicit linearity help?*), which is what the language exists to answer.
 
 Two caveats that belong in the analysis plan up front:
 
 1. Constrained decoding changes what "writes the language" means. The
    unconstrained result above is the honest answer to "can a small model write
-   Oxide from a card" — **no** — and should be reported as such rather than
+   Oxide from a card": **no**, and should be reported as such rather than
    replaced.
 2. Ollama silently ignores a `grammar` option (verified: it returns free text),
    so this requires `llama.cpp`. The `ModelClient` protocol was built for that
    swap.
 
-## Addendum — grammar-constrained decoding was built, and moved the wall
+## Addendum: grammar-constrained decoding was built, and moved the wall
 
 The recommendation above was implemented (`3aa4e6d`): a generated GBNF grammar
 (`eval/grammar/`) plus a `llama.cpp`-backed `ModelClient` (`eval/llamacpp.py`).
-The soundness property holds — constrained output parses.
+The soundness property holds: constrained output parses.
 
 Independent probes, 24 generations each over 12 corpus tasks, 0-shot:
 
@@ -164,13 +164,13 @@ The remaining `OX01xx` are `found EOF` on generations truncated at
 **The grammar worked and the thesis is still unreachable.** `analyze.py` is
 strictly staged, so removing the syntax barrier moved the population to the
 next one: name resolution. A constrained **0.5B** now compiles clean more often
-than an unconstrained **7B** did — but no linearity diagnostic has ever been
+than an unconstrained **7B** did, but no linearity diagnostic has ever been
 observed, in any configuration, at any capability point tested.
 
 Raising capability does not help: constrained 7B has *more* `OX0200` than
 constrained 0.5B (66 vs 27), because it writes longer programs with more
 unbound references. The names it fails on are `x`, `acc`, `current_state`,
-`value`, `_count` — **local variables used before binding.** The models write
+`value`, `_count`: **local variables used before binding.** The models write
 `acc = acc + i` with no `let acc = 0`, i.e. Python-style implicit declaration.
 That is a scoping-discipline failure, not a missing standard library, so no
 prelude or card addition fixes it.
@@ -179,10 +179,10 @@ prelude or card addition fixes it.
 
 The barrier is a stack, and every layer removed reveals the next:
 
-1. **Syntax** — removed by the grammar.
-2. **Name binding** — now the binding constraint, and worse at higher capability.
-3. **Types** — behind that.
-4. **Linearity** — never reached, in ~530 Oxide-arm attempts across five
+1. **Syntax:** removed by the grammar.
+2. **Name binding:** now the binding constraint, and worse at higher capability.
+3. **Types:** behind that.
+4. **Linearity:** never reached, in ~530 Oxide-arm attempts across five
    configurations.
 
 At ≤7B, with or without grammar constraint, these models cannot exercise the

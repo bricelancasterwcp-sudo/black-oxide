@@ -3,7 +3,7 @@
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** Ship the wave-1 vocabulary (vec builtins, ranges, Option
-ergonomics — census-confirmed), re-author the oxide references, and
+ergonomics; census-confirmed), re-author the oxide references, and
 read the pre-registered token-efficiency endpoints with pass-rate and
 uptake guards.
 
@@ -41,7 +41,7 @@ task below.
   references produce byte-identical output) and fail-closed
   diagnostics; transpiled Rust compiles warning-clean.
 - Every new construct gets receiver-first method syntax for free via
-  the existing builtin mechanism (§53) — verify per construct, do not
+  the existing builtin mechanism (§53). Verify per construct, do not
   reimplement.
 - Wave cap: at most 8 shipped constructs. The census gate (Task 2)
   finalizes the slate; implementation tasks 3–5 build ONLY the
@@ -139,13 +139,13 @@ def test_acceptance_pin_on_committed_replies():
 - [ ] **Step 2: Run tests to verify they fail**
 
 Run: `.venv/bin/pytest tests/test_demand_census.py -v`
-Expected: FAIL — `ModuleNotFoundError: No module named 'eval.demand_census'`
+Expected: FAIL: `ModuleNotFoundError: No module named 'eval.demand_census'`
 
 - [ ] **Step 3: Implement, then harden the acceptance pin**
 
 Implement `eval/demand_census.py` per the interface block (counting is
 per-file: a pattern family counts at most once per spelling per reply
-file for replies, and once per program for program sources — burstiness
+file for replies, and once per program for program sources: burstiness
 inside one reply must not inflate demand). Then hand-verify one
 committed cell (`grep -rlE '<range_call regex>' eval/results/runpod-exp/base-ox-7/*/raw | wc -l`),
 replace the `> 0` assertion with the exact count, and record the
@@ -157,7 +157,7 @@ writes `eval/results/v04-census/census.json` (sort_keys, no
 timestamps) and a `REPORT.md` with: per-family spelling counts for
 model replies (oxide arms only, per arm), per-class hand-rolled
 pattern counts for programs, and a ranked table (family, total demand,
-dominant spelling). No recommendations in the report — the ranking is
+dominant spelling). No recommendations in the report. The ranking is
 data; the gate (Task 2) decides.
 
 - [ ] **Step 4: Run tests, run the census, commit**
@@ -171,7 +171,7 @@ check).
 
 1. Make per-file counting per-occurrence (count every match):
    `test_range_patterns_positive_and_negative` must FAIL (a file with
-   one spelling twice would double-count — extend the fixture with a
+   one spelling twice would double-count. Extend the fixture with a
    duplicate line first if needed to make the mutation visible).
 2. Break the `index_assign` negative guard (drop the `[^=]`):
    `test_index_assign_excludes_comparison` must FAIL.
@@ -201,10 +201,10 @@ slate; their briefs get the gate's ruling pasted in as their slate.
 ### Task 3: Vec builtins (gated subset of: sort, min, max, sum, contains, set)
 
 **Files:**
-- Modify: `src/sema/types.py` (the `BUILTINS` dict at line 99 — one
+- Modify: `src/sema/types.py` (the `BUILTINS` dict at line 99: one
   `BuiltinSig` per construct; read `push` at line 104 and `get`/`len`
   as the templates for consuming vs reading modes)
-- Modify: `src/codegen/support.py` (support-function preamble — read
+- Modify: `src/codegen/support.py` (support-function preamble: read
   `fn push<T>` at line 44 and the flags table at line 164; add one
   support fn + flags row per construct, mirroring the table's
   semantics for existing entries)
@@ -223,7 +223,7 @@ slate; their briefs get the gate's ruling pasted in as their slate.
   out-of-bounds contract exactly (read `get`'s support fn first and
   copy its behavior class).
 
-- [ ] **Step 1: Write the failing tests** — verbatim programs, one
+- [ ] **Step 1: Write the failing tests**: verbatim programs, one
   compile-and-run stdout test per construct plus edge cases, following
   the pattern of
   `tests/test_codegen.py::test_variadic_vec_literal_runtime_stdout_matches_the_push_chain`
@@ -270,22 +270,22 @@ CASES = [
 ```
 
   Plus a diagnostics list (compile-must-fail with the expected OX code,
-  following the existing diagnostic-test pattern in the suite — find
+  following the existing diagnostic-test pattern in the suite: find
   one that asserts an OX0400-class code and mirror it): use-after-move
   of `sort`/`set` receivers; `sum` on a non-Int vec (type error);
   `contains` arity error. Plus one ownership-consistency test: sum/len
   style readers do NOT move their argument (call `sum(v)` then
-  `len(v)` — compiles, runs).
+  `len(v)`: compiles, runs).
 
   Empty-vec literals in fixtures may need usage context for inference
-  (the card notes `vec()` "needs usage context to infer T") — the
+  (the card notes `vec()` "needs usage context to infer T"). The
   fixtures above thread a `push` after each bare `vec()` for exactly
   that reason. The `min_empty_is_none` fixture's `e` has only
   `min(e)` as context; if inference cannot bind `T` there, adapt the
   fixture using the codebase's established empty-vec idiom (see the
   inference tests in `tests/test_linear.py`, e.g. around
   `test_s1_both_vec_bindings_infer_vec_int`) and record the
-  adaptation in your report — the assertion (empty → the None arm
+  adaptation in your report. The assertion (empty → the None arm
   prints) must survive unchanged.
 
 - [ ] **Step 2: Run to verify failures** (unknown-builtin diagnostics),
@@ -305,16 +305,16 @@ CASES = [
 ### Task 4: Ranges (gated spelling; provisional `a..b`)
 
 **Files:**
-- Modify: `src/lexer/tokens.py` + `src/lexer/lexer.py` (a `..` token —
+- Modify: `src/lexer/tokens.py` + `src/lexer/lexer.py` (a `..` token:
   check interaction with float literals and the existing `.` method
   token; the lexer must keep `1.5` a float and `a..b` a range)
 - Modify: `src/parser/expressions.py` / `src/parser/ast.py` (range
-  expression node; precedence per the census spelling — read how
+  expression node; precedence per the census spelling: read how
   existing binary operators register)
 - Modify: `src/sema/` (type: `Int .. Int` yields an iterable-of-Int
-  usable ONLY as a `for` header iterable this wave — a chosen scope
+  usable ONLY as a `for` header iterable this wave: a chosen scope
   limit; anywhere else → new diagnostic, fail closed, next free OX
-  code in the parser/sema's numbering convention — read
+  code in the parser/sema's numbering convention: read
   `src/diagnostics.py` for the allocation pattern)
 - Modify: `src/codegen/rust.py` (emit `a..b` in the for-header
   position)
@@ -351,13 +351,13 @@ test FAILS. Commit `feat: v0.4 ranges — <spelling> in for headers`.
 `o.unwrap_or(d)`). Tests (same file pattern, `tests/test_v04_option.py`):
 Some-path, None-path, method form, arity/type diagnostics, and a
 non-consuming read check (`unwrap_or(o, 0)` then `match o` still
-compiles — verify against how `get` treats its Option-producing reads;
+compiles. Verify against how `get` treats its Option-producing reads;
 if Option reads are consuming in the existing semantics, mirror the
 existing convention and record which one holds in your report).
 
 `if let` (ONLY if the Task 2 gate ships it): grammar sugar in
 `src/parser/parser.py` desugaring to the existing single-arm `match`
-AST — no new sema or codegen if the desugar is faithful; tests assert
+AST: no new sema or codegen if the desugar is faithful; tests assert
 byte-identical transpiled Rust between `if let` source and its
 hand-written `match` equivalent (the §55 byte-identity pattern at
 `tests/test_codegen.py:733`). Mutation: break the desugar's binding →
@@ -372,7 +372,7 @@ section + one Syntax essentials line for ranges, matching the card's
 existing voice and brevity); append a dated amendment to `SPEC.md`
 (the §0 card freeze lifts here, per the design spec; record old/new
 card word counts); update `tests/test_cards.py` if it pins card
-content (read it first — if it pins byte-hashes or word counts, update
+content (read it first: if it pins byte-hashes or word counts, update
 the pins in the same commit, non-silently).
 
 Steps: edit → `wc -w` before/after recorded in the SPEC amendment →
@@ -388,7 +388,7 @@ work surface; every `rust.rs` byte-identical); regenerate
 `eval/train/matched/` via the committed builder; update
 `tests/test_token_match_corpus.py` acceptance pins ONLY as the
 non-silent re-pin this task's commit message documents (the counts
-change because programs change — state old→new in the commit body).
+change because programs change. State old→new in the commit body).
 
 - [ ] Re-author under the spec's bias rules: substitution-only edits
   where a shipped construct replaces its hand-rolled pattern (n041's
@@ -396,10 +396,10 @@ change because programs change — state old→new in the commit body).
   rebuild loops → `set`; counter loops → ranges; Option matches with
   constant fallbacks → `unwrap_or`). Every pair re-validated
   (`validate_pair`), stdout byte-identical to before (the task's
-  expected_stdout is frozen — a re-authored program that changes
+  expected_stdout is frozen: a re-authored program that changes
   stdout is WRONG, fix it).
 - [ ] Contamination guard green; `python -m eval.token_match` rebuild;
-  amplified programs are unchanged inputs (they still validate — they
+  amplified programs are unchanged inputs (they still validate: they
   don't use the new vocabulary; that asymmetry is measured, not
   hidden: the manifest's reference vs amplified efficiency sections
   will diverge and the wave report says why).
@@ -407,7 +407,7 @@ change because programs change — state old→new in the commit body).
   ratios from the new manifest; compare against the spec's targets
   (overall ≤ 1.10, vectors ≤ 1.15, structs ≤ 1.00, arithmetic
   1.04 ± 0.05). **Whatever the numbers say, they are recorded and the
-  task completes** — a missed target is a wave finding for the gate
+  task completes**. A missed target is a wave finding for the gate
   in Task 9's report, not a reason to iterate re-authoring past the
   bias rules. STOP only if a guard-rail broke (stdout drift,
   contamination hit, validate_pair failure).
@@ -417,34 +417,34 @@ change because programs change — state old→new in the commit body).
 
 ---
 
-### Task 8: EXECUTION — the dynamic loop on RunPod (controller-inline)
+### Task 8: EXECUTION: the dynamic loop on RunPod (controller-inline)
 
 Procedure (budget ceiling $10, chosen in the spec; the runbook,
-scripts, and ops gotchas from the wave-0 evidence file apply —
+scripts, and ops gotchas from the wave-0 evidence file apply:
 nvcc off PATH, nginx owns 8081, PUBLIC_KEY baked into pod env,
 bracket-pattern pgrep):
 
-1. Pod up (24GB class), setup, pull branch. Convert nothing — reuse
+1. Pod up (24GB class), setup, pull branch. Convert nothing. Reuse
    wave-0 ggufs? NO: `base-7.q8_0.gguf` must be REBUILT only if the
-   card changed affects nothing served (it does not — the card is
+   card changed affects nothing served (it does not: the card is
    prompt-side). Rebuild only `tune-ox-7(v2)`: re-amplify FIRST.
 2. **Re-amplify** with card-v0.4 (the committed amplification
    machinery, K=30, qwen-7b family, oxide+rust arms, new run root
    `eval/results/v04-amp/`): the oxide outputs are the card-arm G2
-   uptake read — run `eval/demand_census.py` patterns over them and
+   uptake read: run `eval/demand_census.py` patterns over them and
    record per-construct uptake counts.
 3. Re-match (builder over the wave-1 corpus + v04-amp), **re-tune
-   tune-ox-7 only** (train_lora, same recipe — epoch parity binds),
+   tune-ox-7 only** (train_lora, same recipe: epoch parity binds),
    merge/convert/quantize, smoke.
 4. Campaign, 4 arms, fresh results root `eval/results/v04-campaign/`:
    `base-rs-7` (control band: pass@1 within ±0.10 of 0.565),
    `base-ox-7` (card-v0.4), `tune-ox-7-v2`, `tune-rs-7` (wave-0 gguf,
    re-served). G1 floor: tune-ox-7-v2 pass@1 ≥ 0.455. G2: census
-   patterns over the tuned arm's raw replies — every shipped
+   patterns over the tuned arm's raw replies: every shipped
    construct's uptake counted.
 5. Rsync everything home; terminate pod; verify 0 pods twice; record
    spend. Control-band breach = infrastructure diagnosis first, per
-   the wave-0 precedent (diagnose, rule, record — never reinterpret).
+   the wave-0 precedent (diagnose, rule, record: never reinterpret).
 
 ---
 
@@ -453,14 +453,14 @@ bracket-pattern pgrep):
 Write `eval/results/v04-campaign/REPORT.md` (numbers from the
 manifest, ENDPOINTS-style computations for the 4 arms via
 `eval.experiment_report.gen_metrics`/`strict_repair_rate` where the
-layouts match — read only what exists; no interim machinery): the
+layouts match: read only what exists; no interim machinery): the
 static endpoint table (targets vs measured, per class), G1/G2 reads,
 tokens-to-green ratios, uptake per construct (card arm and tuned arm),
 spend, and a **Feed-forward to wave 2** section: strings-class census
 ranking, wave-1 failed-uptake constructs with their counts, any target
 misses with the mechanism as measured, and the re-amplified corpus's
 reference-vs-amplified efficiency divergence. Full suite green;
-commit; push. The report ends with the feed-forward section — by
+commit; push. The report ends with the feed-forward section. By
 construction there is no verdict paragraph to write.
 
 ---
@@ -468,11 +468,11 @@ construction there is no verdict paragraph to write.
 ## Self-Review Notes (for the executor)
 
 - Task 1's acceptance pin starts as `> 0` and MUST be hardened to a
-  hand-verified exact count in Step 3 — the plan says so twice
+  hand-verified exact count in Step 3. The plan says so twice
   because a soft pin is the instrument's licence going unearned.
 - Tasks 3–5 give test programs verbatim but implementation by
-  template (the `push`/`get`/§55 seams are named with line numbers)
-  — the codebase's own conventions outrank any plan-invented shape,
+  template (the `push`/`get`/§55 seams are named with line numbers).
+  The codebase's own conventions outrank any plan-invented shape,
   and the reviewer checks convention-fit as part of quality.
 - Task 7's target read completes regardless of hitting targets; only
   guard-rail breaks stop it. This is the no-verdict discipline in

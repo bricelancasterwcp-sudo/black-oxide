@@ -45,7 +45,7 @@ build `b1-4988f6e`.
 ## What already exists (do not rebuild)
 
 `tasks_path` is **already threaded through the entire driver and
-harness** — `harness.load_tasks`, `_get_task`, `build_prompt`,
+harness**: `harness.load_tasks`, `_get_task`, `build_prompt`,
 `run_task`, `new_session`, and `driver.run_grid`,
 `driver.preflight_environment`, `driver._run_cell` all accept it. The
 only gap is that `driver.main()` never sets it. Task 2 is therefore a
@@ -149,7 +149,7 @@ def test_committed_training_corpus_is_clean():
 - [ ] **Step 2: Run them and watch every one fail**
 
 Run: `.venv/bin/pytest tests/test_train_corpus.py -v`
-Expected: collection error or 7 failures — `eval.train_corpus` does not exist.
+Expected: collection error or 7 failures. `eval.train_corpus` does not exist.
 
 - [ ] **Step 3: Implement the module**
 
@@ -264,7 +264,7 @@ Expected: 6 passed, 1 skipped (the real-corpus test skips until Task 4).
 - [ ] **Step 5: Mutation-verify the guard**
 
 The guard is the one piece of this plan whose failure is silent, so a
-passing test is not enough — the g2 branch found eight tests that passed
+passing test is not enough. The g2 branch found eight tests that passed
 against deliberately broken implementations. Break it three ways and
 confirm a test dies each time:
 
@@ -276,7 +276,7 @@ confirm a test dies each time:
    `test_prompt_sharing_eleven_words_is_not_flagged` must fail.
 
 Revert each mutation before the next. If any mutation leaves the suite
-green, the test that should have caught it is decorative — fix the test,
+green, the test that should have caught it is decorative. Fix the test,
 not the mutation, and record it in the task report.
 
 - [ ] **Step 6: Run the full suite and commit**
@@ -343,7 +343,7 @@ Reuse whatever client stub `tests/test_6a.py` already uses for
 - [ ] **Step 2: Run it and verify it fails**
 
 Run: `.venv/bin/pytest tests/test_6a.py::test_driver_tasks_flag_reaches_the_grid -v`
-Expected: FAIL — `unrecognized arguments: --tasks`.
+Expected: FAIL. `unrecognized arguments: --tasks`.
 
 - [ ] **Step 3: Add the flag**
 
@@ -362,7 +362,7 @@ After `args = parser.parse_args(argv)`:
 
 Then pass `tasks_path` to the existing `preflight_environment(...)` call
 and add `tasks_path=tasks_path` to the existing `run_grid(...)` call.
-Change nothing else — both functions already accept it.
+Change nothing else. Both functions already accept it.
 
 - [ ] **Step 4: Verify, run the suite, commit**
 
@@ -428,7 +428,7 @@ prints in these fixtures.
 - [ ] **Step 2: Run and verify failure**
 
 Run: `.venv/bin/pytest tests/test_train_corpus.py -k validate_pair -v`
-Expected: 3 failures — `validate_pair` does not exist.
+Expected: 3 failures. `validate_pair` does not exist.
 
 - [ ] **Step 3: Implement**
 
@@ -489,16 +489,16 @@ they agree. Rust references containing __oxide_ are rejected outright."
 - [ ] **Step 1: Author in four independent batches of ten**
 
 Batch separately, with different domain seeds, so prompts do not
-converge on one phrasing — this reduces near-duplicates but does **not**
+converge on one phrasing. This reduces near-duplicates but does **not**
 make the corpus multi-author, and the report must not claim it does.
 
 Cover the same span t01–t20 covers: arithmetic and loops, vectors,
 strings, structs and Options. Black Oxide has **no** generics, traits,
-closures, modules, tuples, indexing syntax, or sized integer types — a
+closures, modules, tuples, indexing syntax, or sized integer types. A
 task requiring any of those cannot be expressed and must not be authored.
 
 Each record: `{"id": "n0NN", "title": ..., "difficulty": ...,
-"prompt": ..., "expected_stdout": ...}` — the same schema as
+"prompt": ..., "expected_stdout": ...}`: the same schema as
 `eval/tasks.jsonl`.
 
 - [ ] **Step 2: Gate every pair, discard failures**
@@ -526,7 +526,7 @@ task is a task the language could not express, kept anyway.
 
 Run: `.venv/bin/pytest tests/test_train_corpus.py::test_committed_training_corpus_is_clean -v`
 Expected: PASS, no longer skipped. If it fails, the named task must be
-re-authored — this is not overridable.
+re-authored. This is not overridable.
 
 - [ ] **Step 4: Record endpoint 1 and commit**
 
@@ -558,19 +558,19 @@ Reference-pair yield: <N>/40. Contamination guard clean."
 - [ ] **Step 1: Preflight the GPU**
 
 `ollama ps` must be empty and at least **13,500 MiB** free before
-starting — a stale ollama model silently holding VRAM has caused
+starting. A stale ollama model silently holding VRAM has caused
 `ErrorOutOfDeviceMemory` on this machine before. Verify the server's own
 PID is alive and that `preflight.model_path` matches the slug's weights;
 a stale llama-server answers health checks from the wrong model.
 
-Do **not** monitor with `pgrep -f "eval.driver"` — it matches its own
+Do **not** monitor with `pgrep -f "eval.driver"`. It matches its own
 command line and reports the driver alive forever. Anchor on
 `bin/llama-server` or check the port.
 
 - [ ] **Step 2: Run K = 30 per task, both arms**
 
 Three families × 10 seeds, 0-shot, constrained, per family's own pinned
-`num_ctx` (granite 4096, SPEC §48). One invocation per slug — llama.cpp
+`num_ctx` (granite 4096, SPEC §48). One invocation per slug: llama.cpp
 serves one model per server:
 
 ```bash
@@ -582,8 +582,8 @@ serves one model per server:
   --expect-model-path "$GGUF"
 ```
 
-Resolve `$GGUF` from ollama's own store rather than guessing a path —
-read
+Resolve `$GGUF` from ollama's own store rather than guessing a path.
+Read
 `/mnt/extra/ollama-models/manifests/registry.ollama.ai/library/<model>/<tag>`
 and take the digest of the layer whose `mediaType` contains `model`; the
 blob lives at `/mnt/extra/ollama-models/blobs/sha256-<digest>`. The
@@ -627,7 +627,7 @@ result in `eval/train/manifest.json`.
 
 - [ ] **Step 4: Re-run the contamination guard, run the suite, commit**
 
-The guard must pass over the amplified corpus too — a model can
+The guard must pass over the amplified corpus too. A model can
 reproduce an eval solution from memory.
 
 ```bash
@@ -649,7 +649,7 @@ Contamination guard clean over the amplified corpus."
 
 - [ ] **Step 1: Score all four pre-registered endpoints**
 
-Quote them verbatim from the spec, then score each — including any that
+Quote them verbatim from the spec, then score each, including any that
 miss. A miss is the result; do not reinterpret it as a partial success.
 
 | endpoint | threshold |
@@ -671,15 +671,15 @@ not a result**.
 Which of `if let`, type-based overloading, `2.to(n)` ranges,
 `.set(i, v)`, `unwrap_or` did the 40 new tasks actually demand? This is
 v0.4 evidence gathered at no extra cost. Count **distinct programs**,
-never raw occurrences — occurrence counts have twice produced figures
+never raw occurrences. Occurrence counts have twice produced figures
 that collapsed to a single degenerate program.
 
 - [ ] **Step 4: State what the pilot does not show**
 
 Single-author bias is reduced, not solved. The corpus is 40 tasks. The
 yield figures are measured on frontier-authored tasks and may not hold
-for the next 360. Whether any of this trains a better model is untested —
-that is the next spec.
+for the next 360. Whether any of this trains a better model is untested.
+That is the next spec.
 
 - [ ] **Step 5: Commit and recommend**
 
@@ -699,6 +699,6 @@ lowering the program target to fit.
 ## After the tasks
 
 Use superpowers:finishing-a-development-branch. The three remaining
-specs in this track — training infrastructure, token matching, and the
-experiment — each get their own brainstorm and plan. Do **not** start
+specs in this track (training infrastructure, token matching, and the
+experiment) each get their own brainstorm and plan. Do **not** start
 training in this branch.

@@ -1,14 +1,14 @@
-# Oxide Explicit — Language Card (v0.2.1)
+# Oxide Explicit: Language Card (v0.2.1)
 
 Oxide Explicit is a Rust-like language with **explicit linear types**: each
-value is consumed exactly once, and you write the ownership out — `&` marks
+value is consumed exactly once, and you write the ownership out. `&` marks
 every read of a linear value, parameter types mark read vs consume, and
 `drop` statements destroy values exactly where their lives end. The checker
 verifies every annotation. Types are fully inferred; annotations optional.
 
 ## Syntax essentials
 
-- No semicolons — newlines end statements. Blocks `{ }` are expressions; the
+- No semicolons: newlines end statements. Blocks `{ }` are expressions; the
   last expression in a block is its value.
 - Items: `fn name(param: Type, ...) -> Type { ... }`, `struct Name { field: Type }`,
   `enum Name { Variant(Type, ...), Nullary }`.
@@ -23,7 +23,7 @@ verifies every annotation. Types are fully inferred; annotations optional.
   and no `++`/`--`.
 - Compound assignment: `x += e` / `x -= e` / `x *= e` desugar to
   `x = x + e` / `x = x - e` / `x = x * e`, identifier targets only.
-  Int/Float only — `+` isn't defined for Str (concat is `concat(a, b)`),
+  Int/Float only: `+` isn't defined for Str (concat is `concat(a, b)`),
   so `s += t` errors like `s = s + t`.
 - `if c { a } else { b }` and `match e { Pat => expr, _ => expr }` are
   expressions; match arms are `Variant(binders)`, `Nullary`, or `_`.
@@ -36,44 +36,44 @@ verifies every annotation. Types are fully inferred; annotations optional.
 - `let mut x = e` means `let x = e`; bindings are already reassignable.
 - Builtins accept receiver-first method syntax, and the receiver carries its
   own ownership marker exactly as it would in prefix form: a read is
-  `(&v).len()` — the same `&` you would write in `len(&v)` — and a consuming
+  `(&v).len()` (the same `&` you would write in `len(&v)`) and a consuming
   call is `v.push(x)`, matching `push(v, x)`. Writing `v.len()` is an error
   (`EX0002`): the read marker is still required. Only builtins; there are no
   user-defined methods, so `p.area()` is an error.
 - `v[i]` reads a `Vec` element: the value, not an `Option`; `v` stays
   usable; out-of-range panics.
-- Variant names are global — write `Circle(1.5)`, not `Shape::Circle(1.5)`.
+- Variant names are global: write `Circle(1.5)`, not `Shape::Circle(1.5)`.
 - Comparison chains like `a < b < c` are not allowed; parenthesize.
 
 ## Types
 
 `Int`, `Float`, `Bool`, `Str`, `Unit`, `Vec<T>`, user structs and enums,
 plus builtin `Option<T>` (`Some(x)` / `None`) and `Result<T, E>`
-(`Ok(x)` / `Err(e)`). Int and Float never mix implicitly — convert with
+(`Ok(x)` / `Err(e)`). Int and Float never mix implicitly. Convert with
 `to_float` / `trunc`. Structs/enums are declared non-generic.
 
 ## Ownership (the part you must write yourself)
 
 `Int`, `Float`, `Bool`, `Unit` are copied freely: always bare, never `&x`,
-never dropped. Everything else (`Str`, `Vec`, structs, enums) is **linear** —
+never dropped. Everything else (`Str`, `Vec`, structs, enums) is **linear**:
 every use of a linear variable is a move or a read, and you must write the
 matching form:
 
-**Moves — write `name` bare.** A use consumes when it: initializes a `let`
+**Moves: write `name` bare.** A use consumes when it: initializes a `let`
 (`let y = x`); is an argument to a consuming parameter (`push`, `concat`, any
 param declared without `&`); is returned; is placed in a struct literal or
 variant; is the `..rest` of a functional update; is destructured or matched;
 or has `?` applied.
 
-**Reads — write `&name`.** A use only reads when it: is an argument to a
+**Reads: write `&name`.** A use only reads when it: is an argument to a
 read-only parameter (`print(&x)`, `len(&v)`, any `&Type` param); is
-an operator operand (`&a == &b` for linear values — numbers and bools stay
-bare); is iterated (`for x in &v` — each `x` is a fresh copy); or is the base
-of a field access (`&s.f` — the field arrives as a fresh copy).
+an operator operand (`&a == &b` for linear values; numbers and bools stay
+bare); is iterated (`for x in &v`; each `x` is a fresh copy); or is the base
+of a field access (`&s.f`; the field arrives as a fresh copy).
 
 **Parameter modes.** Declare `name: &Type` when the function only reads it,
 bare `name: Type` when any path consumes it; copy params always bare. A
-`&Type` param is read-only — every body use is `&name` — and belongs
+`&Type` param is read-only (every body use is `&name`) and belongs
 to the caller: never drop it.
 
 **Drop placement.** Write `drop name` exactly where a value's life ends:
@@ -119,7 +119,7 @@ to_float(n) -> Float
 trunc(x) -> Int               # toward zero
 ```
 
-A `fn` you define with a builtin's name shadows it for the whole program —
+A `fn` you define with a builtin's name shadows it for the whole program:
 the builtin, method form included, becomes unreachable there.
 
 ## Example
@@ -156,8 +156,8 @@ it (bare). Each `drop` follows its variable's last-read statement.
 
 `OX03xx` are type errors and `OX04xx` ownership errors in the underlying
 program. `EX00xx` mean your annotations disagree with the real data flow:
-`EX0001` — `&` on a consuming use (remove it); `EX0002` — bare read of a
-linear value (write `&name`); `EX0003` — missing `drop` at the value's
-last-use point; `EX0004` — a `drop` where the value is not owned or not
-dead; `EX0005` — wrong parameter mode (read-only is `name: &Type`, consumed
+`EX0001`: `&` on a consuming use (remove it); `EX0002`: bare read of a
+linear value (write `&name`); `EX0003`: missing `drop` at the value's
+last-use point; `EX0004`: a `drop` where the value is not owned or not
+dead; `EX0005`: wrong parameter mode (read-only is `name: &Type`, consumed
 is `name: Type`).

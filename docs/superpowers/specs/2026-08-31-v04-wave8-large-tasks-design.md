@@ -1,4 +1,4 @@
-# v0.4 — wave 8: does any of this survive scale?
+# v0.4: wave 8: does any of this survive scale?
 
 **Date:** 2026-08-31
 **Branch:** `v04-wave8-large-tasks`, off `main` @ `f191e5ca`.
@@ -37,12 +37,12 @@ The dynamic endpoint is the large-tier equivalent of wave 6's 1.1982.
 
 **§59.7's construction needs restating for a fresh tier, and this is
 exactly the kind of detail that cost four waves.** §59.7 pairs cells by
-`(seed, task)` and restricts to those green in *every wave* — a
+`(seed, task)` and restricts to those green in *every wave*: a
 cross-wave intersection that does not exist for a task set measured for
 the first time. The large-tier construction is therefore: **pair by
 `(seed, task)`, keep cells green in both arms within this campaign, and
 report the paired token ratio over that set.** It is the same defect fix
-— never average each arm over its own green set — applied to a
+(never average each arm over its own green set) applied to a
 single-campaign comparison. The small-tier re-run inside the same
 campaign (§8) uses the full §59.7 form unchanged, since its history
 exists.
@@ -52,8 +52,8 @@ bands below are stated on the raw large-tier ratio, and were calibrated
 when the reference ratio was assumed to sit near 0.94. Phase A measured
 it at **1.0622**, so a model matching the references exactly would score
 1.0622 and fall in state 2 while its true surplus is zero. **The endpoint
-is therefore the SURPLUS — the model's oxide/rust ratio divided by the
-references' ratio over the same green cells — and the three bands below
+is therefore the SURPLUS (the model's oxide/rust ratio divided by the
+references' ratio over the same green cells), and the three bands below
 are read on that surplus scale.** This restores the estimand wave 6
 actually used (1.1982 ÷ 0.9393 = 1.276) rather than inventing a new one.
 The raw bands are left visible rather than rewritten, per house practice.
@@ -82,10 +82,10 @@ is worth funding, and it passes.
 
 Twenty tasks authored in two strata, tagged in the task record:
 
-- **12 compositional** — containing genuine repeated sub-computation
+- **12 compositional**: containing genuine repeated sub-computation
   used at least twice, where a helper function legitimately pays for
   itself.
-- **8 large-linear** — large but with no natural factoring. Control.
+- **8 large-linear**: large but with no natural factoring. Control.
 
 The counts are exact as authored, not approximate. If oracle
 verification drops a task (stop 1), the achieved per-stratum counts are
@@ -95,7 +95,7 @@ rebalanced after seeing a result.
 The stratification is what turns a yes/no into an attribution, at no
 extra authoring cost. **If the surplus collapses on compositional tasks
 and persists on linear ones, the model's habit is premature rather than
-wrong** — a precise finding, and one that no single-stratum design could
+wrong**: a precise finding, and one that no single-stratum design could
 produce.
 
 The stratification is a judgement call, not forced by evidence. It is
@@ -108,11 +108,11 @@ pinned tokenizer (`eval/tokenizer_pin.py`), never eyeballed. A tier
 authored to a target it does not actually hit would reproduce wave 6's
 failure at a larger size.
 
-## 4. Authoring discipline — where this wave can go wrong
+## 4. Authoring discipline: where this wave can go wrong
 
 I have been designing Oxide for eight waves and would be authoring both
 arms of its benchmark. That is the single largest threat to this wave's
-validity, and wave 7A's guard — a criterion fixed before looking — is
+validity, and wave 7A's guard (a criterion fixed before looking) is
 necessary but not sufficient here, because wave 7A only *reviewed*
 existing Rust; wave 8 *creates* it.
 
@@ -141,7 +141,7 @@ the ratio *against* Oxide.
 
 `eval/cost_census.py` is hard-bound to `PAIRS_ROOT` via
 `load_train_tasks()`. Wave 7A's eval-set census was therefore computed
-ad-hoc rather than by committed code — a gap that should not be repeated
+ad-hoc rather than by committed code: a gap that should not be repeated
 at a third task set.
 
 **Parameterise the census over a pair root and task file**, shipped as
@@ -158,16 +158,16 @@ composition-controlled dynamic estimand in `eval/experiment_report.py`,
 New paths, chosen so that nothing existing shifts underneath the
 measurement:
 
-- `eval/tasks-large.jsonl` — the 20 task records, carrying `stratum`
-- `eval/references-large/{oxide,rust}/` — both reference arms
+- `eval/tasks-large.jsonl`: the 20 task records, carrying `stratum`
+- `eval/references-large/{oxide,rust}/`: both reference arms
 
-**`eval/solutions/` stays frozen** — it is the contamination reference,
+**`eval/solutions/` stays frozen**: it is the contamination reference,
 and wave 6 established that modernising it would shift that baseline
 toward masking real leakage. **The existing 20 eval tasks stay
 untouched** and are re-run inside the same campaign as the continuity
 anchor.
 
-## 7. Phase A — authoring and static measurement (local, **$0**)
+## 7. Phase A: authoring and static measurement (local, **$0**)
 
 1. Author 20 task records with prompts, `expected_stdout`, class and
    stratum.
@@ -181,10 +181,10 @@ anchor.
 Phase A stands alone. If Phase B is never funded, wave 8 still delivers
 a first answer on whether the static headline survives scale.
 
-## 8. Phase B — dynamic measurement (pod, **gated on A**)
+## 8. Phase B: dynamic measurement (pod, **gated on A**)
 
-Arms, using the **preserved v5 adapters — no amplification, no
-training**:
+Arms, using the **preserved v5 adapters (no amplification, no
+training)**:
 
 - `tune-ox-7-v5` and `tune-rs-7-v5` on the large tier
 - card-only `base-ox-7`, for the untuned reading
@@ -205,15 +205,15 @@ arms, and **that fall must not be reported as a capability finding.** It
 is a distribution-shift artifact, stated here in advance so that it
 cannot be re-narrated as a result later.
 
-Removing the confound properly means retraining on a large-task corpus —
+Removing the confound properly means retraining on a large-task corpus,
 a separate, costed, approved wave, not a silent extension of this one.
 
 ## 9. Cost
 
 | phase | GPU | estimate |
 |---|---|---:|
-| A — authoring + static | none | **$0** |
-| B — 4 arms + small-tier re-run, 7B only, no training | community 3090 | ≈ **$1.00** |
+| A: authoring + static | none | **$0** |
+| B: 4 arms + small-tier re-run, 7B only, no training | community 3090 | ≈ **$1.00** |
 | B extended to the 14B tier | 8 arms | ≈ **$1.50** |
 
 Priced from measured runs, not projected: wave 5 was a card-only,
@@ -221,7 +221,7 @@ no-training campaign at **$0.36**, and wave 4's full eight-arm campaign
 with training was **$1.61**. Phase B has more arms and larger programs
 than wave 5 but no amplification and no training.
 
-Against ≈$7.2 remaining, the worst case leaves ≈$5.7 — enough for a
+Against ≈$7.2 remaining, the worst case leaves ≈$5.7, enough for a
 wave 9 at 14B, which is where the interesting result would be if
 Phase B lands in state 2 or 3.
 
@@ -244,7 +244,7 @@ Phase B lands in state 2 or 3.
 
 Retraining on a large-task corpus (§8). The exposure lever, still
 unpulled since wave 3. Vocabulary shipped against the helper-function
-surplus — wave 7A ruled that out and this wave does not reopen it. The
+surplus. Wave 7A ruled that out and this wave does not reopen it. The
 card struct-rebuild fix, which is evidenced and cheap but belongs with a
 card cycle rather than an instrument cycle. Standing debt from wave 4's
 feed-forward.

@@ -1,4 +1,4 @@
-# v0.4 — wave 5 (A): does the operator table move the card-only arms?
+# v0.4: wave 5 (A): does the operator table move the card-only arms?
 
 **Date:** 2026-08-31
 **Branch:** `v04-wave5-card-operators`, off `main` @ `b5665eff`.
@@ -8,7 +8,7 @@ at **≈$0.35** and capped at **$1.00**.
 ## 1. The question
 
 Wave 4's Sonnet probe found that the language card has **never**
-documented its operator set — `==`, `!=`, `%`, `<=`, `>=`, `&&`, `||`,
+documented its operator set: `==`, `!=`, `%`, `<=`, `>=`, `&&`, `||`,
 `!` appear zero times in the card at waves 2, 3 and 4 (SPEC §63.6). A
 frontier model scored 20/20 from that card anyway, by assuming Rust's
 operators and being right.
@@ -22,15 +22,15 @@ Card v0.8 adds the table (transcribed from `src/lexer/lexer.py` and
 `_BINARY_BP`, not assumed). This wave asks whether that changes
 anything.
 
-## 2. Design — one variable
+## 2. Design: one variable
 
 Re-run the **card-only** arms against card v0.8. Nothing else changes:
 same base checkpoints, same 20 eval tasks, same harness, same sampler
 (temperature 0.2), same one-attempt-per-cell construction, same
 community RTX 3090 class.
 
-No amplification and no training are needed — card-only arms use the
-untuned base model — which is why this costs ~1.3 pod-hours instead of
+No amplification and no training are needed (card-only arms use the
+untuned base model), which is why this costs ~1.3 pod-hours instead of
 a wave's ~7.
 
 **Arms:** `base-ox-1.5`, `base-ox-7`, `base-ox-14` (the treatment), plus
@@ -46,8 +46,8 @@ Stated before the run, falsifiable in both directions:
 |---|---:|---|
 | base-ox-1.5 | 0.000 | **> 0.000** if the gap was load-bearing |
 | base-ox-7 | 0.075 | **≥ 0.150** (a doubling) if the gap was load-bearing |
-| base-ox-14 | 0.525 | ≥ 0.525, but the smallest movement — a 14B has the strongest priors and least need of the table |
-| base-rs-7 | 0.565 | **0.565 ± 0.010** — drift guard, must not move |
+| base-ox-14 | 0.525 | ≥ 0.525, but the smallest movement: a 14B has the strongest priors and least need of the table |
+| base-rs-7 | 0.565 | **0.565 ± 0.010**: drift guard, must not move |
 
 **If `base-ox-7` does not clear 0.150, the operator gap was not
 load-bearing at that tier** and §63.6's instrument concern is answered in

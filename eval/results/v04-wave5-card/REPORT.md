@@ -1,4 +1,4 @@
-# v0.4 wave 5 (A) — the operator table does nothing
+# v0.4 wave 5 (A): the operator table does nothing
 
 2026-08-31. Spec: `docs/superpowers/specs/2026-08-31-v04-wave5-card-operators-design.md`.
 A single-variable experiment with predictions registered before the run.
@@ -8,7 +8,7 @@ what the spec committed to.
 ## The question
 
 Wave 4's Sonnet probe found the language card had **never** documented
-its operator set — `==`, `!=`, `%`, `<=`, `>=`, `&&`, `||`, `!` appear
+its operator set: `==`, `!=`, `%`, `<=`, `>=`, `&&`, `||`, `!` appear
 zero times in the card at waves 2, 3 and 4 (SPEC §63.6). A frontier
 model scored 20/20 from that card anyway by assuming Rust's operators.
 
@@ -17,7 +17,7 @@ untuned Oxide arm in project history might have been measuring a
 documentation gap rather than the language.** Card v0.8 added the table.
 This wave asked whether it changes anything.
 
-## Result — falsified at every tier
+## Result: falsified at every tier
 
 One variable: card v0.7 → v0.8. Same checkpoints, same 20 tasks, same
 harness, same sampler, same one-attempt construction, same hardware
@@ -42,7 +42,7 @@ censored 87, strict repair 0.890). The falsification therefore stands on
 a valid run rather than on drift. That is also a **seventh** environment
 reproducing 0.565.
 
-## Why — the mechanism check answers it
+## Why: the mechanism check answers it
 
 The spec required a mechanism read: capability should move *because*
 operator use moves, or the causal story is wrong. Operator presence
@@ -55,7 +55,7 @@ across `base-ox-7`'s 764 reply files under v0.8:
 **The model was already using the operators heavily.** There was no
 behavioural gap for the table to fill. The card lacked the
 documentation; the model did not lack the knowledge, because its Rust
-prior supplied it — exactly as it did for Sonnet. Documenting something a
+prior supplied it, exactly as it did for Sonnet. Documenting something a
 model already does changes nothing.
 
 ## What this kills, and what it re-frames
@@ -68,20 +68,20 @@ documentation gap" is **wrong**. Those readings were real measurements.
 
 **Re-framed:** the Sonnet result. It was read as a frontier model
 papering over a defect that smaller models could not. But the defect
-does not bind at *any* tier, so Sonnet was not gap-filling — it is simply
+does not bind at *any* tier, so Sonnet was not gap-filling: it is simply
 that much better at the task. The card was adequate all along; capability
 is the variable. The 20/20 stands as a capability datum, not as evidence
 about the card.
 
 **Surviving, and unaffected:** SPEC §62's familiarity thesis. Wave 4
-tested it directly — the `|x|` re-spelling drew 5–6× the arrow's uptake
-at equal exposure — and this null result says nothing about it either
+tested it directly: the `|x|` re-spelling drew 5–6× the arrow's uptake
+at equal exposure, and this null result says nothing about it either
 way. Familiarity in *spelling a construct the model must use* is a
 different claim from *documenting operators the model already uses*.
 
 **One real improvement, not capability:** `base-ox-14`'s tokens-to-green
 fell 134.7 → **118.0**, about 12%. The table made the model more concise
-without making it more correct — consistent with trimming exploratory
+without making it more correct, consistent with trimming exploratory
 output rather than unlocking anything. Card v0.8 is kept for that reason
 and because a spec should document its own language.
 
@@ -89,8 +89,8 @@ and because a spec should document its own language.
 
 `base-ox-1.5` read 0.000 under both cards, as it has under every card
 ever measured, with strict repair 0.110. Per SPEC §64 (owner ruling,
-this wave) the 1.5B is **dropped from card-only arms** — an arm that can
-only report zero cannot discriminate — while being **retained in
+this wave) the 1.5B is **dropped from card-only arms**: an arm that can
+only report zero cannot discriminate, while being **retained in
 amplification** (138 of 759 verified programs, ~18% of corpus, ~$0.15)
 and **in tuned arms** (wave 0's `tune-ox-1.5` reached 0.485). The rule
 recorded: drop an arm when it cannot discriminate, not when it scores

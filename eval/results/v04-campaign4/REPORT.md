@@ -1,4 +1,4 @@
-# v0.4 efficiency cycle, wave 4 — full-loop report
+# v0.4 efficiency cycle, wave 4: full-loop report
 
 2026-08-31. Spec: `docs/superpowers/specs/2026-08-30-v04-efficiency-wave4-design.md`.
 Committed home of this wave's endpoint readings, guard reads, uptake
@@ -8,8 +8,8 @@ report ends with that hand-off, not a verdict.
 
 ## The wave in one line
 
-**Familiarity is a lever — the `|x|` re-spelling drew 5–6× the uptake of
-wave 3's arrow at equal exposure — and wave 0's most discouraging
+**Familiarity is a lever: the `|x|` re-spelling drew 5–6× the uptake of
+wave 3's arrow at equal exposure, and wave 0's most discouraging
 result, that Oxide's disadvantage grows with model size, is reversed.**
 Dynamic token efficiency still moved the wrong way, and that gap is now
 the project's central open problem.
@@ -20,7 +20,7 @@ the project's central open problem.
   §63.1), reversing a wave-3 ruling on measured evidence. Semantics
   unchanged: still no captures (`OX0205`), still `Pred<T>`, same emitted
   closure. A `PIPE` token was added; `||` is matched by the two-char
-  table first, and a dedicated mutation test proves that guard bites —
+  table first, and a dedicated mutation test proves that guard bites:
   the one way this change could have silently turned every disjunction
   in the corpus into a predicate.
 - **`filter(v, |x| ...)` alongside `count_if`** (§63.2), deliberately,
@@ -30,7 +30,7 @@ the project's central open problem.
   both terms carried in every row.
 - **The 14B quartet**, the first scale read since wave 0.
 
-## 2. Static endpoints — all five HIT
+## 2. Static endpoints: all five HIT
 
 | class | wave-3 close | wave 4 | target | verdict |
 |---|---:|---:|---|---|
@@ -46,12 +46,12 @@ efficiency for learnability.
 
 Re-authoring sweep found one `filter` candidate and **rejected** it:
 n058 interleaves a side effect with accumulation and its predicate would
-need to capture `reported`, which mutates during iteration — impossible
+need to capture `reported`, which mutates during iteration, impossible
 by design. Recorded because under the amended bias rule a missed
 substitution is a defect, so the negatives must be auditable. All 40
 pairs green through the oracle; every `rust.rs` byte-identical.
 
-## 3. Dynamic loop — eight arms (community RTX 3090, $0.22/h)
+## 3. Dynamic loop: eight arms (community RTX 3090, $0.22/h)
 
 Corpus: fresh pool alone cleared the gate at **24,080 / 24,103** tokens
 per arm against the 15k floor (`counts_source: amp5-only`,
@@ -69,7 +69,7 @@ contamination 0 of 661). The stale-verdict re-validation again reported
 | tune-ox-14 | **0.745** | 0.95 | 91.2 | 38 | 0.875 |
 | tune-rs-14 | 0.920 | 1.00 | 69.4 | 15 | 0.750 |
 
-**G1 control: PASS** — `base-rs-7` = 0.565 for a **sixth** environment,
+**G1 control: PASS.** `base-rs-7` = 0.565 for a **sixth** environment,
 and this time every companion figure matches wave 3 exactly. That
 sharpens wave 3's narrowed claim into something better specified:
 **pass@1 is invariant across GPU architectures; the secondary metrics
@@ -82,15 +82,15 @@ Ada.
 corpus. Two things changed at once this wave, so that +0.050 cannot be
 attributed to the re-spelling alone.
 
-## 4. The scale result — wave 0's trend reverses
+## 4. The scale result: wave 0's trend reverses
 
 | tuned ox↔rs gap | 7B | 14B | direction |
 |---|---:|---:|---|
 | wave 0 | 0.330 | 0.445 | **widening** |
 | wave 4 | 0.225 | **0.175** | **narrowing** |
 
-Wave 0's finding — that fine-tuning saturated Oxide at ~0.55 regardless
-of size while tuned Rust ran to 0.990 — does not hold on the current
+Wave 0's finding (that fine-tuning saturated Oxide at ~0.55 regardless
+of size while tuned Rust ran to 0.990) does not hold on the current
 language. Tuned Oxide now **scales with size** (0.645 → 0.745) where it
 was previously flat (0.555 → 0.545), and `tune-ox-14` is **+0.200** on
 the same arm in wave 0.
@@ -109,7 +109,7 @@ Two further readings:
 here beyond the within-wave comparison. This is the first 14B read since
 wave 0; its job was to generate a hypothesis, and it did.
 
-## 5. Learnability — the estimand earns its place immediately
+## 5. Learnability: the estimand earns its place immediately
 
 Corpus exposure measured over the 282 oxide training examples actually
 used; uptake counted per reply file, at most once each.
@@ -128,8 +128,8 @@ used; uptake counted per reply file, at most once each.
 | `swap` | 0 | 0.7% | 0 |
 
 Raw uptake would call `+=` the dominant construct at 174 uses. It needed
-**13× the exposure** of `reverse` to get there. `count` and `reverse` —
-both names the model already knows — are the genuinely learnable ones.
+**13× the exposure** of `reverse` to get there. `count` and `reverse`
+(both names the model already knows) are the genuinely learnable ones.
 Only the ratio shows that, which is why §62.1 made it an estimand.
 
 ### 5.1 The wave's central prediction: CONFIRMED
@@ -147,8 +147,8 @@ ordering is wrong." Uptake moved. The ordering stands.
 
 ### 5.2 `filter` vs `count_if`: learnability beat efficiency
 
-At 7B the model chose `filter` **11 to 0** — the more familiar, *more
-expensive* spelling — resolving §63.2's experiment in favour of
+At 7B the model chose `filter` **11 to 0** (the more familiar, *more
+expensive* spelling), resolving §63.2's experiment in favour of
 learnability. At 14B the counts invert weakly (`count_if` 2, `filter` 0),
 which at these magnitudes is noise rather than a contrary result, and is
 reported as such.
@@ -159,7 +159,7 @@ reported as such.
 **untested for adoption, not rejected**. The exposure lever is still
 unpulled (spec §2 explains why it could not be pulled cheaply this wave).
 
-## 6. Token efficiency — the honest counterweight
+## 6. Token efficiency: the honest counterweight
 
 Primary estimand per SPEC §59.7: pair by `(seed, task)`, green in both
 arms, restricted to cells green in **every** wave compared.
@@ -174,9 +174,9 @@ arms, restricted to cells green in **every** wave compared.
 **1.1575**.
 
 **Dynamic efficiency moved the wrong way at both tiers**, while the
-static estimand sits at 0.9871. Some of the 7B movement is *bought* — the
+static estimand sits at 0.9871. Some of the 7B movement is *bought* (the
 re-spelling costs 2 tokens statically and `filter` is deliberately more
-verbose than `count_if` — but not all of it, and the report does not
+verbose than `count_if`), but not all of it, and the report does not
 claim otherwise.
 
 The 14B reading is the sharper one: from wave 0 to wave 4 the controlled
@@ -210,15 +210,15 @@ assuming Rust's operators and being right.
   documentation gap rather than by the language.
 
 Card v0.8 adds the operator table, transcribed from the implementation
-rather than assumed. **It is not what wave 4 measured** — this campaign
+rather than assumed. **It is not what wave 4 measured.** This campaign
 ran v0.7 from a pod clone pinned at `7769c2f0`, and none of these
 numbers change.
 
 **Lens note:** the probe ran under a different harness (agentic
 scaffolding, different sampler, freedom to revise within a turn) against
 arms that take one attempt at temperature 0.2. It generates a hypothesis
-about the tier curve — 1.5B 0.000 · 7B 0.075 · 14B 0.525 · frontier
-20/20 — it does not extend it.
+about the tier curve: 1.5B 0.000 · 7B 0.075 · 14B 0.525 · frontier
+20/20. It does not extend it.
 
 ## 8. Spend
 
@@ -229,12 +229,12 @@ symmetric trainings, eight campaign arms.
 
 Train losses, same corpus and config: ox 7B 0.1953 / 14B **0.1821**;
 rs 7B 0.1284 / 14B 0.1303. The 14B fits Oxide better than the 7B does
-while Rust stays flat — a within-wave comparison, and weak evidence on
+while Rust stays flat, a within-wave comparison and weak evidence on
 its own, but pointing the same way as §4.
 
 ## 9. Feed-forward to wave 5
 
-1. **Re-measure the card-only arms against v0.8** — `base-ox-7` and
+1. **Re-measure the card-only arms against v0.8:** `base-ox-7` and
    `base-ox-14`, changing nothing else. The cheapest high-value
    experiment on the board. If the untuned arms move, four waves of
    card-only readings were partly measuring documentation, and §7's
@@ -251,7 +251,7 @@ its own, but pointing the same way as §4.
    static improvement (1.22 → 0.9871) have not moved the controlled
    dynamic ratio, which sits between 1.09 and 1.20 throughout. Wave 5
    should stop assuming the static estimand predicts the dynamic one and
-   start measuring *why* it does not — a per-construct token-diff
+   start measuring *why* it does not: a per-construct token-diff
    between what references write and what tuned models write would say
    where the surplus actually goes.
 4. **Scale looks like the strongest lever available.** Every capability
@@ -261,7 +261,7 @@ its own, but pointing the same way as §4.
    waves 1–3 was a 7B claim.
 5. **Card returns are saturating:** 0.025 → 0.060 → 0.070 → 0.075 across
    v0.4 → v0.4.1 → v0.6 → v0.7. Increments halving each time. Scope any
-   card cycle against +0.005, not the +0.035 of the first jump — though
+   card cycle against +0.005, not the +0.035 of the first jump, though
    §7 means v0.8 may break that pattern, which is itself worth knowing.
 6. **Standing debt:** `/=` (two concrete sites); fold the wave-3/4
    constructs into the demand-census families; brace-masking fix; split

@@ -1,7 +1,7 @@
-# g3 — the `to_str` alias, and the v0.3 closing baseline
+# g3: the `to_str` alias, and the v0.3 closing baseline
 
 **Date:** 2026-08-10
-**Track:** v0.3 generation ergonomics, taxonomy dossier 3 — **narrowed on
+**Track:** v0.3 generation ergonomics, taxonomy dossier 3: **narrowed on
 measurement**, see below.
 **Class:** builtin alias. No new semantics, no new codegen machinery.
 **Status:** design approved in session; SPEC amendment and implementation
@@ -31,16 +31,16 @@ Classifying every call site by what it is called **on**:
 
 | name | sites | dominant form | genuine plain calls |
 |---|---|---|---|
-| `to_string` | 72 | **63.9% string-literal receiver** — `"lit".to_string()` | **4** |
-| `to_int` | 51 | **70.6% int-literal receiver** — `2.to_int()` | **2** |
-| `to_str` | 42 | **85.7% plain call** — `to_str(x)` | **21** (+15 definitions) |
+| `to_string` | 72 | **63.9% string-literal receiver**: `"lit".to_string()` | **4** |
+| `to_int` | 51 | **70.6% int-literal receiver**: `2.to_int()` | **2** |
+| `to_str` | 42 | **85.7% plain call**: `to_str(x)` | **21** (+15 definitions) |
 
 - **`to_string` is a Rust idiom with no Black Oxide meaning.** `&str` →
   `String` is the overwhelming use, and `Str` here is already owned, so the
   operation is an identity function. Adding it would mean shipping a no-op
   builtin purely to absorb a habit.
 - **`to_int` is not a conversion at all.** Seven in ten uses are on an
-  *integer literal*, inside malformed `for` headers — `for i in
+  *integer literal*, inside malformed `for` headers: `for i in
   2.to_int().range(x)`, `for x in 0.to_int().until(...)`. That is the
   **`2.to(n)` range demand** already recorded in the deferred ledger for
   v0.4, wearing a conversion's name. `to_int(Str) -> Option<Int>` would
@@ -55,7 +55,7 @@ Classifying every call site by what it is called **on**:
 
 Raw occurrence counts are unusable here. Counting occurrences gives qwen
 `to_int` = 291 and granite `to_vec` = 337; counting **distinct programs**
-collapses each to **1** — both are the degenerate whole-program repetition
+collapses each to **1**: both are the degenerate whole-program repetition
 the taxonomy discounts elsewhere, and neither is evidence of anything. Every
 number above is a program-level or classified-site count for this reason.
 
@@ -79,8 +79,8 @@ fn to_str(x: i64) -> String { x.to_string() }
 reference solution in `eval/solutions/`.
 
 **`Int -> Str` only, not `Int|Float -> Str`.** The taxonomy's signature is
-not expressible: Black Oxide has no type-based overloading — the taxonomy
-itself files that as a deferred non-candidate — so a single name cannot take
+not expressible: Black Oxide has no type-based overloading (the taxonomy
+itself files that as a deferred non-candidate), so a single name cannot take
 both. `Float -> Str` remains reachable as `to_str(trunc(x))`, and no
 observed call site asked for it.
 
@@ -89,7 +89,7 @@ name set mirrors `BUILTINS` mechanically.
 
 ## Cards unchanged
 
-Both cards stay exactly as they are, matching g1 and g2 — and here it is the
+Both cards stay exactly as they are, matching g1 and g2, and here it is the
 *correct* test rather than merely the cheap one. Models reach for `to_str`
 **without being taught it**, to the point of defining it themselves. Adding
 a card row would measure teaching, not acceptance, and acceptance is the
@@ -98,7 +98,7 @@ question.
 This is a choice rather than a constraint: the builtin table is fenced
 ` ```text ` and is therefore exempt from the 900-word cap (`tests/
 test_cards.py`). For the record, the current state is core **895/900**,
-explicit 980, the two **8.7%** apart against a 10% band — so a row would
+explicit 980, the two **8.7%** apart against a 10% band, so a row would
 have fit.
 
 ## The campaign, and what it is for
@@ -109,7 +109,7 @@ That comparison needs a measured starting point at final v0.3 HEAD, and this
 run produces it. The run happens for the pivot whether or not g2 and g3 move
 anything.
 
-Design: the constrained G0 grid re-run at v0.3 HEAD — 3 families × 3 arms ×
+Design: the constrained G0 grid re-run at v0.3 HEAD, 3 families × 3 arms ×
 20 tasks × 10 seeds, same seeds, same windows (granite 4096), GBNF
 constrained. g2 and g3 ride along as embedded code-level checks.
 
@@ -117,17 +117,17 @@ constrained. g2 and g3 ride along as embedded code-level checks.
 
 | endpoint | prediction |
 |---|---|
-| **v0.3 baseline table** (all arms, all families) | descriptive — this is the deliverable, not a hypothesis |
+| **v0.3 baseline table** (all arms, all families) | descriptive: this is the deliverable, not a hypothesis |
 | g2: ExprStmt-position `f.x == e`, constrained oxide | **18 → 0**, cited as a **lower bound** (a deformation falling last in a function tail-converts out of the count) |
 | g2: the same signature, unconstrained | 0 → 0 |
-| g3: `to_str`-shaped `OX0306` | **→ 0**, mechanically — the name now resolves |
+| g3: `to_str`-shaped `OX0306` | **→ 0**, mechanically: the name now resolves |
 | g3: `fn to_str` self-definitions | should fall from 15 across 6 programs |
-| aggregate first-attempt pass rates | **no detectable change** — both changes sit at ~1.5–2% prevalence and cannot move them; apparent movement is noise |
+| aggregate first-attempt pass rates | **no detectable change**: both changes sit at ~1.5–2% prevalence and cannot move them; apparent movement is noise |
 | rust arm | flat at the first-attempt **rate** level, never the byte level |
 
 ### A prediction deliberately NOT made
 
-The taxonomy predicted `OX0306` would fall "codegemma ≫ qwen > granite — a
+The taxonomy predicted `OX0306` would fall "codegemma ≫ qwen > granite: a
 family-ordered dose-response matching the demand counts". **That is not
 testable at this scale.** `to_str` appears in 4 / 4 / 1 programs across the
 three families; there is no ordering resolvable in n = 9, and asserting one
@@ -150,13 +150,13 @@ dose-response language belongs to g1's `vec(...)`, where the counts were
 
 The taxonomy (`docs/superpowers/specs/2026-08-09-v03-taxonomy.md`, dossier
 3) records a fix that the evidence does not support. It needs a correction
-noting that `to_int`/`to_string` were dropped on measurement and why —
+noting that `to_int`/`to_string` were dropped on measurement and why:
 recorded here so the taxonomy is not left asserting a superseded plan, in
 the same idiom as the withdrawn-claims log.
 
 ---
 
-## CORRECTED 2026-08-11 — three claims in this document did not hold
+## CORRECTED 2026-08-11: three claims in this document did not hold
 
 This document is **pre-registration** and its body above is deliberately
 left as written; the run has since happened and three of its claims are
@@ -167,8 +167,8 @@ withdrawn-claims idiom.
 builtin-method name set mirrors `BUILTINS` mechanically" (above, under
 *The change*) is false, and doubly so.** The parser's
 `BUILTIN_METHOD_NAMES` (`src/parser/expressions.py`) is **hand-maintained**
-in parallel with `src.sema.types.BUILTINS` — the parser must not import
-sema, which would invert the layering — and
+in parallel with `src.sema.types.BUILTINS` (the parser must not import
+sema, which would invert the layering), and
 `tests/test_parser.py::test_parser_and_sema_builtin_sets_stay_in_sync` is
 what enforces the parallel. `n.to_str()` did **not** come free: a
 `"to_str"` line had to be added to the parser set by hand (commit
@@ -180,19 +180,19 @@ this very branch, reintroduced here; §53 itself never claimed it.
 survives.** Above, under *Cards unchanged*:
 
 - "the builtin table is fenced ` ```text ` and is therefore exempt from
-  the 900-word cap (`tests/test_cards.py`)" — **false**. `word_count` in
+  the 900-word cap (`tests/test_cards.py`)": **false**. `word_count` in
   that file is `len(path.read_text().split())`: it splits the whole file
   and exempts nothing. The ` ```text ` exemption is from block
   *validation* only (`checkable_blocks`, guarded by
-  `test_extractor_skips_text_blocks_only`) — fenced-`text` blocks are not
+  `test_extractor_skips_text_blocks_only`): fenced-`text` blocks are not
   transpiled, but every word in them is still counted.
-- "the two **8.7%** apart against a 10% band" — **false**. 8.7% is
+- "the two **8.7%** apart against a 10% band": **false**. 8.7% is
   85/980, measured against the *explicit* card. The assertion is
   `abs(explicit - core) <= 0.10 * core`, so the band is measured against
   **core**: 85/895 = **9.5%** against 10%.
 - The conclusion still holds, but narrowly, not comfortably: core is
   895 words against a strict `< 900`, so 899 is the maximum passing
-  count. A card row is ~3 words, landing at 898 — inside the cap with one
+  count. A card row is ~3 words, landing at 898, inside the cap with one
   word to spare, not the slack the paragraph implies.
 
 **3. The pre-registered g3 endpoint in this document was silently
@@ -201,14 +201,14 @@ registered "g3: `to_str`-shaped `OX0306` → 0". The implementation plan
 (`docs/superpowers/plans/2026-08-10-v03-g3-to-str.md`) instead registered
 "g3: `to_str` unresolved plain calls → 0", measured by the new
 `eval/demand.py`, and did not disclose the substitution. Both documents
-predate the run, so nothing here is post-hoc — but the change of endpoint
+predate the run, so nothing here is post-hoc, but the change of endpoint
 was undisclosed, and the substituted endpoint cannot fail:
 `unresolved_calls` filters on `name not in BUILTINS` against the **live**
 table, so once `to_str` is a builtin its count is 0 by construction, for
 any corpus, past or future. Measured against the pre-change corpora it
 reads 0 for `g0c` and `g1c` too. The originally registered endpoint was
 no better: `OX0306` diagnostics mentioning `to_str` number **0 in `g0c`,
-0 in `g1c`, and 0 in `v03c`** — already at its predicted value before the
+0 in `g1c`, and 0 in `v03c`**: already at its predicted value before the
 change. See the closing-baseline REPORT's endpoint 4, where the endpoint
 is scored as vacuous rather than confirmed.
 
@@ -219,7 +219,7 @@ to state them as well, because neither was reconstructable from the bare
 percentage. Re-derived from the committed corpus, two details of the
 `to_int` row do not hold: its 70.6% numerator is 32 integer-literal
 receivers **plus** 4 float-literal ones (`0.0.to_int()`, `1.0.to_int()`),
-so *numeric*-literal is the label the arithmetic supports — strictly
+so *numeric*-literal is the label the arithmetic supports. Strictly
 integer-literal is 32, not 36; and its denominator of 51 lands on **52**
 on re-derivation (343 receiver occurrences less the degenerate program's
 291), making the share 69.2%. The full classification of those 52 sums
@@ -228,7 +228,7 @@ call-result.
 
 That second point propagates once. The bullet above this table derives a
 "**23.5% variable-receiver slice**" for `to_int`, which is the 12
-variable/field receivers over the same denominator — `12/51`. On the
+variable/field receivers over the same denominator: `12/51`. On the
 re-derived denominator it is `12/52` = **23.1%**. Neither this nor the
 70.6% → 69.2% shift affects what the row is used for, which is the
 conclusion that `to_int` is range sugar rather than a conversion and that

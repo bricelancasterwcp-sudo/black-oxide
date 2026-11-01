@@ -1,4 +1,4 @@
-# v0.4 efficiency cycle, wave 2 — full-loop report
+# v0.4 efficiency cycle, wave 2: full-loop report
 
 2026-08-29. Spec: `docs/superpowers/specs/2026-08-28-v04-efficiency-wave2-design.md`,
 including its 2026-08-29 owner-ruled amendment (amplification temperature).
@@ -10,18 +10,18 @@ with that hand-off, not a verdict.
 ## What shipped (the design change under measurement)
 
 Slate of two, gated by the wave-2 demand census (rejection-crossed,
-ranked — the gate reads counts, not opinions):
+ranked: the gate reads counts, not opinions):
 
-- **Compound assignment `+=` / `-=` / `*=`** — statement sugar, parsed
+- **Compound assignment `+=` / `-=` / `*=`:** statement sugar, parsed
   and desugared to the existing `Assign`+`BinOp`. No new semantics, no
   new runtime surface, no new type rules. `Str +=` raises the same
   `OX0305` its hand-written twin raises; targets are identifier-only.
-- **`count(v, x) -> Int` builtin** — occurrence counting over a vector,
+- **`count(v, x) -> Int` builtin:** occurrence counting over a vector,
   transpiled to a filter-count over `*e == x`.
 
 Deferred **with their counts**, so the deferral is auditable: `if let`
 (amp presence 68, below the 89 bar the wave-1 report pre-registered for
-the re-gate — the bar was followed as written), bracket index assignment
+the re-gate: the bar was followed as written), bracket index assignment
 (campaign presence 0; amp 18 present / 18 rejected), `remove_at`
 (removal_rebuild: 2 references), strings vocabulary (string_build: 1/1),
 `first`/`last` (no signal).
@@ -43,7 +43,7 @@ Two census results are findings in their own right:
 ### Demand proof for `+=` (the cleanest signal the census has produced)
 
 On the wave-1 campaign the oxide base arm wrote `+=` in **64
-first-attempt replies and all 64 failed to compile — 100% mechanical
+first-attempt replies and all 64 failed to compile: 100% mechanical
 rejection**. The Rust control wrote it 71 times with 0 rejections. The
 amplification arms reproduced the shape at 1.5B (105/105) and 7B
 (115/115). A construct the model reaches for reflexively, that the
@@ -70,7 +70,7 @@ actually shipped.
 | overall | 1.22 | 1.121 | **1.087** | ≤ 1.09 | **HIT** |
 
 Ruling recorded at the reading: strings came in *below* its hold band.
-The deviation was accepted rather than reverted — the re-authoring was
+The deviation was accepted rather than reverted: the re-authoring was
 rule-compliant and the movement is beneficial; the band was a
 hold-expectation, not a floor. Recorded rather than quietly absorbed.
 
@@ -92,17 +92,17 @@ result was confounded by a 7.4k corpus. It fired twice.
 
 The escalation's marginal-seed curve flattened (74 → 143 → 188 uniques):
 more seeds of the same sampler produce replicates, not diversity. The
-pre-registered STOP was honored — the run stopped and the owner ruled
+pre-registered STOP was honored: the run stopped and the owner ruled
 among staged options rather than the controller quietly lowering the
 bar. Owner ruling (a), recorded in the spec as a dated amendment:
 **amplification re-runs at temperature 0.8, for corpus generation only.**
 The measurement sampler stays pinned at 0.2 for every arm that produces
 a number; amplified programs are oracle-guarded (rustc must accept them
 and stdout must match), so a hotter corpus sampler cannot smuggle in a
-wrong program — only more varied right ones. It worked: one temperature
+wrong program: only more varied right ones. It worked: one temperature
 change did what twice the seeds could not.
 
-Final corpus: 29.8k / 30.0k tokens per arm — 2× the gate and 1.75× the
+Final corpus: 29.8k / 30.0k tokens per arm, 2× the gate and 1.75× the
 wave-0 scale. Per-class budgets: arithmetic 9,579, vectors 10,614,
 structs 6,527, strings 3,254; all matched-pair gaps within one step.
 
@@ -122,7 +122,7 @@ Wave 1's undertrained oxide arm sat at 0.360.
 **G1 control: PASS.** base-rs-7 = 0.565 pass@1, byte-exact for the
 **fourth** independent environment (local Vulkan v03c, wave-0 3090,
 wave-1 4090, wave-2 secure 4090). Every companion figure reproduced to
-the digit as well — pass@10v 0.65, tok→green 65.7, censored 87, strict
+the digit as well: pass@10v 0.65, tok→green 65.7, censored 87, strict
 repair 0.895. The harness is deterministic across hardware.
 
 **G1 floor: MET, not re-derived.** tune-ox-7 = 0.755 against the 0.455
@@ -136,12 +136,12 @@ arm now exceeds the untuned Rust control
 
 **Repair-loop observation (unregistered, recorded because it is
 load-bearing for wave 3):** tune-ox-7's final greens (151) exactly equal
-its first-attempt greens (151) — the repair loop recovered nothing this
+its first-attempt greens (151): the repair loop recovered nothing this
 wave; tune-rs-7 recovered one. At this capability level failures are
 hard failures, and `tokens_to_green` is therefore almost entirely
 first-attempt generation length.
 
-### Token efficiency — the objective function
+### Token efficiency: the objective function
 
 **Pre-registered endpoint (tokens-to-green mean, ox/rs): 86.0 / 71.8 =
 1.198, against wave-1's 1.13. This moved the wrong way, and that is the
@@ -150,13 +150,13 @@ endpoint of record.**
 It is also, on inspection, partly a measurement of something other than
 the language. Each arm's mean is taken over *its own* green sessions.
 tune-ox-7 went 0.420 → 0.755, so this wave's oxide mean is computed over
-a larger and harder set of tasks than wave 1's was — the two numbers are
+a larger and harder set of tasks than wave 1's was. The two numbers are
 not over comparable populations. This is the project's named bug class
 (a value that looks like a measurement of the subject but is partly a
 measurement of the instrument's inputs), caught this time before it
 reached a headline.
 
-Applying **one** construction to all three waves' committed cells —
+Applying **one** construction to all three waves' committed cells:
 pair cells by (seed, task), keep only cells green in **both** arms, and
 then restrict to the 67 cells (11 tasks) that are paired-green in
 **every** wave:
@@ -176,15 +176,15 @@ headline this report rests on is reproducible by running the suite.
 On the composition-controlled set the oxide arm's own token count fell
 **86.3 → 73.4 (−15%)** while the symmetrically-retrained Rust control
 *rose* 66.7 → 68.8. The move is therefore not "more training writes
-shorter code" — the control had the same extra training and went the
+shorter code": the control had the same extra training and went the
 other way.
 
 **Erratum against wave 1's report (filed with this wave).** Wave 1
 claimed "tokens-to-green ratio 81.5/72.3 = 1.13, down from wave-0's
-1.24 — the dynamic read moved the same direction as the static one."
+1.24. The dynamic read moved the same direction as the static one."
 That claim does not survive the controlled construction: on the common
 set wave 1 was **worse** than wave 0 (1.293 vs 1.217), not better. The
-apparent improvement was set composition — wave 1's oxide arm solved
+apparent improvement was set composition: wave 1's oxide arm solved
 fewer, easier cells, so its mean fell. The prior value stays visible in
 `eval/results/v04-campaign/REPORT.md` with a dated footnote and the
 arithmetic that killed it.
@@ -195,7 +195,7 @@ dynamic ratio to 1.067**, moving the same direction as the static
 endpoint (1.121 → 1.087) for the first time under a construction that
 controls what is being compared.
 
-### G2 uptake — no dead vocabulary
+### G2 uptake: no dead vocabulary
 
 Per reply file, counted at most once each.
 
@@ -207,7 +207,7 @@ Per reply file, counted at most once each.
 | `count` | 126 | 3 | 42 |
 
 `+=` and `count` are live in every arm. **`-=` and `*=` show zero
-tuned-arm uptake** — stated plainly rather than folded into a family
+tuned-arm uptake:** stated plainly rather than folded into a family
 total. They are not dead vocabulary (the card arm uses them 306 and 33
 times, and both were census-demanded), but at this corpus size the
 tuned model has not adopted them. Wave 3 should re-read them rather
@@ -219,18 +219,18 @@ Wave-1 vocabulary remains live in the tuned arm: `range(a,b)` 62,
 G2 lens (recorded so the counts are reproducible): `compound_assign`
 spellings come from `demand_census.V2_FAMILIES`; `count` has no
 committed family yet and was matched with the same free-call guard the
-census uses for `sort`/`min`/`max`/`sum` — `(?<![.\w])count\s*\(` —
+census uses for `sort`/`min`/`max`/`sum`, `(?<![.\w])count\s*\(`,
 at most once per reply file. Folding `count` into the committed census
 is a wave-3 item.
 
 ## Provenance and artifacts
 
-- `base-ox-7/ base-rs-7/ tune-ox-7/ tune-rs-7/` — this wave's campaign
+- `base-ox-7/ base-rs-7/ tune-ox-7/ tune-rs-7/`: this wave's campaign
   cells, triples and raw replies.
-- `matched-v3/` — the token-matched training corpus actually trained on,
+- `matched-v3/`: the token-matched training corpus actually trained on,
   with per-program sha256, so the corpus is pinned by hash independent
   of the raw pools.
-- `eval/results/v04-amp2/`, `eval/results/v04-amp3/` — both
+- `eval/results/v04-amp2/`, `eval/results/v04-amp3/`: both
   amplification pools, landed in full. Ruling: the temperature amendment
   is this wave's most contestable decision, so both the temp-0.2 pool it
   replaced and the temp-0.8 pool it produced are committed, and anyone
@@ -261,13 +261,13 @@ tranche.
    occurrence counting only. What remains, by shape: predicate-count
    (count where a condition holds), keyed-max (max by a field),
    `enumerate`-shaped index+value loops, and push-rebuild loops. A
-   predicate-taking form is the obvious next candidate — but it needs a
+   predicate-taking form is the obvious next candidate, but it needs a
    closure or block-argument surface the language does not yet have, so
    it is a design question, not a vocabulary addition.
 3. **Strings needs a different instrument.** Pattern census finds
    nothing there (string_build 1/1) while the class carries 1.064.
    Wave 3's instrument: pairwise token-diff attribution over the 10
-   strings reference pairs — align oxide against rust token by token
+   strings reference pairs: align oxide against rust token by token
    and attribute the surplus to concrete syntax, rather than asking
    whether a named pattern is present.
 4. **`-=` and `*=` uptake re-read.** Zero tuned-arm uptake at 30k

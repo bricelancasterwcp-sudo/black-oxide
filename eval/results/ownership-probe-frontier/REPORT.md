@@ -1,4 +1,4 @@
-# Ownership Probe — frontier subject
+# Ownership Probe: frontier subject
 
 **Date:** 2026-08-07
 **Subject:** Claude Opus 5 via isolated agents, one per (class, arm), each given
@@ -7,7 +7,7 @@ read, search, or list anything else. Blindness is structural: the agents had no
 path to the corpus, the reference fix, or the expected output. Prompts were
 leak-checked before dispatch (no `expected_stdout`, no `fix`).
 **Design:** 12 defect classes × 3 arms × 1 seed = 36 repairs. No grammar
-constraint in any arm — the frontier subject does not need it.
+constraint in any arm. The frontier subject does not need it.
 
 ## Result: ceiling
 
@@ -37,7 +37,7 @@ class for class.
 | accumulate-without-reassign | **0/0/1** | 0/0/100 |
 | consume-while-iterating | 1/1/1 | 0/0/100 |
 
-The classes selected for this run were deliberately the *hardest* ones at 7B —
+The classes selected for this run were deliberately the *hardest* ones at 7B,
 including `assign-to-iterated-vec`, which defeated every arm at 7B (0/0/0), and
 `move-via-question-mark`, where even Rust managed only 33%. The frontier
 subject cleared all of them.
@@ -51,7 +51,7 @@ subject cleared all of them.
 Implicit linearity helps models that are not already good at ownership. It
 buys nothing for a model that already reasons about ownership correctly. The
 honest claim is therefore **"implicit linearity is an accessibility win for
-weaker models"**, not "implicit linearity makes LLMs more reliable" — which is
+weaker models"**, not "implicit linearity makes LLMs more reliable", which is
 a materially more modest thesis than the project set out with.
 
 This is consistent with, and explains, run 1's ceiling: at frontier scale the
@@ -68,7 +68,7 @@ print(len(grown))
 ```
 
 That compiles and clears `OX0403` but does not accumulate, so it strict-fails.
-It is also **what the compiler's own diagnostic suggests** — `OX0403`'s
+It is also **what the compiler's own diagnostic suggests:** `OX0403`'s
 suggestion text ends "…or clone it", and rustc emits `help: consider cloning`
 for the matching program.
 
@@ -85,8 +85,8 @@ compiles, or retired.
 
 - 36 isolated agents, one per cell, ~10–35s each. Independence between probes
   was preserved deliberately: batching probes into one agent would let earlier
-  answers inform later ones, which pushes toward ceiling — the very hypothesis
-  under test — and is therefore the non-conservative direction.
+  answers inform later ones, which pushes toward ceiling (the very hypothesis
+  under test) and is therefore the non-conservative direction.
 - Eight classes were run first (p01–p08); the result was already 23/23. The
   remaining four were chosen as the hardest-for-Rust classes at 7B, on the
   reasoning that a ceiling breaks there if it breaks anywhere. It did not.
@@ -97,11 +97,11 @@ compiles, or retired.
 
 ## Raw data
 
-`results.json` — per-cell scores. `answers/` — every submitted repair verbatim.
+`results.json`: per-cell scores. `answers/`: every submitted repair verbatim.
 
 ---
 
-## Addendum — the p17 rewrite failed, and why that matters more
+## Addendum: the p17 rewrite failed, and why that matters more
 
 p17 was rewritten (`651dfff`) to remove the accumulate-vs-clone ambiguity: the
 print moved outside the loop so a clone-based repair could no longer be
@@ -114,7 +114,7 @@ let grown = push(clone(acc), i)      → prints 10, 10   (expected 10, 13)
 ```
 
 Both Oxide arms, strict-fail. Rust: correct. The rewrite made the error
-visible to a *reader* — `grown` is now conspicuously unused — without changing
+visible to a *reader* (`grown` is now conspicuously unused) without changing
 model behaviour at all.
 
 ### The actual cause is diagnostic richness, not probe ambiguity
@@ -140,7 +140,7 @@ is everything else in the message:
 
 rustc shows **both ends of the conflict**. Oxide shows only the move. A model
 that cannot see that `acc` is read after the loop has no way to know cloning
-inside the loop defeats the purpose — so it follows the suggestion literally.
+inside the loop defeats the purpose, so it follows the suggestion literally.
 
 **This is an actionable defect in Oxide's diagnostics, found by the probe.**
 `OX0403`'s note points at the same position as the error, which carries no
@@ -151,20 +151,20 @@ accumulator case, where cloning silently breaks the program.
 
 ### Scope of the confound
 
-SPEC §45 gives the Rust arm rustc's full diagnostic text deliberately — it is
+SPEC §45 gives the Rust arm rustc's full diagnostic text deliberately. It is
 part of the null hypothesis. But this shows Oxide-vs-Rust comparisons are
 partly measuring *diagnostic quality*, not language design, and the gap is
 larger than "Rust has more pretraining exposure" alone accounts for.
 
 **The primary comparison is unaffected.** Oxide and explicit-Oxide receive the
 identical `OX0403` diagnostic, so this cannot bias the +18.3pp result. It bears
-on the Rust reference column only — which the standing rule already says is not
+on the Rust reference column only, which the standing rule already says is not
 evidence about language design.
 
 ### Corpus status
 
-p17 is retained in its rewritten form. It is a *sound* probe — one intended
-code, verified fix, unambiguous to a reader — that both Oxide arms fail for a
+p17 is retained in its rewritten form. It is a *sound* probe (one intended
+code, verified fix, unambiguous to a reader) that both Oxide arms fail for a
 reason now understood. That makes it a useful regression target for any future
 improvement to `OX0403`: if the diagnostic is fixed to name the later use, this
 probe should start passing.

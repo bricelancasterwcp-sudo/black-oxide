@@ -1,8 +1,8 @@
-# v0.4 Efficiency Cycle, Wave 3 — Implementation Plan
+# v0.4 Efficiency Cycle, Wave 3: Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Close the vectors token gap — the entire net surplus of the reference corpus — by shipping the three Vec builtins the cost census ranks first, and build the cost census that found them.
+**Goal:** Close the vectors token gap (the entire net surplus of the reference corpus) by shipping the three Vec builtins the cost census ranks first, and build the cost census that found them.
 
 **Architecture:** A new `eval/cost_census.py` measures per-pair oxide/rust token surplus and ranks it; a two-eyed gate reads it beside the existing demand census; three builtins (`swap`, `reverse`, `set`) land through the project's established three-seam mechanism; references are re-authored under the amended bias rule; the wave closes with a dynamic loop on a rented GPU and a committed report.
 
@@ -152,7 +152,7 @@ find . -name __pycache__ -type d -prune -exec rm -rf {} + 2>/dev/null
 .venv/bin/python -m pytest tests/test_cost_census.py -q
 ```
 
-Expected: collection error — `ModuleNotFoundError: No module named 'eval.cost_census'`.
+Expected: collection error. `ModuleNotFoundError: No module named 'eval.cost_census'`.
 
 - [ ] **Step 3: Write the implementation**
 
@@ -385,15 +385,15 @@ total. Unmeasurable pairs are named in a dropped list, never scored 0."
 
 ---
 
-## Task 2: Two-eyed gate ruling (controller, inline — not a subagent task)
+## Task 2: Two-eyed gate ruling (controller, inline, not a subagent task)
 
 The controller reads `eval/results/v04-cost-census/REPORT.md` beside `eval/results/v04-census2/REPORT.md`, records the ruling in the ledger, and states which constructs ship.
 
 **Expected ruling, from the evidence already in hand** (restate it against the freshly generated census rather than assuming):
-- **SHIP `swap(v, i, j)`** — cost rank 1 (n043, +82; projected 142 → 60 tokens, exact parity with Rust).
-- **SHIP `reverse(v)`** — cost rank 2 (n050, +60; projected 103 → 39).
-- **SHIP `set(v, i, x)`** — demand 18 present / 18 rejected on the amp arms; cost-general. Measured NOT to substitute for `swap` (n043 with `set` alone is 99 tokens vs 60 with `swap`).
-- **DEFER with counts:** closures/predicate surface (worth ~41 tokens across n046 + n065, against ~146 for the two builtins — see spec §8); `if let` (68 vs the 89 bar); strings vocabulary (class at 1.064, residual not pattern-shaped).
+- **SHIP `swap(v, i, j)`**: cost rank 1 (n043, +82; projected 142 → 60 tokens, exact parity with Rust).
+- **SHIP `reverse(v)`**: cost rank 2 (n050, +60; projected 103 → 39).
+- **SHIP `set(v, i, x)`**: demand 18 present / 18 rejected on the amp arms; cost-general. Measured NOT to substitute for `swap` (n043 with `set` alone is 99 tokens vs 60 with `swap`).
+- **DEFER with counts:** closures/predicate surface (worth ~41 tokens across n046 + n065, against ~146 for the two builtins; see spec §8); `if let` (68 vs the 89 bar); strings vocabulary (class at 1.064, residual not pattern-shaped).
 
 If the regenerated cost census ranks differently, the gate follows the census, not this paragraph, and the divergence is recorded.
 
@@ -411,11 +411,11 @@ If the regenerated cost census ranks differently, the gate follows the census, n
 - Consumes: `BuiltinSig(params, ret, modes, generics)` from `src/sema/types.py`; type constructors `TCon("Vec", (_A,))`, `INT`, `_A` already in scope in that module.
 - Produces: three callable builtins usable as `swap(v, i, j)`, `reverse(v)`, `set(v, i, x)`, each consuming and returning the vector (`v = swap(v, 0, last)`), matching `sort`'s existing convention.
 
-**Design ruling to record in SPEC §60 before writing code — out-of-range behaviour:** `set` and `swap` transpile to Rust's own panicking operations (`v[i] = x`, `v.swap(i, j)`), so an out-of-range index panics exactly as the Rust control does.
+**Design ruling to record in SPEC §60 before writing code: out-of-range behaviour:** `set` and `swap` transpile to Rust's own panicking operations (`v[i] = x`, `v.swap(i, j)`), so an out-of-range index panics exactly as the Rust control does.
 
-Rationale, in order of weight. (a) Every total alternative is a quiet wrong answer: an out-of-range write has no natural result, so a no-op looks like success, a clamp silently corrupts, and an `Option` that call sites `unwrap_or` away turns a bug into a plausible value — the exact failure class this project bans elsewhere. (b) Totality taxes the objective function: `v = unwrap_or(set(v, i, x), v)` is roughly double `v = set(v, i, x)`, paid at every in-range call site to serve a case that never occurs in a correct program. (c) The identical-stdout law is preserved because both arms panic identically.
+Rationale, in order of weight. (a) Every total alternative is a quiet wrong answer: an out-of-range write has no natural result, so a no-op looks like success, a clamp silently corrupts, and an `Option` that call sites `unwrap_or` away turns a bug into a plausible value, the exact failure class this project bans elsewhere. (b) Totality taxes the objective function: `v = unwrap_or(set(v, i, x), v)` is roughly double `v = set(v, i, x)`, paid at every in-range call site to serve a case that never occurs in a correct program. (c) The identical-stdout law is preserved because both arms panic identically.
 
-**These are NOT the first Oxide constructs that can panic** — verified 2026-08-29 before this ruling was written: integer division already panics at runtime on a computed zero divisor (`a / b` transpiles to Rust's `a / b`; exit 101, `attempt to divide by zero`). SPEC §60.2 must document the partial-operation category as **pre-existing and previously undocumented**, naming division by zero, rather than claiming these constructs introduce it. Whether that category is the design or an accident is a live question and belongs in the wave's feed-forward, not in this ruling.
+**These are NOT the first Oxide constructs that can panic.** Verified 2026-08-29 before this ruling was written: integer division already panics at runtime on a computed zero divisor (`a / b` transpiles to Rust's `a / b`; exit 101, `attempt to divide by zero`). SPEC §60.2 must document the partial-operation category as **pre-existing and previously undocumented**, naming division by zero, rather than claiming these constructs introduce it. Whether that category is the design or an accident is a live question and belongs in the wave's feed-forward, not in this ruling.
 
 A compile-time bounds check for the literal-index-into-literal-`vec()` case was considered and deferred: sema does not track vector lengths, and rustc's `unconditional_panic` lint already rejects the analogous literal case for free.
 
@@ -548,7 +548,7 @@ def test_builtin_method_names_stays_in_sync_with_builtins():
         assert name in BUILTIN_METHOD_NAMES
 ```
 
-The `vec("a", "b")` shape was verified to analyze cleanly (zero diagnostics) before this plan was written — string literals are `Str` directly, there is no constructor call.
+The `vec("a", "b")` shape was verified to analyze cleanly (zero diagnostics) before this plan was written. String literals are `Str` directly, there is no constructor call.
 
 - [ ] **Step 2: Run to verify failure**
 
@@ -596,7 +596,7 @@ In `src/sema/types.py`, immediately after the `"count"` entry in `BUILTINS`:
 
 - [ ] **Step 4: Add the prelude functions and ref-form tuples**
 
-In `src/codegen/support.py`, append to `_PRELUDE_FNS` (these three were rustc-verified before this plan was written — they compile and produce `5 2 3 4 1` / `9 5 2` / `7 99`):
+In `src/codegen/support.py`, append to `_PRELUDE_FNS` (these three were rustc-verified before this plan was written. They compile and produce `5 2 3 4 1` / `9 5 2` / `7 99`):
 
 ```python
         (
@@ -650,7 +650,7 @@ Expected: wave-3 tests pass; full suite ≥ 1642 + the new tests, 3 deselected, 
 
 - [ ] **Step 7: Mutation-check the linearity modes**
 
-Change `"swap"`'s first mode from `"own"` to `"read"`, purge `__pycache__`, run `tests/test_v04_wave3.py::test_swapped_vector_is_consumed_not_aliased` — it must FAIL. Restore, purge, confirm green. A mode that can be flipped without a test noticing is unpinned.
+Change `"swap"`'s first mode from `"own"` to `"read"`, purge `__pycache__`, run `tests/test_v04_wave3.py::test_swapped_vector_is_consumed_not_aliased`. It must FAIL. Restore, purge, confirm green. A mode that can be flipped without a test noticing is unpinned.
 
 - [ ] **Step 8: Commit**
 
@@ -683,12 +683,12 @@ indices panic exactly as the Rust control does -- see SPEC 60."
 - [ ] **Step 1: Append SPEC §60**
 
 Write these subsections:
-- **60.1 `swap`, `reverse`, `set`** — signatures, linearity modes with the reasoning (mirroring how §59.1 documents `count`), and the owned-in/owned-out convention.
-- **60.2 Out-of-range behaviour** — the panic ruling and its rationale verbatim from Task 3's design ruling above. Document the partial-operation category as **pre-existing and previously undocumented**, naming integer division by zero as the prior member (verified: exit 101 at runtime on a computed zero divisor). Note that the identical-stdout law survives because both arms panic identically.
-- **60.3 Cost-census record** — what the census is, the ranked top three, and the method finding: demand and cost are different quantities, and wave 2's gate read only demand while deferring the corpus's most expensive gap.
-- **60.4 Bias-rule amendment** — the amended rule from spec §4, verbatim, with the withdrawn per-statement Rust gate marked as superseded (never deleted), following §58.2's convention for amending in place.
-- **60.5 Card update** — what changed in both cards.
-- **60.6 Stale-text sweep** — grep `SPEC.md` and `docs/superpowers/specs/2026-08-09-v03-taxonomy.md` for any claim that Oxide has no index assignment, no `swap`, or no panicking construct; amend every hit in place, old text struck through, never deleted. Record "no hits" explicitly if there are none.
+- **60.1 `swap`, `reverse`, `set`**: signatures, linearity modes with the reasoning (mirroring how §59.1 documents `count`), and the owned-in/owned-out convention.
+- **60.2 Out-of-range behaviour**: the panic ruling and its rationale verbatim from Task 3's design ruling above. Document the partial-operation category as **pre-existing and previously undocumented**, naming integer division by zero as the prior member (verified: exit 101 at runtime on a computed zero divisor). Note that the identical-stdout law survives because both arms panic identically.
+- **60.3 Cost-census record**: what the census is, the ranked top three, and the method finding: demand and cost are different quantities, and wave 2's gate read only demand while deferring the corpus's most expensive gap.
+- **60.4 Bias-rule amendment**: the amended rule from spec §4, verbatim, with the withdrawn per-statement Rust gate marked as superseded (never deleted), following §58.2's convention for amending in place.
+- **60.5 Card update**: what changed in both cards.
+- **60.6 Stale-text sweep**: grep `SPEC.md` and `docs/superpowers/specs/2026-08-09-v03-taxonomy.md` for any claim that Oxide has no index assignment, no `swap`, or no panicking construct; amend every hit in place, old text struck through, never deleted. Record "no hits" explicitly if there are none.
 
 - [ ] **Step 2: Update both cards**
 
@@ -704,7 +704,7 @@ find . -name __pycache__ -type d -prune -exec rm -rf {} + 2>/dev/null
 
 The core card was 1059 words against a `CORE_WORD_LIMIT` of 1100, so three builtins may cross it. If `test_core_card_under_1100_words` fails, raise `CORE_WORD_LIMIT` **non-silently**: change the constant, and state the new value and the reason in SPEC §60.5. Do not trim card content to duck the limit without saying so. Then re-verify the pin still bites by temporarily setting the limit below the current count and confirming the test fails.
 
-`test_card_word_counts_within_ten_percent` requires the two cards stay within 10% of each other — add comparable content to both.
+`test_card_word_counts_within_ten_percent` requires the two cards stay within 10% of each other. Add comparable content to both.
 
 - [ ] **Step 4: Commit**
 
@@ -767,7 +767,7 @@ fn main() {
 
 - [ ] **Step 2: Sweep the remaining 35 pairs for missed substitutions**
 
-For every pair not touched above, check whether any *shipped* construct (`sort`, `min`, `max`, `sum`, `contains`, `count`, `unwrap_or`, `range`, `+=`/`-=`/`*=`, `swap`, `reverse`, `set`) would replace a hand-rolled mechanism without restructuring the program. Apply every admissible one — under the amended rule a missed substitution is a defect. Record each change with its token delta; record explicitly that a pair was checked and needed nothing.
+For every pair not touched above, check whether any *shipped* construct (`sort`, `min`, `max`, `sum`, `contains`, `count`, `unwrap_or`, `range`, `+=`/`-=`/`*=`, `swap`, `reverse`, `set`) would replace a hand-rolled mechanism without restructuring the program. Apply every admissible one. Under the amended rule a missed substitution is a defect. Record each change with its token delta; record explicitly that a pair was checked and needed nothing.
 
 - [ ] **Step 3: Verify every changed pair against the oracle**
 
@@ -797,7 +797,7 @@ Expected: all 40 pairs green, byte-identical stdout, and an empty diff on every 
 sed -n '/## Class subtotals/,$p' eval/results/v04-cost-census/REPORT.md
 ```
 
-Record the per-class and overall ratios against the targets: overall ≤ 1.02, vectors ≤ 1.10, strings ≤ 1.07, arithmetic ≤ 1.02, structs ≤ 0.93. Projected from the four measured substitutions alone: overall ≈ 1.011, vectors ≈ 1.08. **Report each endpoint as HIT or MISS. A miss is reported as a miss** — never re-authored toward the target after seeing the number.
+Record the per-class and overall ratios against the targets: overall ≤ 1.02, vectors ≤ 1.10, strings ≤ 1.07, arithmetic ≤ 1.02, structs ≤ 0.93. Projected from the four measured substitutions alone: overall ≈ 1.011, vectors ≈ 1.08. **Report each endpoint as HIT or MISS. A miss is reported as a miss.** Never re-authored toward the target after seeing the number.
 
 - [ ] **Step 5: Commit**
 
@@ -813,18 +813,18 @@ stdout byte-identical to frozen expected_stdout; contamination 0 hits."
 
 ---
 
-## Task 6: Dynamic loop (controller, inline — rented GPU)
+## Task 6: Dynamic loop (controller, inline: rented GPU)
 
 Runs only when the capacity poll signals community GPU availability. Sequence, unchanged from wave 2 except where noted:
 
 1. Boot the pod; **verify `torch.cuda` works BEFORE committing hours** (the wave-2 driver-mismatch lesson); pin `allowedCudaVersions` in the spec JSON.
 2. Upload the repo at the Task-5 commit; run `scripts/runpod/pod_setup.sh`, then the model downloads and base conversions.
 3. Amplify with card v0.5 at 3 sizes × 20 seeds, **temperature 0.8 for corpus generation only** (measurement arms stay pinned at 0.2).
-4. Pooled rematch against the committed amp pools; **corpus-scale gate ≥ 15k supervised tokens per arm** — a hard STOP, not a target to negotiate.
+4. Pooled rematch against the committed amp pools; **corpus-scale gate ≥ 15k supervised tokens per arm**: a hard STOP, not a target to negotiate.
 5. Retrain both arms symmetrically; merge and convert to q8_0.
 6. Four-arm campaign: `base-ox-7`, `base-rs-7`, `tune-ox-7`, `tune-rs-7`.
 7. Read G1 (control within ±0.10 of 0.565; tune-ox floor 0.455 met), G2 uptake per spelling, and the **composition-controlled paired ratio** via `eval.experiment_report.paired_tokens_to_green` (SPEC §59.7 binds this as primary; the unconditional mean is secondary and binds nothing).
-8. **Count-verified rsync home of results, matched corpus, amp pool, train logs, and ADAPTERS** — verify by file count, never by `du`. Adapter preservation is mandatory.
+8. **Count-verified rsync home of results, matched corpus, amp pool, train logs, and ADAPTERS.** Verify by file count, never by `du`. Adapter preservation is mandatory.
 9. Terminate the pod; verify zero pods twice; record spend.
 
 ---
@@ -833,7 +833,7 @@ Runs only when the capacity poll signals community GPU availability. Sequence, u
 
 - [ ] Land `eval/results/v04-campaign3/` (four arms + matched corpus) and the amplification pool.
 - [ ] Write `eval/results/v04-campaign3/REPORT.md`: what shipped and why (both censuses' counts), static endpoint table with HIT/MISS per class, the corpus-scale gate outcome, the dynamic table, G1 and G2 reads, the composition-controlled ratio against wave 2's 1.067, spend, and a feed-forward section ending the report.
-- [ ] Feed-forward must carry at minimum: whether below-1.00 is now within reach and what it would cost (the predicate-count shapes in n046/n065, ~41 tokens); the `-=`/`*=` uptake re-read; whatever the cost census ranks next; the census debt (fold `count`/`swap`/`reverse`/`set` into the demand census families, brace-masking fix, `/=` unmatched, split the 954-line `demand_census.py`); and **the undocumented partial-operation question** — division by zero and now `set`/`swap` can panic, and nobody has decided whether that category is the design or an accident.
+- [ ] Feed-forward must carry at minimum: whether below-1.00 is now within reach and what it would cost (the predicate-count shapes in n046/n065, ~41 tokens); the `-=`/`*=` uptake re-read; whatever the cost census ranks next; the census debt (fold `count`/`swap`/`reverse`/`set` into the demand census families, brace-masking fix, `/=` unmatched, split the 954-line `demand_census.py`); and **the undocumented partial-operation question**: division by zero and now `set`/`swap` can panic, and nobody has decided whether that category is the design or an accident.
 - [ ] Full suite green; commit; push; verify `origin` in sync.
 - [ ] Close the ledger, delete the SDD workspace, update memory, and report to the owner with every `Ruling:` line collected.
 
@@ -843,6 +843,6 @@ Runs only when the capacity poll signals community GPU availability. Sequence, u
 
 **Spec coverage.** §1 baseline → Task 1's acceptance test pins it. §2 finding → Task 1 + SPEC §60.3. §3 cost census → Task 1. §4 bias amendment → Global Constraints + Task 5 + SPEC §60.4. §5 slate → Tasks 2, 3. §5's open out-of-range question → answered in Task 3's design ruling and recorded in SPEC §60.2. §6 endpoints → Task 5 step 4 (static), Task 6 step 7 (dynamic, G1, G2, corpus gate). §7 mechanics → Tasks 6, 7. §8 out of scope → Task 2's deferral list. §9 authorization → Task 6's trigger. No gaps.
 
-**Placeholder scan.** One deliberate fill-in remains: the per-pair token deltas in Task 5's commit message, which cannot be known before the sweep runs. Everything else is verbatim. Before this plan was written, the three prelude functions were compiled and run under rustc (output `5 2 3 4 1` / `9 5 2` / `7 99`), `validate_pair`'s `{"ok", "reasons"}` return shape was read, and the `vec("a", "b")` test shape was analyzed clean — so an implementer transcribing this plan faithfully is transcribing verified code, which is the wave-2 lesson about plans that carry code.
+**Placeholder scan.** One deliberate fill-in remains: the per-pair token deltas in Task 5's commit message, which cannot be known before the sweep runs. Everything else is verbatim. Before this plan was written, the three prelude functions were compiled and run under rustc (output `5 2 3 4 1` / `9 5 2` / `7 99`), `validate_pair`'s `{"ok", "reasons"}` return shape was read, and the `vec("a", "b")` test shape was analyzed clean, so an implementer transcribing this plan faithfully is transcribing verified code, which is the wave-2 lesson about plans that carry code.
 
 **Type consistency.** `PairCost(task, cls, oxide_tokens, rust_tokens)` is constructed identically in the tests and the implementation; `pair_costs` returns `(list[PairCost], list[str])` everywhere it appears; `class_subtotals` keys (`oxide`, `rust`, `surplus`, `ratio`) match between the implementation, the tests, and `render_report`. The three builtins are spelled `swap(v, i, j)` / `reverse(v)` / `set(v, i, x)` identically in the sema entries, prelude, tests, card, and re-authored references.

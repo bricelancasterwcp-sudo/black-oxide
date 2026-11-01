@@ -1,4 +1,4 @@
-# OX0403 diagnostic fix — did it change model behaviour?
+# OX0403 diagnostic fix: did it change model behaviour?
 
 **Date:** 2026-08-07
 **Change:** `a9f336c`. `OX0403` now attaches a `later used here` note pointing
@@ -16,8 +16,8 @@ diagnostic text the model was given.
 
 | | before | after |
 |---|---|---|
-| oxide | `let grown = push(clone(acc), i)` → `10, 10` — **fail** | `acc = push(acc, i)` → `10, 13` — **pass** |
-| explicit | same clone route — **fail** | **pass** |
+| oxide | `let grown = push(clone(acc), i)` → `10, 10`: **fail** | `acc = push(acc, i)` → `10, 13`: **pass** |
+| explicit | same clone route: **fail** | **pass** |
 
 The pre-fix behaviour was observed twice, in two independent runs (the
 original frontier sweep and the post-p17-rewrite retest), in both dialects.

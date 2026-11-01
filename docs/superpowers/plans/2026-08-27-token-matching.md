@@ -2,8 +2,8 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Build `eval/train/matched/` — two supervised-token-matched
-training files (oxide.jsonl, rust.jsonl) plus a manifest — from the
+**Goal:** Build `eval/train/matched/`, two supervised-token-matched
+training files (oxide.jsonl, rust.jsonl) plus a manifest, from the
 paired factory corpus, per the approved spec.
 
 **Architecture:** A pure matching core (`build_matched`) with an
@@ -37,7 +37,7 @@ the `tokenizers` package (Task 5 only, for real token counts).
 
 - Do NOT modify `eval/tasks.jsonl`, `eval/solutions/`, `eval/train/tasks.jsonl`,
   `eval/train/pairs/`, or anything under `eval/results/`.
-- No timestamps in any generated artifact — byte-identical rebuilds are
+- No timestamps in any generated artifact. Byte-identical rebuilds are
   a tested invariant.
 - House style: frozen slotted dataclasses, no mutation of inputs, files
   under 800 lines, no bare excepts.
@@ -45,7 +45,7 @@ the `tokenizers` package (Task 5 only, for real token counts).
 
 ---
 
-### Task 1: Tokenizer pin — fetch, three-way assert, commit
+### Task 1: Tokenizer pin: fetch, three-way assert, commit
 
 **Files:**
 - Create: `eval/tokenizer_pin.py`
@@ -92,7 +92,7 @@ def test_tokenizer_identity_pin():
 - [ ] **Step 2: Run test to verify it fails**
 
 Run: `.venv/bin/pytest tests/test_tokenizer_pin.py -v`
-Expected: FAIL — `ModuleNotFoundError: No module named 'eval.tokenizer_pin'`
+Expected: FAIL. `ModuleNotFoundError: No module named 'eval.tokenizer_pin'`
 
 - [ ] **Step 3: Write the module**
 
@@ -181,7 +181,7 @@ if __name__ == "__main__":
 Run: `cd ~/workspace/oxide && .venv/bin/python -m eval.tokenizer_pin`
 Expected: JSON with 3 entries, identical `sha256` values, distinct
 `revision` commit hashes. Downloads ~7MB × 3; needs network. If any
-repo 404s or the hashes differ, STOP and report — do not work around.
+repo 404s or the hashes differ, STOP and report. Do not work around.
 
 - [ ] **Step 5: Run test to verify it passes**
 
@@ -211,7 +211,7 @@ git commit -m "feat: tokenizer pin — one committed Qwen tokenizer attested fro
 
 ---
 
-### Task 2: Matching core — `build_matched` with injectable counter
+### Task 2: Matching core: `build_matched` with injectable counter
 
 **Files:**
 - Create: `eval/token_match.py`
@@ -375,7 +375,7 @@ def test_prompt_tokens_reported_per_arm():
 - [ ] **Step 2: Run tests to verify they fail**
 
 Run: `.venv/bin/pytest tests/test_token_match.py -v`
-Expected: FAIL — `ModuleNotFoundError: No module named 'eval.token_match'`
+Expected: FAIL. `ModuleNotFoundError: No module named 'eval.token_match'`
 
 - [ ] **Step 3: Write the implementation**
 
@@ -555,12 +555,12 @@ Expected: 7 PASS
 2. Delete the `if ref_tokens > budget` block: `test_references_exceeding_budget_fail_closed` must FAIL.
 3. `key=lambda e: (e.sha256, e.task)` → `(e.task, e.sha256)`:
    `test_trim_order_is_hash_order` must FAIL. If it happens to pass on
-   the small fixture, enlarge the fixture until the orders diverge —
-   a mutation the fixture cannot see is a fixture defect.
+   the small fixture, enlarge the fixture until the orders diverge.
+   A mutation the fixture cannot see is a fixture defect.
 4. **Paired ordering mutation.** Ordering is deliberately
    double-layered (sorted task iteration in `_class_examples` AND the
    final `sort_key` sort), so a single-layer mutation is absorbed by
-   the surviving layer — that redundancy is intended, not a vacuous
+   the surviving layer. That redundancy is intended, not a vacuous
    test. Apply BOTH: `for tid in sorted(tasks)` → `for tid in tasks`,
    and `sort_key`'s body → `return ("",)`. With both layers gone, dict
    insertion order leaks into `kept`, and
@@ -676,7 +676,7 @@ def test_jsonl_round_trip_matches_result(tmp_path):
 - [ ] **Step 2: Run tests to verify they fail**
 
 Run: `.venv/bin/pytest tests/test_token_match.py -v -k "write or manifest or round_trip"`
-Expected: FAIL — `ImportError: cannot import name 'MANIFEST_KEYS'`
+Expected: FAIL. `ImportError: cannot import name 'MANIFEST_KEYS'`
 
 - [ ] **Step 3: Write the implementation** (append to `eval/token_match.py`)
 
@@ -754,7 +754,7 @@ Expected: 10 PASS
    constant `sort_key`): `test_write_is_byte_deterministic` must FAIL
    on its reordered-tasks build. Restore both edits.
 3. Truncate the dropped list (`result.dropped[:1]`) in the manifest:
-   `test_manifest_completeness` passes (keys intact) — add no new
+   `test_manifest_completeness` passes (keys intact). Add no new
    test; Task 5's committed-artifact budget audit covers dropped-list
    integrity end-to-end. Record this as a known single-mutation gap in
    the task's commit message body.
@@ -829,7 +829,7 @@ def test_references_present_for_all_40_tasks():
 - [ ] **Step 2: Run tests to verify they fail**
 
 Run: `.venv/bin/pytest tests/test_token_match_corpus.py -v`
-Expected: FAIL — `ImportError: cannot import name 'load_matched_inputs'`
+Expected: FAIL. `ImportError: cannot import name 'load_matched_inputs'`
 
 - [ ] **Step 3: Write the implementation** (append to `eval/token_match.py`)
 
@@ -873,7 +873,7 @@ collect_verified, load_train_tasks, normalize_source`.)
 - [ ] **Step 4: Run tests to verify they pass**
 
 Run: `.venv/bin/pytest tests/test_token_match_corpus.py -v`
-Expected: 2 PASS (takes a few seconds — it scans both results trees)
+Expected: 2 PASS (takes a few seconds; it scans both results trees)
 
 - [ ] **Step 5: Mutation-check** (pyc preamble each run)
 
@@ -915,7 +915,7 @@ MATCHED_DIR = Path("eval/train/matched")
 
 Run: `cd ~/workspace/oxide && .venv/bin/pip install tokenizers && .venv/bin/python -c "from tokenizers import Tokenizer; t = Tokenizer.from_file('eval/train/tokenizer/tokenizer.json'); print(len(t.encode('fn main() {}').ids))"`
 Expected: an integer. If the install fails (no cp314 wheel), STOP the
-task and report the blocker — do not substitute another tokenizer
+task and report the blocker. Do not substitute another tokenizer
 implementation.
 
 - [ ] **Step 2: Write the failing tests** (append to `tests/test_token_match_corpus.py`)
@@ -1000,7 +1000,7 @@ def test_committed_budgets_hold():
 - [ ] **Step 3: Run tests to verify they fail**
 
 Run: `.venv/bin/pytest tests/test_token_match_corpus.py -v`
-Expected: new tests FAIL — `ImportError: cannot import name 'qwen_counter'`
+Expected: new tests FAIL. `ImportError: cannot import name 'qwen_counter'`
 
 - [ ] **Step 4: Write the implementation** (append to `eval/token_match.py`)
 
@@ -1108,7 +1108,7 @@ if __name__ == "__main__":
 
 (Again fold the new imports into the module's import block.)
 
-Note `counts_source.commit` records HEAD at build time — rebuild at a
+Note `counts_source.commit` records HEAD at build time. Rebuild at a
 different commit changes only that manifest field. The byte-determinism
 test (Task 3) injects a fixed value, so it stays valid.
 
@@ -1133,11 +1133,11 @@ Expected: all PASS (the committed-artifact tests now read real files)
    `test_committed_matched_corpus_is_uncontaminated` must FAIL (its
    independent recomputation is the guard; the manifest assert pins the
    record). Restore by rebuilding (Step 5). Note `main`'s own
-   contamination raise is deliberately NOT single-mutation-killable —
-   the committed test recomputes the same report, which is the
+   contamination raise is deliberately NOT single-mutation-killable.
+   The committed test recomputes the same report, which is the
    defense-in-depth the spec's guard section asks for.
 3. In `token_efficiency`, compute over kept examples by passing
-   `result.kept`-derived amplified sets — simpler equivalent mutation:
+   `result.kept`-derived amplified sets. Simpler equivalent mutation:
    change `classes + ["overall"]` to `classes`:
    `test_token_efficiency_covers_both_sources_and_overall` must FAIL.
 4. Edit committed `manifest.json`: change one class's `budget` by 1.
@@ -1164,7 +1164,7 @@ git commit -m "feat: build the matched corpus — pinned tokenizer, contaminatio
 
 - [ ] **Step 1: Write REPORT.md from the built manifest**
 
-Structure (fill every number from `manifest.json` — no placeholders):
+Structure (fill every number from `manifest.json`; no placeholders):
 
 ```markdown
 # Matched training corpus — build record
@@ -1221,7 +1221,7 @@ git status -sb   # must show branch in sync with origin
 - Spec decision 4 (card-free format) and decision 9 (epoch parity) bind
   the *experiment* spec; nothing in this plan implements them, by design.
 - Spec's test 4 ("trim order is load-bearing") is implemented as
-  `test_trim_order_is_hash_order` plus mutation 3 of Task 2 — the
+  `test_trim_order_is_hash_order` plus mutation 3 of Task 2. The
   mutation, not the assertion alone, is what proves load-bearing.
 - The Task 3 mutation notes record one accepted single-mutation gap
   (manifest dropped-list truncation), closed end-to-end by Task 5's

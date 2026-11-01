@@ -1,8 +1,8 @@
-# Phase 6a — Small-Model Capability Ladder (design)
+# Phase 6a: Small-Model Capability Ladder (design)
 
 **Date:** 2026-08-07
 **Status:** design, pending approval. On approval this is transcribed into
-`SPEC.md` as **Part X — Phase 6a Contract** (normative), per project
+`SPEC.md` as **Part X: Phase 6a Contract** (normative), per project
 convention that contracts become binding only as numbered SPEC parts.
 
 ## 1. Motivation
@@ -10,8 +10,8 @@ convention that contracts become binding only as numbered SPEC parts.
 Run `demo-fable-0shot` saturated: 60/60 first-attempt passes in all three
 arms. The per-error-code distribution that gates the v0.3 value-semantics
 inversion (SPEC §32) is therefore **empty**. The eval report named two ways
-to create discrimination; this phase takes the first — drop subject
-capability — because it is the operating point at which the
+to create discrimination; this phase takes the first (drop subject
+capability), because it is the operating point at which the
 ownership-bookkeeping-in-the-compiler hypothesis actually predicts a gap,
 and because a base-model baseline is a prerequisite for attributing any
 future LoRA lift.
@@ -26,7 +26,7 @@ future LoRA lift.
 `eval/harness.py` is not modified.
 
 **Success:** a populated per-error-code distribution and a defensible
-pass@1 curve with variance estimates — *whatever direction they point*. A
+pass@1 curve with variance estimates, *whatever direction they point*. A
 result showing no Black Oxide advantage is a successful run of this phase.
 
 ## 3. Pre-registered analysis plan
@@ -36,9 +36,9 @@ author's own.
 
 **Primary comparison.** Black Oxide vs explicit Black Oxide first-attempt pass
 (pass@1) at each capability point, read as the **paired-by-task delta**
-defined under *Statistics* below. These two arms are matched on novelty —
-both are languages the subject saw zero times in pretraining, both taught
-only by a card of comparable length — and differ only in whether ownership
+defined under *Statistics* below. These two arms are matched on novelty
+(both are languages the subject saw zero times in pretraining, both taught
+only by a card of comparable length) and differ only in whether ownership
 is implicit or written out. This isolates the thesis claim.
 
 **Secondary.** Repair lift (final pass rate − first-attempt pass rate) per
@@ -64,23 +64,23 @@ of marginal arm rates. Pairing does **not** change the point estimate.
 What it changes is the **interval**: the paired standard error is
 `SD(per-task differences) / √20`, which shrinks in proportion to how
 strongly the two arms' per-task performance correlates. That correlation
-will be high — a task hard in Black Oxide is hard in explicit Black Oxide — so the
+will be high (a task hard in Black Oxide is hard in explicit Black Oxide), so the
 paired SE is expected to be roughly half the unpaired one. The delta is
 therefore reported with its **paired SE**, and quoting the delta without
 it is prohibited. (The point estimates diverge only when a task is
 missing from one arm, which should not occur in a complete grid.)
 
 Pooling all 100 task×seed trials into a single binomial CI is likewise
-**prohibited** — it treats fixed tasks as random draws and understates
+**prohibited**: it treats fixed tasks as random draws and understates
 the interval. Reported alongside: per-task pass counts (so task-level
 effects stay visible) and the across-seed SE (n=5) as a sampling-noise
 check.
 
-**Power — a pre-registered limit, not a finding.** With 20 tasks and 5
+**Power: a pre-registered limit, not a finding.** With 20 tasks and 5
 seeds, a per-seed pass rate moves in 5-point steps. At p≈0.5 (worst case
 for variance) the per-seed SD is ≈11pp and the across-seed SE of the mean
-is ≈5pp, so an *unpaired* comparison needs a ~10pp delta — two whole
-tasks — to clear two SE. Pairing by task roughly halves that, to ~5pp.
+is ≈5pp, so an *unpaired* comparison needs a ~10pp delta (two whole
+tasks) to clear two SE. Pairing by task roughly halves that, to ~5pp.
 **This design cannot detect a true effect smaller than about 5
 percentage points.** That is a property of a 20-task corpus, not evidence
 of absence, and every report from this phase must say so.
@@ -96,7 +96,7 @@ non-overlapping partition:
 | **≤ −5pp** | Disconfirming: implicit linearity *costs* accuracy at small scale. Part VI's ownership-default inversion should be revisited on that basis. |
 
 Mixed signs across capability points (e.g. positive at 0.5B, negative at
-7B) are reported as such and read as **no coherent directional effect** —
+7B) are reported as such and read as **no coherent directional effect**:
 not as selective support from whichever rung agrees.
 
 The ±5pp band is a floor imposed by 20 tasks, chosen from the power
@@ -135,7 +135,7 @@ produce identical output and the variance estimate is vacuous.
 `num_predict` is **load-bearing, not a nicety.** Degenerate repetition
 loops are the most characteristic small-model failure mode. Without a
 token cap, a looping 0.5B generation runs until the HTTP timeout and gets
-classified as a *transport* error — so the run would abort on precisely
+classified as a *transport* error, so the run would abort on precisely
 the behavior the phase exists to measure, and the grid would end up
 systematically missing its worst-performing cells. With the cap, runaway
 generation terminates as a **model** result: the truncated output fails
@@ -148,24 +148,24 @@ pinned explicitly. Ollama does *not* default it to the model's
 advertised capability: with `OLLAMA_CONTEXT_LENGTH` unset the daemon
 serves qwen2.5-coder at **4096** tokens, not its 32768 maximum
 (confirmed against `/api/ps` after load). Repair prompts carry each
-arm's full initial context — language card, few-shot examples, task
-statement (§6.3) — so the Black Oxide arms' carried context runs
+arm's full initial context (language card, few-shot examples, task
+statement (§6.3)), so the Black Oxide arms' carried context runs
 ~1400–1660 tokens against the Rust arm's ~110–300. A repair prompt also
 carries the rejected program, so the binding quantity is
 context + program + `num_predict`. Measured: for a rejected program
-anywhere in the ~1.6k–7k character band — the realistic range for a
-small model's failing output — the `oxide` and `explicit` arms exceed
+anywhere in the ~1.6k–7k character band (the realistic range for a
+small model's failing output), the `oxide` and `explicit` arms exceed
 4096 and `rust` does not. The carried card is exactly what pushes them
 over. On overflow llama.cpp truncates the prompt **from the front**,
-dropping that card — the only place Black Oxide syntax ever appears — from
+dropping that card (the only place Black Oxide syntax ever appears) from
 those two arms specifically. That is a silent, non-random bias against
 exactly the pair §3 names as the primary comparison, and nothing
 in the artifacts would reveal it: wrong-but-plausible numbers, the worst
 failure mode this project recognises.
 
-8192 clears the true worst case this grid can produce — the largest
+8192 clears the true worst case this grid can produce (the largest
 carried context (~1670 tok) wrapped around a `num_predict`-truncated
-2048-token program, plus 2048 reserved for the fix, ≈5740 tokens — with
+2048-token program, plus 2048 reserved for the fix, ≈5740 tokens), with
 ~30% headroom still free. It is deliberately **not** raised to 32768,
 which would inflate the KV cache for no benefit and risk OOM on the 7B
 rung, §7's memory-pressure case. The pinned value is recorded in
@@ -251,7 +251,7 @@ class OllamaClient:
 ```
 
 Protocol-first so a future API-backed client drops in without touching the
-driver. Uses `urllib` from the stdlib — the eval venv stays
+driver. Uses `urllib` from the stdlib: the eval venv stays
 dependency-free (Python 3.14 has no clean PyTorch story, and none is
 needed for inference through Ollama).
 
@@ -271,8 +271,8 @@ Pinned, arm-identical, deliberately **not** syntax-aware:
 1. Normalize line endings to `\n`.
 2. If the text contains a ``` fence, take the content of the **first**
    fenced block, dropping the fence lines and any language tag.
-3. If that fence is never closed — the characteristic shape of a
-   generation cut off at `num_predict` — take everything after the
+3. If that fence is never closed (the characteristic shape of a
+   generation cut off at `num_predict`), take everything after the
    opener. Salvaging it is arm-neutral, and the truncated source then
    fails to compile on its own merits rather than being discarded.
 4. Otherwise use the text with leading/trailing blank lines stripped.
@@ -320,7 +320,7 @@ Reply with ONLY the complete corrected program source, no fences, no commentary.
 
 The carried-over lead is the language card (oxide / explicit) or the
 pinned Rust preamble, plus any few-shot examples, plus the task
-statement — exactly what the arm was given on attempt 1. Reusing the
+statement: exactly what the arm was given on attempt 1. Reusing the
 frozen harness rather than reconstructing a lead makes the symmetry
 structural instead of asserted. Stripping a *known constant suffix* is
 deterministic and testable; its absence raises
@@ -338,8 +338,8 @@ instruction only):
 | explicit (0-shot) | 5593 ch | 271 | **4.8%** |
 | rust (0-shot) | 245 ch | 271 | **110.6%** |
 
-Rust *gained* context on repair — it lives in the model's weights and
-its preamble is one line — while the Black Oxide arms lost 95% of theirs, and
+Rust *gained* context on repair (it lives in the model's weights and
+its preamble is one line), while the Black Oxide arms lost 95% of theirs, and
 the language card is the only place Black Oxide syntax ever appears.
 Worse, the task statement appeared in **no** repair prompt, so after a
 runtime failure the model was told its output was wrong with no
@@ -373,7 +373,7 @@ The task's `expected_stdout` is **never** disclosed. Disclosing it would
 let a weak model pass by hard-coding a print of the expected string, which
 would silently corrupt the headline metric. It is not a parameter of
 `build_repair_prompt`, and `harness.build_prompt` does not include it
-either — the carried-over task statement says what the program must
+either: the carried-over task statement says what the program must
 produce without quoting the answer.
 
 No transcript accumulation: a repair prompt carries the arm's fixed
@@ -389,11 +389,11 @@ arm at 3-shot. Fail fast, listing everything missing.
 
 Preflight reads `/api/tags` and records each model's `digest`,
 `details.quantization_level`, and `details.context_length` into the
-manifest. The last is recorded as **`model_context_length`** — the
-model's *capability* — and is not to be confused with **`num_ctx`**, the
+manifest. The last is recorded as **`model_context_length`** (the
+model's *capability*) and is not to be confused with **`num_ctx`**, the
 window the run actually used, which is recorded separately from the
 client. Both appear in every manifest. It **asserts `quantization_level == "Q8_0"` for all three
-models** — this is what actually enforces §4's uniform-quantization
+models**. This is what actually enforces §4's uniform-quantization
 control, rather than trusting that the right tag was pulled. (The
 `qwen2.5-coder:1.5b` currently on this machine is Q4_K_M and must be
 rejected by name.)
@@ -467,7 +467,7 @@ estimates the prompt at ~4 chars/token and refuses when that estimate plus
 `num_predict` exceeds `num_ctx`. The estimate is deliberately crude: it
 exists to catch a 2x overrun, not to shave a token, and a real tokenizer
 is a dependency the eval venv does not have. Classifying overflow as
-infrastructure is the whole point — a silently front-truncated prompt
+infrastructure is the whole point: a silently front-truncated prompt
 loses the language card from the `oxide` and `explicit` arms only, and
 would be recorded as an ordinary model failure in exactly the two arms
 the primary comparison rests on. Refusing before the request means the
@@ -475,7 +475,7 @@ retry loop never sees it (overflow is deterministic) and the
 consecutive-abort backstop below still fires if it is systematic.
 
 **Run-id-scoped abort.** A persistent transport failure aborts only the
-current `run_id` — at most 60 sessions, ~20–30 min — records the cause in
+current `run_id` (at most 60 sessions, ~20–30 min) records the cause in
 that run's `manifest.json`, and the driver proceeds to the next run id.
 Resume later redoes the aborted run dir whole. The grid degrades in
 throughput instead of dying overnight, and no partial-state surgery is
@@ -503,33 +503,33 @@ remaining run id and leave a grid that looks complete but is not.
 New `tests/test_6a.py`, plus the existing 717 staying green (nothing in
 `harness.py` or `src/` is touched).
 
-1. **Extraction** — fenced, fenced-with-language-tag, multiple fences
+1. **Extraction**: fenced, fenced-with-language-tag, multiple fences
    (first wins), unfenced, empty, whitespace-only, CRLF; and
    `contract_compliant` correct in each.
-2. **Repair prompt** — compile-failure shape; runtime-failure shape;
+2. **Repair prompt**: compile-failure shape; runtime-failure shape;
    the arm's full initial prompt (lead, shots, task statement) is
    carried and its output contract dropped; a moved harness tail raises;
-   **asserts `expected_stdout` never appears in any repair prompt** —
+   **asserts `expected_stdout` never appears in any repair prompt**:
    structurally (not a parameter of `build_repair_prompt` nor of
    `harness.build_prompt`) and empirically, over every real corpus task
    x arm x shot count, where neither the whole expected output nor any
    single line of it may appear as a line of the prompt; arm-identical
    attempt-block structure across all three arms; rustc help text
    preserved verbatim.
-3. **Model client** — protocol conformance against a stub; retry-then-
+3. **Model client**: protocol conformance against a stub; retry-then-
    abort on transport error; preflight raises on a missing tag;
    `num_predict` passed through; `done_reason == "length"` surfaced as
    `truncated`.
-4. **Failure classification** (§7's governing rule, both directions) — a
+4. **Failure classification** (§7's governing rule, both directions): a
    generation truncated at `num_predict` is submitted as a **model**
    failure and does **not** abort; an HTTP timeout **does** abort the run
    id and is **never** written to `cells.jsonl` as a failed attempt.
-5. **Driver** — stub-model end-to-end over a 2-task subset; attempt cap
+5. **Driver**: stub-model end-to-end over a 2-task subset; attempt cap
    respected; resume deletes and redoes a short run dir; raw outputs
    persisted per attempt; run-id abort continues to the next run id;
    three consecutive aborts stop the grid non-zero; health-check waits
    then proceeds when Ollama returns.
-6. **Rollup** — paired-by-task delta computed per §3 on synthetic run
+6. **Rollup**: paired-by-task delta computed per §3 on synthetic run
    dirs; **paired SE** = `SD(per-task differences)/√n`, asserted smaller
    than the unpaired SE on a positively-correlated fixture (this, not a
    point-estimate difference, is what pairing actually buys); the two
@@ -537,7 +537,7 @@ New `tests/test_6a.py`, plus the existing 717 staying green (nothing in
    when a task is missing from one arm; partition classification correct
    at the ±5pp boundaries; pooled-binomial CI absent; incomplete grid
    refused without `--partial`.
-7. **Live smoke** — one task, 0.5B. Carries `@pytest.mark.live`, which
+7. **Live smoke**: one task, 0.5B. Carries `@pytest.mark.live`, which
    `pytest.ini` deselects by default (`addopts = -m "not live"`), so a
    full-suite run never burns a real generation; run it with
    `pytest -m live`. It still skips cleanly when the daemon is down or
@@ -549,8 +549,8 @@ New `tests/test_6a.py`, plus the existing 717 staying green (nothing in
   making the smallest rung uninformative. Mitigated by the 3-shot
   condition and by 1.5B/7B carrying the curve. Accepted.
 - **Card length vs context.** Measured prompt sizes (t01, ~4 chars/token).
-  Initial prompts, and — since repair prompts now carry each arm's full
-  initial context (§6.3) — repair prompts too:
+  Initial prompts, and (since repair prompts now carry each arm's full
+  initial context (§6.3)), repair prompts too:
 
   | Arm | initial 0-shot | initial 3-shot | repair 0-shot | repair 3-shot |
   |---|---|---|---|---|
@@ -565,7 +565,7 @@ New `tests/test_6a.py`, plus the existing 717 staying green (nothing in
   which defaults to **4096** and is not derived from the model's
   capability. Against 4096, an Black Oxide repair prompt (~1660 tok) plus the
   failing program plus `num_predict` 2048 reaches or exceeds the window,
-  while the Rust arm never does — and llama.cpp truncates from the front,
+  while the Rust arm never does, and llama.cpp truncates from the front,
   taking the language card with it. That would have been a silent,
   arm-correlated corruption of the primary comparison, not a shared
   overhead. **Resolved, not accepted:** §4 pins `num_ctx` to 8192, the

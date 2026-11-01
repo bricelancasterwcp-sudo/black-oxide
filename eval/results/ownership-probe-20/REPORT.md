@@ -1,7 +1,7 @@
-# Ownership Probe — 20 classes (qwen2.5-coder 7B-instruct-q8_0)
+# Ownership Probe: 20 classes (qwen2.5-coder 7B-instruct-q8_0)
 
-> **SUPERSEDED (2026-08-07).** The headline below — +18.3pp with a 2-SE
-> interval excluding zero, called "the first statistically resolved result" —
+> **SUPERSEDED (2026-08-07).** The headline below (+18.3pp with a 2-SE
+> interval excluding zero, called "the first statistically resolved result")
 > did not survive re-running at 10 seeds. The same subject on the same corpus
 > gave **+10.0pp, 2-SE `[−1.7, +21.7]`, sign test p = 0.18**. That interval
 > includes zero; the "resolved" claim was an artifact of three seeds and is
@@ -11,7 +11,7 @@
 
 
 **Date:** 2026-08-07
-**Corpus:** `eval/probes.jsonl` — 20 defect classes × 3 arms, 60 records, every
+**Corpus:** `eval/probes.jsonl`: 20 defect classes × 3 arms, 60 records, every
 one mechanically verified (broken fails with its intended ownership code and
 nothing else; fix compiles and reproduces its expected stdout; all three arms
 of a class agree on that stdout).
@@ -35,7 +35,7 @@ Paired by defect class, strict score, Oxide − explicit-Oxide:
 **+18.3pp, paired SE 7.0pp, n = 20 classes. 2-SE interval `[+4.3, +32.4]`.**
 
 The interval excludes zero. It clears the pre-registered ±5pp band **and**
-2 SE — the first statistically resolved result in this project's history.
+2 SE, the first statistically resolved result in this project's history.
 
 Growing the corpus is what did it. The point estimate barely moved; the
 interval more than halved:
@@ -90,7 +90,7 @@ Both Oxide arms clear the diagnostic far more often than they repair the
 program. Rust does this essentially never.
 
 On the lenient score alone the ranking reads **oxide 52 ≈ explicit 49 ≈
-rust 54** — all three indistinguishable. The strict score separates them
+rust 54**: all three indistinguishable. The strict score separates them
 completely: **rust 53 ≫ oxide 20 > explicit 9**. Reporting lenient without
 strict would have erased the entire result.
 

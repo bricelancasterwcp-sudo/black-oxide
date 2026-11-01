@@ -7,12 +7,12 @@
 endpoints computed once at the end.
 
 **Architecture:** Local instrument tasks first (attestation, card-free
-prompt mode, analysis module, campaign driver — all TDD'd against the
+prompt mode, analysis module, campaign driver, all TDD'd against the
 existing harness), then pod-side scripts, then three execution tasks
 (dry-run cost gate, trainings, campaign) that follow written procedures
 with STOP conditions, and a final analysis/report task. The existing
 `run_session` 4-attempt loop IS the iterations-to-green instrument; the
-existing `probe_campaign` IS the strict-repair instrument — this plan
+existing `probe_campaign` IS the strict-repair instrument. This plan
 extends, never rebuilds.
 
 **Tech Stack:** Python 3.14 `.venv` locally (stdlib + pytest); pod side
@@ -43,7 +43,7 @@ from the spec; executors read both.
   everywhere.
 - Budget: **$23** available now; top-up at 16:30 2026-08-28. The tranche
   boundary is an infrastructure pause; **no endpoint is computed before
-  all 12 arms have `.DONE`** — the analysis module enforces this.
+  all 12 arms have `.DONE`**. The analysis module enforces this.
 - RunPod API key: `~/.config/runpod/api_key`. Never print, commit, or
   copy it anywhere; scripts read it at call time.
 - Default-parameter behavior of every touched harness function must stay
@@ -88,13 +88,13 @@ def test_instruct_attestation_pinned():
 ```
 
 (The file already imports `hashlib`, `json`, `TOKENIZER_FILE`,
-`PROVENANCE_FILE` — extend the existing import line for
+`PROVENANCE_FILE`: extend the existing import line for
 `INSTRUCT_REPOS`.)
 
 - [ ] **Step 2: Run test to verify it fails**
 
 Run: `.venv/bin/pytest tests/test_tokenizer_pin.py -v`
-Expected: FAIL — `ImportError: cannot import name 'INSTRUCT_REPOS'`
+Expected: FAIL: `ImportError: cannot import name 'INSTRUCT_REPOS'`
 
 - [ ] **Step 3: Implement** (append to `eval/tokenizer_pin.py`; replace the `__main__` block)
 
@@ -148,7 +148,7 @@ Run: `cd ~/workspace/oxide && .venv/bin/python -m eval.tokenizer_pin instruct`
 Expected: JSON whose `instruct_repos` has 3 entries, every `sha256`
 equal to the committed pin (`c0382117…`), 3 distinct resolved
 `revision` commits. Needs network (~7MB × 3). **If any hash differs,
-STOP and report BLOCKED** — this is the spec's fail-closed gate.
+STOP and report BLOCKED**. This is the spec's fail-closed gate.
 
 - [ ] **Step 5: Run tests to verify they pass**
 
@@ -160,9 +160,9 @@ Expected: 2 PASS
 1. Edit provenance.json: change one hex char of one `instruct_repos`
    sha256 → test must FAIL. Restore by re-running Step 4.
 2. In `fetch_instruct`, replace `raise PinError(...)` mismatch branch
-   with `pass` — with a clean provenance the test still passes, so ALSO
+   with `pass`. With a clean provenance the test still passes, so ALSO
    hand-set one instruct hash wrong and re-run `fetch_instruct` with a
-   stubbed `_get`? No — simpler and honest: this branch's guard is
+   stubbed `_get`? No. Simpler and honest: this branch's guard is
    live-only; assert it via a unit test instead:
 
 ```python
@@ -211,20 +211,20 @@ git commit -m "feat: attest -Instruct tokenizers against the committed pin (fail
 
 **Interfaces:**
 - Produces (later tasks rely on these exact signatures):
-  - `harness.build_prompt(arm, task_id, shots=0, tasks_path=None, include_lead: bool = True) -> str`
-    — `include_lead=False` yields exactly
+  - `harness.build_prompt(arm, task_id, shots=0, tasks_path=None, include_lead: bool = True) -> str`:
+    `include_lead=False` yields exactly
     `"Task:\n" + task_prompt + "\n\n" + OUTPUT_CONTRACT + "\n"` and
     raises `HarnessError` if `shots > 0`.
   - `repair.initial_context(arm, task_id, shots=0, tasks_path=None, include_lead=True)`
-    and `repair.build_repair_prompt(arm, source, verdict, *, task_id, shots=0, tasks_path=None, include_lead=True)` — passthrough.
-  - `probe.build_probe_prompt(record, diagnostics=None, *, include_card: bool = True)`
-    — `include_card=False` omits the `language_card(arm)` section (the
+    and `repair.build_repair_prompt(arm, source, verdict, *, task_id, shots=0, tasks_path=None, include_lead=True)`: passthrough.
+  - `probe.build_probe_prompt(record, diagnostics=None, *, include_card: bool = True)`:
+    `include_card=False` omits the `language_card(arm)` section (the
     prompt then starts with `PROBE_INSTRUCTION`).
   - `probe.run_corpus(..., include_card: bool = True)`,
     `probe_campaign.run_cell(root, arm, seed, client_factory, include_card: bool = True)`,
-    `probe_campaign.run_campaign(root, arms, seeds, *, client_factory, provenance=None, include_card: bool = True)` — threaded through to
+    `probe_campaign.run_campaign(root, arms, seeds, *, client_factory, provenance=None, include_card: bool = True)`: threaded through to
     `build_probe_prompt`.
-  - `driver.run_session(..., include_lead: bool = True)` — threads to
+  - `driver.run_session(..., include_lead: bool = True)`: threads to
     both `harness.build_prompt` and `build_repair_prompt` calls inside.
 - All defaults `True` ⇒ byte-identical legacy behavior.
 
@@ -298,13 +298,13 @@ def test_cardfree_probe_prompt():
 ```
 
 Note: if `render_diagnostics` rejects the minimal `diags` dict shape,
-read `eval/repair.py:37` and adjust the fixture to the real field names
-— the assertion targets stay the same.
+read `eval/repair.py:37` and adjust the fixture to the real field names.
+The assertion targets stay the same.
 
 - [ ] **Step 2: Run tests to verify they fail**
 
 Run: `.venv/bin/pytest tests/test_cardfree.py -v`
-Expected: FAIL — `TypeError: build_prompt() got an unexpected keyword argument 'include_lead'`
+Expected: FAIL: `TypeError: build_prompt() got an unexpected keyword argument 'include_lead'`
 
 - [ ] **Step 3: Implement**
 
@@ -369,8 +369,8 @@ def build_prompt(
 In `eval/repair.py`: add `include_lead: bool = True` to
 `initial_context` and `build_repair_prompt`; each passes it down
 (`harness.build_prompt(..., include_lead=include_lead)` /
-`initial_context(..., include_lead=include_lead)`). No other change —
-the contract-stripping logic is lead-agnostic.
+`initial_context(..., include_lead=include_lead)`). No other change.
+The contract-stripping logic is lead-agnostic.
 
 In `eval/probe.py` `build_probe_prompt`: add keyword-only
 `include_card: bool = True`; build the return as
@@ -397,7 +397,7 @@ pass to the initial `harness.build_prompt(...)` call and to the
 - [ ] **Step 4: Run tests to verify they pass**
 
 Run: `.venv/bin/pytest tests/test_cardfree.py -q && .venv/bin/pytest -q`
-Expected: 6 new PASS; full suite green (1520 + 6, 3 deselected) — the
+Expected: 6 new PASS; full suite green (1520 + 6, 3 deselected). The
 full-suite run is mandatory here: it is the byte-stability guard for
 every default path this task touched.
 
@@ -438,7 +438,7 @@ at the end of Decision 4:
 4. In `run_session`, drop `include_lead` from the
    `build_repair_prompt` call only: no current test fails (repair-round
    leakage is exercised end-to-end in Task 4's fake-client test, which
-   asserts on EVERY prompt the client saw) — record this as the known
+   asserts on EVERY prompt the client saw). Record this as the known
    gap this round, closed by Task 4 mutation 3. Restore.
 
 - [ ] **Step 7: Commit**
@@ -486,7 +486,7 @@ def main(argv: list[str] | None = None) -> int      # python -m eval.experiment_
 
 Read `eval/probe.py` from line 205 to the end and note the committed
 scoring entry points (the ownership studies computed strict repair
-rates from probe cell dirs — reuse exactly those functions in
+rates from probe cell dirs: reuse exactly those functions in
 `strict_repair_rate`; do not reimplement scoring).
 
 - [ ] **Step 2: Write the failing tests**
@@ -605,7 +605,7 @@ def test_acceptance_v03_closing_baseline_qwen():
 ```
 
 Before running: `ls eval/results/v03-closing-baseline/` and adjust the
-glob to the actual qwen run naming (then keep it PINNED — the test must
+glob to the actual qwen run naming (then keep it PINNED: the test must
 enumerate deterministically). If the published rates were computed over
 a different key or run subset, STOP and report rather than loosening
 the assertion: this acceptance pin is the instrument's licence.
@@ -613,7 +613,7 @@ the assertion: this acceptance pin is the instrument's licence.
 - [ ] **Step 3: Run tests to verify they fail**
 
 Run: `.venv/bin/pytest tests/test_experiment_report.py -v`
-Expected: FAIL — `ModuleNotFoundError: No module named 'eval.experiment_report'`
+Expected: FAIL: `ModuleNotFoundError: No module named 'eval.experiment_report'`
 
 - [ ] **Step 4: Implement**
 
@@ -773,15 +773,15 @@ Step 1 (the probe module's own cell-scoring entry point over
 `probes_root`'s `<arm>-s<seed>/` cell dirs), returning
 `{"rate": float, "n": int}`. Add to `build_report`'s `primaries[s]` a
 `"repair"` key: `paired-style delta on strict rates is NOT possible
-task-paired across languages` — instead compute
+task-paired across languages`: instead compute
 `{"tune_ox": rate, "tune_rs": rate, "delta_pp": round((a-b)*100,1)}`
 with a 2-SE from the two binomials (same formula as `unpaired_pass1`
 over probe outcomes), and a `"repair"` headline
 (`tune-ox-7` vs `base-rs-14`). Add a synthetic-fixture test for it in
-the same style as `test_unpaired_pass1_hand_computed`, plus — if a
+the same style as `test_unpaired_pass1_hand_computed`, plus, if a
 committed probe campaign with published rates exists under
 `eval/results/` (the ownership studies' qwen strict 73.0% oxide /
-14.0% explicit) — an acceptance pin like the v03 one; if the committed
+14.0% explicit), an acceptance pin like the v03 one; if the committed
 layout cannot reproduce a published number exactly, STOP and report
 rather than approximating.
 
@@ -798,7 +798,7 @@ Expected: all PASS (including the v03 acceptance pin).
 3. `paired_pass1`: replace `se` with population SD (divide by
    `len(diffs)` instead of `len(diffs)-1` without the /n) → the
    hand-computed test must FAIL. If it doesn't, the fixture is too
-   symmetric — extend it until it does.
+   symmetric. Extend it until it does.
 4. `pass10_verifier`: count `first_passed` instead of `final_passed` →
    `test_gen_metrics_shapes_and_censoring` must FAIL.
 5. Acceptance: change `0.305` to `0.306` in the test → must FAIL
@@ -849,16 +849,16 @@ def main(argv: list[str] | None = None) -> int
 # python -m eval.exp_campaign --arm tune-ox-7 --host http://127.0.0.1:8081 --root eval/results/runpod-exp
 ```
 
-- `LlamaCppClient.props(self) -> dict` — public wrapper over the
+- `LlamaCppClient.props(self) -> dict`: public wrapper over the
   `/props` call (`self._call(f"{self.host}/props")`).
 
 Behavioral contract for `run_arm` (the spec's rules, in code):
 - If `results_root/name/.DONE` exists: return immediately (idempotent).
 - Else if `results_root/name` exists WITHOUT `.DONE`: **delete the
-  whole arm dir first** (`shutil.rmtree`) — an interrupted arm reruns
+  whole arm dir first** (`shutil.rmtree`). An interrupted arm reruns
   from zero, never resumes (no splicing).
 - `identity_preflight` asserts `props()["model_path"]` (or the
-  equivalent field the server actually returns — inspect one live
+  equivalent field the server actually returns: inspect one live
   `/props` payload during Task 6 and pin the field name then; until
   then key on a `model_path`-named lookup with a clear `ModelError` if
   absent) ends with `spec.gguf`, then calls `client.preflight()`
@@ -989,7 +989,7 @@ injectable-instrument pattern the house already uses.
 - [ ] **Step 2: Run tests to verify they fail**
 
 Run: `.venv/bin/pytest tests/test_exp_campaign.py -v`
-Expected: FAIL — `ModuleNotFoundError: No module named 'eval.exp_campaign'`
+Expected: FAIL: `ModuleNotFoundError: No module named 'eval.exp_campaign'`
 
 - [ ] **Step 3: Implement `eval/exp_campaign.py` and `LlamaCppClient.props`**
 
@@ -1150,7 +1150,7 @@ In `eval/llamacpp.py`, add to `LlamaCppClient` (next to `preflight`):
 ```
 
 Note the `run_session` call runs the real transpile+rustc oracle per
-submission — the fake-client tests genuinely compile t01's reference
+submission. The fake-client tests genuinely compile t01's reference
 solution, which is the point (an end-to-end fake-model, real-oracle
 test).
 
@@ -1197,13 +1197,13 @@ git commit -m "feat: campaign driver — 12-arm table, identity preflight, rerun
 - Create: `scripts/runpod/runpod_api.sh`
 
 **Interfaces:**
-- Consumes: `harness.build_prompt(..., include_lead=False)` (Task 2 —
+- Consumes: `harness.build_prompt(..., include_lead=False)` (Task 2:
   train_lora renders prompts through the SAME function eval uses;
   this is the train==eval invariant, enforced by construction),
   `eval/train/matched/{oxide,rust}.jsonl`, `eval/train/tasks.jsonl`.
 - Produces: scripts Task 6–8 procedures invoke verbatim.
 
-These run on the pod (torch 2.9.1, Python 3.12) — locally they are
+These run on the pod (torch 2.9.1, Python 3.12). Locally they are
 syntax-checked only. No unit tests beyond that: the executable logic
 that CAN run locally already lives in tested modules.
 
@@ -1472,7 +1472,7 @@ esac
 ```
 
 (If the REST paths differ from the current RunPod API, fix them against
-the live API docs during Task 6 — the bloomery spike used REST
+the live API docs during Task 6. The bloomery spike used REST
 `GET /pods` + GraphQL successfully on 2026-08-22; record whatever
 endpoint shape actually works back into this script in the same
 commit as the dry run's evidence.)
@@ -1485,7 +1485,7 @@ Run:
 bash -n scripts/runpod/*.sh
 chmod +x scripts/runpod/*.sh
 ```
-Expected: silent success. (train_lora imports torch at module top —
+Expected: silent success. (train_lora imports torch at module top:
 `py_compile` only parses, so this works on the torch-less venv.)
 
 - [ ] **Step 5: Commit**
@@ -1498,7 +1498,7 @@ git push
 
 ---
 
-### Task 6: EXECUTION — pod bring-up and dry-run cost gate
+### Task 6: EXECUTION: pod bring-up and dry-run cost gate
 
 This is a procedure, not TDD. STOP conditions are marked. All local
 commands run from `~/workspace/oxide`.
@@ -1511,7 +1511,7 @@ bash scripts/runpod/runpod_api.sh pods
 ```
 Expected: `KEY-OK` and a JSON pod list (expect 0 pods). **STOP and
 report BLOCKED if the key file is missing/empty or the API refuses
-auth** — do not hunt for other credentials.
+auth**. Do not hunt for other credentials.
 
 - [ ] **Step 2: Create the pod**
 
@@ -1519,10 +1519,10 @@ Write a spec JSON (adjust to the live API's field names if `create`
 rejects it; the bloomery spike's proven parameters: community cloud,
 `runpod/pytorch:1.1.0-cu1290-torch291-ubuntu2404` image): GPU type
 "NVIDIA GeForce RTX 4090", container disk 80 GB, network volume NOT
-required (artifacts rsync home instead — spec-amended below), expose
+required (artifacts rsync home instead: spec-amended below), expose
 SSH. Create, then poll `pods` every 30s. **Ops rule (bloomery, paid
 for): if `runtime` stays null with no port mapping for more than ~5
-minutes, terminate and re-create — it bills while stuck.**
+minutes, terminate and re-create. It bills while stuck.**
 
 - [ ] **Step 3: Setup + record environment**
 
@@ -1546,7 +1546,7 @@ snapshot_download("Qwen/Qwen2.5-Coder-7B-Instruct", local_dir="/workspace/hf/bas
 EOF
 bash oxide/scripts/runpod/convert_quant.sh /workspace/hf/base-7 base-7
 ```
-Then run a 2-task × 2-seed × gen-only slice of `base-rs-7`, timed —
+Then run a 2-task × 2-seed × gen-only slice of `base-rs-7`, timed:
 create the slice tasks file on the pod:
 ```bash
 cd /workspace/oxide
@@ -1574,7 +1574,7 @@ EOF
 ```
 Expected: `/workspace/dry/base-rs-7/.DONE` exists; 4 cells written.
 **This is also the moment to pin `identity_preflight`'s `/props` field
-name** — `curl -s http://127.0.0.1:8081/props | python -m json.tool | head -30`,
+name**: `curl -s http://127.0.0.1:8081/props | python -m json.tool | head -30`,
 confirm which field carries the model path, and if it is not
 `model_path`, fix `eval/exp_campaign.py` accordingly (commit the fix
 from the local checkout, push, `git -C /workspace/oxide pull`).
@@ -1614,10 +1614,10 @@ to the experiment spec in the same commit (non-silent amendment):
 
 ---
 
-### Task 7: EXECUTION — six trainings, nine ggufs, smoke
+### Task 7: EXECUTION: six trainings, nine ggufs, smoke
 
 Same pod, procedure. The Task 1 committed attestation is the
-tokenizer gate — it already passed or this plan never got here.
+tokenizer gate. It already passed or this plan never got here.
 
 - [ ] **Step 1: Download the remaining bases**
 
@@ -1651,7 +1651,7 @@ done
 Each run is minutes (17k supervised tokens × 3 epochs). After each:
 check the log tail shows the final loss line and
 `adapters/…/provenance.json` exists. **STOP if any training crashes
-twice on the same arm** — report the log tail.
+twice on the same arm**. Report the log tail.
 
 - [ ] **Step 3: Merge + convert + quantize the six tuned models**
 
@@ -1692,7 +1692,7 @@ dry-run evidence file; commit + push.
 
 ---
 
-### Task 8: EXECUTION — the 12-arm campaign
+### Task 8: EXECUTION: the 12-arm campaign
 
 Procedure. Order (spec: baselines first, smallest first):
 `base-ox-1.5, base-rs-1.5, base-ox-7, base-rs-7, base-ox-14,
@@ -1723,7 +1723,7 @@ print("base-rs-7 pass1", rs["pass1"], "bounds [0.30, 0.80]")
 print("base-ox-7 pass1", ox["pass1"], "bounds [0.05, 0.60]")
 EOF
 ```
-**STOP the campaign if either lands outside its bounds** — that is an
+**STOP the campaign if either lands outside its bounds**. That is an
 infrastructure investigation, not a result. (Reading these two numbers
 is pre-registered as a sanity check, not an interim analysis; no other
 arm's numbers are read before completion.)
@@ -1776,11 +1776,11 @@ placeholders): environment provenance (pod GPU, image, llama.cpp
 commit, gguf shas, sampler); the 12-arm table (pass@1,
 pass@10-with-verifier, strict repair, iterations-to-green,
 tokens-to-green with censored counts); the three pre-registered
-readings — per-size primaries with 2-SE, the headline
+readings: per-size primaries with 2-SE, the headline
 (tune-ox-7 vs base-rs-14, generation AND repair), the window trend;
 token-efficiency ratios; sanity-bound readouts; total spend vs the
 $23 + top-up budget; and the decision-mapping paragraph quoting the
-spec's mapping and stating which branch the numbers land in — stated
+spec's mapping and stating which branch the numbers land in: stated
 as the mapping's output, no fresh interpretation.
 
 - [ ] **Step 4: Full suite + commit + push**
@@ -1794,7 +1794,7 @@ git commit -m "feat: RunPod fine-tune experiment — 12 arms measured, pre-regis
 git push
 ```
 The findings write-up (public doc in the findings series) is a
-separate, owner-reviewed cycle — out of scope here.
+separate, owner-reviewed cycle, out of scope here.
 
 ---
 
@@ -1807,11 +1807,11 @@ separate, owner-reviewed cycle — out of scope here.
   spec's `eval/repair_loop.py` row is superseded by the Task 2 spec
   amendment (the harness already implements the loop).
 - The `/props` model-path field name and the RunPod REST endpoint
-  shapes are pinned during Task 6 against the live systems, by design
-  — both are recorded in the dry-run evidence file when pinned.
+  shapes are pinned during Task 6 against the live systems, by design.
+  Both are recorded in the dry-run evidence file when pinned.
 - `probe_campaign.run_campaign(provenance=...)` is REQUIRED by that
-  module — the campaign driver always passes it (Task 4 does).
+  module. The campaign driver always passes it (Task 4 does).
 - Known review flag: Task 4's fake-client tests execute the real
-  rustc oracle — each test costs a transpile+compile (~seconds). If
+  rustc oracle. Each test costs a transpile+compile (~seconds). If
   the suite time grows unacceptably, mark them `slow`, do not stub
   the oracle.

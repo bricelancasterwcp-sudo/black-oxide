@@ -1,7 +1,7 @@
-# v0.3 gate decision — the ownership-default inversion is REJECTED
+# v0.3 gate decision: the ownership-default inversion is REJECTED
 
 **Date:** 2026-08-07
-**Gate:** SPEC Part VI §32.3 proposed inverting the ownership default — value
+**Gate:** SPEC Part VI §32.3 proposed inverting the ownership default: value
 semantics for plain data (implicit clone at would-be use-after-move), with
 linearity opt-in per type (`resource struct`) and `OX04xx` applied only there.
 It was recorded as **eval-gated: do not implement yet**, to be confirmed or
@@ -50,13 +50,13 @@ as written.** `accumulate-without-reassign` is the one class where cloning is
 silently wrong: the loop stops accumulating and the program prints the wrong
 answer. Under value semantics that program compiles and faithfully does the
 wrong thing. It is 1 of 20 here, but building a collection in a loop is among
-the most common imperative idioms — its real-world frequency is far higher
+the most common imperative idioms. Its real-world frequency is far higher
 than its corpus share. Trading a compile error for a silent wrong answer is
 the wrong direction for this specific, common bug.
 
 **3. The benefit being optimised for is modest and shrinking with
 capability.** The measured advantage of implicit over explicit ownership,
-isolated from ergonomics, is **≈ +10pp** — and it is **0.0pp at frontier**,
+isolated from ergonomics, is **≈ +10pp**, and it is **0.0pp at frontier**,
 where both arms ceiling. Inverting the semantics of the language is a large,
 hard-to-reverse change made to serve a capability band that is moving.
 
@@ -78,8 +78,8 @@ whose reason for having linear types at all is to make that cost explicit.
 - **Linearity remains the default.** No `resource struct`, no value-semantics
   inversion, no opt-in linearity.
 - **Ergonomics become the v0.3 track.** Method syntax (Part XI) is the
-  template: measurable, semantics-preserving, cheap. The `OX0200` wall — 293
-  name/type diagnostics against 163 linearity ones — is now the largest
+  template: measurable, semantics-preserving, cheap. The `OX0200` wall (293
+  name/type diagnostics against 163 linearity ones) is now the largest
   barrier by a factor of nearly two, and is where the next work belongs.
 - **Diagnostics remain a first-class lever.** Fixing `OX0403` to name the
   later use flipped a frontier repair from fail to pass. `OX0304`'s
@@ -89,7 +89,7 @@ whose reason for having linear types at all is to make that cost explicit.
 ## What would reopen this
 
 A corpus of ownership defects authored so that cloning is the *only* correct
-repair — independently, not by me — showing that linearity blocks programs
+repair (independently, not by me), showing that linearity blocks programs
 whose sole fix is a copy. That would move the argument from "the compiler
 demands something the author would have wanted anyway" to "the compiler
 demands friction with no alternative," which is the real case for inverting.

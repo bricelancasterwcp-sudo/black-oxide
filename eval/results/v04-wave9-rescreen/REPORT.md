@@ -1,4 +1,4 @@
-# Wave 9 — re-screen: shipping `[` cleared the lexer and moved nothing
+# Wave 9: re-screen: shipping `[` cleared the lexer and moved nothing
 
 2026-09-02. Plan: `docs/superpowers/plans/2026-09-02-v04-wave9-rescreen-plan.md`
 (pre-registered, with two dated amendments before the run). Four arms,
@@ -20,7 +20,7 @@ this run is published as movement against wave 8.** The reader prints
 and for the one comparison that does not depend on the environment.
 
 **Cause, read off the cells.** The missed cell is seed 3, task `t20`.
-Its first-attempt program is a *different sample* from wave 8's — the
+Its first-attempt program is a *different sample* from wave 8's: the
 same `vec(...)` laid out across different lines, then a divergent body.
 Weights are hash-identical (`base d5473be2…`, `ox fb7c0bde…`,
 `rs 88ca8607…`, all three equal to wave 8's), the sampler and seed are
@@ -31,8 +31,8 @@ first-attempt texts differ from wave 8's on the same seed. The base
 guard survived its six because none changed a verdict; the tuned guard
 lost one of one.
 
-So the guard did its job — it caught an environment that was not the
-same environment — and the thing it caught was an **unpinned ambient
+So the guard did its job (it caught an environment that was not the
+same environment), and the thing it caught was an **unpinned ambient
 variable** in the pipeline, not the merge and not the language.
 `pod_setup.sh` now pins the commit (default `b96806d`, overridable), and
 `llamacpp_commit` was already in every `provenance.json`, which is how
@@ -52,12 +52,12 @@ claim is narrowed accordingly.
 
 Within-run compile-rate ratio **0.0698**. Wave 8 read 0.0652 in its own
 environment; the plan's bands put anything below 0.12 at
-*next-barrier*, and this reading lands there **for the record only** —
+*next-barrier*, and this reading lands there **for the record only**:
 stop 1 bars quoting it as a change from wave 8. Oxide compiled exactly
 **3 of 60 in both waves.**
 
 **The comparison that survives the guard.** Two cells have
-byte-identical first-attempt programs in wave 8 and wave 9 — `g17` on
+byte-identical first-attempt programs in wave 8 and wave 9: `g17` on
 seeds 2 and 3, both containing `[`. In wave 8 each died at the lexer
 (`OX0001 unexpected character '['`, 31 diagnostics each). In wave 9
 each **compiles and passes**. Same text, same weights, same seed; only
@@ -76,15 +76,15 @@ pre-registered 15% by a factor of eight. Attempts containing `[` were
 **58 of 229 (25.3%)**, and 54 of those got past the lexer for the first
 time. The wave-8 attribution was right.
 
-Where they went instead — the next barriers, named from the model's
+Where they went instead: the next barriers, named from the model's
 own output:
 
 | first diagnostic | count | what it is |
 |---|---:|---|
-| `OX0200` unknown identifier | 54 | `str_from_chars` 8, `insert` 8, `split` 7, `str_split` 7, `slice` 5, `all` 4, `is_alpha` 4 — **strings, again** |
+| `OX0200` unknown identifier | 54 | `str_from_chars` 8, `insert` 8, `split` 7, `str_split` 7, `slice` 5, `all` 4, `is_alpha` 4 (**strings, again**) |
 | `OX0103` expected type, found `(` | 32 | **tuple types** |
 | `OX0100` expected expression, found `=` / `OX0101` … found `EQ` | 31 | index-assign `v[i] = x` and tuple destructuring |
-| `OX0101` expected loop variable, found `(` | 21 | **tuple patterns**: `for (i, x) in …` — the enumerate idiom |
+| `OX0101` expected loop variable, found `(` | 21 | **tuple patterns**: `for (i, x) in …` (the enumerate idiom) |
 | `OX0101` other parse | 44 | mixed |
 
 Two of the five are one gap: **tuples** (types, patterns, destructuring)
@@ -98,7 +98,7 @@ compile count stayed at 3.
 The plan pre-stated that clearing the lexer would move an attempt to its
 *next* error and that a rise into 10–20% was the honest expectation. The
 measured result is below even that: **no rise at all.** Under the plan's
-own consequence table this is the `< 0.12` row — *one construct at a
+own consequence table this is the `< 0.12` row: *one construct at a
 time does not work; ship the ranked slate together, or accept that the
 gap is not closable by vocabulary.*
 
@@ -112,7 +112,7 @@ it, each of which re-derives a piece of Rust the model already knows.
 
 - Any change in the compile-rate ratio from wave 8 (stop 1).
 - Anything about pass@1 at the large tier from three seeds.
-- That tuples or `split` would, if shipped, move the compile rate — the
+- That tuples or `split` would, if shipped, move the compile rate: the
   same reasoning predicted `[` would, and the mechanism was right while
   the total did not move.
 
@@ -123,7 +123,7 @@ it, each of which re-derives a piece of Rust the model already knows.
   computed on the pod (the wave-8 lesson, applied).
 - Adapters `tune-{ox,rs}-14-v5` content-hash verified against
   `SHAS.txt` before launch; both `OK`.
-- GGUF sha256: base `d5473be2…`, ox `fb7c0bde…`, rs `88ca8607…` — each
+- GGUF sha256: base `d5473be2…`, ox `fb7c0bde…`, rs `88ca8607…`, each
   identical to the wave-8 screen's artifact of the same name
   (`pod-gguf-shas.txt`).
 - llama.cpp `0f3a71be…` (wave 8: `b96806d9…`); rustc 1.98.0
@@ -142,11 +142,11 @@ it, each of which re-derives a piece of Rust the model already knows.
 ## Instrument changes shipped with this report
 
 1. `scripts/runpod/pod_setup.sh` pins the llama.cpp commit.
-2. `eval/wave9_rescreen.py` — the pre-registered reading, with the
+2. `eval/wave9_rescreen.py`: the pre-registered reading, with the
    wave-8 band verdict renamed so it cannot be mistaken for this run's,
    and `delta: None` on a missed guard (9 mutations killed).
 3. `LEXER_SHARE_BASELINE` corrected and pinned to the record.
-4. `scripts/runpod/wave9_rescreen.sh` — `cuInit` before anything else,
+4. `scripts/runpod/wave9_rescreen.sh`: `cuInit` before anything else,
    `DONE`/`FAILED` markers, expected-commit check.
 
 ## Feed-forward, recorded for whoever reopens the loop

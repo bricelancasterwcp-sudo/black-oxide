@@ -1,4 +1,4 @@
-# Wave 9 re-screen — does shipping `[` move the compile rate?
+# Wave 9 re-screen: does shipping `[` move the compile rate?
 
 **Date:** 2026-09-02. Branch `v04-wave9-index-syntax`.
 **Written and committed BEFORE the pod is provisioned.**
@@ -11,7 +11,7 @@ Construct: SPEC 65, `eval/results/v04-wave9-index/REPORT.md`.
 unchanged and were trained on a corpus with no `[` at all; the tuned
 arms are card-free (`include_lead=False`), so they never see the updated
 card either. The model writes `[` because Rust and Python taught it to,
-not because Oxide did — 29.0% of its large-tier attempts contained one,
+not because Oxide did. 29.0% of its large-tier attempts contained one,
 and every such attempt died at `OX0001` before type checking ran.
 
 So this run changes exactly one thing: whether those attempts get past
@@ -32,7 +32,7 @@ Wave 8 measured **0.0652** (5.0% vs 76.7%).
 
 | ratio | reading | consequence |
 |---|---|---|
-| **≥ 0.20** | indexing was a real binding constraint | keep shipping the ranked stdlib one construct at a time — the method works |
+| **≥ 0.20** | indexing was a real binding constraint | keep shipping the ranked stdlib one construct at a time: the method works |
 | 0.12 – 0.20 | partial | the barrier was real but shallow; re-rank against the new diagnostic distribution before the next construct |
 | **< 0.12** | removing one barrier merely exposed the next | **one-construct-at-a-time will not work.** Ship the ranked slate together, or accept that the gap is not closable by vocabulary |
 
@@ -49,7 +49,7 @@ Both are reported whichever way they move.
 Stated in advance so a modest rise is not read as a disappointment and a
 large one is not read as a miracle. 29.0% of attempts contained `[`, but
 those attempts also contain everything else the model gets wrong:
-`OX0200` (unknown identifier — `split` 44, `slice` 39, `map` 32,
+`OX0200` (unknown identifier: `split` 44, `slice` 39, `map` 32,
 `floor` 27 across the 7B data) was already 43 of the 14B first
 diagnostics. Clearing the lexer moves an attempt to its *next* error,
 which for many will be an unknown identifier. **A rise into the 10–20%
@@ -65,14 +65,14 @@ band is the honest expectation.**
 ## Cost
 
 ≈**$0.30** at $0.22/h community 3090, ~1.25 h, priced from the wave-8
-screen's measured timings — the pipeline is identical and the weights
+screen's measured timings. The pipeline is identical and the weights
 are rebuilt the same way. Balance ≈$6.1.
 
 ## Carried ops rules
 
 Verify capacity on the MACHINE, never the API's fields (`memoryInGb`
 read 41 GB against an actual 251 GB last run). Verify transfers by
-CONTENT HASH against `SHAS.txt`, not file count — a truncated tar passed
+CONTENT HASH against `SHAS.txt`, not file count. A truncated tar passed
 the count check last run and would have corrupted the control arm.
 Request ≥150 GB disk. Terminate then verify zero pods twice.
 
@@ -110,12 +110,12 @@ Running the instrument that will read the re-screen
 (`eval/results/v04-wave8-14b-screen/results-large/tune-ox-14/`) gives
 **73 of 216 = 0.338**. The 191 is the sum of the four largest codes in
 the wave-8 report's table (73 + 51 + 43 + 24) and omits the five smaller
-ones (`OX0100` 20, `OX0400` 2, `OX0308` 1, `OX0205` 1, `OX0403` 1 — 25
+ones (`OX0100` 20, `OX0400` 2, `OX0308` 1, `OX0205` 1, `OX0403` 1: 25
 attempts). All 216 first diagnostics are compiler codes; nothing was
 excluded on purpose.
 
-**Lens, stated exactly:** the denominator is every attempt of the arm —
-first attempts and repair attempts alike, 238 in wave 8 — that carries
+**Lens, stated exactly:** the denominator is every attempt of the arm
+(first attempts and repair attempts alike, 238 in wave 8) that carries
 at least one diagnostic (216); the numerator is those whose *first*
 diagnostic is `OX0001`. The baseline is **0.338**, and
 `LEXER_SHARE_BASELINE` is now pinned to the committed cells by a

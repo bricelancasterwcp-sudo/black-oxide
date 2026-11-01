@@ -1,4 +1,4 @@
-# v0.4 wave 6 — the static/dynamic divergence was measured on two different task sets
+# v0.4 wave 6: the static/dynamic divergence was measured on two different task sets
 
 2026-08-31. Wave 4's feed-forward named the static/dynamic divergence as
 the project's central open problem and proposed building a per-construct
@@ -15,8 +15,8 @@ changes the size of the problem rather than dissolving it.
 
 `eval/solutions/` was last modified on **2026-08-07, the repository's
 first commit**. It contains zero uses of `sort`, `unwrap_or`, `+=`,
-`swap`, `set`, `count_if` or `filter` — every construct waves 1–4
-shipped. The train references, by contrast, were re-authored in each
+`swap`, `set`, `count_if` or `filter` (every construct waves 1–4
+shipped). The train references, by contrast, were re-authored in each
 wave and last touched 2026-08-30.
 
 **Four waves of static improvement were measured only on the tasks we
@@ -26,13 +26,13 @@ finding "the language got shorter but the model did not follow" rested
 on that mismatch.
 
 Measured for the first time: the **eval-set** static ratio under the
-frozen references is **1.1796** — essentially the wave-0 state (1.22),
+frozen references is **1.1796**, essentially the wave-0 state (1.22),
 which is what one expects of references written before the vocabulary
 existed.
 
 ## 2. What was done
 
-`eval/solutions/` is the **contamination reference** —
+`eval/solutions/` is the **contamination reference**:
 `train_corpus.contamination_report()` flags any training program whose
 normalised source matches a committed eval solution. Modernising it
 would shift that baseline and make train and eval look more alike, which
@@ -59,11 +59,11 @@ or use shapes the language still lacks.
 
 t11 is the clearest case: the frozen reference hand-rolls a `min_above`
 helper and a selection-sort loop, 150 tokens, for "print these six
-numbers in increasing order". With `sort` — shipped in wave 1 — it is 37
+numbers in increasing order". With `sort` (shipped in wave 1) it is 37
 tokens. t09 hand-rolls reverse iteration where `reverse` exists. t14
 defines its own `contains` when the builtin has existed since wave 1.
 
-## 3. Result — the divergence is real, and larger than believed
+## 3. Result: the divergence is real, and larger than believed
 
 | measurement | ratio |
 |---|---:|
@@ -72,7 +72,7 @@ defines its own `contains` when the builtin has existed since wave 1.
 | train-set static (published) | 0.9871 |
 | **model dynamic on eval tasks (7B, composition-controlled)** | **1.1982** |
 
-The eval set now sits at **0.9393 — below the train set's 0.9871.** The
+The eval set now sits at **0.9393, below the train set's 0.9871.** The
 language expresses these tasks in 6% fewer tokens than Rust; the model
 writes them in 20% more.
 
@@ -90,9 +90,9 @@ is not 0.9871-vs-1.1982 across different tasks, it is
 
 Only the Oxide side was modernised. The Rust references are unchanged
 and were not systematically re-reviewed, so if they are suboptimal this
-ratio flatters Oxide. Spot checks found them idiomatic — t11 is
+ratio flatters Oxide. Spot checks found them idiomatic: t11 is
 `v.sort()` and a loop, t09 is `.iter().rev()`, both what a competent
-Rust programmer writes — but that check was informal and is not a
+Rust programmer writes, but that check was informal and is not a
 substitute for the symmetric review the amended bias rule (SPEC §60.4)
 would require before this number is published as an endpoint.
 
@@ -113,7 +113,7 @@ that a same-task comparison puts the model's surplus at roughly 28%.
    references and the model's 1.1982 output, on the same 20 tasks.
 3. **Twelve of twenty eval references needed no change.** Their surplus,
    if any, is not reachable with current vocabulary and is the honest
-   place to look for the next language gap — the same cost-census logic
+   place to look for the next language gap: the same cost-census logic
    that found `swap` and `reverse`, applied to the eval set.
 4. **Process lesson, recorded because it cost four waves:** an estimand
    pair must be checked for comparability *before* their difference is

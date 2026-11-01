@@ -1,4 +1,4 @@
-# wave 9 — re-screen (seeds 1,2,3), read against wave 8
+# wave 9: re-screen (seeds 1,2,3), read against wave 8
 
 - guard `base-rs-14` pass@1 **0.55** (anchor 0.55, seeds 1-3): **REPRODUCED**
 - guard `tune-ox-14` pass@1 **0.7833333333333333** (anchor 0.8, seeds 1-3): **MISSED**

@@ -1,14 +1,14 @@
-# Shipping v0.3 — synthesis, README, SPEC bump, tag
+# Shipping v0.3: synthesis, README, SPEC bump, tag
 
 **Date:** 2026-08-11
-**Track:** v0.3 generation ergonomics — **close-out**. No code, no
+**Track:** v0.3 generation ergonomics: **close-out**. No code, no
 language change, no new measurement.
 **Status:** design approved in session; implementation plan follows.
 
 The v0.3 closing-baseline REPORT ends by declaring this work out of its
 own scope: *"Shipping v0.3 itself (synthesis REPORT, README results
 section, SPEC version bump v0.2.2 → v0.3, tag) is deliberately out of
-scope for this task — it follows this campaign as its own piece of
+scope for this task. It follows this campaign as its own piece of
 work."* This is that piece of work.
 
 ## What v0.3 turned out to be
@@ -21,9 +21,9 @@ friction in the G0 corpus rather than proposed from taste.
 Three campaigns bracket them, all constrained, all 3 families × 3 arms ×
 20 tasks × 10 seeds (n=200 per arm per family):
 
-- `g0c` — `eval/results/g0-generation-baseline/constrained`, pre-change
-- `g1c` — `eval/results/g1-vec-literal/constrained`, after §55 only
-- `v03c` — `eval/results/v03-closing-baseline`, after all three
+- `g0c`: `eval/results/g0-generation-baseline/constrained`, pre-change
+- `g1c`: `eval/results/g1-vec-literal/constrained`, after §55 only
+- `v03c`: `eval/results/v03-closing-baseline`, after all three
 
 ### The finding: one change did the work
 
@@ -43,7 +43,7 @@ SPEC §47's ±5pp resolution floor for this design.
 An ergonomic language fix acts on whether a program compiles; passing
 additionally requires the algorithm to be right, which no syntax change
 can supply. On that metric the same decomposition is more concentrated
-still — and §55's share is **dose-ordered in its own measured demand**:
+still, and §55's share is **dose-ordered in its own measured demand**:
 
 | family | g0c | g1c | v03c | §55 | §56+§57 | §55 demand (pre-change `vec` calls) |
 |---|---|---|---|---|---|---|
@@ -67,8 +67,8 @@ Both controls stay flat across the whole of v0.3 (g0c→v03c):
 | explicit | +1.0 | −0.5 | −0.5 |
 
 The explicit arm is the more informative of the two. It receives §55,
-§56 and §57 identically — they are core front-end changes both dialects
-inherit — and does not move. That reproduces, on generation, the same
+§56 and §57 identically (they are core front-end changes both dialects
+inherit) and does not move. That reproduces, on generation, the same
 split the repair probe found for §53: ergonomic fixes lift the implicit
 arm and not the explicit one, whose binding constraint is its annotation
 burden.
@@ -83,7 +83,7 @@ did not earn:
   oxide-arm first attempts (pre-change: codegemma 10, granite 6, qwen 2,
   in 9 programs), verified by re-running the identical tool against the
   committed G0 root. Its implementation also surfaced the
-  intermediate-segment defect class — `o.i.clone().n = 5` — the only
+  intermediate-segment defect class (`o.i.clone().n = 5`), the only
   class this project has found that **rustc accepts** and therefore
   escapes the oracle entirely.
 - **§57** could not have moved rates, and the campaign proved it rather
@@ -97,15 +97,14 @@ did not earn:
 
 Cost per point is rising: §55 bought a mean of +1.83pp across the three
 families; §56+§57 together bought +0.5pp for more implementation and
-review work than §55 required. Combined with §57's mechanical null —
-resolution-stage ergonomics sit downstream of where these models
-actually fail — the measured reading is that **the ergonomics loop has
+review work than §55 required. Combined with §57's mechanical null (resolution-stage ergonomics sit downstream of where these models
+actually fail), the measured reading is that **the ergonomics loop has
 reached diminishing returns**, and the remaining conversion-name
 candidates in taxonomy dossier 3 are not worth SPEC surface. That is the
 evidence behind the direction memo's pivot to the fine-tune track
 (SPEC §32.4), for which `v03c` is the comparison point.
 
-## Deliverable 1 — synthesis REPORT
+## Deliverable 1: synthesis REPORT
 
 **Path:** `eval/results/v03-synthesis/REPORT.md` (new directory).
 
@@ -121,7 +120,7 @@ diminishing-returns conclusion and its link to the pivot; and a "what
 this does not show" section.
 
 **Every rate in it must be reproduced, not recalled**, by running
-`eval.g0_report` against each of the three committed roots — the exact
+`eval.g0_report` against each of the three committed roots: the exact
 three commands are in the implementation plan, and all three were
 verified to reproduce the tables above before this design was written.
 
@@ -132,12 +131,12 @@ the synthesis cites it rather than restating it.
 
 **One caution it must state.** At v0.3 HEAD the paired oxide − explicit
 **generation** first-pass deltas are qwen +9.0pp (SE 6.8), codegemma
-+4.5pp (SE 3.7), granite +1.0pp (SE 4.6) — **none clears 2 SE**. The
++4.5pp (SE 3.7), granite +1.0pp (SE 4.6). **None clears 2 SE**. The
 project's headline ownership result is a *repair* result. A reader
 arriving at the v0.3 close-out must not be able to mistake the two, and
 this is the document where they meet.
 
-## Deliverable 2 — README results section
+## Deliverable 2: README results section
 
 Three edits, all in `## Where the evidence stands`.
 
@@ -145,8 +144,8 @@ Three edits, all in `## Where the evidence stands`.
 fixes, and what each was worth` (line 143) becomes `### Ergonomic fixes,
 and what each was worth`, holding two separately labelled tables:
 
-- *Measured on repair* — the existing §53/§54 rows, unchanged.
-- *Measured on generation (v0.3)* — a new table carrying the oxide arm's
+- *Measured on repair*: the existing §53/§54 rows, unchanged.
+- *Measured on generation (v0.3)*: a new table carrying the oxide arm's
   **first-compile and first-pass** deltas with the g1c split above, so
   the dose-response is visible and the "one change did the work"
   conclusion is checkable from the README alone.
@@ -162,40 +161,40 @@ they are **30.5 / 16.5 / 9.5** against **56.5 / 45 / 42**, with the g0c
 figures retained as the before-state. The bullet's claim is unchanged in
 direction and gets stronger in precision.
 
-**C. Fix a misattributed frontier figure.** The same bullet — about
-**writing** Black Oxide — cites *"a frontier model prefers Rust 100 to
+**C. Fix a misattributed frontier figure.** The same bullet (about
+**writing** Black Oxide) cites *"a frontier model prefers Rust 100 to
 92."* That is 12/12 vs 11/12 from `eval/results/ownership-probe-frontier/`,
 which is the **repair** probe. The frontier *generation* evidence is in
 that report's own closing line: all three arms scored **20/20**. The
 citation is corrected to the repair probe it comes from, and the
-generation bullet states the frontier generation result it actually has
-— a tie at ceiling, which supports the bullet's point about pretraining
+generation bullet states the frontier generation result it actually has:
+a tie at ceiling, which supports the bullet's point about pretraining
 exposure at least as well.
 
-## Deliverable 3 — SPEC
+## Deliverable 3: SPEC
 
 No normative change. Two edits plus their cross-references.
 
 **A. Part XI header.** `# Part XI — Builtin Method Syntax (v0.2.2)`
 (line 2379) becomes `# Part XI — Generation Ergonomics (v0.3)`. The part
-now spans §53–§57 — method syntax, `mut`, vec literals, field
-assignment, a builtin alias — and every one of them was added because a
+now spans §53–§57 (method syntax, `mut`, vec literals, field
+assignment, a builtin alias), and every one of them was added because a
 measured generation friction demanded it, which is what the new title
 says. Two in-repo references to the old title are reworded to name §53
 specifically: SPEC §32 line 1350 (*"Part XI method syntax, +42pp"*) and
 README line 114. The two committed REPORTs citing "SPEC Part XI §53" and
-"§55" remain accurate and are not touched — they are under
+"§55" remain accurate and are not touched. They are under
 `eval/results/`.
 
 **B. Close the roadmap's v0.3 entry.** §32 item 3 currently makes "v0.3"
 mean only the **rejected** ownership inversion; SPEC has no record of
 what actually shipped under the number. The item gains a closing
 paragraph: v0.3 as shipped is the ergonomics track (§55–§57), its
-measured outcome, and a pointer to the synthesis REPORT — recorded in
+measured outcome, and a pointer to the synthesis REPORT, recorded in
 the same idiom the item already uses for the rejected proposal it
 retains for the record.
 
-## Deliverable 4 — tag
+## Deliverable 4: tag
 
 Annotated tag `v0.3` on `main`. **The repository has no tags at all
 today**, so this is the first; no retroactive tagging of v0.2.x is in
@@ -225,7 +224,7 @@ which predate this work and must not be swept in by a bulk `git add`.
 
 ## Verification
 
-Full suite green (1446 tests at branch point — the card and rollup tests
+Full suite green (1446 tests at branch point: the card and rollup tests
 are the ones that would catch an accidental frozen-surface edit), every
 cited figure traced to its committed source, and `git tag` showing `v0.3`
 on the merge commit.

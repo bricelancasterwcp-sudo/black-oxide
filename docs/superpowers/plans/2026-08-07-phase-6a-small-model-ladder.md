@@ -1,4 +1,4 @@
-# Phase 6a — Small-Model Capability Ladder Implementation Plan
+# Phase 6a: Small-Model Capability Ladder Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
@@ -6,19 +6,19 @@
 
 **Architecture:** Five additive modules under `eval/` that sit *on top of* the frozen `eval/harness.py`. Each (model, shots, seed) combination becomes its own harness `run_id`, which is what lets the whole phase land without editing `harness.py` or `src/`. A driver drives generate → extract → submit → repair loops through Ollama over HTTP; a rollup aggregates 30 run directories into a paired-by-task comparison.
 
-**Tech Stack:** Python 3.14 (stdlib only — `urllib.request`, `json`, `dataclasses`), pytest, Ollama HTTP API, rustc as the compile oracle.
+**Tech Stack:** Python 3.14 (stdlib only: `urllib.request`, `json`, `dataclasses`), pytest, Ollama HTTP API, rustc as the compile oracle.
 
 ## Global Constraints
 
 - **Do not modify `eval/harness.py`, `src/`, `main.py`, `eval/tasks.jsonl`, `eval/shots/`, or either `LANGUAGE_CARD*.md`.** They are frozen. The phase is purely additive.
 - The existing **717 tests must stay green** after every task.
-- Test runner is `.venv/bin/pytest` — system pip is PEP-668 locked. Never `pip install` into the system Python.
+- Test runner is `.venv/bin/pytest`. System pip is PEP-668 locked. Never `pip install` into the system Python.
 - **Stdlib only.** No new third-party dependencies. No `requests`, no `torch` (Python 3.14 has no clean PyTorch build; a future fine-tuning phase gets its own 3.12 venv).
-- rustc lives at `~/.cargo/bin/rustc` and is **not on PATH**. `eval/rustc_adapter.py` already handles this — never shell out to `rustc` directly.
+- rustc lives at `~/.cargo/bin/rustc` and is **not on PATH**. `eval/rustc_adapter.py` already handles this. Never shell out to `rustc` directly.
 - Type-annotate every function signature (project rule). `from __future__ import annotations` at the top of each new module.
 - Files stay under 800 lines; functions under 50.
 - Commit after every task with a conventional-commit message. **No Claude attribution in commit messages.**
-- Binding contract is `docs/superpowers/specs/2026-08-07-phase-6a-small-model-ladder-design.md`. Where this plan and the spec disagree, the spec wins — stop and report the conflict.
+- Binding contract is `docs/superpowers/specs/2026-08-07-phase-6a-small-model-ladder-design.md`. Where this plan and the spec disagree, the spec wins. Stop and report the conflict.
 
 ### Pinned values (copy verbatim; never invent)
 
@@ -63,7 +63,7 @@ Order is dependency-driven: the two pure modules first, then the HTTP client, th
 - Consumes: nothing.
 - Produces: `Extraction(source: str, contract_compliant: bool)` frozen dataclass; `extract(raw: str) -> Extraction`.
 
-Spec §6.2. The rule is deliberately *not* syntax-aware — any cleverness risks favouring one arm's syntax, and the raw text is persisted anyway so a stricter number stays recoverable.
+Spec §6.2. The rule is deliberately *not* syntax-aware. Any cleverness risks favouring one arm's syntax, and the raw text is persisted anyway so a stricter number stays recoverable.
 
 - [ ] **Step 1: Write the failing tests**
 
@@ -124,7 +124,7 @@ def test_extract_empty_output_is_trivially_compliant():
 - [ ] **Step 2: Run tests to verify they fail**
 
 Run: `.venv/bin/pytest tests/test_6a.py -q`
-Expected: FAIL — `ModuleNotFoundError: No module named 'eval.extract'`
+Expected: FAIL: `ModuleNotFoundError: No module named 'eval.extract'`
 
 - [ ] **Step 3: Write the implementation**
 
@@ -211,7 +211,7 @@ git commit -m "feat(eval): add arm-neutral model-output extraction"
 - Consumes: nothing.
 - Produces: `build_repair_prompt(arm: str, source: str, verdict: dict) -> str`. `verdict` is exactly what `harness.run_file` returns: `{"compiled": bool, "passed": bool, "stdout": str, "diagnostics": list[dict]}`. Diagnostic dicts carry `code`, `message`, `line`, `col`, `end_line`, `end_col`, `notes` (list of `{"line", "col"}`), `suggestion`.
 
-Spec §6.3. This prompt did not previously exist — run 1 passed everything first try, so it was never written or exercised. At 0.5B it fires constantly, and it is where "do Black Oxide's diagnostics teach better than rustc's?" is actually decided.
+Spec §6.3. This prompt did not previously exist. Run 1 passed everything first try, so it was never written or exercised. At 0.5B it fires constantly, and it is where "do Black Oxide's diagnostics teach better than rustc's?" is actually decided.
 
 **The signature deliberately excludes `expected_stdout`.** Leaking it would let a weak model pass by hard-coding a print of the expected string, silently corrupting the headline metric. Structural exclusion beats a filter.
 
@@ -325,7 +325,7 @@ def test_repair_prompt_rejects_unknown_arm():
 - [ ] **Step 2: Run tests to verify they fail**
 
 Run: `.venv/bin/pytest tests/test_6a.py -q -k repair`
-Expected: FAIL — `ModuleNotFoundError: No module named 'eval.repair'`
+Expected: FAIL: `ModuleNotFoundError: No module named 'eval.repair'`
 
 - [ ] **Step 3: Write the implementation**
 
@@ -415,12 +415,12 @@ git commit -m "feat(eval): add arm-identical repair prompt"
 **Interfaces:**
 - Consumes: nothing.
 - Produces:
-  - `class ModelError(Exception)` — signals **infrastructure** failure only.
+  - `class ModelError(Exception)`: signals **infrastructure** failure only.
   - `Generation(text: str, tokens_in: int, tokens_out: int, ms: int, truncated: bool)` frozen dataclass.
   - `ModelClient` Protocol with `generate(self, prompt: str, *, seed: int) -> Generation`.
   - `OllamaClient(model, *, temperature=0.8, top_p=0.95, num_predict=2048, host="http://localhost:11434", timeout_s=120, retries=3, backoff_s=2.0, sleep=time.sleep)`, with `.generate(...)`, `.preflight() -> dict`, `.healthy() -> bool`.
 
-The response shape below is **verified live** against Ollama 0.32.4 — `/api/chat` returns `message.content`, `done_reason`, `prompt_eval_count`, `eval_count`, `total_duration` (ns). `/api/tags` returns `models[].digest` and `models[].details.quantization_level`.
+The response shape below is **verified live** against Ollama 0.32.4: `/api/chat` returns `message.content`, `done_reason`, `prompt_eval_count`, `eval_count`, `total_duration` (ns). `/api/tags` returns `models[].digest` and `models[].details.quantization_level`.
 
 `sleep` is injectable purely so retry tests don't actually wait.
 
@@ -559,7 +559,7 @@ def test_healthy_is_false_when_unreachable(monkeypatch):
 - [ ] **Step 2: Run tests to verify they fail**
 
 Run: `.venv/bin/pytest tests/test_6a.py -q -k "generate or preflight or healthy"`
-Expected: FAIL — `ModuleNotFoundError: No module named 'eval.models'`
+Expected: FAIL: `ModuleNotFoundError: No module named 'eval.models'`
 
 - [ ] **Step 3: Write the implementation**
 
@@ -737,7 +737,7 @@ git commit -m "feat(eval): add Ollama model client with quantization preflight"
 
 ---
 
-### Task 4: Driver — one session, one run id
+### Task 4: Driver: one session, one run id
 
 **Files:**
 - Create: `eval/driver.py`
@@ -746,8 +746,8 @@ git commit -m "feat(eval): add Ollama model client with quantization preflight"
 **Interfaces:**
 - Consumes: `extract.extract`, `repair.build_repair_prompt`, `models.ModelClient`/`ModelError`, and from `eval.harness`: `build_prompt`, `new_session`, `load_tasks`, `ARMS`, `MAX_ATTEMPTS`, `HarnessError`.
 - Produces:
-  - `run_session(client, run_id, task_id, arm, shots, *, results_root, raw_dir) -> dict` — one cell record.
-  - `run_one(client, run_id, shots, *, results_root, tasks_path=None) -> None` — 60 sessions.
+  - `run_session(client, run_id, task_id, arm, shots, *, results_root, raw_dir) -> dict`: one cell record.
+  - `run_one(client, run_id, shots, *, results_root, tasks_path=None) -> None`: 60 sessions.
 
 Spec §5, §6.4. `harness.Session.submit` already appends the triple and enforces the 4-attempt cap; this task only orchestrates around it.
 
@@ -912,7 +912,7 @@ def test_run_session_lets_model_error_propagate(tmp_path):
 - [ ] **Step 2: Run tests to verify they fail**
 
 Run: `.venv/bin/pytest tests/test_6a.py -q -k run_session`
-Expected: FAIL — `ModuleNotFoundError: No module named 'eval.driver'`
+Expected: FAIL: `ModuleNotFoundError: No module named 'eval.driver'`
 
 - [ ] **Step 3: Write the implementation**
 
@@ -1059,7 +1059,7 @@ git commit -m "feat(eval): add 6a session driver with repair loop"
 
 ---
 
-### Task 5: Driver — grid orchestration, resume, abort policy
+### Task 5: Driver: grid orchestration, resume, abort policy
 
 **Files:**
 - Modify: `eval/driver.py`
@@ -1073,7 +1073,7 @@ git commit -m "feat(eval): add 6a session driver with repair loop"
   - `is_complete(run_dir: Path) -> bool`.
   - `reset_run(run_dir: Path) -> None`.
   - `run_grid(make_client, *, slugs, shot_counts, seeds, results_root, wait_for_health=None, tasks_path=None) -> dict` returning `{"completed": [...], "aborted": [...]}`.
-  - `main(argv: list[str] | None = None) -> int` — the CLI.
+  - `main(argv: list[str] | None = None) -> int`: the CLI.
 
 Spec §6.4, §7. This is where the abort policy lives.
 
@@ -1217,7 +1217,7 @@ def test_run_grid_waits_for_health_between_runs(tmp_path):
 - [ ] **Step 2: Run tests to verify they fail**
 
 Run: `.venv/bin/pytest tests/test_6a.py -q -k "grid or run_id or is_complete or reset_run or slugs"`
-Expected: FAIL — `ImportError: cannot import name 'MODELS' from 'eval.driver'`
+Expected: FAIL: `ImportError: cannot import name 'MODELS' from 'eval.driver'`
 
 - [ ] **Step 3: Add the grid layer to `eval/driver.py`**
 
@@ -1418,7 +1418,7 @@ Run: `.venv/bin/pytest tests/ -q`
 Expected: 761 passed
 
 Run: `.venv/bin/python -m eval.driver --preflight-only`
-Expected: exit 2, listing the three models as not pulled (they are not pulled yet — Task 7 does that). This is the correct answer right now; do not pull to make it pass.
+Expected: exit 2, listing the three models as not pulled (they are not pulled yet: Task 7 does that). This is the correct answer right now; do not pull to make it pass.
 
 - [ ] **Step 6: Commit**
 
@@ -1438,10 +1438,10 @@ git commit -m "feat(eval): add 6a grid orchestration with run-scoped abort polic
 **Interfaces:**
 - Consumes: `driver.MODELS`, `driver.build_run_id`, `driver.is_complete`.
 - Produces:
-  - `paired_delta(oxide_cells, explicit_cells) -> float` — percentage points.
-  - `paired_se(oxide_cells, explicit_cells) -> float` — `SD(per-task differences)/√n`, in pp. **The primary interval.**
-  - `unpaired_se(oxide_cells, explicit_cells) -> float` — difference-of-means SE, reported only as the contrast showing what pairing saved.
-  - `classify(delta_pp: float) -> str` — `"supports"` | `"no-detectable-difference"` | `"disconfirms"`.
+  - `paired_delta(oxide_cells, explicit_cells) -> float`: percentage points.
+  - `paired_se(oxide_cells, explicit_cells) -> float`: `SD(per-task differences)/√n`, in pp. **The primary interval.**
+  - `unpaired_se(oxide_cells, explicit_cells) -> float`: difference-of-means SE, reported only as the contrast showing what pairing saved.
+  - `classify(delta_pp: float) -> str`: `"supports"` | `"no-detectable-difference"` | `"disconfirms"`.
   - `aggregate(results_root, *, slugs, shot_counts, seeds, partial=False) -> dict`.
   - `render_report(grid: dict) -> str`.
   - `main(argv=None) -> int`.
@@ -1450,7 +1450,7 @@ Spec §3, §6.5.
 
 **The paired-by-task delta is the primary readout**, always quoted with its paired SE. For each task, subtract explicit Black Oxide's pass rate across seeds from Black Oxide's, then average those 20 per-task differences.
 
-Note carefully: on a balanced grid that delta is *algebraically identical* to the difference of marginal arm rates. Pairing does not move the point estimate — it shrinks the interval, because shared task difficulty cancels inside each per-task difference. Quoting the delta without its SE is prohibited.
+Note carefully: on a balanced grid that delta is *algebraically identical* to the difference of marginal arm rates. Pairing does not move the point estimate. It shrinks the interval, because shared task difficulty cancels inside each per-task difference. Quoting the delta without its SE is prohibited.
 
 - [ ] **Step 1: Write the failing tests**
 
@@ -1574,7 +1574,7 @@ def test_render_report_states_band_alongside_delta():
 - [ ] **Step 2: Run tests to verify they fail**
 
 Run: `.venv/bin/pytest tests/test_6a.py -q -k "paired or classify or aggregate or render"`
-Expected: FAIL — `ModuleNotFoundError: No module named 'eval.rollup'`
+Expected: FAIL: `ModuleNotFoundError: No module named 'eval.rollup'`
 
 - [ ] **Step 3: Write the implementation**
 
@@ -1877,7 +1877,7 @@ Project convention: contracts become binding only as numbered SPEC parts. The de
 
 - [ ] **Step 1: Transcribe the design into SPEC.md as Part X**
 
-Append to `SPEC.md`, following the existing Part heading style (`# Part X — Phase 6a Contract (small-model capability ladder)`) and continuing section numbering from §46 — so the design's sections 3–9 become **§47 Pre-registered analysis plan**, **§48 Pinned run parameters**, **§49 Run identity and layout**, **§50 Module contracts**, **§51 Error handling and failure classification**, **§52 Test plan**.
+Append to `SPEC.md`, following the existing Part heading style (`# Part X — Phase 6a Contract (small-model capability ladder)`) and continuing section numbering from §46, so the design's sections 3–9 become **§47 Pre-registered analysis plan**, **§48 Pinned run parameters**, **§49 Run identity and layout**, **§50 Module contracts**, **§51 Error handling and failure classification**, **§52 Test plan**.
 
 Copy the content from `docs/superpowers/specs/2026-08-07-phase-6a-small-model-ladder-design.md` verbatim where it is already normative (the parameter table, the ±5pp partition table, the failure-classification table, the extraction rule, the repair-prompt template). Drop the design-doc-only framing (§1 Motivation, §10 Deliverables).
 
@@ -1908,7 +1908,7 @@ Roughly 0.5GB + 1.6GB + 8GB. All three tags were verified present in the registr
 Run: `.venv/bin/python -m eval.driver --preflight-only`
 Expected: `preflight ok`, exit 0.
 
-If it reports a quantization mismatch, the wrong tag was pulled — pull the `-q8_0` tag explicitly rather than relaxing the check. The check *is* the uniform-quantization control.
+If it reports a quantization mismatch, the wrong tag was pulled. Pull the `-q8_0` tag explicitly rather than relaxing the check. The check *is* the uniform-quantization control.
 
 - [ ] **Step 6: Write the live smoke test**
 
@@ -1974,7 +1974,7 @@ git commit -m "test(eval): add live smoke test for the 6a driver"
 
 ## Running the grid (after Task 7)
 
-Not part of the plan's test cycle — this is the experiment itself, ~8–14h.
+Not part of the plan's test cycle. This is the experiment itself, ~8–14h.
 
 ```bash
 # Cheapest rungs first, so plumbing problems surface in minutes not hours.
@@ -1986,7 +1986,7 @@ Not part of the plan's test cycle — this is the experiment itself, ~8–14h.
 .venv/bin/python -m eval.rollup
 ```
 
-Watch for: a `truncation_rate` above ~20% at 0.5B (consider whether `num_predict` is too tight — but change it only with a spec amendment, never mid-grid), and any `aborted` entries in the driver's JSON output.
+Watch for: a `truncation_rate` above ~20% at 0.5B (consider whether `num_predict` is too tight, but change it only with a spec amendment, never mid-grid), and any `aborted` entries in the driver's JSON output.
 
 ---
 
@@ -1998,6 +1998,6 @@ Watch for: a `truncation_rate` above ~20% at 0.5B (consider whether `num_predict
 
 **Type consistency.** `Generation` is 5 fields everywhere (Tasks 3, 4, 7). `run_session` is keyword-only after `client` in the implementation and in every test. `build_repair_prompt(arm, source, verdict)` matches its call in `driver.run_session`. `is_complete`/`reset_run`/`build_run_id`/`MODELS` are defined in Task 5 and imported by Task 6. Cell-record keys are identical in Task 4's producer, Task 6's `_arm_stats` consumer, and Task 6's `_cell` fixture.
 
-**Resolved before execution (was a flagged deviation):** Task 4's `_GOOD_OXIDE` fixture was probed against the real pipeline. `print("hi")` compiles but emits `'"hi"\n'` — Black Oxide's `print()` quotes strings — so every Task 4 test asserting a pass would have failed for the wrong reason. The fixture is now `print(42)` against `expected_stdout` `"42\n"`, verified `compiled=True, passed=True`. Do not revert it to a string print.
+**Resolved before execution (was a flagged deviation):** Task 4's `_GOOD_OXIDE` fixture was probed against the real pipeline. `print("hi")` compiles but emits `'"hi"\n'` (Black Oxide's `print()` quotes strings), so every Task 4 test asserting a pass would have failed for the wrong reason. The fixture is now `print(42)` against `expected_stdout` `"42\n"`, verified `compiled=True, passed=True`. Do not revert it to a string print.
 
-**Correction made during self-review (spec amended to match).** An earlier draft claimed the paired-by-task delta would differ from the marginal-rate comparison, and the spec's test plan asked for a fixture proving it. That is false: on a balanced grid the two are algebraically identical. Pairing's benefit is entirely in the **interval** — `SD(per-task differences)/√n` shrinks as the arms correlate across tasks. `paired_se`/`unpaired_se` and their tests exist to make that concrete, and the spec's §3 and §8 were corrected. If a future reviewer sees the delta match the marginal number, that is the design working, not a bug.
+**Correction made during self-review (spec amended to match).** An earlier draft claimed the paired-by-task delta would differ from the marginal-rate comparison, and the spec's test plan asked for a fixture proving it. That is false: on a balanced grid the two are algebraically identical. Pairing's benefit is entirely in the **interval**: `SD(per-task differences)/√n` shrinks as the arms correlate across tasks. `paired_se`/`unpaired_se` and their tests exist to make that concrete, and the spec's §3 and §8 were corrected. If a future reviewer sees the delta match the marginal number, that is the design working, not a bug.

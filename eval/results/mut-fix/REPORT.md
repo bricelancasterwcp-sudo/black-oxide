@@ -1,4 +1,4 @@
-# `mut` acceptance (SPEC §54) — measured
+# `mut` acceptance (SPEC §54): measured
 
 **Change:** `let mut x = e` parses as `let x = e`. Contextual keyword, no
 semantics.
@@ -32,8 +32,8 @@ not move at all (103 → 111, within noise) and its repair rate was flat.
 
 So "the `OX0200` wall" was never one phenomenon. In qwen it was
 `let mut acc` being glued into `let mutacc` by a decoder that cannot reject
-tokens. In granite it is genuinely undeclared variables — models assigning to
-a name never bound by `let`, Python-style implicit binding — which no
+tokens. In granite it is genuinely undeclared variables: models assigning to
+a name never bound by `let`, Python-style implicit binding, which no
 grammar or parser change addresses.
 
 The pre-change mut-mangled share predicted this only loosely: qwen 42%,
@@ -49,15 +49,15 @@ were failing for additional reasons that survived the fix.
 | granite | +10.0pp `[+3.4, +16.6]` | **+9.5pp** `[+3.8, +15.2]` |
 
 Both still clear 2 SE. qwen's gap widened because the fix helped oxide and
-not explicit — the same asymmetry method syntax showed, for the same reason:
+not explicit. The same asymmetry method syntax showed, for the same reason:
 these are ergonomic changes and the explicit dialect's binding constraint is
 its annotation burden (`EX0002`), which they do not touch.
 
 ## Honest size
 
 This is a **+5.5pp** change in one family and **nothing** in another,
-against method syntax's +42pp. It was predicted to be smaller — it addresses
-44% of one error class rather than eliminating a class outright — and it is.
+against method syntax's +42pp. It was predicted to be smaller: it addresses
+44% of one error class rather than eliminating a class outright, and it is.
 
 Its real value is not the repair rate. It is that **the largest single cause
 of the largest remaining error class was the measuring instrument deforming
@@ -69,7 +69,7 @@ Raw: `qwen2.5-coder-7b.jsonl`, `granite-code-8b.jsonl`,
 
 ---
 
-## Addendum (2026-08-08) — codegemma, the missing family
+## Addendum (2026-08-08): codegemma, the missing family
 
 codegemma had the *highest* mut-mangled share of the three (80% of its
 `OX0200`-carrying submissions), so by the mangled-share predictor it stood
@@ -86,7 +86,7 @@ treatment.
 | rust | 84.5% | 84.5% | 0.0 |
 
 `OX0200` on failing oxide submissions: **42 → 0**. Glued-`mut` sources
-(`let mutX`): **32 → 0**. The artifact was eliminated *completely* — and
+(`let mutX`): **32 → 0**. The artifact was eliminated *completely*, and
 the repair rate moved **+3.0pp**, less than qwen's +5.5.
 
 So the mangled-share predictor failed in the same direction it failed for
@@ -100,14 +100,14 @@ concentrated where `let mut` is the natural repair phrasing:
   submissions glued, 22 `OX0200` occurrences. After: zero of both. This is
   the dose-response at class granularity.
 - **p04 (assign-to-iterated-vec): 4/10 → 1/10.** Before, 4 of its passes
-  were themselves glued — `let mutX` renames used *consistently*, which
+  were themselves glued: `let mutX` renames used *consistently*, which
   compile and run. The deformation was occasionally benign. Accepting
   `mut` changes the constrained decode path, and at 10 seeds this class
   landed lower.
 
 Which sharpens what the fix is for: it does not uniformly raise scores; it
 makes the instrument measure what the model actually wrote. Some of what
-the old instrument recorded — failures *and* passes — was its own
+the old instrument recorded (failures *and* passes) was its own
 deformation.
 
 Effect on the primary comparison: **+32.5pp `[+16.5, +48.5]` →
@@ -118,5 +118,5 @@ constraint is untouched by ergonomic fixes.
 All three families are now post-§54 on matched code. Pooled:
 **41 of 43 non-tied comparisons favour implicit linearity,
 two-sided exact p = 2.2 × 10⁻¹⁰; combined over all 60 (family × class)
-pairs: +34.5pp, 2-SE `[+25.3, +43.7]`** — superseding 40/43, p < 10⁻⁸,
+pairs: +34.5pp, 2-SE `[+25.3, +43.7]`**, superseding 40/43, p < 10⁻⁸,
 +33.7pp `[+24.3, +43.0]`.
